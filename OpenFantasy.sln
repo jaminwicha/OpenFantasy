@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFantasy", "OpenFantasy.csproj", "{A2C4B7E1-6F3D-4A8B-9C1E-5D7F8E2A0B3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		ExportDebug|Any CPU = ExportDebug|Any CPU
+		ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2C4B7E1-6F3D-4A8B-9C1E-5D7F8E2A0B3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2C4B7E1-6F3D-4A8B-9C1E-5D7F8E2A0B3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2C4B7E1-6F3D-4A8B-9C1E-5D7F8E2A0B3C}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{A2C4B7E1-6F3D-4A8B-9C1E-5D7F8E2A0B3C}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{A2C4B7E1-6F3D-4A8B-9C1E-5D7F8E2A0B3C}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{A2C4B7E1-6F3D-4A8B-9C1E-5D7F8E2A0B3C}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

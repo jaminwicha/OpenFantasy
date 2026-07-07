@@ -1,0 +1,25 @@
+{
+  "monsters": [
+    {
+      "id": "leaf_wisp", "name": "Leaf Wisp", "level": 1,
+      "stats": { "hp": 30, "mp": 0, "attack": 8, "magic": 0, "defense": 2, "speed": 6 },
+      "moveSpeed": 3, "xpReward": 40, "gilMin": 4, "gilMax": 10,
+      "aggroRange": 64, "leashRange": 256,
+      "attack": { "power": 10, "range": 40, "atbCost": 450 }
+    },
+    {
+      "id": "bramble_wolf", "name": "Bramble Wolf", "level": 3,
+      "stats": { "hp": 62, "mp": 0, "attack": 14, "magic": 0, "defense": 5, "speed": 10 },
+      "moveSpeed": 5, "xpReward": 95, "gilMin": 10, "gilMax": 22,
+      "aggroRange": 128, "leashRange": 384,
+      "attack": { "power": 10, "range": 44, "atbCost": 400 }
+    },
+    {
+      "id": "rust_golem", "name": "Rust Golem", "level": 6,
+      "stats": { "hp": 240, "mp": 0, "attack": 22, "magic": 0, "defense": 12, "speed": 5 },
+      "moveSpeed": 2, "xpReward": 420, "gilMin": 60, "gilMax": 120,
+      "aggroRange": 96, "leashRange": 320,
+      "attack": { "power": 14, "range": 52, "atbCost": 700 }
+    }
+  ]
+}

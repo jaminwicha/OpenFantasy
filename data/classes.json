@@ -1,0 +1,28 @@
+{
+  "classes": [
+    {
+      "id": "squire",
+      "name": "Squire",
+      "baseStats": { "hp": 60, "mp": 10, "attack": 12, "magic": 4, "defense": 8, "speed": 8 },
+      "growth": { "hp": 9, "mp": 2, "attack": 3, "magic": 1, "defense": 2, "speed": 1 },
+      "moveSpeed": 4,
+      "abilities": ["strike", "cleave", "breaker"]
+    },
+    {
+      "id": "mage",
+      "name": "Mage",
+      "baseStats": { "hp": 42, "mp": 24, "attack": 6, "magic": 14, "defense": 5, "speed": 7 },
+      "growth": { "hp": 6, "mp": 4, "attack": 1, "magic": 3, "defense": 1, "speed": 1 },
+      "moveSpeed": 4,
+      "abilities": ["spark", "fire", "cura"]
+    },
+    {
+      "id": "scout",
+      "name": "Scout",
+      "baseStats": { "hp": 50, "mp": 12, "attack": 10, "magic": 6, "defense": 6, "speed": 11 },
+      "growth": { "hp": 7, "mp": 2, "attack": 2, "magic": 1, "defense": 1, "speed": 2 },
+      "moveSpeed": 5,
+      "abilities": ["shot", "aimed_shot", "fieldcraft"]
+    }
+  ]
+}

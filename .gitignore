@@ -1,0 +1,17 @@
+# Godot
+.godot/
+*.import
+export_presets.cfg
+
+# .NET
+.mono/
+bin/
+obj/
+*.user
+
+# Runtime
+save/
+logs/
+
+# OS
+.DS_Store
