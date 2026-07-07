@@ -1,15 +1,18 @@
 # OpenFantasy
 
-A 2D open-world MMORPG vertical slice in **Godot 4.4 (.NET/C#)**, styled after
-16-bit golden-age JRPGs (FF6-inspired mood; all assets original). One shared
+A 2D open-world MMORPG in **Godot 4.4 (.NET/C#)**, styled after 16-bit
+golden-age JRPGs (FF6-inspired mood; all assets original). One shared
 persistent region — *Verdance March* — with real-time ATB combat, monster AI,
-XP/levels, chat, and server-side character persistence.
+XP/levels, items/equipment, shops, quests, parties, a dungeon (the Hollow
+Mine with the Magitek Warden boss), chat, a day/night cycle, and server-side
+character persistence.
 
 ## Documents
 
 - [`docs/GDD.md`](docs/GDD.md) — game design
 - [`docs/TECH_DESIGN.md`](docs/TECH_DESIGN.md) — architecture (deterministic sim / net / thin client)
-- [`docs/VERTICAL_SLICE.md`](docs/VERTICAL_SLICE.md) — slice scope, milestones, acceptance
+- [`docs/VERTICAL_SLICE.md`](docs/VERTICAL_SLICE.md) — milestone 1 scope and acceptance
+- [`docs/MILESTONE_2.md`](docs/MILESTONE_2.md) — milestone 2: items, shops, quests, parties, dungeon
 
 ## Requirements
 
@@ -56,7 +59,10 @@ python3 tools/gen_assets.py   # assets/ placeholder pixel art
 
 ## Controls
 
-WASD/arrows move · **1–4** abilities · **Tab** cycle target · **Enter** chat
+WASD/arrows move · **1–4** abilities · **Tab** cycle target · **Enter** chat ·
+**E** talk to NPC · **I** inventory · **J** quest log · **Esc** close window
+
+Chat commands: `/party invite <name>` · `/party accept` · `/party leave` · `/p <msg>`
 
 ## Layout
 

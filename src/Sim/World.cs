@@ -4,8 +4,9 @@ namespace OpenFantasy.Sim;
 /// The authoritative deterministic simulation. Pure C#: no Godot types, no
 /// wall-clock, no floats in gameplay state. The server steps it in whole
 /// ticks; identical (seed, join order, inputs) always yields identical state.
+/// M2 systems (items, quests, parties, NPCs) live in World.Systems.cs.
 /// </summary>
-public sealed class World
+public sealed partial class World
 {
     public GameData Data { get; }
     public int Tick { get; private set; }
@@ -40,6 +41,8 @@ public sealed class World
             for (int i = 0; i < def.Count; i++)
                 SpawnMonster(state);
         }
+
+        SpawnNpcs();
     }
 
     public Entity? GetEntity(int id) => _entities.GetValueOrDefault(id);
@@ -69,7 +72,8 @@ public sealed class World
         e.Level = Math.Clamp(save?.Level ?? 1, 1, SimConstants.MaxLevel);
         e.Xp = Math.Max(0, save?.Xp ?? 0);
         e.Gil = Math.Max(0, save?.Gil ?? 0);
-        ApplyClassStats(e, cls);
+        RestoreM2State(e, save);
+        RecomputeStats(e);
         e.Hp = e.MaxHp;
         e.Mp = e.MaxMp;
 
@@ -87,8 +91,12 @@ public sealed class World
 
     public void RemovePlayer(int id)
     {
-        if (_entities.Remove(id))
+        if (_entities.TryGetValue(id, out var e))
+        {
+            if (e.PartyId >= 0) PartyLeave(e);
+            _entities.Remove(id);
             _entityOrder.Remove(id);
+        }
     }
 
     public void SetPlayerInput(int id, InputCommand input)
@@ -108,10 +116,18 @@ public sealed class World
         Gil = e.Gil,
         X = e.X,
         Y = e.Y,
+        Inventory = e.Inventory.Select(s => new ItemStack { ItemId = s.ItemId, Count = s.Count }).ToList(),
+        WeaponId = e.WeaponId,
+        ArmorId = e.ArmorId,
+        Quests = e.QuestLog.ToDictionary(
+            kv => kv.Key,
+            kv => new QuestProgress { State = kv.Value.State, Kills = kv.Value.Kills }),
     };
 
-    private void ApplyClassStats(Entity e, ClassDef cls)
+    /// <summary>Effective stats: class base + level growth + equipment bonuses.</summary>
+    public void RecomputeStats(Entity e)
     {
+        var cls = Data.Classes[e.ArchetypeId];
         int lvls = e.Level - 1;
         e.MaxHp = cls.BaseStats.Hp + cls.Growth.Hp * lvls;
         e.MaxMp = cls.BaseStats.Mp + cls.Growth.Mp * lvls;
@@ -119,6 +135,17 @@ public sealed class World
         e.Magic = cls.BaseStats.Magic + cls.Growth.Magic * lvls;
         e.Defense = cls.BaseStats.Defense + cls.Growth.Defense * lvls;
         e.Speed = cls.BaseStats.Speed + cls.Growth.Speed * lvls;
+
+        foreach (string equipped in new[] { e.WeaponId, e.ArmorId })
+        {
+            if (equipped.Length == 0 || !Data.Items.TryGetValue(equipped, out var item)) continue;
+            e.Attack += item.AttackBonus;
+            e.Magic += item.MagicBonus;
+            e.Defense += item.DefenseBonus;
+            e.MaxHp += item.HpBonus;
+        }
+        e.Hp = Math.Min(e.Hp, e.MaxHp);
+        e.Mp = Math.Min(e.Mp, e.MaxMp);
     }
 
     private (int x, int y) SpawnPointUnits()
@@ -222,6 +249,8 @@ public sealed class World
                     toRemove.Add(id); // corpse cleanup; spawner already has the respawn scheduled
                 continue;
             }
+
+            if (e.IsNpc) continue; // NPCs don't act; they just exist in snapshots
 
             // ATB fill.
             e.Atb = Math.Min(SimConstants.AtbMax, e.Atb + 6 + e.Speed / 2);
@@ -435,11 +464,11 @@ public sealed class World
             if (victim.IsMonster)
             {
                 var def = Data.Monsters[victim.ArchetypeId];
-                foreach (int taggerId in victim.Taggers.OrderBy(t => t))
+                foreach (var credited in KillCreditSet(victim))
                 {
-                    var tagger = GetEntity(taggerId);
-                    if (tagger is { IsPlayer: true })
-                        GrantXpAndGil(tagger, def);
+                    GrantXpAndGil(credited, def);
+                    RollDrops(credited, def);
+                    CountQuestKill(credited, def.Id);
                 }
                 victim.Taggers.Clear();
                 victim.RespawnAtTick = Tick + 40; // corpse lingers ~2 s for the death anim
@@ -464,7 +493,7 @@ public sealed class World
         {
             player.Xp -= XpToNextLevel(player.Level);
             player.Level++;
-            ApplyClassStats(player, Data.Classes[player.ArchetypeId]);
+            RecomputeStats(player);
             player.Hp = player.MaxHp; // classic full heal on level-up
             player.Mp = player.MaxMp;
             Events.Add(new SimEvent(SimEventKind.LevelUp, player.Id, player.Id, player.Level));
@@ -582,8 +611,31 @@ public sealed class World
             Mix(e.Alive ? 1 : 0);
             Mix((int)e.Ai);
             Mix((int)e.Facing);
+            Mix(e.PartyId);
+            MixString(e.WeaponId);
+            MixString(e.ArmorId);
+            Mix(e.Inventory.Count);
+            foreach (var stack in e.Inventory)
+            {
+                MixString(stack.ItemId);
+                Mix(stack.Count);
+            }
+            Mix(e.QuestLog.Count);
+            foreach (var questId in e.QuestLog.Keys.OrderBy(k => k, StringComparer.Ordinal))
+            {
+                var q = e.QuestLog[questId];
+                MixString(questId);
+                Mix((int)q.State);
+                Mix(q.Kills);
+            }
         }
         return h;
+
+        void MixString(string s)
+        {
+            foreach (char c in s) Mix(c);
+            Mix(s.Length);
+        }
     }
 }
 
@@ -596,4 +648,8 @@ public sealed class CharacterSave
     public int Gil { get; set; }
     public int X { get; set; }
     public int Y { get; set; }
+    public List<ItemStack> Inventory { get; set; } = new();
+    public string WeaponId { get; set; } = "";
+    public string ArmorId { get; set; } = "";
+    public Dictionary<string, QuestProgress> Quests { get; set; } = new();
 }

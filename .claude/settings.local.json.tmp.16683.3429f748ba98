@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git -C /Users/alucinor/Workspace/Projects/OpenFantasy log --oneline -10)",
+      "Bash(/opt/homebrew/bin/godot --version)",
+      "Bash(/Applications/Godot_mono.app/Contents/MacOS/Godot --version)",
+      "Bash(python3 -c \"import PIL; print\\('PIL', PIL.__version__\\)\")",
+      "Bash(python3 *)",
+      "Bash(/Applications/Godot_mono.app/Contents/MacOS/Godot --headless --import --path /Users/alucinor/Workspace/Projects/OpenFantasy)",
+      "Bash(grep -vE \"^$\")",
+      "Bash(/Applications/Godot_mono.app/Contents/MacOS/Godot --headless --path . -- --selftest)",
+      "Bash(gh auth *)",
+      "Read(//Users/alucinor/**)",
+      "Bash(ssh -T git@github.com -o BatchMode=yes -o ConnectTimeout=5)",
+      "Bash(security find-internet-password *)",
+      "Bash(git credential *)",
+      "Bash(git commit -q -m 'Milestone 2: Life in the March — items, shops, quests, parties, dungeon *)"
+    ]
+  }
+}

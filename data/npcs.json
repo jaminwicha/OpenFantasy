@@ -1,0 +1,16 @@
+{
+  "npcs": [
+    {
+      "id": "marla", "name": "Marla", "sprite": "npc_vendor",
+      "tileX": 21, "tileY": 60,
+      "dialog": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+      "shop": ["potion", "tonic", "ether", "bronze_sword", "oak_rod", "iron_blade", "crystal_rod", "leather_vest", "brass_mail"]
+    },
+    {
+      "id": "elder_bran", "name": "Elder Bran", "sprite": "npc_elder",
+      "tileX": 31, "tileY": 60,
+      "dialog": "The March grows wilder by the season, traveler. We could use your blade.",
+      "quests": ["cull_wisps", "wolf_menace", "the_warden"]
+    }
+  ]
+}

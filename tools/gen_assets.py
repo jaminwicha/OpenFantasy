@@ -330,6 +330,84 @@ def gen_golem():
 
 # ---------------------------------------------------------------- ui
 
+def gen_bat():
+    c = Canvas(FW * 3, FH * 4)
+    body = (90, 74, 110, 255)
+    wing = (60, 48, 78, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            flap = (2, 0, 2)[frame]
+            cy = oy + 12
+            c.rect(ox + 6, cy - 2, ox + 9, cy + 2, body)          # body
+            c.rect(ox + 2, cy - flap, ox + 5, cy + 1 - flap, wing)  # wings
+            c.rect(ox + 10, cy - flap, ox + 13, cy + 1 - flap, wing)
+            c.px(ox + 6, cy - 3, body)                             # ears
+            c.px(ox + 9, cy - 3, body)
+            if direction != 1:
+                eye = (255, 90, 90, 255)
+                c.px(ox + 6 if direction != 3 else ox + 8, cy - 1, eye)
+                c.px(ox + 9 if direction != 2 else ox + 7, cy - 1, eye)
+    c.save(ROOT / "units" / "cave_bat.png")
+
+
+def gen_slime():
+    c = Canvas(FW * 3, FH * 4)
+    goo = (110, 128, 150, 255)
+    ore = (196, 160, 80, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            squish = (1, 0, 1)[frame]
+            top = oy + 10 + squish
+            for y in range(top, oy + 20):
+                spread = min(6, (y - top) + 3 + squish)
+                c.rect(ox + 8 - spread, y, ox + 7 + spread, y,
+                       goo if y % 3 else shade(goo, 1.15))
+            c.px(ox + 5, oy + 14, ore)                             # ore flecks
+            c.px(ox + 10, oy + 16, ore)
+            c.px(ox + 8, oy + 12, shade(ore, 1.2))
+            if direction != 1:
+                eye = (30, 30, 44, 255)
+                c.px(ox + 6, oy + 13, eye)
+                c.px(ox + 9, oy + 13, eye)
+    c.save(ROOT / "units" / "ore_slime.png")
+
+
+def gen_warden():
+    # The boss reuses the golem silhouette, bigger presence via palette:
+    # gunmetal plate, magitek-teal core lines, ember eyes.
+    c = Canvas(FW * 3, FH * 4)
+    plate = (96, 104, 122, 255)
+    core = (80, 220, 200, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            sway = (-1, 0, 1)[frame]
+            c.rect(ox + 3, oy + 1, ox + 12, oy + 7, plate)                  # head
+            c.rect(ox + 1, oy + 8, ox + 14, oy + 17, plate)                 # torso
+            c.rect(ox + 1, oy + 8, ox + 14, oy + 9, shade(plate, 1.25))
+            c.rect(ox + 6, oy + 10, ox + 9, oy + 15, shade(plate, 0.7))
+            c.rect(ox + 7, oy + 10, ox + 8, oy + 15, core)                  # core column
+            c.rect(ox + 0 + sway, oy + 9, ox + 1 + sway, oy + 17, shade(plate, 0.8))
+            c.rect(ox + 14 - sway, oy + 9, ox + 15 - sway, oy + 17, shade(plate, 0.8))
+            c.rect(ox + 3, oy + 18, ox + 6, oy + 23, shade(plate, 0.65))
+            c.rect(ox + 9, oy + 18, ox + 12, oy + 23, shade(plate, 0.65))
+            if direction != 1:
+                ember = (255, 140, 60, 255)
+                c.px(ox + 5, oy + 4, ember)
+                c.px(ox + 10, oy + 4, ember)
+    c.save(ROOT / "units" / "magitek_warden.png")
+
+
+def gen_npcs():
+    # Vendor: warm apron colors. Elder: grey hair, deep-green robe.
+    gen_class_sheet("npc_vendor", (60, 40, 28, 255), (150, 92, 60, 255),
+                    (232, 220, 200, 255), (80, 60, 50, 255))
+    gen_class_sheet("npc_elder", (208, 208, 208, 255), (44, 84, 60, 255),
+                    (200, 180, 110, 255), (40, 56, 48, 255))
+
+
 def gen_panel():
     # FF6-style window: near-black outer line, white double border,
     # vertical navy gradient fill. 24x24, use as 9-patch with 4px margins.
@@ -365,4 +443,8 @@ if __name__ == "__main__":
     gen_wisp()
     gen_wolf()
     gen_golem()
+    gen_bat()
+    gen_slime()
+    gen_warden()
+    gen_npcs()
     gen_panel()

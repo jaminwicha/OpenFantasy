@@ -21,6 +21,7 @@ public partial class ServerNode : Node
     private double _accumulator;
     private double _tickCostMs;
     private int _tickCostSamples;
+    private readonly List<SimEvent> _pendingEvents = new();
 
     private sealed class Session
     {
@@ -84,8 +85,14 @@ public partial class ServerNode : Node
             _tickCostMs += (Time.GetTicksUsec() - t0) / 1000.0;
             _tickCostSamples++;
 
+            _pendingEvents.AddRange(_world.Events);
+
             if (_world.Tick % SnapshotEveryTicks == 0)
-                Broadcast(Protocol.WriteSnapshot(_world));
+            {
+                Broadcast(Protocol.WriteSnapshot(_world, _pendingEvents));
+                PushDirtyPlayerStates(_pendingEvents);
+                _pendingEvents.Clear();
+            }
             if (_world.Tick % AutosaveEveryTicks == 0)
                 SaveAll(flush: true);
             if (_world.Tick % 1200 == 0 && _tickCostSamples > 0)
@@ -150,11 +157,199 @@ public partial class ServerNode : Node
             {
                 var (_, text) = Protocol.ReadChat(r);
                 text = text.Trim();
-                if (text.Length is > 0 and <= 200)
+                if (text.Length is 0 or > 200) break;
+                if (text.StartsWith('/'))
+                    HandleChatCommand(sender, session, text);
+                else
                     Broadcast(Protocol.WriteChat(SessionName(session), text));
                 break;
             }
+            case Op.Interact when session is { Ready: true }:
+            {
+                int npcEntityId = r.ReadInt32();
+                HandleInteract(sender, session, npcEntityId);
+                break;
+            }
+            case Op.ItemOp when session is { Ready: true }:
+            {
+                var (itemOp, itemId, npcEntityId) = Protocol.ReadItemOp(r);
+                if (_world.GetEntity(session.EntityId) is not { } player) break;
+                string result = itemOp switch
+                {
+                    ItemOpKind.Buy => _world.BuyItem(player, npcEntityId, itemId),
+                    ItemOpKind.Sell => _world.SellItem(player, npcEntityId, itemId),
+                    ItemOpKind.Use => _world.UseItem(player, itemId),
+                    ItemOpKind.Equip => _world.EquipItem(player, itemId),
+                    ItemOpKind.Unequip => _world.UnequipItem(player, itemId),
+                    _ => "Unknown action.",
+                };
+                SendTo(sender, Protocol.WriteChat("*", result));
+                SendTo(sender, Protocol.WritePlayerState(_world, player));
+                break;
+            }
+            case Op.QuestOp when session is { Ready: true }:
+            {
+                var (questOp, questId, npcEntityId) = Protocol.ReadQuestOp(r);
+                if (_world.GetEntity(session.EntityId) is not { } player) break;
+                string result = questOp switch
+                {
+                    QuestOpKind.Accept => _world.AcceptQuest(player, npcEntityId, questId),
+                    QuestOpKind.Complete => _world.CompleteQuest(player, npcEntityId, questId),
+                    _ => "Unknown action.",
+                };
+                SendTo(sender, Protocol.WriteChat("*", result));
+                SendTo(sender, Protocol.WritePlayerState(_world, player));
+                break;
+            }
         }
+    }
+
+    private void HandleChatCommand(int sender, Session session, string text)
+    {
+        if (_world.GetEntity(session.EntityId) is not { } player) return;
+
+        string[] parts = text.Split(' ', 3, StringSplitOptions.RemoveEmptyEntries);
+        switch (parts[0].ToLowerInvariant())
+        {
+            case "/party" when parts.Length >= 2 && parts[1].Equals("invite", StringComparison.OrdinalIgnoreCase) && parts.Length >= 3:
+            {
+                string result = _world.PartyInvite(player, parts[2].Trim());
+                SendTo(sender, Protocol.WriteChat("*", result));
+                // Tell the invitee too.
+                var invitee = FindSessionByName(parts[2].Trim());
+                if (invitee is { } inv && result.StartsWith("Invited"))
+                    SendTo(inv.peerId, Protocol.WriteChat("*", $"{player.Name} invites you to a party. Type /party accept"));
+                break;
+            }
+            case "/party" when parts.Length >= 2 && parts[1].Equals("accept", StringComparison.OrdinalIgnoreCase):
+            {
+                var (result, inviter) = _world.PartyAccept(player);
+                SendTo(sender, Protocol.WriteChat("*", result));
+                if (inviter != null)
+                    PartyNotify(player.PartyId, $"{player.Name} joined the party.");
+                PushPartyState(player.PartyId);
+                break;
+            }
+            case "/party" when parts.Length >= 2 && parts[1].Equals("leave", StringComparison.OrdinalIgnoreCase):
+            {
+                int oldParty = player.PartyId;
+                SendTo(sender, Protocol.WriteChat("*", _world.PartyLeave(player)));
+                if (oldParty >= 0)
+                {
+                    PartyNotify(oldParty, $"{player.Name} left the party.");
+                    PushPartyState(oldParty);
+                }
+                SendTo(sender, Protocol.WritePlayerState(_world, player));
+                break;
+            }
+            case "/p" when parts.Length >= 2:
+            {
+                if (player.PartyId < 0)
+                {
+                    SendTo(sender, Protocol.WriteChat("*", "You are not in a party."));
+                    break;
+                }
+                string msg = text[3..].Trim();
+                foreach (int memberId in _world.PartyMembers(player.PartyId))
+                    if (FindSessionByEntity(memberId) is { } member)
+                        SendTo(member.peerId, Protocol.WriteChat($"[P] {player.Name}", msg));
+                break;
+            }
+            default:
+                SendTo(sender, Protocol.WriteChat("*", "Commands: /party invite <name> · /party accept · /party leave · /p <msg>"));
+                break;
+        }
+    }
+
+    private void HandleInteract(int sender, Session session, int npcEntityId)
+    {
+        if (_world.GetEntity(session.EntityId) is not { } player) return;
+        var npc = _world.NpcInRange(player, npcEntityId);
+        if (npc is null) return;
+
+        var quests = new List<(string, string, string, NpcQuestStatus)>();
+        foreach (string questId in npc.Quests)
+        {
+            var quest = _world.Data.Quests[questId];
+            NpcQuestStatus status;
+            string questText;
+            if (player.QuestLog.TryGetValue(questId, out var progress))
+            {
+                if (progress.State == QuestState.Completed)
+                {
+                    status = NpcQuestStatus.Done;
+                    questText = "Done.";
+                }
+                else if (progress.Kills >= quest.TargetCount)
+                {
+                    status = NpcQuestStatus.ReadyToTurnIn;
+                    questText = quest.TurnIn;
+                }
+                else
+                {
+                    status = NpcQuestStatus.Active;
+                    questText = $"{progress.Kills}/{quest.TargetCount} {_world.Data.Monsters[quest.TargetMonster].Name}s";
+                }
+            }
+            else if (player.Level >= quest.MinLevel)
+            {
+                status = NpcQuestStatus.Offerable;
+                questText = quest.Offer;
+            }
+            else
+            {
+                status = NpcQuestStatus.Locked;
+                questText = $"(Requires level {quest.MinLevel})";
+            }
+            quests.Add((questId, quest.Name, questText, status));
+        }
+        SendTo(sender, Protocol.WriteNpcInfo(npcEntityId, npc, quests));
+    }
+
+    private (int peerId, Session session)? FindSessionByName(string name)
+    {
+        foreach (var (peerId, s) in _sessions)
+            if (s.Ready && string.Equals(s.Account, name, StringComparison.OrdinalIgnoreCase))
+                return (peerId, s);
+        return null;
+    }
+
+    private (int peerId, Session session)? FindSessionByEntity(int entityId)
+    {
+        foreach (var (peerId, s) in _sessions)
+            if (s.Ready && s.EntityId == entityId)
+                return (peerId, s);
+        return null;
+    }
+
+    private void PartyNotify(int partyId, string message)
+    {
+        if (partyId < 0) return;
+        foreach (int memberId in _world.PartyMembers(partyId))
+            if (FindSessionByEntity(memberId) is { } member)
+                SendTo(member.peerId, Protocol.WriteChat("*", message));
+    }
+
+    /// <summary>Push PlayerState to players whose inventory/quests changed this snapshot window.</summary>
+    private void PushDirtyPlayerStates(List<SimEvent> events)
+    {
+        if (events.Count == 0) return;
+        var dirty = new HashSet<int>();
+        foreach (var ev in events)
+            if (ev.Kind is SimEventKind.Loot or SimEventKind.QuestProgress or SimEventKind.LevelUp)
+                dirty.Add(ev.TargetId);
+        foreach (int entityId in dirty)
+            if (FindSessionByEntity(entityId) is { } member && _world.GetEntity(entityId) is { } entity)
+                SendTo(member.peerId, Protocol.WritePlayerState(_world, entity));
+    }
+
+    /// <summary>Refresh PlayerState for every member of a party (membership changed).</summary>
+    private void PushPartyState(int partyId)
+    {
+        if (partyId < 0) return;
+        foreach (int memberId in _world.PartyMembers(partyId))
+            if (FindSessionByEntity(memberId) is { } member && _world.GetEntity(memberId) is { } entity)
+                SendTo(member.peerId, Protocol.WritePlayerState(_world, entity));
     }
 
     private void HandleHello(int sender, int protocol, string account, string classId)
@@ -184,6 +379,7 @@ public partial class ServerNode : Node
         var entity = _world.AddPlayer(account, classId, save);
         _sessions[sender] = new Session { Account = account, EntityId = entity.Id, Ready = true };
         SendTo(sender, Protocol.WriteWelcome(entity.Id, _world.Tick));
+        SendTo(sender, Protocol.WritePlayerState(_world, entity));
         Broadcast(Protocol.WriteChat("*", $"{account} entered Verdance March"));
         Log($"[server] {account} joined as {classId} (entity {entity.Id}, level {entity.Level})");
     }

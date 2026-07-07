@@ -63,6 +63,20 @@ for y in range(CLEAR_CY - CLEAR_R, CLEAR_CY + CLEAR_R + 1):
 # entrance corridor south from the clearing down to the road line
 fill(108, 26, 111, 60, MINEFLOOR)
 
+# --- mine interior (M2): tunnels + three chambers carved through the massif --
+def carve_circle(cx, cy, r):
+    for y in range(cy - r, cy + r + 1):
+        for x in range(cx - r, cx + r + 1):
+            if (x - cx) ** 2 + (y - cy) ** 2 <= r * r and grid[y][x] == ROCK:
+                grid[y][x] = MINEFLOOR
+
+fill(109, 12, 110, 26, MINEFLOOR)   # tunnel north from the clearing
+carve_circle(104, 13, 4)            # chamber A — cave bats
+fill(104, 12, 119, 13, MINEFLOOR)   # tunnel east
+carve_circle(119, 13, 4)            # chamber B — ore slimes
+fill(118, 13, 120, 37, MINEFLOOR)   # tunnel south, into the deep
+carve_circle(118, 37, 5)            # boss chamber — the Magitek Warden
+
 # --- town of Brasshollow ------------------------------------------------------
 TX0, TY0, TX1, TY1 = 16, 52, 36, 72
 fill(TX0, TY0, TX1, TY1, COBBLE)
@@ -120,6 +134,9 @@ SPAWNERS = [
     {"id": 3, "monster": "bramble_wolf", "region": {"x": 66, "y": 30, "w": 34, "h": 26}, "count": 6, "respawnTicks": 400},
     {"id": 4, "monster": "bramble_wolf", "region": {"x": 66, "y": 68, "w": 34, "h": 30}, "count": 6, "respawnTicks": 400},
     {"id": 5, "monster": "rust_golem", "region": {"x": 104, "y": 20, "w": 13, "h": 13}, "count": 1, "respawnTicks": 1200},
+    {"id": 6, "monster": "cave_bat", "region": {"x": 100, "y": 9, "w": 9, "h": 9}, "count": 6, "respawnTicks": 350},
+    {"id": 7, "monster": "ore_slime", "region": {"x": 115, "y": 9, "w": 9, "h": 9}, "count": 4, "respawnTicks": 500},
+    {"id": 8, "monster": "magitek_warden", "region": {"x": 113, "y": 32, "w": 10, "h": 10}, "count": 1, "respawnTicks": 3600},
 ]
 
 SAFE_ZONE = {"x": TX0 - 1, "y": TY0 - 1, "w": (TX1 - TX0) + 3, "h": (TY1 - TY0) + 3}

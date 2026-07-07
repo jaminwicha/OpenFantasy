@@ -4,6 +4,25 @@ public enum EntityKind : byte
 {
     Player = 0,
     Monster = 1,
+    Npc = 2,
+}
+
+public enum QuestState : byte
+{
+    Active = 0,
+    Completed = 1,
+}
+
+public sealed class ItemStack
+{
+    public string ItemId = "";
+    public int Count;
+}
+
+public sealed class QuestProgress
+{
+    public QuestState State;
+    public int Kills;
 }
 
 public enum Facing : byte
@@ -84,8 +103,21 @@ public sealed class Entity
     /// <summary>Entity ids of players who damaged this monster (XP tagging).</summary>
     public HashSet<int> Taggers = new();
 
+    // --- M2 player state ---
+    /// <summary>Stacked inventory in stable slot order (max SimConstants.InventorySlots).</summary>
+    public List<ItemStack> Inventory = new();
+    public string WeaponId = "";
+    public string ArmorId = "";
+    /// <summary>Quest id → progress. Iterate sorted by key for determinism.</summary>
+    public Dictionary<string, QuestProgress> QuestLog = new();
+    public int PartyId = -1;
+
+    /// <summary>NPC definition id (Kind == Npc only).</summary>
+    public string NpcDefId = "";
+
     public bool IsPlayer => Kind == EntityKind.Player;
     public bool IsMonster => Kind == EntityKind.Monster;
+    public bool IsNpc => Kind == EntityKind.Npc;
 
     public long DistanceSquaredTo(Entity other)
     {

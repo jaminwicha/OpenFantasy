@@ -25,6 +25,8 @@ public partial class GameController : Node2D
     private GameData _data = null!;
 
     private readonly Dictionary<int, EntityView> _views = new();
+    private GameWindows _windows = null!;
+    private CanvasModulate _dayNight = null!;
     private int _targetId = -1;
     private sbyte _pendingAbility = -1;
     private double _inputTimer;
@@ -55,6 +57,9 @@ public partial class GameController : Node2D
             _data.Map.PlayerSpawnY * SimConstants.UnitsPerTile);
         _camera.Position = spawn;
 
+        _dayNight = new CanvasModulate { Color = Colors.White };
+        AddChild(_dayNight);
+
         _hud = new Hud();
         AddChild(_hud);
         _hud.Setup(_data, ClassId);
@@ -66,6 +71,11 @@ public partial class GameController : Node2D
         _client.Disconnected += OnDisconnected;
         _client.GameEvent += OnGameEvent;
         _client.SnapshotApplied += _ => SyncViews();
+        _client.PlayerStateChanged += () => _hud.UpdateParty(_client);
+
+        _windows = new GameWindows();
+        AddChild(_windows);
+        _windows.Setup(_client, _data);
 
         // Solo: give the in-process server a beat to bind before connecting.
         GetTree().CreateTimer(HostLocalServer ? 0.25 : 0.0).Timeout += () =>
@@ -95,7 +105,13 @@ public partial class GameController : Node2D
 
             if (Input.IsActionJustPressed("cycle_target")) CycleTarget();
             if (Input.IsActionJustPressed("chat_toggle")) _hud.FocusChat();
+            if (Input.IsActionJustPressed("toggle_inventory")) _windows.ToggleInventory();
+            if (Input.IsActionJustPressed("toggle_quests")) _windows.ToggleQuests();
+            if (Input.IsActionJustPressed("interact")) TryInteract();
+            if (Input.IsActionJustPressed("ui_cancel")) _windows.CloseAll();
         }
+
+        UpdateDayNight();
 
         // Send input at the sim rate, not the render rate.
         _inputTimer += delta;
@@ -121,6 +137,45 @@ public partial class GameController : Node2D
 
         _client.SendInput(mx, my, _pendingAbility, _targetId);
         _pendingAbility = -1;
+    }
+
+    private void TryInteract()
+    {
+        if (!_client.Entities.TryGetValue(_client.LocalEntityId, out var me)) return;
+        var npc = _client.Entities.Values
+            .Where(e => e.Kind == EntityKind.Npc)
+            .OrderBy(e => (long)(e.X - me.X) * (e.X - me.X) + (long)(e.Y - me.Y) * (e.Y - me.Y))
+            .FirstOrDefault();
+        if (npc == null) return;
+        long dx = npc.X - me.X, dy = npc.Y - me.Y;
+        long r = SimConstants.InteractRange;
+        if (dx * dx + dy * dy > r * r)
+        {
+            _hud.AddChatLine("*", "No one close enough to talk to.");
+            return;
+        }
+        _client.SendInteract(npc.Id);
+    }
+
+    /// <summary>Deterministic dawn/day/dusk/night tint from the server tick.</summary>
+    private void UpdateDayNight()
+    {
+        int permille = (_client.ServerTick % SimConstants.TicksPerDay) * 1000 / SimConstants.TicksPerDay;
+        // 0 dawn → 250 day → 500 dusk → 750 night → 1000 dawn
+        Color day = Colors.White;
+        Color dawn = new(1.0f, 0.85f, 0.75f);
+        Color dusk = new(0.9f, 0.7f, 0.65f);
+        Color night = new(0.45f, 0.5f, 0.72f);
+        Color tint = permille switch
+        {
+            < 125 => dawn.Lerp(day, permille / 125f),
+            < 500 => day,
+            < 625 => day.Lerp(dusk, (permille - 500) / 125f),
+            < 750 => dusk.Lerp(night, (permille - 625) / 125f),
+            < 875 => night,
+            _ => night.Lerp(dawn, (permille - 875) / 125f),
+        };
+        _dayNight.Color = _dayNight.Color.Lerp(tint, 0.02f);
     }
 
     private void CycleTarget()
@@ -179,6 +234,8 @@ public partial class GameController : Node2D
             _hud.UpdateLocal(me);
             _camera.Position = WorldRenderer.UnitsToPixels(me.X, me.Y);
         }
+        if (_client.PlayerState.PartyMemberIds.Count > 0)
+            _hud.UpdateParty(_client); // live member HP
         _hud.UpdateTarget(_targetId >= 0 ? _client.Entities.GetValueOrDefault(_targetId) : null);
     }
 
@@ -203,6 +260,23 @@ public partial class GameController : Node2D
             case SimEventKind.Death when targetId == _client.LocalEntityId:
                 _hud.AddChatLine("*", "You have fallen. The crystal calls you home…");
                 break;
+            case SimEventKind.Loot when targetId == _client.LocalEntityId:
+                _hud.AddChatLine("*", $"Looted: {_data.Items[abilityId].Name}");
+                SpawnFloatingText(targetId, _data.Items[abilityId].Name, new Color("a0e0ff"));
+                break;
+            case SimEventKind.QuestProgress when targetId == _client.LocalEntityId:
+            {
+                var quest = _data.Quests[abilityId];
+                if (value < 0)
+                    _hud.AddChatLine("*", $"Quest complete: {quest.Name}!");
+                else if (value == 0)
+                    _hud.AddChatLine("*", $"Quest accepted: {quest.Name}");
+                else if (value >= quest.TargetCount)
+                    _hud.AddChatLine("*", $"{quest.Name}: done! Return to {_data.Npcs[quest.Giver].Name}.");
+                else
+                    _hud.AddChatLine("*", $"{quest.Name}: {value}/{quest.TargetCount}");
+                break;
+            }
         }
     }
 

@@ -22,5 +22,17 @@ public static class SimConstants
 
     public const int MaxLevel = 10;
 
-    public const int ProtocolVersion = 1;
+    public const int InventorySlots = 24;
+    public const int MaxStack = 99;
+
+    /// <summary>Party members within this distance of a kill share XP/credit.</summary>
+    public const int PartyShareRange = 20 * UnitsPerTile;
+
+    /// <summary>Max distance for talking to an NPC.</summary>
+    public const int InteractRange = 3 * UnitsPerTile;
+
+    /// <summary>Ticks per in-game day (10 real minutes) — presentation clock only.</summary>
+    public const int TicksPerDay = 600 * TicksPerSecond;
+
+    public const int ProtocolVersion = 2;
 }

@@ -1,0 +1,50 @@
+{
+  "items": [
+    {
+      "id": "potion", "name": "Potion", "kind": "Consumable",
+      "price": 30, "healHp": 40, "healMp": 0
+    },
+    {
+      "id": "tonic", "name": "Tonic", "kind": "Consumable",
+      "price": 120, "healHp": 150, "healMp": 0
+    },
+    {
+      "id": "ether", "name": "Ether", "kind": "Consumable",
+      "price": 90, "healHp": 0, "healMp": 20
+    },
+    {
+      "id": "bronze_sword", "name": "Bronze Sword", "kind": "Weapon",
+      "price": 150, "attackBonus": 4, "magicBonus": 0
+    },
+    {
+      "id": "oak_rod", "name": "Oak Rod", "kind": "Weapon",
+      "price": 150, "attackBonus": 0, "magicBonus": 4
+    },
+    {
+      "id": "iron_blade", "name": "Iron Blade", "kind": "Weapon",
+      "price": 520, "attackBonus": 9, "magicBonus": 0
+    },
+    {
+      "id": "crystal_rod", "name": "Crystal Rod", "kind": "Weapon",
+      "price": 520, "attackBonus": 0, "magicBonus": 9
+    },
+    {
+      "id": "warden_core", "name": "Warden Core", "kind": "Weapon",
+      "price": 2000, "attackBonus": 8, "magicBonus": 8
+    },
+    {
+      "id": "leather_vest", "name": "Leather Vest", "kind": "Armor",
+      "price": 120, "defenseBonus": 3, "hpBonus": 10
+    },
+    {
+      "id": "brass_mail", "name": "Brass Mail", "kind": "Armor",
+      "price": 450, "defenseBonus": 7, "hpBonus": 25
+    },
+    {
+      "id": "wolf_pelt", "name": "Wolf Pelt", "kind": "Material", "price": 18
+    },
+    {
+      "id": "ore_chunk", "name": "Ore Chunk", "kind": "Material", "price": 35
+    }
+  ]
+}

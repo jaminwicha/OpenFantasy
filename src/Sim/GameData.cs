@@ -57,6 +57,63 @@ public sealed class AbilityDef
     public bool UsesMagic { get; set; }
 }
 
+public enum ItemKind
+{
+    Consumable,
+    Weapon,
+    Armor,
+    Material,
+}
+
+public sealed class ItemDef
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public ItemKind Kind { get; set; }
+    /// <summary>Shop buy price in gil; sell price is half.</summary>
+    public int Price { get; set; }
+    public int HealHp { get; set; }
+    public int HealMp { get; set; }
+    public int AttackBonus { get; set; }
+    public int MagicBonus { get; set; }
+    public int DefenseBonus { get; set; }
+    public int HpBonus { get; set; }
+}
+
+public sealed class DropDef
+{
+    public string Item { get; set; } = "";
+    public int ChancePercent { get; set; }
+}
+
+public sealed class NpcDef
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Sprite { get; set; } = "";
+    public int TileX { get; set; }
+    public int TileY { get; set; }
+    public string Dialog { get; set; } = "";
+    public List<string> Shop { get; set; } = new();
+    public List<string> Quests { get; set; } = new();
+}
+
+public sealed class QuestDef
+{
+    public string Id { get; set; } = "";
+    public string Name { get; set; } = "";
+    public string Giver { get; set; } = "";
+    public string Offer { get; set; } = "";
+    public string TurnIn { get; set; } = "";
+    public string TargetMonster { get; set; } = "";
+    public int TargetCount { get; set; }
+    public int RewardXp { get; set; }
+    public int RewardGil { get; set; }
+    public string RewardItem { get; set; } = "";
+    public int MinLevel { get; set; } = 1;
+}
+
 public sealed class MonsterAttackDef
 {
     public int Power { get; set; }
@@ -79,11 +136,15 @@ public sealed class MonsterDef
     /// <summary>Distance (units) from home beyond which the monster gives up and returns.</summary>
     public int LeashRange { get; set; }
     public MonsterAttackDef Attack { get; set; } = new();
+    public List<DropDef> Drops { get; set; } = new();
 }
 
 public sealed class ClassesFile { public List<ClassDef> Classes { get; set; } = new(); }
 public sealed class AbilitiesFile { public List<AbilityDef> Abilities { get; set; } = new(); }
 public sealed class MonstersFile { public List<MonsterDef> Monsters { get; set; } = new(); }
+public sealed class ItemsFile { public List<ItemDef> Items { get; set; } = new(); }
+public sealed class NpcsFile { public List<NpcDef> Npcs { get; set; } = new(); }
+public sealed class QuestsFile { public List<QuestDef> Quests { get; set; } = new(); }
 
 /// <summary>All static content, indexed and validated.</summary>
 public sealed class GameData
@@ -91,10 +152,15 @@ public sealed class GameData
     public Dictionary<string, ClassDef> Classes { get; } = new();
     public Dictionary<string, AbilityDef> Abilities { get; } = new();
     public Dictionary<string, MonsterDef> Monsters { get; } = new();
+    public Dictionary<string, ItemDef> Items { get; } = new();
+    public Dictionary<string, NpcDef> Npcs { get; } = new();
+    public Dictionary<string, QuestDef> Quests { get; } = new();
     public WorldMap Map { get; }
 
     /// <summary>Stable, sorted class id list (menu order, determinism).</summary>
     public List<string> ClassOrder { get; } = new();
+    /// <summary>Stable, sorted npc id list (spawn order determinism).</summary>
+    public List<string> NpcOrder { get; } = new();
 
     public static readonly JsonSerializerOptions JsonOptions = new()
     {
@@ -115,14 +181,34 @@ public sealed class GameData
         var classes = LoadFile<ClassesFile>(Path.Combine(dataDir, "classes.json"));
         var abilities = LoadFile<AbilitiesFile>(Path.Combine(dataDir, "abilities.json"));
         var monsters = LoadFile<MonstersFile>(Path.Combine(dataDir, "monsters.json"));
+        var items = LoadFile<ItemsFile>(Path.Combine(dataDir, "items.json"));
+        var npcs = LoadFile<NpcsFile>(Path.Combine(dataDir, "npcs.json"));
+        var quests = LoadFile<QuestsFile>(Path.Combine(dataDir, "quests.json"));
         var map = WorldMap.LoadFromFile(Path.Combine(dataDir, "world.json"));
-        return FromParts(classes, abilities, monsters, map);
+        return FromParts(classes, abilities, monsters, map, items, npcs, quests);
     }
 
     /// <summary>Assemble + validate from already-parsed parts (used by tests).</summary>
-    public static GameData FromParts(ClassesFile classes, AbilitiesFile abilities, MonstersFile monsters, WorldMap map)
+    public static GameData FromParts(ClassesFile classes, AbilitiesFile abilities, MonstersFile monsters, WorldMap map,
+        ItemsFile? items = null, NpcsFile? npcs = null, QuestsFile? quests = null)
     {
         var data = new GameData(map);
+        foreach (var it in (items ?? new ItemsFile()).Items)
+        {
+            if (!data.Items.TryAdd(it.Id, it))
+                throw new DataValidationException($"items.json: duplicate item id '{it.Id}'");
+        }
+        foreach (var n in (npcs ?? new NpcsFile()).Npcs)
+        {
+            if (!data.Npcs.TryAdd(n.Id, n))
+                throw new DataValidationException($"npcs.json: duplicate npc id '{n.Id}'");
+        }
+        foreach (var q in (quests ?? new QuestsFile()).Quests)
+        {
+            if (!data.Quests.TryAdd(q.Id, q))
+                throw new DataValidationException($"quests.json: duplicate quest id '{q.Id}'");
+        }
+        data.NpcOrder.AddRange(data.Npcs.Keys.OrderBy(k => k, StringComparer.Ordinal));
         foreach (var a in abilities.Abilities)
         {
             if (!data.Abilities.TryAdd(a.Id, a))
@@ -211,6 +297,53 @@ public static class DataValidator
             RequireRange(m.Attack.Power, 1, 100, $"monsters.json[{id}].attack.power");
             RequireRange(m.Attack.Range, 8, SimConstants.MaxAbilityRange, $"monsters.json[{id}].attack.range");
             RequireRange(m.Attack.AtbCost, 1, SimConstants.AtbMax, $"monsters.json[{id}].attack.atbCost");
+        }
+
+        foreach (var (id, m) in data.Monsters)
+        {
+            foreach (var drop in m.Drops)
+            {
+                Require(data.Items.ContainsKey(drop.Item),
+                    $"monsters.json[{id}]: drop references unknown item '{drop.Item}'");
+                RequireRange(drop.ChancePercent, 1, 100, $"monsters.json[{id}].drops[{drop.Item}].chancePercent");
+            }
+        }
+
+        foreach (var (id, it) in data.Items)
+        {
+            Require(it.Name.Length > 0, $"items.json[{id}]: name is required");
+            RequireRange(it.Price, 1, 100000, $"items.json[{id}].price");
+            Require(it.HealHp >= 0 && it.HealMp >= 0, $"items.json[{id}]: heal values must be ≥ 0");
+            if (it.Kind == ItemKind.Consumable)
+                Require(it.HealHp + it.HealMp > 0, $"items.json[{id}]: consumable must heal something");
+        }
+
+        foreach (var (id, n) in data.Npcs)
+        {
+            Require(n.Name.Length > 0, $"npcs.json[{id}]: name is required");
+            Require(n.Sprite.Length > 0, $"npcs.json[{id}]: sprite is required");
+            Require(data.Map.IsWalkableTile(n.TileX, n.TileY),
+                $"npcs.json[{id}]: tile ({n.TileX},{n.TileY}) is not walkable");
+            foreach (var itemId in n.Shop)
+                Require(data.Items.ContainsKey(itemId), $"npcs.json[{id}]: unknown shop item '{itemId}'");
+            foreach (var questId in n.Quests)
+                Require(data.Quests.ContainsKey(questId), $"npcs.json[{id}]: unknown quest '{questId}'");
+        }
+
+        foreach (var (id, q) in data.Quests)
+        {
+            Require(q.Name.Length > 0, $"quests.json[{id}]: name is required");
+            Require(data.Npcs.ContainsKey(q.Giver), $"quests.json[{id}]: unknown giver '{q.Giver}'");
+            Require(data.Npcs[q.Giver].Quests.Contains(id),
+                $"quests.json[{id}]: giver '{q.Giver}' does not list this quest");
+            Require(data.Monsters.ContainsKey(q.TargetMonster),
+                $"quests.json[{id}]: unknown target monster '{q.TargetMonster}'");
+            RequireRange(q.TargetCount, 1, 999, $"quests.json[{id}].targetCount");
+            Require(q.RewardXp >= 0 && q.RewardGil >= 0, $"quests.json[{id}]: rewards must be ≥ 0");
+            if (q.RewardItem.Length > 0)
+                Require(data.Items.ContainsKey(q.RewardItem),
+                    $"quests.json[{id}]: unknown reward item '{q.RewardItem}'");
+            RequireRange(q.MinLevel, 1, SimConstants.MaxLevel, $"quests.json[{id}].minLevel");
         }
 
         ValidateMap(data);

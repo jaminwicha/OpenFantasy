@@ -5,21 +5,66 @@
       "stats": { "hp": 30, "mp": 0, "attack": 8, "magic": 0, "defense": 2, "speed": 6 },
       "moveSpeed": 3, "xpReward": 40, "gilMin": 4, "gilMax": 10,
       "aggroRange": 64, "leashRange": 256,
-      "attack": { "power": 10, "range": 40, "atbCost": 450 }
+      "attack": { "power": 10, "range": 40, "atbCost": 450 },
+      "drops": [
+        { "item": "potion", "chancePercent": 12 }
+      ]
     },
     {
       "id": "bramble_wolf", "name": "Bramble Wolf", "level": 3,
       "stats": { "hp": 62, "mp": 0, "attack": 14, "magic": 0, "defense": 5, "speed": 10 },
       "moveSpeed": 5, "xpReward": 95, "gilMin": 10, "gilMax": 22,
       "aggroRange": 128, "leashRange": 384,
-      "attack": { "power": 10, "range": 44, "atbCost": 400 }
+      "attack": { "power": 10, "range": 44, "atbCost": 400 },
+      "drops": [
+        { "item": "wolf_pelt", "chancePercent": 35 },
+        { "item": "potion", "chancePercent": 10 }
+      ]
     },
     {
       "id": "rust_golem", "name": "Rust Golem", "level": 6,
       "stats": { "hp": 240, "mp": 0, "attack": 22, "magic": 0, "defense": 12, "speed": 5 },
       "moveSpeed": 2, "xpReward": 420, "gilMin": 60, "gilMax": 120,
       "aggroRange": 96, "leashRange": 320,
-      "attack": { "power": 14, "range": 52, "atbCost": 700 }
+      "attack": { "power": 14, "range": 52, "atbCost": 700 },
+      "drops": [
+        { "item": "ore_chunk", "chancePercent": 50 },
+        { "item": "brass_mail", "chancePercent": 8 }
+      ]
+    },
+    {
+      "id": "cave_bat", "name": "Cave Bat", "level": 5,
+      "stats": { "hp": 55, "mp": 0, "attack": 17, "magic": 0, "defense": 4, "speed": 13 },
+      "moveSpeed": 6, "xpReward": 160, "gilMin": 14, "gilMax": 30,
+      "aggroRange": 144, "leashRange": 416,
+      "attack": { "power": 9, "range": 40, "atbCost": 330 },
+      "drops": [
+        { "item": "ether", "chancePercent": 14 }
+      ]
+    },
+    {
+      "id": "ore_slime", "name": "Ore Slime", "level": 7,
+      "stats": { "hp": 200, "mp": 0, "attack": 19, "magic": 0, "defense": 16, "speed": 4 },
+      "moveSpeed": 2, "xpReward": 340, "gilMin": 40, "gilMax": 90,
+      "aggroRange": 80, "leashRange": 288,
+      "attack": { "power": 12, "range": 44, "atbCost": 600 },
+      "drops": [
+        { "item": "ore_chunk", "chancePercent": 60 },
+        { "item": "tonic", "chancePercent": 15 },
+        { "item": "iron_blade", "chancePercent": 5 }
+      ]
+    },
+    {
+      "id": "magitek_warden", "name": "Magitek Warden", "level": 9,
+      "stats": { "hp": 900, "mp": 0, "attack": 30, "magic": 0, "defense": 18, "speed": 7 },
+      "moveSpeed": 3, "xpReward": 1600, "gilMin": 300, "gilMax": 500,
+      "aggroRange": 128, "leashRange": 384,
+      "attack": { "power": 16, "range": 56, "atbCost": 550 },
+      "drops": [
+        { "item": "warden_core", "chancePercent": 20 },
+        { "item": "crystal_rod", "chancePercent": 30 },
+        { "item": "tonic", "chancePercent": 80 }
+      ]
     }
   ]
 }

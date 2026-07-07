@@ -10,7 +10,18 @@ public enum Op : byte
     Input = 4,      // C→S: InputCommand
     Snapshot = 5,   // S→C: tick, hash, entities, events
     Chat = 6,       // C→S: text · S→C: speaker name + text
+    PlayerState = 7, // S→C (owner only): inventory, equipment, quests, party
+    Interact = 8,    // C→S: npc entity id
+    NpcInfo = 9,     // S→C: dialog, shop, quest offers for this player
+    ItemOp = 10,     // C→S: buy/sell/use/equip/unequip
+    QuestOp = 11,    // C→S: accept/complete
 }
+
+public enum ItemOpKind : byte { Buy = 0, Sell = 1, Use = 2, Equip = 3, Unequip = 4 }
+public enum QuestOpKind : byte { Accept = 0, Complete = 1 }
+
+/// <summary>Quest status as shown by an NPC for one player.</summary>
+public enum NpcQuestStatus : byte { Locked = 0, Offerable = 1, Active = 2, ReadyToTurnIn = 3, Done = 4 }
 
 /// <summary>What a client knows about one entity, as described by snapshots.</summary>
 public sealed class NetEntityState
@@ -120,7 +131,146 @@ public static class Protocol
     public static (string speaker, string text) ReadChat(BinaryReader r)
         => (r.ReadString(), r.ReadString());
 
-    public static byte[] WriteSnapshot(World world)
+    public static byte[] WritePlayerState(World world, Entity player)
+    {
+        using var ms = new MemoryStream();
+        using var w = new BinaryWriter(ms);
+        w.Write((byte)Op.PlayerState);
+        w.Write(player.WeaponId);
+        w.Write(player.ArmorId);
+        w.Write((byte)player.Inventory.Count);
+        foreach (var stack in player.Inventory)
+        {
+            w.Write(stack.ItemId);
+            w.Write((ushort)stack.Count);
+        }
+        var questIds = player.QuestLog.Keys.OrderBy(k => k, StringComparer.Ordinal).ToList();
+        w.Write((byte)questIds.Count);
+        foreach (string questId in questIds)
+        {
+            var progress = player.QuestLog[questId];
+            w.Write(questId);
+            w.Write((byte)progress.State);
+            w.Write((ushort)progress.Kills);
+        }
+        var members = player.PartyId >= 0 ? world.PartyMembers(player.PartyId) : Array.Empty<int>();
+        w.Write((byte)members.Count);
+        foreach (int memberId in members)
+            w.Write(memberId);
+        return ms.ToArray();
+    }
+
+    public sealed class PlayerStateMsg
+    {
+        public string WeaponId = "";
+        public string ArmorId = "";
+        public List<(string itemId, int count)> Inventory = new();
+        public List<(string questId, byte state, int kills)> Quests = new();
+        public List<int> PartyMemberIds = new();
+    }
+
+    public static PlayerStateMsg ReadPlayerState(BinaryReader r)
+    {
+        var msg = new PlayerStateMsg { WeaponId = r.ReadString(), ArmorId = r.ReadString() };
+        int items = r.ReadByte();
+        for (int i = 0; i < items; i++)
+            msg.Inventory.Add((r.ReadString(), r.ReadUInt16()));
+        int quests = r.ReadByte();
+        for (int i = 0; i < quests; i++)
+            msg.Quests.Add((r.ReadString(), r.ReadByte(), r.ReadUInt16()));
+        int members = r.ReadByte();
+        for (int i = 0; i < members; i++)
+            msg.PartyMemberIds.Add(r.ReadInt32());
+        return msg;
+    }
+
+    public static byte[] WriteInteract(int npcEntityId)
+    {
+        using var ms = new MemoryStream();
+        using var w = new BinaryWriter(ms);
+        w.Write((byte)Op.Interact);
+        w.Write(npcEntityId);
+        return ms.ToArray();
+    }
+
+    public static byte[] WriteNpcInfo(int npcEntityId, NpcDef npc,
+        List<(string questId, string name, string text, NpcQuestStatus status)> quests)
+    {
+        using var ms = new MemoryStream();
+        using var w = new BinaryWriter(ms);
+        w.Write((byte)Op.NpcInfo);
+        w.Write(npcEntityId);
+        w.Write(npc.Name);
+        w.Write(npc.Dialog);
+        w.Write((byte)npc.Shop.Count);
+        foreach (string itemId in npc.Shop)
+            w.Write(itemId);
+        w.Write((byte)quests.Count);
+        foreach (var (questId, name, text, status) in quests)
+        {
+            w.Write(questId);
+            w.Write(name);
+            w.Write(text);
+            w.Write((byte)status);
+        }
+        return ms.ToArray();
+    }
+
+    public sealed class NpcInfoMsg
+    {
+        public int NpcEntityId;
+        public string Name = "";
+        public string Dialog = "";
+        public List<string> ShopItems = new();
+        public List<(string questId, string name, string text, NpcQuestStatus status)> Quests = new();
+    }
+
+    public static NpcInfoMsg ReadNpcInfo(BinaryReader r)
+    {
+        var msg = new NpcInfoMsg
+        {
+            NpcEntityId = r.ReadInt32(),
+            Name = r.ReadString(),
+            Dialog = r.ReadString(),
+        };
+        int shop = r.ReadByte();
+        for (int i = 0; i < shop; i++)
+            msg.ShopItems.Add(r.ReadString());
+        int quests = r.ReadByte();
+        for (int i = 0; i < quests; i++)
+            msg.Quests.Add((r.ReadString(), r.ReadString(), r.ReadString(), (NpcQuestStatus)r.ReadByte()));
+        return msg;
+    }
+
+    public static byte[] WriteItemOp(ItemOpKind op, string itemId, int npcEntityId)
+    {
+        using var ms = new MemoryStream();
+        using var w = new BinaryWriter(ms);
+        w.Write((byte)Op.ItemOp);
+        w.Write((byte)op);
+        w.Write(itemId);
+        w.Write(npcEntityId);
+        return ms.ToArray();
+    }
+
+    public static (ItemOpKind op, string itemId, int npcEntityId) ReadItemOp(BinaryReader r)
+        => ((ItemOpKind)r.ReadByte(), r.ReadString(), r.ReadInt32());
+
+    public static byte[] WriteQuestOp(QuestOpKind op, string questId, int npcEntityId)
+    {
+        using var ms = new MemoryStream();
+        using var w = new BinaryWriter(ms);
+        w.Write((byte)Op.QuestOp);
+        w.Write((byte)op);
+        w.Write(questId);
+        w.Write(npcEntityId);
+        return ms.ToArray();
+    }
+
+    public static (QuestOpKind op, string questId, int npcEntityId) ReadQuestOp(BinaryReader r)
+        => ((QuestOpKind)r.ReadByte(), r.ReadString(), r.ReadInt32());
+
+    public static byte[] WriteSnapshot(World world, IReadOnlyList<SimEvent> events)
     {
         using var ms = new MemoryStream();
         using var w = new BinaryWriter(ms);
@@ -149,8 +299,8 @@ public static class Protocol
             w.Write(e.Alive);
         }
 
-        w.Write((ushort)world.Events.Count);
-        foreach (var ev in world.Events)
+        w.Write((ushort)events.Count);
+        foreach (var ev in events)
         {
             w.Write((byte)ev.Kind);
             w.Write(ev.SourceId);

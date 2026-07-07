@@ -15,10 +15,17 @@ public partial class ClientNode : Node
     [Signal] public delegate void ChatReceivedEventHandler(string speaker, string text);
     [Signal] public delegate void SnapshotAppliedEventHandler(int tick);
     [Signal] public delegate void GameEventEventHandler(int kind, int sourceId, int targetId, int value, string abilityId);
+    [Signal] public delegate void PlayerStateChangedEventHandler();
+    [Signal] public delegate void NpcInfoReceivedEventHandler();
 
     public int LocalEntityId { get; private set; } = -1;
     public int ServerTick { get; private set; }
     public readonly Dictionary<int, NetEntityState> Entities = new();
+
+    /// <summary>Latest owner-only state (inventory/equipment/quests/party).</summary>
+    public Protocol.PlayerStateMsg PlayerState { get; private set; } = new();
+    /// <summary>Latest NPC interaction payload (valid after NpcInfoReceived).</summary>
+    public Protocol.NpcInfoMsg? NpcInfo { get; private set; }
 
     private ENetMultiplayerPeer _peer = new();
     private string _account = "";
@@ -141,6 +148,36 @@ public partial class ClientNode : Node
                 EmitSignal(SignalName.ChatReceived, speaker, text);
                 break;
             }
+            case Op.PlayerState:
+            {
+                PlayerState = Protocol.ReadPlayerState(r);
+                EmitSignal(SignalName.PlayerStateChanged);
+                break;
+            }
+            case Op.NpcInfo:
+            {
+                NpcInfo = Protocol.ReadNpcInfo(r);
+                EmitSignal(SignalName.NpcInfoReceived);
+                break;
+            }
         }
+    }
+
+    public void SendInteract(int npcEntityId)
+    {
+        if (LocalEntityId < 0) return;
+        _peer.PutPacket(Protocol.WriteInteract(npcEntityId));
+    }
+
+    public void SendItemOp(ItemOpKind op, string itemId, int npcEntityId = -1)
+    {
+        if (LocalEntityId < 0) return;
+        _peer.PutPacket(Protocol.WriteItemOp(op, itemId, npcEntityId));
+    }
+
+    public void SendQuestOp(QuestOpKind op, string questId, int npcEntityId)
+    {
+        if (LocalEntityId < 0) return;
+        _peer.PutPacket(Protocol.WriteQuestOp(op, questId, npcEntityId));
     }
 }

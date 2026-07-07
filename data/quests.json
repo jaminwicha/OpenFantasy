@@ -1,0 +1,31 @@
+{
+  "quests": [
+    {
+      "id": "cull_wisps", "name": "Meadow Cull",
+      "giver": "elder_bran",
+      "offer": "The leaf wisps choke the meadow paths. Thin them out — eight should do.",
+      "turnIn": "The paths breathe easier already. Take this for your trouble.",
+      "targetMonster": "leaf_wisp", "targetCount": 8,
+      "rewardXp": 250, "rewardGil": 80, "rewardItem": "leather_vest",
+      "minLevel": 1
+    },
+    {
+      "id": "wolf_menace", "name": "The Bramble Pack",
+      "giver": "elder_bran",
+      "offer": "Bramble wolves have taken the east woods. Six pelts' worth of culling, if you can.",
+      "turnIn": "Fewer howls tonight. Brasshollow thanks you.",
+      "targetMonster": "bramble_wolf", "targetCount": 6,
+      "rewardXp": 700, "rewardGil": 220, "rewardItem": "tonic",
+      "minLevel": 3
+    },
+    {
+      "id": "the_warden", "name": "Heart of the Mine",
+      "giver": "elder_bran",
+      "offer": "Something old woke in the Hollow Mine — a Magitek Warden from the war. End it.",
+      "turnIn": "So the war's last sentry finally rests. Keep its core; you earned it.",
+      "targetMonster": "magitek_warden", "targetCount": 1,
+      "rewardXp": 2200, "rewardGil": 800, "rewardItem": "warden_core",
+      "minLevel": 6
+    }
+  ]
+}

@@ -145,8 +145,208 @@ public static class SelfTest
             Assert(p.Level > 1 || p.Xp > xpBefore, "kill granted no xp");
         });
 
+        // ------------------------------------------------------------- M2 cases
+
+        Case("m2 content: items/npcs/quests validate; boss + mine spawners exist", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            Assert(data.Items.Count >= 10, "expected ≥10 items");
+            Assert(data.Npcs.Count >= 2, "expected ≥2 npcs");
+            Assert(data.Quests.Count >= 3, "expected ≥3 quests");
+            Assert(data.Monsters.ContainsKey("magitek_warden"), "boss missing");
+            Assert(data.Map.Spawners.Any(s => s.Monster == "magitek_warden"), "boss spawner missing");
+            Assert(data.Map.Spawners.Any(s => s.Monster == "cave_bat"), "cave bat spawner missing");
+            Assert(data.Map.Spawners.Any(s => s.Monster == "ore_slime"), "ore slime spawner missing");
+        });
+
+        Case("m2 content: broken quest reference is rejected readably", () =>
+        {
+            var classes = Parse<ClassesFile>(Path.Combine(dataDir, "classes.json"));
+            var abilities = Parse<AbilitiesFile>(Path.Combine(dataDir, "abilities.json"));
+            var monsters = Parse<MonstersFile>(Path.Combine(dataDir, "monsters.json"));
+            var items = Parse<ItemsFile>(Path.Combine(dataDir, "items.json"));
+            var npcs = Parse<NpcsFile>(Path.Combine(dataDir, "npcs.json"));
+            var quests = Parse<QuestsFile>(Path.Combine(dataDir, "quests.json"));
+            var map = WorldMap.LoadFromFile(Path.Combine(dataDir, "world.json"));
+            quests.Quests[0].TargetMonster = "no_such_monster";
+            try
+            {
+                GameData.FromParts(classes, abilities, monsters, map, items, npcs, quests);
+                throw new Exception("validator accepted unknown target monster");
+            }
+            catch (DataValidationException e)
+            {
+                Assert(e.Message.Contains("no_such_monster"), $"error not readable: {e.Message}");
+            }
+        });
+
+        Case("m2 equipment: equip/unequip changes effective stats and persists", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 5);
+            var p = world.AddPlayer("Smith", "squire");
+            int baseAttack = p.Attack;
+            Assert(world.AddItem(p, "bronze_sword"), "add failed");
+            AssertEqual(world.CountItem(p, "bronze_sword"), 1, "inventory count");
+            Assert(world.EquipItem(p, "bronze_sword").StartsWith("Equipped"), "equip failed");
+            AssertEqual(p.Attack, baseAttack + 4, "attack bonus applied");
+            AssertEqual(world.CountItem(p, "bronze_sword"), 0, "item moved out of pack");
+
+            var save = world.SnapshotSave(p);
+            var world2 = new World(data, 6);
+            var p2 = world2.AddPlayer("Smith", "squire", save);
+            AssertEqual(p2.Attack, baseAttack + 4, "equipment survived save round-trip");
+
+            Assert(world.UnequipItem(p, "bronze_sword").StartsWith("Unequipped"), "unequip failed");
+            AssertEqual(p.Attack, baseAttack, "attack restored");
+        });
+
+        Case("m2 items: buy, use, sell against the vendor", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 8);
+            var p = world.AddPlayer("Shopper", "squire");
+            var vendor = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "marla");
+            p.X = vendor.X + 16;
+            p.Y = vendor.Y;
+            p.Gil = 100;
+
+            Assert(world.BuyItem(p, vendor.Id, "potion").StartsWith("Bought"), "buy failed");
+            AssertEqual(p.Gil, 70, "gil deducted");
+            Assert(world.BuyItem(p, vendor.Id, "iron_blade").StartsWith("Not enough"), "overspend allowed");
+
+            p.Hp = 1;
+            Assert(world.UseItem(p, "potion").StartsWith("Used"), "use failed");
+            Assert(p.Hp > 1, "potion healed nothing");
+            AssertEqual(world.CountItem(p, "potion"), 0, "potion not consumed");
+
+            Assert(world.AddItem(p, "wolf_pelt"), "add pelt");
+            Assert(world.SellItem(p, vendor.Id, "wolf_pelt").StartsWith("Sold"), "sell failed");
+            AssertEqual(p.Gil, 79, "sell price credited (half of 18 = 9)");
+        });
+
+        Case("m2 quests: accept → kill credit → complete → reward", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 9);
+            var p = world.AddPlayer("Warden", "squire");
+            var elder = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "elder_bran");
+            p.X = elder.X + 16;
+            p.Y = elder.Y;
+
+            Assert(world.AcceptQuest(p, elder.Id, "cull_wisps").StartsWith("Quest accepted"), "accept failed");
+            Assert(world.CompleteQuest(p, elder.Id, "cull_wisps").StartsWith("Not done"), "premature completion");
+
+            var quest = data.Quests["cull_wisps"];
+            // Simulate kill credit directly (combat integration already proven).
+            for (int i = 0; i < quest.TargetCount; i++)
+            {
+                // internal path: use reflection-free public seam — kill counting runs in the death branch,
+                // so emulate via CountQuestKill through a real monster kill is heavy; instead assert the
+                // counter through the public quest API by manipulating the log the way the sim does.
+                p.QuestLog["cull_wisps"].Kills++;
+            }
+            int gilBefore = p.Gil;
+            string result = world.CompleteQuest(p, elder.Id, "cull_wisps");
+            Assert(result.StartsWith("Quest complete"), $"turn-in failed: {result}");
+            AssertEqual(p.Gil, gilBefore + quest.RewardGil, "gil reward");
+            AssertEqual(world.CountItem(p, quest.RewardItem), 1, "item reward");
+            Assert(p.Level > 1, "xp reward should have leveled a fresh character");
+            Assert(world.CompleteQuest(p, elder.Id, "cull_wisps").StartsWith("That deed"), "double turn-in allowed");
+        });
+
+        Case("m2 parties: invite/accept/leave and shared kill credit", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 11);
+            var a = world.AddPlayer("Alpha", "squire");
+            var b = world.AddPlayer("Beta", "mage");
+
+            Assert(world.PartyInvite(a, "Beta").StartsWith("Invited"), "invite failed");
+            var (acceptResult, inviter) = world.PartyAccept(b);
+            Assert(acceptResult.StartsWith("You joined"), $"accept failed: {acceptResult}");
+            Assert(inviter?.Id == a.Id, "inviter mismatch");
+            AssertEqual(world.PartyMembers(a.PartyId).Count, 2, "party size");
+
+            // Party member near a tagged kill gets quest credit + xp.
+            var elder = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "elder_bran");
+            b.X = elder.X;
+            b.Y = elder.Y;
+            world.AcceptQuest(b, elder.Id, "cull_wisps");
+
+            var wisp = world.EntitiesInOrder().First(e => e.IsMonster && e.ArchetypeId == "leaf_wisp");
+            a.X = wisp.X + 8; a.Y = wisp.Y;
+            b.X = wisp.X - 8; b.Y = wisp.Y;
+            int bXpBefore = b.Xp;
+            // A tags and kills the wisp via the real combat path.
+            wisp.Hp = 1;
+            for (int t = 0; t < 120 && wisp.Alive; t++)
+            {
+                // Resend each tick: ability requests are consumed even when ATB is still filling.
+                world.SetPlayerInput(a.Id, new InputCommand { Seq = t, MoveX = 0, MoveY = 0, AbilitySlot = 0, TargetId = wisp.Id });
+                world.Step();
+            }
+            Assert(!wisp.Alive, "wisp survived");
+            Assert(b.Xp > bXpBefore || b.Level > 1, "party member got no shared xp");
+            AssertEqual(b.QuestLog["cull_wisps"].Kills, 1, "party member got no quest credit");
+
+            Assert(world.PartyLeave(b).StartsWith("You left"), "leave failed");
+            Assert(a.PartyId == -1 && b.PartyId == -1, "1-member party should dissolve");
+        });
+
+        Case("m2 determinism: hash stable with items/quests/parties active", () =>
+        {
+            ulong h1 = RunM2ScriptedWorld(dataDir, 777);
+            ulong h2 = RunM2ScriptedWorld(dataDir, 777);
+            AssertEqual((long)h1, (long)h2, "M2 state hash diverged");
+        });
+
         log($"selftest: {passed} passed, {failed} failed");
         return failed == 0;
+    }
+
+    /// <summary>Scripted world exercising M2 systems (shop, equip, quest, party) plus combat for 600 ticks.</summary>
+    private static ulong RunM2ScriptedWorld(string dataDir, ulong seed)
+    {
+        var data = GameData.LoadFromDirectory(dataDir);
+        var world = new World(data, seed);
+        var p1 = world.AddPlayer("Alpha", "squire");
+        var p2 = world.AddPlayer("Beta", "mage");
+        var vendor = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "marla");
+        var elder = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "elder_bran");
+
+        p1.Gil = 500;
+        p1.X = vendor.X + 16; p1.Y = vendor.Y;
+        world.BuyItem(p1, vendor.Id, "bronze_sword");
+        world.EquipItem(p1, "bronze_sword");
+        world.BuyItem(p1, vendor.Id, "potion");
+        p1.X = elder.X + 16; p1.Y = elder.Y;
+        world.AcceptQuest(p1, elder.Id, "cull_wisps");
+        world.PartyInvite(p1, "Beta");
+        world.PartyAccept(p2);
+
+        for (int t = 0; t < 600; t++)
+        {
+            world.SetPlayerInput(p1.Id, new InputCommand
+            {
+                Seq = t,
+                MoveX = (sbyte)(t % 5 == 0 ? 1 : 0),
+                MoveY = (sbyte)(t % 3 == 0 ? 1 : t % 7 == 0 ? -1 : 0),
+                AbilitySlot = (sbyte)(t % 30 == 0 ? 0 : -1),
+                TargetId = NearestMonsterId(world, p1),
+            });
+            world.SetPlayerInput(p2.Id, new InputCommand
+            {
+                Seq = t,
+                MoveX = (sbyte)(t % 4 == 0 ? 1 : 0),
+                MoveY = (sbyte)(t % 6 == 0 ? 1 : 0),
+                AbilitySlot = (sbyte)(t % 45 == 0 ? 0 : -1),
+                TargetId = NearestMonsterId(world, p2),
+            });
+            world.Step();
+            if (t == 300) world.UseItem(p1, "potion");
+        }
+        return world.StateHash();
     }
 
     /// <summary>Two players with scripted inputs fighting/walking for 1000 ticks; returns final hash.</summary>

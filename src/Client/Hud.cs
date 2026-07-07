@@ -24,6 +24,7 @@ public partial class Hud : CanvasLayer
 
     private GameData _data = null!;
     private ClassDef _classDef = null!;
+    private VBoxContainer _partyBox = null!;
 
     public bool ChatFocused => _chatEntry.HasFocus();
 
@@ -36,6 +37,41 @@ public partial class Hud : CanvasLayer
         BuildTargetFrame();
         BuildChat();
         BuildDeathOverlay();
+        BuildPartyFrame();
+    }
+
+    private void BuildPartyFrame()
+    {
+        _partyBox = new VBoxContainer { Position = new Vector2(12, 112) };
+        _partyBox.AddThemeConstantOverride("separation", 4);
+        AddChild(_partyBox);
+    }
+
+    /// <summary>Rebuilds the party frame from the latest PlayerState + snapshot.</summary>
+    public void UpdateParty(Net.ClientNode client)
+    {
+        foreach (var child in _partyBox.GetChildren())
+            child.QueueFree();
+
+        var members = client.PlayerState.PartyMemberIds;
+        if (members.Count == 0) return;
+
+        foreach (int memberId in members)
+        {
+            if (memberId == client.LocalEntityId) continue;
+            var panel = UiTheme.MakePanel();
+            panel.CustomMinimumSize = new Vector2(150, 38);
+            string name = client.Entities.TryGetValue(memberId, out var e) ? e.Name : "…";
+            var label = UiTheme.MakeLabel(name, 11);
+            label.Position = new Vector2(10, 4);
+            panel.AddChild(label);
+            var (barRoot, fill) = UiTheme.MakeBar(UiTheme.HpColor, new Vector2(128, 6));
+            barRoot.Position = new Vector2(10, 24);
+            panel.AddChild(barRoot);
+            float frac = e is { MaxHp: > 0 } ? (float)e.Hp / e.MaxHp : 1f;
+            Callable.From(() => UiTheme.SetBarFraction(fill, frac)).CallDeferred();
+            _partyBox.AddChild(panel);
+        }
     }
 
     // ------------------------------------------------------------------ build
