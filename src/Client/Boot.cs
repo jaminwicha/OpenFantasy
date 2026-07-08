@@ -47,12 +47,13 @@ public partial class Boot : Control
                 Port = ReadPortArg(args),
             };
             GetTree().Root.CallDeferred(Node.MethodName.AddChild, game);
-            GetTree().CreateTimer(10.0).Timeout += () =>
+            // Anchor the timer to the game node — Boot frees itself below.
+            game.Ready += () => game.GetTree().CreateTimer(10.0).Timeout += () =>
             {
-                var img = GetViewport().GetTexture().GetImage();
+                var img = game.GetViewport().GetTexture().GetImage();
                 img.SavePng("user://auto_screenshot.png");
                 GD.Print("[auto] screenshot saved to user://auto_screenshot.png");
-                GetTree().Quit(0);
+                game.GetTree().Quit(0);
             };
             QueueFree();
             return;
