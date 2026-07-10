@@ -81,10 +81,20 @@ public sealed partial class World
         e.Mp = e.MaxMp;
 
         (e.X, e.Y) = SpawnPointUnits();
-        if (save is { } s && Data.Map.IsWalkableUnits(s.X, s.Y))
+        if (save is { } s)
         {
-            e.X = s.X;
-            e.Y = s.Y;
+            var savedVehicle = (VehicleKind)Math.Clamp(s.Vehicle, 0, (int)VehicleKind.Airship);
+            if (savedVehicle != VehicleKind.None && UnitsAllow(s.X, s.Y, savedVehicle))
+            {
+                e.Vehicle = savedVehicle;
+                e.X = s.X;
+                e.Y = s.Y;
+            }
+            else if (Data.Map.IsWalkableUnits(s.X, s.Y))
+            {
+                e.X = s.X;
+                e.Y = s.Y;
+            }
         }
 
         _entities[e.Id] = e;
@@ -126,9 +136,19 @@ public sealed partial class World
             kv => kv.Key,
             kv => new QuestProgress { State = kv.Value.State, Kills = kv.Value.Kills }),
         Appearance = e.Appearance.ToBytes().Select(b => (int)b).ToList(),
+        Vehicle = (int)e.Vehicle,
     };
 
-    /// <summary>Effective stats: class base + level growth + equipment bonuses.</summary>
+    /// <summary>Race identity: (name, maxHp, maxMp, attack, magic, defense, speed) flat modifiers.</summary>
+    public static readonly (string Name, int Hp, int Mp, int Atk, int Mag, int Def, int Spd)[] RaceMods =
+    {
+        ("Human", 0, 0, 0, 0, 0, 0),
+        ("Elf", -8, 4, 0, 3, 0, 2),
+        ("Dwarf", 12, 0, 1, 0, 2, -2),
+        ("Gnome", -4, 8, -2, 1, 0, 2),
+    };
+
+    /// <summary>Effective stats: class base + level growth + race + equipment bonuses.</summary>
     public void RecomputeStats(Entity e)
     {
         var cls = Data.Classes[e.ArchetypeId];
@@ -139,6 +159,14 @@ public sealed partial class World
         e.Magic = cls.BaseStats.Magic + cls.Growth.Magic * lvls;
         e.Defense = cls.BaseStats.Defense + cls.Growth.Defense * lvls;
         e.Speed = cls.BaseStats.Speed + cls.Growth.Speed * lvls;
+
+        var race = RaceMods[Math.Min(e.Appearance.Race, (byte)(RaceMods.Length - 1))];
+        e.MaxHp = Math.Max(1, e.MaxHp + race.Hp);
+        e.MaxMp = Math.Max(0, e.MaxMp + race.Mp);
+        e.Attack = Math.Max(1, e.Attack + race.Atk);
+        e.Magic = Math.Max(0, e.Magic + race.Mag);
+        e.Defense = Math.Max(0, e.Defense + race.Def);
+        e.Speed = Math.Max(1, e.Speed + race.Spd);
 
         foreach (string equipped in new[] { e.WeaponId, e.ArmorId })
         {
@@ -172,7 +200,7 @@ public sealed partial class World
         {
             int cx = def.Region.X + _rng.Next(def.Region.W);
             int cy = def.Region.Y + _rng.Next(def.Region.H);
-            if (Data.Map.IsWalkableTile(cx, cy) && !Data.Map.SafeZone.Contains(cx, cy))
+            if (Data.Map.IsWalkableTile(cx, cy) && !Data.Map.IsSafeZoneTile(cx, cy))
             {
                 tx = cx;
                 ty = cy;
@@ -183,7 +211,7 @@ public sealed partial class World
         {
             for (int cy = def.Region.Y; cy < def.Region.Y + def.Region.H && tx < 0; cy++)
                 for (int cx = def.Region.X; cx < def.Region.X + def.Region.W; cx++)
-                    if (Data.Map.IsWalkableTile(cx, cy) && !Data.Map.SafeZone.Contains(cx, cy))
+                    if (Data.Map.IsWalkableTile(cx, cy) && !Data.Map.IsSafeZoneTile(cx, cy))
                     {
                         tx = cx;
                         ty = cy;
@@ -278,6 +306,10 @@ public sealed partial class World
         // Movement.
         MoveEntity(e, input.MoveX, input.MoveY, allowSafeZone: true);
 
+        // Explore-quest region checks (cheap, staggered by entity id).
+        if ((Tick + e.Id) % 10 == 0)
+            CheckExploreQuests(e);
+
         // Regen: MP trickle always; HP when out of combat ≥ 5 s.
         if (Tick % SimConstants.TicksPerSecond == 0)
         {
@@ -286,10 +318,11 @@ public sealed partial class World
                 e.Hp = Math.Min(e.MaxHp, e.Hp + 1 + e.MaxHp / 50);
         }
 
-        // Ability (consume the request so it fires once).
+        // Ability (consume the request so it fires once). Not from the deck of a vehicle.
         if (input.AbilitySlot >= 0)
         {
-            TryUsePlayerAbility(e, input.AbilitySlot, input.TargetId);
+            if (e.Vehicle == VehicleKind.None)
+                TryUsePlayerAbility(e, input.AbilitySlot, input.TargetId);
             e.Input.AbilitySlot = -1;
         }
     }
@@ -432,6 +465,7 @@ public sealed partial class World
         foreach (var other in EntitiesInOrder())
         {
             if (!other.IsPlayer || !other.Alive) continue;
+            if (other.Vehicle != VehicleKind.None) continue; // riders are ignored
             if (Data.Map.IsSafeZoneUnits(other.X, other.Y)) continue;
             long d2 = monster.DistanceSquaredTo(other);
             if (d2 <= best)
@@ -543,7 +577,7 @@ public sealed partial class World
         dirY = Math.Sign(dirY);
         if (dirX == 0 && dirY == 0) return;
 
-        int speed = e.MoveSpeed;
+        int speed = e.Vehicle == VehicleKind.None ? e.MoveSpeed : VehicleMoveSpeed(e);
         int stepX = dirX * speed, stepY = dirY * speed;
         if (dirX != 0 && dirY != 0)
         {
@@ -555,9 +589,9 @@ public sealed partial class World
 
         // Per-axis slide.
         int nx = e.X + stepX;
-        if (Walkable(nx, e.Y, allowSafeZone)) e.X = nx;
+        if (CanStand(e, nx, e.Y, allowSafeZone)) e.X = nx;
         int ny = e.Y + stepY;
-        if (Walkable(e.X, ny, allowSafeZone)) e.Y = ny;
+        if (CanStand(e, e.X, ny, allowSafeZone)) e.Y = ny;
 
         // Facing prefers horizontal (FF6 sprites read better side-on).
         if (dirX < 0) e.Facing = Facing.Left;
@@ -572,6 +606,11 @@ public sealed partial class World
         if (!allowSafeZone && Data.Map.IsSafeZoneUnits(ux, uy)) return false;
         return true;
     }
+
+    private bool CanStand(Entity e, int ux, int uy, bool allowSafeZone)
+        => e.Vehicle == VehicleKind.None
+            ? Walkable(ux, uy, allowSafeZone)
+            : UnitsAllow(ux, uy, e.Vehicle);
 
     private static void FaceToward(Entity e, int tx, int ty)
     {
@@ -617,6 +656,7 @@ public sealed partial class World
             Mix((int)e.Ai);
             Mix((int)e.Facing);
             Mix(e.PartyId);
+            Mix((int)e.Vehicle);
             if (e.HasAppearance)
                 foreach (byte ab in e.Appearance.ToBytes())
                     Mix(ab);
@@ -661,6 +701,7 @@ public sealed class CharacterSave
     public string WeaponId { get; set; } = "";
     public string ArmorId { get; set; } = "";
     public Dictionary<string, QuestProgress> Quests { get; set; } = new();
-    /// <summary>Appearance bytes (skin, hairStyle, hairColor, outfit, outfitA, outfitB, acc).</summary>
+    /// <summary>Appearance bytes (race, skin, hairStyle, hairColor, outfit, outfitA, outfitB, acc).</summary>
     public List<int> Appearance { get; set; } = new();
+    public int Vehicle { get; set; }
 }

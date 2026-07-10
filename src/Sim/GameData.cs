@@ -64,6 +64,7 @@ public enum ItemKind
     Armor,
     Material,
     Tool,
+    Vehicle,
 }
 
 public enum ToolKind
@@ -72,6 +73,16 @@ public enum ToolKind
     Axe,
     Pickaxe,
     Sickle,
+}
+
+public enum VehicleKind : byte
+{
+    None = 0,
+    Canoe = 1,
+    Boat = 2,
+    Ship = 3,
+    Tank = 4,
+    Airship = 5,
 }
 
 public sealed class ItemDef
@@ -93,6 +104,9 @@ public sealed class ItemDef
     public ToolKind Tool { get; set; } = ToolKind.None;
     /// <summary>Tool quality: material yielded per swing.</summary>
     public int ToolPower { get; set; } = 1;
+    /// <summary>For Kind == Vehicle: which vehicle this key item summons.</summary>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public VehicleKind Vehicle { get; set; } = VehicleKind.None;
 }
 
 public sealed class RecipeInput
@@ -133,21 +147,42 @@ public sealed class NpcDef
     public int TileX { get; set; }
     public int TileY { get; set; }
     public string Dialog { get; set; } = "";
+    /// <summary>Extra flavor lines; interactions cycle through Dialog + Dialogs.</summary>
+    public List<string> Dialogs { get; set; } = new();
     public List<string> Shop { get; set; } = new();
     public List<string> Quests { get; set; } = new();
     /// <summary>Composited look (preferred over Sprite when set).</summary>
     public AppearancePreset? Appearance { get; set; }
 }
 
+public enum QuestKind
+{
+    Kill,
+    /// <summary>Reach a named map region.</summary>
+    Explore,
+    /// <summary>Deliver word to another NPC (turn in at TalkNpc).</summary>
+    Talk,
+}
+
 public sealed class QuestDef
 {
     public string Id { get; set; } = "";
     public string Name { get; set; } = "";
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public QuestKind Kind { get; set; } = QuestKind.Kill;
+    /// <summary>Main-story quests chain; side quests flavor a town.</summary>
+    public bool Main { get; set; }
+    /// <summary>Quest id that must be Completed before this can be accepted.</summary>
+    public string Prerequisite { get; set; } = "";
     public string Giver { get; set; } = "";
     public string Offer { get; set; } = "";
     public string TurnIn { get; set; } = "";
     public string TargetMonster { get; set; } = "";
-    public int TargetCount { get; set; }
+    /// <summary>Explore: region id to reach.</summary>
+    public string TargetRegion { get; set; } = "";
+    /// <summary>Talk: npc id to deliver to (turn-in happens there).</summary>
+    public string TalkNpc { get; set; } = "";
+    public int TargetCount { get; set; } = 1;
     public int RewardXp { get; set; }
     public int RewardGil { get; set; }
     public string RewardItem { get; set; } = "";
@@ -372,6 +407,8 @@ public static class DataValidator
                 Require(it.Tool != ToolKind.None, $"items.json[{id}]: tool items need a tool type");
                 RequireRange(it.ToolPower, 1, 10, $"items.json[{id}].toolPower");
             }
+            if (it.Kind == ItemKind.Vehicle)
+                Require(it.Vehicle != VehicleKind.None, $"items.json[{id}]: vehicle items need a vehicle type");
         }
 
         foreach (var (id, rec) in data.Recipes)
@@ -406,8 +443,25 @@ public static class DataValidator
             Require(data.Npcs.ContainsKey(q.Giver), $"quests.json[{id}]: unknown giver '{q.Giver}'");
             Require(data.Npcs[q.Giver].Quests.Contains(id),
                 $"quests.json[{id}]: giver '{q.Giver}' does not list this quest");
-            Require(data.Monsters.ContainsKey(q.TargetMonster),
-                $"quests.json[{id}]: unknown target monster '{q.TargetMonster}'");
+            switch (q.Kind)
+            {
+                case QuestKind.Kill:
+                    Require(data.Monsters.ContainsKey(q.TargetMonster),
+                        $"quests.json[{id}]: unknown target monster '{q.TargetMonster}'");
+                    break;
+                case QuestKind.Explore:
+                    Require(data.Map.Region(q.TargetRegion) != null,
+                        $"quests.json[{id}]: unknown target region '{q.TargetRegion}'");
+                    break;
+                case QuestKind.Talk:
+                    Require(data.Npcs.ContainsKey(q.TalkNpc),
+                        $"quests.json[{id}]: unknown talk npc '{q.TalkNpc}'");
+                    Require(q.TalkNpc != q.Giver, $"quests.json[{id}]: talk target is the giver");
+                    break;
+            }
+            if (q.Prerequisite.Length > 0)
+                Require(data.Quests.ContainsKey(q.Prerequisite),
+                    $"quests.json[{id}]: unknown prerequisite '{q.Prerequisite}'");
             RequireRange(q.TargetCount, 1, 999, $"quests.json[{id}].targetCount");
             Require(q.RewardXp >= 0 && q.RewardGil >= 0, $"quests.json[{id}]: rewards must be ≥ 0");
             if (q.RewardItem.Length > 0)
@@ -426,7 +480,7 @@ public static class DataValidator
             $"world.json: size {map.Width}x{map.Height} outside 16..1024");
         Require(map.IsWalkableTile(map.PlayerSpawnX, map.PlayerSpawnY),
             $"world.json: playerSpawn ({map.PlayerSpawnX},{map.PlayerSpawnY}) is not walkable");
-        Require(map.SafeZone.Contains(map.PlayerSpawnX, map.PlayerSpawnY),
+        Require(map.IsSafeZoneTile(map.PlayerSpawnX, map.PlayerSpawnY),
             "world.json: playerSpawn must be inside the safe zone");
 
         var nodeTypes = new HashSet<string> { "oak", "ore", "berry" };

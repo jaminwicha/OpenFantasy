@@ -183,6 +183,19 @@ public sealed partial class World
 
     // ------------------------------------------------------------------ quests
 
+    /// <summary>Is this quest's objective fulfilled (ready to turn in)?</summary>
+    public bool QuestObjectiveMet(Entity player, QuestDef quest, QuestProgress progress) => quest.Kind switch
+    {
+        QuestKind.Kill => progress.Kills >= quest.TargetCount,
+        QuestKind.Explore => progress.Kills >= 1,   // set when the region is entered
+        QuestKind.Talk => true,                      // delivering IS the objective
+        _ => false,
+    };
+
+    /// <summary>Which NPC accepts the turn-in for this quest.</summary>
+    public string QuestTurnInNpc(QuestDef quest)
+        => quest.Kind == QuestKind.Talk ? quest.TalkNpc : quest.Giver;
+
     public string AcceptQuest(Entity player, int npcEntityId, string questId)
     {
         var npc = NpcInRange(player, npcEntityId);
@@ -190,10 +203,33 @@ public sealed partial class World
         if (!npc.Quests.Contains(questId)) return "They have no such task.";
         var quest = Data.Quests[questId];
         if (player.QuestLog.ContainsKey(questId)) return "You already took that task.";
+        if (quest.Prerequisite.Length > 0 &&
+            (!player.QuestLog.TryGetValue(quest.Prerequisite, out var pre) || pre.State != QuestState.Completed))
+            return $"First finish: {Data.Quests[quest.Prerequisite].Name}.";
         if (player.Level < quest.MinLevel) return $"You need level {quest.MinLevel} for that.";
         player.QuestLog[questId] = new QuestProgress { State = QuestState.Active, Kills = 0 };
         Events.Add(new SimEvent(SimEventKind.QuestProgress, player.Id, player.Id, 0, questId));
         return $"Quest accepted: {quest.Name}.";
+    }
+
+    /// <summary>Marks explore quests done when the player stands in their region.</summary>
+    private void CheckExploreQuests(Entity player)
+    {
+        int tx = player.X / SimConstants.UnitsPerTile;
+        int ty = player.Y / SimConstants.UnitsPerTile;
+        foreach (var questId in player.QuestLog.Keys.OrderBy(k => k, StringComparer.Ordinal))
+        {
+            var progress = player.QuestLog[questId];
+            if (progress.State != QuestState.Active || progress.Kills > 0) continue;
+            var quest = Data.Quests[questId];
+            if (quest.Kind != QuestKind.Explore) continue;
+            var region = Data.Map.Region(quest.TargetRegion);
+            if (region != null && region.Rect.Contains(tx, ty))
+            {
+                progress.Kills = 1;
+                Events.Add(new SimEvent(SimEventKind.QuestProgress, player.Id, player.Id, quest.TargetCount, questId));
+            }
+        }
     }
 
     public string CompleteQuest(Entity player, int npcEntityId, string questId)
@@ -203,8 +239,12 @@ public sealed partial class World
         if (!player.QuestLog.TryGetValue(questId, out var progress)) return "You never took that task.";
         var quest = Data.Quests[questId];
         if (progress.State == QuestState.Completed) return "That deed is already done.";
-        if (progress.Kills < quest.TargetCount)
-            return $"Not done yet: {progress.Kills}/{quest.TargetCount} {Data.Monsters[quest.TargetMonster].Name}s.";
+        if (npc.Id != QuestTurnInNpc(quest))
+            return $"Take that to {Data.Npcs[QuestTurnInNpc(quest)].Name}.";
+        if (!QuestObjectiveMet(player, quest, progress))
+            return quest.Kind == QuestKind.Explore
+                ? "You haven't been there yet."
+                : $"Not done yet: {progress.Kills}/{quest.TargetCount} {Data.Monsters[quest.TargetMonster].Name}s.";
 
         progress.State = QuestState.Completed;
         player.Gil += quest.RewardGil;

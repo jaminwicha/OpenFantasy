@@ -55,6 +55,94 @@
       ]
     },
     {
+      "id": "snow_wolf", "name": "Snow Wolf", "level": 6,
+      "stats": { "hp": 120, "mp": 0, "attack": 20, "magic": 0, "defense": 8, "speed": 12 },
+      "moveSpeed": 5, "xpReward": 260, "gilMin": 24, "gilMax": 50,
+      "aggroRange": 140, "leashRange": 400,
+      "attack": { "power": 11, "range": 44, "atbCost": 380 },
+      "drops": [
+        { "item": "wolf_pelt", "chancePercent": 45 },
+        { "item": "tonic", "chancePercent": 8 }
+      ]
+    },
+    {
+      "id": "hill_brute", "name": "Hill Brute", "level": 7,
+      "stats": { "hp": 320, "mp": 0, "attack": 26, "magic": 0, "defense": 14, "speed": 6 },
+      "moveSpeed": 3, "xpReward": 520, "gilMin": 70, "gilMax": 140,
+      "aggroRange": 110, "leashRange": 340,
+      "attack": { "power": 15, "range": 52, "atbCost": 620 },
+      "drops": [
+        { "item": "ore_chunk", "chancePercent": 55 },
+        { "item": "iron_bar", "chancePercent": 12 }
+      ]
+    },
+    {
+      "id": "ember_wisp", "name": "Ember Wisp", "level": 8,
+      "stats": { "hp": 140, "mp": 20, "attack": 24, "magic": 12, "defense": 9, "speed": 11 },
+      "moveSpeed": 4, "xpReward": 470, "gilMin": 45, "gilMax": 90,
+      "aggroRange": 130, "leashRange": 360,
+      "attack": { "power": 13, "range": 56, "atbCost": 420 },
+      "drops": [
+        { "item": "ether", "chancePercent": 25 }
+      ]
+    },
+    {
+      "id": "marsh_wisp", "name": "Marsh Wisp", "level": 5,
+      "stats": { "hp": 90, "mp": 10, "attack": 15, "magic": 8, "defense": 6, "speed": 9 },
+      "moveSpeed": 3, "xpReward": 180, "gilMin": 16, "gilMax": 36,
+      "aggroRange": 110, "leashRange": 320,
+      "attack": { "power": 11, "range": 48, "atbCost": 440 },
+      "drops": [
+        { "item": "berries", "chancePercent": 40 },
+        { "item": "potion", "chancePercent": 12 }
+      ]
+    },
+    {
+      "id": "dune_scorpion", "name": "Dune Scorpion", "level": 7,
+      "stats": { "hp": 170, "mp": 0, "attack": 23, "magic": 0, "defense": 12, "speed": 10 },
+      "moveSpeed": 5, "xpReward": 400, "gilMin": 40, "gilMax": 85,
+      "aggroRange": 120, "leashRange": 360,
+      "attack": { "power": 12, "range": 44, "atbCost": 360 },
+      "drops": [
+        { "item": "ore_chunk", "chancePercent": 30 },
+        { "item": "ether", "chancePercent": 10 }
+      ]
+    },
+    {
+      "id": "crypt_wight", "name": "Crypt Wight", "level": 8,
+      "stats": { "hp": 380, "mp": 0, "attack": 27, "magic": 6, "defense": 15, "speed": 7 },
+      "moveSpeed": 3, "xpReward": 700, "gilMin": 90, "gilMax": 180,
+      "aggroRange": 100, "leashRange": 300,
+      "attack": { "power": 14, "range": 48, "atbCost": 520 },
+      "drops": [
+        { "item": "crystal_rod", "chancePercent": 10 },
+        { "item": "tonic", "chancePercent": 30 }
+      ]
+    },
+    {
+      "id": "storm_elemental", "name": "Storm Elemental", "level": 9,
+      "stats": { "hp": 260, "mp": 30, "attack": 28, "magic": 18, "defense": 13, "speed": 13 },
+      "moveSpeed": 4, "xpReward": 850, "gilMin": 100, "gilMax": 200,
+      "aggroRange": 140, "leashRange": 360,
+      "attack": { "power": 14, "range": 60, "atbCost": 420 },
+      "drops": [
+        { "item": "ether", "chancePercent": 40 },
+        { "item": "crystal_rod", "chancePercent": 8 }
+      ]
+    },
+    {
+      "id": "storm_warden", "name": "Storm Warden", "level": 10,
+      "stats": { "hp": 1400, "mp": 50, "attack": 34, "magic": 22, "defense": 20, "speed": 9 },
+      "moveSpeed": 3, "xpReward": 2600, "gilMin": 500, "gilMax": 900,
+      "aggroRange": 140, "leashRange": 420,
+      "attack": { "power": 17, "range": 60, "atbCost": 500 },
+      "drops": [
+        { "item": "warden_core", "chancePercent": 60 },
+        { "item": "crystal_rod", "chancePercent": 40 },
+        { "item": "tonic", "chancePercent": 100 }
+      ]
+    },
+    {
       "id": "magitek_warden", "name": "Magitek Warden", "level": 9,
       "stats": { "hp": 900, "mp": 0, "attack": 30, "magic": 0, "defense": 18, "speed": 7 },
       "moveSpeed": 3, "xpReward": 1600, "gilMin": 300, "gilMax": 500,

@@ -29,6 +29,24 @@ public sealed class SpawnerDef
     public int RespawnTicks { get; set; }
 }
 
+public sealed class PointDef
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+}
+
+/// <summary>Named map region (towns, dungeons, quest-explore targets).</summary>
+public sealed class RegionDef
+{
+    public string Id { get; set; } = "";
+    public int X { get; set; }
+    public int Y { get; set; }
+    public int W { get; set; }
+    public int H { get; set; }
+
+    public TileRect Rect => new() { X = X, Y = Y, W = W, H = H };
+}
+
 /// <summary>Resource node placement (gathering): oak / ore / berry regions.</summary>
 public sealed class NodeDef
 {
@@ -49,11 +67,21 @@ public sealed class WorldMap
     public int Width { get; private set; }
     public int Height { get; private set; }
     public List<TileDef> Tileset { get; private set; } = new();
-    public TileRect SafeZone { get; private set; }
+    public List<TileRect> SafeZones { get; private set; } = new();
+    public List<PointDef> Crystals { get; private set; } = new();
+    public List<RegionDef> Regions { get; private set; } = new();
     public int PlayerSpawnX { get; private set; }
     public int PlayerSpawnY { get; private set; }
     public List<SpawnerDef> Spawners { get; private set; } = new();
     public List<NodeDef> Nodes { get; private set; } = new();
+
+    private readonly Dictionary<string, RegionDef> _regionsById = new();
+    private readonly Dictionary<string, int> _tileIdsByName = new();
+
+    public RegionDef? Region(string id) => _regionsById.GetValueOrDefault(id);
+
+    /// <summary>Tile id for a tileset name, or -1 (names are authoring-stable).</summary>
+    public int TileIdByName(string name) => _tileIdsByName.GetValueOrDefault(name, -1);
 
     private int[] _tiles = Array.Empty<int>();
     private bool[] _walkableByTileId = Array.Empty<bool>();
@@ -74,8 +102,16 @@ public sealed class WorldMap
     public bool IsWalkableUnits(int ux, int uy)
         => IsWalkableTile(ux / SimConstants.UnitsPerTile, uy / SimConstants.UnitsPerTile);
 
+    public bool IsSafeZoneTile(int tx, int ty)
+    {
+        foreach (var zone in SafeZones)
+            if (zone.Contains(tx, ty))
+                return true;
+        return false;
+    }
+
     public bool IsSafeZoneUnits(int ux, int uy)
-        => SafeZone.Contains(ux / SimConstants.UnitsPerTile, uy / SimConstants.UnitsPerTile);
+        => IsSafeZoneTile(ux / SimConstants.UnitsPerTile, uy / SimConstants.UnitsPerTile);
 
     // -- Serialized shape ---------------------------------------------------
 
@@ -87,7 +123,9 @@ public sealed class WorldMap
         /// <summary>Per row: flat list of [tileId, runLength] pairs.</summary>
         public List<List<int>> Rows { get; set; } = new();
         public Dictionary<string, int> PlayerSpawn { get; set; } = new();
-        public TileRect SafeZone { get; set; }
+        public List<TileRect> SafeZones { get; set; } = new();
+        public List<PointDef> Crystals { get; set; } = new();
+        public List<RegionDef> Regions { get; set; } = new();
         public List<SpawnerDef> Spawners { get; set; } = new();
         public List<NodeDef> Nodes { get; set; } = new();
     }
@@ -116,10 +154,19 @@ public sealed class WorldMap
             Width = file.Width,
             Height = file.Height,
             Tileset = file.Tileset,
-            SafeZone = file.SafeZone,
+            SafeZones = file.SafeZones,
+            Crystals = file.Crystals,
+            Regions = file.Regions,
             Spawners = file.Spawners,
             Nodes = file.Nodes,
         };
+        foreach (var region in file.Regions)
+        {
+            if (region.Id.Length == 0 || !map._regionsById.TryAdd(region.Id, region))
+                throw new DataValidationException($"{path}: bad/duplicate region id '{region.Id}'");
+        }
+        foreach (var tile in file.Tileset)
+            map._tileIdsByName[tile.Name] = tile.Id;
 
         if (file.Width <= 0 || file.Height <= 0)
             throw new DataValidationException($"{path}: width/height must be positive");

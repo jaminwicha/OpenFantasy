@@ -31,6 +31,10 @@
     {
       "id": "forge_iron_pickaxe", "output": "iron_pickaxe", "outputCount": 1, "station": "Forge",
       "inputs": [{ "item": "iron_bar", "count": 2 }, { "item": "wood", "count": 2 }]
+    },
+    {
+      "id": "craft_canoe", "output": "canoe", "outputCount": 1,
+      "inputs": [{ "item": "wood", "count": 8 }]
     }
   ]
 }

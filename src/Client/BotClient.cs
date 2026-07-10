@@ -45,6 +45,7 @@ public partial class BotClient : Node
         foreach (char ch in Account) { h ^= ch; h *= 1099511628211UL; }
         var appearance = new Appearance
         {
+            Race = (byte)((h >> 56) % 4),
             Skin = (byte)(h % 8), HairStyle = (byte)((h >> 8) % 12), HairColor = (byte)((h >> 16) % 16),
             Outfit = (byte)((h >> 24) % 10), OutfitA = (byte)((h >> 32) % 16), OutfitB = (byte)((h >> 40) % 16),
             Acc = (byte)((h >> 48) % 4),

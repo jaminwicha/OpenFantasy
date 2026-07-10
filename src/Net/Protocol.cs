@@ -16,6 +16,7 @@ public enum Op : byte
     ItemOp = 10,     // C→S: buy/sell/use/equip/unequip
     QuestOp = 11,    // C→S: accept/complete
     CraftOp = 12,    // C→S: craft recipe id
+    VehicleOp = 13,  // C→S: toggle embark/disembark
 }
 
 public enum ItemOpKind : byte { Buy = 0, Sell = 1, Use = 2, Equip = 3, Unequip = 4 }
@@ -39,6 +40,7 @@ public sealed class NetEntityState
     public bool Alive;
     public bool HasAppearance;
     public Appearance Appearance;
+    public VehicleKind Vehicle;
 }
 
 public readonly struct NetEvent
@@ -77,6 +79,11 @@ public static class Protocol
 
     public static (int protocol, string account, string classId, Appearance appearance) ReadHello(BinaryReader r)
         => (r.ReadInt32(), r.ReadString(), r.ReadString(), Appearance.Read(r));
+
+    public static byte[] WriteVehicleOp()
+    {
+        return new[] { (byte)Op.VehicleOp };
+    }
 
     public static byte[] WriteCraftOp(string recipeId)
     {
@@ -206,7 +213,7 @@ public static class Protocol
         return ms.ToArray();
     }
 
-    public static byte[] WriteNpcInfo(int npcEntityId, NpcDef npc,
+    public static byte[] WriteNpcInfo(int npcEntityId, NpcDef npc, string dialog,
         List<(string questId, string name, string text, NpcQuestStatus status)> quests)
     {
         using var ms = new MemoryStream();
@@ -214,7 +221,7 @@ public static class Protocol
         w.Write((byte)Op.NpcInfo);
         w.Write(npcEntityId);
         w.Write(npc.Name);
-        w.Write(npc.Dialog);
+        w.Write(dialog);
         w.Write((byte)npc.Shop.Count);
         foreach (string itemId in npc.Shop)
             w.Write(itemId);
@@ -310,6 +317,7 @@ public static class Protocol
             w.Write(e.Xp);
             w.Write(e.Gil);
             w.Write(e.Alive);
+            w.Write((byte)e.Vehicle);
             w.Write(e.HasAppearance);
             if (e.HasAppearance)
                 e.Appearance.Write(w);
@@ -336,6 +344,7 @@ public static class Protocol
         var entities = new List<NetEntityState>(count);
         for (int i = 0; i < count; i++)
         {
+            // NB: field order must mirror WriteSnapshot exactly.
             var entity = new NetEntityState
             {
                 Id = r.ReadInt32(),
@@ -355,6 +364,7 @@ public static class Protocol
                 Gil = r.ReadInt32(),
                 Alive = r.ReadBoolean(),
             };
+            entity.Vehicle = (VehicleKind)r.ReadByte();
             entity.HasAppearance = r.ReadBoolean();
             if (entity.HasAppearance)
                 entity.Appearance = Appearance.Read(r);

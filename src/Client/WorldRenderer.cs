@@ -29,11 +29,22 @@ public partial class WorldRenderer : Node2D
         new[] { new Vector2I(6, 1), new Vector2I(7, 1), new Vector2I(8, 1) },   // 10 sand
         new[] { new Vector2I(9, 1), new Vector2I(10, 1) },                      // 11 flowers
         new[] { new Vector2I(11, 1) },                                          // 12 forge
+        new[] { new Vector2I(0, 4), new Vector2I(1, 4) },                       // 13 ocean
+        new[] { new Vector2I(2, 4) },                                           // 14 mountain
+        new[] { new Vector2I(3, 4) },                                           // 15 hills
+        new[] { new Vector2I(4, 4), new Vector2I(5, 4), new Vector2I(6, 4) },   // 16 snow
+        new[] { new Vector2I(7, 4), new Vector2I(8, 4), new Vector2I(9, 4) },   // 17 desert
+        new[] { new Vector2I(10, 4), new Vector2I(11, 4) },                     // 18 swamp
+        new[] { new Vector2I(12, 4) },                                          // 19 bridge
+        new[] { new Vector2I(13, 4), new Vector2I(14, 4) },                     // 20 castle floor
+        new[] { new Vector2I(0, 5), new Vector2I(1, 5) },                       // 21 tower floor
+        new[] { new Vector2I(2, 5) },                                           // 22 dock
+        new[] { new Vector2I(15, 4) },                                          // 23 dead tree
     };
 
-    private const int TileWater = 2;
+    private static readonly int[] WaterIds = { 2, 13 };       // shallow, ocean
     private static readonly int[] GrassyIds = { 0, 6, 11 };   // fringe sources
-    private static readonly int[] FringeTargets = { 3, 10 };  // road, sand accept fringe
+    private static readonly int[] FringeTargets = { 3, 10, 17, 18 }; // road, sand, desert, swamp
 
     public void Build(WorldMap map)
     {
@@ -70,7 +81,7 @@ public partial class WorldRenderer : Node2D
                 int mask = TransitionMask(map, x, y, t);
                 if (mask > 0)
                 {
-                    int row = t == TileWater ? 2 : 3; // foam vs grass fringe
+                    int row = Array.IndexOf(WaterIds, t) >= 0 ? 2 : 3; // foam vs grass fringe
                     overlay.SetCell(new Vector2I(x, y), 0, new Vector2I(mask, row));
                 }
             }
@@ -81,7 +92,7 @@ public partial class WorldRenderer : Node2D
     /// <summary>4-bit edge mask (1=N 2=E 4=S 8=W) for shoreline foam / grass fringe.</summary>
     private static int TransitionMask(WorldMap map, int x, int y, int t)
     {
-        bool water = t == TileWater;
+        bool water = Array.IndexOf(WaterIds, t) >= 0;
         if (!water && Array.IndexOf(FringeTargets, t) < 0) return 0;
 
         int mask = 0;
@@ -92,7 +103,7 @@ public partial class WorldRenderer : Node2D
             if (n < 0) continue;
             if (water)
             {
-                if (n != TileWater) mask |= bit;             // any land side gets foam
+                if (Array.IndexOf(WaterIds, n) < 0) mask |= bit; // any land side gets foam
             }
             else
             {

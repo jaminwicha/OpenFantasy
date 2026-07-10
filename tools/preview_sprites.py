@@ -84,6 +84,10 @@ def compose(app):
     stack.append((f"outfit_{app['outfit']:02d}_a", MANIFEST["outfitColors"][app["outfitA"]]))
     stack.append((f"outfit_{app['outfit']:02d}_b", MANIFEST["outfitColors"][app["outfitB"]]))
     stack.append((f"hair_{app['hairStyle']:02d}", MANIFEST["hairColors"][app["hairColor"]]))
+    race = app.get("race", 0)
+    if race > 0:
+        ramp = MANIFEST["hairColors"][app["hairColor"]] if race == 2 else MANIFEST["skins"][app["skin"]]
+        stack.append((f"race_{race:02d}", ramp))
     if app.get("acc", 0) > 0:
         stack.append((f"acc_{app['acc']:02d}", MANIFEST["outfitColors"][app["outfitB"]]))
     for name, ramp in stack:

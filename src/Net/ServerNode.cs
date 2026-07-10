@@ -146,6 +146,12 @@ public partial class ServerNode : Node
                 HandleHello(sender, protocol, account, classId, appearance);
                 break;
             }
+            case Op.VehicleOp when session is { Ready: true }:
+            {
+                if (_world.GetEntity(session.EntityId) is not { } player) break;
+                SendTo(sender, Protocol.WriteChat("*", _world.ToggleVehicle(player)));
+                break;
+            }
             case Op.CraftOp when session is { Ready: true }:
             {
                 string recipeId = r.ReadString();
@@ -286,10 +292,21 @@ public partial class ServerNode : Node
         var npc = _world.NpcInRange(player, npcEntityId);
         if (npc is null) return;
 
-        var quests = new List<(string, string, string, NpcQuestStatus)>();
-        foreach (string questId in npc.Quests)
+        // Quests this NPC gives, plus active Talk quests that deliver TO this NPC.
+        var questIds = new List<string>(npc.Quests);
+        foreach (var (questId, progress) in player.QuestLog)
         {
             var quest = _world.Data.Quests[questId];
+            if (quest.Kind == QuestKind.Talk && quest.TalkNpc == npc.Id &&
+                progress.State == QuestState.Active && !questIds.Contains(questId))
+                questIds.Add(questId);
+        }
+
+        var quests = new List<(string, string, string, NpcQuestStatus)>();
+        foreach (string questId in questIds)
+        {
+            var quest = _world.Data.Quests[questId];
+            bool turnInHere = _world.QuestTurnInNpc(quest) == npc.Id;
             NpcQuestStatus status;
             string questText;
             if (player.QuestLog.TryGetValue(questId, out var progress))
@@ -299,7 +316,7 @@ public partial class ServerNode : Node
                     status = NpcQuestStatus.Done;
                     questText = "Done.";
                 }
-                else if (progress.Kills >= quest.TargetCount)
+                else if (_world.QuestObjectiveMet(player, quest, progress) && turnInHere)
                 {
                     status = NpcQuestStatus.ReadyToTurnIn;
                     questText = quest.TurnIn;
@@ -307,8 +324,14 @@ public partial class ServerNode : Node
                 else
                 {
                     status = NpcQuestStatus.Active;
-                    questText = $"{progress.Kills}/{quest.TargetCount} {_world.Data.Monsters[quest.TargetMonster].Name}s";
+                    questText = QuestProgressText(quest, progress);
                 }
+            }
+            else if (npc.Quests.Contains(questId) && quest.Prerequisite.Length > 0 &&
+                     (!player.QuestLog.TryGetValue(quest.Prerequisite, out var pre) || pre.State != QuestState.Completed))
+            {
+                status = NpcQuestStatus.Locked;
+                questText = $"(First: {_world.Data.Quests[quest.Prerequisite].Name})";
             }
             else if (player.Level >= quest.MinLevel)
             {
@@ -320,10 +343,25 @@ public partial class ServerNode : Node
                 status = NpcQuestStatus.Locked;
                 questText = $"(Requires level {quest.MinLevel})";
             }
-            quests.Add((questId, quest.Name, questText, status));
+            quests.Add((questId, (quest.Main ? "★ " : "") + quest.Name, questText, status));
         }
-        SendTo(sender, Protocol.WriteNpcInfo(npcEntityId, npc, quests));
+
+        // Cycle flavor lines slowly with world time; deterministic and alive.
+        var lines = new List<string> { npc.Dialog };
+        lines.AddRange(npc.Dialogs);
+        lines.RemoveAll(l => l.Length == 0);
+        string dialog = lines.Count > 0 ? lines[_world.Tick / 200 % lines.Count] : "…";
+
+        SendTo(sender, Protocol.WriteNpcInfo(npcEntityId, npc, dialog, quests));
     }
+
+    private string QuestProgressText(QuestDef quest, QuestProgress progress) => quest.Kind switch
+    {
+        QuestKind.Kill => $"{progress.Kills}/{quest.TargetCount} {_world.Data.Monsters[quest.TargetMonster].Name}s",
+        QuestKind.Explore => progress.Kills > 0 ? "Seen. Report back." : $"Find: {quest.TargetRegion.Replace('_', ' ')}",
+        QuestKind.Talk => $"Deliver to {_world.Data.Npcs[quest.TalkNpc].Name}",
+        _ => "…",
+    };
 
     private (int peerId, Session session)? FindSessionByName(string name)
     {

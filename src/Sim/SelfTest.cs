@@ -111,9 +111,11 @@ public static class SelfTest
             var data = GameData.LoadFromDirectory(dataDir);
             var world = new World(data, 2024);
             var p = world.AddPlayer("Hero", data.ClassOrder[0]);
-            // Teleport-adjacent test: walk the player at the nearest monster until something dies.
+            // Teleport next to the nearest monster (no pathfinding in tests), then fight.
             Entity? mob = world.EntitiesInOrder().Where(e => e.IsMonster)
                 .OrderBy(e => e.DistanceSquaredTo(p)).First();
+            p.X = mob.X + 40;
+            p.Y = mob.Y;
             int xpBefore = p.Xp + 0;
             bool sawDamage = false, sawDeath = false;
             for (int t = 0; t < 4000 && !sawDeath; t++)
@@ -124,6 +126,8 @@ public static class SelfTest
                     mob = world.EntitiesInOrder().Where(e => e.IsMonster && e.Alive)
                         .OrderBy(e => e.DistanceSquaredTo(p)).FirstOrDefault();
                     if (mob is null) break;
+                    p.X = mob.X + 40;
+                    p.Y = mob.Y;
                 }
                 world.SetPlayerInput(p.Id, new InputCommand
                 {
@@ -315,7 +319,7 @@ public static class SelfTest
             var world = new World(data, 3);
             var p = world.AddPlayer("Face", "mage", appearance: clean);
             var save = world.SnapshotSave(p);
-            Assert(save.Appearance.Count == 7, "save missing appearance");
+            Assert(save.Appearance.Count == 8, "save missing appearance (8 bytes incl. race)");
             var world2 = new World(data, 4);
             var p2 = world2.AddPlayer("Face", "mage",
                 appearance: Appearance.FromBytes(save.Appearance.Select(i => (byte)i).ToArray()));
@@ -385,9 +389,9 @@ public static class SelfTest
             bool nearForge = world.IsNearForge(p);
             if (!nearForge)
                 Assert(awayResult.Contains("forge"), $"forge gate missing: {awayResult}");
-            // Move beside the forge (33,68) and smelt.
-            p.X = 32 * u + u / 2;
-            p.Y = 68 * u + u / 2;
+            // Move beside Brasshollow's forge (town center +5,+4 → 115,356) and smelt.
+            p.X = 114 * u + u / 2;
+            p.Y = 356 * u + u / 2;
             Assert(world.IsNearForge(p), "not near forge after moving");
             string atForge = world.CraftItem(p, "smelt_iron_bar");
             Assert(atForge.StartsWith("Crafted"), $"smelt failed: {atForge}");
@@ -401,6 +405,131 @@ public static class SelfTest
             ulong h1 = RunM3ScriptedWorld(dataDir, 4242);
             ulong h2 = RunM3ScriptedWorld(dataDir, 4242);
             AssertEqual((long)h1, (long)h2, "M3 state hash diverged");
+        });
+
+        // ------------------------------------------------------------- M4 cases
+
+        Case("m4 world: continents, towns, dungeons, regions, crystals validate", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            Assert(data.Map.Width == 512 && data.Map.Height == 512, "expected 512x512 world");
+            foreach (string rid in new[] { "brasshollow", "gearford", "sylvanglade", "willowick",
+                "castle_aldermere", "storm_spire", "spire_top", "hollow_mine", "emberdeep", "sunken_crypt" })
+                Assert(data.Map.Region(rid) != null, $"missing region {rid}");
+            Assert(data.Map.SafeZones.Count >= 5, "expected ≥5 safe zones (towns + castle)");
+            Assert(data.Map.Crystals.Count >= 4, "expected ≥4 respawn crystals");
+            Assert(data.Npcs.Count >= 12, "expected ≥12 NPCs");
+            Assert(data.Monsters.Count >= 14, "expected ≥14 monsters");
+        });
+
+        Case("m4 races: stat modifiers apply per race", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 31);
+            var human = world.AddPlayer("Hu", "squire", appearance: new Appearance { Race = 0, Skin = 1 });
+            var elf = world.AddPlayer("El", "squire", appearance: new Appearance { Race = 1, Skin = 1 });
+            var dwarf = world.AddPlayer("Dw", "squire", appearance: new Appearance { Race = 2, Skin = 1 });
+            var gnome = world.AddPlayer("Gn", "squire", appearance: new Appearance { Race = 3, Skin = 1 });
+            Assert(elf.Magic > human.Magic && elf.MaxHp < human.MaxHp, "elf mods wrong");
+            Assert(dwarf.MaxHp > human.MaxHp && dwarf.Speed < human.Speed, "dwarf mods wrong");
+            Assert(gnome.MaxMp > human.MaxMp && gnome.Attack < human.Attack, "gnome mods wrong");
+            var save = world.SnapshotSave(dwarf);
+            AssertEqual(save.Appearance.Count, 8, "appearance should be 8 bytes with race");
+        });
+
+        Case("m4 vehicles: domains, embark/disembark, aggro immunity", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 32);
+            var p = world.AddPlayer("Sailor", "scout");
+            int u = SimConstants.UnitsPerTile;
+
+            int shallow = data.Map.TileIdByName("shallow");
+            int ocean = data.Map.TileIdByName("ocean");
+            int hills = data.Map.TileIdByName("hills");
+            Assert(shallow >= 0 && ocean >= 0 && hills >= 0, "tile names missing");
+
+            // Domain rules straight from the table.
+            Assert(!world.TileAllows(0, 0, VehicleKind.None), "walking on ocean allowed");
+            Assert(world.TileAllows(0, 0, VehicleKind.Ship), "ship refused ocean");
+            Assert(!world.TileAllows(0, 0, VehicleKind.Canoe), "canoe allowed on ocean");
+            Assert(world.TileAllows(0, 0, VehicleKind.Airship), "airship refused ocean");
+
+            // Find a sand tile adjacent to shallow water (a beach) for a real embark.
+            int bx = -1, by = -1;
+            for (int y = 1; y < 511 && bx < 0; y++)
+                for (int x = 1; x < 511 && bx < 0; x++)
+                    if (data.Map.IsWalkableTile(x, y) && data.Map.TileAt(x, y + 1) == shallow)
+                    {
+                        bx = x;
+                        by = y;
+                    }
+            Assert(bx > 0, "no beach found");
+            p.X = bx * u + u / 2;
+            p.Y = by * u + u / 2;
+
+            Assert(world.ToggleVehicle(p).Contains("no vehicle"), "embark without owning one");
+            world.AddItem(p, "canoe");
+            Assert(world.ToggleVehicle(p).Contains("canoe"), "canoe embark failed");
+            Assert(p.Vehicle == VehicleKind.Canoe, "not aboard");
+            Assert(world.Gather(p, -1).Length > 0, "gather should refuse aboard"); // any refusal text
+            Assert(world.ToggleVehicle(p).Contains("disembark"), "disembark failed");
+            Assert(p.Vehicle == VehicleKind.None, "still aboard");
+
+            // Airship goes anywhere, lands only on walkable ground.
+            world.AddItem(p, "airship_brasswing");
+            Assert(world.ToggleVehicle(p).Contains("rises"), "airship should lift off");
+            Assert(world.UnitsAllow(8 * u, 8 * u, VehicleKind.Airship), "airship blocked over ocean");
+        });
+
+        Case("m4 quests: prereq gating, explore, talk, main chain shape", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 33);
+            var p = world.AddPlayer("Pilgrim", "squire");
+            int u = SimConstants.UnitsPerTile;
+            var bran = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "elder_bran");
+            var king = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "king_aldric");
+
+            // Prereq gate: can't take the audience before the cull.
+            p.X = bran.X + 16; p.Y = bran.Y;
+            Assert(world.AcceptQuest(p, bran.Id, "audience_at_castle").StartsWith("First finish"),
+                "prereq not enforced");
+
+            // Complete the cull (simulate credit), then chain into the Talk quest.
+            world.AcceptQuest(p, bran.Id, "cull_wisps");
+            p.QuestLog["cull_wisps"].Kills = data.Quests["cull_wisps"].TargetCount;
+            Assert(world.CompleteQuest(p, bran.Id, "cull_wisps").StartsWith("Quest complete"), "cull turn-in");
+            Assert(world.AcceptQuest(p, bran.Id, "audience_at_castle").StartsWith("Quest accepted"), "audience accept");
+
+            // Talk quests refuse the giver and complete at the target.
+            Assert(world.CompleteQuest(p, bran.Id, "audience_at_castle").StartsWith("Take that to"),
+                "talk quest completed at giver");
+            p.X = king.X + 16; p.Y = king.Y;
+            Assert(world.CompleteQuest(p, king.Id, "audience_at_castle").StartsWith("Quest complete"),
+                "talk quest turn-in failed");
+
+            // Explore quest: not ready until the region is entered.
+            world.AcceptQuest(p, king.Id, "kings_writ");
+            var bruni = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "thane_bruni");
+            p.X = bruni.X + 16; p.Y = bruni.Y;
+            world.CompleteQuest(p, bruni.Id, "kings_writ");
+            Assert(world.AcceptQuest(p, bruni.Id, "spire_key").StartsWith("First finish"), "chain order broken");
+            world.AcceptQuest(p, bruni.Id, "sunken_seal");
+            p.QuestLog["sunken_seal"].Kills = 3;
+            world.CompleteQuest(p, bruni.Id, "sunken_seal");
+            Assert(world.AcceptQuest(p, bruni.Id, "spire_key").StartsWith("Quest accepted"), "spire accept");
+            Assert(world.CompleteQuest(p, bruni.Id, "spire_key").Contains("haven't been"), "explore ready too early");
+            var top = data.Map.Region("spire_top")!;
+            p.X = (top.X + 2) * u; p.Y = (top.Y + 2) * u;
+            for (int t = 0; t < 12; t++) world.Step();   // explore check runs on a stagger
+            Assert(p.QuestLog["spire_key"].Kills >= 1, "region visit not registered");
+            p.X = bruni.X + 16; p.Y = bruni.Y;
+            Assert(world.CompleteQuest(p, bruni.Id, "spire_key").StartsWith("Quest complete"), "explore turn-in");
+
+            // Finale is offered by the king and rewards the airship.
+            var finale = data.Quests["warden_of_storms"];
+            Assert(finale.Main && finale.RewardItem == "airship_brasswing", "finale reward wrong");
         });
 
         log($"selftest: {passed} passed, {failed} failed");

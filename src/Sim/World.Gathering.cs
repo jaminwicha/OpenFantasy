@@ -49,7 +49,7 @@ public sealed partial class World
         {
             int cx = def.Region.X + _rng.Next(def.Region.W);
             int cy = def.Region.Y + _rng.Next(def.Region.H);
-            if (Data.Map.IsWalkableTile(cx, cy) && !Data.Map.SafeZone.Contains(cx, cy))
+            if (Data.Map.IsWalkableTile(cx, cy) && !Data.Map.IsSafeZoneTile(cx, cy))
             {
                 tx = cx;
                 ty = cy;
@@ -113,6 +113,7 @@ public sealed partial class World
         long r = GatherRange;
         if (player.DistanceSquaredTo(node) > r * r) return "Too far away.";
         if (!player.Alive) return "The fallen gather nothing.";
+        if (player.Vehicle != VehicleKind.None) return "Not from up here — disembark first.";
 
         var arch = NodeArchetypes[node.NodeType];
         var tool = BestTool(player, arch.Tool);

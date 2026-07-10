@@ -124,6 +124,9 @@ public sealed class Entity
     /// <summary>Node type key (Kind == Node only): oak / ore / berry.</summary>
     public string NodeType = "";
 
+    /// <summary>Vehicle the player is currently aboard.</summary>
+    public VehicleKind Vehicle = VehicleKind.None;
+
     public bool IsPlayer => Kind == EntityKind.Player;
     public bool IsMonster => Kind == EntityKind.Monster;
     public bool IsNpc => Kind == EntityKind.Npc;

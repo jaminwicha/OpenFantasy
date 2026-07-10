@@ -27,6 +27,12 @@ public static class SpriteComposer
         BlendLayer(canvas, $"outfit_{app.Outfit:D2}_a", data.OutfitColors[app.OutfitA], data);
         BlendLayer(canvas, $"outfit_{app.Outfit:D2}_b", data.OutfitColors[app.OutfitB], data);
         BlendLayer(canvas, $"hair_{app.HairStyle:D2}", data.HairColors[app.HairColor], data);
+        if (app.Race > 0)
+        {
+            // Dwarven beards tint with the hair; elf/gnome ears tint with the skin.
+            var raceRamp = app.Race == 2 ? data.HairColors[app.HairColor] : data.Skins[app.Skin];
+            BlendLayer(canvas, $"race_{app.Race:D2}", raceRamp, data);
+        }
         if (app.Acc > 0)
             BlendLayer(canvas, $"acc_{app.Acc:D2}", data.OutfitColors[app.OutfitB], data);
 

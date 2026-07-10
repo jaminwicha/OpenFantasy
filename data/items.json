@@ -81,6 +81,26 @@
     {
       "id": "iron_pickaxe", "name": "Iron Pickaxe", "kind": "Tool",
       "price": 320, "tool": "Pickaxe", "toolPower": 2
+    },
+    {
+      "id": "canoe", "name": "Canoe", "kind": "Vehicle",
+      "price": 120, "vehicle": "Canoe"
+    },
+    {
+      "id": "sailboat", "name": "Sailboat", "kind": "Vehicle",
+      "price": 800, "vehicle": "Boat"
+    },
+    {
+      "id": "ship", "name": "Ship", "kind": "Vehicle",
+      "price": 2500, "vehicle": "Ship"
+    },
+    {
+      "id": "dwarven_tank", "name": "Dwarven Tank", "kind": "Vehicle",
+      "price": 5000, "vehicle": "Tank"
+    },
+    {
+      "id": "airship_brasswing", "name": "The Brasswing", "kind": "Vehicle",
+      "price": 20000, "vehicle": "Airship"
     }
   ]
 }

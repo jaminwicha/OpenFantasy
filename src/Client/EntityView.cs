@@ -26,6 +26,8 @@ public partial class EntityView : Node2D
     private bool _moving;
     private float _animClock;
     private bool _initialized;
+    private VehicleKind _vehicle = VehicleKind.None;
+    private Texture2D _baseTexture = null!;
 
     public int EntityId { get; private set; }
     public EntityKind Kind { get; private set; }
@@ -35,12 +37,12 @@ public partial class EntityView : Node2D
         EntityId = state.Id;
         Kind = state.Kind;
 
-        Texture2D texture = state.HasAppearance
+        _baseTexture = state.HasAppearance
             ? SpriteComposer.Get(state.Appearance)
             : GD.Load<Texture2D>($"res://assets/units/{state.ArchetypeId}.png");
         _sprite = new Sprite2D
         {
-            Texture = texture,
+            Texture = _baseTexture,
             Hframes = 3,
             Vframes = 4,
             Offset = new Vector2(0, -FrameH / 2f + 2),
@@ -81,6 +83,14 @@ public partial class EntityView : Node2D
         _targetPos = newTarget;
         _facing = state.Facing;
 
+        if (state.Vehicle != _vehicle)
+        {
+            _vehicle = state.Vehicle;
+            _sprite.Texture = _vehicle == VehicleKind.None
+                ? _baseTexture
+                : GD.Load<Texture2D>($"res://assets/units/veh_{VehicleSprite(_vehicle)}.png");
+        }
+
         float hpFrac = state.MaxHp > 0 ? (float)state.Hp / state.MaxHp : 0;
         UiTheme.SetBarFraction(_hpFill, hpFrac);
         _hpFill.Color = hpFrac < 0.3f ? UiTheme.HpLowColor : UiTheme.HpColor;
@@ -91,6 +101,16 @@ public partial class EntityView : Node2D
             ? $"{state.Name} L{state.Level}"
             : state.Name;
     }
+
+    private static string VehicleSprite(VehicleKind kind) => kind switch
+    {
+        VehicleKind.Canoe => "canoe",
+        VehicleKind.Boat => "boat",
+        VehicleKind.Ship => "ship",
+        VehicleKind.Tank => "tank",
+        VehicleKind.Airship => "airship",
+        _ => "canoe",
+    };
 
     public void SetTargeted(bool targeted)
     {
@@ -106,7 +126,8 @@ public partial class EntityView : Node2D
         else
             _renderPos = _renderPos.Lerp(_targetPos, 1f - Mathf.Exp(-14f * (float)delta));
         Position = _renderPos;
-        ZIndex = (int)_renderPos.Y;
+        // Y-sort within Godot's z range (world is 8192px tall; z max is 4096).
+        ZIndex = Mathf.Clamp((int)(_renderPos.Y / 4f), 0, 2500);
 
         _animClock += (float)delta;
         int row = (int)_facing;

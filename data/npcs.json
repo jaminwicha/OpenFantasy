@@ -2,17 +2,128 @@
   "npcs": [
     {
       "id": "marla", "name": "Marla", "sprite": "",
-      "appearance": { "skin": 2, "hairStyle": 1, "hairColor": 4, "outfit": 8, "outfitA": 9, "outfitB": 14, "acc": 1 },
-      "tileX": 21, "tileY": 60,
+      "appearance": { "race": 0, "skin": 2, "hairStyle": 1, "hairColor": 4, "outfit": 8, "outfitA": 9, "outfitB": 14, "acc": 1 },
+      "tileX": 104, "tileY": 350,
       "dialog": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+      "dialogs": [
+        "Word is the mine's gone strange again. Take a lamp. And a sword.",
+        "Berries, potions, tools — everything a wanderer forgets to pack."
+      ],
       "shop": ["potion", "tonic", "ether", "rations", "bronze_sword", "oak_rod", "leather_vest", "copper_axe", "copper_pickaxe", "sickle"]
     },
     {
       "id": "elder_bran", "name": "Elder Bran", "sprite": "",
-      "appearance": { "skin": 3, "hairStyle": 8, "hairColor": 9, "outfit": 2, "outfitA": 4, "outfitB": 6, "acc": 0 },
-      "tileX": 31, "tileY": 60,
+      "appearance": { "race": 0, "skin": 3, "hairStyle": 8, "hairColor": 9, "outfit": 2, "outfitA": 4, "outfitB": 6, "acc": 0 },
+      "tileX": 116, "tileY": 350,
       "dialog": "The March grows wilder by the season, traveler. We could use your blade.",
-      "quests": ["cull_wisps", "wolf_menace", "the_warden"]
+      "dialogs": [
+        "Four continents, one crown, and a hundred old wounds. That is Aldermere.",
+        "When you are ready for larger deeds, the King himself will want to see you."
+      ],
+      "quests": ["cull_wisps", "wolf_menace", "the_warden", "audience_at_castle"]
+    },
+    {
+      "id": "king_aldric", "name": "King Aldric", "sprite": "",
+      "appearance": { "race": 0, "skin": 1, "hairStyle": 8, "hairColor": 9, "outfit": 3, "outfitA": 12, "outfitB": 6, "acc": 2 },
+      "tileX": 180, "tileY": 316,
+      "dialog": "Rise. Aldermere has few heroes left; I will not waste one on ceremony.",
+      "dialogs": [
+        "The war machines we buried are waking. The Storm Warden worst among them.",
+        "My writ opens doors in Gearford. Dwarves respect paper almost as much as iron."
+      ],
+      "quests": ["kings_writ", "warden_of_storms"]
+    },
+    {
+      "id": "captain_edda", "name": "Captain Edda", "sprite": "",
+      "appearance": { "race": 0, "skin": 4, "hairStyle": 4, "hairColor": 1, "outfit": 5, "outfitA": 15, "outfitB": 7, "acc": 1 },
+      "tileX": 176, "tileY": 330,
+      "dialog": "Castle guard's stretched thin. The roads aren't what they were.",
+      "dialogs": ["Wolves on the east road again. My recruits won't cut it."],
+      "quests": ["road_patrol"]
+    },
+    {
+      "id": "portmaster_wick", "name": "Portmaster Wick", "sprite": "",
+      "appearance": { "race": 0, "skin": 2, "hairStyle": 5, "hairColor": 3, "outfit": 1, "outfitA": 0, "outfitB": 14, "acc": 0 },
+      "tileX": 42, "tileY": 352,
+      "dialog": "Fine hulls, fair winds. A sailboat hugs the coast; a ship crosses anything wet.",
+      "dialogs": ["Press V near the water's edge to launch whatever you've bought."],
+      "shop": ["sailboat", "ship", "canoe"]
+    },
+    {
+      "id": "thane_bruni", "name": "Thane Bruni", "sprite": "",
+      "appearance": { "race": 2, "skin": 2, "hairStyle": 2, "hairColor": 5, "outfit": 5, "outfitA": 15, "outfitB": 7, "acc": 0 },
+      "tileX": 354, "tileY": 138,
+      "dialog": "Hmph. Surface-folk. Speak quick, the forge won't stoke itself.",
+      "dialogs": [
+        "Emberdeep runs hotter than it should. Something below stokes it.",
+        "A king's writ, eh? Then Gearford owes you a hearing — and maybe a machine."
+      ],
+      "quests": ["sunken_seal", "spire_key", "brute_iron"]
+    },
+    {
+      "id": "smelter_vora", "name": "Smelter Vora", "sprite": "",
+      "appearance": { "race": 2, "skin": 3, "hairStyle": 6, "hairColor": 6, "outfit": 8, "outfitA": 10, "outfitB": 15, "acc": 1 },
+      "tileX": 366, "tileY": 138,
+      "dialog": "Grand forge of Gearford. If it can be smelted, we smelt it.",
+      "dialogs": ["Bring ore. Leave rich. That's the whole economy, friend."],
+      "shop": ["iron_axe", "iron_pickaxe", "iron_blade", "brass_mail", "tonic", "rations"]
+    },
+    {
+      "id": "portmaster_grum", "name": "Portmaster Grum", "sprite": "",
+      "appearance": { "race": 2, "skin": 4, "hairStyle": 0, "hairColor": 1, "outfit": 1, "outfitA": 13, "outfitB": 14, "acc": 0 },
+      "tileX": 334, "tileY": 224,
+      "dialog": "Cold water, colder wind. Boats still float, mind.",
+      "shop": ["sailboat", "canoe"]
+    },
+    {
+      "id": "archdruid_liriel", "name": "Archdruid Liriel", "sprite": "",
+      "appearance": { "race": 1, "skin": 0, "hairStyle": 3, "hairColor": 11, "outfit": 2, "outfitA": 4, "outfitB": 6, "acc": 2 },
+      "tileX": 366, "tileY": 354,
+      "dialog": "Sylvas remembers older names than Aldermere. Tread gently, cousin.",
+      "dialogs": [
+        "The swamp lights lure travelers from the road. They are not lights.",
+        "The crypt beneath the marsh was sealed for a reason. Reasons rot."
+      ],
+      "quests": ["marsh_lights"]
+    },
+    {
+      "id": "fenn", "name": "Fenn", "sprite": "",
+      "appearance": { "race": 1, "skin": 1, "hairStyle": 9, "hairColor": 12, "outfit": 1, "outfitA": 4, "outfitB": 13, "acc": 3 },
+      "tileX": 378, "tileY": 354,
+      "dialog": "Elven fletching, forest remedies, and no questions asked.",
+      "shop": ["potion", "ether", "rations", "oak_rod", "crystal_rod", "leather_vest", "sickle"]
+    },
+    {
+      "id": "portmaster_lys", "name": "Portmaster Lys", "sprite": "",
+      "appearance": { "race": 1, "skin": 0, "hairStyle": 4, "hairColor": 10, "outfit": 1, "outfitA": 3, "outfitB": 14, "acc": 0 },
+      "tileX": 290, "tileY": 372,
+      "dialog": "The river takes canoes; the gray water takes better boats.",
+      "shop": ["canoe", "sailboat"]
+    },
+    {
+      "id": "matriarch_poppy", "name": "Matriarch Poppy", "sprite": "",
+      "appearance": { "race": 3, "skin": 1, "hairStyle": 7, "hairColor": 14, "outfit": 4, "outfitA": 11, "outfitB": 6, "acc": 2 },
+      "tileX": 118, "tileY": 134,
+      "dialog": "Willowick welcomes you! Mind the scorpions, dear. And the tower. And the wind.",
+      "dialogs": [
+        "The Spire hums at night. Gnomish ears are too good, sometimes.",
+        "Whoever quiets that tower eats free at my table forever."
+      ],
+      "quests": ["scorpion_season"]
+    },
+    {
+      "id": "tinker_zizzle", "name": "Tinker Zizzle", "sprite": "",
+      "appearance": { "race": 3, "skin": 2, "hairStyle": 2, "hairColor": 13, "outfit": 8, "outfitA": 5, "outfitB": 6, "acc": 2 },
+      "tileX": 126, "tileY": 134,
+      "dialog": "Gadgets! Tonics! Slightly singed maps! Everything a desert needs!",
+      "shop": ["potion", "tonic", "ether", "rations", "crystal_rod", "copper_pickaxe"]
+    },
+    {
+      "id": "portmaster_dot", "name": "Portmaster Dot", "sprite": "",
+      "appearance": { "race": 3, "skin": 1, "hairStyle": 10, "hairColor": 15, "outfit": 1, "outfitA": 2, "outfitB": 14, "acc": 0 },
+      "tileX": 118, "tileY": 214,
+      "dialog": "Smallest port on Miradel! Also the only one. Boats out back.",
+      "shop": ["canoe", "sailboat"]
     }
   ]
 }

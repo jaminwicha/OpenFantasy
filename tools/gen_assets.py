@@ -645,8 +645,440 @@ def outlined(gen):
     return gen
 
 
+
+
+# ---------------------------------------------------------------- tiles v3 (M4 biomes)
+
+OCEANC = (34, 60, 132)
+MOUNTC = (150, 148, 156)
+HILLC = (128, 134, 96)
+SNOWC = (236, 240, 246)
+DESERTC = (224, 198, 136)
+SWAMPC = (88, 108, 86)
+CASTLEC = (176, 176, 188)
+TOWERC = (156, 148, 184)
+DOCKC = (146, 104, 62)
+
+
+def tile_ocean(v):
+    c = Canvas(T, T)
+    lo, mid = shade(rgba(OCEANC), 0.88), rgba(OCEANC)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, lo if cluster(x, y, v * 53 + 21) < 2 else mid)
+    if v == 1:
+        for k in range(3):
+            c.px((v * 5 + k * 4 + 2) % T, (k * 6 + 3) % T, shade(rgba(OCEANC), 1.2))
+    return c
+
+
+def tile_mountain():
+    c = Canvas(T, T)
+    lo, mid, hi = shade(rgba(MOUNTC), 0.62), rgba(MOUNTC), shade(rgba(MOUNTC), 1.25)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, mid if cluster(x, y, 7) > 1 else lo)
+    # peak triangle with snowcap + shadow side
+    for y in range(3, 14):
+        half = (y - 2) // 2 + 1
+        c.rect(8 - half, y, 7 + half, y, mid)
+        c.px(8 - half, y, hi)
+        c.px(7 + half, y, lo)
+    c.rect(6, 3, 9, 5, (246, 250, 252, 255))
+    c.rect(2, 14, 13, 14, lo)
+    return c
+
+
+def tile_hills():
+    c = Canvas(T, T)
+    base = rgba(HILLC)
+    lo, mid, hi = shade(base, 0.78), base, shade(base, 1.18)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, mid if cluster(x, y, 11) > 1 else lo)
+    for (bx, by, r) in ((4, 9, 3), (11, 6, 3), (9, 13, 2)):
+        for y in range(by - r, by + 1):
+            half = r - (by - y)
+            c.rect(bx - half, y, bx + half, y, mid)
+            c.px(bx - half, y, hi)
+    return c
+
+
+def tile_snow(v):
+    c = Canvas(T, T)
+    ground(c, SNOWC, v)
+    for i in range(2):
+        bx = (v * 7 + i * 9 + 3) % (T - 2) + 1
+        by = (v * 5 + i * 7 + 2) % (T - 2) + 1
+        c.px(bx, by, (200, 210, 226, 255))
+    return c
+
+
+def tile_desert(v):
+    c = Canvas(T, T)
+    ground(c, DESERTC, v)
+    for ry in ((2 + v * 5) % 11 + 2,):
+        for x in range(v, T, 5):
+            c.px(x, ry, shade(rgba(DESERTC), 0.86))
+            c.px(x + 1, ry + 1, shade(rgba(DESERTC), 0.86))
+    return c
+
+
+def tile_swamp(v):
+    c = Canvas(T, T)
+    ground(c, SWAMPC, v, litter=shade(rgba(SWAMPC), 0.68))
+    # murky pools
+    for i in range(2):
+        bx = (v * 9 + i * 7 + 2) % (T - 4) + 2
+        by = (v * 3 + i * 11 + 3) % (T - 4) + 2
+        c.rect(bx, by, bx + 2, by + 1, (60, 82, 92, 255))
+        c.px(bx + 1, by, (76, 102, 112, 255))
+    return c
+
+
+def tile_bridge():
+    c = Canvas(T, T)
+    plank = rgba(DOCKC)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, plank if (y % 4) != 3 else shade(plank, 0.7))
+    for x in (0, 15):
+        for y in range(T):
+            c.px(x, y, shade(plank, 0.55))
+    for y in (2, 9):
+        c.px(3, y, shade(plank, 1.2))
+        c.px(11, y, shade(plank, 1.2))
+    return c
+
+
+def tile_castle(v):
+    c = Canvas(T, T)
+    lo, mid, hi = shade(rgba(CASTLEC), 0.8), rgba(CASTLEC), shade(rgba(CASTLEC), 1.12)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, mid if cluster(x, y, v * 5 + 1) > 1 else hi)
+    for y in (7, 15):
+        for x in range(T):
+            c.px(x, y, lo)
+    off = 0 if v == 0 else 4
+    for x in ((3 + off) % 8, (11 + off) % 16):
+        for y in range(0, 7):
+            c.px(x, y, lo)
+    return c
+
+
+def tile_towerf(v):
+    c = Canvas(T, T)
+    lo, mid = shade(rgba(TOWERC), 0.78), rgba(TOWERC)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, mid if cluster(x, y, v * 9 + 4) > 1 else lo)
+    # arcane circle arcs
+    cxx, cyy = 8, 8
+    for ang in range(0, 360, 30):
+        import math as _m
+        x = int(cxx + 5 * _m.cos(_m.radians(ang + v * 15)))
+        y = int(cyy + 5 * _m.sin(_m.radians(ang + v * 15)))
+        c.px(x, y, (190, 170, 230, 255))
+    return c
+
+
+def tile_dock():
+    c = Canvas(T, T)
+    plank = rgba(DOCKC)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, plank if (x % 4) != 3 else shade(plank, 0.7))
+    for y in (0, 15):
+        for x in range(T):
+            c.px(x, y, shade(plank, 0.55))
+    return c
+
+
+def tile_deadtree():
+    c = tile_swamp(0)
+    trunk = (74, 60, 48, 255)
+    c.rect(7, 4, 8, 13, trunk)
+    c.px(5, 6, trunk); c.px(6, 6, trunk)
+    c.px(9, 5, trunk); c.px(10, 5, trunk)
+    c.px(6, 5, shade(trunk, 1.25))
+    c.px(4, 5, trunk); c.px(11, 4, trunk)
+    return c
+
+
+def gen_tiles_v3():
+    """Rewrites tiles.png with rows 0-1 (v2 bases), 2-3 (masks), 4-5 (M4)."""
+    cols, rows = 16, 6
+    atlas = Canvas(T * cols, T * rows)
+
+    def put(col, row, tc):
+        for y in range(T):
+            for x in range(T):
+                atlas.px(col * T + x, row * T + y, tc.p[y][x])
+
+    row0 = [tile_grass(0), tile_grass(1), tile_grass(2), tile_tree(),
+            tile_water(0), tile_water(1), tile_water(2),
+            tile_road(0), tile_road(1), tile_road(2),
+            tile_cobble(0), tile_cobble(1), tile_wall(),
+            tile_forest(0), tile_forest(1), tile_forest(2)]
+    row1 = [tile_mine(0), tile_mine(1), tile_mine(2), tile_rock(0), tile_rock(1),
+            tile_crystal(), tile_sand(0), tile_sand(1), tile_sand(2),
+            tile_flowers(0), tile_flowers(1), tile_forge()]
+    row4 = [tile_ocean(0), tile_ocean(1), tile_mountain(), tile_hills(),
+            tile_snow(0), tile_snow(1), tile_snow(2),
+            tile_desert(0), tile_desert(1), tile_desert(2),
+            tile_swamp(0), tile_swamp(1), tile_bridge(),
+            tile_castle(0), tile_castle(1), tile_deadtree()]
+    row5 = [tile_towerf(0), tile_towerf(1), tile_dock()]
+    for i, tc in enumerate(row0):
+        put(i, 0, tc)
+    for i, tc in enumerate(row1):
+        put(i, 1, tc)
+    for m in range(16):
+        put(m, 2, tile_foam(m))
+        put(m, 3, tile_fringe(m))
+    for i, tc in enumerate(row4):
+        put(i, 4, tc)
+    for i, tc in enumerate(row5):
+        put(i, 5, tc)
+    atlas.save(ROOT / "tiles.png")
+
+
+# ---------------------------------------------------------------- monster palette variants
+
+
+def gen_wisp_variant(name, body, leaf):
+    c = Canvas(FW * 3, FH * 4)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            bob = (0, 1, 0)[frame]
+            cy = oy + 14 + bob
+            for y in range(-4, 5):
+                half = 5 - abs(y) // 2
+                c.rect(ox + 8 - half, cy + y, ox + 7 + half, cy + y,
+                       body if (y + bob) % 3 else shade(body, 1.15))
+            c.rect(ox + 7, cy - 7, ox + 8, cy - 5, leaf)
+            c.px(ox + 9, cy - 6, leaf)
+            if direction != 1:
+                eye = (30, 30, 44, 255)
+                c.px(ox + 6, cy - 1, eye)
+                c.px(ox + 10, cy - 1, eye)
+    auto_outline(c)
+    c.save(ROOT / "units" / f"{name}.png")
+
+
+def gen_wolf_variant(name, fur):
+    c = Canvas(FW * 3, FH * 4)
+    dark = shade(fur, 0.7)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            flip = direction == 2
+
+            def X(x):
+                return ox + (15 - x if flip else x)
+            by = oy + 13
+            for x in range(2, 13):
+                c.rect(X(x), by, X(x), by + 4, fur)
+            c.rect(X(11), by - 3, X(14), by + 1, fur)
+            c.px(X(12), by - 4, dark)
+            c.px(X(14), by - 2, (30, 30, 44, 255))
+            c.px(X(15), by, dark)
+            c.rect(X(2), by - 1, X(3), by + 1, dark)
+            lo = (0, 1, 0)[frame]
+            c.rect(X(4), by + 5, X(4), by + 7 + lo, dark)
+            c.rect(X(7), by + 5, X(7), by + 7 - lo, dark)
+            c.rect(X(10), by + 5, X(10), by + 7 + lo, dark)
+            c.rect(X(12), by + 5, X(12), by + 7 - lo, dark)
+    auto_outline(c)
+    c.save(ROOT / "units" / f"{name}.png")
+
+
+def gen_golem_variant(name, stone, core):
+    c = Canvas(FW * 3, FH * 4)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            sway = (-1, 0, 1)[frame]
+            c.rect(ox + 4, oy + 2, ox + 11, oy + 7, stone)
+            c.rect(ox + 2, oy + 8, ox + 13, oy + 17, stone)
+            c.rect(ox + 2, oy + 8, ox + 13, oy + 9, shade(stone, 1.2))
+            c.rect(ox + 5, oy + 11, ox + 10, oy + 14, core)
+            c.rect(ox + 1 + sway, oy + 9, ox + 2 + sway, oy + 16, shade(stone, 0.8))
+            c.rect(ox + 13 - sway, oy + 9, ox + 14 - sway, oy + 16, shade(stone, 0.8))
+            c.rect(ox + 4, oy + 18, ox + 6, oy + 22, shade(stone, 0.7))
+            c.rect(ox + 9, oy + 18, ox + 11, oy + 22, shade(stone, 0.7))
+            if direction != 1:
+                glow = shade(core, 1.4)
+                c.px(ox + 6, oy + 4, glow)
+                c.px(ox + 9, oy + 4, glow)
+    auto_outline(c)
+    c.save(ROOT / "units" / f"{name}.png")
+
+
+def gen_scorpion(name, shell):
+    c = Canvas(FW * 3, FH * 4)
+    dark = shade(shell, 0.7)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            flip = direction == 2
+
+            def X(x):
+                return ox + (15 - x if flip else x)
+            by = oy + 16
+            c.rect(X(4), by - 2, X(10), by + 1, shell)          # body
+            c.rect(X(4), by - 2, X(10), by - 2, shade(shell, 1.2))
+            # tail curling up behind
+            curl = (0, 1, 0)[frame]
+            c.px(X(3), by - 3, shell)
+            c.px(X(2), by - 4 - curl, shell)
+            c.px(X(2), by - 5 - curl, dark)                     # stinger
+            # claws forward
+            c.rect(X(11), by - 3, X(12), by - 2, dark)
+            c.rect(X(11), by + 1, X(12), by + 2, dark)
+            # legs
+            lo = (0, 1, 0)[frame]
+            for i, lx in enumerate((5, 7, 9)):
+                c.px(X(lx), by + 2 + (lo if i % 2 else 0), dark)
+                c.px(X(lx), by + 3 + (lo if i % 2 else 0), dark)
+            if direction != 1:
+                c.px(X(11), by - 1, (30, 30, 44, 255))
+    auto_outline(c)
+    c.save(ROOT / "units" / f"{name}.png")
+
+
+# ---------------------------------------------------------------- vehicles
+
+
+def gen_canoe():
+    c = Canvas(FW * 3, FH * 4)
+    hull = (140, 96, 56, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            rock = (0, 1, 0)[frame]
+            by = oy + 14 + rock
+            if direction in (0, 1):
+                c.rect(ox + 5, by - 4, ox + 10, by + 4, hull)
+                c.px(ox + 5, by - 4, shade(hull, 0.7)); c.px(ox + 10, by - 4, shade(hull, 0.7))
+                c.px(ox + 5, by + 4, shade(hull, 0.7)); c.px(ox + 10, by + 4, shade(hull, 0.7))
+                c.rect(ox + 6, by - 3, ox + 9, by + 3, shade(hull, 1.2))
+                c.rect(ox + 7, by - 2, ox + 8, by + 2, shade(hull, 0.85))
+            else:
+                flip = direction == 2
+
+                def X(x):
+                    return ox + (15 - x if flip else x)
+                for i in range(2, 14):
+                    c.px(X(i), by, hull)
+                    c.px(X(i), by + 1, shade(hull, 0.8))
+                c.rect(X(4), by - 1, X(11), by - 1, shade(hull, 1.2))
+    auto_outline(c)
+    c.save(ROOT / "units" / "veh_canoe.png")
+
+
+def gen_boat(name="veh_boat", big=False):
+    c = Canvas(FW * 3, FH * 4)
+    hull = (120, 82, 48, 255)
+    sail = (238, 236, 224, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            rock = (0, 1, 0)[frame]
+            by = oy + 17 + rock
+            w = 6 if big else 4
+            c.rect(ox + 8 - w // 2 - 1, by - 2, ox + 8 + w // 2, by + 1, hull)
+            c.rect(ox + 8 - w // 2 - 1, by - 2, ox + 8 + w // 2, by - 2, shade(hull, 1.2))
+            # mast + sail
+            c.rect(ox + 7, by - 10, ox + 7, by - 2, shade(hull, 0.7))
+            for i in range(6 if big else 5):
+                c.rect(ox + 8, by - 9 + i + rock, ox + 8 + min(4 + (1 if big else 0), i + 2), by - 9 + i + rock, sail)
+            if big:
+                c.rect(ox + 4, by - 7, ox + 6, by - 4, sail)  # second sail
+            c.px(ox + 7, by - 11, (200, 60, 60, 255))         # pennant
+    auto_outline(c)
+    c.save(ROOT / "units" / f"{name}.png")
+
+
+def gen_tank():
+    c = Canvas(FW * 3, FH * 4)
+    iron = (110, 104, 96, 255)
+    brass = (196, 156, 74, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            tr = frame % 2
+            c.rect(ox + 3, oy + 10, ox + 12, oy + 17, iron)          # hull
+            c.rect(ox + 3, oy + 10, ox + 12, oy + 10, shade(iron, 1.25))
+            c.rect(ox + 5, oy + 7, ox + 10, oy + 10, shade(iron, 0.85))  # turret
+            c.px(ox + 6, oy + 8, brass); c.px(ox + 9, oy + 8, brass)     # rivets
+            # cannon by facing
+            if direction == 0:
+                c.rect(ox + 7, oy + 17, ox + 8, oy + 19, brass)
+            elif direction == 1:
+                c.rect(ox + 7, oy + 4, ox + 8, oy + 7, brass)
+            elif direction == 2:
+                c.rect(ox + 0, oy + 12, ox + 3, oy + 13, brass)
+            else:
+                c.rect(ox + 12, oy + 12, ox + 15, oy + 13, brass)
+            # treads
+            for x in range(3, 13):
+                c.px(ox + x, oy + 18, shade(iron, 0.55) if (x + tr) % 2 else (40, 38, 36, 255))
+            c.px(ox + 4, oy + 11, brass); c.px(ox + 11, oy + 16, brass)
+    auto_outline(c)
+    c.save(ROOT / "units" / "veh_tank.png")
+
+
+def gen_airship():
+    c = Canvas(FW * 3, FH * 4)
+    balloon = (188, 74 , 64, 255)
+    wood = (140, 100, 58, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            bob = (0, 1, 0)[frame]
+            by = oy + 6 + bob
+            # balloon
+            for y in range(5):
+                half = (6, 7, 7, 6, 4)[y] // 2 + 1
+                c.rect(ox + 8 - half, by + y, ox + 7 + half, by + y,
+                       balloon if y % 2 else shade(balloon, 1.15))
+            c.rect(ox + 5, by + 1, ox + 6, by + 2, shade(balloon, 1.3))  # sheen
+            # rigging + gondola
+            c.px(ox + 5, by + 5, wood); c.px(ox + 10, by + 5, wood)
+            c.rect(ox + 5, by + 6, ox + 10, by + 8, wood)
+            c.rect(ox + 5, by + 6, ox + 10, by + 6, shade(wood, 1.2))
+            # propeller (spins with frame)
+            if frame == 1:
+                c.rect(ox + 7, by + 9, ox + 8, by + 9, (210, 210, 220, 255))
+            else:
+                c.px(ox + 7 - 1, by + 9, (210, 210, 220, 255))
+                c.px(ox + 8 + 1, by + 9, (210, 210, 220, 255))
+    auto_outline(c)
+    c.save(ROOT / "units" / "veh_airship.png")
+
+
+def gen_m4():
+    gen_tiles_v3()
+    gen_wisp_variant("ember_wisp", (230, 130, 60, 255), (250, 200, 90, 255))
+    gen_wisp_variant("marsh_wisp", (96, 140, 128, 255), (60, 96, 88, 255))
+    gen_wisp_variant("storm_elemental", (200, 214, 240, 255), (140, 170, 240, 255))
+    gen_wolf_variant("snow_wolf", (222, 228, 236, 255))
+    gen_scorpion("dune_scorpion", (198, 150, 70, 255))
+    gen_golem_variant("crypt_wight", (168, 172, 168, 255), (90, 200, 120, 255))
+    gen_golem_variant("hill_brute", (134, 140, 108, 255), (170, 140, 80, 255))
+    gen_golem_variant("storm_warden", (150, 160, 190, 255), (240, 240, 255, 255))
+    gen_canoe()
+    gen_boat("veh_boat", big=False)
+    gen_boat("veh_ship", big=True)
+    gen_tank()
+    gen_airship()
+
+
 if __name__ == "__main__":
-    gen_tiles()
+    gen_m4()
     for gen in (gen_wisp, gen_wolf, gen_golem, gen_bat, gen_slime, gen_warden):
         gen()
     gen_oak()

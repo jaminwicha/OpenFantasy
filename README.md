@@ -2,10 +2,15 @@
 
 A 2D open-world MMORPG in **Godot 4.4 (.NET/C#)**, styled after 16-bit
 golden-age JRPGs (FF6-inspired look; all assets original). One shared
-persistent region — *Verdance March* — with real-time ATB combat, monster AI,
-XP/levels, items/equipment, shops, quests, parties, a dungeon (the Hollow
-Mine with the Magitek Warden boss), gathering (chop/mine/forage) and crafting
-(with a town forge), chat, a day/night cycle, and server-side persistence.
+persistent world — **Aldermere**, 512×512 tiles across **four continents**
+(green Verdance, mountain-locked Kharzum, forest-and-swamp Sylvas, desert
+Miradel) with four towns, Castle Aldermere, the Storm Spire tower, and three
+dungeons. Real-time ATB combat, 14 monster types in level bands, XP/levels,
+**four playable races** (human/elf/dwarf/gnome with stat identities),
+items/equipment, shops, a **main quest chain** (kill/explore/deliver) plus
+town side quests, parties, gathering and crafting, **vehicles** (canoe,
+sailboat, ship, dwarven tank, and the airship *Brasswing*), chat, day/night,
+and server-side persistence.
 
 Every player is built in the **character creator**: a paper-doll sprite
 compositor (8 skins × 12 hair styles × 16 hair colors × 10 outfits × 16×16
@@ -21,6 +26,7 @@ layer sheets regenerate entirely from `tools/gen_layers.py`.
 - [`docs/VERTICAL_SLICE.md`](docs/VERTICAL_SLICE.md) — milestone 1 scope and acceptance
 - [`docs/MILESTONE_2.md`](docs/MILESTONE_2.md) — milestone 2: items, shops, quests, parties, dungeon
 - [`docs/MILESTONE_3.md`](docs/MILESTONE_3.md) — milestone 3: sprite fidelity, character creator, gathering/crafting
+- [`docs/MILESTONE_4.md`](docs/MILESTONE_4.md) — milestone 4: four continents, races, vehicles, quest chains
 
 ## Requirements
 
@@ -71,7 +77,8 @@ python3 tools/preview_sprites.py # docs/screenshots/preset-gallery.png (offline 
 
 WASD/arrows move · **1–4** abilities · **Tab** cycle target · **Enter** chat ·
 **E** talk / gather (tools required: axe→oak, pickaxe→ore, sickle→berries) ·
-**I** inventory · **J** quest log · **C** crafting · **Esc** close window
+**V** embark/disembark vehicle · **I** inventory · **J** quest log ·
+**C** crafting · **Esc** close window
 
 Chat commands: `/party invite <name>` · `/party accept` · `/party leave` · `/p <msg>`
 

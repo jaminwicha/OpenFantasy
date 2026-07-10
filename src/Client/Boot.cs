@@ -217,6 +217,8 @@ public partial class Boot : Control
         options.AddThemeConstantOverride("separation", 6);
         panel.AddChild(options);
 
+        AddOptionRow(options, "Race", () => _appearance.Race, v => _appearance.Race = v,
+            _data.Appearance.Races.Count);
         AddOptionRow(options, "Skin", () => _appearance.Skin, v => _appearance.Skin = v,
             _data.Appearance.Skins.Count);
         AddOptionRow(options, "Hair", () => _appearance.HairStyle, v => _appearance.HairStyle = v,
@@ -269,10 +271,12 @@ public partial class Boot : Control
     private void RefreshCreator()
     {
         _preview.Texture = SpriteComposer.Get(_appearance);
-        // Update option value labels (1-based display).
+        // Update option value labels (race by name, the rest 1-based).
         byte[] values = _appearance.ToBytes();
         for (int i = 0; i < _optionValueLabels.Count && i < values.Length; i++)
-            _optionValueLabels[i].Text = $"{values[i] + 1}";
+            _optionValueLabels[i].Text = i == 0
+                ? _data!.Appearance.Races[Math.Min(values[0], (byte)(_data.Appearance.Races.Count - 1))]
+                : $"{values[i] + 1}";
     }
 
     private void RandomizeAppearance()
@@ -288,6 +292,7 @@ public partial class Boot : Control
         var manifest = _data!.Appearance;
         _appearance = new Appearance
         {
+            Race = Roll(manifest.Races.Count),
             Skin = Roll(manifest.Skins.Count),
             HairStyle = Roll(manifest.HairStyles),
             HairColor = Roll(manifest.HairColors.Count),

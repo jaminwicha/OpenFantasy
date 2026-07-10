@@ -110,6 +110,7 @@ public partial class GameController : Node2D
             if (Input.IsActionJustPressed("toggle_inventory")) _windows.ToggleInventory();
             if (Input.IsActionJustPressed("toggle_quests")) _windows.ToggleQuests();
             if (Input.IsActionJustPressed("toggle_craft")) _windows.ToggleCraft();
+            if (Input.IsActionJustPressed("toggle_vehicle")) _client.SendVehicleToggle();
             if (Input.IsActionJustPressed("interact")) TryInteract();
             if (Input.IsActionJustPressed("ui_cancel")) _windows.CloseAll();
         }
@@ -270,12 +271,13 @@ public partial class GameController : Node2D
             case SimEventKind.QuestProgress when targetId == _client.LocalEntityId:
             {
                 var quest = _data.Quests[abilityId];
+                string turnInName = _data.Npcs[quest.Kind == QuestKind.Talk ? quest.TalkNpc : quest.Giver].Name;
                 if (value < 0)
                     _hud.AddChatLine("*", $"Quest complete: {quest.Name}!");
                 else if (value == 0)
                     _hud.AddChatLine("*", $"Quest accepted: {quest.Name}");
                 else if (value >= quest.TargetCount)
-                    _hud.AddChatLine("*", $"{quest.Name}: done! Return to {_data.Npcs[quest.Giver].Name}.");
+                    _hud.AddChatLine("*", $"{quest.Name}: done! Return to {turnInName}.");
                 else
                     _hud.AddChatLine("*", $"{quest.Name}: {value}/{quest.TargetCount}");
                 break;
@@ -290,7 +292,7 @@ public partial class GameController : Node2D
         var label = UiTheme.MakeLabel(text, 10);
         label.Modulate = color;
         label.Position = view.Position + new Vector2(-14, -30);
-        label.ZIndex = 5000;
+        label.ZIndex = 4000;
         _fxLayer.AddChild(label);
 
         var tween = CreateTween();

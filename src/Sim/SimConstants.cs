@@ -34,5 +34,5 @@ public static class SimConstants
     /// <summary>Ticks per in-game day (10 real minutes) — presentation clock only.</summary>
     public const int TicksPerDay = 600 * TicksPerSecond;
 
-    public const int ProtocolVersion = 3;
+    public const int ProtocolVersion = 4;
 }

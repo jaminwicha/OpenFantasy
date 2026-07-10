@@ -188,4 +188,10 @@ public partial class ClientNode : Node
         if (LocalEntityId < 0) return;
         _peer.PutPacket(Protocol.WriteCraftOp(recipeId));
     }
+
+    public void SendVehicleToggle()
+    {
+        if (LocalEntityId < 0) return;
+        _peer.PutPacket(Protocol.WriteVehicleOp());
+    }
 }

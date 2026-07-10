@@ -181,22 +181,42 @@ public partial class GameWindows : CanvasLayer
         scroll.AddChild(list);
 
         if (state.Quests.Count == 0)
-            list.AddChild(UiTheme.MakeLabel("No quests yet. Talk to the folk of Brasshollow.", 12));
+            list.AddChild(UiTheme.MakeLabel("No quests yet. Talk to the folk of the four towns.", 12));
 
-        foreach (var (questId, questState, kills) in state.Quests)
+        foreach (bool mainSection in new[] { true, false })
         {
-            var quest = _data.Quests[questId];
-            bool done = (QuestState)questState == QuestState.Completed;
-            string progress = done
-                ? "Complete"
-                : $"{Math.Min(kills, quest.TargetCount)}/{quest.TargetCount} {_data.Monsters[quest.TargetMonster].Name}s" +
-                  (kills >= quest.TargetCount ? " — return to " + _data.Npcs[quest.Giver].Name : "");
-            var title = UiTheme.MakeLabel(quest.Name, 13);
-            title.Modulate = done ? new Color(0.6f, 0.65f, 0.7f) : UiTheme.AtbReadyColor;
-            list.AddChild(title);
-            var detail = UiTheme.MakeLabel(progress, 11);
-            detail.Modulate = new Color(0.75f, 0.8f, 0.95f);
-            list.AddChild(detail);
+            var entries = state.Quests
+                .Where(q => _data.Quests[q.questId].Main == mainSection)
+                .ToList();
+            if (entries.Count == 0) continue;
+
+            var header = UiTheme.MakeLabel(mainSection ? "— Main —" : "— Side —", 12);
+            header.Modulate = UiTheme.AtbColor;
+            list.AddChild(header);
+
+            foreach (var (questId, questState, kills) in entries)
+            {
+                var quest = _data.Quests[questId];
+                bool done = (QuestState)questState == QuestState.Completed;
+                string turnInName = _data.Npcs[quest.Kind == QuestKind.Talk ? quest.TalkNpc : quest.Giver].Name;
+                string progress = done ? "Complete" : quest.Kind switch
+                {
+                    QuestKind.Kill =>
+                        $"{Math.Min(kills, quest.TargetCount)}/{quest.TargetCount} {_data.Monsters[quest.TargetMonster].Name}s" +
+                        (kills >= quest.TargetCount ? $" — return to {turnInName}" : ""),
+                    QuestKind.Explore => kills > 0
+                        ? $"Seen — report to {turnInName}"
+                        : $"Reach: {quest.TargetRegion.Replace('_', ' ')}",
+                    QuestKind.Talk => $"Deliver to {turnInName}",
+                    _ => "…",
+                };
+                var title = UiTheme.MakeLabel((quest.Main ? "★ " : "") + quest.Name, 13);
+                title.Modulate = done ? new Color(0.6f, 0.65f, 0.7f) : UiTheme.AtbReadyColor;
+                list.AddChild(title);
+                var detail = UiTheme.MakeLabel(progress, 11);
+                detail.Modulate = new Color(0.75f, 0.8f, 0.95f);
+                list.AddChild(detail);
+            }
         }
         return panel;
     }

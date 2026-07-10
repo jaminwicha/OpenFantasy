@@ -8,6 +8,7 @@ namespace OpenFantasy.Sim;
 /// </summary>
 public struct Appearance : IEquatable<Appearance>
 {
+    public byte Race;
     public byte Skin;
     public byte HairStyle;
     public byte HairColor;
@@ -18,30 +19,35 @@ public struct Appearance : IEquatable<Appearance>
 
     public static readonly Appearance Default = new()
     {
-        Skin = 1, HairStyle = 0, HairColor = 2, Outfit = 0, OutfitA = 0, OutfitB = 7, Acc = 0,
+        Race = 0, Skin = 1, HairStyle = 0, HairColor = 2, Outfit = 0, OutfitA = 0, OutfitB = 7, Acc = 0,
     };
 
-    public readonly byte[] ToBytes() => new[] { Skin, HairStyle, HairColor, Outfit, OutfitA, OutfitB, Acc };
+    public readonly byte[] ToBytes() => new[] { Race, Skin, HairStyle, HairColor, Outfit, OutfitA, OutfitB, Acc };
 
-    public static Appearance FromBytes(byte[] b) => b.Length < 7
-        ? Default
-        : new Appearance { Skin = b[0], HairStyle = b[1], HairColor = b[2], Outfit = b[3], OutfitA = b[4], OutfitB = b[5], Acc = b[6] };
+    public static Appearance FromBytes(byte[] b) => b.Length switch
+    {
+        >= 8 => new Appearance { Race = b[0], Skin = b[1], HairStyle = b[2], HairColor = b[3], Outfit = b[4], OutfitA = b[5], OutfitB = b[6], Acc = b[7] },
+        // M3 saves were 7 bytes without a race — treat as human.
+        7 => new Appearance { Race = 0, Skin = b[0], HairStyle = b[1], HairColor = b[2], Outfit = b[3], OutfitA = b[4], OutfitB = b[5], Acc = b[6] },
+        _ => Default,
+    };
 
     public readonly void Write(BinaryWriter w)
     {
-        w.Write(Skin); w.Write(HairStyle); w.Write(HairColor);
+        w.Write(Race); w.Write(Skin); w.Write(HairStyle); w.Write(HairColor);
         w.Write(Outfit); w.Write(OutfitA); w.Write(OutfitB); w.Write(Acc);
     }
 
     public static Appearance Read(BinaryReader r) => new()
     {
-        Skin = r.ReadByte(), HairStyle = r.ReadByte(), HairColor = r.ReadByte(),
+        Race = r.ReadByte(), Skin = r.ReadByte(), HairStyle = r.ReadByte(), HairColor = r.ReadByte(),
         Outfit = r.ReadByte(), OutfitA = r.ReadByte(), OutfitB = r.ReadByte(), Acc = r.ReadByte(),
     };
 
     /// <summary>Clamps every field into the manifest's valid ranges.</summary>
     public readonly Appearance Sanitized(AppearanceData data) => new()
     {
+        Race = (byte)Math.Min(Race, Math.Max(0, data.Races.Count - 1)),
         Skin = (byte)Math.Min(Skin, data.Skins.Count - 1),
         HairStyle = (byte)Math.Min(HairStyle, data.HairStyles - 1),
         HairColor = (byte)Math.Min(HairColor, data.HairColors.Count - 1),
@@ -52,18 +58,19 @@ public struct Appearance : IEquatable<Appearance>
     };
 
     public readonly bool Equals(Appearance o)
-        => Skin == o.Skin && HairStyle == o.HairStyle && HairColor == o.HairColor
+        => Race == o.Race && Skin == o.Skin && HairStyle == o.HairStyle && HairColor == o.HairColor
            && Outfit == o.Outfit && OutfitA == o.OutfitA && OutfitB == o.OutfitB && Acc == o.Acc;
 
     public override readonly bool Equals(object? obj) => obj is Appearance a && Equals(a);
 
     public override readonly int GetHashCode()
-        => HashCode.Combine(Skin, HairStyle, HairColor, Outfit, OutfitA, OutfitB, Acc);
+        => HashCode.Combine(Race, Skin, HairStyle, HairColor, Outfit, OutfitA, OutfitB, Acc);
 }
 
 public sealed class AppearancePreset
 {
     public string Name { get; set; } = "";
+    public int Race { get; set; }
     public int Skin { get; set; }
     public int HairStyle { get; set; }
     public int HairColor { get; set; }
@@ -74,7 +81,7 @@ public sealed class AppearancePreset
 
     public Appearance ToAppearance() => new()
     {
-        Skin = (byte)Skin, HairStyle = (byte)HairStyle, HairColor = (byte)HairColor,
+        Race = (byte)Race, Skin = (byte)Skin, HairStyle = (byte)HairStyle, HairColor = (byte)HairColor,
         Outfit = (byte)Outfit, OutfitA = (byte)OutfitA, OutfitB = (byte)OutfitB, Acc = (byte)Acc,
     };
 }
@@ -90,6 +97,7 @@ public sealed class AppearanceData
     public int Outfits { get; set; }
     public List<List<List<int>>> OutfitColors { get; set; } = new();
     public int Accessories { get; set; }
+    public List<string> Races { get; set; } = new() { "Human" };
     public List<AppearancePreset> Presets { get; set; } = new();
 
     public static AppearanceData LoadFromFile(string path)

@@ -513,6 +513,44 @@ def draw_outfit(style, p: Pose):
 # ACCESSORIES (tinted with secondary outfit color).
 # ---------------------------------------------------------------------------
 
+def draw_race(race, p: Pose) -> Cell:
+    """Racial features drawn over hair/body. 1=elf ears, 2=dwarf beard, 3=gnome ears+nose.
+    Elf/gnome layers tint with the SKIN ramp, dwarf with the HAIR ramp."""
+    c = Cell()
+    ht, ey, ch = p.head_top, p.eye_y, p.chin_y
+    side = p.d in (LEFT, RIGHT)
+    back = p.d == UP
+    if race == 1:  # elf: long pointed ears sweeping up-out
+        if not back:
+            ears = ((3, ey), (2, ey - 1), (12, ey), (13, ey - 1)) if not side \
+                else ((3, ey), (2, ey - 1),)
+            for x, y in ears:
+                c.px(x, y, 2)
+            c.px(2 if not side else 2, ey - 2, 3)
+        else:
+            c.px(3, ey, 2); c.px(12, ey, 2)
+    elif race == 2:  # dwarf: broad braided beard over jaw and chest
+        if not back:
+            c.rect(5, ey + 2, 10, ch + 1, 2)
+            c.hline(6, 9, ch + 2, 2)
+            c.px(6, ey + 3, 1); c.px(9, ey + 3, 1)     # braid shadows
+            c.px(7, ch + 3, 2); c.px(8, ch + 3, 1)     # beard tip
+            c.hline(6, 9, ey + 2, 3)                   # mustache sheen
+    elif race == 3:  # gnome: big round ears + button nose
+        if not back:
+            for x in (3, 12) if not side else (3,):
+                c.px(x, ey, 2)
+                c.px(x, ey + 1, 2)
+                c.px(x, ey - 1, 3)
+            c.px(7, ey + 1, 3)                          # button nose highlight
+            c.px(8, ey + 1, 2)
+        else:
+            c.px(3, ey, 2); c.px(3, ey + 1, 2)
+            c.px(12, ey, 2); c.px(12, ey + 1, 2)
+    c.outline()
+    return c
+
+
 def draw_acc(style, p: Pose) -> Cell:
     c = Cell()
     ht = p.head_top
@@ -594,14 +632,14 @@ OUTFIT_COLORS = [ramp(c) for c in [
 ]]
 
 PRESETS = [
-    {"name": "Emerald Adept",   "skin": 1, "hairStyle": 4,  "hairColor": 11, "outfit": 4, "outfitA": 10, "outfitB": 6,  "acc": 2},
-    {"name": "Treasure Hunter", "skin": 1, "hairStyle": 5,  "hairColor": 7,  "outfit": 1, "outfitA": 0,  "outfitB": 14, "acc": 0},
-    {"name": "White General",   "skin": 0, "hairStyle": 3,  "hairColor": 8,  "outfit": 5, "outfitA": 14, "outfitB": 6,  "acc": 0},
-    {"name": "Azure Dragoon",   "skin": 2, "hairStyle": 2,  "hairColor": 0,  "outfit": 9, "outfitA": 1,  "outfitB": 15, "acc": 0},
-    {"name": "Machinist King",  "skin": 0, "hairStyle": 8,  "hairColor": 7,  "outfit": 3, "outfitA": 0,  "outfitB": 10, "acc": 2},
-    {"name": "Steppe Monk",     "skin": 3, "hairStyle": 11, "hairColor": 1,  "outfit": 6, "outfitA": 13, "outfitB": 10, "acc": 1},
-    {"name": "Moon Sage",       "skin": 7, "hairStyle": 3,  "hairColor": 10, "outfit": 2, "outfitA": 14, "outfitB": 12, "acc": 0},
-    {"name": "Wild Painter",    "skin": 4, "hairStyle": 10, "hairColor": 15, "outfit": 8, "outfitA": 4,  "outfitB": 6,  "acc": 3},
+    {"name": "Emerald Adept",   "race": 0, "skin": 1, "hairStyle": 4,  "hairColor": 11, "outfit": 4, "outfitA": 10, "outfitB": 6,  "acc": 2},
+    {"name": "Treasure Hunter", "race": 0, "skin": 1, "hairStyle": 5,  "hairColor": 7,  "outfit": 1, "outfitA": 0,  "outfitB": 14, "acc": 0},
+    {"name": "White General",   "race": 0, "skin": 0, "hairStyle": 3,  "hairColor": 8,  "outfit": 5, "outfitA": 14, "outfitB": 6,  "acc": 0},
+    {"name": "Azure Dragoon",   "race": 0, "skin": 2, "hairStyle": 2,  "hairColor": 0,  "outfit": 9, "outfitA": 1,  "outfitB": 15, "acc": 0},
+    {"name": "Machinist King",  "race": 0, "skin": 0, "hairStyle": 8,  "hairColor": 7,  "outfit": 3, "outfitA": 0,  "outfitB": 10, "acc": 2},
+    {"name": "Sylvan Warden",   "race": 1, "skin": 0, "hairStyle": 3,  "hairColor": 11, "outfit": 1, "outfitA": 4,  "outfitB": 13, "acc": 3},
+    {"name": "Forge Thane",     "race": 2, "skin": 2, "hairStyle": 2,  "hairColor": 5,  "outfit": 5, "outfitA": 15, "outfitB": 7,  "acc": 0},
+    {"name": "Cog Tinker",      "race": 3, "skin": 1, "hairStyle": 7,  "hairColor": 14, "outfit": 8, "outfitA": 5,  "outfitB": 6,  "acc": 2},
 ]
 
 
@@ -615,6 +653,8 @@ def main():
         save_layer(f"outfit_{s:02d}_b", cb)
     for s in range(1, 4):
         save_layer(f"acc_{s:02d}", build(lambda p, s=s: draw_acc(s, p)))
+    for r in range(1, 4):
+        save_layer(f"race_{r:02d}", build(lambda p, r=r: draw_race(r, p)))
 
     manifest = {
         "gray": list(GRAY),
@@ -624,6 +664,7 @@ def main():
         "outfits": 10,
         "outfitColors": OUTFIT_COLORS,
         "accessories": 4,
+        "races": ["Human", "Elf", "Dwarf", "Gnome"],
         "presets": PRESETS,
     }
     dest = ROOT / "data" / "appearance.json"
