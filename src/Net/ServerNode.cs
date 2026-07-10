@@ -142,8 +142,16 @@ public partial class ServerNode : Node
         {
             case Op.Hello:
             {
-                var (protocol, account, classId) = Protocol.ReadHello(r);
-                HandleHello(sender, protocol, account, classId);
+                var (protocol, account, classId, appearance) = Protocol.ReadHello(r);
+                HandleHello(sender, protocol, account, classId, appearance);
+                break;
+            }
+            case Op.CraftOp when session is { Ready: true }:
+            {
+                string recipeId = r.ReadString();
+                if (_world.GetEntity(session.EntityId) is not { } player) break;
+                SendTo(sender, Protocol.WriteChat("*", _world.CraftItem(player, recipeId)));
+                SendTo(sender, Protocol.WritePlayerState(_world, player));
                 break;
             }
             case Op.Input when session is { Ready: true }:
@@ -264,6 +272,17 @@ public partial class ServerNode : Node
     private void HandleInteract(int sender, Session session, int npcEntityId)
     {
         if (_world.GetEntity(session.EntityId) is not { } player) return;
+
+        // Interacting with a resource node = one gathering swing.
+        if (_world.GetEntity(npcEntityId) is { IsNode: true })
+        {
+            string result = _world.Gather(player, npcEntityId);
+            if (result.Length > 0)
+                SendTo(sender, Protocol.WriteChat("*", result));
+            SendTo(sender, Protocol.WritePlayerState(_world, player));
+            return;
+        }
+
         var npc = _world.NpcInRange(player, npcEntityId);
         if (npc is null) return;
 
@@ -352,7 +371,7 @@ public partial class ServerNode : Node
                 SendTo(member.peerId, Protocol.WritePlayerState(_world, entity));
     }
 
-    private void HandleHello(int sender, int protocol, string account, string classId)
+    private void HandleHello(int sender, int protocol, string account, string classId, Appearance appearance)
     {
         string? reason = null;
         account = account.Trim();
@@ -376,7 +395,7 @@ public partial class ServerNode : Node
         if (save != null && save.ClassId != classId)
             save = null; // class change = fresh character (slice rule)
 
-        var entity = _world.AddPlayer(account, classId, save);
+        var entity = _world.AddPlayer(account, classId, save, appearance);
         _sessions[sender] = new Session { Account = account, EntityId = entity.Id, Ready = true };
         SendTo(sender, Protocol.WriteWelcome(entity.Id, _world.Tick));
         SendTo(sender, Protocol.WritePlayerState(_world, entity));

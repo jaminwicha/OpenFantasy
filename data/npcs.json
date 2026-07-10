@@ -1,13 +1,15 @@
 {
   "npcs": [
     {
-      "id": "marla", "name": "Marla", "sprite": "npc_vendor",
+      "id": "marla", "name": "Marla", "sprite": "",
+      "appearance": { "skin": 2, "hairStyle": 1, "hairColor": 4, "outfit": 8, "outfitA": 9, "outfitB": 14, "acc": 1 },
       "tileX": 21, "tileY": 60,
       "dialog": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
-      "shop": ["potion", "tonic", "ether", "bronze_sword", "oak_rod", "iron_blade", "crystal_rod", "leather_vest", "brass_mail"]
+      "shop": ["potion", "tonic", "ether", "rations", "bronze_sword", "oak_rod", "leather_vest", "copper_axe", "copper_pickaxe", "sickle"]
     },
     {
-      "id": "elder_bran", "name": "Elder Bran", "sprite": "npc_elder",
+      "id": "elder_bran", "name": "Elder Bran", "sprite": "",
+      "appearance": { "skin": 3, "hairStyle": 8, "hairColor": 9, "outfit": 2, "outfitA": 4, "outfitB": 6, "acc": 0 },
       "tileX": 31, "tileY": 60,
       "dialog": "The March grows wilder by the season, traveler. We could use your blade.",
       "quests": ["cull_wisps", "wolf_menace", "the_warden"]

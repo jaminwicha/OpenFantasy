@@ -45,6 +45,42 @@
     },
     {
       "id": "ore_chunk", "name": "Ore Chunk", "kind": "Material", "price": 35
+    },
+    {
+      "id": "wood", "name": "Wood", "kind": "Material", "price": 6
+    },
+    {
+      "id": "iron_ore", "name": "Iron Ore", "kind": "Material", "price": 14
+    },
+    {
+      "id": "iron_bar", "name": "Iron Bar", "kind": "Material", "price": 55
+    },
+    {
+      "id": "berries", "name": "Berries", "kind": "Material", "price": 5
+    },
+    {
+      "id": "rations", "name": "Rations", "kind": "Consumable",
+      "price": 25, "healHp": 30, "healMp": 5
+    },
+    {
+      "id": "copper_axe", "name": "Copper Axe", "kind": "Tool",
+      "price": 90, "tool": "Axe", "toolPower": 1
+    },
+    {
+      "id": "copper_pickaxe", "name": "Copper Pickaxe", "kind": "Tool",
+      "price": 90, "tool": "Pickaxe", "toolPower": 1
+    },
+    {
+      "id": "sickle", "name": "Sickle", "kind": "Tool",
+      "price": 60, "tool": "Sickle", "toolPower": 1
+    },
+    {
+      "id": "iron_axe", "name": "Iron Axe", "kind": "Tool",
+      "price": 320, "tool": "Axe", "toolPower": 2
+    },
+    {
+      "id": "iron_pickaxe", "name": "Iron Pickaxe", "kind": "Tool",
+      "price": 320, "tool": "Pickaxe", "toolPower": 2
     }
   ]
 }

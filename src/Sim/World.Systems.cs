@@ -22,6 +22,8 @@ public sealed partial class World
                 Name = def.Name,
                 ArchetypeId = def.Sprite,
                 NpcDefId = def.Id,
+                HasAppearance = def.Appearance != null,
+                Appearance = def.Appearance?.ToAppearance().Sanitized(Data.Appearance) ?? Appearance.Default,
                 X = def.TileX * u + u / 2,
                 Y = def.TileY * u + u / 2,
                 Hp = 1,

@@ -35,9 +35,12 @@ public partial class EntityView : Node2D
         EntityId = state.Id;
         Kind = state.Kind;
 
+        Texture2D texture = state.HasAppearance
+            ? SpriteComposer.Get(state.Appearance)
+            : GD.Load<Texture2D>($"res://assets/units/{state.ArchetypeId}.png");
         _sprite = new Sprite2D
         {
-            Texture = GD.Load<Texture2D>($"res://assets/units/{state.ArchetypeId}.png"),
+            Texture = texture,
             Hframes = 3,
             Vframes = 4,
             Offset = new Vector2(0, -FrameH / 2f + 2),
@@ -58,6 +61,7 @@ public partial class EntityView : Node2D
         _nameLabel.Size = new Vector2(80, 10);
         if (isLocal) _nameLabel.Modulate = new Color("a0e0ff");
         else if (state.Kind == EntityKind.Monster) _nameLabel.Modulate = new Color("ffb0a0");
+        else if (state.Kind == EntityKind.Node) _nameLabel.Modulate = new Color("b8e0a0");
         AddChild(_nameLabel);
 
         (_hpRoot, _hpFill) = UiTheme.MakeBar(UiTheme.HpColor, new Vector2(22, 3));
@@ -107,7 +111,9 @@ public partial class EntityView : Node2D
         _animClock += (float)delta;
         int row = (int)_facing;
         int col;
-        if (_moving && _renderPos.DistanceSquaredTo(_targetPos) > 0.5f)
+        if (Kind == EntityKind.Node)
+            col = WalkCycle[(int)(_animClock * 2.5f) % WalkCycle.Length]; // idle sway/glint
+        else if (_moving && _renderPos.DistanceSquaredTo(_targetPos) > 0.5f)
             col = WalkCycle[(int)(_animClock * 7) % WalkCycle.Length];
         else
             col = 1;

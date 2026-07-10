@@ -14,7 +14,7 @@ from pathlib import Path
 W, H = 128, 128
 rng = random.Random(60406)  # fixed seed: world layout is content, not runtime randomness
 
-GRASS, TREE, WATER, ROAD, COBBLE, WALL, FOREST, MINEFLOOR, ROCK, CRYSTAL, SAND, FLOWERS = range(12)
+GRASS, TREE, WATER, ROAD, COBBLE, WALL, FOREST, MINEFLOOR, ROCK, CRYSTAL, SAND, FLOWERS, FORGE = range(13)
 
 TILESET = [
     {"id": GRASS, "name": "grass", "walkable": True},
@@ -29,6 +29,7 @@ TILESET = [
     {"id": CRYSTAL, "name": "crystal", "walkable": False},
     {"id": SAND, "name": "sand", "walkable": True},
     {"id": FLOWERS, "name": "flowers", "walkable": True},
+    {"id": FORGE, "name": "forge", "walkable": False},
 ]
 
 grid = [[GRASS] * W for _ in range(H)]
@@ -97,6 +98,8 @@ for hx, hy in ((19, 55), (30, 55), (19, 66), (30, 66)):
 # respawn crystal north of the plaza; players spawn just south of it
 grid[58][26] = CRYSTAL
 PLAYER_SPAWN = {"x": 26, "y": 62}
+# forge (crafting station) in the southeast quarter of town
+grid[68][33] = FORGE
 
 # --- road: east gate -> through forest -> mine corridor ----------------------
 for x in range(TX1 + 1, 109):
@@ -141,6 +144,16 @@ SPAWNERS = [
 
 SAFE_ZONE = {"x": TX0 - 1, "y": TY0 - 1, "w": (TX1 - TX0) + 3, "h": (TY1 - TY0) + 3}
 
+# --- resource node regions (M3: gathering) -----------------------------------
+NODES = [
+    {"id": 101, "type": "oak", "region": {"x": 14, "y": 22, "w": 34, "h": 26}, "count": 10, "respawnTicks": 900},
+    {"id": 102, "type": "oak", "region": {"x": 64, "y": 28, "w": 38, "h": 70}, "count": 14, "respawnTicks": 900},
+    {"id": 103, "type": "berry", "region": {"x": 40, "y": 64, "w": 22, "h": 32}, "count": 8, "respawnTicks": 700},
+    {"id": 104, "type": "berry", "region": {"x": 12, "y": 30, "w": 24, "h": 18}, "count": 6, "respawnTicks": 700},
+    {"id": 105, "type": "ore", "region": {"x": 100, "y": 10, "w": 20, "h": 20}, "count": 8, "respawnTicks": 1100},
+    {"id": 106, "type": "ore", "region": {"x": 104, "y": 20, "w": 13, "h": 13}, "count": 4, "respawnTicks": 1100},
+]
+
 # --- sanity checks before writing ---------------------------------------------
 walkable = {t["id"] for t in TILESET if t["walkable"]}
 assert grid[PLAYER_SPAWN["y"]][PLAYER_SPAWN["x"]] in walkable, "player spawn not walkable"
@@ -169,6 +182,15 @@ for s in SPAWNERS:
         for y in range(r["y"], r["y"] + r["h"])
         for x in range(r["x"], r["x"] + r["w"])
     ), f"spawner {s['id']} region unreachable from town"
+for n in NODES:
+    r = n["region"]
+    assert any(
+        seen[y][x]
+        for y in range(r["y"], r["y"] + r["h"])
+        for x in range(r["x"], r["x"] + r["w"])
+    ), f"node region {n['id']} unreachable from town"
+# forge must be adjacent to a reachable tile
+assert any(seen[68 + dy][33 + dx] for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))), "forge unreachable"
 
 # --- RLE encode + write --------------------------------------------------------
 rows = []
@@ -191,6 +213,7 @@ out = {
     "playerSpawn": PLAYER_SPAWN,
     "safeZone": SAFE_ZONE,
     "spawners": SPAWNERS,
+    "nodes": NODES,
 }
 
 dest = Path(__file__).resolve().parent.parent / "data" / "world.json"

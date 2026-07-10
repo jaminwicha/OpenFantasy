@@ -16,6 +16,7 @@ public partial class GameController : Node2D
     public string Host = "127.0.0.1";
     public int Port = ServerNode.DefaultPort;
     public bool HostLocalServer;
+    public Appearance Appearance = Appearance.Default;
 
     private ClientNode _client = null!;
     private Hud _hud = null!;
@@ -34,6 +35,7 @@ public partial class GameController : Node2D
     public override void _Ready()
     {
         _data = GameData.LoadFromDirectory(ProjectSettings.GlobalizePath("res://data"));
+        SpriteComposer.Init(_data.Appearance);
 
         if (HostLocalServer)
         {
@@ -80,7 +82,7 @@ public partial class GameController : Node2D
         // Solo: give the in-process server a beat to bind before connecting.
         GetTree().CreateTimer(HostLocalServer ? 0.25 : 0.0).Timeout += () =>
         {
-            var err = _client.Connect(Host, Port, Account, ClassId);
+            var err = _client.Connect(Host, Port, Account, ClassId, Appearance);
             if (err != Error.Ok)
                 OnDisconnected($"could not open connection: {err}");
         };
@@ -107,6 +109,7 @@ public partial class GameController : Node2D
             if (Input.IsActionJustPressed("chat_toggle")) _hud.FocusChat();
             if (Input.IsActionJustPressed("toggle_inventory")) _windows.ToggleInventory();
             if (Input.IsActionJustPressed("toggle_quests")) _windows.ToggleQuests();
+            if (Input.IsActionJustPressed("toggle_craft")) _windows.ToggleCraft();
             if (Input.IsActionJustPressed("interact")) TryInteract();
             if (Input.IsActionJustPressed("ui_cancel")) _windows.CloseAll();
         }
@@ -142,19 +145,19 @@ public partial class GameController : Node2D
     private void TryInteract()
     {
         if (!_client.Entities.TryGetValue(_client.LocalEntityId, out var me)) return;
-        var npc = _client.Entities.Values
-            .Where(e => e.Kind == EntityKind.Npc)
+        var target = _client.Entities.Values
+            .Where(e => e.Kind is EntityKind.Npc or EntityKind.Node && e.Alive)
             .OrderBy(e => (long)(e.X - me.X) * (e.X - me.X) + (long)(e.Y - me.Y) * (e.Y - me.Y))
             .FirstOrDefault();
-        if (npc == null) return;
-        long dx = npc.X - me.X, dy = npc.Y - me.Y;
+        if (target == null) return;
+        long dx = target.X - me.X, dy = target.Y - me.Y;
         long r = SimConstants.InteractRange;
         if (dx * dx + dy * dy > r * r)
         {
-            _hud.AddChatLine("*", "No one close enough to talk to.");
+            _hud.AddChatLine("*", "Nothing close enough to use. (Step up to a person, tree, vein, or bush.)");
             return;
         }
-        _client.SendInteract(npc.Id);
+        _client.SendInteract(target.Id);
     }
 
     /// <summary>Deterministic dawn/day/dusk/night tint from the server tick.</summary>

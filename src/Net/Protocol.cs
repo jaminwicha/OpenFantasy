@@ -15,6 +15,7 @@ public enum Op : byte
     NpcInfo = 9,     // S→C: dialog, shop, quest offers for this player
     ItemOp = 10,     // C→S: buy/sell/use/equip/unequip
     QuestOp = 11,    // C→S: accept/complete
+    CraftOp = 12,    // C→S: craft recipe id
 }
 
 public enum ItemOpKind : byte { Buy = 0, Sell = 1, Use = 2, Equip = 3, Unequip = 4 }
@@ -36,6 +37,8 @@ public sealed class NetEntityState
     public int Atb;
     public int Level, Xp, Gil;
     public bool Alive;
+    public bool HasAppearance;
+    public Appearance Appearance;
 }
 
 public readonly struct NetEvent
@@ -60,7 +63,7 @@ public readonly struct NetEvent
 /// </summary>
 public static class Protocol
 {
-    public static byte[] WriteHello(string account, string classId)
+    public static byte[] WriteHello(string account, string classId, Appearance appearance)
     {
         using var ms = new MemoryStream();
         using var w = new BinaryWriter(ms);
@@ -68,11 +71,21 @@ public static class Protocol
         w.Write(SimConstants.ProtocolVersion);
         w.Write(account);
         w.Write(classId);
+        appearance.Write(w);
         return ms.ToArray();
     }
 
-    public static (int protocol, string account, string classId) ReadHello(BinaryReader r)
-        => (r.ReadInt32(), r.ReadString(), r.ReadString());
+    public static (int protocol, string account, string classId, Appearance appearance) ReadHello(BinaryReader r)
+        => (r.ReadInt32(), r.ReadString(), r.ReadString(), Appearance.Read(r));
+
+    public static byte[] WriteCraftOp(string recipeId)
+    {
+        using var ms = new MemoryStream();
+        using var w = new BinaryWriter(ms);
+        w.Write((byte)Op.CraftOp);
+        w.Write(recipeId);
+        return ms.ToArray();
+    }
 
     public static byte[] WriteWelcome(int entityId, int tick)
     {
@@ -297,6 +310,9 @@ public static class Protocol
             w.Write(e.Xp);
             w.Write(e.Gil);
             w.Write(e.Alive);
+            w.Write(e.HasAppearance);
+            if (e.HasAppearance)
+                e.Appearance.Write(w);
         }
 
         w.Write((ushort)events.Count);
@@ -320,7 +336,7 @@ public static class Protocol
         var entities = new List<NetEntityState>(count);
         for (int i = 0; i < count; i++)
         {
-            entities.Add(new NetEntityState
+            var entity = new NetEntityState
             {
                 Id = r.ReadInt32(),
                 Kind = (EntityKind)r.ReadByte(),
@@ -338,7 +354,11 @@ public static class Protocol
                 Xp = r.ReadInt32(),
                 Gil = r.ReadInt32(),
                 Alive = r.ReadBoolean(),
-            });
+            };
+            entity.HasAppearance = r.ReadBoolean();
+            if (entity.HasAppearance)
+                entity.Appearance = Appearance.Read(r);
+            entities.Add(entity);
         }
 
         int evCount = r.ReadUInt16();

@@ -40,7 +40,16 @@ public partial class BotClient : Node
         {
             if ((SimEventKind)kind == SimEventKind.Damage) _damageEventsSeen++;
         };
-        var err = _client.Connect(Host, Port, Account, ClassId);
+        // Deterministic per-name appearance so bots look distinct.
+        ulong h = 1469598103934665603UL;
+        foreach (char ch in Account) { h ^= ch; h *= 1099511628211UL; }
+        var appearance = new Appearance
+        {
+            Skin = (byte)(h % 8), HairStyle = (byte)((h >> 8) % 12), HairColor = (byte)((h >> 16) % 16),
+            Outfit = (byte)((h >> 24) % 10), OutfitA = (byte)((h >> 32) % 16), OutfitB = (byte)((h >> 40) % 16),
+            Acc = (byte)((h >> 48) % 4),
+        };
+        var err = _client.Connect(Host, Port, Account, ClassId, appearance);
         if (err != Error.Ok)
         {
             GD.PrintErr($"[bot {Account}] connect failed: {err}");

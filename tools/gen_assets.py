@@ -63,196 +63,408 @@ def shade(c, f):
 def noise(x, y, mod=7):
     return (x * 31 + y * 17 + (x * y) % 13) % mod
 
+# ---------------------------------------------------------------- constants
 
-# ---------------------------------------------------------------- tiles
-
+FW, FH = 16, 24
 T = 16
-GRASS = (74, 143, 74, 255)
-DARKG = (47, 107, 58, 255)
-WATER = (42, 75, 160, 255)
-ROAD = (176, 154, 104, 255)
-COBBLE = (138, 138, 146, 255)
-WALLC = (90, 90, 102, 255)
-MINEF = (107, 95, 82, 255)
-ROCKC = (74, 70, 64, 255)
-SANDC = (203, 184, 126, 255)
 OUT = (24, 26, 32, 255)
 
 
-def tile_base(c, color, mod=8, dark=0.88, light=1.1):
+def auto_outline(c, color=(36, 30, 44, 255)):
+    """1px outline drawn into transparent pixels adjacent to opaque ones."""
+    edges = []
+    for y in range(c.h):
+        for x in range(c.w):
+            if c.p[y][x][3] == 0:
+                if any(0 <= x + dx < c.w and 0 <= y + dy < c.h and c.p[y + dy][x + dx][3] != 0
+                       and c.p[y + dy][x + dx] != color
+                       for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))):
+                    edges.append((x, y))
+    for x, y in edges:
+        c.p[y][x] = color
+
+
+# ---------------------------------------------------------------- tiles v2
+# Atlas: 16 cols x 4 rows of 16px tiles.
+# Row 0: grass x3, tree, water x3, road x3, cobble x2, wall, forest x3
+# Row 1: mine x3, rock x2, crystal, sand x3, flowers x2, forge
+# Row 2: water-foam edge masks 0..15 (bit: 1=N 2=E 4=S 8=W, land on that side)
+# Row 3: grass-fringe edge masks 0..15 (grass hangs over this tile's edges)
+
+GRASS = (92, 158, 82)
+DARKG = (56, 116, 66)
+WATER = (46, 82, 168)
+ROAD = (188, 164, 116)
+COBBLE = (146, 146, 156)
+WALLC = (98, 96, 110)
+MINEF = (118, 102, 84)
+ROCKC = (86, 82, 78)
+SANDC = (216, 196, 138)
+
+
+def rgba(c):
+    return (c[0], c[1], c[2], 255)
+
+
+def cluster(x, y, salt=0):
+    """Blobby deterministic noise 0..8 (adjacent cells correlate)."""
+    h = (x * 3 + salt * 17) // 2 * 7 + (y * 3 + salt * 5) // 2 * 13
+    return (h ^ (h >> 3)) % 9
+
+
+def ground(tc, base, variant, blades=None, litter=None):
+    """3-tone clustered ground fill."""
+    lo, mid, hi = shade(rgba(base), 0.82), rgba(base), shade(rgba(base), 1.16)
     for y in range(T):
         for x in range(T):
-            n = noise(x, y, mod)
-            col = color
-            if n == 0:
-                col = shade(color, dark)
-            elif n == 1:
-                col = shade(color, light)
-            c.px(x, y, col)
-
-
-def draw_tile(idx):
-    c = Canvas(T, T)
-    if idx == 0:  # grass
-        tile_base(c, GRASS)
-        for x, y in ((3, 5), (11, 9), (7, 13)):
-            c.px(x, y, shade(GRASS, 1.25))
-            c.px(x, y - 1, shade(GRASS, 1.25))
-    elif idx == 1:  # tree on grass
-        tile_base(c, GRASS)
-        trunk = (94, 66, 40, 255)
-        canopy = (36, 92, 44, 255)
-        c.rect(7, 11, 8, 14, trunk)
-        for y in range(1, 11):
-            half = 6 - abs(y - 6)
-            c.rect(8 - half, y, 7 + half, y, canopy if noise(1, y, 3) else shade(canopy, 1.15))
-        c.rect(4, 3, 6, 4, shade(canopy, 1.3))
-    elif idx == 2:  # water
-        tile_base(c, WATER, mod=6, dark=0.9, light=1.12)
-        for x, y in ((2, 4), (3, 4), (9, 10), (10, 10), (12, 3)):
-            c.px(x, y, shade(WATER, 1.45))
-    elif idx == 3:  # road
-        tile_base(c, ROAD, mod=5)
-        for x, y in ((4, 3), (12, 7), (6, 12)):
-            c.px(x, y, shade(ROAD, 0.75))
-    elif idx == 4:  # town cobble
-        tile_base(c, COBBLE, mod=9)
-        for y in (7, 15):
-            for x in range(T):
-                c.px(x, y, shade(COBBLE, 0.8))
-        for x in (3, 11):
-            for y in range(0, 8):
-                c.px(x, y, shade(COBBLE, 0.8))
-        for x in (7, 15):
-            for y in range(8, 16):
-                c.px(x, y, shade(COBBLE, 0.8))
-    elif idx == 5:  # wall bricks
-        tile_base(c, WALLC, mod=11)
-        for y in (0, 5, 10, 15):
-            for x in range(T):
-                c.px(x, y, shade(WALLC, 0.65))
-        for row, off in ((1, 4), (6, 9), (11, 4)):
-            for x in (off % T, (off + 8) % T):
-                for y in range(row, min(row + 4, T)):
-                    c.px(x, y, shade(WALLC, 0.65))
-        for x in range(T):
-            c.px(x, 1, shade(WALLC, 1.2))
-    elif idx == 6:  # forest grass
-        tile_base(c, DARKG)
-        for x, y in ((5, 4), (12, 11)):
-            c.px(x, y, shade(DARKG, 0.7))
-    elif idx == 7:  # mine floor
-        tile_base(c, MINEF, mod=6)
-        for x, y in ((3, 9), (10, 4), (13, 13)):
-            c.px(x, y, shade(MINEF, 0.7))
-    elif idx == 8:  # rock
-        tile_base(c, ROCKC, mod=5, dark=0.8, light=1.2)
+            n = cluster(x, y, salt=variant * 31)
+            tc.px(x, y, lo if n < 2 else hi if n > 6 else mid)
+    if blades:
         for i in range(4):
-            x, y = (i * 5 + 2) % T, (i * 7 + 3) % T
-            c.px(x, y, shade(ROCKC, 0.55))
-            c.px(x + 1, y + 1, shade(ROCKC, 0.55))
-    elif idx == 9:  # respawn crystal on cobble
-        tile_base(c, COBBLE, mod=9)
-        cry = (110, 220, 230, 255)
-        for y in range(2, 13):
-            half = (5 - abs(y - 7)) // 2 + 1
-            c.rect(8 - half, y, 7 + half, y, cry if y % 3 else shade(cry, 1.25))
-        c.px(6, 5, (240, 255, 255, 255))
-        c.rect(5, 13, 10, 14, shade(COBBLE, 0.7))
-    elif idx == 10:  # sand
-        tile_base(c, SANDC, mod=5)
-    elif idx == 11:  # flowers
-        tile_base(c, GRASS)
-        for (x, y), col in (((4, 4), (232, 90, 110, 255)), ((11, 6), (240, 220, 90, 255)),
-                            ((7, 12), (150, 130, 240, 255))):
-            c.px(x, y, col)
-            c.px(x + 1, y, col)
-            c.px(x, y + 1, shade(col, 0.8))
+            bx = (variant * 5 + i * 7 + 3) % (T - 2) + 1
+            by = (variant * 11 + i * 5 + 2) % (T - 3) + 1
+            tc.px(bx, by, blades)
+            tc.px(bx, by - 1, blades)
+            tc.px(bx + 1, by, shade(blades, 0.8))
+    if litter:
+        for i in range(3):
+            bx = (variant * 7 + i * 11 + 5) % (T - 2) + 1
+            by = (variant * 13 + i * 3 + 4) % (T - 2) + 1
+            tc.px(bx, by, litter)
+    return tc
+
+
+def tile_grass(v):
+    c = Canvas(T, T)
+    ground(c, GRASS, v, blades=shade(rgba(GRASS), 1.35))
+    return c
+
+
+def tile_forest(v):
+    c = Canvas(T, T)
+    ground(c, DARKG, v, blades=shade(rgba(DARKG), 1.3), litter=shade(rgba(DARKG), 0.62))
+    return c
+
+
+def tile_sand(v):
+    c = Canvas(T, T)
+    ground(c, SANDC, v)
+    # ripple lines
+    for ry in ((3 + v * 4) % 10 + 2, (9 + v * 4) % 10 + 4):
+        for x in range(1 + v, T - 1, 4):
+            c.px(x, ry, shade(rgba(SANDC), 0.85))
+            c.px(x + 1, ry, shade(rgba(SANDC), 0.85))
+    return c
+
+
+def tile_water(v):
+    c = Canvas(T, T)
+    lo, mid, hi = shade(rgba(WATER), 0.85), rgba(WATER), shade(rgba(WATER), 1.18)
+    for y in range(T):
+        for x in range(T):
+            n = cluster(x, y, salt=v * 47 + 9)
+            c.px(x, y, lo if n < 2 else mid)
+    # wave crests
+    for i in range(3):
+        wy = (i * 5 + v * 3 + 2) % (T - 2) + 1
+        wx = (i * 7 + v * 5 + 1) % (T - 6) + 1
+        for k in range(4):
+            c.px(wx + k, wy + (1 if k in (0, 3) else 0), hi)
+    if v == 2:  # sparkle variant
+        c.px(4, 4, (210, 230, 250, 255))
+        c.px(11, 10, (210, 230, 250, 255))
+    return c
+
+
+def tile_road(v):
+    c = Canvas(T, T)
+    ground(c, ROAD, v)
+    # wheel ruts
+    for ry in (5, 10):
+        for x in range(T):
+            if (x + v) % 5 != 0:
+                c.px(x, ry, shade(rgba(ROAD), 0.88))
+    # pebbles
+    for i in range(3):
+        bx = (v * 9 + i * 6 + 2) % (T - 2) + 1
+        by = (v * 3 + i * 9 + 3) % (T - 2) + 1
+        c.px(bx, by, shade(rgba(ROAD), 0.7))
+        c.px(bx + 1, by, shade(rgba(ROAD), 1.12))
+    return c
+
+
+def tile_cobble(v):
+    c = Canvas(T, T)
+    lo, mid, hi = shade(rgba(COBBLE), 0.8), rgba(COBBLE), shade(rgba(COBBLE), 1.14)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, mid if cluster(x, y, v * 3) > 1 else hi)
+    # coursing: two rows of stones, offset per variant
+    for row, y0 in enumerate((0, 8)):
+        off = (row * 4 + v * 4) % 8
+        for y in (y0 + 7, ):
+            for x in range(T):
+                c.px(x, y % T, lo)
+        for x in range(off, T + 8, 8):
+            for y in range(y0, y0 + 7):
+                c.px(x % T, y, lo)
+        for x in range(off + 1, T, 8):  # stone top highlight
+            c.px(x % T, y0, hi)
+    return c
+
+
+def tile_wall():
+    c = Canvas(T, T)
+    lo, mid, hi = shade(rgba(WALLC), 0.62), rgba(WALLC), shade(rgba(WALLC), 1.22)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, mid if cluster(x, y, 5) > 1 else shade(rgba(WALLC), 1.08))
+    for y in (0, 5, 10, 15):
+        for x in range(T):
+            c.px(x, y, lo)
+    for row, off in ((1, 4), (6, 9), (11, 4)):
+        for x in (off, (off + 8) % T):
+            for y in range(row, min(row + 4, T)):
+                c.px(x, y, lo)
+    for x in range(T):
+        c.px(x, 1, hi)  # top course catches light
+    return c
+
+
+def tile_mine(v):
+    c = Canvas(T, T)
+    ground(c, MINEF, v, litter=shade(rgba(MINEF), 0.7))
+    # support plank shadow
+    if v == 1:
+        for x in range(T):
+            c.px(x, 13, shade(rgba(MINEF), 0.78))
+    return c
+
+
+def tile_rock(v):
+    c = Canvas(T, T)
+    lo, mid, hi = shade(rgba(ROCKC), 0.7), rgba(ROCKC), shade(rgba(ROCKC), 1.25)
+    for y in range(T):
+        for x in range(T):
+            n = cluster(x, y, v * 13 + 3)
+            c.px(x, y, lo if n < 2 else mid)
+    # facets: light top-left edges of blobs
+    for i in range(4):
+        fx = (v * 7 + i * 5 + 1) % (T - 4) + 1
+        fy = (v * 5 + i * 7 + 2) % (T - 4) + 1
+        c.px(fx, fy, hi)
+        c.px(fx + 1, fy, hi)
+        c.px(fx, fy + 1, mid)
+        c.px(fx + 2, fy + 2, lo)
+    return c
+
+
+def tile_tree():
+    c = tile_grass(0)
+    trunk = (98, 68, 42, 255)
+    canopy = (44, 104, 54, 255)
+    c.rect(7, 11, 8, 14, trunk)
+    c.px(7, 11, shade(trunk, 1.2))
+    for y in range(1, 11):
+        half = 6 - abs(y - 5) // 1 if y < 9 else 3
+        half = min(6, half)
+        c.rect(8 - half, y, 7 + half, y, canopy)
+    for xx, yy in ((4, 3), (5, 2), (6, 4), (9, 3)):
+        c.px(xx, yy, shade(canopy, 1.35))
+    for xx, yy in ((10, 7), (11, 8), (5, 8), (9, 9)):
+        c.px(xx, yy, shade(canopy, 0.72))
+    return c
+
+
+def tile_crystal():
+    c = tile_cobble(0)
+    cry = (110, 225, 235, 255)
+    for y in range(2, 13):
+        half = (5 - abs(y - 7)) // 2 + 1
+        c.rect(8 - half, y, 7 + half, y, cry if y % 3 else shade(cry, 1.2))
+    c.px(6, 4, (245, 255, 255, 255))
+    c.px(8, 7, shade(cry, 0.8))
+    c.rect(5, 13, 10, 14, shade(rgba(COBBLE), 0.7))
+    return c
+
+
+def tile_flowers(v):
+    c = tile_grass(v)
+    petals = (((236, 96, 116), (244, 224, 96)), ((160, 132, 244), (240, 240, 240)))[v]
+    for i, col in enumerate(petals * 2):
+        bx = (v * 3 + i * 5 + 2) % (T - 3) + 1
+        by = (v * 7 + i * 7 + 3) % (T - 3) + 1
+        c.px(bx, by, rgba(col))
+        c.px(bx + 1, by, rgba(col))
+        c.px(bx, by + 1, shade(rgba(col), 0.78))
+        c.px(bx + 1, by - 1, shade(rgba(col), 1.1))
+    return c
+
+
+def tile_forge():
+    c = tile_cobble(1)
+    iron = (70, 70, 80, 255)
+    # furnace block with glowing mouth + anvil horn
+    c.rect(3, 4, 12, 12, iron)
+    c.rect(3, 4, 12, 5, shade(iron, 1.3))
+    c.rect(5, 8, 10, 11, (52, 42, 46, 255))
+    c.rect(6, 9, 9, 10, (240, 140, 50, 255))
+    c.px(7, 9, (255, 210, 90, 255))
+    c.rect(2, 13, 13, 14, shade(iron, 0.75))
+    c.px(1, 13, shade(iron, 0.75))  # anvil horn
+    return c
+
+
+def tile_foam(mask):
+    """Transparent overlay: foam scallops on edges facing land (bit set)."""
+    c = Canvas(T, T)
+    foam = (222, 238, 250, 255)
+    lite = (150, 190, 235, 255)
+    if mask & 1:   # N
+        for x in range(T):
+            c.px(x, 0, foam)
+            if x % 3 != 2:
+                c.px(x, 1, lite)
+    if mask & 4:   # S
+        for x in range(T):
+            c.px(x, 15, foam)
+            if x % 3 != 1:
+                c.px(x, 14, lite)
+    if mask & 2:   # E
+        for y in range(T):
+            c.px(15, y, foam)
+            if y % 3 != 2:
+                c.px(14, y, lite)
+    if mask & 8:   # W
+        for y in range(T):
+            c.px(0, y, foam)
+            if y % 3 != 1:
+                c.px(1, y, lite)
+    return c
+
+
+def tile_fringe(mask):
+    """Transparent overlay: grass tufts hanging over a non-grass tile's edges."""
+    c = Canvas(T, T)
+    g1, g2 = rgba(GRASS), shade(rgba(GRASS), 0.8)
+    if mask & 1:
+        for x in range(T):
+            c.px(x, 0, g1)
+            if x % 3 == 1:
+                c.px(x, 1, g2)
+    if mask & 4:
+        for x in range(T):
+            c.px(x, 15, g1)
+            if x % 3 == 0:
+                c.px(x, 14, g2)
+    if mask & 2:
+        for y in range(T):
+            c.px(15, y, g1)
+            if y % 3 == 1:
+                c.px(14, y, g2)
+    if mask & 8:
+        for y in range(T):
+            c.px(0, y, g1)
+            if y % 3 == 0:
+                c.px(1, y, g2)
     return c
 
 
 def gen_tiles():
-    n = 12
-    atlas = Canvas(T * n, T)
-    for i in range(n):
-        t = draw_tile(i)
+    cols, rows = 16, 4
+    atlas = Canvas(T * cols, T * rows)
+
+    def put(col, row, tc):
         for y in range(T):
             for x in range(T):
-                atlas.px(i * T + x, y, t.p[y][x])
+                atlas.px(col * T + x, row * T + y, tc.p[y][x])
+
+    row0 = [tile_grass(0), tile_grass(1), tile_grass(2), tile_tree(),
+            tile_water(0), tile_water(1), tile_water(2),
+            tile_road(0), tile_road(1), tile_road(2),
+            tile_cobble(0), tile_cobble(1), tile_wall(),
+            tile_forest(0), tile_forest(1), tile_forest(2)]
+    row1 = [tile_mine(0), tile_mine(1), tile_mine(2), tile_rock(0), tile_rock(1),
+            tile_crystal(), tile_sand(0), tile_sand(1), tile_sand(2),
+            tile_flowers(0), tile_flowers(1), tile_forge()]
+    for i, tc in enumerate(row0):
+        put(i, 0, tc)
+    for i, tc in enumerate(row1):
+        put(i, 1, tc)
+    for m in range(16):
+        put(m, 2, tile_foam(m))
+        put(m, 3, tile_fringe(m))
     atlas.save(ROOT / "tiles.png")
 
 
-# ---------------------------------------------------------------- units
-# Sheets are 48x96: 3 walk frames (columns) x 4 directions (rows: down/up/left/right),
-# one 16x24 cell per frame. Animation plays 0,1,2,1.
+# ---------------------------------------------------------------- resource nodes
 
-FW, FH = 16, 24
-SKIN = (232, 190, 152, 255)
-
-
-def draw_humanoid(c, ox, oy, direction, frame, hair, tunic, trim, legs):
-    # legs (frame 0: left fwd, 1: stand, 2: right fwd)
-    ly = oy + 19
-    if frame == 1:
-        c.rect(ox + 5, ly, ox + 6, ly + 3, legs)
-        c.rect(ox + 9, ly, ox + 10, ly + 3, legs)
-    elif frame == 0:
-        c.rect(ox + 4, ly, ox + 5, ly + 3, legs)
-        c.rect(ox + 9, ly + 1, ox + 10, ly + 3, legs)
-    else:
-        c.rect(ox + 5, ly + 1, ox + 6, ly + 3, legs)
-        c.rect(ox + 10, ly, ox + 11, ly + 3, legs)
-    # body
-    c.rect(ox + 4, oy + 12, ox + 11, oy + 18, tunic)
-    c.rect(ox + 4, oy + 12, ox + 11, oy + 13, shade(tunic, 1.2))
-    c.rect(ox + 4, oy + 17, ox + 11, oy + 18, shade(tunic, 0.75))
-    c.rect(ox + 7, oy + 14, ox + 8, oy + 16, trim)
-    # arms
-    if direction in (0, 1):
-        c.rect(ox + 3, oy + 13, ox + 3, oy + 16, tunic)
-        c.rect(ox + 12, oy + 13, ox + 12, oy + 16, tunic)
-        c.px(ox + 3, oy + 17, SKIN)
-        c.px(ox + 12, oy + 17, SKIN)
-    # head block
-    hx0, hx1 = ox + 4, ox + 11
-    c.rect(hx0, oy + 4, hx1, oy + 11, SKIN)
-    # hair cap
-    c.rect(hx0, oy + 3, hx1, oy + 6, hair)
-    c.px(hx0, oy + 7, hair)
-    c.px(hx1, oy + 7, hair)
-    if direction == 1:  # facing up: hair covers all
-        c.rect(hx0, oy + 4, hx1, oy + 10, hair)
-        c.rect(hx0 + 1, oy + 10, hx1 - 1, oy + 10, shade(hair, 0.8))
-    elif direction == 0:  # down: two eyes
-        eye = (30, 30, 44, 255)
-        c.px(ox + 6, oy + 8, eye)
-        c.px(ox + 9, oy + 8, eye)
-        c.px(ox + 6, oy + 10, (200, 130, 120, 255))
-        c.px(ox + 9, oy + 10, (200, 130, 120, 255))
-    else:  # side: one eye toward facing
-        eye = (30, 30, 44, 255)
-        ex = ox + 5 if direction == 2 else ox + 10
-        c.px(ex, oy + 8, eye)
-        c.rect(hx0 if direction == 3 else ox + 9, oy + 4, hx1 if direction == 2 else hx0 + 2, oy + 9, hair) \
-            if False else None
-        # hair sweeps to the back of the head
-        if direction == 2:
-            c.rect(ox + 9, oy + 4, hx1, oy + 9, hair)
-        else:
-            c.rect(hx0, oy + 4, ox + 6, oy + 9, hair)
-    # outline pass (cheap: darken border pixels already colored)
-
-
-def gen_class_sheet(name, hair, tunic, trim, legs, hat=None):
+def gen_oak():
     c = Canvas(FW * 3, FH * 4)
+    trunk = (104, 72, 44, 255)
+    canopy = (52, 118, 62, 255)
     for direction in range(4):
         for frame in range(3):
             ox, oy = frame * FW, direction * FH
-            draw_humanoid(c, ox, oy, direction, frame, hair, tunic, trim, legs)
-            if hat:  # mage's wide-brim hat
-                c.rect(ox + 3, oy + 3, ox + 12, oy + 4, hat)
-                c.rect(ox + 5, oy + 1, ox + 10, oy + 3, shade(hat, 1.15))
-    c.save(ROOT / "units" / f"{name}.png")
+            sway = (-1, 0, 1)[frame] if frame != 1 else 0
+            c.rect(ox + 6, oy + 15, ox + 9, oy + 22, trunk)
+            c.px(ox + 6, oy + 15, shade(trunk, 1.25))
+            c.px(ox + 9, oy + 21, shade(trunk, 0.75))
+            c.rect(ox + 4, oy + 20, ox + 5, oy + 21, shade(trunk, 0.8))  # root
+            for y in range(2, 15):
+                half = 7 - abs(y - 8) * 2 // 3
+                c.rect(ox + 8 - half + sway, oy + y, ox + 7 + half + sway, oy + y, canopy)
+            for xx, yy in ((5, 4), (7, 3), (10, 5), (4, 7)):
+                c.px(ox + xx + sway, oy + yy, shade(canopy, 1.35))
+            for xx, yy in ((10, 11), (6, 12), (11, 9)):
+                c.px(ox + xx + sway, oy + yy, shade(canopy, 0.7))
+    auto_outline(c)
+    c.save(ROOT / "units" / "node_oak.png")
+
+
+def gen_ore_vein():
+    c = Canvas(FW * 3, FH * 4)
+    rock = (96, 90, 86, 255)
+    ore = (216, 168, 74, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            glint = frame == 1
+            c.rect(ox + 3, oy + 12, ox + 12, oy + 21, rock)
+            c.rect(ox + 4, oy + 10, ox + 11, oy + 11, rock)
+            c.rect(ox + 4, oy + 10, ox + 11, oy + 10, shade(rock, 1.25))
+            c.px(ox + 3, oy + 12, shade(rock, 1.2))
+            c.rect(ox + 3, oy + 21, ox + 12, oy + 21, shade(rock, 0.72))
+            for xx, yy in ((5, 14), (8, 16), (10, 13), (6, 19)):
+                c.px(ox + xx, oy + yy, ore)
+                c.px(ox + xx + 1, oy + yy, shade(ore, 0.8))
+                if glint:
+                    c.px(ox + xx, oy + yy - 1, (255, 240, 170, 255))
+    auto_outline(c)
+    c.save(ROOT / "units" / "node_ore.png")
+
+
+def gen_berry_bush():
+    c = Canvas(FW * 3, FH * 4)
+    leaf = (58, 128, 64, 255)
+    berry = (208, 68, 92, 255)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            b = (0, 1, 0)[frame]
+            for y in range(13, 22):
+                half = 6 - abs(y - 17) // 2
+                c.rect(ox + 8 - half, oy + y, ox + 7 + half, oy + y, leaf)
+            c.px(ox + 5, oy + 14, shade(leaf, 1.3))
+            c.px(ox + 9, oy + 13, shade(leaf, 1.3))
+            c.px(ox + 10, oy + 20, shade(leaf, 0.7))
+            for i, (xx, yy) in enumerate(((5, 16), (8, 15), (10, 18), (6, 19))):
+                c.px(ox + xx, oy + yy + (b if i % 2 else 0), berry)
+                c.px(ox + xx, oy + yy - 1 + (b if i % 2 else 0), shade(berry, 1.25))
+    auto_outline(c)
+    c.save(ROOT / "units" / "node_berry.png")
+
+
 
 
 def gen_wisp():
@@ -400,13 +612,6 @@ def gen_warden():
     c.save(ROOT / "units" / "magitek_warden.png")
 
 
-def gen_npcs():
-    # Vendor: warm apron colors. Elder: grey hair, deep-green robe.
-    gen_class_sheet("npc_vendor", (60, 40, 28, 255), (150, 92, 60, 255),
-                    (232, 220, 200, 255), (80, 60, 50, 255))
-    gen_class_sheet("npc_elder", (208, 208, 208, 255), (44, 84, 60, 255),
-                    (200, 180, 110, 255), (40, 56, 48, 255))
-
 
 def gen_panel():
     # FF6-style window: near-black outer line, white double border,
@@ -432,19 +637,19 @@ def gen_panel():
     c.save(ROOT / "ui" / "panel.png")
 
 
+
+# ---------------------------------------------------------------- outlined monsters
+
+def outlined(gen):
+    """Wraps a gen_* fn: no-op marker (each gen applies auto_outline itself now)."""
+    return gen
+
+
 if __name__ == "__main__":
     gen_tiles()
-    for args in (
-        ("squire", (196, 150, 70, 255), (58, 90, 168, 255), (216, 180, 90, 255), (70, 62, 58, 255), None),
-        ("mage", (120, 80, 160, 255), (106, 58, 154, 255), (230, 210, 120, 255), (50, 40, 70, 255), (74, 40, 110, 255)),
-        ("scout", (90, 60, 36, 255), (58, 122, 74, 255), (150, 110, 70, 255), (60, 70, 50, 255), None),
-    ):
-        gen_class_sheet(*args)
-    gen_wisp()
-    gen_wolf()
-    gen_golem()
-    gen_bat()
-    gen_slime()
-    gen_warden()
-    gen_npcs()
+    for gen in (gen_wisp, gen_wolf, gen_golem, gen_bat, gen_slime, gen_warden):
+        gen()
+    gen_oak()
+    gen_ore_vein()
+    gen_berry_bush()
     gen_panel()

@@ -1,0 +1,36 @@
+{
+  "recipes": [
+    {
+      "id": "craft_potion", "output": "potion", "outputCount": 1,
+      "inputs": [{ "item": "berries", "count": 3 }]
+    },
+    {
+      "id": "craft_rations", "output": "rations", "outputCount": 2,
+      "inputs": [{ "item": "berries", "count": 2 }, { "item": "wood", "count": 1 }]
+    },
+    {
+      "id": "craft_tonic", "output": "tonic", "outputCount": 1,
+      "inputs": [{ "item": "potion", "count": 2 }, { "item": "berries", "count": 4 }]
+    },
+    {
+      "id": "smelt_iron_bar", "output": "iron_bar", "outputCount": 1, "station": "Forge",
+      "inputs": [{ "item": "iron_ore", "count": 3 }, { "item": "wood", "count": 1 }]
+    },
+    {
+      "id": "forge_iron_blade", "output": "iron_blade", "outputCount": 1, "station": "Forge",
+      "inputs": [{ "item": "iron_bar", "count": 3 }, { "item": "wood", "count": 1 }]
+    },
+    {
+      "id": "forge_brass_mail", "output": "brass_mail", "outputCount": 1, "station": "Forge",
+      "inputs": [{ "item": "iron_bar", "count": 2 }, { "item": "wolf_pelt", "count": 3 }]
+    },
+    {
+      "id": "forge_iron_axe", "output": "iron_axe", "outputCount": 1, "station": "Forge",
+      "inputs": [{ "item": "iron_bar", "count": 2 }, { "item": "wood", "count": 2 }]
+    },
+    {
+      "id": "forge_iron_pickaxe", "output": "iron_pickaxe", "outputCount": 1, "station": "Forge",
+      "inputs": [{ "item": "iron_bar", "count": 2 }, { "item": "wood", "count": 2 }]
+    }
+  ]
+}

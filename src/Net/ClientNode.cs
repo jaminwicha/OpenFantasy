@@ -30,14 +30,16 @@ public partial class ClientNode : Node
     private ENetMultiplayerPeer _peer = new();
     private string _account = "";
     private string _classId = "";
+    private Appearance _appearance = Appearance.Default;
     private bool _helloSent;
     private bool _wasConnected;
     private int _inputSeq;
 
-    public Error Connect(string host, int port, string account, string classId)
+    public Error Connect(string host, int port, string account, string classId, Appearance appearance = default)
     {
         _account = account;
         _classId = classId;
+        _appearance = appearance;
         _helloSent = false;
         _wasConnected = false;
         LocalEntityId = -1;
@@ -71,7 +73,7 @@ public partial class ClientNode : Node
         {
             _helloSent = true;
             _wasConnected = true;
-            _peer.PutPacket(Protocol.WriteHello(_account, _classId));
+            _peer.PutPacket(Protocol.WriteHello(_account, _classId, _appearance));
         }
 
         while (_peer.GetAvailablePacketCount() > 0)
@@ -179,5 +181,11 @@ public partial class ClientNode : Node
     {
         if (LocalEntityId < 0) return;
         _peer.PutPacket(Protocol.WriteQuestOp(op, questId, npcEntityId));
+    }
+
+    public void SendCraft(string recipeId)
+    {
+        if (LocalEntityId < 0) return;
+        _peer.PutPacket(Protocol.WriteCraftOp(recipeId));
     }
 }

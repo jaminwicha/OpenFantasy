@@ -29,6 +29,16 @@ public sealed class SpawnerDef
     public int RespawnTicks { get; set; }
 }
 
+/// <summary>Resource node placement (gathering): oak / ore / berry regions.</summary>
+public sealed class NodeDef
+{
+    public int Id { get; set; }
+    public string Type { get; set; } = "";
+    public TileRect Region { get; set; }
+    public int Count { get; set; }
+    public int RespawnTicks { get; set; }
+}
+
 /// <summary>
 /// The static world: tile grid (RLE-decoded), tileset walkability, safe zone,
 /// player spawn, and monster spawner definitions. Shared verbatim by server
@@ -43,6 +53,7 @@ public sealed class WorldMap
     public int PlayerSpawnX { get; private set; }
     public int PlayerSpawnY { get; private set; }
     public List<SpawnerDef> Spawners { get; private set; } = new();
+    public List<NodeDef> Nodes { get; private set; } = new();
 
     private int[] _tiles = Array.Empty<int>();
     private bool[] _walkableByTileId = Array.Empty<bool>();
@@ -78,6 +89,7 @@ public sealed class WorldMap
         public Dictionary<string, int> PlayerSpawn { get; set; } = new();
         public TileRect SafeZone { get; set; }
         public List<SpawnerDef> Spawners { get; set; } = new();
+        public List<NodeDef> Nodes { get; set; } = new();
     }
 
     public static WorldMap LoadFromFile(string path)
@@ -106,6 +118,7 @@ public sealed class WorldMap
             Tileset = file.Tileset,
             SafeZone = file.SafeZone,
             Spawners = file.Spawners,
+            Nodes = file.Nodes,
         };
 
         if (file.Width <= 0 || file.Height <= 0)

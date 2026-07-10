@@ -63,6 +63,15 @@ public enum ItemKind
     Weapon,
     Armor,
     Material,
+    Tool,
+}
+
+public enum ToolKind
+{
+    None,
+    Axe,
+    Pickaxe,
+    Sickle,
 }
 
 public sealed class ItemDef
@@ -79,7 +88,36 @@ public sealed class ItemDef
     public int MagicBonus { get; set; }
     public int DefenseBonus { get; set; }
     public int HpBonus { get; set; }
+    /// <summary>For Kind == Tool: which resource nodes this can work.</summary>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public ToolKind Tool { get; set; } = ToolKind.None;
+    /// <summary>Tool quality: material yielded per swing.</summary>
+    public int ToolPower { get; set; } = 1;
 }
+
+public sealed class RecipeInput
+{
+    public string Item { get; set; } = "";
+    public int Count { get; set; } = 1;
+}
+
+public enum CraftStation
+{
+    None,
+    Forge,
+}
+
+public sealed class RecipeDef
+{
+    public string Id { get; set; } = "";
+    public string Output { get; set; } = "";
+    public int OutputCount { get; set; } = 1;
+    public List<RecipeInput> Inputs { get; set; } = new();
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public CraftStation Station { get; set; } = CraftStation.None;
+}
+
+public sealed class RecipesFile { public List<RecipeDef> Recipes { get; set; } = new(); }
 
 public sealed class DropDef
 {
@@ -97,6 +135,8 @@ public sealed class NpcDef
     public string Dialog { get; set; } = "";
     public List<string> Shop { get; set; } = new();
     public List<string> Quests { get; set; } = new();
+    /// <summary>Composited look (preferred over Sprite when set).</summary>
+    public AppearancePreset? Appearance { get; set; }
 }
 
 public sealed class QuestDef
@@ -155,7 +195,9 @@ public sealed class GameData
     public Dictionary<string, ItemDef> Items { get; } = new();
     public Dictionary<string, NpcDef> Npcs { get; } = new();
     public Dictionary<string, QuestDef> Quests { get; } = new();
+    public Dictionary<string, RecipeDef> Recipes { get; } = new();
     public WorldMap Map { get; }
+    public AppearanceData Appearance { get; private set; } = new();
 
     /// <summary>Stable, sorted class id list (menu order, determinism).</summary>
     public List<string> ClassOrder { get; } = new();
@@ -184,15 +226,24 @@ public sealed class GameData
         var items = LoadFile<ItemsFile>(Path.Combine(dataDir, "items.json"));
         var npcs = LoadFile<NpcsFile>(Path.Combine(dataDir, "npcs.json"));
         var quests = LoadFile<QuestsFile>(Path.Combine(dataDir, "quests.json"));
+        var recipes = LoadFile<RecipesFile>(Path.Combine(dataDir, "recipes.json"));
+        var appearance = AppearanceData.LoadFromFile(Path.Combine(dataDir, "appearance.json"));
         var map = WorldMap.LoadFromFile(Path.Combine(dataDir, "world.json"));
-        return FromParts(classes, abilities, monsters, map, items, npcs, quests);
+        return FromParts(classes, abilities, monsters, map, items, npcs, quests, recipes, appearance);
     }
 
     /// <summary>Assemble + validate from already-parsed parts (used by tests).</summary>
     public static GameData FromParts(ClassesFile classes, AbilitiesFile abilities, MonstersFile monsters, WorldMap map,
-        ItemsFile? items = null, NpcsFile? npcs = null, QuestsFile? quests = null)
+        ItemsFile? items = null, NpcsFile? npcs = null, QuestsFile? quests = null,
+        RecipesFile? recipes = null, AppearanceData? appearance = null)
     {
         var data = new GameData(map);
+        if (appearance != null) data.Appearance = appearance;
+        foreach (var rec in (recipes ?? new RecipesFile()).Recipes)
+        {
+            if (!data.Recipes.TryAdd(rec.Id, rec))
+                throw new DataValidationException($"recipes.json: duplicate recipe id '{rec.Id}'");
+        }
         foreach (var it in (items ?? new ItemsFile()).Items)
         {
             if (!data.Items.TryAdd(it.Id, it))
@@ -316,12 +367,31 @@ public static class DataValidator
             Require(it.HealHp >= 0 && it.HealMp >= 0, $"items.json[{id}]: heal values must be ≥ 0");
             if (it.Kind == ItemKind.Consumable)
                 Require(it.HealHp + it.HealMp > 0, $"items.json[{id}]: consumable must heal something");
+            if (it.Kind == ItemKind.Tool)
+            {
+                Require(it.Tool != ToolKind.None, $"items.json[{id}]: tool items need a tool type");
+                RequireRange(it.ToolPower, 1, 10, $"items.json[{id}].toolPower");
+            }
+        }
+
+        foreach (var (id, rec) in data.Recipes)
+        {
+            Require(data.Items.ContainsKey(rec.Output), $"recipes.json[{id}]: unknown output '{rec.Output}'");
+            RequireRange(rec.OutputCount, 1, 99, $"recipes.json[{id}].outputCount");
+            Require(rec.Inputs.Count is >= 1 and <= 4, $"recipes.json[{id}]: needs 1–4 inputs");
+            foreach (var input in rec.Inputs)
+            {
+                Require(data.Items.ContainsKey(input.Item), $"recipes.json[{id}]: unknown input '{input.Item}'");
+                RequireRange(input.Count, 1, 99, $"recipes.json[{id}].inputs[{input.Item}].count");
+                Require(input.Item != rec.Output, $"recipes.json[{id}]: output cannot be its own input");
+            }
         }
 
         foreach (var (id, n) in data.Npcs)
         {
             Require(n.Name.Length > 0, $"npcs.json[{id}]: name is required");
-            Require(n.Sprite.Length > 0, $"npcs.json[{id}]: sprite is required");
+            Require(n.Sprite.Length > 0 || n.Appearance != null,
+                $"npcs.json[{id}]: needs a sprite or an appearance");
             Require(data.Map.IsWalkableTile(n.TileX, n.TileY),
                 $"npcs.json[{id}]: tile ({n.TileX},{n.TileY}) is not walkable");
             foreach (var itemId in n.Shop)
@@ -358,6 +428,20 @@ public static class DataValidator
             $"world.json: playerSpawn ({map.PlayerSpawnX},{map.PlayerSpawnY}) is not walkable");
         Require(map.SafeZone.Contains(map.PlayerSpawnX, map.PlayerSpawnY),
             "world.json: playerSpawn must be inside the safe zone");
+
+        var nodeTypes = new HashSet<string> { "oak", "ore", "berry" };
+        var nodeIds = new HashSet<int>();
+        foreach (var n in map.Nodes)
+        {
+            Require(nodeIds.Add(n.Id), $"world.json: duplicate node id {n.Id}");
+            Require(nodeTypes.Contains(n.Type), $"world.json: node {n.Id} has unknown type '{n.Type}'");
+            RequireRange(n.Count, 1, 64, $"world.json: node {n.Id}.count");
+            RequireRange(n.RespawnTicks, 1, 100000, $"world.json: node {n.Id}.respawnTicks");
+            Require(n.Region.W > 0 && n.Region.H > 0 &&
+                    n.Region.X >= 0 && n.Region.Y >= 0 &&
+                    n.Region.X + n.Region.W <= map.Width && n.Region.Y + n.Region.H <= map.Height,
+                $"world.json: node {n.Id} region out of bounds");
+        }
 
         var spawnerIds = new HashSet<int>();
         foreach (var s in map.Spawners)

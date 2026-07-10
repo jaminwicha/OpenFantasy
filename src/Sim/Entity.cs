@@ -5,6 +5,8 @@ public enum EntityKind : byte
     Player = 0,
     Monster = 1,
     Npc = 2,
+    /// <summary>Gatherable resource node (oak, ore vein, berry bush).</summary>
+    Node = 3,
 }
 
 public enum QuestState : byte
@@ -115,9 +117,17 @@ public sealed class Entity
     /// <summary>NPC definition id (Kind == Npc only).</summary>
     public string NpcDefId = "";
 
+    /// <summary>Composited look (players and dressed NPCs).</summary>
+    public bool HasAppearance;
+    public Appearance Appearance = Appearance.Default;
+
+    /// <summary>Node type key (Kind == Node only): oak / ore / berry.</summary>
+    public string NodeType = "";
+
     public bool IsPlayer => Kind == EntityKind.Player;
     public bool IsMonster => Kind == EntityKind.Monster;
     public bool IsNpc => Kind == EntityKind.Npc;
+    public bool IsNode => Kind == EntityKind.Node;
 
     public long DistanceSquaredTo(Entity other)
     {

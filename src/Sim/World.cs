@@ -43,6 +43,7 @@ public sealed partial class World
         }
 
         SpawnNpcs();
+        InitNodes();
     }
 
     public Entity? GetEntity(int id) => _entities.GetValueOrDefault(id);
@@ -57,7 +58,7 @@ public sealed partial class World
 
     // ------------------------------------------------------------------ players
 
-    public Entity AddPlayer(string name, string classId, CharacterSave? save = null)
+    public Entity AddPlayer(string name, string classId, CharacterSave? save = null, Appearance? appearance = null)
     {
         var cls = Data.Classes[classId];
         var e = new Entity
@@ -67,6 +68,8 @@ public sealed partial class World
             Name = name,
             ArchetypeId = classId,
             MoveSpeed = cls.MoveSpeed,
+            HasAppearance = true,
+            Appearance = (appearance ?? Appearance.Default).Sanitized(Data.Appearance),
         };
 
         e.Level = Math.Clamp(save?.Level ?? 1, 1, SimConstants.MaxLevel);
@@ -122,6 +125,7 @@ public sealed partial class World
         Quests = e.QuestLog.ToDictionary(
             kv => kv.Key,
             kv => new QuestProgress { State = kv.Value.State, Kills = kv.Value.Kills }),
+        Appearance = e.Appearance.ToBytes().Select(b => (int)b).ToList(),
     };
 
     /// <summary>Effective stats: class base + level growth + equipment bonuses.</summary>
@@ -233,6 +237,7 @@ public sealed partial class World
                 }
             }
         }
+        TickNodeSpawners();
 
         // Entity updates over a stable copy (spawn/despawn mutates the order list).
         var order = new List<int>(_entityOrder);
@@ -245,12 +250,12 @@ public sealed partial class World
             {
                 if (e.IsPlayer && Tick >= e.RespawnAtTick)
                     RespawnPlayer(e);
-                else if (e.IsMonster && Tick >= e.RespawnAtTick)
+                else if ((e.IsMonster || e.IsNode) && Tick >= e.RespawnAtTick)
                     toRemove.Add(id); // corpse cleanup; spawner already has the respawn scheduled
                 continue;
             }
 
-            if (e.IsNpc) continue; // NPCs don't act; they just exist in snapshots
+            if (e.IsNpc || e.IsNode) continue; // scenery entities don't act
 
             // ATB fill.
             e.Atb = Math.Min(SimConstants.AtbMax, e.Atb + 6 + e.Speed / 2);
@@ -612,6 +617,10 @@ public sealed partial class World
             Mix((int)e.Ai);
             Mix((int)e.Facing);
             Mix(e.PartyId);
+            if (e.HasAppearance)
+                foreach (byte ab in e.Appearance.ToBytes())
+                    Mix(ab);
+            MixString(e.NodeType);
             MixString(e.WeaponId);
             MixString(e.ArmorId);
             Mix(e.Inventory.Count);
@@ -652,4 +661,6 @@ public sealed class CharacterSave
     public string WeaponId { get; set; } = "";
     public string ArmorId { get; set; } = "";
     public Dictionary<string, QuestProgress> Quests { get; set; } = new();
+    /// <summary>Appearance bytes (skin, hairStyle, hairColor, outfit, outfitA, outfitB, acc).</summary>
+    public List<int> Appearance { get; set; } = new();
 }

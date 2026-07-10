@@ -14,7 +14,7 @@ public partial class GameWindows : CanvasLayer
     private GameData _data = null!;
 
     private NinePatchRect? _openWindow;
-    private enum WindowKind { None, Inventory, Quests, Npc }
+    private enum WindowKind { None, Inventory, Quests, Npc, Craft }
     private WindowKind _open = WindowKind.None;
 
     public bool AnyOpen => _open != WindowKind.None;
@@ -29,6 +29,7 @@ public partial class GameWindows : CanvasLayer
 
     public void ToggleInventory() => Toggle(WindowKind.Inventory);
     public void ToggleQuests() => Toggle(WindowKind.Quests);
+    public void ToggleCraft() => Toggle(WindowKind.Craft);
     public void CloseAll() => Close();
 
     private void Toggle(WindowKind kind)
@@ -58,6 +59,7 @@ public partial class GameWindows : CanvasLayer
             WindowKind.Inventory => BuildInventory(),
             WindowKind.Quests => BuildQuests(),
             WindowKind.Npc => BuildNpc(),
+            WindowKind.Craft => BuildCraft(),
             _ => null,
         };
         if (_openWindow == null)
@@ -194,6 +196,54 @@ public partial class GameWindows : CanvasLayer
             list.AddChild(title);
             var detail = UiTheme.MakeLabel(progress, 11);
             detail.Modulate = new Color(0.75f, 0.8f, 0.95f);
+            list.AddChild(detail);
+        }
+        return panel;
+    }
+
+    // ------------------------------------------------------------------ crafting
+
+    private NinePatchRect BuildCraft()
+    {
+        var state = _client.PlayerState;
+        var panel = NewWindow("Crafting", new Vector2(440, 400));
+
+        var hint = UiTheme.MakeLabel("Forge recipes need you standing at the town forge.", 10);
+        hint.Position = new Vector2(14, 28);
+        hint.Modulate = new Color(0.7f, 0.75f, 0.9f);
+        panel.AddChild(hint);
+
+        var scroll = NewScroll(panel, 48);
+        var list = new VBoxContainer { CustomMinimumSize = new Vector2(400, 0) };
+        list.AddThemeConstantOverride("separation", 5);
+        scroll.AddChild(list);
+
+        int CountOf(string itemId) => state.Inventory.Where(s => s.itemId == itemId).Sum(s => s.count);
+
+        foreach (var recipe in _data.Recipes.Values.OrderBy(r => r.Station).ThenBy(r => r.Id, StringComparer.Ordinal))
+        {
+            var output = _data.Items[recipe.Output];
+            bool affordable = recipe.Inputs.All(i => CountOf(i.Item) >= i.Count);
+
+            var row = new HBoxContainer();
+            string title = recipe.OutputCount > 1 ? $"{output.Name} ×{recipe.OutputCount}" : output.Name;
+            if (recipe.Station == CraftStation.Forge) title += "  ⚒";
+            var label = UiTheme.MakeLabel(title, 12);
+            label.CustomMinimumSize = new Vector2(200, 0);
+            label.Modulate = affordable ? UiTheme.TextColor : new Color(0.55f, 0.55f, 0.62f);
+            row.AddChild(label);
+
+            var craft = SmallButton("Craft");
+            craft.Disabled = !affordable;
+            string id = recipe.Id;
+            craft.Pressed += () => _client.SendCraft(id);
+            row.AddChild(craft);
+            list.AddChild(row);
+
+            string inputs = string.Join("  ", recipe.Inputs.Select(i =>
+                $"{_data.Items[i.Item].Name} {CountOf(i.Item)}/{i.Count}"));
+            var detail = UiTheme.MakeLabel(inputs, 10);
+            detail.Modulate = new Color(0.68f, 0.72f, 0.88f);
             list.AddChild(detail);
         }
         return panel;

@@ -1,11 +1,18 @@
 # OpenFantasy
 
 A 2D open-world MMORPG in **Godot 4.4 (.NET/C#)**, styled after 16-bit
-golden-age JRPGs (FF6-inspired mood; all assets original). One shared
+golden-age JRPGs (FF6-inspired look; all assets original). One shared
 persistent region — *Verdance March* — with real-time ATB combat, monster AI,
 XP/levels, items/equipment, shops, quests, parties, a dungeon (the Hollow
-Mine with the Magitek Warden boss), chat, a day/night cycle, and server-side
-character persistence.
+Mine with the Magitek Warden boss), gathering (chop/mine/forage) and crafting
+(with a town forge), chat, a day/night cycle, and server-side persistence.
+
+Every player is built in the **character creator**: a paper-doll sprite
+compositor (8 skins × 12 hair styles × 16 hair colors × 10 outfits × 16×16
+outfit colors × 4 accessories ≈ 25M combinations) in authentic 16×24
+FF6-era sprite craft — outlines, 3-tone ramps, hair shine, 3-frame walks.
+A preset gallery of original heroes in famous silhouettes shows the range;
+layer sheets regenerate entirely from `tools/gen_layers.py`.
 
 ## Documents
 
@@ -13,6 +20,7 @@ character persistence.
 - [`docs/TECH_DESIGN.md`](docs/TECH_DESIGN.md) — architecture (deterministic sim / net / thin client)
 - [`docs/VERTICAL_SLICE.md`](docs/VERTICAL_SLICE.md) — milestone 1 scope and acceptance
 - [`docs/MILESTONE_2.md`](docs/MILESTONE_2.md) — milestone 2: items, shops, quests, parties, dungeon
+- [`docs/MILESTONE_3.md`](docs/MILESTONE_3.md) — milestone 3: sprite fidelity, character creator, gathering/crafting
 
 ## Requirements
 
@@ -53,14 +61,17 @@ godot --path . -- --auto Terra
 ## Regenerate content
 
 ```sh
-python3 tools/gen_world.py    # data/world.json (Verdance March layout)
-python3 tools/gen_assets.py   # assets/ placeholder pixel art
+python3 tools/gen_world.py       # data/world.json (Verdance March layout)
+python3 tools/gen_assets.py      # assets/ tiles, monsters, nodes, UI
+python3 tools/gen_layers.py      # assets/layers/ character sprite layers + appearance.json
+python3 tools/preview_sprites.py # docs/screenshots/preset-gallery.png (offline compositor)
 ```
 
 ## Controls
 
 WASD/arrows move · **1–4** abilities · **Tab** cycle target · **Enter** chat ·
-**E** talk to NPC · **I** inventory · **J** quest log · **Esc** close window
+**E** talk / gather (tools required: axe→oak, pickaxe→ore, sickle→berries) ·
+**I** inventory · **J** quest log · **C** crafting · **Esc** close window
 
 Chat commands: `/party invite <name>` · `/party accept` · `/party leave` · `/p <msg>`
 

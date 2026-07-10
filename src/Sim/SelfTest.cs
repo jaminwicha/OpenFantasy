@@ -213,7 +213,7 @@ public static class SelfTest
 
             Assert(world.BuyItem(p, vendor.Id, "potion").StartsWith("Bought"), "buy failed");
             AssertEqual(p.Gil, 70, "gil deducted");
-            Assert(world.BuyItem(p, vendor.Id, "iron_blade").StartsWith("Not enough"), "overspend allowed");
+            Assert(world.BuyItem(p, vendor.Id, "bronze_sword").StartsWith("Not enough"), "overspend allowed");
 
             p.Hp = 1;
             Assert(world.UseItem(p, "potion").StartsWith("Used"), "use failed");
@@ -301,8 +301,142 @@ public static class SelfTest
             AssertEqual((long)h1, (long)h2, "M2 state hash diverged");
         });
 
+        // ------------------------------------------------------------- M3 cases
+
+        Case("m3 appearance: sanitize, bytes round-trip, save round-trip", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var app = new Appearance { Skin = 200, HairStyle = 3, HairColor = 11, Outfit = 4, OutfitA = 10, OutfitB = 6, Acc = 2 };
+            var clean = app.Sanitized(data.Appearance);
+            Assert(clean.Skin < data.Appearance.Skins.Count, "sanitize failed");
+            var round = Appearance.FromBytes(clean.ToBytes());
+            Assert(round.Equals(clean), "byte round-trip mismatch");
+
+            var world = new World(data, 3);
+            var p = world.AddPlayer("Face", "mage", appearance: clean);
+            var save = world.SnapshotSave(p);
+            Assert(save.Appearance.Count == 7, "save missing appearance");
+            var world2 = new World(data, 4);
+            var p2 = world2.AddPlayer("Face", "mage",
+                appearance: Appearance.FromBytes(save.Appearance.Select(i => (byte)i).ToArray()));
+            Assert(p2.Appearance.Equals(clean), "appearance lost through save");
+        });
+
+        Case("m3 content: nodes + recipes validate; appearance manifest sane", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            Assert(data.Map.Nodes.Count >= 4, "expected ≥4 node regions");
+            Assert(data.Recipes.Count >= 6, "expected ≥6 recipes");
+            Assert(data.Appearance.HairStyles == 12, "expected 12 hair styles");
+            Assert(data.Appearance.Presets.Count >= 6, "expected preset gallery");
+            var world = new World(data, 77);
+            Assert(world.EntitiesInOrder().Any(e => e.IsNode && e.NodeType == "oak"), "no oak spawned");
+            Assert(world.EntitiesInOrder().Any(e => e.IsNode && e.NodeType == "ore"), "no ore spawned");
+            Assert(world.EntitiesInOrder().Any(e => e.IsNode && e.NodeType == "berry"), "no berry spawned");
+        });
+
+        Case("m3 gathering: tool gating, yields, depletion, respawn", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 21);
+            var p = world.AddPlayer("Lumber", "squire");
+            var oak = world.EntitiesInOrder().First(e => e.IsNode && e.NodeType == "oak");
+            p.X = oak.X + 20;
+            p.Y = oak.Y;
+            p.Atb = SimConstants.AtbMax;
+
+            Assert(world.Gather(p, oak.Id).Contains("axe"), "no-tool swing should name the axe");
+            Assert(world.AddItem(p, "copper_axe"), "give axe");
+            string result = world.Gather(p, oak.Id);
+            Assert(result.Contains("Wood"), $"swing yielded '{result}'");
+            AssertEqual(world.CountItem(p, "wood"), 1, "wood in pack");
+
+            int oakId = oak.Id;
+            for (int i = 0; i < 20 && (world.GetEntity(oakId)?.Alive ?? false); i++)
+            {
+                p.Atb = SimConstants.AtbMax;
+                world.Gather(p, oakId);
+            }
+            Assert(world.GetEntity(oakId) is not { Alive: true }, "oak never depleted");
+
+            int before = world.EntitiesInOrder().Count(e => e.IsNode && e.NodeType == "oak" && e.Alive);
+            for (int t = 0; t < 1000; t++) world.Step();
+            int after = world.EntitiesInOrder().Count(e => e.IsNode && e.NodeType == "oak" && e.Alive);
+            Assert(after > before, $"oak never respawned ({before} → {after})");
+        });
+
+        Case("m3 crafting: consumes inputs, produces output, forge gating", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 22);
+            var p = world.AddPlayer("Smith", "squire");
+
+            world.AddItem(p, "berries", 3);
+            string result = world.CraftItem(p, "craft_potion");
+            Assert(result.StartsWith("Crafted"), $"potion craft failed: {result}");
+            AssertEqual(world.CountItem(p, "berries"), 0, "berries not consumed");
+            AssertEqual(world.CountItem(p, "potion"), 1, "potion not produced");
+
+            world.AddItem(p, "iron_ore", 3);
+            world.AddItem(p, "wood", 1);
+            // Player spawns in town but not at the forge tile cluster.
+            string awayResult = world.CraftItem(p, "smelt_iron_bar");
+            int u = SimConstants.UnitsPerTile;
+            bool nearForge = world.IsNearForge(p);
+            if (!nearForge)
+                Assert(awayResult.Contains("forge"), $"forge gate missing: {awayResult}");
+            // Move beside the forge (33,68) and smelt.
+            p.X = 32 * u + u / 2;
+            p.Y = 68 * u + u / 2;
+            Assert(world.IsNearForge(p), "not near forge after moving");
+            string atForge = world.CraftItem(p, "smelt_iron_bar");
+            Assert(atForge.StartsWith("Crafted"), $"smelt failed: {atForge}");
+            AssertEqual(world.CountItem(p, "iron_bar"), 1, "bar not produced");
+
+            Assert(world.CraftItem(p, "craft_potion").StartsWith("Missing"), "crafted without inputs");
+        });
+
+        Case("m3 determinism: hash stable with nodes/gathering/crafting active", () =>
+        {
+            ulong h1 = RunM3ScriptedWorld(dataDir, 4242);
+            ulong h2 = RunM3ScriptedWorld(dataDir, 4242);
+            AssertEqual((long)h1, (long)h2, "M3 state hash diverged");
+        });
+
         log($"selftest: {passed} passed, {failed} failed");
         return failed == 0;
+    }
+
+    /// <summary>Scripted world exercising gathering + crafting + combat for 400 ticks.</summary>
+    private static ulong RunM3ScriptedWorld(string dataDir, ulong seed)
+    {
+        var data = GameData.LoadFromDirectory(dataDir);
+        var world = new World(data, seed);
+        var p = world.AddPlayer("Gatherer", "scout",
+            appearance: new Appearance { Skin = 2, HairStyle = 5, HairColor = 7, Outfit = 1, OutfitA = 3, OutfitB = 9, Acc = 1 });
+        world.AddItem(p, "copper_axe");
+        world.AddItem(p, "sickle");
+
+        var oak = world.EntitiesInOrder().First(e => e.IsNode && e.NodeType == "oak");
+        p.X = oak.X + 20;
+        p.Y = oak.Y;
+        int oakId = oak.Id;
+
+        for (int t = 0; t < 400; t++)
+        {
+            world.SetPlayerInput(p.Id, new InputCommand
+            {
+                Seq = t,
+                MoveX = (sbyte)(t % 9 == 0 ? 1 : t % 13 == 0 ? -1 : 0),
+                MoveY = 0,
+                AbilitySlot = -1,
+                TargetId = -1,
+            });
+            world.Step();
+            if (t % 25 == 0) world.Gather(p, oakId);
+            if (t == 200) world.CraftItem(p, "craft_rations"); // may or may not have inputs — deterministic either way
+        }
+        return world.StateHash();
     }
 
     /// <summary>Scripted world exercising M2 systems (shop, equip, quest, party) plus combat for 600 ticks.</summary>
