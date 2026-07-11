@@ -7,10 +7,18 @@ persistent world — **Aldermere**, 512×512 tiles across **four continents**
 Miradel) with four towns, Castle Aldermere, the Storm Spire tower, and three
 dungeons. Real-time ATB combat, 14 monster types in level bands, XP/levels,
 **four playable races** (human/elf/dwarf/gnome with stat identities),
-items/equipment, shops, a **main quest chain** (kill/explore/deliver) plus
-town side quests, parties, gathering and crafting, **vehicles** (canoe,
-sailboat, ship, dwarven tank, and the airship *Brasswing*), chat, day/night,
-and server-side persistence.
+items/equipment, a **main quest chain** (kill/explore/deliver/fetch) plus
+side quests from kings, farmers, bartenders and beggars alike, parties,
+gathering and crafting, **vehicles** (canoe, sailboat, ship, dwarven tank,
+and the airship *Brasswing*), chat, day/night, and server-side persistence.
+
+Towns are **alive**: ~87 NPCs across enterable buildings — taverns with
+bartenders, patrons, a hooded figure, a fence, and an adventuring party;
+specialized shops (smith, apothecary, toolwright, general goods, ports);
+houses from stone-floored gentry manors to dirt-floored shacks, with
+homeless folk by the gates; and small/medium/large **farms** outside the
+walls, worked by farmers who post their own quests. Villagers wander their
+streets deterministically.
 
 Every player is built in the **character creator**: a paper-doll sprite
 compositor (8 skins × 12 hair styles × 16 hair colors × 10 outfits × 16×16
@@ -27,6 +35,7 @@ layer sheets regenerate entirely from `tools/gen_layers.py`.
 - [`docs/MILESTONE_2.md`](docs/MILESTONE_2.md) — milestone 2: items, shops, quests, parties, dungeon
 - [`docs/MILESTONE_3.md`](docs/MILESTONE_3.md) — milestone 3: sprite fidelity, character creator, gathering/crafting
 - [`docs/MILESTONE_4.md`](docs/MILESTONE_4.md) — milestone 4: four continents, races, vehicles, quest chains
+- [`docs/MILESTONE_5.md`](docs/MILESTONE_5.md) — milestone 5: living towns, taverns, farms, fetch quests
 
 ## Requirements
 
@@ -67,7 +76,8 @@ godot --path . -- --auto Terra
 ## Regenerate content
 
 ```sh
-python3 tools/gen_world.py       # data/world.json (Verdance March layout)
+python3 tools/gen_world.py       # data/world.json + world_meta.json (Aldermere)
+python3 tools/gen_npcs.py        # data/npcs.json (population; needs world_meta)
 python3 tools/gen_assets.py      # assets/ tiles, monsters, nodes, UI
 python3 tools/gen_layers.py      # assets/layers/ character sprite layers + appearance.json
 python3 tools/preview_sprites.py # docs/screenshots/preset-gallery.png (offline compositor)

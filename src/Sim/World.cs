@@ -283,7 +283,12 @@ public sealed partial class World
                 continue;
             }
 
-            if (e.IsNpc || e.IsNode) continue; // scenery entities don't act
+            if (e.IsNode) continue;
+            if (e.IsNpc)
+            {
+                TickNpc(e);
+                continue;
+            }
 
             // ATB fill.
             e.Atb = Math.Min(SimConstants.AtbMax, e.Atb + 6 + e.Speed / 2);

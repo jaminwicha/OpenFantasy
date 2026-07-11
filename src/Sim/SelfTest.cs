@@ -217,7 +217,7 @@ public static class SelfTest
 
             Assert(world.BuyItem(p, vendor.Id, "potion").StartsWith("Bought"), "buy failed");
             AssertEqual(p.Gil, 70, "gil deducted");
-            Assert(world.BuyItem(p, vendor.Id, "bronze_sword").StartsWith("Not enough"), "overspend allowed");
+            Assert(world.BuyItem(p, vendor.Id, "tonic").StartsWith("Not enough"), "overspend allowed");
 
             p.Hp = 1;
             Assert(world.UseItem(p, "potion").StartsWith("Used"), "use failed");
@@ -389,8 +389,8 @@ public static class SelfTest
             bool nearForge = world.IsNearForge(p);
             if (!nearForge)
                 Assert(awayResult.Contains("forge"), $"forge gate missing: {awayResult}");
-            // Move beside Brasshollow's forge (town center +5,+4 → 115,356) and smelt.
-            p.X = 114 * u + u / 2;
+            // Move beside Brasshollow's forge (town center +7,+4 → 117,356) and smelt.
+            p.X = 116 * u + u / 2;
             p.Y = 356 * u + u / 2;
             Assert(world.IsNearForge(p), "not near forge after moving");
             string atForge = world.CraftItem(p, "smelt_iron_bar");
@@ -530,6 +530,83 @@ public static class SelfTest
             // Finale is offered by the king and rewards the airship.
             var finale = data.Quests["warden_of_storms"];
             Assert(finale.Main && finale.RewardItem == "airship_brasswing", "finale reward wrong");
+        });
+
+        // ------------------------------------------------------------- M5 cases
+
+        Case("m5 world: taverns, buildings, farms, population", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            foreach (string town in new[] { "brasshollow", "gearford", "sylvanglade", "willowick" })
+                Assert(data.Map.Region($"tavern_{town}") != null, $"missing tavern region in {town}");
+            foreach (string farm in new[] { "farm_verdance_large", "farm_verdance_small",
+                "farm_sylvas_medium", "farm_miradel_small" })
+                Assert(data.Map.Region(farm) != null, $"missing {farm}");
+            Assert(data.Npcs.Count >= 50, $"expected ≥50 NPCs, got {data.Npcs.Count}");
+            Assert(data.Npcs.Values.Count(n => n.Wander > 0) >= 30, "expected ≥30 wandering NPCs");
+            Assert(data.Npcs.ContainsKey("hooded_figure") && data.Npcs.ContainsKey("whisper")
+                   && data.Npcs.ContainsKey("sable") && data.Npcs.ContainsKey("homeless_brasshollow"),
+                "tavern visitor cast incomplete");
+            Assert(data.Npcs.Values.Count(n => n.Shop.Count > 0) >= 12, "expected ≥12 shopkeepers");
+        });
+
+        Case("m5 fetch quest: accept → gather → consume on turn-in → reward", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 55);
+            var p = world.AddPlayer("Kindly", "squire");
+            var wex = world.EntitiesInOrder().First(e => e.IsNpc && e.NpcDefId == "homeless_brasshollow");
+            p.X = wex.X + 16;
+            p.Y = wex.Y;
+            Assert(world.AcceptQuest(p, wex.Id, "a_warm_meal").StartsWith("Quest accepted"), "accept failed");
+            Assert(world.CompleteQuest(p, wex.Id, "a_warm_meal").StartsWith("Not enough"), "turned in empty-handed");
+            world.AddItem(p, "berries", 3);
+            int xpBefore = p.Xp + p.Level * 1000;
+            Assert(world.CompleteQuest(p, wex.Id, "a_warm_meal").StartsWith("Quest complete"), "turn-in failed");
+            AssertEqual(world.CountItem(p, "berries"), 0, "berries not consumed");
+            Assert(p.Xp + p.Level * 1000 > xpBefore, "no xp reward");
+        });
+
+        Case("m5 wander: villagers stay walkable and leashed over 1200 ticks", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 56);
+            var wanderers = world.EntitiesInOrder()
+                .Where(e => e.IsNpc && data.Npcs[e.NpcDefId].Wander > 0)
+                .Select(e => e.Id).ToList();
+            Assert(wanderers.Count >= 30, "not enough wanderers spawned");
+            for (int t = 0; t < 1200; t++) world.Step();
+            int moved = 0;
+            foreach (int id in wanderers)
+            {
+                var e = world.GetEntity(id)!;
+                Assert(data.Map.IsWalkableUnits(e.X, e.Y), $"npc {e.NpcDefId} on unwalkable tile");
+                long leash = (data.Npcs[e.NpcDefId].Wander + 1) * SimConstants.UnitsPerTile;
+                long dx = e.X - e.HomeX, dy = e.Y - e.HomeY;
+                Assert(dx * dx + dy * dy <= leash * leash * 2, $"npc {e.NpcDefId} broke its leash");
+                if (dx != 0 || dy != 0) moved++;
+            }
+            Assert(moved >= wanderers.Count / 2, $"town feels dead: only {moved} npcs moved");
+        });
+
+        Case("m5 determinism: hash stable with the full living-town population", () =>
+        {
+            static ulong Run(string dir)
+            {
+                var data = GameData.LoadFromDirectory(dir);
+                var world = new World(data, 5757);
+                var p = world.AddPlayer("Watcher", "mage");
+                for (int t = 0; t < 800; t++)
+                {
+                    world.SetPlayerInput(p.Id, new InputCommand
+                    {
+                        Seq = t, MoveX = (sbyte)(t % 6 == 0 ? 1 : 0), MoveY = 0, AbilitySlot = -1, TargetId = -1,
+                    });
+                    world.Step();
+                }
+                return world.StateHash();
+            }
+            AssertEqual((long)Run(dataDir), (long)Run(dataDir), "M5 population hash diverged");
         });
 
         log($"selftest: {passed} passed, {failed} failed");

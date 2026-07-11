@@ -153,6 +153,8 @@ public sealed class NpcDef
     public List<string> Quests { get; set; } = new();
     /// <summary>Composited look (preferred over Sprite when set).</summary>
     public AppearancePreset? Appearance { get; set; }
+    /// <summary>Amble radius in tiles (0 = holds their post).</summary>
+    public int Wander { get; set; }
 }
 
 public enum QuestKind
@@ -162,6 +164,8 @@ public enum QuestKind
     Explore,
     /// <summary>Deliver word to another NPC (turn in at TalkNpc).</summary>
     Talk,
+    /// <summary>Bring N of an item; the turn-in consumes them.</summary>
+    Fetch,
 }
 
 public sealed class QuestDef
@@ -180,6 +184,8 @@ public sealed class QuestDef
     public string TargetMonster { get; set; } = "";
     /// <summary>Explore: region id to reach.</summary>
     public string TargetRegion { get; set; } = "";
+    /// <summary>Fetch: item id to bring.</summary>
+    public string TargetItem { get; set; } = "";
     /// <summary>Talk: npc id to deliver to (turn-in happens there).</summary>
     public string TalkNpc { get; set; } = "";
     public int TargetCount { get; set; } = 1;
@@ -457,6 +463,10 @@ public static class DataValidator
                     Require(data.Npcs.ContainsKey(q.TalkNpc),
                         $"quests.json[{id}]: unknown talk npc '{q.TalkNpc}'");
                     Require(q.TalkNpc != q.Giver, $"quests.json[{id}]: talk target is the giver");
+                    break;
+                case QuestKind.Fetch:
+                    Require(data.Items.ContainsKey(q.TargetItem),
+                        $"quests.json[{id}]: unknown target item '{q.TargetItem}'");
                     break;
             }
             if (q.Prerequisite.Length > 0)

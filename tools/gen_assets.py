@@ -806,6 +806,56 @@ def tile_deadtree():
     return c
 
 
+def tile_plank():
+    c = Canvas(T, T)
+    wood = (168, 128, 82, 255)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, wood if (y % 5) != 4 else shade(wood, 0.72))
+    for (nx, ny) in ((3, 1), (11, 6), (6, 11), (13, 13)):
+        c.px(nx, ny, shade(wood, 0.6))          # nail/knot
+    for y in (0, 5, 10):
+        c.px((y * 3) % T, y, shade(wood, 1.15))
+    return c
+
+
+def tile_counter():
+    c = tile_plank()
+    top = (120, 84, 50, 255)
+    for y in range(0, 6):
+        for x in range(T):
+            c.px(x, y, top if y < 5 else shade(top, 0.6))
+    for x in range(0, T, 4):
+        c.px(x, 2, shade(top, 1.2))
+    return c
+
+
+def tile_fence():
+    c = tile_grass(1)
+    post = (124, 92, 56, 255)
+    for x in (2, 7, 12):
+        c.rect(x, 4, x + 1, 12, post)
+        c.px(x, 4, shade(post, 1.2))
+    for y in (6, 10):
+        for x in range(T):
+            c.px(x, y, shade(post, 0.85))
+    return c
+
+
+def tile_farmland():
+    c = Canvas(T, T)
+    soil = (134, 94, 62, 255)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, soil if (y % 4) < 2 else shade(soil, 0.78))
+    for i in range(3):
+        sx = (i * 6 + 3) % (T - 2)
+        sy = (i * 5 + 1) % (T - 3)
+        c.px(sx, sy, (110, 170, 90, 255))       # sprout
+        c.px(sx, sy + 1, (80, 140, 70, 255))
+    return c
+
+
 def gen_tiles_v3():
     """Rewrites tiles.png with rows 0-1 (v2 bases), 2-3 (masks), 4-5 (M4)."""
     cols, rows = 16, 6
@@ -829,7 +879,8 @@ def gen_tiles_v3():
             tile_desert(0), tile_desert(1), tile_desert(2),
             tile_swamp(0), tile_swamp(1), tile_bridge(),
             tile_castle(0), tile_castle(1), tile_deadtree()]
-    row5 = [tile_towerf(0), tile_towerf(1), tile_dock()]
+    row5 = [tile_towerf(0), tile_towerf(1), tile_dock(),
+            tile_plank(), tile_counter(), tile_fence(), tile_farmland()]
     for i, tc in enumerate(row0):
         put(i, 0, tc)
     for i, tc in enumerate(row1):

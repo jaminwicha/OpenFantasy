@@ -22,6 +22,7 @@ public sealed partial class World
                 Name = def.Name,
                 ArchetypeId = def.Sprite,
                 NpcDefId = def.Id,
+                MoveSpeed = 2,
                 HasAppearance = def.Appearance != null,
                 Appearance = def.Appearance?.ToAppearance().Sanitized(Data.Appearance) ?? Appearance.Default,
                 X = def.TileX * u + u / 2,
@@ -31,8 +32,40 @@ public sealed partial class World
                 Level = 1,
                 Speed = 1,
             };
+            e.HomeX = e.X;
+            e.HomeY = e.Y;
             _entities[e.Id] = e;
             _entityOrder.Add(e.Id);
+        }
+    }
+
+    /// <summary>Villager amble: deterministic wander leashed to home, walkable tiles only.</summary>
+    private void TickNpc(Entity e)
+    {
+        var def = Data.Npcs[e.NpcDefId];
+        if (def.Wander <= 0) return;
+
+        if (Tick >= e.NextWanderTick)
+        {
+            e.NextWanderTick = Tick + _rng.Range(60, 200);
+            e.WanderDirX = _rng.Range(-1, 1);
+            e.WanderDirY = _rng.Range(-1, 1);
+            long leash = def.Wander * SimConstants.UnitsPerTile;
+            long dhx = e.X - e.HomeX, dhy = e.Y - e.HomeY;
+            if (dhx * dhx + dhy * dhy > leash * leash / 2)
+            {
+                e.WanderDirX = Math.Sign(e.HomeX - e.X);
+                e.WanderDirY = Math.Sign(e.HomeY - e.Y);
+            }
+        }
+        if (Tick % 3 == 0) // unhurried village pace
+        {
+            long leash = def.Wander * SimConstants.UnitsPerTile;
+            int nx = e.X + e.WanderDirX * e.MoveSpeed;
+            int ny = e.Y + e.WanderDirY * e.MoveSpeed;
+            long dhx = nx - e.HomeX, dhy = ny - e.HomeY;
+            if (dhx * dhx + dhy * dhy <= leash * leash)
+                MoveEntity(e, e.WanderDirX, e.WanderDirY, allowSafeZone: true);
         }
     }
 
@@ -189,6 +222,7 @@ public sealed partial class World
         QuestKind.Kill => progress.Kills >= quest.TargetCount,
         QuestKind.Explore => progress.Kills >= 1,   // set when the region is entered
         QuestKind.Talk => true,                      // delivering IS the objective
+        QuestKind.Fetch => CountItem(player, quest.TargetItem) >= quest.TargetCount,
         _ => false,
     };
 
@@ -242,9 +276,16 @@ public sealed partial class World
         if (npc.Id != QuestTurnInNpc(quest))
             return $"Take that to {Data.Npcs[QuestTurnInNpc(quest)].Name}.";
         if (!QuestObjectiveMet(player, quest, progress))
-            return quest.Kind == QuestKind.Explore
-                ? "You haven't been there yet."
-                : $"Not done yet: {progress.Kills}/{quest.TargetCount} {Data.Monsters[quest.TargetMonster].Name}s.";
+            return quest.Kind switch
+            {
+                QuestKind.Explore => "You haven't been there yet.",
+                QuestKind.Fetch =>
+                    $"Not enough: {CountItem(player, quest.TargetItem)}/{quest.TargetCount} {Data.Items[quest.TargetItem].Name}.",
+                _ => $"Not done yet: {progress.Kills}/{quest.TargetCount} {Data.Monsters[quest.TargetMonster].Name}s.",
+            };
+
+        if (quest.Kind == QuestKind.Fetch)
+            RemoveItem(player, quest.TargetItem, quest.TargetCount);
 
         progress.State = QuestState.Completed;
         player.Gil += quest.RewardGil;

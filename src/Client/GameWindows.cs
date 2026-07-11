@@ -208,6 +208,7 @@ public partial class GameWindows : CanvasLayer
                         ? $"Seen — report to {turnInName}"
                         : $"Reach: {quest.TargetRegion.Replace('_', ' ')}",
                     QuestKind.Talk => $"Deliver to {turnInName}",
+                    QuestKind.Fetch => $"Bring {quest.TargetCount}× {_data.Items[quest.TargetItem].Name} to {turnInName}",
                     _ => "…",
                 };
                 var title = UiTheme.MakeLabel((quest.Main ? "★ " : "") + quest.Name, 13);

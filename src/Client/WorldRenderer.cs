@@ -40,6 +40,10 @@ public partial class WorldRenderer : Node2D
         new[] { new Vector2I(0, 5), new Vector2I(1, 5) },                       // 21 tower floor
         new[] { new Vector2I(2, 5) },                                           // 22 dock
         new[] { new Vector2I(15, 4) },                                          // 23 dead tree
+        new[] { new Vector2I(3, 5) },                                           // 24 plank floor
+        new[] { new Vector2I(4, 5) },                                           // 25 counter
+        new[] { new Vector2I(5, 5) },                                           // 26 fence
+        new[] { new Vector2I(6, 5) },                                           // 27 farmland
     };
 
     private static readonly int[] WaterIds = { 2, 13 };       // shallow, ocean

@@ -360,6 +360,7 @@ public partial class ServerNode : Node
         QuestKind.Kill => $"{progress.Kills}/{quest.TargetCount} {_world.Data.Monsters[quest.TargetMonster].Name}s",
         QuestKind.Explore => progress.Kills > 0 ? "Seen. Report back." : $"Find: {quest.TargetRegion.Replace('_', ' ')}",
         QuestKind.Talk => $"Deliver to {_world.Data.Npcs[quest.TalkNpc].Name}",
+        QuestKind.Fetch => $"Bring {quest.TargetCount}× {_world.Data.Items[quest.TargetItem].Name}",
         _ => "…",
     };
 

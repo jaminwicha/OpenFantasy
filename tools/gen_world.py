@@ -19,7 +19,7 @@ rng = random.Random(60407)  # fixed seed: layout is authored content
 
 (GRASS, TREE, SHALLOW, ROAD, COBBLE, WALL, FOREST, MINEFLOOR, ROCK, CRYSTAL,
  SAND, FLOWERS, FORGE, OCEAN, MOUNTAIN, HILLS, SNOW, DESERT, SWAMP, BRIDGE,
- CASTLE, TOWERF, DOCK, DEADTREE) = range(24)
+ CASTLE, TOWERF, DOCK, DEADTREE, PLANK, COUNTER, FENCE, FARMLAND) = range(28)
 
 TILESET = [
     {"id": GRASS, "name": "grass", "walkable": True},
@@ -46,6 +46,10 @@ TILESET = [
     {"id": TOWERF, "name": "tower_floor", "walkable": True},
     {"id": DOCK, "name": "dock", "walkable": True},
     {"id": DEADTREE, "name": "dead_tree", "walkable": False},
+    {"id": PLANK, "name": "plank_floor", "walkable": True},
+    {"id": COUNTER, "name": "counter", "walkable": False},
+    {"id": FENCE, "name": "fence", "walkable": False},
+    {"id": FARMLAND, "name": "farmland", "walkable": True},
 ]
 
 WALKABLE = {t["id"] for t in TILESET if t["walkable"]}
@@ -224,20 +228,97 @@ def build_walled(cx, cy, hw, hh, floor, gates=("n", "s", "e", "w"), wall=WALL):
     return x0, y0, x1, y1
 
 
-def build_town(name, cx, cy, hw, hh, floor):
+META = {"towns": {}, "farms": [], "homeless": []}
+
+
+def build_building(town, kind, x0, y0, x1, y1, floor, door_side="s"):
+    """Hollow building: wall shell, interior floor, one door gap. Returns meta record."""
+    fill(x0, y0, x1, y1, floor)
+    for x in range(x0, x1 + 1):
+        grid[y0][x] = WALL
+        grid[y1][x] = WALL
+    for y in range(y0, y1 + 1):
+        grid[y][x0] = WALL
+        grid[y][x1] = WALL
+    mx, my = (x0 + x1) // 2, (y0 + y1) // 2
+    if door_side == "s":
+        door = (mx, y1)
+    elif door_side == "n":
+        door = (mx, y0)
+    elif door_side == "e":
+        door = (x1, my)
+    else:
+        door = (x0, my)
+    grid[door[1]][door[0]] = floor
+    return {"kind": kind, "rect": [x0, y0, x1, y1], "door": list(door), "anchor": [mx, my], "floor": floor}
+
+
+def build_town(name, cx, cy, floor):
+    """Town v3: 33x27 walls, plaza, tavern, shops, houses by wealth."""
+    hw, hh = 16, 13
     x0, y0, x1, y1 = build_walled(cx, cy, hw, hh, floor)
-    # houses in the corners
-    for hx, hy in ((x0 + 3, y0 + 3), (x1 - 6, y0 + 3), (x0 + 3, y1 - 5), (x1 - 6, y1 - 5)):
-        fill(hx, hy, hx + 3, hy + 2, WALL)
+    buildings = []
+
+    # Tavern (NW, plank floor, counter along its north wall pocket)
+    tav = build_building(name, "tavern", cx - 15, cy - 12, cx - 6, cy - 6, PLANK, "s")
+    for bx in range(cx - 13, cx - 8):
+        grid[cy - 10][bx] = COUNTER            # the bar
+    tav["bar"] = [cx - 11, cy - 11]            # bartender pocket behind the counter
+    buildings.append(tav)
+
+    # Shops (NE + W): weapon/armor row and goods row
+    buildings.append(build_building(name, "shop_arms", cx + 6, cy - 12, cx + 11, cy - 8, PLANK, "s"))
+    buildings.append(build_building(name, "shop_goods", cx - 15, cy - 3, cx - 10, cy + 1, PLANK, "e"))
+    grid[cy - 11][cx + 8] = COUNTER
+    grid[cy - 1][cx - 13] = COUNTER
+
+    # Houses: rich (SE, stone), mid x2, poor shacks x2 (dirt floors)
+    buildings.append(build_building(name, "house_rich", cx + 9, cy + 6, cx + 15, cy + 11, CASTLE, "n"))
+    buildings.append(build_building(name, "house_mid", cx - 15, cy + 6, cx - 11, cy + 10, PLANK, "n"))
+    buildings.append(build_building(name, "house_mid", cx - 9, cy + 6, cx - 5, cy + 10, PLANK, "n"))
+    buildings.append(build_building(name, "house_poor", cx - 2, cy + 6, cx + 1, cy + 9, ROAD, "n"))
+    buildings.append(build_building(name, "house_poor", cx + 3, cy + 6, cx + 6, cy + 9, ROAD, "n"))
+
+    # Plaza fixtures
     grid[cy - 4][cx] = CRYSTAL
-    grid[cy + 4][cx + 5] = FORGE
+    grid[cy + 4][cx + 7] = FORGE
     CRYSTALS.append({"x": cx, "y": cy - 3})
     SAFE_ZONES.append({"x": x0 - 1, "y": y0 - 1, "w": (x1 - x0) + 3, "h": (y1 - y0) + 3})
     REGIONS[name] = {"x": x0, "y": y0, "w": x1 - x0 + 1, "h": y1 - y0 + 1}
+    tav_rect = tav["rect"]
+    REGIONS[f"tavern_{name}"] = {"x": tav_rect[0], "y": tav_rect[1],
+                                 "w": tav_rect[2] - tav_rect[0] + 1, "h": tav_rect[3] - tav_rect[1] + 1}
+    META["towns"][name] = {"center": [cx, cy], "floor": floor, "buildings": buildings}
+    grid[cy + 14][cx + 2] = ROAD                # a patch of packed dirt by the south gate
+    META["homeless"].append({"town": name, "pos": [cx + 2, cy + 14]})
 
 
 for name, (cx, cy, hw, hh, floor) in TOWNS.items():
-    build_town(name, cx, cy, hw, hh, floor)
+    build_town(name, cx, cy, floor)
+
+
+def build_farm(name, town, x0, y0, w, h):
+    """Fenced field with tilled rows and a farmhouse in the NW corner."""
+    x1, y1 = x0 + w - 1, y0 + h - 1
+    fill(x0, y0, x1, y1, GRASS)
+    for x in range(x0, x1 + 1):
+        grid[y0][x] = FENCE
+        grid[y1][x] = FENCE
+    for y in range(y0, y1 + 1):
+        grid[y][x0] = FENCE
+        grid[y][x1] = FENCE
+    grid[y1][(x0 + x1) // 2] = GRASS            # gate south
+    grid[y1][(x0 + x1) // 2 + 1] = GRASS
+    for y in range(y0 + 2, y1 - 1):
+        if (y - y0) % 3 != 0:
+            for x in range(x0 + 6, x1 - 1):
+                grid[y][x] = FARMLAND
+    house = build_building(town, "farmhouse", x0 + 1, y0 + 1, x0 + 5, y0 + 4, PLANK, "e")
+    size = "large" if w >= 15 else "medium" if w >= 11 else "small"
+    REGIONS[name] = {"x": x0, "y": y0, "w": w, "h": h}
+    META["farms"].append({"id": name, "town": town, "size": size,
+                          "rect": [x0, y0, x1, y1], "house": house,
+                          "field": [x0 + 6, y0 + 2, x1 - 2, y1 - 2]})
 
 PLAYER_SPAWN = {"x": TOWNS["brasshollow"][0], "y": TOWNS["brasshollow"][1] + 2}
 
@@ -274,6 +355,13 @@ REGIONS["emberdeep"] = {"x": 382, "y": 100, "w": 15, "h": 10}
 x0, y0, x1, y1 = build_walled(402, 414, 8, 6, MINEFLOOR, gates=("n",))
 REGIONS["sunken_crypt"] = {"x": x0, "y": y0, "w": x1 - x0 + 1, "h": y1 - y0 + 1}
 
+# ------------------------------------------------------------------ farms
+
+build_farm("farm_verdance_large", "brasshollow", 128, 368, 16, 12)
+build_farm("farm_verdance_small", "brasshollow", 100, 320, 9, 7)
+build_farm("farm_sylvas_medium", "sylvanglade", 338, 330, 12, 9)
+build_farm("farm_miradel_small", "willowick", 110, 152, 9, 7)
+
 # ------------------------------------------------------------------ roads
 
 
@@ -295,18 +383,18 @@ def carve_road(points, tile=ROAD):
 
 
 # Verdance: Brasshollow -> castle -> mine; Brasshollow -> west dock
-carve_road([(121, 352), (150, 340), (166, 330)])
+carve_road([(126, 352), (152, 342), (178, 334)])
 carve_road([(180, 333), (196, 360), (210, 398)])
-carve_road([(99, 352), (78, 352)])
+carve_road([(94, 352), (78, 352)])
 # Kharzum: Gearford -> Emberdeep tunnel mouth; Gearford -> south dock
-carve_road([(360, 149), (376, 165), (389, 185)])
-carve_road([(360, 149), (348, 190), (334, 224)])
+carve_road([(360, 153), (376, 168), (389, 185)])
+carve_road([(360, 153), (348, 190), (334, 224)])
 # Sylvas: Sylvanglade -> crypt; -> west dock
-carve_road([(372, 365), (390, 392), (402, 408)])
-carve_road([(361, 356), (322, 360), (292, 372)])
+carve_road([(372, 369), (390, 392), (402, 408)])
+carve_road([(356, 356), (322, 360), (292, 372)])
 # Miradel: Willowick -> Spire; -> south dock
-carve_road([(122, 128), (104, 112), (86, 105)])
-carve_road([(122, 144), (122, 180), (118, 208)])
+carve_road([(122, 123), (104, 112), (86, 105)])
+carve_road([(122, 149), (122, 180), (118, 208)])
 
 # ------------------------------------------------------------------ docks (ports)
 
@@ -481,5 +569,8 @@ out = {
 
 dest = Path(__file__).resolve().parent.parent / "data" / "world.json"
 dest.write_text(json.dumps(out, separators=(",", ":")) + "\n")
+meta_dest = Path(__file__).resolve().parent.parent / "data" / "world_meta.json"
+meta_dest.write_text(json.dumps(META, separators=(",", ":")) + "\n")
 print(f"wrote {dest} ({dest.stat().st_size} bytes), regions={len(REGIONS)}, "
-      f"spawners={len(SPAWNERS)}, nodes={len(NODES)}, crystals={len(CRYSTALS)}")
+      f"spawners={len(SPAWNERS)}, nodes={len(NODES)}, crystals={len(CRYSTALS)}, "
+      f"buildings={sum(len(t['buildings']) for t in META['towns'].values())}, farms={len(META['farms'])}")
