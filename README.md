@@ -5,7 +5,7 @@ golden-age JRPGs (FF6-inspired look; all assets original). One shared
 persistent world — **Aldermere**, 512×512 tiles across **four continents**
 (green Verdance, mountain-locked Kharzum, forest-and-swamp Sylvas, desert
 Miradel) with four towns, Castle Aldermere, the Storm Spire tower, and three
-dungeons. Real-time ATB combat, 14 monster types in level bands, XP/levels,
+dungeons. Real-time ATB combat, 35+ monster types in level bands, XP/levels,
 **four playable races** (human/elf/dwarf/gnome with stat identities),
 items/equipment, a **main quest chain** (kill/explore/deliver/fetch) plus
 side quests from kings, farmers, bartenders and beggars alike, parties,
@@ -36,6 +36,7 @@ layer sheets regenerate entirely from `tools/gen_layers.py`.
 - [`docs/MILESTONE_3.md`](docs/MILESTONE_3.md) — milestone 3: sprite fidelity, character creator, gathering/crafting
 - [`docs/MILESTONE_4.md`](docs/MILESTONE_4.md) — milestone 4: four continents, races, vehicles, quest chains
 - [`docs/MILESTONE_5.md`](docs/MILESTONE_5.md) — milestone 5: living towns, taverns, farms, fetch quests
+- [`docs/MILESTONE_6.md`](docs/MILESTONE_6.md) — milestone 6: content expansion (bestiary, hoard, quests, POIs)
 
 ## Requirements
 

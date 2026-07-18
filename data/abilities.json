@@ -1,40 +1,130 @@
 {
   "abilities": [
     {
-      "id": "strike", "name": "Strike", "kind": "Melee",
-      "power": 10, "range": 48, "atbCost": 300, "mpCost": 0, "unlockLevel": 1
+      "id": "strike",
+      "name": "Strike",
+      "kind": "Melee",
+      "power": 10,
+      "range": 48,
+      "atbCost": 300,
+      "mpCost": 0,
+      "unlockLevel": 1
     },
     {
-      "id": "cleave", "name": "Cleave", "kind": "Melee",
-      "power": 14, "range": 48, "atbCost": 600, "mpCost": 0, "unlockLevel": 3, "aoeRadius": 64
+      "id": "cleave",
+      "name": "Cleave",
+      "kind": "Melee",
+      "power": 14,
+      "range": 48,
+      "atbCost": 600,
+      "mpCost": 0,
+      "unlockLevel": 3,
+      "aoeRadius": 64
     },
     {
-      "id": "breaker", "name": "Breaker", "kind": "Melee",
-      "power": 24, "range": 48, "atbCost": 900, "mpCost": 0, "unlockLevel": 5
+      "id": "breaker",
+      "name": "Breaker",
+      "kind": "Melee",
+      "power": 24,
+      "range": 48,
+      "atbCost": 900,
+      "mpCost": 0,
+      "unlockLevel": 5
     },
     {
-      "id": "spark", "name": "Spark", "kind": "Projectile", "usesMagic": true,
-      "power": 10, "range": 160, "atbCost": 300, "mpCost": 2, "unlockLevel": 1
+      "id": "spark",
+      "name": "Spark",
+      "kind": "Projectile",
+      "usesMagic": true,
+      "power": 10,
+      "range": 160,
+      "atbCost": 300,
+      "mpCost": 2,
+      "unlockLevel": 1
     },
     {
-      "id": "fire", "name": "Fire", "kind": "Projectile", "usesMagic": true,
-      "power": 17, "range": 160, "atbCost": 550, "mpCost": 6, "unlockLevel": 3
+      "id": "fire",
+      "name": "Fire",
+      "kind": "Projectile",
+      "usesMagic": true,
+      "power": 17,
+      "range": 160,
+      "atbCost": 550,
+      "mpCost": 6,
+      "unlockLevel": 3
     },
     {
-      "id": "cura", "name": "Cura", "kind": "Heal",
-      "power": 16, "range": 32, "atbCost": 500, "mpCost": 10, "unlockLevel": 5
+      "id": "cura",
+      "name": "Cura",
+      "kind": "Heal",
+      "power": 16,
+      "range": 32,
+      "atbCost": 500,
+      "mpCost": 10,
+      "unlockLevel": 5
     },
     {
-      "id": "shot", "name": "Shot", "kind": "Projectile",
-      "power": 9, "range": 192, "atbCost": 280, "mpCost": 0, "unlockLevel": 1
+      "id": "shot",
+      "name": "Shot",
+      "kind": "Projectile",
+      "power": 9,
+      "range": 192,
+      "atbCost": 280,
+      "mpCost": 0,
+      "unlockLevel": 1
     },
     {
-      "id": "aimed_shot", "name": "Aimed Shot", "kind": "Projectile",
-      "power": 18, "range": 224, "atbCost": 700, "mpCost": 0, "unlockLevel": 3
+      "id": "aimed_shot",
+      "name": "Aimed Shot",
+      "kind": "Projectile",
+      "power": 18,
+      "range": 224,
+      "atbCost": 700,
+      "mpCost": 0,
+      "unlockLevel": 3
     },
     {
-      "id": "fieldcraft", "name": "Fieldcraft", "kind": "Heal",
-      "power": 12, "range": 32, "atbCost": 600, "mpCost": 8, "unlockLevel": 5
+      "id": "fieldcraft",
+      "name": "Fieldcraft",
+      "kind": "Heal",
+      "power": 12,
+      "range": 32,
+      "atbCost": 600,
+      "mpCost": 8,
+      "unlockLevel": 5
+    },
+    {
+      "id": "rally",
+      "name": "Rally",
+      "kind": "Heal",
+      "power": 20,
+      "range": 32,
+      "atbCost": 800,
+      "mpCost": 6,
+      "unlockLevel": 7
+    },
+    {
+      "id": "thundara",
+      "name": "Thundara",
+      "kind": "Projectile",
+      "usesMagic": true,
+      "power": 22,
+      "range": 176,
+      "atbCost": 850,
+      "mpCost": 14,
+      "unlockLevel": 7,
+      "aoeRadius": 80
+    },
+    {
+      "id": "volley",
+      "name": "Volley",
+      "kind": "Projectile",
+      "power": 15,
+      "range": 208,
+      "atbCost": 800,
+      "mpCost": 0,
+      "unlockLevel": 7,
+      "aoeRadius": 72
     }
   ]
 }

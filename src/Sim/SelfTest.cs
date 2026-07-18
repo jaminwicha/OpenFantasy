@@ -589,6 +589,42 @@ public static class SelfTest
             Assert(moved >= wanderers.Count / 2, $"town feels dead: only {moved} npcs moved");
         });
 
+        Case("m6 content scale: the expansion targets hold", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            Assert(data.Monsters.Count >= 35, $"monsters {data.Monsters.Count} < 35");
+            Assert(data.Items.Count >= 60, $"items {data.Items.Count} < 60");
+            Assert(data.Abilities.Count >= 12, $"abilities {data.Abilities.Count} < 12");
+            Assert(data.Recipes.Count >= 22, $"recipes {data.Recipes.Count} < 22");
+            Assert(data.Quests.Count >= 42, $"quests {data.Quests.Count} < 42");
+            Assert(data.Npcs.Count >= 115, $"npcs {data.Npcs.Count} < 115");
+            Assert(data.Map.Spawners.Count >= 32, $"spawners {data.Map.Spawners.Count} < 32");
+            Assert(data.Map.Nodes.Count >= 14, $"nodes {data.Map.Nodes.Count} < 14");
+            foreach (string poi in new[] { "ruined_watchtower", "standing_stones", "bandit_camp" })
+                Assert(data.Map.Region(poi) != null, $"missing POI {poi}");
+            // every class has 4 abilities and the level-7 unlock
+            foreach (var cls in data.Classes.Values)
+            {
+                Assert(cls.Abilities.Count == 4, $"{cls.Id} has {cls.Abilities.Count} abilities");
+                Assert(data.Abilities[cls.Abilities[3]].UnlockLevel == 7, $"{cls.Id} 4th ability unlock wrong");
+            }
+            // every quest giver actually exists and lists the quest (validator covers refs; spot-check chains)
+            Assert(data.Quests["garrick_steel"].Prerequisite == "garrick_fangs", "chain broken");
+            Assert(data.Quests["camp_chief"].Prerequisite == "camp_survey", "chain broken");
+        });
+
+        Case("m6 world: every monster and node type is actually spawnable", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 66);
+            var spawnedKinds = world.EntitiesInOrder().Where(e => e.IsMonster)
+                .Select(e => e.ArchetypeId).ToHashSet();
+            var expected = data.Map.Spawners.Select(s => s.Monster).ToHashSet();
+            foreach (string kind in expected)
+                Assert(spawnedKinds.Contains(kind), $"{kind} has a spawner but never spawned");
+            Assert(spawnedKinds.Count >= 30, $"only {spawnedKinds.Count} monster kinds live in the world");
+        });
+
         Case("m5 determinism: hash stable with the full living-town population", () =>
         {
             static ulong Run(string dir)

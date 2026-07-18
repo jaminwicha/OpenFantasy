@@ -1128,8 +1128,80 @@ def gen_m4():
     gen_airship()
 
 
+def gen_m6():
+    """M6 bestiary expansion: palette variants across all frames."""
+    # wisp frame
+    gen_wisp_variant("frost_wisp", (150, 200, 235, 255), (210, 235, 250, 255))
+    gen_wisp_variant("gloom_wisp", (110, 96, 150, 255), (70, 58, 100, 255))
+    gen_wisp_variant("sun_wisp", (240, 200, 90, 255), (250, 240, 160, 255))
+    gen_wisp_variant("blood_wisp", (190, 70, 80, 255), (240, 120, 120, 255))
+    # wolf frame
+    gen_wolf_variant("dire_wolf", (70, 62, 58, 255))
+    gen_wolf_variant("dune_jackal", (200, 170, 110, 255))
+    gen_wolf_variant("marsh_stalker", (96, 116, 90, 255))
+    gen_wolf_variant("ash_hound", (140, 90, 70, 255))
+    # golem frame
+    gen_golem_variant("clay_golem", (170, 130, 96, 255), (120, 80, 50, 255))
+    gen_golem_variant("frost_golem", (170, 195, 220, 255), (120, 210, 240, 255))
+    gen_golem_variant("obsidian_golem", (70, 66, 80, 255), (200, 90, 240, 255))
+    gen_golem_variant("mine_foreman", (120, 100, 80, 255), (240, 180, 60, 255))
+    gen_golem_variant("crypt_king", (140, 140, 130, 255), (140, 240, 160, 255))
+    gen_golem_variant("bandit_chief", (150, 110, 90, 255), (220, 60, 60, 255))
+    # scorpion frame
+    gen_scorpion("rock_scuttler", (140, 130, 110, 255))
+    gen_scorpion("frost_crab", (160, 200, 220, 255))
+    gen_scorpion("venom_scorpion", (110, 150, 70, 255))
+    # bat + slime frames (reuse the originals with palettes)
+    _bat_variant("snow_bat", (200, 210, 230, 255), (150, 165, 195, 255))
+    _bat_variant("storm_bat", (120, 130, 190, 255), (80, 90, 150, 255))
+    _slime_variant("bog_slime", (90, 130, 90, 255), (150, 190, 110, 255))
+    _slime_variant("gold_slime", (210, 180, 90, 255), (250, 230, 140, 255))
+
+
+def _bat_variant(name, body, wing):
+    c = Canvas(FW * 3, FH * 4)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            flap = (2, 0, 2)[frame]
+            cy = oy + 12
+            c.rect(ox + 6, cy - 2, ox + 9, cy + 2, body)
+            c.rect(ox + 2, cy - flap, ox + 5, cy + 1 - flap, wing)
+            c.rect(ox + 10, cy - flap, ox + 13, cy + 1 - flap, wing)
+            c.px(ox + 6, cy - 3, body)
+            c.px(ox + 9, cy - 3, body)
+            if direction != 1:
+                eye = (255, 90, 90, 255)
+                c.px(ox + 6, cy - 1, eye)
+                c.px(ox + 9, cy - 1, eye)
+    auto_outline(c)
+    c.save(ROOT / "units" / f"{name}.png")
+
+
+def _slime_variant(name, goo, fleck):
+    c = Canvas(FW * 3, FH * 4)
+    for direction in range(4):
+        for frame in range(3):
+            ox, oy = frame * FW, direction * FH
+            squish = (1, 0, 1)[frame]
+            top = oy + 10 + squish
+            for y in range(top, oy + 20):
+                spread = min(6, (y - top) + 3 + squish)
+                c.rect(ox + 8 - spread, y, ox + 7 + spread, y,
+                       goo if y % 3 else shade(goo, 1.15))
+            c.px(ox + 5, oy + 14, fleck)
+            c.px(ox + 10, oy + 16, fleck)
+            if direction != 1:
+                eye = (30, 30, 44, 255)
+                c.px(ox + 6, oy + 13, eye)
+                c.px(ox + 9, oy + 13, eye)
+    auto_outline(c)
+    c.save(ROOT / "units" / f"{name}.png")
+
+
 if __name__ == "__main__":
     gen_m4()
+    gen_m6()
     for gen in (gen_wisp, gen_wolf, gen_golem, gen_bat, gen_slime, gen_warden):
         gen()
     gen_oak()

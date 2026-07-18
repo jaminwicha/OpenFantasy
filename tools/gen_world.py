@@ -355,6 +355,41 @@ REGIONS["emberdeep"] = {"x": 382, "y": 100, "w": 15, "h": 10}
 x0, y0, x1, y1 = build_walled(402, 414, 8, 6, MINEFLOOR, gates=("n",))
 REGIONS["sunken_crypt"] = {"x": x0, "y": y0, "w": x1 - x0 + 1, "h": y1 - y0 + 1}
 
+# ------------------------------------------------------------------ wilderness POIs
+
+# Ruined watchtower (Verdance north meadow): broken wall square, elite den
+for x in range(148, 157):
+    if x % 3 != 2:
+        grid[306][x] = WALL
+        grid[313][x] = WALL
+for y in range(306, 314):
+    if y % 3 != 1:
+        grid[y][148] = WALL
+        grid[y][156] = WALL
+fill(150, 308, 154, 311, COBBLE)
+REGIONS["ruined_watchtower"] = {"x": 147, "y": 305, "w": 11, "h": 10}
+
+# Standing stones (Kharzum snowfield): ring of monoliths on old tower floor
+for ang_i in range(8):
+    import math as _m
+    sx = int(316 + 7 * _m.cos(ang_i * _m.tau / 8))
+    sy = int(120 + 6 * _m.sin(ang_i * _m.tau / 8))
+    grid[sy][sx] = ROCK
+fill(314, 118, 318, 122, TOWERF)
+REGIONS["standing_stones"] = {"x": 306, "y": 111, "w": 20, "h": 19}
+
+# Bandit camp (Sylvas north forest): broken fence ring, trampled ground
+for x in range(346, 359):
+    if x % 4 != 3:
+        grid[306][x] = FENCE
+        grid[315][x] = FENCE
+for y in range(306, 316):
+    if y % 4 != 1:
+        grid[y][346] = FENCE
+        grid[y][358] = FENCE
+fill(349, 309, 355, 313, ROAD)
+REGIONS["bandit_camp"] = {"x": 345, "y": 305, "w": 15, "h": 12}
+
 # ------------------------------------------------------------------ farms
 
 build_farm("farm_verdance_large", "brasshollow", 128, 368, 16, 12)
@@ -455,6 +490,32 @@ SPAWNERS = [
     {"id": 16, "monster": "storm_warden", "region": {"x": 84, "y": 94, "w": 5, "h": 5}, "count": 1, "respawnTicks": 3600},
     # Old friends guarding the old mine approach
     {"id": 17, "monster": "magitek_warden", "region": {"x": 206, "y": 380, "w": 12, "h": 6}, "count": 1, "respawnTicks": 3600},
+    # --- M6 band fill: Verdance ---
+    {"id": 18, "monster": "blood_wisp", "region": {"x": 160, "y": 300, "w": 40, "h": 26}, "count": 7, "respawnTicks": 320},
+    {"id": 19, "monster": "dire_wolf", "region": {"x": 147, "y": 305, "w": 11, "h": 10}, "count": 3, "respawnTicks": 700},
+    {"id": 20, "monster": "ash_hound", "region": {"x": 147, "y": 305, "w": 11, "h": 10}, "count": 2, "respawnTicks": 700},
+    {"id": 21, "monster": "clay_golem", "region": {"x": 90, "y": 390, "w": 60, "h": 24}, "count": 4, "respawnTicks": 800},
+    {"id": 22, "monster": "mine_foreman", "region": {"x": 206, "y": 380, "w": 12, "h": 8}, "count": 1, "respawnTicks": 4200},
+    # --- Kharzum ---
+    {"id": 23, "monster": "frost_wisp", "region": {"x": 300, "y": 80, "w": 60, "h": 30}, "count": 8, "respawnTicks": 380},
+    {"id": 24, "monster": "snow_bat", "region": {"x": 380, "y": 130, "w": 46, "h": 40}, "count": 7, "respawnTicks": 380},
+    {"id": 25, "monster": "frost_crab", "region": {"x": 320, "y": 190, "w": 60, "h": 30}, "count": 6, "respawnTicks": 480},
+    {"id": 26, "monster": "frost_golem", "region": {"x": 306, "y": 111, "w": 20, "h": 19}, "count": 2, "respawnTicks": 1400},
+    {"id": 27, "monster": "obsidian_golem", "region": {"x": 306, "y": 111, "w": 20, "h": 19}, "count": 1, "respawnTicks": 2400},
+    # --- Sylvas ---
+    {"id": 28, "monster": "gloom_wisp", "region": {"x": 320, "y": 330, "w": 44, "h": 40}, "count": 8, "respawnTicks": 360},
+    {"id": 29, "monster": "bog_slime", "region": {"x": 360, "y": 400, "w": 60, "h": 34}, "count": 6, "respawnTicks": 480},
+    {"id": 30, "monster": "marsh_stalker", "region": {"x": 396, "y": 330, "w": 40, "h": 46}, "count": 6, "respawnTicks": 480},
+    {"id": 31, "monster": "venom_scorpion", "region": {"x": 340, "y": 420, "w": 60, "h": 26}, "count": 5, "respawnTicks": 560},
+    {"id": 32, "monster": "crypt_king", "region": {"x": 396, "y": 410, "w": 14, "h": 9}, "count": 1, "respawnTicks": 4800},
+    {"id": 33, "monster": "ash_hound", "region": {"x": 345, "y": 305, "w": 15, "h": 12}, "count": 4, "respawnTicks": 600},
+    {"id": 34, "monster": "bandit_chief", "region": {"x": 345, "y": 305, "w": 15, "h": 12}, "count": 1, "respawnTicks": 3600},
+    # --- Miradel ---
+    {"id": 35, "monster": "rock_scuttler", "region": {"x": 70, "y": 130, "w": 40, "h": 40}, "count": 7, "respawnTicks": 420},
+    {"id": 36, "monster": "dune_jackal", "region": {"x": 140, "y": 100, "w": 50, "h": 50}, "count": 7, "respawnTicks": 420},
+    {"id": 37, "monster": "sun_wisp", "region": {"x": 150, "y": 60, "w": 46, "h": 40}, "count": 6, "respawnTicks": 520},
+    {"id": 38, "monster": "storm_bat", "region": {"x": 70, "y": 70, "w": 40, "h": 30}, "count": 5, "respawnTicks": 560},
+    {"id": 39, "monster": "gold_slime", "region": {"x": 150, "y": 60, "w": 60, "h": 60}, "count": 1, "respawnTicks": 6000},
 ]
 
 NODES = [
@@ -466,6 +527,12 @@ NODES = [
     {"id": 106, "type": "ore", "region": {"x": 382, "y": 100, "w": 15, "h": 10}, "count": 6, "respawnTicks": 1100},
     {"id": 107, "type": "ore", "region": {"x": 316, "y": 160, "w": 50, "h": 40}, "count": 6, "respawnTicks": 1100},
     {"id": 108, "type": "berry", "region": {"x": 108, "y": 120, "w": 36, "h": 32}, "count": 6, "respawnTicks": 700},
+    {"id": 109, "type": "oak", "region": {"x": 150, "y": 296, "w": 60, "h": 30}, "count": 10, "respawnTicks": 900},
+    {"id": 110, "type": "oak", "region": {"x": 396, "y": 330, "w": 40, "h": 40}, "count": 10, "respawnTicks": 900},
+    {"id": 111, "type": "ore", "region": {"x": 300, "y": 180, "w": 70, "h": 40}, "count": 7, "respawnTicks": 1100},
+    {"id": 112, "type": "ore", "region": {"x": 70, "y": 90, "w": 40, "h": 50}, "count": 6, "respawnTicks": 1100},
+    {"id": 113, "type": "berry", "region": {"x": 320, "y": 340, "w": 40, "h": 30}, "count": 7, "respawnTicks": 700},
+    {"id": 114, "type": "berry", "region": {"x": 96, "y": 380, "w": 50, "h": 30}, "count": 7, "respawnTicks": 700},
 ]
 
 # ------------------------------------------------------------------ checks

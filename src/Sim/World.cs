@@ -18,7 +18,9 @@ public sealed partial class World
     private readonly XorShift64 _rng;
     private readonly Dictionary<int, Entity> _entities = new();
     private readonly List<int> _entityOrder = new(); // stable iteration order
+    private readonly List<int> _playerIds = new();   // hot-loop shortcut (aggro scans)
     private readonly List<SpawnerState> _spawners = new();
+    private readonly List<int> _tickScratch = new();
     private int _nextEntityId = 1;
 
     private sealed class SpawnerState
@@ -99,6 +101,7 @@ public sealed partial class World
 
         _entities[e.Id] = e;
         _entityOrder.Add(e.Id);
+        _playerIds.Add(e.Id);
         return e;
     }
 
@@ -109,6 +112,7 @@ public sealed partial class World
             if (e.PartyId >= 0) PartyLeave(e);
             _entities.Remove(id);
             _entityOrder.Remove(id);
+            _playerIds.Remove(id);
         }
     }
 
@@ -268,7 +272,9 @@ public sealed partial class World
         TickNodeSpawners();
 
         // Entity updates over a stable copy (spawn/despawn mutates the order list).
-        var order = new List<int>(_entityOrder);
+        _tickScratch.Clear();
+        _tickScratch.AddRange(_entityOrder);
+        var order = _tickScratch;
         var toRemove = new List<int>();
         foreach (int id in order)
         {
@@ -467,9 +473,10 @@ public sealed partial class World
         if (def.AggroRange <= 0) return null;
         long best = (long)def.AggroRange * def.AggroRange;
         Entity? bestTarget = null;
-        foreach (var other in EntitiesInOrder())
+        foreach (int playerId in _playerIds)
         {
-            if (!other.IsPlayer || !other.Alive) continue;
+            var other = _entities[playerId];
+            if (!other.Alive) continue;
             if (other.Vehicle != VehicleKind.None) continue; // riders are ignored
             if (Data.Map.IsSafeZoneUnits(other.X, other.Y)) continue;
             long d2 = monster.DistanceSquaredTo(other);
