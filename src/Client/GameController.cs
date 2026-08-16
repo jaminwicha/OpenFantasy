@@ -28,6 +28,8 @@ public partial class GameController : Node2D
     private readonly Dictionary<int, EntityView> _views = new();
     private GameWindows _windows = null!;
     private CanvasModulate _dayNight = null!;
+    private WorldRenderer _renderer = null!;
+    private Minimap _minimap = null!;
     private int _targetId = -1;
     private sbyte _pendingAbility = -1;
     private double _inputTimer;
@@ -42,9 +44,9 @@ public partial class GameController : Node2D
             AddChild(new ServerNode { Port = Port, LogToConsole = false });
         }
 
-        var renderer = new WorldRenderer();
-        renderer.Build(_data.Map);
-        AddChild(renderer);
+        _renderer = new WorldRenderer();
+        _renderer.Build(_data.Map);
+        AddChild(_renderer);
 
         _entityLayer = new Node2D { YSortEnabled = false };
         AddChild(_entityLayer);
@@ -74,10 +76,15 @@ public partial class GameController : Node2D
         _client.GameEvent += OnGameEvent;
         _client.SnapshotApplied += _ => SyncViews();
         _client.PlayerStateChanged += () => _hud.UpdateParty(_client);
+        _client.MapChanged += OnMapChanged;
 
         _windows = new GameWindows();
         AddChild(_windows);
         _windows.Setup(_client, _data);
+
+        _minimap = new Minimap();
+        AddChild(_minimap);
+        _minimap.Setup(_client, _data.Map);
 
         // Solo: give the in-process server a beat to bind before connecting.
         GetTree().CreateTimer(HostLocalServer ? 0.25 : 0.0).Timeout += () =>
@@ -111,8 +118,9 @@ public partial class GameController : Node2D
             if (Input.IsActionJustPressed("toggle_quests")) _windows.ToggleQuests();
             if (Input.IsActionJustPressed("toggle_craft")) _windows.ToggleCraft();
             if (Input.IsActionJustPressed("toggle_vehicle")) _client.SendVehicleToggle();
+            if (Input.IsActionJustPressed("toggle_map")) _minimap.Toggle();
             if (Input.IsActionJustPressed("interact")) TryInteract();
-            if (Input.IsActionJustPressed("ui_cancel")) _windows.CloseAll();
+            if (Input.IsActionJustPressed("ui_cancel")) { _windows.CloseAll(); _minimap.Close(); }
         }
 
         UpdateDayNight();
@@ -150,20 +158,42 @@ public partial class GameController : Node2D
             .Where(e => e.Kind is EntityKind.Npc or EntityKind.Node && e.Alive)
             .OrderBy(e => (long)(e.X - me.X) * (e.X - me.X) + (long)(e.Y - me.Y) * (e.Y - me.Y))
             .FirstOrDefault();
-        if (target == null) return;
-        long dx = target.X - me.X, dy = target.Y - me.Y;
-        long r = SimConstants.InteractRange;
-        if (dx * dx + dy * dy > r * r)
+        if (target != null)
         {
-            _hud.AddChatLine("*", "Nothing close enough to use. (Step up to a person, tree, vein, or bush.)");
-            return;
+            long dx = target.X - me.X, dy = target.Y - me.Y;
+            long r = SimConstants.InteractRange;
+            if (dx * dx + dy * dy <= r * r)
+            {
+                _client.SendInteract(target.Id);
+                return;
+            }
         }
-        _client.SendInteract(target.Id);
+        // No NPC or node in reach: use the surroundings (delve entrances,
+        // stairs, chests, suspicious walls). The server decides what's here.
+        _client.SendSiteOp();
+    }
+
+    private void OnMapChanged(string label)
+    {
+        _renderer.SetInstance(_client.CurrentMap);
+        // Views for the old map's entities die on the next SyncViews; clear
+        // now so nothing flashes at stale positions.
+        foreach (var view in _views.Values) view.QueueFree();
+        _views.Clear();
+        _targetId = -1;
+        if (label.Length > 0) _hud.AddChatLine("*", label);
+        _minimap.Refresh();
     }
 
     /// <summary>Deterministic dawn/day/dusk/night tint from the server tick.</summary>
     private void UpdateDayNight()
     {
+        if (_client.CurrentMapId != 0)
+        {
+            // Underground: steady torch-lit gloom, no sky.
+            _dayNight.Color = _dayNight.Color.Lerp(new Color(0.66f, 0.62f, 0.72f), 0.05f);
+            return;
+        }
         int permille = (_client.ServerTick % SimConstants.TicksPerDay) * 1000 / SimConstants.TicksPerDay;
         // 0 dawn → 250 day → 500 dusk → 750 night → 1000 dawn
         Color day = Colors.White;
@@ -241,6 +271,7 @@ public partial class GameController : Node2D
         if (_client.PlayerState.PartyMemberIds.Count > 0)
             _hud.UpdateParty(_client); // live member HP
         _hud.UpdateTarget(_targetId >= 0 ? _client.Entities.GetValueOrDefault(_targetId) : null);
+        _minimap.Refresh();
     }
 
     // ------------------------------------------------------------------ events

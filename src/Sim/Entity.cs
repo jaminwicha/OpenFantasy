@@ -60,6 +60,10 @@ public sealed class Entity
     public int Y;
     public Facing Facing = Facing.Down;
 
+    /// <summary>Which map space this entity is in: 0 = overworld, >0 = an
+    /// instanced adventure-site floor (see World.Instances).</summary>
+    public int MapId;
+
     public int Level = 1;
     public int Xp;
     public int Gil;
@@ -126,6 +130,9 @@ public sealed class Entity
 
     /// <summary>Vehicle the player is currently aboard.</summary>
     public VehicleKind Vehicle = VehicleKind.None;
+
+    /// <summary>Chest ids this player has looted (persisted; D9 loot).</summary>
+    public HashSet<string> OpenedChests = new();
 
     public bool IsPlayer => Kind == EntityKind.Player;
     public bool IsMonster => Kind == EntityKind.Monster;

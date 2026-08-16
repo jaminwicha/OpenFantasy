@@ -1,4 +1,5 @@
 using System.Text.Json;
+using OpenFantasy.Sim.SiteGen;
 
 namespace OpenFantasy.Sim;
 
@@ -643,6 +644,208 @@ public static class SelfTest
                 return world.StateHash();
             }
             AssertEqual((long)Run(dataDir), (long)Run(dataDir), "M5 population hash diverged");
+        });
+
+        // ------------------------------------------------------------- M7 cases
+
+        Case("m7 noise: integer value noise is deterministic, ranged, continuous", () =>
+        {
+            for (int i = 0; i < 500; i++)
+            {
+                long fx = (i - 250L) * 7919L * 13;
+                long fy = i * 104729L - 26000000L;
+                int v = Noise.Value2(1234, fx, fy);
+                Assert(v >= 0 && v < 65536, $"value2 out of range: {v}");
+                AssertEqual(Noise.Value2(1234, fx, fy), v, "value2 not deterministic");
+                int f = Noise.Fbm2(1234, fx, fy, 5);
+                Assert(f >= 0 && f < 65536, $"fbm out of range: {f}");
+            }
+            Assert(Noise.Fbm2(1, 12345, 67890, 4) != Noise.Fbm2(2, 12345, 67890, 4),
+                "different seeds should differ");
+            int a = Noise.Value2(42, (5L << 16) - 1, 0);
+            int b = Noise.Value2(42, 5L << 16, 0);
+            Assert(Math.Abs(a - b) < 2048, $"discontinuity at lattice boundary: {a} vs {b}");
+        });
+
+        Case("m7 biomes: reference seed pins golden hash and full coverage", () =>
+        {
+            var field = new BiomeField(0x5F3759DF);
+            AssertEqual((long)field.SampleHash(-256, -256, 512, 2),
+                unchecked((long)0xECE579531E21DE47UL),
+                "golden biome hash drifted (bump GeneratorVersion if intentional)");
+            var seen = new HashSet<Biome>();
+            for (long y = -2048; y < 2048; y += 8)
+                for (long x = -2048; x < 2048; x += 8)
+                    seen.Add(field.Classify(x, y));
+            AssertEqual(seen.Count, 13, "biome kinds in ±2048 tile sample");
+        });
+
+        Case("m7 sites: every registry delve floor validates and is deterministic", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            foreach (var (siteId, recipe) in SiteGen.SiteRegistry.Sites)
+            {
+                foreach (string m in recipe.SpawnMonsters)
+                    Assert(data.Monsters.ContainsKey(m), $"{siteId}: unknown spawn monster {m}");
+                Assert(data.Monsters.ContainsKey(recipe.BossMonster), $"{siteId}: unknown boss {recipe.BossMonster}");
+                for (int floor = 0; floor < recipe.Floors; floor++)
+                {
+                    var f = SiteGen.SiteGenerator.GenerateFloor(0x5F3759DF, siteId, floor, recipe);
+                    var f2 = SiteGen.SiteGenerator.GenerateFloor(0x5F3759DF, siteId, floor, recipe);
+                    AssertEqual((long)f.ContentHash(), (long)f2.ContentHash(), $"{siteId}[{floor}] determinism");
+                    bool boss = floor == recipe.Floors - 1;
+                    var goal = boss ? f.Boss!.Value : f.StairsDown;
+                    Assert(SiteGen.GridSearch.Reaches(f, f.Entry, goal,
+                        t => t.IsHonestPassable()), $"{siteId}[{floor}]: honest route broken");
+                }
+            }
+            // Golden pins: generator drift must be deliberate (bump GeneratorVersion).
+            var mine1 = SiteGen.SiteGenerator.GenerateFloor(0x5F3759DF, "hollow_mine", 1,
+                SiteGen.SiteRegistry.Sites["hollow_mine"]);
+            AssertEqual((long)mine1.ContentHash(), unchecked((long)0xC34D8659B1A7E328UL), "hollow_mine[1] golden");
+            var sewer0 = SiteGen.SiteGenerator.GenerateFloor(0x5F3759DF, "sewer_brasshollow", 0,
+                SiteGen.SiteRegistry.Sites["sewer_brasshollow"]);
+            AssertEqual((long)sewer0.ContentHash(), unchecked((long)0xAC71584CA04B5A47UL), "sewer[0] golden");
+        });
+
+        Case("m7 sites: the validator fails loudly on broken topology", () =>
+        {
+            var recipe = SiteGen.SiteRegistry.Sites["hollow_mine"];
+            var f = SiteGen.SiteGenerator.GenerateFloor(0x5F3759DF, "hollow_mine", 1, recipe);
+            // Wall off the goal: the honest-route proof must reject.
+            var g = f.StairsDown;
+            for (int dy = -1; dy <= 1; dy++)
+                for (int dx = -1; dx <= 1; dx++)
+                    if (dx != 0 || dy != 0)
+                        f.Set(g.X + dx, g.Y + dy, SiteGen.SiteTile.Wall);
+            string? reason = SiteGen.SiteValidator.Validate(f, recipe.StyleFor(1), recipe, bossFloor: false);
+            Assert(reason != null && reason.Contains("unreachable"), $"broken floor accepted: {reason ?? "null"}");
+        });
+
+        Case("m7 delves: enter, descend, ascend, exit, sewers via grates", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 0x5F3759DF);
+            var p = world.AddPlayer("Delver", "squire");
+            int u = SimConstants.UnitsPerTile;
+
+            var region = data.Map.Region("hollow_mine")!;
+            p.X = (region.X + region.W / 2) * u + u / 2;
+            p.Y = (region.Y + region.H / 2) * u + u / 2;
+            string entered = world.SiteInteract(p);
+            Assert(entered.Contains("Hollow Mine"), $"enter failed: '{entered}'");
+            Assert(p.MapId != 0, "player not in an instance");
+            Assert(world.EntitiesInOrder().Any(e => e.IsMonster && e.MapId == p.MapId),
+                "delve floor has no monsters");
+
+            for (int hop = 0; hop < 2; hop++)
+            {
+                var cur = world.GetInstance(p.MapId)!;
+                p.X = cur.Layout.StairsDown.X * u + u / 2;
+                p.Y = cur.Layout.StairsDown.Y * u + u / 2;
+                Assert(world.SiteInteract(p).Contains("floor"), "descend failed");
+            }
+            AssertEqual(world.GetInstance(p.MapId)!.Floor, 2, "floor after two descents");
+
+            // Deepest floor hosts the boss.
+            var last = SiteGenerator.GenerateFloor(0x5F3759DF, "hollow_mine", 4,
+                SiteRegistry.Sites["hollow_mine"]);
+            Assert(last.Boss != null, "final floor lacks a boss room");
+
+            while (world.GetInstance(p.MapId) is { } inst2 && inst2.Floor > 0)
+            {
+                p.X = inst2.Layout.Entry.X * u + u / 2;
+                p.Y = inst2.Layout.Entry.Y * u + u / 2;
+                Assert(world.SiteInteract(p).Length > 0, "ascend failed");
+            }
+            var f0 = world.GetInstance(p.MapId)!;
+            p.X = f0.Layout.Entry.X * u + u / 2;
+            p.Y = f0.Layout.Entry.Y * u + u / 2;
+            world.SiteInteract(p);
+            AssertEqual(p.MapId, 0, "player should be back on the overworld");
+
+            var grates = world.SewerGrates();
+            AssertEqual(grates.Count, 3, "sewer grate count");
+            p.X = grates[1].tx * u + u / 2;
+            p.Y = grates[1].ty * u + u / 2;
+            string sewer = world.SiteInteract(p);
+            Assert(sewer.Contains("Sewers"), $"sewer entry failed: '{sewer}'");
+            Assert(p.MapId != 0, "not in the sewers");
+        });
+
+        Case("m7 delves: chest loot is deterministic, once per character, persisted", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 0x5F3759DF);
+            var p = world.AddPlayer("Looter", "squire");
+            int u = SimConstants.UnitsPerTile;
+
+            // Find a mine floor with a chest and stand next to it.
+            var recipe = SiteRegistry.Sites["hollow_mine"];
+            int chestFloor = -1;
+            for (int floor = 0; floor < recipe.Floors && chestFloor < 0; floor++)
+                if (SiteGenerator.GenerateFloor(0x5F3759DF, "hollow_mine", floor, recipe).Chests.Count > 0)
+                    chestFloor = floor;
+            Assert(chestFloor >= 0, "no chest on any mine floor");
+
+            var region = data.Map.Region("hollow_mine")!;
+            p.X = (region.X + region.W / 2) * u + u / 2;
+            p.Y = (region.Y + region.H / 2) * u + u / 2;
+            world.SiteInteract(p);
+            while (world.GetInstance(p.MapId)!.Floor < chestFloor)
+            {
+                var cur = world.GetInstance(p.MapId)!;
+                p.X = cur.Layout.StairsDown.X * u + u / 2;
+                p.Y = cur.Layout.StairsDown.Y * u + u / 2;
+                world.SiteInteract(p);
+            }
+            var inst = world.GetInstance(p.MapId)!;
+            var chest = inst.Layout.Chests[0];
+            p.X = chest.X * u + u / 2;
+            p.Y = chest.Y * u + u / 2;
+            int gilBefore = p.Gil;
+            string loot = world.SiteInteract(p);
+            Assert(loot.Contains("chest holds"), $"loot failed: '{loot}'");
+            Assert(p.Gil > gilBefore, "chest granted no gil");
+            Assert(world.SiteInteract(p).Contains("already emptied"), "chest re-lootable");
+
+            var save = world.SnapshotSave(p);
+            Assert(save.OpenedChests.Count == 1, "opened chest not persisted");
+            // Logging out inside the delve saves the surface entrance.
+            Assert(data.Map.IsWalkableTile(save.X / u, save.Y / u), "save position not walkable");
+            var world2 = new World(data, 42);
+            var p2 = world2.AddPlayer("Looter", "squire", save);
+            Assert(p2.OpenedChests.Count == 1, "opened chest lost through save");
+        });
+
+        Case("m7 determinism: hash stable with delve activity in the loop", () =>
+        {
+            static ulong Run(string dir)
+            {
+                var data = GameData.LoadFromDirectory(dir);
+                var world = new World(data, 0x5F3759DF);
+                var p = world.AddPlayer("Spelunker", "squire");
+                int u = SimConstants.UnitsPerTile;
+                var region = data.Map.Region("hollow_mine")!;
+                p.X = (region.X + region.W / 2) * u + u / 2;
+                p.Y = (region.Y + region.H / 2) * u + u / 2;
+                world.SiteInteract(p);
+                for (int t = 0; t < 400; t++)
+                {
+                    world.SetPlayerInput(p.Id, new InputCommand
+                    {
+                        Seq = t,
+                        MoveX = (sbyte)(t % 5 == 0 ? 1 : t % 7 == 0 ? -1 : 0),
+                        MoveY = (sbyte)(t % 3 == 0 ? 1 : 0),
+                        AbilitySlot = (sbyte)(t % 25 == 0 ? 0 : -1),
+                        TargetId = NearestMonsterId(world, p),
+                    });
+                    world.Step();
+                    if (t == 200) world.SiteInteract(p); // whatever is underfoot
+                }
+                return world.StateHash();
+            }
+            AssertEqual((long)Run(dataDir), (long)Run(dataDir), "delve hash diverged");
         });
 
         log($"selftest: {passed} passed, {failed} failed");

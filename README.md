@@ -37,6 +37,10 @@ layer sheets regenerate entirely from `tools/gen_layers.py`.
 - [`docs/MILESTONE_4.md`](docs/MILESTONE_4.md) — milestone 4: four continents, races, vehicles, quest chains
 - [`docs/MILESTONE_5.md`](docs/MILESTONE_5.md) — milestone 5: living towns, taverns, farms, fetch quests
 - [`docs/MILESTONE_6.md`](docs/MILESTONE_6.md) — milestone 6: content expansion (bestiary, hoard, quests, POIs)
+- [`docs/EXPANSION_ROADMAP.md`](docs/EXPANSION_ROADMAP.md) — project review & content expansion roadmap
+- [`docs/RUNTIME_SEED_DESIGN.md`](docs/RUNTIME_SEED_DESIGN.md) — runtime seed procedural world design ("Infinite Aldermere")
+- [`docs/ROGUEFICTION_PORTING_BRIEF.md`](docs/ROGUEFICTION_PORTING_BRIEF.md) — porting RogueFiction's proven xandering topology research into Milestone 7B
+- [`docs/MILESTONE_7.md`](docs/MILESTONE_7.md) — milestone 7: runtime seed foundations + Jaquayed multi-floor delves
 
 ## Requirements
 
@@ -87,9 +91,10 @@ python3 tools/preview_sprites.py # docs/screenshots/preset-gallery.png (offline 
 ## Controls
 
 WASD/arrows move · **1–4** abilities · **Tab** cycle target · **Enter** chat ·
-**E** talk / gather (tools required: axe→oak, pickaxe→ore, sickle→berries) ·
+**E** talk / gather / use surroundings (delve entrances, stairs, chests,
+suspicious walls; tools required: axe→oak, pickaxe→ore, sickle→berries) ·
 **V** embark/disembark vehicle · **I** inventory · **J** quest log ·
-**C** crafting · **Esc** close window
+**C** crafting · **M** auto-map · **Esc** close window
 
 Chat commands: `/party invite <name>` · `/party accept` · `/party leave` · `/p <msg>`
 

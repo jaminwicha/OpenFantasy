@@ -34,5 +34,12 @@ public static class SimConstants
     /// <summary>Ticks per in-game day (10 real minutes) — presentation clock only.</summary>
     public const int TicksPerDay = 600 * TicksPerSecond;
 
-    public const int ProtocolVersion = 4;
+    public const int ProtocolVersion = 5;
+
+    /// <summary>
+    /// Version stamp for all runtime procedural generation (plan D4). Bump on
+    /// ANY change to terrain/site/population generator code or tuning — delta
+    /// persistence records carry it so player changes survive generator drift.
+    /// </summary>
+    public const int GeneratorVersion = 1;
 }

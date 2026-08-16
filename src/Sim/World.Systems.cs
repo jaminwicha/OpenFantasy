@@ -73,7 +73,7 @@ public sealed partial class World
     public NpcDef? NpcInRange(Entity player, int npcEntityId)
     {
         var npc = GetEntity(npcEntityId);
-        if (npc is not { IsNpc: true }) return null;
+        if (npc is not { IsNpc: true } || npc.MapId != player.MapId) return null;
         long r = SimConstants.InteractRange;
         if (player.DistanceSquaredTo(npc) > r * r) return null;
         return Data.Npcs[npc.NpcDefId];
@@ -137,6 +137,8 @@ public sealed partial class World
             if (Data.Quests.ContainsKey(questId))
                 e.QuestLog[questId] = new QuestProgress { State = progress.State, Kills = progress.Kills };
         }
+        foreach (string chestId in save.OpenedChests)
+            e.OpenedChests.Add(chestId);
     }
 
     // ------------------------------------------------------------------ item ops (return user-facing result text)
@@ -392,6 +394,7 @@ public sealed partial class World
             foreach (int memberId in _parties[tagger.PartyId])
             {
                 if (GetEntity(memberId) is not { IsPlayer: true, Alive: true } member) continue;
+                if (member.MapId != corpse.MapId) continue;
                 long r = SimConstants.PartyShareRange;
                 if (member.DistanceSquaredTo(corpse) <= r * r)
                     credited.Add(member.Id);

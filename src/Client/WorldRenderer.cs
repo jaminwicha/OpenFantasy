@@ -121,4 +121,64 @@ public partial class WorldRenderer : Node2D
     public static Vector2 UnitsToPixels(int ux, int uy)
         => new(ux * (float)TilePx / SimConstants.UnitsPerTile,
                uy * (float)TilePx / SimConstants.UnitsPerTile);
+
+    // ------------------------------------------------------- instanced floors
+
+    private Node2D? _overworldRoot;
+    private TileMapLayer? _instanceLayer;
+
+    /// <summary>SiteTile (byte) → logical tile id in the shipped atlas.
+    /// Placeholder art reuse — the delve art pass replaces this table.</summary>
+    private static readonly int[] SiteTileToLogical =
+    {
+        8,  // Wall        → rock
+        7,  // Floor       → mine floor
+        19, // StairsDown  → bridge (ladder-ish planks)
+        22, // StairsUp    → dock
+        8,  // SecretDoor  → rock (indistinguishable from wall — that's the point)
+        24, // Door        → plank floor
+        25, // LockedDoor  → counter (dark, blocky)
+        2,  // Water       → shallow water
+        17, // Slag        → desert (ember glow)
+        14, // Rubble      → mountain
+        13, // Chasm       → ocean (dark drop)
+        9,  // Chest       → crystal (sparkle marker)
+    };
+
+    /// <summary>Swap between the overworld and an instanced floor.</summary>
+    public void SetInstance(Net.Protocol.MapDataMsg? map)
+    {
+        if (_overworldRoot is null)
+        {
+            // First call: adopt the already-built overworld children.
+            _overworldRoot = new Node2D();
+            var mine = new List<Node>();
+            foreach (var child in GetChildren())
+                if (child is TileMapLayer)
+                    mine.Add(child);
+            foreach (var child in mine)
+            {
+                RemoveChild(child);
+                _overworldRoot.AddChild(child);
+            }
+            AddChild(_overworldRoot);
+        }
+
+        _instanceLayer?.QueueFree();
+        _instanceLayer = null;
+        _overworldRoot.Visible = map is null;
+        if (map is null) return;
+
+        var layer = new TileMapLayer { TileSet = ((TileMapLayer)_overworldRoot.GetChild(0)).TileSet };
+        for (int y = 0; y < map.Height; y++)
+            for (int x = 0; x < map.Width; x++)
+            {
+                int logical = SiteTileToLogical[Math.Min(map.Tiles[y * map.Width + x], (byte)(SiteTileToLogical.Length - 1))];
+                var options = Variants[logical];
+                int v = ((x * 73856093) ^ (y * 19349663)) & 0x7fffffff;
+                layer.SetCell(new Vector2I(x, y), 0, options[v % options.Length]);
+            }
+        _instanceLayer = layer;
+        AddChild(layer);
+    }
 }

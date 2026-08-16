@@ -109,7 +109,8 @@ public sealed partial class World
     public string Gather(Entity player, int nodeEntityId)
     {
         var node = GetEntity(nodeEntityId);
-        if (node is not { IsNode: true, Alive: true }) return "There is nothing to gather there.";
+        if (node is not { IsNode: true, Alive: true } || node.MapId != player.MapId)
+            return "There is nothing to gather there.";
         long r = GatherRange;
         if (player.DistanceSquaredTo(node) > r * r) return "Too far away.";
         if (!player.Alive) return "The fallen gather nothing.";

@@ -131,8 +131,10 @@ public sealed partial class World
         Level = e.Level,
         Xp = e.Xp,
         Gil = e.Gil,
-        X = e.X,
-        Y = e.Y,
+        // Logging out inside a delve saves the surface entrance instead.
+        X = SaveExitUnits(e).x,
+        Y = SaveExitUnits(e).y,
+        OpenedChests = e.OpenedChests.OrderBy(c => c, StringComparer.Ordinal).ToList(),
         Inventory = e.Inventory.Select(s => new ItemStack { ItemId = s.ItemId, Count = s.Count }).ToList(),
         WeaponId = e.WeaponId,
         ArmorId = e.ArmorId,
@@ -270,6 +272,7 @@ public sealed partial class World
             }
         }
         TickNodeSpawners();
+        TickInstances();
 
         // Entity updates over a stable copy (spawn/despawn mutates the order list).
         _tickScratch.Clear();
@@ -318,8 +321,19 @@ public sealed partial class World
         MoveEntity(e, input.MoveX, input.MoveY, allowSafeZone: true);
 
         // Explore-quest region checks (cheap, staggered by entity id).
-        if ((Tick + e.Id) % 10 == 0)
+        if (e.MapId == 0 && (Tick + e.Id) % 10 == 0)
             CheckExploreQuests(e);
+
+        // Molten runoff sears whoever walks it (chosen risk lanes, never lethal).
+        if (e.MapId != 0 && Tick % SimConstants.TicksPerSecond == 0 && e.Hp > 1
+            && GetInstance(e.MapId) is { } inst
+            && inst.Layout.Tile(e.X / SimConstants.UnitsPerTile, e.Y / SimConstants.UnitsPerTile) == SiteGen.SiteTile.Slag)
+        {
+            int burn = Math.Min(e.Hp - 1, Math.Max(2, e.MaxHp / 25));
+            e.Hp -= burn;
+            e.LastDamagedTick = Tick;
+            Events.Add(new SimEvent(SimEventKind.Damage, e.Id, e.Id, burn));
+        }
 
         // Regen: MP trickle always; HP when out of combat ≥ 5 s.
         if (Tick % SimConstants.TicksPerSecond == 0)
@@ -359,12 +373,13 @@ public sealed partial class World
             return;
         }
 
-        // Damage abilities need a valid monster target in range, outside safe zones.
+        // Damage abilities need a valid monster target in range, on the same
+        // map, outside safe zones.
         var target = GetEntity(targetId);
-        if (target is null || !target.Alive || !target.IsMonster) return;
+        if (target is null || !target.Alive || !target.IsMonster || target.MapId != e.MapId) return;
         long range = ability.Range + 8; // small grace for latency
         if (e.DistanceSquaredTo(target) > range * range) return;
-        if (Data.Map.IsSafeZoneUnits(e.X, e.Y) || Data.Map.IsSafeZoneUnits(target.X, target.Y)) return;
+        if (SafeAt(e) || SafeAt(target)) return;
 
         e.Atb -= ability.AtbCost;
         e.Mp -= ability.MpCost;
@@ -379,6 +394,7 @@ public sealed partial class World
             foreach (var other in EntitiesInOrder())
             {
                 if (other.Id == target.Id || !other.IsMonster || !other.Alive) continue;
+                if (other.MapId != target.MapId) continue;
                 long dx = other.X - target.X, dy = other.Y - target.Y;
                 if (dx * dx + dy * dy <= r2)
                     DealDamage(e, other, ability.Power, magical: ability.UsesMagic);
@@ -424,7 +440,7 @@ public sealed partial class World
                 var target = GetEntity(e.AggroTargetId);
                 long dhx2 = e.X - e.HomeX, dhy2 = e.Y - e.HomeY;
                 bool leashed = dhx2 * dhx2 + dhy2 * dhy2 > (long)def.LeashRange * def.LeashRange;
-                if (target is null || !target.Alive || Data.Map.IsSafeZoneUnits(target.X, target.Y) || leashed)
+                if (target is null || !target.Alive || target.MapId != e.MapId || SafeAt(target) || leashed)
                 {
                     e.Ai = AiState.Return;
                     e.AggroTargetId = -1;
@@ -477,8 +493,9 @@ public sealed partial class World
         {
             var other = _entities[playerId];
             if (!other.Alive) continue;
+            if (other.MapId != monster.MapId) continue;
             if (other.Vehicle != VehicleKind.None) continue; // riders are ignored
-            if (Data.Map.IsSafeZoneUnits(other.X, other.Y)) continue;
+            if (SafeAt(other)) continue;
             long d2 = monster.DistanceSquaredTo(other);
             if (d2 <= best)
             {
@@ -524,8 +541,15 @@ public sealed partial class World
                 victim.Taggers.Clear();
                 victim.RespawnAtTick = Tick + 40; // corpse lingers ~2 s for the death anim
 
-                var spawner = _spawners.Find(s => s.Def.Id == victim.SpawnerId);
-                spawner?.PendingRespawnTicks.Add(Tick + spawner.Def.RespawnTicks);
+                if (victim.MapId == 0)
+                {
+                    var spawner = _spawners.Find(s => s.Def.Id == victim.SpawnerId);
+                    spawner?.PendingRespawnTicks.Add(Tick + spawner.Def.RespawnTicks);
+                }
+                else
+                {
+                    OnInstanceMonsterDeath(victim);
+                }
             }
             else
             {
@@ -573,6 +597,7 @@ public sealed partial class World
     private void RespawnPlayer(Entity e)
     {
         e.Alive = true;
+        e.MapId = 0; // the crystal calls you home, even from the deep
         (e.X, e.Y) = SpawnPointUnits();
         e.Hp = e.MaxHp;
         e.Mp = e.MaxMp;
@@ -612,8 +637,10 @@ public sealed partial class World
         else e.Facing = Facing.Down;
     }
 
-    private bool Walkable(int ux, int uy, bool allowSafeZone)
+    private bool Walkable(Entity e, int ux, int uy, bool allowSafeZone)
     {
+        if (e.MapId != 0)
+            return GetInstance(e.MapId) is { } inst && InstanceWalkableUnits(inst, ux, uy);
         if (!Data.Map.IsWalkableUnits(ux, uy)) return false;
         if (!allowSafeZone && Data.Map.IsSafeZoneUnits(ux, uy)) return false;
         return true;
@@ -621,8 +648,11 @@ public sealed partial class World
 
     private bool CanStand(Entity e, int ux, int uy, bool allowSafeZone)
         => e.Vehicle == VehicleKind.None
-            ? Walkable(ux, uy, allowSafeZone)
+            ? Walkable(e, ux, uy, allowSafeZone)
             : UnitsAllow(ux, uy, e.Vehicle);
+
+    /// <summary>Safe-zone rule per map space: instances have no sanctuaries.</summary>
+    private bool SafeAt(Entity e) => e.MapId == 0 && Data.Map.IsSafeZoneUnits(e.X, e.Y);
 
     private static void FaceToward(Entity e, int tx, int ty)
     {
@@ -656,6 +686,7 @@ public sealed partial class World
             var e = _entities[id];
             Mix(e.Id);
             Mix((int)e.Kind);
+            Mix(e.MapId);
             Mix(e.X);
             Mix(e.Y);
             Mix(e.Hp);
@@ -716,4 +747,6 @@ public sealed class CharacterSave
     /// <summary>Appearance bytes (race, skin, hairStyle, hairColor, outfit, outfitA, outfitB, acc).</summary>
     public List<int> Appearance { get; set; } = new();
     public int Vehicle { get; set; }
+    /// <summary>Delve chests this character already looted (M7, D9 loot).</summary>
+    public List<string> OpenedChests { get; set; } = new();
 }

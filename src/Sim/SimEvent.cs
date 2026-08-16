@@ -12,6 +12,9 @@ public enum SimEventKind : byte
     Loot = 6,
     /// <summary>Quest progress changed for a player (AbilityId carries the quest id; Value = kills or -1 on completion-ready).</summary>
     QuestProgress = 7,
+    /// <summary>A player moved between map spaces (Value = new MapId; the
+    /// server reacts by sending MapData — clients never act on this alone).</summary>
+    MapChange = 8,
 }
 
 /// <summary>

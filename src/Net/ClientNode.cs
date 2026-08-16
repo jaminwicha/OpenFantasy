@@ -18,9 +18,15 @@ public partial class ClientNode : Node
     [Signal] public delegate void PlayerStateChangedEventHandler();
     [Signal] public delegate void NpcInfoReceivedEventHandler();
 
+    [Signal] public delegate void MapChangedEventHandler(string label);
+
     public int LocalEntityId { get; private set; } = -1;
     public int ServerTick { get; private set; }
     public readonly Dictionary<int, NetEntityState> Entities = new();
+
+    /// <summary>Current map space (0 = overworld) and its tiles when instanced.</summary>
+    public int CurrentMapId { get; private set; }
+    public Protocol.MapDataMsg? CurrentMap { get; private set; }
 
     /// <summary>Latest owner-only state (inventory/equipment/quests/party).</summary>
     public Protocol.PlayerStateMsg PlayerState { get; private set; } = new();
@@ -43,6 +49,8 @@ public partial class ClientNode : Node
         _helloSent = false;
         _wasConnected = false;
         LocalEntityId = -1;
+        CurrentMapId = 0;
+        CurrentMap = null;
         Entities.Clear();
         _peer = new ENetMultiplayerPeer();
         return _peer.CreateClient(host, port);
@@ -131,10 +139,20 @@ public partial class ClientNode : Node
                 EmitSignal(SignalName.Disconnected, reason);
                 break;
             }
+            case Op.MapData:
+            {
+                var map = Protocol.ReadMapData(r);
+                CurrentMapId = map.MapId;
+                CurrentMap = map.MapId == 0 ? null : map;
+                Entities.Clear(); // old map's entities are gone until the next snapshot
+                EmitSignal(SignalName.MapChanged, map.Label);
+                break;
+            }
             case Op.Snapshot:
             {
-                var (tick, _, entities, events) = Protocol.ReadSnapshot(r);
+                var (tick, _, mapId, entities, events) = Protocol.ReadSnapshot(r);
                 if (tick < ServerTick) break; // stale
+                if (mapId != CurrentMapId) break; // a map we already left
                 ServerTick = tick;
                 Entities.Clear();
                 foreach (var e in entities)
@@ -193,5 +211,11 @@ public partial class ClientNode : Node
     {
         if (LocalEntityId < 0) return;
         _peer.PutPacket(Protocol.WriteVehicleOp());
+    }
+
+    public void SendSiteOp()
+    {
+        if (LocalEntityId < 0) return;
+        _peer.PutPacket(Protocol.WriteSiteOp());
     }
 }

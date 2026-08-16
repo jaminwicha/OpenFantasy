@@ -1,4 +1,5 @@
 using OpenFantasy.Sim;
+using OpenFantasy.Sim.SiteGen;
 
 namespace OpenFantasy.Net;
 
@@ -17,6 +18,8 @@ public enum Op : byte
     QuestOp = 11,    // C→S: accept/complete
     CraftOp = 12,    // C→S: craft recipe id
     VehicleOp = 13,  // C→S: toggle embark/disembark
+    SiteOp = 14,     // C→S: use surroundings (enter site, stairs, chest, search)
+    MapData = 15,    // S→C: current map space tiles (instance floors; 0 = overworld)
 }
 
 public enum ItemOpKind : byte { Buy = 0, Sell = 1, Use = 2, Equip = 3, Unequip = 4 }
@@ -290,16 +293,85 @@ public static class Protocol
     public static (QuestOpKind op, string questId, int npcEntityId) ReadQuestOp(BinaryReader r)
         => ((QuestOpKind)r.ReadByte(), r.ReadString(), r.ReadInt32());
 
-    public static byte[] WriteSnapshot(World world, IReadOnlyList<SimEvent> events)
+    public static byte[] WriteSiteOp()
+    {
+        return new[] { (byte)Op.SiteOp };
+    }
+
+    /// <summary>Current map space for one client. mapId 0 = overworld (no
+    /// tiles — the client renders its local world.json); >0 carries the
+    /// instance floor's tile bytes RLE-encoded.</summary>
+    public static byte[] WriteMapData(int mapId, string label, SiteFloor? layout)
+    {
+        using var ms = new MemoryStream();
+        using var w = new BinaryWriter(ms);
+        w.Write((byte)Op.MapData);
+        w.Write(mapId);
+        w.Write(label);
+        if (mapId == 0 || layout is null)
+        {
+            w.Write(0);
+            w.Write(0);
+            return ms.ToArray();
+        }
+        w.Write(layout.Width);
+        w.Write(layout.Height);
+        // RLE: (tileByte, runLength) pairs.
+        int i = 0, total = layout.Width * layout.Height;
+        while (i < total)
+        {
+            byte t = (byte)layout.Tiles[i];
+            int run = 1;
+            while (i + run < total && (byte)layout.Tiles[i + run] == t && run < 65535) run++;
+            w.Write(t);
+            w.Write((ushort)run);
+            i += run;
+        }
+        return ms.ToArray();
+    }
+
+    public sealed class MapDataMsg
+    {
+        public int MapId;
+        public string Label = "";
+        public int Width, Height;
+        public byte[] Tiles = Array.Empty<byte>();
+    }
+
+    public static MapDataMsg ReadMapData(BinaryReader r)
+    {
+        var msg = new MapDataMsg { MapId = r.ReadInt32(), Label = r.ReadString() };
+        msg.Width = r.ReadInt32();
+        msg.Height = r.ReadInt32();
+        int total = msg.Width * msg.Height;
+        msg.Tiles = new byte[total];
+        int i = 0;
+        while (i < total)
+        {
+            byte t = r.ReadByte();
+            int run = r.ReadUInt16();
+            for (int k = 0; k < run && i < total; k++)
+                msg.Tiles[i++] = t;
+        }
+        return msg;
+    }
+
+    public static byte[] WriteSnapshot(World world, IReadOnlyList<SimEvent> events, int mapId)
     {
         using var ms = new MemoryStream();
         using var w = new BinaryWriter(ms);
         w.Write((byte)Op.Snapshot);
         w.Write(world.Tick);
         w.Write(world.StateHash());
+        w.Write(mapId);
 
-        w.Write((ushort)world.EntityCount);
+        var visible = new List<Entity>();
         foreach (var e in world.EntitiesInOrder())
+            if (e.MapId == mapId)
+                visible.Add(e);
+
+        w.Write((ushort)visible.Count);
+        foreach (var e in visible)
         {
             w.Write(e.Id);
             w.Write((byte)e.Kind);
@@ -323,8 +395,16 @@ public static class Protocol
                 e.Appearance.Write(w);
         }
 
-        w.Write((ushort)events.Count);
+        // Events whose subject lives on this map (fall back to source).
+        var mapEvents = new List<SimEvent>();
         foreach (var ev in events)
+        {
+            var subject = world.GetEntity(ev.TargetId) ?? world.GetEntity(ev.SourceId);
+            if (subject is null || subject.MapId == mapId)
+                mapEvents.Add(ev);
+        }
+        w.Write((ushort)mapEvents.Count);
+        foreach (var ev in mapEvents)
         {
             w.Write((byte)ev.Kind);
             w.Write(ev.SourceId);
@@ -335,10 +415,11 @@ public static class Protocol
         return ms.ToArray();
     }
 
-    public static (int tick, ulong hash, List<NetEntityState> entities, List<NetEvent> events) ReadSnapshot(BinaryReader r)
+    public static (int tick, ulong hash, int mapId, List<NetEntityState> entities, List<NetEvent> events) ReadSnapshot(BinaryReader r)
     {
         int tick = r.ReadInt32();
         ulong hash = r.ReadUInt64();
+        int mapId = r.ReadInt32();
 
         int count = r.ReadUInt16();
         var entities = new List<NetEntityState>(count);
@@ -382,6 +463,6 @@ public static class Protocol
                 r.ReadInt32(),
                 r.ReadString()));
         }
-        return (tick, hash, entities, events);
+        return (tick, hash, mapId, entities, events);
     }
 }

@@ -36,6 +36,18 @@ public partial class Boot : Control
             return;
         }
 
+        int genArg = Array.IndexOf(args, "--previewgen");
+        if (genArg >= 0)
+        {
+            ulong seed = genArg + 1 < args.Length && ulong.TryParse(args[genArg + 1], out ulong s)
+                ? s : 0x5F3759DFUL;
+            string path = ProjectSettings.GlobalizePath("res://docs/screenshots/worldgen-preview.png");
+            WorldGenPreview.SaveBiomeMap(seed, path);
+            GD.Print($"[previewgen] seed {seed}: biome map saved to {path}");
+            GetTree().Quit(0);
+            return;
+        }
+
         if (args.Contains("--server"))
         {
             var server = new ServerNode { Port = ReadPortArg(args) };

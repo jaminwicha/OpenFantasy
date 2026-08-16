@@ -87,9 +87,14 @@ public partial class ServerNode : Node
 
             _pendingEvents.AddRange(_world.Events);
 
+            // Map transitions push MapData before the next snapshot arrives.
+            foreach (var ev in _world.Events)
+                if (ev.Kind == SimEventKind.MapChange && FindSessionByEntity(ev.TargetId) is { } moved)
+                    SendMapData(moved.peerId, ev.Value);
+
             if (_world.Tick % SnapshotEveryTicks == 0)
             {
-                Broadcast(Protocol.WriteSnapshot(_world, _pendingEvents));
+                BroadcastSnapshots(_pendingEvents);
                 PushDirtyPlayerStates(_pendingEvents);
                 _pendingEvents.Clear();
             }
@@ -150,6 +155,17 @@ public partial class ServerNode : Node
             {
                 if (_world.GetEntity(session.EntityId) is not { } player) break;
                 SendTo(sender, Protocol.WriteChat("*", _world.ToggleVehicle(player)));
+                break;
+            }
+            case Op.SiteOp when session is { Ready: true }:
+            {
+                if (_world.GetEntity(session.EntityId) is not { } player) break;
+                string result = _world.SiteInteract(player);
+                if (result.Length > 0)
+                {
+                    SendTo(sender, Protocol.WriteChat("*", result));
+                    SendTo(sender, Protocol.WritePlayerState(_world, player));
+                }
                 break;
             }
             case Op.CraftOp when session is { Ready: true }:
@@ -485,6 +501,54 @@ public partial class ServerNode : Node
                 _saves.Put(session.Account, _world.SnapshotSave(entity));
         }
         if (flush) _saves.Flush();
+    }
+
+    /// <summary>One snapshot per occupied map space; each session gets its own
+    /// map's entities and events (the first, easy interest management).</summary>
+    private void BroadcastSnapshots(List<SimEvent> events)
+    {
+        var byMap = new Dictionary<int, byte[]>();
+        foreach (var (peerId, session) in _sessions)
+        {
+            if (!session.Ready || _world.GetEntity(session.EntityId) is not { } player) continue;
+            if (!byMap.TryGetValue(player.MapId, out byte[]? packet))
+            {
+                packet = Protocol.WriteSnapshot(_world, events, player.MapId);
+                byMap[player.MapId] = packet;
+            }
+            SendTo(peerId, packet);
+        }
+        // A player whose instance layout changed (pried lock, found secret)
+        // gets refreshed tiles.
+        foreach (var inst in DirtyInstances())
+        {
+            foreach (var (peerId, session) in _sessions)
+                if (session.Ready && _world.GetEntity(session.EntityId) is { } p && p.MapId == inst.MapId)
+                    SendMapData(peerId, inst.MapId);
+            inst.Dirty = false;
+        }
+    }
+
+    private IEnumerable<World.MapInstance> DirtyInstances()
+    {
+        foreach (var (_, session) in _sessions)
+        {
+            if (!session.Ready || _world.GetEntity(session.EntityId) is not { } p) continue;
+            if (p.MapId != 0 && _world.GetInstance(p.MapId) is { Dirty: true } inst)
+                yield return inst;
+        }
+    }
+
+    private void SendMapData(int peerId, int mapId)
+    {
+        if (mapId == 0)
+        {
+            SendTo(peerId, Protocol.WriteMapData(0, "", null));
+            return;
+        }
+        if (_world.GetInstance(mapId) is not { } inst) return;
+        string label = $"{World.SiteDisplayName(inst.SiteId)} — Floor {inst.Floor + 1}";
+        SendTo(peerId, Protocol.WriteMapData(mapId, label, inst.Layout));
     }
 
     private void SendTo(int peerId, byte[] packet)

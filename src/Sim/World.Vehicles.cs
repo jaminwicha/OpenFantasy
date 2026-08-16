@@ -69,6 +69,7 @@ public sealed partial class World
     public string ToggleVehicle(Entity player)
     {
         if (!player.Alive) return "The fallen travel nowhere.";
+        if (player.MapId != 0) return "No room to launch anything down here.";
 
         if (player.Vehicle != VehicleKind.None)
             return Disembark(player);
