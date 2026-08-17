@@ -14,7 +14,7 @@ public partial class GameWindows : CanvasLayer
     private GameData _data = null!;
 
     private NinePatchRect? _openWindow;
-    private enum WindowKind { None, Inventory, Quests, Npc, Craft }
+    private enum WindowKind { None, Inventory, Quests, Npc, Craft, Character }
     private WindowKind _open = WindowKind.None;
 
     public bool AnyOpen => _open != WindowKind.None;
@@ -30,6 +30,7 @@ public partial class GameWindows : CanvasLayer
     public void ToggleInventory() => Toggle(WindowKind.Inventory);
     public void ToggleQuests() => Toggle(WindowKind.Quests);
     public void ToggleCraft() => Toggle(WindowKind.Craft);
+    public void ToggleCharacter() => Toggle(WindowKind.Character);
     public void CloseAll() => Close();
 
     private void Toggle(WindowKind kind)
@@ -60,6 +61,7 @@ public partial class GameWindows : CanvasLayer
             WindowKind.Quests => BuildQuests(),
             WindowKind.Npc => BuildNpc(),
             WindowKind.Craft => BuildCraft(),
+            WindowKind.Character => BuildCharacter(),
             _ => null,
         };
         if (_openWindow == null)
@@ -103,6 +105,55 @@ public partial class GameWindows : CanvasLayer
 
     private static Button SmallButton(string text)
         => new() { Text = text, CustomMinimumSize = new Vector2(0, 24) };
+
+    // ------------------------------------------------------------------ character
+
+    private NinePatchRect BuildCharacter()
+    {
+        var state = _client.PlayerState;
+        var panel = NewWindow("Character", new Vector2(340, 380));
+        _client.Entities.TryGetValue(_client.LocalEntityId, out var me);
+
+        var rows = new VBoxContainer { Position = new Vector2(18, 36), CustomMinimumSize = new Vector2(300, 0) };
+        rows.AddThemeConstantOverride("separation", 6);
+        panel.AddChild(rows);
+
+        void Line(string label, string value, Color? tint = null)
+        {
+            var h = new HBoxContainer();
+            var l = UiTheme.MakeLabel(label, 12);
+            l.CustomMinimumSize = new Vector2(150, 0);
+            l.Modulate = new Color(0.72f, 0.78f, 0.94f);
+            var v = UiTheme.MakeLabel(value, 12);
+            if (tint is { } t) v.Modulate = t;
+            h.AddChild(l);
+            h.AddChild(v);
+            rows.AddChild(h);
+        }
+
+        if (me != null)
+        {
+            string race = me.HasAppearance && me.Appearance.Race < World.RaceMods.Length
+                ? World.RaceMods[me.Appearance.Race].Name : "—";
+            string cls = _data.Classes.TryGetValue(me.ArchetypeId, out var c) ? c.Name : me.ArchetypeId;
+            Line("Name", me.Name, new Color("f8e050"));
+            Line("Class · Race", $"{cls} · {race}");
+            Line("Level", $"{me.Level}");
+            Line("Experience", $"{me.Xp} / {state.XpToNext}");
+            Line("HP", $"{me.Hp} / {me.MaxHp}", new Color("70e878"));
+            Line("MP", $"{me.Mp} / {me.MaxMp}", new Color("78a8f0"));
+            Line("Gil", $"{me.Gil}", new Color("f0d060"));
+            rows.AddChild(new HSeparator());
+        }
+        Line("Attack", $"{state.Attack}");
+        Line("Magic", $"{state.Magic}");
+        Line("Defense", $"{state.Defense}");
+        Line("Speed", $"{state.Speed}");
+        rows.AddChild(new HSeparator());
+        Line("Weapon", state.WeaponId.Length > 0 ? _data.Items[state.WeaponId].Name : "—");
+        Line("Armor", state.ArmorId.Length > 0 ? _data.Items[state.ArmorId].Name : "—");
+        return panel;
+    }
 
     // ------------------------------------------------------------------ inventory
 

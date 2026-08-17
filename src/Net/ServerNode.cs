@@ -452,7 +452,7 @@ public partial class ServerNode : Node
 
         var entity = _world.AddPlayer(account, classId, save, appearance);
         _sessions[sender] = new Session { Account = account, EntityId = entity.Id, Ready = true };
-        SendTo(sender, Protocol.WriteWelcome(entity.Id, _world.Tick));
+        SendTo(sender, Protocol.WriteWelcome(entity.Id, _world.Tick, _world.Seed));
         SendTo(sender, Protocol.WritePlayerState(_world, entity));
         Broadcast(Protocol.WriteChat("*", $"{account} entered Verdance March"));
         Log($"[server] {account} joined as {classId} (entity {entity.Id}, level {entity.Level})");
@@ -507,13 +507,21 @@ public partial class ServerNode : Node
     /// map's entities and events (the first, easy interest management).</summary>
     private void BroadcastSnapshots(List<SimEvent> events)
     {
+        ulong hash = _world.StateHash(); // once per broadcast, shared by all packets
         var byMap = new Dictionary<int, byte[]>();
         foreach (var (peerId, session) in _sessions)
         {
             if (!session.Ready || _world.GetEntity(session.EntityId) is not { } player) continue;
+            if (player.MapId == 0)
+            {
+                // Overworld: per-player interest radius (the frontier is unbounded).
+                SendTo(peerId, Protocol.WriteSnapshot(_world, events, 0, hash,
+                    player.X, player.Y, SimConstants.InterestRadius));
+                continue;
+            }
             if (!byMap.TryGetValue(player.MapId, out byte[]? packet))
             {
-                packet = Protocol.WriteSnapshot(_world, events, player.MapId);
+                packet = Protocol.WriteSnapshot(_world, events, player.MapId, hash);
                 byMap[player.MapId] = packet;
             }
             SendTo(peerId, packet);

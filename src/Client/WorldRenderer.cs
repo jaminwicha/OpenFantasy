@@ -44,6 +44,16 @@ public partial class WorldRenderer : Node2D
         new[] { new Vector2I(4, 5) },                                           // 25 counter
         new[] { new Vector2I(5, 5) },                                           // 26 fence
         new[] { new Vector2I(6, 5) },                                           // 27 farmland
+        new[] { new Vector2I(0, 6) },                                           // 28 grate
+        new[] { new Vector2I(1, 6) },                                           // 29 stairs down
+        new[] { new Vector2I(2, 6) },                                           // 30 stairs up
+        new[] { new Vector2I(3, 6) },                                           // 31 chest
+        new[] { new Vector2I(4, 6) },                                           // 32 door
+        new[] { new Vector2I(5, 6) },                                           // 33 locked door
+        new[] { new Vector2I(6, 6) },                                           // 34 cracked rock (secret tell)
+        new[] { new Vector2I(7, 6) },                                           // 35 slag
+        new[] { new Vector2I(8, 6) },                                           // 36 rubble
+        new[] { new Vector2I(9, 6) },                                           // 37 chasm
     };
 
     private static readonly int[] WaterIds = { 2, 13 };       // shallow, ocean
@@ -68,8 +78,9 @@ public partial class WorldRenderer : Node2D
                 source.CreateTile(new Vector2I(cx, cy));
         tileSet.AddSource(source, 0);
 
-        var ground = new TileMapLayer { TileSet = tileSet };
-        var overlay = new TileMapLayer { TileSet = tileSet, ZIndex = 1 };
+        var ground = _ground = new TileMapLayer { TileSet = tileSet };
+        var overlay = _overlay = new TileMapLayer { TileSet = tileSet, ZIndex = 1 };
+        var corners = _corners = new TileMapLayer { TileSet = tileSet, ZIndex = 1 };
 
         for (int y = 0; y < map.Height; y++)
             for (int x = 0; x < map.Width; x++)
@@ -83,14 +94,43 @@ public partial class WorldRenderer : Node2D
                 ground.SetCell(new Vector2I(x, y), 0, options[v % options.Length]);
 
                 int mask = TransitionMask(map, x, y, t);
+                bool water = Array.IndexOf(WaterIds, t) >= 0;
                 if (mask > 0)
-                {
-                    int row = Array.IndexOf(WaterIds, t) >= 0 ? 2 : 3; // foam vs grass fringe
-                    overlay.SetCell(new Vector2I(x, y), 0, new Vector2I(mask, row));
-                }
+                    overlay.SetCell(new Vector2I(x, y), 0, new Vector2I(mask, water ? 2 : 3));
+
+                // Corner-aware blob pass: diagonal contacts not already covered
+                // by an edge (rows 7/8) round the transitions off.
+                int corner = CornerMask(map, x, y, t, mask);
+                if (corner > 0)
+                    corners.SetCell(new Vector2I(x, y), 0, new Vector2I(corner, water ? 7 : 8));
             }
         AddChild(ground);
         AddChild(overlay);
+        AddChild(corners);
+    }
+
+    /// <summary>4-bit diagonal mask (1=NE 2=SE 4=SW 8=NW): set when the
+    /// diagonal neighbor transitions but neither adjacent edge does (those
+    /// are already foamed/fringed by the edge overlay).</summary>
+    private static int CornerMask(WorldMap map, int x, int y, int t, int edgeMask)
+    {
+        bool water = Array.IndexOf(WaterIds, t) >= 0;
+        if (!water && Array.IndexOf(FringeTargets, t) < 0) return 0;
+
+        bool Hit(int nx, int ny)
+        {
+            int n = map.TileAt(nx, ny);
+            if (n < 0) return false;
+            return water ? Array.IndexOf(WaterIds, n) < 0 : Array.IndexOf(GrassyIds, n) >= 0;
+        }
+
+        int mask = 0;
+        // bit layout: edge 1=N 2=E 4=S 8=W
+        if (Hit(x + 1, y - 1) && (edgeMask & 3) == 0) mask |= 1;  // NE needs N,E clear
+        if (Hit(x + 1, y + 1) && (edgeMask & 6) == 0) mask |= 2;  // SE needs E,S clear
+        if (Hit(x - 1, y + 1) && (edgeMask & 12) == 0) mask |= 4; // SW needs S,W clear
+        if (Hit(x - 1, y - 1) && (edgeMask & 9) == 0) mask |= 8;  // NW needs W,N clear
+        return mask;
     }
 
     /// <summary>4-bit edge mask (1=N 2=E 4=S 8=W) for shoreline foam / grass fringe.</summary>
@@ -122,27 +162,72 @@ public partial class WorldRenderer : Node2D
         => new(ux * (float)TilePx / SimConstants.UnitsPerTile,
                uy * (float)TilePx / SimConstants.UnitsPerTile);
 
+    // ------------------------------------------------------- frontier streaming
+
+    private TileMapLayer? _ground, _overlay, _corners;
+    private readonly HashSet<long> _builtFrontier = new();
+
+    /// <summary>Draws frontier chunks around the player as they explore.
+    /// Chunks fault through Map.TileAt (client-side FrontierGen installed on
+    /// Welcome), so server and client always agree tile-for-tile.</summary>
+    public void StreamFrontierAround(int tx, int ty)
+    {
+        if (_ground is null) return;
+        const int radius = 4; // chunks (128 tiles) around the player
+        int pcx = tx >> 5, pcy = ty >> 5;
+        int staticCw = Map.Width / WorldMap.ChunkSize, staticCh = Map.Height / WorldMap.ChunkSize;
+        for (int cy = pcy - radius; cy <= pcy + radius; cy++)
+            for (int cx = pcx - radius; cx <= pcx + radius; cx++)
+            {
+                if (cx >= 0 && cy >= 0 && cx < staticCw && cy < staticCh) continue; // authored
+                long key = ((long)cx << 32) ^ (uint)cy;
+                if (!_builtFrontier.Add(key)) continue;
+                BuildFrontierChunk(cx, cy);
+            }
+    }
+
+    private void BuildFrontierChunk(int cx, int cy)
+    {
+        const int n = WorldMap.ChunkSize;
+        for (int oy = 0; oy < n; oy++)
+            for (int ox = 0; ox < n; ox++)
+            {
+                int x = cx * n + ox, y = cy * n + oy;
+                int t = Map.TileAt(x, y);
+                if (t < 0 || t >= Variants.Length) continue;
+                var options = Variants[t];
+                int v = ((x * 73856093) ^ (y * 19349663)) & 0x7fffffff;
+                _ground!.SetCell(new Vector2I(x, y), 0, options[v % options.Length]);
+                int mask = TransitionMask(Map, x, y, t);
+                bool water = Array.IndexOf(WaterIds, t) >= 0;
+                if (mask > 0)
+                    _overlay!.SetCell(new Vector2I(x, y), 0, new Vector2I(mask, water ? 2 : 3));
+                int corner = CornerMask(Map, x, y, t, mask);
+                if (corner > 0)
+                    _corners!.SetCell(new Vector2I(x, y), 0, new Vector2I(corner, water ? 7 : 8));
+            }
+    }
+
     // ------------------------------------------------------- instanced floors
 
     private Node2D? _overworldRoot;
     private TileMapLayer? _instanceLayer;
 
-    /// <summary>SiteTile (byte) → logical tile id in the shipped atlas.
-    /// Placeholder art reuse — the delve art pass replaces this table.</summary>
+    /// <summary>SiteTile (byte) → logical tile id (M7 delve tile set, row 6).</summary>
     private static readonly int[] SiteTileToLogical =
     {
         8,  // Wall        → rock
         7,  // Floor       → mine floor
-        19, // StairsDown  → bridge (ladder-ish planks)
-        22, // StairsUp    → dock
-        8,  // SecretDoor  → rock (indistinguishable from wall — that's the point)
-        24, // Door        → plank floor
-        25, // LockedDoor  → counter (dark, blocky)
+        29, // StairsDown
+        30, // StairsUp
+        34, // SecretDoor  → cracked rock: the tell for the attentive
+        32, // Door
+        33, // LockedDoor
         2,  // Water       → shallow water
-        17, // Slag        → desert (ember glow)
-        14, // Rubble      → mountain
-        13, // Chasm       → ocean (dark drop)
-        9,  // Chest       → crystal (sparkle marker)
+        35, // Slag        → glowing slag crust
+        36, // Rubble
+        37, // Chasm
+        31, // Chest
     };
 
     /// <summary>Swap between the overworld and an instanced floor.</summary>

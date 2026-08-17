@@ -149,7 +149,7 @@ public static class RoomScatterEmbedder
         if (allowChasm && recipe.Chasms && style == SiteStyle.Xandered)
             PlaceChasm(f, rng, goalRoom);
 
-        PlaceSpawnsAndChests(f, rng, goalRoom, bossFloor);
+        PlaceSpawnsAndChests(f, rng, goalRoom, bossFloor, style);
         return f;
     }
 
@@ -397,13 +397,21 @@ public static class RoomScatterEmbedder
 
     // ------------------------------------------------------------ population
 
-    private static void PlaceSpawnsAndChests(SiteFloor f, XorShift64 rng, int goalRoom, bool bossFloor)
+    private static void PlaceSpawnsAndChests(SiteFloor f, XorShift64 rng, int goalRoom, bool bossFloor, SiteStyle style)
     {
+        // Feel pass: set-piece floors stay calm (the scene matters more than
+        // the fight); xandered floors run denser so loops stay dangerous.
+        (int div, int cap) = style switch
+        {
+            SiteStyle.SetPiece => (26, 1),
+            SiteStyle.Standard => (16, 2),
+            _ => (13, 2),
+        };
         for (int i = 1; i < f.Rooms.Count; i++)
         {
             if (bossFloor && i == goalRoom) continue; // boss handles its own room
             var r = f.Rooms[i];
-            int spawns = Math.Min(2, (r.W * r.H) / 16);
+            int spawns = Math.Min(cap, (r.W * r.H) / div);
             for (int s = 0; s < spawns; s++)
             {
                 int x = rng.Range(r.X, r.X + r.W - 1);

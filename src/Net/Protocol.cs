@@ -97,18 +97,19 @@ public static class Protocol
         return ms.ToArray();
     }
 
-    public static byte[] WriteWelcome(int entityId, int tick)
+    public static byte[] WriteWelcome(int entityId, int tick, ulong worldSeed)
     {
         using var ms = new MemoryStream();
         using var w = new BinaryWriter(ms);
         w.Write((byte)Op.Welcome);
         w.Write(entityId);
         w.Write(tick);
+        w.Write(worldSeed); // clients generate frontier terrain locally (D5)
         return ms.ToArray();
     }
 
-    public static (int entityId, int tick) ReadWelcome(BinaryReader r)
-        => (r.ReadInt32(), r.ReadInt32());
+    public static (int entityId, int tick, ulong worldSeed) ReadWelcome(BinaryReader r)
+        => (r.ReadInt32(), r.ReadInt32(), r.ReadUInt64());
 
     public static byte[] WriteReject(string reason)
     {
@@ -180,6 +181,12 @@ public static class Protocol
         w.Write((byte)members.Count);
         foreach (int memberId in members)
             w.Write(memberId);
+        // Effective stats for the character sheet (owner-only).
+        w.Write((short)player.Attack);
+        w.Write((short)player.Magic);
+        w.Write((short)player.Defense);
+        w.Write((short)player.Speed);
+        w.Write(World.XpToNextLevel(player.Level));
         return ms.ToArray();
     }
 
@@ -190,6 +197,7 @@ public static class Protocol
         public List<(string itemId, int count)> Inventory = new();
         public List<(string questId, byte state, int kills)> Quests = new();
         public List<int> PartyMemberIds = new();
+        public int Attack, Magic, Defense, Speed, XpToNext;
     }
 
     public static PlayerStateMsg ReadPlayerState(BinaryReader r)
@@ -204,6 +212,11 @@ public static class Protocol
         int members = r.ReadByte();
         for (int i = 0; i < members; i++)
             msg.PartyMemberIds.Add(r.ReadInt32());
+        msg.Attack = r.ReadInt16();
+        msg.Magic = r.ReadInt16();
+        msg.Defense = r.ReadInt16();
+        msg.Speed = r.ReadInt16();
+        msg.XpToNext = r.ReadInt32();
         return msg;
     }
 
@@ -356,18 +369,30 @@ public static class Protocol
         return msg;
     }
 
-    public static byte[] WriteSnapshot(World world, IReadOnlyList<SimEvent> events, int mapId)
+    /// <summary>Per-map snapshot; on the overworld a per-player interest
+    /// radius (units) trims to the neighborhood — the streamed frontier makes
+    /// zone-wide broadcasts unbounded. radius ≤ 0 sends the whole map space.
+    /// The state hash is computed once per broadcast and passed in.</summary>
+    public static byte[] WriteSnapshot(World world, IReadOnlyList<SimEvent> events, int mapId,
+        ulong stateHash, int centerX = 0, int centerY = 0, long radius = 0)
     {
         using var ms = new MemoryStream();
         using var w = new BinaryWriter(ms);
         w.Write((byte)Op.Snapshot);
         w.Write(world.Tick);
-        w.Write(world.StateHash());
+        w.Write(stateHash);
         w.Write(mapId);
+
+        bool InRange(Entity e)
+        {
+            if (radius <= 0) return true;
+            long dx = e.X - centerX, dy = e.Y - centerY;
+            return dx * dx + dy * dy <= radius * radius;
+        }
 
         var visible = new List<Entity>();
         foreach (var e in world.EntitiesInOrder())
-            if (e.MapId == mapId)
+            if (e.MapId == mapId && InRange(e))
                 visible.Add(e);
 
         w.Write((ushort)visible.Count);
@@ -400,7 +425,7 @@ public static class Protocol
         foreach (var ev in events)
         {
             var subject = world.GetEntity(ev.TargetId) ?? world.GetEntity(ev.SourceId);
-            if (subject is null || subject.MapId == mapId)
+            if (subject is null || (subject.MapId == mapId && InRange(subject)))
                 mapEvents.Add(ev);
         }
         w.Write((ushort)mapEvents.Count);

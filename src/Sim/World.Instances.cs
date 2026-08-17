@@ -51,35 +51,27 @@ public sealed partial class World
         return new List<(int, int)> { (region.X + region.W / 2, region.Y + region.H / 2) };
     }
 
-    /// <summary>Three grate tiles spread across Brasshollow: gate, plaza, far
-    /// corner — each a distinct way down into the same sewer floor.</summary>
+    /// <summary>The grate tiles stamped around Brasshollow by gen_world.py —
+    /// each a distinct, visible way down into the sewers. Scanned once,
+    /// row-major (stable order).</summary>
+    private List<(int tx, int ty)>? _sewerGrates;
+
     public List<(int tx, int ty)> SewerGrates()
     {
-        var r = Data.Map.Region("brasshollow")!;
-        var candidates = new (int tx, int ty)[]
-        {
-            (r.X + 3, r.Y + 3),
-            (r.X + r.W / 2 + 4, r.Y + r.H / 2),
-            (r.X + r.W - 4, r.Y + r.H - 4),
-        };
+        if (_sewerGrates != null) return _sewerGrates;
         var grates = new List<(int, int)>();
-        foreach (var (cx, cy) in candidates)
+        var r = Data.Map.Region("brasshollow")!;
+        int grateId = Data.Map.TileIdByName("grate");
+        if (grateId >= 0)
         {
-            // Nudge to the nearest walkable tile (deterministic ring scan).
-            for (int radius = 0; radius < 6; radius++)
-            {
-                bool found = false;
-                for (int dy = -radius; dy <= radius && !found; dy++)
-                    for (int dx = -radius; dx <= radius && !found; dx++)
-                        if (Data.Map.IsWalkableTile(cx + dx, cy + dy))
-                        {
-                            grates.Add((cx + dx, cy + dy));
-                            found = true;
-                        }
-                if (found) break;
-            }
+            for (int ty = r.Y - 2; ty < r.Y + r.H + 2; ty++)
+                for (int tx = r.X - 2; tx < r.X + r.W + 2; tx++)
+                    if (Data.Map.TileAt(tx, ty) == grateId)
+                        grates.Add((tx, ty));
         }
-        return grates;
+        if (grates.Count == 0) // older world.json without grate tiles
+            grates.Add((r.X + r.W / 2, r.Y + r.H / 2));
+        return _sewerGrates = grates;
     }
 
     // ------------------------------------------------------------- lifecycle

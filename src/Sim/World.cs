@@ -36,6 +36,10 @@ public sealed partial class World
         Seed = seed;
         _rng = new XorShift64(seed);
 
+        // 8B: the frontier serves procedural chunks beyond the authored map.
+        var frontier = new FrontierGen(data.Map, seed);
+        data.Map.SetFrontierSource(frontier.GenerateChunk);
+
         foreach (var def in data.Map.Spawners)
         {
             var state = new SpawnerState { Def = def, Monster = data.Monsters[def.Monster] };

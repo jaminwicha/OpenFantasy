@@ -28,6 +28,9 @@ public partial class ClientNode : Node
     public int CurrentMapId { get; private set; }
     public Protocol.MapDataMsg? CurrentMap { get; private set; }
 
+    /// <summary>World seed from the Welcome — drives local frontier generation.</summary>
+    public ulong WorldSeed { get; private set; }
+
     /// <summary>Latest owner-only state (inventory/equipment/quests/party).</summary>
     public Protocol.PlayerStateMsg PlayerState { get; private set; } = new();
     /// <summary>Latest NPC interaction payload (valid after NpcInfoReceived).</summary>
@@ -125,9 +128,10 @@ public partial class ClientNode : Node
         {
             case Op.Welcome:
             {
-                var (entityId, tick) = Protocol.ReadWelcome(r);
+                var (entityId, tick, worldSeed) = Protocol.ReadWelcome(r);
                 LocalEntityId = entityId;
                 ServerTick = tick;
+                WorldSeed = worldSeed;
                 EmitSignal(SignalName.Connected, entityId);
                 break;
             }

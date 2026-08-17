@@ -856,9 +856,176 @@ def tile_farmland():
     return c
 
 
+def tile_foam_corner(mask):
+    """Corner scallops where land touches only diagonally (bits: 1=NE 2=SE 4=SW 8=NW).
+    Together with the edge masks this gives full corner-aware ('blob') shoreline
+    coverage — rounded coasts without rectangular artifacts."""
+    c = Canvas(T, T)
+    foam = (222, 238, 250, 255)
+    lite = (150, 190, 235, 255)
+    def dab(cx, cy):
+        for dx, dy in ((0, 0), (1, 0), (0, 1)):
+            x = cx + (dx if cx < 8 else -dx)
+            y = cy + (dy if cy < 8 else -dy)
+            c.px(x, y, foam if dx == dy == 0 else lite)
+    if mask & 1: dab(15, 0)
+    if mask & 2: dab(15, 15)
+    if mask & 4: dab(0, 15)
+    if mask & 8: dab(0, 0)
+    return c
+
+
+def tile_fringe_corner(mask):
+    """Grass corner tufts hanging over a non-grass tile's diagonal contacts."""
+    c = Canvas(T, T)
+    g1, g2 = rgba(GRASS), shade(rgba(GRASS), 0.8)
+    def tuft(cx, cy):
+        c.px(cx, cy, g1)
+        c.px(cx + (1 if cx < 8 else -1), cy, g2)
+        c.px(cx, cy + (1 if cy < 8 else -1), g2)
+    if mask & 1: tuft(15, 0)
+    if mask & 2: tuft(15, 15)
+    if mask & 4: tuft(0, 15)
+    if mask & 8: tuft(0, 0)
+    return c
+
+
+# ---------------------------------------------------------------- M7 delve tiles
+
+
+def tile_grate():
+    """Sewer grate set into town cobbles: the way down is visible."""
+    c = tile_cobble(0)
+    iron = (58, 58, 68, 255)
+    dark = (26, 24, 34, 255)
+    # round rim
+    for y in range(3, 13):
+        half = 5 - max(0, abs(y - 8) - 2)
+        c.rect(8 - half, y, 7 + half, y, iron)
+    for y in range(4, 12):
+        half = 4 - max(0, abs(y - 8) - 2)
+        c.rect(8 - half, y, 7 + half, y, dark)
+    # bars
+    for x in (5, 7, 9, 11):
+        for y in range(4, 12):
+            if abs(x - 8) + max(0, abs(y - 8) - 2) < 5:
+                c.px(x, y, iron)
+    c.px(4, 4, shade(iron, 1.3))  # rim highlight
+    return c
+
+
+def tile_stairs(down):
+    """Four steps; descending shades into darkness, ascending into light."""
+    c = Canvas(T, T)
+    base = MINEF
+    for i in range(4):
+        y0 = i * 4
+        f = (0.95 - i * 0.18) if down else (0.62 + i * 0.16)
+        col = shade(rgba(base), f)
+        for y in range(y0, min(y0 + 4, T)):
+            for x in range(T):
+                c.px(x, y, col)
+        c.rect(0, y0, T - 1, y0, shade(col, 0.7))  # step lip
+    return c
+
+
+def tile_chest():
+    c = tile_mine(0)
+    wood = (128, 84, 48, 255)
+    band = (222, 178, 78, 255)
+    c.rect(3, 5, 12, 12, wood)
+    c.rect(3, 5, 12, 6, shade(wood, 1.25))       # lid catches light
+    c.rect(3, 8, 12, 8, band)                     # strap
+    c.rect(7, 8, 8, 10, band)                     # clasp
+    c.px(7, 9, shade(band, 0.7))
+    c.rect(3, 12, 12, 12, shade(wood, 0.65))
+    return c
+
+
+def tile_door(locked):
+    """Top-down door: plank leaf in a stone frame."""
+    c = tile_mine(1)
+    frame = shade(rgba(ROCKC), 0.8)
+    leaf = (118, 82, 50, 255)
+    c.rect(2, 1, 13, 14, frame)
+    c.rect(4, 2, 11, 13, leaf)
+    for y in (5, 9):
+        c.rect(4, y, 11, y, shade(leaf, 0.78))    # plank seams
+    c.rect(4, 2, 11, 2, shade(leaf, 1.2))
+    if locked:
+        gold = (232, 192, 80, 255)
+        c.rect(7, 7, 8, 9, gold)
+        c.px(7, 6, gold)
+        c.px(8, 6, gold)
+        c.px(8, 8, shade(gold, 0.6))              # keyhole
+    else:
+        c.px(10, 8, shade(leaf, 1.35))            # handle
+    return c
+
+
+def tile_cracked():
+    """Rock with a hairline crack — the secret door's tell."""
+    c = tile_rock(1)
+    dark = shade(rgba(ROCKC), 0.45)
+    path = [(4, 2), (5, 3), (5, 4), (6, 5), (7, 6), (7, 7), (8, 8),
+            (8, 9), (9, 10), (9, 11), (10, 12), (11, 13)]
+    for x, y in path:
+        c.px(x, y, dark)
+    c.px(6, 4, dark)   # branch
+    c.px(10, 11, dark)
+    return c
+
+
+def tile_slag():
+    """Cooled slag crust veined with glow."""
+    c = Canvas(T, T)
+    crust = (52, 40, 40)
+    for y in range(T):
+        for x in range(T):
+            n = cluster(x, y, 23)
+            c.px(x, y, shade(rgba(crust), 0.8 if n < 3 else 1.0))
+    glow = (240, 120, 40, 255)
+    hot = (255, 200, 90, 255)
+    vein = [(1, 12), (2, 11), (3, 11), (4, 10), (5, 9), (6, 9), (7, 8),
+            (8, 8), (9, 7), (10, 7), (11, 6), (12, 5), (13, 5), (14, 4)]
+    for x, y in vein:
+        c.px(x, y, glow)
+        c.px(x, y + 1, shade(glow, 0.6))
+    c.px(5, 9, hot)
+    c.px(10, 7, hot)
+    return c
+
+
+def tile_rubble():
+    c = tile_mine(2)
+    stone = rgba(COBBLE)
+    for bx, by, r in ((4, 9, 3), (9, 6, 2), (11, 11, 2)):
+        for y in range(by - r, by + r):
+            half = r - abs(y - by) // 1
+            c.rect(bx - half, y, bx + half, y, stone if (y + bx) % 2 else shade(stone, 0.8))
+        c.px(bx - 1, by - r, shade(stone, 1.25))
+    return c
+
+
+def tile_chasm():
+    """A drop into the dark: near-black with a lit near lip."""
+    c = Canvas(T, T)
+    void = (14, 12, 20, 255)
+    for y in range(T):
+        for x in range(T):
+            c.px(x, y, void if y > 2 else shade(rgba(ROCKC), 0.55))
+    for x in range(T):
+        if x % 3 != 2:
+            c.px(x, 2, shade(rgba(ROCKC), 0.75))  # crumbling lip
+    c.px(5, 6, (30, 28, 40, 255))                 # faint depth speckle
+    c.px(11, 9, (26, 24, 36, 255))
+    return c
+
+
 def gen_tiles_v3():
-    """Rewrites tiles.png with rows 0-1 (v2 bases), 2-3 (masks), 4-5 (M4)."""
-    cols, rows = 16, 6
+    """Rewrites tiles.png with rows 0-1 (v2 bases), 2-3 (edge masks), 4-5 (M4),
+    6 (M7 delve set), 7-8 (corner masks — blob autotiling)."""
+    cols, rows = 16, 9
     atlas = Canvas(T * cols, T * rows)
 
     def put(col, row, tc):
@@ -881,6 +1048,9 @@ def gen_tiles_v3():
             tile_castle(0), tile_castle(1), tile_deadtree()]
     row5 = [tile_towerf(0), tile_towerf(1), tile_dock(),
             tile_plank(), tile_counter(), tile_fence(), tile_farmland()]
+    row6 = [tile_grate(), tile_stairs(True), tile_stairs(False), tile_chest(),
+            tile_door(False), tile_door(True), tile_cracked(), tile_slag(),
+            tile_rubble(), tile_chasm()]
     for i, tc in enumerate(row0):
         put(i, 0, tc)
     for i, tc in enumerate(row1):
@@ -892,6 +1062,11 @@ def gen_tiles_v3():
         put(i, 4, tc)
     for i, tc in enumerate(row5):
         put(i, 5, tc)
+    for i, tc in enumerate(row6):
+        put(i, 6, tc)
+    for m in range(16):
+        put(m, 7, tile_foam_corner(m))
+        put(m, 8, tile_fringe_corner(m))
     atlas.save(ROOT / "tiles.png")
 
 

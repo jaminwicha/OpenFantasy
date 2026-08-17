@@ -702,10 +702,10 @@ public static class SelfTest
             // Golden pins: generator drift must be deliberate (bump GeneratorVersion).
             var mine1 = SiteGen.SiteGenerator.GenerateFloor(0x5F3759DF, "hollow_mine", 1,
                 SiteGen.SiteRegistry.Sites["hollow_mine"]);
-            AssertEqual((long)mine1.ContentHash(), unchecked((long)0xC34D8659B1A7E328UL), "hollow_mine[1] golden");
+            AssertEqual((long)mine1.ContentHash(), unchecked((long)0x37332706469E8DE5UL), "hollow_mine[1] golden (gen v2)");
             var sewer0 = SiteGen.SiteGenerator.GenerateFloor(0x5F3759DF, "sewer_brasshollow", 0,
                 SiteGen.SiteRegistry.Sites["sewer_brasshollow"]);
-            AssertEqual((long)sewer0.ContentHash(), unchecked((long)0xAC71584CA04B5A47UL), "sewer[0] golden");
+            AssertEqual((long)sewer0.ContentHash(), unchecked((long)0xA59C410FDA502717UL), "sewer[0] golden (gen v2)");
         });
 
         Case("m7 sites: the validator fails loudly on broken topology", () =>
@@ -720,6 +720,47 @@ public static class SelfTest
                         f.Set(g.X + dx, g.Y + dy, SiteGen.SiteTile.Wall);
             string? reason = SiteGen.SiteValidator.Validate(f, recipe.StyleFor(1), recipe, bossFloor: false);
             Assert(reason != null && reason.Contains("unreachable"), $"broken floor accepted: {reason ?? "null"}");
+        });
+
+        Case("m8 chunks: chunked static map reproduces world.json byte-identically", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            // Golden pinned from a direct RLE decode of data/world.json.
+            AssertEqual((long)data.Map.StaticTileHash(), unchecked((long)0x29C391DE1BD5564AUL),
+                "chunked tile store diverged from the authored map");
+            AssertEqual(data.Map.TileAt(-1, 40), -1, "west edge should be void without a frontier");
+            AssertEqual(data.Map.TileAt(512, 40), -1, "east edge should be void without a frontier");
+        });
+
+        Case("m8 frontier: deterministic, sailable, land exists, world is bounded", () =>
+        {
+            var data = GameData.LoadFromDirectory(dataDir);
+            var world = new World(data, 0x5F3759DF);
+            int oceanId = data.Map.TileIdByName("ocean");
+
+            AssertEqual(data.Map.TileAt(-5, 100), oceanId, "west blend ring should be ocean");
+            AssertEqual(data.Map.TileAt(520, 100), oceanId, "east blend ring should be ocean");
+            Assert(world.TileAllows(-5, 100, VehicleKind.Ship), "ship refused the blend ring");
+
+            int probe = data.Map.TileAt(-2000, 3000);
+            AssertEqual(data.Map.TileAt(-2000, 3000), probe, "chunk cache unstable");
+            var data2 = GameData.LoadFromDirectory(dataDir);
+            _ = new World(data2, 0x5F3759DF);
+            AssertEqual(data2.Map.TileAt(-2000, 3000), probe, "frontier regeneration diverged");
+
+            bool foundLand = false, foundWater = false;
+            for (int tx = 600; tx < 1800 && !(foundLand && foundWater); tx += 7)
+                for (int ty = 600; ty < 1800; ty += 7)
+                {
+                    if (data.Map.IsWalkableTile(tx, ty)) foundLand = true;
+                    else if (data.Map.TileAt(tx, ty) == oceanId) foundWater = true;
+                    if (foundLand && foundWater) break;
+                }
+            Assert(foundLand, "no walkable frontier land within 1800 tiles");
+            Assert(foundWater, "no frontier ocean within 1800 tiles");
+
+            AssertEqual(data.Map.TileAt(1_100_000, 0), -1, "world should end at the D2 bound");
+            AssertEqual(data.Map.TileAt(0, -1_100_000), -1, "world should end at the D2 bound (north)");
         });
 
         Case("m7 delves: enter, descend, ascend, exit, sewers via grates", () =>

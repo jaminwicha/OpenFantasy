@@ -43,7 +43,7 @@ public sealed partial class World
     }
 
     public bool UnitsAllow(int ux, int uy, VehicleKind vehicle)
-        => TileAllows(ux / SimConstants.UnitsPerTile, uy / SimConstants.UnitsPerTile, vehicle);
+        => TileAllows(SimConstants.TileOf(ux), SimConstants.TileOf(uy), vehicle);
 
     public int VehicleMoveSpeed(Entity e)
         => e.MoveSpeed * VehicleSpeed10[(int)e.Vehicle] / 10;

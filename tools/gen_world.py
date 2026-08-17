@@ -19,7 +19,8 @@ rng = random.Random(60407)  # fixed seed: layout is authored content
 
 (GRASS, TREE, SHALLOW, ROAD, COBBLE, WALL, FOREST, MINEFLOOR, ROCK, CRYSTAL,
  SAND, FLOWERS, FORGE, OCEAN, MOUNTAIN, HILLS, SNOW, DESERT, SWAMP, BRIDGE,
- CASTLE, TOWERF, DOCK, DEADTREE, PLANK, COUNTER, FENCE, FARMLAND) = range(28)
+ CASTLE, TOWERF, DOCK, DEADTREE, PLANK, COUNTER, FENCE, FARMLAND,
+ GRATE) = range(29)
 
 TILESET = [
     {"id": GRASS, "name": "grass", "walkable": True},
@@ -50,6 +51,7 @@ TILESET = [
     {"id": COUNTER, "name": "counter", "walkable": False},
     {"id": FENCE, "name": "fence", "walkable": False},
     {"id": FARMLAND, "name": "farmland", "walkable": True},
+    {"id": GRATE, "name": "grate", "walkable": True},
 ]
 
 WALKABLE = {t["id"] for t in TILESET if t["walkable"]}
@@ -295,6 +297,13 @@ def build_town(name, cx, cy, floor):
 
 for name, (cx, cy, hw, hh, floor) in TOWNS.items():
     build_town(name, cx, cy, floor)
+
+# M7: three sewer grates around Brasshollow — visible ways down into the
+# Brasshollow Sewers delve (each arrives at a different sewer room).
+BH_CX, BH_CY = TOWNS["brasshollow"][0], TOWNS["brasshollow"][1]
+for gx, gy in ((BH_CX - 4, BH_CY + 2), (BH_CX + 12, BH_CY - 4), (BH_CX + 3, BH_CY + 12)):
+    assert grid[gy][gx] in WALKABLE, f"grate spot ({gx},{gy}) not walkable"
+    grid[gy][gx] = GRATE
 
 
 def build_farm(name, town, x0, y0, w, h):

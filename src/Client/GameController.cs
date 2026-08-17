@@ -77,6 +77,13 @@ public partial class GameController : Node2D
         _client.SnapshotApplied += _ => SyncViews();
         _client.PlayerStateChanged += () => _hud.UpdateParty(_client);
         _client.MapChanged += OnMapChanged;
+        _client.Connected += _ =>
+        {
+            // Frontier chunks generate locally from the server's seed (D5);
+            // TileAt on the client map now agrees with the sim everywhere.
+            var frontier = new FrontierGen(_data.Map, _client.WorldSeed);
+            _data.Map.SetFrontierSource(frontier.GenerateChunk);
+        };
 
         _windows = new GameWindows();
         AddChild(_windows);
@@ -119,6 +126,7 @@ public partial class GameController : Node2D
             if (Input.IsActionJustPressed("toggle_craft")) _windows.ToggleCraft();
             if (Input.IsActionJustPressed("toggle_vehicle")) _client.SendVehicleToggle();
             if (Input.IsActionJustPressed("toggle_map")) _minimap.Toggle();
+            if (Input.IsActionJustPressed("toggle_character")) _windows.ToggleCharacter();
             if (Input.IsActionJustPressed("interact")) TryInteract();
             if (Input.IsActionJustPressed("ui_cancel")) { _windows.CloseAll(); _minimap.Close(); }
         }
@@ -267,6 +275,8 @@ public partial class GameController : Node2D
         {
             _hud.UpdateLocal(me);
             _camera.Position = WorldRenderer.UnitsToPixels(me.X, me.Y);
+            if (_client.CurrentMapId == 0)
+                _renderer.StreamFrontierAround(SimConstants.TileOf(me.X), SimConstants.TileOf(me.Y));
         }
         if (_client.PlayerState.PartyMemberIds.Count > 0)
             _hud.UpdateParty(_client); // live member HP

@@ -11,6 +11,10 @@ public static class SimConstants
 
     public const int UnitsPerTile = 32;
 
+    /// <summary>Units → tile with floor semantics (correct for the negative
+    /// coordinates of the frontier; UnitsPerTile is a power of two).</summary>
+    public static int TileOf(int units) => units >> 5;
+
     /// <summary>ATB gauge maximum (fixed-point, 0..1000).</summary>
     public const int AtbMax = 1000;
 
@@ -34,12 +38,17 @@ public static class SimConstants
     /// <summary>Ticks per in-game day (10 real minutes) — presentation clock only.</summary>
     public const int TicksPerDay = 600 * TicksPerSecond;
 
-    public const int ProtocolVersion = 5;
+    public const int ProtocolVersion = 6;
+
+    /// <summary>Overworld snapshot interest radius (units): entities beyond
+    /// this distance from a player are not in that player's snapshots.</summary>
+    public const int InterestRadius = 96 * UnitsPerTile;
 
     /// <summary>
     /// Version stamp for all runtime procedural generation (plan D4). Bump on
     /// ANY change to terrain/site/population generator code or tuning — delta
     /// persistence records carry it so player changes survive generator drift.
+    /// v2: style-aware delve spawn density (M7.5 feel pass).
     /// </summary>
-    public const int GeneratorVersion = 1;
+    public const int GeneratorVersion = 2;
 }
