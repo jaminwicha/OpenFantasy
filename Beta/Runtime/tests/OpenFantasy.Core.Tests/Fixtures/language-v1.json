@@ -1,0 +1,263 @@
+{
+  "format": "language-v1",
+  "provenance": "Authored actor-scoped qualification metadata; no species, culture, localization or translation grants",
+  "profiles": [
+    {
+      "name": "actor-a",
+      "actorId": "00000000000000000000000000000065",
+      "revision": "18446744073709551615",
+      "rulesVersion": "341af8449a2ee1965df93aa4453edab1fde4cab5c122b0dc9aafdd0611f5d588",
+      "entries": [
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000001",
+            "registerId": "0000000000000000000000000000000a",
+            "mode": 1
+          },
+          "definitionVersion": "744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1",
+          "band": 3
+        },
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000001",
+            "registerId": "0000000000000000000000000000000a",
+            "mode": 3
+          },
+          "definitionVersion": "a3a99adc66ab8931ee90e73cf010b35ee78d086758a5e395353ed776275669c0",
+          "band": 2
+        },
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000001",
+            "registerId": "0000000000000000000000000000000b",
+            "mode": 1
+          },
+          "definitionVersion": "ceb95da3f947a2987509c211ddabde4126b00897ecf7893aaa6624079fee2043",
+          "band": 1
+        },
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000001",
+            "registerId": "0000000000000000000000000000000b",
+            "mode": 3
+          },
+          "definitionVersion": "72a40a2e06aca3c7e2be3a88271daa02f491ba5094574f97b65c4d7db79d2709",
+          "band": 0
+        }
+      ],
+      "canonicalHex": "4f46430000000001000000060000001e6c616e67756167652e636f6d70726568656e73696f6e2d70726f66696c65000000080000000000000001000000100000000000000000000000000000006500000008ffffffffffffffff00000020341af8449a2ee1965df93aa4453edab1fde4cab5c122b0dc9aafdd0611f5d5880000030e4f46430000000001000000050000001e6c616e67756167652e636f6d70726568656e73696f6e2d656e7472696573000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000001000000100000000000000000000000000000000a00000008000000000000000100000020744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1000000080000000000000003000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000001000000100000000000000000000000000000000a00000008000000000000000300000020a3a99adc66ab8931ee90e73cf010b35ee78d086758a5e395353ed776275669c0000000080000000000000002000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000001000000100000000000000000000000000000000b00000008000000000000000100000020ceb95da3f947a2987509c211ddabde4126b00897ecf7893aaa6624079fee2043000000080000000000000001000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000001000000100000000000000000000000000000000b0000000800000000000000030000002072a40a2e06aca3c7e2be3a88271daa02f491ba5094574f97b65c4d7db79d2709000000080000000000000000",
+      "sha256": "6adbaebafac4389a74d133a4a9b20c241b4b293dd06a5bbdc49a87763639690d"
+    },
+    {
+      "name": "actor-b",
+      "actorId": "00000000000000000000000000000066",
+      "revision": "7",
+      "rulesVersion": "341af8449a2ee1965df93aa4453edab1fde4cab5c122b0dc9aafdd0611f5d588",
+      "entries": [
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000001",
+            "registerId": "0000000000000000000000000000000a",
+            "mode": 1
+          },
+          "definitionVersion": "744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1",
+          "band": 1
+        },
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000001",
+            "registerId": "0000000000000000000000000000000a",
+            "mode": 2
+          },
+          "definitionVersion": "9321a1b0c6492ddb54746cd670c4d6d52a4132eedddee1e695382f539cc7d534",
+          "band": 2
+        },
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000001",
+            "registerId": "0000000000000000000000000000000b",
+            "mode": 1
+          },
+          "definitionVersion": "ceb95da3f947a2987509c211ddabde4126b00897ecf7893aaa6624079fee2043",
+          "band": 3
+        },
+        {
+          "channel": {
+            "languageId": "00000000000000000000000000000002",
+            "registerId": "0000000000000000000000000000000a",
+            "mode": 1
+          },
+          "definitionVersion": "db4ab4f9f2b56128893c8ededc88baa77b038d1b1e7db295422f78d2d3009669",
+          "band": 1
+        }
+      ],
+      "canonicalHex": "4f46430000000001000000060000001e6c616e67756167652e636f6d70726568656e73696f6e2d70726f66696c65000000080000000000000001000000100000000000000000000000000000006600000008000000000000000700000020341af8449a2ee1965df93aa4453edab1fde4cab5c122b0dc9aafdd0611f5d5880000030e4f46430000000001000000050000001e6c616e67756167652e636f6d70726568656e73696f6e2d656e7472696573000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000001000000100000000000000000000000000000000a00000008000000000000000100000020744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1000000080000000000000001000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000001000000100000000000000000000000000000000a000000080000000000000002000000209321a1b0c6492ddb54746cd670c4d6d52a4132eedddee1e695382f539cc7d534000000080000000000000002000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000001000000100000000000000000000000000000000b00000008000000000000000100000020ceb95da3f947a2987509c211ddabde4126b00897ecf7893aaa6624079fee2043000000080000000000000003000000b44f46430000000001000000040000001c6c616e67756167652e636f6d70726568656e73696f6e2d656e747279000000544f4643000000000100000004000000106c616e67756167652e6368616e6e656c0000001000000000000000000000000000000002000000100000000000000000000000000000000a00000008000000000000000100000020db4ab4f9f2b56128893c8ededc88baa77b038d1b1e7db295422f78d2d3009669000000080000000000000001",
+      "sha256": "8d73696aa52a819afa0e771ce8df5fd290ebd5758d79aeaf015543995bdea9e5"
+    },
+    {
+      "name": "unrecorded-actor",
+      "actorId": "00000000000000000000000000000067",
+      "revision": "0",
+      "rulesVersion": "341af8449a2ee1965df93aa4453edab1fde4cab5c122b0dc9aafdd0611f5d588",
+      "entries": [],
+      "canonicalHex": "4f46430000000001000000060000001e6c616e67756167652e636f6d70726568656e73696f6e2d70726f66696c65000000080000000000000001000000100000000000000000000000000000006700000008000000000000000000000020341af8449a2ee1965df93aa4453edab1fde4cab5c122b0dc9aafdd0611f5d5880000002e4f46430000000001000000010000001e6c616e67756167652e636f6d70726568656e73696f6e2d656e7472696573",
+      "sha256": "27bd30264b6c63cb8ef0aa48726c86d3c28ba5413a00eb531926ae049d2f4d2b"
+    }
+  ],
+  "queries": [
+    {
+      "name": "exact-nuanced-spoken-threshold",
+      "profile": "actor-a",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 1
+      },
+      "definitionVersion": "744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1",
+      "minimumBand": 3,
+      "expectedAvailableBand": 3,
+      "expectedHasRecordedEntry": true,
+      "expectedMeetsBandRequirement": true
+    },
+    {
+      "name": "spoken-does-not-upgrade-written",
+      "profile": "actor-a",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 3
+      },
+      "definitionVersion": "a3a99adc66ab8931ee90e73cf010b35ee78d086758a5e395353ed776275669c0",
+      "minimumBand": 3,
+      "expectedAvailableBand": 2,
+      "expectedHasRecordedEntry": true,
+      "expectedMeetsBandRequirement": false
+    },
+    {
+      "name": "spoken-does-not-grant-sign",
+      "profile": "actor-a",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 2
+      },
+      "definitionVersion": "9321a1b0c6492ddb54746cd670c4d6d52a4132eedddee1e695382f539cc7d534",
+      "minimumBand": 1,
+      "expectedAvailableBand": 0,
+      "expectedHasRecordedEntry": false,
+      "expectedMeetsBandRequirement": false
+    },
+    {
+      "name": "common-register-does-not-upgrade-cant",
+      "profile": "actor-a",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000b",
+        "mode": 1
+      },
+      "definitionVersion": "ceb95da3f947a2987509c211ddabde4126b00897ecf7893aaa6624079fee2043",
+      "minimumBand": 2,
+      "expectedAvailableBand": 1,
+      "expectedHasRecordedEntry": true,
+      "expectedMeetsBandRequirement": false
+    },
+    {
+      "name": "recorded-unfamiliar-remains-unfamiliar",
+      "profile": "actor-a",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000b",
+        "mode": 3
+      },
+      "definitionVersion": "72a40a2e06aca3c7e2be3a88271daa02f491ba5094574f97b65c4d7db79d2709",
+      "minimumBand": 1,
+      "expectedAvailableBand": 0,
+      "expectedHasRecordedEntry": true,
+      "expectedMeetsBandRequirement": false
+    },
+    {
+      "name": "related-language-is-not-inherited",
+      "profile": "actor-a",
+      "channel": {
+        "languageId": "00000000000000000000000000000002",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 1
+      },
+      "definitionVersion": "db4ab4f9f2b56128893c8ededc88baa77b038d1b1e7db295422f78d2d3009669",
+      "minimumBand": 1,
+      "expectedAvailableBand": 0,
+      "expectedHasRecordedEntry": false,
+      "expectedMeetsBandRequirement": false
+    },
+    {
+      "name": "other-actor-has-own-spoken-band",
+      "profile": "actor-b",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 1
+      },
+      "definitionVersion": "744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1",
+      "minimumBand": 2,
+      "expectedAvailableBand": 1,
+      "expectedHasRecordedEntry": true,
+      "expectedMeetsBandRequirement": false
+    },
+    {
+      "name": "other-actor-knows-sign",
+      "profile": "actor-b",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 2
+      },
+      "definitionVersion": "9321a1b0c6492ddb54746cd670c4d6d52a4132eedddee1e695382f539cc7d534",
+      "minimumBand": 2,
+      "expectedAvailableBand": 2,
+      "expectedHasRecordedEntry": true,
+      "expectedMeetsBandRequirement": true
+    },
+    {
+      "name": "cant-can-exceed-common-register",
+      "profile": "actor-b",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000b",
+        "mode": 1
+      },
+      "definitionVersion": "ceb95da3f947a2987509c211ddabde4126b00897ecf7893aaa6624079fee2043",
+      "minimumBand": 3,
+      "expectedAvailableBand": 3,
+      "expectedHasRecordedEntry": true,
+      "expectedMeetsBandRequirement": true
+    },
+    {
+      "name": "no-language-prerequisite-is-not-understanding",
+      "profile": "unrecorded-actor",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 1
+      },
+      "definitionVersion": "744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1",
+      "minimumBand": 0,
+      "expectedAvailableBand": 0,
+      "expectedHasRecordedEntry": false,
+      "expectedMeetsBandRequirement": true
+    },
+    {
+      "name": "unrecorded-practical-requirement-fails",
+      "profile": "unrecorded-actor",
+      "channel": {
+        "languageId": "00000000000000000000000000000001",
+        "registerId": "0000000000000000000000000000000a",
+        "mode": 1
+      },
+      "definitionVersion": "744e92a38484ac13c88c1d2108e2a73fc69a782262e79e61eea8804717eb85f1",
+      "minimumBand": 1,
+      "expectedAvailableBand": 0,
+      "expectedHasRecordedEntry": false,
+      "expectedMeetsBandRequirement": false
+    }
+  ]
+}
