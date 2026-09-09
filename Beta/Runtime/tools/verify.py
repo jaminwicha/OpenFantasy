@@ -77,7 +77,8 @@ def main():
                                    ("packages-v1", "package"), ("custody-v1", "custody"),
                                    ("scheduling-v1", "scheduling"), ("history-v1", "history"),
                                    ("custody-invalid-v1", "custody_invalid"), ("exposure-v1", "exposure"),
-                                   ("production-v1", "production"), ("actors-v1", "actor")):
+                                   ("production-v1", "production"), ("actors-v1", "actor"),
+                                   ("observations-v1", "observation"), ("language-v1", "language")):
             vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures" / (fixture + ".json")
             reference = run("independent-python-" + fixture, [sys.executable,
                             vector_file.with_name("generate_" + generator + "_vectors.py")])

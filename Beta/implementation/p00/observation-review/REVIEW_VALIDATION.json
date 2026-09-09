@@ -1,0 +1,463 @@
+{
+  "schema_version": 1,
+  "reviewer": "p00_core",
+  "captured_at_utc": "2026-09-09T23:21:53.422835+00:00",
+  "disposition": "No unresolved concrete blocking observation-contract defect identified after OBS-01 and OBS-02 fixes; no concrete defect identified in the bounded actor comprehension profile/query/encoding inspection. This does not qualify production authority, durability, gameplay or the full language system.",
+  "review_scope": {
+    "semantic": "Observations resource-knowledge projection boundary and Language actor comprehension profile/exact-channel query/encoding; final contracts for both.",
+    "not_claimed": [
+      "full managed-suite independent execution",
+      "native Godot UI acceptance",
+      "authentication or permission acquisition",
+      "durable committed observation insertion",
+      "transport/cache/client revocation handling",
+      "full knowledge archive or NPC cognition",
+      "complete language learning, translation, dialogue, expression or player usability qualification"
+    ],
+    "language_static_checks": [
+      "actor subject and rules-pin consistency",
+      "exact language/register/communication-mode keys with no implicit fallback",
+      "recorded definition pins validated before all band comparisons",
+      "four inclusive bands and explicit unrecorded zero-prerequisite semantics",
+      "invalid values and duplicate channels reject",
+      "defensive copying, read-only state and deterministic complete-key ordering",
+      "finite 256-channel operation with first-excess rejection",
+      "encoding and profile hash bind the declared identities, pins, revisions and bands",
+      "documented separation from perception, expression, authentication, learning and full language-system behavior"
+    ]
+  },
+  "test_execution": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "--configuration",
+      "Debug",
+      "--filter",
+      "FullyQualifiedName~OpenFantasy.Core.Tests.Observations|FullyQualifiedName~OpenFantasy.Core.Tests.Language",
+      "--logger",
+      "trx;LogFileName=observation-language-independent.trx",
+      "--results-directory",
+      "../implementation/p00/observation-review/test-results",
+      "--nologo",
+      "--verbosity",
+      "minimal"
+    ],
+    "working_directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime",
+    "exit_code": 0,
+    "configuration": "Debug",
+    "built_or_restored_by_reviewer": false,
+    "times": {
+      "creation": "2026-09-09T18:19:16.6374540-05:00",
+      "queuing": "2026-09-09T18:19:16.6374540-05:00",
+      "start": "2026-09-09T18:19:14.7946670-05:00",
+      "finish": "2026-09-09T18:19:16.7140170-05:00"
+    },
+    "counters": {
+      "total": "24",
+      "executed": "24",
+      "passed": "24",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "domain_counts": {
+      "Observations": 13,
+      "Language": 11
+    },
+    "results": [
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.CanonicalProfilesMatchIndependentOracleAtInitialAndMaximumRevision",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.DuplicateChannelRejectsEvenWhenBandOrDefinitionPinDiffers",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.EveryBandThresholdHasExplicitInclusiveComparison",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.ExactBandQueriesMatchOracleWithoutLanguageRegisterModeOrActorFallback",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.FiniteProfileLimitRejectsExcessInputWithoutConsumingAnEndlessSequence",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.MissingChannelHasNoLearnedBandButCanMeetAnExplicitZeroPrerequisite",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.ProfileAndResultProtectCopiedStateAndEncodingBuffers",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.ProfileIdentityBindsActorRevisionRulesDefinitionAndBand",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.StableOrderingIncludesEveryKeyDimensionAndCanonicalEntityBytes",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.UnknownModesBandsAndNullInputsReject",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Language.ComprehensionProfileTests.WrongActorRulesAndRecordedDefinitionPinsRejectBeforeComparison",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.BoundsRejectWithoutUnboundedEnumerationOrSilentTruncation",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.EachActorKeepsItsOwnReportsAndKnowledgeWithoutBorrowing",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.EveryAudienceDimensionAndRevokedBindingRejectIdentically",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.ForeignJournalCannotBeProjectedUnderTheCurrentAudience",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.FullReplacementCanClearKnownEntriesAndChangesItsOwnRevision",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.FutureUncommittedForeignAndDuplicateRecordsRejectBeforeProjection",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.HiddenHeadAndCauseChangesCannotChangePublicBytesOrJson",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.IndependentPublicWireVectorsMatch",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.InvalidBandsRevisionsAndReporterCombinationsReject",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.OrderingCopiesAndPublicCollectionsCannotMutateAcceptedKnowledge",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.PresentZeroReporterIdentityIsDistinctFromAbsence",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.PrivateSourcesCannotAliasPublicIdentitiesAcrossRecordsOrAudience",
+        "outcome": "Passed"
+      },
+      {
+        "name": "OpenFantasy.Core.Tests.Observations.ResourceObservationTests.StaleClaimsAndSubjectiveBasisRemainVisibleAsRecorded",
+        "outcome": "Passed"
+      }
+    ],
+    "trx": "Beta/implementation/p00/observation-review/test-results/observation-language-independent.trx"
+  },
+  "toolchain": {
+    "path": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "bytes": 141392,
+    "sha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+    "sdk_pin": "10.0.401",
+    "tested_target_framework": "net8.0"
+  },
+  "findings": [
+    {
+      "id": "OBS-01",
+      "status": "closed",
+      "resolution": "Cross-record and audience public/private entity identity alias rejection with passed regression."
+    },
+    {
+      "id": "OBS-02",
+      "status": "closed_at_contract_boundary",
+      "resolution": "RecordedCommitSequence explicitly records exact observation version; future/zero rejection verified, durable truth remains host obligation."
+    }
+  ],
+  "files": [
+    {
+      "path": "Beta/Runtime/Directory.Build.props",
+      "role": "qualified_build_configuration_or_package_lock",
+      "bytes": 396,
+      "sha256": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680"
+    },
+    {
+      "path": "Beta/Runtime/global.json",
+      "role": "qualified_build_configuration_or_package_lock",
+      "bytes": 105,
+      "sha256": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/CanonicalEncodingV1.cs",
+      "role": "direct_shared_primitive_dependency",
+      "bytes": 2342,
+      "sha256": "1e8871ebbf3aece0316fabdcdbf1432c02240e053fa5b50f7bdf70223f46f4c4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Content/ContentHash.cs",
+      "role": "direct_shared_primitive_dependency",
+      "bytes": 915,
+      "sha256": "279bcb92c2a19dffa74bcb9f1a7f13e709b2a2a7943ccc87e454f6e726d3bc45"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CountedItemDefinition.cs",
+      "role": "direct_shared_primitive_dependency",
+      "bytes": 522,
+      "sha256": "45fdd14ec87f906ba5cb5905652c12ea2f2e43d85a668da79232fbd073e357f6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/EntityId.cs",
+      "role": "direct_shared_primitive_dependency",
+      "bytes": 4821,
+      "sha256": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/ActorComprehensionProfile.cs",
+      "role": "bounded_language_profile_query_encoding_semantic_review",
+      "bytes": 3198,
+      "sha256": "789717e6c637bb790915c1949d0d76fa20446ae6549ae4be152e2d29c48cf130"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/ComprehensionBands.cs",
+      "role": "bounded_language_profile_query_encoding_semantic_review",
+      "bytes": 414,
+      "sha256": "70ea0751f6225d5ec1881c0dfd829e1adefc1f60698c8fdfe295ac18aa39b3f1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/ComprehensionQueryResult.cs",
+      "role": "bounded_language_profile_query_encoding_semantic_review",
+      "bytes": 1106,
+      "sha256": "ca0c9b0ac8a335461942f391b6bc8775735b5ada5b117610f08edd92dc3a520a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/ComprehensionRequirement.cs",
+      "role": "bounded_language_profile_query_encoding_semantic_review",
+      "bytes": 958,
+      "sha256": "d754dfc9db84763943bb726c925fcdad658043632a02308d1e0b334e4ae19900"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageChannelKey.cs",
+      "role": "bounded_language_profile_query_encoding_semantic_review",
+      "bytes": 1114,
+      "sha256": "971c54c1dadbd74665bc8734ebb53163af48a1a6f2c54352514fd77dc839301f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageComprehensionEntry.cs",
+      "role": "bounded_language_profile_query_encoding_semantic_review",
+      "bytes": 823,
+      "sha256": "1109529c20fd6b099ddecd14c475b8e7574e4d021ec7eb5eb8cf17a199514831"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageContractEncodingV1.cs",
+      "role": "bounded_language_profile_query_encoding_semantic_review",
+      "bytes": 1330,
+      "sha256": "9cbb5e0d328854134219073cc25682e3a1edd81d6953eef6b1fd7ab1e3ffffdc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/CommittedResourceObservation.cs",
+      "role": "observation_semantic_review",
+      "bytes": 1401,
+      "sha256": "544f537f0466afe0784fd3ea03967205eeb00489ac28fc0dc6f7ce0e377dfcc2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/ObservationEncodingV1.cs",
+      "role": "observation_semantic_review",
+      "bytes": 2438,
+      "sha256": "eedc56d76ff924885413fa549cf21615953a2585fb8e56c3cd65941c408e060d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/ObservationScope.cs",
+      "role": "observation_semantic_review",
+      "bytes": 1020,
+      "sha256": "d44798c6aee317971f580a3ef6ed4945e79715ea0ed104cc96df3243014ba0f3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/ResourceKnowledgeSnapshot.cs",
+      "role": "observation_semantic_review",
+      "bytes": 3227,
+      "sha256": "8e4276f75f8ecdcd29310b4196289a26ca483fc810841ea669000fe8c7eb298a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/ResourceObservationProjection.cs",
+      "role": "observation_semantic_review",
+      "bytes": 1021,
+      "sha256": "13c07d18331a8338e29e4efa579de13c7163b1181e7fc65532f90bd7585c2ef5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/ResourceObservationProjector.cs",
+      "role": "observation_semantic_review",
+      "bytes": 1259,
+      "sha256": "6e70386412c9f65458f493dfb898d976e0b7cec9f2fa85fb28a1022675552f8d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/ResourceObservationView.cs",
+      "role": "observation_semantic_review",
+      "bytes": 2200,
+      "sha256": "a96d0b7c26ba21019bc56181ecd672277864644069b9880ae71e3a0af54af394"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj",
+      "role": "qualified_build_configuration_or_package_lock",
+      "bytes": 336,
+      "sha256": "470b8bbe4ee9f686e1144d857fa279e6409a3312b4f4fd6b522fc9dd0aa7e96a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/WorldInstant.cs",
+      "role": "direct_shared_primitive_dependency",
+      "bytes": 2447,
+      "sha256": "5c1c642f2095b95f1569a3cf0ea1723873f86997b57e8195d84b1bdace930539"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/packages.lock.json",
+      "role": "qualified_build_configuration_or_package_lock",
+      "bytes": 60,
+      "sha256": "22308ad23ccd417b5d96020fb92e203b85fad8c3788b3feadb2ca403d8ad596c"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_language_vectors.py",
+      "role": "independently_executed_oracle_or_fixture",
+      "bytes": 4302,
+      "sha256": "076b3b2d765a34e8ed7b0a2a38cd23a70bfe107a59149105b78fd4315f29797a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_observation_vectors.py",
+      "role": "independently_executed_oracle_or_fixture",
+      "bytes": 2848,
+      "sha256": "852a028c6df3dc397c5deacbf3e58761e6804bc4840e1eff23779af26ac4f5d3"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/language-v1.json",
+      "role": "independently_executed_oracle_or_fixture",
+      "bytes": 13226,
+      "sha256": "8dfccbf02965e8f495821bdae8c834999b400413be68a59d6d4e6db5869a276a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/observations-v1.json",
+      "role": "independently_executed_oracle_or_fixture",
+      "bytes": 5274,
+      "sha256": "9ba3629d982ed9e94252643f204e1063f41760f86c4205075db296dccad0e277"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Language/ComprehensionProfileTests.cs",
+      "role": "independently_reviewed_and_executed_language_tests_and_loader",
+      "bytes": 11758,
+      "sha256": "4a498854e928af43574925940543629b6f20e797fff663a657208b0b35e88e6e"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Language/LanguageFixture.cs",
+      "role": "independently_reviewed_and_executed_language_tests_and_loader",
+      "bytes": 1666,
+      "sha256": "1b32d8e2005d2b6cd23cc661ac33e7934e69d49c2ea5c5ab292d55aaa54f7cfa"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Observations/ResourceObservationTests.cs",
+      "role": "independently_reviewed_and_executed_observation_tests",
+      "bytes": 13234,
+      "sha256": "50efb9e61bc8af704cbabab5e128082c14104ae720e27dca89c968131bbed5ae"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+      "role": "qualified_build_configuration_or_package_lock",
+      "bytes": 2090,
+      "sha256": "4dfde2442d2c0880a7ecc5f6a8c57c6859de116e0942402fb5fda0ec89089d85"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/packages.lock.json",
+      "role": "qualified_build_configuration_or_package_lock",
+      "bytes": 8556,
+      "sha256": "999c120fe238fce7de88e89cd91fceab407556536b08b82acc4c255d2a8b589a"
+    },
+    {
+      "path": "Beta/implementation/p00/language-contracts/CONTRACT.md",
+      "role": "contract_documentation",
+      "bytes": 9980,
+      "sha256": "5b69c245d1e9b3b996523932d4e1c809ef6db81f299b8443f0a890b08c00505b"
+    },
+    {
+      "path": "Beta/implementation/p00/observation-contracts/CONTRACT.md",
+      "role": "contract_documentation",
+      "bytes": 9813,
+      "sha256": "24e891eb3eaa3e77aa70077fe0ffac19b7aaf10688b6439e59c5f3c7ec6517cf"
+    },
+    {
+      "path": "Beta/implementation/p00/observation-review/CODE_REVIEW.md",
+      "role": "retained_review_or_execution_evidence",
+      "bytes": 9620,
+      "sha256": "5e96de31f9b0b3b571c4756b3ef0bc0bc07d58eea8f8532e61674af1736ab9fd"
+    },
+    {
+      "path": "Beta/implementation/p00/observation-review/DESIGN_RECOMMENDATION.md",
+      "role": "retained_review_or_execution_evidence",
+      "bytes": 5699,
+      "sha256": "ef1ec24eb9f9881595c64eb3bf73e25e41e5bc43397085c7ebe34ff1d091d456"
+    },
+    {
+      "path": "Beta/implementation/p00/observation-review/ORACLE_VALIDATION.json",
+      "role": "retained_review_or_execution_evidence",
+      "bytes": 1920,
+      "sha256": "87f690679af0d65e89e88c8963cf52e26699c07f490b8f9e5e70cd0e691cd510"
+    },
+    {
+      "path": "Beta/implementation/p00/observation-review/TESTED_ASSEMBLIES.json",
+      "role": "retained_review_or_execution_evidence",
+      "bytes": 820,
+      "sha256": "2445281b4d24a562207f02bf95043f52beef8ea33351bf498e0aadcf549ddf89"
+    },
+    {
+      "path": "Beta/implementation/p00/observation-review/test-results/observation-language-independent.trx",
+      "role": "retained_review_or_execution_evidence",
+      "bytes": 37360,
+      "sha256": "24dfdce6826255cc36d97aaf4d4595a6cb7a7cd156912703edb1d6d6ed431196"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll",
+      "bytes": 205312,
+      "sha256": "82f98763a7a07d95120abe8f172bea3a291cac8cda0337ccf8b85d05fc8f7d40",
+      "role": "tested_assembly_hash_captured_immediately_after_independent_run_not_full_assembly_semantic_review",
+      "captured_at_utc": "2026-09-09T23:19:25.791203+00:00"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 166400,
+      "sha256": "647e2b89531611337ef395684e5ee16315c00e021474502e601cad629ad24849",
+      "role": "tested_assembly_hash_captured_immediately_after_independent_run_not_full_assembly_semantic_review",
+      "captured_at_utc": "2026-09-09T23:19:25.791203+00:00"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 166400,
+      "sha256": "647e2b89531611337ef395684e5ee16315c00e021474502e601cad629ad24849",
+      "role": "tested_assembly_hash_captured_immediately_after_independent_run_not_full_assembly_semantic_review",
+      "captured_at_utc": "2026-09-09T23:19:25.791203+00:00"
+    }
+  ],
+  "ownership_correction": {
+    "corrected_at_utc": "2026-09-09T23:24:07.355461+00:00",
+    "reason": "Coordinator canceled the duplicate Language reviewer after p00_core completed the seven-file static inspection, tests, fixture loader, oracle and contract review. Prior separate-critic ownership wording was stale.",
+    "runtime_edits": false,
+    "rebuilds_or_new_test_runs": false,
+    "original_24_case_execution_preserved": true
+  }
+}

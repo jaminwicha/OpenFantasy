@@ -1,0 +1,43 @@
+{
+  "captured_at_utc": "2026-09-09T23:20:08.285501+00:00",
+  "python_version": "3.14.5 (main, May 10 2026, 10:21:34) [Clang 17.0.0 (clang-1700.6.4.2)]",
+  "results": [
+    {
+      "scope": "observation semantic review and independent execution",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_observation_vectors.py"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "fixture": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/observations-v1.json",
+      "exact_stdout_match": true,
+      "bytes": 5274,
+      "sha256": "9ba3629d982ed9e94252643f204e1063f41760f86c4205075db296dccad0e277",
+      "script_sha256": "852a028c6df3dc397c5deacbf3e58761e6804bc4840e1eff23779af26ac4f5d3",
+      "top_level_collections": {
+        "cases": 3
+      }
+    },
+    {
+      "scope": "bounded language profile/query static review and independent execution by p00_core",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_language_vectors.py"
+      ],
+      "exit_code": 0,
+      "stderr": "",
+      "fixture": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/language-v1.json",
+      "exact_stdout_match": true,
+      "bytes": 13226,
+      "sha256": "8dfccbf02965e8f495821bdae8c834999b400413be68a59d6d4e6db5869a276a",
+      "script_sha256": "076b3b2d765a34e8ed7b0a2a38cd23a70bfe107a59149105b78fd4315f29797a",
+      "top_level_collections": {
+        "profiles": 3,
+        "queries": 11
+      }
+    }
+  ],
+  "ownership_note": "Language review ownership corrected to the static inspection already performed by p00_core; original oracle execution evidence is unchanged.",
+  "ownership_corrected_at_utc": "2026-09-09T23:24:07.355461+00:00"
+}

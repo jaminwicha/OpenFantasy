@@ -1,0 +1,30 @@
+{
+  "checkedUtc": "2026-09-09T23:23:55.642213+00:00",
+  "status": "passed",
+  "runtimeInputsCompared": 223,
+  "runtimeInputsMatchDebugAndReleaseEvidence": true,
+  "stagedAlphaSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "stagedAlphaPaths": [
+    "README.md",
+    "docs/MILESTONE_8.md",
+    "src/Client/GameController.cs",
+    "src/Client/GameWindows.cs",
+    "src/Net/Protocol.cs",
+    "src/Net/ServerNode.cs",
+    "src/Sim/FrontierGen.cs",
+    "src/Sim/SelfTest.cs",
+    "src/Sim/SettlementGen.cs",
+    "src/Sim/SimConstants.cs",
+    "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+    "src/Sim/SiteGen/SiteFloor.cs",
+    "src/Sim/SiteGen/SiteGenerator.cs",
+    "src/Sim/SiteGen/SiteRecipe.cs",
+    "src/Sim/SiteGen/SiteValidator.cs",
+    "src/Sim/SiteGen/TempleEmbedder.cs",
+    "src/Sim/World.Instances.cs",
+    "src/Sim/World.Settlements.cs",
+    "src/Sim/World.cs"
+  ],
+  "sourcePacketAndWrapperChangedSincePriorIncrement": false,
+  "sourcePacketValidationScope": "Integrated host checks validate retained 52-file packet; a fresh complete original archive audit is not claimed."
+}

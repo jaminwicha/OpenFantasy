@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-09-09T23:19:25.791203+00:00",
+  "reason": "Capture immediately after independent no-build 24-case run before parent rebuild.",
+  "files": [
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll",
+      "bytes": 205312,
+      "sha256": "82f98763a7a07d95120abe8f172bea3a291cac8cda0337ccf8b85d05fc8f7d40"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 166400,
+      "sha256": "647e2b89531611337ef395684e5ee16315c00e021474502e601cad629ad24849"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 166400,
+      "sha256": "647e2b89531611337ef395684e5ee16315c00e021474502e601cad629ad24849"
+    }
+  ]
+}
