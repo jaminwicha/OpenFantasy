@@ -25,7 +25,7 @@ To open the development harness, build Debug and open `client/project.godot` wit
 
 ## Project boundaries
 
-- `src/OpenFantasy.Core`: portable deterministic primitives, immutable command/receipt contracts and pinned package metadata, with no engine or third-party package dependency. See its [byte and arithmetic contract](src/OpenFantasy.Core/CONTRACTS.md).
+- `src/OpenFantasy.Core`: portable deterministic primitives, immutable command/receipt contracts, pinned package metadata, finite counted custody candidates, calendar queue snapshots and exact historical request boundaries, with no engine or third-party package dependency. See its [byte and arithmetic contract](src/OpenFantasy.Core/CONTRACTS.md).
 - `src/OpenFantasy.Host`: the retained headless entry point. `--inspect-foundation` exercises the same core. `--inspect-command <command.bin>` validates a bounded canonical envelope, and `--inspect-package <manifest.json> <payload-file>` validates metadata and payload bytes. These diagnostics issue no gameplay receipts; durable authority and networking follow in subsequent increments.
 - `client`: the independent Godot project and C# presentation adapter. Godot owns rendering, not authoritative outcomes.
 - `tests/OpenFantasy.Core.Tests`: independently generated reference vectors and behavior/edge tests.

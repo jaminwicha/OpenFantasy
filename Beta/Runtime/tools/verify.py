@@ -74,7 +74,8 @@ def main():
         report["inputSha256"] = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
                                   for p in sources}
         for fixture, generator in (("reference-v1", "reference"), ("commands-v1", "command"),
-                                   ("packages-v1", "package")):
+                                   ("packages-v1", "package"), ("custody-v1", "custody"),
+                                   ("scheduling-v1", "scheduling"), ("history-v1", "history")):
             vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures" / (fixture + ".json")
             reference = run("independent-python-" + fixture, [sys.executable,
                             vector_file.with_name("generate_" + generator + "_vectors.py")])
