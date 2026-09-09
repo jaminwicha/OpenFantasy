@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "verificationKind": "executed_source_to_target_field_mapping_checks_not_import_or_gameplay",
+  "executedAtUtc": "2026-09-09T23:20:20.832857+00:00",
+  "python": "3.14.5",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "Beta/implementation/p00/first-loop-mapping/validate_mapping.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exitCode": 0,
+      "stdout": "{\n  \"status\": \"verified_field_mapping_not_gameplay\",\n  \"counts\": {\n    \"primaryRecords\": 6,\n    \"gatheringContextRecords\": 2,\n    \"codeContextRecords\": 2,\n    \"fieldRows\": 74,\n    \"dependencyEdges\": 28,\n    \"dispositions\": {\n      \"mapped_to_existing_contract\": 7,\n      \"pending_explicit_transform_or_gameplay\": 48,\n      \"retained_source_only\": 19\n    }\n  },\n  \"targetReferences\": 12,\n  \"sourceEvidenceRecords\": 7,\n  \"faithfulMissingDefaults\": 4\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "Beta/implementation/p00/first-loop-mapping/build_mapping.py",
+        "--check"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exitCode": 0,
+      "stdout": "Mapping rebuild matches retained bytes.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "Beta/implementation/p00/first-loop-mapping/test_mapping.py"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "test_builder_check_is_read_only (__main__.MappingChecks.test_builder_check_is_read_only) ... ok\ntest_builder_stdout_exactly_reproduces_frozen_artifact (__main__.MappingChecks.test_builder_stdout_exactly_reproduces_frozen_artifact) ... ok\ntest_explicit_output_reproduces_only_requested_temp_file (__main__.MappingChecks.test_explicit_output_reproduces_only_requested_temp_file) ... ok\ntest_reject_calibration_namespace_substitution (__main__.MappingChecks.test_reject_calibration_namespace_substitution) ... ok\ntest_reject_changed_code_with_forged_hash (__main__.MappingChecks.test_reject_changed_code_with_forged_hash) ... ok\ntest_reject_changed_dependency_endpoint (__main__.MappingChecks.test_reject_changed_dependency_endpoint) ... ok\ntest_reject_changed_dependency_support_hash (__main__.MappingChecks.test_reject_changed_dependency_support_hash) ... ok\ntest_reject_changed_field_and_forged_hash (__main__.MappingChecks.test_reject_changed_field_and_forged_hash) ... ok\ntest_reject_changed_field_hash (__main__.MappingChecks.test_reject_changed_field_hash) ... ok\ntest_reject_changed_original_identity (__main__.MappingChecks.test_reject_changed_original_identity) ... ok\ntest_reject_changed_original_payload (__main__.MappingChecks.test_reject_changed_original_payload) ... ok\ntest_reject_claims_admitted_record (__main__.MappingChecks.test_reject_claims_admitted_record) ... ok\ntest_reject_claims_auto_admission (__main__.MappingChecks.test_reject_claims_auto_admission) ... ok\ntest_reject_claims_full_scope (__main__.MappingChecks.test_reject_claims_full_scope) ... ok\ntest_reject_claims_playable_migration (__main__.MappingChecks.test_reject_claims_playable_migration) ... ok\ntest_reject_default_overrides_source_field (__main__.MappingChecks.test_reject_default_overrides_source_field) ... ok\ntest_reject_duplicate_dependency_edge (__main__.MappingChecks.test_reject_duplicate_dependency_edge) ... ok\ntest_reject_duplicate_field (__main__.MappingChecks.test_reject_duplicate_field) ... ok\ntest_reject_duplicate_record (__main__.MappingChecks.test_reject_duplicate_record) ... ok\ntest_reject_duplicate_target_reference (__main__.MappingChecks.test_reject_duplicate_target_reference) ... ok\ntest_reject_empty_evidence_marker (__main__.MappingChecks.test_reject_empty_evidence_marker) ... ok\ntest_reject_fabricated_gameplay_conversion (__main__.MappingChecks.test_reject_fabricated_gameplay_conversion) ... ok\ntest_reject_forged_proof_count (__main__.MappingChecks.test_reject_forged_proof_count) ... ok\ntest_reject_invented_default_station (__main__.MappingChecks.test_reject_invented_default_station) ... ok\ntest_reject_missing_code_archetype (__main__.MappingChecks.test_reject_missing_code_archetype) ... ok\ntest_reject_missing_container (__main__.MappingChecks.test_reject_missing_container) ... ok\ntest_reject_missing_dependency_edge (__main__.MappingChecks.test_reject_missing_dependency_edge) ... ok\ntest_reject_missing_dependency_support (__main__.MappingChecks.test_reject_missing_dependency_support) ... ok\ntest_reject_missing_evidence_markers (__main__.MappingChecks.test_reject_missing_evidence_markers) ... ok\ntest_reject_missing_field_dependency (__main__.MappingChecks.test_reject_missing_field_dependency) ... ok\ntest_reject_missing_meaning (__main__.MappingChecks.test_reject_missing_meaning) ... ok\ntest_reject_missing_nested_leaf (__main__.MappingChecks.test_reject_missing_nested_leaf) ... ok\ntest_reject_missing_primary_scope (__main__.MappingChecks.test_reject_missing_primary_scope) ... ok\ntest_reject_missing_record (__main__.MappingChecks.test_reject_missing_record) ... ok\ntest_reject_missing_semantic_evidence (__main__.MappingChecks.test_reject_missing_semantic_evidence) ... ok\ntest_reject_missing_source_default (__main__.MappingChecks.test_reject_missing_source_default) ... ok\ntest_reject_missing_source_fingerprint (__main__.MappingChecks.test_reject_missing_source_fingerprint) ... ok\ntest_reject_pending_field_with_conversion (__main__.MappingChecks.test_reject_pending_field_with_conversion) ... ok\ntest_reject_real_but_wrong_target_declaration (__main__.MappingChecks.test_reject_real_but_wrong_target_declaration) ... ok\ntest_reject_schema_upgrade (__main__.MappingChecks.test_reject_schema_upgrade) ... ok\ntest_reject_source_hash_laundered_as_version (__main__.MappingChecks.test_reject_source_hash_laundered_as_version) ... ok\ntest_reject_unapproved_identity (__main__.MappingChecks.test_reject_unapproved_identity) ... ok\ntest_reject_unknown_registry_target (__main__.MappingChecks.test_reject_unknown_registry_target) ... ok\ntest_reject_unknown_target_reference (__main__.MappingChecks.test_reject_unknown_target_reference) ... ok\ntest_reject_unrelated_real_evidence (__main__.MappingChecks.test_reject_unrelated_real_evidence) ... ok\ntest_reject_wrong_default_witness (__main__.MappingChecks.test_reject_wrong_default_witness) ... ok\ntest_reject_wrong_faithful_key (__main__.MappingChecks.test_reject_wrong_faithful_key) ... ok\ntest_reject_wrong_field_pointer (__main__.MappingChecks.test_reject_wrong_field_pointer) ... ok\ntest_reject_wrong_policy_contract (__main__.MappingChecks.test_reject_wrong_policy_contract) ... ok\ntest_reject_wrong_recipe_count (__main__.MappingChecks.test_reject_wrong_recipe_count) ... ok\ntest_reject_wrong_recipe_role (__main__.MappingChecks.test_reject_wrong_recipe_role) ... ok\ntest_reject_wrong_source_fingerprint (__main__.MappingChecks.test_reject_wrong_source_fingerprint) ... ok\ntest_reject_wrong_target_fingerprint (__main__.MappingChecks.test_reject_wrong_target_fingerprint) ... ok\ntest_reject_wrong_units_omission (__main__.MappingChecks.test_reject_wrong_units_omission) ... ok\ntest_retained_mapping_resolves_real_source_and_targets (__main__.MappingChecks.test_retained_mapping_resolves_real_source_and_targets) ... ok\ntest_validation_does_not_mutate_artifact (__main__.MappingChecks.test_validation_does_not_mutate_artifact) ... ok\n\n----------------------------------------------------------------------\nRan 56 tests in 0.431s\n\nOK\n"
+    }
+  ],
+  "proof": {
+    "testsPassed": 56,
+    "negativeMutationCases": 51,
+    "positiveCases": 5,
+    "status": "verified_field_mapping_not_gameplay",
+    "counts": {
+      "primaryRecords": 6,
+      "gatheringContextRecords": 2,
+      "codeContextRecords": 2,
+      "fieldRows": 74,
+      "dependencyEdges": 28,
+      "dispositions": {
+        "mapped_to_existing_contract": 7,
+        "pending_explicit_transform_or_gameplay": 48,
+        "retained_source_only": 19
+      }
+    },
+    "targetReferences": 12,
+    "sourceEvidenceRecords": 7,
+    "faithfulMissingDefaults": 4
+  },
+  "inputs": [
+    {
+      "path": "Beta/implementation/p00/first-loop-mapping/.gitignore",
+      "bytes": 13,
+      "sha256": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b"
+    },
+    {
+      "path": "Beta/implementation/p00/first-loop-mapping/build_mapping.py",
+      "bytes": 18148,
+      "sha256": "5b87eaf6738f7d9c9bfee6e500bcfe626feed107ea0cb28db81ceb0b89451981"
+    },
+    {
+      "path": "Beta/implementation/p00/first-loop-mapping/validate_mapping.py",
+      "bytes": 15586,
+      "sha256": "4bfab8bd2828a913185dc44ec0a408112c0701d02f4f32cf82dd2d92f5f906dd"
+    },
+    {
+      "path": "Beta/implementation/p00/first-loop-mapping/test_mapping.py",
+      "bytes": 8943,
+      "sha256": "163df09a2c52b276389efc9972db4478dd0c82edf748a15136ab5be944e10f6a"
+    },
+    {
+      "path": "Beta/implementation/p00/first-loop-mapping/mapping-v1.json",
+      "bytes": 94529,
+      "sha256": "3ea01d2caf7c9061de7c90e5ed4780a9de80681da48c9efb6042d3a43962505a"
+    },
+    {
+      "path": "Beta/implementation/p00/first-loop-mapping/README.md",
+      "bytes": 12979,
+      "sha256": "745494a5a2fc600692dd54a5d6ee78a84a831574ae477ae358becb6e2166a3e3"
+    }
+  ],
+  "dependencyFingerprints": "mapping-v1.json pins actual source packet, selected source payloads/fields, retained support files and 12 runtime declaration references. The validator checked each against bytes at execution.",
+  "limits": [
+    "Six primary JSON records, two gathering context JSON records and two exact code archetypes are accounted; this is not full migration.",
+    "Seven faithful field-shape mappings do not admit any complete runtime definition. All accepted identities/versions remain unset.",
+    "No importer, gathering, quest, craft, consumption, native art, seeded playability, balance, provenance execution or performance proof.",
+    "No runtime edits, .NET build or Git mutation by this artifact task."
+  ]
+}

@@ -1,0 +1,2230 @@
+{
+  "schemaVersion": 1,
+  "status": "field_mapping_review_not_playable_migration",
+  "scope": {
+    "primaryRecords": [
+      "openfantasy.aldermere:items/berries",
+      "openfantasy.aldermere:items/rations",
+      "openfantasy.aldermere:items/wood",
+      "openfantasy.aldermere:npcs/farmer_wren",
+      "openfantasy.aldermere:quests/wren_orchard",
+      "openfantasy.aldermere:recipes/craft_rations"
+    ],
+    "gatheringContextRecords": [
+      "openfantasy.aldermere:nodes/101",
+      "openfantasy.aldermere:nodes/103"
+    ],
+    "codeContextKeys": [
+      "openfantasy.aldermere:node_archetypes/berry",
+      "openfantasy.aldermere:node_archetypes/oak"
+    ],
+    "notFullMigration": true
+  },
+  "sourcePacket": {
+    "records.json": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b",
+    "references.json": "a00865fabaf0637b929d5b8ab3ff2f5a66c0f258e4068a4d7ef0dee7a8396076",
+    "closure-manifest.json": "d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582",
+    "source-key-map.json": "fa56980272b65895595b4989b5d55a5529441347f239d28ad3dc43919d8f854a"
+  },
+  "knownTargets": {
+    "package-namespace": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Content/PackageId.cs",
+      "sha256": "1292adfcc7493455a31b133b108f74d19389a577d0dd0b4df35f84738e406421",
+      "marker": "public sealed record PackageId",
+      "meaning": "Existing package namespace value; not a gameplay definition compiler."
+    },
+    "content-hash": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Content/ContentHash.cs",
+      "sha256": "279bcb92c2a19dffa74bcb9f1a7f13e709b2a2a7943ccc87e454f6e726d3bc45",
+      "marker": "public sealed record ContentHash",
+      "meaning": "Exact content digest; not an imported runtime version or source interval."
+    },
+    "entity-id": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/EntityId.cs",
+      "sha256": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c",
+      "marker": "public readonly record struct EntityId",
+      "meaning": "Canonical identity representation; allocation/collision registry for imported definitions is pending."
+    },
+    "material-key": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialDefinition.cs",
+      "sha256": "ae5e62794834506c243f5e11893d0f93347827381ae8ea4d33d9c038c56de705",
+      "marker": "public string Key { get; }",
+      "meaning": "Existing local material key field; physical calibration and accepted identity/version still required."
+    },
+    "recipe-key": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialRecipeDefinition.cs",
+      "sha256": "47665e2842ddd388365bba7ec33d48a48b98c81e0d7cd9a3c355657339dd5331",
+      "marker": "public string Key { get; }",
+      "meaning": "Existing local recipe key field; key preservation alone does not admit the recipe."
+    },
+    "recipe-count": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/RecipeTerm.cs",
+      "sha256": "d3bf4717a3c639da0f726ed1017c402c4de86fb7c33b94a76f8120b286d286be",
+      "marker": "public ulong Count { get; }",
+      "meaning": "Positive counted recipe amount; exact positive source integers fit without tuning."
+    },
+    "recipe-role": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/RecipeTerm.cs",
+      "sha256": "d3bf4717a3c639da0f726ed1017c402c4de86fb7c33b94a76f8120b286d286be",
+      "marker": "public enum RecipeMaterialRole",
+      "meaning": "Input/Output role vocabulary. No original waste role is fabricated."
+    },
+    "material-pin": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CountedItemDefinition.cs",
+      "sha256": "45fdd14ec87f906ba5cb5905652c12ea2f2e43d85a668da79232fbd073e357f6",
+      "marker": "public sealed record CountedItemDefinition",
+      "meaning": "Needs exact accepted definition ID/version; no source ID minting by a string rename."
+    },
+    "body-definition": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyDefinition.cs",
+      "sha256": "878dc032f0ef6228a421a3a72290c4590466ee44fcde66fa0eec6199d0188423",
+      "marker": "public sealed class BodyDefinition",
+      "meaning": "Finite anatomy schema exists; Wren is not assigned authored qualification dimensions or anatomy by this map."
+    },
+    "form-binding": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/ActorFormBinding.cs",
+      "sha256": "f7c27d278f63a6bc40f92e1ec58e2bd4882cee1be3e118518a47191eb9544670",
+      "marker": "public sealed record ActorFormBinding",
+      "meaning": "Reference shape exists; this map grants no live actor/form identity or control."
+    },
+    "calendar-coordinate": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/CalendarClockCoordinate.cs",
+      "sha256": "e4a720723256cc911f4dcb26c57db4f4bd952bacd0c0280bfdfd3865d9c4eaae",
+      "marker": "public sealed record CalendarClockCoordinate",
+      "meaning": "Exact scoped calendar only; original respawn ticks require an explicit exposure/calendar policy."
+    },
+    "world-address": {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryAddress.cs",
+      "sha256": "f85eb1c573e245a7f7741bc3998a84ba5479a55f545a5a19579d77360e54c56f",
+      "marker": "public readonly record struct HistoryAddress",
+      "meaning": "Exact realm/branch/X/Y/Z address representation; old tile geometry still needs a reviewed embedding."
+    }
+  },
+  "targetPolicy": {
+    "namespace": "openfantasy.aldermere",
+    "namespaceContract": "package-namespace",
+    "sourceHashContract": "content-hash",
+    "automaticRuntimeAdmission": false,
+    "calibrationPolicy": "openfantasy.calibration and authored body-family examples are qualification data, never substituted automatically for source definitions, HP, item effects, sizes or balance."
+  },
+  "records": [
+    {
+      "sourceKey": "openfantasy.aldermere:items/berries",
+      "scope": "primary",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/15",
+        "inventoryId": "data/items.json#/items/15",
+        "payloadSha256": "a7b53e8648a12bb156269fe955ea868aeab9881ba75fb4b79bba057358a93214"
+      },
+      "sourcePayload": {
+        "id": "berries",
+        "name": "Berries",
+        "kind": "Material",
+        "price": 5
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:items/berries",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/items/15/id",
+          "sourceValue": "berries",
+          "valueSha256": "815b96aa0dcb955c15a116bd649ba0fc66974390a790fb7262c6af5f46760482",
+          "disposition": "mapped_to_existing_contract",
+          "units": "opaque stable key",
+          "meaning": "Faithful local key spelling; separate stable source key stays in namespace openfantasy.aldermere.",
+          "targetReferences": [
+            "material-key"
+          ],
+          "faithfulFieldTransform": {
+            "operation": "copy_key",
+            "value": "berries"
+          },
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/name",
+          "sourcePointer": "/items/15/name",
+          "sourceValue": "Berries",
+          "valueSha256": "342a1c9a7b3e8a6bb2081b95d05f26b7ff4612886e9c5573aa03e45c5ccb4e70",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/kind",
+          "sourcePointer": "/items/15/kind",
+          "sourceValue": "Material",
+          "valueSha256": "964b86ae1474ff98b2c53956bfd3d6ec764ba339136c82c15808690e4068bf74",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source item-kind enum",
+          "meaning": "Material/Consumable source category; target use/effect rules remain separate from a physical MaterialDefinition.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/price",
+          "sourcePointer": "/items/15/price",
+          "sourceValue": 5,
+          "valueSha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source gil units",
+          "meaning": "Static source shop value; retain historical number without claiming a live quote, tax, bid/ask or market equilibrium.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        }
+      ]
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:items/rations",
+      "scope": "primary",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/16",
+        "inventoryId": "data/items.json#/items/16",
+        "payloadSha256": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030"
+      },
+      "sourcePayload": {
+        "id": "rations",
+        "name": "Rations",
+        "kind": "Consumable",
+        "price": 25,
+        "healHp": 30,
+        "healMp": 5
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:items/rations",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/items/16/id",
+          "sourceValue": "rations",
+          "valueSha256": "1058723a0eda996e476576213b24eb2d5e20f9e64a6fad511bcfb0cd3fda3b52",
+          "disposition": "mapped_to_existing_contract",
+          "units": "opaque stable key",
+          "meaning": "Faithful local key spelling; separate stable source key stays in namespace openfantasy.aldermere.",
+          "targetReferences": [
+            "material-key"
+          ],
+          "faithfulFieldTransform": {
+            "operation": "copy_key",
+            "value": "rations"
+          },
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/name",
+          "sourcePointer": "/items/16/name",
+          "sourceValue": "Rations",
+          "valueSha256": "447374ce1543f9ec01c3a3ca91955dcd12cc9b32dbd30d19a8d7b72517f0c568",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/kind",
+          "sourcePointer": "/items/16/kind",
+          "sourceValue": "Consumable",
+          "valueSha256": "9a13fdd136dff54249f4c09496d81c099e7ecebfa212f223f42400cf7e211be7",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source item-kind enum",
+          "meaning": "Material/Consumable source category; target use/effect rules remain separate from a physical MaterialDefinition.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/price",
+          "sourcePointer": "/items/16/price",
+          "sourceValue": 25,
+          "valueSha256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source gil units",
+          "meaning": "Static source shop value; retain historical number without claiming a live quote, tax, bid/ask or market equilibrium.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/healHp",
+          "sourcePointer": "/items/16/healHp",
+          "sourceValue": 30,
+          "valueSha256": "624b60c58c9d8bfb6ff1886c2fd605d2adeb6ea4da576068201b6c6958ce93f4",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source HP points",
+          "meaning": "Rations restore up to 30 source HP, capped by deficit; target resource pools and legitimate consumption/effect transaction remain explicit.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/healMp",
+          "sourcePointer": "/items/16/healMp",
+          "sourceValue": 5,
+          "valueSha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source MP points",
+          "meaning": "Rations restore up to 5 source MP, capped by deficit; do not map to work units or an unconditional rest reset.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        }
+      ]
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:items/wood",
+      "scope": "primary",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/12",
+        "inventoryId": "data/items.json#/items/12",
+        "payloadSha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d"
+      },
+      "sourcePayload": {
+        "id": "wood",
+        "name": "Wood",
+        "kind": "Material",
+        "price": 6
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:items/wood",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/items/12/id",
+          "sourceValue": "wood",
+          "valueSha256": "0f1b2711698266f3294ff32ddff91dc623ab8071d115ad3ad72f867c2ce9dea8",
+          "disposition": "mapped_to_existing_contract",
+          "units": "opaque stable key",
+          "meaning": "Faithful local key spelling; separate stable source key stays in namespace openfantasy.aldermere.",
+          "targetReferences": [
+            "material-key"
+          ],
+          "faithfulFieldTransform": {
+            "operation": "copy_key",
+            "value": "wood"
+          },
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/name",
+          "sourcePointer": "/items/12/name",
+          "sourceValue": "Wood",
+          "valueSha256": "386d0b69b6beb1bd536bd33baedb28158dd9d441a358ee44a7983cf17e31b363",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/kind",
+          "sourcePointer": "/items/12/kind",
+          "sourceValue": "Material",
+          "valueSha256": "964b86ae1474ff98b2c53956bfd3d6ec764ba339136c82c15808690e4068bf74",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source item-kind enum",
+          "meaning": "Material/Consumable source category; target use/effect rules remain separate from a physical MaterialDefinition.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/price",
+          "sourcePointer": "/items/12/price",
+          "sourceValue": 6,
+          "valueSha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source gil units",
+          "meaning": "Static source shop value; retain historical number without claiming a live quote, tax, bid/ask or market equilibrium.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        }
+      ]
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:nodes/101",
+      "scope": "gathering_context",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/nodes/0",
+        "inventoryId": "data/world.json#/nodes/0",
+        "payloadSha256": "5809ad8e6db1857055cccf18ed11a03eebe6c81ed37b6e2d017b3b15f56d04d1"
+      },
+      "sourcePayload": {
+        "id": 101,
+        "type": "oak",
+        "region": {
+          "x": 95,
+          "y": 315,
+          "w": 60,
+          "h": 60
+        },
+        "count": 12,
+        "respawnTicks": 900
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:nodes/101",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/nodes/0/id",
+          "sourceValue": 101,
+          "valueSha256": "16dc368a89b428b2485484313ba67a3912ca03f2b2b42429174a4f8b3dc84e44",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "opaque source identity",
+          "meaning": "Retain source definition key; allocate canonical definition/live identities through reviewed compiler/registry policy.",
+          "targetReferences": [
+            "entity-id"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/type",
+          "sourcePointer": "/nodes/0/type",
+          "sourceValue": "oak",
+          "valueSha256": "76bee4b5d901258b75379ea63476c3b6a7b70c297c31ea2d730d76615c827e7e",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "code archetype key",
+          "meaning": "Resolve exact preserved oak/berry code archetype, its required tool, source HP and per-swing yield; not a free new resource source ID.",
+          "targetReferences": [
+            "material-pin"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:nodes/101",
+              "field": "/type",
+              "kind": "code_definition",
+              "to": "openfantasy.aldermere:node_archetypes/oak"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/region",
+          "sourcePointer": "/nodes/0/region",
+          "sourceValue": {
+            "x": 95,
+            "y": 315,
+            "w": 60,
+            "h": 60
+          },
+          "valueSha256": "5e3395a821b262a7a7a499460cd867234c96882ac0f476cc7ce5fdd7b8567d13",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/x",
+          "sourcePointer": "/nodes/0/region/x",
+          "sourceValue": 95,
+          "valueSha256": "ad48ff99415b2f007dc35b7eb553fd1eb35ebfa2f2f308acd9488eeb86f71fa8",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/y",
+          "sourcePointer": "/nodes/0/region/y",
+          "sourceValue": 315,
+          "valueSha256": "377adeb4cd4096adc7ca64b533938cffc6294a9b3534f883b2336a26252cda9a",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/w",
+          "sourcePointer": "/nodes/0/region/w",
+          "sourceValue": 60,
+          "valueSha256": "39fa9ec190eee7b6f4dff1100d6343e10918d044c75eac8f9e9a2596173f80c9",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/h",
+          "sourcePointer": "/nodes/0/region/h",
+          "sourceValue": 60,
+          "valueSha256": "39fa9ec190eee7b6f4dff1100d6343e10918d044c75eac8f9e9a2596173f80c9",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/count",
+          "sourcePointer": "/nodes/0/count",
+          "sourceValue": 12,
+          "valueSha256": "6b51d431df5d7f141cbececcf79edf3dd861c3b4069f0b11661a3eefacbba918",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "initial spawn attempts",
+          "meaning": "Source attempts to spawn this many nodes; each spawn tries at most32 candidates and can fail. It is not guaranteed source stock or counted export allowance.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/respawnTicks",
+          "sourcePointer": "/nodes/0/respawnTicks",
+          "sourceValue": 900,
+          "valueSha256": "bdc5d8a48c23897906b09a9a3680bd2e9c8b3121edbda36f949800f0959c8d55",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source scheduler ticks",
+          "meaning": "Source ticks run at20/s:900=45s or700=35s after depletion. Target ecology/growth, exposure/Wait and renewable production-cycle claims require explicit semantics.",
+          "targetReferences": [
+            "calendar-coordinate"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        }
+      ]
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:nodes/103",
+      "scope": "gathering_context",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/nodes/2",
+        "inventoryId": "data/world.json#/nodes/2",
+        "payloadSha256": "f60ccc94c9a2a43e8a21c145efe56689d60ef8894dc422b6b6fbe335c11b6149"
+      },
+      "sourcePayload": {
+        "id": 103,
+        "type": "berry",
+        "region": {
+          "x": 100,
+          "y": 330,
+          "w": 50,
+          "h": 50
+        },
+        "count": 8,
+        "respawnTicks": 700
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:nodes/103",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/nodes/2/id",
+          "sourceValue": 103,
+          "valueSha256": "454f63ac30c8322997ef025edff6abd23e0dbe7b8a3d5126a894e4a168c1b59b",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "opaque source identity",
+          "meaning": "Retain source definition key; allocate canonical definition/live identities through reviewed compiler/registry policy.",
+          "targetReferences": [
+            "entity-id"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/type",
+          "sourcePointer": "/nodes/2/type",
+          "sourceValue": "berry",
+          "valueSha256": "c3da82cc8b549a6050ff166ebe92ed8eb4977601d36b92de5349663239462fa4",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "code archetype key",
+          "meaning": "Resolve exact preserved oak/berry code archetype, its required tool, source HP and per-swing yield; not a free new resource source ID.",
+          "targetReferences": [
+            "material-pin"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:nodes/103",
+              "field": "/type",
+              "kind": "code_definition",
+              "to": "openfantasy.aldermere:node_archetypes/berry"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/region",
+          "sourcePointer": "/nodes/2/region",
+          "sourceValue": {
+            "x": 100,
+            "y": 330,
+            "w": 50,
+            "h": 50
+          },
+          "valueSha256": "8c676dd56520e91d553338d2128c20e0303984258f19216e1a45a2f77d838669",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/x",
+          "sourcePointer": "/nodes/2/region/x",
+          "sourceValue": 100,
+          "valueSha256": "ad57366865126e55649ecb23ae1d48887544976efea46a48eb5d85a6eeb4d306",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/y",
+          "sourcePointer": "/nodes/2/region/y",
+          "sourceValue": 330,
+          "valueSha256": "5426d2ca50f244fb43fe9eafc82da08f33f3b4f8d9140802bd0102e780b629d6",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/w",
+          "sourcePointer": "/nodes/2/region/w",
+          "sourceValue": 50,
+          "valueSha256": "1a6562590ef19d1045d06c4055742d38288e9e6dcd71ccde5cee80f1d5a774eb",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/region/h",
+          "sourcePointer": "/nodes/2/region/h",
+          "sourceValue": 50,
+          "valueSha256": "1a6562590ef19d1045d06c4055742d38288e9e6dcd71ccde5cee80f1d5a774eb",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source spawn-region rectangle is in tiles; requires real target geography/occupancy, stable generation address and scope before placement.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/count",
+          "sourcePointer": "/nodes/2/count",
+          "sourceValue": 8,
+          "valueSha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "initial spawn attempts",
+          "meaning": "Source attempts to spawn this many nodes; each spawn tries at most32 candidates and can fail. It is not guaranteed source stock or counted export allowance.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/respawnTicks",
+          "sourcePointer": "/nodes/2/respawnTicks",
+          "sourceValue": 700,
+          "valueSha256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source scheduler ticks",
+          "meaning": "Source ticks run at20/s:900=45s or700=35s after depletion. Target ecology/growth, exposure/Wait and renewable production-cycle claims require explicit semantics.",
+          "targetReferences": [
+            "calendar-coordinate"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        }
+      ]
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:npcs/farmer_wren",
+      "scope": "primary",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/116",
+        "inventoryId": "data/npcs.json#/npcs/116",
+        "payloadSha256": "f0374a9cd788d14de3c45233cf31c6b67904ed209a6a5f8d1a0b8de547dd1f30"
+      },
+      "sourcePayload": {
+        "id": "farmer_wren",
+        "name": "Wren",
+        "tileX": 103,
+        "tileY": 322,
+        "wander": 2,
+        "appearance": {
+          "race": 0,
+          "skin": 5,
+          "hairStyle": 5,
+          "hairColor": 13,
+          "outfit": 8,
+          "outfitA": 10,
+          "outfitB": 10,
+          "acc": 3
+        },
+        "dialog": "Just me, the rows, and the crows. Suits me.",
+        "dialogs": [
+          "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+          "Rain when we need sun, sun when we need rain. Farming!"
+        ],
+        "quests": [
+          "wren_orchard"
+        ],
+        "sprite": ""
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:npcs/farmer_wren",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/npcs/116/id",
+          "sourceValue": "farmer_wren",
+          "valueSha256": "84130fbc83a5f200dedf07983b733d8bdd420c9ad766812f0b7972d1c2d7e9ac",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "opaque source identity",
+          "meaning": "Retain source definition key; allocate canonical definition/live identities through reviewed compiler/registry policy.",
+          "targetReferences": [
+            "entity-id"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/name",
+          "sourcePointer": "/npcs/116/name",
+          "sourceValue": "Wren",
+          "valueSha256": "49bec9d401cd633676f0919ff0bdb29a7f6bcae9b742830f4fdc7175d0a8e598",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/tileX",
+          "sourcePointer": "/npcs/116/tileX",
+          "sourceValue": 103,
+          "valueSha256": "454f63ac30c8322997ef025edff6abd23e0dbe7b8a3d5126a894e4a168c1b59b",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source tile-center placement is tile*32+16 old units. Target needs realm/Z/origin and reviewed source-tile-to-cell embedding; no new coordinates admitted.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/tileY",
+          "sourcePointer": "/npcs/116/tileY",
+          "sourceValue": 322,
+          "valueSha256": "f10d91a7596bf5a6773579ff1306afdc363b0be08602c768907c09261cad3a56",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles",
+          "meaning": "Source tile-center placement is tile*32+16 old units. Target needs realm/Z/origin and reviewed source-tile-to-cell embedding; no new coordinates admitted.",
+          "targetReferences": [
+            "world-address"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/wander",
+          "sourcePointer": "/npcs/116/wander",
+          "sourceValue": 2,
+          "valueSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source tiles of home leash",
+          "meaning": "Source home-leash radius in tiles, not a personality score or teleport range. New cognition, schedule and legal movement need explicit behavior.",
+          "targetReferences": [
+            "calendar-coordinate",
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/appearance",
+          "sourcePointer": "/npcs/116/appearance",
+          "sourceValue": {
+            "race": 0,
+            "skin": 5,
+            "hairStyle": 5,
+            "hairColor": 13,
+            "outfit": 8,
+            "outfitA": 10,
+            "outfitB": 10,
+            "acc": 3
+          },
+          "valueSha256": "a8a91e84801dcc1ed707250038d05dcc92a3077b02f2e27c2f4be30262b7e170",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/race",
+          "sourcePointer": "/npcs/116/appearance/race",
+          "sourceValue": 0,
+          "valueSha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision. Source races[0] is Human; this does not assign the authored humanoid-candidate body profile.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/skin",
+          "sourcePointer": "/npcs/116/appearance/skin",
+          "sourceValue": 5,
+          "valueSha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/hairStyle",
+          "sourcePointer": "/npcs/116/appearance/hairStyle",
+          "sourceValue": 5,
+          "valueSha256": "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/hairColor",
+          "sourcePointer": "/npcs/116/appearance/hairColor",
+          "sourceValue": 13,
+          "valueSha256": "3fdba35f04dc8c462986c992bcf875546257113072a909c162f7e470e581e278",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/outfit",
+          "sourcePointer": "/npcs/116/appearance/outfit",
+          "sourceValue": 8,
+          "valueSha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/outfitA",
+          "sourcePointer": "/npcs/116/appearance/outfitA",
+          "sourceValue": 10,
+          "valueSha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/outfitB",
+          "sourcePointer": "/npcs/116/appearance/outfitB",
+          "sourceValue": 10,
+          "valueSha256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/appearance/acc",
+          "sourcePointer": "/npcs/116/appearance/acc",
+          "sourceValue": 3,
+          "valueSha256": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source appearance index",
+          "meaning": "Exact original palette/layer index; retain appearance manifest and used native source layers. It is not a current anatomy/stat/affinity decision.",
+          "targetReferences": [
+            "body-definition"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "appearance_manifest",
+              "to": "openfantasy.aldermere:source_files/data/appearance.json"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+            },
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/appearance",
+              "kind": "asset",
+              "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/dialog",
+          "sourcePointer": "/npcs/116/dialog",
+          "sourceValue": "Just me, the rows, and the crows. Suits me.",
+          "valueSha256": "0a5253344f08673dbff75fc478a227d2c7973d9bd0b5f8456fcc85b48f6f44c1",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/dialogs",
+          "sourcePointer": "/npcs/116/dialogs",
+          "sourceValue": [
+            "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+            "Rain when we need sun, sun when we need rain. Farming!"
+          ],
+          "valueSha256": "1c4b83b829fd3c1714a9c9b864894d611380facc21b57d6852f073392e3baa28",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/dialogs/0",
+          "sourcePointer": "/npcs/116/dialogs/0",
+          "sourceValue": "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+          "valueSha256": "e9910ba7456785a743172400deb525f4d14307898c6db965c7d2bb7c01b29bb2",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/dialogs/1",
+          "sourcePointer": "/npcs/116/dialogs/1",
+          "sourceValue": "Rain when we need sun, sun when we need rain. Farming!",
+          "valueSha256": "a2706dac8c0bc0295e91f32a6cfaa104f623eaeaf622ed9ec1948f5000758440",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/quests",
+          "sourcePointer": "/npcs/116/quests",
+          "sourceValue": [
+            "wren_orchard"
+          ],
+          "valueSha256": "1542ad3b2476ce1976157a4db439e78cd99c349a88188de2cab55b330dce8a28",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/quests/0",
+          "sourcePointer": "/npcs/116/quests/0",
+          "sourceValue": "wren_orchard",
+          "valueSha256": "a74afd858e7771c16ba34950bad58eae63ea122f7ba1e8425cbcce8d3af8e09e",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "quest key",
+          "meaning": "Explicit quest-definition reference; NPC and quest point to each other without duplicating either identity.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:npcs/farmer_wren",
+              "field": "/quests/0",
+              "kind": "definition",
+              "to": "openfantasy.aldermere:quests/wren_orchard"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/sprite",
+          "sourcePointer": "/npcs/116/sprite",
+          "sourceValue": "",
+          "valueSha256": "12ae32cb1ec02d01eda3581b127c1fee3b0dc53572ed6baf239721a03d82e126",
+          "disposition": "retained_source_only",
+          "units": "source fallback sprite key",
+          "meaning": "Empty fallback sprite is intentional: appearance is present and preferred. Retain the empty value; do not invent a sheet or erase composition.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        }
+      ]
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:quests/wren_orchard",
+      "scope": "primary",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/44",
+        "inventoryId": "data/quests.json#/quests/44",
+        "payloadSha256": "bbb996bb2ca6ca4e27b942f7f40f9ea624813909e037ec86980ed8aaa4ab86cb"
+      },
+      "sourcePayload": {
+        "id": "wren_orchard",
+        "name": "Wren's Saplings",
+        "kind": "Fetch",
+        "giver": "farmer_wren",
+        "offer": "Six wood for a windbreak and my saplings might see spring.",
+        "turnIn": "The wind can howl all it likes now. Thank you kindly.",
+        "rewardXp": 420,
+        "rewardGil": 200,
+        "minLevel": 1,
+        "targetItem": "wood",
+        "targetCount": 6
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:quests/wren_orchard",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/quests/44/id",
+          "sourceValue": "wren_orchard",
+          "valueSha256": "a74afd858e7771c16ba34950bad58eae63ea122f7ba1e8425cbcce8d3af8e09e",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "opaque source identity",
+          "meaning": "Retain source definition key; allocate canonical definition/live identities through reviewed compiler/registry policy.",
+          "targetReferences": [
+            "entity-id"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/name",
+          "sourcePointer": "/quests/44/name",
+          "sourceValue": "Wren's Saplings",
+          "valueSha256": "81466a2b30b17753a396fdfe58a45c2ce11dfe12b282f691abeb9c0efe4e53f7",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/kind",
+          "sourcePointer": "/quests/44/kind",
+          "sourceValue": "Fetch",
+          "valueSha256": "cfc8a8805f7b17aa18a0e39221a3b2c904760289abba40d2a7527847fb084e85",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source quest-kind enum",
+          "meaning": "Fetch consumes the target item count on successful turn-in; target quest adjudication and atomic reward/custody are new gameplay.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/giver",
+          "sourcePointer": "/quests/44/giver",
+          "sourceValue": "farmer_wren",
+          "valueSha256": "84130fbc83a5f200dedf07983b733d8bdd420c9ad766812f0b7972d1c2d7e9ac",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "NPC definition key",
+          "meaning": "Resolve farmer_wren as giver and Fetch turn-in NPC; current death/departure and alternative completion need explicit continuation.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:quests/wren_orchard",
+              "field": "/giver",
+              "kind": "definition",
+              "to": "openfantasy.aldermere:npcs/farmer_wren"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/offer",
+          "sourcePointer": "/quests/44/offer",
+          "sourceValue": "Six wood for a windbreak and my saplings might see spring.",
+          "valueSha256": "0c3587fef2a97734bd8fc255c7689067ebc9c7959664d4dbdc9118624b1cb162",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/turnIn",
+          "sourcePointer": "/quests/44/turnIn",
+          "sourceValue": "The wind can howl all it likes now. Thank you kindly.",
+          "valueSha256": "f3ee659f42687acca3914686c51ca465307bc21bf4791a0f04ce06e7c412fd8a",
+          "disposition": "retained_source_only",
+          "units": "verbatim source text",
+          "meaning": "Verbatim display/narrative source text. Future knowledge and event grounding must not treat flavor as an already simulated world fact.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/rewardXp",
+          "sourcePointer": "/quests/44/rewardXp",
+          "sourceValue": 420,
+          "valueSha256": "db55da3fc3098e9c42311c6013304ff36b19ef73d12ea932054b5ad51df4f49d",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source XP points",
+          "meaning": "420 source XP; new skills/classes and level progression require explicit mapping. Do not convert to work, stats or learning implicitly.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/rewardGil",
+          "sourcePointer": "/quests/44/rewardGil",
+          "sourceValue": 200,
+          "valueSha256": "27badc983df1780b60c2b3fa9d3a19a00e46aac798451f0febdca52920faaddf",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source gil units",
+          "meaning": "200 source gil; currency denomination, issuer/treasury and real payment funding require a target economic contract.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/minLevel",
+          "sourcePointer": "/quests/44/minLevel",
+          "sourceValue": 1,
+          "valueSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "source integer level",
+          "meaning": "Source minimum level one; target capability/DC and onboarding eligibility must preserve a feasible early route without assuming identical progression.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/targetItem",
+          "sourcePointer": "/quests/44/targetItem",
+          "sourceValue": "wood",
+          "valueSha256": "0f1b2711698266f3294ff32ddff91dc623ab8071d115ad3ad72f867c2ce9dea8",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "item definition key",
+          "meaning": "Wood definition reference; actual protected/reserved owned lots must be selected and consumed by later quest authority.",
+          "targetReferences": [
+            "material-pin"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:quests/wren_orchard",
+              "field": "/targetItem",
+              "kind": "definition",
+              "to": "openfantasy.aldermere:items/wood"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/targetCount",
+          "sourcePointer": "/quests/44/targetCount",
+          "sourceValue": 6,
+          "valueSha256": "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "counted wood units",
+          "meaning": "Exactly six wood are required and consumed in the source; preserve amount while defining actual quest requirement/reservation contract.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        }
+      ]
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:recipes/craft_rations",
+      "scope": "primary",
+      "sourceIdentity": {
+        "path": "data/recipes.json",
+        "jsonPointer": "/recipes/1",
+        "inventoryId": "data/recipes.json#/recipes/1",
+        "payloadSha256": "c384027c76855ade482105233cadd07ea930a265f73e12beab852de1cc756491"
+      },
+      "sourcePayload": {
+        "id": "craft_rations",
+        "output": "rations",
+        "outputCount": 2,
+        "inputs": [
+          {
+            "item": "berries",
+            "count": 2
+          },
+          {
+            "item": "wood",
+            "count": 1
+          }
+        ]
+      },
+      "target": {
+        "namespace": "openfantasy.aldermere",
+        "preservedKey": "openfantasy.aldermere:recipes/craft_rations",
+        "definitionId": null,
+        "acceptedVersion": null,
+        "versionPolicy": "Allocate collision-checked definition identity from reviewed compiler/source alias policy; hash canonical accepted definition after explicit transforms. Source payload hash remains lineage, not accepted runtime version.",
+        "runtimeAdmission": "not_admitted"
+      },
+      "fields": [
+        {
+          "relativePointer": "/id",
+          "sourcePointer": "/recipes/1/id",
+          "sourceValue": "craft_rations",
+          "valueSha256": "b64f732f1299d79b6bad80980fe6349b51ae04c3d031ecd46053252432fda582",
+          "disposition": "mapped_to_existing_contract",
+          "units": "opaque stable key",
+          "meaning": "Faithful local recipe-key spelling; acceptance still requires material pins and actual process rules.",
+          "targetReferences": [
+            "recipe-key"
+          ],
+          "faithfulFieldTransform": {
+            "operation": "copy_key",
+            "value": "craft_rations"
+          },
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/output",
+          "sourcePointer": "/recipes/1/output",
+          "sourceValue": "rations",
+          "valueSha256": "1058723a0eda996e476576213b24eb2d5e20f9e64a6fad511bcfb0cd3fda3b52",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "typed item-definition reference",
+          "meaning": "Resolve preserved item key to accepted material identity/version; calibration pins cannot be substituted for source admission.",
+          "targetReferences": [
+            "material-pin"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:recipes/craft_rations",
+              "field": "/output",
+              "kind": "definition",
+              "to": "openfantasy.aldermere:items/rations"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/outputCount",
+          "sourcePointer": "/recipes/1/outputCount",
+          "sourceValue": 2,
+          "valueSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "disposition": "mapped_to_existing_contract",
+          "units": "counted source item units",
+          "meaning": "Positive source count maps exactly to UInt64 RecipeTerm.Count; enclosing operation remains unadmitted.",
+          "targetReferences": [
+            "recipe-count",
+            "recipe-role"
+          ],
+          "faithfulFieldTransform": {
+            "operation": "positive_count",
+            "role": "Output",
+            "value": 2
+          },
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/inputs",
+          "sourcePointer": "/recipes/1/inputs",
+          "sourceValue": [
+            {
+              "item": "berries",
+              "count": 2
+            },
+            {
+              "item": "wood",
+              "count": 1
+            }
+          ],
+          "valueSha256": "37ea6ed5bd6d48f17eaf48be93d6748f72bc93d2343065e6101d0718185b74de",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/inputs/0",
+          "sourcePointer": "/recipes/1/inputs/0",
+          "sourceValue": {
+            "item": "berries",
+            "count": 2
+          },
+          "valueSha256": "218553cf8a511e1ffe3d6f2b7e86008c5f7ab139d90121708809fb13f30f9a76",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/inputs/0/item",
+          "sourcePointer": "/recipes/1/inputs/0/item",
+          "sourceValue": "berries",
+          "valueSha256": "815b96aa0dcb955c15a116bd649ba0fc66974390a790fb7262c6af5f46760482",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "typed item-definition reference",
+          "meaning": "Resolve preserved item key to accepted material identity/version; calibration pins cannot be substituted for source admission.",
+          "targetReferences": [
+            "material-pin"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:recipes/craft_rations",
+              "field": "/inputs/0/item",
+              "kind": "definition",
+              "to": "openfantasy.aldermere:items/berries"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/inputs/0/count",
+          "sourcePointer": "/recipes/1/inputs/0/count",
+          "sourceValue": 2,
+          "valueSha256": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+          "disposition": "mapped_to_existing_contract",
+          "units": "counted source item units",
+          "meaning": "Positive source count maps exactly to UInt64 RecipeTerm.Count; enclosing operation remains unadmitted.",
+          "targetReferences": [
+            "recipe-count",
+            "recipe-role"
+          ],
+          "faithfulFieldTransform": {
+            "operation": "positive_count",
+            "role": "Input",
+            "value": 2
+          },
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/inputs/1",
+          "sourcePointer": "/recipes/1/inputs/1",
+          "sourceValue": {
+            "item": "wood",
+            "count": 1
+          },
+          "valueSha256": "34aaa7798dfb93508a280b461a7303cba32ef3aae95361ee9e53c937c9542030",
+          "disposition": "retained_source_only",
+          "units": "source JSON grouping",
+          "meaning": "Ordered source grouping retained; child rows account for every contained field/value.",
+          "targetReferences": [],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": []
+        },
+        {
+          "relativePointer": "/inputs/1/item",
+          "sourcePointer": "/recipes/1/inputs/1/item",
+          "sourceValue": "wood",
+          "valueSha256": "0f1b2711698266f3294ff32ddff91dc623ab8071d115ad3ad72f867c2ce9dea8",
+          "disposition": "pending_explicit_transform_or_gameplay",
+          "units": "typed item-definition reference",
+          "meaning": "Resolve preserved item key to accepted material identity/version; calibration pins cannot be substituted for source admission.",
+          "targetReferences": [
+            "material-pin"
+          ],
+          "faithfulFieldTransform": null,
+          "sourceDependencies": [
+            {
+              "from": "openfantasy.aldermere:recipes/craft_rations",
+              "field": "/inputs/1/item",
+              "kind": "definition",
+              "to": "openfantasy.aldermere:items/wood"
+            }
+          ]
+        },
+        {
+          "relativePointer": "/inputs/1/count",
+          "sourcePointer": "/recipes/1/inputs/1/count",
+          "sourceValue": 1,
+          "valueSha256": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+          "disposition": "mapped_to_existing_contract",
+          "units": "counted source item units",
+          "meaning": "Positive source count maps exactly to UInt64 RecipeTerm.Count; enclosing operation remains unadmitted.",
+          "targetReferences": [
+            "recipe-count",
+            "recipe-role"
+          ],
+          "faithfulFieldTransform": {
+            "operation": "positive_count",
+            "role": "Input",
+            "value": 1
+          },
+          "sourceDependencies": []
+        }
+      ]
+    }
+  ],
+  "codeContext": [
+    {
+      "targetKey": "openfantasy.aldermere:node_archetypes/berry",
+      "family": "node_archetypes",
+      "legacyId": "berry",
+      "sourceIdentity": {
+        "path": "src/Sim/World.Gathering.cs",
+        "inventoryId": "src/Sim/World.Gathering.cs#node_archetype/berry",
+        "sourceSha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+        "exactTextSha256": "f8cd59ea8f1c80a0946fc1708921763b609afdeedfc6a2dc5bf53372276d3aeb"
+      },
+      "sourceExactText": "        [\"berry\"] = new NodeArchetype(\"Berry Bush\", \"node_berry\", ToolKind.Sickle, 4, \"berries\"),",
+      "extractedFields": {
+        "name": "Berry Bush",
+        "sprite": "node_berry",
+        "tool": "Sickle",
+        "hp": 4,
+        "yieldItem": "berries"
+      },
+      "extractionRule": "Exact NodeArchetype constructor expression; no gameplay-unit transformation"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:node_archetypes/oak",
+      "family": "node_archetypes",
+      "legacyId": "oak",
+      "sourceIdentity": {
+        "path": "src/Sim/World.Gathering.cs",
+        "inventoryId": "src/Sim/World.Gathering.cs#node_archetype/oak",
+        "sourceSha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+        "exactTextSha256": "daf928a665a07230915ade30898532efe60efd852ddb6755f21c7eda22b84742"
+      },
+      "sourceExactText": "        [\"oak\"] = new NodeArchetype(\"Oak\", \"node_oak\", ToolKind.Axe, 5, \"wood\"),",
+      "extractedFields": {
+        "name": "Oak",
+        "sprite": "node_oak",
+        "tool": "Axe",
+        "hp": 5,
+        "yieldItem": "wood"
+      },
+      "extractionRule": "Exact NodeArchetype constructor expression; no gameplay-unit transformation"
+    }
+  ],
+  "dependencyEdges": [
+    {
+      "from": "openfantasy.aldermere:items/berries",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/rations",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/wood",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/berry",
+      "field": "$source",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Gathering.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/berry",
+      "field": "/sprite",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/node_berry.png"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/berry",
+      "field": "/yieldItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/berries"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/oak",
+      "field": "$source",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Gathering.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/oak",
+      "field": "/sprite",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/node_oak.png"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/oak",
+      "field": "/yieldItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wood"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/101",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/101",
+      "field": "/type",
+      "kind": "code_definition",
+      "to": "openfantasy.aldermere:node_archetypes/oak"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/103",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/103",
+      "field": "/type",
+      "kind": "code_definition",
+      "to": "openfantasy.aldermere:node_archetypes/berry"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/npcs.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "appearance_manifest",
+      "to": "openfantasy.aldermere:source_files/data/appearance.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/quests/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:quests/wren_orchard"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/wren_orchard",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/quests.json"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/wren_orchard",
+      "field": "/giver",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:npcs/farmer_wren"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/wren_orchard",
+      "field": "/targetItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wood"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/recipes.json"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "/inputs/0/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/berries"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "/inputs/1/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wood"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "/output",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/rations"
+    }
+  ],
+  "dependencySupport": [
+    {
+      "targetKey": "openfantasy.aldermere:assets/assets/layers/acc_03.png",
+      "sourcePath": "assets/layers/acc_03.png",
+      "retainedPath": "assets/layers/acc_03.png",
+      "bytes": 175,
+      "sha256": "0907b9dd49e4553eae718bb47f4f84e30c53637483570536016ed59055eb3048",
+      "role": "retained_original_asset_not_native_approval"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:assets/assets/layers/body.png",
+      "sourcePath": "assets/layers/body.png",
+      "retainedPath": "assets/layers/body.png",
+      "bytes": 533,
+      "sha256": "17a3af88e92baa615c9bb3f4d21e095767639458c655348a6b93080e82fe40e7",
+      "role": "retained_original_asset_not_native_approval"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:assets/assets/layers/hair_05.png",
+      "sourcePath": "assets/layers/hair_05.png",
+      "retainedPath": "assets/layers/hair_05.png",
+      "bytes": 350,
+      "sha256": "b636e8e6acd8c9282a73a09a5e3956baeeb5bf2ea6fcfc0528ad187db965dd5c",
+      "role": "retained_original_asset_not_native_approval"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png",
+      "sourcePath": "assets/layers/outfit_08_a.png",
+      "retainedPath": "assets/layers/outfit_08_a.png",
+      "bytes": 295,
+      "sha256": "bec72107f5dcbbacbc79b42266e2d603b6173d60f1d5c25f4f342f261796e52a",
+      "role": "retained_original_asset_not_native_approval"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png",
+      "sourcePath": "assets/layers/outfit_08_b.png",
+      "retainedPath": "assets/layers/outfit_08_b.png",
+      "bytes": 185,
+      "sha256": "90f50e5210177c981efdde1e816b867aa0be7c224192c9814338160ba4028817",
+      "role": "retained_original_asset_not_native_approval"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:assets/assets/units/node_berry.png",
+      "sourcePath": "assets/units/node_berry.png",
+      "retainedPath": "assets/units/node_berry.png",
+      "bytes": 304,
+      "sha256": "8928cce8c9bd2b1c197650cac6b467ccb9b35035531f64548ac7b76b39721457",
+      "role": "retained_original_asset_not_native_approval"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:assets/assets/units/node_oak.png",
+      "sourcePath": "assets/units/node_oak.png",
+      "retainedPath": "assets/units/node_oak.png",
+      "bytes": 382,
+      "sha256": "3c95536649a836516f5bda0abc65dcd2d2b6a54611a8a0804c6ef133290188c8",
+      "role": "retained_original_asset_not_native_approval"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:source_files/data/appearance.json",
+      "sourcePath": "data/appearance.json",
+      "retainedPath": "source-support/data/appearance.json",
+      "bytes": 3147,
+      "sha256": "3c9388eddd5a1343065f2e8d476f570a7cf0cf6c92998fedfdc0254df4761a9b",
+      "role": "source_payload_or_semantics_not_executable_import"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:source_files/data/items.json",
+      "sourcePath": "data/items.json",
+      "retainedPath": "source-support/data/items.json",
+      "bytes": 8873,
+      "sha256": "ac0944b98fbfc10474ae1d1309bd7ad6b74c511fb2da9c314ab41f6c8a655609",
+      "role": "source_payload_or_semantics_not_executable_import"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:source_files/data/npcs.json",
+      "sourcePath": "data/npcs.json",
+      "retainedPath": "source-support/data/npcs.json",
+      "bytes": 63495,
+      "sha256": "a75e0f3e565e21cd751dc3697f948b773439935478053c29d5467e868d439746",
+      "role": "source_payload_or_semantics_not_executable_import"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:source_files/data/quests.json",
+      "sourcePath": "data/quests.json",
+      "retainedPath": "source-support/data/quests.json",
+      "bytes": 21423,
+      "sha256": "3ce9eabab223fc66131a9e048a43e47c8c745d2fe6e33542e762291a74148045",
+      "role": "source_payload_or_semantics_not_executable_import"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:source_files/data/recipes.json",
+      "sourcePath": "data/recipes.json",
+      "retainedPath": "source-support/data/recipes.json",
+      "bytes": 7851,
+      "sha256": "0c81bcf33088668a7837e77cf01640cbfd2070e2a8caf9fa13ebdeb1e032a6b1",
+      "role": "source_payload_or_semantics_not_executable_import"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:source_files/data/world.json",
+      "sourcePath": "data/world.json",
+      "retainedPath": "source-support/data/world.json",
+      "bytes": 102091,
+      "sha256": "9f46be269ea80ddeef908d9a8305b70bf26a8ca11a544bed32c640fbfee7668d",
+      "role": "source_payload_or_semantics_not_executable_import"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:source_files/src/Sim/World.Gathering.cs",
+      "sourcePath": "src/Sim/World.Gathering.cs",
+      "retainedPath": "source-support/src/Sim/World.Gathering.cs.txt",
+      "bytes": 7402,
+      "sha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+      "role": "source_payload_or_semantics_not_executable_import"
+    }
+  ],
+  "evidence": {
+    "constants": {
+      "retainedPath": "source-support/src/Sim/SimConstants.cs.txt",
+      "originalPath": "src/Sim/SimConstants.cs",
+      "sha256": "7bdcec4fa6f7017bab1cb9c7ff028ee7e28b15ae37bc4503174f91b89e431742",
+      "requiredMarkers": [
+        "public const int TicksPerSecond = 20;",
+        "public const int UnitsPerTile = 32;"
+      ]
+    },
+    "npc-defaults": {
+      "retainedPath": "source-support/src/Sim/GameData.cs.txt",
+      "originalPath": "src/Sim/GameData.cs",
+      "sha256": "b5c47c56d41d0c17984df96a20a7a336b450ae45c1a52a610b7d460ad0873ab8",
+      "requiredMarkers": [
+        "public List<string> Shop { get; set; } = new();",
+        "public string Prerequisite { get; set; } = \"\";",
+        "public string RewardItem { get; set; } = \"\";",
+        "public CraftStation Station { get; set; } = CraftStation.None;"
+      ]
+    },
+    "npc-spawn": {
+      "retainedPath": "source-support/src/Sim/World.Systems.cs.txt",
+      "originalPath": "src/Sim/World.Systems.cs",
+      "sha256": "c9a9d49ca4021cded3f06c4568075cdf4956149b4736779d4ab4b7711325886e",
+      "requiredMarkers": [
+        "X = def.TileX * u + u / 2,",
+        "Hp = 1,",
+        "MoveSpeed = 2,"
+      ]
+    },
+    "quest-fetch": {
+      "retainedPath": "source-support/src/Sim/World.Systems.cs.txt",
+      "originalPath": "src/Sim/World.Systems.cs",
+      "sha256": "c9a9d49ca4021cded3f06c4568075cdf4956149b4736779d4ab4b7711325886e",
+      "requiredMarkers": [
+        "QuestKind.Fetch => CountItem(player, quest.TargetItem) >= quest.TargetCount,",
+        "RemoveItem(player, quest.TargetItem, quest.TargetCount);",
+        "player.Gil += quest.RewardGil;",
+        "GrantQuestXp(player, quest.RewardXp);"
+      ]
+    },
+    "gathering": {
+      "retainedPath": "source-support/src/Sim/World.Gathering.cs.txt",
+      "originalPath": "src/Sim/World.Gathering.cs",
+      "sha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+      "requiredMarkers": [
+        "private const int GatherAtbCost = 400;",
+        "private const int GatherRange = 56;",
+        "node.Hp--;",
+        "int amount = tool.ToolPower;"
+      ]
+    },
+    "crafting": {
+      "retainedPath": "source-support/src/Sim/World.Gathering.cs.txt",
+      "originalPath": "src/Sim/World.Gathering.cs",
+      "sha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+      "requiredMarkers": [
+        "RemoveItem(player, input.Item, input.Count);",
+        "if (!AddItem(player, recipe.Output, recipe.OutputCount))"
+      ]
+    },
+    "consuming": {
+      "retainedPath": "source-support/src/Sim/World.Systems.cs.txt",
+      "originalPath": "src/Sim/World.Systems.cs",
+      "sha256": "c9a9d49ca4021cded3f06c4568075cdf4956149b4736779d4ab4b7711325886e",
+      "requiredMarkers": [
+        "int hp = Math.Min(item.HealHp, player.MaxHp - player.Hp);",
+        "int mp = Math.Min(item.HealMp, player.MaxMp - player.Mp);"
+      ]
+    }
+  },
+  "faithfulMissingDefaults": [
+    {
+      "sourceKey": "openfantasy.aldermere:recipes/craft_rations",
+      "missingField": "/station",
+      "sourceDefault": "None",
+      "meaning": "No implicit Forge gate in source; target process station policy still pending.",
+      "evidence": "npc-defaults"
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:npcs/farmer_wren",
+      "missingField": "/shop",
+      "sourceDefault": [],
+      "meaning": "Wren has no source shop, regardless of flavor about paying gil.",
+      "evidence": "npc-defaults"
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:quests/wren_orchard",
+      "missingField": "/prerequisite",
+      "sourceDefault": "",
+      "meaning": "No source prerequisite quest; do not invent a chain blocker.",
+      "evidence": "npc-defaults"
+    },
+    {
+      "sourceKey": "openfantasy.aldermere:quests/wren_orchard",
+      "missingField": "/rewardItem",
+      "sourceDefault": "",
+      "meaning": "No item reward in this quest; only source XP/gil.",
+      "evidence": "npc-defaults"
+    }
+  ],
+  "counts": {
+    "primaryRecords": 6,
+    "gatheringContextRecords": 2,
+    "codeContextRecords": 2,
+    "fieldRows": 74,
+    "dependencyEdges": 28,
+    "dispositions": {
+      "mapped_to_existing_contract": 7,
+      "pending_explicit_transform_or_gameplay": 48,
+      "retained_source_only": 19
+    }
+  }
+}
