@@ -2,7 +2,7 @@
 
 8 September 2026. This packet turns the reviewed design into bounded contract, content and measurement assignments. It is planning and source-inspection evidence; it does not certify implemented systems, completed imports, native art acceptance or benchmark results. The coordinator records build/runtime evidence separately.
 
-**Current checkpoint:** [implementation progress](PROGRESS.md) and the [contract increment](contract-increment/README.md) now record executed primitives, command/package contracts, source closure and validation. The original preparation statements below retain their initial scope. `openfantasy.aldermere` is now assigned to the retained source package; playable content activation remains pending.
+**Current checkpoint:** [implementation progress](PROGRESS.md) and the [state-contract increment](state-contract-increment/README.md) now record executed primitives, command/package contracts, source closure, finite custody candidates, scoped calendar queues, historical request boundaries and validation. The original preparation statements below retain their initial scope. `openfantasy.aldermere` is now assigned to the retained source package; playable content activation remains pending.
 
 The owner's latest instruction overrides historical RQ-168 for implementation: **OpenFantasy** is the stable code/project/product identity. No successor codename belongs in namespaces, assemblies, packages, application titles, save formats or protocol identifiers. Existing design editions and provenance paths remain preserved. `openfantasy.aldermere` below is a proposed content namespace, not an assigned runtime identity. The physical location of these planning documents does not become a game identifier.
 

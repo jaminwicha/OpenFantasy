@@ -1,0 +1,239 @@
+{
+  "status": "passed",
+  "scope": "Current byte identity against independent reviewed hashes",
+  "checkedCount": 58,
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CountedItemDefinition.cs",
+      "sha256": "45fdd14ec87f906ba5cb5905652c12ea2f2e43d85a668da79232fbd073e357f6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CountedSourceLot.cs",
+      "sha256": "e04acde01d3420c1460728f67a827a4c1b5e17d892dc9d5279c98804af0046a8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodianStorage.cs",
+      "sha256": "399e3c72407a8d6f50294057eb0dc7a22133587083ba12d7bea5b936e3fc72fc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyConflictException.cs",
+      "sha256": "7133eaf97d28bfa5ea64baeca8b84d7fadea6beae21afd1a2de0ee174b54ec2d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyEncodingV1.cs",
+      "sha256": "5bc1621e982c3d97b7637470b199005a4cc9d0c2b2b6918b1141ee84fc1ef553"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodySnapshot.cs",
+      "sha256": "54cb6923f7da74edeb364591b2e839c0eea497f8d2a4b8932d7102e8fbd9747e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyTransferPlan.cs",
+      "sha256": "21df89e341409bb6722a7c36a38fe49c02c0e7c6ecef7d0b326db6b3baad16d4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyTransferPlanner.cs",
+      "sha256": "f7b9654be2adb772471c6001b4d5037b8f8cca5907f269efdfce8fff65fa6b61"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/SourceInterval.cs",
+      "sha256": "c4a5c84865743f70bf5f43a1d9c2268a93a6718700dc8d255bf5e099b8b8bd10"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Custody/CustodyFixture.cs",
+      "sha256": "01578865d2a55df3f664746fd583a9d9b7d4351a70f06edecf4b7e0bc0146b77"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Custody/CustodySnapshotTests.cs",
+      "sha256": "2d69d627ce9f68e023f2b31f8a75ebee28757988225ea5c0c82dc6bb1b59c340"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Custody/CustodyTransferTests.cs",
+      "sha256": "a9dd425725b79954752056c922f2534faf57860eaeab6d515232e19621f4775b"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_custody_vectors.py",
+      "sha256": "af079002829bc61b5bac41adb8117692fde44b8796c395e9077b5a126ccf32a9"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/custody-v1.json",
+      "sha256": "c332b6c53095864f85a5d3f80610b91609a2a0235695674d4162d8673e99faa3"
+    },
+    {
+      "path": "Beta/implementation/p00/custody-contracts/CONTRACT.md",
+      "sha256": "f52173f00cd5e3287951511250a818a67a42153d7fb972ff79c8b3a0ebe93ad5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/EntityId.cs",
+      "sha256": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/CanonicalEncodingV1.cs",
+      "sha256": "1e8871ebbf3aece0316fabdcdbf1432c02240e053fa5b50f7bdf70223f46f4c4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Content/ContentHash.cs",
+      "sha256": "279bcb92c2a19dffa74bcb9f1a7f13e709b2a2a7943ccc87e454f6e726d3bc45"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandEnvelope.cs",
+      "sha256": "4101e369c38d70b51b0f19045eca1e719d966ef2d0b87e6b9519a7d32993e533"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/TransferLotIntent.cs",
+      "sha256": "da3c56bc3f0385a3cca4bc44428283c97bfa14f2b7082f6733643a628458f6ac"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevisionSet.cs",
+      "sha256": "83c67e5b8b54a06e13343e7ce18004cad30e46161552ee2a80e71d0cf019c0e8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevision.cs",
+      "sha256": "12d3951e2b81f631b1ddfe79918eed997a4ba81a05d69484d9a2cbcb0320d395"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj",
+      "sha256": "470b8bbe4ee9f686e1144d857fa279e6409a3312b4f4fd6b522fc9dd0aa7e96a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+      "sha256": "d59575296680bd251583eb882cfe578bd70b6c3f4ace83b505ca5baa2a07bf8f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/packages.lock.json",
+      "sha256": "22308ad23ccd417b5d96020fb92e203b85fad8c3788b3feadb2ca403d8ad596c"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/packages.lock.json",
+      "sha256": "999c120fe238fce7de88e89cd91fceab407556536b08b82acc4c255d2a8b589a"
+    },
+    {
+      "path": "Beta/Runtime/Directory.Build.props",
+      "sha256": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680"
+    },
+    {
+      "path": "Beta/Runtime/global.json",
+      "sha256": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "sha256": "64d5250ee9d39d02157a8b6a2967b87a500fbaf4e7a7cb0260ce951fb483c56d"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll",
+      "sha256": "58789de6d0217971473a449e4bdac49a879fc8e52ccee95d4bcbb9ccaf9f823a"
+    },
+    {
+      "path": "Beta/implementation/p00/custody-review/test-results/custody-independent.trx",
+      "sha256": "c44639fd0e1581ec552c71ec4d60370a8a12694dd6b4f3e68e7bc8ecc1146f33"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/CalendarClockCoordinate.cs",
+      "sha256": "e4a720723256cc911f4dcb26c57db4f4bd952bacd0c0280bfdfd3865d9c4eaae"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/CalendarQueueCodecV1.cs",
+      "sha256": "81fed23698dfb77c914bc39336eec39e74570b7d36e620095897acb50437a9d6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/CalendarQueueScope.cs",
+      "sha256": "9765665140c3860f4b00373aa0d42adc6ef244940646fb5b04cee1002127b82b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/CanonicalSchedulingReader.cs",
+      "sha256": "559b254e431be821eb11b9ac0a84dbd4ec0ddd6b1c723d84f74f275f807d147b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/DueWorkQueueSnapshot.cs",
+      "sha256": "b7ee309e06180929dcd51af3da7cec6f0bbcb6e0994e74f98e1be23924efbd35"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/DueWorkSelection.cs",
+      "sha256": "1b36a4d53a898e7ec2d0a3eb03f8490a370d1914f527bcc27145b337251f9f9c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/ScheduledWorkEntry.cs",
+      "sha256": "728c0d261cb050a5f38a3c96eead165cbfab7d2ce92c00897b96172e6d74d2e8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/ScheduledWorkPhase.cs",
+      "sha256": "9045560615529977517f4111397f5eacc7ee0622eef18aae2aab6b9d6a7a565f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Scheduling/SchedulingFormatException.cs",
+      "sha256": "1a7efb918436d7ab39f6e3c4761c582c66f858af1ff2647c6a6fc7bfddf66556"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_scheduling_vectors.py",
+      "sha256": "316e6a5c03f8f527b01c7d8268db6d77f87b101953293c9c299b3dc99302ceb1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/scheduling-v1.json",
+      "sha256": "50a21cc1b7ebbe94eb3f6a9b6f825251a3d2652c0031a277271d9b5449a2eb1b"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Scheduling/CalendarQueueCodecTests.cs",
+      "sha256": "3065a24b8542ef91154ea75d0add818c529b86395c679931331407f8ced14b7f"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Scheduling/DueWorkQueueTests.cs",
+      "sha256": "626a803bb0877bb994b4274033f4b6ed154f6d69c2c52e2c3e888104c23faf95"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Scheduling/SchedulingFixture.cs",
+      "sha256": "91758d7511d477db3d11564899c4e7d56059877f42ec1ac935c8e88c180fddc6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryAddress.cs",
+      "sha256": "f85eb1c573e245a7f7741bc3998a84ba5479a55f545a5a19579d77360e54c56f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryBoundary.cs",
+      "sha256": "1b33b48cb93f15e25047b7b41491cfb0a8205bd955f3a9ed7a6213d9fb690985"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryCommitSelection.cs",
+      "sha256": "d1e1713a862a0fe73ea881d6b79861aeda3810e4da469309ebf5ddf2c7ef233a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryCommitStamp.cs",
+      "sha256": "8a92e23d255333a5fe9f9ffc9125b602ef0624bdac0c2ce8f4316cfb5f85b605"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryRequest.cs",
+      "sha256": "6313d8fec84fc4f9c6022fdacbc6ace3a185a0d8d4367a696a71dacf12d26df8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryRequestCodecV1.cs",
+      "sha256": "b2c5cc9d6a5941b63d654b945f370c3aeec41707dec158c98d506b09fa3978e2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/History/HistoryRequestReader.cs",
+      "sha256": "0976b67f8dc8f6927412ac367e7bc4167a5bbf18030ca51a3e897389b19254de"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/History/HistoryBoundaryTests.cs",
+      "sha256": "8c65b288324de79db7fee8954b0a5b946442ae0e123efd2265e2eda7165fa793"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/History/HistoryCommitSelectionTests.cs",
+      "sha256": "d26ccd8dce9f457f068135404d4273789bf4c3a064de0e28300d7f8e76d762c7"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/History/HistoryRequestCodecTests.cs",
+      "sha256": "75e59bc771b13fc9399efeecbfb7c757f9d104cf94424f0dc26950c2b4a81799"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_history_vectors.py",
+      "sha256": "841141b9c533e8332ecbe5ba8ab5a8e787dc0d6c506fe3b6475d4d7b00d959c2"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/history-v1.json",
+      "sha256": "0d2713f510f40368a62ec4fec99459ed826056b00cdec9e3f3ed010e4d647a49"
+    },
+    {
+      "path": "Beta/implementation/p00/history-contracts/CONTRACT.md",
+      "sha256": "adc8e92eeedf69c3e51004fbfc325fb0c5593e79b05a70f2463f39f6f4a20e42"
+    }
+  ]
+}

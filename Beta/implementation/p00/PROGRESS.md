@@ -4,9 +4,15 @@
 
 The subsequent [runtime application style review](style-review/README.md) records the owner's modular/readable/object-oriented preference, its application-only scope, the behavior-preserving refinements, and fresh evidence. Earlier hashes below remain tied to the original increment.
 
-## Latest increment: portable contracts and source closure
+## Latest increment: finite custody, scheduling and history boundaries
 
-The [contract increment record](contract-increment/README.md) is the current implementation checkpoint. It adds immutable command/receipt values, bounded canonical decoding, exact retry comparison, typed lot-transfer intent, package hashes that bind dependency versions, deterministic package resolution, and host file inspections. All **92 core tests pass in both Debug and Release**, all **39 host diagnostic cases pass**, and the pinned Godot import/binding smoke passes. This implements contracts and diagnostics; durable authority and actual lot movement remain pending.
+9 September 2026. The [state-contract increment](state-contract-increment/README.md) adds source-preserving counted-lot transfer candidates, scoped calendar queue snapshots and exact pinned historical requests. An eight-unit wood source can split into six transferred units and two remaining, preserving its source intervals. Capacity/revision/collision failures leave original state unchanged. Calendar work is selected in bounded phase-specific batches without dropping deferred entries; history selection preserves the requested instant and pinned commit cursor across retries.
+
+All **149 tests pass in Debug and Release**: the previous 92 plus 24 custody, 20 scheduling and 13 history cases. The six independent Python oracles agree with retained fixtures, and existing host/Godot/source-packet checks pass. An independent critic reran all 24 custody cases against stable Debug binaries; workers cross-reviewed history and scheduling. Three concrete validation gaps were corrected and reviewed. This remains immutable planning/selection behavior; no live world execution, custody persistence decoder, durable transaction or full history reconstruction is claimed.
+
+## Previous increment: portable contracts and source closure
+
+The [contract increment record](contract-increment/README.md) retains the preceding checkpoint. It added immutable command/receipt values, bounded canonical decoding, exact retry comparison, typed lot-transfer intent, package hashes that bind dependency versions, deterministic package resolution, and host file inspections. All **92 core tests passed in both Debug and Release**, all **39 host diagnostic cases passed**, and the pinned Godot import/binding smoke passed. These historical hashes/results remain scoped to that increment.
 
 The selected 31 legacy roots now have an executed [source dependency closure](migration-closure/README.md): **49 structured records, two code-defined node archetypes, 171 typed edges, 29 original assets and 48 retained source/support files**. All 15 closure tests pass and rebuilding is byte-identical. The complete original inventory remains mandatory scope; preserved source definitions have not yet become playable content. The [command/host critic](contract-review/README.md) and [package/closure critic](command-contracts/CONTENT_REVIEW.md) record independent inspection and resolved findings. The parser critic also exercised 18,312 bounded mutation/random cases with no unexpected exceptions.
 
@@ -41,7 +47,7 @@ The actual development machine is an Apple M2 with 8 GiB RAM, macOS 15.6.1/24G90
 
 The following are real preparation/implementation work, not reasons to reopen broad research or discard the core:
 
-- Extend the implemented command/receipt/revision envelope contracts with scheduler/history and finite custody formats, valid/invalid vectors and explicit ownership. Transfer intent alone does not implement inventory conservation or world transactions.
+- Complete the persisted custody decoder and observation/exposure contracts; extend the implemented calendar queue and history request formats with authoritative dispatch/reconstruction ownership. Counted transfer candidates now conserve admitted source intervals locally; transformed-lot provenance, source-budget admission, global claim/identity registries and transactions remain explicit requirements.
 - Define finite initial actor/body/form and material/process fields through representative data. Package metadata and pins now exist; executable payload schemas still need concrete definitions. Prove representability of later mechanics without generating empty implementations for every concept.
 - Transform the now-closed first-loop source packet into playable rule and presentation packages with explicit unit/behavior mappings and full executable dependencies. The selected farmer Wren and original six-wood objective remain exact source inputs; repair, recruitment, finite markets and ecological interactions require actual new implementation.
 - Set initial production catalog target counts and coverage denominators, measurable workload/storage/queue budgets, and candidate desktop machine profiles. Inventories and workload distributions are currently proposals.
@@ -50,6 +56,6 @@ The following are real preparation/implementation work, not reasons to reopen br
 
 ## Next retained work packet
 
-Continue P00 with bounded ownership/custody and scheduler/history fixtures, representative actor/body/material/process definitions, and explicit source-to-playable field transformations. Set measurable initial catalog/workload budgets and separately owned native-kit/acoustic packets. Engineering owns the portable state and contracts; content authors own complete source mappings and concrete data; independent critics review cross-system invariants. Each task states owned paths, requirement IDs, fixtures and evidence; existing modules and tests are retained.
+Continue P00 with representative actor/body/form and material/process definitions, typed exposure and observation boundaries, a strict counted-custody decoder, and explicit source-to-playable field transformations. The original ration recipe must retain mixed input claims through outputs/byproducts; its item count cannot be used as provenance. Set measurable initial catalog/workload budgets and separately owned native-kit/acoustic packets. Engineering owns portable state/contracts, content authors own mappings and concrete data, and independent critics review cross-system invariants. Each task states owned paths, requirement IDs, fixtures and evidence; existing modules and tests are retained.
 
 P01 then implements actual durable acceptance/receipts and state continuation against these contracts, followed by the connected native loop in P02 and coupled history/Wait proofs in P03. Neither entering P00 nor completing this first increment authorizes skipping those exits or claiming the full game is implemented.
