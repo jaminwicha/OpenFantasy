@@ -1,0 +1,98 @@
+{
+  "status": "new_authored_qualification_values_not_original_or_accepted_gameplay_balance",
+  "sourceRecipe": {
+    "inventoryId": "data/recipes.json#/recipes/1",
+    "payload": {
+      "id": "craft_rations",
+      "output": "rations",
+      "outputCount": 2,
+      "inputs": [
+        {
+          "item": "berries",
+          "count": 2
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ]
+    },
+    "payloadSha256": "c384027c76855ade482105233cadd07ea930a265f73e12beab852de1cc756491"
+  },
+  "newCalibration": {
+    "status": "new authored qualification values; not original values or accepted gameplay balance",
+    "package": "openfantasy.calibration",
+    "definitionId": "000000000000000000000000000000d2",
+    "key": "craft_rations",
+    "requiredWorkUnits": "120",
+    "materials": [
+      {
+        "id": "000000000000000000000000000000c9",
+        "key": "berries",
+        "massMilligrams": "20000",
+        "volumeMicrolitres": "30000",
+        "hardness": 1,
+        "canonicalHex": "4f46430000000001000000080000001370726f64756374696f6e2e6d6174657269616c000000080000000000000001000000176f70656e66616e746173792e63616c6962726174696f6e00000010000000000000000000000000000000c90000000762657272696573000000080000000000004e20000000080000000000007530000000080000000000000001",
+        "version": "73069164d576dbb33b1b458c77b5a57207420632f4d61d9b68bb3d54776e8635"
+      },
+      {
+        "id": "000000000000000000000000000000ca",
+        "key": "wood",
+        "massMilligrams": "50000",
+        "volumeMicrolitres": "100000",
+        "hardness": 8,
+        "canonicalHex": "4f46430000000001000000080000001370726f64756374696f6e2e6d6174657269616c000000080000000000000001000000176f70656e66616e746173792e63616c6962726174696f6e00000010000000000000000000000000000000ca00000004776f6f6400000008000000000000c3500000000800000000000186a0000000080000000000000008",
+        "version": "eba32792972783b74075a78cc174ca0d066678b14ed85bb7358e2cf6b7af377f"
+      },
+      {
+        "id": "000000000000000000000000000000cb",
+        "key": "rations",
+        "massMilligrams": "40000",
+        "volumeMicrolitres": "45000",
+        "hardness": 2,
+        "canonicalHex": "4f46430000000001000000080000001370726f64756374696f6e2e6d6174657269616c000000080000000000000001000000176f70656e66616e746173792e63616c6962726174696f6e00000010000000000000000000000000000000cb00000007726174696f6e73000000080000000000009c4000000008000000000000afc8000000080000000000000002",
+        "version": "e671022b059bcade4ef4e72990a6e95243c1281bd7225155bb2bddb70aefd1be"
+      },
+      {
+        "id": "000000000000000000000000000000cc",
+        "key": "residue",
+        "massMilligrams": "10000",
+        "volumeMicrolitres": "25000",
+        "hardness": 0,
+        "canonicalHex": "4f46430000000001000000080000001370726f64756374696f6e2e6d6174657269616c000000080000000000000001000000176f70656e66616e746173792e63616c6962726174696f6e00000010000000000000000000000000000000cc00000007726573696475650000000800000000000027100000000800000000000061a8000000080000000000000000",
+        "version": "82ab3a5263d67432fe4df575fb831161930ff4af118e67aee04513ce876249e1"
+      }
+    ],
+    "terms": [
+      {
+        "role": 1,
+        "materialId": "000000000000000000000000000000c9",
+        "version": "73069164d576dbb33b1b458c77b5a57207420632f4d61d9b68bb3d54776e8635",
+        "count": "2"
+      },
+      {
+        "role": 1,
+        "materialId": "000000000000000000000000000000ca",
+        "version": "eba32792972783b74075a78cc174ca0d066678b14ed85bb7358e2cf6b7af377f",
+        "count": "1"
+      },
+      {
+        "role": 2,
+        "materialId": "000000000000000000000000000000cb",
+        "version": "e671022b059bcade4ef4e72990a6e95243c1281bd7225155bb2bddb70aefd1be",
+        "count": "2"
+      },
+      {
+        "role": 3,
+        "materialId": "000000000000000000000000000000cc",
+        "version": "82ab3a5263d67432fe4df575fb831161930ff4af118e67aee04513ce876249e1",
+        "count": "1"
+      }
+    ],
+    "inputMassMilligrams": "90000",
+    "outputMassMilligrams": "80000",
+    "wasteMassMilligrams": "10000"
+  },
+  "newRecipeVersion": "3a21dbbe23be86d521771fad8ac9d4f36443f58b957e758d919e78dd331c5dd4",
+  "scope": "Definition accounting only; does not choose wood-as-fuel or packaging, execute crafting, create lots or assign source claims."
+}
