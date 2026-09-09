@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "reviewer": "p00_core",
+  "captured_at_utc": "2026-09-09T23:50:05.724759+00:00",
+  "scope": "Independent Hosting durable counted-transfer semantic review and nine reviewer-authored adversarial cases. No full P01, authentication, native export, process-kill or power-loss qualification claimed.",
+  "findings": [
+    {
+      "id": "DA-01",
+      "priority": 1,
+      "status": "closed",
+      "proof": "Initial static finding; exact schema/write-count fixes inspected and nine-case run includes three suppression regressions. No pre-fix executed red run."
+    },
+    {
+      "id": "DA-02",
+      "priority": 2,
+      "status": "closed",
+      "proof": "Metadata/schema admission under lifetime exclusive ownership and creation post-initialization check inspected; final no-build nine-case run passed after fix. No race-stress reproduction claimed."
+    }
+  ],
+  "execution_environment": {
+    "os": "macOS 15.6",
+    "architecture": "arm64",
+    "rid": "osx-arm64",
+    "sdk": "10.0.401",
+    "test_target": "net8.0",
+    "installed_net8_runtime": "8.0.31"
+  },
+  "test_runs": [
+    {
+      "label": "initial_independent_debug",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-restore",
+        "--configuration",
+        "Debug",
+        "--filter",
+        "FullyQualifiedName~OpenFantasy.Hosting.Tests.Review",
+        "--logger",
+        "trx;LogFileName=durable-review-debug.trx",
+        "--results-directory",
+        "../implementation/p01/durable-authority-review/test-results",
+        "--nologo",
+        "--verbosity",
+        "minimal"
+      ],
+      "working_directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime",
+      "exit_code": 0,
+      "reviewer_built": true,
+      "restored": false,
+      "times": {
+        "creation": "2026-09-09T18:44:08.3539180-05:00",
+        "queuing": "2026-09-09T18:44:08.3539180-05:00",
+        "start": "2026-09-09T18:44:06.8449540-05:00",
+        "finish": "2026-09-09T18:44:08.3569430-05:00"
+      },
+      "counters": {
+        "total": "9",
+        "executed": "9",
+        "passed": "9",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "tests": [
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.APreviousCommandIdentityCannotBecomeALaterSplitChild",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.CompetingCallersCannotBothSpendTheSameSourceUnits",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.ExistingReceiptDoesNotBypassCurrentDeliveryPrincipalOrSessionChecks",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsAnIncompleteIdentityRegistryWithoutChangingTheStoredWorld",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsChangedCommandBytesEvenWhenStoredSnapshotChecksumsStillMatch",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"head\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"identity\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"journal\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.UnsignedHighBitsInStateAndSourceIntervalsSurviveCommitAndRecovery",
+          "outcome": "Passed"
+        }
+      ],
+      "trx": "Beta/implementation/p01/durable-authority-review/test-results/durable-review-debug.trx"
+    },
+    {
+      "label": "final_independent_debug_after_both_fixes",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--configuration",
+        "Debug",
+        "--filter",
+        "FullyQualifiedName~OpenFantasy.Hosting.Tests.Review",
+        "--logger",
+        "trx;LogFileName=durable-review-final-debug.trx",
+        "--results-directory",
+        "../implementation/p01/durable-authority-review/test-results",
+        "--nologo",
+        "--verbosity",
+        "minimal"
+      ],
+      "working_directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime",
+      "exit_code": 0,
+      "reviewer_built": false,
+      "restored": false,
+      "times": {
+        "creation": "2026-09-09T18:52:51.1483660-05:00",
+        "queuing": "2026-09-09T18:52:51.1483660-05:00",
+        "start": "2026-09-09T18:52:49.7731520-05:00",
+        "finish": "2026-09-09T18:52:51.1516420-05:00"
+      },
+      "counters": {
+        "total": "9",
+        "executed": "9",
+        "passed": "9",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "tests": [
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.APreviousCommandIdentityCannotBecomeALaterSplitChild",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.CompetingCallersCannotBothSpendTheSameSourceUnits",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.ExistingReceiptDoesNotBypassCurrentDeliveryPrincipalOrSessionChecks",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsAnIncompleteIdentityRegistryWithoutChangingTheStoredWorld",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsChangedCommandBytesEvenWhenStoredSnapshotChecksumsStillMatch",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"head\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"identity\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"journal\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.UnsignedHighBitsInStateAndSourceIntervalsSurviveCommitAndRecovery",
+          "outcome": "Passed"
+        }
+      ],
+      "trx": "Beta/implementation/p01/durable-authority-review/test-results/durable-review-final-debug.trx"
+    }
+  ],
+  "files": [
+    {
+      "path": "Beta/Runtime/Directory.Build.props",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 396,
+      "sha256": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680"
+    },
+    {
+      "path": "Beta/Runtime/client/OpenFantasy.Client.csproj",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 491,
+      "sha256": "1418b317863d8ac9a6c1bf0471d2e487307a1d8f320696b922f02bccffc5417a"
+    },
+    {
+      "path": "Beta/Runtime/global.json",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 105,
+      "sha256": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/ActorControlBinding.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 232,
+      "sha256": "f2c1b4b4c705625ea167c3266e0ed6ad70852ca62ad0fad580c1f9b2c7bd3c3e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/AdmittedCountedSource.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 869,
+      "sha256": "07995b37d8a7d4b8c391f66584271a5eabc8acda98ab35f45da99810f70eddd1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/AuthorityDecision.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 738,
+      "sha256": "e86bb45a289bbf9c7bcfbd22b44171f465315e66319abbefd0d6263c9c5530ab"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/AuthorityEncodingV1.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 8565,
+      "sha256": "e7a0a5660ff72d1da3ac96adb0f8d874cc9bd201dda945eda13b5786e0c34d3e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/AuthorityFormatException.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 411,
+      "sha256": "369f4ec62606c1f001da0b2c91afe4793483d1d015d23a67fbf960fed6d2401f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/AuthorityFrameReader.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 3775,
+      "sha256": "50af1572e33b91be18a2c5c87afb808415b73f6e895cd7f0dad0c09f5050cf84"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/AuthorityIdentityRegistry.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 874,
+      "sha256": "3cc95dff2193ea701906f27b3b8c8d6ef8ed18796035f3832aaab5231014c86e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/CountedAuthorityState.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 9615,
+      "sha256": "78eff7c6c8239b4c8688224422e46301e2710448e4162427e790791f866b4408"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/CountedTransferAuthority.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 3884,
+      "sha256": "541c867b738d3d7ae40309767f9c7211c9a3e55a1750aadd9bcf8f595b916f6c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/CustodianAccessPolicy.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 903,
+      "sha256": "d91703f58d7923396e6461532c08c903b772624d1dbd462335de4ba666d39faa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/TrustedCommandDelivery.cs",
+      "role": "core_authority_dependency_semantically_reviewed",
+      "bytes": 348,
+      "sha256": "a1a6c904555056e075c69e4c949369fd873a21236a2dbef435acbbf470390f61"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/CanonicalEncodingV1.cs",
+      "role": "retained_shared_primitive",
+      "bytes": 2342,
+      "sha256": "1e8871ebbf3aece0316fabdcdbf1432c02240e053fa5b50f7bdf70223f46f4c4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CanonicalCommandReader.cs",
+      "role": "retained_command_dependency",
+      "bytes": 4232,
+      "sha256": "eb1f9a3933e9c5b723735eece980b05d2f8c167229ecfe188fa47a410f07505f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandCodecV1.cs",
+      "role": "retained_command_dependency",
+      "bytes": 5886,
+      "sha256": "33a539781af33aa8786dc2cbc754f5a345b734d8610e6710af75f39f79ca6c4f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandCommitIdentity.cs",
+      "role": "retained_command_dependency",
+      "bytes": 571,
+      "sha256": "911ced9e1e857c08cd29034949ec8799d92e3ad3bdeb874929d42ebc96bb45c0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandContentHash.cs",
+      "role": "retained_command_dependency",
+      "bytes": 1389,
+      "sha256": "d6ee65b8cf26f396f5573c297695f6b8bcbfbba8b72d0db92c3925ba996556c3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandEnvelope.cs",
+      "role": "retained_command_dependency",
+      "bytes": 1864,
+      "sha256": "4101e369c38d70b51b0f19045eca1e719d966ef2d0b87e6b9519a7d32993e533"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandFormatException.cs",
+      "role": "retained_command_dependency",
+      "bytes": 573,
+      "sha256": "371fed4a0a69edc4b6ff42be30887118bec4db49d76aa8d8a024d87fbdd6c159"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandReceipt.cs",
+      "role": "retained_command_dependency",
+      "bytes": 4064,
+      "sha256": "3541752c3c9879c69b439f4ceb273d3cafb763e7dbea59c3dc2631abbf66f1ee"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandReceiptCodecV1.cs",
+      "role": "retained_command_dependency",
+      "bytes": 2670,
+      "sha256": "6ac1f1b51bb0ef4a25cfc2a158b5e4eb4d4e7dba3d140aa47a58b98b79558fc5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevision.cs",
+      "role": "retained_command_dependency",
+      "bytes": 688,
+      "sha256": "12d3951e2b81f631b1ddfe79918eed997a4ba81a05d69484d9a2cbcb0320d395"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevisionSet.cs",
+      "role": "retained_command_dependency",
+      "bytes": 1817,
+      "sha256": "83c67e5b8b54a06e13343e7ce18004cad30e46161552ee2a80e71d0cf019c0e8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/TransferLotIntent.cs",
+      "role": "retained_command_dependency",
+      "bytes": 1162,
+      "sha256": "da3c56bc3f0385a3cca4bc44428283c97bfa14f2b7082f6733643a628458f6ac"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Content/ContentHash.cs",
+      "role": "retained_shared_primitive",
+      "bytes": 915,
+      "sha256": "279bcb92c2a19dffa74bcb9f1a7f13e709b2a2a7943ccc87e454f6e726d3bc45"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CanonicalCustodyReader.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 4231,
+      "sha256": "229fa7c4cb7510df8f13e84d21f36eb64da45aa9a7275696759459e2688647cc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CountedItemDefinition.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 522,
+      "sha256": "45fdd14ec87f906ba5cb5905652c12ea2f2e43d85a668da79232fbd073e357f6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CountedSourceLot.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 1625,
+      "sha256": "e04acde01d3420c1460728f67a827a4c1b5e17d892dc9d5279c98804af0046a8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodianStorage.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 242,
+      "sha256": "399e3c72407a8d6f50294057eb0dc7a22133587083ba12d7bea5b936e3fc72fc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyConflictException.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 609,
+      "sha256": "7133eaf97d28bfa5ea64baeca8b84d7fadea6beae21afd1a2de0ee174b54ec2d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyEncodingV1.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 6841,
+      "sha256": "69ca395f7de8be8043f4288732be488947a63ee0be4979a624db3458287649fb"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyFormatException.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 502,
+      "sha256": "b1bedf7387f5e704bf166b20b0c27963015efa48a875a2724ddd1a82dcc39549"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodySnapshot.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 4637,
+      "sha256": "54cb6923f7da74edeb364591b2e839c0eea497f8d2a4b8932d7102e8fbd9747e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyTransferPlan.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 987,
+      "sha256": "21df89e341409bb6722a7c36a38fe49c02c0e7c6ecef7d0b326db6b3baad16d4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyTransferPlanner.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 5554,
+      "sha256": "f7b9654be2adb772471c6001b4d5037b8f8cca5907f269efdfce8fff65fa6b61"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/SourceInterval.cs",
+      "role": "retained_custody_dependency",
+      "bytes": 743,
+      "sha256": "c4a5c84865743f70bf5f43a1d9c2268a93a6718700dc8d255bf5e099b8b8bd10"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/EntityId.cs",
+      "role": "retained_shared_primitive",
+      "bytes": 4821,
+      "sha256": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 336,
+      "sha256": "470b8bbe4ee9f686e1144d857fa279e6409a3312b4f4fd6b522fc9dd0aa7e96a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Host/OpenFantasy.Host.csproj",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 407,
+      "sha256": "2888498c7913c01e60c04b654648711f2f9bbc04a93555a1b80fb72bd557b620"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/AssemblyInfo.cs",
+      "role": "hosting_source_semantically_reviewed",
+      "bytes": 151,
+      "sha256": "577424458b8a64a5a7ee44ef5e27b78e457af409bf108f7150da2697bdeb2b24"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/AuthorityCommitPreparation.cs",
+      "role": "hosting_source_semantically_reviewed",
+      "bytes": 2725,
+      "sha256": "e7133fb778086aa31854bc975f6361b63e405bc5f5d4cae54e7eb356ec9333c5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/AuthorityDiagnosticReport.cs",
+      "role": "hosting_source_semantically_reviewed",
+      "bytes": 1007,
+      "sha256": "ae03b7e708212eb1f8392392dfb78c06273c751efee24eda31b87dae0a08f72f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/AuthorityJournalRecovery.cs",
+      "role": "hosting_source_semantically_reviewed",
+      "bytes": 3268,
+      "sha256": "b7925383859470dd827fda7c40e15974ddb3524b778653a2597db07077938df1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/LocalAuthorityFiles.cs",
+      "role": "hosting_source_semantically_reviewed",
+      "bytes": 1142,
+      "sha256": "96036db3de7cb84f402605d1c33bd1b6bc974f6342469dc9e9ff91827e7bae69"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 511,
+      "sha256": "b58682549374bb7b6867c36093985babd04750574e05bc8d392e6210d4d4ddb4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteAuthorityDatabase.cs",
+      "role": "hosting_source_semantically_reviewed",
+      "bytes": 15632,
+      "sha256": "01214b002aa4430885eaab1f2132c748d27b2eb75f9f04be34ff0d5c9f27b43b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteCountedAuthority.cs",
+      "role": "hosting_source_semantically_reviewed",
+      "bytes": 5992,
+      "sha256": "f53556e5dad91bf03a9987d3357fa4c8bc269caa5de698175bdd4b7fcaf2f27e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/packages.lock.json",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 1886,
+      "sha256": "74b693c53d1689e5fa36c5f99ebb81e80817f3aadb2fe1c68a30b8175f189576"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 764,
+      "sha256": "dfd32421b7b21f78aec4c941e8dadc9aba630d64820d44adf471867d1884103a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Review/DurableAuthorityAdversarialTests.cs",
+      "role": "reviewer_owned_adversarial_tests",
+      "bytes": 13660,
+      "sha256": "8ad1c64ffc7941aed6dba24112d1b4f800f621c0e27fa062a666b9cffabf3d2f"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/packages.lock.json",
+      "role": "build_boundary_or_dependency_pin",
+      "bytes": 10512,
+      "sha256": "fb116955fc1491f96fe4240e5d20716a6117b194a6832eb3dc7e502292d9604d"
+    },
+    {
+      "path": "Beta/implementation/p01/authority-contracts/CONTRACT.md",
+      "role": "bounded_core_authority_contract",
+      "bytes": 15079,
+      "sha256": "4de9916a5d2124efa7adc00896ee758f53afacad654be7d492263dd897798d9f"
+    },
+    {
+      "path": "Beta/implementation/p01/durable-authority-review/CODE_REVIEW.md",
+      "role": "review_document_or_independent_execution_evidence",
+      "bytes": 10021,
+      "sha256": "173f126fce97a464603fda845778f520caeec82996c483f26c649ed899d08c56"
+    },
+    {
+      "path": "Beta/implementation/p01/durable-authority-review/TESTED_ASSEMBLIES.json",
+      "role": "review_document_or_independent_execution_evidence",
+      "bytes": 842,
+      "sha256": "0db36425c2bf9eefc5a7962a48b5c7b3266db032971338504cd217c02b7feda2"
+    },
+    {
+      "path": "Beta/implementation/p01/durable-authority-review/test-results/durable-review-debug.trx",
+      "role": "review_document_or_independent_execution_evidence",
+      "bytes": 15603,
+      "sha256": "fdfc2053a52f169939a7c229af15e78deb3b963cd4c6aa4658f0d9a265eaa880"
+    },
+    {
+      "path": "Beta/implementation/p01/durable-authority-review/FINAL_TESTED_ASSEMBLIES.json",
+      "role": "final_independent_review_or_execution_evidence",
+      "bytes": 871,
+      "sha256": "44567bd03556e6b46a3db0f256abb2038330dbb42ccf681a5b964d3c2acae95b"
+    },
+    {
+      "path": "Beta/implementation/p01/durable-authority-review/COORDINATOR_INPUT_AUDIT.json",
+      "role": "final_independent_review_or_execution_evidence",
+      "bytes": 554,
+      "sha256": "9d4f449c534c2498ed957ce128e06a02180b2507de9d926d74e221d6e6a1357a"
+    },
+    {
+      "path": "Beta/implementation/p01/durable-authority-review/test-results/durable-review-final-debug.trx",
+      "role": "final_independent_review_or_execution_evidence",
+      "bytes": 15603,
+      "sha256": "d26a3ac7c26a11bdf95305a27635e8e0146b674e21fecaed5e56a38f9ebd3d1c"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "bytes": 39936,
+      "sha256": "36e5ee252c8a73fa5ee63fdb7996126d2f2f18e0b2cab9a6ef2ad7203808c0f2",
+      "role": "final_tested_assembly_after_both_fixes_not_full_assembly_semantic_review",
+      "captured_at_utc": "2026-09-09T23:53:01.666355+00:00"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "bytes": 45056,
+      "sha256": "d1a9f9058017370e8987389f9cb78787398e5c04eec8d76d165ca734773ec307",
+      "role": "final_tested_assembly_after_both_fixes_not_full_assembly_semantic_review",
+      "captured_at_utc": "2026-09-09T23:53:01.666355+00:00"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 210432,
+      "sha256": "48f8e294bba2d7748d064882d46fe1a5dbf609594a669f8a3076478c7c19652a",
+      "role": "final_tested_assembly_after_both_fixes_not_full_assembly_semantic_review",
+      "captured_at_utc": "2026-09-09T23:53:01.666355+00:00"
+    }
+  ],
+  "finalized_at_utc": "2026-09-09T23:55:12.160393+00:00",
+  "disposition": "No unresolved concrete blocking defect identified in the reviewed bounded durable counted-authority scope; both independent nine-case runs passed. Not full P01/production/authentication/export qualification.",
+  "historical_tested_assemblies": [
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "bytes": 39936,
+      "sha256": "3e2bdd37f4db1d8cf7ffa4a42fc4891f5f7d9da3c4d04bbc74c3c2d36d95c857",
+      "role": "initial_tested_assembly_before_DA02_ordering_fix_preserved_historical_hash",
+      "captured_at_utc": "2026-09-09T23:44:19.240633+00:00"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "bytes": 43008,
+      "sha256": "e70050b4a746c1302f869d161457970a9ca99a846d7ed1c915a6ed3345682793",
+      "role": "initial_tested_assembly_before_DA02_ordering_fix_preserved_historical_hash",
+      "captured_at_utc": "2026-09-09T23:44:19.240633+00:00"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 210432,
+      "sha256": "6cfd5408741e896b33a3d0ffbd64edf6c12cd737f3f647edbc9fd3eaa83e4db2",
+      "role": "initial_tested_assembly_before_DA02_ordering_fix_preserved_historical_hash",
+      "captured_at_utc": "2026-09-09T23:44:19.240633+00:00"
+    }
+  ],
+  "coordinator_input_audit": {
+    "path": "Beta/implementation/p01/durable-authority-review/COORDINATOR_INPUT_AUDIT.json",
+    "count": 274,
+    "mismatches": 0,
+    "claim": "Read-only file-hash comparison only."
+  }
+}

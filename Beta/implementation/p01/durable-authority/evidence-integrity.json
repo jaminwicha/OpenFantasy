@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "runtimeInputCount": 274,
+  "reviewManifests": [
+    {
+      "record": "authority-review/INPUTS.json",
+      "matched": 32
+    },
+    {
+      "record": "terrain-review/EVIDENCE.json",
+      "matched": 18
+    },
+    {
+      "record": "durable-authority-review/REVIEW_VALIDATION.json",
+      "matched": 63
+    }
+  ],
+  "notes": "Historical test binaries remain historical; current review entries and final runtime inputs matched."
+}

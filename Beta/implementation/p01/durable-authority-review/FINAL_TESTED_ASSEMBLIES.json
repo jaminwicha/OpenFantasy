@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-09-09T23:53:01.666355+00:00",
+  "reason": "Final nine-case no-build/no-restore Debug run after DA-02 ordering fix; captured before returning build window.",
+  "files": [
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "bytes": 39936,
+      "sha256": "36e5ee252c8a73fa5ee63fdb7996126d2f2f18e0b2cab9a6ef2ad7203808c0f2"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "bytes": 45056,
+      "sha256": "d1a9f9058017370e8987389f9cb78787398e5c04eec8d76d165ca734773ec307"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 210432,
+      "sha256": "48f8e294bba2d7748d064882d46fe1a5dbf609594a669f8a3076478c7c19652a"
+    }
+  ]
+}

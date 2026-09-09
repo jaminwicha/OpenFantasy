@@ -1,0 +1,153 @@
+{
+  "scope": "Local counted authority; actual kill/reopen/retry and optional headless Godot native loading",
+  "configuration": "Debug",
+  "status": "passed",
+  "steps": [
+    {
+      "name": "create",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":0,\"StateHash\":\"c3e784d5e387906617bff1d7c3caf5f0891120d5ad6d54176404402532289908\",\"CustodyRevision\":7,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "create-refuses-existing",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-durable-ywc96u45/normal.sqlite' already exists.\n",
+      "stderr": ""
+    },
+    {
+      "name": "transfer",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":\"4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "restart-retry",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":\"4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "retry-requires-current-delivery",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The delivery cannot access this command stream.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unchanged-after-refused-delivery",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before-create",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":0,\"StateHash\":\"c3e784d5e387906617bff1d7c3caf5f0891120d5ad6d54176404402532289908\",\"CustodyRevision\":7,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before-recover",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":0,\"StateHash\":\"c3e784d5e387906617bff1d7c3caf5f0891120d5ad6d54176404402532289908\",\"CustodyRevision\":7,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before-retry",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":\"4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before-repeat-retry",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":\"4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after-create",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":0,\"StateHash\":\"c3e784d5e387906617bff1d7c3caf5f0891120d5ad6d54176404402532289908\",\"CustodyRevision\":7,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after-recover",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after-retry",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":\"4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after-repeat-retry",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":\"4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "godot-native-durable-authority",
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":\"4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "dedicated-reopens-godot-world",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"durable-counted-authority-v1\",\"CommitSequence\":1,\"StateHash\":\"5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6\",\"CustodyRevision\":8,\"Database\":{\"Version\":\"3.53.4\",\"SourceId\":\"2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc\",\"JournalMode\":\"wal\",\"Synchronous\":2,\"ForeignKeys\":1,\"LockingMode\":\"exclusive\"},\"ReceiptHex\":null}\n",
+      "stderr": ""
+    }
+  ],
+  "crashCases": [
+    {
+      "boundary": "before",
+      "marker": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "termination": "external process.kill; no graceful Dispose"
+    },
+    {
+      "boundary": "after",
+      "marker": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "termination": "external process.kill; no graceful Dispose"
+    }
+  ],
+  "fixtureSha256": "db99a9ce599ddd768f0e9b94a8feed3ce433f83a98854a63ef653b01db6bfa74",
+  "godotNativeAuthority": {
+    "Contract": "durable-counted-authority-v1",
+    "CommitSequence": 1,
+    "StateHash": "5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6",
+    "CustodyRevision": 8,
+    "Database": {
+      "Version": "3.53.4",
+      "SourceId": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+      "JournalMode": "wal",
+      "Synchronous": 2,
+      "ForeignKeys": 1,
+      "LockingMode": "exclusive"
+    },
+    "ReceiptHex": "4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000"
+  },
+  "dedicatedNativeAuthority": {
+    "Contract": "durable-counted-authority-v1",
+    "CommitSequence": 1,
+    "StateHash": "5245cf7f83248dc97e4af39b23d27dd119aa03cc5ad0fae1494ecc17802a45a6",
+    "CustodyRevision": 8,
+    "Database": {
+      "Version": "3.53.4",
+      "SourceId": "2026-07-24 19:02:57 bf7c7f30031888f4e796e429ab3978879485813aaca6f641c7b33e4e09459bcc",
+      "JournalMode": "wal",
+      "Synchronous": 2,
+      "ForeignKeys": 1,
+      "LockingMode": "exclusive"
+    },
+    "ReceiptHex": "4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000"
+  },
+  "expectedFirstReceiptHex": "4f464300000000010000000a0000000f636f6d6d616e642e7265636569707400000008000000000000000100000010000000000000000000000000000000140000001000000000000000000000000000000015000000100000000000000000000000000000000100000010000000000000000000000000000000020000002080afe01c8d5422ac48f0813072e565ccd7bd17c0e137f25319fef1fb87a4c480000000080000000000000001000000080000000000000001000000080000000000000000"
+}

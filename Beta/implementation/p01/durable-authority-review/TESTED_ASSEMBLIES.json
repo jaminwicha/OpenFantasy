@@ -1,0 +1,21 @@
+{
+  "captured_at_utc": "2026-09-09T23:44:19.240633+00:00",
+  "reason": "Capture after reviewer-built targeted nine-case run before returning build window.",
+  "files": [
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "bytes": 39936,
+      "sha256": "3e2bdd37f4db1d8cf7ffa4a42fc4891f5f7d9da3c4d04bbc74c3c2d36d95c857"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "bytes": 43008,
+      "sha256": "e70050b4a746c1302f869d161457970a9ca99a846d7ed1c915a6ed3345682793"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 210432,
+      "sha256": "6cfd5408741e896b33a3d0ffbd64edf6c12cd737f3f647edbc9fd3eaa83e4db2"
+    }
+  ]
+}

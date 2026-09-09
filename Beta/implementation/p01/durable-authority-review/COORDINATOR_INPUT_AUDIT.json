@@ -1,0 +1,12 @@
+{
+  "audited_at_utc": "2026-09-09T23:53:55.523270+00:00",
+  "scope": "Independent read-only comparison of coordinator final input hashes, not execution or semantic review of all coordinator tests/files.",
+  "coordinator_manifest": "Beta/implementation/p01/durable-authority/verification.json",
+  "coordinator_manifest_sha256": "b52efb8121f1fc22d763251f2bd3fb5d1529decfb1c6c50adfbc7fcaf9e38e11",
+  "coordinator_status": "passed",
+  "input_count": 274,
+  "mismatches": [],
+  "generated_uid_files": [
+    "client/scripts/DurableAuthoritySmoke.cs.uid"
+  ]
+}
