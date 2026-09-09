@@ -1,6 +1,7 @@
 using System.Text.Json;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Custody;
 
 namespace OpenFantasy.Host;
 
@@ -56,6 +57,23 @@ internal sealed class ContractInspector
                 Id = dependency.Id.Value,
                 Version = dependency.Version.Value
             })
+        });
+    }
+
+    public string InspectCustody(string path)
+    {
+        CustodySnapshot snapshot = CustodyEncodingV1.Decode(
+            ReadBoundedFile(path, CustodyEncodingV1.MaximumSnapshotByteLength));
+        return JsonSerializer.Serialize(new
+        {
+            Contract = "counted-custody-v1",
+            Scope = "snapshot-invariants",
+            WorldId = snapshot.WorldId.ToString(),
+            BranchId = snapshot.BranchId.ToString(),
+            snapshot.Revision,
+            ContentHash = snapshot.ContentHash.Value,
+            CustodianCount = snapshot.Storages.Count,
+            LotCount = snapshot.Lots.Count
         });
     }
 

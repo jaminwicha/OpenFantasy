@@ -1,0 +1,27 @@
+{
+  "independent_oracle_executions": [
+    {
+      "fixture": "custody-v1.json",
+      "generator": "generate_custody_vectors.py",
+      "byte_equal": true,
+      "fixture_sha256": "c332b6c53095864f85a5d3f80610b91609a2a0235695674d4162d8673e99faa3"
+    },
+    {
+      "fixture": "custody-invalid-v1.json",
+      "generator": "generate_custody_invalid_vectors.py",
+      "byte_equal": true,
+      "fixture_sha256": "6aa6601848189bb3fc764575d600cba1fa2dc8ad723b948b1b5ecd30a91b047e"
+    },
+    {
+      "fixture": "exposure-v1.json",
+      "generator": "generate_exposure_vectors.py",
+      "byte_equal": true,
+      "fixture_sha256": "c80eb3a1bc557acc9aee17d3a31cca96fd01d00cc50701c5a413c7436bfb7858"
+    }
+  ],
+  "previous_custody_fixture_unchanged": true,
+  "hostile_frames": 27,
+  "exposure_golden_cases": 4,
+  "original_snapshot_bytes": 534,
+  "notes": "These executions import no application code. The malformed generator derives mutations from the frozen independent custody fixture."
+}

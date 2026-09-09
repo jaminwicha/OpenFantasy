@@ -18,6 +18,8 @@ def main():
     fixtures = root / 'tests/OpenFantasy.Core.Tests/Fixtures'
     commands = json.loads((fixtures / 'commands-v1.json').read_text())
     packages = json.loads((fixtures / 'packages-v1.json').read_text())
+    custody = json.loads((fixtures / 'custody-v1.json').read_text())
+    invalid_custody = json.loads((fixtures / 'custody-invalid-v1.json').read_text())
     dotnet = Path(args.dotnet).resolve()
     env = dict(os.environ, DOTNET_ROOT=str(dotnet.parent))
     report = {'scope': 'local structural diagnostics and source-packet bytes', 'status': 'running', 'cases': []}
@@ -58,6 +60,20 @@ def main():
             run('unknown arguments', ['--not-a-command'], 2)
             run('missing argument', ['--inspect-command'], 2)
             run('usage', [])
+
+            custody_file = folder / 'custody.bin'
+            custody_file.write_bytes(bytes.fromhex(custody['candidateHex']))
+            value = json.loads(run('canonical custody', ['--inspect-custody', custody_file]))
+            if (value['ContentHash'] != custody['candidateHash'] or value['CustodianCount'] != 2
+                    or value['LotCount'] != 2 or value['Revision'] != 8
+                    or value['Scope'] != 'snapshot-invariants'):
+                raise RuntimeError('Host custody projection differs from independent fixture')
+            for case in invalid_custody['cases']:
+                custody_file.write_bytes(bytes.fromhex(case['hex']))
+                run('custody: ' + case['name'], ['--inspect-custody', custody_file], 1)
+            with custody_file.open('wb') as oversized:
+                oversized.truncate(942_754)
+            run('custody byte limit', ['--inspect-custody', custody_file], 1)
 
             metadata = {'schemaVersion': 1, 'id': 'openfantasy.rules',
                         'payloadSha256': packages['payloadSha256'], 'dependencies': []}

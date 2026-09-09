@@ -25,6 +25,7 @@ internal sealed class HostApplication
             {
                 ["--inspect-foundation"] => CreateFoundationReport(),
                 ["--inspect-command", var path] => _contracts.InspectCommand(path),
+                ["--inspect-custody", var path] => _contracts.InspectCustody(path),
                 ["--inspect-package", var manifest, var payload] => _contracts.InspectPackage(manifest, payload),
                 _ => null
             };
@@ -49,6 +50,7 @@ internal sealed class HostApplication
     {
         _output.WriteLine("OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation");
         _output.WriteLine("       OpenFantasy.Host --inspect-command <command.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-custody <snapshot.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>");
         _output.WriteLine("World hosting is not yet implemented.");
     }
