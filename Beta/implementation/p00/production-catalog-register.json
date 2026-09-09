@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "project": "OpenFantasy",
+  "artifact_role": "Finite family inventory and unresolved production targets",
+  "date": "2026-09-08",
+  "catalog_status": "initial P00 register; exact new-definition targets are outstanding",
+  "source_denominators": {
+    "files": 201,
+    "structured_records": 532,
+    "code_defined_entries": 10,
+    "document_headings_for_semantic_review": 187,
+    "scope_note": "Different units; do not add them as a count of completed concepts or imported definitions."
+  },
+  "catalogs": [
+    {
+      "id": "CAT-01",
+      "family": "Classes, abilities and skills",
+      "requirement_ids": [
+        "RQ-022",
+        "RQ-026",
+        "RQ-027",
+        "RQ-117",
+        "RQ-119",
+        "RQ-144"
+      ],
+      "known_legacy_counts": {
+        "classes": 3,
+        "abilities": 12
+      },
+      "required_family_set": [
+        "Squire",
+        "Mage",
+        "Scout",
+        "illusion",
+        "invocation",
+        "elemental combinations",
+        "fishing",
+        "hunting",
+        "cooking",
+        "knitting",
+        "writing",
+        "acting",
+        "acrobatics",
+        "herbalism",
+        "alchemy",
+        "mining",
+        "smithing",
+        "farming",
+        "research",
+        "spellbinding"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Rules/content authors",
+      "full_integration_phase": "P05",
+      "pending_work": [
+        "Retain all named abilities and source progression.",
+        "Enumerate original complete class/skill/effect capability families, actual actions, teaching routes, costs and novice/expert feedback.",
+        "List finite supported effect operations/targets/durations/fusions and reject unsupported compositions."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-02",
+      "family": "Bodies, species, forms and subspecies",
+      "requirement_ids": [
+        "RQ-019",
+        "RQ-109",
+        "RQ-110",
+        "RQ-114",
+        "RQ-150",
+        "RQ-174",
+        "RQ-175",
+        "RQ-180"
+      ],
+      "known_legacy_counts": {
+        "appearance_races": 4,
+        "monsters": 35
+      },
+      "required_family_set": [
+        "humans",
+        "elves",
+        "dwarves",
+        "gnomes",
+        "halflings",
+        "dragonkind",
+        "quicklings",
+        "giants",
+        "snake people",
+        "cat people",
+        "lizard people",
+        "dragons",
+        "medusas",
+        "minotaurs",
+        "orcs",
+        "all 35 legacy monsters and all required authored subspecies"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Actor/rules authors and artist lead",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "Eleven named newer species families are additive; giants overlap and dragonkind/dragons require explicit taxonomy, not silent collapse.",
+        "Enumerate finite subspecies definitions and body/scale/sense/lifespan/care/form profiles; source appearance races are not an automatic taxonomy mapping.",
+        "Every shipping body needs applicable movement, action, equipment, injury/form, pair interaction, native sprite and acoustic coverage."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-03",
+      "family": "People, social institutions and cultural traditions",
+      "requirement_ids": [
+        "RQ-040",
+        "RQ-041",
+        "RQ-042",
+        "RQ-043",
+        "RQ-044",
+        "RQ-102",
+        "RQ-112",
+        "RQ-132",
+        "RQ-133",
+        "RQ-135",
+        "RQ-177",
+        "RQ-178",
+        "RQ-179",
+        "RQ-181"
+      ],
+      "known_legacy_counts": {
+        "npcs": 123
+      },
+      "required_family_set": [
+        "households/kinship",
+        "directed personal affinities",
+        "offices/succession",
+        "guilds/trade networks",
+        "overt/covert factions",
+        "nations",
+        "cultural clothing and possessions",
+        "craft/weapon/armor/tool lineages",
+        "martial/mechanical/alchemical/magical knowledge profiles"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Society/content authors",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "Preserve every NPC identity/dialogue/shop/quest association and deepen through common actor state.",
+        "Enumerate authored cultures, institutional and design/process families, personal exceptions and migration/hybridization; no one universal technology rank."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-04",
+      "family": "Items, processes and materials",
+      "requirement_ids": [
+        "RQ-025",
+        "RQ-028",
+        "RQ-032",
+        "RQ-111",
+        "RQ-117",
+        "RQ-129",
+        "RQ-130",
+        "RQ-131",
+        "RQ-179"
+      ],
+      "known_legacy_counts": {
+        "items": 63,
+        "recipes": 28,
+        "node_archetypes": 3
+      },
+      "required_family_set": [
+        "wood/ore/berries source identities",
+        "material/alloy families",
+        "cooking/herbal tea/alchemy",
+        "weapon/armor/tool parts",
+        "enchantment and researched spell processes",
+        "condition/maintenance/repair"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Production/content authors",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "List actual material units, sources, transforms, byproducts, labor/stations, substitutions and provenance.",
+        "Set shipping process/ingredient/tool counts and protected/reserved ingredient rules before bulk authoring."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-05",
+      "family": "Vehicles, mounts and care",
+      "requirement_ids": [
+        "RQ-014",
+        "RQ-107",
+        "RQ-116",
+        "RQ-127"
+      ],
+      "known_legacy_counts": {
+        "legacy_vehicle_identities": 5
+      },
+      "required_family_set": [
+        "sailboat",
+        "ship",
+        "canoe",
+        "dwarven tank",
+        "Brasswing airship",
+        "carriage",
+        "chariot",
+        "sandship",
+        "tunneling ship",
+        "air balloon",
+        "airship",
+        "horse mounts",
+        "lizard mounts",
+        "bird mounts",
+        "pets",
+        "familiars"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Travel/production authors and artists",
+      "full_integration_phase": "P06",
+      "pending_work": [
+        "Five source identities stay distinct with recorded compatibility transforms.",
+        "Enumerate parts/crew/cargo/topology, load and movement capabilities, mount body/feeding/training/care and native paired animations."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-06",
+      "family": "Geology, terrain, fluids and ecology",
+      "requirement_ids": [
+        "RQ-151",
+        "RQ-152",
+        "RQ-153",
+        "RQ-154",
+        "RQ-155",
+        "RQ-156",
+        "RQ-157",
+        "RQ-158",
+        "RQ-159",
+        "RQ-160",
+        "RQ-161",
+        "RQ-162",
+        "RQ-163",
+        "RQ-164",
+        "RQ-165",
+        "RQ-166",
+        "RQ-167"
+      ],
+      "known_legacy_counts": {
+        "terrain_kinds": 29,
+        "monster_spawners": 39,
+        "resource_placements": 14
+      },
+      "required_family_set": [
+        "rift/collision/uplift/erosion/subsidence",
+        "volcano/quake/landslide/flood",
+        "river/catchment/aquifer/coast",
+        "glacier/ice age/ice floe",
+        "water/lava/other declared liquids",
+        "phase/reaction tables",
+        "plants/stages/seasonal harvest",
+        "herbivores/predators/intermediate creatures",
+        "dispersal/migration",
+        "bounded trait variation",
+        "succession/desertification",
+        "magical taint/recovery"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "World/ecology authors",
+      "full_integration_phase": "P10",
+      "pending_work": [
+        "Pin finite process/material/reaction and ecological species/source tables for actual support, with stage budgets and source/receiver accounting.",
+        "Classify legacy respawn/habitat/drop behavior versus new resource ecology; preserve identity without free material creation."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-07",
+      "family": "Places, building and progression grammars",
+      "requirement_ids": [
+        "RQ-010",
+        "RQ-012",
+        "RQ-036",
+        "RQ-037",
+        "RQ-038",
+        "RQ-128",
+        "RQ-129",
+        "RQ-138",
+        "RQ-142",
+        "RQ-146",
+        "RQ-147",
+        "RQ-148",
+        "RQ-156",
+        "RQ-157",
+        "RQ-176",
+        "RQ-178",
+        "RQ-181"
+      ],
+      "known_legacy_counts": {
+        "regions": 25,
+        "towns": 4,
+        "building_records": 32,
+        "farms": 4,
+        "safe_zones": 5,
+        "crystals": 4,
+        "site_recipes": 7
+      },
+      "required_family_set": [
+        "town/city/castle/fortress",
+        "workshop/farm/dwelling",
+        "crypt/sewer/cave/underdark",
+        "underwater/drowned ruin",
+        "stacked floors/subfloors/stairs/tunnels",
+        "shadow/parallel realm connectors",
+        "cultural layouts/materials/castles",
+        "nonlinear loops/multiple entrances/temporal routes"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "World/level/content authors",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "Retain 25 named source regions and seven hardcoded site recipes with realizable routes.",
+        "Enumerate finite grammar/build/support/connector families and actual challenge/knowledge/time witnesses; settle target counts."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-08",
+      "family": "Narratives, mysteries and teaching",
+      "requirement_ids": [
+        "RQ-006",
+        "RQ-007",
+        "RQ-045",
+        "RQ-046",
+        "RQ-047",
+        "RQ-048",
+        "RQ-113",
+        "RQ-124",
+        "RQ-125",
+        "RQ-145",
+        "RQ-147",
+        "RQ-148",
+        "RQ-171"
+      ],
+      "known_legacy_counts": {
+        "quests": 45
+      },
+      "required_family_set": [
+        "authored adventurelets",
+        "contextual encounters/decks",
+        "multiple contingent grand arcs",
+        "ordinary career continuations",
+        "mystery/evidence routes",
+        "skill/social/action puzzles",
+        "observe/practice/use/combine teaching",
+        "changed/dead/unavailable role continuations"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Narrative/quest authors",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "Enumerate finite authored arc/adventurelet/deck/clue/teaching definitions and alternate bindings, not an infinite quest count.",
+        "Preserve source routes plus truthful changed-world continuations. Test 60–80-hour path quality and optional stretch through actual play later."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-09",
+      "family": "Planes, language, cosmology and lifecycle",
+      "requirement_ids": [
+        "RQ-053",
+        "RQ-054",
+        "RQ-055",
+        "RQ-056",
+        "RQ-058",
+        "RQ-109",
+        "RQ-118",
+        "RQ-136",
+        "RQ-139",
+        "RQ-141",
+        "RQ-173",
+        "RQ-174",
+        "RQ-175"
+      ],
+      "known_legacy_counts": {},
+      "required_family_set": [
+        "spatial/temporal portals",
+        "historical branches",
+        "dream realm",
+        "ethereal/shadow/other supported planes",
+        "gods/domains/interventions",
+        "languages/dialects/cants",
+        "slow aging/death/estate/remains",
+        "conditional ghosts/hauntings/restoration"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "World/actor/narrative authors",
+      "full_integration_phase": "P10",
+      "pending_work": [
+        "Enumerate finite initial realm/language/form/divine capability families and rituals with entry/exit/time/custody limits.",
+        "Readable essential play must have real alternatives; language and haunting are not universal chores."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-10",
+      "family": "Native art and animation",
+      "requirement_ids": [
+        "RQ-003",
+        "RQ-082",
+        "RQ-083",
+        "RQ-084",
+        "RQ-091",
+        "RQ-093",
+        "RQ-094",
+        "RQ-095",
+        "RQ-096",
+        "RQ-100",
+        "RQ-101",
+        "RQ-140",
+        "RQ-178",
+        "RQ-179",
+        "RQ-180"
+      ],
+      "known_legacy_counts": {
+        "asset_files_all_types": 89,
+        "appearance_presets": 8,
+        "hair_styles": 12,
+        "outfits": 10,
+        "accessory_indices": 4
+      },
+      "required_family_set": [
+        "person/creature/animal/object kits",
+        "terrain/tile/architecture/cultural construction",
+        "personality idles/emotion/gesture",
+        "work/skill/combat/choreography",
+        "equipment/clothing/kept objects",
+        "body directions and incompatible attachments",
+        "season/weather/day/night/condition history",
+        "distinct original variants and restrained detail"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Dedicated artist agents; client integrates",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "Record actual supported body × direction × action × incompatible attachment coverage as finite jobs, with paired interactions and tile seams.",
+        "Retain existing art options; accepted concept stills do not imply native animation approval.",
+        "Set finite native kit/scene targets, original source/provenance and acceptance scope before bulk production."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-11",
+      "family": "Audio, music and acoustic intent",
+      "requirement_ids": [
+        "RQ-078",
+        "RQ-106",
+        "RQ-140",
+        "RQ-169",
+        "RQ-170"
+      ],
+      "known_legacy_counts": {},
+      "required_family_set": [
+        "place/culture/era motifs",
+        "editable music stems and transitions",
+        "town/wilderness/dungeon ambience",
+        "wind/rain/water/cave/seaside birds",
+        "animal/monster/NPC/player activity",
+        "material/footstep/tool/vehicle actions",
+        "ordinary encounter/rare epic escalation",
+        "intentional quiet/silence",
+        "captions/visual equivalents"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Audio creators; client integrates",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "No source audio count is asserted by this register; reconcile file types before declaring legacy audio absent or present.",
+        "Enumerate finite cue/stem/action/acoustic families, codec/device candidates and voice/repetition limits.",
+        "Deduplicate delivery per listener/branch incarnation/presentation visit, preserving legitimate later revisits. Human long-session approval remains P12."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    },
+    {
+      "id": "CAT-12",
+      "family": "UI, accessibility, localization and packages",
+      "requirement_ids": [
+        "RQ-023",
+        "RQ-024",
+        "RQ-061",
+        "RQ-062",
+        "RQ-063",
+        "RQ-064",
+        "RQ-065",
+        "RQ-067",
+        "RQ-068",
+        "RQ-071",
+        "RQ-075",
+        "RQ-078",
+        "RQ-134",
+        "RQ-171"
+      ],
+      "known_legacy_counts": {},
+      "required_family_set": [
+        "adventure HUD",
+        "inventory/equipment/loadouts",
+        "journal/research/bestiary",
+        "social/kinship",
+        "settlement orders",
+        "construction preview",
+        "strategic travel",
+        "timeline/portal atlas",
+        "novice/expert views",
+        "input remap/controller/text/captions/reduced motion",
+        "localized string IDs and package manifests"
+      ],
+      "shipping_definition_target_count": null,
+      "target_count_status": "pending P00 authoring decision; known source counts and required families are lower bounds, not completed shipping definitions",
+      "owner_role": "Client/UI/content pipeline authors",
+      "full_integration_phase": "P11",
+      "pending_work": [
+        "Enumerate shipping screens/input/accessibility/string and package capability families and supported locale targets.",
+        "Keep admin diagnostics separate from earned character knowledge; no mandatory LLM dependency."
+      ],
+      "implementation_status": "catalog planning only",
+      "evidence_paths": []
+    }
+  ],
+  "coverage_rules": [
+    "All source records/assets and accepted concepts retain mapping/provenance even when definitions consolidate or split.",
+    "Required species families are additive; no old being or creature disappears because it is not among the newer eleven.",
+    "Finite authored catalog closure occurs P11; procedural instances are tested by family/topology/history/boundary partitions and selected interactions.",
+    "Every shipped applicable definition needs action/state/knowledge/presentation/audio mapping, explicit dependencies, reachable use and evidence.",
+    "All target_definition counts are pending decisions, not zero and not an estimate of full game scope."
+  ]
+}

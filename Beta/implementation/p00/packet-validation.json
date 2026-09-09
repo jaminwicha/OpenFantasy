@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "project": "OpenFantasy",
+  "artifact_role": "P00 planning packet source and document checks only",
+  "date": "2026-09-08",
+  "result": "passed for the checks named below",
+  "checks": {
+    "selected_source_payloads_equal_current_and_inventory": 31,
+    "selected_source_file_hashes_and_sizes_match": 22,
+    "catalog_families_reference_existing_requirement_ids": 12,
+    "substantive_contract_families": 23,
+    "local_markdown_links_resolved": 12,
+    "json_documents_parsed": 2
+  },
+  "limitations": [
+    "No runtime source, build, export, importer, native art/audio, gameplay, performance or human acceptance was tested by this packet validation.",
+    "First-loop selection is not dependency-closed.",
+    "All new-definition catalog target counts and candidate hardware/workload budgets remain pending disposition."
+  ],
+  "inputs": [
+    {
+      "path": "BENCHMARK_FIXTURES.md",
+      "sha256": "adff5303a96a53ff8f0dc790d8f0b7bc2be3650a7a996f736e29a182bb78b7be"
+    },
+    {
+      "path": "CONTRACT_INVENTORY.md",
+      "sha256": "35ac624dc56e1a526d6ad4a9e278eafab8adccd0d20ec8e0f1a2032069833f43"
+    },
+    {
+      "path": "MIGRATION_FIRST_LOOP.md",
+      "sha256": "1dcffdaa97dc4eb39f2da621a95bc11864634ca5bfe2af21228bc9c117353e74"
+    },
+    {
+      "path": "P00_EXIT_CHECKLIST.md",
+      "sha256": "dc4f761e846e754b4dbe419f061f8f4f2044d7400591a4442632027dfccd72d7"
+    },
+    {
+      "path": "README.md",
+      "sha256": "928c345a3756e1eef3292e9bda7572ae8d623bc52e6aab621cbbded938d19e8b"
+    },
+    {
+      "path": "legacy-first-loop-inputs.json",
+      "sha256": "fe9596d7b3b28757d20036c1c0d13bdda1fe7fab7be2b690683b26085f40b44c"
+    },
+    {
+      "path": "production-catalog-register.json",
+      "sha256": "071c7fe98f129215df4fc43cc6ddea7a69db811912b0d1d80406851cec8c7a69"
+    }
+  ]
+}

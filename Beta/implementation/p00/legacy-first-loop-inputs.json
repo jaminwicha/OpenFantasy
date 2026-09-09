@@ -1,0 +1,913 @@
+{
+  "schema_version": 1,
+  "project": "OpenFantasy",
+  "artifact_role": "P00 source selection and planning evidence, not a runtime package",
+  "date": "2026-09-08",
+  "source_inventory": "../../content-migration/original-content-inventory-2026-09-08.json",
+  "source_inventory_sha256": "8cef5ed7c8ded71605ae350c22ce892a9c73e4a3ac5a1b1f607c5688d23c4641",
+  "requirement_ids": [
+    "RQ-085",
+    "RQ-087",
+    "RQ-088",
+    "RQ-098",
+    "RQ-111",
+    "RQ-119",
+    "RQ-137",
+    "RQ-171"
+  ],
+  "candidate_content_namespace": "openfantasy.aldermere",
+  "target_namespace_status": "candidate; no target definitions or instances allocated by this packet",
+  "selected_record_count": 31,
+  "dependency_status": "A deliberately selected seed set, not dependency-closed. Full raw payloads preserve unselected shops/quests/drop references. Import must resolve the closure or reject; never strip dangling fields or substitute defaults.",
+  "records": [
+    {
+      "family": "npcs",
+      "legacy_id": "farmer_wren",
+      "source": "data/npcs.json",
+      "json_pointer": "/npcs/116",
+      "inventory_id": "data/npcs.json#/npcs/116",
+      "payload_sha256": "f0374a9cd788d14de3c45233cf31c6b67904ed209a6a5f8d1a0b8de547dd1f30",
+      "source_payload": {
+        "id": "farmer_wren",
+        "name": "Wren",
+        "tileX": 103,
+        "tileY": 322,
+        "wander": 2,
+        "appearance": {
+          "race": 0,
+          "skin": 5,
+          "hairStyle": 5,
+          "hairColor": 13,
+          "outfit": 8,
+          "outfitA": 10,
+          "outfitB": 10,
+          "acc": 3
+        },
+        "dialog": "Just me, the rows, and the crows. Suits me.",
+        "dialogs": [
+          "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+          "Rain when we need sun, sun when we need rain. Farming!"
+        ],
+        "quests": [
+          "wren_orchard"
+        ],
+        "sprite": ""
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "npcs",
+      "legacy_id": "marla",
+      "source": "data/npcs.json",
+      "json_pointer": "/npcs/12",
+      "inventory_id": "data/npcs.json#/npcs/12",
+      "payload_sha256": "27ed7de55f28c34caa3525690301dce8035a026d0a2cf194d177edea988ef65d",
+      "source_payload": {
+        "id": "marla",
+        "name": "Marla",
+        "tileX": 96,
+        "tileY": 350,
+        "appearance": {
+          "race": 1,
+          "skin": 4,
+          "hairStyle": 0,
+          "hairColor": 3,
+          "outfit": 4,
+          "outfitA": 10,
+          "outfitB": 0,
+          "acc": 2
+        },
+        "dialog": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+        "shop": [
+          "potion",
+          "tonic",
+          "ether",
+          "rations",
+          "copper_axe",
+          "copper_pickaxe",
+          "sickle"
+        ],
+        "quests": [],
+        "wander": 1,
+        "sprite": ""
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "npcs",
+      "legacy_id": "bartender_toma",
+      "source": "data/npcs.json",
+      "json_pointer": "/npcs/6",
+      "inventory_id": "data/npcs.json#/npcs/6",
+      "payload_sha256": "24b546c4b98b7ec819fe11f3fb9123fb11969b3981dbbc6c6ef0587c5f6214ad",
+      "source_payload": {
+        "id": "bartender_toma",
+        "name": "Toma",
+        "tileX": 99,
+        "tileY": 341,
+        "appearance": {
+          "race": 0,
+          "skin": 5,
+          "hairStyle": 3,
+          "hairColor": 10,
+          "outfit": 7,
+          "outfitA": 12,
+          "outfitB": 1,
+          "acc": 1
+        },
+        "dialog": "The Rusted Tankard, at your service. Ale, beds, and better rumors than the crier.",
+        "dialogs": [
+          "They say bats in the old mine chew lamplight. Bad for miners, good for bounty work.",
+          "The hooded one in the corner pays in real gil. That's all I know and all I ask."
+        ],
+        "quests": [
+          "rumor_bats",
+          "toma_pie_day"
+        ],
+        "shop": [
+          "rations",
+          "potion"
+        ],
+        "sprite": ""
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "npcs",
+      "legacy_id": "bartender_hilda",
+      "source": "data/npcs.json",
+      "json_pointer": "/npcs/25",
+      "inventory_id": "data/npcs.json#/npcs/25",
+      "payload_sha256": "0530ccd4f8e54f985169ebe2dd97ef79b1ff4dae5cc1e71f60573971340653cc",
+      "source_payload": {
+        "id": "bartender_hilda",
+        "name": "Hilda Kegkeeper",
+        "tileX": 349,
+        "tileY": 129,
+        "appearance": {
+          "race": 2,
+          "skin": 5,
+          "hairStyle": 5,
+          "hairColor": 0,
+          "outfit": 1,
+          "outfitA": 0,
+          "outfitB": 6,
+          "acc": 1
+        },
+        "dialog": "Stone roof, strong ale. What else does a body need?",
+        "dialogs": [
+          "Brutes cracked another sledge on the hill road. Thane's fuming."
+        ],
+        "quests": [
+          "hilda_shard_ale",
+          "hilda_frost_hunt"
+        ],
+        "shop": [
+          "rations",
+          "potion"
+        ],
+        "sprite": ""
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "npcs",
+      "legacy_id": "portmaster_wick",
+      "source": "data/npcs.json",
+      "json_pointer": "/npcs/2",
+      "inventory_id": "data/npcs.json#/npcs/2",
+      "payload_sha256": "f96d8d3eac97b52cff567401020ea1ab3e74bc1d8240f49f52dedaf192c78fbc",
+      "source_payload": {
+        "id": "portmaster_wick",
+        "name": "Portmaster Wick",
+        "tileX": 42,
+        "tileY": 352,
+        "appearance": {
+          "race": 0,
+          "skin": 4,
+          "hairStyle": 5,
+          "hairColor": 13,
+          "outfit": 3,
+          "outfitA": 12,
+          "outfitB": 2,
+          "acc": 2
+        },
+        "dialog": "Fine hulls, fair winds. Press V by the water to launch what you own.",
+        "shop": [
+          "sailboat",
+          "ship",
+          "canoe"
+        ],
+        "sprite": ""
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "quests",
+      "legacy_id": "wren_orchard",
+      "source": "data/quests.json",
+      "json_pointer": "/quests/44",
+      "inventory_id": "data/quests.json#/quests/44",
+      "payload_sha256": "bbb996bb2ca6ca4e27b942f7f40f9ea624813909e037ec86980ed8aaa4ab86cb",
+      "source_payload": {
+        "id": "wren_orchard",
+        "name": "Wren's Saplings",
+        "kind": "Fetch",
+        "giver": "farmer_wren",
+        "offer": "Six wood for a windbreak and my saplings might see spring.",
+        "turnIn": "The wind can howl all it likes now. Thank you kindly.",
+        "rewardXp": 420,
+        "rewardGil": 200,
+        "minLevel": 1,
+        "targetItem": "wood",
+        "targetCount": 6
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "classes",
+      "legacy_id": "squire",
+      "source": "data/classes.json",
+      "json_pointer": "/classes/0",
+      "inventory_id": "data/classes.json#/classes/0",
+      "payload_sha256": "b6defa5b6c7a49d13fe3297938c41952c78b22de5ba2187138654d84b2507cf9",
+      "source_payload": {
+        "id": "squire",
+        "name": "Squire",
+        "baseStats": {
+          "hp": 60,
+          "mp": 10,
+          "attack": 12,
+          "magic": 4,
+          "defense": 8,
+          "speed": 8
+        },
+        "growth": {
+          "hp": 9,
+          "mp": 2,
+          "attack": 3,
+          "magic": 1,
+          "defense": 2,
+          "speed": 1
+        },
+        "moveSpeed": 4,
+        "abilities": [
+          "strike",
+          "cleave",
+          "breaker",
+          "rally"
+        ]
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "abilities",
+      "legacy_id": "strike",
+      "source": "data/abilities.json",
+      "json_pointer": "/abilities/0",
+      "inventory_id": "data/abilities.json#/abilities/0",
+      "payload_sha256": "974a3c16135eddfc9679deb3929c862476c78b62f38fc79cb7253aba7e02f70a",
+      "source_payload": {
+        "id": "strike",
+        "name": "Strike",
+        "kind": "Melee",
+        "power": 10,
+        "range": 48,
+        "atbCost": 300,
+        "mpCost": 0,
+        "unlockLevel": 1
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "abilities",
+      "legacy_id": "cleave",
+      "source": "data/abilities.json",
+      "json_pointer": "/abilities/1",
+      "inventory_id": "data/abilities.json#/abilities/1",
+      "payload_sha256": "98024286f5b63e488be8187f0d7cfb48e5acaee299cea1d7f85ca59a4a05c97b",
+      "source_payload": {
+        "id": "cleave",
+        "name": "Cleave",
+        "kind": "Melee",
+        "power": 14,
+        "range": 48,
+        "atbCost": 600,
+        "mpCost": 0,
+        "unlockLevel": 3,
+        "aoeRadius": 64
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "abilities",
+      "legacy_id": "breaker",
+      "source": "data/abilities.json",
+      "json_pointer": "/abilities/2",
+      "inventory_id": "data/abilities.json#/abilities/2",
+      "payload_sha256": "8a71ea7d5004439713bbb3246f1b2aef27650e237c6de4b099612c254ae62f01",
+      "source_payload": {
+        "id": "breaker",
+        "name": "Breaker",
+        "kind": "Melee",
+        "power": 24,
+        "range": 48,
+        "atbCost": 900,
+        "mpCost": 0,
+        "unlockLevel": 5
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "abilities",
+      "legacy_id": "rally",
+      "source": "data/abilities.json",
+      "json_pointer": "/abilities/9",
+      "inventory_id": "data/abilities.json#/abilities/9",
+      "payload_sha256": "4fe7e112ec8e7cdbd3846d69cb474db53137db539d0ac22a0d78128622157dca",
+      "source_payload": {
+        "id": "rally",
+        "name": "Rally",
+        "kind": "Heal",
+        "power": 20,
+        "range": 32,
+        "atbCost": 800,
+        "mpCost": 6,
+        "unlockLevel": 7
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "recipes",
+      "legacy_id": "craft_rations",
+      "source": "data/recipes.json",
+      "json_pointer": "/recipes/1",
+      "inventory_id": "data/recipes.json#/recipes/1",
+      "payload_sha256": "c384027c76855ade482105233cadd07ea930a265f73e12beab852de1cc756491",
+      "source_payload": {
+        "id": "craft_rations",
+        "output": "rations",
+        "outputCount": 2,
+        "inputs": [
+          {
+            "item": "berries",
+            "count": 2
+          },
+          {
+            "item": "wood",
+            "count": 1
+          }
+        ]
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "recipes",
+      "legacy_id": "craft_canoe",
+      "source": "data/recipes.json",
+      "json_pointer": "/recipes/8",
+      "inventory_id": "data/recipes.json#/recipes/8",
+      "payload_sha256": "87358b95cac7282a6d25b7f711e65259c8c86726f7a1df5d1ba925f7faaecba5",
+      "source_payload": {
+        "id": "craft_canoe",
+        "output": "canoe",
+        "outputCount": 1,
+        "inputs": [
+          {
+            "item": "wood",
+            "count": 8
+          }
+        ]
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "wood",
+      "source": "data/items.json",
+      "json_pointer": "/items/12",
+      "inventory_id": "data/items.json#/items/12",
+      "payload_sha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d",
+      "source_payload": {
+        "id": "wood",
+        "name": "Wood",
+        "kind": "Material",
+        "price": 6
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "berries",
+      "source": "data/items.json",
+      "json_pointer": "/items/15",
+      "inventory_id": "data/items.json#/items/15",
+      "payload_sha256": "a7b53e8648a12bb156269fe955ea868aeab9881ba75fb4b79bba057358a93214",
+      "source_payload": {
+        "id": "berries",
+        "name": "Berries",
+        "kind": "Material",
+        "price": 5
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "rations",
+      "source": "data/items.json",
+      "json_pointer": "/items/16",
+      "inventory_id": "data/items.json#/items/16",
+      "payload_sha256": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030",
+      "source_payload": {
+        "id": "rations",
+        "name": "Rations",
+        "kind": "Consumable",
+        "price": 25,
+        "healHp": 30,
+        "healMp": 5
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "potion",
+      "source": "data/items.json",
+      "json_pointer": "/items/0",
+      "inventory_id": "data/items.json#/items/0",
+      "payload_sha256": "3b7a5fdd562795e58d68a11007763b88cd25d40841c739c4fef9495161c097aa",
+      "source_payload": {
+        "id": "potion",
+        "name": "Potion",
+        "kind": "Consumable",
+        "price": 30,
+        "healHp": 40,
+        "healMp": 0
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "copper_axe",
+      "source": "data/items.json",
+      "json_pointer": "/items/17",
+      "inventory_id": "data/items.json#/items/17",
+      "payload_sha256": "6ce27c1011c787a546e4b340db0e689e53c8a2d776f60de0bf694f1c091ade84",
+      "source_payload": {
+        "id": "copper_axe",
+        "name": "Copper Axe",
+        "kind": "Tool",
+        "price": 90,
+        "tool": "Axe",
+        "toolPower": 1
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "sickle",
+      "source": "data/items.json",
+      "json_pointer": "/items/19",
+      "inventory_id": "data/items.json#/items/19",
+      "payload_sha256": "bb05006bf983b7f88d5f2212a8fd378132da4d0f1736ee3fff8f53c9e4c209f2",
+      "source_payload": {
+        "id": "sickle",
+        "name": "Sickle",
+        "kind": "Tool",
+        "price": 60,
+        "tool": "Sickle",
+        "toolPower": 1
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "canoe",
+      "source": "data/items.json",
+      "json_pointer": "/items/22",
+      "inventory_id": "data/items.json#/items/22",
+      "payload_sha256": "3ccee58fa633d7956db3b6f80761f6a9dff5ea4ab8e7beeb987a6bde0630c090",
+      "source_payload": {
+        "id": "canoe",
+        "name": "Canoe",
+        "kind": "Vehicle",
+        "price": 120,
+        "vehicle": "Canoe"
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "items",
+      "legacy_id": "wolf_pelt",
+      "source": "data/items.json",
+      "json_pointer": "/items/10",
+      "inventory_id": "data/items.json#/items/10",
+      "payload_sha256": "59da909762ae7f00cfb2bbfdc3b20f67ab2e1f9bddfb7186c40fa765e3168b8b",
+      "source_payload": {
+        "id": "wolf_pelt",
+        "name": "Wolf Pelt",
+        "kind": "Material",
+        "price": 18
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "monsters",
+      "legacy_id": "bramble_wolf",
+      "source": "data/monsters.json",
+      "json_pointer": "/monsters/1",
+      "inventory_id": "data/monsters.json#/monsters/1",
+      "payload_sha256": "d8639a45b5219163e148fde39537388df45db56148bfcaaa8ebb58ea52e6d967",
+      "source_payload": {
+        "id": "bramble_wolf",
+        "name": "Bramble Wolf",
+        "level": 3,
+        "stats": {
+          "hp": 62,
+          "mp": 0,
+          "attack": 14,
+          "magic": 0,
+          "defense": 5,
+          "speed": 10
+        },
+        "moveSpeed": 5,
+        "xpReward": 95,
+        "gilMin": 10,
+        "gilMax": 22,
+        "aggroRange": 128,
+        "leashRange": 384,
+        "attack": {
+          "power": 10,
+          "range": 44,
+          "atbCost": 400
+        },
+        "drops": [
+          {
+            "item": "wolf_pelt",
+            "chancePercent": 35
+          },
+          {
+            "item": "potion",
+            "chancePercent": 10
+          }
+        ]
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "regions",
+      "legacy_id": "farm_verdance_small",
+      "source": "data/world.json",
+      "json_pointer": "/regions/18",
+      "inventory_id": "data/world.json#/regions/18",
+      "payload_sha256": "fc79c253de2d851941d669687dfb8253e79d37f17f74dfce4ce9023f75d7c884",
+      "source_payload": {
+        "id": "farm_verdance_small",
+        "x": 100,
+        "y": 320,
+        "w": 9,
+        "h": 7
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "regions",
+      "legacy_id": "brasshollow",
+      "source": "data/world.json",
+      "json_pointer": "/regions/0",
+      "inventory_id": "data/world.json#/regions/0",
+      "payload_sha256": "9ca4a8937949c9f45d6b0280898121895073c27169947b3324842e705c24f623",
+      "source_payload": {
+        "id": "brasshollow",
+        "x": 94,
+        "y": 339,
+        "w": 33,
+        "h": 27
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "regions",
+      "legacy_id": "tavern_brasshollow",
+      "source": "data/world.json",
+      "json_pointer": "/regions/1",
+      "inventory_id": "data/world.json#/regions/1",
+      "payload_sha256": "456cd2111a872be15d045f4af51b90bce86964802096fc6e0224f039bb7bbce7",
+      "source_payload": {
+        "id": "tavern_brasshollow",
+        "x": 95,
+        "y": 340,
+        "w": 10,
+        "h": 7
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "regions",
+      "legacy_id": "gearford",
+      "source": "data/world.json",
+      "json_pointer": "/regions/2",
+      "inventory_id": "data/world.json#/regions/2",
+      "payload_sha256": "6e4864b4a8902da3714d218941b52627f6ca0109d3db0769897c4b2af2210fa3",
+      "source_payload": {
+        "id": "gearford",
+        "x": 344,
+        "y": 127,
+        "w": 33,
+        "h": 27
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "regions",
+      "legacy_id": "tavern_gearford",
+      "source": "data/world.json",
+      "json_pointer": "/regions/3",
+      "inventory_id": "data/world.json#/regions/3",
+      "payload_sha256": "a3fb99f06805dcd704f950456f2ee3fb5ee6f59077d921fea62345e27bf0a644",
+      "source_payload": {
+        "id": "tavern_gearford",
+        "x": 345,
+        "y": 128,
+        "w": 10,
+        "h": 7
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "regions",
+      "legacy_id": "port_brasshollow",
+      "source": "data/world.json",
+      "json_pointer": "/regions/21",
+      "inventory_id": "data/world.json#/regions/21",
+      "payload_sha256": "41eb355ed98020d9a158a5a6d77d7f62c6519ef836325d07cb661936aaf4e375",
+      "source_payload": {
+        "id": "port_brasshollow",
+        "x": 39,
+        "y": 348,
+        "w": 14,
+        "h": 10
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "regions",
+      "legacy_id": "port_gearford",
+      "source": "data/world.json",
+      "json_pointer": "/regions/22",
+      "inventory_id": "data/world.json#/regions/22",
+      "payload_sha256": "2dd3d59d49d4fac5b9223319df3b4502c5147241c968a753c06c5443438672ee",
+      "source_payload": {
+        "id": "port_gearford",
+        "x": 330,
+        "y": 220,
+        "w": 10,
+        "h": 14
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "nodes",
+      "legacy_id": 101,
+      "source": "data/world.json",
+      "json_pointer": "/nodes/0",
+      "inventory_id": "data/world.json#/nodes/0",
+      "payload_sha256": "5809ad8e6db1857055cccf18ed11a03eebe6c81ed37b6e2d017b3b15f56d04d1",
+      "source_payload": {
+        "id": 101,
+        "type": "oak",
+        "region": {
+          "x": 95,
+          "y": 315,
+          "w": 60,
+          "h": 60
+        },
+        "count": 12,
+        "respawnTicks": 900
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    },
+    {
+      "family": "nodes",
+      "legacy_id": 103,
+      "source": "data/world.json",
+      "json_pointer": "/nodes/2",
+      "inventory_id": "data/world.json#/nodes/2",
+      "payload_sha256": "f60ccc94c9a2a43e8a21c145efe56689d60ef8894dc422b6b6fbe335c11b6149",
+      "source_payload": {
+        "id": 103,
+        "type": "berry",
+        "region": {
+          "x": 100,
+          "y": 330,
+          "w": 50,
+          "h": 50
+        },
+        "count": 8,
+        "respawnTicks": 700
+      },
+      "target_definition_id": null,
+      "status": "retained_source_selection_not_imported",
+      "evidence_paths": []
+    }
+  ],
+  "source_files": [
+    {
+      "source": "assets/layers/acc_03.png",
+      "bytes": 175,
+      "sha256": "0907b9dd49e4553eae718bb47f4f84e30c53637483570536016ed59055eb3048",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/layers/body.png",
+      "bytes": 533,
+      "sha256": "17a3af88e92baa615c9bb3f4d21e095767639458c655348a6b93080e82fe40e7",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/layers/hair_05.png",
+      "bytes": 350,
+      "sha256": "b636e8e6acd8c9282a73a09a5e3956baeeb5bf2ea6fcfc0528ad187db965dd5c",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/layers/outfit_08_a.png",
+      "bytes": 295,
+      "sha256": "bec72107f5dcbbacbc79b42266e2d603b6173d60f1d5c25f4f342f261796e52a",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/layers/outfit_08_b.png",
+      "bytes": 185,
+      "sha256": "90f50e5210177c981efdde1e816b867aa0be7c224192c9814338160ba4028817",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/tiles.png",
+      "bytes": 7520,
+      "sha256": "401e2d79a74e8c82ae273a4c9a1e6bf1f2e400ea13f4252f622b559befcb1a0d",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/units/bramble_wolf.png",
+      "bytes": 279,
+      "sha256": "adac08d8822fdea1cb7e9768a6b9dfa3d68d224d2e945ebe1b082bbb3a1f0b47",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/units/node_berry.png",
+      "bytes": 304,
+      "sha256": "8928cce8c9bd2b1c197650cac6b467ccb9b35035531f64548ac7b76b39721457",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/units/node_oak.png",
+      "bytes": 382,
+      "sha256": "3c95536649a836516f5bda0abc65dcd2d2b6a54611a8a0804c6ef133290188c8",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/units/squire.png",
+      "bytes": 395,
+      "sha256": "4808fd6c07c92ca02c3df9250d352c3b575a7449f52725b2d6928eb459651ce4",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "assets/units/veh_canoe.png",
+      "bytes": 305,
+      "sha256": "1ddd14b107b3b1eeb180b2ac7ed5affb842fc4034ff2ca275757cb352feaec2e",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/abilities.json",
+      "bytes": 2416,
+      "sha256": "5cb75f014fef62fdf96d0597e9f51508737c1366ca7f341d5621ad9ca3d764d6",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/appearance.json",
+      "bytes": 3147,
+      "sha256": "3c9388eddd5a1343065f2e8d476f570a7cf0cf6c92998fedfdc0254df4761a9b",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/classes.json",
+      "bytes": 1439,
+      "sha256": "27c5956e9b269acdc36ecba339522c426380ea2f35bc33fead49ae778add6234",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/items.json",
+      "bytes": 8873,
+      "sha256": "ac0944b98fbfc10474ae1d1309bd7ad6b74c511fb2da9c314ab41f6c8a655609",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/monsters.json",
+      "bytes": 22732,
+      "sha256": "8a3599545e5ea3e1a8ecfdf396b4bd107d2f2f3c696fcaaa2ed76d9dab511493",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/npcs.json",
+      "bytes": 63495,
+      "sha256": "a75e0f3e565e21cd751dc3697f948b773439935478053c29d5467e868d439746",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/quests.json",
+      "bytes": 21423,
+      "sha256": "3ce9eabab223fc66131a9e048a43e47c8c745d2fe6e33542e762291a74148045",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/recipes.json",
+      "bytes": 7851,
+      "sha256": "0c81bcf33088668a7837e77cf01640cbfd2070e2a8caf9fa13ebdeb1e032a6b1",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "data/world.json",
+      "bytes": 102091,
+      "sha256": "9f46be269ea80ddeef908d9a8305b70bf26a8ca11a544bed32c640fbfee7668d",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "src/Sim/SimConstants.cs",
+      "bytes": 2216,
+      "sha256": "7bdcec4fa6f7017bab1cb9c7ff028ee7e28b15ae37bc4503174f91b89e431742",
+      "status": "source_bytes_verified_not_native_approval"
+    },
+    {
+      "source": "src/Sim/World.Gathering.cs",
+      "bytes": 7402,
+      "sha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+      "status": "source_bytes_verified_not_native_approval"
+    }
+  ],
+  "limitations": [
+    "Source data hash checks are executed evidence; no importer, playable scenario, native asset or benchmark ran here.",
+    "Source appearance indexes are retained, not silently converted to a new species/culture ontology.",
+    "Source periodic resource respawns, fixed item prices and combat units require explicit compatible transformations.",
+    "The complete 532-record migration inventory, 10 code entries and 187 prose-heading semantic review remain due; this selection narrows the first loop only."
+  ]
+}

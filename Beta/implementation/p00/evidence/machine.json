@@ -1,0 +1,13 @@
+{
+  "platform": "Darwin",
+  "architecture": "arm64",
+  "cpu": "Apple M2",
+  "logical_cpus": 8,
+  "ram_bytes": 8589934592,
+  "os_version": "15.6.1",
+  "os_build": "24G90",
+  "available_filesystem_bytes_at_capture": 145277984768,
+  "qualification": "Observed development environment only; not a promised hardware floor",
+  "dotnet_executable": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+  "godot_executable": "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot"
+}

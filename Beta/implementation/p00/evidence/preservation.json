@@ -1,0 +1,17 @@
+{
+  "original_payloads": 201,
+  "original_zip_payloads_preserved": 201,
+  "live_files_unchanged": 200,
+  "intentional_changed_file": "OpenFantasy.csproj",
+  "reason": "Explicitly include only predecessor src/**/*.cs, preserving exactly its43 prior Compile entries",
+  "configuration_before_sha256": "0c928c93e90aad42ded5999f4832b578ba9ea642e74bbb5c0d79ab53b3c9a306",
+  "configuration_after_sha256": "cd1778beae10b76321ff89cc14fffd64fe490cbf5c5f96ff95d121fd0b86f1df",
+  "preexisting_staged_patch_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "preexisting_staged_patch_unchanged": true,
+  "predecessor_build": {
+    "command": "dotnet build OpenFantasy.csproj --no-restore --verbosity minimal",
+    "sdk": "8.0.413",
+    "result": "passed;0 warnings;0 errors"
+  },
+  "reviewed_design_and_verifier_hashes_unchanged": true
+}
