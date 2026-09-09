@@ -7,5 +7,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="../src/OpenFantasy.Core/OpenFantasy.Core.csproj" />
+    <ProjectReference Include="../src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj" />
   </ItemGroup>
 </Project>

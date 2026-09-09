@@ -1,6 +1,8 @@
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using OpenFantasy.Core;
+using OpenFantasy.Hosting;
+using Microsoft.Data.Sqlite;
 
 namespace OpenFantasy.Host;
 
@@ -9,6 +11,7 @@ internal sealed class HostApplication
 {
     private readonly TextWriter _output;
     private readonly ContractInspector _contracts = new();
+    private readonly LocalWorldOperator _worlds = new();
 
     public HostApplication(TextWriter output)
     {
@@ -27,6 +30,12 @@ internal sealed class HostApplication
                 ["--inspect-command", var path] => _contracts.InspectCommand(path),
                 ["--inspect-custody", var path] => _contracts.InspectCustody(path),
                 ["--inspect-package", var manifest, var payload] => _contracts.InspectPackage(manifest, payload),
+                ["--create-world", var database, var genesis] => _worlds.Create(database, genesis),
+                ["--inspect-world", var database] => _worlds.Inspect(database),
+                ["--execute-local-command", var database, var command, var principal, var session] =>
+                    _worlds.Execute(database, command, principal, session),
+                ["--probe-commit-crash", var database, var command, var principal, var session, var boundary] =>
+                    _worlds.Execute(database, command, principal, session, boundary),
                 _ => null
             };
             if (report is not null)
@@ -36,7 +45,8 @@ internal sealed class HostApplication
             }
         }
         catch (Exception error) when (error is IOException or UnauthorizedAccessException
-            or InvalidDataException or FormatException or JsonException or ArgumentException)
+            or InvalidDataException or FormatException or JsonException or ArgumentException
+            or AuthorityDispatchException or SqliteException)
         {
             _output.WriteLine("Inspection failed: " + error.Message);
             return 1;
@@ -52,7 +62,10 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-command <command.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-custody <snapshot.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>");
-        _output.WriteLine("World hosting is not yet implemented.");
+        _output.WriteLine("       OpenFantasy.Host --create-world <world.sqlite> <genesis.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-world <world.sqlite>");
+        _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
+        _output.WriteLine("Only local counted-domain authority is available; network sessions and the playable world are pending.");
     }
 
     private static string CreateFoundationReport()

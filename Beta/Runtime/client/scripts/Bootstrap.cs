@@ -7,11 +7,28 @@ namespace OpenFantasy.Client;
 
 public partial class Bootstrap : Control
 {
-    public override void _Ready()
+    public override async void _Ready()
     {
+        string[] arguments = OS.GetCmdlineUserArgs();
+        if (arguments is ["--authority-smoke", var database, var genesis, var command])
+        {
+            try
+            {
+                var report = await new DurableAuthoritySmoke().RunAsync(database, genesis, command);
+                GD.Print(JsonSerializer.Serialize(report));
+                GetTree().Quit();
+            }
+            catch (Exception error)
+            {
+                GD.PushError("Durable authority smoke failed: " + error);
+                GetTree().Quit(1);
+            }
+            return;
+        }
+
         WriteFoundationDiagnostic();
 
-        if (OS.GetCmdlineUserArgs().Contains("--smoke-test"))
+        if (arguments.Contains("--smoke-test"))
         {
             GetTree().Quit();
         }

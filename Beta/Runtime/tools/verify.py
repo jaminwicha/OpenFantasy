@@ -33,7 +33,7 @@ def main():
                DOTNET_CLI_TELEMETRY_OPTOUT="1", DOTNET_NOLOGO="1")
     env["PATH"] = str(dotnet.parent) + os.pathsep + env.get("PATH", "")
     report = dict(startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                  scope="Local foundation build, core tests and Godot binding smoke only",
+                  scope="Local core/hosting tests, durable counted authority and Godot binding smoke",
                   status="running", namingScanRequested=bool(args.forbidden_token), steps=[])
 
     def run(name, command, timeout=180):
@@ -78,7 +78,8 @@ def main():
                                    ("scheduling-v1", "scheduling"), ("history-v1", "history"),
                                    ("custody-invalid-v1", "custody_invalid"), ("exposure-v1", "exposure"),
                                    ("production-v1", "production"), ("actors-v1", "actor"),
-                                   ("observations-v1", "observation"), ("language-v1", "language")):
+                                   ("observations-v1", "observation"), ("language-v1", "language"),
+                                   ("authority-v1", "authority"), ("terrain-v1", "terrain")):
             vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures" / (fixture + ".json")
             reference = run("independent-python-" + fixture, [sys.executable,
                             vector_file.with_name("generate_" + generator + "_vectors.py")])
@@ -86,19 +87,19 @@ def main():
                 raise RuntimeError("Independent vectors differ from frozen fixture: " + fixture)
         run("locked-restore", [dotnet, "restore", "OpenFantasy.sln", "--locked-mode"])
         run("debug-build", [dotnet, "build", "OpenFantasy.sln", "--no-restore", "-c", "Debug"])
-        run("core-tests", [dotnet, "test", "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
-                            "--no-build", "--no-restore", "-c", "Debug", "--logger",
-                            "trx;LogFileName=core.trx", "--results-directory", test_results])
-        tree = ET.parse(test_results / "core.trx")
-        counters = tree.find(".//{*}Counters")
-        if counters is None:
-            raise RuntimeError("The test report has no result counters")
-        counts = {key: int(value) for key, value in counters.attrib.items()}
-        if (counts.get("executed", 0) <= 0 or counts.get("total") != counts["executed"]
-                or counts.get("passed") != counts["executed"]
-                or any(counts.get(key, 0) for key in ("failed", "error", "timeout", "aborted"))):
-            raise RuntimeError("The test report contains missing, failed or unexecuted cases")
-        report["testCounts"] = counts
+        for project, label in (("OpenFantasy.Core.Tests", "core"), ("OpenFantasy.Hosting.Tests", "hosting")):
+            run(label + "-tests", [dotnet, "test", "tests/" + project + "/" + project + ".csproj",
+                                  "--no-build", "--no-restore", "-c", "Debug", "--logger",
+                                  "trx;LogFileName=" + label + ".trx", "--results-directory", test_results])
+            counters = ET.parse(test_results / (label + ".trx")).find(".//{*}Counters")
+            if counters is None:
+                raise RuntimeError("The test report has no result counters: " + label)
+            counts = {key: int(value) for key, value in counters.attrib.items()}
+            if (counts.get("executed", 0) <= 0 or counts.get("total") != counts["executed"]
+                    or counts.get("passed") != counts["executed"]
+                    or any(counts.get(key, 0) for key in ("failed", "error", "timeout", "aborted"))):
+                raise RuntimeError("The test report contains missing, failed or unexecuted cases: " + label)
+            report["testCounts" if label == "core" else "hostingTestCounts"] = counts
         host = run("host-foundation", [dotnet, "run", "--project", "src/OpenFantasy.Host",
                     "--no-build", "--no-restore", "--", "--inspect-foundation"])
         inspection_report = artifacts / "contract-inspections.json"
@@ -126,6 +127,10 @@ def main():
             raise RuntimeError("Historical midnight crossing failed")
         if any("ERROR:" in output or "SCRIPT ERROR:" in output for output in (imported, client)):
             raise RuntimeError("Godot reported an error despite its exit code")
+        durable_report = artifacts / "durable-authority.json"
+        run("durable-authority-qualification", [sys.executable, root / "tools/check_durable_authority.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", durable_report])
+        report["durableAuthority"] = json.loads(durable_report.read_text())
         for relative, expected in report["inputSha256"].items():
             if hashlib.sha256((root / relative).read_bytes()).hexdigest() != expected:
                 raise RuntimeError("An input changed during verification: " + relative)

@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFantasy.Core.Tests", "tests\OpenFantasy.Core.Tests\OpenFantasy.Core.Tests.csproj", "{1D074D9B-9BC4-4EE5-B809-47260E1B7038}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFantasy.Hosting", "src\OpenFantasy.Hosting\OpenFantasy.Hosting.csproj", "{64ABE311-8AE9-4A5D-84E0-F2BB0C0081D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenFantasy.Hosting.Tests", "tests\OpenFantasy.Hosting.Tests\OpenFantasy.Hosting.Tests.csproj", "{48FE21D8-EEF7-4FC0-BA07-286CB6DFE4BD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{1D074D9B-9BC4-4EE5-B809-47260E1B7038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D074D9B-9BC4-4EE5-B809-47260E1B7038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D074D9B-9BC4-4EE5-B809-47260E1B7038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64ABE311-8AE9-4A5D-84E0-F2BB0C0081D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64ABE311-8AE9-4A5D-84E0-F2BB0C0081D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64ABE311-8AE9-4A5D-84E0-F2BB0C0081D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64ABE311-8AE9-4A5D-84E0-F2BB0C0081D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48FE21D8-EEF7-4FC0-BA07-286CB6DFE4BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48FE21D8-EEF7-4FC0-BA07-286CB6DFE4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48FE21D8-EEF7-4FC0-BA07-286CB6DFE4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48FE21D8-EEF7-4FC0-BA07-286CB6DFE4BD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +60,7 @@ Global
 		{FD51BD6A-9EF6-4564-869F-D0122C5FD49F} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{DF6CA01A-A94C-45CE-91AE-A8F1BDABCD20} = {2CB42F12-E813-91B3-7D11-3220E40BEF4A}
 		{1D074D9B-9BC4-4EE5-B809-47260E1B7038} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{64ABE311-8AE9-4A5D-84E0-F2BB0C0081D3} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{48FE21D8-EEF7-4FC0-BA07-286CB6DFE4BD} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
 	EndGlobalSection
 EndGlobal
