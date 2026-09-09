@@ -1,0 +1,1032 @@
+{
+  "schemaVersion": 1,
+  "packageId": "openfantasy.aldermere",
+  "edges": [
+    {
+      "from": "openfantasy.aldermere:abilities/breaker",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/abilities.json"
+    },
+    {
+      "from": "openfantasy.aldermere:abilities/cleave",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/abilities.json"
+    },
+    {
+      "from": "openfantasy.aldermere:abilities/rally",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/abilities.json"
+    },
+    {
+      "from": "openfantasy.aldermere:abilities/strike",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/abilities.json"
+    },
+    {
+      "from": "openfantasy.aldermere:classes/squire",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/classes.json"
+    },
+    {
+      "from": "openfantasy.aldermere:classes/squire",
+      "field": "/abilities/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:abilities/strike"
+    },
+    {
+      "from": "openfantasy.aldermere:classes/squire",
+      "field": "/abilities/1",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:abilities/cleave"
+    },
+    {
+      "from": "openfantasy.aldermere:classes/squire",
+      "field": "/abilities/2",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:abilities/breaker"
+    },
+    {
+      "from": "openfantasy.aldermere:classes/squire",
+      "field": "/abilities/3",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:abilities/rally"
+    },
+    {
+      "from": "openfantasy.aldermere:items/berries",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/berry_pie",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/canoe",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/canoe",
+      "field": "/vehicle",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/veh_canoe.png"
+    },
+    {
+      "from": "openfantasy.aldermere:items/canoe",
+      "field": "/vehicle",
+      "kind": "definition_via_code",
+      "to": "openfantasy.aldermere:tileset/2"
+    },
+    {
+      "from": "openfantasy.aldermere:items/canoe",
+      "field": "/vehicle",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Vehicles.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:items/copper_axe",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/copper_pickaxe",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/ether",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/fizz_wine",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/ice_shard",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/miners_stew",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/mythril_ore",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/potion",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/rations",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/sailboat",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/sailboat",
+      "field": "/vehicle",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/veh_boat.png"
+    },
+    {
+      "from": "openfantasy.aldermere:items/sailboat",
+      "field": "/vehicle",
+      "kind": "definition_via_code",
+      "to": "openfantasy.aldermere:tileset/13"
+    },
+    {
+      "from": "openfantasy.aldermere:items/sailboat",
+      "field": "/vehicle",
+      "kind": "definition_via_code",
+      "to": "openfantasy.aldermere:tileset/2"
+    },
+    {
+      "from": "openfantasy.aldermere:items/sailboat",
+      "field": "/vehicle",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Vehicles.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:items/ship",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/ship",
+      "field": "/vehicle",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/veh_ship.png"
+    },
+    {
+      "from": "openfantasy.aldermere:items/ship",
+      "field": "/vehicle",
+      "kind": "definition_via_code",
+      "to": "openfantasy.aldermere:tileset/13"
+    },
+    {
+      "from": "openfantasy.aldermere:items/ship",
+      "field": "/vehicle",
+      "kind": "definition_via_code",
+      "to": "openfantasy.aldermere:tileset/2"
+    },
+    {
+      "from": "openfantasy.aldermere:items/ship",
+      "field": "/vehicle",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Vehicles.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:items/sickle",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/tonic",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/wolf_pelt",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:items/wood",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/items.json"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/bramble_wolf",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/monsters.json"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/bramble_wolf",
+      "field": "/drops/0/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wolf_pelt"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/bramble_wolf",
+      "field": "/drops/1/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/potion"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/bramble_wolf",
+      "field": "/id",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/bramble_wolf.png"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/cave_bat",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/monsters.json"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/cave_bat",
+      "field": "/drops/0/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/ether"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/cave_bat",
+      "field": "/id",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/cave_bat.png"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/frost_golem",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/monsters.json"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/frost_golem",
+      "field": "/drops/0/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/ice_shard"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/frost_golem",
+      "field": "/drops/1/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/mythril_ore"
+    },
+    {
+      "from": "openfantasy.aldermere:monsters/frost_golem",
+      "field": "/id",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/frost_golem.png"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/berry",
+      "field": "$source",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Gathering.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/berry",
+      "field": "/sprite",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/node_berry.png"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/berry",
+      "field": "/yieldItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/berries"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/oak",
+      "field": "$source",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Gathering.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/oak",
+      "field": "/sprite",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/node_oak.png"
+    },
+    {
+      "from": "openfantasy.aldermere:node_archetypes/oak",
+      "field": "/yieldItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wood"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/101",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/101",
+      "field": "/type",
+      "kind": "code_definition",
+      "to": "openfantasy.aldermere:node_archetypes/oak"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/103",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:nodes/103",
+      "field": "/type",
+      "kind": "code_definition",
+      "to": "openfantasy.aldermere:node_archetypes/berry"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/npcs.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/appearance",
+      "kind": "appearance_manifest",
+      "to": "openfantasy.aldermere:source_files/data/appearance.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/acc_01.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_01_a.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_01_b.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/race_02.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/quests/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:quests/hilda_shard_ale"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/quests/1",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:quests/hilda_frost_hunt"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/shop/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/rations"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_hilda",
+      "field": "/shop/1",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/potion"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/npcs.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/appearance",
+      "kind": "appearance_manifest",
+      "to": "openfantasy.aldermere:source_files/data/appearance.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/acc_01.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/hair_03.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_07_a.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_07_b.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/quests/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:quests/rumor_bats"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/quests/1",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:quests/toma_pie_day"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/shop/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/rations"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/bartender_toma",
+      "field": "/shop/1",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/potion"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/npcs.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "appearance_manifest",
+      "to": "openfantasy.aldermere:source_files/data/appearance.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/farmer_wren",
+      "field": "/quests/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:quests/wren_orchard"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/npcs.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/appearance",
+      "kind": "appearance_manifest",
+      "to": "openfantasy.aldermere:source_files/data/appearance.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/acc_02.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/hair_00.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_04_a.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_04_b.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/race_01.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/shop/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/potion"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/shop/1",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/tonic"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/shop/2",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/ether"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/shop/3",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/rations"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/shop/4",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/copper_axe"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/shop/5",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/copper_pickaxe"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/marla",
+      "field": "/shop/6",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/sickle"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/npcs.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/appearance",
+      "kind": "appearance_manifest",
+      "to": "openfantasy.aldermere:source_files/data/appearance.json"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/acc_02.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_03_a.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/appearance",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_03_b.png"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/shop/0",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/sailboat"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/shop/1",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/ship"
+    },
+    {
+      "from": "openfantasy.aldermere:npcs/portmaster_wick",
+      "field": "/shop/2",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/canoe"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Client/EntityView.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Client/SpriteComposer.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/Appearance.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/GameData.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/SimConstants.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Gathering.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Systems.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.Vehicles.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/World.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$reference_rules",
+      "kind": "source_semantics",
+      "to": "openfantasy.aldermere:source_files/src/Sim/WorldMap.cs"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/acc_03.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/body.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/hair_05.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_a.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/layers/outfit_08_b.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/tiles.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/bramble_wolf.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/node_berry.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/node_oak.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/squire.png"
+    },
+    {
+      "from": "openfantasy.aldermere:packet/first-loop",
+      "field": "$retained_calibration_input",
+      "kind": "asset",
+      "to": "openfantasy.aldermere:assets/assets/units/veh_canoe.png"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_frost_hunt",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/quests.json"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_frost_hunt",
+      "field": "/giver",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:npcs/bartender_hilda"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_frost_hunt",
+      "field": "/prerequisite",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:quests/hilda_shard_ale"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_frost_hunt",
+      "field": "/targetMonster",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:monsters/frost_golem"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_shard_ale",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/quests.json"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_shard_ale",
+      "field": "/giver",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:npcs/bartender_hilda"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_shard_ale",
+      "field": "/rewardItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/miners_stew"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/hilda_shard_ale",
+      "field": "/targetItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/ice_shard"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/rumor_bats",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/quests.json"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/rumor_bats",
+      "field": "/giver",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:npcs/bartender_toma"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/rumor_bats",
+      "field": "/rewardItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/rations"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/rumor_bats",
+      "field": "/targetMonster",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:monsters/cave_bat"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/toma_pie_day",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/quests.json"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/toma_pie_day",
+      "field": "/giver",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:npcs/bartender_toma"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/toma_pie_day",
+      "field": "/rewardItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/fizz_wine"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/toma_pie_day",
+      "field": "/targetItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/berry_pie"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/wren_orchard",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/quests.json"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/wren_orchard",
+      "field": "/giver",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:npcs/farmer_wren"
+    },
+    {
+      "from": "openfantasy.aldermere:quests/wren_orchard",
+      "field": "/targetItem",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wood"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_canoe",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/recipes.json"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_canoe",
+      "field": "/inputs/0/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wood"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_canoe",
+      "field": "/output",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/canoe"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/recipes.json"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "/inputs/0/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/berries"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "/inputs/1/item",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/wood"
+    },
+    {
+      "from": "openfantasy.aldermere:recipes/craft_rations",
+      "field": "/output",
+      "kind": "definition",
+      "to": "openfantasy.aldermere:items/rations"
+    },
+    {
+      "from": "openfantasy.aldermere:regions/brasshollow",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:regions/farm_verdance_small",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:regions/gearford",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:regions/port_brasshollow",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:regions/port_gearford",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:regions/tavern_brasshollow",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:regions/tavern_gearford",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:tileset/13",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    },
+    {
+      "from": "openfantasy.aldermere:tileset/2",
+      "field": "$source",
+      "kind": "source_payload",
+      "to": "openfantasy.aldermere:source_files/data/world.json"
+    }
+  ]
+}

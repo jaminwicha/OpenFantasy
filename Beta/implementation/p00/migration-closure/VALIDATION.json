@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "verificationKind": "executed_source_closure_checks_not_gameplay_import",
+  "python": "3.14.5",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "Beta/implementation/p00/migration-closure/test_closure.py"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "test_builder_is_byte_reproducible (__main__.SourceClosureTests.test_builder_is_byte_reproducible) ... ok\ntest_cyclic_quest_and_npc_references_terminate_and_keep_both (__main__.SourceClosureTests.test_cyclic_quest_and_npc_references_terminate_and_keep_both) ... ok\ntest_duplicate_definition_identity_rejects (__main__.SourceClosureTests.test_duplicate_definition_identity_rejects) ... ok\ntest_enumeration_and_root_order_do_not_change_canonical_closure (__main__.SourceClosureTests.test_enumeration_and_root_order_do_not_change_canonical_closure) ... ok\ntest_every_emitted_edge_has_real_retained_endpoints (__main__.SourceClosureTests.test_every_emitted_edge_has_real_retained_endpoints) ... ok\ntest_late_code_dependent_yield_rejects_before_claiming_closed (__main__.SourceClosureTests.test_late_code_dependent_yield_rejects_before_claiming_closed) ... ok\ntest_missing_reference_rejects_without_deleting_the_original_field (__main__.SourceClosureTests.test_missing_reference_rejects_without_deleting_the_original_field) ... ok\ntest_original_code_archetypes_are_exact_and_not_rebalanced (__main__.SourceClosureTests.test_original_code_archetypes_are_exact_and_not_rebalanced) ... ok\ntest_real_transitive_closure_preserves_every_selected_root_and_payload (__main__.SourceClosureTests.test_real_transitive_closure_preserves_every_selected_root_and_payload) ... ok\ntest_retained_files_match_manifest_hashes_and_exact_source_bytes (__main__.SourceClosureTests.test_retained_files_match_manifest_hashes_and_exact_source_bytes) ... ok\ntest_same_name_in_wrong_family_does_not_resolve (__main__.SourceClosureTests.test_same_name_in_wrong_family_does_not_resolve) ... ok\ntest_source_drift_rejects_generation_before_any_output (__main__.SourceClosureTests.test_source_drift_rejects_generation_before_any_output) ... ok\ntest_unknown_enum_semantics_reject (__main__.SourceClosureTests.test_unknown_enum_semantics_reject) ... ok\ntest_unknown_nested_reference_semantics_reject (__main__.SourceClosureTests.test_unknown_nested_reference_semantics_reject) ... ok\ntest_unknown_top_level_reference_semantics_reject (__main__.SourceClosureTests.test_unknown_top_level_reference_semantics_reject) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.069s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "Beta/implementation/p00/migration-closure/build_closure.py",
+        "--check"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"status\": \"verified\",\n  \"selectedRoots\": 31,\n  \"retainedStructuredRecords\": 49,\n  \"retainedCodeDefinitions\": 2,\n  \"typedEdges\": 171,\n  \"retainedAssets\": 29,\n  \"retainedSourceFiles\": 48,\n  \"totalInventoriedStructuredRecords\": 532,\n  \"totalInventoriedCodeDefinitions\": 10,\n  \"totalInventoriedFiles\": 201,\n  \"totalInventoriedDocumentHeadings\": 187\n}\n",
+      "stderr": ""
+    }
+  ],
+  "inputs": [
+    {
+      "path": "Beta/implementation/p00/migration-closure/build_closure.py",
+      "sha256": "6c47f8b1ee423d224dae750e82b56dd061b51dc19cdbfb294f004d76d00318f5"
+    },
+    {
+      "path": "Beta/implementation/p00/migration-closure/test_closure.py",
+      "sha256": "e1a707e7a9c860aff3ee26fdc4ad83392f3af2add6bc812e36765f43c9c61f38"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/closure-manifest.json",
+      "sha256": "d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582"
+    }
+  ],
+  "limits": [
+    "No executable gameplay, native asset acceptance, authority performance or full source migration was tested.",
+    "Typed reference semantics are enumerated in the packet; implicit prose and arbitrary code behavior are not automatically understood."
+  ]
+}

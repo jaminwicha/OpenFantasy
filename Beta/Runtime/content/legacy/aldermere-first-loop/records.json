@@ -1,0 +1,1199 @@
+{
+  "schemaVersion": 1,
+  "packageId": "openfantasy.aldermere",
+  "records": [
+    {
+      "targetKey": "openfantasy.aldermere:abilities/breaker",
+      "family": "abilities",
+      "legacyId": "breaker",
+      "sourceIdentity": {
+        "path": "data/abilities.json",
+        "jsonPointer": "/abilities/2",
+        "inventoryId": "data/abilities.json#/abilities/2",
+        "payloadSha256": "8a71ea7d5004439713bbb3246f1b2aef27650e237c6de4b099612c254ae62f01"
+      },
+      "sourcePayload": {
+        "id": "breaker",
+        "name": "Breaker",
+        "kind": "Melee",
+        "power": 24,
+        "range": 48,
+        "atbCost": 900,
+        "mpCost": 0,
+        "unlockLevel": 5
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:abilities/cleave",
+      "family": "abilities",
+      "legacyId": "cleave",
+      "sourceIdentity": {
+        "path": "data/abilities.json",
+        "jsonPointer": "/abilities/1",
+        "inventoryId": "data/abilities.json#/abilities/1",
+        "payloadSha256": "98024286f5b63e488be8187f0d7cfb48e5acaee299cea1d7f85ca59a4a05c97b"
+      },
+      "sourcePayload": {
+        "id": "cleave",
+        "name": "Cleave",
+        "kind": "Melee",
+        "power": 14,
+        "range": 48,
+        "atbCost": 600,
+        "mpCost": 0,
+        "unlockLevel": 3,
+        "aoeRadius": 64
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:abilities/rally",
+      "family": "abilities",
+      "legacyId": "rally",
+      "sourceIdentity": {
+        "path": "data/abilities.json",
+        "jsonPointer": "/abilities/9",
+        "inventoryId": "data/abilities.json#/abilities/9",
+        "payloadSha256": "4fe7e112ec8e7cdbd3846d69cb474db53137db539d0ac22a0d78128622157dca"
+      },
+      "sourcePayload": {
+        "id": "rally",
+        "name": "Rally",
+        "kind": "Heal",
+        "power": 20,
+        "range": 32,
+        "atbCost": 800,
+        "mpCost": 6,
+        "unlockLevel": 7
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:abilities/strike",
+      "family": "abilities",
+      "legacyId": "strike",
+      "sourceIdentity": {
+        "path": "data/abilities.json",
+        "jsonPointer": "/abilities/0",
+        "inventoryId": "data/abilities.json#/abilities/0",
+        "payloadSha256": "974a3c16135eddfc9679deb3929c862476c78b62f38fc79cb7253aba7e02f70a"
+      },
+      "sourcePayload": {
+        "id": "strike",
+        "name": "Strike",
+        "kind": "Melee",
+        "power": 10,
+        "range": 48,
+        "atbCost": 300,
+        "mpCost": 0,
+        "unlockLevel": 1
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:classes/squire",
+      "family": "classes",
+      "legacyId": "squire",
+      "sourceIdentity": {
+        "path": "data/classes.json",
+        "jsonPointer": "/classes/0",
+        "inventoryId": "data/classes.json#/classes/0",
+        "payloadSha256": "b6defa5b6c7a49d13fe3297938c41952c78b22de5ba2187138654d84b2507cf9"
+      },
+      "sourcePayload": {
+        "id": "squire",
+        "name": "Squire",
+        "baseStats": {
+          "hp": 60,
+          "mp": 10,
+          "attack": 12,
+          "magic": 4,
+          "defense": 8,
+          "speed": 8
+        },
+        "growth": {
+          "hp": 9,
+          "mp": 2,
+          "attack": 3,
+          "magic": 1,
+          "defense": 2,
+          "speed": 1
+        },
+        "moveSpeed": 4,
+        "abilities": [
+          "strike",
+          "cleave",
+          "breaker",
+          "rally"
+        ]
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/berries",
+      "family": "items",
+      "legacyId": "berries",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/15",
+        "inventoryId": "data/items.json#/items/15",
+        "payloadSha256": "a7b53e8648a12bb156269fe955ea868aeab9881ba75fb4b79bba057358a93214"
+      },
+      "sourcePayload": {
+        "id": "berries",
+        "name": "Berries",
+        "kind": "Material",
+        "price": 5
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/berry_pie",
+      "family": "items",
+      "legacyId": "berry_pie",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/39",
+        "inventoryId": "data/items.json#/items/39",
+        "payloadSha256": "ab5c39d2916a175bf8d6cdb1ec3681bee84f6d13b5686bb78d1a43eb384e5ffb"
+      },
+      "sourcePayload": {
+        "id": "berry_pie",
+        "name": "Berry Pie",
+        "kind": "Consumable",
+        "price": 60,
+        "healHp": 80,
+        "healMp": 10
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/canoe",
+      "family": "items",
+      "legacyId": "canoe",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/22",
+        "inventoryId": "data/items.json#/items/22",
+        "payloadSha256": "3ccee58fa633d7956db3b6f80761f6a9dff5ea4ab8e7beeb987a6bde0630c090"
+      },
+      "sourcePayload": {
+        "id": "canoe",
+        "name": "Canoe",
+        "kind": "Vehicle",
+        "price": 120,
+        "vehicle": "Canoe"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/copper_axe",
+      "family": "items",
+      "legacyId": "copper_axe",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/17",
+        "inventoryId": "data/items.json#/items/17",
+        "payloadSha256": "6ce27c1011c787a546e4b340db0e689e53c8a2d776f60de0bf694f1c091ade84"
+      },
+      "sourcePayload": {
+        "id": "copper_axe",
+        "name": "Copper Axe",
+        "kind": "Tool",
+        "price": 90,
+        "tool": "Axe",
+        "toolPower": 1
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/copper_pickaxe",
+      "family": "items",
+      "legacyId": "copper_pickaxe",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/18",
+        "inventoryId": "data/items.json#/items/18",
+        "payloadSha256": "471cabbefb17e0dfd30fd2f9f7cfa6a080a0383967584ccaf9a9050a9c33e98a"
+      },
+      "sourcePayload": {
+        "id": "copper_pickaxe",
+        "name": "Copper Pickaxe",
+        "kind": "Tool",
+        "price": 90,
+        "tool": "Pickaxe",
+        "toolPower": 1
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/ether",
+      "family": "items",
+      "legacyId": "ether",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/2",
+        "inventoryId": "data/items.json#/items/2",
+        "payloadSha256": "8888cf89e3457cc3f236f22fb73268b0dc7852ce21d85b14aabbf2fe6af7549c"
+      },
+      "sourcePayload": {
+        "id": "ether",
+        "name": "Ether",
+        "kind": "Consumable",
+        "price": 90,
+        "healHp": 0,
+        "healMp": 20
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/fizz_wine",
+      "family": "items",
+      "legacyId": "fizz_wine",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/41",
+        "inventoryId": "data/items.json#/items/41",
+        "payloadSha256": "a80c2710c8e3e056781b761e1c6408fb8b94adc1616b297d5ec016ad49a646a5"
+      },
+      "sourcePayload": {
+        "id": "fizz_wine",
+        "name": "Oasis Fizz-Wine",
+        "kind": "Consumable",
+        "price": 70,
+        "healHp": 40,
+        "healMp": 25
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/ice_shard",
+      "family": "items",
+      "legacyId": "ice_shard",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/29",
+        "inventoryId": "data/items.json#/items/29",
+        "payloadSha256": "4168916c1283f373f56db2a46b2decd92a90fbcc5138222a197a73cf151d39db"
+      },
+      "sourcePayload": {
+        "id": "ice_shard",
+        "name": "Ice Shard",
+        "kind": "Material",
+        "price": 30
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/miners_stew",
+      "family": "items",
+      "legacyId": "miners_stew",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/40",
+        "inventoryId": "data/items.json#/items/40",
+        "payloadSha256": "7771b11c75fb244d346f898e69b37c1f93ecc386289ce695a7a8b2f1c0127f99"
+      },
+      "sourcePayload": {
+        "id": "miners_stew",
+        "name": "Miner's Stew",
+        "kind": "Consumable",
+        "price": 90,
+        "healHp": 120,
+        "healMp": 15
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/mythril_ore",
+      "family": "items",
+      "legacyId": "mythril_ore",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/34",
+        "inventoryId": "data/items.json#/items/34",
+        "payloadSha256": "3f2a7141ad85a437e9b6b334cf072c7b26628ad85958461f6eaf55fd4e7e28ec"
+      },
+      "sourcePayload": {
+        "id": "mythril_ore",
+        "name": "Mythril Ore",
+        "kind": "Material",
+        "price": 120
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/potion",
+      "family": "items",
+      "legacyId": "potion",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/0",
+        "inventoryId": "data/items.json#/items/0",
+        "payloadSha256": "3b7a5fdd562795e58d68a11007763b88cd25d40841c739c4fef9495161c097aa"
+      },
+      "sourcePayload": {
+        "id": "potion",
+        "name": "Potion",
+        "kind": "Consumable",
+        "price": 30,
+        "healHp": 40,
+        "healMp": 0
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/rations",
+      "family": "items",
+      "legacyId": "rations",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/16",
+        "inventoryId": "data/items.json#/items/16",
+        "payloadSha256": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030"
+      },
+      "sourcePayload": {
+        "id": "rations",
+        "name": "Rations",
+        "kind": "Consumable",
+        "price": 25,
+        "healHp": 30,
+        "healMp": 5
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/sailboat",
+      "family": "items",
+      "legacyId": "sailboat",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/23",
+        "inventoryId": "data/items.json#/items/23",
+        "payloadSha256": "ae528003edd7ede59dcd8bdf0d085b2f1504bc35c11a6366be77c2d9e63b4813"
+      },
+      "sourcePayload": {
+        "id": "sailboat",
+        "name": "Sailboat",
+        "kind": "Vehicle",
+        "price": 800,
+        "vehicle": "Boat"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/ship",
+      "family": "items",
+      "legacyId": "ship",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/24",
+        "inventoryId": "data/items.json#/items/24",
+        "payloadSha256": "e725d817b7a03a9c11ef66299ac9ddc566844b8c0cfe73a3256a5b4c0d9ba50f"
+      },
+      "sourcePayload": {
+        "id": "ship",
+        "name": "Ship",
+        "kind": "Vehicle",
+        "price": 2500,
+        "vehicle": "Ship"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/sickle",
+      "family": "items",
+      "legacyId": "sickle",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/19",
+        "inventoryId": "data/items.json#/items/19",
+        "payloadSha256": "bb05006bf983b7f88d5f2212a8fd378132da4d0f1736ee3fff8f53c9e4c209f2"
+      },
+      "sourcePayload": {
+        "id": "sickle",
+        "name": "Sickle",
+        "kind": "Tool",
+        "price": 60,
+        "tool": "Sickle",
+        "toolPower": 1
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/tonic",
+      "family": "items",
+      "legacyId": "tonic",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/1",
+        "inventoryId": "data/items.json#/items/1",
+        "payloadSha256": "9499ecdd31a85e6090f58645184948e2c5c54a7640eac7ca19457c54b4d7ced7"
+      },
+      "sourcePayload": {
+        "id": "tonic",
+        "name": "Tonic",
+        "kind": "Consumable",
+        "price": 120,
+        "healHp": 150,
+        "healMp": 0
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/wolf_pelt",
+      "family": "items",
+      "legacyId": "wolf_pelt",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/10",
+        "inventoryId": "data/items.json#/items/10",
+        "payloadSha256": "59da909762ae7f00cfb2bbfdc3b20f67ab2e1f9bddfb7186c40fa765e3168b8b"
+      },
+      "sourcePayload": {
+        "id": "wolf_pelt",
+        "name": "Wolf Pelt",
+        "kind": "Material",
+        "price": 18
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/wood",
+      "family": "items",
+      "legacyId": "wood",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/12",
+        "inventoryId": "data/items.json#/items/12",
+        "payloadSha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d"
+      },
+      "sourcePayload": {
+        "id": "wood",
+        "name": "Wood",
+        "kind": "Material",
+        "price": 6
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:monsters/bramble_wolf",
+      "family": "monsters",
+      "legacyId": "bramble_wolf",
+      "sourceIdentity": {
+        "path": "data/monsters.json",
+        "jsonPointer": "/monsters/1",
+        "inventoryId": "data/monsters.json#/monsters/1",
+        "payloadSha256": "d8639a45b5219163e148fde39537388df45db56148bfcaaa8ebb58ea52e6d967"
+      },
+      "sourcePayload": {
+        "id": "bramble_wolf",
+        "name": "Bramble Wolf",
+        "level": 3,
+        "stats": {
+          "hp": 62,
+          "mp": 0,
+          "attack": 14,
+          "magic": 0,
+          "defense": 5,
+          "speed": 10
+        },
+        "moveSpeed": 5,
+        "xpReward": 95,
+        "gilMin": 10,
+        "gilMax": 22,
+        "aggroRange": 128,
+        "leashRange": 384,
+        "attack": {
+          "power": 10,
+          "range": 44,
+          "atbCost": 400
+        },
+        "drops": [
+          {
+            "item": "wolf_pelt",
+            "chancePercent": 35
+          },
+          {
+            "item": "potion",
+            "chancePercent": 10
+          }
+        ]
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:monsters/cave_bat",
+      "family": "monsters",
+      "legacyId": "cave_bat",
+      "sourceIdentity": {
+        "path": "data/monsters.json",
+        "jsonPointer": "/monsters/3",
+        "inventoryId": "data/monsters.json#/monsters/3",
+        "payloadSha256": "68b664ec80c3da302fdaf2afff11bf48982e0e8743df95a03e81ae32a8a91c3f"
+      },
+      "sourcePayload": {
+        "id": "cave_bat",
+        "name": "Cave Bat",
+        "level": 5,
+        "stats": {
+          "hp": 55,
+          "mp": 0,
+          "attack": 17,
+          "magic": 0,
+          "defense": 4,
+          "speed": 13
+        },
+        "moveSpeed": 6,
+        "xpReward": 160,
+        "gilMin": 14,
+        "gilMax": 30,
+        "aggroRange": 144,
+        "leashRange": 416,
+        "attack": {
+          "power": 9,
+          "range": 40,
+          "atbCost": 330
+        },
+        "drops": [
+          {
+            "item": "ether",
+            "chancePercent": 14
+          }
+        ]
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:monsters/frost_golem",
+      "family": "monsters",
+      "legacyId": "frost_golem",
+      "sourceIdentity": {
+        "path": "data/monsters.json",
+        "jsonPointer": "/monsters/21",
+        "inventoryId": "data/monsters.json#/monsters/21",
+        "payloadSha256": "ad1bb987a06ce66a9e7254c44bfd4f182a2d021d421a4a360946acd076d39921"
+      },
+      "sourcePayload": {
+        "id": "frost_golem",
+        "name": "Frost Golem",
+        "level": 8,
+        "stats": {
+          "hp": 420,
+          "mp": 0,
+          "attack": 28,
+          "magic": 0,
+          "defense": 17,
+          "speed": 6
+        },
+        "moveSpeed": 2,
+        "xpReward": 800,
+        "gilMin": 100,
+        "gilMax": 200,
+        "aggroRange": 100,
+        "leashRange": 320,
+        "attack": {
+          "power": 15,
+          "range": 52,
+          "atbCost": 600
+        },
+        "drops": [
+          {
+            "item": "ice_shard",
+            "chancePercent": 65
+          },
+          {
+            "item": "mythril_ore",
+            "chancePercent": 18
+          }
+        ]
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:nodes/101",
+      "family": "nodes",
+      "legacyId": 101,
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/nodes/0",
+        "inventoryId": "data/world.json#/nodes/0",
+        "payloadSha256": "5809ad8e6db1857055cccf18ed11a03eebe6c81ed37b6e2d017b3b15f56d04d1"
+      },
+      "sourcePayload": {
+        "id": 101,
+        "type": "oak",
+        "region": {
+          "x": 95,
+          "y": 315,
+          "w": 60,
+          "h": 60
+        },
+        "count": 12,
+        "respawnTicks": 900
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:nodes/103",
+      "family": "nodes",
+      "legacyId": 103,
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/nodes/2",
+        "inventoryId": "data/world.json#/nodes/2",
+        "payloadSha256": "f60ccc94c9a2a43e8a21c145efe56689d60ef8894dc422b6b6fbe335c11b6149"
+      },
+      "sourcePayload": {
+        "id": 103,
+        "type": "berry",
+        "region": {
+          "x": 100,
+          "y": 330,
+          "w": 50,
+          "h": 50
+        },
+        "count": 8,
+        "respawnTicks": 700
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:npcs/bartender_hilda",
+      "family": "npcs",
+      "legacyId": "bartender_hilda",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/25",
+        "inventoryId": "data/npcs.json#/npcs/25",
+        "payloadSha256": "0530ccd4f8e54f985169ebe2dd97ef79b1ff4dae5cc1e71f60573971340653cc"
+      },
+      "sourcePayload": {
+        "id": "bartender_hilda",
+        "name": "Hilda Kegkeeper",
+        "tileX": 349,
+        "tileY": 129,
+        "appearance": {
+          "race": 2,
+          "skin": 5,
+          "hairStyle": 5,
+          "hairColor": 0,
+          "outfit": 1,
+          "outfitA": 0,
+          "outfitB": 6,
+          "acc": 1
+        },
+        "dialog": "Stone roof, strong ale. What else does a body need?",
+        "dialogs": [
+          "Brutes cracked another sledge on the hill road. Thane's fuming."
+        ],
+        "quests": [
+          "hilda_shard_ale",
+          "hilda_frost_hunt"
+        ],
+        "shop": [
+          "rations",
+          "potion"
+        ],
+        "sprite": ""
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:npcs/bartender_toma",
+      "family": "npcs",
+      "legacyId": "bartender_toma",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/6",
+        "inventoryId": "data/npcs.json#/npcs/6",
+        "payloadSha256": "24b546c4b98b7ec819fe11f3fb9123fb11969b3981dbbc6c6ef0587c5f6214ad"
+      },
+      "sourcePayload": {
+        "id": "bartender_toma",
+        "name": "Toma",
+        "tileX": 99,
+        "tileY": 341,
+        "appearance": {
+          "race": 0,
+          "skin": 5,
+          "hairStyle": 3,
+          "hairColor": 10,
+          "outfit": 7,
+          "outfitA": 12,
+          "outfitB": 1,
+          "acc": 1
+        },
+        "dialog": "The Rusted Tankard, at your service. Ale, beds, and better rumors than the crier.",
+        "dialogs": [
+          "They say bats in the old mine chew lamplight. Bad for miners, good for bounty work.",
+          "The hooded one in the corner pays in real gil. That's all I know and all I ask."
+        ],
+        "quests": [
+          "rumor_bats",
+          "toma_pie_day"
+        ],
+        "shop": [
+          "rations",
+          "potion"
+        ],
+        "sprite": ""
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:npcs/farmer_wren",
+      "family": "npcs",
+      "legacyId": "farmer_wren",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/116",
+        "inventoryId": "data/npcs.json#/npcs/116",
+        "payloadSha256": "f0374a9cd788d14de3c45233cf31c6b67904ed209a6a5f8d1a0b8de547dd1f30"
+      },
+      "sourcePayload": {
+        "id": "farmer_wren",
+        "name": "Wren",
+        "tileX": 103,
+        "tileY": 322,
+        "wander": 2,
+        "appearance": {
+          "race": 0,
+          "skin": 5,
+          "hairStyle": 5,
+          "hairColor": 13,
+          "outfit": 8,
+          "outfitA": 10,
+          "outfitB": 10,
+          "acc": 3
+        },
+        "dialog": "Just me, the rows, and the crows. Suits me.",
+        "dialogs": [
+          "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+          "Rain when we need sun, sun when we need rain. Farming!"
+        ],
+        "quests": [
+          "wren_orchard"
+        ],
+        "sprite": ""
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:npcs/marla",
+      "family": "npcs",
+      "legacyId": "marla",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/12",
+        "inventoryId": "data/npcs.json#/npcs/12",
+        "payloadSha256": "27ed7de55f28c34caa3525690301dce8035a026d0a2cf194d177edea988ef65d"
+      },
+      "sourcePayload": {
+        "id": "marla",
+        "name": "Marla",
+        "tileX": 96,
+        "tileY": 350,
+        "appearance": {
+          "race": 1,
+          "skin": 4,
+          "hairStyle": 0,
+          "hairColor": 3,
+          "outfit": 4,
+          "outfitA": 10,
+          "outfitB": 0,
+          "acc": 2
+        },
+        "dialog": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+        "shop": [
+          "potion",
+          "tonic",
+          "ether",
+          "rations",
+          "copper_axe",
+          "copper_pickaxe",
+          "sickle"
+        ],
+        "quests": [],
+        "wander": 1,
+        "sprite": ""
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:npcs/portmaster_wick",
+      "family": "npcs",
+      "legacyId": "portmaster_wick",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/2",
+        "inventoryId": "data/npcs.json#/npcs/2",
+        "payloadSha256": "f96d8d3eac97b52cff567401020ea1ab3e74bc1d8240f49f52dedaf192c78fbc"
+      },
+      "sourcePayload": {
+        "id": "portmaster_wick",
+        "name": "Portmaster Wick",
+        "tileX": 42,
+        "tileY": 352,
+        "appearance": {
+          "race": 0,
+          "skin": 4,
+          "hairStyle": 5,
+          "hairColor": 13,
+          "outfit": 3,
+          "outfitA": 12,
+          "outfitB": 2,
+          "acc": 2
+        },
+        "dialog": "Fine hulls, fair winds. Press V by the water to launch what you own.",
+        "shop": [
+          "sailboat",
+          "ship",
+          "canoe"
+        ],
+        "sprite": ""
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:quests/hilda_frost_hunt",
+      "family": "quests",
+      "legacyId": "hilda_frost_hunt",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/30",
+        "inventoryId": "data/quests.json#/quests/30",
+        "payloadSha256": "c5c578e6529702339fc244c291cf5a9be90426874a8f7ac5837b9548d8ab6b24"
+      },
+      "sourcePayload": {
+        "id": "hilda_frost_hunt",
+        "name": "The Cellar-Wreckers",
+        "kind": "Kill",
+        "giver": "bartender_hilda",
+        "offer": "Frost golems cracked the cellar wall — twice. Break two of THEM and we're square.",
+        "turnIn": "Wall's holding. Winter's just weather again.",
+        "rewardXp": 1200,
+        "rewardGil": 550,
+        "minLevel": 7,
+        "prerequisite": "hilda_shard_ale",
+        "targetMonster": "frost_golem",
+        "targetCount": 2
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:quests/hilda_shard_ale",
+      "family": "quests",
+      "legacyId": "hilda_shard_ale",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/29",
+        "inventoryId": "data/quests.json#/quests/29",
+        "payloadSha256": "08ec76ec565040dd3a5c910bf1e39d3ac81df72deae52d3fe01335abac42b1cb"
+      },
+      "sourcePayload": {
+        "id": "hilda_shard_ale",
+        "name": "Cold as Kharzum",
+        "kind": "Fetch",
+        "giver": "bartender_hilda",
+        "offer": "Five ice shards keep my cellar cold through the thaw. The ale thanks you in advance.",
+        "turnIn": "Cellar's cold, ale's perfect. First pour's yours.",
+        "rewardXp": 550,
+        "rewardGil": 260,
+        "minLevel": 5,
+        "rewardItem": "miners_stew",
+        "targetItem": "ice_shard",
+        "targetCount": 5
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:quests/rumor_bats",
+      "family": "quests",
+      "legacyId": "rumor_bats",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/12",
+        "inventoryId": "data/quests.json#/quests/12",
+        "payloadSha256": "c309c6d1f2ea258bf878ff1570940803091d24a80150b9b5b5d7baf29be430c6"
+      },
+      "sourcePayload": {
+        "id": "rumor_bats",
+        "name": "Lamplight Bounty",
+        "kind": "Kill",
+        "giver": "bartender_toma",
+        "offer": "Miners pay the Tankard to post this: five cave bats dead, coin on delivery. Rumor's free, ale isn't.",
+        "turnIn": "Five bats! The miners' guild drinks here tonight — and your coin's in the till.",
+        "targetMonster": "cave_bat",
+        "targetCount": 5,
+        "rewardXp": 500,
+        "rewardGil": 260,
+        "rewardItem": "rations",
+        "minLevel": 2
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:quests/toma_pie_day",
+      "family": "quests",
+      "legacyId": "toma_pie_day",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/22",
+        "inventoryId": "data/quests.json#/quests/22",
+        "payloadSha256": "494418577e21bf5ed798c46f7eb3cda7c66cc451a94d311e998b8e996010d0f9"
+      },
+      "sourcePayload": {
+        "id": "toma_pie_day",
+        "name": "Pie Day at the Tankard",
+        "kind": "Fetch",
+        "giver": "bartender_toma",
+        "offer": "Pie day tomorrow and my oven's cold. Two berry pies saves the Tankard's honor.",
+        "turnIn": "The Tankard's honor is saved. Wedge for the road?",
+        "rewardXp": 450,
+        "rewardGil": 150,
+        "minLevel": 2,
+        "rewardItem": "fizz_wine",
+        "targetItem": "berry_pie",
+        "targetCount": 2
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:quests/wren_orchard",
+      "family": "quests",
+      "legacyId": "wren_orchard",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/44",
+        "inventoryId": "data/quests.json#/quests/44",
+        "payloadSha256": "bbb996bb2ca6ca4e27b942f7f40f9ea624813909e037ec86980ed8aaa4ab86cb"
+      },
+      "sourcePayload": {
+        "id": "wren_orchard",
+        "name": "Wren's Saplings",
+        "kind": "Fetch",
+        "giver": "farmer_wren",
+        "offer": "Six wood for a windbreak and my saplings might see spring.",
+        "turnIn": "The wind can howl all it likes now. Thank you kindly.",
+        "rewardXp": 420,
+        "rewardGil": 200,
+        "minLevel": 1,
+        "targetItem": "wood",
+        "targetCount": 6
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:recipes/craft_canoe",
+      "family": "recipes",
+      "legacyId": "craft_canoe",
+      "sourceIdentity": {
+        "path": "data/recipes.json",
+        "jsonPointer": "/recipes/8",
+        "inventoryId": "data/recipes.json#/recipes/8",
+        "payloadSha256": "87358b95cac7282a6d25b7f711e65259c8c86726f7a1df5d1ba925f7faaecba5"
+      },
+      "sourcePayload": {
+        "id": "craft_canoe",
+        "output": "canoe",
+        "outputCount": 1,
+        "inputs": [
+          {
+            "item": "wood",
+            "count": 8
+          }
+        ]
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:recipes/craft_rations",
+      "family": "recipes",
+      "legacyId": "craft_rations",
+      "sourceIdentity": {
+        "path": "data/recipes.json",
+        "jsonPointer": "/recipes/1",
+        "inventoryId": "data/recipes.json#/recipes/1",
+        "payloadSha256": "c384027c76855ade482105233cadd07ea930a265f73e12beab852de1cc756491"
+      },
+      "sourcePayload": {
+        "id": "craft_rations",
+        "output": "rations",
+        "outputCount": 2,
+        "inputs": [
+          {
+            "item": "berries",
+            "count": 2
+          },
+          {
+            "item": "wood",
+            "count": 1
+          }
+        ]
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/brasshollow",
+      "family": "regions",
+      "legacyId": "brasshollow",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/0",
+        "inventoryId": "data/world.json#/regions/0",
+        "payloadSha256": "9ca4a8937949c9f45d6b0280898121895073c27169947b3324842e705c24f623"
+      },
+      "sourcePayload": {
+        "id": "brasshollow",
+        "x": 94,
+        "y": 339,
+        "w": 33,
+        "h": 27
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/farm_verdance_small",
+      "family": "regions",
+      "legacyId": "farm_verdance_small",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/18",
+        "inventoryId": "data/world.json#/regions/18",
+        "payloadSha256": "fc79c253de2d851941d669687dfb8253e79d37f17f74dfce4ce9023f75d7c884"
+      },
+      "sourcePayload": {
+        "id": "farm_verdance_small",
+        "x": 100,
+        "y": 320,
+        "w": 9,
+        "h": 7
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/gearford",
+      "family": "regions",
+      "legacyId": "gearford",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/2",
+        "inventoryId": "data/world.json#/regions/2",
+        "payloadSha256": "6e4864b4a8902da3714d218941b52627f6ca0109d3db0769897c4b2af2210fa3"
+      },
+      "sourcePayload": {
+        "id": "gearford",
+        "x": 344,
+        "y": 127,
+        "w": 33,
+        "h": 27
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/port_brasshollow",
+      "family": "regions",
+      "legacyId": "port_brasshollow",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/21",
+        "inventoryId": "data/world.json#/regions/21",
+        "payloadSha256": "41eb355ed98020d9a158a5a6d77d7f62c6519ef836325d07cb661936aaf4e375"
+      },
+      "sourcePayload": {
+        "id": "port_brasshollow",
+        "x": 39,
+        "y": 348,
+        "w": 14,
+        "h": 10
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/port_gearford",
+      "family": "regions",
+      "legacyId": "port_gearford",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/22",
+        "inventoryId": "data/world.json#/regions/22",
+        "payloadSha256": "2dd3d59d49d4fac5b9223319df3b4502c5147241c968a753c06c5443438672ee"
+      },
+      "sourcePayload": {
+        "id": "port_gearford",
+        "x": 330,
+        "y": 220,
+        "w": 10,
+        "h": 14
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/tavern_brasshollow",
+      "family": "regions",
+      "legacyId": "tavern_brasshollow",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/1",
+        "inventoryId": "data/world.json#/regions/1",
+        "payloadSha256": "456cd2111a872be15d045f4af51b90bce86964802096fc6e0224f039bb7bbce7"
+      },
+      "sourcePayload": {
+        "id": "tavern_brasshollow",
+        "x": 95,
+        "y": 340,
+        "w": 10,
+        "h": 7
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/tavern_gearford",
+      "family": "regions",
+      "legacyId": "tavern_gearford",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/3",
+        "inventoryId": "data/world.json#/regions/3",
+        "payloadSha256": "a3fb99f06805dcd704f950456f2ee3fb5ee6f59077d921fea62345e27bf0a644"
+      },
+      "sourcePayload": {
+        "id": "tavern_gearford",
+        "x": 345,
+        "y": 128,
+        "w": 10,
+        "h": 7
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:tileset/13",
+      "family": "tileset",
+      "legacyId": 13,
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/tileset/13",
+        "inventoryId": "data/world.json#/tileset/13",
+        "payloadSha256": "ec65dd6ae4749d045d83e44724fe27f584ff552e45b962b353b9add9c9a5d61f"
+      },
+      "sourcePayload": {
+        "id": 13,
+        "name": "ocean",
+        "walkable": false
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:tileset/2",
+      "family": "tileset",
+      "legacyId": 2,
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/tileset/2",
+        "inventoryId": "data/world.json#/tileset/2",
+        "payloadSha256": "5565c096668643444c55e81a3e4cbb5ae3d047b1d9c398f63c0384c246a72a04"
+      },
+      "sourcePayload": {
+        "id": 2,
+        "name": "shallow",
+        "walkable": false
+      }
+    }
+  ],
+  "codeDefinedRecords": [
+    {
+      "targetKey": "openfantasy.aldermere:node_archetypes/berry",
+      "family": "node_archetypes",
+      "legacyId": "berry",
+      "sourceIdentity": {
+        "path": "src/Sim/World.Gathering.cs",
+        "inventoryId": "src/Sim/World.Gathering.cs#node_archetype/berry",
+        "sourceSha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+        "exactTextSha256": "f8cd59ea8f1c80a0946fc1708921763b609afdeedfc6a2dc5bf53372276d3aeb"
+      },
+      "sourceExactText": "        [\"berry\"] = new NodeArchetype(\"Berry Bush\", \"node_berry\", ToolKind.Sickle, 4, \"berries\"),",
+      "extractedFields": {
+        "name": "Berry Bush",
+        "sprite": "node_berry",
+        "tool": "Sickle",
+        "hp": 4,
+        "yieldItem": "berries"
+      },
+      "extractionRule": "Exact NodeArchetype constructor expression; no gameplay-unit transformation"
+    },
+    {
+      "targetKey": "openfantasy.aldermere:node_archetypes/oak",
+      "family": "node_archetypes",
+      "legacyId": "oak",
+      "sourceIdentity": {
+        "path": "src/Sim/World.Gathering.cs",
+        "inventoryId": "src/Sim/World.Gathering.cs#node_archetype/oak",
+        "sourceSha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715",
+        "exactTextSha256": "daf928a665a07230915ade30898532efe60efd852ddb6755f21c7eda22b84742"
+      },
+      "sourceExactText": "        [\"oak\"] = new NodeArchetype(\"Oak\", \"node_oak\", ToolKind.Axe, 5, \"wood\"),",
+      "extractedFields": {
+        "name": "Oak",
+        "sprite": "node_oak",
+        "tool": "Axe",
+        "hp": 5,
+        "yieldItem": "wood"
+      },
+      "extractionRule": "Exact NodeArchetype constructor expression; no gameplay-unit transformation"
+    }
+  ]
+}

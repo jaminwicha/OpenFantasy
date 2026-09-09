@@ -1,0 +1,438 @@
+{
+  "recipes": [
+    {
+      "id": "craft_potion",
+      "output": "potion",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "berries",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "craft_rations",
+      "output": "rations",
+      "outputCount": 2,
+      "inputs": [
+        {
+          "item": "berries",
+          "count": 2
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "craft_tonic",
+      "output": "tonic",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "potion",
+          "count": 2
+        },
+        {
+          "item": "berries",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "id": "smelt_iron_bar",
+      "output": "iron_bar",
+      "outputCount": 1,
+      "station": "Forge",
+      "inputs": [
+        {
+          "item": "iron_ore",
+          "count": 3
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "forge_iron_blade",
+      "output": "iron_blade",
+      "outputCount": 1,
+      "station": "Forge",
+      "inputs": [
+        {
+          "item": "iron_bar",
+          "count": 3
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "forge_brass_mail",
+      "output": "brass_mail",
+      "outputCount": 1,
+      "station": "Forge",
+      "inputs": [
+        {
+          "item": "iron_bar",
+          "count": 2
+        },
+        {
+          "item": "wolf_pelt",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "forge_iron_axe",
+      "output": "iron_axe",
+      "outputCount": 1,
+      "station": "Forge",
+      "inputs": [
+        {
+          "item": "iron_bar",
+          "count": 2
+        },
+        {
+          "item": "wood",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "forge_iron_pickaxe",
+      "output": "iron_pickaxe",
+      "outputCount": 1,
+      "station": "Forge",
+      "inputs": [
+        {
+          "item": "iron_bar",
+          "count": 2
+        },
+        {
+          "item": "wood",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "craft_canoe",
+      "output": "canoe",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "wood",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "id": "smelt_steel_bar",
+      "output": "steel_bar",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "iron_bar",
+          "count": 2
+        },
+        {
+          "item": "ore_chunk",
+          "count": 2
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "smelt_mythril_bar",
+      "output": "mythril_bar",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "mythril_ore",
+          "count": 3
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_steel_blade",
+      "output": "steel_blade",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "steel_bar",
+          "count": 3
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_mythril_blade",
+      "output": "mythril_blade",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "mythril_bar",
+          "count": 3
+        },
+        {
+          "item": "fang",
+          "count": 4
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_steel_rod",
+      "output": "steel_rod",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "steel_bar",
+          "count": 2
+        },
+        {
+          "item": "gloom_essence",
+          "count": 2
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_mythril_rod",
+      "output": "mythril_rod",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "mythril_bar",
+          "count": 2
+        },
+        {
+          "item": "storm_core",
+          "count": 1
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "fletch_long_bow",
+      "output": "long_bow",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "wood",
+          "count": 6
+        },
+        {
+          "item": "fang",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "id": "forge_steel_bow",
+      "output": "steel_bow",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "steel_bar",
+          "count": 1
+        },
+        {
+          "item": "wood",
+          "count": 5
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_mythril_bow",
+      "output": "mythril_bow",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "mythril_bar",
+          "count": 1
+        },
+        {
+          "item": "wood",
+          "count": 6
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_iron_mail",
+      "output": "iron_mail",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "iron_bar",
+          "count": 4
+        },
+        {
+          "item": "wolf_pelt",
+          "count": 2
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_steel_mail",
+      "output": "steel_mail",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "steel_bar",
+          "count": 4
+        },
+        {
+          "item": "wolf_pelt",
+          "count": 3
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_mythril_mail",
+      "output": "mythril_mail",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "mythril_bar",
+          "count": 4
+        },
+        {
+          "item": "ice_shard",
+          "count": 3
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "sew_ranger_cloak",
+      "output": "ranger_cloak",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "wolf_pelt",
+          "count": 6
+        },
+        {
+          "item": "fang",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "id": "brew_hi_potion",
+      "output": "hi_potion",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "potion",
+          "count": 2
+        },
+        {
+          "item": "venom_sac",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "brew_hi_ether",
+      "output": "hi_ether",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "ether",
+          "count": 2
+        },
+        {
+          "item": "gloom_essence",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "bake_berry_pie",
+      "output": "berry_pie",
+      "outputCount": 2,
+      "inputs": [
+        {
+          "item": "berries",
+          "count": 6
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "cook_miners_stew",
+      "output": "miners_stew",
+      "outputCount": 2,
+      "inputs": [
+        {
+          "item": "berries",
+          "count": 3
+        },
+        {
+          "item": "fang",
+          "count": 2
+        },
+        {
+          "item": "wood",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "id": "forge_mythril_axe",
+      "output": "mythril_axe",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "mythril_bar",
+          "count": 2
+        },
+        {
+          "item": "wood",
+          "count": 2
+        }
+      ],
+      "station": "Forge"
+    },
+    {
+      "id": "forge_mythril_pickaxe",
+      "output": "mythril_pickaxe",
+      "outputCount": 1,
+      "inputs": [
+        {
+          "item": "mythril_bar",
+          "count": 2
+        },
+        {
+          "item": "wood",
+          "count": 2
+        }
+      ],
+      "station": "Forge"
+    }
+  ]
+}

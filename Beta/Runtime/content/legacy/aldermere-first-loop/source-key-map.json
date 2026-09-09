@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 1,
+  "packageId": "openfantasy.aldermere",
+  "mappings": [
+    {
+      "inventoryId": "data/abilities.json#/abilities/0",
+      "sourcePath": "data/abilities.json",
+      "targetKey": "openfantasy.aldermere:abilities/strike",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/abilities.json#/abilities/1",
+      "sourcePath": "data/abilities.json",
+      "targetKey": "openfantasy.aldermere:abilities/cleave",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/abilities.json#/abilities/2",
+      "sourcePath": "data/abilities.json",
+      "targetKey": "openfantasy.aldermere:abilities/breaker",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/abilities.json#/abilities/9",
+      "sourcePath": "data/abilities.json",
+      "targetKey": "openfantasy.aldermere:abilities/rally",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/classes.json#/classes/0",
+      "sourcePath": "data/classes.json",
+      "targetKey": "openfantasy.aldermere:classes/squire",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/0",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/potion",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/1",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/tonic",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/10",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/wolf_pelt",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/12",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/wood",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/15",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/berries",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/16",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/rations",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/17",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/copper_axe",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/18",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/copper_pickaxe",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/19",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/sickle",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/2",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/ether",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/22",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/canoe",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/23",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/sailboat",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/24",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/ship",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/29",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/ice_shard",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/34",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/mythril_ore",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/39",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/berry_pie",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/40",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/miners_stew",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/items.json#/items/41",
+      "sourcePath": "data/items.json",
+      "targetKey": "openfantasy.aldermere:items/fizz_wine",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/monsters.json#/monsters/1",
+      "sourcePath": "data/monsters.json",
+      "targetKey": "openfantasy.aldermere:monsters/bramble_wolf",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/monsters.json#/monsters/21",
+      "sourcePath": "data/monsters.json",
+      "targetKey": "openfantasy.aldermere:monsters/frost_golem",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/monsters.json#/monsters/3",
+      "sourcePath": "data/monsters.json",
+      "targetKey": "openfantasy.aldermere:monsters/cave_bat",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/npcs.json#/npcs/116",
+      "sourcePath": "data/npcs.json",
+      "targetKey": "openfantasy.aldermere:npcs/farmer_wren",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/npcs.json#/npcs/12",
+      "sourcePath": "data/npcs.json",
+      "targetKey": "openfantasy.aldermere:npcs/marla",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/npcs.json#/npcs/2",
+      "sourcePath": "data/npcs.json",
+      "targetKey": "openfantasy.aldermere:npcs/portmaster_wick",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/npcs.json#/npcs/25",
+      "sourcePath": "data/npcs.json",
+      "targetKey": "openfantasy.aldermere:npcs/bartender_hilda",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/npcs.json#/npcs/6",
+      "sourcePath": "data/npcs.json",
+      "targetKey": "openfantasy.aldermere:npcs/bartender_toma",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/quests.json#/quests/12",
+      "sourcePath": "data/quests.json",
+      "targetKey": "openfantasy.aldermere:quests/rumor_bats",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/quests.json#/quests/22",
+      "sourcePath": "data/quests.json",
+      "targetKey": "openfantasy.aldermere:quests/toma_pie_day",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/quests.json#/quests/29",
+      "sourcePath": "data/quests.json",
+      "targetKey": "openfantasy.aldermere:quests/hilda_shard_ale",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/quests.json#/quests/30",
+      "sourcePath": "data/quests.json",
+      "targetKey": "openfantasy.aldermere:quests/hilda_frost_hunt",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/quests.json#/quests/44",
+      "sourcePath": "data/quests.json",
+      "targetKey": "openfantasy.aldermere:quests/wren_orchard",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/recipes.json#/recipes/1",
+      "sourcePath": "data/recipes.json",
+      "targetKey": "openfantasy.aldermere:recipes/craft_rations",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/recipes.json#/recipes/8",
+      "sourcePath": "data/recipes.json",
+      "targetKey": "openfantasy.aldermere:recipes/craft_canoe",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/nodes/0",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:nodes/101",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/nodes/2",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:nodes/103",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/regions/0",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:regions/brasshollow",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/regions/1",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:regions/tavern_brasshollow",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/regions/18",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:regions/farm_verdance_small",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/regions/2",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:regions/gearford",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/regions/21",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:regions/port_brasshollow",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/regions/22",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:regions/port_gearford",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/regions/3",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:regions/tavern_gearford",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/tileset/13",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:tileset/13",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "data/world.json#/tileset/2",
+      "sourcePath": "data/world.json",
+      "targetKey": "openfantasy.aldermere:tileset/2",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "src/Sim/World.Gathering.cs#node_archetype/berry",
+      "sourcePath": "src/Sim/World.Gathering.cs",
+      "targetKey": "openfantasy.aldermere:node_archetypes/berry",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    },
+    {
+      "inventoryId": "src/Sim/World.Gathering.cs#node_archetype/oak",
+      "sourcePath": "src/Sim/World.Gathering.cs",
+      "targetKey": "openfantasy.aldermere:node_archetypes/oak",
+      "mapping": "one_to_one_retained_source_identity",
+      "transforms": []
+    }
+  ]
+}

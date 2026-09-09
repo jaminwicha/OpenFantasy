@@ -1,0 +1,2988 @@
+{
+ "npcs": [
+  {
+   "id": "king_aldric",
+   "name": "King Aldric",
+   "tileX": 180,
+   "tileY": 316,
+   "appearance": {
+    "race": 0,
+    "skin": 1,
+    "hairStyle": 8,
+    "hairColor": 9,
+    "outfit": 3,
+    "outfitA": 12,
+    "outfitB": 6,
+    "acc": 2
+   },
+   "dialog": "Rise. Aldermere has few heroes left; I will not waste one on ceremony.",
+   "dialogs": [
+    "The war machines we buried are waking. The Storm Warden worst among them.",
+    "My writ opens doors in Gearford. Dwarves respect paper almost as much as iron."
+   ],
+   "quests": [
+    "kings_writ",
+    "warden_of_storms",
+    "royal_menagerie"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "captain_edda",
+   "name": "Captain Edda",
+   "tileX": 176,
+   "tileY": 330,
+   "wander": 2,
+   "appearance": {
+    "race": 0,
+    "skin": 4,
+    "hairStyle": 4,
+    "hairColor": 1,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Castle guard's stretched thin. The roads aren't what they were.",
+   "dialogs": [
+    "Wolves on the east road again. My recruits won't cut it."
+   ],
+   "quests": [
+    "road_patrol",
+    "watchtower_survey",
+    "watchtower_clearout"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "portmaster_wick",
+   "name": "Portmaster Wick",
+   "tileX": 42,
+   "tileY": 352,
+   "appearance": {
+    "race": 0,
+    "skin": 4,
+    "hairStyle": 5,
+    "hairColor": 13,
+    "outfit": 3,
+    "outfitA": 12,
+    "outfitB": 2,
+    "acc": 2
+   },
+   "dialog": "Fine hulls, fair winds. Press V by the water to launch what you own.",
+   "shop": [
+    "sailboat",
+    "ship",
+    "canoe"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "portmaster_grum",
+   "name": "Portmaster Grum",
+   "tileX": 334,
+   "tileY": 224,
+   "appearance": {
+    "race": 2,
+    "skin": 1,
+    "hairStyle": 11,
+    "hairColor": 15,
+    "outfit": 3,
+    "outfitA": 15,
+    "outfitB": 4,
+    "acc": 2
+   },
+   "dialog": "Fine hulls, fair winds. Press V by the water to launch what you own.",
+   "shop": [
+    "sailboat",
+    "canoe"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "portmaster_lys",
+   "name": "Portmaster Lys",
+   "tileX": 290,
+   "tileY": 372,
+   "appearance": {
+    "race": 1,
+    "skin": 6,
+    "hairStyle": 8,
+    "hairColor": 6,
+    "outfit": 9,
+    "outfitA": 4,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Fine hulls, fair winds. Press V by the water to launch what you own.",
+   "shop": [
+    "canoe",
+    "sailboat"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "portmaster_dot",
+   "name": "Portmaster Dot",
+   "tileX": 118,
+   "tileY": 214,
+   "appearance": {
+    "race": 3,
+    "skin": 5,
+    "hairStyle": 6,
+    "hairColor": 9,
+    "outfit": 8,
+    "outfitA": 8,
+    "outfitB": 3,
+    "acc": 2
+   },
+   "dialog": "Fine hulls, fair winds. Press V by the water to launch what you own.",
+   "shop": [
+    "canoe",
+    "sailboat"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "bartender_toma",
+   "name": "Toma",
+   "tileX": 99,
+   "tileY": 341,
+   "appearance": {
+    "race": 0,
+    "skin": 5,
+    "hairStyle": 3,
+    "hairColor": 10,
+    "outfit": 7,
+    "outfitA": 12,
+    "outfitB": 1,
+    "acc": 1
+   },
+   "dialog": "The Rusted Tankard, at your service. Ale, beds, and better rumors than the crier.",
+   "dialogs": [
+    "They say bats in the old mine chew lamplight. Bad for miners, good for bounty work.",
+    "The hooded one in the corner pays in real gil. That's all I know and all I ask."
+   ],
+   "quests": [
+    "rumor_bats",
+    "toma_pie_day"
+   ],
+   "shop": [
+    "rations",
+    "potion"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_brasshollow_0",
+   "name": "Deryn",
+   "tileX": 103,
+   "tileY": 345,
+   "appearance": {
+    "race": 1,
+    "skin": 7,
+    "hairStyle": 1,
+    "hairColor": 13,
+    "outfit": 6,
+    "outfitA": 7,
+    "outfitB": 2,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "Another round, and one for the stranger!",
+   "dialogs": [
+    "The bard knows one song. We pretend not to notice.",
+    "I swear on my beard the fish was THIS big."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_brasshollow_1",
+   "name": "Nan",
+   "tileX": 103,
+   "tileY": 342,
+   "appearance": {
+    "race": 0,
+    "skin": 5,
+    "hairStyle": 9,
+    "hairColor": 10,
+    "outfit": 7,
+    "outfitA": 3,
+    "outfitB": 7,
+    "acc": 0
+   },
+   "wander": 3,
+   "dialog": "Another round, and one for the stranger!",
+   "dialogs": [
+    "Another round, and one for the stranger!",
+    "The bard knows one song. We pretend not to notice."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_brasshollow_2",
+   "name": "Hobb",
+   "tileX": 98,
+   "tileY": 343,
+   "appearance": {
+    "race": 0,
+    "skin": 1,
+    "hairStyle": 11,
+    "hairColor": 5,
+    "outfit": 6,
+    "outfitA": 12,
+    "outfitB": 11,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "The bard knows one song. We pretend not to notice.",
+   "dialogs": [
+    "To the road! May it stay under our feet!",
+    "I swear on my beard the fish was THIS big."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_brasshollow_3",
+   "name": "Milo",
+   "tileX": 101,
+   "tileY": 341,
+   "appearance": {
+    "race": 0,
+    "skin": 6,
+    "hairStyle": 5,
+    "hairColor": 6,
+    "outfit": 4,
+    "outfitA": 12,
+    "outfitB": 11,
+    "acc": 1
+   },
+   "wander": 3,
+   "dialog": "I swear on my beard the fish was THIS big.",
+   "dialogs": [
+    "Don't play cards with the hooded one. Just don't.",
+    "I swear on my beard the fish was THIS big."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "garrick",
+   "name": "Garrick the Smith",
+   "tileX": 119,
+   "tileY": 343,
+   "appearance": {
+    "race": 1,
+    "skin": 5,
+    "hairStyle": 1,
+    "hairColor": 15,
+    "outfit": 7,
+    "outfitA": 1,
+    "outfitB": 8,
+    "acc": 1
+   },
+   "dialog": "Blades plain and true. The fancy ones get people killed.",
+   "shop": [
+    "bronze_sword",
+    "short_bow",
+    "iron_blade",
+    "iron_rod",
+    "leather_vest",
+    "iron_mail"
+   ],
+   "quests": [
+    "garrick_fangs",
+    "garrick_steel"
+   ],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "marla",
+   "name": "Marla",
+   "tileX": 96,
+   "tileY": 350,
+   "appearance": {
+    "race": 1,
+    "skin": 4,
+    "hairStyle": 0,
+    "hairColor": 3,
+    "outfit": 4,
+    "outfitA": 10,
+    "outfitB": 0,
+    "acc": 2
+   },
+   "dialog": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+   "shop": [
+    "potion",
+    "tonic",
+    "ether",
+    "rations",
+    "copper_axe",
+    "copper_pickaxe",
+    "sickle"
+   ],
+   "quests": [],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "gentry_brasshollow",
+   "name": "Lena the Elder",
+   "tileX": 122,
+   "tileY": 360,
+   "appearance": {
+    "race": 0,
+    "skin": 4,
+    "hairStyle": 4,
+    "hairColor": 10,
+    "outfit": 0,
+    "outfitA": 7,
+    "outfitB": 3,
+    "acc": 3
+   },
+   "wander": 2,
+   "dialog": "Yes, the pillars are imported. The tax was criminal.",
+   "dialogs": [
+    "One simply cannot get reliable caravan insurance anymore.",
+    "Yes, the pillars are imported. The tax was criminal."
+   ],
+   "quests": [
+    "gentry_coins"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_brasshollow_95_0",
+   "name": "Doro",
+   "tileX": 98,
+   "tileY": 360,
+   "appearance": {
+    "race": 0,
+    "skin": 4,
+    "hairStyle": 4,
+    "hairColor": 9,
+    "outfit": 5,
+    "outfitA": 12,
+    "outfitB": 10,
+    "acc": 2
+   },
+   "wander": 5,
+   "dialog": "You're not from here, are you? The boots give it away.",
+   "dialogs": [
+    "They say the crystals hum louder before a storm.",
+    "Prices being what they are, I mostly barter.",
+    "Fine weather for it, whatever it is you do."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_brasshollow_95_1",
+   "name": "Cog",
+   "tileX": 97,
+   "tileY": 360,
+   "appearance": {
+    "race": 3,
+    "skin": 0,
+    "hairStyle": 2,
+    "hairColor": 8,
+    "outfit": 3,
+    "outfitA": 8,
+    "outfitB": 3,
+    "acc": 3
+   },
+   "wander": 5,
+   "dialog": "The forge runs day and night lately.",
+   "dialogs": [
+    "Stay off the hills without a machine or a death wish.",
+    "Prices being what they are, I mostly barter.",
+    "My grandmother remembers the war. She doesn't talk about it."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_brasshollow_101_0",
+   "name": "Petra",
+   "tileX": 103,
+   "tileY": 361,
+   "appearance": {
+    "race": 0,
+    "skin": 6,
+    "hairStyle": 7,
+    "hairColor": 11,
+    "outfit": 3,
+    "outfitA": 6,
+    "outfitB": 2,
+    "acc": 1
+   },
+   "wander": 5,
+   "dialog": "Stay off the hills without a machine or a death wish.",
+   "dialogs": [
+    "You're not from here, are you? The boots give it away.",
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "Stay off the hills without a machine or a death wish."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_brasshollow_101_1",
+   "name": "Kell",
+   "tileX": 104,
+   "tileY": 360,
+   "appearance": {
+    "race": 0,
+    "skin": 3,
+    "hairStyle": 6,
+    "hairColor": 4,
+    "outfit": 8,
+    "outfitA": 2,
+    "outfitB": 3,
+    "acc": 2
+   },
+   "wander": 5,
+   "dialog": "The tavern's warm if the road's been long.",
+   "dialogs": [
+    "Prices being what they are, I mostly barter.",
+    "Stay off the hills without a machine or a death wish.",
+    "I hear the port's busy again. Good for trade, bad for quiet."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_brasshollow_108_0",
+   "name": "Rolf",
+   "tileX": 109,
+   "tileY": 360,
+   "appearance": {
+    "race": 0,
+    "skin": 7,
+    "hairStyle": 8,
+    "hairColor": 11,
+    "outfit": 7,
+    "outfitA": 3,
+    "outfitB": 13,
+    "acc": 0
+   },
+   "wander": 4,
+   "dialog": "Roof leaks, but it's my leak.",
+   "dialogs": [
+    "Work the fields in season, the docks off season. It adds up to almost enough.",
+    "Roof leaks, but it's my leak."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_brasshollow_113_0",
+   "name": "Sylra",
+   "tileX": 115,
+   "tileY": 360,
+   "appearance": {
+    "race": 1,
+    "skin": 6,
+    "hairStyle": 0,
+    "hairColor": 13,
+    "outfit": 3,
+    "outfitA": 5,
+    "outfitB": 8,
+    "acc": 3
+   },
+   "wander": 4,
+   "dialog": "The rich quarter's cobbles are smoother. Same rain, though.",
+   "dialogs": [
+    "Roof leaks, but it's my leak.",
+    "Work the fields in season, the docks off season. It adds up to almost enough."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_brasshollow_0",
+   "name": "Dilly",
+   "tileX": 109,
+   "tileY": 353,
+   "appearance": {
+    "race": 3,
+    "skin": 3,
+    "hairStyle": 0,
+    "hairColor": 4,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 9,
+    "acc": 2
+   },
+   "wander": 7,
+   "dialog": "The forge runs day and night lately.",
+   "dialogs": [
+    "You're not from here, are you? The boots give it away.",
+    "The tavern's warm if the road's been long.",
+    "Prices being what they are, I mostly barter."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_brasshollow_1",
+   "name": "Jinx",
+   "tileX": 110,
+   "tileY": 353,
+   "appearance": {
+    "race": 3,
+    "skin": 3,
+    "hairStyle": 3,
+    "hairColor": 5,
+    "outfit": 5,
+    "outfitA": 9,
+    "outfitB": 1,
+    "acc": 1
+   },
+   "wander": 7,
+   "dialog": "Fine weather for it, whatever it is you do.",
+   "dialogs": [
+    "My grandmother remembers the war. She doesn't talk about it.",
+    "Prices being what they are, I mostly barter.",
+    "The forge runs day and night lately."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_brasshollow_2",
+   "name": "Deryn",
+   "tileX": 111,
+   "tileY": 353,
+   "appearance": {
+    "race": 1,
+    "skin": 4,
+    "hairStyle": 11,
+    "hairColor": 12,
+    "outfit": 2,
+    "outfitA": 5,
+    "outfitB": 10,
+    "acc": 1
+   },
+   "wander": 7,
+   "dialog": "I hear the port's busy again. Good for trade, bad for quiet.",
+   "dialogs": [
+    "The forge runs day and night lately.",
+    "Prices being what they are, I mostly barter.",
+    "Fine weather for it, whatever it is you do."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_brasshollow_3",
+   "name": "Deryn",
+   "tileX": 112,
+   "tileY": 353,
+   "appearance": {
+    "race": 1,
+    "skin": 5,
+    "hairStyle": 3,
+    "hairColor": 1,
+    "outfit": 8,
+    "outfitA": 10,
+    "outfitB": 7,
+    "acc": 0
+   },
+   "wander": 7,
+   "dialog": "You're not from here, are you? The boots give it away.",
+   "dialogs": [
+    "I hear the port's busy again. Good for trade, bad for quiet.",
+    "The tavern's warm if the road's been long.",
+    "Prices being what they are, I mostly barter."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_brasshollow_4",
+   "name": "Hark",
+   "tileX": 113,
+   "tileY": 353,
+   "appearance": {
+    "race": 2,
+    "skin": 7,
+    "hairStyle": 2,
+    "hairColor": 13,
+    "outfit": 4,
+    "outfitA": 13,
+    "outfitB": 6,
+    "acc": 3
+   },
+   "wander": 7,
+   "dialog": "Prices being what they are, I mostly barter.",
+   "dialogs": [
+    "The forge runs day and night lately.",
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "Prices being what they are, I mostly barter."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "bartender_hilda",
+   "name": "Hilda Kegkeeper",
+   "tileX": 349,
+   "tileY": 129,
+   "appearance": {
+    "race": 2,
+    "skin": 5,
+    "hairStyle": 5,
+    "hairColor": 0,
+    "outfit": 1,
+    "outfitA": 0,
+    "outfitB": 6,
+    "acc": 1
+   },
+   "dialog": "Stone roof, strong ale. What else does a body need?",
+   "dialogs": [
+    "Brutes cracked another sledge on the hill road. Thane's fuming."
+   ],
+   "quests": [
+    "hilda_shard_ale",
+    "hilda_frost_hunt"
+   ],
+   "shop": [
+    "rations",
+    "potion"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_gearford_0",
+   "name": "Osric",
+   "tileX": 351,
+   "tileY": 131,
+   "appearance": {
+    "race": 0,
+    "skin": 3,
+    "hairStyle": 4,
+    "hairColor": 13,
+    "outfit": 1,
+    "outfitA": 1,
+    "outfitB": 2,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "Don't play cards with the hooded one. Just don't.",
+   "dialogs": [
+    "I swear on my beard the fish was THIS big.",
+    "The bard knows one song. We pretend not to notice."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_gearford_1",
+   "name": "Jorn",
+   "tileX": 353,
+   "tileY": 129,
+   "appearance": {
+    "race": 2,
+    "skin": 5,
+    "hairStyle": 5,
+    "hairColor": 1,
+    "outfit": 1,
+    "outfitA": 6,
+    "outfitB": 3,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "I swear on my beard the fish was THIS big.",
+   "dialogs": [
+    "To the road! May it stay under our feet!",
+    "The bard knows one song. We pretend not to notice."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_gearford_2",
+   "name": "Hark",
+   "tileX": 346,
+   "tileY": 132,
+   "appearance": {
+    "race": 2,
+    "skin": 0,
+    "hairStyle": 3,
+    "hairColor": 0,
+    "outfit": 9,
+    "outfitA": 2,
+    "outfitB": 12,
+    "acc": 0
+   },
+   "wander": 3,
+   "dialog": "Don't play cards with the hooded one. Just don't.",
+   "dialogs": [
+    "To the road! May it stay under our feet!",
+    "Don't play cards with the hooded one. Just don't."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_gearford_3",
+   "name": "Gimra",
+   "tileX": 346,
+   "tileY": 133,
+   "appearance": {
+    "race": 2,
+    "skin": 6,
+    "hairStyle": 8,
+    "hairColor": 2,
+    "outfit": 9,
+    "outfitA": 13,
+    "outfitB": 14,
+    "acc": 0
+   },
+   "wander": 3,
+   "dialog": "I swear on my beard the fish was THIS big.",
+   "dialogs": [
+    "I swear on my beard the fish was THIS big.",
+    "Another round, and one for the stranger!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "smelter_vora",
+   "name": "Smelter Vora",
+   "tileX": 369,
+   "tileY": 131,
+   "appearance": {
+    "race": 1,
+    "skin": 7,
+    "hairStyle": 11,
+    "hairColor": 5,
+    "outfit": 8,
+    "outfitA": 9,
+    "outfitB": 1,
+    "acc": 3
+   },
+   "dialog": "Grand forge of Gearford. If it can be smelted, we smelt it.",
+   "shop": [
+    "iron_blade",
+    "steel_blade",
+    "brass_mail",
+    "iron_mail",
+    "steel_mail"
+   ],
+   "quests": [],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "kegga",
+   "name": "Kegga Toolwright",
+   "tileX": 347,
+   "tileY": 140,
+   "appearance": {
+    "race": 2,
+    "skin": 3,
+    "hairStyle": 8,
+    "hairColor": 12,
+    "outfit": 2,
+    "outfitA": 7,
+    "outfitB": 15,
+    "acc": 3
+   },
+   "dialog": "A dull tool is a slow funeral. Buy sharp.",
+   "shop": [
+    "iron_axe",
+    "iron_pickaxe",
+    "copper_axe",
+    "copper_pickaxe",
+    "sickle",
+    "rations"
+   ],
+   "quests": [
+    "kegga_timber"
+   ],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "gentry_gearford",
+   "name": "Kelda the Elder",
+   "tileX": 372,
+   "tileY": 148,
+   "appearance": {
+    "race": 2,
+    "skin": 0,
+    "hairStyle": 6,
+    "hairColor": 2,
+    "outfit": 6,
+    "outfitA": 13,
+    "outfitB": 13,
+    "acc": 1
+   },
+   "wander": 2,
+   "dialog": "One simply cannot get reliable caravan insurance anymore.",
+   "dialogs": [
+    "Yes, the pillars are imported. The tax was criminal.",
+    "One simply cannot get reliable caravan insurance anymore."
+   ],
+   "quests": [],
+   "sprite": ""
+  },
+  {
+   "id": "villager_gearford_345_0",
+   "name": "Skadi",
+   "tileX": 348,
+   "tileY": 147,
+   "appearance": {
+    "race": 2,
+    "skin": 2,
+    "hairStyle": 9,
+    "hairColor": 0,
+    "outfit": 0,
+    "outfitA": 1,
+    "outfitB": 9,
+    "acc": 0
+   },
+   "wander": 5,
+   "dialog": "I hear the port's busy again. Good for trade, bad for quiet.",
+   "dialogs": [
+    "Fine weather for it, whatever it is you do.",
+    "Stay off the hills without a machine or a death wish.",
+    "I hear the port's busy again. Good for trade, bad for quiet."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_gearford_345_1",
+   "name": "Tor",
+   "tileX": 347,
+   "tileY": 148,
+   "appearance": {
+    "race": 2,
+    "skin": 3,
+    "hairStyle": 6,
+    "hairColor": 14,
+    "outfit": 3,
+    "outfitA": 8,
+    "outfitB": 13,
+    "acc": 3
+   },
+   "wander": 5,
+   "dialog": "They say the crystals hum louder before a storm.",
+   "dialogs": [
+    "The forge runs day and night lately.",
+    "The tavern's warm if the road's been long.",
+    "Mind the wisps past the gate. They look friendly. They are not."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_gearford_351_0",
+   "name": "Cass",
+   "tileX": 352,
+   "tileY": 148,
+   "appearance": {
+    "race": 0,
+    "skin": 4,
+    "hairStyle": 5,
+    "hairColor": 3,
+    "outfit": 2,
+    "outfitA": 8,
+    "outfitB": 11,
+    "acc": 2
+   },
+   "wander": 5,
+   "dialog": "You're not from here, are you? The boots give it away.",
+   "dialogs": [
+    "The forge runs day and night lately.",
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "I hear the port's busy again. Good for trade, bad for quiet."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_gearford_351_1",
+   "name": "Skadi",
+   "tileX": 353,
+   "tileY": 149,
+   "appearance": {
+    "race": 2,
+    "skin": 3,
+    "hairStyle": 8,
+    "hairColor": 15,
+    "outfit": 8,
+    "outfitA": 11,
+    "outfitB": 14,
+    "acc": 2
+   },
+   "wander": 5,
+   "dialog": "Mind the wisps past the gate. They look friendly. They are not.",
+   "dialogs": [
+    "Fine weather for it, whatever it is you do.",
+    "Stay off the hills without a machine or a death wish.",
+    "They say the crystals hum louder before a storm."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_gearford_358_0",
+   "name": "Pip",
+   "tileX": 359,
+   "tileY": 148,
+   "appearance": {
+    "race": 3,
+    "skin": 2,
+    "hairStyle": 10,
+    "hairColor": 9,
+    "outfit": 6,
+    "outfitA": 13,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "wander": 4,
+   "dialog": "Work the fields in season, the docks off season. It adds up to almost enough.",
+   "dialogs": [
+    "The rich quarter's cobbles are smoother. Same rain, though.",
+    "Roof leaks, but it's my leak."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_gearford_363_0",
+   "name": "Orin",
+   "tileX": 365,
+   "tileY": 148,
+   "appearance": {
+    "race": 2,
+    "skin": 6,
+    "hairStyle": 11,
+    "hairColor": 8,
+    "outfit": 6,
+    "outfitA": 4,
+    "outfitB": 15,
+    "acc": 3
+   },
+   "wander": 4,
+   "dialog": "Roof leaks, but it's my leak.",
+   "dialogs": [
+    "Roof leaks, but it's my leak.",
+    "Work the fields in season, the docks off season. It adds up to almost enough."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_gearford_0",
+   "name": "Gimra",
+   "tileX": 359,
+   "tileY": 141,
+   "appearance": {
+    "race": 2,
+    "skin": 0,
+    "hairStyle": 2,
+    "hairColor": 13,
+    "outfit": 7,
+    "outfitA": 5,
+    "outfitB": 14,
+    "acc": 1
+   },
+   "wander": 7,
+   "dialog": "Mind the wisps past the gate. They look friendly. They are not.",
+   "dialogs": [
+    "Stay off the hills without a machine or a death wish.",
+    "The forge runs day and night lately.",
+    "Fine weather for it, whatever it is you do."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_gearford_1",
+   "name": "Cog",
+   "tileX": 360,
+   "tileY": 141,
+   "appearance": {
+    "race": 3,
+    "skin": 2,
+    "hairStyle": 0,
+    "hairColor": 3,
+    "outfit": 9,
+    "outfitA": 4,
+    "outfitB": 11,
+    "acc": 3
+   },
+   "wander": 7,
+   "dialog": "Prices being what they are, I mostly barter.",
+   "dialogs": [
+    "They say the crystals hum louder before a storm.",
+    "The tavern's warm if the road's been long.",
+    "Stay off the hills without a machine or a death wish."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_gearford_2",
+   "name": "Kelda",
+   "tileX": 361,
+   "tileY": 141,
+   "appearance": {
+    "race": 2,
+    "skin": 5,
+    "hairStyle": 0,
+    "hairColor": 5,
+    "outfit": 2,
+    "outfitA": 7,
+    "outfitB": 8,
+    "acc": 2
+   },
+   "wander": 7,
+   "dialog": "Stay off the hills without a machine or a death wish.",
+   "dialogs": [
+    "The forge runs day and night lately.",
+    "They say the crystals hum louder before a storm.",
+    "I hear the port's busy again. Good for trade, bad for quiet."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_gearford_3",
+   "name": "Kip",
+   "tileX": 362,
+   "tileY": 141,
+   "appearance": {
+    "race": 3,
+    "skin": 3,
+    "hairStyle": 7,
+    "hairColor": 5,
+    "outfit": 6,
+    "outfitA": 6,
+    "outfitB": 12,
+    "acc": 2
+   },
+   "wander": 7,
+   "dialog": "My grandmother remembers the war. She doesn't talk about it.",
+   "dialogs": [
+    "Stay off the hills without a machine or a death wish.",
+    "The forge runs day and night lately.",
+    "Fine weather for it, whatever it is you do."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_gearford_4",
+   "name": "Dagna",
+   "tileX": 363,
+   "tileY": 141,
+   "appearance": {
+    "race": 2,
+    "skin": 6,
+    "hairStyle": 2,
+    "hairColor": 1,
+    "outfit": 6,
+    "outfitA": 5,
+    "outfitB": 15,
+    "acc": 3
+   },
+   "wander": 7,
+   "dialog": "They say the crystals hum louder before a storm.",
+   "dialogs": [
+    "I hear the port's busy again. Good for trade, bad for quiet.",
+    "My grandmother remembers the war. She doesn't talk about it.",
+    "Fine weather for it, whatever it is you do."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "bartender_aro",
+   "name": "Aro",
+   "tileX": 361,
+   "tileY": 345,
+   "appearance": {
+    "race": 1,
+    "skin": 3,
+    "hairStyle": 10,
+    "hairColor": 15,
+    "outfit": 1,
+    "outfitA": 14,
+    "outfitB": 15,
+    "acc": 1
+   },
+   "dialog": "Moss-mead and quiet. The quiet costs extra.",
+   "dialogs": [
+    "The marsh lights doubled since the crypt cracked. Liriel counts them nightly."
+   ],
+   "quests": [
+    "aro_gloom",
+    "aro_stalkers"
+   ],
+   "shop": [
+    "rations",
+    "potion"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_sylvanglade_0",
+   "name": "Wren",
+   "tileX": 363,
+   "tileY": 347,
+   "appearance": {
+    "race": 1,
+    "skin": 2,
+    "hairStyle": 0,
+    "hairColor": 14,
+    "outfit": 9,
+    "outfitA": 15,
+    "outfitB": 9,
+    "acc": 0
+   },
+   "wander": 3,
+   "dialog": "The bard knows one song. We pretend not to notice.",
+   "dialogs": [
+    "Another round, and one for the stranger!",
+    "Don't play cards with the hooded one. Just don't."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_sylvanglade_1",
+   "name": "Dagna",
+   "tileX": 360,
+   "tileY": 345,
+   "appearance": {
+    "race": 2,
+    "skin": 2,
+    "hairStyle": 8,
+    "hairColor": 2,
+    "outfit": 8,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "I swear on my beard the fish was THIS big.",
+   "dialogs": [
+    "I swear on my beard the fish was THIS big.",
+    "To the road! May it stay under our feet!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_sylvanglade_2",
+   "name": "Lira",
+   "tileX": 358,
+   "tileY": 345,
+   "appearance": {
+    "race": 1,
+    "skin": 5,
+    "hairStyle": 6,
+    "hairColor": 11,
+    "outfit": 8,
+    "outfitA": 8,
+    "outfitB": 13,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "To the road! May it stay under our feet!",
+   "dialogs": [
+    "Don't play cards with the hooded one. Just don't.",
+    "Another round, and one for the stranger!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_sylvanglade_3",
+   "name": "Tam",
+   "tileX": 364,
+   "tileY": 348,
+   "appearance": {
+    "race": 0,
+    "skin": 6,
+    "hairStyle": 6,
+    "hairColor": 5,
+    "outfit": 1,
+    "outfitA": 10,
+    "outfitB": 10,
+    "acc": 0
+   },
+   "wander": 3,
+   "dialog": "To the road! May it stay under our feet!",
+   "dialogs": [
+    "I swear on my beard the fish was THIS big.",
+    "To the road! May it stay under our feet!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "fenn",
+   "name": "Fenn",
+   "tileX": 381,
+   "tileY": 346,
+   "appearance": {
+    "race": 1,
+    "skin": 5,
+    "hairStyle": 1,
+    "hairColor": 0,
+    "outfit": 4,
+    "outfitA": 10,
+    "outfitB": 0,
+    "acc": 0
+   },
+   "dialog": "Elven fletching, forest remedies, and no questions asked.",
+   "shop": [
+    "oak_rod",
+    "iron_rod",
+    "crystal_rod",
+    "long_bow",
+    "steel_bow",
+    "ranger_cloak",
+    "sage_robe"
+   ],
+   "quests": [],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "sorrel",
+   "name": "Apothecary Sorrel",
+   "tileX": 360,
+   "tileY": 354,
+   "appearance": {
+    "race": 1,
+    "skin": 3,
+    "hairStyle": 4,
+    "hairColor": 10,
+    "outfit": 3,
+    "outfitA": 0,
+    "outfitB": 3,
+    "acc": 2
+   },
+   "dialog": "Tinctures for what ails you. Mostly what ails you is wolves.",
+   "shop": [
+    "potion",
+    "tonic",
+    "ether",
+    "hi_potion",
+    "hi_ether",
+    "rations"
+   ],
+   "quests": [
+    "sorrel_venom"
+   ],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "gentry_sylvanglade",
+   "name": "Cass the Elder",
+   "tileX": 384,
+   "tileY": 364,
+   "appearance": {
+    "race": 0,
+    "skin": 2,
+    "hairStyle": 7,
+    "hairColor": 3,
+    "outfit": 1,
+    "outfitA": 4,
+    "outfitB": 12,
+    "acc": 3
+   },
+   "wander": 2,
+   "dialog": "One simply cannot get reliable caravan insurance anymore.",
+   "dialogs": [
+    "One simply cannot get reliable caravan insurance anymore.",
+    "The King and I have met. Twice. Well \u2014 nearly twice."
+   ],
+   "quests": [],
+   "sprite": ""
+  },
+  {
+   "id": "villager_sylvanglade_357_0",
+   "name": "Faen",
+   "tileX": 360,
+   "tileY": 363,
+   "appearance": {
+    "race": 1,
+    "skin": 7,
+    "hairStyle": 6,
+    "hairColor": 8,
+    "outfit": 7,
+    "outfitA": 3,
+    "outfitB": 12,
+    "acc": 3
+   },
+   "wander": 5,
+   "dialog": "Stay off the hills without a machine or a death wish.",
+   "dialogs": [
+    "My grandmother remembers the war. She doesn't talk about it.",
+    "Prices being what they are, I mostly barter.",
+    "I hear the port's busy again. Good for trade, bad for quiet."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_sylvanglade_357_1",
+   "name": "Wren",
+   "tileX": 360,
+   "tileY": 365,
+   "appearance": {
+    "race": 1,
+    "skin": 7,
+    "hairStyle": 1,
+    "hairColor": 0,
+    "outfit": 1,
+    "outfitA": 1,
+    "outfitB": 13,
+    "acc": 3
+   },
+   "wander": 5,
+   "dialog": "Mind the wisps past the gate. They look friendly. They are not.",
+   "dialogs": [
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "Prices being what they are, I mostly barter.",
+    "The forge runs day and night lately."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_sylvanglade_363_0",
+   "name": "Sylra",
+   "tileX": 366,
+   "tileY": 364,
+   "appearance": {
+    "race": 1,
+    "skin": 4,
+    "hairStyle": 1,
+    "hairColor": 14,
+    "outfit": 8,
+    "outfitA": 10,
+    "outfitB": 10,
+    "acc": 1
+   },
+   "wander": 5,
+   "dialog": "Mind the wisps past the gate. They look friendly. They are not.",
+   "dialogs": [
+    "They say the crystals hum louder before a storm.",
+    "You're not from here, are you? The boots give it away.",
+    "I hear the port's busy again. Good for trade, bad for quiet."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_sylvanglade_363_1",
+   "name": "Miren",
+   "tileX": 364,
+   "tileY": 364,
+   "appearance": {
+    "race": 1,
+    "skin": 5,
+    "hairStyle": 7,
+    "hairColor": 15,
+    "outfit": 4,
+    "outfitA": 0,
+    "outfitB": 11,
+    "acc": 2
+   },
+   "wander": 5,
+   "dialog": "My grandmother remembers the war. She doesn't talk about it.",
+   "dialogs": [
+    "The tavern's warm if the road's been long.",
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "Stay off the hills without a machine or a death wish."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_sylvanglade_370_0",
+   "name": "Vael",
+   "tileX": 371,
+   "tileY": 364,
+   "appearance": {
+    "race": 1,
+    "skin": 2,
+    "hairStyle": 11,
+    "hairColor": 10,
+    "outfit": 8,
+    "outfitA": 14,
+    "outfitB": 7,
+    "acc": 0
+   },
+   "wander": 4,
+   "dialog": "Roof leaks, but it's my leak.",
+   "dialogs": [
+    "Work the fields in season, the docks off season. It adds up to almost enough.",
+    "Roof leaks, but it's my leak."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_sylvanglade_375_0",
+   "name": "Kelda",
+   "tileX": 377,
+   "tileY": 363,
+   "appearance": {
+    "race": 2,
+    "skin": 6,
+    "hairStyle": 7,
+    "hairColor": 2,
+    "outfit": 0,
+    "outfitA": 13,
+    "outfitB": 6,
+    "acc": 0
+   },
+   "wander": 4,
+   "dialog": "Roof leaks, but it's my leak.",
+   "dialogs": [
+    "Roof leaks, but it's my leak.",
+    "Work the fields in season, the docks off season. It adds up to almost enough."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_sylvanglade_0",
+   "name": "Thal",
+   "tileX": 371,
+   "tileY": 357,
+   "appearance": {
+    "race": 1,
+    "skin": 4,
+    "hairStyle": 9,
+    "hairColor": 15,
+    "outfit": 6,
+    "outfitA": 1,
+    "outfitB": 14,
+    "acc": 1
+   },
+   "wander": 7,
+   "dialog": "The forge runs day and night lately.",
+   "dialogs": [
+    "The forge runs day and night lately.",
+    "Fine weather for it, whatever it is you do.",
+    "My grandmother remembers the war. She doesn't talk about it."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_sylvanglade_1",
+   "name": "Aels",
+   "tileX": 372,
+   "tileY": 357,
+   "appearance": {
+    "race": 1,
+    "skin": 0,
+    "hairStyle": 7,
+    "hairColor": 3,
+    "outfit": 2,
+    "outfitA": 5,
+    "outfitB": 14,
+    "acc": 0
+   },
+   "wander": 7,
+   "dialog": "I hear the port's busy again. Good for trade, bad for quiet.",
+   "dialogs": [
+    "Prices being what they are, I mostly barter.",
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "Fine weather for it, whatever it is you do."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_sylvanglade_2",
+   "name": "Marn",
+   "tileX": 373,
+   "tileY": 357,
+   "appearance": {
+    "race": 2,
+    "skin": 1,
+    "hairStyle": 7,
+    "hairColor": 15,
+    "outfit": 4,
+    "outfitA": 6,
+    "outfitB": 14,
+    "acc": 2
+   },
+   "wander": 7,
+   "dialog": "They say the crystals hum louder before a storm.",
+   "dialogs": [
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "They say the crystals hum louder before a storm.",
+    "Prices being what they are, I mostly barter."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_sylvanglade_3",
+   "name": "Thal",
+   "tileX": 374,
+   "tileY": 357,
+   "appearance": {
+    "race": 1,
+    "skin": 3,
+    "hairStyle": 0,
+    "hairColor": 7,
+    "outfit": 7,
+    "outfitA": 11,
+    "outfitB": 14,
+    "acc": 2
+   },
+   "wander": 7,
+   "dialog": "They say the crystals hum louder before a storm.",
+   "dialogs": [
+    "I hear the port's busy again. Good for trade, bad for quiet.",
+    "The forge runs day and night lately.",
+    "They say the crystals hum louder before a storm."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_sylvanglade_4",
+   "name": "Thal",
+   "tileX": 375,
+   "tileY": 357,
+   "appearance": {
+    "race": 1,
+    "skin": 3,
+    "hairStyle": 8,
+    "hairColor": 13,
+    "outfit": 6,
+    "outfitA": 2,
+    "outfitB": 13,
+    "acc": 1
+   },
+   "wander": 7,
+   "dialog": "My grandmother remembers the war. She doesn't talk about it.",
+   "dialogs": [
+    "Prices being what they are, I mostly barter.",
+    "You're not from here, are you? The boots give it away.",
+    "Fine weather for it, whatever it is you do."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "bartender_juno",
+   "name": "Juno",
+   "tileX": 111,
+   "tileY": 125,
+   "appearance": {
+    "race": 0,
+    "skin": 1,
+    "hairStyle": 9,
+    "hairColor": 8,
+    "outfit": 5,
+    "outfitA": 1,
+    "outfitB": 13,
+    "acc": 3
+   },
+   "dialog": "Shade, fizz-wine, and the only cold cellar in Miradel.",
+   "dialogs": [
+    "The Spire hums in D minor now, says the tinker. It used to be C sharp."
+   ],
+   "quests": [
+    "juno_jackals"
+   ],
+   "shop": [
+    "rations",
+    "potion"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_willowick_0",
+   "name": "Faen",
+   "tileX": 115,
+   "tileY": 127,
+   "appearance": {
+    "race": 1,
+    "skin": 7,
+    "hairStyle": 5,
+    "hairColor": 15,
+    "outfit": 2,
+    "outfitA": 0,
+    "outfitB": 4,
+    "acc": 1
+   },
+   "wander": 3,
+   "dialog": "To the road! May it stay under our feet!",
+   "dialogs": [
+    "Don't play cards with the hooded one. Just don't.",
+    "Another round, and one for the stranger!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_willowick_1",
+   "name": "Wren",
+   "tileX": 111,
+   "tileY": 125,
+   "appearance": {
+    "race": 1,
+    "skin": 7,
+    "hairStyle": 2,
+    "hairColor": 2,
+    "outfit": 2,
+    "outfitA": 4,
+    "outfitB": 14,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "The bard knows one song. We pretend not to notice.",
+   "dialogs": [
+    "I swear on my beard the fish was THIS big.",
+    "Don't play cards with the hooded one. Just don't."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_willowick_2",
+   "name": "Fila",
+   "tileX": 108,
+   "tileY": 129,
+   "appearance": {
+    "race": 0,
+    "skin": 2,
+    "hairStyle": 11,
+    "hairColor": 3,
+    "outfit": 4,
+    "outfitA": 7,
+    "outfitB": 0,
+    "acc": 3
+   },
+   "wander": 3,
+   "dialog": "To the road! May it stay under our feet!",
+   "dialogs": [
+    "The bard knows one song. We pretend not to notice.",
+    "I swear on my beard the fish was THIS big."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "patron_willowick_3",
+   "name": "Hark",
+   "tileX": 110,
+   "tileY": 125,
+   "appearance": {
+    "race": 2,
+    "skin": 4,
+    "hairStyle": 10,
+    "hairColor": 12,
+    "outfit": 9,
+    "outfitA": 14,
+    "outfitB": 0,
+    "acc": 0
+   },
+   "wander": 3,
+   "dialog": "I swear on my beard the fish was THIS big.",
+   "dialogs": [
+    "I swear on my beard the fish was THIS big.",
+    "Don't play cards with the hooded one. Just don't."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "tinker_zizzle",
+   "name": "Tinker Zizzle",
+   "tileX": 129,
+   "tileY": 125,
+   "appearance": {
+    "race": 3,
+    "skin": 0,
+    "hairStyle": 4,
+    "hairColor": 7,
+    "outfit": 5,
+    "outfitA": 1,
+    "outfitB": 1,
+    "acc": 2
+   },
+   "dialog": "Gadgets! Rods! Slightly singed maps! Everything a desert needs!",
+   "shop": [
+    "crystal_rod",
+    "steel_rod",
+    "mythril_pickaxe",
+    "mythril_axe",
+    "harvest_scythe"
+   ],
+   "quests": [
+    "zizzle_cores"
+   ],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "meline",
+   "name": "Meline of the Oasis",
+   "tileX": 110,
+   "tileY": 134,
+   "appearance": {
+    "race": 3,
+    "skin": 7,
+    "hairStyle": 10,
+    "hairColor": 11,
+    "outfit": 0,
+    "outfitA": 0,
+    "outfitB": 5,
+    "acc": 2
+   },
+   "dialog": "Water first, heroics second. That's oasis wisdom.",
+   "shop": [
+    "potion",
+    "tonic",
+    "ether",
+    "hi_potion",
+    "fizz_wine",
+    "rations"
+   ],
+   "quests": [
+    "meline_sun"
+   ],
+   "wander": 1,
+   "sprite": ""
+  },
+  {
+   "id": "gentry_willowick",
+   "name": "Ilya the Elder",
+   "tileX": 134,
+   "tileY": 144,
+   "appearance": {
+    "race": 1,
+    "skin": 1,
+    "hairStyle": 10,
+    "hairColor": 10,
+    "outfit": 0,
+    "outfitA": 14,
+    "outfitB": 9,
+    "acc": 0
+   },
+   "wander": 2,
+   "dialog": "One simply cannot get reliable caravan insurance anymore.",
+   "dialogs": [
+    "Yes, the pillars are imported. The tax was criminal.",
+    "One simply cannot get reliable caravan insurance anymore."
+   ],
+   "quests": [],
+   "sprite": ""
+  },
+  {
+   "id": "villager_willowick_107_0",
+   "name": "Squee",
+   "tileX": 108,
+   "tileY": 145,
+   "appearance": {
+    "race": 3,
+    "skin": 0,
+    "hairStyle": 9,
+    "hairColor": 11,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "wander": 5,
+   "dialog": "Stay off the hills without a machine or a death wish.",
+   "dialogs": [
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "Fine weather for it, whatever it is you do.",
+    "Prices being what they are, I mostly barter."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_willowick_107_1",
+   "name": "Ollo",
+   "tileX": 109,
+   "tileY": 145,
+   "appearance": {
+    "race": 1,
+    "skin": 2,
+    "hairStyle": 8,
+    "hairColor": 12,
+    "outfit": 8,
+    "outfitA": 9,
+    "outfitB": 14,
+    "acc": 1
+   },
+   "wander": 5,
+   "dialog": "Mind the wisps past the gate. They look friendly. They are not.",
+   "dialogs": [
+    "I hear the port's busy again. Good for trade, bad for quiet.",
+    "The tavern's warm if the road's been long.",
+    "The forge runs day and night lately."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_willowick_113_0",
+   "name": "Kip",
+   "tileX": 115,
+   "tileY": 144,
+   "appearance": {
+    "race": 3,
+    "skin": 0,
+    "hairStyle": 4,
+    "hairColor": 15,
+    "outfit": 3,
+    "outfitA": 1,
+    "outfitB": 4,
+    "acc": 1
+   },
+   "wander": 5,
+   "dialog": "The forge runs day and night lately.",
+   "dialogs": [
+    "The forge runs day and night lately.",
+    "My grandmother remembers the war. She doesn't talk about it.",
+    "Mind the wisps past the gate. They look friendly. They are not."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "villager_willowick_113_1",
+   "name": "Bibbi",
+   "tileX": 114,
+   "tileY": 145,
+   "appearance": {
+    "race": 3,
+    "skin": 5,
+    "hairStyle": 11,
+    "hairColor": 9,
+    "outfit": 3,
+    "outfitA": 8,
+    "outfitB": 0,
+    "acc": 3
+   },
+   "wander": 5,
+   "dialog": "They say the crystals hum louder before a storm.",
+   "dialogs": [
+    "They say the crystals hum louder before a storm.",
+    "Stay off the hills without a machine or a death wish.",
+    "You're not from here, are you? The boots give it away."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_willowick_120_0",
+   "name": "Izzi",
+   "tileX": 122,
+   "tileY": 144,
+   "appearance": {
+    "race": 3,
+    "skin": 4,
+    "hairStyle": 8,
+    "hairColor": 7,
+    "outfit": 4,
+    "outfitA": 14,
+    "outfitB": 12,
+    "acc": 3
+   },
+   "wander": 4,
+   "dialog": "Roof leaks, but it's my leak.",
+   "dialogs": [
+    "Work the fields in season, the docks off season. It adds up to almost enough.",
+    "The rich quarter's cobbles are smoother. Same rain, though."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "poorfolk_willowick_125_0",
+   "name": "Twix",
+   "tileX": 126,
+   "tileY": 143,
+   "appearance": {
+    "race": 3,
+    "skin": 1,
+    "hairStyle": 10,
+    "hairColor": 13,
+    "outfit": 8,
+    "outfitA": 14,
+    "outfitB": 0,
+    "acc": 3
+   },
+   "wander": 4,
+   "dialog": "The rich quarter's cobbles are smoother. Same rain, though.",
+   "dialogs": [
+    "Work the fields in season, the docks off season. It adds up to almost enough.",
+    "The rich quarter's cobbles are smoother. Same rain, though."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_willowick_0",
+   "name": "Kip",
+   "tileX": 121,
+   "tileY": 137,
+   "appearance": {
+    "race": 3,
+    "skin": 4,
+    "hairStyle": 4,
+    "hairColor": 3,
+    "outfit": 7,
+    "outfitA": 5,
+    "outfitB": 4,
+    "acc": 3
+   },
+   "wander": 7,
+   "dialog": "Prices being what they are, I mostly barter.",
+   "dialogs": [
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "Stay off the hills without a machine or a death wish.",
+    "Prices being what they are, I mostly barter."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_willowick_1",
+   "name": "Hoppy",
+   "tileX": 122,
+   "tileY": 137,
+   "appearance": {
+    "race": 3,
+    "skin": 3,
+    "hairStyle": 0,
+    "hairColor": 14,
+    "outfit": 3,
+    "outfitA": 14,
+    "outfitB": 15,
+    "acc": 2
+   },
+   "wander": 7,
+   "dialog": "Prices being what they are, I mostly barter.",
+   "dialogs": [
+    "Mind the wisps past the gate. They look friendly. They are not.",
+    "The tavern's warm if the road's been long.",
+    "Prices being what they are, I mostly barter."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_willowick_2",
+   "name": "Bibbi",
+   "tileX": 123,
+   "tileY": 137,
+   "appearance": {
+    "race": 3,
+    "skin": 6,
+    "hairStyle": 6,
+    "hairColor": 7,
+    "outfit": 1,
+    "outfitA": 11,
+    "outfitB": 11,
+    "acc": 1
+   },
+   "wander": 7,
+   "dialog": "They say the crystals hum louder before a storm.",
+   "dialogs": [
+    "They say the crystals hum louder before a storm.",
+    "Prices being what they are, I mostly barter.",
+    "The forge runs day and night lately."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_willowick_3",
+   "name": "Pip",
+   "tileX": 124,
+   "tileY": 137,
+   "appearance": {
+    "race": 3,
+    "skin": 6,
+    "hairStyle": 7,
+    "hairColor": 10,
+    "outfit": 5,
+    "outfitA": 12,
+    "outfitB": 2,
+    "acc": 0
+   },
+   "wander": 7,
+   "dialog": "You're not from here, are you? The boots give it away.",
+   "dialogs": [
+    "Prices being what they are, I mostly barter.",
+    "The forge runs day and night lately.",
+    "Stay off the hills without a machine or a death wish."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "street_willowick_4",
+   "name": "Quill",
+   "tileX": 125,
+   "tileY": 137,
+   "appearance": {
+    "race": 3,
+    "skin": 2,
+    "hairStyle": 9,
+    "hairColor": 0,
+    "outfit": 3,
+    "outfitA": 10,
+    "outfitB": 1,
+    "acc": 2
+   },
+   "wander": 7,
+   "dialog": "Mind the wisps past the gate. They look friendly. They are not.",
+   "dialogs": [
+    "They say the crystals hum louder before a storm.",
+    "You're not from here, are you? The boots give it away.",
+    "I hear the port's busy again. Good for trade, bad for quiet."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_brasshollow_0",
+   "name": "Quinn",
+   "tileX": 109,
+   "tileY": 339,
+   "appearance": {
+    "race": 0,
+    "skin": 6,
+    "hairStyle": 9,
+    "hairColor": 4,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Move along. Politely, mind.",
+   "dialogs": [
+    "Move along. Politely, mind.",
+    "Gate's open dawn to dawn. We just like standing here."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_brasshollow_1",
+   "name": "Lena",
+   "tileX": 111,
+   "tileY": 365,
+   "appearance": {
+    "race": 0,
+    "skin": 5,
+    "hairStyle": 1,
+    "hairColor": 9,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Move along. Politely, mind.",
+   "dialogs": [
+    "Move along. Politely, mind.",
+    "Trouble outside stays outside. That's the whole job."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_brasshollow_0",
+   "name": "Rolf",
+   "tileX": 113,
+   "tileY": 351,
+   "appearance": {
+    "race": 0,
+    "skin": 0,
+    "hairStyle": 5,
+    "hairColor": 13,
+    "outfit": 9,
+    "outfitA": 1,
+    "outfitB": 6,
+    "acc": 1
+   },
+   "wander": 8,
+   "dialog": "Just passing through. The tavern any good?",
+   "dialogs": [
+    "Buying trophies, selling stories.",
+    "I've walked three continents. This one's got the best bread."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_brasshollow_1",
+   "name": "Bardin",
+   "tileX": 114,
+   "tileY": 351,
+   "appearance": {
+    "race": 2,
+    "skin": 5,
+    "hairStyle": 0,
+    "hairColor": 5,
+    "outfit": 3,
+    "outfitA": 5,
+    "outfitB": 1,
+    "acc": 0
+   },
+   "wander": 8,
+   "dialog": "Just passing through. The tavern any good?",
+   "dialogs": [
+    "Buying trophies, selling stories.",
+    "I've walked three continents. This one's got the best bread."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_gearford_0",
+   "name": "Marn",
+   "tileX": 359,
+   "tileY": 127,
+   "appearance": {
+    "race": 2,
+    "skin": 2,
+    "hairStyle": 1,
+    "hairColor": 13,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Gate's open dawn to dawn. We just like standing here.",
+   "dialogs": [
+    "Trouble outside stays outside. That's the whole job.",
+    "Move along. Politely, mind."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_gearford_1",
+   "name": "Ragna",
+   "tileX": 361,
+   "tileY": 153,
+   "appearance": {
+    "race": 2,
+    "skin": 3,
+    "hairStyle": 6,
+    "hairColor": 5,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Trouble outside stays outside. That's the whole job.",
+   "dialogs": [
+    "Gate's open dawn to dawn. We just like standing here.",
+    "Move along. Politely, mind."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_gearford_0",
+   "name": "Gadget",
+   "tileX": 363,
+   "tileY": 139,
+   "appearance": {
+    "race": 3,
+    "skin": 5,
+    "hairStyle": 2,
+    "hairColor": 2,
+    "outfit": 8,
+    "outfitA": 3,
+    "outfitB": 6,
+    "acc": 2
+   },
+   "wander": 8,
+   "dialog": "I've walked three continents. This one's got the best bread.",
+   "dialogs": [
+    "Buying trophies, selling stories.",
+    "Just passing through. The tavern any good?"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_gearford_1",
+   "name": "Briar",
+   "tileX": 364,
+   "tileY": 139,
+   "appearance": {
+    "race": 1,
+    "skin": 7,
+    "hairStyle": 2,
+    "hairColor": 7,
+    "outfit": 3,
+    "outfitA": 13,
+    "outfitB": 5,
+    "acc": 2
+   },
+   "wander": 8,
+   "dialog": "Just passing through. The tavern any good?",
+   "dialogs": [
+    "I've walked three continents. This one's got the best bread.",
+    "Buying trophies, selling stories."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_sylvanglade_0",
+   "name": "Deryn",
+   "tileX": 371,
+   "tileY": 343,
+   "appearance": {
+    "race": 1,
+    "skin": 4,
+    "hairStyle": 4,
+    "hairColor": 14,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Move along. Politely, mind.",
+   "dialogs": [
+    "Gate's open dawn to dawn. We just like standing here.",
+    "Trouble outside stays outside. That's the whole job."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_sylvanglade_1",
+   "name": "Cog",
+   "tileX": 373,
+   "tileY": 369,
+   "appearance": {
+    "race": 3,
+    "skin": 1,
+    "hairStyle": 8,
+    "hairColor": 13,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Trouble outside stays outside. That's the whole job.",
+   "dialogs": [
+    "Trouble outside stays outside. That's the whole job.",
+    "Move along. Politely, mind."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_sylvanglade_0",
+   "name": "Thal",
+   "tileX": 375,
+   "tileY": 355,
+   "appearance": {
+    "race": 1,
+    "skin": 2,
+    "hairStyle": 9,
+    "hairColor": 9,
+    "outfit": 3,
+    "outfitA": 10,
+    "outfitB": 6,
+    "acc": 3
+   },
+   "wander": 8,
+   "dialog": "Just passing through. The tavern any good?",
+   "dialogs": [
+    "Buying trophies, selling stories.",
+    "I've walked three continents. This one's got the best bread."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_sylvanglade_1",
+   "name": "Marn",
+   "tileX": 376,
+   "tileY": 355,
+   "appearance": {
+    "race": 2,
+    "skin": 4,
+    "hairStyle": 4,
+    "hairColor": 12,
+    "outfit": 6,
+    "outfitA": 14,
+    "outfitB": 8,
+    "acc": 3
+   },
+   "wander": 8,
+   "dialog": "Buying trophies, selling stories.",
+   "dialogs": [
+    "I've walked three continents. This one's got the best bread.",
+    "Buying trophies, selling stories."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_willowick_0",
+   "name": "Bibbi",
+   "tileX": 121,
+   "tileY": 123,
+   "appearance": {
+    "race": 3,
+    "skin": 5,
+    "hairStyle": 1,
+    "hairColor": 9,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Trouble outside stays outside. That's the whole job.",
+   "dialogs": [
+    "Gate's open dawn to dawn. We just like standing here.",
+    "Trouble outside stays outside. That's the whole job."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "guard_willowick_1",
+   "name": "Jory",
+   "tileX": 123,
+   "tileY": 149,
+   "appearance": {
+    "race": 0,
+    "skin": 3,
+    "hairStyle": 2,
+    "hairColor": 9,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 1
+   },
+   "dialog": "Gate's open dawn to dawn. We just like standing here.",
+   "dialogs": [
+    "Move along. Politely, mind.",
+    "Gate's open dawn to dawn. We just like standing here."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_willowick_0",
+   "name": "Pip",
+   "tileX": 125,
+   "tileY": 135,
+   "appearance": {
+    "race": 3,
+    "skin": 6,
+    "hairStyle": 1,
+    "hairColor": 7,
+    "outfit": 0,
+    "outfitA": 7,
+    "outfitB": 0,
+    "acc": 0
+   },
+   "wander": 8,
+   "dialog": "I've walked three continents. This one's got the best bread.",
+   "dialogs": [
+    "Just passing through. The tavern any good?",
+    "Buying trophies, selling stories."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "visitor_willowick_1",
+   "name": "Bram",
+   "tileX": 126,
+   "tileY": 135,
+   "appearance": {
+    "race": 0,
+    "skin": 7,
+    "hairStyle": 2,
+    "hairColor": 14,
+    "outfit": 7,
+    "outfitA": 5,
+    "outfitB": 10,
+    "acc": 3
+   },
+   "wander": 8,
+   "dialog": "Buying trophies, selling stories.",
+   "dialogs": [
+    "I've walked three continents. This one's got the best bread.",
+    "Just passing through. The tavern any good?"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "elder_bran",
+   "name": "Elder Bran",
+   "tileX": 112,
+   "tileY": 350,
+   "wander": 3,
+   "appearance": {
+    "race": 0,
+    "skin": 3,
+    "hairStyle": 8,
+    "hairColor": 9,
+    "outfit": 2,
+    "outfitA": 4,
+    "outfitB": 6,
+    "acc": 0
+   },
+   "dialog": "The March grows wilder by the season, traveler. We could use your blade.",
+   "dialogs": [
+    "Four continents, one crown, and a hundred old wounds. That is Aldermere.",
+    "When you are ready for larger deeds, the King himself will want to see you."
+   ],
+   "quests": [
+    "cull_wisps",
+    "wolf_menace",
+    "the_warden",
+    "audience_at_castle",
+    "foreman_falls"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "thane_bruni",
+   "name": "Thane Bruni",
+   "tileX": 372,
+   "tileY": 148,
+   "wander": 1,
+   "appearance": {
+    "race": 2,
+    "skin": 2,
+    "hairStyle": 2,
+    "hairColor": 5,
+    "outfit": 5,
+    "outfitA": 15,
+    "outfitB": 7,
+    "acc": 0
+   },
+   "dialog": "Hmph. Surface-folk. Speak quick, the forge won't stoke itself.",
+   "dialogs": [
+    "Emberdeep runs hotter than it should. Something below stokes it.",
+    "A king's writ, eh? Then Gearford owes you a hearing \u2014 and maybe a machine."
+   ],
+   "quests": [
+    "sunken_seal",
+    "spire_key",
+    "brute_iron"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "archdruid_liriel",
+   "name": "Archdruid Liriel",
+   "tileX": 370,
+   "tileY": 354,
+   "wander": 2,
+   "appearance": {
+    "race": 1,
+    "skin": 0,
+    "hairStyle": 3,
+    "hairColor": 11,
+    "outfit": 2,
+    "outfitA": 4,
+    "outfitB": 6,
+    "acc": 2
+   },
+   "dialog": "Sylvas remembers older names than Aldermere. Tread gently, cousin.",
+   "dialogs": [
+    "The swamp lights lure travelers from the road. They are not lights."
+   ],
+   "quests": [
+    "marsh_lights",
+    "stones_survey",
+    "stones_guardian",
+    "crypt_king_falls"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "matriarch_poppy",
+   "name": "Matriarch Poppy",
+   "tileX": 120,
+   "tileY": 134,
+   "wander": 2,
+   "appearance": {
+    "race": 3,
+    "skin": 1,
+    "hairStyle": 7,
+    "hairColor": 14,
+    "outfit": 4,
+    "outfitA": 11,
+    "outfitB": 6,
+    "acc": 2
+   },
+   "dialog": "Willowick welcomes you! Mind the scorpions, dear. And the tower. And the wind.",
+   "dialogs": [
+    "Whoever quiets that tower eats free at my table forever."
+   ],
+   "quests": [
+    "scorpion_season"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "hooded_figure",
+   "name": "Hooded Figure",
+   "tileX": 102,
+   "tileY": 345,
+   "appearance": {
+    "race": 0,
+    "skin": 7,
+    "hairStyle": 5,
+    "hairColor": 0,
+    "outfit": 2,
+    "outfitA": 15,
+    "outfitB": 15,
+    "acc": 0
+   },
+   "dialog": "\u2026You'll do. I need ore. Unmarked. Don't ask what for.",
+   "dialogs": [
+    "The Tankard's ale is watered. The information isn't.",
+    "We never spoke. There is no we."
+   ],
+   "quests": [
+    "quiet_delivery"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "whisper",
+   "name": "Whisper",
+   "tileX": 101,
+   "tileY": 343,
+   "wander": 2,
+   "appearance": {
+    "race": 1,
+    "skin": 6,
+    "hairStyle": 9,
+    "hairColor": 0,
+    "outfit": 1,
+    "outfitA": 15,
+    "outfitB": 12,
+    "acc": 3
+   },
+   "dialog": "Buying. Selling. Forgetting. Rates negotiable on all three.",
+   "dialogs": [
+    "Pelts move well right now. No provenance required."
+   ],
+   "shop": [
+    "ether",
+    "potion",
+    "wolf_pelt"
+   ],
+   "quests": [
+    "pelts_no_questions"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "adventurer_karsa",
+   "name": "Karsa Lone-Blade",
+   "tileX": 97,
+   "tileY": 341,
+   "wander": 6,
+   "appearance": {
+    "race": 0,
+    "skin": 5,
+    "hairStyle": 2,
+    "hairColor": 6,
+    "outfit": 9,
+    "outfitA": 10,
+    "outfitB": 15,
+    "acc": 1
+   },
+   "dialog": "Solo work pays better. Buries cheaper, too.",
+   "dialogs": [
+    "I cleared the mine once. It didn't stay cleared. Nothing does."
+   ],
+   "quests": [
+    "karsa_dire"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "sable",
+   "name": "Sable",
+   "tileX": 102,
+   "tileY": 343,
+   "wander": 4,
+   "appearance": {
+    "race": 0,
+    "skin": 2,
+    "hairStyle": 4,
+    "hairColor": 1,
+    "outfit": 9,
+    "outfitA": 15,
+    "outfitB": 10,
+    "acc": 1
+   },
+   "dialog": "Party leader. We take contracts, split fair, and drink here between them.",
+   "quests": [
+    "brute_bounty",
+    "camp_survey",
+    "camp_chief"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "kit",
+   "name": "Kit",
+   "tileX": 98,
+   "tileY": 343,
+   "wander": 4,
+   "appearance": {
+    "race": 1,
+    "skin": 0,
+    "hairStyle": 10,
+    "hairColor": 15,
+    "outfit": 9,
+    "outfitA": 15,
+    "outfitB": 10,
+    "acc": 3
+   },
+   "dialog": "Sable leads, I scout, Brand hits things. It works.",
+   "quests": [],
+   "sprite": ""
+  },
+  {
+   "id": "brand_the_shield",
+   "name": "Brand the Shield",
+   "tileX": 98,
+   "tileY": 341,
+   "wander": 4,
+   "appearance": {
+    "race": 2,
+    "skin": 3,
+    "hairStyle": 2,
+    "hairColor": 5,
+    "outfit": 9,
+    "outfitA": 15,
+    "outfitB": 10,
+    "acc": 0
+   },
+   "dialog": "I hit things.",
+   "quests": [],
+   "sprite": ""
+  },
+  {
+   "id": "homeless_brasshollow",
+   "name": "Old Wex",
+   "tileX": 112,
+   "tileY": 366,
+   "wander": 3,
+   "appearance": {
+    "race": 0,
+    "skin": 3,
+    "hairStyle": 4,
+    "hairColor": 0,
+    "outfit": 0,
+    "outfitA": 11,
+    "outfitB": 15,
+    "acc": 3
+   },
+   "dialog": "Spare a coin? Or a berry? Berries are better than coins, honestly.",
+   "dialogs": [
+    "The guards move me along, and I move along back.",
+    "I sleep better under stars than most lords under silk. Colder, mind."
+   ],
+   "quests": [
+    "a_warm_meal"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "homeless_gearford",
+   "name": "Edrik the Gray",
+   "tileX": 362,
+   "tileY": 154,
+   "wander": 3,
+   "appearance": {
+    "race": 2,
+    "skin": 4,
+    "hairStyle": 3,
+    "hairColor": 13,
+    "outfit": 4,
+    "outfitA": 13,
+    "outfitB": 11,
+    "acc": 0
+   },
+   "dialog": "I sleep better under stars than most lords under silk. Colder, mind.",
+   "dialogs": [
+    "Spare a coin? Or a berry? Berries are better than coins, honestly.",
+    "The guards move me along, and I move along back."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "homeless_sylvanglade",
+   "name": "Lira the Gray",
+   "tileX": 374,
+   "tileY": 370,
+   "wander": 3,
+   "appearance": {
+    "race": 1,
+    "skin": 6,
+    "hairStyle": 1,
+    "hairColor": 15,
+    "outfit": 3,
+    "outfitA": 1,
+    "outfitB": 9,
+    "acc": 3
+   },
+   "dialog": "Spare a coin? Or a berry? Berries are better than coins, honestly.",
+   "dialogs": [
+    "I sleep better under stars than most lords under silk. Colder, mind.",
+    "The guards move me along, and I move along back."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "homeless_willowick",
+   "name": "Momo the Gray",
+   "tileX": 124,
+   "tileY": 150,
+   "wander": 3,
+   "appearance": {
+    "race": 3,
+    "skin": 0,
+    "hairStyle": 7,
+    "hairColor": 5,
+    "outfit": 7,
+    "outfitA": 3,
+    "outfitB": 10,
+    "acc": 2
+   },
+   "dialog": "I sleep better under stars than most lords under silk. Colder, mind.",
+   "dialogs": [
+    "I sleep better under stars than most lords under silk. Colder, mind.",
+    "Spare a coin? Or a berry? Berries are better than coins, honestly."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmer_hale",
+   "name": "Farmer Hale",
+   "tileX": 131,
+   "tileY": 370,
+   "wander": 2,
+   "appearance": {
+    "race": 0,
+    "skin": 7,
+    "hairStyle": 2,
+    "hairColor": 4,
+    "outfit": 0,
+    "outfitA": 11,
+    "outfitB": 14,
+    "acc": 2
+   },
+   "dialog": "Biggest farm in the March. Biggest headaches, too.",
+   "dialogs": [
+    "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+    "Rain when we need sun, sun when we need rain. Farming!"
+   ],
+   "quests": [
+    "livestock_wolves",
+    "fence_mending"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmhand_farm_verdance_large_0",
+   "name": "Lena",
+   "tileX": 138,
+   "tileY": 376,
+   "appearance": {
+    "race": 0,
+    "skin": 1,
+    "hairStyle": 6,
+    "hairColor": 7,
+    "outfit": 2,
+    "outfitA": 7,
+    "outfitB": 0,
+    "acc": 0
+   },
+   "wander": 6,
+   "dialog": "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+   "dialogs": [
+    "Rain when we need sun, sun when we need rain. Farming!",
+    "Wolves took another lamb. I'd pay good gil to whoever thins them."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmhand_farm_verdance_large_1",
+   "name": "Doro",
+   "tileX": 134,
+   "tileY": 374,
+   "appearance": {
+    "race": 0,
+    "skin": 3,
+    "hairStyle": 1,
+    "hairColor": 6,
+    "outfit": 4,
+    "outfitA": 8,
+    "outfitB": 15,
+    "acc": 0
+   },
+   "wander": 6,
+   "dialog": "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+   "dialogs": [
+    "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+    "The soil's honest here. Everything else, less so."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmhand_farm_verdance_large_2",
+   "name": "Milo",
+   "tileX": 134,
+   "tileY": 376,
+   "appearance": {
+    "race": 0,
+    "skin": 5,
+    "hairStyle": 10,
+    "hairColor": 10,
+    "outfit": 5,
+    "outfitA": 1,
+    "outfitB": 2,
+    "acc": 0
+   },
+   "wander": 6,
+   "dialog": "Rain when we need sun, sun when we need rain. Farming!",
+   "dialogs": [
+    "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+    "The soil's honest here. Everything else, less so."
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmer_wren",
+   "name": "Wren",
+   "tileX": 103,
+   "tileY": 322,
+   "wander": 2,
+   "appearance": {
+    "race": 0,
+    "skin": 5,
+    "hairStyle": 5,
+    "hairColor": 13,
+    "outfit": 8,
+    "outfitA": 10,
+    "outfitB": 10,
+    "acc": 3
+   },
+   "dialog": "Just me, the rows, and the crows. Suits me.",
+   "dialogs": [
+    "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+    "Rain when we need sun, sun when we need rain. Farming!"
+   ],
+   "quests": [
+    "wren_orchard"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmhand_farm_verdance_small_0",
+   "name": "Orin",
+   "tileX": 106,
+   "tileY": 322,
+   "appearance": {
+    "race": 2,
+    "skin": 1,
+    "hairStyle": 4,
+    "hairColor": 9,
+    "outfit": 6,
+    "outfitA": 10,
+    "outfitB": 5,
+    "acc": 1
+   },
+   "wander": 6,
+   "dialog": "Rain when we need sun, sun when we need rain. Farming!",
+   "dialogs": [
+    "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+    "Rain when we need sun, sun when we need rain. Farming!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmer_oldbark",
+   "name": "Oldbark",
+   "tileX": 341,
+   "tileY": 332,
+   "wander": 2,
+   "appearance": {
+    "race": 1,
+    "skin": 6,
+    "hairStyle": 10,
+    "hairColor": 12,
+    "outfit": 4,
+    "outfitA": 15,
+    "outfitB": 14,
+    "acc": 0
+   },
+   "dialog": "Forest soil grows strange beets. Good strange, mostly.",
+   "dialogs": [
+    "The soil's honest here. Everything else, less so.",
+    "Wolves took another lamb. I'd pay good gil to whoever thins them."
+   ],
+   "quests": [
+    "oldbark_slimes"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmhand_farm_sylvas_medium_0",
+   "name": "Deryn",
+   "tileX": 345,
+   "tileY": 332,
+   "appearance": {
+    "race": 1,
+    "skin": 3,
+    "hairStyle": 9,
+    "hairColor": 0,
+    "outfit": 7,
+    "outfitA": 14,
+    "outfitB": 1,
+    "acc": 3
+   },
+   "wander": 6,
+   "dialog": "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+   "dialogs": [
+    "The soil's honest here. Everything else, less so.",
+    "Rain when we need sun, sun when we need rain. Farming!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmhand_farm_sylvas_medium_1",
+   "name": "Miren",
+   "tileX": 347,
+   "tileY": 334,
+   "appearance": {
+    "race": 1,
+    "skin": 0,
+    "hairStyle": 2,
+    "hairColor": 2,
+    "outfit": 1,
+    "outfitA": 7,
+    "outfitB": 2,
+    "acc": 1
+   },
+   "wander": 6,
+   "dialog": "Rain when we need sun, sun when we need rain. Farming!",
+   "dialogs": [
+    "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+    "Rain when we need sun, sun when we need rain. Farming!"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmer_sadi",
+   "name": "Sadi",
+   "tileX": 113,
+   "tileY": 154,
+   "wander": 2,
+   "appearance": {
+    "race": 0,
+    "skin": 7,
+    "hairStyle": 2,
+    "hairColor": 5,
+    "outfit": 9,
+    "outfitA": 14,
+    "outfitB": 12,
+    "acc": 1
+   },
+   "dialog": "Oasis water, date rows, and patience. Farming, desert style.",
+   "dialogs": [
+    "The soil's honest here. Everything else, less so.",
+    "Wolves took another lamb. I'd pay good gil to whoever thins them."
+   ],
+   "quests": [
+    "oasis_baskets"
+   ],
+   "sprite": ""
+  },
+  {
+   "id": "farmhand_farm_miradel_small_0",
+   "name": "Pip",
+   "tileX": 116,
+   "tileY": 155,
+   "appearance": {
+    "race": 3,
+    "skin": 0,
+    "hairStyle": 8,
+    "hairColor": 15,
+    "outfit": 4,
+    "outfitA": 4,
+    "outfitB": 14,
+    "acc": 3
+   },
+   "wander": 6,
+   "dialog": "Rain when we need sun, sun when we need rain. Farming!",
+   "dialogs": [
+    "Wolves took another lamb. I'd pay good gil to whoever thins them.",
+    "Rain when we need sun, sun when we need rain. Farming!"
+   ],
+   "sprite": ""
+  }
+ ]
+}

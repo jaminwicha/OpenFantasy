@@ -1,0 +1,466 @@
+{
+  "items": [
+    {
+      "id": "potion",
+      "name": "Potion",
+      "kind": "Consumable",
+      "price": 30,
+      "healHp": 40,
+      "healMp": 0
+    },
+    {
+      "id": "tonic",
+      "name": "Tonic",
+      "kind": "Consumable",
+      "price": 120,
+      "healHp": 150,
+      "healMp": 0
+    },
+    {
+      "id": "ether",
+      "name": "Ether",
+      "kind": "Consumable",
+      "price": 90,
+      "healHp": 0,
+      "healMp": 20
+    },
+    {
+      "id": "bronze_sword",
+      "name": "Bronze Sword",
+      "kind": "Weapon",
+      "price": 150,
+      "attackBonus": 4,
+      "magicBonus": 0
+    },
+    {
+      "id": "oak_rod",
+      "name": "Oak Rod",
+      "kind": "Weapon",
+      "price": 150,
+      "attackBonus": 0,
+      "magicBonus": 4
+    },
+    {
+      "id": "iron_blade",
+      "name": "Iron Blade",
+      "kind": "Weapon",
+      "price": 520,
+      "attackBonus": 9,
+      "magicBonus": 0
+    },
+    {
+      "id": "crystal_rod",
+      "name": "Crystal Rod",
+      "kind": "Weapon",
+      "price": 520,
+      "attackBonus": 0,
+      "magicBonus": 9
+    },
+    {
+      "id": "warden_core",
+      "name": "Warden Core",
+      "kind": "Weapon",
+      "price": 2000,
+      "attackBonus": 8,
+      "magicBonus": 8
+    },
+    {
+      "id": "leather_vest",
+      "name": "Leather Vest",
+      "kind": "Armor",
+      "price": 120,
+      "defenseBonus": 3,
+      "hpBonus": 10
+    },
+    {
+      "id": "brass_mail",
+      "name": "Brass Mail",
+      "kind": "Armor",
+      "price": 450,
+      "defenseBonus": 7,
+      "hpBonus": 25
+    },
+    {
+      "id": "wolf_pelt",
+      "name": "Wolf Pelt",
+      "kind": "Material",
+      "price": 18
+    },
+    {
+      "id": "ore_chunk",
+      "name": "Ore Chunk",
+      "kind": "Material",
+      "price": 35
+    },
+    {
+      "id": "wood",
+      "name": "Wood",
+      "kind": "Material",
+      "price": 6
+    },
+    {
+      "id": "iron_ore",
+      "name": "Iron Ore",
+      "kind": "Material",
+      "price": 14
+    },
+    {
+      "id": "iron_bar",
+      "name": "Iron Bar",
+      "kind": "Material",
+      "price": 55
+    },
+    {
+      "id": "berries",
+      "name": "Berries",
+      "kind": "Material",
+      "price": 5
+    },
+    {
+      "id": "rations",
+      "name": "Rations",
+      "kind": "Consumable",
+      "price": 25,
+      "healHp": 30,
+      "healMp": 5
+    },
+    {
+      "id": "copper_axe",
+      "name": "Copper Axe",
+      "kind": "Tool",
+      "price": 90,
+      "tool": "Axe",
+      "toolPower": 1
+    },
+    {
+      "id": "copper_pickaxe",
+      "name": "Copper Pickaxe",
+      "kind": "Tool",
+      "price": 90,
+      "tool": "Pickaxe",
+      "toolPower": 1
+    },
+    {
+      "id": "sickle",
+      "name": "Sickle",
+      "kind": "Tool",
+      "price": 60,
+      "tool": "Sickle",
+      "toolPower": 1
+    },
+    {
+      "id": "iron_axe",
+      "name": "Iron Axe",
+      "kind": "Tool",
+      "price": 320,
+      "tool": "Axe",
+      "toolPower": 2
+    },
+    {
+      "id": "iron_pickaxe",
+      "name": "Iron Pickaxe",
+      "kind": "Tool",
+      "price": 320,
+      "tool": "Pickaxe",
+      "toolPower": 2
+    },
+    {
+      "id": "canoe",
+      "name": "Canoe",
+      "kind": "Vehicle",
+      "price": 120,
+      "vehicle": "Canoe"
+    },
+    {
+      "id": "sailboat",
+      "name": "Sailboat",
+      "kind": "Vehicle",
+      "price": 800,
+      "vehicle": "Boat"
+    },
+    {
+      "id": "ship",
+      "name": "Ship",
+      "kind": "Vehicle",
+      "price": 2500,
+      "vehicle": "Ship"
+    },
+    {
+      "id": "dwarven_tank",
+      "name": "Dwarven Tank",
+      "kind": "Vehicle",
+      "price": 5000,
+      "vehicle": "Tank"
+    },
+    {
+      "id": "airship_brasswing",
+      "name": "The Brasswing",
+      "kind": "Vehicle",
+      "price": 20000,
+      "vehicle": "Airship"
+    },
+    {
+      "id": "fang",
+      "name": "Fang",
+      "kind": "Material",
+      "price": 12
+    },
+    {
+      "id": "venom_sac",
+      "name": "Venom Sac",
+      "kind": "Material",
+      "price": 28
+    },
+    {
+      "id": "ice_shard",
+      "name": "Ice Shard",
+      "kind": "Material",
+      "price": 30
+    },
+    {
+      "id": "storm_core",
+      "name": "Storm Core",
+      "kind": "Material",
+      "price": 90
+    },
+    {
+      "id": "ancient_coin",
+      "name": "Ancient Coin",
+      "kind": "Material",
+      "price": 60
+    },
+    {
+      "id": "gloom_essence",
+      "name": "Gloom Essence",
+      "kind": "Material",
+      "price": 45
+    },
+    {
+      "id": "steel_bar",
+      "name": "Steel Bar",
+      "kind": "Material",
+      "price": 140
+    },
+    {
+      "id": "mythril_ore",
+      "name": "Mythril Ore",
+      "kind": "Material",
+      "price": 120
+    },
+    {
+      "id": "mythril_bar",
+      "name": "Mythril Bar",
+      "kind": "Material",
+      "price": 320
+    },
+    {
+      "id": "hi_potion",
+      "name": "Hi-Potion",
+      "kind": "Consumable",
+      "price": 260,
+      "healHp": 300
+    },
+    {
+      "id": "hi_ether",
+      "name": "Hi-Ether",
+      "kind": "Consumable",
+      "price": 300,
+      "healMp": 60
+    },
+    {
+      "id": "elixir",
+      "name": "Elixir",
+      "kind": "Consumable",
+      "price": 900,
+      "healHp": 999,
+      "healMp": 99
+    },
+    {
+      "id": "berry_pie",
+      "name": "Berry Pie",
+      "kind": "Consumable",
+      "price": 60,
+      "healHp": 80,
+      "healMp": 10
+    },
+    {
+      "id": "miners_stew",
+      "name": "Miner's Stew",
+      "kind": "Consumable",
+      "price": 90,
+      "healHp": 120,
+      "healMp": 15
+    },
+    {
+      "id": "fizz_wine",
+      "name": "Oasis Fizz-Wine",
+      "kind": "Consumable",
+      "price": 70,
+      "healHp": 40,
+      "healMp": 25
+    },
+    {
+      "id": "steel_blade",
+      "name": "Steel Blade",
+      "kind": "Weapon",
+      "price": 950,
+      "attackBonus": 14
+    },
+    {
+      "id": "mythril_blade",
+      "name": "Mythril Blade",
+      "kind": "Weapon",
+      "price": 2400,
+      "attackBonus": 20
+    },
+    {
+      "id": "crystal_blade",
+      "name": "Crystal Blade",
+      "kind": "Weapon",
+      "price": 5200,
+      "attackBonus": 27,
+      "magicBonus": 5
+    },
+    {
+      "id": "iron_rod",
+      "name": "Iron Rod",
+      "kind": "Weapon",
+      "price": 520,
+      "magicBonus": 9
+    },
+    {
+      "id": "steel_rod",
+      "name": "Steel Rod",
+      "kind": "Weapon",
+      "price": 950,
+      "magicBonus": 14
+    },
+    {
+      "id": "mythril_rod",
+      "name": "Mythril Rod",
+      "kind": "Weapon",
+      "price": 2400,
+      "magicBonus": 20
+    },
+    {
+      "id": "storm_rod",
+      "name": "Storm Rod",
+      "kind": "Weapon",
+      "price": 5200,
+      "magicBonus": 27,
+      "attackBonus": 3
+    },
+    {
+      "id": "short_bow",
+      "name": "Short Bow",
+      "kind": "Weapon",
+      "price": 150,
+      "attackBonus": 4,
+      "magicBonus": 1
+    },
+    {
+      "id": "long_bow",
+      "name": "Long Bow",
+      "kind": "Weapon",
+      "price": 520,
+      "attackBonus": 9,
+      "magicBonus": 2
+    },
+    {
+      "id": "steel_bow",
+      "name": "Steel Bow",
+      "kind": "Weapon",
+      "price": 950,
+      "attackBonus": 13,
+      "magicBonus": 4
+    },
+    {
+      "id": "mythril_bow",
+      "name": "Mythril Bow",
+      "kind": "Weapon",
+      "price": 2400,
+      "attackBonus": 18,
+      "magicBonus": 7
+    },
+    {
+      "id": "wind_bow",
+      "name": "Bow of the West Wind",
+      "kind": "Weapon",
+      "price": 5200,
+      "attackBonus": 24,
+      "magicBonus": 10
+    },
+    {
+      "id": "iron_mail",
+      "name": "Iron Mail",
+      "kind": "Armor",
+      "price": 900,
+      "defenseBonus": 10,
+      "hpBonus": 40
+    },
+    {
+      "id": "steel_mail",
+      "name": "Steel Mail",
+      "kind": "Armor",
+      "price": 1900,
+      "defenseBonus": 14,
+      "hpBonus": 60
+    },
+    {
+      "id": "mythril_mail",
+      "name": "Mythril Mail",
+      "kind": "Armor",
+      "price": 4200,
+      "defenseBonus": 19,
+      "hpBonus": 90
+    },
+    {
+      "id": "sage_robe",
+      "name": "Sage's Robe",
+      "kind": "Armor",
+      "price": 1900,
+      "defenseBonus": 9,
+      "hpBonus": 35
+    },
+    {
+      "id": "ranger_cloak",
+      "name": "Ranger's Cloak",
+      "kind": "Armor",
+      "price": 1900,
+      "defenseBonus": 11,
+      "hpBonus": 45
+    },
+    {
+      "id": "crystal_aegis",
+      "name": "Crystal Aegis",
+      "kind": "Armor",
+      "price": 6400,
+      "defenseBonus": 24,
+      "hpBonus": 120
+    },
+    {
+      "id": "mythril_axe",
+      "name": "Mythril Axe",
+      "kind": "Tool",
+      "price": 1400,
+      "tool": "Axe",
+      "toolPower": 3
+    },
+    {
+      "id": "mythril_pickaxe",
+      "name": "Mythril Pickaxe",
+      "kind": "Tool",
+      "price": 1400,
+      "tool": "Pickaxe",
+      "toolPower": 3
+    },
+    {
+      "id": "harvest_scythe",
+      "name": "Harvest Scythe",
+      "kind": "Tool",
+      "price": 900,
+      "tool": "Sickle",
+      "toolPower": 3
+    }
+  ]
+}
