@@ -8,6 +8,7 @@ namespace OpenFantasy.Host;
 internal sealed class HostApplication
 {
     private readonly TextWriter _output;
+    private readonly ContractInspector _contracts = new();
 
     public HostApplication(TextWriter output)
     {
@@ -17,10 +18,27 @@ internal sealed class HostApplication
 
     public int Run(string[] arguments)
     {
-        if (arguments.Length == 1 && arguments[0] == "--inspect-foundation")
+        ArgumentNullException.ThrowIfNull(arguments);
+        try
         {
-            _output.WriteLine(CreateFoundationReport());
-            return 0;
+            string? report = arguments switch
+            {
+                ["--inspect-foundation"] => CreateFoundationReport(),
+                ["--inspect-command", var path] => _contracts.InspectCommand(path),
+                ["--inspect-package", var manifest, var payload] => _contracts.InspectPackage(manifest, payload),
+                _ => null
+            };
+            if (report is not null)
+            {
+                _output.WriteLine(report);
+                return 0;
+            }
+        }
+        catch (Exception error) when (error is IOException or UnauthorizedAccessException
+            or InvalidDataException or FormatException or JsonException or ArgumentException)
+        {
+            _output.WriteLine("Inspection failed: " + error.Message);
+            return 1;
         }
 
         WriteUsage();
@@ -30,6 +48,8 @@ internal sealed class HostApplication
     private void WriteUsage()
     {
         _output.WriteLine("OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation");
+        _output.WriteLine("       OpenFantasy.Host --inspect-command <command.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>");
         _output.WriteLine("World hosting is not yet implemented.");
     }
 

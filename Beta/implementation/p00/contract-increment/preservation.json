@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "originalStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "currentStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "stagedPaths": [
+    "README.md",
+    "docs/MILESTONE_8.md",
+    "src/Client/GameController.cs",
+    "src/Client/GameWindows.cs",
+    "src/Net/Protocol.cs",
+    "src/Net/ServerNode.cs",
+    "src/Sim/FrontierGen.cs",
+    "src/Sim/SelfTest.cs",
+    "src/Sim/SettlementGen.cs",
+    "src/Sim/SimConstants.cs",
+    "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+    "src/Sim/SiteGen/SiteFloor.cs",
+    "src/Sim/SiteGen/SiteGenerator.cs",
+    "src/Sim/SiteGen/SiteRecipe.cs",
+    "src/Sim/SiteGen/SiteValidator.cs",
+    "src/Sim/SiteGen/TempleEmbedder.cs",
+    "src/Sim/World.Instances.cs",
+    "src/Sim/World.Settlements.cs",
+    "src/Sim/World.cs"
+  ],
+  "allFinalRuntimeInputsStillMatchVerification": true,
+  "runtimeInputCount": 118,
+  "commitsSoFar": [
+    "97c8763ea40c76e9daf3aa8c4d8d104e32bf72da Preserve typed first-loop legacy content dependency closure",
+    "d310930210ceb5afe6ab6e190e3f238c022e7549 Add portable command receipt and pinned package contracts"
+  ]
+}

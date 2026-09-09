@@ -1,10 +1,16 @@
-# P00 first increment: implemented foundation
+# P00 implementation progress
 
 8 September 2026. Coordinator execution record. The design-readiness checklist allowed implementation to start; it did not close P00 or any of the nine complete-game qualification gates. This record supersedes only the pending build/primitive evidence in the inventory author's [initial exit checklist](P00_EXIT_CHECKLIST.md).
 
 The subsequent [runtime application style review](style-review/README.md) records the owner's modular/readable/object-oriented preference, its application-only scope, the behavior-preserving refinements, and fresh evidence. Earlier hashes below remain tied to the original increment.
 
-## Implemented and exercised
+## Latest increment: portable contracts and source closure
+
+The [contract increment record](contract-increment/README.md) is the current implementation checkpoint. It adds immutable command/receipt values, bounded canonical decoding, exact retry comparison, typed lot-transfer intent, package hashes that bind dependency versions, deterministic package resolution, and host file inspections. All **92 core tests pass in both Debug and Release**, all **39 host diagnostic cases pass**, and the pinned Godot import/binding smoke passes. This implements contracts and diagnostics; durable authority and actual lot movement remain pending.
+
+The selected 31 legacy roots now have an executed [source dependency closure](migration-closure/README.md): **49 structured records, two code-defined node archetypes, 171 typed edges, 29 original assets and 48 retained source/support files**. All 15 closure tests pass and rebuilding is byte-identical. The complete original inventory remains mandatory scope; preserved source definitions have not yet become playable content. The [command/host critic](contract-review/README.md) and [package/closure critic](command-contracts/CONTENT_REVIEW.md) record independent inspection and resolved findings. The parser critic also exercised 18,312 bounded mutation/random cases with no unexpected exceptions.
+
+## First increment: retained foundation evidence
 
 - The reviewed design/research baseline is committed separately at `4b33961`. Original staged milestone work remains byte-identical.
 - Build/import isolation and the naming override are committed at `2bd7175`. The predecessor explicitly includes its own `src/**/*.cs`, preserving all 43 previous compile entries. Its build succeeds with zero warnings/errors. The nested planning directory is excluded from its Godot import.
@@ -35,15 +41,15 @@ The actual development machine is an Apple M2 with 8 GiB RAM, macOS 15.6.1/24G90
 
 The following are real preparation/implementation work, not reasons to reopen broad research or discard the core:
 
-- Complete tagged command, receipt, revision, scheduler/history and custody formats with valid/invalid vectors and explicit ownership. The current primitives implement only their declared byte/numeric contracts.
-- Define finite initial actor/body/form and material/process/package fields through representative data. Prove representability of later mechanics without generating empty implementations for every concept.
-- Close first-loop package dependencies and field transforms. The selected farmer Wren and original six-wood objective remain exact source inputs; repair, recruitment, finite markets and ecological interactions require actual new implementation.
+- Extend the implemented command/receipt/revision envelope contracts with scheduler/history and finite custody formats, valid/invalid vectors and explicit ownership. Transfer intent alone does not implement inventory conservation or world transactions.
+- Define finite initial actor/body/form and material/process fields through representative data. Package metadata and pins now exist; executable payload schemas still need concrete definitions. Prove representability of later mechanics without generating empty implementations for every concept.
+- Transform the now-closed first-loop source packet into playable rule and presentation packages with explicit unit/behavior mappings and full executable dependencies. The selected farmer Wren and original six-wood objective remain exact source inputs; repair, recruitment, finite markets and ecological interactions require actual new implementation.
 - Set initial production catalog target counts and coverage denominators, measurable workload/storage/queue budgets, and candidate desktop machine profiles. Inventories and workload distributions are currently proposals.
 - Prepare separately owned native art/audio work packets with editable source formats and callable tool candidates. User acceptance of native motion, equipment/body coverage and sound remains necessary before bulk production.
 - Review those concrete additions, then assess the full P00 exit. A passing scaffold must not close the world-history, import, co-op, performance or human-quality gates.
 
 ## Next retained work packet
 
-Continue P00 with versioned command/receipt and package contracts, first-loop dependency closure, and bounded ownership/custody fixtures. Engineering owns the portable types and diagnostic host integration; a content worker owns source-to-target mapping and representative package data; an independent critic reviews the resulting artifacts. Artists receive separate native-kit and acoustic assignments. Each task states owned paths, requirement IDs, fixtures and evidence; existing modules and tests are retained.
+Continue P00 with bounded ownership/custody and scheduler/history fixtures, representative actor/body/material/process definitions, and explicit source-to-playable field transformations. Set measurable initial catalog/workload budgets and separately owned native-kit/acoustic packets. Engineering owns the portable state and contracts; content authors own complete source mappings and concrete data; independent critics review cross-system invariants. Each task states owned paths, requirement IDs, fixtures and evidence; existing modules and tests are retained.
 
 P01 then implements actual durable acceptance/receipts and state continuation against these contracts, followed by the connected native loop in P02 and coupled history/Wait proofs in P03. Neither entering P00 nor completing this first increment authorizes skipping those exits or claiming the full game is implemented.

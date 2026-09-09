@@ -54,21 +54,32 @@ def main():
         run("installed-runtimes", [dotnet, "--list-runtimes"])
         if run("editor-version", [godot, "--version"]).strip() != pins["godot"]:
             raise RuntimeError("The editor does not match the exact .NET pin")
-        excluded = {".godot", "bin", "obj", "artifacts", "TestResults"}
+        excluded = {".godot", "bin", "obj", "artifacts", "TestResults", "__pycache__"}
         sources = sorted(p for p in root.rglob("*") if p.is_file()
                          and not any(part in excluded for part in p.relative_to(root).parts))
+        binary_files = []
         for path in sources:
-            body = path.read_text(encoding="utf-8-sig")
+            relative = str(path.relative_to(root))
+            try:
+                body = path.read_text(encoding="utf-8-sig")
+            except UnicodeDecodeError:
+                if path.suffix in {".cs", ".csproj", ".json", ".py", ".md", ".txt", ".tscn", ".godot"}:
+                    raise RuntimeError("A required UTF-8 text input could not be decoded: " + relative)
+                binary_files.append(relative)
+                body = ""
             for token in args.forbidden_token:
-                if token.casefold() in body.casefold():
+                if token.casefold() in body.casefold() or token.casefold() in relative.casefold():
                     raise RuntimeError(f"Forbidden token in {path.relative_to(root)}")
+        report["binaryInputsHashedWithoutTextScan"] = binary_files
         report["inputSha256"] = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
                                   for p in sources}
-        vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures/reference-v1.json"
-        reference = run("independent-python-vectors", [sys.executable,
-                        vector_file.with_name("generate_reference_vectors.py")])
-        if json.loads(reference) != json.loads(vector_file.read_text()):
-            raise RuntimeError("Independent reference vectors differ from the frozen fixture")
+        for fixture, generator in (("reference-v1", "reference"), ("commands-v1", "command"),
+                                   ("packages-v1", "package")):
+            vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures" / (fixture + ".json")
+            reference = run("independent-python-" + fixture, [sys.executable,
+                            vector_file.with_name("generate_" + generator + "_vectors.py")])
+            if json.loads(reference) != json.loads(vector_file.read_text()):
+                raise RuntimeError("Independent vectors differ from frozen fixture: " + fixture)
         run("locked-restore", [dotnet, "restore", "OpenFantasy.sln", "--locked-mode"])
         run("debug-build", [dotnet, "build", "OpenFantasy.sln", "--no-restore", "-c", "Debug"])
         run("core-tests", [dotnet, "test", "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
@@ -86,6 +97,10 @@ def main():
         report["testCounts"] = counts
         host = run("host-foundation", [dotnet, "run", "--project", "src/OpenFantasy.Host",
                     "--no-build", "--no-restore", "--", "--inspect-foundation"])
+        inspection_report = artifacts / "contract-inspections.json"
+        run("host-contract-inspections", [sys.executable, root / "tools/check_contract_inspections.py",
+            "--dotnet", dotnet, "--output", inspection_report])
+        report["contractInspections"] = json.loads(inspection_report.read_text())
         imported = run("editor-import", [godot, "--headless", "--path", root / "client", "--editor", "--import", "--quit"])
         client = run("client-foundation", [godot, "--headless", "--path", root / "client", "--", "--smoke-test"], 60)
 

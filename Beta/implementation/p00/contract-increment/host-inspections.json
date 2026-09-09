@@ -1,0 +1,296 @@
+{
+  "scope": "local structural diagnostics and source-packet bytes",
+  "status": "passed",
+  "cases": [
+    {
+      "name": "canonical command",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"command-v1\",\"Scope\":\"structural-validation\",\"ContentHash\":\"8e9b8264a79502364f65320acc0fcf83c8d1ea9a8306bc700807db1c6b864360\",\"CommandId\":\"00000000000000000000000000000001\",\"PrincipalId\":\"00000000000000000000000000000002\",\"OriginSessionId\":\"00000000000000000000000000000003\",\"WorldId\":\"00000000000000000000000000000005\",\"BranchId\":\"00000000000000000000000000000006\",\"ControlledActorId\":\"00000000000000000000000000000004\",\"ExpectedRevisionCount\":3,\"Intent\":{\"Kind\":\"transfer-lot\",\"LotId\":\"00000000000000000000000000000007\",\"SourceCustodianId\":\"00000000000000000000000000000008\",\"DestinationCustodianId\":\"00000000000000000000000000000009\",\"Quantity\":7}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown protocol",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The contract version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown envelope type",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame tag is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: short identity",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: An identity must contain exactly sixteen bytes.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: short protocol integer",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: An integer must contain exactly eight bytes.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown payload type",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame tag is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown payload version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The contract version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: zero transfer quantity",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Transfer fields violate payload invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: same custodians",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Transfer fields violate payload invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: duplicate payload field",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame contains unexpected fields.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: duplicate envelope field",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame contains unexpected fields.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: repeated revision target",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Expected revision owners must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unsorted revisions",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Expected revision owners must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown revision kind",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The revision owner kind is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: wrong branch revision",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Command fields violate envelope invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown revision set version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The contract version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown nested canonical version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The canonical encoding version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: too many revisions",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: trailing outer bytes",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Bytes remain after the frame's last field.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: trailing nested bytes",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Bytes remain after the frame's last field.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: invalid magic",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame magic is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown canonical version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The canonical encoding version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unbounded field count",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unbounded tag length",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The field exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Inspection input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "empty command",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame header is incomplete.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing file",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Could not find file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-inspection-ndwr3vwg/absent.bin'.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown arguments",
+      "expectedExit": 2,
+      "exitCode": 2,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\n       OpenFantasy.Host --inspect-command <command.bin>\n       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>\nWorld hosting is not yet implemented.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing argument",
+      "expectedExit": 2,
+      "exitCode": 2,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\n       OpenFantasy.Host --inspect-command <command.bin>\n       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>\nWorld hosting is not yet implemented.\n",
+      "stderr": ""
+    },
+    {
+      "name": "usage",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\n       OpenFantasy.Host --inspect-command <command.bin>\n       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>\nWorld hosting is not yet implemented.\n",
+      "stderr": ""
+    },
+    {
+      "name": "canonical package",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"package-manifest-v1\",\"Scope\":\"manifest-and-payload-bytes\",\"PackageId\":\"openfantasy.rules\",\"Version\":\"8f117323c992f89b3ce96cde6147b8ea33ad950a1ce6d547b870f8e9d3f051e9\",\"PayloadHash\":\"c476d9d972ae156b02d7886380ff2683bfa454741831dc143c2b87c00c8e5299\",\"PayloadBytes\":50,\"Dependencies\":[]}\n",
+      "stderr": ""
+    },
+    {
+      "name": "package hash mismatch",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The package payload differs from its pinned hash.\n",
+      "stderr": ""
+    },
+    {
+      "name": "payload byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Inspection input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated manifest",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Expected depth to be zero at the end of the JSON payload. There is an open JSON object or array that should be closed. LineNumber: 0 | BytePositionInLine: 1.\n",
+      "stderr": ""
+    },
+    {
+      "name": "manifest byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Inspection input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "duplicate metadata",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Unknown or duplicate manifest field: schemaVersion\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown schema",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Unsupported package manifest schema.\n",
+      "stderr": ""
+    },
+    {
+      "name": "invalid namespace",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Each package namespace segment starts with a lowercase ASCII letter. (Parameter 'value')\n",
+      "stderr": ""
+    },
+    {
+      "name": "retained source package",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"package-manifest-v1\",\"Scope\":\"manifest-and-payload-bytes\",\"PackageId\":\"openfantasy.aldermere\",\"Version\":\"f12d99ce96e598be881dfb0d9da187e2b4372667a631f23991623b58c5210e88\",\"PayloadHash\":\"d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582\",\"PayloadBytes\":30136,\"Dependencies\":[]}\n",
+      "stderr": ""
+    }
+  ],
+  "retainedPacket": {
+    "fileCount": 52,
+    "counts": {
+      "selectedRoots": 31,
+      "retainedStructuredRecords": 49,
+      "retainedCodeDefinitions": 2,
+      "typedEdges": 171,
+      "retainedAssets": 29,
+      "retainedSourceFiles": 48,
+      "totalInventoriedStructuredRecords": 532,
+      "totalInventoriedCodeDefinitions": 10,
+      "totalInventoriedFiles": 201,
+      "totalInventoriedDocumentHeadings": 187
+    },
+    "packageVersion": "f12d99ce96e598be881dfb0d9da187e2b4372667a631f23991623b58c5210e88",
+    "payloadHash": "d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582"
+  }
+}

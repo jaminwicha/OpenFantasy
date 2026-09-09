@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "scope": "Independent parser mutation and canonical re-encoding observation; no gameplay or supported-toolchain qualification",
+  "sdk": "8.0.413",
+  "targetFramework": "net8.0",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "procedure": "Each single-bit mutation of retained command/applied/rejected golden frames plus 10000 deterministic random frames (System.Random seed19873). Every accepted value must re-encode to the exact same bytes; only typed CommandFormatException rejections are tolerated.",
+  "results": {
+    "acceptedCanonicalMutations": 3073,
+    "rejectedTypedFormatFailures": 15239,
+    "total": 18312,
+    "unhandledExceptions": 0
+  },
+  "exitCode": 0,
+  "stderr": "",
+  "reviewedInputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CanonicalCommandReader.cs",
+      "sha256": "eb1f9a3933e9c5b723735eece980b05d2f8c167229ecfe188fa47a410f07505f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandCodecV1.cs",
+      "sha256": "33a539781af33aa8786dc2cbc754f5a345b734d8610e6710af75f39f79ca6c4f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandCommitIdentity.cs",
+      "sha256": "911ced9e1e857c08cd29034949ec8799d92e3ad3bdeb874929d42ebc96bb45c0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandContentHash.cs",
+      "sha256": "d6ee65b8cf26f396f5573c297695f6b8bcbfbba8b72d0db92c3925ba996556c3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandEnvelope.cs",
+      "sha256": "4101e369c38d70b51b0f19045eca1e719d966ef2d0b87e6b9519a7d32993e533"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandFormatException.cs",
+      "sha256": "371fed4a0a69edc4b6ff42be30887118bec4db49d76aa8d8a024d87fbdd6c159"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandReceipt.cs",
+      "sha256": "3541752c3c9879c69b439f4ceb273d3cafb763e7dbea59c3dc2631abbf66f1ee"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandReceiptCodecV1.cs",
+      "sha256": "6ac1f1b51bb0ef4a25cfc2a158b5e4eb4d4e7dba3d140aa47a58b98b79558fc5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevision.cs",
+      "sha256": "12d3951e2b81f631b1ddfe79918eed997a4ba81a05d69484d9a2cbcb0320d395"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevisionSet.cs",
+      "sha256": "83c67e5b8b54a06e13343e7ce18004cad30e46161552ee2a80e71d0cf019c0e8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/TransferLotIntent.cs",
+      "sha256": "da3c56bc3f0385a3cca4bc44428283c97bfa14f2b7082f6733643a628458f6ac"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/EntityId.cs",
+      "sha256": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/CanonicalEncodingV1.cs",
+      "sha256": "1e8871ebbf3aece0316fabdcdbf1432c02240e053fa5b50f7bdf70223f46f4c4"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/commands-v1.json",
+      "sha256": "9efc965165873457eb3b9621d371d8642ea71b4420e11b0b468ef47158be53ae"
+    },
+    {
+      "path": "Beta/implementation/p00/contract-review/Probe.cs",
+      "sha256": "f1fdfc3e5a084d080f4b258639c51c58b5bd4f2c0473d78b0ec35b6044eca356"
+    },
+    {
+      "path": "Beta/implementation/p00/contract-review/Probe.csproj",
+      "sha256": "6a1158ceca8ff21c7d6d9d991cbde66445982cb30024f3a872c1d842949fb1b2"
+    },
+    {
+      "path": "Beta/implementation/p00/contract-review/run_probe.py",
+      "sha256": "f65920e8b83b4e93863fa26a22a3bf256592fc5de6417de59bcee15a6d11ee2c"
+    }
+  ],
+  "limitations": [
+    "This uses available SDK8.0.413 solely as a separate reviewer observation; the coordinator owns final pinned SDK10.0.401 integrated validation.",
+    "Parsing does not prove admission/authentication, persistent retry semantics, inventory transfer, real world state or performance.",
+    "The deterministic random probe is bounded exploration, not exhaustive coverage of all input byte strings."
+  ]
+}

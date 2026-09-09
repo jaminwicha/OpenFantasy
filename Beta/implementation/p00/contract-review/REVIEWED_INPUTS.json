@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "reviewerScope": "Independent read of Commands and host diagnostics, not own migration closure or all Content implementation",
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/CanonicalEncodingV1.cs",
+      "sha256": "1e8871ebbf3aece0316fabdcdbf1432c02240e053fa5b50f7bdf70223f46f4c4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CanonicalCommandReader.cs",
+      "sha256": "eb1f9a3933e9c5b723735eece980b05d2f8c167229ecfe188fa47a410f07505f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandCodecV1.cs",
+      "sha256": "33a539781af33aa8786dc2cbc754f5a345b734d8610e6710af75f39f79ca6c4f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandCommitIdentity.cs",
+      "sha256": "911ced9e1e857c08cd29034949ec8799d92e3ad3bdeb874929d42ebc96bb45c0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandContentHash.cs",
+      "sha256": "d6ee65b8cf26f396f5573c297695f6b8bcbfbba8b72d0db92c3925ba996556c3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandEnvelope.cs",
+      "sha256": "4101e369c38d70b51b0f19045eca1e719d966ef2d0b87e6b9519a7d32993e533"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandFormatException.cs",
+      "sha256": "371fed4a0a69edc4b6ff42be30887118bec4db49d76aa8d8a024d87fbdd6c159"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandReceipt.cs",
+      "sha256": "3541752c3c9879c69b439f4ceb273d3cafb763e7dbea59c3dc2631abbf66f1ee"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandReceiptCodecV1.cs",
+      "sha256": "6ac1f1b51bb0ef4a25cfc2a158b5e4eb4d4e7dba3d140aa47a58b98b79558fc5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevision.cs",
+      "sha256": "12d3951e2b81f631b1ddfe79918eed997a4ba81a05d69484d9a2cbcb0320d395"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/ExpectedRevisionSet.cs",
+      "sha256": "83c67e5b8b54a06e13343e7ce18004cad30e46161552ee2a80e71d0cf019c0e8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/TransferLotIntent.cs",
+      "sha256": "da3c56bc3f0385a3cca4bc44428283c97bfa14f2b7082f6733643a628458f6ac"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/EntityId.cs",
+      "sha256": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Host/ContractInspector.cs",
+      "sha256": "bb9e72674c1f87caff45368c1d58866969081df85fe4a5c51c3ef4937b076642"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs",
+      "sha256": "6acab03d77e6a47faef409d838aece73511b90269e78c607dfb7a7b5e90731f9"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Commands/CommandCodecTests.cs",
+      "sha256": "e5856213ef911f0979630348349f4a1b729a30d61eda07a84d6d00e0cd906aeb"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Commands/CommandFixture.cs",
+      "sha256": "63c5e37fc222625f1a3c200a67f12d4f14fa9c147f7ebee93678375aee88e666"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Commands/CommandReceiptTests.cs",
+      "sha256": "a1ec5e6bec2b793257e80e59e65e1ddf28e203ff2203241e19f9656e6e65905d"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/commands-v1.json",
+      "sha256": "9efc965165873457eb3b9621d371d8642ea71b4420e11b0b468ef47158be53ae"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_command_vectors.py",
+      "sha256": "9fcf1422f0115afc8f62e4b7ec41503f929b0576e4f76b671e75337a65d54344"
+    },
+    {
+      "path": "Beta/implementation/p00/command-contracts/CONTRACT.md",
+      "sha256": "15a39f53ed19132dc6fafcab8cfd1e4ad61ce2bacbb17c7c9e395bbff99ed14d"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ From this directory:
 python3 tools/verify.py --dotnet /absolute/path/to/dotnet --godot /absolute/path/to/Godot
 ```
 
-The verifier checks the actual tool versions, independently regenerates frozen numeric/identity/RNG fixtures, restores locked dependencies, builds Debug, requires every discovered core test to execute and pass, imports the client, and runs a headless Godot smoke check. It compares host/client primitive results and records the managed runtime observed inside each process. A zero process exit does not excuse missing tests or Godot error output. Results and raw process output appear in `artifacts/verification.json`, with a fresh TRX report for each run. Optional `--forbidden-token TEXT` checks authored file contents for a prohibited name; the report states whether that scan was requested. This remains local binding evidence, not a performance, rendering, networking or desktop-export qualification.
+The verifier checks the actual tool versions, independently regenerates frozen numeric/identity/RNG, command/receipt and package fixtures, restores locked dependencies, builds Debug, requires every discovered core test to execute and pass, exercises host contract inspection against valid/malformed inputs and retained source-packet hashes, imports the client, and runs a headless Godot smoke check. It compares host/client primitive results and records the managed runtime observed inside each process. A zero process exit does not excuse missing tests or Godot error output. Results and raw process output appear in `artifacts/verification.json`, with a fresh TRX report for each run. Optional `--forbidden-token TEXT` checks text input contents and all input paths for a prohibited name; binary assets are hashed and reported separately; the report states whether that scan was requested. This remains local binding evidence, not a performance, rendering, networking or desktop-export qualification.
 
 The portable test suite can run independently:
 
@@ -25,10 +25,11 @@ To open the development harness, build Debug and open `client/project.godot` wit
 
 ## Project boundaries
 
-- `src/OpenFantasy.Core`: portable deterministic primitives, with no engine or third-party package dependency. See its [byte and arithmetic contract](src/OpenFantasy.Core/CONTRACTS.md).
-- `src/OpenFantasy.Host`: the retained headless entry point. `--inspect-foundation` exercises the same core; durable authority and networking follow in subsequent increments.
+- `src/OpenFantasy.Core`: portable deterministic primitives, immutable command/receipt contracts and pinned package metadata, with no engine or third-party package dependency. See its [byte and arithmetic contract](src/OpenFantasy.Core/CONTRACTS.md).
+- `src/OpenFantasy.Host`: the retained headless entry point. `--inspect-foundation` exercises the same core. `--inspect-command <command.bin>` validates a bounded canonical envelope, and `--inspect-package <manifest.json> <payload-file>` validates metadata and payload bytes. These diagnostics issue no gameplay receipts; durable authority and networking follow in subsequent increments.
 - `client`: the independent Godot project and C# presentation adapter. Godot owns rendering, not authoritative outcomes.
 - `tests/OpenFantasy.Core.Tests`: independently generated reference vectors and behavior/edge tests.
+- `content`: the first retained source dependency packet and its versioned manifest. Original records/assets remain preservation inputs; playable rule conversion and native presentation are pending.
 - `tools`: reproducible local verification. Build artifacts stay untracked.
 
 Only the client references the engine. The solution's Debug configuration builds all development artifacts. Release maps the client to Godot's **ExportRelease** and the ordinary .NET projects to Release. Building either configuration does not create a distributable Godot export; actual templates, export presets and supported-device execution remain required. In particular, a macOS build does not establish Windows/Linux support.
