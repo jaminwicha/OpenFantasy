@@ -26,5 +26,9 @@
     <None Update="Fixtures/custody-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/scheduling-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/history-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/custody-invalid-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/exposure-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/production-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/actors-v1.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
