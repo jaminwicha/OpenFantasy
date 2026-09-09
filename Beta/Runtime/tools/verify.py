@@ -1,0 +1,134 @@
+"""Build and exercise the retained development foundation, not a production game."""
+import argparse
+import datetime
+import hashlib
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import uuid
+import xml.etree.ElementTree as ET
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--dotnet", default=shutil.which("dotnet"))
+    parser.add_argument("--godot", required=True, help="Exact .NET editor executable")
+    parser.add_argument("--forbidden-token", action="append", default=[])
+    parser.add_argument("--output", type=Path)
+    args = parser.parse_args()
+    if not args.dotnet:
+        parser.error("Specify an installed SDK executable with --dotnet")
+    root = Path(__file__).resolve().parents[1]
+    artifacts = root / "artifacts"
+    artifacts.mkdir(exist_ok=True)
+    test_results = artifacts / "tests" / uuid.uuid4().hex
+    destination = args.output or artifacts / "verification.json"
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    dotnet = Path(args.dotnet).resolve()
+    godot = Path(args.godot).resolve()
+    env = dict(os.environ, DOTNET_ROOT=str(dotnet.parent),
+               DOTNET_CLI_TELEMETRY_OPTOUT="1", DOTNET_NOLOGO="1")
+    env["PATH"] = str(dotnet.parent) + os.pathsep + env.get("PATH", "")
+    report = dict(startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                  scope="Local foundation build, core tests and Godot binding smoke only",
+                  status="running", namingScanRequested=bool(args.forbidden_token), steps=[])
+
+    def run(name, command, timeout=180):
+        result = subprocess.run([str(x) for x in command], cwd=root, env=env,
+                                capture_output=True, text=True, timeout=timeout)
+        report["steps"].append(dict(name=name, command=[str(x) for x in command],
+                                    exitCode=result.returncode,
+                                    stdout=result.stdout, stderr=result.stderr))
+        print(name + ": " + ("PASS" if result.returncode == 0 else "FAIL"), flush=True)
+        if result.returncode:
+            raise RuntimeError(result.stdout + result.stderr)
+        return result.stdout + result.stderr
+
+    try:
+        pins = json.loads((root / "toolchain.json").read_text())
+        if run("sdk-version", [dotnet, "--version"]).strip() != pins["sdk"]:
+            raise RuntimeError("The installed SDK does not match the exact pin")
+        run("installed-runtimes", [dotnet, "--list-runtimes"])
+        if run("editor-version", [godot, "--version"]).strip() != pins["godot"]:
+            raise RuntimeError("The editor does not match the exact .NET pin")
+        excluded = {".godot", "bin", "obj", "artifacts", "TestResults"}
+        sources = sorted(p for p in root.rglob("*") if p.is_file()
+                         and not any(part in excluded for part in p.relative_to(root).parts))
+        for path in sources:
+            body = path.read_text(encoding="utf-8-sig")
+            for token in args.forbidden_token:
+                if token.casefold() in body.casefold():
+                    raise RuntimeError(f"Forbidden token in {path.relative_to(root)}")
+        report["inputSha256"] = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
+                                  for p in sources}
+        vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures/reference-v1.json"
+        reference = run("independent-python-vectors", [sys.executable,
+                        vector_file.with_name("generate_reference_vectors.py")])
+        if json.loads(reference) != json.loads(vector_file.read_text()):
+            raise RuntimeError("Independent reference vectors differ from the frozen fixture")
+        run("locked-restore", [dotnet, "restore", "OpenFantasy.sln", "--locked-mode"])
+        run("debug-build", [dotnet, "build", "OpenFantasy.sln", "--no-restore", "-c", "Debug"])
+        run("core-tests", [dotnet, "test", "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+                            "--no-build", "--no-restore", "-c", "Debug", "--logger",
+                            "trx;LogFileName=core.trx", "--results-directory", test_results])
+        tree = ET.parse(test_results / "core.trx")
+        counters = tree.find(".//{*}Counters")
+        if counters is None:
+            raise RuntimeError("The test report has no result counters")
+        counts = {key: int(value) for key, value in counters.attrib.items()}
+        if (counts.get("executed", 0) <= 0 or counts.get("total") != counts["executed"]
+                or counts.get("passed") != counts["executed"]
+                or any(counts.get(key, 0) for key in ("failed", "error", "timeout", "aborted"))):
+            raise RuntimeError("The test report contains missing, failed or unexecuted cases")
+        report["testCounts"] = counts
+        host = run("host-foundation", [dotnet, "run", "--project", "src/OpenFantasy.Host",
+                    "--no-build", "--no-restore", "--", "--inspect-foundation"])
+        imported = run("editor-import", [godot, "--headless", "--path", root / "client", "--editor", "--import", "--quit"])
+        client = run("client-foundation", [godot, "--headless", "--path", root / "client", "--", "--smoke-test"], 60)
+
+        def projection(output):
+            values = [json.loads(line) for line in output.splitlines() if line.startswith('{"Contract":')]
+            if len(values) != 1:
+                raise RuntimeError("Expected exactly one foundation result")
+            value = values[0]
+            if not value.get("Runtime"):
+                raise RuntimeError("Missing actual managed runtime observation")
+            return value
+
+        host_value, client_value = projection(host), projection(client)
+        report["observedHost"], report["observedClient"] = host_value, client_value
+        for field in ("Contract", "Entity", "Sample", "Day", "Millisecond"):
+            if host_value[field] != client_value[field]:
+                raise RuntimeError("Host/client disagreement in " + field)
+        if (host_value["Day"], host_value["Millisecond"]) != (0, 0):
+            raise RuntimeError("Historical midnight crossing failed")
+        if any("ERROR:" in output or "SCRIPT ERROR:" in output for output in (imported, client)):
+            raise RuntimeError("Godot reported an error despite its exit code")
+        for relative, expected in report["inputSha256"].items():
+            if hashlib.sha256((root / relative).read_bytes()).hexdigest() != expected:
+                raise RuntimeError("An input changed during verification: " + relative)
+        final_sources = sorted(p for p in root.rglob("*") if p.is_file()
+                               and not any(part in excluded for part in p.relative_to(root).parts))
+        report["finalInputSha256"] = {str(p.relative_to(root)): hashlib.sha256(p.read_bytes()).hexdigest()
+                                       for p in final_sources}
+        added = sorted(set(report["finalInputSha256"]) - set(report["inputSha256"]))
+        if any(not path.endswith(".uid") for path in added):
+            raise RuntimeError("Unexpected authored files appeared during verification: " + str(added))
+        report["generatedUidFiles"] = added
+        report["namingScanPassed"] = bool(args.forbidden_token)
+        report["status"] = "passed"
+    except Exception as error:
+        report["status"] = "failed"
+        report["failure"] = str(error)
+        print(str(error), file=sys.stderr)
+    finally:
+        report["finishedUtc"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        destination.write_text(json.dumps(report, indent=2) + "\n")
+    return 0 if report["status"] == "passed" else 1
+
+
+if __name__ == "__main__":
+    sys.exit(main())

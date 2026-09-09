@@ -1,0 +1,38 @@
+{
+  "status": "P00 candidate; desktop export and supported device qualification pending",
+  "sdk": "10.0.401",
+  "godot": "4.6.stable.mono.official.89cea1439",
+  "godotSdkPackage": "4.6.0",
+  "targetFrameworks": {
+    "core": "net8.0",
+    "client": "net8.0",
+    "host": "net10.0",
+    "tests": "net8.0"
+  },
+  "archives": [
+    {
+      "kind": "sdk",
+      "platform": "osx-arm64",
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Sdk/10.0.401/dotnet-sdk-10.0.401-osx-arm64.tar.gz",
+      "sha512": "69f64eb00dc045398755c440b152225d544301a345a146a16e86a56a0c52b7c94b2c331520e976dbb821f18d31930aafbd25bb85961e3517e0665414ce0cbcff"
+    },
+    {
+      "kind": "runtime",
+      "platform": "osx-arm64",
+      "url": "https://builds.dotnet.microsoft.com/dotnet/Runtime/8.0.31/dotnet-runtime-8.0.31-osx-arm64.tar.gz",
+      "sha512": "1963d2ab3798efdc2b33034ef57d4252849a066a2313ce62a574e556d19e5e981afe13c9545eb6d59437849723e1c8350f10f8068bcfa6b7a2815a07263bb8b3"
+    },
+    {
+      "kind": "editor",
+      "platform": "macos-universal",
+      "url": "https://github.com/godotengine/godot-builds/releases/download/4.6-stable/Godot_v4.6-stable_mono_macos.universal.zip",
+      "sha256": "9336b6454962d8b35682fdbad80763e2176d1907144d9b03dd2fc0c10ddd21d9"
+    },
+    {
+      "kind": "export-templates",
+      "status": "metadata recorded; not downloaded or qualified in P00",
+      "url": "https://github.com/godotengine/godot-builds/releases/download/4.6-stable/Godot_v4.6-stable_mono_export_templates.tpz",
+      "sha256": "46056e8394cd1f1f85ccfaabddffc1a67f595bfd99fbda6cd62afa751dbfc519"
+    }
+  ]
+}

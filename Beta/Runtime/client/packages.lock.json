@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "dependencies": {
+    "net8.0": {
+      "Godot.SourceGenerators": {
+        "type": "Direct",
+        "requested": "[4.6.0, )",
+        "resolved": "4.6.0",
+        "contentHash": "zPXb65IjRK6NRAq44Rz5AfI9uZc0RkhOMOVzsYuauaWwbsiKsrM0Dtl1t2A90JGbVV4Tk02qVPa3JrR8haFqIw=="
+      },
+      "GodotSharp": {
+        "type": "Direct",
+        "requested": "[4.6.0, )",
+        "resolved": "4.6.0",
+        "contentHash": "k4VnWoOPueAkTtFoUzhDnP5e4Qs3Gho0ls/0VyHD81F90HeVBvT0YlsGtS5fvkrmxl731d96bKRWNL4+Rd977g=="
+      },
+      "GodotSharpEditor": {
+        "type": "Direct",
+        "requested": "[4.6.0, )",
+        "resolved": "4.6.0",
+        "contentHash": "jpUfzyAJnG65kWsctfdXKTTPDGzv1eHVlGw/E5Fh5Axw8rGeklQJi0isAX1tBxPjcq/AuELYltpfOdUGc9f0kg==",
+        "dependencies": {
+          "GodotSharp": "4.6.0"
+        }
+      },
+      "openfantasy.core": {
+        "type": "Project"
+      }
+    }
+  }
+}
