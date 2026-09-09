@@ -1,0 +1,253 @@
+{
+  "startedUtc": "2026-09-09T03:54:08.197302+00:00",
+  "scope": "Local foundation build, core tests and Godot binding smoke only",
+  "status": "passed",
+  "namingScanRequested": true,
+  "steps": [
+    {
+      "name": "sdk-version",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "10.0.401\n",
+      "stderr": ""
+    },
+    {
+      "name": "installed-runtimes",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "--list-runtimes"
+      ],
+      "exitCode": 0,
+      "stdout": "Microsoft.AspNetCore.App 10.0.12 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.AspNetCore.App]\nMicrosoft.NETCore.App 8.0.31 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App]\nMicrosoft.NETCore.App 10.0.12 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App]\n",
+      "stderr": ""
+    },
+    {
+      "name": "editor-version",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "4.6.stable.mono.official.89cea1439\n",
+      "stderr": ""
+    },
+    {
+      "name": "independent-python-vectors",
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_reference_vectors.py"
+      ],
+      "exitCode": 0,
+      "stdout": "{\n  \"encodingVersion\": 1,\n  \"seedHex\": \"000102030405060708090a0b0c0d0e0f\",\n  \"responsibleId\": \"00112233445566778899aabbccddeeff\",\n  \"generated\": [\n    {\n      \"version\": \"geology/1\",\n      \"address\": \"realm:0/cell:-1,2,3\",\n      \"role\": \"ore-vein\",\n      \"ordinal\": \"7\",\n      \"payloadHex\": \"4f464300000000010000000600000010656e746974792e67656e65726174656400000010000102030405060708090a0b0c0d0e0f0000000967656f6c6f67792f31000000137265616c6d3a302f63656c6c3a2d312c322c33000000086f72652d7665696e000000080000000000000007\",\n      \"id\": \"6d0ed34766deba3baddbaf8bda704454\"\n    },\n    {\n      \"version\": \"v1\",\n      \"address\": \"\u00e1/\u6c34/\ud83c\udf32\",\n      \"role\": \"npc\",\n      \"ordinal\": \"0\",\n      \"payloadHex\": \"4f464300000000010000000600000010656e746974792e67656e65726174656400000010000102030405060708090a0b0c0d0e0f0000000276310000000bc3a12fe6b0b42ff09f8cb2000000036e7063000000080000000000000000\",\n      \"id\": \"9076ee9f900da73f6848b1738d738a2d\"\n    },\n    {\n      \"version\": \"ab\",\n      \"address\": \"c\",\n      \"role\": \"entity\",\n      \"ordinal\": \"18446744073709551615\",\n      \"payloadHex\": \"4f464300000000010000000600000010656e746974792e67656e65726174656400000010000102030405060708090a0b0c0d0e0f000000026162000000016300000006656e7469747900000008ffffffffffffffff\",\n      \"id\": \"69232df3594106f1fca3954f0e7ee7f6\"\n    },\n    {\n      \"version\": \"a\",\n      \"address\": \"bc\",\n      \"role\": \"entity\",\n      \"ordinal\": \"18446744073709551615\",\n      \"payloadHex\": \"4f464300000000010000000600000010656e746974792e67656e65726174656400000010000102030405060708090a0b0c0d0e0f000000016100000002626300000006656e7469747900000008ffffffffffffffff\",\n      \"id\": \"ca7baa9683c8e3f8278cab6690b0545f\"\n    }\n  ],\n  \"spawned\": {\n    \"ordinal\": \"42\",\n    \"payloadHex\": \"4f46430000000001000000030000000e656e746974792e737061776e65640000001000112233445566778899aabbccddeeff00000008000000000000002a\",\n    \"id\": \"2e0fc90beddefb904dd3b0c0857287dd\"\n  },\n  \"random\": {\n    \"rules\": \"rules/1\",\n    \"domain\": \"combat.hit\",\n    \"keyFingerprint\": \"663966c731765e9371008fd759e09705015378d3cc3b6c52368bb10529694a0c\",\n    \"words\": [\n      \"7423946567468266304\",\n      \"11235347671182572651\",\n      \"1686606394498352553\",\n      \"498615094145482562\",\n      \"15488485412614570977\",\n      \"4610888216568506394\",\n      \"16110836842467663597\",\n      \"3494964365363578082\"\n    ],\n    \"maxCounterWord\": \"11005886419267834366\",\n    \"rejectedDraw\": {\n      \"startCounter\": \"0\",\n      \"exclusiveMax\": \"9223372036854775809\",\n      \"result\": \"2011975634327796842\",\n      \"nextCounter\": \"2\"\n    },\n    \"exhaustionRejectedDraw\": {\n      \"domain\": \"rng.exhaustion/0\",\n      \"word\": \"1865479838120650412\",\n      \"exclusiveMax\": \"9223372036854775809\"\n    }\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "locked-restore",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "restore",
+        "OpenFantasy.sln",
+        "--locked-mode"
+      ],
+      "exitCode": 0,
+      "stdout": "  Determining projects to restore...\n  All projects are up-to-date for restore.\n",
+      "stderr": ""
+    },
+    {
+      "name": "debug-build",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "build",
+        "OpenFantasy.sln",
+        "--no-restore",
+        "-c",
+        "Debug"
+      ],
+      "exitCode": 0,
+      "stdout": "  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll\n  OpenFantasy.Client -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll\n  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll\n  OpenFantasy.Host -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:02.32\n",
+      "stderr": ""
+    },
+    {
+      "name": "core-tests",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "-c",
+        "Debug",
+        "--logger",
+        "trx;LogFileName=core.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/tests/3dd973721162419e9155a728f843ac85"
+      ],
+      "exitCode": 0,
+      "stdout": "Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)\nA total of 1 test files matched the specified pattern.\nResults File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/tests/3dd973721162419e9155a728f843ac85/core.trx\n\nPassed!  - Failed:     0, Passed:    46, Skipped:     0, Total:    46, Duration: 71 ms - OpenFantasy.Core.Tests.dll (net8.0)\n",
+      "stderr": ""
+    },
+    {
+      "name": "host-foundation",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "run",
+        "--project",
+        "src/OpenFantasy.Host",
+        "--no-build",
+        "--no-restore",
+        "--",
+        "--inspect-foundation"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "editor-import",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--editor",
+        "--import",
+        "--quit"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Started Project initialization (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Scanning file structure...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Loading global class names...\u001b[39m\u001b[0m\n[  33% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Verifying GDExtensions...\u001b[39m\u001b[0m\n[  50% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Creating autoload scripts...\u001b[39m\u001b[0m\n[  66% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Initializing plugins...\u001b[39m\u001b[0m\n[  83% ] \u001b[90m\u001b[1mfirst_scan_filesystem\u001b[22m | Starting file scan...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mfirst_scan_filesystem\u001b[22m\n\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Started Loading editor (5 steps)\u001b[39m\u001b[0m\n[   0% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading editor layout...\u001b[39m\u001b[0m\n[  16% ] \u001b[90m\u001b[1mloading_editor_layout\u001b[22m | Loading docks...\u001b[39m\u001b[0m\n\u001b[92m[ DONE ]\u001b[39m \u001b[1mloading_editor_layout\u001b[22m\n\u001b[0m\n",
+      "stderr": ""
+    },
+    {
+      "name": "client-foundation",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--smoke-test"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "inputSha256": {
+    ".gitignore": "20f6bd059c6941a2fc061e11c31d71e5582259be0712a91675ba3bd314d677f6",
+    "Directory.Build.props": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680",
+    "NuGet.Config": "cb93c65e28718aa9075fce221e9f9cea9e72d3fe1b30462383448a591f5b3aa1",
+    "OpenFantasy.sln": "d418815bfc121f4cecc598ae3bdc8c757819dbf04ac5b7c43dad87bd7bff3c87",
+    "README.md": "b9adf111c3e5b34426587b15193db0e77d067a39bd855e3913bb941a7d1889a3",
+    "client/OpenFantasy.Client.csproj": "599eb21261e622ec3022df815f8b90b0418fcbc72dee88893c6ebdffa8012daf",
+    "client/packages.lock.json": "91eadbd1f92674f511963740fc9b412eaaf9ae8f48665b1b11b90fe50622f5b7",
+    "client/project.godot": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+    "client/scenes/Bootstrap.tscn": "409fd4ee8e9ee068f7b61568ff77d3a9bcbd1df1402fd723cb4f4c3665471c02",
+    "client/scripts/Bootstrap.cs": "beb8ec1a5aa6d7698bf76fc5d22fc53ff71ba53ba13f925d59ff8d07ef2aeb49",
+    "client/scripts/Bootstrap.cs.uid": "be9037dcd46b86baa00c217a9274da9124cbf4d577bbd1b3ebacfcfdc1ba65b4",
+    "global.json": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e",
+    "src/OpenFantasy.Core/CONTRACTS.md": "7e50a1675909fa47fea974bc0d7a3b97876d4f5892c3d5e354c306d76fa7175c",
+    "src/OpenFantasy.Core/CanonicalEncodingV1.cs": "1e8871ebbf3aece0316fabdcdbf1432c02240e053fa5b50f7bdf70223f46f4c4",
+    "src/OpenFantasy.Core/CounterRandomV1.cs": "a0758d517dab30c2721472b6e0a3fd661c2ee47b0fee094b683d974e748e298c",
+    "src/OpenFantasy.Core/EntityId.cs": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c",
+    "src/OpenFantasy.Core/OpenFantasy.Core.csproj": "470b8bbe4ee9f686e1144d857fa279e6409a3312b4f4fd6b522fc9dd0aa7e96a",
+    "src/OpenFantasy.Core/RandomCounterState.cs": "e3c82c03fcf0ef5cf821e17e54eab63f5fbf75c0dd408aac4438efbb198c4875",
+    "src/OpenFantasy.Core/RuleMath.cs": "3dfbee252abf90e2e516389e33b4df9aa0e74f0c2115582246d176e49566fb78",
+    "src/OpenFantasy.Core/WorldInstant.cs": "5c1c642f2095b95f1569a3cf0ea1723873f86997b57e8195d84b1bdace930539",
+    "src/OpenFantasy.Core/packages.lock.json": "22308ad23ccd417b5d96020fb92e203b85fad8c3788b3feadb2ca403d8ad596c",
+    "src/OpenFantasy.Host/HostApplication.cs": "2e336a51169d42b852bc5ba17aec28783f4e2f794d9f8b5f7a39c290092c9abd",
+    "src/OpenFantasy.Host/OpenFantasy.Host.csproj": "aa484c2f4377e3c3cd54accb6ff49161b05067a5c567dda0dc1ed7a1dc703f46",
+    "src/OpenFantasy.Host/Program.cs": "edb8bab354cf8eb3182798e25e7801a70f1b3a6cd98de167ed7a9add9f2b8298",
+    "src/OpenFantasy.Host/packages.lock.json": "3c60d8a6cfb69eef72a11091651f3ac3d25f330f704a9494bf9921cfabe9532b",
+    "tests/OpenFantasy.Core.Tests/CounterRandomTests.cs": "725d08ed7e51b170f16a4088a1c9b98e96b04779b54cbbf2d390f186de7f351c",
+    "tests/OpenFantasy.Core.Tests/EntityIdTests.cs": "861adc475e6041ee8579ef4e3756313328ce34da429b269315127bac17aa9f65",
+    "tests/OpenFantasy.Core.Tests/Fixtures/generate_reference_vectors.py": "4d775a6ef61fb80b714380babd8df9a15c15c0edcf2ab1e9b17b3971da789dd1",
+    "tests/OpenFantasy.Core.Tests/Fixtures/reference-v1.json": "b431439ed30debe761eaf91150496330f0fcd3de979a9f1b149405791ce11649",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj": "d70e52006296932dd2a5933f72d4782af1f86ace65fcf0461a2f7828aecce310",
+    "tests/OpenFantasy.Core.Tests/ReferenceVectors.cs": "1e1f16d845ed0ee00d7d66faec31b361f13ed63adcd3e94b6a5c99b21422db63",
+    "tests/OpenFantasy.Core.Tests/RuleMathTests.cs": "1ae00f87d9a9cafccd5d20ef0ba90397bf8f44098e0ff6eb62f4c6923e60a525",
+    "tests/OpenFantasy.Core.Tests/TEST_EVIDENCE.md": "bd404deca2e20f48f2c7d637c1bab5ff39bbf6747262becd94942665aef5960a",
+    "tests/OpenFantasy.Core.Tests/WorldInstantTests.cs": "5dcce2e8dc2754f5acbedacfd9ae7a91881baeb928de7bf8a6e9caee1a9ffaf3",
+    "tests/OpenFantasy.Core.Tests/packages.lock.json": "999c120fe238fce7de88e89cd91fceab407556536b08b82acc4c255d2a8b589a",
+    "toolchain.json": "1bdc42ca35759ef8ce2f474cbed9eb2c8105c717dfb2a7a75a7cb0dc5ee76fae",
+    "tools/verify.py": "0d5fa9ab69702999a8a11cba035a5ec0964e125f207bf59eea696e3cbe1d8f80"
+  },
+  "testCounts": {
+    "total": 46,
+    "executed": 46,
+    "passed": 46,
+    "failed": 0,
+    "error": 0,
+    "timeout": 0,
+    "aborted": 0,
+    "inconclusive": 0,
+    "passedButRunAborted": 0,
+    "notRunnable": 0,
+    "notExecuted": 0,
+    "disconnected": 0,
+    "warning": 0,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "observedHost": {
+    "Contract": "foundation-v1",
+    "Runtime": ".NET 10.0.12",
+    "Entity": "d44d5db6f7ad5bf9b706bd53beeff840",
+    "Sample": 18095130603190839654,
+    "Day": 0,
+    "Millisecond": 0
+  },
+  "observedClient": {
+    "Contract": "foundation-v1",
+    "Runtime": ".NET 10.0.12",
+    "Entity": "d44d5db6f7ad5bf9b706bd53beeff840",
+    "Sample": 18095130603190839654,
+    "Day": 0,
+    "Millisecond": 0
+  },
+  "finalInputSha256": {
+    ".gitignore": "20f6bd059c6941a2fc061e11c31d71e5582259be0712a91675ba3bd314d677f6",
+    "Directory.Build.props": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680",
+    "NuGet.Config": "cb93c65e28718aa9075fce221e9f9cea9e72d3fe1b30462383448a591f5b3aa1",
+    "OpenFantasy.sln": "d418815bfc121f4cecc598ae3bdc8c757819dbf04ac5b7c43dad87bd7bff3c87",
+    "README.md": "b9adf111c3e5b34426587b15193db0e77d067a39bd855e3913bb941a7d1889a3",
+    "client/OpenFantasy.Client.csproj": "599eb21261e622ec3022df815f8b90b0418fcbc72dee88893c6ebdffa8012daf",
+    "client/packages.lock.json": "91eadbd1f92674f511963740fc9b412eaaf9ae8f48665b1b11b90fe50622f5b7",
+    "client/project.godot": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+    "client/scenes/Bootstrap.tscn": "409fd4ee8e9ee068f7b61568ff77d3a9bcbd1df1402fd723cb4f4c3665471c02",
+    "client/scripts/Bootstrap.cs": "beb8ec1a5aa6d7698bf76fc5d22fc53ff71ba53ba13f925d59ff8d07ef2aeb49",
+    "client/scripts/Bootstrap.cs.uid": "be9037dcd46b86baa00c217a9274da9124cbf4d577bbd1b3ebacfcfdc1ba65b4",
+    "global.json": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e",
+    "src/OpenFantasy.Core/CONTRACTS.md": "7e50a1675909fa47fea974bc0d7a3b97876d4f5892c3d5e354c306d76fa7175c",
+    "src/OpenFantasy.Core/CanonicalEncodingV1.cs": "1e8871ebbf3aece0316fabdcdbf1432c02240e053fa5b50f7bdf70223f46f4c4",
+    "src/OpenFantasy.Core/CounterRandomV1.cs": "a0758d517dab30c2721472b6e0a3fd661c2ee47b0fee094b683d974e748e298c",
+    "src/OpenFantasy.Core/EntityId.cs": "85211ece11a8715cd530ad5abf7c922935e7a4b0505ab3bffbaa369759c7190c",
+    "src/OpenFantasy.Core/OpenFantasy.Core.csproj": "470b8bbe4ee9f686e1144d857fa279e6409a3312b4f4fd6b522fc9dd0aa7e96a",
+    "src/OpenFantasy.Core/RandomCounterState.cs": "e3c82c03fcf0ef5cf821e17e54eab63f5fbf75c0dd408aac4438efbb198c4875",
+    "src/OpenFantasy.Core/RuleMath.cs": "3dfbee252abf90e2e516389e33b4df9aa0e74f0c2115582246d176e49566fb78",
+    "src/OpenFantasy.Core/WorldInstant.cs": "5c1c642f2095b95f1569a3cf0ea1723873f86997b57e8195d84b1bdace930539",
+    "src/OpenFantasy.Core/packages.lock.json": "22308ad23ccd417b5d96020fb92e203b85fad8c3788b3feadb2ca403d8ad596c",
+    "src/OpenFantasy.Host/HostApplication.cs": "2e336a51169d42b852bc5ba17aec28783f4e2f794d9f8b5f7a39c290092c9abd",
+    "src/OpenFantasy.Host/OpenFantasy.Host.csproj": "aa484c2f4377e3c3cd54accb6ff49161b05067a5c567dda0dc1ed7a1dc703f46",
+    "src/OpenFantasy.Host/Program.cs": "edb8bab354cf8eb3182798e25e7801a70f1b3a6cd98de167ed7a9add9f2b8298",
+    "src/OpenFantasy.Host/packages.lock.json": "3c60d8a6cfb69eef72a11091651f3ac3d25f330f704a9494bf9921cfabe9532b",
+    "tests/OpenFantasy.Core.Tests/CounterRandomTests.cs": "725d08ed7e51b170f16a4088a1c9b98e96b04779b54cbbf2d390f186de7f351c",
+    "tests/OpenFantasy.Core.Tests/EntityIdTests.cs": "861adc475e6041ee8579ef4e3756313328ce34da429b269315127bac17aa9f65",
+    "tests/OpenFantasy.Core.Tests/Fixtures/generate_reference_vectors.py": "4d775a6ef61fb80b714380babd8df9a15c15c0edcf2ab1e9b17b3971da789dd1",
+    "tests/OpenFantasy.Core.Tests/Fixtures/reference-v1.json": "b431439ed30debe761eaf91150496330f0fcd3de979a9f1b149405791ce11649",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj": "d70e52006296932dd2a5933f72d4782af1f86ace65fcf0461a2f7828aecce310",
+    "tests/OpenFantasy.Core.Tests/ReferenceVectors.cs": "1e1f16d845ed0ee00d7d66faec31b361f13ed63adcd3e94b6a5c99b21422db63",
+    "tests/OpenFantasy.Core.Tests/RuleMathTests.cs": "1ae00f87d9a9cafccd5d20ef0ba90397bf8f44098e0ff6eb62f4c6923e60a525",
+    "tests/OpenFantasy.Core.Tests/TEST_EVIDENCE.md": "bd404deca2e20f48f2c7d637c1bab5ff39bbf6747262becd94942665aef5960a",
+    "tests/OpenFantasy.Core.Tests/WorldInstantTests.cs": "5dcce2e8dc2754f5acbedacfd9ae7a91881baeb928de7bf8a6e9caee1a9ffaf3",
+    "tests/OpenFantasy.Core.Tests/packages.lock.json": "999c120fe238fce7de88e89cd91fceab407556536b08b82acc4c255d2a8b589a",
+    "toolchain.json": "1bdc42ca35759ef8ce2f474cbed9eb2c8105c717dfb2a7a75a7cb0dc5ee76fae",
+    "tools/verify.py": "0d5fa9ab69702999a8a11cba035a5ec0964e125f207bf59eea696e3cbe1d8f80"
+  },
+  "generatedUidFiles": [],
+  "namingScanPassed": true,
+  "finishedUtc": "2026-09-09T03:54:19.708133+00:00"
+}

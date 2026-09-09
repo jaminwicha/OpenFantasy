@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "method": "exact PNG byte comparison after native render",
+  "previous_frame": "../evidence/development-harness.png",
+  "current_frame_sha256": "a861b26d5d3603674cbc0c32c90d61c8ec9779e9a79d805d26ef246381bed2d9",
+  "identical": true,
+  "limits": "Static development view only; no gameplay or art approval"
+}

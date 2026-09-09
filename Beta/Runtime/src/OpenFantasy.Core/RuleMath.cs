@@ -6,8 +6,11 @@ public static class RuleMath
     public const long BasisPointScale = 10_000;
 
     /// <summary>Applies one multiplier using a signed 128-bit product and rounding toward zero.</summary>
-    public static long ApplyBasisPoints(long value, long multiplier) =>
-        checked((long)(checked((Int128)value * multiplier) / BasisPointScale));
+    public static long ApplyBasisPoints(long value, long multiplier)
+    {
+        Int128 product = checked((Int128)value * multiplier);
+        return checked((long)(product / BasisPointScale));
+    }
 
     /// <summary>Divides a nonnegative duration by a positive rate, rounding upward.</summary>
     public static long DivideDurationCeiling(long duration, long divisor)

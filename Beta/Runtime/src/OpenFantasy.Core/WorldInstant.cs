@@ -17,8 +17,11 @@ public readonly record struct WorldInstant : IComparable<WorldInstant>
     public WorldInstant(long days, int millisecondsWithinDay)
     {
         if (millisecondsWithinDay is < 0 or >= MillisecondsPerDay)
+        {
             throw new ArgumentOutOfRangeException(nameof(millisecondsWithinDay),
                 "Milliseconds within a day must be between 0 and 86399999 inclusive.");
+        }
+
         Days = days;
         MillisecondsWithinDay = millisecondsWithinDay;
     }
@@ -30,9 +33,11 @@ public readonly record struct WorldInstant : IComparable<WorldInstant>
         Int128 remainder = total % MillisecondsPerDay;
         if (remainder < 0)
         {
+            // C# division truncates toward zero; calendar normalization requires floor division.
             days = checked(days - 1);
             remainder += MillisecondsPerDay;
         }
+
         return new WorldInstant(checked((long)days), checked((int)remainder));
     }
 

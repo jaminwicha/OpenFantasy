@@ -2,6 +2,8 @@
 
 8 September 2026. Coordinator execution record. The design-readiness checklist allowed implementation to start; it did not close P00 or any of the nine complete-game qualification gates. This record supersedes only the pending build/primitive evidence in the inventory author's [initial exit checklist](P00_EXIT_CHECKLIST.md).
 
+The subsequent [runtime application style review](style-review/README.md) records the owner's modular/readable/object-oriented preference, its application-only scope, the behavior-preserving refinements, and fresh evidence. Earlier hashes below remain tied to the original increment.
+
 ## Implemented and exercised
 
 - The reviewed design/research baseline is committed separately at `4b33961`. Original staged milestone work remains byte-identical.

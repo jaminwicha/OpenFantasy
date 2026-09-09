@@ -12,21 +12,31 @@ public readonly record struct EntityId(ulong High, ulong Low) : IComparable<Enti
 {
     public const int ByteLength = 16;
 
+    private const int WordByteLength = sizeof(ulong);
+    private const int WordHexLength = WordByteLength * 2;
+    private const int HexLength = ByteLength * 2;
+
     public static EntityId FromBytes(ReadOnlySpan<byte> bytes)
     {
         if (bytes.Length != ByteLength)
+        {
             throw new ArgumentException("An identity requires exactly 16 bytes.", nameof(bytes));
+        }
+
         return new EntityId(BinaryPrimitives.ReadUInt64BigEndian(bytes),
-            BinaryPrimitives.ReadUInt64BigEndian(bytes[8..]));
+            BinaryPrimitives.ReadUInt64BigEndian(bytes[WordByteLength..]));
     }
 
     /// <summary>Writes the first 16 bytes of the destination; trailing bytes remain untouched.</summary>
     public void WriteBytes(Span<byte> destination)
     {
         if (destination.Length < ByteLength)
+        {
             throw new ArgumentException("The destination requires at least 16 bytes.", nameof(destination));
+        }
+
         BinaryPrimitives.WriteUInt64BigEndian(destination, High);
-        BinaryPrimitives.WriteUInt64BigEndian(destination[8..], Low);
+        BinaryPrimitives.WriteUInt64BigEndian(destination[WordByteLength..], Low);
     }
 
     public byte[] ToByteArray()
@@ -44,13 +54,22 @@ public readonly record struct EntityId(ulong High, ulong Low) : IComparable<Enti
     public static bool TryParse(string? text, out EntityId result)
     {
         result = default;
-        if (text is null || text.Length != 32) return false;
+        if (text is null || text.Length != HexLength)
+        {
+            return false;
+        }
+
         foreach (char character in text)
-            if (!(character is >= '0' and <= '9' or >= 'a' and <= 'f')) return false;
+        {
+            if (character is not (>= '0' and <= '9' or >= 'a' and <= 'f'))
+            {
+                return false;
+            }
+        }
 
         result = new EntityId(
-            ulong.Parse(text.AsSpan(0, 16), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture),
-            ulong.Parse(text.AsSpan(16, 16), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture));
+            ulong.Parse(text.AsSpan(0, WordHexLength), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture),
+            ulong.Parse(text.AsSpan(WordHexLength, WordHexLength), NumberStyles.AllowHexSpecifier, CultureInfo.InvariantCulture));
         return true;
     }
 
@@ -61,7 +80,11 @@ public readonly record struct EntityId(ulong High, ulong Low) : IComparable<Enti
     public static EntityId DeriveGenerated(ReadOnlySpan<byte> worldSeed, string generatorVersion,
         string sourceAddress, string role, ulong ordinal)
     {
-        if (worldSeed.IsEmpty) throw new ArgumentException("A world seed cannot be empty.", nameof(worldSeed));
+        if (worldSeed.IsEmpty)
+        {
+            throw new ArgumentException("A world seed cannot be empty.", nameof(worldSeed));
+        }
+
         byte[] payload = CanonicalEncodingV1.Frame("entity.generated", worldSeed.ToArray(),
             CanonicalEncodingV1.Text(generatorVersion, nameof(generatorVersion)),
             CanonicalEncodingV1.Text(sourceAddress, nameof(sourceAddress)),
@@ -75,7 +98,7 @@ public readonly record struct EntityId(ulong High, ulong Low) : IComparable<Enti
 
     private static EntityId HashIdentity(ReadOnlySpan<byte> payload)
     {
-        Span<byte> digest = stackalloc byte[32];
+        Span<byte> digest = stackalloc byte[SHA256.HashSizeInBytes];
         SHA256.HashData(payload, digest);
         return FromBytes(digest[..ByteLength]);
     }

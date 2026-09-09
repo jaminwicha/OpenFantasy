@@ -11,45 +11,53 @@ namespace OpenFantasy.Core;
 public sealed class CounterRandomV1
 {
     public const uint AlgorithmVersion = 1;
-    private readonly byte[] drawPayload;
-    private readonly string streamFingerprint;
-    private ulong nextCounter;
-    private bool exhausted;
+
+    private readonly byte[] _drawPayload;
+    private readonly string _streamFingerprint;
+    private ulong _nextCounter;
+    private bool _exhausted;
 
     public CounterRandomV1(ReadOnlySpan<byte> worldSeed, string rulesVersion, string domain,
         EntityId responsibleId, ulong nextCounter = 0)
     {
-        if (worldSeed.IsEmpty) throw new ArgumentException("A world seed cannot be empty.", nameof(worldSeed));
+        if (worldSeed.IsEmpty)
+        {
+            throw new ArgumentException("A world seed cannot be empty.", nameof(worldSeed));
+        }
+
         byte[] seed = worldSeed.ToArray();
         byte[] rules = CanonicalEncodingV1.Text(rulesVersion, nameof(rulesVersion));
         byte[] scope = CanonicalEncodingV1.Text(domain, nameof(domain));
         byte[] owner = responsibleId.ToByteArray();
         byte[] key = CanonicalEncodingV1.Frame("rng.sha256-counter.key", seed, rules, scope, owner);
-        streamFingerprint = Convert.ToHexString(SHA256.HashData(key)).ToLowerInvariant();
-        drawPayload = CanonicalEncodingV1.Frame("rng.sha256-counter.draw", seed, rules, scope, owner,
+        _streamFingerprint = Convert.ToHexString(SHA256.HashData(key)).ToLowerInvariant();
+        _drawPayload = CanonicalEncodingV1.Frame("rng.sha256-counter.draw", seed, rules, scope, owner,
             CanonicalEncodingV1.Unsigned64(0));
-        this.nextCounter = nextCounter;
+        _nextCounter = nextCounter;
     }
 
-    public RandomCounterState CaptureState() => new(AlgorithmVersion, streamFingerprint, nextCounter, exhausted);
+    public RandomCounterState CaptureState() => new(AlgorithmVersion, _streamFingerprint, _nextCounter, _exhausted);
 
     public void Restore(RandomCounterState state)
     {
         if (state.AlgorithmVersion != AlgorithmVersion
-            || !StringComparer.Ordinal.Equals(state.StreamFingerprint, streamFingerprint)
+            || !StringComparer.Ordinal.Equals(state.StreamFingerprint, _streamFingerprint)
             || (state.Exhausted && state.NextCounter != ulong.MaxValue))
+        {
             throw new ArgumentException("Counter state has an incompatible version, stream key or exhaustion marker.", nameof(state));
-        nextCounter = state.NextCounter;
-        exhausted = state.Exhausted;
+        }
+
+        _nextCounter = state.NextCounter;
+        _exhausted = state.Exhausted;
     }
 
     public ulong NextUInt64()
     {
-        ulong candidateCounter = nextCounter;
-        bool candidateExhausted = exhausted;
+        ulong candidateCounter = _nextCounter;
+        bool candidateExhausted = _exhausted;
         ulong value = Draw(ref candidateCounter, ref candidateExhausted);
-        nextCounter = candidateCounter;
-        exhausted = candidateExhausted;
+        _nextCounter = candidateCounter;
+        _exhausted = candidateExhausted;
         return value;
     }
 
@@ -62,14 +70,20 @@ public sealed class CounterRandomV1
         ArgumentOutOfRangeException.ThrowIfZero(exclusiveMax);
         // Unsigned subtraction intentionally computes 2^64 modulo the bound.
         ulong threshold = unchecked(0UL - exclusiveMax) % exclusiveMax;
-        ulong candidateCounter = nextCounter;
-        bool candidateExhausted = exhausted;
+
+        // Stage candidate draws locally so exhaustion cannot partially advance this request.
+        ulong candidateCounter = _nextCounter;
+        bool candidateExhausted = _exhausted;
         while (true)
         {
             ulong value = Draw(ref candidateCounter, ref candidateExhausted);
-            if (value < threshold) continue;
-            nextCounter = candidateCounter;
-            exhausted = candidateExhausted;
+            if (value < threshold)
+            {
+                continue;
+            }
+
+            _nextCounter = candidateCounter;
+            _exhausted = candidateExhausted;
             return value % exclusiveMax;
         }
     }
@@ -88,13 +102,26 @@ public sealed class CounterRandomV1
 
     private ulong Draw(ref ulong counter, ref bool isExhausted)
     {
-        if (isExhausted) throw new OverflowException("The random stream has exhausted its UInt64 draw counter.");
-        BinaryPrimitives.WriteUInt64BigEndian(drawPayload.AsSpan(drawPayload.Length - sizeof(ulong)), counter);
-        Span<byte> digest = stackalloc byte[32];
-        SHA256.HashData(drawPayload, digest);
+        if (isExhausted)
+        {
+            throw new OverflowException("The random stream has exhausted its UInt64 draw counter.");
+        }
+
+        // The counter is the final fixed-width field; every draw overwrites all eight bytes.
+        int counterOffset = _drawPayload.Length - sizeof(ulong);
+        BinaryPrimitives.WriteUInt64BigEndian(_drawPayload.AsSpan(counterOffset), counter);
+        Span<byte> digest = stackalloc byte[SHA256.HashSizeInBytes];
+        SHA256.HashData(_drawPayload, digest);
         ulong value = BinaryPrimitives.ReadUInt64BigEndian(digest);
-        if (counter == ulong.MaxValue) isExhausted = true;
-        else counter = checked(counter + 1);
+        if (counter == ulong.MaxValue)
+        {
+            isExhausted = true;
+        }
+        else
+        {
+            counter = checked(counter + 1);
+        }
+
         return value;
     }
 }

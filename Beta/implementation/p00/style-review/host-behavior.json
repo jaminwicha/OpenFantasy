@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "cases": [
+    {
+      "arguments": [],
+      "exit_code": 0,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\nWorld hosting is not yet implemented.\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "--unknown"
+      ],
+      "exit_code": 2,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\nWorld hosting is not yet implemented.\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "--inspect-foundation",
+        "extra"
+      ],
+      "exit_code": 2,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\nWorld hosting is not yet implemented.\n",
+      "stderr": ""
+    },
+    {
+      "arguments": [
+        "--inspect-foundation"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -5,12 +5,19 @@ namespace OpenFantasy.Core;
 
 internal static class CanonicalEncodingV1
 {
-    private static readonly UTF8Encoding StrictUtf8 = new(false, true);
+    private const uint EncodingVersion = 1;
+    private const int MagicByteLength = 4;
+    private const int LengthPrefixByteLength = sizeof(uint);
+    private const int VersionOffset = MagicByteLength;
+    private const int FieldCountOffset = VersionOffset + sizeof(uint);
+    private const int HeaderByteLength = FieldCountOffset + sizeof(uint);
+
+    private static readonly UTF8Encoding _strictUtf8 = new(false, true);
 
     internal static byte[] Text(string value, string parameterName)
     {
         ArgumentException.ThrowIfNullOrEmpty(value, parameterName);
-        return StrictUtf8.GetBytes(value);
+        return _strictUtf8.GetBytes(value);
     }
 
     internal static byte[] Unsigned64(ulong value)
@@ -23,25 +30,33 @@ internal static class CanonicalEncodingV1
     internal static byte[] Frame(string tag, params ReadOnlyMemory<byte>[] fields)
     {
         byte[] tagBytes = Text(tag, nameof(tag));
-        int length = checked(12 + 4 + tagBytes.Length);
+        int length = checked(HeaderByteLength + LengthPrefixByteLength + tagBytes.Length);
         foreach (ReadOnlyMemory<byte> field in fields)
-            length = checked(length + 4 + field.Length);
+        {
+            length = checked(length + LengthPrefixByteLength + field.Length);
+        }
 
         byte[] bytes = new byte[length];
         "OFC\0"u8.CopyTo(bytes);
-        BinaryPrimitives.WriteUInt32BigEndian(bytes.AsSpan(4), 1);
-        BinaryPrimitives.WriteUInt32BigEndian(bytes.AsSpan(8), checked((uint)fields.Length + 1));
-        int offset = 12;
+        BinaryPrimitives.WriteUInt32BigEndian(bytes.AsSpan(VersionOffset), EncodingVersion);
+
+        // The tag is the first length-prefixed field and is included in the stored count.
+        uint fieldCount = checked((uint)fields.Length + 1);
+        BinaryPrimitives.WriteUInt32BigEndian(bytes.AsSpan(FieldCountOffset), fieldCount);
+        int offset = HeaderByteLength;
         WriteField(bytes, ref offset, tagBytes);
         foreach (ReadOnlyMemory<byte> field in fields)
+        {
             WriteField(bytes, ref offset, field.Span);
+        }
+
         return bytes;
     }
 
     private static void WriteField(Span<byte> destination, ref int offset, ReadOnlySpan<byte> field)
     {
         BinaryPrimitives.WriteUInt32BigEndian(destination[offset..], checked((uint)field.Length));
-        offset = checked(offset + 4);
+        offset = checked(offset + LengthPrefixByteLength);
         field.CopyTo(destination[offset..]);
         offset = checked(offset + field.Length);
     }
