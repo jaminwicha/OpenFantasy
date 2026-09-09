@@ -1,0 +1,40 @@
+{
+  "purpose": "Preserve existing GDD versions and pre-consolidation design evidence",
+  "versions": [
+    {
+      "version": "gdd-v0.2",
+      "manifest": "gdd-v0.2/manifest.json",
+      "file_count": 4
+    },
+    {
+      "version": "design-package-v0.3-2026-09-08",
+      "manifest": "design-package-v0.3-2026-09-08/manifest.json",
+      "file_count": 36
+    },
+    {
+      "version": "openfantasy-legacy-gdd-2026-09-08",
+      "manifest": "openfantasy-legacy-gdd-2026-09-08/manifest.json",
+      "file_count": 1
+    },
+    {
+      "version": "combat-streaming-proposal-v0.4-2026-09-08",
+      "manifest": "combat-streaming-proposal-v0.4-2026-09-08/manifest.json",
+      "file_count": 4
+    },
+    {
+      "version": "design-package-v0.5-2026-09-08",
+      "manifest": "design-package-v0.5-2026-09-08/manifest.json",
+      "file_count": 6
+    },
+    {
+      "version": "design-package-v0.6-2026-09-08",
+      "manifest": "design-package-v0.6-2026-09-08/manifest.json",
+      "file_count": 9
+    },
+    {
+      "version": "specification-v1.0-2026-09-08",
+      "manifest": "specification-v1.0-2026-09-08/manifest.json",
+      "file_count": 32
+    }
+  ]
+}

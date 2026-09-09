@@ -1,0 +1,199 @@
+{
+  "version_label": "specification-v1.0-2026-09-08",
+  "archived_date": "2026-09-08",
+  "policy": "Preserve delivered specification1.0 and companion research/registers before geological revision1.1; original paths also remain byte-identical.",
+  "files": [
+    {
+      "archived_path": "README.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/README.md",
+      "sha256": "035cfd825dfd4f69b4540cc6b12460b7c708529214dce5ae9ea5305cf3fe32b7",
+      "bytes": 4507
+    },
+    {
+      "archived_path": "requirements-delta-v0_7.json",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/requirements-delta-v0_7.json",
+      "sha256": "e38ae501fc78a80510e2570bd35983a133da7f1f7270f82c942c13b99ad095a6",
+      "bytes": 4118
+    },
+    {
+      "archived_path": "requirements-delta-v0_8.json",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/requirements-delta-v0_8.json",
+      "sha256": "378d69646aa4c5c0fd7490fbdd7cc5733ffff480b4f4722805cd0743e943275b",
+      "bytes": 11167
+    },
+    {
+      "archived_path": "research-v0_7/README.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_7/README.md",
+      "sha256": "37cb42687d1be624b755acd7b7b9f471c1ab1b6863197f011cc2bbae51e14575",
+      "bytes": 4809
+    },
+    {
+      "archived_path": "research-v0_7/camp-and-rest.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_7/camp-and-rest.md",
+      "sha256": "6cd185d462241a10de81720f412c2c1d89bfb0b769e54d5374c87ea2a9ac81f7",
+      "bytes": 5583
+    },
+    {
+      "archived_path": "research-v0_7/classic-architecture.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_7/classic-architecture.md",
+      "sha256": "44389ec3aca7709461fd2c84f70f9b00ea177e6e3f242105203196b58dd826f9",
+      "bytes": 21653
+    },
+    {
+      "archived_path": "research-v0_7/frontier-streaming.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_7/frontier-streaming.md",
+      "sha256": "51a8cf6df4db81d34758c323034a0190bfc8c8b7457290c1f8f730c7216fa3a5",
+      "bytes": 13926
+    },
+    {
+      "archived_path": "research-v0_7/modern-jrpg-production.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_7/modern-jrpg-production.md",
+      "sha256": "766e71a0e2984756b4b58c3bf722cc94b61f2c568317fd092a7880758329e947",
+      "bytes": 22469
+    },
+    {
+      "archived_path": "research-v0_7/systemic-worlds.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_7/systemic-worlds.md",
+      "sha256": "3efaa8df26595dbc0cdfee7101be91caf8333a46b9dae498c37f55ec948ff5c7",
+      "bytes": 22215
+    },
+    {
+      "archived_path": "research-v0_8/README.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/README.md",
+      "sha256": "94aaf6804d2bf81b353ffe8337453acba2f463e335c26a5dafa0394356abd0b1",
+      "bytes": 7447
+    },
+    {
+      "archived_path": "research-v0_8/RESEARCH_COVERAGE.json",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/RESEARCH_COVERAGE.json",
+      "sha256": "5ce5ce7804543e89e8bfae6b9ced94254bde9b8c7c135824f146423885314e31",
+      "bytes": 50903
+    },
+    {
+      "archived_path": "research-v0_8/csharp-rust-core-reassessment.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/csharp-rust-core-reassessment.md",
+      "sha256": "046240f8370ad83830975d3c2b4195855af39bf6df38263f9e8e95e13379d00b",
+      "bytes": 19712
+    },
+    {
+      "archived_path": "research-v0_8/ecosystem-packages-and-production.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/ecosystem-packages-and-production.md",
+      "sha256": "6f3b609bb30f5565662f9fd4dc1c192249241c4f3eb394122acaeffaa0d78173",
+      "bytes": 11122
+    },
+    {
+      "archived_path": "research-v0_8/places-puzzles-and-progression.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/places-puzzles-and-progression.md",
+      "sha256": "4d70b923886c9e6fbabbaeca86fc5afb499e1bd03cbb1a79af11648ff3d5d83d",
+      "bytes": 23408
+    },
+    {
+      "archived_path": "research-v0_8/presentation-production-and-player-experience.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/presentation-production-and-player-experience.md",
+      "sha256": "389f8a3e07c829ed5168e851ea59e061345bf8f7f36d3ef1ec3e2b4725c4aa11",
+      "bytes": 29112
+    },
+    {
+      "archived_path": "research-v0_8/skills-crafting-magic-and-dreams.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/skills-crafting-magic-and-dreams.md",
+      "sha256": "8a0b09a1a603395298ff672e38aad575ffea407b6365f60a42de9949fb3537c6",
+      "bytes": 20673
+    },
+    {
+      "archived_path": "research-v0_8/society-lifecycles-and-emergent-stories.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/society-lifecycles-and-emergent-stories.md",
+      "sha256": "8155452ba7c1742e4d9e0497ad25e96064ad051146bf820c3cd808b54f020322",
+      "bytes": 25553
+    },
+    {
+      "archived_path": "research-v0_8/terrain-runtime-and-worlds.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/research-v0_8/terrain-runtime-and-worlds.md",
+      "sha256": "c9ccac09066db28752bf0d5aadf83987cfaa75a552ebd005df34ae6d53be43ff",
+      "bytes": 24458
+    },
+    {
+      "archived_path": "spec-v1_0/COVERAGE.json",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/COVERAGE.json",
+      "sha256": "c0aa7dde5c3dd979e7f9f460fc03e82a13be4f72faa53195c116cdaa19d1f151",
+      "bytes": 267216
+    },
+    {
+      "archived_path": "spec-v1_0/CRITIC_REVIEW.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/CRITIC_REVIEW.md",
+      "sha256": "ba22e98fe01d725c84ef460ec651c27ed75ba4e904f5aa42b21952a8fea7ad7b",
+      "bytes": 49497
+    },
+    {
+      "archived_path": "spec-v1_0/CROSS_SYSTEM_SYNERGIES.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/CROSS_SYSTEM_SYNERGIES.md",
+      "sha256": "26205d7577429cb866cd8b9456a93d60a16344ae36e7de9fc6f4e28dbf251b42",
+      "bytes": 12613
+    },
+    {
+      "archived_path": "spec-v1_0/DECISIONS.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/DECISIONS.md",
+      "sha256": "0998292cd8417593fbe8ff78d396abf7279e7b3d5e49040239ec5c38640d47aa",
+      "bytes": 13319
+    },
+    {
+      "archived_path": "spec-v1_0/GDD.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/GDD.md",
+      "sha256": "90bbcb852f2583f0618d713cb4acc6ddf19031222b4c29b5d976e1cde3afa114",
+      "bytes": 70686
+    },
+    {
+      "archived_path": "spec-v1_0/IMPLEMENTATION_PLAN.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/IMPLEMENTATION_PLAN.md",
+      "sha256": "3b5943a9329073220cc02aa1ec318097687988a10e76ccd321f6e908ab95cb16",
+      "bytes": 45521
+    },
+    {
+      "archived_path": "spec-v1_0/INTEGRATION_CRITIC.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/INTEGRATION_CRITIC.md",
+      "sha256": "1ef0cb6d425cc175958030c39b004526cd3caa5a8a8b6bed118e0a928159617f",
+      "bytes": 26711
+    },
+    {
+      "archived_path": "spec-v1_0/PAIN_POINTS_AND_RESOLUTIONS.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/PAIN_POINTS_AND_RESOLUTIONS.md",
+      "sha256": "b7e27388d1ff1ada16a4bc399eeba8ec2446562ea7931172e61d0cac7ea374f1",
+      "bytes": 15245
+    },
+    {
+      "archived_path": "spec-v1_0/PRESENTATION_CONTRACTS.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/PRESENTATION_CONTRACTS.md",
+      "sha256": "acaca28f5e578882cd4e7895a6ce84d9a013f243239b890f0472db598bc4e38d",
+      "bytes": 16848
+    },
+    {
+      "archived_path": "spec-v1_0/README.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/README.md",
+      "sha256": "112defd2f0621c45596b1fef0251190c9d5d098b3651c381c56b5f99f3a387a0",
+      "bytes": 5921
+    },
+    {
+      "archived_path": "spec-v1_0/REQUIREMENTS.json",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/REQUIREMENTS.json",
+      "sha256": "946dd5e5f6f07933d743450ad3b7f7f464298349e258185d889a5c8021d63b36",
+      "bytes": 247431
+    },
+    {
+      "archived_path": "spec-v1_0/SPEC_VALIDATION.json",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/SPEC_VALIDATION.json",
+      "sha256": "71510e0571f53a078dd89ebf768680628304c77c0ae84142b12fdbe2c2f1affe",
+      "bytes": 5755
+    },
+    {
+      "archived_path": "spec-v1_0/TECHNICAL_DESIGN.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/TECHNICAL_DESIGN.md",
+      "sha256": "58aa82f9925055c48c58b50a8f89a7207d47af2cf116b283d93211b985eb4315",
+      "bytes": 61537
+    },
+    {
+      "archived_path": "spec-v1_0/VALIDATION.md",
+      "source_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/spec-v1_0/VALIDATION.md",
+      "sha256": "4afd678d462e4da3f6386c93654482550bf9194c4fa50dc725526d9435ed5bb2",
+      "bytes": 21404
+    }
+  ]
+}

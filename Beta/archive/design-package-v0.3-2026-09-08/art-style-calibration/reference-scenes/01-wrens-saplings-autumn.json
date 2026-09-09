@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "scene_id": "01-wrens-saplings-autumn",
+  "title": "Wren's Saplings — autumn windbreak",
+  "created_at": "2026-09-08",
+  "status": "reference_scene_using_user_endorsed_v06_direction_not_runtime_ready",
+  "tool": "built-in image_gen.imagegen",
+  "generation_mode": "new_full_scene_with_local_style_and_asset_references",
+  "prompt": "Use case: stylized-concept. Asset type: one full-scene game-art reference illustration for Beta OpenFantasy.\nREFERENCE ROLES: Image 1 is the accepted restrained-history v06 VISUAL STYLE only: its deliberate pixel clusters, compact expressive people, craftsmanship, restrained detail, elevated three-quarter game camera and quiet/lush balance. Do NOT copy its village geography, waterwheel, turtle, characters, contact-sheet panels or prop sidebar. Image 2 is original OpenFantasy tiles: only identity/material references for grass, worn road, timber farmhouse, fences and cultivated rows, to be reinterpreted at Image 1 quality. Image 3 is the original green Scout sprite: appearance/silhouette cue for the unnamed traveler. Images 4-5 are original grayscale Wren component sheets for bandana/front-tuft hair and overall bib; these are silhouette cues only and MUST be recolored according to the named character identity below. Do not render a sheet or paste raw low-resolution assets.\nSCENE: Wren's Saplings, the small Verdance farm north of Brasshollow, late autumn with a fresh breeze. One complete landscape view approximately 1536×1024, elevated three-quarter orthographic gameplay perspective, no horizon or camera depth of field. A small cared-for timber farmhouse with an old stone footing sits near the upper left; a warm window and a modest covered workbench. A gently curving clear worn-earth-and-stone path leads from foreground through the open farm gate to the house. To the right, a small fenced sapling orchard, several young slender trees with only a few gold leaves and tidy cultivated rows. Larger amber/russet deciduous trees and a little deep-green woodland frame the edges without obscuring the route. A few fallen leaves gather naturally against a fence corner and roots; broad quiet ground and grass patches.\nFOCAL ACTION: the named farmer Wren and a traveling Scout repair a timber windbreak protecting the saplings. Wren is an adult human with clearly dark warm-brown skin, a cobalt-blue bandana with a small blue front hair tuft, a small red feather, and work-worn red overalls over a red shirt, sturdy brown boots; compact readable RPG proportions. Preserve this specific appearance, not the people from Image 1. Wren steadies a newly fitted plank while the Scout in original-source green practical adventuring clothes and brown gear positions a simple hammer or peg. Both are small gameplay-scale figures, approximately 80-100 display pixels tall, not large portraits. Nearby lies a small modest bundle of wood and one simple hand tool. The original quest 'Wren's Saplings' requests six wood for a windbreak so saplings might see spring; show that practical kindness visually, without writing words or making a symbolic quest overlay.\nHISTORY AND WEATHER: most windbreak timber is old gray-brown wood, with only a couple warmer new boards and a sound repaired joint; worn gate handle, softened threshold, one repaired farmhouse post. Loved and maintained, not abandoned. Gently leaning sapling twigs, a lifted bandana tail and a handful of drifting leaves suggest autumn wind. Warm low autumn daylight with cool blue-violet shadows, russet/copper foliage, muted grass and bare soil; the green Scout and blue/red Wren stay legible. The atmosphere is quietly magical through color, personality and the ancient lived-in world, not particles or glowing decorations. No explicit supernatural effect is necessary.\nSTYLE: match Image 1's refined 16-bit+ pixel-art visual grammar, crisp stepped edges, deliberate coherent clusters, controlled material ramps, selective outlines, readable compact faces. Retain high-quality craftsmanship but use details judiciously: people, the repaired windbreak and welcoming path first, foliage and farm architecture second, a few material-history discoveries third. Calm surfaces between intentional clusters. This is a different scene in the same game.\nAVOID: side panels/contact sheet/collage, letters or text, HUD, logos, watermark, giant characters, reuse of the calibration pair or turtle, waterwheel, random overgrown flowers, glitter, busy leaf confetti everywhere, photorealistic painting, blur, bloom, cinematic depth of field, 3D-rendered geometry, vector edges. Output one full-scene landscape PNG, no border or written title.",
+  "input_image_paths": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/restrained-history-proposal-v06.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/tiles.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/scout.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/layers/hair_05.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/layers/outfit_08_a.png"
+  ],
+  "generation_source_path": "/Users/alucinor/.codex/generated_images/01a082ca-a186-7241-bfe7-e09cd5261e3b/exec-d3a95997-8e89-4064-9dc1-0d6c1377b516.png",
+  "workspace_output_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/reference-scenes/01-wrens-saplings-autumn.png",
+  "sha256": "4509e52cc86a5915d4651cb0d82b1e5c7ca74b3707b76aac5404c56369034c6c",
+  "width": 1536,
+  "height": 1024,
+  "content_ids": [
+    "farmer_wren",
+    "wren_orchard",
+    "farm_verdance_small",
+    "brasshollow",
+    "wood",
+    "scout"
+  ],
+  "source_paths": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/npcs.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/quests.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/world_meta.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/appearance.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/items.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/tools/gen_layers.py",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/tools/gen_world.py"
+  ],
+  "established_source_facts": [
+    "Wren is farmer_wren at the small Brasshollow farm farm_verdance_small in Verdance.",
+    "Quest wren_orchard is titled Wren's Saplings and requests six wood for a windbreak to help saplings survive to spring.",
+    "Wren appearance: human/race0, skin5, hairStyle5 (bandana with front tuft), hairColor13 (blue), outfit8 (overalls), outfitA10 and outfitB10 (red), accessory3 (feather).",
+    "The unnamed traveler's green clothing is drawn from the original Scout sprite as an appearance cue."
+  ],
+  "proposed_interpretation": [
+    "Late-autumn weather, the visible collaborative plank repair and exact tool poses are proposed staging.",
+    "Farmhouse architecture, enlarged orchard arrangement, brook, rocks, pathways and specific old/new repairs reinterpret the source materials rather than reproduce the existing tile map.",
+    "The traveler is not a named canonical NPC; no new NPC identity is asserted."
+  ],
+  "visual_assessment": "The full scene retains the v06 family: elevated view, crisp pixel-like clusters, warm crafted timber/stone, compact expressive people, clear path and a practical repair focal point. Wren reads as brown-skinned with blue hair and red overalls/feather, and the Scout is green-clothed. New boards contrast with older timber; autumn reds/golds distinguish the setting.",
+  "observed_limitations": [
+    "The blue head treatment reads more as tousled hair than a clearly separated bandana, so the original hairstyle component is only partly carried through.",
+    "Figures appear larger than the requested 80-100 display-pixel target; exact gameplay camera scale remains to be calibrated.",
+    "Foliage and leaf scatter are denser than the quietest v06 areas, though the central route and repair are legible.",
+    "Wind is suggested through staging and leaves rather than demonstrated dynamically.",
+    "This is an illustration, not a pixel-exact original map, native sprite set, animation or proof of simulated seasons/repair."
+  ],
+  "inspection": {
+    "method": "Viewed generated output and local copy; read-only Pillow dimensions and SHA-256. No pixel editing, cropping or resampling performed.",
+    "native_grid_claim": false,
+    "animation_verified": false,
+    "runtime_integration": false
+  }
+}

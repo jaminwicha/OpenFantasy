@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "version": "0.6-world-and-actor-depth-delta",
+  "date": "2026-09-08",
+  "inherits": "requirements-delta-v0_5.json",
+  "status": "Owner requirements captured; architecture synthesized; implementation and proof pending",
+  "decision_register": "architecture-synthesis-v0_6.md",
+  "overrides": [
+    {
+      "id": "RQ-006",
+      "requirement": "A generated world supports a polished 60\u201380-hour adventure for players pursuing that path, with bonus chapters, areas and paths; this is a quality target, not a compulsory main plot or a reason to prevent autonomous NPC outcomes.",
+      "status": "Earlier target retained and reconciled with owner agency direction"
+    },
+    {
+      "id": "RQ-007",
+      "requirement": "Approximately twice the baseline adventure horizon remains a stretch opportunity; the world continues through and beyond individual campaigns, careers and independently resolved crises.",
+      "status": "Earlier stretch target retained; no forced campaign completion"
+    },
+    {
+      "id": "RQ-022",
+      "requirement": "Provide Dungeons & Dragons and Final Fantasy-inspired breadth through coherent original stats, skills, classes/jobs, conditions, items, magic, exploration, social action and resource mechanics; maintain an explicit capability inventory rather than claiming every rule from every edition.",
+      "status": "Owner breadth requirement clarified; detailed numeric rules remain to be specified"
+    }
+  ],
+  "additions": [
+    {
+      "id": "RQ-107",
+      "requirement": "Build fully customizable persistent transport assemblies for ships, boats, canoes, carriages, chariots, dwarven tanks, sandships, tunneling ships, air balloons and airships; connect parts, crafting, cargo, crew, wear, maintenance, enhancement and travel-domain constraints.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Production and travel",
+      "architecture_sections": [
+        7
+      ],
+      "acceptance": [
+        "SYS-01",
+        "SYS-13"
+      ]
+    },
+    {
+      "id": "RQ-108",
+      "requirement": "Support player and NPC alliances, friendships, rivalries and other directed relations, party formation and shared combat, exploration, skill, power and work synergies with real obligations and costs.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Society and actors",
+      "architecture_sections": [
+        4
+      ],
+      "acceptance": [
+        "SYS-02"
+      ]
+    },
+    {
+      "id": "RQ-109",
+      "requirement": "Seed cosmic magical, crystal and elemental influences on species and subspecies; model eon-scale ancestry, convergence, divergence and historical change with persistent causal provenance.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "World and history",
+      "architecture_sections": [
+        5
+      ],
+      "acceptance": [
+        "SYS-03"
+      ]
+    },
+    {
+      "id": "RQ-110",
+      "requirement": "Keep species tendencies, culture, civilization, worship, alignment and individual traits distinct but interacting; permit exceptional births and individual learning, choices and transformations beyond species norms.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Actors and history",
+      "architecture_sections": [
+        5
+      ],
+      "acceptance": [
+        "SYS-03",
+        "SYS-04"
+      ]
+    },
+    {
+      "id": "RQ-111",
+      "requirement": "Provide deep interconnected crafting, herbalism, cooking and alchemical process graphs with knowledge, ingredients, substitutions, tools, stages, quality, byproducts, labor, experimentation and accountable resource use.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Production",
+      "architecture_sections": [
+        6
+      ],
+      "acceptance": [
+        "SYS-05"
+      ]
+    },
+    {
+      "id": "RQ-112",
+      "requirement": "Support overt/covert factions, secret alliances, trade networks, guilds, nations, institutions and political relationships whose actual actions alter world events, NPC lives and opportunities; keep secrets knowledge-scoped.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Institutions and cognition",
+      "architecture_sections": [
+        8
+      ],
+      "acceptance": [
+        "SYS-06"
+      ]
+    },
+    {
+      "id": "RQ-113",
+      "requirement": "Allow contingent world crises and dark-lord roles that may never arise or may be resolved by NPCs or other players; support adventure, ordinary careers, allegiance, antagonist recruitment where justified, conquest, captivity and playable continuations without a compulsory chosen protagonist.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Narrative and institutions",
+      "architecture_sections": [
+        8
+      ],
+      "acceptance": [
+        "SYS-07"
+      ]
+    },
+    {
+      "id": "RQ-114",
+      "requirement": "Every individual NPC has player-equivalent depth through the same applicable character model, capabilities, progression, inventory, action rules, relationships and persistent history. Different control or simulation frequency must not create a shallow alternate NPC model.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Actors and society",
+      "architecture_sections": [
+        4
+      ],
+      "acceptance": [
+        "SYS-08",
+        "SYS-09"
+      ]
+    },
+    {
+      "id": "RQ-115",
+      "requirement": "NPCs continuously participate in world causality: perceived events and scoped knowledge affect needs, commitments, decisions and feasible actions, which create further consequences and persistent memories in detailed and distant simulation.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Cognition and world",
+      "architecture_sections": [
+        3,
+        4
+      ],
+      "acceptance": [
+        "SYS-06",
+        "SYS-09",
+        "SYS-11"
+      ]
+    },
+    {
+      "id": "RQ-116",
+      "requirement": "Support fantastical mounts including horse, lizard and bird types, pets and familiars as persistent actors; integrate anatomy, training, bonds, load, equipment, feeding, care, health, upkeep, delegation and abilities across travel, exploration and combat.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Actors and travel",
+      "architecture_sections": [
+        7
+      ],
+      "acceptance": [
+        "SYS-10"
+      ]
+    },
+    {
+      "id": "RQ-117",
+      "requirement": "Provide magic specializations such as illusion and invocation, elemental/other facet combinations, researched and crafted spells, weapon/object enhancement, spellbinding and lingering area/object/person effects through a shared typed, versioned effect and research system.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Actors and production",
+      "architecture_sections": [
+        6,
+        9
+      ],
+      "acceptance": [
+        "SYS-12"
+      ]
+    },
+    {
+      "id": "RQ-118",
+      "requirement": "Represent gods and deities as first-class cosmological entities with identities, domains, powers/limits, motives, relationships, worshippers, institutions and consequential interventions through the authoritative simulation.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "World, actors and institutions",
+      "architecture_sections": [
+        5
+      ],
+      "acceptance": [
+        "SYS-14"
+      ]
+    },
+    {
+      "id": "RQ-119",
+      "requirement": "Support classes/jobs and their specializations as first-class shared player/NPC progression definitions, preserving original classes/abilities and allowing explicitly governed combinations, training, proficiencies and retained learning.",
+      "status": "Owner direction; implementation unverified",
+      "owner": "Actors and capabilities",
+      "architecture_sections": [
+        9
+      ],
+      "acceptance": [
+        "SYS-15"
+      ]
+    }
+  ],
+  "superseded_candidate_status": {
+    "sandship": "Owner-confirmed required transport family; earlier candidate status is historical"
+  },
+  "preservation": "Prior editions and source content remain preserved. The v0.5 design snapshot precedes this synthesis."
+}

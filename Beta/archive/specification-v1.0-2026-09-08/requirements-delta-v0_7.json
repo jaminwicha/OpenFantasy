@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "version": "0.7-final-pass-direction",
+  "date": "2026-09-08",
+  "inherits": "requirements-delta-v0_6.json",
+  "status": "Owner-selected release targets and orchestration; expanded narrative/frontier direction",
+  "overrides": [
+    {
+      "id": "RQ-012",
+      "requirement": "Provide an almost-infinite-feeling frontier through practically unbounded addressable continuation, coherent history/ecology/cultures, meaningful systemic variability and persistent discoveries; validate seamless loading at supported travel speeds without repetitive filler or erasing mutations.",
+      "status": "Owner reinforced No Man's Sky loading and Dwarf Fortress variability as guides"
+    },
+    {
+      "id": "RQ-079",
+      "requirement": "Godot/C#, bounded Wait-style on-field combat, desktop launch on Windows/macOS/Linux and 1\u20134 hosted players are selected; validate exact toolchain/OS versions, minimum hardware, qualification budgets and the detailed contracts in the final technical specification. Mobile is a later supported phase.",
+      "status": "Owner-selected targets distinguished from technical qualification"
+    }
+  ],
+  "additions": [
+    {
+      "id": "RQ-120",
+      "requirement": "Require Windows, macOS and Linux for the first production release, with Android/iOS mobile support delivered and validated in a later supported phase; retain Godot/C# and avoid a disposable parallel implementation.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-121",
+      "requirement": "Guarantee solo and 1\u20134 simultaneous players per hosted world for the first production release; validate separated exploration and shared encounters without weakening NPC depth.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-122",
+      "requirement": "Orchestrate engine builders, content/asset creators, dedicated artists, virtual playtesters and independent critic agents from the central collaboration task; use the GameDev ecosystem only where it improves the work and preserve human art/enjoyment acceptance.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-123",
+      "requirement": "Provide a complete implementation plan through production, with cumulative retained vertical slices, requirement-to-phase and validation coverage, full content assimilation, explicit dependencies and no scope lost through staging.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-124",
+      "requirement": "Combine contextual random encounters, authored adventurelets and encounter decks for coherent procedural play, respecting actual world state, inhabitants, resources, knowledge, pacing and persistent outcomes.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-125",
+      "requirement": "Allow multiple seed-grounded grand narrative possibilities to emerge, coexist, intersect, diverge and resolve through the world, including but not limited to a dark lord; pursue Dwarf Fortress-like meaningful systemic variability rather than cosmetic recombination alone.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-126",
+      "requirement": "Provide day/night and daily rest/sleep pacing, initially targeting roughly 40 minutes for a full day/night cycle; tune through playtests so camping is not a frequent chore, and apply explicit multiplayer time-advance, fatigue and interruption rules.",
+      "status": "Owner pacing proposal; full-cycle interpretation recorded; numerical target requires playtest acceptance"
+    },
+    {
+      "id": "RQ-127",
+      "requirement": "Make campsites, inns and caravan/party rest meaningful places for watches, cooking, pet/mount care, maintenance, research, skills, relationships, stories and contextual encounter/combat/events, with actual resources, work, security and persistent consequences.",
+      "status": "Owner direction; implementation unverified"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "id": "04",
+  "title": "The Sunken Seal: rainy approach to the Sunken Crypt",
+  "status": "reference_scene_proposal_in_endorsed_v06_direction",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in; new scene using local style and legacy asset references",
+  "use_case": "stylized-concept/style-transfer",
+  "exact_prompt": "Use case: stylized-concept / style-transfer.\nCreate ONE original OpenFantasy reference illustration: the Sunken Crypt in the swamp of Sylvas, rainy blue dusk approaching night. One complete landscape game scene about 1536x1024. Reference image 1 is accepted STYLE ONLY: use its LEFT environment's elevated three-quarter game view, crisp handcrafted 16-bit-plus pixel-art construction, deliberate clusters, warmly characterized small game figures and readable routes. Do NOT copy the watermill, its paired people, turtle or asset panels. Images 2,3,4,5 are original OpenFantasy sprite sheets: crypt wight, marsh wisp, Squire and Mage. Use them for recognizable enemy and class silhouettes and palette, newly interpreted at the accepted quality.\nScene composition: a long clearly walkable raised stone causeway crosses still swamp water into an ancient low walled crypt on a slightly higher mound. The route makes a clean readable turn past a modest old stone marker, then up a few wet steps to the entrance; swamp trees and simple reed groupings frame the outside rather than hide the route. Keep one broad calm dark-water area. The crypt is a dignified ancient stone burial structure, not a giant Gothic cathedral: worn fitted masonry with a partially cracked seal around a heavy old entrance, part of the north wall slightly sinking. A single newer patch of plain blocks and repaired railing convey generations of previous efforts to keep the approach usable. The original quest is The Sunken Seal: the Sylvas crypt cracked open, wights walk, the seal can be re-cut after three wights are defeated. Show the approach before that battle.\nSubjects: two SMALL adventurers halfway along the path at useful gameplay scale, approaching with care. One Squire with a shield, pale metal armor and royal-blue cloth cape, one Mage in plum-purple robes and a pointed hood/hat, holding a simple staff. The Mage is NOT a duplicate of the calibration woman. One distant crypt wight waits within the entrance: the legacy sprite's broad pale gray armor, moss-green face and subdued green eyes, clearly readable as an armored undead guard, no gore. One or two small turquoise marsh wisps over the water, matching the squat pointed wisp silhouette, each casting only a restrained local reflection; not a whole swarm of lights.\nLighting and atmosphere: wet cool blue stone, blue-violet air, deep muted green swamp foliage, rain in a few crisp directional pixel streaks and small puddle rings. One warm amber lantern held by the Squire is the main human warmth; the crypt entrance remains dim and forbidding but visible. Gentle wet highlights selectively on walking stones and armor. Preserve enough dusk light to read the whole route, silhouettes, water and structure. The magical contrast comes from the ancient broken seal and distant wisp presence, not luminous runes across every surface.\nSurface restraint: keep big simple masonry shapes and large calm water shadows. Very few meaningful chips, a worn threshold, restrained moss at the waterline and one masonry repair. Do NOT coat every stone in cracks, lichens or tiny flowers. Selective fine craft around the entry seal and characters, quiet surfaces elsewhere. Old and maintained coexist with recent damage.\nConstraints: full-canvas single environment, no borders, side panels, inset sprites, collage, labels, text, HUD, watermark or title. Distinct pixel clusters and jagged pixel edges without photorealism, 3D rendering, cinematic depth of field, smooth painterly shading, fog blur, bloom or decorative overload. Rain is light enough that accepted pixel art stays clear. It should look like another beautiful location in the SAME game as reference 1, at its restrained level of detail.",
+  "input_images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/restrained-history-proposal-v06.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/crypt_wight.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/marsh_wisp.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/squire.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/mage.png"
+  ],
+  "generation_source_path": "/Users/alucinor/.codex/generated_images/01a0830b-e6e7-7db1-b460-9b04d9febb21/exec-fb02264f-b79d-43bf-83b3-d40bfa5251ab.png",
+  "workspace_output_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/reference-scenes/04-sunken-crypt-rain.png",
+  "source_content": [
+    {
+      "path": "data/quests.json",
+      "ids": [
+        "sunken_seal"
+      ],
+      "facts": "Main quest The Sunken Seal follows kings_writ. Thane Bruni reports that the old crypt in Sylvas' swamp cracked open and wights walk. Defeat three crypt_wight enemies so the seal can be re-cut."
+    },
+    {
+      "path": "data/monsters.json",
+      "ids": [
+        "crypt_wight",
+        "marsh_wisp"
+      ],
+      "facts": "Existing enemy definitions; appearance interpreted from existing sprite sheets."
+    },
+    {
+      "path": "data/classes.json",
+      "ids": [
+        "squire",
+        "mage"
+      ],
+      "facts": "Original playable class identities, with matching legacy sprite silhouettes."
+    },
+    {
+      "path": "data/world.json",
+      "ids": [
+        "sunken_crypt"
+      ],
+      "facts": "Sunken Crypt region in Sylvas; crypt wights and marsh wisps spawn in and near it."
+    },
+    {
+      "path": "tools/gen_world.py",
+      "facts": "The original crypt is a walled structure in Sylvas swamp, with a wight chamber and north gate."
+    }
+  ],
+  "inspected_legacy_assets": [
+    "assets/units/crypt_wight.png",
+    "assets/units/marsh_wisp.png",
+    "assets/units/squire.png",
+    "assets/units/mage.png",
+    "assets/tiles.png"
+  ],
+  "proposed_interpretations": [
+    "Raised stone causeway, crypt facade and circular cracked seal design are new scene staging, not a literal reconstruction of the current tile map.",
+    "Rainy blue dusk, exposed stone marker, swamp ruins, rail repairs and water level are reference-design proposals.",
+    "The adventurers represent original class silhouettes rather than named fixed protagonists.",
+    "One visible entrance wight suggests the quest threat; the scene is not an assertion that the encounter contains only one wight."
+  ],
+  "visual_qa": {
+    "reviewed": true,
+    "observations": [
+      "Full landscape scene with no side panels, HUD or text.",
+      "Blue armored Squire, plum Mage, green-faced armored Wight and turquoise pointed wisps recall original assets.",
+      "Route and threat remain readable through the rain. Large water regions separate the foreground travelers from the crypt.",
+      "Wet surfaces and several masonry/rail generations support the time/weather/maintenance direction."
+    ],
+    "limitations": [
+      "Generated output adds lit candles beside the crypt and a fixed lantern beyond the brief's carried lantern; practical candle protection in rain is unresolved.",
+      "Moss, chips and vegetation on masonry are denser than requested, though open water provides substantial rest; later production pass can further simplify edges.",
+      "The Squire's head resembles the calibration male, but class silhouette and Mage remain distinct.",
+      "Illustration does not establish exact sprite grid, navigation, enemy behavior, animation, weather transitions or engine integration."
+    ]
+  },
+  "production_asset_validation": {
+    "native_grid": "not evaluated",
+    "animation": "not performed",
+    "in_engine": "not performed"
+  },
+  "sha256": "fc23605431251402e5a4cf2232f5de5bb39e482d92b340f30c1d839c7aaec4c3",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "date": "2026-09-08",
+  "style_reference": "../restrained-history-proposal-v06.png",
+  "style_sha256": "7017ee5aa6f5a87a23e3d1ccf711a990d7be7be21560374de8571c26d24030ef",
+  "authorization": "User endorsed v06 and requested around five more reference scenes drawing on original OpenFantasy content/assets.",
+  "deliverable": "Five concept/reference scene illustrations; not a runnable scene pack or animation set.",
+  "generation_tool": "built-in image_gen.imagegen",
+  "source_files": [
+    {
+      "path": "data/classes.json",
+      "sha256": "27c5956e9b269acdc36ecba339522c426380ea2f35bc33fead49ae778add6234"
+    },
+    {
+      "path": "data/items.json",
+      "sha256": "ac0944b98fbfc10474ae1d1309bd7ad6b74c511fb2da9c314ab41f6c8a655609"
+    },
+    {
+      "path": "data/monsters.json",
+      "sha256": "8a3599545e5ea3e1a8ecfdf396b4bd107d2f2f3c696fcaaa2ed76d9dab511493"
+    },
+    {
+      "path": "data/npcs.json",
+      "sha256": "a75e0f3e565e21cd751dc3697f948b773439935478053c29d5467e868d439746"
+    },
+    {
+      "path": "data/quests.json",
+      "sha256": "3ce9eabab223fc66131a9e048a43e47c8c745d2fe6e33542e762291a74148045"
+    },
+    {
+      "path": "data/world.json",
+      "sha256": "9f46be269ea80ddeef908d9a8305b70bf26a8ca11a544bed32c640fbfee7668d"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "01",
+      "name": "Wren's Saplings",
+      "image": "01-wrens-saplings-autumn.png",
+      "metadata": "01-wrens-saplings-autumn.json",
+      "content": {
+        "npcs": [
+          "farmer_wren"
+        ],
+        "quests": [
+          "wren_orchard"
+        ],
+        "items": [
+          "wood"
+        ]
+      },
+      "world_regions": [
+        "farm_verdance_small"
+      ],
+      "condition": "Late autumn wind",
+      "interpretation": "A repair in progress illustrates the existing request for six wood to protect saplings; architecture, season and action staging are reference-art proposals.",
+      "status": "delivered",
+      "qa_status": "artist_and_parent_visual_review_complete",
+      "sha256": "4509e52cc86a5915d4651cb0d82b1e5c7ca74b3707b76aac5404c56369034c6c"
+    },
+    {
+      "id": "02",
+      "name": "Gearford's Grand Forge",
+      "image": "02-gearford-winter-forge.png",
+      "metadata": "02-gearford-winter-forge.json",
+      "content": {
+        "npcs": [
+          "thane_bruni"
+        ],
+        "quests": [
+          "kings_writ"
+        ],
+        "items": [
+          "dwarven_tank"
+        ]
+      },
+      "world_regions": [
+        "gearford"
+      ],
+      "condition": "Snow and overcast daylight",
+      "interpretation": "The existing town, forge, thane, royal courier quest and vehicle inspire a working courtyard; exact placement and upkeep scene are proposed.",
+      "status": "delivered",
+      "qa_status": "artist_and_parent_visual_review_complete",
+      "sha256": "466fc91c6668c56616b137c09111fd7e1bb9e25673985c8462d1d4a823927331"
+    },
+    {
+      "id": "03",
+      "name": "Willowick Oasis",
+      "image": "03-willowick-oasis-wind.png",
+      "metadata": "03-willowick-oasis-wind.json",
+      "content": {
+        "npcs": [
+          "matriarch_poppy",
+          "bartender_juno"
+        ],
+        "quests": [
+          "scorpion_season"
+        ]
+      },
+      "world_regions": [
+        "willowick"
+      ],
+      "condition": "Desert sunlight and wind",
+      "interpretation": "Existing gnomish oasis setting and named residents; exact courtyard, shade repairs and visible daily activity are proposed.",
+      "status": "delivered",
+      "qa_status": "artist_and_parent_visual_review_complete",
+      "sha256": "ef735ee87f51fe7404fb653a6458d20e8251002c88d03dd2fc7163e46a4f81d7"
+    },
+    {
+      "id": "04",
+      "name": "The Sunken Seal",
+      "image": "04-sunken-crypt-rain.png",
+      "metadata": "04-sunken-crypt-rain.json",
+      "content": {
+        "quests": [
+          "sunken_seal"
+        ],
+        "monsters": [
+          "crypt_wight",
+          "marsh_wisp"
+        ],
+        "classes": [
+          "squire",
+          "mage"
+        ]
+      },
+      "world_regions": [
+        "sunken_crypt"
+      ],
+      "condition": "Rain at blue dusk/night",
+      "interpretation": "Existing swamp crypt and wight quest; weather, approach layout and encounter staging are proposed.",
+      "status": "delivered",
+      "qa_status": "artist_and_parent_visual_review_complete",
+      "sha256": "fc23605431251402e5a4cf2232f5de5bb39e482d92b340f30c1d839c7aaec4c3"
+    },
+    {
+      "id": "05",
+      "name": "Brasswing — The Storm Breaks",
+      "image": "05-brasswing-stormbreak.png",
+      "metadata": "05-brasswing-stormbreak.json",
+      "content": {
+        "items": [
+          "airship_brasswing"
+        ],
+        "quests": [
+          "warden_of_storms",
+          "spire_key"
+        ]
+      },
+      "world_regions": [
+        "storm_spire",
+        "spire_top"
+      ],
+      "condition": "A storm clearing toward sunset",
+      "interpretation": "The existing main quest awards Brasswing after the Storm Warden and describes the storm breaking. An airship landing/staging area near the tower is proposed, not an existing map claim.",
+      "status": "delivered",
+      "qa_status": "artist_and_parent_visual_review_complete",
+      "sha256": "7a05569ab55bc0cc16cb1ea7fd54ee7c427e51202b2b148311d3dac7c8e96bc1"
+    }
+  ],
+  "status": "five_scenes_delivered_and_visually_reviewed",
+  "owner_review": {
+    "date": "2026-09-08",
+    "result": "All example art good; conspicuous repeated sprites need refinement",
+    "scope": "Reference direction endorsed; no claim that native sprites or animation passed"
+  }
+}

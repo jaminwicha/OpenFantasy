@@ -1,0 +1,60 @@
+using OpenFantasy.Sim;
+using OpenFantasy.Sim.SiteGen;
+
+const string dataDir = "/Users/alucinor/Workspace/Projects/OpenFantasy/data";
+const ulong seed = 12345;
+World Fresh() => new World(GameData.LoadFromDirectory(dataDir), seed);
+void Check(bool value, string text) { if (!value) throw new Exception(text); }
+var world = Fresh();
+var player = world.AddPlayer("Review", "squire");
+var before = world.StateHash();
+player.OpenedChests.Add("review:changed-chest-ownership");
+Console.WriteLine($"Chest ownership change invisible to StateHash: {before == world.StateHash()}");
+before = world.StateHash();
+player.RespawnAtTick += 123;
+Console.WriteLine($"Respawn schedule change invisible to StateHash: {before == world.StateHash()}");
+
+string site = SiteRegistry.Sites.Keys.First(id => id != "sewer_brasshollow" && world.Data.Map.Region(id) != null);
+void Enter(World w, Entity p) {
+    var region = w.Data.Map.Region(site)!;
+    p.X = (region.X + region.W / 2) * SimConstants.UnitsPerTile + 16;
+    p.Y = (region.Y + region.H / 2) * SimConstants.UnitsPerTile + 16;
+    w.SiteInteract(p);
+    Check(p.MapId != 0, "Failed to enter test site");
+}
+Enter(world, player);
+var instance = world.GetInstance(player.MapId)!;
+var original = instance.Layout.Tile(0, 0);
+before = world.StateHash();
+var replacement = original == SiteTile.Floor ? SiteTile.Wall : SiteTile.Floor;
+instance.Layout.Set(0, 0, replacement);
+Console.WriteLine($"Dungeon tile change invisible to StateHash: {before == world.StateHash()}");
+var saved = world.SnapshotSave(player);
+var reloaded = Fresh();
+var restored = reloaded.AddPlayer("Review", "squire", saved);
+Enter(reloaded, restored);
+Console.WriteLine($"Dungeon edit lost after character-save restart with same seed: {reloaded.GetInstance(restored.MapId)!.Layout.Tile(0, 0) == original}");
+
+var frontierWorld = Fresh();
+var frontierPlayer = frontierWorld.AddPlayer("FrontierReview", "squire");
+Settlement? settlement = null;
+for (int y = -20; y <= 20 && settlement == null; y++)
+    for (int x = -20; x <= 20 && settlement == null; x++)
+        settlement = frontierWorld.FrontierSettlements.InCell(x, y);
+Check(settlement != null, "No settlement found");
+frontierPlayer.X = settlement!.CX * SimConstants.UnitsPerTile + 16;
+frontierPlayer.Y = settlement.CY * SimConstants.UnitsPerTile + 16;
+for (int i = 0; i < 20; i++) frontierWorld.Step();
+var npc = frontierWorld.EntitiesInOrder().First(e => e.IsNpc && (e.NpcDefId.StartsWith("gen:inn:") || e.NpcDefId.StartsWith("gen:elder:")));
+var def = frontierWorld.Data.Npcs[npc.NpcDefId];
+frontierWorld.RefreshContract(def);
+frontierPlayer.X = npc.X;
+frontierPlayer.Y = npc.Y;
+var questId = def.Quests.First(q => q.StartsWith("contract:"));
+var acceptance = frontierWorld.AcceptQuest(frontierPlayer, npc.Id, questId);
+Check(frontierPlayer.QuestLog.ContainsKey(questId), acceptance);
+var questSave = frontierWorld.SnapshotSave(frontierPlayer);
+var freshWorld = Fresh();
+var questRestored = freshWorld.AddPlayer("FrontierReview", "squire", questSave);
+Console.WriteLine($"Accepted generated bounty lost on restart: {!questRestored.QuestLog.ContainsKey(questId)}");
+Console.WriteLine("All probes completed against unmodified simulation source; this project has no Godot reference.");

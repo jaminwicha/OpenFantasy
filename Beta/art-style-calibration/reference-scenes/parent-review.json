@@ -1,0 +1,41 @@
+{
+  "reviewer_role": "parent visual review",
+  "scope": "Reference illustrations; not production asset validation",
+  "reviews": [
+    {
+      "id": "01",
+      "image": "01-wrens-saplings-autumn.png",
+      "reviewed": true,
+      "assessment": "Wren retains brown skin, blue hair, red work clothes and feather; the Scout, saplings and contrasting new plank make the source quest readable. The route remains clear. Perimeter foliage is denser and figures larger than the brief, and the bandana is not distinct; these are retained as comparison notes rather than established production standards.",
+      "needs_regeneration": false
+    },
+    {
+      "id": "02",
+      "image": "02-gearford-winter-forge.png",
+      "reviewed": true,
+      "assessment": "Broad snow and paving provide readable space around the courier and red-bearded Bruni. The warm forge and sheltered gray/brass tank retain source identities and give maintenance a concrete presence. Snow reads as established winter; figures and tank are larger than the requested gameplay scale. Proposed banners and architecture remain reference choices.",
+      "needs_regeneration": false
+    },
+    {
+      "id": "03",
+      "image": "03-willowick-oasis-wind.png",
+      "reviewed": true,
+      "assessment": "Distinct warm oasis palette and a legible open courtyard; Poppy identity and selected repairs carry the source. Dense palms and water remain localized. The bartender is an interpretation of the role rather than a precise Juno appearance recreation.",
+      "needs_regeneration": false
+    },
+    {
+      "id": "04",
+      "image": "04-sunken-crypt-rain.png",
+      "reviewed": true,
+      "assessment": "Cool rain, warm lights and turquoise wisps create a coherent crypt mood. The raised causeway clearly leads the blue Squire and purple Mage toward the green-faced armored wight. Stone wear and moss are localized around architecture. Exposed lit candles in rain need weather-coherent treatment in any production translation.",
+      "needs_regeneration": false
+    },
+    {
+      "id": "05",
+      "image": "05-brasswing-stormbreak.png",
+      "reviewed": true,
+      "assessment": "Strong airship focal point, clear boarding route, retained red balloon and wood gondola, coherent warm/cool clearing-storm light. Tower/heraldry and mooring are proposed staging; the sky/rays are more illustrative than the baseline flat game view.",
+      "needs_regeneration": false
+    }
+  ]
+}

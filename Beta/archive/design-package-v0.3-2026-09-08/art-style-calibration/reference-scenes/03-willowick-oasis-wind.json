@@ -1,0 +1,90 @@
+{
+  "id": "03",
+  "title": "Willowick oasis in desert wind",
+  "status": "reference_scene_proposal_in_endorsed_v06_direction",
+  "tool": "image_gen.imagegen",
+  "mode": "built-in; new scene using local style and legacy asset references",
+  "use_case": "stylized-concept/style-transfer",
+  "exact_prompt": "Use case: stylized-concept / style-transfer.\nCreate ONE original OpenFantasy game reference scene as a complete landscape illustration, about 1536x1024. Extend the accepted pixel-art visual language in image 1 into a DIFFERENT place. Image 1 is STYLE ONLY: use its LEFT environment's elevated three-quarter game camera, rich but readable handcrafted 16-bit-plus pixel clusters, clear chunky edges and attractive ramped shading. Do not recreate its mill, river, people or turtle. Ignore its right-side asset panel entirely. Image 2 is the original tiny gnome proportion/ears reference; image 3 is Matriarch Poppy's original short hairstyle silhouette; image 4 original dune scorpion silhouette. Reinterpret original game identities at the new visual quality.\nScene: Willowick, a gnomish oasis town in the golden desert region Miradel, clear strong desert sunlight during a gust of wind. A single intimate, spatially coherent playable courtyard between low warm sandstone/adobe homes and a tavern with a cool, shaded cellar stair. A modest turquoise oasis pool at the edge, a few desert palms, open sandy walking space and shade cloth pulled taut then rippling by the gust. Matriarch Poppy, a small adult gnome woman with violet hair in short buns, magenta clothes with simple gold trim and pointed ears, stands at useful gameplay scale near a traveler on the open courtyard route. A modest human bartender in practical clothes carries one tray toward the shaded cellar. Make three small readable people in total, with Poppy visually recognizable, not large portraits or calibration-sheet clones.\nStory detail and age: the cared-for old cloth shade has one neatly stitched contrasting patch and one newer support brace. A caravan wheel leaning near the tavern has a modest fresh repair, tying this place to the original Scorpion Season quest. Keep one tiny dune scorpion well away from people at the sandy perimeter if it fits naturally. These are ordinary useful things, not a junk pile. A few intact old ceramics, water jars and cool-cellar storage, no rows of repetitive props. The cistern is old but maintained. Centuries of use suggested by a softened stone threshold and one small section of newer masonry; NOT cracks on every brick.\nAtmosphere: warmth, clever gnomish hospitality, wind, deep shade and inviting water. Sunlit amber, warm stone and calm sand areas contrasted with restrained cool teal shade and Poppy's violet/magenta accent. Localized sparkling water highlights only. Keep the broad courtyard and walls visually QUIET and clean; concentrate small craftsmanship details around the shade repair, doorway and Poppy. At least half the visual area is calm readable surfaces and large material shapes.\nConstraints: ONE seamless game environment filling the full canvas, no panels, borders, collage, lettering, labels, signs with text, HUD, title or watermark. Controlled crisp pixel-art shading and angular pixel edges, no photorealism, painterly smears, depth of field, bloom, noisy granular texture, excessive ornament, moss, glitter or enchanted items everywhere. Do not turn the scene into a 3D render. Elevated readable camera with visible ground routes and small game characters. Match the accepted reference's restrained craftsmanship, with FEWER micro-details rather than more.",
+  "input_images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/restrained-history-proposal-v06.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/layers/race_03.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/layers/hair_07.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/dune_scorpion.png"
+  ],
+  "generation_source_path": "/Users/alucinor/.codex/generated_images/01a0830b-e6e7-7db1-b460-9b04d9febb21/exec-5524d7b4-aea1-448d-b028-8da7316694b6.png",
+  "workspace_output_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/reference-scenes/03-willowick-oasis-wind.png",
+  "source_content": [
+    {
+      "path": "data/npcs.json",
+      "ids": [
+        "matriarch_poppy",
+        "bartender_juno"
+      ],
+      "facts": "Poppy is a gnome with violet hair, magenta/gold outfit. Her welcome mentions scorpions, tower and wind. Juno offers shade, fizz-wine and Miradel's only cold cellar."
+    },
+    {
+      "path": "data/quests.json",
+      "ids": [
+        "scorpion_season",
+        "juno_jackals"
+      ],
+      "facts": "Poppy reports caravan wheels or drivers lost to scorpions. Juno reports jackals damaging the cistern line."
+    },
+    {
+      "path": "data/world.json",
+      "ids": [
+        "willowick",
+        "tavern_willowick",
+        "port_willowick"
+      ],
+      "facts": "Miradel settlement and port geography."
+    },
+    {
+      "path": "tools/gen_world.py",
+      "facts": "Miradel desert geography and Willowick roads."
+    },
+    {
+      "path": "tools/gen_npcs.py",
+      "facts": "Named NPC source appearance records."
+    }
+  ],
+  "inspected_legacy_assets": [
+    "assets/layers/race_03.png",
+    "assets/layers/hair_07.png",
+    "assets/layers/outfit_04_a.png",
+    "assets/layers/outfit_04_b.png",
+    "assets/units/npc_elder.png",
+    "assets/units/dune_scorpion.png",
+    "assets/tiles.png"
+  ],
+  "proposed_interpretations": [
+    "Courtyard layout, adobe/sandstone buildings, palms, pool, cistern outlet and tavern stair are scene-design proposals, not a reconstruction of the current tile map.",
+    "Shade-cloth patch, wheel repair, daily-life staging and this weather/light condition illustrate prospective history and upkeep gameplay.",
+    "Bartender is a generic human daily-life interpretation consistent with Juno's role, not a verified recreation of Juno's complete modular appearance."
+  ],
+  "visual_qa": {
+    "reviewed": true,
+    "observations": [
+      "Full landscape single scene with no side panels or text.",
+      "Poppy is recognizably violet-haired and magenta/gold with short gnomish proportions.",
+      "Open pale courtyard gives a readable route; cloth patch and repaired wheel communicate care and use.",
+      "Wind appears in loose shade cloth and streamers, with a distinct warm desert palette."
+    ],
+    "limitations": [
+      "The traveler resembles the calibration male; named Poppy and the environment remain distinct.",
+      "Palm fronds, water and masonry retain fairly dense texture; lower-contrast ground provides visual rest.",
+      "Illustration does not establish exact sprite grid, walkability, animation, weather transitions or engine integration."
+    ]
+  },
+  "production_asset_validation": {
+    "native_grid": "not evaluated",
+    "animation": "not performed",
+    "in_engine": "not performed"
+  },
+  "sha256": "ef735ee87f51fe7404fb653a6458d20e8251002c88d03dd2fc7163e46a4f81d7",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  }
+}

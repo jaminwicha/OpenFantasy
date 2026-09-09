@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "scene_id": "02-gearford-winter-forge",
+  "title": "Gearford's Grand Forge — winter courier",
+  "created_at": "2026-09-08",
+  "status": "reference_scene_using_user_endorsed_v06_direction_not_runtime_ready",
+  "tool": "built-in image_gen.imagegen",
+  "generation_mode": "new_full_scene_with_local_style_and_asset_references",
+  "prompt": "Use case: stylized-concept. Asset type: one full-scene game-art reference illustration for Beta OpenFantasy.\nREFERENCE ROLES: Image 1 is the user-endorsed restrained-history v06 VISUAL STYLE: refined deliberate pixel clusters, compact expressive RPG people, crafted materials, elevated three-quarter game view, judicious details and calm areas. Do NOT copy its composition, waterwheel, turtle, people or contact-sheet/sidebar. Image 2 is original OpenFantasy tiles, particularly dark iron furnace with orange fire mouth and adjacent anvil, stone town paving, snow, walls and timber. Image 3 is the actual original Dwarven Tank sprite: use its compact gray-metal armored hull, broad dark treads and small ochre/brass turret/barrel silhouette as source identity, reinterpreted richly at Image 1 quality. Image 4 is the original appearance preset gallery; use the red-bearded dwarf body/hair silhouette near the right as a guide for Thane Bruni, but CURRENT SOURCE DATA overrides clothing color: his plate armor is dark charcoal/iron with warm brass-gold trim, not red armor. Image 5 is the original blue Squire sprite: appearance cue for the unnamed courier. Raw sprites are source references, not images to paste or reproduce as a sprite sheet.\nSCENE: Gearford's Grand Forge in mountainous Kharzum, first snow of winter, overcast cool daylight. One complete full-scene landscape approximately 1536×1024; elevated three-quarter orthographic gameplay camera, no horizon, no panels. A broad readable stone courtyard lies between an old substantial dwarven forge building at the upper-right and a low stone/timber maintenance shelter toward the left. The forge has an open arched workfront and chimney, orange-white heat deep inside a dark iron furnace mouth, and a stout anvil in front. A modest workbench holds a few iron bars and a partly forged iron pickaxe, connecting to the original forge recipes. Only a few purposeful tools, ore bins and stacked wood.\nFOCAL STORY: Thane Bruni, a stout dwarf with clear ruddy red hair and a full red beard, warm light-brown skin and dark iron/charcoal plate with brass-gold trim, stands on a worn courtyard threshold receiving a small sealed rolled royal writ from a human courier in source-inspired blue Squire clothing/armor with a brown belt and travel bag. He should be compact, expressive and recognizably dwarven, without a huge beard or portrait-scale face. This evokes the existing quest The King's Writ, where the courier reaches him across the north sea. Show the sealed paper visually with no written text. Make these two people small but readable at gameplay scale, roughly 90-110 display pixels tall.\nSECOND FOCAL AREA: a compact maintained Dwarven Tank sits in the adjacent shelter or courtyard, about three to four human widths across. It is clearly the original gray-and-brass tracked fantasy vehicle enlarged in detail: chunky dark articulated tracks, a squat riveted iron hull, modest turret and short barrel, warm brass joints, a few worked metal plates. NOT a modern realistic battle tank, giant cannon, military camouflage or sci-fi machine. One unnamed dwarven craftsperson in a practical muted rust-brown work apron checks a wheel/tread fitting with a hand tool; a second unnamed craftsperson tends the anvil farther back. These unnamed background workers are not Smelter Vora, whose source identity is different. Keep only these four people and no crowd.\nHISTORY AND MAINTENANCE: the original Brute Iron quest promises Gearford's old war tank after defeating hill brutes and explicitly says it was kept oiled. Show its age through one replaced lighter panel, rubbed handles, dark oiled track joints and slight localized patina, while it is obviously sound and cared for. The forge rests on older heavier stone courses with later masonry repairs; threshold is foot-worn, hammer handles polished, one roof section re-tiled. This is an active prosperous workshop, not rubble, scrap heaps or pervasive grime.\nWINTER ATMOSPHERE: a light first-snow dusting rests on cold roof edges, stone caps, fir branches and quiet courtyard corners; main routes have been cleared or melted near the forge, leaving a few readable tracks. Cool pale slate-blue ambient light contrasts with a contained warm orange forge pool; the scene is daytime, not night. A little defined chimney smoke and just a few fine snow flecks suggest weather, with no haze hiding the pixel work. Snow and quiet paving create visual rest. Edge firs and mountain-cut stone help identify Kharzum without a distant cinematic panorama. Magic is suggested by the fantastical craft and warm world, not floating glitter.\nSTYLE: same coherent 16-bit+ pixel-art language as Image 1, crisp stepped edges, controlled ramps, selective outlines, readable material planes, warm/cool harmony. Beautiful small craftsmanship chosen at meaningful touch points. Eye hierarchy: meeting at the forge, cared-for tank, courtyard route, then modest craft details. People and routes stay clear; do not texture or ornament every surface.\nAVOID: contact sheet, inset panels, collage, labels, titles, written quest names, HUD, watermark, excessive snow particles, bloom, blur, depth of field, photoreal painting, vector outlines, 3D rendering, giant characters or modern military imagery. Output one full-scene landscape PNG, no border.",
+  "input_image_paths": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/restrained-history-proposal-v06.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/tiles.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/veh_tank.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/docs/screenshots/preset-gallery.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/squire.png"
+  ],
+  "generation_source_path": "/Users/alucinor/.codex/generated_images/01a082ca-a186-7241-bfe7-e09cd5261e3b/exec-ae128ccc-6e5a-45f3-960c-e34e9ff12196.png",
+  "workspace_output_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/reference-scenes/02-gearford-winter-forge.png",
+  "sha256": "466fc91c6668c56616b137c09111fd7e1bb9e25673985c8462d1d4a823927331",
+  "width": 1536,
+  "height": 1024,
+  "content_ids": [
+    "gearford",
+    "thane_bruni",
+    "kings_writ",
+    "brute_iron",
+    "dwarven_tank",
+    "iron_ore",
+    "iron_bar",
+    "iron_pickaxe",
+    "smelt_iron_bar",
+    "forge_iron_pickaxe",
+    "squire"
+  ],
+  "source_paths": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/npcs.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/quests.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/world.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/world_meta.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/appearance.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/items.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/data/recipes.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/tools/gen_layers.py",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/tools/gen_assets.py",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/docs/MILESTONE_4.md"
+  ],
+  "established_source_facts": [
+    "Gearford is the dwarven town in mountainous/tundra Kharzum. Grand Forge wording exists in the current Gearford shop dialogue.",
+    "Thane Bruni appearance: race2 dwarf, skin2, hairStyle2 and hairColor5 (red), outfit5 (plate armor), outfitA15 (charcoal/iron), outfitB7 (warm gold/brass), accessory0.",
+    "The King's Writ (kings_writ) sends a courier across the north sea from King Aldric to Thane Bruni.",
+    "Brute Iron (brute_iron) requires defeating four hill brutes and rewards dwarven_tank; its offer explicitly says Gearford's old war tank was kept oiled.",
+    "Original veh_tank sprite supplies a gray metal body, dark tracks and ochre/brass turret/barrel cue.",
+    "The original forge tile shows a dark iron furnace with orange mouth and adjacent anvil. Current recipes include iron-bar smelting and iron-pickaxe forging at the Forge station."
+  ],
+  "proposed_interpretation": [
+    "First snow, overcast daylight, the courtyard layout, forge architecture and tank maintenance shelter are proposed staging.",
+    "The courier, two background dwarven craftspeople and visible exchange/repair/forging actions are illustrative role staging, not newly established named NPCs.",
+    "Tank scale, rivet and track engineering, flags, heraldic tool motifs, braziers, architecture repairs and metal finish details extend original source cues and are not exact existing assets.",
+    "The tank is staged for maintenance while The King's Writ meeting occurs; this does not assert that its Brute Iron reward has already been earned."
+  ],
+  "visual_assessment": "The full scene uses the same elevated crafted pixel-illustration family with a broad readable courtyard, warm forge and cool snow. Bruni is clearly red-bearded in dark plate with gold trim, the courier wears blue, and the gray/brass tank is maintained by a craftsperson. Four figures and two focal actions stay distinguishable. Quiet paving improves hierarchy relative to the autumn scene's dense perimeter.",
+  "observed_limitations": [
+    "Snow accumulation is visibly heavier than a very light first dusting; it reads as established early winter.",
+    "Figures and tank are larger than the intended small gameplay-scale targets, and the tank is a substantial interpretation of the tiny original sprite.",
+    "Furnace glow, smoke and snow surfaces have some smooth shading; this is not a verified uniform native pixel grid.",
+    "The illustrative tool motifs and several scene details are proposed additions rather than canonical flags or structures.",
+    "Metalworking is suggested by bars, tools and anvil activity; the exact iron-pickaxe recipe and simulation process are not demonstrated.",
+    "This is a reference illustration, not an existing game screenshot, map extraction, animation set or proof of dynamic seasons/maintenance."
+  ],
+  "inspection": {
+    "method": "Viewed generated output and local copy; read-only Pillow dimensions and SHA-256. No pixel editing, cropping or resampling performed.",
+    "native_grid_claim": false,
+    "animation_verified": false,
+    "runtime_integration": false
+  }
+}

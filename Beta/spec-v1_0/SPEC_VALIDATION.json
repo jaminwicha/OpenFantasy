@@ -1,0 +1,79 @@
+{
+  "date": "2026-09-08",
+  "version": "1.0-specification-baseline",
+  "scope": "Mechanical document traceability, preservation and instruction integrity; no Beta runtime certification",
+  "checks": {
+    "unique_requirements": 150,
+    "source_register_hashes": 7,
+    "source_records_preserved_exactly": 162,
+    "coverage_rows_exact_text_and_hash": 150,
+    "ordered_production_phases": 15,
+    "selected_decisions": 45,
+    "qualification_gates": 7,
+    "research_requirement_hashes": 150,
+    "research_topic_groups": 25,
+    "expanded_research_dossiers": 7,
+    "expanded_research_word_count": 19158,
+    "expanded_cases_defined_not_run": 53,
+    "archived_files_hash_and_size_verified": 60,
+    "original_source_files_unchanged_and_zip_preserved": 201,
+    "ecosystem_target_hashes_match": 90,
+    "json_files_parsed": 53,
+    "local_markdown_targets_checked": 291,
+    "distinct_external_links_in_checked_documents": 174,
+    "local_anchor_issues": []
+  },
+  "document_sha256": {
+    "README.md": "035cfd825dfd4f69b4540cc6b12460b7c708529214dce5ae9ea5305cf3fe32b7",
+    "archive/README.md": "cc26dac4f685897b9e77959dd3297e036d9aac555b953951cf6f6ca4b48a2e46",
+    "ecosystem-update-record-2026-09-08.md": "3d08b66227dfaddcb2d6513feb95e65657894b66cfbbc13042c3ca5e6a4040a3",
+    "research-v0_7/README.md": "37cb42687d1be624b755acd7b7b9f471c1ab1b6863197f011cc2bbae51e14575",
+    "research-v0_7/camp-and-rest.md": "6cd185d462241a10de81720f412c2c1d89bfb0b769e54d5374c87ea2a9ac81f7",
+    "research-v0_7/classic-architecture.md": "44389ec3aca7709461fd2c84f70f9b00ea177e6e3f242105203196b58dd826f9",
+    "research-v0_7/frontier-streaming.md": "51a8cf6df4db81d34758c323034a0190bfc8c8b7457290c1f8f730c7216fa3a5",
+    "research-v0_7/modern-jrpg-production.md": "766e71a0e2984756b4b58c3bf722cc94b61f2c568317fd092a7880758329e947",
+    "research-v0_7/systemic-worlds.md": "3efaa8df26595dbc0cdfee7101be91caf8333a46b9dae498c37f55ec948ff5c7",
+    "research-v0_8/README.md": "94aaf6804d2bf81b353ffe8337453acba2f463e335c26a5dafa0394356abd0b1",
+    "research-v0_8/RESEARCH_COVERAGE.json": "5ce5ce7804543e89e8bfae6b9ced94254bde9b8c7c135824f146423885314e31",
+    "research-v0_8/csharp-rust-core-reassessment.md": "046240f8370ad83830975d3c2b4195855af39bf6df38263f9e8e95e13379d00b",
+    "research-v0_8/ecosystem-packages-and-production.md": "6f3b609bb30f5565662f9fd4dc1c192249241c4f3eb394122acaeffaa0d78173",
+    "research-v0_8/places-puzzles-and-progression.md": "4d70b923886c9e6fbabbaeca86fc5afb499e1bd03cbb1a79af11648ff3d5d83d",
+    "research-v0_8/presentation-production-and-player-experience.md": "389f8a3e07c829ed5168e851ea59e061345bf8f7f36d3ef1ec3e2b4725c4aa11",
+    "research-v0_8/skills-crafting-magic-and-dreams.md": "8a0b09a1a603395298ff672e38aad575ffea407b6365f60a42de9949fb3537c6",
+    "research-v0_8/society-lifecycles-and-emergent-stories.md": "8155452ba7c1742e4d9e0497ad25e96064ad051146bf820c3cd808b54f020322",
+    "research-v0_8/terrain-runtime-and-worlds.md": "c9ccac09066db28752bf0d5aadf83987cfaa75a552ebd005df34ae6d53be43ff",
+    "spec-v1_0/COVERAGE.json": "c0aa7dde5c3dd979e7f9f460fc03e82a13be4f72faa53195c116cdaa19d1f151",
+    "spec-v1_0/CRITIC_REVIEW.md": "ba22e98fe01d725c84ef460ec651c27ed75ba4e904f5aa42b21952a8fea7ad7b",
+    "spec-v1_0/CROSS_SYSTEM_SYNERGIES.md": "26205d7577429cb866cd8b9456a93d60a16344ae36e7de9fc6f4e28dbf251b42",
+    "spec-v1_0/DECISIONS.md": "0998292cd8417593fbe8ff78d396abf7279e7b3d5e49040239ec5c38640d47aa",
+    "spec-v1_0/GDD.md": "90bbcb852f2583f0618d713cb4acc6ddf19031222b4c29b5d976e1cde3afa114",
+    "spec-v1_0/IMPLEMENTATION_PLAN.md": "3b5943a9329073220cc02aa1ec318097687988a10e76ccd321f6e908ab95cb16",
+    "spec-v1_0/INTEGRATION_CRITIC.md": "1ef0cb6d425cc175958030c39b004526cd3caa5a8a8b6bed118e0a928159617f",
+    "spec-v1_0/PAIN_POINTS_AND_RESOLUTIONS.md": "b7e27388d1ff1ada16a4bc399eeba8ec2446562ea7931172e61d0cac7ea374f1",
+    "spec-v1_0/PRESENTATION_CONTRACTS.md": "acaca28f5e578882cd4e7895a6ce84d9a013f243239b890f0472db598bc4e38d",
+    "spec-v1_0/README.md": "112defd2f0621c45596b1fef0251190c9d5d098b3651c381c56b5f99f3a387a0",
+    "spec-v1_0/REQUIREMENTS.json": "946dd5e5f6f07933d743450ad3b7f7f464298349e258185d889a5c8021d63b36",
+    "spec-v1_0/TECHNICAL_DESIGN.md": "58aa82f9925055c48c58b50a8f89a7207d47af2cf116b283d93211b985eb4315",
+    "spec-v1_0/VALIDATION.md": "4afd678d462e4da3f6386c93654482550bf9194c4fa50dc725526d9435ed5bb2"
+  },
+  "limitations": [
+    "All Beta implementation, import, native art/motion, gameplay, performance, platform, LANG and ECO scenarios remain unrun.",
+    "Original runtime source checks in the earlier review are separate preserved evidence and do not certify Beta.",
+    "External links are syntactically inventoried here; primary research access and excerpt limits are recorded in individual dossiers.",
+    "Research coverage means an issue is addressed with stated evidence and limits, not that proprietary internals or all combinations are known.",
+    "Skill hashes/frontmatter establish instruction integrity, not a measured model-performance improvement.",
+    "Independent critics own their separate final scope/verdicts; this mechanical check does not replace their judgments."
+  ],
+  "independent_review_integrity": {
+    "CRITIC_REVIEW.md": {
+      "current_inspected_hashes_verified": 20,
+      "sha256": "ba22e98fe01d725c84ef460ec651c27ed75ba4e904f5aa42b21952a8fea7ad7b",
+      "scope": "Independent document critique only; ownership exclusions and unrun gates remain explicit."
+    },
+    "INTEGRATION_CRITIC.md": {
+      "current_inspected_hashes_verified": 13,
+      "sha256": "1ef0cb6d425cc175958030c39b004526cd3caa5a8a8b6bed118e0a928159617f",
+      "scope": "Independent document critique only; ownership exclusions and unrun gates remain explicit."
+    }
+  }
+}

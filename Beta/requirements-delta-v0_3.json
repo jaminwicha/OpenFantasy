@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "version": "0.3-addendum",
+  "date": "2026-09-08",
+  "inherits": "persistent_seed_jrpg_requirements_v0_2.json",
+  "status": "Owner direction captured; Godot/C#, retained implementation and Wait-style combat selected; remaining design contracts and implementation evidence pending",
+  "overrides": [
+    {
+      "id": "RQ-002",
+      "requirement": "Evoke FFVI/Chrono Trigger spiritually through expressive data-driven systems, without adopting their hardware, topology, single-player or implementation limits.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-003",
+      "requirement": "Use an original Chrono Trigger-style baseline calibration and target Sea of Stars/Stardew Valley-level finish. All asset categories follow the user-accepted style; generated proposals are not approval.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-069",
+      "requirement": "Provide a full GDD/specification and durable implementation analysis usable interchangeably by Codex or Claude.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-079",
+      "requirement": "Godot/C# and Wait-style on-field command combat are now owner-selected. World geometry, exact timing/encounter boundaries, supported device/OS list, headcount, hardware and remaining technical contracts require explicit decisions and evidence.",
+      "status": "Updated owner direction"
+    }
+  ],
+  "additions": [
+    {
+      "id": "RQ-080",
+      "requirement": "Codex and Claude can each own research, design, difficult kernels, broad implementation, verification and review without mandatory model handoff.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-081",
+      "requirement": "Antigravity defaults to bounded mundane maintenance tasks.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-082",
+      "requirement": "Dedicated artist agents own asset generation and consistency separately from engine builders.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-083",
+      "requirement": "Actual user style acceptance is recorded with approved references, version and scope before bulk production; no acceptance is inferred from silence.",
+      "status": "Owner direction; v06 accepted for five original-content reference scenes; native/animation validation pending"
+    },
+    {
+      "id": "RQ-084",
+      "requirement": "Calibrate people, creatures, objects and environments to the accepted style; separately verify native pixels, animation, tile seams and engine integration.",
+      "status": "Owner direction plus proposed verification criteria"
+    },
+    {
+      "id": "RQ-085",
+      "requirement": "Deepen selected RogueFiction narrative, NPC, sensing, memory and questing concepts within the larger society, daily-life and building simulation. Original OpenFantasy content is governed by mandatory full import, not optional assimilation.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-086",
+      "requirement": "Persist useful shared preferences in the skills source repository and related ecosystem while keeping game-specific references local.",
+      "status": "Owner direction; instruction updates applied"
+    },
+    {
+      "id": "RQ-087",
+      "requirement": "Preserve and port all original OpenFantasy concepts, assets, entities, quests, classes, abilities, monsters, NPCs, narratives, recipes, places and systems, with complete source-to-target accounting and playable incorporation. Staged delivery does not authorize content loss.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-088",
+      "requirement": "Retain deterministic, seeded simulation as the core foundation, carrying forward suitable algorithms and tests and extending durability, versioning and replay to consequential world state.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-089",
+      "requirement": "Decouple the authoritative core from engine types, presentation, network transport and platform-specific storage so it can support later optimization and alternate games, engines and platforms.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-090",
+      "requirement": "Let core data/event authoring spiritually evoke FF6 and Chrono Trigger through original code, formats and content; historical constraints must not limit Beta.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-091",
+      "requirement": "Preserve the favored existing art direction as an option and compare one noticeable rung more detail in a 16-bit+ variation; do not overwrite prior candidates or infer final selection.",
+      "status": "Earlier options preserved; v06 endorsed after detail and restraint comparisons"
+    },
+    {
+      "id": "RQ-092",
+      "requirement": "Avoid premature optimization and unnecessary runtime/language/IPC layers. Keep boundaries justified by concrete ownership, portability or measured needs.",
+      "status": "Owner direction"
+    },
+    {
+      "id": "RQ-093",
+      "requirement": "Represent accumulated history in art through material-specific use, repair, inheritance, adaptation and layered construction across decades, centuries and deeper world time. Magical detail must remain coherent with atmosphere and readable pixel art. Distinguish cosmetic cues from inspectable facts and functional state.",
+      "status": "Owner direction; production representation proposed"
+    },
+    {
+      "id": "RQ-094",
+      "requirement": "Support changing daily light, sun, overcast, overhead clouds, night, weather, wind, storms and regional seasons in art and consequential simulation. Accumulated exposure/use ages material-specific objects; maintenance and repair restore relevant function while preserving meaningful history.",
+      "status": "Owner direction; implementation and visual matrix unverified"
+    },
+    {
+      "id": "RQ-095",
+      "requirement": "Treat changing art, material history, environmental condition, maintenance and repair as integrated gameplay: the simulation changes the world, art communicates its state, and players have meaningful ways to respond. Design, simulation and artist roles share explicit state/feedback/action contracts.",
+      "status": "Owner direction; core gameplay pillar"
+    },
+    {
+      "id": "RQ-096",
+      "requirement": "Reduce conspicuous repeated sprites and props within and across scenes using coherent authored variation while preserving accepted style, identity, readability and restrained detail.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-097",
+      "requirement": "Use Godot with C# for the multiplatform implementation, retaining an engine-independent authoritative core; verify the actual target/export matrix.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-098",
+      "requirement": "Build early proofs as retained increments of the intended implementation with reusable modules, fixtures and tests; do not plan throwaway engines or code.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-099",
+      "requirement": "Use on-field command/timeline combat with cooperative techniques and Wait-style player decisions, without real-time decision pressure; specify shared-world and encounter pause semantics.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-100",
+      "requirement": "Support personality quirks, meaningful idle movements, emotional expression, gestures and rich specific interactions for NPCs, people, creatures, animals and objects through a coherent animation/performance system.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-101",
+      "requirement": "Consider puppetry and authored choreography for events, narration, conversations and encounters; integrate scene direction with authoritative actions, interruption, persistence and multiplayer rather than creating a second state authority.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-102",
+      "requirement": "Support deep persistent story arcs, memories, commitments and evolving multidimensional affinities/relationships among NPCs as well as with the player, integrated with autonomous society, dialogue, action, questing and expressive performance.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-103",
+      "requirement": "Preserve previous GDD editions and companion specifications in versioned archives with an index and integrity records; create new versions for consolidation instead of overwriting or losing older editions.",
+      "status": "Owner direction; initial archives created in this audit pass"
+    }
+  ],
+  "proposal_register": "direction-addendum-v0_3.md",
+  "evidence": "review-evidence/README.md",
+  "art_acceptance": "art-style-calibration/acceptance.json",
+  "acceptance_tests_to_define": [
+    "ART-01: V06 endorsed for source-grounded reference scene exploration; preserve style/reference scope and review material drift. Native production and motion remain unverified.",
+    "ART-02: Artist delivers valid native assets and animation metadata; current result not passed/not performed.",
+    "WORK-01: Either lead resumes from the same project artifacts; live comparative model run not performed.",
+    "PERSIST-01: New runtime proves stable identities, complete hashes, durable mutations and duplicate-safe commands; not implemented.",
+    "MIG-01..08: Complete source/semantic mapping, references, playable incorporation, behavior, durability, art and narrative continuity; see content migration plan. Import unimplemented.",
+    "CORE-01: Pure core compiles and runs without Godot or network/storage adapters; no engine types cross its public API. Beta unimplemented.",
+    "NARR-01: Imported quest interacts with households, work, materials, knowledge and remembered consequences without duplicate state; see narrative design. Unimplemented.",
+    "ENV-01..07: Deterministic weather/exposure, coarse/local continuity, material and shelter behavior, atomic repairs, branch isolation, visual matrix and playable upkeep; see environment design. Unimplemented.",
+    "ART-03: Review coherent asset-family variation within and across scenes at gameplay scale; avoid conspicuous incidental repetition without added clutter.",
+    "ART-04: Native moving people, animal/creature and interactive prop demonstrate personality, emotion, contact alignment, quiet holds and distinct performances.",
+    "SCENE-01: Choreographed dialogue/interaction survives skip, interruption, disconnect, restart and two-client participation without repeated effects or lost ownership.",
+    "CLOCK-01: Wait-style combat holds authoritative encounter progression during player decisions under an explicit shared-world clock and interaction policy.",
+    "NARR-02: Persistent multi-stage arc and asymmetric NPC-to-NPC/player ties survive absence, restart, relocation and branch changes; autonomous interactions have traceable consequences and truthful expressive scenes."
+  ],
+  "content_migration": "content-migration/README.md",
+  "narrative_design": "narrative-simulation-design.md",
+  "runtime_language_proposal": "runtime-language-decision.md",
+  "environment_design": "environment-aging-and-maintenance.md",
+  "expressive_animation_design": "expressive-animation-and-choreography.md",
+  "readiness_audit": "implementation-readiness-audit-2026-09-08.md"
+}

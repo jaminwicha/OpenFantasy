@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-09-08",
+  "method": "Read-only RGBA inspection using Pillow; each aligned 4x4 block must be constant for a proposed 4x integer upscale. This measures only that hypothesis; it does not grade artistic quality or prove all other possible grids. No image editing or resampling performed.",
+  "images": [
+    {
+      "file": "modern-detail-proposal-v01.png",
+      "width": 1536,
+      "height": 1024,
+      "unique_rgba_values": 1108190,
+      "uniform_aligned_4x4_blocks": 0,
+      "total_aligned_4x4_blocks": 98304,
+      "percent_uniform_aligned_4x4_blocks": 0.0,
+      "is_exact_4x_nearest_neighbor_upscale": false,
+      "sha256": "1123781e70da876856955ff6acadbd5a91b8483a0ec6298555478bd31ebe259d"
+    },
+    {
+      "file": "strict-cluster-proposal-v02.png",
+      "width": 1536,
+      "height": 1024,
+      "unique_rgba_values": 476700,
+      "uniform_aligned_4x4_blocks": 8,
+      "total_aligned_4x4_blocks": 98304,
+      "percent_uniform_aligned_4x4_blocks": 0.008,
+      "is_exact_4x_nearest_neighbor_upscale": false,
+      "sha256": "03159437c476c0221f13edf4b989899aa91b3fbe2b2e5eeb359a66caf307caf9"
+    },
+    {
+      "file": "sixteen-bit-plus-proposal-v03.png",
+      "width": 1536,
+      "height": 1024,
+      "unique_rgba_values": 548455,
+      "uniform_aligned_4x4_blocks": 8,
+      "total_aligned_4x4_blocks": 98304,
+      "percent_uniform_aligned_4x4_blocks": 0.008,
+      "is_exact_4x_nearest_neighbor_upscale": false,
+      "sha256": "fa88c78beda45756c0436d6a548eb93d4c2b1dbb6318b3acaa81a1f5b5649aab",
+      "grid_check_scope": "Diagnostic comparison only; v03 is a 16-bit-plus visual concept and does not claim an exact 4x native grid.",
+      "perceptual_review": "Preserves the scene layout, two people, reed-shell turtle, prop categories, palette, camera and mood. More deliberate foliage clusters, articulated shell scutes, rippled water and clearer stone/wood surfaces create a noticeable material-detail step while retaining readability. Several details and silhouettes are redrawn rather than pixel-identical. Direction studies are not a verified animation set; native-grid production fidelity remains unproven."
+    },
+    {
+      "file": "magical-detail-proposal-v04.png",
+      "width": 1536,
+      "height": 1024,
+      "unique_rgba_values": 701406,
+      "uniform_aligned_4x4_blocks": 1,
+      "total_aligned_4x4_blocks": 98304,
+      "percent_uniform_aligned_4x4_blocks": 0.001,
+      "is_exact_4x_nearest_neighbor_upscale": false,
+      "sha256": "2d75804c2916cf92cbbb576d5febf6bc074cc36983429bef5fc53b04c66b58cf",
+      "grid_check_scope": "Diagnostic comparison only; v04 is a magical-detail visual concept and does not claim an exact 4x native grid.",
+      "perceptual_review": "Preserves the scene/layout, original two people, reed-shell turtle, prop categories, elevated camera and core palette. Adds visible apron embroidery, carved lintel details, ornate brass chest and lantern, richer ceramic decoration, more varied small flowers and vines, bright shell-vein markings and clear stream pebbles/ripples. Golden motes and local luminous accents visibly increase the magical feeling; several have small soft halos despite the restrained-glow prompt. The walking route and major silhouettes remain readable. Some pose/directional details are regenerated and do not establish exact frame consistency. This is a concept option, not a final style selection, native-grid asset or animation-ready sheet."
+    },
+    {
+      "file": "history-rich-magical-proposal-v05.png",
+      "width": 1536,
+      "height": 1024,
+      "unique_rgba_values": 730618,
+      "uniform_aligned_4x4_blocks": 3,
+      "total_aligned_4x4_blocks": 98304,
+      "percent_uniform_aligned_4x4_blocks": 0.003,
+      "is_exact_4x_nearest_neighbor_upscale": false,
+      "sha256": "e0cfc8b0e34d05bba4ff00f933cc983ccf89ca7d7ccb05d9dbb86359b22f5d9f",
+      "grid_check_scope": "Diagnostic comparison only; v05 is a history-rich magical visual concept and does not claim an exact 4x native grid.",
+      "perceptual_review": "Preserves the original scene/layout, two people, turtle, prop categories, elevated camera and warm core palette. Material history is more legible through irregular aged masonry with reused carved stones, differently colored bridge planks, braced wheel timber, mismatched roof tiles, tarnished chest fittings and a visibly staple-repaired ceramic pot. Stream rocks show stylized bands and erosion cues. Repaired objects coexist with working equipment, clear paths and lush tended planting, so the place remains inhabited and cared for. Ambient glitter is reduced; magic is concentrated in old marks, the turtle shell and botanical accents. Some history cues, particularly the pot repair and repeated spiral carvings, are prominent stylizations rather than subtle archaeological evidence. This image communicates a direction; it does not prove a physically causal history model, exact sprite identity across frames, native-grid production fidelity or animation readiness. Final style acceptance remains open."
+    },
+    {
+      "file": "restrained-history-proposal-v06.png",
+      "width": 1536,
+      "height": 1024,
+      "unique_rgba_values": 671622,
+      "uniform_aligned_4x4_blocks": 0,
+      "total_aligned_4x4_blocks": 98304,
+      "percent_uniform_aligned_4x4_blocks": 0.0,
+      "is_exact_4x_nearest_neighbor_upscale": false,
+      "sha256": "7017ee5aa6f5a87a23e3d1ccf711a990d7be7be21560374de8571c26d24030ef",
+      "grid_check_scope": "Diagnostic comparison only; v06 is a restrained history visual concept and does not claim an exact 4x native grid.",
+      "perceptual_review": "Retains the same composition, original people and creature, prop categories, camera, palette and lived-in material cues. The image has substantially fewer scattered bright flowers and isolated accents, fewer repeated spiral carvings, a much quieter shell marking, calmer water and larger quiet stone/foliage areas. Faces, the path and workshop read more readily; repaired ceramic, mixed bridge timber, worn foundations, crafted chest and lantern still provide focal detail. The floral reduction is more conspicuous than a literal small percentage trim, although overall foliage remains lush and core craftsmanship is retained. Some tiny direction-study details are regenerated. This remains a proposed refinement; final style selection, native-grid sprite fidelity and animation readiness are not established."
+    }
+  ]
+}

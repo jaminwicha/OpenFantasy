@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "status": "accepted_visual_direction_with_variation_and_animation_requirements",
+  "accepted_style_id": "restrained-history-proposal-v06",
+  "accepted_by": "user",
+  "accepted_at": "2026-09-08",
+  "acceptance_evidence": {
+    "user_statement": "good-- now let's do more reference scenes, around 5, drawing on openfantasy's content/assets",
+    "scope": "V06 is the accepted visual direction for this five-scene reference exploration. This does not establish native asset/animation validation or authorize a full production asset rollout."
+  },
+  "proposal_ids": [
+    "modern-detail-proposal-v01",
+    "strict-cluster-proposal-v02",
+    "sixteen-bit-plus-proposal-v03",
+    "magical-detail-proposal-v04",
+    "history-rich-magical-proposal-v05",
+    "restrained-history-proposal-v06"
+  ],
+  "all_asset_categories_must_calibrate_to_accepted_style": true,
+  "production_batch_authorized_by_this_record": false,
+  "native_pixel_asset_validation": "not_passed",
+  "animation_validation": "not_performed",
+  "in_engine_art_validation": "not_performed",
+  "note": "Reuse the accepted v06 direction for the requested reference scenes without asking for the same style approval again. New scene interpretations and production readiness remain separately reviewable.",
+  "preference_evidence": {
+    "date": "2026-09-08",
+    "user_statement": "I like that style a lot. Let's preserve it as an option. What if we went up one additional rung in detail? A noticeable 16 bit+ improvement with even more detail. Just a consideration.",
+    "scope": "Preserve the previously shown style as a favored option; explore a richer sibling, not a replacement.",
+    "reference_interpretation": "Most recently shown strict-cluster-proposal-v02 used as the comparison baseline; both earlier proposals preserved because the user referred to the direction rather than an explicit file ID."
+  },
+  "favored_option_ids": [
+    "strict-cluster-proposal-v02"
+  ],
+  "favored_option_mapping": "contextual interpretation; not an explicit file-name selection",
+  "detail_variant_status": "V06 endorsed; five original-content reference scenes delivered",
+  "additional_feedback": [
+    {
+      "user_statement": "Even more detail / quality in the art style -- on the right track but needs additional small details that make it more magical.",
+      "scope": "Positive direction feedback and request for refinement, not final production approval."
+    },
+    {
+      "user_statement": "Remember in the art style that eons of history have accumulated-- sometimes at least scales of decades or centuries into objects; those kinds of details.",
+      "scope": "Art direction now requires accumulated material history; see history-and-materials.md."
+    },
+    {
+      "user_statement": "Very good. Just a smidge too much detail now, overloading the sense. less is more. you have the right ideas now and just need to apply them more judiciously.",
+      "reference_id": "history-rich-magical-proposal-v05",
+      "scope": "Direction and ideas endorsed; subtly reduce decorative density and sensory overload while retaining quality, history and magic. Final production selection remains open."
+    },
+    {
+      "user_statement": "all the example art is good but i subtly notice too many repeated sprites in each one",
+      "scope": "All five reference scenes positively received; reduce conspicuous repeated sprites within/across compositions while retaining accepted style. Native production and animation validation remain pending."
+    },
+    {
+      "user_statement": "Emotions, evocations, gesticulations, interactions -- all must be considered to make npcs feel very alive",
+      "scope": "Expressive personality, idle/action animation and scene choreography are required; see ../expressive-animation-and-choreography.md."
+    }
+  ],
+  "latest_proposal_id": "restrained-history-proposal-v06",
+  "dynamic_environment_validation": "not_performed",
+  "gameplay_integration_requirement": "See ../environment-aging-and-maintenance.md; appearance must communicate consequential world state and possible player responses.",
+  "reference_scene_expansion": {
+    "count": 5,
+    "directory": "reference-scenes",
+    "status": "positively_received_with_repetition_refinement",
+    "index": "reference-scenes/index.json"
+  }
+}

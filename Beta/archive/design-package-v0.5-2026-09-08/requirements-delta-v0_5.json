@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "version": "0.5-encounter-decision-delta",
+  "date": "2026-09-08",
+  "inherits": "requirements-delta-v0_4.json",
+  "status": "Owner adopted the recommended encounter/streaming approach and Chrono Trigger / Sea of Stars transition direction; detailed contracts and runtime evidence remain pending",
+  "decision_register": "combat-transitions-and-timing-decision-v0_5.md",
+  "supersedes": "Adoption status of TIME-P01 and STREAM-P01 in v0.4; previous requirements remain inherited except for the explicit overrides below",
+  "overrides": [
+    {
+      "id": "RQ-104",
+      "requirement": "Use seamless block/grid streaming for continuous wilderness and vehicle travel, with predictive loading and separate detailed/coarse simulation. Preserve deterministic identity, mutations, vehicles, cargo, people, relationships and quests across loading boundaries.",
+      "status": "Owner-adopted direction; exact budgets and vehicle-specific contracts remain to be specified"
+    },
+    {
+      "id": "RQ-105",
+      "requirement": "Use bounded on-field encounters with full Wait decision holds, deterministic shared authority, controlled admission of outside influences and safe exit/re-entry. Retain shared world pause for solo and coordinated play. Independent cooperative exploration explicitly distinguishes tactical progress from outside world time.",
+      "status": "Owner-adopted direction; calendar, environmental dependency, merge and inactivity contracts still require closure"
+    }
+  ],
+  "additions": [
+    {
+      "id": "RQ-106",
+      "requirement": "Make exploration-to-combat and combat-to-exploration transitions in the mould of Chrono Trigger and Sea of Stars: retain the same field and entities, use brief expressive staging and coherent camera/UI/audio changes, preserve legal positions and persistent aftermath, and resume exploration without a replacement arena or routine loading transition.",
+      "status": "Owner-selected presentation direction; native animation and runtime acceptance pending",
+      "acceptance": ["TRANS-01", "TRANS-02", "TRANS-03", "TRANS-04", "TRANS-05"]
+    }
+  ],
+  "adopted_proposals": [
+    {"id": "TIME-P01", "status": "Adopted as design direction, including the seven v0.4 encounter principles; not implemented"},
+    {"id": "STREAM-P01", "status": "Adopted as design direction; chunk sizes, budgets and detailed failure behavior remain to be established"}
+  ],
+  "preservation": "Prior GDD editions and deltas remain intact. The v0.4 proposal and contemporaneous navigation/readiness documents are archived with byte hashes. This delta is not a consolidated final GDD."
+}

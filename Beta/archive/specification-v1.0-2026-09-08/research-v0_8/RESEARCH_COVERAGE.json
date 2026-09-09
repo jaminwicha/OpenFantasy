@@ -1,0 +1,1572 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-08",
+  "scope": "Research coverage and explicit evidence limits for all 150 current requirements; not certification of implementation or exhaustive empirical knowledge.",
+  "path_base": "Beta/research-v0_8",
+  "topics": [
+    {
+      "topic": "Original lineage and full import",
+      "requirements": [
+        "RQ-001",
+        "RQ-002",
+        "RQ-085",
+        "RQ-087",
+        "RQ-088",
+        "RQ-090",
+        "RQ-103"
+      ],
+      "artifacts": [
+        "../architecture-decision-review-2026-09-08.md",
+        "../research-v0_7/classic-architecture.md",
+        "../content-migration/README.md"
+      ],
+      "application": "Reuse verified algorithms and fixtures; replace authority contracts; preserve and semantically incorporate every original source element.",
+      "retained_proofs": "MIG families; P00/P02/P11",
+      "evidence_limit": "Local source probes and inventories do not establish completed Beta import; classic reconstructions are not official full source releases."
+    },
+    {
+      "topic": "Experience, breadth and production",
+      "requirements": [
+        "RQ-004",
+        "RQ-005",
+        "RQ-006",
+        "RQ-007",
+        "RQ-008",
+        "RQ-009",
+        "RQ-048",
+        "RQ-077",
+        "RQ-123"
+      ],
+      "artifacts": [
+        "../research-v0_7/modern-jrpg-production.md",
+        "presentation-production-and-player-experience.md",
+        "../research-v0_7/systemic-worlds.md"
+      ],
+      "application": "Measure coherent careers/adventure and repeatable accepted-content throughput rather than feature counts.",
+      "retained_proofs": "PX-01\u201308; P02/P12/P13",
+      "evidence_limit": "Reference success and player reports do not establish Beta fun, staffing or a release date."
+    },
+    {
+      "topic": "Portable deterministic core and archives",
+      "requirements": [
+        "RQ-011",
+        "RQ-060",
+        "RQ-073",
+        "RQ-074",
+        "RQ-075",
+        "RQ-088",
+        "RQ-089",
+        "RQ-092",
+        "RQ-098"
+      ],
+      "artifacts": [
+        "csharp-rust-core-reassessment.md",
+        "terrain-runtime-and-worlds.md",
+        "../architecture-decision-review-2026-09-08.md"
+      ],
+      "application": "One state owner, language-neutral contracts, bounded deterministic work and lossless lived-history preservation.",
+      "retained_proofs": "LANG-01\u201304; TERR; P00\u2013P03",
+      "evidence_limit": "Language/platform documentation and local code are evidence of mechanisms; target performance and exports remain unrun."
+    },
+    {
+      "topic": "Frontier streaming and journey density",
+      "requirements": [
+        "RQ-010",
+        "RQ-012",
+        "RQ-013",
+        "RQ-014",
+        "RQ-104"
+      ],
+      "artifacts": [
+        "../research-v0_7/frontier-streaming.md",
+        "terrain-runtime-and-worlds.md",
+        "places-puzzles-and-progression.md"
+      ],
+      "application": "Separate generation, persistent authority and residency; qualify four spread players and all vehicle speeds against meaningful discovery.",
+      "retained_proofs": "FRONT/STREAM; TERR; PLACE",
+      "evidence_limit": "NMS full proprietary pipeline was not inspected; the 2017 talk listing is explicitly limited evidence."
+    },
+    {
+      "topic": "Cosmology, ecology and historical peoples",
+      "requirements": [
+        "RQ-015",
+        "RQ-016",
+        "RQ-017",
+        "RQ-018",
+        "RQ-019",
+        "RQ-020",
+        "RQ-041",
+        "RQ-109",
+        "RQ-110",
+        "RQ-118",
+        "RQ-139"
+      ],
+      "artifacts": [
+        "../research-v0_7/systemic-worlds.md",
+        "society-lifecycles-and-emergent-stories.md",
+        "skills-crafting-magic-and-dreams.md"
+      ],
+      "application": "Causal lineages and environments, scoped beliefs and concrete divine effects; culture, ancestry and individual ethics remain distinct.",
+      "retained_proofs": "SW/SOC/SK; SYN-11/15",
+      "evidence_limit": "No reference proves a complete cosmic/species/divine simulation; Beta composition is an original design inference."
+    },
+    {
+      "topic": "Actor parity, classes and party capabilities",
+      "requirements": [
+        "RQ-021",
+        "RQ-022",
+        "RQ-029",
+        "RQ-030",
+        "RQ-040",
+        "RQ-108",
+        "RQ-114",
+        "RQ-119"
+      ],
+      "artifacts": [
+        "../research-v0_7/classic-architecture.md",
+        "../research-v0_7/systemic-worlds.md",
+        "skills-crafting-magic-and-dreams.md",
+        "society-lifecycles-and-emergent-stories.md"
+      ],
+      "application": "Share applicable state and legal actions across controllers; keep class, profession and office distinct.",
+      "retained_proofs": "SW/SOC/SK; P02/P05/P08",
+      "evidence_limit": "Reference actor structures support lessons, not full player-equivalent city-scale proof."
+    },
+    {
+      "topic": "Knowledge, earned detail and access",
+      "requirements": [
+        "RQ-023",
+        "RQ-024",
+        "RQ-025",
+        "RQ-046",
+        "RQ-071",
+        "RQ-078",
+        "RQ-134"
+      ],
+      "artifacts": [
+        "skills-crafting-magic-and-dreams.md",
+        "presentation-production-and-player-experience.md",
+        "society-lifecycles-and-emergent-stories.md"
+      ],
+      "application": "Separate rule literacy, acquired observations and advanced controls; basic risk/accessibility remain legible.",
+      "retained_proofs": "PX/SK; SYN-16; P02 novice/growing/expert views",
+      "evidence_limit": "Player preference evidence is self-selected and cannot choose Beta interface complexity without testing."
+    },
+    {
+      "topic": "Craft, skills, research and magic",
+      "requirements": [
+        "RQ-026",
+        "RQ-027",
+        "RQ-028",
+        "RQ-031",
+        "RQ-032",
+        "RQ-033",
+        "RQ-039",
+        "RQ-111",
+        "RQ-117",
+        "RQ-129",
+        "RQ-130",
+        "RQ-144"
+      ],
+      "artifacts": [
+        "skills-crafting-magic-and-dreams.md",
+        "terrain-runtime-and-worlds.md"
+      ],
+      "application": "Typed transformations, conservation, bounded composition, practical professions and consequences in quests/puzzles.",
+      "retained_proofs": "SK-01\u201309; TERR; SYN-02/03/07/12",
+      "evidence_limit": "No reference proves arbitrary prose magic or every imaginable profession; named production families require explicit implementation."
+    },
+    {
+      "topic": "Daily survival, domestic life and rest",
+      "requirements": [
+        "RQ-034",
+        "RQ-035",
+        "RQ-126",
+        "RQ-127"
+      ],
+      "artifacts": [
+        "../research-v0_7/camp-and-rest.md",
+        "presentation-production-and-player-experience.md",
+        "society-lifecycles-and-emergent-stories.md",
+        "skills-crafting-magic-and-dreams.md"
+      ],
+      "application": "Long days, meaningful care/work, manageable upkeep and multiplayer consent; accelerated time remains a rule.",
+      "retained_proofs": "REST; SOC/PX; SYN-04",
+      "evidence_limit": "Forty minutes is an initial tuning target; subjective pace and isolated-rest UX require actual play."
+    },
+    {
+      "topic": "Places, construction and cities",
+      "requirements": [
+        "RQ-036",
+        "RQ-037",
+        "RQ-038",
+        "RQ-128",
+        "RQ-138",
+        "RQ-142",
+        "RQ-146"
+      ],
+      "artifacts": [
+        "places-puzzles-and-progression.md",
+        "terrain-runtime-and-worlds.md",
+        "society-lifecycles-and-emergent-stories.md"
+      ],
+      "application": "Validate realized geometry and logical opportunities; use layered history, actual occupants, real stacked terrain and institutions.",
+      "retained_proofs": "PLACE-01\u201310; TERR; SYN-02/06/10",
+      "evidence_limit": "Graph loops are not proof of interesting layouts; 20,000 residents is a qualification candidate, not measured capacity."
+    },
+    {
+      "topic": "Society, motives, politics and lives",
+      "requirements": [
+        "RQ-042",
+        "RQ-043",
+        "RQ-044",
+        "RQ-045",
+        "RQ-051",
+        "RQ-052",
+        "RQ-102",
+        "RQ-112",
+        "RQ-113",
+        "RQ-115",
+        "RQ-125",
+        "RQ-132",
+        "RQ-133",
+        "RQ-135"
+      ],
+      "artifacts": [
+        "society-lifecycles-and-emergent-stories.md",
+        "../research-v0_7/systemic-worlds.md",
+        "../narrative-simulation-design.md"
+      ],
+      "application": "News and material effects change real choices; sparse persistent relationships, mandates and lifecycle custody support independent outcomes.",
+      "retained_proofs": "SOC-01\u201309; SW; SYN-01/09/10/15",
+      "evidence_limit": "Complex society can generate opaque stories; causal correctness alone does not establish emotional engagement."
+    },
+    {
+      "topic": "Trade and early caravan careers",
+      "requirements": [
+        "RQ-049",
+        "RQ-137"
+      ],
+      "artifacts": [
+        "society-lifecycles-and-emergent-stories.md",
+        "skills-crafting-magic-and-dreams.md",
+        "places-puzzles-and-progression.md"
+      ],
+      "application": "Actual stock and cargo, local prices, route costs, escort work and alternative supply paths begin early.",
+      "retained_proofs": "SOC; SYN-01/03/13; P02/P03/P07",
+      "evidence_limit": "Economic stability and enjoyable arbitrage need long runs; reference feedback is not a calibrated Beta price model."
+    },
+    {
+      "topic": "Competition, fame and constructed arenas",
+      "requirements": [
+        "RQ-050"
+      ],
+      "artifacts": [
+        "../research-v0_7/modern-jrpg-production.md",
+        "places-puzzles-and-progression.md",
+        "../spec-v1_0/GDD.md"
+      ],
+      "application": "Compose events from shared participants, combat/action rules, schedules, built spaces, entry conditions, rewards and reputation.",
+      "retained_proofs": "P07/P09 competition catalog and composite DC; SYN-12",
+      "evidence_limit": "No inspected reference supplies a full transferable arena economy; this is an explicit original composition to validate, not a researched implementation guarantee."
+    },
+    {
+      "topic": "Historical travel, planes and dreams",
+      "requirements": [
+        "RQ-053",
+        "RQ-054",
+        "RQ-055",
+        "RQ-056",
+        "RQ-057",
+        "RQ-058",
+        "RQ-072",
+        "RQ-136",
+        "RQ-141",
+        "RQ-148"
+      ],
+      "artifacts": [
+        "terrain-runtime-and-worlds.md",
+        "csharp-rust-core-reassessment.md",
+        "skills-crafting-magic-and-dreams.md",
+        "places-puzzles-and-progression.md"
+      ],
+      "application": "Arbitrary requested historical instants, stable refinement, branch custody and dream tether; temporal progression includes knowledge and schedules.",
+      "retained_proofs": "TERR/SK/PLACE/LANG; P03/P10",
+      "evidence_limit": "Any-instant historical society exceeds the inspected reference evidence; fidelity, storage and restoration require early proofs."
+    },
+    {
+      "topic": "Packages, creators and operational compatibility",
+      "requirements": [
+        "RQ-061",
+        "RQ-062",
+        "RQ-063",
+        "RQ-064",
+        "RQ-065",
+        "RQ-068",
+        "RQ-074",
+        "RQ-075"
+      ],
+      "artifacts": [
+        "ecosystem-packages-and-production.md",
+        "../architecture-decision-review-2026-09-08.md",
+        "csharp-rust-core-reassessment.md"
+      ],
+      "application": "First-party typed extension surfaces, validation and pinned versions; creators reuse actual runtime capabilities; preserve historical dependencies.",
+      "retained_proofs": "ECO; P03/P10/P13/P14",
+      "evidence_limit": "Package loading is not a sandbox or proof of arbitrary extension coverage; broader online systems are future architecture commitments."
+    },
+    {
+      "topic": "Optional AI and replayable decisions",
+      "requirements": [
+        "RQ-066",
+        "RQ-067",
+        "RQ-070"
+      ],
+      "artifacts": [
+        "ecosystem-packages-and-production.md",
+        "../research-v0_7/systemic-worlds.md"
+      ],
+      "application": "Providers return scoped typed proposals; accepted results persist and replay offline.",
+      "retained_proofs": "ECO; P03/P10",
+      "evidence_limit": "No model quality or determinism follows from seed reuse; there is no measured model comparison in this specification pass."
+    },
+    {
+      "topic": "Hosting, Wait and supported platforms",
+      "requirements": [
+        "RQ-059",
+        "RQ-076",
+        "RQ-079",
+        "RQ-097",
+        "RQ-099",
+        "RQ-105",
+        "RQ-106",
+        "RQ-120",
+        "RQ-121"
+      ],
+      "artifacts": [
+        "../combat-time-and-world-streaming-proposal-v0_4.md",
+        "../combat-transitions-and-timing-decision-v0_5.md",
+        "../research-v0_7/classic-architecture.md",
+        "presentation-production-and-player-experience.md",
+        "csharp-rust-core-reassessment.md"
+      ],
+      "application": "Wait decisions and on-field staging with explicit local stasis for independent co-op; desktop first, mobile retained phase.",
+      "retained_proofs": "TIME/TRANS/PX/LANG; P01\u2013P03/P13/P14",
+      "evidence_limit": "Classic single-player Wait does not prove split-party chronology; native/mobile device behavior remains unrun."
+    },
+    {
+      "topic": "Ecosystem and coordinated production",
+      "requirements": [
+        "RQ-069",
+        "RQ-080",
+        "RQ-081",
+        "RQ-082",
+        "RQ-086",
+        "RQ-098",
+        "RQ-122",
+        "RQ-123"
+      ],
+      "artifacts": [
+        "ecosystem-packages-and-production.md",
+        "../architecture-decision-review-2026-09-08.md",
+        "../ecosystem-update-record-2026-09-08.md"
+      ],
+      "application": "Interchangeable leads, separate artists, bounded maintenance, independent critics and real-build playtests; persist only reusable guidance.",
+      "retained_proofs": "ECO; P00 onward",
+      "evidence_limit": "Skill integrity and workflow design are verified separately from model productivity; no current MCP capability is inferred from an inventory."
+    },
+    {
+      "topic": "Art, animation, history and interaction",
+      "requirements": [
+        "RQ-003",
+        "RQ-082",
+        "RQ-083",
+        "RQ-084",
+        "RQ-091",
+        "RQ-093",
+        "RQ-094",
+        "RQ-095",
+        "RQ-096",
+        "RQ-100",
+        "RQ-101",
+        "RQ-140"
+      ],
+      "artifacts": [
+        "presentation-production-and-player-experience.md",
+        "../research-v0_7/modern-jrpg-production.md",
+        "../art-style-calibration/README.md",
+        "../expressive-animation-and-choreography.md",
+        "../spec-v1_0/PRESENTATION_CONTRACTS.md"
+      ],
+      "application": "Separate Sea of Stars finish and Stardew-like responsive interaction; native family coverage, restrained material history and semantic choreography.",
+      "retained_proofs": "PX; five native fixtures; P02/P11/P12",
+      "evidence_limit": "Accepted still direction is not accepted pixel scale, animation, production assets or actual scene performance."
+    },
+    {
+      "topic": "Narrative, adventurelets and investigation",
+      "requirements": [
+        "RQ-047",
+        "RQ-085",
+        "RQ-113",
+        "RQ-124",
+        "RQ-125",
+        "RQ-135",
+        "RQ-145"
+      ],
+      "artifacts": [
+        "../research-v0_7/systemic-worlds.md",
+        "society-lifecycles-and-emergent-stories.md",
+        "places-puzzles-and-progression.md",
+        "../narrative-simulation-design.md"
+      ],
+      "application": "Curated grammars bind real participants; motives, evidence and changing outcomes support coherent independent arcs and mysteries.",
+      "retained_proofs": "SW/SOC/PLACE; SYN-05/14/15",
+      "evidence_limit": "Destroyed evidence can leave a truthful cold case; a coherent seed is not proof of a uniformly compelling campaign."
+    },
+    {
+      "topic": "Vehicles, mounts, pets and familiar care",
+      "requirements": [
+        "RQ-107",
+        "RQ-116"
+      ],
+      "artifacts": [
+        "../research-v0_7/systemic-worlds.md",
+        "society-lifecycles-and-emergent-stories.md",
+        "../research-v0_7/frontier-streaming.md",
+        "terrain-runtime-and-worlds.md"
+      ],
+      "application": "Companions remain actors; vehicles remain part assemblies with real cargo/crew/care and transport-specific constraints.",
+      "retained_proofs": "SYS/STREAM/TERR; SYN-04/13; P06",
+      "evidence_limit": "Named fantastical vehicle combinations are Beta designs; supported speeds and native body coverage need qualification."
+    },
+    {
+      "topic": "Excavation, damage and accumulated condition",
+      "requirements": [
+        "RQ-128",
+        "RQ-129",
+        "RQ-131"
+      ],
+      "artifacts": [
+        "terrain-runtime-and-worlds.md",
+        "skills-crafting-magic-and-dreams.md",
+        "../environment-aging-and-maintenance.md"
+      ],
+      "application": "Separate hardness, support, flow, wear and appearance; conserve materials and record time/event causes.",
+      "retained_proofs": "TERR/ENV/SK; SYN-02/08/13",
+      "evidence_limit": "Material simulation and visual variant cost remain engineering/production proofs."
+    },
+    {
+      "topic": "Composite progression and real-time puzzles",
+      "requirements": [
+        "RQ-143",
+        "RQ-144",
+        "RQ-145",
+        "RQ-147",
+        "RQ-148"
+      ],
+      "artifacts": [
+        "places-puzzles-and-progression.md",
+        "skills-crafting-magic-and-dreams.md",
+        "presentation-production-and-player-experience.md"
+      ],
+      "application": "Constructive supported-start progression witnesses; vector difficulty across capability, knowledge, resources and time; alternate solutions and harder optional gates.",
+      "retained_proofs": "PLACE/SK/PX; SYN-06/07/14/16",
+      "evidence_limit": "No scalar DC or finite seed sweep guarantees every future altered world remains solvable."
+    },
+    {
+      "topic": "Lasting injuries and recovery",
+      "requirements": [
+        "RQ-150"
+      ],
+      "artifacts": [
+        "society-lifecycles-and-emergent-stories.md",
+        "places-puzzles-and-progression.md",
+        "../spec-v1_0/PRESENTATION_CONTRACTS.md"
+      ],
+      "application": "Rare serious losses with anatomy/action changes and reliable declared restoration; scars more common, campaign incidence matters.",
+      "retained_proofs": "SYN-08; P05/P12; critic cases",
+      "evidence_limit": "Injury frequency is an owner-directed tuning goal; no reference-derived percentage is adopted without campaign testing."
+    },
+    {
+      "topic": "Cross-system cohesion",
+      "requirements": [
+        "RQ-149"
+      ],
+      "artifacts": [
+        "../spec-v1_0/CROSS_SYSTEM_SYNERGIES.md",
+        "../spec-v1_0/PRESENTATION_CONTRACTS.md",
+        "../research-v0_7/systemic-worlds.md"
+      ],
+      "application": "Shared facts and legal actions connect every domain; selected pair/triple coverage challenges dangerous combinations.",
+      "retained_proofs": "SYN-01\u201316; P02\u2013P12",
+      "evidence_limit": "The interaction space is not exhaustively enumerable; coverage is explicit, risk-based and refined from actual failures."
+    }
+  ],
+  "requirements": [
+    {
+      "id": "RQ-001",
+      "requirement_sha256": "e18e70647bb885818803cc52fe67ae356ee24a821f537a8efc198345639cacaf",
+      "topics": [
+        "Original lineage and full import"
+      ]
+    },
+    {
+      "id": "RQ-002",
+      "requirement_sha256": "0f510a1dd44fa42167bcf3bdbc37b23c464cedcbcb2340890447ffd3925e8a75",
+      "topics": [
+        "Original lineage and full import"
+      ]
+    },
+    {
+      "id": "RQ-003",
+      "requirement_sha256": "994e80f04818a7b3d8bf3bc94f7f72dacc022e065666aad63d88c6626c0cb990",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-004",
+      "requirement_sha256": "ba0f8a4d7a55b5bf3f0250b32e0fbaa33377061a574c6ea51c655a012a5fadfe",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-005",
+      "requirement_sha256": "79cbc1fdcea866f77c027c7f540b464da85f1d55460710af13a3d33f182fc9b5",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-006",
+      "requirement_sha256": "c8e3a69259430e457d6078ad4328314e74b42add9f21610d357cda4bd2806499",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-007",
+      "requirement_sha256": "4e7b07780156f4743fa84de65951626be90d329c6df9629c8717a7a647e162c9",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-008",
+      "requirement_sha256": "095d54554932aeeae0334b37951f34ddd81071f6038cca331b58641a74fbf97a",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-009",
+      "requirement_sha256": "653eaf770948c9d485419e146e1a9fb8dc47ff08cd1a2814c0007929b134d036",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-010",
+      "requirement_sha256": "e91a98801098015eca782b204058814fabc5df5cd59b8fd762c2fa12b564c3f9",
+      "topics": [
+        "Frontier streaming and journey density"
+      ]
+    },
+    {
+      "id": "RQ-011",
+      "requirement_sha256": "e948331a489e7d0da4f413b6e2f3ca747460a12cc1b2ded400a1b12670136ea6",
+      "topics": [
+        "Portable deterministic core and archives"
+      ]
+    },
+    {
+      "id": "RQ-012",
+      "requirement_sha256": "d6e7442593f23628b3e7b2e9e38c08338ca2dc6df4610f1e2373e83978a5a927",
+      "topics": [
+        "Frontier streaming and journey density"
+      ]
+    },
+    {
+      "id": "RQ-013",
+      "requirement_sha256": "e471a8d574a5193d30a37f3e01388d099a0bbdc7537e23bcac470f3a6bfe8db5",
+      "topics": [
+        "Frontier streaming and journey density"
+      ]
+    },
+    {
+      "id": "RQ-014",
+      "requirement_sha256": "c8e5f9cc5d2036277cf2a09c15bc368b9c6a2feb1d61bdfca4c5b18648f69c08",
+      "topics": [
+        "Frontier streaming and journey density"
+      ]
+    },
+    {
+      "id": "RQ-015",
+      "requirement_sha256": "d1e007a2579b214cf13082bb9c8c40dba3f0e207d13430cc94c7f8914b07f46d",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-016",
+      "requirement_sha256": "4ab9abf82d45587a181dc1f5b480de3773524e19c2df44101db2c9ffcd4a65f8",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-017",
+      "requirement_sha256": "0f7c66edd026ef31b88a0a4bf1e322048c073636c7844d6f8dacdd667f1757b0",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-018",
+      "requirement_sha256": "f2f44e50d561f929fe87a31d71f075fff172b48193533e310105950bb7fee133",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-019",
+      "requirement_sha256": "44a468afd72ae259c7e39e32c222b9926914fbd99ba094d65e248ba459bc39cd",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-020",
+      "requirement_sha256": "855191ab52afecd27289d8052b5ddf30d8bcebc3e64c6b28fe8cf424467e0c68",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-021",
+      "requirement_sha256": "3d3cfb80947e5944a2422f610f11ee81c34a41efa385565fb5d959af8e0c79ed",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-022",
+      "requirement_sha256": "dc164141ba27d57c71372af958a79ad08404c1968fd1b0373551bd470847e52f",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-023",
+      "requirement_sha256": "5146ec6d731102113e98fc3926dadb1a9330e834fade7eccc246c40e56a737bb",
+      "topics": [
+        "Knowledge, earned detail and access"
+      ]
+    },
+    {
+      "id": "RQ-024",
+      "requirement_sha256": "e29d0c28f23982b9bcf2ee099200cb55cdb970293d1833d1cc37c0edd21a7b4d",
+      "topics": [
+        "Knowledge, earned detail and access"
+      ]
+    },
+    {
+      "id": "RQ-025",
+      "requirement_sha256": "cb75aa2d8626195494c5b71a01a9ba3ec1eae5d4e4a6ff1059db245043d84a2c",
+      "topics": [
+        "Knowledge, earned detail and access"
+      ]
+    },
+    {
+      "id": "RQ-026",
+      "requirement_sha256": "ff6b85be983319124bc37502eb58cc7de97db014dd50d4e00b47cb8ad1953c63",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-027",
+      "requirement_sha256": "991efeed0053a2cc2f46df8496cf7d41d9e0181cae44f0fb1ac0a63a08e37711",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-028",
+      "requirement_sha256": "5ae553d63eb40542854b261af0a5126bf836c66fca4c989402ebb943cbaf610f",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-029",
+      "requirement_sha256": "090ec466ea733dbe13a6d364bb4c1da8ff4d0ba71a8980e946b8d50b7ca2e0cf",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-030",
+      "requirement_sha256": "a807301022af23a8f460cbe0362452ffec365c4f8e3ae7be13ecef6eb2b69e0c",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-031",
+      "requirement_sha256": "4f43286e1179463b4cd899b0e1224216dd49bd19e98acea0157683de52994ee6",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-032",
+      "requirement_sha256": "2a2784670d8ff873ea20b659ca149c573777433e6202144dcf410e428a87d2a1",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-033",
+      "requirement_sha256": "5b4f88cb8bffb2406d5d755d7590c11e5e3de3901f2c965e04c6ce954b0cb4df",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-034",
+      "requirement_sha256": "80adc0ee48e3b7f6ce0034917faecb5cdf2a7cd278cdeb75bc40ebc74f49861c",
+      "topics": [
+        "Daily survival, domestic life and rest"
+      ]
+    },
+    {
+      "id": "RQ-035",
+      "requirement_sha256": "39fba2fee026c0dc5b5df6919004d4769f225776cb9aaf3d7708d9943e1d45e9",
+      "topics": [
+        "Daily survival, domestic life and rest"
+      ]
+    },
+    {
+      "id": "RQ-036",
+      "requirement_sha256": "3a4313c61c623acd8b4d6f050e6ea0e7cdce45b1ffae522649293ba3cb77fdf6",
+      "topics": [
+        "Places, construction and cities"
+      ]
+    },
+    {
+      "id": "RQ-037",
+      "requirement_sha256": "cdafc3cca4ffca65a377872fef917a0443031a5399a248957ad694ade209a7d8",
+      "topics": [
+        "Places, construction and cities"
+      ]
+    },
+    {
+      "id": "RQ-038",
+      "requirement_sha256": "4377506469c3b818c739348253d8adceb87d0714d8ed78068e626c751b40ea06",
+      "topics": [
+        "Places, construction and cities"
+      ]
+    },
+    {
+      "id": "RQ-039",
+      "requirement_sha256": "f396d4dfa2f79fa68136feb99daccd720a6b4e7a587b0a345b8360939679dc0c",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-040",
+      "requirement_sha256": "ee8de0f1680e0eb319a3c6e0f55897e6351db2d3589191a23cc45579484f8300",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-041",
+      "requirement_sha256": "36aed678b1034ec37c90a2140062f92a3257daeae2508d4b0f713ded578dd8f6",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-042",
+      "requirement_sha256": "c2e932ab7ca794f55cddd737b31ad49dae4041011767c836a13180d32822fcd4",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-043",
+      "requirement_sha256": "6227de6f3a52193c75b491d5d2d6751100ebaffae8eaaebe6fe945f23ab3160c",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-044",
+      "requirement_sha256": "443f4f26d94ab00603951cf8eee9c7ee019d0185796937208f932d7caafcd941",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-045",
+      "requirement_sha256": "614eaefe6357722b5e400d4e8ca1fe2ee43c79ee06a30955820aad34b68d7007",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-046",
+      "requirement_sha256": "c0250ffc463df11eb988d119c2fe3c47e0b7e207e26b1e7d2b19edd7175fd2f8",
+      "topics": [
+        "Knowledge, earned detail and access"
+      ]
+    },
+    {
+      "id": "RQ-047",
+      "requirement_sha256": "167cfec4f8520dbe089627c7bd6530e57bdf250bf3b3684e8b0ac065c8895c75",
+      "topics": [
+        "Narrative, adventurelets and investigation"
+      ]
+    },
+    {
+      "id": "RQ-048",
+      "requirement_sha256": "e784faa050b6dadd11e793f05ac60aefcc9d66cab6f0da26f45996a183e650f3",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-049",
+      "requirement_sha256": "f3a677f395ff05488c25de073edec5b45ea15041764128ac2d37b4a238e61b34",
+      "topics": [
+        "Trade and early caravan careers"
+      ]
+    },
+    {
+      "id": "RQ-050",
+      "requirement_sha256": "40327cb0b1dca9fc5518c6a648e07f2da015e452289f44a0de532d3acd4ddcb9",
+      "topics": [
+        "Competition, fame and constructed arenas"
+      ]
+    },
+    {
+      "id": "RQ-051",
+      "requirement_sha256": "d768c65930ec10ab280b813c5e454e10b77b99a9179835e8f056a62b9325e418",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-052",
+      "requirement_sha256": "a45d3b717b9f689798fc88e50413af49db6e632d7ef2e84b23b668be9bc16dec",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-053",
+      "requirement_sha256": "2e25678e6ec657d01b0a1ee4eee2df8277152d52478cead79380f279d480f4e8",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-054",
+      "requirement_sha256": "2b35d9c1fe1126c3e5e6439b4bdd4df2e1c0b5f2a0d2199f2df07b0d198edae9",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-055",
+      "requirement_sha256": "6ce51eb37605db016f73f37843e3179f85b6e0cbf357c7870d95d2e599e7ec04",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-056",
+      "requirement_sha256": "d2447668eeb802d0b769ace6f337cff86a6ec0780e67f9c53963f0d7636a042c",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-057",
+      "requirement_sha256": "bb6f3d3c1459528a89494237258d7aa1a1784f8e67e87125e71ed2fc50ad5f0a",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-058",
+      "requirement_sha256": "f785bc427d0fcab79f72d740e065cd5d682f123de97f670a2b08cbd7db22684e",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-059",
+      "requirement_sha256": "3f56bc39d2a22f17711e60a5b454f509c88171798b35bfd2ca6e5df663791923",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-060",
+      "requirement_sha256": "6de72d291fb46c134523ecf989f954bf87e512a05fb53a61dd9cbb2f187522e9",
+      "topics": [
+        "Portable deterministic core and archives"
+      ]
+    },
+    {
+      "id": "RQ-061",
+      "requirement_sha256": "9c134ddda780b307aa54ef394f2ebc25f200be7f8fcd5d88642f476e773cbdfa",
+      "topics": [
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-062",
+      "requirement_sha256": "2dfbc8c5da4f6d5f12a4c9a7fca9d417510a92c2af03938897830dfb89fdf31e",
+      "topics": [
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-063",
+      "requirement_sha256": "16b2c3dcc21c22759bbbb0bde02f5c9c63a99ceba196f5a88e8f22ce481b6542",
+      "topics": [
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-064",
+      "requirement_sha256": "61c8c1b8538f85e6d6ebdd33a64109b348012096cae933129f90621c5ea0be2b",
+      "topics": [
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-065",
+      "requirement_sha256": "b5e797ae2933ba37afd322a34c6056ae9e607d46e7351606271db477bbe984f3",
+      "topics": [
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-066",
+      "requirement_sha256": "397d933816e1883a1214c3f63cf16b868d12aff7fcdb18b4ce334605d8498e37",
+      "topics": [
+        "Optional AI and replayable decisions"
+      ]
+    },
+    {
+      "id": "RQ-067",
+      "requirement_sha256": "186bcec06a2f62bb1f22c2b6f1be1408c57b8bfe72d635b10a5a5c973adee2be",
+      "topics": [
+        "Optional AI and replayable decisions"
+      ]
+    },
+    {
+      "id": "RQ-068",
+      "requirement_sha256": "ef5c9371d49d7113b1d4025dde898599a2170601196c36bd2020f284eda61f77",
+      "topics": [
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-069",
+      "requirement_sha256": "1353beac482893931937f68c81c29babddcfdafa181f299754e2150b72d03d52",
+      "topics": [
+        "Ecosystem and coordinated production"
+      ]
+    },
+    {
+      "id": "RQ-070",
+      "requirement_sha256": "0bc61aaab9c5e9edb5aebf227969d82b15ce50e2cebc62a33af59e505ad58a0d",
+      "topics": [
+        "Optional AI and replayable decisions"
+      ]
+    },
+    {
+      "id": "RQ-071",
+      "requirement_sha256": "a1c04f2cf69e8c0ac500d7d8578a43bbd9bca8454a99c179bb641d7c6b92f742",
+      "topics": [
+        "Knowledge, earned detail and access"
+      ]
+    },
+    {
+      "id": "RQ-072",
+      "requirement_sha256": "f6315ec13e4d6b69703c2493f21ff01ea4156b7b84f619d59ca307498f9c0f95",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-073",
+      "requirement_sha256": "c64bb7398a21cc440a440f3c6e90c72a97bbff23d743bbcd97f5073bbea31ffd",
+      "topics": [
+        "Portable deterministic core and archives"
+      ]
+    },
+    {
+      "id": "RQ-074",
+      "requirement_sha256": "36de453213b2216e9867ae92e2c741333455ca0dd96c241c7e0c885fb32f6e00",
+      "topics": [
+        "Portable deterministic core and archives",
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-075",
+      "requirement_sha256": "61ad8e99f36f56ac2bda0707b5b1b58e880d6c3e1116ac85e7d5c920f3367ac1",
+      "topics": [
+        "Portable deterministic core and archives",
+        "Packages, creators and operational compatibility"
+      ]
+    },
+    {
+      "id": "RQ-076",
+      "requirement_sha256": "bf6ebfd9dc50d71f2b83a5de23dc02ebc91346c3c13629c5d2dab92d4a511a42",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-077",
+      "requirement_sha256": "a35bc3c6248a7b4b075616218447383eb705728bfa6bf6d2b257f668dcd10f48",
+      "topics": [
+        "Experience, breadth and production"
+      ]
+    },
+    {
+      "id": "RQ-078",
+      "requirement_sha256": "b60315168e317d7f8bb760690f353e09f769ab7f2fd8ee182ae2a65d11958b63",
+      "topics": [
+        "Knowledge, earned detail and access"
+      ]
+    },
+    {
+      "id": "RQ-079",
+      "requirement_sha256": "157662eda27ab49ae05d9ca6f14af7e2aaf05bf7e48b7596c9fbac9bfbeddadc",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-080",
+      "requirement_sha256": "f8cce2f9913e290369fdf2c27bf7d0794f735d1af93b5c918ae6ebe127644b28",
+      "topics": [
+        "Ecosystem and coordinated production"
+      ]
+    },
+    {
+      "id": "RQ-081",
+      "requirement_sha256": "773a018f152265792a3950d781797a6564dfdbff18b8069ff4cbe63687697aac",
+      "topics": [
+        "Ecosystem and coordinated production"
+      ]
+    },
+    {
+      "id": "RQ-082",
+      "requirement_sha256": "325d114afa1ef62adaa25ddfca6858ade16c88f2d413ef00c09493d5e19313cd",
+      "topics": [
+        "Ecosystem and coordinated production",
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-083",
+      "requirement_sha256": "31d2c5f61abc22f20fa33bd51454ff1c388ad7ace2386cdf52e956a569b3a197",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-084",
+      "requirement_sha256": "0b8207c1867797ca0f4431c8f7e2768f13b6cc9190c221752d9aaa10b6b5ec43",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-085",
+      "requirement_sha256": "00afc7261dbab3e9bb527f48ba9221eeb6e930e5b382d66ae7cc7101db32c310",
+      "topics": [
+        "Original lineage and full import",
+        "Narrative, adventurelets and investigation"
+      ]
+    },
+    {
+      "id": "RQ-086",
+      "requirement_sha256": "9ab584baff83137c58ef1c603d9fb998b5bea81acef2a1e6db32b08d7421ae71",
+      "topics": [
+        "Ecosystem and coordinated production"
+      ]
+    },
+    {
+      "id": "RQ-087",
+      "requirement_sha256": "82048e2467a02c7536461badc8ac39814ed7c8497b72eabca0fe1075aeb662bf",
+      "topics": [
+        "Original lineage and full import"
+      ]
+    },
+    {
+      "id": "RQ-088",
+      "requirement_sha256": "00833d05fe415cbf5baf8f0b825abedccfd9aee6f2a624942bd7fb62900a800d",
+      "topics": [
+        "Original lineage and full import",
+        "Portable deterministic core and archives"
+      ]
+    },
+    {
+      "id": "RQ-089",
+      "requirement_sha256": "0a182c7c7a03cbdabd5aa3ae9d7374a96308fd53faa1a42d7a864b672d0e8d56",
+      "topics": [
+        "Portable deterministic core and archives"
+      ]
+    },
+    {
+      "id": "RQ-090",
+      "requirement_sha256": "f0d6ea5e984297cd504e3cb03b7b4a8d4cb46118a2346e7e1a46b44a136c3c0b",
+      "topics": [
+        "Original lineage and full import"
+      ]
+    },
+    {
+      "id": "RQ-091",
+      "requirement_sha256": "fb572733c3f4957a19bdd2e5efe4cf71a09a985396139dec7d1afde4ffd6c814",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-092",
+      "requirement_sha256": "9e77f2e8d4ae09d49474cc6c7e983c27ae0cdf2b653962780b3a42969db0b2f8",
+      "topics": [
+        "Portable deterministic core and archives"
+      ]
+    },
+    {
+      "id": "RQ-093",
+      "requirement_sha256": "9d03afb0215211d3c8bb680ea249f7b3d6521354f9a87c6b120749f428165fe9",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-094",
+      "requirement_sha256": "caa6ee6902048c228a0c111ab88e9c836c4c57a9e51b0832dae98c9c936e1df4",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-095",
+      "requirement_sha256": "536ef6ac244bd86b686e11b51e0a9749bc3d60f1b5e38078c59b373da06efd45",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-096",
+      "requirement_sha256": "24057e63114bd8039baba52d9dd6781ab62f268b59ab0b0d94dac0a3103d0d2c",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-097",
+      "requirement_sha256": "4ab18432dc82344f37274894b20713052f418ef7d2b8e688691b7f2af8063237",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-098",
+      "requirement_sha256": "950a8af28b7983c6ad0165db0abdc747dba8b56e39ba42462ace4dca5db27670",
+      "topics": [
+        "Portable deterministic core and archives",
+        "Ecosystem and coordinated production"
+      ]
+    },
+    {
+      "id": "RQ-099",
+      "requirement_sha256": "1a8bf6c8f124392b1602747744147ca0452d43ca1d038d1f8858cffd88501202",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-100",
+      "requirement_sha256": "bfc436c6fed56ca87bdd23b216331fd3c5d4eb94d042e22a4b215dbac55ed01f",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-101",
+      "requirement_sha256": "c62583699f0ce12864e1abe411b4d9ac8a32439fb8a72d5c7564db283d703bc9",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-102",
+      "requirement_sha256": "8c1ef2a32f8ec049971bdb78dc1e9ff6d9fa07abd4c83808ac24763612a8e227",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-103",
+      "requirement_sha256": "a57969469e0e489425a034f29e426a9d6269ba105d553451ade125ab1268b830",
+      "topics": [
+        "Original lineage and full import"
+      ]
+    },
+    {
+      "id": "RQ-104",
+      "requirement_sha256": "3cd23188894a2b4adde8d246554a6b6d8206d56cc3f4dcda9cf524572c4a835a",
+      "topics": [
+        "Frontier streaming and journey density"
+      ]
+    },
+    {
+      "id": "RQ-105",
+      "requirement_sha256": "e58152c0a4eec65212ac8ad0c7a7f67738b220431c883273fc19b7d9c3745463",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-106",
+      "requirement_sha256": "feee4992ac6b191844929ec432dfddf9d5d6f46da3c5d987b70b7c7c4e713951",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-107",
+      "requirement_sha256": "78deccc84eb9dc1cef973bdb4ec08699caa965b2f41831e425fa286049b8e05a",
+      "topics": [
+        "Vehicles, mounts, pets and familiar care"
+      ]
+    },
+    {
+      "id": "RQ-108",
+      "requirement_sha256": "6bcae3baf04cba66f9a9a2108a16ba00c8d846539f24d5ad13e95919a7557cde",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-109",
+      "requirement_sha256": "0061f5534f563184f4e13ecf27885b5fb133b660fcf649ae79839a397bba0eda",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-110",
+      "requirement_sha256": "f72ea269e2b6acab4d5489e6214f35a83aada8dfe7aeb02524bea49dd18ef04d",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-111",
+      "requirement_sha256": "0683d8a09770cd56a3d6de8d89f1d81239dd2dfe16a3a1bbcd4b47fccc57dc3c",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-112",
+      "requirement_sha256": "ff3ead2d299b72a5ba8ed35cad612abe0fe6df4f983114eb0fd0cdd81457b08b",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-113",
+      "requirement_sha256": "e68d3814b673d86e54264d4c438c6a50914e7329cec5e09bb53877e124e82ae3",
+      "topics": [
+        "Society, motives, politics and lives",
+        "Narrative, adventurelets and investigation"
+      ]
+    },
+    {
+      "id": "RQ-114",
+      "requirement_sha256": "b60ecbd7d674bcfa3f3b369214cdd8f58c9dd3ef0470a46323b3801f48aeaa57",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-115",
+      "requirement_sha256": "dd9d69bd2226102a731ca5d6b9220ca2c5a29abfeb5c0e6bef293bedd2a33764",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-116",
+      "requirement_sha256": "ce008de04c933788a39e64117a0f77b3c6b1d73683a64a191228891298a0530f",
+      "topics": [
+        "Vehicles, mounts, pets and familiar care"
+      ]
+    },
+    {
+      "id": "RQ-117",
+      "requirement_sha256": "6d832eb0748cfbd8cb79720246a475d57bd8f98ac9721749ae58b88f6f6856f3",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-118",
+      "requirement_sha256": "260ce946de132b4cc95d59b38c3caa2b88cb34e9d138ea6bccffa04c040fd865",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-119",
+      "requirement_sha256": "7bafc6649def765d6762fb9dee933b717fab155b8859e049816d54a17039162a",
+      "topics": [
+        "Actor parity, classes and party capabilities"
+      ]
+    },
+    {
+      "id": "RQ-120",
+      "requirement_sha256": "60ca58a3208c629c2e6a9dbf945e506ea57d46fcd532d0004433871e324aed78",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-121",
+      "requirement_sha256": "a61d6b8be4e021c9850a566ad3877ba71e457f87cf749f18f6d97e5d622cbc41",
+      "topics": [
+        "Hosting, Wait and supported platforms"
+      ]
+    },
+    {
+      "id": "RQ-122",
+      "requirement_sha256": "81a5cd47143c8d2a8a01220ea26b13a1439007e5eacc1ba298385bef05c2bcf7",
+      "topics": [
+        "Ecosystem and coordinated production"
+      ]
+    },
+    {
+      "id": "RQ-123",
+      "requirement_sha256": "6ec2edc3c3eaa9e7303d8a485c614dc137a562d002ccd73c1abbf0f1875affb7",
+      "topics": [
+        "Experience, breadth and production",
+        "Ecosystem and coordinated production"
+      ]
+    },
+    {
+      "id": "RQ-124",
+      "requirement_sha256": "ff156d98584af3c6f818b00c656bc1f3e146d44e6b7cb70b4072470be1699303",
+      "topics": [
+        "Narrative, adventurelets and investigation"
+      ]
+    },
+    {
+      "id": "RQ-125",
+      "requirement_sha256": "08446b6a1a037bce280954a3d5a687f2e36ab938ada15f2deab992e32d08668b",
+      "topics": [
+        "Society, motives, politics and lives",
+        "Narrative, adventurelets and investigation"
+      ]
+    },
+    {
+      "id": "RQ-126",
+      "requirement_sha256": "bd5eb2dee4b5dac7efead6a922021bbcd5ef6eb4fcdf8c189671c18ab355ffa0",
+      "topics": [
+        "Daily survival, domestic life and rest"
+      ]
+    },
+    {
+      "id": "RQ-127",
+      "requirement_sha256": "0cd67a5050e5d9886c1d15eb1480e7d930881f5021555680cac32445f0c31dfd",
+      "topics": [
+        "Daily survival, domestic life and rest"
+      ]
+    },
+    {
+      "id": "RQ-128",
+      "requirement_sha256": "c3229434839d1a49aaa26905c88b9392dfacf961ff4e65ec0f2049cf4ea66bd8",
+      "topics": [
+        "Places, construction and cities",
+        "Excavation, damage and accumulated condition"
+      ]
+    },
+    {
+      "id": "RQ-129",
+      "requirement_sha256": "06eb6588c939f84f89d7ef822825f725ce7ce520a138d0f4d889df0b422fe0c4",
+      "topics": [
+        "Craft, skills, research and magic",
+        "Excavation, damage and accumulated condition"
+      ]
+    },
+    {
+      "id": "RQ-130",
+      "requirement_sha256": "6651406657cc1bc7dffa46ec79486ad044261e05c1f140766d146b3da64f4a90",
+      "topics": [
+        "Craft, skills, research and magic"
+      ]
+    },
+    {
+      "id": "RQ-131",
+      "requirement_sha256": "8a9e0d568256fc716530627dd78de08b868d9e23ebd001c52b5b6b3c195945ef",
+      "topics": [
+        "Excavation, damage and accumulated condition"
+      ]
+    },
+    {
+      "id": "RQ-132",
+      "requirement_sha256": "f96f850716f6dad07518b9bfc63b9e0120d834a53affaaab526c2c85a4f7aae1",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-133",
+      "requirement_sha256": "a006b0ffb5533cb0adee07a4dea28a4bfe20f09044c8ade107bdb19271adb559",
+      "topics": [
+        "Society, motives, politics and lives"
+      ]
+    },
+    {
+      "id": "RQ-134",
+      "requirement_sha256": "2bf40b4bcd49120cf20d1252e7156cf3083c9431bfeb1a6ae19185dec70d53a3",
+      "topics": [
+        "Knowledge, earned detail and access"
+      ]
+    },
+    {
+      "id": "RQ-135",
+      "requirement_sha256": "69b0573290d4768f1395efaf9875da361748929314d0b360ad1c1ebff1b91c54",
+      "topics": [
+        "Society, motives, politics and lives",
+        "Narrative, adventurelets and investigation"
+      ]
+    },
+    {
+      "id": "RQ-136",
+      "requirement_sha256": "5ff2e63e5e0ad4052286095226ce8c6ac689c7d4ce5ce3e6182fd74d09938e58",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-137",
+      "requirement_sha256": "651ac3dc1cfde1e5acf7cdd9a2cfaa1894e291079f766621df29626c3bb95c6a",
+      "topics": [
+        "Trade and early caravan careers"
+      ]
+    },
+    {
+      "id": "RQ-138",
+      "requirement_sha256": "39b280f928748ea2c7a89d4dd0aa56da1274a0ece3c250f864b6227ef4cf6f4a",
+      "topics": [
+        "Places, construction and cities"
+      ]
+    },
+    {
+      "id": "RQ-139",
+      "requirement_sha256": "7e451f5178bb33a96baef8337864be4e26c84d34d80433b7cdd4c3e9254e7854",
+      "topics": [
+        "Cosmology, ecology and historical peoples"
+      ]
+    },
+    {
+      "id": "RQ-140",
+      "requirement_sha256": "bb2b412c6d7289e658785616eb7f747be340e1c3a2d3499f04c6ed17fb55197b",
+      "topics": [
+        "Art, animation, history and interaction"
+      ]
+    },
+    {
+      "id": "RQ-141",
+      "requirement_sha256": "a5ded09b869eb987af1c5250ed72c73c71aa0b5ee564551fbbddb2657176462a",
+      "topics": [
+        "Historical travel, planes and dreams"
+      ]
+    },
+    {
+      "id": "RQ-142",
+      "requirement_sha256": "8aa9989f3965b81c566abb1da7ea4d1d9f47588356eb819a2a4310a0ffbc63df",
+      "topics": [
+        "Places, construction and cities"
+      ]
+    },
+    {
+      "id": "RQ-143",
+      "requirement_sha256": "474f8bc43b8b5691a7eec4040ac65a3d6eedaf7711ed2778fb5fb16eac9da099",
+      "topics": [
+        "Composite progression and real-time puzzles"
+      ]
+    },
+    {
+      "id": "RQ-144",
+      "requirement_sha256": "51afb1f923b72ca171c0338269291cdccde5562a8cfa3f6234561b02139fc2df",
+      "topics": [
+        "Craft, skills, research and magic",
+        "Composite progression and real-time puzzles"
+      ]
+    },
+    {
+      "id": "RQ-145",
+      "requirement_sha256": "743064cb53212102a499a727b330756a497c8d05b014f1af5c4c7f3602e94d7e",
+      "topics": [
+        "Narrative, adventurelets and investigation",
+        "Composite progression and real-time puzzles"
+      ]
+    },
+    {
+      "id": "RQ-146",
+      "requirement_sha256": "d1b6120eae2433b8d528bab6a919ec4f22595a12bb9730cb48da6418e8e8737c",
+      "topics": [
+        "Places, construction and cities"
+      ]
+    },
+    {
+      "id": "RQ-147",
+      "requirement_sha256": "6c226ae6c7448f0dc35e79610af454d4f792e50484de84424a6bb5c56f3cff80",
+      "topics": [
+        "Composite progression and real-time puzzles"
+      ]
+    },
+    {
+      "id": "RQ-148",
+      "requirement_sha256": "8d36aad324d0738a3dd73c6756272f0e334f8eccc6a432707d34f5c59b7fbd7b",
+      "topics": [
+        "Historical travel, planes and dreams",
+        "Composite progression and real-time puzzles"
+      ]
+    },
+    {
+      "id": "RQ-149",
+      "requirement_sha256": "fe0ec6e7e4d2c38591674aedc1775f01ccb52677677020e3b3820f803f8511fe",
+      "topics": [
+        "Cross-system cohesion"
+      ]
+    },
+    {
+      "id": "RQ-150",
+      "requirement_sha256": "88b31bc4baf2180e1a3c32521d01076adddedb368d68666f0a3284862a757462",
+      "topics": [
+        "Lasting injuries and recovery"
+      ]
+    }
+  ]
+}

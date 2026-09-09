@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "version": "0.4-research-delta",
+  "date": "2026-09-08",
+  "inherits": "requirements-delta-v0_3.json",
+  "status": "Owner requests captured; bounded encounter and streaming implementation policies are proposals awaiting adoption and evidence",
+  "additions": [
+    {
+      "id": "RQ-104",
+      "requirement": "Evaluate seamless block/grid streaming for a continuous world connected by meaningful wilderness exploration, encounters and ship/airship/sandship travel. Preserve deterministic identity, mutations, vehicles, cargo, people, relationships and quests across loading boundaries.",
+      "status": "Owner-requested design consideration; exact streaming profile not selected"
+    },
+    {
+      "id": "RQ-105",
+      "requirement": "Prefer combat/encounter timing approaches demonstrated in enjoyable existing games, remain as close to Wait as feasible, and explicitly prevent contradictory cross-boundary interactions and state. Disclose any difference between tactical and world time.",
+      "status": "Owner decision criterion; final multiplayer timing policy still proposed"
+    }
+  ],
+  "traversal_candidate": {
+    "name": "sandship",
+    "status": "New owner-suggested candidate; not claimed to be part of legacy OpenFantasy content",
+    "needs": "Surface, propulsion, route, boarding, cargo and encounter contracts"
+  },
+  "proposal_register": "combat-time-and-world-streaming-proposal-v0_4.md",
+  "proposals": [
+    {
+      "id": "TIME-P01",
+      "proposal": "Bounded on-field encounters with full decision holds, strict admission and a shared-pause policy for solo/coordinated sessions",
+      "status": "Recommended, not approved",
+      "open": "Default multiplayer calendar, environmental dependency scope, entry/exit/merge and inactivity policies"
+    },
+    {
+      "id": "STREAM-P01",
+      "proposal": "Stable grid-addressed world data, predictive loading, separate rendering/simulation residency, durable mutations and coarse persistent society",
+      "status": "Recommended, not implemented",
+      "open": "Chunk sizes, supported speed/visibility, platform budgets and failure behavior"
+    }
+  ],
+  "acceptance_tests_to_define": [
+    "STREAM-01: Cold traversal, abrupt turns and landing at maximum supported speed meet measured visibility/navigation/frame budgets.",
+    "STREAM-02: Multi-client boundary crossing and restart preserve terrain, actor identity, relationships, quest bindings and cargo.",
+    "TIME-01: Outsiders, hazards and adjacent encounters obey the same declared admission/clock rules; no free attacks, duplicate effects or retroactive changes.",
+    "TIME-02: Explicit calendar/maintenance/deadline policy remains understandable during long decision holds and safe exit."
+  ],
+  "preservation": "Older GDD and requirements editions remain unchanged in their existing locations and indexed archives."
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "scene_id": "05-brasswing-stormbreak",
+  "title": "The Brasswing after the storm",
+  "created_at": "2026-09-08",
+  "status": "reference_scene_for_review",
+  "accepted_style_reference": "restrained-history-proposal-v06",
+  "tool": "image_gen.imagegen",
+  "tool_mode": "built-in image generation with local style and identity reference images",
+  "prompt": "Use case: stylized-concept.\nAsset type: one full-scene landscape reference illustration for Beta OpenFantasy, approximately 1536 x 1024, a game view with no panels or text.\nInput images: Image 1 is the accepted v06 VISUAL STYLE reference only. Match its elevated three-quarter orthographic game camera, clear constructed pixel edges, colorful 16-bit-plus craft and selective restrained detail. Do not reproduce its scene or its contact-sheet layout. Image 2 is the original OpenFantasy Brasswing airship sprite: identity reference for its muted red rounded balloon, warm wooden gondola, rigging and small metal propeller. Image 3 is the original blue-armored Squire sprite; Image 4 is the original violet-robed, pointed-hat Mage sprite. Use their palette and silhouette for two small readable travelers, interpreted at the accepted fidelity. Image 5 is the original tileset: supporting pale sand and cool grey tower masonry material cues.\nScene: The Brasswing rests at a simple mooring beside the outer court of Storm Spire in Miradel's desert. The unnatural storm has just broken after the Warden of Storms quest. Build an inviting, navigable game space: a broad calm pale-sand foreground, a worn but cared-for stone approach crossing toward the mooring, the red balloon airship as the clear main focal subject, and a tall weathered mage tower within nested stone walls toward the upper part of the view. Use the elevated v06 camera across the entire scene; see the top of the balloon, the deck and the paved route. The tower can extend beyond the top edge to imply height. No distant horizon or cinematic landscape camera. This mooring is a proposed composition, not a claim of an existing map.\nThe airship is a rounded RED fabric balloon above a substantial wooden boat-shaped gondola, with a small brass-and-silver propeller, restrained brass fittings and rigging. Preserve that simple source silhouette rather than replacing it with a winged airplane or enormous fantasy warship. Convey practical use through just two or three deliberate features: one repaired fabric panel, a few newer deck boards among aged wood, and a polished boarding handrail. Keep the rest of the balloon broad and visually calm. A ramp connects the gondola to the stone mooring. The blue Squire and violet Mage approach the ramp at small useful gameplay scale. They are not enlarged portraits.\nAtmosphere and history: cool slate-blue post-storm shadow over the old tower, a warm opening in cloud above the frame sends a legible soft amber shaft across the mooring and balloon. A few shallow recent-rain puddles glint on the court. Only a faint residual blue charge at ONE tower finial suggests spent storm magic. Old tower courses of contrasting stone and one carefully repaired threshold imply centuries of reuse. Desert scrub is sparse. Terrain shapes, route and balloon should remain easy to read.\nStyle: as in Image 1's scene portion: original detailed pixel-art illustration with crisp stepped contours, readable clustered color shading and tactile hand-built materials. Keep a consistent pixel-art game view; controlled palette ramps, clean broad resting areas and focused detail. Warm/cool lighting must enhance the pixel structure without blur or atmospheric smear. This is a new place in the same game.\nConstraints: a single edge-to-edge landscape scene, no character sheet, no sidebar, no frames, no labels, no HUD, no words, no watermarks. No photorealism, no 3D-rendered sheen, no smooth painterly rendering, no depth-of-field, no bokeh, no excessive bloom or glow, no particle confetti, no dense ornamental covering, no ruins scattered everywhere. Age means accumulated use and maintenance, not total dereliction. Less is more.",
+  "input_image_paths": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/restrained-history-proposal-v06.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/veh_airship.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/squire.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/units/mage.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/assets/tiles.png"
+  ],
+  "source_content": [
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/data/items.json",
+      "ids": [
+        "airship_brasswing"
+      ],
+      "evidence": "The Brasswing is a Vehicle of type Airship."
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/data/quests.json",
+      "ids": [
+        "spire_key",
+        "warden_of_storms"
+      ],
+      "evidence": "The Spire Key scouts Storm Spire's inner court. The Warden of Storms requires slaying storm_warden and awards airship_brasswing; its turn-in says the storm breaks."
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/docs/MILESTONE_4.md",
+      "ids": [
+        "Miradel",
+        "Storm Spire"
+      ],
+      "evidence": "Miradel is the desert/dunes continent and Storm Spire its mage tower. Current quest data takes precedence over the older milestone description."
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/tools/gen_world.py",
+      "ids": [
+        "storm_spire",
+        "spire_top"
+      ],
+      "evidence": "Storm Spire uses nested walled compounds with southern gates."
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/tools/gen_assets.py",
+      "ids": [
+        "gen_airship"
+      ],
+      "evidence": "Original airship has a muted red balloon, wooden rigging/gondola and pale metal propeller."
+    }
+  ],
+  "generated_source_path": "/Users/alucinor/.codex/generated_images/01a0830c-291e-79a0-9f26-9c86e2aba899/exec-393bc893-c027-4bd1-8dbf-3cd0cefb4474.png",
+  "workspace_output_path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/reference-scenes/05-brasswing-stormbreak.png",
+  "sha256": "7a05569ab55bc0cc16cb1ea7fd54ee7c427e51202b2b148311d3dac7c8e96bc1",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "interpretation": {
+    "retained_source_identity": [
+      "Muted red balloon, wooden gondola, metal propeller and airship travel identity.",
+      "Miradel desert setting and nested stone Storm Spire compound.",
+      "Blue Squire and violet Mage palette/silhouette cues.",
+      "Storm-breaking quest outcome and crown's Brasswing reward."
+    ],
+    "proposed_scene_elements": [
+      "Mooring and boarding ramp near the spire; the authored quest does not establish a landing site there.",
+      "Tower silhouette, blue-and-gold banners, coastal-looking cliff edge, palm placement, sunset timing, recent-rain puddles and travelers' exact poses.",
+      "Airship cabin, brass fittings, single patched fabric panel and maintained deck convey a proposed history and practical use."
+    ]
+  },
+  "visual_assessment": {
+    "inspected": true,
+    "strengths": [
+      "Crisp, colorful pixel-style game scene with a legible route and small travelers.",
+      "Original red-balloon and wooden-gondola identity is clearly retained and elaborated.",
+      "Broad balloon panels and open paving keep the airship focal; amber light, wet paving and cool storm clouds communicate a transition.",
+      "No text, contact-sheet panels or HUD."
+    ],
+    "deviations": [
+      "The balloon is elongated into a dirigible form, with much more developed gondola architecture than the tiny source sprite establishes.",
+      "A distant rocky sliver and storm-cloud sky enter the upper/right edge despite the prompt's no-horizon request; the dominant ground camera remains elevated three-quarter.",
+      "The blue Squire has a brimmed hat rather than a strict helmet-like interpretation of the tiny original sprite.",
+      "Repeated blue-and-gold standards are an added heraldic treatment, not established source heraldry."
+    ]
+  },
+  "validation": {
+    "native_sprite_ready": false,
+    "exact_native_pixel_grid": "not_validated",
+    "animation": "not_performed",
+    "weather_runtime": "not_performed",
+    "in_engine": "not_performed",
+    "note": "This is a still reference illustration. It does not prove playable terrain, dynamic lighting/weather, repair mechanics, animation or a production sprite contract."
+  }
+}

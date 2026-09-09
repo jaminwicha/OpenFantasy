@@ -1,0 +1,166 @@
+{
+  "schema_version": 1,
+  "project": "Beta",
+  "version": "0.9-geology-fluids-and-ecology",
+  "date": "2026-09-08",
+  "inherits": "requirements-delta-v0_8.json",
+  "status": "Owner geographical, fluid and ecological refinements consolidated into unreleased specification1.1",
+  "overrides": [],
+  "additions": [
+    {
+      "id": "RQ-151",
+      "requirement": "Generate geography through a coherent historical chronology rather than a static height map: continental and crustal evolution, changing relief, drainage, coasts, climate and subterranean spaces must constrain ecology, occupation, routes, resources and historical travel.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-152",
+      "requirement": "Support seeded continental drift, rifting/collision, mountain uplift and long-term wearing down, volcanic formation/eruption and land subsidence through declared physically inspired geological processes, stable formation identities, meaningful timescales and persistent material changes.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-153",
+      "requirement": "Support historical and lived weathering, erosion, sediment transport/deposition, river migration or avulsion, delta/channel change and terrain-altering floods; conserve supported material/water budgets and update infrastructure, habitats, access and downstream consequences.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-154",
+      "requirement": "Support occasional glacial and ice-age cycles, moving/eroding/depositing ice, advance/retreat, meltwater and glacial-lake changes, with relative sea-level/land-elevation changes that can submerge or expose coasts and cities; preserve recognizable sites and their inhabitants/history.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-155",
+      "requirement": "Support earthquakes, eruptions, landslides, breaches and associated hazards as staged causal events that can reveal new cave entrances, create or close legs of existing networks, change groundwater or damage settlements without rerolling whole locations.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-156",
+      "requirement": "Provide underwater geography, ecosystems, inhabited places and drowned ruins with bathymetry, connected water, depth/visibility/current and declared breathing/pressure/temperature capabilities, coherent travel/combat/interaction and native art/animation across historical states.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-157",
+      "requirement": "Provide extensive underground and underdark regions across real elevations, with persistent strata, fractures, cave topology, aquifers, underground rivers/lakes, resources, habitats and settlements; distinguish subterranean space from separate planes and let natural events or excavation change connectivity.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-158",
+      "requirement": "Reconstruct exact requested historical geography together with structures, water/ice, material provenance, site and formation identities and local clock state; preserve query-order independence, canonical process/event ordering and branch-specific downstream consequences after intervention.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-159",
+      "requirement": "Keep geological world generation and simulation compatible with a practically unbounded frontier through finite shared macro dependencies, coherent boundary histories/catchments/fluxes, deterministic staged work, cross-scale resource accounting and preserved committed facts, without requiring an infinite global solve.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-160",
+      "requirement": "Integrate geological change vertically with NPC perception and action, evacuation, trade, property/jurisdiction, ecology, quests/progression and restrained native presentation; validate history, streaming, Wait, conservation and player readability in retained cumulative phases before broad expansion.",
+      "status": "Owner geological refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-161",
+      "requirement": "Use understandable game-scale dynamics for water, lava and other supported liquids, with material-specific flow, storage, mixing/separation, temperature and phase/reaction rules; include moving ice/glaciers and ice floes where applicable, conserved sources/sinks, terrain alteration, safe staged work and coherent Wait/history behavior.",
+      "status": "Owner fluid/ecology refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-162",
+      "requirement": "Simulate plant growth, seasonal suitability, dormancy, flowering/fruiting and harvest or regrowth through species-specific elapsed-time, soil, water, light/temperature and care rules, with persistent crops/vegetation, actual yields and readable native feedback rather than instant biome respawning.",
+      "status": "Owner fluid/ecology refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-163",
+      "requirement": "Model animals, monsters and intermediate lifeforms through diet, hunger, fear, territory, temperament, knowledge and relationships; support herbivory, predation and competition among inhabitants without making monster/species identity automatically hostile to the player.",
+      "status": "Owner fluid/ecology refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-164",
+      "requirement": "Provide bounded minor adaptation and trait evolution in plants and creatures, including declared magical influences; distinguish temporary acclimation, learned behavior and inherited variation with tradeoffs/provenance, without turning the game into an unrestricted evolution or genome simulator.",
+      "status": "Owner fluid/ecology refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-165",
+      "requirement": "Let ecosystems and biomes develop, degrade, recover and shift over history and lived time through climate, hydrology, soil, resources, disturbance, competition and succession; forests/deserts and other biome labels derive from evolving ecological conditions and inhabitants rather than arbitrary map repainting.",
+      "status": "Owner fluid/ecology refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-166",
+      "requirement": "Support plant dispersal and colonization plus animal migration through actual suitable routes and carriers such as wind, water, animals or caravans, with persistent source/seed/population accounting, barriers and elapsed establishment/growth, including distant regions.",
+      "status": "Owner fluid/ecology refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-167",
+      "requirement": "Support magical ecosystem transformation such as a healthy forest becoming tainted by a persistent hostile magical source, with scoped propagation, effects on soil/water/plants/creatures and behavior, material and historical evidence, consequences for society and supported containment or gradual recovery.",
+      "status": "Owner fluid/ecology refinement; implementation and qualification unverified"
+    },
+    {
+      "id": "RQ-168",
+      "requirement": "Use Beta as the successor game and project code name throughout the current design; identify the predecessor as Alpha OpenFantasy and retain historical source/archive provenance without renaming preserved files.",
+      "status": "Owner naming direction"
+    },
+    {
+      "id": "RQ-169",
+      "requirement": "Provide immersive adaptive music and spatial/contextual sound effects integrated with place, ordinary versus epic mood, time, weather, ecology and events, including town/dungeon identities, wind/rain, creature and bird calls, seaside seabirds and echoing cave water; use coherent fades/layers and encounter transitions, scoped acoustic evidence, interruption/reconnect behavior, accessible mixing and native human acceptance.",
+      "status": "Owner adaptive music and environmental sound direction"
+    },
+    {
+      "id": "RQ-170",
+      "requirement": "Treat sound as a first-class production contract for applicable assets, materials, environments/biomes and creature/NPC/player actions, with explicit intentional silence where appropriate; favor restrained, varied music, graceful track fades, ambience and quiet for cozy crafting/exploration, reserving bombastic music for rare warranted events and validating repetition/fatigue over long sessions.",
+      "status": "Owner first-class sound and restrained music direction"
+    },
+    {
+      "id": "RQ-171",
+      "requirement": "Deliver a tight, polished and uncluttered player experience through gradual tutorial and natural mechanic introduction woven into procedural world generation: begin with few clear choices, validate grounded teaching opportunities and prerequisites, then build toward endgame orchestration of the connected full scope through learned capabilities, party roles and delegation, without requiring personal micromanagement of every profession.",
+      "status": "Owner gradual introduction and endgame integration direction"
+    },
+    {
+      "id": "RQ-172",
+      "requirement": "Inspect relevant local roguelike, terrain/fluid and lifeform-evolution projects for valuable implemented algorithms, data contracts and tests; record specific extraction/adaptation candidates and limitations, adopting them only when they fit Beta\u2019s deterministic portable architecture, bounded adaptation and coherent player experience.",
+      "status": "Owner local project reuse investigation direction"
+    },
+    {
+      "id": "RQ-173",
+      "requirement": "Lightly integrate languages, dialects and cants across species, nations and cultures through character-specific comprehension, social flavor, discovery and optional opportunities, while preserving readable essential play, accessible localized presentation and practical alternatives such as context, companions or translation; avoid compulsory grinding, pervasive garbling or language gates that invalidate supported progression.",
+      "status": "Owner light language and cultural expression direction"
+    },
+    {
+      "id": "RQ-174",
+      "requirement": "Player characters and NPCs age and can die naturally under the same applicable species-specific lifecycle rules, very slowly during ordinary play; distinguish biological exposure from calendar/history addresses, preserve Wait and host-time policies, and integrate consented long advancement with relationships, health, inheritance and succession without abrupt time-travel aging or routine forced mortality pressure.",
+      "status": "Owner slow shared player and NPC aging clarification"
+    },
+    {
+      "id": "RQ-175",
+      "requirement": "Integrate optional ghosts, hauntings, graves, memorials and interdimensional or divine/deity aspects of death with the world cosmology, character identity, beliefs, relationships, history, mysteries and supported restorative or necromantic magic; preserve one accountable person and actual possessions across death-related forms, and keep ordinary death/care playable without compulsory haunting or universal memorial chores.",
+      "status": "Owner death, haunting and cosmological integration direction"
+    },
+    {
+      "id": "RQ-176",
+      "requirement": "Validate procedural feature composition for incompatible, redundant, contradictory or badly overlapping layers across geometry, history, ecology, actors, quests and progression; use deterministic bounded precommit repair, selective pruning of optional instances, rejection or a new candidate seed while preserving required scope and accepted content, and never silently reroll a realized world or erase committed history.",
+      "status": "Owner procedural compatibility firewall and selective rejection direction"
+    },
+    {
+      "id": "RQ-177",
+      "requirement": "Let cultural, species and national backgrounds influence character familiarity, expectations, affinities and other psychological aspects of directed relationships through distinguishable inherited tendencies, learned norms, institutions, perceptions and personal experience; retain individual variation, change, evidence-scoped knowledge and agency rather than deterministic group-wide personality or allegiance.",
+      "status": "Owner cultural, species and national relationship influences direction"
+    },
+    {
+      "id": "RQ-178",
+      "requirement": "Generate distinctive cultural, civilizational and national architecture, settlement layouts and crafting traditions that reflect values, worldviews, local materials, environment, institutions and historical evolution; support regional variation, migration, borrowing, hybridization and individual innovation through coherent build/process families with actual functional and native presentation consequences.",
+      "status": "Owner historically evolved cultural architecture and crafting direction"
+    },
+    {
+      "id": "RQ-179",
+      "requirement": "Deeply integrate cultural and species history with weapon, armor and tool design lineages, magical traditions and other skill practices through real anatomy/ergonomics, materials, process techniques, teaching, effects, use, maintenance and native performance; preserve knowledge transfer, individual variation and historical provenance rather than cosmetic-only or group-exclusive bonuses.",
+      "status": "Owner cultural equipment, magic and skill lineage direction"
+    },
+    {
+      "id": "RQ-180",
+      "requirement": "Include a broad original fantasy species and subspecies catalog covering humans, elves, dwarves, gnomes, halflings, dragonkind, quicklings, giants, snake people, cat people and lizard people, with supported varied anatomy, scale, senses, life histories, affinities and individual capabilities; enumerate production body/equipment/action/care/native asset coverage for every shipping family rather than assuming resized humanoid sprites suffice.",
+      "status": "Owner named species menagerie and subspecies breadth direction"
+    },
+    {
+      "id": "RQ-181",
+      "requirement": "Represent cultural and civilizational technology profiles across architecture, castles/fortifications, production, warfare and magic, including differing balances and combinations of martial, mechanical, alchemical and magical methods; derive capabilities from actual knowledge, institutions, materials, infrastructure and history rather than a single universal technology level or free cultural bonus.",
+      "status": "Owner civilizational architecture, fortification and technology-balance direction"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-08",
+  "scope": "Readiness/design documentation, archives and persistent instruction updates",
+  "requirements": {
+    "baseline": 79,
+    "additions": 24,
+    "unique_total": 103,
+    "overrides_resolve": true
+  },
+  "archive": {
+    "editions_or_snapshots": 3,
+    "verified_files": 41
+  },
+  "ecosystem": {
+    "verified_current_target_hashes": 86,
+    "frontmatter_method": "Ruby safe YAML; official Python validator unavailable because PyYAML is missing"
+  },
+  "preservation": {
+    "five_scene_images_unchanged": true,
+    "six_source_data_hashes_unchanged": true
+  },
+  "runtime_tests_run_in_this_pass": false,
+  "successor_runtime_or_animation_implemented": false
+}

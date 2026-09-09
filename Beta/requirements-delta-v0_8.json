@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "project": "Beta OpenFantasy",
+  "version": "0.8-terrain-materials-and-lifecycles",
+  "date": "2026-09-08",
+  "inherits": "requirements-delta-v0_7.json",
+  "status": "Owner refinements incorporated before specification baseline freeze",
+  "overrides": [
+    {
+      "id": "RQ-054",
+      "requirement": "Time travel is a cornerstone: reach any requested point in the available world history, spanning generated prehistory and recorded lived history, with consistent reconstruction, persistent identity and explicit branching; checkpoints accelerate access rather than limiting destinations to selected eras. Supported future-state travel remains governed by explicit simulation and branch rules.",
+      "status": "Owner clarified unrestricted historical destination intent; implementation qualification pending"
+    }
+  ],
+  "additions": [
+    {
+      "id": "RQ-128",
+      "requirement": "Support persistent vertical construction and excavation with stacked building floors, subfloors, tunnels and connected multidimensional spaces; represent physical elevation separately from realms/interiors, with coherent collision, traversal, support, visibility, occupancy and streaming.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-129",
+      "requirement": "Provide full mining and integrated fortress construction in ordinary play: substance hardness, tool and skill suitability, seeded mineral deposits, ore extraction, refining/alloys and smithing into weapons, armor, tools, parts and structures, with real labor, resources, hazards and persistent terrain edits.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-130",
+      "requirement": "Deeply integrate foraging, farming, herbal teas, hot springs and enchantments with habitats, seasons, cultivation/harvest, preparation, water/heat/material qualities, character effects, care, facilities and shared production graphs.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-131",
+      "requirement": "Apply damage, deterioration and weathering to applicable actors, objects, vehicles, terrain and structures from both elapsed exposure/use and discrete events; preserve causal condition history, functional consequences, readable presentation and meaningful maintenance, repair or replacement.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-132",
+      "requirement": "Simulate NPC birth, maturation, marriage/partnership, family/household change, aging and death with persistent individual identity, applicable species/cultural rules, care, relationships, memories, custody, inheritance and consequences for surviving characters and stories.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-133",
+      "requirement": "Simulate power structures and hierarchies through persistent institutions, offices, authority, jurisdiction, appointment/election/inheritance or contested succession, delegation, obligations and personal allegiances; lifecycle and world events must change actual governance, resources and behavior.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-134",
+      "requirement": "Keep default presentation and controls approachable like a classic Chrono Trigger-style JRPG despite the deep simulation; progressively reveal relevant mechanisms, properties, explanations, forecasts and advanced choices through actual skill and knowledge progression, while preserving essential hazard/cost readability, scoped knowledge and optional simple views.",
+      "status": "Owner reaffirmed original vision; implementation and human acceptance unverified"
+    },
+    {
+      "id": "RQ-135",
+      "requirement": "Give NPCs persistent desires, motivations, likes and dislikes that influence actual choices, relationships, work, ambitions, dialogue and dreams alongside needs, beliefs, obligations and changing world conditions; preferences are contextual and can evolve through experience.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-136",
+      "requirement": "Support NPC dreams and skill-, power- or class-enabled entry into dream realms, alongside distinct planes of existence inspired by Minecraft Nether and D&D ethereal concepts; preserve subjective knowledge, dreamer/body/visitor identity, planar rules, bounded entry/exit, time and resource accounting, interruption and persistent consequences.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-137",
+      "requirement": "Make inter-town trade, changing local resource/item prices, buying in one settlement and selling in another, and guarding actual trade caravans meaningful early-to-mid-game play; account for stock, demand, knowledge, cargo, travel cost, risk, contracts and persistent outcomes.",
+      "status": "Owner pacing and economy direction; implementation unverified"
+    },
+    {
+      "id": "RQ-138",
+      "requirement": "Integrate castle, town, fortress, crypt and dungeon construction seamlessly with settlement growth, territorial claims, institutions, nation-building, diplomacy, political events, defense and the lives/actions of inhabitants; construction and governance use the same persistent world.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-139",
+      "requirement": "Support good, evil, neutral and lawful/chaotic alignment concepts through coherent original character and world rules; distinguish individual ethics/choices, reputation, cultural judgment and explicit cosmic or divine commitments, allowing change without species-determined fate.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-140",
+      "requirement": "Integrate art, graphics, animation, expressive performance and narrative with every supported gameplay domain through explicit authoritative state-to-feedback-to-action contracts, readable novice and expert views, interruption/continuity, persistent consequences and native human acceptance.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-141",
+      "requirement": "Provide arbitrary historical-time addressing and reconstruction across the available generated and lived chronology, retaining causal history, versioned generators/events, prior world mutations and identities; bound preparation work without silently replacing a requested instant with a checkpoint, and make historical changes branch-safe for co-op.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-142",
+      "requirement": "Apply lessons from the local roguelike projects and Jaquays-style nonlinear design to procedural dungeons, locations, towns, castles and connected spaces: meaningful loops, multiple entrances, vertical connections, landmarks, alternate skill/social routes and causal history, validated on realized geometry and player choices rather than graph counts alone.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-143",
+      "requirement": "Integrate skills, tools, powers and cooperative combinations into real-time exploration/action puzzles inspired by Sea of Stars and Zelda, with authoritative movement/triggers, persistent world consequences, alternative solutions and accessible controls; retain Wait-style combat and coherent puzzle/hazard timing at encounter boundaries.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-144",
+      "requirement": "Provide a broad extensible skill and profession catalog including fishing, hunting, cooking, knitting, writing, acting and acrobatics as well as all previously required disciplines; give supported skills actual actions, learning, costs, outcomes, sprite performances and uses in puzzles, quests, narrative, society or production rather than decorative labels.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-145",
+      "requirement": "Support Sherlock-style mysteries and deduction alongside spatial/action puzzles: actual incidents, motives, clues, testimony, uncertain beliefs, hypotheses and supported investigations lead to accountable solutions and consequences; preserve knowledge boundaries and alternative evidence routes for solvable states, with truthful failure, cold-case or changed continuations when permitted world actions make resolution impossible.",
+      "status": "Owner direction; implementation unverified"
+    },
+    {
+      "id": "RQ-146",
+      "requirement": "Populate realistically scaled towns and cities with persistent residents, visitors and NPCs traveling between settlements; traveling merchants and caravans bring actual goods, and connected sewers, caves, crypts, chapel substructures and parallel/shadow-plane spaces participate in coherent location design.",
+      "status": "Owner direction; detailed qualification required"
+    },
+    {
+      "id": "RQ-147",
+      "requirement": "Rate procedural challenges and composite encounters, quests, obstacles and puzzles using explicit difficulty/DC and capability, knowledge, resource, party and timing requirements; validate smooth available advancement routes from supported starting states, maintain understandable recovery/continuation options after world changes, and permit optional harder routes, shortcuts and difficulty-gated dead ends.",
+      "status": "Owner direction; detailed qualification required"
+    },
+    {
+      "id": "RQ-148",
+      "requirement": "Make time and progression central to logical advancement across events, areas, historical instants and parallel/alternate planes, taking inspiration from Majora's Mask schedules and learned opportunities without imposing a universal reset or terminal date; progression validation must consider temporal availability and knowledge as well as spatial reachability.",
+      "status": "Owner direction; detailed qualification required"
+    },
+    {
+      "id": "RQ-149",
+      "requirement": "Identify and implement complementary cross-system synergies and supported combinations up front, making gameplay domains seamlessly share actors, resources, time, causality, progression, art, animation and narrative; validate representative composite situations and explicitly detect contradictory or unsupported combinations.",
+      "status": "Owner direction; detailed qualification required"
+    },
+    {
+      "id": "RQ-150",
+      "requirement": "Support lasting injuries including loss of eyes or limbs, with appropriate restorative spells able to heal the supported injury when their declared conditions are met; serious permanent loss is rare, occasional scars are more common, and anatomy, senses, equipment, actions, relationships, persistence and sprite presentation respond coherently.",
+      "status": "Owner injury severity and healing direction; frequency requires human playtest acceptance"
+    }
+  ]
+}
