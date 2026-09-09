@@ -1,6 +1,6 @@
 # Portable primitives, version 1
 
-These retained primitives have no Godot dependency. They establish byte and numeric contracts; they do not implement world state, saves, collision registries, scheduling, content migration or transport. Host code must stage RNG changes with its future authority transaction. Each RNG stream has one owner; sharing mutable streams between workers is invalid.
+These retained primitives have no Godot dependency. This document describes their byte and numeric contracts. Domain modules extend them; the primitives themselves do not own world state, saves, scheduling, content migration or transport. Host code must stage RNG changes with its future authority transaction. Each RNG stream has one owner; sharing mutable streams between workers is invalid.
 
 ## Canonical binary encoding
 
@@ -34,3 +34,7 @@ Counter state contains algorithm version, full stream fingerprint, next counter 
 The test fixture `reference-v1.json` was produced by the independent Python standard-library implementation in `generate_reference_vectors.py`. Its full framed payloads are retained alongside expected identity hashes, first words, a rejecting bounded draw, a stream fingerprint, the final counter draw and a rejecting final-counter case. C# tests consume those constants; they never generate expected outputs from production code. Additional tests cover field-boundary separation, invalid text, big-endian identity ordering, eon-scale arithmetic against independent .NET BigInteger calculations, signed rounding, stream isolation, serialization/restore continuation, limits and overflow.
 
 Test dependencies are explicitly pinned to xUnit.net v3 3.2.2, Visual Studio adapter 3.1.5 and Microsoft.NET.Test.Sdk 18.0.1, with transitive packages locked. These are qualification pins, not an assertion that they are the newest releases. Package availability and net8 compatibility were checked against the [xUnit package](https://www.nuget.org/packages/xunit.v3/3.2.2), [adapter package](https://www.nuget.org/packages/xunit.runner.visualstudio/3.1.5), [test SDK package](https://www.nuget.org/packages/Microsoft.NET.Test.Sdk/18.0.1) and [official xUnit runner guidance](https://xunit.net/docs/getting-started/v3/getting-started).
+
+## Domain extensions
+
+`Authority` now admits finite counted sources, current actor controls and storage policies, and produces pure transfer decisions. It does not authenticate deliveries or persist results. `Terrain` provides pinned, deterministic three-dimensional substrate, canonical excavation history and standing/support queries; it does not mint mined items or own global region claims. Their contracts and limits are retained in the [authority contract](../../../implementation/p01/authority-contracts/CONTRACT.md) and [terrain contract](../../../implementation/p01/terrain-foundation/CONTRACT.md). `OpenFantasy.Hosting` composes the authority with one real durable counted command stream; it is deliberately outside this dependency-free library.

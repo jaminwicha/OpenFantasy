@@ -1,0 +1,2544 @@
+{
+  "contract": "terrain-v1",
+  "examples": [
+    {
+      "name": "flat",
+      "scope": {
+        "worldId": "00000000000000000000000000000001",
+        "branchId": "00000000000000000000000000000002",
+        "realmId": "00000000000000000000000000000003"
+      },
+      "seed": "0000000000000000000000003ade68b1",
+      "rules": {
+        "baseSurfaceZ": 0,
+        "relief": 0,
+        "soilDepth": 2,
+        "materials": [
+          {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          },
+          {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          },
+          {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        ]
+      },
+      "bounds": {
+        "minimum": [
+          -2,
+          -1,
+          -4
+        ],
+        "size": [
+          4,
+          2,
+          7
+        ]
+      },
+      "rulesCanonicalHex": "4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb",
+      "rulesSha256": "4346bf63d2772c5e3ff84ba4a4f8d231b5fe3dd69e643de600609aa0834d5df7",
+      "cells": [
+        {
+          "coordinate": [
+            -2,
+            -1,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "fc750730d43d1aaf61e9c52bc4572715",
+          "sourceId": "7655658a8cc639b04d3aa43a8454c988",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            -1,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "b7b2c1df2edb714e506b8feaaa3bcc0d",
+          "sourceId": "f5e79743a90e69d36a6f7a8532b68b89",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            -1,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "49a99b7feb92f80e0db7beba0d540bae",
+          "sourceId": "32a085ccc523e1bdf9d316082c979193",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            -1,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "8eae0d543738f7e824f81c265ce05c1f",
+          "sourceId": "1f8d48e0192acc36033a874966329e1d",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            0,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "8ff1530283a8800bd1ce1c62a31060a7",
+          "sourceId": "6411335967b7baa2659d73ee86dc6d02",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "f932031109d4b01cd7b3d67f914d7212",
+          "sourceId": "946f2fb7069381916975a3df9c39b89e",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "e0e26521101de820da1cc55451740159",
+          "sourceId": "2344250ca7f820dea39a93fe3d899a53",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            0,
+            -4
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "89ee17585d82aca68155887c3ba239ba",
+          "sourceId": "49275d7f99c1311539eae78c3c57d6fb",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            -1,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "fc750730d43d1aaf61e9c52bc4572715",
+          "sourceId": "6fc16cc7dbe78d5c22ff1b01e4b4f159",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            -1,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "b7b2c1df2edb714e506b8feaaa3bcc0d",
+          "sourceId": "6813e9d4b00cceefa49910a9c5151472",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            -1,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "49a99b7feb92f80e0db7beba0d540bae",
+          "sourceId": "8f0f8903aff2fa4f88510ff9cd51b3a2",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            -1,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "8eae0d543738f7e824f81c265ce05c1f",
+          "sourceId": "58eff7d0a871a29a176a3179d1009323",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            0,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "8ff1530283a8800bd1ce1c62a31060a7",
+          "sourceId": "b12def2e1fcbb4f1ce6e415bd622d24c",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "f932031109d4b01cd7b3d67f914d7212",
+          "sourceId": "2696d033425430bb2677de4227aa7eed",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "e0e26521101de820da1cc55451740159",
+          "sourceId": "359ee3c15d0539586a980238f345352a",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            0,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "89ee17585d82aca68155887c3ba239ba",
+          "sourceId": "38f48b895901596d7ae95251f9060de9",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            -1,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "87b847d57bd56da89d34d6a7eebad429",
+          "sourceId": "3c6b72a826f8686f7ab1636f9cc073d0",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            -1,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "abd7c7eedc9c8e5764e1d3ea0b722949",
+          "sourceId": "d86a9ab697968c697b284b085ec6d55b",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            -1,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "66580ff718ec860b5bd0a89fc5af5cc3",
+          "sourceId": "44fb530732a0921dc80808ae767d8e6b",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            -1,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "401f75b9623d6f80b3bd5a21c2150d7c",
+          "sourceId": "8e6eaf2f99a18eabf697c68e6d82243f",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            0,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "5d8b7f7e2ca17d61c7fc80fa42c39ff7",
+          "sourceId": "e1092cc145c710fceab74301089318b3",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "7332eb659d53b38d43f7b0221210086b",
+          "sourceId": "9456ba6379000707997192b9cd8ce5e8",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "167bb77824071caec9452059aeedb5ca",
+          "sourceId": "3b96786bc0f343fd12036f52f4ed9aa4",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            0,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "3bc43fd9435c56e9cd114c0c25a21317",
+          "sourceId": "f581a66cb69a429c92fc7ed463346856",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            -1,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "87b847d57bd56da89d34d6a7eebad429",
+          "sourceId": "d87ac29ab1bc383e9bc19929e8b3a16f",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            -1,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "abd7c7eedc9c8e5764e1d3ea0b722949",
+          "sourceId": "62c8a3c5e451303f4e7b4857ecadcee7",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            -1,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "66580ff718ec860b5bd0a89fc5af5cc3",
+          "sourceId": "c5cb0248efc076833541035ebddafa83",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            -1,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "401f75b9623d6f80b3bd5a21c2150d7c",
+          "sourceId": "c65b9135f1a2071d84415c065a6fdf86",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            0,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "5d8b7f7e2ca17d61c7fc80fa42c39ff7",
+          "sourceId": "4c761be835b0d884d1c0341e7b939c47",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "7332eb659d53b38d43f7b0221210086b",
+          "sourceId": "c77cc315244dbcdef121a64708edab76",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "167bb77824071caec9452059aeedb5ca",
+          "sourceId": "beb7c5e480faa460689d0938b1bb5867",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            0,
+            -1
+          ],
+          "stratum": 2,
+          "surfaceZ": 0,
+          "formationId": "3bc43fd9435c56e9cd114c0c25a21317",
+          "sourceId": "82fccff4906ca806a9b528070f8b356f",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            -1,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "6a1e213ebd147dc476dfbf1e32081e98",
+          "sourceId": "bfa3216ce703d4f079a353f643223785",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            -1,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "b89208bf31f36e222f15ab506ca223ed",
+          "sourceId": "d6d52473c46244b18f6ae696a835ca14",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            -1,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "c085f1bc907deb1a6289cffdbedd8fa1",
+          "sourceId": "39d9ce95e696e5495617844f51be1548",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            -1,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "07a0bd2e001e830f1fceeaf24d976654",
+          "sourceId": "1a62dd4717929e1217249aca66492eac",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            0,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "e3136035d4d0e6bec41d522acd0eea81",
+          "sourceId": "07259c6f7d982bdf927687e683bda2f0",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "f470661e7eae689b8c75da9cfb3a994b",
+          "sourceId": "da84154457c46ea6c1b27871fff11088",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "70961b6e58cbcbe86848327f3ebc4332",
+          "sourceId": "f24b9710beaed68d9440110e4caba741",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            1,
+            0,
+            0
+          ],
+          "stratum": 1,
+          "surfaceZ": 0,
+          "formationId": "2db3f72bd643e7024309b3db46da23fa",
+          "sourceId": "31ea3a2e7a566164998ed9a9a5b4ba69",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -2,
+            -1,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -1,
+            -1,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            0,
+            -1,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            1,
+            -1,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -2,
+            0,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            1,
+            0,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -2,
+            -1,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -1,
+            -1,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            0,
+            -1,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            1,
+            -1,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -2,
+            0,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            1,
+            0,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": 0,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        }
+      ],
+      "states": [
+        {
+          "name": "initial",
+          "revision": 0,
+          "excavatedIndices": [],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc00000008000000000000000400000008000000000000000200000008000000000000000700000008000000000000000000000000",
+          "sha256": "8d42b399c0e958908ccd7da5650c97a1406f92d3ec732f8a7ecd2d2bfdb66251"
+        },
+        {
+          "name": "excavated",
+          "revision": 1,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001",
+          "sha256": "641340d3d1d5e392977327c2a58e98350457b50c75d9fd725984c91e89a3b7d8"
+        },
+        {
+          "name": "maximum-revision",
+          "revision": 18446744073709551615,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc00000008000000000000000400000008000000000000000200000008000000000000000700000008ffffffffffffffff000000080000000000000001",
+          "sha256": "f3bf483a42e37c1e44115b5c87125e47cfa20c578498f40ecdbde880065c8f1c"
+        }
+      ]
+    },
+    {
+      "name": "negative-lattice",
+      "scope": {
+        "worldId": "00000000000000000000000000000001",
+        "branchId": "00000000000000000000000000000002",
+        "realmId": "00000000000000000000000000000003"
+      },
+      "seed": "0000000000000000000000003ade68b1",
+      "rules": {
+        "baseSurfaceZ": 0,
+        "relief": 2,
+        "soilDepth": 1,
+        "materials": [
+          {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          },
+          {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          },
+          {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        ]
+      },
+      "bounds": {
+        "minimum": [
+          -9,
+          -9,
+          -3
+        ],
+        "size": [
+          3,
+          2,
+          6
+        ]
+      },
+      "rulesCanonicalHex": "4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000020000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb",
+      "rulesSha256": "a963ad9ff2e753e6c9d69bfb4fec6686a32fa5c43d688680c64cc45055601b2a",
+      "cells": [
+        {
+          "coordinate": [
+            -9,
+            -9,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": -1,
+          "formationId": "3fabdca5f9929e255ad3bcc948e3accb",
+          "sourceId": "aa26db16915854e25d56a14ab72eb136",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -8,
+            -9,
+            -3
+          ],
+          "stratum": 2,
+          "surfaceZ": -2,
+          "formationId": "93fb921f4711cbbd05bf878b8f788a84",
+          "sourceId": "3ae33652878171d28b151bb4b035960f",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -7,
+            -9,
+            -3
+          ],
+          "stratum": 2,
+          "surfaceZ": -2,
+          "formationId": "a530f7b202910a3798a07cf77cef6d0c",
+          "sourceId": "2f8637e675b8772e314f5c875a5aa8c7",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -9,
+            -8,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": -1,
+          "formationId": "00f0ad1de306a81bc190ba47d1aa7ebd",
+          "sourceId": "19e2d1b5fe39a54e5c4f45ba8743ae5b",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -8,
+            -8,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": -1,
+          "formationId": "d1464e28fbad66ccac183b3f243ee9db",
+          "sourceId": "c175ff99c60f6a0512a3c1c5255a63de",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -7,
+            -8,
+            -3
+          ],
+          "stratum": 3,
+          "surfaceZ": -1,
+          "formationId": "936991da9067ef947dac1131bb88b26f",
+          "sourceId": "48709173b289e909594d6e18dc351575",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9,
+            -9,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": -1,
+          "formationId": "ea8ce353df2f47c3f346ff7e976f24c0",
+          "sourceId": "c5519633f113a3f2ed104299e8f17ae2",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -8,
+            -9,
+            -2
+          ],
+          "stratum": 1,
+          "surfaceZ": -2,
+          "formationId": "960975e80526e1b703db590d307493f6",
+          "sourceId": "92f8309fe835e24fc891c1eb5c7dfd13",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -7,
+            -9,
+            -2
+          ],
+          "stratum": 1,
+          "surfaceZ": -2,
+          "formationId": "7ed46659d2179e1ad8a4dc0274d65dd2",
+          "sourceId": "9a037122f3420bd083b86586737ddd44",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -9,
+            -8,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": -1,
+          "formationId": "b7454dff800fe6c6747fe8c66c76c660",
+          "sourceId": "d6ea8de34d935ae534a170ee4dc6f5c6",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -8,
+            -8,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": -1,
+          "formationId": "d9b3eb8040c2736dc6c710c0f162ff31",
+          "sourceId": "22292adb5be58799ff64b3103558e718",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -7,
+            -8,
+            -2
+          ],
+          "stratum": 2,
+          "surfaceZ": -1,
+          "formationId": "3a952ae393413081db460b9e584f5bec",
+          "sourceId": "9f4e3da1863927f895b58ca824e8a98b",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            -9,
+            -9,
+            -1
+          ],
+          "stratum": 1,
+          "surfaceZ": -1,
+          "formationId": "22f5b80129963a74b819b575b7719fba",
+          "sourceId": "2377b2f22b8e2db8ef123fa3fde4901e",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -8,
+            -9,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -7,
+            -9,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -9,
+            -8,
+            -1
+          ],
+          "stratum": 1,
+          "surfaceZ": -1,
+          "formationId": "fc200bce84b9f0078e0882708afaa248",
+          "sourceId": "61728d98938b38b2eaefccf7631ce978",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -8,
+            -8,
+            -1
+          ],
+          "stratum": 1,
+          "surfaceZ": -1,
+          "formationId": "3f42bba1186108316957337936ef0274",
+          "sourceId": "7c7a00c6db6ce0e26e029aca218e1d77",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -7,
+            -8,
+            -1
+          ],
+          "stratum": 1,
+          "surfaceZ": -1,
+          "formationId": "67afeb9c6f0fe112128cec07fe3741e0",
+          "sourceId": "860f90328dabd2c29bb70aa0a47e41da",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            -9,
+            -9,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -8,
+            -9,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -7,
+            -9,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -9,
+            -8,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -8,
+            -8,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -7,
+            -8,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -9,
+            -9,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -8,
+            -9,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -7,
+            -9,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -9,
+            -8,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -8,
+            -8,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -7,
+            -8,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -9,
+            -9,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -8,
+            -9,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -7,
+            -9,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -2,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -9,
+            -8,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -8,
+            -8,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -7,
+            -8,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -1,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        }
+      ],
+      "states": [
+        {
+          "name": "initial",
+          "revision": 0,
+          "excavatedIndices": [],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000020000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffff700000008fffffffffffffff700000008fffffffffffffffd00000008000000000000000300000008000000000000000200000008000000000000000600000008000000000000000000000000",
+          "sha256": "9d7617a8b41dbaaddf637e0b3bb0402907122081d7db56a6c909bc73cd35d6a7"
+        },
+        {
+          "name": "excavated",
+          "revision": 1,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000020000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffff700000008fffffffffffffff700000008fffffffffffffffd000000080000000000000003000000080000000000000002000000080000000000000006000000080000000000000001000000080000000000000001",
+          "sha256": "5f2cafc3352dcb5b87b4d7c136dab63161c81f0d0d0a9b5c7e9969b90ebbe06a"
+        },
+        {
+          "name": "maximum-revision",
+          "revision": 18446744073709551615,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000020000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffff700000008fffffffffffffff700000008fffffffffffffffd00000008000000000000000300000008000000000000000200000008000000000000000600000008ffffffffffffffff000000080000000000000001",
+          "sha256": "b3058e5a0c83fbf5393a6765a06ada9b5743fec39a413849936be49240dada5f"
+        }
+      ]
+    },
+    {
+      "name": "positive-lattice",
+      "scope": {
+        "worldId": "00000000000000000000000000000001",
+        "branchId": "00000000000000000000000000000002",
+        "realmId": "00000000000000000000000000000003"
+      },
+      "seed": "0000000000000000000000003ade68b1",
+      "rules": {
+        "baseSurfaceZ": 0,
+        "relief": 3,
+        "soilDepth": 2,
+        "materials": [
+          {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          },
+          {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          },
+          {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        ]
+      },
+      "bounds": {
+        "minimum": [
+          7,
+          7,
+          -4
+        ],
+        "size": [
+          3,
+          2,
+          8
+        ]
+      },
+      "rulesCanonicalHex": "4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000030000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb",
+      "rulesSha256": "39ab88e4fb37d630fa767dd669f9ee77acbe9e2e7b1a43eff5acd2b12b7e4594",
+      "cells": [
+        {
+          "coordinate": [
+            7,
+            7,
+            -4
+          ],
+          "stratum": 2,
+          "surfaceZ": -3,
+          "formationId": "1a092bef2a6161a3db808ac9103c154c",
+          "sourceId": "7c48a18ab45dd7dc7c60245db9a09f14",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            -4
+          ],
+          "stratum": 2,
+          "surfaceZ": -3,
+          "formationId": "75f40160878442fd3183e13761fc4404",
+          "sourceId": "23477df25adcce7542db9bdd09d62157",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            -4
+          ],
+          "stratum": 2,
+          "surfaceZ": -3,
+          "formationId": "e345d92b99eb2665f543fba58b9aa25e",
+          "sourceId": "1b102ce2a7c75dcb89f9149e55037920",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            -4
+          ],
+          "stratum": 2,
+          "surfaceZ": -3,
+          "formationId": "aaafbef8c3f57f74f4846d8c33d3f930",
+          "sourceId": "4de2ef5ac19ca3b82f2bb222d3eede14",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            -4
+          ],
+          "stratum": 2,
+          "surfaceZ": -3,
+          "formationId": "16d7963793d68a9f0580c8140c52318e",
+          "sourceId": "8aadc7578548a420c466f2f5b0651d02",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            -4
+          ],
+          "stratum": 2,
+          "surfaceZ": -3,
+          "formationId": "935908b1024acb07b396b4407a57b5e7",
+          "sourceId": "ed046c2fdcb4d6d05c7ba9e83d4123a0",
+          "material": {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          }
+        },
+        {
+          "coordinate": [
+            7,
+            7,
+            -3
+          ],
+          "stratum": 1,
+          "surfaceZ": -3,
+          "formationId": "002491079838847be514d28c9b30e75c",
+          "sourceId": "8dc89ffa0483b339439ee4bd58316434",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            -3
+          ],
+          "stratum": 1,
+          "surfaceZ": -3,
+          "formationId": "3df69b149bf70e632b8660d2626c7326",
+          "sourceId": "d3565448442a8908cc090fac7646913f",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            -3
+          ],
+          "stratum": 1,
+          "surfaceZ": -3,
+          "formationId": "bb1fa0d2f68d2997493fda39354f111b",
+          "sourceId": "98e23420816823c0820629ecb93e3406",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            -3
+          ],
+          "stratum": 1,
+          "surfaceZ": -3,
+          "formationId": "7c420ae33a97a9eb67a8f91f81019aae",
+          "sourceId": "058c5c24cef38cfb5eaf0fa7adda87cc",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            -3
+          ],
+          "stratum": 1,
+          "surfaceZ": -3,
+          "formationId": "581e96273ae2b5b3a5b2af3f3a501bb8",
+          "sourceId": "02783f6e3184a27dd2f813e6453364c9",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            -3
+          ],
+          "stratum": 1,
+          "surfaceZ": -3,
+          "formationId": "4d59fd0ec8e6e0234a97d388604590b9",
+          "sourceId": "3b847bb6e80e42bf1cf38656e14b9de5",
+          "material": {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          }
+        },
+        {
+          "coordinate": [
+            7,
+            7,
+            -2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            -2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            -2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            -2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            -2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            -2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            7,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            -1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            7,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            0
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            7,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            1
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            7,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            2
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            7,
+            3
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            7,
+            3
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            7,
+            3
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            7,
+            8,
+            3
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            8,
+            8,
+            3
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            9,
+            8,
+            3
+          ],
+          "stratum": 0,
+          "surfaceZ": -3,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        }
+      ],
+      "states": [
+        {
+          "name": "initial",
+          "revision": 0,
+          "excavatedIndices": [],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000030000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008000000000000000700000008000000000000000700000008fffffffffffffffc00000008000000000000000300000008000000000000000200000008000000000000000800000008000000000000000000000000",
+          "sha256": "c3d94e56bc1b93b02dca49cb9ba0612a0cf1fe7b137d6d402812240f5deffb05"
+        },
+        {
+          "name": "excavated",
+          "revision": 1,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000030000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008000000000000000700000008000000000000000700000008fffffffffffffffc000000080000000000000003000000080000000000000002000000080000000000000008000000080000000000000001000000080000000000000001",
+          "sha256": "fdc3987bf86a07891bd45edc57580413ffa16dc31ed302d76afd1dd262bd0e9d"
+        },
+        {
+          "name": "maximum-revision",
+          "revision": 18446744073709551615,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000030000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008000000000000000700000008000000000000000700000008fffffffffffffffc00000008000000000000000300000008000000000000000200000008000000000000000800000008ffffffffffffffff000000080000000000000001",
+          "sha256": "205c36af2388f476374f2bc35a0980b2169e1f9208aa79aebdd5ef3dfdeba724"
+        }
+      ]
+    },
+    {
+      "name": "signed-coordinate-extremes",
+      "scope": {
+        "worldId": "00000000000000000000000000000001",
+        "branchId": "00000000000000000000000000000002",
+        "realmId": "00000000000000000000000000000003"
+      },
+      "seed": "0000000000000000000000003ade68b1",
+      "rules": {
+        "baseSurfaceZ": 0,
+        "relief": 0,
+        "soilDepth": 2,
+        "materials": [
+          {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          },
+          {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          },
+          {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        ]
+      },
+      "bounds": {
+        "minimum": [
+          -9223372036854775808,
+          9223372036854775806,
+          -9223372036854775808
+        ],
+        "size": [
+          2,
+          2,
+          2
+        ]
+      },
+      "rulesCanonicalHex": "4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb",
+      "rulesSha256": "4346bf63d2772c5e3ff84ba4a4f8d231b5fe3dd69e643de600609aa0834d5df7",
+      "cells": [
+        {
+          "coordinate": [
+            -9223372036854775808,
+            9223372036854775806,
+            -9223372036854775808
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "f8c697b8d53883a40f3e9ed5a3da326f",
+          "sourceId": "90ce455d83967dbeddc3ed9a67578efb",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9223372036854775807,
+            9223372036854775806,
+            -9223372036854775808
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "b3ead86b4653ac6a2d0ddd459b6379e2",
+          "sourceId": "61e40da1c8c8e57fac80278babb3a449",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9223372036854775808,
+            9223372036854775807,
+            -9223372036854775808
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "4d2b37a842ba5feff274e50f1b71c894",
+          "sourceId": "44f89dc6f3186646de6142c76cc6602e",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9223372036854775807,
+            9223372036854775807,
+            -9223372036854775808
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "06f6062f685831cfe286683ba0f97360",
+          "sourceId": "bb1b0b9280a79e2e9500c6cb38d7aa48",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9223372036854775808,
+            9223372036854775806,
+            -9223372036854775807
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "f8c697b8d53883a40f3e9ed5a3da326f",
+          "sourceId": "657efc7fa004bd606941ea9867be91b3",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9223372036854775807,
+            9223372036854775806,
+            -9223372036854775807
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "b3ead86b4653ac6a2d0ddd459b6379e2",
+          "sourceId": "4b544d5d84108d2ffe2835aee74d98c2",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9223372036854775808,
+            9223372036854775807,
+            -9223372036854775807
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "4d2b37a842ba5feff274e50f1b71c894",
+          "sourceId": "a1f068c329910b934becb1ff30ddd0b4",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        },
+        {
+          "coordinate": [
+            -9223372036854775807,
+            9223372036854775807,
+            -9223372036854775807
+          ],
+          "stratum": 3,
+          "surfaceZ": 0,
+          "formationId": "06f6062f685831cfe286683ba0f97360",
+          "sourceId": "c877467de44774a0667448cc18046916",
+          "material": {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        }
+      ],
+      "states": [
+        {
+          "name": "initial",
+          "revision": 0,
+          "excavatedIndices": [],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e7631000000088000000000000000000000087ffffffffffffffe00000008800000000000000000000008000000000000000200000008000000000000000200000008000000000000000200000008000000000000000000000000",
+          "sha256": "7161cf259d099abead45dab5e2b55cdbc3c945f79f1dfc79d892dcc0eb82b834"
+        },
+        {
+          "name": "excavated",
+          "revision": 1,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e7631000000088000000000000000000000087ffffffffffffffe000000088000000000000000000000080000000000000002000000080000000000000002000000080000000000000002000000080000000000000001000000080000000000000001",
+          "sha256": "26c2ba71150ea08b8ba263d3f54ecfe0aea0fad2e8bbc03959db8e31f78c717a"
+        },
+        {
+          "name": "maximum-revision",
+          "revision": 18446744073709551615,
+          "excavatedIndices": [
+            0,
+            1
+          ],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e7631000000088000000000000000000000087ffffffffffffffe00000008800000000000000000000008000000000000000200000008000000000000000200000008000000000000000200000008ffffffffffffffff000000080000000000000001",
+          "sha256": "0e748c8ae6bdd1fadc2548d77ee6ac6330766f8dda69bc4d29c14b158b768b38"
+        }
+      ]
+    },
+    {
+      "name": "upper-surface-envelope",
+      "scope": {
+        "worldId": "00000000000000000000000000000001",
+        "branchId": "00000000000000000000000000000002",
+        "realmId": "00000000000000000000000000000003"
+      },
+      "seed": "0000000000000000000000003ade68b1",
+      "rules": {
+        "baseSurfaceZ": 9223372036854775799,
+        "relief": 8,
+        "soilDepth": 1,
+        "materials": [
+          {
+            "definitionId": "00000000000000000000000000000065",
+            "version": "fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa07"
+          },
+          {
+            "definitionId": "00000000000000000000000000000066",
+            "version": "c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc"
+          },
+          {
+            "definitionId": "00000000000000000000000000000067",
+            "version": "fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb"
+          }
+        ]
+      },
+      "bounds": {
+        "minimum": [
+          -1,
+          0,
+          9223372036854775805
+        ],
+        "size": [
+          2,
+          1,
+          3
+        ]
+      },
+      "rulesCanonicalHex": "4f4643000000000100000007000000107465727261696e2e72756c65732e7631000000087ffffffffffffff70000000800000000000000080000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb",
+      "rulesSha256": "4dcadddfe62731b8537a8c54ca3da87e58bda83cbbd1568baf06766a4d406f86",
+      "cells": [
+        {
+          "coordinate": [
+            -1,
+            0,
+            9223372036854775805
+          ],
+          "stratum": 0,
+          "surfaceZ": 9223372036854775799,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            9223372036854775805
+          ],
+          "stratum": 0,
+          "surfaceZ": 9223372036854775799,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            9223372036854775806
+          ],
+          "stratum": 0,
+          "surfaceZ": 9223372036854775799,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            9223372036854775806
+          ],
+          "stratum": 0,
+          "surfaceZ": 9223372036854775799,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            -1,
+            0,
+            9223372036854775807
+          ],
+          "stratum": 0,
+          "surfaceZ": 9223372036854775799,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        },
+        {
+          "coordinate": [
+            0,
+            0,
+            9223372036854775807
+          ],
+          "stratum": 0,
+          "surfaceZ": 9223372036854775799,
+          "formationId": null,
+          "sourceId": null,
+          "material": null
+        }
+      ],
+      "states": [
+        {
+          "name": "initial",
+          "revision": 0,
+          "excavatedIndices": [],
+          "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e7631000000087ffffffffffffff70000000800000000000000080000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008ffffffffffffffff000000080000000000000000000000087ffffffffffffffd00000008000000000000000200000008000000000000000100000008000000000000000300000008000000000000000000000000",
+          "sha256": "c67090ae14b03b8b502f92ef8f9c2a1f1736dd1e4bbb76abd986695b6c019ee8"
+        }
+      ]
+    }
+  ],
+  "malformed": [
+    {
+      "name": "bad-magic",
+      "canonicalHex": "424144210000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "unsupported-framing-version",
+      "canonicalHex": "4f4643000000000200000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "extra-top-field",
+      "canonicalHex": "4f4643000000000100000008000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc00000008000000000000000400000008000000000000000200000008000000000000000700000008000000000000000100000008000000000000000100000000"
+    },
+    {
+      "name": "unknown-tag",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76320000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "trailing-byte",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc00000008000000000000000400000008000000000000000200000008000000000000000700000008000000000000000100000008000000000000000100"
+    },
+    {
+      "name": "truncated",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc0000000800000000000000040000000800000000000000020000000800000000000000070000000800000000000000010000000800000000000000"
+    },
+    {
+      "name": "oversized-field-length",
+      "canonicalHex": "4f4643000000000100000007ffffffff7465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "short-seed",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e76310000001000000000000000000000000000000001000000100000000000000000000000000000000200000010000000000000000000000000000000030000000f0000000000000000000000003ade680000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "short-revision",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc0000000800000000000000040000000800000000000000020000000800000000000000070000000100000000080000000000000001"
+    },
+    {
+      "name": "initial-revision-with-edits",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000000000000080000000000000001"
+    },
+    {
+      "name": "partial-index",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc0000000800000000000000040000000800000000000000020000000800000000000000070000000800000000000000010000000100"
+    },
+    {
+      "name": "duplicate-index",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000000"
+    },
+    {
+      "name": "reversed-index",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000100000000"
+    },
+    {
+      "name": "index-outside-region",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc0000000800000000000000040000000800000000000000020000000800000000000000070000000800000000000000010000000400000038"
+    },
+    {
+      "name": "maximum-index",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc00000008000000000000000400000008000000000000000200000008000000000000000700000008000000000000000100000004ffffffff"
+    },
+    {
+      "name": "excavated-original-void",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc0000000800000000000000040000000800000000000000020000000800000000000000070000000800000000000000010000000400000028"
+    },
+    {
+      "name": "unknown-relief",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000090000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "zero-soil",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000000000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "oversized-soil",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000110000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "surface-overflow",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e7631000000087fffffffffffffff0000000800000000000000010000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "soil-underflow",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000880000000000000000000000800000000000000000000000800000000000000010000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "zero-width",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e7631000000080000000000000000000000080000000000000000000000080000000000000000000000080000000000000000000000080000000000000001000000080000000000000001000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "excess-width",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e7631000000080000000000000000000000080000000000000000000000080000000000000000000000080000000000000021000000080000000000000001000000080000000000000001000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "excess-height",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e7631000000080000000000000000000000080000000000000000000000080000000000000000000000080000000000000001000000080000000000000001000000080000000000000011000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "extent-overflow",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e7631000000087fffffffffffffff000000080000000000000000000000080000000000000000000000080000000000000002000000080000000000000001000000080000000000000001000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "conflicting-material-versions",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "scope-trailing",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005d4f4643000000000100000004000000107465727261696e2e73636f70652e763100000010000000000000000000000000000000010000001000000000000000000000000000000002000000100000000000000000000000000000000300000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "rules-trailing",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016e4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb00000000694f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc000000080000000000000004000000080000000000000002000000080000000000000007000000080000000000000001000000080000000000000001"
+    },
+    {
+      "name": "bounds-trailing",
+      "canonicalHex": "4f4643000000000100000007000000117465727261696e2e726567696f6e2e76310000005c4f4643000000000100000004000000107465727261696e2e73636f70652e7631000000100000000000000000000000000000000100000010000000000000000000000000000000020000001000000000000000000000000000000003000000100000000000000000000000003ade68b10000016d4f4643000000000100000007000000107465727261696e2e72756c65732e76310000000800000000000000000000000800000000000000000000000800000000000000020000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006500000020fadb65366dcfaab7d469712b20a947981f065e282a04047776c64ec5167dfa070000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006600000020c94447804828e37870de89448af61ba55d45126551480f9e1b8e4ac894a820fc0000005f4f4643000000000100000003000000177465727261696e2e6d6174657269616c2d70696e2e7631000000100000000000000000000000000000006700000020fd61a3083888331461f88b8fc6b3e61630e7a1c02bdb0df0d54727faefd6decb0000006a4f4643000000000100000007000000117465727261696e2e626f756e64732e763100000008fffffffffffffffe00000008ffffffffffffffff00000008fffffffffffffffc00000008000000000000000400000008000000000000000200000008000000000000000700000000080000000000000001000000080000000000000001"
+    }
+  ]
+}

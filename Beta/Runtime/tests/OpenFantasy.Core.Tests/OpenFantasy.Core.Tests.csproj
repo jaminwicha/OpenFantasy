@@ -32,5 +32,7 @@
     <None Update="Fixtures/actors-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/observations-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/language-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/authority-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/terrain-v1.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

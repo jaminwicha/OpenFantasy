@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "reviewKind": "independent_static_review_and_executed_python_checks_not_csharp_execution",
+  "executedAtUtc": "2026-09-09T23:47:34.478889+00:00",
+  "python": "3.14.5",
+  "proof": {
+    "oracleMatchesRetainedBytes": true,
+    "fixtureBytes": 124983,
+    "fixtureSha256": "9b1dfeccc71642f0d96b50d41f5206e2880995f80ad85f0eee8a102a268c0074",
+    "generationExamples": 5,
+    "expectedCells": 154,
+    "nonvoidSourceCellsChecked": 76,
+    "snapshotStates": 13,
+    "malformedVectorsInspectedNotExecutedInCSharp": 29,
+    "signedFloorComparisons": 10515,
+    "weightEnvelopeCases": 9216,
+    "boundsIndexInverseCases": 49176
+  },
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/CanonicalTerrainReader.cs",
+      "bytes": 3035,
+      "sha256": "9f1a1f79ce69ce8d7aae7adc1c07ef79976f25204658a5f8e507329e3568c7cb"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/CellCoordinate.cs",
+      "bytes": 731,
+      "sha256": "3e579450e272c4fecc4c69f6ffceda00cc4bdba9023ae289d338927f7361208e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/StratifiedTerrainGenerator.cs",
+      "bytes": 5078,
+      "sha256": "082765e6d8ad775c2c86b2cee5bd0cecd7e3ba00cd0fe2468c941a582e4a3c40"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/StratifiedTerrainRules.cs",
+      "bytes": 1399,
+      "sha256": "a1f9499212e06efe58d60c682cdd503b1281598a794c7ada54f95ee21a2f16ee"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainCell.cs",
+      "bytes": 1352,
+      "sha256": "9a7a62d4fe57801d929d6ef4f0e327f2192cc85aa70be897366febb8f30572e0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainMaterialPalette.cs",
+      "bytes": 1402,
+      "sha256": "38f4aea3d8f6d5fec1a85bfdbb6e29b3352061184dd058c15675905c4bb58c2e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionBounds.cs",
+      "bytes": 2205,
+      "sha256": "b6c21c1f2819bf597e1860278aae3a306be2e935f35b9be4e50316384fd1e218"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs",
+      "bytes": 6963,
+      "sha256": "23482c3e66c867b99df3ef3e360c1e2195152b7b74cd3454a889347ff5e9debd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionSnapshot.cs",
+      "bytes": 4663,
+      "sha256": "c42d1fd99ccc4a81ecc22412386f1a0d07ac831a2b891a540ec6e5d13567f92e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainScope.cs",
+      "bytes": 237,
+      "sha256": "9487add67fe56c4bbdc7f327b0d31b170a3f4f026b3a8992f095ec34b6f1c503"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Terrain/TerrainCodecTests.cs",
+      "bytes": 5369,
+      "sha256": "abe3ea53f11db59b53c6c9258a083b57ea10056302b37d9e83897cdbf86672a0"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Terrain/TerrainEditTests.cs",
+      "bytes": 9717,
+      "sha256": "a4100791cc84e2c85aa49ed740e2aed679affbe13b5ee157ac600ac4c42d6ff2"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Terrain/TerrainFixture.cs",
+      "bytes": 2202,
+      "sha256": "7b5a6c35eec82cb016a42949f88818b3688f61d4b033564bfaaf537389742ccb"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Terrain/TerrainGenerationTests.cs",
+      "bytes": 9591,
+      "sha256": "9431c3bdc3b62e5765d391a7bf41bdb01fe79f800296fa6e40f80ef6062a31b7"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_terrain_vectors.py",
+      "bytes": 8327,
+      "sha256": "33242d12fd1141da01657cf7e246d1f7464e024b4c6aa7664bb0759d7ca149c6"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/terrain-v1.json",
+      "bytes": 124983,
+      "sha256": "9b1dfeccc71642f0d96b50d41f5206e2880995f80ad85f0eee8a102a268c0074"
+    },
+    {
+      "path": "Beta/implementation/p01/terrain-foundation/CONTRACT.md",
+      "bytes": 15902,
+      "sha256": "b613320fa5a440437e3506db9cd3c5f1fe0cef28c880dec5255fb3314930fc74"
+    },
+    {
+      "path": "Beta/implementation/p01/terrain-review/review_terrain.py",
+      "bytes": 6690,
+      "sha256": "4debc1110a7d2f942eb4cda7a1ae8364e75b052fd9d362141a5db7611e7829ef"
+    }
+  ],
+  "limits": [
+    "No .NET build or tests run by this reviewer.",
+    "Python arithmetic checks support static C# review; they are not execution of runtime methods.",
+    "Sample source-identity checks are not a mathematical uniqueness or global collision proof.",
+    "No macro terrain, geology, history, fluid, physical support, mining-yield or playable traversal qualification."
+  ]
+}
