@@ -95,7 +95,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     public async Task<WorldActionReceipt> SubmitAction(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
-        byte[] encoded = WorldActionCodecV1.Encode(command);
+        byte[] encoded = WorldActionCodec.Encode(command);
         Task<WorldActionReceipt> result;
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
@@ -255,7 +255,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
         EntityId cause = NewCause(pending?.Command.CommandId);
         return new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision, state.AdvancingSteps,
             state.HasReadingHold ? WorldBatchKind.HeldInteraction : WorldBatchKind.AdvancingStep,
-            movement, pending is null ? [] : [pending.Command]);
+            movement, pending is null ? [] : [pending.Command], state.ProfileVersion);
     }
 
     private EntityId NewCause(EntityId? commandId)

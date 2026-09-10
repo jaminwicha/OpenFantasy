@@ -1,0 +1,1016 @@
+{
+  "captured_at_utc": "2026-09-10T01:49:39.482074+00:00",
+  "status": "passed",
+  "role": "Implementer verification of owned Hosting routing/projection and 11 authored regression cases; supplemental execution of all retained/other-worker Hosting cases. Root codec/processor/client changes were independently inspected read-only, with findings in PERSISTENCE_REVIEW.md.",
+  "command": "env DOTNET_ROOT=/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401 PATH=<pinned-sdk-root>:$PATH /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-build --no-restore --configuration Debug --logger trx;LogFileName=gathering-hosting-debug-initial.trx --results-directory ../implementation/p01/gather-craft/hosting-validation/test-results --nologo --verbosity minimal",
+  "working_directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime",
+  "configuration": "Debug",
+  "target_framework": "net8.0",
+  "sdk_root": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401",
+  "runtime_note": "DOTNET_ROOT and leading PATH were explicitly pinned; this test output reports the net8 target rather than an independently printed runtime patch version.",
+  "counters": {
+    "total": "108",
+    "executed": "108",
+    "passed": "108",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "times": {
+    "creation": "2026-09-09T20:48:03.9825790-05:00",
+    "queuing": "2026-09-09T20:48:03.9825790-05:00",
+    "start": "2026-09-09T20:48:02.6822980-05:00",
+    "finish": "2026-09-09T20:48:06.9412560-05:00"
+  },
+  "owned_new_cases": 11,
+  "all_passed_case_names": [
+    "OpenFantasy.Hosting.Tests.Simulation.GatheringSessionTests.LegacyProjectionHasNoInventedNodesToolsOrGatheringEffort",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Creates_source_wren_and_authored_player_inside_the_actual_farm_terrain",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalNpcControllerTests.A_proposed_step_beyond_the_home_radius_is_omitted_before_authoritative_geometry",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Predictable_result_collision_faults_only_that_request_and_commits_an_unrelated_step",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Admits_two_representative_finite_nodes_with_exact_source_swing_and_renewal_counts",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.LostReplyBeforeOrAfterCommitNeverDuplicatesGathering(afterCommit: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Player_projection_is_read_only_and_session_never_accepts_another_actors_claims",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Both_actors_have_full_shared_anatomy_and_individually_admitted_spoken_comprehension",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Tampered_source_or_authored_content_is_rejected(path: \"legacy/aldermere-first-loop/records.json\")",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Exact_unicode_seed_and_name_limits_are_preserved_before_derivation",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.APreviousCommandIdentityCannotBecomeALaterSplitChild",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.CreationAndReopenRetainGenesisHeadAndInitialCheckpoint",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.UncertainCommitRequiresReopenAndExactReceiptRecovery(afterCommit: False)",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.UnsignedHighBitsInStateAndSourceIntervalsSurviveCommitAndRecovery",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.StaleFreshCommandIsDurablyRejectedWithoutChangingState",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalNpcControllerTests.Versioned_controller_is_deterministic_and_uses_only_the_explicit_host_actor_binding",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Missing_required_source_asset_has_no_fallback_or_partial_world",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.GatheringCommitRestoresExactRequestReceiptSourceAndRemainingWork",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CommittedMovementTimeInventoryAndReceiptsSurviveExactReplay",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.DepletionRegrowthAndSecondGenerationRetainMonotonicSourceRightsAcrossReplay",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Expired_movement_and_late_host_deadlines_do_not_create_catch_up_steps",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"DELETE FROM world_occupied_identity\")",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.ExistingReceiptDoesNotBypassCurrentDeliveryPrincipalOrSessionChecks",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsAnIncompleteIdentityRegistryWithoutChangingTheStoredWorld",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.InvalidKindsSequencesAndByteBoundsCannotWritePartialRows",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"identity\")",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Same_input_is_byte_identical_while_other_seeds_have_distinct_instances_and_stable_definitions",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalNpcControllerTests.Idle_periods_and_reading_holds_produce_no_npc_samples",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.PartialTransferLineageAndTerminalRejectionsRemainDurable",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_commits SET outcomes=x'01'\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.LegacyWorldCompatibilityTests.NewBatchProfileCannotSilentlyUpgradeAnExistingWorld",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Domain_separates_user_seed_and_preserves_the_unchanged_base_composition",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"INSERT INTO world_checkpoints SELECT sequence,adva\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Tampered_source_or_authored_content_is_rejected(path: \"adventure-farm/admission-v1.json\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.VersionOneAndVersionTwoRefuseEachOthersFilesWithoutMigration",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.ConcurrentDeliveryOfOneCommandCommitsExactlyOnce",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Stopping_cancels_uncommitted_input_and_closes_the_owned_authority",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Invalid_user_text_rejects_before_any_filesystem_content_read",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.ConflictingRetryAndUnauthenticatedRetryDoNotReadOrReplaceReceipt",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Tampered_source_or_authored_content_is_rejected(path: \"legacy/aldermere-first-loop/source-support/data/it\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"legacy/aldermere-first-loop/assets/units/veh_ship.\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.Simulation.GatheringSessionTests.NewProfileUsesDurableCutoffAndOwnToolProjectionWithoutPublishingPendingYield",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.OrphanCommandOutcomeCannotBecomeAnAcceptedExistingDatabase",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Oversized_authored_metadata_rejects_before_json_expansion",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.LostReplyBeforeOrAfterCommitNeverDuplicatesGathering(afterCommit: False)",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.TransferRetryAndRestartRetainOneExactReceiptAndConservedInventory",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Embedded_content_creates_the_same_exact_world_as_verified_filesystem_content",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Occupied_command_identity_is_rejected_without_stalling_clock_or_host_npc",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Forged_local_source_pin_missing_profile_and_oversized_profile_are_rejected",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Embedded_and_filesystem_profiles_restore_with_the_complete_world_codec",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.DuplicateOutcomeCauseAndIdentityCannotOverwriteCommittedRows",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Addressed_reading_hold_suppresses_movement_and_held_close_advances_no_clocks",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Selected_payload_hashes_match_independent_frozen_source_pins",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.DialogueHoldAndCloseAreDurableWithoutRetrospectiveTime",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"legacy/aldermere-first-loop/closure-manifest.json\")",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Declares_one_finite_player_owned_eight_wood_source_and_explicit_control_for_both_residents",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"DELETE FROM world_checkpoints\")",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"native-farm/presentation-v1.json\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.UnsignedCountersRoundTripAndSortBeyondSignedRange",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Tampered_source_or_authored_content_is_rejected(path: \"legacy/aldermere-first-loop/source-support/src/Sim\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Preserves_exact_names_and_accepts_utf8_limits_without_normalizing_seed_or_name",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.UnexpectedSchemaObjectsOrDefinitionsRejectBeforeReadiness(mutation: \"CREATE VIEW hidden_world AS SELECT * FROM world_he\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.LostOutcomeRequiresReopenAndExactRetry(afterCommit: False, committed: 0)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.FullStorageRecordsRejectionWithoutDamageIssuanceOrEffortCost",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"packages/aldermere-first-loop.manifest.json\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.OneTransactionRetainsCompactCommitOutcomesIdentitiesAndCheckpoint",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.GenesisCannotDisguiseAnExistingWorldRevisionAsCommitZero",
+    "OpenFantasy.Hosting.Tests.Simulation.GatheringSessionTests.ReadingHoldRejectsGatheringWithoutWorkOrCalendarProgress",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Begins_at_nine_am_with_no_elapsed_time_revisions_or_active_dialogue",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Supplied_tools_and_original_stock_are_owned_finite_lots_with_explicit_capacity",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Same_exact_inputs_produce_identical_state_and_seed_changes_only_instance_lineage",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Recomputed_local_pins_cannot_admit_an_unreviewed_source_replacement",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"native-farm/admission-v1.json\")",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"legacy/aldermere-first-loop/assets/layers/body.png\")",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Pending_actions_coalesce_without_early_ack_and_exact_durable_retry_survives_restart",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CurrentAuthorityAndExactCommandBytesGateReceiptLookup",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Rejects_invalid_or_oversized_text_before_any_content_read",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Backend_failure_faults_completion_and_pending_task_without_a_gameplay_receipt",
+    "OpenFantasy.Hosting.Tests.WorldStorage.LegacyWorldCompatibilityTests.RetainedNativeSaveReplaysExactLegacyHistoryAndContinuesWithoutMigration",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"legacy/aldermere-first-loop/records.json\")",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.NpcUsesTheSameAuthorityAndCanReturnAReceivedLot",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.UnsignedRevisionSurvivesSqliteAboveSignedIntegerRange",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.UnexpectedSchemaObjectsOrDefinitionsRejectBeforeReadiness(mutation: \"CREATE TRIGGER suppress_head BEFORE UPDATE ON worl\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.UncertainCommitRequiresReopenAndExactReceiptRecovery(afterCommit: True)",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.MissingAndCorruptFilesNeverBecomeNewWorlds",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_command_outcomes SET receipt=x'01'\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_head SET advancing_steps=x'0000000000\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.LostOutcomeRequiresReopenAndExactRetry(afterCommit: True, committed: 1)",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Tampered_source_or_authored_content_is_rejected(path: \"legacy/aldermere-first-loop/assets/units/node_oak.\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.CompetingCallersCannotBothSpendTheSameSourceUnits",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsChangedCommandBytesEvenWhenStoredSnapshotChecksumsStillMatch",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.CorruptAndOversizedStoredStateRejectInsteadOfResetting",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.DisposalBeforeCommitRollsBackEveryTableTogether",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Initial_actor_work_and_node_sites_are_supported_without_advancing_or_opening_dialogue",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SixThousandActualCommitsWriteAndReplayTheirScheduledCheckpoint",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CheckpointsAndRecoverySafetyLimitsHaveExplicitBoundaries",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.UnexpectedSchemaObjectsOrDefinitionsRejectBeforeReadiness(mutation: \"ALTER TABLE world_head ADD COLUMN extra BLOB;\")",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Any_changed_pinned_package_or_admission_file_rejects(relativePath: \"legacy/aldermere-first-loop/source-support/data/np\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.LegacyBatchCannotDiscardTheNewProfileAndForgedLegacyHeadCannotReplaceReplay",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"head\")",
+    "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Successful_genesis_is_read_only_and_preserves_original_appearance_witnesses",
+    "OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Tampered_source_or_authored_content_is_rejected(path: \"legacy/aldermere-first-loop/closure-manifest.json\")",
+    "OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.SuppressedRequiredWriteMustNotProduceAnAcknowledgedCommit(target: \"journal\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SchedulerPreviewDoesNotReservePublishOrAcknowledgeAnything",
+    "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Full_world_codec_restores_admitted_presence_body_language_and_finite_custody",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldDatabaseTests.CreationNeverOverwritesAndOnlyOneLeaseOwnsTheWorld",
+    "OpenFantasy.Hosting.Tests.SqliteCountedAuthorityTests.OnlyOneHostCanOwnAWorldAndCreatingNeverOverwrites",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Readiness_pause_clears_movement_and_never_adds_offline_time"
+  ],
+  "new_case_names": [
+    "OpenFantasy.Hosting.Tests.Simulation.GatheringSessionTests.LegacyProjectionHasNoInventedNodesToolsOrGatheringEffort",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.LostReplyBeforeOrAfterCommitNeverDuplicatesGathering(afterCommit: True)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.GatheringCommitRestoresExactRequestReceiptSourceAndRemainingWork",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.DepletionRegrowthAndSecondGenerationRetainMonotonicSourceRightsAcrossReplay",
+    "OpenFantasy.Hosting.Tests.WorldStorage.LegacyWorldCompatibilityTests.NewBatchProfileCannotSilentlyUpgradeAnExistingWorld",
+    "OpenFantasy.Hosting.Tests.Simulation.GatheringSessionTests.NewProfileUsesDurableCutoffAndOwnToolProjectionWithoutPublishingPendingYield",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.LostReplyBeforeOrAfterCommitNeverDuplicatesGathering(afterCommit: False)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.FullStorageRecordsRejectionWithoutDamageIssuanceOrEffortCost",
+    "OpenFantasy.Hosting.Tests.Simulation.GatheringSessionTests.ReadingHoldRejectsGatheringWithoutWorkOrCalendarProgress",
+    "OpenFantasy.Hosting.Tests.WorldStorage.LegacyWorldCompatibilityTests.RetainedNativeSaveReplaysExactLegacyHistoryAndContinuesWithoutMigration",
+    "OpenFantasy.Hosting.Tests.WorldStorage.GatheringAuthorityTests.LegacyBatchCannotDiscardTheNewProfileAndForgedLegacyHeadCannotReplaceReplay"
+  ],
+  "trace_output": [
+    "Finite gathering trace: steps=1001; stateBytes=7920; firstDepletionMs=82.849; regrowthMs=600.282; finalReplayMs=445.790; databaseBytes=561152"
+  ],
+  "measurement_scope": "Tiny synthetic two-actor fixture with real admitted terrain/body/custody, six actual gather commands and 1001 advancing steps including a 900-step regrowth delay; execution overlaps other test cases. These are qualification-run timings, not controlled production performance benchmarks.",
+  "legacy_save_fixture": {
+    "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/Fixtures/legacy-farm-profile-v1.sqlite",
+    "bytes": 86016,
+    "sha256": "ad7e10a2d60f80411d9ff2ca08a25ee5ebda046f347204c95dccfd5d526baa80"
+  },
+  "legacy_source_evidence": {
+    "path": "Beta/implementation/p01/native-loop/native-evidence/native-farm-edb15e6cbb4c495d8aedca9aecd0c06b/world.sqlite",
+    "bytes": 86016,
+    "sha256": "ad7e10a2d60f80411d9ff2ca08a25ee5ebda046f347204c95dccfd5d526baa80"
+  },
+  "inputs": [
+    {
+      "path": "Beta/Runtime/Directory.Build.props",
+      "bytes": 396,
+      "sha256": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680"
+    },
+    {
+      "path": "Beta/Runtime/content/adventure-farm/admission-v1.json",
+      "bytes": 9540,
+      "sha256": "f90505e21a578b6e8dd0df78ea195e1c2ee9e5451fee22779480b76ab04239cd"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/acc_01.png",
+      "bytes": 176,
+      "sha256": "6adcb9546b37d808938272cc1a30ff982d848b3872779b6b6ae38c68aa252b26"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/acc_02.png",
+      "bytes": 164,
+      "sha256": "4c4d2c29c732e98321c0b53013505c8edebb8d9842422fc0b863174b9f8b3757"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/acc_03.png",
+      "bytes": 175,
+      "sha256": "0907b9dd49e4553eae718bb47f4f84e30c53637483570536016ed59055eb3048"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/body.png",
+      "bytes": 533,
+      "sha256": "17a3af88e92baa615c9bb3f4d21e095767639458c655348a6b93080e82fe40e7"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/hair_00.png",
+      "bytes": 327,
+      "sha256": "73865f9a20075df7a633c6b979dad881bc846ce99e3837879adea8274bb82c63"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/hair_03.png",
+      "bytes": 429,
+      "sha256": "071f47bc85e4f423f3f1eb59966acb9315bfe96260a573e0f830f70145d7bb44"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/hair_05.png",
+      "bytes": 350,
+      "sha256": "b636e8e6acd8c9282a73a09a5e3956baeeb5bf2ea6fcfc0528ad187db965dd5c"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_01_a.png",
+      "bytes": 301,
+      "sha256": "4ca0ccfc3c49ce18bceee119cfdbfdc0fe911c966ad7f348f7741fbbdccb7505"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_01_b.png",
+      "bytes": 275,
+      "sha256": "5895c9bdccd69815483ebb5c389678cd9506b6e6c1dbee7877ecafa00698439b"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_03_a.png",
+      "bytes": 329,
+      "sha256": "f1b9a1c27d1aad80653e28987f72953ea38b9ac32e1b21fe89b1689f862ec68f"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_03_b.png",
+      "bytes": 258,
+      "sha256": "03cf33047919e412e9d17356c2609da7b603e8a6aeea431d0547e6eda95a3de1"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_04_a.png",
+      "bytes": 320,
+      "sha256": "3969aef17e4ead255563804f3945964b1908c338c306a224515604883f239cd7"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_04_b.png",
+      "bytes": 222,
+      "sha256": "8e6f0f7c93673fa01a64e9a525f042a776075aabb403206664ccbf3cba4deb52"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_07_a.png",
+      "bytes": 352,
+      "sha256": "50b8d577e05290aad4963d23cfedb24e1c23aec823e825ba8fd245c6df53b58c"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_07_b.png",
+      "bytes": 173,
+      "sha256": "adf698e483ac3eddbd47979aa2bd577e50a1716aed91cc58be94910d018c77de"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_08_a.png",
+      "bytes": 295,
+      "sha256": "bec72107f5dcbbacbc79b42266e2d603b6173d60f1d5c25f4f342f261796e52a"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/outfit_08_b.png",
+      "bytes": 185,
+      "sha256": "90f50e5210177c981efdde1e816b867aa0be7c224192c9814338160ba4028817"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/race_01.png",
+      "bytes": 228,
+      "sha256": "74233374e094eca807f4a7d874a3496d69948d697bfdd86c4501806d25ec1713"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/layers/race_02.png",
+      "bytes": 241,
+      "sha256": "c5ff78c1ac08d2ad70b9f8b3c4691b040d295e578f9cfb34af112984e491870e"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/tiles.png",
+      "bytes": 7520,
+      "sha256": "401e2d79a74e8c82ae273a4c9a1e6bf1f2e400ea13f4252f622b559befcb1a0d"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/bramble_wolf.png",
+      "bytes": 279,
+      "sha256": "adac08d8822fdea1cb7e9768a6b9dfa3d68d224d2e945ebe1b082bbb3a1f0b47"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/cave_bat.png",
+      "bytes": 231,
+      "sha256": "ae5d0a093443a21ee95a3f50de915db0cd3cf95164522810a81fd59290b9f3ac"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/frost_golem.png",
+      "bytes": 366,
+      "sha256": "0436484d71766f1afd0d51e900074f0971e92967f524b3dcfc8fc824308e5108"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/node_berry.png",
+      "bytes": 304,
+      "sha256": "8928cce8c9bd2b1c197650cac6b467ccb9b35035531f64548ac7b76b39721457"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/node_oak.png",
+      "bytes": 382,
+      "sha256": "3c95536649a836516f5bda0abc65dcd2d2b6a54611a8a0804c6ef133290188c8"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/squire.png",
+      "bytes": 395,
+      "sha256": "4808fd6c07c92ca02c3df9250d352c3b575a7449f52725b2d6928eb459651ce4"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/veh_boat.png",
+      "bytes": 337,
+      "sha256": "2c03e4e4db7b9cc740392cd234d3de7b49957e4566b06dda09c414c36512da04"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/veh_canoe.png",
+      "bytes": 305,
+      "sha256": "1ddd14b107b3b1eeb180b2ac7ed5affb842fc4034ff2ca275757cb352feaec2e"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/assets/units/veh_ship.png",
+      "bytes": 355,
+      "sha256": "76d6d882fcc0d5481b256f2d57856712aada7cdcbd94c22d74d5e8e84e872db3"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/closure-manifest.json",
+      "bytes": 30136,
+      "sha256": "d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/records.json",
+      "bytes": 35322,
+      "sha256": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/references.json",
+      "bytes": 32719,
+      "sha256": "a00865fabaf0637b929d5b8ab3ff2f5a66c0f258e4068a4d7ef0dee7a8396076"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-key-map.json",
+      "bytes": 12607,
+      "sha256": "fa56980272b65895595b4989b5d55a5529441347f239d28ad3dc43919d8f854a"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/abilities.json",
+      "bytes": 2416,
+      "sha256": "5cb75f014fef62fdf96d0597e9f51508737c1366ca7f341d5621ad9ca3d764d6"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/appearance.json",
+      "bytes": 3147,
+      "sha256": "3c9388eddd5a1343065f2e8d476f570a7cf0cf6c92998fedfdc0254df4761a9b"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/classes.json",
+      "bytes": 1439,
+      "sha256": "27c5956e9b269acdc36ecba339522c426380ea2f35bc33fead49ae778add6234"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/items.json",
+      "bytes": 8873,
+      "sha256": "ac0944b98fbfc10474ae1d1309bd7ad6b74c511fb2da9c314ab41f6c8a655609"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/monsters.json",
+      "bytes": 22732,
+      "sha256": "8a3599545e5ea3e1a8ecfdf396b4bd107d2f2f3c696fcaaa2ed76d9dab511493"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/npcs.json",
+      "bytes": 63495,
+      "sha256": "a75e0f3e565e21cd751dc3697f948b773439935478053c29d5467e868d439746"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/quests.json",
+      "bytes": 21423,
+      "sha256": "3ce9eabab223fc66131a9e048a43e47c8c745d2fe6e33542e762291a74148045"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/recipes.json",
+      "bytes": 7851,
+      "sha256": "0c81bcf33088668a7837e77cf01640cbfd2070e2a8caf9fa13ebdeb1e032a6b1"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/world.json",
+      "bytes": 102091,
+      "sha256": "9f46be269ea80ddeef908d9a8305b70bf26a8ca11a544bed32c640fbfee7668d"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Client/EntityView.cs.txt",
+      "bytes": 5132,
+      "sha256": "505fc173ed6cf64ed69e82e43cca6d244502fe2e3d87b6199dfdfcce53c0785a"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Client/SpriteComposer.cs.txt",
+      "bytes": 2964,
+      "sha256": "bd36d414e8c68a64d79b336dd9b3f0f87617da47e707e447bdabde37a10eebce"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/Appearance.cs.txt",
+      "bytes": 5602,
+      "sha256": "067b3152fbbafbdf6af98e0f823b930248f2ac67c605e3667b31f4d26e244fdb"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/GameData.cs.txt",
+      "bytes": 24197,
+      "sha256": "b5c47c56d41d0c17984df96a20a7a336b450ae45c1a52a610b7d460ad0873ab8"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/SimConstants.cs.txt",
+      "bytes": 2216,
+      "sha256": "7bdcec4fa6f7017bab1cb9c7ff028ee7e28b15ae37bc4503174f91b89e431742"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/World.Gathering.cs.txt",
+      "bytes": 7402,
+      "sha256": "dd5b97af267bfd08847481253534ab3156434a55cd504c186f30c33de07e2715"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/World.Systems.cs.txt",
+      "bytes": 18659,
+      "sha256": "c9a9d49ca4021cded3f06c4568075cdf4956149b4736779d4ab4b7711325886e"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/World.Vehicles.cs.txt",
+      "bytes": 6253,
+      "sha256": "12f828fd0ed929cc9b79035ba926ef19a0f6778812f7021752a864a867f6f332"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/World.cs.txt",
+      "bytes": 27230,
+      "sha256": "fc55db3ec2c8a9602e0432a7359e460b8b6a6e92a4123620df4df5190eaea4e2"
+    },
+    {
+      "path": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/src/Sim/WorldMap.cs.txt",
+      "bytes": 10726,
+      "sha256": "8d18a8e3df3c1bb3a64427863b2e15fc630245dbb32788f435bbbe4d3eed8253"
+    },
+    {
+      "path": "Beta/Runtime/content/native-farm/admission-v1.json",
+      "bytes": 8028,
+      "sha256": "990d2c7ac2983ebe85a7bdac4864ebfa1dc913e8d19e2b3e1f7b26ced7a0a992"
+    },
+    {
+      "path": "Beta/Runtime/content/native-farm/presentation-v1.json",
+      "bytes": 2192,
+      "sha256": "3b93d0672eb65d133669f81bf054f2878152bcd56b8ebe9229accf03a7f2025a"
+    },
+    {
+      "path": "Beta/Runtime/content/packages/aldermere-first-loop.manifest.json",
+      "bytes": 167,
+      "sha256": "9a826b9698d7e17dd34d77e849bac2ada30b6d96168cd5df2e99e5fab672eb66"
+    },
+    {
+      "path": "Beta/Runtime/global.json",
+      "bytes": 105,
+      "sha256": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherActorWork.cs",
+      "bytes": 758,
+      "sha256": "d60969b9005ce1d559ea17b16beab031ec91228e06f62c3747c8bcc3414110c6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherIntent.cs",
+      "bytes": 226,
+      "sha256": "6902b5e2b3fbd6044331865a8fa5423f363ea27f7fe4fe7c90f69a5260c1289a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherNodeDefinition.cs",
+      "bytes": 1224,
+      "sha256": "6283863b566810f9bea122e52de861d9711ff951c3295d11b0d5bfdc883e38c9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherNodeState.cs",
+      "bytes": 2742,
+      "sha256": "ed089df54242f6115eb350bdeca7a8c5bfe0da7db14ea32810c83f9e2c9e7c00"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherPlan.cs",
+      "bytes": 775,
+      "sha256": "4f2800041b2f94a95e261faa33ee70e23d35ed6fe4edaaca7fa0cb3b313168b7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherPlanner.cs",
+      "bytes": 6534,
+      "sha256": "cec27ff478bd96a98eb43734960b3d6ba4c8d2914e1a511dbe7cecfcd4682973"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherRulesV1.cs",
+      "bytes": 612,
+      "sha256": "8a94962459382d683e50d561baa66533cfee11d58cd608f969cd1f741eb059e5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs",
+      "bytes": 760,
+      "sha256": "8cddfce43612a0109e68ae94a7dea7b0f6c4723261b6e443f437747afc2a90ca"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatheringCodecV1.cs",
+      "bytes": 9027,
+      "sha256": "281acca619dd09de83f94bafdf0b3d6cab40a427553d0c4b07798f6ca14628c0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatheringSnapshot.cs",
+      "bytes": 8172,
+      "sha256": "536115c5f25385a561c3864cdc1344e1c960a7094bf662582301c08d4f4c614a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/DialogueSession.cs",
+      "bytes": 1182,
+      "sha256": "1102368f45ffa7cd27d8de84d5f6b0824045e435efa3accf21c082e5745388a1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodec.cs",
+      "bytes": 827,
+      "sha256": "fd9638a06c8c45899d9de56aa02354a867524270ef751a96f3f2ee32ff84445e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV1.cs",
+      "bytes": 3663,
+      "sha256": "3ef39fc27137894e8fe486d5380e5bf0fc2e5a7ba22518c7a06b4807a0788ca4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV2.cs",
+      "bytes": 2473,
+      "sha256": "a9a9339fb722f23dabbff308def5b80afb3d946456e944546d8e6e855bc2d64a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCommand.cs",
+      "bytes": 2760,
+      "sha256": "b18df63e23498a3d7a11802b24ced733e205efed1cfea924b16b98369668a347"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionReceipt.cs",
+      "bytes": 2169,
+      "sha256": "eb07b947431dc2a2a76ff24b44c519d7aafa24a5ccbd2b316da4854b7427250f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionResolver.cs",
+      "bytes": 7116,
+      "sha256": "a84b22780b82a10f5488ce2aef6ebac75c814fd397943eecfdc8d6706d635cb6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+      "bytes": 13971,
+      "sha256": "44ca0b8490f78dd7eff84da9c4ae9529da50494bc1e9e2b3a5462fd86b42de4d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCodecVersion.cs",
+      "bytes": 460,
+      "sha256": "722f656fbaa1de1d5c06482e1bbedb5fcb883bf55a3dedb4cbe9914ed1e63ba8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldFrameReader.cs",
+      "bytes": 3193,
+      "sha256": "5664a79830471549de9bf015d708bb2a28dc72272f0543d0c6033d50374ec2db"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs",
+      "bytes": 2673,
+      "sha256": "2a90861174a075e4c83379177af95a1f28650b9ed984cf088a37fc21fd36cbaa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldReceiptCodecV1.cs",
+      "bytes": 3543,
+      "sha256": "0944da6be08949a2659ac1b52a3a993a021c61ebdc604d4d4664b15ce508d928"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs",
+      "bytes": 3201,
+      "sha256": "ba6a7cb3960890f978de99beddd1d9d50fca4218a509e218530394591496c64b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResidentCodecV1.cs",
+      "bytes": 3886,
+      "sha256": "0555273bcd601023a501a59950d75663f3d475b897bd0ed4f5f9eaa4a6ba7ffa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "bytes": 5667,
+      "sha256": "78e8f27739d16914d5de2d5ad26e67a205da954e23b6de87219e06e768996e44"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs",
+      "bytes": 1031,
+      "sha256": "b4592f74746b1231c72a7a9a18c77ed719ed25530b36b0ab7582db6144de2c96"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV1.cs",
+      "bytes": 5481,
+      "sha256": "5cb4a9f038f1e5852c6cf34104cdca72f4a2566d0352bab73dd7fa4a822deb62"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV2.cs",
+      "bytes": 2276,
+      "sha256": "768957b5dd50588e961629eea66ec86d72d69ce2126b8027a32fad7539a581e7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSpatialCodecV1.cs",
+      "bytes": 4942,
+      "sha256": "057fac2c9130c80c1d939ca2aef0b37df7cc55436b86f95c64b756be90a1b130"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs",
+      "bytes": 4168,
+      "sha256": "b6545c3f860ebcd1e90d093e8031c73a208005af152591d583fea3b9fd1cc9ee"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs",
+      "bytes": 898,
+      "sha256": "6f7ad0598892f62ecb196d8c109792e61e3507abcb97a5ea779dc9ee2a484ac5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV1.cs",
+      "bytes": 4860,
+      "sha256": "fea37f315d4386fdc04b677146907fc47d02cc608409eeb78f2899d88b06c6c2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV2.cs",
+      "bytes": 4947,
+      "sha256": "6988c30162493756a5d9f80351de1055544507c75d63b7da971a1489c2c7d18b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepDecision.cs",
+      "bytes": 1007,
+      "sha256": "d6a762677a67b4c289aecabaa3bfc0ff589281262382ed77da21d7b3f5e2efa8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "bytes": 5776,
+      "sha256": "79871c2d8772d8b31f843f290594981d33afa0e6e07caad50ef47a7c5973fce0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmActorBuilder.cs",
+      "bytes": 4053,
+      "sha256": "d021f8b3487a8171e889af33c30c729b14fe480e9256975ec42ad175b6b03d78"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmAdmissionDefinition.cs",
+      "bytes": 8915,
+      "sha256": "4f35f5da2a30b72ac0d3c3d771b4729a6f50b39e7e6fe89e68e0dc1ab3affe8f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmCanonicalJson.cs",
+      "bytes": 2539,
+      "sha256": "68ad8994056583c521e7149ccf9f6a3150a16bd4fc5a85be4c3ab6a2ae074a2f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmContentFiles.cs",
+      "bytes": 3002,
+      "sha256": "adfe549255f0217022bb7a3c222896fb4c7027afb8fb720a0ace58c00a5652c2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmIdentityScope.cs",
+      "bytes": 1567,
+      "sha256": "7ee04624343cdb9465335a3b5b4efe11f579828d1c32490b38cd95c70983faed"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmSourcePacket.cs",
+      "bytes": 6816,
+      "sha256": "7f4763d953469d073d45f70bfd1e6054da9a251419e900f5d58047ed2ca49309"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmWorldAdmission.cs",
+      "bytes": 2555,
+      "sha256": "e2d5d2b412f55182441da5052a68b0a9e297771f9eba6cdeaaefe3901e3052fd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmWorldBuilder.cs",
+      "bytes": 2875,
+      "sha256": "38ddc428cfd1bff54d70faabef98f13019528d49b77e86d7a4c0ed5ace48b190"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmAdmission.cs",
+      "bytes": 1378,
+      "sha256": "12c3394f4713085f601cfc80db9a96aca7e276e33a4cb8cf64c41b037ab8ead2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmBuilder.cs",
+      "bytes": 6327,
+      "sha256": "b2764c248c78ae384e4f97912edb844af6cbfa7045f4721ba8e836707130f71f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmDefinition.cs",
+      "bytes": 5368,
+      "sha256": "7f6286c6abd4b8276d3153b580ab8ef057f1d4412c1cf31761cab78e2543fafd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmIdentityScope.cs",
+      "bytes": 1404,
+      "sha256": "aef727b8ca38e875d2599d18ea8d917964111bb362ac1dd5399ec72baaeef3b5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmInput.cs",
+      "bytes": 2200,
+      "sha256": "c9769c38caed73e404fdef29200d662922b66f589a1f577f52a633488b4a2127"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmSources.cs",
+      "bytes": 6694,
+      "sha256": "bd2a331dd12e47423e0f7ded5c7934e9c31b187ffcfd0a0a215885372a702fb2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj",
+      "bytes": 687,
+      "sha256": "b45392bdd366dbe5d7e991850aa7f94880fe2b2703473a1aed111ecf60c1c5f2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalGatheringView.cs",
+      "bytes": 715,
+      "sha256": "84fa738ab1024b61d872037f5d91d8f21c76886ba37f35c2d3a88206f210a871"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs",
+      "bytes": 2946,
+      "sha256": "06e4fac1aec5fe3402e8b4e2eed7d5ceaeb06767453066f8b07ce736c082a57f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+      "bytes": 12297,
+      "sha256": "225cac45f816d736883c245ab4213006576470dbc908415b199935782d6507e9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs",
+      "bytes": 4676,
+      "sha256": "9926f4b4b2c723e222cb95572ce0afc686614bcb39c7aeace43bdae76127749a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/PendingLocalAction.cs",
+      "bytes": 407,
+      "sha256": "d4791b688837c7a9ac69ff4287bb55d550ca91fd42ef241819a3b66ec0b0b5f0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/README.md",
+      "bytes": 5866,
+      "sha256": "22b751e48e947b9edf5c8ed0409605dcac9d6af01b2cdd1cd815cd142672c2a7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs",
+      "bytes": 6774,
+      "sha256": "dfb7030be3a8a44eff817ab05a148f7c762f0e0c79f75f9a7423b0456757b5e7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+      "bytes": 8755,
+      "sha256": "58091a76c4bfc7fd9a4247b2a9c3decf6f732aae6e4e5f70066f8b21ef126a18"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs",
+      "bytes": 5332,
+      "sha256": "3f2aaff2b51dbfd07644571b1554f157cb89a7f648091facc0ba95cc603a2488"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs",
+      "bytes": 13506,
+      "sha256": "4221081e8e805411b6b360314c50b7749fb2e4f8bb6360b65e0fa04a0692772a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs",
+      "bytes": 4602,
+      "sha256": "dcf08be6a844efde19f156f4e751f24c39d2a79b51e72b90e69f0182d69c029e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs",
+      "bytes": 2130,
+      "sha256": "b9ae65ef6eb0f2db327812efe12ea078949604a40c3990db9d2f71f033e3a86c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+      "bytes": 7774,
+      "sha256": "c1ec48411c0d30bad8efbac6dceabfee709dc4683687d77e058ad96529a199c6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageBinary.cs",
+      "bytes": 2468,
+      "sha256": "0bfd8a426bdd3ddfb16a4320e26fa30fa2a0cff47257e7e028f02348124f2415"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageRecords.cs",
+      "bytes": 1130,
+      "sha256": "60d0b727ecacfa030ac7bc25dc3c619e630fd698c5d38441689cff3082fc4d1d"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/AuthorityWorldFixture.cs",
+      "bytes": 2612,
+      "sha256": "7e5ffa7d45994fcc1743a941accdcbeb1d6d348c14a8e0a20b14123fc63feb47"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/FarmContentFixture.cs",
+      "bytes": 2147,
+      "sha256": "66682332b1095e54a601bfc174cd69fc321262b73eebfd4bc8387cf543d2b5e1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/FarmContentValidationTests.cs",
+      "bytes": 5520,
+      "sha256": "2b77322b11b8d30a8466ff39f8e0c293c5da188c79a9e7a13b9b8c3937309348"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/FarmWorldAdmissionTests.cs",
+      "bytes": 15463,
+      "sha256": "155ed59358dc729c773e40e491d0f9b0e29d63e80bc9397b082c17b18bee98c4"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/GatheringFarmAdmissionTests.cs",
+      "bytes": 12749,
+      "sha256": "9b9201bf6d93142d11b1100d9bdc0b17c7a4257ae890aa0485a7c5286ff71885"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "bytes": 764,
+      "sha256": "dfd32421b7b21f78aec4c941e8dadc9aba630d64820d44adf471867d1884103a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Review/DurableAuthorityAdversarialTests.cs",
+      "bytes": 13660,
+      "sha256": "8ad1c64ffc7941aed6dba24112d1b4f800f621c0e27fa062a666b9cffabf3d2f"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/GatheringSessionTests.cs",
+      "bytes": 5917,
+      "sha256": "413977d2614d345e966f0c2d25f1e93ca6f91805ef97a25da774a72563323e6c"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/LocalNpcControllerTests.cs",
+      "bytes": 3294,
+      "sha256": "ee3a6a31ba7aeb7a075342fbcade1b86d78e2d80b8bef4ce29ea5683793af544"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/LocalWorldSessionTests.cs",
+      "bytes": 12960,
+      "sha256": "1d08c46a529dd792a2ca80fd0c8dc289845ec2699a6badd0347c31470cdb0dd1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ManualSessionTimeProvider.cs",
+      "bytes": 2457,
+      "sha256": "ac977b3387ec4f45042c2ecc3569bdc38ac22a659ca8bc3cd149a1f74c4fde2a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SessionFixture.cs",
+      "bytes": 4094,
+      "sha256": "5ae768d0b785da5582e4e49880a8f80d478b06879c78fbb5285ffdfdb99425a7"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/SqliteCountedAuthorityTests.cs",
+      "bytes": 9130,
+      "sha256": "449573a1e33d01182a5523629e476a4edf1645702bfe1816bd01e9d8b5c2ce13"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/Fixtures/README.md",
+      "bytes": 1190,
+      "sha256": "c747f03dd6b5095bcc582f091e9eae9cd0b814efdde6773f3e8b9f466eb03b0d"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/Fixtures/legacy-farm-profile-v1.sqlite",
+      "bytes": 86016,
+      "sha256": "ad7e10a2d60f80411d9ff2ca08a25ee5ebda046f347204c95dccfd5d526baa80"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/GatheringAuthorityTests.cs",
+      "bytes": 9940,
+      "sha256": "8313f67b0dc81d42e5490041ea3255cd35c56acf7d363a475509aec9b711a662"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/GatheringWorldFixture.cs",
+      "bytes": 2886,
+      "sha256": "67f0ff93c50b6a562bb5769036a493585a91f30d10ad16e4ea785f3646323a9b"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/LegacyWorldCompatibilityTests.cs",
+      "bytes": 7392,
+      "sha256": "db4b7410ba6daf564b3dab44c7b48ef12b113974efab7838103e94f6b7c279fe"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldAuthorityServiceTests.cs",
+      "bytes": 14217,
+      "sha256": "c118e7f402d63b17d552fa3d0ccc908fa0b9410c0f04e2fed685c1572df01050"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs",
+      "bytes": 14904,
+      "sha256": "2ccc0602ade697d0e92548695bcfb0ab502c923c4b37be43afa75bc03221070f"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldServiceFixture.cs",
+      "bytes": 3996,
+      "sha256": "90b1e3eac0a4897498be11101040f70cf4f7f4ddd76e9121ad7feb2df6b8395f"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/packages.lock.json",
+      "bytes": 10512,
+      "sha256": "fb116955fc1491f96fe4240e5d20716a6117b194a6832eb3dc7e502292d9604d"
+    },
+    {
+      "path": "Beta/Runtime/toolchain.json",
+      "bytes": 1606,
+      "sha256": "1bdc42ca35759ef8ce2f474cbed9eb2c8105c717dfb2a7a75a7cb0dc5ee76fae"
+    }
+  ],
+  "read_only_client_review_inputs": [
+    {
+      "path": "Beta/Runtime/client/scripts/FarmClientSession.cs",
+      "bytes": 6639,
+      "sha256": "71112689e4e3fdf1f1287f394a03590a7961fb2d67419d7650f012b2c183e961"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmGame.cs",
+      "bytes": 9448,
+      "sha256": "1c4f168bf0a28a0d2e2f48ff15d55fa2514eb4800a8e5baa5913d8856a4ee532"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmHud.cs",
+      "bytes": 5659,
+      "sha256": "d4aa97b01b11eaa28e350bee7529d95ce92e2d277f77bf2a418ab930f589b98b"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Bootstrap.cs",
+      "bytes": 3581,
+      "sha256": "92d586b1f02ebb92f4f202016cdae38793cc978a10ef9337038df2396fcdc9ef"
+    }
+  ],
+  "tested_output_binaries": [
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 335872,
+      "sha256": "94f38aafe5ea856293676bab2a0169f1fe09f62e08712f734c60afb6b90a7331"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "bytes": 677376,
+      "sha256": "8227d4b6ae4e24e1763709a9a963f35f7824433ecd883b5d6d29e75e78a94ce8"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "bytes": 180224,
+      "sha256": "deaa3bb4a2b0587e61d9819435b61cc099e92c278e5c9911f39a4597709b9954"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/Microsoft.Data.Sqlite.dll",
+      "bytes": 177464,
+      "sha256": "b98d957462be432895b00dccca012d3c127e118d3d4262418014b92c7bbd66cf"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/SQLitePCLRaw.core.dll",
+      "bytes": 51712,
+      "sha256": "b72c9dfe1479a568d6b84e249eaf949e76c757888f8056fb6ddb9c0480e0dd25"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/SQLitePCLRaw.batteries_v2.dll",
+      "bytes": 5632,
+      "sha256": "1ee3c6ff4d39171690d6ff6f84b4d876ed038ca28e39bb6e74995f52d2aacf8b"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/runtimes/osx-arm64/native/libe_sqlite3.dylib",
+      "bytes": 1696624,
+      "sha256": "2b27f45233818ae11d97016ca2a16dffcf63a53c46f60bcd52b342fc187b0c83"
+    }
+  ],
+  "test_result": {
+    "path": "Beta/implementation/p01/gather-craft/hosting-validation/test-results/gathering-hosting-debug-initial.trx",
+    "bytes": 169961,
+    "sha256": "22101f54bce7b5e419859464aa0019e49d19847d30cca13de00fb55127762247"
+  },
+  "limitations": [
+    "No native scene or rendered execution by this worker in this increment",
+    "No Windows/Linux export qualification",
+    "No migration or legacy quest credit inferred",
+    "No production save lifespan or worst-case performance qualification",
+    "Root-specific static review does not independently qualify this worker-authored Hosting implementation"
+  ],
+  "documents": [
+    {
+      "path": "Beta/implementation/p01/gather-craft/hosting-validation/RESULTS.md",
+      "bytes": 4532,
+      "sha256": "a675d043eebea14f7b47e7e586ac46cf41a0fef900736313ab5187bbdc3f5363"
+    },
+    {
+      "path": "Beta/implementation/p01/gather-craft/PERSISTENCE_REVIEW.md",
+      "bytes": 17650,
+      "sha256": "0dd322d416312e9b11b90b7787fde47bbc1c23b8a6317e3f3923f3570f2b2600"
+    }
+  ],
+  "separate_native_diagnosis": [
+    {
+      "path": "Beta/implementation/p01/gather-craft/hosting-validation/native-timeout-diagnosis.json",
+      "bytes": 1694,
+      "sha256": "b8af023ecffac2a1cee8d0d87f6166ad0b6e1524e466113be4feeb9adf5935aa"
+    },
+    {
+      "path": "Beta/implementation/p01/gather-craft/hosting-validation/native-rendered-timeout-report.json",
+      "bytes": 10444,
+      "sha256": "145232783ddf97a926cbfedd76e3e3193c240b5e217c6c3ece7913421d19541d"
+    }
+  ],
+  "post_test_client_static_followup": {
+    "inspected_at_utc": "2026-09-10T01:54:24.231632+00:00",
+    "scope": "Read-only inspection after coordinator added local pause/window-focus diagnostic getters, camera bounds and HUD framing. These client-only inputs are separate from Hosting test qualification; native repeat remains coordinator-owned. Earlier captured source records are preserved.",
+    "inputs": [
+      {
+        "path": "Beta/Runtime/client/scripts/FarmGame.cs",
+        "bytes": 9785,
+        "sha256": "64e4fac2057e27e3463eb29fc6048bf6c85cfef611ead87fdbee7af3db241487"
+      },
+      {
+        "path": "Beta/Runtime/client/scripts/FarmHud.cs",
+        "bytes": 6067,
+        "sha256": "9efc5772d9cc94488d1e4e75fa6a90ca07c1a762d9cea7c16cd241ee0590964f"
+      }
+    ]
+  }
+}

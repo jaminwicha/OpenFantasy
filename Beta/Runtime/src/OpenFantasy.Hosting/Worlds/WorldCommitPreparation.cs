@@ -24,8 +24,8 @@ internal sealed class WorldCommitPreparation
         {
             throw new AuthorityDispatchException("The selected batch cannot be committed in the current world.");
         }
-        byte[] after = WorldSnapshotCodecV1.Encode(decision.Candidate);
-        byte[] acceptedBatch = WorldStepCodecV1.Encode(batch);
+        byte[] after = WorldSnapshotCodec.Encode(decision.Candidate);
+        byte[] acceptedBatch = WorldStepCodec.Encode(batch);
         byte[] outcomes = WorldReceiptCodecV1.EncodeBatch(decision.Receipts);
         ulong sequence = decision.Candidate.Revision;
         if (sequence != checked(state.Revision + 1))
@@ -44,7 +44,7 @@ internal sealed class WorldCommitPreparation
                 throw new InvalidDataException("A prepared receipt does not match its exact actor command.");
             }
             commands.Add(new(receipt.PrincipalId, receipt.CommandId, sequence,
-                WorldActionCodecV1.Encode(command), WorldReceiptCodecV1.Encode(receipt)));
+                WorldActionCodec.Encode(command), WorldReceiptCodecV1.Encode(receipt)));
         }
         if (actions.Count != 0)
         {
@@ -59,7 +59,7 @@ internal sealed class WorldCommitPreparation
 
     private static void ValidateDispatch(WorldSnapshot state, WorldStepBatch batch)
     {
-        if (batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
+        if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
             || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold)
         {

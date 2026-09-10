@@ -1,0 +1,61 @@
+{
+  "startedUtc": "2026-09-10T01:47:37.409285+00:00",
+  "scope": "Named native gather input, actual finite toolkit and yield, depletion, pause, process recovery and regrowth",
+  "rendered": true,
+  "status": "failed",
+  "runs": [
+    {
+      "stage": "create",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-gathering",
+        "/private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/world.sqlite",
+        "/private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/gathering.json",
+        "create"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative gathering passed: /private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/gathering.json\n",
+      "stderr": ""
+    },
+    {
+      "stage": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-gathering",
+        "/private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/world.sqlite",
+        "/private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/gathering.json",
+        "reopen"
+      ],
+      "exitCode": 1,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": "ERROR: Native gathering probe failed: System.InvalidOperationException: The native gathering probe timed out at Regrowing\n   at OpenFantasy.Client.FarmGatheringProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 208\n   at OpenFantasy.Client.FarmGatheringProbe._Process(Double delta) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 34\n   at: void OpenFantasy.Client.FarmGatheringProbe._Process(double) (res://scripts/FarmGatheringProbe.cs:34)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmGatheringProbe._Process(double) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:34)\n       [2] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2640)\n       [3] bool OpenFantasy.Client.FarmGatheringProbe.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/OpenFantasy.Client.FarmGatheringProbe_ScriptMethods.generated.cs:80)\n       [4] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)\n"
+    }
+  ],
+  "create": {
+    "Kind": "native-farm-gathering-v1",
+    "Stage": "create",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "macOS",
+    "Initial": "{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32400000,\"PlayerGatherEffort\":0,\"HasReadingHold\":false,\"Quantity\":10,\"StorageRevision\":0,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":25984,\"Y\":83328,\"Z\":256,\"PresenceRevision\":0},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":0}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":0,\"RemainingSwings\":4,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]}",
+    "Final": "{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":33049800,\"PlayerGatherEffort\":10,\"HasReadingHold\":false,\"Quantity\":19,\"StorageRevision\":9,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"27260bcd32b566873e05a9434ce05c8a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"30ab2bd9b104cff03e9b210d3b5c1775\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"312e5d3fa7963322a61b355fb4c993d9\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8},{\"Id\":\"529382f427a7e77c2e7185b1764c741d\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"53002c5baadb89098874c59b0a50b04f\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"a2bd494967d4d8a6fffba3820a7c39cf\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"c239f6b1a9aa49d60fd5192542e9761c\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"d959cb8292e9ea09ff25b7237cba305a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"dfa550d8f3268868bb846243353f20a5\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":96}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":4,\"RemainingSwings\":0,\"Visibility\":2}]}",
+    "OakId": "67e26d9c5e3848e75f9bcd7b9088e36e",
+    "BerryId": "24a15755098b514424949f954c34e5af",
+    "WoodDefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+    "Checks": [
+      "Original source-pinned oak and berries plus explicitly supplied tools opened in the native game.",
+      "Five real oak swings issued exactly five wood and depleted the node.",
+      "Pause froze depleted resource, calendar, effort and all public positions for600ms.",
+      "Four real sickle swings issued four berries; tool lots remain owned."
+    ],
+    "DurationMilliseconds": 19370
+  },
+  "failure": "Native gathering reopen failed: Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nERROR: Native gathering probe failed: System.InvalidOperationException: The native gathering probe timed out at Regrowing\n   at OpenFantasy.Client.FarmGatheringProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 208\n   at OpenFantasy.Client.FarmGatheringProbe._Process(Double delta) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 34\n   at: void OpenFantasy.Client.FarmGatheringProbe._Process(double) (res://scripts/FarmGatheringProbe.cs:34)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmGatheringProbe._Process(double) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:34)\n       [2] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2640)\n       [3] bool OpenFantasy.Client.FarmGatheringProbe.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/OpenFantasy.Client.FarmGatheringProbe_ScriptMethods.generated.cs:80)\n       [4] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)\n",
+  "finishedUtc": "2026-09-10T01:49:51.801993+00:00"
+}

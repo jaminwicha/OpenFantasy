@@ -38,8 +38,8 @@ public sealed class SqliteWorldAuthority : IDisposable
         {
             throw new ArgumentException("A new local world requires commit zero, step zero and no committed dialogue.", nameof(genesis));
         }
-        byte[] bytes = WorldSnapshotCodecV1.Encode(genesis);
-        WorldSnapshot accepted = WorldSnapshotCodecV1.Decode(bytes);
+        byte[] bytes = WorldSnapshotCodec.Encode(genesis);
+        WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         WorldDatabase database = WorldDatabase.Open(path, create: true);
         try
         {
@@ -172,7 +172,7 @@ public sealed class SqliteWorldAuthority : IDisposable
             StoredWorldCommandOutcome? prior = _database.FindCommand(command.PrincipalId, command.CommandId);
             if (prior is not null)
             {
-                if (!prior.Command.AsSpan().SequenceEqual(WorldActionCodecV1.Encode(command)))
+                if (!prior.Command.AsSpan().SequenceEqual(WorldActionCodec.Encode(command)))
                 {
                     throw new AuthorityDispatchException("The command identity already names different content.");
                 }

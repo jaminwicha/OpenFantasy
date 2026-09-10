@@ -1,0 +1,39 @@
+{
+  "inspected_at_utc": "2026-09-10T01:52:31.457350+00:00",
+  "mode": "read-only Python SQLite query plus independent length-framed canonical field inspection; no runtime execution or writes",
+  "source_save": "/private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/world.sqlite",
+  "saved_revision": 580,
+  "saved_advancing_steps": 580,
+  "saved_calendar_milliseconds": 33444000,
+  "saved_state_sha256": "b29d929541ba4e12ba8fff3c500c203ad65565728c70c420ea10e2c5b7606d7a",
+  "stored_state_sha256": "b29d929541ba4e12ba8fff3c500c203ad65565728c70c420ea10e2c5b7606d7a",
+  "gather_step": 580,
+  "nodes": [
+    {
+      "node_id": "24a15755098b514424949f954c34e5af",
+      "kind": 2,
+      "revision": 4,
+      "finite_capacity": 128,
+      "issued_cursor": 4,
+      "remaining_swings": 0,
+      "depleted_at_step": 360,
+      "regrowth_due_step": 1060
+    },
+    {
+      "node_id": "67e26d9c5e3848e75f9bcd7b9088e36e",
+      "kind": 1,
+      "revision": 5,
+      "finite_capacity": 160,
+      "issued_cursor": 5,
+      "remaining_swings": 0,
+      "depleted_at_step": 200,
+      "regrowth_due_step": 1100
+    }
+  ],
+  "create_final_calendar_milliseconds": 33049800,
+  "advancing_steps_after_create": 219,
+  "journal_rows": 580,
+  "non_advancing_rows": 0,
+  "conclusion": "Regrowth was not due at timeout. Clock and gathering progress remained coherent with 219 accepted advancing steps after reopen. A native readiness/focus pause or a stall is possible; saved simulation data cannot establish which, because wall time/readiness is deliberately absent from the journal.",
+  "source_report_sha256": "145232783ddf97a926cbfedd76e3e3193c240b5e217c6c3ece7913421d19541d"
+}

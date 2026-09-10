@@ -1,0 +1,89 @@
+{
+  "kind": "independent_gathering_admission_data_verification",
+  "status": "passed",
+  "dotNetOrGodotExecuted": false,
+  "sourceRecords": 11,
+  "sourceWitnesses": 9,
+  "representativeNodes": 2,
+  "nodeFiniteUnits": 288,
+  "totalAdmittedUnits": 298,
+  "canonicalSeedVectors": 2,
+  "exactOriginalAssetCopies": 2,
+  "inputs": [
+    {
+      "path": "Beta/Runtime/content/adventure-farm/admission-v1.json",
+      "bytes": 9540,
+      "sha256": "f90505e21a578b6e8dd0df78ea195e1c2ee9e5451fee22779480b76ab04239cd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmAdmission.cs",
+      "bytes": 1378,
+      "sha256": "12c3394f4713085f601cfc80db9a96aca7e276e33a4cb8cf64c41b037ab8ead2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmBuilder.cs",
+      "bytes": 6327,
+      "sha256": "b2764c248c78ae384e4f97912edb844af6cbfa7045f4721ba8e836707130f71f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmDefinition.cs",
+      "bytes": 5368,
+      "sha256": "7f6286c6abd4b8276d3153b580ab8ef057f1d4412c1cf31761cab78e2543fafd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmIdentityScope.cs",
+      "bytes": 1404,
+      "sha256": "aef727b8ca38e875d2599d18ea8d917964111bb362ac1dd5399ec72baaeef3b5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmInput.cs",
+      "bytes": 2200,
+      "sha256": "c9769c38caed73e404fdef29200d662922b66f589a1f577f52a633488b4a2127"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/GatheringFarmSources.cs",
+      "bytes": 6694,
+      "sha256": "bd2a331dd12e47423e0f7ded5c7934e9c31b187ffcfd0a0a215885372a702fb2"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/GatheringFarmAdmissionTests.cs",
+      "bytes": 12749,
+      "sha256": "9b9201bf6d93142d11b1100d9bdc0b17c7a4257ae890aa0485a7c5286ff71885"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmGatherNodeView.cs",
+      "bytes": 1737,
+      "sha256": "00d7b8aeee6e8b683dc840e012d44a080c7e43607dc3e3e9242da47053a95dd1"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmVisualAssets.cs",
+      "bytes": 2930,
+      "sha256": "55a112384d41e57595d4deb24520d23ebcaf36c7d984bc2358f045ccf79cbf3d"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/adventure-farm/PROVENANCE.json",
+      "bytes": 1001,
+      "sha256": "3346476ea35302354a047f334eec98511b7f8639552907c8b662763ea61c98a6"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/adventure-farm/node_berry.png",
+      "bytes": 304,
+      "sha256": "8928cce8c9bd2b1c197650cac6b467ccb9b35035531f64548ac7b76b39721457"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/adventure-farm/node_oak.png",
+      "bytes": 382,
+      "sha256": "3c95536649a836516f5bda0abc65dcd2d2b6a54611a8a0804c6ef133290188c8"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/adventure-farm/nodes.tres",
+      "bytes": 419,
+      "sha256": "d6ce0f4dadb4d0d1852afdfb826da75add579350b66fa7d83d6bbcd3f70587ae"
+    },
+    {
+      "path": "Beta/implementation/p01/gather-craft/verify_admission.py",
+      "bytes": 5168,
+      "sha256": "11cce62e17aa4205e53a3dfa246170d5fc71fc9e1cf8ea9dd313e6a6267429ae"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ internal sealed class WorldJournalRecovery
     private static RecoveredWorld Replay(WorldDatabase database)
     {
         byte[] genesisBytes = database.ReadGenesis();
-        WorldSnapshot genesis = WorldSnapshotCodecV1.Decode(genesisBytes);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
         if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold)
         {
             throw new InvalidDataException("The local world genesis does not start at an unheld commit zero.");
@@ -50,7 +50,7 @@ internal sealed class WorldJournalRecovery
             {
                 throw new InvalidDataException("The local world journal is discontinuous.");
             }
-            WorldStepBatch batch = WorldStepCodecV1.Decode(stored.AcceptedBatch);
+            WorldStepBatch batch = WorldStepCodec.Decode(stored.AcceptedBatch);
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(usage, stored.Sequence, stored.AdvancingSteps,
                 (ulong)batch.Actions.Count, (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length);
             PreparedWorldCommit expected = preparation.Prepare(state, genesis.IdentityIndex,

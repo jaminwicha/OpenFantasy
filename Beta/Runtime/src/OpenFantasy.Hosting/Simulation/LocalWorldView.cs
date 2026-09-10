@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core;
+using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Worlds;
 
@@ -49,6 +50,27 @@ public sealed class LocalWorldView
         PlayerInventory = new LocalInventoryView(storage, state.Inventory.Custody.GetStorage(storage).Revision,
             state.Inventory.Custody.Lots.Where(lot => lot.CustodianId == storage)
                 .Select(lot => new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity)));
+        GatheringNodes = Array.AsReadOnly(state.Gathering is { } gathering
+            ? gathering.Nodes.Where(node => node.VisibilityAt(state.AdvancingSteps) != GatherNodeVisibility.Absent)
+                .Select(node => new LocalGatherNodeView(node.NodeId, node.Definition.DisplayName, node.Feet,
+                    node.Revision, node.Definition.Kind, node.Definition.RequiredToolKind,
+                    (uint)node.RemainingSwings, node.VisibilityAt(state.AdvancingSteps)))
+                .OrderBy(node => node.NodeId).ToArray()
+            : []);
+        List<LocalGatherToolLotView> tools = [];
+        if (state.Gathering is { } admittedGathering)
+        {
+            PlayerGatherEffort = (uint)admittedGathering.GetActorWork(playerActorId).Effort;
+            foreach (var lot in state.Inventory.Custody.Lots.Where(lot => lot.CustodianId == storage))
+            {
+                var tool = admittedGathering.Tools.FirstOrDefault(value => value.Definition == lot.Definition);
+                if (tool is not null)
+                {
+                    tools.Add(new LocalGatherToolLotView(lot.LotId, lot.Revision, tool.Kind, tool.Power));
+                }
+            }
+        }
+        GatheringTools = Array.AsReadOnly(tools.OrderBy(tool => tool.LotId).ToArray());
         DialogueSession? dialogue = state.Dialogues.FirstOrDefault(value => value.ListenerActorId == playerActorId);
         if (dialogue is not null)
         {
@@ -65,5 +87,8 @@ public sealed class LocalWorldView
     public bool HasReadingHold { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }
+    public ReadOnlyCollection<LocalGatherNodeView> GatheringNodes { get; }
+    public ReadOnlyCollection<LocalGatherToolLotView> GatheringTools { get; }
+    public uint? PlayerGatherEffort { get; }
     public LocalDialogueView? Dialogue { get; }
 }
