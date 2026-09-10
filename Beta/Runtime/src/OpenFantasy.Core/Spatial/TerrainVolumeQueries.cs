@@ -17,7 +17,7 @@ internal sealed class TerrainVolumeQueries(IReadOnlyList<TerrainRegionSnapshot> 
         return null;
     }
 
-    internal SpatialOccupancy Query(BodyVolume volume)
+    internal SpatialOccupancy Query(BodyVolume volume, bool requireGroundSupport = true)
     {
         CellCoordinate minimum = volume.MinimumCell;
         CellCoordinate maximum = volume.MaximumCell;
@@ -38,13 +38,16 @@ internal sealed class TerrainVolumeQueries(IReadOnlyList<TerrainRegionSnapshot> 
         }
         // All admitted subunit coordinates divide by 256, so subtracting one cell cannot overflow.
         long supportZ = minimum.Z - 1;
-        for (long y = minimum.Y; y <= maximum.Y; y++)
+        if (requireGroundSupport)
         {
-            for (long x = minimum.X; x <= maximum.X; x++)
+            for (long y = minimum.Y; y <= maximum.Y; y++)
             {
-                TerrainCell? support = FindCell(new CellCoordinate(x, y, supportZ));
-                missing |= support is null;
-                supported &= support?.IsSolid == true;
+                for (long x = minimum.X; x <= maximum.X; x++)
+                {
+                    TerrainCell? support = FindCell(new CellCoordinate(x, y, supportZ));
+                    missing |= support is null;
+                    supported &= support?.IsSolid == true;
+                }
             }
         }
         if (missing)
@@ -55,6 +58,6 @@ internal sealed class TerrainVolumeQueries(IReadOnlyList<TerrainRegionSnapshot> 
         {
             return SpatialOccupancy.BlockedTerrain;
         }
-        return supported ? SpatialOccupancy.Clear : SpatialOccupancy.Unsupported;
+        return !requireGroundSupport || supported ? SpatialOccupancy.Clear : SpatialOccupancy.Unsupported;
     }
 }

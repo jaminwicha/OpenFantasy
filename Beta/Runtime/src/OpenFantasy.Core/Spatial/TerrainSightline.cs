@@ -7,11 +7,13 @@ internal static class TerrainSightline
 {
     private const int DoubledCellSize = SubunitPosition.SubunitsPerCell * 2;
 
-    internal static SpatialInteraction Query(TerrainVolumeQueries terrain, BodyVolume source, BodyVolume target)
-        => QueryCenters(terrain, source.DoubledCenter, target.DoubledCenter, LocalSpatialSnapshot.InteractionRangeSubunits);
+    internal static SpatialInteraction Query(TerrainVolumeQueries terrain, BodyVolume source, BodyVolume target,
+        IReadOnlyList<SpatialStructure>? structures = null)
+        => QueryCenters(terrain, source.DoubledCenter, target.DoubledCenter, LocalSpatialSnapshot.InteractionRangeSubunits, structures);
 
     internal static SpatialInteraction QueryCenters(TerrainVolumeQueries terrain,
-        (Int128 X, Int128 Y, Int128 Z) from, (Int128 X, Int128 Y, Int128 Z) to, long maximumRangeSubunits)
+        (Int128 X, Int128 Y, Int128 Z) from, (Int128 X, Int128 Y, Int128 Z) to, long maximumRangeSubunits,
+        IReadOnlyList<SpatialStructure>? structures = null)
     {
         Int128 limit = (Int128)maximumRangeSubunits * 2;
         Int128 dx = to.X - from.X;
@@ -49,6 +51,10 @@ internal static class TerrainSightline
         {
             return SpatialInteraction.Unavailable;
         }
+        if (structures is not null)
+        {
+            occluded |= structures.Any(structure => structure.Boxes.Any(box => TouchesBox(from, to, box)));
+        }
         return occluded ? SpatialInteraction.Occluded : SpatialInteraction.Reachable;
     }
 
@@ -75,10 +81,26 @@ internal static class TerrainSightline
             && Clip(from.Z, to.Z, cell.Z, ref entering, ref leaving);
     }
 
+    private static bool TouchesBox((Int128 X, Int128 Y, Int128 Z) from,
+        (Int128 X, Int128 Y, Int128 Z) to, SubunitBox box)
+    {
+        Fraction entering = new(0, 1);
+        Fraction leaving = new(1, 1);
+        return ClipBounds(from.X, to.X, (Int128)box.Minimum.X * 2, (Int128)box.Maximum.X * 2, ref entering, ref leaving)
+            && ClipBounds(from.Y, to.Y, (Int128)box.Minimum.Y * 2, (Int128)box.Maximum.Y * 2, ref entering, ref leaving)
+            && ClipBounds(from.Z, to.Z, (Int128)box.Minimum.Z * 2, (Int128)box.Maximum.Z * 2, ref entering, ref leaving);
+    }
+
     private static bool Clip(Int128 from, Int128 to, long cell, ref Fraction entering, ref Fraction leaving)
     {
         Int128 lower = (Int128)cell * DoubledCellSize;
         Int128 upper = lower + DoubledCellSize;
+        return ClipBounds(from, to, lower, upper, ref entering, ref leaving);
+    }
+
+    private static bool ClipBounds(Int128 from, Int128 to, Int128 lower, Int128 upper,
+        ref Fraction entering, ref Fraction leaving)
+    {
         Int128 direction = to - from;
         if (direction == 0)
         {

@@ -9,7 +9,7 @@ namespace OpenFantasy.Core.Spatial;
 /// Complete admitted local terrain and corporeal actor occupancy. The world owner establishes
 /// residency completeness and transaction ownership; this type validates supplied geometry.
 /// </summary>
-public sealed class LocalSpatialSnapshot
+public sealed partial class LocalSpatialSnapshot
 {
     public const int MaximumRegions = 16;
     public const int MaximumActors = 64;
@@ -22,7 +22,7 @@ public sealed class LocalSpatialSnapshot
     private readonly TerrainVolumeQueries _terrain;
 
     public LocalSpatialSnapshot(TerrainScope scope, IEnumerable<TerrainRegionSnapshot> regions,
-        IEnumerable<ActorPresence> actors)
+        IEnumerable<ActorPresence> actors, IEnumerable<SpatialStructure>? structures = null)
     {
         ArgumentNullException.ThrowIfNull(scope);
         ArgumentNullException.ThrowIfNull(regions);
@@ -31,6 +31,14 @@ public sealed class LocalSpatialSnapshot
         Regions = ReadRegions(regions);
         _terrain = new TerrainVolumeQueries(Regions);
         Actors = ReadActors(actors);
+        Structures = ReadStructures(structures ?? []);
+        foreach (SpatialStructure structure in Structures)
+        {
+            if (QueryStructure(structure) != SpatialOccupancy.Clear)
+            {
+                throw new ArgumentException("A structure needs complete clear space and supported base contacts.", nameof(structures));
+            }
+        }
         foreach (ActorPresence actor in Actors)
         {
             if (QueryVolume(actor.ActorId, _volumes[actor.ActorId]) != SpatialOccupancy.Clear)
@@ -43,6 +51,10 @@ public sealed class LocalSpatialSnapshot
     public TerrainScope Scope { get; }
     public ReadOnlyCollection<TerrainRegionSnapshot> Regions { get; }
     public ReadOnlyCollection<ActorPresence> Actors { get; }
+    public ReadOnlyCollection<SpatialStructure> Structures { get; }
+
+    public LocalSpatialSnapshot WithActors(IEnumerable<ActorPresence> actors) => new(Scope, Regions, actors, Structures);
+    public LocalSpatialSnapshot WithStructures(IEnumerable<SpatialStructure> structures) => new(Scope, Regions, Actors, structures);
 
     public ActorPresence GetActor(EntityId actorId) => _actors.TryGetValue(actorId, out ActorPresence? actor)
         ? actor : throw new ArgumentException("The actor is outside this admitted local spatial set.", nameof(actorId));
@@ -83,6 +95,7 @@ public sealed class LocalSpatialSnapshot
                 SpatialOccupancy.Unavailable => SpatialMoveStatus.Unavailable,
                 SpatialOccupancy.BlockedTerrain => SpatialMoveStatus.BlockedTerrain,
                 SpatialOccupancy.BlockedActor => SpatialMoveStatus.BlockedActor,
+                SpatialOccupancy.BlockedStructure => SpatialMoveStatus.BlockedStructure,
                 SpatialOccupancy.Unsupported => SpatialMoveStatus.Unsupported,
                 _ => throw new InvalidOperationException("Unknown occupancy result.")
             };
@@ -109,7 +122,7 @@ public sealed class LocalSpatialSnapshot
         {
             return SpatialInteraction.DifferentFloor;
         }
-        return TerrainSightline.Query(_terrain, _volumes[actorId], _volumes[targetActorId]);
+        return TerrainSightline.Query(_terrain, _volumes[actorId], _volumes[targetActorId], Structures);
     }
 
     private SpatialOccupancy QueryVolume(EntityId actorId, BodyVolume volume)
@@ -118,6 +131,10 @@ public sealed class LocalSpatialSnapshot
         if (terrain is SpatialOccupancy.Unavailable or SpatialOccupancy.BlockedTerrain)
         {
             return terrain;
+        }
+        if (Structures.Any(structure => structure.Boxes.Any(box => volume.Overlaps(box.Volume))))
+        {
+            return SpatialOccupancy.BlockedStructure;
         }
         foreach (ActorPresence other in Actors)
         {

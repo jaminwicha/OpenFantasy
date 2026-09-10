@@ -6,7 +6,8 @@ public enum SpatialOccupancy
     Unavailable,
     BlockedTerrain,
     BlockedActor,
-    Unsupported
+    Unsupported,
+    BlockedStructure
 }
 
 public enum SpatialMoveStatus
@@ -18,7 +19,8 @@ public enum SpatialMoveStatus
     Unavailable,
     BlockedTerrain,
     BlockedActor,
-    Unsupported
+    Unsupported,
+    BlockedStructure
 }
 
 public enum SpatialInteraction

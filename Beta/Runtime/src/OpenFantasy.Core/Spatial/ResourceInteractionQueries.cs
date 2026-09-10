@@ -26,6 +26,13 @@ public static class ResourceInteractionQueries
         {
             return SpatialOccupancy.Unsupported;
         }
+        if (space.Structures.Any(structure => structure.Boxes.Any(box =>
+            resourceFeet.X >= box.Minimum.X && resourceFeet.X < box.Maximum.X
+            && resourceFeet.Y >= box.Minimum.Y && resourceFeet.Y < box.Maximum.Y
+            && resourceFeet.Z >= box.Minimum.Z && resourceFeet.Z < box.Maximum.Z)))
+        {
+            return SpatialOccupancy.BlockedStructure;
+        }
         return SpatialOccupancy.Clear;
     }
 
@@ -44,6 +51,7 @@ public static class ResourceInteractionQueries
         var center = BodyVolume.At(actor.Feet, actor.Condition.Definition.ClearanceDimensions).DoubledCenter;
         // The anchor shares the actor's exact center height; a ground-plane endpoint would graze the support cube.
         var target = ((Int128)resourceFeet.X * 2, (Int128)resourceFeet.Y * 2, center.Z);
-        return TerrainSightline.QueryCenters(new TerrainVolumeQueries(space.Regions), center, target, GatherRulesV1.ReachSubunits);
+        return TerrainSightline.QueryCenters(new TerrainVolumeQueries(space.Regions), center, target,
+            GatherRulesV1.ReachSubunits, space.Structures);
     }
 }
