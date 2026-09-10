@@ -7,7 +7,7 @@ internal enum WorldCommitKind
 {
     AdvancingStep = 1,
     HeldInteraction = 2,
-    ProductionMigration = 3
+    ProfileMigration = 3
 }
 
 internal enum WorldIdentityKind

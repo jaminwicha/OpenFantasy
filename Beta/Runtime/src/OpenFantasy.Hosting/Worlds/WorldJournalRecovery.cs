@@ -30,9 +30,9 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The local world genesis does not start at an unheld commit zero.");
         }
-        if (genesis.ProfileVersion == 3 && database.SchemaVersion != WorldDatabaseSchemaThree.Version)
+        if (genesis.ProfileVersion is 3 or 4 && database.SchemaVersion != WorldDatabaseSchemaThree.Version)
         {
-            throw new InvalidDataException("A production genesis requires its declared world schema.");
+            throw new InvalidDataException("A production or quest genesis requires its declared world schema.");
         }
         WorldSnapshot state = genesis;
         byte[] stateBytes = genesisBytes;
@@ -41,7 +41,7 @@ internal sealed class WorldJournalRecovery
         Dictionary<EntityId, StoredWorldIdentity> identities = [];
         Dictionary<(EntityId Principal, EntityId Command), StoredWorldCommandOutcome> commands = [];
         var steps = new WorldCommitPreparation();
-        var migrations = new WorldMigrationPreparation();
+        var migrations = new WorldProfileMigrationReplay();
         using IEnumerator<StoredWorldCheckpoint> checkpoints = database.ReadCheckpoints().GetEnumerator();
         if (!checkpoints.MoveNext())
         {
@@ -96,9 +96,9 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The world contains a checkpoint beyond its accepted journal.");
         }
-        if (database.SchemaVersion == WorldDatabaseSchemaThree.Version && state.ProfileVersion != 3)
+        if (database.SchemaVersion == WorldDatabaseSchemaThree.Version && state.ProfileVersion is not 3 and not 4)
         {
-            throw new InvalidDataException("The third world schema has no accepted production admission.");
+            throw new InvalidDataException("The third world schema has no accepted production or quest admission.");
         }
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps
@@ -113,18 +113,15 @@ internal sealed class WorldJournalRecovery
 
     private static ExpectedJournalEntry PrepareEntry(int schemaVersion, StoredWorldCommit stored,
         WorldSnapshot state, WorldIdentityIndex genesisIdentities, ContentHash stateHash,
-        Func<EntityId, bool> historicallyOccupied, WorldCommitPreparation steps, WorldMigrationPreparation migrations)
+        Func<EntityId, bool> historicallyOccupied, WorldCommitPreparation steps, WorldProfileMigrationReplay migrations)
     {
-        if (stored.Kind == WorldCommitKind.ProductionMigration)
+        if (stored.Kind == WorldCommitKind.ProfileMigration)
         {
             if (schemaVersion != WorldDatabaseSchemaThree.Version)
             {
-                throw new InvalidDataException("This schema cannot contain a production migration.");
+                throw new InvalidDataException("This schema cannot contain a profile migration.");
             }
-            WorldProductionMigration request = WorldProductionMigrationCodecV1.Decode(stored.AcceptedBatch);
-            PreparedWorldMigration expected = migrations.Prepare(state, genesisIdentities,
-                stateHash, request, historicallyOccupied);
-            return new(expected.Decision.Candidate, expected.CandidateBytes, expected.Stored, [], expected.Identities);
+            return migrations.Prepare(stored, state, genesisIdentities, stateHash, historicallyOccupied);
         }
         WorldStepBatch batch = WorldStepCodec.Decode(stored.AcceptedBatch);
         PreparedWorldCommit step = steps.Prepare(state, genesisIdentities,

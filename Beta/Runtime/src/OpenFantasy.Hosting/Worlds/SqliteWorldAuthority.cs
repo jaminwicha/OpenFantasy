@@ -41,7 +41,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         byte[] bytes = WorldSnapshotCodec.Encode(genesis);
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         WorldDatabase database = WorldDatabase.Open(path, create: true,
-            accepted.ProfileVersion == 3 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
+            accepted.ProfileVersion is 3 or 4 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
         try
         {
             database.Initialize(bytes);
@@ -80,6 +80,20 @@ public sealed class SqliteWorldAuthority : IDisposable
         WorldProductionMigration request, Action<WorldProductionUpgradeBoundary>? fault)
     {
         new WorldProductionUpgrade().Publish(sourcePath, destinationPath, request, fault);
+        return OpenExisting(destinationPath);
+    }
+
+    /// <summary>
+    /// Copies an exact production save and adds explicitly funded quest admission. The original
+    /// retains all prior progress; ordinary opening does not upgrade or select a fallback save.
+    /// </summary>
+    public static SqliteWorldAuthority UpgradeProductionToQuests(string sourcePath, string destinationPath,
+        WorldQuestMigration request) => UpgradeProductionToQuests(sourcePath, destinationPath, request, null);
+
+    internal static SqliteWorldAuthority UpgradeProductionToQuests(string sourcePath, string destinationPath,
+        WorldQuestMigration request, Action<WorldQuestUpgradeBoundary>? fault)
+    {
+        new WorldQuestUpgrade().Publish(sourcePath, destinationPath, request, fault);
         return OpenExisting(destinationPath);
     }
 

@@ -31,7 +31,7 @@ internal sealed class WorldMigrationPreparation
         identities.AddRange(decision.AdmittedDefinitionIds.Select(identity =>
             new StoredWorldIdentity(identity, sequence, WorldIdentityKind.AdmittedDefinition)));
         return new PreparedWorldMigration(decision, candidate,
-            new StoredWorldCommit(sequence, WorldCommitKind.ProductionMigration, request.CauseId,
+            new StoredWorldCommit(sequence, WorldCommitKind.ProfileMigration, request.CauseId,
                 state.AdvancingSteps, requestBytes, outcome, beforeHash, ContentHash.Compute(candidate)),
             identities.AsReadOnly());
     }

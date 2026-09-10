@@ -85,7 +85,7 @@ public sealed class ProductionUpgradeTests(ITestOutputHelper output)
         Assert.Equal(oldDatabase.ReadIdentities().ToArray(), newDatabase.ReadIdentities()
             .Where(identity => identity.Sequence <= current.Revision).ToArray());
         StoredWorldCommit migration = Assert.Single(newDatabase.ReadJournal(current.Revision));
-        Assert.Equal(WorldCommitKind.ProductionMigration, migration.Kind);
+        Assert.Equal(WorldCommitKind.ProfileMigration, migration.Kind);
         Assert.Equal(WorldProductionMigrationCodecV1.Encode(request), migration.AcceptedBatch);
         output.WriteLine("Tiny gathered-save upgrade: sourceCommits={0}, sourceSteps={1}, elapsedMs={2:F3}, sourceBytes={3}, destinationBytes={4}",
             current.Revision, current.AdvancingSteps, timer.Elapsed.TotalMilliseconds, originalFile.Length,

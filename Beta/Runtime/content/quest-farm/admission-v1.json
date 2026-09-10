@@ -1,0 +1,193 @@
+{
+  "schemaVersion": 1,
+  "id": "openfantasy.quest-farm.admission",
+  "productionAdmissionSha256": "7419a27a9936c8157c98ab99537b2d4433b4d891a6ad9e61320346b551dfe7e1",
+  "sourceRecords": [
+    {
+      "targetKey": "openfantasy.aldermere:quests/wren_orchard",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/44",
+        "inventoryId": "data/quests.json#/quests/44",
+        "payloadSha256": "bbb996bb2ca6ca4e27b942f7f40f9ea624813909e037ec86980ed8aaa4ab86cb"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:npcs/farmer_wren",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/116",
+        "inventoryId": "data/npcs.json#/npcs/116",
+        "payloadSha256": "f0374a9cd788d14de3c45233cf31c6b67904ed209a6a5f8d1a0b8de547dd1f30"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:classes/squire",
+      "sourceIdentity": {
+        "path": "data/classes.json",
+        "jsonPointer": "/classes/0",
+        "inventoryId": "data/classes.json#/classes/0",
+        "payloadSha256": "b6defa5b6c7a49d13fe3297938c41952c78b22de5ba2187138654d84b2507cf9"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/wood",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/12",
+        "inventoryId": "data/items.json#/items/12",
+        "payloadSha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d"
+      }
+    }
+  ],
+  "sourceWitnesses": [
+    {
+      "path": "legacy/aldermere-first-loop/source-support/src/Sim/World.cs.txt",
+      "bytes": 27230,
+      "sha256": "fc55db3ec2c8a9602e0432a7359e460b8b6a6e92a4123620df4df5190eaea4e2"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/source-support/src/Sim/World.Systems.cs.txt",
+      "bytes": 18659,
+      "sha256": "c9a9d49ca4021cded3f06c4568075cdf4956149b4736779d4ab4b7711325886e"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/source-support/src/Sim/SimConstants.cs.txt",
+      "bytes": 2216,
+      "sha256": "7bdcec4fa6f7017bab1cb9c7ff028ee7e28b15ae37bc4503174f91b89e431742"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/source-support/src/Sim/GameData.cs.txt",
+      "bytes": 24197,
+      "sha256": "b5c47c56d41d0c17984df96a20a7a336b450ae45c1a52a610b7d460ad0873ab8"
+    },
+    {
+      "path": "quest-farm/source-support/Entity.cs.txt",
+      "bytes": 4096,
+      "sha256": "9c24378d705934022a8f07c901a7f4ddcc2e1ee977488a956e4609da935222a3"
+    }
+  ],
+  "supplementalSource": {
+    "path": "src/Sim/Entity.cs",
+    "archiveSha256": "80eafd96e2b421db38050831ebd02a89cc5379fc6c16ec792b9ed96e3071452b",
+    "runtimeCopy": "quest-farm/source-support/Entity.cs.txt",
+    "sha256": "9c24378d705934022a8f07c901a7f4ddcc2e1ee977488a956e4609da935222a3"
+  },
+  "playerProfile": {
+    "definitionKey": "profiles/human-squire",
+    "key": "human_squire",
+    "displayName": "Squire",
+    "sourceTargetKey": "openfantasy.aldermere:classes/squire",
+    "heritageKey": "human",
+    "heritageModifiers": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialLevel": 1,
+    "initialExperience": 0,
+    "initialGil": 0,
+    "origin": "New explicit Human Squire stat admission for the retained actor; prior body or sprite did not grant species or class."
+  },
+  "wrenProfile": {
+    "definitionKey": "profiles/wren-unassigned",
+    "key": "wren_unassigned",
+    "displayName": "Unassigned",
+    "baseStats": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "growth": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "heritageModifiers": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "initialLevel": 1,
+    "initialExperience": 0,
+    "initialGil": 0,
+    "origin": "Fixed SpawnNpcs and Entity defaults; no invented Farmer or Squire class."
+  },
+  "levelCurve": {
+    "definitionKey": "curves/source-levels",
+    "key": "source_levels_1_10",
+    "thresholds": [
+      100,
+      282,
+      519,
+      800,
+      1118,
+      1469,
+      1852,
+      2262,
+      2700
+    ],
+    "capPolicy": "retain_residual_experience",
+    "refill": "full_hp_mp_only_when_level_increases"
+  },
+  "currency": {
+    "definitionKey": "currencies/gil",
+    "key": "gil",
+    "displayName": "Gil",
+    "unitName": "gil",
+    "admittedSupply": 200,
+    "reserveBalance": 200,
+    "reserveRole": "quest.reward-reserve",
+    "origin": "Authored finite quest reserve; source reward minted gil without a payer. Actor personal balances remain zero.",
+    "eligibilityScope": "One funded recipient in this two-actor local diagnostic profile; no implicit additional supply for future actors."
+  },
+  "project": {
+    "custodianRole": "quest.project-custodian",
+    "reservationRole": "quest.project-reservation",
+    "unitCapacity": 6,
+    "depositRule": 2,
+    "origin": "Authored empty Wren-owned material custody; successful quest delivery preserves source rights and marks the project reservation. No construction yet."
+  },
+  "quest": {
+    "definitionRole": "quest.wren-saplings",
+    "sourceTargetKey": "openfantasy.aldermere:quests/wren_orchard",
+    "rewardRole": "quest.wren-reward",
+    "itemDefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+    "itemVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+    "expectedQuantity": 6,
+    "expectedExperience": 420,
+    "expectedGil": 200,
+    "rangeSubunits": 768,
+    "deliveryNarrative": "Materials received; actual construction remains pending.",
+    "originalTurnInGate": "Retain source line; only claim a built windbreak after actual construction.",
+    "initialParticipations": []
+  },
+  "compatibility": {
+    "requiresWorldProfile": 3,
+    "newComponentsRevision": 0,
+    "inventoryCustodyRevision": "preserve",
+    "fixedGatherGain": 10,
+    "existingState": "Preserve actual actor/body identity, custody, source rights, production, time and old receipts; migration owner publishes explicitly. New XP/vitals are authored admission, not restored from unrepresented old saves."
+  },
+  "pending": [
+    "construction blueprint and material placement",
+    "combat and ability execution",
+    "equipped stat bonuses",
+    "other species and classes",
+    "ration HP/MP use and packaging disposition",
+    "multi-player quest funding",
+    "general currency transfers and markets"
+  ]
+}
