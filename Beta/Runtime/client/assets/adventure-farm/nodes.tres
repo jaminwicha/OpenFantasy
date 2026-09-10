@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/adventure-farm/node_oak.png" id="1_oak"]
+[ext_resource type="Texture2D" path="res://assets/adventure-farm/node_berry.png" id="2_berry"]
+
+[resource]
+metadata/oak = ExtResource("1_oak")
+metadata/berry = ExtResource("2_berry")
+metadata/frame_width = 16
+metadata/frame_height = 24
+metadata/columns = 3
+metadata/rows = 4

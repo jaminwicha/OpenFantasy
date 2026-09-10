@@ -40,7 +40,7 @@ internal partial class FarmLifecycleProbe : Node
             }
             Require(mode is "remove-opening" or "close-opening", "Unknown native lifecycle mode.");
             Require(!File.Exists(savePath), "Lifecycle startup requires a fresh save path.");
-            var game = new FarmGame { SavePathOverride = savePath, StartPaused = true };
+            var game = new FarmGame { SavePathOverride = savePath, StartPaused = true, GatheringProfile = false };
             parent.AddChild(game);
             // No frame or await occurs between the real _Ready callback and the lifecycle action.
             Require(game.CurrentView is null && !game.HasFailed, "The startup lifecycle action ran after public readiness.");

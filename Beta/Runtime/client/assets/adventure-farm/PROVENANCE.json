@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "status": "exact_source_copies_not_final_art_acceptance",
+  "copiedFiles": [
+    {
+      "source": "content/legacy/aldermere-first-loop/assets/units/node_oak.png",
+      "copy": "client/assets/adventure-farm/node_oak.png",
+      "bytes": 382,
+      "sha256": "3c95536649a836516f5bda0abc65dcd2d2b6a54611a8a0804c6ef133290188c8"
+    },
+    {
+      "source": "content/legacy/aldermere-first-loop/assets/units/node_berry.png",
+      "copy": "client/assets/adventure-farm/node_berry.png",
+      "bytes": 304,
+      "sha256": "8928cce8c9bd2b1c197650cac6b467ccb9b35035531f64548ac7b76b39721457"
+    }
+  ],
+  "frameWidth": 16,
+  "frameHeight": 24,
+  "columns": 3,
+  "rows": 4,
+  "sourceIdleColumns": [
+    0,
+    1,
+    2,
+    1
+  ],
+  "sourceIdlePhasesPerSecond": 2.5,
+  "depletionPresentation": "source dims same node sheet; no retained stump sprite",
+  "colliderMeaning": "these source sprites do not create authority terrain or physics obstacles",
+  "sourceFilesModified": false
+}

@@ -1,4 +1,5 @@
 using Godot;
+using OpenFantasy.Core.Gathering;
 
 namespace OpenFantasy.Client.Presentation;
 
@@ -8,6 +9,8 @@ internal sealed class FarmVisualAssets : IDisposable
     private readonly ImageTexture _wren;
     private readonly Texture2D _squire;
     private readonly int[] _groundIds;
+    private Texture2D? _oak;
+    private Texture2D? _berry;
 
     internal FarmVisualAssets()
     {
@@ -34,6 +37,27 @@ internal sealed class FarmVisualAssets : IDisposable
         FarmSpriteKind.Squire => _squire,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
+
+    internal Texture2D GatherNodeTexture(GatherToolKind kind)
+    {
+        if (_oak is null || _berry is null)
+        {
+            Resource resource = GD.Load<Resource>("res://assets/adventure-farm/nodes.tres")
+                ?? throw new InvalidDataException("The retained resource-node textures are missing.");
+            _oak = Texture(resource, "oak");
+            _berry = Texture(resource, "berry");
+            if (_oak.GetWidth() != 48 || _oak.GetHeight() != 96 || _berry.GetWidth() != 48 || _berry.GetHeight() != 96)
+            {
+                throw new InvalidDataException("A retained resource-node sheet has incompatible frame geometry.");
+            }
+        }
+        return kind switch
+        {
+            GatherToolKind.Axe => _oak,
+            GatherToolKind.Sickle => _berry,
+            _ => throw new ArgumentOutOfRangeException(nameof(kind))
+        };
+    }
 
     internal static Texture2D Texture(Resource resource, StringName key) => resource.GetMeta(key).AsGodotObject() as Texture2D
         ?? throw new InvalidDataException("A retained farm texture reference is missing: " + key);

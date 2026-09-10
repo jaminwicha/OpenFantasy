@@ -80,7 +80,8 @@ def main():
                                    ("production-v1", "production"), ("actors-v1", "actor"),
                                    ("observations-v1", "observation"), ("language-v1", "language"),
                                    ("authority-v1", "authority"), ("terrain-v1", "terrain"),
-                                   ("world-actions-v1", "world_action"), ("world-receipts-v1", "world_receipt")):
+                                   ("world-actions-v1", "world_action"), ("world-receipts-v1", "world_receipt"),
+                                   ("gathering-v1", "gathering")):
             vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures" / (fixture + ".json")
             reference = run("independent-python-" + fixture, [sys.executable,
                             vector_file.with_name("generate_" + generator + "_vectors.py")])
@@ -140,6 +141,10 @@ def main():
         run("native-farm-lifecycle", [sys.executable, root / "tools/check_farm_lifecycle.py",
             "--dotnet", dotnet, "--godot", godot, "--output", lifecycle_report])
         report["farmLifecycle"] = json.loads(lifecycle_report.read_text())
+        gathering_report = artifacts / "native-gathering.json"
+        run("native-farm-gathering", [sys.executable, root / "tools/check_native_gathering.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", gathering_report])
+        report["nativeGathering"] = json.loads(gathering_report.read_text())
         for relative, expected in report["inputSha256"].items():
             if hashlib.sha256((root / relative).read_bytes()).hexdigest() != expected:
                 raise RuntimeError("An input changed during verification: " + relative)

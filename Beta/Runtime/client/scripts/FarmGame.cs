@@ -23,18 +23,27 @@ public partial class FarmGame : Node2D
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
+    internal bool GatheringProfile { get; init; } = true;
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     internal bool HasPendingAction => _action is not null;
     internal bool HasFailed => _failed;
+    internal bool IsLocallyPaused => _paused;
+    internal bool IsWindowFocused => _focused;
     internal void RequestClose() => BeginClose();
 
     public override void _Ready()
     {
         AddChild(_canvas);
+        Rect2 bounds = _canvas.LocalBounds;
+        _camera.LimitLeft = (int)bounds.Position.X;
+        _camera.LimitTop = (int)bounds.Position.Y;
+        _camera.LimitRight = (int)bounds.End.X;
+        _camera.LimitBottom = (int)bounds.End.Y;
         AddChild(_camera);
         AddChild(_hud);
         _hud.TalkRequested += Speak;
         _hud.GiveRequested += Give;
+        _hud.GatherRequested += Gather;
         _hud.CloseRequested += CloseDialogue;
         _hud.PauseRequested += TogglePause;
         GetTree().AutoAcceptQuit = false;
@@ -43,8 +52,9 @@ public partial class FarmGame : Node2D
         GetWindow().FocusExited += OnFocusExited;
         _hud.Message("Opening the farm…");
         _paused = StartPaused;
-        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-farm.sqlite");
-        _opening = FarmClientSession.OpenAsync(savePath, "aldermere-first-walk-v1", "Traveler");
+        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath(GatheringProfile
+            ? "user://worlds/wrens-farm-work.sqlite" : "user://worlds/wrens-farm.sqlite");
+        _opening = FarmClientSession.OpenAsync(savePath, "aldermere-first-walk-v1", "Traveler", GatheringProfile);
     }
 
     public override void _Process(double delta)
@@ -95,9 +105,11 @@ public partial class FarmGame : Node2D
         LocalWorldView view = _session.World.ReadView();
         _canvas.Present(new FarmCanvasFrame(view.Calendar, view.Actors.Select(actor => new FarmActorFrame(
             actor.ActorId, actor.DisplayName, actor.Feet, actor.ActorId == view.PlayerActorId,
-            actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire))));
+            actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire)),
+            view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
+                node.RequiredTool, node.Visibility))));
         _camera.Position = _canvas.FocusPosition + new Vector2(0, -26);
-        _hud.Present(view, _session.WoodQuantity(view), _action is not null, _paused || !_focused);
+        _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null, _paused || !_focused);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -135,12 +147,14 @@ public partial class FarmGame : Node2D
             else Speak();
         }
         else if (input.IsActionPressed("give_wood")) Give();
+        else if (input.IsActionPressed("gather")) Gather();
         else return;
         GetViewport().SetInputAsHandled();
     }
 
     private void Speak() => Submit(session => session.Speak(session.World.ReadView()), "You spoke with Wren.");
-    private void Give() => Submit(session => session.GiveWood(session.World.ReadView()), "You handed Wren six wood.");
+    private void Give() => Submit(session => session.GiveWood(session.World.ReadView()), "You handed Wren wood from your pack.");
+    private void Gather() => Submit(session => session.Gather(session.World.ReadView()), "You gathered supplies.");
     private void CloseDialogue() => Submit(session => session.CloseDialogue(session.World.ReadView()), "The conversation ended.");
 
     private void Submit(Func<FarmClientSession, Task<WorldActionReceipt>> submit, string description)
@@ -160,7 +174,7 @@ public partial class FarmGame : Node2D
     private string Describe(WorldActionReceipt receipt) => receipt.Status == CommandReceiptStatus.Applied
         ? _actionDescription : receipt.Rejection switch
         {
-            WorldActionRejection.OutOfReach => "Move closer to Wren.",
+            WorldActionRejection.OutOfReach => "Move closer to interact.",
             WorldActionRejection.RevisionConflict => "The moment changed; try again.",
             WorldActionRejection.UnableToCommunicate => "You cannot understand one another right now.",
             _ => "That action is unavailable right now."

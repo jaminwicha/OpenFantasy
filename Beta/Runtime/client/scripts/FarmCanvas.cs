@@ -8,6 +8,7 @@ namespace OpenFantasy.Client;
 public partial class FarmCanvas : Node2D
 {
     private readonly Dictionary<EntityId, FarmActorView> _actors = [];
+    private readonly Dictionary<EntityId, FarmGatherNodeView> _gatheringNodes = [];
     private FarmCanvasFrame? _frame;
     private FarmVisualAssets _assets = null!;
     private Node2D _actorLayer = null!;
@@ -68,6 +69,31 @@ public partial class FarmCanvas : Node2D
             else
             {
                 view.Present(actor, _assets);
+            }
+        }
+        PresentGatheringNodes(frame);
+    }
+
+    private void PresentGatheringNodes(FarmCanvasFrame frame)
+    {
+        HashSet<EntityId> included = frame.GatheringNodes.Select(node => node.NodeId).ToHashSet();
+        foreach (EntityId id in _gatheringNodes.Keys.Where(id => !included.Contains(id)).ToArray())
+        {
+            _gatheringNodes[id].QueueFree();
+            _gatheringNodes.Remove(id);
+        }
+        foreach (FarmGatherNodeFrame node in frame.GatheringNodes)
+        {
+            if (!_gatheringNodes.TryGetValue(node.NodeId, out FarmGatherNodeView? view))
+            {
+                view = new FarmGatherNodeView { Name = "Resource_" + node.NodeId };
+                view.Setup(node, _assets);
+                _actorLayer.AddChild(view);
+                _gatheringNodes.Add(node.NodeId, view);
+            }
+            else
+            {
+                view.Present(node, _assets);
             }
         }
     }

@@ -1,4 +1,5 @@
 using Godot;
+using OpenFantasy.Core.Gathering;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
@@ -12,13 +13,15 @@ internal sealed partial class FarmHud : CanvasLayer
     private readonly Label _speech = new() { AutowrapMode = TextServer.AutowrapMode.WordSmart };
     private readonly PanelContainer _dialogue = new();
     private readonly Button _talk = new() { Text = "Talk  [E]" };
-    private readonly Button _give = new() { Text = "Give six wood  [G]" };
+    private readonly Button _give = new() { Text = "Give wood  [G]" };
+    private readonly Button _gather = new() { Text = "Gather  [F]" };
     private readonly Button _close = new() { Text = "Continue  [E]" };
     private readonly Button _pause = new() { Text = "Pause  [Esc]" };
     private bool _wasSpeaking;
 
     internal event Action? TalkRequested;
     internal event Action? GiveRequested;
+    internal event Action? GatherRequested;
     internal event Action? CloseRequested;
     internal event Action? PauseRequested;
 
@@ -27,8 +30,17 @@ internal sealed partial class FarmHud : CanvasLayer
         var root = new Control { MouseFilter = Control.MouseFilterEnum.Ignore, Theme = CreateTheme() };
         AddChild(root);
         root.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
-        var top = new HBoxContainer { Position = new Vector2(18, 14), Size = new Vector2(924, 44) };
-        root.AddChild(top);
+        var header = new PanelContainer { MouseFilter = Control.MouseFilterEnum.Ignore };
+        root.AddChild(header);
+        header.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.TopWide);
+        header.OffsetBottom = 64;
+        header.AddThemeStyleboxOverride("panel", new StyleBoxFlat
+        {
+            BgColor = new Color("192a2e"), ContentMarginLeft = 18, ContentMarginRight = 18,
+            ContentMarginTop = 12, ContentMarginBottom = 12
+        });
+        var top = new HBoxContainer();
+        header.AddChild(top);
         top.AddChild(new Label { Text = "Wren's farm", SizeFlagsHorizontal = Control.SizeFlags.ExpandFill });
         top.AddChild(_clock);
         top.AddChild(_wood);
@@ -50,6 +62,7 @@ internal sealed partial class FarmHud : CanvasLayer
         actions.AddChild(new Label { Text = "Move: WASD / arrows", SizeFlagsHorizontal = Control.SizeFlags.ExpandFill });
         actions.AddChild(_talk);
         actions.AddChild(_give);
+        actions.AddChild(_gather);
 
         root.AddChild(_dialogue);
         _dialogue.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.BottomWide);
@@ -64,18 +77,24 @@ internal sealed partial class FarmHud : CanvasLayer
         _dialogue.Hide();
         _talk.Pressed += () => TalkRequested?.Invoke();
         _give.Pressed += () => GiveRequested?.Invoke();
+        _gather.Pressed += () => GatherRequested?.Invoke();
         _close.Pressed += () => CloseRequested?.Invoke();
         _pause.Pressed += () => PauseRequested?.Invoke();
     }
 
-    internal void Present(LocalWorldView view, ulong wood, bool pending, bool paused)
+    internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused)
     {
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;
         int minute = view.Calendar.MillisecondsWithinDay / 60_000 % 60;
         _clock.Text = $"Day {view.Calendar.Days + 1} · {hour:D2}:{minute:D2}";
-        _wood.Text = $"Wood: {wood}";
+        _wood.Text = view.PlayerGatherEffort.HasValue ? $"Wood: {wood} · Berries: {berries}" : $"Wood: {wood}";
         _talk.Disabled = pending || paused || view.HasReadingHold;
-        _give.Disabled = pending || paused || wood < 6;
+        _give.Disabled = pending || paused || wood == 0;
+        _gather.Visible = view.PlayerGatherEffort.HasValue;
+        var target = FarmClientSession.NearestGatherNode(view);
+        _gather.Text = target?.RequiredTool == GatherToolKind.Axe ? "Chop oak  [F]" : "Pick berries  [F]";
+        _gather.Disabled = pending || paused || view.HasReadingHold || view.PlayerGatherEffort < 400
+            || target is null || !FarmClientSession.CanReachGatherNode(view, target);
         _close.Disabled = pending || paused;
         _pause.Text = paused ? "Resume  [Esc]" : "Pause  [Esc]";
         bool speaking = view.Dialogue is not null;

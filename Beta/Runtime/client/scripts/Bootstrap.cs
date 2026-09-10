@@ -41,6 +41,19 @@ public partial class Bootstrap : Control
         {
             FarmLifecycleProbe.Start(this, lifecycleSave, lifecycleReport, mode);
         }
+        else if (arguments is ["--farm-gathering", var gatherSave, var gatherReport, var gatherStage]
+            && gatherStage is "create" or "reopen")
+        {
+            if (gatherStage == "create" && File.Exists(gatherSave) || gatherStage == "reopen" && !File.Exists(gatherSave))
+            {
+                GD.PushError("The gathering probe requires a fresh create path or an existing reopen path.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = gatherSave, StartPaused = gatherStage == "reopen" };
+            AddChild(game);
+            AddChild(new FarmGatheringProbe(game, gatherReport, gatherStage == "reopen"));
+        }
         else if (arguments is ["--farm-walkthrough", var save, var reportPath, var stage] && stage is "create" or "reopen")
         {
             if (stage == "create" && File.Exists(save) || stage == "reopen" && !File.Exists(save))
@@ -49,13 +62,13 @@ public partial class Bootstrap : Control
                 GetTree().Quit(1);
                 return;
             }
-            var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen" };
+            var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
         }
         else
         {
-            AddChild(new FarmGame());
+            AddChild(new FarmGame { GatheringProfile = !arguments.Contains("--legacy-farm") });
         }
     }
 

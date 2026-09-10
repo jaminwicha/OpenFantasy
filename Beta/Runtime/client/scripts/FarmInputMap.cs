@@ -13,6 +13,7 @@ internal static class FarmInputMap
         Movement("walk_down", Key.S, Key.Down, JoyButton.DpadDown, JoyAxis.LeftY, 1);
         Button("talk", Key.E, JoyButton.A);
         Button("give_wood", Key.G, JoyButton.X);
+        Button("gather", Key.F, JoyButton.Y);
         Button("pause_world", Key.Escape, JoyButton.Start);
     }
 

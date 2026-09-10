@@ -1,9 +1,14 @@
 using System.Collections.ObjectModel;
 using System.Text;
 using OpenFantasy.Core;
+using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Client.Presentation;
+
+/// <summary>Public resource appearance without hidden harvest budgets or unissued source intervals.</summary>
+public sealed record FarmGatherNodeFrame(EntityId NodeId, string DisplayName, SubunitPosition Feet,
+    GatherToolKind RequiredToolKind, GatherNodeVisibility Visibility);
 
 public enum FarmSpriteKind
 {
@@ -44,7 +49,8 @@ public sealed class FarmCanvasFrame
 {
     public const int MaximumActors = 64;
 
-    public FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors)
+    public FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors,
+        IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null)
     {
         ArgumentNullException.ThrowIfNull(actors);
         var selected = new SortedDictionary<EntityId, FarmActorFrame>();
@@ -62,8 +68,23 @@ public sealed class FarmCanvasFrame
         }
         Calendar = calendar;
         Actors = Array.AsReadOnly(selected.Values.ToArray());
+        var nodes = new SortedDictionary<EntityId, FarmGatherNodeFrame>();
+        foreach (var node in gatheringNodes ?? [])
+        {
+            ArgumentNullException.ThrowIfNull(node);
+            FarmCanvasCoordinates.Validate(node.Feet);
+            if (nodes.Count == 32 || !nodes.TryAdd(node.NodeId, node) || selected.ContainsKey(node.NodeId)
+                || string.IsNullOrWhiteSpace(node.DisplayName) || node.DisplayName.Length > 128
+                || node.DisplayName.Any(char.IsControl) || !Enum.IsDefined(node.RequiredToolKind)
+                || !Enum.IsDefined(node.Visibility) || node.Visibility == GatherNodeVisibility.Absent)
+            {
+                throw new ArgumentException("The visible resource projection violates its bounded appearance profile.");
+            }
+        }
+        GatheringNodes = Array.AsReadOnly(nodes.Values.ToArray());
     }
 
     public WorldInstant Calendar { get; }
     public ReadOnlyCollection<FarmActorFrame> Actors { get; }
+    public ReadOnlyCollection<FarmGatherNodeFrame> GatheringNodes { get; }
 }
