@@ -1,0 +1,69 @@
+using System.Collections.ObjectModel;
+using System.Text;
+using OpenFantasy.Core;
+using OpenFantasy.Core.Spatial;
+
+namespace OpenFantasy.Client.Presentation;
+
+public enum FarmSpriteKind
+{
+    Wren = 1,
+    Squire = 2
+}
+
+/// <summary>Permitted public appearance data for one displayed actor, without private simulation state.</summary>
+public sealed record FarmActorFrame
+{
+    private static readonly UTF8Encoding _strictUtf8 = new(false, true);
+
+    public FarmActorFrame(EntityId actorId, string displayName, SubunitPosition feet, bool isOwnActor, FarmSpriteKind spriteKind)
+    {
+        ArgumentException.ThrowIfNullOrWhiteSpace(displayName);
+        if (displayName.Length > 128 || _strictUtf8.GetByteCount(displayName) > 128
+            || displayName.Any(char.IsControl) || !Enum.IsDefined(spriteKind))
+        {
+            throw new ArgumentException("The actor's public presentation fields exceed this view's profile.");
+        }
+        FarmCanvasCoordinates.Validate(feet);
+        ActorId = actorId;
+        DisplayName = displayName;
+        Feet = feet;
+        IsOwnActor = isOwnActor;
+        SpriteKind = spriteKind;
+    }
+
+    public EntityId ActorId { get; }
+    public string DisplayName { get; }
+    public SubunitPosition Feet { get; }
+    public bool IsOwnActor { get; }
+    public FarmSpriteKind SpriteKind { get; }
+}
+
+/// <summary>A copied public projection. Its construction does not authorize observation or expose a host snapshot.</summary>
+public sealed class FarmCanvasFrame
+{
+    public const int MaximumActors = 64;
+
+    public FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors)
+    {
+        ArgumentNullException.ThrowIfNull(actors);
+        var selected = new SortedDictionary<EntityId, FarmActorFrame>();
+        foreach (FarmActorFrame actor in actors)
+        {
+            ArgumentNullException.ThrowIfNull(actor);
+            if (selected.Count == MaximumActors || !selected.TryAdd(actor.ActorId, actor))
+            {
+                throw new ArgumentException("A farm view requires unique visible actor identities within its bound.", nameof(actors));
+            }
+        }
+        if (selected.Values.Count(actor => actor.IsOwnActor) != 1)
+        {
+            throw new ArgumentException("A ready farm view requires exactly one own actor.", nameof(actors));
+        }
+        Calendar = calendar;
+        Actors = Array.AsReadOnly(selected.Values.ToArray());
+    }
+
+    public WorldInstant Calendar { get; }
+    public ReadOnlyCollection<FarmActorFrame> Actors { get; }
+}

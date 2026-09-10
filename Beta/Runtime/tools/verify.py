@@ -79,7 +79,8 @@ def main():
                                    ("custody-invalid-v1", "custody_invalid"), ("exposure-v1", "exposure"),
                                    ("production-v1", "production"), ("actors-v1", "actor"),
                                    ("observations-v1", "observation"), ("language-v1", "language"),
-                                   ("authority-v1", "authority"), ("terrain-v1", "terrain")):
+                                   ("authority-v1", "authority"), ("terrain-v1", "terrain"),
+                                   ("world-actions-v1", "world_action"), ("world-receipts-v1", "world_receipt")):
             vector_file = root / "tests/OpenFantasy.Core.Tests/Fixtures" / (fixture + ".json")
             reference = run("independent-python-" + fixture, [sys.executable,
                             vector_file.with_name("generate_" + generator + "_vectors.py")])
@@ -131,6 +132,14 @@ def main():
         run("durable-authority-qualification", [sys.executable, root / "tools/check_durable_authority.py",
             "--dotnet", dotnet, "--godot", godot, "--output", durable_report])
         report["durableAuthority"] = json.loads(durable_report.read_text())
+        native_report = artifacts / "native-farm.json"
+        run("native-farm-walkthrough", [sys.executable, root / "tools/check_native_farm.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", native_report])
+        report["nativeFarm"] = json.loads(native_report.read_text())
+        lifecycle_report = artifacts / "farm-lifecycle.json"
+        run("native-farm-lifecycle", [sys.executable, root / "tools/check_farm_lifecycle.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", lifecycle_report])
+        report["farmLifecycle"] = json.loads(lifecycle_report.read_text())
         for relative, expected in report["inputSha256"].items():
             if hashlib.sha256((root / relative).read_bytes()).hexdigest() != expected:
                 raise RuntimeError("An input changed during verification: " + relative)

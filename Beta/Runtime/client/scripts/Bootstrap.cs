@@ -31,6 +31,31 @@ public partial class Bootstrap : Control
         if (arguments.Contains("--smoke-test"))
         {
             GetTree().Quit();
+            return;
+        }
+
+        GetNode<Control>("Backdrop").Hide();
+        GetNode<Control>("Center").Hide();
+        FarmInputMap.InstallDefaults();
+        if (arguments is ["--farm-lifecycle", var lifecycleSave, var lifecycleReport, var mode])
+        {
+            FarmLifecycleProbe.Start(this, lifecycleSave, lifecycleReport, mode);
+        }
+        else if (arguments is ["--farm-walkthrough", var save, var reportPath, var stage] && stage is "create" or "reopen")
+        {
+            if (stage == "create" && File.Exists(save) || stage == "reopen" && !File.Exists(save))
+            {
+                GD.PushError("The farm walkthrough requires a fresh create path or an existing reopen path.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen" };
+            AddChild(game);
+            AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else
+        {
+            AddChild(new FarmGame());
         }
     }
 
