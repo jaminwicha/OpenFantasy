@@ -1,0 +1,34 @@
+{
+  "date": "2026-09-10",
+  "scope": "Documentation, traceability and preservation only; no new runtime/UI/native acceptance executed",
+  "checks": {
+    "baseline_requirement_ids": 181,
+    "supplemental_contracts": 14,
+    "native_cases_defined_not_run": 13,
+    "all_contract_case_links_valid": true,
+    "phase_order_valid": true,
+    "local_markdown_targets_exist": 72,
+    "distinct_external_urls_in_checked_files": 9,
+    "reviewed_baseline_files_unchanged": 23,
+    "reviewed_baseline_aggregate_sha256": "e6a1e3d17c65d71b2690a2aca0f9a2459d7d2f1618723d0c0475e6d65c71259a",
+    "predecessor_staged_patch_unchanged_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "tracked_runtime_files_unchanged": true,
+    "owned_markdown_whitespace_pass": true,
+    "git_diff_check_pass": true
+  },
+  "document_sha256": {
+    "Beta/AGENTS.md": "df18e9ab200e62417950fd60bec838c27011d1ed672408ccd4dfeb44f77db669",
+    "Beta/README.md": "8bce6d353ad7b3ce9609b2177ec1a4ee4233261b849c21c9c7f0f02f85e3acc7",
+    "Beta/implementation/README.md": "5be72fe40ffe9496ed78d1a9ba56c749562f9c68c66171fb9059bfec881adee5",
+    "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md": "3e465ddd05b65d6992f26e6e014e47d50b99ec463b88a172e00b0ca9167682e3",
+    "Beta/implementation/ui-management/RESEARCH.md": "0b3186a272584f04dd9de0938ad475d030d2420f98f8e7793cf0c38ae10676e2",
+    "Beta/implementation/ui-management/COVERAGE.json": "c58299bd27f21873b0a1c6322a79a8ee88997d8991adc6bd71b0e274899ac3df",
+    "Beta/implementation/ui-management/REVIEW.md": "7510797a77750b245f6cecfef3365cf9214faff2ff4b3091ab6556a60fdd7bbc"
+  },
+  "limitations": [
+    "Native wheel, management panels, atlas, input routing, usability, accessibility and performance cases remain unrun.",
+    "Local links checked for target existence; not a complete rendered-navigation or heading-anchor test.",
+    "External sources reviewed by research agent; this mechanical check does not refetch URLs.",
+    "Ecosystem skill validation is separately recorded and does not prove model-performance benefit."
+  ]
+}

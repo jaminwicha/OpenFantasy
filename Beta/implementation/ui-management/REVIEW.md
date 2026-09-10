@@ -2,7 +2,7 @@
 
 Date: 2026-09-10. Verdict: reviewed planning supplement; native implementation, performance, accessibility and human enjoyment/style acceptance remain unrun. This is a review of the [interface supplement](../PLAYER_INTERFACE_AND_NAVIGATION.md), its [sources](RESEARCH.md) and [phase/case coverage](COVERAGE.json), not a claim about newly implemented menus.
 
-## Independent findings and resolution
+## Preserved review of the preceding interface edition
 
 Two independent agents reviewed the root-authored documents after a separate current-runtime/plan audit and primary-source research pass.
 
@@ -12,11 +12,15 @@ Two independent agents reviewed the root-authored documents after a separate cur
 | Research/coverage critic | UI-03/UI-11 declared full completion at P03 although broader required cases extend later. | Coverage now records P03 foundational qualification separately from full completion at P10/P13. Reviewer verified the distinction; early proof remains required and no phase priority changed. |
 | Research/coverage critic | Functional inventory/equipment/recipe verification began at P04 although real screens are required in P02. | UIV-07 begins with the small real P02 subset and expands through P04–P11 with existing domains. Reviewer verified the correction. |
 
-Both reviewers found the owner-requested screens, conditional disclosure, stable wheel/action targeting, input/cancel hierarchy, connected atlas axes, knowledge boundaries and explicit clock behavior consistent with the retained baseline. Source facts are distinguished from our proposed layout choices. No remaining findings were reported in these bounded reviews. They do not establish universal usability or approve unimplemented runtime behavior.
+For the preceding edition, both reviewers found the owner-requested screens, conditional disclosure, stable wheel/action targeting, input/cancel hierarchy, connected atlas axes, knowledge boundaries and explicit clock behavior consistent with the retained baseline. Source facts are distinguished from our proposed layout choices. No remaining findings were reported in these bounded reviews. They do not establish universal usability or approve unimplemented runtime behavior.
+
+## Icon and inspection refinement
+
+The owner subsequently selected icon-led surfaces with rich tooltip/hover descriptions. The live supplement adds keyboard/controller focus and explicit Inspect, touch equivalents, optional labels, known item/artifact details, pinned expanded inspection, safe placement and no hover side effects or secret leakage. UI-15/UIV-14 map this to the existing P02–P14 phases. These are design/document additions, not a native UI pass. The earlier five reviewed documents and original hashes remain in the [preserved edition](archive/2026-09-10-before-icon-tooltips/MANIFEST.json); earlier independent findings apply to that edition and are not presented as a new review of this refinement.
 
 ## Mechanical evidence and scope
 
-[VALIDATION.json](VALIDATION.json) records actual checks of 14 supplemental contracts, 13 explicitly unrun native cases, valid baseline IDs, phase order, local Markdown targets, unchanged reviewed specification bytes and unchanged predecessor staged patch. It hashes the reviewed documentation inputs. These checks do not execute gameplay or refetch every research URL.
+[VALIDATION.json](VALIDATION.json) records actual checks of 15 supplemental contracts, 14 explicitly unrun native cases, valid baseline IDs, phase order, local Markdown targets, unchanged reviewed specification bytes and unchanged predecessor staged patch. It hashes the reviewed documentation inputs. These checks do not execute gameplay or refetch every research URL.
 
 The frozen `spec-v1_1` remains 23 unchanged files with the same aggregate SHA-256 as before this work. The original 181 requirements are not renumbered, removed or silently replaced. Current root/implementation indexes and AGENTS link the living supplement so these refinements are consumable together with the baseline.
 

@@ -1,0 +1,32 @@
+{
+  "date": "2026-09-10",
+  "source_commit": "38b0375b93ffbf2975cf764ee968318b428deeeb",
+  "reason": "Preserve reviewed interface supplement before owner icon-first and rich-inspection refinement. Original relative links resolve from original_path; files are exact byte snapshots, not a relocated live spec.",
+  "files": [
+    {
+      "original_path": "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md",
+      "archived_file": "PLAYER_INTERFACE_AND_NAVIGATION.md",
+      "sha256": "3e465ddd05b65d6992f26e6e014e47d50b99ec463b88a172e00b0ca9167682e3"
+    },
+    {
+      "original_path": "Beta/implementation/ui-management/COVERAGE.json",
+      "archived_file": "COVERAGE.json",
+      "sha256": "c58299bd27f21873b0a1c6322a79a8ee88997d8991adc6bd71b0e274899ac3df"
+    },
+    {
+      "original_path": "Beta/implementation/ui-management/RESEARCH.md",
+      "archived_file": "RESEARCH.md",
+      "sha256": "0b3186a272584f04dd9de0938ad475d030d2420f98f8e7793cf0c38ae10676e2"
+    },
+    {
+      "original_path": "Beta/implementation/ui-management/REVIEW.md",
+      "archived_file": "REVIEW.md",
+      "sha256": "7510797a77750b245f6cecfef3365cf9214faff2ff4b3091ab6556a60fdd7bbc"
+    },
+    {
+      "original_path": "Beta/implementation/ui-management/VALIDATION.json",
+      "archived_file": "VALIDATION.json",
+      "sha256": "8e52bc9417e3defb82610ebff089f670a11745148031864c94de90e1409e1d8f"
+    }
+  ]
+}

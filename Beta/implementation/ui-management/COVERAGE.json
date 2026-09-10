@@ -5,7 +5,7 @@
   "baseline": "../../spec-v1_1/REQUIREMENTS.json",
   "design": "../PLAYER_INTERFACE_AND_NAVIGATION.md",
   "baseline_requirement_count": 181,
-  "scope_note": "14 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. All native implementation/acceptance below remains unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
+  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. All native implementation/acceptance below remains unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
   "contracts": [
     {
       "id": "UI-01",
@@ -279,6 +279,25 @@
       ],
       "status": "planned",
       "evidence_paths": []
+    },
+    {
+      "id": "UI-15",
+      "contract": "Icon-led surfaces with rich, knowledge-scoped inspection across pointer, keyboard, controller and touch",
+      "baseline_ids": [
+        "RQ-021",
+        "RQ-071",
+        "RQ-120",
+        "RQ-134",
+        "RQ-140",
+        "RQ-171"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P14",
+      "case_ids": [
+        "UIV-14"
+      ],
+      "status": "planned",
+      "evidence_paths": []
     }
   ],
   "cases": [
@@ -383,6 +402,14 @@
       "introduction_phase": "P13",
       "completion_phase": "P14",
       "acceptance": "Verify actual desktop production profiles, localization/scaling and input/accessibility; then touch, safe areas, virtual keyboard, suspend/resume and co-op parity on supported mobile devices. Every supported action remains reachable without hover or hardware-key-only instructions.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-14",
+      "introduction_phase": "P02",
+      "completion_phase": "P14",
+      "acceptance": "Begin with actual P02 item/action/disabled-state icons and rich hover/focus/Inspect cards. Native users can recognize frequent icons, reveal the same permitted details without executing an action, compare equipment and read pinned long text at scaled sizes without flicker, clipping or hidden essential costs. Unidentified artifacts reveal no secret power/value/quest role through icon, tooltip, search or accessible name. P03 tests target invalidation, live-state staleness and menu/Wait policy; later domains extend known/earned details; P11 closes icon/description/localization coverage, P12 verifies recognition and reading comfort, P13 desktop and P14 touch prove parity.",
       "status": "not_run",
       "evidence_paths": []
     }

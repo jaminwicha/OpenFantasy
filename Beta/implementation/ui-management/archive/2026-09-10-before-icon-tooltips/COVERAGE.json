@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-10",
+  "status": "planned_owner_supplement_not_runtime_completion",
+  "baseline": "../../spec-v1_1/REQUIREMENTS.json",
+  "design": "../PLAYER_INTERFACE_AND_NAVIGATION.md",
+  "baseline_requirement_count": 181,
+  "scope_note": "14 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. All native implementation/acceptance below remains unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
+  "contracts": [
+    {
+      "id": "UI-01",
+      "contract": "Four complementary action-access levels with one semantic action vocabulary",
+      "baseline_ids": [
+        "RQ-023",
+        "RQ-134",
+        "RQ-171"
+      ],
+      "introduction_phase": "P01",
+      "completion_phase": "P12",
+      "case_ids": [
+        "UIV-01",
+        "UIV-02",
+        "UIV-12"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-02",
+      "contract": "Stable customizable quick wheels with browsable full-action access",
+      "baseline_ids": [
+        "RQ-021",
+        "RQ-143",
+        "RQ-144"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P12",
+      "case_ids": [
+        "UIV-02",
+        "UIV-04",
+        "UIV-05",
+        "UIV-12"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-03",
+      "contract": "Scoped offers, target identity and authoritative confirmation/recovery",
+      "baseline_ids": [
+        "RQ-071",
+        "RQ-088",
+        "RQ-089",
+        "RQ-114"
+      ],
+      "introduction_phase": "P01",
+      "completion_phase": "P10",
+      "case_ids": [
+        "UIV-01",
+        "UIV-04",
+        "UIV-10",
+        "UIV-11"
+      ],
+      "status": "planned",
+      "evidence_paths": [],
+      "foundation_qualification_phase": "P03"
+    },
+    {
+      "id": "UI-04",
+      "contract": "Capability and knowledge-based disclosure; known temporary blockers remain intelligible",
+      "baseline_ids": [
+        "RQ-021",
+        "RQ-025",
+        "RQ-134",
+        "RQ-144"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P10",
+      "case_ids": [
+        "UIV-03",
+        "UIV-09",
+        "UIV-11"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-05",
+      "contract": "Real character, inventory, equipment, skills, magic and production screens",
+      "baseline_ids": [
+        "RQ-021",
+        "RQ-022",
+        "RQ-026",
+        "RQ-111",
+        "RQ-131"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P11",
+      "case_ids": [
+        "UIV-07",
+        "UIV-09",
+        "UIV-12"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-06",
+      "contract": "Integrated zoomable atlas with separate scale, elevation, realm and history axes",
+      "baseline_ids": [
+        "RQ-013",
+        "RQ-056",
+        "RQ-071",
+        "RQ-128",
+        "RQ-148",
+        "RQ-159"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P10",
+      "case_ids": [
+        "UIV-06",
+        "UIV-10",
+        "UIV-11"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-07",
+      "contract": "Calendar, appointments and explicit authoritative menu time status",
+      "baseline_ids": [
+        "RQ-105",
+        "RQ-148",
+        "RQ-174"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P10",
+      "case_ids": [
+        "UIV-08",
+        "UIV-10"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-08",
+      "contract": "Journal, evidence, codex and guidance respect discovery and uncertainty",
+      "baseline_ids": [
+        "RQ-046",
+        "RQ-071",
+        "RQ-145",
+        "RQ-147"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P11",
+      "case_ids": [
+        "UIV-03",
+        "UIV-06",
+        "UIV-08",
+        "UIV-12"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-09",
+      "contract": "Relevant party, care, transport, trade, construction and institution management",
+      "baseline_ids": [
+        "RQ-040",
+        "RQ-107",
+        "RQ-114",
+        "RQ-116",
+        "RQ-137",
+        "RQ-138"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P11",
+      "case_ids": [
+        "UIV-07",
+        "UIV-08",
+        "UIV-12"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-10",
+      "contract": "Calm HUD, progressive detail, stable navigation and cross-screen return",
+      "baseline_ids": [
+        "RQ-023",
+        "RQ-134",
+        "RQ-140",
+        "RQ-171"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P12",
+      "case_ids": [
+        "UIV-03",
+        "UIV-04",
+        "UIV-12"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-11",
+      "contract": "Semantic input, modal focus, no event/polled input leakage and rebind recovery",
+      "baseline_ids": [
+        "RQ-089",
+        "RQ-105",
+        "RQ-120",
+        "RQ-143"
+      ],
+      "introduction_phase": "P01",
+      "completion_phase": "P13",
+      "case_ids": [
+        "UIV-04",
+        "UIV-05",
+        "UIV-10",
+        "UIV-11"
+      ],
+      "status": "planned",
+      "evidence_paths": [],
+      "foundation_qualification_phase": "P03"
+    },
+    {
+      "id": "UI-12",
+      "contract": "Accessible controller/keyboard paths and later mobile parity",
+      "baseline_ids": [
+        "RQ-120",
+        "RQ-140",
+        "RQ-171"
+      ],
+      "introduction_phase": "P02",
+      "completion_phase": "P14",
+      "case_ids": [
+        "UIV-05",
+        "UIV-12",
+        "UIV-13"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-13",
+      "contract": "Versioned UI references, packages and preferences separated from character knowledge",
+      "baseline_ids": [
+        "RQ-064",
+        "RQ-071",
+        "RQ-088",
+        "RQ-098",
+        "RQ-123"
+      ],
+      "introduction_phase": "P01",
+      "completion_phase": "P10",
+      "case_ids": [
+        "UIV-03",
+        "UIV-10",
+        "UIV-11"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    },
+    {
+      "id": "UI-14",
+      "contract": "Complete phase, native asset, sound, critic and human usability acceptance",
+      "baseline_ids": [
+        "RQ-082",
+        "RQ-122",
+        "RQ-123",
+        "RQ-140",
+        "RQ-170"
+      ],
+      "introduction_phase": "P00",
+      "completion_phase": "P14",
+      "case_ids": [
+        "UIV-12",
+        "UIV-13"
+      ],
+      "status": "planned",
+      "evidence_paths": []
+    }
+  ],
+  "cases": [
+    {
+      "id": "UIV-01",
+      "introduction_phase": "P02",
+      "completion_phase": "P03",
+      "acceptance": "Choose a person, harvestable and damaged object; read action and target; change target/range/stock before confirmation. No implicit attack, gift, theft, consumption or nearest-target substitution; host rejection explains only permitted facts.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-02",
+      "introduction_phase": "P02",
+      "completion_phase": "P12",
+      "acceptance": "Populate a labeled synthetic mature library (initial comparison: 200 known actions across disciplines) and small real early library. Favorites keep stable identities after learning, depletion, equipment changes and restart; every known action has a browsable non-search-only route. Native action execution is claimed only for actually implemented commands.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-03",
+      "introduction_phase": "P02",
+      "completion_phase": "P10",
+      "acceptance": "Compare nonmagical actor, fighter with a usable enchanted item, learned spellcaster with zero mana, discovered-but-unlearned discipline, lost capability and companion control. Relevant menus appear without class checks or secret leakage; essential controls/costs remain visible.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-04",
+      "introduction_phase": "P02",
+      "completion_phase": "P03",
+      "acceptance": "Open wheel, target, inventory, child confirmation and text entry; cancel each; change device, resize, disconnect and lose focus. Check event and polled movement paths, opener release, neutral-stick release and focus restoration. No extra movement, ration craft, item use or accidental submission.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-05",
+      "introduction_phase": "P02",
+      "completion_phase": "P13",
+      "acceptance": "Complete the same actual loop with keyboard-only/discrete navigation, mouse and gamepad; rebind including conflicts and reset. Prompts update, confirm/cancel remain reachable, linear alternatives and toggle operation avoid analog precision, simultaneous chords or mandatory holds.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-06",
+      "introduction_phase": "P02",
+      "completion_phase": "P10",
+      "acceptance": "Zoom from a known local place to regional/world views; select upstairs, sewer, known plane and historical map. Preserve anchor and address, distinguish reports/old maps and actual exploration, and return to current location. No map zoom reveals secrets or travels; stale asynchronous results cannot replace the newer requested view.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-07",
+      "introduction_phase": "P02",
+      "completion_phase": "P11",
+      "acceptance": "Begin with the small real P02 stats/inventory/equipment/recipe and trade subset; expand through deep production/jobs at P04 and crew/settlement screens in their existing phases. Preview vs commit, progression spending, bulk review, reservations, remote stock and delegate orders obey custody, effort and control. UI filtering/sorting does not transform or teleport goods.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-08",
+      "introduction_phase": "P02",
+      "completion_phase": "P10",
+      "acceptance": "Show real appointment dates, relative job durations, crop/weather estimates and changed NPC commitments across Wait/branch states. Calendar labels name the clock; maps/notes distinguish observation dates and uncertainty. Viewing or dismissing schedules never changes time.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-09",
+      "introduction_phase": "P05",
+      "completion_phase": "P11",
+      "acceptance": "Show learned interdisciplinary skills and supported magic/research with known prerequisites, teacher/practice routes and meaningful cross-links. Simple view remains sufficient for ordinary use; no giant omniscient graph, missing usable ability or inert mandatory tab.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-10",
+      "introduction_phase": "P03",
+      "completion_phase": "P10",
+      "acceptance": "Run actual solo, coordinated and separated four-player menu/encounter cases. World time indicator matches authority; opening/closing one menu releases only its own permitted hold; invalidated controls/targets, late join and commit-before-disconnect recover without duplicate effects or secret projection.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-11",
+      "introduction_phase": "P03",
+      "completion_phase": "P10",
+      "acceptance": "Restore profile remaps/favorites after restart and package migration; switch actors/worlds/branches. Exact-instance and declared-family bindings stay distinct, deleted definitions remain removable unavailable entries, private notes/discoveries stay scoped, and restored menus never replay clicks.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-12",
+      "introduction_phase": "P02",
+      "completion_phase": "P12",
+      "acceptance": "Retain native novice/expert sessions on declared input devices/resolutions and real full catalogs by P12. Measure wrong-action submissions, navigation depth/time, help requests, abandoned searches, unreadable states, accidental execution, repetition and distraction. Set candidate thresholds before each packet; require independent review and human acceptance, not an inferred pass from screenshots or unit tests.",
+      "status": "not_run",
+      "evidence_paths": []
+    },
+    {
+      "id": "UIV-13",
+      "introduction_phase": "P13",
+      "completion_phase": "P14",
+      "acceptance": "Verify actual desktop production profiles, localization/scaling and input/accessibility; then touch, safe areas, virtual keyboard, suspend/resume and co-op parity on supported mobile devices. Every supported action remains reachable without hover or hardware-key-only instructions.",
+      "status": "not_run",
+      "evidence_paths": []
+    }
+  ]
+}

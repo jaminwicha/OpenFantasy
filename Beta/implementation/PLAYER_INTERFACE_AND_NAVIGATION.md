@@ -2,7 +2,7 @@
 
 Date: 2026-09-10. Status: living owner-directed supplement to the preserved [1.1 GDD](../spec-v1_1/GDD.md), [technical design](../spec-v1_1/TECHNICAL_DESIGN.md), [onboarding contract](../spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md) and [P00–P14 implementation plan](../spec-v1_1/IMPLEMENTATION_PLAN.md). Read this with those documents. The 181-requirement baseline and its reviewed hashes remain unchanged; this supplement refines interface obligations and supplies their execution criteria. It does not close any runtime gate or change phase priority/dependencies.
 
-The owner wants broad, familiar RPG management screens, wheel-based quick actions, coherent local/world maps and calendar/atlas navigation, and interfaces that grow with usable skills without displaying irrelevant inert systems. This applies throughout the existing production phases. The semantic contracts below are the selected implementation direction. Exact buttons, wheel capacity, visual layout and numeric usability targets remain candidates for native evaluation, not newly claimed owner acceptance.
+The owner wants broad, familiar RPG management screens, wheel-based quick actions, coherent local/world maps and calendar/atlas navigation, and interfaces that grow with usable skills without displaying irrelevant inert systems. The additional 2026-09-10 direction favors icons over text-heavy surfaces, with rich hover/tooltip inspection for item/artifact descriptions and functional explanations. This applies throughout the existing production phases. The semantic contracts below are the selected implementation direction. Exact buttons, wheel capacity, visual layout and numeric usability targets remain candidates for native evaluation, not newly claimed owner acceptance. The [previous reviewed interface edition](ui-management/archive/2026-09-10-before-icon-tooltips/MANIFEST.json) is preserved byte-for-byte.
 
 Related evidence: [reference research](ui-management/RESEARCH.md), [supplement coverage and unrun acceptance cases](ui-management/COVERAGE.json), and [independent review and document validation](ui-management/REVIEW.md). These records distinguish documented precedents, our design decisions and implementation still to do.
 
@@ -23,7 +23,7 @@ Example: facing Wren offers Talk. Facing a damaged guard offers Inspect and, whe
 
 ## 2. Wheel behavior and discovery
 
-Start native comparison with six to eight large sectors, labeled icons and a center description/cost/target area. That size is an experiment, not a universal optimum. Compare pointer selection with discrete D-pad/keyboard stepping and a linear list using the same actions. Keep a stable management gateway available by ordinary menu navigation; a system wheel is an optional way to reach it.
+Start native comparison with six to eight large sectors using recognizable icons, a selected-action name and a center description/cost/target area. Persistent per-sector labels are optional; icon recognition and native readability decide the final treatment. That size is an experiment, not a universal optimum. Compare pointer selection with discrete D-pad/keyboard stepping and a linear list using the same actions. Keep a stable management gateway available by ordinary menu navigation; a system wheel is an optional way to reach it.
 
 - Favorites are an accelerator, not an inventory mirror. Learning twenty spells or gathering twenty items must not automatically generate twenty new wheel slots/pages. Offer a modest starter arrangement and an explicit, dismissible suggestion to pin newly relevant actions.
 - Named favorite sets can reflect exploration, battle or work. Players choose their contents and order. A declared context-specific set may be configured explicitly; do not silently switch an open wheel or replace positions as nearby objects change.
@@ -35,6 +35,20 @@ Start native comparison with six to eight large sectors, labeled icons and a cen
 - Do not add confirmation dialogs to every routine harmless action. Reserve an additional review for consequential or ambiguous commitments such as dropping treasured gear, spending scarce progression resources, bulk transfers or entering a historical branch. Exact categories follow the action's real cost/reversibility.
 
 Stable favorite slots and capability-dependent screen disclosure serve different purposes. The quick surface preserves motor memory; the screen library prevents irrelevant domains from overwhelming a new character.
+
+### Icon-led surfaces and rich inspection
+
+Favor recognizable icons for wheels, inventory grids, tools, skills, conditions, map markers and navigation. Use coherent silhouettes and stable meanings across screens; do not distinguish critical meanings solely by color or decorative rarity borders. Icons remain legible at actual play scale and available UI scaling. Retain a localized accessible name for every actionable icon and an optional icon-plus-label mode. Short selected-item names, counts and essential information can remain visible; this preference does not remove journal prose, readable stat comparisons or necessary explanations.
+
+Rich information uses the same inspection content through mouse hover, keyboard/controller focus and an explicit Inspect/details control. On touch, expose a clear detail/info action; any long-press shortcut is optional. Inspection and execution have distinct input paths, so obtaining a tooltip cannot equip, consume, cast, buy or commit an action. Disabled known actions remain inspectable to explain their blockers. Reading details never changes the established menu/Wait/time policy.
+
+Use a compact initial card and a pinnable expanded inspector. An item/artifact card can show its known name, depiction, description, effects, requirements, condition, material, provenance/lore, value source and equipment comparison where relevant. An action/function card explains what it does, target, cost, prerequisites, controls and current blocking reason. Distinguish known facts, uncertainty and legitimately unlocked expert detail. An unidentified relic cannot reveal its secret power, history, exact value or quest role through tooltip text, icon art, search or accessibility labels.
+
+Keep known consequential costs, severe hazards and confirmation consequences visible at the point of commitment; do not require hover to discover essential risk. Deeper explanations may unfold in the inspector as relevant skills/knowledge grow, while basic function and accessibility stay available.
+
+Tooltip placement must stay within the usable viewport, avoid obscuring the inspected target or required confirmation, and remain readable at large text sizes. Moving into a tooltip or pinning it must not dismiss it; explicit dismissal, sensible hover/focus delay and stable focus prevent flicker. No reading timeout is needed. Put long lore, linked definitions and side-by-side comparisons in the expanded inspector with a clear Back path rather than an unbounded chain of nested floating cards. Pinned views retain their selected identity, label stale live values and obey existing scoped-data rules.
+
+P02 introduces real icon-led controls and item/action inspection alongside its first working screens. P03 verifies stale targets, disabled states, focus and multiplayer timing; P04–P10 expand domain-specific and earned detail. P11 reconciles native icons, descriptions and localized/accessibility names, P12 validates unaided recognition and reading comfort, P13 qualifies desktop behavior and P14 supplies full touch equivalents. This refines those phases without reordering them; no native icon or tooltip acceptance is claimed yet.
 
 ## 3. What is hidden, discoverable or blocked
 
