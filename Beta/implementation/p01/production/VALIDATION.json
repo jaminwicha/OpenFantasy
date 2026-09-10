@@ -1,0 +1,187 @@
+{
+  "schema": "native-production-qualification.v1",
+  "status": "passed-with-explicit-scope-limits",
+  "verifiedUtc": "2026-09-10T03:45:08.917092+00:00",
+  "codeCommits": [
+    "13ba3ef",
+    "9e6d649",
+    "fd83506",
+    "4a30e41"
+  ],
+  "runtimeInputs": {
+    "count": 517,
+    "allMatchFinalIntegratedHashes": true,
+    "report": "qualification/final-verification.json"
+  },
+  "tests": {
+    "core-debug.trx": {
+      "total": 451,
+      "executed": 451,
+      "passed": 451,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "hosting-debug.trx": {
+      "total": 157,
+      "executed": 157,
+      "passed": 157,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "release/core-release.trx": {
+      "total": 451,
+      "executed": 451,
+      "passed": 451,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "release/hosting-release.trx": {
+      "total": 157,
+      "executed": 157,
+      "passed": 157,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "perConfiguration": {
+    "core": 451,
+    "hosting": 157,
+    "total": 608,
+    "skipped": 0
+  },
+  "independentFixtureGenerators": 19,
+  "hostInspectionCases": 68,
+  "native": {
+    "headless": "qualification/headless/native-production.json",
+    "rendered": "qualification/native-rendered-final.json",
+    "stages": [
+      "gather-profile2",
+      "upgrade-and-craft-profile3",
+      "reopen-gather-and-craft-profile3"
+    ],
+    "oldMainDatabaseUnchanged": true,
+    "renderer": "macos",
+    "observedManagedRuntime": ".NET 10.0.12",
+    "finalProducts": {
+      "rations": 4,
+      "offcuts": 2,
+      "remainingWood": 6,
+      "remainingBerries": 0,
+      "tools": 2
+    },
+    "finalFocusRequests": {
+      "prepare": 0,
+      "upgrade": 0,
+      "reopen": 1
+    }
+  },
+  "preservation": {
+    "originalStagedPaths": 19,
+    "originalStagedSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "sourceGddArchivesModified": false
+  },
+  "closedFindings": [
+    "Competing import/first-iteration quit flags removed; error output still fails verification.",
+    "Actual orphan-WAL replacement reproduced in pinned SQLite3.53.4; shared creation/backup/publication file-set guard passes14 regressions.",
+    "Native craft probe observes committed revision without blindly resending delayed input."
+  ],
+  "ecosystem": {
+    "checkedSource": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/godot-testing/references/running-tests.md",
+    "result": "Maintained guidance and installed Codex/Claude copies already use --import alone; no ecosystem change required."
+  },
+  "limits": [
+    "First-feedback prototype and P00/P01/P02 remain open.",
+    "No food use, full Wren quest/rewards or physical construction yet.",
+    "No Windows/Linux export, mobile, networking or1\u20134-player production qualification.",
+    "Source sprites are provisional; no production art/animation/audio or enjoyment acceptance.",
+    "Production ledger has development bounds; volume capacity, long history, export/branch rights and simultaneous craft fairness remain open.",
+    "Migration exception injection and native local replay are not full power-loss/filesystem qualification."
+  ],
+  "evidenceSha256": {
+    "ADMISSION_EVIDENCE.json": "169fbec45943316db03662e02010187712a46e2872bb14e417b502f95e0dc628",
+    "CONTENT_REVIEW.json": "8f98b6c09d237cf8b0310bd6e3ea3e036a598e123e72b1c5bc7f0268a8365de6",
+    "CORE_CONTRACT.md": "b0f012a11127e6d5c9c54390a1be7c2ddb79c10782bba307d57f03511d64f23a",
+    "CORE_REVIEW_EVIDENCE.json": "098f2943e32f5ad2056a9a36a8ae8f612db11f54373978ad67aad5a427684e03",
+    "HOSTING_REVIEW_EVIDENCE.json": "62aa5e433c279846111cdcbebf5253000d4acedf2e148d1f51a77494e7e6b8b9",
+    "ORPHAN_WAL_REPRODUCTION.json": "748bebf71ad9aa1c7ad6d5153577bad1e9e62f28e25213f15c2adec1839b6f98",
+    "hosting-validation/SIDECAR_VALIDATION.json": "4bafaf561ff107c24acb0b277cce773daacba35941007ab86b07d05d2d2801c4",
+    "hosting-validation/test-results/production-hosting-debug-initial.trx": "eb5303d564efc16c5fde7e93db8d47e4973dd135be388b1ce16ae8417e6b241c",
+    "hosting-validation/test-results/production-hosting-debug-sidecars-final.trx": "d12ded9fda731ce7e657a17cc94cb7782d815c2a2b59cbd46c2ae914c2cda83d",
+    "hosting-validation/test-results/production-sidecars-debug.trx": "e631e6112970b81dee36b7cb3b425dabab84a34ff2ce03f5e53155e7f95ce67c",
+    "qualification/core-debug.trx": "79c65de46ff62d742ed66c44210b019504286da17171d5aab73c2a5e4695be88",
+    "qualification/final-verification.json": "d48baf7d32ead0076f1a90b678db56b8d0e50147cdc44cf2ee9db04f2e026e1d",
+    "qualification/headless/native-production-a8a803049c7a4eaf959f3ec250006193/gathered.sqlite": "e50e9ef363e995550648837e794fac10132608db833cddc75ca66da53292c4bc",
+    "qualification/headless/native-production-a8a803049c7a4eaf959f3ec250006193/production.prepare.json": "6d66cbdc17440b048a7685b93fedf013268e31831c5de25f890f25811794a5a5",
+    "qualification/headless/native-production-a8a803049c7a4eaf959f3ec250006193/production.reopen.json": "e4d0347de7dfab526f7136433524ee9aba124381d245b2fec03111fba224f77d",
+    "qualification/headless/native-production-a8a803049c7a4eaf959f3ec250006193/production.sqlite": "796bcbb4fb8f44ae45aa334f996e8309d9f95a0eecb4d323ada82da7c68bb2e0",
+    "qualification/headless/native-production-a8a803049c7a4eaf959f3ec250006193/production.upgrade.json": "f212472a751aa6beb321b4a4022afb025c72a56420beef2743227a70a8afeaca",
+    "qualification/headless/native-production.json": "a67c7634657cc609253124e2789f8677ada22febf900cded5b3f56352340115b",
+    "qualification/hosting-debug.trx": "b10e33b7baf4b0f5d257cbf717a90a65ed8ef71ef9a54cb586c1518a4b5f3ea0",
+    "qualification/import-lifecycle-check.json": "eb03d60cb6de7b8669a2f308b4d05bf9355ea234cff13a8c8e749abd0d37d94a",
+    "qualification/integrated-before-sidecar-hardening.json": "38df5570c186b9aa9635163bd17eb889fdff7e7de9cb6d84fd49b403138a2fc9",
+    "qualification/integrated-initial-import-failure.json": "3ebb3786852a3412efd8d271c41d7df39c4c56611692f025f17c2258547a448d",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/gathered.sqlite": "ff22557610acd0e17c72332cd3a7f1bce83593852a160b9a1f8919c9110e81c9",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/production.prepare.json": "e55a1d925a629b183cef2b2d82f60d95bc7770321b7a645c2f0590acda053e54",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/production.prepare.png": "64c2c633805bb68d3db7af63cd531c3b8519d613c7bedd2c734f1dafe370be33",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/production.reopen.json": "3831a485b1eac896d6c8e2bc9aa2517e82f34e4b2c0d5f0f542f30dda701a4c3",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/production.reopen.png": "e221853db45fed8155f973d7d49c77ee0906c17d6c6051f73ca07b8659c210d0",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/production.sqlite": "f0cc6f46b9a88d742fee107e094f392b04925f3e0a0d2cbaafa8e00caa0133bc",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/production.upgrade.json": "a9e0d81a9f0d8afe164ea3c3d8f9f2c17b7b7a9c95c2326e425c14b7de6c17c6",
+    "qualification/native-production-8a6d34fb1d6a478fb5ecd23b20cfdacd/production.upgrade.png": "22639e87a49c8c812fedfd92c2d5b1dc1cadae0468d817b261289fa66dac90db",
+    "qualification/native-rendered-final.json": "96a7ec014a43c679d73697bfe057baea0266848f30bde9d1d5f83e83ea12b3b4",
+    "qualification/release/core-release.trx": "711a5bb6750dc464277c1aa9a424fcad81d0364246313e129032be3bedbeb7bc",
+    "qualification/release/hosting-release.trx": "694bffb20236ebf95a5699a8f7cc7d89eedc6ab8d3a7cab8f468870c17455746",
+    "qualification/release/runs.json": "979c0a0ae03590e4645a331a1f79a85330a08e49440f2266a3d524017e89648b",
+    "visual-evidence/rendered-01/native-rendered-01.json": "cd99bbca3013824c1e49f7dc97345ed309b2137d9effda3c81d0bdee55fe5ada",
+    "visual-evidence/rendered-01/production.prepare.json": "a865389cad04b75ad3d1e87bbe4102c4dee3a2aaf51bf7b1605031220f24b418",
+    "visual-evidence/rendered-01/production.prepare.png": "64c2c633805bb68d3db7af63cd531c3b8519d613c7bedd2c734f1dafe370be33",
+    "visual-evidence/rendered-01/production.reopen.json": "b9dd04c0dd8d323fd4d09c6902660de4e792639c878770be05d3d0a2766d8e87",
+    "visual-evidence/rendered-01/production.reopen.png": "889984de73fd6880db42e5bfcd24a26227f5e704d26720e0df95da8bc599724b",
+    "visual-evidence/rendered-01/production.upgrade.json": "c28b92d8b05618bff813f5e87eb2d45bf498b5b59228adc50e70f78bf0bda190",
+    "visual-evidence/rendered-01/production.upgrade.png": "22639e87a49c8c812fedfd92c2d5b1dc1cadae0468d817b261289fa66dac90db"
+  }
+}

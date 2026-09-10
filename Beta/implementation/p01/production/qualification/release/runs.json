@@ -1,0 +1,54 @@
+[
+  {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "build",
+      "OpenFantasy.sln",
+      "--no-restore",
+      "-c",
+      "Release"
+    ],
+    "exitCode": 0,
+    "stdout": "  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Release/net8.0/OpenFantasy.Core.dll\n  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Release/net8.0/OpenFantasy.Hosting.dll\n  OpenFantasy.Host -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Release/net10.0/OpenFantasy.Host.dll\n  OpenFantasy.Client -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/ExportRelease/OpenFantasy.Client.dll\n  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Release/net8.0/OpenFantasy.Core.Tests.dll\n  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Release/net8.0/OpenFantasy.Hosting.Tests.dll\n\nBuild succeeded.\n    0 Warning(s)\n    0 Error(s)\n\nTime Elapsed 00:00:09.39\n",
+    "stderr": "",
+    "finishedUtc": "2026-09-10T03:40:32.889044+00:00"
+  },
+  {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "-c",
+      "Release",
+      "--logger",
+      "trx;LogFileName=core-release.trx",
+      "--results-directory",
+      "/private/tmp/openfantasy-p00/production/release"
+    ],
+    "exitCode": 0,
+    "stdout": "Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Release/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)\nA total of 1 test files matched the specified pattern.\nResults File: /private/tmp/openfantasy-p00/production/release/core-release.trx\n\nPassed!  - Failed:     0, Passed:   451, Skipped:     0, Total:   451, Duration: 2 s - OpenFantasy.Core.Tests.dll (net8.0)\n",
+    "stderr": "",
+    "finishedUtc": "2026-09-10T03:40:40.107004+00:00"
+  },
+  {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "-c",
+      "Release",
+      "--logger",
+      "trx;LogFileName=hosting-release.trx",
+      "--results-directory",
+      "/private/tmp/openfantasy-p00/production/release"
+    ],
+    "exitCode": 0,
+    "stdout": "Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Release/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)\nA total of 1 test files matched the specified pattern.\nResults File: /private/tmp/openfantasy-p00/production/release/hosting-release.trx\n\nPassed!  - Failed:     0, Passed:   157, Skipped:     0, Total:   157, Duration: 12 s - OpenFantasy.Hosting.Tests.dll (net8.0)\n",
+    "stderr": "",
+    "finishedUtc": "2026-09-10T03:40:57.310366+00:00"
+  }
+]

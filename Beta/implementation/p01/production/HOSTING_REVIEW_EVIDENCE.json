@@ -1,0 +1,181 @@
+{
+  "schema": "production-hosting-independent-review.v1",
+  "result": "no-remaining-blocking-findings",
+  "finding": {
+    "orphan_destination_wal": "closed with shared fresh-file-set guard and14 passed regressions"
+  },
+  "reviewer_execution": "Static source/test review, Python substrate reproduction and read-only TRX/hash inspection. No managed build or game execution.",
+  "author_manifest": {
+    "path": "Beta/implementation/p01/production/hosting-validation/SIDECAR_VALIDATION.json",
+    "sha256": "4bafaf561ff107c24acb0b277cce773daacba35941007ab86b07d05d2d2801c4"
+  },
+  "reviewed_inputs_matching_final_test_manifest": 20,
+  "results": [
+    {
+      "path": "Beta/implementation/p01/production/hosting-validation/test-results/production-hosting-debug-initial.trx",
+      "sha256": "eb5303d564efc16c5fde7e93db8d47e4973dd135be388b1ce16ae8417e6b241c",
+      "total": {
+        "total": "143",
+        "executed": "143",
+        "passed": "143",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "relevant_passed_cases": 21,
+      "native_reproduction_output": []
+    },
+    {
+      "path": "Beta/implementation/p01/production/hosting-validation/test-results/production-sidecars-debug.trx",
+      "sha256": "e631e6112970b81dee36b7cb3b425dabab84a34ff2ce03f5e53155e7f95ce67c",
+      "total": {
+        "total": "14",
+        "executed": "14",
+        "passed": "14",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "relevant_passed_cases": 14,
+      "native_reproduction_output": [
+        "Orphan WAL replacement reproduced with actual native SQLite 3.53.4."
+      ]
+    },
+    {
+      "path": "Beta/implementation/p01/production/hosting-validation/test-results/production-hosting-debug-sidecars-final.trx",
+      "sha256": "d12ded9fda731ce7e657a17cc94cb7782d815c2a2b59cbd46c2ae914c2cda83d",
+      "total": {
+        "total": "157",
+        "executed": "157",
+        "passed": "157",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "relevant_passed_cases": 35,
+      "native_reproduction_output": [
+        "Orphan WAL replacement reproduced with actual native SQLite 3.53.4."
+      ]
+    }
+  ],
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs",
+      "sha256": "a4db8d8293a0499378d49b206840f891a6337c14ed194cc7bd92af2b48a7df23"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteFileSet.cs",
+      "sha256": "4c5a6c6549c7ffc1ff6b31b497413f2a212da5a08b04da7c59300dabae482c9a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+      "sha256": "717668dc39265c762352619fb2ed4131bb06fdd211b1241245a6172199d62b40"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldBackupComparison.cs",
+      "sha256": "981aca520d4a1caf04738112ddb9f6b235db5190e38beecc7b529436c5529eda"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs",
+      "sha256": "3f2aaff2b51dbfd07644571b1554f157cb89a7f648091facc0ba95cc603a2488"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs",
+      "sha256": "04e0957f3416ba9a8de37a7338323007bcc13b4b98004251dbc0f8a23024a72e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseMigration.cs",
+      "sha256": "c9ca0f562e1b11c6c8254df757d5831a9006d85350b57e28b4e00501c3935a14"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs",
+      "sha256": "dcf08be6a844efde19f156f4e751f24c39d2a79b51e72b90e69f0182d69c029e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs",
+      "sha256": "7201d85be560457e4ba71d9950e4f37bd9899025c61f24b5e6efbab1657daff3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs",
+      "sha256": "b9ae65ef6eb0f2db327812efe12ea078949604a40c3990db9d2f71f033e3a86c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+      "sha256": "f78018db47f0f8bddf7d4c4812ba6fe3887e541491cb4d78c62458c06f27fad0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldMigrationPreparation.cs",
+      "sha256": "f42909941697a726279f7c3b522a775c9f49b02cc5b8291cf84d3d7ac9d2936f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldProductionUpgrade.cs",
+      "sha256": "4179b47819d9986655104e53fb17e98e2a8928352680079429312501bee46c32"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldProductionUpgradeBoundary.cs",
+      "sha256": "b0c313033bb6b24946d07a11bd81bf6c91a5c801406724b36875370ea94e28fe"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageBinary.cs",
+      "sha256": "0bfd8a426bdd3ddfb16a4320e26fa30fa2a0cff47257e7e028f02348124f2415"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageRecords.cs",
+      "sha256": "c5efade4ea19ad6a3f717fdb48a63acadce22d01a667ded8a29d4397a533385f"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ProductionUpgradeFixture.cs",
+      "sha256": "aa0d42df24f04b7378641815db217857628371005dc20dc6e48fe2dcad4b6e21"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ProductionUpgradeRecoveryTests.cs",
+      "sha256": "d9dde7af40edb4f8a056837788e2a7ced03ffeddb2db2d35457fbcf1793905bd"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ProductionUpgradeTests.cs",
+      "sha256": "2ad58220ffbfea30cb55ca3b0253972f3adaa59071bedffe150b1f0ba14ffeab"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SqliteFileSetTests.cs",
+      "sha256": "946c3ba393187a673f2a45a54b678f35145a20846a5b8842683a104a1090e1d2"
+    },
+    {
+      "path": "Beta/implementation/p01/production/ORPHAN_WAL_REPRODUCTION.json",
+      "sha256": "748bebf71ad9aa1c7ad6d5153577bad1e9e62f28e25213f15c2adec1839b6f98"
+    },
+    {
+      "path": "Beta/implementation/p01/production/reproduce_orphan_wal.py",
+      "sha256": "aa75d1aeb686c328c0abf5ef36cefe710ebddf985389b5aa87be22ffc6bbad55"
+    }
+  ]
+}

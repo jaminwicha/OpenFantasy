@@ -4,7 +4,7 @@
 
 The subsequent [native local-world increment](native-loop/WORLD_CONTRACT.md) now connects grounded player/NPC movement, Wren's original utterance, shared reading holds and finite wood handover in Godot. Presence, terrain, custody, individual exposure, language and dialogue persist in composed schema2. The original counted schema1 described below remains supported as its separate profile, with no silent migration. The native walkthrough and exact paused-view process reopen are retained in that increment; production art, full quest completion and multiplayer are still open.
 
-The next [gathering increment](gather-craft/README.md) connects finite tool-owned extraction, banked work and persistent depletion/regrowth with versioned profile dispatch. Both prior save profiles remain supported. Crafting, full Wren quest/rewards and physical construction are still the next required connections.
+The next [gathering increment](gather-craft/README.md) connects finite tool-owned extraction, banked work and persistent depletion/regrowth with versioned profile dispatch. Both prior save profiles remain supported. The subsequent [production connection](production/README.md) adds actual raw/derived ingredient consumption, rations and offcuts, strict profile3 replay and a preserving schema3 upgrade of existing gathered progress. Full Wren quest/rewards and physical construction are the next required connections.
 
 ## Implemented behavior
 
@@ -23,7 +23,7 @@ The [durable authority record](durable-authority/README.md) records full local v
 ## Next connection to gameplay
 
 1. Build on the now-composed actor/body/location/terrain/time transaction. Couple excavation/work to finite source admission and actual inventory yield; do not implement a second Godot-owned inventory or editable world.
-2. Extend admitted Wren/farm/wood content with gathering, the original ration recipe, quest adjudication and visible construction effects. Preserve all source fields already mapped and carry exact source provenance through consumed inputs and outputs. Movement and a finite handover now work; this is not the completed gather/make/give/construct loop.
+2. Build on the now-connected gathering and original ration recipe with full quest adjudication/rewards and visible construction effects. Preserve all source fields already mapped and carry exact source provenance through consumed inputs and outputs. Movement, gathering, crafting and finite handover now work; quest credit/rewards and construction are still needed to complete the loop.
 3. Add live NPC commitments, Wait encounter scheduling, durable event/outbox delivery, session grants/rebinding and reconnect. Prove the connected native loop and 1–4-player behavior against the full P01/P02 exit criteria.
 4. Keep native pixel-art/animation/audio production with separate artists, then run virtual and human playtests. A rendered original-asset farm and native input walkthrough now run, but neither establishes the approved production-art target, animation quality, sound or enjoyment acceptance.
 

@@ -1,0 +1,211 @@
+{
+  "schema": "production-core-static-review.v1",
+  "result": "passed",
+  "execution": "Independent Python only; .NET results belong to coordinator evidence.",
+  "fixture_stdout_bytes": 220420,
+  "fixture_sha256": "c99dda211cd17cc266f981e1082b6ec82878cee1ff33bd68e5731dd272be8a47",
+  "positive_vectors": 5,
+  "malformed_vectors_declared": 22,
+  "independent_ledger_checks": {
+    "empty": {
+      "batches": 0,
+      "live_lots": 0,
+      "retired_raw_mass_mg": 0,
+      "live_output_mass_mg": 0
+    },
+    "crafted": {
+      "batches": 1,
+      "live_lots": 2,
+      "retired_raw_mass_mg": 90000,
+      "live_output_mass_mg": 90000
+    },
+    "chained": {
+      "batches": 2,
+      "live_lots": 3,
+      "retired_raw_mass_mg": 90000,
+      "live_output_mass_mg": 90000
+    }
+  },
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/CustodianAccessPolicy.cs",
+      "sha256": "d91703f58d7923396e6461532c08c903b772624d1dbd462335de4ba666d39faa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/CanonicalProductionReader.cs",
+      "sha256": "bd1c02fff863e00b581bbe222fae98ba7a2d47493d2ac0716a2acb2abb079b77"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/CraftPlan.cs",
+      "sha256": "4e8e75654d41078ee67b5261651a71a9c11a0c7ecea89dc91fb1d69eece546b1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs",
+      "sha256": "54ad834a33a75898e10de367d8a70431e70685701e38a96a76dd5c42733b41f2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/CraftRequest.cs",
+      "sha256": "d3a520f2809212d1af71fce217363f73847c3a4ce003b17264ade5011e906ce9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/IngredientRequest.cs",
+      "sha256": "2abe657e0a3aad35788ef06a679c57516edc37885487b4b3a591d879ebd59676"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/InstantCraftPlanner.cs",
+      "sha256": "d731cec659db354b75439ea37b56292d771db7cf6448e2c5e5507a013e695a16"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ItemPhysicalBinding.cs",
+      "sha256": "878008cf26e7ba524156cccc6d1530a574a9f55f2acf2cdf321c17b2add54849"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialCatalog.cs",
+      "sha256": "14c2c026e8df79134c2046d9daf5b84d2f69a48da74fb35e352eb16d999c8dd4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialDefinition.cs",
+      "sha256": "ae5e62794834506c243f5e11893d0f93347827381ae8ea4d33d9c038c56de705"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialMeasures.cs",
+      "sha256": "19fe02f068d4ada83494b759fe4ace37cb69c0ff97d9e14237869fcc1f27bc32"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialRecipeCodecV1.cs",
+      "sha256": "4c9c291c7a2c3e28efa5f617c88f0d3ef231f23eff000c50e478e19008a8c9bc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialRecipeDefinition.cs",
+      "sha256": "47665e2842ddd388365bba7ec33d48a48b98c81e0d7cd9a3c355657339dd5331"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/OutputMaterialAllocation.cs",
+      "sha256": "150042791e2baf51106aad074bb9d0b4e22ab5742f62256b7f0852739a7ea7ef"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionBatch.cs",
+      "sha256": "851d181306decec211d7a2890cf1f34e7e3c6fed99e9a839905095be790981e8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionClaimValidation.cs",
+      "sha256": "00914b1b1b11621102e0574a6c97edc71df7901b5d1499ff1297b4bdbf475be8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV1.cs",
+      "sha256": "2475bc78584b22a15ca105dfe7badfe80d07132a55b62f1134e9fe155533a7e2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCollections.cs",
+      "sha256": "3f4a5fabf1e5c5fe5c06d9b6130c8faa680d00f826276e5dc56b61b78492514a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionDefinitionRules.cs",
+      "sha256": "6fe783474fb6e35f4b05c4c7603bafd452493ce94c6f6a9d955c29021226058e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionFormatException.cs",
+      "sha256": "3301c2c797a57eea03cea1fc05c6ee66eaf795b8a37c8a7d1a6eb8b1c287f742"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionIdentityRegistry.cs",
+      "sha256": "fc7c57fad16a2188803f9b6f208806524a7d1e02bb04a25fb39e56f2bffb6969"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionOutputInterval.cs",
+      "sha256": "b3b67f553d616ccd468ed90c06481337aca23ff1154a939c6407703c5ca58df1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionSnapshot.cs",
+      "sha256": "f8e4edc48e9266215511aa7d6c5b92a988aebabccfc0707d7d644d7dba2ae681"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/RecipeTerm.cs",
+      "sha256": "d3bf4717a3c639da0f726ed1017c402c4de86fb7c33b94a76f8120b286d286be"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/RetiredIngredient.cs",
+      "sha256": "eddf44faf08b6a06ac50b025be8b5c17ea09be228e5a1f8b2689b57a30c69be8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/TransformedLot.cs",
+      "sha256": "e5af3b1bbf8f517f4d199ba0b88db933dac489b38c97e6cee8f09c10e7b77a72"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV3.cs",
+      "sha256": "bff68edb9bf703914de94d52131d3ae900a43c16d39944eb88a0ce97d4d4213b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+      "sha256": "e24c83c019f494dc49cdac0c8b909c0c9ad1891ce0ba48e608a2dbfc5683b099"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCraftResolver.cs",
+      "sha256": "e1742429a52278ee2272d45e8e298f1f9b03594ce55367c2f924dce4f0b0e628"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldProductionMigration.cs",
+      "sha256": "e41f30c31bac9e14a5d787f3a442c54bb873ab0b5cdeb0108195408c63e1ef61"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldProductionMigrationCodecV1.cs",
+      "sha256": "5cc2cba9519bb3a1975a174b70466a75df0a6f10d2197f2bdb1a9aca559afe50"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldProductionMigrationProcessor.cs",
+      "sha256": "b6dfd0f95378879e1f61db540680cdde25ce7d64dc2ca217f82c741d1156ff72"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV3.cs",
+      "sha256": "9bfa722608487b6b2986f788e7c9abf16bd972450120800a3a260b5b9f9a4757"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV3.cs",
+      "sha256": "e9f0e75f5c92074c4af9584afa3a1eb0f12e3aeeae13c4790ed2f88e755ecdcd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "sha256": "2075e0ddb05b29a33162b2349473b359d203d33f50a2e557a4e528cf31e50aca"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_production_ledger_vectors.py",
+      "sha256": "aa27f82e427b13f5b12a7a55ff59952046da6301fae590dad1e55b6dd725de01"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/production-ledger-v1.json",
+      "sha256": "c99dda211cd17cc266f981e1082b6ec82878cee1ff33bd68e5731dd272be8a47"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/InstantCraftFixture.cs",
+      "sha256": "233c36e80648a4e460106e98b4997832915421e1b4d8d9bc2ebbb6eadad303f9"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/InstantCraftTests.cs",
+      "sha256": "344b5b5e611081cc40b0a16beca19932b54ff2067ae0d1e3245ca6ee19b4492e"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ProductionGoldenTests.cs",
+      "sha256": "d4d2ffab9e801bddf5eb470404636796df730cd08a24e3f0b729378b1ccc187e"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ProductionLedgerTests.cs",
+      "sha256": "746f91ce696ff6f36ee499f470398396fe86f1fe0c2ffd6e9ac2a6e7a8fc9066"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ProductionWorldFixture.cs",
+      "sha256": "5200245685add24c432630dee2126950f0b020567e7a084d024ca7806cb5c46a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ProductionWorldTests.cs",
+      "sha256": "7ef3e4d315cd29e4d5bef5cb6287abe050b98b036ba3c21642935cf597701887"
+    },
+    {
+      "path": "Beta/implementation/p01/production/CORE_CONTRACT.md",
+      "sha256": "b0f012a11127e6d5c9c54390a1be7c2ddb79c10782bba307d57f03511d64f23a"
+    },
+    {
+      "path": "Beta/implementation/p01/production/verify_core_review.py",
+      "sha256": "0e861c5cd374fda930ccc59fe552c7d70c495f0f093bc8d433e573a81a00497e"
+    }
+  ]
+}

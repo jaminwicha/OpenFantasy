@@ -1,0 +1,83 @@
+{
+  "scope": "Independent read-only production content admission review",
+  "result": "No blocking finding",
+  "execution": "Python source pointer/hash, physical definition identity/hash and allocation conservation checks only; no .NET build by reviewer",
+  "sourceRecords": [
+    {
+      "key": "openfantasy.aldermere:items/wood",
+      "sourcePointer": "/items/12",
+      "sha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d"
+    },
+    {
+      "key": "openfantasy.aldermere:items/berries",
+      "sourcePointer": "/items/15",
+      "sha256": "a7b53e8648a12bb156269fe955ea868aeab9881ba75fb4b79bba057358a93214"
+    },
+    {
+      "key": "openfantasy.aldermere:items/rations",
+      "sourcePointer": "/items/16",
+      "sha256": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030"
+    },
+    {
+      "key": "openfantasy.aldermere:recipes/craft_rations",
+      "sourcePointer": "/recipes/1",
+      "sha256": "c384027c76855ade482105233cadd07ea930a265f73e12beab852de1cc756491"
+    }
+  ],
+  "distinctNewDefinitionIds": 8,
+  "physicalPins": {
+    "wood": {
+      "definitionId": "308ef3f631d87b2a6b2bfabf6f5ae11b",
+      "sha256": "e594cf1f89749215d8b74c707ec91ee285735127fbb4e14f83fe908f39ff8d47"
+    },
+    "berries": {
+      "definitionId": "46a1fb7710f9df090e85d1cac88c3dde",
+      "sha256": "f25cdef0c11b9b739a6d884f7962ef870313cee8690ba6c659b25c339d57f146"
+    },
+    "rations": {
+      "definitionId": "e32d8b5758a335fad1abb2dad3de4f88",
+      "sha256": "9a627795124ec0fad5fc265d7b3d7eaa29148f4bef6700a0adf7f212813a8c8b"
+    },
+    "wood_offcuts": {
+      "definitionId": "015b9503b87d15d822d44340d7eab187",
+      "sha256": "c5edc482168cfc861a8a22183a037bf3555a394386999ebc1b3a861a0f7ce675"
+    }
+  },
+  "inputMassMilligrams": 90000,
+  "outputColumnsMilligramsPerUnit": {
+    "0": 40000,
+    "1": 10000
+  },
+  "reviewedInputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/ProductionFarmAdmission.cs",
+      "bytes": 1128,
+      "sha256": "cb7023c77f768e06567dc22989337f82f776e53d6a022540641e246e26c1f695"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/ProductionFarmBuilder.cs",
+      "bytes": 5037,
+      "sha256": "2246c211419e2c4490c365fbced60560b1646f49c51024edc2e360d3cd3e7715"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/ProductionFarmDefinition.cs",
+      "bytes": 2674,
+      "sha256": "0ca2f9920d5663cd3e5644ca8bb88f9d6b63750c10f7ede74ffe31e2bd2883be"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/ProductionFarmSourceValidation.cs",
+      "bytes": 3795,
+      "sha256": "c8bdfd875c42d85a8d681603bf615b6955a771c724cb6f05401972b446763081"
+    },
+    {
+      "path": "Beta/Runtime/content/production-farm/admission-v1.json",
+      "bytes": 5439,
+      "sha256": "7419a27a9936c8157c98ab99537b2d4433b4d891a6ad9e61320346b551dfe7e1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/ProductionFarmAdmissionTests.cs",
+      "bytes": 14887,
+      "sha256": "7e854e34cab58662a3f8cb072521ea7cccdf629313e789ca09627fed2a26a913"
+    }
+  ]
+}

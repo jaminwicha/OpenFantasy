@@ -1,6 +1,6 @@
 # Implementation progress
 
-The first retained P00 increment is implemented and verified. **P00 as a whole remains open.** The current result is portable deterministic primitives plus working host/client/test build boundaries; there is no implemented world, multiplayer session, original-content importer or playable campaign yet.
+Implementation now includes a native persistent farm with movement, dialogue, finite gathering and actual crafting through one portable C# authority. Existing gathered saves upgrade on a verified copy without losing their history. **P00/P01/P02 and the first-feedback-prototype goal remain open.** Full quest/rewards, construction, Wait, co-op, frontier history and production art/audio still require their planned implementation and acceptance. See the [current production connection](p01/production/README.md).
 
 The latest owner naming instruction is recorded in [project instructions](../AGENTS.md): stable OpenFantasy names in source and project metadata. Historical planning filenames and the reviewed requirements are preserved. The original 181 requirements and production plan remain the scope baseline.
 

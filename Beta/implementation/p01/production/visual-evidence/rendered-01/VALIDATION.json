@@ -1,0 +1,81 @@
+{
+  "schema": "production-visual-review.v1",
+  "run": "rendered-01",
+  "result": "no-blocking-visual-finding",
+  "dimensions": [
+    960,
+    540
+  ],
+  "scope": "Independent inspection of three actual rendered PNGs and read-only public projection continuity checks; not animation or user art acceptance.",
+  "original_artifacts_verified": [
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/gathered.sqlite",
+      "sha256": "7151063315790869acd53ff3c7de9e42812ffce76d5fb5146de2be92e84afa9c"
+    },
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/production.prepare.json",
+      "sha256": "a865389cad04b75ad3d1e87bbe4102c4dee3a2aaf51bf7b1605031220f24b418"
+    },
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/production.prepare.png",
+      "sha256": "64c2c633805bb68d3db7af63cd531c3b8519d613c7bedd2c734f1dafe370be33"
+    },
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/production.reopen.json",
+      "sha256": "b9dd04c0dd8d323fd4d09c6902660de4e792639c878770be05d3d0a2766d8e87"
+    },
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/production.reopen.png",
+      "sha256": "889984de73fd6880db42e5bfcd24a26227f5e704d26720e0df95da8bc599724b"
+    },
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/production.sqlite",
+      "sha256": "72f80a7bcc6cf7583812e9f9e79e7ea1014d8c2bd7eab85bd3c91ee8f9396f51"
+    },
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/production.upgrade.json",
+      "sha256": "c28b92d8b05618bff813f5e87eb2d45bf498b5b59228adc50e70f78bf0bda190"
+    },
+    {
+      "source": "/private/tmp/openfantasy-p00/production/native-production-9be574f8ecf34f8d995a02c221155d6f/production.upgrade.png",
+      "sha256": "22639e87a49c8c812fedfd92c2d5b1dc1cadae0468d817b261289fa66dac90db"
+    }
+  ],
+  "retained_files": [
+    {
+      "path": "Beta/implementation/p01/production/visual-evidence/rendered-01/native-rendered-01.json",
+      "sha256": "cd99bbca3013824c1e49f7dc97345ed309b2137d9effda3c81d0bdee55fe5ada"
+    },
+    {
+      "path": "Beta/implementation/p01/production/visual-evidence/rendered-01/production.prepare.png",
+      "sha256": "64c2c633805bb68d3db7af63cd531c3b8519d613c7bedd2c734f1dafe370be33"
+    },
+    {
+      "path": "Beta/implementation/p01/production/visual-evidence/rendered-01/production.reopen.png",
+      "sha256": "889984de73fd6880db42e5bfcd24a26227f5e704d26720e0df95da8bc599724b"
+    },
+    {
+      "path": "Beta/implementation/p01/production/visual-evidence/rendered-01/production.upgrade.png",
+      "sha256": "22639e87a49c8c812fedfd92c2d5b1dc1cadae0468d817b261289fa66dac90db"
+    },
+    {
+      "path": "Beta/implementation/p01/production/visual-evidence/rendered-01/production.prepare.json",
+      "sha256": "a865389cad04b75ad3d1e87bbe4102c4dee3a2aaf51bf7b1605031220f24b418"
+    },
+    {
+      "path": "Beta/implementation/p01/production/visual-evidence/rendered-01/production.reopen.json",
+      "sha256": "b9dd04c0dd8d323fd4d09c6902660de4e792639c878770be05d3d0a2766d8e87"
+    },
+    {
+      "path": "Beta/implementation/p01/production/visual-evidence/rendered-01/production.upgrade.json",
+      "sha256": "c28b92d8b05618bff813f5e87eb2d45bf498b5b59228adc50e70f78bf0bda190"
+    }
+  ],
+  "checks": {
+    "all_reported_artifact_hashes": 8,
+    "migration_retained_public_fields_exact": true,
+    "migration_adds_empty_crafting_revision": true,
+    "third_process_initial_equals_prior_final": true
+  },
+  "source_binding": "The coordinator reported only probe-handshake wording changed after this build. Final rendering/source binding remains a separate run."
+}

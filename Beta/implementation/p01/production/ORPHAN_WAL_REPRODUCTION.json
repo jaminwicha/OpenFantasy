@@ -1,0 +1,9 @@
+{
+  "schema": "orphan-wal-publication-reproduction.v1",
+  "sqlite_version": "3.53.1",
+  "scope": "Independent Python SQLite mechanism experiment, not the packaged .NET runtime.",
+  "candidate_value": "verified candidate",
+  "observed_value": "unrelated stale WAL",
+  "orphan_wal_bytes": 12392,
+  "defect_reproduced": true
+}
