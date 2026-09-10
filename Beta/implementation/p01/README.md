@@ -2,6 +2,18 @@
 
 9 September 2026. This increment begins P01 execution while the remaining P00 preparation exits stay open. It retains the entire reviewed design and all 181 requirements. It does not declare P01, P02 or the first playable prototype complete.
 
+## Current connection: funded Wren quest and progression
+
+The [quest content contract](quest-construction/CONTENT_CONTRACT.md) now admits the original six-wood agreement, exact Human Squire progression, fixed source Unassigned Wren stats, zero personal starting gil and a separate finite 200-gil quest reserve. Separate acceptance and delivery actions reserve the real materials and atomically pay 420 XP/200 gil once. The profile-three→four upgrade preserves an actual progressed production world on a verified copy under unchanged schema three, including old clocks, source budgets, production and receipts. [Independent save review](quest-construction/HOSTING_REVIEW.md) records the concrete interruption, corruption and recovery checks.
+
+The first coordinated Debug runs passed **508 Core and 207 Hosting tests**, and the actual rendered prepare/upgrade/reopen journey passed through three native processes. The player gathers and crafts, approaches Wren, accepts and delivers the different six wood, recovers level three/XP 38/HP 78/MP 14/200 gil, receives no additional reward from a repeated G input, and resumes movement. [Visual review](quest-construction/VISUAL_REVIEW.md) confirms readable values and truthful supplies-set-aside dialogue, with provisional repeated art and speaker framing limitations.
+
+The subsequent [final integrated Debug pass](quest-construction/qualification/final-verification.json) succeeded with **508 Core + 213 Hosting = 721 tests**, zero skips, all **21 independent Python fixtures**, **68 host inspections**, native SQLite recovery/Godot binding and retained farm/lifecycle/gathering/production/quest journeys. All **590 frozen runtime input hashes** match and the naming scan passes. The clean [local Release build and executed tests](quest-construction/qualification/release/runs.json) also passed **508 Core + 213 Hosting**, zero skips; the client `ExportRelease` output is a local build, not a packaged desktop export. Construction, approved art/audio, human feedback and full P00/P01/P02 exits remain open; the [readiness checklist](quest-construction/READINESS.md) records the next bounded gates.
+
+The following overview preserves the earlier increment boundaries; statements about what was still pending at each earlier stage remain historical evidence.
+
+## Earlier connected increments
+
 The subsequent [native local-world increment](native-loop/WORLD_CONTRACT.md) now connects grounded player/NPC movement, Wren's original utterance, shared reading holds and finite wood handover in Godot. Presence, terrain, custody, individual exposure, language and dialogue persist in composed schema2. The original counted schema1 described below remains supported as its separate profile, with no silent migration. The native walkthrough and exact paused-view process reopen are retained in that increment; production art, full quest completion and multiplayer are still open.
 
 The next [gathering increment](gather-craft/README.md) connects finite tool-owned extraction, banked work and persistent depletion/regrowth with versioned profile dispatch. Both prior save profiles remain supported. The subsequent [production connection](production/README.md) adds actual raw/derived ingredient consumption, rations and offcuts, strict profile3 replay and a preserving schema3 upgrade of existing gathered progress. Full Wren quest/rewards and physical construction are the next required connections.
@@ -23,7 +35,7 @@ The [durable authority record](durable-authority/README.md) records full local v
 ## Next connection to gameplay
 
 1. Build on the now-composed actor/body/location/terrain/time transaction. Couple excavation/work to finite source admission and actual inventory yield; do not implement a second Godot-owned inventory or editable world.
-2. Build on the now-connected gathering and original ration recipe with full quest adjudication/rewards and visible construction effects. Preserve all source fields already mapped and carry exact source provenance through consumed inputs and outputs. Movement, gathering, crafting and finite handover now work; quest credit/rewards and construction are still needed to complete the loop.
+2. Build on the now-connected gathering, original ration recipe and funded Wren agreement with actual NPC construction. Pin a physically honest bill and geometry for the six 50 g wood units already delivered, then preserve their source/production lineage through real work, support, clearance and placed structure state. Quest credit/rewards now work once; visible construction and its interrupted/reopened continuation are still needed to complete the first feedback loop.
 3. Add live NPC commitments, Wait encounter scheduling, durable event/outbox delivery, session grants/rebinding and reconnect. Prove the connected native loop and 1–4-player behavior against the full P01/P02 exit criteria.
 4. Keep native pixel-art/animation/audio production with separate artists, then run virtual and human playtests. A rendered original-asset farm and native input walkthrough now run, but neither establishes the approved production-art target, animation quality, sound or enjoyment acceptance.
 

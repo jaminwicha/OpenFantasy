@@ -1,0 +1,249 @@
+{
+  "recorded_at_utc": "2026-09-10T04:31:07.128224+00:00",
+  "attribution": "Coordinator Debug execution, independently parsed retained TRX; author performed no additional test execution. Client native and Release qualification are outside this record.",
+  "total_passed": 715,
+  "runs": [
+    {
+      "scope": "core",
+      "executor": "coordinator /root; not rerun by this author",
+      "source_trx": "/private/tmp/openfantasy-quest-migration/core-quest-migration.trx",
+      "retained_trx": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/quest-construction/hosting-validation/core-quest-migration.trx",
+      "sha256": "9c1874db5e0819e8cfbe68d0666e114412988c64f8b17b9269dedd5bb7f5689a",
+      "counters": {
+        "total": "508",
+        "executed": "508",
+        "passed": "508",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-09-09T23:23:51.1389840-05:00",
+        "queuing": "2026-09-09T23:23:51.1389850-05:00",
+        "start": "2026-09-09T23:23:49.8066430-05:00",
+        "finish": "2026-09-09T23:23:52.2181700-05:00"
+      },
+      "owned_test_results": [
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.RewardDefinitionCannotAliasAnExistingMaterialIdentity",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.QuestCannotBypassExplicitMaterialProtection(protection: Favorite)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.QuestCannotBypassExplicitMaterialProtection(protection: Heirloom)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.QuestCannotBypassExplicitMaterialProtection(protection: Equipped)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.ComposedProcessorRejectsHistoricallyOccupiedChildWithoutDeliveringOrPaying",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.ReplacingOnlyTheCauseOfACommittedConversationIsRejected",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.ComposedProcessorAllowsItsOwnReservedCommandAndCommitsPartialDelivery",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.ExistingReservationCannotBeReusedAsAQuestContribution",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.ExistingCurrencyAccountCannotBeReusedAsAnAcceptanceCommand",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.SpoofedPrincipalCannotReadOrMutateQuestState",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.CollisionOnLaterPartialChildRejectsEveryMaterialAndRewardChange",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.MultiplePartialLotsRetainDistinctSourceIntervalsAndAdvanceStorageOnce",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.FabricatedConversationCannotSubstituteForCommittedKnowledge",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.QuestCannotBypassExplicitMaterialProtection(protection: UserReserved)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.TwoExplicitlyFundedActorsCompleteWithoutGlobalRevisionDependencies",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.UnfundedSecondActorCannotCreateAnUnpaidPromise",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Core.Tests.Quests.QuestCriticTests.ConversationRemovedFromCurrentWorkingStateCannotAuthorizeAcceptance",
+          "outcome": "Passed"
+        }
+      ]
+    },
+    {
+      "scope": "hosting",
+      "executor": "coordinator /root; not rerun by this author",
+      "source_trx": "/private/tmp/openfantasy-quest-hosting/hosting-quest-first.trx",
+      "retained_trx": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/quest-construction/hosting-validation/hosting-quest-first.trx",
+      "sha256": "a061f7c0effc0978026b1419109f0882fb07906c412e7aa811b8b7e97576f86a",
+      "counters": {
+        "total": "207",
+        "executed": "207",
+        "passed": "207",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-09-09T23:26:26.4930750-05:00",
+        "queuing": "2026-09-09T23:26:26.4930750-05:00",
+        "start": "2026-09-09T23:26:25.3040800-05:00",
+        "finish": "2026-09-09T23:26:30.6282970-05:00"
+      },
+      "owned_test_results": [
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.CraftedProductionHistoryUpgradesThenPaysOneExactRewardAfterRestart",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.FreshQuestGenesisUsesSchemaThreeWithoutInventingMigrationRows",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-shm\", late: True)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 2)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"wrong-migration-family\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 0)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 4)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"unknown-tag\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"outcome\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-shm\", late: False)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"unsupported-version\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-journal\", late: True)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"missing-definition\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.DataOnlyMigrationRollsBackHeadIdentitiesAndJournalWhileForeignKeysStayEnabled",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.InterruptedCompletionRecoversEitherWholeRewardOrNoReward(value: 1)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.UnfundedAcceptanceIsAStableRejectedReceiptWithoutUnpaidParticipation",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-wal\", late: True)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 1)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"missing-old-receipt\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 3)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-journal\", late: False)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.StaleHeadHistoricalCauseAndDestinationConflictsLeaveOriginalProgressIntact",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.InterruptedCompletionRecoversEitherWholeRewardOrNoReward(value: 0)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"unscheduled-checkpoint\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"wrong-entity-role\")",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-wal\", late: False)",
+          "outcome": "Passed"
+        },
+        {
+          "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"missing-entity\")",
+          "outcome": "Passed"
+        }
+      ]
+    }
+  ]
+}

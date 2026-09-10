@@ -1,0 +1,53 @@
+{
+  "scope": "Independent Python source, preserved archive bytes, thresholds and admission identity checks; no C# execution.",
+  "manifestSha256": "261e86948438c7bd8ad34e001c918c40053acedf82041a3f89909a54db095918",
+  "manifestBytes": 6347,
+  "retainedClosureFiles": 51,
+  "selectedSourceRecords": 4,
+  "sourceWitnesses": 5,
+  "supplementalEntitySha256": "9c24378d705934022a8f07c901a7f4ddcc2e1ee977488a956e4609da935222a3",
+  "definitionIds": {
+    "profiles/human-squire": "f1d88e839cdbd767b1b442ae8b4d908a",
+    "profiles/wren-unassigned": "4e27bf5e9034e0071bb86ecf2ced31f7",
+    "curves/source-levels": "1fa734a435aee1e74be7459c63324d78",
+    "currencies/gil": "8ee0e42a7840ae0bda75ac3223f0c18d"
+  },
+  "riverWorld": "1535021d44a1c6c04414abdd01832510",
+  "riverBranch": "75a25b1cbf21a65c0ba76426c717614e",
+  "riverInstanceIds": {
+    "quest.project-custodian": "ee0c80713a4af81aae497d81720aea69",
+    "quest.project-reservation": "dc5207474cc1ee4a3638a0c35601bfff",
+    "quest.reward-reserve": "d04a4adebe4beb8b89bef83efd74e32b",
+    "quest.wren-saplings": "f73755cb5c792d4f8764077964cd65cd",
+    "quest.wren-reward": "19bb3181ca1149de5b2d68acc6ef9f59"
+  },
+  "thresholds": [
+    100,
+    282,
+    519,
+    800,
+    1118,
+    1469,
+    1852,
+    2262,
+    2700
+  ],
+  "firstReward": {
+    "level": 3,
+    "residualXp": 38,
+    "stats": {
+      "hp": 78,
+      "mp": 14,
+      "attack": 18,
+      "magic": 6,
+      "defense": 12,
+      "speed": 10
+    }
+  },
+  "actorGil": [
+    0,
+    0
+  ],
+  "reserveGil": 200,
+  "projectCapacity": 6
+}

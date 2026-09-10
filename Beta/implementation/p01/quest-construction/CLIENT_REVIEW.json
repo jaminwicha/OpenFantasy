@@ -1,0 +1,124 @@
+{
+  "recorded_at_utc": "2026-09-10T04:36:42.119714+00:00",
+  "reviewer": "/root/p00_core",
+  "review_mode": "independent static client/session/projection review; no runtime edits or execution",
+  "finding": {
+    "id": "QC-01",
+    "disposition": "coordinator source fix reinspected; six client regression cases pending execution",
+    "scope": "absent quest destination with existing gathering source but no intermediate production destination; preserve existing quest precedence"
+  },
+  "no_other_concrete_blocker_identified": true,
+  "limits": [
+    "admitted two-resident, one-quest local profile",
+    "no native rendering or lifecycle execution",
+    "no full cross-actor noninterference qualification; existing crafting concurrency token remains visible",
+    "715 prior Debug tests predate the client fix and six new linked client cases"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmQuestSaveOpener.cs",
+      "sha256": "fb691e8efb2ea22f4b643bf281b03dacd8a027889de2c46369d848e79f7b73c3",
+      "bytes": 4873
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmSaveOpener.cs",
+      "sha256": "ee1b91b9aaa438159be35d6be6820e691e392d7cf32cd4b853d9706be62f4868",
+      "bytes": 3618
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmQuestActions.cs",
+      "sha256": "55e29d7e8a4cdc7a733d9fcda273a9f6ca9c7aabe2811b813ef72b5155bf20b8",
+      "bytes": 2381
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmHud.cs",
+      "sha256": "7b2f00187a9f25dc46424d8be38ebfee2d1823cbd98ba0ee279d417b892cd581",
+      "bytes": 5241
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmHud.tscn",
+      "sha256": "aa5486a43a3a90d11af7614622ffe22b35b617e67f6396994f7fca00870cfe8e",
+      "bytes": 4000
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmClientSession.cs",
+      "sha256": "4935abd15288a05ba9a5f1aee79d321815c49f10f205fbbaebf908470cc4cc56",
+      "bytes": 6752
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.cs",
+      "sha256": "28b6902d602841610f7574afb3c69c16ffeb30616b23f397428f367394544b02",
+      "bytes": 11517
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Bootstrap.cs",
+      "sha256": "a81f7ba7e1f59591b1132d670cc5caec90d9aadfc0ab7f5e70fb3175d56c62dd",
+      "bytes": 5832
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmCrafting.cs",
+      "sha256": "b7c49e2a0ee2dbfa5a937121fd292a429e16dcab30f92c9c71c6feb9d3ffc245",
+      "bytes": 2634
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot",
+      "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+      "bytes": 549
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs",
+      "sha256": "3ba31d393f749d4f29f7343f46e0b810e19a4a896824ef256be11f8aabc2dc37",
+      "bytes": 8041
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+      "sha256": "b61e232e13499dd752634840d8e1ff38dbe70b71e0248df005fea3e992a64058",
+      "bytes": 12830
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalQuestView.cs",
+      "sha256": "543f43f948a1a40c0c6d8a4e0cd9cd23c50f6340fbd26088ce5a241421cbfc0a",
+      "bytes": 964
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalCraftingView.cs",
+      "sha256": "a0d85d2eecb957b0d4e5dd3159e46808902772f02635144598ba4768a14ec5fb",
+      "bytes": 1480
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/README.md",
+      "sha256": "22b751e48e947b9edf5c8ed0409605dcac9d6af01b2cdd1cd815cd142672c2a7",
+      "bytes": 5866
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/QuestFarmAdmission.cs",
+      "sha256": "8061753a1a1d2486e6382c1201cb74a37b2da1224664e1e9b099323522596a93",
+      "bytes": 2014
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/QuestFarmWorldValidation.cs",
+      "sha256": "4e2a83ad4dbba041f6fefdfcc452e0f479a4ce6217317b4a02b845454723b63b",
+      "bytes": 2811
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/LocalQuestProjectionTests.cs",
+      "sha256": "892d41070a156d4baa8429315d36d69fde87accd5eea91fbabb862505d635c00",
+      "bytes": 5195
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/FarmQuestClientTests.cs",
+      "sha256": "3b70b5caa4da70de352617d15c1eeef89cd76208a15f1277ee02e954a74dbcb4",
+      "bytes": 8557
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "sha256": "0db819269c525b09dd92a6d645b27268674f070f6eced98cf3cc804a41187929",
+      "bytes": 1069
+    }
+  ],
+  "review_document": {
+    "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/quest-construction/CLIENT_REVIEW.md",
+    "sha256": "514c33f2156f9427b515481a773e5952de0914328d7aa58c578898fa13b9fc9e",
+    "bytes": 7571
+  }
+}

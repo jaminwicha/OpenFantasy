@@ -1,0 +1,266 @@
+{
+  "executionOwner": "Coordinator; reviewer parsed results only and ran no managed build",
+  "trx": "/private/tmp/openfantasy-quest-hosting/hosting-quest-first.trx",
+  "trxSha256": "a061f7c0effc0978026b1419109f0882fb07906c412e7aa811b8b7e97576f86a",
+  "counters": {
+    "total": "207",
+    "executed": "207",
+    "passed": "207",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "reviewSnapshotSha256": "6502d018c92e861742451c458913d6364ecd5165f2746702bc45cb5e7d829f41",
+  "reviewInputCount": 20,
+  "allReviewedHashesStillMatch": true,
+  "newHostingTestsPassed": 27,
+  "newContentTestsPassed": 20,
+  "reviewedTestResults": [
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.A_profile_with_removed_production_definitions_cannot_reuse_the_original_admission_pin",
+      "outcome": "Passed",
+      "duration": "00:00:00.0860784"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Both_personal_balances_start_at_source_zero_and_only_the_authored_reserve_funds_the_reward",
+      "outcome": "Passed",
+      "duration": "00:00:00.1222401"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_but_valid_host_persona_cannot_borrow_wrens_source_definition",
+      "outcome": "Passed",
+      "duration": "00:00:00.0720804"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"legacy/aldermere-first-loop/assets/units/node_berr\"\u00b7\u00b7\u00b7)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0962944"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"legacy/aldermere-first-loop/records.json\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0748202"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"legacy/aldermere-first-loop/source-support/data/cl\"\u00b7\u00b7\u00b7)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1098450"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"legacy/aldermere-first-loop/source-support/data/qu\"\u00b7\u00b7\u00b7)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1092087"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"legacy/aldermere-first-loop/source-support/src/Sim\"\u00b7\u00b7\u00b7)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0948059"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"production-farm/admission-v1.json\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0777622"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"quest-farm/admission-v1.json\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0899105"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Changed_manifest_selected_sources_default_witnesses_or_unselected_original_closure_reject(path: \"quest-farm/source-support/Entity.cs.txt\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.1129642"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Exact_embedded_and_filesystem_admissions_match_and_definitions_remain_stable_across_world_seeds",
+      "outcome": "Passed",
+      "duration": "00:00:00.3441416"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Explicit_human_squire_progression_retains_source_base_growth_thresholds_and_full_initial_vitals",
+      "outcome": "Passed",
+      "duration": "00:00:00.0767552"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.New_definition_and_instance_roles_cannot_alias_an_existing_place(instance: False)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1092132"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.New_definition_and_instance_roles_cannot_alias_an_existing_place(instance: True)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1219065"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Oversized_or_missing_new_manifest_rejects_without_a_default_or_partial_admission",
+      "outcome": "Passed",
+      "duration": "00:00:00.1241828"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Preserves_actual_gathered_and_crafted_state_and_adds_only_empty_project_custody",
+      "outcome": "Passed",
+      "duration": "00:00:00.1551200"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Quest_retains_original_obligation_offer_giver_and_reward_with_separate_project_stock",
+      "outcome": "Passed",
+      "duration": "00:00:00.1592141"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Unsupported_profiles_null_and_wrong_admission_cannot_acquire_the_pinned_quest",
+      "outcome": "Passed",
+      "duration": "00:00:00.1688417"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.QuestFarmAdmissionTests.Wren_preserves_fixed_source_unassigned_stats_without_a_fictional_farmer_or_player_class",
+      "outcome": "Passed",
+      "duration": "00:00:00.0703453"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.DataOnlyMigrationRollsBackHeadIdentitiesAndJournalWhileForeignKeysStayEnabled",
+      "outcome": "Passed",
+      "duration": "00:00:00.0437347"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"missing-definition\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.1044141"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"missing-entity\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.1003624"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"missing-old-receipt\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0725025"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"outcome\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0877810"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"unknown-tag\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0983361"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"unscheduled-checkpoint\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.1544175"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"unsupported-version\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0719016"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"wrong-entity-role\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.0771428"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.EditedMigrationOrEarlierHistoryCannotPassCanonicalRecovery(mutation: \"wrong-migration-family\")",
+      "outcome": "Passed",
+      "duration": "00:00:00.1949309"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.InterruptedCompletionRecoversEitherWholeRewardOrNoReward(value: 0)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0776817"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.InterruptedCompletionRecoversEitherWholeRewardOrNoReward(value: 1)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1020181"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.StaleHeadHistoricalCauseAndDestinationConflictsLeaveOriginalProgressIntact",
+      "outcome": "Passed",
+      "duration": "00:00:00.0376772"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeRecoveryTests.UnfundedAcceptanceIsAStableRejectedReceiptWithoutUnpaidParticipation",
+      "outcome": "Passed",
+      "duration": "00:00:00.0607724"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.CraftedProductionHistoryUpgradesThenPaysOneExactRewardAfterRestart",
+      "outcome": "Passed",
+      "duration": "00:00:00.1842562"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.FreshQuestGenesisUsesSchemaThreeWithoutInventingMigrationRows",
+      "outcome": "Passed",
+      "duration": "00:00:00.0291241"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 0)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1493988"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 1)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0787413"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 2)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1275109"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 3)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1619744"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.InterruptedQuestUpgradePreservesSourceAndPublishesAtMostOneCandidate(value: 4)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0879624"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-journal\", late: False)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0838692"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-journal\", late: True)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0949238"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-shm\", late: False)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0529219"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-shm\", late: True)",
+      "outcome": "Passed",
+      "duration": "00:00:00.1051063"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-wal\", late: False)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0519465"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.QuestUpgradeTests.QuestPublicationPreservesInitiallyPresentAndLateDestinationSidecars(suffix: \"-wal\", late: True)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0868921"
+    }
+  ],
+  "limitations": "Debug only. No Release/native/other-platform, physical power-loss, complete construction or user acceptance claim."
+}

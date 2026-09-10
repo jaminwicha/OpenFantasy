@@ -1,0 +1,108 @@
+{
+  "reviewer": "Independent content/source worker; not the Hosting author",
+  "disposition": "No blocking static finding",
+  "execution": "No managed or native execution by this reviewer; 27 new Hosting cases authored, execution pending coordinator",
+  "scope": "New quest copy/publication/replay and supporting boundaries; no claim of independent Core/content or broad platform qualification",
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldQuestUpgrade.cs",
+      "bytes": 2164,
+      "sha256": "8eba2f8d60d16a0ece7310b64c0af87bf524b5609c0ec7e3e6eb54bf532a2f2a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldQuestMigrationPreparation.cs",
+      "bytes": 2731,
+      "sha256": "eb99e9500deb0384bc0c57980f992abda0c12aaaa3270e618a1ab3a076bd2a8e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseQuestMigration.cs",
+      "bytes": 1504,
+      "sha256": "ce41bb772d58f67fbff5e9711e4ebe402ca208e935cca2a3030621fd33352b6c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldQuestUpgradeBoundary.cs",
+      "bytes": 171,
+      "sha256": "8626c9ae4a108db0120c302703a8a20a1ba8a0bd69e69f4897ce24c7f640abd0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldProfileMigrationReplay.cs",
+      "bytes": 2857,
+      "sha256": "3e8ddb943f0a4bf37b0d49e0adb5c74765f07c6a66a146280e7d02560ac6fa10"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldUpgradePublication.cs",
+      "bytes": 3766,
+      "sha256": "0c25dfe5c3915b9b446045259a7355f946a33cce8c4b6c782da90453ffd43cc8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+      "bytes": 10476,
+      "sha256": "5b831047171eab03f39b137532bfbfa23fc5d6f7ec635ae2d90b3f8a8875f50a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+      "bytes": 9514,
+      "sha256": "d989b5fce0108bee8d9bb1cc768c6af29062e9607942a539ebb7d261e79e1c4f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageRecords.cs",
+      "bytes": 1184,
+      "sha256": "db5cdccfba50f0b3764cb412fe509e37af0b99e03d5c9324b9803b73b9902c93"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldProductionUpgrade.cs",
+      "bytes": 2166,
+      "sha256": "73b6ca1731bccfeac5f64454611ac48f4c003fd52998fd777923fbe73d61a378"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldMigrationPreparation.cs",
+      "bytes": 2355,
+      "sha256": "e869d164ae4c41176a3a15c68a8262d84843e8c0a989849cad01b68db90b1859"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldBackupComparison.cs",
+      "bytes": 2582,
+      "sha256": "981aca520d4a1caf04738112ddb9f6b235db5190e38beecc7b529436c5529eda"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs",
+      "bytes": 2130,
+      "sha256": "b9ae65ef6eb0f2db327812efe12ea078949604a40c3990db9d2f71f033e3a86c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs",
+      "bytes": 14379,
+      "sha256": "04e0957f3416ba9a8de37a7338323007bcc13b4b98004251dbc0f8a23024a72e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteFileSet.cs",
+      "bytes": 854,
+      "sha256": "4c5a6c6549c7ffc1ff6b31b497413f2a212da5a08b04da7c59300dabae482c9a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs",
+      "bytes": 10369,
+      "sha256": "a4db8d8293a0499378d49b206840f891a6337c14ed194cc7bd92af2b48a7df23"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/QuestUpgradeFixture.cs",
+      "bytes": 6635,
+      "sha256": "dad4d0edba68108ae465349085faf6fcc063aeadc21af88766afb1cb28ab36db"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/QuestUpgradeTests.cs",
+      "bytes": 11812,
+      "sha256": "7e45bb758891a9c18d38626010159ae649a4d112a8ad7fe63756857787ceec5b"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/QuestUpgradeRecoveryTests.cs",
+      "bytes": 10412,
+      "sha256": "8d1477d5ff9d5ddacce111957eb0eb05c10594dedb865c2af715198f66669c44"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ProductionUpgradeTests.cs",
+      "bytes": 11604,
+      "sha256": "425ec42e7b06aa077b2f1f12f69d441456476286e1ddf415fd727db9c8892b97"
+    }
+  ]
+}

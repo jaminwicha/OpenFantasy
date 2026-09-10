@@ -1,0 +1,199 @@
+{
+  "reviewType": "Independent read-only visual and recorded native-input review",
+  "method": "Viewed each original PNG with view_image; parsed sidecar JSON and matched coordinator report/hash evidence. No native application launched or Runtime edited.",
+  "disposition": "No blocking visual or quest-truth defect in this three-capture scope",
+  "blockingFindings": [],
+  "followups": [
+    {
+      "id": "VR-01",
+      "severity": "nonblocking framing follow-up",
+      "finding": "Wren nameplate is hidden and the upper hat/head edge is masked by the opaque top HUD in the upgrade/reopen compositions.",
+      "impact": "The dialogue speaker name remains legible, but conversation framing could keep both actors inside the unobscured playfield.",
+      "scope": "Observed static composition, not an input or world-state failure."
+    },
+    {
+      "id": "VR-02",
+      "severity": "retained provisional art limitation",
+      "finding": "Dense grass texture repeats conspicuously across most of the viewport; flat tilled rows and simple plants/actors remain original baseline assets.",
+      "impact": "This is below the accepted-art production target and does not establish atmosphere, variety or final animation quality."
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/quests.prepare.json",
+      "bytes": 17435,
+      "sha256": "778386bf0d33f5d7853693831c897a9f2bcb12cbaf384c18a2bf345432dc2daa"
+    },
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/quests.prepare.png",
+      "bytes": 55368,
+      "sha256": "dfbf24be44df3c8285660251f26c8b0dc86d5061764165390fa3b2195b850c9d",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/quests.upgrade.json",
+      "bytes": 13651,
+      "sha256": "db121a1980cc364cec8bbd41e982e1c2e6e5ba356c2edbfc8ae4f6123c5eb104"
+    },
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/quests.upgrade.png",
+      "bytes": 77127,
+      "sha256": "ad25ea2084b8b4e1c67f8ad60988174c0140a10508ea0f7945b49d56d698a246",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/quests.reopen.json",
+      "bytes": 12226,
+      "sha256": "d1f93401cef7e53753ebd3aebcd336a086d31b95028b52474e72bf074585f71a"
+    },
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/quests.reopen.png",
+      "bytes": 59860,
+      "sha256": "de67e17f66314abc97e1524e5d87033078ec966a3c95124a697897a5294b4a11",
+      "width": 960,
+      "height": 540
+    },
+    {
+      "path": "/private/tmp/openfantasy-quest-native-rendered.json",
+      "bytes": 42407,
+      "sha256": "b8a33eb62001948a840d790a371e874d02c01e5c993dac5f5b7bfd72d3abaca2"
+    },
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/production.sqlite",
+      "bytes": 143360,
+      "sha256": "91db533018c7f33387754fef57413314b3431c3778c5893394f8c46bd4845424"
+    },
+    {
+      "path": "/private/tmp/native-quests-7d858d3e85394ffbafd1c6ec255b1bb4/quests.sqlite",
+      "bytes": 225280,
+      "sha256": "03721507b938adb579ef1e1650bb95c320641dde80f5c432faf4e004117c09aa"
+    }
+  ],
+  "stages": [
+    {
+      "mode": "prepare",
+      "status": "passed",
+      "driver": "macOS",
+      "durationMilliseconds": 5200,
+      "focusRequests": 0,
+      "inputCount": 56,
+      "allRecordedInputsFocused": true,
+      "checks": [
+        "Two ordinary sickle inputs issued two actual berries from the admitted finite node.",
+        "One craft consumed two berries and one wood; seven wood, two rations, one offcut and both tools remain.",
+        "Final saved state stayed unchanged for at least 600 ms under the ordinary pause control."
+      ],
+      "initialProgression": null,
+      "finalProgression": null,
+      "initialClockMilliseconds": 32400000,
+      "finalClockMilliseconds": 32547600,
+      "finalHasReadingHold": false,
+      "finalQuestCount": 0
+    },
+    {
+      "mode": "upgrade",
+      "status": "passed",
+      "driver": "macOS",
+      "durationMilliseconds": 6457,
+      "focusRequests": 0,
+      "inputCount": 18,
+      "allRecordedInputsFocused": true,
+      "checks": [
+        "Copied upgrade retained every recorded profile-three projection field without advancing time.",
+        "Initial recovery stayed exactly unchanged for at least 600 ms while paused.",
+        "Ordinary movement approached Wren after reopening the crafted world.",
+        "The actual addressed offer remained held for 600 ms and exposed its six-wood requirement and funded reward.",
+        "First ordinary G input accepted the quest without consuming wood or granting a reward.",
+        "Second G delivered six current wood once: level 3, XP 38, HP 78/78, MP 14/14 and 200 gil while still held.",
+        "Final saved state stayed unchanged for at least 600 ms under the ordinary pause control."
+      ],
+      "initialProgression": {
+        "Revision": 0,
+        "ProfileName": "Squire",
+        "Level": 1,
+        "Experience": 0,
+        "Hp": 60,
+        "MaxHp": 60,
+        "Mp": 10,
+        "MaxMp": 10,
+        "CurrencyBalance": 0,
+        "CurrencyUnit": "gil"
+      },
+      "finalProgression": {
+        "Revision": 1,
+        "ProfileName": "Squire",
+        "Level": 3,
+        "Experience": 38,
+        "Hp": 78,
+        "MaxHp": 78,
+        "Mp": 14,
+        "MaxMp": 14,
+        "CurrencyBalance": 200,
+        "CurrencyUnit": "gil"
+      },
+      "initialClockMilliseconds": 32547600,
+      "finalClockMilliseconds": 32680800,
+      "finalHasReadingHold": true,
+      "finalQuestCount": 1
+    },
+    {
+      "mode": "reopen",
+      "status": "passed",
+      "driver": "macOS",
+      "durationMilliseconds": 2729,
+      "focusRequests": 0,
+      "inputCount": 6,
+      "allRecordedInputsFocused": true,
+      "checks": [
+        "Reward, completed quest, inventory, dialogue and all other public fields recovered exactly.",
+        "Initial recovery stayed exactly unchanged for at least 600 ms while paused.",
+        "Repeated ordinary G on the restored completed quest left every public field unchanged for 600 ms.",
+        "After E released the hold, ordinary movement travelled at least 128 subunits with advancing calendar and retained rewards.",
+        "Final saved state stayed unchanged for at least 600 ms under the ordinary pause control."
+      ],
+      "initialProgression": {
+        "Revision": 1,
+        "ProfileName": "Squire",
+        "Level": 3,
+        "Experience": 38,
+        "Hp": 78,
+        "MaxHp": 78,
+        "Mp": 14,
+        "MaxMp": 14,
+        "CurrencyBalance": 200,
+        "CurrencyUnit": "gil"
+      },
+      "finalProgression": {
+        "Revision": 1,
+        "ProfileName": "Squire",
+        "Level": 3,
+        "Experience": 38,
+        "Hp": 78,
+        "MaxHp": 78,
+        "Mp": 14,
+        "MaxMp": 14,
+        "CurrencyBalance": 200,
+        "CurrencyUnit": "gil"
+      },
+      "initialClockMilliseconds": 32680800,
+      "finalClockMilliseconds": 32688000,
+      "finalHasReadingHold": false,
+      "finalQuestCount": 1
+    }
+  ],
+  "runtimeSha256": {
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "a3207d298193fc21556e9d1b81a30caba5aa67fa1aca2cc872751075466c1132",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "fe60ffea7cb0d6a57fd556499c6432a21d15e756708d3b596797344edd303468",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "d8629a815a4991ea6b75badb48fd96897f64cab8600cc997362c317d20727b10"
+  },
+  "godotSha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+  "retainedSourceSha256": "91db533018c7f33387754fef57413314b3431c3778c5893394f8c46bd4845424",
+  "limitations": [
+    "Scripted native inputs are not a human playtest, enjoyment measurement or art acceptance.",
+    "Stills cannot establish animation timing, audio, long-form onboarding, all viewport sizes or other desktop platforms.",
+    "The six-wood agreement is completed and rewards persist; no physical windbreak or NPC construction is claimed.",
+    "Review uses the player/public projection and rendered counts, not private NPC inventory or balances."
+  ]
+}
