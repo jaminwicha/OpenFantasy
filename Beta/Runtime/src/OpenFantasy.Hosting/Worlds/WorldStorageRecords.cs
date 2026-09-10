@@ -6,7 +6,8 @@ namespace OpenFantasy.Hosting.Worlds;
 internal enum WorldCommitKind
 {
     AdvancingStep = 1,
-    HeldInteraction = 2
+    HeldInteraction = 2,
+    ProductionMigration = 3
 }
 
 internal enum WorldIdentityKind
@@ -14,7 +15,8 @@ internal enum WorldIdentityKind
     CommitCause = 1,
     Command = 2,
     Result = 3,
-    SpawnedEntity = 4
+    SpawnedEntity = 4,
+    AdmittedDefinition = 5
 }
 
 // These internal rows carry bounded stored bytes. The world service owns canonical interpretation,

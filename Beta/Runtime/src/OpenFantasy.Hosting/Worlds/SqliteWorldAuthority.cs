@@ -40,7 +40,8 @@ public sealed class SqliteWorldAuthority : IDisposable
         }
         byte[] bytes = WorldSnapshotCodec.Encode(genesis);
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
-        WorldDatabase database = WorldDatabase.Open(path, create: true);
+        WorldDatabase database = WorldDatabase.Open(path, create: true,
+            accepted.ProfileVersion == 3 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
         try
         {
             database.Initialize(bytes);
@@ -66,6 +67,20 @@ public sealed class SqliteWorldAuthority : IDisposable
             database.Dispose();
             throw;
         }
+    }
+
+    /// <summary>
+    /// Copies and upgrades an exact gathering save into a fresh destination. The original remains
+    /// a recovery copy; ordinary opening never migrates, overwrites, or silently selects that old copy.
+    /// </summary>
+    public static SqliteWorldAuthority UpgradeGatheringToProduction(string sourcePath, string destinationPath,
+        WorldProductionMigration request) => UpgradeGatheringToProduction(sourcePath, destinationPath, request, null);
+
+    internal static SqliteWorldAuthority UpgradeGatheringToProduction(string sourcePath, string destinationPath,
+        WorldProductionMigration request, Action<WorldProductionUpgradeBoundary>? fault)
+    {
+        new WorldProductionUpgrade().Publish(sourcePath, destinationPath, request, fault);
+        return OpenExisting(destinationPath);
     }
 
     /// <summary>Commits one host-selected batch. A stale or reused batch is a dispatch failure, never a second execution.</summary>

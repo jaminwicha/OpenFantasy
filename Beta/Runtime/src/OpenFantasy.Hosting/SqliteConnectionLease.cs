@@ -8,7 +8,7 @@ internal sealed class SqliteConnectionLease : IDisposable
     internal const int WorldApplicationId = 0x4f464157;
     private readonly SqliteConnection _connection;
     private readonly int _applicationId;
-    private readonly int _schemaVersion;
+    private int _schemaVersion;
 
     static SqliteConnectionLease() => SQLitePCL.Batteries_V2.Init();
 
@@ -21,14 +21,28 @@ internal sealed class SqliteConnectionLease : IDisposable
 
     internal static SqliteConnectionLease Open(string path, bool create, int applicationId, int schemaVersion)
     {
+        if (schemaVersion <= 0)
+        {
+            throw new ArgumentOutOfRangeException(nameof(schemaVersion));
+        }
+        return Open(path, create, applicationId, schemaVersion, [schemaVersion]);
+    }
+
+    internal static SqliteConnectionLease OpenSupportedWorld(string path)
+        => Open(path, false, WorldApplicationId, 0, [2, 3]);
+
+    private static SqliteConnectionLease Open(string path, bool create, int applicationId, int schemaVersion,
+        IReadOnlyList<int> supportedVersions)
+    {
         ArgumentException.ThrowIfNullOrWhiteSpace(path);
-        if (applicationId <= 0 || schemaVersion <= 0)
+        if (applicationId <= 0 || (create && schemaVersion <= 0))
         {
             throw new ArgumentOutOfRangeException(nameof(schemaVersion), "A save profile requires positive format identifiers.");
         }
         string absolute = Path.GetFullPath(path);
         if (create)
         {
+            SqliteFileSet.RequireUnused(absolute);
             using var created = new FileStream(absolute, FileMode.CreateNew, FileAccess.ReadWrite, FileShare.None);
         }
         else if (!File.Exists(absolute))
@@ -47,6 +61,16 @@ internal sealed class SqliteConnectionLease : IDisposable
         try
         {
             connection.Open();
+            if (!create)
+            {
+                using SqliteCommand version = connection.CreateCommand();
+                version.CommandText = "PRAGMA user_version";
+                schemaVersion = Convert.ToInt32(version.ExecuteScalar());
+                if (!supportedVersions.Contains(schemaVersion))
+                {
+                    throw new InvalidDataException("The world database format is unsupported.");
+                }
+            }
             var lease = new SqliteConnectionLease(connection, applicationId, schemaVersion);
             if (!create)
             {
@@ -85,6 +109,68 @@ internal sealed class SqliteConnectionLease : IDisposable
     }
 
     internal SqliteTransaction BeginWrite() => _connection.BeginTransaction(deferred: false);
+    internal int SchemaVersion => _schemaVersion;
+
+    internal void BackupToNewFile(string path)
+    {
+        string absolute = Path.GetFullPath(path);
+        SqliteFileSet.RequireUnused(absolute);
+        using (var created = new FileStream(absolute, FileMode.CreateNew, FileAccess.ReadWrite, FileShare.None)) { }
+        using var destination = new SqliteConnection(new SqliteConnectionStringBuilder
+        {
+            DataSource = absolute,
+            Mode = SqliteOpenMode.ReadWrite,
+            Cache = SqliteCacheMode.Private,
+            Pooling = false
+        }.ToString());
+        destination.Open();
+        using (SqliteCommand settings = destination.CreateCommand())
+        {
+            settings.CommandText = "PRAGMA synchronous=FULL";
+            settings.ExecuteNonQuery();
+        }
+        _connection.BackupDatabase(destination);
+    }
+
+    internal void SetMigrationForeignKeys(bool enabled)
+    {
+        Execute(enabled ? "PRAGMA foreign_keys=ON" : "PRAGMA foreign_keys=OFF");
+        if (Convert.ToInt32(Scalar("PRAGMA foreign_keys")) != (enabled ? 1 : 0))
+        {
+            throw new InvalidOperationException("The staged migration could not set foreign-key enforcement.");
+        }
+    }
+
+    internal void StageWorldSchemaThree(SqliteTransaction transaction)
+    {
+        if (_applicationId != WorldApplicationId || _schemaVersion != 2)
+        {
+            throw new InvalidOperationException("Only the exact second world schema can be upgraded.");
+        }
+        using SqliteCommand command = CreateCommand("PRAGMA user_version=3", transaction);
+        command.ExecuteNonQuery();
+    }
+
+    internal void AcceptWorldSchemaThree()
+    {
+        if (_applicationId != WorldApplicationId || _schemaVersion != 2
+            || Convert.ToInt64(Scalar("PRAGMA application_id")) != WorldApplicationId
+            || Convert.ToInt64(Scalar("PRAGMA user_version")) != 3)
+        {
+            throw new InvalidDataException("The staged world schema transition did not commit.");
+        }
+        _schemaVersion = 3;
+    }
+
+    internal void CheckpointForPublication()
+    {
+        using SqliteCommand command = CreateCommand("PRAGMA wal_checkpoint(TRUNCATE)");
+        using SqliteDataReader reader = command.ExecuteReader();
+        if (!reader.Read() || reader.GetInt32(0) != 0 || reader.GetInt32(1) != 0 || reader.GetInt32(2) != 0)
+        {
+            throw new IOException("The staged world could not checkpoint its committed WAL before publication.");
+        }
+    }
 
     internal void InitializeMetadata(SqliteTransaction transaction)
     {
@@ -104,11 +190,11 @@ internal sealed class SqliteConnectionLease : IDisposable
     }
 
     internal void ValidateSchema(IReadOnlyDictionary<string, string> tables,
-        IReadOnlyDictionary<string, string> indexes)
+        IReadOnlyDictionary<string, string> indexes, SqliteTransaction? transaction = null)
     {
         int tableCount = 0;
         int indexCount = 0;
-        using SqliteCommand command = CreateCommand("SELECT type,name,tbl_name,sql FROM sqlite_schema");
+        using SqliteCommand command = CreateCommand("SELECT type,name,tbl_name,sql FROM sqlite_schema", transaction);
         using SqliteDataReader reader = command.ExecuteReader();
         while (reader.Read())
         {

@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Worlds;
 
@@ -8,7 +9,8 @@ namespace OpenFantasy.Hosting.Simulation;
 
 public sealed record LocalActorView(EntityId ActorId, string DisplayName, SubunitPosition Feet,
     ulong PresenceRevision, ResidentControllerKind ControllerKind);
-public sealed record LocalItemLotView(EntityId LotId, EntityId DefinitionId, ulong Revision, ulong Quantity);
+public sealed record LocalItemLotView(EntityId LotId, EntityId DefinitionId, ulong Revision, ulong Quantity,
+    IngredientLotKind Provenance = IngredientLotKind.Source);
 public sealed record LocalDialogueView(EntityId DialogueId, EntityId SpeakerActorId, string SpeakerName, string Text);
 
 public sealed class LocalInventoryView
@@ -49,7 +51,10 @@ public sealed class LocalWorldView
         EntityId storage = state.GetResident(playerActorId).InventoryCustodianId;
         PlayerInventory = new LocalInventoryView(storage, state.Inventory.Custody.GetStorage(storage).Revision,
             state.Inventory.Custody.Lots.Where(lot => lot.CustodianId == storage)
-                .Select(lot => new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity)));
+                .Select(lot => new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity))
+                .Concat(state.Production?.Lots.Where(lot => lot.CustodianId == storage).Select(lot =>
+                    new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity, IngredientLotKind.Transformed)) ?? []));
+        Crafting = state.Production is { } production ? new LocalCraftingView(production) : null;
         GatheringNodes = Array.AsReadOnly(state.Gathering is { } gathering
             ? gathering.Nodes.Where(node => node.VisibilityAt(state.AdvancingSteps) != GatherNodeVisibility.Absent)
                 .Select(node => new LocalGatherNodeView(node.NodeId, node.Definition.DisplayName, node.Feet,
@@ -90,5 +95,6 @@ public sealed class LocalWorldView
     public ReadOnlyCollection<LocalGatherNodeView> GatheringNodes { get; }
     public ReadOnlyCollection<LocalGatherToolLotView> GatheringTools { get; }
     public uint? PlayerGatherEffort { get; }
+    public LocalCraftingView? Crafting { get; }
     public LocalDialogueView? Dialogue { get; }
 }

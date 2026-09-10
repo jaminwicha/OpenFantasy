@@ -116,6 +116,10 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 return prior;
             }
+            if (command.Intent is CraftIntent && _authority.InspectForHost().State.ProfileVersion < 3)
+            {
+                throw new AuthorityDispatchException("This saved rules profile does not admit crafting actions.");
+            }
             lock (_inputs)
             {
                 EnsureInputAvailable();

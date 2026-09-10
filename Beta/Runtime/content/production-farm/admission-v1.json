@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 1,
+  "id": "openfantasy.production-farm.admission",
+  "status": "instant_ration_packing_with_explicit_offcuts_no_healing_or_metabolism",
+  "gatheringAdmissionSha256": "f90505e21a578b6e8dd0df78ea195e1c2ee9e5451fee22779480b76ab04239cd",
+  "sourceRecords": [
+    {
+      "targetKey": "openfantasy.aldermere:items/wood",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/12",
+        "inventoryId": "data/items.json#/items/12",
+        "payloadSha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/berries",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/15",
+        "inventoryId": "data/items.json#/items/15",
+        "payloadSha256": "a7b53e8648a12bb156269fe955ea868aeab9881ba75fb4b79bba057358a93214"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/rations",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/16",
+        "inventoryId": "data/items.json#/items/16",
+        "payloadSha256": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:recipes/craft_rations",
+      "sourceIdentity": {
+        "path": "data/recipes.json",
+        "jsonPointer": "/recipes/1",
+        "inventoryId": "data/recipes.json#/recipes/1",
+        "payloadSha256": "c384027c76855ade482105233cadd07ea930a265f73e12beab852de1cc756491"
+      }
+    }
+  ],
+  "existingItems": [
+    {
+      "key": "items/wood",
+      "sourceTargetKey": "openfantasy.aldermere:items/wood",
+      "definitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+      "version": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d"
+    },
+    {
+      "key": "items/berries",
+      "sourceTargetKey": "openfantasy.aldermere:items/berries",
+      "definitionId": "2038079b78c92d2f77fb1443eed73661",
+      "version": "2a558e18e3a30b09446b6f0b25da2c2bcbca7ef8676459eab071ff27c8a286c6"
+    }
+  ],
+  "outputItems": [
+    {
+      "key": "items/rations",
+      "sourceTargetKey": "openfantasy.aldermere:items/rations",
+      "sourcePayloadSha256": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030",
+      "displayName": "Rations",
+      "meaning": "one cold berry portion packed in a wooden container; use effects and metabolism remain pending"
+    },
+    {
+      "key": "items/wood_offcuts",
+      "sourceTargetKey": null,
+      "sourcePayloadSha256": null,
+      "displayName": "Wood offcuts",
+      "meaning": "one recoverable batch of packing offcuts derived from consumed wood; never a new independent source"
+    }
+  ],
+  "physicalPackage": "openfantasy.production-farm",
+  "physicalMaterials": [
+    {
+      "key": "wood",
+      "definitionKey": "physical/wood",
+      "itemKey": "items/wood",
+      "massMilligrams": 50000,
+      "volumeMicrolitres": 100000,
+      "hardness": 8
+    },
+    {
+      "key": "berries",
+      "definitionKey": "physical/berries",
+      "itemKey": "items/berries",
+      "massMilligrams": 20000,
+      "volumeMicrolitres": 30000,
+      "hardness": 1
+    },
+    {
+      "key": "rations",
+      "definitionKey": "physical/rations",
+      "itemKey": "items/rations",
+      "massMilligrams": 40000,
+      "volumeMicrolitres": 45000,
+      "hardness": 2
+    },
+    {
+      "key": "wood_offcuts",
+      "definitionKey": "physical/wood_offcuts",
+      "itemKey": "items/wood_offcuts",
+      "massMilligrams": 10000,
+      "volumeMicrolitres": 25000,
+      "hardness": 0
+    }
+  ],
+  "recipe": {
+    "key": "craft_rations",
+    "definitionKey": "recipes/pack-rations",
+    "physicalDefinitionKey": "physical-recipes/pack-rations",
+    "sourceTargetKey": "openfantasy.aldermere:recipes/craft_rations",
+    "sourcePayloadSha256": "c384027c76855ade482105233cadd07ea930a265f73e12beab852de1cc756491",
+    "requiredWork": 1,
+    "terms": [
+      {
+        "role": 1,
+        "itemKey": "items/berries",
+        "count": 2
+      },
+      {
+        "role": 1,
+        "itemKey": "items/wood",
+        "count": 1
+      },
+      {
+        "role": 2,
+        "itemKey": "items/rations",
+        "count": 2
+      },
+      {
+        "role": 3,
+        "itemKey": "items/wood_offcuts",
+        "count": 1
+      }
+    ],
+    "allocations": [
+      {
+        "inputItemKey": "items/berries",
+        "outputIndex": 0,
+        "massPerOutputUnitMilligrams": 20000
+      },
+      {
+        "inputItemKey": "items/wood",
+        "outputIndex": 0,
+        "massPerOutputUnitMilligrams": 20000
+      },
+      {
+        "inputItemKey": "items/wood",
+        "outputIndex": 1,
+        "massPerOutputUnitMilligrams": 10000
+      }
+    ],
+    "interpretation": "cold packing: each ration contains 20000 mg berries and 20000 mg wooden packaging; one 10000 mg wood offcut batch is retained",
+    "workMeaning": "one complete atomic operation, no extra elapsed time or gathering effort cost; not the previous illustrative 120 work units"
+  },
+  "compatibility": "attach only to an exact gathered profile through explicit copy-and-publish migration; preserve all previous world state and item pins",
+  "pending": [
+    "HP and MP pools and actual ration use",
+    "container return and metabolism after eating",
+    "timed jobs, tool wear, fuel, heat and fluid processes",
+    "artist accepted packed-ration and offcut sprites"
+  ]
+}

@@ -5,10 +5,10 @@ using OpenFantasy.Core.Content;
 namespace OpenFantasy.Hosting.Worlds;
 
 /// <summary>
-/// Profile-two binary storage under one exclusive lease. The owning service validates/replays
+/// Explicit world-schema storage under one exclusive lease. The owning service validates/replays
 /// canonical domain state, serializes callers and publishes only after its supplied transaction commits.
 /// </summary>
-internal sealed class WorldDatabase : IDisposable
+internal sealed partial class WorldDatabase : IDisposable
 {
     internal const int MaximumStateByteLength = 16 * 1024 * 1024;
     internal const int MaximumBatchByteLength = 256 * 1024;
@@ -19,15 +19,20 @@ internal sealed class WorldDatabase : IDisposable
 
     private WorldDatabase(SqliteConnectionLease lease) => _lease = lease;
 
-    internal static WorldDatabase Open(string path, bool create)
+    internal static WorldDatabase Open(string path, bool create, int schemaVersion = WorldDatabaseSchema.Version)
     {
-        SqliteConnectionLease lease = SqliteConnectionLease.Open(path, create,
-            SqliteConnectionLease.WorldApplicationId, WorldDatabaseSchema.Version);
+        if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version)
+        {
+            throw new ArgumentOutOfRangeException(nameof(schemaVersion));
+        }
+        SqliteConnectionLease lease = create
+            ? SqliteConnectionLease.Open(path, true, SqliteConnectionLease.WorldApplicationId, schemaVersion)
+            : SqliteConnectionLease.OpenSupportedWorld(path);
         try
         {
             if (!create)
             {
-                lease.ValidateSchema(WorldDatabaseSchema.Tables, WorldDatabaseSchema.Indexes);
+                lease.ValidateSchema(TablesFor(lease.SchemaVersion), WorldDatabaseSchema.Indexes);
                 using SqliteCommand foreignKeys = lease.CreateCommand("PRAGMA foreign_key_check");
                 using SqliteDataReader violations = foreignKeys.ExecuteReader();
                 if (violations.Read())
@@ -46,13 +51,16 @@ internal sealed class WorldDatabase : IDisposable
 
     internal SqliteTransaction BeginWrite() => _lease.BeginWrite();
     internal SqliteAuthorityDiagnostics Inspect() => _lease.Inspect();
+    internal int SchemaVersion => _lease.SchemaVersion;
+    internal void BackupToNewFile(string path) => _lease.BackupToNewFile(path);
+    internal void CheckpointForPublication() => _lease.CheckpointForPublication();
 
     internal void Initialize(byte[] genesis)
     {
         WorldStorageBinary.RequireBytes(genesis, MaximumStateByteLength, nameof(genesis));
         using SqliteTransaction transaction = BeginWrite();
         _lease.InitializeMetadata(transaction);
-        foreach (string definition in WorldDatabaseSchema.Tables.Values)
+        foreach (string definition in TablesFor(SchemaVersion).Values)
         {
             using SqliteCommand command = _lease.CreateCommand(definition, transaction);
             command.ExecuteNonQuery();
@@ -66,8 +74,15 @@ internal sealed class WorldDatabase : IDisposable
         WriteCheckpoint(new(0, 0, genesis), transaction);
         transaction.Commit();
         _lease.ValidateMetadata();
-        _lease.ValidateSchema(WorldDatabaseSchema.Tables, WorldDatabaseSchema.Indexes);
+        _lease.ValidateSchema(TablesFor(SchemaVersion), WorldDatabaseSchema.Indexes);
     }
+
+    private static IReadOnlyDictionary<string, string> TablesFor(int version) => version switch
+    {
+        WorldDatabaseSchema.Version => WorldDatabaseSchema.Tables,
+        WorldDatabaseSchemaThree.Version => WorldDatabaseSchemaThree.Tables,
+        _ => throw new InvalidDataException("The world database schema is unsupported.")
+    };
 
     internal byte[] ReadGenesis()
     {
