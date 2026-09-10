@@ -12,7 +12,7 @@ internal sealed class SqliteAuthorityDatabase : IDisposable
 {
     private const int ApplicationId = 0x4f464157;
     private const int SchemaVersion = 1;
-    private readonly SqliteConnection _connection;
+    private readonly SqliteConnectionLease _lease;
     private static readonly IReadOnlyDictionary<string, string> TableDefinitions = new Dictionary<string, string>
     {
         ["genesis"] = """
@@ -43,86 +43,33 @@ internal sealed class SqliteAuthorityDatabase : IDisposable
     };
 
 
-    static SqliteAuthorityDatabase() => SQLitePCL.Batteries_V2.Init();
-
-    private SqliteAuthorityDatabase(SqliteConnection connection) => _connection = connection;
+    private SqliteAuthorityDatabase(SqliteConnectionLease lease) => _lease = lease;
 
     internal static SqliteAuthorityDatabase Open(string path, bool create)
     {
-        ArgumentException.ThrowIfNullOrWhiteSpace(path);
-        string absolute = Path.GetFullPath(path);
-        if (create)
-        {
-            // Existing, corrupt and partially created worlds are never silently replaced.
-            using var created = new FileStream(absolute, FileMode.CreateNew, FileAccess.ReadWrite, FileShare.None);
-        }
-        else if (!File.Exists(absolute))
-        {
-            throw new FileNotFoundException("The world database does not exist.", absolute);
-        }
-
-        var connection = new SqliteConnection(new SqliteConnectionStringBuilder
-        {
-            DataSource = absolute, Mode = SqliteOpenMode.ReadWrite, Cache = SqliteCacheMode.Private,
-            Pooling = false, DefaultTimeout = 1
-        }.ToString());
+        SqliteConnectionLease lease = SqliteConnectionLease.Open(path, create, ApplicationId, SchemaVersion);
         try
         {
-            connection.Open();
-            var database = new SqliteAuthorityDatabase(connection);
+            var database = new SqliteAuthorityDatabase(lease);
             if (!create)
             {
-                if (Convert.ToInt64(database.Scalar("PRAGMA application_id")) != ApplicationId
-                    || Convert.ToInt64(database.Scalar("PRAGMA user_version")) != SchemaVersion)
-                {
-                    throw new InvalidDataException("The world database format is unsupported.");
-                }
-            }
-
-            database.Execute("PRAGMA locking_mode=EXCLUSIVE");
-            if (!string.Equals((string?)database.Scalar("PRAGMA journal_mode=WAL"), "wal", StringComparison.OrdinalIgnoreCase))
-            {
-                throw new InvalidDataException("The world requires SQLite WAL mode.");
-            }
-            database.Execute("PRAGMA synchronous=FULL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=1000");
-            using (SqliteTransaction ownership = database.BeginWrite())
-            {
-                ownership.Commit();
-            }
-            if (!create)
-            {
-                // Repeat metadata checks under lifetime ownership: admission cannot race another writer.
-                if (Convert.ToInt64(database.Scalar("PRAGMA application_id")) != ApplicationId
-                    || Convert.ToInt64(database.Scalar("PRAGMA user_version")) != SchemaVersion)
-                {
-                    throw new InvalidDataException("The world database format changed during admission.");
-                }
                 database.ValidateSchema();
-            }
-            if (!string.Equals((string?)database.Scalar("PRAGMA quick_check"), "ok", StringComparison.Ordinal))
-            {
-                throw new InvalidDataException("The world database failed its integrity check.");
-            }
-            Version native = Version.Parse((string)database.Scalar("SELECT sqlite_version()")!);
-            if (native < new Version(3, 51, 3))
-            {
-                throw new InvalidDataException("The loaded SQLite runtime predates the required WAL correction.");
             }
             return database;
         }
         catch
         {
-            connection.Dispose();
+            lease.Dispose();
             throw;
         }
     }
 
-    internal SqliteTransaction BeginWrite() => _connection.BeginTransaction(deferred: false);
+    internal SqliteTransaction BeginWrite() => _lease.BeginWrite();
 
     internal void Initialize(byte[] genesis)
     {
         using SqliteTransaction transaction = BeginWrite();
-        Execute($"PRAGMA application_id={ApplicationId}; PRAGMA user_version={SchemaVersion}", transaction);
+        _lease.InitializeMetadata(transaction);
         foreach (string definition in TableDefinitions.Values)
         {
             Execute(definition, transaction);
@@ -209,10 +156,7 @@ internal sealed class SqliteAuthorityDatabase : IDisposable
         ChangeExactlyOne("UPDATE world_head SET sequence=$sequence,state=$state,hash=$hash WHERE singleton=1", transaction,
             ("$sequence", Number(sequence)), ("$state", state), ("$hash", ContentHash.Compute(state).ToByteArray()));
 
-    internal SqliteAuthorityDiagnostics Inspect() => new(
-        (string)Scalar("SELECT sqlite_version()")!, (string)Scalar("SELECT sqlite_source_id()")!,
-        (string)Scalar("PRAGMA journal_mode")!, Convert.ToInt32(Scalar("PRAGMA synchronous")),
-        Convert.ToInt32(Scalar("PRAGMA foreign_keys")), (string)Scalar("PRAGMA locking_mode")!);
+    internal SqliteAuthorityDiagnostics Inspect() => _lease.Inspect();
 
     private static StoredAuthorityCommit ReadCommit(SqliteDataReader reader) => new(
         ReadNumber(reader, 0), EntityId.FromBytes(Blob(reader, 1, 16, 16)),
@@ -260,34 +204,7 @@ internal sealed class SqliteAuthorityDatabase : IDisposable
             ["sqlite_autoindex_command_journal_2"] = "command_journal",
             ["sqlite_autoindex_occupied_identity_1"] = "occupied_identity"
         };
-        int tableCount = 0;
-        int indexCount = 0;
-        using SqliteCommand command = Command("SELECT type,name,tbl_name,sql FROM sqlite_schema");
-        using SqliteDataReader reader = command.ExecuteReader();
-        while (reader.Read())
-        {
-            string type = reader.GetString(0);
-            string name = reader.GetString(1);
-            string table = reader.GetString(2);
-            if (type == "table" && table == name && TableDefinitions.TryGetValue(name, out string? definition)
-                && !reader.IsDBNull(3) && reader.GetString(3) == definition)
-            {
-                tableCount++;
-            }
-            else if (type == "index" && reader.IsDBNull(3)
-                && expectedIndexes.TryGetValue(name, out string? indexedTable) && indexedTable == table)
-            {
-                indexCount++;
-            }
-            else
-            {
-                throw new InvalidDataException("The world database schema has unexpected objects or definitions.");
-            }
-        }
-        if (tableCount != TableDefinitions.Count || indexCount != expectedIndexes.Count)
-        {
-            throw new InvalidDataException("The world database schema is incomplete.");
-        }
+        _lease.ValidateSchema(TableDefinitions, expectedIndexes);
     }
 
     private void ChangeExactlyOne(string sql, SqliteTransaction transaction, params (string Name, object Value)[] parameters)
@@ -299,17 +216,8 @@ internal sealed class SqliteAuthorityDatabase : IDisposable
         }
     }
 
-    private SqliteCommand Command(string sql, SqliteTransaction? transaction = null, params (string Name, object Value)[] parameters)
-    {
-        SqliteCommand command = _connection.CreateCommand();
-        command.CommandText = sql;
-        command.Transaction = transaction;
-        foreach (var parameter in parameters)
-        {
-            command.Parameters.AddWithValue(parameter.Name, parameter.Value);
-        }
-        return command;
-    }
+    private SqliteCommand Command(string sql, SqliteTransaction? transaction = null, params (string Name, object Value)[] parameters) =>
+        _lease.CreateCommand(sql, transaction, parameters);
 
     private object? Scalar(string sql, SqliteTransaction? transaction = null, params (string Name, object Value)[] parameters)
     {
@@ -323,7 +231,7 @@ internal sealed class SqliteAuthorityDatabase : IDisposable
         command.ExecuteNonQuery();
     }
 
-    public void Dispose() => _connection.Dispose();
+    public void Dispose() => _lease.Dispose();
 }
 
 internal sealed record StoredAuthorityHead(ulong Sequence, byte[] State);

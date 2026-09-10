@@ -1,0 +1,340 @@
+{
+  "schemaVersion": 1,
+  "id": "openfantasy.native-farm.admission",
+  "status": "bounded_native_farm_admission_not_complete_legacy_quest_import",
+  "packageManifest": "packages/aldermere-first-loop.manifest.json",
+  "packagePayloadSha256": "d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582",
+  "recordsSha256": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b",
+  "presentationSha256": "3b93d0672eb65d133669f81bf054f2878152bcd56b8ebe9229accf03a7f2025a",
+  "sourceRecords": [
+    {
+      "targetKey": "openfantasy.aldermere:npcs/farmer_wren",
+      "sourceIdentity": {
+        "path": "data/npcs.json",
+        "jsonPointer": "/npcs/116",
+        "inventoryId": "data/npcs.json#/npcs/116",
+        "payloadSha256": "f0374a9cd788d14de3c45233cf31c6b67904ed209a6a5f8d1a0b8de547dd1f30"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:regions/farm_verdance_small",
+      "sourceIdentity": {
+        "path": "data/world.json",
+        "jsonPointer": "/regions/18",
+        "inventoryId": "data/world.json#/regions/18",
+        "payloadSha256": "fc79c253de2d851941d669687dfb8253e79d37f17f74dfce4ce9023f75d7c884"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:items/wood",
+      "sourceIdentity": {
+        "path": "data/items.json",
+        "jsonPointer": "/items/12",
+        "inventoryId": "data/items.json#/items/12",
+        "payloadSha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d"
+      }
+    },
+    {
+      "targetKey": "openfantasy.aldermere:quests/wren_orchard",
+      "sourceIdentity": {
+        "path": "data/quests.json",
+        "jsonPointer": "/quests/44",
+        "inventoryId": "data/quests.json#/quests/44",
+        "payloadSha256": "bbb996bb2ca6ca4e27b942f7f40f9ea624813909e037ec86980ed8aaa4ab86cb"
+      }
+    }
+  ],
+  "place": {
+    "definitionKey": "places/farm_verdance_small",
+    "sourceRectangle": {
+      "x": 100,
+      "y": 320,
+      "width": 9,
+      "depth": 7
+    },
+    "sourceTileToCell": 1,
+    "sourceUnitToSubunits": 8
+  },
+  "terrain": {
+    "minimum": [
+      96,
+      320,
+      0
+    ],
+    "size": [
+      32,
+      32,
+      16
+    ],
+    "baseSurfaceZ": 0,
+    "relief": 0,
+    "soilDepth": 2,
+    "materials": [
+      {
+        "definitionKey": "materials/farm-surface",
+        "meaning": "authored solid farm surface substrate; no excavated yield admission"
+      },
+      {
+        "definitionKey": "materials/farm-soil",
+        "meaning": "authored soil substrate; no excavated yield admission"
+      },
+      {
+        "definitionKey": "materials/farm-stone",
+        "meaning": "authored stone substrate; no excavated yield admission"
+      }
+    ]
+  },
+  "body": {
+    "definitionKey": "bodies/native-humanoid",
+    "nature": 1,
+    "clearance": [
+      180,
+      140,
+      464
+    ],
+    "parts": [
+      {
+        "slot": "head",
+        "parent": "torso",
+        "dimensions": [
+          112,
+          110,
+          112
+        ],
+        "functions": []
+      },
+      {
+        "slot": "left-arm",
+        "parent": "torso",
+        "dimensions": [
+          28,
+          30,
+          160
+        ],
+        "functions": []
+      },
+      {
+        "slot": "left-ear",
+        "parent": "head",
+        "dimensions": [
+          18,
+          16,
+          30
+        ],
+        "functions": [
+          2
+        ]
+      },
+      {
+        "slot": "left-eye",
+        "parent": "head",
+        "dimensions": [
+          16,
+          16,
+          16
+        ],
+        "functions": [
+          1
+        ]
+      },
+      {
+        "slot": "left-foot",
+        "parent": "left-leg",
+        "dimensions": [
+          48,
+          96,
+          32
+        ],
+        "functions": [
+          4
+        ]
+      },
+      {
+        "slot": "left-hand",
+        "parent": "left-arm",
+        "dimensions": [
+          32,
+          24,
+          48
+        ],
+        "functions": [
+          3
+        ]
+      },
+      {
+        "slot": "left-leg",
+        "parent": "torso",
+        "dimensions": [
+          46,
+          44,
+          152
+        ],
+        "functions": []
+      },
+      {
+        "slot": "right-arm",
+        "parent": "torso",
+        "dimensions": [
+          28,
+          30,
+          160
+        ],
+        "functions": []
+      },
+      {
+        "slot": "right-ear",
+        "parent": "head",
+        "dimensions": [
+          18,
+          16,
+          30
+        ],
+        "functions": [
+          2
+        ]
+      },
+      {
+        "slot": "right-eye",
+        "parent": "head",
+        "dimensions": [
+          16,
+          16,
+          16
+        ],
+        "functions": [
+          1
+        ]
+      },
+      {
+        "slot": "right-foot",
+        "parent": "right-leg",
+        "dimensions": [
+          48,
+          96,
+          32
+        ],
+        "functions": [
+          4
+        ]
+      },
+      {
+        "slot": "right-hand",
+        "parent": "right-arm",
+        "dimensions": [
+          32,
+          24,
+          48
+        ],
+        "functions": [
+          3
+        ]
+      },
+      {
+        "slot": "right-leg",
+        "parent": "torso",
+        "dimensions": [
+          46,
+          44,
+          152
+        ],
+        "functions": []
+      },
+      {
+        "slot": "torso",
+        "parent": null,
+        "dimensions": [
+          180,
+          100,
+          200
+        ],
+        "functions": []
+      },
+      {
+        "slot": "voice",
+        "parent": "head",
+        "dimensions": [
+          24,
+          24,
+          32
+        ],
+        "functions": [
+          10
+        ]
+      }
+    ],
+    "locomotion": [
+      {
+        "mode": 1,
+        "minimumParts": 2
+      }
+    ],
+    "origin": "authored shared corporeal anatomy; no source stats or accepted art mapping"
+  },
+  "wood": {
+    "definitionKey": "items/wood",
+    "sourceTargetKey": "openfantasy.aldermere:items/wood",
+    "sourcePayloadSha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d",
+    "meaning": "one abstract counted wood unit; mass volume quality and source price have not been admitted"
+  },
+  "language": {
+    "languageKey": "languages/farm-common",
+    "registerKey": "registers/farm-ordinary",
+    "mode": 1,
+    "meaning": "authored common spoken channel for individually admitted residents; no species or culture fluency grant"
+  },
+  "comprehensionRules": {
+    "definitionKey": "rules/farm-comprehension",
+    "bands": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "missingBand": 0,
+    "modeFallback": false
+  },
+  "player": {
+    "tileX": 101,
+    "tileY": 325,
+    "feetZ": 256,
+    "wanderRadiusCells": 0,
+    "comprehensionBand": 2,
+    "initialWood": 8,
+    "storageUnitCapacity": 8,
+    "origin": "authored new player and finite genesis stock, not a source quest reward or terrain yield",
+    "controllerKind": 1,
+    "depositRule": 1
+  },
+  "wren": {
+    "sourceTargetKey": "openfantasy.aldermere:npcs/farmer_wren",
+    "feetZ": 256,
+    "comprehensionBand": 2,
+    "initialWood": 0,
+    "storageUnitCapacity": 8,
+    "openingUtteranceKey": "utterances/wren-opening",
+    "expressionScope": "only this explicitly admitted source opening utterance; no blanket expressive fluency",
+    "controllerKind": 2,
+    "depositRule": 2
+  },
+  "initialCalendar": {
+    "day": 0,
+    "millisecondsWithinDay": 32400000
+  },
+  "initialRevision": 0,
+  "initialAdvancingSteps": 0,
+  "initialExperiencedMilliseconds": 0,
+  "initialDialogues": [],
+  "deliveryProof": {
+    "count": 6,
+    "questTargetKey": "openfantasy.aldermere:quests/wren_orchard",
+    "status": "quantity_reference_only_no_quest_completion_reward_or_construction"
+  },
+  "pending": [
+    "full source farm geography and place rules",
+    "whole quest acceptance completion reward and windbreak",
+    "wood gathering renewal tools and production",
+    "source stat class skill and combat transforms",
+    "NPC cognition desires relationships and history",
+    "accepted final art animation choreography and sound"
+  ]
+}

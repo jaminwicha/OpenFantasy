@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "id": "openfantasy.native-farm.presentation",
+  "sourceNpc": {
+    "path": "data/npcs.json",
+    "jsonPointer": "/npcs/116",
+    "inventoryId": "data/npcs.json#/npcs/116",
+    "payloadSha256": "f0374a9cd788d14de3c45233cf31c6b67904ed209a6a5f8d1a0b8de547dd1f30"
+  },
+  "sourceAppearance": {
+    "race": 0,
+    "skin": 5,
+    "hairStyle": 5,
+    "hairColor": 13,
+    "outfit": 8,
+    "outfitA": 10,
+    "outfitB": 10,
+    "acc": 3
+  },
+  "sourceSprite": "",
+  "assets": [
+    {
+      "path": "legacy/aldermere-first-loop/assets/layers/body.png",
+      "sha256": "17a3af88e92baa615c9bb3f4d21e095767639458c655348a6b93080e82fe40e7"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/assets/layers/hair_05.png",
+      "sha256": "b636e8e6acd8c9282a73a09a5e3956baeeb5bf2ea6fcfc0528ad187db965dd5c"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/assets/layers/outfit_08_a.png",
+      "sha256": "bec72107f5dcbbacbc79b42266e2d603b6173d60f1d5c25f4f342f261796e52a"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/assets/layers/outfit_08_b.png",
+      "sha256": "90f50e5210177c981efdde1e816b867aa0be7c224192c9814338160ba4028817"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/assets/layers/acc_03.png",
+      "sha256": "0907b9dd49e4553eae718bb47f4f84e30c53637483570536016ed59055eb3048"
+    }
+  ],
+  "sourceSemantics": [
+    {
+      "path": "legacy/aldermere-first-loop/source-support/data/appearance.json",
+      "sha256": "3c9388eddd5a1343065f2e8d476f570a7cf0cf6c92998fedfdc0254df4761a9b"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/source-support/src/Client/SpriteComposer.cs.txt",
+      "sha256": "bd36d414e8c68a64d79b336dd9b3f0f87617da47e707e447bdabde37a10eebce"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/source-support/src/Sim/Appearance.cs.txt",
+      "sha256": "067b3152fbbafbdf6af98e0f823b930248f2ac67c605e3667b31f4d26e244fdb"
+    }
+  ],
+  "status": "retained_original_layers_and_palette_semantics_not_final_art_or_animation_acceptance",
+  "playerPresentation": "authored_graybox_pending_separate_artist_admission",
+  "terrainPresentation": "authored_graybox_pending_source_geography_and_separate_artist_admission"
+}

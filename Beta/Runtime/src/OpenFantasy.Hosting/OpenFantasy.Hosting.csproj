@@ -9,4 +9,7 @@
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" Version="3.0.5" />
     <PackageReference Include="SQLite" Version="3.53.4" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="../../content/**/*" LogicalName="OpenFantasy.Content/%(RecursiveDir)%(Filename)%(Extension)" WithCulture="false" />
+  </ItemGroup>
 </Project>
