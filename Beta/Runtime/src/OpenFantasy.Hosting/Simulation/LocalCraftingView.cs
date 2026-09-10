@@ -28,10 +28,11 @@ public sealed class LocalCraftRecipeView
 /// <summary>A concurrency token and admitted local recipes; the token grants no crafting authority.</summary>
 public sealed class LocalCraftingView
 {
-    internal LocalCraftingView(ProductionSnapshot production)
+    internal LocalCraftingView(ProductionSnapshot production, Func<EntityId, bool>? isConstructionRecipe = null)
     {
         Revision = production.Revision;
-        Recipes = Array.AsReadOnly(production.Recipes.Select(recipe => new LocalCraftRecipeView(recipe)).ToArray());
+        Recipes = Array.AsReadOnly(production.Recipes.Where(recipe => isConstructionRecipe?.Invoke(recipe.DefinitionId) != true)
+            .Select(recipe => new LocalCraftRecipeView(recipe)).ToArray());
     }
 
     public ulong Revision { get; }

@@ -57,7 +57,8 @@ public sealed class LocalWorldView
                     IngredientLotKind.Source, lot.Protection == LotProtection.None && lot.ReservedBy is null))
                 .Concat(state.Production?.Lots.Where(lot => lot.CustodianId == storage).Select(lot =>
                     new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity, IngredientLotKind.Transformed)) ?? []));
-        Crafting = state.Production is { } production ? new LocalCraftingView(production) : null;
+        Crafting = state.Production is { } production ? new LocalCraftingView(production, state.Construction is { } construction
+            ? construction.IsConstructionRecipe : null) : null;
         GatheringNodes = Array.AsReadOnly(state.Gathering is { } gathering
             ? gathering.Nodes.Where(node => node.VisibilityAt(state.AdvancingSteps) != GatherNodeVisibility.Absent)
                 .Select(node => new LocalGatherNodeView(node.NodeId, node.Definition.DisplayName, node.Feet,
@@ -87,6 +88,11 @@ public sealed class LocalWorldView
                 speaker.OpeningUtterance!.Text);
         }
         Quests = ProjectQuests(state, playerActorId, dialogue);
+        Construction = Array.AsReadOnly(state.Construction?.Projects.Where(project => project.IsCompleted
+                || state.Quests!.FindParticipation(playerActorId, project.QuestId) is not null)
+            .Select(project => new LocalConstructionView(project.ProjectId, project.BuilderActorId,
+                project.Definition.DisplayName, project.SiteFeet, project.WorkFeet, project.Progress.CompletedUnits,
+                project.Definition.RequiredWork.Value, project.IsCompleted)).ToArray() ?? []);
         if (state.Progression is { } progression)
         {
             var actor = progression.GetActor(playerActorId);
@@ -110,6 +116,7 @@ public sealed class LocalWorldView
     public LocalDialogueView? Dialogue { get; }
     public LocalProgressionView? Progression { get; }
     public ReadOnlyCollection<LocalQuestView> Quests { get; }
+    public ReadOnlyCollection<LocalConstructionView> Construction { get; }
 
     private ReadOnlyCollection<LocalQuestView> ProjectQuests(WorldSnapshot world, EntityId actorId, DialogueSession? dialogue)
     {

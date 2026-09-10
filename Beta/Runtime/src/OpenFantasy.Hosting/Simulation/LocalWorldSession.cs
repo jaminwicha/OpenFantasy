@@ -2,6 +2,7 @@ using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Worlds;
 
@@ -125,6 +126,10 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This saved profile does not support quest actions.");
             }
+            if (command.Intent is WorkConstructionIntent && _authority.ReadStateForHost().ProfileVersion < 5)
+            {
+                throw new AuthorityDispatchException("This saved profile does not support construction work.");
+            }
             lock (_inputs)
             {
                 EnsureInputAvailable();
@@ -234,18 +239,10 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 movement.AddRange(_npcs.SelectMovement(state));
                 if (x != 0 || y != 0) { movement.Add(new WorldMovementInput(_delivery, _playerActorId, x, y)); }
             }
-            WorldStepBatch batch = SelectBatch(state, pending, movement);
-            if (pending is not null)
+            WorldStepBatch? batch = SelectAdmissibleBatch(state, ref pending, movement);
+            if (batch is null)
             {
-                try { _authority.Preview(batch); }
-                catch (AuthorityDispatchException rejected)
-                {
-                    CompletePending(pending, null, rejected);
-                    pending = null;
-                    if (state.HasReadingHold) { return; }
-                    // A bad selected request cannot hold up unrelated actors or the normal clock step.
-                    batch = SelectBatch(state, null, movement);
-                }
+                return;
             }
             WorldStepDecision decision = _authority.Commit(batch);
             Volatile.Write(ref _view, new LocalWorldView(decision.Candidate, _playerActorId));
@@ -258,13 +255,73 @@ public sealed class LocalWorldSession : IAsyncDisposable
         finally { _serialization.Release(); }
     }
 
+    private WorldStepBatch? SelectAdmissibleBatch(WorldSnapshot state, ref PendingLocalAction? pending,
+        IReadOnlyList<WorldMovementInput> movement)
+    {
+        WorldStepBatch batch = SelectBatch(state, pending, movement, includeNpcActions: true);
+        try
+        {
+            if (batch.Actions.Count != 0)
+            {
+                _authority.Preview(batch);
+            }
+            return batch;
+        }
+        catch (AuthorityDispatchException)
+        {
+            // A conflicting NPC proposal must not reject a valid player request.
+            batch = SelectBatch(state, pending, movement, includeNpcActions: false);
+        }
+        try
+        {
+            if (pending is not null)
+            {
+                _authority.Preview(batch);
+            }
+            return batch;
+        }
+        catch (AuthorityDispatchException rejected)
+        {
+            if (pending is null)
+            {
+                throw;
+            }
+            CompletePending(pending, null, rejected);
+            pending = null;
+            return state.HasReadingHold ? null : SelectBatch(state, null, movement, includeNpcActions: false);
+        }
+    }
+
     private WorldStepBatch SelectBatch(WorldSnapshot state, PendingLocalAction? pending,
-        IEnumerable<WorldMovementInput> movement)
+        IEnumerable<WorldMovementInput> movement, bool includeNpcActions)
     {
         EntityId cause = NewCause(pending?.Command.CommandId);
+        List<WorldActionCommand> actions = pending is null ? [] : [pending.Command];
+        if (includeNpcActions && !state.HasReadingHold)
+        {
+            HashSet<EntityId> selected = [cause];
+            if (pending is not null)
+            {
+                selected.Add(pending.Command.CommandId);
+            }
+            actions.AddRange(_npcs.SelectActions(state, () => AllocateSelectedIdentity(selected)));
+        }
         return new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision, state.AdvancingSteps,
             state.HasReadingHold ? WorldBatchKind.HeldInteraction : WorldBatchKind.AdvancingStep,
-            movement, pending is null ? [] : [pending.Command], state.ProfileVersion);
+            movement, actions, state.ProfileVersion);
+    }
+
+    private EntityId AllocateSelectedIdentity(HashSet<EntityId> selected)
+    {
+        for (int attempt = 0; attempt < 16; attempt++)
+        {
+            EntityId identity = NewCause(null);
+            if (selected.Add(identity))
+            {
+                return identity;
+            }
+        }
+        throw new InvalidOperationException("The host could not allocate a distinct actor action identity.");
     }
 
     private EntityId NewCause(EntityId? commandId)

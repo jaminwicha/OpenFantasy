@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Worlds;
 
@@ -13,6 +14,7 @@ public sealed class LocalNpcController
 {
     public const string PolicyVersion = "local.home-amble.v1";
     private static readonly byte[] Domain = Encoding.ASCII.GetBytes(PolicyVersion);
+    private readonly LocalConstructionController _construction = new();
     public IReadOnlyList<WorldMovementInput> SelectMovement(WorldSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
@@ -23,7 +25,29 @@ public sealed class LocalNpcController
         }
         foreach (WorldResident resident in state.Residents)
         {
-            if (resident.ControllerKind != ResidentControllerKind.Host || resident.WanderRadiusCells == 0)
+            if (resident.ControllerKind != ResidentControllerKind.Host)
+            {
+                continue;
+            }
+            if (_construction.FindCommitment(state, resident.ActorId) is { } project)
+            {
+                WorldMovementInput? workApproach = _construction.SelectMovement(state, project);
+                if (workApproach is not null)
+                {
+                    inputs.Add(workApproach);
+                }
+                continue;
+            }
+            if (_construction.NeedsReturnHome(state, resident))
+            {
+                WorldMovementInput? returnHome = _construction.SelectReturnHome(state, resident);
+                if (returnHome is not null)
+                {
+                    inputs.Add(returnHome);
+                }
+                continue;
+            }
+            if (resident.WanderRadiusCells == 0)
             {
                 continue;
             }
@@ -51,6 +75,29 @@ public sealed class LocalNpcController
                 resident.ActorId, x, y));
         }
         return inputs.AsReadOnly();
+    }
+
+    internal IReadOnlyList<WorldActionCommand> SelectActions(WorldSnapshot state, Func<EntityId> newIdentity)
+    {
+        List<WorldActionCommand> actions = [];
+        if (state.HasReadingHold || state.Construction is null)
+        {
+            return actions.AsReadOnly();
+        }
+        foreach (WorldResident resident in state.Residents)
+        {
+            if (resident.ControllerKind != ResidentControllerKind.Host
+                || _construction.FindCommitment(state, resident.ActorId) is not { } project)
+            {
+                continue;
+            }
+            WorldActionCommand? action = _construction.SelectWork(state, project, newIdentity);
+            if (action is not null)
+            {
+                actions.Add(action);
+            }
+        }
+        return actions.AsReadOnly();
     }
 
     private static int Direction(EntityId worldId, EntityId actorId, ulong cycle)

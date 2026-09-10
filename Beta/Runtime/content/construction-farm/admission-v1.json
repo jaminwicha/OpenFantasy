@@ -1,0 +1,245 @@
+{
+  "schemaVersion": 1,
+  "id": "openfantasy.construction-farm.admission",
+  "questAdmissionSha256": "261e86948438c7bd8ad34e001c918c40053acedf82041a3f89909a54db095918",
+  "requiresWorldProfile": 4,
+  "sourceWitnesses": [
+    {
+      "path": "legacy/aldermere-first-loop/source-support/data/world.json",
+      "sha256": "9f46be269ea80ddeef908d9a8305b70bf26a8ca11a544bed32c640fbfee7668d"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/source-support/data/items.json",
+      "sha256": "ac0944b98fbfc10474ae1d1309bd7ad6b74c511fb2da9c314ab41f6c8a655609"
+    },
+    {
+      "path": "construction-farm/source-support/WorldRenderer.cs.txt",
+      "sha256": "acd3966b121e8a3faf37bf6a1739080bd633107d84711b3fa393632f412dfd95"
+    },
+    {
+      "path": "legacy/aldermere-first-loop/assets/tiles.png",
+      "sha256": "401e2d79a74e8c82ae273a4c9a1e6bf1f2e400ea13f4252f622b559befcb1a0d"
+    }
+  ],
+  "sourceFarm": {
+    "id": "farm_verdance_small",
+    "jsonPointer": "/regions/18",
+    "payloadSha256": "fc79c253de2d851941d669687dfb8253e79d37f17f74dfce4ce9023f75d7c884",
+    "rectangle": [
+      100,
+      320,
+      9,
+      7
+    ]
+  },
+  "tool": {
+    "definitionKey": "items/joinery-kit",
+    "displayName": "Joinery Kit",
+    "origin": "Authored finite kit; no original joinery tool or Wren possession is claimed.",
+    "sourceCapacity": 1,
+    "initialQuantity": 1,
+    "sourceRole": "construction.joinery-source",
+    "lotRole": "construction.joinery-lot",
+    "qualificationKey": "tools/cross-slot-joinery",
+    "operation": 1,
+    "storageCapacityIncrease": 1,
+    "capacityMeaning": "One extra counted carrying allowance for the admitted kit; retained Wren bag capacity plus one, no physical bag volume claim."
+  },
+  "installedItem": {
+    "definitionKey": "items/sapling-guard",
+    "displayName": "Small sapling guard",
+    "meaning": "One freestanding cross-slotted wooden guard, installed at the exact admitted site. No whole-orchard wind protection is implemented."
+  },
+  "physicalPackage": "openfantasy.construction-farm",
+  "installedMaterial": {
+    "definitionKey": "physical/sapling-guard",
+    "key": "sapling_guard",
+    "massMilligrams": 270000,
+    "volumeMicrolitres": 540000,
+    "hardness": 8
+  },
+  "materialTransform": {
+    "definitionKey": "recipes/assemble-sapling-guard",
+    "physicalDefinitionKey": "physical-recipes/assemble-sapling-guard",
+    "key": "assemble_sapling_guard",
+    "inputWoodCount": 6,
+    "installedOutputCount": 1,
+    "offcutOutputCount": 3,
+    "requiredWork": 1,
+    "allocations": [
+      {
+        "outputIndex": 0,
+        "massPerOutputUnitMilligrams": 270000
+      },
+      {
+        "outputIndex": 1,
+        "massPerOutputUnitMilligrams": 10000
+      }
+    ],
+    "interpretation": "Authored usable joinery blank stock: the existing six calibrated wood units permit cutting the admitted parts. Source gathering does not encode blank dimensions. Material counts and pins are unchanged."
+  },
+  "construction": {
+    "definitionKey": "construction/small-sapling-guard",
+    "key": "small_sapling_guard",
+    "displayName": "Small sapling guard",
+    "projectRole": "construction.wren-guard-project",
+    "workUnitKey": "work/qualified-joinery",
+    "requiredWork": 200,
+    "millisecondsPerWorkUnit": 1800,
+    "stockInterpretation": 1,
+    "stockLocation": 1,
+    "siteSubunits": [
+      27213,
+      83072,
+      256
+    ],
+    "workSubunits": [
+      27264,
+      83328,
+      256
+    ],
+    "sourceSiteCell": [
+      106,
+      324
+    ],
+    "sourceWorkCell": [
+      106,
+      325
+    ],
+    "exitCells": [
+      [
+        104,
+        327
+      ],
+      [
+        105,
+        327
+      ]
+    ],
+    "gateCells": [
+      [
+        104,
+        326
+      ],
+      [
+        105,
+        326
+      ]
+    ],
+    "membersMillimetres": [
+      [
+        0,
+        0,
+        10,
+        400,
+        5,
+        246
+      ],
+      [
+        0,
+        0,
+        0,
+        75,
+        5,
+        10
+      ],
+      [
+        85,
+        0,
+        0,
+        315,
+        5,
+        10
+      ],
+      [
+        325,
+        0,
+        0,
+        400,
+        5,
+        10
+      ],
+      [
+        75,
+        -60,
+        0,
+        85,
+        65,
+        10
+      ],
+      [
+        75,
+        -60,
+        10,
+        85,
+        0,
+        20
+      ],
+      [
+        75,
+        5,
+        10,
+        85,
+        65,
+        20
+      ],
+      [
+        315,
+        -60,
+        0,
+        325,
+        65,
+        10
+      ],
+      [
+        315,
+        -60,
+        10,
+        325,
+        0,
+        20
+      ],
+      [
+        315,
+        5,
+        10,
+        325,
+        65,
+        20
+      ]
+    ],
+    "accessMeaning": "Builder from work anchor to each outside gate; player from each original gate cell to its corresponding outside cell. The player witness does not start inside the working builder."
+  },
+  "presentation": {
+    "status": "provisional_original_atlas_motif_no_final_art_acceptance",
+    "atlas": "legacy/aldermere-first-loop/assets/tiles.png",
+    "sourceLogicalTile": 24,
+    "sourceRectanglePixels": [
+      49,
+      84,
+      13,
+      8
+    ],
+    "atlasPixels": [
+      256,
+      144
+    ],
+    "rendererSource": "src/Client/WorldRenderer.cs",
+    "rendererArchiveSha256": "80eafd96e2b421db38050831ebd02a89cc5379fc6c16ec792b9ed96e3071452b",
+    "scaleMeaning": "Physical 400mm panel width is about13 logical display pixels at32 pixels/metre; presentation never supplies collision bounds.",
+    "resource": "res://assets/construction-farm/seedling_guard.tres",
+    "drawOffsetPixels": [
+      0,
+      -8
+    ],
+    "alternativeRejected": "Fence tile26 includes opaque grass; selected native board subregion avoids an invented green backing."
+  },
+  "preserved": "Existing world identity, time, actor positions, terrain, quest completion and paid rewards, raw claims, production batches and output rights. Only one finite authored kit and new construction definitions/project are admitted.",
+  "pending": [
+    "full orchard windbreak and protection",
+    "structural stress and wind forces",
+    "tool wear and repair",
+    "full board-shape inventory and milling",
+    "accepted art and construction choreography"
+  ]
+}

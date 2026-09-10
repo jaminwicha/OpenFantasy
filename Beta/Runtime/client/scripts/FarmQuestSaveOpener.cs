@@ -69,7 +69,7 @@ internal static class FarmQuestSaveOpener
         }
     }
 
-    private static WorldSnapshot CreateGenesis(WorldSnapshot production)
+    internal static WorldSnapshot CreateGenesis(WorldSnapshot production)
     {
         QuestFarmComponents content = QuestFarmAdmission.CreateQuests(production);
         return new WorldSnapshot(content.Inventory, production.Space, production.Residents,
@@ -78,7 +78,7 @@ internal static class FarmQuestSaveOpener
             content.Progression, content.Quests);
     }
 
-    private static void RequireDistinct(string destination, string? source)
+    internal static void RequireDistinct(string destination, string? source)
     {
         if (source is not null && Path.GetFullPath(destination) == Path.GetFullPath(source))
         {
@@ -86,7 +86,7 @@ internal static class FarmQuestSaveOpener
         }
     }
 
-    private static void RequireCompleteSource(string? path)
+    internal static void RequireCompleteSource(string? path)
     {
         if (path is null || File.Exists(path))
         {

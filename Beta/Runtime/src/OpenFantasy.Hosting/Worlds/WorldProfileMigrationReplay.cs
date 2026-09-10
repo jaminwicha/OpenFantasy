@@ -5,11 +5,12 @@ using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting.Worlds;
 
-/// <summary>Closed dispatch for the two retained migration frames. A failed decoder never selects another interpreter.</summary>
+/// <summary>Closed dispatch for the retained migration frames. A failed decoder never selects another interpreter.</summary>
 internal sealed class WorldProfileMigrationReplay
 {
     private readonly WorldMigrationPreparation _production = new();
     private readonly WorldQuestMigrationPreparation _quests = new();
+    private readonly WorldConstructionMigrationPreparation _construction = new();
 
     internal ExpectedJournalEntry Prepare(StoredWorldCommit stored, WorldSnapshot state,
         WorldIdentityIndex genesisIdentities, ContentHash stateHash, Func<EntityId, bool> historicallyOccupied)
@@ -26,6 +27,13 @@ internal sealed class WorldProfileMigrationReplay
         {
             WorldQuestMigration request = WorldQuestMigrationCodecV1.Decode(stored.AcceptedBatch);
             PreparedWorldQuestMigration expected = _quests.Prepare(state, genesisIdentities,
+                stateHash, request, historicallyOccupied);
+            return new(expected.Decision.Candidate, expected.CandidateBytes, expected.Stored, [], expected.Identities);
+        }
+        if (tag.SequenceEqual("world.construction-migration"u8))
+        {
+            WorldConstructionMigration request = WorldConstructionMigrationCodecV1.Decode(stored.AcceptedBatch);
+            PreparedWorldConstructionMigration expected = _construction.Prepare(state, genesisIdentities,
                 stateHash, request, historicallyOccupied);
             return new(expected.Decision.Candidate, expected.CandidateBytes, expected.Stored, [], expected.Identities);
         }

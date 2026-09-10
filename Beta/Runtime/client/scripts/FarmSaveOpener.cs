@@ -11,9 +11,19 @@ namespace OpenFantasy.Client;
 internal static class FarmSaveOpener
 {
     internal static SqliteWorldAuthority Open(string savePath, WorldSnapshot gatheringGenesis,
-        bool productionProfile, string? upgradeSourcePath, bool questProfile = false, string? gatheringUpgradeSourcePath = null)
+        bool productionProfile, string? upgradeSourcePath, bool questProfile = false, string? gatheringUpgradeSourcePath = null,
+        bool constructionProfile = false, string? productionUpgradeSourcePath = null)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        if (constructionProfile)
+        {
+            if (!productionProfile || !questProfile)
+            {
+                throw new ArgumentException("Construction requires the retained quest and production profiles.");
+            }
+            return FarmConstructionSaveOpener.Open(savePath, gatheringGenesis, upgradeSourcePath,
+                productionUpgradeSourcePath, gatheringUpgradeSourcePath);
+        }
         if (questProfile)
         {
             if (!productionProfile)

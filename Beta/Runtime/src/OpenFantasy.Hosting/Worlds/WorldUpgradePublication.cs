@@ -2,7 +2,7 @@ using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting.Worlds;
 
-/// <summary>Shared file ownership, backup verification and publication for the two explicit save upgrades.</summary>
+/// <summary>Shared file ownership, backup verification and publication for the explicit save upgrades.</summary>
 internal sealed class WorldUpgradePublication
 {
     private string? _stagingDirectory;
@@ -26,7 +26,7 @@ internal sealed class WorldUpgradePublication
 
     internal string CreateStagingCopy(WorldDatabase original, string profile)
     {
-        if (_stagingPath is not null || profile is not "production" and not "quest")
+        if (_stagingPath is not null || profile is not "production" and not "quest" and not "construction")
         {
             throw new InvalidOperationException("This publication requires one explicitly selected staging copy.");
         }

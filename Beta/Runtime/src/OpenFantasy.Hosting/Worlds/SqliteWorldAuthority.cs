@@ -41,7 +41,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         byte[] bytes = WorldSnapshotCodec.Encode(genesis);
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         WorldDatabase database = WorldDatabase.Open(path, create: true,
-            accepted.ProfileVersion is 3 or 4 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
+            accepted.ProfileVersion is 3 or 4 or 5 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
         try
         {
             database.Initialize(bytes);
@@ -94,6 +94,20 @@ public sealed class SqliteWorldAuthority : IDisposable
         WorldQuestMigration request, Action<WorldQuestUpgradeBoundary>? fault)
     {
         new WorldQuestUpgrade().Publish(sourcePath, destinationPath, request, fault);
+        return OpenExisting(destinationPath);
+    }
+
+    /// <summary>
+    /// Copies an exact quest save and admits construction definitions, a finite tool and an unstarted
+    /// project. Existing progress and rewards remain in the original and its verified continuation.
+    /// </summary>
+    public static SqliteWorldAuthority UpgradeQuestsToConstruction(string sourcePath, string destinationPath,
+        WorldConstructionMigration request) => UpgradeQuestsToConstruction(sourcePath, destinationPath, request, null);
+
+    internal static SqliteWorldAuthority UpgradeQuestsToConstruction(string sourcePath, string destinationPath,
+        WorldConstructionMigration request, Action<WorldConstructionUpgradeBoundary>? fault)
+    {
+        new WorldConstructionUpgrade().Publish(sourcePath, destinationPath, request, fault);
         return OpenExisting(destinationPath);
     }
 
