@@ -31,12 +31,13 @@ internal sealed class FarmClientSession : IAsyncDisposable
 
     internal static Task<FarmClientSession> OpenAsync(string savePath, string seedText, string playerName,
         bool gatheringProfile, bool productionProfile = false, string? upgradeSourcePath = null,
-        bool questProfile = false, string? gatheringUpgradeSourcePath = null) => Task.Run(() =>
+        bool questProfile = false, string? gatheringUpgradeSourcePath = null,
+        bool constructionProfile = false, string? productionUpgradeSourcePath = null) => Task.Run(() =>
     {
         WorldSnapshot genesis = gatheringProfile ? GatheringFarmAdmission.CreateEmbedded(seedText, playerName)
             : FarmWorldAdmission.CreateEmbedded(seedText, playerName);
         SqliteWorldAuthority authority = FarmSaveOpener.Open(savePath, genesis, productionProfile, upgradeSourcePath,
-            questProfile, gatheringUpgradeSourcePath);
+            questProfile, gatheringUpgradeSourcePath, constructionProfile, productionUpgradeSourcePath);
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;

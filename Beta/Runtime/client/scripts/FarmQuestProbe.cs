@@ -16,7 +16,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
 {
     private enum Stage
     {
-        Opening, Recovering, Resuming, Harvesting, Crafting, Approaching, Talking,
+        Opening, Recovering, Resuming, OutsideQuestContext, Harvesting, Crafting, Approaching, Talking,
         ReadingOffer, Accepting, Completing, Repeating, ClosingDialogue, Moving, Settling, Paused, Done
     }
 
@@ -32,6 +32,13 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
     private string? _held;
     private string? _reading;
     private string? _beforeRepeat;
+    private string? _outsideQuestBefore;
+    private string? _outsideQuestAfter;
+    private string? _outsideQuestInvariant;
+    private bool _outsidePendingAfterInput;
+    private bool _outsidePendingAfterObservation;
+    private long _outsideQuestMilliseconds;
+    private int _outsideQuestSamples;
     private EntityId _berry;
     private EntityId _wood;
     private EntityId _berryItem;
@@ -64,6 +71,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
                 case Stage.Opening: Opened(view); break;
                 case Stage.Recovering: ObserveRecovery(view); break;
                 case Stage.Resuming: ResumeInput(view); break;
+                case Stage.OutsideQuestContext: ObserveOutsideQuestContext(view); break;
                 case Stage.Harvesting: Harvest(view); break;
                 case Stage.Crafting: ObserveCraft(view); break;
                 case Stage.Approaching: ApproachWren(view); break;
@@ -110,7 +118,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
 
     private void Opened(LocalWorldView view)
     {
-        Require(mode is "prepare" or "upgrade" or "reopen", "Unknown native quest mode.");
+        Require(mode is "prepare" or "upgrade" or "reopen" or "fresh", "Unknown native quest mode.");
         Require(view.Crafting is not null && view.GatheringTools.Count == 2, "The retained production toolkit is missing.");
         LocalCraftRecipeView recipe = FarmCrafting.RationsRecipe(view)
             ?? throw new InvalidOperationException("The source ration recipe is missing.");
@@ -119,6 +127,16 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         _berry = view.GatheringNodes.Single(node => node.Kind == GatherNodeKind.Berry).NodeId;
         _wren = view.Actors.Single(actor => actor.ActorId != view.PlayerActorId).ActorId;
         _initial = Snapshot(view);
+        if (mode == "fresh")
+        {
+            Require(game.IsLocallyPaused && view.Progression is { Level: 1, Experience: 0, CurrencyBalance: 0 }
+                && view.Quests.Count == 0 && view.Construction.Count == 0 && view.Crafting!.Revision == 0
+                && view.PlayerInventory.Quantity == 10 && Quantity(view, _wood) == 8,
+                "Fresh construction preparation requires untouched progression, stock and initially undisclosed quests/projects.");
+            _checks.Add("A fresh construction world started paused with initial stock and no premature reward or disclosed project.");
+            Enter(Stage.Recovering);
+            return;
+        }
         if (mode == "prepare")
         {
             Require(view.Progression is null && view.Quests.Count == 0 && view.Crafting!.Revision == 0
@@ -178,10 +196,35 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
             Press("give_wood");
             Enter(Stage.Repeating);
         }
+        else if (mode == "fresh")
+        {
+            Require(view.Dialogue is null && !view.HasReadingHold, "The early G attempt requires no addressed conversation.");
+            _outsideQuestBefore = Snapshot(view);
+            _outsideQuestInvariant = QuestActionSnapshot(view);
+            Enter(Stage.OutsideQuestContext);
+            Press("give_wood");
+            _outsidePendingAfterInput = game.HasPendingAction;
+            Require(!_outsidePendingAfterInput, "Early G queued an action before the player spoke to Wren.");
+        }
         else
         {
             Enter(mode == "prepare" ? Stage.Harvesting : Stage.Approaching);
         }
+    }
+
+    private void ObserveOutsideQuestContext(LocalWorldView view)
+    {
+        _outsideQuestSamples++;
+        Require(!game.HasPendingAction && view.Dialogue is null && !view.HasReadingHold,
+            "Early G created a pending action or changed the unaddressed conversation state.");
+        Require(QuestActionSnapshot(view) == _outsideQuestInvariant,
+            "Early G consumed player stock or changed quest/progression state before speaking to Wren.");
+        if (_stageTime.ElapsedMilliseconds < 300 || _outsideQuestSamples < 2 || !ReadyForInput) return;
+        _outsideQuestMilliseconds = _stageTime.ElapsedMilliseconds;
+        _outsideQuestAfter = Snapshot(view);
+        _outsidePendingAfterObservation = game.HasPendingAction;
+        _checks.Add("Ordinary G before conversation queued no action and preserved all player stock, quest and progression fields for at least 300 ms.");
+        Enter(Stage.Harvesting);
     }
 
     private void Harvest(LocalWorldView view)
@@ -238,7 +281,8 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
             && FarmCrafting.Quantity(view, RecipeMaterialRole.Output) == 2
             && FarmCrafting.Quantity(view, RecipeMaterialRole.Waste) == 1, "The real ration craft lost its input/output accounting.");
         _checks.Add("One craft consumed two berries and one wood; seven wood, two rations, one offcut and both tools remain.");
-        BeginPause();
+        if (mode == "fresh") Enter(Stage.Approaching);
+        else BeginPause();
     }
 
     private void ApproachWren(LocalWorldView view)
@@ -249,7 +293,8 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         }
         if (Approach(Player(view).Feet, view.Actors.Single(actor => actor.ActorId == _wren).Feet, 600))
         {
-            _checks.Add("Ordinary movement approached Wren after reopening the crafted world.");
+            _checks.Add(mode == "fresh" ? "Ordinary movement approached Wren after gathering and crafting in the fresh world."
+                : "Ordinary movement approached Wren after reopening the crafted world.");
             Press("talk");
             Enter(Stage.Talking);
         }
@@ -486,7 +531,21 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         CraftingRevision = view.Crafting?.Revision
     });
 
-    private static string Snapshot(LocalWorldView view) => JsonSerializer.Serialize(new
+    private static string QuestActionSnapshot(LocalWorldView view)
+    {
+        using JsonDocument snapshot = JsonDocument.Parse(Snapshot(view));
+        JsonElement root = snapshot.RootElement;
+        JsonElement retained = root.GetProperty("Retained");
+        return JsonSerializer.Serialize(new
+        {
+            Quantity = retained.GetProperty("Quantity"), Custodian = retained.GetProperty("Custodian"),
+            StorageRevision = retained.GetProperty("StorageRevision"), Lots = retained.GetProperty("Lots"),
+            Tools = retained.GetProperty("Tools"), CraftingRevision = retained.GetProperty("CraftingRevision"),
+            Progression = root.GetProperty("Progression"), Quests = root.GetProperty("Quests")
+        });
+    }
+
+    internal static string Snapshot(LocalWorldView view) => JsonSerializer.Serialize(new
     {
         Retained = new
         {
@@ -513,19 +572,37 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
 
     private void Finish(LocalWorldView view)
     {
+        if (mode == "fresh")
+        {
+            Require(view.HasReadingHold && view.Construction is [{ CompletedWork: 0, IsCompleted: false }],
+                "The completed fresh quest must retain its real reading hold and exactly zero construction work.");
+            _checks.Add("Fresh-world crafting, acceptance and delivery completed with a real held conversation and no premature construction.");
+        }
         if (DisplayServer.GetName() != "headless")
         {
             using Image image = GetViewport().GetTexture().GetImage();
             Require(image.SavePng(Output(mode, "png")) == Error.Ok, "Native quest capture failed.");
         }
-        File.WriteAllText(Output(mode, "json"), JsonSerializer.Serialize(new
+        string report = JsonSerializer.Serialize(new
         {
             Kind = "native-farm-quests-v1", Mode = mode, Status = "passed", Runtime = RuntimeInformation.FrameworkDescription,
             DisplayDriver = DisplayServer.GetName(), Initial = _initial, Final = Snapshot(view),
             WoodDefinition = _wood.ToString(), BerryDefinition = _berryItem.ToString(), Checks = _checks,
             Inputs = _inputs, Readiness = _readiness, FocusRequests = _focusRequests,
             game.IsLocallyPaused, game.IsWindowFocused, DurationMilliseconds = _timeout.ElapsedMilliseconds
-        }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
+        }, new JsonSerializerOptions { WriteIndented = true });
+        if (mode == "fresh")
+        {
+            var expanded = System.Text.Json.Nodes.JsonNode.Parse(report)!;
+            expanded["OutsideQuestAction"] = JsonSerializer.SerializeToNode(new
+            {
+                Before = _outsideQuestBefore, After = _outsideQuestAfter, ObservationMilliseconds = _outsideQuestMilliseconds,
+                Samples = _outsideQuestSamples, HasPendingActionAfterInput = _outsidePendingAfterInput,
+                HasPendingActionAfterObservation = _outsidePendingAfterObservation
+            });
+            report = expanded.ToJsonString(new JsonSerializerOptions { WriteIndented = true });
+        }
+        File.WriteAllText(Output(mode, "json"), report + "\n");
         _stage = Stage.Done;
         GD.Print("Native quests passed: " + Output(mode, "json"));
         game.RequestClose();

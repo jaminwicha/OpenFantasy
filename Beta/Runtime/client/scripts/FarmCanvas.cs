@@ -9,6 +9,7 @@ public partial class FarmCanvas : Node2D
 {
     private readonly Dictionary<EntityId, FarmActorView> _actors = [];
     private readonly Dictionary<EntityId, FarmGatherNodeView> _gatheringNodes = [];
+    private readonly Dictionary<EntityId, FarmStructureView> _structures = [];
     private FarmCanvasFrame? _frame;
     private FarmVisualAssets _assets = null!;
     private Node2D _actorLayer = null!;
@@ -72,6 +73,28 @@ public partial class FarmCanvas : Node2D
             }
         }
         PresentGatheringNodes(frame);
+        PresentStructures(frame);
+    }
+
+    private void PresentStructures(FarmCanvasFrame frame)
+    {
+        HashSet<EntityId> included = frame.Structures.Select(value => value.ProjectId).ToHashSet();
+        foreach (EntityId identity in _structures.Keys.Where(identity => !included.Contains(identity)).ToArray())
+        {
+            _structures[identity].QueueFree();
+            _structures.Remove(identity);
+        }
+        foreach (FarmStructureFrame structure in frame.Structures)
+        {
+            if (!_structures.TryGetValue(structure.ProjectId, out FarmStructureView? view))
+            {
+                view = GD.Load<PackedScene>("res://scenes/FarmStructureView.tscn").Instantiate<FarmStructureView>();
+                view.Name = "Structure_" + structure.ProjectId;
+                _actorLayer.AddChild(view);
+                _structures.Add(structure.ProjectId, view);
+            }
+            view.Present(structure);
+        }
     }
 
     private void PresentGatheringNodes(FarmCanvasFrame frame)

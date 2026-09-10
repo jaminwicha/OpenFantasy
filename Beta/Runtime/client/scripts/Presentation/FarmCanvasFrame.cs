@@ -10,6 +10,9 @@ namespace OpenFantasy.Client.Presentation;
 public sealed record FarmGatherNodeFrame(EntityId NodeId, string DisplayName, SubunitPosition Feet,
     GatherToolKind RequiredToolKind, GatherNodeVisibility Visibility);
 
+/// <summary>Visible completed geometry; no unfinished project is presented as installed material.</summary>
+public sealed record FarmStructureFrame(EntityId ProjectId, string DisplayName, SubunitPosition Feet);
+
 public enum FarmSpriteKind
 {
     Wren = 1,
@@ -50,7 +53,7 @@ public sealed class FarmCanvasFrame
     public const int MaximumActors = 64;
 
     public FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors,
-        IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null)
+        IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null, IEnumerable<FarmStructureFrame>? structures = null)
     {
         ArgumentNullException.ThrowIfNull(actors);
         var selected = new SortedDictionary<EntityId, FarmActorFrame>();
@@ -82,9 +85,24 @@ public sealed class FarmCanvasFrame
             }
         }
         GatheringNodes = Array.AsReadOnly(nodes.Values.ToArray());
+        var installed = new SortedDictionary<EntityId, FarmStructureFrame>();
+        foreach (FarmStructureFrame structure in structures ?? [])
+        {
+            ArgumentNullException.ThrowIfNull(structure);
+            FarmCanvasCoordinates.Validate(structure.Feet);
+            if (installed.Count == 32 || !installed.TryAdd(structure.ProjectId, structure)
+                || selected.ContainsKey(structure.ProjectId) || nodes.ContainsKey(structure.ProjectId)
+                || string.IsNullOrWhiteSpace(structure.DisplayName) || structure.DisplayName.Length > 128
+                || structure.DisplayName.Any(char.IsControl))
+            {
+                throw new ArgumentException("The visible structure projection exceeds its finite appearance profile.");
+            }
+        }
+        Structures = Array.AsReadOnly(installed.Values.ToArray());
     }
 
     public WorldInstant Calendar { get; }
     public ReadOnlyCollection<FarmActorFrame> Actors { get; }
     public ReadOnlyCollection<FarmGatherNodeFrame> GatheringNodes { get; }
+    public ReadOnlyCollection<FarmStructureFrame> Structures { get; }
 }

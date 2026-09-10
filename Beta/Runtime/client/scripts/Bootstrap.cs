@@ -41,13 +41,31 @@ public partial class Bootstrap : Control
         {
             FarmLifecycleProbe.Start(this, lifecycleSave, lifecycleReport, mode);
         }
+        else if (arguments is ["--farm-construction", var constructionSource, var constructionDestination,
+            var constructionReport, var constructionMode] && constructionMode is "upgrade" or "fresh" or "finish" or "reopen")
+        {
+            bool validPaths = constructionMode == "upgrade"
+                ? File.Exists(constructionSource) && !File.Exists(constructionDestination)
+                : File.Exists(constructionDestination);
+            if (!validPaths)
+            {
+                GD.PushError("The construction probe requires its exact retained source and stage destination.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = constructionDestination,
+                UpgradeSourcePathOverride = constructionSource, StartPaused = true,
+                QuestProfile = true, ConstructionProfile = true };
+            AddChild(game);
+            AddChild(new FarmConstructionProbe(game, constructionReport, constructionMode));
+        }
         else if (arguments is ["--farm-quests", var questSource, var questDestination, var questReport, var questMode]
-            && questMode is "prepare" or "upgrade" or "reopen")
+            && questMode is "prepare" or "upgrade" or "reopen" or "fresh")
         {
             bool prepare = questMode == "prepare";
             bool validPaths = questMode switch
             {
-                "prepare" => !File.Exists(questSource) && !File.Exists(questDestination),
+                "prepare" or "fresh" => !File.Exists(questSource) && !File.Exists(questDestination),
                 "upgrade" => File.Exists(questSource) && !File.Exists(questDestination),
                 _ => File.Exists(questDestination)
             };
@@ -58,7 +76,8 @@ public partial class Bootstrap : Control
                 return;
             }
             var game = new FarmGame { SavePathOverride = prepare ? questSource : questDestination,
-                UpgradeSourcePathOverride = questSource, StartPaused = !prepare, QuestProfile = !prepare };
+                UpgradeSourcePathOverride = questMode == "fresh" ? null : questSource,
+                StartPaused = !prepare, QuestProfile = !prepare, ConstructionProfile = questMode == "fresh" };
             AddChild(game);
             AddChild(new FarmQuestProbe(game, questReport, questMode));
         }
@@ -110,7 +129,7 @@ public partial class Bootstrap : Control
         }
         else
         {
-            AddChild(new FarmGame { GatheringProfile = !arguments.Contains("--legacy-farm"), QuestProfile = true });
+            AddChild(new FarmGame { GatheringProfile = !arguments.Contains("--legacy-farm"), QuestProfile = true, ConstructionProfile = true });
         }
     }
 

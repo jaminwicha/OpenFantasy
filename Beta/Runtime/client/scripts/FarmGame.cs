@@ -26,6 +26,7 @@ public partial class FarmGame : Node2D
     internal bool GatheringProfile { get; init; } = true;
     internal bool ProductionProfile { get; init; } = true;
     internal bool QuestProfile { get; init; }
+    internal bool ConstructionProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     internal bool HasPendingAction => _action is not null;
@@ -59,16 +60,21 @@ public partial class FarmGame : Node2D
         _paused = StartPaused;
         bool production = GatheringProfile && ProductionProfile;
         bool quests = production && QuestProfile;
-        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath(quests
+        bool construction = quests && ConstructionProfile;
+        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath(construction
+            ? "user://worlds/wrens-farm-construction.sqlite" : quests
             ? "user://worlds/wrens-farm-quests.sqlite" : production
             ? "user://worlds/wrens-farm-production.sqlite" : GatheringProfile
                 ? "user://worlds/wrens-farm-work.sqlite" : "user://worlds/wrens-farm.sqlite");
         string? upgradeSource = UpgradeSourcePathOverride ?? (SavePathOverride is null && production
-            ? ProjectSettings.GlobalizePath(quests ? "user://worlds/wrens-farm-production.sqlite" : "user://worlds/wrens-farm-work.sqlite") : null);
+            ? ProjectSettings.GlobalizePath(construction ? "user://worlds/wrens-farm-quests.sqlite"
+                : quests ? "user://worlds/wrens-farm-production.sqlite" : "user://worlds/wrens-farm-work.sqlite") : null);
         string? gatheringSource = SavePathOverride is null && quests
             ? ProjectSettings.GlobalizePath("user://worlds/wrens-farm-work.sqlite") : null;
+        string? productionSource = SavePathOverride is null && construction
+            ? ProjectSettings.GlobalizePath("user://worlds/wrens-farm-production.sqlite") : null;
         _opening = FarmClientSession.OpenAsync(savePath, "aldermere-first-walk-v1", "Traveler", GatheringProfile,
-            production, upgradeSource, quests, gatheringSource);
+            production, upgradeSource, quests, gatheringSource, construction, productionSource);
     }
 
     public override void _Process(double delta)
@@ -121,8 +127,16 @@ public partial class FarmGame : Node2D
             actor.ActorId, actor.DisplayName, actor.Feet, actor.ActorId == view.PlayerActorId,
             actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire)),
             view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
-                node.RequiredTool, node.Visibility))));
-        _camera.Position = _canvas.FocusPosition + new Vector2(0, -26);
+                node.RequiredTool, node.Visibility)),
+            view.Construction.Where(project => project.IsCompleted).Select(project =>
+                new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet))));
+        Vector2 focus = _canvas.FocusPosition;
+        if (view.Dialogue is { } conversation)
+        {
+            LocalActorView speaker = view.Actors.Single(value => value.ActorId == conversation.SpeakerActorId);
+            focus = (focus + FarmCanvasCoordinates.Position(speaker.Feet)) / 2;
+        }
+        _camera.Position = focus + new Vector2(0, -26);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null, _paused || !_focused);
     }
 
@@ -172,9 +186,9 @@ public partial class FarmGame : Node2D
     {
         LocalWorldView? view = _session?.World.ReadView();
         LocalQuestView? quest = view?.Quests.SingleOrDefault(value => value.GiverActorId == view.Dialogue?.SpeakerActorId);
-        if (quest is not null)
+        if (view?.Progression is not null)
         {
-            Submit(session => session.Quest(session.World.ReadView()), quest.Status is null
+            Submit(session => session.Quest(session.World.ReadView()), quest?.Status is null
                 ? "You agreed to bring wood for the orchard." : "You delivered the supplies and received Wren's reward.");
         }
         else

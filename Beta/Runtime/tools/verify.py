@@ -89,7 +89,8 @@ def main():
             if json.loads(reference) != json.loads(vector_file.read_text()):
                 raise RuntimeError("Independent vectors differ from frozen fixture: " + fixture)
         for directory, fixture, generator in (("Progression", "progression-v1", "progression"),
-                                                ("Quests", "quest-v1", "quest")):
+                                                ("Quests", "quest-v1", "quest"),
+                                                ("Construction", "construction-v1", "construction")):
             vector_file = root / "tests/OpenFantasy.Core.Tests" / directory / (fixture + ".json")
             reference = run("independent-python-" + fixture, [sys.executable,
                             vector_file.with_name("generate_" + generator + "_vectors.py")])
@@ -162,6 +163,10 @@ def main():
         run("native-farm-quests", [sys.executable, root / "tools/check_native_quests.py",
             "--dotnet", dotnet, "--godot", godot, "--output", quest_report])
         report["nativeQuests"] = json.loads(quest_report.read_text())
+        construction_report = artifacts / "native-construction.json"
+        run("native-farm-construction", [sys.executable, root / "tools/check_native_construction.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", construction_report], 900)
+        report["nativeConstruction"] = json.loads(construction_report.read_text())
         for relative, expected in report["inputSha256"].items():
             if hashlib.sha256((root / relative).read_bytes()).hexdigest() != expected:
                 raise RuntimeError("An input changed during verification: " + relative)

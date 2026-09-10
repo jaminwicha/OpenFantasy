@@ -63,6 +63,8 @@ internal partial class FarmActorView : Node2D
         }
         _sprite.Texture = assets.ActorTexture(actor.SpriteKind);
         _nameplate.Text = actor.DisplayName;
+        // The local player's cyan ground ring identifies them without covering an adjacent NPC's name.
+        _nameplate.Visible = !actor.IsOwnActor;
         _nameplate.AddThemeColorOverride("font_color", actor.IsOwnActor ? new Color("bce9ff") : new Color("fff0ce"));
         _ownActor = actor.IsOwnActor;
         QueueRedraw();
