@@ -4,6 +4,8 @@
 
 The subsequent [native local-world increment](native-loop/WORLD_CONTRACT.md) now connects grounded player/NPC movement, Wren's original utterance, shared reading holds and finite wood handover in Godot. Presence, terrain, custody, individual exposure, language and dialogue persist in composed schema2. The original counted schema1 described below remains supported as its separate profile, with no silent migration. The native walkthrough and exact paused-view process reopen are retained in that increment; production art, full quest completion and multiplayer are still open.
 
+The next [gathering increment](gather-craft/README.md) connects finite tool-owned extraction, banked work and persistent depletion/regrowth with versioned profile dispatch. Both prior save profiles remain supported. Crafting, full Wren quest/rewards and physical construction are still the next required connections.
+
 ## Implemented behavior
 
 The portable counted authority now admits explicit finite sources, actor controls and owner/deposit rules before evaluating transfers. Players and host-controlled NPCs use the same operation. Unauthorized access cannot probe arbitrary expected revisions; finite source intervals, capacity, historical identity claims and exact retry content constrain accepted actions. A split at the 4,096-lot ceiling rejects cleanly while a whole-lot transfer remains possible.

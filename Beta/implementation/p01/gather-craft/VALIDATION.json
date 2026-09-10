@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "scope": "Finite gathering increment; full prototype and production gates remain open",
+  "coreTestsPerConfiguration": 413,
+  "hostingTestsPerConfiguration": 108,
+  "configurations": [
+    "Debug",
+    "Release"
+  ],
+  "integratedRuntimeInputs": 457,
+  "independentPythonFixtures": 17,
+  "nativeRendered": "qualification/native-rendered-04.json",
+  "nativeHeadless": "qualification/final-verification.json",
+  "reviews": [
+    "CORE_CONTRACT.md",
+    "CORE_INTEGRATION_REVIEW.md",
+    "GATHERING_REVIEW.md",
+    "PERSISTENCE_REVIEW.md",
+    "VISUAL_REVIEW.md"
+  ],
+  "observedNativeRuntime": ".NET 10.0.12",
+  "renderedFocusRequests": {
+    "create": 1,
+    "reopen": 0
+  },
+  "testedAssemblySha256": {
+    "src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "ed7061481568cb0910ec90be863843ba2efffecd26e36a13bfdbafff55185d85",
+    "src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "5c514a72199dcb7d677cee93c2500f567202dd2cb4925bf022b9a15962ea5e47",
+    "tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "98ed8ec9707440a5e8471d7b97cad303995001a75b071555e86818a085b966bd",
+    "tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "f721fe569cebeec47ed5cdb341da381bccccc2e8d5143293520cac2a2a5e1896",
+    "src/OpenFantasy.Core/bin/Release/net8.0/OpenFantasy.Core.dll": "d8dff0d6104fcfc89c24ca6080448d10774c6c4275018309478400915f3cd58f",
+    "src/OpenFantasy.Hosting/bin/Release/net8.0/OpenFantasy.Hosting.dll": "6f2d447f49d24fe30bf22401e21595295526c782895b817c573f5f108427244c",
+    "tests/OpenFantasy.Core.Tests/bin/Release/net8.0/OpenFantasy.Core.Tests.dll": "ce25be8f7321e40e89ba0f9a0825c42aaa2422689a643bd12c691b6fd4e229cb",
+    "tests/OpenFantasy.Hosting.Tests/bin/Release/net8.0/OpenFantasy.Hosting.Tests.dll": "e5248377e68af15164ade507b99c6e9dce4a3e1c939fe355dbbd7ac26b9b702b",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "406c92631020522c86bd857b0cea690a1ece2d91963d4128a9b9182760ae456b",
+    "client/.godot/mono/temp/bin/ExportRelease/OpenFantasy.Client.dll": "bd1c081f40bdd9b23b5013660a1dab9881eac36a704297925f9db8499f920e88"
+  },
+  "artifactSha256": {
+    "qualification/final-core.trx": "6fb351b456e5f96a5e6601b3c8b93917dccb9545ca136aa6c0b2c25c2f561a04",
+    "qualification/final-hosting.trx": "4fdfd483db48aa2f1af60c554e37f535864ab00864d6ea9c0cb9ce40d2da1151",
+    "qualification/final-verification.json": "0f3b766ff508c54083e059672aa801a5734a4e89ad97c8aa7562a76b669325b9",
+    "qualification/native-gathering-51800f1011e24529916c0037fb14e83d-gathering.create.failed.json": "1f8c11a5c24ac89e8b3adb3bc8562a2f628e03c22fba11b92616453e109c8999",
+    "qualification/native-gathering-94a878b3ffc64913b51ad841618eeb2a-gathering.reopen.failed.json": "20492b1656597666d9741ba54e91cea9c305bbaadb78d805a57869d081480d67",
+    "qualification/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.gathered.png": "53df11db4a4eebe867d1c919f5c5115e9ba31c6bafbe9633779fa8a547f83e84",
+    "qualification/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.json": "818580daf30c5d3d608fcfb45c3fbcf1f4a8cd429864f122dc455c2acd08da59",
+    "qualification/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.oak-stump.png": "cc7c811095064c74577e1465480fe341492bf760c3558fabc3b7c6be9a1ae1ce",
+    "qualification/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.regrown.png": "9e553f4a55131a12d7fa89ad2f97cf3ada5c70d9cb48cdf0f6793d4e0fd723e3",
+    "qualification/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.reopen.json": "2f1e428186ebb7b075b0939d0b1559f4e94357362b0f7d9b500f11203b11463c",
+    "qualification/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/world.sqlite": "14896f15f76d28bf3ec4c505ffbe4a0ebff7b26b36b79425b69efcf30ccd09e0",
+    "qualification/native-rendered-02.json": "72bd2719ed3db3a342bcf49cb9a836796f44deb045b7dd2517c98e83b2c3dd9f",
+    "qualification/native-rendered-03.json": "21bce92b93ec01e2e20a701a943a74f179b7e8cf3296a859eac45cd55d714958",
+    "qualification/native-rendered-04.json": "b2dafb639d7055fa694ab0cdb07ec1fb85bed6fa2f38e928d613da3266159c51",
+    "qualification/release/core-release.trx": "f9a1e72965ca456f6b73b9bc4829bb5ecf68ecd59bb4002cbe6224fa6897b6ef",
+    "qualification/release/hosting-release.trx": "39b356b8067f6bff09c962f13b7f12e3c253ce5d38b5a36a3c0afb32bb809f9f",
+    "qualification/release/runs.json": "a6657933e7606b770aa2aaff73b4e6f78303de5b1e367396e7dd4dcda09c2f09"
+  },
+  "priorFailures": [
+    "First native create passed but reopen timed out before regrowth was due; saved clock was coherent.",
+    "Second instrumented run confirmed a focus loss and therefore normal readiness pause during reopen.",
+    "Third focus-recovery probe covered regrowth only; focus was lost earlier during harvesting. Final probe requests actual focus in every active stage.",
+    "Early compile passes exposed test-only accessibility, ambiguous type name and analyzer errors; corrected before passing suites.",
+    "An initial manual editor --quit import emitted an EditorSettings teardown error. Final documented --editor --import --quit invocation passed without engine errors."
+  ],
+  "limits": [
+    "Two representative source resources with thirty-two finite cycles each; no complete spawner/ecology or mining engine.",
+    "Original tool kit/physical calibration and positions are declared authored admission, not fabricated original player grants.",
+    "Original low-detail sprites are provisional; no final art, animation, audio or enjoyment approval.",
+    "No completed crafting, Wren quest/XP/reward/construction, Wait/co-op, general visibility, history, long-lived storage or desktop export acceptance."
+  ]
+}

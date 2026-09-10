@@ -4,7 +4,13 @@
 
 The subsequent [runtime application style review](style-review/README.md) records the owner's modular/readable/object-oriented preference, its application-only scope, the behavior-preserving refinements, and fresh evidence. Earlier hashes below remain tied to the original increment.
 
-## Latest increment: native movement, dialogue and persistent handover
+## Latest increment: finite native gathering
+
+9 September 2026. The [gathering connection](../p01/gather-craft/README.md) adds actual tool-owned oak/berry harvesting, banked effort, finite issuance cursors, depletion, pause-aware regrowth and strict world profile2 persistence. Old profile1 worlds and receipts remain readable and continue under their original rules. A distinct default work-world save preserves the earlier native save instead of silently migrating or resetting it.
+
+The full Debug and Release suites passed **413 core and 108 hosting cases per configuration**, without skips. Source/admission, core and persistence critics closed concrete reserve, encoding and startup ownership defects. The final integrated verifier passed against 457 runtime inputs, including 17 independent fixtures and actual native lifecycle/recovery checks. The separate rendered gathering journey also passed, including paused depletion, exact restart and continuing regrowth. [Qualification](../p01/gather-craft/VALIDATION.json) retains the actual reports, source hashes and saved world. This is another connected mechanism, not completed crafting, Wren's full quest/level/reward progression, construction, Wait/co-op, production art/audio or a closed first-feedback-prototype goal. The full 181-requirement plan remains required.
+
+## Previous increment: native movement, dialogue and persistent handover
 
 9 September 2026. The [native local-world increment](../p01/native-loop/WORLD_CONTRACT.md) now composes actual actor bodies, seeded stacked terrain, individual language and exposure, finite custody and addressed dialogue in one durable authority. The shared 20 Hz local host controls the clock; player and NPC movement use the same control/body/spatial rules. Godot displays the imported farm and original Wren appearance, routes real movement/talk/give/close inputs, and reopens the same save. A reading hold freezes time and both actors; giving six of eight initial wood leaves two without creating a quest reward or a windbreak.
 

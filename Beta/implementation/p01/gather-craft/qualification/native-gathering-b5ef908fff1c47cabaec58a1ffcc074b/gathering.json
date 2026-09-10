@@ -1,0 +1,58 @@
+{
+  "Kind": "native-farm-gathering-v1",
+  "Stage": "create",
+  "Status": "passed",
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "macOS",
+  "Initial": "{\u0022World\u0022:\u0022a44c6017d1916cac5b21d2ae4273f184\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:32400000,\u0022PlayerGatherEffort\u0022:0,\u0022HasReadingHold\u0022:false,\u0022Quantity\u0022:10,\u0022StorageRevision\u0022:0,\u0022Lots\u0022:[{\u0022Id\u0022:\u0022178c51e55f95c0e4c58704bc3a7b39a3\u0022,\u0022Definition\u0022:\u0022a64b7d9ae8f3757bfefc13c0b9fcdaf9\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00224be9cd51901d095afb013fc7bb48d45a\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:8},{\u0022Id\u0022:\u00227227e93fa0f960e42e35fe82c9a0f928\u0022,\u0022Definition\u0022:\u002219fd80672aee3de952edb5cb376e6b25\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1}],\u0022Actors\u0022:[{\u0022Id\u0022:\u0022a2eedfbb4fd2f70f36253ba8c72e9d30\u0022,\u0022X\u0022:25984,\u0022Y\u0022:83328,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:0},{\u0022Id\u0022:\u0022f61e90650ddab821341dd6e0b4bb2c33\u0022,\u0022X\u0022:26496,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:0}],\u0022Nodes\u0022:[{\u0022Id\u0022:\u002224a15755098b514424949f954c34e5af\u0022,\u0022Revision\u0022:0,\u0022RemainingSwings\u0022:4,\u0022Visibility\u0022:1},{\u0022Id\u0022:\u002267e26d9c5e3848e75f9bcd7b9088e36e\u0022,\u0022Revision\u0022:0,\u0022RemainingSwings\u0022:5,\u0022Visibility\u0022:1}]}",
+  "Final": "{\u0022World\u0022:\u0022a44c6017d1916cac5b21d2ae4273f184\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:33049800,\u0022PlayerGatherEffort\u0022:10,\u0022HasReadingHold\u0022:false,\u0022Quantity\u0022:19,\u0022StorageRevision\u0022:9,\u0022Lots\u0022:[{\u0022Id\u0022:\u00220906ac6fd87c376d38ee0fb60621068d\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022119ec6095ce2fa4993c6031b0eab60b3\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022178c51e55f95c0e4c58704bc3a7b39a3\u0022,\u0022Definition\u0022:\u0022a64b7d9ae8f3757bfefc13c0b9fcdaf9\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00221a3541126c6a1b52f43adc576bb8d708\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022318ff38d98878ef799f8471be93102ac\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002244682b6eb6ffafd523f506abfce5a328\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022454bd3fa4f39bc912cebf82b9cd6a0fd\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00224be9cd51901d095afb013fc7bb48d45a\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:8},{\u0022Id\u0022:\u00227227e93fa0f960e42e35fe82c9a0f928\u0022,\u0022Definition\u0022:\u002219fd80672aee3de952edb5cb376e6b25\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00227312a1d5d5e48dcc1ca7f3ba7e21615b\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022918ddeb1449dd4075cab7e9067888d7e\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022ae58de967368fdc6ab1aa094ca36cba4\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1}],\u0022Actors\u0022:[{\u0022Id\u0022:\u0022a2eedfbb4fd2f70f36253ba8c72e9d30\u0022,\u0022X\u0022:26784,\u0022Y\u0022:84928,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:75},{\u0022Id\u0022:\u0022f61e90650ddab821341dd6e0b4bb2c33\u0022,\u0022X\u0022:26496,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:96}],\u0022Nodes\u0022:[{\u0022Id\u0022:\u002224a15755098b514424949f954c34e5af\u0022,\u0022Revision\u0022:4,\u0022RemainingSwings\u0022:0,\u0022Visibility\u0022:2}]}",
+  "OakId": "67e26d9c5e3848e75f9bcd7b9088e36e",
+  "BerryId": "24a15755098b514424949f954c34e5af",
+  "WoodDefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+  "Checks": [
+    "Original source-pinned oak and berries plus explicitly supplied tools opened in the native game.",
+    "Five real oak swings issued exactly five wood and depleted the node.",
+    "Pause froze depleted resource, calendar, effort and all public positions for600ms.",
+    "Four real sickle swings issued four berries; tool lots remain owned."
+  ],
+  "Readiness": [
+    {
+      "WallMilliseconds": 190,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 32400000
+    },
+    {
+      "WallMilliseconds": 1773,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": false,
+      "Calendar": 32455800
+    },
+    {
+      "WallMilliseconds": 2017,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 32455800
+    },
+    {
+      "WallMilliseconds": 10493,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "Calendar": 32761800
+    },
+    {
+      "WallMilliseconds": 11328,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 32761800
+    },
+    {
+      "WallMilliseconds": 19328,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "Calendar": 33049800
+    }
+  ],
+  "FocusRequests": 1,
+  "DurationMilliseconds": 19592
+}

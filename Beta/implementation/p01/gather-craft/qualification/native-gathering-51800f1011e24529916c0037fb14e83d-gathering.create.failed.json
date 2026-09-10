@@ -1,0 +1,22 @@
+{
+  "Status": "failed",
+  "Stage": "Oak",
+  "Error": "System.InvalidOperationException: The native gathering probe timed out at Oak\n   at OpenFantasy.Client.FarmGatheringProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 235\n   at OpenFantasy.Client.FarmGatheringProbe._Process(Double delta) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 38",
+  "IsLocallyPaused": false,
+  "IsWindowFocused": false,
+  "Readiness": [
+    {
+      "WallMilliseconds": 292,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 32400000
+    },
+    {
+      "WallMilliseconds": 1471,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": false,
+      "Calendar": 32443200
+    }
+  ],
+  "Current": "{\u0022World\u0022:\u0022a44c6017d1916cac5b21d2ae4273f184\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:32443200,\u0022PlayerGatherEffort\u0022:240,\u0022HasReadingHold\u0022:false,\u0022Quantity\u0022:10,\u0022StorageRevision\u0022:0,\u0022Lots\u0022:[{\u0022Id\u0022:\u0022178c51e55f95c0e4c58704bc3a7b39a3\u0022,\u0022Definition\u0022:\u0022a64b7d9ae8f3757bfefc13c0b9fcdaf9\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00224be9cd51901d095afb013fc7bb48d45a\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:8},{\u0022Id\u0022:\u00227227e93fa0f960e42e35fe82c9a0f928\u0022,\u0022Definition\u0022:\u002219fd80672aee3de952edb5cb376e6b25\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1}],\u0022Actors\u0022:[{\u0022Id\u0022:\u0022a2eedfbb4fd2f70f36253ba8c72e9d30\u0022,\u0022X\u0022:25984,\u0022Y\u0022:83552,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:7},{\u0022Id\u0022:\u0022f61e90650ddab821341dd6e0b4bb2c33\u0022,\u0022X\u0022:25984,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:16}],\u0022Nodes\u0022:[{\u0022Id\u0022:\u002224a15755098b514424949f954c34e5af\u0022,\u0022Revision\u0022:0,\u0022RemainingSwings\u0022:4,\u0022Visibility\u0022:1},{\u0022Id\u0022:\u002267e26d9c5e3848e75f9bcd7b9088e36e\u0022,\u0022Revision\u0022:0,\u0022RemainingSwings\u0022:5,\u0022Visibility\u0022:1}]}"
+}

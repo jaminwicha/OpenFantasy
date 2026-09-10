@@ -1,0 +1,28 @@
+{
+  "Status": "failed",
+  "Stage": "Regrowing",
+  "Error": "System.InvalidOperationException: The native gathering probe timed out at Regrowing\n   at OpenFantasy.Client.FarmGatheringProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 223\n   at OpenFantasy.Client.FarmGatheringProbe._Process(Double delta) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 36",
+  "IsLocallyPaused": false,
+  "IsWindowFocused": false,
+  "Readiness": [
+    {
+      "WallMilliseconds": 351,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "Calendar": 33049800
+    },
+    {
+      "WallMilliseconds": 978,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 33049800
+    },
+    {
+      "WallMilliseconds": 4639,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": false,
+      "Calendar": 33183000
+    }
+  ],
+  "Current": "{\u0022World\u0022:\u0022a44c6017d1916cac5b21d2ae4273f184\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:33183000,\u0022PlayerGatherEffort\u0022:750,\u0022HasReadingHold\u0022:false,\u0022Quantity\u0022:19,\u0022StorageRevision\u0022:9,\u0022Lots\u0022:[{\u0022Id\u0022:\u0022003c109a6ff43b2ca5ec54408477f626\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002206e610268a05b971981ec4dc22f64b55\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022178c51e55f95c0e4c58704bc3a7b39a3\u0022,\u0022Definition\u0022:\u0022a64b7d9ae8f3757bfefc13c0b9fcdaf9\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00224be9cd51901d095afb013fc7bb48d45a\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:8},{\u0022Id\u0022:\u00225942239c3dd5a9bcd93f2b2d624c00f5\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00227227e93fa0f960e42e35fe82c9a0f928\u0022,\u0022Definition\u0022:\u002219fd80672aee3de952edb5cb376e6b25\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00227fe9f859070dce554fb23daa37090992\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022803a2806729000355eb7e6d802dfe64f\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022967c6ce24ce5cb176a56f25412623855\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022a1f23b1aa3cba52198c1d4ba66f0d29f\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022bd3a4a099baeb6b513ad8eddf064d167\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022d51e4225bf213b58d1e9c25759cde79f\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1}],\u0022Actors\u0022:[{\u0022Id\u0022:\u0022a2eedfbb4fd2f70f36253ba8c72e9d30\u0022,\u0022X\u0022:26784,\u0022Y\u0022:84928,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:75},{\u0022Id\u0022:\u0022f61e90650ddab821341dd6e0b4bb2c33\u0022,\u0022X\u0022:26496,\u0022Y\u0022:83072,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:112}],\u0022Nodes\u0022:[]}"
+}

@@ -1,0 +1,143 @@
+{
+  "kind": "bounded_gathering_rendered_visual_review",
+  "status": "passed_with_declared_provisional_art_limits",
+  "reviewerStartedNativeProcess": false,
+  "nativeExecutionBy": "coordinator",
+  "nativeReportStatus": "passed",
+  "platform": "macOS",
+  "runtime": ".NET 10.0.12",
+  "resolution": [
+    960,
+    540
+  ],
+  "inspectedImages": 5,
+  "correctedImages": 3,
+  "exactReportArtifactsVerified": 6,
+  "reportPublicRestoreEquality": true,
+  "focusRequests": {
+    "create": 1,
+    "reopen": 0
+  },
+  "closed": [
+    "gray left region band",
+    "resource labels crossing player face/body",
+    "world sprites behind HUD text",
+    "oak screenshot captured before fifth visible harvest"
+  ],
+  "deferred": [
+    "disabled contextual action text defaults to Pick berries with no eligible target",
+    "source dim depleted sprite has low contrast",
+    "final calibrated art, work gestures, effects and sound remain later production work"
+  ],
+  "artifacts": [
+    {
+      "sourcePath": "/private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/gathering.oak-stump.png",
+      "retainedPath": "Beta/implementation/p01/gather-craft/visual-evidence/initial-gathering.oak-stump.png",
+      "bytes": 54460,
+      "sha256": "af67740e7b41f716fcdf7a896741ee1f5acb0cc166b551724b655f4f5477f1e8",
+      "dimensions": [
+        960,
+        540
+      ]
+    },
+    {
+      "sourcePath": "/private/tmp/openfantasy-p00/gathering/native-gathering-a38cc37864cb402fa88f701d4b7a634b/gathering.gathered.png",
+      "retainedPath": "Beta/implementation/p01/gather-craft/visual-evidence/initial-gathering.gathered.png",
+      "bytes": 56486,
+      "sha256": "c93cf277c5c7f1cbef858d803a028324b3a6d7b4284cf56ae922856b905b10b6",
+      "dimensions": [
+        960,
+        540
+      ]
+    },
+    {
+      "sourcePath": "/private/tmp/openfantasy-p00/gathering/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.oak-stump.png",
+      "retainedPath": "Beta/implementation/p01/gather-craft/visual-evidence/corrected-gathering.oak-stump.png",
+      "bytes": 50137,
+      "sha256": "cc7c811095064c74577e1465480fe341492bf760c3558fabc3b7c6be9a1ae1ce",
+      "dimensions": [
+        960,
+        540
+      ]
+    },
+    {
+      "sourcePath": "/private/tmp/openfantasy-p00/gathering/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.gathered.png",
+      "retainedPath": "Beta/implementation/p01/gather-craft/visual-evidence/corrected-gathering.gathered.png",
+      "bytes": 48351,
+      "sha256": "53df11db4a4eebe867d1c919f5c5115e9ba31c6bafbe9633779fa8a547f83e84",
+      "dimensions": [
+        960,
+        540
+      ]
+    },
+    {
+      "sourcePath": "/private/tmp/openfantasy-p00/gathering/native-gathering-b5ef908fff1c47cabaec58a1ffcc074b/gathering.regrown.png",
+      "retainedPath": "Beta/implementation/p01/gather-craft/visual-evidence/corrected-gathering.regrown.png",
+      "bytes": 48670,
+      "sha256": "9e553f4a55131a12d7fa89ad2f97cf3ada5c70d9cb48cdf0f6793d4e0fd723e3",
+      "dimensions": [
+        960,
+        540
+      ]
+    },
+    {
+      "sourcePath": "/private/tmp/openfantasy-p00/gathering/native-rendered-01.json",
+      "retainedPath": "Beta/implementation/p01/gather-craft/visual-evidence/initial-native-report.json",
+      "bytes": 10444,
+      "sha256": "145232783ddf97a926cbfedd76e3e3193c240b5e217c6c3ece7913421d19541d"
+    },
+    {
+      "sourcePath": "/private/tmp/openfantasy-p00/gathering/native-rendered-04.json",
+      "retainedPath": "Beta/implementation/p01/gather-craft/visual-evidence/corrected-native-report.json",
+      "bytes": 13503,
+      "sha256": "b2dafb639d7055fa694ab0cdb07ec1fb85bed6fa2f38e928d613da3266159c51"
+    }
+  ],
+  "presentationInputHashes": [
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmGatherNodeView.cs",
+      "bytes": 1737,
+      "sha256": "00d7b8aeee6e8b683dc840e012d44a080c7e43607dc3e3e9242da47053a95dd1"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmVisualAssets.cs",
+      "bytes": 2930,
+      "sha256": "55a112384d41e57595d4deb24520d23ebcaf36c7d984bc2358f045ccf79cbf3d"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmHud.cs",
+      "bytes": 6067,
+      "sha256": "9efc5772d9cc94488d1e4e75fa6a90ca07c1a762d9cea7c16cd241ee0590964f"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmCanvas.cs",
+      "bytes": 3441,
+      "sha256": "ed0033bea25e185aed370e94118644671d3b3fb19ed245073f57e15447deab98"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmGame.cs",
+      "bytes": 9785,
+      "sha256": "64e4fac2057e27e3463eb29fc6048bf6c85cfef611ead87fdbee7af3db241487"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmGatheringProbe.cs",
+      "bytes": 12395,
+      "sha256": "37a5daf58a2f64a3d39a42eaaf6c144e0b5e0310a06e6edd3a9fab88ac67df49"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/adventure-farm/node_oak.png",
+      "bytes": 382,
+      "sha256": "3c95536649a836516f5bda0abc65dcd2d2b6a54611a8a0804c6ef133290188c8"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/adventure-farm/node_berry.png",
+      "bytes": 304,
+      "sha256": "8928cce8c9bd2b1c197650cac6b467ccb9b35035531f64548ac7b76b39721457"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/adventure-farm/PROVENANCE.json",
+      "bytes": 1001,
+      "sha256": "3346476ea35302354a047f334eec98511b7f8639552907c8b662763ea61c98a6"
+    }
+  ]
+}
