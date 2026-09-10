@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Quests;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -42,7 +43,7 @@ public sealed class WorldStepBatch
     {
         ArgumentNullException.ThrowIfNull(movement);
         ArgumentNullException.ThrowIfNull(actions);
-        if (profileVersion is not 1 and not 2 and not 3 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
+        if (profileVersion is not 1 and not 2 and not 3 and not 4 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
         {
             throw new ArgumentException("The world batch kind or cause identity is invalid.");
         }
@@ -60,6 +61,10 @@ public sealed class WorldStepBatch
         foreach (WorldActionCommand command in actions)
         {
             ArgumentNullException.ThrowIfNull(command);
+            if (command.Intent is DeliveryQuestIntent && profileVersion < 4)
+            {
+                throw new ArgumentException("Quest actions require the funded quest world profile.");
+            }
             if (command.Intent is CraftIntent && profileVersion < 3)
             {
                 throw new ArgumentException("Crafting actions require the production world profile.");

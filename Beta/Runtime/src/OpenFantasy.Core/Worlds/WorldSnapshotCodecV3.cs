@@ -13,9 +13,14 @@ public static class WorldSnapshotCodecV3
         {
             throw new ArgumentException("Production worlds require both work and transformation components.", nameof(world));
         }
+        return EncodeProductionBasis(world);
+    }
+
+    internal static byte[] EncodeProductionBasis(WorldSnapshot world)
+    {
         byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", CanonicalEncodingV1.Unsigned64(3),
-            WorldSnapshotCodecV1.EncodeExplorationBasis(world), GatheringCodecV1.Encode(world.Gathering),
-            ProductionCodecV1.Encode(world.Production));
+            WorldSnapshotCodecV1.EncodeExplorationBasis(world), GatheringCodecV1.Encode(world.Gathering!),
+            ProductionCodecV1.Encode(world.Production!));
         if (bytes.Length > WorldSnapshotCodec.MaximumStateByteLength)
         {
             throw new ArgumentException("The production world exceeds its admitted storage bound.", nameof(world));

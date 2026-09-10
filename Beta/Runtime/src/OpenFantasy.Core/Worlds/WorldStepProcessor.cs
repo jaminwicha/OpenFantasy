@@ -2,6 +2,8 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
+using OpenFantasy.Core.Progression;
+using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
@@ -15,6 +17,7 @@ public sealed class WorldStepProcessor
     private readonly WorldActionResolver _actions = new();
     private readonly GatherPlanner _gathering = new();
     private readonly WorldCraftResolver _crafting = new();
+    private readonly DeliveryQuestPlanner _quests = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
@@ -51,13 +54,28 @@ public sealed class WorldStepProcessor
         CountedAuthorityState inventory = state.Inventory;
         GatheringSnapshot? gathering = state.Gathering;
         ProductionSnapshot? production = state.Production;
+        ProgressionSnapshot? progression = state.Progression;
+        QuestSnapshot? quests = state.Quests;
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
         foreach (WorldActionCommand action in batch.Actions)
         {
             WorldActionResolution resolution;
-            IReadOnlyList<EntityId> craftCreated = [];
-            if (action.Intent is GatherIntent)
+            IReadOnlyList<EntityId> createdIds = [];
+            if (action.Intent is DeliveryQuestIntent)
+            {
+                if (quests is null || progression is null || production is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret quest actions.");
+                }
+                DeliveryQuestPlan plan = _quests.Plan(state, inventory, production, progression, quests,
+                    action, dialogues, identity => identity != action.CommandId && Occupied(identity));
+                resolution = new WorldActionResolution(plan.CandidateInventory, dialogues, plan.Rejection, null);
+                progression = plan.CandidateProgression;
+                quests = plan.CandidateQuests;
+                createdIds = plan.CreatedIds;
+            }
+            else if (action.Intent is GatherIntent)
             {
                 if (gathering is null)
                 {
@@ -84,7 +102,7 @@ public sealed class WorldStepProcessor
                 CraftPlan plan = _crafting.Resolve(state, inventory, production, action, dialogues.Count != 0, Occupied);
                 resolution = new WorldActionResolution(plan.CandidateInventory, dialogues, plan.Rejection, null);
                 production = plan.CandidateProduction;
-                craftCreated = plan.CreatedIds;
+                createdIds = plan.CreatedIds;
             }
             else
             {
@@ -100,7 +118,7 @@ public sealed class WorldStepProcessor
             {
                 Reserve(spawned, WorldCommittedIdentityKind.SpawnedEntity);
             }
-            foreach (EntityId created in craftCreated)
+            foreach (EntityId created in createdIds)
             {
                 Reserve(created, WorldCommittedIdentityKind.SpawnedEntity);
             }
@@ -139,7 +157,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production);
+            advancingSteps, dialogues, gathering, production, progression, quests);
         return new WorldStepDecision(candidate, receipts, identities);
     }
 

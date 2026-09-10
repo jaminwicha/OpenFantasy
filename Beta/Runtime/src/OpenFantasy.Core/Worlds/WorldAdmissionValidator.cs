@@ -31,6 +31,7 @@ public static class WorldAdmissionValidator
         admission.ReadDialogues();
         admission.ReadGathering();
         admission.ReadProduction();
+        admission.ReadQuests();
         return admission.Complete();
     }
 
@@ -107,6 +108,63 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain);
+
+        internal void ReadQuests()
+        {
+            if (world.Quests is not { } quests || world.Progression is not { } progression)
+            {
+                return;
+            }
+            quests.ValidateForAuthority(world.Inventory, progression);
+            if (quests.Revision > world.Revision || progression.Revision > world.Revision
+                || progression.Currency.Revision > progression.Revision
+                || progression.Actors.Any(actor => actor.Revision > progression.Revision)
+                || progression.Currency.Accounts.Any(account => account.Revision > progression.Currency.Revision))
+            {
+                throw new ArgumentException("Quest and progression revisions cannot precede their committed root history.");
+            }
+            foreach (var profile in progression.Profiles)
+            {
+                Definition(profile.DefinitionId, WorldIdentityRole.StatProfileDefinition, profile.Version);
+            }
+            foreach (var curve in progression.Curves)
+            {
+                Definition(curve.DefinitionId, WorldIdentityRole.LevelCurveDefinition, curve.Version);
+            }
+            Definition(progression.Currency.Currency.DefinitionId, WorldIdentityRole.CurrencyDefinition,
+                progression.Currency.Currency.Version);
+            foreach (var account in progression.Currency.Accounts)
+            {
+                Add(account.AccountId, WorldIdentityRole.CurrencyAccount, unique: true);
+                if (account.ActorId is { } actor)
+                {
+                    Require(actor, WorldIdentityRole.Actor);
+                }
+            }
+            foreach (var quest in quests.Definitions)
+            {
+                Definition(quest.DefinitionId, WorldIdentityRole.QuestDefinition, quest.Version);
+                Definition(quest.Reward.DefinitionId, WorldIdentityRole.RewardDefinition, quest.Reward.Version);
+                Definition(quest.Item.DefinitionId, WorldIdentityRole.ItemDefinition, quest.Item.Version);
+                Require(quest.GiverActorId, WorldIdentityRole.Actor);
+                Require(quest.DestinationCustodianId, WorldIdentityRole.Custodian);
+                Require(quest.MaterialReservationId, WorldIdentityRole.Reservation);
+                Require(quest.Reward.ReserveAccountId, WorldIdentityRole.CurrencyAccount);
+            }
+            foreach (var entry in quests.Participations)
+            {
+                Require(entry.ActorId, WorldIdentityRole.Actor);
+                Add(entry.AcceptanceCommandId, WorldIdentityRole.CauseReference);
+                if (entry.CompletionCommandId is { } completion)
+                {
+                    Add(completion, WorldIdentityRole.CauseReference);
+                }
+                if (entry.AcceptedAt > world.Calendar || entry.CompletedAt is { } at && at > world.Calendar)
+                {
+                    throw new ArgumentException("Quest commitments cannot occur after the admitted world calendar.");
+                }
+            }
+        }
 
         internal void ReadProduction()
         {
