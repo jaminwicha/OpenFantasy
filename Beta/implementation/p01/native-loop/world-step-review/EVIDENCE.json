@@ -1,0 +1,91 @@
+{
+  "method": "Read-only static review; no runtime execution by critic",
+  "openFinding": null,
+  "closedFindings": [
+    "WorldSnapshot constructor now runs composed admission",
+    "Active dialogue now queries speaker language profile"
+  ],
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "sha256": "5f0fd7bff4f22a9ec92788bdbfefd21bc672a0100fc54f3acf5ec55bae625336"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionResolver.cs",
+      "sha256": "a84b22780b82a10f5488ce2aef6ebac75c814fd397943eecfdc8d6706d635cb6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepDecision.cs",
+      "sha256": "d6a762677a67b4c289aecabaa3bfc0ff589281262382ed77da21d7b3f5e2efa8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs",
+      "sha256": "48f215d051b8bececabe02935870b77c94762f869ebf70707f17526b0aadc9a7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCommand.cs",
+      "sha256": "0a0a833fb804b9ee0e8314da388da7c2a402b00705446deebee0cb2d3808f20c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionReceipt.cs",
+      "sha256": "eb07b947431dc2a2a76ff24b44c519d7aafa24a5ccbd2b316da4854b7427250f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldReceiptCodecV1.cs",
+      "sha256": "0944da6be08949a2659ac1b52a3a993a021c61ebdc604d4d4664b15ce508d928"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSpatialCodecV1.cs",
+      "sha256": "057fac2c9130c80c1d939ca2aef0b37df7cc55436b86f95c64b756be90a1b130"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResidentCodecV1.cs",
+      "sha256": "0555273bcd601023a501a59950d75663f3d475b897bd0ed4f5f9eaa4a6ba7ffa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV1.cs",
+      "sha256": "c3931f073db115914ff380d0b739505adf377cf8ed964fe7dd3d6c40e3c7b16a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "sha256": "def2468c917a4143174958070dcce7b04aef02ff8c5dc8a16e487906bcea74d5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+      "sha256": "04a1feba26ebb46ead30158b1e9634308b7412a3ff85162a8e9350c575777085"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs",
+      "sha256": "f25bf8981e0a9bd85435d47fb073d31f3a2ca99e72362c903d5f46b3d8255d01"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs",
+      "sha256": "ba6a7cb3960890f978de99beddd1d9d50fca4218a509e218530394591496c64b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/DialogueSession.cs",
+      "sha256": "1102368f45ffa7cd27d8de84d5f6b0824045e435efa3accf21c082e5745388a1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldFrameReader.cs",
+      "sha256": "5664a79830471549de9bf015d708bb2a28dc72272f0543d0c6033d50374ec2db"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/CountedAuthorityState.cs",
+      "sha256": "78eff7c6c8239b4c8688224422e46301e2710448e4162427e790791f866b4408"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyTransferPlanner.cs",
+      "sha256": "f7b9654be2adb772471c6001b4d5037b8f8cca5907f269efdfce8fff65fa6b61"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/CommandEnvelope.cs",
+      "sha256": "4101e369c38d70b51b0f19045eca1e719d966ef2d0b87e6b9519a7d32993e533"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Commands/TransferLotIntent.cs",
+      "sha256": "da3c56bc3f0385a3cca4bc44428283c97bfa14f2b7082f6733643a628458f6ac"
+    }
+  ],
+  "followup": "LocalWorldSession command admission and private preview fallback implemented; 12 Simulation tests passed within 82-test coordinated Hosting Debug run. See SIMULATION_EVIDENCE.json and simulation-hosting.trx."
+}

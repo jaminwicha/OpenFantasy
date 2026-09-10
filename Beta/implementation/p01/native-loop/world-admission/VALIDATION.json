@@ -1,0 +1,198 @@
+{
+  "captured_at_utc": "2026-09-10T00:53:35.327800+00:00",
+  "status": "passed",
+  "role": "Implementer verification against coordinator-built Debug assemblies; no claim of independent review of authored validator.",
+  "command": "DOTNET_ROOT=/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj --no-build --no-restore --configuration Debug --filter FullyQualifiedName~AdmissionTests --logger trx;LogFileName=world-admission-debug.trx --results-directory ../implementation/p01/native-loop/world-admission/test-results --nologo --verbosity minimal",
+  "working_directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime",
+  "counters": {
+    "total": "28",
+    "executed": "28",
+    "passed": "28",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "times": {
+    "creation": "2026-09-09T19:52:47.0685690-05:00",
+    "queuing": "2026-09-09T19:52:47.0685690-05:00",
+    "start": "2026-09-09T19:52:45.9833670-05:00",
+    "finish": "2026-09-09T19:52:47.0925220-05:00"
+  },
+  "owned_cases": 19,
+  "supplemental_cases": 9,
+  "test_results": [
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.SharedChannelsAndRulesRequireExactPins",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.AdvancingStepsCannotExceedCommittedWorldRevisions",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.InjuryIdentitiesCannotDuplicateAcrossActorsOrAliasTheirCauses",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.ActorAndFormIdentityAliasesOverlappingBodiesAndWrongConditionPinsReject",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.ACountedSourceCannotClaimUncoupledTerrainRightsEvenAfterExcavation",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.LanguageAndRegisterReferencesCannotAliasOtherEntityRoles",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.DialogueAndInjuryCausesAreReferencesWithCompatibleRepeatedUse",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.ActiveSpokenDialogueCannotBeRestoredOutOfRangeOrThroughAnotherMode",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.ValidCompositionSharesExactDefinitionsAndKeepsDistinctClockCounters",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.SharedUtteranceDefinitionCannotSilentlyChangeItsTextOrChannel",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.TerrainMaterialCannotAliasAPrincipalOrBodyDefinition",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.MaximumCollectionsAreCopiedSortedAndRejectTheirFirstExcessEntry",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.ReusingTerrainIndexStillValidatesNewDynamicIdentitiesAndChangedTerrain",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.EveryPlayerAndHostResidentRequiresAnExplicitControl(omittedActor: 11)",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.ActualHumanoidRequiresTwoCellsOfHeadroomWithoutColliderShrinking",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.OddDimensionsKeepExtraSubunitPositiveAndHalfOpenMaximumDoesNotTouchNextCell",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.AuthoredDialogueCanRemainOnAnImpairedSpeakerButCannotBeActive",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.SharedCountedMaterialIdentityRequiresTheSameVersionAcrossDomains",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.AReusedTerrainLayerDoesNotMutateAPreviousDynamicIndex",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.EveryPlayerAndHostResidentRequiresAnExplicitControl(omittedActor: 10)",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.UnsupportedFormsBodyEnvelopesAndNumericBoundsFailAdmissionExplicitly",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.SubunitFloorDivisionAndCheckedOffsetsHandleNegativeAndExtremeCoordinates",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.ActiveDialogueRequiresExplicitListenerComprehensionAndHearing",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.AnAuthoredUtteranceDoesNotSupplyTheSpeakersAdmittedChannel",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Worlds.AdmissionTests.ACountedLotCannotAlsoBeASpatialForm",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.OverlapForeignScopeOrDifferentGenerationPinsCannotBeAdmitted",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.AdjacentHorizontalAndVerticalRegionsProvideCompleteSharedBodyDependencies",
+      "Passed"
+    ],
+    [
+      "OpenFantasy.Core.Tests.Spatial.SpatialAdmissionTests.CompleteFootprintRequiresEveryTouchedFloorCellAndExactFeetElevation",
+      "Passed"
+    ]
+  ],
+  "initial_compile_findings": [
+    "Resolved test-only Terrain/Version naming ambiguity.",
+    "Removed internal cache-property assertions; retained public behavior and previous-index immutability checks."
+  ],
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+      "bytes": 13008,
+      "sha256": "04a1feba26ebb46ead30158b1e9634308b7412a3ff85162a8e9350c575777085"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs",
+      "bytes": 2639,
+      "sha256": "f25bf8981e0a9bd85435d47fb073d31f3a2ca99e72362c903d5f46b3d8255d01"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "bytes": 5341,
+      "sha256": "def2468c917a4143174958070dcce7b04aef02ff8c5dc8a16e487906bcea74d5"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/AdmissionTests.cs",
+      "bytes": 11366,
+      "sha256": "a9b0a5be39e2f7c98b891ca96e7f2b0e186d6abb2f80e85315bad86e16874b55"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/AdmissionFixture.cs",
+      "bytes": 4805,
+      "sha256": "753b6714cde40342c230ca686e5d5320be9db65ce272b97cf06c47982909ea9b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "bytes": 301056,
+      "sha256": "8dc431d729394df56918f9f7819ea12917195ca9a17abb5ee95f47dcdd8f9f59"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll",
+      "bytes": 414208,
+      "sha256": "1501162212db5286e4249ac7b3843a19762e52b2feea4aa5f0d5f654a1004fee"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-admission/test-results/world-admission-debug.trx",
+      "bytes": 42729,
+      "sha256": "1f5d1c6d7a2bd755ba291a861cb91f99d26426b68d16b1eb9af8fd1bd3c98e80"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-admission/CONTRACT.md",
+      "bytes": 6285,
+      "sha256": "202a012a830f7a1b95c115c3629c48976120e8fc8254aac0563bcbde058cb063"
+    }
+  ]
+}

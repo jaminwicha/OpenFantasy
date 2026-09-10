@@ -2,6 +2,8 @@
 
 9 September 2026. This increment begins P01 execution while the remaining P00 preparation exits stay open. It retains the entire reviewed design and all 181 requirements. It does not declare P01, P02 or the first playable prototype complete.
 
+The subsequent [native local-world increment](native-loop/WORLD_CONTRACT.md) now connects grounded player/NPC movement, Wren's original utterance, shared reading holds and finite wood handover in Godot. Presence, terrain, custody, individual exposure, language and dialogue persist in composed schema2. The original counted schema1 described below remains supported as its separate profile, with no silent migration. The native walkthrough and exact paused-view process reopen are retained in that increment; production art, full quest completion and multiplayer are still open.
+
 ## Implemented behavior
 
 The portable counted authority now admits explicit finite sources, actor controls and owner/deposit rules before evaluating transfers. Players and host-controlled NPCs use the same operation. Unauthorized access cannot probe arbitrary expected revisions; finite source intervals, capacity, historical identity claims and exact retry content constrain accepted actions. A split at the 4,096-lot ceiling rejects cleanly while a whole-lot transfer remains possible.
@@ -18,9 +20,9 @@ The [durable authority record](durable-authority/README.md) records full local v
 
 ## Next connection to gameplay
 
-1. Extend this same host transaction and explicit schema migration with real actor/body/location state, owned terrain regions and accepted action time. Couple excavation/work to finite source admission and actual inventory yield; do not implement a second Godot-owned inventory or editable world.
-2. Admit the selected source records as playable packages, preserving the exact Wren six-wood quest, original ration recipe and all source fields already mapped. Implement movement, gather, make, give and a visible construction result through the real host, with scoped player observations.
+1. Build on the now-composed actor/body/location/terrain/time transaction. Couple excavation/work to finite source admission and actual inventory yield; do not implement a second Godot-owned inventory or editable world.
+2. Extend admitted Wren/farm/wood content with gathering, the original ration recipe, quest adjudication and visible construction effects. Preserve all source fields already mapped and carry exact source provenance through consumed inputs and outputs. Movement and a finite handover now work; this is not the completed gather/make/give/construct loop.
 3. Add live NPC commitments, Wait encounter scheduling, durable event/outbox delivery, session grants/rebinding and reconnect. Prove the connected native loop and 1–4-player behavior against the full P01/P02 exit criteria.
-4. Keep native pixel-art/animation/audio production with separate artists, then run virtual and human playtests. The current Godot run is a headless durability proof, not visual/motion/enjoyment acceptance.
+4. Keep native pixel-art/animation/audio production with separate artists, then run virtual and human playtests. A rendered original-asset farm and native input walkthrough now run, but neither establishes the approved production-art target, animation quality, sound or enjoyment acceptance.
 
 Remaining P00 workload/catalog budgets, missing representative domains and source-to-playable calibration still matter. Full platform exports, power-loss/filesystem qualification, storage/recovery budgets, branch/time-travel migration and production save compatibility remain explicit obligations. None is closed by a passing local test or by adding this library.

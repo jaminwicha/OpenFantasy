@@ -1,0 +1,59 @@
+{
+  "review": "independent static spatial review and mathematical checks",
+  "findings": [],
+  "dotnet": "Not run by critic; coordinator owns final compiled verification. Earlier coordinator run reported 310 passes and one corrected Spatial expectation.",
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/ActorPresence.cs",
+      "sha256": "bf69fcb992217df2cb6df13e5fd7ca78361984ed00ffb3e9728b0c71dab78e10"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/BodyVolume.cs",
+      "sha256": "3621fa9d03435c4e30f85e27b6e8f0ad4859bf8ea491a6208d5152f46e1a09bc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs",
+      "sha256": "37a491de622e7011a14161b2a79ca4729ee3567874273b6c345b2c625e8785df"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialResults.cs",
+      "sha256": "919f6da80a585b71a309a758a8af28e667f1b5103ffa8da0eacfad9fa06959d2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/SubunitPosition.cs",
+      "sha256": "d4b7d8513811ffa52b18231aaff482ea5d1a387c1215f614b6ea1fd88238a6aa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/TerrainSightline.cs",
+      "sha256": "a7b4bc39d1abcef69bcaaa50dbfd00881e5fe8a2fc9ec0f2225c74914c2e09e6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/TerrainVolumeQueries.cs",
+      "sha256": "1046977834b572e0f6ccf8b1274ba2ffd39894d28525c1017a3615b2ad9a78af"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialAdmissionTests.cs",
+      "sha256": "5cb86464e129b42e06c4731cab5bca149162cadb0359508a099aae53865645d2"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialFixture.cs",
+      "sha256": "03124732dfb89174bc2b3e7d1dfd473f699cb14044005537b9106a52d836dccf"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialInteractionTests.cs",
+      "sha256": "6e14792b486bfa0dad346584c14ce0d1f050dd774c2409a44e9a6d6d39d6ce04"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialMovementTests.cs",
+      "sha256": "c59a049efe5e5ba727b0c0deb1e62503091c07adbff96bce9d0f39f931d7a553"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/spatial/CONTRACT.md",
+      "sha256": "a6fdf2ed2cb3adb9dbcc2b49e29c1e1b11deef8bf70d59641e2036737a64a6ea"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/spatial-review/review_arithmetic.py",
+      "sha256": "6f4a1b735c6d5c796dad6bdda99ad350f88df98e63914182bef02904c11ee782"
+    }
+  ]
+}

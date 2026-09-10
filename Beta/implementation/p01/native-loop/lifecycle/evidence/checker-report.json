@@ -1,0 +1,263 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-10T01:14:09.341458+00:00",
+  "scope": "Native headless startup shutdown and exact fresh-process shared-service reopen",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "runsDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6",
+  "repetitions": 2,
+  "dotnetRoot": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401",
+  "pathPrefix": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401",
+  "steps": [
+    {
+      "name": "sdk-version",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "10.0.401\n",
+      "stderr": ""
+    },
+    {
+      "name": "editor-version",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "4.6.stable.mono.official.89cea1439\n",
+      "stderr": ""
+    },
+    {
+      "name": "1-remove-opening",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-remove-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-remove-opening.json",
+        "remove-opening"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm lifecycle passed: remove-opening\n",
+      "stderr": ""
+    },
+    {
+      "name": "1-remove-opening-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-remove-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-remove-opening-reopen.json",
+        "inspect"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm lifecycle passed: inspect\n",
+      "stderr": ""
+    },
+    {
+      "name": "1-close-opening",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-close-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-close-opening.json",
+        "close-opening"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "1-close-opening-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-close-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-close-opening-reopen.json",
+        "inspect"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm lifecycle passed: inspect\n",
+      "stderr": ""
+    },
+    {
+      "name": "2-remove-opening",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-remove-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-remove-opening.json",
+        "remove-opening"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm lifecycle passed: remove-opening\n",
+      "stderr": ""
+    },
+    {
+      "name": "2-remove-opening-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-remove-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-remove-opening-reopen.json",
+        "inspect"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm lifecycle passed: inspect\n",
+      "stderr": ""
+    },
+    {
+      "name": "2-close-opening",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-close-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-close-opening.json",
+        "close-opening"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "2-close-opening-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-lifecycle",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-close-opening.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-close-opening-reopen.json",
+        "inspect"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm lifecycle passed: inspect\n",
+      "stderr": ""
+    }
+  ],
+  "observations": [
+    {
+      "name": "1-remove-opening",
+      "reportPath": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-remove-opening.json",
+      "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+      "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+      "Revision": 0,
+      "AdvancingSteps": 0,
+      "PlayerWood": 8,
+      "ReadingHold": false,
+      "NativeSqlite": "3.53.4",
+      "LockingMode": "exclusive",
+      "OpenAttempts": 4
+    },
+    {
+      "name": "1-remove-opening-reopen",
+      "reportPath": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-remove-opening-reopen.json",
+      "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+      "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+      "Revision": 0,
+      "AdvancingSteps": 0,
+      "PlayerWood": 8,
+      "ReadingHold": false,
+      "NativeSqlite": "3.53.4",
+      "LockingMode": "exclusive",
+      "OpenAttempts": 1
+    },
+    {
+      "name": "1-close-opening-reopen",
+      "reportPath": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/1-close-opening-reopen.json",
+      "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+      "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+      "Revision": 0,
+      "AdvancingSteps": 0,
+      "PlayerWood": 8,
+      "ReadingHold": false,
+      "NativeSqlite": "3.53.4",
+      "LockingMode": "exclusive",
+      "OpenAttempts": 1
+    },
+    {
+      "name": "2-remove-opening",
+      "reportPath": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-remove-opening.json",
+      "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+      "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+      "Revision": 0,
+      "AdvancingSteps": 0,
+      "PlayerWood": 8,
+      "ReadingHold": false,
+      "NativeSqlite": "3.53.4",
+      "LockingMode": "exclusive",
+      "OpenAttempts": 5
+    },
+    {
+      "name": "2-remove-opening-reopen",
+      "reportPath": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-remove-opening-reopen.json",
+      "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+      "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+      "Revision": 0,
+      "AdvancingSteps": 0,
+      "PlayerWood": 8,
+      "ReadingHold": false,
+      "NativeSqlite": "3.53.4",
+      "LockingMode": "exclusive",
+      "OpenAttempts": 1
+    },
+    {
+      "name": "2-close-opening-reopen",
+      "reportPath": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/farm-lifecycle-runs/16f4b7e1733144b0ae00bb92a23c3ef6/2-close-opening-reopen.json",
+      "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+      "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+      "Revision": 0,
+      "AdvancingSteps": 0,
+      "PlayerWood": 8,
+      "ReadingHold": false,
+      "NativeSqlite": "3.53.4",
+      "LockingMode": "exclusive",
+      "OpenAttempts": 1
+    }
+  ],
+  "finishedUtc": "2026-09-10T01:14:15.326778+00:00",
+  "artifactSha256": {
+    "1-close-opening-reopen.json": "a621020ea90f203952b49bcd93aaf4169e4db1f30aa834bc4d706259b467863f",
+    "1-close-opening.json": "efc5a8b3181306223314b852258cf889418339fba6d057387ae1b4dc0edef8b0",
+    "1-close-opening.sqlite3": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750",
+    "1-remove-opening-reopen.json": "b929da6a31354abacabb965c8e34d3abf08dcade162c5f63aa3b257b321c1949",
+    "1-remove-opening.json": "4aed3cd8b22985d0e96f26b77ed55c7bc96f870a9e82beabd6b572ccd3a27dc9",
+    "1-remove-opening.sqlite3": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750",
+    "2-close-opening-reopen.json": "b929da6a31354abacabb965c8e34d3abf08dcade162c5f63aa3b257b321c1949",
+    "2-close-opening.json": "efc5a8b3181306223314b852258cf889418339fba6d057387ae1b4dc0edef8b0",
+    "2-close-opening.sqlite3": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750",
+    "2-remove-opening-reopen.json": "6166f74b5c92a9e73106faee7f87910b8978342b73f5278770d7f03104eaff15",
+    "2-remove-opening.json": "89fe2fbdf60866537a9819848e051cc6fcbbd8f5c08e75571d33f05b8b76293a",
+    "2-remove-opening.sqlite3": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750"
+  }
+}

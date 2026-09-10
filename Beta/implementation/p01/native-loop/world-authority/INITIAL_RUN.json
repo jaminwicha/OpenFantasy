@@ -1,0 +1,73 @@
+{
+  "captured_at_utc": "2026-09-10T00:51:05.329315+00:00",
+  "run_status": "initial-red",
+  "configuration": "Debug",
+  "sdk": "10.0.401",
+  "dotnet_root": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401",
+  "command": "dotnet test tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-restore --configuration Debug -p:BuildProjectReferences=false --logger trx;LogFileName=world-authority-debug.trx --results-directory ../implementation/p01/native-loop/world-authority/test-results --nologo --verbosity minimal",
+  "counters": {
+    "total": "67",
+    "executed": "67",
+    "passed": "63",
+    "failed": "4",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "failures": [
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.FarmContentValidationTests.Recomputed_local_pins_cannot_admit_an_unreviewed_source_replacement",
+      "message": "System.InvalidOperationException : An element of type 'Number' cannot be converted to a 'System.String'."
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.Content.FarmWorldAdmissionTests.Selected_payload_hashes_match_independent_frozen_source_pins",
+      "message": "System.InvalidOperationException : The requested operation requires an element of type 'String', but the target element has type 'Number'."
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CommittedMovementTimeInventoryAndReceiptsSurviveExactReplay",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: Applied\nActual:   Rejected"
+    },
+    {
+      "name": "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.UncertainCommitRequiresReopenAndExactReceiptRecovery(afterCommit: False)",
+      "message": "Assert.Equal() Failure: Values differ\nExpected: Applied\nActual:   Rejected"
+    }
+  ],
+  "performance_observations": [
+    "Small-fixture full replay: commits=6000; genesisBytes=5199; commitMilliseconds=1549.935; recoveryMilliseconds=518.101; databaseBytes=2949120"
+  ],
+  "limits": [
+    "Small synthetic state on this macOS host; no largest-world or release-export performance conclusion.",
+    "Source changed after this run; these tested binaries and TRX remain historical evidence."
+  ],
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "sha256": "8dc431d729394df56918f9f7819ea12917195ca9a17abb5ee95f47dcdd8f9f59",
+      "bytes": 301056
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "sha256": "b51738353c61a5c8c1ac0121c6b08e12c59e0bf4ed34dd8719c3e0dc297d1ab1",
+      "bytes": 132096
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "sha256": "2621b3a4325e779ce1568672af4789da613b7b80c2593634f3142ec9b52715db",
+      "bytes": 98304
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/test-results/world-authority-debug.trx",
+      "sha256": "f46a744e80053a1ccfc240b292db71353e5068167ac94078831cf82a1f644b32",
+      "bytes": 116232
+    }
+  ]
+}

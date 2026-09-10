@@ -1,0 +1,332 @@
+{
+  "captured_at_utc": "2026-09-10T01:17:41.373824+00:00",
+  "status": "passed",
+  "role": "Independent client/session critic authored native harness; coordinator executed it in the integrated verifier. Harness implementation was statically checked by its author.",
+  "execution_started_utc": "2026-09-10T01:14:09.341458+00:00",
+  "execution_finished_utc": "2026-09-10T01:14:15.326778+00:00",
+  "native_process_stages": 8,
+  "tool_pin_checks": 2,
+  "repetitions_per_action": 2,
+  "complete_state_observations": 6,
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "dotnet_root": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401",
+  "runtime": ".NET 10.0.12",
+  "display": "headless",
+  "native_sqlite": "3.53.4",
+  "asserted_state": {
+    "revision": 0,
+    "advancing_steps": 0,
+    "player_wood": 8,
+    "reading_hold": false,
+    "canonical_hash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+    "sqlite_profile": "WAL, FULL (2), foreign_keys 1, exclusive"
+  },
+  "findings": {
+    "CS-01": "Static closure plus native close-opening and fresh-process recovery passed twice.",
+    "CS-02": "Static closure plus native remove-opening, eventual ownership release and fresh-process recovery passed twice.",
+    "CS-03": "Static guarded-readiness review plus retained managed session failure tests; native fault injection not claimed."
+  },
+  "scope_limits": [
+    "No rendered visual-quality claim",
+    "No exhaustive scheduling interleavings",
+    "No Windows/Linux export qualification",
+    "No native focus-event or host-failure injection",
+    "No pre-fix failing native run claimed"
+  ],
+  "current_execution_inputs": [
+    {
+      "path": "Beta/Runtime/client/scripts/FarmLifecycleProbe.cs",
+      "bytes": 7611,
+      "sha256": "701f50f1065f848b3ebf1fcf6acc2e6e1996d3b98b203132951da03d8c09e11d"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmGame.cs",
+      "bytes": 8872,
+      "sha256": "05ce116fa18cf474ea03dcb25eb4493ce4feb8f1b8e7036f979e4a8ccd1808b2"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmClientSession.cs",
+      "bytes": 4319,
+      "sha256": "a80130351ca91053831b174500b6951aefde4ad994092ef4f6ed8f13ec090719"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Bootstrap.cs",
+      "bytes": 2774,
+      "sha256": "228d356856c53c6fa1cd5aae6c705b6eaf07f118965ad2977821f29b882ed44e"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmInputMap.cs",
+      "bytes": 1654,
+      "sha256": "802fbe32725834600e9dd5b7c66b24bf28e2faad0f917dac81b694c84d90a28c"
+    },
+    {
+      "path": "Beta/Runtime/tools/check_farm_lifecycle.py",
+      "bytes": 6060,
+      "sha256": "67090553fdda7e022d9c7f8a1d5e6c9ddd4cd1d4d091f19cb6a582f6c32187ad"
+    },
+    {
+      "path": "Beta/Runtime/toolchain.json",
+      "bytes": 1606,
+      "sha256": "1bdc42ca35759ef8ce2f474cbed9eb2c8105c717dfb2a7a75a7cb0dc5ee76fae"
+    },
+    {
+      "path": "Beta/Runtime/client/project.godot",
+      "bytes": 549,
+      "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a"
+    },
+    {
+      "path": "Beta/Runtime/client/OpenFantasy.Client.csproj",
+      "bytes": 491,
+      "sha256": "1418b317863d8ac9a6c1bf0471d2e487307a1d8f320696b922f02bccffc5417a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs",
+      "bytes": 2946,
+      "sha256": "06e4fac1aec5fe3402e8b4e2eed7d5ceaeb06767453066f8b07ce736c082a57f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+      "bytes": 12277,
+      "sha256": "01be8d99bc12c00b5d6a57b92ea433466c89b76a5a3c16349c8e2eb79dab0aa3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs",
+      "bytes": 3160,
+      "sha256": "485335cb4ba1d59c80bec6d88863305b9bd8545b3150f362ce1aeba1b8a1f0de"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/PendingLocalAction.cs",
+      "bytes": 407,
+      "sha256": "d4791b688837c7a9ac69ff4287bb55d550ca91fd42ef241819a3b66ec0b0b5f0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/README.md",
+      "bytes": 4023,
+      "sha256": "0da6090279320720947dcf618eb4d99fa411500f6ce8b1ef3b264a1581d683fc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+      "bytes": 8761,
+      "sha256": "dc381037f2e4d0f1c0b4ba7ca016a489fa7f5fc254c367944790f3a8f05a0e72"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs",
+      "bytes": 5290,
+      "sha256": "ebe9f57c82a3884bc258e7665823b62604ef8cbf988f35bfa99db43625c65b2b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs",
+      "bytes": 13506,
+      "sha256": "4221081e8e805411b6b360314c50b7749fb2e4f8bb6360b65e0fa04a0692772a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs",
+      "bytes": 4602,
+      "sha256": "dcf08be6a844efde19f156f4e751f24c39d2a79b51e72b90e69f0182d69c029e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs",
+      "bytes": 2130,
+      "sha256": "b9ae65ef6eb0f2db327812efe12ea078949604a40c3990db9d2f71f033e3a86c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+      "bytes": 7778,
+      "sha256": "e4cf648443fc1550cf3c5cf71b75c26c9aaea817088e8feb000256e7ce8be592"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageBinary.cs",
+      "bytes": 2468,
+      "sha256": "0bfd8a426bdd3ddfb16a4320e26fa30fa2a0cff47257e7e028f02348124f2415"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageRecords.cs",
+      "bytes": 1130,
+      "sha256": "60d0b727ecacfa030ac7bc25dc3c619e630fd698c5d38441689cff3082fc4d1d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs",
+      "bytes": 6774,
+      "sha256": "dfb7030be3a8a44eff817ab05a148f7c762f0e0c79f75f9a7423b0456757b5e7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmActorBuilder.cs",
+      "bytes": 4053,
+      "sha256": "d021f8b3487a8171e889af33c30c729b14fe480e9256975ec42ad175b6b03d78"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmAdmissionDefinition.cs",
+      "bytes": 8915,
+      "sha256": "4f35f5da2a30b72ac0d3c3d771b4729a6f50b39e7e6fe89e68e0dc1ab3affe8f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmCanonicalJson.cs",
+      "bytes": 2539,
+      "sha256": "68ad8994056583c521e7149ccf9f6a3150a16bd4fc5a85be4c3ab6a2ae074a2f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmContentFiles.cs",
+      "bytes": 3002,
+      "sha256": "adfe549255f0217022bb7a3c222896fb4c7027afb8fb720a0ace58c00a5652c2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmIdentityScope.cs",
+      "bytes": 1567,
+      "sha256": "7ee04624343cdb9465335a3b5b4efe11f579828d1c32490b38cd95c70983faed"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmSourcePacket.cs",
+      "bytes": 6816,
+      "sha256": "7f4763d953469d073d45f70bfd1e6054da9a251419e900f5d58047ed2ca49309"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmWorldAdmission.cs",
+      "bytes": 2555,
+      "sha256": "e2d5d2b412f55182441da5052a68b0a9e297771f9eba6cdeaaefe3901e3052fd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmWorldBuilder.cs",
+      "bytes": 2875,
+      "sha256": "38ddc428cfd1bff54d70faabef98f13019528d49b77e86d7a4c0ed5ace48b190"
+    }
+  ],
+  "native_output_binaries": [
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll",
+      "bytes": 99840,
+      "sha256": "934792aedefc21c45be75fcd294203d1b2f226acf0794b4a829fdad90317f51d"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll",
+      "bytes": 301056,
+      "sha256": "117135cad42c0289cddcb730407d78ea63585884fdb0612f26e66bbfdde0a1d7"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll",
+      "bytes": 645632,
+      "sha256": "b66405e16cd226f73ce8db72a6838b3d83b6867b25fe47e52ff16ce53c057ba6"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/GodotSharp.dll",
+      "bytes": 5768192,
+      "sha256": "29f51de8fbb29dd058e1f85c0e8468d037353bf556967a5cf24412828dc72647"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/Microsoft.Data.Sqlite.dll",
+      "bytes": 177464,
+      "sha256": "b98d957462be432895b00dccca012d3c127e118d3d4262418014b92c7bbd66cf"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/SQLitePCLRaw.core.dll",
+      "bytes": 51712,
+      "sha256": "b72c9dfe1479a568d6b84e249eaf949e76c757888f8056fb6ddb9c0480e0dd25"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/SQLitePCLRaw.batteries_v2.dll",
+      "bytes": 5632,
+      "sha256": "1ee3c6ff4d39171690d6ff6f84b4d876ed038ca28e39bb6e74995f52d2aacf8b"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/SQLitePCLRaw.provider.e_sqlite3.dll",
+      "bytes": 36864,
+      "sha256": "1d4cb69b3aaf6a9cf40dfe179cc16dd678f12bc024b212d4297654e0a29e220d"
+    },
+    {
+      "path": "Beta/Runtime/client/.godot/mono/temp/bin/Debug/runtimes/osx-arm64/native/libe_sqlite3.dylib",
+      "bytes": 1696624,
+      "sha256": "2b27f45233818ae11d97016ca2a16dffcf63a53c46f60bcd52b342fc187b0c83"
+    }
+  ],
+  "historical_review_source_changes": [
+    {
+      "path": "Beta/Runtime/client/scripts/FarmGame.cs",
+      "historical_sha256": "d59a4a35455a2af7eb8aa503f41f7319ed37482388d161437b08824a20190270",
+      "current_sha256": "05ce116fa18cf474ea03dcb25eb4493ce4feb8f1b8e7036f979e4a8ccd1808b2"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Bootstrap.cs",
+      "historical_sha256": "72628479c9a1600e2115a067981d36b894b295943160dc1942e9f6830b69ae0c",
+      "current_sha256": "228d356856c53c6fa1cd5aae6c705b6eaf07f118965ad2977821f29b882ed44e"
+    }
+  ],
+  "historical_review_disposition": "Earlier client-session-review evidence is unchanged. FarmGame camera framing and Bootstrap lifecycle dispatch additions were re-inspected; current hashes recorded here. Historical assemblies remain evidence for the original managed test run.",
+  "artifacts": [
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/1-close-opening-reopen.json",
+      "bytes": 550,
+      "sha256": "a621020ea90f203952b49bcd93aaf4169e4db1f30aa834bc4d706259b467863f"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/1-close-opening.json",
+      "bytes": 192,
+      "sha256": "efc5a8b3181306223314b852258cf889418339fba6d057387ae1b4dc0edef8b0"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/1-close-opening.sqlite3",
+      "bytes": 61440,
+      "sha256": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/1-remove-opening-reopen.json",
+      "bytes": 550,
+      "sha256": "b929da6a31354abacabb965c8e34d3abf08dcade162c5f63aa3b257b321c1949"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/1-remove-opening.json",
+      "bytes": 556,
+      "sha256": "4aed3cd8b22985d0e96f26b77ed55c7bc96f870a9e82beabd6b572ccd3a27dc9"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/1-remove-opening.sqlite3",
+      "bytes": 61440,
+      "sha256": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/2-close-opening-reopen.json",
+      "bytes": 550,
+      "sha256": "b929da6a31354abacabb965c8e34d3abf08dcade162c5f63aa3b257b321c1949"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/2-close-opening.json",
+      "bytes": 192,
+      "sha256": "efc5a8b3181306223314b852258cf889418339fba6d057387ae1b4dc0edef8b0"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/2-close-opening.sqlite3",
+      "bytes": 61440,
+      "sha256": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/2-remove-opening-reopen.json",
+      "bytes": 550,
+      "sha256": "6166f74b5c92a9e73106faee7f87910b8978342b73f5278770d7f03104eaff15"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/2-remove-opening.json",
+      "bytes": 556,
+      "sha256": "89fe2fbdf60866537a9819848e051cc6fcbbd8f5c08e75571d33f05b8b76293a"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/2-remove-opening.sqlite3",
+      "bytes": 61440,
+      "sha256": "59a4b75ab51729f623962204d50fdf4c1e0aa97e3c17733216eed7e13dee4750"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/evidence/checker-report.json",
+      "bytes": 13946,
+      "sha256": "4cc0b663d7d5b65ea188bf7616e24843fd9fe213f8d94accd3c71b5b8835e471"
+    }
+  ],
+  "documents": [
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/CONTRACT.md",
+      "bytes": 4501,
+      "sha256": "7ca9b8c959857055e0959e12e998d095db4651f164fec520c16aae66b5d25b9e"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/lifecycle/RESULTS.md",
+      "bytes": 2836,
+      "sha256": "122fadee5f4f933b8c194f752e0a949a41fab92f7bb10d5c23f1a6a9684f1236"
+    }
+  ]
+}

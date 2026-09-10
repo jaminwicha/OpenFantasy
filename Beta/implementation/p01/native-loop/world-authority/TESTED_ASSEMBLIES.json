@@ -1,0 +1,75 @@
+{
+  "captured_at_utc": "2026-09-10T00:54:39.480809+00:00",
+  "configuration": "Debug",
+  "sdk": "10.0.401",
+  "dotnet_root": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401",
+  "status": "all16composed-service-cases-passed; integrated70case-run-has-one-external-content-packaging-failure",
+  "counters": {
+    "total": "70",
+    "executed": "70",
+    "passed": "69",
+    "failed": "1",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "times": {
+    "creation": "2026-09-09T19:53:02.9115020-05:00",
+    "queuing": "2026-09-09T19:53:02.9115020-05:00",
+    "start": "2026-09-09T19:53:00.9761360-05:00",
+    "finish": "2026-09-09T19:53:05.7761650-05:00"
+  },
+  "owned_cases": 16,
+  "performance_observations": [
+    "Small-fixture full replay: commits=6000; genesisBytes=5211; commitMilliseconds=1580.600; recoveryMilliseconds=542.311; databaseBytes=2949120"
+  ],
+  "service_test_names": [
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.UncertainCommitRequiresReopenAndExactReceiptRecovery(afterCommit: False)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"DELETE FROM world_occupied_identity\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"INSERT INTO world_checkpoints SELECT sequence,adva\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.GenesisCannotDisguiseAnExistingWorldRevisionAsCommitZero",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_head SET advancing_steps=x'0000000000\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_command_outcomes SET receipt=x'01'\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.PartialTransferLineageAndTerminalRejectionsRemainDurable",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CommittedMovementTimeInventoryAndReceiptsSurviveExactReplay",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_commits SET outcomes=x'01'\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CheckpointsAndRecoverySafetyLimitsHaveExplicitBoundaries",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CurrentAuthorityAndExactCommandBytesGateReceiptLookup",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.UncertainCommitRequiresReopenAndExactReceiptRecovery(afterCommit: True)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SchedulerPreviewDoesNotReservePublishOrAcknowledgeAnything",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SixThousandActualCommitsWriteAndReplayTheirScheduledCheckpoint",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.DialogueHoldAndCloseAreDurableWithoutRetrospectiveTime",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"DELETE FROM world_checkpoints\")"
+  ],
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "sha256": "8dc431d729394df56918f9f7819ea12917195ca9a17abb5ee95f47dcdd8f9f59",
+      "bytes": 301056
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "sha256": "d24a0a625500d68fdd512072ddb34efd95152082c8d24573209706cce6134fd8",
+      "bytes": 533504
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "sha256": "30ba36b6d97795f8b9a03555d1cdd52cba3d2baa62b817186da103de282fedcb",
+      "bytes": 102400
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/test-results/world-authority-second-debug.trx",
+      "sha256": "4b415dbe7722e355dd532d70c708ce259453766ed2fefc4f5d51d0ab66566965",
+      "bytes": 114713
+    }
+  ]
+}

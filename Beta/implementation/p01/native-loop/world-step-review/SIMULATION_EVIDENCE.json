@@ -1,0 +1,52 @@
+{
+  "verification": "Coordinated pinned .NET 10.0.401 Hosting Debug test run; assemblies target net8.0",
+  "command": "DOTNET_ROOT=/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-restore --configuration Debug --logger 'trx;LogFileName=simulation-hosting.trx' --results-directory /private/tmp/openfantasy-simulation-results",
+  "result": "82 passed, 0 failed, 0 skipped; all 12 Simulation tests passed",
+  "trxTimes": {
+    "creation": "2026-09-09T19:59:24.5332720-05:00",
+    "queuing": "2026-09-09T19:59:24.5332720-05:00",
+    "start": "2026-09-09T19:59:22.8814370-05:00",
+    "finish": "2026-09-09T19:59:27.4020070-05:00"
+  },
+  "trxSha256": "3cd9763e91aa3871755572fbdb9ff8b74230c470f43fc586149f410efccea700",
+  "initialCorrection": "Added current test cancellation token to test-only Task.Delay after xUnit1051 analyzer failure; rerun compiled cleanly and passed.",
+  "scope": "Host session pacing, lease, pending durability, immutable local projection, collision fallback and deterministic home amble; not production multiplayer authentication, global visibility or recovery scalability.",
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs",
+      "sha256": "06e4fac1aec5fe3402e8b4e2eed7d5ceaeb06767453066f8b07ce736c082a57f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+      "sha256": "01be8d99bc12c00b5d6a57b92ea433466c89b76a5a3c16349c8e2eb79dab0aa3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs",
+      "sha256": "485335cb4ba1d59c80bec6d88863305b9bd8545b3150f362ce1aeba1b8a1f0de"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/PendingLocalAction.cs",
+      "sha256": "d4791b688837c7a9ac69ff4287bb55d550ca91fd42ef241819a3b66ec0b0b5f0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/README.md",
+      "sha256": "0da6090279320720947dcf618eb4d99fa411500f6ce8b1ef3b264a1581d683fc"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/LocalNpcControllerTests.cs",
+      "sha256": "ee3a6a31ba7aeb7a075342fbcade1b86d78e2d80b8bef4ce29ea5683793af544"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/LocalWorldSessionTests.cs",
+      "sha256": "1d08c46a529dd792a2ca80fd0c8dc289845ec2699a6badd0347c31470cdb0dd1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ManualSessionTimeProvider.cs",
+      "sha256": "ac977b3387ec4f45042c2ecc3569bdc38ac22a659ca8bc3cd149a1f74c4fde2a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SessionFixture.cs",
+      "sha256": "5ae768d0b785da5582e4e49880a8f80d478b06879c78fbb5285ffdfdb99425a7"
+    }
+  ]
+}

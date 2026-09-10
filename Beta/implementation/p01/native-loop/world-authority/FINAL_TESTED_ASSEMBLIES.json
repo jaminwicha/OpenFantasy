@@ -1,0 +1,27 @@
+{
+  "captured_at_utc": "2026-09-10T01:02:49.018035+00:00",
+  "status": "16authored-service-cases-passed-in-independent28case-final-rerun",
+  "test_manifest": "Beta/implementation/p01/native-loop/client-session-review/REVIEW_VALIDATION.json",
+  "tested_assemblies": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "sha256": "97fcbff32168b55dfa396f0ef26a983a807b638ce96be5e7c4166864ef0bfd5b",
+      "bytes": 301056
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "sha256": "92a926852f2c0a4b4d4cce19ebc1a3425a36ab0af61e06238e2b38aa8dbd057f",
+      "bytes": 645632
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "sha256": "899a6b6cd71d0d28e732de873c2193b1766072bacfc20a9d606360f4a69da58a",
+      "bytes": 138240
+    }
+  ],
+  "trx": {
+    "path": "Beta/implementation/p01/native-loop/client-session-review/test-results/client-session-review-debug.trx",
+    "sha256": "ec8c1188bfc6d9b5928296dd0bad8c5282cd11ab8be9b4d28e7c438c12ae3b5c",
+    "bytes": 45630
+  }
+}

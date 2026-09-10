@@ -1,0 +1,183 @@
+{
+  "schemaVersion": 1,
+  "executedAtUtc": "2026-09-10T00:16:29.878123+00:00",
+  "verificationKind": "executed_independent_original_fixture_reproduction_and_static_byte_bound_analysis",
+  "python": "3.14.5",
+  "oracleChecks": [
+    {
+      "generator": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_actor_vectors.py",
+      "fixture": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/actors-v1.json",
+      "stdoutMatchesFrozenBytes": true,
+      "bytes": 29232,
+      "sha256": "42594f115d5d31b3814bebe1107510609b6390d6abb30873d2a4ac0655dd4fee"
+    },
+    {
+      "generator": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_language_vectors.py",
+      "fixture": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/language-v1.json",
+      "stdoutMatchesFrozenBytes": true,
+      "bytes": 13226,
+      "sha256": "8dfccbf02965e8f495821bdae8c834999b400413be68a59d6d4e6db5869a276a"
+    }
+  ],
+  "existingEncodingsChanged": false,
+  "approvedExistingChanges": [
+    "BodyFunction.Vocalization=10; older definition bytes unchanged",
+    "Existing condition fixture test retains1\u20139 and explicitly asserts no Vocalization"
+  ],
+  "workerDotNetBuilds": 0,
+  "newAuthoredFacts": {
+    "bodyDecoding": 16,
+    "languageDecoding": 7
+  },
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/ActorFormBinding.cs",
+      "bytes": 3228,
+      "sha256": "f7c27d278f63a6bc40f92e1ec58e2bd4882cee1be3e118518a47191eb9544670"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyConditionSnapshot.cs",
+      "bytes": 3821,
+      "sha256": "6d8289ca0f6b3957d098dc87b68e1a1600bdd73cede6822fd9d08641fefe77c5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyContractDecodingV1.cs",
+      "bytes": 10440,
+      "sha256": "bc6c338394f91a35a6d728c05752ce7d17921075d4f73b3235e30e28a45194b9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyContractEncodingV1.cs",
+      "bytes": 3503,
+      "sha256": "ab68380d3511228b7cefe073330288b0c58a72f2370525ffbbdb3d800431e15c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyContractFrameReader.cs",
+      "bytes": 3838,
+      "sha256": "ff6148d5467a5ed0da6e2bb799856d8967521afb5006cc9c9b035353c24ed8c1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyDefinition.cs",
+      "bytes": 4993,
+      "sha256": "878dc032f0ef6228a421a3a72290c4590466ee44fcde66fa0eec6199d0188423"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyDimensions.cs",
+      "bytes": 740,
+      "sha256": "5e10d7357d870e806860b67f70fdf5b3b2799d414df6f879127ffc5f0ff3912f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyFunctions.cs",
+      "bytes": 587,
+      "sha256": "706eba0f04369804a23f9fbc7ec0d97b45f16a4c2e94ff2e72ee882f802e65cf"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyInjury.cs",
+      "bytes": 1230,
+      "sha256": "d0b586c749e4af33d26c1015009c2d3e3c8ec0de53c1183c9de52cdc87c17f44"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyPartDefinition.cs",
+      "bytes": 1205,
+      "sha256": "6a5a8d72e56647ae3d2e39e745ddacc7d63e7d3e9e9a79d3663b66da97b0a99b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/BodySlotKey.cs",
+      "bytes": 779,
+      "sha256": "b42549c0cace6c4c36f71a3976cff7835d671a77088e2036d0c932ea28a28536"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Actors/LocomotionRequirement.cs",
+      "bytes": 1238,
+      "sha256": "acbe6648581a4b701ea79fe394b7ff7a1f25cb66fda2791eb5488ad0be25121e"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Actors/BodyContractDecodingTests.cs",
+      "bytes": 22752,
+      "sha256": "64d3e9f3c1e27f4c0f0cda52c7a3bc6e161936c00b4c9cb3525eb7f1d6a5fe03"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Actors/BodyDecodingTestFrames.cs",
+      "bytes": 2324,
+      "sha256": "9eeec98daca5ac23857ccdcef8234d82ee2370477f4e0cef93e35b7af10f0b39"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Actors/BodyConditionTests.cs",
+      "bytes": 7676,
+      "sha256": "9ebc8a73086ca19ce8b128053e95305e08c67f90652111083ff518c71c5501d7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageContractDecodingV1.cs",
+      "bytes": 3409,
+      "sha256": "ab036124bb3e3fba98404061d1d8108e3b6e50b6013bbf664eef8af8706122b3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageContractFrameReader.cs",
+      "bytes": 2856,
+      "sha256": "b54eca029c5250f9cb84b9e5261c24fffe44b9b93dcdafd33f49d7a228a88832"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageContractEncodingV1.cs",
+      "bytes": 1330,
+      "sha256": "9cbb5e0d328854134219073cc25682e3a1edd81d6953eef6b1fd7ab1e3ffffdc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/ActorComprehensionProfile.cs",
+      "bytes": 3198,
+      "sha256": "789717e6c637bb790915c1949d0d76fa20446ae6549ae4be152e2d29c48cf130"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageComprehensionEntry.cs",
+      "bytes": 823,
+      "sha256": "1109529c20fd6b099ddecd14c475b8e7574e4d021ec7eb5eb8cf17a199514831"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/LanguageChannelKey.cs",
+      "bytes": 1114,
+      "sha256": "971c54c1dadbd74665bc8734ebb53163af48a1a6f2c54352514fd77dc839301f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Language/ComprehensionBands.cs",
+      "bytes": 414,
+      "sha256": "70ea0751f6225d5ec1881c0dfd829e1adefc1f60698c8fdfe295ac18aa39b3f1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Language/LanguageDecodingTests.cs",
+      "bytes": 10284,
+      "sha256": "039dbc4472a2c8aefd7316904f656b41a362ba302aaa60e06267049a49d59b65"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/actors-v1.json",
+      "bytes": 29232,
+      "sha256": "42594f115d5d31b3814bebe1107510609b6390d6abb30873d2a4ac0655dd4fee"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_actor_vectors.py",
+      "bytes": 7275,
+      "sha256": "d800e5fb096f7b0d67b4bfc3e3637051c63123897df205e4d4f8cf43d9e22824"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/language-v1.json",
+      "bytes": 13226,
+      "sha256": "8dfccbf02965e8f495821bdae8c834999b400413be68a59d6d4e6db5869a276a"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_language_vectors.py",
+      "bytes": 4302,
+      "sha256": "076b3b2d765a34e8ed7b0a2a38cd23a70bfe107a59149105b78fd4315f29797a"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/body-restoration/CONTRACT.md",
+      "bytes": 7421,
+      "sha256": "9812c4bcd924505904ed3a6236c516d3bd42f39814b0c79647c9b165f7fe681d"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/body-restoration/LANGUAGE_RESTORATION.md",
+      "bytes": 3024,
+      "sha256": "44e064666df9db8dabb8a72f6f2de1bccd54edd34fec1f0470141fef6b59bdeb"
+    }
+  ],
+  "limits": [
+    "New C# tests await coordinated execution; authored counts are not executed pass counts.",
+    "Restoration does not itself establish accepted content, actor/control/lifecycle/custody admission, expression permission or durable presence."
+  ]
+}

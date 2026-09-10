@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "executedAtUtc": "2026-09-10T01:01:26.204353+00:00",
+  "kind": "executed_independent_source_copy_and_native_resource_data_verification",
+  "godotOrDotNetExecuted": false,
+  "originalCopiesVerified": 8,
+  "pngHeadersVerified": 7,
+  "exactSourceCropCells": 1024,
+  "retainedWalkableSourceCells": 859,
+  "blockingPropsExplicitlyReplacedWithGrass": 165,
+  "exportedTextureReferences": 7,
+  "publicProjectionDependencyCheck": true,
+  "inputs": [
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/PROVENANCE.json",
+      "bytes": 23532,
+      "sha256": "cf4ddb5f6fb282dee286e3fd49aef10c2445c61454d4c575745fafb4875013ac"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/appearance.json",
+      "bytes": 3147,
+      "sha256": "3c9388eddd5a1343065f2e8d476f570a7cf0cf6c92998fedfdc0254df4761a9b"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/farm_visual.tres",
+      "bytes": 7623,
+      "sha256": "a868828c14a37acbc9f2cc8a3281ab8e68736ef5924025b4f5cca3a5e598ff2a"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/layers/acc_03.png",
+      "bytes": 175,
+      "sha256": "0907b9dd49e4553eae718bb47f4f84e30c53637483570536016ed59055eb3048"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/layers/body.png",
+      "bytes": 533,
+      "sha256": "17a3af88e92baa615c9bb3f4d21e095767639458c655348a6b93080e82fe40e7"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/layers/hair_05.png",
+      "bytes": 350,
+      "sha256": "b636e8e6acd8c9282a73a09a5e3956baeeb5bf2ea6fcfc0528ad187db965dd5c"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/layers/outfit_08_a.png",
+      "bytes": 295,
+      "sha256": "bec72107f5dcbbacbc79b42266e2d603b6173d60f1d5c25f4f342f261796e52a"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/layers/outfit_08_b.png",
+      "bytes": 185,
+      "sha256": "90f50e5210177c981efdde1e816b867aa0be7c224192c9814338160ba4028817"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/squire.png",
+      "bytes": 395,
+      "sha256": "4808fd6c07c92ca02c3df9250d352c3b575a7449f52725b2d6928eb459651ce4"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/tiles.png",
+      "bytes": 7520,
+      "sha256": "401e2d79a74e8c82ae273a4c9a1e6bf1f2e400ea13f4252f622b559befcb1a0d"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmCanvas.cs",
+      "bytes": 2419,
+      "sha256": "b3b5989c094fd6965ca9aa33760390a61c37ab2d986bee44d457377dda8e5485"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmActorView.cs",
+      "bytes": 3735,
+      "sha256": "8f1bb45fc0095f6c6d0e2053c0185658d2acebe104b2fc9c7b2dde7a63e93446"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmCanvasCoordinates.cs",
+      "bytes": 1536,
+      "sha256": "f71c0702c8fcc6298484247162eb29a97952649cc4921ad36fce9bf0fe084c58"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmCanvasFrame.cs",
+      "bytes": 2544,
+      "sha256": "21798ffa8be6aed7b5ce527bbd65bc18ba3d159f556a245c64ceb33aa32fccb4"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmGroundView.cs",
+      "bytes": 1903,
+      "sha256": "a9816e9b46b31ecbce1baf82da66095ab1d707fe56efe947efc3906f413af8a5"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmPaperdollComposer.cs",
+      "bytes": 3774,
+      "sha256": "8490a8e586d3f1b06400c05189e8287be45ccd0610e5556e96aa8509197ce1d3"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmVisualAssets.cs",
+      "bytes": 1943,
+      "sha256": "c5d59c8302e55942b481b7c8c77ba9894770752ae2faddde748a03a730ab7167"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/content/CANVAS.md",
+      "bytes": 6866,
+      "sha256": "1cb5eeace3b0e1752839bd968b12d0148e97ae091d5ba04d95770939a80547cb"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/content/verify_visuals.py",
+      "bytes": 5529,
+      "sha256": "5603569d34f845c0e13424350f512878aa756980a000a055c465c74f1e27152c"
+    }
+  ],
+  "limits": [
+    "This does not compile/import the resource or execute the C# compositor.",
+    "Actual native display, movement animation and user art acceptance remain coordinator/user gates."
+  ]
+}

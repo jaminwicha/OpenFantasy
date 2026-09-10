@@ -1,0 +1,149 @@
+{
+  "captured_at_utc": "2026-09-10T00:55:45.527925+00:00",
+  "role": "Implementer verification of owned service; independent client/session review is separate.",
+  "status": "16of16 composed-service tests passed; integration run69of70 due external content resource failure",
+  "command": "DOTNET_ROOT=/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-restore --configuration Debug --logger trx;LogFileName=world-authority-second-debug.trx --results-directory ../implementation/p01/native-loop/world-authority/test-results --nologo --verbosity minimal",
+  "limits": [
+    "No v2 process-kill/power-loss validation in these test cases.",
+    "Initial small synthetic scene timing, not production-scale or cross-platform qualification.",
+    "Checkpoint-tail recovery, durable inbox, migration and production save lifespan remain unsupported.",
+    "Subsequent content/resource and scheduler builds may replace tested assemblies; historical bytes are bound by TESTED_ASSEMBLIES.json."
+  ],
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+      "sha256": "dc381037f2e4d0f1c0b4ba7ca016a489fa7f5fc254c367944790f3a8f05a0e72",
+      "bytes": 8761
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs",
+      "sha256": "ebe9f57c82a3884bc258e7665823b62604ef8cbf988f35bfa99db43625c65b2b",
+      "bytes": 5290
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs",
+      "sha256": "4221081e8e805411b6b360314c50b7749fb2e4f8bb6360b65e0fa04a0692772a",
+      "bytes": 13506
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs",
+      "sha256": "dcf08be6a844efde19f156f4e751f24c39d2a79b51e72b90e69f0182d69c029e",
+      "bytes": 4602
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs",
+      "sha256": "b9ae65ef6eb0f2db327812efe12ea078949604a40c3990db9d2f71f033e3a86c",
+      "bytes": 2130
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+      "sha256": "e4cf648443fc1550cf3c5cf71b75c26c9aaea817088e8feb000256e7ce8be592",
+      "bytes": 7778
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageBinary.cs",
+      "sha256": "0bfd8a426bdd3ddfb16a4320e26fa30fa2a0cff47257e7e028f02348124f2415",
+      "bytes": 2468
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStorageRecords.cs",
+      "sha256": "60d0b727ecacfa030ac7bc25dc3c619e630fd698c5d38441689cff3082fc4d1d",
+      "bytes": 1130
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs",
+      "sha256": "dfb7030be3a8a44eff817ab05a148f7c762f0e0c79f75f9a7423b0456757b5e7",
+      "bytes": 6774
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/SqliteAuthorityDatabase.cs",
+      "sha256": "db33f7ab5ead56e3aea0b5abefd923166c8e239dc4ec5146e2f8f1d300851869",
+      "bytes": 11156
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldAuthorityServiceTests.cs",
+      "sha256": "c118e7f402d63b17d552fa3d0ccc908fa0b9410c0f04e2fed685c1572df01050",
+      "bytes": 14217
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldServiceFixture.cs",
+      "sha256": "90b1e3eac0a4897498be11101040f70cf4f7f4ddd76e9121ad7feb2df6b8395f",
+      "bytes": 3996
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "sha256": "5f0fd7bff4f22a9ec92788bdbfefd21bc672a0100fc54f3acf5ec55bae625336",
+      "bytes": 4557
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionResolver.cs",
+      "sha256": "a84b22780b82a10f5488ce2aef6ebac75c814fd397943eecfdc8d6706d635cb6",
+      "bytes": 7116
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "sha256": "def2468c917a4143174958070dcce7b04aef02ff8c5dc8a16e487906bcea74d5",
+      "bytes": 5341
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepDecision.cs",
+      "sha256": "d6a762677a67b4c289aecabaa3bfc0ff589281262382ed77da21d7b3f5e2efa8",
+      "bytes": 1007
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV1.cs",
+      "sha256": "c3931f073db115914ff380d0b739505adf377cf8ed964fe7dd3d6c40e3c7b16a",
+      "bytes": 4968
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV1.cs",
+      "sha256": "3ef39fc27137894e8fe486d5380e5bf0fc2e5a7ba22518c7a06b4807a0788ca4",
+      "bytes": 3663
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV1.cs",
+      "sha256": "1d17ed8419b8160ddec1c0943fc16260fe533f4ae0202fcea02851206795a956",
+      "bytes": 4691
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldReceiptCodecV1.cs",
+      "sha256": "0944da6be08949a2659ac1b52a3a993a021c61ebdc604d4d4664b15ce508d928",
+      "bytes": 3543
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/CONTRACT.md",
+      "sha256": "32447b99a8855735f8e2dc4945e53ee4a3ef61566baed061444c18f1cf19d517",
+      "bytes": 9265
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/TESTED_ASSEMBLIES.json",
+      "sha256": "4b94c5b9fa953ca0fb376bb7f355bbc20e31f67233939c7fddc3460a86972400",
+      "bytes": 4525
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/INITIAL_RUN.json",
+      "sha256": "8137d6a47b589b0d44232e78ac237f1e0a6c9252b4cb845129f35566ae42c1b9",
+      "bytes": 3350
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/test-results/world-authority-debug.trx",
+      "sha256": "f46a744e80053a1ccfc240b292db71353e5068167ac94078831cf82a1f644b32",
+      "bytes": 116232
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/test-results/world-authority-second-debug.trx",
+      "sha256": "4b415dbe7722e355dd532d70c708ce259453766ed2fefc4f5d51d0ab66566965",
+      "bytes": 114713
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/world-authority/FINAL_TESTED_ASSEMBLIES.json",
+      "sha256": "d1c0373d69a58de192d22467230305b7548c690d5a9b8a88a12ad9de4593f9fa",
+      "bytes": 1157
+    }
+  ],
+  "final_followup": {
+    "status": "16of16service-cases-passed-in-final28case-rerun",
+    "evidence": "FINAL_TESTED_ASSEMBLIES.json",
+    "integration_note": "Independent session worker reported full82 Hosting suite passed; exact final owned run selects16service+12session."
+  }
+}

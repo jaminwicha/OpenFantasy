@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "executedAtUtc": "2026-09-10T00:57:58.887534+00:00",
+  "kind": "executed_independent_python_source_and_admission_validation",
+  "applicationExecuted": false,
+  "workerDotNetBuilds": 0,
+  "embeddedResourceDeclarationVerified": true,
+  "actualManifestResourceExecutionVerifiedByThisScript": false,
+  "admissionSha256": "990d2c7ac2983ebe85a7bdac4864ebfa1dc913e8d19e2b3e1f7b26ced7a0a992",
+  "packetFilesVerified": 51,
+  "packetBytes": 440303,
+  "selectedPayloadsVerified": [
+    {
+      "source": "data/npcs.json#/npcs/116",
+      "sha256": "f0374a9cd788d14de3c45233cf31c6b67904ed209a6a5f8d1a0b8de547dd1f30"
+    },
+    {
+      "source": "data/world.json#/regions/18",
+      "sha256": "fc79c253de2d851941d669687dfb8253e79d37f17f74dfce4ce9023f75d7c884"
+    },
+    {
+      "source": "data/items.json#/items/12",
+      "sha256": "613f7643e208f8da2a49c4fac27cc3671a6b6fbc1b1a0e39a7e3f0f29af0505d"
+    },
+    {
+      "source": "data/quests.json#/quests/44",
+      "sha256": "bbb996bb2ca6ca4e27b942f7f40f9ea624813909e037ec86980ed8aaa4ab86cb"
+    }
+  ],
+  "presentationAssetsVerified": 5,
+  "presentationSemanticsVerified": 3,
+  "initialPlayerTile": [
+    101,
+    325
+  ],
+  "initialWrenTile": [
+    103,
+    322
+  ],
+  "spawnOutsideRange": true,
+  "oneCellNorthInsideRange": true,
+  "declaredFiniteWood": {
+    "player": 8,
+    "wren": 0
+  },
+  "inputs": [
+    {
+      "path": "Beta/Runtime/content/native-farm/admission-v1.json",
+      "bytes": 8028,
+      "sha256": "990d2c7ac2983ebe85a7bdac4864ebfa1dc913e8d19e2b3e1f7b26ced7a0a992"
+    },
+    {
+      "path": "Beta/Runtime/content/native-farm/presentation-v1.json",
+      "bytes": 2192,
+      "sha256": "3b93d0672eb65d133669f81bf054f2878152bcd56b8ebe9229accf03a7f2025a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmActorBuilder.cs",
+      "bytes": 4053,
+      "sha256": "d021f8b3487a8171e889af33c30c729b14fe480e9256975ec42ad175b6b03d78"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmAdmissionDefinition.cs",
+      "bytes": 8915,
+      "sha256": "4f35f5da2a30b72ac0d3c3d771b4729a6f50b39e7e6fe89e68e0dc1ab3affe8f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmCanonicalJson.cs",
+      "bytes": 2539,
+      "sha256": "68ad8994056583c521e7149ccf9f6a3150a16bd4fc5a85be4c3ab6a2ae074a2f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmContentFiles.cs",
+      "bytes": 3002,
+      "sha256": "adfe549255f0217022bb7a3c222896fb4c7027afb8fb720a0ace58c00a5652c2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmIdentityScope.cs",
+      "bytes": 1567,
+      "sha256": "7ee04624343cdb9465335a3b5b4efe11f579828d1c32490b38cd95c70983faed"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmSourcePacket.cs",
+      "bytes": 6816,
+      "sha256": "7f4763d953469d073d45f70bfd1e6054da9a251419e900f5d58047ed2ca49309"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmWorldAdmission.cs",
+      "bytes": 2555,
+      "sha256": "e2d5d2b412f55182441da5052a68b0a9e297771f9eba6cdeaaefe3901e3052fd"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/FarmWorldBuilder.cs",
+      "bytes": 2875,
+      "sha256": "38ddc428cfd1bff54d70faabef98f13019528d49b77e86d7a4c0ed5ace48b190"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj",
+      "bytes": 687,
+      "sha256": "b45392bdd366dbe5d7e991850aa7f94880fe2b2703473a1aed111ecf60c1c5f2"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/FarmContentFixture.cs",
+      "bytes": 2147,
+      "sha256": "66682332b1095e54a601bfc174cd69fc321262b73eebfd4bc8387cf543d2b5e1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/FarmContentValidationTests.cs",
+      "bytes": 5520,
+      "sha256": "2b77322b11b8d30a8466ff39f8e0c293c5da188c79a9e7a13b9b8c3937309348"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/FarmWorldAdmissionTests.cs",
+      "bytes": 15463,
+      "sha256": "155ed59358dc729c773e40e491d0f9b0e29d63e80bc9397b082c17b18bee98c4"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/content/CONTRACT.md",
+      "bytes": 13441,
+      "sha256": "a9aaa696b0a7a52dc75c05e2e5736419a1c6abfc64cccc74908c918125f4020f"
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/content/verify_admission.py",
+      "bytes": 7934,
+      "sha256": "9a1f01fe3533a7fb50a88f88103f678e201e7b714aea84104820eec5c69f9bab"
+    }
+  ],
+  "limits": [
+    "No C# decoder, world factory, store or Godot execution by this Python check.",
+    "Exact source preservation and authored admission are not full quest, geography or final art acceptance."
+  ]
+}

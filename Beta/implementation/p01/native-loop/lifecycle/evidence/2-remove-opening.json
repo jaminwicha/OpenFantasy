@@ -1,0 +1,20 @@
+{
+  "Kind": "native-farm-lifecycle-v1",
+  "Mode": "remove-opening",
+  "Status": "passed",
+  "ActionBeforePublicReadiness": true,
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "Observation": {
+    "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+    "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+    "Revision": 0,
+    "AdvancingSteps": 0,
+    "PlayerWood": 8,
+    "ReadingHold": false,
+    "NativeSqlite": "3.53.4",
+    "LockingMode": "exclusive",
+    "OpenAttempts": 5
+  },
+  "DurationMilliseconds": 377
+}

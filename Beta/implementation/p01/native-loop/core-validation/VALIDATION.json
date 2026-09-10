@@ -289,7 +289,18 @@
     "tests/OpenFantasy.Core.Tests/packages.lock.json": "999c120fe238fce7de88e89cd91fceab407556536b08b82acc4c255d2a8b589a"
   },
   "earlierRunnerFailure": {
-    "reason": "An invocation without DOTNET_ROOT selected a machine runtime and failed with SIGBUS inside coreclr generic dictionary handling. Explicit pinned-root Debug and Release reruns passed.",
-    "report": "OpenFantasy.Core.Tests-2026-09-09-193808.ips"
+    "reason": "An early run failed with SIGBUS inside coreclr generic dictionary handling. Its loaded-image UUID matches pinned .NET8.0.31; missing DOTNET_ROOT is not an established cause. Subsequent Debug, Release and full-verifier runs passed. No reproducible cause is established.",
+    "report": "OpenFantasy.Core.Tests-2026-09-09-193808.ips",
+    "loadedCoreClrUuid": "58729de5-7896-3800-8a97-eb3ff3e127bb",
+    "matchedRuntime": "8.0.31",
+    "machineRuntimeUuid": "ac45dc2a-d5bb-371f-ac30-285313901ddc",
+    "machineRuntimeVersion": "8.0.19",
+    "supersededInitialAttribution": "An invocation without DOTNET_ROOT selected a machine runtime and failed with SIGBUS inside coreclr generic dictionary handling. Explicit pinned-root Debug and Release reruns passed.",
+    "additionalPinnedRepetitions": {
+      "runs": 3,
+      "passedTestsPerRun": 378,
+      "evidence": "../runtime-stability/runs.json",
+      "conclusion": "The isolated native crash did not reproduce in this bounded sample; root cause remains unknown."
+    }
   }
 }

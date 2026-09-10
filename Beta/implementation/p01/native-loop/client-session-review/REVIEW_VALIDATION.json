@@ -1,0 +1,164 @@
+{
+  "captured_at_utc": "2026-09-10T01:02:49.018035+00:00",
+  "review_type": "Independent static client/session critique; authored service tests are supplemental implementer verification.",
+  "status": "all28tests-passed;3client-lifecycle-findings-statically-closed;native-probes-separate",
+  "command": "DOTNET_ROOT=/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-build --no-restore --configuration Debug --filter FullyQualifiedName~Simulation|FullyQualifiedName~WorldAuthorityServiceTests --logger trx;LogFileName=client-session-review-debug.trx --results-directory ../implementation/p01/native-loop/client-session-review/test-results --nologo --verbosity minimal",
+  "working_directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime",
+  "counters": {
+    "total": "28",
+    "executed": "28",
+    "passed": "28",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "times": {
+    "creation": "2026-09-09T20:01:04.0150160-05:00",
+    "queuing": "2026-09-09T20:01:04.0150160-05:00",
+    "start": "2026-09-09T20:01:02.8577330-05:00",
+    "finish": "2026-09-09T20:01:06.4062130-05:00"
+  },
+  "independent_session_cases": 12,
+  "authored_service_cases": 16,
+  "test_names": [
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_commits SET outcomes=x'01'\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.UncertainCommitRequiresReopenAndExactReceiptRecovery(afterCommit: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalNpcControllerTests.Idle_periods_and_reading_holds_produce_no_npc_samples",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.PartialTransferLineageAndTerminalRejectionsRemainDurable",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CommittedMovementTimeInventoryAndReceiptsSurviveExactReplay",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Stopping_cancels_uncommitted_input_and_closes_the_owned_authority",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Readiness_pause_clears_movement_and_never_adds_offline_time",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CheckpointsAndRecoverySafetyLimitsHaveExplicitBoundaries",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalNpcControllerTests.A_proposed_step_beyond_the_home_radius_is_omitted_before_authoritative_geometry",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.DialogueHoldAndCloseAreDurableWithoutRetrospectiveTime",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalNpcControllerTests.Versioned_controller_is_deterministic_and_uses_only_the_explicit_host_actor_binding",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Pending_actions_coalesce_without_early_ack_and_exact_durable_retry_survives_restart",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Expired_movement_and_late_host_deadlines_do_not_create_catch_up_steps",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.CurrentAuthorityAndExactCommandBytesGateReceiptLookup",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Occupied_command_identity_is_rejected_without_stalling_clock_or_host_npc",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SixThousandActualCommitsWriteAndReplayTheirScheduledCheckpoint",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.GenesisCannotDisguiseAnExistingWorldRevisionAsCommitZero",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Backend_failure_faults_completion_and_pending_task_without_a_gameplay_receipt",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.UncertainCommitRequiresReopenAndExactReceiptRecovery(afterCommit: False)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_head SET advancing_steps=x'0000000000\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"DELETE FROM world_checkpoints\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"INSERT INTO world_checkpoints SELECT sequence,adva\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Addressed_reading_hold_suppresses_movement_and_held_close_advances_no_clocks",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Player_projection_is_read_only_and_session_never_accepts_another_actors_claims",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SchedulerPreviewDoesNotReservePublishOrAcknowledgeAnything",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"UPDATE world_command_outcomes SET receipt=x'01'\")",
+    "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SemanticallyCorruptJournalTablesRejectBeforeReadiness(mutation: \"DELETE FROM world_occupied_identity\")",
+    "OpenFantasy.Hosting.Tests.Simulation.LocalWorldSessionTests.Predictable_result_collision_faults_only_that_request_and_commits_an_unrelated_step"
+  ],
+  "reviewed_inputs": [
+    {
+      "path": "Beta/Runtime/client/scripts/FarmClientSession.cs",
+      "sha256": "a80130351ca91053831b174500b6951aefde4ad994092ef4f6ed8f13ec090719",
+      "bytes": 4319
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmGame.cs",
+      "sha256": "d59a4a35455a2af7eb8aa503f41f7319ed37482388d161437b08824a20190270",
+      "bytes": 8871
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmHud.cs",
+      "sha256": "55e5457cd8da1bfd8281c456b580300c41586627a03d0ad5d840a350e53c2093",
+      "bytes": 4911
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmInputMap.cs",
+      "sha256": "802fbe32725834600e9dd5b7c66b24bf28e2faad0f917dac81b694c84d90a28c",
+      "bytes": 1654
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Bootstrap.cs",
+      "sha256": "72628479c9a1600e2115a067981d36b894b295943160dc1942e9f6830b69ae0c",
+      "bytes": 2570
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs",
+      "sha256": "06e4fac1aec5fe3402e8b4e2eed7d5ceaeb06767453066f8b07ce736c082a57f",
+      "bytes": 2946
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+      "sha256": "01be8d99bc12c00b5d6a57b92ea433466c89b76a5a3c16349c8e2eb79dab0aa3",
+      "bytes": 12277
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs",
+      "sha256": "485335cb4ba1d59c80bec6d88863305b9bd8545b3150f362ce1aeba1b8a1f0de",
+      "bytes": 3160
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/PendingLocalAction.cs",
+      "sha256": "d4791b688837c7a9ac69ff4287bb55d550ca91fd42ef241819a3b66ec0b0b5f0",
+      "bytes": 407
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/README.md",
+      "sha256": "0da6090279320720947dcf618eb4d99fa411500f6ce8b1ef3b264a1581d683fc",
+      "bytes": 4023
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/LocalNpcControllerTests.cs",
+      "sha256": "ee3a6a31ba7aeb7a075342fbcade1b86d78e2d80b8bef4ce29ea5683793af544",
+      "bytes": 3294
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/LocalWorldSessionTests.cs",
+      "sha256": "1d08c46a529dd792a2ca80fd0c8dc289845ec2699a6badd0347c31470cdb0dd1",
+      "bytes": 12960
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ManualSessionTimeProvider.cs",
+      "sha256": "ac977b3387ec4f45042c2ecc3569bdc38ac22a659ca8bc3cd149a1f74c4fde2a",
+      "bytes": 2457
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SessionFixture.cs",
+      "sha256": "5ae768d0b785da5582e4e49880a8f80d478b06879c78fbb5285ffdfdb99425a7",
+      "bytes": 4094
+    }
+  ],
+  "tested_assemblies": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "sha256": "97fcbff32168b55dfa396f0ef26a983a807b638ce96be5e7c4166864ef0bfd5b",
+      "bytes": 301056
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll",
+      "sha256": "92a926852f2c0a4b4d4cce19ebc1a3425a36ab0af61e06238e2b38aa8dbd057f",
+      "bytes": 645632
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+      "sha256": "899a6b6cd71d0d28e732de873c2193b1766072bacfc20a9d606360f4a69da58a",
+      "bytes": 138240
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "Beta/implementation/p01/native-loop/client-session-review/test-results/client-session-review-debug.trx",
+      "sha256": "ec8c1188bfc6d9b5928296dd0bad8c5282cd11ab8be9b4d28e7c438c12ae3b5c",
+      "bytes": 45630
+    },
+    {
+      "path": "Beta/implementation/p01/native-loop/client-session-review/CODE_REVIEW.md",
+      "sha256": "6de30a6dae1d990bb4e6c85aef984389d795563d675e9fe0ef6b6254359dbb1c",
+      "bytes": 6185
+    }
+  ]
+}
