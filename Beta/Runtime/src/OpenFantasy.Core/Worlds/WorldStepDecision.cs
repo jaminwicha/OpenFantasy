@@ -2,7 +2,7 @@ using System.Collections.ObjectModel;
 
 namespace OpenFantasy.Core.Worlds;
 
-public enum WorldCommittedIdentityKind { CommitCause = 1, Command = 2, Result = 3, SpawnedEntity = 4 }
+public enum WorldCommittedIdentityKind { CommitCause = 1, Command = 2, Result = 3, SpawnedEntity = 4, AdmittedDefinition = 5 }
 
 public sealed record WorldCommittedIdentity(EntityId Identity, WorldCommittedIdentityKind Kind);
 

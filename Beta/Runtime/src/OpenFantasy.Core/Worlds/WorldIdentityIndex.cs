@@ -26,7 +26,8 @@ internal enum WorldIdentityRole
 {
     World, Branch, Realm, Actor, Principal, Session, Custodian, Lot, CountedSource, ItemDefinition,
     Reservation, Form, Body, Place, BodyDefinition, Injury, CauseReference, TerrainFormation,
-    TerrainSource, Language, LanguageRegister, Utterance, Dialogue, GatherNode, GatherNodeDefinition
+    TerrainSource, Language, LanguageRegister, Utterance, Dialogue, GatherNode, GatherNodeDefinition,
+    CraftRecipeDefinition, PhysicalRecipeDefinition, PhysicalMaterialDefinition, ProductionBatch, TransformedLot
 }
 
 /// <summary>One immutable terrain dependency set; reference equality is the only reuse criterion.</summary>

@@ -1,6 +1,7 @@
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
@@ -13,6 +14,7 @@ public sealed class WorldStepProcessor
 {
     private readonly WorldActionResolver _actions = new();
     private readonly GatherPlanner _gathering = new();
+    private readonly WorldCraftResolver _crafting = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
@@ -48,11 +50,13 @@ public sealed class WorldStepProcessor
         }
         CountedAuthorityState inventory = state.Inventory;
         GatheringSnapshot? gathering = state.Gathering;
+        ProductionSnapshot? production = state.Production;
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
         foreach (WorldActionCommand action in batch.Actions)
         {
             WorldActionResolution resolution;
+            IReadOnlyList<EntityId> craftCreated = [];
             if (action.Intent is GatherIntent)
             {
                 if (gathering is null)
@@ -60,7 +64,8 @@ public sealed class WorldStepProcessor
                     throw new InvalidOperationException("This saved profile does not interpret gathering actions.");
                 }
                 GatherPlan? plan = dialogues.Count == 0 ? _gathering.Plan(state, inventory, gathering, action) : null;
-                if (plan is null || plan.SpawnedId is { } generated && Occupied(generated))
+                if (plan is null || plan.SpawnedId is { } generated && Occupied(generated)
+                    || !FitsProduction(production, plan.CandidateInventory))
                 {
                     resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
                 }
@@ -70,15 +75,34 @@ public sealed class WorldStepProcessor
                     gathering = plan.CandidateGathering;
                 }
             }
+            else if (action.Intent is CraftIntent)
+            {
+                if (production is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret crafting actions.");
+                }
+                CraftPlan plan = _crafting.Resolve(state, inventory, production, action, dialogues.Count != 0, Occupied);
+                resolution = new WorldActionResolution(plan.CandidateInventory, dialogues, plan.Rejection, null);
+                production = plan.CandidateProduction;
+                craftCreated = plan.CreatedIds;
+            }
             else
             {
                 resolution = _actions.Resolve(state, inventory, dialogues, action, Occupied);
+                if (!FitsProduction(production, resolution.Inventory))
+                {
+                    resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
+                }
             }
             var receipt = WorldActionReceipt.Create(action, sequence, resolution.Rejection);
             Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
             if (resolution.SpawnedId is { } spawned)
             {
                 Reserve(spawned, WorldCommittedIdentityKind.SpawnedEntity);
+            }
+            foreach (EntityId created in craftCreated)
+            {
+                Reserve(created, WorldCommittedIdentityKind.SpawnedEntity);
             }
             inventory = resolution.Inventory;
             dialogues = resolution.Dialogues;
@@ -115,7 +139,21 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering);
+            advancingSteps, dialogues, gathering, production);
         return new WorldStepDecision(candidate, receipts, identities);
+    }
+
+    private static bool FitsProduction(ProductionSnapshot? production, CountedAuthorityState inventory)
+    {
+        try
+        {
+            production?.ValidateForAuthority(inventory);
+            return true;
+        }
+        catch (Exception error) when (error is ArgumentException or OverflowException)
+        {
+            // A material candidate can exceed combined capacity although its raw subset still fits.
+            return false;
+        }
     }
 }

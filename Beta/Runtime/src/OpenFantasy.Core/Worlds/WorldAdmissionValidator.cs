@@ -3,6 +3,7 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Language;
+using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Terrain;
 
@@ -29,6 +30,7 @@ public static class WorldAdmissionValidator
         admission.ReadResidents();
         admission.ReadDialogues();
         admission.ReadGathering();
+        admission.ReadProduction();
         return admission.Complete();
     }
 
@@ -105,6 +107,55 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain);
+
+        internal void ReadProduction()
+        {
+            if (world.Production is not { } production)
+            {
+                return;
+            }
+            production.ValidateForAuthority(world.Inventory);
+            if (production.Revision > world.Revision)
+            {
+                throw new ArgumentException("Production revisions cannot exceed committed world revisions.");
+            }
+            foreach (CraftRecipeDefinition recipe in production.Recipes)
+            {
+                Definition(recipe.DefinitionId, WorldIdentityRole.CraftRecipeDefinition, recipe.Version);
+                Definition(recipe.PhysicalRecipe.DefinitionId, WorldIdentityRole.PhysicalRecipeDefinition, recipe.PhysicalRecipe.Version);
+                foreach (ItemPhysicalBinding binding in recipe.Bindings)
+                {
+                    Definition(binding.Item.DefinitionId, WorldIdentityRole.ItemDefinition, binding.Item.Version);
+                    Definition(binding.Physical.DefinitionId, WorldIdentityRole.PhysicalMaterialDefinition, binding.Physical.Version);
+                }
+            }
+            foreach (ProductionBatch batch in production.Batches)
+            {
+                Add(batch.BatchId, WorldIdentityRole.ProductionBatch, unique: true);
+                Add(batch.CommandId, WorldIdentityRole.CauseReference);
+                Require(batch.ActorId, WorldIdentityRole.Actor);
+                Require(batch.CustodianId, WorldIdentityRole.Custodian);
+                foreach (RetiredIngredient ingredient in batch.Ingredients)
+                {
+                    Add(ingredient.LotId, ingredient.Kind == IngredientLotKind.Source
+                        ? WorldIdentityRole.Lot : WorldIdentityRole.TransformedLot);
+                    if (ingredient.Source is { } source)
+                    {
+                        Require(source.SourceId, WorldIdentityRole.CountedSource);
+                        var node = world.Gathering!.Nodes.FirstOrDefault(value => value.SourceId == source.SourceId);
+                        if (node is not null && source.End > node.NextUnissuedUnit)
+                        {
+                            throw new ArgumentException("Retired gathering rights cannot extend beyond the retained issuance cursor.");
+                        }
+                    }
+                }
+            }
+            foreach (TransformedLot lot in production.Lots)
+            {
+                Add(lot.LotId, WorldIdentityRole.TransformedLot);
+                Require(lot.CustodianId, WorldIdentityRole.Custodian);
+            }
+        }
 
         internal void ReadGathering()
         {

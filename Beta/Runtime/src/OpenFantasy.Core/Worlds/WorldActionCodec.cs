@@ -4,12 +4,17 @@ namespace OpenFantasy.Core.Worlds;
 
 public static class WorldActionCodec
 {
-    public const int MaximumCommandByteLength = WorldActionCodecV1.MaximumCommandByteLength;
+    public const int MaximumCommandByteLength = 16 * 1024;
 
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
-        return command.Intent is GatherIntent ? WorldActionCodecV2.Encode(command) : WorldActionCodecV1.Encode(command);
+        return command.Intent switch
+        {
+            CraftIntent => WorldActionCodecV3.Encode(command),
+            GatherIntent => WorldActionCodecV2.Encode(command),
+            _ => WorldActionCodecV1.Encode(command)
+        };
     }
 
     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
@@ -17,6 +22,7 @@ public static class WorldActionCodec
         {
             1 => WorldActionCodecV1.Decode(bytes),
             2 => WorldActionCodecV2.Decode(bytes),
+            3 => WorldActionCodecV3.Decode(bytes),
             _ => throw new FormatException("Unsupported world action version.")
         };
 }

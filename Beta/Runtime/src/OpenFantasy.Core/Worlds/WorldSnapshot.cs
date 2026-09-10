@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
@@ -17,15 +18,15 @@ public sealed class WorldSnapshot
     public WorldSnapshot(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, ContentHash admissionVersion, WorldInstant calendar,
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues = null,
-        GatheringSnapshot? gathering = null)
-        : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues, gathering, null)
+        GatheringSnapshot? gathering = null, ProductionSnapshot? production = null)
+        : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues, gathering, production, null)
     {
     }
 
     private WorldSnapshot(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, ContentHash admissionVersion, WorldInstant calendar,
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues, GatheringSnapshot? gathering,
-        WorldIdentityIndex? previous)
+        ProductionSnapshot? production, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -77,6 +78,11 @@ public sealed class WorldSnapshot
         Residents = Array.AsReadOnly(_residents.Values.OrderBy(resident => resident.ActorId).ToArray());
         Dialogues = Array.AsReadOnly(sessions.Values.ToArray());
         Gathering = gathering;
+        Production = production;
+        if (production is not null && gathering is null)
+        {
+            throw new ArgumentException("The production profile requires its retained gathering component.");
+        }
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
     }
 
@@ -91,7 +97,8 @@ public sealed class WorldSnapshot
     public ReadOnlyCollection<WorldResident> Residents { get; }
     public ReadOnlyCollection<DialogueSession> Dialogues { get; }
     public GatheringSnapshot? Gathering { get; }
-    public ushort ProfileVersion => Gathering is null ? (ushort)1 : (ushort)2;
+    public ProductionSnapshot? Production { get; }
+    public ushort ProfileVersion => Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;
     public WorldIdentityIndex IdentityIndex { get; }
     public ContentHash ContentHash => ContentHash.Compute(WorldSnapshotCodec.Encode(this));
     public bool HasReadingHold => Dialogues.Count != 0;
@@ -100,6 +107,6 @@ public sealed class WorldSnapshot
 
     internal WorldSnapshot WithState(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, WorldInstant calendar, ulong revision, ulong advancingSteps,
-        IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering) => new(inventory, space, residents, AdmissionVersion,
-            calendar, revision, advancingSteps, dialogues, gathering, IdentityIndex);
+        IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production) =>
+        new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues, gathering, production, IdentityIndex);
 }

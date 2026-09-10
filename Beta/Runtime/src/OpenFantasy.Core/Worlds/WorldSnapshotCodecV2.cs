@@ -8,7 +8,7 @@ public static class WorldSnapshotCodecV2
     public static byte[] Encode(WorldSnapshot world)
     {
         ArgumentNullException.ThrowIfNull(world);
-        if (world.Gathering is null)
+        if (world.ProfileVersion != 2 || world.Gathering is null)
         {
             throw new ArgumentException("Gathering worlds require an explicit admitted work component.", nameof(world));
         }

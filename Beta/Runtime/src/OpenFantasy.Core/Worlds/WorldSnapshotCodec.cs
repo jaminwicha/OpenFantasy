@@ -12,6 +12,7 @@ public static class WorldSnapshotCodec
         {
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
+            3 => WorldSnapshotCodecV3.Encode(state),
             _ => throw new ArgumentException("Unsupported world profile.", nameof(state))
         };
     }
@@ -21,6 +22,7 @@ public static class WorldSnapshotCodec
         {
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
+            3 => WorldSnapshotCodecV3.Decode(bytes),
             _ => throw new FormatException("Unsupported saved world profile.")
         };
 }
