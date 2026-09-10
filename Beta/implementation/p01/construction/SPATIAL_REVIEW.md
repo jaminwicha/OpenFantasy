@@ -1,0 +1,19 @@
+# Independent spatial construction review
+
+**No blocking finding** in the reviewed bounded spatial contracts. This review was performed by the content/history lane independently of the spatial author. The exact16 source/test inputs are bound in [SPATIAL_REVIEW.json](SPATIAL_REVIEW.json). These hashes record the reviewed snapshot; later execution or changes require separate evidence.
+
+The review traced half-open body/structure occupancy, exact support/headroom dependencies, conservative missing-region rejection, interaction segments, structure collection copying, cardinal route connectors, deterministic search/reconstruction, and placement's required-access checks. It inspected all19 new tests, including real swept thin-obstacle collision, preserved structures after movement, unsupported base edges, sole-route closure, arbitrary negative subunit connectors, and finite search rejection. No .NET or Godot build/test was run by this reviewer.
+
+The route implementation sorts nearby candidate centers deterministically, checks each cardinal connector with the actor's actual dimensions, bounds BFS expansion, and reconstructs checked waypoints. It does not turn a bounded or missing search into a claim that a route exists. An independent Python transcription of the specified obstacle example replanned32-subunit movements and reached the target in46samples without cycling. This is a bounded mathematical check, not proof of optimal routes or controller convergence in every arrangement.
+
+Placement validates actual material occupancy and actors before creating an immutable candidate, then checks every declared access witness using the corresponding actor's body. It does not relocate trapped actors. Base contacts require complete direct terrain support; elevated members require headroom but do not falsely demand solid terrain beneath every overhang. The construction owner separately supplies physical connectivity and material accounting. The generic spatial object does not establish bearing strength, joint integrity, load support or wind resistance.
+
+The actual content integration exposed an important witness choice: a player route must not begin at the builder's necessarily occupied work anchor. The content author corrected this before qualification. Wren's routes start at his work location; the player's routes connect the two actual source gate cells to their respective outside cells. Actual transient actor obstruction can postpone work or placement. The independent content test exercises these witnesses with Wren actually at work.
+
+Structures remain attached through `WithActors`, so subsequent movement cannot silently remove them. Full-height structures occlude actor/resource sightlines; low installed material can block movement while a higher actor-center sightline remains clear. Closed-edge sightline grazing and half-open occupancy are deliberately distinct geometric predicates. Shape identities are checked locally, while complete current/historical domain collision checks and material/work commits remain the world/store owners' obligations.
+
+Remaining limits are explicit: one floor, cardinal grounded traversal, a finite local snapshot and search budget; no stairs, climbing, moving platforms, optimal path guarantee, unloaded frontier routing, fluid displacement, bearing simulation or final construction art acceptance. Coordinated runtime execution was pending when these review hashes were captured.
+
+## Execution addendum
+
+The coordinator's final candidate Core run subsequently passed **544/544 cases**, with no failures or skips. The reviewer independently parsed `Runtime/artifacts/construction-diagnostics/core-all-final-candidate.trx`, SHA-256 `99298982f7266a5155e0e7305b7e8bb96f43f24280a965e3d11648c0760bf1cf`. The original 16 reviewed input hashes remain unchanged. This is attributed coordinator execution and preserves the earlier static review evidence; no competing build was run by this reviewer.

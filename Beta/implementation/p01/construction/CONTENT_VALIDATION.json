@@ -1,0 +1,81 @@
+{
+  "scope": "Independent Python static source and full-body geometry, no C# or live occupancy execution",
+  "manifestSha256": "6bce3173a4f5aadc1378cd69b687b74b9af54243221c33183299a686d0da6f0e",
+  "definitionIds": {
+    "items/joinery-kit": "38c6f4f7ec389027024e1f50c39b1f2c",
+    "tools/cross-slot-joinery": "007f5498735c906ad264ff5d018015c2",
+    "items/sapling-guard": "09cf224dd5d0425dd1bcc6ec081da5a0",
+    "physical/sapling-guard": "62f4a857aff87b31badcb31fced155a1",
+    "recipes/assemble-sapling-guard": "dcac19790cd74d4b98a9b88f6c4a708a",
+    "physical-recipes/assemble-sapling-guard": "d34fb96994bf7983ec2ea6ec1b974711",
+    "construction/small-sapling-guard": "8b7a469daf80f46ca75bb5dc181f06d6",
+    "work/qualified-joinery": "ec80fff5fe924267b80f83f0bff7e765"
+  },
+  "riverInstanceIds": {
+    "construction.joinery-source": "80388939e0454a25239868342daf2d75",
+    "construction.joinery-lot": "fa714383f5bc93e8c340203a13e04ba1",
+    "construction.wren-guard-project": "1bfb4fdfa28cb6a3ed674cef1b6c5711"
+  },
+  "sourceWitnesses": 4,
+  "physicalMembers": 10,
+  "physicalVolumeMicrolitres": 540000,
+  "inputMassMilligrams": 300000,
+  "guardMassMilligrams": 270000,
+  "offcutMassMilligrams": 30000,
+  "collisionEnvelopeSubunits": [
+    27213,
+    83056,
+    256,
+    27316,
+    83089,
+    319
+  ],
+  "protectedStaticPathsBeforeAndAfter": [
+    [
+      [
+        106,
+        325
+      ],
+      [
+        105,
+        325
+      ],
+      [
+        104,
+        325
+      ],
+      [
+        104,
+        326
+      ],
+      [
+        104,
+        327
+      ]
+    ],
+    [
+      [
+        106,
+        325
+      ],
+      [
+        105,
+        325
+      ],
+      [
+        105,
+        326
+      ],
+      [
+        105,
+        327
+      ]
+    ]
+  ],
+  "bodySubunits": [
+    180,
+    140,
+    464
+  ],
+  "limitation": "Current actors, terrain edits and search-budget admission are checked by runtime, not inferred from this static layout."
+}

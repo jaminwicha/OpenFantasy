@@ -1,0 +1,41 @@
+# Small guard construction source and adaptation contract
+
+This increment continues the retained Wren supply quest with one physically represented **small sapling guard**. It does not fulfill the original narration's claim of protecting an entire orchard. Six existing wood units become one installed 270 g guard and three existing 10 g offcut units. No quest is accepted, completed or paid again by construction admission.
+
+## Unchanged source and explicit additions
+
+The original `quests/wren_orchard` record at `data/quests.json#/quests/44` asks for six wood and awards 420 XP and 200 gil. Its payload SHA-256 is `bbb996bb2ca6ca4e27b942f7f40f9ea624813909e037ec86980ed8aaa4ab86cb`. The preserved offer and the funded supply agreement remain unchanged. The original completion line, “The wind can howl all it likes now. Thank you kindly.”, stays withheld: this tiny guard establishes no wind or crop protection model.
+
+The complete original `data/items.json` contains axes, pickaxes and sickles, including Copper Axe at `/items/17`, but no saw, chisel, hammer, mallet or joinery kit. Those existing tool kinds and Wren's fixed Unassigned stats do not grant joinery. A **new authored Joinery Kit**, quantity one, therefore enters Wren's primary inventory through one finite source of capacity one. It is a new definition, source and lot, with distinct identities; there is no original Wren possession, price or shop claim. No additional wood is granted. The previous 298-unit admitted source budget grows by exactly one, and Wren's existing primary bag receives exactly one additional counted carrying allowance (8→9 for the original bag). This explicit versioned budget admission prevents a previously full bag from discarding contents or blocking the upgrade. It is not a physical bag-volume expansion. No other storage budget changes; the changed bag and custody revisions advance once during migration.
+
+The project custody already admitted by the supply quest becomes an explicit **Wren-carried reserved secondary bag**. Owner and builder must both be Wren. It follows his actual location; there is no invented fixed stock anchor and no remote consumption from home. Work requires Wren at the work anchor with the actual owned kit, positive HP and manipulation. Losing ownership, obstruction, a dialogue hold or pause retains earned work and defers progress. This narrow kit has no wear model yet.
+
+## Physical bill and time
+
+Existing wood is calibrated at 50 g and 100 mL per unit. The source item pin is unchanged: `f20a24bbcf04b36ebcb90a1d04ca58c0` / `c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d`. The existing offcut item and physical binding from ration production are reused; each offcut is 10 g with 25 mL packing volume.
+
+The authored usable-stock interpretation explicitly permits cutting joinery blanks from six such units. Original gathering does not describe blank dimensions, grain or board continuity. This declaration is a limited material interpretation, not evidence that legacy trees yielded measured boards.
+
+The assembly uses a panel, 400 × 246 × 5 mm, and two feet, 125 × 20 × 10 mm. Panel bottom slots occupy X75..85 and X315..325, Y0..5, Z0..10 mm. Feet occupy those X spans, Y−60..65, Z0..20; each has a top slot at Y0..5, Z10..20. The resulting **ten disjoint cuboids** occupy exactly 540,000 mm³ (540 mL). Their positive-area joints form a connected ground-supported assembly. At the retained wood density this is 270 g. The remaining 30 g is exactly three offcut units. Offcut packing volume is not the solid volume of cut wood, and collision rounding is never used for material accounting.
+
+The construction definition requires **200 qualified work units at one unit per 1,800 experienced milliseconds**. In the current 20 Hz exploration profile this is ten seconds of uninterrupted advancing simulation and six calendar minutes. Pause, dialogue holds, inactive or offline time do not buy work. The final material transform's abstract work-one term only describes its atomic accounting operation; it is construction-owned and must not bypass the 200-unit job through ordinary crafting.
+
+## Site and access
+
+The retained farm is `data/world.json#/regions/18`, ID `farm_verdance_small`, rectangle X100..108 / Y320..326. Its payload SHA-256 is `fc79c253de2d851941d669687dfb8253e79d37f17f74dfce4ce9023f75d7c884`. Source cell (106,324) is farmland tile 27; work cell (106,325) is grass tile 0. Cell (104,323), considered earlier, is farmhouse plank floor and was rejected as the crop site.
+
+The physical origin is **(27213,83072,256) subunits**, within crop cell (106,324). The work anchor is **(27264,83328,256)**, center of (106,325). One metre/cell is 256 subunits. Signed minima round down and maxima round up from integer millimetres. Overall collision extent is X[27213,27316), Y[83056,83089), Z[256,319). Individual rounded cuboids may touch or overlap at quantized joints; material volume remains the exact millimetre sum.
+
+Both actual south fence gaps, cells **(104,326)** and **(105,326)**, and their outside grass cells **(104,327)** and **(105,327)** must remain accessible. Required route witnesses use each admitted actor's full body, currently 180 × 140 × 464 subunits: Wren connects his work anchor to both outside anchors, while the player connects each actual gate cell to the corresponding outside anchor. The player witness must not start at Wren's occupied work location. The static source layout proof does not override current occupancy. Actual placement must check the retained terrain, other actors, full support/headroom and protected routes; obstruction defers construction rather than relocating actors or rebuilding terrain.
+
+The existing native profile deliberately admits a flat terrain floor and renders unsupported original walls/fences/props as grass. This earlier declared adaptation remains unchanged. These route witnesses preserve original gate locations in the admitted locality; they do not claim that original farmhouse and fence colliders have been imported. World/branch/realm, terrain edits and both actors' actual positions survive admission unchanged.
+
+## Provisional visual reference
+
+Original `src/Client/WorldRenderer.cs` maps tile 26 to atlas column5,row5. The exact motif is **(80,80,16,16)** in the retained 256 × 144 RGBA atlas `assets/tiles.png`, SHA-256 `401e2d79a74e8c82ae273a4c9a1e6bf1f2e400ea13f4252f622b559befcb1a0d`. The existing native export texture already preserves these bytes. A supplemental unchanged renderer witness is supplied because the older runtime packet did not include it: 12,937 bytes, SHA-256 `acd3966b121e8a3faf37bf6a1739080bd633107d84711b3fa393632f412dfd95`, independently matched to the original archive (`80eafd96e2b421db38050831ebd02a89cc5379fc6c16ec792b9ed96e3071452b`).
+
+Actual bitmap inspection found the fence tile is fully opaque, including its green grass backdrop. The selected provisional asset therefore uses the permitted **board motif**: source plank_floor tile24 at(48,80,16,16), declarative subregion(49,84,13,8). `client/assets/construction-farm/seedling_guard.tres` references the unchanged original atlas; no bitmap is edited. Native draw size is13×8, scale1, nearest, top-left offset(0,−8) from the installed site origin (centered Sprite2D offset6.5,−4). This flat panel swatch omits the feet and cross slots. It is not a final accepted guard asset or a measured rendering of the joints. Physical panel width is about13 logical display pixels at32 pixels/metre. The renderer must not draw a metre-wide fence and imply a much larger installed object. Presentation supplies no gameplay collider. Artist-authored final material detail, readable construction choreography, audio, wind response, structural stress, maintenance and full orchard protection remain pending.
+
+## Evidence limits
+
+The manifest preserves complete original closure and source witness hashes before admission. The source/geometry script is independent integer arithmetic and source inspection; it is not execution of C#, native playtesting, structural engineering validation or user art acceptance. Coordinated runtime tests and native journey results will be retained separately once actually run.

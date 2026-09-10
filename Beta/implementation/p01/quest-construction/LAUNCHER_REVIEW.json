@@ -1,0 +1,24 @@
+{
+  "recordedUtc": "2026-09-10T05:38:34.389383+00:00",
+  "kind": "independent-static-launcher-review",
+  "inputs": {
+    "tools/play.py": "06c619a6a72b1d0263b654f6a7e133be2549f8cdbd39d17f2a810e14ee8611a3",
+    "Play OpenFantasy.command": "54af6562c57e80e831e66ba22f247e67598f467fdef4f1ee0e185776394bc398",
+    "toolchain.json": "1bdc42ca35759ef8ce2f474cbed9eb2c8105c717dfb2a7a75a7cb0dc5ee76fae",
+    "global.json": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e",
+    "client/scripts/FarmSaveOpener.cs": "9b2ef35e0cf61c9e5e7260dfa0d547c796e62d39ae8639df35c78cb69d6985fd",
+    "client/scripts/FarmConstructionSaveOpener.cs": "c8176d6555be2b2eb6f7f9b116e1212a124a2eb93cc03e2fdc3f396c0ca73627"
+  },
+  "status": "No concrete blocking defect found; launcher preparation and native launch not executed by this reviewer.",
+  "review": [
+    "Explicit arguments take precedence over environment, known private installation and PATH. SDK and mono editor output must exactly match checked-in pins.",
+    "Resolved dotnet parent supplies both DOTNET_ROOT and the leading PATH entry for all subprocesses. Matching tools can be provided on another OS; no export/device qualification is implied.",
+    "Locked client restore/build and editor import precede the ordinary default farm launch. Prepare-only exits before gameplay; the import path contains no game-start argument.",
+    "The executable macOS command launcher quotes its own directory and executes the same Python entrypoint.",
+    "No launcher resets/deletes/overwrites a save or accepts an alternate save path. Normal client opening retains existing destination precedence and explicit preserved-copy predecessor admission."
+  ],
+  "limitations": [
+    "This is static inspection, not an executed --prepare-only result.",
+    "The launcher verifies SDK/editor versions, not every installed runtime patch or native package/export configuration. Existing build/native verification and platform qualification remain separate."
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "reviewer": "history_contracts; independent of spatial source/test author p00_core",
+  "scope": "Read-only static review of actual-body geometry, routes, structure placement and19 newly authored tests; no .NET build/test execution by this reviewer",
+  "disposition": "No blocking finding in the reviewed bounded spatial contracts",
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/GroundRouteResult.cs",
+      "bytes": 906,
+      "sha256": "890c0cdb118177b7b39ffd5574390ee97c3cbdb531d3f58782df1bb742e27f5c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/GroundRouteSearch.cs",
+      "bytes": 7774,
+      "sha256": "81c56a8a5a1e37bcbd758092ee50e269f3c1ff7c0119e63da28032877df020ef"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialRoutes.cs",
+      "bytes": 1550,
+      "sha256": "bfd8d4bc9a6751d99da822e93d1439f26e14750f1786de43421b42cc6f17aa64"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialStructures.cs",
+      "bytes": 6641,
+      "sha256": "fc804b73ce483f9ee694efdcbecbd6bb35092d548f9280334437c85d5e185efb"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialStructure.cs",
+      "bytes": 2154,
+      "sha256": "9c1a1328cb75b308ed2a95be56e666cef3a5a4afde2194f059b660ccc498d337"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/StructurePlacementResult.cs",
+      "bytes": 916,
+      "sha256": "f6415251ae3fbb3f0f885218e1a4cc2bded23a815fca4c35c4e9eade159b02eb"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/SubunitBox.cs",
+      "bytes": 736,
+      "sha256": "364a4de1ce0d5f6efbde1093c8109abe595560946a3643f13c93d8ace26b43a9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs",
+      "bytes": 11280,
+      "sha256": "b484776fc1967d4d4badb7df1ae18f5441bbaaf6d52a330bda3c483ef118f92b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/ResourceInteractionQueries.cs",
+      "bytes": 2588,
+      "sha256": "3237e0f0b8ab2bfd39a5f278572b8418a4dd2853ed8ae466718a63406ecc3aa7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialResults.cs",
+      "bytes": 912,
+      "sha256": "38596c4d5a0c6335dbf8ed403a7186897dcb8b65d2490a153697fdd06be091cc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/TerrainSightline.cs",
+      "bytes": 5381,
+      "sha256": "4284fe69667c8dc2c77ca5ae775d3fa9508a06e1c0d04a5ead1124917931dc78"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/TerrainVolumeQueries.cs",
+      "bytes": 2232,
+      "sha256": "2c2b86bdb3d2c392d2ed6ccc2e8e3089fdd78afd7926243594fc797bb3a7c5ac"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/BodyVolume.cs",
+      "bytes": 1942,
+      "sha256": "3621fa9d03435c4e30f85e27b6e8f0ad4859bf8ea491a6208d5152f46e1a09bc"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/StructureGeometryTests.cs",
+      "bytes": 9013,
+      "sha256": "8819e19b6ba749e822590e71f65d3ba3cba8b6966aea61b825d348af55304701"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/StructureRouteTests.cs",
+      "bytes": 7273,
+      "sha256": "3960a0c2c4f37a5b13a416d0d3bd81b74036f1a6e97a9e4ff497b267e8f960fb"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialFixture.cs",
+      "bytes": 2689,
+      "sha256": "03124732dfb89174bc2b3e7d1dfd473f699cb14044005537b9106a52d836dccf"
+    }
+  ],
+  "independentCalculation": {
+    "method": "Isolated Python transcription of the actual-body rectangular obstacle and deterministic route algorithm, replanning each32-subunit move",
+    "start": [
+      128,
+      128,
+      256
+    ],
+    "goal": [
+      896,
+      128,
+      256
+    ],
+    "body": [
+      180,
+      140,
+      464
+    ],
+    "obstacle": [
+      500,
+      -128,
+      256,
+      520,
+      400,
+      340
+    ],
+    "result": "arrived in46samples without repeat-position oscillation",
+    "limits": "Mathematical check of this specific example, not C# execution or a general controller convergence proof"
+  },
+  "execution": "Parent coordinated compilation and full runtime tests remain pending at this review snapshot."
+}

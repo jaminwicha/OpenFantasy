@@ -2,7 +2,13 @@
 
 9 September 2026. This increment begins P01 execution while the remaining P00 preparation exits stay open. It retains the entire reviewed design and all 181 requirements. It does not declare P01, P02 or the first playable prototype complete.
 
-## Current connection: funded Wren quest and progression
+## Current connection: real construction and first feedback handoff
+
+10 September 2026. The [construction increment](construction/README.md) connects the actual reserved quest stock to Wren’s route, finite owned kit, 200 qualified work actions and one persistent physical guard with conserved offcuts. Both existing-save continuation and fresh games pass complete native journeys, including hold/partial recovery, final material/geometry atomicity and collision/walk-around. **544 Core + 261 Hosting = 805 tests** pass in Debug and local Release; final integrated checks retain **655 unchanged inputs**, 22 independent fixtures and 68 host cases. [Final rendered review](construction/FINAL_VISUAL_REVIEW.md) closes the two UI findings.
+
+The [small farm prototype is ready for human feedback](construction/FEEDBACK.md), with a pinned runnable launcher and explicit save/controls guide. [Current readiness](construction/READINESS.md) preserves the pending human discovery/enjoyment portion. This does not close P00/P01/P02, production art/audio, exports or the full 181 requirements. The older milestone prose below describes its own earlier state.
+
+## Previous connection: funded Wren quest and progression
 
 The [quest content contract](quest-construction/CONTENT_CONTRACT.md) now admits the original six-wood agreement, exact Human Squire progression, fixed source Unassigned Wren stats, zero personal starting gil and a separate finite 200-gil quest reserve. Separate acceptance and delivery actions reserve the real materials and atomically pay 420 XP/200 gil once. The profile-three→four upgrade preserves an actual progressed production world on a verified copy under unchanged schema three, including old clocks, source budgets, production and receipts. [Independent save review](quest-construction/HOSTING_REVIEW.md) records the concrete interruption, corruption and recovery checks.
 
@@ -32,10 +38,10 @@ The separate portable terrain module generates a seeded, globally addressed 3D s
 
 The [durable authority record](durable-authority/README.md) records full local verification, real external process kills, native SQLite loading in Godot and release checks. The independent [storage critic](durable-authority-review/CODE_REVIEW.md), [authority review](authority-review/REVIEW.md) and [terrain review](terrain-review/REVIEW.md) retain bounded claims and exact reviewed inputs. Original preparation, source archives and earlier evidence remain intact.
 
-## Next connection to gameplay
+## Next connection to gameplay (updated after construction)
 
 1. Build on the now-composed actor/body/location/terrain/time transaction. Couple excavation/work to finite source admission and actual inventory yield; do not implement a second Godot-owned inventory or editable world.
-2. Build on the now-connected gathering, original ration recipe and funded Wren agreement with actual NPC construction. Pin a physically honest bill and geometry for the six 50 g wood units already delivered, then preserve their source/production lineage through real work, support, clearance and placed structure state. Quest credit/rewards now work once; visible construction and its interrupted/reopened continuation are still needed to complete the first feedback loop.
+2. Gather human feedback on the now-connected gathering, crafting, funded quest and physical NPC construction loop. Keep the measured small guard/stock lineage and interrupted recovery intact while refining onboarding and separate artist-authored work cues; expand to general construction only through the retained plan.
 3. Add live NPC commitments, Wait encounter scheduling, durable event/outbox delivery, session grants/rebinding and reconnect. Prove the connected native loop and 1–4-player behavior against the full P01/P02 exit criteria.
 4. Keep native pixel-art/animation/audio production with separate artists, then run virtual and human playtests. A rendered original-asset farm and native input walkthrough now run, but neither establishes the approved production-art target, animation quality, sound or enjoyment acceptance.
 

@@ -1,0 +1,358 @@
+{
+  "reviewer": "history_contracts; source content/asset author, independent of native controller, HUD and probe authors",
+  "kind": "bounded virtual visual review of actual rendered native captures",
+  "status": "candidate reviewed; one concrete nameplate overlap awaits correction/recapture",
+  "report": {
+    "path": "Beta/implementation/p01/construction/qualification/native-rendered.json",
+    "bytes": 239671,
+    "sha256": "bd9c41d77cc4fb9422e933c9dc04885672b2e38bab97d3befdde36e9ce2f6b24"
+  },
+  "reportStatus": "passed",
+  "rendered": true,
+  "artifacts": [
+    {
+      "image": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/construction.upgrade.png",
+        "bytes": 69390,
+        "sha256": "36d271c8e0d03880002aa25f6a11be1dffc5f66a64ba2f3d60432a9be121d0bb",
+        "size": [
+          960,
+          540
+        ],
+        "visuallyInspected": true
+      },
+      "state": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/construction.upgrade.json",
+        "bytes": 29465,
+        "sha256": "2ce902abe47f14abbfe8912d1c9138220cd3e356aca8faa0b23938f4f11a570c"
+      },
+      "status": "passed",
+      "runtime": ".NET 10.0.12",
+      "displayDriver": "macOS",
+      "focusRequests": 0,
+      "construction": [
+        {
+          "Id": "319e2f0f0deda13a3b4bbca4a0b5c949",
+          "Builder": "f61e90650ddab821341dd6e0b4bb2c33",
+          "DisplayName": "Small sapling guard",
+          "Site": {
+            "X": 27213,
+            "Y": 83072,
+            "Z": 256
+          },
+          "Work": {
+            "X": 27264,
+            "Y": 83328,
+            "Z": 256
+          },
+          "CompletedWork": 60,
+          "RequiredWork": 200,
+          "IsCompleted": false
+        }
+      ],
+      "durationMilliseconds": 9462
+    },
+    {
+      "image": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/construction.finish.png",
+        "bytes": 69300,
+        "sha256": "4355b653afa876caf8d8fd8725f6141d4ce4bd8835f66fd3cc1dc3676e6a88e9",
+        "size": [
+          960,
+          540
+        ],
+        "visuallyInspected": true
+      },
+      "state": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/construction.finish.json",
+        "bytes": 35670,
+        "sha256": "928165110d8e46a68ec30c4b5ddec3ee8676fc8e717c71309c7afe73d8b1969c"
+      },
+      "status": "passed",
+      "runtime": ".NET 10.0.12",
+      "displayDriver": "macOS",
+      "focusRequests": 0,
+      "construction": [
+        {
+          "Id": "319e2f0f0deda13a3b4bbca4a0b5c949",
+          "Builder": "f61e90650ddab821341dd6e0b4bb2c33",
+          "DisplayName": "Small sapling guard",
+          "Site": {
+            "X": 27213,
+            "Y": 83072,
+            "Z": 256
+          },
+          "Work": {
+            "X": 27264,
+            "Y": 83328,
+            "Z": 256
+          },
+          "CompletedWork": 200,
+          "RequiredWork": 200,
+          "IsCompleted": true
+        }
+      ],
+      "durationMilliseconds": 13527
+    },
+    {
+      "image": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/construction.reopen.png",
+        "bytes": 68498,
+        "sha256": "6d0e83664c78c9c55314832238b7187c9bbfdabf2ee0b2be59ec67ba7674e69c",
+        "size": [
+          960,
+          540
+        ],
+        "visuallyInspected": true
+      },
+      "state": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/construction.reopen.json",
+        "bytes": 11477,
+        "sha256": "0b652398552f8e7a852144640dd4d274ea37da0ad02fb92fe082982015273ed2"
+      },
+      "status": "passed",
+      "runtime": ".NET 10.0.12",
+      "displayDriver": "macOS",
+      "focusRequests": 0,
+      "construction": [
+        {
+          "Id": "319e2f0f0deda13a3b4bbca4a0b5c949",
+          "Builder": "f61e90650ddab821341dd6e0b4bb2c33",
+          "DisplayName": "Small sapling guard",
+          "Site": {
+            "X": 27213,
+            "Y": 83072,
+            "Z": 256
+          },
+          "Work": {
+            "X": 27264,
+            "Y": 83328,
+            "Z": 256
+          },
+          "CompletedWork": 200,
+          "RequiredWork": 200,
+          "IsCompleted": true
+        }
+      ],
+      "durationMilliseconds": 2659
+    },
+    {
+      "image": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/quest.fresh.png",
+        "bytes": 89824,
+        "sha256": "7c3f2df83cb5a4f3e06e58c47f9894ad63fb7d7e641ceb974781a1494a424bbc",
+        "size": [
+          960,
+          540
+        ],
+        "visuallyInspected": true
+      },
+      "state": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/quest.fresh.json",
+        "bytes": 22624,
+        "sha256": "e7448d0f63918135fec3782240e8189d712bcac71e95f94b496355d5d135408a"
+      },
+      "status": "passed",
+      "runtime": ".NET 10.0.12",
+      "displayDriver": "macOS",
+      "focusRequests": 0,
+      "construction": [],
+      "durationMilliseconds": 10504
+    },
+    {
+      "image": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/construction.fresh.png",
+        "bytes": 69220,
+        "sha256": "a7496ca7307282c1ebb93d0ad4bf2f61322187ee5ca81fb4b7260302b61aaf66",
+        "size": [
+          960,
+          540
+        ],
+        "visuallyInspected": true
+      },
+      "state": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/construction.fresh.json",
+        "bytes": 29852,
+        "sha256": "315498365b5912c8f7144b2e4c2f38e55466c258c8812da9d23fd902b12771b3"
+      },
+      "status": "passed",
+      "runtime": ".NET 10.0.12",
+      "displayDriver": "macOS",
+      "focusRequests": 0,
+      "construction": [
+        {
+          "Id": "319e2f0f0deda13a3b4bbca4a0b5c949",
+          "Builder": "f61e90650ddab821341dd6e0b4bb2c33",
+          "DisplayName": "Small sapling guard",
+          "Site": {
+            "X": 27213,
+            "Y": 83072,
+            "Z": 256
+          },
+          "Work": {
+            "X": 27264,
+            "Y": 83328,
+            "Z": 256
+          },
+          "CompletedWork": 60,
+          "RequiredWork": 200,
+          "IsCompleted": false
+        }
+      ],
+      "durationMilliseconds": 9358
+    },
+    {
+      "image": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/construction.finish.png",
+        "bytes": 69221,
+        "sha256": "c1b00ce0ef58650b56dabd1955963c09f7e178dd19ffacb4d945da60c33892d9",
+        "size": [
+          960,
+          540
+        ],
+        "visuallyInspected": true
+      },
+      "state": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/construction.finish.json",
+        "bytes": 35672,
+        "sha256": "79b7039597dc5bcfa73265d12eadc44d59b2d53e08cc7f9005bac8e8cdb4911e"
+      },
+      "status": "passed",
+      "runtime": ".NET 10.0.12",
+      "displayDriver": "macOS",
+      "focusRequests": 0,
+      "construction": [
+        {
+          "Id": "319e2f0f0deda13a3b4bbca4a0b5c949",
+          "Builder": "f61e90650ddab821341dd6e0b4bb2c33",
+          "DisplayName": "Small sapling guard",
+          "Site": {
+            "X": 27213,
+            "Y": 83072,
+            "Z": 256
+          },
+          "Work": {
+            "X": 27264,
+            "Y": 83328,
+            "Z": 256
+          },
+          "CompletedWork": 200,
+          "RequiredWork": 200,
+          "IsCompleted": true
+        }
+      ],
+      "durationMilliseconds": 13569
+    },
+    {
+      "image": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/construction.reopen.png",
+        "bytes": 68428,
+        "sha256": "3cc0ff9970e06d445e136730dce94f814c0bb0cbe5f65a6e32228bd39dd36e3f",
+        "size": [
+          960,
+          540
+        ],
+        "visuallyInspected": true
+      },
+      "state": {
+        "path": "Beta/implementation/p01/construction/qualification/native-construction-fa1f7d61241a4068a34d666b0a43b7d0/fresh/construction.reopen.json",
+        "bytes": 11477,
+        "sha256": "f364b71418fa8c285686dfba036618cbb405347418723f3298acec39c64a04d5"
+      },
+      "status": "passed",
+      "runtime": ".NET 10.0.12",
+      "displayDriver": "macOS",
+      "focusRequests": 0,
+      "construction": [
+        {
+          "Id": "319e2f0f0deda13a3b4bbca4a0b5c949",
+          "Builder": "f61e90650ddab821341dd6e0b4bb2c33",
+          "DisplayName": "Small sapling guard",
+          "Site": {
+            "X": 27213,
+            "Y": 83072,
+            "Z": 256
+          },
+          "Work": {
+            "X": 27264,
+            "Y": 83328,
+            "Z": 256
+          },
+          "CompletedWork": 200,
+          "RequiredWork": 200,
+          "IsCompleted": true
+        }
+      ],
+      "durationMilliseconds": 2837
+    }
+  ],
+  "sourcePresentationInputs": [
+    {
+      "path": "Beta/Runtime/client/assets/construction-farm/seedling_guard.tres",
+      "bytes": 309,
+      "sha256": "4f891bef72a6397a9611e774eeaf34a4bdf7b5b043cb01ca125d76a0e96dbf2a"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/construction-farm/PROVENANCE.json",
+      "bytes": 1605,
+      "sha256": "b52969d91fcc7e98611da9e6121c11feaba9290069381a823a5036df5c5ef50f"
+    },
+    {
+      "path": "Beta/Runtime/client/assets/native-farm/tiles.png",
+      "bytes": 7520,
+      "sha256": "401e2d79a74e8c82ae273a4c9a1e6bf1f2e400ea13f4252f622b559befcb1a0d"
+    },
+    {
+      "path": "Beta/Runtime/client/scenes/FarmStructureView.tscn",
+      "bytes": 417,
+      "sha256": "3903a983d771e31d1663a7ddee7bd242d17bb051ebc0ddd097ff42ba94e6f66e"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/Presentation/FarmStructureView.cs",
+      "bytes": 366,
+      "sha256": "3e439ece54825283d9b9fae24da84c16410f065fb0f232e96cd3873f596b50cc"
+    }
+  ],
+  "observations": [
+    {
+      "id": "V1",
+      "priority": "P2",
+      "status": "reported to root; pending final recapture",
+      "finding": "Wren and Traveler overhead nameplates overlap in both completed and reopened families when adjacent.",
+      "recommendation": "Preserve NPC readability; the own-player ring permits suppressing the redundant own name near overlaps."
+    },
+    {
+      "id": "V2",
+      "priority": "P3",
+      "status": "reported, bounded camera limitation",
+      "finding": "Fresh quest capture places Wren at the northern visible edge, clipping his overhead name behind the opaque HUD. The actual dialogue still identifies Wren clearly."
+    },
+    {
+      "id": "V3",
+      "priority": "P3",
+      "status": "accepted provisional art limitation",
+      "finding": "13x8 original plank crop fits the small panel scale but reads as a flat board swatch against farm rows, without the actual feet, slots, upright silhouette, or work animation."
+    },
+    {
+      "id": "V4",
+      "priority": "P2",
+      "status": "root already implementing correction from command critic",
+      "finding": "Candidate footer advertises Give wood outside quest dialogue; root identified its ordinary-gift semantics can mislead the first quest onboarding. These captures precede the correction."
+    }
+  ],
+  "positiveFindings": [
+    "All seven 960x540 captures keep HUD stats, own inventory counts, clock, pause control, footer and observed dialogue text inside their intended panels.",
+    "Visible level3/200gil/HP78/78/MP14/14 and own wood1/berries0/rations2/offcut1 agree with the reported completed player reward state.",
+    "Partial60/200 work agrees with30% fitted; completed200/200 agrees with small seedling guard built and saved.",
+    "Dialogue promises to start work after talking; no orchard-wide protection or source windproof completion line is displayed.",
+    "Original Wren paperdoll remains distinguishable from the own player, with cyan player ring.",
+    "Exact retained source atlas and declarative13x8 guard crop hashes match the rendered run."
+  ],
+  "limitations": [
+    "Scripted native inputs and coordinator public-state checks are functional evidence, not a human enjoyment study.",
+    "Still images do not qualify smooth movement or a complete joinery animation.",
+    "No private NPC inventory was used to judge the displayed own-inventory HUD.",
+    "No final art style acceptance, audio qualification, full target-resolution/device coverage or production export claim.",
+    "Repeated grass and farm textures, sparse scenery and simple source paperdolls remain the provisional original baseline."
+  ]
+}

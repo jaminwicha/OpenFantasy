@@ -1,0 +1,210 @@
+{
+  "reviewer": "history_contracts, independent of the Core construction/material committer author command_contracts",
+  "disposition": "No remaining blocking finding in this bounded accounting and restoration review",
+  "scope": "Static ConstructionSnapshot/Project restoration and material lineage/ordinary-craft compatibility; no independent .NET or Godot execution; not a second full planner, migration, or codec review",
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs",
+      "bytes": 9997,
+      "sha256": "69fd812ac9b80140103f788197d0f0058818678cf2e384d9ca79401068792ea2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionProject.cs",
+      "bytes": 5426,
+      "sha256": "8624a31c20a4dc8a2fee4c04b8438e08904678137a55a9ce7e80c4142b4fe553"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionDefinition.cs",
+      "bytes": 6410,
+      "sha256": "6c7c5fe1d531a4edabd34687400cce1dbeac3a71baccfdb281b9e80faa3e71b5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionToolDefinition.cs",
+      "bytes": 1223,
+      "sha256": "af7807bf9be01593019ee222c5bc1ab0789ddcd9e106cc59a7f6f4407a839e56"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/MillimetreBox.cs",
+      "bytes": 2686,
+      "sha256": "b6aa255e294db31590c94dac482b2277e732edf542086b1e0e4364c82088ae44"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialTransformCommitter.cs",
+      "bytes": 3802,
+      "sha256": "e134523a3c384b69fcff0d50cc90ebb60e1f78d441d76bdf785175d5033ef140"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/InstantCraftPlanner.cs",
+      "bytes": 6012,
+      "sha256": "5235289ed32826058df7c5e53872399af73dbd49eebb7101ef8640765c28ab43"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionSnapshot.cs",
+      "bytes": 4199,
+      "sha256": "f8e4edc48e9266215511aa7d6c5b92a988aebabccfc0707d7d644d7dba2ae681"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionClaimValidation.cs",
+      "bytes": 9525,
+      "sha256": "00914b1b1b11621102e0574a6c97edc71df7901b5d1499ff1297b4bdbf475be8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionIdentityRegistry.cs",
+      "bytes": 5019,
+      "sha256": "fc7c57fad16a2188803f9b6f208806524a7d1e02bb04a25fb39e56f2bffb6969"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionBatch.cs",
+      "bytes": 1525,
+      "sha256": "851d181306decec211d7a2890cf1f34e7e3c6fed99e9a839905095be790981e8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/TransformedLot.cs",
+      "bytes": 1291,
+      "sha256": "e5af3b1bbf8f517f4d199ba0b88db933dac489b38c97e6cee8f09c10e7b77a72"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs",
+      "bytes": 5767,
+      "sha256": "54ad834a33a75898e10de367d8a70431e70685701e38a96a76dd5c42733b41f2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialRecipeDefinition.cs",
+      "bytes": 4307,
+      "sha256": "47665e2842ddd388365bba7ec33d48a48b98c81e0d7cd9a3c355657339dd5331"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCraftResolver.cs",
+      "bytes": 1846,
+      "sha256": "2cca89376132a1912c31a01d5569626f32089bf6db557ef05b6dfd32a1fd73dc"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/ConstructionDefinitionTests.cs",
+      "bytes": 1983,
+      "sha256": "deab5b8b0263026167fa40608dbc98349fde9abec661e4f79132ecec5b24857b"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/ConstructionWorkTests.cs",
+      "bytes": 8206,
+      "sha256": "eeaf8736d68951a0a4c4dd295acf3f953387a9d81c231e75d567a486eeb5c7a2"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/ConstructionGoldenTests.cs",
+      "bytes": 8016,
+      "sha256": "00267134fcd154a759bac22a86dd9f0b4721ebd703ddca73ce865cf2635516d5"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/ConstructionFixture.cs",
+      "bytes": 2531,
+      "sha256": "3f5e5b3f3d8b40aaef0a238d408d6846aadddf43b3e5d687de9e69924a07bdbb"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/ConstructionWorldFixture.cs",
+      "bytes": 4646,
+      "sha256": "b31713e44f499d0207662efd6dd18b7bd631df255c8467767c859d1c5e23f7df"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/generate_construction_vectors.py",
+      "bytes": 10435,
+      "sha256": "2648f144eda07c6050214b06871aeb3f5651c591006cd83dfe30617a42e30461"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/construction-v1.json",
+      "bytes": 518769,
+      "sha256": "c5fe63ed3265ad9eb2ecb86306c12b249c5a4e879fa8e53924ecd614249fafd5"
+    },
+    {
+      "path": "Beta/implementation/p01/construction/CORE_CONTRACT.md",
+      "bytes": 11826,
+      "sha256": "9cc7248ce5c9a579609ef0b0a4a3467c6977ac42aed8ce680a7427ece04dc469"
+    }
+  ],
+  "closedFindings": [
+    {
+      "id": "C1",
+      "issue": "Restoration could substitute an installed output lot identity or revision although relocation/splitting is unsupported.",
+      "resolution": "ConstructionProject requires the completion-command-derived original output lot ID and revision zero; ConstructionSnapshot still joins that exact live reserved lot and batch.",
+      "regression": "ConstructionGoldenTests.Installed_output_cannot_be_renamed_or_revised_before_restoration; malformed oracle frames."
+    },
+    {
+      "id": "C2",
+      "issue": "Advancing-step bound alone did not ensure each builder had experienced the retained earned construction time.",
+      "resolution": "ConstructionSnapshot sums per-builder work steps and elapsed work using UInt128 and bounds both by world advancing steps and that resident experienced duration.",
+      "regression": "ConstructionWorkTests.Restored_work_requires_both_advancing_steps_and_the_builders_experienced_time"
+    }
+  ],
+  "ordinaryCraftComparison": {
+    "baselineCommit": "13ba3ef1680acc50ef791ff6195a5c1f60b2119e",
+    "baselinePlannerSha256": "d731cec659db354b75439ea37b56292d771db7cf6448e2c5e5507a013e695a16",
+    "method": "Compare previous private Prepare body to current shared Prepare body after reducing the sole installed-output optional reservation arguments to the prior default and removing whitespace.",
+    "exactNormalizedMatch": true
+  },
+  "pythonOracle": {
+    "executedBy": "history_contracts",
+    "stdoutExactMatch": true,
+    "bytes": 518769,
+    "sha256": "c5fe63ed3265ad9eb2ecb86306c12b249c5a4e879fa8e53924ecd614249fafd5",
+    "positiveFrames": 8,
+    "malformedFrames": 63,
+    "properPrefixesCoveredByInspectedCSharpTest": 30055
+  },
+  "coordinatorExecution": [
+    {
+      "path": "Beta/Runtime/artifacts/construction-diagnostics/core-all-final-candidate.trx",
+      "bytes": 806016,
+      "sha256": "99298982f7266a5155e0e7305b7e8bb96f43f24280a965e3d11648c0760bf1cf",
+      "counters": {
+        "total": 544,
+        "executed": 544,
+        "passed": 544,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "constructionNamedCases": 18,
+      "contentCases": 0,
+      "executedBy": "coordinator root; reviewer independently parsed original TRX"
+    },
+    {
+      "path": "Beta/Runtime/artifacts/construction-diagnostics/hosting-all-final-candidate.trx",
+      "bytes": 414762,
+      "sha256": "1b28ad4b8454a969e4ff3966c5692ca6431ea54464be1c92ba28eb95a0eec673",
+      "counters": {
+        "total": 261,
+        "executed": 261,
+        "passed": 261,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "constructionNamedCases": 48,
+      "contentCases": 22,
+      "executedBy": "coordinator root; reviewer independently parsed original TRX"
+    }
+  ],
+  "limits": [
+    "No structural-force, weather-protection or full material-volume storage qualification.",
+    "Installed output relocation/splitting/dismantling requires a future explicit transaction.",
+    "No complete multiplayer construction scheduling or fairness claim."
+  ]
+}

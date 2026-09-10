@@ -4,7 +4,15 @@
 
 The subsequent [runtime application style review](style-review/README.md) records the owner's modular/readable/object-oriented preference, its application-only scope, the behavior-preserving refinements, and fresh evidence. Earlier hashes below remain tied to the original increment.
 
-## Latest increment: funded Wren quest, progression and preserved continuation
+## Latest increment: physical NPC construction and first feedback readiness
+
+10 September 2026. The [construction packet](../p01/construction/README.md) completes the bounded Wren loop through actual routed NPC work and a retained physical object. Six reserved wood units become one small guard and three offcuts after 200 qualified advancing-step actions. Reading holds, pause, missing tools and invalid placement defer work; partial recovery and final material/geometry publication are atomic. Existing progress continues through explicit preserved profile-four→five admission, and fresh genesis has separate strict guards. No original GDD/source archive or old save was reset.
+
+The [final integrated Debug pass](../p01/construction/qualification/final-verification.json) passed **544 Core + 261 Hosting = 805 tests**, zero skips, **22 independent fixtures**, **68 host inspections**, native durability/binding, old gameplay journeys and both construction families, with **655 unchanged inputs** and a passing runtime naming scan. The [local Release pass](../p01/construction/qualification/release/runs.json) passed the same 805 tests; it is not a desktop export. [Final rendered evidence](../p01/construction/qualification/native-rendered-final.json) and [independent visual review](../p01/construction/FINAL_VISUAL_REVIEW.md) cover both a fresh game and a genuinely progressed copied save. Critics closed an installed-lot restoration gap, an experienced-work gap, an accidental gift control and overlapping nameplates.
+
+The [first feedback guide](../p01/construction/FEEDBACK.md) supplies an executed pinned launcher preparation, controls and save behavior. The technical prototype is now ready for the owner to try; **human usability/enjoyment feedback has not happened yet**. [Current readiness](../p01/construction/READINESS.md) keeps that distinction explicit. Full P00/P01/P02, all 181 requirements, final art/action/audio, Wait/co-op, frontier/history and broader production gates remain open. Older entries below are preserved historical checkpoints.
+
+## Previous increment: funded Wren quest, progression and preserved continuation
 
 9 September 2026 local time. The [source-pinned quest admission](../p01/quest-construction/CONTENT_CONTRACT.md) adds Wren's actual six-wood agreement, actor-owned progression and finite currency to the existing native farm. The explicit Human Squire profile uses the original class/growth/level thresholds; Wren retains fixed source Unassigned statistics. Both personal gil balances start at the source zero, and an authored separate 200-gil reserve funds the single local recipient. Existing gathering gain remains ten. Acceptance creates a funded obligation; successful delivery preserves and reserves six current raw-wood units in dedicated project custody, completes the actor's quest once, and awards 420 XP/200 gil atomically. Fresh level-one Squire reaches level three with residual XP 38, HP 78/78 and MP 14/14.
 

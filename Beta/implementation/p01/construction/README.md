@@ -1,0 +1,29 @@
+# Retained construction and first farm feedback build
+
+10 September 2026. The small OpenFantasy farm loop is **ready for its first human feedback session** on the qualified local macOS development host. Follow the [playtest guide](FEEDBACK.md) or use [Play OpenFantasy.command](../../../Runtime/Play%20OpenFantasy.command). This is a development client using the real portable C# authority, not a completed P00/P01/P02 phase, production game or exported desktop release. All 181 requirements and earlier GDD/source archives remain retained.
+
+## What now happens
+
+Wren’s source-pinned six-wood supply agreement still awards exactly 420 XP and 200 gil once. After the conversation closes, he walks to a reachable work anchor with an actual newly admitted finite joinery kit. Two hundred qualified work steps turn those same six reserved wood units into a small installed guard and three offcuts. The guard’s physical geometry, spent material lineage and completed project commit together. Reading holds, pause, lost readiness, missing tools, unsupported/occupied geometry and blocked routes cannot buy work. Partial work survives reopening, and completion never repeats its reward or transformation. Wren returns toward his normal wandering area after finishing.
+
+The bill is physically explicit: 300 g of source wood becomes a 270 g, 540 mL guard and 30 g of offcuts. Ten exact connected millimetre cuboids define the assembly; outward quantization defines collision, not material volume. This small board is a start for one sapling. It establishes no orchard-wide wind or crop protection benefit. [Source/material contract](SOURCE_CONTRACT.md), [Core contract](CORE_CONTRACT.md), [Hosting/save contract](HOSTING_CONTRACT.md) and [content admission](CONTENT_CONTRACT.md) retain the bounded decisions.
+
+Existing quest saves continue on a verified profile-four→five copy. Earlier gathering/production saves pass through their retained intermediate copies. The original files, history, rewards, clocks, actor conditions, terrain edits and material budgets remain unchanged. Strict fresh admission cannot replace a progressed root. The installed guard remains a reserved live transformed lot with an exact spatial binding; the renderer supplies no second collision or material authority.
+
+## Executed qualification
+
+- [Final integrated Debug verification](qualification/final-verification.json): **544 Core + 261 Hosting = 805 passed**, zero skipped; **22 independent Python fixtures**, **68 host inspections**, real SQLite kill/retry/recovery and native binding, every retained gameplay journey, and both new construction families. All **655 input hashes** match; the prohibited runtime-name scan passes.
+- [Final rendered qualification](qualification/native-rendered-final.json): both a genuinely progressed quest-save copy and a genuinely fresh construction-profile world. Native ordinary input gathers, crafts, accepts/delivers, interrupts work with conversation, reopens unfinished work, finishes once and walks around the saved body-collision boundary. The fresh journey also tries G before talking and proves it preserves inventory/quest/progression rather than gifting the supplies away.
+- [Local Release qualification](qualification/release/runs.json): clean solution build and **544 Core + 261 Hosting passed**, zero skipped; all 655 input hashes still match. The client’s `ExportRelease` directory is a build output, not a packaged/exported platform qualification.
+- [Final visual review](FINAL_VISUAL_REVIEW.md) inspected seven actual final captures and closed the misleading gift control and overlapping player/NPC nameplate findings. [Virtual playtest review](PLAYTEST_REVIEW.md) independently closed the early-G behavior from real native observations. [Material review](MATERIAL_REVIEW.md) closed installed-lot identity and experienced-work restoration gaps; [spatial review](SPATIAL_REVIEW.md) and content tests retain the route/site checks.
+- [Launcher preparation](qualification/launcher-preparation.json) executed the pinned client build/import without opening a gameplay save. The reusable launcher opens the ordinary default world, with no test-mode commands or authority shortcuts. Native journeys independently exercise the actual client, bindings and preserved save selection.
+
+The earlier candidate render and review remain intact as pre-correction evidence. `qualification/headless/ARCHIVE_MAP.json` maps copied headless artifacts to their original execution paths. [VALIDATION.json](VALIDATION.json) binds the final packet, exact inputs and preserved predecessor index.
+
+## Feedback boundary and remaining scope
+
+The [current readiness checklist](READINESS.md) separates executed technical gates from the human usability/enjoyment feedback still needed. The original [quest-stage checklist](../quest-construction/READINESS.md) remains unchanged as historical evidence; it is superseded by the current checklist, not erased or rewritten into a broader pass.
+
+The source-atlas art is provisional. The installed 13×8 panel lacks its final feet/joints silhouette; Wren has basic walk/idle frames but no dedicated joinery action or sound kit. Northern-edge overhead names can meet the HUD, although the addressed dialogue names the speaker. Repeated grass, final native art/audio, broader NPC psychology/relationships, combat, general construction, food consumption, frontier/history streaming and 1–4-player networking remain planned work. Windows/Linux execution, mobile, exported builds, accepted minimum hardware, long-lived saves and production capacity remain unqualified. These limits do not change the retained full campaign.
+
+Code commits: `94359df` routes/placement, `51f5593` portable construction/migration, `94ace98` Hosting/content/save continuation, and `0fae39a` client/launcher/qualification tools. The original staged Alpha patch remains byte-identical.

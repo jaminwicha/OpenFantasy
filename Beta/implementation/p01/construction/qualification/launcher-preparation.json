@@ -1,0 +1,20 @@
+{
+  "scope": "Actual local launcher preparation only; no gameplay launch and no export qualification",
+  "observedResult": "passed",
+  "command": [
+    "python3",
+    "tools/play.py",
+    "--prepare-only"
+  ],
+  "workingDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime",
+  "buildWarnings": 0,
+  "buildErrors": 0,
+  "observedOutput": "Pinned native client prepared. No gameplay save was opened.",
+  "inputs": {
+    "tools/play.py": "06c619a6a72b1d0263b654f6a7e133be2549f8cdbd39d17f2a810e14ee8611a3",
+    "Play OpenFantasy.command": "54af6562c57e80e831e66ba22f247e67598f467fdef4f1ee0e185776394bc398",
+    "global.json": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e",
+    "toolchain.json": "1bdc42ca35759ef8ce2f474cbed9eb2c8105c717dfb2a7a75a7cb0dc5ee76fae"
+  },
+  "recordedUtc": "2026-09-10T05:42:04.336022+00:00"
+}

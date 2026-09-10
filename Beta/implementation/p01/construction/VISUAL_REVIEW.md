@@ -1,0 +1,18 @@
+# Native construction visual review
+
+The candidate's HUD, dialogue and small installed object are readable enough to verify this bounded native loop. **One concrete layout correction remains:** adjacent Wren and Traveler nameplates overlap in both completed/reopened journeys. This was reported to the central owner before the final UI pass. [VISUAL_REVIEW.json](VISUAL_REVIEW.json) binds all seven inspected 960×540 PNGs, their corresponding public-state reports, the actual rendered coordinator report and exact source presentation inputs.
+
+The reviewer viewed the actual rendered files using `view_image`, after the native processes had completed. The review covers the preserved-save upgrade/finish/reopen family and the fresh quest/partial construction/finish/reopen family. All seven individual reports say passed on macOS with .NET 10.0.12 and zero focus requests. Their hashes match the coordinator's artifact manifest. Native input sequences and collision/recovery assertions were executed by the coordinator's scripted probe; this reviewer did not independently drive the game or infer human enjoyment.
+
+Observed findings:
+
+- **Nameplate overlap:** in completed and reopened frames, `Wren` visually joins `Traveler`. Preserve the NPC label's readability; the player's cyan ring already provides identification, so a nearby redundant own-name label can be suppressed. Final correction needs a new rendered capture.
+- **Northern edge clipping:** Wren's overhead name falls behind the opaque header in the fresh quest frame. The dialogue title still identifies him clearly. This is a camera/label presentation limit, not missing character state.
+- **Onboarding control:** these candidate frames show `Give wood` outside a quest conversation. The central owner is correcting that misleading control after another critic identified its ordinary-gift behavior. This review does not qualify the pending replacement label or input path.
+- **Provisional guard:** the unchanged 13×8 plank crop is visible at the intended small panel scale. It appears as a flat board patch and lacks the actual feet, slots and upright silhouette. This accurately remains provisional source reuse; a separate artist pass must supply the final readable assembly and work animation.
+
+The opaque top HUD and lower panel keep the actual text legible. Level 3, 200 gil, HP 78/78 and MP 14/14 agree with the source-derived reward state. The displayed wood, berries, rations and offcuts are the player's own inventory counts. The review makes no claim about private NPC inventory. Partial work is 60/200 and shown as 30% fitted; completion is 200/200 and shown as a saved seedling guard. Wren's fresh completion dialogue says the wood is set aside and work will begin after talking, rather than claiming orchard-wide weather protection. The original windproof completion line is absent.
+
+The original Wren paperdoll remains distinguishable from the simpler player sprite. The guard scene uses the exact source atlas, no bitmap edit, no texture scaling, nearest filtering and the declared `(6.5, -4)` centered-sprite offset. The scene renders a canonical committed structure; it supplies no gameplay collider or private material authority. Atlas/resource hashes match this rendered build.
+
+Repeated grass and farm-row textures, sparse scenery, limited silhouettes and missing joinery gestures remain explicit baseline limitations. Seven still images do not demonstrate animation smoothness, final art acceptance, integrated audio, accessibility across target resolutions, target-platform exports or the intended finished atmosphere. The candidate report and captures must remain retained when the corrected UI is rendered again.

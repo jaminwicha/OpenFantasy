@@ -1,0 +1,30 @@
+{
+  "recordedUtc": "2026-09-10T05:34:49.382401+00:00",
+  "scope": "Independent static inspection of coordinator-authored NPC/session integration and durable construction work recovery tests; no build or test execution by this reviewer.",
+  "status": "No further concrete blocker found in the inspected source. Coordinated executable qualification is pending.",
+  "inputs": {
+    "src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs": "00c271563444c1de640038580f6ea552d21610488133d82e8a127d6d952db327",
+    "src/OpenFantasy.Hosting/Simulation/LocalConstructionController.cs": "e9edc2f5f31d33977c06ec2eb580c7520bf613fb62e331298481d3ceda3c22e3",
+    "src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs": "a5044f2679ec837b54d5834cb2e428b5df809bfc380e4f7db494b18106043b1f",
+    "tests/OpenFantasy.Hosting.Tests/WorldStorage/ConstructionWorkRecoveryTests.cs": "5f8eec23efa0dab76fce50c69ab496348b0f45169997de2b7858b381523c7526",
+    "tests/OpenFantasy.Hosting.Tests/WorldStorage/ConstructionUpgradeFixture.cs": "b6cb1f92072c7e83e03899dc042bf153ed96cae0aeb0a7594fbf9b0259591016"
+  },
+  "findings": [
+    {
+      "id": "CH-01",
+      "status": "closed-by-static-inspection-execution-pending",
+      "summary": "Both target and next-waypoint off-grid displacements defer before constructing a fixed32 movement."
+    }
+  ],
+  "assessed": [
+    "Return-home behavior applies only after a completed project while outside the existing home radius; shared actor-body routes and fixed32 movement resume ordinary amble on entering that radius. Axis checks prevent extreme-coordinate squaring overflow.",
+    "Actual work and movement originate in one current serialized host cutoff. Preview isolates dispatch conflicts while storage/recovery-limit errors remain host failures. Successful work suppresses that actor movement; held worlds select no automatic NPC action.",
+    "Retained work tests use real authority commits and copied upgrade, exact partial canonical recovery and command receipt retry, stale batch rejection, one installed derived guard and three offcuts, unchanged quest/progression, source preservation, and before/after-final-commit fault recovery.",
+    "The recovery test hold loop is a static controller/no-write check. It does not by itself prove a timed LocalWorldSession hold; the native E/600ms check and existing session tests provide separate boundaries."
+  ],
+  "limits": [
+    "No native or managed run is claimed by this report.",
+    "No independence claim for reviewer-authored Spatial code, ConstructionControllerCriticTests, or native construction probe/checker.",
+    "The admitted one-site controller is not general job scheduling, global navigation, network authorization, structural engineering or production growth qualification."
+  ]
+}

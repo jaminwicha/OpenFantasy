@@ -1,0 +1,243 @@
+{
+  "reviewKind": "independent trace and static first-feedback review",
+  "humanSessionObserved": false,
+  "gameExecutedByReviewer": false,
+  "screenshotsInspected": false,
+  "renderedWindowOpened": false,
+  "originalDiagnosisReport": "Runtime/artifacts/construction-diagnostics/native-first.json",
+  "originalDiagnosisReportSha256": "7bed0148b0057b7cbf1b4839a776953f0a8689115e4a85b7f73b2424f529adcf",
+  "originalFindingSourceSha256": {
+    "client/scripts/FarmHud.cs": "0fe2b38a38275c7144d815f0bfcc33d8265f4c4771db249d73608c1e39291e96",
+    "client/scripts/FarmGame.cs": "24575b1782ba81c3771c4ff54e69bf9922b289a785dd55ff3a4c6b9daa48d6b5"
+  },
+  "reviewedReport": "implementation/p01/construction/qualification/headless/native-construction.json",
+  "reviewedReportSha256": "51ea150325a1770fde67920c314200674ace6ba0fe76fafebc9ffac627517a8c",
+  "finalVerificationReport": "implementation/p01/construction/qualification/final-verification.json",
+  "finalVerificationReportSha256": "63b22db73649aaae7f5f42f9db0a149429f39ee2e22b5037957048dbea0a1693",
+  "headlessReportStatus": "passed",
+  "headlessReportRendered": false,
+  "directProcessEntries": 7,
+  "materialFindings": [
+    {
+      "id": "F01",
+      "severity": "first-feedback blocker",
+      "status": "closed: corrected source independently reviewed and final ordinary-input regression independently checked",
+      "observation": "Outside an addressed quest, Give wood transfers ordinary stock into Wren primary inventory rather than reserved quest delivery.",
+      "sourceReferences": [
+        "client/scripts/FarmHud.cs:70",
+        "client/scripts/FarmHud.cs:128",
+        "client/scripts/FarmGame.cs:185",
+        "client/scripts/FarmClientSession.cs:68"
+      ],
+      "owner": "coordinator/client",
+      "nextCheck": "Human first-feedback observation remains separate; no pending execution exit for F01.",
+      "correction": "FarmGame uses Quest for progression profiles even without a currently addressed offer; FarmQuestActions requires the addressed offer and supplies speak-first feedback. HUD disables/relabels the unaddressed button. Legacy gift remains available in the older profile."
+    }
+  ],
+  "outsideQuestRegression": {
+    "status": "independently checked",
+    "observationMilliseconds": 305,
+    "samples": 45,
+    "hasPendingImmediately": false,
+    "hasPendingAfterObservation": false,
+    "inventoryLotsQuantityAndRevisionsUnchanged": true,
+    "questAndProgressionUnchanged": true,
+    "clockAdvancedNormally": true,
+    "messageText": "static route verified; message pixels/text not captured by this trace",
+    "positionQualification": "Input occurs before approaching Wren; immediate no-pending assertion distinguishes corrected route from old queued request regardless of gifting reach."
+  },
+  "testExecutionFromCoordinator": {
+    "core": {
+      "total": 544,
+      "executed": 544,
+      "passed": 544,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "hosting": {
+      "total": 261,
+      "executed": 261,
+      "passed": 261,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "nonblockingGuideActions": [
+    "E opens/closes; G accepts then delivers.",
+    "Gathering/crafting optional; eight starting wood already funds six.",
+    "Two berries plus one wood craft two rations; explain disabled optional action only if tester hesitates.",
+    "Close dialogue and clear Wren route; observe actual percentage and installed guard.",
+    "Supply gamepad map if testing controller because HUD currently shows keyboard labels."
+  ],
+  "stageEvidence": [
+    {
+      "stage": "upgrade",
+      "status": "passed",
+      "durationMilliseconds": 9266,
+      "focusRequests": 0,
+      "checks": [
+        "Copied admission retained every prior public quest and production field and introduced exactly zero work.",
+        "The recovered state remained exactly unchanged for at least 600 ms while paused.",
+        "Wren moved from the retained source position and performed committed work at the admitted work site.",
+        "Ordinary E held actual construction work and the entire public world for at least 600 ms.",
+        "After E closed the conversation, the same unfinished project resumed before an ordinary pause.",
+        "The final saved state remained exactly unchanged for at least 600 ms under the normal pause control."
+      ]
+    },
+    {
+      "stage": "finish",
+      "status": "passed",
+      "durationMilliseconds": 13413,
+      "focusRequests": 0,
+      "checks": [
+        "The exact previous public world, work and quest state restored before any resume.",
+        "The recovered state remained exactly unchanged for at least 600 ms while paused.",
+        "The retained partial job resumed to exactly 200 work and became an installed structure.",
+        "At least 900 ms of focused west input stopped at X27424 against the installed material, with advancing calendar.",
+        "The same player walked north and past the west side of the installed guard through ordinary movement.",
+        "The final saved state remained exactly unchanged for at least 600 ms under the normal pause control."
+      ]
+    },
+    {
+      "stage": "reopen",
+      "status": "passed",
+      "durationMilliseconds": 2347,
+      "focusRequests": 0,
+      "checks": [
+        "The exact previous public world, work and quest state restored before any resume.",
+        "The recovered state remained exactly unchanged for at least 600 ms while paused.",
+        "The final saved state remained exactly unchanged for at least 600 ms under the normal pause control."
+      ]
+    },
+    {
+      "stage": "fresh-quest",
+      "status": "passed",
+      "durationMilliseconds": 10436,
+      "focusRequests": 0,
+      "checks": [
+        "A fresh construction world started paused with initial stock and no premature reward or disclosed project.",
+        "Initial recovery stayed exactly unchanged for at least 600 ms while paused.",
+        "Ordinary G before conversation queued no action and preserved all player stock, quest and progression fields for at least 300 ms.",
+        "Two ordinary sickle inputs issued two actual berries from the admitted finite node.",
+        "One craft consumed two berries and one wood; seven wood, two rations, one offcut and both tools remain.",
+        "Ordinary movement approached Wren after gathering and crafting in the fresh world.",
+        "The actual addressed offer remained held for 600 ms and exposed its six-wood requirement and funded reward.",
+        "First ordinary G input accepted the quest without consuming wood or granting a reward.",
+        "Second G delivered six current wood once: level 3, XP 38, HP 78/78, MP 14/14 and 200 gil while still held.",
+        "Final saved state stayed unchanged for at least 600 ms under the ordinary pause control.",
+        "Fresh-world crafting, acceptance and delivery completed with a real held conversation and no premature construction."
+      ]
+    },
+    {
+      "stage": "fresh-work",
+      "status": "passed",
+      "durationMilliseconds": 9111,
+      "focusRequests": 0,
+      "checks": [
+        "The actual fresh quest journey recovered exactly with its completed reward and zero construction work.",
+        "The recovered state remained exactly unchanged for at least 600 ms while paused.",
+        "Wren moved from the retained source position and performed committed work at the admitted work site.",
+        "Ordinary E held actual construction work and the entire public world for at least 600 ms.",
+        "After E closed the conversation, the same unfinished project resumed before an ordinary pause.",
+        "The final saved state remained exactly unchanged for at least 600 ms under the normal pause control."
+      ]
+    },
+    {
+      "stage": "fresh-finish",
+      "status": "passed",
+      "durationMilliseconds": 13320,
+      "focusRequests": 0,
+      "checks": [
+        "The exact previous public world, work and quest state restored before any resume.",
+        "The recovered state remained exactly unchanged for at least 600 ms while paused.",
+        "The retained partial job resumed to exactly 200 work and became an installed structure.",
+        "At least 900 ms of focused west input stopped at X27424 against the installed material, with advancing calendar.",
+        "The same player walked north and past the west side of the installed guard through ordinary movement.",
+        "The final saved state remained exactly unchanged for at least 600 ms under the normal pause control."
+      ]
+    },
+    {
+      "stage": "fresh-reopen",
+      "status": "passed",
+      "durationMilliseconds": 2494,
+      "focusRequests": 0,
+      "checks": [
+        "The exact previous public world, work and quest state restored before any resume.",
+        "The recovered state remained exactly unchanged for at least 600 ms while paused.",
+        "The final saved state remained exactly unchanged for at least 600 ms under the normal pause control."
+      ]
+    }
+  ],
+  "reviewedSourceSha256": {
+    "client/scripts/FarmHud.cs": "345b3a532381ba376f193ab420c999edc9176dae51b815b132a11d89fea30a00",
+    "client/scripts/FarmGame.cs": "14ed56f12467790bce067e7f6911f75cc132994cd1710f972a582149b381b54e",
+    "client/scripts/FarmInputMap.cs": "1fc3688d9cfad2f601a2c39c2f9e8467ad43fb5b37152ce79d80bfe33da96a7b",
+    "client/scripts/FarmClientSession.cs": "de72c446037541861f711e5f1722ea17b8f59c8cb6008fa072181604dd9a3afa",
+    "client/scripts/FarmQuestActions.cs": "55e29d7e8a4cdc7a733d9fcda273a9f6ca9c7aabe2811b813ef72b5155bf20b8",
+    "client/scripts/FarmCrafting.cs": "b7c49e2a0ee2dbfa5a937121fd292a429e16dcab30f92c9c71c6feb9d3ffc245",
+    "client/scripts/FarmQuestProbe.cs": "ae70d3525affc4f7c81966194e6567e0eb057d0ce5a955c0b19cba942153843f",
+    "client/scripts/FarmConstructionProbe.cs": "3f170cd494f00b6eecd11a0782dd9c041b13b7610ba54aa2073291bde71d46be",
+    "client/scripts/Presentation/FarmStructureView.cs": "3e439ece54825283d9b9fae24da84c16410f065fb0f232e96cd3873f596b50cc",
+    "client/scenes/FarmHud.tscn": "10904771da587b14b8456ff2659e556396f5b9a934fc550eb77083eaa63abbcd",
+    "src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs": "f756f82d59c9a88a32ffcab8e2d6e4d99159dd5dab54b8641fe17a574d8d50f7",
+    "tools/play.py": "06c619a6a72b1d0263b654f6a7e133be2549f8cdbd39d17f2a810e14ee8611a3",
+    "Play OpenFantasy.command": "54af6562c57e80e831e66ba22f247e67598f467fdef4f1ee0e185776394bc398"
+  },
+  "sourceMatchesRecordedHeadlessBuild": {
+    "client/scripts/FarmHud.cs": true,
+    "client/scripts/FarmGame.cs": true,
+    "client/scripts/FarmInputMap.cs": true,
+    "client/scripts/FarmClientSession.cs": true,
+    "client/scripts/FarmQuestActions.cs": true,
+    "client/scripts/FarmCrafting.cs": true,
+    "client/scripts/FarmQuestProbe.cs": true,
+    "client/scripts/FarmConstructionProbe.cs": true,
+    "client/scripts/Presentation/FarmStructureView.cs": true,
+    "client/scenes/FarmHud.tscn": true,
+    "src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs": true,
+    "tools/play.py": true,
+    "Play OpenFantasy.command": true
+  },
+  "recordedRuntimeSha256": {
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "410cb335db2592b18f2ff9d5d9ce558b52668ec267b27b3c7d8a2dd9b57dd7c6",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "03dd22c922c48fe460c97031f54271581bc84a48369657763345a75d02304105",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "eb4de82d8fbfd5df4f9fdc453911a918a460c6a93454cc4f1d5a62f5a09f87ce"
+  },
+  "runtimeMatchesRecordedHeadlessBuild": {
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": true,
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": true,
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": true
+  },
+  "feedbackGuide": {
+    "path": "implementation/p01/construction/FEEDBACK.md",
+    "sha256": "aca402019390902179c94277e2e593983133c6429d232d9d4227b698c219f928",
+    "launcherExists": true,
+    "launcherExecutable": true,
+    "pythonEntryExists": true,
+    "launcherExecutedByReviewer": false,
+    "sequencingClarification": "closed: current guide explicitly separates acceptance/delivery and says close any conversation with E before optional gathering; return/talk/deliver if not already done."
+  },
+  "reviewDocumentSha256": "42947c32fe1614cb3f2e0984fb556e331babc0afeae20af54f6c8caa32f51d10"
+}
