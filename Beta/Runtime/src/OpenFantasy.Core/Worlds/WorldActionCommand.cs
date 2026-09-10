@@ -32,7 +32,7 @@ public sealed class WorldActionCommand
     public EntityId BranchId { get; }
     public ulong ExpectedActorRevision { get; }
     public WorldActionIntent Intent { get; }
-    public ContentHash ContentHash => ContentHash.Compute(WorldActionCodecV1.Encode(this));
+    public ContentHash ContentHash => ContentHash.Compute(WorldActionCodec.Encode(this));
 }
 
 public abstract record WorldActionIntent;

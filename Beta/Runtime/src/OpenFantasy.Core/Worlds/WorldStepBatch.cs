@@ -38,11 +38,11 @@ public sealed class WorldStepBatch
 
     public WorldStepBatch(EntityId causeId, EntityId worldId, EntityId branchId, ulong expectedRevision,
         ulong expectedAdvancingSteps, WorldBatchKind kind, IEnumerable<WorldMovementInput> movement,
-        IEnumerable<WorldActionCommand> actions)
+        IEnumerable<WorldActionCommand> actions, ushort profileVersion = 1)
     {
         ArgumentNullException.ThrowIfNull(movement);
         ArgumentNullException.ThrowIfNull(actions);
-        if (!Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
+        if (profileVersion is not 1 and not 2 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
         {
             throw new ArgumentException("The world batch kind or cause identity is invalid.");
         }
@@ -77,6 +77,7 @@ public sealed class WorldStepBatch
         ExpectedRevision = expectedRevision;
         ExpectedAdvancingSteps = expectedAdvancingSteps;
         Kind = kind;
+        ProfileVersion = profileVersion;
         Movement = Array.AsReadOnly(moving.Values.ToArray());
         Actions = Array.AsReadOnly(acting.Values.ToArray());
     }
@@ -87,6 +88,7 @@ public sealed class WorldStepBatch
     public ulong ExpectedRevision { get; }
     public ulong ExpectedAdvancingSteps { get; }
     public WorldBatchKind Kind { get; }
+    public ushort ProfileVersion { get; }
     public ReadOnlyCollection<WorldMovementInput> Movement { get; }
     public ReadOnlyCollection<WorldActionCommand> Actions { get; }
 }

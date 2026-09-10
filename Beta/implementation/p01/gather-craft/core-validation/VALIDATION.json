@@ -1,0 +1,325 @@
+{
+  "scope": "Portable gathering core and shared resource sightline, full coordinated Core Debug verification",
+  "command": "DOTNET_ROOT=/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj -c Debug --no-build --no-restore --logger trx;LogFileName=gathering-core-debug.trx --results-directory Beta/implementation/p01/gather-craft/core-validation/test-results",
+  "build": "Coordinator completed Debug solution compilation with zero warnings/errors immediately before this no-build test run.",
+  "trxCounters": {
+    "total": "413",
+    "executed": "413",
+    "passed": "413",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "trxTimes": {
+    "creation": "2026-09-09T20:53:17.7499220-05:00",
+    "queuing": "2026-09-09T20:53:17.7499230-05:00",
+    "start": "2026-09-09T20:53:16.4700920-05:00",
+    "finish": "2026-09-09T20:53:18.4339060-05:00"
+  },
+  "ownedBehaviorFacts": 28,
+  "ownedBehaviorTests": [
+    "OpenFantasy.Core.Tests.Gathering.GatheringSpatialTests.AdmissionRejectsUnsupportedBlockedMissingAndOffPlaneAnchors",
+    "OpenFantasy.Core.Tests.Gathering.GatheringSpatialTests.BodyCenterSightlineIsBlockedEvenWhenTheResourceAnchorHasClearSupport",
+    "OpenFantasy.Core.Tests.Gathering.GatheringSpatialTests.NonblockingNodesCanShareAnActorCellButCannotAliasWorldIdentityKinds",
+    "OpenFantasy.Core.Tests.Gathering.GatheringSpatialTests.ResourceRangeIsInclusiveAndSymmetricAtNegativeCoordinates",
+    "OpenFantasy.Core.Tests.Gathering.GatheringStepTests.AnNpcUsesItsActualOwnedToolAndReceivesItsOwnYield",
+    "OpenFantasy.Core.Tests.Gathering.GatheringStepTests.CompetingActorsUseCanonicalOrderAndCannotSpendTheSameNodeRevision",
+    "OpenFantasy.Core.Tests.Gathering.GatheringStepTests.GatherBeforeSpeakAppliesOnceAndNewReadingHoldSuppressesMovement",
+    "OpenFantasy.Core.Tests.Gathering.GatheringStepTests.GatherWhileReadingRejectsWithoutAnyCalendarExposureOrEffortGrowth",
+    "OpenFantasy.Core.Tests.Gathering.GatheringStepTests.HistoricalSpawnCollisionRejectsAtomicallyButTheSelectedStepStillAdvances",
+    "OpenFantasy.Core.Tests.Gathering.GatheringStepTests.SpeakBeforeGatherDoesNotPermitAFreeSwingAfterTheHoldOpens",
+    "OpenFantasy.Core.Tests.Gathering.GatheringStepTests.StaleNodeToolAndPresenceRevisionsNeverIssueAClaim",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.AFullLotTableRejectsWithoutThrowingOrSpendingTheSource",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.AdmissionRejectsIssuedClaimsBeyondCursorAndIncompleteActorWork",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.BankedEffortAllowsTwoSwingsAndDoesNotInventCooldownTime",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.BerryKeepsItsOwnFourSwingAndSevenHundredStepDefinition",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.BodyFunctionLossAndReadingHoldRejectWithoutSpendingEffort",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.BoundedEnumerationsRejectBeforeConsumingAnUnboundedSequence",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.CanonicalCollectionsCopySortAndRejectDuplicatesConflictingPinsAndIdentityAliases",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.CapacityAndRevisionOverflowRejectWithoutChangingEitherCandidate",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.CurrentControlIsCheckedBeforePrivateLotOrRevisionDetails",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.DepletionUsesTheActionStartStepAndRegrowthNeverResetsTheCursor",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.EffortStartsAtZeroAndOnlyExactAdvancingStepsRechargeIt",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.ExactPowerNeverCapsYieldAtTheFiniteSourceBoundary",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.InconsistentSequentialCandidatesCannotReissueAnExistingSourceInterval",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.InvalidScalarStatesAndFutureOrOverflowingDepletionAreRejected",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.RegrowthRequiresACompleteCycleAtTheStrongestAdmittedToolPower",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.SwingIssuesOnlyTheNextAdmittedIntervalAndPreservesTheOriginal",
+    "OpenFantasy.Core.Tests.Gathering.GatheringTests.ToolsRequireExactPinsCorrectKindCurrentRevisionAndNoReservation"
+  ],
+  "oracle": {
+    "generator": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_gathering_vectors.py",
+    "stdoutMatchesFrozenFixture": true,
+    "fixture": {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/gathering-v1.json",
+      "bytes": 3996,
+      "sha256": "7d4179086fe77ca40b360481f5e6bbef4502248ce96ad9859512d6f509f60891"
+    },
+    "vectors": {
+      "action": {
+        "byteLength": 293,
+        "sha256": "abbb67b57bc93c20a74472daeccb7fe7a4845d2857033b9d082bfc4f0e5e0cdc"
+      },
+      "batch": {
+        "byteLength": 638,
+        "sha256": "9a9bcdb5bdcdfca1dbdd83dc9490f3db42991e4d8fbb24b8192e33613ad0bc11"
+      },
+      "snapshot": {
+        "byteLength": 867,
+        "sha256": "11a1c11a26a17fac0677470fd901c727f25f183b8af3b730c77fe58bd24a6bf3"
+      }
+    }
+  },
+  "limits": [
+    "No independent .NET build was run by this worker.",
+    "The independent Python fixture/oracle was authored by the coordinator and reproduced as a stdout comparison here.",
+    "These tests do not establish native rendered acceptance, production scale, crafting execution, quest rewards, biological renewal or construction."
+  ],
+  "inputs": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherActorWork.cs",
+      "bytes": 758,
+      "sha256": "d60969b9005ce1d559ea17b16beab031ec91228e06f62c3747c8bcc3414110c6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherIntent.cs",
+      "bytes": 226,
+      "sha256": "6902b5e2b3fbd6044331865a8fa5423f363ea27f7fe4fe7c90f69a5260c1289a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherNodeDefinition.cs",
+      "bytes": 1224,
+      "sha256": "6283863b566810f9bea122e52de861d9711ff951c3295d11b0d5bfdc883e38c9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherNodeState.cs",
+      "bytes": 2742,
+      "sha256": "ed089df54242f6115eb350bdeca7a8c5bfe0da7db14ea32810c83f9e2c9e7c00"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherPlan.cs",
+      "bytes": 775,
+      "sha256": "4f2800041b2f94a95e261faa33ee70e23d35ed6fe4edaaca7fa0cb3b313168b7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherPlanner.cs",
+      "bytes": 6534,
+      "sha256": "cec27ff478bd96a98eb43734960b3d6ba4c8d2914e1a511dbe7cecfcd4682973"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherRulesV1.cs",
+      "bytes": 612,
+      "sha256": "8a94962459382d683e50d561baa66533cfee11d58cd608f969cd1f741eb059e5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs",
+      "bytes": 760,
+      "sha256": "8cddfce43612a0109e68ae94a7dea7b0f6c4723261b6e443f437747afc2a90ca"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatheringCodecV1.cs",
+      "bytes": 9027,
+      "sha256": "281acca619dd09de83f94bafdf0b3d6cab40a427553d0c4b07798f6ca14628c0"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatheringSnapshot.cs",
+      "bytes": 8172,
+      "sha256": "536115c5f25385a561c3864cdc1344e1c960a7094bf662582301c08d4f4c614a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/ResourceInteractionQueries.cs",
+      "bytes": 2168,
+      "sha256": "16b3cc1f8adb923a92ac386e77ad06e399c158dc26af87a48e307843c0865d57"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/TerrainSightline.cs",
+      "bytes": 4269,
+      "sha256": "db801ca542676b8cd6a0681053703b9f8318ea769afd6d96f7dcb87da00bfec4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/DialogueSession.cs",
+      "bytes": 1182,
+      "sha256": "1102368f45ffa7cd27d8de84d5f6b0824045e435efa3accf21c082e5745388a1"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodec.cs",
+      "bytes": 827,
+      "sha256": "fd9638a06c8c45899d9de56aa02354a867524270ef751a96f3f2ee32ff84445e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV1.cs",
+      "bytes": 3663,
+      "sha256": "3ef39fc27137894e8fe486d5380e5bf0fc2e5a7ba22518c7a06b4807a0788ca4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV2.cs",
+      "bytes": 2473,
+      "sha256": "a9a9339fb722f23dabbff308def5b80afb3d946456e944546d8e6e855bc2d64a"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCommand.cs",
+      "bytes": 2760,
+      "sha256": "b18df63e23498a3d7a11802b24ced733e205efed1cfea924b16b98369668a347"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionReceipt.cs",
+      "bytes": 2169,
+      "sha256": "eb07b947431dc2a2a76ff24b44c519d7aafa24a5ccbd2b316da4854b7427250f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionResolver.cs",
+      "bytes": 7116,
+      "sha256": "a84b22780b82a10f5488ce2aef6ebac75c814fd397943eecfdc8d6706d635cb6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+      "bytes": 13971,
+      "sha256": "44ca0b8490f78dd7eff84da9c4ae9529da50494bc1e9e2b3a5462fd86b42de4d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCodecVersion.cs",
+      "bytes": 460,
+      "sha256": "722f656fbaa1de1d5c06482e1bbedb5fcb883bf55a3dedb4cbe9914ed1e63ba8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldFrameReader.cs",
+      "bytes": 3193,
+      "sha256": "5664a79830471549de9bf015d708bb2a28dc72272f0543d0c6033d50374ec2db"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs",
+      "bytes": 2673,
+      "sha256": "2a90861174a075e4c83379177af95a1f28650b9ed984cf088a37fc21fd36cbaa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldReceiptCodecV1.cs",
+      "bytes": 3543,
+      "sha256": "0944da6be08949a2659ac1b52a3a993a021c61ebdc604d4d4664b15ce508d928"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs",
+      "bytes": 3201,
+      "sha256": "ba6a7cb3960890f978de99beddd1d9d50fca4218a509e218530394591496c64b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResidentCodecV1.cs",
+      "bytes": 3886,
+      "sha256": "0555273bcd601023a501a59950d75663f3d475b897bd0ed4f5f9eaa4a6ba7ffa"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "bytes": 5667,
+      "sha256": "78e8f27739d16914d5de2d5ad26e67a205da954e23b6de87219e06e768996e44"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs",
+      "bytes": 1031,
+      "sha256": "b4592f74746b1231c72a7a9a18c77ed719ed25530b36b0ab7582db6144de2c96"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV1.cs",
+      "bytes": 5481,
+      "sha256": "5cb4a9f038f1e5852c6cf34104cdca72f4a2566d0352bab73dd7fa4a822deb62"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV2.cs",
+      "bytes": 2276,
+      "sha256": "768957b5dd50588e961629eea66ec86d72d69ce2126b8027a32fad7539a581e7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSpatialCodecV1.cs",
+      "bytes": 4942,
+      "sha256": "057fac2c9130c80c1d939ca2aef0b37df7cc55436b86f95c64b756be90a1b130"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs",
+      "bytes": 4168,
+      "sha256": "b6545c3f860ebcd1e90d093e8031c73a208005af152591d583fea3b9fd1cc9ee"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs",
+      "bytes": 898,
+      "sha256": "6f7ad0598892f62ecb196d8c109792e61e3507abcb97a5ea779dc9ee2a484ac5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV1.cs",
+      "bytes": 4860,
+      "sha256": "fea37f315d4386fdc04b677146907fc47d02cc608409eeb78f2899d88b06c6c2"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV2.cs",
+      "bytes": 4947,
+      "sha256": "6988c30162493756a5d9f80351de1055544507c75d63b7da971a1489c2c7d18b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepDecision.cs",
+      "bytes": 1007,
+      "sha256": "d6a762677a67b4c289aecabaa3bfc0ff589281262382ed77da21d7b3f5e2efa8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "bytes": 5776,
+      "sha256": "79871c2d8772d8b31f843f290594981d33afa0e6e07caad50ef47a7c5973fce0"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs",
+      "bytes": 3483,
+      "sha256": "0096592cd05c54a892bc4cc0c40e03eeae38a2f1d924a10ab78d0fa7e015f71e"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringSpatialTests.cs",
+      "bytes": 4271,
+      "sha256": "c7fd2e6da013b14fe77c549ce064e855da451f806ac0d195be73bd0f0c9435a1"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringStepTests.cs",
+      "bytes": 7839,
+      "sha256": "bed430c2c63473272585066fabbd8daaa2de7bcf3bb7b5943852a2d85606ac47"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringTests.cs",
+      "bytes": 17134,
+      "sha256": "806233360943ebef98759a5e38f226cc366ab3ca7b10d885f6c9a59ca65778d9"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_gathering_vectors.py",
+      "bytes": 2201,
+      "sha256": "47f237a95b69649572cf1c7caf1e1f1ebb78c7638fb3749afe109582ff1aca65"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/gathering-v1.json",
+      "bytes": 3996,
+      "sha256": "7d4179086fe77ca40b360481f5e6bbef4502248ce96ad9859512d6f509f60891"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/GatheringGoldenTests.cs",
+      "bytes": 3911,
+      "sha256": "c42ee1291746db8e3096a9f2101ec931850d3b8270900a22ea682f3c0810fa55"
+    },
+    {
+      "path": "Beta/implementation/p01/gather-craft/CORE_CONTRACT.md",
+      "bytes": 10099,
+      "sha256": "d13f28a367a6888687fbc52fd63b5289154164b9bf8aa4cc67547d3b8f16e35d"
+    },
+    {
+      "path": "Beta/implementation/p01/gather-craft/CORE_INTEGRATION_REVIEW.md",
+      "bytes": 11577,
+      "sha256": "e653557c5e22bb47e3318e24898d9a046e19e771f1f59ac9f57c0c142cf20819"
+    },
+    {
+      "path": "Beta/implementation/p01/gather-craft/core-validation/test-results/gathering-core-debug.trx",
+      "bytes": 611885,
+      "sha256": "46ef46d9ad0950ae28888791e11b936b1f68c93b3df1a0599dd40a39528ddfb4"
+    }
+  ]
+}

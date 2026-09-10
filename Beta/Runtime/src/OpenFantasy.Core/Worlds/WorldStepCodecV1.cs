@@ -10,6 +10,10 @@ public static class WorldStepCodecV1
     public static byte[] Encode(WorldStepBatch batch)
     {
         ArgumentNullException.ThrowIfNull(batch);
+        if (batch.ProfileVersion != 1)
+        {
+            throw new ArgumentException("A newer rules profile requires its own step codec.", nameof(batch));
+        }
         return CanonicalEncodingV1.Frame("world.step-batch", Number(1), batch.CauseId.ToByteArray(),
             batch.WorldId.ToByteArray(), batch.BranchId.ToByteArray(), Number(batch.ExpectedRevision),
             Number(batch.ExpectedAdvancingSteps), Number((ulong)batch.Kind),

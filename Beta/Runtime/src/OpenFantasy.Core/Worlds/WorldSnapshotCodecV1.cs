@@ -12,6 +12,17 @@ public static class WorldSnapshotCodecV1
     public static byte[] Encode(WorldSnapshot world)
     {
         ArgumentNullException.ThrowIfNull(world);
+        if (world.ProfileVersion != 1)
+        {
+            throw new ArgumentException("This encoder cannot omit a newer world's admitted components.", nameof(world));
+        }
+        return EncodeExplorationBasis(world);
+    }
+
+    // Used only inside an explicitly versioned outer snapshot after full world admission. The outer
+    // codec must encode all additional components; this avoids rebuilding unchanged terrain indexes.
+    internal static byte[] EncodeExplorationBasis(WorldSnapshot world)
+    {
         byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", Number(1), AuthorityEncodingV1.Encode(world.Inventory),
             WorldSpatialCodecV1.Encode(world.Space),
             CanonicalEncodingV1.Frame("world.residents", world.Residents.Select(resident =>

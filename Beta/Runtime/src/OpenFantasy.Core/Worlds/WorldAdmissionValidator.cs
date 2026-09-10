@@ -28,6 +28,7 @@ public static class WorldAdmissionValidator
         admission.ReadPresence();
         admission.ReadResidents();
         admission.ReadDialogues();
+        admission.ReadGathering();
         return admission.Complete();
     }
 
@@ -104,6 +105,27 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain);
+
+        internal void ReadGathering()
+        {
+            if (world.Gathering is not { } gathering)
+            {
+                return;
+            }
+            gathering.ValidateForWorld(world);
+            foreach (var node in gathering.Nodes)
+            {
+                Add(node.NodeId, WorldIdentityRole.GatherNode, unique: true);
+                Definition(node.Definition.DefinitionId, WorldIdentityRole.GatherNodeDefinition, node.Definition.Version);
+                Require(node.SourceId, WorldIdentityRole.CountedSource);
+                Definition(node.Definition.YieldDefinition.DefinitionId, WorldIdentityRole.ItemDefinition,
+                    node.Definition.YieldDefinition.Version);
+            }
+            foreach (var tool in gathering.Tools)
+            {
+                Definition(tool.Definition.DefinitionId, WorldIdentityRole.ItemDefinition, tool.Definition.Version);
+            }
+        }
 
         internal void ReadInventory()
         {

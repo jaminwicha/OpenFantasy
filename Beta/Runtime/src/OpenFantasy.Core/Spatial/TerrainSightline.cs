@@ -8,10 +8,12 @@ internal static class TerrainSightline
     private const int DoubledCellSize = SubunitPosition.SubunitsPerCell * 2;
 
     internal static SpatialInteraction Query(TerrainVolumeQueries terrain, BodyVolume source, BodyVolume target)
+        => QueryCenters(terrain, source.DoubledCenter, target.DoubledCenter, LocalSpatialSnapshot.InteractionRangeSubunits);
+
+    internal static SpatialInteraction QueryCenters(TerrainVolumeQueries terrain,
+        (Int128 X, Int128 Y, Int128 Z) from, (Int128 X, Int128 Y, Int128 Z) to, long maximumRangeSubunits)
     {
-        var from = source.DoubledCenter;
-        var to = target.DoubledCenter;
-        Int128 limit = LocalSpatialSnapshot.InteractionRangeSubunits * 2;
+        Int128 limit = (Int128)maximumRangeSubunits * 2;
         Int128 dx = to.X - from.X;
         Int128 dy = to.Y - from.Y;
         if (dx < -limit || dx > limit || dy < -limit || dy > limit || dx * dx + dy * dy > limit * limit)

@@ -1,5 +1,6 @@
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Exposure;
+using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
@@ -11,13 +12,14 @@ namespace OpenFantasy.Core.Worlds;
 public sealed class WorldStepProcessor
 {
     private readonly WorldActionResolver _actions = new();
+    private readonly GatherPlanner _gathering = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
     {
         ArgumentNullException.ThrowIfNull(state);
         ArgumentNullException.ThrowIfNull(batch);
-        if (batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
+        if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
             || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold)
         {
@@ -45,11 +47,33 @@ public sealed class WorldStepProcessor
             Reserve(action.CommandId, WorldCommittedIdentityKind.Command);
         }
         CountedAuthorityState inventory = state.Inventory;
+        GatheringSnapshot? gathering = state.Gathering;
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
         foreach (WorldActionCommand action in batch.Actions)
         {
-            WorldActionResolution resolution = _actions.Resolve(state, inventory, dialogues, action, Occupied);
+            WorldActionResolution resolution;
+            if (action.Intent is GatherIntent)
+            {
+                if (gathering is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret gathering actions.");
+                }
+                GatherPlan? plan = dialogues.Count == 0 ? _gathering.Plan(state, inventory, gathering, action) : null;
+                if (plan is null || plan.SpawnedId is { } generated && Occupied(generated))
+                {
+                    resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
+                }
+                else
+                {
+                    resolution = new WorldActionResolution(plan.CandidateInventory, dialogues, plan.Rejection, plan.SpawnedId);
+                    gathering = plan.CandidateGathering;
+                }
+            }
+            else
+            {
+                resolution = _actions.Resolve(state, inventory, dialogues, action, Occupied);
+            }
             var receipt = WorldActionReceipt.Create(action, sequence, resolution.Rejection);
             Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
             if (resolution.SpawnedId is { } spawned)
@@ -70,6 +94,7 @@ public sealed class WorldStepProcessor
             // The already selected step contributes once, including when an action opens a hold.
             calendar = calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);
             advancingSteps = checked(advancingSteps + 1);
+            gathering = gathering?.AdvanceStep(advancingSteps);
             residents = state.Residents.Select(resident => resident.ExperienceStep());
             if (dialogues.Count == 0)
             {
@@ -90,7 +115,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues);
+            advancingSteps, dialogues, gathering);
         return new WorldStepDecision(candidate, receipts, identities);
     }
 }
