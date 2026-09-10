@@ -24,6 +24,8 @@ public partial class FarmGame : Node2D
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
     internal bool GatheringProfile { get; init; } = true;
+    internal bool ProductionProfile { get; init; } = true;
+    internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     internal bool HasPendingAction => _action is not null;
     internal bool HasFailed => _failed;
@@ -44,6 +46,7 @@ public partial class FarmGame : Node2D
         _hud.TalkRequested += Speak;
         _hud.GiveRequested += Give;
         _hud.GatherRequested += Gather;
+        _hud.CraftRequested += Craft;
         _hud.CloseRequested += CloseDialogue;
         _hud.PauseRequested += TogglePause;
         GetTree().AutoAcceptQuit = false;
@@ -52,9 +55,13 @@ public partial class FarmGame : Node2D
         GetWindow().FocusExited += OnFocusExited;
         _hud.Message("Opening the farm…");
         _paused = StartPaused;
-        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath(GatheringProfile
-            ? "user://worlds/wrens-farm-work.sqlite" : "user://worlds/wrens-farm.sqlite");
-        _opening = FarmClientSession.OpenAsync(savePath, "aldermere-first-walk-v1", "Traveler", GatheringProfile);
+        bool production = GatheringProfile && ProductionProfile;
+        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath(production
+            ? "user://worlds/wrens-farm-production.sqlite" : GatheringProfile
+                ? "user://worlds/wrens-farm-work.sqlite" : "user://worlds/wrens-farm.sqlite");
+        string? upgradeSource = UpgradeSourcePathOverride ?? (SavePathOverride is null && production
+            ? ProjectSettings.GlobalizePath("user://worlds/wrens-farm-work.sqlite") : null);
+        _opening = FarmClientSession.OpenAsync(savePath, "aldermere-first-walk-v1", "Traveler", GatheringProfile, production, upgradeSource);
     }
 
     public override void _Process(double delta)
@@ -148,6 +155,7 @@ public partial class FarmGame : Node2D
         }
         else if (input.IsActionPressed("give_wood")) Give();
         else if (input.IsActionPressed("gather")) Gather();
+        else if (input.IsActionPressed("craft_rations")) Craft();
         else return;
         GetViewport().SetInputAsHandled();
     }
@@ -155,6 +163,7 @@ public partial class FarmGame : Node2D
     private void Speak() => Submit(session => session.Speak(session.World.ReadView()), "You spoke with Wren.");
     private void Give() => Submit(session => session.GiveWood(session.World.ReadView()), "You handed Wren wood from your pack.");
     private void Gather() => Submit(session => session.Gather(session.World.ReadView()), "You gathered supplies.");
+    private void Craft() => Submit(session => session.CraftRations(session.World.ReadView()), "You packed two rations and kept the wood offcuts.");
     private void CloseDialogue() => Submit(session => session.CloseDialogue(session.World.ReadView()), "The conversation ended.");
 
     private void Submit(Func<FarmClientSession, Task<WorldActionReceipt>> submit, string description)

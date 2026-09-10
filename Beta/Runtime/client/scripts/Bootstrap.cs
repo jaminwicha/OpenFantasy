@@ -41,6 +41,27 @@ public partial class Bootstrap : Control
         {
             FarmLifecycleProbe.Start(this, lifecycleSave, lifecycleReport, mode);
         }
+        else if (arguments is ["--farm-production", var sourceSave, var productionSave, var productionReport, var productionMode]
+            && productionMode is "prepare" or "upgrade" or "reopen")
+        {
+            bool prepare = productionMode == "prepare";
+            bool pathsValid = productionMode switch
+            {
+                "prepare" => !File.Exists(sourceSave) && !File.Exists(productionSave),
+                "upgrade" => File.Exists(sourceSave) && !File.Exists(productionSave),
+                _ => File.Exists(productionSave)
+            };
+            if (!pathsValid)
+            {
+                GD.PushError("The production probe requires its exact fresh or retained stage paths.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = prepare ? sourceSave : productionSave,
+                UpgradeSourcePathOverride = sourceSave, StartPaused = !prepare, ProductionProfile = !prepare };
+            AddChild(game);
+            AddChild(new FarmProductionProbe(game, productionReport, productionMode));
+        }
         else if (arguments is ["--farm-gathering", var gatherSave, var gatherReport, var gatherStage]
             && gatherStage is "create" or "reopen")
         {
@@ -50,7 +71,7 @@ public partial class Bootstrap : Control
                 GetTree().Quit(1);
                 return;
             }
-            var game = new FarmGame { SavePathOverride = gatherSave, StartPaused = gatherStage == "reopen" };
+            var game = new FarmGame { SavePathOverride = gatherSave, StartPaused = gatherStage == "reopen", ProductionProfile = false };
             AddChild(game);
             AddChild(new FarmGatheringProbe(game, gatherReport, gatherStage == "reopen"));
         }

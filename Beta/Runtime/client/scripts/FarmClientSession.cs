@@ -30,20 +30,14 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal EntityId? BerryDefinitionId { get; }
 
     internal static Task<FarmClientSession> OpenAsync(string savePath, string seedText, string playerName,
-        bool gatheringProfile) => Task.Run(() =>
+        bool gatheringProfile, bool productionProfile = false, string? upgradeSourcePath = null) => Task.Run(() =>
     {
         WorldSnapshot genesis = gatheringProfile ? GatheringFarmAdmission.CreateEmbedded(seedText, playerName)
             : FarmWorldAdmission.CreateEmbedded(seedText, playerName);
-        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
-        SqliteWorldAuthority authority = File.Exists(savePath)
-            ? SqliteWorldAuthority.OpenExisting(savePath) : SqliteWorldAuthority.CreateNew(savePath, genesis);
+        SqliteWorldAuthority authority = FarmSaveOpener.Open(savePath, genesis, productionProfile, upgradeSourcePath);
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;
-            if (current.WorldId != genesis.WorldId || current.AdmissionVersion != genesis.AdmissionVersion)
-            {
-                throw new InvalidDataException("This save needs its original content version or an explicit migration.");
-            }
             WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
             WorldResident wren = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Host);
             ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
@@ -80,6 +74,9 @@ internal sealed class FarmClientSession : IAsyncDisposable
 
     internal Task<WorldActionReceipt> CloseDialogue(LocalWorldView view) => World.SubmitAction(Command(view,
         new CloseDialogueIntent(view.Dialogue?.DialogueId ?? throw new InvalidOperationException("There is no addressed conversation to close."))));
+
+    internal Task<WorldActionReceipt> CraftRations(LocalWorldView view) =>
+        World.SubmitAction(Command(view, new CraftIntent(FarmCrafting.RationsRequest(view))));
 
     internal ulong WoodQuantity(LocalWorldView view) => view.PlayerInventory.Lots
         .Where(lot => lot.DefinitionId == WoodDefinitionId).Aggregate(0UL, (sum, lot) => checked(sum + lot.Quantity));

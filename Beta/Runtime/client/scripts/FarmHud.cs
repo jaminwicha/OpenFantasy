@@ -15,6 +15,7 @@ internal sealed partial class FarmHud : CanvasLayer
     private readonly Button _talk = new() { Text = "Talk  [E]" };
     private readonly Button _give = new() { Text = "Give wood  [G]" };
     private readonly Button _gather = new() { Text = "Gather  [F]" };
+    private readonly Button _craft = new() { Text = "Pack rations  [C]" };
     private readonly Button _close = new() { Text = "Continue  [E]" };
     private readonly Button _pause = new() { Text = "Pause  [Esc]" };
     private bool _wasSpeaking;
@@ -22,6 +23,7 @@ internal sealed partial class FarmHud : CanvasLayer
     internal event Action? TalkRequested;
     internal event Action? GiveRequested;
     internal event Action? GatherRequested;
+    internal event Action? CraftRequested;
     internal event Action? CloseRequested;
     internal event Action? PauseRequested;
 
@@ -63,6 +65,7 @@ internal sealed partial class FarmHud : CanvasLayer
         actions.AddChild(_talk);
         actions.AddChild(_give);
         actions.AddChild(_gather);
+        actions.AddChild(_craft);
 
         root.AddChild(_dialogue);
         _dialogue.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.BottomWide);
@@ -78,6 +81,7 @@ internal sealed partial class FarmHud : CanvasLayer
         _talk.Pressed += () => TalkRequested?.Invoke();
         _give.Pressed += () => GiveRequested?.Invoke();
         _gather.Pressed += () => GatherRequested?.Invoke();
+        _craft.Pressed += () => CraftRequested?.Invoke();
         _close.Pressed += () => CloseRequested?.Invoke();
         _pause.Pressed += () => PauseRequested?.Invoke();
     }
@@ -88,6 +92,13 @@ internal sealed partial class FarmHud : CanvasLayer
         int minute = view.Calendar.MillisecondsWithinDay / 60_000 % 60;
         _clock.Text = $"Day {view.Calendar.Days + 1} · {hour:D2}:{minute:D2}";
         _wood.Text = view.PlayerGatherEffort.HasValue ? $"Wood: {wood} · Berries: {berries}" : $"Wood: {wood}";
+        if (view.Crafting is not null)
+        {
+            _wood.Text += $"\nRations: {FarmCrafting.Quantity(view, OpenFantasy.Core.Production.RecipeMaterialRole.Output)}"
+                + $" · Offcuts: {FarmCrafting.Quantity(view, OpenFantasy.Core.Production.RecipeMaterialRole.Waste)}";
+        }
+        _craft.Visible = view.Crafting is not null;
+        _craft.Disabled = pending || paused || view.HasReadingHold || !FarmCrafting.HasIngredients(view);
         _talk.Disabled = pending || paused || view.HasReadingHold;
         _give.Disabled = pending || paused || wood == 0;
         _gather.Visible = view.PlayerGatherEffort.HasValue;

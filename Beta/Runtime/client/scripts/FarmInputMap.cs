@@ -14,6 +14,7 @@ internal static class FarmInputMap
         Button("talk", Key.E, JoyButton.A);
         Button("give_wood", Key.G, JoyButton.X);
         Button("gather", Key.F, JoyButton.Y);
+        Button("craft_rations", Key.C, JoyButton.B);
         Button("pause_world", Key.Escape, JoyButton.Start);
     }
 
