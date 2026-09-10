@@ -39,5 +39,6 @@
     <None Update="Fixtures/world-actions-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/world-receipts-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/gathering-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Progression/progression-v1.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>
