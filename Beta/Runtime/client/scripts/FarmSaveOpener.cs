@@ -11,9 +11,17 @@ namespace OpenFantasy.Client;
 internal static class FarmSaveOpener
 {
     internal static SqliteWorldAuthority Open(string savePath, WorldSnapshot gatheringGenesis,
-        bool productionProfile, string? upgradeSourcePath)
+        bool productionProfile, string? upgradeSourcePath, bool questProfile = false, string? gatheringUpgradeSourcePath = null)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        if (questProfile)
+        {
+            if (!productionProfile)
+            {
+                throw new ArgumentException("The quest profile requires the production farm.");
+            }
+            return FarmQuestSaveOpener.Open(savePath, gatheringGenesis, upgradeSourcePath, gatheringUpgradeSourcePath);
+        }
         WorldSnapshot genesis = productionProfile ? ProductionGenesis(gatheringGenesis) : gatheringGenesis;
         SqliteWorldAuthority authority;
         if (File.Exists(savePath))
@@ -50,7 +58,7 @@ internal static class FarmSaveOpener
         }
     }
 
-    private static WorldSnapshot ProductionGenesis(WorldSnapshot gathering)
+    internal static WorldSnapshot ProductionGenesis(WorldSnapshot gathering)
     {
         ProductionSnapshot production = ProductionFarmAdmission.CreateProduction(gathering);
         return new WorldSnapshot(gathering.Inventory, gathering.Space, gathering.Residents,
@@ -58,7 +66,7 @@ internal static class FarmSaveOpener
             gathering.Calendar, 0, 0, gathering.Dialogues, gathering.Gathering, production);
     }
 
-    private static void ValidateSelection(WorldSnapshot current, WorldSnapshot expected)
+    internal static void ValidateSelection(WorldSnapshot current, WorldSnapshot expected)
     {
         if (current.WorldId != expected.WorldId || current.BranchId != expected.BranchId
             || current.ProfileVersion != expected.ProfileVersion || current.AdmissionVersion != expected.AdmissionVersion)

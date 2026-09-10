@@ -2,6 +2,8 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
+using OpenFantasy.Core.Custody;
+using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Worlds;
 
@@ -10,7 +12,7 @@ namespace OpenFantasy.Hosting.Simulation;
 public sealed record LocalActorView(EntityId ActorId, string DisplayName, SubunitPosition Feet,
     ulong PresenceRevision, ResidentControllerKind ControllerKind);
 public sealed record LocalItemLotView(EntityId LotId, EntityId DefinitionId, ulong Revision, ulong Quantity,
-    IngredientLotKind Provenance = IngredientLotKind.Source);
+    IngredientLotKind Provenance = IngredientLotKind.Source, bool AvailableForDelivery = true);
 public sealed record LocalDialogueView(EntityId DialogueId, EntityId SpeakerActorId, string SpeakerName, string Text);
 
 public sealed class LocalInventoryView
@@ -51,7 +53,8 @@ public sealed class LocalWorldView
         EntityId storage = state.GetResident(playerActorId).InventoryCustodianId;
         PlayerInventory = new LocalInventoryView(storage, state.Inventory.Custody.GetStorage(storage).Revision,
             state.Inventory.Custody.Lots.Where(lot => lot.CustodianId == storage)
-                .Select(lot => new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity))
+                .Select(lot => new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity,
+                    IngredientLotKind.Source, lot.Protection == LotProtection.None && lot.ReservedBy is null))
                 .Concat(state.Production?.Lots.Where(lot => lot.CustodianId == storage).Select(lot =>
                     new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity, IngredientLotKind.Transformed)) ?? []));
         Crafting = state.Production is { } production ? new LocalCraftingView(production) : null;
@@ -83,6 +86,14 @@ public sealed class LocalWorldView
             Dialogue = new LocalDialogueView(dialogue.DialogueId, speaker.ActorId, speaker.DisplayName,
                 speaker.OpeningUtterance!.Text);
         }
+        Quests = ProjectQuests(state, playerActorId, dialogue);
+        if (state.Progression is { } progression)
+        {
+            var actor = progression.GetActor(playerActorId);
+            Progression = new LocalProgressionView(actor.Revision, actor.Profile.DisplayName, actor.Level,
+                actor.Experience, actor.CurrentHp, actor.Stats.MaxHp, actor.CurrentMp, actor.Stats.MaxMp,
+                progression.Currency.GetActorAccount(playerActorId).Balance, progression.Currency.Currency.UnitName);
+        }
     }
 
     public EntityId WorldId { get; }
@@ -97,4 +108,38 @@ public sealed class LocalWorldView
     public uint? PlayerGatherEffort { get; }
     public LocalCraftingView? Crafting { get; }
     public LocalDialogueView? Dialogue { get; }
+    public LocalProgressionView? Progression { get; }
+    public ReadOnlyCollection<LocalQuestView> Quests { get; }
+
+    private ReadOnlyCollection<LocalQuestView> ProjectQuests(WorldSnapshot world, EntityId actorId, DialogueSession? dialogue)
+    {
+        List<LocalQuestView> views = [];
+        if (world.Quests is not { } quests || world.Progression is not { } progression)
+        {
+            return views.AsReadOnly();
+        }
+        var actor = progression.GetActor(actorId);
+        foreach (DeliveryQuestDefinition definition in quests.Definitions)
+        {
+            ActorQuestState? participation = quests.FindParticipation(actorId, definition.DefinitionId);
+            bool addressed = dialogue?.SpeakerActorId == definition.GiverActorId;
+            if (!addressed && participation is null)
+            {
+                continue;
+            }
+            ulong eligible = PlayerInventory.Lots.Where(lot => lot.Provenance == IngredientLotKind.Source
+                && lot.AvailableForDelivery && lot.DefinitionId == definition.Item.DefinitionId)
+                .Aggregate(0UL, (sum, lot) => checked(sum + lot.Quantity));
+            var reserve = progression.GetAccount(definition.Reward.ReserveAccountId);
+            bool funded = quests.OutstandingReward(reserve.AccountId) + definition.Reward.CurrencyAmount <= reserve.Balance;
+            bool levelEligible = actor.Level >= definition.MinimumLevel;
+            views.Add(new LocalQuestView(definition.DefinitionId, definition.Version, definition.Title,
+                definition.Description, definition.GiverActorId, definition.Item.DefinitionId, definition.Quantity,
+                eligible, participation?.Status, participation?.Revision ?? 0, definition.MinimumLevel,
+                definition.Reward.Experience, definition.Reward.CurrencyAmount, progression.Currency.Currency.UnitName,
+                addressed && participation is null && levelEligible && funded,
+                addressed && participation?.Status == ActorQuestStatus.Accepted && levelEligible && eligible >= definition.Quantity));
+        }
+        return views.AsReadOnly();
+    }
 }

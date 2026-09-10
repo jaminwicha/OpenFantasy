@@ -11,7 +11,7 @@ public partial class FarmGame : Node2D
 {
     private readonly FarmCanvas _canvas = new();
     private readonly Camera2D _camera = new() { Zoom = new Vector2(2, 2) };
-    private readonly FarmHud _hud = new();
+    private FarmHud _hud = null!;
     private Task<FarmClientSession>? _opening;
     private FarmClientSession? _session;
     private Task<WorldActionReceipt>? _action;
@@ -25,6 +25,7 @@ public partial class FarmGame : Node2D
     internal bool StartPaused { get; init; }
     internal bool GatheringProfile { get; init; } = true;
     internal bool ProductionProfile { get; init; } = true;
+    internal bool QuestProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     internal bool HasPendingAction => _action is not null;
@@ -42,6 +43,7 @@ public partial class FarmGame : Node2D
         _camera.LimitRight = (int)bounds.End.X;
         _camera.LimitBottom = (int)bounds.End.Y;
         AddChild(_camera);
+        _hud = GD.Load<PackedScene>("res://scenes/FarmHud.tscn").Instantiate<FarmHud>();
         AddChild(_hud);
         _hud.TalkRequested += Speak;
         _hud.GiveRequested += Give;
@@ -56,12 +58,17 @@ public partial class FarmGame : Node2D
         _hud.Message("Opening the farm…");
         _paused = StartPaused;
         bool production = GatheringProfile && ProductionProfile;
-        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath(production
+        bool quests = production && QuestProfile;
+        string savePath = SavePathOverride ?? ProjectSettings.GlobalizePath(quests
+            ? "user://worlds/wrens-farm-quests.sqlite" : production
             ? "user://worlds/wrens-farm-production.sqlite" : GatheringProfile
                 ? "user://worlds/wrens-farm-work.sqlite" : "user://worlds/wrens-farm.sqlite");
         string? upgradeSource = UpgradeSourcePathOverride ?? (SavePathOverride is null && production
-            ? ProjectSettings.GlobalizePath("user://worlds/wrens-farm-work.sqlite") : null);
-        _opening = FarmClientSession.OpenAsync(savePath, "aldermere-first-walk-v1", "Traveler", GatheringProfile, production, upgradeSource);
+            ? ProjectSettings.GlobalizePath(quests ? "user://worlds/wrens-farm-production.sqlite" : "user://worlds/wrens-farm-work.sqlite") : null);
+        string? gatheringSource = SavePathOverride is null && quests
+            ? ProjectSettings.GlobalizePath("user://worlds/wrens-farm-work.sqlite") : null;
+        _opening = FarmClientSession.OpenAsync(savePath, "aldermere-first-walk-v1", "Traveler", GatheringProfile,
+            production, upgradeSource, quests, gatheringSource);
     }
 
     public override void _Process(double delta)
@@ -161,7 +168,20 @@ public partial class FarmGame : Node2D
     }
 
     private void Speak() => Submit(session => session.Speak(session.World.ReadView()), "You spoke with Wren.");
-    private void Give() => Submit(session => session.GiveWood(session.World.ReadView()), "You handed Wren wood from your pack.");
+    private void Give()
+    {
+        LocalWorldView? view = _session?.World.ReadView();
+        LocalQuestView? quest = view?.Quests.SingleOrDefault(value => value.GiverActorId == view.Dialogue?.SpeakerActorId);
+        if (quest is not null)
+        {
+            Submit(session => session.Quest(session.World.ReadView()), quest.Status is null
+                ? "You agreed to bring wood for the orchard." : "You delivered the supplies and received Wren's reward.");
+        }
+        else
+        {
+            Submit(session => session.GiveWood(session.World.ReadView()), "You handed Wren wood from your pack.");
+        }
+    }
     private void Gather() => Submit(session => session.Gather(session.World.ReadView()), "You gathered supplies.");
     private void Craft() => Submit(session => session.CraftRations(session.World.ReadView()), "You packed two rations and kept the wood offcuts.");
     private void CloseDialogue() => Submit(session => session.CloseDialogue(session.World.ReadView()), "The conversation ended.");

@@ -30,11 +30,13 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal EntityId? BerryDefinitionId { get; }
 
     internal static Task<FarmClientSession> OpenAsync(string savePath, string seedText, string playerName,
-        bool gatheringProfile, bool productionProfile = false, string? upgradeSourcePath = null) => Task.Run(() =>
+        bool gatheringProfile, bool productionProfile = false, string? upgradeSourcePath = null,
+        bool questProfile = false, string? gatheringUpgradeSourcePath = null) => Task.Run(() =>
     {
         WorldSnapshot genesis = gatheringProfile ? GatheringFarmAdmission.CreateEmbedded(seedText, playerName)
             : FarmWorldAdmission.CreateEmbedded(seedText, playerName);
-        SqliteWorldAuthority authority = FarmSaveOpener.Open(savePath, genesis, productionProfile, upgradeSourcePath);
+        SqliteWorldAuthority authority = FarmSaveOpener.Open(savePath, genesis, productionProfile, upgradeSourcePath,
+            questProfile, gatheringUpgradeSourcePath);
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;
@@ -77,6 +79,9 @@ internal sealed class FarmClientSession : IAsyncDisposable
 
     internal Task<WorldActionReceipt> CraftRations(LocalWorldView view) =>
         World.SubmitAction(Command(view, new CraftIntent(FarmCrafting.RationsRequest(view))));
+
+    internal Task<WorldActionReceipt> Quest(LocalWorldView view) =>
+        World.SubmitAction(Command(view, FarmQuestActions.Request(view)));
 
     internal ulong WoodQuantity(LocalWorldView view) => view.PlayerInventory.Lots
         .Where(lot => lot.DefinitionId == WoodDefinitionId).Aggregate(0UL, (sum, lot) => checked(sum + lot.Quantity));

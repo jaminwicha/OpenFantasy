@@ -14,5 +14,8 @@
     </PackageReference>
     <Using Include="Xunit" />
     <ProjectReference Include="../../src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj" />
+    <Compile Include="../../client/scripts/FarmSaveOpener.cs" Link="Client/FarmSaveOpener.cs" />
+    <Compile Include="../../client/scripts/FarmQuestSaveOpener.cs" Link="Client/FarmQuestSaveOpener.cs" />
+    <Compile Include="../../client/scripts/FarmQuestActions.cs" Link="Client/FarmQuestActions.cs" />
   </ItemGroup>
 </Project>

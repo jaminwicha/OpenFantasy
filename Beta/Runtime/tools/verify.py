@@ -88,6 +88,13 @@ def main():
                             vector_file.with_name("generate_" + generator + "_vectors.py")])
             if json.loads(reference) != json.loads(vector_file.read_text()):
                 raise RuntimeError("Independent vectors differ from frozen fixture: " + fixture)
+        for directory, fixture, generator in (("Progression", "progression-v1", "progression"),
+                                                ("Quests", "quest-v1", "quest")):
+            vector_file = root / "tests/OpenFantasy.Core.Tests" / directory / (fixture + ".json")
+            reference = run("independent-python-" + fixture, [sys.executable,
+                            vector_file.with_name("generate_" + generator + "_vectors.py")])
+            if json.loads(reference) != json.loads(vector_file.read_text()):
+                raise RuntimeError("Independent vectors differ from frozen fixture: " + fixture)
         run("locked-restore", [dotnet, "restore", "OpenFantasy.sln", "--locked-mode"])
         run("debug-build", [dotnet, "build", "OpenFantasy.sln", "--no-restore", "-c", "Debug"])
         for project, label in (("OpenFantasy.Core.Tests", "core"), ("OpenFantasy.Hosting.Tests", "hosting")):
@@ -151,6 +158,10 @@ def main():
         run("native-farm-production", [sys.executable, root / "tools/check_native_production.py",
             "--dotnet", dotnet, "--godot", godot, "--output", production_report])
         report["nativeProduction"] = json.loads(production_report.read_text())
+        quest_report = artifacts / "native-quests.json"
+        run("native-farm-quests", [sys.executable, root / "tools/check_native_quests.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", quest_report])
+        report["nativeQuests"] = json.loads(quest_report.read_text())
         for relative, expected in report["inputSha256"].items():
             if hashlib.sha256((root / relative).read_bytes()).hexdigest() != expected:
                 raise RuntimeError("An input changed during verification: " + relative)

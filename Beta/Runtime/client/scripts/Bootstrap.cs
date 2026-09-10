@@ -41,6 +41,27 @@ public partial class Bootstrap : Control
         {
             FarmLifecycleProbe.Start(this, lifecycleSave, lifecycleReport, mode);
         }
+        else if (arguments is ["--farm-quests", var questSource, var questDestination, var questReport, var questMode]
+            && questMode is "prepare" or "upgrade" or "reopen")
+        {
+            bool prepare = questMode == "prepare";
+            bool validPaths = questMode switch
+            {
+                "prepare" => !File.Exists(questSource) && !File.Exists(questDestination),
+                "upgrade" => File.Exists(questSource) && !File.Exists(questDestination),
+                _ => File.Exists(questDestination)
+            };
+            if (!validPaths)
+            {
+                GD.PushError("The quest probe requires its exact fresh or retained stage paths.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = prepare ? questSource : questDestination,
+                UpgradeSourcePathOverride = questSource, StartPaused = !prepare, QuestProfile = !prepare };
+            AddChild(game);
+            AddChild(new FarmQuestProbe(game, questReport, questMode));
+        }
         else if (arguments is ["--farm-production", var sourceSave, var productionSave, var productionReport, var productionMode]
             && productionMode is "prepare" or "upgrade" or "reopen")
         {
@@ -89,7 +110,7 @@ public partial class Bootstrap : Control
         }
         else
         {
-            AddChild(new FarmGame { GatheringProfile = !arguments.Contains("--legacy-farm") });
+            AddChild(new FarmGame { GatheringProfile = !arguments.Contains("--legacy-farm"), QuestProfile = true });
         }
     }
 

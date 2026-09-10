@@ -1,5 +1,6 @@
 using Godot;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Quests;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
@@ -7,17 +8,18 @@ namespace OpenFantasy.Client;
 /// <summary>Readable local play controls; all displayed inventory belongs to the current player.</summary>
 internal sealed partial class FarmHud : CanvasLayer
 {
-    private readonly Label _clock = new();
-    private readonly Label _wood = new();
-    private readonly Label _message = new() { Text = "Find Wren by the rows.", AutowrapMode = TextServer.AutowrapMode.WordSmart };
-    private readonly Label _speech = new() { AutowrapMode = TextServer.AutowrapMode.WordSmart };
-    private readonly PanelContainer _dialogue = new();
-    private readonly Button _talk = new() { Text = "Talk  [E]" };
-    private readonly Button _give = new() { Text = "Give wood  [G]" };
-    private readonly Button _gather = new() { Text = "Gather  [F]" };
-    private readonly Button _craft = new() { Text = "Pack rations  [C]" };
-    private readonly Button _close = new() { Text = "Continue  [E]" };
-    private readonly Button _pause = new() { Text = "Pause  [Esc]" };
+    private Label _identity = null!;
+    private Label _clock = null!;
+    private Label _wood = null!;
+    private Label _message = null!;
+    private Label _speech = null!;
+    private PanelContainer _dialogue = null!;
+    private Button _talk = null!;
+    private Button _give = null!;
+    private Button _gather = null!;
+    private Button _craft = null!;
+    private Button _close = null!;
+    private Button _pause = null!;
     private bool _wasSpeaking;
 
     internal event Action? TalkRequested;
@@ -29,55 +31,18 @@ internal sealed partial class FarmHud : CanvasLayer
 
     public override void _Ready()
     {
-        var root = new Control { MouseFilter = Control.MouseFilterEnum.Ignore, Theme = CreateTheme() };
-        AddChild(root);
-        root.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.FullRect);
-        var header = new PanelContainer { MouseFilter = Control.MouseFilterEnum.Ignore };
-        root.AddChild(header);
-        header.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.TopWide);
-        header.OffsetBottom = 64;
-        header.AddThemeStyleboxOverride("panel", new StyleBoxFlat
-        {
-            BgColor = new Color("192a2e"), ContentMarginLeft = 18, ContentMarginRight = 18,
-            ContentMarginTop = 12, ContentMarginBottom = 12
-        });
-        var top = new HBoxContainer();
-        header.AddChild(top);
-        top.AddChild(new Label { Text = "Wren's farm", SizeFlagsHorizontal = Control.SizeFlags.ExpandFill });
-        top.AddChild(_clock);
-        top.AddChild(_wood);
-        top.AddChild(_pause);
-        top.AddThemeConstantOverride("separation", 22);
-
-        var bottom = new PanelContainer();
-        root.AddChild(bottom);
-        bottom.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.BottomWide);
-        bottom.OffsetLeft = 18;
-        bottom.OffsetRight = -18;
-        bottom.OffsetTop = -102;
-        bottom.OffsetBottom = -18;
-        var column = new VBoxContainer();
-        bottom.AddChild(column);
-        column.AddChild(_message);
-        var actions = new HBoxContainer();
-        column.AddChild(actions);
-        actions.AddChild(new Label { Text = "Move: WASD / arrows", SizeFlagsHorizontal = Control.SizeFlags.ExpandFill });
-        actions.AddChild(_talk);
-        actions.AddChild(_give);
-        actions.AddChild(_gather);
-        actions.AddChild(_craft);
-
-        root.AddChild(_dialogue);
-        _dialogue.SetAnchorsAndOffsetsPreset(Control.LayoutPreset.BottomWide);
-        _dialogue.OffsetLeft = 80;
-        _dialogue.OffsetRight = -80;
-        _dialogue.OffsetTop = -244;
-        _dialogue.OffsetBottom = -124;
-        var conversation = new VBoxContainer();
-        _dialogue.AddChild(conversation);
-        conversation.AddChild(_speech);
-        conversation.AddChild(_close);
-        _dialogue.Hide();
+        _identity = GetNode<Label>("%Identity");
+        _clock = GetNode<Label>("%Clock");
+        _wood = GetNode<Label>("%Inventory");
+        _message = GetNode<Label>("%Message");
+        _speech = GetNode<Label>("%Speech");
+        _dialogue = GetNode<PanelContainer>("%Dialogue");
+        _talk = GetNode<Button>("%Talk");
+        _give = GetNode<Button>("%Give");
+        _gather = GetNode<Button>("%Gather");
+        _craft = GetNode<Button>("%Craft");
+        _close = GetNode<Button>("%Close");
+        _pause = GetNode<Button>("%Pause");
         _talk.Pressed += () => TalkRequested?.Invoke();
         _give.Pressed += () => GiveRequested?.Invoke();
         _gather.Pressed += () => GatherRequested?.Invoke();
@@ -101,6 +66,13 @@ internal sealed partial class FarmHud : CanvasLayer
         _craft.Disabled = pending || paused || view.HasReadingHold || !FarmCrafting.HasIngredients(view);
         _talk.Disabled = pending || paused || view.HasReadingHold;
         _give.Disabled = pending || paused || wood == 0;
+        _give.Text = "Give wood  [G]";
+        _identity.Text = "Wren's farm";
+        if (view.Progression is { } progression)
+        {
+            _identity.Text = $"Level {progression.Level} · {progression.CurrencyBalance} {progression.CurrencyUnit}"
+                + $"\nHP {progression.Hp}/{progression.MaxHp} · MP {progression.Mp}/{progression.MaxMp}";
+        }
         _gather.Visible = view.PlayerGatherEffort.HasValue;
         var target = FarmClientSession.NearestGatherNode(view);
         _gather.Text = target?.RequiredTool == GatherToolKind.Axe ? "Chop oak  [F]" : "Pick berries  [F]";
@@ -113,6 +85,17 @@ internal sealed partial class FarmHud : CanvasLayer
         if (view.Dialogue is { } dialogue)
         {
             _speech.Text = dialogue.SpeakerName + "\n" + dialogue.Text;
+            LocalQuestView? quest = view.Quests.SingleOrDefault(value => value.GiverActorId == dialogue.SpeakerActorId);
+            if (quest is not null)
+            {
+                _speech.Text = dialogue.SpeakerName + " · " + quest.Title + "\n";
+                _speech.Text += quest.Status == ActorQuestStatus.Completed
+                    ? "The supplies are set aside for the orchard."
+                    : quest.Description + $"\nWood: {quest.EligibleQuantity}/{quest.RequiredQuantity} · Reward: "
+                        + $"{quest.RewardExperience} XP and {quest.RewardCurrency} {quest.CurrencyUnit}";
+                _give.Text = quest.Status is null ? "Accept task  [G]" : "Deliver wood  [G]";
+                _give.Disabled = pending || paused || (!quest.CanAccept && !quest.CanComplete);
+            }
         }
         if (speaking && !_wasSpeaking)
         {
@@ -127,19 +110,4 @@ internal sealed partial class FarmHud : CanvasLayer
 
     internal void Message(string text) => _message.Text = text;
 
-    private static Theme CreateTheme()
-    {
-        var theme = new Theme { DefaultFontSize = 18 };
-        var panel = new StyleBoxFlat
-        {
-            BgColor = new Color("192a2eee"), BorderColor = new Color("a3a17d"),
-            BorderWidthLeft = 1, BorderWidthRight = 1, BorderWidthTop = 1, BorderWidthBottom = 1,
-            ContentMarginLeft = 14, ContentMarginRight = 14, ContentMarginTop = 10, ContentMarginBottom = 10
-        };
-        theme.SetStylebox("panel", "PanelContainer", panel);
-        theme.SetColor("font_color", "Label", new Color("f0e8cf"));
-        theme.SetConstant("outline_size", "Label", 3);
-        theme.SetColor("font_outline_color", "Label", new Color("162123"));
-        return theme;
-    }
 }

@@ -120,6 +120,11 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This saved rules profile does not admit crafting actions.");
             }
+            if (command.Intent is OpenFantasy.Core.Quests.DeliveryQuestIntent
+                && _authority.InspectForHost().State.ProfileVersion < 4)
+            {
+                throw new AuthorityDispatchException("This saved profile does not support quest actions.");
+            }
             lock (_inputs)
             {
                 EnsureInputAvailable();

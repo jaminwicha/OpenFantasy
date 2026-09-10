@@ -1,0 +1,153 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/FarmHud.cs" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(0.098, 0.165, 0.180, 0.933)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.639, 0.631, 0.490, 1)
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="HeaderStyle"]
+bg_color = Color(0.098, 0.165, 0.180, 1)
+content_margin_left = 18.0
+content_margin_top = 10.0
+content_margin_right = 18.0
+content_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme"]
+default_font_size = 18
+PanelContainer/styles/panel = SubResource("PanelStyle")
+Label/colors/font_color = Color(0.941, 0.910, 0.812, 1)
+Label/colors/font_outline_color = Color(0.086, 0.129, 0.137, 1)
+Label/constants/outline_size = 3
+
+[node name="FarmHud" type="CanvasLayer"]
+script = ExtResource("1")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme")
+
+[node name="Header" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 76.0
+grow_horizontal = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("HeaderStyle")
+
+[node name="Row" type="HBoxContainer" parent="Root/Header"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Identity" type="Label" parent="Root/Header/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Wren's farm"
+
+[node name="Clock" type="Label" parent="Root/Header/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Inventory" type="Label" parent="Root/Header/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Pause" type="Button" parent="Root/Header/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pause  [Esc]"
+
+[node name="Footer" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = -102.0
+offset_right = -18.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Column" type="VBoxContainer" parent="Root/Footer"]
+layout_mode = 2
+
+[node name="Message" type="Label" parent="Root/Footer/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Find Wren by the rows."
+autowrap_mode = 3
+
+[node name="Actions" type="HBoxContainer" parent="Root/Footer/Column"]
+layout_mode = 2
+
+[node name="Movement" type="Label" parent="Root/Footer/Column/Actions"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move: WASD / arrows"
+
+[node name="Talk" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Talk  [E]"
+
+[node name="Give" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Give wood  [G]"
+
+[node name="Gather" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Gather  [F]"
+
+[node name="Craft" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pack rations  [C]"
+
+[node name="Dialogue" type="PanelContainer" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -274.0
+offset_right = -80.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Column" type="VBoxContainer" parent="Root/Dialogue"]
+layout_mode = 2
+
+[node name="Speech" type="Label" parent="Root/Dialogue/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+autowrap_mode = 3
+
+[node name="Close" type="Button" parent="Root/Dialogue/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Continue  [E]"
