@@ -17,7 +17,8 @@ public enum BodyFunction
     AquaticPropulsion = 6,
     UndulatingSupport = 7,
     SpectralPerception = 8,
-    SpectralMotion = 9
+    SpectralMotion = 9,
+    Vocalization = 10
 }
 
 public enum LocomotionMode
