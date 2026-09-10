@@ -1,6 +1,8 @@
 # Beta
 
-The current [specification baseline 1.1](spec-v1_1/README.md) consolidates **181 requirements** into the [GDD](spec-v1_1/GDD.md), [technical design](spec-v1_1/TECHNICAL_DESIGN.md), [decision register](spec-v1_1/DECISIONS.md) and [full implementation plan](spec-v1_1/IMPLEMENTATION_PLAN.md). Every requirement has an introduction phase, full completion phase and concrete evidence in the [coverage register](spec-v1_1/COVERAGE.json). P00–P14 cover retained foundations through desktop production and later mobile support.
+The current [specification baseline 1.1](spec-v1_1/README.md) consolidates **181 requirements** into the [GDD](spec-v1_1/GDD.md), [technical design](spec-v1_1/TECHNICAL_DESIGN.md), [decision register](spec-v1_1/DECISIONS.md) and [full implementation plan](spec-v1_1/IMPLEMENTATION_PLAN.md). Every requirement has an introduction phase, full completion phase and required evidence mapped in the [coverage register](spec-v1_1/COVERAGE.json); planned evidence is not a runtime pass. P00–P14 cover retained foundations through desktop production and later mobile support.
+
+Read the preserved baseline with current [implementation instructions](AGENTS.md) and dated owner supplements. The [player interface, actions and navigation supplement](implementation/PLAYER_INTERFACE_AND_NAVIGATION.md) adds contextual actions, stable quick wheels, capability-relevant management screens, integrated maps/calendar/atlas and input/focus contracts within the existing phases. It is living design scope, not an archived option or a change in priority. Reviewed specification snapshots remain unchanged; the latest owner direction governs its explicit refinements.
 
 Build in Beta with Godot/C# and a portable deterministic core, selectively reuse proven original components, and fully assimilate original content. Windows/macOS/Linux launch first with 1–4 players per hosted world. Bounded Wait encounters, on-field combat transitions, seamless grid streaming, player-equivalent NPC depth and autonomous world narratives remain selected. Day/night initially targets a 40-minute full cycle; rest and camps are meaningful systems with explicit multiplayer time-consent and pacing qualification.
 
@@ -31,4 +33,3 @@ Earlier decisions and evidence remain available below. For conflicts, use the cu
 - [Art proposals, acceptance and tooling](/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/art-style-calibration/README.md)
 - [Verification evidence and probes](/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/review-evidence/README.md)
 - [Persistent ecosystem update record](/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/ecosystem-update-record-2026-09-08.md)
-

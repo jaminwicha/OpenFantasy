@@ -4,6 +4,8 @@ The owner's 8 September 2026 implementation authorization overrides the earlier 
 
 The reviewed `spec-v1_1` documents remain the design baseline. `implementation/` records current work, owner overrides, measured evidence and pending exits. Preserve reviewed snapshots and hashes; do not rewrite an unrun qualification into a pass merely because a scaffold builds.
 
+For player interfaces and input, also read the living `implementation/PLAYER_INTERFACE_AND_NAVIGATION.md` supplement and its phase/evidence mappings. It refines the baseline with the owner's wheel, capability-dependent menu, map/calendar and navigation direction; it does not reprioritize phases or claim those interfaces are implemented.
+
 Implementation lives in `Runtime/`. Keep one portable C# core, an in-process host and a Godot C# presentation adapter. Use retained tests and real state whenever behavior is claimed. Core code must not reference Godot or depend on client timing. Do not introduce an IPC bridge or another authority without the recorded qualification evidence.
 
 Preserve unrelated staged predecessor changes. The predecessor project compiles only its `src/` tree; this directory's `.gdignore` prevents its editor from importing nested projects. Validate those boundaries after build changes. Original source archives remain immutable; record any deliberate integration-only predecessor configuration changes separately.
