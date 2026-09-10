@@ -75,7 +75,7 @@ public sealed class InstantCraftPlanner
         }
         try
         {
-            return Prepare(inventory, production, actorId, commandId, request, recipe, retired, created);
+            return MaterialTransformCommitter.Prepare(inventory, production, actorId, commandId, request, recipe, retired, created);
         }
         catch (OverflowException)
         {
@@ -119,58 +119,4 @@ public sealed class InstantCraftPlanner
             totals.GetValueOrDefault(recipe.ItemFor(term)) == term.Count);
     }
 
-    private static CraftPlan Prepare(CountedAuthorityState inventory, ProductionSnapshot production, EntityId actorId,
-        EntityId commandId, CraftRequest request, CraftRecipeDefinition recipe, IReadOnlyList<RetiredIngredient> retired,
-        EntityId[] created)
-    {
-        var selected = retired.ToDictionary(value => value.LotId);
-        List<CountedSourceLot> rawLots = [];
-        foreach (CountedSourceLot lot in inventory.Custody.Lots)
-        {
-            if (!selected.TryGetValue(lot.LotId, out RetiredIngredient? used))
-            {
-                rawLots.Add(lot);
-            }
-            else if (used.Quantity < lot.Quantity)
-            {
-                rawLots.Add(new CountedSourceLot(lot.LotId, lot.CustodianId, lot.Definition,
-                    new SourceInterval(lot.Source.SourceId, used.End, lot.Source.End), checked(lot.Revision + 1),
-                    lot.Protection, lot.ReservedBy));
-            }
-        }
-        List<TransformedLot> derivedLots = [];
-        foreach (TransformedLot lot in production.Lots)
-        {
-            if (!selected.TryGetValue(lot.LotId, out RetiredIngredient? used))
-            {
-                derivedLots.Add(lot);
-            }
-            else if (used.Quantity < lot.Quantity)
-            {
-                derivedLots.Add(new TransformedLot(lot.LotId, lot.CustodianId, lot.Definition,
-                    new ProductionOutputInterval(lot.Output.BatchId, lot.Output.OutputIndex, used.End, lot.Output.End),
-                    checked(lot.Revision + 1), lot.Protection, lot.ReservedBy));
-            }
-        }
-        if (rawLots.Count + derivedLots.Count + recipe.Outputs.Count > ProductionSnapshot.MaximumLots)
-        {
-            return new CraftPlan(inventory, production, WorldActionRejection.Unavailable, []);
-        }
-        var batch = new ProductionBatch(created[0], commandId, actorId, request.CustodianId,
-            recipe.DefinitionId, recipe.Version, retired);
-        for (int index = 0; index < recipe.Outputs.Count; index++)
-        {
-            RecipeTerm output = recipe.Outputs[index];
-            derivedLots.Add(new TransformedLot(created[index + 1], request.CustodianId, recipe.ItemFor(output),
-                new ProductionOutputInterval(batch.BatchId, (uint)index, 0, output.Count), 0));
-        }
-        var custody = new CustodySnapshot(inventory.WorldId, inventory.BranchId, checked(inventory.Custody.Revision + 1),
-            inventory.Custody.Storages.Select(storage => storage.CustodianId == request.CustodianId
-                ? storage with { Revision = checked(storage.Revision + 1) } : storage), rawLots);
-        CountedAuthorityState candidateInventory = inventory.WithCustody(custody);
-        var candidateProduction = new ProductionSnapshot(production.WorldId, production.BranchId, checked(production.Revision + 1),
-            production.Recipes, [.. production.Batches, batch], derivedLots);
-        candidateProduction.ValidateForAuthority(candidateInventory);
-        return new CraftPlan(candidateInventory, candidateProduction, WorldActionRejection.None, created);
-    }
 }

@@ -1,6 +1,7 @@
 using OpenFantasy.Core.Actors;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Production;
+using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -10,21 +11,22 @@ internal sealed class WorldCraftResolver
     private readonly InstantCraftPlanner _crafting = new();
 
     internal CraftPlan Resolve(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot production,
-        WorldActionCommand command, bool held, Func<EntityId, bool> occupied)
+        WorldActionCommand command, bool held, Func<EntityId, bool> occupied, LocalSpatialSnapshot? currentSpace = null)
     {
+        LocalSpatialSnapshot space = currentSpace ?? world.Space;
         CraftPlan Reject(WorldActionRejection rejection) => new(inventory, production, rejection, []);
         var delivery = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);
         if (!inventory.CanControl(delivery, command.ActorId))
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }
-        var actor = world.Space.GetActor(command.ActorId);
+        var actor = space.GetActor(command.ActorId);
         if (actor.Revision != command.ExpectedActorRevision)
         {
             return Reject(WorldActionRejection.RevisionConflict);
         }
         var intent = (CraftIntent)command.Intent;
-        if (held || !actor.Condition.SupportsFunction(BodyFunction.Manipulation)
+        if (world.Construction?.IsConstructionRecipe(intent.Request.RecipeId) == true || held || !actor.Condition.SupportsFunction(BodyFunction.Manipulation)
             || intent.Request.CustodianId != world.GetResident(command.ActorId).InventoryCustodianId)
         {
             return Reject(WorldActionRejection.Unavailable);

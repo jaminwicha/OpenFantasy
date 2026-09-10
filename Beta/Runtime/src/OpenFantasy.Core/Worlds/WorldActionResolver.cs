@@ -13,15 +13,16 @@ internal sealed class WorldActionResolver
     private readonly CustodyTransferPlanner _transfers = new();
 
     internal WorldActionResolution Resolve(WorldSnapshot world, CountedAuthorityState inventory,
-        List<DialogueSession> dialogues, WorldActionCommand action, Func<EntityId, bool> occupied)
+        List<DialogueSession> dialogues, WorldActionCommand action, Func<EntityId, bool> occupied, LocalSpatialSnapshot? currentSpace = null)
     {
+        LocalSpatialSnapshot space = currentSpace ?? world.Space;
         WorldActionResolution Reject(WorldActionRejection rejection) => new(inventory, dialogues, rejection, null);
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
         if (!inventory.CanControl(delivery, action.ActorId))
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }
-        ActorPresence actor = world.Space.GetActor(action.ActorId);
+        ActorPresence actor = space.GetActor(action.ActorId);
         if (actor.Revision != action.ExpectedActorRevision)
         {
             return Reject(WorldActionRejection.RevisionConflict);
@@ -41,7 +42,7 @@ internal sealed class WorldActionResolver
             GiveItemIntent give => (give.TargetActorId, give.ExpectedTargetRevision),
             _ => throw new InvalidOperationException("The action kind is not supported by this profile.")
         };
-        ActorPresence? target = world.Space.Actors.FirstOrDefault(value => value.ActorId == targetId);
+        ActorPresence? target = space.Actors.FirstOrDefault(value => value.ActorId == targetId);
         if (target is null || targetId == action.ActorId)
         {
             return Reject(WorldActionRejection.Unavailable);
@@ -50,7 +51,7 @@ internal sealed class WorldActionResolver
         {
             return Reject(WorldActionRejection.RevisionConflict);
         }
-        if (world.Space.QueryInteraction(action.ActorId, targetId) != SpatialInteraction.Reachable)
+        if (space.QueryInteraction(action.ActorId, targetId) != SpatialInteraction.Reachable)
         {
             return Reject(WorldActionRejection.OutOfReach);
         }

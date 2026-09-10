@@ -28,7 +28,8 @@ internal enum WorldIdentityRole
     Reservation, Form, Body, Place, BodyDefinition, Injury, CauseReference, TerrainFormation,
     TerrainSource, Language, LanguageRegister, Utterance, Dialogue, GatherNode, GatherNodeDefinition,
     CraftRecipeDefinition, PhysicalRecipeDefinition, PhysicalMaterialDefinition, ProductionBatch, TransformedLot,
-    StatProfileDefinition, LevelCurveDefinition, CurrencyDefinition, CurrencyAccount, RewardDefinition, QuestDefinition
+    StatProfileDefinition, LevelCurveDefinition, CurrencyDefinition, CurrencyAccount, RewardDefinition, QuestDefinition,
+    ConstructionDefinition, ConstructionToolDefinition, ConstructionWorkUnit, ConstructionProject, Structure
 }
 
 /// <summary>One immutable terrain dependency set; reference equality is the only reuse criterion.</summary>

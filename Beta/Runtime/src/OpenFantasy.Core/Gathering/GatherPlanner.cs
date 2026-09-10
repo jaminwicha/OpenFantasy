@@ -13,13 +13,14 @@ namespace OpenFantasy.Core.Gathering;
 public sealed class GatherPlanner
 {
     public GatherPlan Plan(WorldSnapshot world, CountedAuthorityState currentInventory,
-        GatheringSnapshot gathering, WorldActionCommand command)
+        GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot? currentSpace = null)
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(currentInventory);
         ArgumentNullException.ThrowIfNull(gathering);
         ArgumentNullException.ThrowIfNull(command);
-        if (command.Intent is not GatherIntent intent || command.WorldId != world.WorldId || command.BranchId != world.BranchId
+        LocalSpatialSnapshot space = currentSpace ?? world.Space;
+        if (space.Scope != world.Space.Scope || command.Intent is not GatherIntent intent || command.WorldId != world.WorldId || command.BranchId != world.BranchId
             || currentInventory.WorldId != world.WorldId || currentInventory.BranchId != world.BranchId
             || gathering.WorldId != world.WorldId || gathering.BranchId != world.BranchId || gathering.AdvancingStep != world.AdvancingSteps)
         {
@@ -34,7 +35,7 @@ public sealed class GatherPlanner
         {
             return Reject(WorldActionRejection.Unavailable);
         }
-        ActorPresence actor = world.Space.GetActor(command.ActorId);
+        ActorPresence actor = space.GetActor(command.ActorId);
         if (actor.Revision != command.ExpectedActorRevision)
         {
             return Reject(WorldActionRejection.RevisionConflict);
@@ -52,7 +53,7 @@ public sealed class GatherPlanner
         {
             return Reject(WorldActionRejection.Unavailable);
         }
-        if (ResourceInteractionQueries.Query(world.Space, actor.ActorId, node.Feet) != SpatialInteraction.Reachable)
+        if (ResourceInteractionQueries.Query(space, actor.ActorId, node.Feet) != SpatialInteraction.Reachable)
         {
             return Reject(WorldActionRejection.OutOfReach);
         }

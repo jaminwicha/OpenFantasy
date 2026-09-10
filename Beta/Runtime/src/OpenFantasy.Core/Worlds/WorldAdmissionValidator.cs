@@ -32,6 +32,7 @@ public static class WorldAdmissionValidator
         admission.ReadGathering();
         admission.ReadProduction();
         admission.ReadQuests();
+        admission.ReadConstruction();
         return admission.Complete();
     }
 
@@ -108,6 +109,38 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain);
+
+        internal void ReadConstruction()
+        {
+            if (world.Construction is not { } construction)
+            {
+                return;
+            }
+            construction.ValidateForWorld(world);
+            foreach (var definition in construction.Definitions)
+            {
+                Definition(definition.DefinitionId, WorldIdentityRole.ConstructionDefinition, definition.Version);
+                Definition(definition.RequiredTool.DefinitionId, WorldIdentityRole.ConstructionToolDefinition, definition.RequiredTool.Version);
+                Definition(definition.RequiredTool.Item.DefinitionId, WorldIdentityRole.ItemDefinition, definition.RequiredTool.Item.Version);
+                Definition(definition.WorkRate.OutputUnitId, WorldIdentityRole.ConstructionWorkUnit, definition.WorkRate.RulesVersion);
+            }
+            foreach (var project in construction.Projects)
+            {
+                Add(project.ProjectId, WorldIdentityRole.ConstructionProject, unique: true);
+                Require(project.OwnerActorId, WorldIdentityRole.Actor);
+                Require(project.BuilderActorId, WorldIdentityRole.Actor);
+                Require(project.ProjectCustodianId, WorldIdentityRole.Custodian);
+                Require(project.ReservationId, WorldIdentityRole.Reservation);
+                Require(project.QuestId, WorldIdentityRole.QuestDefinition);
+                if (project.Installed is { } installed)
+                {
+                    Add(installed.StructureId, WorldIdentityRole.Structure, unique: true);
+                    Require(installed.GuardLotId, WorldIdentityRole.TransformedLot);
+                    Require(installed.ProductionBatchId, WorldIdentityRole.ProductionBatch);
+                    Add(installed.CompletionCommandId, WorldIdentityRole.CauseReference);
+                }
+            }
+        }
 
         internal void ReadQuests()
         {

@@ -1,5 +1,6 @@
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Exposure;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Progression;
@@ -18,6 +19,7 @@ public sealed class WorldStepProcessor
     private readonly GatherPlanner _gathering = new();
     private readonly WorldCraftResolver _crafting = new();
     private readonly DeliveryQuestPlanner _quests = new();
+    private readonly ConstructionPlanner _construction = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
@@ -56,20 +58,41 @@ public sealed class WorldStepProcessor
         ProductionSnapshot? production = state.Production;
         ProgressionSnapshot? progression = state.Progression;
         QuestSnapshot? quests = state.Quests;
+        ConstructionSnapshot? construction = state.Construction;
+        LocalSpatialSnapshot space = state.Space;
+        HashSet<EntityId> worked = [];
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
         foreach (WorldActionCommand action in batch.Actions)
         {
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
-            if (action.Intent is DeliveryQuestIntent)
+            if (action.Intent is WorkConstructionIntent)
+            {
+                if (construction is null || production is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret construction work.");
+                }
+                ConstructionPlan plan = _construction.Plan(state, inventory, production, construction, space,
+                    action, batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0, Occupied);
+                resolution = new WorldActionResolution(plan.CandidateInventory, dialogues, plan.Rejection, null);
+                production = plan.CandidateProduction;
+                construction = plan.CandidateConstruction;
+                space = plan.CandidateSpace;
+                createdIds = plan.CreatedIds;
+                if (plan.Succeeded)
+                {
+                    worked.Add(action.ActorId);
+                }
+            }
+            else if (action.Intent is DeliveryQuestIntent)
             {
                 if (quests is null || progression is null || production is null)
                 {
                     throw new InvalidOperationException("This saved profile does not interpret quest actions.");
                 }
                 DeliveryQuestPlan plan = _quests.Plan(state, inventory, production, progression, quests,
-                    action, dialogues, identity => identity != action.CommandId && Occupied(identity));
+                    action, dialogues, identity => identity != action.CommandId && Occupied(identity), space);
                 resolution = new WorldActionResolution(plan.CandidateInventory, dialogues, plan.Rejection, null);
                 progression = plan.CandidateProgression;
                 quests = plan.CandidateQuests;
@@ -81,7 +104,7 @@ public sealed class WorldStepProcessor
                 {
                     throw new InvalidOperationException("This saved profile does not interpret gathering actions.");
                 }
-                GatherPlan? plan = dialogues.Count == 0 ? _gathering.Plan(state, inventory, gathering, action) : null;
+                GatherPlan? plan = dialogues.Count == 0 ? _gathering.Plan(state, inventory, gathering, action, space) : null;
                 if (plan is null || plan.SpawnedId is { } generated && Occupied(generated)
                     || !FitsProduction(production, plan.CandidateInventory))
                 {
@@ -99,14 +122,14 @@ public sealed class WorldStepProcessor
                 {
                     throw new InvalidOperationException("This saved profile does not interpret crafting actions.");
                 }
-                CraftPlan plan = _crafting.Resolve(state, inventory, production, action, dialogues.Count != 0, Occupied);
+                CraftPlan plan = _crafting.Resolve(state, inventory, production, action, dialogues.Count != 0, Occupied, space);
                 resolution = new WorldActionResolution(plan.CandidateInventory, dialogues, plan.Rejection, null);
                 production = plan.CandidateProduction;
                 createdIds = plan.CreatedIds;
             }
             else
             {
-                resolution = _actions.Resolve(state, inventory, dialogues, action, Occupied);
+                resolution = _actions.Resolve(state, inventory, dialogues, action, Occupied, space);
                 if (!FitsProduction(production, resolution.Inventory))
                 {
                     resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
@@ -127,7 +150,6 @@ public sealed class WorldStepProcessor
             receipts.Add(receipt);
         }
 
-        LocalSpatialSnapshot space = state.Space;
         WorldInstant calendar = state.Calendar;
         ulong advancingSteps = state.AdvancingSteps;
         IEnumerable<WorldResident> residents = state.Residents;
@@ -142,7 +164,7 @@ public sealed class WorldStepProcessor
             {
                 foreach (WorldMovementInput input in batch.Movement)
                 {
-                    if (!inventory.CanControl(input.Delivery, input.ActorId))
+                    if (worked.Contains(input.ActorId) || !inventory.CanControl(input.Delivery, input.ActorId))
                     {
                         continue;
                     }
@@ -150,14 +172,13 @@ public sealed class WorldStepProcessor
                     SpatialMoveResult move = space.PrepareMove(input.ActorId, actor.Revision, input.DeltaX, input.DeltaY);
                     if (move.Status == SpatialMoveStatus.Prepared)
                     {
-                        space = new LocalSpatialSnapshot(space.Scope, space.Regions,
-                            space.Actors.Select(other => other.ActorId == input.ActorId ? move.Candidate! : other));
+                        space = space.WithActors(space.Actors.Select(other => other.ActorId == input.ActorId ? move.Candidate! : other));
                     }
                 }
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction);
         return new WorldStepDecision(candidate, receipts, identities);
     }
 

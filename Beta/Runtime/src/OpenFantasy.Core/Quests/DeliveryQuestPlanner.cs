@@ -19,7 +19,7 @@ public sealed class DeliveryQuestPlanner
     public DeliveryQuestPlan Plan(WorldSnapshot world, CountedAuthorityState inventory,
         ProductionSnapshot production, ProgressionSnapshot progression, QuestSnapshot quests,
         WorldActionCommand command, IReadOnlyList<DialogueSession> dialogues,
-        Func<EntityId, bool>? historicallyOccupied = null)
+        Func<EntityId, bool>? historicallyOccupied = null, LocalSpatialSnapshot? currentSpace = null)
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(inventory);
@@ -28,9 +28,10 @@ public sealed class DeliveryQuestPlanner
         ArgumentNullException.ThrowIfNull(quests);
         ArgumentNullException.ThrowIfNull(command);
         ArgumentNullException.ThrowIfNull(dialogues);
+        LocalSpatialSnapshot space = currentSpace ?? world.Space;
         DeliveryQuestPlan Reject(WorldActionRejection rejection) => new(inventory, progression, quests, rejection, []);
         var authenticated = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);
-        if (command.WorldId != world.WorldId || command.BranchId != world.BranchId
+        if (space.Scope != world.Space.Scope || command.WorldId != world.WorldId || command.BranchId != world.BranchId
             || inventory.WorldId != world.WorldId || inventory.BranchId != world.BranchId
             || !inventory.CanControl(authenticated, command.ActorId))
         {
@@ -46,13 +47,13 @@ public sealed class DeliveryQuestPlanner
         {
             return Reject(WorldActionRejection.Unavailable);
         }
-        ActorPresence actor = world.Space.GetActor(command.ActorId);
-        ActorPresence? giver = world.Space.Actors.FirstOrDefault(value => value.ActorId == definition.GiverActorId);
+        ActorPresence actor = space.GetActor(command.ActorId);
+        ActorPresence? giver = space.Actors.FirstOrDefault(value => value.ActorId == definition.GiverActorId);
         if (actor.Revision != command.ExpectedActorRevision || giver?.Revision != intent.ExpectedGiverRevision)
         {
             return Reject(WorldActionRejection.RevisionConflict);
         }
-        if (world.Space.QueryInteraction(command.ActorId, definition.GiverActorId) != SpatialInteraction.Reachable)
+        if (space.QueryInteraction(command.ActorId, definition.GiverActorId) != SpatialInteraction.Reachable)
         {
             return Reject(WorldActionRejection.OutOfReach);
         }

@@ -9,6 +9,10 @@ internal static class WorldSpatialCodecV1
 {
     internal static byte[] Encode(LocalSpatialSnapshot space)
     {
+        if (space.Structures.Count != 0)
+        {
+            throw new ArgumentException("Spatial version one cannot omit installed structures.", nameof(space));
+        }
         BodyDefinition[] definitions = space.Actors.Select(actor => actor.Condition.Definition)
             .GroupBy(definition => definition.DefinitionId).Select(group => group.First())
             .OrderBy(definition => definition.DefinitionId).ToArray();

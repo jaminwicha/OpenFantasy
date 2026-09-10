@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Progression;
@@ -21,16 +22,16 @@ public sealed class WorldSnapshot
         IEnumerable<WorldResident> residents, ContentHash admissionVersion, WorldInstant calendar,
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues = null,
         GatheringSnapshot? gathering = null, ProductionSnapshot? production = null,
-        ProgressionSnapshot? progression = null, QuestSnapshot? quests = null)
+        ProgressionSnapshot? progression = null, QuestSnapshot? quests = null, ConstructionSnapshot? construction = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, null)
+            gathering, production, progression, quests, construction, null)
     {
     }
 
     private WorldSnapshot(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, ContentHash admissionVersion, WorldInstant calendar,
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues, GatheringSnapshot? gathering,
-        ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests, WorldIdentityIndex? previous)
+        ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -85,6 +86,11 @@ public sealed class WorldSnapshot
         Production = production;
         Progression = progression;
         Quests = quests;
+        Construction = construction;
+        if (construction is not null && quests is null || construction is null && space.Structures.Count != 0)
+        {
+            throw new ArgumentException("Placed structures require their complete construction and quest profile.");
+        }
         if ((progression is null) != (quests is null) || quests is not null && production is null)
         {
             throw new ArgumentException("Quest worlds require both funded progression and retained production components.");
@@ -110,7 +116,8 @@ public sealed class WorldSnapshot
     public ProductionSnapshot? Production { get; }
     public ProgressionSnapshot? Progression { get; }
     public QuestSnapshot? Quests { get; }
-    public ushort ProfileVersion => Quests is not null ? (ushort)4
+    public ConstructionSnapshot? Construction { get; }
+    public ushort ProfileVersion => Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
         : Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;
     public WorldIdentityIndex IdentityIndex { get; }
     public ContentHash ContentHash => ContentHash.Compute(WorldSnapshotCodec.Encode(this));
@@ -121,7 +128,7 @@ public sealed class WorldSnapshot
     internal WorldSnapshot WithState(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, WorldInstant calendar, ulong revision, ulong advancingSteps,
         IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production,
-        ProgressionSnapshot? progression, QuestSnapshot? quests) =>
+        ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction = null) =>
         new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, IdentityIndex);
+            gathering, production, progression, quests, construction, IdentityIndex);
 }
