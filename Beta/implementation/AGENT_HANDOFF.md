@@ -21,7 +21,29 @@ the next task, rather than reloading the research archive and every historical q
 
 ## Current implementation and evidence
 
-The latest [outdoor daylight increment](p02/daylight/README.md), code `80bdda0`, connects the farm's native ambient
+The latest [quick-action wheel increment](p02/quick-wheel/README.md) adds V/right-stick/Actions
+access to Talk/Gather/Craft/Give, icon-led inspection, fixed cardinal slots and pinned targets,
+explicit confirmation, and cancellation without changing the host clock policy. Pointer, keyboard,
+D-pad/stick, blocked inspection, one actual harvest and exact reopening passed native checks;
+four wheel frames were reviewed. These are provisional farm actions, not a full customizable library.
+
+**Qualification is partial.** All **861 tests** (544 Core + 317 Hosting, zero skips), independent
+fixtures and host inspections passed. The first integrated run stopped at a confirmed stale Wren
+revision in the input probe; the corrected one-press readiness check passes. The next run hit the
+unchanged 180-second editor-import timeout. A separate diagnostic import also did not complete;
+its sample and high host-load observation are retained without claiming a proven cause. The
+[summary](p02/quick-wheel/qualification/verification-summary.json) records exact inputs/binaries.
+
+Visual review also found an old action-probe screenshot labeled dialogue that still showed the pack.
+Its capture now awaits a completed rendered frame, but the final rendered follow-up lost focus and
+failed approach before dialogue. That capture correction builds but remains natively unqualified.
+Five non-client/test assembly hashes are unchanged after this capture-only edit. **Next: finish the
+remaining integrated native checks and verify the corrected dialogue frame under stable execution;
+do not increase timeouts or retry a rejected gameplay action.** No new milestone is promoted yet.
+All failures and successful bounded runs are preserved in the wheel packet. Ecosystem commit
+`f1e5fb1` carries the reusable input/focus/injection lessons; local skill sync used no model calls.
+
+The prior [outdoor daylight increment](p02/daylight/README.md), code `80bdda0`, connects the farm's native ambient
 light to its existing public calendar: dawn, day, dusk and readable night, with an editable palette.
 HUD/pack brightness stays independent; the selected-target marker is unshaded. The nominal 40-minute
 day and all host timing rules are unchanged. This is provisional outdoor presentation, not weather,
@@ -45,7 +67,7 @@ or move goods. I/View/Pack opens it; Escape/I/View/B/Close closes only that laye
 scheduler status, preserves an existing pause and requires held navigation to release before walking.
 A running world continues. Current stock descriptions and target selection are bounded farm features.
 
-The [latest qualification](p02/daylight/qualification/verification-summary.json) retains **855 tests**
+The [prior daylight qualification](p02/daylight/qualification/verification-summary.json) retains **855 tests**
 (544 Core + 311 Hosting), zero skips. The integrated pass covers all 22 fixtures, 68 host inspections,
 import and every native journey including initial daylight. A subsequent probe-only extension adds
 real night targeting and pack inspection, qualified headlessly and rendered; production sources and

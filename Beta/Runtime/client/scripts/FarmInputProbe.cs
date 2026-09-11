@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using Godot;
+using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
@@ -13,6 +14,7 @@ internal partial class FarmInputProbe : Node
     private readonly string _reportPath;
     private readonly Stopwatch _elapsed = Stopwatch.StartNew();
     private readonly List<string> _checks = [];
+    private object? _talkOfferAtPress;
 
     internal FarmInputProbe(FarmGame game, string reportPath)
     {
@@ -125,7 +127,7 @@ internal partial class FarmInputProbe : Node
 
     private async Task CheckDialogueCancellation()
     {
-        KeyTap(Key.E);
+        await PressStationaryTalk();
         await Until(() => View().Dialogue is not null && !_game.HasPendingAction,
             "The ordinary Talk key did not open Wren's dialogue.");
         await Delay(0.1);
@@ -144,7 +146,7 @@ internal partial class FarmInputProbe : Node
         KeyEvent(Key.D, false);
         await Delay(0.1);
 
-        KeyTap(Key.E);
+        await PressStationaryTalk();
         await Until(() => View().Dialogue is not null && !_game.HasPendingAction,
             "Dialogue did not reopen after a fresh Talk press.");
         ulong wood = View().PlayerInventory.Quantity;
@@ -156,6 +158,33 @@ internal partial class FarmInputProbe : Node
         Require(!_game.IsLocallyPaused && View().PlayerInventory.Quantity == wood,
             "Controller cancellation submitted a world action or paused the world.");
         _checks.Add("Escape and controller B close dialogue first without leaking the event into world actions.");
+    }
+
+    private async Task PressStationaryTalk()
+    {
+        (ulong Player, ulong Target)? previous = null;
+        Stopwatch stable = Stopwatch.StartNew();
+        await Until(() =>
+        {
+            LocalWorldView view = View();
+            LocalActorView player = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId);
+            LocalActorView wren = view.Actors.Single(actor => actor.ActorId != view.PlayerActorId);
+            var revisions = (player.PresenceRevision, wren.PresenceRevision);
+            if (previous != revisions)
+            {
+                previous = revisions;
+                stable.Restart();
+            }
+            return stable.ElapsedMilliseconds >= 150 && !_game.HasPendingAction
+                && _game.CurrentOffers.TryGetValue(FarmSemanticAction.Speak, out FarmActionOffer? offer)
+                && offer.CanExecute && offer.Scope.ExpectedActorRevision == player.PresenceRevision
+                && offer.Intent is SpeakToActorIntent speak && speak.TargetActorId == wren.ActorId
+                && speak.ExpectedTargetRevision == wren.PresenceRevision;
+        }, "The released player and Wren did not settle for one deliberate Talk press.");
+        FarmActionOffer ready = _game.CurrentOffers[FarmSemanticAction.Speak];
+        _talkOfferAtPress = new { ready.Scope.ExpectedActorRevision,
+            Target = ((SpeakToActorIntent)ready.Intent!).ExpectedTargetRevision };
+        KeyTap(Key.E);
     }
 
     private async Task AssertStationary(string evidence)
@@ -234,6 +263,8 @@ internal partial class FarmInputProbe : Node
         {
             Kind = "native-input-focus-v1", Status = status, Failure = failure,
             Runtime = RuntimeInformation.FrameworkDescription, DisplayDriver = DisplayServer.GetName(),
+            _game.IsLocallyPaused, _game.IsWindowFocused, _game.HasPendingAction,
+            FinalView = _game.CurrentView, TalkOfferAtPress = _talkOfferAtPress,
             Checks = _checks, ElapsedMilliseconds = _elapsed.ElapsedMilliseconds
         }, new JsonSerializerOptions { WriteIndented = true }));
     }

@@ -1,0 +1,66 @@
+{
+  "status": "confirmed",
+  "scope": "Native input Talk failure, moving target rather than player revision",
+  "databaseSha256": "984b9e9983d25b31c752a0f63f329e47cd3eabee5ed946a90e03ec89140d5330",
+  "commandSha256": "be2d25137bcb566fa5107312b3e5051158b01ce16256ca0d981f044708e63e35",
+  "receiptSha256": "1a1e52a90bbcd99c1d065b4c9a48e2c5b432e727faf2ead2d903e443c8b7b8fe",
+  "rejectedAtCommit": 68,
+  "expectedTargetRevision": 18,
+  "actualTargetRevision": 19,
+  "receiptStatus": "Rejected",
+  "rejection": "RevisionConflict",
+  "recordedState": {
+    "Contract": "recorded-world-state-v1",
+    "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+    "BranchId": "8631b15e15085ca2e4026a87d81ee2d7",
+    "SourceHeadRevision": 229,
+    "SourceHeadHash": "d964e868c001256d93a12f54fe997c50c0a73f11b6c00b5fe0d49a95eb724e7b",
+    "RecordedRevision": 67,
+    "StateHash": "61c0ad3c6a24469d8ad945dd93448053c217821d13b96ae36160a9837d9509fe",
+    "ProfileVersion": 1,
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 32520600
+    },
+    "AdvancingSteps": 67,
+    "HasReadingHold": false,
+    "Actors": [
+      {
+        "ActorId": "c7d63dbcc418014f5b87c36acea65ff6",
+        "DisplayName": "Wren",
+        "Position": {
+          "X": 26912,
+          "Y": 82560,
+          "Z": 256,
+          "Cell": {
+            "X": 105,
+            "Y": 322,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 19,
+        "SourceItemQuantity": 0
+      },
+      {
+        "ActorId": "e378e9407e63d212602d16a1540acd3b",
+        "DisplayName": "Traveler",
+        "Position": {
+          "X": 26560,
+          "Y": 83008,
+          "Z": 256,
+          "Cell": {
+            "X": 103,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 30,
+        "SourceItemQuantity": 8
+      }
+    ],
+    "SourceLotCount": 1,
+    "CraftedLotCount": 0,
+    "StructureCount": 0
+  },
+  "saveBytesUnchanged": true
+}

@@ -1,0 +1,333 @@
+{
+  "status": "failed",
+  "rendered": false,
+  "startedUtc": "2026-09-11T19:56:57.367027+00:00",
+  "scope": "Native wheel input, inspection, real gathering and exact reopened world; injected events are not physical device acceptance",
+  "runs": [
+    {
+      "phase": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-wheel",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/quick-wheel/native-wheel-ii1fg1wy/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/quick-wheel/native-wheel-ii1fg1wy/fresh.json",
+        "fresh"
+      ],
+      "exitCode": 1,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": "WARNING: The Viewport was previously notified that the mouse is in its area. There is no need to notify it at this time.\n     at: notify_mouse_entered (scene/main/viewport.cpp:3594)\n     C# backtrace (most recent call first):\n         [0] void Godot.NativeCalls.godot_icall_0_17(nint, nint) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/NativeCalls.cs:155)\n         [1] void Godot.Viewport.NotifyMouseEntered() (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Viewport.cs:1766)\n         [2] void OpenFantasy.Client.FarmWheelProbe.PointAt(Godot.Vector2) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:171)\n         [3] void OpenFantasy.Client.FarmWheelProbe+<CheckPausedWheel>d__8.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:74)\n         [4] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n         [5] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)\n         [6] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n         [7] void System.Threading.Tasks.Task.RunContinuations(object)\n         [8] bool System.Threading.Tasks.Task`1.TrySetResult(TResult)\n         [9] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(System.Threading.Tasks.Task`1[TResult], TResult)\n         [10] void OpenFantasy.Client.FarmWheelProbe+<Until>d__17.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:188)\n         [11] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n         [12] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)\n         [13] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)\nERROR: Native wheel probe failed: System.InvalidOperationException: Explicit controller confirmation did not apply exactly one real gather.\n   at OpenFantasy.Client.FarmWheelProbe.Require(Boolean condition, String error) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 225\n   at OpenFantasy.Client.FarmWheelProbe.Until(Func`1 condition, String error) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 185\n   at OpenFantasy.Client.FarmWheelProbe.CheckRunningWheel() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 134\n   at OpenFantasy.Client.FarmWheelProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 37\n   at: void OpenFantasy.Client.FarmWheelProbe+<_Ready>d__7.MoveNext() (res://scripts/FarmWheelProbe.cs:37)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmWheelProbe+<_Ready>d__7.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:37)\n       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [3] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [4] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [5] void System.Threading.Tasks.Task.RunContinuations(object)\n       [6] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [7] bool System.Threading.Tasks.Task.TrySetException(object)\n       [8] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [9] void OpenFantasy.Client.FarmWheelProbe+<CheckRunningWheel>d__9.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:134)\n       [10] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [11] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [12] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [13] void System.Threading.Tasks.Task.RunContinuations(object)\n       [14] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [15] bool System.Threading.Tasks.Task.TrySetException(object)\n       [16] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [17] void OpenFantasy.Client.FarmWheelProbe+<Until>d__17.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:185)\n       [18] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [19] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [20] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)\n"
+    }
+  ],
+  "observations": {
+    "fresh": {
+      "Status": "failed",
+      "Error": "System.InvalidOperationException: Explicit controller confirmation did not apply exactly one real gather.\n   at OpenFantasy.Client.FarmWheelProbe.Require(Boolean condition, String error) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 225\n   at OpenFantasy.Client.FarmWheelProbe.Until(Func`1 condition, String error) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 185\n   at OpenFantasy.Client.FarmWheelProbe.CheckRunningWheel() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 134\n   at OpenFantasy.Client.FarmWheelProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs:line 37",
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "headless",
+      "Reopen": false,
+      "Checks": [
+        "Pointer/stick/discrete inspection, neutral dead zones, field-shortcut isolation, Tab containment and B cancellation preserve pause and require movement release."
+      ],
+      "FinalView": {
+        "WorldId": {
+          "High": 11838943175866674348,
+          "Low": 6566761377563931012
+        },
+        "BranchId": {
+          "High": 3117603463796623977,
+          "Low": 1547435577907761989
+        },
+        "PlayerActorId": {
+          "High": 11740567274192566031,
+          "Low": 3901590248268668208
+        },
+        "Calendar": {
+          "Days": 0,
+          "MillisecondsWithinDay": 32666400
+        },
+        "HasReadingHold": false,
+        "Actors": [
+          {
+            "ActorId": {
+              "High": 11740567274192566031,
+              "Low": 3901590248268668208
+            },
+            "DisplayName": "Traveler",
+            "Feet": {
+              "X": 25984,
+              "Y": 83392,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 325,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 2,
+            "ControllerKind": 1
+          },
+          {
+            "ActorId": {
+              "High": 17734771146330126369,
+              "Low": 3755393924890045491
+            },
+            "DisplayName": "Wren",
+            "Feet": {
+              "X": 25984,
+              "Y": 82560,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 322,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 48,
+            "ControllerKind": 2
+          }
+        ],
+        "PlayerInventory": {
+          "CustodianId": {
+            "High": 3551574659632768418,
+            "Low": 7866543934556346698
+          },
+          "Revision": 0,
+          "Quantity": 10,
+          "Lots": [
+            {
+              "LotId": {
+                "High": 1696821205204844772,
+                "Low": 14233350353809258915
+              },
+              "DefinitionId": {
+                "High": 11982809337836041595,
+                "Low": 18373582298239785721
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 5470128972612045146,
+                "Low": 18086807705569776730
+              },
+              "DefinitionId": {
+                "High": 17440792895996343150,
+                "Low": 13598911669572622528
+              },
+              "Revision": 0,
+              "Quantity": 8,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 8225799703908409572,
+                "Low": 3329847337192323368
+              },
+              "DefinitionId": {
+                "High": 1872794200646237673,
+                "Low": 5975632165003488037
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            }
+          ]
+        },
+        "GatheringNodes": [
+          {
+            "NodeId": {
+              "High": 2639486879359783236,
+              "Low": 2635907145496061359
+            },
+            "DisplayName": "Berry Bush",
+            "Feet": {
+              "X": 27008,
+              "Y": 85120,
+              "Z": 256,
+              "Cell": {
+                "X": 105,
+                "Y": 332,
+                "Z": 1
+              }
+            },
+            "Revision": 0,
+            "Kind": 2,
+            "RequiredTool": 2,
+            "RemainingSwings": 4,
+            "Visibility": 1
+          },
+          {
+            "NodeId": {
+              "High": 7485666049006258407,
+              "Low": 6889325985582867310
+            },
+            "DisplayName": "Oak",
+            "Feet": {
+              "X": 25984,
+              "Y": 83840,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 327,
+                "Z": 1
+              }
+            },
+            "Revision": 0,
+            "Kind": 1,
+            "RequiredTool": 1,
+            "RemainingSwings": 5,
+            "Visibility": 1
+          }
+        ],
+        "GatheringTools": [
+          {
+            "LotId": {
+              "High": 1696821205204844772,
+              "Low": 14233350353809258915
+            },
+            "Revision": 0,
+            "Kind": 2,
+            "Power": 1
+          },
+          {
+            "LotId": {
+              "High": 8225799703908409572,
+              "Low": 3329847337192323368
+            },
+            "Revision": 0,
+            "Kind": 1,
+            "Power": 1
+          }
+        ],
+        "PlayerGatherEffort": 1000,
+        "Crafting": {
+          "Revision": 0,
+          "Recipes": [
+            {
+              "RecipeId": {
+                "High": 7909665981591724340,
+                "Low": 12637442341572758209
+              },
+              "Version": {
+                "Value": "747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142"
+              },
+              "Key": "craft_rations",
+              "Terms": [
+                {
+                  "DefinitionId": {
+                    "High": 17440792895996343150,
+                    "Low": 13598911669572622528
+                  },
+                  "Quantity": 1,
+                  "Role": 1
+                },
+                {
+                  "DefinitionId": {
+                    "High": 2321613972237266223,
+                    "Low": 8645526191670244961
+                  },
+                  "Quantity": 2,
+                  "Role": 1
+                },
+                {
+                  "DefinitionId": {
+                    "High": 6052033973718802550,
+                    "Low": 15899431500196879021
+                  },
+                  "Quantity": 2,
+                  "Role": 2
+                },
+                {
+                  "DefinitionId": {
+                    "High": 11425103842346022574,
+                    "Low": 7338629654356999930
+                  },
+                  "Quantity": 1,
+                  "Role": 3
+                }
+              ]
+            }
+          ]
+        },
+        "Dialogue": null,
+        "Progression": null,
+        "Quests": [],
+        "Construction": []
+      },
+      "IsWheelOpen": true,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "CurrentTarget": null,
+      "Offers": [
+        {
+          "Action": 1,
+          "TargetId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "Label": "Talk",
+          "CanExecute": true,
+          "BlockingReason": null
+        },
+        {
+          "Action": 2,
+          "TargetId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "Label": "Give",
+          "CanExecute": true,
+          "BlockingReason": null
+        },
+        {
+          "Action": 5,
+          "TargetId": null,
+          "Label": "Continue",
+          "CanExecute": false,
+          "BlockingReason": "There is no addressed conversation to close."
+        },
+        {
+          "Action": 3,
+          "TargetId": {
+            "High": 7485666049006258407,
+            "Low": 6889325985582867310
+          },
+          "Label": "Chop oak",
+          "CanExecute": true,
+          "BlockingReason": null
+        },
+        {
+          "Action": 4,
+          "TargetId": null,
+          "Label": "Pack rations",
+          "CanExecute": false,
+          "BlockingReason": "Pack two berries and one wood to make two rations."
+        }
+      ],
+      "FocusOwner": "/root/Bootstrap/@Node2D@2/FarmQuickWheel/WheelRoot/Panel/Column/Body/Disc",
+      "WheelSelection": 1,
+      "WheelCanExecute": true,
+      "ConfirmDisabled": false,
+      "PointerSeen": "(168, 56.5)",
+      "PointerGlobal": "(0, -209.99998)",
+      "Navigation": "(0, 0)",
+      "HasPendingAction": false,
+      "ElapsedMilliseconds": 8371
+    }
+  },
+  "failure": "Native wheel failed at fresh",
+  "artifactSha256": {
+    "native-wheel-ii1fg1wy/fresh.json": "dc2ea1121d9d2f2902ac3d1bdeb2994071c2059be48f61a953819bdd514dbda0",
+    "native-wheel-ii1fg1wy/world.sqlite": "a08ae65db9885690f812be8d38bad93fb3eea6636d6382bad90316960d564c76"
+  },
+  "finishedUtc": "2026-09-11T19:57:07.653661+00:00"
+}

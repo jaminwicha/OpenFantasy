@@ -56,7 +56,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         await Delay(0.15);
         Require(craft.HasFocus(), "A known unavailable action could not receive keyboard/controller focus.");
         AssertDetails(craft, offer);
-        Capture("blocked-craft");
+        await Capture("blocked-craft");
         craft.ReleaseFocus();
         craft.EmitSignal(Control.SignalName.MouseEntered);
         await Delay(0.1);
@@ -80,7 +80,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         Require(marker.Visible && marker.Position == Presentation.FarmCanvasCoordinates.Position(game.CurrentTarget.Feet!.Value),
             "The field marker did not identify the selected person's projected position.");
         await Delay(0.1); // Let the selected marker and label reach the rendered viewport.
-        Capture("person-target");
+        await Capture("person-target");
         EntityId person = game.CurrentTarget.Id;
         Tap(Key.Escape);
         await Until(() => game.IsLocallyPaused, "Could not pause the target comparison.");
@@ -120,7 +120,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         Require(game.CurrentTarget?.Id == oak, "The observed oak was missing from the target cycle.");
         await Approach(() => View().GatheringNodes.Single(node => node.NodeId == oak).Feet, 300);
         await Delay(0.1);
-        Capture("plant-target");
+        await Capture("plant-target");
         await Approach(() => View().GatheringNodes.Single(node => node.Kind == GatherNodeKind.Berry).Feet, 300);
         Require(FarmClientSession.NearestGatherNode(View())?.Kind == GatherNodeKind.Berry,
             "The target retention comparison did not approach a different plant.");
@@ -130,7 +130,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         gather.GrabFocus();
         await Delay(0.1);
         AssertDetails(gather, Offer(FarmSemanticAction.Gather));
-        Capture("locked-target");
+        await Capture("locked-target");
         Tap(Key.F);
         await Delay(0.1);
         Require(View().PlayerInventory.Quantity == quantity && !game.HasPendingAction,
@@ -166,7 +166,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         button.GrabFocus();
         await Delay(0.1);
         AssertDetails(button, offer);
-        Capture(kind == GatherNodeKind.Oak ? "oak-offer" : "berry-offer");
+        await Capture(kind == GatherNodeKind.Oak ? "oak-offer" : "berry-offer");
         LocalGatherNodeView before = View().GatheringNodes.Single(node => node.NodeId == targetId);
         var others = View().GatheringNodes.Where(node => node.NodeId != targetId)
             .ToDictionary(node => node.NodeId, node => node.RemainingSwings);
@@ -195,7 +195,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         craft.GrabFocus();
         await Delay(0.1);
         AssertDetails(craft, Offer(FarmSemanticAction.Craft));
-        Capture("ready-craft");
+        await Capture("ready-craft");
         Tap(Key.C);
         await Until(() => View().Crafting!.Revision > revision && !game.HasPendingAction, "The displayed recipe did not commit.");
         foreach (EntityId id in quantities.Keys)
@@ -225,7 +225,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         await Delay(0.1);
         Require(game.CurrentTarget?.Id == selected && View().Dialogue is not null,
             "Target controls changed selection or ended the addressed conversation.");
-        Capture("dialogue");
+        await Capture("dialogue");
         Tap(Key.Escape);
         await Until(() => View().Dialogue is null && !game.HasPendingAction, "Offer routing broke top-dialogue cancellation.");
         Require(!game.IsLocallyPaused, "Dialogue cancellation also paused ordinary play.");
@@ -307,7 +307,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
     {
         foreach (string action in new[] { "walk_left", "walk_right", "walk_up", "walk_down" }) Input.ActionRelease(action);
     }
-    private void Capture(string suffix)
+    private async Task Capture(string suffix)
     {
         Rect2 viewport = GetViewport().GetVisibleRect();
         foreach (Control control in Descendants(_hud).OfType<Control>()
@@ -319,6 +319,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
                 $"The visible {control.Name} control is clipped outside the viewport.");
         }
         if (DisplayServer.GetName() == "headless") return;
+        await ToSignal(RenderingServer.Singleton, RenderingServer.SignalName.FramePostDraw);
         using Image image = GetViewport().GetTexture().GetImage();
         Require(image.SavePng(Path.ChangeExtension(reportPath, "." + suffix + ".png")) == Error.Ok,
             "Could not retain the native preview image.");

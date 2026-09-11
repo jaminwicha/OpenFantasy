@@ -37,7 +37,19 @@ public partial class Bootstrap : Control
         GetNode<Control>("Backdrop").Hide();
         GetNode<Control>("Center").Hide();
         FarmInputMap.InstallDefaults();
-        if (arguments is ["--farm-daylight", var daylightSave, var daylightReport, var daylightPhase])
+        if (arguments is ["--farm-wheel", var wheelSave, var wheelReport, var wheelMode] && wheelMode is "fresh" or "reopen")
+        {
+            if (File.Exists(wheelSave) != (wheelMode == "reopen"))
+            {
+                GD.PushError("The wheel probe requires its exact fresh or retained save.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = wheelSave, StartPaused = true };
+            AddChild(game);
+            AddChild(new FarmWheelProbe(game, wheelReport, wheelMode == "reopen"));
+        }
+        else if (arguments is ["--farm-daylight", var daylightSave, var daylightReport, var daylightPhase])
         {
             AddChild(new FarmDaylightProbe(daylightSave, daylightReport, daylightPhase));
         }

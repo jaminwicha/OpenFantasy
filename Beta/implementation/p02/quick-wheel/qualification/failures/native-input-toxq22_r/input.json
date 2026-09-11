@@ -1,0 +1,16 @@
+{
+  "Kind": "native-input-focus-v1",
+  "Status": "failed",
+  "Failure": "The ordinary Talk key did not open Wren\u0027s dialogue.",
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "Checks": [
+    "Opposing held directions did not manufacture a neutral release.",
+    "Fresh movement resumed after all held directions returned to neutral.",
+    "Keyboard repeat did not duplicate pause; controller Cancel unwound pause.",
+    "Focus return did not replay a held movement key.",
+    "Small stick drift stayed inside the circular deadzone.",
+    "A deliberate diagonal kept the existing circular-deadzone movement behavior."
+  ],
+  "ElapsedMilliseconds": 13790
+}

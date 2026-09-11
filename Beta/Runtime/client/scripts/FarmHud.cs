@@ -27,6 +27,7 @@ internal sealed partial class FarmHud : CanvasLayer
     private Button _nextTarget = null!;
     private Button _clearTarget = null!;
     private Button _openPack = null!;
+    private Button _openWheel = null!;
     private readonly Dictionary<FarmSemanticAction, Button> _buttons = [];
     private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _offers =
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
@@ -57,6 +58,8 @@ internal sealed partial class FarmHud : CanvasLayer
         _nextTarget = GetNode<Button>("%NextTarget");
         _clearTarget = GetNode<Button>("%ClearTarget");
         _openPack = GetNode<Button>("%OpenPack");
+        _openWheel = GetNode<Button>("%OpenWheel");
+        _openWheel.Pressed += () => Request(FarmSemanticAction.OpenWheel);
         _openPack.Pressed += () => Request(FarmSemanticAction.OpenInventory);
         _nextTarget.Pressed += () => Request(FarmSemanticAction.NextTarget);
         _clearTarget.Pressed += () => Request(FarmSemanticAction.ClearTarget);
@@ -103,6 +106,7 @@ internal sealed partial class FarmHud : CanvasLayer
         }
         bool speaking = view.Dialogue is not null;
         _openPack.Disabled = pending || speaking;
+        _openWheel.Disabled = pending || speaking;
         _targetName.Text = targets.Selected is { } target
             ? $"Target: {target.Name}" + (target.Feet is null ? " · out of sight" : "") : "Target: automatic";
         _nextTarget.Disabled = pending || paused || speaking || !targets.CanCycle;

@@ -5,7 +5,7 @@
   "baseline": "../../spec-v1_1/REQUIREMENTS.json",
   "design": "../PLAYER_INTERFACE_AND_NAVIGATION.md",
   "baseline_requirement_count": 181,
-  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-01/UI-03/UI-11 have bounded P01 input, offer and explicit-target evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs. P02 inventory inspection now supplies a bounded UI-05/UI-11 prerequisite; no full case or phase exit is closed.",
+  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-01/UI-03/UI-11 have bounded P01 input, offer and explicit-target evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs. P02 inventory inspection now supplies a bounded UI-05/UI-11 prerequisite; no full case or phase exit is closed. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed.",
   "contracts": [
     {
       "id": "UI-01",
@@ -29,7 +29,11 @@
         "../p01/target-selection/README.md",
         "../p01/target-selection/qualification/final-verification.json"
       ],
-      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open."
+      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open.",
+      "partial_evidence_paths": [
+        "../p02/quick-wheel/README.md"
+      ],
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UI-02",
@@ -47,8 +51,12 @@
         "UIV-05",
         "UIV-12"
       ],
-      "status": "planned",
-      "evidence_paths": []
+      "status": "in_progress",
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p02/quick-wheel/README.md"
+      ],
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UI-03",
@@ -75,7 +83,11 @@
         "../p01/target-selection/qualification/final-verification.json"
       ],
       "foundation_qualification_phase": "P03",
-      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open."
+      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open.",
+      "partial_evidence_paths": [
+        "../p02/quick-wheel/README.md"
+      ],
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UI-04",
@@ -249,7 +261,11 @@
         "../p02/inventory-inspection/qualification/final-verification.json"
       ],
       "foundation_qualification_phase": "P03",
-      "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open. P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open."
+      "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open. P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open.",
+      "partial_evidence_paths": [
+        "../p02/quick-wheel/README.md"
+      ],
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UI-12",
@@ -266,8 +282,12 @@
         "UIV-12",
         "UIV-13"
       ],
-      "status": "planned",
-      "evidence_paths": []
+      "status": "in_progress",
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p02/quick-wheel/README.md"
+      ],
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UI-13",
@@ -324,13 +344,14 @@
       "case_ids": [
         "UIV-14"
       ],
-      "status": "planned",
+      "status": "in_progress",
       "evidence_paths": [],
       "partial_evidence_paths": [
         "../p01/action-offers/qualification/rendered-offers.json",
-        "../p02/inventory-inspection/qualification/rendered-inventory.json"
+        "../p02/inventory-inspection/qualification/rendered-inventory.json",
+        "../p02/quick-wheel/README.md"
       ],
-      "partial_evidence_scope": "P01 textual cost/blocker inspection prerequisite at 960x540 via native focus/hover; icons, rich item cards, physical navigation and full UIV-14 remain unimplemented/unrun. Textual real-item pack inspection is now covered; native icons and full rich/knowledge/device acceptance remain open."
+      "partial_evidence_scope": "P01 textual cost/blocker inspection prerequisite at 960x540 via native focus/hover; icons, rich item cards, physical navigation and full UIV-14 remain unimplemented/unrun. Textual real-item pack inspection is now covered; native icons and full rich/knowledge/device acceptance remain open. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     }
   ],
   "cases": [
@@ -345,9 +366,10 @@
         "../p01/action-offers/README.md",
         "../p01/action-offers/qualification/final-verification.json",
         "../p01/target-selection/README.md",
-        "../p01/target-selection/qualification/final-verification.json"
+        "../p01/target-selection/qualification/final-verification.json",
+        "../p02/quick-wheel/README.md"
       ],
-      "partial_evidence_scope": "P01 captured-intent regressions plus explicit Wren/harvestable selection, duplicate names, movement, depletion/absence/regrowth and native target/marker controls. Full damaged-object and target/confirmation flow is not run."
+      "partial_evidence_scope": "P01 captured-intent regressions plus explicit Wren/harvestable selection, duplicate names, movement, depletion/absence/regrowth and native target/marker controls. Full damaged-object and target/confirmation flow is not run. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UIV-02",
@@ -355,7 +377,11 @@
       "completion_phase": "P12",
       "acceptance": "Populate a labeled synthetic mature library (initial comparison: 200 known actions across disciplines) and small real early library. Favorites keep stable identities after learning, depletion, equipment changes and restart; every known action has a browsable non-search-only route. Native action execution is claimed only for actually implemented commands.",
       "status": "not_run",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p02/quick-wheel/README.md"
+      ],
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UIV-03",
@@ -376,9 +402,10 @@
         "../p01/input-focus/qualification/native-input.json",
         "../p01/target-selection/qualification/final-verification.json",
         "../p02/inventory-inspection/README.md",
-        "../p02/inventory-inspection/qualification/final-verification.json"
+        "../p02/inventory-inspection/qualification/final-verification.json",
+        "../p02/quick-wheel/README.md"
       ],
-      "partial_evidence_scope": "P01 dialogue/pause/focus and held-control prerequisite only. Full wheel/target/inventory/confirmation/text-entry/device/resize/disconnect case is not run. The new cycle/clear controls obey the existing contexts; the general target modal is not implemented. Real pack inspection and native focus/input/time boundaries now have bounded evidence; all remaining elements of this full case are still unrun."
+      "partial_evidence_scope": "P01 dialogue/pause/focus and held-control prerequisite only. Full wheel/target/inventory/confirmation/text-entry/device/resize/disconnect case is not run. The new cycle/clear controls obey the existing contexts; the general target modal is not implemented. Real pack inspection and native focus/input/time boundaries now have bounded evidence; all remaining elements of this full case are still unrun. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UIV-05",
@@ -386,7 +413,11 @@
       "completion_phase": "P13",
       "acceptance": "Complete the same actual loop with keyboard-only/discrete navigation, mouse and gamepad; rebind including conflicts and reset. Prompts update, confirm/cancel remain reachable, linear alternatives and toggle operation avoid analog precision, simultaneous chords or mandatory holds.",
       "status": "not_run",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p02/quick-wheel/README.md"
+      ],
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
     {
       "id": "UIV-06",
@@ -467,9 +498,10 @@
       "partial_evidence_paths": [
         "../p01/action-offers/qualification/rendered-offers.json",
         "../p02/inventory-inspection/README.md",
-        "../p02/inventory-inspection/qualification/final-verification.json"
+        "../p02/inventory-inspection/qualification/final-verification.json",
+        "../p02/quick-wheel/README.md"
       ],
-      "partial_evidence_scope": "P01 known blocked crafting inspection and visible costs through native Control focus/hover only. Full icon/Inspect/knowledge/localization/device case is not run. Real pack inspection and native focus/input/time boundaries now have bounded evidence; all remaining elements of this full case are still unrun."
+      "partial_evidence_scope": "P01 known blocked crafting inspection and visible costs through native Control focus/hover only. Full icon/Inspect/knowledge/localization/device case is not run. Real pack inspection and native focus/input/time boundaries now have bounded evidence; all remaining elements of this full case are still unrun. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     }
   ]
 }

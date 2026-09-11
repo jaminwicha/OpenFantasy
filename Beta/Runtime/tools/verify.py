@@ -155,6 +155,10 @@ def main():
         run("native-input-focus", [sys.executable, root / "tools/check_native_input.py",
             "--dotnet", dotnet, "--godot", godot, "--output", input_report], 90)
         report["nativeInput"] = json.loads(input_report.read_text())
+        wheel_report = artifacts / "native-wheel.json"
+        run("native-quick-wheel", [sys.executable, root / "tools/check_native_wheel.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", wheel_report], 100)
+        report["nativeWheel"] = json.loads(wheel_report.read_text())
         offers_report = artifacts / "native-offers.json"
         run("native-action-offers", [sys.executable, root / "tools/check_native_offers.py",
             "--dotnet", dotnet, "--godot", godot, "--output", offers_report], 100)

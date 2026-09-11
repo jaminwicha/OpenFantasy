@@ -24,6 +24,7 @@ public partial class FarmGame : Node2D
     private FarmTargetSelection? _targets;
     private FarmInventoryModel? _inventoryModel;
     private FarmInventoryScreen _inventory = null!;
+    private FarmQuickWheel _wheel = null!;
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
@@ -41,6 +42,7 @@ public partial class FarmGame : Node2D
     internal bool IsLocallyPaused => _input.Paused;
     internal bool IsWindowFocused => _input.Focused;
     internal bool IsInventoryOpen => _input.InventoryOpen;
+    internal bool IsWheelOpen => _input.WheelOpen;
     internal FarmDaylight Daylight => _canvas.Daylight;
     internal void RequestClose() => BeginClose();
 
@@ -60,6 +62,10 @@ public partial class FarmGame : Node2D
         _inventory = GD.Load<PackedScene>("res://scenes/FarmInventoryScreen.tscn").Instantiate<FarmInventoryScreen>();
         AddChild(_inventory);
         _inventory.CloseRequested += () => Perform(FarmSemanticAction.CloseInventory);
+        _wheel = GD.Load<PackedScene>("res://scenes/FarmQuickWheel.tscn").Instantiate<FarmQuickWheel>();
+        AddChild(_wheel);
+        _wheel.ActionRequested += Perform;
+        Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
         GetWindow().CloseRequested += BeginClose;
         GetWindow().FocusEntered += OnFocusEntered;
@@ -161,6 +167,11 @@ public partial class FarmGame : Node2D
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null,
             _input.Paused || !_input.Focused, _presented, _targets);
         _inventory.Present(view, _session.World.ReadRunState());
+        if (_wheel.Model is { } wheel)
+        {
+            wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target)));
+            _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel));
+        }
     }
 
     public override void _PhysicsProcess(double delta)
@@ -233,6 +244,19 @@ public partial class FarmGame : Node2D
     {
         if (!_input.Permits(Situation(), action)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        if (action is FarmSemanticAction.OpenWheel or FarmSemanticAction.CloseWheel)
+        {
+            ChangeWheel(action == FarmSemanticAction.OpenWheel);
+            return;
+        }
+        if (action == FarmSemanticAction.ConfirmWheel)
+        {
+            FarmActionOffer? chosen = _wheel.Model?.Selected?.Offer;
+            if (chosen?.CanExecute != true) return;
+            ChangeWheel(false);
+            Submit(chosen);
+            return;
+        }
         if (action is FarmSemanticAction.OpenInventory or FarmSemanticAction.CloseInventory)
         {
             ChangeInventory(action == FarmSemanticAction.OpenInventory);
@@ -336,8 +360,46 @@ public partial class FarmGame : Node2D
         if (_input.SetFocused(false))
         {
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
+            if (_input.WheelOpen) ChangeWheel(false);
             ChangeReadiness(_input.WorldShouldRun);
         }
+    }
+
+    private void ChangeWheel(bool open)
+    {
+        if (_session is null) return;
+        _input.SetWheelOpen(open);
+        if (open)
+        {
+            _wheel.Open(_presented);
+            _hud.SetCovered(true);
+            try { _session.World.SetMovement(0, 0); }
+            catch (InvalidOperationException error) { Fail(error.GetBaseException().Message); return; }
+            Present(_session.World.ReadView());
+        }
+        else
+        {
+            _hud.SetCovered(false);
+            _wheel.Close();
+        }
+    }
+
+    private void OnControllerConnectionChanged(long device, bool connected)
+    {
+        if (!connected && _input.WheelOpen)
+        {
+            _input.CaptureBoundary(Situation(), ReadWalkingInput());
+            ChangeWheel(false);
+        }
+    }
+
+    private static FarmTarget? LocatePinnedTarget(LocalWorldView view, FarmTarget? target)
+    {
+        if (target is null) return null;
+        LocalActorView? person = view.Actors.FirstOrDefault(actor => actor.ActorId == target.Id);
+        if (person is not null) return target with { Kind = FarmTargetKind.Person, Feet = person.Feet };
+        LocalGatherNodeView? plant = view.GatheringNodes.FirstOrDefault(node => node.NodeId == target.Id);
+        return target with { Kind = plant is null ? target.Kind : FarmTargetKind.Harvestable, Feet = plant?.Feet };
     }
 
     private bool ChangeReadiness(bool ready)
@@ -351,6 +413,7 @@ public partial class FarmGame : Node2D
         _failed = true;
         _input.MarkUnavailable();
         if (_input.InventoryOpen) ChangeInventory(false);
+        if (_input.WheelOpen) ChangeWheel(false);
         try { _session?.World.SetReady(false); }
         catch (InvalidOperationException) { /* A failed host already stopped accepting input. */ }
         _hud.Message(message);
@@ -378,6 +441,7 @@ public partial class FarmGame : Node2D
 
     public override void _ExitTree()
     {
+        Input.Singleton.JoyConnectionChanged -= OnControllerConnectionChanged;
         GetWindow().CloseRequested -= BeginClose;
         GetWindow().FocusEntered -= OnFocusEntered;
         GetWindow().FocusExited -= OnFocusExited;

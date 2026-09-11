@@ -51,6 +51,29 @@ inspection plus actual gather, craft and conversation input against a disposable
 The integrated verifier includes this journey. This is the current small farm interface, not
 the complete wheel, rebinding, management-screen or physical-controller acceptance suite.
 
+Open **Quick actions** with **V**, **right-stick click**, or the **Actions** button. The small
+farm wheel presents Talk, Gather, Craft and Give with original provisional glyphs. Point to a
+sector, use arrows/WASD, D-pad or a deliberate left-stick tilt to inspect its exact target, cost
+and blocker. No action is selected initially. **Enter**, controller **A**, or the **Confirm**
+button commits the inspected offer; selecting a sector or clicking its center never acts.
+**V**, **Escape**, **Start**, **right-stick click**, **B** or **Close** cancels the wheel only.
+Focus loss or controller disconnect also cancels without submission.
+
+Opening the wheel stops player movement and owns input while the existing world clock policy
+continues. An existing pause remains paused; close the wheel before resuming. Pinned targets
+and four cardinal slots stay stable while permitted previews refresh. Unavailable choices
+explain their blockers. A changed or absent target cannot silently become another target, and
+the host still rejects stale commands. Directions held during inspection must release before
+walking resumes. This is a bounded farm wheel, not a saved favorites library, nested categories,
+general capability discovery, remapping UI or full device/scaling acceptance.
+
+`tools/check_native_wheel.py` checks injected pointer, keyboard, analog and controller input,
+blocked inspection, time and movement isolation, real gathering, focus/disconnect cancellation
+and exact process reopening on a disposable save. `--rendered` captures four native states;
+the rendered fixture requests focus once after native startup settles and never reacquires it
+during its journey. The integrated verifier runs the headless check. Physical-device experience,
+production art and usability acceptance remain separate.
+
 ## Outdoor daylight
 
 The farm now samples an editable outdoor light palette from the same permitted calendar used

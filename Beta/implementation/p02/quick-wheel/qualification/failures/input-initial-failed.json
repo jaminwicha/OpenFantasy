@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-09-11T20:08:10.314620+00:00",
+  "scope": "Native headless input events and focus handlers against real authoritative movement/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "failed",
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-input",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-input-toxq22_r/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-input-toxq22_r/input.json"
+    ],
+    "exitCode": 1,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": "ERROR: Native input qualification failed: System.InvalidOperationException: The ordinary Talk key did not open Wren's dialogue.\n   at OpenFantasy.Client.FarmInputProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:line 243\n   at OpenFantasy.Client.FarmInputProbe.Until(Func`1 condition, String failure) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:line 185\n   at OpenFantasy.Client.FarmInputProbe.CheckDialogueCancellation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:line 129\n   at OpenFantasy.Client.FarmInputProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:line 32\n   at: void OpenFantasy.Client.FarmInputProbe+<_Ready>d__5.MoveNext() (res://scripts/FarmInputProbe.cs:32)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmInputProbe+<_Ready>d__5.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:32)\n       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [4] void System.Threading.Tasks.Task.RunContinuations(object)\n       [5] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [6] bool System.Threading.Tasks.Task.TrySetException(object)\n       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [8] void OpenFantasy.Client.FarmInputProbe+<CheckDialogueCancellation>d__10.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:129)\n       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [11] void System.Threading.Tasks.Task.RunContinuations(object)\n       [12] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [13] bool System.Threading.Tasks.Task.TrySetException(object)\n       [14] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [15] void OpenFantasy.Client.FarmInputProbe+<Until>d__14.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:185)\n       [16] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [17] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [18] void System.Threading.Tasks.Task.RunContinuations(object)\n       [19] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()\n       [20] void OpenFantasy.Client.FarmInputProbe+<Frame>d__15.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs:195)\n       [21] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [22] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [23] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)\n"
+  },
+  "failure": "The native input process failed; inspect its retained output.",
+  "artifactSha256": {
+    "native-input-toxq22_r/input.json": "15e287b6bfdefeb1068b37e4a29b5da4d8b272e12a0d17950c34f05139d005a7",
+    "native-input-toxq22_r/world.sqlite": "984b9e9983d25b31c752a0f63f329e47cd3eabee5ed946a90e03ec89140d5330"
+  },
+  "finishedUtc": "2026-09-11T20:08:29.071007+00:00"
+}

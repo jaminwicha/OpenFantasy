@@ -1,0 +1,30 @@
+{
+  "startedUtc": "2026-09-11T20:23:59.137366+00:00",
+  "scope": "Native target selection, pack inspection/time/input, action previews and authoritative gathering/crafting/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "failed",
+  "rendered": true,
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-action-offers",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/quick-wheel/native-offers-8tvre79f/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/quick-wheel/native-offers-8tvre79f/offers.json"
+    ],
+    "exitCode": 1,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": "ERROR: Native action-offer qualification failed: System.InvalidOperationException: Could not reach the native action target.\n   at OpenFantasy.Client.FarmActionOfferProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 342\n   at OpenFantasy.Client.FarmActionOfferProbe.Approach(Func`1 target, Int64 range) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 261\n   at OpenFantasy.Client.FarmActionOfferProbe.SelectTargets() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 124\n   at OpenFantasy.Client.FarmActionOfferProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 28\n   at: void OpenFantasy.Client.FarmActionOfferProbe+<_Ready>d__6.MoveNext() (res://scripts/FarmActionOfferProbe.cs:28)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmActionOfferProbe+<_Ready>d__6.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:28)\n       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [4] void System.Threading.Tasks.Task.RunContinuations(object)\n       [5] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [6] bool System.Threading.Tasks.Task.TrySetException(object)\n       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [8] void OpenFantasy.Client.FarmActionOfferProbe+<SelectTargets>d__8.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:124)\n       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [11] void System.Threading.Tasks.Task.RunContinuations(object)\n       [12] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [13] bool System.Threading.Tasks.Task.TrySetException(object)\n       [14] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [15] void OpenFantasy.Client.FarmActionOfferProbe+<Approach>d__15.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:261)\n       [16] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [17] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [18] void System.Threading.Tasks.Task.RunContinuations(object)\n       [19] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()\n       [20] void OpenFantasy.Client.FarmActionOfferProbe+<Frame>d__21.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:300)\n       [21] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [22] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [23] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)\n"
+  },
+  "failure": "The native action-offer process failed; inspect its retained output.",
+  "artifactSha256": {
+    "native-offers-8tvre79f/offers.blocked-craft.png": "857478b514990041a39c07b4064a4f71d77154aef625d64d3580bbcb88558fcf",
+    "native-offers-8tvre79f/offers.json": "7e7e69bae010595a57c30c1d6f6dd446b923f017643bc1a196c3b74771bb3d72",
+    "native-offers-8tvre79f/offers.person-target.png": "5a108cc3cf5c66d22533420a22b3bd5da1819063b15a14030fc386387fcad6de",
+    "native-offers-8tvre79f/offers.plant-target.png": "2ad0e10e178792a7778db9d7a950d24a6e8a54ad137f1ff14201898b02e4ae3b",
+    "native-offers-8tvre79f/world.sqlite": "56bb6157bb9a96c002887459d005f5aa244a3095701e146f80b6809d512af885"
+  },
+  "finishedUtc": "2026-09-11T20:24:51.194368+00:00"
+}

@@ -23,6 +23,7 @@
     <Compile Include="../../client/scripts/FarmActionOffer.cs" Link="Client/FarmActionOffer.cs" />
     <Compile Include="../../client/scripts/FarmTargetSelection.cs" Link="Client/FarmTargetSelection.cs" />
     <Compile Include="../../client/scripts/FarmInventoryModel.cs" Link="Client/FarmInventoryModel.cs" />
+    <Compile Include="../../client/scripts/FarmQuickWheelModel.cs" Link="Client/FarmQuickWheelModel.cs" />
     <Compile Include="../../client/scripts/FarmActionOffers.cs" Link="Client/FarmActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmClientSession.cs" Link="Client/FarmClientSession.cs" />
   </ItemGroup>
