@@ -21,3 +21,10 @@ The owner requires modular, human-readable, object-oriented application and engi
 - Prefer composition and concrete types. Introduce interfaces for a real replaceable boundary or required test seam, and inheritance only for a valid substitutable relationship. Pure arithmetic/encoding helpers may remain static.
 - Keep host diagnostics and presentation outside the portable authority. Own editable layout in scenes and semantic behavior in C#; use explicit dependencies rather than global service lookup.
 - Use descriptive names, consistent private field naming, visible guard blocks and named constants for format structure. Comments explain units, invariants and reasons. Avoid compressed control flow, giant managers and speculative abstraction layers.
+
+## Git milestones
+
+The owner's 2026-09-10 direction makes incremental commits and milestone branches project
+doctrine. Follow [GIT_MILESTONES.md](implementation/GIT_MILESTONES.md): commit verified coherent
+increments, preserve major checkpoints with named branches, and never include unrelated
+staged work. A milestone records the exact accepted scope; it does not automatically close a phase.

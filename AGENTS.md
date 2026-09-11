@@ -10,3 +10,8 @@ The current owner prefers Astra to drive and Claude to perform economically usef
 work. Follow the shared handoff's required local skill/context synchronization hook before
 external dispatch. Keep packets and results compact, avoid relay subagents and duplicate
 implementation, and distinguish measured recurring savings from one-time setup effort.
+
+Commit coherent implementation increments along the way. At verified major progress,
+create a preserved milestone branch without switching the checkout. Follow the shared
+[commit and milestone doctrine](Beta/implementation/GIT_MILESTONES.md). The integration
+lead owns commits/checkpoints while workers share a checkout.

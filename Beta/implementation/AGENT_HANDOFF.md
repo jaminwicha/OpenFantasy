@@ -4,6 +4,17 @@ Updated: 2026-09-10. This is a navigation and current-state index for any author
 
 Current orchestration steering: Astra drives this project while Claude performs suitable bounded work using the owner's Claude capacity. The owner requires `fable[1m]` for Claude assignments; pass that exact model selector and report unavailable access rather than silently substituting another model. Preserve interchangeable capabilities, but avoid spending another Astra subagent merely to relay a Claude task. Before every external delegation, the ecosystem's local hook must synchronize approved skill updates and verify the exact current instructions, handoff, specs and owner steering; halt on unexpected drift. Recheck inputs after return, then update shared knowledge from reviewed results. The check itself must not consume another model conversation. Measure recurring lead/worker usage and accepted work before claiming token or credit savings; setup effort is a separate one-time cost.
 
+Current delegation assessment (2026-09-10): two bounded implementation runs returned useful
+work but both reported denied commands and required material lead corrections. Net lead-credit
+savings remain unverified. Routine behavior-changing implementation now stays with the lead;
+use another external implementation assignment only when its independent scope and expected
+benefit justify the measured integration cost. The exact `fable[1m]` requirement still applies
+when Claude is selected. Keep the repaired tooling, portable knowledge and synchronization
+hook available; this is a task-routing decision, not a capability ban or a claim about every model.
+
+Git discipline now includes [incremental commits and preserved milestone branches](GIT_MILESTONES.md).
+The current qualified foundation is recorded at `codex/milestone-farm-input-foundation`.
+
 ## Authority and reading order
 
 1. Read [project implementation instructions](../AGENTS.md). The owner's later naming instruction governs source/project identifiers: use `OpenFantasy`, with no planning codename in runtime names, comments or strings. Preserve the existing planning directory and historical documents.
@@ -96,3 +107,10 @@ phase from this seam. Real contextual action offers/targeting and later wheels/m
 screens must use this policy while adding their own native acceptance. Asset production stays
 with separate artists and the owner's style acceptance. No new priority, runtime process,
 Core authority or reduction of the 181 requirements is implied.
+
+Active increment (2026-09-10): P01 scoped action offers/target and cost previews for the
+existing farm actions (UI-01/UI-03 prerequisites). The external worker has returned its client files, HUD scene and focused tests; the lead
+owns the remaining corrections, native probes, integration and documentation.
+Submit the captured intent and scope without nearest-target or ingredient substitution.
+Preserve current cancellation, original saves, all scope and phase dependencies. Full wheels,
+management screens, networking and art production are not part of this bounded increment.
