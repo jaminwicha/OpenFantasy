@@ -1,0 +1,7 @@
+{
+  "test": "OpenFantasy.Hosting.Tests.WorldStorage.WorldAuthorityServiceTests.SixThousandActualCommitsWriteAndReplayTheirScheduledCheckpoint",
+  "outcome": "Passed",
+  "duration": "00:00:06.9171177",
+  "stdout": "Small-fixture full replay: commits=6000; genesisBytes=5211; commitMilliseconds=4489.320; recoveryMilliseconds=1192.755; databaseBytes=2949120; historyMilliseconds=628.601",
+  "sourceReport": "hosting-final.trx"
+}

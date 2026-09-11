@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="fe4f379a-5c1f-4fef-bb15-86b4ae510028" name="@mac 2026-09-11 13:12:35" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-11T13:12:35.5438880-05:00" queuing="2026-09-11T13:12:35.5438880-05:00" start="2026-09-11T13:12:03.8315960-05:00" finish="2026-09-11T13:14:05.9791780-05:00" />
+  <TestSettings name="default" id="15809448-7ca5-4bc3-ad7b-d13aca0352e7">
+    <Deployment runDeploymentRoot="_mac_2026-09-11_13_12_35" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="925bf99d-6942-451f-80fe-c7ed27411aa8" testId="377103bd-c1da-f370-0f40-733c0531756e" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EveryRecordedBoundaryMatchesOriginalBytesInReverseOrderAfterRestart" computerName="mac" duration="00:00:00.0296061" startTime="2026-09-11T13:14:05.8220300-05:00" endTime="2026-09-11T13:14:05.8516840-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="925bf99d-6942-451f-80fe-c7ed27411aa8" />
+    <UnitTestResult executionId="be1e8241-edf0-4bf1-94b3-c7a92e3cb735" testId="14fd3e47-6506-7443-75e2-520ba202f026" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;UPDATE world_command_outcomes SET receipt=x'01'&quot;)" computerName="mac" duration="00:00:30.2038150" startTime="2026-09-11T13:12:05.2795990-05:00" endTime="2026-09-11T13:12:35.5013490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be1e8241-edf0-4bf1-94b3-c7a92e3cb735">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs:line 295
+   at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs:line 128
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ad417927-ded4-41ef-8cc4-c855faeaa81b" testId="1b11364d-15cd-044d-958e-906ae281d378" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.GenesisAndInvalidFutureQueriesCannotChangeOrDisableTheAuthority" computerName="mac" duration="00:00:00.0054823" startTime="2026-09-11T13:14:05.8639380-05:00" endTime="2026-09-11T13:14:05.8694470-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad417927-ded4-41ef-8cc4-c855faeaa81b" />
+    <UnitTestResult executionId="aa3021bf-7b10-4f79-8a08-885e43bca072" testId="5d9f4e11-5daa-8fa6-1d4b-361561393899" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.SameInstantCommitsKeepTheirDistinctDialogueStatesAndPreparedHead" computerName="mac" duration="00:00:00.0099144" startTime="2026-09-11T13:14:05.8537240-05:00" endTime="2026-09-11T13:14:05.8636750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa3021bf-7b10-4f79-8a08-885e43bca072" />
+    <UnitTestResult executionId="3a5aa11c-bec8-4d16-bc0c-7e5c2feb173a" testId="be370884-e4a2-dd16-02e7-98543e7c60c9" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;DELETE FROM world_occupied_identity&quot;)" computerName="mac" duration="00:00:30.0870352" startTime="2026-09-11T13:13:35.6555070-05:00" endTime="2026-09-11T13:14:05.7463330-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a5aa11c-bec8-4d16-bc0c-7e5c2feb173a">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs:line 295
+   at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs:line 128
+   at InvokeStub_RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2a0839d7-4dce-4422-a1a9-a65d76d8040f" testId="609002f5-de41-06e5-adf3-c1948fa74b3d" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.RejectedActionBoundaryIsReconstructedWithoutChangingItsTerminalReceipt" computerName="mac" duration="00:00:00.0438627" startTime="2026-09-11T13:14:05.7766570-05:00" endTime="2026-09-11T13:14:05.8205730-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a0839d7-4dce-4422-a1a9-a65d76d8040f" />
+    <UnitTestResult executionId="5f62f035-e41b-43ef-a3b9-0d57065b2809" testId="d2e412a5-ca82-1968-81d9-0a37b1b72bca" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.UncertainCommitAndDisposedAuthorityCannotPrepareHistory" computerName="mac" duration="00:00:00.0168538" startTime="2026-09-11T13:14:05.7579480-05:00" endTime="2026-09-11T13:14:05.7753720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f62f035-e41b-43ef-a3b9-0d57065b2809" />
+    <UnitTestResult executionId="d79e9ffe-dd6a-4e3e-b86e-285ac14c34d8" testId="320043cc-1c3f-c0c5-b5d5-77c21cdb463a" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;DELETE FROM world_checkpoints&quot;)" computerName="mac" duration="00:00:30.0944800" startTime="2026-09-11T13:12:35.5043170-05:00" endTime="2026-09-11T13:13:05.6075530-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d79e9ffe-dd6a-4e3e-b86e-285ac14c34d8">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs:line 295
+   at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs:line 128
+   at InvokeStub_RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f6ccbec5-04a2-4d64-9512-d1d751eeaee9" testId="19fe0bb4-56b5-87dc-c882-cbe807fdd77d" testName="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;UPDATE world_commits SET outcomes=x'01' WHERE sequ&quot;···)" computerName="mac" duration="00:00:30.0301407" startTime="2026-09-11T13:13:05.6125490-05:00" endTime="2026-09-11T13:13:35.6499810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f6ccbec5-04a2-4d64-9512-d1d751eeaee9">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs:line 295
+   at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs:line 128
+   at InvokeStub_RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.RejectedActionBoundaryIsReconstructedWithoutChangingItsTerminalReceipt" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="609002f5-de41-06e5-adf3-c1948fa74b3d">
+      <Execution id="2a0839d7-4dce-4422-a1a9-a65d76d8040f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="RejectedActionBoundaryIsReconstructedWithoutChangingItsTerminalReceipt" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.GenesisAndInvalidFutureQueriesCannotChangeOrDisableTheAuthority" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1b11364d-15cd-044d-958e-906ae281d378">
+      <Execution id="ad417927-ded4-41ef-8cc4-c855faeaa81b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="GenesisAndInvalidFutureQueriesCannotChangeOrDisableTheAuthority" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.SameInstantCommitsKeepTheirDistinctDialogueStatesAndPreparedHead" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5d9f4e11-5daa-8fa6-1d4b-361561393899">
+      <Execution id="aa3021bf-7b10-4f79-8a08-885e43bca072" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="SameInstantCommitsKeepTheirDistinctDialogueStatesAndPreparedHead" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;DELETE FROM world_occupied_identity&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="be370884-e4a2-dd16-02e7-98543e7c60c9">
+      <Execution id="3a5aa11c-bec8-4d16-bc0c-7e5c2feb173a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;UPDATE world_command_outcomes SET receipt=x'01'&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="14fd3e47-6506-7443-75e2-520ba202f026">
+      <Execution id="be1e8241-edf0-4bf1-94b3-c7a92e3cb735" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.UncertainCommitAndDisposedAuthorityCannotPrepareHistory" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d2e412a5-ca82-1968-81d9-0a37b1b72bca">
+      <Execution id="5f62f035-e41b-43ef-a3b9-0d57065b2809" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="UncertainCommitAndDisposedAuthorityCannotPrepareHistory" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EveryRecordedBoundaryMatchesOriginalBytesInReverseOrderAfterRestart" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="377103bd-c1da-f370-0f40-733c0531756e">
+      <Execution id="925bf99d-6942-451f-80fe-c7ed27411aa8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="EveryRecordedBoundaryMatchesOriginalBytesInReverseOrderAfterRestart" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;UPDATE world_commits SET outcomes=x'01' WHERE sequ&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="19fe0bb4-56b5-87dc-c882-cbe807fdd77d">
+      <Execution id="f6ccbec5-04a2-4d64-9512-d1d751eeaee9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: &quot;DELETE FROM world_checkpoints&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="320043cc-1c3f-c0c5-b5d5-77c21cdb463a">
+      <Execution id="d79e9ffe-dd6a-4e3e-b86e-285ac14c34d8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests" name="EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="377103bd-c1da-f370-0f40-733c0531756e" executionId="925bf99d-6942-451f-80fe-c7ed27411aa8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="14fd3e47-6506-7443-75e2-520ba202f026" executionId="be1e8241-edf0-4bf1-94b3-c7a92e3cb735" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b11364d-15cd-044d-958e-906ae281d378" executionId="ad417927-ded4-41ef-8cc4-c855faeaa81b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5d9f4e11-5daa-8fa6-1d4b-361561393899" executionId="aa3021bf-7b10-4f79-8a08-885e43bca072" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="be370884-e4a2-dd16-02e7-98543e7c60c9" executionId="3a5aa11c-bec8-4d16-bc0c-7e5c2feb173a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="609002f5-de41-06e5-adf3-c1948fa74b3d" executionId="2a0839d7-4dce-4422-a1a9-a65d76d8040f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d2e412a5-ca82-1968-81d9-0a37b1b72bca" executionId="5f62f035-e41b-43ef-a3b9-0d57065b2809" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="320043cc-1c3f-c0c5-b5d5-77c21cdb463a" executionId="d79e9ffe-dd6a-4e3e-b86e-285ac14c34d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="19fe0bb4-56b5-87dc-c882-cbe807fdd77d" executionId="f6ccbec5-04a2-4d64-9512-d1d751eeaee9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="5" failed="4" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.42]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.69]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.87]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:31.16]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:00:31.16]       Stack Trace:
+[xUnit.net 00:00:31.16]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:00:31.16]            at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+[xUnit.net 00:00:31.16]            at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+[xUnit.net 00:00:31.16]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:00:31.16]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:00:31.16]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+[xUnit.net 00:00:31.16]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+[xUnit.net 00:00:31.16]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs(295,0): at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql)
+[xUnit.net 00:00:31.16]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs(128,0): at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation)
+[xUnit.net 00:00:31.16]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:31.16]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:01:01.26]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:01:01.26]       Stack Trace:
+[xUnit.net 00:01:01.26]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:01:01.26]            at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+[xUnit.net 00:01:01.26]            at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+[xUnit.net 00:01:01.26]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:01:01.26]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:01:01.26]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+[xUnit.net 00:01:01.26]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+[xUnit.net 00:01:01.26]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs(295,0): at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql)
+[xUnit.net 00:01:01.26]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs(128,0): at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation)
+[xUnit.net 00:01:01.26]            at InvokeStub_RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(Object, Span`1)
+[xUnit.net 00:01:01.26]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:01:31.31]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:01:31.31]       Stack Trace:
+[xUnit.net 00:01:31.31]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:01:31.31]            at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+[xUnit.net 00:01:31.31]            at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+[xUnit.net 00:01:31.31]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:01:31.31]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:01:31.31]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+[xUnit.net 00:01:31.31]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+[xUnit.net 00:01:31.31]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs(295,0): at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql)
+[xUnit.net 00:01:31.31]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs(128,0): at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation)
+[xUnit.net 00:01:31.31]            at InvokeStub_RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(Object, Span`1)
+[xUnit.net 00:01:31.31]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:02:01.40]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:02:01.40]       Stack Trace:
+[xUnit.net 00:02:01.40]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:02:01.40]            at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+[xUnit.net 00:02:01.40]            at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+[xUnit.net 00:02:01.40]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:02:01.40]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:02:01.40]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+[xUnit.net 00:02:01.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs(295,0): at OpenFantasy.Hosting.Tests.WorldStorage.StorageFiles.Execute(String sql)
+[xUnit.net 00:02:01.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RecordedWorldHistoryTests.cs(128,0): at OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(String mutation)
+[xUnit.net 00:02:01.41]            at InvokeStub_RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(Object, Span`1)
+[xUnit.net 00:02:01.41]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:02:01.53]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-11T13:12:35.5139530-05:00">
+        <Text>[xUnit.net 00:00:31.16]     OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: "UPDATE world_command_outcomes SET receipt=x'01'") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-11T13:13:05.6222970-05:00">
+        <Text>[xUnit.net 00:01:01.26]     OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: "DELETE FROM world_checkpoints") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-11T13:13:35.6621550-05:00">
+        <Text>[xUnit.net 00:01:31.30]     OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: "UPDATE world_commits SET outcomes=x'01' WHERE sequ"···) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-11T13:14:05.7584410-05:00">
+        <Text>[xUnit.net 00:02:01.40]     OpenFantasy.Hosting.Tests.WorldStorage.RecordedWorldHistoryTests.EvenGenesisInspectionRejectsCorruptLaterEvidenceAndRequiresRecovery(mutation: "DELETE FROM world_occupied_identity") [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

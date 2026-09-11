@@ -8,7 +8,8 @@ the next task, rather than reloading the research archive and every historical q
 
 1. [Implementation instructions](../AGENTS.md): ownership, stable `OpenFantasy` runtime names,
    modular object-oriented C#, preservation and verification discipline.
-2. [Runtime setup and controls](../Runtime/README.md) when building/running; the
+2. [Runtime setup and controls](../Runtime/README.md) when building/running;
+   [recorded history](p01/recorded-history/README.md) when extending reconstruction/recovery; the
    [inventory packet](p02/inventory-inspection/README.md) and [review](p02/inventory-inspection/REVIEW.md)
    when extending that behavior or investigating its evidence.
 3. [Living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md) and [partial coverage](ui-management/COVERAGE.json)
@@ -20,7 +21,14 @@ the next task, rather than reloading the research archive and every historical q
 
 ## Current implementation and evidence
 
-Code `3eed739` adds native pack inspection to the persistent authored farm. The connected loop
+Code `913a5f2` adds privileged exact recorded-commit reconstruction; `1d26210` fixes the native
+quest probe's movement-release/Talk race. History queries retain the exact old profile, state and
+calendar, distinguish same-date commits and pin the verified source head without changing it.
+This is a synchronous full-journal correctness baseline, not arbitrary-millisecond preparation,
+generated prehistory, branch travel or a qualified streaming service. The operator is documented
+in the Runtime README. Follow the linked packet before extending it or optimizing recovery.
+
+Earlier code `3eed739` adds native pack inspection to the persistent authored farm. The connected loop
 contains movement, Wren's dialogue, finite gathering, ration crafting, a funded six-wood quest,
 progression/reward and Wren's routed 200-work-action construction of a physical seedling guard.
 This is one specific inhabited-place loop, not a general NPC society or complete construction system.
@@ -32,11 +40,19 @@ or move goods. I/View/Pack opens it; Escape/I/View/B/Close closes only that laye
 scheduler status, preserves an existing pause and requires held navigation to release before walking.
 A running world continues. Current stock descriptions and target selection are bounded farm features.
 
-The [latest full regression](p02/inventory-inspection/qualification/final-verification.json) passes
-**544 Core + 302 Hosting = 846 tests**, zero skips, 22 independent fixtures, 68 host inspections and
-all retained native journeys. All 679 original inputs stayed unchanged; three generated UIDs bring
-final hashes to 682. Nine native input checks and twelve offer/target/pack checks pass. Twelve rendered
-960×540 states are retained. These are local Debug/native results, not new Release/export or device proofs.
+The [latest qualification](p01/recorded-history/qualification/verification-summary.json) retains
+**544 Core + 311 Hosting = 855 tests**, zero skips, on the final rebuilt binaries. It combines
+successful integration checks (22 fixtures, 68 host inspections and native history/input/offer/
+lifecycle/gather/production) with targeted quest/construction followups after the probe correction.
+This is explicitly not one uninterrupted full-verifier pass. Only the probe and host diagnostic
+changed after that integrated run; all 685 final inputs are hashed. No new rendered, Release/export
+or device review is claimed. Earlier twelve rendered pack states belong to their inventory checkpoint.
+
+The [history packet](p01/recorded-history/README.md) preserves two failed integration attempts.
+One Godot import emitted an editor-settings initialization error; its cause remains unconfirmed
+despite a clean later import. The quest failure is confirmed from saved command/receipt and exact
+prior state: expected player revision 147, actual 148. The probe now waits for stable arrival and
+matching displayed offers before its one press. No retry, timeout or authority rule was relaxed.
 
 An [earlier rendered travel timeout](p02/inventory-inspection/qualification/failures/inventory-rendered-final.json)
 remains retained. Its save stopped after one harvest and 170 steps before pack testing. Focus/readiness

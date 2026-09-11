@@ -1,0 +1,67 @@
+{
+  "status": "confirmed",
+  "scope": "Native quest Talk failure",
+  "databaseSha256": "d7b6653dc512862a79931d1e6bf35edcb8f07d01807b07e04f568f98c510b524",
+  "commandSha256": "2879e545792d4997c970aaf61f612cd25f93dfdf42bf7679d3ddd988a926dbe1",
+  "receiptSha256": "15b0488be76f8bb7e24595e01e312d778f18a154b39d5f374ebaa1164d07cd19",
+  "rejectedAtCommit": 157,
+  "expectedPlayerRevision": 147,
+  "actualPlayerRevision": 148,
+  "receiptStatus": "Rejected",
+  "rejection": "RevisionConflict",
+  "beforeStateHash": "a2b5025ed54322690090da258ba288e92c5d60ce24218bcc2305082b3443de46",
+  "recordedState": {
+    "Contract": "recorded-world-state-v1",
+    "WorldId": "a44c6017d1916cac5b21d2ae4273f184",
+    "BranchId": "2b43f3d522200a69157998759dfe5345",
+    "SourceHeadRevision": 256,
+    "SourceHeadHash": "2e9f735e4057d93cf889a5a21ebdb38b6450ebfa4ece65ef918142421bfbe8ed",
+    "RecordedRevision": 156,
+    "StateHash": "a2b5025ed54322690090da258ba288e92c5d60ce24218bcc2305082b3443de46",
+    "ProfileVersion": 4,
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 32679000
+    },
+    "AdvancingSteps": 155,
+    "HasReadingHold": false,
+    "Actors": [
+      {
+        "ActorId": "a2eedfbb4fd2f70f36253ba8c72e9d30",
+        "DisplayName": "Traveler",
+        "Position": {
+          "X": 26400,
+          "Y": 82976,
+          "Z": 256,
+          "Cell": {
+            "X": 103,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 148,
+        "SourceItemQuantity": 9
+      },
+      {
+        "ActorId": "f61e90650ddab821341dd6e0b4bb2c33",
+        "DisplayName": "Wren",
+        "Position": {
+          "X": 25984,
+          "Y": 82560,
+          "Z": 256,
+          "Cell": {
+            "X": 101,
+            "Y": 322,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 48,
+        "SourceItemQuantity": 0
+      }
+    ],
+    "SourceLotCount": 3,
+    "CraftedLotCount": 2,
+    "StructureCount": 0
+  },
+  "saveBytesUnchanged": true
+}

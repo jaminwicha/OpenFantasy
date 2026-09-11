@@ -1,18 +1,18 @@
 # Implementation progress
 
-The latest [inventory inspection increment](p02/inventory-inspection/README.md), code `3eed739`,
-adds a native pack screen to the actual farm loop. I/View/Pack opens it; hover, discrete navigation
-and item selection inspect real tools, supplies and crafted outputs. Closing preserves the existing
-pause and blocks held input from leaking into field actions. The screen displays the local host's
-running/waiting/paused status. A running world continues while the player inspects the pack.
+The latest [recorded-history increment](p01/recorded-history/README.md), code `913a5f2` and `1d26210`,
+reconstructs exact committed world states without moving the live head or rewriting the save.
+It preserves distinct same-date commits and old profiles across upgrades. The privileged host
+operator supports the first recorded-history proof; arbitrary interior times, generated prehistory,
+branch travel and production preparation latency remain required work.
 
-The [full regression](p02/inventory-inspection/qualification/final-verification.json) passes
-**846 tests**, zero skips, all 22 independent fixtures, 68 host inspections and all retained native
-journeys. Twelve offer/target/pack checks and twelve rendered 960×540 states are retained.
-The [local review](p02/inventory-inspection/REVIEW.md) preserves an earlier travel timeout whose
-precise cause remains unconfirmed; a later pass does not erase it. No timeout or assertion was relaxed.
+The [qualification](p01/recorded-history/qualification/verification-summary.json) retains **855 tests**,
+zero skips, and combines successful integration evidence with targeted native quest/construction
+followups. It is not a single uninterrupted full-verifier pass. A saved revision conflict identified
+a quest-probe movement/Talk race, now corrected without retries or relaxed authority. A prior editor
+startup error and the older inventory travel timeout retain their unconfirmed-cause status.
 
-This is a P02 interface prerequisite, not a completed inventory system or phase. All 181 baseline
+This is a P01 history prerequisite, not a completed temporal system or phase. All 181 baseline
 requirements remain retained, all 14 full UI cases remain unrun, and full P00/P01/P02 and production
 gates remain open. Item icons/art, equipment/use/transfer, rich management, physical devices,
 representative performance, desktop exports, co-op/time and human acceptance need their own proofs.
@@ -26,6 +26,7 @@ local lead; a new Fable assignment requires explicit approval. See [milestone di
 
 ## Retained earlier work
 
+- [Native inventory inspection](p02/inventory-inspection/README.md): 846-test checkpoint and twelve rendered states; the farm retains its scoped pack controls.
 - [Explicit target selection](p01/target-selection/README.md): 838-test checkpoint.
 - [Captured action offers](p01/action-offers/README.md): 832-test checkpoint and independent review dispositions.
 - [Input-focus foundation](p01/input-focus/README.md): 825-test checkpoint and measured delegation friction.
