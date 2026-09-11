@@ -37,6 +37,9 @@ public sealed class QuestUpgradeTests(ITestOutputHelper output)
             Assert.Equal(before.Revision + 1, world.Revision);
             Assert.Equal(before.AdvancingSteps, world.AdvancingSteps);
             Assert.Equal(before.Calendar, world.Calendar);
+            Assert.Equal(WorldSnapshotCodec.Encode(before),
+                WorldSnapshotCodec.Encode(authority.ReadRecordedStateForHost(before.Revision).State));
+            Assert.Equal(world.ContentHash, authority.ReadRecordedStateForHost(world.Revision).StateHash);
             Assert.Equal(before.Production!.ContentHash, world.Production!.ContentHash);
             Assert.Equal(before.Gathering!.ContentHash, world.Gathering!.ContentHash);
             Assert.Equal(before.Inventory.Custody.Lots, world.Inventory.Custody.Lots);

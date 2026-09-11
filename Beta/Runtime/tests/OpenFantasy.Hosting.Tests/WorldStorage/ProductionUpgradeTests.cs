@@ -57,6 +57,8 @@ public sealed class ProductionUpgradeTests(ITestOutputHelper output)
             Assert.Equal(current.Revision + 1, candidate.Revision);
             Assert.Equal(current.AdvancingSteps, candidate.AdvancingSteps);
             Assert.Equal(current.Calendar, candidate.Calendar);
+            Assert.Equal(before, WorldSnapshotCodec.Encode(upgraded.ReadRecordedStateForHost(current.Revision).State));
+            Assert.Equal(candidate.ContentHash, upgraded.ReadRecordedStateForHost(candidate.Revision).StateHash);
             Assert.Equal(current.Inventory.ContentHash, candidate.Inventory.ContentHash);
             Assert.Equal(current.Gathering!.ContentHash, candidate.Gathering!.ContentHash);
             var oldFields = new WorldSnapshot(candidate.Inventory, candidate.Space, candidate.Residents,

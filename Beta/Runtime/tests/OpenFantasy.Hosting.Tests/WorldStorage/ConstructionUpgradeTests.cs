@@ -25,6 +25,9 @@ public sealed class ConstructionUpgradeTests
             Assert.Equal(before.Revision + 1, state.Revision);
             Assert.Equal(before.AdvancingSteps, state.AdvancingSteps);
             Assert.Equal(before.Calendar, state.Calendar);
+            Assert.Equal(WorldSnapshotCodec.Encode(before),
+                WorldSnapshotCodec.Encode(authority.ReadRecordedStateForHost(before.Revision).State));
+            Assert.Equal(state.ContentHash, authority.ReadRecordedStateForHost(state.Revision).StateHash);
             // Reopening reconstructs immutable class instances; compare every public value, not object identity.
             Assert.Equivalent(before.Residents, state.Residents, strict: true);
             Assert.Equivalent(before.Dialogues, state.Dialogues, strict: true);

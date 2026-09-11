@@ -10,11 +10,21 @@ namespace OpenFantasy.Hosting.Worlds;
 /// </summary>
 internal sealed class WorldJournalRecovery
 {
-    internal RecoveredWorld Recover(WorldDatabase database)
+    internal RecoveredWorld Recover(WorldDatabase database) => VerifyAndReplay(database, null).Head;
+
+    internal RecordedWorldState ReadRecordedState(WorldDatabase database, ulong revision)
+    {
+        ReplayedWorld trace = VerifyAndReplay(database, revision);
+        WorldSnapshot selected = trace.Selected
+            ?? throw new ArgumentOutOfRangeException(nameof(revision), "The requested commit is not in the recorded world.");
+        return new RecordedWorldState(selected, trace.Head.State.Revision, trace.Head.StateHash);
+    }
+
+    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision)
     {
         try
         {
-            return Replay(database);
+            return Replay(database, selectedRevision);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or FormatException or OverflowException)
         {
@@ -22,7 +32,7 @@ internal sealed class WorldJournalRecovery
         }
     }
 
-    private static RecoveredWorld Replay(WorldDatabase database)
+    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision)
     {
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
@@ -35,6 +45,7 @@ internal sealed class WorldJournalRecovery
             throw new InvalidDataException("A production, quest or construction genesis requires its declared world schema.");
         }
         WorldSnapshot state = genesis;
+        WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
         byte[] stateBytes = genesisBytes;
         ContentHash stateHash = ContentHash.Compute(stateBytes);
         var usage = new WorldJournalUsage(0, 0, 0, 0, 0);
@@ -88,6 +99,10 @@ internal sealed class WorldJournalRecovery
                 throw new InvalidDataException("The world contains an unscheduled checkpoint.");
             }
             state = expected.Candidate;
+            if (state.Revision == selectedRevision)
+            {
+                selected = state;
+            }
             stateBytes = expected.CandidateBytes;
             stateHash = expected.Stored.AfterHash;
             usage = advance.Usage;
@@ -108,7 +123,7 @@ internal sealed class WorldJournalRecovery
         }
         VerifyCommandTable(database, commands);
         VerifyIdentityTable(database, identities);
-        return new RecoveredWorld(genesis, state, stateHash, usage);
+        return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected);
     }
 
     private static ExpectedJournalEntry PrepareEntry(int schemaVersion, StoredWorldCommit stored,
@@ -184,6 +199,8 @@ internal sealed class WorldJournalRecovery
             throw new InvalidDataException("The retained world-identity table is incomplete.");
         }
     }
+
+    private sealed record ReplayedWorld(RecoveredWorld Head, WorldSnapshot? Selected);
 }
 
 internal sealed record ExpectedJournalEntry(WorldSnapshot Candidate, byte[] CandidateBytes, StoredWorldCommit Stored,

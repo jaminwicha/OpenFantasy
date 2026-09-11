@@ -223,27 +223,37 @@ public sealed class WorldAuthorityServiceTests(ITestOutputHelper output)
         using var files = new StorageFiles();
         WorldSnapshot state = Genesis();
         int stateBytes = WorldSnapshotCodecV1.Encode(state).Length;
+        byte[]? beforeCheckpoint = null;
         var elapsed = Stopwatch.StartNew();
         using (SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(files.Path, state))
         {
             for (ulong step = 0; step < 6000; step++)
             {
                 state = authority.Commit(Step(state, cause: 10_000 + step)).Candidate;
+                if (state.Revision == 5999)
+                {
+                    beforeCheckpoint = WorldSnapshotCodec.Encode(state);
+                }
             }
             Assert.Equal(6000UL, authority.InspectForHost().Journal.LastCheckpointSequence);
             Assert.Equal(6000UL, authority.InspectForHost().Journal.LastCheckpointSteps);
         }
         double commitMilliseconds = elapsed.Elapsed.TotalMilliseconds;
         elapsed.Restart();
+        double recoveryMilliseconds;
+        double historyMilliseconds;
         using (SqliteWorldAuthority recovered = SqliteWorldAuthority.OpenExisting(files.Path))
         {
             Assert.Equal(WorldSnapshotCodecV1.Encode(state), WorldSnapshotCodecV1.Encode(recovered.InspectForHost().State));
             Assert.Equal(6000UL, recovered.InspectForHost().Journal.LastCheckpointSequence);
+            recoveryMilliseconds = elapsed.Elapsed.TotalMilliseconds;
+            elapsed.Restart();
+            Assert.Equal(beforeCheckpoint, WorldSnapshotCodec.Encode(recovered.ReadRecordedStateForHost(5999).State));
+            historyMilliseconds = elapsed.Elapsed.TotalMilliseconds;
         }
-        double recoveryMilliseconds = elapsed.Elapsed.TotalMilliseconds;
         long fileBytes = new FileInfo(files.Path).Length;
-        output.WriteLine("Small-fixture full replay: commits=6000; genesisBytes={0}; commitMilliseconds={1:F3}; recoveryMilliseconds={2:F3}; databaseBytes={3}",
-            stateBytes, commitMilliseconds, recoveryMilliseconds, fileBytes);
+        output.WriteLine("Small-fixture full replay: commits=6000; genesisBytes={0}; commitMilliseconds={1:F3}; recoveryMilliseconds={2:F3}; databaseBytes={3}; historyMilliseconds={4:F3}",
+            stateBytes, commitMilliseconds, recoveryMilliseconds, fileBytes, historyMilliseconds);
         files.Execute("DELETE FROM world_checkpoints WHERE sequence!=x'0000000000000000'");
         Assert.Throws<InvalidDataException>(() => SqliteWorldAuthority.OpenExisting(files.Path));
     }

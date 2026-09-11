@@ -12,6 +12,7 @@ internal sealed class HostApplication
     private readonly TextWriter _output;
     private readonly ContractInspector _contracts = new();
     private readonly LocalWorldOperator _worlds = new();
+    private readonly RecordedWorldOperator _history = new();
 
     public HostApplication(TextWriter output)
     {
@@ -32,6 +33,7 @@ internal sealed class HostApplication
                 ["--inspect-package", var manifest, var payload] => _contracts.InspectPackage(manifest, payload),
                 ["--create-world", var database, var genesis] => _worlds.Create(database, genesis),
                 ["--inspect-world", var database] => _worlds.Inspect(database),
+                ["--inspect-recorded-world", var database, var revision] => _history.Inspect(database, revision),
                 ["--execute-local-command", var database, var command, var principal, var session] =>
                     _worlds.Execute(database, command, principal, session),
                 ["--probe-commit-crash", var database, var command, var principal, var session, var boundary] =>
@@ -64,8 +66,9 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>");
         _output.WriteLine("       OpenFantasy.Host --create-world <world.sqlite> <genesis.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-world <world.sqlite>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-recorded-world <composed-world.sqlite> <commit-revision>");
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
-        _output.WriteLine("Only local counted-domain authority is available; network sessions and the playable world are pending.");
+        _output.WriteLine("These commands require exclusive local database access; they do not authenticate network clients.");
     }
 
     private static string CreateFoundationReport()

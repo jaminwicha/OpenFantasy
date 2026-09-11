@@ -5,6 +5,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import sqlite3
 import subprocess
 import uuid
 
@@ -50,6 +51,7 @@ def main():
             raise RuntimeError("The handover or conversation completion did not match its admitted action")
         if initial["Actors"] == final["Actors"]:
             raise RuntimeError("The movement adapter produced no committed presence changes")
+        report["recordedHistory"] = check_recorded_history(root, args.dotnet, database, env)
         if args.rendered:
             for suffix in ("dialogue", "final"):
                 if not scene_report.with_suffix("." + suffix + ".png").is_file():
@@ -65,6 +67,44 @@ def main():
         output.write_text(json.dumps(report, indent=2) + "\n")
     print("native farm: " + report["status"], flush=True)
     return 0 if report["status"] == "passed" else 1
+
+
+def check_recorded_history(root, dotnet, database, env):
+    """Inspect the same closed native save through the operator; never alter a gameplay save."""
+    before = hashlib.sha256(database.read_bytes()).hexdigest()
+    connection = sqlite3.connect(database.as_uri() + "?mode=ro", uri=True)
+    try:
+        head_bytes, head_hash = connection.execute("SELECT sequence,hash FROM world_head").fetchone()
+        head = int.from_bytes(head_bytes, "big")
+        genesis_hash = connection.execute("SELECT hash FROM world_genesis").fetchone()[0].hex()
+        first_hash = connection.execute("SELECT after_hash FROM world_commits ORDER BY sequence LIMIT 1").fetchone()[0].hex()
+    finally:
+        connection.close()
+    checks = []
+    host = root / "src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll"
+    for revision, expected_hash in ((head, head_hash.hex()), (0, genesis_hash), (1, first_hash), (head, head_hash.hex())):
+        command = [str(dotnet), str(host), "--inspect-recorded-world", str(database), str(revision)]
+        result = subprocess.run(command, cwd=root, env=env, capture_output=True, text=True, timeout=60)
+        if result.returncode:
+            raise RuntimeError("Recorded history inspection failed: " + result.stdout + result.stderr)
+        observed = json.loads(result.stdout)
+        checks.append(observed)
+        if (observed.get("Contract") != "recorded-world-state-v1"
+                or observed.get("RecordedRevision") != revision or observed.get("StateHash") != expected_hash
+                or observed.get("SourceHeadRevision") != head or observed.get("SourceHeadHash") != head_hash.hex()):
+            raise RuntimeError("Recorded history disagreed with the exact committed boundary")
+    if checks[0] != checks[-1]:
+        raise RuntimeError("Reverse historical inspection changed the prepared state")
+    for invalid in (str(head + 1), "-1", "18446744073709551616"):
+        result = subprocess.run([str(dotnet), str(host), "--inspect-recorded-world", str(database), invalid],
+                                cwd=root, env=env, capture_output=True, text=True, timeout=60)
+        if result.returncode != 1 or not result.stdout.startswith("Inspection failed:"):
+            raise RuntimeError("Invalid historical boundary was not rejected by the operator")
+    after = hashlib.sha256(database.read_bytes()).hexdigest()
+    if before != after:
+        raise RuntimeError("Historical inspection changed the native save bytes")
+    return dict(status="passed", checks=checks, invalidBoundariesRejected=3, databaseSha256Before=before,
+                databaseSha256After=after)
 
 
 if __name__ == "__main__":

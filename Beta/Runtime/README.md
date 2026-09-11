@@ -74,6 +74,28 @@ Names, persisted tags and namespaces are stable product/domain identifiers. Temp
 
 ## Local durable authority
 
+The composed farm world now supports privileged reconstruction at an **exact recorded commit**:
+
+```sh
+dotnet run --project src/OpenFantasy.Host -- --inspect-recorded-world /absolute/farm.sqlite 125
+```
+
+Commit zero returns the original genesis; each later revision returns its actual admitted profile,
+calendar, state hash, actor positions and stock summary. Different commits at the same calendar
+instant remain distinct, including dialogue holds and profile upgrades. The returned source-head
+revision/hash pins the preparation; later commits do not change an already returned state.
+`SqliteWorldAuthority.ReadRecordedStateForHost` supplies the complete immutable snapshot to trusted
+host code. This is privileged operator access, not a player visibility feed or a travel command.
+
+Close the game using that database first: inspection respects exclusive writer ownership. Queries
+verify the complete bounded journal, checkpoints, receipts and identity registry through the head;
+they neither advance simulation nor rewrite the save. This synchronous correctness baseline is
+linear in retained commits and must stay outside frame/simulation callbacks. Accelerated checkpoint
+queries, arbitrary interior milliseconds and partial exposure, generated prehistory, branch ancestry
+and playable travel remain required work. This interface does not round an unsupported time to a
+nearby commit or satisfy the full time-travel gate. The native farm check also exercises this operator
+against its own disposable save and verifies unchanged database bytes.
+
 These commands require local operator access to a database and canonical accepted input files. Principal/session arguments describe that operator's trusted local delivery context; they do not authenticate remote clients.
 
 ```sh

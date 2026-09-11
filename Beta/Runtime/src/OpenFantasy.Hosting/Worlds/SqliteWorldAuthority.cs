@@ -239,6 +239,38 @@ public sealed class SqliteWorldAuthority : IDisposable
         }
     }
 
+    /// <summary>
+    /// Reconstructs an exact recorded commit without moving the live head or replaying side effects.
+    /// Privileged synchronous operator work: it verifies the complete bounded journal under the
+    /// writer lock, so it must not run on a client frame or latency-sensitive simulation callback.
+    /// Arbitrary interior instants, generated prehistory and branch traversal are not provided here.
+    /// </summary>
+    public RecordedWorldState ReadRecordedStateForHost(ulong revision)
+    {
+        lock (_gate)
+        {
+            EnsureAvailable();
+            if (revision > _state.Revision)
+            {
+                throw new ArgumentOutOfRangeException(nameof(revision), "The requested commit exceeds the current recorded head.");
+            }
+            try
+            {
+                RecordedWorldState recorded = new WorldJournalRecovery().ReadRecordedState(_database, revision);
+                if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
+                {
+                    throw new InvalidDataException("Historical reconstruction does not match the pinned live head.");
+                }
+                return recorded;
+            }
+            catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
+            {
+                _requiresRecovery = true;
+                throw;
+            }
+        }
+    }
+
     private void EnsureAvailable()
     {
         ObjectDisposedException.ThrowIf(_disposed, this);
