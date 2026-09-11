@@ -1,0 +1,20 @@
+{
+  "Kind": "native-farm-walkthrough-v1",
+  "Stage": "reopen",
+  "Status": "passed",
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "Failure": null,
+  "ProbeStage": 0,
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "HasPendingAction": false,
+  "HasReadingHold": false,
+  "TalkOfferAtPress": null,
+  "Initial": "{\u0022World\u0022:\u0022532f47db8fb5de95dfc8560e9a0ef032\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:32457600,\u0022Wood\u0022:2,\u0022StorageRevision\u0022:1,\u0022Actors\u0022:[{\u0022Id\u0022:\u0022c7d63dbcc418014f5b87c36acea65ff6\u0022,\u0022DisplayName\u0022:\u0022Wren\u0022,\u0022X\u0022:27008,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:16},{\u0022Id\u0022:\u0022e378e9407e63d212602d16a1540acd3b\u0022,\u0022DisplayName\u0022:\u0022Traveler\u0022,\u0022X\u0022:26560,\u0022Y\u0022:83008,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:28}],\u0022Dialogue\u0022:null}",
+  "Final": "{\u0022World\u0022:\u0022532f47db8fb5de95dfc8560e9a0ef032\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:32457600,\u0022Wood\u0022:2,\u0022StorageRevision\u0022:1,\u0022Actors\u0022:[{\u0022Id\u0022:\u0022c7d63dbcc418014f5b87c36acea65ff6\u0022,\u0022DisplayName\u0022:\u0022Wren\u0022,\u0022X\u0022:27008,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:16},{\u0022Id\u0022:\u0022e378e9407e63d212602d16a1540acd3b\u0022,\u0022DisplayName\u0022:\u0022Traveler\u0022,\u0022X\u0022:26560,\u0022Y\u0022:83008,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:28}],\u0022Dialogue\u0022:null}",
+  "Checks": [
+    "Exact paused public view restored after native process restart."
+  ],
+  "DurationMilliseconds": 262
+}

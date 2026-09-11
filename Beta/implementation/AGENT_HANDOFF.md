@@ -17,30 +17,30 @@ linked packets. The preserved specification is authoritative. Read only task-rel
 
 ## Latest increment
 
-[Finite watershed preparation](p01/watershed-preparation/README.md) adds a portable C# macro
-candidate: explicit seed/scope, bounded grid/outlet, deterministic minimum spill routes, acyclic
-plateau ranks, contribution counts, substrate/formation identities and identical shared faces.
-Immutable windows and a versioned archive/host inspector expose the result. Maximum preparation
-is 4,096 columns; that is a work bound, not the world's size. The farm does not consume it yet.
+[Admitted watershed persistence](p01/watershed-admission/README.md) adds profile six: one immutable
+prepared basin retained inside a complete construction world. Explicit fresh-genesis admission pins
+its hash and exact world/branch/realm. Macro identities cannot alias actors, terrain, items or command
+causes. Ordinary actions, construction, dialogue holds and exact history preserve the prepared facts
+through the existing SQLite authority. Profiles one through five and the default farm are unchanged.
 
-[Qualification](p01/watershed-preparation/qualification/verification-summary.json) retains 553 Core
-and 317 Hosting tests (870 total, zero skips), independent Python watershed vectors, 74 real host
-inspections and native foundation/farm evidence. The integrated run failed on a stale Talk command
-in the legacy farm probe: expected player revision 29, actual 30. The corrected probe waits for
-stationary arrival and matching presented revisions before one press; no action retry or timeout
-extension. Only this probe changed after the broad tests; all five non-client/test binaries remained
-identical. The original failure/save and the separate corrected native run remain recorded.
-This is bounded combined evidence, not an uninterrupted full-verifier pass or a rendered review.
+[Qualification](p01/watershed-admission/qualification/verification-summary.json) records the final
+bounded regression: 883 tests (560 Core + 323 Hosting, zero skips), 74 host inspections,
+actual host process kills before/after commit, exact restart/history, independent
+outer archive/pin checks and native foundation/farm evidence. The packet retains initial test failures
+and their corrections. Its [critic review](p01/watershed-admission/REVIEW.md) found no blocking defect;
+a narrow recovery-limit diagnostic fix preserves the existing hard stop. No full-verifier, production
+performance, rendering, device or phase acceptance is inferred.
 
-One [native critic](p01/watershed-preparation/REVIEW.md) found duplicate width-one neighbors in
-the independent Python reference. Deduplication, a thin-grid vector and exact boundary counts address
-it. No scoped runtime defect remained. This review does not close a full feasibility gate.
+[Watershed preparation](p01/watershed-preparation/README.md), `974e0d4`, provides deterministic spill
+routes, plateau ranks, contribution counts, stable IDs and immutable shared-face windows. Its original
+Python thin-grid correction and legacy farm-probe revision conflict remain in that packet. The macro
+candidate is now retained in an explicit new world, but is still not consumed by local terrain.
 
-Next geography dependencies: authoritative candidate admission/persistence and compatible province/
-basin composition; then explicit mapping into local terrain and conservative resource/fluid custody.
-Do not regenerate published terrain from changed rules, mistake catchment counts for physical water,
-or treat internal shared faces as proof of cross-basin seams. See the packet's remaining work and
-[geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md) before extending generation.
+Next geography dependencies: compatible macro province/basin composition and finite downstream
+contracts, followed by admitted macro-to-local mapping and conservative resource/fluid custody.
+Dynamic admission/migration needs its own causal journal contract. Never reroll established facts,
+interpret catchment counts as water or confuse internal faces with cross-basin seam proof. Follow
+[geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md) and the full P01/P02 dependency plan.
 
 ## Existing playable scope and prior evidence
 

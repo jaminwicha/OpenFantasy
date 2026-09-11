@@ -32,6 +32,7 @@ def main():
     env = dict(os.environ, DOTNET_ROOT=str(dotnet.parent),
                DOTNET_CLI_TELEMETRY_OPTOUT="1", DOTNET_NOLOGO="1")
     env["PATH"] = str(dotnet.parent) + os.pathsep + env.get("PATH", "")
+    env["OPENFANTASY_WATERSHED_EVIDENCE"] = str(test_results / "watershed-fixture")
     report = dict(startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   scope="Local core/hosting tests, durable counted authority and Godot binding smoke",
                   status="running", namingScanRequested=bool(args.forbidden_token), steps=[])
@@ -121,6 +122,9 @@ def main():
             report["testCounts" if label == "core" else "hostingTestCounts"] = counts
         host = run("host-foundation", [dotnet, "run", "--project", "src/OpenFantasy.Host",
                     "--no-build", "--no-restore", "--", "--inspect-foundation"])
+        run("watershed-world-persistence", [sys.executable, root / "tools/check_watershed_world.py",
+            "--dotnet", dotnet, "--fixture", test_results / "watershed-fixture",
+            "--output", artifacts / "watershed-world.json"])
         inspection_report = artifacts / "contract-inspections.json"
         run("host-contract-inspections", [sys.executable, root / "tools/check_contract_inspections.py",
             "--dotnet", dotnet, "--output", inspection_report])

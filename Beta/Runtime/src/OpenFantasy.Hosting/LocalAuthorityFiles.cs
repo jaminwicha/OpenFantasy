@@ -1,5 +1,7 @@
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Commands;
+using OpenFantasy.Core.Geography;
+using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting;
 
@@ -11,6 +13,15 @@ public static class LocalAuthorityFiles
 
     public static CommandEnvelope ReadCommand(string path) =>
         CommandCodecV1.Decode(Read(path, CommandCodecV1.MaximumEnvelopeByteLength));
+
+    public static WorldSnapshot ReadComposedGenesis(string path) =>
+        WorldSnapshotCodec.Decode(Read(path, WorldSnapshotCodec.MaximumStateByteLength));
+
+    public static WorldStepBatch ReadWorldStep(string path) =>
+        WorldStepCodec.Decode(Read(path, WorldStepCodec.MaximumBatchByteLength));
+
+    public static PreparedWatershed ReadWatershed(string path) =>
+        WatershedCodecV1.Decode(Read(path, WatershedCodecV1.MaximumEncodedByteLength));
 
     private static byte[] Read(string path, int maximum)
     {

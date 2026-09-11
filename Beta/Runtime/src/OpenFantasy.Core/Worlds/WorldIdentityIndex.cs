@@ -11,15 +11,18 @@ public sealed class WorldIdentityIndex
 {
     private readonly Dictionary<EntityId, WorldIdentityRole> _dynamicRoles;
 
-    internal WorldIdentityIndex(Dictionary<EntityId, WorldIdentityRole> dynamicRoles, TerrainIdentityLayer terrain)
+    internal WorldIdentityIndex(Dictionary<EntityId, WorldIdentityRole> dynamicRoles, TerrainIdentityLayer terrain, WatershedIdentityLayer watershed)
     {
         _dynamicRoles = new Dictionary<EntityId, WorldIdentityRole>(dynamicRoles);
         Terrain = terrain;
+        Watershed = watershed;
     }
 
     internal TerrainIdentityLayer Terrain { get; }
 
-    public bool Contains(EntityId identity) => _dynamicRoles.ContainsKey(identity) || Terrain.Contains(identity);
+    internal WatershedIdentityLayer Watershed { get; }
+
+    public bool Contains(EntityId identity) => _dynamicRoles.ContainsKey(identity) || Terrain.Contains(identity) || Watershed.Contains(identity);
 }
 
 internal enum WorldIdentityRole
@@ -29,7 +32,8 @@ internal enum WorldIdentityRole
     TerrainSource, Language, LanguageRegister, Utterance, Dialogue, GatherNode, GatherNodeDefinition,
     CraftRecipeDefinition, PhysicalRecipeDefinition, PhysicalMaterialDefinition, ProductionBatch, TransformedLot,
     StatProfileDefinition, LevelCurveDefinition, CurrencyDefinition, CurrencyAccount, RewardDefinition, QuestDefinition,
-    ConstructionDefinition, ConstructionToolDefinition, ConstructionWorkUnit, ConstructionProject, Structure
+    ConstructionDefinition, ConstructionToolDefinition, ConstructionWorkUnit, ConstructionProject, Structure,
+    GeographyBasin, GeographyFormation, GeographySubstrate, GeographyBoundary, GeographyTerminal
 }
 
 /// <summary>One immutable terrain dependency set; reference equality is the only reuse criterion.</summary>

@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 using System.Text.Json;
 using OpenFantasy.Core;
 using OpenFantasy.Hosting;
+using OpenFantasy.Hosting.Worlds;
 using Microsoft.Data.Sqlite;
 
 namespace OpenFantasy.Host;
@@ -14,6 +15,7 @@ internal sealed class HostApplication
     private readonly LocalWorldOperator _worlds = new();
     private readonly RecordedWorldOperator _history = new();
     private readonly WatershedOperator _watersheds = new();
+    private readonly ComposedWorldOperator _composed = new();
 
     public HostApplication(TextWriter output)
     {
@@ -36,6 +38,11 @@ internal sealed class HostApplication
                 ["--inspect-world", var database] => _worlds.Inspect(database),
                 ["--inspect-recorded-world", var database, var revision] => _history.Inspect(database, revision),
                 ["--inspect-watershed", var path] => _watersheds.Inspect(path),
+                ["--create-watershed-world", var database, var basis, var watershed] =>
+                    _composed.CreateWatershedWorld(database, basis, watershed),
+                ["--execute-world-step", var database, var step] => _composed.ExecuteStep(database, step),
+                ["--probe-world-step-crash", var database, var step, var boundary] =>
+                    _composed.ExecuteStep(database, step, boundary),
                 ["--execute-local-command", var database, var command, var principal, var session] =>
                     _worlds.Execute(database, command, principal, session),
                 ["--probe-commit-crash", var database, var command, var principal, var session, var boundary] =>
@@ -50,7 +57,7 @@ internal sealed class HostApplication
         }
         catch (Exception error) when (error is IOException or UnauthorizedAccessException
             or InvalidDataException or FormatException or JsonException or ArgumentException
-            or AuthorityDispatchException or SqliteException)
+            or AuthorityDispatchException or WorldRecoveryLimitException or SqliteException)
         {
             _output.WriteLine("Inspection failed: " + error.Message);
             return 1;
@@ -71,6 +78,8 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-recorded-world <composed-world.sqlite> <commit-revision>");
         _output.WriteLine("       OpenFantasy.Host --inspect-watershed <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
+        _output.WriteLine("       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>");
+        _output.WriteLine("       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>");
         _output.WriteLine("These commands require exclusive local database access; they do not authenticate network clients.");
     }
 

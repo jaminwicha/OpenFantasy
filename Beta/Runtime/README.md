@@ -134,6 +134,36 @@ The current SDK is 10.0.401. Core, Hosting, tests and client target net8.0; the 
 
 Names, persisted tags and namespaces are stable product/domain identifiers. Temporary planning names do not belong in code or project metadata. Keep future domain models in a few clear assemblies; do not generate an assembly or empty interface for each design concept.
 
+## Admitted watershed world
+
+The sixth composed-world profile retains one immutable prepared watershed alongside the full
+construction basis. `WorldWatershedAdmission.CreateGenesis` requires an unplayed construction root,
+matching world/branch/realm scope and collision-free macro identities. Admission pins the exact
+prepared bytes. Ordinary steps, dialogue holds, construction, restart and recorded-history inspection
+preserve that geography; older profile encodings and saves remain supported without implicit migration.
+Macro identities grant neither local terrain extraction rights nor physical water.
+
+The offline host can create an explicit new save from existing canonical inputs:
+
+```sh
+OpenFantasy.Host --create-watershed-world new-world.sqlite construction-genesis.bin prepared-basin.bin
+OpenFantasy.Host --execute-world-step new-world.sqlite host-selected-step.bin
+OpenFantasy.Host --inspect-recorded-world new-world.sqlite 0
+```
+
+These are privileged operations under the existing exclusive composed-world authority, not network
+client endpoints. A batch is host-selected input; a stale/reused batch fails. The existing
+`--create-world` command still addresses the older standalone counted-authority format.
+`tools/check_watershed_world.py` exercises the composed host, real before/after-commit process kills,
+exact history and unchanged input files. Its fixture is emitted by the hosting recovery test when
+`OPENFANTASY_WATERSHED_EVIDENCE` names an explicit disposable directory; the integrated verifier wires
+this automatically. Python independently checks the new outer archive and admission-pin composition.
+
+The normal playable farm still selects profile five and its existing terrain. This new profile
+preserves macro constraints only: cross-basin composition, mapping into local terrain, river water,
+mutable geological events and migration of played saves require their own contracts and evidence.
+A single basin per current profile is a development admission bound, not the final world's extent.
+
 ## Local durable authority
 
 The portable `Geography` module prepares an explicit finite macro watershed before dependent

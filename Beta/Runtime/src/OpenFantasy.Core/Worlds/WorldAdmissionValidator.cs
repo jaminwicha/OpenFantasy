@@ -24,7 +24,10 @@ public static class WorldAdmissionValidator
         }
         TerrainIdentityLayer terrain = previous is not null && previous.Terrain.Matches(world.Space.Regions)
             ? previous.Terrain : ReadTerrain(world.Space.Regions);
-        var admission = new Admission(world, terrain);
+        WatershedIdentityLayer watershed = previous is not null && previous.Watershed.Matches(world.Watershed, terrain)
+            ? previous.Watershed : new WatershedIdentityLayer(world.Watershed, terrain);
+        watershed.ValidateScope(world.Space.Scope);
+        var admission = new Admission(world, terrain, watershed);
         admission.ReadInventory();
         admission.ReadPresence();
         admission.ReadResidents();
@@ -102,13 +105,13 @@ public static class WorldAdmissionValidator
         pins[identity] = version;
     }
 
-    private sealed class Admission(WorldSnapshot world, TerrainIdentityLayer terrain)
+    private sealed class Admission(WorldSnapshot world, TerrainIdentityLayer terrain, WatershedIdentityLayer watershed)
     {
         private readonly Dictionary<EntityId, WorldIdentityRole> _roles = [];
         private readonly Dictionary<EntityId, ContentHash> _definitionPins = [];
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
-        internal WorldIdentityIndex Complete() => new(_roles, terrain);
+        internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed);
 
         internal void ReadConstruction()
         {
@@ -387,6 +390,10 @@ public static class WorldAdmissionValidator
             if (terrain.TryGetRole(identity, out WorldIdentityRole existing) && existing != role)
             {
                 throw new ArgumentException("A dynamic identity aliases an incompatible admitted terrain role.");
+            }
+            if (watershed.Contains(identity))
+            {
+                throw new ArgumentException("A world identity aliases reserved macro geography.");
             }
             Register(_roles, identity, role, unique);
         }
