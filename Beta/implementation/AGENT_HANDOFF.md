@@ -23,6 +23,8 @@ the next task, rather than reloading the research archive and every historical q
 
 The [quick-action wheel](p02/quick-wheel/README.md) now has completed **bounded combined
 qualification**, recorded in the [shared-desktop follow-up](p02/shared-desktop-validation/README.md).
+Code and evidence are preserved at `c8989ae` on `codex/milestone-quick-wheel`; development remains
+on `codex/runtime-foundation`.
 V/right-stick/Actions opens Talk/Gather/Craft/Give with fixed cardinal slots, pinned targets,
 icon-led inspection and explicit confirmation. Running world time continues; an existing pause
 persists. Cancellation, focus loss and disconnect never execute an action. These remain provisional

@@ -28,6 +28,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-inventory-inspection` | `ea56b64` | Native own-pack inspection, host timing display and scoped input; code `3eed739`, 846 tests, all final native journeys and twelve rendered states. [Evidence](p02/inventory-inspection/README.md) retains an earlier travel timeout with unconfirmed cause. Equipment/use/transfer, icons, full UI, OS/physical-device acceptance and phase/feasibility gates remain open. |
 | `codex/milestone-recorded-history` | `9e0018d` | Exact recorded-commit reconstruction and operator; code `913a5f2`, corrected stationary quest probe `1d26210`, 855 final tests and combined native evidence. [Evidence](p01/recorded-history/README.md) preserves failed runs, confirmed stale Talk revision and unconfirmed editor-startup error. Arbitrary interior time, prehistory, branch travel, production latency, independent review and full phase gates remain open. |
 | `codex/milestone-daylight` | `80bdda0` | Calendar-driven outdoor light and bright target/UI cues; 855 tests, complete integrated regression plus probe-only night-interface followups, ten daylight and twelve daytime UI captures. [Evidence](p02/daylight/README.md) retains the corrected unmapped probe input and recurring, unconfirmed editor-settings error. Weather/seasons, rest/camp, production art/audio, independent/human review and all full gates remain open. |
+| `codex/milestone-quick-wheel` | `c8989ae` | Native four-action wheel, pinned inspection/confirmation, controlled background rendering and removal of legacy fixture refocus loops; 861 tests, separate complete native qualification, four affected fixture followups and sixteen rendered frames. [Evidence](p02/shared-desktop-validation/README.md) retains the failed integrated editor startup and precise source/binary boundaries. This is combined qualification, not one uninterrupted verifier pass. Full UI, OS/devices, co-op, art, independent/human reviews and phase gates remain open. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -43,3 +44,8 @@ The daylight branch preserves source and evidence at `80bdda07398a8657b1b8c7034c
 The final native probe extension was qualified separately after the integrated pass, with identical
 production sources and tested non-client binaries. The development checkout remains unchanged;
 earlier milestone branches and the unrelated staged predecessor work were preserved.
+
+The quick-wheel branch preserves code and evidence at `c8989aed1178bfd13f68bcf38b64be82f540f2b6`.
+The earlier wheel packet remains its original partial checkpoint; the shared-desktop packet
+records subsequent completion. No checkout switch, force update, push or merge accompanied the
+marker. The recurring editor-startup error remains unresolved and retained as a failure.
