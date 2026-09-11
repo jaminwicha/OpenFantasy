@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "date": "2026-09-10",
-  "status": "owner_supplement_with_partial_p01_input_evidence",
+  "status": "owner_supplement_with_partial_p01_input_offer_target_evidence",
   "baseline": "../../spec-v1_1/REQUIREMENTS.json",
   "design": "../PLAYER_INTERFACE_AND_NAVIGATION.md",
   "baseline_requirement_count": 181,
-  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-11 has bounded P01 input evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
+  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-01/UI-03/UI-11 have bounded P01 input, offer and explicit-target evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
   "contracts": [
     {
       "id": "UI-01",
@@ -25,9 +25,11 @@
       "status": "in_progress",
       "evidence_paths": [
         "../p01/action-offers/README.md",
-        "../p01/action-offers/qualification/final-verification.json"
+        "../p01/action-offers/qualification/final-verification.json",
+        "../p01/target-selection/README.md",
+        "../p01/target-selection/qualification/final-verification.json"
       ],
-      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open."
+      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open."
     },
     {
       "id": "UI-02",
@@ -68,10 +70,12 @@
       "status": "in_progress",
       "evidence_paths": [
         "../p01/action-offers/README.md",
-        "../p01/action-offers/qualification/final-verification.json"
+        "../p01/action-offers/qualification/final-verification.json",
+        "../p01/target-selection/README.md",
+        "../p01/target-selection/qualification/final-verification.json"
       ],
       "foundation_qualification_phase": "P03",
-      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open."
+      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open."
     },
     {
       "id": "UI-04",
@@ -230,10 +234,12 @@
       "status": "in_progress",
       "evidence_paths": [
         "../p01/input-focus/README.md",
-        "../p01/input-focus/qualification/native-input.json"
+        "../p01/input-focus/qualification/native-input.json",
+        "../p01/target-selection/README.md",
+        "../p01/target-selection/qualification/final-verification.json"
       ],
       "foundation_qualification_phase": "P03",
-      "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim."
+      "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open."
     },
     {
       "id": "UI-12",
@@ -326,9 +332,11 @@
       "evidence_paths": [],
       "partial_evidence_paths": [
         "../p01/action-offers/README.md",
-        "../p01/action-offers/qualification/final-verification.json"
+        "../p01/action-offers/qualification/final-verification.json",
+        "../p01/target-selection/README.md",
+        "../p01/target-selection/qualification/final-verification.json"
       ],
-      "partial_evidence_scope": "P01 farm gathering/crafting/gift/quest captured-intent regressions and native target/cost checks. Full damaged-object and target/confirmation flow is not run."
+      "partial_evidence_scope": "P01 captured-intent regressions plus explicit Wren/harvestable selection, duplicate names, movement, depletion/absence/regrowth and native target/marker controls. Full damaged-object and target/confirmation flow is not run."
     },
     {
       "id": "UIV-02",
@@ -354,9 +362,10 @@
       "status": "not_run",
       "evidence_paths": [],
       "partial_evidence_paths": [
-        "../p01/input-focus/qualification/native-input.json"
+        "../p01/input-focus/qualification/native-input.json",
+        "../p01/target-selection/qualification/final-verification.json"
       ],
-      "partial_evidence_scope": "P01 dialogue/pause/focus and held-control prerequisite only. Full wheel/target/inventory/confirmation/text-entry/device/resize/disconnect case is not run."
+      "partial_evidence_scope": "P01 dialogue/pause/focus and held-control prerequisite only. Full wheel/target/inventory/confirmation/text-entry/device/resize/disconnect case is not run. The new cycle/clear controls obey the existing contexts; the general target modal is not implemented."
     },
     {
       "id": "UIV-05",

@@ -1,25 +1,31 @@
 # Implementation progress
 
-The latest [P01 action-preview increment](p01/action-offers/README.md), code commit `3ae7855`,
-adds immutable offers for the existing farm actions. Buttons and hotkeys submit the displayed
-target, recipe/gift/quest operation and revisions without silently selecting replacements.
-Visible costs and hover/focus details explain available and blocked actions. Same-offer retries
-reuse their outcome, and offers cannot transfer to another client instance reopening a save.
+The latest [P01 explicit target increment](p01/target-selection/README.md), code commit `c7e29f5`,
+lets the player select Wren or a public harvestable with Q/right shoulder/Next, and clear with
+R/left shoulder/Clear. A visible name and field marker identify the selection. Moving, depletion
+or disappearance cannot silently substitute another entity or turn a plant action into a gift
+to Wren. Clearing restores automatic contextual offers. Selection is transient client state.
 
-The [current integrated qualification](p01/action-offers/qualification/final-verification.json)
-passes **544 Core + 288 Hosting = 832 tests**, zero skips, 22 independent fixtures, 68 host
-inspections and every retained native journey. All 669 runtime inputs remained unchanged and
-the naming scan passed. Nine native input checks and six offer checks pass. The independent
-[review and corrections](p01/action-offers/REVIEW.md), inspected rendered states, preserved
-probe failures and final results are retained together. The prior [input-focus checkpoint](p01/input-focus/README.md)
-recorded 825 tests; its cancellation and held-control behavior remains covered.
+The [current integrated qualification](p01/target-selection/qualification/final-verification.json)
+passes **544 Core + 294 Hosting = 838 tests**, zero skips, 22 independent fixtures, 68 host
+inspections and every retained native journey. All 672 original runtime inputs remained unchanged;
+editor import added two retained script UIDs. The naming scan, nine native input checks and eight
+offer/target checks pass. [Local review](p01/target-selection/REVIEW.md) and eight rendered states
+record the scope and limitations. Work was completed directly in Astra.
+
+The prior [action-preview increment](p01/action-offers/README.md), code `3ae7855`, recorded 832 tests
+and retains immutable targets/intents/revisions, costs, hover/focus details, same-offer outcomes
+and per-client ownership. Its independent review and probe corrections remain preserved. The
+earlier [input-focus checkpoint](p01/input-focus/README.md) recorded 825 tests; cancellation and
+held-control behavior remain covered.
 
 The playable farm connects movement, finite gathering, ration crafting, Wren's funded quest,
 routed NPC work and a persistent physical seedling guard. Existing saves continue on verified
 copies. [Controls and launcher](p01/construction/FEEDBACK.md) remain available. The owner tried
 the prototype and described its gameplay as basic and graphics as poor; those concerns remain
-open. This increment improves action clarity and safety, without claiming new art or polished
-full-game interfaces. A world change can still reject a displayed offer and require a new choice.
+open. The current increment adds explicit target ownership. General pointer selection, wheels,
+polished interfaces and new art remain ahead. A world change can still reject a displayed offer
+and require a new choice.
 
 Read the [shared handoff](AGENT_HANDOFF.md), [living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md),
 [construction packet](p01/construction/README.md) and [runtime setup](../Runtime/README.md).

@@ -25,12 +25,13 @@ external run is authorized. Retain the repaired adapter and synchronized knowled
 specific future task only if its expected benefit justifies requesting approval.
 
 Git discipline now includes [incremental commits and preserved milestone branches](GIT_MILESTONES.md).
-The current qualified foundation is recorded at `codex/milestone-farm-input-foundation`.
+The latest qualified checkpoint is `codex/milestone-explicit-targeting`; the milestone register
+also preserves the earlier farm-input and action-preview checkpoints.
 
 ## Authority and reading order
 
 1. Read [project implementation instructions](../AGENTS.md). The owner's later naming instruction governs source/project identifiers: use `OpenFantasy`, with no planning codename in runtime names, comments or strings. Preserve the existing planning directory and historical documents.
-2. Read the [implementation overview](README.md), then the [action-preview increment](p01/action-offers/README.md), [input-focus checkpoint](p01/input-focus/README.md) and [construction packet](p01/construction/README.md) for the latest connected prototype. The [progress ledger](p00/PROGRESS.md) retains older increments; older pending/completed statements are scoped to their checkpoints.
+2. Read the [implementation overview](README.md), then the [explicit target increment](p01/target-selection/README.md), [action-preview increment](p01/action-offers/README.md), [input-focus checkpoint](p01/input-focus/README.md) and [construction packet](p01/construction/README.md) for the latest connected prototype. The [progress ledger](p00/PROGRESS.md) retains older increments; older pending/completed statements are scoped to their checkpoints.
 3. Read the [living player-interface supplement](PLAYER_INTERFACE_AND_NAVIGATION.md) alongside the preserved [specification baseline 1.1](../spec-v1_1/README.md). The supplement is current scope. Its archived predecessor is not the active UI design.
 4. For the assigned work, follow the baseline [GDD](../spec-v1_1/GDD.md), [technical design](../spec-v1_1/TECHNICAL_DESIGN.md), [decision register](../spec-v1_1/DECISIONS.md), [full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json) and [coverage](../spec-v1_1/COVERAGE.json). The preserved [original implementation handoff](../spec-v1_1/IMPLEMENTATION_HANDOFF.md) supplies the full reading map; its old naming and preimplementation status are historical where later instructions supersede them.
 5. Use [runtime setup and boundaries](../Runtime/README.md) for exact build/launch procedures and the pinned toolchain. Use the [research index](../research-v0_9/README.md), [local reuse decisions](../spec-v1_1/LOCAL_REUSE_DECISIONS.md), [presentation contracts](../spec-v1_1/PRESENTATION_CONTRACTS.md) and [archive continuity audit](../spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md) when the task needs those details.
@@ -52,7 +53,7 @@ contexts. Native injected keyboard/button/stick events pass; physical-device, re
 and full modal-stack acceptance remain open. The explicit HUD Pause button can still pause
 with a conversation open. Host/Core authority and save formats are unchanged.
 
-The latest [action-preview qualification](p01/action-offers/qualification/final-verification.json)
+The prior [action-preview qualification](p01/action-offers/qualification/final-verification.json)
 passes 544 Core + 288 Hosting = 832 tests, zero skips, 22 fixtures, 68 host inspections and all
 native journeys against 669 unchanged runtime inputs. Client commit `3ae7855` captures exact
 targets, costs, blockers and action intents. HUD/buttons and keys use the same presented offer;
@@ -62,6 +63,19 @@ reopening the same saved control identity. The [review](p01/action-offers/REVIEW
 critic findings, local corrections, probe timing failures and rendered cost/layout inspection.
 Strict stale-world rejection remains visible and requires a new choice. This is bounded farm
 behavior, not the general target/confirmation, wheel or management-screen system.
+
+The latest [explicit-target qualification](p01/target-selection/qualification/final-verification.json)
+passes 544 Core + 294 Hosting = 838 tests, zero skips, 22 fixtures, 68 inspections and all native
+journeys. All 672 original runtime inputs stayed unchanged; two generated script UIDs bring the
+final retained hash set to 674. Code `c7e29f5` adds Q/right shoulder/Next cycling and
+R/left shoulder/Clear, a target label and marker, stable identity through movement/depletion/absence
+and explicit blocking of incompatible verbs. It refreshes the selection and offers together and
+keeps selection out of world authority and saved state. Nine input checks, eight native offer/target
+checks, six new facts and eight rendered states are retained. [Local review](p01/target-selection/REVIEW.md)
+records fixture/capture corrections and viewport limitations. Astra completed this increment
+directly; no new external or independent-agent review was invoked. Targeting currently covers
+Wren and admitted farm harvestables, not general observer visibility, pointer selection, damaged
+objects, rich confirmations, saved preferences or full device/UX acceptance.
 
 At this handoff, repository history includes:
 
@@ -131,13 +145,17 @@ screens must use this policy while adding their own native acceptance. Asset pro
 with separate artists and the owner's style acceptance. No new priority, runtime process,
 Core authority or reduction of the 181 requirements is implied.
 
-Completed increment (2026-09-10): [P01 captured action offers and previews](p01/action-offers/README.md).
+Prior increment (2026-09-10): [P01 captured action offers and previews](p01/action-offers/README.md).
 Code, seven new client/host facts, native journeys, rendered inspection and critic dispositions
 are retained. The lead corrected the worker result and completed integration locally; future
 Fable assignments require the owner's explicit approval under the policy above.
 
+Latest completed increment (2026-09-10): [P01 explicit field target selection](p01/target-selection/README.md).
+This extends the captured-offer and input-context foundation with stable client target ownership.
+Full target/confirmation and broader UI acceptance remain open; all 181 requirements are retained.
+
 Choose the next bounded task from the remaining P01/P02 dependencies and the living UI
-coverage register. General targeting/confirmation, approachable action access, native navigation
+coverage register. Expanded targeting/confirmation, approachable action access, native navigation
 and later wheels/management must build on the captured-intent and input-context contracts.
 Do not discard unfinished toolchain/export, temporal/co-op, content or presentation exits merely
 because the farm loop passes. Preserve original saves, all 181 requirements and phase dependencies;

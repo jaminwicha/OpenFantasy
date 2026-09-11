@@ -1,0 +1,52 @@
+{
+  "startedUtc": "2026-09-11T04:48:40.258889+00:00",
+  "scope": "Native action previews, focus/hover inspection and actual authoritative gathering/crafting/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "passed",
+  "rendered": true,
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-action-offers",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-asw3b4tn/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-asw3b4tn/offers.json"
+    ],
+    "exitCode": 0,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": ""
+  },
+  "observed": {
+    "Kind": "native-action-offers-v1",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "macOS",
+    "Checks": [
+      "Unavailable crafting stayed inspectable through focus and hover without changing the paused world.",
+      "Keyboard, shoulder events and the native Next button selected identities without spending or changing verbs.",
+      "A locked oak remained selected while berries became nearer; unavailable F spent nothing and explicit Clear restored context.",
+      "Displayed Oak target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Craft inspection and keyboard commitment used the same recipe with exact input/output/waste quantities.",
+      "Talk preserved the displayed speaker and Escape retained dialogue-first cancellation."
+    ],
+    "ElapsedMilliseconds": 14223
+  },
+  "artifactSha256": {
+    "native-offers-asw3b4tn/offers.berry-offer.png": "b978d7f68350e39fed1a5ccdf347e3a530b4fc7a0b2b2f4df705c62e3f66da8a",
+    "native-offers-asw3b4tn/offers.blocked-craft.png": "18ab9e61f9c71cc9ff5efce8170b182ce73a0915dd566b052f8c3eddab20130e",
+    "native-offers-asw3b4tn/offers.dialogue.png": "c9ddfd19892028e2270fb23144619e39a9de8f15e92797f01fa467083efaaf7b",
+    "native-offers-asw3b4tn/offers.json": "db65b309a9316ea45e32d2098346601a6a4289701e67164404c7a70744cf0338",
+    "native-offers-asw3b4tn/offers.locked-target.png": "6c372c5c6b74e3751eed880ac2dcb39c752c6a8e011269d25d003f6d9c134e6d",
+    "native-offers-asw3b4tn/offers.oak-offer.png": "076344e6857afc5658b21c89a31db109741484209b0cd58d4347a8a5d32e5341",
+    "native-offers-asw3b4tn/offers.person-target.png": "aad831630dd4f30b0a45be6ac8891c3a6ec5f121340713b1e1f35281d81bc007",
+    "native-offers-asw3b4tn/offers.plant-target.png": "1dbb3d46e77e94e534817acfc9759ca284ab9e18cc0cb7ee4b4d65048a45096b",
+    "native-offers-asw3b4tn/offers.ready-craft.png": "8314cc556fabdfca1e615370bbdb82bf1734021cd5e3a4c6b2e2d816617dd17e",
+    "native-offers-asw3b4tn/world.sqlite": "a6dbf23fad80c5509b017c46cbb7bc1f9136a87eb98cccf48f52be6801ab6c3a"
+  },
+  "finishedUtc": "2026-09-11T04:48:55.631396+00:00"
+}
