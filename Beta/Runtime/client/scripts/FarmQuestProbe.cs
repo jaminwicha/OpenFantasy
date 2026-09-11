@@ -7,6 +7,7 @@ using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
@@ -23,6 +24,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
     private readonly Stopwatch _timeout = Stopwatch.StartNew();
     private readonly Stopwatch _stageTime = new();
     private readonly Stopwatch _harvestArrival = new();
+    private readonly Stopwatch _talkArrival = new();
     private readonly List<string> _checks = [];
     private readonly List<object> _inputs = [];
     private readonly List<object> _readiness = [];
@@ -51,6 +53,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
     private int _focusRequests;
     private SubunitPosition _movementOrigin;
     private WorldInstant _movementStartedAt;
+    private ulong? _talkActorRevision;
 
     public override void _Process(double delta)
     {
@@ -297,13 +300,34 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         {
             return;
         }
-        if (Approach(Player(view).Feet, view.Actors.Single(actor => actor.ActorId == _wren).Feet, 600))
+        LocalActorView player = Player(view);
+        LocalActorView wren = view.Actors.Single(actor => actor.ActorId == _wren);
+        if (!Approach(player.Feet, wren.Feet, 600))
         {
-            _checks.Add(mode == "fresh" ? "Ordinary movement approached Wren after gathering and crafting in the fresh world."
-                : "Ordinary movement approached Wren after reopening the crafted world.");
-            Press("talk");
-            Enter(Stage.Talking);
+            _talkArrival.Reset();
+            _talkActorRevision = null;
+            return;
         }
+        // Release reaches physics and the host asynchronously. Observe a stable arrival before
+        // the one deliberate press; a stale receipt remains a failure, never an automatic retry.
+        if (_talkActorRevision != player.PresenceRevision)
+        {
+            _talkActorRevision = player.PresenceRevision;
+            _talkArrival.Restart();
+            return;
+        }
+        if (_talkArrival.ElapsedMilliseconds < 150
+            || !game.CurrentOffers.TryGetValue(FarmSemanticAction.Speak, out FarmActionOffer? offer)
+            || !offer.CanExecute || offer.Scope.ExpectedActorRevision != player.PresenceRevision
+            || offer.Intent is not SpeakToActorIntent speak || speak.TargetActorId != _wren
+            || speak.ExpectedTargetRevision != wren.PresenceRevision)
+        {
+            return;
+        }
+        _checks.Add(mode == "fresh" ? "Ordinary movement approached Wren after gathering and crafting in the fresh world."
+            : "Ordinary movement approached Wren after reopening the crafted world.");
+        Press("talk");
+        Enter(Stage.Talking);
     }
 
     private void ObserveTalk(LocalWorldView view)
@@ -474,7 +498,13 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
     }
 
     private void RecordInput(string action) => _inputs.Add(new { Action = action, Stage = _stage.ToString(),
-        WallMilliseconds = _timeout.ElapsedMilliseconds, game.IsLocallyPaused, game.IsWindowFocused });
+        WallMilliseconds = _timeout.ElapsedMilliseconds, game.IsLocallyPaused, game.IsWindowFocused,
+        TalkOffer = action == "talk" ? TalkOfferSnapshot() : null });
+
+    private object? TalkOfferSnapshot() => game.CurrentOffers.TryGetValue(FarmSemanticAction.Speak, out FarmActionOffer? offer)
+        && offer.Intent is SpeakToActorIntent speak
+            ? new { offer.Scope.ExpectedActorRevision, speak.TargetActorId, speak.ExpectedTargetRevision }
+            : null;
 
     private void BeginPause()
     {
@@ -626,7 +656,8 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         {
             Status = "failed", Mode = mode, Stage = _stage.ToString(), Error = error.ToString(),
             Inputs = _inputs, Readiness = _readiness, FocusRequests = _focusRequests,
-            game.IsLocallyPaused, game.IsWindowFocused, Current = game.CurrentView is { } view ? Snapshot(view) : null
+            game.IsLocallyPaused, game.IsWindowFocused, game.HasPendingAction, TalkOffer = TalkOfferSnapshot(),
+            Current = game.CurrentView is { } view ? Snapshot(view) : null
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
         _stage = Stage.Done;
         GD.PushError("Native quest probe failed: " + error);

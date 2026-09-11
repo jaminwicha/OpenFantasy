@@ -35,6 +35,7 @@ internal sealed class RecordedWorldOperator
                 ActorId = resident.ActorId.ToString(),
                 resident.DisplayName,
                 Position = state.Space.GetActor(resident.ActorId).Feet,
+                PresenceRevision = state.Space.GetActor(resident.ActorId).Revision,
                 SourceItemQuantity = state.Inventory.Custody.GetStoredQuantity(resident.InventoryCustodianId)
             }).ToArray(),
             SourceLotCount = state.Inventory.Custody.Lots.Count,
