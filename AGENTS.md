@@ -19,3 +19,7 @@ Commit coherent implementation increments along the way. At verified major progr
 create a preserved milestone branch without switching the checkout. Follow the shared
 [commit and milestone doctrine](Beta/implementation/GIT_MILESTONES.md). The integration
 lead owns commits/checkpoints while workers share a checkout.
+
+Owner direction, 2026-09-11: apply the risk-based verification cadence in
+[implementation instructions](Beta/AGENTS.md). Build coherent useful increments, keep the current
+handoff compact, and use targeted evidence/critics proportionately without weakening any gate.
