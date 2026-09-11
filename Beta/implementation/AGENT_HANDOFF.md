@@ -67,3 +67,9 @@ steering; it does not require an additional model conversation. Supply resolved 
 when using an isolated worktree. Context hashing does not grant worker file access: pass only
 needed external skill/document directories explicitly. A contract-editing task must preserve
 immutable input snapshots and identify editable outputs separately.
+
+The [retained input integration review](ui-management/DELEGATION_REVIEW.md) is the first
+successful authenticated external review through the synchronized workflow. Its proposed P01
+seam is qualified as future work, not an implementation or phase-priority change. Account
+access and read-only task completion are verified; editing/art pipelines and net credit
+savings are not established by this small pilot.
