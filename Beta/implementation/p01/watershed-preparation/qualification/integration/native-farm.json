@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-09-11T22:23:15.033033+00:00",
+  "scope": "Native local movement, addressed dialogue hold, finite handover and exact paused-view reopen",
+  "rendered": false,
+  "status": "failed",
+  "runs": [
+    {
+      "stage": "create",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-walkthrough",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/watershed/integration/native-farm-263a8bfb62154a3ebae1fae0bf30138a/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/watershed/integration/native-farm-263a8bfb62154a3ebae1fae0bf30138a/walkthrough.json",
+        "create"
+      ],
+      "exitCode": 1,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": "ERROR: Native farm walkthrough failed: System.InvalidOperationException: The native walkthrough timed out.\n   at OpenFantasy.Client.FarmWalkthroughProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWalkthroughProbe.cs:line 179\n   at OpenFantasy.Client.FarmWalkthroughProbe._Process(Double delta) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWalkthroughProbe.cs:line 36\n   at: void OpenFantasy.Client.FarmWalkthroughProbe._Process(double) (res://scripts/FarmWalkthroughProbe.cs:36)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmWalkthroughProbe._Process(double) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWalkthroughProbe.cs:36)\n       [2] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2640)\n       [3] bool OpenFantasy.Client.FarmWalkthroughProbe.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/OpenFantasy.Client.FarmWalkthroughProbe_ScriptMethods.generated.cs:80)\n       [4] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)\n"
+    }
+  ],
+  "failure": "The native create probe failed: Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nERROR: Native farm walkthrough failed: System.InvalidOperationException: The native walkthrough timed out.\n   at OpenFantasy.Client.FarmWalkthroughProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWalkthroughProbe.cs:line 179\n   at OpenFantasy.Client.FarmWalkthroughProbe._Process(Double delta) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWalkthroughProbe.cs:line 36\n   at: void OpenFantasy.Client.FarmWalkthroughProbe._Process(double) (res://scripts/FarmWalkthroughProbe.cs:36)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmWalkthroughProbe._Process(double) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWalkthroughProbe.cs:36)\n       [2] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2640)\n       [3] bool OpenFantasy.Client.FarmWalkthroughProbe.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/OpenFantasy.Client.FarmWalkthroughProbe_ScriptMethods.generated.cs:80)\n       [4] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)\n",
+  "finishedUtc": "2026-09-11T22:23:59.703541+00:00"
+}

@@ -13,6 +13,7 @@ internal sealed class HostApplication
     private readonly ContractInspector _contracts = new();
     private readonly LocalWorldOperator _worlds = new();
     private readonly RecordedWorldOperator _history = new();
+    private readonly WatershedOperator _watersheds = new();
 
     public HostApplication(TextWriter output)
     {
@@ -34,6 +35,7 @@ internal sealed class HostApplication
                 ["--create-world", var database, var genesis] => _worlds.Create(database, genesis),
                 ["--inspect-world", var database] => _worlds.Inspect(database),
                 ["--inspect-recorded-world", var database, var revision] => _history.Inspect(database, revision),
+                ["--inspect-watershed", var path] => _watersheds.Inspect(path),
                 ["--execute-local-command", var database, var command, var principal, var session] =>
                     _worlds.Execute(database, command, principal, session),
                 ["--probe-commit-crash", var database, var command, var principal, var session, var boundary] =>
@@ -67,6 +69,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --create-world <world.sqlite> <genesis.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-world <world.sqlite>");
         _output.WriteLine("       OpenFantasy.Host --inspect-recorded-world <composed-world.sqlite> <commit-revision>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-watershed <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
         _output.WriteLine("These commands require exclusive local database access; they do not authenticate network clients.");
     }

@@ -136,6 +136,24 @@ Names, persisted tags and namespaces are stable product/domain identifiers. Temp
 
 ## Local durable authority
 
+The portable `Geography` module prepares an explicit finite macro watershed before dependent
+local detail. `WatershedPlanner.Prepare` accepts a pinned scope/seed, a grid of up to 64×64 columns,
+relief rules and a boundary outlet. It returns immutable parcel/formation identities, natural and
+spill elevations, acyclic drainage ranks, contributing-column counts and shared internal faces.
+`ReadWindow` reads that same preparation without regenerating it. Cancellation publishes no partial
+result. `WatershedCodecV1` archives and verifies the complete preparation against its pinned algorithm.
+
+```sh
+dotnet run --project src/OpenFantasy.Host -- --inspect-watershed /absolute/prepared-basin.bin
+```
+
+This read-only command accepts the bounded canonical archive, including the independent watershed
+fixtures. A candidate is not an admitted world: basin selection/composition, downstream exchange
+budgets, local terrain realization, physical liquids and geological history remain required.
+Spill elevations are potential drainage constraints, not raised ground or minted water. Macro
+grid addresses are not local voxel coordinates. Existing farm saves and terrain keep their prior
+generation contract; loading a window must never overwrite lived edits with a fresh candidate.
+
 The composed farm world now supports privileged reconstruction at an **exact recorded commit**:
 
 ```sh

@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using Godot;
+using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
@@ -14,9 +15,12 @@ internal partial class FarmWalkthroughProbe : Node
     private readonly bool _reopen;
     private readonly Stopwatch _timeout = Stopwatch.StartNew();
     private readonly Stopwatch _stageTime = new();
+    private readonly Stopwatch _talkArrival = new();
     private readonly List<string> _checks = [];
     private string? _held;
     private string? _initial;
+    private (ulong Player, ulong Target)? _talkRevisions;
+    private object? _talkOfferAtPress;
     private int _stage;
     private bool _done;
 
@@ -102,6 +106,8 @@ internal partial class FarmWalkthroughProbe : Node
         catch (Exception error)
         {
             _done = true;
+            ReleaseMovement();
+            WriteReport("failed", error.Message, _game.CurrentView);
             GD.PushError("Native farm walkthrough failed: " + error);
             GetTree().Quit(1);
         }
@@ -116,12 +122,33 @@ internal partial class FarmWalkthroughProbe : Node
         ReleaseMovement();
         if ((Int128)x * x + (Int128)y * y <= 640 * 640)
         {
+            // Movement release crosses the physics/host boundary asynchronously. Settle before
+            // one deliberate press; a stale action remains a failure, never an automatic retry.
+            var revisions = (player.PresenceRevision, wren.PresenceRevision);
+            if (_talkRevisions != revisions)
+            {
+                _talkRevisions = revisions;
+                _talkArrival.Restart();
+                return;
+            }
+            if (_talkArrival.ElapsedMilliseconds < 150 || _game.HasPendingAction
+                || !_game.CurrentOffers.TryGetValue(FarmSemanticAction.Speak, out FarmActionOffer? offer)
+                || !offer.CanExecute || offer.Scope.ExpectedActorRevision != player.PresenceRevision
+                || offer.Intent is not SpeakToActorIntent speak || speak.TargetActorId != wren.ActorId
+                || speak.ExpectedTargetRevision != wren.PresenceRevision)
+            {
+                return;
+            }
+            _talkOfferAtPress = new { offer.Scope.ExpectedActorRevision,
+                Target = speak.ExpectedTargetRevision };
             _checks.Add("Named movement input approached Wren through the real Godot adapter.");
             Press("talk");
             _stage = 2;
         }
         else
         {
+            _talkRevisions = null;
+            _talkArrival.Reset();
             string direction = Math.Abs(x) > Math.Abs(y) ? x < 0 ? "walk_left" : "walk_right"
                 : y < 0 ? "walk_up" : "walk_down";
             Input.ActionPress(direction);
@@ -160,18 +187,27 @@ internal partial class FarmWalkthroughProbe : Node
 
     private void Finish(LocalWorldView view)
     {
+        WriteReport("passed", null, view);
+        GD.Print("Native farm walkthrough passed: " + _reportPath);
+        _done = true;
+        _game.RequestClose();
+    }
+
+    private void WriteReport(string status, string? failure, LocalWorldView? view)
+    {
         string output = _reopen ? Path.ChangeExtension(_reportPath, ".reopen.json") : _reportPath;
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(output))!);
         string json = JsonSerializer.Serialize(new
         {
-            Kind = "native-farm-walkthrough-v1", Stage = _reopen ? "reopen" : "create", Status = "passed",
+            Kind = "native-farm-walkthrough-v1", Stage = _reopen ? "reopen" : "create", Status = status,
             Runtime = RuntimeInformation.FrameworkDescription, DisplayDriver = DisplayServer.GetName(),
-            Initial = _initial, Final = Snapshot(view), Checks = _checks, DurationMilliseconds = _timeout.ElapsedMilliseconds
+            Failure = failure, ProbeStage = _stage, _game.IsLocallyPaused, _game.IsWindowFocused,
+            _game.HasPendingAction, HasReadingHold = view?.HasReadingHold,
+            TalkOfferAtPress = _talkOfferAtPress,
+            Initial = _initial, Final = view is null ? null : Snapshot(view), Checks = _checks,
+            DurationMilliseconds = _timeout.ElapsedMilliseconds
         }, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(output, json + "\n");
-        GD.Print("Native farm walkthrough passed: " + output);
-        _done = true;
-        _game.RequestClose();
     }
 
     private static void Require(bool condition, string message)

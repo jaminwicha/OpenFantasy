@@ -87,7 +87,7 @@ def main():
                                    ("custody-invalid-v1", "custody_invalid"), ("exposure-v1", "exposure"),
                                    ("production-v1", "production"), ("actors-v1", "actor"),
                                    ("observations-v1", "observation"), ("language-v1", "language"),
-                                   ("authority-v1", "authority"), ("terrain-v1", "terrain"),
+                                   ("authority-v1", "authority"), ("terrain-v1", "terrain"), ("watershed-v1", "watershed"),
                                    ("world-actions-v1", "world_action"), ("world-receipts-v1", "world_receipt"),
                                    ("gathering-v1", "gathering"), ("production-ledger-v1", "production_ledger"),
                                    ("world-production-v1", "world_production")):

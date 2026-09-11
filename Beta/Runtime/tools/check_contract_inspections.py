@@ -61,6 +61,24 @@ def main():
             run('missing argument', ['--inspect-command'], 2)
             run('usage', [])
 
+            watershed = json.loads((fixtures / 'watershed-v1.json').read_text())
+            basin_file = folder / 'basin.bin'
+            for example in watershed['examples']:
+                basin_file.write_bytes(bytes.fromhex(example['preparedHex']))
+                value = json.loads(run('watershed: ' + example['name'], ['--inspect-watershed', basin_file]))
+                if (value['Contract'] != 'watershed-preparation-v1' or value['Scope'] != 'finite-macro-candidate'
+                        or value['ContentHash'] != example['preparedHash']
+                        or value['ColumnCount'] != example['width'] * example['depth']
+                        or value['OutletContributingColumns'] != value['ColumnCount']
+                        or value['SharedBoundaryCount'] != len(example['boundaries'])):
+                    raise RuntimeError('Host watershed projection differs from the independent preparation')
+            corrupted = bytearray(basin_file.read_bytes())
+            corrupted[-1] ^= 1
+            basin_file.write_bytes(corrupted)
+            run('watershed corrupted derivation', ['--inspect-watershed', basin_file], 1)
+            basin_file.write_bytes(b'\0' * 200_001)
+            run('watershed byte limit', ['--inspect-watershed', basin_file], 1)
+
             custody_file = folder / 'custody.bin'
             custody_file.write_bytes(bytes.fromhex(custody['candidateHex']))
             value = json.loads(run('canonical custody', ['--inspect-custody', custody_file]))

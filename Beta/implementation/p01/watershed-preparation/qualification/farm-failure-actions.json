@@ -1,0 +1,193 @@
+{
+  "databaseSha256": "2c13e2dcfb5e48f3534afebc6dab11085dddde111fe752e5ba5354dd258a89b8",
+  "actions": [
+    {
+      "sequence": 33,
+      "actions": [
+        [
+          "world.actor-action",
+          1,
+          "8c39b21283465320c4bbe88c7aacacbc",
+          "cd219b54c3604bceb5804af922f8b0cd",
+          "ebbeda38fae25d660327a689d280940b",
+          "e378e9407e63d212602d16a1540acd3b",
+          "532f47db8fb5de95dfc8560e9a0ef032",
+          "8631b15e15085ca2e4026a87d81ee2d7",
+          29,
+          [
+            "world.action.speak",
+            1,
+            "c7d63dbcc418014f5b87c36acea65ff6",
+            16
+          ]
+        ]
+      ],
+      "receipts": [
+        [
+          "world.action-receipt",
+          1,
+          "8c39b21283465320c4bbe88c7aacacbc",
+          "cd219b54c3604bceb5804af922f8b0cd",
+          "532f47db8fb5de95dfc8560e9a0ef032",
+          "8631b15e15085ca2e4026a87d81ee2d7",
+          "02efee201248c2a4dba4133d5dbef7201dfcd8fc2b226286a44196b2e5a85953",
+          33,
+          2,
+          3
+        ]
+      ]
+    }
+  ],
+  "movementSamples": [
+    {
+      "sequence": 3,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 4,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 5,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 6,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 7,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 8,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 9,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 10,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 11,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 12,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 13,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 14,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 15,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 16,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 17,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 18,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 19,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 20,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 21,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 22,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 23,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 24,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 25,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 26,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 27,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 28,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 29,
+      "dx": 0,
+      "dy": -32
+    },
+    {
+      "sequence": 30,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 31,
+      "dx": 32,
+      "dy": 0
+    },
+    {
+      "sequence": 32,
+      "dx": 32,
+      "dy": 0
+    }
+  ]
+}
