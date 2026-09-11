@@ -80,7 +80,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 18.0
-offset_top = -128.0
+offset_top = -150.0
 offset_right = -18.0
 offset_bottom = -18.0
 grow_horizontal = 2
@@ -102,13 +102,20 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 16
 autowrap_mode = 3
 
+[node name="ActionPreview" type="Label" parent="Root/Footer/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Hover or focus an action to see its target and cost."
+autowrap_mode = 3
+
 [node name="Actions" type="HBoxContainer" parent="Root/Footer/Column"]
 layout_mode = 2
 
 [node name="Movement" type="Label" parent="Root/Footer/Column/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Move: WASD / arrows"
+text = "Move\nWASD / arrows"
 
 [node name="Talk" type="Button" parent="Root/Footer/Column/Actions"]
 unique_name_in_owner = true
@@ -139,9 +146,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 80.0
-offset_top = -300.0
+offset_top = -314.0
 offset_right = -80.0
-offset_bottom = -150.0
+offset_bottom = -164.0
 grow_horizontal = 2
 grow_vertical = 0
 

@@ -27,6 +27,16 @@ Alternatively, build Debug and open `client/project.godot` with the pinned .NET 
 
 `tools/check_native_farm.py` exercises those actual Godot input/view adapters and reopens the same durable world in a second process. Its default is headless; `--rendered` also retains native screenshots for a separate visual review. This proves the small walk/talk/give connection, not Wren's complete quest or the full first-prototype loop. `tools/check_native_gathering.py` exercises real gather input, finite yields, a paused resource, exact process recovery and subsequent regrowth; its rendered option retains source-asset screenshots. `tools/check_native_production.py` runs three actual native processes: gather berries under the retained rules, upgrade the saved world and craft, then reopen and gather/craft again. It checks that the old save bytes remain unchanged, outputs survive restart, and paused projection fields remain exact. `tools/check_native_quests.py` prepares a progressed production save, upgrades a copy, accepts and completes the actual quest, then reopens and verifies a repeated completion cannot duplicate its reward. Its `--rendered` option captures the native HUD and dialogue. `tools/check_native_construction.py` checks both a progressed quest-save copy and a fresh construction-profile game. The fresh family performs the same real gathering, ration crafting and addressed acceptance/delivery before the routed build, conversation interruption, partial/completed process recovery and body collision/walk-around checks. The integrated verifier includes these probes alongside the lifecycle checks; retained qualification reports establish which exact revision and journey passed.
 
+
+The farm HUD presents captured action offers: target, cost and any known blocker come from the
+current public view, and buttons and hotkeys submit that same intent without silently choosing
+another target, recipe or ingredient lot. Focus/hover inspection is read-only. The host still
+adjudicates legality and stale revisions. `tools/check_native_offers.py` checks unavailable-action
+inspection plus actual gather, craft and conversation input against a disposable world;
+`--rendered` retains screenshots and checks that visible controls remain inside the viewport.
+The integrated verifier includes this journey. This is the current small farm interface, not
+the complete wheel, rebinding, management-screen or physical-controller acceptance suite.
+
 ## Project boundaries
 
 - `src/OpenFantasy.Core`: portable deterministic primitives, immutable command/receipt contracts, pinned package metadata, finite counted custody candidates, calendar queues and exact historical request boundaries, anatomy/condition definitions, material recipe validation, exact input retirement and transformed-output entitlements, experienced-time arithmetic, scoped resource-knowledge projection and actor-owned comprehension profiles, finite source/control admission and seeded stacked terrain with retained excavation. It has no engine or third-party package dependency. See its [byte and arithmetic contract](src/OpenFantasy.Core/CONTRACTS.md).

@@ -17,6 +17,8 @@ public partial class FarmGame : Node2D
     private FarmClientSession? _session;
     private Task<WorldActionReceipt>? _action;
     private Task? _closing;
+    private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _presented =
+        new Dictionary<FarmSemanticAction, FarmActionOffer>();
     private string _actionDescription = "";
     private bool _failed;
 
@@ -28,6 +30,8 @@ public partial class FarmGame : Node2D
     internal bool ConstructionProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
+    /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
+    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CurrentOffers => _presented;
     internal bool HasPendingAction => _action is not null;
     internal bool HasFailed => _failed;
     internal bool IsLocallyPaused => _input.Paused;
@@ -131,8 +135,10 @@ public partial class FarmGame : Node2D
             focus = (focus + FarmCanvasCoordinates.Position(speaker.Feet)) / 2;
         }
         _camera.Position = focus + new Vector2(0, -26);
+        // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
+        _presented = _session.CreateOffers(view);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null,
-            _input.Paused || !_input.Focused);
+            _input.Paused || !_input.Focused, _presented);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -210,43 +216,23 @@ public partial class FarmGame : Node2D
             TogglePause();
             return;
         }
-        switch (action)
+        if (!_presented.TryGetValue(action, out FarmActionOffer? offer))
         {
-            case FarmSemanticAction.Speak: Speak(); break;
-            case FarmSemanticAction.Give: Give(); break;
-            case FarmSemanticAction.Gather: Gather(); break;
-            case FarmSemanticAction.Craft: Craft(); break;
-            case FarmSemanticAction.CloseDialogue: CloseDialogue(); break;
+            _hud.Message("That action is not available on this farm.");
+            return;
         }
+        Submit(offer);
     }
 
-    private void Speak() => Submit(session => session.Speak(session.World.ReadView()), "You spoke with Wren.");
-    private void Give()
-    {
-        LocalWorldView? view = _session?.World.ReadView();
-        LocalQuestView? quest = view?.Quests.SingleOrDefault(value => value.GiverActorId == view.Dialogue?.SpeakerActorId);
-        if (view?.Progression is not null)
-        {
-            Submit(session => session.Quest(session.World.ReadView()), quest?.Status is null
-                ? "You agreed to bring wood for the orchard." : "You delivered the supplies and received Wren's reward.");
-        }
-        else
-        {
-            Submit(session => session.GiveWood(session.World.ReadView()), "You handed Wren wood from your pack.");
-        }
-    }
-    private void Gather() => Submit(session => session.Gather(session.World.ReadView()), "You gathered supplies.");
-    private void Craft() => Submit(session => session.CraftRations(session.World.ReadView()), "You packed two rations and kept the wood offcuts.");
-    private void CloseDialogue() => Submit(session => session.CloseDialogue(session.World.ReadView()), "The conversation ended.");
-
-    private void Submit(Func<FarmClientSession, Task<WorldActionReceipt>> submit, string description)
+    /// <summary>Submits the presented offer as captured; nothing is reselected from a fresher view.</summary>
+    private void Submit(FarmActionOffer offer)
     {
         // Context legality was decided by the router; this guard only prevents a second in-flight action.
         if (_session is null || _action is not null) return;
         try
         {
-            _actionDescription = description;
-            _action = submit(_session);
+            _actionDescription = offer.CompletionText;
+            _action = _session.SubmitOffer(offer);
         }
         catch (Exception error)
         {

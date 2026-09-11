@@ -22,6 +22,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
 
     private readonly Stopwatch _timeout = Stopwatch.StartNew();
     private readonly Stopwatch _stageTime = new();
+    private readonly Stopwatch _harvestArrival = new();
     private readonly List<string> _checks = [];
     private readonly List<object> _inputs = [];
     private readonly List<object> _readiness = [];
@@ -246,6 +247,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         }
         if (_swings == 2)
         {
+            if (!game.CurrentOffers.TryGetValue(FarmSemanticAction.Craft, out FarmActionOffer? craft) || !craft.CanExecute) return;
             Require(FarmCrafting.HasIngredients(view), "Gathered ingredients are unavailable for crafting.");
             _checks.Add("Two ordinary sickle inputs issued two actual berries from the admitted finite node.");
             SetMovement(null);
@@ -256,13 +258,17 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         LocalGatherNodeView node = view.GatheringNodes.Single(value => value.NodeId == _berry);
         if (!Approach(Player(view).Feet, node.Feet, 300))
         {
+            _harvestArrival.Reset();
             return;
         }
-        if (view.PlayerGatherEffort < 400)
+        if (!_harvestArrival.IsRunning) _harvestArrival.Start();
+        if (_harvestArrival.ElapsedMilliseconds < 150) return;
+        if (!game.CurrentOffers.TryGetValue(FarmSemanticAction.Gather, out FarmActionOffer? offer)
+            || !offer.CanExecute || offer.Scope.ExpectedActorRevision != Player(view).PresenceRevision)
         {
             return;
         }
-        Require(FarmClientSession.NearestGatherNode(view)?.NodeId == _berry, "The ordinary context selected a different resource.");
+        Require(offer.TargetId == _berry, "The displayed context selected a different resource.");
         _expectedQuantity = checked(view.PlayerInventory.Quantity + 1);
         _waitingForBerry = true;
         Press("gather");
@@ -343,6 +349,8 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         {
             return;
         }
+        if (!game.CurrentOffers.TryGetValue(FarmSemanticAction.Give, out FarmActionOffer? delivery)
+            || !delivery.CanExecute || delivery.Intent is not CompleteDeliveryQuestIntent) return;
         _checks.Add("First ordinary G input accepted the quest without consuming wood or granting a reward.");
         Press("give_wood");
         Enter(Stage.Completing);

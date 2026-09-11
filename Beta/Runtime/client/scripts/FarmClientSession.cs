@@ -1,4 +1,5 @@
 using System.Security.Cryptography;
+using System.Runtime.CompilerServices;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Gathering;
@@ -13,15 +14,25 @@ namespace OpenFantasy.Client;
 internal sealed class FarmClientSession : IAsyncDisposable
 {
     private readonly TrustedCommandDelivery _delivery;
+    private readonly FarmActionOffers _offers;
+    private readonly ConditionalWeakTable<FarmActionOffer, OfferedAction> _issuedOffers = new();
 
-    private FarmClientSession(LocalWorldSession world, TrustedCommandDelivery delivery,
+    private sealed class OfferedAction
+    {
+        internal Task<WorldActionReceipt>? Submission { get; set; }
+    }
+
+    internal FarmClientSession(LocalWorldSession world, TrustedCommandDelivery delivery,
         EntityId wrenActorId, EntityId woodDefinitionId, EntityId? berryDefinitionId)
     {
+        ArgumentNullException.ThrowIfNull(world);
+        ArgumentNullException.ThrowIfNull(delivery);
         World = world;
         _delivery = delivery;
         WrenActorId = wrenActorId;
         WoodDefinitionId = woodDefinitionId;
         BerryDefinitionId = berryDefinitionId;
+        _offers = new FarmActionOffers(delivery, wrenActorId, woodDefinitionId, berryDefinitionId);
     }
 
     internal LocalWorldSession World { get; }
@@ -59,30 +70,59 @@ internal sealed class FarmClientSession : IAsyncDisposable
         }
     });
 
-    internal Task<WorldActionReceipt> Speak(LocalWorldView view)
+    /// <summary>Read-only: selecting targets, lots and quest operations from a snapshot changes nothing.</summary>
+    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view)
     {
-        var wren = view.Actors.Single(actor => actor.ActorId == WrenActorId);
-        return World.SubmitAction(Command(view, new SpeakToActorIntent(wren.ActorId, wren.PresenceRevision)));
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view);
+        foreach (FarmActionOffer offer in offers.Values)
+        {
+            _issuedOffers.Add(offer, new OfferedAction());
+        }
+        return offers;
     }
 
-    internal Task<WorldActionReceipt> GiveWood(LocalWorldView view)
+    /// <summary>
+    /// Sends the offer's captured intent unchanged. Blocked, foreign-scope and closed-conversation
+    /// offers are refused here before any command exists; stale revisions go to the host's ordinary rejection.
+    /// </summary>
+    internal Task<WorldActionReceipt> SubmitOffer(FarmActionOffer offer)
     {
-        var wren = view.Actors.Single(actor => actor.ActorId == WrenActorId);
-        var lot = view.PlayerInventory.Lots.Where(value => value.DefinitionId == WoodDefinitionId)
-            .OrderByDescending(value => value.Quantity).ThenBy(value => value.LotId).FirstOrDefault()
-            ?? throw new InvalidOperationException("You have no wood in your pack.");
-        return World.SubmitAction(Command(view, new GiveItemIntent(wren.ActorId, wren.PresenceRevision,
-            lot.LotId, lot.Revision, view.PlayerInventory.CustodianId, view.PlayerInventory.Revision, Math.Min(6UL, lot.Quantity))));
+        ArgumentNullException.ThrowIfNull(offer);
+        if (!offer.CanExecute)
+        {
+            throw new InvalidOperationException(offer.BlockingReason);
+        }
+        // Control identities persist in saves; this weak registration binds the presentation to
+        // this particular client lifetime without retaining every discarded per-frame preview.
+        if (!_issuedOffers.TryGetValue(offer, out OfferedAction? issued))
+        {
+            throw new InvalidOperationException("That action belongs to another client session.");
+        }
+        lock (issued)
+        {
+            // Retrying the same presentation returns the same command outcome, even after its
+            // first effect changed the world. A fresh choice requires a newly presented offer.
+            if (issued.Submission is not null) return issued.Submission;
+            LocalWorldView current = World.ReadView();
+            if (!offer.Scope.BelongsTo(_delivery, current))
+            {
+                throw new InvalidOperationException("That action belongs to another session, world or branch.");
+            }
+            if (offer.DialogueId is { } conversation && current.Dialogue?.DialogueId != conversation)
+            {
+                throw new InvalidOperationException("That conversation has ended; the action no longer applies.");
+            }
+            issued.Submission = World.SubmitAction(offer.ToCommand(NewCommandId()));
+            return issued.Submission;
+        }
     }
 
-    internal Task<WorldActionReceipt> CloseDialogue(LocalWorldView view) => World.SubmitAction(Command(view,
-        new CloseDialogueIntent(view.Dialogue?.DialogueId ?? throw new InvalidOperationException("There is no addressed conversation to close."))));
-
-    internal Task<WorldActionReceipt> CraftRations(LocalWorldView view) =>
-        World.SubmitAction(Command(view, new CraftIntent(FarmCrafting.RationsRequest(view))));
-
-    internal Task<WorldActionReceipt> Quest(LocalWorldView view) =>
-        World.SubmitAction(Command(view, FarmQuestActions.Request(view)));
+    internal Task<WorldActionReceipt> Speak(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.Speak);
+    internal Task<WorldActionReceipt> GiveWood(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.Give);
+    internal Task<WorldActionReceipt> Quest(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.Give);
+    internal Task<WorldActionReceipt> CloseDialogue(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.CloseDialogue);
+    internal Task<WorldActionReceipt> CraftRations(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.Craft);
+    internal Task<WorldActionReceipt> Gather(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.Gather);
 
     internal ulong WoodQuantity(LocalWorldView view) => view.PlayerInventory.Lots
         .Where(lot => lot.DefinitionId == WoodDefinitionId).Aggregate(0UL, (sum, lot) => checked(sum + lot.Quantity));
@@ -110,18 +150,17 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return dx * dx + dy * dy;
     }
 
-    internal Task<WorldActionReceipt> Gather(LocalWorldView view)
+    /// <summary>Convenience wrappers read the same offers the HUD would present for that view.</summary>
+    private Task<WorldActionReceipt> SubmitOffer(LocalWorldView view, FarmSemanticAction action)
     {
-        var node = NearestGatherNode(view) ?? throw new InvalidOperationException("These plants need time to recover.");
-        var tool = view.GatheringTools.FirstOrDefault(value => value.Kind == node.RequiredTool)
-            ?? throw new InvalidOperationException("You need the right tool in your pack.");
-        return World.SubmitAction(Command(view, new GatherIntent(node.NodeId, node.Revision, tool.LotId, tool.Revision)));
+        if (!CreateOffers(view).TryGetValue(action, out FarmActionOffer? offer))
+        {
+            throw new InvalidOperationException("This world does not admit that action.");
+        }
+        return SubmitOffer(offer);
     }
 
-    private WorldActionCommand Command(LocalWorldView view, WorldActionIntent intent) => new(
-        EntityId.FromBytes(RandomNumberGenerator.GetBytes(EntityId.ByteLength)), _delivery.PrincipalId, _delivery.SessionId,
-        view.PlayerActorId, view.WorldId, view.BranchId,
-        view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).PresenceRevision, intent);
+    private static EntityId NewCommandId() => EntityId.FromBytes(RandomNumberGenerator.GetBytes(EntityId.ByteLength));
 
     public ValueTask DisposeAsync() => World.DisposeAsync();
 }

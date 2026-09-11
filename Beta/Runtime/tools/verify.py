@@ -151,6 +151,10 @@ def main():
         run("native-input-focus", [sys.executable, root / "tools/check_native_input.py",
             "--dotnet", dotnet, "--godot", godot, "--output", input_report], 90)
         report["nativeInput"] = json.loads(input_report.read_text())
+        offers_report = artifacts / "native-offers.json"
+        run("native-action-offers", [sys.executable, root / "tools/check_native_offers.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", offers_report], 100)
+        report["nativeOffers"] = json.loads(offers_report.read_text())
         lifecycle_report = artifacts / "farm-lifecycle.json"
         run("native-farm-lifecycle", [sys.executable, root / "tools/check_farm_lifecycle.py",
             "--dotnet", dotnet, "--godot", godot, "--output", lifecycle_report])

@@ -12,9 +12,10 @@ namespace OpenFantasy.Client;
 /// <summary>Native input proof spanning a gathered save, preserved-copy upgrade and crafted continuation.</summary>
 internal sealed partial class FarmProductionProbe(FarmGame game, string reportPath, string mode) : Node
 {
-    private enum Stage { Opening, Recovering, Harvesting, Crafting, Settling, Held, Done }
+    private enum Stage { Opening, Recovering, Harvesting, CraftReady, Crafting, Settling, Held, Done }
     private readonly Stopwatch _timeout = Stopwatch.StartNew();
     private readonly Stopwatch _stageTime = new();
+    private readonly Stopwatch _arrival = new();
     private readonly List<string> _checks = [];
     private Stage _stage;
     private EntityId _berry;
@@ -61,11 +62,7 @@ internal sealed partial class FarmProductionProbe(FarmGame game, string reportPa
                     }
                     _checks.Add("Restored world stayed unchanged for600ms before explicit resume.");
                     Press("pause_world");
-                    _stage = mode == "upgrade" ? Stage.Crafting : Stage.Harvesting;
-                    if (_stage == Stage.Crafting)
-                    {
-                        StartCraft(view);
-                    }
+                    _stage = mode == "upgrade" ? Stage.CraftReady : Stage.Harvesting;
                     break;
                 case Stage.Harvesting:
                     if (Harvest(view))
@@ -77,9 +74,16 @@ internal sealed partial class FarmProductionProbe(FarmGame game, string reportPa
                         }
                         else
                         {
-                            _stage = Stage.Crafting;
-                            StartCraft(view);
+                            _stage = Stage.CraftReady;
                         }
+                    }
+                    break;
+                case Stage.CraftReady:
+                    if (game.CurrentOffers.TryGetValue(FarmSemanticAction.Craft, out FarmActionOffer? craft)
+                        && craft.CanExecute && !game.HasPendingAction)
+                    {
+                        StartCraft(view);
+                        _stage = Stage.Crafting;
                     }
                     break;
                 case Stage.Crafting:
@@ -191,14 +195,19 @@ internal sealed partial class FarmProductionProbe(FarmGame game, string reportPa
         ReleaseMovement();
         if ((Int128)x * x + (Int128)y * y > 300L * 300)
         {
+            _arrival.Reset();
             Input.ActionPress(Math.Abs(x) > Math.Abs(y) ? x < 0 ? "walk_left" : "walk_right" : y < 0 ? "walk_up" : "walk_down");
             return false;
         }
-        if (view.PlayerGatherEffort < 400 || game.HasPendingAction)
+        // Release must reach the physics/host samples and then the displayed snapshot.
+        if (!_arrival.IsRunning) _arrival.Start();
+        if (_arrival.ElapsedMilliseconds < 150) return false;
+        if (game.HasPendingAction || !game.CurrentOffers.TryGetValue(FarmSemanticAction.Gather, out FarmActionOffer? offer)
+            || !offer.CanExecute || offer.Scope.ExpectedActorRevision != view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).PresenceRevision)
         {
             return false;
         }
-        Require(FarmClientSession.NearestGatherNode(view)?.NodeId == _berry, "Context selected a different resource.");
+        Require(offer.TargetId == _berry, "The displayed context selected a different resource.");
         _expectedQuantity = checked(view.PlayerInventory.Quantity + 1);
         _waiting = true;
         Press("gather");

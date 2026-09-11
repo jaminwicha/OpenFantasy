@@ -1,5 +1,4 @@
 using Godot;
-using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Hosting.Simulation;
 
@@ -8,11 +7,14 @@ namespace OpenFantasy.Client;
 /// <summary>Readable local play controls; all displayed inventory belongs to the current player.</summary>
 internal sealed partial class FarmHud : CanvasLayer
 {
+    private const string InspectHint = "Hover or focus an action to see its target and cost.";
+
     private Label _identity = null!;
     private Label _clock = null!;
     private Label _wood = null!;
     private Label _message = null!;
     private Label _project = null!;
+    private Label _preview = null!;
     private Label _speech = null!;
     private PanelContainer _dialogue = null!;
     private Button _talk = null!;
@@ -21,6 +23,11 @@ internal sealed partial class FarmHud : CanvasLayer
     private Button _craft = null!;
     private Button _close = null!;
     private Button _pause = null!;
+    private readonly Dictionary<FarmSemanticAction, Button> _buttons = [];
+    private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _offers =
+        new Dictionary<FarmSemanticAction, FarmActionOffer>();
+    private FarmSemanticAction _hovered;
+    private FarmSemanticAction _focused;
     private bool _wasSpeaking;
 
     /// <summary>Every button names a semantic action; the game's input router decides whether the context accepts it.</summary>
@@ -33,6 +40,7 @@ internal sealed partial class FarmHud : CanvasLayer
         _wood = GetNode<Label>("%Inventory");
         _message = GetNode<Label>("%Message");
         _project = GetNode<Label>("%ProjectStatus");
+        _preview = GetNode<Label>("%ActionPreview");
         _speech = GetNode<Label>("%Speech");
         _dialogue = GetNode<PanelContainer>("%Dialogue");
         _talk = GetNode<Button>("%Talk");
@@ -41,18 +49,32 @@ internal sealed partial class FarmHud : CanvasLayer
         _craft = GetNode<Button>("%Craft");
         _close = GetNode<Button>("%Close");
         _pause = GetNode<Button>("%Pause");
-        _talk.Pressed += () => Request(FarmSemanticAction.Speak);
-        _give.Pressed += () => Request(FarmSemanticAction.Give);
-        _gather.Pressed += () => Request(FarmSemanticAction.Gather);
-        _craft.Pressed += () => Request(FarmSemanticAction.Craft);
-        _close.Pressed += () => Request(FarmSemanticAction.CloseDialogue);
+        BindOfferButton(FarmSemanticAction.Speak, _talk);
+        BindOfferButton(FarmSemanticAction.Give, _give);
+        BindOfferButton(FarmSemanticAction.Gather, _gather);
+        BindOfferButton(FarmSemanticAction.Craft, _craft);
+        BindOfferButton(FarmSemanticAction.CloseDialogue, _close);
         _pause.Pressed += () => Request(FarmSemanticAction.TogglePause);
+        _preview.Text = InspectHint;
+    }
+
+    /// <summary>Pressing requests execution; hover and focus only select which offer the card explains.</summary>
+    private void BindOfferButton(FarmSemanticAction action, Button button)
+    {
+        _buttons[action] = button;
+        button.Pressed += () => Request(action);
+        button.MouseEntered += () => _hovered = action;
+        button.MouseExited += () => { if (_hovered == action) _hovered = FarmSemanticAction.None; };
+        button.FocusEntered += () => _focused = action;
+        button.FocusExited += () => { if (_focused == action) _focused = FarmSemanticAction.None; };
     }
 
     private void Request(FarmSemanticAction action) => ActionRequested?.Invoke(action);
 
-    internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused)
+    internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused,
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
+        _offers = offers;
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;
         int minute = view.Calendar.MillisecondsWithinDay / 60_000 % 60;
         _clock.Text = $"Day {view.Calendar.Days + 1} · {hour:D2}:{minute:D2}";
@@ -62,47 +84,29 @@ internal sealed partial class FarmHud : CanvasLayer
             _wood.Text += $"\nRations: {FarmCrafting.Quantity(view, OpenFantasy.Core.Production.RecipeMaterialRole.Output)}"
                 + $" · Offcuts: {FarmCrafting.Quantity(view, OpenFantasy.Core.Production.RecipeMaterialRole.Waste)}";
         }
-        _craft.Visible = view.Crafting is not null;
-        _craft.Disabled = pending || paused || view.HasReadingHold || !FarmCrafting.HasIngredients(view);
-        _talk.Disabled = pending || paused || view.HasReadingHold;
-        _give.Disabled = pending || paused || wood == 0 || view.Progression is not null;
-        _give.Text = view.Progression is null ? "Give wood  [G]" : "Orchard task  [G]";
         _identity.Text = "Wren's farm";
         if (view.Progression is { } progression)
         {
             _identity.Text = $"Level {progression.Level} · {progression.CurrencyBalance} {progression.CurrencyUnit}"
                 + $"\nHP {progression.Hp}/{progression.MaxHp} · MP {progression.Mp}/{progression.MaxMp}";
         }
-        _gather.Visible = view.PlayerGatherEffort.HasValue;
-        var target = FarmClientSession.NearestGatherNode(view);
-        _gather.Text = target?.RequiredTool == GatherToolKind.Axe ? "Chop oak  [F]" : "Pick berries  [F]";
-        _gather.Disabled = pending || paused || view.HasReadingHold || view.PlayerGatherEffort < 400
-            || target is null || !FarmClientSession.CanReachGatherNode(view, target);
-        _close.Disabled = pending || paused;
+        bool speaking = view.Dialogue is not null;
+        // Layer legality stays with the input router; these mirror it so a disabled control matches a refused key.
+        PresentOffer(FarmSemanticAction.Speak, "E", blockedByLayer: pending || paused || speaking);
+        PresentOffer(FarmSemanticAction.Give, "G", blockedByLayer: pending || paused);
+        PresentOffer(FarmSemanticAction.Gather, "F", blockedByLayer: pending || paused || speaking);
+        PresentOffer(FarmSemanticAction.Craft, "C", blockedByLayer: pending || paused || speaking);
+        PresentOffer(FarmSemanticAction.CloseDialogue, "E", blockedByLayer: pending || paused || !speaking);
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
         LocalConstructionView? project = view.Construction.FirstOrDefault();
         _project.Visible = project is not null;
         _project.Text = project is null ? "" : DescribeProject(view, project, paused);
-        bool speaking = view.Dialogue is not null;
         _dialogue.Visible = speaking;
         if (view.Dialogue is { } dialogue)
         {
-            _speech.Text = dialogue.SpeakerName + "\n" + dialogue.Text;
-            LocalQuestView? quest = view.Quests.SingleOrDefault(value => value.GiverActorId == dialogue.SpeakerActorId);
-            if (quest is not null)
-            {
-                _speech.Text = dialogue.SpeakerName + " · " + quest.Title + "\n";
-                _speech.Text += quest.Status == ActorQuestStatus.Completed
-                    ? project is not null && project.BuilderActorId == dialogue.SpeakerActorId
-                        ? project.IsCompleted ? "A small guard for the first sapling. That's a start."
-                            : "I've set the wood aside. Let me get to work when we're done talking."
-                        : "The supplies are set aside for the orchard."
-                    : quest.Description + $"\nWood: {quest.EligibleQuantity}/{quest.RequiredQuantity} · Reward: "
-                        + $"{quest.RewardExperience} XP and {quest.RewardCurrency} {quest.CurrencyUnit}";
-                _give.Text = quest.Status is null ? "Accept task  [G]" : "Deliver wood  [G]";
-                _give.Disabled = pending || paused || (!quest.CanAccept && !quest.CanComplete);
-            }
+            _speech.Text = DescribeSpeech(view, dialogue, project);
         }
+        PresentPreview();
         if (speaking && !_wasSpeaking)
         {
             _close.GrabFocus();
@@ -112,6 +116,63 @@ internal sealed partial class FarmHud : CanvasLayer
             _close.ReleaseFocus();
         }
         _wasSpeaking = speaking;
+    }
+
+    /// <summary>A missing offer hides the control; a blocked offer keeps it visible and inspectable.</summary>
+    private void PresentOffer(FarmSemanticAction action, string key, bool blockedByLayer)
+    {
+        Button button = _buttons[action];
+        if (!_offers.TryGetValue(action, out FarmActionOffer? offer))
+        {
+            button.Visible = false;
+            button.TooltipText = "";
+            return;
+        }
+        button.Visible = true;
+        button.Text = offer.SpendsSomething ? $"{offer.Label}  [{key}]\n{offer.CostText}" : $"{offer.Label}  [{key}]";
+        button.Disabled = blockedByLayer || !offer.CanExecute;
+        button.TooltipText = Explain(offer);
+    }
+
+    /// <summary>Keyboard/controller focus and pointer hover explain the same presented offer.</summary>
+    private void PresentPreview()
+    {
+        FarmSemanticAction inspected = _hovered != FarmSemanticAction.None ? _hovered : _focused;
+        _preview.Text = inspected != FarmSemanticAction.None && _offers.TryGetValue(inspected, out FarmActionOffer? offer)
+            ? Explain(offer) : InspectHint;
+    }
+
+    private static string Explain(FarmActionOffer offer)
+    {
+        string text = $"{offer.Label}: {offer.TargetName} · Cost: {offer.CostText}";
+        if (offer.DetailText is not null)
+        {
+            text += " · " + offer.DetailText;
+        }
+        if (offer.BlockingReason is not null)
+        {
+            text += "\nUnavailable: " + offer.BlockingReason;
+        }
+        return text;
+    }
+
+    private static string DescribeSpeech(LocalWorldView view, LocalDialogueView dialogue, LocalConstructionView? project)
+    {
+        LocalQuestView? quest = view.Quests.SingleOrDefault(value => value.GiverActorId == dialogue.SpeakerActorId);
+        if (quest is null)
+        {
+            return dialogue.SpeakerName + "\n" + dialogue.Text;
+        }
+        string text = dialogue.SpeakerName + " · " + quest.Title + "\n";
+        if (quest.Status == ActorQuestStatus.Completed)
+        {
+            return text + (project is not null && project.BuilderActorId == dialogue.SpeakerActorId
+                ? project.IsCompleted ? "A small guard for the first sapling. That's a start."
+                    : "I've set the wood aside. Let me get to work when we're done talking."
+                : "The supplies are set aside for the orchard.");
+        }
+        return text + quest.Description + $"\nWood: {quest.EligibleQuantity}/{quest.RequiredQuantity} · Reward: "
+            + $"{quest.RewardExperience} XP and {quest.RewardCurrency} {quest.CurrencyUnit}";
     }
 
     private static string DescribeProject(LocalWorldView view, LocalConstructionView project, bool paused)
@@ -136,5 +197,4 @@ internal sealed partial class FarmHud : CanvasLayer
     }
 
     internal void Message(string text) => _message.Text = text;
-
 }

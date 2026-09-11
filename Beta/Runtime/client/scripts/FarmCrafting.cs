@@ -3,16 +3,32 @@ using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
 
+/// <summary>Either the exact owned lots a ration batch would consume, or the known reason none can be chosen.</summary>
+internal sealed record FarmCraftSelection(CraftRequest? Request, string? BlockingReason);
+
 /// <summary>Selects owned ingredients from the public view; the authority rechecks every selection.</summary>
 internal static class FarmCrafting
 {
+    internal const string MissingRecipe = "This world has no admitted ration recipe.";
+    internal const string MissingIngredients = "Pack two berries and one wood to make two rations.";
+
     internal static LocalCraftRecipeView? RationsRecipe(LocalWorldView view) =>
         view.Crafting?.Recipes.SingleOrDefault(recipe => recipe.Key == "craft_rations");
 
     internal static CraftRequest RationsRequest(LocalWorldView view)
     {
-        LocalCraftRecipeView recipe = RationsRecipe(view)
-            ?? throw new InvalidOperationException("This world has no admitted ration recipe.");
+        FarmCraftSelection selection = SelectRations(view);
+        return selection.Request ?? throw new InvalidOperationException(selection.BlockingReason);
+    }
+
+    /// <summary>Lots are taken in the view's stable lot order until each input term is covered.</summary>
+    internal static FarmCraftSelection SelectRations(LocalWorldView view)
+    {
+        LocalCraftRecipeView? recipe = RationsRecipe(view);
+        if (recipe is null)
+        {
+            return new FarmCraftSelection(null, MissingRecipe);
+        }
         List<IngredientRequest> selected = [];
         foreach (LocalCraftTermView term in recipe.Terms.Where(term => term.Role == RecipeMaterialRole.Input))
         {
@@ -32,11 +48,11 @@ internal static class FarmCrafting
             }
             if (remaining != 0)
             {
-                throw new InvalidOperationException("Pack two berries and one wood to make two rations.");
+                return new FarmCraftSelection(null, MissingIngredients);
             }
         }
-        return new CraftRequest(recipe.RecipeId, recipe.Version, view.Crafting!.Revision,
-            view.PlayerInventory.CustodianId, view.PlayerInventory.Revision, selected);
+        return new FarmCraftSelection(new CraftRequest(recipe.RecipeId, recipe.Version, view.Crafting!.Revision,
+            view.PlayerInventory.CustodianId, view.PlayerInventory.Revision, selected), null);
     }
 
     internal static bool HasIngredients(LocalWorldView view)

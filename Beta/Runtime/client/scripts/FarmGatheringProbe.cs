@@ -14,6 +14,7 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
     private enum Stage { Opening, Oak, PauseSettling, PauseHeld, Berry, FinalSettling, Recovering, Regrowing, Done }
     private readonly Stopwatch _timeout = Stopwatch.StartNew();
     private readonly Stopwatch _stageTime = new();
+    private readonly Stopwatch _arrival = new();
     private readonly List<string> _checks = [];
     private readonly List<object> _readinessChanges = [];
     private (bool Paused, bool Focused)? _lastReadiness;
@@ -173,11 +174,18 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
         ReleaseMovement();
         if ((Int128)x * x + (Int128)y * y > 300L * 300)
         {
+            _arrival.Reset();
             Input.ActionPress(Math.Abs(x) > Math.Abs(y) ? x < 0 ? "walk_left" : "walk_right" : y < 0 ? "walk_up" : "walk_down");
             return false;
         }
-        if (view.PlayerGatherEffort < 400 || game.HasPendingAction) return false;
-        Require(FarmClientSession.NearestGatherNode(view)?.NodeId == nodeId, "Context input selected an unintended resource.");
+        // The worker can publish a newer view between the HUD and this probe's frame callbacks.
+        // Choose only once the displayed offer is ready; never treat unrendered effort as a button state.
+        // Release must reach the physics/host samples and then the displayed snapshot.
+        if (!_arrival.IsRunning) _arrival.Start();
+        if (_arrival.ElapsedMilliseconds < 150) return false;
+        if (game.HasPendingAction || !game.CurrentOffers.TryGetValue(FarmSemanticAction.Gather, out FarmActionOffer? offer)
+            || !offer.CanExecute || offer.Scope.ExpectedActorRevision != view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).PresenceRevision) return false;
+        Require(offer.TargetId == nodeId, "The displayed context selected an unintended resource.");
         _expectedQuantity = checked(view.PlayerInventory.Quantity + 1);
         _waitingForYield = true;
         Press("gather");
