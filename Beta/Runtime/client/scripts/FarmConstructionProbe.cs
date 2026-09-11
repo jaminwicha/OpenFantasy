@@ -30,8 +30,6 @@ internal sealed partial class FarmConstructionProbe(FarmGame game, string report
     private string? _held;
     private EntityId _builder;
     private SubunitPosition _builderOrigin;
-    private long _lastFocusRequest;
-    private int _focusRequests;
     private int _waypoint;
     private bool _routeSettling;
     private long _routeStopAt;
@@ -330,13 +328,7 @@ internal sealed partial class FarmConstructionProbe(FarmGame game, string report
                 game.IsWindowFocused, Day = view.Calendar.Days, Millisecond = view.Calendar.MillisecondsWithinDay });
         }
         if (game.IsLocallyPaused || !game.IsWindowFocused) SetMovement(null);
-        if (!game.IsWindowFocused && !game.IsLocallyPaused && _focusRequests < 8
-            && _timeout.ElapsedMilliseconds - _lastFocusRequest >= 2_000)
-        {
-            _lastFocusRequest = _timeout.ElapsedMilliseconds;
-            _focusRequests++;
-            GetWindow().GrabFocus();
-        }
+        // A shared desktop may interrupt this fixture. Keep normal readiness; never reclaim focus.
     }
 
     private void SetMovement(string? action)
@@ -387,7 +379,7 @@ internal sealed partial class FarmConstructionProbe(FarmGame game, string report
         {
             Kind = "native-farm-construction-v1", Mode = mode, Status = "passed", Runtime = RuntimeInformation.FrameworkDescription,
             DisplayDriver = DisplayServer.GetName(), Initial = _initial, Final = Snapshot(view), Observations = _observations,
-            Checks = _checks, Inputs = _inputs, Readiness = _readiness, FocusRequests = _focusRequests,
+            Checks = _checks, Inputs = _inputs, Readiness = _readiness, FocusRequests = 0,
             InitialPausedMilliseconds = _initialPausedMilliseconds, FinalPausedMilliseconds = _finalPausedMilliseconds,
             ReadingMilliseconds = _readingMilliseconds, CollisionReadyMilliseconds = _collisionReadyMilliseconds,
             game.IsLocallyPaused, game.IsWindowFocused, DurationMilliseconds = _timeout.ElapsedMilliseconds
@@ -403,7 +395,7 @@ internal sealed partial class FarmConstructionProbe(FarmGame game, string report
         File.WriteAllText(Output(mode, "failed.json"), JsonSerializer.Serialize(new
         {
             Status = "failed", Mode = mode, Stage = _stage.ToString(), Error = error.ToString(),
-            Inputs = _inputs, Readiness = _readiness, Observations = _observations, FocusRequests = _focusRequests,
+            Inputs = _inputs, Readiness = _readiness, Observations = _observations, FocusRequests = 0,
             game.IsLocallyPaused, game.IsWindowFocused, Current = game.CurrentView is { } view ? Snapshot(view) : null
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
         _stage = Stage.Done;

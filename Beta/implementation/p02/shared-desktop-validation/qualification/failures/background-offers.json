@@ -1,0 +1,329 @@
+{
+  "startedUtc": "2026-09-11T20:37:31.474001+00:00",
+  "scope": "Native target selection, pack inspection/time/input, action previews and authoritative gathering/crafting/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "failed",
+  "rendered": true,
+  "backgroundRender": true,
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-action-offers",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-offers-vdcayn9l/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-offers-vdcayn9l/offers.json",
+      "--background-render"
+    ],
+    "exitCode": 0,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": "ERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#26323453356>'. Signal: 'focus_entered', callable: 'Delegate::Invoke'.\n   at: _disconnect (core/object/object.cpp:1733)\n   C# backtrace (most recent call first):\n       [0] void Godot.NativeCalls.godot_icall_2_1193(nint, nint, Godot.NativeInterop.godot_string_name, Godot.Callable&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/NativeCalls.cs:11196)\n       [1] void Godot.GodotObject.Disconnect(Godot.StringName, Godot.Callable) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/GodotObject.cs:952)\n       [2] void Godot.Window.remove_FocusEntered(System.Action) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Window.cs:2404)\n       [3] void OpenFantasy.Client.FarmGame._ExitTree() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.cs:460)\n       [4] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2604)\n       [5] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/CanvasItem.cs:1792)\n       [6] bool Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node2D.cs:557)\n       [7] bool OpenFantasy.Client.FarmGame.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/OpenFantasy.Client.FarmGame_ScriptMethods.generated.cs:210)\n       [8] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)\nERROR: Attempt to disconnect a nonexistent connection from 'root:<Window#26323453356>'. Signal: 'focus_exited', callable: 'Delegate::Invoke'.\n   at: _disconnect (core/object/object.cpp:1729)\n   C# backtrace (most recent call first):\n       [0] void Godot.NativeCalls.godot_icall_2_1193(nint, nint, Godot.NativeInterop.godot_string_name, Godot.Callable&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/NativeCalls.cs:11196)\n       [1] void Godot.GodotObject.Disconnect(Godot.StringName, Godot.Callable) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/GodotObject.cs:952)\n       [2] void Godot.Window.remove_FocusExited(System.Action) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Window.cs:2418)\n       [3] void OpenFantasy.Client.FarmGame._ExitTree() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.cs:461)\n       [4] bool Godot.Node.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node.cs:2604)\n       [5] bool Godot.CanvasItem.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/CanvasItem.cs:1792)\n       [6] bool Godot.Node2D.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Generated/GodotObjects/Node2D.cs:557)\n       [7] bool OpenFantasy.Client.FarmGame.InvokeGodotClassMethod(Godot.NativeInterop.godot_string_name&, Godot.NativeInterop.NativeVariantPtrArgs, Godot.NativeInterop.godot_variant&) (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/obj/Debug/Godot.SourceGenerators/Godot.SourceGenerators.ScriptMethodsGenerator/OpenFantasy.Client.FarmGame_ScriptMethods.generated.cs:210)\n       [8] Godot.NativeInterop.godot_bool Godot.Bridge.CSharpInstanceBridge.Call(nint, Godot.NativeInterop.godot_string_name*, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_variant_call_error*, Godot.NativeInterop.godot_variant*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/Bridge/CSharpInstanceBridge.cs:24)\n"
+  },
+  "observed": {
+    "Kind": "native-action-offers-v1",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "macOS",
+    "WindowFocused": true,
+    "LocallyPaused": false,
+    "BackgroundRender": true,
+    "NativeWindowFocused": true,
+    "BindWindowFocus": false,
+    "InventoryOpen": false,
+    "ActionPending": false,
+    "FinalView": {
+      "WorldId": {
+        "High": 11838943175866674348,
+        "Low": 6566761377563931012
+      },
+      "BranchId": {
+        "High": 3117603463796623977,
+        "Low": 1547435577907761989
+      },
+      "PlayerActorId": {
+        "High": 11740567274192566031,
+        "Low": 3901590248268668208
+      },
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32931000
+      },
+      "HasReadingHold": false,
+      "Actors": [
+        {
+          "ActorId": {
+            "High": 11740567274192566031,
+            "Low": 3901590248268668208
+          },
+          "DisplayName": "Traveler",
+          "Feet": {
+            "X": 26816,
+            "Y": 83104,
+            "Z": 256,
+            "Cell": {
+              "X": 104,
+              "Y": 324,
+              "Z": 1
+            }
+          },
+          "PresenceRevision": 225,
+          "ControllerKind": 1
+        },
+        {
+          "ActorId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "DisplayName": "Wren",
+          "Feet": {
+            "X": 27008,
+            "Y": 82560,
+            "Z": 256,
+            "Cell": {
+              "X": 105,
+              "Y": 322,
+              "Z": 1
+            }
+          },
+          "PresenceRevision": 80,
+          "ControllerKind": 2
+        }
+      ],
+      "PlayerInventory": {
+        "CustodianId": {
+          "High": 3551574659632768418,
+          "Low": 7866543934556346698
+        },
+        "Revision": 4,
+        "Quantity": 13,
+        "Lots": [
+          {
+            "LotId": {
+              "High": 1696821205204844772,
+              "Low": 14233350353809258915
+            },
+            "DefinitionId": {
+              "High": 11982809337836041595,
+              "Low": 18373582298239785721
+            },
+            "Revision": 0,
+            "Quantity": 1,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 5470128972612045146,
+              "Low": 18086807705569776730
+            },
+            "DefinitionId": {
+              "High": 17440792895996343150,
+              "Low": 13598911669572622528
+            },
+            "Revision": 0,
+            "Quantity": 8,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 8225799703908409572,
+              "Low": 3329847337192323368
+            },
+            "DefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "Revision": 0,
+            "Quantity": 1,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 15797439895048023083,
+              "Low": 7154928525699151892
+            },
+            "DefinitionId": {
+              "High": 6052033973718802550,
+              "Low": 15899431500196879021
+            },
+            "Revision": 0,
+            "Quantity": 2,
+            "Provenance": 2,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 16941392778397455606,
+              "Low": 13556433028980894749
+            },
+            "DefinitionId": {
+              "High": 11425103842346022574,
+              "Low": 7338629654356999930
+            },
+            "Revision": 0,
+            "Quantity": 1,
+            "Provenance": 2,
+            "AvailableForDelivery": true
+          }
+        ]
+      },
+      "GatheringNodes": [
+        {
+          "NodeId": {
+            "High": 2639486879359783236,
+            "Low": 2635907145496061359
+          },
+          "DisplayName": "Berry Bush",
+          "Feet": {
+            "X": 27008,
+            "Y": 85120,
+            "Z": 256,
+            "Cell": {
+              "X": 105,
+              "Y": 332,
+              "Z": 1
+            }
+          },
+          "Revision": 2,
+          "Kind": 2,
+          "RequiredTool": 2,
+          "RemainingSwings": 2,
+          "Visibility": 1
+        },
+        {
+          "NodeId": {
+            "High": 7485666049006258407,
+            "Low": 6889325985582867310
+          },
+          "DisplayName": "Oak",
+          "Feet": {
+            "X": 25984,
+            "Y": 83840,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 327,
+              "Z": 1
+            }
+          },
+          "Revision": 1,
+          "Kind": 1,
+          "RequiredTool": 1,
+          "RemainingSwings": 4,
+          "Visibility": 1
+        }
+      ],
+      "GatheringTools": [
+        {
+          "LotId": {
+            "High": 1696821205204844772,
+            "Low": 14233350353809258915
+          },
+          "Revision": 0,
+          "Kind": 2,
+          "Power": 1
+        },
+        {
+          "LotId": {
+            "High": 8225799703908409572,
+            "Low": 3329847337192323368
+          },
+          "Revision": 0,
+          "Kind": 1,
+          "Power": 1
+        }
+      ],
+      "PlayerGatherEffort": 1000,
+      "Crafting": {
+        "Revision": 1,
+        "Recipes": [
+          {
+            "RecipeId": {
+              "High": 7909665981591724340,
+              "Low": 12637442341572758209
+            },
+            "Version": {
+              "Value": "747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142"
+            },
+            "Key": "craft_rations",
+            "Terms": [
+              {
+                "DefinitionId": {
+                  "High": 17440792895996343150,
+                  "Low": 13598911669572622528
+                },
+                "Quantity": 1,
+                "Role": 1
+              },
+              {
+                "DefinitionId": {
+                  "High": 2321613972237266223,
+                  "Low": 8645526191670244961
+                },
+                "Quantity": 2,
+                "Role": 1
+              },
+              {
+                "DefinitionId": {
+                  "High": 6052033973718802550,
+                  "Low": 15899431500196879021
+                },
+                "Quantity": 2,
+                "Role": 2
+              },
+              {
+                "DefinitionId": {
+                  "High": 11425103842346022574,
+                  "Low": 7338629654356999930
+                },
+                "Quantity": 1,
+                "Role": 3
+              }
+            ]
+          }
+        ]
+      },
+      "Dialogue": null,
+      "Progression": null,
+      "Quests": [],
+      "Construction": []
+    },
+    "Checks": [
+      "Unavailable crafting stayed inspectable through focus and hover without changing the paused world.",
+      "Keyboard, shoulder events and the native Next button selected identities without spending or changing verbs.",
+      "A locked oak remained selected while berries became nearer; unavailable F spent nothing and explicit Clear restored context.",
+      "Displayed Oak target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Craft inspection and keyboard commitment used the same recipe with exact input/output/waste quantities.",
+      "Pack counts, crafted outputs, keyboard/D-pad/hover/confirm inspection, trapped Tab focus and covered field shortcuts preserved the exact paused public view.",
+      "B, View and Escape unwound only pack inspection, preserved its selected item and restored HUD focus without releasing pause.",
+      "The running pack allowed actual host time while stopping player movement; closing required release before a new field step.",
+      "Injected focus loss/return kept inspection open, reflected the host pause and restored time without replaying an action.",
+      "Talk preserved the displayed speaker and Escape retained dialogue-first cancellation."
+    ],
+    "ElapsedMilliseconds": 18016
+  },
+  "failure": "The native action-offer process failed; inspect its retained output.",
+  "artifactSha256": {
+    "native-offers-vdcayn9l/offers.berry-offer.png": "e7ec4d6fa4d71b78ae9f6b64a43356e7a7d4d858a7688a6c1eef03c617a5a05f",
+    "native-offers-vdcayn9l/offers.blocked-craft.png": "857478b514990041a39c07b4064a4f71d77154aef625d64d3580bbcb88558fcf",
+    "native-offers-vdcayn9l/offers.dialogue.png": "52444af78341ab3900f04a2c523034993258d58977c6881768514e7b8bfc98c4",
+    "native-offers-vdcayn9l/offers.json": "7658cac6c53f5647aa417ffd2b7d849b53670bf24935f362790bd921ccb15395",
+    "native-offers-vdcayn9l/offers.locked-target.png": "c59aa34290bbce9255c52988d258532b0ec24b8a06f11d6aa66c7197cba353ee",
+    "native-offers-vdcayn9l/offers.oak-offer.png": "0a8117e99c149d40bedcf7ca9c46a541c5bfd5845c207cd9361a08b44c8eb38a",
+    "native-offers-vdcayn9l/offers.pack-inspection.png": "fa55dd06d54b08d7f608e3ee47924040647eecccd5d50531abefbadd892a0f48",
+    "native-offers-vdcayn9l/offers.pack-paused.png": "218a0c0aa4974665cc8dfd7222134872be9373d631d101a930f8ca343f09d845",
+    "native-offers-vdcayn9l/offers.pack-recovered.png": "a83ab6d00c113e5a75d129447dfec66b52ff590563464cb1b747cbbcb2266712",
+    "native-offers-vdcayn9l/offers.pack-running.png": "59c79277193fd61198289c23a614e9ac36766926039310a89b938c11afc9fd4d",
+    "native-offers-vdcayn9l/offers.person-target.png": "9a4890374ddc2adfc1e730258693a929ade60b7abb79414114707321aa3d5052",
+    "native-offers-vdcayn9l/offers.plant-target.png": "c3d79c270faf2389819738ed026caa21670e91b37a0ea1a48d13385462cb9826",
+    "native-offers-vdcayn9l/offers.ready-craft.png": "6b5db335a4a5f3fdf28978494d42f3e68051c3f629eac736902243e0cc538902",
+    "native-offers-vdcayn9l/world.sqlite": "e950a31dd8327da65ffdb7839460f6c5ca25329ce7298481122b74bbe8e49754"
+  },
+  "finishedUtc": "2026-09-11T20:37:51.890866+00:00"
+}

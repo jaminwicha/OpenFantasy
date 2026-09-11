@@ -1,0 +1,22 @@
+{
+  "startedUtc": "2026-09-11T20:53:46.888421+00:00",
+  "scope": "Local core/hosting tests, durable counted authority and Godot binding smoke",
+  "status": "failed",
+  "namingScanRequested": false,
+  "steps": [
+    {
+      "name": "sdk-version",
+      "command": [
+        "/unused/dotnet",
+        "--version"
+      ],
+      "exitCode": null,
+      "timedOut": true,
+      "timeoutSeconds": 180,
+      "stdout": "partial stdout\n",
+      "stderr": "partial stderr\n"
+    }
+  ],
+  "failure": "Command '['/unused/dotnet', '--version']' timed out after 180 seconds",
+  "finishedUtc": "2026-09-11T20:53:46.888841+00:00"
+}

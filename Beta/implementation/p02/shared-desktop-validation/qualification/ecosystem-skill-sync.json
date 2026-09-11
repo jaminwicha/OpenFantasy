@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_utc": "2026-09-11T20:40:55.731303+00:00",
+  "plan": {
+    "schema_version": 1,
+    "manifest": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/manifests/2026-09-11-shared-desktop-skills.json",
+    "manifest_sha256": "d910e4dc1ad854c0488b515749fb7045b97fee0cf54e89a5d408edeec4d462d8",
+    "entries": [
+      {
+        "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+        "target": "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+        "before_sha256": "53a5ee8881b90f9623cab0c6a3269d4eb6e122e880e615fc984a2f8741e6e8c3",
+        "after_sha256": "f52dae436a9b9d5dc2c8b8127b086a3651466c5b53271fa2b34b529999193c84"
+      },
+      {
+        "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+        "target": "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+        "before_sha256": "53a5ee8881b90f9623cab0c6a3269d4eb6e122e880e615fc984a2f8741e6e8c3",
+        "after_sha256": "f52dae436a9b9d5dc2c8b8127b086a3651466c5b53271fa2b34b529999193c84"
+      },
+      {
+        "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+        "target": "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md",
+        "before_sha256": "53a5ee8881b90f9623cab0c6a3269d4eb6e122e880e615fc984a2f8741e6e8c3",
+        "after_sha256": "f52dae436a9b9d5dc2c8b8127b086a3651466c5b53271fa2b34b529999193c84"
+      },
+      {
+        "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skill-overlays/input-handling/SKILL.md",
+        "target": "/Users/alucinor/.codex/skills/input-handling/SKILL.md",
+        "before_sha256": "e9175073d3f95bbe4bebd0b8eca0bba74d7e46ab820306f4b558efb7df5dffd3",
+        "after_sha256": "59b9856ccaea1375b3c48d618411ef44260e1caf83dc7f744921d0c5c1b4f20b"
+      },
+      {
+        "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skill-overlays/input-handling/SKILL.md",
+        "target": "/Users/alucinor/.claude/skills/input-handling/SKILL.md",
+        "before_sha256": "e9175073d3f95bbe4bebd0b8eca0bba74d7e46ab820306f4b558efb7df5dffd3",
+        "after_sha256": "59b9856ccaea1375b3c48d618411ef44260e1caf83dc7f744921d0c5c1b4f20b"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+      "target": "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+      "before_sha256": "53a5ee8881b90f9623cab0c6a3269d4eb6e122e880e615fc984a2f8741e6e8c3",
+      "after_sha256": "f52dae436a9b9d5dc2c8b8127b086a3651466c5b53271fa2b34b529999193c84",
+      "backup": "/tmp/openfantasy-shared-desktop-sync-backup/0000.before"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+      "target": "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+      "before_sha256": "53a5ee8881b90f9623cab0c6a3269d4eb6e122e880e615fc984a2f8741e6e8c3",
+      "after_sha256": "f52dae436a9b9d5dc2c8b8127b086a3651466c5b53271fa2b34b529999193c84",
+      "backup": "/tmp/openfantasy-shared-desktop-sync-backup/0001.before"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+      "target": "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md",
+      "before_sha256": "53a5ee8881b90f9623cab0c6a3269d4eb6e122e880e615fc984a2f8741e6e8c3",
+      "after_sha256": "f52dae436a9b9d5dc2c8b8127b086a3651466c5b53271fa2b34b529999193c84",
+      "backup": "/tmp/openfantasy-shared-desktop-sync-backup/0002.before"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skill-overlays/input-handling/SKILL.md",
+      "target": "/Users/alucinor/.codex/skills/input-handling/SKILL.md",
+      "before_sha256": "e9175073d3f95bbe4bebd0b8eca0bba74d7e46ab820306f4b558efb7df5dffd3",
+      "after_sha256": "59b9856ccaea1375b3c48d618411ef44260e1caf83dc7f744921d0c5c1b4f20b",
+      "backup": "/tmp/openfantasy-shared-desktop-sync-backup/0003.before"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skill-overlays/input-handling/SKILL.md",
+      "target": "/Users/alucinor/.claude/skills/input-handling/SKILL.md",
+      "before_sha256": "e9175073d3f95bbe4bebd0b8eca0bba74d7e46ab820306f4b558efb7df5dffd3",
+      "after_sha256": "59b9856ccaea1375b3c48d618411ef44260e1caf83dc7f744921d0c5c1b4f20b",
+      "backup": "/tmp/openfantasy-shared-desktop-sync-backup/0004.before"
+    }
+  ],
+  "status": "complete"
+}

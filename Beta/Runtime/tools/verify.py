@@ -37,8 +37,16 @@ def main():
                   status="running", namingScanRequested=bool(args.forbidden_token), steps=[])
 
     def run(name, command, timeout=180):
-        result = subprocess.run([str(x) for x in command], cwd=root, env=env,
-                                capture_output=True, text=True, timeout=timeout)
+        try:
+            result = subprocess.run([str(x) for x in command], cwd=root, env=env,
+                                    capture_output=True, text=True, timeout=timeout)
+        except subprocess.TimeoutExpired as error:
+            def retained(value):
+                return value.decode(errors="replace") if isinstance(value, bytes) else value or ""
+            report["steps"].append(dict(name=name, command=[str(x) for x in command],
+                exitCode=None, timedOut=True, timeoutSeconds=timeout,
+                stdout=retained(error.stdout), stderr=retained(error.stderr)))
+            raise
         report["steps"].append(dict(name=name, command=[str(x) for x in command],
                                     exitCode=result.returncode,
                                     stdout=result.stdout, stderr=result.stderr))

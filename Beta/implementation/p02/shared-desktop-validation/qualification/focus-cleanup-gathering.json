@@ -1,0 +1,133 @@
+{
+  "startedUtc": "2026-09-11T20:52:41.208485+00:00",
+  "scope": "Named native gather input, actual finite toolkit and yield, depletion, pause, process recovery and regrowth",
+  "rendered": false,
+  "status": "passed",
+  "runs": [
+    {
+      "stage": "create",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-gathering",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-gathering-6ee7df07583b45f2b8e37902fadc9e31/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-gathering-6ee7df07583b45f2b8e37902fadc9e31/gathering.json",
+        "create"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative gathering passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-gathering-6ee7df07583b45f2b8e37902fadc9e31/gathering.json\n",
+      "stderr": ""
+    },
+    {
+      "stage": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-gathering",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-gathering-6ee7df07583b45f2b8e37902fadc9e31/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-gathering-6ee7df07583b45f2b8e37902fadc9e31/gathering.json",
+        "reopen"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative gathering passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-gathering-6ee7df07583b45f2b8e37902fadc9e31/gathering.reopen.json\n",
+      "stderr": ""
+    }
+  ],
+  "create": {
+    "Kind": "native-farm-gathering-v1",
+    "Stage": "create",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32400000,\"PlayerGatherEffort\":0,\"HasReadingHold\":false,\"Quantity\":10,\"StorageRevision\":0,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":25984,\"Y\":83328,\"Z\":256,\"PresenceRevision\":0},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":0}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":0,\"RemainingSwings\":4,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]}",
+    "Final": "{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":33049800,\"PlayerGatherEffort\":10,\"HasReadingHold\":false,\"Quantity\":19,\"StorageRevision\":9,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"318290c498ebea84d6dbbe8fcce9ccc0\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"40cc9f2b012902f391624f962c46adb9\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8},{\"Id\":\"65400e277858603e718719b93ee586e3\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"65f2b905709a554fc03a1ffc4d967df4\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"894b6f6d9eb564c0687cfd6ae51ec25f\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"9f9059ed6f6a9e8116126f36b6a99031\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"a224f961ac3fae7acc9d4c0a67c00df7\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"d8763ccc39755ee7da08d5638890c631\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"ea2f56ea2e97d6a44cff18a35019a482\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":96}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":4,\"RemainingSwings\":0,\"Visibility\":2}]}",
+    "OakId": "67e26d9c5e3848e75f9bcd7b9088e36e",
+    "BerryId": "24a15755098b514424949f954c34e5af",
+    "WoodDefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+    "Checks": [
+      "Original source-pinned oak and berries plus explicitly supplied tools opened in the native game.",
+      "Five real oak swings issued exactly five wood and depleted the node.",
+      "Pause froze depleted resource, calendar, effort and all public positions for600ms.",
+      "Four real sickle swings issued four berries; tool lots remain owned."
+    ],
+    "Readiness": [
+      {
+        "WallMilliseconds": 222,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "Calendar": 32400000
+      },
+      {
+        "WallMilliseconds": 10254,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Calendar": 32761800
+      },
+      {
+        "WallMilliseconds": 11068,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "Calendar": 32761800
+      },
+      {
+        "WallMilliseconds": 19057,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Calendar": 33049800
+      }
+    ],
+    "FocusRequests": 0,
+    "DurationMilliseconds": 19307
+  },
+  "reopen": {
+    "Kind": "native-farm-gathering-v1",
+    "Stage": "reopen",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":33049800,\"PlayerGatherEffort\":10,\"HasReadingHold\":false,\"Quantity\":19,\"StorageRevision\":9,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"318290c498ebea84d6dbbe8fcce9ccc0\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"40cc9f2b012902f391624f962c46adb9\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8},{\"Id\":\"65400e277858603e718719b93ee586e3\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"65f2b905709a554fc03a1ffc4d967df4\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"894b6f6d9eb564c0687cfd6ae51ec25f\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"9f9059ed6f6a9e8116126f36b6a99031\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"a224f961ac3fae7acc9d4c0a67c00df7\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"d8763ccc39755ee7da08d5638890c631\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"ea2f56ea2e97d6a44cff18a35019a482\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":96}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":4,\"RemainingSwings\":0,\"Visibility\":2}]}",
+    "Final": "{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":34380000,\"PlayerGatherEffort\":1000,\"HasReadingHold\":false,\"Quantity\":19,\"StorageRevision\":9,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"318290c498ebea84d6dbbe8fcce9ccc0\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"40cc9f2b012902f391624f962c46adb9\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8},{\"Id\":\"65400e277858603e718719b93ee586e3\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"65f2b905709a554fc03a1ffc4d967df4\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"894b6f6d9eb564c0687cfd6ae51ec25f\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"9f9059ed6f6a9e8116126f36b6a99031\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"a224f961ac3fae7acc9d4c0a67c00df7\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"d8763ccc39755ee7da08d5638890c631\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1},{\"Id\":\"ea2f56ea2e97d6a44cff18a35019a482\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82048,\"Z\":256,\"PresenceRevision\":208}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":5,\"RemainingSwings\":4,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":6,\"RemainingSwings\":5,\"Visibility\":1}]}",
+    "OakId": "67e26d9c5e3848e75f9bcd7b9088e36e",
+    "BerryId": "24a15755098b514424949f954c34e5af",
+    "WoodDefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+    "Checks": [
+      "Exact saved work, plants, custody and public actor view restored in a second native process.",
+      "Recovered paused work stayed unchanged for600ms before explicit resume.",
+      "Oak regrew after its remaining committed advancing steps across restart, without issuing new inventory."
+    ],
+    "Readiness": [
+      {
+        "WallMilliseconds": 494,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Calendar": 33049800
+      },
+      {
+        "WallMilliseconds": 1127,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "Calendar": 33049800
+      },
+      {
+        "WallMilliseconds": 38063,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Calendar": 34380000
+      }
+    ],
+    "FocusRequests": 0,
+    "DurationMilliseconds": 38338
+  },
+  "artifactSha256": {
+    "native-gathering-6ee7df07583b45f2b8e37902fadc9e31/gathering.json": "cf153c5e744f37951ddc337e831daf82549eb3c12253f1275f5d6f6bbbf4890c",
+    "native-gathering-6ee7df07583b45f2b8e37902fadc9e31/gathering.reopen.json": "1a8aecbf8f0c72d5e6f7dc9ad11db84d063f9dfddb668564551c7bb79bfea2a4",
+    "native-gathering-6ee7df07583b45f2b8e37902fadc9e31/world.sqlite": "99dd9da62ed1cb28a11d76ae09c29ec3bf5fb5a4bd40d264dbf1748d98678861"
+  },
+  "finishedUtc": "2026-09-11T20:53:40.860081+00:00"
+}

@@ -15,14 +15,17 @@ def main():
     parser.add_argument('--godot', required=True)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--rendered', action='store_true')
+    parser.add_argument('--background-render', action='store_true', help='Non-focusable fixture window; injected input/focus only, not OS-focus acceptance')
     args = parser.parse_args()
+    if args.background_render and not args.rendered:
+        parser.error('--background-render requires --rendered')
     root = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
     work = Path(tempfile.mkdtemp(prefix='native-wheel-', dir=output.parent))
     sdk = Path(args.dotnet).resolve().parent
     env = dict(os.environ, DOTNET_ROOT=str(sdk), PATH=str(sdk) + os.pathsep + os.environ.get('PATH', ''))
-    report = dict(status='running', rendered=args.rendered, startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+    report = dict(status='running', rendered=args.rendered, backgroundRender=args.background_render, startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   scope='Native wheel input, inspection, real gathering and exact reopened world; injected events are not physical device acceptance', runs=[], observations={})
     try:
         for phase in ['fresh', 'reopen']:
@@ -34,6 +37,8 @@ def main():
             if not args.rendered:
                 command.append('--headless')
             command += ['--path', str(root/'client'), '--', '--farm-wheel', str(database), str(scene_report), phase]
+            if args.background_render:
+                command.append('--background-render')
             result = subprocess.run(command, cwd=root, env=env, capture_output=True, text=True, timeout=45)
             report['runs'].append(dict(phase=phase, command=command, exitCode=result.returncode, stdout=result.stdout, stderr=result.stderr))
             if scene_report.exists():
@@ -41,6 +46,8 @@ def main():
             if result.returncode or 'ERROR:' in result.stdout + result.stderr:
                 raise RuntimeError('Native wheel failed at ' + phase)
             observation = report['observations'][phase]
+            if observation.get('BackgroundRender') != args.background_render or observation.get('BindWindowFocus') != (not args.background_render):
+                raise RuntimeError('The native window did not use the requested focus mode')
             if observation.get('Status') != 'passed' or not observation.get('Runtime') or len(observation.get('Checks', [])) < (3 if phase == 'fresh' else 1):
                 raise RuntimeError('Incomplete native wheel result')
             if phase == 'reopen':

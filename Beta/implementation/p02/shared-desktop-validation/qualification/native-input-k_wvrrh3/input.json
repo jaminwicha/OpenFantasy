@@ -1,0 +1,117 @@
+{
+  "Kind": "native-input-focus-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "IsLocallyPaused": false,
+  "IsWindowFocused": true,
+  "HasPendingAction": false,
+  "FinalView": {
+    "WorldId": {
+      "High": 5994088637387890325,
+      "Low": 16125233086514262066
+    },
+    "BranchId": {
+      "High": 9669704892579077282,
+      "Low": 16429811522280022743
+    },
+    "PlayerActorId": {
+      "High": 16391107307022570002,
+      "Low": 6930220283748601147
+    },
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 32580000
+    },
+    "HasReadingHold": false,
+    "Actors": [
+      {
+        "ActorId": {
+          "High": 14399764739516793167,
+          "Low": 6595455042808340470
+        },
+        "DisplayName": "Wren",
+        "Feet": {
+          "X": 26496,
+          "Y": 82560,
+          "Z": 256,
+          "Cell": {
+            "X": 103,
+            "Y": 322,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 32,
+        "ControllerKind": 2
+      },
+      {
+        "ActorId": {
+          "High": 16391107307022570002,
+          "Low": 6930220283748601147
+        },
+        "DisplayName": "Traveler",
+        "Feet": {
+          "X": 26560,
+          "Y": 83008,
+          "Z": 256,
+          "Cell": {
+            "X": 103,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 30,
+        "ControllerKind": 1
+      }
+    ],
+    "PlayerInventory": {
+      "CustodianId": {
+        "High": 1467782622516868771,
+        "Low": 17830912489801355383
+      },
+      "Revision": 0,
+      "Quantity": 8,
+      "Lots": [
+        {
+          "LotId": {
+            "High": 6366639390064866647,
+            "Low": 7871622370041245403
+          },
+          "DefinitionId": {
+            "High": 17440792895996343150,
+            "Low": 13598911669572622528
+          },
+          "Revision": 0,
+          "Quantity": 8,
+          "Provenance": 1,
+          "AvailableForDelivery": true
+        }
+      ]
+    },
+    "GatheringNodes": [],
+    "GatheringTools": [],
+    "PlayerGatherEffort": null,
+    "Crafting": null,
+    "Dialogue": null,
+    "Progression": null,
+    "Quests": [],
+    "Construction": []
+  },
+  "TalkOfferAtPress": {
+    "ExpectedActorRevision": 30,
+    "Target": 32
+  },
+  "Checks": [
+    "Opposing held directions did not manufacture a neutral release.",
+    "Fresh movement resumed after all held directions returned to neutral.",
+    "Keyboard repeat did not duplicate pause; controller Cancel unwound pause.",
+    "Focus return did not replay a held movement key.",
+    "Small stick drift stayed inside the circular deadzone.",
+    "A deliberate diagonal kept the existing circular-deadzone movement behavior.",
+    "Addressed dialogue suppressed held movement.",
+    "Dismissing dialogue did not release held movement into gameplay.",
+    "Escape and controller B close dialogue first without leaking the event into world actions."
+  ],
+  "ElapsedMilliseconds": 5921
+}

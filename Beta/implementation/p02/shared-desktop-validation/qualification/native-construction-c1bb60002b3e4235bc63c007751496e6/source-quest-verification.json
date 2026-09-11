@@ -1,0 +1,865 @@
+{
+  "startedUtc": "2026-09-11T20:49:31.342033+00:00",
+  "scope": "Three native processes: real gathering/crafting, copied quest admission, ordinary acceptance/delivery and exact rewarded recovery",
+  "rendered": false,
+  "status": "passed",
+  "runs": [
+    {
+      "mode": "prepare",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-quests",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/production.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.json",
+        "prepare"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative quests passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.prepare.json\n",
+      "stderr": ""
+    },
+    {
+      "mode": "upgrade",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-quests",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/production.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.json",
+        "upgrade"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative quests passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.upgrade.json\n",
+      "stderr": ""
+    },
+    {
+      "mode": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-quests",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/production.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.json",
+        "reopen"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative quests passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-construction-c1bb60002b3e4235bc63c007751496e6/native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.reopen.json\n",
+      "stderr": ""
+    }
+  ],
+  "runtimeSha256": {
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "e5126f1e990c3c399f9305f8af5fde2ef4a1d215d6f4148d51998e96d9601b1e",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "952f4d642c572a85ad00b400eae37ad63c625945da8e8495d3cdad560f46e007",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "70268dc465428fa6bcf7c534ee09fe866e1080786290bb31b047feba9928a8ad"
+  },
+  "godotSha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+  "prepare": {
+    "Kind": "native-farm-quests-v1",
+    "Mode": "prepare",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Branch\":\"2b43f3d522200a69157998759dfe5345\",\"Player\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"Day\":0,\"Millisecond\":32400000,\"PlayerGatherEffort\":0,\"HasReadingHold\":false,\"Quantity\":10,\"Custodian\":\"3149ba55fcb0a5a26d2b94079d3c194a\",\"StorageRevision\":0,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"DisplayName\":\"Traveler\",\"X\":25984,\"Y\":83328,\"Z\":256,\"PresenceRevision\":0,\"ControllerKind\":1},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"DisplayName\":\"Wren\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":0,\"ControllerKind\":2}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"DisplayName\":\"Berry Bush\",\"X\":27008,\"Y\":85120,\"Z\":256,\"Revision\":0,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":4,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"DisplayName\":\"Oak\",\"X\":25984,\"Y\":83840,\"Z\":256,\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"Dialogue\":null,\"Tools\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Revision\":0,\"Kind\":2,\"Power\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Revision\":0,\"Kind\":1,\"Power\":1}],\"CraftingRevision\":0,\"Recipes\":[{\"Id\":\"6dc4c74d94c42134af6136da86eccac1\",\"Version\":\"747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142\",\"Key\":\"craft_rations\",\"Terms\":[{\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Quantity\":1,\"Role\":1},{\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Quantity\":2,\"Role\":1},{\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Quantity\":2,\"Role\":2},{\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Quantity\":1,\"Role\":3}]}]},\"Progression\":null,\"Quests\":[]}",
+    "Final": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Branch\":\"2b43f3d522200a69157998759dfe5345\",\"Player\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"Day\":0,\"Millisecond\":32547600,\"PlayerGatherEffort\":20,\"HasReadingHold\":false,\"Quantity\":12,\"Custodian\":\"3149ba55fcb0a5a26d2b94079d3c194a\",\"StorageRevision\":3,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":1,\"Quantity\":7,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7671515808f6c991e824f26a0f026101\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2,\"AvailableForDelivery\":true},{\"Id\":\"fff5a489d05169e3214e9f6cb0012b4a\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2,\"AvailableForDelivery\":true}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"DisplayName\":\"Traveler\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75,\"ControllerKind\":1},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"DisplayName\":\"Wren\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":32,\"ControllerKind\":2}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"DisplayName\":\"Berry Bush\",\"X\":27008,\"Y\":85120,\"Z\":256,\"Revision\":2,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"DisplayName\":\"Oak\",\"X\":25984,\"Y\":83840,\"Z\":256,\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"Dialogue\":null,\"Tools\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Revision\":0,\"Kind\":2,\"Power\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Revision\":0,\"Kind\":1,\"Power\":1}],\"CraftingRevision\":1,\"Recipes\":[{\"Id\":\"6dc4c74d94c42134af6136da86eccac1\",\"Version\":\"747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142\",\"Key\":\"craft_rations\",\"Terms\":[{\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Quantity\":1,\"Role\":1},{\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Quantity\":2,\"Role\":1},{\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Quantity\":2,\"Role\":2},{\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Quantity\":1,\"Role\":3}]}]},\"Progression\":null,\"Quests\":[]}",
+    "WoodDefinition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+    "BerryDefinition": "2038079b78c92d2f77fb1443eed73661",
+    "Checks": [
+      "Two ordinary sickle inputs issued two actual berries from the admitted finite node.",
+      "One craft consumed two berries and one wood; seven wood, two rations, one offcut and both tools remain.",
+      "Final saved state stayed unchanged for at least 600 ms under the ordinary pause control."
+    ],
+    "Inputs": [
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 281,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1515,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1564,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1611,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1660,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1708,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1763,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1811,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1859,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1908,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 1956,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2011,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2060,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2108,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2163,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2226,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2261,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2309,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2382,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2434,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2459,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2508,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2563,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2612,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2660,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2708,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2764,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2811,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2860,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2916,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 2963,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3011,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3059,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3109,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3157,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3212,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3260,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3308,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3357,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3412,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3460,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3509,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3570,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3611,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3661,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3709,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3757,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3812,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3860,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_right",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3909,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 3964,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "stop_movement",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 4011,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "gather",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 4165,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "gather",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 4219,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "craft_rations",
+        "Stage": "Harvesting",
+        "WallMilliseconds": 4262,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "hud_pause",
+        "Stage": "Crafting",
+        "WallMilliseconds": 4330,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      }
+    ],
+    "Readiness": [
+      {
+        "WallMilliseconds": 235,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32400000
+      },
+      {
+        "WallMilliseconds": 4336,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32547600
+      }
+    ],
+    "FocusRequests": 0,
+    "IsLocallyPaused": true,
+    "IsWindowFocused": true,
+    "DurationMilliseconds": 5202
+  },
+  "upgrade": {
+    "Kind": "native-farm-quests-v1",
+    "Mode": "upgrade",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Branch\":\"2b43f3d522200a69157998759dfe5345\",\"Player\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"Day\":0,\"Millisecond\":32547600,\"PlayerGatherEffort\":20,\"HasReadingHold\":false,\"Quantity\":12,\"Custodian\":\"3149ba55fcb0a5a26d2b94079d3c194a\",\"StorageRevision\":3,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":1,\"Quantity\":7,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7671515808f6c991e824f26a0f026101\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2,\"AvailableForDelivery\":true},{\"Id\":\"fff5a489d05169e3214e9f6cb0012b4a\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2,\"AvailableForDelivery\":true}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"DisplayName\":\"Traveler\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75,\"ControllerKind\":1},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"DisplayName\":\"Wren\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":32,\"ControllerKind\":2}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"DisplayName\":\"Berry Bush\",\"X\":27008,\"Y\":85120,\"Z\":256,\"Revision\":2,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"DisplayName\":\"Oak\",\"X\":25984,\"Y\":83840,\"Z\":256,\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"Dialogue\":null,\"Tools\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Revision\":0,\"Kind\":2,\"Power\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Revision\":0,\"Kind\":1,\"Power\":1}],\"CraftingRevision\":1,\"Recipes\":[{\"Id\":\"6dc4c74d94c42134af6136da86eccac1\",\"Version\":\"747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142\",\"Key\":\"craft_rations\",\"Terms\":[{\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Quantity\":1,\"Role\":1},{\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Quantity\":2,\"Role\":1},{\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Quantity\":2,\"Role\":2},{\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Quantity\":1,\"Role\":3}]}]},\"Progression\":{\"Revision\":0,\"ProfileName\":\"Squire\",\"Level\":1,\"Experience\":0,\"Hp\":60,\"MaxHp\":60,\"Mp\":10,\"MaxMp\":10,\"CurrencyBalance\":0,\"CurrencyUnit\":\"gil\"},\"Quests\":[]}",
+    "Final": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Branch\":\"2b43f3d522200a69157998759dfe5345\",\"Player\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"Day\":0,\"Millisecond\":32686200,\"PlayerGatherEffort\":790,\"HasReadingHold\":true,\"Quantity\":6,\"Custodian\":\"3149ba55fcb0a5a26d2b94079d3c194a\",\"StorageRevision\":4,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":2,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7671515808f6c991e824f26a0f026101\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2,\"AvailableForDelivery\":true},{\"Id\":\"fff5a489d05169e3214e9f6cb0012b4a\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2,\"AvailableForDelivery\":true}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"DisplayName\":\"Traveler\",\"X\":26400,\"Y\":82976,\"Z\":256,\"PresenceRevision\":148,\"ControllerKind\":1},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"DisplayName\":\"Wren\",\"X\":25984,\"Y\":82560,\"Z\":256,\"PresenceRevision\":48,\"ControllerKind\":2}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"DisplayName\":\"Berry Bush\",\"X\":27008,\"Y\":85120,\"Z\":256,\"Revision\":2,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"DisplayName\":\"Oak\",\"X\":25984,\"Y\":83840,\"Z\":256,\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"Dialogue\":{\"Id\":\"59c38559707a6dfde4b3d1c0e902d5db\",\"Speaker\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"SpeakerName\":\"Wren\",\"Text\":\"Just me, the rows, and the crows. Suits me.\"},\"Tools\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Revision\":0,\"Kind\":2,\"Power\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Revision\":0,\"Kind\":1,\"Power\":1}],\"CraftingRevision\":1,\"Recipes\":[{\"Id\":\"6dc4c74d94c42134af6136da86eccac1\",\"Version\":\"747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142\",\"Key\":\"craft_rations\",\"Terms\":[{\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Quantity\":1,\"Role\":1},{\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Quantity\":2,\"Role\":1},{\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Quantity\":2,\"Role\":2},{\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Quantity\":1,\"Role\":3}]}]},\"Progression\":{\"Revision\":1,\"ProfileName\":\"Squire\",\"Level\":3,\"Experience\":38,\"Hp\":78,\"MaxHp\":78,\"Mp\":14,\"MaxMp\":14,\"CurrencyBalance\":200,\"CurrencyUnit\":\"gil\"},\"Quests\":[{\"Id\":\"15cd119122c4ca86c06c0cb407809d96\",\"Version\":\"7f2f3764211ede6e6688eaa3f249de0631372467c05882505bae57023417f18e\",\"Title\":\"Wren\\u0027s Saplings\",\"Description\":\"Six wood for a windbreak and my saplings might see spring.\",\"Giver\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"Item\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"RequiredQuantity\":6,\"EligibleQuantity\":1,\"Status\":2,\"ParticipationRevision\":2,\"MinimumLevel\":1,\"RewardExperience\":420,\"RewardCurrency\":200,\"CurrencyUnit\":\"gil\",\"CanAccept\":false,\"CanComplete\":false}]}",
+    "WoodDefinition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+    "BerryDefinition": "2038079b78c92d2f77fb1443eed73661",
+    "Checks": [
+      "Copied upgrade retained every recorded profile-three projection field without advancing time.",
+      "Initial recovery stayed exactly unchanged for at least 600 ms while paused.",
+      "Ordinary movement approached Wren after reopening the crafted world.",
+      "The actual addressed offer remained held for 600 ms and exposed its six-wood requirement and funded reward.",
+      "First ordinary G input accepted the quest without consuming wood or granting a reward.",
+      "Second G delivered six current wood once: level 3, XP 38, HP 78/78, MP 14/14 and 200 gil while still held.",
+      "Final saved state stayed unchanged for at least 600 ms under the ordinary pause control."
+    ],
+    "Inputs": [
+      {
+        "Action": "pause_world",
+        "Stage": "Recovering",
+        "WallMilliseconds": 1329,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_up",
+        "Stage": "Approaching",
+        "WallMilliseconds": 1342,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_left",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4110,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_up",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4462,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_left",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4509,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_up",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4558,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_left",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4614,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_up",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4662,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_left",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4718,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_up",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4766,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_left",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4813,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_up",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4862,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "walk_left",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4910,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "stop_movement",
+        "Stage": "Approaching",
+        "WallMilliseconds": 4965,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "talk",
+        "Stage": "Approaching",
+        "WallMilliseconds": 5119,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": {
+          "ExpectedActorRevision": 148,
+          "TargetActorId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "ExpectedTargetRevision": 48
+        }
+      },
+      {
+        "Action": "give_wood",
+        "Stage": "ReadingOffer",
+        "WallMilliseconds": 5773,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "give_wood",
+        "Stage": "Accepting",
+        "WallMilliseconds": 5822,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "hud_pause",
+        "Stage": "Completing",
+        "WallMilliseconds": 5863,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      }
+    ],
+    "Readiness": [
+      {
+        "WallMilliseconds": 686,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32547600
+      },
+      {
+        "WallMilliseconds": 1340,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32547600
+      },
+      {
+        "WallMilliseconds": 5869,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32686200
+      }
+    ],
+    "FocusRequests": 0,
+    "IsLocallyPaused": true,
+    "IsWindowFocused": true,
+    "DurationMilliseconds": 6744
+  },
+  "reopen": {
+    "Kind": "native-farm-quests-v1",
+    "Mode": "reopen",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Branch\":\"2b43f3d522200a69157998759dfe5345\",\"Player\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"Day\":0,\"Millisecond\":32686200,\"PlayerGatherEffort\":790,\"HasReadingHold\":true,\"Quantity\":6,\"Custodian\":\"3149ba55fcb0a5a26d2b94079d3c194a\",\"StorageRevision\":4,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":2,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7671515808f6c991e824f26a0f026101\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2,\"AvailableForDelivery\":true},{\"Id\":\"fff5a489d05169e3214e9f6cb0012b4a\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2,\"AvailableForDelivery\":true}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"DisplayName\":\"Traveler\",\"X\":26400,\"Y\":82976,\"Z\":256,\"PresenceRevision\":148,\"ControllerKind\":1},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"DisplayName\":\"Wren\",\"X\":25984,\"Y\":82560,\"Z\":256,\"PresenceRevision\":48,\"ControllerKind\":2}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"DisplayName\":\"Berry Bush\",\"X\":27008,\"Y\":85120,\"Z\":256,\"Revision\":2,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"DisplayName\":\"Oak\",\"X\":25984,\"Y\":83840,\"Z\":256,\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"Dialogue\":{\"Id\":\"59c38559707a6dfde4b3d1c0e902d5db\",\"Speaker\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"SpeakerName\":\"Wren\",\"Text\":\"Just me, the rows, and the crows. Suits me.\"},\"Tools\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Revision\":0,\"Kind\":2,\"Power\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Revision\":0,\"Kind\":1,\"Power\":1}],\"CraftingRevision\":1,\"Recipes\":[{\"Id\":\"6dc4c74d94c42134af6136da86eccac1\",\"Version\":\"747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142\",\"Key\":\"craft_rations\",\"Terms\":[{\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Quantity\":1,\"Role\":1},{\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Quantity\":2,\"Role\":1},{\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Quantity\":2,\"Role\":2},{\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Quantity\":1,\"Role\":3}]}]},\"Progression\":{\"Revision\":1,\"ProfileName\":\"Squire\",\"Level\":3,\"Experience\":38,\"Hp\":78,\"MaxHp\":78,\"Mp\":14,\"MaxMp\":14,\"CurrencyBalance\":200,\"CurrencyUnit\":\"gil\"},\"Quests\":[{\"Id\":\"15cd119122c4ca86c06c0cb407809d96\",\"Version\":\"7f2f3764211ede6e6688eaa3f249de0631372467c05882505bae57023417f18e\",\"Title\":\"Wren\\u0027s Saplings\",\"Description\":\"Six wood for a windbreak and my saplings might see spring.\",\"Giver\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"Item\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"RequiredQuantity\":6,\"EligibleQuantity\":1,\"Status\":2,\"ParticipationRevision\":2,\"MinimumLevel\":1,\"RewardExperience\":420,\"RewardCurrency\":200,\"CurrencyUnit\":\"gil\",\"CanAccept\":false,\"CanComplete\":false}]}",
+    "Final": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Branch\":\"2b43f3d522200a69157998759dfe5345\",\"Player\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"Day\":0,\"Millisecond\":32693400,\"PlayerGatherEffort\":830,\"HasReadingHold\":false,\"Quantity\":6,\"Custodian\":\"3149ba55fcb0a5a26d2b94079d3c194a\",\"StorageRevision\":4,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":2,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"Id\":\"7671515808f6c991e824f26a0f026101\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2,\"AvailableForDelivery\":true},{\"Id\":\"fff5a489d05169e3214e9f6cb0012b4a\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2,\"AvailableForDelivery\":true}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"DisplayName\":\"Traveler\",\"X\":26400,\"Y\":83104,\"Z\":256,\"PresenceRevision\":152,\"ControllerKind\":1},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"DisplayName\":\"Wren\",\"X\":25984,\"Y\":82560,\"Z\":256,\"PresenceRevision\":48,\"ControllerKind\":2}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"DisplayName\":\"Berry Bush\",\"X\":27008,\"Y\":85120,\"Z\":256,\"Revision\":2,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"DisplayName\":\"Oak\",\"X\":25984,\"Y\":83840,\"Z\":256,\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"Dialogue\":null,\"Tools\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Revision\":0,\"Kind\":2,\"Power\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Revision\":0,\"Kind\":1,\"Power\":1}],\"CraftingRevision\":1,\"Recipes\":[{\"Id\":\"6dc4c74d94c42134af6136da86eccac1\",\"Version\":\"747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142\",\"Key\":\"craft_rations\",\"Terms\":[{\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Quantity\":1,\"Role\":1},{\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Quantity\":2,\"Role\":1},{\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Quantity\":2,\"Role\":2},{\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Quantity\":1,\"Role\":3}]}]},\"Progression\":{\"Revision\":1,\"ProfileName\":\"Squire\",\"Level\":3,\"Experience\":38,\"Hp\":78,\"MaxHp\":78,\"Mp\":14,\"MaxMp\":14,\"CurrencyBalance\":200,\"CurrencyUnit\":\"gil\"},\"Quests\":[{\"Id\":\"15cd119122c4ca86c06c0cb407809d96\",\"Version\":\"7f2f3764211ede6e6688eaa3f249de0631372467c05882505bae57023417f18e\",\"Title\":\"Wren\\u0027s Saplings\",\"Description\":\"Six wood for a windbreak and my saplings might see spring.\",\"Giver\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"Item\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"RequiredQuantity\":6,\"EligibleQuantity\":1,\"Status\":2,\"ParticipationRevision\":2,\"MinimumLevel\":1,\"RewardExperience\":420,\"RewardCurrency\":200,\"CurrencyUnit\":\"gil\",\"CanAccept\":false,\"CanComplete\":false}]}",
+    "WoodDefinition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+    "BerryDefinition": "2038079b78c92d2f77fb1443eed73661",
+    "Checks": [
+      "Reward, completed quest, inventory, dialogue and all other public fields recovered exactly.",
+      "Initial recovery stayed exactly unchanged for at least 600 ms while paused.",
+      "Repeated ordinary G on the restored completed quest left every public field unchanged for 600 ms.",
+      "After E released the hold, ordinary movement travelled at least 128 subunits with advancing calendar and retained rewards.",
+      "Final saved state stayed unchanged for at least 600 ms under the ordinary pause control."
+    ],
+    "Inputs": [
+      {
+        "Action": "pause_world",
+        "Stage": "Recovering",
+        "WallMilliseconds": 1072,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "give_wood",
+        "Stage": "Resuming",
+        "WallMilliseconds": 1083,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "talk",
+        "Stage": "Repeating",
+        "WallMilliseconds": 1686,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": {
+          "ExpectedActorRevision": 148,
+          "TargetActorId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "ExpectedTargetRevision": 48
+        }
+      },
+      {
+        "Action": "walk_down",
+        "Stage": "Moving",
+        "WallMilliseconds": 1713,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "stop_movement",
+        "Stage": "Moving",
+        "WallMilliseconds": 1907,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      },
+      {
+        "Action": "hud_pause",
+        "Stage": "Moving",
+        "WallMilliseconds": 1907,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "TalkOffer": null
+      }
+    ],
+    "Readiness": [
+      {
+        "WallMilliseconds": 428,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32686200
+      },
+      {
+        "WallMilliseconds": 1082,
+        "IsLocallyPaused": false,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32686200
+      },
+      {
+        "WallMilliseconds": 1912,
+        "IsLocallyPaused": true,
+        "IsWindowFocused": true,
+        "Day": 0,
+        "Millisecond": 32693400
+      }
+    ],
+    "FocusRequests": 0,
+    "IsLocallyPaused": true,
+    "IsWindowFocused": true,
+    "DurationMilliseconds": 2777
+  },
+  "retainedSourceSha256": "6d83292faebc0ffaca3c3ce56c34277ef8ba8a305241e7d677324a8272ccbebb",
+  "artifactSha256": {
+    "native-quests-fa2bf3c39e8d4866b1e8291a213ace51/production.sqlite": "6d83292faebc0ffaca3c3ce56c34277ef8ba8a305241e7d677324a8272ccbebb",
+    "native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.prepare.json": "5f08fc8a6c60f34f8aa59cddfda91f30f89e854ca763fa3b884bdfbd6817af19",
+    "native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.reopen.json": "ee57af39c1e9746924aa0ce4389f40ef9056953a49bf9b7729d1b95bf1af12a0",
+    "native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.sqlite": "4cd0d9d8d8e77ad95515e05602173778f081ba47ce9b8eb5786a3ed3d0a33945",
+    "native-quests-fa2bf3c39e8d4866b1e8291a213ace51/quests.upgrade.json": "46bbf050c4ecaa29a5080ce00288b7c5fa9cbaa77380055a252ab35a03932965"
+  },
+  "finishedUtc": "2026-09-11T20:49:48.212905+00:00"
+}

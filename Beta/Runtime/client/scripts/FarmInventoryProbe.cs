@@ -34,7 +34,7 @@ internal sealed class FarmInventoryProbe(FarmGame game, Node clock, string repor
             "The pack did not expose exactly its actual nonempty owned item groups and crafted outputs.");
         Require(_screen.GetNode<Label>("%PackSummary").Text.Contains($"{View().PlayerInventory.Quantity} units", StringComparison.Ordinal),
             "The pack total differs from the public inventory.");
-        Capture("pack-paused");
+        await Capture("pack-paused");
         Button first = items.Single(button => button.HasFocus());
         for (int step = 0; step <= items.Length; step++)
         {
@@ -63,7 +63,7 @@ internal sealed class FarmInventoryProbe(FarmGame game, Node clock, string repor
         await Delay(0.15);
         Require(before == JsonSerializer.Serialize(View()) && !game.HasPendingAction && game.CurrentTarget is null,
             "Pack inspection or covered field input changed the paused authority or target.");
-        Capture("pack-inspection");
+        await Capture("pack-inspection");
         _checks.Add("Pack counts, crafted outputs, keyboard/D-pad/hover/confirm inspection, trapped Tab focus and covered field shortcuts preserved the exact paused public view.");
 
         Shoulder(JoyButton.B);
@@ -90,7 +90,7 @@ internal sealed class FarmInventoryProbe(FarmGame game, Node clock, string repor
         await Delay(0.25);
         Require(View().Calendar != start.Calendar && Feet() == position, "Inventory stopped world time or let field movement through.");
         Require(_screen.GetNode<Label>("%PackTime").Text.StartsWith("World continuing", StringComparison.Ordinal), "Running host time was not shown.");
-        Capture("pack-running");
+        await Capture("pack-running");
         Tap(Key.I);
         await Until(() => !game.IsInventoryOpen, "I did not close the running pack.");
         await Delay(0.2);
@@ -105,17 +105,17 @@ internal sealed class FarmInventoryProbe(FarmGame game, Node clock, string repor
 
         Tap(Key.I);
         await Until(() => game.IsInventoryOpen, "Could not open the focus-recovery pack.");
-        game.GetWindow().EmitSignal(Window.SignalName.FocusExited);
+        game.InjectFixtureFocus(false);
         await Delay(0.2);
         LocalWorldView held = View();
         Tap(Key.I);
         await Delay(0.15);
         Require(game.IsInventoryOpen && View().Calendar == held.Calendar, "Focus loss leaked input or advanced the held local clock.");
         Require(_screen.GetNode<Label>("%PackTime").Text.StartsWith("World paused", StringComparison.Ordinal), "Focus-loss host pause was not reflected.");
-        game.GetWindow().EmitSignal(Window.SignalName.FocusEntered);
+        game.InjectFixtureFocus(true);
         await Delay(0.2);
         Require(game.IsInventoryOpen && View().Calendar != held.Calendar, "Focus return closed the pack or failed to restore the host policy.");
-        Capture("pack-recovered");
+        await Capture("pack-recovered");
         _screen.GetNode<Button>("%ClosePack").EmitSignal(Button.SignalName.Pressed);
         await Until(() => !game.IsInventoryOpen, "The visible Close control failed.");
         _checks.Add("Injected focus loss/return kept inspection open, reflected the host pause and restored time without replaying an action.");
@@ -146,7 +146,7 @@ internal sealed class FarmInventoryProbe(FarmGame game, Node clock, string repor
         Input.ParseInputEvent(new InputEventJoypadButton { ButtonIndex = button, Pressed = true });
         Input.ParseInputEvent(new InputEventJoypadButton { ButtonIndex = button, Pressed = false });
     }
-    private void Capture(string suffix)
+    private async Task Capture(string suffix)
     {
         Rect2 viewport = clock.GetViewport().GetVisibleRect();
         Control[] controls = [_screen.GetNode<Label>("%ItemName"), _screen.GetNode<Label>("%ItemDetails"),
@@ -157,6 +157,7 @@ internal sealed class FarmInventoryProbe(FarmGame game, Node clock, string repor
             Require(viewport.Encloses(bounds), $"Pack control {control.Name} is clipped outside the viewport.");
         }
         if (DisplayServer.GetName() == "headless") return;
+        await clock.ToSignal(RenderingServer.Singleton, RenderingServer.SignalName.FramePostDraw);
         using Image image = clock.GetViewport().GetTexture().GetImage();
         Require(image.SavePng(Path.ChangeExtension(reportPath, "." + suffix + ".png")) == Error.Ok, "Could not retain pack screenshot.");
     }

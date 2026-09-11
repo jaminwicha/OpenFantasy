@@ -49,8 +49,6 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
     private int _swings;
     private bool _waitingForBerry;
     private ulong _expectedQuantity;
-    private long _lastFocusRequest;
-    private int _focusRequests;
     private SubunitPosition _movementOrigin;
     private WorldInstant _movementStartedAt;
     private ulong? _talkActorRevision;
@@ -111,13 +109,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         {
             SetMovement(null);
         }
-        if (!game.IsWindowFocused && !game.IsLocallyPaused && _focusRequests < 8
-            && _timeout.ElapsedMilliseconds - _lastFocusRequest >= 2_000)
-        {
-            _lastFocusRequest = _timeout.ElapsedMilliseconds;
-            _focusRequests++;
-            GetWindow().GrabFocus();
-        }
+        // A shared desktop may interrupt this fixture. Keep normal readiness; never reclaim focus.
     }
 
     private void Opened(LocalWorldView view)
@@ -629,7 +621,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
             Kind = "native-farm-quests-v1", Mode = mode, Status = "passed", Runtime = RuntimeInformation.FrameworkDescription,
             DisplayDriver = DisplayServer.GetName(), Initial = _initial, Final = Snapshot(view),
             WoodDefinition = _wood.ToString(), BerryDefinition = _berryItem.ToString(), Checks = _checks,
-            Inputs = _inputs, Readiness = _readiness, FocusRequests = _focusRequests,
+            Inputs = _inputs, Readiness = _readiness, FocusRequests = 0,
             game.IsLocallyPaused, game.IsWindowFocused, DurationMilliseconds = _timeout.ElapsedMilliseconds
         }, new JsonSerializerOptions { WriteIndented = true });
         if (mode == "fresh")
@@ -655,7 +647,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         File.WriteAllText(Output(mode, "failed.json"), JsonSerializer.Serialize(new
         {
             Status = "failed", Mode = mode, Stage = _stage.ToString(), Error = error.ToString(),
-            Inputs = _inputs, Readiness = _readiness, FocusRequests = _focusRequests,
+            Inputs = _inputs, Readiness = _readiness, FocusRequests = 0,
             game.IsLocallyPaused, game.IsWindowFocused, game.HasPendingAction, TalkOffer = TalkOfferSnapshot(),
             Current = game.CurrentView is { } view ? Snapshot(view) : null
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");

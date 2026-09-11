@@ -28,6 +28,8 @@ public partial class FarmGame : Node2D
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
+    /// <summary>Normal gameplay follows its OS window. Disposable background rendering controls fixture focus explicitly.</summary>
+    internal bool BindWindowFocus { get; init; } = true;
     internal bool GatheringProfile { get; init; } = true;
     internal bool ProductionProfile { get; init; } = true;
     internal bool QuestProfile { get; init; }
@@ -45,6 +47,15 @@ public partial class FarmGame : Node2D
     internal bool IsWheelOpen => _input.WheelOpen;
     internal FarmDaylight Daylight => _canvas.Daylight;
     internal void RequestClose() => BeginClose();
+
+    internal void InjectFixtureFocus(bool focused)
+    {
+        if (SavePathOverride is null) throw new InvalidOperationException("Fixture focus requires an explicit disposable save.");
+        if (BindWindowFocus)
+            GetWindow().EmitSignal(focused ? Window.SignalName.FocusEntered : Window.SignalName.FocusExited);
+        else if (focused) OnFocusEntered();
+        else OnFocusExited();
+    }
 
     public override void _Ready()
     {
@@ -68,8 +79,11 @@ public partial class FarmGame : Node2D
         Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
         GetWindow().CloseRequested += BeginClose;
-        GetWindow().FocusEntered += OnFocusEntered;
-        GetWindow().FocusExited += OnFocusExited;
+        if (BindWindowFocus)
+        {
+            GetWindow().FocusEntered += OnFocusEntered;
+            GetWindow().FocusExited += OnFocusExited;
+        }
         _hud.Message("Opening the farm…");
         bool production = GatheringProfile && ProductionProfile;
         bool quests = production && QuestProfile;
@@ -443,8 +457,11 @@ public partial class FarmGame : Node2D
     {
         Input.Singleton.JoyConnectionChanged -= OnControllerConnectionChanged;
         GetWindow().CloseRequested -= BeginClose;
-        GetWindow().FocusEntered -= OnFocusEntered;
-        GetWindow().FocusExited -= OnFocusExited;
+        if (BindWindowFocus)
+        {
+            GetWindow().FocusEntered -= OnFocusEntered;
+            GetWindow().FocusExited -= OnFocusExited;
+        }
         _closing ??= CloseAsync();
         _ = ObserveShutdownAsync(_closing);
     }

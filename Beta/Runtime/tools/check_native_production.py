@@ -39,7 +39,7 @@ def main():
             if result.returncode or "ERROR:" in result.stdout + result.stderr:
                 raise RuntimeError("Native production " + mode + " failed: " + result.stdout + result.stderr)
             observed = json.loads(probe.with_suffix("." + mode + ".json").read_text())
-            if observed.get("Status") != "passed" or observed.get("Mode") != mode or not observed.get("Runtime"):
+            if observed.get("Status") != "passed" or observed.get("Mode") != mode or not observed.get("Runtime") or observed.get("FocusRequests") != 0:
                 raise RuntimeError("Incomplete native result")
             report[mode] = observed
             if mode == "prepare":

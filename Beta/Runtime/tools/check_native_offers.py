@@ -17,7 +17,10 @@ def main():
     parser.add_argument("--godot", required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--rendered", action="store_true", help="Use a separate rendered test window and retain screenshots")
+    parser.add_argument("--background-render", action="store_true", help="Non-focusable fixture window; injected input/focus only, not OS-focus acceptance")
     args = parser.parse_args()
+    if args.background_render and not args.rendered:
+        parser.error("--background-render requires --rendered")
     root = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -30,19 +33,27 @@ def main():
         "startedUtc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "scope": "Native target selection, pack inspection/time/input, action previews and authoritative gathering/crafting/dialogue",
         "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
-        "status": "running", "rendered": args.rendered,
+        "status": "running", "rendered": args.rendered, "backgroundRender": args.background_render,
     }
     command = [str(Path(args.godot).resolve())]
     if not args.rendered:
         command.append("--headless")
     command += ["--path", str(root / "client"), "--", "--farm-action-offers", str(work / "world.sqlite"), str(scene_report)]
+    if args.background_render:
+        command.append("--background-render")
     try:
         result = subprocess.run(command, cwd=root, env=env, capture_output=True, text=True, timeout=80)
         report["run"] = {"command": command, "exitCode": result.returncode,
                          "stdout": result.stdout, "stderr": result.stderr}
+        if scene_report.exists():
+            report["observed"] = json.loads(scene_report.read_text())
+            if args.rendered and report["observed"].get("WindowFocused") is False:
+                report["interruptionObservation"] = "Window unfocused at failure; inspect the retained assertion and native state. This is not a pass or proof of sole cause."
         if result.returncode or "ERROR:" in result.stdout + result.stderr:
             raise RuntimeError("The native action-offer process failed; inspect its retained output.")
         observed = json.loads(scene_report.read_text())
+        if observed.get("BackgroundRender") != args.background_render or observed.get("BindWindowFocus") != (not args.background_render):
+            raise RuntimeError("The native window did not use the requested focus mode")
         if (observed.get("Kind") != "native-action-offers-v1" or observed.get("Status") != "passed"
                 or not observed.get("Runtime") or len(observed.get("Checks", [])) < 12):
             raise RuntimeError("The native action-offer result is incomplete.")

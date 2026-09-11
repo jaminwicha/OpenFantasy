@@ -1,0 +1,330 @@
+{
+  "startedUtc": "2026-09-11T20:47:36.843564+00:00",
+  "scope": "Native target selection, pack inspection/time/input, action previews and authoritative gathering/crafting/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "passed",
+  "rendered": false,
+  "backgroundRender": false,
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-action-offers",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-offers-w5o59x92/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-offers-w5o59x92/offers.json"
+    ],
+    "exitCode": 0,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": ""
+  },
+  "observed": {
+    "Kind": "native-action-offers-v1",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "WindowFocused": true,
+    "LocallyPaused": false,
+    "BackgroundRender": false,
+    "NativeWindowFocused": true,
+    "BindWindowFocus": true,
+    "InventoryOpen": false,
+    "ActionPending": false,
+    "FinalView": {
+      "WorldId": {
+        "High": 11838943175866674348,
+        "Low": 6566761377563931012
+      },
+      "BranchId": {
+        "High": 3117603463796623977,
+        "Low": 1547435577907761989
+      },
+      "PlayerActorId": {
+        "High": 11740567274192566031,
+        "Low": 3901590248268668208
+      },
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32918400
+      },
+      "HasReadingHold": false,
+      "Actors": [
+        {
+          "ActorId": {
+            "High": 11740567274192566031,
+            "Low": 3901590248268668208
+          },
+          "DisplayName": "Traveler",
+          "Feet": {
+            "X": 26816,
+            "Y": 83104,
+            "Z": 256,
+            "Cell": {
+              "X": 104,
+              "Y": 324,
+              "Z": 1
+            }
+          },
+          "PresenceRevision": 225,
+          "ControllerKind": 1
+        },
+        {
+          "ActorId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "DisplayName": "Wren",
+          "Feet": {
+            "X": 27008,
+            "Y": 82560,
+            "Z": 256,
+            "Cell": {
+              "X": 105,
+              "Y": 322,
+              "Z": 1
+            }
+          },
+          "PresenceRevision": 80,
+          "ControllerKind": 2
+        }
+      ],
+      "PlayerInventory": {
+        "CustodianId": {
+          "High": 3551574659632768418,
+          "Low": 7866543934556346698
+        },
+        "Revision": 4,
+        "Quantity": 13,
+        "Lots": [
+          {
+            "LotId": {
+              "High": 1696821205204844772,
+              "Low": 14233350353809258915
+            },
+            "DefinitionId": {
+              "High": 11982809337836041595,
+              "Low": 18373582298239785721
+            },
+            "Revision": 0,
+            "Quantity": 1,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 5470128972612045146,
+              "Low": 18086807705569776730
+            },
+            "DefinitionId": {
+              "High": 17440792895996343150,
+              "Low": 13598911669572622528
+            },
+            "Revision": 1,
+            "Quantity": 7,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 6210388366231860672,
+              "Low": 943911429805978172
+            },
+            "DefinitionId": {
+              "High": 6052033973718802550,
+              "Low": 15899431500196879021
+            },
+            "Revision": 0,
+            "Quantity": 2,
+            "Provenance": 2,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 8225799703908409572,
+              "Low": 3329847337192323368
+            },
+            "DefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "Revision": 0,
+            "Quantity": 1,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 8416128054827384345,
+              "Low": 12281962616948354647
+            },
+            "DefinitionId": {
+              "High": 11425103842346022574,
+              "Low": 7338629654356999930
+            },
+            "Revision": 0,
+            "Quantity": 1,
+            "Provenance": 2,
+            "AvailableForDelivery": true
+          },
+          {
+            "LotId": {
+              "High": 11898166665224281909,
+              "Low": 10079454529645600336
+            },
+            "DefinitionId": {
+              "High": 17440792895996343150,
+              "Low": 13598911669572622528
+            },
+            "Revision": 0,
+            "Quantity": 1,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          }
+        ]
+      },
+      "GatheringNodes": [
+        {
+          "NodeId": {
+            "High": 2639486879359783236,
+            "Low": 2635907145496061359
+          },
+          "DisplayName": "Berry Bush",
+          "Feet": {
+            "X": 27008,
+            "Y": 85120,
+            "Z": 256,
+            "Cell": {
+              "X": 105,
+              "Y": 332,
+              "Z": 1
+            }
+          },
+          "Revision": 2,
+          "Kind": 2,
+          "RequiredTool": 2,
+          "RemainingSwings": 2,
+          "Visibility": 1
+        },
+        {
+          "NodeId": {
+            "High": 7485666049006258407,
+            "Low": 6889325985582867310
+          },
+          "DisplayName": "Oak",
+          "Feet": {
+            "X": 25984,
+            "Y": 83840,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 327,
+              "Z": 1
+            }
+          },
+          "Revision": 1,
+          "Kind": 1,
+          "RequiredTool": 1,
+          "RemainingSwings": 4,
+          "Visibility": 1
+        }
+      ],
+      "GatheringTools": [
+        {
+          "LotId": {
+            "High": 1696821205204844772,
+            "Low": 14233350353809258915
+          },
+          "Revision": 0,
+          "Kind": 2,
+          "Power": 1
+        },
+        {
+          "LotId": {
+            "High": 8225799703908409572,
+            "Low": 3329847337192323368
+          },
+          "Revision": 0,
+          "Kind": 1,
+          "Power": 1
+        }
+      ],
+      "PlayerGatherEffort": 1000,
+      "Crafting": {
+        "Revision": 1,
+        "Recipes": [
+          {
+            "RecipeId": {
+              "High": 7909665981591724340,
+              "Low": 12637442341572758209
+            },
+            "Version": {
+              "Value": "747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142"
+            },
+            "Key": "craft_rations",
+            "Terms": [
+              {
+                "DefinitionId": {
+                  "High": 17440792895996343150,
+                  "Low": 13598911669572622528
+                },
+                "Quantity": 1,
+                "Role": 1
+              },
+              {
+                "DefinitionId": {
+                  "High": 2321613972237266223,
+                  "Low": 8645526191670244961
+                },
+                "Quantity": 2,
+                "Role": 1
+              },
+              {
+                "DefinitionId": {
+                  "High": 6052033973718802550,
+                  "Low": 15899431500196879021
+                },
+                "Quantity": 2,
+                "Role": 2
+              },
+              {
+                "DefinitionId": {
+                  "High": 11425103842346022574,
+                  "Low": 7338629654356999930
+                },
+                "Quantity": 1,
+                "Role": 3
+              }
+            ]
+          }
+        ]
+      },
+      "Dialogue": null,
+      "Progression": null,
+      "Quests": [],
+      "Construction": []
+    },
+    "Checks": [
+      "Unavailable crafting stayed inspectable through focus and hover without changing the paused world.",
+      "Keyboard, shoulder events and the native Next button selected identities without spending or changing verbs.",
+      "A locked oak remained selected while berries became nearer; unavailable F spent nothing and explicit Clear restored context.",
+      "Displayed Oak target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Craft inspection and keyboard commitment used the same recipe with exact input/output/waste quantities.",
+      "Pack counts, crafted outputs, keyboard/D-pad/hover/confirm inspection, trapped Tab focus and covered field shortcuts preserved the exact paused public view.",
+      "B, View and Escape unwound only pack inspection, preserved its selected item and restored HUD focus without releasing pause.",
+      "The running pack allowed actual host time while stopping player movement; closing required release before a new field step.",
+      "Injected focus loss/return kept inspection open, reflected the host pause and restored time without replaying an action.",
+      "Talk preserved the displayed speaker and Escape retained dialogue-first cancellation."
+    ],
+    "ElapsedMilliseconds": 16846
+  },
+  "artifactSha256": {
+    "native-offers-w5o59x92/offers.json": "840ebd6b37c70c4f8716b04aec57fe07b1c59273bfe76475a1d24df8d6a233b0",
+    "native-offers-w5o59x92/world.sqlite": "fcb682e0461ae51cee9443cb7ff5193e6644e741ea4ebed7e70b4e22d30a5ce5"
+  },
+  "finishedUtc": "2026-09-11T20:47:54.208201+00:00"
+}

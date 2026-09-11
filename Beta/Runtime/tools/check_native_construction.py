@@ -50,7 +50,7 @@ def verify_report(mode, report):
             or not report.get("Readiness") or report.get("IsLocallyPaused") is not True
             or report.get("InitialPausedMilliseconds", 0) < 600
             or report.get("FinalPausedMilliseconds", 0) < 600
-            or not 0 <= report.get("FocusRequests", -1) <= 8
+            or report.get("FocusRequests") != 0
             or not 0 < report.get("DurationMilliseconds", 0) < 125_000):
         raise RuntimeError("Incomplete native construction result: " + mode)
     actions = []

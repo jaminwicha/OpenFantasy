@@ -74,6 +74,22 @@ the rendered fixture requests focus once after native startup settles and never 
 during its journey. The integrated verifier runs the headless check. Physical-device experience,
 production art and usability acceptance remain separate.
 
+On a shared desktop, other game/editor tasks can take foreground focus and interrupt ordinary
+rendered probes. Headless checks avoid that dependency but still share CPU/memory. For controlled
+UI/image evidence, the wheel and action-offer runners accept **`--rendered --background-render`**.
+Only these explicit disposable probe invocations can select that mode. They request a non-focusable
+window and detach OS focus notifications from the fixture's readiness; deliberate fixture focus
+changes still exercise the same cancellation/readiness handlers. Reports record both logical and
+native window focus plus the binding mode. Normal launches and headless probes retain native focus
+bindings. Initial window activation is platform-dependent; the fixture never runs a focus-grab loop.
+
+This mode proves rendered behavior under controlled injected input, not actual OS focus switching
+or physical devices. Those require a coordinated foreground interval. Do not close another task's
+applications, loosen deadlines or call an interrupted journey a pass. Older gathering, crafting,
+quest and construction fixtures also never reclaim focus; use a coordinated foreground interval
+for their rendered runs, or their default headless mode. Captures wait for the actual
+completed rendering frame so a state label cannot silently describe a stale viewport image.
+
 ## Outdoor daylight
 
 The farm now samples an editable outdoor light palette from the same permitted calendar used

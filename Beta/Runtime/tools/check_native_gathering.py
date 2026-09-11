@@ -38,7 +38,7 @@ def main():
             if result.returncode or "ERROR:" in result.stdout + result.stderr:
                 raise RuntimeError("Native gathering " + stage + " failed: " + result.stdout + result.stderr)
             observed = json.loads((probe_report if stage == "create" else probe_report.with_suffix(".reopen.json")).read_text())
-            if observed.get("Status") != "passed" or observed.get("Stage") != stage or not observed.get("Runtime"):
+            if observed.get("Status") != "passed" or observed.get("Stage") != stage or not observed.get("Runtime") or observed.get("FocusRequests") != 0:
                 raise RuntimeError("Incomplete native result")
             report[stage] = observed
         if report["create"]["Final"] != report["reopen"]["Initial"]:

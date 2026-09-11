@@ -1,0 +1,8 @@
+{
+  "Kind": "native-farm-lifecycle-v1",
+  "Mode": "close-opening",
+  "Status": "initiated",
+  "ActionBeforePublicReadiness": true,
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless"
+}

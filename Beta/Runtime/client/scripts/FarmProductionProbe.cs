@@ -24,8 +24,6 @@ internal sealed partial class FarmProductionProbe(FarmGame game, string reportPa
     private ulong _expectedQuantity;
     private int _swings;
     private bool _waiting;
-    private long _lastFocusRequest;
-    private int _focusRequests;
     private ulong _craftStartingRevision;
 
     public override void _Process(double delta)
@@ -42,13 +40,7 @@ internal sealed partial class FarmProductionProbe(FarmGame game, string reportPa
             {
                 return;
             }
-            if (!game.IsWindowFocused && !game.IsLocallyPaused && _focusRequests < 8
-                && _timeout.ElapsedMilliseconds - _lastFocusRequest >= 2_000)
-            {
-                _lastFocusRequest = _timeout.ElapsedMilliseconds;
-                _focusRequests++;
-                GetWindow().GrabFocus();
-            }
+            // A shared desktop may interrupt this fixture. Keep normal readiness; never reclaim focus.
             switch (_stage)
             {
                 case Stage.Opening:
@@ -129,7 +121,7 @@ internal sealed partial class FarmProductionProbe(FarmGame game, string reportPa
         {
             File.WriteAllText(Path.ChangeExtension(reportPath, "." + mode + ".failed.json"), JsonSerializer.Serialize(new
             {
-                Status = "failed", Mode = mode, Stage = _stage.ToString(), Error = error.ToString(), FocusRequests = _focusRequests,
+                Status = "failed", Mode = mode, Stage = _stage.ToString(), Error = error.ToString(), FocusRequests = 0,
                 game.IsLocallyPaused, game.IsWindowFocused,
                 Current = game.CurrentView is { } current ? Snapshot(current) : null
             }, new JsonSerializerOptions { WriteIndented = true }));
@@ -257,7 +249,7 @@ internal sealed partial class FarmProductionProbe(FarmGame game, string reportPa
         {
             Kind = "native-farm-production-v1", Mode = mode, Status = "passed", Runtime = RuntimeInformation.FrameworkDescription,
             DisplayDriver = DisplayServer.GetName(), Initial = _initial, Final = Snapshot(view), Checks = _checks,
-            FocusRequests = _focusRequests, DurationMilliseconds = _timeout.ElapsedMilliseconds
+            FocusRequests = 0, DurationMilliseconds = _timeout.ElapsedMilliseconds
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
         _stage = Stage.Done;
         GD.Print("Native production passed: " + output);

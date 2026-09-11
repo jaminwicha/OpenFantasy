@@ -1,0 +1,327 @@
+{
+  "Status": "passed",
+  "Error": null,
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "macOS",
+  "Reopen": true,
+  "Checks": [
+    "Process reopening restores the paused world without restoring an action selection."
+  ],
+  "FocusEvents": [
+    "98: entered"
+  ],
+  "BackgroundRender": true,
+  "NativeWindowFocused": true,
+  "BindWindowFocus": false,
+  "FinalView": {
+    "WorldId": {
+      "High": 11838943175866674348,
+      "Low": 6566761377563931012
+    },
+    "BranchId": {
+      "High": 3117603463796623977,
+      "Low": 1547435577907761989
+    },
+    "PlayerActorId": {
+      "High": 11740567274192566031,
+      "Low": 3901590248268668208
+    },
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 32493600
+    },
+    "HasReadingHold": false,
+    "Actors": [
+      {
+        "ActorId": {
+          "High": 11740567274192566031,
+          "Low": 3901590248268668208
+        },
+        "DisplayName": "Traveler",
+        "Feet": {
+          "X": 25984,
+          "Y": 83392,
+          "Z": 256,
+          "Cell": {
+            "X": 101,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 2,
+        "ControllerKind": 1
+      },
+      {
+        "ActorId": {
+          "High": 17734771146330126369,
+          "Low": 3755393924890045491
+        },
+        "DisplayName": "Wren",
+        "Feet": {
+          "X": 25984,
+          "Y": 82560,
+          "Z": 256,
+          "Cell": {
+            "X": 101,
+            "Y": 322,
+            "Z": 1
+          }
+        },
+        "PresenceRevision": 16,
+        "ControllerKind": 2
+      }
+    ],
+    "PlayerInventory": {
+      "CustodianId": {
+        "High": 3551574659632768418,
+        "Low": 7866543934556346698
+      },
+      "Revision": 1,
+      "Quantity": 11,
+      "Lots": [
+        {
+          "LotId": {
+            "High": 1696821205204844772,
+            "Low": 14233350353809258915
+          },
+          "DefinitionId": {
+            "High": 11982809337836041595,
+            "Low": 18373582298239785721
+          },
+          "Revision": 0,
+          "Quantity": 1,
+          "Provenance": 1,
+          "AvailableForDelivery": true
+        },
+        {
+          "LotId": {
+            "High": 5470128972612045146,
+            "Low": 18086807705569776730
+          },
+          "DefinitionId": {
+            "High": 17440792895996343150,
+            "Low": 13598911669572622528
+          },
+          "Revision": 0,
+          "Quantity": 8,
+          "Provenance": 1,
+          "AvailableForDelivery": true
+        },
+        {
+          "LotId": {
+            "High": 8225799703908409572,
+            "Low": 3329847337192323368
+          },
+          "DefinitionId": {
+            "High": 1872794200646237673,
+            "Low": 5975632165003488037
+          },
+          "Revision": 0,
+          "Quantity": 1,
+          "Provenance": 1,
+          "AvailableForDelivery": true
+        },
+        {
+          "LotId": {
+            "High": 9586810525517095058,
+            "Low": 13795953655639301362
+          },
+          "DefinitionId": {
+            "High": 17440792895996343150,
+            "Low": 13598911669572622528
+          },
+          "Revision": 0,
+          "Quantity": 1,
+          "Provenance": 1,
+          "AvailableForDelivery": true
+        }
+      ]
+    },
+    "GatheringNodes": [
+      {
+        "NodeId": {
+          "High": 2639486879359783236,
+          "Low": 2635907145496061359
+        },
+        "DisplayName": "Berry Bush",
+        "Feet": {
+          "X": 27008,
+          "Y": 85120,
+          "Z": 256,
+          "Cell": {
+            "X": 105,
+            "Y": 332,
+            "Z": 1
+          }
+        },
+        "Revision": 0,
+        "Kind": 2,
+        "RequiredTool": 2,
+        "RemainingSwings": 4,
+        "Visibility": 1
+      },
+      {
+        "NodeId": {
+          "High": 7485666049006258407,
+          "Low": 6889325985582867310
+        },
+        "DisplayName": "Oak",
+        "Feet": {
+          "X": 25984,
+          "Y": 83840,
+          "Z": 256,
+          "Cell": {
+            "X": 101,
+            "Y": 327,
+            "Z": 1
+          }
+        },
+        "Revision": 1,
+        "Kind": 1,
+        "RequiredTool": 1,
+        "RemainingSwings": 4,
+        "Visibility": 1
+      }
+    ],
+    "GatheringTools": [
+      {
+        "LotId": {
+          "High": 1696821205204844772,
+          "Low": 14233350353809258915
+        },
+        "Revision": 0,
+        "Kind": 2,
+        "Power": 1
+      },
+      {
+        "LotId": {
+          "High": 8225799703908409572,
+          "Low": 3329847337192323368
+        },
+        "Revision": 0,
+        "Kind": 1,
+        "Power": 1
+      }
+    ],
+    "PlayerGatherEffort": 120,
+    "Crafting": {
+      "Revision": 0,
+      "Recipes": [
+        {
+          "RecipeId": {
+            "High": 7909665981591724340,
+            "Low": 12637442341572758209
+          },
+          "Version": {
+            "Value": "747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142"
+          },
+          "Key": "craft_rations",
+          "Terms": [
+            {
+              "DefinitionId": {
+                "High": 17440792895996343150,
+                "Low": 13598911669572622528
+              },
+              "Quantity": 1,
+              "Role": 1
+            },
+            {
+              "DefinitionId": {
+                "High": 2321613972237266223,
+                "Low": 8645526191670244961
+              },
+              "Quantity": 2,
+              "Role": 1
+            },
+            {
+              "DefinitionId": {
+                "High": 6052033973718802550,
+                "Low": 15899431500196879021
+              },
+              "Quantity": 2,
+              "Role": 2
+            },
+            {
+              "DefinitionId": {
+                "High": 11425103842346022574,
+                "Low": 7338629654356999930
+              },
+              "Quantity": 1,
+              "Role": 3
+            }
+          ]
+        }
+      ]
+    },
+    "Dialogue": null,
+    "Progression": null,
+    "Quests": [],
+    "Construction": []
+  },
+  "IsWheelOpen": false,
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "CurrentTarget": null,
+  "Offers": [
+    {
+      "Action": 1,
+      "TargetId": {
+        "High": 17734771146330126369,
+        "Low": 3755393924890045491
+      },
+      "Label": "Talk",
+      "CanExecute": true,
+      "BlockingReason": null
+    },
+    {
+      "Action": 2,
+      "TargetId": {
+        "High": 17734771146330126369,
+        "Low": 3755393924890045491
+      },
+      "Label": "Give",
+      "CanExecute": true,
+      "BlockingReason": null
+    },
+    {
+      "Action": 5,
+      "TargetId": null,
+      "Label": "Continue",
+      "CanExecute": false,
+      "BlockingReason": "There is no addressed conversation to close."
+    },
+    {
+      "Action": 3,
+      "TargetId": {
+        "High": 7485666049006258407,
+        "Low": 6889325985582867310
+      },
+      "Label": "Chop oak",
+      "CanExecute": false,
+      "BlockingReason": "You are too tired to gather; rest a moment."
+    },
+    {
+      "Action": 4,
+      "TargetId": null,
+      "Label": "Pack rations",
+      "CanExecute": false,
+      "BlockingReason": "Pack two berries and one wood to make two rations."
+    }
+  ],
+  "FocusOwner": null,
+  "WheelSelection": null,
+  "WheelCanExecute": null,
+  "ConfirmDisabled": true,
+  "PointerSeen": null,
+  "LastWheelButton": null,
+  "AcceptBindings": [
+    "Enter",
+    "Kp Enter",
+    "Space",
+    "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)"
+  ],
+  "PointerGlobal": "(142, 548)",
+  "Navigation": "(0, 0)",
+  "HasPendingAction": false,
+  "ElapsedMilliseconds": 858
+}

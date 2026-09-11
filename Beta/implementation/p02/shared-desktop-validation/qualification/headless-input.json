@@ -1,0 +1,143 @@
+{
+  "startedUtc": "2026-09-11T20:47:25.171467+00:00",
+  "scope": "Native headless input events and focus handlers against real authoritative movement/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "passed",
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-input",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-input-k_wvrrh3/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-input-k_wvrrh3/input.json"
+    ],
+    "exitCode": 0,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": ""
+  },
+  "observed": {
+    "Kind": "native-input-focus-v1",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "IsLocallyPaused": false,
+    "IsWindowFocused": true,
+    "HasPendingAction": false,
+    "FinalView": {
+      "WorldId": {
+        "High": 5994088637387890325,
+        "Low": 16125233086514262066
+      },
+      "BranchId": {
+        "High": 9669704892579077282,
+        "Low": 16429811522280022743
+      },
+      "PlayerActorId": {
+        "High": 16391107307022570002,
+        "Low": 6930220283748601147
+      },
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32580000
+      },
+      "HasReadingHold": false,
+      "Actors": [
+        {
+          "ActorId": {
+            "High": 14399764739516793167,
+            "Low": 6595455042808340470
+          },
+          "DisplayName": "Wren",
+          "Feet": {
+            "X": 26496,
+            "Y": 82560,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 322,
+              "Z": 1
+            }
+          },
+          "PresenceRevision": 32,
+          "ControllerKind": 2
+        },
+        {
+          "ActorId": {
+            "High": 16391107307022570002,
+            "Low": 6930220283748601147
+          },
+          "DisplayName": "Traveler",
+          "Feet": {
+            "X": 26560,
+            "Y": 83008,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 324,
+              "Z": 1
+            }
+          },
+          "PresenceRevision": 30,
+          "ControllerKind": 1
+        }
+      ],
+      "PlayerInventory": {
+        "CustodianId": {
+          "High": 1467782622516868771,
+          "Low": 17830912489801355383
+        },
+        "Revision": 0,
+        "Quantity": 8,
+        "Lots": [
+          {
+            "LotId": {
+              "High": 6366639390064866647,
+              "Low": 7871622370041245403
+            },
+            "DefinitionId": {
+              "High": 17440792895996343150,
+              "Low": 13598911669572622528
+            },
+            "Revision": 0,
+            "Quantity": 8,
+            "Provenance": 1,
+            "AvailableForDelivery": true
+          }
+        ]
+      },
+      "GatheringNodes": [],
+      "GatheringTools": [],
+      "PlayerGatherEffort": null,
+      "Crafting": null,
+      "Dialogue": null,
+      "Progression": null,
+      "Quests": [],
+      "Construction": []
+    },
+    "TalkOfferAtPress": {
+      "ExpectedActorRevision": 30,
+      "Target": 32
+    },
+    "Checks": [
+      "Opposing held directions did not manufacture a neutral release.",
+      "Fresh movement resumed after all held directions returned to neutral.",
+      "Keyboard repeat did not duplicate pause; controller Cancel unwound pause.",
+      "Focus return did not replay a held movement key.",
+      "Small stick drift stayed inside the circular deadzone.",
+      "A deliberate diagonal kept the existing circular-deadzone movement behavior.",
+      "Addressed dialogue suppressed held movement.",
+      "Dismissing dialogue did not release held movement into gameplay.",
+      "Escape and controller B close dialogue first without leaking the event into world actions."
+    ],
+    "ElapsedMilliseconds": 5921
+  },
+  "artifactSha256": {
+    "native-input-k_wvrrh3/input.json": "4b6e4dd152a6c11b7c339c4c8458dae8e0b4c1f412988e0ea0034b52e9fffcd0",
+    "native-input-k_wvrrh3/world.sqlite": "1de68576750c85adec0b098e82106332dc00687e376962be5253c8229efde1c6"
+  },
+  "finishedUtc": "2026-09-11T20:47:31.698365+00:00"
+}

@@ -32,8 +32,8 @@ def verify_report(mode, observed):
             or not observed.get("Checks") or not observed.get("Readiness")
             or observed.get("IsLocallyPaused") is not True):
         raise RuntimeError("Incomplete native quest result: " + mode)
-    if not 0 <= observed.get("FocusRequests", -1) <= 8:
-        raise RuntimeError("Native focus request bound was not retained")
+    if observed.get("FocusRequests") != 0:
+        raise RuntimeError("The native probe attempted to reclaim desktop focus")
     inputs = observed.get("Inputs", [])
     for event in inputs:
         if event["Action"] not in ("pause_world", "hud_pause", "stop_movement"):

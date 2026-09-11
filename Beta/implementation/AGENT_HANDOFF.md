@@ -21,27 +21,42 @@ the next task, rather than reloading the research archive and every historical q
 
 ## Current implementation and evidence
 
-The latest [quick-action wheel increment](p02/quick-wheel/README.md) adds V/right-stick/Actions
-access to Talk/Gather/Craft/Give, icon-led inspection, fixed cardinal slots and pinned targets,
-explicit confirmation, and cancellation without changing the host clock policy. Pointer, keyboard,
-D-pad/stick, blocked inspection, one actual harvest and exact reopening passed native checks;
-four wheel frames were reviewed. These are provisional farm actions, not a full customizable library.
+The [quick-action wheel](p02/quick-wheel/README.md) now has completed **bounded combined
+qualification**, recorded in the [shared-desktop follow-up](p02/shared-desktop-validation/README.md).
+V/right-stick/Actions opens Talk/Gather/Craft/Give with fixed cardinal slots, pinned targets,
+icon-led inspection and explicit confirmation. Running world time continues; an existing pause
+persists. Cancellation, focus loss and disconnect never execute an action. These remain provisional
+farm actions, not a full customizable library or accepted production presentation.
 
-**Qualification is partial.** All **861 tests** (544 Core + 317 Hosting, zero skips), independent
-fixtures and host inspections passed. The first integrated run stopped at a confirmed stale Wren
-revision in the input probe; the corrected one-press readiness check passes. The next run hit the
-unchanged 180-second editor-import timeout. A separate diagnostic import also did not complete;
-its sample and high host-load observation are retained without claiming a proven cause. The
-[summary](p02/quick-wheel/qualification/verification-summary.json) records exact inputs/binaries.
+All **861 tests** (544 Core + 317 Hosting, zero skips), 22 independent fixtures and 68 host
+inspections passed. The integrated run failed on the recurring Godot editor-settings startup error
+for the Android SDK path despite exit zero. A separate import and all remaining native checks passed
+with unchanged inputs and original deadlines. **This is not one uninterrupted verifier pass.** The
+[summary](p02/shared-desktop-validation/qualification/verification-summary.json) retains the failure,
+exact sources/binaries, tests and native results. The editor error's cause remains unconfirmed.
 
-Visual review also found an old action-probe screenshot labeled dialogue that still showed the pack.
-Its capture now awaits a completed rendered frame, but the final rendered follow-up lost focus and
-failed approach before dialogue. That capture correction builds but remains natively unqualified.
-Five non-client/test assembly hashes are unchanged after this capture-only edit. **Next: finish the
-remaining integrated native checks and verify the corrected dialogue frame under stable execution;
-do not increase timeouts or retry a rejected gameplay action.** No new milestone is promoted yet.
-All failures and successful bounded runs are preserved in the wheel packet. Ecosystem commit
-`f1e5fb1` carries the reusable input/focus/injection lessons; local skill sync used no model calls.
+The owner's shared-desktop clarification is now project and ecosystem doctrine. Explicit disposable
+wheel/offer fixtures can render with controlled focus, while normal gameplay and headless probes
+retain native focus bindings. Both modes passed their separate checks. The background wheel proves
+raw window notifications cannot change fixture readiness and deliberate fixture focus still cancels.
+Four wheel and twelve offer/pack frames are retained; local visual review confirms the corrected
+actual dialogue frame, pack inspection, ready craft and wheel inspection. Controlled input/rendering
+does not qualify real OS focus switching or physical devices. Initial native activation can still
+take focus; no promise of a never-activating window is made.
+
+A final audit removed older gathering/production/quest/construction probes' repeated focus-grab loops.
+All four affected native families passed after rebuilding, including meaningful unfinished and
+completed NPC work across restarts. Their runners now require zero focus-reclaim requests. Only those
+four probe sources, their runner checks and README changed after the complete separate native pass;
+production/wheel/offer sources and all five non-client/test assembly hashes stayed unchanged. The
+861 tests were not redundantly rerun for that fixture-only cleanup. Required independent and human
+reviews remain open. Ecosystem commit `eb7a836` persists shared-desktop verification/input doctrine;
+five installed skill files were synchronized with checked hashes and backups, without model calls.
+
+The older quick-wheel packet remains a historical partial checkpoint with its Talk conflict,
+import timeout and interrupted rendered attempt. Its failed reports are not rewritten. The follow-up
+also retains the intermediate disconnected-signal teardown error and its correction. No error is
+filtered out, rejected gameplay action retried, timeout enlarged or acceptance gate waived.
 
 The prior [outdoor daylight increment](p02/daylight/README.md), code `80bdda0`, connects the farm's native ambient
 light to its existing public calendar: dawn, day, dusk and readable night, with an editable palette.
@@ -131,6 +146,11 @@ checkpoints or shared-behavior changes. Independent critics serve consequential 
 not routine ceremony. Keep every acceptance threshold intact, retain failure dispositions, and update
 this compact index once per coherent increment. The shared verification skill carries the same cadence.
 No credit savings are quantified yet.
+
+Other tasks share desktop focus and machine resources. Use headless behavior checks, explicit
+background fixtures for controlled rendering, and coordinated foreground intervals for real OS/device
+acceptance. Never repeatedly reclaim focus or close another task's applications. Preserve observed
+focus/readiness and interrupted failures; do not assume every failure is environmental.
 
 Inspect the working tree/index before editing. Nineteen unrelated predecessor files were staged at this
 handoff: preserve them, original saves, source archives and frozen design editions. Successor code lives

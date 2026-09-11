@@ -1,0 +1,118 @@
+{
+  "startedUtc": "2026-09-11T20:53:41.076746+00:00",
+  "scope": "Native named inputs, gathered save, preserved-copy profile upgrade, two exact crafts and process recovery",
+  "rendered": false,
+  "status": "passed",
+  "runs": [
+    {
+      "mode": "prepare",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-production",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/gathered.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.json",
+        "prepare"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative production passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.prepare.json\n",
+      "stderr": ""
+    },
+    {
+      "mode": "upgrade",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-production",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/gathered.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.json",
+        "upgrade"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative production passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.upgrade.json\n",
+      "stderr": ""
+    },
+    {
+      "mode": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-production",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/gathered.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.json",
+        "reopen"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative production passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/shared-desktop/native-production-26435a3d10934337a19d2cac9d62b4a2/production.reopen.json\n",
+      "stderr": ""
+    }
+  ],
+  "prepare": {
+    "Kind": "native-farm-production-v1",
+    "Mode": "prepare",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32400000,\"PlayerGatherEffort\":0,\"HasReadingHold\":false,\"Quantity\":10,\"StorageRevision\":0,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8,\"Provenance\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":25984,\"Y\":83328,\"Z\":256,\"PresenceRevision\":0},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":0}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":0,\"RemainingSwings\":4,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]},\"CraftingRevision\":null}",
+    "Final": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32545800,\"PlayerGatherEffort\":10,\"HasReadingHold\":false,\"Quantity\":12,\"StorageRevision\":2,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8,\"Provenance\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"8f2a02aa6dad151eb809f1df0fe40ad3\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"a4ce651bfec95fd06c2befc3e1d58188\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":32}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]},\"CraftingRevision\":null}",
+    "Checks": [
+      "Two real sickle actions gathered two finite berries through the ordinary input adapter."
+    ],
+    "FocusRequests": 0,
+    "DurationMilliseconds": 5213
+  },
+  "upgrade": {
+    "Kind": "native-farm-production-v1",
+    "Mode": "upgrade",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32545800,\"PlayerGatherEffort\":10,\"HasReadingHold\":false,\"Quantity\":12,\"StorageRevision\":2,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":0,\"Quantity\":8,\"Provenance\":1},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"8f2a02aa6dad151eb809f1df0fe40ad3\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"a4ce651bfec95fd06c2befc3e1d58188\",\"Definition\":\"2038079b78c92d2f77fb1443eed73661\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":32}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]},\"CraftingRevision\":0}",
+    "Final": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32547600,\"PlayerGatherEffort\":20,\"HasReadingHold\":false,\"Quantity\":12,\"StorageRevision\":3,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":1,\"Quantity\":7,\"Provenance\":1},{\"Id\":\"58c8914b8207ffb7459ff5a8e1f2a5db\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"b511dab09e0c04ea9638c65170739fc1\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":32}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]},\"CraftingRevision\":1}",
+    "Checks": [
+      "The preserved-copy upgrade retained every recorded projection field without advancing time.",
+      "Restored world stayed unchanged for600ms before explicit resume.",
+      "Named craft input consumed2berries+1wood and retained2rations+1offcut with tools untouched."
+    ],
+    "FocusRequests": 0,
+    "DurationMilliseconds": 2087
+  },
+  "reopen": {
+    "Kind": "native-farm-production-v1",
+    "Mode": "reopen",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Initial": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32547600,\"PlayerGatherEffort\":20,\"HasReadingHold\":false,\"Quantity\":12,\"StorageRevision\":3,\"Lots\":[{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":1,\"Quantity\":7,\"Provenance\":1},{\"Id\":\"58c8914b8207ffb7459ff5a8e1f2a5db\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"b511dab09e0c04ea9638c65170739fc1\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":32}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":2,\"RemainingSwings\":2,\"Visibility\":1},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]},\"CraftingRevision\":1}",
+    "Final": "{\"Retained\":{\"World\":\"a44c6017d1916cac5b21d2ae4273f184\",\"Day\":0,\"Millisecond\":32691600,\"PlayerGatherEffort\":20,\"HasReadingHold\":false,\"Quantity\":14,\"StorageRevision\":6,\"Lots\":[{\"Id\":\"0c6d9735a75674644dc52bf097e26e02\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2},{\"Id\":\"178c51e55f95c0e4c58704bc3a7b39a3\",\"Definition\":\"a64b7d9ae8f3757bfefc13c0b9fcdaf9\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"4be9cd51901d095afb013fc7bb48d45a\",\"Definition\":\"f20a24bbcf04b36ebcb90a1d04ca58c0\",\"Revision\":2,\"Quantity\":6,\"Provenance\":1},{\"Id\":\"58c8914b8207ffb7459ff5a8e1f2a5db\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2},{\"Id\":\"7227e93fa0f960e42e35fe82c9a0f928\",\"Definition\":\"19fd80672aee3de952edb5cb376e6b25\",\"Revision\":0,\"Quantity\":1,\"Provenance\":1},{\"Id\":\"b511dab09e0c04ea9638c65170739fc1\",\"Definition\":\"53fd24d5841ae076dca620b5ebe41aad\",\"Revision\":0,\"Quantity\":2,\"Provenance\":2},{\"Id\":\"ebfa85e1d652c525893f65668789d7a3\",\"Definition\":\"9e8e1f696cfc36ae65d80cc9f618befa\",\"Revision\":0,\"Quantity\":1,\"Provenance\":2}],\"Actors\":[{\"Id\":\"a2eedfbb4fd2f70f36253ba8c72e9d30\",\"X\":26784,\"Y\":84928,\"Z\":256,\"PresenceRevision\":75},{\"Id\":\"f61e90650ddab821341dd6e0b4bb2c33\",\"X\":25984,\"Y\":82560,\"Z\":256,\"PresenceRevision\":48}],\"Nodes\":[{\"Id\":\"24a15755098b514424949f954c34e5af\",\"Revision\":4,\"RemainingSwings\":0,\"Visibility\":2},{\"Id\":\"67e26d9c5e3848e75f9bcd7b9088e36e\",\"Revision\":0,\"RemainingSwings\":5,\"Visibility\":1}]},\"CraftingRevision\":2}",
+    "Checks": [
+      "Exact crafted public state recovered in a third native process.",
+      "Restored world stayed unchanged for600ms before explicit resume.",
+      "Two real sickle actions gathered two finite berries through the ordinary input adapter.",
+      "Named craft input consumed2berries+1wood and retained2rations+1offcut with tools untouched."
+    ],
+    "FocusRequests": 0,
+    "DurationMilliseconds": 5816
+  },
+  "retainedSourceSha256": "01f29e62fe0ba4b7c567f00bc0c4a5c0af2da0594705eefe19f15cfc3e3a974a",
+  "artifactSha256": {
+    "native-production-26435a3d10934337a19d2cac9d62b4a2/gathered.sqlite": "01f29e62fe0ba4b7c567f00bc0c4a5c0af2da0594705eefe19f15cfc3e3a974a",
+    "native-production-26435a3d10934337a19d2cac9d62b4a2/production.prepare.json": "a22a856a4470413268d74f509f77ceaac7261d7b28c046402f4c11f400a778f5",
+    "native-production-26435a3d10934337a19d2cac9d62b4a2/production.reopen.json": "8206e5bd446dd3fb87d2dfd22603555d07b8d0504ba97a2e04d14feb1b761081",
+    "native-production-26435a3d10934337a19d2cac9d62b4a2/production.sqlite": "6e34add4da9ff41113edfa762c64fe80b81cc85d2262e67188e9e511763868ab",
+    "native-production-26435a3d10934337a19d2cac9d62b4a2/production.upgrade.json": "01bd265efdfd7ce002a396c2b4dfa018f42a136db9459d4da62e955098b0be36"
+  },
+  "finishedUtc": "2026-09-11T20:53:57.303146+00:00"
+}

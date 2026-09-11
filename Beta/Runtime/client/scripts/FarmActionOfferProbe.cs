@@ -332,6 +332,8 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
             Kind = "native-action-offers-v1", Status = status, Failure = failure,
             Runtime = RuntimeInformation.FrameworkDescription, DisplayDriver = DisplayServer.GetName(),
             WindowFocused = game.IsWindowFocused, LocallyPaused = game.IsLocallyPaused,
+            BackgroundRender = GetWindow().Unfocusable, NativeWindowFocused = GetWindow().HasFocus(),
+            game.BindWindowFocus,
             InventoryOpen = game.IsInventoryOpen, ActionPending = game.HasPendingAction,
             FinalView = game.CurrentView,
             Checks = _checks, ElapsedMilliseconds = _elapsed.ElapsedMilliseconds

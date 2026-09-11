@@ -37,6 +37,22 @@ public partial class Bootstrap : Control
         GetNode<Control>("Backdrop").Hide();
         GetNode<Control>("Center").Hide();
         FarmInputMap.InstallDefaults();
+        // Only disposable probes may detach OS focus for controlled rendering. Fixture focus
+        // still exercises the same readiness/cancellation policy; native OS binding is tested separately.
+        bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
+            or ["--farm-action-offers", _, _, "--background-render"];
+        if (arguments.Contains("--background-render") && !backgroundProbe)
+        {
+            GD.PushError("Background rendering requires a supported disposable probe invocation.");
+            GetTree().Quit(1);
+            return;
+        }
+        if (backgroundProbe)
+        {
+            arguments = arguments[..^1];
+            GetWindow().Unfocusable = true;
+            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        }
         if (arguments is ["--farm-wheel", var wheelSave, var wheelReport, var wheelMode] && wheelMode is "fresh" or "reopen")
         {
             if (File.Exists(wheelSave) != (wheelMode == "reopen"))
@@ -45,7 +61,7 @@ public partial class Bootstrap : Control
                 GetTree().Quit(1);
                 return;
             }
-            var game = new FarmGame { SavePathOverride = wheelSave, StartPaused = true };
+            var game = new FarmGame { SavePathOverride = wheelSave, StartPaused = true, BindWindowFocus = !backgroundProbe };
             AddChild(game);
             AddChild(new FarmWheelProbe(game, wheelReport, wheelMode == "reopen"));
         }
@@ -139,7 +155,7 @@ public partial class Bootstrap : Control
                 GetTree().Quit(1);
                 return;
             }
-            var game = new FarmGame { SavePathOverride = offerSave, StartPaused = true };
+            var game = new FarmGame { SavePathOverride = offerSave, StartPaused = true, BindWindowFocus = !backgroundProbe };
             AddChild(game);
             AddChild(new FarmActionOfferProbe(game, offerReport));
         }

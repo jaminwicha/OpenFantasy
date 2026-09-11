@@ -23,7 +23,7 @@ internal sealed partial class FarmWheelProbe(FarmGame game, string reportPath, b
             GetWindow().FocusExited += () => _focusEvents.Add($"{_elapsed.ElapsedMilliseconds}: exited");
             await Until(() => game.CurrentView is not null && game.CurrentOffers.Count > 0 && game.IsLocallyPaused,
                 "The paused farm did not become ready.");
-            if (DisplayServer.GetName() != "headless")
+            if (DisplayServer.GetName() != "headless" && !GetWindow().Unfocusable)
             {
                 // Allow the native application/window activation to settle, then request focus once.
                 // During the actual journey, focus loss cancels normally and fails the check.
@@ -131,6 +131,15 @@ internal sealed partial class FarmWheelProbe(FarmGame game, string reportPath, b
         var selectedTarget = _wheel.Model!.Selected!.Offer.TargetId;
         var before = View();
         var feet = PlayerFeet();
+        if (!game.BindWindowFocus)
+        {
+            GetWindow().EmitSignal(Window.SignalName.FocusExited);
+            await Delay(0.1);
+            Require(game.IsWindowFocused && game.IsWheelOpen,
+                "An OS-window notification escaped the background fixture's focus boundary.");
+            GetWindow().EmitSignal(Window.SignalName.FocusEntered);
+            _checks.Add("Background rendering ignores native window notifications; explicit fixture focus still exercises cancellation separately.");
+        }
         await Delay(0.4);
         Require(View().Calendar > before.Calendar && PlayerFeet() == feet && !game.HasPendingAction,
             "The wheel paused world time, moved the player or submitted on selection.");
@@ -157,10 +166,10 @@ internal sealed partial class FarmWheelProbe(FarmGame game, string reportPath, b
         await Until(() => !game.IsWheelOpen, "Controller disconnect did not cancel the wheel.");
         Tap(Key.V);
         await Until(() => game.IsWheelOpen, "The wheel did not open before focus loss.");
-        GetWindow().EmitSignal(Window.SignalName.FocusExited);
+        game.InjectFixtureFocus(false);
         await Until(() => !game.IsWheelOpen && !game.IsWindowFocused, "Focus loss did not cancel the wheel.");
         await Delay(0.15);
-        GetWindow().EmitSignal(Window.SignalName.FocusEntered);
+        game.InjectFixtureFocus(true);
         await Until(() => game.IsWindowFocused, "Focus did not recover.");
         Tap(Key.Escape);
         await Until(() => game.IsLocallyPaused, "Could not pause the final world.");
@@ -226,6 +235,8 @@ internal sealed partial class FarmWheelProbe(FarmGame game, string reportPath, b
         Status = status, Error = error, Runtime = RuntimeInformation.FrameworkDescription,
         DisplayDriver = DisplayServer.GetName(), Reopen = reopen, Checks = _checks,
         FocusEvents = _focusEvents,
+        BackgroundRender = GetWindow().Unfocusable, NativeWindowFocused = GetWindow().HasFocus(),
+        game.BindWindowFocus,
         FinalView = game.CurrentView, game.IsWheelOpen, game.IsLocallyPaused, game.IsWindowFocused,
         game.CurrentTarget, Offers = game.CurrentOffers.Values.Select(offer => new { offer.Action, offer.TargetId, offer.Label, offer.CanExecute, offer.BlockingReason }),
         FocusOwner = GetViewport().GuiGetFocusOwner()?.GetPath().ToString(),

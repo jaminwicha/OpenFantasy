@@ -1,0 +1,39 @@
+{
+  "Kind": "native-farm-gathering-v1",
+  "Stage": "reopen",
+  "Status": "passed",
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "Initial": "{\u0022World\u0022:\u0022a44c6017d1916cac5b21d2ae4273f184\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:33049800,\u0022PlayerGatherEffort\u0022:10,\u0022HasReadingHold\u0022:false,\u0022Quantity\u0022:19,\u0022StorageRevision\u0022:9,\u0022Lots\u0022:[{\u0022Id\u0022:\u0022178c51e55f95c0e4c58704bc3a7b39a3\u0022,\u0022Definition\u0022:\u0022a64b7d9ae8f3757bfefc13c0b9fcdaf9\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022318290c498ebea84d6dbbe8fcce9ccc0\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002240cc9f2b012902f391624f962c46adb9\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00224be9cd51901d095afb013fc7bb48d45a\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:8},{\u0022Id\u0022:\u002265400e277858603e718719b93ee586e3\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002265f2b905709a554fc03a1ffc4d967df4\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00227227e93fa0f960e42e35fe82c9a0f928\u0022,\u0022Definition\u0022:\u002219fd80672aee3de952edb5cb376e6b25\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022894b6f6d9eb564c0687cfd6ae51ec25f\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00229f9059ed6f6a9e8116126f36b6a99031\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022a224f961ac3fae7acc9d4c0a67c00df7\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022d8763ccc39755ee7da08d5638890c631\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022ea2f56ea2e97d6a44cff18a35019a482\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1}],\u0022Actors\u0022:[{\u0022Id\u0022:\u0022a2eedfbb4fd2f70f36253ba8c72e9d30\u0022,\u0022X\u0022:26784,\u0022Y\u0022:84928,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:75},{\u0022Id\u0022:\u0022f61e90650ddab821341dd6e0b4bb2c33\u0022,\u0022X\u0022:26496,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:96}],\u0022Nodes\u0022:[{\u0022Id\u0022:\u002224a15755098b514424949f954c34e5af\u0022,\u0022Revision\u0022:4,\u0022RemainingSwings\u0022:0,\u0022Visibility\u0022:2}]}",
+  "Final": "{\u0022World\u0022:\u0022a44c6017d1916cac5b21d2ae4273f184\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:34380000,\u0022PlayerGatherEffort\u0022:1000,\u0022HasReadingHold\u0022:false,\u0022Quantity\u0022:19,\u0022StorageRevision\u0022:9,\u0022Lots\u0022:[{\u0022Id\u0022:\u0022178c51e55f95c0e4c58704bc3a7b39a3\u0022,\u0022Definition\u0022:\u0022a64b7d9ae8f3757bfefc13c0b9fcdaf9\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022318290c498ebea84d6dbbe8fcce9ccc0\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002240cc9f2b012902f391624f962c46adb9\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00224be9cd51901d095afb013fc7bb48d45a\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:8},{\u0022Id\u0022:\u002265400e277858603e718719b93ee586e3\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002265f2b905709a554fc03a1ffc4d967df4\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00227227e93fa0f960e42e35fe82c9a0f928\u0022,\u0022Definition\u0022:\u002219fd80672aee3de952edb5cb376e6b25\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022894b6f6d9eb564c0687cfd6ae51ec25f\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00229f9059ed6f6a9e8116126f36b6a99031\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022a224f961ac3fae7acc9d4c0a67c00df7\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022d8763ccc39755ee7da08d5638890c631\u0022,\u0022Definition\u0022:\u00222038079b78c92d2f77fb1443eed73661\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022ea2f56ea2e97d6a44cff18a35019a482\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1}],\u0022Actors\u0022:[{\u0022Id\u0022:\u0022a2eedfbb4fd2f70f36253ba8c72e9d30\u0022,\u0022X\u0022:26784,\u0022Y\u0022:84928,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:75},{\u0022Id\u0022:\u0022f61e90650ddab821341dd6e0b4bb2c33\u0022,\u0022X\u0022:26496,\u0022Y\u0022:82048,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:208}],\u0022Nodes\u0022:[{\u0022Id\u0022:\u002224a15755098b514424949f954c34e5af\u0022,\u0022Revision\u0022:5,\u0022RemainingSwings\u0022:4,\u0022Visibility\u0022:1},{\u0022Id\u0022:\u002267e26d9c5e3848e75f9bcd7b9088e36e\u0022,\u0022Revision\u0022:6,\u0022RemainingSwings\u0022:5,\u0022Visibility\u0022:1}]}",
+  "OakId": "67e26d9c5e3848e75f9bcd7b9088e36e",
+  "BerryId": "24a15755098b514424949f954c34e5af",
+  "WoodDefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+  "Checks": [
+    "Exact saved work, plants, custody and public actor view restored in a second native process.",
+    "Recovered paused work stayed unchanged for600ms before explicit resume.",
+    "Oak regrew after its remaining committed advancing steps across restart, without issuing new inventory."
+  ],
+  "Readiness": [
+    {
+      "WallMilliseconds": 494,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "Calendar": 33049800
+    },
+    {
+      "WallMilliseconds": 1127,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 33049800
+    },
+    {
+      "WallMilliseconds": 38063,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "Calendar": 34380000
+    }
+  ],
+  "FocusRequests": 0,
+  "DurationMilliseconds": 38338
+}

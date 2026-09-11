@@ -35,3 +35,14 @@ The owner's 2026-09-10 direction makes incremental commits and milestone branche
 doctrine. Follow [GIT_MILESTONES.md](implementation/GIT_MILESTONES.md): commit verified coherent
 increments, preserve major checkpoints with named branches, and never include unrelated
 staged work. A milestone records the exact accepted scope; it does not automatically close a phase.
+
+## Shared desktop
+
+Owner clarification, 2026-09-11: other conversations run Godot games on this desktop and can take
+foreground focus. Headless checks do not need desktop focus, but all runs share CPU/memory.
+Use explicit background rendering fixtures for controlled UI/image evidence; normal gameplay
+keeps its native focus/cancellation/readiness policy. Foreground OS/device acceptance requires
+a coordinated interval. Do not repeatedly grab focus, close another task's applications, extend
+deadlines or convert interrupted runs to passes. Record observed window/Control focus and host
+readiness; keep failures and their original assertions. Continue independent work when foreground
+access is unavailable. Controlled-focus rendering never substitutes for physical/OS acceptance.

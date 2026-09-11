@@ -27,8 +27,6 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
     private ulong _expectedQuantity;
     private bool _waitingForYield;
     private int _swings;
-    private long _lastFocusRequest;
-    private int _focusRequests;
 
     public override void _Process(double delta)
     {
@@ -45,15 +43,7 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
                 _readinessChanges.Add(new { WallMilliseconds = _timeout.ElapsedMilliseconds,
                     game.IsLocallyPaused, game.IsWindowFocused, Calendar = view.Calendar.MillisecondsWithinDay });
             }
-            // Rendered automation requires a foreground game, like a human player. Request actual
-            // window focus after an interruption without bypassing production readiness or its clock.
-            if (!game.IsWindowFocused && !game.IsLocallyPaused && _focusRequests < 8
-                && _timeout.ElapsedMilliseconds - _lastFocusRequest >= 2_000)
-            {
-                _lastFocusRequest = _timeout.ElapsedMilliseconds;
-                _focusRequests++;
-                GetWindow().GrabFocus();
-            }
+            // A shared desktop may interrupt this fixture. Keep normal readiness; never reclaim focus.
             switch (_stage)
             {
                 case Stage.Opening:
@@ -122,7 +112,7 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
         {
             File.WriteAllText(Path.ChangeExtension(reportPath, "." + (reopen ? "reopen" : "create") + ".failed.json"),
                 JsonSerializer.Serialize(new { Status = "failed", Stage = _stage.ToString(), Error = error.ToString(),
-                    game.IsLocallyPaused, game.IsWindowFocused, Readiness = _readinessChanges, FocusRequests = _focusRequests,
+                    game.IsLocallyPaused, game.IsWindowFocused, Readiness = _readinessChanges, FocusRequests = 0,
                     Current = game.CurrentView is { } current ? Snapshot(current) : null },
                     new JsonSerializerOptions { WriteIndented = true }));
             _stage = Stage.Done;
@@ -212,7 +202,7 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
             Runtime = RuntimeInformation.FrameworkDescription, DisplayDriver = DisplayServer.GetName(),
             Initial = _initial, Final = Snapshot(view), OakId = _oakId.ToString(), BerryId = _berryId.ToString(),
             WoodDefinitionId = _woodDefinition.ToString(), Checks = _checks, Readiness = _readinessChanges,
-            FocusRequests = _focusRequests,
+            FocusRequests = 0,
             DurationMilliseconds = _timeout.ElapsedMilliseconds
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
         _stage = Stage.Done;

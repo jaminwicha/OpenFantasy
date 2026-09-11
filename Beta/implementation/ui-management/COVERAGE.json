@@ -31,7 +31,8 @@
       ],
       "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open.",
       "partial_evidence_paths": [
-        "../p02/quick-wheel/README.md"
+        "../p02/quick-wheel/README.md",
+        "../p02/shared-desktop-validation/README.md"
       ],
       "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
@@ -54,7 +55,8 @@
       "status": "in_progress",
       "evidence_paths": [],
       "partial_evidence_paths": [
-        "../p02/quick-wheel/README.md"
+        "../p02/quick-wheel/README.md",
+        "../p02/shared-desktop-validation/README.md"
       ],
       "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
@@ -85,7 +87,8 @@
       "foundation_qualification_phase": "P03",
       "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open.",
       "partial_evidence_paths": [
-        "../p02/quick-wheel/README.md"
+        "../p02/quick-wheel/README.md",
+        "../p02/shared-desktop-validation/README.md"
       ],
       "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
@@ -130,7 +133,10 @@
         "../p02/inventory-inspection/README.md",
         "../p02/inventory-inspection/qualification/final-verification.json"
       ],
-      "evidence_scope": " P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open."
+      "evidence_scope": " P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open.",
+      "partial_evidence_paths": [
+        "../p02/shared-desktop-validation/README.md"
+      ]
     },
     {
       "id": "UI-06",
@@ -263,7 +269,8 @@
       "foundation_qualification_phase": "P03",
       "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open. P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open.",
       "partial_evidence_paths": [
-        "../p02/quick-wheel/README.md"
+        "../p02/quick-wheel/README.md",
+        "../p02/shared-desktop-validation/README.md"
       ],
       "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
@@ -285,7 +292,8 @@
       "status": "in_progress",
       "evidence_paths": [],
       "partial_evidence_paths": [
-        "../p02/quick-wheel/README.md"
+        "../p02/quick-wheel/README.md",
+        "../p02/shared-desktop-validation/README.md"
       ],
       "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     },
@@ -349,7 +357,8 @@
       "partial_evidence_paths": [
         "../p01/action-offers/qualification/rendered-offers.json",
         "../p02/inventory-inspection/qualification/rendered-inventory.json",
-        "../p02/quick-wheel/README.md"
+        "../p02/quick-wheel/README.md",
+        "../p02/shared-desktop-validation/README.md"
       ],
       "partial_evidence_scope": "P01 textual cost/blocker inspection prerequisite at 960x540 via native focus/hover; icons, rich item cards, physical navigation and full UIV-14 remain unimplemented/unrun. Textual real-item pack inspection is now covered; native icons and full rich/knowledge/device acceptance remain open. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
     }
