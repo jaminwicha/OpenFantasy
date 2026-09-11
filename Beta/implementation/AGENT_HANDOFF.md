@@ -2,15 +2,27 @@
 
 Updated: 2026-09-10. This is a navigation and current-state index for any authorized lead or worker. The project files below, not a model's private memory, carry the specification and implementation evidence. Update this index when its current-state claims change; preserve earlier reviewed evidence and design editions.
 
-Current orchestration steering: Astra drives this project while Claude performs suitable bounded work using the owner's Claude capacity. The owner requires `fable[1m]` for Claude assignments; pass that exact model selector and report unavailable access rather than silently substituting another model. Preserve interchangeable capabilities, but avoid spending another Astra subagent merely to relay a Claude task. Before every external delegation, the ecosystem's local hook must synchronize approved skill updates and verify the exact current instructions, handoff, specs and owner steering; halt on unexpected drift. Recheck inputs after return, then update shared knowledge from reviewed results. The check itself must not consume another model conversation. Measure recurring lead/worker usage and accepted work before claiming token or credit savings; setup effort is a separate one-time cost.
+Current orchestration steering (owner override, 2026-09-10): Astra works directly by default,
+using native tools and capabilities without routine inter-agent handoffs. Claude/Fable is an
+optional exception. Prepare a concrete bounded assignment, expected benefit and usage limit,
+then request the owner's explicit approval for that assignment before any model call. Earlier
+permission and a request to continue implementation do not authorize a new delegation. When
+approved, use exactly `fable[1m]`; report unavailable access without substituting another model
+or automatically retrying a paid call. Do not use relay agents. Capability interchangeability
+and portable project knowledge remain available without requiring provider switching.
 
-Current delegation assessment (2026-09-10): two bounded implementation runs returned useful
-work but both reported denied commands and required material lead corrections. Net lead-credit
-savings remain unverified. Routine behavior-changing implementation now stays with the lead;
-use another external implementation assignment only when its independent scope and expected
-benefit justify the measured integration cost. The exact `fable[1m]` requirement still applies
-when Claude is selected. Keep the repaired tooling, portable knowledge and synchronization
-hook available; this is a task-routing decision, not a capability ban or a claim about every model.
+For an approved external assignment, the ecosystem's local hook must synchronize approved
+skill updates and verify the exact current instructions, handoff, specs and owner steering;
+halt on unexpected drift. Recheck inputs after return, then update shared knowledge from
+reviewed results. These checks must not consume another model conversation. Measure recurring
+lead/worker usage and accepted work before claiming credit savings; setup effort is separate.
+
+Current delegation assessment: two bounded implementation runs returned useful work, but
+both reported denied commands and required material lead corrections. Net lead-credit savings
+remain unverified. The second run and its independent critic had already finished before the
+owner changed the approval policy. Complete their current integration locally; no further
+external run is authorized. Retain the repaired adapter and synchronized knowledge for a
+specific future task only if its expected benefit justifies requesting approval.
 
 Git discipline now includes [incremental commits and preserved milestone branches](GIT_MILESTONES.md).
 The current qualified foundation is recorded at `codex/milestone-farm-input-foundation`.
