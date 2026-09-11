@@ -20,12 +20,14 @@ internal static class FarmInputActions
     internal const string Craft = "craft_rations";
     internal const string Pause = "pause_world";
     internal const string Cancel = "cancel";
+    internal const string NextTarget = "next_target";
+    internal const string ClearTarget = "clear_target";
 
     /// <summary>
     /// Routing priority. One device event may match several names (controller B is both Cancel and
     /// Craft); the owning layer takes the first name it binds.
     /// </summary>
-    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, Interact, Give, Gather, Craft];
+    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, Interact, Give, Gather, Craft, NextTarget, ClearTarget];
 }
 
 /// <summary>Client intentions. The host still validates the actor, target, resources and revisions.</summary>
@@ -38,6 +40,8 @@ internal enum FarmSemanticAction
     Craft,
     CloseDialogue,
     TogglePause,
+    NextTarget,
+    ClearTarget,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -282,13 +286,16 @@ internal sealed class FarmInputRouter
         (FarmInputLayer.World, FarmInputActions.Give) => FarmSemanticAction.Give,
         (FarmInputLayer.World, FarmInputActions.Gather) => FarmSemanticAction.Gather,
         (FarmInputLayer.World, FarmInputActions.Craft) => FarmSemanticAction.Craft,
+        (FarmInputLayer.World, FarmInputActions.NextTarget) => FarmSemanticAction.NextTarget,
+        (FarmInputLayer.World, FarmInputActions.ClearTarget) => FarmSemanticAction.ClearTarget,
         _ => FarmSemanticAction.None,
     };
 
     private static bool LayerAccepts(FarmInputLayer layer, FarmSemanticAction action) => layer switch
     {
         FarmInputLayer.World => action is FarmSemanticAction.Speak or FarmSemanticAction.Give
-            or FarmSemanticAction.Gather or FarmSemanticAction.Craft,
+            or FarmSemanticAction.Gather or FarmSemanticAction.Craft
+            or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,
         FarmInputLayer.Dialogue => action is FarmSemanticAction.Give or FarmSemanticAction.CloseDialogue,
         _ => false,
     };

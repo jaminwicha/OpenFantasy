@@ -25,6 +25,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
             await InspectBlockedCraft();
             Tap(Key.Escape);
             await Until(() => !game.IsLocallyPaused, "The ordinary pause key did not resume.");
+            await SelectTargets();
             await Harvest(GatherNodeKind.Oak);
             await Harvest(GatherNodeKind.Berry);
             await Harvest(GatherNodeKind.Berry);
@@ -63,6 +64,94 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
             "Reading an unavailable action changed the authoritative view or submitted an action.");
         craft.EmitSignal(Control.SignalName.MouseExited);
         _checks.Add("Unavailable crafting stayed inspectable through focus and hover without changing the paused world.");
+    }
+
+    private async Task SelectTargets()
+    {
+        ulong quantity = View().PlayerInventory.Quantity;
+        var revisions = View().GatheringNodes.ToDictionary(node => node.NodeId, node => node.Revision);
+        Tap(Key.Q);
+        await Until(() => game.CurrentTarget?.Kind == FarmTargetKind.Person, "Q did not select the observed person.");
+        Require(!Offer(FarmSemanticAction.Gather).CanExecute, "A selected person silently gathered from a different target.");
+        Require(_hud.GetNode<Label>("%TargetName").Text.Contains(game.CurrentTarget!.Name, StringComparison.Ordinal),
+            "The selected person's name was not shown.");
+        Node2D marker = game.GetChildren().OfType<FarmCanvas>().Single().GetNode<Node2D>("TargetMarker");
+        Require(marker.Visible && marker.Position == Presentation.FarmCanvasCoordinates.Position(game.CurrentTarget.Feet!.Value),
+            "The field marker did not identify the selected person's projected position.");
+        await Delay(0.1); // Let the selected marker and label reach the rendered viewport.
+        Capture("person-target");
+        EntityId person = game.CurrentTarget.Id;
+        Tap(Key.Escape);
+        await Until(() => game.IsLocallyPaused, "Could not pause the target comparison.");
+        Tap(Key.Q);
+        Shoulder(JoyButton.LeftShoulder);
+        await Delay(0.1);
+        Require(game.CurrentTarget?.Id == person && _hud.GetNode<Button>("%NextTarget").Disabled,
+            "Paused target input bypassed its context.");
+        Tap(Key.Escape);
+        await Until(() => !game.IsLocallyPaused, "Could not resume the target comparison.");
+
+        Shoulder(JoyButton.RightShoulder);
+        await Until(() => game.CurrentTarget?.Kind == FarmTargetKind.Harvestable,
+            "The shoulder event did not advance target selection.");
+        EntityId first = game.CurrentTarget!.Id;
+        _hud.GetNode<Button>("%NextTarget").EmitSignal(Button.SignalName.Pressed);
+        await Until(() => game.CurrentTarget?.Kind == FarmTargetKind.Harvestable && game.CurrentTarget.Id != first,
+            "The native Next button did not choose the next plant.");
+        Require(Offer(FarmSemanticAction.Gather).TargetId == game.CurrentTarget!.Id,
+            "The displayed gathering offer ignored the selected identity.");
+        Require(!Offer(FarmSemanticAction.Speak).CanExecute && !Offer(FarmSemanticAction.Give).CanExecute,
+            "A selected plant silently redirected Talk or Give to a person.");
+        Tap(Key.E);
+        await Delay(0.1);
+        Require(View().Dialogue is null && !game.HasPendingAction, "Talking to a plant opened an unrelated conversation.");
+        Require(View().PlayerInventory.Quantity == quantity
+            && View().GatheringNodes.All(node => node.Revision == revisions[node.NodeId]),
+            "Target selection changed inventory or harvested a resource.");
+        _checks.Add("Keyboard, shoulder events and the native Next button selected identities without spending or changing verbs.");
+
+        EntityId oak = View().GatheringNodes.Single(node => node.Kind == GatherNodeKind.Oak).NodeId;
+        for (int attempt = 0; game.CurrentTarget?.Id != oak && attempt < 4; attempt++)
+        {
+            Tap(Key.Q);
+            await Delay(0.05);
+        }
+        Require(game.CurrentTarget?.Id == oak, "The observed oak was missing from the target cycle.");
+        await Approach(() => View().GatheringNodes.Single(node => node.NodeId == oak).Feet, 300);
+        await Delay(0.1);
+        Capture("plant-target");
+        await Approach(() => View().GatheringNodes.Single(node => node.Kind == GatherNodeKind.Berry).Feet, 300);
+        Require(FarmClientSession.NearestGatherNode(View())?.Kind == GatherNodeKind.Berry,
+            "The target retention comparison did not approach a different plant.");
+        Require(game.CurrentTarget?.Id == oak && Offer(FarmSemanticAction.Gather).TargetId == oak
+            && !Offer(FarmSemanticAction.Gather).CanExecute, "Moving silently substituted a nearer plant.");
+        Button gather = _hud.GetNode<Button>("%Gather");
+        gather.GrabFocus();
+        await Delay(0.1);
+        AssertDetails(gather, Offer(FarmSemanticAction.Gather));
+        Capture("locked-target");
+        Tap(Key.F);
+        await Delay(0.1);
+        Require(View().PlayerInventory.Quantity == quantity && !game.HasPendingAction,
+            "The out-of-range locked target submitted or spent something.");
+        gather.ReleaseFocus();
+        Tap(Key.R);
+        await Until(() => game.CurrentTarget is null, "Clear did not release the explicit target.");
+        Require(Offer(FarmSemanticAction.Gather).TargetId == FarmClientSession.NearestGatherNode(View())!.NodeId,
+            "Clear did not restore the displayed contextual action.");
+        Require(!game.GetChildren().OfType<FarmCanvas>().Single().GetNode<Node2D>("TargetMarker").Visible,
+            "Clearing selection left a misleading field marker.");
+        Shoulder(JoyButton.RightShoulder);
+        await Until(() => game.CurrentTarget is not null, "Shoulder selection did not work after clearing.");
+        Shoulder(JoyButton.LeftShoulder);
+        await Until(() => game.CurrentTarget is null, "Left shoulder did not clear the target in ordinary play.");
+        _checks.Add("A locked oak remained selected while berries became nearer; unavailable F spent nothing and explicit Clear restored context.");
+    }
+
+    private static void Shoulder(JoyButton button)
+    {
+        Input.ParseInputEvent(new InputEventJoypadButton { ButtonIndex = button, Pressed = true });
+        Input.ParseInputEvent(new InputEventJoypadButton { ButtonIndex = button, Pressed = false });
     }
 
     private async Task Harvest(GatherNodeKind kind)
@@ -129,6 +218,12 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         await Until(() => View().Dialogue is not null && !game.HasPendingAction, "The displayed Talk action did not open dialogue.");
         Require(View().Dialogue!.SpeakerActorId == wren, "Talking addressed a different person.");
         await Delay(0.1);
+        EntityId? selected = game.CurrentTarget?.Id;
+        Tap(Key.Q);
+        Shoulder(JoyButton.LeftShoulder);
+        await Delay(0.1);
+        Require(game.CurrentTarget?.Id == selected && View().Dialogue is not null,
+            "Target controls changed selection or ended the addressed conversation.");
         Capture("dialogue");
         Tap(Key.Escape);
         await Until(() => View().Dialogue is null && !game.HasPendingAction, "Offer routing broke top-dialogue cancellation.");

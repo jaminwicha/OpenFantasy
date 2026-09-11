@@ -36,7 +36,7 @@ internal sealed class FarmActionOffers
     }
 
     /// <summary>Omits domains the save does not admit; blocked known actions stay present with a reason.</summary>
-    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> Create(LocalWorldView view)
+    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> Create(LocalWorldView view, FarmTarget? selectedTarget = null)
     {
         ArgumentNullException.ThrowIfNull(view);
         FarmActionScope scope = FarmActionScope.From(_delivery, view);
@@ -48,11 +48,22 @@ internal sealed class FarmActionOffers
         };
         if (view.PlayerGatherEffort.HasValue)
         {
-            offers[FarmSemanticAction.Gather] = Gather(view, scope);
+            offers[FarmSemanticAction.Gather] = Gather(view, scope, selectedTarget);
         }
         if (view.Crafting is not null)
         {
             offers[FarmSemanticAction.Craft] = Craft(view, scope);
+        }
+        if (selectedTarget is { } target && (target.Id != _wrenActorId
+            || view.Actors.All(actor => actor.ActorId != target.Id)))
+        {
+            string reason = target.Feet is null ? "The selected target is no longer visible. Choose another target or clear the selection."
+                : "This action needs a person. Choose Wren or clear the selection.";
+            foreach (FarmSemanticAction action in new[] { FarmSemanticAction.Speak, FarmSemanticAction.Give })
+            {
+                offers[action] = new FarmActionOffer(action, scope, action == FarmSemanticAction.Speak ? "Talk" : "Give",
+                    target.Name, target.Id, NoCost, "", intent: null, reason);
+            }
         }
         return new ReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>(offers);
     }
@@ -134,12 +145,20 @@ internal sealed class FarmActionOffers
             blockingReason: null, dialogue.DialogueId);
     }
 
-    /// <summary>The nearest workable plant is chosen once here; the offer keeps it even if another becomes nearer.</summary>
-    private static FarmActionOffer Gather(LocalWorldView view, FarmActionScope scope)
+    /// <summary>Resolves the explicit target, or the nearest workable plant only when selection is automatic.</summary>
+    private static FarmActionOffer Gather(LocalWorldView view, FarmActionScope scope, FarmTarget? selectedTarget)
     {
-        LocalGatherNodeView? node = FarmClientSession.NearestGatherNode(view);
+        LocalGatherNodeView? node = selectedTarget is null ? FarmClientSession.NearestGatherNode(view)
+            : view.GatheringNodes.FirstOrDefault(candidate => candidate.NodeId == selectedTarget.Id);
         string cost = $"{GatherRulesV1.EffortPerSwing} effort";
         string detail = $"You have {view.PlayerGatherEffort} effort.";
+        if (node is null && selectedTarget is { } target)
+        {
+            string reason = target.Kind == FarmTargetKind.Person ? "Choose a plant to gather, or clear the selection."
+                : "The selected plant is no longer visible. Choose another target or clear the selection.";
+            return new FarmActionOffer(FarmSemanticAction.Gather, scope, "Gather", target.Name, target.Id, cost, "",
+                intent: null, reason, detailText: detail);
+        }
         if (node is null)
         {
             return new FarmActionOffer(FarmSemanticAction.Gather, scope, "Gather", "No plant nearby", null, cost, "",
@@ -152,7 +171,9 @@ internal sealed class FarmActionOffers
             return new FarmActionOffer(FarmSemanticAction.Gather, scope, label, node.DisplayName, node.NodeId, cost, "",
                 intent: null, "You need the right tool in your pack.", detailText: detail);
         }
-        string? blocker = !FarmClientSession.CanReachGatherNode(view, node) ? $"Move closer to the {node.DisplayName}."
+        string? blocker = node.RemainingSwings == 0 || node.Visibility != GatherNodeVisibility.Ready
+            ? "This plant needs time to recover."
+            : !FarmClientSession.CanReachGatherNode(view, node) ? $"Move closer to the {node.DisplayName}."
             : view.PlayerGatherEffort < GatherRulesV1.EffortPerSwing ? "You are too tired to gather; rest a moment."
             : null;
         return new FarmActionOffer(FarmSemanticAction.Gather, scope, label, node.DisplayName, node.NodeId, cost,

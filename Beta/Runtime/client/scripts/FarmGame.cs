@@ -21,6 +21,7 @@ public partial class FarmGame : Node2D
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
     private string _actionDescription = "";
     private bool _failed;
+    private FarmTargetSelection? _targets;
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
@@ -32,6 +33,7 @@ public partial class FarmGame : Node2D
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
     internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CurrentOffers => _presented;
+    internal FarmTarget? CurrentTarget => _targets?.Selected;
     internal bool HasPendingAction => _action is not null;
     internal bool HasFailed => _failed;
     internal bool IsLocallyPaused => _input.Paused;
@@ -97,6 +99,7 @@ public partial class FarmGame : Node2D
             if (opening.IsCompletedSuccessfully)
             {
                 _session = opening.Result;
+                _targets = new FarmTargetSelection(_session.WrenActorId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message("Find Wren by the rows.");
             }
             else
@@ -120,7 +123,16 @@ public partial class FarmGame : Node2D
             _hud.Message(action.IsCompletedSuccessfully ? Describe(action.Result)
                 : "That action was not completed. " + action.Exception?.GetBaseException().Message);
         }
-        LocalWorldView view = _session.World.ReadView();
+        Present(_session.World.ReadView());
+    }
+
+    private void Present(LocalWorldView view)
+    {
+        if (_session is null || _targets is null)
+        {
+            return;
+        }
+        _targets.Refresh(view);
         _canvas.Present(new FarmCanvasFrame(view.Calendar, view.Actors.Select(actor => new FarmActorFrame(
             actor.ActorId, actor.DisplayName, actor.Feet, actor.ActorId == view.PlayerActorId,
             actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire)),
@@ -136,9 +148,10 @@ public partial class FarmGame : Node2D
         }
         _camera.Position = focus + new Vector2(0, -26);
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
-        _presented = _session.CreateOffers(view);
+        _presented = _session.CreateOffers(view, _targets.Selected);
+        _canvas.PresentTarget(_targets.Selected);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null,
-            _input.Paused || !_input.Focused, _presented);
+            _input.Paused || !_input.Focused, _presented, _targets);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -214,6 +227,23 @@ public partial class FarmGame : Node2D
         if (action == FarmSemanticAction.TogglePause)
         {
             TogglePause();
+            return;
+        }
+        if (action is FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget)
+        {
+            if (_targets is not null && _session is not null)
+            {
+                if (action == FarmSemanticAction.NextTarget)
+                {
+                    _targets.Cycle();
+                }
+                else
+                {
+                    _targets.Clear();
+                }
+                // Refresh the displayed choice and its offers together, including inputs in one frame.
+                Present(_session.World.ReadView());
+            }
             return;
         }
         if (!_presented.TryGetValue(action, out FarmActionOffer? offer))

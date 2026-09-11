@@ -23,6 +23,9 @@ internal sealed partial class FarmHud : CanvasLayer
     private Button _craft = null!;
     private Button _close = null!;
     private Button _pause = null!;
+    private Label _targetName = null!;
+    private Button _nextTarget = null!;
+    private Button _clearTarget = null!;
     private readonly Dictionary<FarmSemanticAction, Button> _buttons = [];
     private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _offers =
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
@@ -49,6 +52,11 @@ internal sealed partial class FarmHud : CanvasLayer
         _craft = GetNode<Button>("%Craft");
         _close = GetNode<Button>("%Close");
         _pause = GetNode<Button>("%Pause");
+        _targetName = GetNode<Label>("%TargetName");
+        _nextTarget = GetNode<Button>("%NextTarget");
+        _clearTarget = GetNode<Button>("%ClearTarget");
+        _nextTarget.Pressed += () => Request(FarmSemanticAction.NextTarget);
+        _clearTarget.Pressed += () => Request(FarmSemanticAction.ClearTarget);
         BindOfferButton(FarmSemanticAction.Speak, _talk);
         BindOfferButton(FarmSemanticAction.Give, _give);
         BindOfferButton(FarmSemanticAction.Gather, _gather);
@@ -72,7 +80,7 @@ internal sealed partial class FarmHud : CanvasLayer
     private void Request(FarmSemanticAction action) => ActionRequested?.Invoke(action);
 
     internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused,
-        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, FarmTargetSelection targets)
     {
         _offers = offers;
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;
@@ -91,6 +99,10 @@ internal sealed partial class FarmHud : CanvasLayer
                 + $"\nHP {progression.Hp}/{progression.MaxHp} · MP {progression.Mp}/{progression.MaxMp}";
         }
         bool speaking = view.Dialogue is not null;
+        _targetName.Text = targets.Selected is { } target
+            ? $"Target: {target.Name}" + (target.Feet is null ? " · out of sight" : "") : "Target: automatic";
+        _nextTarget.Disabled = pending || paused || speaking || !targets.CanCycle;
+        _clearTarget.Disabled = pending || paused || speaking || targets.Selected is null;
         // Layer legality stays with the input router; these mirror it so a disabled control matches a refused key.
         PresentOffer(FarmSemanticAction.Speak, "E", blockedByLayer: pending || paused || speaking);
         PresentOffer(FarmSemanticAction.Give, "G", blockedByLayer: pending || paused);

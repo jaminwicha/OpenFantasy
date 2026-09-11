@@ -28,6 +28,15 @@ Alternatively, build Debug and open `client/project.godot` with the pinned .NET 
 `tools/check_native_farm.py` exercises those actual Godot input/view adapters and reopens the same durable world in a second process. Its default is headless; `--rendered` also retains native screenshots for a separate visual review. This proves the small walk/talk/give connection, not Wren's complete quest or the full first-prototype loop. `tools/check_native_gathering.py` exercises real gather input, finite yields, a paused resource, exact process recovery and subsequent regrowth; its rendered option retains source-asset screenshots. `tools/check_native_production.py` runs three actual native processes: gather berries under the retained rules, upgrade the saved world and craft, then reopen and gather/craft again. It checks that the old save bytes remain unchanged, outputs survive restart, and paused projection fields remain exact. `tools/check_native_quests.py` prepares a progressed production save, upgrades a copy, accepts and completes the actual quest, then reopens and verifies a repeated completion cannot duplicate its reward. Its `--rendered` option captures the native HUD and dialogue. `tools/check_native_construction.py` checks both a progressed quest-save copy and a fresh construction-profile game. The fresh family performs the same real gathering, ration crafting and addressed acceptance/delivery before the routed build, conversation interruption, partial/completed process recovery and body collision/walk-around checks. The integrated verifier includes these probes alongside the lifecycle checks; retained qualification reports establish which exact revision and journey passed.
 
 
+Choose an explicit field target with **Q** or the controller's **right shoulder**, or use the
+HUD's **Next** button. **R**, **left shoulder** or **Clear** restores automatic contextual actions.
+The target name and field marker identify the selection. It remains selected when another plant
+becomes nearer; exhausted or absent targets explain why their action is unavailable. Talk/Give
+on a selected plant never redirect to a person. Target selection is transient client state;
+reopening a save starts with automatic targeting. These controls use the same pause, conversation
+and focus gates as other farm inputs. Physical gamepad and general pointer targeting qualification
+remain separate from the injected native-event checks.
+
 The farm HUD presents captured action offers: target, cost and any known blocker come from the
 current public view, and buttons and hotkeys submit that same intent without silently choosing
 another target, recipe or ingredient lot. Focus/hover inspection is read-only. The host still

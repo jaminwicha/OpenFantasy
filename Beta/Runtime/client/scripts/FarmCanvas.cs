@@ -14,6 +14,7 @@ public partial class FarmCanvas : Node2D
     private FarmVisualAssets _assets = null!;
     private Node2D _actorLayer = null!;
     private bool _ready;
+    private readonly FarmTargetMarker _targetMarker = new() { Name = "TargetMarker", ZIndex = 20, Visible = false };
 
     public Rect2 LocalBounds => FarmCanvasCoordinates.LocalBounds;
     public Vector2 FocusPosition => _frame is null ? new Vector2(176, 176)
@@ -28,6 +29,7 @@ public partial class FarmCanvas : Node2D
         AddChild(ground);
         _actorLayer = new Node2D { Name = "Actors", YSortEnabled = true };
         AddChild(_actorLayer);
+        AddChild(_targetMarker);
         _ready = true;
         if (_frame is not null)
         {
@@ -74,6 +76,15 @@ public partial class FarmCanvas : Node2D
         }
         PresentGatheringNodes(frame);
         PresentStructures(frame);
+    }
+
+    internal void PresentTarget(FarmTarget? target)
+    {
+        _targetMarker.Visible = target?.Feet is not null;
+        if (target?.Feet is { } feet)
+        {
+            _targetMarker.Position = FarmCanvasCoordinates.Position(feet);
+        }
     }
 
     private void PresentStructures(FarmCanvasFrame frame)

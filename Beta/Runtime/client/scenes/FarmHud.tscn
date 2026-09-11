@@ -73,6 +73,41 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Pause  [Esc]"
 
+[node name="TargetBar" type="PanelContainer" parent="Root"]
+layout_mode = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -386.0
+offset_top = 86.0
+offset_right = -18.0
+offset_bottom = 140.0
+grow_horizontal = 0
+
+[node name="Row" type="HBoxContainer" parent="Root/TargetBar"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TargetName" type="Label" parent="Root/TargetBar/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Target: automatic"
+autowrap_mode = 3
+
+[node name="NextTarget" type="Button" parent="Root/TargetBar/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Next [Q]"
+tooltip_text = "Choose the next observed person or plant. Q / right shoulder. Selecting spends nothing."
+
+[node name="ClearTarget" type="Button" parent="Root/TargetBar/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Clear [R]"
+tooltip_text = "Return to contextual actions. R / left shoulder. Clearing spends nothing."
+
 [node name="Footer" type="PanelContainer" parent="Root"]
 layout_mode = 1
 anchors_preset = 12

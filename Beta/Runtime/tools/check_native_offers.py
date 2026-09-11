@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Qualify native action previews and actual gathering/crafting/dialogue against a disposable world."""
+"""Qualify explicit target selection, action previews and actual gathering/crafting/dialogue."""
 
 import argparse
 import datetime
@@ -28,7 +28,7 @@ def main():
                PATH=str(sdk) + os.pathsep + os.environ.get("PATH", ""))
     report = {
         "startedUtc": datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        "scope": "Native action previews, focus/hover inspection and actual authoritative gathering/crafting/dialogue",
+        "scope": "Native explicit target selection, action previews, focus/hover inspection and authoritative gathering/crafting/dialogue",
         "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
         "status": "running", "rendered": args.rendered,
     }
@@ -44,11 +44,11 @@ def main():
             raise RuntimeError("The native action-offer process failed; inspect its retained output.")
         observed = json.loads(scene_report.read_text())
         if (observed.get("Kind") != "native-action-offers-v1" or observed.get("Status") != "passed"
-                or not observed.get("Runtime") or len(observed.get("Checks", [])) < 5):
+                or not observed.get("Runtime") or len(observed.get("Checks", [])) < 8):
             raise RuntimeError("The native action-offer result is incomplete.")
         if args.rendered:
             pictures = list(work.glob("*.png"))
-            if len(pictures) < 5 or observed.get("DisplayDriver") == "headless":
+            if len(pictures) < 8 or observed.get("DisplayDriver") == "headless":
                 raise RuntimeError("The rendered action-offer evidence is incomplete.")
         report["observed"] = observed
         report["status"] = "passed"

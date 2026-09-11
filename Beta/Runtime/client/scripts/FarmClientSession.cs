@@ -71,9 +71,9 @@ internal sealed class FarmClientSession : IAsyncDisposable
     });
 
     /// <summary>Read-only: selecting targets, lots and quest operations from a snapshot changes nothing.</summary>
-    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view)
+    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view, FarmTarget? selectedTarget = null)
     {
-        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view);
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget);
         foreach (FarmActionOffer offer in offers.Values)
         {
             _issuedOffers.Add(offer, new OfferedAction());
