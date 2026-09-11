@@ -23,7 +23,8 @@ branches to record major progress. This is shared project discipline for all aut
 | Branch | Commit | Qualified scope and limits |
 |---|---|---|
 | `codex/milestone-farm-input-foundation` | `b1482db` | Connected farm/gather/craft/quest/NPC construction and client input foundation; 825 tests and retained native journeys. [Evidence](p01/input-focus/README.md). Provisional art, general UI, physical device/export qualification and full phase exits remain open. |
+| `codex/milestone-action-previews` | `b40f28c` | Captured farm action offers, visible costs and read-only inspection; code `3ae7855`, 832 tests, all retained native journeys and rendered review. [Evidence](p01/action-offers/README.md). Full wheels/management, physical devices, art acceptance and phase exits remain open. |
 
-The next planned checkpoint is the action-preview increment after its implementation,
-authority-boundary review and native verification. Add its exact branch and commit only when
-that evidence exists.
+The action-preview branch records the qualified implementation and its retained evidence.
+The development checkout continues on `codex/runtime-foundation`; neither milestone was moved
+or checked out. No push or merge was performed.
