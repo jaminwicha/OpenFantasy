@@ -30,6 +30,7 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
             await Harvest(GatherNodeKind.Berry);
             await Harvest(GatherNodeKind.Berry);
             await Craft();
+            _checks.AddRange(await new FarmInventoryProbe(game, this, reportPath).RunAsync());
             await Speak();
             WriteReport("passed", null);
             game.RequestClose();
@@ -329,6 +330,9 @@ internal partial class FarmActionOfferProbe(FarmGame game, string reportPath) : 
         {
             Kind = "native-action-offers-v1", Status = status, Failure = failure,
             Runtime = RuntimeInformation.FrameworkDescription, DisplayDriver = DisplayServer.GetName(),
+            WindowFocused = game.IsWindowFocused, LocallyPaused = game.IsLocallyPaused,
+            InventoryOpen = game.IsInventoryOpen, ActionPending = game.HasPendingAction,
+            FinalView = game.CurrentView,
             Checks = _checks, ElapsedMilliseconds = _elapsed.ElapsedMilliseconds
         }, new JsonSerializerOptions { WriteIndented = true }));
     }

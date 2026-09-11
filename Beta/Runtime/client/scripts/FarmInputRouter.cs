@@ -22,12 +22,13 @@ internal static class FarmInputActions
     internal const string Cancel = "cancel";
     internal const string NextTarget = "next_target";
     internal const string ClearTarget = "clear_target";
+    internal const string Inventory = "inventory";
 
     /// <summary>
     /// Routing priority. One device event may match several names (controller B is both Cancel and
     /// Craft); the owning layer takes the first name it binds.
     /// </summary>
-    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, Interact, Give, Gather, Craft, NextTarget, ClearTarget];
+    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, Inventory, Interact, Give, Gather, Craft, NextTarget, ClearTarget];
 }
 
 /// <summary>Client intentions. The host still validates the actor, target, resources and revisions.</summary>
@@ -42,6 +43,8 @@ internal enum FarmSemanticAction
     TogglePause,
     NextTarget,
     ClearTarget,
+    OpenInventory,
+    CloseInventory,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -59,6 +62,8 @@ internal enum FarmInputLayer
     Dialogue,
     /// <summary>Ordinary play.</summary>
     World,
+    /// <summary>Pack inspection owns navigation, independently of the existing world pause.</summary>
+    Inventory,
 }
 
 /// <summary>World facts the router does not own, read from the current projection at each decision.</summary>
@@ -144,14 +149,16 @@ internal sealed class FarmInputRouter
 
     internal bool Paused { get; private set; }
     internal bool Focused { get; private set; } = true;
+    internal bool InventoryOpen { get; private set; }
 
-    /// <summary>World time should advance only while the local player can respond.</summary>
+    /// <summary>Local readiness request; inspection panels do not change the host's clock policy.</summary>
     internal bool WorldShouldRun => !_unavailable && Focused && !Paused;
 
     internal FarmInputLayer Layer(FarmInputSituation situation)
     {
         if (_unavailable) return FarmInputLayer.Unavailable;
         if (!Focused) return FarmInputLayer.Unfocused;
+        if (InventoryOpen) return FarmInputLayer.Inventory;
         if (Paused) return FarmInputLayer.Paused;
         if (!situation.SessionOpen) return FarmInputLayer.Opening;
         if (situation.ReadingHold) return FarmInputLayer.Dialogue;
@@ -176,6 +183,9 @@ internal sealed class FarmInputRouter
     /// <summary>A failed or closing farm accepts no further input.</summary>
     internal void MarkUnavailable() => _unavailable = true;
 
+    /// <summary>Changes input ownership only, after the caller checks the semantic action.</summary>
+    internal void SetInventoryOpen(bool open) => InventoryOpen = open;
+
     /// <summary>Whether the owning layer accepts this semantic action right now, from any source.</summary>
     internal bool Permits(FarmInputSituation situation, FarmSemanticAction action)
     {
@@ -183,7 +193,10 @@ internal sealed class FarmInputRouter
         return action switch
         {
             FarmSemanticAction.None => false,
-            FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused),
+            FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused or FarmInputLayer.Inventory),
+            FarmSemanticAction.OpenInventory => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
+                && layer is FarmInputLayer.World or FarmInputLayer.Paused,
+            FarmSemanticAction.CloseInventory => layer == FarmInputLayer.Inventory,
             _ => !situation.ActionPending && LayerAccepts(layer, action),
         };
     }
@@ -276,6 +289,8 @@ internal sealed class FarmInputRouter
     /// </summary>
     private static FarmSemanticAction Bind(FarmInputLayer layer, string action) => (layer, action) switch
     {
+        (FarmInputLayer.Inventory, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.Inventory) => FarmSemanticAction.CloseInventory,
+        (FarmInputLayer.World or FarmInputLayer.Paused, FarmInputActions.Inventory) => FarmSemanticAction.OpenInventory,
         (FarmInputLayer.Dialogue, FarmInputActions.Pause) => FarmSemanticAction.CloseDialogue,
         (_, FarmInputActions.Pause) => FarmSemanticAction.TogglePause,
         (FarmInputLayer.Paused, FarmInputActions.Cancel) => FarmSemanticAction.TogglePause,

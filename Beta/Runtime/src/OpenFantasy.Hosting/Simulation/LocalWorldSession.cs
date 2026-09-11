@@ -8,6 +8,9 @@ using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Hosting.Simulation;
 
+/// <summary>The local host's current scheduling policy, independent of which client panel is visible.</summary>
+public enum LocalWorldRunState { Unavailable, Paused, Waiting, Running }
+
 /// <summary>
 /// Owns one durable local authority and its fixed-rate input cutoff. Authentication is the admitted
 /// local-host profile; network authentication and global visibility require separate host adapters.
@@ -62,6 +65,16 @@ public sealed class LocalWorldSession : IAsyncDisposable
     public Task Completion => _loop;
 
     public LocalWorldView ReadView() => Volatile.Read(ref _view);
+
+    public LocalWorldRunState ReadRunState()
+    {
+        lock (_inputs)
+        {
+            if (_failure is not null || _stopRequested) return LocalWorldRunState.Unavailable;
+            if (!_ready) return LocalWorldRunState.Paused;
+            return _view.HasReadingHold ? LocalWorldRunState.Waiting : LocalWorldRunState.Running;
+        }
+    }
 
     public void SetReady(bool ready)
     {

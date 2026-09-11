@@ -73,6 +73,12 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Pause  [Esc]"
 
+[node name="OpenPack" type="Button" parent="Root/Header/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Pack [I]"
+tooltip_text = "Inspect your own tools and supplies. I / View. The current world clock policy stays in effect."
+
 [node name="TargetBar" type="PanelContainer" parent="Root"]
 layout_mode = 1
 anchor_left = 1.0

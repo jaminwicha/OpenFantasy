@@ -22,6 +22,8 @@ public partial class FarmGame : Node2D
     private string _actionDescription = "";
     private bool _failed;
     private FarmTargetSelection? _targets;
+    private FarmInventoryModel? _inventoryModel;
+    private FarmInventoryScreen _inventory = null!;
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
@@ -38,6 +40,7 @@ public partial class FarmGame : Node2D
     internal bool HasFailed => _failed;
     internal bool IsLocallyPaused => _input.Paused;
     internal bool IsWindowFocused => _input.Focused;
+    internal bool IsInventoryOpen => _input.InventoryOpen;
     internal void RequestClose() => BeginClose();
 
     public override void _Ready()
@@ -53,6 +56,9 @@ public partial class FarmGame : Node2D
         _hud = GD.Load<PackedScene>("res://scenes/FarmHud.tscn").Instantiate<FarmHud>();
         AddChild(_hud);
         _hud.ActionRequested += Perform;
+        _inventory = GD.Load<PackedScene>("res://scenes/FarmInventoryScreen.tscn").Instantiate<FarmInventoryScreen>();
+        AddChild(_inventory);
+        _inventory.CloseRequested += () => Perform(FarmSemanticAction.CloseInventory);
         GetTree().AutoAcceptQuit = false;
         GetWindow().CloseRequested += BeginClose;
         GetWindow().FocusEntered += OnFocusEntered;
@@ -100,6 +106,7 @@ public partial class FarmGame : Node2D
             {
                 _session = opening.Result;
                 _targets = new FarmTargetSelection(_session.WrenActorId);
+                _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message("Find Wren by the rows.");
             }
             else
@@ -152,6 +159,7 @@ public partial class FarmGame : Node2D
         _canvas.PresentTarget(_targets.Selected);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null,
             _input.Paused || !_input.Focused, _presented, _targets);
+        _inventory.Present(view, _session.World.ReadRunState());
     }
 
     public override void _PhysicsProcess(double delta)
@@ -224,6 +232,11 @@ public partial class FarmGame : Node2D
     {
         if (!_input.Permits(Situation(), action)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        if (action is FarmSemanticAction.OpenInventory or FarmSemanticAction.CloseInventory)
+        {
+            ChangeInventory(action == FarmSemanticAction.OpenInventory);
+            return;
+        }
         if (action == FarmSemanticAction.TogglePause)
         {
             TogglePause();
@@ -286,6 +299,30 @@ public partial class FarmGame : Node2D
             _hud.Message(_input.Paused ? "Paused. Press Esc to continue." : "Explore the farm and speak with Wren.");
     }
 
+    private void ChangeInventory(bool open)
+    {
+        if (_session is null || _inventoryModel is null) return;
+        _input.SetInventoryOpen(open);
+        if (open)
+        {
+            _inventory.Open(_inventoryModel);
+            _hud.SetCovered(true);
+            try { _session.World.SetMovement(0, 0); }
+            catch (InvalidOperationException error)
+            {
+                Fail("The world has stopped. " + error.GetBaseException().Message);
+                return;
+            }
+            Present(_session.World.ReadView());
+            _inventory.FocusSelection();
+        }
+        else
+        {
+            _hud.SetCovered(false);
+            _inventory.Close();
+        }
+    }
+
     private void OnFocusEntered()
     {
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
@@ -312,6 +349,7 @@ public partial class FarmGame : Node2D
     {
         _failed = true;
         _input.MarkUnavailable();
+        if (_input.InventoryOpen) ChangeInventory(false);
         try { _session?.World.SetReady(false); }
         catch (InvalidOperationException) { /* A failed host already stopped accepting input. */ }
         _hud.Message(message);

@@ -18,6 +18,7 @@ internal static class FarmInputMap
         Button(FarmInputActions.Pause, Key.Escape, JoyButton.Start);
         Button(FarmInputActions.NextTarget, Key.Q, JoyButton.RightShoulder);
         Button(FarmInputActions.ClearTarget, Key.R, JoyButton.LeftShoulder);
+        Button(FarmInputActions.Inventory, Key.I, JoyButton.Back);
         // Controller B also names Cancel; the router lets it unwind a modal layer and craft in ordinary play.
         JoypadButton(FarmInputActions.Cancel, JoyButton.B);
     }
