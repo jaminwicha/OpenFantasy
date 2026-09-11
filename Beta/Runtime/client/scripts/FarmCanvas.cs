@@ -13,16 +13,20 @@ public partial class FarmCanvas : Node2D
     private FarmCanvasFrame? _frame;
     private FarmVisualAssets _assets = null!;
     private Node2D _actorLayer = null!;
+    private FarmDaylight _daylight = null!;
     private bool _ready;
     private readonly FarmTargetMarker _targetMarker = new() { Name = "TargetMarker", ZIndex = 20, Visible = false };
 
     public Rect2 LocalBounds => FarmCanvasCoordinates.LocalBounds;
+    internal FarmDaylight Daylight => _daylight;
     public Vector2 FocusPosition => _frame is null ? new Vector2(176, 176)
         : FarmCanvasCoordinates.Position(_frame.Actors.Single(actor => actor.IsOwnActor).Feet);
 
     public override void _Ready()
     {
         TextureFilter = TextureFilterEnum.Nearest;
+        _daylight = GD.Load<PackedScene>("res://scenes/FarmDaylight.tscn").Instantiate<FarmDaylight>();
+        AddChild(_daylight);
         _assets = new FarmVisualAssets();
         var ground = new FarmGroundView { Name = "Ground" };
         ground.Setup(_assets);
@@ -54,6 +58,7 @@ public partial class FarmCanvas : Node2D
         {
             return;
         }
+        _daylight.Present(frame.Calendar);
         HashSet<EntityId> included = frame.Actors.Select(actor => actor.ActorId).ToHashSet();
         foreach (EntityId id in _actors.Keys.Where(id => !included.Contains(id)).ToArray())
         {

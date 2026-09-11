@@ -1,0 +1,38 @@
+{
+  "Status": "passed",
+  "Phase": "reopen",
+  "Scope": "Explicit-calendar source-farm fixture; not an accelerated normal world",
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "macOS",
+  "InitialCalendar": {
+    "Days": 1,
+    "MillisecondsWithinDay": 9000
+  },
+  "InitialColor": [
+    0.5,
+    0.6,
+    0.78,
+    1
+  ],
+  "ClockText": "Day 2 \u00B7 00:00",
+  "FinalCalendar": {
+    "Days": 1,
+    "MillisecondsWithinDay": 9000
+  },
+  "FinalColor": [
+    0.5,
+    0.6,
+    0.78,
+    1
+  ],
+  "FinalWorldView": "{\u0022WorldId\u0022:{\u0022High\u0022:11838943175866674348,\u0022Low\u0022:6566761377563931012},\u0022BranchId\u0022:{\u0022High\u0022:3117603463796623977,\u0022Low\u0022:1547435577907761989},\u0022PlayerActorId\u0022:{\u0022High\u0022:11740567274192566031,\u0022Low\u0022:3901590248268668208},\u0022Calendar\u0022:{\u0022Days\u0022:1,\u0022MillisecondsWithinDay\u0022:9000},\u0022HasReadingHold\u0022:false,\u0022Actors\u0022:[{\u0022ActorId\u0022:{\u0022High\u0022:11740567274192566031,\u0022Low\u0022:3901590248268668208},\u0022DisplayName\u0022:\u0022Traveler\u0022,\u0022Feet\u0022:{\u0022X\u0022:25984,\u0022Y\u0022:83328,\u0022Z\u0022:256,\u0022Cell\u0022:{\u0022X\u0022:101,\u0022Y\u0022:325,\u0022Z\u0022:1}},\u0022PresenceRevision\u0022:0,\u0022ControllerKind\u0022:1},{\u0022ActorId\u0022:{\u0022High\u0022:17734771146330126369,\u0022Low\u0022:3755393924890045491},\u0022DisplayName\u0022:\u0022Wren\u0022,\u0022Feet\u0022:{\u0022X\u0022:26176,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022Cell\u0022:{\u0022X\u0022:102,\u0022Y\u0022:322,\u0022Z\u0022:1}},\u0022PresenceRevision\u0022:10,\u0022ControllerKind\u0022:2}],\u0022PlayerInventory\u0022:{\u0022CustodianId\u0022:{\u0022High\u0022:3551574659632768418,\u0022Low\u0022:7866543934556346698},\u0022Revision\u0022:0,\u0022Quantity\u0022:10,\u0022Lots\u0022:[{\u0022LotId\u0022:{\u0022High\u0022:1696821205204844772,\u0022Low\u0022:14233350353809258915},\u0022DefinitionId\u0022:{\u0022High\u0022:11982809337836041595,\u0022Low\u0022:18373582298239785721},\u0022Revision\u0022:0,\u0022Quantity\u0022:1,\u0022Provenance\u0022:1,\u0022AvailableForDelivery\u0022:true},{\u0022LotId\u0022:{\u0022High\u0022:5470128972612045146,\u0022Low\u0022:18086807705569776730},\u0022DefinitionId\u0022:{\u0022High\u0022:17440792895996343150,\u0022Low\u0022:13598911669572622528},\u0022Revision\u0022:0,\u0022Quantity\u0022:8,\u0022Provenance\u0022:1,\u0022AvailableForDelivery\u0022:true},{\u0022LotId\u0022:{\u0022High\u0022:8225799703908409572,\u0022Low\u0022:3329847337192323368},\u0022DefinitionId\u0022:{\u0022High\u0022:1872794200646237673,\u0022Low\u0022:5975632165003488037},\u0022Revision\u0022:0,\u0022Quantity\u0022:1,\u0022Provenance\u0022:1,\u0022AvailableForDelivery\u0022:true}]},\u0022GatheringNodes\u0022:[{\u0022NodeId\u0022:{\u0022High\u0022:2639486879359783236,\u0022Low\u0022:2635907145496061359},\u0022DisplayName\u0022:\u0022Berry Bush\u0022,\u0022Feet\u0022:{\u0022X\u0022:27008,\u0022Y\u0022:85120,\u0022Z\u0022:256,\u0022Cell\u0022:{\u0022X\u0022:105,\u0022Y\u0022:332,\u0022Z\u0022:1}},\u0022Revision\u0022:0,\u0022Kind\u0022:2,\u0022RequiredTool\u0022:2,\u0022RemainingSwings\u0022:4,\u0022Visibility\u0022:1},{\u0022NodeId\u0022:{\u0022High\u0022:7485666049006258407,\u0022Low\u0022:6889325985582867310},\u0022DisplayName\u0022:\u0022Oak\u0022,\u0022Feet\u0022:{\u0022X\u0022:25984,\u0022Y\u0022:83840,\u0022Z\u0022:256,\u0022Cell\u0022:{\u0022X\u0022:101,\u0022Y\u0022:327,\u0022Z\u0022:1}},\u0022Revision\u0022:0,\u0022Kind\u0022:1,\u0022RequiredTool\u0022:1,\u0022RemainingSwings\u0022:5,\u0022Visibility\u0022:1}],\u0022GatheringTools\u0022:[{\u0022LotId\u0022:{\u0022High\u0022:1696821205204844772,\u0022Low\u0022:14233350353809258915},\u0022Revision\u0022:0,\u0022Kind\u0022:2,\u0022Power\u0022:1},{\u0022LotId\u0022:{\u0022High\u0022:8225799703908409572,\u0022Low\u0022:3329847337192323368},\u0022Revision\u0022:0,\u0022Kind\u0022:1,\u0022Power\u0022:1}],\u0022PlayerGatherEffort\u0022:100,\u0022Crafting\u0022:null,\u0022Dialogue\u0022:null,\u0022Progression\u0022:null,\u0022Quests\u0022:[],\u0022Construction\u0022:[]}",
+  "Checks": [
+    "Paused native frames preserve the complete public world and daylight.",
+    "HUD and pack use separate canvases from outdoor ambient light.",
+    "Candidate palette retains full daylight, readable blue night and a continuous midnight seam."
+  ],
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "ElapsedMilliseconds": 940,
+  "NominalDayMilliseconds": 2400000
+}

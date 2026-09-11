@@ -21,12 +21,17 @@ the next task, rather than reloading the research archive and every historical q
 
 ## Current implementation and evidence
 
-Code `913a5f2` adds privileged exact recorded-commit reconstruction; `1d26210` fixes the native
-quest probe's movement-release/Talk race. History queries retain the exact old profile, state and
-calendar, distinguish same-date commits and pin the verified source head without changing it.
-This is a synchronous full-journal correctness baseline, not arbitrary-millisecond preparation,
-generated prehistory, branch travel or a qualified streaming service. The operator is documented
-in the Runtime README. Follow the linked packet before extending it or optimizing recovery.
+The latest [outdoor daylight increment](p02/daylight/README.md) connects the farm's native ambient
+light to its existing public calendar: dawn, day, dusk and readable night, with an editable palette.
+HUD/pack brightness stays independent; the selected-target marker is unshaded. The nominal 40-minute
+day and all host timing rules are unchanged. This is provisional outdoor presentation, not weather,
+seasonal/geographic lighting, visibility rules, camping or accepted production art.
+
+Code `913a5f2` retains privileged exact recorded-commit reconstruction; `1d26210` fixes the native
+quest probe's movement-release/Talk race. History preserves the exact old profile/state/calendar,
+distinguishes same-date commits and pins the verified source head without changing it. It remains
+a synchronous full-journal baseline, not arbitrary-millisecond preparation, generated prehistory,
+branch travel or a qualified streaming service. Consult its packet before extending recovery.
 
 Earlier code `3eed739` adds native pack inspection to the persistent authored farm. The connected loop
 contains movement, Wren's dialogue, finite gathering, ration crafting, a funded six-wood quest,
@@ -40,25 +45,23 @@ or move goods. I/View/Pack opens it; Escape/I/View/B/Close closes only that laye
 scheduler status, preserves an existing pause and requires held navigation to release before walking.
 A running world continues. Current stock descriptions and target selection are bounded farm features.
 
-The [latest qualification](p01/recorded-history/qualification/verification-summary.json) retains
-**544 Core + 311 Hosting = 855 tests**, zero skips, on the final rebuilt binaries. It combines
-successful integration checks (22 fixtures, 68 host inspections and native history/input/offer/
-lifecycle/gather/production) with targeted quest/construction followups after the probe correction.
-This is explicitly not one uninterrupted full-verifier pass. Only the probe and host diagnostic
-changed after that integrated run; all 685 final inputs are hashed. No new rendered, Release/export
-or device review is claimed. Earlier twelve rendered pack states belong to their inventory checkpoint.
+The [latest qualification](p02/daylight/qualification/verification-summary.json) retains **855 tests**
+(544 Core + 311 Hosting), zero skips. The integrated pass covers all 22 fixtures, 68 host inspections,
+import and every native journey including initial daylight. A subsequent probe-only extension adds
+real night targeting and pack inspection, qualified headlessly and rendered; production sources and
+all five non-client binary hashes remained unchanged. All 692 final inputs are hashed. Ten daylight
+frames plus twelve daytime action/pack frames are retained; the daylight frames and four relevant
+UI frames were visually reviewed. This is local Astra review, not independent or human acceptance.
 
-The [history packet](p01/recorded-history/README.md) preserves two failed integration attempts.
-One Godot import emitted an editor-settings initialization error; its cause remains unconfirmed
-despite a clean later import. The quest failure is confirmed from saved command/receipt and exact
-prior state: expected player revision 147, actual 148. The probe now waits for stable arrival and
-matching displayed offers before its one press. No retry, timeout or authority rule was relaxed.
-
-An [earlier rendered travel timeout](p02/inventory-inspection/qualification/failures/inventory-rendered-final.json)
-remains retained. Its save stopped after one harvest and 170 steps before pack testing. Focus/readiness
-pause is consistent with that evidence, but the precise cause was not captured. Later diagnostics include
-focus, pause and final public view, and the subsequent run passed. Do not erase this uncertainty or relax
-assertions if it recurs. The latest review was local; no independent critic or human acceptance is claimed.
+The daylight packet preserves an initial unmapped probe-input failure and its correction to physical
+Escape, plus another intermittent Godot import error (`EditorSettings not instantiated yet` for the
+Android SDK path) despite exit zero. The later integrated import passed; the possible editor-thread
+lifecycle cause remains unconfirmed. No error filtering, automatic retry or gate relaxation was added.
+The [history packet](p01/recorded-history/README.md) retains the earlier import failure and confirmed
+stationary Talk correction (expected revision 147 versus actual 148). The
+[older rendered travel timeout](p02/inventory-inspection/qualification/failures/inventory-rendered-final.json)
+also remains unconfirmed; later diagnostics capture focus/pause and the public view. Do not erase
+those failures or convert subsequent success into a claim that their uncertain causes were fixed.
 
 Prior checkpoints remain available: [explicit targets](p01/target-selection/README.md),
 [action offers](p01/action-offers/README.md), [input focus](p01/input-focus/README.md),

@@ -41,6 +41,7 @@ public partial class FarmGame : Node2D
     internal bool IsLocallyPaused => _input.Paused;
     internal bool IsWindowFocused => _input.Focused;
     internal bool IsInventoryOpen => _input.InventoryOpen;
+    internal FarmDaylight Daylight => _canvas.Daylight;
     internal void RequestClose() => BeginClose();
 
     public override void _Ready()

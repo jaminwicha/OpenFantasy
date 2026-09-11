@@ -1,22 +1,21 @@
 # Implementation progress
 
-The latest [recorded-history increment](p01/recorded-history/README.md), code `913a5f2` and `1d26210`,
-reconstructs exact committed world states without moving the live head or rewriting the save.
-It preserves distinct same-date commits and old profiles across upgrades. The privileged host
-operator supports the first recorded-history proof; arbitrary interior times, generated prehistory,
-branch travel and production preparation latency remain required work.
+The latest [outdoor daylight increment](p02/daylight/README.md) makes the authoritative calendar
+visible in the farm through an editable dawn/day/dusk/night palette. HUD and pack brightness remain
+independent. The existing nominal 40-minute day, pause rules and saves are preserved.
 
-The [qualification](p01/recorded-history/qualification/verification-summary.json) retains **855 tests**,
-zero skips, and combines successful integration evidence with targeted native quest/construction
-followups. It is not a single uninterrupted full-verifier pass. A saved revision conflict identified
-a quest-probe movement/Talk race, now corrected without retries or relaxed authority. A prior editor
-startup error and the older inventory travel timeout retain their unconfirmed-cause status.
+The [qualification](p02/daylight/qualification/verification-summary.json) retains **855 tests**, zero
+skips, the complete integrated native regression, and targeted headless/rendered night-interface
+followups. Ten daylight captures and twelve daytime action/pack captures are retained. Only the
+probe and its runner changed after full regression; production code and tested assembly hashes
+stayed identical. The packet preserves the failed probe-input attempt and recurring, still
+unconfirmed editor-settings import error. No acceptance assertion or error policy was relaxed.
 
-This is a P01 history prerequisite, not a completed temporal system or phase. All 181 baseline
-requirements remain retained, all 14 full UI cases remain unrun, and full P00/P01/P02 and production
-gates remain open. Item icons/art, equipment/use/transfer, rich management, physical devices,
-representative performance, desktop exports, co-op/time and human acceptance need their own proofs.
-The owner’s concerns about basic gameplay and poor graphics remain open.
+This is a P02 presentation prerequisite. The earlier [recorded-history work](p01/recorded-history/README.md)
+remains the exact-commit baseline for future temporal systems. All 181 requirements and 14 unrun full
+UI cases remain retained; P00/P01/P02 and production exits are open. Weather, seasons, accepted art/audio,
+sleep/camp, rich UI, co-op/time, representative performance and desktop exports still need their own
+implementation and proofs. The owner's concerns about basic gameplay and poor graphics remain open.
 
 Read the [compact current handoff](AGENT_HANDOFF.md), [living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md),
 [runtime setup](../Runtime/README.md) and [full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md).

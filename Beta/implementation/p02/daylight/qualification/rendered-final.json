@@ -1,0 +1,362 @@
+{
+  "startedUtc": "2026-09-11T19:15:37.607915+00:00",
+  "status": "passed",
+  "scope": "Explicit-calendar fixtures, paused light, actual dusk/midnight steps and exact reopened appearance",
+  "rendered": true,
+  "runs": [
+    {
+      "phase": "dawn",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-daylight",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/dawn.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/dawn.json",
+        "dawn"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "day",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-daylight",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/day.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/day.json",
+        "day"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "dusk",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-daylight",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/dusk.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/dusk.json",
+        "dusk"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "night",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-daylight",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/night.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/night.json",
+        "night"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "rollover",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-daylight",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/rollover.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/rollover.json",
+        "rollover"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-daylight",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/rollover.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/daylight/native-daylight-522a754753fb4bc980e514737f7b81b4/reopen.json",
+        "reopen"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "observations": {
+    "dawn": {
+      "Status": "passed",
+      "Phase": "dawn",
+      "Scope": "Explicit-calendar source-farm fixture; not an accelerated normal world",
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "InitialCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 19800000
+      },
+      "InitialColor": [
+        0.82,
+        0.72,
+        0.72,
+        1
+      ],
+      "ClockText": "Day 1 \u00b7 05:30",
+      "FinalCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 19800000
+      },
+      "FinalColor": [
+        0.82,
+        0.72,
+        0.72,
+        1
+      ],
+      "FinalWorldView": "{\"WorldId\":{\"High\":11838943175866674348,\"Low\":6566761377563931012},\"BranchId\":{\"High\":3117603463796623977,\"Low\":1547435577907761989},\"PlayerActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":19800000},\"HasReadingHold\":false,\"Actors\":[{\"ActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"DisplayName\":\"Traveler\",\"Feet\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":1},{\"ActorId\":{\"High\":17734771146330126369,\"Low\":3755393924890045491},\"DisplayName\":\"Wren\",\"Feet\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":2}],\"PlayerInventory\":{\"CustodianId\":{\"High\":3551574659632768418,\"Low\":7866543934556346698},\"Revision\":0,\"Quantity\":10,\"Lots\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"DefinitionId\":{\"High\":11982809337836041595,\"Low\":18373582298239785721},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":5470128972612045146,\"Low\":18086807705569776730},\"DefinitionId\":{\"High\":17440792895996343150,\"Low\":13598911669572622528},\"Revision\":0,\"Quantity\":8,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"DefinitionId\":{\"High\":1872794200646237673,\"Low\":5975632165003488037},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true}]},\"GatheringNodes\":[{\"NodeId\":{\"High\":2639486879359783236,\"Low\":2635907145496061359},\"DisplayName\":\"Berry Bush\",\"Feet\":{\"X\":27008,\"Y\":85120,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":332,\"Z\":1}},\"Revision\":0,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":4,\"Visibility\":1},{\"NodeId\":{\"High\":7485666049006258407,\"Low\":6889325985582867310},\"DisplayName\":\"Oak\",\"Feet\":{\"X\":25984,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":327,\"Z\":1}},\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"GatheringTools\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"Revision\":0,\"Kind\":2,\"Power\":1},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"Revision\":0,\"Kind\":1,\"Power\":1}],\"PlayerGatherEffort\":0,\"Crafting\":null,\"Dialogue\":null,\"Progression\":null,\"Quests\":[],\"Construction\":[]}",
+      "Checks": [
+        "Paused native frames preserve the complete public world and daylight.",
+        "HUD and pack use separate canvases from outdoor ambient light.",
+        "Candidate palette retains full daylight, readable blue night and a continuous midnight seam."
+      ],
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "ElapsedMilliseconds": 1116,
+      "NominalDayMilliseconds": 2400000
+    },
+    "day": {
+      "Status": "passed",
+      "Phase": "day",
+      "Scope": "Explicit-calendar source-farm fixture; not an accelerated normal world",
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "InitialCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 43200000
+      },
+      "InitialColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "ClockText": "Day 1 \u00b7 12:00",
+      "FinalCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 43200000
+      },
+      "FinalColor": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "FinalWorldView": "{\"WorldId\":{\"High\":11838943175866674348,\"Low\":6566761377563931012},\"BranchId\":{\"High\":3117603463796623977,\"Low\":1547435577907761989},\"PlayerActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":43200000},\"HasReadingHold\":false,\"Actors\":[{\"ActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"DisplayName\":\"Traveler\",\"Feet\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":1},{\"ActorId\":{\"High\":17734771146330126369,\"Low\":3755393924890045491},\"DisplayName\":\"Wren\",\"Feet\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":2}],\"PlayerInventory\":{\"CustodianId\":{\"High\":3551574659632768418,\"Low\":7866543934556346698},\"Revision\":0,\"Quantity\":10,\"Lots\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"DefinitionId\":{\"High\":11982809337836041595,\"Low\":18373582298239785721},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":5470128972612045146,\"Low\":18086807705569776730},\"DefinitionId\":{\"High\":17440792895996343150,\"Low\":13598911669572622528},\"Revision\":0,\"Quantity\":8,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"DefinitionId\":{\"High\":1872794200646237673,\"Low\":5975632165003488037},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true}]},\"GatheringNodes\":[{\"NodeId\":{\"High\":2639486879359783236,\"Low\":2635907145496061359},\"DisplayName\":\"Berry Bush\",\"Feet\":{\"X\":27008,\"Y\":85120,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":332,\"Z\":1}},\"Revision\":0,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":4,\"Visibility\":1},{\"NodeId\":{\"High\":7485666049006258407,\"Low\":6889325985582867310},\"DisplayName\":\"Oak\",\"Feet\":{\"X\":25984,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":327,\"Z\":1}},\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"GatheringTools\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"Revision\":0,\"Kind\":2,\"Power\":1},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"Revision\":0,\"Kind\":1,\"Power\":1}],\"PlayerGatherEffort\":0,\"Crafting\":null,\"Dialogue\":null,\"Progression\":null,\"Quests\":[],\"Construction\":[]}",
+      "Checks": [
+        "Paused native frames preserve the complete public world and daylight.",
+        "HUD and pack use separate canvases from outdoor ambient light.",
+        "Candidate palette retains full daylight, readable blue night and a continuous midnight seam."
+      ],
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "ElapsedMilliseconds": 1239,
+      "NominalDayMilliseconds": 2400000
+    },
+    "dusk": {
+      "Status": "passed",
+      "Phase": "dusk",
+      "Scope": "Explicit-calendar source-farm fixture; not an accelerated normal world",
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "InitialCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 66600000
+      },
+      "InitialColor": [
+        0.81000024,
+        0.72000015,
+        0.76,
+        1
+      ],
+      "ClockText": "Day 1 \u00b7 18:30",
+      "FinalCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 66618000
+      },
+      "FinalColor": [
+        0.8082999,
+        0.7189999,
+        0.7602,
+        1
+      ],
+      "FinalWorldView": "{\"WorldId\":{\"High\":11838943175866674348,\"Low\":6566761377563931012},\"BranchId\":{\"High\":3117603463796623977,\"Low\":1547435577907761989},\"PlayerActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":66618000},\"HasReadingHold\":false,\"Actors\":[{\"ActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"DisplayName\":\"Traveler\",\"Feet\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":1},{\"ActorId\":{\"High\":17734771146330126369,\"Low\":3755393924890045491},\"DisplayName\":\"Wren\",\"Feet\":{\"X\":26176,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":322,\"Z\":1}},\"PresenceRevision\":10,\"ControllerKind\":2}],\"PlayerInventory\":{\"CustodianId\":{\"High\":3551574659632768418,\"Low\":7866543934556346698},\"Revision\":0,\"Quantity\":10,\"Lots\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"DefinitionId\":{\"High\":11982809337836041595,\"Low\":18373582298239785721},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":5470128972612045146,\"Low\":18086807705569776730},\"DefinitionId\":{\"High\":17440792895996343150,\"Low\":13598911669572622528},\"Revision\":0,\"Quantity\":8,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"DefinitionId\":{\"High\":1872794200646237673,\"Low\":5975632165003488037},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true}]},\"GatheringNodes\":[{\"NodeId\":{\"High\":2639486879359783236,\"Low\":2635907145496061359},\"DisplayName\":\"Berry Bush\",\"Feet\":{\"X\":27008,\"Y\":85120,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":332,\"Z\":1}},\"Revision\":0,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":4,\"Visibility\":1},{\"NodeId\":{\"High\":7485666049006258407,\"Low\":6889325985582867310},\"DisplayName\":\"Oak\",\"Feet\":{\"X\":25984,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":327,\"Z\":1}},\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"GatheringTools\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"Revision\":0,\"Kind\":2,\"Power\":1},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"Revision\":0,\"Kind\":1,\"Power\":1}],\"PlayerGatherEffort\":100,\"Crafting\":null,\"Dialogue\":null,\"Progression\":null,\"Quests\":[],\"Construction\":[]}",
+      "Checks": [
+        "Paused native frames preserve the complete public world and daylight.",
+        "HUD and pack use separate canvases from outdoor ambient light.",
+        "Candidate palette retains full daylight, readable blue night and a continuous midnight seam.",
+        "Actual host steps change dusk light; ordinary pause stops both clock and tint."
+      ],
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "ElapsedMilliseconds": 2421,
+      "NominalDayMilliseconds": 2400000
+    },
+    "night": {
+      "Status": "passed",
+      "Phase": "night",
+      "Scope": "Explicit-calendar source-farm fixture; not an accelerated normal world",
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "InitialCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 82800000
+      },
+      "InitialColor": [
+        0.5,
+        0.6,
+        0.78,
+        1
+      ],
+      "ClockText": "Day 1 \u00b7 23:00",
+      "FinalCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 82801800
+      },
+      "FinalColor": [
+        0.5,
+        0.6,
+        0.78,
+        1
+      ],
+      "FinalWorldView": "{\"WorldId\":{\"High\":11838943175866674348,\"Low\":6566761377563931012},\"BranchId\":{\"High\":3117603463796623977,\"Low\":1547435577907761989},\"PlayerActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":82801800},\"HasReadingHold\":false,\"Actors\":[{\"ActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"DisplayName\":\"Traveler\",\"Feet\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":1},{\"ActorId\":{\"High\":17734771146330126369,\"Low\":3755393924890045491},\"DisplayName\":\"Wren\",\"Feet\":{\"X\":26464,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":1,\"ControllerKind\":2}],\"PlayerInventory\":{\"CustodianId\":{\"High\":3551574659632768418,\"Low\":7866543934556346698},\"Revision\":0,\"Quantity\":10,\"Lots\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"DefinitionId\":{\"High\":11982809337836041595,\"Low\":18373582298239785721},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":5470128972612045146,\"Low\":18086807705569776730},\"DefinitionId\":{\"High\":17440792895996343150,\"Low\":13598911669572622528},\"Revision\":0,\"Quantity\":8,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"DefinitionId\":{\"High\":1872794200646237673,\"Low\":5975632165003488037},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true}]},\"GatheringNodes\":[{\"NodeId\":{\"High\":2639486879359783236,\"Low\":2635907145496061359},\"DisplayName\":\"Berry Bush\",\"Feet\":{\"X\":27008,\"Y\":85120,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":332,\"Z\":1}},\"Revision\":0,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":4,\"Visibility\":1},{\"NodeId\":{\"High\":7485666049006258407,\"Low\":6889325985582867310},\"DisplayName\":\"Oak\",\"Feet\":{\"X\":25984,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":327,\"Z\":1}},\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"GatheringTools\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"Revision\":0,\"Kind\":2,\"Power\":1},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"Revision\":0,\"Kind\":1,\"Power\":1}],\"PlayerGatherEffort\":10,\"Crafting\":null,\"Dialogue\":null,\"Progression\":null,\"Quests\":[],\"Construction\":[]}",
+      "Checks": [
+        "Paused native frames preserve the complete public world and daylight.",
+        "HUD and pack use separate canvases from outdoor ambient light.",
+        "Candidate palette retains full daylight, readable blue night and a continuous midnight seam.",
+        "Real night target selection uses an unshaded marker; pack inspection preserves paused world and light."
+      ],
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "ElapsedMilliseconds": 1370,
+      "NominalDayMilliseconds": 2400000
+    },
+    "rollover": {
+      "Status": "passed",
+      "Phase": "rollover",
+      "Scope": "Explicit-calendar source-farm fixture; not an accelerated normal world",
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "InitialCalendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 86391000
+      },
+      "InitialColor": [
+        0.5,
+        0.6,
+        0.78,
+        1
+      ],
+      "ClockText": "Day 1 \u00b7 23:59",
+      "FinalCalendar": {
+        "Days": 1,
+        "MillisecondsWithinDay": 9000
+      },
+      "FinalColor": [
+        0.5,
+        0.6,
+        0.78,
+        1
+      ],
+      "FinalWorldView": "{\"WorldId\":{\"High\":11838943175866674348,\"Low\":6566761377563931012},\"BranchId\":{\"High\":3117603463796623977,\"Low\":1547435577907761989},\"PlayerActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"Calendar\":{\"Days\":1,\"MillisecondsWithinDay\":9000},\"HasReadingHold\":false,\"Actors\":[{\"ActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"DisplayName\":\"Traveler\",\"Feet\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":1},{\"ActorId\":{\"High\":17734771146330126369,\"Low\":3755393924890045491},\"DisplayName\":\"Wren\",\"Feet\":{\"X\":26176,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":322,\"Z\":1}},\"PresenceRevision\":10,\"ControllerKind\":2}],\"PlayerInventory\":{\"CustodianId\":{\"High\":3551574659632768418,\"Low\":7866543934556346698},\"Revision\":0,\"Quantity\":10,\"Lots\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"DefinitionId\":{\"High\":11982809337836041595,\"Low\":18373582298239785721},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":5470128972612045146,\"Low\":18086807705569776730},\"DefinitionId\":{\"High\":17440792895996343150,\"Low\":13598911669572622528},\"Revision\":0,\"Quantity\":8,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"DefinitionId\":{\"High\":1872794200646237673,\"Low\":5975632165003488037},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true}]},\"GatheringNodes\":[{\"NodeId\":{\"High\":2639486879359783236,\"Low\":2635907145496061359},\"DisplayName\":\"Berry Bush\",\"Feet\":{\"X\":27008,\"Y\":85120,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":332,\"Z\":1}},\"Revision\":0,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":4,\"Visibility\":1},{\"NodeId\":{\"High\":7485666049006258407,\"Low\":6889325985582867310},\"DisplayName\":\"Oak\",\"Feet\":{\"X\":25984,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":327,\"Z\":1}},\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"GatheringTools\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"Revision\":0,\"Kind\":2,\"Power\":1},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"Revision\":0,\"Kind\":1,\"Power\":1}],\"PlayerGatherEffort\":100,\"Crafting\":null,\"Dialogue\":null,\"Progression\":null,\"Quests\":[],\"Construction\":[]}",
+      "Checks": [
+        "Paused native frames preserve the complete public world and daylight.",
+        "HUD and pack use separate canvases from outdoor ambient light.",
+        "Candidate palette retains full daylight, readable blue night and a continuous midnight seam.",
+        "Actual host steps cross midnight without a lighting flash or catch-up."
+      ],
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "ElapsedMilliseconds": 2288,
+      "NominalDayMilliseconds": 2400000
+    },
+    "reopen": {
+      "Status": "passed",
+      "Phase": "reopen",
+      "Scope": "Explicit-calendar source-farm fixture; not an accelerated normal world",
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "InitialCalendar": {
+        "Days": 1,
+        "MillisecondsWithinDay": 9000
+      },
+      "InitialColor": [
+        0.5,
+        0.6,
+        0.78,
+        1
+      ],
+      "ClockText": "Day 2 \u00b7 00:00",
+      "FinalCalendar": {
+        "Days": 1,
+        "MillisecondsWithinDay": 9000
+      },
+      "FinalColor": [
+        0.5,
+        0.6,
+        0.78,
+        1
+      ],
+      "FinalWorldView": "{\"WorldId\":{\"High\":11838943175866674348,\"Low\":6566761377563931012},\"BranchId\":{\"High\":3117603463796623977,\"Low\":1547435577907761989},\"PlayerActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"Calendar\":{\"Days\":1,\"MillisecondsWithinDay\":9000},\"HasReadingHold\":false,\"Actors\":[{\"ActorId\":{\"High\":11740567274192566031,\"Low\":3901590248268668208},\"DisplayName\":\"Traveler\",\"Feet\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"ControllerKind\":1},{\"ActorId\":{\"High\":17734771146330126369,\"Low\":3755393924890045491},\"DisplayName\":\"Wren\",\"Feet\":{\"X\":26176,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":322,\"Z\":1}},\"PresenceRevision\":10,\"ControllerKind\":2}],\"PlayerInventory\":{\"CustodianId\":{\"High\":3551574659632768418,\"Low\":7866543934556346698},\"Revision\":0,\"Quantity\":10,\"Lots\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"DefinitionId\":{\"High\":11982809337836041595,\"Low\":18373582298239785721},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":5470128972612045146,\"Low\":18086807705569776730},\"DefinitionId\":{\"High\":17440792895996343150,\"Low\":13598911669572622528},\"Revision\":0,\"Quantity\":8,\"Provenance\":1,\"AvailableForDelivery\":true},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"DefinitionId\":{\"High\":1872794200646237673,\"Low\":5975632165003488037},\"Revision\":0,\"Quantity\":1,\"Provenance\":1,\"AvailableForDelivery\":true}]},\"GatheringNodes\":[{\"NodeId\":{\"High\":2639486879359783236,\"Low\":2635907145496061359},\"DisplayName\":\"Berry Bush\",\"Feet\":{\"X\":27008,\"Y\":85120,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":332,\"Z\":1}},\"Revision\":0,\"Kind\":2,\"RequiredTool\":2,\"RemainingSwings\":4,\"Visibility\":1},{\"NodeId\":{\"High\":7485666049006258407,\"Low\":6889325985582867310},\"DisplayName\":\"Oak\",\"Feet\":{\"X\":25984,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":327,\"Z\":1}},\"Revision\":0,\"Kind\":1,\"RequiredTool\":1,\"RemainingSwings\":5,\"Visibility\":1}],\"GatheringTools\":[{\"LotId\":{\"High\":1696821205204844772,\"Low\":14233350353809258915},\"Revision\":0,\"Kind\":2,\"Power\":1},{\"LotId\":{\"High\":8225799703908409572,\"Low\":3329847337192323368},\"Revision\":0,\"Kind\":1,\"Power\":1}],\"PlayerGatherEffort\":100,\"Crafting\":null,\"Dialogue\":null,\"Progression\":null,\"Quests\":[],\"Construction\":[]}",
+      "Checks": [
+        "Paused native frames preserve the complete public world and daylight.",
+        "HUD and pack use separate canvases from outdoor ambient light.",
+        "Candidate palette retains full daylight, readable blue night and a continuous midnight seam."
+      ],
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "ElapsedMilliseconds": 940,
+      "NominalDayMilliseconds": 2400000
+    }
+  },
+  "reopenedSaveSha256": "dec1c73531f292646da26b03d311070a74d3ec9f425bce1200967ea7fc531ba1",
+  "artifactSha256": {
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/dawn.initial.png": "2e9bcd5678c403e30c264e1b4b249be9324f2ad56c4442226fd6e0fbab93baec",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/dawn.json": "6e7db38d94f178c26fd446fdee8fa87bbda196f6e6e94d7f682fb5bd3dd055d9",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/dawn.sqlite": "ca52ae0ab2f7e67254eabc06fe4340e7cc93511e4a9dfa59c95b67133131a308",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/day.initial.png": "794ea62133e580c1b61342eddc77b8e2bcdffc44f5cd1c0485cf2fd67f595d4b",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/day.json": "5cb0529cea7f0c3c80d48e0a62034288003e161832b72b3ab1f54ac4e5f72e52",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/day.sqlite": "97a804da7894fd99bf3ef3cdbc44c957aec2b8bccf113642c29b5a875f6c949f",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/dusk.advanced.png": "c2ec4acf141a1456ae61efa83f8bb6251e68bfb1a412b6f7ceb22026f4a3989b",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/dusk.initial.png": "1f024a71cfa294f7123ab204498f0ecce37006c23814583a5d0454c42001cb6c",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/dusk.json": "235313cda2277cb211a275732da403669262240249f3b544c92542824748134c",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/dusk.sqlite": "3891586041c2e20370ff172d3cb2c1920a4b89a5f4349ae880a8dce4e2cf06c6",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/night.initial.png": "da5ce57a63cfeca24cb8e3b819f8fd5f5e23182e2c9a908826326af663a757af",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/night.json": "39d23dd2cf9ef265c6cf16bffdc3cfd24a0899a725e01bd97d297e73b4f3ccd3",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/night.pack.png": "678c19285781474534ded72d0fc4f3c43979b767762698ca136883827ea210ad",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/night.sqlite": "945e160f17b42efd17ba4c9a40d2dbe8d6c9fd65547a6c2683e4db104109eac0",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/night.target.png": "b61d5752408268dd7023cb380352c0d2fe9d1e69d0b8253ecd3f6b932bbc5b93",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/reopen.initial.png": "c0d0f87a1ae852503a950952f3dfe3601b553100bb6d56869b8228391acab6bf",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/reopen.json": "9e7f542705c27f857d51a91be692cac621350a59b4f3f0d247bea5b3530809e0",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/rollover.advanced.png": "564cb17fa04329e9faaaacbff7ba755a4885351b56e0f818b3422d1df02c7a8d",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/rollover.initial.png": "de8c5b8360478a4ec554b31badcc8a2ac0f9250f139bc0067f3512e4bbd48dfe",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/rollover.json": "77f5eb412f00e40ccc5929798e687e8e571cd8721314f7065ac7e1932d52729c",
+    "native-daylight-522a754753fb4bc980e514737f7b81b4/rollover.sqlite": "dec1c73531f292646da26b03d311070a74d3ec9f425bce1200967ea7fc531ba1"
+  },
+  "finishedUtc": "2026-09-11T19:15:58.212969+00:00"
+}

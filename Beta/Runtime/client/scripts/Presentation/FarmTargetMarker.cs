@@ -5,6 +5,12 @@ namespace OpenFantasy.Client.Presentation;
 /// <summary>A field selection cue, independent of the target's art or authoritative collision.</summary>
 internal sealed partial class FarmTargetMarker : Node2D
 {
+    public override void _Ready()
+    {
+        // Selection is an interface cue, not an illuminated object in the simulated world.
+        Material = new CanvasItemMaterial { LightMode = CanvasItemMaterial.LightModeEnum.Unshaded };
+    }
+
     public override void _Draw()
     {
         Color outline = new(0.08f, 0.13f, 0.14f);

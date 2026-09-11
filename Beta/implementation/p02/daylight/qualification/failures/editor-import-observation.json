@@ -1,0 +1,6 @@
+{
+  "scope": "Initial tool-run import observation, not a reconstructed full process log",
+  "exitCode": 0,
+  "stderr": "ERROR: EditorSettings not instantiated yet when getting setting \"export/android/android_sdk_path\".\n   at: _EDITOR_GET (editor/settings/editor_settings.cpp:1531)\n",
+  "disposition": "Failed import despite exit zero; recurring intermittent engine error. No error suppression or retry added. Precise failing thread unconfirmed."
+}

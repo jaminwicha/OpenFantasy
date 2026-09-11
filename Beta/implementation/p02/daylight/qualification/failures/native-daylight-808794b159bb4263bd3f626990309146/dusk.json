@@ -1,0 +1,16 @@
+{
+  "Status": "failed",
+  "Phase": "dusk",
+  "Error": "System.InvalidOperationException: The ordinary running host did not advance.\n   at OpenFantasy.Client.FarmDaylightProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmDaylightProbe.cs:line 160\n   at OpenFantasy.Client.FarmDaylightProbe.WaitFor(Func\u00601 predicate, String failure) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmDaylightProbe.cs:line 133\n   at OpenFantasy.Client.FarmDaylightProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmDaylightProbe.cs:line 64",
+  "Checks": [
+    "Paused native frames preserve the complete public world and daylight.",
+    "HUD and pack use separate canvases from outdoor ambient light.",
+    "Candidate palette retains full daylight, readable blue night and a continuous midnight seam."
+  ],
+  "Calendar": {
+    "Days": 0,
+    "MillisecondsWithinDay": 66600000
+  },
+  "Paused": true,
+  "Focused": true
+}

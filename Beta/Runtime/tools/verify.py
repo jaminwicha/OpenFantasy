@@ -147,6 +147,10 @@ def main():
         run("native-farm-walkthrough", [sys.executable, root / "tools/check_native_farm.py",
             "--dotnet", dotnet, "--godot", godot, "--output", native_report])
         report["nativeFarm"] = json.loads(native_report.read_text())
+        daylight_report = artifacts / "native-daylight.json"
+        run("native-daylight", [sys.executable, root / "tools/check_native_daylight.py",
+            "--dotnet", dotnet, "--godot", godot, "--output", daylight_report], 180)
+        report["nativeDaylight"] = json.loads(daylight_report.read_text())
         input_report = artifacts / "native-input.json"
         run("native-input-focus", [sys.executable, root / "tools/check_native_input.py",
             "--dotnet", dotnet, "--godot", godot, "--output", input_report], 90)

@@ -37,7 +37,11 @@ public partial class Bootstrap : Control
         GetNode<Control>("Backdrop").Hide();
         GetNode<Control>("Center").Hide();
         FarmInputMap.InstallDefaults();
-        if (arguments is ["--farm-lifecycle", var lifecycleSave, var lifecycleReport, var mode])
+        if (arguments is ["--farm-daylight", var daylightSave, var daylightReport, var daylightPhase])
+        {
+            AddChild(new FarmDaylightProbe(daylightSave, daylightReport, daylightPhase));
+        }
+        else if (arguments is ["--farm-lifecycle", var lifecycleSave, var lifecycleReport, var mode])
         {
             FarmLifecycleProbe.Start(this, lifecycleSave, lifecycleReport, mode);
         }

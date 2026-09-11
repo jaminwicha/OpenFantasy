@@ -51,6 +51,29 @@ inspection plus actual gather, craft and conversation input against a disposable
 The integrated verifier includes this journey. This is the current small farm interface, not
 the complete wheel, rebinding, management-screen or physical-controller acceptance suite.
 
+## Outdoor daylight
+
+The farm now samples an editable outdoor light palette from the same permitted calendar used
+to present the world. Dawn warms the scene, daylight preserves its colors, dusk cools gradually
+and moonlight keeps terrain and people readable. The HUD and pack keep their own brightness;
+the selected-target marker is an unshaded interface cue. Presentation never advances the host,
+changes resource rules or consults a second clock. Pause and dialogue holds retain their existing
+time policy, and reopening a saved instant restores the same light.
+
+The existing 20 Hz exploration cadence advances 1.8 world seconds per step: a nominal full day
+takes 40 minutes of running exploration. Pauses and waiting extend that wall time; this increment
+does not change pacing or implement sleep/camp. Edit `client/assets/lighting/outdoor_daylight.tres`
+in Godot to tune the native Gradient; its opaque midnight endpoints must match. The small
+`FarmDaylight` scene/component owns sampling, separate from world authority and UI. This is a
+provisional outdoor palette, not approved production art, geographic/seasonal sunlight, weather,
+interior illumination or physical visibility. Those remain separate planned work.
+
+`tools/check_native_daylight.py` starts disposable source-farm fixtures at declared dawn, noon,
+dusk and night times, advances the ordinary host through dusk/midnight, and reopens the retained
+save with exact world/light and unchanged file bytes. It never adjusts a normal save or accelerates
+gameplay. `--rendered` captures native frames for visual review; the integrated verifier runs the
+headless checks. The 40-minute value is a pacing calculation, not a measured full-day playtest.
+
 ## Project boundaries
 
 - `src/OpenFantasy.Core`: portable deterministic primitives, immutable command/receipt contracts, pinned package metadata, finite counted custody candidates, calendar queues and exact historical request boundaries, anatomy/condition definitions, material recipe validation, exact input retirement and transformed-output entitlements, experienced-time arithmetic, scoped resource-knowledge projection and actor-owned comprehension profiles, finite source/control admission and seeded stacked terrain with retained excavation. It has no engine or third-party package dependency. See its [byte and arithmetic contract](src/OpenFantasy.Core/CONTRACTS.md).
