@@ -30,7 +30,7 @@ The current qualified foundation is recorded at `codex/milestone-farm-input-foun
 ## Authority and reading order
 
 1. Read [project implementation instructions](../AGENTS.md). The owner's later naming instruction governs source/project identifiers: use `OpenFantasy`, with no planning codename in runtime names, comments or strings. Preserve the existing planning directory and historical documents.
-2. Read the [implementation overview](README.md), then the [input-focus increment](p01/input-focus/README.md) and [construction packet](p01/construction/README.md) for the latest connected prototype. The [progress ledger](p00/PROGRESS.md) retains older increments; older pending/completed statements are scoped to their checkpoints.
+2. Read the [implementation overview](README.md), then the [action-preview increment](p01/action-offers/README.md), [input-focus checkpoint](p01/input-focus/README.md) and [construction packet](p01/construction/README.md) for the latest connected prototype. The [progress ledger](p00/PROGRESS.md) retains older increments; older pending/completed statements are scoped to their checkpoints.
 3. Read the [living player-interface supplement](PLAYER_INTERFACE_AND_NAVIGATION.md) alongside the preserved [specification baseline 1.1](../spec-v1_1/README.md). The supplement is current scope. Its archived predecessor is not the active UI design.
 4. For the assigned work, follow the baseline [GDD](../spec-v1_1/GDD.md), [technical design](../spec-v1_1/TECHNICAL_DESIGN.md), [decision register](../spec-v1_1/DECISIONS.md), [full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json) and [coverage](../spec-v1_1/COVERAGE.json). The preserved [original implementation handoff](../spec-v1_1/IMPLEMENTATION_HANDOFF.md) supplies the full reading map; its old naming and preimplementation status are historical where later instructions supersede them.
 5. Use [runtime setup and boundaries](../Runtime/README.md) for exact build/launch procedures and the pinned toolchain. Use the [research index](../research-v0_9/README.md), [local reuse decisions](../spec-v1_1/LOCAL_REUSE_DECISIONS.md), [presentation contracts](../spec-v1_1/PRESENTATION_CONTRACTS.md) and [archive continuity audit](../spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md) when the task needs those details.
@@ -43,7 +43,7 @@ The current local farm connects player movement, Wren's source dialogue, finite 
 
 The historical [construction qualification](p01/construction/qualification/final-verification.json) records 544 Core plus 261 Hosting tests (805 total), zero skips, 22 independent fixtures, 68 host inspections and native journeys bound to 655 unchanged runtime inputs. [Local Release evidence](p01/construction/qualification/release/runs.json) records the same test total. These are existing checkpoint results, not tests rerun by this handoff or automatic evidence for subsequent edits. The [rendered review](p01/construction/FINAL_VISUAL_REVIEW.md) and [readiness checklist](p01/construction/READINESS.md) state their bounded technical claims. A build directory named `ExportRelease` does not establish a packaged export or Windows/Linux execution.
 
-The current [input-focus qualification](p01/input-focus/qualification/final-verification.json)
+The previous [input-focus qualification](p01/input-focus/qualification/final-verification.json)
 passes 544 Core + 281 Hosting = 825 tests, zero skips, 22 fixtures, 68 host inspections and all
 native journeys. It checks 659 unchanged runtime inputs plus two generated script UIDs.
 Client commit `58b1f28` unifies HUD/device semantic routing, makes Escape/Start/B close the
@@ -51,6 +51,17 @@ highest applicable dialogue/pause layer, and prevents held movement/repeats cros
 contexts. Native injected keyboard/button/stick events pass; physical-device, rendered UI
 and full modal-stack acceptance remain open. The explicit HUD Pause button can still pause
 with a conversation open. Host/Core authority and save formats are unchanged.
+
+The latest [action-preview qualification](p01/action-offers/qualification/final-verification.json)
+passes 544 Core + 288 Hosting = 832 tests, zero skips, 22 fixtures, 68 host inspections and all
+native journeys against 669 unchanged runtime inputs. Client commit `3ae7855` captures exact
+targets, costs, blockers and action intents. HUD/buttons and keys use the same presented offer;
+no target, ingredient or quest-operation substitution occurs during submission. Same-offer
+retries reuse their outcome; per-instance registration prevents cross-client reuse even after
+reopening the same saved control identity. The [review](p01/action-offers/REVIEW.md) retains
+critic findings, local corrections, probe timing failures and rendered cost/layout inspection.
+Strict stale-world rejection remains visible and requires a new choice. This is bounded farm
+behavior, not the general target/confirmation, wheel or management-screen system.
 
 At this handoff, repository history includes:
 
@@ -66,7 +77,7 @@ The owner has now tried the game and described it as very basic with terrible gr
 
 The production target is Sea of Stars-level pixel finish, lively expressive animation and responsive world interaction, with restrained detail, visible accumulated history and variation that avoids obvious repeated sprites. Native sprites, motion, lighting, weather, wear and audio must follow actual gameplay state. Accepted concept/reference scenes are style options, not approval of every native sprite, animation or a bulk asset-production run. Consult [art calibration](../art-style-calibration/README.md) and presentation contracts before asset work. Dedicated artists own asset production separately from engine builders; human style acceptance remains required.
 
-For UI, favor icons with rich hover, controller-focus and explicit inspection details. Explanations must remain reachable without a mouse, and essential costs/risks must not be hidden only in tooltips. Use contextual actions, stable curated quick wheels, a browsable action library and capability-relevant management screens. Inventory, stats, skills, crafting, journal, local/world maps, calendar and atlas belong to the full design; irrelevant inert screens should not clutter early play. Capability exposure, target/confirm behavior, input capture, layers/realms/history and knowledge-filtered details share semantic contracts. The [UI coverage register](ui-management/COVERAGE.json) has 15 supplemental contracts and 14 full acceptance cases still unrun; UI-11 now has bounded P01 input evidence. The supplement assigns these to existing phases; the owner did not reprioritize the implementation campaign. Current farm hotkeys and HUD do not implement that full design.
+For UI, favor icons with rich hover, controller-focus and explicit inspection details. Explanations must remain reachable without a mouse, and essential costs/risks must not be hidden only in tooltips. Use contextual actions, stable curated quick wheels, a browsable action library and capability-relevant management screens. Inventory, stats, skills, crafting, journal, local/world maps, calendar and atlas belong to the full design; irrelevant inert screens should not clutter early play. Capability exposure, target/confirm behavior, input capture, layers/realms/history and knowledge-filtered details share semantic contracts. The [UI coverage register](ui-management/COVERAGE.json) has 15 supplemental contracts and 14 full acceptance cases still unrun; UI-01/UI-03/UI-11 have bounded P01 evidence and UI-15 has a textual-inspection prerequisite. The supplement assigns these to existing phases; the owner did not reprioritize the implementation campaign. Current farm hotkeys and HUD do not implement that full design.
 
 ## Retained full campaign
 
@@ -120,9 +131,14 @@ screens must use this policy while adding their own native acceptance. Asset pro
 with separate artists and the owner's style acceptance. No new priority, runtime process,
 Core authority or reduction of the 181 requirements is implied.
 
-Active increment (2026-09-10): P01 scoped action offers/target and cost previews for the
-existing farm actions (UI-01/UI-03 prerequisites). The external worker has returned its client files, HUD scene and focused tests; the lead
-owns the remaining corrections, native probes, integration and documentation.
-Submit the captured intent and scope without nearest-target or ingredient substitution.
-Preserve current cancellation, original saves, all scope and phase dependencies. Full wheels,
-management screens, networking and art production are not part of this bounded increment.
+Completed increment (2026-09-10): [P01 captured action offers and previews](p01/action-offers/README.md).
+Code, seven new client/host facts, native journeys, rendered inspection and critic dispositions
+are retained. The lead corrected the worker result and completed integration locally; future
+Fable assignments require the owner's explicit approval under the policy above.
+
+Choose the next bounded task from the remaining P01/P02 dependencies and the living UI
+coverage register. General targeting/confirmation, approachable action access, native navigation
+and later wheels/management must build on the captured-intent and input-context contracts.
+Do not discard unfinished toolchain/export, temporal/co-op, content or presentation exits merely
+because the farm loop passes. Preserve original saves, all 181 requirements and phase dependencies;
+keep new asset production with dedicated artists and human style acceptance.

@@ -1,0 +1,45 @@
+{
+  "startedUtc": "2026-09-11T04:25:33.330220+00:00",
+  "scope": "Native headless input events and focus handlers against real authoritative movement/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "passed",
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-input",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-input-532zh4w0/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-input-532zh4w0/input.json"
+    ],
+    "exitCode": 0,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": ""
+  },
+  "observed": {
+    "Kind": "native-input-focus-v1",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Checks": [
+      "Opposing held directions did not manufacture a neutral release.",
+      "Fresh movement resumed after all held directions returned to neutral.",
+      "Keyboard repeat did not duplicate pause; controller Cancel unwound pause.",
+      "Focus return did not replay a held movement key.",
+      "Small stick drift stayed inside the circular deadzone.",
+      "A deliberate diagonal kept the existing circular-deadzone movement behavior.",
+      "Addressed dialogue suppressed held movement.",
+      "Dismissing dialogue did not release held movement into gameplay.",
+      "Escape and controller B close dialogue first without leaking the event into world actions."
+    ],
+    "ElapsedMilliseconds": 4945
+  },
+  "artifactSha256": {
+    "native-input-532zh4w0/input.json": "fe71b5d71d6b44b5068a360b611dc17598ac74a238fdd8227b163792d4ed2a69",
+    "native-input-532zh4w0/world.sqlite": "836764e3b9b3cf18411bb2a55c4acec9511fba039291eac4175612094bc6a80a"
+  },
+  "finishedUtc": "2026-09-11T04:25:38.753281+00:00"
+}

@@ -22,8 +22,12 @@
         "UIV-02",
         "UIV-12"
       ],
-      "status": "planned",
-      "evidence_paths": []
+      "status": "in_progress",
+      "evidence_paths": [
+        "../p01/action-offers/README.md",
+        "../p01/action-offers/qualification/final-verification.json"
+      ],
+      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open."
     },
     {
       "id": "UI-02",
@@ -61,9 +65,13 @@
         "UIV-10",
         "UIV-11"
       ],
-      "status": "planned",
-      "evidence_paths": [],
-      "foundation_qualification_phase": "P03"
+      "status": "in_progress",
+      "evidence_paths": [
+        "../p01/action-offers/README.md",
+        "../p01/action-offers/qualification/final-verification.json"
+      ],
+      "foundation_qualification_phase": "P03",
+      "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open."
     },
     {
       "id": "UI-04",
@@ -301,7 +309,11 @@
         "UIV-14"
       ],
       "status": "planned",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p01/action-offers/qualification/rendered-offers.json"
+      ],
+      "partial_evidence_scope": "P01 textual cost/blocker inspection prerequisite at 960x540 via native focus/hover; icons, rich item cards, physical navigation and full UIV-14 remain unimplemented/unrun."
     }
   ],
   "cases": [
@@ -311,7 +323,12 @@
       "completion_phase": "P03",
       "acceptance": "Choose a person, harvestable and damaged object; read action and target; change target/range/stock before confirmation. No implicit attack, gift, theft, consumption or nearest-target substitution; host rejection explains only permitted facts.",
       "status": "not_run",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p01/action-offers/README.md",
+        "../p01/action-offers/qualification/final-verification.json"
+      ],
+      "partial_evidence_scope": "P01 farm gathering/crafting/gift/quest captured-intent regressions and native target/cost checks. Full damaged-object and target/confirmation flow is not run."
     },
     {
       "id": "UIV-02",
@@ -419,7 +436,11 @@
       "completion_phase": "P14",
       "acceptance": "Begin with actual P02 item/action/disabled-state icons and rich hover/focus/Inspect cards. Native users can recognize frequent icons, reveal the same permitted details without executing an action, compare equipment and read pinned long text at scaled sizes without flicker, clipping or hidden essential costs. Unidentified artifacts reveal no secret power/value/quest role through icon, tooltip, search or accessible name. P03 tests target invalidation, live-state staleness and menu/Wait policy; later domains extend known/earned details; P11 closes icon/description/localization coverage, P12 verifies recognition and reading comfort, P13 desktop and P14 touch prove parity.",
       "status": "not_run",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p01/action-offers/qualification/rendered-offers.json"
+      ],
+      "partial_evidence_scope": "P01 known blocked crafting inspection and visible costs through native Control focus/hover only. Full icon/Inspect/knowledge/localization/device case is not run."
     }
   ]
 }

@@ -1,0 +1,43 @@
+{
+  "startedUtc": "2026-09-11T04:25:38.806187+00:00",
+  "scope": "Native action previews, focus/hover inspection and actual authoritative gathering/crafting/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "passed",
+  "rendered": false,
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-action-offers",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-14uphsju/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-14uphsju/offers.json"
+    ],
+    "exitCode": 0,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": ""
+  },
+  "observed": {
+    "Kind": "native-action-offers-v1",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Checks": [
+      "Unavailable crafting stayed inspectable through focus and hover without changing the paused world.",
+      "Displayed Oak target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Craft inspection and keyboard commitment used the same recipe with exact input/output/waste quantities.",
+      "Talk preserved the displayed speaker and Escape retained dialogue-first cancellation."
+    ],
+    "ElapsedMilliseconds": 10639
+  },
+  "artifactSha256": {
+    "native-offers-14uphsju/offers.json": "b5104b38262123d9586fc765ee438db11e5a23483c4e50638b6180520a189a10",
+    "native-offers-14uphsju/world.sqlite": "99668a737b391df59184d5b0b361d9df1f980716362b519e60bbe68dfbfde6a1"
+  },
+  "finishedUtc": "2026-09-11T04:25:49.865997+00:00"
+}

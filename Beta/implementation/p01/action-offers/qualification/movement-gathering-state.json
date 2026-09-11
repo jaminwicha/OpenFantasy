@@ -1,0 +1,29 @@
+{
+  "Status": "failed",
+  "Stage": "Berry",
+  "Error": "System.InvalidOperationException: A native gathering action did not issue exactly one unit.\n   at OpenFantasy.Client.FarmGatheringProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 238\n   at OpenFantasy.Client.FarmGatheringProbe.Harvest(LocalWorldView view, EntityId nodeId, Int32 totalSwings) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 164\n   at OpenFantasy.Client.FarmGatheringProbe._Process(Double delta) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs:line 86",
+  "IsLocallyPaused": false,
+  "IsWindowFocused": true,
+  "Readiness": [
+    {
+      "WallMilliseconds": 156,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 32400000
+    },
+    {
+      "WallMilliseconds": 10203,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "Calendar": 32761800
+    },
+    {
+      "WallMilliseconds": 11018,
+      "IsLocallyPaused": false,
+      "IsWindowFocused": true,
+      "Calendar": 32761800
+    }
+  ],
+  "FocusRequests": 0,
+  "Current": "{\u0022World\u0022:\u0022a44c6017d1916cac5b21d2ae4273f184\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:32886000,\u0022PlayerGatherEffort\u0022:700,\u0022HasReadingHold\u0022:false,\u0022Quantity\u0022:15,\u0022StorageRevision\u0022:5,\u0022Lots\u0022:[{\u0022Id\u0022:\u0022178c51e55f95c0e4c58704bc3a7b39a3\u0022,\u0022Definition\u0022:\u0022a64b7d9ae8f3757bfefc13c0b9fcdaf9\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00221922a728424422585093be1cf3a8792b\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002236e94a57334a2063b888d9c2538b53fe\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00224be9cd51901d095afb013fc7bb48d45a\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:8},{\u0022Id\u0022:\u0022650ea54bef8d67ba1ccf7c79447b3b41\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u00227227e93fa0f960e42e35fe82c9a0f928\u0022,\u0022Definition\u0022:\u002219fd80672aee3de952edb5cb376e6b25\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u002273aa7fd6975a40e20a8a8f7ecf79ce14\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1},{\u0022Id\u0022:\u0022c14661f4186befabf5606a964385bf71\u0022,\u0022Definition\u0022:\u0022f20a24bbcf04b36ebcb90a1d04ca58c0\u0022,\u0022Revision\u0022:0,\u0022Quantity\u0022:1}],\u0022Actors\u0022:[{\u0022Id\u0022:\u0022a2eedfbb4fd2f70f36253ba8c72e9d30\u0022,\u0022X\u0022:26784,\u0022Y\u0022:84928,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:75},{\u0022Id\u0022:\u0022f61e90650ddab821341dd6e0b4bb2c33\u0022,\u0022X\u0022:26944,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:78}],\u0022Nodes\u0022:[{\u0022Id\u0022:\u002224a15755098b514424949f954c34e5af\u0022,\u0022Revision\u0022:0,\u0022RemainingSwings\u0022:4,\u0022Visibility\u0022:1}]}"
+}

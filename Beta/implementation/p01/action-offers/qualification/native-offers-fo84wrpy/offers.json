@@ -1,0 +1,16 @@
+{
+  "Kind": "native-action-offers-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "macOS",
+  "Checks": [
+    "Unavailable crafting stayed inspectable through focus and hover without changing the paused world.",
+    "Displayed Oak target and cost matched one real harvest; other plants were unchanged.",
+    "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+    "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+    "Craft inspection and keyboard commitment used the same recipe with exact input/output/waste quantities.",
+    "Talk preserved the displayed speaker and Escape retained dialogue-first cancellation."
+  ],
+  "ElapsedMilliseconds": 10830
+}

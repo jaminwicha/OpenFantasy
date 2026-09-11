@@ -1,0 +1,47 @@
+{
+  "startedUtc": "2026-09-11T04:14:38.839021+00:00",
+  "scope": "Native action previews, focus/hover inspection and actual authoritative gathering/crafting/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "passed",
+  "rendered": true,
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-action-offers",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-fo84wrpy/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-fo84wrpy/offers.json"
+    ],
+    "exitCode": 0,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": ""
+  },
+  "observed": {
+    "Kind": "native-action-offers-v1",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "macOS",
+    "Checks": [
+      "Unavailable crafting stayed inspectable through focus and hover without changing the paused world.",
+      "Displayed Oak target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Displayed Berry target and cost matched one real harvest; other plants were unchanged.",
+      "Craft inspection and keyboard commitment used the same recipe with exact input/output/waste quantities.",
+      "Talk preserved the displayed speaker and Escape retained dialogue-first cancellation."
+    ],
+    "ElapsedMilliseconds": 10830
+  },
+  "artifactSha256": {
+    "native-offers-fo84wrpy/offers.berry-offer.png": "1d2c2157f56de9f14d188cad4dd539c256f4e0e0ff43d9b636aa8e8bb733e748",
+    "native-offers-fo84wrpy/offers.blocked-craft.png": "43043431c74ceb0ee478503678a11488aec35a11029bbc46b62f785ec134b3c0",
+    "native-offers-fo84wrpy/offers.dialogue.png": "5e2463b7a7fe4b7c5272061618359c4ee7db7d412b02d7e3b37e5fdee2871ad3",
+    "native-offers-fo84wrpy/offers.json": "4135df046761e0a4f537b2bc9009017139176cb064ad20423f780d089e68d315",
+    "native-offers-fo84wrpy/offers.oak-offer.png": "6b8c31840e71e4ef22bf0993895565f1e16162a4e3d68ecea2414b8d6c322c3a",
+    "native-offers-fo84wrpy/offers.ready-craft.png": "17de14f49148e437cdc78f9c1b522f3b361cf1f4fee9f3d317e629000cf2a5b7",
+    "native-offers-fo84wrpy/world.sqlite": "276a670861ca7667adafe350977a34872f707f62d991ac706ba456d20c756766"
+  },
+  "finishedUtc": "2026-09-11T04:14:51.754391+00:00"
+}

@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-10",
+  "requested_model": "fable[1m]",
+  "actual_model": "claude-fable-5-1",
+  "status": "permission_denied",
+  "context_status": "verified",
+  "elapsed_seconds": 637.457,
+  "api_equivalent_estimate_usd": 6.7945015,
+  "estimate_limit": "Provider estimate, not subscription billing or credits deducted.",
+  "usage": {
+    "input_tokens": 610,
+    "cache_creation_input_tokens": 169198,
+    "cache_read_input_tokens": 2094670,
+    "output_tokens": 57568,
+    "output_tokens_details": {
+      "thinking_tokens": 17684
+    }
+  },
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 2294,
+      "outputTokens": 16,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.0023740000000000002,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 610,
+      "outputTokens": 57568,
+      "cacheReadInputTokens": 2094670,
+      "cacheCreationInputTokens": 169198,
+      "webSearchRequests": 0,
+      "costUSD": 6.7921275,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 17684,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "ownership": "Worker: immutable offers, session action submission, HUD scene/presentation and four linked client test facts. Lead: native probe, integration corrections, three additional facts, existing journey adaptation, verification and shared documentation.",
+  "accepted_contribution": "Captured target/recipe/gift/quest intents, advisory costs/blockers, HUD hover/focus presentation and unified displayed-offer submission.",
+  "integration_findings": [
+    "Bind offers to the client instance, since the same save reopens with the same persisted control identities.",
+    "Reuse the submitted task/outcome for a repeated offer rather than creating a second command ID.",
+    "Do not disclose authored quest requirements or rewards before the public projection addresses the quest.",
+    "Filter gift wood to source lots so transformed materials cannot eclipse legal stock.",
+    "Wrap action costs onto a second button line and adjust footer/dialogue spacing after rendered clipping was found.",
+    "Native gather/progression probes must wait for the actually presented offer, not a newer simulation snapshot between frame callbacks.",
+    "Single-action scripted journeys wait for released movement to settle and the displayed actor revision to match; retained RevisionConflict evidence proves stale actions remain rejected."
+  ],
+  "tool_denials": "A git status invocation and a chained edit/test shell command were outside the worker allowlist. Useful owned changes were retained and integrated locally; the paid task was not restarted.",
+  "lead_usage": "Not reliably isolated for this increment; no numeric savings claim.",
+  "economics": "Material lead corrections and native integration again prevented an established credit-saving claim. The assignment and its critic finished before the owner changed future delegation policy.",
+  "future_routing": "Astra works directly by default. Each proposed Fable assignment requires explicit owner approval first, after concrete scope, expected benefit and usage limit are prepared. Earlier authorization does not carry forward. No new external call was made after this policy change.",
+  "upstream_policy_commit": "GameDevAIEcosystem fd64d93 and 3b4a903; shared/Codex/Claude skill and global steering mappings verified (68), portable bundles verified (137)."
+}
