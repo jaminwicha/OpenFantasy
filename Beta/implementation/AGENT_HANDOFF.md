@@ -2,6 +2,8 @@
 
 Updated: 2026-09-10. This is a navigation and current-state index for any authorized lead or worker. The project files below, not a model's private memory, carry the specification and implementation evidence. Update this index when its current-state claims change; preserve earlier reviewed evidence and design editions.
 
+Current orchestration steering: Astra drives this project while Claude performs suitable bounded work using the owner's Claude capacity. Preserve interchangeable capabilities, but avoid spending another Astra subagent merely to relay a Claude task. Before every external delegation, the ecosystem's local hook must synchronize approved skill updates and verify the exact current instructions, handoff, specs and owner steering; halt on unexpected drift. Recheck inputs after return, then update shared knowledge from reviewed results. The check itself must not consume another model conversation. Measure recurring lead/worker usage and accepted work before claiming token or credit savings; setup effort is a separate one-time cost.
+
 ## Authority and reading order
 
 1. Read [project implementation instructions](../AGENTS.md). The owner's later naming instruction governs source/project identifiers: use `OpenFantasy`, with no planning codename in runtime names, comments or strings. Preserve the existing planning directory and historical documents.
@@ -58,3 +60,10 @@ Use isolated worktrees or explicitly disjoint ownership. Before starting, record
 Return exact files, commands and results, toolchain/revision, evidence paths, critic disposition and unresolved limitations. Distinguish design criticism, executed automated/native checks and human acceptance. A virtual playtester must observe an actual build to claim a playtest. Do not launch, interrupt or close an owner's active game solely to prepare a review; coordinate any required interactive test through the lead.
 
 Reusable workflow lessons belong in the sibling [GameDev ecosystem](../../../GameDevAIEcosystem/AGENTS.md), its maintained `skills/` and `skill-overlays/`, and its native agent mappings. Keep shared concepts portable while preserving model-specific configuration formats, permissions and callable-tool differences. Project facts stay here or in the linked contracts; universal skills should route to the local project handoff rather than embedding its entire GDD. Installation or synchronization alone does not prove that a delegated model can use a skill, authenticate or produce acceptable work; retain a bounded behavioral probe when qualifying the integration.
+
+The [delegation context recipe](DELEGATION_CONTEXT.json) identifies the shared inputs for the
+local preflight hook. The ecosystem's `prepare_context.py` fills hashes after the lead updates
+steering; it does not require an additional model conversation. Supply resolved external roots
+when using an isolated worktree. Context hashing does not grant worker file access: pass only
+needed external skill/document directories explicitly. A contract-editing task must preserve
+immutable input snapshots and identify editable outputs separately.
