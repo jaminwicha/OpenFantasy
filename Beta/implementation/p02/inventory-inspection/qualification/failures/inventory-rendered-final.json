@@ -1,0 +1,32 @@
+{
+  "startedUtc": "2026-09-11T17:36:58.370254+00:00",
+  "scope": "Native target selection, pack inspection/time/input, action previews and authoritative gathering/crafting/dialogue",
+  "limitations": "Injected events do not establish physical controller, OS focus switching or visual acceptance.",
+  "status": "failed",
+  "rendered": true,
+  "run": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--farm-action-offers",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-q_cgedf8/world.sqlite",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/native-offers-q_cgedf8/offers.json"
+    ],
+    "exitCode": 1,
+    "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+    "stderr": "ERROR: Native action-offer qualification failed: System.InvalidOperationException: Could not reach the native action target.\n   at OpenFantasy.Client.FarmActionOfferProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 338\n   at OpenFantasy.Client.FarmActionOfferProbe.Approach(Func`1 target, Int64 range) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 261\n   at OpenFantasy.Client.FarmActionOfferProbe.Harvest(GatherNodeKind kind) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 161\n   at OpenFantasy.Client.FarmActionOfferProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:line 30\n   at: void OpenFantasy.Client.FarmActionOfferProbe+<_Ready>d__6.MoveNext() (res://scripts/FarmActionOfferProbe.cs:30)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.FarmActionOfferProbe+<_Ready>d__6.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:30)\n       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [4] void System.Threading.Tasks.Task.RunContinuations(object)\n       [5] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [6] bool System.Threading.Tasks.Task.TrySetException(object)\n       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [8] void OpenFantasy.Client.FarmActionOfferProbe+<Harvest>d__10.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:161)\n       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [11] void System.Threading.Tasks.Task.RunContinuations(object)\n       [12] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [13] bool System.Threading.Tasks.Task.TrySetException(object)\n       [14] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [15] void OpenFantasy.Client.FarmActionOfferProbe+<Approach>d__15.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:261)\n       [16] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [17] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [18] void System.Threading.Tasks.Task.RunContinuations(object)\n       [19] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()\n       [20] void OpenFantasy.Client.FarmActionOfferProbe+<Frame>d__21.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs:300)\n       [21] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [22] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [23] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)\n"
+  },
+  "failure": "The native action-offer process failed; inspect its retained output.",
+  "artifactSha256": {
+    "native-offers-q_cgedf8/offers.blocked-craft.png": "47d0848b84ac00d58dde196bef5c8207e0856db2a56ee9ba9df7103a84e05253",
+    "native-offers-q_cgedf8/offers.json": "80d120e53d242a4bf4faac3883f4827b9fafceaead78554c071f42680b17b84b",
+    "native-offers-q_cgedf8/offers.locked-target.png": "be4a79339a2ba490c71b9f3dfa8b40d8a32f581e49717305115c2e14bcc36126",
+    "native-offers-q_cgedf8/offers.oak-offer.png": "57bd837d8a9de52ac6159ece00bd853a9c0b95fdb9c501d09c99527e9a897459",
+    "native-offers-q_cgedf8/offers.person-target.png": "aacdc50ed610e36632d51328d689343e4c75dd114876b813ff83aa7b578a3337",
+    "native-offers-q_cgedf8/offers.plant-target.png": "ef0901031267a55071219b71b119316ac898bda4d4c5ab4a35d7fdb174b660eb",
+    "native-offers-q_cgedf8/world.sqlite": "68c492591611f7bb0ae57dc54428d6ff86b2e97f9a0b6d067b960982f11791c5"
+  },
+  "finishedUtc": "2026-09-11T17:37:28.889092+00:00"
+}

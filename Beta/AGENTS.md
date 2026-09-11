@@ -22,7 +22,14 @@ The owner requires modular, human-readable, object-oriented application and engi
 - Keep host diagnostics and presentation outside the portable authority. Own editable layout in scenes and semantic behavior in C#; use explicit dependencies rather than global service lookup.
 - Use descriptive names, consistent private field naming, visible guard blocks and named constants for format structure. Comments explain units, invariants and reasons. Avoid compressed control flow, giant managers and speculative abstraction layers.
 
-## Git milestones
+## Verification and milestones
+
+Use proportionate verification: focused checks and relevant native behavior during development;
+broader regression at coherent integration checkpoints or shared-behavior changes. Prefer useful
+slices over repeated microtask ceremonies. Preserve every feasibility/acceptance gate and its
+thresholds; independent review remains mandatory wherever specified. Retain failures, distinguish
+local review from independent/human acceptance, and keep one compact current handoff linking
+evidence. Do not reload or duplicate historical qualification detail for routine work.
 
 The owner's 2026-09-10 direction makes incremental commits and milestone branches project
 doctrine. Follow [GIT_MILESTONES.md](implementation/GIT_MILESTONES.md): commit verified coherent

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "date": "2026-09-10",
-  "status": "owner_supplement_with_partial_p01_input_offer_target_evidence",
+  "date": "2026-09-11",
+  "status": "owner_supplement_with_partial_p01_p02_evidence",
   "baseline": "../../spec-v1_1/REQUIREMENTS.json",
   "design": "../PLAYER_INTERFACE_AND_NAVIGATION.md",
   "baseline_requirement_count": 181,
-  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-01/UI-03/UI-11 have bounded P01 input, offer and explicit-target evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
+  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-01/UI-03/UI-11 have bounded P01 input, offer and explicit-target evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs. P02 inventory inspection now supplies a bounded UI-05/UI-11 prerequisite; no full case or phase exit is closed.",
   "contracts": [
     {
       "id": "UI-01",
@@ -113,8 +113,12 @@
         "UIV-09",
         "UIV-12"
       ],
-      "status": "planned",
-      "evidence_paths": []
+      "status": "in_progress",
+      "evidence_paths": [
+        "../p02/inventory-inspection/README.md",
+        "../p02/inventory-inspection/qualification/final-verification.json"
+      ],
+      "evidence_scope": " P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open."
     },
     {
       "id": "UI-06",
@@ -152,7 +156,11 @@
         "UIV-10"
       ],
       "status": "planned",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p02/inventory-inspection/README.md"
+      ],
+      "partial_evidence_scope": "Host running/waiting/paused status in the pack only; calendar, appointments, other clocks and full temporal/co-op qualification remain unimplemented or unrun."
     },
     {
       "id": "UI-08",
@@ -236,10 +244,12 @@
         "../p01/input-focus/README.md",
         "../p01/input-focus/qualification/native-input.json",
         "../p01/target-selection/README.md",
-        "../p01/target-selection/qualification/final-verification.json"
+        "../p01/target-selection/qualification/final-verification.json",
+        "../p02/inventory-inspection/README.md",
+        "../p02/inventory-inspection/qualification/final-verification.json"
       ],
       "foundation_qualification_phase": "P03",
-      "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open."
+      "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open. P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open."
     },
     {
       "id": "UI-12",
@@ -317,9 +327,10 @@
       "status": "planned",
       "evidence_paths": [],
       "partial_evidence_paths": [
-        "../p01/action-offers/qualification/rendered-offers.json"
+        "../p01/action-offers/qualification/rendered-offers.json",
+        "../p02/inventory-inspection/qualification/rendered-inventory.json"
       ],
-      "partial_evidence_scope": "P01 textual cost/blocker inspection prerequisite at 960x540 via native focus/hover; icons, rich item cards, physical navigation and full UIV-14 remain unimplemented/unrun."
+      "partial_evidence_scope": "P01 textual cost/blocker inspection prerequisite at 960x540 via native focus/hover; icons, rich item cards, physical navigation and full UIV-14 remain unimplemented/unrun. Textual real-item pack inspection is now covered; native icons and full rich/knowledge/device acceptance remain open."
     }
   ],
   "cases": [
@@ -363,9 +374,11 @@
       "evidence_paths": [],
       "partial_evidence_paths": [
         "../p01/input-focus/qualification/native-input.json",
-        "../p01/target-selection/qualification/final-verification.json"
+        "../p01/target-selection/qualification/final-verification.json",
+        "../p02/inventory-inspection/README.md",
+        "../p02/inventory-inspection/qualification/final-verification.json"
       ],
-      "partial_evidence_scope": "P01 dialogue/pause/focus and held-control prerequisite only. Full wheel/target/inventory/confirmation/text-entry/device/resize/disconnect case is not run. The new cycle/clear controls obey the existing contexts; the general target modal is not implemented."
+      "partial_evidence_scope": "P01 dialogue/pause/focus and held-control prerequisite only. Full wheel/target/inventory/confirmation/text-entry/device/resize/disconnect case is not run. The new cycle/clear controls obey the existing contexts; the general target modal is not implemented. Real pack inspection and native focus/input/time boundaries now have bounded evidence; all remaining elements of this full case are still unrun."
     },
     {
       "id": "UIV-05",
@@ -389,7 +402,12 @@
       "completion_phase": "P11",
       "acceptance": "Begin with the small real P02 stats/inventory/equipment/recipe and trade subset; expand through deep production/jobs at P04 and crew/settlement screens in their existing phases. Preview vs commit, progression spending, bulk review, reservations, remote stock and delegate orders obey custody, effort and control. UI filtering/sorting does not transform or teleport goods.",
       "status": "not_run",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p02/inventory-inspection/README.md",
+        "../p02/inventory-inspection/qualification/final-verification.json"
+      ],
+      "partial_evidence_scope": " Real pack inspection and native focus/input/time boundaries now have bounded evidence; all remaining elements of this full case are still unrun."
     },
     {
       "id": "UIV-08",
@@ -447,9 +465,11 @@
       "status": "not_run",
       "evidence_paths": [],
       "partial_evidence_paths": [
-        "../p01/action-offers/qualification/rendered-offers.json"
+        "../p01/action-offers/qualification/rendered-offers.json",
+        "../p02/inventory-inspection/README.md",
+        "../p02/inventory-inspection/qualification/final-verification.json"
       ],
-      "partial_evidence_scope": "P01 known blocked crafting inspection and visible costs through native Control focus/hover only. Full icon/Inspect/knowledge/localization/device case is not run."
+      "partial_evidence_scope": "P01 known blocked crafting inspection and visible costs through native Control focus/hover only. Full icon/Inspect/knowledge/localization/device case is not run. Real pack inspection and native focus/input/time boundaries now have bounded evidence; all remaining elements of this full case are still unrun."
     }
   ]
 }

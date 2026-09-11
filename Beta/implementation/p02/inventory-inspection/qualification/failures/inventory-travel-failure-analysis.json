@@ -1,0 +1,8 @@
+{
+  "failed_report": "inventory-rendered-final.json",
+  "database_sha256": "68c492591611f7bb0ae57dc54428d6ff86b2e97f9a0b6d067b960982f11791c5",
+  "head_sequence": 170,
+  "advancing_steps": 170,
+  "command_outcomes": 1,
+  "interpretation": "Travel stopped before any inventory code ran. 170 advancing steps at 50 ms account for about 8.5 seconds of a 28-second run. A focus/readiness pause is consistent with this evidence; the original report did not capture focus, so the cause is not conclusively established. Add focus/pause/pack/pending/public-view diagnostics and retain the failed result. No timeout or behavioral assertion is relaxed."
+}
