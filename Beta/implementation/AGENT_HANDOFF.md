@@ -2,12 +2,12 @@
 
 Updated: 2026-09-10. This is a navigation and current-state index for any authorized lead or worker. The project files below, not a model's private memory, carry the specification and implementation evidence. Update this index when its current-state claims change; preserve earlier reviewed evidence and design editions.
 
-Current orchestration steering: Astra drives this project while Claude performs suitable bounded work using the owner's Claude capacity. Preserve interchangeable capabilities, but avoid spending another Astra subagent merely to relay a Claude task. Before every external delegation, the ecosystem's local hook must synchronize approved skill updates and verify the exact current instructions, handoff, specs and owner steering; halt on unexpected drift. Recheck inputs after return, then update shared knowledge from reviewed results. The check itself must not consume another model conversation. Measure recurring lead/worker usage and accepted work before claiming token or credit savings; setup effort is a separate one-time cost.
+Current orchestration steering: Astra drives this project while Claude performs suitable bounded work using the owner's Claude capacity. The owner requires `fable[1m]` for Claude assignments; pass that exact model selector and report unavailable access rather than silently substituting another model. Preserve interchangeable capabilities, but avoid spending another Astra subagent merely to relay a Claude task. Before every external delegation, the ecosystem's local hook must synchronize approved skill updates and verify the exact current instructions, handoff, specs and owner steering; halt on unexpected drift. Recheck inputs after return, then update shared knowledge from reviewed results. The check itself must not consume another model conversation. Measure recurring lead/worker usage and accepted work before claiming token or credit savings; setup effort is a separate one-time cost.
 
 ## Authority and reading order
 
 1. Read [project implementation instructions](../AGENTS.md). The owner's later naming instruction governs source/project identifiers: use `OpenFantasy`, with no planning codename in runtime names, comments or strings. Preserve the existing planning directory and historical documents.
-2. Read the [implementation overview](README.md), then the [current construction packet](p01/construction/README.md) for the latest connected prototype. The [progress ledger](p00/PROGRESS.md) retains older increments; older pending/completed statements are scoped to their checkpoints.
+2. Read the [implementation overview](README.md), then the [input-focus increment](p01/input-focus/README.md) and [construction packet](p01/construction/README.md) for the latest connected prototype. The [progress ledger](p00/PROGRESS.md) retains older increments; older pending/completed statements are scoped to their checkpoints.
 3. Read the [living player-interface supplement](PLAYER_INTERFACE_AND_NAVIGATION.md) alongside the preserved [specification baseline 1.1](../spec-v1_1/README.md). The supplement is current scope. Its archived predecessor is not the active UI design.
 4. For the assigned work, follow the baseline [GDD](../spec-v1_1/GDD.md), [technical design](../spec-v1_1/TECHNICAL_DESIGN.md), [decision register](../spec-v1_1/DECISIONS.md), [full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json) and [coverage](../spec-v1_1/COVERAGE.json). The preserved [original implementation handoff](../spec-v1_1/IMPLEMENTATION_HANDOFF.md) supplies the full reading map; its old naming and preimplementation status are historical where later instructions supersede them.
 5. Use [runtime setup and boundaries](../Runtime/README.md) for exact build/launch procedures and the pinned toolchain. Use the [research index](../research-v0_9/README.md), [local reuse decisions](../spec-v1_1/LOCAL_REUSE_DECISIONS.md), [presentation contracts](../spec-v1_1/PRESENTATION_CONTRACTS.md) and [archive continuity audit](../spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md) when the task needs those details.
@@ -18,7 +18,16 @@ The retained runtime combines a portable deterministic C# core, an in-process du
 
 The current local farm connects player movement, Wren's source dialogue, finite gathering, ration crafting, a funded six-wood quest, progression/reward and Wren's routed construction of a small physical seedling guard. Wren performs 200 authoritative work actions using owned materials and a kit. Save/reopen, interruption and preserved older-save copy upgrades have retained checks. This is a specific authored loop, not a general autonomous NPC society or general construction system.
 
-The [final integrated qualification](p01/construction/qualification/final-verification.json) records 544 Core plus 261 Hosting tests (805 total), zero skips, 22 independent fixtures, 68 host inspections and native journeys bound to 655 unchanged runtime inputs. [Local Release evidence](p01/construction/qualification/release/runs.json) records the same test total. These are existing checkpoint results, not tests rerun by this handoff or automatic evidence for subsequent edits. The [rendered review](p01/construction/FINAL_VISUAL_REVIEW.md) and [readiness checklist](p01/construction/READINESS.md) state their bounded technical claims. A build directory named `ExportRelease` does not establish a packaged export or Windows/Linux execution.
+The historical [construction qualification](p01/construction/qualification/final-verification.json) records 544 Core plus 261 Hosting tests (805 total), zero skips, 22 independent fixtures, 68 host inspections and native journeys bound to 655 unchanged runtime inputs. [Local Release evidence](p01/construction/qualification/release/runs.json) records the same test total. These are existing checkpoint results, not tests rerun by this handoff or automatic evidence for subsequent edits. The [rendered review](p01/construction/FINAL_VISUAL_REVIEW.md) and [readiness checklist](p01/construction/READINESS.md) state their bounded technical claims. A build directory named `ExportRelease` does not establish a packaged export or Windows/Linux execution.
+
+The current [input-focus qualification](p01/input-focus/qualification/final-verification.json)
+passes 544 Core + 281 Hosting = 825 tests, zero skips, 22 fixtures, 68 host inspections and all
+native journeys. It checks 659 unchanged runtime inputs plus two generated script UIDs.
+Client commit `58b1f28` unifies HUD/device semantic routing, makes Escape/Start/B close the
+highest applicable dialogue/pause layer, and prevents held movement/repeats crossing those
+contexts. Native injected keyboard/button/stick events pass; physical-device, rendered UI
+and full modal-stack acceptance remain open. The explicit HUD Pause button can still pause
+with a conversation open. Host/Core authority and save formats are unchanged.
 
 At this handoff, repository history includes:
 
@@ -34,7 +43,7 @@ The owner has now tried the game and described it as very basic with terrible gr
 
 The production target is Sea of Stars-level pixel finish, lively expressive animation and responsive world interaction, with restrained detail, visible accumulated history and variation that avoids obvious repeated sprites. Native sprites, motion, lighting, weather, wear and audio must follow actual gameplay state. Accepted concept/reference scenes are style options, not approval of every native sprite, animation or a bulk asset-production run. Consult [art calibration](../art-style-calibration/README.md) and presentation contracts before asset work. Dedicated artists own asset production separately from engine builders; human style acceptance remains required.
 
-For UI, favor icons with rich hover, controller-focus and explicit inspection details. Explanations must remain reachable without a mouse, and essential costs/risks must not be hidden only in tooltips. Use contextual actions, stable curated quick wheels, a browsable action library and capability-relevant management screens. Inventory, stats, skills, crafting, journal, local/world maps, calendar and atlas belong to the full design; irrelevant inert screens should not clutter early play. Capability exposure, target/confirm behavior, input capture, layers/realms/history and knowledge-filtered details share semantic contracts. The [UI coverage register](ui-management/COVERAGE.json) has 15 supplemental contracts and 14 unrun acceptance cases. The supplement assigns these to existing phases; the owner did not reprioritize the implementation campaign. Current farm hotkeys and HUD do not implement that full design.
+For UI, favor icons with rich hover, controller-focus and explicit inspection details. Explanations must remain reachable without a mouse, and essential costs/risks must not be hidden only in tooltips. Use contextual actions, stable curated quick wheels, a browsable action library and capability-relevant management screens. Inventory, stats, skills, crafting, journal, local/world maps, calendar and atlas belong to the full design; irrelevant inert screens should not clutter early play. Capability exposure, target/confirm behavior, input capture, layers/realms/history and knowledge-filtered details share semantic contracts. The [UI coverage register](ui-management/COVERAGE.json) has 15 supplemental contracts and 14 full acceptance cases still unrun; UI-11 now has bounded P01 input evidence. The supplement assigns these to existing phases; the owner did not reprioritize the implementation campaign. Current farm hotkeys and HUD do not implement that full design.
 
 ## Retained full campaign
 
@@ -73,3 +82,17 @@ successful authenticated external review through the synchronized workflow. Its 
 seam is qualified as future work, not an implementation or phase-priority change. Account
 access and read-only task completion are verified; editing/art pipelines and net credit
 savings are not established by this small pilot.
+
+The retained P01 input-focus increment is now [implemented and qualified](p01/input-focus/README.md).
+The owner-selected `fable[1m]` produced the initial bounded implementation. The lead corrected
+binding and transition defects, completed native validation, and retained [measured usage and
+review disposition](p01/input-focus/delegation.json). The runner reported denied convenience
+command forms; reviewed code was integrated locally without restarting the paid task.
+Integration overhead was material, so net credit savings remain unverified. Supply exact
+runnable test commands with future bounded assignments and keep small corrections local.
+
+Continue through the full plan's remaining P01/P02 dependencies; do not infer a completed
+phase from this seam. Real contextual action offers/targeting and later wheels/management
+screens must use this policy while adding their own native acceptance. Asset production stays
+with separate artists and the owner's style acceptance. No new priority, runtime process,
+Core authority or reduction of the 181 requirements is implied.

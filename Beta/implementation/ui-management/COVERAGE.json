@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "date": "2026-09-10",
-  "status": "planned_owner_supplement_not_runtime_completion",
+  "status": "owner_supplement_with_partial_p01_input_evidence",
   "baseline": "../../spec-v1_1/REQUIREMENTS.json",
   "design": "../PLAYER_INTERFACE_AND_NAVIGATION.md",
   "baseline_requirement_count": 181,
-  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. All native implementation/acceptance below remains unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
+  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-11 has bounded P01 input evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs.",
   "contracts": [
     {
       "id": "UI-01",
@@ -219,9 +219,13 @@
         "UIV-10",
         "UIV-11"
       ],
-      "status": "planned",
-      "evidence_paths": [],
-      "foundation_qualification_phase": "P03"
+      "status": "in_progress",
+      "evidence_paths": [
+        "../p01/input-focus/README.md",
+        "../p01/input-focus/qualification/native-input.json"
+      ],
+      "foundation_qualification_phase": "P03",
+      "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim."
     },
     {
       "id": "UI-12",
@@ -331,7 +335,11 @@
       "completion_phase": "P03",
       "acceptance": "Open wheel, target, inventory, child confirmation and text entry; cancel each; change device, resize, disconnect and lose focus. Check event and polled movement paths, opener release, neutral-stick release and focus restoration. No extra movement, ration craft, item use or accidental submission.",
       "status": "not_run",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p01/input-focus/qualification/native-input.json"
+      ],
+      "partial_evidence_scope": "P01 dialogue/pause/focus and held-control prerequisite only. Full wheel/target/inventory/confirmation/text-entry/device/resize/disconnect case is not run."
     },
     {
       "id": "UIV-05",

@@ -13,7 +13,7 @@ The client selects `user://worlds/wrens-farm-construction.sqlite`. Closing and r
 1. Move toward Wren and press **E** to talk. Read his orchard offer. **G accepts**. Close with **E** if you want to explore before delivery, or press **G** again to deliver immediately. The Continue/E control closes the conversation; it does not accept the offer. Pressing G outside a conversation asks you to speak first and keeps the wood in your pack.
 2. Gathering and ration crafting are optional. **Close any conversation with E first.** Approach the berry plant and use **F** twice, then **C** packs two berries and one wood into two rations plus an offcut. You can do this before delivery and still have six wood for Wren, or use the spare wood afterward. Gathering can briefly wait for effort to recover; there is no need to repeatedly mash the key.
 3. If you have not delivered yet, return to Wren, talk with **E** and deliver with **G**. Delivery awards **420 XP and 200 gil** once. The admitted Human Squire reaches level three with 38 residual XP. Close the conversation with **E** so Wren can walk to the plot and work. Keep his route and the small crop plot clear.
-4. Watch the fitted percentage become **Seedling guard built**, then walk around the small installed board. Talk to Wren during work to hold the world; close the conversation to continue. **Esc** pauses locally too. No offline time finishes the project.
+4. Watch the fitted percentage become **Seedling guard built**, then walk around the small installed board. Talk to Wren during work to hold the world; close the conversation to continue. **Esc** closes dialogue first and pauses in ordinary play; the visible Pause button can preserve an open conversation. No offline time finishes the project.
 5. Close the window while work is unfinished or after it completes, then launch again. The same work, inventory, reward and installed guard should remain. Completed delivery and work cannot repeat their reward or material transformation.
 
 | Action | Keyboard | Controller |
@@ -22,10 +22,11 @@ The client selects `user://worlds/wrens-farm-construction.sqlite`. Closing and r
 | Talk / close conversation | E | A |
 | Accept / deliver addressed task | G | X |
 | Gather nearby resource | F | Y |
-| Pack rations | C | B |
-| Pause / resume | Esc | Start |
+| Pack rations in ordinary play | C | B |
+| Pause / resume in ordinary play | Esc | Start |
+| Close dialogue | Esc | Start / B |
 
-Current onscreen hints are keyboard-oriented. Losing window focus also stops new simulation steps. Use the ordinary close button so the local session finishes shutdown.
+Current onscreen hints are keyboard-oriented. Losing window focus also stops new simulation steps. Release held movement controls before resuming movement after a blocking context. Controller B also resumes an existing pause. The visible Pause button can pause with dialogue open. Use the ordinary close button so the local session finishes shutdown.
 
 ## Feedback focus and limits
 

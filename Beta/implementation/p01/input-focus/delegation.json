@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-10",
+  "requested_model": "fable[1m]",
+  "actual_model": "claude-fable-5-1",
+  "status": "permission_denied",
+  "context_status": "verified",
+  "elapsed_seconds": 672.499,
+  "api_equivalent_estimate_usd": 6.062023750000001,
+  "estimate_limit": "Provider estimate, not subscription billing or credits deducted.",
+  "usage": {
+    "input_tokens": 450,
+    "cache_creation_input_tokens": 143641,
+    "cache_read_input_tokens": 1437355,
+    "output_tokens": 56472,
+    "output_tokens_details": {
+      "thinking_tokens": 32545
+    }
+  },
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1665,
+      "outputTokens": 20,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001765,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 450,
+      "outputTokens": 56472,
+      "cacheReadInputTokens": 1437355,
+      "cacheCreationInputTokens": 143641,
+      "webSearchRequests": 0,
+      "costUSD": 6.060258750000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 32545,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "ownership": "FarmGame, FarmHud, FarmInputMap, new pure FarmInputRouter and focused linked tests; lead owned native probe, integration and shared documentation.",
+  "accepted_contribution": "Semantic action route, client focus policy, contextual controller cancellation, held-action and direction tracking, 15 focused facts. Lead integrated corrections and extended coverage.",
+  "integration_findings": [
+    "Changed Escape/Start from universal pause to top-dialogue cancellation; adapted retained recovery probes to the actual HUD Pause button.",
+    "Native regression caught opposing held keys leaking when a blocking context closed between physics samples; added boundary capture.",
+    "Preserved circular stick deadzone separately from held-direction tracking, with native drift/diagonal checks.",
+    "Moved tracked release bookkeeping before GUI consumption and reconciled missing releases on focus return.",
+    "Corrected the native focus probe to flush buffered events into the intended unfocused context before emitting focus return."
+  ],
+  "tool_denials": "Convenience shell inspection and test/build command forms outside the exact approved relative-path rules. Useful code retained; no broader permissions or paid full retry.",
+  "lead_usage": "Not reliably isolated for this increment; no numeric savings claim.",
+  "economics": "This assignment used the intended Claude capacity, but requirement corrections and native integration were material. Net lead-credit savings remain unverified; keep smaller follow-up corrections local and give future workers exact runnable check commands."
+}

@@ -1,12 +1,33 @@
 # Implementation progress
 
-Current design also includes the [2026-09-10 player interface, actions and navigation supplement](PLAYER_INTERFACE_AND_NAVIGATION.md), read alongside the preserved 1.1 specification. It assigns contextual actions, configurable wheels, standard relevant management screens, maps/calendar and input/focus acceptance to the existing phases without reprioritizing them. Its new native UI gates remain unrun; the current farm controls are unchanged.
+The latest [P01 input-focus increment](p01/input-focus/README.md) adds one semantic action route
+for HUD and devices, top-layer cancellation, release handling and movement isolation across
+pause/dialogue/focus. The [current qualification](p01/input-focus/qualification/final-verification.json)
+passes **544 Core + 281 Hosting = 825 tests**, zero skips, 22 independent fixtures, 68 host
+inspections and every retained native journey. Nine native input checks pass. The 659 runtime
+inputs present at the start remained unchanged; the editor added two recorded script UIDs.
+The naming scan passes. Code commit: `58b1f28`.
 
-The **first OpenFantasy farm feedback build is ready to try** on the qualified local macOS development host. The real C# authority now connects movement, finite gathering, ration crafting, Wren’s funded quest, routed NPC work and a persistent physical seedling guard. Existing saves continue on verified copies; fresh games use the same retained rules. [Start here: controls and launcher](p01/construction/FEEDBACK.md).
+The playable farm still connects movement, finite gathering, ration crafting, Wren's funded
+quest, routed NPC work and a persistent physical seedling guard. Existing saves continue on
+verified copies. [Controls and launcher](p01/construction/FEEDBACK.md) include the current
+cancel behavior. The owner has tried the prototype and described its gameplay as basic and
+its graphics as poor; those experience concerns remain open. This input increment does not
+change the art or establish a polished game.
 
-[Final integrated qualification](p01/construction/qualification/final-verification.json) passed **544 Core + 261 Hosting = 805 tests**, zero skips, 22 independent fixtures, 68 host inspections and every native journey with **655 unchanged inputs** and a passing naming scan. [Local Release](p01/construction/qualification/release/runs.json) passed the same 805 tests. [Final rendered review](p01/construction/FINAL_VISUAL_REVIEW.md) covers fresh and progressed saves and closes the gift-control/nameplate findings. [Current readiness](p01/construction/READINESS.md) distinguishes this technical handoff from the human feedback still needed. **Full P00/P01/P02 and production/export/art/audio gates remain open; all 181 requirements remain retained.**
+Read the [shared handoff](AGENT_HANDOFF.md), [living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md),
+[construction packet](p01/construction/README.md) and [runtime setup](../Runtime/README.md).
+UI-11 has partial P01 evidence; the 14 full UI acceptance cases, general wheels/management,
+physical-device checks and human acceptance remain open. **All 181 requirements and the
+existing phase sequence remain retained; full P00/P01/P02 and production/export/art/audio
+exits are open.** Delegation usage, lead corrections and upstream skill learning are retained
+in the new packet; net credit savings are not established.
 
-See the [construction packet](p01/construction/README.md), [current progress](p00/PROGRESS.md) and [runtime setup](../Runtime/README.md). The following previous checkpoint remains historical evidence; its statements about what was pending have been superseded by the new packet above.
+The earlier [construction Debug](p01/construction/qualification/final-verification.json) and
+[local Release](p01/construction/qualification/release/runs.json) results recorded 805 tests.
+Those are preserved checkpoint results, not Release or export evidence for the new input
+code. The older [rendered review](p01/construction/FINAL_VISUAL_REVIEW.md) remains bounded
+technical evidence; it does not supersede the owner's later visual feedback.
 
 ## Preserved quest-stage checkpoint
 
