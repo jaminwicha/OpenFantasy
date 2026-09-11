@@ -3,6 +3,7 @@
 11 September 2026. This increment makes the existing authoritative calendar visible in the native
 farm. It is a P02 presentation prerequisite toward RQ-094 and RQ-126, not completion of either
 requirement or the P01/P02 exits. The frozen specification and all 181 requirements are unchanged.
+Implementation and evidence commit: `80bdda0`, preserved as `codex/milestone-daylight`.
 
 ## Implemented behavior
 

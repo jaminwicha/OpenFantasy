@@ -21,7 +21,7 @@ the next task, rather than reloading the research archive and every historical q
 
 ## Current implementation and evidence
 
-The latest [outdoor daylight increment](p02/daylight/README.md) connects the farm's native ambient
+The latest [outdoor daylight increment](p02/daylight/README.md), code `80bdda0`, connects the farm's native ambient
 light to its existing public calendar: dawn, day, dusk and readable night, with an editable palette.
 HUD/pack brightness stays independent; the selected-target marker is unshaded. The nominal 40-minute
 day and all host timing rules are unchanged. This is provisional outdoor presentation, not weather,

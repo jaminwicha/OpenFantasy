@@ -27,6 +27,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-explicit-targeting` | `747925f` | Explicit Wren/harvestable selection, stable target identity and incompatible-verb blocking; code `c7e29f5`, 838 tests, all retained native journeys and eight rendered states. [Evidence](p01/target-selection/README.md). General pointer targeting/confirmation, full UI, physical devices, art and phase exits remain open. |
 | `codex/milestone-inventory-inspection` | `ea56b64` | Native own-pack inspection, host timing display and scoped input; code `3eed739`, 846 tests, all final native journeys and twelve rendered states. [Evidence](p02/inventory-inspection/README.md) retains an earlier travel timeout with unconfirmed cause. Equipment/use/transfer, icons, full UI, OS/physical-device acceptance and phase/feasibility gates remain open. |
 | `codex/milestone-recorded-history` | `9e0018d` | Exact recorded-commit reconstruction and operator; code `913a5f2`, corrected stationary quest probe `1d26210`, 855 final tests and combined native evidence. [Evidence](p01/recorded-history/README.md) preserves failed runs, confirmed stale Talk revision and unconfirmed editor-startup error. Arbitrary interior time, prehistory, branch travel, production latency, independent review and full phase gates remain open. |
+| `codex/milestone-daylight` | `80bdda0` | Calendar-driven outdoor light and bright target/UI cues; 855 tests, complete integrated regression plus probe-only night-interface followups, ten daylight and twelve daytime UI captures. [Evidence](p02/daylight/README.md) retains the corrected unmapped probe input and recurring, unconfirmed editor-settings error. Weather/seasons, rest/camp, production art/audio, independent/human review and all full gates remain open. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -37,3 +38,8 @@ The recorded-history branch preserves code and evidence at `9e0018d`. Qualificat
 successful integration checks with targeted native followups and final tests on the rebuilt
 binaries; it is not a single uninterrupted full-verifier pass. The development checkout and all
 earlier milestone branches remain in place. No push, merge or phase closure accompanies this marker.
+
+The daylight branch preserves source and evidence at `80bdda07398a8657b1b8c7034c83242ef8dc641b`.
+The final native probe extension was qualified separately after the integrated pass, with identical
+production sources and tested non-client binaries. The development checkout remains unchanged;
+earlier milestone branches and the unrelated staged predecessor work were preserved.
