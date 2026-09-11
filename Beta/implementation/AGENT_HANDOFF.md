@@ -17,6 +17,9 @@ linked packets. The preserved specification is authoritative. Read only task-rel
 
 ## Latest increment
 
+Code and evidence: `bf96ed9`, preserved on `codex/milestone-watershed-persistence`.
+Development remains on `codex/runtime-foundation`.
+
 [Admitted watershed persistence](p01/watershed-admission/README.md) adds profile six: one immutable
 prepared basin retained inside a complete construction world. Explicit fresh-genesis admission pins
 its hash and exact world/branch/realm. Macro identities cannot alias actors, terrain, items or command
