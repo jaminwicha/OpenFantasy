@@ -115,6 +115,18 @@ public partial class Bootstrap : Control
             AddChild(game);
             AddChild(new FarmGatheringProbe(game, gatherReport, gatherStage == "reopen"));
         }
+        else if (arguments is ["--farm-input", var inputSave, var inputReport])
+        {
+            if (File.Exists(inputSave))
+            {
+                GD.PushError("The input probe requires a fresh disposable save path.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = inputSave, StartPaused = true, GatheringProfile = false };
+            AddChild(game);
+            AddChild(new FarmInputProbe(game, inputReport));
+        }
         else if (arguments is ["--farm-walkthrough", var save, var reportPath, var stage] && stage is "create" or "reopen")
         {
             if (stage == "create" && File.Exists(save) || stage == "reopen" && !File.Exists(save))

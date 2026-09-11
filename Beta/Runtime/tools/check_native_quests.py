@@ -36,7 +36,7 @@ def verify_report(mode, observed):
         raise RuntimeError("Native focus request bound was not retained")
     inputs = observed.get("Inputs", [])
     for event in inputs:
-        if event["Action"] not in ("pause_world", "stop_movement"):
+        if event["Action"] not in ("pause_world", "hud_pause", "stop_movement"):
             if event["IsLocallyPaused"] or not event["IsWindowFocused"]:
                 raise RuntimeError("An ordinary input bypassed the recorded readiness/focus gate")
     actions = [event["Action"] for event in inputs]

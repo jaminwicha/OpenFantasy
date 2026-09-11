@@ -12,14 +12,13 @@ public partial class FarmGame : Node2D
     private readonly FarmCanvas _canvas = new();
     private readonly Camera2D _camera = new() { Zoom = new Vector2(2, 2) };
     private FarmHud _hud = null!;
+    private FarmInputRouter _input = new();
     private Task<FarmClientSession>? _opening;
     private FarmClientSession? _session;
     private Task<WorldActionReceipt>? _action;
     private Task? _closing;
     private string _actionDescription = "";
-    private bool _paused;
     private bool _failed;
-    private bool _focused = true;
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
@@ -31,12 +30,13 @@ public partial class FarmGame : Node2D
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     internal bool HasPendingAction => _action is not null;
     internal bool HasFailed => _failed;
-    internal bool IsLocallyPaused => _paused;
-    internal bool IsWindowFocused => _focused;
+    internal bool IsLocallyPaused => _input.Paused;
+    internal bool IsWindowFocused => _input.Focused;
     internal void RequestClose() => BeginClose();
 
     public override void _Ready()
     {
+        _input = new FarmInputRouter(StartPaused);
         AddChild(_canvas);
         Rect2 bounds = _canvas.LocalBounds;
         _camera.LimitLeft = (int)bounds.Position.X;
@@ -46,18 +46,12 @@ public partial class FarmGame : Node2D
         AddChild(_camera);
         _hud = GD.Load<PackedScene>("res://scenes/FarmHud.tscn").Instantiate<FarmHud>();
         AddChild(_hud);
-        _hud.TalkRequested += Speak;
-        _hud.GiveRequested += Give;
-        _hud.GatherRequested += Gather;
-        _hud.CraftRequested += Craft;
-        _hud.CloseRequested += CloseDialogue;
-        _hud.PauseRequested += TogglePause;
+        _hud.ActionRequested += Perform;
         GetTree().AutoAcceptQuit = false;
         GetWindow().CloseRequested += BeginClose;
         GetWindow().FocusEntered += OnFocusEntered;
         GetWindow().FocusExited += OnFocusExited;
         _hud.Message("Opening the farm…");
-        _paused = StartPaused;
         bool production = GatheringProfile && ProductionProfile;
         bool quests = production && QuestProfile;
         bool construction = quests && ConstructionProfile;
@@ -99,7 +93,7 @@ public partial class FarmGame : Node2D
             if (opening.IsCompletedSuccessfully)
             {
                 _session = opening.Result;
-                if (ChangeReadiness(_focused && !_paused)) _hud.Message("Find Wren by the rows.");
+                if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message("Find Wren by the rows.");
             }
             else
             {
@@ -137,7 +131,8 @@ public partial class FarmGame : Node2D
             focus = (focus + FarmCanvasCoordinates.Position(speaker.Feet)) / 2;
         }
         _camera.Position = focus + new Vector2(0, -26);
-        _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null, _paused || !_focused);
+        _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null,
+            _input.Paused || !_input.Focused);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -148,17 +143,8 @@ public partial class FarmGame : Node2D
         }
         try
         {
-            if (_paused || !_focused || _session.World.ReadView().HasReadingHold)
-            {
-                _session.World.SetMovement(0, 0);
-                return;
-            }
-            Vector2 input = Input.GetVector("walk_left", "walk_right", "walk_up", "walk_down");
-            long dx = 0;
-            long dy = 0;
-            if (Math.Abs(input.X) > Math.Abs(input.Y)) dx = Math.Sign(input.X) * WorldMovementInput.DisplacementPerStep;
-            else if (input.Y != 0) dy = Math.Sign(input.Y) * WorldMovementInput.DisplacementPerStep;
-            _session.World.SetMovement(dx, dy);
+            FarmMovementIntent movement = _input.Movement(Situation(), ReadWalkingInput());
+            _session.World.SetMovement(movement.DeltaX, movement.DeltaY);
         }
         catch (InvalidOperationException error)
         {
@@ -166,19 +152,72 @@ public partial class FarmGame : Node2D
         }
     }
 
+    public override void _Input(InputEvent input)
+    {
+        // Release bookkeeping must run before a focused Control can consume the release.
+        // New gameplay presses still respect the normal GUI-first unhandled-input path.
+        if (input.IsPressed() || input.IsEcho()) return;
+        FarmInputDecision decision = _input.Route(Situation(), Translate(input));
+        if (decision.Consumed) GetViewport().SetInputAsHandled();
+    }
+
     public override void _UnhandledInput(InputEvent input)
     {
-        if (input.IsActionPressed("pause_world")) TogglePause();
-        else if (input.IsActionPressed("talk"))
+        FarmInputDecision decision = _input.Route(Situation(), Translate(input));
+        if (decision.Action != FarmSemanticAction.None) Perform(decision.Action);
+        if (decision.Consumed) GetViewport().SetInputAsHandled();
+    }
+
+    /// <summary>World facts the router consults; the projection read is a lock-free snapshot.</summary>
+    private FarmInputSituation Situation() => new(
+        SessionOpen: _session is not null,
+        ReadingHold: _session?.World.ReadView().HasReadingHold ?? false,
+        ActionPending: _action is not null);
+
+    private static FarmDirectionalInput ReadWalkingInput()
+    {
+        Vector2 direction = Input.GetVector(FarmInputActions.WalkLeft, FarmInputActions.WalkRight,
+            FarmInputActions.WalkUp, FarmInputActions.WalkDown);
+        // Keep GetVector's circular deadzone. Individual strengths separately expose opposing
+        // buttons, which can sum to zero without the player actually releasing either one.
+        float Strength(string action) => direction == Vector2.Zero
+            ? Input.GetActionStrength(action) : Input.GetActionRawStrength(action);
+        return new FarmDirectionalInput(Strength(FarmInputActions.WalkLeft), Strength(FarmInputActions.WalkRight),
+            Strength(FarmInputActions.WalkUp), Strength(FarmInputActions.WalkDown))
         {
-            if (_session?.World.ReadView().Dialogue is not null) CloseDialogue();
-            else Speak();
+            ResolvedIntent = FarmMovementIntent.FromAxes(direction.X, direction.Y)
+        };
+    }
+
+    private static FarmInputSignal Translate(InputEvent input)
+    {
+        List<string> matched = [];
+        foreach (string action in FarmInputActions.Routed)
+        {
+            if (!input.IsAction(action)) continue;
+            matched.Add(action);
         }
-        else if (input.IsActionPressed("give_wood")) Give();
-        else if (input.IsActionPressed("gather")) Gather();
-        else if (input.IsActionPressed("craft_rations")) Craft();
-        else return;
-        GetViewport().SetInputAsHandled();
+        return new FarmInputSignal(matched, input.IsPressed(), input.IsEcho());
+    }
+
+    /// <summary>Single entry for HUD, device and contextual requests; the router owns the context check.</summary>
+    private void Perform(FarmSemanticAction action)
+    {
+        if (!_input.Permits(Situation(), action)) return;
+        _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        if (action == FarmSemanticAction.TogglePause)
+        {
+            TogglePause();
+            return;
+        }
+        switch (action)
+        {
+            case FarmSemanticAction.Speak: Speak(); break;
+            case FarmSemanticAction.Give: Give(); break;
+            case FarmSemanticAction.Gather: Gather(); break;
+            case FarmSemanticAction.Craft: Craft(); break;
+            case FarmSemanticAction.CloseDialogue: CloseDialogue(); break;
+        }
     }
 
     private void Speak() => Submit(session => session.Speak(session.World.ReadView()), "You spoke with Wren.");
@@ -202,7 +241,8 @@ public partial class FarmGame : Node2D
 
     private void Submit(Func<FarmClientSession, Task<WorldActionReceipt>> submit, string description)
     {
-        if (_session is null || _action is not null || _paused || !_focused || _failed || _closing is not null) return;
+        // Context legality was decided by the router; this guard only prevents a second in-flight action.
+        if (_session is null || _action is not null) return;
         try
         {
             _actionDescription = description;
@@ -225,22 +265,25 @@ public partial class FarmGame : Node2D
 
     private void TogglePause()
     {
-        if (_failed || _closing is not null) return;
-        _paused = !_paused;
-        if (ChangeReadiness(!_paused && _focused))
-            _hud.Message(_paused ? "Paused. Press Esc to continue." : "Explore the farm and speak with Wren.");
+        if (!_input.TogglePause()) return;
+        if (ChangeReadiness(_input.WorldShouldRun))
+            _hud.Message(_input.Paused ? "Paused. Press Esc to continue." : "Explore the farm and speak with Wren.");
     }
 
     private void OnFocusEntered()
     {
-        _focused = true;
-        if (!_failed && _closing is null) ChangeReadiness(!_paused);
+        _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        _input.ReconcileHeldActions(FarmInputActions.Routed.Where(action => Input.IsActionPressed(action)));
+        if (_input.SetFocused(true)) ChangeReadiness(_input.WorldShouldRun);
     }
 
     private void OnFocusExited()
     {
-        _focused = false;
-        if (!_failed && _closing is null) ChangeReadiness(false);
+        if (_input.SetFocused(false))
+        {
+            _input.CaptureBoundary(Situation(), ReadWalkingInput());
+            ChangeReadiness(_input.WorldShouldRun);
+        }
     }
 
     private bool ChangeReadiness(bool ready)
@@ -252,6 +295,7 @@ public partial class FarmGame : Node2D
     private void Fail(string message)
     {
         _failed = true;
+        _input.MarkUnavailable();
         try { _session?.World.SetReady(false); }
         catch (InvalidOperationException) { /* A failed host already stopped accepting input. */ }
         _hud.Message(message);
@@ -261,6 +305,7 @@ public partial class FarmGame : Node2D
     private void BeginClose()
     {
         if (_closing is not null) return;
+        _input.MarkUnavailable();
         _hud.Message("Closing the farm…");
         _closing = CloseAsync();
     }

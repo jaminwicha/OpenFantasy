@@ -472,7 +472,10 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
     {
         SetMovement(null);
         Require(!game.IsLocallyPaused, "The probe tried to invert an existing pause.");
-        Press("pause_world");
+        // This journey deliberately saves an open conversation. Escape now dismisses dialogue;
+        // use the same explicit Pause button available to a player instead.
+        RecordInput("hud_pause");
+        game.GetChildren().OfType<FarmHud>().Single().GetNode<Button>("%Pause").EmitSignal(Button.SignalName.Pressed);
         Enter(Stage.Settling);
     }
 

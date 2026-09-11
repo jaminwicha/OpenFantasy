@@ -295,7 +295,9 @@ internal sealed partial class FarmConstructionProbe(FarmGame game, string report
     {
         SetMovement(null);
         Require(!game.IsLocallyPaused, "The probe tried to invert an existing pause.");
-        Press("pause_world");
+        // Keep the recovery fixture's dialogue open through the explicit player-facing Pause button.
+        RecordInput("hud_pause");
+        game.GetChildren().OfType<FarmHud>().Single().GetNode<Button>("%Pause").EmitSignal(Button.SignalName.Pressed);
         Enter(Stage.Settling);
     }
 

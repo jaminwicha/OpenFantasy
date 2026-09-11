@@ -23,12 +23,8 @@ internal sealed partial class FarmHud : CanvasLayer
     private Button _pause = null!;
     private bool _wasSpeaking;
 
-    internal event Action? TalkRequested;
-    internal event Action? GiveRequested;
-    internal event Action? GatherRequested;
-    internal event Action? CraftRequested;
-    internal event Action? CloseRequested;
-    internal event Action? PauseRequested;
+    /// <summary>Every button names a semantic action; the game's input router decides whether the context accepts it.</summary>
+    internal event Action<FarmSemanticAction>? ActionRequested;
 
     public override void _Ready()
     {
@@ -45,13 +41,15 @@ internal sealed partial class FarmHud : CanvasLayer
         _craft = GetNode<Button>("%Craft");
         _close = GetNode<Button>("%Close");
         _pause = GetNode<Button>("%Pause");
-        _talk.Pressed += () => TalkRequested?.Invoke();
-        _give.Pressed += () => GiveRequested?.Invoke();
-        _gather.Pressed += () => GatherRequested?.Invoke();
-        _craft.Pressed += () => CraftRequested?.Invoke();
-        _close.Pressed += () => CloseRequested?.Invoke();
-        _pause.Pressed += () => PauseRequested?.Invoke();
+        _talk.Pressed += () => Request(FarmSemanticAction.Speak);
+        _give.Pressed += () => Request(FarmSemanticAction.Give);
+        _gather.Pressed += () => Request(FarmSemanticAction.Gather);
+        _craft.Pressed += () => Request(FarmSemanticAction.Craft);
+        _close.Pressed += () => Request(FarmSemanticAction.CloseDialogue);
+        _pause.Pressed += () => Request(FarmSemanticAction.TogglePause);
     }
+
+    private void Request(FarmSemanticAction action) => ActionRequested?.Invoke(action);
 
     internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused)
     {
@@ -81,7 +79,7 @@ internal sealed partial class FarmHud : CanvasLayer
         _gather.Disabled = pending || paused || view.HasReadingHold || view.PlayerGatherEffort < 400
             || target is null || !FarmClientSession.CanReachGatherNode(view, target);
         _close.Disabled = pending || paused;
-        _pause.Text = paused ? "Resume  [Esc]" : "Pause  [Esc]";
+        _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
         LocalConstructionView? project = view.Construction.FirstOrDefault();
         _project.Visible = project is not null;
         _project.Text = project is null ? "" : DescribeProject(view, project, paused);

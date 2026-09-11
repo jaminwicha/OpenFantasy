@@ -57,13 +57,13 @@ def verify_report(mode, report):
     for event in report["Inputs"]:
         action = event["Action"]
         actions.append(action)
-        if action not in ("pause_world", "stop_movement") and (event["IsLocallyPaused"] or not event["IsWindowFocused"]):
+        if action not in ("pause_world", "hud_pause", "stop_movement") and (event["IsLocallyPaused"] or not event["IsWindowFocused"]):
             raise RuntimeError("An ordinary construction input bypassed readiness or focus")
     if mode in ("upgrade", "fresh"):
-        if actions.count("talk") != (3 if mode == "fresh" else 2) or actions.count("pause_world") != 2:
+        if actions.count("talk") != (3 if mode == "fresh" else 2) or (actions.count("pause_world") != 1 or actions.count("hud_pause") != 1):
             raise RuntimeError("The work interruption did not use ordinary E/E and pause/resume controls")
     elif mode == "finish":
-        if (actions.count("pause_world") != 2 or "walk_left" not in actions
+        if ((actions.count("pause_world") != 1 or actions.count("hud_pause") != 1) or "walk_left" not in actions
                 or "walk_up" not in actions or "walk_right" not in actions):
             raise RuntimeError("The completion stage did not exercise ordinary movement and pause controls")
     elif actions:
@@ -160,11 +160,11 @@ def verify_fresh_quests(report):
     for event in report["Inputs"]:
         action = event["Action"]
         actions.append(action)
-        if action not in ("pause_world", "stop_movement") and (event["IsLocallyPaused"] or not event["IsWindowFocused"]):
+        if action not in ("pause_world", "hud_pause", "stop_movement") and (event["IsLocallyPaused"] or not event["IsWindowFocused"]):
             raise RuntimeError("Fresh quest input bypassed ordinary readiness or focus")
     if (actions.count("gather") != 2 or actions.count("craft_rations") != 1
             or actions.count("talk") != 1 or actions.count("give_wood") != 3
-            or actions.count("pause_world") != 2 or not any(action.startswith("walk_") for action in actions)):
+            or (actions.count("pause_world") != 1 or actions.count("hud_pause") != 1) or not any(action.startswith("walk_") for action in actions)):
         raise RuntimeError("The fresh world did not use the exact actual gather/craft/talk/accept/deliver input journey")
     early = [event for event in report["Inputs"] if event["Action"] == "give_wood" and event["Stage"] == "OutsideQuestContext"]
     if len(early) != 1 or actions.index("give_wood") >= actions.index("gather"):
