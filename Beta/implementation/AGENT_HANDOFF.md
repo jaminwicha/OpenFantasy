@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-11. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-12. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -14,6 +14,18 @@ linked packets. The preserved specification is authoritative. Read only task-rel
 4. [Living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md) and
    [partial coverage](ui-management/COVERAGE.json) for interface work. These refine the baseline,
    without reprioritizing phases. Later owner naming instructions override source naming only.
+
+5. [Architecture reference](../Runtime/docs/architecture/README.md): timeless ownership, source
+   bindings and domain/design contracts. Read affected subjects, not the entire encyclopedia, for
+   an implementation task. The [maintenance hook](../AGENTS.md#architecture-reference-and-maintenance-hook)
+   requires same-change updates for architectural changes and a bounded source review at phase handoff.
+
+## Architecture documentation
+
+The [backfill record](architecture-reference/README.md) reconciles the reference with the retained
+runtime. It separates executable domain contracts, actual application bindings and full design
+obligations, especially history, Wait, local visibility and macro geography. Progress/evidence remain
+here and in packets; frozen specs remain preserved. Documentation coverage does not close game gates.
 
 ## Latest increment
 

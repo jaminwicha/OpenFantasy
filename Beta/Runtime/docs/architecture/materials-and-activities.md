@@ -1,0 +1,102 @@
+# Materials and activities
+
+## Domain contract: custody and provenance
+
+[Custody](../../src/OpenFantasy.Core/Custody) represents counted sources, source intervals, lots,
+custodians, storage and transfer plans. A lot is a claim on actual units, not just an item label and
+quantity. Splitting or moving stock preserves source coverage and exclusive custody. Reservations
+restrict use without creating another copy. Definition/version pins determine which material an
+interval represents.
+
+[Production](../../src/OpenFantasy.Core/Production) distinguishes live transformed output from retired
+ingredients and preserves input rights through transformations. Recipes declare typed mass/volume,
+output allocation, waste and byproducts. A crafted output cannot still leave its consumed ingredients
+spendable, and byproducts cannot create additional ancestral rights. Physical binding connects an
+item definition to material measures; counted units, milligrams and volume are not substituted by
+unchecked integer arithmetic.
+
+## Runtime binding: one connected activity chain
+
+| Operation | Concrete owner | Important checks and effects |
+| --- | --- | --- |
+| Gather | [GatherPlanner](../../src/OpenFantasy.Core/Gathering/GatherPlanner.cs) | Owned suitable tool, body/reach, node revision, earned effort, finite source and issued yield |
+| Craft | [InstantCraftPlanner](../../src/OpenFantasy.Core/Production/InstantCraftPlanner.cs) | Actual eligible input lots, protection/reservation, exact recipe, output allocation and retained consumption |
+| Accept/deliver | [DeliveryQuestPlanner](../../src/OpenFantasy.Core/Quests/DeliveryQuestPlanner.cs) | Addressed agreement, owned stock, real funding, durable participation, once-only delivery/reward |
+| Prepare reward | [ActorRewardPlanner](../../src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs) | Validate admitted progression/currency definitions and funding; calculate candidate state |
+| Build | [ConstructionPlanner](../../src/OpenFantasy.Core/Construction/ConstructionPlanner.cs) | Builder/tool/work eligibility, reserved material, physical access and atomic installed geometry |
+
+The farm admission connects finite oak/berry gathering, ration crafting and Wren's six-wood agreement.
+Its funded reward is 420 XP and 200 gil. Delivered wood remains reserved for Wren's seedling guard;
+200 accepted work actions complete an installed guard and three offcuts. These constants belong to
+the admitted content profile, not universal quest or construction rules.
+
+The installed guard is a reserved live transformed lot bound to a physical structure. Completion
+retires the consumed material and installs derived collision in one world commit; it does not create
+a display prop plus a separately spendable item. Blocked routes, missing tools or occupied geometry
+defer work. Dialogue holds and unreadiness grant no work. The construction recipe is rejected by the
+ordinary instant-craft path, preventing it from bypassing required labor.
+
+Exact action retries return their durable outcomes. Repeated delivery or completion cannot pay again.
+The quest participation checks and authority transaction/receipts enforce that once-only boundary;
+the pure reward planner does not persist acknowledgement or prevent repeated use on its own.
+Inventory projection and recipe inspection confer no permission to consume, equip or transfer stock.
+
+## Design contract: process graphs and learned powers
+
+Crafting, smithing, cooking, herbalism, alchemy, knitting, research and vehicle building share a typed
+process vocabulary: ingredient predicates, tools/catalysts, station, knowledge, worker roles, time,
+environment, outputs, quality, waste and interruption. Jobs reserve real stock, capacity and labor.
+Substitutions explain their properties; accepted discoveries become immutable versioned definitions.
+Graph depth, emitted work and affected targets are bounded; large effects use staged region work.
+
+Magic defines school, elemental facets, delivery, target rules, costs, concentration, duration,
+stacking and resistance. Illusion affects eligible perception; invocation produces declared effects.
+Spellbinding, weapon enhancement, lingering areas and researched combinations use owned effect
+instances. Removing an effect removes its own contribution, not unrelated later changes. Spell
+research can reuse process validation without pretending magical effects are material quantities.
+
+Fishing, hunting, writing, acting, acrobatics and other professions have concrete affordances and
+results. Skill use can satisfy puzzle or narrative predicates through ordinary actions. A skill name
+alone is insufficient integration; its resources, legality, learning and performance cues must agree.
+
+## Design contract: construction, condition and management
+
+Rooms, floors, subfloors, tunnels, sewers, castles, crypts and towns occupy real terrain and structures.
+Mining respects hardness, tools, labor, support and conserved material. Building or excavation can
+change access, fluids, hazards, ownership and encounters. Fortress management is a way to delegate
+ordinary jobs within that same world, not a separate simulation mode.
+
+Condition responds to elapsed exposure and discrete events. Wetness, corrosion, temperature, fatigue
+and damage have material-specific ownership and fractional continuation. A strike and subsequent
+burning may both contribute only under separately defined causes. Repair consumes work and material
+and restores declared function while retaining provenance and age. Appearance reflects these facts.
+
+Management policies define stock filters, minima/maxima, protected goods, capacity, priorities,
+shifts, roles and delegates. They generate feasible jobs under real mandates and commitments.
+Changed stock or labor causes revalidation, not duplicated orders or invented workers.
+
+## Design contract: markets, transport and care
+
+Markets price actual stock against local demand and supply evidence using versioned bounded rules.
+Quotes bind issuer, quantity, revision, fees and expiry; requesting a quote reserves nothing.
+Acceptance atomically validates allowance, goods, money and rights. Price updates follow economic
+events or scheduled intervals, never UI polling. Known prices and forecasts are scoped observations,
+not free global market truth.
+
+Caravans carry real cargo and travelers with routes, wages, guard obligations and risk. Buying in one
+town and selling in another is legitimate when transport and total costs permit a margin. Delays,
+theft, damage and losses affect actual contracts, relationships and prices.
+
+Vehicles are assemblies with sockets, parts, condition, propulsion, steering, capacity and crew roles.
+Boats, canoes, ships, carriages, chariots, tanks, sandships, tunneling craft, balloons and airships use
+appropriate profiles. Tunneling spends resources and excavates terrain; it cannot ignore solid space.
+Boarding, mounting and towing preserve one attachment relation, cargo owner and motion frame.
+
+Mounts, pets and familiars are actors with diet, fatigue, care, training, bond, injury and agency.
+Feeding consumes actual food; delegated care reserves an available caregiver and supplies. Dismissal
+and recall use routes, habitats or supported magical transit. Death, transformation and resummoning
+preserve identity and possessions rather than spawning a convenient replacement.
+
+See [time](time-and-encounters.md) for work/rest exposure,
+[world geometry](world-and-geography.md) for terrain intervention, and the
+[technical design](../../../spec-v1_1/TECHNICAL_DESIGN.md) for graph, economic and assembly rules.

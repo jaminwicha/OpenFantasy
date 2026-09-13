@@ -1,5 +1,9 @@
 # OpenFantasy runtime
 
+See the [architecture reference](docs/architecture/README.md) for state ownership, runtime bindings,
+data flow and enduring design contracts. [Documentation navigation](docs/README.md) separates that
+reference from build instructions, preserved specifications and implementation evidence.
+
 This is the retained development runtime: a portable C# core, shared durable hosting library, headless executable, Godot C# client and executable tests. The native farm now connects player/NPC movement, Wren's original opening dialogue, a finite six-wood handover and save/reopen through one authoritative world. Terrain, bodies, language, custody, dialogue and time persist together. The gathering profile additionally admits real source tools, finite oak/berry reserves, earned effort, depletion and advancing-step regrowth. The production profile turns actual ingredients into rations and recoverable offcuts, retains consumed raw/derived rights, and upgrades an existing gathered save on a verified copy. The quest profile adds source-derived class/stats/XP, finite gil wallets and Wren’s funded six-wood agreement. Acceptance, reserved delivery, 420 XP and 200 gil commit once and survive a preserved upgrade/reopen. The construction profile connects the delivered wood to Wren’s routed movement and 200 authoritative work steps, creating one small physical seedling guard and three offcuts. Work and material geometry persist together; reading holds and pause stop work. Automated native journeys qualify both fresh games and progressed-save continuations. Food use, general building, Wait combat and multiplayer remain pending. The [increment record](../implementation/p01/native-loop/WORLD_CONTRACT.md) and [preparation packet](../implementation/p00/README.md) distinguish measured behavior from full phase exits.
 
 ## Build and verify

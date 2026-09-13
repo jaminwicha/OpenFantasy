@@ -1,0 +1,54 @@
+{
+  "recorded_utc": "2026-09-13T02:19:17.170131+00:00",
+  "scope": "Architecture reference and upkeep doctrine; documentation checks only, no gameplay qualification",
+  "source_commit": "54f59ca6d49a39aa625ede8e34b1c033c5f1bdff",
+  "pre_edit_checkpoints": {
+    "OpenFantasy": {
+      "head": "54f59ca6d49a39aa625ede8e34b1c033c5f1bdff",
+      "checkpoint": "codex/checkpoint-architecture-reference-20260913T020610Z"
+    },
+    "GameDevAIEcosystem": {
+      "head": "3c276d035a017f94dcb7b09770662596cd660eab",
+      "checkpoint": "codex/checkpoint-architecture-reference-20260913T020610Z"
+    }
+  },
+  "reference": {
+    "documents": 11,
+    "word_count": 8020,
+    "local_links_checked": 123,
+    "anchors_checked": 0,
+    "missing_targets": [],
+    "source_factual_review": "Bounded independent review; three corrections and one scope clarification integrated and locally checked",
+    "document_sha256": {
+      "Beta/Runtime/docs/README.md": "bdc09fe5d847db8403306ef4a773dfb1e3843a5df717f9ba6ebb65dc39875dd4",
+      "Beta/Runtime/docs/architecture/README.md": "355761ff7da19472dec2147eb42f17b26c6ac5018f7e334daaa280bfd72abfed",
+      "Beta/Runtime/docs/architecture/actors-and-society.md": "440b0e5511d52d3e4533cceb3952fcbe88f0686486d51834e0bdd5cfe0958cb1",
+      "Beta/Runtime/docs/architecture/content-and-composition.md": "b394e6514d67f385a8f1827c447f62d4a0dcdf1b4d25e3b7183237572be26599",
+      "Beta/Runtime/docs/architecture/identity-and-determinism.md": "7e433b9b9f9c13073c1d6ef248af2ee0e927d1c6cc1b6138ba8b1d258302cab8",
+      "Beta/Runtime/docs/architecture/materials-and-activities.md": "5411333e2c0c6587223ab5474c8fc1c493e147b8d4f080b4fbf66ed6e30be7b5",
+      "Beta/Runtime/docs/architecture/persistence-and-history.md": "21f27b405cf4cb39fa4731b8e5061aaac00786916a9e85de5f0ca909175aec90",
+      "Beta/Runtime/docs/architecture/presentation-and-interaction.md": "f2ac404617fa25ed52db4e4874a4280ceee45617bd59346e0047a7f239c770bf",
+      "Beta/Runtime/docs/architecture/runtime-and-authority.md": "ca132fbeb163239e3fc98470e968fd1c5157b774f4ed04345a61d52649fca3e8",
+      "Beta/Runtime/docs/architecture/time-and-encounters.md": "94eb2e97418bb8a438e2dc5abf7b8833532a2bcf440d8621cba202c7421a378f",
+      "Beta/Runtime/docs/architecture/world-and-geography.md": "118230cfff505abb59bbf7dc603384a24e5f14f36ca70575ff29fc042cdb1967"
+    }
+  },
+  "preservation": {
+    "frozen_manifest_hashes_checked": 22,
+    "frozen_spec_tree_diff": "empty",
+    "runtime_source_tests_tools_toolchain_diff": "empty",
+    "predecessor_index_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "ecosystem": {
+    "commit": "4e83086068524e2255a0c478cf67826ddd6585a6",
+    "milestone": "codex/milestone-architecture-reference",
+    "manifest": "manifests/2026-09-12-architecture-reference-skills.json",
+    "installed_entrypoints_verified": 5,
+    "skill_validation": "Both quick_validate.py passes with isolated PyYAML 6.0.2",
+    "initial_validation_failure": "System Python ModuleNotFoundError: yaml; no skill validation completed on that attempt",
+    "backup_receipt": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/backups/20260913T021500Z-architecture-reference/receipt.json",
+    "restore_command": "python3 tools/sync_portable_skills.py rollback --receipt backups/20260913T021500Z-architecture-reference/receipt.json"
+  },
+  "runtime_tests": "not_run: no gameplay/source/toolchain changes",
+  "acceptance_gates_changed": false
+}
