@@ -161,6 +161,74 @@ admit navigation/collision, transfer fluids, establish climate or fulfill coasta
 Live realization requires its own retained terrain interpreter, complete macro dependency profile,
 source allocations and explicit world admission. It cannot overwrite the farm or an established place.
 
+## Domain contract: funded terrain material
+
+[TerrainMaterialDeposit](../../src/OpenFantasy.Core/Geography/TerrainMaterialDeposit.cs) binds one
+homogeneous solid slab to an exact network, mapping, macro column, item/physical calibration and
+pre-admitted counted source interval. Its horizontal support is the entire macro column footprint;
+depth is 1 through 1,024 cells below and including the natural surface. This finite support is
+independent of the retained or requested detail window. The slab's full source quantity equals
+`side × side × depth × unitsPerCell`. Each cell contains exactly 1,000,000,000 microlitres (one cubic
+metre). Total mass and volume must fit their existing unsigned-64 physical measures. Porosity,
+mixed ore, soil and stratigraphy require their own calibrated profiles, not implicit reinterpretation.
+
+The source interval is partitioned in Z/Y/X order across that full support. For offsets from the
+slab minimum, `ordinal = (z × side + y) × side + x`; each cell owns the canonical interval beginning
+at `source.Start + ordinal × unitsPerCell`. Inverse unit lookup uses the same finite support. Signed
+coordinate extrema and physical totals use checked arithmetic. Branch copies can preserve ancestral
+source partitions; that fact confers no cross-branch export rights or permission to attach two copies
+to one authority. Macro parcel identities remain references distinct from counted source identities.
+
+[TerrainMaterialState](../../src/OpenFantasy.Core/Geography/TerrainMaterialState.cs) composes a
+single immutable deposit, existing `CountedAuthorityState` and at most 4,096 active cell coordinates.
+Initial admission requires the entire budget already funded in coarse custody. Coarse and detailed
+custodians must have the same admitted owner. Scope, item/source pins and geographic/physical versus
+custody identity roles are checked. No genesis stock is issued here. Every funded unit must remain
+covered exactly once across coarse, detailed or other custodians; aggregate quantities are views of
+those lots, not a second ledger. Detailed lots fit one active cell each; coarse lots cannot intersect
+an active cell. A cell may retain no detailed stock after an actual transfer elsewhere.
+
+[TerrainMaterialPlanner](../../src/OpenFantasy.Core/Geography/TerrainMaterialPlanner.cs) accepts at
+most 256 unique cells per operation. Refinement requires substrate in an exactly pinned detail window
+and moves only currently coarse-owned intersections into detailed custody. Each selected cell needs
+some remaining coarse stock. Demotion moves only the selected cells' remaining detailed stock, then
+removes their active bindings; an empty active cell can demote without producing a lot. Adjacent coarse
+intervals can coalesce only with matching source, definition and custodian, no protection/reservation,
+and complete containment in the deposit. Gaps and unrelated protected stock remain unchanged.
+
+The [partition builder](../../src/OpenFantasy.Core/Geography/TerrainMaterialPartition.cs) creates one
+atomic custody candidate, preserving coverage across arbitrary interior splits. Selected protected or
+reserved lots reject the operation. Existing 256-custodian, 4,096-lot, 1,024-source and storage-capacity
+bounds remain in force; fragmentation rejects rather than truncating stock or raising a budget.
+Changed lots derive fresh identities from the accepted cause and canonical ordinal, checked against
+current roles and the caller's historical-occupancy predicate. Cell addresses are not reusable lot IDs.
+Unchanged lots retain their identities, revisions and metadata. Both representation storages and the
+custody root advance their revisions; other storages remain unchanged.
+Entity revisions cannot exceed that complete root revision, preventing a rewrite from rolling an
+entity's version backward.
+
+Each [plan](../../src/OpenFantasy.Core/Geography/TerrainMaterialPlan.cs) pins the complete input hash
+and revision. Application against changed state rejects. Applying an immutable plan is not a durable
+receipt or command retry protocol. The caller owns accepted-cause validation, historical identity
+completeness, authorization and atomic durable publication. `ReconcileInventory` binds a separately
+validated, advancing custody result with unchanged scope and admission; identical input is idempotent.
+It preserves active cells and rejects missing funded units. Consumed/transformed claims therefore need
+explicit production-retirement composition. A missing unit can never be recreated by refinement.
+
+[TerrainMaterialCodecV1](../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV1.cs) uses a
+5,710,000-byte standalone archive. The outer frame contains its tag, deposit, unchanged authority
+archive and canonical signed-64 X/Y/Z rows (24 bytes each, sorted Z/Y/X). The deposit contains exact dry
+terrain bytes, basin/index, depth, item identity/hash, existing physical-material definition bytes,
+units per cell, source ID/start/end and coarse/fine custodian IDs. Decode bounds each field, rederives
+terrain, validates coverage/bindings and compares canonical bytes. Cancellation returns no partial
+state. The `--inspect-terrain-materials` operator reads this archive without writing a world.
+
+This domain composition is separate from lived `TerrainRegionSnapshot`, local collision, the composed
+world profiles and their durable history. Multiple overlapping allocations require a world-owned
+allocation registry; separate standalone states are not independent minting authority. Geological
+events, fluid coupling, production retirement, mining labor/rights and world admission must compose
+with these invariants before a terrain intervention changes the playable world.
+
 ## Design contract: finite preparation and frontier streaming
 
 An almost infinite-feeling frontier is generated through bounded preparation, not an unbounded

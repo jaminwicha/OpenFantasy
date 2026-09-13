@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="1a1ef9e1-72e8-42f0-b0ef-7e1f2a49e11a" name="@mac 2026-09-13 00:14:49" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-13T00:14:49.8176240-05:00" queuing="2026-09-13T00:14:49.8176240-05:00" start="2026-09-13T00:14:47.4427770-05:00" finish="2026-09-13T00:14:49.8231540-05:00" />
+  <TestSettings name="default" id="26161f75-05df-4447-bc75-170a628ff39e">
+    <Deployment runDeploymentRoot="_mac_2026-09-13_00_14_49" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="cb47eb3a-6585-4826-9d17-b5d5b92fcd17" testId="3722350b-8c4e-132a-0026-591a6f87ff06" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.CanonicalStateRoundTripsBindingsAndRejectsCorruptOrTrailingData" computerName="mac" duration="00:00:00.0129406" startTime="2026-09-13T00:14:49.6992740-05:00" endTime="2026-09-13T00:14:49.7122790-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb47eb3a-6585-4826-9d17-b5d5b92fcd17" />
+    <UnitTestResult executionId="74d5859d-64a7-4722-8a71-0d017694fe71" testId="1968e4d2-dfe6-56b2-fe0e-5153521558f4" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.PlansPinCompleteStateAndRejectKnownOrHistoricallyOccupiedIdentities" computerName="mac" duration="00:00:00.0016670" startTime="2026-09-13T00:14:49.7506720-05:00" endTime="2026-09-13T00:14:49.7523560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="74d5859d-64a7-4722-8a71-0d017694fe71" />
+    <UnitTestResult executionId="2b85b675-7617-4900-adf8-33ba4ddc40bd" testId="7e828c08-1305-fb7d-e7e8-1c614742fbcc" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.FullyMovedCellCanDemoteWithoutRecreatingAClaim" computerName="mac" duration="00:00:00.0008416" startTime="2026-09-13T00:14:49.7495710-05:00" endTime="2026-09-13T00:14:49.7504330-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2b85b675-7617-4900-adf8-33ba4ddc40bd" />
+    <UnitTestResult executionId="9683d902-7b2c-4465-b412-abee19bff26f" testId="9789b6e3-726c-919b-841a-6097318e1e92" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.CellAndWindowOrderPreserveSourcePartitionsIncludingAcrossBranchCopies" computerName="mac" duration="00:00:00.0064135" startTime="2026-09-13T00:14:49.7399800-05:00" endTime="2026-09-13T00:14:49.7464240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9683d902-7b2c-4465-b412-abee19bff26f" />
+    <UnitTestResult executionId="e3b24e17-cd4e-419f-978c-77c0217f35f9" testId="e1889777-3421-1ac3-d1cf-b668bba7d6b4" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.RefinementMovesExactSpatialIntervalsWithoutMintingOrChangingTheInput" computerName="mac" duration="00:00:00.0964239" startTime="2026-09-13T00:14:49.5971780-05:00" endTime="2026-09-13T00:14:49.6988090-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3b24e17-cd4e-419f-978c-77c0217f35f9" />
+    <UnitTestResult executionId="3846036d-ac4b-4836-bfc4-268f1b9c4caf" testId="3a651d02-7d29-11fa-e910-40d2afd7945d" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.DefinitionHasFinitePhysicalCalibrationAndCanonicalWholeSlabIntervals" computerName="mac" duration="00:00:00.0025797" startTime="2026-09-13T00:14:49.7467140-05:00" endTime="2026-09-13T00:14:49.7493160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3846036d-ac4b-4836-bfc4-268f1b9c4caf" />
+    <UnitTestResult executionId="2024579a-ed21-4f5c-bb4e-75d8b40c58c0" testId="d0edc96c-fdd8-d445-9631-553e1edcb65f" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.MissingFundingBadCapacityProtectedStockAndForeignPinsReject" computerName="mac" duration="00:00:00.0013154" startTime="2026-09-13T00:14:49.7529680-05:00" endTime="2026-09-13T00:14:49.7543300-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2024579a-ed21-4f5c-bb4e-75d8b40c58c0" />
+    <UnitTestResult executionId="5b22bbf6-3867-4868-bce1-3a1528f8d5f9" testId="f79fb080-d823-927d-e1f4-e4fa59ee44af" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.PartialActualTransferThenDemotionAndRefinementNeverRestoresMovedUnits" computerName="mac" duration="00:00:00.0266367" startTime="2026-09-13T00:14:49.7129030-05:00" endTime="2026-09-13T00:14:49.7396010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b22bbf6-3867-4868-bce1-3a1528f8d5f9" />
+    <UnitTestResult executionId="9b841c95-ed03-451b-8dba-c5e2b5d7feb9" testId="927a4f55-2b45-1267-265b-0d599e9b0182" testName="OpenFantasy.Core.Tests.Worlds.AdmissionTests.TerrainMaterialCannotAliasAPrincipalOrBodyDefinition" computerName="mac" duration="00:00:00.0844999" startTime="2026-09-13T00:14:49.5971800-05:00" endTime="2026-09-13T00:14:49.6897780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b841c95-ed03-451b-8dba-c5e2b5d7feb9" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.FullyMovedCellCanDemoteWithoutRecreatingAClaim" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="7e828c08-1305-fb7d-e7e8-1c614742fbcc">
+      <Execution id="2b85b675-7617-4900-adf8-33ba4ddc40bd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="FullyMovedCellCanDemoteWithoutRecreatingAClaim" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.CellAndWindowOrderPreserveSourcePartitionsIncludingAcrossBranchCopies" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="9789b6e3-726c-919b-841a-6097318e1e92">
+      <Execution id="9683d902-7b2c-4465-b412-abee19bff26f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="CellAndWindowOrderPreserveSourcePartitionsIncludingAcrossBranchCopies" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.RefinementMovesExactSpatialIntervalsWithoutMintingOrChangingTheInput" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="e1889777-3421-1ac3-d1cf-b668bba7d6b4">
+      <Execution id="e3b24e17-cd4e-419f-978c-77c0217f35f9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="RefinementMovesExactSpatialIntervalsWithoutMintingOrChangingTheInput" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.PartialActualTransferThenDemotionAndRefinementNeverRestoresMovedUnits" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="f79fb080-d823-927d-e1f4-e4fa59ee44af">
+      <Execution id="5b22bbf6-3867-4868-bce1-3a1528f8d5f9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="PartialActualTransferThenDemotionAndRefinementNeverRestoresMovedUnits" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.PlansPinCompleteStateAndRejectKnownOrHistoricallyOccupiedIdentities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="1968e4d2-dfe6-56b2-fe0e-5153521558f4">
+      <Execution id="74d5859d-64a7-4722-8a71-0d017694fe71" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="PlansPinCompleteStateAndRejectKnownOrHistoricallyOccupiedIdentities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.MissingFundingBadCapacityProtectedStockAndForeignPinsReject" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="d0edc96c-fdd8-d445-9631-553e1edcb65f">
+      <Execution id="2024579a-ed21-4f5c-bb4e-75d8b40c58c0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="MissingFundingBadCapacityProtectedStockAndForeignPinsReject" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.CanonicalStateRoundTripsBindingsAndRejectsCorruptOrTrailingData" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="3722350b-8c4e-132a-0026-591a6f87ff06">
+      <Execution id="cb47eb3a-6585-4826-9d17-b5d5b92fcd17" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="CanonicalStateRoundTripsBindingsAndRejectsCorruptOrTrailingData" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests.DefinitionHasFinitePhysicalCalibrationAndCanonicalWholeSlabIntervals" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="3a651d02-7d29-11fa-e910-40d2afd7945d">
+      <Execution id="3846036d-ac4b-4836-bfc4-268f1b9c4caf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialTests" name="DefinitionHasFinitePhysicalCalibrationAndCanonicalWholeSlabIntervals" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Worlds.AdmissionTests.TerrainMaterialCannotAliasAPrincipalOrBodyDefinition" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="927a4f55-2b45-1267-265b-0d599e9b0182">
+      <Execution id="9b841c95-ed03-451b-8dba-c5e2b5d7feb9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Worlds.AdmissionTests" name="TerrainMaterialCannotAliasAPrincipalOrBodyDefinition" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="3722350b-8c4e-132a-0026-591a6f87ff06" executionId="cb47eb3a-6585-4826-9d17-b5d5b92fcd17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1968e4d2-dfe6-56b2-fe0e-5153521558f4" executionId="74d5859d-64a7-4722-8a71-0d017694fe71" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e828c08-1305-fb7d-e7e8-1c614742fbcc" executionId="2b85b675-7617-4900-adf8-33ba4ddc40bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9789b6e3-726c-919b-841a-6097318e1e92" executionId="9683d902-7b2c-4465-b412-abee19bff26f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1889777-3421-1ac3-d1cf-b668bba7d6b4" executionId="e3b24e17-cd4e-419f-978c-77c0217f35f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a651d02-7d29-11fa-e910-40d2afd7945d" executionId="3846036d-ac4b-4836-bfc4-268f1b9c4caf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0edc96c-fdd8-d445-9631-553e1edcb65f" executionId="2024579a-ed21-4f5c-bb4e-75d8b40c58c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f79fb080-d823-927d-e1f4-e4fa59ee44af" executionId="5b22bbf6-3867-4868-bce1-3a1528f8d5f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="927a4f55-2b45-1267-265b-0d599e9b0182" executionId="9b841c95-ed03-451b-8dba-c5e2b5d7feb9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.66]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.19]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.39]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.61]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

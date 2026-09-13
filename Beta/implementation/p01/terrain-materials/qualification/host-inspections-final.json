@@ -1,0 +1,440 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-13T05:25:45.041435+00:00",
+  "runs": [
+    {
+      "name": "partial-transfer",
+      "inputSha256": "0138829988acdf2e4899e68555c4b5ac4df009eea1dfb585902d2e7ae03e56b2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/partial-transfer.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-state-v1\",\"Scope\":\"standalone-funded-material\",\"ContentHash\":\"0138829988acdf2e4899e68555c4b5ac4df009eea1dfb585902d2e7ae03e56b2\",\"Revision\":4,\"SourceId\":\"007465727261696e0000000000000069\",\"Start\":10,\"End\":90,\"CoarseQuantity\":70,\"DetailedQuantity\":6,\"OtherQuantity\":4,\"ActiveCellCount\":1,\"LotCount\":3,\"Minimum\":{\"X\":-2,\"Y\":-2,\"Z\":-1},\"Maximum\":{\"X\":-1,\"Y\":-1,\"Z\":0},\"UnitsPerCell\":10,\"MassMilligrams\":20000000000,\"VolumeMicrolitres\":8000000000}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "0138829988acdf2e4899e68555c4b5ac4df009eea1dfb585902d2e7ae03e56b2",
+        "Revision": 4,
+        "Start": 10,
+        "End": 90,
+        "CoarseQuantity": 70,
+        "DetailedQuantity": 6,
+        "OtherQuantity": 4,
+        "ActiveCellCount": 1,
+        "LotCount": 3,
+        "UnitsPerCell": 10,
+        "MassMilligrams": 20000000000,
+        "VolumeMicrolitres": 8000000000,
+        "Minimum": {
+          "X": -2,
+          "Y": -2,
+          "Z": -1
+        },
+        "Maximum": {
+          "X": -1,
+          "Y": -1,
+          "Z": 0
+        }
+      }
+    },
+    {
+      "name": "lot-cap",
+      "inputSha256": "8ac3399932a9c226716198d01700c9fea6b8dc7fb941cf5db27bbcd38c028aca",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/lot-cap.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-state-v1\",\"Scope\":\"standalone-funded-material\",\"ContentHash\":\"8ac3399932a9c226716198d01700c9fea6b8dc7fb941cf5db27bbcd38c028aca\",\"Revision\":16,\"SourceId\":\"007465727261696e0000000000000069\",\"Start\":10,\"End\":81930,\"CoarseQuantity\":40970,\"DetailedQuantity\":40950,\"OtherQuantity\":0,\"ActiveCellCount\":4095,\"LotCount\":4096,\"Minimum\":{\"X\":-32,\"Y\":-32,\"Z\":-7},\"Maximum\":{\"X\":-1,\"Y\":-1,\"Z\":0},\"UnitsPerCell\":10,\"MassMilligrams\":20480000000000,\"VolumeMicrolitres\":8192000000000}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "8ac3399932a9c226716198d01700c9fea6b8dc7fb941cf5db27bbcd38c028aca",
+        "Revision": 16,
+        "Start": 10,
+        "End": 81930,
+        "CoarseQuantity": 40970,
+        "DetailedQuantity": 40950,
+        "OtherQuantity": 0,
+        "ActiveCellCount": 4095,
+        "LotCount": 4096,
+        "UnitsPerCell": 10,
+        "MassMilligrams": 20480000000000,
+        "VolumeMicrolitres": 8192000000000,
+        "Minimum": {
+          "X": -32,
+          "Y": -32,
+          "Z": -7
+        },
+        "Maximum": {
+          "X": -1,
+          "Y": -1,
+          "Z": 0
+        }
+      }
+    },
+    {
+      "name": "active-cap",
+      "inputSha256": "a4b12116dbecc51515ddd71bbe0742fbd518d72fe417daa0dbcfd4d86b0468b8",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/active-cap.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-state-v1\",\"Scope\":\"standalone-funded-material\",\"ContentHash\":\"a4b12116dbecc51515ddd71bbe0742fbd518d72fe417daa0dbcfd4d86b0468b8\",\"Revision\":16,\"SourceId\":\"007465727261696e0000000000000069\",\"Start\":10,\"End\":40970,\"CoarseQuantity\":0,\"DetailedQuantity\":40960,\"OtherQuantity\":0,\"ActiveCellCount\":4096,\"LotCount\":4096,\"Minimum\":{\"X\":-16,\"Y\":-16,\"Z\":-15},\"Maximum\":{\"X\":-1,\"Y\":-1,\"Z\":0},\"UnitsPerCell\":10,\"MassMilligrams\":10240000000000,\"VolumeMicrolitres\":4096000000000}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "a4b12116dbecc51515ddd71bbe0742fbd518d72fe417daa0dbcfd4d86b0468b8",
+        "Revision": 16,
+        "Start": 10,
+        "End": 40970,
+        "CoarseQuantity": 0,
+        "DetailedQuantity": 40960,
+        "OtherQuantity": 0,
+        "ActiveCellCount": 4096,
+        "LotCount": 4096,
+        "UnitsPerCell": 10,
+        "MassMilligrams": 10240000000000,
+        "VolumeMicrolitres": 4096000000000,
+        "Minimum": {
+          "X": -16,
+          "Y": -16,
+          "Z": -15
+        },
+        "Maximum": {
+          "X": -1,
+          "Y": -1,
+          "Z": 0
+        }
+      }
+    },
+    {
+      "name": "python-coarse",
+      "inputSha256": "7107aadb63d4964f2d6503f91882aec47ea69384323ccfd889fd9713aad6e693",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/python-coarse.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-state-v1\",\"Scope\":\"standalone-funded-material\",\"ContentHash\":\"7107aadb63d4964f2d6503f91882aec47ea69384323ccfd889fd9713aad6e693\",\"Revision\":0,\"SourceId\":\"007465727261696e0000000000000069\",\"Start\":10,\"End\":90,\"CoarseQuantity\":80,\"DetailedQuantity\":0,\"OtherQuantity\":0,\"ActiveCellCount\":0,\"LotCount\":1,\"Minimum\":{\"X\":-2,\"Y\":-2,\"Z\":-1},\"Maximum\":{\"X\":-1,\"Y\":-1,\"Z\":0},\"UnitsPerCell\":10,\"MassMilligrams\":20000000000,\"VolumeMicrolitres\":8000000000}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "7107aadb63d4964f2d6503f91882aec47ea69384323ccfd889fd9713aad6e693",
+        "Revision": 0,
+        "Start": 10,
+        "End": 90,
+        "CoarseQuantity": 80,
+        "DetailedQuantity": 0,
+        "OtherQuantity": 0,
+        "ActiveCellCount": 0,
+        "LotCount": 1,
+        "UnitsPerCell": 10,
+        "MassMilligrams": 20000000000,
+        "VolumeMicrolitres": 8000000000,
+        "Minimum": {
+          "X": -2,
+          "Y": -2,
+          "Z": -1
+        },
+        "Maximum": {
+          "X": -1,
+          "Y": -1,
+          "Z": 0
+        }
+      }
+    },
+    {
+      "name": "python-fragmented-coarse",
+      "inputSha256": "ccfce083992a43e9f9cc458499f0ae42cb4884c3baeb6b15ae35b677ac12a7ba",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/python-fragmented-coarse.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-state-v1\",\"Scope\":\"standalone-funded-material\",\"ContentHash\":\"ccfce083992a43e9f9cc458499f0ae42cb4884c3baeb6b15ae35b677ac12a7ba\",\"Revision\":0,\"SourceId\":\"007465727261696e0000000000000069\",\"Start\":10,\"End\":90,\"CoarseQuantity\":80,\"DetailedQuantity\":0,\"OtherQuantity\":0,\"ActiveCellCount\":0,\"LotCount\":2,\"Minimum\":{\"X\":-2,\"Y\":-2,\"Z\":-1},\"Maximum\":{\"X\":-1,\"Y\":-1,\"Z\":0},\"UnitsPerCell\":10,\"MassMilligrams\":20000000000,\"VolumeMicrolitres\":8000000000}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "ccfce083992a43e9f9cc458499f0ae42cb4884c3baeb6b15ae35b677ac12a7ba",
+        "Revision": 0,
+        "Start": 10,
+        "End": 90,
+        "CoarseQuantity": 80,
+        "DetailedQuantity": 0,
+        "OtherQuantity": 0,
+        "ActiveCellCount": 0,
+        "LotCount": 2,
+        "UnitsPerCell": 10,
+        "MassMilligrams": 20000000000,
+        "VolumeMicrolitres": 8000000000,
+        "Minimum": {
+          "X": -2,
+          "Y": -2,
+          "Z": -1
+        },
+        "Maximum": {
+          "X": -1,
+          "Y": -1,
+          "Z": 0
+        }
+      }
+    },
+    {
+      "name": "wrong-units",
+      "inputSha256": "555fbf01c20b35c4898e9325328defdf3a804dc56087fc47749c0163a5f2cf5a",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/wrong-units.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-budget",
+      "inputSha256": "bcf8766f968200f9ea8fe061b9a9009bd3fdd4a3b7377f00e78162d8d4fdc9d7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/wrong-budget.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-item-pin",
+      "inputSha256": "ac3bf6345505ada2ac9aef2267840da12f57c58ec5ed14e3b7575c037313353b",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/wrong-item-pin.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "mass-overflow",
+      "inputSha256": "ed379bc04de4c4616b5662339cf5a4717fe9ec601ed73b91c5959b0ee99e31eb",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/mass-overflow.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "physical-role-alias",
+      "inputSha256": "a9d1d84c5b749f5baa950f0a771c726cdf03b39516aa43a0f3b779631019b2f7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/physical-role-alias.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-cell-binding",
+      "inputSha256": "b181771c582697a7f0d970388a1cdd2266c6117dab957c46fa5af3f0d17a9a4f",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/missing-cell-binding.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown-contract",
+      "inputSha256": "f75fef8d06f5a655969fbc9a8e1b5f371f6deddda10d30f5faa2f708542e0a7b",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/unknown-contract.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A typed terrain field has the wrong length.\n",
+      "stderr": ""
+    },
+    {
+      "name": "duplicate-cell",
+      "inputSha256": "5d0a19ca2dc543c09a8a4a51d91d6b73447d7aa7e2972067422d1dc4a37aa373",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/duplicate-cell.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Material cells must be strictly canonical.\n",
+      "stderr": ""
+    },
+    {
+      "name": "active-coarse-overlap",
+      "inputSha256": "8fb1390714da6d0de4cb2c206a1a09c92eb588ce7e3a4061e4ec3ab6626fe12f",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/active-coarse-overlap.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "funded-source-hole",
+      "inputSha256": "99c4e95436caa58582ce14575d0e6f48bfe42b89f42baa377fe90a86986df8ec",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/funded-source-hole.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "fine-crosses-cell",
+      "inputSha256": "2c4356db5b07218920b25a2b0d7be151dd1716c054a886175a168398b2553609",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/fine-crosses-cell.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "future-lot-revision",
+      "inputSha256": "43aec903fad17ec12fef9f7f930e98faf8f336682f2af9789bf616ed245d45fc",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/future-lot-revision.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "future-storage-revision",
+      "inputSha256": "870ffe414b45ac2ee7b357a1925deaa6afd0bd4a5caf8011dac76f920f534aba",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/future-storage-revision.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material archive violates its calibration, funding or representation contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated-0",
+      "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/truncated-0.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated-11",
+      "inputSha256": "4f1ff29440e5184773727d2127fbd9ce8a8d09173a9844f8706de11b9ff3b483",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/truncated-11.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated-3523",
+      "inputSha256": "ff3e7c201eaa3f0e54c7038d966784faf7e347455533c9b0f460a5597e46042d",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/truncated-3523.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trailing",
+      "inputSha256": "ea74a21a96e196ce91b1cf4506c3d453f5f012a78bbe57ddfee3764773c56990",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/trailing.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "over-budget",
+      "inputSha256": "d773b2f606f217431c45974da4a19a3152c9c25fa33b9327809df63131e4a502",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/over-budget.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown-frame-version",
+      "inputSha256": "3a12ec502ab8bf448591813d875f0813b5558c796afca4669f7349612580593f",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-terrain-materials",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-materials/qualification/material-inspections-brnrj7ez/unknown-frame-version.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Standalone finite material archives: independent interval/outer-format oracle and real host. No world writes.",
+  "finishedUtc": "2026-09-13T05:26:01.971358+00:00"
+}

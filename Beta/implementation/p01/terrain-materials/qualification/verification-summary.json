@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "source_basis": "077b60d484b5d005c91fed5eb943864b6d52aa4d",
+  "scope": "Standalone funded terrain material representation, exact custody partitions, bounded archive and read-only host",
+  "managed_build": {
+    "warnings": 0,
+    "errors": 0,
+    "log": "build-final.log"
+  },
+  "tests": {
+    "core": {
+      "total": 628,
+      "executed": 628,
+      "passed": 628,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "hosting": {
+      "total": 329,
+      "executed": 329,
+      "passed": 329,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "total_passed": 957,
+  "added_material_tests": 21,
+  "real_host_inspections": 24,
+  "independent_valid_archive_checks": 5,
+  "independence": "Python interval/physical/outer-format oracle; two coarse archives independently encoded around exact retained terrain bytes. No independent full watershed reimplementation.",
+  "limits": {
+    "max_cells_per_plan": 256,
+    "max_active_cells": 4096,
+    "existing_max_lots": 4096,
+    "archive_bytes": 5710000
+  },
+  "review": "../critic-review.md",
+  "failed_attempts_retained": [
+    "test-first.log",
+    "focused-first.log",
+    "focused-final.log"
+  ],
+  "complete_verifier_run": false,
+  "native_rendering_run": false,
+  "live_world_or_mining_admission": false,
+  "phase_gate_closed": false,
+  "existing_thresholds_changed": false
+}

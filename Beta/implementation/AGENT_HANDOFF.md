@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-12. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-13. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -32,7 +32,23 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `41865ed`, preserved on `codex/milestone-watershed-terrain-mapping`.
+The [finite funded material increment](p01/terrain-materials/README.md) adds a standalone slab allocation
+over the existing counted authority. Whole-support intervals, physical calibration, exclusive coarse/
+detailed custody and exact remaining-stock demotion prevent detail changes from minting resources.
+Real partial/interior transfers stay moved after demotion and refinement. Protected/reserved stock,
+owner/pin/identity conflicts, source holes, stale plans, revision overflow and existing lot/capacity caps
+reject atomically. The bounded archive has a read-only real-host inspector and full-verifier wiring.
+The maintained architecture explains the pure trusted boundary, absence of durable/live-world binding,
+and required production-retirement, allocation-registry and historical identity composition.
+
+[Qualification](p01/terrain-materials/qualification/verification-summary.json) retains a clean full managed
+build and **957 tests (628 Core + 329 Hosting, zero skips)**, 21 added material tests, 24 final host
+inspections, independent Python interval/outer-format checks,
+4,096-lot/active-cell fixtures and bounded native critic closure. Initial missing APIs and test-analyzer
+failures remain recorded. Native rendering and the complete verifier are not part of this additive
+campaign. No gameplay, performance or phase gate closes. Commit/milestone follow in the ledger.
+
+Prior dry geometry code/evidence: `41865ed`, preserved on `codex/milestone-watershed-terrain-mapping`.
 
 [Dry terrain mapping](p01/terrain-mapping/README.md) derives exact local geometry and ancestral
 addresses from retained finite networks. Integer horizontal/vertical scales, elevation datum, negative
@@ -57,7 +73,8 @@ three. Its 919-test/native evidence describes that revision. [Network preparatio
 and byte-compatible. Development stays on `codex/runtime-foundation`.
 
 Next geography dependencies: complete bounded physical macro profiles (crust/history, climate/forcing,
-coast/reservoir/external budgets and material allocations) before dependent live terrain admission.
+coast/reservoir/external budgets), world-owned material allocations and retirement composition before
+dependent live terrain admission. The standalone funded slab is a dependency, not that full admission.
 Bind the retained local terrain interpreter and source partitions explicitly while preserving occupancy,
 construction, support, custody and history. Candidate geometry/ancestry cannot grant mining rights,
 create water or close the full preparation gate. Never reroll established facts or implicitly rewrite

@@ -15,6 +15,14 @@ spendable, and byproducts cannot create additional ancestral rights. Physical bi
 item definition to material measures; counted units, milligrams and volume are not substituted by
 unchecked integer arithmetic.
 
+[Funded terrain material](world-and-geography.md#domain-contract-funded-terrain-material) reuses this
+counted authority for an explicitly finite homogeneous slab. Detail changes partition existing source
+intervals between coarse and cell-bound custodians; quantities remain derived from actual lots. A
+transfer to another custodian remains owned there when detail is demoted. The standalone material
+state requires continuous coverage of its original interval, so transformed or retired inputs need a
+composition with the production provenance contract before they can participate. This representation
+planner grants neither mining labor nor extraction permission.
+
 ## Runtime binding: one connected activity chain
 
 | Operation | Concrete owner | Important checks and effects |

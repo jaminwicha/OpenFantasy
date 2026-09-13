@@ -104,7 +104,7 @@ public static class MaterialRecipeCodecV1
         return new MaterialCatalog(materials);
     }
 
-    private static MaterialDefinition DecodeMaterial(ReadOnlySpan<byte> bytes)
+    internal static MaterialDefinition DecodeMaterial(ReadOnlySpan<byte> bytes)
     {
         CanonicalProductionReader reader = new(bytes, MaximumMaterialByteLength, 9);
         reader.ExpectTag("production.material"u8);
