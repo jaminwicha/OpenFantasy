@@ -32,56 +32,48 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `163a7bb`, preserved on `codex/milestone-terrain-material-allocation`.
+The [shared material registry](p01/material-registry/README.md) composes 1–64 disjoint funded allocations
+under one counted inventory and one exact terrain basis. It rejects physical/source overlap, conflicting
+calibration, cross-allocation identity collisions and inconsistent custodian roles. Operations validate
+all allocations atomically; other allocations' active bindings and source attribution survive transfers,
+refinement and demotion. The global 4,096-cell budget includes empty active cells. A normalized archive
+stores geometry/custody once, and immutable network caches avoid macro copies per binding.
 
-The [finite funded material increment](p01/terrain-materials/README.md) adds a standalone slab allocation
-over the existing counted authority. Whole-support intervals, physical calibration, exclusive coarse/
-detailed custody and exact remaining-stock demotion prevent detail changes from minting resources.
-Real partial/interior transfers stay moved after demotion and refinement. Protected/reserved stock,
-owner/pin/identity conflicts, source holes, stale plans, revision overflow and existing lot/capacity caps
-reject atomically. The bounded archive has a read-only real-host inspector and full-verifier wiring.
-The maintained architecture explains the pure trusted boundary, absence of durable/live-world binding,
-and required production-retirement, allocation-registry and historical identity composition.
+[Qualification](p01/material-registry/qualification/verification-summary.json): clean managed build,
+**971 tests (642 Core + 329 Hosting, zero skips)**, 14 added registry tests, 26 registry plus 24 prior-material
+real-host inspections, independent interval/spatial-overlap checks and bounded native critic closure.
+The maximum network/64-allocation archive is 3,367,561 bytes; 63 additional bindings allocate 127,656
+bytes after cache initialization. This is a bounded allocation-shape check, not production latency or
+working-set qualification. Missing APIs, private test-helper access and the uncopied fixture failure
+remain retained; final test logs also retain macOS allocator diagnostics without attributing their cause.
+The complete verifier and native rendered journeys are not part of this additive campaign.
 
-[Qualification](p01/terrain-materials/qualification/verification-summary.json) retains a clean full managed
-build and **957 tests (628 Core + 329 Hosting, zero skips)**, 21 added material tests, 24 final host
-inspections, independent Python interval/outer-format checks,
-4,096-lot/active-cell fixtures and bounded native critic closure. Initial missing APIs and test-analyzer
-failures remain recorded. Native rendering and the complete verifier are not part of this additive
-campaign. No gameplay, performance or phase gate closes. The 139 architecture links, 22 frozen spec
-hashes and exact unrelated predecessor index are checked. Development stays on `codex/runtime-foundation`.
+The registry is standalone: durable world admission, allocation mutation/removal, retirement and
+cross-registry/global ownership remain explicit integrating obligations. It does not mint resources,
+enable playable mining, migrate saves or close any phase/game/feasibility gate. Timeless geography and
+material references are updated in the same change. Commit and milestone are recorded in the ledger.
 
-Prior dry geometry code/evidence: `41865ed`, preserved on `codex/milestone-watershed-terrain-mapping`.
+Prior dependencies remain preserved:
 
-[Dry terrain mapping](p01/terrain-mapping/README.md) derives exact local geometry and ancestral
-addresses from retained finite networks. Integer horizontal/vertical scales, elevation datum, negative
-floor partitioning and complete coverage checks define the mapping. X/Y/Z partitions, reversed queries
-and branch ancestry agree. Natural surfaces remain distinct from spill routing. Its separate immutable
-candidate/archive cannot masquerade as the existing stratified terrain interpreter or allocate material.
-The real read-only host inspector and full-verifier wiring are included; no default farm, world profile,
-old terrain/save codec or live-world terrain changes.
+- [Funded slabs](p01/terrain-materials/README.md), `163a7bb`, milestone
+  `codex/milestone-terrain-material-allocation`: exact full-support source partitioning, physical calibration,
+  remaining-stock demotion and v1 archive. Its 957-test/24-inspection evidence describes that checkpoint;
+  retained v1 bytes remain exact in the registry campaign.
+- [Dry terrain mapping](p01/terrain-mapping/README.md), `41865ed`, milestone
+  `codex/milestone-watershed-terrain-mapping`: exact network/scale/datum/window geometry and ancestral
+  addresses. It remains separate from the stratified terrain interpreter and cannot allocate material.
+- [Durable networks](p01/network-admission/README.md), `b2176e5`, milestone
+  `codex/milestone-watershed-network-persistence`: fresh profile seven preserves complete networks through
+  actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
+  `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-[Qualification](p01/terrain-mapping/qualification/verification-summary.json): full managed build, zero
-warnings/errors; **936 tests (607 Core + 329 Hosting, zero skips)**; 17 new mapping tests, six independent
-Python archives and 27 real host inspections including the maximum network/window. The bounded critic
-found no consequential defect. Initial missing APIs and cancellation-token analyzer failures remain
-retained. The timeless reference and 132 links are checked. This additive campaign does not include a
-complete verifier/native rendering run or close any gameplay, performance or phase acceptance gate.
-
-[Durable network admission](p01/network-admission/README.md), `b2176e5`, remains preserved on
-`codex/milestone-watershed-network-persistence`: explicit fresh profile seven retains networks through
-actions, construction, dialogue, real process-kill recovery and exact recorded history under schema
-three. Its 919-test/native evidence describes that revision. [Network preparation](p01/watershed-network/README.md),
-`23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved
-and byte-compatible. Development stays on `codex/runtime-foundation`.
-
-Next geography dependencies: complete bounded physical macro profiles (crust/history, climate/forcing,
-coast/reservoir/external budgets), world-owned material allocations and retirement composition before
-dependent live terrain admission. The standalone funded slab is a dependency, not that full admission.
-Bind the retained local terrain interpreter and source partitions explicitly while preserving occupancy,
-construction, support, custody and history. Candidate geometry/ancestry cannot grant mining rights,
-create water or close the full preparation gate. Never reroll established facts or implicitly rewrite
-lived saves. Follow the full P01/P02 plan and [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md).
+Next dependencies include Production retirement composition so actually processed raw material stays
+accounted for, and complete physical macro profiles (crust/history, climate/forcing, coast/reservoir/
+external budgets). Integrate complete allocation ownership and a retained local terrain interpreter
+before live terrain admission. Preserve occupancy, construction, support, custody and history; never
+reroll established facts, overwrite lived places or implicitly migrate saves. Follow the full P01/P02
+plan and [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md). Development remains on
+`codex/runtime-foundation`.
 
 ## Existing playable scope and prior evidence
 

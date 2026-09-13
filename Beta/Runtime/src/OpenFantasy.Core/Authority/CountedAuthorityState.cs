@@ -66,6 +66,7 @@ public sealed class CountedAuthorityState
     }
 
     public bool ContainsIdentity(EntityId identity) => _identities.Contains(identity);
+    internal bool ContainsIdentityMatching(Func<EntityId, bool> predicate) => _identities.ContainsMatching(predicate);
 
     internal bool AllowsTransfer(EntityId actorId, EntityId sourceCustodianId, EntityId destinationCustodianId) =>
         _policies.TryGetValue(sourceCustodianId, out CustodianAccessPolicy? source)

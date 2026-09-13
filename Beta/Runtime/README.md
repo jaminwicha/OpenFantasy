@@ -30,6 +30,14 @@ representation dependency, separate from live terrain admission or player mining
 uses `OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE` and `tools/check_terrain_materials.py` for independent
 interval checks, retained cap fixtures and malformed archives through the real read-only host.
 
+`OpenFantasy.Host --inspect-material-registry <material-registry.bin>` validates 1–64 disjoint funded
+allocations over one shared inventory. It rejects overlapping ground, reused source units, conflicting
+calibration and registry-wide identity collisions. The normalized archive stores terrain and custody
+once. The [registry contract](docs/architecture/world-and-geography.md#domain-contract-shared-material-allocation-registry)
+describes shared budgets and atomic validation. `tools/check_material_registry.py` consumes
+`OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE` fixtures through the full verifier. This domain composition is
+separate from playable mining, production retirement and durable world admission.
+
 This is the retained development runtime: a portable C# core, shared durable hosting library, headless executable, Godot C# client and executable tests. The native farm now connects player/NPC movement, Wren's original opening dialogue, a finite six-wood handover and save/reopen through one authoritative world. Terrain, bodies, language, custody, dialogue and time persist together. The gathering profile additionally admits real source tools, finite oak/berry reserves, earned effort, depletion and advancing-step regrowth. The production profile turns actual ingredients into rations and recoverable offcuts, retains consumed raw/derived rights, and upgrades an existing gathered save on a verified copy. The quest profile adds source-derived class/stats/XP, finite gil wallets and Wren’s funded six-wood agreement. Acceptance, reserved delivery, 420 XP and 200 gil commit once and survive a preserved upgrade/reopen. The construction profile connects the delivered wood to Wren’s routed movement and 200 authoritative work steps, creating one small physical seedling guard and three offcuts. Work and material geometry persist together; reading holds and pause stop work. Automated native journeys qualify both fresh games and progressed-save continuations. Food use, general building, Wait combat and multiplayer remain pending. The [increment record](../implementation/p01/native-loop/WORLD_CONTRACT.md) and [preparation packet](../implementation/p00/README.md) distinguish measured behavior from full phase exits.
 
 ## Build and verify

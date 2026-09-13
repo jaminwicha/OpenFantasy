@@ -23,6 +23,12 @@ state requires continuous coverage of its original interval, so transformed or r
 composition with the production provenance contract before they can participate. This representation
 planner grants neither mining labor nor extraction permission.
 
+The [shared allocation registry](world-and-geography.md#domain-contract-shared-material-allocation-registry)
+checks spatial and source exclusivity across multiple slabs while retaining one actual counted
+inventory. A transfer remains attributed to its original allocation's source interval even when the
+receiving storage is another allocation's coarse custodian. Shared detail and storage limits apply to
+all allocations together; successful validation of separate slab states alone cannot establish that.
+
 ## Runtime binding: one connected activity chain
 
 | Operation | Concrete owner | Important checks and effects |

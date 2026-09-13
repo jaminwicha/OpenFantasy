@@ -224,10 +224,69 @@ terrain, validates coverage/bindings and compares canonical bytes. Cancellation 
 state. The `--inspect-terrain-materials` operator reads this archive without writing a world.
 
 This domain composition is separate from lived `TerrainRegionSnapshot`, local collision, the composed
-world profiles and their durable history. Multiple overlapping allocations require a world-owned
-allocation registry; separate standalone states are not independent minting authority. Geological
+world profiles and their durable history. The finite registry below enforces shared allocation
+ownership within its admitted scope; separate standalone states are not independent minting authority. Geological
 events, fluid coupling, production retirement, mining labor/rights and world admission must compose
 with these invariants before a terrain intervention changes the playable world.
+
+## Domain contract: shared material allocation registry
+
+[TerrainMaterialRegistry](../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs) owns one
+exact prepared terrain basis, one `CountedAuthorityState` and 1 through 64 immutable
+[allocations](../../src/OpenFantasy.Core/Geography/TerrainMaterialAllocation.cs). Each allocation has a
+distinct identity and funded slab definition. Initial creation requires every allocated interval fully
+in coarse custody. All allocation views reference the same inventory object; source units are never
+copied into independent inventories. The registry is a bounded domain composition, not a second
+durable world authority or an implicit migration of existing saves.
+
+Allocations cannot intersect in physical support or reuse any interval of the same counted source.
+Adjacent source intervals can share one coarse lot. Definition checks use identity and content hashes:
+one counted item has one exact physical calibration, and a physical definition ID has one exact version.
+All definitions use the registry's exact terrain archive, including network, mapping and retained window.
+Individual refinement queries may use other windows of that same network and mapping. The deposit's
+full macro support remains authoritative even when it extends beyond the retained window.
+
+Coarse custodians may be shared, as may detailed custodians. A custodian cannot play both roles across
+allocations. Existing source, lot, capacity and owner constraints apply to the combined inventory.
+The 4,096-active-cell limit is shared across the entire registry, including empty active cells whose
+stock has moved elsewhere. A transfer into another allocation's custodian does not attach its source
+units to that allocation's cells. Those units remain attributed to their original source interval and
+count as other custody for the originating allocation; they are not part of the receiver's allocation.
+
+[TerrainMaterialRegistryPlanner](../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlanner.cs)
+delegates interval partitioning to the existing material planner. It adds every allocation and physical
+definition identity to the cause/spawn collision checks, together with shared macro/custody roles and
+the caller's historical-occupancy predicate. The selected operation creates one candidate inventory;
+every allocation is revalidated against it before publication. Unselected active-cell bindings remain
+unchanged. [Registry plans](../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlan.cs) pin the
+complete registry hash and revision, so another allocation changing invalidates a stale plan even when
+the selected slab alone appears unchanged. Reconciliation likewise validates one advancing custody
+result with unchanged admission across all allocations. It is not an authorization or receipt service.
+
+The immutable network owns a lazy content hash and a shared
+[material-role index](../../src/OpenFantasy.Core/Geography/WatershedMaterialIdentities.cs). These derived
+caches contain no mutable authority, generation randomness or accepted decisions. They do not change
+canonical bytes. Deposits query the shared index instead of copying the macro identity set. Binding
+validation probes the bounded inventory's identities against that index, avoiding a full network scan
+per slab. Cache initialization is thread-safe; lifetime follows the immutable network instance.
+
+[TerrainMaterialRegistryCodecV1](../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV1.cs)
+normalizes the archive into one terrain field, one unchanged authority field and an allocation list,
+following the `geography.terrain-material-registry.v1` tag. The total archive limit is 6,250,000 bytes;
+the allocation-list field is at most 640,000 bytes. Its big-endian unsigned-32 count precedes rows sorted
+by allocation identity. Each row contains a 16-byte ID, unsigned-32 binding-byte length, binding bytes,
+unsigned-32 active-cell count and signed-64 X/Y/Z triples in Z/Y/X order. The binding is the existing
+deposit's ordered fields without repeated terrain, under `geography.terrain-material-binding.v1`, with
+an 8,192-byte limit. Cumulative active-cell counts are checked before row allocation. Unknown versions,
+oversized counts/lengths, duplicate/decreasing identities, noncanonical cells and trailing bytes reject.
+Decode reconstructs shared objects, revalidates ownership and compares the complete canonical archive.
+The single-deposit v1 interpreter and its exact bytes remain supported.
+
+The privileged `--inspect-material-registry` operator reads normalized archives without writing a
+world. Dynamic allocation admission/removal, durable world ownership, retirement composition, regional
+streaming, cross-branch transfer and publication into lived terrain require explicit integrating
+contracts. Two separate registries do not establish disjoint ownership merely by each validating
+internally; their integrating world must own the complete allocation scope.
 
 ## Design contract: finite preparation and frontier streaming
 

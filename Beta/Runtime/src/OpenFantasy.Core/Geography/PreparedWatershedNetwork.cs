@@ -13,6 +13,8 @@ public sealed class PreparedWatershedNetwork
 
     private readonly Dictionary<EntityId, int[]> _contributions;
     private readonly Dictionary<(WatershedColumnReference, WatershedColumnReference), WatershedNetworkFace> _faces;
+    private readonly Lazy<ContentHash> _contentHash;
+    private readonly Lazy<WatershedMaterialIdentities> _materialIdentities;
 
     internal PreparedWatershedNetwork(EntityId provinceId, PreparedWatershed[] basins,
         WatershedOutletClosure[] closures, WatershedNetworkFace[] faces,
@@ -33,6 +35,8 @@ public sealed class PreparedWatershedNetwork
             _faces.Add((face.Second, face.First), face);
         }
         ColumnCount = basins.Sum(basin => basin.Columns.Count);
+        _contentHash = new(() => ContentHash.Compute(WatershedNetworkCodecV1.Encode(this)));
+        _materialIdentities = new(() => new WatershedMaterialIdentities(this));
     }
 
     public EntityId ProvinceId { get; }
@@ -62,5 +66,6 @@ public sealed class PreparedWatershedNetwork
         return face;
     }
 
-    public ContentHash ComputeContentHash() => ContentHash.Compute(WatershedNetworkCodecV1.Encode(this));
+    public ContentHash ComputeContentHash() => _contentHash.Value;
+    internal WatershedMaterialIdentities MaterialIdentities => _materialIdentities.Value;
 }

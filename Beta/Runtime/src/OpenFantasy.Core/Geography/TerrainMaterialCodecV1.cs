@@ -10,6 +10,7 @@ namespace OpenFantasy.Core.Geography;
 public static class TerrainMaterialCodecV1
 {
     public const int MaximumEncodedByteLength = 5_710_000;
+    internal const int MaximumBindingByteLength = 8192;
     private const int MaximumDepositByteLength = 4_110_000;
     private const int MaximumMaterialByteLength = 4096;
     private const int CellByteLength = 24;
@@ -77,18 +78,36 @@ public static class TerrainMaterialCodecV1
     }
 
     private static byte[] EncodeDeposit(TerrainMaterialDeposit deposit) =>
-        CanonicalEncodingV1.Frame("geography.terrain-material-deposit.v1", WatershedTerrainCodecV1.Encode(deposit.Terrain),
+        CanonicalEncodingV1.Frame("geography.terrain-material-deposit.v1",
+            new ReadOnlyMemory<byte>[] { WatershedTerrainCodecV1.Encode(deposit.Terrain) }.Concat(BindingFields(deposit)).ToArray());
+
+    internal static byte[] EncodeBinding(TerrainMaterialDeposit deposit) =>
+        CanonicalEncodingV1.Frame("geography.terrain-material-binding.v1", BindingFields(deposit));
+
+    private static ReadOnlyMemory<byte>[] BindingFields(TerrainMaterialDeposit deposit) => [
             deposit.MacroColumn.BasinId.ToByteArray(), CanonicalEncodingV1.Unsigned64((ulong)deposit.MacroColumn.ColumnIndex),
             CanonicalEncodingV1.Unsigned64((ulong)deposit.Depth), deposit.Material.Item.DefinitionId.ToByteArray(),
             Convert.FromHexString(deposit.Material.Item.Version.Value), MaterialRecipeCodecV1.EncodeMaterial(deposit.Material.Physical),
             CanonicalEncodingV1.Unsigned64(deposit.UnitsPerCell), deposit.Source.SourceId.ToByteArray(),
             CanonicalEncodingV1.Unsigned64(deposit.Source.Start), CanonicalEncodingV1.Unsigned64(deposit.Source.End),
-            deposit.CoarseCustodianId.ToByteArray(), deposit.FineCustodianId.ToByteArray());
+            deposit.CoarseCustodianId.ToByteArray(), deposit.FineCustodianId.ToByteArray()];
 
     private static TerrainMaterialDeposit DecodeDeposit(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken)
     {
         var reader = new CanonicalTerrainReader(bytes, MaximumDepositByteLength, 14, "geography.terrain-material-deposit.v1"u8);
         PreparedWatershedTerrain terrain = WatershedTerrainCodecV1.Decode(reader.ReadField(WatershedTerrainCodecV1.MaximumEncodedByteLength), cancellationToken);
+        return ReadBinding(ref reader, terrain);
+    }
+
+    internal static TerrainMaterialDeposit DecodeBinding(ReadOnlySpan<byte> bytes, PreparedWatershedTerrain terrain)
+    {
+        var reader = new CanonicalTerrainReader(bytes, MaximumBindingByteLength, 13,
+            "geography.terrain-material-binding.v1"u8);
+        return ReadBinding(ref reader, terrain);
+    }
+
+    private static TerrainMaterialDeposit ReadBinding(ref CanonicalTerrainReader reader, PreparedWatershedTerrain terrain)
+    {
         var column = new WatershedColumnReference(reader.ReadIdentity(), reader.ReadSmallInteger(WatershedBounds.MaximumColumns - 1));
         int depth = reader.ReadSmallInteger(TerrainMaterialDeposit.MaximumDepth);
         var item = new CountedItemDefinition(reader.ReadIdentity(), reader.ReadHash());

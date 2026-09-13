@@ -30,4 +30,5 @@ internal sealed class AuthorityIdentityRegistry
     }
 
     internal bool Contains(EntityId identity) => _kinds.ContainsKey(identity);
+    internal bool ContainsMatching(Func<EntityId, bool> predicate) => _kinds.Keys.Any(predicate);
 }

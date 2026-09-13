@@ -10,7 +10,6 @@ public sealed class TerrainMaterialDeposit
 {
     public const int MaximumDepth = 1024;
     public const ulong CellVolumeMicrolitres = 1_000_000_000;
-    private readonly HashSet<EntityId> _reservedIdentities = [];
 
     public TerrainMaterialDeposit(PreparedWatershedTerrain terrain, WatershedColumnReference macroColumn,
         int depth, ItemPhysicalBinding material, ulong unitsPerCell, SourceInterval source,
@@ -54,7 +53,10 @@ public sealed class TerrainMaterialDeposit
         TotalMass = material.Physical.MassPerUnit.Multiply(source.Quantity);
         TotalVolume = material.Physical.VolumePerUnit.Multiply(source.Quantity);
         NetworkHash = terrain.Network.ComputeContentHash();
-        ReserveMacroIdentities();
+        if (terrain.Network.MaterialIdentities.Contains(material.Physical.DefinitionId))
+        {
+            throw new ArgumentException("Physical calibration cannot alias macro geography.");
+        }
     }
 
     public PreparedWatershedTerrain Terrain { get; }
@@ -70,8 +72,8 @@ public sealed class TerrainMaterialDeposit
     public MassMilligrams TotalMass { get; }
     public VolumeMicrolitres TotalVolume { get; }
     internal ContentHash NetworkHash { get; }
-    internal IEnumerable<EntityId> ReservedIdentities => _reservedIdentities;
-    internal bool ReservesIdentity(EntityId identity) => _reservedIdentities.Contains(identity);
+    internal bool ReservesIdentity(EntityId identity) => Terrain.Network.MaterialIdentities.Contains(identity)
+        || identity == Material.Physical.DefinitionId;
 
     public SourceInterval IntervalFor(CellCoordinate cell)
     {
@@ -106,31 +108,4 @@ public sealed class TerrainMaterialDeposit
         return interval.SourceId == Source.SourceId && start < end ? new(Source.SourceId, start, end) : null;
     }
 
-    private void ReserveMacroIdentities()
-    {
-        _reservedIdentities.Add(Terrain.Scope.RealmId);
-        _reservedIdentities.Add(Terrain.Network.ProvinceId);
-        foreach (PreparedWatershed basin in Terrain.Network.Basins)
-        {
-            _reservedIdentities.Add(basin.BasinId);
-            _reservedIdentities.Add(basin.FormationId);
-            _reservedIdentities.Add(basin.Request.ExternalBoundaryId);
-            foreach (WatershedColumn column in basin.Columns)
-            {
-                _reservedIdentities.Add(column.SubstrateParcelId);
-            }
-            foreach (WatershedBoundary boundary in basin.Boundaries)
-            {
-                _reservedIdentities.Add(boundary.BoundaryId);
-            }
-        }
-        foreach (WatershedNetworkFace face in Terrain.Network.SharedFaces)
-        {
-            _reservedIdentities.Add(face.BoundaryId);
-        }
-        if (!_reservedIdentities.Add(Material.Physical.DefinitionId))
-        {
-            throw new ArgumentException("Physical calibration cannot alias macro geography.");
-        }
-    }
 }

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a03dddb8-2eca-4a9e-9275-f777944ba889" name="@mac 2026-09-13 13:45:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-13T13:45:47.9683300-05:00" queuing="2026-09-13T13:45:47.9683300-05:00" start="2026-09-13T13:45:45.9777040-05:00" finish="2026-09-13T13:45:48.9127090-05:00" />
+  <TestSettings name="default" id="0177bc63-c2f4-4763-8632-16b5afe6e040">
+    <Deployment runDeploymentRoot="_mac_2026-09-13_13_45_47" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="8f416e34-9a05-4323-a66f-b6e2b482ace1" testId="7eea3e36-e7c0-5006-c241-c1ba40863d26" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.AnotherAllocationsDistinctPhysicalDefinitionAlsoReservesItsCauseIdentity" computerName="mac" duration="00:00:00.0010199" startTime="2026-09-13T13:45:48.8387970-05:00" endTime="2026-09-13T13:45:48.8398410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8f416e34-9a05-4323-a66f-b6e2b482ace1" />
+    <UnitTestResult executionId="9d3b1af7-00ab-47da-9479-bc4c33ae6cdc" testId="86bb8e39-50ce-7511-aa2b-49bdba9359c5" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.CompleteRegistryPinsRejectAnotherAllocationChangingUnderAPlan" computerName="mac" duration="00:00:00.0014225" startTime="2026-09-13T13:45:48.8519110-05:00" endTime="2026-09-13T13:45:48.8534040-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9d3b1af7-00ab-47da-9479-bc4c33ae6cdc" />
+    <UnitTestResult executionId="27418ed9-4de0-45b6-9152-c8fe7e6c3a73" testId="bb900e06-101c-ef8b-04c5-ab2307c23b99" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.AllAllocationAndPhysicalIdentitiesGuardCausesAndNewLots" computerName="mac" duration="00:00:00.0006998" startTime="2026-09-13T13:45:48.8363750-05:00" endTime="2026-09-13T13:45:48.8370940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27418ed9-4de0-45b6-9152-c8fe7e6c3a73" />
+    <UnitTestResult executionId="5474e800-5255-4ba9-9e3d-0f3e80b140cc" testId="81ba5af5-75f9-2c02-91e3-7a8f242cab92" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.SharedInventorySplitsAndMergesTwoDisjointAllocationsWithoutDuplicatingFunding" computerName="mac" duration="00:00:00.0833900" startTime="2026-09-13T13:45:47.5954670-05:00" endTime="2026-09-13T13:45:47.6837700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5474e800-5255-4ba9-9e3d-0f3e80b140cc" />
+    <UnitTestResult executionId="a5f8fee0-230b-42b1-8ac7-3836cf0f0e36" testId="af5991b9-266c-e738-53c0-b67c3594bc54" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.InteriorTransferLeavesTheNeighbourAndUnrelatedProtectedStockUnchanged" computerName="mac" duration="00:00:00.0050091" startTime="2026-09-13T13:45:48.8310920-05:00" endTime="2026-09-13T13:45:48.8361440-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5f8fee0-230b-42b1-8ac7-3836cf0f0e36" />
+    <UnitTestResult executionId="bc366015-243a-40f9-b3ce-890bc9cabd36" testId="ee922e3b-eb40-5110-5c80-29cfa7dc4d70" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.OppositeCustodianRolesAndChangedAdmissionRejectAcrossAllAllocations" computerName="mac" duration="00:00:00.0010722" startTime="2026-09-13T13:45:48.8270140-05:00" endTime="2026-09-13T13:45:48.8281140-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bc366015-243a-40f9-b3ce-890bc9cabd36" />
+    <UnitTestResult executionId="8a2df3ff-3e21-4aac-81f1-d3783a9abf33" testId="90b2e428-00e2-9ce5-6790-3644e5785902" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.SingleDepositBytesFromThePreviousMilestoneRemainExact" computerName="mac" duration="00:00:00.0034864" startTime="2026-09-13T13:45:48.8401260-05:00" endTime="2026-09-13T13:45:48.8514020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a2df3ff-3e21-4aac-81f1-d3783a9abf33">
+      <Output>
+        <ErrorInfo>
+          <Message>System.IO.FileNotFoundException : Could not find file '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/Fixtures/terrain-material-state-v1-compatibility.json'.</Message>
+          <StackTrace>   at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.SingleDepositBytesFromThePreviousMilestoneRemainExact() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialRegistryBoundaryTests.cs:line 160
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0c634dd4-bb3f-4936-9156-bb5cbc3832ba" testId="0b781429-fda6-b769-dfa0-9e3e58dead3b" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaximumNetworkAnd64AllocationsShareMacroDataAndOneArchiveCopy" computerName="mac" duration="00:00:01.1109808" startTime="2026-09-13T13:45:47.7151570-05:00" endTime="2026-09-13T13:45:48.8261970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0c634dd4-bb3f-4936-9156-bb5cbc3832ba" />
+    <UnitTestResult executionId="9af3da41-069e-4eb4-9c2d-daaf3063ab6b" testId="212bd149-d77c-1efe-5c38-3317e1fe9bd7" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.OverlappingSpaceAndReusedSourceIntervalsRejectEvenWithDifferentAllocationIds" computerName="mac" duration="00:00:00.0005974" startTime="2026-09-13T13:45:48.8283500-05:00" endTime="2026-09-13T13:45:48.8289640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9af3da41-069e-4eb4-9c2d-daaf3063ab6b" />
+    <UnitTestResult executionId="87d8a4d3-6561-43fe-b98a-44b5af99399b" testId="d08a7f6e-2534-6480-68f5-729ffb7c64d2" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.GlobalActiveCellLimitIncludesEmptyCellsAcrossAllocations" computerName="mac" duration="00:00:00.0250292" startTime="2026-09-13T13:45:47.6896540-05:00" endTime="2026-09-13T13:45:47.7147940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87d8a4d3-6561-43fe-b98a-44b5af99399b" />
+    <UnitTestResult executionId="035cec3c-af99-4783-acd5-900f92019ded" testId="274b8013-f67e-43ac-b24c-77e7d5346920" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.DepositingIntoAnotherAllocationsCustodianCannotRebindTheSourceToItsCells" computerName="mac" duration="00:00:00.0012557" startTime="2026-09-13T13:45:48.8373120-05:00" endTime="2026-09-13T13:45:48.8385860-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="035cec3c-af99-4783-acd5-900f92019ded" />
+    <UnitTestResult executionId="10cde4fd-80f4-4113-b637-789b7844883f" testId="aad459dc-ab91-f426-4d0b-01ca5546d3b2" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.CanonicalOrderAndExactBindingPinsAreEnforced" computerName="mac" duration="00:00:00.0019272" startTime="2026-09-13T13:45:48.8540700-05:00" endTime="2026-09-13T13:45:48.8560450-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10cde4fd-80f4-4113-b637-789b7844883f" />
+    <UnitTestResult executionId="bc15edd5-269f-45c2-9fbf-ccc2d7fe7313" testId="04836abc-720f-487a-9323-8da0f81dbba9" testName="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.RegistryArchiveRoundTripsAndRejectsMalformedOrNoncanonicalData" computerName="mac" duration="00:00:00.0017210" startTime="2026-09-13T13:45:48.8291220-05:00" endTime="2026-09-13T13:45:48.8308600-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bc15edd5-269f-45c2-9fbf-ccc2d7fe7313" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.OppositeCustodianRolesAndChangedAdmissionRejectAcrossAllAllocations" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="ee922e3b-eb40-5110-5c80-29cfa7dc4d70">
+      <Execution id="bc366015-243a-40f9-b3ce-890bc9cabd36" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="OppositeCustodianRolesAndChangedAdmissionRejectAcrossAllAllocations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaximumNetworkAnd64AllocationsShareMacroDataAndOneArchiveCopy" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="0b781429-fda6-b769-dfa0-9e3e58dead3b">
+      <Execution id="0c634dd4-bb3f-4936-9156-bb5cbc3832ba" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="MaximumNetworkAnd64AllocationsShareMacroDataAndOneArchiveCopy" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.InteriorTransferLeavesTheNeighbourAndUnrelatedProtectedStockUnchanged" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="af5991b9-266c-e738-53c0-b67c3594bc54">
+      <Execution id="a5f8fee0-230b-42b1-8ac7-3836cf0f0e36" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="InteriorTransferLeavesTheNeighbourAndUnrelatedProtectedStockUnchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.OverlappingSpaceAndReusedSourceIntervalsRejectEvenWithDifferentAllocationIds" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="212bd149-d77c-1efe-5c38-3317e1fe9bd7">
+      <Execution id="9af3da41-069e-4eb4-9c2d-daaf3063ab6b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="OverlappingSpaceAndReusedSourceIntervalsRejectEvenWithDifferentAllocationIds" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.GlobalActiveCellLimitIncludesEmptyCellsAcrossAllocations" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="d08a7f6e-2534-6480-68f5-729ffb7c64d2">
+      <Execution id="87d8a4d3-6561-43fe-b98a-44b5af99399b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="GlobalActiveCellLimitIncludesEmptyCellsAcrossAllocations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.SingleDepositBytesFromThePreviousMilestoneRemainExact" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="90b2e428-00e2-9ce5-6790-3644e5785902">
+      <Execution id="8a2df3ff-3e21-4aac-81f1-d3783a9abf33" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="SingleDepositBytesFromThePreviousMilestoneRemainExact" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.AnotherAllocationsDistinctPhysicalDefinitionAlsoReservesItsCauseIdentity" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="7eea3e36-e7c0-5006-c241-c1ba40863d26">
+      <Execution id="8f416e34-9a05-4323-a66f-b6e2b482ace1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="AnotherAllocationsDistinctPhysicalDefinitionAlsoReservesItsCauseIdentity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.DepositingIntoAnotherAllocationsCustodianCannotRebindTheSourceToItsCells" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="274b8013-f67e-43ac-b24c-77e7d5346920">
+      <Execution id="035cec3c-af99-4783-acd5-900f92019ded" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="DepositingIntoAnotherAllocationsCustodianCannotRebindTheSourceToItsCells" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.RegistryArchiveRoundTripsAndRejectsMalformedOrNoncanonicalData" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="04836abc-720f-487a-9323-8da0f81dbba9">
+      <Execution id="bc15edd5-269f-45c2-9fbf-ccc2d7fe7313" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="RegistryArchiveRoundTripsAndRejectsMalformedOrNoncanonicalData" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.CompleteRegistryPinsRejectAnotherAllocationChangingUnderAPlan" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="86bb8e39-50ce-7511-aa2b-49bdba9359c5">
+      <Execution id="9d3b1af7-00ab-47da-9479-bc4c33ae6cdc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="CompleteRegistryPinsRejectAnotherAllocationChangingUnderAPlan" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.AllAllocationAndPhysicalIdentitiesGuardCausesAndNewLots" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="bb900e06-101c-ef8b-04c5-ab2307c23b99">
+      <Execution id="27418ed9-4de0-45b6-9152-c8fe7e6c3a73" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="AllAllocationAndPhysicalIdentitiesGuardCausesAndNewLots" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.CanonicalOrderAndExactBindingPinsAreEnforced" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="aad459dc-ab91-f426-4d0b-01ca5546d3b2">
+      <Execution id="10cde4fd-80f4-4113-b637-789b7844883f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="CanonicalOrderAndExactBindingPinsAreEnforced" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.SharedInventorySplitsAndMergesTwoDisjointAllocationsWithoutDuplicatingFunding" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="81ba5af5-75f9-2c02-91e3-7a8f242cab92">
+      <Execution id="5474e800-5255-4ba9-9e3d-0f3e80b140cc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests" name="SharedInventorySplitsAndMergesTwoDisjointAllocationsWithoutDuplicatingFunding" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7eea3e36-e7c0-5006-c241-c1ba40863d26" executionId="8f416e34-9a05-4323-a66f-b6e2b482ace1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="86bb8e39-50ce-7511-aa2b-49bdba9359c5" executionId="9d3b1af7-00ab-47da-9479-bc4c33ae6cdc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bb900e06-101c-ef8b-04c5-ab2307c23b99" executionId="27418ed9-4de0-45b6-9152-c8fe7e6c3a73" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="81ba5af5-75f9-2c02-91e3-7a8f242cab92" executionId="5474e800-5255-4ba9-9e3d-0f3e80b140cc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af5991b9-266c-e738-53c0-b67c3594bc54" executionId="a5f8fee0-230b-42b1-8ac7-3836cf0f0e36" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ee922e3b-eb40-5110-5c80-29cfa7dc4d70" executionId="bc366015-243a-40f9-b3ce-890bc9cabd36" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90b2e428-00e2-9ce5-6790-3644e5785902" executionId="8a2df3ff-3e21-4aac-81f1-d3783a9abf33" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b781429-fda6-b769-dfa0-9e3e58dead3b" executionId="0c634dd4-bb3f-4936-9156-bb5cbc3832ba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="212bd149-d77c-1efe-5c38-3317e1fe9bd7" executionId="9af3da41-069e-4eb4-9c2d-daaf3063ab6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d08a7f6e-2534-6480-68f5-729ffb7c64d2" executionId="87d8a4d3-6561-43fe-b98a-44b5af99399b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="274b8013-f67e-43ac-b24c-77e7d5346920" executionId="035cec3c-af99-4783-acd5-900f92019ded" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aad459dc-ab91-f426-4d0b-01ca5546d3b2" executionId="10cde4fd-80f4-4113-b637-789b7844883f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04836abc-720f-487a-9323-8da0f81dbba9" executionId="bc15edd5-269f-45c2-9fbf-ccc2d7fe7313" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="13" executed="13" passed="12" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.87]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.05]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.36]       System.IO.FileNotFoundException : Could not find file '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/Fixtures/terrain-material-state-v1-compatibility.json'.
+[xUnit.net 00:00:02.36]       Stack Trace:
+[xUnit.net 00:00:02.37]            at Interop.ThrowExceptionForIoErrno(ErrorInfo errorInfo, String path, Boolean isDirError)
+[xUnit.net 00:00:02.37]            at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String path, OpenFlags flags, Int32 mode, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+[xUnit.net 00:00:02.37]            at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+[xUnit.net 00:00:02.37]            at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+[xUnit.net 00:00:02.37]            at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Encoding encoding, Int32 bufferSize)
+[xUnit.net 00:00:02.37]            at System.IO.File.ReadAllText(String path, Encoding encoding)
+[xUnit.net 00:00:02.37]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialRegistryBoundaryTests.cs(160,0): at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.SingleDepositBytesFromThePreviousMilestoneRemainExact()
+[xUnit.net 00:00:02.37]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.37]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.38]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-13T13:45:48.8584500-05:00">
+        <Text>[xUnit.net 00:00:02.36]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.SingleDepositBytesFromThePreviousMilestoneRemainExact [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

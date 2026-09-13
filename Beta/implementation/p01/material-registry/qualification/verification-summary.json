@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "source_basis": "9181177c47876b09287fec900cf75ddcfbc95057",
+  "scope": "Shared finite material allocation registry over one counted inventory; no durable or live-world admission",
+  "managed_build": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "core": {
+      "total": 642,
+      "executed": 642,
+      "passed": 642,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "hosting": {
+      "total": 329,
+      "executed": 329,
+      "passed": 329,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "total_passed": 971,
+  "added_registry_tests": 14,
+  "new_real_host_inspections": 26,
+  "prior_material_real_host_inspections": 24,
+  "independent_registry_oracles": 5,
+  "boundaries": {
+    "allocations": 64,
+    "global_active_cells": 4096,
+    "archive_bytes": 6250000
+  },
+  "maximum_profile_measurement": {
+    "NetworkColumns": 65536,
+    "Allocations": 64,
+    "Additional63BindingAllocatedBytes": 127656,
+    "EncodedBytes": 3367561
+  },
+  "independence": "Python interval/space-overlap checks; independently encoded shared-coarse registry around exact retained terrain. No independent watershed generator.",
+  "legacy_single_deposit_v1_bytes_exact": true,
+  "review": "../critic-review.md",
+  "failures_retained": [
+    "test-first.log",
+    "boundaries-first.log",
+    "boundaries-corrected.log",
+    "boundaries-corrected/registry.trx"
+  ],
+  "other_diagnostics": "macOS MallocStackLogging diagnostics retained in final managed logs; assertions pass; cause not inferred.",
+  "complete_verifier_run": false,
+  "native_rendering_run": false,
+  "phase_gate_closed": false,
+  "thresholds_weakened": false
+}

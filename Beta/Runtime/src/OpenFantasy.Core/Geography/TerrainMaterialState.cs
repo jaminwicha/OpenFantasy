@@ -83,12 +83,9 @@ public sealed class TerrainMaterialState
         {
             throw new ArgumentException("Terrain material and custody must share world and branch.");
         }
-        foreach (EntityId identity in Deposit.ReservedIdentities)
+        if (Inventory.ContainsIdentityMatching(Deposit.ReservesIdentity))
         {
-            if (Inventory.ContainsIdentity(identity))
-            {
-                throw new ArgumentException("Material geography cannot alias custody identities.");
-            }
+            throw new ArgumentException("Material geography cannot alias custody identities.");
         }
         CustodianAccessPolicy? coarse = Inventory.Policies.SingleOrDefault(p => p.CustodianId == Deposit.CoarseCustodianId);
         CustodianAccessPolicy? fine = Inventory.Policies.SingleOrDefault(p => p.CustodianId == Deposit.FineCustodianId);

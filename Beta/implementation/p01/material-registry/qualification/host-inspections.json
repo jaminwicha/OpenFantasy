@@ -1,0 +1,920 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-13T19:11:39.427586+00:00",
+  "runs": [
+    {
+      "name": "two-allocations",
+      "inputSha256": "c2c6ab0000fb3f03e69b70a76c675a42d8f095939939f93f3c42c5521cf5a524",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/two-allocations.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v1\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"c2c6ab0000fb3f03e69b70a76c675a42d8f095939939f93f3c42c5521cf5a524\",\"Revision\":3,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":1,\"AllocatedQuantity\":160,\"CoarseQuantity\":150,\"DetailedQuantity\":10,\"OtherQuantity\":0,\"LotCount\":3,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":90,\"ActiveCells\":0},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":170,\"ActiveCells\":1}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 150,
+        "DetailedQuantity": 10,
+        "OtherQuantity": 0,
+        "AllocatedQuantity": 160,
+        "ActiveCellCount": 1,
+        "ContentHash": "c2c6ab0000fb3f03e69b70a76c675a42d8f095939939f93f3c42c5521cf5a524",
+        "Revision": 3,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 3,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 90,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 170,
+            "ActiveCells": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "interior-transfer",
+      "inputSha256": "58a4f81ed7531d4907cfc45151dc881dd004f8ab6b2bfdb93abbc631fb290532",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/interior-transfer.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v1\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"58a4f81ed7531d4907cfc45151dc881dd004f8ab6b2bfdb93abbc631fb290532\",\"Revision\":5,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":2,\"AllocatedQuantity\":160,\"CoarseQuantity\":140,\"DetailedQuantity\":18,\"OtherQuantity\":2,\"LotCount\":7,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":90,\"ActiveCells\":1},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":170,\"ActiveCells\":1}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 140,
+        "DetailedQuantity": 18,
+        "OtherQuantity": 2,
+        "AllocatedQuantity": 160,
+        "ActiveCellCount": 2,
+        "ContentHash": "58a4f81ed7531d4907cfc45151dc881dd004f8ab6b2bfdb93abbc631fb290532",
+        "Revision": 5,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 7,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 90,
+            "ActiveCells": 1
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 170,
+            "ActiveCells": 1
+          }
+        ]
+      }
+    },
+    {
+      "name": "maximum-network",
+      "inputSha256": "2af5b5da7d4488ecad722339519893d4f8c70df990ac206fbe2f322073bbe839",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/maximum-network.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v1\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"2af5b5da7d4488ecad722339519893d4f8c70df990ac206fbe2f322073bbe839\",\"Revision\":0,\"NetworkColumns\":65536,\"Allocations\":64,\"ActiveCellCount\":0,\"AllocatedQuantity\":640,\"CoarseQuantity\":640,\"DetailedQuantity\":0,\"OtherQuantity\":0,\"LotCount\":1,\"AllocationStates\":[{\"AllocationId\":\"7265676973747279000000000000012c\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":20,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000012d\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":20,\"End\":30,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000012e\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":30,\"End\":40,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000012f\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":40,\"End\":50,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000130\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":50,\"End\":60,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000131\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":60,\"End\":70,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000132\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":70,\"End\":80,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000133\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":80,\"End\":90,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000134\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":100,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000135\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":100,\"End\":110,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000136\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":110,\"End\":120,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000137\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":120,\"End\":130,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000138\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":130,\"End\":140,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000139\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":140,\"End\":150,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000013a\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":150,\"End\":160,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000013b\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":160,\"End\":170,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000013c\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":170,\"End\":180,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000013d\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":180,\"End\":190,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000013e\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":190,\"End\":200,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000013f\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":200,\"End\":210,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000140\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":210,\"End\":220,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000141\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":220,\"End\":230,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000142\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":230,\"End\":240,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000143\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":240,\"End\":250,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000144\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":250,\"End\":260,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000145\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":260,\"End\":270,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000146\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":270,\"End\":280,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000147\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":280,\"End\":290,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000148\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":290,\"End\":300,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000149\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":300,\"End\":310,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000014a\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":310,\"End\":320,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000014b\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":320,\"End\":330,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000014c\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":330,\"End\":340,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000014d\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":340,\"End\":350,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000014e\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":350,\"End\":360,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000014f\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":360,\"End\":370,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000150\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":370,\"End\":380,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000151\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":380,\"End\":390,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000152\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":390,\"End\":400,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000153\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":400,\"End\":410,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000154\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":410,\"End\":420,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000155\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":420,\"End\":430,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000156\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":430,\"End\":440,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000157\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":440,\"End\":450,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000158\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":450,\"End\":460,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000159\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":460,\"End\":470,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000015a\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":470,\"End\":480,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000015b\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":480,\"End\":490,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000015c\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":490,\"End\":500,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000015d\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":500,\"End\":510,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000015e\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":510,\"End\":520,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000015f\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":520,\"End\":530,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000160\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":530,\"End\":540,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000161\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":540,\"End\":550,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000162\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":550,\"End\":560,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000163\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":560,\"End\":570,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000164\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":570,\"End\":580,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000165\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":580,\"End\":590,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000166\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":590,\"End\":600,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000167\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":600,\"End\":610,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000168\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":610,\"End\":620,\"ActiveCells\":0},{\"AllocationId\":\"72656769737472790000000000000169\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":620,\"End\":630,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000016a\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":630,\"End\":640,\"ActiveCells\":0},{\"AllocationId\":\"7265676973747279000000000000016b\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":640,\"End\":650,\"ActiveCells\":0}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 640,
+        "DetailedQuantity": 0,
+        "OtherQuantity": 0,
+        "AllocatedQuantity": 640,
+        "ActiveCellCount": 0,
+        "ContentHash": "2af5b5da7d4488ecad722339519893d4f8c70df990ac206fbe2f322073bbe839",
+        "Revision": 0,
+        "Allocations": 64,
+        "NetworkColumns": 65536,
+        "LotCount": 1,
+        "AllocationStates": [
+          {
+            "AllocationId": "7265676973747279000000000000012c",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 20,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000012d",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 20,
+            "End": 30,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000012e",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 30,
+            "End": 40,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000012f",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 40,
+            "End": 50,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000130",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 50,
+            "End": 60,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000131",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 60,
+            "End": 70,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000132",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 70,
+            "End": 80,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000133",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 80,
+            "End": 90,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000134",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 100,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000135",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 100,
+            "End": 110,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000136",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 110,
+            "End": 120,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000137",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 120,
+            "End": 130,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000138",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 130,
+            "End": 140,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000139",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 140,
+            "End": 150,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000013a",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 150,
+            "End": 160,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000013b",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 160,
+            "End": 170,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000013c",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 170,
+            "End": 180,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000013d",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 180,
+            "End": 190,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000013e",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 190,
+            "End": 200,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000013f",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 200,
+            "End": 210,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000140",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 210,
+            "End": 220,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000141",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 220,
+            "End": 230,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000142",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 230,
+            "End": 240,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000143",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 240,
+            "End": 250,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000144",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 250,
+            "End": 260,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000145",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 260,
+            "End": 270,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000146",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 270,
+            "End": 280,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000147",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 280,
+            "End": 290,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000148",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 290,
+            "End": 300,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000149",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 300,
+            "End": 310,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000014a",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 310,
+            "End": 320,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000014b",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 320,
+            "End": 330,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000014c",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 330,
+            "End": 340,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000014d",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 340,
+            "End": 350,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000014e",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 350,
+            "End": 360,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000014f",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 360,
+            "End": 370,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000150",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 370,
+            "End": 380,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000151",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 380,
+            "End": 390,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000152",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 390,
+            "End": 400,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000153",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 400,
+            "End": 410,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000154",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 410,
+            "End": 420,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000155",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 420,
+            "End": 430,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000156",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 430,
+            "End": 440,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000157",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 440,
+            "End": 450,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000158",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 450,
+            "End": 460,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000159",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 460,
+            "End": 470,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000015a",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 470,
+            "End": 480,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000015b",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 480,
+            "End": 490,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000015c",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 490,
+            "End": 500,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000015d",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 500,
+            "End": 510,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000015e",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 510,
+            "End": 520,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000015f",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 520,
+            "End": 530,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000160",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 530,
+            "End": 540,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000161",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 540,
+            "End": 550,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000162",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 550,
+            "End": 560,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000163",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 560,
+            "End": 570,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000164",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 570,
+            "End": 580,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000165",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 580,
+            "End": 590,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000166",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 590,
+            "End": 600,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000167",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 600,
+            "End": 610,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000168",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 610,
+            "End": 620,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "72656769737472790000000000000169",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 620,
+            "End": 630,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000016a",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 630,
+            "End": 640,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "7265676973747279000000000000016b",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 640,
+            "End": 650,
+            "ActiveCells": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "active-cap",
+      "inputSha256": "31ba4cf35270c516d5a8ec95866887250b4f2247b194b22f3c0ec8394c23c10a",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/active-cap.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v1\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"31ba4cf35270c516d5a8ec95866887250b4f2247b194b22f3c0ec8394c23c10a\",\"Revision\":1,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":4096,\"AllocatedQuantity\":81920,\"CoarseQuantity\":40960,\"DetailedQuantity\":0,\"OtherQuantity\":40960,\"LotCount\":2,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":0,\"End\":40960,\"ActiveCells\":4096},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":40960,\"End\":81920,\"ActiveCells\":0}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 40960,
+        "DetailedQuantity": 0,
+        "OtherQuantity": 40960,
+        "AllocatedQuantity": 81920,
+        "ActiveCellCount": 4096,
+        "ContentHash": "31ba4cf35270c516d5a8ec95866887250b4f2247b194b22f3c0ec8394c23c10a",
+        "Revision": 1,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 2,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 0,
+            "End": 40960,
+            "ActiveCells": 4096
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 40960,
+            "End": 81920,
+            "ActiveCells": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "python-shared-coarse",
+      "inputSha256": "a5e5091fc180195992e88f46c41d2cce8385f65618b11aa1c72b1a030682e6c0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/python-shared-coarse.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v1\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"a5e5091fc180195992e88f46c41d2cce8385f65618b11aa1c72b1a030682e6c0\",\"Revision\":0,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":0,\"AllocatedQuantity\":160,\"CoarseQuantity\":160,\"DetailedQuantity\":0,\"OtherQuantity\":0,\"LotCount\":1,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":90,\"ActiveCells\":0},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":170,\"ActiveCells\":0}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 160,
+        "DetailedQuantity": 0,
+        "OtherQuantity": 0,
+        "AllocatedQuantity": 160,
+        "ActiveCellCount": 0,
+        "ContentHash": "a5e5091fc180195992e88f46c41d2cce8385f65618b11aa1c72b1a030682e6c0",
+        "Revision": 0,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 1,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 90,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 170,
+            "ActiveCells": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "reverse-allocations",
+      "inputSha256": "a12be51f8f15284a1eb0685ec3395391c62c52d76bdd721772c74e2351878ebe",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/reverse-allocations.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Allocation identities must be strictly increasing.\n",
+      "stderr": ""
+    },
+    {
+      "name": "duplicate-identity",
+      "inputSha256": "b4afdda6eade254ac4d9a6a11170adf48c2a91bd6037331958263add6b6e6968",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/duplicate-identity.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Allocation identities must be strictly increasing.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-active-binding",
+      "inputSha256": "65d817eb1ae7281e793faefdf034d875267788b92b85028926ae14884383681a",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/missing-active-binding.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "reuse-source",
+      "inputSha256": "c40d7b734d727a064b0e4a40c972641396b5baabf24a36e6a5c76ee587956f42",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/reuse-source.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "overlap-space",
+      "inputSha256": "1643516c8453ee3bd6c274003211017844307af74649919d848e1a648080b332",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/overlap-space.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "item-pin-conflict",
+      "inputSha256": "a1fee7581c5a41df02a9bfdc917fa3f55628827cba695d4235790e2f2e81feb8",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/item-pin-conflict.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "coarse-fine-role-conflict",
+      "inputSha256": "5ac339f27eff54d397bec2c5e75777cc07cdc03f9c79d311442e02d978edbbbf",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/coarse-fine-role-conflict.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "physical-version-conflict",
+      "inputSha256": "2e52371d5f137f0d527a3ac5c9c5043a72ee64cf6c5e32b3205ddaf436e4a053",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/physical-version-conflict.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "allocation-source-role-alias",
+      "inputSha256": "9d1e2ba308231e44809d99adebef18da3db5a9adcae1d4136c87db2c226c063b",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/allocation-source-role-alias.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "allocation-count-0",
+      "inputSha256": "e4f5c1c08a612b7fd75cdfe9d0d77fafce53e3b0736c159f60da839a15d16a5c",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/allocation-count-0.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "allocation-count-65",
+      "inputSha256": "d4d3c7325e90375187f74beee2254f6069a967a8e672d6fa94a99b484f11ba61",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/allocation-count-65.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry record count exceeds its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "allocation-count-4294967295",
+      "inputSha256": "80a48f8e25522efb4aa7967d79d3743df504cf1bc1fcbe1ca2349068b6e8799a",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/allocation-count-4294967295.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry record count exceeds its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "binding-size-limit",
+      "inputSha256": "a0d8d4ecf92000d2dd713d8ba2b3c312e05a3b87aac7ee0bfe0fd9151ee93a7f",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/binding-size-limit.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry record count exceeds its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-branch",
+      "inputSha256": "6a4bd44d65ba9f98de661e07e27401b2a039d1c2c49caf53dbf0313f6fbf5a1f",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/wrong-branch.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "global-cell-budget",
+      "inputSha256": "1592259e0e176247d0522d9f8354aa958087fb197e0ac70bfbc694fc435cd1b3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/global-cell-budget.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry record count exceeds its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncate-0",
+      "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/truncate-0.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncate-11",
+      "inputSha256": "4f1ff29440e5184773727d2127fbd9ce8a8d09173a9844f8706de11b9ff3b483",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/truncate-11.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncate-4281",
+      "inputSha256": "a147cc08a523e0347f9ce020f8c5b7a976ad02db3966ddacbc99dd6ac2dd97e4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/truncate-4281.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trailing",
+      "inputSha256": "46ef8b5aff6b7c284631785075ebd8e5b987f4b424d1d083bab082a100cdd6ad",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/trailing.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "oversized",
+      "inputSha256": "de36f386023e4bf90a397f3f45864f70e9468f07b33e1593d69e2be73c0bfb0c",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/oversized.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown-version",
+      "inputSha256": "eb5378f2c52d70f3f021a02b350cd7b3c48d35816fea780686795fa62e415749",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-registry",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/material-registry/qualification/registry-inspections-a78x1omn/unknown-version.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Read-only normalized material ownership, independent interval/spatial overlap oracle; no durable world mutation.",
+  "finishedUtc": "2026-09-13T19:11:50.901905+00:00"
+}
