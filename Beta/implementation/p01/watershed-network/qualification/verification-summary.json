@@ -1,0 +1,109 @@
+{
+  "recorded_utc": "2026-09-13T02:43:40.629614+00:00",
+  "scope": "Finite network preparation, canonical archives and real read-only host inspection; no new world admission, liquid or phase acceptance",
+  "source_base": "037dfc259b378f1fcd93ee26c15f649fff7d241c",
+  "pre_edit_checkpoint": "codex/checkpoint-watershed-network-20260913T022441Z",
+  "build": {
+    "solution": "OpenFantasy.sln",
+    "configuration": "Debug",
+    "warnings": 0,
+    "errors": 0,
+    "log": "build-final.log"
+  },
+  "tests": {
+    "core": {
+      "total": 581,
+      "executed": 581,
+      "passed": 581,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "hosting": {
+      "total": 323,
+      "executed": 323,
+      "passed": 323,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "network_cases": 21,
+  "independent_reference": {
+    "examples": 5,
+    "method": "Python member encoder/sorted frontier plus independent network per-origin path enumeration",
+    "existing_basin_vectors": "byte-identical"
+  },
+  "host_inspections": {
+    "passed": 23,
+    "report": "host-inspections.json",
+    "maximum_columns": 65536,
+    "maximum_fixture_shared_faces": 960,
+    "published_face_upper_bound": 2048
+  },
+  "review": "../REVIEW.md",
+  "retained_failures": [
+    "Initial xUnit1051 test cancellation diagnostics (summarized in README)",
+    "before-scope-fix.log: erroneous helper overload",
+    "scope-red.log and network-scope-red.trx: four reproduced scope-alias failures",
+    "build-wrong-solution-name.log: no build executed"
+  ],
+  "preservation": {
+    "frozen_hashes": 22,
+    "frozen_spec_diff": "empty",
+    "predecessor_index_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "legacy_snapshot_profiles": "unchanged; no new saved-world profile"
+  },
+  "architecture_reference_links": 127,
+  "python_syntax": "passed",
+  "naming_scan": "passed on changed/new runtime text files",
+  "runtime_input_sha256": {
+    "Beta/Runtime/README.md": "2bd9c80cf7f0c38683f60e729cd8022641e29ac1f652876f6f1428779cae2759",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "fb6f754d0b9188817de6007492cbe10b81cbffc3c26ce1d8168d97954e7fdcd2",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/PreparedWatershedNetwork.cs": "a595b0c5c2471cec2b2208347fd0bc504685ab6a47de2b15ce493ac4a0d37711",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedNetworkCodecV1.cs": "57e85fbe66b065893e84a0d758861e75ae74478e8a6e2bd81c9169188a7f72a9",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedNetworkFaces.cs": "5d21c39a0c13b5401893ea823585918211cb9bfc7d67ae71ea4c598d6ac3fede",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedNetworkInputs.cs": "c749e0431520c06be9b125da56d5f4f8cc491303d4004e0ab7abe20e276bd5f2",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedNetworkPlanner.cs": "d1e6b3445f24efdbfba1700f01c317066a2b533e7604d843affb0c8d2a11a85e",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedNetworkTopology.cs": "9d433a4081a1c25b7865927db58622de421067fe949ede5f446d0cd432f3f03b",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedOutletClosure.cs": "f879510ed8cdc57c93b1b80907979dec940079995f2e4573dd6e389d138918f9",
+    "Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs": "ef2d9554df95ca184c44a333d0d175153d381f815cfb3641ac37619969e06f15",
+    "Beta/Runtime/src/OpenFantasy.Host/WatershedNetworkOperator.cs": "e152f49b3e5b38b42b0c242abf48ce72210788222f758f11dfce6c44966cbf1f",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_watershed_network_vectors.py": "ea30569a010bec5c56f142ea72faa2ed8c8d046118c6634638342b4652f713ac",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_watershed_vectors.py": "24fd5d8d1b05755829dba32d19d3245570b770116b6f9aab6e32b9f295664f97",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/watershed-network-v1.json": "0eb15cd2a6060750df9fff3e3fa8d9120d3f7168649a20bb4973384a8378813a",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/WatershedNetworkTests.cs": "3ab52e1f204bafe677afe52c4112852e2d82973df80d9b6b104ad1e4672e8cd3",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj": "bed9cabf7e0b688a008773d5d0e110502e12d5f785abaee31de32d7e8100a84a",
+    "Beta/Runtime/tools/check_watershed_network.py": "e85d4de8ec578c323cfb800c10129e44bdbbbb2f4d10caac1bfd4081c793f5d9",
+    "Beta/Runtime/tools/verify.py": "bd51576753d0d3e06434df73d83ad8900de32cd0b851e5326bd6429325374200"
+  },
+  "not_run": [
+    "Complete tools/verify.py invocation",
+    "Godot import/render/gameplay/device journeys",
+    "Production latency/memory benchmarks",
+    "Exhaustive fuzzing",
+    "Cancellation during an active operation",
+    "New saved-world/network admission or fluid qualification"
+  ],
+  "acceptance_gates_closed": []
+}

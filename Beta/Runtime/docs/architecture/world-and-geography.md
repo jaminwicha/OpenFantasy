@@ -55,6 +55,47 @@ finite admitted root and its dependency inventories.
 The ordinary world step preserves those facts; the local terrain generator does not consume this
 preparation. Internal face consistency does not prove neighbouring-basin seams or water custody.
 
+## Domain contract: finite watershed networks
+
+[WatershedNetworkPlanner](../../src/OpenFantasy.Core/Geography/WatershedNetworkPlanner.cs) composes
+one through sixteen immutable basins under an explicit province ancestry identity. Members have
+the same world, branch, realm and seed. Scope roots and all admitted province, basin, formation,
+substrate, internal-face, outlet and composed-face roles are collision-checked. Columns cannot
+overlap. The composition does not mutate member bytes or their basin-local contribution counts.
+
+Each [outlet closure](../../src/OpenFantasy.Core/Geography/WatershedOutletClosure.cs) names either
+a receiving boundary column in a different basin or a terminal with finite contributing-column
+capacity. A link must be cardinally adjacent to the source outlet, and the receiver's spill route
+cannot exceed the source outlet's natural elevation. Missing, duplicate, unknown or cyclic closures
+reject the whole candidate. A low depression cannot bypass a higher downstream spill route.
+
+Composition orders basins by their dependency graph. Incoming counts enter the exact receiving
+column before local downstream accumulation. The
+[prepared network](../../src/OpenFantasy.Core/Geography/PreparedWatershedNetwork.cs) exposes separate
+composed counts; terminal totals equal the number of network columns exactly once, and each total
+must fit its declared capacity. These are finite topology witnesses, not water volume, discharge,
+storage, rainfall budgets or evidence of a physically realized ocean outlet.
+
+Every touching cross-basin face has one identity derived from world, realm, province and canonically
+ordered global endpoints. Identity is independent of branch and member enumeration. Queries from
+either side return the same face and endpoint elevations. Only nominated outlet links carry drainage;
+other touching faces do not imply a flow connection. An existing outlet boundary remains its own role
+and cannot double as a composed face. Signed address extrema never wrap into false neighbours.
+
+The envelope is 65,536 columns and 2,048 cross-basin faces. Preparation and decode support cancellation
+without returning a partial candidate. [WatershedNetworkCodecV1](../../src/OpenFantasy.Core/Geography/WatershedNetworkCodecV1.cs)
+uses a bounded four-million-byte archive containing scope, seed, province, exact member archives,
+canonical closures, composed counts and faces. Decode rederives the entire composition and compares
+every byte; unknown versions, noncanonical ordering, unused union fields and altered derived facts
+reject. Members and closures sort by basin identity; face rows sort by global Y/X origin, then positive
+X before positive Y. The nested basin interpreter retains its own unchanged format.
+
+`OpenFantasy.Host --inspect-watershed-network` provides a privileged read-only archive inspection.
+This standalone contract is not a `WorldSnapshot` component: it grants no live-world admission,
+terrain realization, liquid custody or historical migration. The saved profile-six binding retains
+one basin. World admission of a network must establish its complete identity and causal ownership
+alongside terrain and materials before dependent places can be published.
+
 ## Design contract: finite preparation and frontier streaming
 
 An almost infinite-feeling frontier is generated through bounded preparation, not an unbounded

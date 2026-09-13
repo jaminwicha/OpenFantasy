@@ -1,0 +1,43 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.31]     OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Decode_refuses_aliased_scope_even_when_the_nested_basin_is_valid_and_derived_bytes_match [FAIL]
+[xUnit.net 00:00:01.31]     OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(world: 11, branch: 11, realm: 13) [FAIL]
+[xUnit.net 00:00:01.31]     OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(world: 11, branch: 12, realm: 12) [FAIL]
+[xUnit.net 00:00:01.31]     OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(world: 11, branch: 12, realm: 11) [FAIL]
+  Failed OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Decode_refuses_aliased_scope_even_when_the_nested_basin_is_valid_and_derived_bytes_match [6 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.FormatException)
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Decode_refuses_aliased_scope_even_when_the_nested_basin_is_valid_and_derived_bytes_match() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/WatershedNetworkTests.cs:line 201
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(world: 11, branch: 11, realm: 13) [< 1 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.ArgumentException)
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(Int32 world, Int32 branch, Int32 realm) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/WatershedNetworkTests.cs:line 185
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(world: 11, branch: 12, realm: 12) [< 1 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.ArgumentException)
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(Int32 world, Int32 branch, Int32 realm) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/WatershedNetworkTests.cs:line 185
+   at InvokeStub_WatershedNetworkTests.Scope_roots_cannot_share_an_identity(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Failed OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(world: 11, branch: 12, realm: 11) [< 1 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.ArgumentException)
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Geography.WatershedNetworkTests.Scope_roots_cannot_share_an_identity(Int32 world, Int32 branch, Int32 realm) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/WatershedNetworkTests.cs:line 185
+   at InvokeStub_WatershedNetworkTests.Scope_roots_cannot_share_an_identity(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/watershed-network/qualification/network-scope-red.trx
+
+Failed!  - Failed:     4, Passed:    14, Skipped:     0, Total:    18, Duration: 1 s - OpenFantasy.Core.Tests.dll (net8.0)

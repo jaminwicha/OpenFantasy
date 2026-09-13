@@ -33,6 +33,7 @@ def main():
                DOTNET_CLI_TELEMETRY_OPTOUT="1", DOTNET_NOLOGO="1")
     env["PATH"] = str(dotnet.parent) + os.pathsep + env.get("PATH", "")
     env["OPENFANTASY_WATERSHED_EVIDENCE"] = str(test_results / "watershed-fixture")
+    env["OPENFANTASY_WATERSHED_NETWORK_EVIDENCE"] = str(test_results / "watershed-network-fixture")
     report = dict(startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   scope="Local core/hosting tests, durable counted authority and Godot binding smoke",
                   status="running", namingScanRequested=bool(args.forbidden_token), steps=[])
@@ -89,6 +90,7 @@ def main():
                                    ("production-v1", "production"), ("actors-v1", "actor"),
                                    ("observations-v1", "observation"), ("language-v1", "language"),
                                    ("authority-v1", "authority"), ("terrain-v1", "terrain"), ("watershed-v1", "watershed"),
+                                   ("watershed-network-v1", "watershed_network"),
                                    ("world-actions-v1", "world_action"), ("world-receipts-v1", "world_receipt"),
                                    ("gathering-v1", "gathering"), ("production-ledger-v1", "production_ledger"),
                                    ("world-production-v1", "world_production")):
@@ -126,6 +128,9 @@ def main():
             "--dotnet", dotnet, "--fixture", test_results / "watershed-fixture",
             "--output", artifacts / "watershed-world.json"])
         inspection_report = artifacts / "contract-inspections.json"
+        run("watershed-network-inspections", [sys.executable, root / "tools/check_watershed_network.py",
+            "--dotnet", dotnet, "--maximum-fixture", test_results / "watershed-network-fixture",
+            "--output", artifacts / "watershed-network.json"])
         run("host-contract-inspections", [sys.executable, root / "tools/check_contract_inspections.py",
             "--dotnet", dotnet, "--output", inspection_report])
         report["contractInspections"] = json.loads(inspection_report.read_text())

@@ -14,8 +14,8 @@ def i64(n): return struct.pack('>q', n)
 def identity(n): return n.to_bytes(16, 'big')
 
 
-def example(name, x, y, width, depth, base, relief, outlet, seed=4):
-    world, branch, realm, seed_bytes, external = [identity(n) for n in [1, 2, 3, seed, 5]]
+def example(name, x, y, width, depth, base, relief, outlet, seed=4, external_boundary=5, branch_id=2):
+    world, branch, realm, seed_bytes, external = [identity(n) for n in [1, branch_id, 3, seed, external_boundary]]
     bounds = frame('geography.watershed.bounds.v1', i64(x), i64(y), u64(width), u64(depth))
     rules = frame('geography.watershed.rules.v1', i64(base), u64(relief))
     context = frame('geography.watershed.context.v1', world, realm, seed_bytes, bounds, rules, u64(outlet), external)
