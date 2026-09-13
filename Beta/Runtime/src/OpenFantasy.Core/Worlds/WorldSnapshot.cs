@@ -23,16 +23,19 @@ public sealed class WorldSnapshot
         IEnumerable<WorldResident> residents, ContentHash admissionVersion, WorldInstant calendar,
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues = null,
         GatheringSnapshot? gathering = null, ProductionSnapshot? production = null,
-        ProgressionSnapshot? progression = null, QuestSnapshot? quests = null, ConstructionSnapshot? construction = null, PreparedWatershed? watershed = null)
+        ProgressionSnapshot? progression = null, QuestSnapshot? quests = null, ConstructionSnapshot? construction = null,
+        PreparedWatershed? watershed = null, PreparedWatershedNetwork? watershedNetwork = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, null)
     {
     }
 
     private WorldSnapshot(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, ContentHash admissionVersion, WorldInstant calendar,
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues, GatheringSnapshot? gathering,
-        ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction, PreparedWatershed? watershed, WorldIdentityIndex? previous)
+        ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests,
+        ConstructionSnapshot? construction, PreparedWatershed? watershed, PreparedWatershedNetwork? watershedNetwork,
+        WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -89,7 +92,12 @@ public sealed class WorldSnapshot
         Quests = quests;
         Construction = construction;
         Watershed = watershed;
-        if (watershed is not null && construction is null)
+        WatershedNetwork = watershedNetwork;
+        if (watershed is not null && watershedNetwork is not null)
+        {
+            throw new ArgumentException("A world cannot independently own both a single basin and a watershed network.");
+        }
+        if ((watershed is not null || watershedNetwork is not null) && construction is null)
         {
             throw new ArgumentException("The watershed world profile requires its complete construction basis.");
         }
@@ -124,7 +132,9 @@ public sealed class WorldSnapshot
     public QuestSnapshot? Quests { get; }
     public ConstructionSnapshot? Construction { get; }
     public PreparedWatershed? Watershed { get; }
-    public ushort ProfileVersion => Watershed is not null ? (ushort)6 : Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
+    public PreparedWatershedNetwork? WatershedNetwork { get; }
+    public ushort ProfileVersion => WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
+        : Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
         : Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;
     public WorldIdentityIndex IdentityIndex { get; }
     public ContentHash ContentHash => ContentHash.Compute(WorldSnapshotCodec.Encode(this));
@@ -137,5 +147,5 @@ public sealed class WorldSnapshot
         IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production,
         ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction = null) =>
         new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, WatershedNetwork, IdentityIndex);
 }

@@ -1,0 +1,541 @@
+{
+  "scope": "local structural diagnostics and source-packet bytes",
+  "status": "passed",
+  "cases": [
+    {
+      "name": "canonical command",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"command-v1\",\"Scope\":\"structural-validation\",\"ContentHash\":\"8e9b8264a79502364f65320acc0fcf83c8d1ea9a8306bc700807db1c6b864360\",\"CommandId\":\"00000000000000000000000000000001\",\"PrincipalId\":\"00000000000000000000000000000002\",\"OriginSessionId\":\"00000000000000000000000000000003\",\"WorldId\":\"00000000000000000000000000000005\",\"BranchId\":\"00000000000000000000000000000006\",\"ControlledActorId\":\"00000000000000000000000000000004\",\"ExpectedRevisionCount\":3,\"Intent\":{\"Kind\":\"transfer-lot\",\"LotId\":\"00000000000000000000000000000007\",\"SourceCustodianId\":\"00000000000000000000000000000008\",\"DestinationCustodianId\":\"00000000000000000000000000000009\",\"Quantity\":7}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown protocol",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The contract version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown envelope type",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame tag is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: short identity",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: An identity must contain exactly sixteen bytes.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: short protocol integer",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: An integer must contain exactly eight bytes.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown payload type",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame tag is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown payload version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The contract version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: zero transfer quantity",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Transfer fields violate payload invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: same custodians",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Transfer fields violate payload invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: duplicate payload field",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame contains unexpected fields.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: duplicate envelope field",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame contains unexpected fields.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: repeated revision target",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Expected revision owners must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unsorted revisions",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Expected revision owners must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown revision kind",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The revision owner kind is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: wrong branch revision",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Command fields violate envelope invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown revision set version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The contract version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown nested canonical version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The canonical encoding version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: too many revisions",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: trailing outer bytes",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Bytes remain after the frame's last field.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: trailing nested bytes",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Bytes remain after the frame's last field.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: invalid magic",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame magic is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unknown canonical version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The canonical encoding version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unbounded field count",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command: unbounded tag length",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The field exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "command byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Inspection input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "empty command",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame header is incomplete.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing file",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Could not find file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-inspection-591lo5d0/absent.bin'.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown arguments",
+      "expectedExit": 2,
+      "exitCode": 2,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\n       OpenFantasy.Host --inspect-command <command.bin>\n       OpenFantasy.Host --inspect-custody <snapshot.bin>\n       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>\n       OpenFantasy.Host --create-world <world.sqlite> <genesis.bin>\n       OpenFantasy.Host --inspect-world <world.sqlite>\n       OpenFantasy.Host --inspect-recorded-world <composed-world.sqlite> <commit-revision>\n       OpenFantasy.Host --inspect-watershed <prepared-basin.bin>\n       OpenFantasy.Host --inspect-watershed-network <prepared-network.bin>\n       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>\n       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>\n       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>\n       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>\nThese commands require exclusive local database access; they do not authenticate network clients.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing argument",
+      "expectedExit": 2,
+      "exitCode": 2,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\n       OpenFantasy.Host --inspect-command <command.bin>\n       OpenFantasy.Host --inspect-custody <snapshot.bin>\n       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>\n       OpenFantasy.Host --create-world <world.sqlite> <genesis.bin>\n       OpenFantasy.Host --inspect-world <world.sqlite>\n       OpenFantasy.Host --inspect-recorded-world <composed-world.sqlite> <commit-revision>\n       OpenFantasy.Host --inspect-watershed <prepared-basin.bin>\n       OpenFantasy.Host --inspect-watershed-network <prepared-network.bin>\n       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>\n       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>\n       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>\n       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>\nThese commands require exclusive local database access; they do not authenticate network clients.\n",
+      "stderr": ""
+    },
+    {
+      "name": "usage",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation\n       OpenFantasy.Host --inspect-command <command.bin>\n       OpenFantasy.Host --inspect-custody <snapshot.bin>\n       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>\n       OpenFantasy.Host --create-world <world.sqlite> <genesis.bin>\n       OpenFantasy.Host --inspect-world <world.sqlite>\n       OpenFantasy.Host --inspect-recorded-world <composed-world.sqlite> <commit-revision>\n       OpenFantasy.Host --inspect-watershed <prepared-basin.bin>\n       OpenFantasy.Host --inspect-watershed-network <prepared-network.bin>\n       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>\n       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>\n       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>\n       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>\nThese commands require exclusive local database access; they do not authenticate network clients.\n",
+      "stderr": ""
+    },
+    {
+      "name": "watershed: negative-grid",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-preparation-v1\",\"Scope\":\"finite-macro-candidate\",\"ContentHash\":\"ef1f8a1715ab53d5b66cdca15ee9f41f6e11ae0a027a85bf7ef98578be53d502\",\"BasinId\":\"5f929d75194e52eb634da857e2b6321a\",\"FormationId\":\"0ab147a988d84ba7fd34d4e8437cdc2b\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"ExternalBoundaryId\":\"00000000000000000000000000000005\",\"ColumnCount\":20,\"SharedBoundaryCount\":31,\"OutletIndex\":2,\"OutletElevation\":2,\"OutletContributingColumns\":20}\n",
+      "stderr": ""
+    },
+    {
+      "name": "watershed: flat-plateau",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-preparation-v1\",\"Scope\":\"finite-macro-candidate\",\"ContentHash\":\"38be5932f058fb25b0be68056b7e1cacedad537bcb18f802eac9217fba4735e7\",\"BasinId\":\"0e317825c0ce7c08e84a41b2411f93ea\",\"FormationId\":\"b035af8dedcdc018fc6ad44cdeb56b93\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"ExternalBoundaryId\":\"00000000000000000000000000000005\",\"ColumnCount\":9,\"SharedBoundaryCount\":12,\"OutletIndex\":8,\"OutletElevation\":0,\"OutletContributingColumns\":9}\n",
+      "stderr": ""
+    },
+    {
+      "name": "watershed: single-column",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-preparation-v1\",\"Scope\":\"finite-macro-candidate\",\"ContentHash\":\"f463ce2963809aba027421ebd61e2dd324e97b206e710b108ecc2202d3ec6e8e\",\"BasinId\":\"35ebe7a5a6d54338dc48aeb88af7e9db\",\"FormationId\":\"78ef3e8a2472d7afbf603d3b3e93a7c9\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"ExternalBoundaryId\":\"00000000000000000000000000000005\",\"ColumnCount\":4,\"SharedBoundaryCount\":3,\"OutletIndex\":0,\"OutletElevation\":2,\"OutletContributingColumns\":4}\n",
+      "stderr": ""
+    },
+    {
+      "name": "watershed: signed-boundary",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-preparation-v1\",\"Scope\":\"finite-macro-candidate\",\"ContentHash\":\"7c7141f74fd9d9bc846bd4ce683f3a0a4ab9ca4799eb81d3eaf225e54b309ad1\",\"BasinId\":\"fd3347c017035f929731d62331485289\",\"FormationId\":\"f89223eef67a1d7134cc20aff6c22117\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"ExternalBoundaryId\":\"00000000000000000000000000000005\",\"ColumnCount\":1,\"SharedBoundaryCount\":0,\"OutletIndex\":0,\"OutletElevation\":-9223372036854775808,\"OutletContributingColumns\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "watershed corrupted derivation",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The prepared watershed differs from its pinned derivation.\n",
+      "stderr": ""
+    },
+    {
+      "name": "watershed byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Watershed input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "canonical custody",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"counted-custody-v1\",\"Scope\":\"snapshot-invariants\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"Revision\":8,\"ContentHash\":\"18edd76451e185c066687b29bed26e5fbb1896346f264fc4ebb6287d46393c53\",\"CustodianCount\":2,\"LotCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: magic",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame magic is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: canonical version",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The canonical encoding version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: root field count",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: root tag",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame tag is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: short identity",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: An identity must contain exactly sixteen bytes.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: short revision",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: An integer must contain exactly eight bytes.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: trailing root byte",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Bytes remain after the frame's last field.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: extra root field",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: unsorted storage",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Custodian identities must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: duplicate storage",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Custodian identities must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: storage count limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: lot count limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame field count is outside its limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: short hash",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Definition versions require exactly 32 hash bytes.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: reservation width",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: A reservation must be absent or one complete identity.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: unknown protection",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The lot carries unsupported protection bits.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: protection truncation alias",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The lot carries unsupported protection bits.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: empty claim",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The lot violates its source or designation invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: reversed claim",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The lot violates its source or designation invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: unknown custodian",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The snapshot violates custody invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: lot storage identity collision",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The snapshot violates custody invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: short lot tag",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame tag is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: capacity exceeded",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The snapshot violates custody invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: overlapping claims",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The snapshot violates custody invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: inconsistent source unit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The snapshot violates custody invariants.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: unsorted lots",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Lot identities must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: duplicate lots",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Lot identities must be unique and strictly sorted.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody: declared impossible root length",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The field exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "custody byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Inspection input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "canonical package",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"package-manifest-v1\",\"Scope\":\"manifest-and-payload-bytes\",\"PackageId\":\"openfantasy.rules\",\"Version\":\"8f117323c992f89b3ce96cde6147b8ea33ad950a1ce6d547b870f8e9d3f051e9\",\"PayloadHash\":\"c476d9d972ae156b02d7886380ff2683bfa454741831dc143c2b87c00c8e5299\",\"PayloadBytes\":50,\"Dependencies\":[]}\n",
+      "stderr": ""
+    },
+    {
+      "name": "package hash mismatch",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The package payload differs from its pinned hash.\n",
+      "stderr": ""
+    },
+    {
+      "name": "payload byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Inspection input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated manifest",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Expected depth to be zero at the end of the JSON payload. There is an open JSON object or array that should be closed. LineNumber: 0 | BytePositionInLine: 1.\n",
+      "stderr": ""
+    },
+    {
+      "name": "manifest byte limit",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Inspection input exceeds its byte limit.\n",
+      "stderr": ""
+    },
+    {
+      "name": "duplicate metadata",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Unknown or duplicate manifest field: schemaVersion\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown schema",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Unsupported package manifest schema.\n",
+      "stderr": ""
+    },
+    {
+      "name": "invalid namespace",
+      "expectedExit": 1,
+      "exitCode": 1,
+      "stdout": "Inspection failed: Each package namespace segment starts with a lowercase ASCII letter. (Parameter 'value')\n",
+      "stderr": ""
+    },
+    {
+      "name": "retained source package",
+      "expectedExit": 0,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"package-manifest-v1\",\"Scope\":\"manifest-and-payload-bytes\",\"PackageId\":\"openfantasy.aldermere\",\"Version\":\"f12d99ce96e598be881dfb0d9da187e2b4372667a631f23991623b58c5210e88\",\"PayloadHash\":\"d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582\",\"PayloadBytes\":30136,\"Dependencies\":[]}\n",
+      "stderr": ""
+    }
+  ],
+  "retainedPacket": {
+    "fileCount": 52,
+    "counts": {
+      "selectedRoots": 31,
+      "retainedStructuredRecords": 49,
+      "retainedCodeDefinitions": 2,
+      "typedEdges": 171,
+      "retainedAssets": 29,
+      "retainedSourceFiles": 48,
+      "totalInventoriedStructuredRecords": 532,
+      "totalInventoriedCodeDefinitions": 10,
+      "totalInventoriedFiles": 201,
+      "totalInventoriedDocumentHeadings": 187
+    },
+    "packageVersion": "f12d99ce96e598be881dfb0d9da187e2b4372667a631f23991623b58c5210e88",
+    "payloadHash": "d9630158849e2936d8b45d1f858347e62ac1af4e3a53d4837dac90bfb5338582"
+  }
+}

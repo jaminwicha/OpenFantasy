@@ -24,8 +24,8 @@ public static class WorldAdmissionValidator
         }
         TerrainIdentityLayer terrain = previous is not null && previous.Terrain.Matches(world.Space.Regions)
             ? previous.Terrain : ReadTerrain(world.Space.Regions);
-        WatershedIdentityLayer watershed = previous is not null && previous.Watershed.Matches(world.Watershed, terrain)
-            ? previous.Watershed : new WatershedIdentityLayer(world.Watershed, terrain);
+        WatershedIdentityLayer watershed = previous is not null && previous.Watershed.Matches(world.Watershed, world.WatershedNetwork, terrain)
+            ? previous.Watershed : new WatershedIdentityLayer(world.Watershed, world.WatershedNetwork, terrain);
         watershed.ValidateScope(world.Space.Scope);
         var admission = new Admission(world, terrain, watershed);
         admission.ReadInventory();

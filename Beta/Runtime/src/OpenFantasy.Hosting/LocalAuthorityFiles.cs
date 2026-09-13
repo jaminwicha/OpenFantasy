@@ -23,6 +23,9 @@ public static class LocalAuthorityFiles
     public static PreparedWatershed ReadWatershed(string path) =>
         WatershedCodecV1.Decode(Read(path, WatershedCodecV1.MaximumEncodedByteLength));
 
+    public static PreparedWatershedNetwork ReadWatershedNetwork(string path) =>
+        WatershedNetworkCodecV1.Decode(Read(path, WatershedNetworkCodecV1.MaximumEncodedByteLength));
+
     private static byte[] Read(string path, int maximum)
     {
         using FileStream stream = File.OpenRead(path);

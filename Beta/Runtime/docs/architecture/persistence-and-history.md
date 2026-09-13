@@ -40,17 +40,33 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 4 | Production plus progression, currency and delivery quests |
 | 5 | Quest world plus construction, installed material and derived collision |
 | 6 | Complete construction world plus one immutable prepared watershed |
+| 7 | Complete construction world plus one immutable prepared watershed network |
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
-profile-five basis and a pinned watershed archive. The construction wrapper reconstructs its
+profile-five basis and a pinned watershed archive. The
+[profile-seven codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV7.cs) embeds a genuine
+profile-five basis and a pinned network archive. These are sibling compositions; seven does not nest
+six or duplicate a member as an independently owned single basin. The construction wrapper reconstructs its
 derived colliders from exact construction state; the nested spatial basis cannot independently
-invent the same structures. Ordinary state changes retain the immutable watershed object and bytes.
+invent the same structures. Ordinary state changes retain the immutable macro object and bytes.
 
-Fresh watershed admission requires an unplayed construction genesis with matching world/branch/realm.
-It pins the previous admission and watershed hash. It is not insertion of geography into a lived save.
-All decode/admission paths enforce identity roles across components.
+Fresh macro admission requires an unplayed construction genesis with matching world/branch/realm.
+It pins the previous admission and the single-basin or network hash under distinct admission domains.
+The network pin is SHA-256 of an OFC frame tagged `world.watershed-network-admission.v1`, followed by
+the prior admission bytes and exact network content-hash bytes. That pin is retained in the nested
+basis. The outer snapshot has tag `world.snapshot`, unsigned-64 profile `7`, exact profile-five basis
+and exact network archive. Its step interpreter retains the existing action and receipt semantics.
+
+All decode/admission paths enforce identity roles across components. Admission is not insertion of
+geography into a lived save. Profiles six and seven use the same schema-three writer and full-journal
+recovery; they add no migration commit, separate writer or clock.
 
 ## Recovery and bounded storage
+
+Each complete canonical snapshot fits the existing 16 MiB bound. The network archive has its own
+four-million-byte bound inside that envelope. Individually valid components do not guarantee a valid
+combined size: an oversized composition rejects before new-save publication. Limits are not expanded
+or satisfied by dropping retained state.
 
 [WorldJournalRecovery](../../src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs) replays from
 genesis, interprets typed transitions, recomputes outcomes and verifies the hash chain, receipt table,

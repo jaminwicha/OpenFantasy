@@ -152,12 +152,16 @@ construction basis. `WorldWatershedAdmission.CreateGenesis` requires an unplayed
 matching world/branch/realm scope and collision-free macro identities. Admission pins the exact
 prepared bytes. Ordinary steps, dialogue holds, construction, restart and recorded-history inspection
 preserve that geography; older profile encodings and saves remain supported without implicit migration.
+Profile seven similarly retains a complete finite network through `WorldWatershedNetworkAdmission.CreateGenesis`.
+It nests the full construction basis directly; it does not wrap profile six or own the same basin twice.
+Both macro profiles use the existing schema-three authority and 16 MiB world snapshot bound.
 Macro identities grant neither local terrain extraction rights nor physical water.
 
 The offline host can create an explicit new save from existing canonical inputs:
 
 ```sh
 OpenFantasy.Host --create-watershed-world new-world.sqlite construction-genesis.bin prepared-basin.bin
+OpenFantasy.Host --create-watershed-network-world new-network-world.sqlite construction-genesis.bin prepared-network.bin
 OpenFantasy.Host --execute-world-step new-world.sqlite host-selected-step.bin
 OpenFantasy.Host --inspect-recorded-world new-world.sqlite 0
 ```
@@ -168,12 +172,16 @@ client endpoints. A batch is host-selected input; a stale/reused batch fails. Th
 `tools/check_watershed_world.py` exercises the composed host, real before/after-commit process kills,
 exact history and unchanged input files. Its fixture is emitted by the hosting recovery test when
 `OPENFANTASY_WATERSHED_EVIDENCE` names an explicit disposable directory; the integrated verifier wires
-this automatically. Python independently checks the new outer archive and admission-pin composition.
+this automatically. The sibling `tools/check_watershed_network_world.py` consumes the network recovery
+fixture from `OPENFANTASY_WATERSHED_NETWORK_WORLD_EVIDENCE` and runs the same real crash/history checks
+for profile seven. Both are wired into the verifier. Python independently checks each outer archive
+and admission-pin composition. Composed and recorded-state operator reports include the admitted
+network hash, province and counts when present.
 
-The normal playable farm still selects profile five and its existing terrain. This new profile
-preserves macro constraints only: cross-basin composition, mapping into local terrain, river water,
-mutable geological events and migration of played saves require their own contracts and evidence.
-A single basin per current profile is a development admission bound, not the final world's extent.
+The normal playable farm still selects profile five and its existing terrain. Profiles six/seven
+preserve macro constraints only: mapping into local terrain, river water, mutable geological events
+and migration of played saves require their own contracts and evidence. The finite admission bounds
+are preparation envelopes, not the final world's extent.
 
 ## Local durable authority
 

@@ -31,6 +31,7 @@ internal sealed class RecordedWorldOperator
             state.AdvancingSteps,
             state.HasReadingHold,
             Watershed = state.Watershed is { } plan ? new WatershedDiagnosticReport(plan) : null,
+            WatershedNetwork = state.WatershedNetwork is { } network ? new WatershedNetworkDiagnosticReport(network) : null,
             Actors = state.Residents.Select(resident => new
             {
                 ActorId = resident.ActorId.ToString(),

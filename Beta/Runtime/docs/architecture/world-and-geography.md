@@ -91,10 +91,32 @@ reject. Members and closures sort by basin identity; face rows sort by global Y/
 X before positive Y. The nested basin interpreter retains its own unchanged format.
 
 `OpenFantasy.Host --inspect-watershed-network` provides a privileged read-only archive inspection.
-This standalone contract is not a `WorldSnapshot` component: it grants no live-world admission,
-terrain realization, liquid custody or historical migration. The saved profile-six binding retains
-one basin. World admission of a network must establish its complete identity and causal ownership
-alongside terrain and materials before dependent places can be published.
+
+## Runtime binding: admitted network ownership
+
+[WorldWatershedNetworkAdmission](../../src/OpenFantasy.Core/Worlds/WorldWatershedNetworkAdmission.cs)
+retains the complete prepared network in a fresh profile-seven construction world. It requires a
+profile-five basis with revision and advancing-step count zero and no reading hold. Admission pins
+the prior admission version and exact network hash. World, branch and realm match the local space.
+A root owns either a single watershed or a network; it cannot independently own both representations.
+
+Province, every member's basin/formation/substrate/outlet/internal faces, and all shared faces receive
+reserved macro roles. They cannot alias local terrain, material definitions or dynamic world roles,
+and cannot be reused as accepted batch or command identities. The identity layer is reused only when
+the macro object and terrain layer references all match; scope validation still runs. Changing the
+network or terrain invalidates that cache. Member outlet identities remain reserved even when their
+closure leads to another basin; the role does not declare physical terminal storage.
+
+Ordinary world actions preserve the immutable network reference. Canonical snapshots, durable
+commits, restart and exact recorded-commit history preserve its complete bytes alongside actors,
+held dialogue, material provenance and construction geometry. The operator
+`--create-watershed-network-world` creates an explicit new save from bounded canonical inputs under
+the existing exclusive authority. It does not insert geography into a lived profile-five or profile-six
+save, and a network cannot be silently attached by opening an older save.
+
+This binding establishes retained macro ownership. It does not map macro columns into local terrain,
+grant extraction rights, create liquids, change the local calendar, realize a river or migrate lived
+geological history. The [persistence contract](persistence-and-history.md) defines its profile and bounds.
 
 ## Design contract: finite preparation and frontier streaming
 

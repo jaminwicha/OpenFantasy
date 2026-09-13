@@ -7,17 +7,36 @@ namespace OpenFantasy.Core.Worlds;
 internal sealed class WatershedIdentityLayer
 {
     private readonly PreparedWatershed? _watershed;
+    private readonly PreparedWatershedNetwork? _network;
     private readonly Dictionary<EntityId, WorldIdentityRole> _roles = [];
     private readonly TerrainIdentityLayer _terrain;
 
-    internal WatershedIdentityLayer(PreparedWatershed? watershed, TerrainIdentityLayer terrain)
+    internal WatershedIdentityLayer(PreparedWatershed? watershed, PreparedWatershedNetwork? network, TerrainIdentityLayer terrain)
     {
         _watershed = watershed;
+        _network = network;
         _terrain = terrain;
-        if (watershed is null)
+        if (watershed is not null)
         {
-            return;
+            AddBasin(watershed);
         }
+        if (network is not null)
+        {
+            Add(network.ProvinceId, WorldIdentityRole.GeographyProvince);
+            foreach (PreparedWatershed basin in network.Basins)
+            {
+                AddBasin(basin);
+            }
+            foreach (WatershedNetworkFace face in network.SharedFaces)
+            {
+                Add(face.BoundaryId, WorldIdentityRole.GeographyBoundary);
+            }
+        }
+        ValidateTerrain();
+    }
+
+    private void AddBasin(PreparedWatershed watershed)
+    {
         Add(watershed.BasinId, WorldIdentityRole.GeographyBasin);
         Add(watershed.FormationId, WorldIdentityRole.GeographyFormation);
         Add(watershed.Request.ExternalBoundaryId, WorldIdentityRole.GeographyTerminal);
@@ -29,16 +48,15 @@ internal sealed class WatershedIdentityLayer
         {
             Add(boundary.BoundaryId, WorldIdentityRole.GeographyBoundary);
         }
-        ValidateTerrain();
     }
 
-    internal bool Matches(PreparedWatershed? watershed, TerrainIdentityLayer terrain) =>
-        ReferenceEquals(_watershed, watershed) && ReferenceEquals(_terrain, terrain);
+    internal bool Matches(PreparedWatershed? watershed, PreparedWatershedNetwork? network, TerrainIdentityLayer terrain) =>
+        ReferenceEquals(_watershed, watershed) && ReferenceEquals(_network, network) && ReferenceEquals(_terrain, terrain);
     internal bool Contains(EntityId identity) => _roles.ContainsKey(identity);
 
     internal void ValidateScope(TerrainScope scope)
     {
-        if (_watershed is not null && _watershed.Request.Scope != scope)
+        if (_watershed is not null && _watershed.Request.Scope != scope || _network is not null && _network.Scope != scope)
         {
             throw new ArgumentException("Macro geography must belong to the same world, branch and realm as local space.");
         }

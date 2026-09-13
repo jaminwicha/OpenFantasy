@@ -31,15 +31,17 @@ boundary; a second authority or IPC layer is not a prerequisite for engine porta
 
 [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) is the immutable composed world
 root. It binds inventory authority, spatial state, residents, calendar, dialogues and the optional
-gathering, production, progression, quest, construction and watershed components admitted by its
+gathering, production, progression, quest, construction and single-basin or network geography admitted by its
 saved profile. World revision and advancing-step count are separate counters.
 
 [WorldAdmissionValidator](../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs) checks the
 composition, including actor/control/presence consistency, definition pins, dialogue participants,
 material relationships and identity roles across the complete finite admitted root.
 [WorldIdentityIndex](../../src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs) combines dynamic roles
-with immutable terrain and watershed identity layers. An optimization that reuses a layer must
-preserve its exact input dependencies; equal-looking data is not permission to skip validation.
+with immutable terrain and watershed identity layers. Macro reservations include every admitted
+network member, province and shared face. Layer reuse requires the same single-basin, network and
+terrain references, with scope validation on each composed root. Equal-looking data is not permission
+to skip validation.
 
 | Owner | Responsibility | Boundary |
 | --- | --- | --- |

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="7a48bed8-20b7-4b67-b08a-ae923e3cb8d0" name="@mac 2026-09-12 22:36:04" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-12T22:36:04.1813070-05:00" queuing="2026-09-12T22:36:04.1813070-05:00" start="2026-09-12T22:36:02.2326250-05:00" finish="2026-09-12T22:36:04.1914290-05:00" />
+  <TestSettings name="default" id="18083816-a62d-44ec-8a60-1307fb97e28d">
+    <Deployment runDeploymentRoot="_mac_2026-09-12_22_36_04" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="273d362d-f5f2-4596-ab2f-f249eb28e2d2" testId="d3271976-d96a-6d93-02b9-add28b319aa5" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.AChangedNetworkInvalidatesThePreviouslyAdmittedMacroIdentityLayer" computerName="mac" duration="00:00:00.0061929" startTime="2026-09-12T22:36:04.1068340-05:00" endTime="2026-09-12T22:36:04.1130550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="273d362d-f5f2-4596-ab2f-f249eb28e2d2" />
+    <UnitTestResult executionId="d881836f-78f9-4dff-b810-baf2f7089ce4" testId="e610d4ee-2a3a-4e3e-af99-67a68bdbe83c" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ForeignWorldBranchOrRealmIsRefused(component: 1)" computerName="mac" duration="00:00:00.0064886" startTime="2026-09-12T22:36:03.8690790-05:00" endTime="2026-09-12T22:36:03.8755960-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d881836f-78f9-4dff-b810-baf2f7089ce4" />
+    <UnitTestResult executionId="1be21abd-88cb-4941-bcad-729e9a1599cc" testId="d1f3557c-8550-cf1f-fdf6-048450347094" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ForeignWorldBranchOrRealmIsRefused(component: 0)" computerName="mac" duration="00:00:00.1939447" startTime="2026-09-12T22:36:03.6608760-05:00" endTime="2026-09-12T22:36:03.8603380-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1be21abd-88cb-4941-bcad-729e9a1599cc" />
+    <UnitTestResult executionId="6fdd9b21-7369-4d76-8fdb-49fc30dc7267" testId="2c982ae7-d317-3440-0797-8ab303ea2667" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.NetworkRequiresCompleteBasisAndCannotCompeteWithAnotherMacroComponent" computerName="mac" duration="00:00:00.0101975" startTime="2026-09-12T22:36:04.1133310-05:00" endTime="2026-09-12T22:36:04.1235530-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6fdd9b21-7369-4d76-8fdb-49fc30dc7267" />
+    <UnitTestResult executionId="2e58b240-5218-4501-b4ec-6d945dd459b3" testId="0c259cf9-16e0-3b9a-2eac-7cf07ff8c14b" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.DecodeRejectsMissingInvalidOrWronglyNestedMacroAndWorldProfiles" computerName="mac" duration="00:00:00.0233588" startTime="2026-09-12T22:36:04.0829390-05:00" endTime="2026-09-12T22:36:04.1063350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e58b240-5218-4501-b4ec-6d945dd459b3" />
+    <UnitTestResult executionId="f9062ad3-4c55-431f-a52d-70b59240e337" testId="43f4c8e4-3da6-0895-faa0-c2dda8a0df6d" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ConstructionAndVersionedStepReplayRetainAllNetworkFactsAndReservations" computerName="mac" duration="00:00:00.1719559" startTime="2026-09-12T22:36:03.8769610-05:00" endTime="2026-09-12T22:36:04.0489580-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9062ad3-4c55-431f-a52d-70b59240e337" />
+    <UnitTestResult executionId="0d7ac3db-f904-4792-98dd-5cf21a0ca8d5" testId="3064b5e0-50c8-c3f2-bb8b-a5ff1d840fdc" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ProvinceAndMemberOutletsCannotAliasExistingActorsLotsOrTerrain" computerName="mac" duration="00:00:00.0082646" startTime="2026-09-12T22:36:04.0739380-05:00" endTime="2026-09-12T22:36:04.0822340-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d7ac3db-f904-4792-98dd-5cf21a0ca8d5" />
+    <UnitTestResult executionId="af45821f-e9f8-44c4-85cf-5563899e4444" testId="4abc5529-79ff-f182-d4e4-def09c9d0ee0" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ForeignWorldBranchOrRealmIsRefused(component: 2)" computerName="mac" duration="00:00:00.0051129" startTime="2026-09-12T22:36:03.8636660-05:00" endTime="2026-09-12T22:36:03.8688430-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="af45821f-e9f8-44c4-85cf-5563899e4444" />
+    <UnitTestResult executionId="61e8aa59-02b6-4f3c-91c7-600fd5e49ddf" testId="2ba6d2de-00c2-6e6b-715c-f883cc889b03" testName="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.NetworkWorldRoundTripsWithoutChangingItsConstructionOrSingleBasinPredecessors" computerName="mac" duration="00:00:00.0236700" startTime="2026-09-12T22:36:04.0497500-05:00" endTime="2026-09-12T22:36:04.0734610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="61e8aa59-02b6-4f3c-91c7-600fd5e49ddf" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.NetworkRequiresCompleteBasisAndCannotCompeteWithAnotherMacroComponent" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2c982ae7-d317-3440-0797-8ab303ea2667">
+      <Execution id="6fdd9b21-7369-4d76-8fdb-49fc30dc7267" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="NetworkRequiresCompleteBasisAndCannotCompeteWithAnotherMacroComponent" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.DecodeRejectsMissingInvalidOrWronglyNestedMacroAndWorldProfiles" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="0c259cf9-16e0-3b9a-2eac-7cf07ff8c14b">
+      <Execution id="2e58b240-5218-4501-b4ec-6d945dd459b3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="DecodeRejectsMissingInvalidOrWronglyNestedMacroAndWorldProfiles" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.AChangedNetworkInvalidatesThePreviouslyAdmittedMacroIdentityLayer" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="d3271976-d96a-6d93-02b9-add28b319aa5">
+      <Execution id="273d362d-f5f2-4596-ab2f-f249eb28e2d2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="AChangedNetworkInvalidatesThePreviouslyAdmittedMacroIdentityLayer" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.NetworkWorldRoundTripsWithoutChangingItsConstructionOrSingleBasinPredecessors" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2ba6d2de-00c2-6e6b-715c-f883cc889b03">
+      <Execution id="61e8aa59-02b6-4f3c-91c7-600fd5e49ddf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="NetworkWorldRoundTripsWithoutChangingItsConstructionOrSingleBasinPredecessors" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ForeignWorldBranchOrRealmIsRefused(component: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="4abc5529-79ff-f182-d4e4-def09c9d0ee0">
+      <Execution id="af45821f-e9f8-44c4-85cf-5563899e4444" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="ForeignWorldBranchOrRealmIsRefused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ConstructionAndVersionedStepReplayRetainAllNetworkFactsAndReservations" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="43f4c8e4-3da6-0895-faa0-c2dda8a0df6d">
+      <Execution id="f9062ad3-4c55-431f-a52d-70b59240e337" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="ConstructionAndVersionedStepReplayRetainAllNetworkFactsAndReservations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ProvinceAndMemberOutletsCannotAliasExistingActorsLotsOrTerrain" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="3064b5e0-50c8-c3f2-bb8b-a5ff1d840fdc">
+      <Execution id="0d7ac3db-f904-4792-98dd-5cf21a0ca8d5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="ProvinceAndMemberOutletsCannotAliasExistingActorsLotsOrTerrain" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ForeignWorldBranchOrRealmIsRefused(component: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="d1f3557c-8550-cf1f-fdf6-048450347094">
+      <Execution id="1be21abd-88cb-4941-bcad-729e9a1599cc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="ForeignWorldBranchOrRealmIsRefused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests.ForeignWorldBranchOrRealmIsRefused(component: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="e610d4ee-2a3a-4e3e-af99-67a68bdbe83c">
+      <Execution id="d881836f-78f9-4dff-b810-baf2f7089ce4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Geography.WorldWatershedNetworkTests" name="ForeignWorldBranchOrRealmIsRefused" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d3271976-d96a-6d93-02b9-add28b319aa5" executionId="273d362d-f5f2-4596-ab2f-f249eb28e2d2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e610d4ee-2a3a-4e3e-af99-67a68bdbe83c" executionId="d881836f-78f9-4dff-b810-baf2f7089ce4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d1f3557c-8550-cf1f-fdf6-048450347094" executionId="1be21abd-88cb-4941-bcad-729e9a1599cc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2c982ae7-d317-3440-0797-8ab303ea2667" executionId="6fdd9b21-7369-4d76-8fdb-49fc30dc7267" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c259cf9-16e0-3b9a-2eac-7cf07ff8c14b" executionId="2e58b240-5218-4501-b4ec-6d945dd459b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="43f4c8e4-3da6-0895-faa0-c2dda8a0df6d" executionId="f9062ad3-4c55-431f-a52d-70b59240e337" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3064b5e0-50c8-c3f2-bb8b-a5ff1d840fdc" executionId="0d7ac3db-f904-4792-98dd-5cf21a0ca8d5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4abc5529-79ff-f182-d4e4-def09c9d0ee0" executionId="af45821f-e9f8-44c4-85cf-5563899e4444" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2ba6d2de-00c2-6e6b-715c-f883cc889b03" executionId="61e8aa59-02b6-4f3c-91c7-600fd5e49ddf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.75]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.93]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.44]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
