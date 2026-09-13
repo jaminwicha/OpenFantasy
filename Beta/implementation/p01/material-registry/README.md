@@ -4,6 +4,9 @@ Qualification date: 2026-09-13. This increment composes the previously qualified
 one bounded allocation owner. It prevents valid individual slabs from claiming the same physical
 support or source units. It is a standalone core registry, not live-world admission or playable mining.
 
+Qualified code/evidence: `b47fec733fe0c85e77ce0e2b792e9b90189729bb`, preserved on
+`codex/milestone-material-registry`. Development remains on `codex/runtime-foundation`.
+
 ## Delivered behavior
 
 - One exact prepared terrain basis and one counted inventory back 1–64 allocations. Initial creation

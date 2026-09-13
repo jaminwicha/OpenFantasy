@@ -32,6 +32,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+Code/evidence: `b47fec7`, preserved on `codex/milestone-material-registry`.
+
 The [shared material registry](p01/material-registry/README.md) composes 1–64 disjoint funded allocations
 under one counted inventory and one exact terrain basis. It rejects physical/source overlap, conflicting
 calibration, cross-allocation identity collisions and inconsistent custodian roles. Operations validate
@@ -51,7 +53,8 @@ The complete verifier and native rendered journeys are not part of this additive
 The registry is standalone: durable world admission, allocation mutation/removal, retirement and
 cross-registry/global ownership remain explicit integrating obligations. It does not mint resources,
 enable playable mining, migrate saves or close any phase/game/feasibility gate. Timeless geography and
-material references are updated in the same change. Commit and milestone are recorded in the ledger.
+material references are updated in the same change. All 146 architecture links, 22 frozen spec hashes
+and the exact unrelated predecessor index are checked. The milestone ledger records this scope.
 
 Prior dependencies remain preserved:
 

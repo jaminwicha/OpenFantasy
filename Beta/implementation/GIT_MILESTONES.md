@@ -35,6 +35,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-watershed-network-persistence` | `b2176e5` | Complete finite network retained in explicit fresh profile-seven world; 919 tests, 74 existing inspections, 27 real operator calls, both process-kill boundaries, exact history and headless foundation/farm regression. [Evidence](p01/network-admission/README.md) retains fixture failures and bounded critic coverage limits. Default farm, prior saves/encodings and all byte/recovery gates remain unchanged. No local realization, fluids, played-save migration, performance or full phase acceptance is inferred. |
 | `codex/milestone-watershed-terrain-mapping` | `41865ed` | Retained dry macro-to-local mapping with exact integer scale, vertical windows and ancestral addresses; 936 tests, six independent archives, 27 real host inspections and bounded critic review. [Evidence](p01/terrain-mapping/README.md) retains compiler failures and scope limits. Separate candidate/archive only: no live terrain/material/fluid admission, visual change, performance or full phase acceptance. |
 | `codex/milestone-terrain-material-allocation` | `163a7bb` | Finite funded slab and exclusive coarse/detailed source partitions; 957 tests, 24 final real host inspections, independent interval/outer-format checks and bounded native critique. [Evidence](p01/terrain-materials/README.md) includes partial/interior actual transfers, 4,096-lot/active-cell caps and retained analyzer failures. Standalone trusted composition only: no live mining, retirement, world allocation registry, performance or full phase acceptance. |
+| `codex/milestone-material-registry` | `b47fec7` | One shared inventory for 1–64 disjoint terrain allocations, normalized archive and shared immutable macro data; 971 tests, 26 registry plus 24 prior-material host inspections, independent ownership checks and bounded native critique. [Evidence](p01/material-registry/README.md) retains maximum-network allocation measurements and corrected fixture failures. No durable world admission, live mining, retirement, production performance or full phase acceptance. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -75,3 +76,9 @@ The terrain-material-allocation branch preserves code, reference and qualificati
 custody, not playable mining or completed geological realization. The development checkout, prior
 milestones, all 22 frozen spec hashes and exact unrelated predecessor index remain preserved.
 No checkout switch, force update, push or merge accompanied this marker.
+
+The material-registry branch preserves code, reference and qualification at
+`b47fec733fe0c85e77ce0e2b792e9b90189729bb`. It records finite shared ownership and normalized material
+archives, not durable integration or playable excavation. The development checkout, prior milestones,
+all 22 frozen spec hashes and the exact unrelated predecessor index remain preserved. No checkout
+switch, force update, push or merge accompanied this marker.
