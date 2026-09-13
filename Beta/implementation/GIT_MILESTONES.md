@@ -33,6 +33,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-architecture-reference` | `2f91983` | Timeless architecture reference, source-binding backfill and upkeep hook. [Review/checks](architecture-reference/README.md) cover 123 reference links, bounded factual critique, frozen-spec/index preservation and five synchronized skill entrypoints (ecosystem `4e83086`). Documentation checkpoint only; no gameplay or phase acceptance is inferred. |
 | `codex/milestone-watershed-networks` | `23851fa` | Finite basin composition, canonical archive, exact contributor propagation and shared faces; 904 tests, five independent archives, 23 real host inspections and bounded critic review. [Evidence](p01/watershed-network/README.md) preserves the reproduced scope-alias defect and correction. No live-world/network admission, fluid custody, local realization, performance or full phase acceptance is inferred. |
 | `codex/milestone-watershed-network-persistence` | `b2176e5` | Complete finite network retained in explicit fresh profile-seven world; 919 tests, 74 existing inspections, 27 real operator calls, both process-kill boundaries, exact history and headless foundation/farm regression. [Evidence](p01/network-admission/README.md) retains fixture failures and bounded critic coverage limits. Default farm, prior saves/encodings and all byte/recovery gates remain unchanged. No local realization, fluids, played-save migration, performance or full phase acceptance is inferred. |
+| `codex/milestone-watershed-terrain-mapping` | `41865ed` | Retained dry macro-to-local mapping with exact integer scale, vertical windows and ancestral addresses; 936 tests, six independent archives, 27 real host inspections and bounded critic review. [Evidence](p01/terrain-mapping/README.md) retains compiler failures and scope limits. Separate candidate/archive only: no live terrain/material/fluid admission, visual change, performance or full phase acceptance. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -62,3 +63,8 @@ The watershed-network-persistence branch preserves code, architecture updates an
 `b2176e5ddb29bbbf355035b217d523941a4d4cc9`. It records durable ownership of finite prepared networks, not a completed frontier
 or geological simulation. The development checkout, earlier milestones, frozen specifications and
 unrelated staged predecessor work remain intact. No checkout switch, force update, push or merge occurred.
+
+The watershed-terrain-mapping branch preserves code, reference updates and bounded qualification at
+`41865edfa17a1d8476946261007abbe0ec53f334`. The development checkout and all earlier markers remain in
+place. No checkout switch, force update, push or merge accompanied this marker; unrelated staged
+predecessor changes and frozen specifications remain intact.

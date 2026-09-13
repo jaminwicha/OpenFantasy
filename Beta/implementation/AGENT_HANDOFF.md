@@ -32,6 +32,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+Code/evidence: `41865ed`, preserved on `codex/milestone-watershed-terrain-mapping`.
+
 [Dry terrain mapping](p01/terrain-mapping/README.md) derives exact local geometry and ancestral
 addresses from retained finite networks. Integer horizontal/vertical scales, elevation datum, negative
 floor partitioning and complete coverage checks define the mapping. X/Y/Z partitions, reversed queries

@@ -95,3 +95,10 @@ preserve established geography or occur as an explicit versioned causal change; 
 known place or issue fresh material rights. The default farm and visual presentation remain unchanged.
 All 181 requirements, 14 unrun full UI cases, full P00/P01/P02 exits and the campaign through P14 remain
 in scope. This checkpoint does not close GEOR-02 or any full phase gate.
+
+## Preserved checkpoint
+
+Code, architecture updates and qualification are committed at `41865edfa17a1d8476946261007abbe0ec53f334`,
+preserved on `codex/milestone-watershed-terrain-mapping`. Development remains on
+`codex/runtime-foundation`; earlier markers, frozen specifications and unrelated predecessor changes
+remain intact.
