@@ -32,6 +32,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+Code and evidence: `23851fa`, preserved on `codex/milestone-watershed-networks`.
+
 [Finite watershed networks](p01/watershed-network/README.md) compose up to sixteen immutable basins
 with explicit adjacent downhill outlet links, finite contributor terminals, exact incoming-column
 propagation and branch/order-independent physical faces. Scope/role aliases, overlap, cycles and

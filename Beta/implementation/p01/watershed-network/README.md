@@ -1,5 +1,8 @@
 # Finite watershed networks
 
+Code and evidence: `23851fa`, preserved on `codex/milestone-watershed-networks`.
+Development remains on `codex/runtime-foundation`; no push, merge or checkout switch occurred.
+
 12 September 2026. This P01 dependency increment composes immutable basins before local realization.
 It supports the finite preparation/shared-boundary obligations in
 [geological design](../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md), without closing RQ-151, RQ-159,
