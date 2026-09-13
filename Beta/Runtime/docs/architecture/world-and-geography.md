@@ -118,6 +118,49 @@ This binding establishes retained macro ownership. It does not map macro columns
 grant extraction rights, create liquids, change the local calendar, realize a river or migrate lived
 geological history. The [persistence contract](persistence-and-history.md) defines its profile and bounds.
 
+## Domain contract: dry macro-to-local geometry
+
+[WatershedTerrainMapper](../../src/OpenFantasy.Core/Geography/WatershedTerrainMapper.cs) prepares a
+separate immutable [terrain candidate](../../src/OpenFantasy.Core/Geography/PreparedWatershedTerrain.cs)
+from an exact finite network, an explicit transform and a local window of at most 32 × 32 × 16 cells.
+It does not construct a `TerrainRegionSnapshot`: that type's pinned archive reconstructs through its
+own stratified generator. A different generator cannot be placed behind that old interpreter.
+
+[WatershedTerrainMapping](../../src/OpenFantasy.Core/Geography/WatershedTerrainMapping.cs) pins integer
+horizontal cells per macro column, vertical cells per elevation unit and a signed elevation datum.
+Both scales range from 1 through 1,024. Horizontal zero maps to macro zero. Inclusive local footprints
+are `[macro × scale, macro × scale + scale − 1]`; inverse lookup uses floor division, including negative
+coordinates. Complete network footprints and every natural surface must fit signed 64-bit cell
+coordinates. Intermediate products and datum addition use signed 128-bit arithmetic. Unrepresentable
+transforms reject, including when the requested window itself would occupy a representable subset.
+
+Each local XY column takes its parent's natural elevation through that transform. The surface is
+piecewise constant within a macro footprint; there is no interpolation, detail noise, spill filling or
+channel carving. Every requested column requires exact network coverage. Gaps and exterior requests
+reject the complete candidate instead of falling back to unrelated generated terrain. A vertical query
+compares absolute Z to the same surface regardless of its window origin; the top surface cell belongs
+to substrate. Querying beyond the retained window rejects rather than inferring unseen support.
+
+Each column references the exact macro basin/index, formation and substrate parcel and records its
+offset within the macro footprint. A substrate cell exposes a
+[typed ancestral address](../../src/OpenFantasy.Core/Geography/WatershedTerrainColumn.cs): parent
+formation/parcel, mapping hash and absolute local cell coordinate. Branch identity and requested window
+are absent from that address. Void cells have no substrate address. These are references and geometric
+addresses, not additional owned entity roles, minted source IDs, physical quantities or export rights.
+Changing the mapping changes its address pin; it cannot reinterpret established terrain in place.
+
+[WatershedTerrainCodecV1](../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs) retains the exact
+network archive, mapping, bounds and canonical Y/X column witnesses in a 4,100,000-byte envelope. Decode
+rederives and compares the entire candidate. Its 68-byte column row contains basin ID, unsigned-32
+macro index, formation ID, parcel ID, signed-64 surface Z and two unsigned-32 local offsets. Both
+preparation and decode accept cancellation without returning a partial candidate. The privileged
+`--inspect-watershed-terrain` operator reads that archive without changing a world.
+
+Dry occupancy counts are geometry witnesses. They do not classify soil or ore, allocate material,
+admit navigation/collision, transfer fluids, establish climate or fulfill coastal/reservoir dependencies.
+Live realization requires its own retained terrain interpreter, complete macro dependency profile,
+source allocations and explicit world admission. It cannot overwrite the farm or an established place.
+
 ## Design contract: finite preparation and frontier streaming
 
 An almost infinite-feeling frontier is generated through bounded preparation, not an unbounded

@@ -1,0 +1,359 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-13T04:44:12.061916+00:00",
+  "scope": "Read-only real host archive inspection; no lived terrain admission, material rights or fluid qualification",
+  "runs": [
+    {
+      "name": "negative-seam",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/negative-seam.bin"
+      ],
+      "inputSha256": "213868fbdd9696f7c18dd1a6303057ac60a8a719f5695a78dea3033d6b617c2e",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-terrain-v1\",\"Scope\":\"dry-geometry-candidate\",\"ContentHash\":\"213868fbdd9696f7c18dd1a6303057ac60a8a719f5695a78dea3033d6b617c2e\",\"NetworkHash\":\"16981e559a01363000ca2c90642356d64730fa168f0f7418063b66d6c1ba5ea9\",\"MappingHash\":\"783205a169d0667ad6967c8752fb1a166b374e4d20ea2325799a35a649645fd6\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"CellsPerColumn\":3,\"CellsPerElevationUnit\":2,\"ElevationDatumZ\":-1,\"Bounds\":{\"Minimum\":{\"X\":-6,\"Y\":-6,\"Z\":-4},\"Maximum\":{\"X\":5,\"Y\":5,\"Z\":7},\"Width\":12,\"Depth\":12,\"Height\":12,\"CellCount\":1728},\"NetworkColumnCount\":16,\"ColumnCount\":144,\"SubstrateCellCount\":1008,\"MinimumSurfaceZ\":-1,\"MaximumSurfaceZ\":5}\n",
+      "stderr": ""
+    },
+    {
+      "name": "branch",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/branch.bin"
+      ],
+      "inputSha256": "5a7cff60921ba6c674dea4df0fc2ddc960df1f4d314490dade9c64d031ed8820",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-terrain-v1\",\"Scope\":\"dry-geometry-candidate\",\"ContentHash\":\"5a7cff60921ba6c674dea4df0fc2ddc960df1f4d314490dade9c64d031ed8820\",\"NetworkHash\":\"c5d3f12d8ed86e3d189205f899fa2b7169d802655cee8e035f77ecb504e76843\",\"MappingHash\":\"783205a169d0667ad6967c8752fb1a166b374e4d20ea2325799a35a649645fd6\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000378\",\"RealmId\":\"00000000000000000000000000000003\",\"CellsPerColumn\":3,\"CellsPerElevationUnit\":2,\"ElevationDatumZ\":-1,\"Bounds\":{\"Minimum\":{\"X\":-6,\"Y\":-6,\"Z\":-4},\"Maximum\":{\"X\":5,\"Y\":5,\"Z\":7},\"Width\":12,\"Depth\":12,\"Height\":12,\"CellCount\":1728},\"NetworkColumnCount\":16,\"ColumnCount\":144,\"SubstrateCellCount\":1008,\"MinimumSurfaceZ\":-1,\"MaximumSurfaceZ\":5}\n",
+      "stderr": ""
+    },
+    {
+      "name": "lower-window",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/lower-window.bin"
+      ],
+      "inputSha256": "46e2ebe3967dded497d3b3fa786fd043aa7d35d726cd1a68a995f27e89d3c7fb",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-terrain-v1\",\"Scope\":\"dry-geometry-candidate\",\"ContentHash\":\"46e2ebe3967dded497d3b3fa786fd043aa7d35d726cd1a68a995f27e89d3c7fb\",\"NetworkHash\":\"16981e559a01363000ca2c90642356d64730fa168f0f7418063b66d6c1ba5ea9\",\"MappingHash\":\"783205a169d0667ad6967c8752fb1a166b374e4d20ea2325799a35a649645fd6\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"CellsPerColumn\":3,\"CellsPerElevationUnit\":2,\"ElevationDatumZ\":-1,\"Bounds\":{\"Minimum\":{\"X\":-6,\"Y\":-6,\"Z\":-4},\"Maximum\":{\"X\":5,\"Y\":5,\"Z\":1},\"Width\":12,\"Depth\":12,\"Height\":6,\"CellCount\":864},\"NetworkColumnCount\":16,\"ColumnCount\":144,\"SubstrateCellCount\":720,\"MinimumSurfaceZ\":-1,\"MaximumSurfaceZ\":5}\n",
+      "stderr": ""
+    },
+    {
+      "name": "upper-window",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/upper-window.bin"
+      ],
+      "inputSha256": "012ce2ef966cea03aa2e73b71b2c813d07638c36c4965e7b37cbc701b00abf91",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-terrain-v1\",\"Scope\":\"dry-geometry-candidate\",\"ContentHash\":\"012ce2ef966cea03aa2e73b71b2c813d07638c36c4965e7b37cbc701b00abf91\",\"NetworkHash\":\"16981e559a01363000ca2c90642356d64730fa168f0f7418063b66d6c1ba5ea9\",\"MappingHash\":\"783205a169d0667ad6967c8752fb1a166b374e4d20ea2325799a35a649645fd6\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"CellsPerColumn\":3,\"CellsPerElevationUnit\":2,\"ElevationDatumZ\":-1,\"Bounds\":{\"Minimum\":{\"X\":-6,\"Y\":-6,\"Z\":2},\"Maximum\":{\"X\":5,\"Y\":5,\"Z\":7},\"Width\":12,\"Depth\":12,\"Height\":6,\"CellCount\":864},\"NetworkColumnCount\":16,\"ColumnCount\":144,\"SubstrateCellCount\":288,\"MinimumSurfaceZ\":-1,\"MaximumSurfaceZ\":5}\n",
+      "stderr": ""
+    },
+    {
+      "name": "extreme",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/extreme.bin"
+      ],
+      "inputSha256": "93e8fc3985c89bbded7fcdd65723f312c76ad562246c0203261c1ecfd6a10703",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-terrain-v1\",\"Scope\":\"dry-geometry-candidate\",\"ContentHash\":\"93e8fc3985c89bbded7fcdd65723f312c76ad562246c0203261c1ecfd6a10703\",\"NetworkHash\":\"1ec13ee4d22e3d1d12dcb56e2909c4baa35d9876d2233e58016000c39143320e\",\"MappingHash\":\"4e58f58df9da9c34970070aa25d042d0a831173f70ea4f5c9a72555e08288340\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"CellsPerColumn\":1,\"CellsPerElevationUnit\":1,\"ElevationDatumZ\":0,\"Bounds\":{\"Minimum\":{\"X\":9223372036854775806,\"Y\":-9223372036854775808,\"Z\":-1},\"Maximum\":{\"X\":9223372036854775807,\"Y\":-9223372036854775808,\"Z\":1},\"Width\":2,\"Depth\":1,\"Height\":3,\"CellCount\":6},\"NetworkColumnCount\":2,\"ColumnCount\":2,\"SubstrateCellCount\":5,\"MinimumSurfaceZ\":0,\"MaximumSurfaceZ\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "natural-relief",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/natural-relief.bin"
+      ],
+      "inputSha256": "c8713507f73ab243707d711968bc3462bbdd3b3ec34eac301f875190f443d155",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-terrain-v1\",\"Scope\":\"dry-geometry-candidate\",\"ContentHash\":\"c8713507f73ab243707d711968bc3462bbdd3b3ec34eac301f875190f443d155\",\"NetworkHash\":\"6887864af1f2cef2805d46b644f30ba70a12b255fb6931aff222367316082728\",\"MappingHash\":\"b73f8f9a09c667414224349e324e25ba78a421c4fdcdf6799ef8d0f453118e69\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"CellsPerColumn\":2,\"CellsPerElevationUnit\":1,\"ElevationDatumZ\":-30,\"Bounds\":{\"Minimum\":{\"X\":0,\"Y\":0,\"Z\":-8},\"Maximum\":{\"X\":11,\"Y\":5,\"Z\":7},\"Width\":12,\"Depth\":6,\"Height\":16,\"CellCount\":1152},\"NetworkColumnCount\":18,\"ColumnCount\":72,\"SubstrateCellCount\":256,\"MinimumSurfaceZ\":-38,\"MaximumSurfaceZ\":3}\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-field-1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-field-1.bin"
+      ],
+      "inputSha256": "ca1aa74b7b40ba0fa80553aa6b2518711fefcb325ec50eba62517df5a1ddbeae",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-field-2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-field-2.bin"
+      ],
+      "inputSha256": "8e8b376062e4a9ffab0ffc8e773cfdeb181856b706647f944bf0d7f861adcbf4",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-field-3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-field-3.bin"
+      ],
+      "inputSha256": "8e94d0588d29ad117ab83e24d2a1f04589f4d2abdaa3eacc4e02da6968ae93b5",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-field-4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-field-4.bin"
+      ],
+      "inputSha256": "b41fde517bbbedbbbecab40e2887cb0a0c7e0915fc33c092b4f0cdc19adf27d2",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-column-0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-column-0.bin"
+      ],
+      "inputSha256": "b41fde517bbbedbbbecab40e2887cb0a0c7e0915fc33c092b4f0cdc19adf27d2",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-column-16",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-column-16.bin"
+      ],
+      "inputSha256": "cca212162ab6a94333ff7738fc5274ad327ff843b89d4cdc22ac53ce681444eb",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-column-20",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-column-20.bin"
+      ],
+      "inputSha256": "89065692d01aebad785b4df77c5544ea095e0934a91408413c0a59ee838f3d60",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-column-36",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-column-36.bin"
+      ],
+      "inputSha256": "61d930450a307029082dbaecc280fa288997f324acb9451dd1c56feb7cf91971",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-column-52",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-column-52.bin"
+      ],
+      "inputSha256": "897f19f71278488cf12b4d058154337c583756c6e0e183c9d6f28afddf6553cd",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-column-60",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-column-60.bin"
+      ],
+      "inputSha256": "4c8a5e1ac463d6c477db45089e2bdf32c2f13bf91fffd45d78dd778be0b23a52",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "tamper-column-64",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/tamper-column-64.bin"
+      ],
+      "inputSha256": "0a7f85566283d8fc2428d72fce19832ae3987028c15028b1383fcc3453a32931",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncate-0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/truncate-0.bin"
+      ],
+      "inputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncate-11",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/truncate-11.bin"
+      ],
+      "inputSha256": "4f1ff29440e5184773727d2127fbd9ce8a8d09173a9844f8706de11b9ff3b483",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncate-15",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/truncate-15.bin"
+      ],
+      "inputSha256": "5a609a44e10076536cbb36f4dc454199e4fd309b4d3c736c38ebeb20a90faed8",
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field length is missing.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncate-12262",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/truncate-12262.bin"
+      ],
+      "inputSha256": "3db8cf7145c034cadac736229374e480485897d19ff3d2f458366ff21599034d",
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trailing",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/trailing.bin"
+      ],
+      "inputSha256": "9d0ef92c9a3f1fb46493d220ac1f3b50733e18f3bd0d0df6cc2f40af3242f7e7",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "over-budget",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/over-budget.bin"
+      ],
+      "inputSha256": "8a8a3fe029f9d63038246ffa1bbfd2fae53e6a7c9186b41c65a5b40a1546211e",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown-frame-version",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/unknown-frame-version.bin"
+      ],
+      "inputSha256": "8961935ac4b4547a59c4980fb2d2e4f1b6c3737654f831f384923fad679132ba",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "changed-mapping-stale-columns",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/changed-mapping-stale-columns.bin"
+      ],
+      "inputSha256": "01473dc41c5b36ac0dc0a1762b8d547269475523129ed97034cc4b12ee4e9d7b",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain window differs from its pinned macro mapping.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-macro-coverage",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/missing-macro-coverage.bin"
+      ],
+      "inputSha256": "e6a8b573209825652087e6a31c9a646073a0ff8dcd03b5cfd644c265ad362185",
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain mapping contains invalid inputs or dependencies.\n",
+      "stderr": ""
+    },
+    {
+      "name": "maximum",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-watershed-terrain",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/terrain-mapping/qualification/terrain-inspections-fu1qe6kl/maximum.bin"
+      ],
+      "inputSha256": "71cdf401938ccd3a39ee06a4d4a13339302d90e2610510270b8c82676dd9944d",
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-terrain-v1\",\"Scope\":\"dry-geometry-candidate\",\"ContentHash\":\"71cdf401938ccd3a39ee06a4d4a13339302d90e2610510270b8c82676dd9944d\",\"NetworkHash\":\"c81348697f823157697bcf390ce9a0c8bdd0815722729606ed0cc1345718b0f9\",\"MappingHash\":\"4e58f58df9da9c34970070aa25d042d0a831173f70ea4f5c9a72555e08288340\",\"WorldId\":\"00000000000000000000000000000001\",\"BranchId\":\"00000000000000000000000000000002\",\"RealmId\":\"00000000000000000000000000000003\",\"CellsPerColumn\":1,\"CellsPerElevationUnit\":1,\"ElevationDatumZ\":0,\"Bounds\":{\"Minimum\":{\"X\":48,\"Y\":48,\"Z\":-8},\"Maximum\":{\"X\":79,\"Y\":79,\"Z\":7},\"Width\":32,\"Depth\":32,\"Height\":16,\"CellCount\":16384},\"NetworkColumnCount\":65536,\"ColumnCount\":1024,\"SubstrateCellCount\":9216,\"MinimumSurfaceZ\":0,\"MaximumSurfaceZ\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "finishedUtc": "2026-09-13T04:44:14.449647+00:00"
+}

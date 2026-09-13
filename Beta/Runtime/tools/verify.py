@@ -35,6 +35,7 @@ def main():
     env["OPENFANTASY_WATERSHED_EVIDENCE"] = str(test_results / "watershed-fixture")
     env["OPENFANTASY_WATERSHED_NETWORK_EVIDENCE"] = str(test_results / "watershed-network-fixture")
     env["OPENFANTASY_WATERSHED_NETWORK_WORLD_EVIDENCE"] = str(test_results / "watershed-network-world-fixture")
+    env["OPENFANTASY_WATERSHED_TERRAIN_EVIDENCE"] = str(test_results / "watershed-terrain-fixture")
     report = dict(startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   scope="Local core/hosting tests, durable counted authority and Godot binding smoke",
                   status="running", namingScanRequested=bool(args.forbidden_token), steps=[])
@@ -92,6 +93,7 @@ def main():
                                    ("observations-v1", "observation"), ("language-v1", "language"),
                                    ("authority-v1", "authority"), ("terrain-v1", "terrain"), ("watershed-v1", "watershed"),
                                    ("watershed-network-v1", "watershed_network"),
+                                   ("watershed-terrain-v1", "watershed_terrain"),
                                    ("world-actions-v1", "world_action"), ("world-receipts-v1", "world_receipt"),
                                    ("gathering-v1", "gathering"), ("production-ledger-v1", "production_ledger"),
                                    ("world-production-v1", "world_production")):
@@ -135,6 +137,9 @@ def main():
         run("watershed-network-inspections", [sys.executable, root / "tools/check_watershed_network.py",
             "--dotnet", dotnet, "--maximum-fixture", test_results / "watershed-network-fixture",
             "--output", artifacts / "watershed-network.json"])
+        run("watershed-terrain-inspections", [sys.executable, root / "tools/check_watershed_terrain.py",
+            "--dotnet", dotnet, "--maximum-fixture", test_results / "watershed-terrain-fixture",
+            "--output", artifacts / "watershed-terrain.json"])
         run("host-contract-inspections", [sys.executable, root / "tools/check_contract_inspections.py",
             "--dotnet", dotnet, "--output", inspection_report])
         report["contractInspections"] = json.loads(inspection_report.read_text())

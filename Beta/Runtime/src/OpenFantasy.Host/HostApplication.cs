@@ -16,6 +16,7 @@ internal sealed class HostApplication
     private readonly RecordedWorldOperator _history = new();
     private readonly WatershedOperator _watersheds = new();
     private readonly WatershedNetworkOperator _watershedNetworks = new();
+    private readonly WatershedTerrainOperator _watershedTerrain = new();
     private readonly ComposedWorldOperator _composed = new();
 
     public HostApplication(TextWriter output)
@@ -40,6 +41,7 @@ internal sealed class HostApplication
                 ["--inspect-recorded-world", var database, var revision] => _history.Inspect(database, revision),
                 ["--inspect-watershed", var path] => _watersheds.Inspect(path),
                 ["--inspect-watershed-network", var path] => _watershedNetworks.Inspect(path),
+                ["--inspect-watershed-terrain", var path] => _watershedTerrain.Inspect(path),
                 ["--create-watershed-world", var database, var basis, var watershed] =>
                     _composed.CreateWatershedWorld(database, basis, watershed),
                 ["--create-watershed-network-world", var database, var basis, var network] =>
@@ -82,6 +84,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-recorded-world <composed-world.sqlite> <commit-revision>");
         _output.WriteLine("       OpenFantasy.Host --inspect-watershed <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-watershed-network <prepared-network.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-watershed-terrain <prepared-terrain.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>");

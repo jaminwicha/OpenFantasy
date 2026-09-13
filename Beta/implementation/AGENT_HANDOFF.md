@@ -32,35 +32,34 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `b2176e5`, preserved on `codex/milestone-watershed-network-persistence`.
+[Dry terrain mapping](p01/terrain-mapping/README.md) derives exact local geometry and ancestral
+addresses from retained finite networks. Integer horizontal/vertical scales, elevation datum, negative
+floor partitioning and complete coverage checks define the mapping. X/Y/Z partitions, reversed queries
+and branch ancestry agree. Natural surfaces remain distinct from spill routing. Its separate immutable
+candidate/archive cannot masquerade as the existing stratified terrain interpreter or allocate material.
+The real read-only host inspector and full-verifier wiring are included; no default farm, world profile,
+old terrain/save codec or live-world terrain changes.
 
-[Durable network admission](p01/network-admission/README.md) retains the complete finite network in
-an explicit fresh profile-seven construction world. It preserves actors, materials, construction,
-held dialogue and exact recorded history under the existing schema-three authority. Province/member/
-shared-face identities participate in full admission and historical command/cause rejection. Profile
-seven nests five directly; single-basin/network ownership is mutually exclusive. No lived save is
-implicitly migrated, no default farm selector changes, and all prior encodings remain supported.
+[Qualification](p01/terrain-mapping/qualification/verification-summary.json): full managed build, zero
+warnings/errors; **936 tests (607 Core + 329 Hosting, zero skips)**; 17 new mapping tests, six independent
+Python archives and 27 real host inspections including the maximum network/window. The bounded critic
+found no consequential defect. Initial missing APIs and cancellation-token analyzer failures remain
+retained. The timeless reference and 132 links are checked. This additive campaign does not include a
+complete verifier/native rendering run or close any gameplay, performance or phase acceptance gate.
 
-[Qualification](p01/network-admission/qualification/verification-summary.json): full managed build,
-zero warnings/errors; **919 tests (590 Core + 329 Hosting, zero skips)**; 74 existing host inspections;
-27 network operator invocations; real before/after-commit process kills; exact restart/history; maximum
-65,536 columns; headless host/Godot foundation agreement and native farm regression. The bounded critic
-found no blocking defect and recorded a narrow terrain-cache coverage limit. Test-fixture failures and
-corrections remain in the packet. The timeless architecture reference and 126 links are checked.
-This is a bounded integration campaign, not the complete verifier or any full phase acceptance.
+[Durable network admission](p01/network-admission/README.md), `b2176e5`, remains preserved on
+`codex/milestone-watershed-network-persistence`: explicit fresh profile seven retains networks through
+actions, construction, dialogue, real process-kill recovery and exact recorded history under schema
+three. Its 919-test/native evidence describes that revision. [Network preparation](p01/watershed-network/README.md),
+`23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved
+and byte-compatible. Development stays on `codex/runtime-foundation`.
 
-The [finite network preparation](p01/watershed-network/README.md), `23851fa`, remains preserved on
-`codex/milestone-watershed-networks`, including five independent Python archives and the reproduced/
-corrected scope-alias defect. [Single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`,
-and [single-basin preparation](p01/watershed-preparation/README.md), `974e0d4`, remain byte-compatible.
-Their counts/evidence describe their own revisions. Development stays on `codex/runtime-foundation`.
-
-Next geography dependency: explicit macro-to-local address/ancestry mapping and terrain realization
-with compatible boundaries and conservative resource custody. Macro identity reservations cannot grant
-mining rights or invent water. Never silently insert networks into lived saves, reroll established facts
-or treat contributor capacity as fluid storage. Province/climate/coast/reservoir preparation, dynamic
-admission, geological history and production streaming remain open. Follow the full P01/P02 plan and
-[geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md); no full gate is closed by this increment.
+Next geography dependencies: complete bounded physical macro profiles (crust/history, climate/forcing,
+coast/reservoir/external budgets and material allocations) before dependent live terrain admission.
+Bind the retained local terrain interpreter and source partitions explicitly while preserving occupancy,
+construction, support, custody and history. Candidate geometry/ancestry cannot grant mining rights,
+create water or close the full preparation gate. Never reroll established facts or implicitly rewrite
+lived saves. Follow the full P01/P02 plan and [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md).
 
 ## Existing playable scope and prior evidence
 

@@ -61,6 +61,12 @@ All decode/admission paths enforce identity roles across components. Admission i
 geography into a lived save. Profiles six and seven use the same schema-three writer and full-journal
 recovery; they add no migration commit, separate writer or clock.
 
+The [dry terrain candidate archive](../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs)
+is a separately versioned preparation artifact, not another composed-world profile or a replacement
+for `TerrainRegionCodecV1`. Retaining it proves exact candidate reconstruction, without admitting it
+into a lived world or creating historical terrain changes. World snapshot and journal bounds remain
+independent of this archive's preparation envelope.
+
 ## Recovery and bounded storage
 
 Each complete canonical snapshot fits the existing 16 MiB bound. The network archive has its own
