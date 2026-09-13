@@ -26,6 +26,9 @@ The [backfill record](architecture-reference/README.md) reconciles the reference
 runtime. It separates executable domain contracts, actual application bindings and full design
 obligations, especially history, Wait, local visibility and macro geography. Progress/evidence remain
 here and in packets; frozen specs remain preserved. Documentation coverage does not close game gates.
+Commit `2f91983`, preserved on `codex/milestone-architecture-reference`, records the reference and
+project hook. Ecosystem commit `4e83086` records the portable hook and verified five-entrypoint sync.
+All 123 reference links resolve; the bounded factual review corrections are retained in the packet.
 
 ## Latest increment
 

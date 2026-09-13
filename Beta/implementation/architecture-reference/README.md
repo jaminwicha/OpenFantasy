@@ -6,6 +6,10 @@ as architecture changes. [The reference](../../Runtime/docs/architecture/README.
 authority, identity/determinism, persistence/history, time/encounters, world/geography, actors/society,
 materials/activities, presentation/interaction and content/composition.
 
+Reference commit `2f91983` is preserved on `codex/milestone-architecture-reference`.
+The ecosystem hook is commit `4e83086`, with the same milestone name in that repository.
+Both development checkouts remain on their original working branches; no push or merge occurred.
+
 ## Reconciliation and scope
 
 Source bindings are separated from standalone domain contracts and full design obligations. In
