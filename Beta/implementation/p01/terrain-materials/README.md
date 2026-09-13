@@ -4,6 +4,9 @@ Qualification date: 2026-09-13. This packet extends the retained dry macro mappi
 finite material allocation and representation contract. It does not close P01 or publish mining into
 the playable farm. The full campaign, all 181 requirements and all existing acceptance gates remain.
 
+Qualified code/evidence: `163a7bbc17bf07549ab2f6aa86050e7a1d9a8b9e`, preserved on
+`codex/milestone-terrain-material-allocation`. Development remains on `codex/runtime-foundation`.
+
 ## Delivered scope
 
 - An explicitly funded homogeneous slab binds one exact macro parcel/mapping to existing counted

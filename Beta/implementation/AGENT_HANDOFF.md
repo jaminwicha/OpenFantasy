@@ -32,6 +32,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+Code/evidence: `163a7bb`, preserved on `codex/milestone-terrain-material-allocation`.
+
 The [finite funded material increment](p01/terrain-materials/README.md) adds a standalone slab allocation
 over the existing counted authority. Whole-support intervals, physical calibration, exclusive coarse/
 detailed custody and exact remaining-stock demotion prevent detail changes from minting resources.
@@ -46,7 +48,8 @@ build and **957 tests (628 Core + 329 Hosting, zero skips)**, 21 added material 
 inspections, independent Python interval/outer-format checks,
 4,096-lot/active-cell fixtures and bounded native critic closure. Initial missing APIs and test-analyzer
 failures remain recorded. Native rendering and the complete verifier are not part of this additive
-campaign. No gameplay, performance or phase gate closes. Commit/milestone follow in the ledger.
+campaign. No gameplay, performance or phase gate closes. The 139 architecture links, 22 frozen spec
+hashes and exact unrelated predecessor index are checked. Development stays on `codex/runtime-foundation`.
 
 Prior dry geometry code/evidence: `41865ed`, preserved on `codex/milestone-watershed-terrain-mapping`.
 
