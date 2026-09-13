@@ -94,3 +94,9 @@ geological evolution, historical travel, production streaming and cross-platform
 open. The network envelope is not the final world's extent. No existing geography may be silently
 rerolled or replaced on load. All 181 baseline requirements, 14 unrun full UI cases, P00/P01/P02 full
 exits and the campaign through P14 remain intact. This increment adds no visible art or new terrain.
+
+## Preserved checkpoint
+
+Code, reference updates and qualification are committed at `b2176e5ddb29bbbf355035b217d523941a4d4cc9`,
+preserved on `codex/milestone-watershed-network-persistence`. Development remains on
+`codex/runtime-foundation`; previous markers and the unrelated staged predecessor changes remain intact.

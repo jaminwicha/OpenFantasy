@@ -32,6 +32,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-watershed-persistence` | `bf96ed9` | Explicit genesis-admitted watershed in the composed-world authority; 883 tests, real before/after-commit process kills, exact history/restart, independent outer archive/pin checks and native foundation/farm regression. [Evidence](p01/watershed-admission/README.md). Default farm terrain is unchanged; macro-to-local realization, basin composition, fluid custody, migration, production performance and all full gates remain open. |
 | `codex/milestone-architecture-reference` | `2f91983` | Timeless architecture reference, source-binding backfill and upkeep hook. [Review/checks](architecture-reference/README.md) cover 123 reference links, bounded factual critique, frozen-spec/index preservation and five synchronized skill entrypoints (ecosystem `4e83086`). Documentation checkpoint only; no gameplay or phase acceptance is inferred. |
 | `codex/milestone-watershed-networks` | `23851fa` | Finite basin composition, canonical archive, exact contributor propagation and shared faces; 904 tests, five independent archives, 23 real host inspections and bounded critic review. [Evidence](p01/watershed-network/README.md) preserves the reproduced scope-alias defect and correction. No live-world/network admission, fluid custody, local realization, performance or full phase acceptance is inferred. |
+| `codex/milestone-watershed-network-persistence` | `b2176e5` | Complete finite network retained in explicit fresh profile-seven world; 919 tests, 74 existing inspections, 27 real operator calls, both process-kill boundaries, exact history and headless foundation/farm regression. [Evidence](p01/network-admission/README.md) retains fixture failures and bounded critic coverage limits. Default farm, prior saves/encodings and all byte/recovery gates remain unchanged. No local realization, fluids, played-save migration, performance or full phase acceptance is inferred. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -56,3 +57,8 @@ marker. The recurring editor-startup error remains unresolved and retained as a 
 The watershed-persistence branch preserves code and qualification at `bf96ed9baa076f80f6b5266383612fa5a1f466ce`.
 It records one explicit new-world macro admission, not a completed frontier or geological simulation.
 The development checkout and previous milestone branches remain unchanged. No push or merge occurred.
+
+The watershed-network-persistence branch preserves code, architecture updates and qualification at
+`b2176e5ddb29bbbf355035b217d523941a4d4cc9`. It records durable ownership of finite prepared networks, not a completed frontier
+or geological simulation. The development checkout, earlier milestones, frozen specifications and
+unrelated staged predecessor work remain intact. No checkout switch, force update, push or merge occurred.

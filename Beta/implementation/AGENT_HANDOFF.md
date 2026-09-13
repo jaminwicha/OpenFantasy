@@ -32,6 +32,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+Code/evidence: `b2176e5`, preserved on `codex/milestone-watershed-network-persistence`.
+
 [Durable network admission](p01/network-admission/README.md) retains the complete finite network in
 an explicit fresh profile-seven construction world. It preserves actors, materials, construction,
 held dialogue and exact recorded history under the existing schema-three authority. Province/member/
