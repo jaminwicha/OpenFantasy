@@ -32,7 +32,7 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: terrain material/Production composition; the checkpoint is recorded in the
+Code/evidence: `a1783a9`, preserved on `codex/milestone-material-production`;
 [milestone ledger](GIT_MILESTONES.md) and [packet](p01/material-production/README.md).
 
 The registry explicitly attaches the existing Production ledger. Live raw claims plus direct raw
