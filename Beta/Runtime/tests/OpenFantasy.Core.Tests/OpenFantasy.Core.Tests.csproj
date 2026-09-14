@@ -39,6 +39,7 @@
     <None Update="Fixtures/watershed-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/watershed-network-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/watershed-terrain-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/terrain-material-registry-v1-compatibility.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/terrain-material-state-v1-compatibility.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/world-actions-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/world-receipts-v1.json" CopyToOutputDirectory="PreserveNewest" />

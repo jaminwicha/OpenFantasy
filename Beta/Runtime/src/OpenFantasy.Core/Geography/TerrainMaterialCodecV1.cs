@@ -15,9 +15,15 @@ public static class TerrainMaterialCodecV1
     private const int MaximumMaterialByteLength = 4096;
     private const int CellByteLength = 24;
 
-    public static byte[] Encode(TerrainMaterialState state)
+    public static byte[] Encode(TerrainMaterialState state) => EncodeState(state, withProduction: false);
+
+    internal static byte[] EncodeState(TerrainMaterialState state, bool withProduction)
     {
         ArgumentNullException.ThrowIfNull(state);
+        if (withProduction != (state.Production is not null))
+        {
+            throw new ArgumentException("The material archive version must retain its exact production proof profile.");
+        }
         byte[] cells = new byte[checked(state.ActiveCells.Count * CellByteLength)];
         for (int i = 0; i < state.ActiveCells.Count; i++)
         {
@@ -27,21 +33,31 @@ public static class TerrainMaterialCodecV1
             BinaryPrimitives.WriteInt64BigEndian(row[8..], cell.Y);
             BinaryPrimitives.WriteInt64BigEndian(row[16..], cell.Z);
         }
-        byte[] bytes = CanonicalEncodingV1.Frame("geography.terrain-material-state.v1", EncodeDeposit(state.Deposit),
-            AuthorityEncodingV1.Encode(state.Inventory), cells);
-        if (bytes.Length > MaximumEncodedByteLength)
+        List<ReadOnlyMemory<byte>> fields = [EncodeDeposit(state.Deposit), AuthorityEncodingV1.Encode(state.Inventory), cells];
+        if (withProduction)
+        {
+            fields.Add(ProductionCodecV1.Encode(state.Production!));
+        }
+        byte[] bytes = CanonicalEncodingV1.Frame(withProduction ? "geography.terrain-material-state.v2"
+            : "geography.terrain-material-state.v1", fields.ToArray());
+        if (bytes.Length > (withProduction ? TerrainMaterialCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength))
         {
             throw new ArgumentException("The material archive exceeds its bound.");
         }
         return bytes;
     }
 
-    public static TerrainMaterialState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default)
+    public static TerrainMaterialState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
+        DecodeState(bytes, withProduction: false, cancellationToken);
+
+    internal static TerrainMaterialState DecodeState(ReadOnlySpan<byte> bytes, bool withProduction, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
-            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 4, "geography.terrain-material-state.v1"u8);
+            var reader = new CanonicalTerrainReader(bytes,
+                withProduction ? TerrainMaterialCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength,
+                withProduction ? 5U : 4U, withProduction ? "geography.terrain-material-state.v2"u8 : "geography.terrain-material-state.v1"u8);
             TerrainMaterialDeposit deposit = DecodeDeposit(reader.ReadField(MaximumDepositByteLength), cancellationToken);
             CountedAuthorityState inventory = AuthorityEncodingV1.Decode(reader.ReadField(AuthorityEncodingV1.MaximumStateByteLength));
             ReadOnlySpan<byte> cells = reader.ReadField(TerrainMaterialState.MaximumActiveCells * CellByteLength);
@@ -62,9 +78,12 @@ public static class TerrainMaterialCodecV1
                 }
                 active.Add(cell);
             }
+            ProductionSnapshot? production = withProduction
+                ? ProductionCodecV1.Decode(reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength)) : null;
             reader.Complete();
-            var state = new TerrainMaterialState(deposit, inventory, active);
-            if (!Encode(state).AsSpan().SequenceEqual(bytes))
+            var evidence = production is null ? null : new TerrainMaterialProduction(production, inventory);
+            var state = new TerrainMaterialState(deposit, inventory, active, evidence);
+            if (!EncodeState(state, withProduction).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The material archive is noncanonical.");
             }

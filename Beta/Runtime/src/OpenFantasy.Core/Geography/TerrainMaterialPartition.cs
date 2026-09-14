@@ -61,7 +61,9 @@ internal sealed class TerrainMaterialPartition
                 ? storage with { Revision = checked(storage.Revision + 1) } : storage).ToArray();
         var custody = new CustodySnapshot(_state.Inventory.WorldId, _state.Inventory.BranchId, _revision, storages, lots);
         IEnumerable<CellCoordinate> active = refining ? _state.ActiveCells.Concat(_cells) : _state.ActiveCells.Except(_cells);
-        var candidate = new TerrainMaterialState(deposit, _state.Inventory.WithCustody(custody), active);
+        var inventory = _state.Inventory.WithCustody(custody);
+        var production = _state.Production is null ? null : new TerrainMaterialProduction(_state.Production, inventory);
+        var candidate = new TerrainMaterialState(deposit, inventory, active, production);
         return new(_state, candidate);
     }
 
@@ -158,7 +160,7 @@ internal sealed class TerrainMaterialPartition
     }
 
     private bool IsOccupied(EntityId identity) => _state.Inventory.ContainsIdentity(identity)
-        || _state.Deposit.ReservesIdentity(identity) || (_historicallyOccupied?.Invoke(identity) ?? false);
+        || (_state.Production?.ContainsIdentity(identity) ?? false) || _state.Deposit.ReservesIdentity(identity) || (_historicallyOccupied?.Invoke(identity) ?? false);
 
     private static IOrderedEnumerable<Part> Ordered(IEnumerable<Part> parts) =>
         parts.OrderBy(p => p.Source.SourceId).ThenBy(p => p.Source.Start).ThenBy(p => p.CustodianId);

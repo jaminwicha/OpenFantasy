@@ -35,6 +35,9 @@ public static class LocalAuthorityFiles
     public static TerrainMaterialRegistry ReadMaterialRegistry(string path) =>
         TerrainMaterialRegistryCodecV1.Decode(Read(path, TerrainMaterialRegistryCodecV1.MaximumEncodedByteLength));
 
+    public static TerrainMaterialRegistry ReadMaterialProduction(string path) =>
+        TerrainMaterialRegistryCodecV2.Decode(Read(path, TerrainMaterialRegistryCodecV2.MaximumEncodedByteLength));
+
     private static byte[] Read(string path, int maximum)
     {
         using FileStream stream = File.OpenRead(path);

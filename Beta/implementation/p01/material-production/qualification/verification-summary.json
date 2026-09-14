@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "scope": "Standalone terrain/Production composition; no world/save/profile, native rendering or phase acceptance.",
+  "managed": [
+    {
+      "group": "core",
+      "total": "654",
+      "executed": "654",
+      "passed": "654",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    {
+      "group": "hosting",
+      "total": "329",
+      "executed": "329",
+      "passed": "329",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  ],
+  "newCases": 12,
+  "inspectors": {
+    "host": {
+      "status": "passed",
+      "runs": 20
+    },
+    "legacy-registry": {
+      "status": "passed",
+      "runs": 26
+    },
+    "legacy-material": {
+      "status": "passed",
+      "runs": 24
+    }
+  },
+  "archiveProfiles": {
+    "rawStateV1": "Exact fixture from 163a7bb preserved",
+    "rawRegistryV1": "Exact fixture from b47fec7 preserved",
+    "productionStateV2MaximumBytes": 22500000,
+    "productionRegistryV2MaximumBytes": 23100000
+  },
+  "fixtures": {
+    "attached.bin": {
+      "bytes": 5129,
+      "sha256": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b"
+    },
+    "chained-prefixes.bin": {
+      "bytes": 7334,
+      "sha256": "78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef"
+    },
+    "combined-lot-cap.bin": {
+      "bytes": 861770,
+      "sha256": "f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035"
+    },
+    "crafted-reloaded.bin": {
+      "bytes": 6117,
+      "sha256": "c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649"
+    }
+  },
+  "critic": "Bounded native read-only design and implementation review; no remaining findings. Not a human or full-game acceptance review.",
+  "excluded": [
+    "Full verifier/native journeys",
+    "Live world admission",
+    "Mining labor and spatial rights",
+    "Long-lived provenance compaction",
+    "Production latency/working-set/platform qualification",
+    "All complete phase/game/feasibility gates"
+  ]
+}

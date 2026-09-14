@@ -1,0 +1,96 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:06.27]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.DirectCraftCannotConsumeUnextractedTerrainThroughReconciliation [FAIL]
+[xUnit.net 00:00:06.27]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ChainedCraftAndPartialPrefixesRetireRawUnitsOnlyOnce [FAIL]
+[xUnit.net 00:00:06.27]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ProductionArchiveRejectsTruncationMissingProofDowngradesAndCancellation [FAIL]
+[xUnit.net 00:00:06.28]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.InventoryOnlyChangesRespectCombinedRawAndDerivedStorageCapacity [FAIL]
+[xUnit.net 00:00:06.29]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.CraftedPlansPinProductionAndPreserveAuthenticationRevisionAndHistoricalRejections [FAIL]
+[xUnit.net 00:00:06.29]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ActualCraftRetirementSurvivesDemotionRefinementAndArchiveReload [FAIL]
+  Failed OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.DirectCraftCannotConsumeUnextractedTerrainThroughReconciliation [24 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaterialProduction(TerrainMaterialRegistry registry, ItemPhysicalBinding binding) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 202
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.WithProduction(TerrainMaterialRegistry registry) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 195
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.DirectCraftCannotConsumeUnextractedTerrainThroughReconciliation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 45
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ChainedCraftAndPartialPrefixesRetireRawUnitsOnlyOnce [2 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaterialProduction(TerrainMaterialRegistry registry, ItemPhysicalBinding binding) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 202
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.WithProduction(TerrainMaterialRegistry registry) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 195
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ExtractMaterial(UInt64 quantity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 181
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ChainedCraftAndPartialPrefixesRetireRawUnitsOnlyOnce() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 60
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ProductionArchiveRejectsTruncationMissingProofDowngradesAndCancellation [1 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaterialProduction(TerrainMaterialRegistry registry, ItemPhysicalBinding binding) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 202
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.WithProduction(TerrainMaterialRegistry registry) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 195
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ExtractMaterial(UInt64 quantity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 181
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ProductionArchiveRejectsTruncationMissingProofDowngradesAndCancellation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 165
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.InventoryOnlyChangesRespectCombinedRawAndDerivedStorageCapacity [2 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaterialProduction(TerrainMaterialRegistry registry, ItemPhysicalBinding binding) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 202
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.WithProduction(TerrainMaterialRegistry registry) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 195
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.InventoryOnlyChangesRespectCombinedRawAndDerivedStorageCapacity() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 149
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.CraftedPlansPinProductionAndPreserveAuthenticationRevisionAndHistoricalRejections [1 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaterialProduction(TerrainMaterialRegistry registry, ItemPhysicalBinding binding) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 202
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.WithProduction(TerrainMaterialRegistry registry) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 195
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ExtractMaterial(UInt64 quantity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 181
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.CraftedPlansPinProductionAndPreserveAuthenticationRevisionAndHistoricalRejections() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 108
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ActualCraftRetirementSurvivesDemotionRefinementAndArchiveReload [2 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaterialProduction(TerrainMaterialRegistry registry, ItemPhysicalBinding binding) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 202
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.WithProduction(TerrainMaterialRegistry registry) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 195
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ActualCraftRetirementSurvivesDemotionRefinementAndArchiveReload() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 16
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:06.32]     OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ConsumedClaimsCannotBeRemovedRewrittenOrRevivedByAnAdvancingSnapshot [FAIL]
+  Failed OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ConsumedClaimsCannotBeRemovedRewrittenOrRevivedByAnAdvancingSnapshot [1 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.MaterialProduction(TerrainMaterialRegistry registry, ItemPhysicalBinding binding) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 202
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.WithProduction(TerrainMaterialRegistry registry) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 195
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ExtractMaterial(UInt64 quantity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 181
+   at OpenFantasy.Core.Tests.Geography.TerrainMaterialRegistryTests.ConsumedClaimsCannotBeRemovedRewrittenOrRevivedByAnAdvancingSnapshot() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs:line 80
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     7, Passed:    37, Skipped:     0, Total:    44, Duration: 3 s - OpenFantasy.Core.Tests.dll (net8.0)

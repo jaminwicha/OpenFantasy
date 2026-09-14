@@ -32,51 +32,52 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `b47fec7`, preserved on `codex/milestone-material-registry`.
+Code/evidence: terrain material/Production composition; the checkpoint is recorded in the
+[milestone ledger](GIT_MILESTONES.md) and [packet](p01/material-production/README.md).
 
-The [shared material registry](p01/material-registry/README.md) composes 1–64 disjoint funded allocations
-under one counted inventory and one exact terrain basis. It rejects physical/source overlap, conflicting
-calibration, cross-allocation identity collisions and inconsistent custodian roles. Operations validate
-all allocations atomically; other allocations' active bindings and source attribution survive transfers,
-refinement and demotion. The global 4,096-cell budget includes empty active cells. A normalized archive
-stores geometry/custody once, and immutable network caches avoid macro copies per binding.
+The registry explicitly attaches the existing Production ledger. Live raw claims plus direct raw
+retirement cover every allocation once; recrafting outputs does not restore or recount inputs.
+Actual instant craft requires transferred stock outside terrain representation custody. Reconciliation
+and archive validation also reject direct coarse/fine consumption, retain exact prior batches/recipes,
+and enforce production/calibration/identity and combined storage/lot limits. Detail changes preserve
+consumed holes and complete state pins. New explicit v2 archives carry production proof; raw-only v1
+bytes remain exact and cannot silently omit evidence.
 
-[Qualification](p01/material-registry/qualification/verification-summary.json): clean managed build,
-**971 tests (642 Core + 329 Hosting, zero skips)**, 14 added registry tests, 26 registry plus 24 prior-material
-real-host inspections, independent interval/spatial-overlap checks and bounded native critic closure.
-The maximum network/64-allocation archive is 3,367,561 bytes; 63 additional bindings allocate 127,656
-bytes after cache initialization. This is a bounded allocation-shape check, not production latency or
-working-set qualification. Missing APIs, private test-helper access and the uncopied fixture failure
-remain retained; final test logs also retain macOS allocator diagnostics without attributing their cause.
-The complete verifier and native rendered journeys are not part of this additive campaign.
+[Qualification](p01/material-production/qualification/verification-summary.json): clean managed build,
+**983 tests (654 Core + 329 Hosting, zero skips)**, 12 added cases, 20 new real-host inspections plus
+26 registry and 24 prior-material inspections on the same binaries. Four valid archives receive an
+independent direct-retirement/spatial coverage check; recipe mass and derived-output DAG proofs remain
+managed. Native design/source critique found no remaining issues in scope. Missing APIs, compiler/test
+helper errors and an incorrect test mass-allocation fixture remain retained, corrected without changing
+gates. Full verifier/native journeys were not part of this additive standalone campaign.
 
-The registry is standalone: durable world admission, allocation mutation/removal, retirement and
-cross-registry/global ownership remain explicit integrating obligations. It does not mint resources,
-enable playable mining, migrate saves or close any phase/game/feasibility gate. Timeless geography and
-material references are updated in the same change. All 146 architecture links, 22 frozen spec hashes
-and the exact unrelated predecessor index are checked. The milestone ledger records this scope.
+This does not enable playable mining, admit material registries to durable worlds, compact long-lived
+history or close a game/phase/feasibility gate. Timeless architecture references and maintained verifier
+hooks are updated. Frozen specification, predecessor work and prior milestones remain preserved.
 
 Prior dependencies remain preserved:
 
+- [Shared registry](p01/material-registry/README.md), `b47fec7`, milestone
+  `codex/milestone-material-registry`: 1–64 disjoint allocations, one inventory/terrain, normalized archive
+  and shared immutable macro data. Its 971-test and maximum-network allocation evidence describes that
+  checkpoint; it does not establish production performance or durable ownership.
 - [Funded slabs](p01/terrain-materials/README.md), `163a7bb`, milestone
   `codex/milestone-terrain-material-allocation`: exact full-support source partitioning, physical calibration,
-  remaining-stock demotion and v1 archive. Its 957-test/24-inspection evidence describes that checkpoint;
-  retained v1 bytes remain exact in the registry campaign.
+  remaining-stock demotion and raw-only v1 archive. Old single-state bytes remain pinned by fixture.
 - [Dry terrain mapping](p01/terrain-mapping/README.md), `41865ed`, milestone
   `codex/milestone-watershed-terrain-mapping`: exact network/scale/datum/window geometry and ancestral
-  addresses. It remains separate from the stratified terrain interpreter and cannot allocate material.
+  addresses, separate from the stratified terrain interpreter and unable to allocate material.
 - [Durable networks](p01/network-admission/README.md), `b2176e5`, milestone
   `codex/milestone-watershed-network-persistence`: fresh profile seven preserves complete networks through
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include Production retirement composition so actually processed raw material stays
-accounted for, and complete physical macro profiles (crust/history, climate/forcing, coast/reservoir/
-external budgets). Integrate complete allocation ownership and a retained local terrain interpreter
-before live terrain admission. Preserve occupancy, construction, support, custody and history; never
-reroll established facts, overwrite lived places or implicitly migrate saves. Follow the full P01/P02
-plan and [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md). Development remains on
-`codex/runtime-foundation`.
+Next dependencies include complete physical macro profiles (crust/history, climate/forcing,
+coast/reservoir/external budgets) and a retained local terrain interpreter. Integrate complete allocation
+ownership, occupancy, construction, support, custody and exact history before live terrain admission.
+Never reroll established facts, overwrite lived places or implicitly migrate saves. Follow the full
+P01/P02 plan and [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md). Development remains
+on `codex/runtime-foundation`.
 
 ## Existing playable scope and prior evidence
 

@@ -37,6 +37,7 @@ def main():
     env["OPENFANTASY_WATERSHED_NETWORK_WORLD_EVIDENCE"] = str(test_results / "watershed-network-world-fixture")
     env["OPENFANTASY_WATERSHED_TERRAIN_EVIDENCE"] = str(test_results / "watershed-terrain-fixture")
     env["OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE"] = str(test_results / "terrain-material-fixture")
+    env["OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE"] = str(test_results / "material-production-fixture")
     env["OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE"] = str(test_results / "material-registry-fixture")
     report = dict(startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   scope="Local core/hosting tests, durable counted authority and Godot binding smoke",
@@ -148,6 +149,9 @@ def main():
         run("material-registry-inspections", [sys.executable, root / "tools/check_material_registry.py",
             "--dotnet", dotnet, "--fixture", test_results / "material-registry-fixture",
             "--output", artifacts / "material-registry.json"])
+        run("material-production-inspections", [sys.executable, root / "tools/check_material_production.py",
+            "--dotnet", dotnet, "--fixture", test_results / "material-production-fixture",
+            "--output", artifacts / "material-production.json"])
         run("host-contract-inspections", [sys.executable, root / "tools/check_contract_inspections.py",
             "--dotnet", dotnet, "--output", inspection_report])
         report["contractInspections"] = json.loads(inspection_report.read_text())

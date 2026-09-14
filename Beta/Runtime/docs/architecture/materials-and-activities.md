@@ -19,8 +19,10 @@ unchecked integer arithmetic.
 counted authority for an explicitly finite homogeneous slab. Detail changes partition existing source
 intervals between coarse and cell-bound custodians; quantities remain derived from actual lots. A
 transfer to another custodian remains owned there when detail is demoted. The standalone material
-state requires continuous coverage of its original interval, so transformed or retired inputs need a
-composition with the production provenance contract before they can participate. This representation
+state requires continuous coverage of its original interval. The explicit
+[production composition](world-and-geography.md#domain-contract-terrain-and-production-composition)
+covers consumed intervals with retained direct raw retirement, counting them once through further
+transformations. Raw-only archives retain their stricter live-coverage contract. This representation
 planner grants neither mining labor nor extraction permission.
 
 The [shared allocation registry](world-and-geography.md#domain-contract-shared-material-allocation-registry)
@@ -28,6 +30,10 @@ checks spatial and source exclusivity across multiple slabs while retaining one 
 inventory. A transfer remains attributed to its original allocation's source interval even when the
 receiving storage is another allocation's coarse custodian. Shared detail and storage limits apply to
 all allocations together; successful validation of separate slab states alone cannot establish that.
+Attached production participates in combined storage/lot limits and identity/calibration checks.
+Crafting consumes stock outside representation custody and atomically retains its history alongside
+the allocation views. Reconciliation preserves exact prior batches and recipe admission; it cannot
+restore consumed source rights by replacing the proof.
 
 ## Runtime binding: one connected activity chain
 

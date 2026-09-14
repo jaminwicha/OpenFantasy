@@ -35,6 +35,9 @@ public sealed class ProductionSnapshot
     public ContentHash ContentHash => ContentHash.Compute(ProductionCodecV1.Encode(this));
     public bool ContainsIdentity(EntityId identity) => _identities.Contains(identity);
 
+    internal bool ContainsIdentityMatching(Func<EntityId, bool> predicate) => _identities.ContainsMatching(predicate);
+    internal void ValidateMaterialBinding(ItemPhysicalBinding binding) => _identities.ValidateMaterialBinding(binding);
+
     public CraftRecipeDefinition GetRecipe(EntityId recipeId) => Recipes.FirstOrDefault(value => value.DefinitionId == recipeId)
         ?? throw new ArgumentException("The crafting recipe is outside this admitted production profile.", nameof(recipeId));
 

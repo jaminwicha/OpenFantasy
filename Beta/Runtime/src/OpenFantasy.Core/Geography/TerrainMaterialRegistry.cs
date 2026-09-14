@@ -15,15 +15,17 @@ public sealed class TerrainMaterialRegistry
     private readonly HashSet<EntityId> _allocationIdentities = [];
     private readonly HashSet<EntityId> _physicalIdentities = [];
     private readonly Lazy<ContentHash> _contentHash;
+    private readonly TerrainMaterialProduction? _production;
 
     internal TerrainMaterialRegistry(PreparedWatershedTerrain terrain, CountedAuthorityState inventory,
-        IEnumerable<TerrainMaterialAllocation> allocations, IReadOnlyDictionary<EntityId, CellCoordinate[]>? activeCells)
+        IEnumerable<TerrainMaterialAllocation> allocations, IReadOnlyDictionary<EntityId, CellCoordinate[]>? activeCells, ProductionSnapshot? production = null)
     {
         ArgumentNullException.ThrowIfNull(terrain);
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(allocations);
         Terrain = terrain;
         Inventory = inventory;
+        _production = production is null ? null : new(production, inventory);
         List<TerrainMaterialAllocation> copy = [];
         foreach (TerrainMaterialAllocation allocation in allocations)
         {
@@ -46,7 +48,7 @@ public sealed class TerrainMaterialRegistry
         {
             TerrainMaterialState state = activeCells is null
                 ? TerrainMaterialState.Create(allocation.Deposit, inventory)
-                : new(allocation.Deposit, inventory, activeCells[allocation.AllocationId]);
+                : new(allocation.Deposit, inventory, activeCells[allocation.AllocationId], _production);
             _states.Add(allocation.AllocationId, state);
             ActiveCellCount = checked(ActiveCellCount + state.ActiveCells.Count);
             if (ActiveCellCount > MaximumActiveCells)
@@ -57,8 +59,9 @@ public sealed class TerrainMaterialRegistry
             CoarseQuantity = checked(CoarseQuantity + state.CoarseQuantity);
             DetailedQuantity = checked(DetailedQuantity + state.DetailedQuantity);
             OtherQuantity = checked(OtherQuantity + state.OtherQuantity);
+            RetiredQuantity = checked(RetiredQuantity + state.RetiredQuantity);
         }
-        _contentHash = new(() => ContentHash.Compute(TerrainMaterialRegistryCodecV1.Encode(this)));
+        _contentHash = new(() => ContentHash.Compute(Production is null ? TerrainMaterialRegistryCodecV1.Encode(this) : TerrainMaterialRegistryCodecV2.Encode(this)));
     }
 
     public PreparedWatershedTerrain Terrain { get; }
@@ -71,6 +74,8 @@ public sealed class TerrainMaterialRegistry
     public ulong CoarseQuantity { get; }
     public ulong DetailedQuantity { get; }
     public ulong OtherQuantity { get; }
+    public ulong RetiredQuantity { get; }
+    public ProductionSnapshot? Production => _production?.Snapshot;
 
     public static TerrainMaterialRegistry Create(PreparedWatershedTerrain terrain, CountedAuthorityState inventory,
         IEnumerable<TerrainMaterialAllocation> allocations) => new(terrain, inventory, allocations, null);
@@ -80,7 +85,18 @@ public sealed class TerrainMaterialRegistry
 
     public bool ContainsIdentity(EntityId identity) => Inventory.ContainsIdentity(identity)
         || Terrain.Network.MaterialIdentities.Contains(identity) || _allocationIdentities.Contains(identity)
-        || _physicalIdentities.Contains(identity);
+        || _physicalIdentities.Contains(identity) || (Production?.ContainsIdentity(identity) ?? false);
+
+    /// <summary>Explicitly attaches a production proof without changing existing custody or allocation facts.</summary>
+    public TerrainMaterialRegistry AttachProduction(ProductionSnapshot production)
+    {
+        ArgumentNullException.ThrowIfNull(production);
+        if (Production is not null)
+        {
+            throw new InvalidOperationException("Production is already attached; use atomic reconciliation.");
+        }
+        return new(Terrain, Inventory, Allocations, ActiveBindings(), production);
+    }
 
     /// <summary>Reconciles one separately authorized custody result across every allocation atomically.</summary>
     public TerrainMaterialRegistry ReconcileInventory(CountedAuthorityState inventory)
@@ -90,11 +106,36 @@ public sealed class TerrainMaterialRegistry
         {
             return this;
         }
-        foreach (TerrainMaterialState state in _states.Values)
+        ValidateInventorySuccessor(inventory);
+        return new(Terrain, inventory, Allocations, ActiveBindings(), Production);
+    }
+
+    /// <summary>Publishes a separately validated custody/production candidate under retained allocation ownership.</summary>
+    public TerrainMaterialRegistry ReconcileProduction(CountedAuthorityState inventory, ProductionSnapshot production)
+    {
+        ArgumentNullException.ThrowIfNull(inventory);
+        ArgumentNullException.ThrowIfNull(production);
+        if (_production is null)
         {
-            _ = state.ReconcileInventory(inventory);
+            throw new InvalidOperationException("Attach production before planning a combined transition.");
         }
-        return new(Terrain, inventory, Allocations, ActiveBindings());
+        if (inventory.ContentHash == Inventory.ContentHash && production.ContentHash == Production!.ContentHash)
+        {
+            return this;
+        }
+        ValidateInventorySuccessor(inventory);
+        _production.ValidateSuccessor(production);
+        return new(Terrain, inventory, Allocations, ActiveBindings(), production);
+    }
+
+    private void ValidateInventorySuccessor(CountedAuthorityState inventory)
+    {
+        if (inventory.Custody.Revision <= Revision || inventory.WorldId != Inventory.WorldId
+            || inventory.BranchId != Inventory.BranchId
+            || Inventory.WithCustody(inventory.Custody).ContentHash != inventory.ContentHash)
+        {
+            throw new ArgumentException("Reconciliation requires advancing custody with unchanged scope and admission.");
+        }
     }
 
     internal TerrainMaterialRegistry WithMaterial(EntityId allocationId, TerrainMaterialState candidate)
@@ -102,7 +143,7 @@ public sealed class TerrainMaterialRegistry
         _ = GetState(allocationId);
         Dictionary<EntityId, CellCoordinate[]> active = ActiveBindings();
         active[allocationId] = candidate.ActiveCells.ToArray();
-        return new(Terrain, candidate.Inventory, Allocations, active);
+        return new(Terrain, candidate.Inventory, Allocations, active, Production);
     }
 
     private Dictionary<EntityId, CellCoordinate[]> ActiveBindings() =>
@@ -123,7 +164,7 @@ public sealed class TerrainMaterialRegistry
                 throw new ArgumentException("Every allocation requires the exact registry terrain basis.");
             }
             if (Inventory.ContainsIdentity(allocation.AllocationId) || Terrain.Network.MaterialIdentities.Contains(allocation.AllocationId)
-                || _physicalIdentities.Contains(allocation.AllocationId))
+                || _physicalIdentities.Contains(allocation.AllocationId) || (Production?.ContainsIdentity(allocation.AllocationId) ?? false))
             {
                 throw new ArgumentException("Allocation identities cannot alias another registry dependency role.");
             }
@@ -143,6 +184,12 @@ public sealed class TerrainMaterialRegistry
         if (coarse.Overlaps(fine))
         {
             throw new ArgumentException("A shared custodian cannot represent both coarse and detailed terrain.");
+        }
+        if (Production is not null && Production.Batches.Any(batch => (coarse.Contains(batch.CustodianId)
+            || fine.Contains(batch.CustodianId)) && batch.Ingredients.Any(ingredient => ingredient.Source is { } source
+                && Allocations.Any(allocation => allocation.Deposit.Intersect(source) is not null))))
+        {
+            throw new ArgumentException("Production cannot consume allocated sources in any terrain representation custodian.");
         }
         for (int i = 0; i < Allocations.Count; i++)
         {

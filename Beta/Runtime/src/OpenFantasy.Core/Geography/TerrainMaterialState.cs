@@ -13,13 +13,14 @@ public sealed class TerrainMaterialState
     private readonly HashSet<CellCoordinate> _activeCells;
 
     internal TerrainMaterialState(TerrainMaterialDeposit deposit, CountedAuthorityState inventory,
-        IEnumerable<CellCoordinate> activeCells)
+        IEnumerable<CellCoordinate> activeCells, TerrainMaterialProduction? production = null)
     {
         ArgumentNullException.ThrowIfNull(deposit);
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(activeCells);
         Deposit = deposit;
         Inventory = inventory;
+        ProductionEvidence = production;
         _activeCells = [];
         foreach (CellCoordinate cell in activeCells)
         {
@@ -31,17 +32,20 @@ public sealed class TerrainMaterialState
         }
         ActiveCells = _activeCells.Order().ToList().AsReadOnly();
         ValidateBindings();
-        (CoarseQuantity, DetailedQuantity, OtherQuantity) = ValidateCoverage();
+        (CoarseQuantity, DetailedQuantity, OtherQuantity, RetiredQuantity) = ValidateCoverage();
     }
 
     public TerrainMaterialDeposit Deposit { get; }
     public CountedAuthorityState Inventory { get; }
     public ReadOnlyCollection<CellCoordinate> ActiveCells { get; }
     public ulong Revision => Inventory.Custody.Revision;
-    public ContentHash ContentHash => ContentHash.Compute(TerrainMaterialCodecV1.Encode(this));
+    public ContentHash ContentHash => ContentHash.Compute(ProductionEvidence is null ? TerrainMaterialCodecV1.Encode(this) : TerrainMaterialCodecV2.Encode(this));
     public ulong CoarseQuantity { get; }
     public ulong DetailedQuantity { get; }
     public ulong OtherQuantity { get; }
+    public ulong RetiredQuantity { get; }
+    public OpenFantasy.Core.Production.ProductionSnapshot? Production => ProductionEvidence?.Snapshot;
+    internal TerrainMaterialProduction? ProductionEvidence { get; }
 
     public static TerrainMaterialState Create(TerrainMaterialDeposit deposit, CountedAuthorityState inventory)
     {
@@ -67,7 +71,8 @@ public sealed class TerrainMaterialState
         {
             throw new ArgumentException("Reconciliation requires an advancing custody result with unchanged scope and admission.");
         }
-        return new(Deposit, inventory, ActiveCells);
+        var production = Production is null ? null : new TerrainMaterialProduction(Production, inventory);
+        return new(Deposit, inventory, ActiveCells, production);
     }
 
     internal bool IsActive(CellCoordinate cell) => _activeCells.Contains(cell);
@@ -87,6 +92,7 @@ public sealed class TerrainMaterialState
         {
             throw new ArgumentException("Material geography cannot alias custody identities.");
         }
+        ProductionEvidence?.ValidateDeposit(Deposit);
         CustodianAccessPolicy? coarse = Inventory.Policies.SingleOrDefault(p => p.CustodianId == Deposit.CoarseCustodianId);
         CustodianAccessPolicy? fine = Inventory.Policies.SingleOrDefault(p => p.CustodianId == Deposit.FineCustodianId);
         if (coarse is null || fine is null || coarse.OwnerActorId != fine.OwnerActorId)
@@ -100,10 +106,11 @@ public sealed class TerrainMaterialState
         }
     }
 
-    private (ulong Coarse, ulong Detailed, ulong Other) ValidateCoverage()
+    private (ulong Coarse, ulong Detailed, ulong Other, ulong Retired) ValidateCoverage()
     {
         ulong cursor = Deposit.Source.Start;
-        ulong coarse = 0, detailed = 0, other = 0;
+        ulong coarse = 0, detailed = 0, other = 0, retired = 0;
+        List<SourceInterval> claims = [];
         SourceInterval[] activeIntervals = ActiveCells.Select(Deposit.IntervalFor).ToArray();
         foreach (CountedSourceLot lot in Inventory.Custody.Lots.Where(l => l.Source.SourceId == Deposit.Source.SourceId)
             .OrderBy(l => l.Source.Start))
@@ -113,11 +120,7 @@ public sealed class TerrainMaterialState
             {
                 continue;
             }
-            if (part.Start != cursor)
-            {
-                throw new ArgumentException("Every funded material unit must remain covered exactly once by current custody.");
-            }
-            cursor = part.End;
+            claims.Add(part);
             if (lot.CustodianId == Deposit.CoarseCustodianId)
             {
                 if (activeIntervals.Any(a => a.Start < part.End && part.Start < a.End))
@@ -140,10 +143,26 @@ public sealed class TerrainMaterialState
                 other = checked(other + part.Quantity);
             }
         }
+        foreach (SourceInterval source in ProductionEvidence?.Retirements(Deposit.Source.SourceId) ?? [])
+        {
+            if (Deposit.Intersect(source) is { } part)
+            {
+                claims.Add(part);
+                retired = checked(retired + part.Quantity);
+            }
+        }
+        foreach (SourceInterval claim in claims.OrderBy(c => c.Start))
+        {
+            if (claim.Start != cursor)
+            {
+                throw new ArgumentException("Every funded unit requires exactly one live raw or direct retired raw claim.");
+            }
+            cursor = claim.End;
+        }
         if (cursor != Deposit.Source.End)
         {
             throw new ArgumentException("Missing or retired material needs a composed provenance contract; it cannot be regenerated.");
         }
-        return (coarse, detailed, other);
+        return (coarse, detailed, other, retired);
     }
 }

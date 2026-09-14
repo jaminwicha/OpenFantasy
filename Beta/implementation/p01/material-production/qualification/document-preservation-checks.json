@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "architectureLinks": 153,
+  "frozenSpecHashes": 22,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "predecessorCompileBoundary": true,
+  "nestedGodotIgnore": true,
+  "runtimeSourceNaming": true,
+  "sourceSha256": {
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialCodecV1.cs": "7072f3ebf01e2174b62971cb173fe0e213d65710ed81d7fdcaa3b291564db476",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialPartition.cs": "7cb27587f9ea4b03b21b56ac12b76b617b1ed7b5731994624dbb850db56c7aad",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs": "d4cfe755797ff414ea08048655e963d84ca0e16c0a416a76d7d1ec57071cfd15",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV1.cs": "abe56ad428d67ff06d42055c922a4a6ca0418f6544dab11b6fbaa3c499b69cdc",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialState.cs": "708dd2c21d7b0e1281a263a9d8b9a2dbbbba1d6bd6eeadf260f927a9f729fb38",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV1.cs": "1bc7af663d0932494acbbaffa1ddb801f3af629fe2a16ac6a6ff82d7f2da5049",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionIdentityRegistry.cs": "58d1bc9a9e0f64629655134a5abd442fcb49379f9c4de4174f4aa45bd9122ecc",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionSnapshot.cs": "da8681a97f22fc2495e287bd54501eb8139f27035c01ee199da26413366feea0",
+    "Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs": "15a9d2097096c398f9da2ffaa1d82a752f28769fd7dc8154527aae97ad836125",
+    "Beta/Runtime/src/OpenFantasy.Host/TerrainMaterialRegistryOperator.cs": "5f70052a7c18b6ad0c059f374bbbb651de2da3c19b9e329261e8eaa47b979109",
+    "Beta/Runtime/src/OpenFantasy.Hosting/LocalAuthorityFiles.cs": "c7dddd14d7a38aaaa7b0fb925773224166c1c709702b045ad17d0d00815f9284",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj": "f10dc92688bbedbaad501b3714f62cf436eb039755933ae5382b1a7443972894",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialCodecV2.cs": "59378c4d3403cfb6191ac694b47e52aba62870af2cf3011981d043b47bbc165c",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlan.cs": "68bba6a22e394cc5cb9a831ea328119fc4a7589387758a9217488c4f841b6254",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlanner.cs": "00012e203225f6c8e4f098a0003c7ef44cae18feb4f577ec2d9086b13b09d509",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialProduction.cs": "ec279c6a91888b6cc3cea6ab466d4057d5c1c3364b364c2ed04fbc12d34eb463",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV2.cs": "284f0e4baeb3b97c6b38d83724c45757c0f4746771ca3336a91e6c5c25fdb4a6",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/TerrainMaterialProductionTests.cs": "deabe46d2ad3bced879ebc383720cbbfd8457f4cf9cdbee492ec09ec0ca82230"
+  }
+}

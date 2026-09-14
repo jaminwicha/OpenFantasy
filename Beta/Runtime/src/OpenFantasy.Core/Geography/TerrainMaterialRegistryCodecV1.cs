@@ -1,5 +1,6 @@
 using System.Buffers.Binary;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Geography;
@@ -12,30 +13,49 @@ public static class TerrainMaterialRegistryCodecV1
     private const int MaximumAllocationsByteLength = 640_000;
     private const int CellByteLength = 24;
 
-    public static byte[] Encode(TerrainMaterialRegistry registry)
+    public static byte[] Encode(TerrainMaterialRegistry registry) => EncodeRegistry(registry, withProduction: false);
+
+    internal static byte[] EncodeRegistry(TerrainMaterialRegistry registry, bool withProduction)
     {
         ArgumentNullException.ThrowIfNull(registry);
-        byte[] bytes = CanonicalEncodingV1.Frame("geography.terrain-material-registry.v1", WatershedTerrainCodecV1.Encode(registry.Terrain),
-            AuthorityEncodingV1.Encode(registry.Inventory), EncodeAllocations(registry));
-        if (bytes.Length > MaximumEncodedByteLength)
+        if (withProduction != (registry.Production is not null))
+        {
+            throw new ArgumentException("The registry archive version must retain its exact production proof profile.");
+        }
+        List<ReadOnlyMemory<byte>> fields = [WatershedTerrainCodecV1.Encode(registry.Terrain),
+            AuthorityEncodingV1.Encode(registry.Inventory), EncodeAllocations(registry)];
+        if (withProduction)
+        {
+            fields.Add(ProductionCodecV1.Encode(registry.Production!));
+        }
+        byte[] bytes = CanonicalEncodingV1.Frame(withProduction ? "geography.terrain-material-registry.v2"
+            : "geography.terrain-material-registry.v1", fields.ToArray());
+        if (bytes.Length > (withProduction ? TerrainMaterialRegistryCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength))
         {
             throw new ArgumentException("The material registry exceeds its archive limit.");
         }
         return bytes;
     }
 
-    public static TerrainMaterialRegistry Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default)
+    public static TerrainMaterialRegistry Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
+        DecodeRegistry(bytes, withProduction: false, cancellationToken);
+
+    internal static TerrainMaterialRegistry DecodeRegistry(ReadOnlySpan<byte> bytes, bool withProduction, CancellationToken cancellationToken)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
-            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 4, "geography.terrain-material-registry.v1"u8);
+            var reader = new CanonicalTerrainReader(bytes,
+                withProduction ? TerrainMaterialRegistryCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength,
+                withProduction ? 5U : 4U, withProduction ? "geography.terrain-material-registry.v2"u8 : "geography.terrain-material-registry.v1"u8);
             PreparedWatershedTerrain terrain = WatershedTerrainCodecV1.Decode(reader.ReadField(WatershedTerrainCodecV1.MaximumEncodedByteLength), cancellationToken);
             CountedAuthorityState inventory = AuthorityEncodingV1.Decode(reader.ReadField(AuthorityEncodingV1.MaximumStateByteLength));
             ReadOnlySpan<byte> rows = reader.ReadField(MaximumAllocationsByteLength);
+            ProductionSnapshot? production = withProduction
+                ? ProductionCodecV1.Decode(reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength)) : null;
             reader.Complete();
-            var registry = DecodeAllocations(rows, terrain, inventory, cancellationToken);
-            if (!Encode(registry).AsSpan().SequenceEqual(bytes))
+            var registry = DecodeAllocations(rows, terrain, inventory, cancellationToken, production);
+            if (!EncodeRegistry(registry, withProduction).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The material registry is not canonical.");
             }
@@ -83,7 +103,7 @@ public static class TerrainMaterialRegistryCodecV1
     }
 
     private static TerrainMaterialRegistry DecodeAllocations(ReadOnlySpan<byte> bytes, PreparedWatershedTerrain terrain,
-        CountedAuthorityState inventory, CancellationToken cancellationToken)
+        CountedAuthorityState inventory, CancellationToken cancellationToken, ProductionSnapshot? production)
     {
         int offset = 0;
         int count = ReadCount(bytes, ref offset, TerrainMaterialRegistry.MaximumAllocations);
@@ -126,7 +146,7 @@ public static class TerrainMaterialRegistryCodecV1
         {
             throw new FormatException("The allocation list has trailing data.");
         }
-        return new(terrain, inventory, allocations, active);
+        return new(terrain, inventory, allocations, active, production);
     }
 
     private static int ReadCount(ReadOnlySpan<byte> bytes, ref int offset, int maximum)

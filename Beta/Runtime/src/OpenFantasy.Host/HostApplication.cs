@@ -46,6 +46,7 @@ internal sealed class HostApplication
                 ["--inspect-watershed-terrain", var path] => _watershedTerrain.Inspect(path),
                 ["--inspect-terrain-materials", var path] => _terrainMaterials.Inspect(path),
                 ["--inspect-material-registry", var path] => _materialRegistry.Inspect(path),
+                ["--inspect-material-production", var path] => _materialRegistry.Inspect(path, withProduction: true),
                 ["--create-watershed-world", var database, var basis, var watershed] =>
                     _composed.CreateWatershedWorld(database, basis, watershed),
                 ["--create-watershed-network-world", var database, var basis, var network] =>
@@ -91,6 +92,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-watershed-terrain <prepared-terrain.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-terrain-materials <terrain-materials.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-material-registry <material-registry.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-material-production <material-production.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>");

@@ -1,0 +1,416 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-14T00:09:33.606038+00:00",
+  "runs": [
+    {
+      "name": "attached",
+      "inputSha256": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b",
+      "byteLength": 5129,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/attached.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v2\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b\",\"Revision\":0,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":0,\"AllocatedQuantity\":160,\"CoarseQuantity\":160,\"DetailedQuantity\":0,\"OtherQuantity\":0,\"RetiredQuantity\":0,\"ProductionRevision\":0,\"ProductionBatches\":0,\"DerivedLotCount\":0,\"LotCount\":1,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":90,\"ActiveCells\":0},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":170,\"ActiveCells\":0}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 160,
+        "DetailedQuantity": 0,
+        "OtherQuantity": 0,
+        "AllocatedQuantity": 160,
+        "ActiveCellCount": 0,
+        "ContentHash": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b",
+        "Revision": 0,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 1,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 90,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 170,
+            "ActiveCells": 0
+          }
+        ],
+        "RetiredQuantity": 0,
+        "ProductionRevision": 0,
+        "ProductionBatches": 0,
+        "DerivedLotCount": 0
+      }
+    },
+    {
+      "name": "crafted-reloaded",
+      "inputSha256": "c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/crafted-reloaded.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v2\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649\",\"Revision\":5,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":1,\"AllocatedQuantity\":160,\"CoarseQuantity\":150,\"DetailedQuantity\":6,\"OtherQuantity\":0,\"RetiredQuantity\":4,\"ProductionRevision\":1,\"ProductionBatches\":1,\"DerivedLotCount\":1,\"LotCount\":2,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":90,\"ActiveCells\":1},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":170,\"ActiveCells\":0}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 150,
+        "DetailedQuantity": 6,
+        "OtherQuantity": 0,
+        "AllocatedQuantity": 160,
+        "ActiveCellCount": 1,
+        "ContentHash": "c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649",
+        "Revision": 5,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 2,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 90,
+            "ActiveCells": 1
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 170,
+            "ActiveCells": 0
+          }
+        ],
+        "RetiredQuantity": 4,
+        "ProductionRevision": 1,
+        "ProductionBatches": 1,
+        "DerivedLotCount": 1
+      }
+    },
+    {
+      "name": "chained-prefixes",
+      "inputSha256": "78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef",
+      "byteLength": 7334,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/chained-prefixes.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v2\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef\",\"Revision\":6,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":0,\"AllocatedQuantity\":160,\"CoarseQuantity\":150,\"DetailedQuantity\":0,\"OtherQuantity\":2,\"RetiredQuantity\":8,\"ProductionRevision\":3,\"ProductionBatches\":3,\"DerivedLotCount\":2,\"LotCount\":2,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":90,\"ActiveCells\":0},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":170,\"ActiveCells\":0}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 150,
+        "DetailedQuantity": 0,
+        "OtherQuantity": 2,
+        "AllocatedQuantity": 160,
+        "ActiveCellCount": 0,
+        "ContentHash": "78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef",
+        "Revision": 6,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 2,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 90,
+            "ActiveCells": 0
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 170,
+            "ActiveCells": 0
+          }
+        ],
+        "RetiredQuantity": 8,
+        "ProductionRevision": 3,
+        "ProductionBatches": 3,
+        "DerivedLotCount": 2
+      }
+    },
+    {
+      "name": "combined-lot-cap",
+      "inputSha256": "f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035",
+      "byteLength": 861770,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/combined-lot-cap.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"terrain-material-registry-v2\",\"Scope\":\"standalone-shared-material-ownership\",\"ContentHash\":\"f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035\",\"Revision\":4,\"NetworkColumns\":2,\"Allocations\":2,\"ActiveCellCount\":1,\"AllocatedQuantity\":160,\"CoarseQuantity\":150,\"DetailedQuantity\":6,\"OtherQuantity\":0,\"RetiredQuantity\":4,\"ProductionRevision\":2,\"ProductionBatches\":1,\"DerivedLotCount\":4,\"LotCount\":4092,\"AllocationStates\":[{\"AllocationId\":\"726567697374727900000000000000c8\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":10,\"End\":90,\"ActiveCells\":1},{\"AllocationId\":\"726567697374727900000000000000c9\",\"SourceId\":\"72656769737472790000000000000069\",\"Start\":90,\"End\":170,\"ActiveCells\":0}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "CoarseQuantity": 150,
+        "DetailedQuantity": 6,
+        "OtherQuantity": 0,
+        "AllocatedQuantity": 160,
+        "ActiveCellCount": 1,
+        "ContentHash": "f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035",
+        "Revision": 4,
+        "Allocations": 2,
+        "NetworkColumns": 2,
+        "LotCount": 4092,
+        "AllocationStates": [
+          {
+            "AllocationId": "726567697374727900000000000000c8",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 10,
+            "End": 90,
+            "ActiveCells": 1
+          },
+          {
+            "AllocationId": "726567697374727900000000000000c9",
+            "SourceId": "72656769737472790000000000000069",
+            "Start": 90,
+            "End": 170,
+            "ActiveCells": 0
+          }
+        ],
+        "RetiredQuantity": 4,
+        "ProductionRevision": 2,
+        "ProductionBatches": 1,
+        "DerivedLotCount": 4
+      }
+    },
+    {
+      "name": "coarse-consumption",
+      "inputSha256": "4d2c92c49bf05d31e9bcc149daa40aeff69d195efd242b1da6241ee0e054c2fd",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/coarse-consumption.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "fine-consumption",
+      "inputSha256": "a6d7bfec27678253863893843686eb225959246788b8c04eadadcd49e0c64476",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/fine-consumption.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "proof-removed",
+      "inputSha256": "ee883aa6864885ea3fdb8f87c9fd2442c4d3c546c9b60dc3df5c4e6770e1dba0",
+      "byteLength": 4073,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/proof-removed.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame size, header or field count is invalid.\n",
+      "stderr": ""
+    },
+    {
+      "name": "raw-profile-downgrade",
+      "inputSha256": "ede4570b7097ee626377c227a37728bf1089d57d6e99377969c04bb7e65f877e",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/raw-profile-downgrade.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain contract tag is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unknown-production-version",
+      "inputSha256": "536565f6822200dbf01654bec306b0ab3b7e9ab802b595ebf82c4cf2ff134de8",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/unknown-production-version.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The contract version is unsupported.\n",
+      "stderr": ""
+    },
+    {
+      "name": "future-production-revision",
+      "inputSha256": "09b7e4ef6d5c590d69470610578efd2c7f6aee38372561c4a95522a53bfae356",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/future-production-revision.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "production-branch-mismatch",
+      "inputSha256": "4f6b42cdf4c0d142a6155a5987a04687614b9f93a0371ae5e4edb232adda2d1b",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/production-branch-mismatch.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "lost-retirement",
+      "inputSha256": "9b578f5786813ad0da7f8256a29fc13e7cff99e1bc0a98c3ba88a8243b2e48fe",
+      "byteLength": 5362,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/lost-retirement.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "shift-retired-range",
+      "inputSha256": "0585117447daf07a7c56e17f90474d4a5c930fefb47eed2036dfb5d63232bcdc",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/shift-retired-range.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "allocation-batch-alias",
+      "inputSha256": "fce1478ed7aa49c6e9a72b20de9f406451cfdf915cf2c9443824d88e4408d823",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/allocation-batch-alias.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "revived-consumed-source",
+      "inputSha256": "5aa6288660c8e64c0b302796956998e40e0b06b327e1a8e037a345ef91a759ec",
+      "byteLength": 6326,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/revived-consumed-source.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "combined-storage-capacity",
+      "inputSha256": "9f91e3f41a15a9b345bf974c6cf1c963172960b655492ae4203a329887c6c655",
+      "byteLength": 6117,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/combined-storage-capacity.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "combined-lot-overflow",
+      "inputSha256": "f10844f1ecd0b39f88eca49d4573d28dcbd619933014a79efbe1218e88800651",
+      "byteLength": 861979,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/combined-lot-overflow.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The material registry violates its allocation or shared-custody contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated",
+      "inputSha256": "da7ca9a41ab63ea1c277df9499960c7fa9caad4a59abe656c23e43f159bd7845",
+      "byteLength": 6116,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/truncated.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trailing",
+      "inputSha256": "f3137fe1a4ccc1d5ccc07c38d8ba2f658c3176ed71741447dac47439579970b1",
+      "byteLength": 6118,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/trailing.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "oversized",
+      "inputSha256": "25e8c3b45cc3bc20236801126b7f1aa3133c8da6005bb4f667ceb10b82bc2ad3",
+      "byteLength": 23100001,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-material-production",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/material-production-twccrpfs/oversized.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Standalone archives; independent direct-raw retirement/spatial ownership oracle. Recipe mass and derived DAG use existing managed proofs.",
+  "finishedUtc": "2026-09-14T00:09:39.026363+00:00"
+}

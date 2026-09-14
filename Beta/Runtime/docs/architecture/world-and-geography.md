@@ -184,8 +184,8 @@ single immutable deposit, existing `CountedAuthorityState` and at most 4,096 act
 Initial admission requires the entire budget already funded in coarse custody. Coarse and detailed
 custodians must have the same admitted owner. Scope, item/source pins and geographic/physical versus
 custody identity roles are checked. No genesis stock is issued here. Every funded unit must remain
-covered exactly once across coarse, detailed or other custodians; aggregate quantities are views of
-those lots, not a second ledger. Detailed lots fit one active cell each; coarse lots cannot intersect
+covered exactly once across live raw claims and, when explicitly attached, direct raw retirement in
+Production. Aggregate quantities are views of those claims, not a second ledger. Detailed lots fit one active cell each; coarse lots cannot intersect
 an active cell. A cell may retain no detailed stock after an actual transfer elsewhere.
 
 [TerrainMaterialPlanner](../../src/OpenFantasy.Core/Geography/TerrainMaterialPlanner.cs) accepts at
@@ -212,8 +212,9 @@ and revision. Application against changed state rejects. Applying an immutable p
 receipt or command retry protocol. The caller owns accepted-cause validation, historical identity
 completeness, authorization and atomic durable publication. `ReconcileInventory` binds a separately
 validated, advancing custody result with unchanged scope and admission; identical input is idempotent.
-It preserves active cells and rejects missing funded units. Consumed/transformed claims therefore need
-explicit production-retirement composition. A missing unit can never be recreated by refinement.
+It preserves active cells and rejects missing funded units. An attached production proof remains intact
+through inventory-only changes. Raw-only states reject retired coverage; production-backed states
+account for it under the composition below. A missing unit can never be recreated by refinement.
 
 [TerrainMaterialCodecV1](../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV1.cs) uses a
 5,710,000-byte standalone archive. The outer frame contains its tag, deposit, unchanged authority
@@ -226,7 +227,7 @@ state. The `--inspect-terrain-materials` operator reads this archive without wri
 This domain composition is separate from lived `TerrainRegionSnapshot`, local collision, the composed
 world profiles and their durable history. The finite registry below enforces shared allocation
 ownership within its admitted scope; separate standalone states are not independent minting authority. Geological
-events, fluid coupling, production retirement, mining labor/rights and world admission must compose
+events, fluid coupling, mining labor/rights and world admission must compose
 with these invariants before a terrain intervention changes the playable world.
 
 ## Domain contract: shared material allocation registry
@@ -283,10 +284,66 @@ Decode reconstructs shared objects, revalidates ownership and compares the compl
 The single-deposit v1 interpreter and its exact bytes remain supported.
 
 The privileged `--inspect-material-registry` operator reads normalized archives without writing a
-world. Dynamic allocation admission/removal, durable world ownership, retirement composition, regional
-streaming, cross-branch transfer and publication into lived terrain require explicit integrating
+world. Dynamic allocation admission/removal, durable world ownership, regional streaming, cross-branch transfer and publication into lived terrain require explicit integrating
 contracts. Two separate registries do not establish disjoint ownership merely by each validating
 internally; their integrating world must own the complete allocation scope.
+
+## Domain contract: terrain and production composition
+
+`AttachProduction` explicitly binds an immutable `ProductionSnapshot` to an existing
+[registry](../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs), retaining its terrain,
+admission, source intervals and active cells. All allocation views share the same counted inventory
+and production proof. [Shared evidence](../../src/OpenFantasy.Core/Geography/TerrainMaterialProduction.cs)
+validates Production against actual authority once per composition and indexes direct raw retirements.
+Raw and transformed lots share the 4,096-live-lot ceiling and each custodian's actual counted capacity.
+Production and live derived revisions cannot exceed the custody root; retired ingredient revisions
+precede it. Geographic and allocation identities cannot alias production roles. Shared item/physical
+bindings require exact identity and version agreement, including the physical calibration per item.
+
+Each allocation clips live raw source intervals and direct raw `RetiredIngredient` intervals to its
+original budget. Sorted claims cover that budget exactly once without holes or overlaps:
+
+`allocated = coarse + detailed + other live raw + retired raw`
+
+`RetiredQuantity` measures original source units, not output units or mass. Recrafting a derived output
+adds a production dependency without counting its ancestral raw ingredients again. Consumed intervals
+never become coarse stock on demotion or refinement. Empty active cells can demote; completely depleted
+cells cannot acquire material through refinement. A formed object retains its output entitlement even
+when its item definition matches the original raw material.
+
+[TerrainMaterialCraftPlanner](../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlanner.cs) calls
+`InstantCraftPlanner` with trusted delivery, actor, command and exact request. It preserves control,
+recipe, revision, protection/reservation, capacity and retirement checks, and adds registry and external
+historical identity guards for the command and every generated identity. It rejects crafting requests
+addressing any terrain representation custodian. Composed state validation also rejects batches that
+consume allocated raw intervals in any registry coarse/fine custodian, including a direct planner
+result or imported archive. Transferring stock out is necessary before consumption; this condition
+does not itself prove excavation labor, spatial access or permission.
+
+`ReconcileProduction` binds a separately authorized inventory/production result atomically. Inventory
+scope and admission stay exact and its root advances; changed production bytes require an advancing
+production revision and unchanged recipe admission. Every retained batch remains byte-identical;
+history cannot be dropped or rewritten even if a replacement snapshot balances independently.
+Production cannot be detached through reconciliation. Representation operations preserve the proof
+and reserve its retired-lot, command, batch and definition identities as well as live roles.
+[Craft plans](../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlan.cs) pin the entire registry
+hash and custody revision, including all production bytes and other allocations. Rejections return the
+original immutable candidate. Plans and reconciliation supply neither durable receipts nor world admission.
+
+The explicit [registry v2 codec](../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV2.cs)
+uses `geography.terrain-material-registry.v2` with terrain, authority, the unchanged normalized allocation
+list, then exact `ProductionCodecV1` bytes. Its maximum is 23,100,000 bytes; the production field retains
+its 16 MiB bound and the allocation list retains its 640,000-byte bound. The
+[single-state v2 codec](../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV2.cs) uses
+`geography.terrain-material-state.v2` with deposit, authority, active rows and production; its maximum
+is 22,500,000 bytes. Both require production proof, validate complete composition and compare canonical
+re-encoding. Existing v1 codecs preserve raw-only bytes and explicitly reject attached production;
+no encoder silently drops evidence. Content hashes dispatch to the matching explicit profile.
+The privileged `--inspect-material-production` operator reads registry v2 without changing a world.
+
+This standalone composition reuses the production ledger's finite recipes, batches and provenance.
+It does not bind terrain registries to the live world, authorize extraction, supply geological profiles,
+compact long-lived consumption history or establish global ownership across independently admitted registries.
 
 ## Design contract: finite preparation and frontier streaming
 

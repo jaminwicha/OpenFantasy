@@ -135,7 +135,7 @@ public static class ProductionCodecV1
         }
     }
 
-    private static byte[] EncodeBatch(ProductionBatch batch) => Frame("production.batch", Number(1), Id(batch.BatchId),
+    internal static byte[] EncodeBatch(ProductionBatch batch) => Frame("production.batch", Number(1), Id(batch.BatchId),
         Id(batch.CommandId), Id(batch.ActorId), Id(batch.CustodianId), Id(batch.RecipeId), batch.RecipeVersion.ToByteArray(),
         Collection("production.retired", batch.Ingredients.Select(EncodeRetired)));
 

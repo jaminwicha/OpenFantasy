@@ -73,6 +73,27 @@ internal sealed class ProductionIdentityRegistry
 
     internal bool Contains(EntityId identity) => _roles.ContainsKey(identity);
 
+    internal bool ContainsMatching(Func<EntityId, bool> predicate) => _roles.Keys.Any(predicate);
+
+    internal void ValidateMaterialBinding(ItemPhysicalBinding binding)
+    {
+        ValidateExistingPin(binding.Item.DefinitionId, "item", binding.Item.Version);
+        ValidateExistingPin(binding.Physical.DefinitionId, "physical-material", binding.Physical.Version);
+        if (_calibrations.TryGetValue(binding.Item.DefinitionId, out var existing) && existing != binding.Physical.Pin())
+        {
+            throw new ArgumentException("Terrain and production require the same physical calibration for each item.");
+        }
+    }
+
+    private void ValidateExistingPin(EntityId identity, string role, ContentHash version)
+    {
+        if (_roles.TryGetValue(identity, out string? existingRole) && existingRole != role
+            || _pins.TryGetValue(identity, out var existingVersion) && existingVersion != version)
+        {
+            throw new ArgumentException("Material bindings cannot alias production roles or change pinned versions.");
+        }
+    }
+
     internal void ValidateAuthority(CountedAuthorityState inventory)
     {
         var combined = new ProductionIdentityRegistry(this);
