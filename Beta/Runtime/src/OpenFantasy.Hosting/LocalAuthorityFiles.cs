@@ -38,6 +38,9 @@ public static class LocalAuthorityFiles
     public static TerrainMaterialRegistry ReadMaterialProduction(string path) =>
         TerrainMaterialRegistryCodecV2.Decode(Read(path, TerrainMaterialRegistryCodecV2.MaximumEncodedByteLength));
 
+    public static PreparedWatershedRunoff ReadWatershedRunoff(string path) =>
+        WatershedRunoffCodecV1.Decode(Read(path, WatershedRunoffCodecV1.MaximumEncodedByteLength));
+
     private static byte[] Read(string path, int maximum)
     {
         using FileStream stream = File.OpenRead(path);

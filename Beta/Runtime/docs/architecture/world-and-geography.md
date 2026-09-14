@@ -161,6 +161,76 @@ admit navigation/collision, transfer fluids, establish climate or fulfill coasta
 Live realization requires its own retained terrain interpreter, complete macro dependency profile,
 source allocations and explicit world admission. It cannot overwrite the farm or an established place.
 
+## Domain contract: funded runoff budgets
+
+[WatershedRunoffRequest](../../src/OpenFantasy.Core/Geography/WatershedRunoffRequest.cs) pins an exact
+prepared network, metre-cell mapping, counted authority, optional Production snapshot, admitted
+reservation/owner, material calibration and nonempty half-open `WorldInstant` interval. It includes
+one [input](../../src/OpenFantasy.Core/Geography/WatershedRunoffInput.cs) for every basin, including an
+explicit dry record, and one [receiver binding](../../src/OpenFantasy.Core/Geography/WatershedRunoffTerminal.cs)
+for every terminal. Collections remain bounded by the network's sixteen-basin profile.
+
+The input depth is **effective runoff**, uniformly distributed over the basin's macro columns for the
+whole declared interval. It is not total rainfall, a rainfall rate, an infiltration model or a hydraulic
+step. Each mapped cell has one square metre of horizontal area. Column volume in microlitres is
+`cellsPerColumn² × depthMicrometres × 1,000`. Division by the material's microlitres per counted unit
+must be exact; fractional units reject instead of being rounded. Whole-basin source funding equals
+that per-column quantity multiplied by the number of columns. All totals use checked integer arithmetic,
+including physical volume and mass. The admitting catalog designates the substance and its calibration;
+this budget contract does not supply the full fluid phase/reaction taxonomy.
+
+[Funding validation](../../src/OpenFantasy.Core/Geography/WatershedRunoffFunding.cs) requires actual
+live raw source intervals with exact item pins, source custodian and reservation, without protected
+stock. A claim may span several lots and one lot may fund adjacent disjoint basin claims. Claims cannot
+overlap, leave holes or substitute retired production inputs. Every raw lot held by the reservation
+must belong completely to the declared inputs; the same reservation cannot also hold derived output.
+Geography, physical definitions, inventory and production maintain compatible identity roles and pins.
+Source and receiving custodians have the same admitted budget owner and distinct roles. Preparation
+validates this basis but does not authenticate a command or grant permission to spend it.
+
+[WatershedRunoffPlanner](../../src/OpenFantasy.Core/Geography/WatershedRunoffPlanner.cs) routes weighted
+quantities through the retained acyclic network. Incoming upstream contributions enter the exact
+receiving column before its own downstream accumulation. Local drainage ranks and sorted ready-basin
+identities determine processing order. Dry basins can carry upstream runoff. Every funded unit reaches
+one terminal; terminal totals equal input exactly. Per-column values are potential throughput along
+paths, not resident liquid. Summing all path rows counts the same travelling contribution repeatedly
+and is not a conservation test. Terrain elevations, source lots and topology remain unchanged.
+
+Terminal bindings name an existing counted custodian and a positive physical volume capacity witness.
+Several terminals may share a receiver only with the same capacity. Their incoming obligations are
+summed before checking existing occupancy plus all incoming units against both counted capacity and
+physical volume capacity. Every existing receiver item must use the exact runoff material pin, including
+live transformed goods when Production is attached; unknown-volume mixed cargo rejects. Thus a topological
+outlet count or a count-limited store cannot masquerade as physical headroom. The supplied volume witness
+does not derive reservoir shape, liquid depth, coast connection or bathymetry.
+
+[PreparedWatershedRunoff](../../src/OpenFantasy.Core/Geography/PreparedWatershedRunoff.cs) is an immutable
+inspection candidate. `EnsureCurrent` checks the complete request hash, including authority, Production,
+calibration, receiver capacity, forcing interval and mapping, before an integrating caller can rely on it.
+It does not transfer stock, reserve receiving capacity, schedule a unique forcing event, define arrival
+times or integrate an interior portion of the interval. Several inspection candidates can reference the
+same held reservation; their existence does not establish globally unique scheduling or allocation.
+An omitted Production field explicitly represents a raw-only basis, not permission to discard a known
+world dependency. Its integrating owner must supply the complete actual authority.
+
+The [v1 archive](../../src/OpenFantasy.Core/Geography/WatershedRunoffCodecV1.cs) retains a request and
+rederived routing witnesses under `geography.watershed.runoff.v1`, bounded to 23,500,000 bytes. The
+request frame is bounded to 22,900,000 bytes and contains exact network, mapping, authority, optional
+production, reservation/owner, two 12-byte signed-day/normalized-millisecond instants, item ID/hash,
+physical definition, input rows and terminal bindings. Input rows are 72 bytes in basin-ID order:
+16-byte basin, unsigned-64 depth, 16-byte source, unsigned-64 start/end and 16-byte source custodian.
+Dry rows have zero depth and zero funding fields. Terminal bindings use 40 bytes: basin, custodian and
+unsigned-64 volume capacity. Column witnesses are unsigned-64 quantities in canonical basin/column
+order; terminal witnesses are 40-byte basin/custodian/quantity rows. Decode bounds all fields, revalidates
+funding and receiver headroom, reroutes contributions and compares every canonical byte. The privileged
+`--inspect-runoff-budget` operator performs read-only inspection of this standalone contract.
+
+Live hydrology requires an owner for finite receiving-capacity reservations, physical source/buffer
+storage, flow geometry, stage arrival times, topology changes, local holds and backpressure. Climate,
+crust history, coasts and full macro dependency admission remain distinct contracts. A stage must
+revalidate its complete lived dependencies before spending stock or capacity. A prepared aggregate
+budget cannot bypass encounter Wait, overwrite terrain or stand in for exact-time geological history.
+
 ## Domain contract: funded terrain material
 
 [TerrainMaterialDeposit](../../src/OpenFantasy.Core/Geography/TerrainMaterialDeposit.cs) binds one

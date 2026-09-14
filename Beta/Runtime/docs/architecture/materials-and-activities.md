@@ -35,6 +35,13 @@ Crafting consumes stock outside representation custody and atomically retains it
 the allocation views. Reconciliation preserves exact prior batches and recipe admission; it cannot
 restore consumed source rights by replacing the proof.
 
+[Funded runoff budgets](world-and-geography.md#domain-contract-funded-runoff-budgets) use existing
+reserved raw source intervals and exact volume calibration to prepare finite downstream obligations.
+The complete source reservation is accounted for, and all terminal arrivals sharing one custodian
+compete for its counted and physical headroom, including existing crafted contents. The budget is a
+read-only projection; live flow still needs owned capacity reservations, source/buffer storage and
+staged transfers. Neither a contributing-column count nor a graphical ocean plane creates water.
+
 ## Runtime binding: one connected activity chain
 
 | Operation | Concrete owner | Important checks and effects |

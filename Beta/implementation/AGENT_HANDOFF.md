@@ -32,31 +32,34 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `a1783a9`, preserved on `codex/milestone-material-production`;
-[milestone ledger](GIT_MILESTONES.md) and [packet](p01/material-production/README.md).
+Code/evidence: funded runoff budgets; the checkpoint is recorded in the
+[milestone ledger](GIT_MILESTONES.md) and [packet](p01/runoff-budgets/README.md).
 
-The registry explicitly attaches the existing Production ledger. Live raw claims plus direct raw
-retirement cover every allocation once; recrafting outputs does not restore or recount inputs.
-Actual instant craft requires transferred stock outside terrain representation custody. Reconciliation
-and archive validation also reject direct coarse/fine consumption, retain exact prior batches/recipes,
-and enforce production/calibration/identity and combined storage/lot limits. Detail changes preserve
-consumed holes and complete state pins. New explicit v2 archives carry production proof; raw-only v1
-bytes remain exact and cannot silently omit evidence.
+A finite effective-runoff budget now pins the watershed network, mapping, complete counted/optional
+Production basis, source reservation, exact half-open calendar interval and physical material/receiver
+calibration. Wet inputs require disjoint real reserved raw intervals; dry basins remain explicit and
+can carry upstream contributions. Weighted quantities follow existing drainage. All outlets sharing
+one receiver compete together with existing raw/crafted occupancy against both counted and physical
+headroom. The candidate is immutable; no stock moves and no receiving capacity is reserved.
 
-[Qualification](p01/material-production/qualification/verification-summary.json): clean managed build,
-**983 tests (654 Core + 329 Hosting, zero skips)**, 12 added cases, 20 new real-host inspections plus
-26 registry and 24 prior-material inspections on the same binaries. Four valid archives receive an
-independent direct-retirement/spatial coverage check; recipe mass and derived-output DAG proofs remain
-managed. Native design/source critique found no remaining issues in scope. Missing APIs, compiler/test
-helper errors and an incorrect test mass-allocation fixture remain retained, corrected without changing
-gates. Full verifier/native journeys were not part of this additive standalone campaign.
+[Qualification](p01/runoff-budgets/qualification/verification-summary.json): clean managed build,
+**995 tests (666 Core + 329 Hosting, zero skips)**, twelve new cases, 25 real host inspections and five
+valid archives independently checked by following each source contribution to its terminal. The maximum
+65,536-column archive is 3,798,726 bytes. This is finite correctness/archive evidence, not production
+performance, hydraulic timing or full climate qualification. The test-first missing-API failure remains
+retained. Bounded native design/source critique found no remaining issues in scope; no gates changed.
 
-This does not enable playable mining, admit material registries to durable worlds, compact long-lived
-history or close a game/phase/feasibility gate. Timeless architecture references and maintained verifier
-hooks are updated. Frozen specification, predecessor work and prior milestones remain preserved.
+The explicit archive and operator are standalone. Preparation does not establish unique global forcing
+admission, reservoir shape/coast connection, interior-interval history or live fluid behavior. Source
+reservations are actual stock; receiver headroom remains a pinned witness. Timeless architecture and
+maintained verifier hooks are updated; full native/rendered journeys were not part of this campaign.
 
 Prior dependencies remain preserved:
 
+- [Terrain/Production composition](p01/material-production/README.md), `a1783a9`, milestone
+  `codex/milestone-material-production`: direct raw retirement preserves consumed holes through detail
+  changes and recrafting; exact prior history, production identity/calibration, combined capacities and
+  explicit v2 archives. The 983-test/70-inspection checkpoint retains raw-only v1 byte compatibility.
 - [Shared registry](p01/material-registry/README.md), `b47fec7`, milestone
   `codex/milestone-material-registry`: 1–64 disjoint allocations, one inventory/terrain, normalized archive
   and shared immutable macro data. Its 971-test and maximum-network allocation evidence describes that
@@ -72,12 +75,14 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include complete physical macro profiles (crust/history, climate/forcing,
-coast/reservoir/external budgets) and a retained local terrain interpreter. Integrate complete allocation
-ownership, occupancy, construction, support, custody and exact history before live terrain admission.
-Never reroll established facts, overwrite lived places or implicitly migrate saves. Follow the full
-P01/P02 plan and [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md). Development remains
-on `codex/runtime-foundation`.
+Next dependencies include receiving-capacity reservation ownership and physical source/buffer/receiver
+geometry, plus the complete macro profile: crust/boundary history, climate/water partitioning and coast
+connections. Live hydraulic stages need arrival rules, backpressure, topology revalidation, encounter
+Wait and exact history. A retained local terrain interpreter and complete allocation/world ownership
+must compose occupancy, construction, support and custody before live terrain admission. Never reroll
+established facts, overwrite lived places or implicitly migrate saves. Follow the full P01/P02 plan and
+[geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md). Development stays on
+`codex/runtime-foundation`.
 
 ## Existing playable scope and prior evidence
 

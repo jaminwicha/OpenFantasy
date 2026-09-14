@@ -1,0 +1,79 @@
+{
+  "status": "passed",
+  "scope": "Finite funded aggregate effective-runoff projection and receiver headroom; no hydraulic flow, climate completeness or live-world admission.",
+  "managed": [
+    {
+      "group": "core",
+      "total": "666",
+      "executed": "666",
+      "passed": "666",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    {
+      "group": "hosting",
+      "total": "329",
+      "executed": "329",
+      "passed": "329",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  ],
+  "newCases": 12,
+  "realHostInspections": 25,
+  "independentValidArchives": 5,
+  "independentScope": "Follow every origin through retained drainage; compare all column/terminal totals, actual reserved source intervals and calibrated combined headroom. Does not independently derive terrain or qualify global scheduling.",
+  "fixtures": {
+    "crafted-occupancy.bin": {
+      "bytes": 6145,
+      "sha256": "1061a3346f7abf200f0ff015b7afa15e345325f55d902e3a0ed8147358831ee5"
+    },
+    "dry.bin": {
+      "bytes": 3991,
+      "sha256": "62e9ade7adcd863c8a12d4f3c22fa4afa09f71b95203cfe548fce02f0e0b25b0"
+    },
+    "maximum-network.bin": {
+      "bytes": 3798726,
+      "sha256": "663fd9794455a52107b25f863e03571b3226b045a70103daca0d3daf0e6f8a0c"
+    },
+    "shared-receiver.bin": {
+      "bytes": 4376,
+      "sha256": "73344d313023fd5d9d7acb1d7953068dec83effbdf7a783a560d21e64ffc9fc9"
+    },
+    "unequal-runoff.bin": {
+      "bytes": 4216,
+      "sha256": "efcdaa3809cfefc7a56432564c1559c7c788d844605722bae13fc12e9ea47801"
+    }
+  },
+  "excluded": [
+    "Full native verifier and rendered journeys",
+    "Hydraulic time integration and interior forcing intervals",
+    "Receiver capacity reservation ownership",
+    "Coast/reservoir geometry and full macro profiles",
+    "Durable world admission and exact geological history",
+    "Production performance/platform qualification",
+    "Every complete phase/game/feasibility gate"
+  ]
+}

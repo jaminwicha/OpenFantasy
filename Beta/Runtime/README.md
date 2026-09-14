@@ -273,3 +273,12 @@ preserve consumption; recrafting an output does not restore or count its raw inp
 `--inspect-material-registry` and `--inspect-terrain-materials` retain their raw-only v1 formats.
 See the [composition contract](docs/architecture/world-and-geography.md#domain-contract-terrain-and-production-composition).
 This read-only standalone operator does not install terrain in a played world or enable mining.
+
+### Standalone runoff budget inspection
+
+`--inspect-runoff-budget <runoff-budget.bin>` reads an exact funded effective-runoff interval over a
+prepared watershed network. It reports downstream obligations and shared receiver headroom from
+actual stock and physical calibration. Dry basins can carry upstream contributions. The candidate
+moves no water and reserves no receiver capacity. See the
+[runoff contract](docs/architecture/world-and-geography.md#domain-contract-funded-runoff-budgets) for
+source ownership, canonical bytes and the boundary to future hydraulic stages.

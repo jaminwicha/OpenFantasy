@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "architectureLinks": 161,
+  "frozenSpecHashes": 22,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "predecessorCompileBoundary": true,
+  "nestedGodotIgnore": true,
+  "runtimeSourceNaming": true,
+  "finalFixturesMatchHostInputs": true,
+  "sourceSha256": {
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs": "ab84ce5c3522eaf48fe2404e3eb327f8342019a19d9a15c985f4fe906c81b101",
+    "Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs": "a91e202348c6bc9fc87e345c3b1f4c47fee97ff2cc6fd6e335c2dd362a9cbfc8",
+    "Beta/Runtime/src/OpenFantasy.Hosting/LocalAuthorityFiles.cs": "879338816fe9da891ec68b5d055d3e27280b33fdf7be3a25240f778817dafb45",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/PreparedWatershedRunoff.cs": "0862e28c67ba91707b0f85ac533d991da5c0301d4af18832dc99735bddc9479a",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffCodecV1.cs": "f47de9e9de8ef9661a26e29637e7d14e466950732534d974338b7d402d5b849c",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffFunding.cs": "e7c5618a513187fe2601ec8b7b5f99b636057c051d5729fd416a025003b2be4f",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffInput.cs": "59de4f5da1efae07e928493eeb3c6a85a8016f8779be32f04eb4e2cb6828fa5e",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffPlanner.cs": "f004c0b476365fde4f00f9575abfbd80eb305722ac38347104288cde210160e6",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffRequest.cs": "c82f13932ac554d542dba88225aba9033a61531fbf26996c306c88e5ac811d1f",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffTerminal.cs": "ecadca3137ce103ec45f8f10b177fbeb8e228af22a894a2b166e84856fa38ed1",
+    "Beta/Runtime/src/OpenFantasy.Host/WatershedRunoffOperator.cs": "853fde48c75d98812a8a0b24ba85f20eac8457f00dbadfae4be774bdacd5285f",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/WatershedRunoffTests.cs": "3cabadfd56e9c40e9356d9aac7223c06504fa4cd380a27d06f4cfa33eab5a8cb"
+  }
+}

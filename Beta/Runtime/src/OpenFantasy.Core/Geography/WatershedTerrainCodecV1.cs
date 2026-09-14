@@ -74,7 +74,7 @@ public static class WatershedTerrainCodecV1
             TerrainRegionCodecV1.Signed64(bounds.Minimum.Z), CanonicalEncodingV1.Unsigned64((ulong)bounds.Width),
             CanonicalEncodingV1.Unsigned64((ulong)bounds.Depth), CanonicalEncodingV1.Unsigned64((ulong)bounds.Height));
 
-    private static WatershedTerrainMapping ReadMapping(ReadOnlySpan<byte> bytes)
+    internal static WatershedTerrainMapping ReadMapping(ReadOnlySpan<byte> bytes)
     {
         var reader = new CanonicalTerrainReader(bytes, MaximumMappingByteLength, 4, "geography.watershed.terrain-mapping.v1"u8);
         var result = new WatershedTerrainMapping(reader.ReadSmallInteger(WatershedTerrainMapping.MaximumScale),
