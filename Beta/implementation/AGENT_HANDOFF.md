@@ -32,30 +32,34 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `02f2819`, preserved on `codex/milestone-runoff-budgets`;
-[milestone ledger](GIT_MILESTONES.md) and [packet](p01/runoff-budgets/README.md).
+Shared runoff capacity ownership: [packet](p01/runoff-capacity/README.md) and
+[milestone ledger](GIT_MILESTONES.md). The qualified code marker is recorded with the checkpoint.
 
-A finite effective-runoff budget now pins the watershed network, mapping, complete counted/optional
-Production basis, source reservation, exact half-open calendar interval and physical material/receiver
-calibration. Wet inputs require disjoint real reserved raw intervals; dry basins remain explicit and
-can carry upstream contributions. Weighted quantities follow existing drainage. All outlets sharing
-one receiver compete together with existing raw/crafted occupancy against both counted and physical
-headroom. The candidate is immutable; no stock moves and no receiving capacity is reserved.
+One immutable owner now admits up to sixteen funded runoff commitments against exact shared
+network/mapping/material/receiver and authority/Production data. It checks all incoming obligations
+with actual occupancy before admitting budgets or reconciling real custody/craft candidates. Disjoint
+intervals do not reuse headroom. Capacity-only changes have their own revision and complete-state plans.
+Cancellation releases capacity, retains a non-reusable reservation ID and leaves held source stock
+unchanged; subsequent explicit custody changes may release it. Empty owners retain calibration/history.
 
-[Qualification](p01/runoff-budgets/qualification/verification-summary.json): clean managed build,
-**995 tests (666 Core + 329 Hosting, zero skips)**, twelve new cases, 25 real host inspections and five
-valid archives independently checked by following each source contribution to its terminal. The maximum
-65,536-column archive is 3,798,726 bytes. This is finite correctness/archive evidence, not production
-performance, hydraulic timing or full climate qualification. The test-first missing-API failure remains
-retained. Bounded native design/source critique found no remaining issues in scope; no gates changed.
+[Qualification](p01/runoff-capacity/qualification/verification-summary.json): full managed build with
+zero warnings/errors; **1,004 tests (675 Core + 329 Hosting, zero skips)**, nine new cases and a passing
+nine-case test-only followup; 46 real host inspections (21 new + 25 old). Five valid capacity archives
+have independent source/receiver accounting; all sixteen pending slots fit a 12,259-byte fixture.
+Five prior runoff archives remain byte-identical. All 166 architecture links and 22 frozen hashes pass.
+Retained compiler/analyzer failures and execution boundaries are linked. Native scoped critique found
+no actionable issues; no feasibility/acceptance gate changed.
 
-The explicit archive and operator are standalone. Preparation does not establish unique global forcing
-admission, reservoir shape/coast connection, interior-interval history or live fluid behavior. Source
-reservations are actual stock; receiver headroom remains a pinned witness. Timeless architecture and
-maintained verifier hooks are updated; full native/rendered journeys were not part of this campaign.
+The normalized archive/operator and reservation owner remain standalone. Exclusive durable world
+admission, hydraulic arrival/settlement, physical reservoirs, multi-fluid/network composition and
+history/reservation compaction require their own contracts. The maximum-pending fixture is not combined
+production performance proof. No gameplay/visual change or full native/rendered campaign is claimed.
 
 Prior dependencies remain preserved:
 
+- [Funded runoff projections](p01/runoff-budgets/README.md), `02f2819`, milestone
+  `codex/milestone-runoff-budgets`: exact effective-depth/source funding, weighted drainage and shared
+  terminal headroom within one projection; 995 tests, 25 inspections and a 65,536-column archive.
 - [Terrain/Production composition](p01/material-production/README.md), `a1783a9`, milestone
   `codex/milestone-material-production`: direct raw retirement preserves consumed holes through detail
   changes and recrafting; exact prior history, production identity/calibration, combined capacities and
@@ -75,7 +79,7 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include receiving-capacity reservation ownership and physical source/buffer/receiver
+Next dependencies include exclusive durable capacity ownership and physical source/buffer/receiver
 geometry, plus the complete macro profile: crust/boundary history, climate/water partitioning and coast
 connections. Live hydraulic stages need arrival rules, backpressure, topology revalidation, encounter
 Wait and exact history. A retained local terrain interpreter and complete allocation/world ownership

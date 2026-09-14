@@ -70,30 +70,8 @@ public static class WatershedRunoffCodecV1
 
     internal static byte[] EncodeRequest(WatershedRunoffRequest request)
     {
-        byte[] inputs = new byte[request.Inputs.Count * InputByteLength];
-        for (int i = 0; i < request.Inputs.Count; i++)
-        {
-            WatershedRunoffInput input = request.Inputs[i];
-            Span<byte> row = inputs.AsSpan(i * InputByteLength, InputByteLength);
-            input.BasinId.WriteBytes(row);
-            BinaryPrimitives.WriteUInt64BigEndian(row[16..], input.DepthMicrometres);
-            if (input.Source is { } source)
-            {
-                source.SourceId.WriteBytes(row[24..]);
-                BinaryPrimitives.WriteUInt64BigEndian(row[40..], source.Start);
-                BinaryPrimitives.WriteUInt64BigEndian(row[48..], source.End);
-                input.CustodianId!.Value.WriteBytes(row[56..]);
-            }
-        }
-        byte[] terminals = new byte[request.Terminals.Count * TerminalByteLength];
-        for (int i = 0; i < request.Terminals.Count; i++)
-        {
-            WatershedRunoffTerminal terminal = request.Terminals[i];
-            Span<byte> row = terminals.AsSpan(i * TerminalByteLength, TerminalByteLength);
-            terminal.BasinId.WriteBytes(row);
-            terminal.CustodianId.WriteBytes(row[16..]);
-            BinaryPrimitives.WriteUInt64BigEndian(row[32..], terminal.Capacity.Value);
-        }
+        byte[] inputs = EncodeInputs(request.Inputs);
+        byte[] terminals = EncodeTerminals(request.Terminals);
         byte[] bytes = CanonicalEncodingV1.Frame("geography.watershed.runoff-request.v1", WatershedNetworkCodecV1.Encode(request.Network),
             WatershedTerrainCodecV1.EncodeMapping(request.Mapping), AuthorityEncodingV1.Encode(request.Inventory),
             request.Production is null ? [] : ProductionCodecV1.Encode(request.Production), request.ReservationId.ToByteArray(),
@@ -119,6 +97,49 @@ public static class WatershedRunoffCodecV1
         var item = new CountedItemDefinition(reader.ReadIdentity(), reader.ReadHash());
         var physical = MaterialRecipeCodecV1.DecodeMaterial(reader.ReadField(4096));
         ReadOnlySpan<byte> inputBytes = reader.ReadExactField(network.Basins.Count * InputByteLength);
+        var inputs = ReadInputs(inputBytes, cancellation);
+        ReadOnlySpan<byte> terminalBytes = reader.ReadExactField(network.Terminals.Count * TerminalByteLength);
+        var terminals = ReadTerminals(terminalBytes);
+        reader.Complete();
+        return new(network, mapping, inventory, production, reservation, owner, start, end, new(item, physical), inputs, terminals);
+    }
+
+    internal static byte[] EncodeInputs(IReadOnlyList<WatershedRunoffInput> inputs)
+    {
+        byte[] bytes = new byte[inputs.Count * InputByteLength];
+        for (int i = 0; i < inputs.Count; i++)
+        {
+            WatershedRunoffInput input = inputs[i];
+            Span<byte> row = bytes.AsSpan(i * InputByteLength, InputByteLength);
+            input.BasinId.WriteBytes(row);
+            BinaryPrimitives.WriteUInt64BigEndian(row[16..], input.DepthMicrometres);
+            if (input.Source is { } source)
+            {
+                source.SourceId.WriteBytes(row[24..]);
+                BinaryPrimitives.WriteUInt64BigEndian(row[40..], source.Start);
+                BinaryPrimitives.WriteUInt64BigEndian(row[48..], source.End);
+                input.CustodianId!.Value.WriteBytes(row[56..]);
+            }
+        }
+        return bytes;
+    }
+
+    internal static byte[] EncodeTerminals(IReadOnlyList<WatershedRunoffTerminal> terminals)
+    {
+        byte[] bytes = new byte[terminals.Count * TerminalByteLength];
+        for (int i = 0; i < terminals.Count; i++)
+        {
+            WatershedRunoffTerminal terminal = terminals[i];
+            Span<byte> row = bytes.AsSpan(i * TerminalByteLength, TerminalByteLength);
+            terminal.BasinId.WriteBytes(row);
+            terminal.CustodianId.WriteBytes(row[16..]);
+            BinaryPrimitives.WriteUInt64BigEndian(row[32..], terminal.Capacity.Value);
+        }
+        return bytes;
+    }
+
+    internal static List<WatershedRunoffInput> ReadInputs(ReadOnlySpan<byte> inputBytes, CancellationToken cancellation)
+    {
         List<WatershedRunoffInput> inputs = [];
         for (int offset = 0; offset < inputBytes.Length; offset += InputByteLength)
         {
@@ -141,7 +162,11 @@ public static class WatershedRunoffCodecV1
                     EntityId.FromBytes(row.Slice(56, 16))));
             }
         }
-        ReadOnlySpan<byte> terminalBytes = reader.ReadExactField(network.Terminals.Count * TerminalByteLength);
+        return inputs;
+    }
+
+    internal static List<WatershedRunoffTerminal> ReadTerminals(ReadOnlySpan<byte> terminalBytes)
+    {
         List<WatershedRunoffTerminal> terminals = [];
         for (int offset = 0; offset < terminalBytes.Length; offset += TerminalByteLength)
         {
@@ -149,11 +174,10 @@ public static class WatershedRunoffCodecV1
             terminals.Add(new(EntityId.FromBytes(row[..16]), EntityId.FromBytes(row.Slice(16, 16)),
                 new(BinaryPrimitives.ReadUInt64BigEndian(row[32..]))));
         }
-        reader.Complete();
-        return new(network, mapping, inventory, production, reservation, owner, start, end, new(item, physical), inputs, terminals);
+        return terminals;
     }
 
-    private static byte[] EncodeInstant(WorldInstant instant)
+    internal static byte[] EncodeInstant(WorldInstant instant)
     {
         byte[] bytes = new byte[12];
         BinaryPrimitives.WriteInt64BigEndian(bytes, instant.Days);
@@ -161,6 +185,6 @@ public static class WatershedRunoffCodecV1
         return bytes;
     }
 
-    private static WorldInstant ReadInstant(ReadOnlySpan<byte> bytes) =>
+    internal static WorldInstant ReadInstant(ReadOnlySpan<byte> bytes) =>
         new(BinaryPrimitives.ReadInt64BigEndian(bytes), BinaryPrimitives.ReadInt32BigEndian(bytes[8..]));
 }

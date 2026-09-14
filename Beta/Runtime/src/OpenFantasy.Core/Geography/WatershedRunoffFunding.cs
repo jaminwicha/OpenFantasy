@@ -61,39 +61,10 @@ internal sealed class WatershedRunoffFunding
 
     private void ValidateScope()
     {
-        var inventory = _request.Inventory;
-        var network = _request.Network;
-        if (inventory.WorldId != network.Scope.WorldId || inventory.BranchId != network.Scope.BranchId
-            || !inventory.Actors.Contains(_request.OwnerActorId) || !inventory.ReservationIds.Contains(_request.ReservationId)
-            || inventory.ContainsIdentityMatching(network.MaterialIdentities.Contains)
-            || inventory.ContainsIdentity(_request.Material.Physical.DefinitionId)
-            || network.MaterialIdentities.Contains(_request.Material.Physical.DefinitionId)
-            || network.MaterialIdentities.Contains(_request.Material.Item.DefinitionId))
+        WatershedRunoffDomain.From(_request).ValidateAuthority(_request.Inventory, _request.Production);
+        if (!_request.Inventory.ReservationIds.Contains(_request.ReservationId))
         {
-            throw new ArgumentException("Runoff scope, ownership, reservation and geographical/physical roles must be compatible.");
-        }
-        var pins = inventory.Sources.Where(s => s.Definition.DefinitionId == _request.Material.Item.DefinitionId).ToArray();
-        if (pins.Any(s => s.Definition != _request.Material.Item)
-            || pins.Length == 0 && inventory.ContainsIdentity(_request.Material.Item.DefinitionId))
-        {
-            throw new ArgumentException("Runoff calibration cannot change an admitted item pin or alias a different role.");
-        }
-        if (inventory.Custody.Storages.Any(s => s.Revision > inventory.Custody.Revision)
-            || inventory.Custody.Lots.Any(l => l.Revision > inventory.Custody.Revision))
-        {
-            throw new ArgumentException("Custody entities cannot exceed their complete root revision.");
-        }
-        if (_request.Production is { } production)
-        {
-            production.ValidateForAuthority(inventory);
-            production.ValidateMaterialBinding(_request.Material);
-            if (production.ContainsIdentityMatching(network.MaterialIdentities.Contains)
-                || production.Revision > inventory.Custody.Revision
-                || production.Lots.Any(l => l.Revision > inventory.Custody.Revision)
-                || production.Batches.SelectMany(b => b.Ingredients).Any(i => i.Revision >= inventory.Custody.Revision))
-            {
-                throw new ArgumentException("Production roles and revisions must agree with the runoff custody basis.");
-            }
+            throw new ArgumentException("The forcing reservation must be admitted by the complete authority.");
         }
     }
 

@@ -282,3 +282,8 @@ actual stock and physical calibration. Dry basins can carry upstream contributio
 moves no water and reserves no receiver capacity. See the
 [runoff contract](docs/architecture/world-and-geography.md#domain-contract-funded-runoff-budgets) for
 source ownership, canonical bytes and the boundary to future hydraulic stages.
+
+The privileged `--inspect-runoff-capacity <runoff-capacity.bin>` host operator inspects a normalized
+standalone runoff reservation owner: pending/closed commitments, logical and custody revisions, and
+shared physical/counted receiver headroom. It does not apply flow or load the archive into a played world.
+See the [capacity contract](docs/architecture/world-and-geography.md#domain-contract-shared-runoff-capacity-ownership).

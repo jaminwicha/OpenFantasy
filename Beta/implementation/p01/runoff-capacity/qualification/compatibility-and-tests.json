@@ -1,0 +1,85 @@
+{
+  "legacy_runoff_byte_identical": [
+    {
+      "file": "dry.bin",
+      "byteLength": 3991,
+      "sha256": "62e9ade7adcd863c8a12d4f3c22fa4afa09f71b95203cfe548fce02f0e0b25b0"
+    },
+    {
+      "file": "maximum-network.bin",
+      "byteLength": 3798726,
+      "sha256": "663fd9794455a52107b25f863e03571b3226b045a70103daca0d3daf0e6f8a0c"
+    },
+    {
+      "file": "shared-receiver.bin",
+      "byteLength": 4376,
+      "sha256": "73344d313023fd5d9d7acb1d7953068dec83effbdf7a783a560d21e64ffc9fc9"
+    },
+    {
+      "file": "unequal-runoff.bin",
+      "byteLength": 4216,
+      "sha256": "efcdaa3809cfefc7a56432564c1559c7c788d844605722bae13fc12e9ea47801"
+    },
+    {
+      "file": "crafted-occupancy.bin",
+      "byteLength": 6145,
+      "sha256": "1061a3346f7abf200f0ff015b7afa15e345325f55d902e3a0ed8147358831ee5"
+    }
+  ],
+  "tests": [
+    {
+      "file": "_mac_2026-09-13_21_49_27_net8.0.trx",
+      "counts": {
+        "total": "675",
+        "executed": "675",
+        "passed": "675",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-09-13T21:49:28.2357840-05:00",
+        "queuing": "2026-09-13T21:49:28.2357840-05:00",
+        "start": "2026-09-13T21:48:54.8336540-05:00",
+        "finish": "2026-09-13T21:53:01.4148600-05:00"
+      }
+    },
+    {
+      "file": "_mac_2026-09-13_21_49_28_net8.0.trx",
+      "counts": {
+        "total": "329",
+        "executed": "329",
+        "passed": "329",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-09-13T21:49:28.2257420-05:00",
+        "queuing": "2026-09-13T21:49:28.2257420-05:00",
+        "start": "2026-09-13T21:48:54.8323880-05:00",
+        "finish": "2026-09-13T21:53:28.9312690-05:00"
+      }
+    }
+  ]
+}

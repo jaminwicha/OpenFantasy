@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "completedUtc": "2026-09-14T02:56:58.670615+00:00",
+  "scope": "Standalone shared runoff capacity owner; no live world or hydraulic publication",
+  "build": {
+    "solution": "OpenFantasy.sln",
+    "warnings": 0,
+    "errors": 0,
+    "log": "build.log"
+  },
+  "managedRegression": {
+    "core": 675,
+    "hosting": 329,
+    "total": 1004,
+    "skipped": 0,
+    "newCases": 9,
+    "evidence": "compatibility-and-tests.json"
+  },
+  "targetedFollowup": {
+    "passed": 9,
+    "skipped": 0,
+    "log": "focused-final.log",
+    "reason": "Two test-only additions prove counted headroom separately from physical volume and explicit source-reservation release after cancellation; application source unchanged."
+  },
+  "operatorInspections": {
+    "new": 21,
+    "legacy": 25,
+    "total": 46,
+    "newValidArchives": 5,
+    "newRejectedArchives": 16
+  },
+  "fixtures": [
+    {
+      "name": "crafted-held.bin",
+      "byteLength": 6595,
+      "sha256": "a273fee5c78481ddde72a766f6ed3520504df32e692ead88692de3735f3439ea"
+    },
+    {
+      "name": "empty-closed.bin",
+      "byteLength": 4733,
+      "sha256": "2d487fdacdd456528e454aed153fb6cc79f4adebc8481ad5b738e4f13d76c0d2"
+    },
+    {
+      "name": "maximum-pending.bin",
+      "byteLength": 12259,
+      "sha256": "17cefce3b6a4d0fd3515dc93fb4f310f403ba05b96f1ef75c698ba1d669951e0"
+    },
+    {
+      "name": "one-canceled.bin",
+      "byteLength": 4989,
+      "sha256": "8534280425cbcfed765e7a5cb5d4c7ab660c99256e77a64a07860814b94b43c8"
+    },
+    {
+      "name": "two-held.bin",
+      "byteLength": 5229,
+      "sha256": "024b205d28871b94ee90f3265c0583dc1ef1b56d0823cbc956567dd4d14676d1"
+    }
+  ],
+  "preservation": {
+    "architecture_links": 166,
+    "broken_links": [],
+    "frozen_spec_hashes": 22,
+    "predecessor_index_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "legacyCompatibility": "Five independently re-emitted runoff archives exactly match the prior checkpoint, including the 65536-column fixture.",
+  "retainedFailures": [
+    "test-first.log: missing new APIs and initial delivery fixture signature errors",
+    "focused-initial.log: nonexistent scalar encoding helper corrected with explicit big-endian encoding",
+    "focused-implemented.log: missing test CancellationToken analyzer failures corrected without suppression"
+  ],
+  "executionNotes": [
+    "The no-build solution test command was launched while the solution build was finishing. Both test assemblies and their Core/Hosting dependencies had built; the remaining client build completed successfully. Reports and logs are retained; this is not represented as one sequential verifier invocation.",
+    "macOS MallocStackLogging diagnostics are retained in test logs. Both suites and the later focused suite passed without threshold changes. No cause is inferred.",
+    "Full native/rendered journeys and production performance were not rerun or claimed."
+  ],
+  "limits": [
+    "One fixed network/mapping/material/owner/receiver domain",
+    "16 pending and 4096 closed IDs, with total identities bounded by admitted reservation catalog",
+    "Maximum pending count is tested on the small network; combined maximum network/pending/Production/history performance is unqualified",
+    "No arrival stages, settlement, source release command, physical reservoir geometry, topology change, world admission or history compaction"
+  ]
+}

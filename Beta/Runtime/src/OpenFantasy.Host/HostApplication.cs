@@ -20,6 +20,7 @@ internal sealed class HostApplication
     private readonly TerrainMaterialOperator _terrainMaterials = new();
     private readonly TerrainMaterialRegistryOperator _materialRegistry = new();
     private readonly WatershedRunoffOperator _runoff = new();
+    private readonly WatershedRunoffCapacityOperator _runoffCapacity = new();
     private readonly ComposedWorldOperator _composed = new();
 
     public HostApplication(TextWriter output)
@@ -49,6 +50,7 @@ internal sealed class HostApplication
                 ["--inspect-material-registry", var path] => _materialRegistry.Inspect(path),
                 ["--inspect-material-production", var path] => _materialRegistry.Inspect(path, withProduction: true),
                 ["--inspect-runoff-budget", var path] => _runoff.Inspect(path),
+                ["--inspect-runoff-capacity", var path] => _runoffCapacity.Inspect(path),
                 ["--create-watershed-world", var database, var basis, var watershed] =>
                     _composed.CreateWatershedWorld(database, basis, watershed),
                 ["--create-watershed-network-world", var database, var basis, var network] =>
@@ -96,6 +98,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-material-registry <material-registry.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-material-production <material-production.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-runoff-budget <runoff-budget.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-runoff-capacity <runoff-capacity.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>");

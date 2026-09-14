@@ -127,3 +127,10 @@ preserve identity and possessions rather than spawning a convenient replacement.
 See [time](time-and-encounters.md) for work/rest exposure,
 [world geometry](world-and-geography.md) for terrain intervention, and the
 [technical design](../../../spec-v1_1/TECHNICAL_DESIGN.md) for graph, economic and assembly rules.
+
+Receiving obligations also constrain custody publication through the
+[runoff capacity owner](world-and-geography.md#domain-contract-shared-runoff-capacity-ownership).
+A transfer or craft candidate may satisfy ordinary storage rules yet exceed physical headroom already
+held for inflows. Reconciliation counts raw and derived occupancy with all pending obligations before
+publishing the whole composed state. Canceling a capacity hold leaves actual source reservation metadata
+unchanged; releasing stock is a separate custody operation.

@@ -224,7 +224,7 @@ public sealed class WatershedRunoffTests
         Assert.Throws<OperationCanceledException>(() => WatershedRunoffCodecV1.Decode(bytes, cancellation.Token));
     }
 
-    private static WatershedRunoffRequest Create()
+    internal static WatershedRunoffRequest Create()
     {
         var scope = new TerrainScope(new(0, 1), new(0, 2), new(0, 3));
         var basins = Enumerable.Range(0, 3).Select(i => new WatershedPlanner().Prepare(new(scope, new(0, 4),

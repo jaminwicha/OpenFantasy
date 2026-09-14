@@ -231,6 +231,65 @@ crust history, coasts and full macro dependency admission remain distinct contra
 revalidate its complete lived dependencies before spending stock or capacity. A prepared aggregate
 budget cannot bypass encounter Wait, overwrite terrain or stand in for exact-time geological history.
 
+## Domain contract: shared runoff capacity ownership
+
+[WatershedRunoffCapacityState](../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs)
+composes one exact counted authority, explicit optional Production basis and a fixed
+[runoff domain](../../src/OpenFantasy.Core/Geography/WatershedRunoffDomain.cs). The domain pins the
+network, mapping, owner, material calibration and complete terminal/capacity bindings. Creation admits
+one already prepared budget; subsequent admission supports up to sixteen pending budgets. All requests
+must use those exact shared dependencies. Several independently prepared budgets cannot each promise
+the same free space: each receiver's existing raw/derived occupancy is counted once, then **all pending
+incoming quantities** are added against its counted and calibrated physical capacities. Disjoint forcing
+intervals do not imply that the receiver empties between events. Promised outflows do not create space.
+
+`PlanAdmit`, `PlanCancel` and `PlanReconcile` return an immutable
+[complete-state plan](../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityPlan.cs). `ApplyTo`
+requires the entire current owner hash. The owner's logical revision advances for capacity-only changes
+as well as reconciliations; custody need not change when a capacity hold is added or removed. The revision
+is an ordering/precondition field, not an elapsed-time clock. A trusted integrating publisher must install
+the returned **whole state** atomically. Inspecting a candidate or applying it to an old immutable copy
+does not publish it to a world. Creating several owners against one receiver cannot establish exclusive
+world ownership; the world compositor must admit one owner for every overlapping receiver dependency.
+
+Cancellation releases the pending receiving obligation and retains its reservation identity in the
+bounded, non-reusable closed set. It does not move, consume or clear the source's `ReservedBy` metadata.
+An explicit custody successor may release that source hold after cancellation. Closed identities remain
+reserved against re-admission and stale cancellation; the domain/calibration survive even when every
+budget is canceled. The closed set has a 4,096-identity bound within the authority's admitted reservation
+catalog. Exhaustion rejects; archival compaction or new reservation admission requires an explicit owner
+contract, never silent deletion of history.
+
+Every separately validated custody/Production candidate must pass `PlanReconcile` before publication
+under this owner. An otherwise legal delivery may be rejected because it consumes held receiving space.
+Reconciliation requires advancing custody with unchanged scope/admission, preserves the presence or absence
+of Production, and retains exact admitted recipes and prior production batches. Changed Production must
+advance its own revision. Every active forcing input is re-prepared against the successor to revalidate
+actual source reservations, pins, protection, receiver contents and complete aggregate headroom. A missing
+source hold or overfull receiver rejects the entire candidate. The same-state operation is idempotent.
+This boundary validates composition; it does not authenticate an external command or prove arbitrary
+caller-supplied custody changes are legal transfers. Transfer/craft planners remain responsible for their
+own operation invariants. The publisher must not install their unwrapped candidates directly.
+
+The [capacity v1 archive](../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV1.cs) is a
+23,500,000-byte bounded standalone frame. Its eight fields are tag, domain, authority, optional Production,
+unsigned-64 owner revision, pending rows, closed identities and receiver witnesses. Shared network and
+inventory/Production bytes appear once. The domain frame retains network, mapping, owner, item ID/version,
+physical definition and terminal rows. A pending row contains reservation ID (16 bytes), two instants
+(12 bytes each) and the existing 72-byte input row for every basin. Pending and closed identities use
+canonical ID order. A 56-byte receiver witness contains custodian ID and five unsigned-64 quantities:
+existing, incoming, projected units, projected microlitres and capacity microlitres. Decode re-prepares
+all pending routes, validates the shared owner and compares exact canonical bytes. Empty owners still
+validate scope, receiver ownership, calibration, actual occupancy and closed identity admission. The
+privileged `--inspect-runoff-capacity` operator reads this archive without mutating a world.
+
+This owner does not schedule arrivals, settle/partially consume a flow, release source stock, alter
+receiver geometry, change topology or integrate time. Physical buffers, staged backpressure, Wait,
+exact lived history and durable world admission must compose this capacity boundary with their own
+contracts. Known Production cannot be omitted and separately owned capacities cannot be treated as
+free by another subsystem. A fixed single-material/network domain is a bounded supported profile;
+heterogeneous fluids and interacting networks require explicit compatible composition.
+
 ## Domain contract: funded terrain material
 
 [TerrainMaterialDeposit](../../src/OpenFantasy.Core/Geography/TerrainMaterialDeposit.cs) binds one

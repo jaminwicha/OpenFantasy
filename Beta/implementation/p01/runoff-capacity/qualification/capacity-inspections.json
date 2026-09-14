@@ -1,0 +1,519 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-14T02:54:12.340095+00:00",
+  "runs": [
+    {
+      "name": "two-held",
+      "inputSha256": "024b205d28871b94ee90f3265c0583dc1ef1b56d0823cbc956567dd4d14676d1",
+      "byteLength": 5229,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/two-held.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-capacity-v1\",\"Scope\":\"standalone-capacity-owner\",\"ContentHash\":\"024b205d28871b94ee90f3265c0583dc1ef1b56d0823cbc956567dd4d14676d1\",\"DomainHash\":\"5dcb77c4a126666278bcce0a2e78ae9b231651d3c197b5b100090ea1fec8a519\",\"Revision\":1,\"CustodyRevision\":0,\"Pending\":[{\"ReservationId\":\"000072756e6f66660000000000000190\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000000003\",\"Start\":\"-9:00000000\",\"End\":\"-9:00000001\",\"TotalInputUnits\":600}],\"Closed\":[],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":1200,\"ProjectedUnits\":1250,\"ProjectedVolumeMicrolitres\":1250000000,\"CapacityMicrolitres\":1250000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "024b205d28871b94ee90f3265c0583dc1ef1b56d0823cbc956567dd4d14676d1",
+        "DomainHash": "5dcb77c4a126666278bcce0a2e78ae9b231651d3c197b5b100090ea1fec8a519",
+        "Revision": 1,
+        "CustodyRevision": 0,
+        "Pending": [
+          {
+            "ReservationId": "000072756e6f66660000000000000190",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000000003",
+            "Start": "-9:00000000",
+            "End": "-9:00000001",
+            "TotalInputUnits": 600
+          }
+        ],
+        "Closed": [],
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 1200,
+            "ProjectedUnits": 1250,
+            "ProjectedVolumeMicrolitres": 1250000000,
+            "CapacityMicrolitres": 1250000000
+          }
+        ]
+      }
+    },
+    {
+      "name": "one-canceled",
+      "inputSha256": "8534280425cbcfed765e7a5cb5d4c7ab660c99256e77a64a07860814b94b43c8",
+      "byteLength": 4989,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/one-canceled.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-capacity-v1\",\"Scope\":\"standalone-capacity-owner\",\"ContentHash\":\"8534280425cbcfed765e7a5cb5d4c7ab660c99256e77a64a07860814b94b43c8\",\"DomainHash\":\"5dcb77c4a126666278bcce0a2e78ae9b231651d3c197b5b100090ea1fec8a519\",\"Revision\":2,\"CustodyRevision\":0,\"Pending\":[{\"ReservationId\":\"63617061636974790000000000000003\",\"Start\":\"-9:00000000\",\"End\":\"-9:00000001\",\"TotalInputUnits\":600}],\"Closed\":[\"000072756e6f66660000000000000190\"],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":600,\"ProjectedUnits\":650,\"ProjectedVolumeMicrolitres\":650000000,\"CapacityMicrolitres\":1250000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "8534280425cbcfed765e7a5cb5d4c7ab660c99256e77a64a07860814b94b43c8",
+        "DomainHash": "5dcb77c4a126666278bcce0a2e78ae9b231651d3c197b5b100090ea1fec8a519",
+        "Revision": 2,
+        "CustodyRevision": 0,
+        "Pending": [
+          {
+            "ReservationId": "63617061636974790000000000000003",
+            "Start": "-9:00000000",
+            "End": "-9:00000001",
+            "TotalInputUnits": 600
+          }
+        ],
+        "Closed": [
+          "000072756e6f66660000000000000190"
+        ],
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 600,
+            "ProjectedUnits": 650,
+            "ProjectedVolumeMicrolitres": 650000000,
+            "CapacityMicrolitres": 1250000000
+          }
+        ]
+      }
+    },
+    {
+      "name": "crafted-held",
+      "inputSha256": "a273fee5c78481ddde72a766f6ed3520504df32e692ead88692de3735f3439ea",
+      "byteLength": 6595,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/crafted-held.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-capacity-v1\",\"Scope\":\"standalone-capacity-owner\",\"ContentHash\":\"a273fee5c78481ddde72a766f6ed3520504df32e692ead88692de3735f3439ea\",\"DomainHash\":\"7e32ca0d44160b01d5a90f5f5f8b2508f20a4671344664630dc92299452c340b\",\"Revision\":1,\"CustodyRevision\":1,\"Pending\":[{\"ReservationId\":\"000072756e6f66660000000000000190\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600}],\"Closed\":[],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":600,\"ProjectedUnits\":650,\"ProjectedVolumeMicrolitres\":650000000,\"CapacityMicrolitres\":650000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "a273fee5c78481ddde72a766f6ed3520504df32e692ead88692de3735f3439ea",
+        "DomainHash": "7e32ca0d44160b01d5a90f5f5f8b2508f20a4671344664630dc92299452c340b",
+        "Revision": 1,
+        "CustodyRevision": 1,
+        "Pending": [
+          {
+            "ReservationId": "000072756e6f66660000000000000190",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          }
+        ],
+        "Closed": [],
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 600,
+            "ProjectedUnits": 650,
+            "ProjectedVolumeMicrolitres": 650000000,
+            "CapacityMicrolitres": 650000000
+          }
+        ]
+      }
+    },
+    {
+      "name": "empty-closed",
+      "inputSha256": "2d487fdacdd456528e454aed153fb6cc79f4adebc8481ad5b738e4f13d76c0d2",
+      "byteLength": 4733,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/empty-closed.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-capacity-v1\",\"Scope\":\"standalone-capacity-owner\",\"ContentHash\":\"2d487fdacdd456528e454aed153fb6cc79f4adebc8481ad5b738e4f13d76c0d2\",\"DomainHash\":\"7e32ca0d44160b01d5a90f5f5f8b2508f20a4671344664630dc92299452c340b\",\"Revision\":1,\"CustodyRevision\":0,\"Pending\":[],\"Closed\":[\"000072756e6f66660000000000000190\"],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":0,\"ProjectedUnits\":50,\"ProjectedVolumeMicrolitres\":50000000,\"CapacityMicrolitres\":650000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "2d487fdacdd456528e454aed153fb6cc79f4adebc8481ad5b738e4f13d76c0d2",
+        "DomainHash": "7e32ca0d44160b01d5a90f5f5f8b2508f20a4671344664630dc92299452c340b",
+        "Revision": 1,
+        "CustodyRevision": 0,
+        "Pending": [],
+        "Closed": [
+          "000072756e6f66660000000000000190"
+        ],
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 0,
+            "ProjectedUnits": 50,
+            "ProjectedVolumeMicrolitres": 50000000,
+            "CapacityMicrolitres": 650000000
+          }
+        ]
+      }
+    },
+    {
+      "name": "maximum-pending",
+      "inputSha256": "17cefce3b6a4d0fd3515dc93fb4f310f403ba05b96f1ef75c698ba1d669951e0",
+      "byteLength": 12259,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/maximum-pending.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-capacity-v1\",\"Scope\":\"standalone-capacity-owner\",\"ContentHash\":\"17cefce3b6a4d0fd3515dc93fb4f310f403ba05b96f1ef75c698ba1d669951e0\",\"DomainHash\":\"8b828f3cc93c2227dd7fa1c17e1df5a3dd6b6f31eca507522893d8d5d978a121\",\"Revision\":15,\"CustodyRevision\":0,\"Pending\":[{\"ReservationId\":\"63617061636974790000000000002710\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002711\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002712\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002713\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002714\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002715\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002716\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002717\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002718\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"63617061636974790000000000002719\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"6361706163697479000000000000271a\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"6361706163697479000000000000271b\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"6361706163697479000000000000271c\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"6361706163697479000000000000271d\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"6361706163697479000000000000271e\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600},{\"ReservationId\":\"6361706163697479000000000000271f\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600}],\"Closed\":[],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":9600,\"ProjectedUnits\":9650,\"ProjectedVolumeMicrolitres\":9650000000,\"CapacityMicrolitres\":100000000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "17cefce3b6a4d0fd3515dc93fb4f310f403ba05b96f1ef75c698ba1d669951e0",
+        "DomainHash": "8b828f3cc93c2227dd7fa1c17e1df5a3dd6b6f31eca507522893d8d5d978a121",
+        "Revision": 15,
+        "CustodyRevision": 0,
+        "Pending": [
+          {
+            "ReservationId": "63617061636974790000000000002710",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002711",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002712",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002713",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002714",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002715",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002716",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002717",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002718",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "63617061636974790000000000002719",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "6361706163697479000000000000271a",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "6361706163697479000000000000271b",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "6361706163697479000000000000271c",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "6361706163697479000000000000271d",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "6361706163697479000000000000271e",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          },
+          {
+            "ReservationId": "6361706163697479000000000000271f",
+            "Start": "-10:00000000",
+            "End": "-9:00000000",
+            "TotalInputUnits": 600
+          }
+        ],
+        "Closed": [],
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 9600,
+            "ProjectedUnits": 9650,
+            "ProjectedVolumeMicrolitres": 9650000000,
+            "CapacityMicrolitres": 100000000000
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicate-pending",
+      "inputSha256": "43f992ccebeef3256fe028ca0beebeb305d26223f44cf95da6b53afdf1c8077d",
+      "byteLength": 5229,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/duplicate-pending.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive violates its ownership or funding contract.\n",
+      "stderr": ""
+    },
+    {
+      "name": "noncanonical-order",
+      "inputSha256": "fc9856844574a395c40bf89c7bfd8549e7e2aa59e460a3769839c147b6af0a87",
+      "byteLength": 5229,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/noncanonical-order.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive differs from its canonical state and rederived obligations.\n",
+      "stderr": ""
+    },
+    {
+      "name": "too-many-pending",
+      "inputSha256": "398abc337a459707a65b006c603fb00183a7aa782957129456ae934256be2996",
+      "byteLength": 9069,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/too-many-pending.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "closed-active",
+      "inputSha256": "307c637284173d5791bdd19de1ef8781e3dfe4d1b7581a6837dc14a5f33d5fd2",
+      "byteLength": 5245,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/closed-active.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive violates its ownership or funding contract.\n",
+      "stderr": ""
+    },
+    {
+      "name": "partial-closed",
+      "inputSha256": "9c122d0badc7017de30f3cf13425f768c2ded86ad614972957cd2a39818941b5",
+      "byteLength": 5230,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/partial-closed.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Capacity commitment or closed-identity rows have invalid lengths.\n",
+      "stderr": ""
+    },
+    {
+      "name": "too-many-closed",
+      "inputSha256": "7afa7ac4aa314101c67643d1e7c0ef0352d6eaa9d31383dc6c0f9443d9cd7dd4",
+      "byteLength": 70781,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/too-many-closed.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-pending",
+      "inputSha256": "b682c5271635977a356e153dd1599cb214330664e001c599a811b61c1fe45952",
+      "byteLength": 4973,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/missing-pending.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive differs from its canonical state and rederived obligations.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unreserved-source",
+      "inputSha256": "f03886e4b05a2126f22104b8bbeeb0df6cfc4714aa4655562b684d378132d9df",
+      "byteLength": 5213,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/unreserved-source.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive violates its ownership or funding contract.\n",
+      "stderr": ""
+    },
+    {
+      "name": "invalid-production",
+      "inputSha256": "48f4621ac7a2ea56d5e38964680010ec36070db433aeec0e21de03d10c5c0b90",
+      "byteLength": 5025,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/invalid-production.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame header is incomplete.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-owner",
+      "inputSha256": "9eb2f7bf7a614cd7aac25db0ddf7ba047c759a9faff6b106898af5dac090cd4d",
+      "byteLength": 5229,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/wrong-owner.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive violates its ownership or funding contract.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-item-pin",
+      "inputSha256": "638333413966c595f640910535fe34e66d22c009802e21a15e48af87db0e1c18",
+      "byteLength": 5229,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/wrong-item-pin.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive violates its ownership or funding contract.\n",
+      "stderr": ""
+    },
+    {
+      "name": "receiver-overflow",
+      "inputSha256": "05ae853f8fa9e645df371a38e02fb4c2d5f6204f2171c2eb0ed041a5033b5851",
+      "byteLength": 5229,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/receiver-overflow.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive violates its ownership or funding contract.\n",
+      "stderr": ""
+    },
+    {
+      "name": "witness-mismatch",
+      "inputSha256": "edd317ac0a5dee7629a42c85fa1018195c314df26e1896bb674cdd3d6ff47797",
+      "byteLength": 5229,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/witness-mismatch.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The capacity archive differs from its canonical state and rederived obligations.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated",
+      "inputSha256": "5b94689433661138e31af868b0ef69368d77fb1a601a4d2eb5ecaa841a33398d",
+      "byteLength": 5228,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/truncated.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trailing",
+      "inputSha256": "6ef8bb138224ea4bd5849a10d4d4888f4d4756c357207ac379ea769b82c2e99f",
+      "byteLength": 5230,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/trailing.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "oversized",
+      "inputSha256": "1d266471f4ca7cd4d2409ae08fa13ed8691472e8f86b2c374da0e21212c66c8d",
+      "byteLength": 23500001,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-capacity",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-capacity-vnq5yxey/oversized.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    }
+  ],
+  "finishedUtc": "2026-09-14T02:54:19.348921+00:00"
+}

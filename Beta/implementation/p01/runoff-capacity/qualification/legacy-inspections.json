@@ -1,0 +1,593 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-14T02:55:27.902886+00:00",
+  "runs": [
+    {
+      "name": "unequal-runoff",
+      "inputSha256": "efcdaa3809cfefc7a56432564c1559c7c788d844605722bae13fc12e9ea47801",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/unequal-runoff.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-v1\",\"Scope\":\"standalone-funded-runoff-potential\",\"ContentHash\":\"efcdaa3809cfefc7a56432564c1559c7c788d844605722bae13fc12e9ea47801\",\"RequestHash\":\"eaf29d7d5ba353c50d520e1395fe1a9a1a4aa752ced4bfdbd05a0b28cc4412c0\",\"NetworkHash\":\"47ab97e79fb54e8ffc5f3212a595e843f6140c8d039c76aface1f9ea93b6bfbb\",\"ColumnCount\":6,\"Basins\":3,\"Revision\":0,\"ReservationId\":\"000072756e6f66660000000000000190\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600,\"TotalInputVolumeMicrolitres\":600000000,\"Terminals\":[{\"BasinId\":\"60ff48f23449f3703b78bb8ab0cab403\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":600}],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":600,\"ProjectedUnits\":650,\"ProjectedVolumeMicrolitres\":650000000,\"CapacityMicrolitres\":650000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "efcdaa3809cfefc7a56432564c1559c7c788d844605722bae13fc12e9ea47801",
+        "RequestHash": "eaf29d7d5ba353c50d520e1395fe1a9a1a4aa752ced4bfdbd05a0b28cc4412c0",
+        "NetworkHash": "47ab97e79fb54e8ffc5f3212a595e843f6140c8d039c76aface1f9ea93b6bfbb",
+        "ColumnCount": 6,
+        "Basins": 3,
+        "Revision": 0,
+        "ReservationId": "000072756e6f66660000000000000190",
+        "Start": "-10:00000000",
+        "End": "-9:00000000",
+        "TotalInputUnits": 600,
+        "TotalInputVolumeMicrolitres": 600000000,
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 600,
+            "ProjectedUnits": 650,
+            "ProjectedVolumeMicrolitres": 650000000,
+            "CapacityMicrolitres": 650000000
+          }
+        ],
+        "Terminals": [
+          {
+            "BasinId": "60ff48f23449f3703b78bb8ab0cab403",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 600
+          }
+        ]
+      }
+    },
+    {
+      "name": "shared-receiver",
+      "inputSha256": "73344d313023fd5d9d7acb1d7953068dec83effbdf7a783a560d21e64ffc9fc9",
+      "byteLength": 4376,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/shared-receiver.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-v1\",\"Scope\":\"standalone-funded-runoff-potential\",\"ContentHash\":\"73344d313023fd5d9d7acb1d7953068dec83effbdf7a783a560d21e64ffc9fc9\",\"RequestHash\":\"25d0d6da4d46d18c747007b602a4f58d56e491a08040e9dce28d2f913f6ca7c8\",\"NetworkHash\":\"aacfed65f4300070977a6a2be2705b2e4e4cde5ae465a6750a74435db0ecbb3d\",\"ColumnCount\":6,\"Basins\":3,\"Revision\":0,\"ReservationId\":\"000072756e6f66660000000000000190\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600,\"TotalInputVolumeMicrolitres\":600000000,\"Terminals\":[{\"BasinId\":\"1d53710c19eb8031194ffe0daf4b0522\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":200},{\"BasinId\":\"60ff48f23449f3703b78bb8ab0cab403\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":0},{\"BasinId\":\"dc6bb8545b4521180c1ed32195c56740\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":400}],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":600,\"ProjectedUnits\":650,\"ProjectedVolumeMicrolitres\":650000000,\"CapacityMicrolitres\":650000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "73344d313023fd5d9d7acb1d7953068dec83effbdf7a783a560d21e64ffc9fc9",
+        "RequestHash": "25d0d6da4d46d18c747007b602a4f58d56e491a08040e9dce28d2f913f6ca7c8",
+        "NetworkHash": "aacfed65f4300070977a6a2be2705b2e4e4cde5ae465a6750a74435db0ecbb3d",
+        "ColumnCount": 6,
+        "Basins": 3,
+        "Revision": 0,
+        "ReservationId": "000072756e6f66660000000000000190",
+        "Start": "-10:00000000",
+        "End": "-9:00000000",
+        "TotalInputUnits": 600,
+        "TotalInputVolumeMicrolitres": 600000000,
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 600,
+            "ProjectedUnits": 650,
+            "ProjectedVolumeMicrolitres": 650000000,
+            "CapacityMicrolitres": 650000000
+          }
+        ],
+        "Terminals": [
+          {
+            "BasinId": "1d53710c19eb8031194ffe0daf4b0522",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 200
+          },
+          {
+            "BasinId": "60ff48f23449f3703b78bb8ab0cab403",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 0
+          },
+          {
+            "BasinId": "dc6bb8545b4521180c1ed32195c56740",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 400
+          }
+        ]
+      }
+    },
+    {
+      "name": "dry",
+      "inputSha256": "62e9ade7adcd863c8a12d4f3c22fa4afa09f71b95203cfe548fce02f0e0b25b0",
+      "byteLength": 3991,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/dry.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-v1\",\"Scope\":\"standalone-funded-runoff-potential\",\"ContentHash\":\"62e9ade7adcd863c8a12d4f3c22fa4afa09f71b95203cfe548fce02f0e0b25b0\",\"RequestHash\":\"13e10101a5b3986aa7a9248b5b6ef6d7ce54e37a0d20c02167276815026ea8e2\",\"NetworkHash\":\"47ab97e79fb54e8ffc5f3212a595e843f6140c8d039c76aface1f9ea93b6bfbb\",\"ColumnCount\":6,\"Basins\":3,\"Revision\":0,\"ReservationId\":\"000072756e6f66660000000000000190\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":0,\"TotalInputVolumeMicrolitres\":0,\"Terminals\":[{\"BasinId\":\"60ff48f23449f3703b78bb8ab0cab403\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":0}],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":0,\"ProjectedUnits\":50,\"ProjectedVolumeMicrolitres\":50000000,\"CapacityMicrolitres\":650000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "62e9ade7adcd863c8a12d4f3c22fa4afa09f71b95203cfe548fce02f0e0b25b0",
+        "RequestHash": "13e10101a5b3986aa7a9248b5b6ef6d7ce54e37a0d20c02167276815026ea8e2",
+        "NetworkHash": "47ab97e79fb54e8ffc5f3212a595e843f6140c8d039c76aface1f9ea93b6bfbb",
+        "ColumnCount": 6,
+        "Basins": 3,
+        "Revision": 0,
+        "ReservationId": "000072756e6f66660000000000000190",
+        "Start": "-10:00000000",
+        "End": "-9:00000000",
+        "TotalInputUnits": 0,
+        "TotalInputVolumeMicrolitres": 0,
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 0,
+            "ProjectedUnits": 50,
+            "ProjectedVolumeMicrolitres": 50000000,
+            "CapacityMicrolitres": 650000000
+          }
+        ],
+        "Terminals": [
+          {
+            "BasinId": "60ff48f23449f3703b78bb8ab0cab403",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "crafted-occupancy",
+      "inputSha256": "1061a3346f7abf200f0ff015b7afa15e345325f55d902e3a0ed8147358831ee5",
+      "byteLength": 6145,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/crafted-occupancy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-v1\",\"Scope\":\"standalone-funded-runoff-potential\",\"ContentHash\":\"1061a3346f7abf200f0ff015b7afa15e345325f55d902e3a0ed8147358831ee5\",\"RequestHash\":\"f6b4ae5f646b46a20a8165f8f7780877af905d2d08cd24ec8d279699e2edf4a1\",\"NetworkHash\":\"47ab97e79fb54e8ffc5f3212a595e843f6140c8d039c76aface1f9ea93b6bfbb\",\"ColumnCount\":6,\"Basins\":3,\"Revision\":1,\"ReservationId\":\"000072756e6f66660000000000000190\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":600,\"TotalInputVolumeMicrolitres\":600000000,\"Terminals\":[{\"BasinId\":\"60ff48f23449f3703b78bb8ab0cab403\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":600}],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":600,\"ProjectedUnits\":650,\"ProjectedVolumeMicrolitres\":650000000,\"CapacityMicrolitres\":650000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "1061a3346f7abf200f0ff015b7afa15e345325f55d902e3a0ed8147358831ee5",
+        "RequestHash": "f6b4ae5f646b46a20a8165f8f7780877af905d2d08cd24ec8d279699e2edf4a1",
+        "NetworkHash": "47ab97e79fb54e8ffc5f3212a595e843f6140c8d039c76aface1f9ea93b6bfbb",
+        "ColumnCount": 6,
+        "Basins": 3,
+        "Revision": 1,
+        "ReservationId": "000072756e6f66660000000000000190",
+        "Start": "-10:00000000",
+        "End": "-9:00000000",
+        "TotalInputUnits": 600,
+        "TotalInputVolumeMicrolitres": 600000000,
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 600,
+            "ProjectedUnits": 650,
+            "ProjectedVolumeMicrolitres": 650000000,
+            "CapacityMicrolitres": 650000000
+          }
+        ],
+        "Terminals": [
+          {
+            "BasinId": "60ff48f23449f3703b78bb8ab0cab403",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 600
+          }
+        ]
+      }
+    },
+    {
+      "name": "maximum-network",
+      "inputSha256": "663fd9794455a52107b25f863e03571b3226b045a70103daca0d3daf0e6f8a0c",
+      "byteLength": 3798726,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/maximum-network.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"watershed-runoff-v1\",\"Scope\":\"standalone-funded-runoff-potential\",\"ContentHash\":\"663fd9794455a52107b25f863e03571b3226b045a70103daca0d3daf0e6f8a0c\",\"RequestHash\":\"21eba0a90d35bdcf2a017e14b179f5639410ce0e43e14220f01eea1ef67f2a9f\",\"NetworkHash\":\"852d83605192458dd089f7c1850d7915228462b4ea9428e3da0d5cf475d4cb7b\",\"ColumnCount\":65536,\"Basins\":16,\"Revision\":0,\"ReservationId\":\"000072756e6f66660000000000000190\",\"Start\":\"-10:00000000\",\"End\":\"-9:00000000\",\"TotalInputUnits\":65536,\"TotalInputVolumeMicrolitres\":65536000000,\"Terminals\":[{\"BasinId\":\"099471c7c279bf918ca8234af3bc97af\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"12c2be935b22a1f815641a42120532bc\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"1e38a6bd5c6c3881b0d2966fd74d7f60\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"3078a3d2e4c93ccab3feb00ce3fc2462\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"3261ed02556e82560a472a6d1cb0ae29\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"4ebf989ac0ae41d6f59207e14f0aacae\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"56775317b35d49974723f9bb8661c3ac\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"5ba31e9d432a1aae991e92bcb3be2e8c\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"609a1a8b82fa19a42c6a1a01fe06c95d\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"612986867717c0774c89f5150b0d5382\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"6aa45404c5adde28d73ae7344d3e3b3a\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"839e0fb3608d2a5a758cf4186c6a5b61\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"8b0892bfa1bc107555a1cdbf67b1aa03\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"95c0bf8f901130424d7aa918e6ee54a3\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"e6bf92dde6d4a83407151d9a1ca0581b\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096},{\"BasinId\":\"f766330401c54bf92a880af01f89e5d1\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"IncomingUnits\":4096}],\"Receivers\":[{\"CustodianId\":\"000072756e6f66660000000000000193\",\"ExistingUnits\":50,\"IncomingUnits\":65536,\"ProjectedUnits\":65586,\"ProjectedVolumeMicrolitres\":65586000000,\"CapacityMicrolitres\":100000000000}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "663fd9794455a52107b25f863e03571b3226b045a70103daca0d3daf0e6f8a0c",
+        "RequestHash": "21eba0a90d35bdcf2a017e14b179f5639410ce0e43e14220f01eea1ef67f2a9f",
+        "NetworkHash": "852d83605192458dd089f7c1850d7915228462b4ea9428e3da0d5cf475d4cb7b",
+        "ColumnCount": 65536,
+        "Basins": 16,
+        "Revision": 0,
+        "ReservationId": "000072756e6f66660000000000000190",
+        "Start": "-10:00000000",
+        "End": "-9:00000000",
+        "TotalInputUnits": 65536,
+        "TotalInputVolumeMicrolitres": 65536000000,
+        "Receivers": [
+          {
+            "CustodianId": "000072756e6f66660000000000000193",
+            "ExistingUnits": 50,
+            "IncomingUnits": 65536,
+            "ProjectedUnits": 65586,
+            "ProjectedVolumeMicrolitres": 65586000000,
+            "CapacityMicrolitres": 100000000000
+          }
+        ],
+        "Terminals": [
+          {
+            "BasinId": "099471c7c279bf918ca8234af3bc97af",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "12c2be935b22a1f815641a42120532bc",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "1e38a6bd5c6c3881b0d2966fd74d7f60",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "3078a3d2e4c93ccab3feb00ce3fc2462",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "3261ed02556e82560a472a6d1cb0ae29",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "4ebf989ac0ae41d6f59207e14f0aacae",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "56775317b35d49974723f9bb8661c3ac",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "5ba31e9d432a1aae991e92bcb3be2e8c",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "609a1a8b82fa19a42c6a1a01fe06c95d",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "612986867717c0774c89f5150b0d5382",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "6aa45404c5adde28d73ae7344d3e3b3a",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "839e0fb3608d2a5a758cf4186c6a5b61",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "8b0892bfa1bc107555a1cdbf67b1aa03",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "95c0bf8f901130424d7aa918e6ee54a3",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "e6bf92dde6d4a83407151d9a1ca0581b",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          },
+          {
+            "BasinId": "f766330401c54bf92a880af01f89e5d1",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "IncomingUnits": 4096
+          }
+        ]
+      }
+    },
+    {
+      "name": "missing-input",
+      "inputSha256": "fa1ecaaf027d1f83926a3ea4f46c447bf257628d442eaa785971be076a985291",
+      "byteLength": 4144,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/missing-input.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A typed terrain field has the wrong length.\n",
+      "stderr": ""
+    },
+    {
+      "name": "missing-terminal",
+      "inputSha256": "720ba11ff4f392cb6d860ed125fe22c3fbddda563d742b8f927b2f9c7e324761",
+      "byteLength": 4176,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/missing-terminal.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A typed terrain field has the wrong length.\n",
+      "stderr": ""
+    },
+    {
+      "name": "unreserved-funding",
+      "inputSha256": "21cf6937acfd0f2afc65d9b0b5889b35b7e648b8aeda4ba144893d0356c9c744",
+      "byteLength": 4200,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/unreserved-funding.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "funding-lot-removed",
+      "inputSha256": "60930bc01241baeaddc2e5d10cb097a3eaff384c60fc873a353e07fb52405acd",
+      "byteLength": 3991,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/funding-lot-removed.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "reversed-time",
+      "inputSha256": "0e1773472f9b7c9251bd0c25d1f1c8c2ba554334eaf15049cd0e953916323eef",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/reversed-time.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-owner",
+      "inputSha256": "e15cf9cde1a125140ecbff50ac0434a3acc22760d9d1f7ee6bc3d211bcb392b2",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/wrong-owner.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-item-pin",
+      "inputSha256": "873059e274cbc4dbee961349d88b68f5d7bda60589efa7441fddc8faf6bb876a",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/wrong-item-pin.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "production-omission-trailing",
+      "inputSha256": "447394203c7f782b38ee177b8811f0a8de5aaba9955778197d536e0161d5a9ee",
+      "byteLength": 4219,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/production-omission-trailing.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The frame header is incomplete.\n",
+      "stderr": ""
+    },
+    {
+      "name": "fractional-unit",
+      "inputSha256": "853466b9385309e8cbd74f21b35e5c545ce0c8261e94de9fc8660e64ad7e0982",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/fractional-unit.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "source-overlap",
+      "inputSha256": "c682298c931d70c2aeac9f694e94497e08f28f061c4c4c15eab55ec22da9fe1f",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/source-overlap.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "source-underfunded",
+      "inputSha256": "3675d10a23439b783ea6cd19e0578a734c463b7bdc87dc74735eb2ddf7fcad9f",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/source-underfunded.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "dry-hidden-funding",
+      "inputSha256": "275b90aa3170abd598b0d0f329e17cc22d417ffbc41749b520364c50ae60540f",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/dry-hidden-funding.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Dry input rows cannot carry hidden funding fields.\n",
+      "stderr": ""
+    },
+    {
+      "name": "counted-headroom",
+      "inputSha256": "e370a3fda4d2290dca4f54ee3e4b1c3234078e6637e47b541fb8409649b51b84",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/counted-headroom.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "physical-headroom",
+      "inputSha256": "422d039ff64ff5aa0b651728894760e6fa846bd85d4c7999d3930953009a5263",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/physical-headroom.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "competing-terminals",
+      "inputSha256": "18c711b683c4eb9f902ba549622afc0212c08e810438d7b7001b6bbdfbdca0f2",
+      "byteLength": 4376,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/competing-terminals.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive violates its finite funding or receiver contracts.\n",
+      "stderr": ""
+    },
+    {
+      "name": "changed-derived-field-2",
+      "inputSha256": "3b246e7ef7ebd056feee291887d23d70ed4d42e0f7cc96c56faf244d6a3613c2",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/changed-derived-field-2.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive differs from canonical inputs or rederived routing quantities.\n",
+      "stderr": ""
+    },
+    {
+      "name": "changed-derived-field-3",
+      "inputSha256": "738c08320c571c8141dc1b4fb1eb35894e8c7c19b58af459b65af0e2d8a2677f",
+      "byteLength": 4216,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/changed-derived-field-3.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The runoff archive differs from canonical inputs or rederived routing quantities.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated",
+      "inputSha256": "6114e51f3c6f2af21f8b9644ab65743a7b2b75866275ad001d70cc2fa16beeeb",
+      "byteLength": 4215,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/truncated.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trailing",
+      "inputSha256": "17a896522ea2fd05ba1c2331b30a93510eac7dff7f0ab4107093eb8defb69188",
+      "byteLength": 4217,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/trailing.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "oversized",
+      "inputSha256": "1d266471f4ca7cd4d2409ae08fa13ed8691472e8f86b2c374da0e21212c66c8d",
+      "byteLength": 23500001,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-runoff-budget",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/runoff-inspections-rwchhmls/oversized.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    }
+  ],
+  "scope": "Read-only source interval, weighted origin-path and physical/counted headroom checks; no hydraulic or global reservation qualification.",
+  "finishedUtc": "2026-09-14T02:55:59.735046+00:00"
+}
