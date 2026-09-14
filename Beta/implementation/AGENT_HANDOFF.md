@@ -32,8 +32,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Shared runoff capacity ownership: [packet](p01/runoff-capacity/README.md) and
-[milestone ledger](GIT_MILESTONES.md). The qualified code marker is recorded with the checkpoint.
+Code/evidence: `83db425`, preserved on `codex/milestone-runoff-capacity`;
+[packet](p01/runoff-capacity/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
 One immutable owner now admits up to sixteen funded runoff commitments against exact shared
 network/mapping/material/receiver and authority/Production data. It checks all incoming obligations
