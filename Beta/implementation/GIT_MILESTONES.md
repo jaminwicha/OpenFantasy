@@ -37,6 +37,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-terrain-material-allocation` | `163a7bb` | Finite funded slab and exclusive coarse/detailed source partitions; 957 tests, 24 final real host inspections, independent interval/outer-format checks and bounded native critique. [Evidence](p01/terrain-materials/README.md) includes partial/interior actual transfers, 4,096-lot/active-cell caps and retained analyzer failures. Standalone trusted composition only: no live mining, retirement, world allocation registry, performance or full phase acceptance. |
 | `codex/milestone-material-registry` | `b47fec7` | One shared inventory for 1–64 disjoint terrain allocations, normalized archive and shared immutable macro data; 971 tests, 26 registry plus 24 prior-material host inspections, independent ownership checks and bounded native critique. [Evidence](p01/material-registry/README.md) retains maximum-network allocation measurements and corrected fixture failures. No durable world admission, live mining, retirement, production performance or full phase acceptance. |
 | `codex/milestone-material-production` | `a1783a9` | Shared terrain/Production proof, direct raw retirement conservation, exact retained history and explicit v2 archives; 983 tests, 20 new plus 50 legacy real-host inspections, independent interval/spatial accounting and bounded native critique. [Evidence](p01/material-production/README.md) retains corrected fixture/compiler failures. No live mining, durable world admission, long-lived history compaction, production performance or full phase acceptance. |
+| `codex/milestone-runoff-budgets` | `02f2819` | Funded effective-runoff projection over exact finite drainage, shared physical/counting receiver headroom and canonical archive; 995 tests, 25 real host inspections, five independent origin-path/source checks and bounded native critique. [Evidence](p01/runoff-budgets/README.md) includes the 65,536-column profile and retained test-first failure. No hydraulic flow, receiver-capacity reservations, complete macro profiles, durable world admission, performance or full phase acceptance. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -90,3 +91,10 @@ The material-production branch preserves code, reference updates and bounded qua
 not playable mining or a complete geological simulation. The development checkout, prior milestones,
 22 frozen spec hashes and exact unrelated predecessor index remain preserved. No checkout switch,
 force update, push, merge or full-gate closure accompanies this marker.
+
+
+The runoff-budgets branch preserves source, architecture reference and bounded qualification at
+`02f28192dd380e1c04a3fac93b9eb327f1f0b878`. It records funded aggregate runoff and physical receiver
+witnesses, not live flow or completed geological realization. The development checkout, prior markers,
+22 frozen spec hashes and exact unrelated predecessor index remain preserved. No checkout switch,
+force update, push, merge or full-gate closure accompanies this milestone.

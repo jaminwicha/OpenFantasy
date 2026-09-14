@@ -32,7 +32,7 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: funded runoff budgets; the checkpoint is recorded in the
+Code/evidence: `02f2819`, preserved on `codex/milestone-runoff-budgets`;
 [milestone ledger](GIT_MILESTONES.md) and [packet](p01/runoff-budgets/README.md).
 
 A finite effective-runoff budget now pins the watershed network, mapping, complete counted/optional
