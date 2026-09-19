@@ -79,6 +79,22 @@ and exact replay. `--create-reservoir-world` requires a new destination; `--insp
 reports the exact physical owner at the selected commit. These privileged operations confer no network
 authentication and introduce no migration of a lived save.
 
+[WorldActionCodecV6](../../src/OpenFantasy.Core/Worlds/WorldActionCodecV6.cs) encodes runoff commitment
+controls in the existing ten-field `world.actor-action` envelope with unsigned-64 action version `6`.
+Its nested frame is tagged `world.action.runoff-commitment`, with version `1`, kind (`1` admit or `2`
+cancel), exact 32-byte reservoir hash, capacity revision and reservation ID. Admission adds start/end
+instants (signed-64 days plus signed-32 milliseconds) and canonical basin input rows. Each existing
+72-byte input row names basin, depth, source ID/range and custodian; a dry row has zero funding bytes.
+The command is bounded to 2,048 bytes and sixteen input rows. Decode rejects partial/duplicate/reordered
+rows, hidden dry funding, unknown kinds/versions and trailing fields by validating and re-encoding exact bytes.
+
+Action version and world profile version are distinct: these commands execute only in profile eight.
+Both constructor and decoder paths reject their insertion into older world batches; the local session
+checks the profile before queuing. Existing snapshot/step encodings, global command/batch bounds and
+schema-three tables remain unchanged. Accepted capacity-only operations and rejected controls receive
+the same atomic journal/outcome/identity treatment as other actions; exact retries retrieve the recorded
+receipt. Restart and historical reads replay controls rather than reconstructing obligations from wall time.
+
 The [dry terrain candidate archive](../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs)
 is a separately versioned preparation artifact, not another composed-world profile or a replacement
 for `TerrainRegionCodecV1`. Retaining it proves exact candidate reconstruction, without admitting it

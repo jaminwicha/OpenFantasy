@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Geography;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -62,6 +63,10 @@ public sealed class WorldStepBatch
         foreach (WorldActionCommand command in actions)
         {
             ArgumentNullException.ThrowIfNull(command);
+            if (command.Intent is RunoffCommitmentIntent && profileVersion != 8)
+            {
+                throw new ArgumentException("Runoff commitments require the physical reservoir world profile.");
+            }
             if (command.Intent is WorkConstructionIntent && profileVersion < 5)
             {
                 throw new ArgumentException("Construction work requires its admitted world profile.");

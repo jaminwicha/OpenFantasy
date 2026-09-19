@@ -18,12 +18,13 @@ internal sealed class ReservoirWorldFixture
         new(new PackageId("openfantasy.water"), Id(6), "water", new(1_000_000), new(1_000_000), new(0)));
     internal static readonly ItemPhysicalBinding Ice = new(new(Id(7), ContentHash.Compute("world-ice"u8)),
         new(new PackageId("openfantasy.water"), Id(8), "ice", new(1_000_000), new(1_100_000), new(1)));
+    internal static readonly EntityId SecondReservation = Id(14);
     internal ConstructionUpgradeFixture Actions { get; } = new();
     internal WorldSnapshot Basis { get; }
     internal LiquidReservoirState Reservoirs { get; }
     internal WorldSnapshot Genesis => WorldReservoirAdmission.CreateGenesis(Basis, Reservoirs);
 
-    internal ReservoirWorldFixture(bool primaryReceiver = false, bool canceled = false, bool maximum = false, ulong incomingSupply = 0, string worldSeed = "construction-recovery")
+    internal ReservoirWorldFixture(bool primaryReceiver = false, bool canceled = false, bool maximum = false, ulong incomingSupply = 0, string worldSeed = "construction-recovery", bool spareBudget = false)
     {
         WorldSnapshot farm = ConstructionFarmAdmission.CreateGenesis(Actions.QuestGenesis(worldSeed));
         var player = farm.Residents.Single(r => r.ControllerKind == ResidentControllerKind.Player);
@@ -35,6 +36,10 @@ internal sealed class ReservoirWorldFixture
         {
             lots = lots.Append(new(Id(13), host.InventoryCustodianId, Water, new(Source, 3000, 3000 + incomingSupply), 0));
         }
+        if (spareBudget)
+        {
+            lots = lots.Append(new(Id(15), SourceStore, Water, new(Source, 1300, 1900), 0, LotProtection.None, SecondReservation));
+        }
         var inventory = new CountedAuthorityState(new(farm.WorldId, farm.BranchId, 0,
             storages.Concat([new(SourceStore, 3000, 0), new(Receiver, 3000, 0)]),
             lots.Concat([
@@ -44,7 +49,7 @@ internal sealed class ReservoirWorldFixture
             checked(farm.Inventory.AdmittedUnitCapacity + 6000 + incomingSupply), farm.Inventory.Actors, farm.Inventory.Controls,
             farm.Inventory.Policies.Concat([new(SourceStore, player.ActorId, CustodyDepositRule.OwnerOnly),
                 new(Receiver, player.ActorId, CustodyDepositRule.AnyControlledActor)]),
-            farm.Inventory.Sources.Append(new(Source, Water, checked(3000 + incomingSupply))), farm.Inventory.ReservationIds.Append(Reservation));
+            farm.Inventory.Sources.Append(new(Source, Water, checked(3000 + incomingSupply))), farm.Inventory.ReservationIds.Append(Reservation).Concat(spareBudget ? [SecondReservation] : []));
         var residents = farm.Residents.Select(r => primaryReceiver && r.ActorId == player.ActorId
             ? new WorldResident(r.ActorId, Receiver, r.DisplayName, r.ControllerKind, r.HomeFeet,
                 r.WanderRadiusCells, r.Comprehension, r.ExperiencedTime, r.OpeningUtterance) : r);

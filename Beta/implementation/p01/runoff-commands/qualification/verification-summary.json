@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "scope": "Durable funded runoff admission/cancellation through the profile-eight physical owner. No live liquid movement or phase completion.",
+  "build": {
+    "log": "build.log",
+    "warnings": 0,
+    "errors": 0,
+    "runtimeChangesAfterBuild": false
+  },
+  "managed": {
+    "core": {
+      "total": 692,
+      "executed": 692,
+      "passed": 692,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting": {
+      "total": 367,
+      "executed": 367,
+      "passed": 367,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "newCases": 23,
+    "coverage": "Full Core and Hosting regression on the final compiled sources; 1,059 cases, zero skips."
+  },
+  "operators": {
+    "runoff-commands.json": {
+      "status": "passed",
+      "calls": 18,
+      "processKills": 2,
+      "independentAdmissionHash": "da7d362b1c6537d4cde160cd8f923e20d59723a0ad2a9e4b082b9e2e7ef2047b",
+      "independentControlFrames": 6
+    },
+    "reservoir-regression.json": {
+      "status": "passed",
+      "calls": 28,
+      "processKills": 2,
+      "independentAdmissionHash": "b17cf87668dc29f77d8b2158cfd0d265694640d6c4c3f4706b46ca6f4557f3fa"
+    },
+    "network-regression.json": {
+      "status": "passed",
+      "calls": 27,
+      "processKills": 2,
+      "independentAdmissionHash": "dbe0267ae90bdf46b80eec0cc12aa68474be11b006241096ff65a25c5f3031df"
+    }
+  },
+  "native": {
+    "foundation": "native-foundation.log: actual headless Godot C# foundation-v1; no errors",
+    "farm": {
+      "status": "passed",
+      "stages": 2,
+      "rendered": false,
+      "recordedHistory": "passed"
+    }
+  },
+  "preservation": {
+    "architectureLinks": 182,
+    "frozenHashes": 22,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "predecessorStagedFiles": 19
+  },
+  "critic": "Bounded native read-only design/source/codec/common-gate/tests/reference review. Identified reproduced reservation-purpose collision; fixed and tested. No remaining actionable findings; critic did not execute qualification.",
+  "failures": [
+    "test-first.log: new CancelRunoffIntent API absent before implementation; expected compiler failure.",
+    "reservation-regression-before.log: two real pending/closed reservation-purpose collision tests failed against prior admission behavior, then passed after the composition rule was added."
+  ],
+  "limits": [
+    "Existing source-held budget IDs only; no new funding allocation or source release after cancellation.",
+    "Profile eight only; no changed default farm, played-save migration or player-facing control offers.",
+    "Authored watertight geometry and fixed network/domain remain assumptions. No terrain wall proof, inlets/outlets, arrival/settlement, backpressure, fluid movement, phase changes or hydraulic Wait.",
+    "No representative workload or production performance qualification. Prior maximum-support fixtures remain bounded correctness evidence only.",
+    "Headless native regression only; no rendered, foreground, physical-device or export acceptance.",
+    "Full all-systems verifier not run; managed regressions and the new/existing targeted harness invocations were executed directly. Existing gate thresholds and timeouts unchanged.",
+    "All full campaign, independent/human, art/audio, UI, co-op and production gates remain open."
+  ]
+}

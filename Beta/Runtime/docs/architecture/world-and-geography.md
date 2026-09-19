@@ -364,7 +364,10 @@ unsupported configurations require explicit profiles rather than being coerced i
 `LiquidReservoirState`. Its inventory and Production must match the world's exact material roots.
 The world's network is derived from that owner, never admitted as an independent competing copy.
 World identity admission registers every reservoir ID and the item/physical definition pins alongside
-terrain, bodies, languages, quests and construction. A stored reservoir cannot be reused as a command,
+terrain, bodies, languages, quests and construction. Active and closed runoff reservation IDs cannot
+also appear in any quest material or construction project declaration. The inventory reservation catalog
+alone does not distinguish purpose; this world composition rule prevents unrelated obligations sharing
+one identity, even if each domain is independently valid. A stored reservoir cannot be reused as a command,
 receipt or spawned identity. Shared definitions require exact pins across all components.
 
 [WorldStepProcessor](../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) applies the physical check
@@ -377,12 +380,50 @@ retains the same wrapper; accepted changes retain geometry/domain and rebuild ac
 
 Advancing time, opening a reading hold or passing an input interval's end does not settle runoff,
 release its source reservation or drop outstanding receiving capacity. Empty/canceled owners retain
-all physical mappings. No action in this profile edits geometry, admits/cancels a commitment or simulates
-liquid arrivals. The same transaction owns physical state, custody, Production and receipts; historical
+all physical mappings. No action in this profile edits geometry or simulates liquid arrivals. The same
+transaction owns physical state, custody, Production and receipts; historical
 reconstruction uses the exact recorded profile. The [persistence contract](persistence-and-history.md)
 defines fresh admission, canonical bytes and outer size limits. The default farm remains its explicitly
 admitted profile; this binding does not infer terrain walls, visualize water or insert reservoirs into
 played saves.
+
+## Runtime binding: funded runoff commitment controls
+
+[RunoffCommitmentIntent](../../src/OpenFantasy.Core/Geography/RunoffCommitmentIntent.cs) defines explicit
+admission and cancellation requests for profile eight. Each pins the complete reservoir hash and the
+capacity owner's logical revision. The actor command also pins actor revision and carries its existing
+principal/session delivery. [WorldRunoffResolver](../../src/OpenFantasy.Core/Worlds/WorldRunoffResolver.cs)
+checks current control and exact domain ownership before inspecting private funding, then compares both
+owner pins against the latest accepted wrapper within the batch. Changed capacity with unchanged custody
+still makes an old request stale. Rejection returns a durable ordinary receipt and never retries implicitly.
+
+Admission names an already admitted reservation identity, a half-open interval and an explicit row for
+every wet/dry basin, at most sixteen. It cannot supply a replacement network, mapping, authority,
+Production ledger, material or receiver set. The resolver rebuilds the request from the current fixed
+domain, re-prepares exact source funding/routing and admits it through both capacity and physical plans.
+All wet source stock must already be reserved under that identity, with the exact complete intervals.
+Neither dry declarations nor existing incoming promises mint water or receiving headroom. The earliest
+start is the selected advancing step's publication calendar, including that step's fixed clock increment;
+backdated schedules reject. This is a funded obligation control, not permission to create rain or trigger flow.
+
+Cancellation removes only an active pending receiving obligation, advances the capacity revision and
+retains its ID permanently in the bounded closed set. Raw/derived stock, source reservations, physical
+mappings and the fixed domain remain exact. An overdue obligation can be canceled explicitly; passing its
+end alone does nothing. An already canceled ID cannot be admitted again. A separate lawful source-release
+operation is required before canceled stock can be repurposed.
+
+Both operations require an advancing batch and no current reading dialogue, including a hold opened by
+an earlier action in that same batch. They perform no source transfer, elapsed work or arrival process.
+After a capacity-only change, following actions see the accepted new headroom; a handover that precedes
+cancellation can still reject. A prior accepted handover invalidates an old complete-owner admission pin.
+Actor order is canonical and cannot be supplied as a preferred execution sequence by a caller. Command
+and receipt identities are recorded normally; an existing budget ID is not a newly spawned entity.
+
+The existing offline world-step operator and exclusive durable owner execute these requests. The
+session rejects them for older profiles before queuing. Public action offers, player-facing controls,
+automatic weather scheduling, liquid settlement and encounter-scoped hydraulic timing need their own
+bindings. The world snapshot format is unchanged; [action version six](persistence-and-history.md)
+adds only the bounded control interpreter while preserving prior command encodings.
 
 ## Domain contract: funded terrain material
 

@@ -301,3 +301,11 @@ time alone does not move liquid or release promises. The default farm is unchang
 `OPENFANTASY_RESERVOIR_WORLD_EVIDENCE` retains the hosting fixture; the full verifier runs
 `tools/check_watershed_network_world.py --profile reservoir` for independent outer-byte verification,
 actual commit crashes, restart and exact history through the host.
+
+Profile-eight host-selected batches also support funded runoff admission/cancellation through
+`WorldActionCodecV6`. Requests pin the entire physical owner and its revision; cancellation releases
+receiving headroom but preserves source holds. Older profiles reject these commands. This provides
+no player-facing menu or live liquid movement. See the
+[control contract](docs/architecture/world-and-geography.md#runtime-binding-funded-runoff-commitment-controls).
+`OPENFANTASY_RUNOFF_COMMAND_EVIDENCE` retains the command/replay fixture used by the full verifier's
+actual host crash/recovery checks.

@@ -94,17 +94,49 @@ def main():
             raise RuntimeError(name + ': unexpected host result')
         return json.loads(result.stdout) if exit_code == 0 else None
 
+    def assert_reservoir(value, revision):
+        if version != 8:
+            return
+        assert value['Reservoirs']['ContentHash'] == expected['ReservoirHashes'][revision]
+        if 'ReservoirStates' in expected:
+            for key, wanted in expected['ReservoirStates'][revision].items():
+                assert value['Reservoirs'][key] == wanted, (revision, key, value['Reservoirs'][key], wanted)
+
+    def verify_control_frames():
+        if 'Actions' not in expected:
+            return
+        for revision, wanted in enumerate(expected['Actions'], start=1):
+            batch = fields((fixture / f'step-{revision}.bin').read_bytes())
+            actions = fields(batch[9])
+            assert actions[0] == b'world.step-actions' and len(actions) == 2
+            command_fields = fields(actions[1])
+            assert command_fields[:2] == [b'world.actor-action', struct.pack('>Q', 6)]
+            action = fields(command_fields[9])
+            assert action[:3] == [b'world.action.runoff-commitment', struct.pack('>Q', 1), struct.pack('>Q', wanted['Kind'])]
+            assert action[3].hex() == wanted['ExpectedHash']
+            assert struct.unpack('>Q', action[4])[0] == wanted['ExpectedRevision']
+            assert action[5].hex() == wanted['Reservation']
+            if wanted['Kind'] == 1:
+                assert len(action) == 9 and len(action[6]) == len(action[7]) == 12
+                assert len(action[8]) == 72
+                row = action[8]
+                assert struct.unpack_from('>Q', row, 16)[0] == 3000
+                assert struct.unpack_from('>QQ', row, 40) == (1300, 1900)
+            else:
+                assert len(action) == 6
+        report['independentControlFrames'] = len(expected['Actions'])
+
     def assert_history(revision):
         value = run('history ' + str(revision), '--inspect-recorded-world', database, revision)
         assert value['ProfileVersion'] == version and value['RecordedRevision'] == revision
         assert value['StateHash'] == expected['WorldHashes'][revision]
         assert value['WatershedNetwork']['ContentHash'] == expected['NetworkHash']
-        if version == 8:
-            assert value['Reservoirs']['ContentHash'] == expected['ReservoirHashes'][revision]
+        assert_reservoir(value, revision)
         assert value['HasReadingHold'] == (revision == expected['HeldRevision'])
         return value
 
     try:
+        verify_control_frames()
         report['independentAdmissionHash'] = verify_admission_frame(fixture, args.profile)
         assert report['independentAdmissionHash'] == expected['WorldHashes'][0]
         created = run('create', create_option, database, fixture / 'basis.bin', fixture / artifact_name)
@@ -137,10 +169,9 @@ def main():
             value = run('step ' + str(revision), '--execute-world-step', database, fixture / f'step-{revision}.bin')
             assert value['Revision'] == revision and value['StateHash'] == expected['WorldHashes'][revision]
             assert value['WatershedNetwork']['ContentHash'] == expected['NetworkHash']
-            if version == 8:
-                assert value['Reservoirs']['ContentHash'] == expected['ReservoirHashes'][revision]
+            assert_reservoir(value, revision)
         before = hashlib.sha256(database.read_bytes()).hexdigest()
-        for revision in [expected['FinalRevision'], 0, expected['HeldRevision'], 1]:
+        for revision in expected.get('HistoryRevisions', [expected['FinalRevision'], 0, expected['HeldRevision'], 1]):
             value = assert_history(revision)
             assert value['SourceHeadRevision'] == expected['FinalRevision']
             assert value['SourceHeadHash'] == expected['WorldHashes'][-1]

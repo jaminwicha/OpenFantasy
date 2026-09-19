@@ -139,6 +139,11 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This saved profile does not support quest actions.");
             }
+            if (command.Intent is OpenFantasy.Core.Geography.RunoffCommitmentIntent
+                && _authority.ReadStateForHost().ProfileVersion != 8)
+            {
+                throw new AuthorityDispatchException("This saved profile does not support runoff commitments.");
+            }
             if (command.Intent is WorkConstructionIntent && _authority.ReadStateForHost().ProfileVersion < 5)
             {
                 throw new AuthorityDispatchException("This saved profile does not support construction work.");

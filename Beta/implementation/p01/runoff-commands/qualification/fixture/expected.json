@@ -1,0 +1,122 @@
+{
+  "Scope": "Funded admission/cancellation controls; exact capacity-only state and rejected commands; no liquid movement",
+  "WorldHashes": [
+    "da7d362b1c6537d4cde160cd8f923e20d59723a0ad2a9e4b082b9e2e7ef2047b",
+    "a3f7a64c71771b986262fbb90502052dc9f1bb47eea750c403fe82be4150eeea",
+    "6b0fb77dc6dc844f76b0b89fc4def3afca624abc80dc97e66d87414d12e7b3f2",
+    "cfdb1c324c30319c311ca71519ca6c3fd0a6049938e5b6effb2a06f587c7b635",
+    "9e79ca31a6ce653886c1d8c01b4f9651a331d80436abd735fb29d31775df5353",
+    "f0bc482b31e211a456c2662e0caa4c778b490e8bc274822ac974ca69ee2b6a4f",
+    "c8879a929753f1ae20ea1d295ec31bda7fdc0f5cb5adf9086ec04c0585cc76ca"
+  ],
+  "ReservoirHashes": [
+    "c47bb3f52015699a672ccaefbfcc89bc78cd606de1037ae5e99c9b55ce07b731",
+    "bb9fe67036c475e3076a6e03ed4af453ea9d7aaab783ad3d7ae1987c7850c190",
+    "67b4d1e3b54ddf15ae8f821b63d71e641be144ce14161767f4c4edcf55d8a4fe",
+    "67b4d1e3b54ddf15ae8f821b63d71e641be144ce14161767f4c4edcf55d8a4fe",
+    "861195a3138029d2a34ea3641acfbcaf9db26a4e7b5761efa42dde45bf7d294f",
+    "861195a3138029d2a34ea3641acfbcaf9db26a4e7b5761efa42dde45bf7d294f",
+    "861195a3138029d2a34ea3641acfbcaf9db26a4e7b5761efa42dde45bf7d294f"
+  ],
+  "NetworkHash": "293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e",
+  "HeldRevision": null,
+  "FinalRevision": 6,
+  "HistoryRevisions": [
+    6,
+    0,
+    3,
+    1,
+    2,
+    4,
+    5
+  ],
+  "ReservoirStates": [
+    {
+      "Revision": 0,
+      "PendingCount": 1,
+      "ClosedCount": 0,
+      "ActualMicrolitres": 1950000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 1,
+      "PendingCount": 2,
+      "ClosedCount": 0,
+      "ActualMicrolitres": 1950000000,
+      "ReservedIncomingUnits": 1200
+    },
+    {
+      "Revision": 2,
+      "PendingCount": 1,
+      "ClosedCount": 1,
+      "ActualMicrolitres": 1950000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 2,
+      "PendingCount": 1,
+      "ClosedCount": 1,
+      "ActualMicrolitres": 1950000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 3,
+      "PendingCount": 0,
+      "ClosedCount": 2,
+      "ActualMicrolitres": 1950000000,
+      "ReservedIncomingUnits": 0
+    },
+    {
+      "Revision": 3,
+      "PendingCount": 0,
+      "ClosedCount": 2,
+      "ActualMicrolitres": 1950000000,
+      "ReservedIncomingUnits": 0
+    },
+    {
+      "Revision": 3,
+      "PendingCount": 0,
+      "ClosedCount": 2,
+      "ActualMicrolitres": 1950000000,
+      "ReservedIncomingUnits": 0
+    }
+  ],
+  "Actions": [
+    {
+      "Kind": 1,
+      "ExpectedHash": "c47bb3f52015699a672ccaefbfcc89bc78cd606de1037ae5e99c9b55ce07b731",
+      "ExpectedRevision": 0,
+      "Reservation": "776f726c64776174000000000000000e"
+    },
+    {
+      "Kind": 2,
+      "ExpectedHash": "bb9fe67036c475e3076a6e03ed4af453ea9d7aaab783ad3d7ae1987c7850c190",
+      "ExpectedRevision": 1,
+      "Reservation": "776f726c647761740000000000000004"
+    },
+    {
+      "Kind": 2,
+      "ExpectedHash": "c47bb3f52015699a672ccaefbfcc89bc78cd606de1037ae5e99c9b55ce07b731",
+      "ExpectedRevision": 0,
+      "Reservation": "776f726c64776174000000000000000e"
+    },
+    {
+      "Kind": 2,
+      "ExpectedHash": "67b4d1e3b54ddf15ae8f821b63d71e641be144ce14161767f4c4edcf55d8a4fe",
+      "ExpectedRevision": 2,
+      "Reservation": "776f726c64776174000000000000000e"
+    },
+    {
+      "Kind": 1,
+      "ExpectedHash": "861195a3138029d2a34ea3641acfbcaf9db26a4e7b5761efa42dde45bf7d294f",
+      "ExpectedRevision": 3,
+      "Reservation": "776f726c64776174000000000000000e"
+    },
+    {
+      "Kind": 2,
+      "ExpectedHash": "861195a3138029d2a34ea3641acfbcaf9db26a4e7b5761efa42dde45bf7d294f",
+      "ExpectedRevision": 3,
+      "Reservation": "776f726c647761740000000000000004"
+    }
+  ]
+}

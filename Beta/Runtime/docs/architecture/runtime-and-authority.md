@@ -70,6 +70,8 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    reconciles each material candidate against the latest accepted physical owner before reserving spawned
    identities or publishing any side effect. Rejection restores gathering, Production, quests/rewards,
    construction and space together. Rejected construction does not consume the actor's movement slot.
+   Capacity-only runoff admission/cancellation is staged in that same owner before following actions.
+   Existing reservation IDs are references, while command/result IDs receive ordinary durable history.
    Earlier accepted actions remain accepted; validating only the final batch state would hide transient
    physical violations. Ordinary successors cannot add or remove reservoir ownership.
 4. [WorldCommitPreparation](../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs) prepares

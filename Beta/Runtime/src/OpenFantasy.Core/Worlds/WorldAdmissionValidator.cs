@@ -120,6 +120,13 @@ public static class WorldAdmissionValidator
             {
                 return;
             }
+            foreach (var id in reservoirs.Capacity.Pending.Select(p => p.Request.ReservationId).Concat(reservoirs.Capacity.Closed))
+            {
+                if (WorldRunoffReservationRules.HasCompetingPurpose(world, id))
+                {
+                    throw new ArgumentException("Runoff commitments cannot share quest or construction reservations.");
+                }
+            }
             var material = reservoirs.Capacity.Domain.Material;
             Definition(material.Item.DefinitionId, WorldIdentityRole.ItemDefinition, material.Item.Version);
             Definition(material.Physical.DefinitionId, WorldIdentityRole.PhysicalMaterialDefinition, material.Physical.Version);

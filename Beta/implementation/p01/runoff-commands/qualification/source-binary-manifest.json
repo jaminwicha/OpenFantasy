@@ -1,0 +1,33 @@
+{
+  "baseCommit": "c22fa8ca30d1a3f516a282bd000279ce5da410dd",
+  "sources": {
+    "Beta/Runtime/README.md": "2a48315a1d66b78de0f75c6c394af4c5c4046dd816e0f5edcd5225dded84ed10",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md": "fa9e2db2ff5aee381b909b4762693424e9bade8ec7484d0171b141416c2ab967",
+    "Beta/Runtime/docs/architecture/runtime-and-authority.md": "89af8d2b49841e09308180a849a21756d0cdc4fe1df431633003f007e71f1e2d",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "8ba20d6efd2bb773eeb254b7e4327670a9e52fc478d863acd335bb843579be9b",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/RunoffCommitmentIntent.cs": "3ffac5bcf085165ae96bb69e26838e2d38e8869dd7758a2ab3713a174ac0e5f2",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodec.cs": "0c2db1c83e04f035b889e244130356355c54dd14f4bb04ea3f3dd1f1f9a27606",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV6.cs": "3589f956f7cbddacdf8615ee2cd4406f745aed58a346a6e0b4fbdb43c8ceffa4",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs": "12d82ac7c07d8a41b8e47546f39f57a877d5a286b5d3037274377047964e2e0c",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRunoffReservationRules.cs": "159b65f5c27dd4d8e60d73d609af00cb54b398f0d7496e03524d735957d73398",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRunoffResolver.cs": "b262274c4478349c2d38481cd245c4bed216d396057d57a6854d844d789bbaaf",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs": "bb016cf07f2439df7e2035bcfc30b0f1817810a50304f4d37a9e58f4e72d83b6",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs": "6a66fc9fdd051c9d1749f8c4817b4862866dff4808a6c268b381325d0ecf9d30",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs": "8d6d5f0f74c7cf8b17f674a9f12b59c10d45701fdca36307b4a708516449d08d",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/RunoffActionCodecTests.cs": "8a427fd3238b31a18fb062b06dc604b53b9e2e8fdf1a3c3d7a494717dbe3f2cd",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ReservoirWorldFixture.cs": "aa93daeaf612526f263e70956764f3220a1dde26fdffc2de22e83b88e28e80b7",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RunoffCommandPolicyTests.cs": "697b7e691d4ab6d9e9facf4e738474a031de9cc9f50b11a82a369409c05eccdb",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RunoffCommandRecoveryTests.cs": "f0c7279374a300b819a942765eeda2a6d0e1d793a9075240877d3655e206d7a3",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/RunoffCommandTests.cs": "b8d9488954b01d338f02aad367f5316b5483de819901e30c2470d65d4b93ab9f",
+    "Beta/Runtime/tools/check_watershed_network_world.py": "619b0f83071523e9ea11065cb262cf160ba0d79ed69157f5c07c5569652fb690",
+    "Beta/Runtime/tools/verify.py": "41ae55360d57d70fc3ec461ee3169c8d9c5ba20c11d5e2aeeb7e14ad2689eb21"
+  },
+  "binaries": {
+    "src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "bc009b3a450c2c43334a37160476f2c9c3987047241db45debcf1f6cfe29af4e",
+    "src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "03b4e62173617af1ea3001452085273655d82f694998ecc7713e6f4b31f78c2d",
+    "src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "e2d56fade31c97f4deb6cf8ee5b28e044a3c0da1c5b3c162a17bb6ae3c1f3d34",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "57bdd8e927cd17908f2dabef516819ae36a2a8fb3be0329f9757bf0358a13e02",
+    "tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "32dd513e9ac50418a64281c97d3b3ea8df67e9bd25cc2be5ffcf1afa2ffcec13",
+    "tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "e69923ba68bfed366d60e4f4389301a483389d14286a9364822b466b07efa426"
+  }
+}

@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Quests;
 
@@ -13,6 +14,7 @@ public static class WorldActionCodec
         ArgumentNullException.ThrowIfNull(command);
         return command.Intent switch
         {
+            RunoffCommitmentIntent => WorldActionCodecV6.Encode(command),
             WorkConstructionIntent => WorldActionCodecV5.Encode(command),
             DeliveryQuestIntent => WorldActionCodecV4.Encode(command),
             CraftIntent => WorldActionCodecV3.Encode(command),
@@ -29,6 +31,7 @@ public static class WorldActionCodec
             3 => WorldActionCodecV3.Decode(bytes),
             4 => WorldActionCodecV4.Decode(bytes),
             5 => WorldActionCodecV5.Decode(bytes),
+            6 => WorldActionCodecV6.Decode(bytes),
             _ => throw new FormatException("Unsupported world action version.")
         };
 }

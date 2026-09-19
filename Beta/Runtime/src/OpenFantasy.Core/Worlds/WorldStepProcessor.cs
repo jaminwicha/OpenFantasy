@@ -21,6 +21,7 @@ public sealed class WorldStepProcessor
     private readonly WorldCraftResolver _crafting = new();
     private readonly DeliveryQuestPlanner _quests = new();
     private readonly ConstructionPlanner _construction = new();
+    private readonly WorldRunoffResolver _runoff = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
@@ -74,10 +75,22 @@ public sealed class WorldStepProcessor
             var previousQuests = quests;
             var previousConstruction = construction;
             var previousSpace = space;
+            var previousReservoirs = reservoirs;
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
-            if (action.Intent is WorkConstructionIntent)
+            if (action.Intent is RunoffCommitmentIntent)
+            {
+                if (reservoirs is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret runoff commitments.");
+                }
+                var plan = _runoff.Resolve(state, reservoirs, space, action,
+                    batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0);
+                reservoirs = plan.Candidate;
+                resolution = new WorldActionResolution(inventory, dialogues, plan.Rejection, null);
+            }
+            else if (action.Intent is WorkConstructionIntent)
             {
                 if (construction is null || production is null)
                 {
@@ -153,6 +166,7 @@ public sealed class WorldStepProcessor
                 quests = previousQuests;
                 construction = previousConstruction;
                 space = previousSpace;
+                reservoirs = previousReservoirs;
                 performedWork = false;
                 createdIds = [];
                 resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
