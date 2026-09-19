@@ -32,39 +32,45 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `a3789c1`, preserved on `codex/milestone-reservoir-persistence`;
-[packet](p01/reservoir-admission/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `204d262`, preserved on `codex/milestone-runoff-controls`;
+[packet](p01/runoff-commands/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Fresh profile eight owns the complete physical reservoir/capacity wrapper and its sole watershed
-network alongside exact world inventory/Production. Each material action passes reconciliation before
-its planner side effects or generated identities become accepted. Rejection rolls back the entire
-action while retaining other accepted actions. Reservoir/material identities join the world index;
-ordinary successors cannot drop ownership. Existing schema-three transactions and exact history own
-all components. Time passing never implicitly settles runoff, releases stock or removes commitments.
+Profile eight now executes durable funded runoff admission/cancellation inside its existing complete
+physical owner. Requests pin actor/control, full reservoir hash and capacity revision. Admission
+re-prepares existing source-held funds against the fixed domain; its interval cannot begin before the
+selected advancing step's publication calendar. Cancellation releases incoming headroom and closes
+the ID permanently while preserving actual stock and source holds. Reading pauses block both controls,
+including a hold opened earlier in the same batch. Following material actions see the latest accepted
+owner; stale requests reject without implicit retry. Existing transactions and exact history retain
+capacity-only changes and refusals. The bounded action-version-six codec leaves world formats, prior
+command encodings, global byte bounds and schema-three persistence unchanged; older profiles reject it.
 
-[Qualification](p01/reservoir-admission/qualification/verification-summary.json): full solution build
-with zero warnings/errors; **1,035-test regression (689 Core +346 Hosting)** followed by **five stronger
-critic cases**, replacing four and adding the opposite action order: **1,036 distinct cases, 18 new,
-zero skips**, not one uninterrupted final suite. 28 real reservoir host calls and 27 network regression
-calls each pass both actual process-kill boundaries, independent admission-byte checks and exact history.
-Actual Godot headless foundation/farm pass. Original farm quest funding and all 200 construction work
-actions retain physical ownership. 65,536 network +4,096 reservoir columns fit/recover in 3,475,157 bytes
-under the unchanged 16 MiB bound. 178 reference links, 22 frozen hashes and the exact predecessor index pass.
+[Qualification](p01/runoff-commands/qualification/verification-summary.json): clean full solution build;
+**1,059 managed tests (692 Core +367 Hosting), 23 new, zero skips**. 18 new-command, 28 prior-reservoir and
+27 prior-network real host calls pass, including **six actual process kills**, independent action/admission
+byte checks and exact read-only history. Actual Godot headless foundation/farm pass. All 182 architecture
+links, 22 frozen hashes and the exact 19-file predecessor index pass. The all-systems verifier was not
+run; its targeted harnesses were invoked directly. No rendered, physical-device or performance claim.
 
-Native critique closed an optional-successor ownership-drop path and strengthened post-commit geometry
-tampering and both canonical actor orderings. All failures remain in the packet, including initial
-gather effort preconditions and the confirmed original give-before-craft ordering. No gates changed.
-Timeless references, offline operators and verifier hooks are updated. Shared inventory/Production
-appear in both retained nested formats and must match exactly; neither is an independent writer.
+Native critique exposed a real reservation-purpose collision: independently valid runoff and
+quest/construction domains could share a material hold ID. Both pending and closed collision tests
+reproduced failure before the world-composition and command checks were added; all now pass. Failures
+and bounded review limits remain in the packet. Timeless references and verifier hooks are updated;
+no acceptance gate, threshold or timeout was weakened.
 
-This binding requires a fresh construction genesis. Default farm/presentation and lived saves remain
-unchanged. Authored watertight boundaries are assumptions; terrain wall proof, inlets/outlets, arrival/
-settlement, live flow, pressure, phase changes and hydraulic Wait remain open. There are no world
-commands to alter geometry or admit/cancel commitments. Maximum support recovery is not production
-performance or a combined maximum pending/Production workload. Full native/rendered acceptance is unclaimed.
+This remains a fresh construction/reservoir profile. Default farm/presentation and lived saves are
+unchanged. Funding must already be reserved under an admitted ID; there is no source-release command,
+new budget allocation or player-facing control offer. Geometry/domain are fixed and watertight supports
+remain authored assumptions. Terrain wall proof, inlets/outlets, arrival/settlement, live flow,
+backpressure, phase changes and hydraulic Wait remain open. Maximum combined workloads, production
+performance and full native/rendered acceptance remain unqualified.
 
 Prior dependencies remain preserved:
 
+- [Durable physical reservoirs](p01/reservoir-admission/README.md), `a3789c1`, milestone
+  `codex/milestone-reservoir-persistence`: exclusive profile-eight wrapper, atomic material gates and exact
+  recovery; 1,036 distinct cases across full regression/follow-up, 55 host calls/four process kills.
+  65,536 network +4,096 reservoir columns fit in 3,475,157 bytes; bounded storage correctness only.
 - [Physical reservoir geometry](p01/reservoir-geometry/README.md), `f00e637`, milestone
   `codex/milestone-reservoir-geometry`: watertight open-vessel capacity, exact actual/projected floor-band
   fill and complete-wrapper publication; 1,018 tests, 26 real inspections and independent fill oracle.
