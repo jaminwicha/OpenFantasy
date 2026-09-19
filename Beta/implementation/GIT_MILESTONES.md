@@ -47,6 +47,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-live-excavation` | `7df18df` | Durable selected-cell excavation in fresh dry profile ten: actual player/NPC effort, exact source entitlement, atomic whole-cell issuance/removal and direct support refusal; 1,141 tests,144 ordinary Host calls/two process kills, exact history and native headless foundation/farm. [Evidence](p01/live-excavation/README.md) retains corrected critic findings and an unconfirmed initial parallel-build child exit followed by a clean full serial build. No generated mining frontier, wet-world composition, collapse, player mining controls, production balance/performance or full-gate closure. |
 | `codex/milestone-constructed-support` | `2dcdd79` | Fresh dry profile11 with completed-member actor footing, exact XY support and earned assisted vertical traversal;1,173 tests,26 real Host calls/two process kills, exact history and native headless foundation/farm. [Evidence](p01/constructed-footing/README.md) proves real quest-funded NPC construction then actual climb/reopen. No ordinary stair routing, load strength/collapse, wet-world composition, player climb controls, production performance or full-gate closure. |
 | `codex/milestone-stair-navigation` | `d4f01b4` | Fresh dry profile12 ordinary stairs and bounded directed multi-level routes; 1,189 tests, 20 new-profile Host calls/two process kills, legacy26/two-kill regression and native headless foundation/farm. [Evidence](p01/stair-navigation/README.md) proves a real quest-funded nine-tread/deck assembly, 585-commit player/NPC journey, stacked occupancy and automatic downstairs return. Same route budget after a retained real failure; no load/collapse, wet composition, rendered stair, throughput or full-gate acceptance. |
+| `codex/milestone-structural-load-planning` | `ca149cb` | Actual funded member/actor mass binding, explicitly rated DAG and immutable bounded cascading failure plans with trusted-graph canonical resume; 1,241 tests, 14 fresh Host inspections, independent integer/byte oracle and headless foundation. [Evidence](p02/structural-loads/README.md). Read-only diagnostic scope: no live collapse, debris, actor falling, world-profile publication, production strength/latency or full-gate closure. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -161,3 +162,9 @@ No checkout switch, force update, push, merge or full-phase closure accompanies 
 The stair-navigation branch preserves code, reference and bounded qualification at
 `d4f01b4`. The development checkout, earlier markers, 22 frozen specifications and exact 19-file
 predecessor index remain intact. No checkout switch, force update, push, merge or phase closure occurred.
+
+The structural-load-planning marker preserves `ca149cb` and its exact funded-world graph/archive
+qualification. The source world is unchanged. Actor load survival is explicitly distinct from spatial
+footing; physical collapse still needs complete consequence publication, conserved debris and checked
+falling/landing. Canonical restore binds an expected graph as well as a dependency pin. This checkpoint
+closes no full phase and changes no predecessor history or frozen specification.

@@ -32,56 +32,59 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `d4f01b4`, preserved on `codex/milestone-stair-navigation`;
-[packet](p01/stair-navigation/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `ca149cb`, preserved on `codex/milestone-structural-load-planning`;
+[packet](p02/structural-loads/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Fresh dry profile twelve adds ordinary stair movement and bounded multi-level routes over actual
-completed construction. Contact uses exact whole-footprint coverage within a bounded height band,
-with positive contact at the selected feet height and full-body sweeps. Ordinary steps require ground
-locomotion without hands or climb effort. Larger assisted climbs retain their separate action. Complete
-17-field snapshots restore construction before actors; spatial version three selects the new rules.
-Older saves and interpretations remain unchanged; admission requires an unplayed profile-eleven genesis.
+A portable structural domain binds actual completed construction and actor body/primary-inventory loads
+to explicit versioned member ratings and source-pinned terrain foundations. Exact volume shares conserve
+the installed output mass; carried goods include reservations/equipment without double-counting retired
+inputs or project custody. Explicit joint faces, span/capacity/condition and a finite acyclic graph define
+load paths. Solid terrain is not automatically stable bedrock; ratings remain diagnostic inputs.
 
-Routes retain XYZ and validate actual 32-subunit movement edges. Deterministic forward/reverse search
-shares 2,048 default expansions (4,096 maximum), plus a transition-work cap sixteen times the node budget.
-Reverse edges must replay forward to the exact node; the first verified meeting does not promise a
-shortest path. Missing support-plane evidence propagates even when a flat predecessor is blocked.
-Placement selects the profile's matching route budget; earlier profiles retain 256. Completed builders
-recognize home on another elevation even when XY matches, and the NPC controller routes downstairs.
+Immutable failure planning redistributes exact integer loads through bounded passes (64 default node
+evaluations/call, maximum 256, with whole-graph copy/reset overhead). Canonical checkpoints replay-validate
+all saved fields against the trusted expected graph and dependency pin. Decode can replay more than one
+slice; production CPU/latency remains unqualified. The Host inspector is read-only. This adds no world
+profile, physical collapse, debris, actor fall, condition owner or world mutation.
 
-[Qualification](p01/stair-navigation/qualification/verification-summary.json): **1,189 managed tests
-(763 Core + 426 Hosting), 16 new, zero failures/skips**, clean full solution build. The actual quest funds
-a nine-tread/deck assembly installed by Wren at revision 63. Both actors traverse every 250 mm step to
-2.25 m above ground and back. At revision 425, player and NPC occupy the same XY below/above the deck;
-the actual NPC controller returns downstairs home by 585. The fixture's synthetic material/work
-calibration proves funded geometry and navigation, not structural strength or production balance.
+[Qualification](p02/structural-loads/qualification/verification-summary.json): **1,241 managed tests
+(810 Core + 431 Hosting), 52 new, zero failures/skips**, clean solution build and actual Godot headless
+foundation. Fourteen fresh Host processes match an independent Python integer solution/canonical archive
+and reject corruption. All five funded/occupied fixture files recreate byte-for-byte. Its 1,045-node plan
+propagates removed foundation -> lost leg -> redistributed overload -> deck -> upstairs occupant in five
+passes, accounting every 143,370,000 mg once. The original SQLite world remains unchanged. Synthetic mass/
+strength calibration proves mechanics, not production balance. 271 architecture links, 22 frozen hashes
+and the exact 19-file predecessor index pass; no rendered/OS/device/art or full-phase acceptance is claimed.
 
-The mid-stair ordinary rise at revisions 134→135 survives close/reopen, exact history, retry and two real
-process-kill boundaries: **20 Host calls and nine independent byte witnesses**. All seven closed fixture
-files recreate byte-for-byte, including the final 585-commit journey. The previous profile-eleven fixture
-also passes the extended checker: 26 Host calls/two process kills. Actual Godot headless foundation and
-native farm create/reopen/history pass. Default client visuals remain the farm; no rendered stair,
-physical-device, art or user acceptance is claimed. All 255 architecture links, 22 frozen hashes and the
-exact 19-file predecessor index pass. The all-systems verifier was not run; the new checker ran directly.
+The native critic found copied-pin graph substitution; expected canonical graph comparison and altered
+mass/capacity regressions resolve it. It also identified that load survival alone cannot prove full-footprint
+support or discover an exposed lower contact. Actual geometry regressions and the
+[structural reference](../Runtime/docs/architecture/structural-loads.md) retain that integration boundary.
+Tests exposed a checked wide-word encoding overflow, now fixed without reducing numeric limits. Invalid
+new fixture joint selection and initial compilation failures are retained. No gate/deadline was weakened
+and no external Claude/Fable call was used. The all-systems verifier has the new hook; its checker ran
+directly, not the complete all-systems campaign.
 
-The native critic identified a placement-budget mismatch and missing reverse-support evidence; both
-are corrected with retained cases. A real NPC direct-route failure at 2,048 expansions was resolved by
-bidirectional search with unchanged fixture and limits, rather than a test-only waypoint. Expected
-missing-type compilation and an incorrect new legacy-route expectation are also retained/dispositioned.
-No gate/deadline was relaxed and no external Claude/Fable call was used. The
-[stair navigation reference](../Runtime/docs/architecture/stair-navigation.md) and dependent pages describe
-these timeless rules.
+**Next dependency:** couple this plan to actual support-removal consequences. Separate construction work/
+production history from physical condition and placement; conserve wreck/debris ownership and collateral
+terrain sources; recompute actor contact from surviving geometry and prove clear landing or explicit
+falling state. Existing excavation reconstructs strict occupancy before it can admit unsupported geometry;
+prepare the entire consequence set before final spatial admission. Durable policy/revisions and pending
+work must cover the complete affected closure, including moving occupants, custody changes, neighbors
+and missing loaded evidence. Publish terrain/construction/custody/occupancy/effects/receipts atomically,
+then qualify real restart/crash/retry/history. Do not call static failure plans live collapse.
 
-Next work must prove occupied-floor/tunnel and support-removal consequences, construction damage and
-structural failure, elevated work/task interaction, and usable multi-floor presentation. Navigation
-through authored broad treads is not load safety, arbitrary stairs or production routing throughput.
-Player offers/controls/choreography must consume actual authority elevation. Broader generated extraction
-ownership, hardness/tools and mining presentation remain open. Wet composition still requires durable
-sealing policy, real openings, displaced volume and conserved spill handling; never install external
-diagnostic policy or discard dry/wet invariants merely to combine them.
+Elevated work/task interaction, usable multi-floor presentation, generated extraction rights, hardness/
+tools and production throughput remain open. Wet composition still requires durable sealing policy,
+real openings, displaced volume and conserved spill handling; diagnostic policy cannot replace law.
 
 Prior dependencies remain preserved:
 
+- [Stair navigation](p01/stair-navigation/README.md), `d4f01b4`, milestone
+  `codex/milestone-stair-navigation`: profile twelve ordinary steps and bounded directed XYZ routes; 1,189 tests,
+  20 new-profile Host calls/two process kills plus prior-profile 26/two-kill regression and native headless
+  foundation/farm. Real quest-funded nine-tread/deck assembly, 585-commit player/NPC journey, stacked occupancy
+  and automatic downstairs return; no load/collapse or rendered/throughput acceptance.
 - [Constructed support](p01/constructed-footing/README.md), `2dcdd79`, milestone
   `codex/milestone-constructed-support`: profile-eleven exact installed-member actor footing and earned
   assisted traversal; 1,173 tests, 26 Host calls/two process kills, real funded construction and native
