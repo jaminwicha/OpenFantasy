@@ -25,9 +25,9 @@ public sealed class WorldSnapshot
         GatheringSnapshot? gathering = null, ProductionSnapshot? production = null,
         ProgressionSnapshot? progression = null, QuestSnapshot? quests = null, ConstructionSnapshot? construction = null,
         PreparedWatershed? watershed = null, PreparedWatershedNetwork? watershedNetwork = null,
-        LiquidReservoirState? reservoirs = null)
+        LiquidReservoirState? reservoirs = null, ReservoirTransportState? transport = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, null)
     {
     }
 
@@ -36,7 +36,7 @@ public sealed class WorldSnapshot
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues, GatheringSnapshot? gathering,
         ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests,
         ConstructionSnapshot? construction, PreparedWatershed? watershed, PreparedWatershedNetwork? watershedNetwork,
-        LiquidReservoirState? reservoirs, WorldIdentityIndex? previous)
+        LiquidReservoirState? reservoirs, ReservoirTransportState? transport, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -93,6 +93,15 @@ public sealed class WorldSnapshot
         Quests = quests;
         Construction = construction;
         Watershed = watershed;
+        Transport = transport;
+        if (transport is not null)
+        {
+            if (reservoirs is not null || transport.Boundary != calendar)
+            {
+                throw new ArgumentException("Transport exclusively owns the physical reservoirs at the world's exact calendar boundary.");
+            }
+            reservoirs = transport.Reservoirs;
+        }
         Reservoirs = reservoirs;
         if (reservoirs is not null)
         {
@@ -144,7 +153,8 @@ public sealed class WorldSnapshot
     public PreparedWatershed? Watershed { get; }
     public PreparedWatershedNetwork? WatershedNetwork { get; }
     public LiquidReservoirState? Reservoirs { get; }
-    public ushort ProfileVersion => Reservoirs is not null ? (ushort)8 : WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
+    public ReservoirTransportState? Transport { get; }
+    public ushort ProfileVersion => Transport is not null ? (ushort)9 : Reservoirs is not null ? (ushort)8 : WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
         : Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
         : Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;
     public WorldIdentityIndex IdentityIndex { get; }
@@ -157,13 +167,17 @@ public sealed class WorldSnapshot
         IEnumerable<WorldResident> residents, WorldInstant calendar, ulong revision, ulong advancingSteps,
         IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production,
         ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction,
-        LiquidReservoirState? reservoirs)
+        LiquidReservoirState? reservoirs, ReservoirTransportState? transport)
     {
         if ((Reservoirs is null) != (reservoirs is null))
         {
             throw new ArgumentException("A world successor cannot add or remove physical reservoir ownership.");
         }
+        if ((Transport is null) != (transport is null) || transport is not null && transport.Reservoirs.ContentHash != reservoirs?.ContentHash)
+        {
+            throw new ArgumentException("A world successor must retain the sole transport and physical owner together.");
+        }
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, reservoirs, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, IdentityIndex);
     }
 }

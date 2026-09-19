@@ -45,7 +45,7 @@ public sealed class WorldStepBatch
     {
         ArgumentNullException.ThrowIfNull(movement);
         ArgumentNullException.ThrowIfNull(actions);
-        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
+        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
         {
             throw new ArgumentException("The world batch kind or cause identity is invalid.");
         }
@@ -63,7 +63,11 @@ public sealed class WorldStepBatch
         foreach (WorldActionCommand command in actions)
         {
             ArgumentNullException.ThrowIfNull(command);
-            if (command.Intent is RunoffCommitmentIntent && profileVersion != 8)
+            if (command.Intent is ScheduleRunoffTransportIntent && profileVersion != 9)
+            {
+                throw new ArgumentException("Scheduled reservoir transport requires its explicit world profile.");
+            }
+            if (command.Intent is RunoffCommitmentIntent && profileVersion is not 8 and not 9)
             {
                 throw new ArgumentException("Runoff commitments require the physical reservoir world profile.");
             }

@@ -256,7 +256,8 @@ Cancellation releases the pending receiving obligation and retains its reservati
 bounded, non-reusable closed set. It does not move, consume or clear the source's `ReservedBy` metadata.
 An explicit custody successor may release that source hold after cancellation. Closed identities remain
 reserved against re-admission and stale cancellation; the domain/calibration survive even when every
-budget is canceled. The closed set has a 4,096-identity bound within the authority's admitted reservation
+budget is retired. Explicit transport completion also retires its ID; the transport journal distinguishes
+completed deliveries from cancellations. The closed set has a 4,096-identity bound within the authority's admitted reservation
 catalog. Exhaustion rejects; archival compaction or new reservation admission requires an explicit owner
 contract, never silent deletion of history.
 
@@ -283,8 +284,10 @@ all pending routes, validates the shared owner and compares exact canonical byte
 validate scope, receiver ownership, calibration, actual occupancy and closed identity admission. The
 privileged `--inspect-runoff-capacity` operator reads this archive without mutating a world.
 
-This owner does not schedule arrivals, settle/partially consume a flow, release source stock, alter
-receiver geometry, change topology or integrate time. The physical wrapper and world binding below
+The capacity owner does not independently schedule arrivals or integrate time. The
+[gated transport owner](reservoir-transport.md) can atomically complete a whole funded commitment,
+move its exact source intervals and retire its incoming hold through an internal completion plan.
+Neither path partially consumes a forcing budget, alters geometry or changes topology. The physical wrapper and world binding below
 compose its storage and durable ownership. Staged backpressure and encounter Wait require their own
 contracts. Known Production cannot be omitted and separately owned capacities cannot be treated as
 free by another subsystem. A fixed single-material/network domain is a bounded supported profile;
@@ -390,7 +393,7 @@ played saves.
 ## Runtime binding: funded runoff commitment controls
 
 [RunoffCommitmentIntent](../../src/OpenFantasy.Core/Geography/RunoffCommitmentIntent.cs) defines explicit
-admission and cancellation requests for profile eight. Each pins the complete reservoir hash and the
+admission and cancellation requests for the physical reservoir profiles. Each pins the complete reservoir hash and the
 capacity owner's logical revision. The actor command also pins actor revision and carries its existing
 principal/session delivery. [WorldRunoffResolver](../../src/OpenFantasy.Core/Worlds/WorldRunoffResolver.cs)
 checks current control and exact domain ownership before inspecting private funding, then compares both
@@ -424,6 +427,14 @@ session rejects them for older profiles before queuing. Public action offers, pl
 automatic weather scheduling, liquid settlement and encounter-scoped hydraulic timing need their own
 bindings. The world snapshot format is unchanged; [action version six](persistence-and-history.md)
 adds only the bounded control interpreter while preserving prior command encodings.
+
+## Runtime binding: scheduled physical transfer
+
+[Reservoir transport](reservoir-transport.md) extends physical ownership with explicit normally closed
+gravity gates and funded arrival stages in profile nine. It preserves source provenance while moving
+actual stock, sharing per-step throughput and retaining blocked/completed/canceled outcomes. Profile
+eight retains its non-automatic interpretation. The dedicated contract defines physical assumptions,
+clock order, atomic publication and the separation from local terrain/hazard admission.
 
 ## Domain contract: funded terrain material
 

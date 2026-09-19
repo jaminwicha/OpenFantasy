@@ -41,7 +41,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         byte[] bytes = WorldSnapshotCodec.Encode(genesis);
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         WorldDatabase database = WorldDatabase.Open(path, create: true,
-            accepted.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
+            accepted.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
         try
         {
             database.Initialize(bytes);

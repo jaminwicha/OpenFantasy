@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "scope": "Actual conserved, indivisible gravity-gated delivery in fresh profile nine; explicit scheduling, shared step throughput, reading holds and exact durable history. No continuous fluids or full phase closure.",
+  "build": {
+    "log": "build.log",
+    "warnings": 0,
+    "errors": 0,
+    "runtimeChangesAfterBuild": false,
+    "followup": "Three new tamper tests compiled after full regression; no production source changes."
+  },
+  "managed": {
+    "core": {
+      "total": 703,
+      "executed": 703,
+      "passed": 703,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting": {
+      "total": 375,
+      "executed": 375,
+      "passed": 375,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "tamper": {
+      "total": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "newCases": 22,
+    "distinctPassingCases": 1081,
+    "coverage": "Full 703 Core +375 Hosting regression, then three additional tamper cases. Combined qualification, not a single all-systems run."
+  },
+  "operators": {
+    "transport-world.json": {
+      "status": "passed",
+      "calls": 22,
+      "processKills": 2,
+      "independentAdmissionHash": "35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c",
+      "independentTransportContract": {
+        "gateUnitsPerStep": 600,
+        "scheduledDelayMs": 3600,
+        "autonomousCrashRevision": 5,
+        "conservedSourceUnits": 1350
+      }
+    },
+    "reservoir-regression.json": {
+      "status": "passed",
+      "calls": 28,
+      "processKills": 2,
+      "independentAdmissionHash": "b17cf87668dc29f77d8b2158cfd0d265694640d6c4c3f4706b46ca6f4557f3fa"
+    },
+    "network-regression.json": {
+      "status": "passed",
+      "calls": 27,
+      "processKills": 2,
+      "independentAdmissionHash": "dbe0267ae90bdf46b80eec0cc12aa68474be11b006241096ff65a25c5f3031df"
+    },
+    "runoff-regression.json": {
+      "status": "passed",
+      "calls": 18,
+      "processKills": 2,
+      "independentAdmissionHash": "da7d362b1c6537d4cde160cd8f923e20d59723a0ad2a9e4b082b9e2e7ef2047b"
+    }
+  },
+  "native": {
+    "foundation": "native-foundation.log: actual Godot headless foundation-v1, no errors",
+    "farm": {
+      "status": "passed",
+      "stages": 2,
+      "rendered": false,
+      "recordedHistory": "passed"
+    }
+  },
+  "preservation": {
+    "status": "passed",
+    "frozenHashes": 22,
+    "architectureLinks": 199,
+    "predecessorStagedFiles": 19,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "critic": "Bounded native design/source/reference review; bare-state rebind and fresh-root bypass tightened. Mixed-gate rollback and valid-archive durable tamper proofs added. No remaining consequential factual mismatch; critic did not execute qualification.",
+  "failures": [
+    "test-first.log: expected missing-API compiler failure.",
+    "domain-first.log: implicit epoch assumption rejected by world clock; creation now requires explicit boundary.",
+    "world-cases.log: unsupported empty held fixture replaced with a real rejected action, preserving runtime policy.",
+    "domain-and-codec.log: xUnit cancellation-token analyzer errors corrected in test codec calls."
+  ],
+  "limits": [
+    "Discrete separately funded indivisible stages over authored watertight geometry; no partial/continuous flow, terrain wall proof, breach or flooding.",
+    "Fixed topology; maximum 256 gates and 4096 retained stages; no journal compaction or maximum mixed-workload qualification.",
+    "No production performance, encounter-scoped hydraulic Wait, streaming, actor exposure, phase changes, lava/reactions or complete macro history qualification.",
+    "Existing funding only; no canceled-source release, player action offers, default farm/art changes or implicit played-save migration.",
+    "Headless native regression only; no rendered, foreground, physical-device or export acceptance.",
+    "Full all-systems verifier not run; its targeted managed/operator/native checks invoked directly. No gate threshold or timeout weakened.",
+    "Full campaign, UI/art/audio, co-op, independent/human and production gates remain open."
+  ]
+}

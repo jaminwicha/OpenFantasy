@@ -11,7 +11,7 @@ internal sealed class WorldRunoffResolver
     internal WorldRunoffResolution Resolve(WorldSnapshot world, LiquidReservoirState current, LocalSpatialSnapshot space,
         WorldActionCommand command, bool advancing, bool readingHold)
     {
-        if (world.ProfileVersion != 8 || command.Intent is not RunoffCommitmentIntent intent)
+        if (world.ProfileVersion is not 8 and not 9 || command.Intent is not RunoffCommitmentIntent intent)
         {
             throw new InvalidOperationException("Runoff commitment actions require the physical reservoir world profile.");
         }

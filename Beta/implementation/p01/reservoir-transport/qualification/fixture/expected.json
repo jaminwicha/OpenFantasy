@@ -1,0 +1,236 @@
+{
+  "Scope": "Actual gated water transfer after a persisted reading pause; completion and rejected retries remain exact",
+  "WorldHashes": [
+    "35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c",
+    "07aac5e14a0ee1d324d75212b8f9957ad1456f46b08ec300120b468479113496",
+    "1411a068c83ab6b1a306e0fe064e41b6e2f4cab0affa1fc6a0a15b2c08b73e63",
+    "7c83be2329a713aeffa5700ddfc50259abd5f44faa537d4ab8a2470ed9d232d7",
+    "6dfe0cedb6577c488dcb242f6ac57a5fce913b8efb6277befc6ef013e001e80e",
+    "831dfea12159a1cd68e970993026e77a8fd69ed823360ea36d0850bf501e82e2",
+    "3ea94702ddeb77afa01aec2b141cdc1397209551cd7ebea1f084b0a70e55170c",
+    "04205bf094c241e445f45a33d24fc300d5f0ef180e5f12bc0a431712dd1921c2",
+    "9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6"
+  ],
+  "ReservoirHashes": [
+    "054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e",
+    "054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e",
+    "054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e",
+    "054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e",
+    "054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e",
+    "5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1",
+    "5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1",
+    "5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1",
+    "5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1"
+  ],
+  "TransportHashes": [
+    "885b3a15daacfcbdc4f796b36437368d5e44550b8df63d8cb5a695fd0ae64b10",
+    "c220367d147e17a676b44647387ba15abad63de03ef4abbe4f0159c698515f94",
+    "ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509",
+    "ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509",
+    "ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509",
+    "94a033265962dde687c7528ab533953d160e02b30ac209c3560d9fdf16334500",
+    "687e6655a7e656422d501a3785ee0ca6ef3a5f66d7d00b2a8ce1cdbb31c7f2cc",
+    "2e2c35f4ae9bdcfd690caf1bd5a118d87d591bd3ecaa1c3a82bab9ac4830390a",
+    "632bd13ff8dec92051c1e351346c3174d53c8203106b7d40b26ff2d144038604"
+  ],
+  "NetworkHash": "293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e",
+  "HeldRevision": 2,
+  "HeldRevisions": [
+    2,
+    3
+  ],
+  "FinalRevision": 8,
+  "CrashRevision": 5,
+  "HistoryRevisions": [
+    8,
+    0,
+    5,
+    2,
+    4,
+    1,
+    7,
+    3,
+    6
+  ],
+  "ReservoirStates": [
+    {
+      "Revision": 0,
+      "PendingCount": 1,
+      "ClosedCount": 0,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 0,
+      "PendingCount": 1,
+      "ClosedCount": 0,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 0,
+      "PendingCount": 1,
+      "ClosedCount": 0,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 0,
+      "PendingCount": 1,
+      "ClosedCount": 0,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 0,
+      "PendingCount": 1,
+      "ClosedCount": 0,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 600
+    },
+    {
+      "Revision": 1,
+      "PendingCount": 0,
+      "ClosedCount": 1,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 0
+    },
+    {
+      "Revision": 1,
+      "PendingCount": 0,
+      "ClosedCount": 1,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 0
+    },
+    {
+      "Revision": 1,
+      "PendingCount": 0,
+      "ClosedCount": 1,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 0
+    },
+    {
+      "Revision": 1,
+      "PendingCount": 0,
+      "ClosedCount": 1,
+      "ActualMicrolitres": 1350000000,
+      "ReservedIncomingUnits": 0
+    }
+  ],
+  "TransportStates": [
+    {
+      "Revision": 0,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32400000
+      },
+      "StageCount": 0,
+      "PendingCount": 0,
+      "CompletedCount": 0
+    },
+    {
+      "Revision": 2,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32401800
+      },
+      "StageCount": 1,
+      "PendingCount": 1,
+      "CompletedCount": 0
+    },
+    {
+      "Revision": 3,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32403600
+      },
+      "StageCount": 1,
+      "PendingCount": 1,
+      "CompletedCount": 0
+    },
+    {
+      "Revision": 3,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32403600
+      },
+      "StageCount": 1,
+      "PendingCount": 1,
+      "CompletedCount": 0
+    },
+    {
+      "Revision": 3,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32403600
+      },
+      "StageCount": 1,
+      "PendingCount": 1,
+      "CompletedCount": 0
+    },
+    {
+      "Revision": 4,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32405400
+      },
+      "StageCount": 1,
+      "PendingCount": 0,
+      "CompletedCount": 1
+    },
+    {
+      "Revision": 5,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32407200
+      },
+      "StageCount": 1,
+      "PendingCount": 0,
+      "CompletedCount": 1
+    },
+    {
+      "Revision": 6,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32409000
+      },
+      "StageCount": 1,
+      "PendingCount": 0,
+      "CompletedCount": 1
+    },
+    {
+      "Revision": 7,
+      "Boundary": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32410800
+      },
+      "StageCount": 1,
+      "PendingCount": 0,
+      "CompletedCount": 1
+    }
+  ],
+  "SourceCustodian": "776f726c647761740000000000000001",
+  "ReceiverCustodian": "776f726c647761740000000000000002",
+  "SourceInventory": [
+    1300,
+    1300,
+    1300,
+    1300,
+    1300,
+    700,
+    700,
+    700,
+    700
+  ],
+  "ReceiverInventory": [
+    50,
+    50,
+    50,
+    50,
+    50,
+    650,
+    650,
+    650,
+    650
+  ]
+}

@@ -15,6 +15,7 @@ different kind of person.
 | [Persistence and history](persistence-and-history.md) | What is stored, replayed, migrated and addressed through history? |
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |
 | [World and geography](world-and-geography.md) | How do terrain, watersheds, streaming, planes, geological history and ecology fit together? |
+| [Reservoir transport](reservoir-transport.md) | How do scheduled gates move actual water, preserve provenance and share time/capacity? |
 | [Actors and society](actors-and-society.md) | How do bodies, knowledge, relationships, cultures, institutions and narratives interact? |
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
 | [Presentation and interaction](presentation-and-interaction.md) | How do actions, menus, maps, animation, art and audio express the simulation? |

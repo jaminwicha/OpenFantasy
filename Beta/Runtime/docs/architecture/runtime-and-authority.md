@@ -74,6 +74,10 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    Existing reservation IDs are references, while command/result IDs receive ordinary durable history.
    Earlier accepted actions remain accepted; validating only the final batch state would hide transient
    physical violations. Ordinary successors cannot add or remove reservoir ownership.
+   Transport worlds additionally preserve the [scheduled funding journal](reservoir-transport.md).
+   After actions and the selected calendar increment, due stages run in canonical arrival/identity order,
+   unless a reading hold is active; they precede movement. Actual stock, receiving obligations and new
+   fragment identities join the same candidate. A blocked stage retains all water and capacity in place.
 4. [WorldCommitPreparation](../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs) prepares
    canonical state, outcomes and identity reservations. Gameplay rejection is an outcome; malformed
    dispatch, identity conflict or storage failure is not a fabricated gameplay receipt.

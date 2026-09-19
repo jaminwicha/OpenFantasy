@@ -309,3 +309,14 @@ no player-facing menu or live liquid movement. See the
 [control contract](docs/architecture/world-and-geography.md#runtime-binding-funded-runoff-commitment-controls).
 `OPENFANTASY_RUNOFF_COMMAND_EVIDENCE` retains the command/replay fixture used by the full verifier's
 actual host crash/recovery checks.
+
+
+Profile-nine reservoir transport adds explicit adjacent gravity gates and scheduled arrivals to a fresh
+construction world. `--create-reservoir-transport-world <world.sqlite> <basis.bin> <transport.bin>` uses
+the ordinary exclusive host; `--execute-world-step` schedules or advances it, and `--inspect-recorded-world`
+reads exact history. The [transport architecture](docs/architecture/reservoir-transport.md) defines
+indivisible funded batches, per-step throughput, conservative head checks and retained blocked outcomes.
+This is contained reservoir transport with authored boundaries; it does not change default farm graphics
+or provide a player-facing water interface. `OPENFANTASY_RESERVOIR_TRANSPORT_EVIDENCE` retains the
+fixture used by `tools/check_watershed_network_world.py --profile transport` for actual transfer crashes,
+paused arrivals, source conservation and history. Full verification invokes this same harness.

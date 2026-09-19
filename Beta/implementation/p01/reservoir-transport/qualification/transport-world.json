@@ -1,0 +1,355 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-19T20:35:05.578642+00:00",
+  "scope": "transport; actual composed-world host create, commits, kill/recover and exact history",
+  "fixtureSha256": {
+    "basis.bin": "6fdd443096f41a7c200bdb642c2ccbeb1a42680ab63df8a4bbc17645172efbb0",
+    "expected.json": "19df7fcfc5f25192204b0c0d8c92b107b58a1d7701691bfc86a914d7530911e2",
+    "genesis.bin": "35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c",
+    "step-1.bin": "c93984f5bc00ce24d6b4da3a2296fc43c0274c142da370a96009901176e8d4ae",
+    "step-2.bin": "98c78fb9125d563ef94e15f44b7f0b605a3d8f8ffff845f1d7b275ad54d412c5",
+    "step-3.bin": "d5f315795a24c43377a12ad7ad95692bc65a55428f57f257ee0aa36aefea75fc",
+    "step-4.bin": "83d0e7efbaaf27ab264b52b8705ebc9339cf981f6cd4280b1bad5753433031f8",
+    "step-5.bin": "7b5ff0e3cf072c0e62efc3baf8337c9602aa28dab366a912f5ef1ed8802da2e5",
+    "step-6.bin": "1d07ee9093188cb0f272e1143189b871741b3403f7bbaef9be3243ffbded277b",
+    "step-7.bin": "8e5a77292aa27d5266cfb4b8ae637b38f93da39cb19a79a71749684251c7ca79",
+    "step-8.bin": "0b8740a4983bd68ee69ed56a7727ba3a172c4e66fa45365d6420682d93ca4af9",
+    "transport.bin": "885b3a15daacfcbdc4f796b36437368d5e44550b8df63d8cb5a695fd0ae64b10"
+  },
+  "runs": [
+    {
+      "name": "create",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--create-reservoir-transport-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/basis.bin",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/transport.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":0,\"ProfileVersion\":9,\"StateHash\":\"35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"885b3a15daacfcbdc4f796b36437368d5e44550b8df63d8cb5a695fd0ae64b10\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":0,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"ConnectionCount\":1,\"StageCount\":0,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "refuse existing destination",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--create-reservoir-transport-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/basis.bin",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/transport.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A new world requires an unused database filename and sidecar paths.\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":0,\"SourceHeadHash\":\"35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c\",\"RecordedRevision\":0,\"StateHash\":\"35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"885b3a15daacfcbdc4f796b36437368d5e44550b8df63d8cb5a695fd0ae64b10\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":0,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"ConnectionCount\":1,\"StageCount\":0,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":50}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "step 1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-1.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":1,\"ProfileVersion\":9,\"StateHash\":\"07aac5e14a0ee1d324d75212b8f9957ad1456f46b08ec300120b468479113496\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"c220367d147e17a676b44647387ba15abad63de03ef4abbe4f0159c698515f94\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":2,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32401800},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "step 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-2.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":2,\"ProfileVersion\":9,\"StateHash\":\"1411a068c83ab6b1a306e0fe064e41b6e2f4cab0affa1fc6a0a15b2c08b73e63\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":3,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "step 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-3.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":3,\"ProfileVersion\":9,\"StateHash\":\"7c83be2329a713aeffa5700ddfc50259abd5f44faa537d4ab8a2470ed9d232d7\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":3,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "step 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-4.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":4,\"ProfileVersion\":9,\"StateHash\":\"6dfe0cedb6577c488dcb242f6ac57a5fce913b8efb6277befc6ef013e001e80e\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":3,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "4"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":4,\"SourceHeadHash\":\"6dfe0cedb6577c488dcb242f6ac57a5fce913b8efb6277befc6ef013e001e80e\",\"RecordedRevision\":4,\"StateHash\":\"6dfe0cedb6577c488dcb242f6ac57a5fce913b8efb6277befc6ef013e001e80e\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"AdvancingSteps\":2,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":3,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":50}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "5"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":5,\"SourceHeadHash\":\"831dfea12159a1cd68e970993026e77a8fd69ed823360ea36d0850bf501e82e2\",\"RecordedRevision\":5,\"StateHash\":\"831dfea12159a1cd68e970993026e77a8fd69ed823360ea36d0850bf501e82e2\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32405400},\"AdvancingSteps\":3,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"94a033265962dde687c7528ab533953d160e02b30ac209c3560d9fdf16334500\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":4,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32405400},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":650}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "refuse duplicate committed step",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-5.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "step 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-6.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":6,\"ProfileVersion\":9,\"StateHash\":\"3ea94702ddeb77afa01aec2b141cdc1397209551cd7ebea1f084b0a70e55170c\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"687e6655a7e656422d501a3785ee0ca6ef3a5f66d7d00b2a8ce1cdbb31c7f2cc\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":5,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32407200},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "step 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-7.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":7,\"ProfileVersion\":9,\"StateHash\":\"04205bf094c241e445f45a33d24fc300d5f0ef180e5f12bc0a431712dd1921c2\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"2e2c35f4ae9bdcfd690caf1bd5a118d87d591bd3ecaa1c3a82bab9ac4830390a\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":6,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32409000},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "step 8",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-8.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":8,\"ProfileVersion\":9,\"StateHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"632bd13ff8dec92051c1e351346c3174d53c8203106b7d40b26ff2d144038604\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":7,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32410800},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]}}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 8",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "8"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":8,\"StateHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32410800},\"AdvancingSteps\":6,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"632bd13ff8dec92051c1e351346c3174d53c8203106b7d40b26ff2d144038604\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":7,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32410800},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":650}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":0,\"StateHash\":\"35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"885b3a15daacfcbdc4f796b36437368d5e44550b8df63d8cb5a695fd0ae64b10\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":0,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"ConnectionCount\":1,\"StageCount\":0,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":50}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "5"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":5,\"StateHash\":\"831dfea12159a1cd68e970993026e77a8fd69ed823360ea36d0850bf501e82e2\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32405400},\"AdvancingSteps\":3,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"94a033265962dde687c7528ab533953d160e02b30ac209c3560d9fdf16334500\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":4,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32405400},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":650}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "2"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":2,\"StateHash\":\"1411a068c83ab6b1a306e0fe064e41b6e2f4cab0affa1fc6a0a15b2c08b73e63\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"AdvancingSteps\":2,\"HasReadingHold\":true,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":3,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":50}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "4"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":4,\"StateHash\":\"6dfe0cedb6577c488dcb242f6ac57a5fce913b8efb6277befc6ef013e001e80e\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"AdvancingSteps\":2,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":3,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":50}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":1,\"StateHash\":\"07aac5e14a0ee1d324d75212b8f9957ad1456f46b08ec300120b468479113496\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32401800},\"AdvancingSteps\":1,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"c220367d147e17a676b44647387ba15abad63de03ef4abbe4f0159c698515f94\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":2,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32401800},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":50}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "7"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":7,\"StateHash\":\"04205bf094c241e445f45a33d24fc300d5f0ef180e5f12bc0a431712dd1921c2\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32409000},\"AdvancingSteps\":5,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"2e2c35f4ae9bdcfd690caf1bd5a118d87d591bd3ecaa1c3a82bab9ac4830390a\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":6,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32409000},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":650}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "3"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":3,\"StateHash\":\"7c83be2329a713aeffa5700ddfc50259abd5f44faa537d4ab8a2470ed9d232d7\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"AdvancingSteps\":2,\"HasReadingHold\":true,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"CapacityHash\":\"7318cfeea4f657f14ab2d1fc3375b820803b00dca2738fb84e6d87656a07cb3e\",\"Revision\":0,\"ReservoirCount\":2,\"PendingCount\":1,\"ClosedCount\":0,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":600},\"Transport\":{\"ContentHash\":\"ab971c567e68136ca3f8a6652040445af6d797d0ec1d13238ba25ae6c59f3509\",\"ReservoirHash\":\"054e893d800f025f249426a204a83e5f6a40f16ba622a36177daf16e473bf92e\",\"Revision\":3,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32403600},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":1,\"PendingUnits\":600,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":1,\"Units\":600},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":0,\"Units\":0},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":1300,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":1300000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":50,\"ReservedIncomingUnits\":600,\"ActualMicrolitres\":50000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":50}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "history 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "6"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":8,\"SourceHeadHash\":\"9a97739f5abae478d7bd8402bc1b78424e52bb4d45923126e572f2d3707ed1b6\",\"RecordedRevision\":6,\"StateHash\":\"3ea94702ddeb77afa01aec2b141cdc1397209551cd7ebea1f084b0a70e55170c\",\"ProfileVersion\":9,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32407200},\"AdvancingSteps\":4,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":{\"ContentHash\":\"293a44b86873d8982b81132285b714b44c149622c752fc28fb13283bfd4a0a1e\",\"ProvinceId\":\"776f726c647761740000000000000016\",\"BasinCount\":1,\"ColumnCount\":2,\"SharedFaceCount\":0},\"Reservoirs\":{\"ContentHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"CapacityHash\":\"4280acea53a385332ba14ac9d848cef00ed069999fd506d0c8fe4c1f9d1c0c41\",\"Revision\":1,\"ReservoirCount\":2,\"PendingCount\":0,\"ClosedCount\":1,\"ActualMicrolitres\":1350000000,\"ReservedIncomingUnits\":0},\"Transport\":{\"ContentHash\":\"687e6655a7e656422d501a3785ee0ca6ef3a5f66d7d00b2a8ce1cdbb31c7f2cc\",\"ReservoirHash\":\"5dac903f4bc9c4e9bb47b94d03ce114a1e41601773127582643c8702c0bd8bd1\",\"Revision\":5,\"Boundary\":{\"Days\":0,\"MillisecondsWithinDay\":32407200},\"ConnectionCount\":1,\"StageCount\":1,\"PendingCount\":0,\"PendingUnits\":0,\"Statuses\":[{\"Status\":\"Scheduled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByHead\",\"Count\":0,\"Units\":0},{\"Status\":\"Completed\",\"Count\":1,\"Units\":600},{\"Status\":\"Canceled\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByThroughput\",\"Count\":0,\"Units\":0},{\"Status\":\"BlockedByMaterial\",\"Count\":0,\"Units\":0}],\"Contents\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"CustodianId\":\"776f726c647761740000000000000001\",\"ActualUnits\":700,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":700000000},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"CustodianId\":\"776f726c647761740000000000000002\",\"ActualUnits\":650,\"ReservedIncomingUnits\":0,\"ActualMicrolitres\":650000000}]},\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26496,\"Y\":82560,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":322,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26496,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":103,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":650}],\"SourceLotCount\":7,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "crashes": [
+    {
+      "boundary": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-5.bin",
+        "before"
+      ],
+      "pid": 66880,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "boundary": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-transport/qualification/fixture/step-5.bin",
+        "after"
+      ],
+      "pid": 66913,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "independentTransportContract": {
+    "gateUnitsPerStep": 600,
+    "scheduledDelayMs": 3600,
+    "autonomousCrashRevision": 5,
+    "conservedSourceUnits": 1350
+  },
+  "independentAdmissionHash": "35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c",
+  "databaseSha256": "ad92576cc3b462bad2bc4d10551047adfd13849a2de946bd0360960c18527332",
+  "database": "transport-world-d69ef9bb537f4a04acd2bf74225ec17b/world.sqlite",
+  "finishedUtc": "2026-09-19T20:36:16.539726+00:00"
+}

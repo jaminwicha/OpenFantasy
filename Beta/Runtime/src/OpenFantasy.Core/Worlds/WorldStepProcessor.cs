@@ -22,6 +22,7 @@ public sealed class WorldStepProcessor
     private readonly DeliveryQuestPlanner _quests = new();
     private readonly ConstructionPlanner _construction = new();
     private readonly WorldRunoffResolver _runoff = new();
+    private readonly WorldTransportResolver _transport = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
@@ -63,6 +64,7 @@ public sealed class WorldStepProcessor
         ConstructionSnapshot? construction = state.Construction;
         LocalSpatialSnapshot space = state.Space;
         LiquidReservoirState? reservoirs = state.Reservoirs;
+        ReservoirTransportState? transport = state.Transport;
         HashSet<EntityId> worked = [];
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
@@ -76,10 +78,23 @@ public sealed class WorldStepProcessor
             var previousConstruction = construction;
             var previousSpace = space;
             var previousReservoirs = reservoirs;
+            var previousTransport = transport;
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
-            if (action.Intent is RunoffCommitmentIntent)
+            if (action.Intent is ScheduleRunoffTransportIntent)
+            {
+                if (transport is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret scheduled transport.");
+                }
+                var plan = _transport.Resolve(transport, space, action,
+                    batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0, Occupied);
+                transport = plan.Candidate;
+                createdIds = plan.CreatedIds;
+                resolution = new WorldActionResolution(inventory, dialogues, plan.Rejection, null);
+            }
+            else if (action.Intent is RunoffCommitmentIntent)
             {
                 if (reservoirs is null)
                 {
@@ -88,6 +103,13 @@ public sealed class WorldStepProcessor
                 var plan = _runoff.Resolve(state, reservoirs, space, action,
                     batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0);
                 reservoirs = plan.Candidate;
+                if (plan.Rejection == WorldActionRejection.None && transport is not null)
+                {
+                    transport = action.Intent is CancelRunoffIntent cancel
+                        ? transport.PlanCancel(cancel.ReservationId).ApplyTo(transport)
+                        : transport.PlanRebind(reservoirs).ApplyTo(transport);
+                    reservoirs = transport.Reservoirs;
+                }
                 resolution = new WorldActionResolution(inventory, dialogues, plan.Rejection, null);
             }
             else if (action.Intent is WorkConstructionIntent)
@@ -158,7 +180,8 @@ public sealed class WorldStepProcessor
                     resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
                 }
             }
-            if (!WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled))
+            if (!WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
+                || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport))
             {
                 gathering = previousGathering;
                 production = previousProduction;
@@ -167,6 +190,7 @@ public sealed class WorldStepProcessor
                 construction = previousConstruction;
                 space = previousSpace;
                 reservoirs = previousReservoirs;
+                transport = previousTransport;
                 performedWork = false;
                 createdIds = [];
                 resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
@@ -174,6 +198,7 @@ public sealed class WorldStepProcessor
             else
             {
                 reservoirs = reconciled;
+                transport = reconciledTransport;
             }
             if (performedWork)
             {
@@ -202,6 +227,17 @@ public sealed class WorldStepProcessor
             // The already selected step contributes once, including when an action opens a hold.
             calendar = calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);
             advancingSteps = checked(advancingSteps + 1);
+            if (transport is not null)
+            {
+                var stages = transport.PlanAdvance(calendar, dialogues.Count != 0, Occupied);
+                transport = stages.ApplyTo(transport);
+                reservoirs = transport.Reservoirs;
+                inventory = reservoirs.Capacity.Inventory;
+                foreach (var identity in stages.CreatedIds)
+                {
+                    Reserve(identity, WorldCommittedIdentityKind.SpawnedEntity);
+                }
+            }
             gathering = gathering?.AdvanceStep(advancingSteps);
             residents = state.Residents.Select(resident => resident.ExperienceStep());
             if (dialogues.Count == 0)
@@ -222,7 +258,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport);
         return new WorldStepDecision(candidate, receipts, identities);
     }
 

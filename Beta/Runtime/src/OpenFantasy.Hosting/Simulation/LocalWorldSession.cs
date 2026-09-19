@@ -139,8 +139,13 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This saved profile does not support quest actions.");
             }
+            if (command.Intent is OpenFantasy.Core.Geography.ScheduleRunoffTransportIntent
+                && _authority.ReadStateForHost().ProfileVersion != 9)
+            {
+                throw new AuthorityDispatchException("This saved profile does not support scheduled reservoir transport.");
+            }
             if (command.Intent is OpenFantasy.Core.Geography.RunoffCommitmentIntent
-                && _authority.ReadStateForHost().ProfileVersion != 8)
+                && _authority.ReadStateForHost().ProfileVersion is not 8 and not 9)
             {
                 throw new AuthorityDispatchException("This saved profile does not support runoff commitments.");
             }

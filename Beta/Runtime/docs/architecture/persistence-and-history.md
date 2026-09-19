@@ -42,6 +42,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 6 | Complete construction world plus one immutable prepared watershed |
 | 7 | Complete construction world plus one immutable prepared watershed network |
 | 8 | Complete construction world plus one exclusive physical reservoir/capacity owner and its network |
+| 9 | Complete construction world plus one exclusive reservoir transport owner, gate catalog and due-stage journal |
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
@@ -59,7 +60,7 @@ basis. The outer snapshot has tag `world.snapshot`, unsigned-64 profile `7`, exa
 and exact network archive. Its step interpreter retains the existing action and receipt semantics.
 
 All decode/admission paths enforce identity roles across components. Admission is not insertion of
-geography into a lived save. Profiles six through eight use the same schema-three writer and full-journal
+geography into a lived save. Profiles six through nine use the same schema-three writer and full-journal
 recovery; they add no migration commit, separate writer or clock.
 
 [Profile eight](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV8.cs) frames unsigned-64 profile `8`,
@@ -88,12 +89,41 @@ instants (signed-64 days plus signed-32 milliseconds) and canonical basin input 
 The command is bounded to 2,048 bytes and sixteen input rows. Decode rejects partial/duplicate/reordered
 rows, hidden dry funding, unknown kinds/versions and trailing fields by validating and re-encoding exact bytes.
 
-Action version and world profile version are distinct: these commands execute only in profile eight.
+Action version and world profile version are distinct: runoff controls execute in profiles eight and nine.
 Both constructor and decoder paths reject their insertion into older world batches; the local session
 checks the profile before queuing. Existing snapshot/step encodings, global command/batch bounds and
 schema-three tables remain unchanged. Accepted capacity-only operations and rejected controls receive
 the same atomic journal/outcome/identity treatment as other actions; exact retries retrieve the recorded
 receipt. Restart and historical reads replay controls rather than reconstructing obligations from wall time.
+
+[Profile nine](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV9.cs) frames unsigned-64 profile `9`,
+a genuine profile-five basis and the complete
+[transport archive](../../src/OpenFantasy.Core/Geography/ReservoirTransportCodecV1.cs). Its admission
+pin frames `world.reservoir-transport-admission.v1`, prior admission hash and transport hash. The transport
+archive owns the unchanged physical wrapper and therefore the sole network. The outer world still fits
+16 MiB; no prior profile, physical archive or database table changes meaning. Fresh construction admission
+is explicit; opening a lived profile-eight save does not start executing previously inert budgets.
+
+The transport archive's six fields are tag `geography.reservoir-transport.v1`, revision, exact processed
+calendar boundary, physical archive, canonical 96-byte gate rows and a nested stage journal. Each gate row
+contains three identities, five signed-64 coordinates and unsigned-64 per-step throughput. Stage frames
+retain stage/reservation IDs, due instant, funding hash, units, 32-byte basin/gate route rows, typed status
+and optional resolved instant. Connections/stages sort by identity; routes sort by basin. Decode bounds
+collections before reconstructing all cross-component contracts and requires exact re-encoding. The
+standalone archive permits 29,000,000 bytes; the composed-world bound remains independently mandatory.
+
+[Action version seven](../../src/OpenFantasy.Core/Worlds/WorldActionCodecV7.cs) uses the ordinary ten-field
+actor envelope with a `world.action.schedule-runoff` nested frame: version `1`, complete transport hash,
+transport revision, reservation ID, explicit due instant and at most sixteen route rows. Its 2,048-byte
+bound does not expand the global command limit. Only profile nine accepts this intent. Existing version-six
+admit/cancel commands remain byte-identical and use the transport journal when cancelling a scheduled budget.
+
+`--create-reservoir-transport-world` takes a new database path, profile-five basis and fresh transport
+archive. Live and historical privileged reports expose physical/transport hashes, boundary, stage outcomes
+and exact vessel quantities. All material stages replay through ordinary world commits; no scheduler side
+file or independent writer can advance them. Root admission rejects a prepopulated journal at world revision
+zero, including direct construction paths. The [transport contract](reservoir-transport.md) defines step
+ordering, source/capacity atomicity and retained blocked outcomes.
 
 The [dry terrain candidate archive](../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs)
 is a separately versioned preparation artifact, not another composed-world profile or a replacement

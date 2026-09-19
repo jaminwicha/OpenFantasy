@@ -99,6 +99,22 @@ public sealed class WatershedRunoffCapacityState
         return new(this, new(Domain, inventory, production, checked(Revision + 1), refreshed, Closed));
     }
 
+    /// <summary>Internal completion publication after the transport planner moves the entire exact funding bill.</summary>
+    internal WatershedRunoffCapacityPlan PlanComplete(EntityId reservationId, CountedAuthorityState inventory)
+    {
+        if (!Pending.Any(p => p.Request.ReservationId == reservationId) || inventory.Custody.Revision <= Inventory.Custody.Revision
+            || Inventory.WithCustody(inventory.Custody).ContentHash != inventory.ContentHash
+            || inventory.Custody.Lots.Any(l => l.ReservedBy == reservationId))
+        {
+            throw new ArgumentException("Completion requires one active budget, advancing exact custody and no remaining source hold.");
+        }
+        var planner = new WatershedRunoffPlanner();
+        var remaining = Pending.Where(p => p.Request.ReservationId != reservationId).Select(p => planner.Prepare(
+            new(Domain.Network, Domain.Mapping, inventory, Production, p.Request.ReservationId, Domain.OwnerActorId,
+                p.Request.Start, p.Request.End, Domain.Material, p.Request.Inputs, Domain.Terminals))).ToArray();
+        return new(this, new(Domain, inventory, Production, checked(Revision + 1), remaining, Closed.Append(reservationId)));
+    }
+
     private void ValidateBasis(PreparedWatershedRunoff runoff)
     {
         var request = runoff.Request;

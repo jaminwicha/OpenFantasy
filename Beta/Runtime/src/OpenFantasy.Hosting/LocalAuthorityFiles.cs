@@ -47,6 +47,9 @@ public static class LocalAuthorityFiles
     public static LiquidReservoirState ReadLiquidReservoirs(string path) =>
         LiquidReservoirCodecV1.Decode(Read(path, LiquidReservoirCodecV1.MaximumEncodedByteLength));
 
+    public static ReservoirTransportState ReadReservoirTransport(string path) =>
+        ReservoirTransportCodecV1.Decode(Read(path, ReservoirTransportCodecV1.MaximumEncodedByteLength));
+
     private static byte[] Read(string path, int maximum)
     {
         using FileStream stream = File.OpenRead(path);

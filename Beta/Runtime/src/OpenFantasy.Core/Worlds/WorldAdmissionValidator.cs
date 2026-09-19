@@ -37,6 +37,7 @@ public static class WorldAdmissionValidator
         admission.ReadQuests();
         admission.ReadConstruction();
         admission.ReadReservoirs();
+        admission.ReadTransport();
         return admission.Complete();
     }
 
@@ -133,6 +134,27 @@ public static class WorldAdmissionValidator
             foreach (var geometry in reservoirs.Geometries)
             {
                 Add(geometry.ReservoirId, WorldIdentityRole.Reservoir, unique: true);
+            }
+        }
+
+        internal void ReadTransport()
+        {
+            if (world.Transport is not { } transport)
+            {
+                return;
+            }
+            if (world.Revision == 0 && (transport.Revision != 0 || transport.Stages.Count != 0)
+                || transport.Revision < world.AdvancingSteps)
+            {
+                throw new ArgumentException("Transport genesis has no prior journal, and processed steps cannot exceed its revision.");
+            }
+            foreach (var connection in transport.Connections)
+            {
+                Add(connection.ConnectionId, WorldIdentityRole.ReservoirConnection, unique: true);
+            }
+            foreach (var stage in transport.Stages)
+            {
+                Add(stage.StageId, WorldIdentityRole.RunoffTransportStage, unique: true);
             }
         }
 
