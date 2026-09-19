@@ -32,33 +32,45 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `f00e637`, preserved on `codex/milestone-reservoir-geometry`;
-[packet](p01/reservoir-geometry/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `a3789c1`, preserved on `codex/milestone-reservoir-persistence`;
+[packet](p01/reservoir-admission/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-A fixed physical-storage wrapper now binds source, optional buffer and receiver custody to finite
-watertight open vessels. Geometric capacities must match receiving witnesses. Exact floor-band fills
-separate actual stock from projected inflows and conserve microlitre residuals. All mapped raw/derived
-contents count, including unrelated source stock. Cancellation retains geometry and physical limits;
-unmapped new sources, overlapping support, stale geometry plans and overfilling deliveries reject.
+Fresh profile eight owns the complete physical reservoir/capacity wrapper and its sole watershed
+network alongside exact world inventory/Production. Each material action passes reconciliation before
+its planner side effects or generated identities become accepted. Rejection rolls back the entire
+action while retaining other accepted actions. Reservoir/material identities join the world index;
+ordinary successors cannot drop ownership. Existing schema-three transactions and exact history own
+all components. Time passing never implicitly settles runoff, releases stock or removes commitments.
 
-[Qualification](p01/reservoir-geometry/qualification/verification-summary.json): clean solution build,
-**1,018 tests (689 Core + 329 Hosting, zero skips)** with fourteen new cases; 26 real host inspections
-including five independently checked archives and 21 invalid cases. The independent fill oracle uses
-integer binary search rather than managed floor bands. The 4,096-column wrapper is 169,401 bytes.
-Five prior capacity archives remain byte-identical; 172 architecture links and 22 frozen hashes pass.
-Test-first compiler failure and bounded native critique are retained; no gates changed.
+[Qualification](p01/reservoir-admission/qualification/verification-summary.json): full solution build
+with zero warnings/errors; **1,035-test regression (689 Core +346 Hosting)** followed by **five stronger
+critic cases**, replacing four and adding the opposite action order: **1,036 distinct cases, 18 new,
+zero skips**, not one uninterrupted final suite. 28 real reservoir host calls and 27 network regression
+calls each pass both actual process-kill boundaries, independent admission-byte checks and exact history.
+Actual Godot headless foundation/farm pass. Original farm quest funding and all 200 construction work
+actions retain physical ownership. 65,536 network +4,096 reservoir columns fit/recover in 3,475,157 bytes
+under the unchanged 16 MiB bound. 178 reference links, 22 frozen hashes and the exact predecessor index pass.
 
-This profile assumes watertight floors/walls and one incompressible calibrated material. It does not
-prove terrain support, connect inlets to outlets, schedule arrivals, simulate flow/pressure or admit
-lived state to a durable world. Maximum support correctness is not combined workload performance.
-No gameplay/visual change or full native/rendered campaign is claimed. Timeless reference and verifier
-hooks are updated; complete-wrapper publication remains required for integration.
+Native critique closed an optional-successor ownership-drop path and strengthened post-commit geometry
+tampering and both canonical actor orderings. All failures remain in the packet, including initial
+gather effort preconditions and the confirmed original give-before-craft ordering. No gates changed.
+Timeless references, offline operators and verifier hooks are updated. Shared inventory/Production
+appear in both retained nested formats and must match exactly; neither is an independent writer.
+
+This binding requires a fresh construction genesis. Default farm/presentation and lived saves remain
+unchanged. Authored watertight boundaries are assumptions; terrain wall proof, inlets/outlets, arrival/
+settlement, live flow, pressure, phase changes and hydraulic Wait remain open. There are no world
+commands to alter geometry or admit/cancel commitments. Maximum support recovery is not production
+performance or a combined maximum pending/Production workload. Full native/rendered acceptance is unclaimed.
 
 Prior dependencies remain preserved:
 
+- [Physical reservoir geometry](p01/reservoir-geometry/README.md), `f00e637`, milestone
+  `codex/milestone-reservoir-geometry`: watertight open-vessel capacity, exact actual/projected floor-band
+  fill and complete-wrapper publication; 1,018 tests, 26 real inspections and independent fill oracle.
 - [Runoff capacity ownership](p01/runoff-capacity/README.md), `83db425`, milestone
   `codex/milestone-runoff-capacity`: shared pending obligations, logical revisions, cancellation and
-  actual custody/Production reconciliation; 1,004 tests and 46 inspections. Durable world admission remains open.
+  actual custody/Production reconciliation; 1,004 tests and 46 inspections at that standalone checkpoint.
 - [Funded runoff projections](p01/runoff-budgets/README.md), `02f2819`, milestone
   `codex/milestone-runoff-budgets`: exact effective-depth/source funding, weighted drainage and shared
   terminal headroom within one projection; 995 tests, 25 inspections and a 65,536-column archive.
@@ -81,8 +93,8 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include exclusive durable reservoir ownership, terrain-supported vessel boundaries
-and inlet/outlet connections, plus the complete macro profile: crust/boundary history, climate/water partitioning and coast
+Next dependencies include terrain-supported vessel boundaries, inlet/outlet connections and explicit
+durable hydraulic operations, plus the complete macro profile: crust/boundary history, climate/water partitioning and coast
 connections. Live hydraulic stages need arrival rules, backpressure, topology revalidation, encounter
 Wait and exact history. A retained local terrain interpreter and complete allocation/world ownership
 must compose occupancy, construction, support and custody before live terrain admission. Never reroll

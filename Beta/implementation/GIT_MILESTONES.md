@@ -40,6 +40,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-runoff-budgets` | `02f2819` | Funded effective-runoff projection over exact finite drainage, shared physical/counting receiver headroom and canonical archive; 995 tests, 25 real host inspections, five independent origin-path/source checks and bounded native critique. [Evidence](p01/runoff-budgets/README.md) includes the 65,536-column profile and retained test-first failure. No hydraulic flow, receiver-capacity reservations, complete macro profiles, durable world admission, performance or full phase acceptance. |
 | `codex/milestone-runoff-capacity` | `83db425` | Shared ownership of pending runoff headroom, stale-safe cancellation and actual custody/Production reconciliation; 1,004 managed tests, nine focused followup cases and 46 host inspections with independent volume/source checks. [Evidence](p01/runoff-capacity/README.md) retains failures, old archive compatibility and execution boundaries. Standalone finite owner only; live flows, physical reservoirs, durable world admission, production performance and full gates remain open. |
 | `codex/milestone-reservoir-geometry` | `f00e637` | Finite authored watertight vessels, exact actual/projected fills, source/buffer/receiver composition and pinned wrapper plans; 1,018 tests, 26 host inspections and an independent binary-search fill oracle. [Evidence](p01/reservoir-geometry/README.md) preserves test-first failure, old capacity bytes and 4,096-column bounds. No live flow, terrain-wall proof, durable world admission, production performance or full-gate closure. |
+| `codex/milestone-reservoir-persistence` | `a3789c1` | Fresh profile-eight exclusive physical owner; atomic material actions, canonical recovery/history, full 1,035-case regression plus five stronger follow-ups (1,036 distinct), 55 real operator calls/four process kills and native headless foundation/farm. [Evidence](p01/reservoir-admission/README.md). Assumed watertight supports; no live flow, terrain support, migration, performance or full phase acceptance. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -112,3 +113,10 @@ at `f00e637eb734573240f88f71cbe7e451636e24a2`. It records assumed watertight phy
 volume projections, not naturally realized lakes or hydraulic simulation. Development continues on
 `codex/runtime-foundation`; previous milestones, frozen specs and the unrelated predecessor index
 remain preserved. No checkout switch, force move, push, merge or full acceptance closure occurs.
+
+The reservoir-persistence branch preserves source, timeless reference updates and bounded integration
+qualification at `a3789c1892313beb11a93580809dc9846dd42fc4`. It records one complete durable physical
+owner inside the existing world authority, not a hydraulic simulation or changed default farm.
+Development remains on `codex/runtime-foundation`; prior milestone branches, frozen specs and the
+exact unrelated predecessor index remain intact. No checkout switch, force move, push, merge or
+full acceptance closure accompanies this marker.
