@@ -32,50 +32,56 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `7df18df`, preserved on `codex/milestone-live-excavation`;
-[packet](p01/live-excavation/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `2dcdd79`, preserved on `codex/milestone-constructed-support`;
+[packet](p01/constructed-footing/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Live local excavation now couples owned worker actions, earned effort, exact terrain/source lineage,
-material custody and direct support in one durable publication. Fresh profile ten retains selected dry
-cells, exact material/tool pins and work progress. The separate action preserves solid terrain and issues
-nothing until completion; completing work removes the cell and creates its whole-source lot together.
-Crafting/recrafting consumes that stock without restoring terrain or losing provenance. Players and NPCs
-use the same action contract. Default farm content and prior saved profiles are unchanged.
+Fresh dry profile eleven binds actual completed construction to actor footing and earned assisted
+vertical traversal. Exact physical member XY coverage prevents rounded colliders from bridging slits;
+vertical contact rounds upward by less than one spatial subunit. Full body clearance, whole swept
+footprints and a continuous projected support corridor apply. Structure bases remain terrain-grounded;
+this establishes direct contact, not load strength, stacked construction or collapse.
 
-Every work attempt checks actual actor-to-face reach, current tools/revisions/control, reading holds,
-and potential removal against all actor/structure direct support plus gathering anchors. Unsafe work
-refuses atomically. Construction/excavation share each owner's advancing-action/personal-time budget.
-Same-batch workers cannot both use a stale region revision. Dry extraction excludes reservoir/macro
-owners; support refusal is not collapse, strength, route safety or a water-breach model.
+The explicit climb requires ground locomotion, manipulation, trusted control, exact actor revision and
+400 banked effort. It uses rise-then-traverse for ascent and the reverse for descent, suppresses ordinary
+same-actor movement and refuses during reading holds. Excavation preserves support mode. Profile eleven
+stores a complete direct root, reconstructing completed structures before actor admission; older
+profiles retain terrain-only rules/bytes. New admission requires an unplayed profile-ten genesis.
 
-[Qualification](p01/live-excavation/qualification/verification-summary.json): **1,141 managed tests
-(726 Core +415 Hosting), 23 new, zero skips/failures**. Final full solution build is clean. 123 actual
-commits earn effort and complete three work actions. **144 ordinary Host calls +two actual process kills**
-prove before/after-completion recovery, exact receipts, retry refusal and out-of-order recorded history;
-ten independent retained-byte witnesses check work/effort/terrain/custody. All126 fixture files match
-independent full-suite recreation. Three-work/one-cubic-metre yield calibration is synthetic.
+[Qualification](p01/constructed-footing/qualification/verification-summary.json): **1,173 managed tests
+(749 Core +424 Hosting),32 new, zero failures/skips**, clean full solution build. The actual quest funds
+Wren's construction at revision95; the player's real climb reaches its installed250mm platform at96,
+effort910→520. Reopen, exact history and receipts preserve actor/support. A second durable test reaches
+a lower mining stance through real descent and extracts its selected cell under the same support mode.
+No finished project, final feet or earned work is injected.
 
-Actual Godot headless foundation and native farm create/reopen/history pass. No rendered mining, art or
-physical-device acceptance is claimed. All225 architecture links,22 frozen hashes and the exact19-file
-predecessor index pass. The all-systems verifier was not run; targeted tools ran directly and the new
-check is wired into it. Retained failures include test-first/fixture errors, a receipt-order assertion
-corrected against actual actor-order execution, and an unexplained MSB4166 child-process exit in the
-first parallel build; the complete serial build passed. No thresholds/deadlines were weakened.
+**26 actual Host calls and two actual process kills** prove before/after-climb recovery, retries and
+reverse recorded history. Nine independent retained-byte witnesses verify feet/effort/material/terrain
+and the suppressed movement sample. All five fixture files recreate byte-for-byte. Actual Godot
+headless foundation and native farm create/reopen/history pass. The default client has no climb control
+or rendered height/choreography acceptance. All242 architecture links,22 frozen hashes and the exact19-file
+predecessor index pass. The all-systems verifier was not run; the new checker is wired and ran directly.
+Retained failures are expected missing-type test-first errors and six exception-type assertions corrected
+to the actual compound-intent contract. No validation threshold or deadline changed.
 
-Bounded native critique corrected shared material calibration, direct face reach and per-owner combined
-labor. Follow-up source/reference review found no remaining consequential mismatch. No external paid
-Claude/Fable call was used. The [excavation reference](../Runtime/docs/architecture/excavation.md) and its
-world/material/persistence dependencies describe the implemented contract without temporal language.
+A bounded native source critic found no consequential defect. No external Claude/Fable call was used.
+The [constructed-footing reference](../Runtime/docs/architecture/constructed-footing.md) and dependent
+world/material/excavation/persistence pages describe the actual timeless contract.
 
-Next work must integrate broader generated extraction ownership/vertical access, construction support
-consequences and durable physical containment. Reservoir composition needs retained sealing policy,
-real shutters/openings, displaced volume and conserved spilled material before terrain mutation is legal
-in a wet world. Never silently install the external diagnostic policy or join incompatible terrain
-interpreters. General hardness/tool tuning, work mandates, mining presentation, collapse/hazards,
-continuous fluids, streaming and production performance remain open.
+Next work must prove usable multi-level geometry and ordinary stairs/vertical routing, occupied-floor
+and tunnel consequences, work/task interaction at multiple elevations, and construction damage/removal.
+The assisted ledge primitive is not automatic stair walking or full structural safety. Player action
+offers, controls and choreography must use actual authority elevation. Broader generated extraction
+ownership, variable hardness/tools and mining presentation remain open. Wet composition still requires
+durable sealing policy, real openings, displaced volume and conserved spill handling; never install
+external diagnostic policy or discard a dry/wet owner's invariants to combine them.
 
 Prior dependencies remain preserved:
 
+- [Durable excavation](p01/live-excavation/README.md), `7df18df`, milestone
+  `codex/milestone-live-excavation`: earned selected-cell work, actual player/NPC tool/reach/control,
+  exact source entitlement and atomic terrain/custody publication;1,141 tests,144 ordinary Host calls/
+  two process kills, exact history and native headless foundation/farm. Profile-ten dry extraction;
+  no collapse, generated rights, wet breach or production balance/performance claim.
 - [Reservoir boundary assessment](p01/reservoir-boundaries/README.md), `5dd8110`, milestone
   `codex/milestone-reservoir-boundaries`: exact terrain/completed-material coverage under external
   sealing policy, nominal interiors, gaps/obstructions and unproved gates; 1,118 tests and21 read-only

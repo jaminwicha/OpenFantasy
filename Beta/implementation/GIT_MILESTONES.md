@@ -44,8 +44,9 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-runoff-controls` | `204d262` | Durable funded admission/cancellation inside profile eight, exclusive reservation purposes and exact capacity-only recovery; 1,059 managed cases, 73 real host calls/six process kills, headless foundation/farm and bounded native critique. [Evidence](p01/runoff-commands/README.md). Existing source holds only; no terrain wall proof, live flow, player controls, performance or full phase acceptance. |
 | `codex/milestone-reservoir-transport` | `6ef6e83` | Actual conserved discrete gravity-gated delivery in fresh profile nine, shared step throughput, reading holds and exact source/history; 1,081 distinct managed cases, 95 operator calls/eight process kills and headless foundation/farm. [Evidence](p01/reservoir-transport/README.md). Authored seals/fixed topology; no continuous fluids, terrain support, flooding, player controls, performance or full phase acceptance. |
 | `codex/milestone-reservoir-boundaries` | `5dd8110` | Exact read-only nominal containment assessment against retained terrain and completed material, explicit sealing/thickness policy, gap/obstruction/gate failures and recorded-world operator; 1,118 tests, 21 actual inspections/five unchanged saves and headless foundation. [Evidence](p01/reservoir-boundaries/README.md). No changed world admission, terrain mutation, strength, breach dynamics, physical gate proof or full phase acceptance. |
-
 | `codex/milestone-live-excavation` | `7df18df` | Durable selected-cell excavation in fresh dry profile ten: actual player/NPC effort, exact source entitlement, atomic whole-cell issuance/removal and direct support refusal; 1,141 tests,144 ordinary Host calls/two process kills, exact history and native headless foundation/farm. [Evidence](p01/live-excavation/README.md) retains corrected critic findings and an unconfirmed initial parallel-build child exit followed by a clean full serial build. No generated mining frontier, wet-world composition, collapse, player mining controls, production balance/performance or full-gate closure. |
+
+| `codex/milestone-constructed-support` | `2dcdd79` | Fresh dry profile11 with completed-member actor footing, exact XY support and earned assisted vertical traversal;1,173 tests,26 real Host calls/two process kills, exact history and native headless foundation/farm. [Evidence](p01/constructed-footing/README.md) proves real quest-funded NPC construction then actual climb/reopen. No ordinary stair routing, load strength/collapse, wet-world composition, player climb controls, production performance or full-gate closure. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -151,3 +152,8 @@ The live-excavation marker preserves source, timeless reference and retained qua
 `7df18df50b6fd349473882594d98828b06d874bf`. Development remains on `codex/runtime-foundation`;
 prior milestones, all frozen designs and unrelated staged predecessor changes remain intact.
 No checkout switch, force update, push, merge or full-phase closure accompanied this checkpoint.
+
+The constructed-support marker preserves source, timeless reference and qualification at
+`2dcdd798bd569c503aac3b5ef387ebafe71711f4`. Development remains on `codex/runtime-foundation`;
+all prior milestones, frozen specifications and the exact unrelated predecessor index remain intact.
+No checkout switch, force update, push, merge or full-phase closure accompanies this checkpoint.
