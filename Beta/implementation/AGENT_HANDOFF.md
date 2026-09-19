@@ -32,46 +32,49 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `6ef6e83`, preserved on `codex/milestone-reservoir-transport`;
-[packet](p01/reservoir-transport/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `5dd8110`, preserved on `codex/milestone-reservoir-boundaries`;
+[packet](p01/reservoir-boundaries/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Fresh profile nine now moves actual conserved water through explicit adjacent gravity gates.
-An authorized schedule pins the complete owner and an existing funded reservation, with an explicit
-arrival after the forcing interval. Each wet basin's exact source intervals reach its own terminal.
-All source debits, receiver credits and capacity retirement publish together. Final actual heads,
-sills and shared per-step gate limits constrain delivery; blocked stages retain water and obligations.
-Partial delivery is not inferred by changing original funding. Closed gates preserve independent
-reservoir levels between stages; fixed watertight walls remain authored assumptions.
+Reservoir boundary assessment now reads actual retained terrain, full corporeal clearance and completed
+construction from the same world. It checks the whole nominal interior, floor and exposed walls,
+including risers and region seams, under an explicit pinned sealing-material/thickness policy. Exact
+millimetre members and installed output provenance determine constructed coverage; incomplete projects,
+input stock and rounded colliders cannot supply seals. Positive-area gaps, missing terrain, obstructions,
+coordinate/work limits and the transport profile's unproved physical gates prevent success.
 
-Actions precede due deliveries. Opening a reading hold in that step blocks transfer; held interactions
-and closing the hold provide no catch-up. The persisted boundary accepts one selected exploration step
-at a time. Completion and cancellation remain distinct. The existing transaction/replay/history owns
-all material and stage changes; profile eight retains its no-automatic-settlement behavior. The actual
-host supports creation and per-vessel/stage diagnostics. Default farm/presentation remain unchanged.
+The host's `--inspect-reservoir-boundaries` command assesses an exact recorded commit and external
+policy, returning complete world/reservoir/policy pins and named failures without changing the save.
+This is a derived read-only assessment, not a new world profile, action gate, pressure-strength proof,
+live breach model or implicit policy migration. Existing reservoir/transport admission remains unchanged.
 
-[Qualification](p01/reservoir-transport/qualification/verification-summary.json): clean full solution build;
-**1,081 distinct managed cases** (703 Core +375 Hosting full regression, then three added tamper cases),
-22 new and zero skips. 22 transport, 28 prior-reservoir, 27 prior-network and 18 runoff-control host calls
-pass, including **eight actual process kills**. The new kills bracket the autonomous 600-litre delivery;
-source 1,300→700, receiver 50→650, total 1,350 litres and all nine exact history boundaries are checked.
-Actual Godot headless foundation/farm pass. All 199 architecture links, 22 frozen hashes and the exact
-19-file predecessor index pass. The full all-systems verifier was not run; targeted checks were invoked
-directly. No rendered, device, export or performance acceptance is claimed.
+[Qualification](p01/reservoir-boundaries/qualification/verification-summary.json): clean full solution
+build; **1,118 managed cases (726 Core +392 Hosting), 37 new, zero skips**. 21 actual host inspections
+preserve five databases byte-for-byte. A tank completed by real funded NPC work qualifies; variants with
+a one-millimetre slit, displaced wall or intrusive material fail. Before/after-work and reverse historical
+reads preserve exact outcomes. All 15 focused fixture artifacts match independent full-suite recreation.
+The test sheet material/work calibration is synthetic; no production balance or strength claim follows.
+Terrain fixtures begin from authored excavations, not a live mining command.
 
-Native critique tightened public physical rebinding and direct fresh-root admission. Mixed-gate failure
-rolls back fragments and material; valid gate substitution with matching stored hashes in genesis,
-checkpoint or head fails journal replay. Failed development fixtures/analyzers and their dispositions
-remain in the packet. Same-change timeless references and verifier hooks are maintained; no gate,
-timeout or threshold was weakened. No Claude or other external paid-model call was used.
+Actual Godot headless foundation passes. Gameplay adapters are unchanged, so farm/rendered/device runs
+were not repeated or newly claimed. All 211 architecture links, 22 frozen hashes and the exact 19-file
+predecessor index pass. The complete all-systems verifier was not run; its targeted checks were invoked
+directly. Expected test-first compiler failure remains retained. Bounded native source/reference review
+found no remaining consequential mismatch. No threshold, deadline or gate was weakened, and no Claude
+or other external paid-model call was used.
 
-Delivery is discrete, indivisible and separately funded, with at most 256 gates and 4,096 journal entries.
-Terrain-supported boundaries, partial/continuous flow, breach/flooding, actor exposure, phase changes,
-streaming, encounter-scoped hydraulic Wait and lifetime compaction remain open. New funding allocation,
-canceled-source release, player-facing controls and played-save migration are not implemented. Maximum
-mixed workloads, production performance and full campaign/native/rendered acceptance remain unqualified.
+Next integration must couple terrain edits, material custody, actor/structure support, containment and
+hazard consequences in one durable publication. It must preserve water through breaches and define real
+physical gate shutters/openings and displaced volume. External diagnostic policy cannot silently become
+saved simulation law. The local stratified terrain and macro material interpreter remain separate.
+Strength, damage/maintenance, continuous/partial flow, exposure, phases, encounter-scoped hydraulic Wait,
+streaming, production workloads/performance and full campaign/native/rendered acceptance remain open.
 
 Prior dependencies remain preserved:
 
+- [Durable reservoir transport](p01/reservoir-transport/README.md), `6ef6e83`, milestone
+  `codex/milestone-reservoir-transport`: fresh profile-nine actual conserved discrete gate delivery,
+  shared step throughput, reading holds and exact history; 1,081 distinct managed cases, 95 host calls/
+  eight process kills. Authored walls/fixed geometry; no continuous fluids, physical gate or terrain proof.
 - [Funded runoff controls](p01/runoff-commands/README.md), `204d262`, milestone
   `codex/milestone-runoff-controls`: durable admission/cancellation, exclusive reservation purposes and
   capacity-only history; 1,059 tests, 73 operator calls/six process kills. Existing source holds only.
@@ -107,8 +110,8 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include terrain-supported vessel boundaries and construction/occupancy/custody
-composition, plus complete macro crust/boundary history, climate/water partitioning and coast connections.
+Next dependencies include durable containment policy and terrain/construction/occupancy/custody
+publication, plus complete macro crust/boundary history, climate/water partitioning and coast connections.
 Extending discrete transport requires original/delivered/remaining source intervals and incoming holds,
 pressure-dependent flow, topology revalidation, exposure, encounter Wait and exact history. A retained
 local terrain interpreter and complete allocation/world ownership must compose occupancy, construction,

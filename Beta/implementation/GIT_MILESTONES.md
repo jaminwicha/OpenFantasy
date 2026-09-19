@@ -43,6 +43,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-reservoir-persistence` | `a3789c1` | Fresh profile-eight exclusive physical owner; atomic material actions, canonical recovery/history, full 1,035-case regression plus five stronger follow-ups (1,036 distinct), 55 real operator calls/four process kills and native headless foundation/farm. [Evidence](p01/reservoir-admission/README.md). Assumed watertight supports; no live flow, terrain support, migration, performance or full phase acceptance. |
 | `codex/milestone-runoff-controls` | `204d262` | Durable funded admission/cancellation inside profile eight, exclusive reservation purposes and exact capacity-only recovery; 1,059 managed cases, 73 real host calls/six process kills, headless foundation/farm and bounded native critique. [Evidence](p01/runoff-commands/README.md). Existing source holds only; no terrain wall proof, live flow, player controls, performance or full phase acceptance. |
 | `codex/milestone-reservoir-transport` | `6ef6e83` | Actual conserved discrete gravity-gated delivery in fresh profile nine, shared step throughput, reading holds and exact source/history; 1,081 distinct managed cases, 95 operator calls/eight process kills and headless foundation/farm. [Evidence](p01/reservoir-transport/README.md). Authored seals/fixed topology; no continuous fluids, terrain support, flooding, player controls, performance or full phase acceptance. |
+| `codex/milestone-reservoir-boundaries` | `5dd8110` | Exact read-only nominal containment assessment against retained terrain and completed material, explicit sealing/thickness policy, gap/obstruction/gate failures and recorded-world operator; 1,118 tests, 21 actual inspections/five unchanged saves and headless foundation. [Evidence](p01/reservoir-boundaries/README.md). No changed world admission, terrain mutation, strength, breach dynamics, physical gate proof or full phase acceptance. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -136,3 +137,10 @@ at its commit boundary, not a complete fluid simulation or changed default farm.
 on `codex/runtime-foundation`; prior markers, 22 frozen specifications and the exact unrelated predecessor
 index remain preserved. No checkout switch, force move, push, merge or full acceptance closure accompanies
 this checkpoint.
+
+The reservoir-boundaries branch preserves source, timeless references and bounded qualification at
+`5dd8110fbb88a6993263f8aac9d1af90e9da66bb`. It qualifies an exact derived assessment over retained terrain
+and actual completed construction; it does not convert saved reservoir profiles into coupled fluid/terrain
+authorities. Development remains on `codex/runtime-foundation`; prior milestones, frozen specs and the
+exact unrelated predecessor index remain intact. No checkout switch, force move, push, merge or full
+game/phase acceptance accompanies this marker.
