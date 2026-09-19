@@ -42,6 +42,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-reservoir-geometry` | `f00e637` | Finite authored watertight vessels, exact actual/projected fills, source/buffer/receiver composition and pinned wrapper plans; 1,018 tests, 26 host inspections and an independent binary-search fill oracle. [Evidence](p01/reservoir-geometry/README.md) preserves test-first failure, old capacity bytes and 4,096-column bounds. No live flow, terrain-wall proof, durable world admission, production performance or full-gate closure. |
 | `codex/milestone-reservoir-persistence` | `a3789c1` | Fresh profile-eight exclusive physical owner; atomic material actions, canonical recovery/history, full 1,035-case regression plus five stronger follow-ups (1,036 distinct), 55 real operator calls/four process kills and native headless foundation/farm. [Evidence](p01/reservoir-admission/README.md). Assumed watertight supports; no live flow, terrain support, migration, performance or full phase acceptance. |
 | `codex/milestone-runoff-controls` | `204d262` | Durable funded admission/cancellation inside profile eight, exclusive reservation purposes and exact capacity-only recovery; 1,059 managed cases, 73 real host calls/six process kills, headless foundation/farm and bounded native critique. [Evidence](p01/runoff-commands/README.md). Existing source holds only; no terrain wall proof, live flow, player controls, performance or full phase acceptance. |
+| `codex/milestone-reservoir-transport` | `6ef6e83` | Actual conserved discrete gravity-gated delivery in fresh profile nine, shared step throughput, reading holds and exact source/history; 1,081 distinct managed cases, 95 operator calls/eight process kills and headless foundation/farm. [Evidence](p01/reservoir-transport/README.md). Authored seals/fixed topology; no continuous fluids, terrain support, flooding, player controls, performance or full phase acceptance. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -127,4 +128,11 @@ The runoff-controls branch preserves source, timeless reference updates and boun
 commitments, not liquid movement or changed default gameplay. Development remains on
 `codex/runtime-foundation`; prior markers, 22 frozen specifications and the exact unrelated predecessor
 index remain intact. No checkout switch, force move, push, merge or full acceptance closure accompanies
+this checkpoint.
+
+The reservoir-transport branch preserves source, timeless references and bounded qualification at
+`6ef6e83808c7711074a35190f99b5e2e27896b57`. It proves actual finite water transfer, including recovery
+at its commit boundary, not a complete fluid simulation or changed default farm. Development remains
+on `codex/runtime-foundation`; prior markers, 22 frozen specifications and the exact unrelated predecessor
+index remain preserved. No checkout switch, force move, push, merge or full acceptance closure accompanies
 this checkpoint.

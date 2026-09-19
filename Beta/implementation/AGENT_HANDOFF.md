@@ -32,41 +32,49 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `204d262`, preserved on `codex/milestone-runoff-controls`;
-[packet](p01/runoff-commands/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `6ef6e83`, preserved on `codex/milestone-reservoir-transport`;
+[packet](p01/reservoir-transport/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Profile eight now executes durable funded runoff admission/cancellation inside its existing complete
-physical owner. Requests pin actor/control, full reservoir hash and capacity revision. Admission
-re-prepares existing source-held funds against the fixed domain; its interval cannot begin before the
-selected advancing step's publication calendar. Cancellation releases incoming headroom and closes
-the ID permanently while preserving actual stock and source holds. Reading pauses block both controls,
-including a hold opened earlier in the same batch. Following material actions see the latest accepted
-owner; stale requests reject without implicit retry. Existing transactions and exact history retain
-capacity-only changes and refusals. The bounded action-version-six codec leaves world formats, prior
-command encodings, global byte bounds and schema-three persistence unchanged; older profiles reject it.
+Fresh profile nine now moves actual conserved water through explicit adjacent gravity gates.
+An authorized schedule pins the complete owner and an existing funded reservation, with an explicit
+arrival after the forcing interval. Each wet basin's exact source intervals reach its own terminal.
+All source debits, receiver credits and capacity retirement publish together. Final actual heads,
+sills and shared per-step gate limits constrain delivery; blocked stages retain water and obligations.
+Partial delivery is not inferred by changing original funding. Closed gates preserve independent
+reservoir levels between stages; fixed watertight walls remain authored assumptions.
 
-[Qualification](p01/runoff-commands/qualification/verification-summary.json): clean full solution build;
-**1,059 managed tests (692 Core +367 Hosting), 23 new, zero skips**. 18 new-command, 28 prior-reservoir and
-27 prior-network real host calls pass, including **six actual process kills**, independent action/admission
-byte checks and exact read-only history. Actual Godot headless foundation/farm pass. All 182 architecture
-links, 22 frozen hashes and the exact 19-file predecessor index pass. The all-systems verifier was not
-run; its targeted harnesses were invoked directly. No rendered, physical-device or performance claim.
+Actions precede due deliveries. Opening a reading hold in that step blocks transfer; held interactions
+and closing the hold provide no catch-up. The persisted boundary accepts one selected exploration step
+at a time. Completion and cancellation remain distinct. The existing transaction/replay/history owns
+all material and stage changes; profile eight retains its no-automatic-settlement behavior. The actual
+host supports creation and per-vessel/stage diagnostics. Default farm/presentation remain unchanged.
 
-Native critique exposed a real reservation-purpose collision: independently valid runoff and
-quest/construction domains could share a material hold ID. Both pending and closed collision tests
-reproduced failure before the world-composition and command checks were added; all now pass. Failures
-and bounded review limits remain in the packet. Timeless references and verifier hooks are updated;
-no acceptance gate, threshold or timeout was weakened.
+[Qualification](p01/reservoir-transport/qualification/verification-summary.json): clean full solution build;
+**1,081 distinct managed cases** (703 Core +375 Hosting full regression, then three added tamper cases),
+22 new and zero skips. 22 transport, 28 prior-reservoir, 27 prior-network and 18 runoff-control host calls
+pass, including **eight actual process kills**. The new kills bracket the autonomous 600-litre delivery;
+source 1,300→700, receiver 50→650, total 1,350 litres and all nine exact history boundaries are checked.
+Actual Godot headless foundation/farm pass. All 199 architecture links, 22 frozen hashes and the exact
+19-file predecessor index pass. The full all-systems verifier was not run; targeted checks were invoked
+directly. No rendered, device, export or performance acceptance is claimed.
 
-This remains a fresh construction/reservoir profile. Default farm/presentation and lived saves are
-unchanged. Funding must already be reserved under an admitted ID; there is no source-release command,
-new budget allocation or player-facing control offer. Geometry/domain are fixed and watertight supports
-remain authored assumptions. Terrain wall proof, inlets/outlets, arrival/settlement, live flow,
-backpressure, phase changes and hydraulic Wait remain open. Maximum combined workloads, production
-performance and full native/rendered acceptance remain unqualified.
+Native critique tightened public physical rebinding and direct fresh-root admission. Mixed-gate failure
+rolls back fragments and material; valid gate substitution with matching stored hashes in genesis,
+checkpoint or head fails journal replay. Failed development fixtures/analyzers and their dispositions
+remain in the packet. Same-change timeless references and verifier hooks are maintained; no gate,
+timeout or threshold was weakened. No Claude or other external paid-model call was used.
+
+Delivery is discrete, indivisible and separately funded, with at most 256 gates and 4,096 journal entries.
+Terrain-supported boundaries, partial/continuous flow, breach/flooding, actor exposure, phase changes,
+streaming, encounter-scoped hydraulic Wait and lifetime compaction remain open. New funding allocation,
+canceled-source release, player-facing controls and played-save migration are not implemented. Maximum
+mixed workloads, production performance and full campaign/native/rendered acceptance remain unqualified.
 
 Prior dependencies remain preserved:
 
+- [Funded runoff controls](p01/runoff-commands/README.md), `204d262`, milestone
+  `codex/milestone-runoff-controls`: durable admission/cancellation, exclusive reservation purposes and
+  capacity-only history; 1,059 tests, 73 operator calls/six process kills. Existing source holds only.
 - [Durable physical reservoirs](p01/reservoir-admission/README.md), `a3789c1`, milestone
   `codex/milestone-reservoir-persistence`: exclusive profile-eight wrapper, atomic material gates and exact
   recovery; 1,036 distinct cases across full regression/follow-up, 55 host calls/four process kills.
@@ -99,12 +107,13 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include terrain-supported vessel boundaries, inlet/outlet connections and explicit
-durable hydraulic operations, plus the complete macro profile: crust/boundary history, climate/water partitioning and coast
-connections. Live hydraulic stages need arrival rules, backpressure, topology revalidation, encounter
-Wait and exact history. A retained local terrain interpreter and complete allocation/world ownership
-must compose occupancy, construction, support and custody before live terrain admission. Never reroll
-established facts, overwrite lived places or implicitly migrate saves. Follow the full P01/P02 plan and
+Next dependencies include terrain-supported vessel boundaries and construction/occupancy/custody
+composition, plus complete macro crust/boundary history, climate/water partitioning and coast connections.
+Extending discrete transport requires original/delivered/remaining source intervals and incoming holds,
+pressure-dependent flow, topology revalidation, exposure, encounter Wait and exact history. A retained
+local terrain interpreter and complete allocation/world ownership must compose occupancy, construction,
+support and custody before live terrain admission. Never reroll established facts, overwrite lived places
+or implicitly migrate saves. Follow the full P01/P02 plan and
 [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md). Development stays on
 `codex/runtime-foundation`.
 
