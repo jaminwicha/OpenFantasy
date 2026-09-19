@@ -98,6 +98,11 @@ Fishing, hunting, writing, acting, acrobatics and other professions have concret
 results. Skill use can satisfy puzzle or narrative predicates through ordinary actions. A skill name
 alone is insufficient integration; its resources, legality, learning and performance cues must agree.
 
+The standalone [structural load model](structural-loads.md) binds exact completed members and actor
+loads to explicitly rated supports. Its bounded failure plan conserves mass and can resume canonically;
+it does not change physical placement, retire material or publish collapse. Load survival and complete
+spatial footing are separate obligations.
+
 ## Design contract: construction, condition and management
 
 Rooms, floors, subfloors, tunnels, sewers, castles, crypts and towns occupy real terrain and structures.

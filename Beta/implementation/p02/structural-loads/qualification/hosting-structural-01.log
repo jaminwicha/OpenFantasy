@@ -1,0 +1,52 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.60]     OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Real_funded_members_and_occupants_redistribute_after_one_support_is_lost [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Real_funded_members_and_occupants_redistribute_after_one_support_is_lost [1 s]
+  Error Message:
+   System.ArgumentException : Declared bearings require a positive physical face and cannot override a ground member.
+  Stack Trace:
+     at OpenFantasy.Core.Structures.ConstructionBearingTemplate.ValidateFor(ConstructionDefinition definition) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs:line 82
+   at OpenFantasy.Core.Structures.ConstructionBearingModel.Bind(WorldSnapshot world, IEnumerable`1 templates, IEnumerable`1 foundations, StructuralMassCatalog masses, IEnumerable`1 conditions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingModel.cs:line 108
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Bind(WorldSnapshot world, UInt64 rightLegCapacity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 126
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Real_funded_members_and_occupants_redistribute_after_one_support_is_lost() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 19
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.47]     OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Redistributed_overload_reaches_the_actual_upper_occupant_and_restarts_mid_resolution [FAIL]
+[xUnit.net 00:00:04.20]     OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Last_support_removal_reaches_all_dependent_member_and_actor_loads [FAIL]
+[xUnit.net 00:00:04.37]     OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Unqualified_anchors_templates_and_member_damage_cannot_hide_behind_contact [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Redistributed_overload_reaches_the_actual_upper_occupant_and_restarts_mid_resolution [872 ms]
+  Error Message:
+   System.ArgumentException : Declared bearings require a positive physical face and cannot override a ground member.
+  Stack Trace:
+     at OpenFantasy.Core.Structures.ConstructionBearingTemplate.ValidateFor(ConstructionDefinition definition) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs:line 82
+   at OpenFantasy.Core.Structures.ConstructionBearingModel.Bind(WorldSnapshot world, IEnumerable`1 templates, IEnumerable`1 foundations, StructuralMassCatalog masses, IEnumerable`1 conditions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingModel.cs:line 108
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Bind(WorldSnapshot world, UInt64 rightLegCapacity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 126
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Redistributed_overload_reaches_the_actual_upper_occupant_and_restarts_mid_resolution() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 47
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Last_support_removal_reaches_all_dependent_member_and_actor_loads [727 ms]
+  Error Message:
+   System.ArgumentException : Declared bearings require a positive physical face and cannot override a ground member.
+  Stack Trace:
+     at OpenFantasy.Core.Structures.ConstructionBearingTemplate.ValidateFor(ConstructionDefinition definition) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs:line 82
+   at OpenFantasy.Core.Structures.ConstructionBearingModel.Bind(WorldSnapshot world, IEnumerable`1 templates, IEnumerable`1 foundations, StructuralMassCatalog masses, IEnumerable`1 conditions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingModel.cs:line 108
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Bind(WorldSnapshot world, UInt64 rightLegCapacity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 126
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Last_support_removal_reaches_all_dependent_member_and_actor_loads() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 75
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Unqualified_anchors_templates_and_member_damage_cannot_hide_behind_contact [169 ms]
+  Error Message:
+   System.ArgumentException : Declared bearings require a positive physical face and cannot override a ground member.
+  Stack Trace:
+     at OpenFantasy.Core.Structures.ConstructionBearingTemplate.ValidateFor(ConstructionDefinition definition) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs:line 82
+   at OpenFantasy.Core.Structures.ConstructionBearingModel.Bind(WorldSnapshot world, IEnumerable`1 templates, IEnumerable`1 foundations, StructuralMassCatalog masses, IEnumerable`1 conditions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Structures/ConstructionBearingModel.cs:line 108
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Bind(WorldSnapshot world, UInt64 rightLegCapacity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 126
+   at OpenFantasy.Hosting.Tests.WorldStorage.StructuralConstructionWorldTests.Unqualified_anchors_templates_and_member_damage_cannot_hide_behind_contact() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StructuralConstructionWorldTests.cs:line 90
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/structural-loads/qualification/hosting-structural-01/_mac_2026-09-19_18_18_13_net8.0.trx
+
+Failed!  - Failed:     4, Passed:     0, Skipped:     0, Total:     4, Duration: 3 s - OpenFantasy.Hosting.Tests.dll (net8.0)

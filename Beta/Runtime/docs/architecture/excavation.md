@@ -91,6 +91,11 @@ installed-floor support and assisted traversal. Excavation preserves that suppor
 reconstructing terrain and occupancy; it cannot discard a constructed support dependency. Structure
 bases remain terrain-grounded, and gathering anchors retain their terrain-only support contract.
 
+The standalone [structural failure planner](structural-loads.md) provides rated load propagation and
+canonical bounded continuations. It does not replace excavation's direct-support refusal. Physical
+collapse requires a complete coupled publication with construction lifecycle, rechecked occupant
+contact, falling or checked landings, and conserved debris ownership.
+
 Selected dry-cell extraction supplies a durable integration boundary for material and local geometry.
 General mining still requires variable tools/hardness, accessible vertical travel, extraction catalogs
 prepared from world generation, broader rights and work allocation, structural failure, breach/spill

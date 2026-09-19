@@ -330,3 +330,13 @@ colliders do not count as seals. Negative coverage returns a successful inspecti
 qualify the authored transport gates. See [boundary contracts](docs/architecture/reservoir-boundaries.md).
 The verification fixture is retained with `OPENFANTASY_RESERVOIR_BOUNDARY_EVIDENCE`; the verifier invokes
 `tools/check_reservoir_boundaries.py` against actual terrain and NPC-built tank saves.
+
+### Standalone structural failure inspection
+
+`--inspect-structural-resolution <checkpoint.bin> <trusted-graph.bin> <dependency-pin>` validates a
+bounded canonical structural checkpoint against separately supplied expected dependencies, resumes its
+immutable failure plan, and reports exact load accounting and result hashes. It reads files only; supplied
+ratings are not authenticated world policy and no collapse is published. See the
+[structural contract](docs/architecture/structural-loads.md) for mass ownership, rated contact, continuation
+cost and the separate obligation to recheck physical footing. `OPENFANTASY_STRUCTURAL_LOAD_EVIDENCE`
+retains the actual funded/occupied construction fixture used by `tools/check_structural_loads.py`.

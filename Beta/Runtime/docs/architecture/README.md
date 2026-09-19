@@ -18,6 +18,7 @@ different kind of person.
 | [Local excavation](excavation.md) | How does mining couple labor, source custody and terrain removal in one durable action? |
 | [Constructed footing](constructed-footing.md) | How do completed floors support actors and preserve safe assisted traversal through saves? |
 | [Stair navigation](stair-navigation.md) | How do ordinary steps and routes preserve real elevations and actors above/below each other? |
+| [Structural loads](structural-loads.md) | How do funded members, carried goods, rated bearings and bounded failure plans conserve mass? |
 | [Reservoir transport](reservoir-transport.md) | How do scheduled gates move actual water, preserve provenance and share time/capacity? |
 | [Reservoir boundaries](reservoir-boundaries.md) | What proves floors and walls against actual terrain and completed material, including narrow gaps? |
 | [Actors and society](actors-and-society.md) | How do bodies, knowledge, relationships, cultures, institutions and narratives interact? |

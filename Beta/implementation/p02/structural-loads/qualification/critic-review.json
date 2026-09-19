@@ -1,0 +1,16 @@
+{
+  "kind": "bounded native source critic and narrow corrective recheck",
+  "externalClaudeCalls": 0,
+  "findings": [
+    {
+      "issue": "Copied expected dependency pin did not bind embedded graph",
+      "resolution": "Decode requires exact expected canonical graph or a bound model, before replay; changed mass/capacity regressions pass",
+      "recheck": "resolved"
+    },
+    {
+      "issue": "Actor load survival can coexist with a missing footprint patch or conceal an exposed lower support",
+      "resolution": "Explicit design contract and real geometry regressions; live publication must rederive contact",
+      "recheck": "boundary accurately retained"
+    }
+  ]
+}

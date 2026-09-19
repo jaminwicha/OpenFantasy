@@ -23,6 +23,7 @@ internal sealed class HostApplication
     private readonly WatershedRunoffCapacityOperator _runoffCapacity = new();
     private readonly LiquidReservoirOperator _reservoirs = new();
     private readonly ReservoirBoundaryOperator _reservoirBoundaries = new();
+    private readonly StructuralLoadOperator _structuralLoads = new();
     private readonly ComposedWorldOperator _composed = new();
 
     public HostApplication(TextWriter output)
@@ -56,6 +57,8 @@ internal sealed class HostApplication
                 ["--inspect-liquid-reservoirs", var path] => _reservoirs.Inspect(path),
                 ["--inspect-reservoir-boundaries", var database, var revision, var policy] =>
                     _reservoirBoundaries.Inspect(database, revision, policy),
+                ["--inspect-structural-resolution", var checkpoint, var graph, var dependencyPin] =>
+                    _structuralLoads.Inspect(checkpoint, graph, dependencyPin),
                 ["--create-watershed-world", var database, var basis, var watershed] =>
                     _composed.CreateWatershedWorld(database, basis, watershed),
                 ["--create-watershed-network-world", var database, var basis, var network] =>
@@ -110,6 +113,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-runoff-capacity <runoff-capacity.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-liquid-reservoirs <reservoirs.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-reservoir-boundaries <world.sqlite> <commit-revision> <seal-policy.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-structural-resolution <checkpoint.bin> <trusted-graph.bin> <dependency-pin>");
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>");

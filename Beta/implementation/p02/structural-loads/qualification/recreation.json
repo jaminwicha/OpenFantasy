@@ -1,0 +1,18 @@
+{
+  "sameBytes": true,
+  "files": 5,
+  "original": {
+    "expected.json": "7639c5df0afdc393315ee3304813634234ab15733dde083afbb52f5ce0154170",
+    "pending.bin": "3b333358062abd19a27dc4736d9a6134a023f65e00d62c414616c204303a8299",
+    "graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+    "completed.bin": "fe537e9be830f41936495ddf43ef320661ddc12153faed564442fb5e4780261b",
+    "occupied-world.sqlite": "6db67898f8252f88226e15ac9fc1993c87053542cea9f285a0288e38b87669a8"
+  },
+  "recreated": {
+    "expected.json": "7639c5df0afdc393315ee3304813634234ab15733dde083afbb52f5ce0154170",
+    "pending.bin": "3b333358062abd19a27dc4736d9a6134a023f65e00d62c414616c204303a8299",
+    "graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+    "completed.bin": "fe537e9be830f41936495ddf43ef320661ddc12153faed564442fb5e4780261b",
+    "occupied-world.sqlite": "6db67898f8252f88226e15ac9fc1993c87053542cea9f285a0288e38b87669a8"
+  }
+}

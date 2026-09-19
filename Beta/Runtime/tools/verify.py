@@ -41,6 +41,7 @@ def main():
     env["OPENFANTASY_RUNOFF_CAPACITY_EVIDENCE"] = str(test_results / "runoff-capacity-fixture")
     env["OPENFANTASY_EXCAVATION_EVIDENCE"] = str(test_results / "excavation-fixture")
     env["OPENFANTASY_CONSTRUCTED_SUPPORT_EVIDENCE"] = str(test_results / "constructed-support-fixture")
+    env["OPENFANTASY_STRUCTURAL_LOAD_EVIDENCE"] = str(test_results / "structural-load-fixture")
     env["OPENFANTASY_STAIR_NAVIGATION_EVIDENCE"] = str(test_results / "stair-navigation-fixture")
     env["OPENFANTASY_RESERVOIR_BOUNDARY_EVIDENCE"] = str(test_results / "reservoir-boundary-fixture")
     env["OPENFANTASY_RESERVOIR_TRANSPORT_EVIDENCE"] = str(test_results / "reservoir-transport-fixture")
@@ -154,6 +155,10 @@ def main():
         run("live-excavation-persistence", [sys.executable, root / "tools/check_live_excavation.py",
             "--dotnet", dotnet, "--fixture", test_results / "excavation-fixture",
             "--output", artifacts / "live-excavation.json"])
+
+        run("structural-load-planning", [sys.executable, root / "tools/check_structural_loads.py",
+            "--dotnet", dotnet, "--fixture", test_results / "structural-load-fixture",
+            "--output", artifacts / "structural-loads.json"])
 
         run("constructed-support-persistence", [sys.executable, root / "tools/check_constructed_support.py",
             "--dotnet", dotnet, "--fixture", test_results / "constructed-support-fixture",

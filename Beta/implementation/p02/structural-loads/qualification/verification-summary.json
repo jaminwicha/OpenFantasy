@@ -1,0 +1,184 @@
+{
+  "scope": "Standalone structural failure planning bound to actual funded construction and actor loads; no world consequences published",
+  "status": "passed",
+  "build": {
+    "file": "build-01.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "total": 1241,
+    "core": 810,
+    "hosting": 431,
+    "new": 52,
+    "skipped": 0,
+    "reports": [
+      {
+        "file": "full-tests/_mac_2026-09-19_18_28_10_net8.0.trx",
+        "total": 810,
+        "executed": 810,
+        "passed": 810,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      {
+        "file": "full-tests/_mac_2026-09-19_18_28_22_net8.0.trx",
+        "total": 431,
+        "executed": 431,
+        "passed": 431,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      }
+    ]
+  },
+  "host": {
+    "report": "host-01.json",
+    "freshProcessCalls": 14,
+    "independentCanonicalResult": true,
+    "allFixtureFilesUnchanged": true,
+    "worldPublication": false,
+    "externalProcessKills": 0
+  },
+  "native": {
+    "foundation": "godot-foundation.log",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "recreation": {
+    "sameBytes": true,
+    "files": 5,
+    "original": {
+      "expected.json": "7639c5df0afdc393315ee3304813634234ab15733dde083afbb52f5ce0154170",
+      "pending.bin": "3b333358062abd19a27dc4736d9a6134a023f65e00d62c414616c204303a8299",
+      "graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "completed.bin": "fe537e9be830f41936495ddf43ef320661ddc12153faed564442fb5e4780261b",
+      "occupied-world.sqlite": "6db67898f8252f88226e15ac9fc1993c87053542cea9f285a0288e38b87669a8"
+    },
+    "recreated": {
+      "expected.json": "7639c5df0afdc393315ee3304813634234ab15733dde083afbb52f5ce0154170",
+      "pending.bin": "3b333358062abd19a27dc4736d9a6134a023f65e00d62c414616c204303a8299",
+      "graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "completed.bin": "fe537e9be830f41936495ddf43ef320661ddc12153faed564442fb5e4780261b",
+      "occupied-world.sqlite": "6db67898f8252f88226e15ac9fc1993c87053542cea9f285a0288e38b87669a8"
+    }
+  },
+  "preservation": {
+    "architectureLinks": 271,
+    "missingLinks": [],
+    "frozenSpecCount": 22,
+    "frozenSpecHashes": {
+      "spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md": true,
+      "spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md": true,
+      "spec-v1_1/COVERAGE.json": true,
+      "spec-v1_1/CRITIC_REVIEW.md": true,
+      "spec-v1_1/CROSS_SYSTEM_SYNERGIES.md": true,
+      "spec-v1_1/DECISIONS.md": true,
+      "spec-v1_1/ECOLOGY_AND_FLUIDS.md": true,
+      "spec-v1_1/GDD.md": true,
+      "spec-v1_1/GENERATION_VALIDATION.md": true,
+      "spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md": true,
+      "spec-v1_1/IMPLEMENTATION_HANDOFF.md": true,
+      "spec-v1_1/IMPLEMENTATION_PLAN.md": true,
+      "spec-v1_1/INTEGRATION_CRITIC.md": true,
+      "spec-v1_1/LANGUAGE_AND_AFTERLIFE.md": true,
+      "spec-v1_1/LOCAL_REUSE_DECISIONS.md": true,
+      "spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md": true,
+      "spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md": true,
+      "spec-v1_1/PRESENTATION_CONTRACTS.md": true,
+      "spec-v1_1/README.md": true,
+      "spec-v1_1/REQUIREMENTS.json": true,
+      "spec-v1_1/TECHNICAL_DESIGN.md": true,
+      "spec-v1_1/VALIDATION.md": true
+    },
+    "predecessorStagedCount": 19,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "predecessorFiles": [
+      "README.md",
+      "docs/MILESTONE_8.md",
+      "src/Client/GameController.cs",
+      "src/Client/GameWindows.cs",
+      "src/Net/Protocol.cs",
+      "src/Net/ServerNode.cs",
+      "src/Sim/FrontierGen.cs",
+      "src/Sim/SelfTest.cs",
+      "src/Sim/SettlementGen.cs",
+      "src/Sim/SimConstants.cs",
+      "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+      "src/Sim/SiteGen/SiteFloor.cs",
+      "src/Sim/SiteGen/SiteGenerator.cs",
+      "src/Sim/SiteGen/SiteRecipe.cs",
+      "src/Sim/SiteGen/SiteValidator.cs",
+      "src/Sim/SiteGen/TempleEmbedder.cs",
+      "src/Sim/World.Instances.cs",
+      "src/Sim/World.Settlements.cs",
+      "src/Sim/World.cs"
+    ],
+    "runtimeNamingFiles": 948,
+    "namingViolations": [],
+    "diffCheck": "passed",
+    "pythonAst": "passed"
+  },
+  "review": {
+    "kind": "bounded native source critic and narrow corrective recheck",
+    "externalClaudeCalls": 0,
+    "findings": [
+      {
+        "issue": "Copied expected dependency pin did not bind embedded graph",
+        "resolution": "Decode requires exact expected canonical graph or a bound model, before replay; changed mass/capacity regressions pass",
+        "recheck": "resolved"
+      },
+      {
+        "issue": "Actor load survival can coexist with a missing footprint patch or conceal an exposed lower support",
+        "resolution": "Explicit design contract and real geometry regressions; live publication must rederive contact",
+        "recheck": "boundary accurately retained"
+      }
+    ]
+  },
+  "retainedFailures": [
+    {
+      "file": "core-structural-01.log",
+      "disposition": "New-test ambiguous Version references and required cancellation tokens corrected."
+    },
+    {
+      "file": "hosting-structural-01.log",
+      "disposition": "Fixture incorrectly selected eighth tread as deck leg; actual two legs now selected, real positive-face validation unchanged."
+    },
+    {
+      "file": "core-structural-03.log",
+      "disposition": "Wide-load test exposed checked UInt128-to-UInt64 narrowing; production and test encoder explicitly mask low word, same wide/tamper assertions pass."
+    }
+  ],
+  "allSystemsVerifierRun": false,
+  "openGates": [
+    "Live coupled collapse, terrain and construction lifecycle ownership",
+    "Conserved debris provenance and collateral terrain failure",
+    "Recomputed contact, checked falling/landing and affected occupants",
+    "Durable pending structural work, policy and restart/exact history through actual world publication",
+    "Natural-strata and other custodian/vehicle load ownership",
+    "Wet topology, durable seals/openings and conserved displacement/spills",
+    "Player-facing multi-floor interaction/presentation and production art",
+    "CPU/latency/throughput qualification and complete181 requirements/P00-P14 campaign"
+  ]
+}
