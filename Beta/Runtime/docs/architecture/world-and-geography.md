@@ -361,6 +361,11 @@ teleport stock, supply atmospheric water, bypass encounter Wait or substitute fo
 The full geological design retains porous storage, underdark/cave flooding and heterogeneous liquids;
 unsupported configurations require explicit profiles rather than being coerced into this vessel model.
 
+[Reservoir boundary assessment](reservoir-boundaries.md) independently checks the nominal envelope
+against retained local terrain and exact completed construction under an explicit sealing policy. It
+reports gaps, obstructions and missing dependencies without changing this owner's admission rules.
+A successful read-only geometric assessment does not qualify strength, live breach handling or gates.
+
 ## Runtime binding: exclusive reservoir ownership
 
 [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) profile eight owns one complete

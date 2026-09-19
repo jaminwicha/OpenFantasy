@@ -120,3 +120,7 @@ one existing schema-three transaction. Preview and replay run the same pure plan
 both blocked and completed stages; historical inspection cannot execute an arrival in the live head.
 The locality-wide reading pause is conservative. Encounter-specific dependency closure, held bodies,
 terrain hazards, support motion and region streaming retain their separate design/qualification contracts.
+
+[Physical boundary assessment](reservoir-boundaries.md) reads actual terrain and completed construction
+but explicitly reports these gates as unproved. A gate's authored shared edge supplies neither a
+material shutter nor displaced-volume geometry; nominal wall coverage cannot establish gate operation.

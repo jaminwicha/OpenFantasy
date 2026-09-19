@@ -320,3 +320,13 @@ This is contained reservoir transport with authored boundaries; it does not chan
 or provide a player-facing water interface. `OPENFANTASY_RESERVOIR_TRANSPORT_EVIDENCE` retains the
 fixture used by `tools/check_watershed_network_world.py --profile transport` for actual transfer crashes,
 paused arrivals, source conservation and history. Full verification invokes this same harness.
+
+
+The host can assess reservoir floors/walls against an exact recorded world's terrain and completed
+construction using `--inspect-reservoir-boundaries <world.sqlite> <commit-revision> <seal-policy.bin>`.
+The canonical policy explicitly names sealing materials and minimum thickness; hardness and rounded
+colliders do not count as seals. Negative coverage returns a successful inspection with
+`IsContained = false`. This read-only report does not change admission, simulate breach/strength or
+qualify the authored transport gates. See [boundary contracts](docs/architecture/reservoir-boundaries.md).
+The verification fixture is retained with `OPENFANTASY_RESERVOIR_BOUNDARY_EVIDENCE`; the verifier invokes
+`tools/check_reservoir_boundaries.py` against actual terrain and NPC-built tank saves.

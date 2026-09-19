@@ -1,0 +1,70 @@
+{
+  "status": "passed",
+  "scope": "Exact read-only nominal reservoir boundary assessment over retained terrain, corporeal clearance and completed construction, under an explicit external sealing policy. No coupled world admission or live terrain mutation.",
+  "build": {
+    "log": "build.log",
+    "warnings": 0,
+    "errors": 0,
+    "productionChangesAfterBuild": false
+  },
+  "managed": {
+    "core": {
+      "total": 726,
+      "executed": 726,
+      "passed": 726,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting": {
+      "total": 392,
+      "executed": 392,
+      "passed": 392,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "newCases": 37,
+    "totalPassing": 1118,
+    "coverage": "Full regression on final compiled production/test sources; no skips."
+  },
+  "operator": {
+    "report": "boundary-operator.json",
+    "calls": 21,
+    "unchangedDatabases": 5,
+    "independentGeometry": {
+      "cellMetres": 1,
+      "waterDepthMetres": 2,
+      "boundaryFacesPerVessel": 9,
+      "terrainFloorFacesPerTank": 1,
+      "tankWallFaces": 8,
+      "slitMillimetres": 1,
+      "slitUncoveredSquareMillimetresPerFace": 1000,
+      "failedWestFacesForEachDefectiveTank": 2,
+      "note": "Fixture sheet is synthetic calibrated stock; exact member coverage and material provenance are tested, not hydraulic strength."
+    },
+    "fixtureReproduction": "All focused fixture files match independently recreated full-suite fixtures byte-for-byte."
+  },
+  "native": {
+    "foundation": "Actual headless Godot foundation-v1 passes; native-foundation.log. No gameplay adapter changes, so farm/rendered/device runs were not repeated."
+  },
+  "preservation": {
+    "status": "passed",
+    "frozenHashes": 22,
+    "architectureLinks": 211,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "predecessorStagedFiles": 19
+  },
+  "critic": "Bounded native source/design/reference review found no consequential remaining mismatch. Review focused on exact thickness/contact, installed-output provenance, whole-body obstruction, finite dependency discovery and unproved gates. Critic did not execute qualification.",
+  "failures": [
+    "test-first.log: expected compiler failure while new seal-policy APIs were absent. No failing behavior assertion was weakened."
+  ],
+  "limits": [
+    "Assessment is derived/read-only; external policy does not amend saved rules, gate actions or introduce a world profile.",
+    "Whole nominal envelope; not actual immersion, fluid hazards, pressure strength, structural load, erosion, phase change, reactions or breach simulation.",
+    "Full 1 m terrain cells and exact axis-aligned installed members; continuous per-member normal thickness, no stacked lamination across gaps.",
+    "Maximum 65536 interior cells/65536 faces/4194304 estimated dependency checks and256 rectangle patches per face. These are conservative bounded correctness envelopes, not production performance qualification.",
+    "Existing zero-thickness transport gates explicitly remain unproved. No finite shutter/opening or displaced-volume contract is inferred.",
+    "Terrain fixtures use authored starting excavations; no live mining/loot or local/macro interpreter bridge is claimed. Constructed sheets are synthetic calibrated fixtures, completed by real funded NPC actions; no shipped material balance/strength/art claim.",
+    "Full all-systems verifier not run; targeted managed, operator and foundation checks invoked directly. No threshold or timeout changed.",
+    "Full campaign, independent/human, production art/audio/UI, co-op, device/export and performance gates remain open."
+  ]
+}

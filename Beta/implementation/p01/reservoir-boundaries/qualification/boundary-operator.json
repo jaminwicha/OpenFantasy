@@ -1,0 +1,336 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-19T21:15:47.762384+00:00",
+  "scope": "Exact recorded terrain and real NPC-built tank boundary assessment; no authority mutation or pressure-strength claim",
+  "runs": [
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/contained-world.sqlite",
+        "1",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/seal-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":1,\"SourceHeadHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"RecordedRevision\":1,\"StateHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"ProfileVersion\":8,\"WorldHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"ReservoirHash\":\"40ff2ab1457db63b47ccf14fda49ab6da70c9ddacca55485442e4631a03659c0\",\"PolicyHash\":\"32d69f92a0f5a3afbdc1c02546c7f842c2dfc67b6ef26c6db1f6258c95078a44\",\"Completed\":true,\"IsContained\":true,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/contained-world.sqlite",
+        "0",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/seal-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":1,\"SourceHeadHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"RecordedRevision\":0,\"StateHash\":\"8f50f62f543cd9c7096d9e3f7232a0ebbd2660e4b9489a2dfc853747b0a2556d\",\"ProfileVersion\":8,\"WorldHash\":\"8f50f62f543cd9c7096d9e3f7232a0ebbd2660e4b9489a2dfc853747b0a2556d\",\"ReservoirHash\":\"40ff2ab1457db63b47ccf14fda49ab6da70c9ddacca55485442e4631a03659c0\",\"PolicyHash\":\"32d69f92a0f5a3afbdc1c02546c7f842c2dfc67b6ef26c6db1f6258c95078a44\",\"Completed\":true,\"IsContained\":true,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/contained-world.sqlite",
+        "1",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/seal-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":1,\"SourceHeadHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"RecordedRevision\":1,\"StateHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"ProfileVersion\":8,\"WorldHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"ReservoirHash\":\"40ff2ab1457db63b47ccf14fda49ab6da70c9ddacca55485442e4631a03659c0\",\"PolicyHash\":\"32d69f92a0f5a3afbdc1c02546c7f842c2dfc67b6ef26c6db1f6258c95078a44\",\"Completed\":true,\"IsContained\":true,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/contained-world.sqlite",
+        "2",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/seal-policy.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The requested commit exceeds the current recorded head. (Parameter 'revision')\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/contained-world.sqlite",
+        "-1",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/seal-policy.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The recorded commit must be an unsigned decimal integer. (Parameter 'commitText')\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"RecordedRevision\":69,\"StateHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"ProfileVersion\":8,\"WorldHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"ReservoirHash\":\"52bbbea8a7fd4338c294b2b5f66d224644c2ba60ba22c88c99d16ad7f8b90430\",\"PolicyHash\":\"afe347123c675a4a897cf28ede5b81e10f4b061ae46c4fce5bb249bfed4e49c6\",\"Completed\":true,\"IsContained\":true,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":8,\"Failures\":{},\"Samples\":[]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-construction.sqlite",
+        "20",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"RecordedRevision\":20,\"StateHash\":\"c6ab4de6ef430917ec3834e14c6bdf873b57701a67d74c13ab1cd3abe773dd98\",\"ProfileVersion\":8,\"WorldHash\":\"c6ab4de6ef430917ec3834e14c6bdf873b57701a67d74c13ab1cd3abe773dd98\",\"ReservoirHash\":\"fea979ab5c9ad0aadf914eb27cc319c97ea548cc750e9349d1cc9671b6a9b800\",\"PolicyHash\":\"afe347123c675a4a897cf28ede5b81e10f4b061ae46c4fce5bb249bfed4e49c6\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-construction.sqlite",
+        "0",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"RecordedRevision\":0,\"StateHash\":\"cdf94fed9150f5674f002ce5d391306fc56f064de8d4935396459ee10e0b597d\",\"ProfileVersion\":8,\"WorldHash\":\"cdf94fed9150f5674f002ce5d391306fc56f064de8d4935396459ee10e0b597d\",\"ReservoirHash\":\"844380623d394b0eff4105789c76fe6871d3a1471dcd2add9e2128a689411ce0\",\"PolicyHash\":\"afe347123c675a4a897cf28ede5b81e10f4b061ae46c4fce5bb249bfed4e49c6\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"RecordedRevision\":69,\"StateHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"ProfileVersion\":8,\"WorldHash\":\"8f60bf357e8febb7d23ec8a110d75daaff1af484fcc4e27140b80f3acb094e90\",\"ReservoirHash\":\"52bbbea8a7fd4338c294b2b5f66d224644c2ba60ba22c88c99d16ad7f8b90430\",\"PolicyHash\":\"afe347123c675a4a897cf28ede5b81e10f4b061ae46c4fce5bb249bfed4e49c6\",\"Completed\":true,\"IsContained\":true,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":8,\"Failures\":{},\"Samples\":[]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"RecordedRevision\":69,\"StateHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"ProfileVersion\":8,\"WorldHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"ReservoirHash\":\"01e4d4574cabf8345624015f478288241250f9001a3994a73db5680c675d8fde\",\"PolicyHash\":\"276898422a795a1b6cf9b510b1d3c62d7b84db6b687de5c629dbe01843e6fa46\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":6,\"Failures\":{\"UnsealedWall\":2},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-construction.sqlite",
+        "20",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"RecordedRevision\":20,\"StateHash\":\"d7b464eca6ac5b832dbc5cbe69e0d7a757b9b0d53fd807c633ff336a83566c4e\",\"ProfileVersion\":8,\"WorldHash\":\"d7b464eca6ac5b832dbc5cbe69e0d7a757b9b0d53fd807c633ff336a83566c4e\",\"ReservoirHash\":\"f325aee551130545a33fb931b69f180cd67d80123f7d5f62274bb069f3d984c9\",\"PolicyHash\":\"276898422a795a1b6cf9b510b1d3c62d7b84db6b687de5c629dbe01843e6fa46\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-construction.sqlite",
+        "0",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"RecordedRevision\":0,\"StateHash\":\"f21d5de369b208b6623e170e1df51c153d8b35e75f32b68b988732269bd292e3\",\"ProfileVersion\":8,\"WorldHash\":\"f21d5de369b208b6623e170e1df51c153d8b35e75f32b68b988732269bd292e3\",\"ReservoirHash\":\"ee5b7aa2dbf5a77dca4dc1cc102a08827ce0ce6bece41a76259ddc5ca66d1836\",\"PolicyHash\":\"276898422a795a1b6cf9b510b1d3c62d7b84db6b687de5c629dbe01843e6fa46\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"RecordedRevision\":69,\"StateHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"ProfileVersion\":8,\"WorldHash\":\"c37e56b509ce945e24d244bd13e0afd97705bfb6dba2553a97249450cdf866f2\",\"ReservoirHash\":\"01e4d4574cabf8345624015f478288241250f9001a3994a73db5680c675d8fde\",\"PolicyHash\":\"276898422a795a1b6cf9b510b1d3c62d7b84db6b687de5c629dbe01843e6fa46\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":6,\"Failures\":{\"UnsealedWall\":2},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"RecordedRevision\":69,\"StateHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"ProfileVersion\":8,\"WorldHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"ReservoirHash\":\"de97056ebd0a6ca587aaaafbe4e4ffc07e2ccce51cf8dd5728ef7794c0281543\",\"PolicyHash\":\"96324cd871ab07a780687460b7a7bdf1107d30bae53ab0e03ee8c8b447daa466\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":6,\"Failures\":{\"UnsealedWall\":2},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-construction.sqlite",
+        "20",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"RecordedRevision\":20,\"StateHash\":\"9ea3a1108101befd0aeeb8c8123d0cea2495c4cc1ad7f63cd6fa9f12e375a05c\",\"ProfileVersion\":8,\"WorldHash\":\"9ea3a1108101befd0aeeb8c8123d0cea2495c4cc1ad7f63cd6fa9f12e375a05c\",\"ReservoirHash\":\"37b661c0d707ae2ba03eacfec07d4a285c058650f1397f04c291aa1e3d7c60dc\",\"PolicyHash\":\"96324cd871ab07a780687460b7a7bdf1107d30bae53ab0e03ee8c8b447daa466\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-construction.sqlite",
+        "0",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"RecordedRevision\":0,\"StateHash\":\"63ff709635c651024f165ccddf94fa4025ea4f66270b39f0f89ecddfdeb91b2d\",\"ProfileVersion\":8,\"WorldHash\":\"63ff709635c651024f165ccddf94fa4025ea4f66270b39f0f89ecddfdeb91b2d\",\"ReservoirHash\":\"ed40e4f939d228e52a2ceaebd9b2e2af346d514df787eef5ad9f7ae2db5be42c\",\"PolicyHash\":\"96324cd871ab07a780687460b7a7bdf1107d30bae53ab0e03ee8c8b447daa466\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"RecordedRevision\":69,\"StateHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"ProfileVersion\":8,\"WorldHash\":\"ecdac08c5608f0c9aa7ec6f9ed2a5f305e9b182af5c8c486f4df732fd7857401\",\"ReservoirHash\":\"de97056ebd0a6ca587aaaafbe4e4ffc07e2ccce51cf8dd5728ef7794c0281543\",\"PolicyHash\":\"96324cd871ab07a780687460b7a7bdf1107d30bae53ab0e03ee8c8b447daa466\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":6,\"Failures\":{\"UnsealedWall\":2},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"RecordedRevision\":69,\"StateHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"ProfileVersion\":8,\"WorldHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"ReservoirHash\":\"9cd9c19d28330fa195605dfb2f4f7338fbde9fdb705f3d8ad24c10cfa03b2761\",\"PolicyHash\":\"1b5fecdde3b5848ebe1a54515b8aed89fe3a495c87a2bbb3761d4fb775c421b6\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":6,\"Failures\":{\"InteriorConstruction\":2,\"UnsealedWall\":2},\"Samples\":[{\"Failure\":\"InteriorConstruction\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"Interior\"},{\"Failure\":\"InteriorConstruction\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"Interior\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-construction.sqlite",
+        "20",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"RecordedRevision\":20,\"StateHash\":\"d45c790db687ebf578821c290caa0c3cc38ed60c28807659d84a973c63231289\",\"ProfileVersion\":8,\"WorldHash\":\"d45c790db687ebf578821c290caa0c3cc38ed60c28807659d84a973c63231289\",\"ReservoirHash\":\"f3de97125f62c3129c3bbcda3196b331d8151ec6f2cc37e10c9056efcc9f9b99\",\"PolicyHash\":\"1b5fecdde3b5848ebe1a54515b8aed89fe3a495c87a2bbb3761d4fb775c421b6\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-construction.sqlite",
+        "0",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"RecordedRevision\":0,\"StateHash\":\"173dd4f9bee0941fcb44662565df14fb8e3b3325d280edf92ee7ef68ebf67d83\",\"ProfileVersion\":8,\"WorldHash\":\"173dd4f9bee0941fcb44662565df14fb8e3b3325d280edf92ee7ef68ebf67d83\",\"ReservoirHash\":\"f36b34cbbab4ff56bdbc9a4bd9f7caea001c3235592059308071a51418a26b93\",\"PolicyHash\":\"1b5fecdde3b5848ebe1a54515b8aed89fe3a495c87a2bbb3761d4fb775c421b6\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":0,\"Failures\":{\"UnsealedWall\":8},\"Samples\":[{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"East\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"North\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"South\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"South\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-construction.sqlite",
+        "69",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-policy.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":69,\"SourceHeadHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"RecordedRevision\":69,\"StateHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"ProfileVersion\":8,\"WorldHash\":\"16dcb65d7d36a3aa840772d4276190da3a78520e92f055b3d243697187759305\",\"ReservoirHash\":\"9cd9c19d28330fa195605dfb2f4f7338fbde9fdb705f3d8ad24c10cfa03b2761\",\"PolicyHash\":\"1b5fecdde3b5848ebe1a54515b8aed89fe3a495c87a2bbb3761d4fb775c421b6\",\"Completed\":true,\"IsContained\":false,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":false,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":1,\"ConstructedSealedFaces\":6,\"Failures\":{\"InteriorConstruction\":2,\"UnsealedWall\":2},\"Samples\":[{\"Failure\":\"InteriorConstruction\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"Interior\"},{\"Failure\":\"InteriorConstruction\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"Interior\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1},\"Surface\":\"West\"},{\"Failure\":\"UnsealedWall\",\"Cell\":{\"X\":106,\"Y\":324,\"Z\":2},\"Surface\":\"West\"}]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": ""
+    }
+  ],
+  "databases": [
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/contained-world.sqlite",
+      "sha256Before": "a330c3ae5c518b2b0be52b1bfac8bb38c3f65572ffb038940644d0b5f56a24b9",
+      "sha256After": "a330c3ae5c518b2b0be52b1bfac8bb38c3f65572ffb038940644d0b5f56a24b9"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/sealed-construction.sqlite",
+      "sha256Before": "a8d4d29f46bb1d17adec01153267df44624add2bbb46f4dc65dda34a8bd65113",
+      "sha256After": "a8d4d29f46bb1d17adec01153267df44624add2bbb46f4dc65dda34a8bd65113"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/slit-construction.sqlite",
+      "sha256Before": "f098a02a2dc06f69ae7a8620ec651a14a8008adeec988e496476e7c71f1b3f66",
+      "sha256After": "f098a02a2dc06f69ae7a8620ec651a14a8008adeec988e496476e7c71f1b3f66"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/displaced-construction.sqlite",
+      "sha256Before": "e5f4ce960c66c14245fd2ab66847512c6f4bf2aa12e6f15b775efc78dc96e9c9",
+      "sha256After": "e5f4ce960c66c14245fd2ab66847512c6f4bf2aa12e6f15b775efc78dc96e9c9"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/intruding-construction.sqlite",
+      "sha256Before": "a1292894f854d02a2a9efc06b0e0a13e2d54499fcb96b6365cf9691ac2061264",
+      "sha256After": "a1292894f854d02a2a9efc06b0e0a13e2d54499fcb96b6365cf9691ac2061264"
+    }
+  ],
+  "independentGeometry": {
+    "cellMetres": 1,
+    "waterDepthMetres": 2,
+    "boundaryFacesPerVessel": 9,
+    "terrainFloorFacesPerTank": 1,
+    "tankWallFaces": 8,
+    "slitMillimetres": 1,
+    "slitUncoveredSquareMillimetresPerFace": 1000,
+    "failedWestFacesForEachDefectiveTank": 2,
+    "note": "Fixture sheet is synthetic calibrated stock; exact member coverage and material provenance are tested, not hydraulic strength."
+  },
+  "finishedUtc": "2026-09-19T21:16:37.446235+00:00",
+  "fixtureSha256": {
+    "contained-world.sqlite": "a330c3ae5c518b2b0be52b1bfac8bb38c3f65572ffb038940644d0b5f56a24b9",
+    "displaced-construction.sqlite": "e5f4ce960c66c14245fd2ab66847512c6f4bf2aa12e6f15b775efc78dc96e9c9",
+    "displaced-policy.bin": "96324cd871ab07a780687460b7a7bdf1107d30bae53ab0e03ee8c8b447daa466",
+    "displaced-revisions.json": "7c5ee9707c9e887482f81f1a6053a99f0435e6cb81fe8a96d7d8860fa652249c",
+    "genesis.bin": "8f50f62f543cd9c7096d9e3f7232a0ebbd2660e4b9489a2dfc853747b0a2556d",
+    "intruding-construction.sqlite": "a1292894f854d02a2a9efc06b0e0a13e2d54499fcb96b6365cf9691ac2061264",
+    "intruding-policy.bin": "1b5fecdde3b5848ebe1a54515b8aed89fe3a495c87a2bbb3761d4fb775c421b6",
+    "intruding-revisions.json": "7da0a7a5fb71fcbe95281f4bd54a277061f68e3c8da8b08a1332a7be5a6ef1e8",
+    "seal-policy.bin": "32d69f92a0f5a3afbdc1c02546c7f842c2dfc67b6ef26c6db1f6258c95078a44",
+    "sealed-construction.sqlite": "a8d4d29f46bb1d17adec01153267df44624add2bbb46f4dc65dda34a8bd65113",
+    "sealed-policy.bin": "afe347123c675a4a897cf28ede5b81e10f4b061ae46c4fce5bb249bfed4e49c6",
+    "sealed-revisions.json": "cb67945cd85e04e874554da41e37c004c4134ed52b8fe5dc9837db5480d80535",
+    "slit-construction.sqlite": "f098a02a2dc06f69ae7a8620ec651a14a8008adeec988e496476e7c71f1b3f66",
+    "slit-policy.bin": "276898422a795a1b6cf9b510b1d3c62d7b84db6b687de5c629dbe01843e6fa46",
+    "slit-revisions.json": "5b9c53656017a2ca0f04e27be9ffd038224ac25f00a4bdab6a9a43528ac9849d"
+  }
+}

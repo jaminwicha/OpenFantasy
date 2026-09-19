@@ -1,0 +1,36 @@
+{
+  "baseCommit": "57ed76cae24b8e456132761e4d1bba8626213603",
+  "sources": {
+    "Beta/Runtime/README.md": "980c047badbe6f7fdf00ced72743659c22e29ae1569dbeb18823f21d8c7eed33",
+    "Beta/Runtime/docs/architecture/README.md": "905e6cd80574d9ba0f3b220a6e1c549cd18ca0728b512b09606611caf7489d9f",
+    "Beta/Runtime/docs/architecture/materials-and-activities.md": "0a35f17cb3d8e713bf5d207f5d8383af581560f527231a9efbc3c24e7ec52054",
+    "Beta/Runtime/docs/architecture/reservoir-boundaries.md": "8fc81a692f7cdebd4b9b76c5f17b80b987828f89c8c87dc00c48f5115fc74b95",
+    "Beta/Runtime/docs/architecture/reservoir-transport.md": "8644bc3e8ce57dab0170a2c9ff29723fee82467829e651895c5edb93672ec403",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "53b76118ba4c0a59e58e523d689eaf02ac6d090532689515079dfef50865d9e5",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/BoundaryRectangle.cs": "29b3c18c9d7cf1f141661c5bfadf32696bd4fd7a5b15f532a534348e2db97c51",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/BoundarySurfaceCoverage.cs": "1d1bbdbc2d882c0420a70f1b5b93ca22830f8a60a76f824cd095ddb832f2beab",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirBoundaryAssessment.cs": "b5cf279d87be2e87b324dfe743ce0e9c76defd24f40a00fce4064399e2148138",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirBoundaryBox.cs": "be35ffd6f4c5a0c4b47375cff99233403c6134e6ffcec5a0206be2c87eaf42b5",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirBoundaryEvaluator.cs": "14c0e8f72765106abfd4e92abb8480f4d3521b6a422a1e68da590ab7b92bc311",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirSealPolicy.cs": "310e43778d84a38cc79a5ae452ccc5cf2ab07d426cd21a7234291e367e2c3d26",
+    "Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirSealPolicyCodecV1.cs": "0f94b09e2c137ee06a4270428199c204a0185505adb90bcd529b85662dcc00c7",
+    "Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs": "479ee405851120ebd44e289271345c36cd6015cde7ae6996beb81a3f805934ab",
+    "Beta/Runtime/src/OpenFantasy.Host/ReservoirBoundaryOperator.cs": "9d5cd566a2ce1eca088ed1dbf95edd15d593f7f5c3653310294e6728dcd30635",
+    "Beta/Runtime/src/OpenFantasy.Hosting/LocalAuthorityFiles.cs": "a68b69282955760146677fdec9ba0610f6ed2d336c4228f8c0170b778331f2ad",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/BoundarySurfaceCoverageTests.cs": "977977e69c67d7ba794598866ed97b91b6f3b37000222ec2bc34386cb143a005",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirSealPolicyTests.cs": "caafc0ab661ea9db2af35c2a18f1728f94a5f90ee6f43842c1a548f2bceba39b",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ReservoirBoundaryConstructionTests.cs": "f6195fdbfb8774114ef52446371add31e8cdd652e75d597da4d9fc17f7de8b63",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ReservoirBoundaryFixture.cs": "2c0807d7aaa7316cf37e08c86195c1fbb3abff043341f3bba83859cb858be106",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ReservoirBoundaryTests.cs": "00b3a446109a6ff94bc0efb42b3984d785734e598fbcb5d80faabf4a47d9d9ee",
+    "Beta/Runtime/tools/check_reservoir_boundaries.py": "abbbc32f3c4190f054b857654886851b8ef09b480dd01488f68a272302b1c5f0",
+    "Beta/Runtime/tools/verify.py": "a8e41d69cab65318517f1467315866672b40ee8218494b8cebc765061e5cf65b"
+  },
+  "binaries": {
+    "src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "ee43b0a037942bc9da7b440934a259f929658f241f65ba46d93aee1dbb7ec1b3",
+    "src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "ed4e3d567bff2f0079699dc26356d78c0da6f583fea1388f5a1c8695848d73bd",
+    "src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "82c1cf4df57f5b60f97175b0064668f02093bdd5c3ee8570c701a9040ce8ca4d",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "b02657e0e9df2552f5f9d7e1f86ad80b4879ad3b72c67b4b47911637b366d829",
+    "tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "801f31f420aeb15ababf424a257b7ed4f36734578753d6c935e72340c0c1f56a",
+    "tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "8e01a1327db9c250e6d72b37545f6368ce509affce75abef9e216696d616f260"
+  }
+}

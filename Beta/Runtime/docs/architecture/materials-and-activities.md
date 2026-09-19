@@ -68,6 +68,11 @@ The quest participation checks and authority transaction/receipts enforce that o
 the pure reward planner does not persist acknowledgement or prevent repeated use on its own.
 Inventory projection and recipe inspection confer no permission to consume, equip or transfer stock.
 
+[Reservoir boundary assessment](reservoir-boundaries.md) reads completed projects' exact installed
+output material and millimetre members. It tests continuous sealing thickness and face coverage under
+an explicit policy; incomplete projects, input stock and rounded collision boxes cannot supply a seal.
+This derived inspection does not introduce a separate wall inventory or assert pressure strength.
+
 ## Design contract: process graphs and learned powers
 
 Crafting, smithing, cooking, herbalism, alchemy, knitting, research and vehicle building share a typed
