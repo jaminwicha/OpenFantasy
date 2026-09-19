@@ -3,6 +3,7 @@ using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Terrain;
+using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -15,6 +16,7 @@ public static class WorldActionCodec
         ArgumentNullException.ThrowIfNull(command);
         return command.Intent switch
         {
+            ClimbIntent => WorldActionCodecV9.Encode(command),
             ExcavateIntent => WorldActionCodecV8.Encode(command),
             ScheduleRunoffTransportIntent => WorldActionCodecV7.Encode(command),
             RunoffCommitmentIntent => WorldActionCodecV6.Encode(command),
@@ -34,6 +36,7 @@ public static class WorldActionCodec
             3 => WorldActionCodecV3.Decode(bytes),
             4 => WorldActionCodecV4.Decode(bytes),
             5 => WorldActionCodecV5.Decode(bytes),
+            9 => WorldActionCodecV9.Decode(bytes),
             8 => WorldActionCodecV8.Decode(bytes),
             7 => WorldActionCodecV7.Decode(bytes),
             6 => WorldActionCodecV6.Decode(bytes),

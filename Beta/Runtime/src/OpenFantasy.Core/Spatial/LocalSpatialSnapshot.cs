@@ -22,11 +22,17 @@ public sealed partial class LocalSpatialSnapshot
     private readonly TerrainVolumeQueries _terrain;
 
     public LocalSpatialSnapshot(TerrainScope scope, IEnumerable<TerrainRegionSnapshot> regions,
-        IEnumerable<ActorPresence> actors, IEnumerable<SpatialStructure>? structures = null)
+        IEnumerable<ActorPresence> actors, IEnumerable<SpatialStructure>? structures = null,
+        GroundSupportMode groundSupport = GroundSupportMode.TerrainOnly)
     {
         ArgumentNullException.ThrowIfNull(scope);
         ArgumentNullException.ThrowIfNull(regions);
         ArgumentNullException.ThrowIfNull(actors);
+        if (!Enum.IsDefined(groundSupport))
+        {
+            throw new ArgumentOutOfRangeException(nameof(groundSupport));
+        }
+        GroundSupport = groundSupport;
         Scope = scope;
         Regions = ReadRegions(regions);
         _terrain = new TerrainVolumeQueries(Regions);
@@ -49,12 +55,13 @@ public sealed partial class LocalSpatialSnapshot
     }
 
     public TerrainScope Scope { get; }
+    public GroundSupportMode GroundSupport { get; }
     public ReadOnlyCollection<TerrainRegionSnapshot> Regions { get; }
     public ReadOnlyCollection<ActorPresence> Actors { get; }
     public ReadOnlyCollection<SpatialStructure> Structures { get; }
 
-    public LocalSpatialSnapshot WithActors(IEnumerable<ActorPresence> actors) => new(Scope, Regions, actors, Structures);
-    public LocalSpatialSnapshot WithStructures(IEnumerable<SpatialStructure> structures) => new(Scope, Regions, Actors, structures);
+    public LocalSpatialSnapshot WithActors(IEnumerable<ActorPresence> actors) => new(Scope, Regions, actors, Structures, GroundSupport);
+    public LocalSpatialSnapshot WithStructures(IEnumerable<SpatialStructure> structures) => new(Scope, Regions, Actors, structures, GroundSupport);
 
     public ActorPresence GetActor(EntityId actorId) => _actors.TryGetValue(actorId, out ActorPresence? actor)
         ? actor : throw new ArgumentException("The actor is outside this admitted local spatial set.", nameof(actorId));
@@ -127,7 +134,18 @@ public sealed partial class LocalSpatialSnapshot
 
     private SpatialOccupancy QueryVolume(EntityId actorId, BodyVolume volume)
     {
-        SpatialOccupancy terrain = _terrain.Query(volume);
+        SpatialOccupancy clearance = QueryClearance(actorId, volume);
+        if (clearance != SpatialOccupancy.Clear)
+        {
+            return clearance;
+        }
+        return GroundSupport == GroundSupportMode.TerrainOnly ? clearance : FootingQuery.Query(_terrain, Structures, volume);
+    }
+
+    private SpatialOccupancy QueryClearance(EntityId actorId, BodyVolume volume)
+    {
+        // Preserve legacy missing-support precedence even when another collider also blocks the volume.
+        SpatialOccupancy terrain = _terrain.Query(volume, GroundSupport == GroundSupportMode.TerrainOnly);
         if (terrain is SpatialOccupancy.Unavailable or SpatialOccupancy.BlockedTerrain)
         {
             return terrain;
@@ -143,7 +161,7 @@ public sealed partial class LocalSpatialSnapshot
                 return SpatialOccupancy.BlockedActor;
             }
         }
-        return terrain;
+        return GroundSupport == GroundSupportMode.TerrainOnly ? terrain : SpatialOccupancy.Clear;
     }
 
     private ReadOnlyCollection<TerrainRegionSnapshot> ReadRegions(IEnumerable<TerrainRegionSnapshot> regions)

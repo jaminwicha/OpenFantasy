@@ -48,8 +48,8 @@ public sealed class ConstructionSnapshot
     public ContentHash ContentHash => ContentHash.Compute(ConstructionCodecV1.Encode(this));
     public ConstructionProject? FindProject(EntityId id) => Projects.FirstOrDefault(value => value.ProjectId == id);
     public bool IsConstructionRecipe(EntityId recipeId) => Definitions.Any(value => value.MaterialTransform.DefinitionId == recipeId);
-    public ReadOnlyCollection<SpatialStructure> GetStructures() => Array.AsReadOnly(Projects.Where(value => value.Installed is not null)
-        .Select(value => value.Definition.CreateStructure(value.Installed!.StructureId, value.SiteFeet)).OrderBy(value => value.StructureId).ToArray());
+    public ReadOnlyCollection<SpatialStructure> GetStructures(bool supportsActors = false) => Array.AsReadOnly(Projects.Where(value => value.Installed is not null)
+        .Select(value => value.Definition.CreateStructure(value.Installed!.StructureId, value.SiteFeet, supportsActors)).OrderBy(value => value.StructureId).ToArray());
 
     internal ConstructionSnapshot WithProject(ConstructionProject project) => new(WorldId, BranchId,
         checked(Revision + 1), Definitions, Projects.Where(value => value.ProjectId != project.ProjectId).Append(project));
@@ -132,10 +132,11 @@ public sealed class ConstructionSnapshot
         {
             throw new ArgumentException("Construction-only material batches require one fully worked, installed project.");
         }
-        var expected = GetStructures();
+        var expected = GetStructures(world.Space.GroundSupport == GroundSupportMode.TerrainAndConstruction);
         if (world.Space.Structures.Count != expected.Count || expected.Where((value, index) =>
                 value.StructureId != world.Space.Structures[index].StructureId
-                || !value.Boxes.SequenceEqual(world.Space.Structures[index].Boxes)).Any())
+                || !value.Boxes.SequenceEqual(world.Space.Structures[index].Boxes)
+                || !value.BearingSurfaces.SequenceEqual(world.Space.Structures[index].BearingSurfaces)).Any())
         {
             throw new ArgumentException("Authoritative spatial structures must exactly match the installed physical definitions.");
         }

@@ -11,7 +11,8 @@ public sealed class SpatialStructure
     public const int MaximumBoxes = 32;
     public const long MaximumAxisSubunits = 2048;
 
-    public SpatialStructure(EntityId structureId, IEnumerable<SubunitBox> boxes)
+    public SpatialStructure(EntityId structureId, IEnumerable<SubunitBox> boxes,
+        IEnumerable<StructureBearingSurface>? bearingSurfaces = null)
     {
         ArgumentNullException.ThrowIfNull(boxes);
         var copied = new HashSet<SubunitBox>();
@@ -41,9 +42,22 @@ public sealed class SpatialStructure
         Boxes = Array.AsReadOnly(copied.OrderBy(value => value.Minimum.X).ThenBy(value => value.Minimum.Y)
             .ThenBy(value => value.Minimum.Z).ThenBy(value => value.Maximum.X)
             .ThenBy(value => value.Maximum.Y).ThenBy(value => value.Maximum.Z).ToArray());
+        var surfaces = new HashSet<StructureBearingSurface>();
+        foreach (StructureBearingSurface surface in bearingSurfaces ?? [])
+        {
+            ArgumentNullException.ThrowIfNull(surface);
+            if (surfaces.Count == MaximumBoxes || !surfaces.Add(surface) || !Boxes.Any(surface.Fits))
+            {
+                throw new ArgumentException("Bearing surfaces require bounded unique physical tops inside their colliders.", nameof(bearingSurfaces));
+            }
+        }
+        BearingSurfaces = Array.AsReadOnly(surfaces.OrderBy(value => value.TopTicks)
+            .ThenBy(value => value.Bounds.MinU).ThenBy(value => value.Bounds.MinV)
+            .ThenBy(value => value.Bounds.MaxU).ThenBy(value => value.Bounds.MaxV).ToArray());
     }
 
     public EntityId StructureId { get; }
     public ReadOnlyCollection<SubunitBox> Boxes { get; }
+    public ReadOnlyCollection<StructureBearingSurface> BearingSurfaces { get; }
     public long GroundPlaneZ { get; }
 }

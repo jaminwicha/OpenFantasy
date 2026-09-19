@@ -1,0 +1,18 @@
+{
+  "sameBytes": true,
+  "files": 5,
+  "original": {
+    "expected.json": "c12bb60d0e03778a78930c67f6175ee2d1605287285f30509fc23b1b188527fd",
+    "pre-climb.sqlite": "16cc8cfaa61b4dc635b37b5cc92c3fc8089779ef7985865c0fd34cc231a4f544",
+    "constructed-support.sqlite": "fc18f4061ab8cddba9916772411c39f02d994896a7c87918aca6edc7133079a6",
+    "genesis.bin": "b651f3880fbfb8758bb86a99904b713d5169f6062288a8e4fb13c8ecf57a812b",
+    "climb-step.bin": "44c1b687114fd47ced4c7ed160a534c65f4b5191896da971168a766b6ca37a99"
+  },
+  "recreated": {
+    "expected.json": "c12bb60d0e03778a78930c67f6175ee2d1605287285f30509fc23b1b188527fd",
+    "pre-climb.sqlite": "16cc8cfaa61b4dc635b37b5cc92c3fc8089779ef7985865c0fd34cc231a4f544",
+    "constructed-support.sqlite": "fc18f4061ab8cddba9916772411c39f02d994896a7c87918aca6edc7133079a6",
+    "genesis.bin": "b651f3880fbfb8758bb86a99904b713d5169f6062288a8e4fb13c8ecf57a812b",
+    "climb-step.bin": "44c1b687114fd47ced4c7ed160a534c65f4b5191896da971168a766b6ca37a99"
+  }
+}

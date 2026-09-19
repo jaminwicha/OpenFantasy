@@ -52,6 +52,7 @@ staged transfers. Neither a contributing-column count nor a graphical ocean plan
 | Accept/deliver | [DeliveryQuestPlanner](../../src/OpenFantasy.Core/Quests/DeliveryQuestPlanner.cs) | Addressed agreement, owned stock, real funding, durable participation, once-only delivery/reward |
 | Prepare reward | [ActorRewardPlanner](../../src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs) | Validate admitted progression/currency definitions and funding; calculate candidate state |
 | Build | [ConstructionPlanner](../../src/OpenFantasy.Core/Construction/ConstructionPlanner.cs) | Builder/tool/work eligibility, reserved material, physical access and atomic installed geometry |
+| Climb | [WorldClimbResolver](../../src/OpenFantasy.Core/Worlds/WorldClimbResolver.cs) | Actual movement/manipulation capability, swept clearance, continuous projected support and shared earned effort |
 
 The farm admission connects finite oak/berry gathering, ration crafting and Wren's six-wood agreement.
 Its funded reward is 420 XP and 200 gil. Delivered wood remains reserved for Wren's seedling guard;
@@ -63,6 +64,10 @@ retires the consumed material and installs derived collision in one world commit
 a display prop plus a separately spendable item. Blocked routes, missing tools or occupied geometry
 defer work. Dialogue holds and unreadiness grant no work. The construction recipe is rejected by the
 ordinary instant-craft path, preventing it from bypassing required labor.
+
+The explicit [constructed-footing composition](constructed-footing.md) derives actor-bearing surfaces
+from those same completed physical members. Actor support is exact in XY; it does not establish load
+strength or allow the construction geometry to exist before its work and material publication.
 
 Exact action retries return their durable outcomes. Repeated delivery or completion cannot pay again.
 The quest participation checks and authority transaction/receipts enforce that once-only boundary;

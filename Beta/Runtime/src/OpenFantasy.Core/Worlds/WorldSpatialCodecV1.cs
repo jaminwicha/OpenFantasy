@@ -9,14 +9,23 @@ internal static class WorldSpatialCodecV1
 {
     internal static byte[] Encode(LocalSpatialSnapshot space)
     {
+        if (space.GroundSupport != GroundSupportMode.TerrainOnly)
+        {
+            throw new ArgumentException("Spatial version one requires terrain-only ground support.", nameof(space));
+        }
         if (space.Structures.Count != 0)
         {
             throw new ArgumentException("Spatial version one cannot omit installed structures.", nameof(space));
         }
+        return EncodeComponents(space, 1);
+    }
+
+    internal static byte[] EncodeComponents(LocalSpatialSnapshot space, ulong version)
+    {
         BodyDefinition[] definitions = space.Actors.Select(actor => actor.Condition.Definition)
             .GroupBy(definition => definition.DefinitionId).Select(group => group.First())
             .OrderBy(definition => definition.DefinitionId).ToArray();
-        return CanonicalEncodingV1.Frame("world.spatial", Number(1), space.Scope.WorldId.ToByteArray(),
+        return CanonicalEncodingV1.Frame("world.spatial", Number(version), space.Scope.WorldId.ToByteArray(),
             space.Scope.BranchId.ToByteArray(), space.Scope.RealmId.ToByteArray(),
             CanonicalEncodingV1.Frame("world.regions", space.Regions.Select(region =>
                 (ReadOnlyMemory<byte>)TerrainRegionCodecV1.Encode(region)).ToArray()),
@@ -28,9 +37,23 @@ internal static class WorldSpatialCodecV1
 
     internal static LocalSpatialSnapshot Decode(ReadOnlySpan<byte> bytes)
     {
+        var components = DecodeComponents(bytes, 1);
+        return new LocalSpatialSnapshot(components.Scope, components.Regions, components.Actors);
+    }
+
+    internal static (TerrainScope Scope, IReadOnlyList<TerrainRegionSnapshot> Regions, IReadOnlyList<ActorPresence> Actors)
+        DecodeComponents(ReadOnlySpan<byte> bytes, ulong version)
+    {
         var reader = new WorldFrameReader(bytes, WorldSnapshotCodecV1.MaximumStateByteLength, 8);
         reader.Tag("world.spatial"u8);
-        reader.Version();
+        if (version == 1)
+        {
+            reader.Version();
+        }
+        else if (reader.Number() != version)
+        {
+            throw new FormatException("Unsupported world spatial version.");
+        }
         var scope = new TerrainScope(reader.Identity(), reader.Identity(), reader.Identity());
         var regionsReader = new WorldFrameReader(reader.Field(2 * 1024 * 1024), 2 * 1024 * 1024, 17);
         regionsReader.Tag("world.regions"u8);
@@ -64,7 +87,7 @@ internal static class WorldSpatialCodecV1
         }
         actorsReader.Complete();
         reader.Complete();
-        return new LocalSpatialSnapshot(scope, regions, actors);
+        return (scope, regions, actors);
     }
 
     private static byte[] EncodeActor(ActorPresence actor) => CanonicalEncodingV1.Frame("world.presence",

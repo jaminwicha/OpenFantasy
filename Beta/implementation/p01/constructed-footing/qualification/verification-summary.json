@@ -1,0 +1,138 @@
+{
+  "scope": "Fresh dry profile11: actual completed construction supports actors; assisted vertical actions, exact recovery and history",
+  "status": "passed",
+  "build": {
+    "file": "build.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "total": 1173,
+    "core": 749,
+    "hosting": 424,
+    "new": 32,
+    "skipped": 0,
+    "reports": [
+      {
+        "file": "full-tests/_mac_2026-09-19_17_16_10_net8.0.trx",
+        "total": 749,
+        "executed": 749,
+        "passed": 749,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      {
+        "file": "full-tests/_mac_2026-09-19_17_16_24_net8.0.trx",
+        "total": 424,
+        "executed": 424,
+        "passed": 424,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      }
+    ]
+  },
+  "host": {
+    "report": "recovery-host-1.json",
+    "ordinaryCalls": 26,
+    "externalProcessKills": 2,
+    "independentByteWitnesses": 9,
+    "actualConstructionRevision": 95,
+    "beforeClimbRevision": 95,
+    "afterClimbRevision": 96,
+    "effortBefore": 910,
+    "effortAfter": 520
+  },
+  "native": {
+    "foundation": "godot-foundation.log",
+    "farm": "native-farm.json",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "recreation": {
+    "sameBytes": true,
+    "files": 5,
+    "original": {
+      "expected.json": "c12bb60d0e03778a78930c67f6175ee2d1605287285f30509fc23b1b188527fd",
+      "pre-climb.sqlite": "16cc8cfaa61b4dc635b37b5cc92c3fc8089779ef7985865c0fd34cc231a4f544",
+      "constructed-support.sqlite": "fc18f4061ab8cddba9916772411c39f02d994896a7c87918aca6edc7133079a6",
+      "genesis.bin": "b651f3880fbfb8758bb86a99904b713d5169f6062288a8e4fb13c8ecf57a812b",
+      "climb-step.bin": "44c1b687114fd47ced4c7ed160a534c65f4b5191896da971168a766b6ca37a99"
+    },
+    "recreated": {
+      "expected.json": "c12bb60d0e03778a78930c67f6175ee2d1605287285f30509fc23b1b188527fd",
+      "pre-climb.sqlite": "16cc8cfaa61b4dc635b37b5cc92c3fc8089779ef7985865c0fd34cc231a4f544",
+      "constructed-support.sqlite": "fc18f4061ab8cddba9916772411c39f02d994896a7c87918aca6edc7133079a6",
+      "genesis.bin": "b651f3880fbfb8758bb86a99904b713d5169f6062288a8e4fb13c8ecf57a812b",
+      "climb-step.bin": "44c1b687114fd47ced4c7ed160a534c65f4b5191896da971168a766b6ca37a99"
+    }
+  },
+  "preservation": {
+    "architectureLinks": 242,
+    "missingLinks": [],
+    "frozenSpecCount": 22,
+    "frozenSpecHashes": {
+      "spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md": true,
+      "spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md": true,
+      "spec-v1_1/COVERAGE.json": true,
+      "spec-v1_1/CRITIC_REVIEW.md": true,
+      "spec-v1_1/CROSS_SYSTEM_SYNERGIES.md": true,
+      "spec-v1_1/DECISIONS.md": true,
+      "spec-v1_1/ECOLOGY_AND_FLUIDS.md": true,
+      "spec-v1_1/GDD.md": true,
+      "spec-v1_1/GENERATION_VALIDATION.md": true,
+      "spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md": true,
+      "spec-v1_1/IMPLEMENTATION_HANDOFF.md": true,
+      "spec-v1_1/IMPLEMENTATION_PLAN.md": true,
+      "spec-v1_1/INTEGRATION_CRITIC.md": true,
+      "spec-v1_1/LANGUAGE_AND_AFTERLIFE.md": true,
+      "spec-v1_1/LOCAL_REUSE_DECISIONS.md": true,
+      "spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md": true,
+      "spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md": true,
+      "spec-v1_1/PRESENTATION_CONTRACTS.md": true,
+      "spec-v1_1/README.md": true,
+      "spec-v1_1/REQUIREMENTS.json": true,
+      "spec-v1_1/TECHNICAL_DESIGN.md": true,
+      "spec-v1_1/VALIDATION.md": true
+    },
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "predecessorIndexPreserved": true,
+    "toolAstValid": true
+  },
+  "review": {
+    "kind": "bounded native source critic",
+    "result": "No consequential defect found",
+    "scope": "support geometry, legacy rules, completed construction ownership, codec restore order and action authorization/effort/holds"
+  },
+  "retainedFailures": [
+    "test-first.log: expected compile errors before ground support types existed",
+    "focused-climbing.log: six test assertions expected ArgumentOutOfRangeException; constructor correctly rejects the compound displacement as ArgumentException; assertion type corrected without changing validation"
+  ],
+  "unrun": [
+    "Full P00/P01/P02 exits and campaign acceptance",
+    "general multi-level routing, structural strength/collapse and wet excavation",
+    "player climb controls, art/animation, physical devices and production performance",
+    "all-systems verifier; new checker is wired, targeted checks run directly"
+  ]
+}

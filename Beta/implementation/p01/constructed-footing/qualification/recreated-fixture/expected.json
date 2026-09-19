@@ -1,0 +1,203 @@
+{
+  "Scope": "Actual funded quest and NPC platform construction, earned explicit climb, exact actor support and recorded history",
+  "ProfileVersion": 11,
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "BuiltRevision": 95,
+  "PreRevision": 95,
+  "PreHash": "f6f8f624e5d456b4b9890a62b018e7d51b3092eca4d1f6fed320e12dc928510e",
+  "PostRevision": 96,
+  "PostHash": "71fedb2ca055cd20788489ed0451d5b628ba2bdb08015e68cdbea610479e0a75",
+  "PreFeet": {
+    "X": 27008,
+    "Y": 83072,
+    "Z": 256,
+    "Cell": {
+      "X": 105,
+      "Y": 324,
+      "Z": 1
+    }
+  },
+  "PostFeet": {
+    "X": 27264,
+    "Y": 83072,
+    "Z": 320,
+    "Cell": {
+      "X": 106,
+      "Y": 324,
+      "Z": 1
+    }
+  },
+  "EffortBefore": 910,
+  "EffortAfter": 520,
+  "CommandId": "0000000000000000000000000070eaa6",
+  "ReceiptHex": "4f464300000000010000000a00000014776f726c642e616374696f6e2d72656365697074000000080000000000000001000000100000000000000000000000000070eaa6000000102d222befa7a8b2cd7ba0a05a00950f27000000104955a478907a739f49ff302c94a798ad000000102a89af71f707591d46cfe34b9b60f96c00000020d1a6ee0963b99c5f85ae87c51566ead6c1b626f61a6e574274424b5823d8fe47000000080000000000000060000000080000000000000001000000080000000000000000",
+  "Approach": {
+    "X": 27008,
+    "Y": 83072,
+    "Z": 256,
+    "Cell": {
+      "X": 105,
+      "Y": 324,
+      "Z": 1
+    }
+  },
+  "Landing": {
+    "X": 27264,
+    "Y": 83072,
+    "Z": 320,
+    "Cell": {
+      "X": 106,
+      "Y": 324,
+      "Z": 1
+    }
+  },
+  "History": [
+    {
+      "Revision": 0,
+      "Hash": "b651f3880fbfb8758bb86a99904b713d5169f6062288a8e4fb13c8ecf57a812b"
+    },
+    {
+      "Revision": 19,
+      "Hash": "d9e51ed2ed34d76eff74bdd0f31896611911c7be4ea71d624b32b5b36c0f3094"
+    },
+    {
+      "Revision": 45,
+      "Hash": "480850ae8ee6617cce542b4215f4b8a6273379b2089c2108af05f2e5fb14837f"
+    },
+    {
+      "Revision": 46,
+      "Hash": "7b85ba49d5379d09a81eeabbb73c8b9874ff5cbd37603300e5a273207ab35816"
+    },
+    {
+      "Revision": 95,
+      "Hash": "f6f8f624e5d456b4b9890a62b018e7d51b3092eca4d1f6fed320e12dc928510e"
+    },
+    {
+      "Revision": 96,
+      "Hash": "71fedb2ca055cd20788489ed0451d5b628ba2bdb08015e68cdbea610479e0a75"
+    }
+  ],
+  "States": [
+    {
+      "Revision": 0,
+      "WorldHash": "b651f3880fbfb8758bb86a99904b713d5169f6062288a8e4fb13c8ecf57a812b",
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "Effort": 0,
+      "Structures": 0,
+      "GroundSupport": "TerrainAndConstruction"
+    },
+    {
+      "Revision": 19,
+      "WorldHash": "d9e51ed2ed34d76eff74bdd0f31896611911c7be4ea71d624b32b5b36c0f3094",
+      "Feet": {
+        "X": 26496,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "Effort": 170,
+      "Structures": 0,
+      "GroundSupport": "TerrainAndConstruction"
+    },
+    {
+      "Revision": 45,
+      "WorldHash": "480850ae8ee6617cce542b4215f4b8a6273379b2089c2108af05f2e5fb14837f",
+      "Feet": {
+        "X": 27008,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "Effort": 410,
+      "Structures": 0,
+      "GroundSupport": "TerrainAndConstruction"
+    },
+    {
+      "Revision": 46,
+      "WorldHash": "7b85ba49d5379d09a81eeabbb73c8b9874ff5cbd37603300e5a273207ab35816",
+      "Feet": {
+        "X": 27008,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "Effort": 420,
+      "Structures": 0,
+      "GroundSupport": "TerrainAndConstruction"
+    },
+    {
+      "Revision": 95,
+      "WorldHash": "f6f8f624e5d456b4b9890a62b018e7d51b3092eca4d1f6fed320e12dc928510e",
+      "Feet": {
+        "X": 27008,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "Effort": 910,
+      "Structures": 1,
+      "GroundSupport": "TerrainAndConstruction"
+    },
+    {
+      "Revision": 95,
+      "WorldHash": "f6f8f624e5d456b4b9890a62b018e7d51b3092eca4d1f6fed320e12dc928510e",
+      "Feet": {
+        "X": 27008,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "Effort": 910,
+      "Structures": 1,
+      "GroundSupport": "TerrainAndConstruction"
+    },
+    {
+      "Revision": 96,
+      "WorldHash": "71fedb2ca055cd20788489ed0451d5b628ba2bdb08015e68cdbea610479e0a75",
+      "Feet": {
+        "X": 27264,
+        "Y": 83072,
+        "Z": 320,
+        "Cell": {
+          "X": 106,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "Effort": 520,
+      "Structures": 1,
+      "GroundSupport": "TerrainAndConstruction"
+    }
+  ],
+  "ClimbCommandHex": "4f464300000000010000000a00000012776f726c642e6163746f722d616374696f6e000000080000000000000009000000100000000000000000000000000070eaa6000000102d222befa7a8b2cd7ba0a05a00950f2700000010f2b9284a438cae81296d7b3445fd1e2a00000010c7da6de6f885e3516d9dfd3dab51cf6b000000104955a478907a739f49ff302c94a798ad000000102a89af71f707591d46cfe34b9b60f96c000000080000000000000028000000524f464300000000010000000500000012776f726c642e616374696f6e2e636c696d62000000080000000000000001000000080000000000000100000000080000000000000000000000080000000000000040",
+  "ClimbReceiptHex": "4f464300000000010000000a00000014776f726c642e616374696f6e2d72656365697074000000080000000000000001000000100000000000000000000000000070eaa6000000102d222befa7a8b2cd7ba0a05a00950f27000000104955a478907a739f49ff302c94a798ad000000102a89af71f707591d46cfe34b9b60f96c00000020d1a6ee0963b99c5f85ae87c51566ead6c1b626f61a6e574274424b5823d8fe47000000080000000000000060000000080000000000000001000000080000000000000000"
+}

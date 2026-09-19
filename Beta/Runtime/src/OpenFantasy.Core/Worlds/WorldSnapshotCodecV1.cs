@@ -8,6 +8,8 @@ namespace OpenFantasy.Core.Worlds;
 public static class WorldSnapshotCodecV1
 {
     public const int MaximumStateByteLength = 16 * 1024 * 1024;
+    internal const int MaximumResidentsByteLength = 4 * 1024 * 1024;
+    internal const int MaximumDialoguesByteLength = 4096;
 
     public static byte[] Encode(WorldSnapshot world)
     {
@@ -25,12 +27,10 @@ public static class WorldSnapshotCodecV1
     {
         byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", Number(1), AuthorityEncodingV1.Encode(world.Inventory),
             WorldSpatialCodecV1.Encode(world.Space),
-            CanonicalEncodingV1.Frame("world.residents", world.Residents.Select(resident =>
-                (ReadOnlyMemory<byte>)WorldResidentCodecV1.Encode(resident)).ToArray()),
+            EncodeResidents(world.Residents),
             world.AdmissionVersion.ToByteArray(), Signed(world.Calendar.Days), Number((ulong)world.Calendar.MillisecondsWithinDay),
             Number(world.Revision), Number(world.AdvancingSteps),
-            CanonicalEncodingV1.Frame("world.dialogues", world.Dialogues.Select(dialogue =>
-                (ReadOnlyMemory<byte>)EncodeDialogue(dialogue)).ToArray()));
+            EncodeDialogues(world.Dialogues));
         if (bytes.Length > MaximumStateByteLength)
         {
             throw new ArgumentException("The world snapshot exceeds its admitted storage profile.", nameof(world));
@@ -47,26 +47,12 @@ public static class WorldSnapshotCodecV1
             reader.Version();
             CountedAuthorityState inventory = AuthorityEncodingV1.Decode(reader.Field(AuthorityEncodingV1.MaximumStateByteLength));
             LocalSpatialSnapshot space = WorldSpatialCodecV1.Decode(reader.Field(MaximumStateByteLength));
-            var residentsReader = new WorldFrameReader(reader.Field(4 * 1024 * 1024), 4 * 1024 * 1024, 65);
-            residentsReader.Tag("world.residents"u8);
-            List<WorldResident> residents = [];
-            while (residentsReader.Remaining != 0)
-            {
-                residents.Add(WorldResidentCodecV1.Decode(residentsReader.Field(WorldResidentCodecV1.MaximumResidentByteLength)));
-            }
-            residentsReader.Complete();
+            List<WorldResident> residents = DecodeResidents(reader.Field(MaximumResidentsByteLength));
             var admission = new ContentHash(Convert.ToHexString(reader.Exact(32)).ToLowerInvariant());
             WorldInstant calendar = ReadInstant(ref reader);
             ulong revision = reader.Number();
             ulong steps = reader.Number();
-            var dialoguesReader = new WorldFrameReader(reader.Field(4096), 4096, 5);
-            dialoguesReader.Tag("world.dialogues"u8);
-            List<DialogueSession> dialogues = [];
-            while (dialoguesReader.Remaining != 0)
-            {
-                dialogues.Add(DecodeDialogue(dialoguesReader.Field(512)));
-            }
-            dialoguesReader.Complete();
+            List<DialogueSession> dialogues = DecodeDialogues(reader.Field(MaximumDialoguesByteLength));
             reader.Complete();
             var result = new WorldSnapshot(inventory, space, residents, admission, calendar, revision, steps, dialogues);
             if (!Encode(result).AsSpan().SequenceEqual(bytes))
@@ -79,6 +65,40 @@ public static class WorldSnapshotCodecV1
         {
             throw new FormatException("The world snapshot violates its admitted invariants.", error);
         }
+    }
+
+    internal static byte[] EncodeResidents(IEnumerable<WorldResident> residents) =>
+        CanonicalEncodingV1.Frame("world.residents", residents.Select(resident =>
+            (ReadOnlyMemory<byte>)WorldResidentCodecV1.Encode(resident)).ToArray());
+
+    internal static List<WorldResident> DecodeResidents(ReadOnlySpan<byte> bytes)
+    {
+        var reader = new WorldFrameReader(bytes, MaximumResidentsByteLength, 65);
+        reader.Tag("world.residents"u8);
+        List<WorldResident> residents = [];
+        while (reader.Remaining != 0)
+        {
+            residents.Add(WorldResidentCodecV1.Decode(reader.Field(WorldResidentCodecV1.MaximumResidentByteLength)));
+        }
+        reader.Complete();
+        return residents;
+    }
+
+    internal static byte[] EncodeDialogues(IEnumerable<DialogueSession> dialogues) =>
+        CanonicalEncodingV1.Frame("world.dialogues", dialogues.Select(dialogue =>
+            (ReadOnlyMemory<byte>)EncodeDialogue(dialogue)).ToArray());
+
+    internal static List<DialogueSession> DecodeDialogues(ReadOnlySpan<byte> bytes)
+    {
+        var reader = new WorldFrameReader(bytes, MaximumDialoguesByteLength, 5);
+        reader.Tag("world.dialogues"u8);
+        List<DialogueSession> dialogues = [];
+        while (reader.Remaining != 0)
+        {
+            dialogues.Add(DecodeDialogue(reader.Field(512)));
+        }
+        reader.Complete();
+        return dialogues;
     }
 
     private static byte[] EncodeDialogue(DialogueSession dialogue) => CanonicalEncodingV1.Frame("world.dialogue",
@@ -100,7 +120,7 @@ public static class WorldSnapshotCodecV1
         return new DialogueSession(id, listener, speaker, utterance, cause, time);
     }
 
-    private static WorldInstant ReadInstant(ref WorldFrameReader reader)
+    internal static WorldInstant ReadInstant(ref WorldFrameReader reader)
     {
         long days = reader.Signed();
         ulong milliseconds = reader.Number();

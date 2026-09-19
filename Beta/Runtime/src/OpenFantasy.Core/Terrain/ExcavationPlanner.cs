@@ -60,7 +60,7 @@ public sealed class ExcavationPlanner
             }
             var changedRegion = region.Excavate(region.Revision, [site.Cell]);
             var changedSpace = new LocalSpatialSnapshot(space.Scope,
-                space.Regions.Select(r => ReferenceEquals(r, region) ? changedRegion : r), space.Actors, space.Structures);
+                space.Regions.Select(r => ReferenceEquals(r, region) ? changedRegion : r), space.Actors, space.Structures, space.GroundSupport);
             if (gathering.Nodes.Any(n => ResourceInteractionQueries.QueryAnchor(changedSpace, n.Feet) != SpatialOccupancy.Clear))
             {
                 return Reject(WorldActionRejection.Unavailable);

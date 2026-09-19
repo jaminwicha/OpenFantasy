@@ -87,8 +87,9 @@ public sealed class ConstructionDefinition
     public ConstructionStockInterpretation StockInterpretation { get; }
     public ContentHash Version { get; }
 
-    public SpatialStructure CreateStructure(EntityId structureId, SubunitPosition origin) =>
-        new(structureId, Members.Select(member => member.At(origin)));
+    public SpatialStructure CreateStructure(EntityId structureId, SubunitPosition origin, bool supportsActors = false) =>
+        new(structureId, Members.Select(member => member.At(origin)), supportsActors
+            ? Members.Select(member => StructureBearingSurface.FromMember(member, origin)) : []);
 
     private static void ValidateConnected(IReadOnlyList<MillimetreBox> members)
     {

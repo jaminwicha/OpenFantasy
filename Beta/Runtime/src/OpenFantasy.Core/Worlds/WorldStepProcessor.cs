@@ -86,7 +86,20 @@ public sealed class WorldStepProcessor
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
-            if (action.Intent is ExcavateIntent)
+            if (action.Intent is ClimbIntent)
+            {
+                if (gathering is null || state.ProfileVersion != 11)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret assisted climbing.");
+                }
+                var plan = WorldClimbResolver.Resolve(inventory, space, gathering, action,
+                    batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0);
+                space = plan.Space;
+                gathering = plan.Gathering;
+                resolution = new(inventory, dialogues, plan.Rejection, null);
+                performedWork = plan.Rejection == WorldActionRejection.None;
+            }
+            else if (action.Intent is ExcavateIntent)
             {
                 if (excavation is null || gathering is null || production is null)
                 {
