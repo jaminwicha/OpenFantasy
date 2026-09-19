@@ -32,51 +32,60 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `2dcdd79`, preserved on `codex/milestone-constructed-support`;
-[packet](p01/constructed-footing/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `d4f01b4`, preserved on `codex/milestone-stair-navigation`;
+[packet](p01/stair-navigation/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Fresh dry profile eleven binds actual completed construction to actor footing and earned assisted
-vertical traversal. Exact physical member XY coverage prevents rounded colliders from bridging slits;
-vertical contact rounds upward by less than one spatial subunit. Full body clearance, whole swept
-footprints and a continuous projected support corridor apply. Structure bases remain terrain-grounded;
-this establishes direct contact, not load strength, stacked construction or collapse.
+Fresh dry profile twelve adds ordinary stair movement and bounded multi-level routes over actual
+completed construction. Contact uses exact whole-footprint coverage within a bounded height band,
+with positive contact at the selected feet height and full-body sweeps. Ordinary steps require ground
+locomotion without hands or climb effort. Larger assisted climbs retain their separate action. Complete
+17-field snapshots restore construction before actors; spatial version three selects the new rules.
+Older saves and interpretations remain unchanged; admission requires an unplayed profile-eleven genesis.
 
-The explicit climb requires ground locomotion, manipulation, trusted control, exact actor revision and
-400 banked effort. It uses rise-then-traverse for ascent and the reverse for descent, suppresses ordinary
-same-actor movement and refuses during reading holds. Excavation preserves support mode. Profile eleven
-stores a complete direct root, reconstructing completed structures before actor admission; older
-profiles retain terrain-only rules/bytes. New admission requires an unplayed profile-ten genesis.
+Routes retain XYZ and validate actual 32-subunit movement edges. Deterministic forward/reverse search
+shares 2,048 default expansions (4,096 maximum), plus a transition-work cap sixteen times the node budget.
+Reverse edges must replay forward to the exact node; the first verified meeting does not promise a
+shortest path. Missing support-plane evidence propagates even when a flat predecessor is blocked.
+Placement selects the profile's matching route budget; earlier profiles retain 256. Completed builders
+recognize home on another elevation even when XY matches, and the NPC controller routes downstairs.
 
-[Qualification](p01/constructed-footing/qualification/verification-summary.json): **1,173 managed tests
-(749 Core +424 Hosting),32 new, zero failures/skips**, clean full solution build. The actual quest funds
-Wren's construction at revision95; the player's real climb reaches its installed250mm platform at96,
-effort910→520. Reopen, exact history and receipts preserve actor/support. A second durable test reaches
-a lower mining stance through real descent and extracts its selected cell under the same support mode.
-No finished project, final feet or earned work is injected.
+[Qualification](p01/stair-navigation/qualification/verification-summary.json): **1,189 managed tests
+(763 Core + 426 Hosting), 16 new, zero failures/skips**, clean full solution build. The actual quest funds
+a nine-tread/deck assembly installed by Wren at revision 63. Both actors traverse every 250 mm step to
+2.25 m above ground and back. At revision 425, player and NPC occupy the same XY below/above the deck;
+the actual NPC controller returns downstairs home by 585. The fixture's synthetic material/work
+calibration proves funded geometry and navigation, not structural strength or production balance.
 
-**26 actual Host calls and two actual process kills** prove before/after-climb recovery, retries and
-reverse recorded history. Nine independent retained-byte witnesses verify feet/effort/material/terrain
-and the suppressed movement sample. All five fixture files recreate byte-for-byte. Actual Godot
-headless foundation and native farm create/reopen/history pass. The default client has no climb control
-or rendered height/choreography acceptance. All242 architecture links,22 frozen hashes and the exact19-file
-predecessor index pass. The all-systems verifier was not run; the new checker is wired and ran directly.
-Retained failures are expected missing-type test-first errors and six exception-type assertions corrected
-to the actual compound-intent contract. No validation threshold or deadline changed.
+The mid-stair ordinary rise at revisions 134→135 survives close/reopen, exact history, retry and two real
+process-kill boundaries: **20 Host calls and nine independent byte witnesses**. All seven closed fixture
+files recreate byte-for-byte, including the final 585-commit journey. The previous profile-eleven fixture
+also passes the extended checker: 26 Host calls/two process kills. Actual Godot headless foundation and
+native farm create/reopen/history pass. Default client visuals remain the farm; no rendered stair,
+physical-device, art or user acceptance is claimed. All 255 architecture links, 22 frozen hashes and the
+exact 19-file predecessor index pass. The all-systems verifier was not run; the new checker ran directly.
 
-A bounded native source critic found no consequential defect. No external Claude/Fable call was used.
-The [constructed-footing reference](../Runtime/docs/architecture/constructed-footing.md) and dependent
-world/material/excavation/persistence pages describe the actual timeless contract.
+The native critic identified a placement-budget mismatch and missing reverse-support evidence; both
+are corrected with retained cases. A real NPC direct-route failure at 2,048 expansions was resolved by
+bidirectional search with unchanged fixture and limits, rather than a test-only waypoint. Expected
+missing-type compilation and an incorrect new legacy-route expectation are also retained/dispositioned.
+No gate/deadline was relaxed and no external Claude/Fable call was used. The
+[stair navigation reference](../Runtime/docs/architecture/stair-navigation.md) and dependent pages describe
+these timeless rules.
 
-Next work must prove usable multi-level geometry and ordinary stairs/vertical routing, occupied-floor
-and tunnel consequences, work/task interaction at multiple elevations, and construction damage/removal.
-The assisted ledge primitive is not automatic stair walking or full structural safety. Player action
-offers, controls and choreography must use actual authority elevation. Broader generated extraction
-ownership, variable hardness/tools and mining presentation remain open. Wet composition still requires
-durable sealing policy, real openings, displaced volume and conserved spill handling; never install
-external diagnostic policy or discard a dry/wet owner's invariants to combine them.
+Next work must prove occupied-floor/tunnel and support-removal consequences, construction damage and
+structural failure, elevated work/task interaction, and usable multi-floor presentation. Navigation
+through authored broad treads is not load safety, arbitrary stairs or production routing throughput.
+Player offers/controls/choreography must consume actual authority elevation. Broader generated extraction
+ownership, hardness/tools and mining presentation remain open. Wet composition still requires durable
+sealing policy, real openings, displaced volume and conserved spill handling; never install external
+diagnostic policy or discard dry/wet invariants merely to combine them.
 
 Prior dependencies remain preserved:
 
+- [Constructed support](p01/constructed-footing/README.md), `2dcdd79`, milestone
+  `codex/milestone-constructed-support`: profile-eleven exact installed-member actor footing and earned
+  assisted traversal; 1,173 tests, 26 Host calls/two process kills, real funded construction and native
+  headless foundation/farm. Direct contact only, without load strength/collapse or wet composition.
 - [Durable excavation](p01/live-excavation/README.md), `7df18df`, milestone
   `codex/milestone-live-excavation`: earned selected-cell work, actual player/NPC tool/reach/control,
   exact source entitlement and atomic terrain/custody publication;1,141 tests,144 ordinary Host calls/
