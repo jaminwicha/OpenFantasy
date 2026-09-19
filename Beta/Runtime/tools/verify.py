@@ -39,6 +39,7 @@ def main():
     env["OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE"] = str(test_results / "terrain-material-fixture")
     env["OPENFANTASY_RUNOFF_EVIDENCE"] = str(test_results / "runoff-fixture")
     env["OPENFANTASY_RUNOFF_CAPACITY_EVIDENCE"] = str(test_results / "runoff-capacity-fixture")
+    env["OPENFANTASY_EXCAVATION_EVIDENCE"] = str(test_results / "excavation-fixture")
     env["OPENFANTASY_RESERVOIR_BOUNDARY_EVIDENCE"] = str(test_results / "reservoir-boundary-fixture")
     env["OPENFANTASY_RESERVOIR_TRANSPORT_EVIDENCE"] = str(test_results / "reservoir-transport-fixture")
     env["OPENFANTASY_RUNOFF_COMMAND_EVIDENCE"] = str(test_results / "runoff-command-fixture")
@@ -147,6 +148,10 @@ def main():
         run("reservoir-world-persistence", [sys.executable, root / "tools/check_watershed_network_world.py",
             "--dotnet", dotnet, "--fixture", test_results / "reservoir-world-fixture", "--profile", "reservoir",
             "--output", artifacts / "reservoir-world.json"])
+
+        run("live-excavation-persistence", [sys.executable, root / "tools/check_live_excavation.py",
+            "--dotnet", dotnet, "--fixture", test_results / "excavation-fixture",
+            "--output", artifacts / "live-excavation.json"])
 
         run("reservoir-boundary-assessment", [sys.executable, root / "tools/check_reservoir_boundaries.py",
             "--dotnet", dotnet, "--fixture", test_results / "reservoir-boundary-fixture",

@@ -46,6 +46,7 @@ staged transfers. Neither a contributing-column count nor a graphical ocean plan
 
 | Operation | Concrete owner | Important checks and effects |
 | --- | --- | --- |
+| Excavate | [ExcavationPlanner](../../src/OpenFantasy.Core/Terrain/ExcavationPlanner.cs) | Owned cell permission, exact tool/work/reach, direct support and atomic whole-cell issuance/removal; see [contract](excavation.md) |
 | Gather | [GatherPlanner](../../src/OpenFantasy.Core/Gathering/GatherPlanner.cs) | Owned suitable tool, body/reach, node revision, earned effort, finite source and issued yield |
 | Craft | [InstantCraftPlanner](../../src/OpenFantasy.Core/Production/InstantCraftPlanner.cs) | Actual eligible input lots, protection/reservation, exact recipe, output allocation and retained consumption |
 | Accept/deliver | [DeliveryQuestPlanner](../../src/OpenFantasy.Core/Quests/DeliveryQuestPlanner.cs) | Addressed agreement, owned stock, real funding, durable participation, once-only delivery/reward |

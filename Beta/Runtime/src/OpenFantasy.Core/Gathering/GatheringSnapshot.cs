@@ -137,6 +137,9 @@ public sealed class GatheringSnapshot
         }
     }
 
+    internal GatheringSnapshot SpendEffort(EntityId actorId) => new(WorldId, BranchId, AdvancingStep, Nodes, Tools,
+        Actors.Select(actor => actor.ActorId == actorId ? actor.Spend() : actor));
+
     internal GatheringSnapshot Harvest(GatherNodeState node, GatherActorWork actor) => new(WorldId, BranchId, AdvancingStep,
         Nodes.Select(value => value.NodeId == node.NodeId ? node : value), Tools,
         Actors.Select(value => value.ActorId == actor.ActorId ? actor : value));

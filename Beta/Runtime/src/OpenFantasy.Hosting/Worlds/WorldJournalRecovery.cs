@@ -40,7 +40,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The local world genesis does not start at an unheld commit zero.");
         }
-        if (genesis.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 && database.SchemaVersion != WorldDatabaseSchemaThree.Version)
+        if (genesis.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 && database.SchemaVersion != WorldDatabaseSchemaThree.Version)
         {
             throw new InvalidDataException("A production, quest or construction genesis requires its declared world schema.");
         }
@@ -111,7 +111,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The world contains a checkpoint beyond its accepted journal.");
         }
-        if (database.SchemaVersion == WorldDatabaseSchemaThree.Version && state.ProfileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9)
+        if (database.SchemaVersion == WorldDatabaseSchemaThree.Version && state.ProfileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10)
         {
             throw new InvalidDataException("The third world schema has no accepted production, quest or construction admission.");
         }

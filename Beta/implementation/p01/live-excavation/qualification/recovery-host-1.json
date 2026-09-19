@@ -1,0 +1,2186 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-19T21:41:11.925535+00:00",
+  "scope": "Managed-authority genesis; actual host earned work, two final-commit process kills and exact history",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80",
+  "runs": [
+    {
+      "name": "prefix history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":0,\"SourceHeadHash\":\"fc5c1e0a1a4fcc836b25766c5e8902e248f8afdadca2469d1d4f0f26c8d2ab76\",\"RecordedRevision\":0,\"StateHash\":\"fc5c1e0a1a4fcc836b25766c5e8902e248f8afdadca2469d1d4f0f26c8d2ab76\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-1.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":1,\"ProfileVersion\":10,\"StateHash\":\"be07d6e9e65d417b81f99d0c321f787b6e09fb6fa9860a2993f15ed0e2b53d3f\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-2.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":2,\"ProfileVersion\":10,\"StateHash\":\"d795f4b619112950fe1a1d8963b659a8262da3761b96796431447357981dedcb\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-3.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":3,\"ProfileVersion\":10,\"StateHash\":\"892d8c169773cb468be57ef4bbc3c0055b51a36f99e4224e5fbea5c922f27118\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-4.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":4,\"ProfileVersion\":10,\"StateHash\":\"8df1d7f80d0cdad0648f176f6d658280472570eb460e59c79b477fd775f7ed67\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-5.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":5,\"ProfileVersion\":10,\"StateHash\":\"d4741160532079257c599204de70ebefcce2327b76ec2237b069bc00959dec80\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-6.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":6,\"ProfileVersion\":10,\"StateHash\":\"a852ff4515ecac26ed36841ffdc9cd98442d076a04c13ed3333c994b5475b1bb\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-7.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":7,\"ProfileVersion\":10,\"StateHash\":\"da7c26a5d70a24acb41ec3336242e08ce5b8f349d1d8ae7b62957bd40e5de326\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 8",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-8.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":8,\"ProfileVersion\":10,\"StateHash\":\"8c1365fde249055e5b51dd2b34e3673b0411a82236dbacab24036a4f1db4eacb\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 9",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-9.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":9,\"ProfileVersion\":10,\"StateHash\":\"adc0ff4a038842d68d45ec382b68460c40f61172f527cf92165f837c3cfccba8\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 10",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-10.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":10,\"ProfileVersion\":10,\"StateHash\":\"ff0ab1223cf1e7c087443f5ec82093f005da3c0895b0e520eb39d0e841a1cb2c\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 11",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-11.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":11,\"ProfileVersion\":10,\"StateHash\":\"63e717572a121470c28b6bc2f944f3a5fb0821b208008c2cc846de451d050b09\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 12",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-12.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":12,\"ProfileVersion\":10,\"StateHash\":\"d0166164c9e48aabc2998fff4a26faa4415fcb446dfb8525eebe2ad05b55d895\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 13",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-13.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":13,\"ProfileVersion\":10,\"StateHash\":\"c0df3e94990297fe65131a0edea2fe86064a658da2134a3cc7a103580d732b65\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 14",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-14.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":14,\"ProfileVersion\":10,\"StateHash\":\"20f51e14f7c775e7de4074ae5807e9443b6f0e2abfe3bb51617ac8c9c1bbb4d5\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 15",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-15.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":15,\"ProfileVersion\":10,\"StateHash\":\"4223d70187ea4a4f61f3c13a658c6162819b7b8425b5754f2b8839ac983a878f\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 16",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-16.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":16,\"ProfileVersion\":10,\"StateHash\":\"625b05a299027d0f1e393fa5ba33527bab562c2a741dbcbf54f02de4d0e3e5f7\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 17",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-17.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":17,\"ProfileVersion\":10,\"StateHash\":\"73bfa52450e2a3f403efedd9693638bf121895ba4115c283af889dad07e49b12\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 18",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-18.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":18,\"ProfileVersion\":10,\"StateHash\":\"d8e8069927f2505c9525ade63102a74d467d9f4db8f28c79583ee3e050be054e\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 19",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-19.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":19,\"ProfileVersion\":10,\"StateHash\":\"6050a87d410550271a9b731537c01ab1f45bd42e7a46079866b6567806128f46\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 20",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-20.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":20,\"ProfileVersion\":10,\"StateHash\":\"a020a67700544c8c513eeab38a924fffde1718a76fdd55a5e1bf86b50e845cbd\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 21",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-21.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":21,\"ProfileVersion\":10,\"StateHash\":\"cbd1d03329fe5668baab2c27214d862992e37b8963b446cb5b82af28c3286c94\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 22",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-22.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":22,\"ProfileVersion\":10,\"StateHash\":\"776bb5f68c29504b0f707047dac41dcd9079868df18b8d21951dd4ee1e762aae\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 23",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-23.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":23,\"ProfileVersion\":10,\"StateHash\":\"b03a5af1191fc620d50b7839713e54e545fd93cfd5b0e895666955722a41ad83\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 24",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-24.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":24,\"ProfileVersion\":10,\"StateHash\":\"3ea9a7a1caaf863153c2815ff6c219ef7c6eab9266f34276257f6c76d2b92d2a\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 25",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-25.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":25,\"ProfileVersion\":10,\"StateHash\":\"05a9402554e2ec2466e01a6b9993db04da57dd1460a4a00376dc4a4d0330ea7b\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 26",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-26.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":26,\"ProfileVersion\":10,\"StateHash\":\"536759ccc2bb8161a0fb2edc059872aec9c4159ae97786876de816c84017f077\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 27",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-27.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":27,\"ProfileVersion\":10,\"StateHash\":\"97c70759c082aa77e61b9d557231cfea9d2b823cbaa1ddc0987f0c0de8b6e06b\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 28",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-28.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":28,\"ProfileVersion\":10,\"StateHash\":\"63e45e9e9097999d09ac3e67926567e027ff10ba8b7974ce1f82baa2a2010e1e\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 29",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-29.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":29,\"ProfileVersion\":10,\"StateHash\":\"edcd533d6c528204f6c53d267be090198b9228204931f36a8db4501fb9cc2a60\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 30",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-30.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":30,\"ProfileVersion\":10,\"StateHash\":\"f66b3b2e8f0852827c5323104f3ea7a5547e37682d9fb905768a6b7a1a0f9e60\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 31",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-31.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":31,\"ProfileVersion\":10,\"StateHash\":\"ad2ebb2e19d19288bb447f530cd553486b1d48c06e48418b6291c493ce56b5e7\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 32",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-32.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":32,\"ProfileVersion\":10,\"StateHash\":\"32385977388a50a413a7b9eda71abf9548960ccac61214cf124914a13f200161\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 33",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-33.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":33,\"ProfileVersion\":10,\"StateHash\":\"466818fd528c96d77af6a64d27ea8eb09eca4f903b508a623e244ca2cd658228\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 34",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-34.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":34,\"ProfileVersion\":10,\"StateHash\":\"689275291f0a8ab16e695775b6dde92335ae5f4c76be4691bd0765f3b3cd490d\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 35",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-35.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":35,\"ProfileVersion\":10,\"StateHash\":\"7a922ae15dbae72ad85a30b9501cb5507fcfe4d2ac4f9577b3177a8ab8baf362\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 36",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-36.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":36,\"ProfileVersion\":10,\"StateHash\":\"06e823286cd7bba49ff45b8b97fcf3334e37c9c3bd8e7a0e598f1cd7d6246cc0\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 37",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-37.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":37,\"ProfileVersion\":10,\"StateHash\":\"3bbc2c35803323c681ff5a21c8187b0a90e0dcb77b8ed38fec0fcf58c7158803\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 38",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-38.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":38,\"ProfileVersion\":10,\"StateHash\":\"706e7d128839bae745d95b352768d52498c87659bd67ab5ddfa1a1e06c741a74\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 39",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-39.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":39,\"ProfileVersion\":10,\"StateHash\":\"7ad67ecbf358b3f50d9b121c9031fdca9a887e0fa63b3e18328280598e2fdfac\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 40",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-40.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":40,\"ProfileVersion\":10,\"StateHash\":\"593d764b230d8ecaaba96983a01ef02f85fa2caf123c336f8cecec392b28b0c3\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 41",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-41.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":41,\"ProfileVersion\":10,\"StateHash\":\"6d224b5486e7220f09df3de12ed1059d01a11a502d8bb52ae7afccc3167a44f5\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 42",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-42.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":42,\"ProfileVersion\":10,\"StateHash\":\"2a778d74306626651742aec9e2f33c2438d3d69b54c94b7de9222a3d718b3e8a\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 43",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-43.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":43,\"ProfileVersion\":10,\"StateHash\":\"cd8bc5b8af6e6d4d2823c8ebe4719b763d14116305e990f487834279c24d20e4\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 44",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-44.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":44,\"ProfileVersion\":10,\"StateHash\":\"bdf0e18a811c92b8a82ba4250721d847aa5f77fae820ab8d6fd4048ae3ea9a35\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 45",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-45.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":45,\"ProfileVersion\":10,\"StateHash\":\"9e53e522d246817f40e428d46c94e5909d56f88f9669df51c5704ac822e61243\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 46",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-46.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":46,\"ProfileVersion\":10,\"StateHash\":\"85d9622ee2e6766e2b48f5902605dd0bf2385532c2ce60ee299963dbbb1ae255\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 47",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-47.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":47,\"ProfileVersion\":10,\"StateHash\":\"ad576bc122e51d46b0232b92a6c781df703723f9240e0d5ab1e1f51de38318a2\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 48",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-48.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":48,\"ProfileVersion\":10,\"StateHash\":\"d713aadf1873e862b902b822c534b0021ba560baf83bd5cae520cf5b3e04981a\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 49",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-49.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":49,\"ProfileVersion\":10,\"StateHash\":\"7faa913a17e78f3186bc7c9773f6835e6c097a6a0fc8ce1ac5023e62e4ec8e52\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 50",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-50.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":50,\"ProfileVersion\":10,\"StateHash\":\"f49185441a256f62c96633a7d2fcf27f0b1738c501ddb40e721556817c96741c\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 51",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-51.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":51,\"ProfileVersion\":10,\"StateHash\":\"1a75006ee613230c51941c7fde0e8fe715e95553fc81e9c95b62d00e9678211d\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 52",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-52.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":52,\"ProfileVersion\":10,\"StateHash\":\"f9c44aeea31755fcac88642abfe3ed8b0843ef580e5374eb270d94b24b6ca6c8\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 53",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-53.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":53,\"ProfileVersion\":10,\"StateHash\":\"d944501167d0a75a320a9266af97fdc1aa4be2d99680bb4b63882f2b4bc900a7\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 54",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-54.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":54,\"ProfileVersion\":10,\"StateHash\":\"785077cd07c54283ed44d8f4c7f4e4c93152a54dedbd3244a0ff7e992047cacc\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 55",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-55.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":55,\"ProfileVersion\":10,\"StateHash\":\"b069cec921fff8ea4a93a065d8c0339aa14324942c4537211eb6b3cfeec33b57\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 56",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-56.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":56,\"ProfileVersion\":10,\"StateHash\":\"2deeaf686fa08c3d999ad7b06ae0e9dde6edf6e7c0c17ac37a954414fbcbc6a8\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 57",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-57.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":57,\"ProfileVersion\":10,\"StateHash\":\"6775a51cbe70f2b9007aecdfe020f1b3b7559bc03dad005d7f1dbe06179c4284\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 58",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-58.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":58,\"ProfileVersion\":10,\"StateHash\":\"d347841e60de0ebfbb6de3a2dfcbb29ffade28fab25017b02fcb87fc056a1a3c\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 59",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-59.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":59,\"ProfileVersion\":10,\"StateHash\":\"94e0ca7c3258ce9ad4d4a8b446471e6384aa7d70667bf64a7b4df26d2750bb99\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 60",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-60.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":60,\"ProfileVersion\":10,\"StateHash\":\"a35d3313fc5e1ad096469e91815ba20bc4ea9d4066fc8d429ce31a0404469d5d\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 61",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-61.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":61,\"ProfileVersion\":10,\"StateHash\":\"0f084cd2ec06e50fb6551977679f71df32744cd1dd8996351b71734c095fd9f6\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 62",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-62.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":62,\"ProfileVersion\":10,\"StateHash\":\"866a5e4f93795c8f9402471427897bdae71940eda7609e7f2e89179e184db6e6\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-63.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":63,\"ProfileVersion\":10,\"StateHash\":\"cedcd991c26c428acc868817483d3190516a9ec04068c64a9043461e877a8acb\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 64",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-64.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":64,\"ProfileVersion\":10,\"StateHash\":\"f40a3e385baf2e6bbd34d1eb387c7268df09a9fed309ea417dbfba245aef26c3\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 65",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-65.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":65,\"ProfileVersion\":10,\"StateHash\":\"09d7ae78f241eda79e9479cca415f0f4c3db4a3df87e522a8bfd38044c9614f4\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 66",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-66.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":66,\"ProfileVersion\":10,\"StateHash\":\"9bca874daed52324e40c8b751474e51eba53d81b5921f510447ee4afb5ba6abb\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 67",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-67.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":67,\"ProfileVersion\":10,\"StateHash\":\"f15d8d44a3f3e30f0807e46d0d1f756b1053ab9097b168c5ff9ebd73336884b6\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 68",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-68.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":68,\"ProfileVersion\":10,\"StateHash\":\"3198c2ef81c22e45e0f128a3e10bf6050f1db6bfa73b72328a3c910576566919\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 69",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-69.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":69,\"ProfileVersion\":10,\"StateHash\":\"0907a33478249bf2e90c39be70e42f5e71e33423f6758001a896f8a3d76c323e\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 70",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-70.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":70,\"ProfileVersion\":10,\"StateHash\":\"b389acde34bcc8a5523b5a876806af87370f4e93814508dedbfb8f920b1ec5d6\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 71",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-71.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":71,\"ProfileVersion\":10,\"StateHash\":\"8672a83833a067100038e6ab7769df94e435190fa06983855e08ca5d62a8d963\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 72",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-72.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":72,\"ProfileVersion\":10,\"StateHash\":\"29020c1476ee3f88fdd33a5d2b2300b4c04e7c0137065e10527c3e728abfa477\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 73",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-73.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":73,\"ProfileVersion\":10,\"StateHash\":\"7adcd0fc8f2a6a8130f9ddc591e070d9d663a40d0ca72a97f6502439ace7b1ac\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 74",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-74.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":74,\"ProfileVersion\":10,\"StateHash\":\"2cc82f3041fd8c7cd4ff605c862b75b56570020f96a8af9f4133145a00d552b5\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 75",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-75.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":75,\"ProfileVersion\":10,\"StateHash\":\"6c59223c461e65305150b7f89c97445e7b6572ccf3e246e9f40b99333af3a501\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 76",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-76.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":76,\"ProfileVersion\":10,\"StateHash\":\"02a770abe026d0e835bbcad321add3e8911e2bc0feb5cf6c5f0c25a3466d60a7\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 77",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-77.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":77,\"ProfileVersion\":10,\"StateHash\":\"d570164cfdee55f29254390de7a8f4e9e9c41a32cf677bb1a2032dee1c888077\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 78",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-78.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":78,\"ProfileVersion\":10,\"StateHash\":\"70f5f46cef20765b14747c316d38ea23fc99f8a47e4abc17ec52acaee7b8903d\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 79",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-79.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":79,\"ProfileVersion\":10,\"StateHash\":\"0a218f3c51652f7b4075d6b43aa6bbe2ed4294bd8c6d83ffa4a54ac544637f31\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 80",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-80.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":80,\"ProfileVersion\":10,\"StateHash\":\"45677a062453a501e2a85e6c917f194c9f93a3ab6622e4130e407c358bec4ce9\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 81",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-81.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":81,\"ProfileVersion\":10,\"StateHash\":\"4d8f258a74717da38164de3171d2ece52df8e1334746e9c92265831e041c3cf5\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 82",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-82.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":82,\"ProfileVersion\":10,\"StateHash\":\"943e404b87bace8c5d7cdcbe518c7306a4433ae526395f3a6df0aee45886485b\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 83",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-83.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":83,\"ProfileVersion\":10,\"StateHash\":\"1c966945f207a714a93dbae847ffcc0bee251e1960028ff84f5c68900c9f619e\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 84",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-84.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":84,\"ProfileVersion\":10,\"StateHash\":\"6aa56776fc6cfa4492e32d82af0c65db222cf43b968ae9187aa4b45c4b4b2f05\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 85",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-85.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":85,\"ProfileVersion\":10,\"StateHash\":\"c358764006371db3778ebd12d3f2e5a8d4599b6b095fcee3e0e13c629387ef53\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 86",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-86.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":86,\"ProfileVersion\":10,\"StateHash\":\"ad78534f16b8c4b1d3f7b68f5c4b60686ee5873f04cfdfeb1c8ee30e4756ced3\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 87",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-87.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":87,\"ProfileVersion\":10,\"StateHash\":\"e9868acf882ed768345cbd0c0f440c0305efc8cb6d047fb27e7e9a90902d87cd\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 88",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-88.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":88,\"ProfileVersion\":10,\"StateHash\":\"8d945c1614f4ae1a4543b1fc8885a8cb618c2d97999978e0dc9c1f7de9cd587f\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 89",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-89.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":89,\"ProfileVersion\":10,\"StateHash\":\"b450f146de30a0ca12bc753f36ba7b49b1b35184c242426798a5cda7217a3d2b\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 90",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-90.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":90,\"ProfileVersion\":10,\"StateHash\":\"da924cd96610d1f2110754c932328361d6fc1cee9b723e8c4a3849409ee4b042\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 91",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-91.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":91,\"ProfileVersion\":10,\"StateHash\":\"fad3f841647e9cab559e3b0c23339d511821711e257853b659b091a9915eeb40\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 92",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-92.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":92,\"ProfileVersion\":10,\"StateHash\":\"e7b988ea172ad25953122156fc5fc59c3f74912fd5de2b2d0c31da00faf8b08a\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 93",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-93.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":93,\"ProfileVersion\":10,\"StateHash\":\"b52414c3da33c6a7a6ec1191927d4ff7fefa377ae2031d902cb5ae853c847aba\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 94",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-94.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":94,\"ProfileVersion\":10,\"StateHash\":\"1b018c165b0f1cb20cecc61cf2651787358943130cd63f80f4050f76d0423fbc\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 95",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-95.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":95,\"ProfileVersion\":10,\"StateHash\":\"a79dd1b52b2bc3ef1a32b7ec331e9cef1c8da9320b337a8cb9799186b5ee0dfe\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 96",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-96.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":96,\"ProfileVersion\":10,\"StateHash\":\"ac3cbd3c6fc28a4bbf819c675611399be7cc6266d0a292df469a35dabff35651\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 97",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-97.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":97,\"ProfileVersion\":10,\"StateHash\":\"8251b5ff580be1cd508deb24226f1970288e4ecbfb45700c3ba603351b026270\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 98",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-98.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":98,\"ProfileVersion\":10,\"StateHash\":\"cfd9dbb70969d968697a919b61b2c2dc39bcdbecd875d69e2d9580a9d770f69d\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 99",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-99.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":99,\"ProfileVersion\":10,\"StateHash\":\"c60003672df16fc41d1fe68d64dcd1f544a2a6fd6e301b5af67ccd21606e0bda\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 100",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-100.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":100,\"ProfileVersion\":10,\"StateHash\":\"7655d2b073fb8ca3bffe40196701cf8d38f9a010e3bd34266af9528b23ff1f5a\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 101",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-101.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":101,\"ProfileVersion\":10,\"StateHash\":\"0ec8a32b4c6e0ac051a906e8a6ee285162cd968aa53eb3f75f3d0c57c8f68e1a\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 102",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-102.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":102,\"ProfileVersion\":10,\"StateHash\":\"1eca566a6547f23bf2ba61505f1d26d9c201a0ccd4f8b34d3dc6030b41e781fc\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 103",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-103.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":103,\"ProfileVersion\":10,\"StateHash\":\"700771110b0c725ec843a9f050673868d84e30df70e45282a113729886018210\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 104",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-104.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":104,\"ProfileVersion\":10,\"StateHash\":\"f94e9f8d7dbec85786f6503377cc56dbd34a71d4f81ee225330d49c08bfcfd10\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 105",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-105.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":105,\"ProfileVersion\":10,\"StateHash\":\"79f9afe63e6955654af09735a5f18c6b8bf99ca8f710ac5e907361df178b1c95\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 106",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-106.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":106,\"ProfileVersion\":10,\"StateHash\":\"d0cda758e70abc1918d3442af3611c95deaf47273d33459f929a16c3633ee296\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 107",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-107.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":107,\"ProfileVersion\":10,\"StateHash\":\"5eae6ca4934ba6921f6b94505fbc56cc6f5d868b70e8dd31b62a22fcb8bc74e0\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 108",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-108.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":108,\"ProfileVersion\":10,\"StateHash\":\"0e99839adaf50cafd5de3c37d01365bac52c52fbfad3f7c904183056da7b2bd2\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 109",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-109.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":109,\"ProfileVersion\":10,\"StateHash\":\"4921a665adbc2ecbee49198a1b0a22cf97b44a131988306f2fbafdbbb9b72ebc\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 110",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-110.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":110,\"ProfileVersion\":10,\"StateHash\":\"32beaa53aaeb7881cb1dede272d827d467a1a053f82308caf80b46df44d5afce\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 111",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-111.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":111,\"ProfileVersion\":10,\"StateHash\":\"15b1e17578c002c23dc56e9ea379e76a9c64c2a175133322a2ae66dd9b06267e\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 112",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-112.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":112,\"ProfileVersion\":10,\"StateHash\":\"edb8230fd9cd6f045eb1d83cc7b6699bfa22e5e60d948235b53469b7b01307aa\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 113",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-113.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":113,\"ProfileVersion\":10,\"StateHash\":\"5524b9de11f57a1a79afc085cdec096ebc43f0510df02c864dfa3465873725c3\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 114",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-114.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":114,\"ProfileVersion\":10,\"StateHash\":\"a8bcf3b9241e9375adbed323a4052908f82f24d849a30639386438ec6dad7665\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 115",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-115.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":115,\"ProfileVersion\":10,\"StateHash\":\"64c6262ef3c0e33944b12b89b8818bb68a1205349aac971b20761d2e1aeebed0\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 116",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-116.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":116,\"ProfileVersion\":10,\"StateHash\":\"a9949cf6747c0742c931051946e7fca174eaf08f4bb4b2a4e7175dc30bd02b86\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 117",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-117.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":117,\"ProfileVersion\":10,\"StateHash\":\"e67adcaa15a83ad108df475fa633c2f9fece2fe7e039cca56a1332ef7f381fe7\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 118",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-118.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":118,\"ProfileVersion\":10,\"StateHash\":\"24b88c2cb8c2638a3892587765397f24b1012c0ae84960c10464e1d2bdb84d10\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 119",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-119.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":119,\"ProfileVersion\":10,\"StateHash\":\"5abc7e96a1e81228fda3ac9b0a5cd20c69b363c7497aa9177189a75673988f72\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 120",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-120.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":120,\"ProfileVersion\":10,\"StateHash\":\"2075ea8706df78cb4bdaf2193c59ca2c60e1f585f9afa3922fab4176eaa13909\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 121",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-121.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":121,\"ProfileVersion\":10,\"StateHash\":\"54ecdd407f1dea1b89b00211efe6d448613f04f101207022e6fe88ac85472204\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "prefix step 122",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/prefix.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-122.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":122,\"ProfileVersion\":10,\"StateHash\":\"a30035815a424e32254b8f5926d41fc944547929643d86f1c31bab359abb05fa\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 122",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "122"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":122,\"SourceHeadHash\":\"a30035815a424e32254b8f5926d41fc944547929643d86f1c31bab359abb05fa\",\"RecordedRevision\":122,\"StateHash\":\"a30035815a424e32254b8f5926d41fc944547929643d86f1c31bab359abb05fa\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32619600},\"AdvancingSteps\":122,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "retry rolled-back extraction",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-123.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":123,\"ProfileVersion\":10,\"StateHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before refuse committed extraction retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-123.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 123",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "123"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":123,\"StateHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32621400},\"AdvancingSteps\":123,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":11}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":0,\"StateHash\":\"fc5c1e0a1a4fcc836b25766c5e8902e248f8afdadca2469d1d4f0f26c8d2ab76\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 82",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "82"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":82,\"StateHash\":\"943e404b87bace8c5d7cdcbe518c7306a4433ae526395f3a6df0aee45886485b\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32547600},\"AdvancingSteps\":82,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 40",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "40"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":40,\"StateHash\":\"593d764b230d8ecaaba96983a01ef02f85fa2caf123c336f8cecec392b28b0c3\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32472000},\"AdvancingSteps\":40,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 122",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "122"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":122,\"StateHash\":\"a30035815a424e32254b8f5926d41fc944547929643d86f1c31bab359abb05fa\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32619600},\"AdvancingSteps\":122,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 41",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "41"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":41,\"StateHash\":\"6d224b5486e7220f09df3de12ed1059d01a11a502d8bb52ae7afccc3167a44f5\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32473800},\"AdvancingSteps\":41,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 81",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "81"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":81,\"StateHash\":\"4d8f258a74717da38164de3171d2ece52df8e1334746e9c92265831e041c3cf5\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32545800},\"AdvancingSteps\":81,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 123",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "123"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":123,\"StateHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32621400},\"AdvancingSteps\":123,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":11}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 123",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "123"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":123,\"StateHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32621400},\"AdvancingSteps\":123,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":11}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after refuse committed extraction retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-123.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 123",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "123"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":123,\"StateHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32621400},\"AdvancingSteps\":123,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":11}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":0,\"StateHash\":\"fc5c1e0a1a4fcc836b25766c5e8902e248f8afdadca2469d1d4f0f26c8d2ab76\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 82",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "82"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":82,\"StateHash\":\"943e404b87bace8c5d7cdcbe518c7306a4433ae526395f3a6df0aee45886485b\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32547600},\"AdvancingSteps\":82,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 40",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "40"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":40,\"StateHash\":\"593d764b230d8ecaaba96983a01ef02f85fa2caf123c336f8cecec392b28b0c3\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32472000},\"AdvancingSteps\":40,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 122",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "122"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":122,\"StateHash\":\"a30035815a424e32254b8f5926d41fc944547929643d86f1c31bab359abb05fa\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32619600},\"AdvancingSteps\":122,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 41",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "41"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":41,\"StateHash\":\"6d224b5486e7220f09df3de12ed1059d01a11a502d8bb52ae7afccc3167a44f5\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32473800},\"AdvancingSteps\":41,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 81",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "81"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":81,\"StateHash\":\"4d8f258a74717da38164de3171d2ece52df8e1334746e9c92265831e041c3cf5\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32545800},\"AdvancingSteps\":81,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 123",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "123"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":123,\"SourceHeadHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"RecordedRevision\":123,\"StateHash\":\"85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872\",\"ProfileVersion\":10,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32621400},\"AdvancingSteps\":123,\"HasReadingHold\":false,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":640,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":2,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":128,\"Y\":128,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"PresenceRevision\":0,\"SourceItemQuantity\":11}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "crashes": [
+    {
+      "boundary": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-123.bin",
+        "before"
+      ],
+      "pid": 84572,
+      "signalTimeoutSeconds": 30,
+      "termination": "external process.kill; no graceful Dispose",
+      "signal": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "readOnlyDatabaseSha256": "60b211db75ffb1d7fe414d0ae551d1bd31b74b531da0525f18cb2ccd1ddfa7e4"
+    },
+    {
+      "boundary": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/excavation-world-d2295ba829724a0e845de7d9c40fad80/after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/live-excavation/qualification/recovery-fixture/step-123.bin",
+        "after"
+      ],
+      "pid": 84606,
+      "signalTimeoutSeconds": 30,
+      "termination": "external process.kill; no graceful Dispose",
+      "signal": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "readOnlyDatabaseSha256": "60b211db75ffb1d7fe414d0ae551d1bd31b74b531da0525f18cb2ccd1ddfa7e4"
+    }
+  ],
+  "independentStates": [
+    {
+      "database": "prefix.sqlite",
+      "Revision": 0,
+      "WorldHash": "fc5c1e0a1a4fcc836b25766c5e8902e248f8afdadca2469d1d4f0f26c8d2ab76",
+      "ExcavationHash": "ed7d56cf12cf68b60b1ef2f110a0a2de9d5ba9265b85592bec55985bbbef78d5",
+      "TerrainArchiveHash": "4068b961d2d9439386c6964fc061326f2e987b7d8edbbcff9bc1123616af6a53",
+      "CompletedWork": 0,
+      "Effort": 0,
+      "IsExcavated": false,
+      "YieldUnits": 0,
+      "DestinationRevision": 0,
+      "SourceItemQuantity": 10
+    },
+    {
+      "database": "prefix.sqlite",
+      "Revision": 40,
+      "WorldHash": "593d764b230d8ecaaba96983a01ef02f85fa2caf123c336f8cecec392b28b0c3",
+      "ExcavationHash": "ed7d56cf12cf68b60b1ef2f110a0a2de9d5ba9265b85592bec55985bbbef78d5",
+      "TerrainArchiveHash": "4068b961d2d9439386c6964fc061326f2e987b7d8edbbcff9bc1123616af6a53",
+      "CompletedWork": 0,
+      "Effort": 400,
+      "IsExcavated": false,
+      "YieldUnits": 0,
+      "DestinationRevision": 0,
+      "SourceItemQuantity": 10
+    },
+    {
+      "database": "prefix.sqlite",
+      "Revision": 41,
+      "WorldHash": "6d224b5486e7220f09df3de12ed1059d01a11a502d8bb52ae7afccc3167a44f5",
+      "ExcavationHash": "2975a6d47dc919fb7fce4ffcb68be1bfc879f0aa90b169fd109a70dcb9e15147",
+      "TerrainArchiveHash": "4068b961d2d9439386c6964fc061326f2e987b7d8edbbcff9bc1123616af6a53",
+      "CompletedWork": 1,
+      "Effort": 10,
+      "IsExcavated": false,
+      "YieldUnits": 0,
+      "DestinationRevision": 0,
+      "SourceItemQuantity": 10
+    },
+    {
+      "database": "prefix.sqlite",
+      "Revision": 81,
+      "WorldHash": "4d8f258a74717da38164de3171d2ece52df8e1334746e9c92265831e041c3cf5",
+      "ExcavationHash": "2975a6d47dc919fb7fce4ffcb68be1bfc879f0aa90b169fd109a70dcb9e15147",
+      "TerrainArchiveHash": "4068b961d2d9439386c6964fc061326f2e987b7d8edbbcff9bc1123616af6a53",
+      "CompletedWork": 1,
+      "Effort": 410,
+      "IsExcavated": false,
+      "YieldUnits": 0,
+      "DestinationRevision": 0,
+      "SourceItemQuantity": 10
+    },
+    {
+      "database": "prefix.sqlite",
+      "Revision": 82,
+      "WorldHash": "943e404b87bace8c5d7cdcbe518c7306a4433ae526395f3a6df0aee45886485b",
+      "ExcavationHash": "ac7ca9239a92ea0366c1008f1551b008ab0da4c7e5cb026d0a24bdb03ab98630",
+      "TerrainArchiveHash": "4068b961d2d9439386c6964fc061326f2e987b7d8edbbcff9bc1123616af6a53",
+      "CompletedWork": 2,
+      "Effort": 20,
+      "IsExcavated": false,
+      "YieldUnits": 0,
+      "DestinationRevision": 0,
+      "SourceItemQuantity": 10
+    },
+    {
+      "database": "prefix.sqlite",
+      "Revision": 122,
+      "WorldHash": "a30035815a424e32254b8f5926d41fc944547929643d86f1c31bab359abb05fa",
+      "ExcavationHash": "ac7ca9239a92ea0366c1008f1551b008ab0da4c7e5cb026d0a24bdb03ab98630",
+      "TerrainArchiveHash": "4068b961d2d9439386c6964fc061326f2e987b7d8edbbcff9bc1123616af6a53",
+      "CompletedWork": 2,
+      "Effort": 420,
+      "IsExcavated": false,
+      "YieldUnits": 0,
+      "DestinationRevision": 0,
+      "SourceItemQuantity": 10
+    },
+    {
+      "database": "before.sqlite",
+      "Revision": 122,
+      "WorldHash": "a30035815a424e32254b8f5926d41fc944547929643d86f1c31bab359abb05fa",
+      "ExcavationHash": "ac7ca9239a92ea0366c1008f1551b008ab0da4c7e5cb026d0a24bdb03ab98630",
+      "TerrainArchiveHash": "4068b961d2d9439386c6964fc061326f2e987b7d8edbbcff9bc1123616af6a53",
+      "CompletedWork": 2,
+      "Effort": 420,
+      "IsExcavated": false,
+      "YieldUnits": 0,
+      "DestinationRevision": 0,
+      "SourceItemQuantity": 10
+    },
+    {
+      "database": "before.sqlite",
+      "Revision": 123,
+      "WorldHash": "85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872",
+      "ExcavationHash": "0732123a11ece18d4f37be02a55ae431d80ab1a3e86161b18309c0a4bc552802",
+      "TerrainArchiveHash": "eea546dc090b41346eeffa77db790258ecbe36763aaa8afddb8d96892e12cf2a",
+      "CompletedWork": 3,
+      "Effort": 30,
+      "IsExcavated": true,
+      "YieldUnits": 1,
+      "DestinationRevision": 1,
+      "SourceItemQuantity": 11
+    },
+    {
+      "database": "after.sqlite",
+      "Revision": 123,
+      "WorldHash": "85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872",
+      "ExcavationHash": "0732123a11ece18d4f37be02a55ae431d80ab1a3e86161b18309c0a4bc552802",
+      "TerrainArchiveHash": "eea546dc090b41346eeffa77db790258ecbe36763aaa8afddb8d96892e12cf2a",
+      "CompletedWork": 3,
+      "Effort": 30,
+      "IsExcavated": true,
+      "YieldUnits": 1,
+      "DestinationRevision": 1,
+      "SourceItemQuantity": 11
+    },
+    {
+      "database": "after.sqlite",
+      "Revision": 123,
+      "WorldHash": "85fd60ea1a78c2a0f96b05cf863216bd136dc8c455931c6bdd840ac99c27f872",
+      "ExcavationHash": "0732123a11ece18d4f37be02a55ae431d80ab1a3e86161b18309c0a4bc552802",
+      "TerrainArchiveHash": "eea546dc090b41346eeffa77db790258ecbe36763aaa8afddb8d96892e12cf2a",
+      "CompletedWork": 3,
+      "Effort": 30,
+      "IsExcavated": true,
+      "YieldUnits": 1,
+      "DestinationRevision": 1,
+      "SourceItemQuantity": 11
+    }
+  ],
+  "fixtureSha256": {
+    "expected.json": "ffa2c7f4dd52082eed166da99935d904ee0155aa71111010e57a057e9b76c4ca",
+    "genesis.bin": "fc5c1e0a1a4fcc836b25766c5e8902e248f8afdadca2469d1d4f0f26c8d2ab76",
+    "genesis.sqlite": "0b5584ff7ffe3002eb0be1b72e43ddc73c55732e8811eb7d7dc348e2f65bcb06",
+    "step-1.bin": "eb6d8ef231fad815536f9e4eb1ba9579979572dfd022750999f706613d8d1d71",
+    "step-10.bin": "aa99334254a2db62ad0f612439dd755bef2d04d3da991fda3a7ac766a043955e",
+    "step-100.bin": "8c0fce0f53019295b08148c9c73c0a42d7a9f59fc5b4e274e423069325e32d57",
+    "step-101.bin": "60bd18322c8886762fef5539b31b4c46b7c9808b1c2a7182cc4682bc5cb2a03b",
+    "step-102.bin": "57af5a1aca1ed2cdd592b2ea660505d3c2d372734943e77a8b068a80dfd2e366",
+    "step-103.bin": "8798f9cf4c851f71bd32021b91831dc16483368a3f4055691d9ca8488df14c84",
+    "step-104.bin": "ae42174da16830eba954dcb6a3ae5137b69a61ec98f1bd19c5ffa3f8791db4c0",
+    "step-105.bin": "ab400b5a78c45c0495f94b3fa24a5cf83fb8702702f2ec573083c8eb7795ae46",
+    "step-106.bin": "6b7796e37dced573adf57989d2d6acce6077301298645e06ff1267b6ba7ffc97",
+    "step-107.bin": "3f83961783b46eefd9da5ceb8ae6a1b7e16ae6cf693610c60982aec976b32b18",
+    "step-108.bin": "25c9243e6a269610251303def3be81ffacd547b720ce2c5ac990ba85c737690b",
+    "step-109.bin": "8c7f352a01bee1d197c02fa708b0443b32392f1d24be24df6e6763e2217e4840",
+    "step-11.bin": "67115bd1a04ac364f2e6e15a284bb5f3d453928e5d50dacced38cb04e6f7038e",
+    "step-110.bin": "6966f1fc6175ba5ec5f7b183882770ac9f8a62525867d24a1415492c857fb654",
+    "step-111.bin": "0f40bce0b8f3bb5834a7b22a8431d6ab01ac6c4c4665488071131639206b5ddd",
+    "step-112.bin": "47b1807ac1777cfc7640515a97c7fe8d3df2eacb6db3b78f22311531726346b5",
+    "step-113.bin": "3d52c7f9b37cc974d334d4dba124c0c4cb1482e54ff448436b43b187b73b1491",
+    "step-114.bin": "df3bf598ceedf3d2a5a69702a40270a935203579e5921615189c2cc113f5d14f",
+    "step-115.bin": "a38a5bd7ebd1a8f55641dde682d4e2a89def0de985bc3e91485d6461b2982a49",
+    "step-116.bin": "5f63125c8a2b99b848351d0d4544157b957c203a9317aeb9d403d2c1cc551d3b",
+    "step-117.bin": "d19c912d84f9c4bc82f465096cdef21a749e33b6ec4631ff1c973bdc6d636ccc",
+    "step-118.bin": "f726c1870e74179d2302d90927fcee54299c94804974d44a24426112e8204853",
+    "step-119.bin": "a467b8f95063081ea86be8bc2725b21e6eef916c312ed4830b70aa749e7b1c2f",
+    "step-12.bin": "471081f4bd96470455bb4570bafc31cd6c63d49d3585318ee18aacc572917a5a",
+    "step-120.bin": "2707fc047efdcc9978a69c13a778bd23a082496001927a5c3e46334569b6cfd9",
+    "step-121.bin": "24f7cd53d1a5cd5f87ce1a74a697838e842d0b452421785dc7971389fd165b88",
+    "step-122.bin": "e6b348bbcfcfff9cc8458f04957105ca55ac5e037049fd6cb010f4d0964ff487",
+    "step-123.bin": "1fb4249ff1b98062488810ce132394b2c2ee60ef36bf931b6d6880fa929db4af",
+    "step-13.bin": "5706c9bbff40dc470fda516d063ac9c3c45a934de37dd20bc92ab031ac6d5c57",
+    "step-14.bin": "453722744f81eb1b9139cc5ee24db2600ba1e6ebfeaa1f867662ecc5382df842",
+    "step-15.bin": "e4e1db50afdf886eba73e145fef12f4c897dc3f2747f73820df879e880a05a44",
+    "step-16.bin": "ab52024b7191bf6030626424dcfe0b1772355179219a2ae4945ea53a52b84416",
+    "step-17.bin": "7e804928d0d2a1fa0c1997011c809cedc02cfd6d581e459ba169e6889762bb9b",
+    "step-18.bin": "65fe488aff456bc3d98faa9ba7bf79c233c40ebc72330af2c0d306e3e9610308",
+    "step-19.bin": "557080bd3d20feb56d657119701ce44a09b3c7f5cc4fab0f25502ca8ddd81cb9",
+    "step-2.bin": "cfea2d21495713347ff184a1a9e12533c82b178eeefd3d0725097d0a3e132b86",
+    "step-20.bin": "c44bf69a5c2c9ab3034679ccbcb0f40e6c464b804fc08d288ea57dca9b1e04a9",
+    "step-21.bin": "0fc6a010b368483540f4dc130a198fbea06dc0861d3df2f5ef1d91aaa53c83ad",
+    "step-22.bin": "809fedf64237bd13fe1cf797fd25bcaec904fe945ae38f4fb277882c00a7992f",
+    "step-23.bin": "2281f0e8d205ac400a5174897e432212f2ccd7b8dd2e76ce0268250913f6e8ae",
+    "step-24.bin": "c9e3baeceda8e7f0c7612bd62b4bc0a6250ff50046bc888f897fea452e06dd51",
+    "step-25.bin": "1e753aee1670debb3427d4866baa8fab74b4885b79eded587ae6b517cfdb4c40",
+    "step-26.bin": "7641f9ea0397bcbd947a30123a663c25945766188a8e55bb3ad74f98592b2715",
+    "step-27.bin": "3d1fc1866af489e235666d8834a93d8d878cb3850428fd6e483858dfaaca13e5",
+    "step-28.bin": "bcd6b58a207e21289f909cfe5853ce1cf3b9d7816f2698477fcca675d0bdd1ff",
+    "step-29.bin": "17c0fdfc2416a7e01f720691f0a87f9f9e8a3257e37ac3d9a20e69d2917088f0",
+    "step-3.bin": "34722b2569e9fa3a674ec1468da65b4ebd750d64a17560082e33d1d2485d6085",
+    "step-30.bin": "2682a62b4dd074553790c0afe3e7bb5e45b855fe0062567e3b9feb76c33b37f2",
+    "step-31.bin": "45009d31b406a3d74d5f4c7b187ef6b4d7f96437f58e8cd11893410d0208d064",
+    "step-32.bin": "5740fcad2f5c11aceb4e4376ccf8fd66527e26ef52071fb298c5fdfa43934428",
+    "step-33.bin": "1f26102eb2f1dd6e07ef1e4b4d75d986ca198ba41d9f4d68e6637f9dad303138",
+    "step-34.bin": "06c256871e6970635ded18d9317331524ccbe3289d0a9f25d3fb95fe4f0cef78",
+    "step-35.bin": "eb660fc79a85f3587157d61e0f109b0473a0e984150d450d7650853354007313",
+    "step-36.bin": "9504d65b3acd0f7765f4172a28e0996e30977eed8db164147c6f09ce23e6eaa1",
+    "step-37.bin": "bd2fe451cc93527761156ef2cea3815f4f7e523ddf2669a388affb6813aa0072",
+    "step-38.bin": "ef328018d7ff437bd9ebe7a0df845ee488b54ea9f609a0f704c63b1bf6e606ef",
+    "step-39.bin": "1a4e34f629b6e2b6072fedfab230d0d2d76a51b1cea6c61fb32158e0041856a0",
+    "step-4.bin": "e767b6a009c300026a716c51ff6abeb14872ec6f6112c94efe6140f49f083e08",
+    "step-40.bin": "9c9546ce50ed454c78245c4f93a0373ae18f547a420dc3f934aa1c961c012a12",
+    "step-41.bin": "4f82f6b26fd1134798f2b2d714a158ab1c269c2e85c9fb3532cf80d97994eb9c",
+    "step-42.bin": "2eb970294161536068d95aaa9ee73cff0cbe896b36610e0adc1a5cba490252b0",
+    "step-43.bin": "23a8d328c34bcf2d2661c552ded658ebc71c70f731d69dc28c67c0f94ae44c0a",
+    "step-44.bin": "1e47a5fa81f4207653e7ce990103c33e5f09c4963773db4ac653362aee9fa601",
+    "step-45.bin": "1f925cda20758992c4de1feb85fa2695a479c34992a1114739f8284dc40dc9c6",
+    "step-46.bin": "1a2344ce103eabecc1f37f4b1213ef91fd9a7876ede031a4a73842b4c5d29a19",
+    "step-47.bin": "4fc5a1049086ddbbb3e9e89634f5cf10a9e2ab79b48d892171aff9bd878a7538",
+    "step-48.bin": "3c6086ac08283b0655f319596c56b082048534e099da9a44f93cc0769334c73f",
+    "step-49.bin": "a7999155e9be1ffe4d38a1dad41fb0b7d1e3817c5e4c7183361bec8a35234626",
+    "step-5.bin": "4c26a8d6b8313b515fe6e87b452df247b9e54388f418b6964137ebe46c6bbb0a",
+    "step-50.bin": "86e9f8e224306cea9c42b0fd7d01a2456d90f41adacdccb20beb72980c84c4a8",
+    "step-51.bin": "08dcd7b8ac5bc880142de295ff980c71226048d376b302f44c4bcb80f6d4aa1a",
+    "step-52.bin": "0d7c5f54c00770acfad125f994be9d7432470dc4557c4b06553442a9ef9ab1bc",
+    "step-53.bin": "bbcacaf7b55f091624f5d8023ecb1aa4bf6626e4c7d561f933b864b5658bc0f3",
+    "step-54.bin": "2da2b76e6ec903d0da5e559df63c91822959ea227d93325a99e95a21f3874878",
+    "step-55.bin": "83df8925e3dc79da72cf4f8476e918f2951e18fc7140af79bbe73133587bdacc",
+    "step-56.bin": "cfb0bd5817278b4a1f31b6328799d9c269da2a02de024fe3f505347ab52d70c2",
+    "step-57.bin": "9d0b88896c0f1c36a1a70c7e56ff38e86865b237e7a51be1cdeb47b6181f944e",
+    "step-58.bin": "72cb3c9ae65217c465e8ddea1633bd85fc3e54d214cb8f13191635b34cbaf9b0",
+    "step-59.bin": "f09d81a7c4a83e54a4b0b75be6bcfaa52938ba3346159b9244286c7111f6ab9b",
+    "step-6.bin": "d4a616f335954f36ec569db0c0c745ffee33135d51728fb4bff1f711b04bcc49",
+    "step-60.bin": "d792b0fe1644f66c75966909994aadf645f28d3be67b8e869260d4a00d3a8b40",
+    "step-61.bin": "e949dde1a33904dc1979e8c11ead0115a341f59ae509742652b1564ca526e299",
+    "step-62.bin": "6abee1d285f0e3b120efb4160e04f19527766591e007b27f53138d29f0aaf99a",
+    "step-63.bin": "b6dfc093e45a1af61ada8742e455d6357a554793dce6f2ebd1301a8864ff049d",
+    "step-64.bin": "f8c691455995fa1c6f1b397127bdb3b3bae3f887341ec0f1c1445ddfe3a65476",
+    "step-65.bin": "07389875cbc250638aa510ebed53670ba08a0f140ea0004c4dae778105f39c6a",
+    "step-66.bin": "056327be38e5718c5de637972788cfd5cb329d7098403cfe09ae90f396e7f944",
+    "step-67.bin": "9286fca064da33af77ff8ade1dbab9b86beefa77d1a31d86a4cf0c3e65f45ade",
+    "step-68.bin": "312367c045d1199f271ae46e65ec528f6b9e557dd511dcb7a44561254ed49bfe",
+    "step-69.bin": "c6b954385d311f291e733b5f4d990b355e224e4cdcf0f7b346a9545ccc709ed3",
+    "step-7.bin": "0a1bad354ad158961c85c3a290438ac26d05d861114aff98d6c7ed6c95a4b624",
+    "step-70.bin": "a545c509614cf533e725a078e60997550f1b74691e040f82b3fea7112eb00f1c",
+    "step-71.bin": "b0bb7f308f7c4ae9a1c56c0b78c13a932088773eb5695fc1cd30ad47c7289b0b",
+    "step-72.bin": "5ac4f8638630de09039081db6eaeed903d456e0e2c376a82918a3dffc1152967",
+    "step-73.bin": "d142c61b6f26b0d05a54bbbd05ead8776341a56b686cf24b95d0fb84de35f81f",
+    "step-74.bin": "4167593fef06fa4f56e6a8f906652d2e4c2572fc255cb33c2fecd1192282dd89",
+    "step-75.bin": "9d43ce5d4438f3d0b7f7f7fabf0b495076f555dd6d97d6e5a2a5974498ca1220",
+    "step-76.bin": "6a2617e13a596c68de86845c04ed2a8d95a779390262c80b6d8a9a6a6e78104d",
+    "step-77.bin": "d0e1c1dd7f0f4c03faca7a9767f232d3e6ba3141cc840b4f3e5820dd509cd1f9",
+    "step-78.bin": "982ab2d5e35b953ce44cfc4890f52ccb420afc40327ce6cc59f5f00bf43fee1e",
+    "step-79.bin": "22cc588c640d60b7b507c57a3b8d4dc6fedcea8e6ddc19d84098e5aab52ca4ba",
+    "step-8.bin": "ed410c90ec45824403db7e6f6a13059313b318ad5979732031b839cd8af19e13",
+    "step-80.bin": "f5e87cdcf155bc7fcc73cc18977f9c614f7c0ba735b4406001416cf0ea483a06",
+    "step-81.bin": "b075c75f9f438005dfdab25a53773a101c6fc1a6593ee4d43759ccb3a718f8c6",
+    "step-82.bin": "1098a2586d823ad41560cbe7ccbe315584b6547c3a7acbb1048ad93dbeb50dc5",
+    "step-83.bin": "a8211124cf7ecc96507577da462dae2cddebfee02b4adf344be562d8751fb723",
+    "step-84.bin": "c50593733abe56d33e52c911a9b0e53a66ab839fb468a3ee51e06d8a16e759d3",
+    "step-85.bin": "cc78ea6f1130acc7f18f67390ee292c1da3396a464795a3871809c758bc5dc5f",
+    "step-86.bin": "425d64ca8fa5a31211ba63ca878138bb5b16988f8e6d62614a5b04e8a91f9548",
+    "step-87.bin": "4dc81374e3be9706f7a6979a8a4a225c19185d75e31ec5915de1cb0b9e7f8f98",
+    "step-88.bin": "b44c0ad6b7e53714e36622128c64706cad784c535e3afaaf911c8a7e9656ba27",
+    "step-89.bin": "50976568b2a2a7280673f2dfdae0ea3dbe120efd8779c09ea820f52e34b4c89b",
+    "step-9.bin": "141768ec5655c913294ac9a710b515cc386c9667109855f9477b243cbfb51dfc",
+    "step-90.bin": "feeacd8286964297084384444f2c506a3162439e2617d98074edd7576fca2baf",
+    "step-91.bin": "0bca04974c67df02df97bd1694dce19cf6c3be4cf66fbdae9f9031e4dd6faf15",
+    "step-92.bin": "e5e74d16e885894d6f8264f339a5949f19554a58f0cd4bc2f9644916aed96a27",
+    "step-93.bin": "2dee667f6629d9d16b7abb6b5202bdd1c0afb0e6b49983363253c5c512f1776e",
+    "step-94.bin": "0431b069cfe13389804010e468cde2272a79562577bdf346de34a5414285a26d",
+    "step-95.bin": "b9e660855191b7af375ed69b11151cb284a3ba73b5200e7ae5f201325f3a6591",
+    "step-96.bin": "99260456a0a368ee228dc6c8b80a491b33baeac3f1acb87e33cdf8574e0680a8",
+    "step-97.bin": "da966fbc42f7d4b3ac0cd0b3efa6d1180d9157f5ab04ad0b0b80638caadf2e63",
+    "step-98.bin": "ce1a46576a2249c57bf15de0cf42a1c997225fe316efd95960bb68759bd79fcd",
+    "step-99.bin": "c3cd6ea4f7ef03d7fb38273f228906222c89ddf578946e78e275b7739e7785cb"
+  },
+  "independentActionRevisions": [
+    41,
+    82,
+    123
+  ],
+  "finishedUtc": "2026-09-19T21:43:39.966842+00:00"
+}

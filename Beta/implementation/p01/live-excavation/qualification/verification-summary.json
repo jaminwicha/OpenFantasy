@@ -1,0 +1,159 @@
+{
+  "scope": "Fresh dry profile10: durable earned cell excavation, exact source custody, direct support and recorded history",
+  "status": "passed",
+  "build": {
+    "final": "build-serial.log",
+    "warnings": 0,
+    "errors": 0,
+    "earlierFailure": "build.log: MSB4166 child exit; cause unconfirmed"
+  },
+  "tests": {
+    "total": 1141,
+    "core": 726,
+    "hosting": 415,
+    "new": 23,
+    "skipped": 0,
+    "reports": [
+      {
+        "file": "full-tests/_mac_2026-09-19_16_43_35_net8.0.trx",
+        "total": "726",
+        "executed": "726",
+        "passed": "726",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      {
+        "file": "full-tests/_mac_2026-09-19_16_43_36_net8.0.trx",
+        "total": "415",
+        "executed": "415",
+        "passed": "415",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    ]
+  },
+  "host": {
+    "report": "recovery-host-1.json",
+    "ordinaryCalls": 144,
+    "externalProcessKills": 2,
+    "independentByteWitnesses": 10,
+    "workRevisions": [
+      41,
+      82,
+      123
+    ],
+    "beforeCommitRecovery": 122,
+    "afterCommitRecovery": 123,
+    "syntheticYieldUnits": 1
+  },
+  "native": {
+    "foundation": "godot-foundation.log",
+    "farm": "native-farm.json",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "recreation": {
+    "report": "fixture-recreation.json",
+    "sameBytes": true,
+    "files": 126
+  },
+  "preservation": {
+    "architectureLinks": 225,
+    "missingLinks": [],
+    "frozenSpecCount": 22,
+    "frozenSpecHashes": {
+      "spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md": true,
+      "spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md": true,
+      "spec-v1_1/COVERAGE.json": true,
+      "spec-v1_1/CRITIC_REVIEW.md": true,
+      "spec-v1_1/CROSS_SYSTEM_SYNERGIES.md": true,
+      "spec-v1_1/DECISIONS.md": true,
+      "spec-v1_1/ECOLOGY_AND_FLUIDS.md": true,
+      "spec-v1_1/GDD.md": true,
+      "spec-v1_1/GENERATION_VALIDATION.md": true,
+      "spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md": true,
+      "spec-v1_1/IMPLEMENTATION_HANDOFF.md": true,
+      "spec-v1_1/IMPLEMENTATION_PLAN.md": true,
+      "spec-v1_1/INTEGRATION_CRITIC.md": true,
+      "spec-v1_1/LANGUAGE_AND_AFTERLIFE.md": true,
+      "spec-v1_1/LOCAL_REUSE_DECISIONS.md": true,
+      "spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md": true,
+      "spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md": true,
+      "spec-v1_1/PRESENTATION_CONTRACTS.md": true,
+      "spec-v1_1/README.md": true,
+      "spec-v1_1/REQUIREMENTS.json": true,
+      "spec-v1_1/TECHNICAL_DESIGN.md": true,
+      "spec-v1_1/VALIDATION.md": true
+    },
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "predecessorIndexUnchanged": true,
+    "predecessorPaths": [
+      "README.md",
+      "docs/MILESTONE_8.md",
+      "src/Client/GameController.cs",
+      "src/Client/GameWindows.cs",
+      "src/Net/Protocol.cs",
+      "src/Net/ServerNode.cs",
+      "src/Sim/FrontierGen.cs",
+      "src/Sim/SelfTest.cs",
+      "src/Sim/SettlementGen.cs",
+      "src/Sim/SimConstants.cs",
+      "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+      "src/Sim/SiteGen/SiteFloor.cs",
+      "src/Sim/SiteGen/SiteGenerator.cs",
+      "src/Sim/SiteGen/SiteRecipe.cs",
+      "src/Sim/SiteGen/SiteValidator.cs",
+      "src/Sim/SiteGen/TempleEmbedder.cs",
+      "src/Sim/World.Instances.cs",
+      "src/Sim/World.Settlements.cs",
+      "src/Sim/World.cs"
+    ]
+  },
+  "review": {
+    "scope": "Bounded native source and reference critic; no test execution by critic",
+    "corrected": [
+      "Cross-site item physical calibration",
+      "Direct actual actor-to-face reach",
+      "Combined per-owner labor/time budget"
+    ],
+    "remainingConsequentialFindings": 0
+  },
+  "failureRecords": [
+    "test-first.log",
+    "focused-1.log",
+    "focused-3.log",
+    "sequential-workers.log",
+    "build.log"
+  ],
+  "fullVerifierRun": false,
+  "unchangedGates": true,
+  "externalPaidModelsUsed": false,
+  "limits": [
+    "Selected dry cells only; no reservoir/macro owner composition or implicit migration",
+    "Direct support refusal, no collapse/load strength/spill dynamics",
+    "No mining UI/art/audio or production balance/performance acceptance",
+    "All full campaign and production gates remain open"
+  ]
+}

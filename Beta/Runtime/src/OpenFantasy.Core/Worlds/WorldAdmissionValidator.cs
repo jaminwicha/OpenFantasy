@@ -38,6 +38,7 @@ public static class WorldAdmissionValidator
         admission.ReadConstruction();
         admission.ReadReservoirs();
         admission.ReadTransport();
+        admission.ReadExcavation();
         return admission.Complete();
     }
 
@@ -134,6 +135,21 @@ public static class WorldAdmissionValidator
             foreach (var geometry in reservoirs.Geometries)
             {
                 Add(geometry.ReservoirId, WorldIdentityRole.Reservoir, unique: true);
+            }
+        }
+
+        internal void ReadExcavation()
+        {
+            if (world.Excavation is not { } excavation) return;
+            excavation.ValidateForWorld(world);
+            foreach (var site in excavation.Sites)
+            {
+                Add(site.SiteId, WorldIdentityRole.ExcavationSite, unique: true);
+                Require(site.OwnerActorId, WorldIdentityRole.Actor);
+                Require(site.CountedSourceId, WorldIdentityRole.CountedSource);
+                Definition(site.Material.Item.DefinitionId, WorldIdentityRole.ItemDefinition, site.Material.Item.Version);
+                Definition(site.Material.Physical.DefinitionId, WorldIdentityRole.PhysicalMaterialDefinition, site.Material.Physical.Version);
+                Definition(site.RequiredTool.DefinitionId, WorldIdentityRole.ItemDefinition, site.RequiredTool.Version);
             }
         }
 
@@ -344,7 +360,7 @@ public static class WorldAdmissionValidator
             }
             foreach (AdmittedCountedSource source in inventory.Sources)
             {
-                // Terrain-source identities have a separate role until a coupled extraction contract exists.
+                // Terrain ancestry and counted entitlements keep distinct identities; excavation explicitly binds them.
                 Add(source.SourceId, WorldIdentityRole.CountedSource);
                 Definition(source.Definition.DefinitionId, WorldIdentityRole.ItemDefinition, source.Definition.Version);
             }

@@ -8,6 +8,7 @@ using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Progression;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -25,9 +26,9 @@ public sealed class WorldSnapshot
         GatheringSnapshot? gathering = null, ProductionSnapshot? production = null,
         ProgressionSnapshot? progression = null, QuestSnapshot? quests = null, ConstructionSnapshot? construction = null,
         PreparedWatershed? watershed = null, PreparedWatershedNetwork? watershedNetwork = null,
-        LiquidReservoirState? reservoirs = null, ReservoirTransportState? transport = null)
+        LiquidReservoirState? reservoirs = null, ReservoirTransportState? transport = null, ExcavationSnapshot? excavation = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, null)
     {
     }
 
@@ -36,7 +37,7 @@ public sealed class WorldSnapshot
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues, GatheringSnapshot? gathering,
         ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests,
         ConstructionSnapshot? construction, PreparedWatershed? watershed, PreparedWatershedNetwork? watershedNetwork,
-        LiquidReservoirState? reservoirs, ReservoirTransportState? transport, WorldIdentityIndex? previous)
+        LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -132,6 +133,11 @@ public sealed class WorldSnapshot
         {
             throw new ArgumentException("The production profile requires its retained gathering component.");
         }
+        Excavation = excavation;
+        if (excavation is not null && (construction is null || watershed is not null || watershedNetwork is not null || reservoirs is not null))
+        {
+            throw new ArgumentException("Local extraction exclusively requires its dry construction profile.");
+        }
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
     }
 
@@ -154,7 +160,8 @@ public sealed class WorldSnapshot
     public PreparedWatershedNetwork? WatershedNetwork { get; }
     public LiquidReservoirState? Reservoirs { get; }
     public ReservoirTransportState? Transport { get; }
-    public ushort ProfileVersion => Transport is not null ? (ushort)9 : Reservoirs is not null ? (ushort)8 : WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
+    public ExcavationSnapshot? Excavation { get; }
+    public ushort ProfileVersion => Excavation is not null ? (ushort)10 : Transport is not null ? (ushort)9 : Reservoirs is not null ? (ushort)8 : WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
         : Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
         : Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;
     public WorldIdentityIndex IdentityIndex { get; }
@@ -167,8 +174,12 @@ public sealed class WorldSnapshot
         IEnumerable<WorldResident> residents, WorldInstant calendar, ulong revision, ulong advancingSteps,
         IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production,
         ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction,
-        LiquidReservoirState? reservoirs, ReservoirTransportState? transport)
+        LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation)
     {
+        if ((Excavation is null) != (excavation is null))
+        {
+            throw new ArgumentException("A successor must retain its extraction ownership.");
+        }
         if ((Reservoirs is null) != (reservoirs is null))
         {
             throw new ArgumentException("A world successor cannot add or remove physical reservoir ownership.");
@@ -178,6 +189,6 @@ public sealed class WorldSnapshot
             throw new ArgumentException("A world successor must retain the sole transport and physical owner together.");
         }
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, IdentityIndex);
     }
 }

@@ -33,6 +33,10 @@ elevation, bounded centre reach and a clear segment. The
 [ground route search](../../src/OpenFantasy.Core/Spatial/GroundRouteSearch.cs) and body checks
 support legal local routing, not an unrestricted global pathfinder.
 
+[Local excavation](excavation.md) supplies an explicit dry-world binding for selected cells. Earned
+work, whole-cell source issuance and terrain removal publish together, with direct support validation.
+The terrain value object's standalone operation remains distinct from that authorized world action.
+
 ## Runtime binding: immutable watershed preparation
 
 [WatershedPlanner](../../src/OpenFantasy.Core/Geography/WatershedPlanner.cs) accepts an explicit

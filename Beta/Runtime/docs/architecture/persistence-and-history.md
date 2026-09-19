@@ -43,6 +43,11 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 7 | Complete construction world plus one immutable prepared watershed network |
 | 8 | Complete construction world plus one exclusive physical reservoir/capacity owner and its network |
 | 9 | Complete construction world plus one exclusive reservoir transport owner, gate catalog and due-stage journal |
+| 10 | Complete dry construction world plus finite local excavation ownership and earned work |
+
+[Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
+retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
+are explicit; it shares the writer and limits while excluding independent watershed/reservoir ownership.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
@@ -60,7 +65,7 @@ basis. The outer snapshot has tag `world.snapshot`, unsigned-64 profile `7`, exa
 and exact network archive. Its step interpreter retains the existing action and receipt semantics.
 
 All decode/admission paths enforce identity roles across components. Admission is not insertion of
-geography into a lived save. Profiles six through nine use the same schema-three writer and full-journal
+geography into a lived save. Profiles six through ten use the same schema-three writer and full-journal
 recovery; they add no migration commit, separate writer or clock.
 
 [Profile eight](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV8.cs) frames unsigned-64 profile `8`,

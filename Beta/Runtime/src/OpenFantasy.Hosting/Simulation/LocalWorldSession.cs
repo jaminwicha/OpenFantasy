@@ -139,6 +139,11 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This saved profile does not support quest actions.");
             }
+            if (command.Intent is OpenFantasy.Core.Terrain.ExcavateIntent
+                && _authority.ReadStateForHost().ProfileVersion != 10)
+            {
+                throw new AuthorityDispatchException("This saved profile does not support excavation.");
+            }
             if (command.Intent is OpenFantasy.Core.Geography.ScheduleRunoffTransportIntent
                 && _authority.ReadStateForHost().ProfileVersion != 9)
             {

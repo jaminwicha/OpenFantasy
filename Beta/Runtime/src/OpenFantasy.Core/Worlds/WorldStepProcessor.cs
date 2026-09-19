@@ -7,6 +7,7 @@ using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Progression;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -17,6 +18,7 @@ namespace OpenFantasy.Core.Worlds;
 public sealed class WorldStepProcessor
 {
     private readonly WorldActionResolver _actions = new();
+    private readonly ExcavationPlanner _excavation = new();
     private readonly GatherPlanner _gathering = new();
     private readonly WorldCraftResolver _crafting = new();
     private readonly DeliveryQuestPlanner _quests = new();
@@ -65,12 +67,14 @@ public sealed class WorldStepProcessor
         LocalSpatialSnapshot space = state.Space;
         LiquidReservoirState? reservoirs = state.Reservoirs;
         ReservoirTransportState? transport = state.Transport;
+        ExcavationSnapshot? excavation = state.Excavation;
         HashSet<EntityId> worked = [];
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
         foreach (WorldActionCommand action in batch.Actions)
         {
             // Material validation covers the entire action, including its non-inventory side effects.
+            var previousExcavation = excavation;
             var previousGathering = gathering;
             var previousProduction = production;
             var previousProgression = progression;
@@ -82,7 +86,21 @@ public sealed class WorldStepProcessor
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
-            if (action.Intent is ScheduleRunoffTransportIntent)
+            if (action.Intent is ExcavateIntent)
+            {
+                if (excavation is null || gathering is null || production is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret excavation.");
+                }
+                var plan = _excavation.Plan(state, inventory, space, gathering, production, excavation, action,
+                    batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0, Occupied);
+                resolution = new(plan.Inventory, dialogues, plan.Rejection, plan.SpawnedId);
+                excavation = plan.Excavation;
+                gathering = plan.Gathering;
+                space = plan.Space;
+                performedWork = plan.Succeeded;
+            }
+            else if (action.Intent is ScheduleRunoffTransportIntent)
             {
                 if (transport is null)
                 {
@@ -183,6 +201,7 @@ public sealed class WorldStepProcessor
             if (!WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport))
             {
+                excavation = previousExcavation;
                 gathering = previousGathering;
                 production = previousProduction;
                 progression = previousProgression;
@@ -258,7 +277,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation);
         return new WorldStepDecision(candidate, receipts, identities);
     }
 
