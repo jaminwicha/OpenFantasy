@@ -32,8 +32,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Finite physical reservoir geometry: [packet](p01/reservoir-geometry/README.md) and
-[milestone ledger](GIT_MILESTONES.md). The qualified code marker is recorded with the checkpoint.
+Code/evidence: `f00e637`, preserved on `codex/milestone-reservoir-geometry`;
+[packet](p01/reservoir-geometry/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
 A fixed physical-storage wrapper now binds source, optional buffer and receiver custody to finite
 watertight open vessels. Geometric capacities must match receiving witnesses. Exact floor-band fills

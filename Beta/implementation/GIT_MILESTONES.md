@@ -39,6 +39,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-material-production` | `a1783a9` | Shared terrain/Production proof, direct raw retirement conservation, exact retained history and explicit v2 archives; 983 tests, 20 new plus 50 legacy real-host inspections, independent interval/spatial accounting and bounded native critique. [Evidence](p01/material-production/README.md) retains corrected fixture/compiler failures. No live mining, durable world admission, long-lived history compaction, production performance or full phase acceptance. |
 | `codex/milestone-runoff-budgets` | `02f2819` | Funded effective-runoff projection over exact finite drainage, shared physical/counting receiver headroom and canonical archive; 995 tests, 25 real host inspections, five independent origin-path/source checks and bounded native critique. [Evidence](p01/runoff-budgets/README.md) includes the 65,536-column profile and retained test-first failure. No hydraulic flow, receiver-capacity reservations, complete macro profiles, durable world admission, performance or full phase acceptance. |
 | `codex/milestone-runoff-capacity` | `83db425` | Shared ownership of pending runoff headroom, stale-safe cancellation and actual custody/Production reconciliation; 1,004 managed tests, nine focused followup cases and 46 host inspections with independent volume/source checks. [Evidence](p01/runoff-capacity/README.md) retains failures, old archive compatibility and execution boundaries. Standalone finite owner only; live flows, physical reservoirs, durable world admission, production performance and full gates remain open. |
+| `codex/milestone-reservoir-geometry` | `f00e637` | Finite authored watertight vessels, exact actual/projected fills, source/buffer/receiver composition and pinned wrapper plans; 1,018 tests, 26 host inspections and an independent binary-search fill oracle. [Evidence](p01/reservoir-geometry/README.md) preserves test-first failure, old capacity bytes and 4,096-column bounds. No live flow, terrain-wall proof, durable world admission, production performance or full-gate closure. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -105,3 +106,9 @@ The runoff-capacity branch preserves source, timeless reference updates and boun
 compositor, not globally admitted reservoirs or live water movement. The development checkout,
 previous milestones, 22 frozen spec hashes and exact unrelated predecessor index remain preserved.
 No branch switch, force move, push, merge or full-gate closure accompanies this marker.
+
+The reservoir-geometry branch preserves source, timeless reference updates and bounded qualification
+at `f00e637eb734573240f88f71cbe7e451636e24a2`. It records assumed watertight physical storage and exact
+volume projections, not naturally realized lakes or hydraulic simulation. Development continues on
+`codex/runtime-foundation`; previous milestones, frozen specs and the unrelated predecessor index
+remain preserved. No checkout switch, force move, push, merge or full acceptance closure occurs.
