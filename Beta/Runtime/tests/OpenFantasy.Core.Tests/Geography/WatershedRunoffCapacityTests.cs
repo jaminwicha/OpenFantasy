@@ -227,7 +227,7 @@ public sealed class WatershedRunoffCapacityTests
         File.WriteAllBytes(Path.Combine(path, name + ".bin"), WatershedRunoffCapacityCodecV1.Encode(state));
     }
 
-    private static (PreparedWatershedRunoff First, PreparedWatershedRunoff Second) Create(ulong volumeCapacity)
+    internal static (PreparedWatershedRunoff First, PreparedWatershedRunoff Second) Create(ulong volumeCapacity)
     {
         var basis = WatershedRunoffTests.Create();
         var original = basis.Inventory;

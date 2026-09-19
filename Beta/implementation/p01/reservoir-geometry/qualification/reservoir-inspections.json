@@ -1,0 +1,642 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-19T17:16:58.110915+00:00",
+  "runs": [
+    {
+      "name": "two-held",
+      "inputSha256": "2f2ab6cb348ad01cc8b44c00bfb170f7c18b9fda03da15cf49f9a4cdb024c396",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/two-held.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"liquid-reservoirs-v1\",\"Scope\":\"standalone-watertight-open-vessels\",\"ContentHash\":\"2f2ab6cb348ad01cc8b44c00bfb170f7c18b9fda03da15cf49f9a4cdb024c396\",\"CapacityHash\":\"437af4a53705fac6a0e0e0d979fc679e6db98e82843ab6d4acfa7c31deda35ae\",\"Revision\":1,\"TotalColumns\":2,\"Reservoirs\":[{\"ReservoirId\":\"7265736572766f690000000000000001\",\"CustodianId\":\"000072756e6f66660000000000000192\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":1300,\"ReservedIncomingUnits\":0,\"Actual\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0}},{\"ReservoirId\":\"7265736572766f690000000000000002\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":50,\"ReservedIncomingUnits\":1200,\"Actual\":{\"VolumeMicrolitres\":50000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":50000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":1250000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":250000000,\"RemainderMicrolitres\":0}}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "2f2ab6cb348ad01cc8b44c00bfb170f7c18b9fda03da15cf49f9a4cdb024c396",
+        "CapacityHash": "437af4a53705fac6a0e0e0d979fc679e6db98e82843ab6d4acfa7c31deda35ae",
+        "Revision": 1,
+        "TotalColumns": 2,
+        "Reservoirs": [
+          {
+            "ReservoirId": "7265736572766f690000000000000001",
+            "CustodianId": "000072756e6f66660000000000000192",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 1300,
+            "ReservedIncomingUnits": 0,
+            "Actual": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            }
+          },
+          {
+            "ReservoirId": "7265736572766f690000000000000002",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 50,
+            "ReservedIncomingUnits": 1200,
+            "Actual": {
+              "VolumeMicrolitres": 50000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 50000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 1250000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 250000000,
+              "RemainderMicrolitres": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "stacked",
+      "inputSha256": "4f5e579e9e699a45936c54ecc4ac6f27f4217035daccb793ac375570ef34a21e",
+      "byteLength": 5641,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/stacked.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"liquid-reservoirs-v1\",\"Scope\":\"standalone-watertight-open-vessels\",\"ContentHash\":\"4f5e579e9e699a45936c54ecc4ac6f27f4217035daccb793ac375570ef34a21e\",\"CapacityHash\":\"4dc2d7f49ad4ece54e8e618cef785cbaebfdbd43b1068d505e31b203f80e9448\",\"Revision\":0,\"TotalColumns\":2,\"Reservoirs\":[{\"ReservoirId\":\"7265736572766f690000000000000001\",\"CustodianId\":\"000072756e6f66660000000000000192\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":1300,\"ReservedIncomingUnits\":0,\"Actual\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0}},{\"ReservoirId\":\"7265736572766f690000000000000002\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"SpillZ\":4,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":50,\"ReservedIncomingUnits\":600,\"Actual\":{\"VolumeMicrolitres\":50000000,\"SurfaceMetres\":2,\"SurfaceBillionths\":50000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":650000000,\"SurfaceMetres\":2,\"SurfaceBillionths\":650000000,\"RemainderMicrolitres\":0}}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "4f5e579e9e699a45936c54ecc4ac6f27f4217035daccb793ac375570ef34a21e",
+        "CapacityHash": "4dc2d7f49ad4ece54e8e618cef785cbaebfdbd43b1068d505e31b203f80e9448",
+        "Revision": 0,
+        "TotalColumns": 2,
+        "Reservoirs": [
+          {
+            "ReservoirId": "7265736572766f690000000000000001",
+            "CustodianId": "000072756e6f66660000000000000192",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 1300,
+            "ReservedIncomingUnits": 0,
+            "Actual": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            }
+          },
+          {
+            "ReservoirId": "7265736572766f690000000000000002",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "SpillZ": 4,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 50,
+            "ReservedIncomingUnits": 600,
+            "Actual": {
+              "VolumeMicrolitres": 50000000,
+              "SurfaceMetres": 2,
+              "SurfaceBillionths": 50000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 650000000,
+              "SurfaceMetres": 2,
+              "SurfaceBillionths": 650000000,
+              "RemainderMicrolitres": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "canceled-buffer",
+      "inputSha256": "1b67d8d91335647c5b97846c5e0c3e9782553e9ee9f1052baa045c011df1c176",
+      "byteLength": 6083,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/canceled-buffer.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"liquid-reservoirs-v1\",\"Scope\":\"standalone-watertight-open-vessels\",\"ContentHash\":\"1b67d8d91335647c5b97846c5e0c3e9782553e9ee9f1052baa045c011df1c176\",\"CapacityHash\":\"eeb5be18fc2f683ec62ac7b77cb3965948317ba061a712cb9681fe44c2032dc9\",\"Revision\":1,\"TotalColumns\":3,\"Reservoirs\":[{\"ReservoirId\":\"7265736572766f690000000000000001\",\"CustodianId\":\"000072756e6f66660000000000000192\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":1300,\"ReservedIncomingUnits\":0,\"Actual\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0}},{\"ReservoirId\":\"7265736572766f690000000000000002\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":50,\"ReservedIncomingUnits\":0,\"Actual\":{\"VolumeMicrolitres\":50000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":50000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":50000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":50000000,\"RemainderMicrolitres\":0}},{\"ReservoirId\":\"7265736572766f69000000000000003e\",\"CustodianId\":\"7265736572766f69000000000000003c\",\"SpillZ\":1,\"Columns\":1,\"CapacityMicrolitres\":1000000000,\"ExistingUnits\":800,\"ReservedIncomingUnits\":0,\"Actual\":{\"VolumeMicrolitres\":800000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":800000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":800000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":800000000,\"RemainderMicrolitres\":0}}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "1b67d8d91335647c5b97846c5e0c3e9782553e9ee9f1052baa045c011df1c176",
+        "CapacityHash": "eeb5be18fc2f683ec62ac7b77cb3965948317ba061a712cb9681fe44c2032dc9",
+        "Revision": 1,
+        "TotalColumns": 3,
+        "Reservoirs": [
+          {
+            "ReservoirId": "7265736572766f690000000000000001",
+            "CustodianId": "000072756e6f66660000000000000192",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 1300,
+            "ReservedIncomingUnits": 0,
+            "Actual": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            }
+          },
+          {
+            "ReservoirId": "7265736572766f690000000000000002",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 50,
+            "ReservedIncomingUnits": 0,
+            "Actual": {
+              "VolumeMicrolitres": 50000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 50000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 50000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 50000000,
+              "RemainderMicrolitres": 0
+            }
+          },
+          {
+            "ReservoirId": "7265736572766f69000000000000003e",
+            "CustodianId": "7265736572766f69000000000000003c",
+            "SpillZ": 1,
+            "Columns": 1,
+            "CapacityMicrolitres": 1000000000,
+            "ExistingUnits": 800,
+            "ReservedIncomingUnits": 0,
+            "Actual": {
+              "VolumeMicrolitres": 800000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 800000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 800000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 800000000,
+              "RemainderMicrolitres": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "crafted-source",
+      "inputSha256": "9e8fee11a72f41e9aeb96f4e5021333c89689147caf41c21cb45a74f82ebbc47",
+      "byteLength": 7264,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/crafted-source.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"liquid-reservoirs-v1\",\"Scope\":\"standalone-watertight-open-vessels\",\"ContentHash\":\"9e8fee11a72f41e9aeb96f4e5021333c89689147caf41c21cb45a74f82ebbc47\",\"CapacityHash\":\"35c503eed70e3802d0bdf9318edc31be71e4d6a224ecc378aee505f10e5542b4\",\"Revision\":1,\"TotalColumns\":2,\"Reservoirs\":[{\"ReservoirId\":\"7265736572766f690000000000000001\",\"CustodianId\":\"000072756e6f66660000000000000192\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":1300,\"ReservedIncomingUnits\":0,\"Actual\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":1,\"SurfaceBillionths\":300000000,\"RemainderMicrolitres\":0}},{\"ReservoirId\":\"7265736572766f690000000000000002\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":50,\"ReservedIncomingUnits\":600,\"Actual\":{\"VolumeMicrolitres\":50000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":50000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":650000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":650000000,\"RemainderMicrolitres\":0}}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "9e8fee11a72f41e9aeb96f4e5021333c89689147caf41c21cb45a74f82ebbc47",
+        "CapacityHash": "35c503eed70e3802d0bdf9318edc31be71e4d6a224ecc378aee505f10e5542b4",
+        "Revision": 1,
+        "TotalColumns": 2,
+        "Reservoirs": [
+          {
+            "ReservoirId": "7265736572766f690000000000000001",
+            "CustodianId": "000072756e6f66660000000000000192",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 1300,
+            "ReservedIncomingUnits": 0,
+            "Actual": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 1,
+              "SurfaceBillionths": 300000000,
+              "RemainderMicrolitres": 0
+            }
+          },
+          {
+            "ReservoirId": "7265736572766f690000000000000002",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 50,
+            "ReservedIncomingUnits": 600,
+            "Actual": {
+              "VolumeMicrolitres": 50000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 50000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 650000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 650000000,
+              "RemainderMicrolitres": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "maximum-columns",
+      "inputSha256": "5fc298ced3e17b9b8499b774124b23b0137be624d9a60f4d0ba6865976fc0f8b",
+      "byteLength": 169401,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/maximum-columns.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"liquid-reservoirs-v1\",\"Scope\":\"standalone-watertight-open-vessels\",\"ContentHash\":\"5fc298ced3e17b9b8499b774124b23b0137be624d9a60f4d0ba6865976fc0f8b\",\"CapacityHash\":\"4dc2d7f49ad4ece54e8e618cef785cbaebfdbd43b1068d505e31b203f80e9448\",\"Revision\":0,\"TotalColumns\":4096,\"Reservoirs\":[{\"ReservoirId\":\"7265736572766f690000000000000001\",\"CustodianId\":\"000072756e6f66660000000000000192\",\"SpillZ\":2,\"Columns\":4095,\"CapacityMicrolitres\":8190000000000,\"ExistingUnits\":1300,\"ReservedIncomingUnits\":0,\"Actual\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":317460,\"RemainderMicrolitres\":1300},\"Projected\":{\"VolumeMicrolitres\":1300000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":317460,\"RemainderMicrolitres\":1300}},{\"ReservoirId\":\"7265736572766f690000000000000002\",\"CustodianId\":\"000072756e6f66660000000000000193\",\"SpillZ\":2,\"Columns\":1,\"CapacityMicrolitres\":2000000000,\"ExistingUnits\":50,\"ReservedIncomingUnits\":600,\"Actual\":{\"VolumeMicrolitres\":50000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":50000000,\"RemainderMicrolitres\":0},\"Projected\":{\"VolumeMicrolitres\":650000000,\"SurfaceMetres\":0,\"SurfaceBillionths\":650000000,\"RemainderMicrolitres\":0}}]}\n",
+      "stderr": "",
+      "independentOracle": {
+        "ContentHash": "5fc298ced3e17b9b8499b774124b23b0137be624d9a60f4d0ba6865976fc0f8b",
+        "CapacityHash": "4dc2d7f49ad4ece54e8e618cef785cbaebfdbd43b1068d505e31b203f80e9448",
+        "Revision": 0,
+        "TotalColumns": 4096,
+        "Reservoirs": [
+          {
+            "ReservoirId": "7265736572766f690000000000000001",
+            "CustodianId": "000072756e6f66660000000000000192",
+            "SpillZ": 2,
+            "Columns": 4095,
+            "CapacityMicrolitres": 8190000000000,
+            "ExistingUnits": 1300,
+            "ReservedIncomingUnits": 0,
+            "Actual": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 317460,
+              "RemainderMicrolitres": 1300
+            },
+            "Projected": {
+              "VolumeMicrolitres": 1300000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 317460,
+              "RemainderMicrolitres": 1300
+            }
+          },
+          {
+            "ReservoirId": "7265736572766f690000000000000002",
+            "CustodianId": "000072756e6f66660000000000000193",
+            "SpillZ": 2,
+            "Columns": 1,
+            "CapacityMicrolitres": 2000000000,
+            "ExistingUnits": 50,
+            "ReservedIncomingUnits": 600,
+            "Actual": {
+              "VolumeMicrolitres": 50000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 50000000,
+              "RemainderMicrolitres": 0
+            },
+            "Projected": {
+              "VolumeMicrolitres": 650000000,
+              "SurfaceMetres": 0,
+              "SurfaceBillionths": 650000000,
+              "RemainderMicrolitres": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "source-overfull",
+      "inputSha256": "db8716b42a777cb48c98afec493c5c85c06a57db36d5eefc6dbcc67c069efbd6",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/source-overfull.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "receiver-capacity-mismatch",
+      "inputSha256": "019a77e59bf4cb904847622e9a545d48efc4641fe6cb5b2ebc6d1580c1c4f0eb",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/receiver-capacity-mismatch.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "overlapping-support",
+      "inputSha256": "7c8a2425abe0ec426f155ac2d5676760d1f7b31d1c200f49237cae307f4a4206",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/overlapping-support.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "wrong-realm",
+      "inputSha256": "919e2eb80f61921d461cd2dca123cb6be915c1d3f8a488ec9a461560c9031eeb",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/wrong-realm.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "identity-alias",
+      "inputSha256": "93c18e699ecac152b423fcea0e1f95b686e9d418eab5095c1a5ebdbf9ddaea32",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/identity-alias.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "duplicate-custodian",
+      "inputSha256": "267db695ca89f8ba4847ffb0e454e10286a136e76397ff69ba579a9b40444497",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/duplicate-custodian.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "duplicate-columns",
+      "inputSha256": "8b98c3e76cef04ca93de14a91dfa7de9bd072e9d849a4d4dd094b092ac84b27b",
+      "byteLength": 5921,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/duplicate-columns.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "perched-pocket",
+      "inputSha256": "0caf7f58b1d50a2b7f6078f557f43dc739c5fd67bd17fd90ee75a08f066808e2",
+      "byteLength": 5945,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/perched-pocket.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "disconnected-support",
+      "inputSha256": "214b96c05f564175e7af9cd26db5dda902c4cf79b9a25650dce8dedab3c3f399",
+      "byteLength": 5921,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/disconnected-support.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "excessive-depth",
+      "inputSha256": "b33cfda3c442e51d9872803e32b7deba437218668b1e8704b125c3517fa6acf6",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/excessive-depth.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir archive violates physical storage ownership.\n",
+      "stderr": ""
+    },
+    {
+      "name": "partial-column",
+      "inputSha256": "7dad426b48424465f3b0d75ee73a37114251bf914998d41fcdcb37ef5724d14f",
+      "byteLength": 5874,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/partial-column.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Reservoir column rows have an invalid length.\n",
+      "stderr": ""
+    },
+    {
+      "name": "empty-collection",
+      "inputSha256": "a52004a884cb7c85795d8df4cab48065b253d8891f92ff026348e640aff03438",
+      "byteLength": 5515,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/empty-collection.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir count is outside its supported profile.\n",
+      "stderr": ""
+    },
+    {
+      "name": "excessive-count",
+      "inputSha256": "56305eda2cf9ac0193430ac84df9f504c85ba798e06f8888c63a9e4c64e2064c",
+      "byteLength": 5515,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/excessive-count.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir count is outside its supported profile.\n",
+      "stderr": ""
+    },
+    {
+      "name": "changed-fill",
+      "inputSha256": "7d274b738b78c7b01c227348db3e3767a072e6853e894827b8501f075bf7b7d1",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/changed-fill.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Reservoir geometry or fill witnesses differ from canonical reconstruction.\n",
+      "stderr": ""
+    },
+    {
+      "name": "changed-geometry-length",
+      "inputSha256": "bc8c9403ede2de43cc93c4fa455534480c56ce203b7802d3e5a376a10a52ff60",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/changed-geometry-length.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "noncanonical-geometry-order",
+      "inputSha256": "da3a78ebebb2e73e60db4d3fe9f95a3eef1cc770b888af09be21d4033ab04bdc",
+      "byteLength": 5897,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/noncanonical-geometry-order.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Reservoir geometry or fill witnesses differ from canonical reconstruction.\n",
+      "stderr": ""
+    },
+    {
+      "name": "global-column-excess",
+      "inputSha256": "f2b800760a2e7dbe781132a94cca5194cf47874bd57c4d3116feb86b1b44d49b",
+      "byteLength": 169425,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/global-column-excess.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The reservoir collection exceeds total support bounds.\n",
+      "stderr": ""
+    },
+    {
+      "name": "noncanonical-column-order",
+      "inputSha256": "ca3233c17690fb0cbdeedb0a4e8d2e4dbb7434185d8a2feaaf37f4079ea096c9",
+      "byteLength": 169401,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/noncanonical-column-order.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: Reservoir geometry or fill witnesses differ from canonical reconstruction.\n",
+      "stderr": ""
+    },
+    {
+      "name": "truncated",
+      "inputSha256": "f3eb22b5e05984a37fe08b604801d2ad16724b040c14972b5cb186f012b83bc2",
+      "byteLength": 5896,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/truncated.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: A terrain field is truncated or exceeds its bound.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trailing",
+      "inputSha256": "e135728069ade333bcb60eeb8e72a697b44976542ea0044dca8cca66d0cb3abc",
+      "byteLength": 5898,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/trailing.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The terrain frame has trailing or unconsumed data.\n",
+      "stderr": ""
+    },
+    {
+      "name": "oversized",
+      "inputSha256": "4f63ae906a1ddb263932508fde35deb318f4e707fbfdab9bdf7b6a3c0915ec99",
+      "byteLength": 24000001,
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-liquid-reservoirs",
+        "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/reservoir-inspections-g4ap7lew/oversized.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The local authority input exceeds its format bounds.\n",
+      "stderr": ""
+    }
+  ],
+  "finishedUtc": "2026-09-19T17:17:03.019338+00:00"
+}

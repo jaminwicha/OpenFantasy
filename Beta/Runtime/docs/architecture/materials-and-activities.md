@@ -134,3 +134,8 @@ A transfer or craft candidate may satisfy ordinary storage rules yet exceed phys
 held for inflows. Reconciliation counts raw and derived occupancy with all pending obligations before
 publishing the whole composed state. Canceling a capacity hold leaves actual source reservation metadata
 unchanged; releasing stock is a separate custody operation.
+
+[Physical reservoir composition](world-and-geography.md#domain-contract-finite-physical-reservoirs)
+adds geometric volume limits to mapped sources, buffers and receivers. It counts all raw/derived goods
+once under one exact incompressible-material calibration. Equilibrium column fills are projections of
+that custody; they do not issue per-cell source claims or supply an unlimited waiting-flow buffer.

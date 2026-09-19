@@ -39,6 +39,7 @@ def main():
     env["OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE"] = str(test_results / "terrain-material-fixture")
     env["OPENFANTASY_RUNOFF_EVIDENCE"] = str(test_results / "runoff-fixture")
     env["OPENFANTASY_RUNOFF_CAPACITY_EVIDENCE"] = str(test_results / "runoff-capacity-fixture")
+    env["OPENFANTASY_RESERVOIR_EVIDENCE"] = str(test_results / "reservoir-fixture")
     env["OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE"] = str(test_results / "material-production-fixture")
     env["OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE"] = str(test_results / "material-registry-fixture")
     report = dict(startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -157,6 +158,9 @@ def main():
         run("runoff-capacity-inspections", [sys.executable, root / "tools/check_runoff_capacity.py",
             "--dotnet", dotnet, "--fixture", test_results / "runoff-capacity-fixture",
             "--output", artifacts / "runoff-capacity.json"])
+        run("reservoir-inspections", [sys.executable, root / "tools/check_liquid_reservoirs.py",
+            "--dotnet", dotnet, "--fixture", test_results / "reservoir-fixture",
+            "--output", artifacts / "liquid-reservoirs.json"])
         run("material-production-inspections", [sys.executable, root / "tools/check_material_production.py",
             "--dotnet", dotnet, "--fixture", test_results / "material-production-fixture",
             "--output", artifacts / "material-production.json"])

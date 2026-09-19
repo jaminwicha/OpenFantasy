@@ -287,3 +287,8 @@ The privileged `--inspect-runoff-capacity <runoff-capacity.bin>` host operator i
 standalone runoff reservation owner: pending/closed commitments, logical and custody revisions, and
 shared physical/counted receiver headroom. It does not apply flow or load the archive into a played world.
 See the [capacity contract](docs/architecture/world-and-geography.md#domain-contract-shared-runoff-capacity-ownership).
+
+`--inspect-liquid-reservoirs <reservoirs.bin>` reports the standalone physical reservoir wrapper,
+including geometric capacities and separate actual/projected fill levels. Its authored watertight
+vessels do not establish live terrain walls or flow. See the
+[reservoir contract](docs/architecture/world-and-geography.md#domain-contract-finite-physical-reservoirs).

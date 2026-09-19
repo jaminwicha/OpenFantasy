@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-13. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-19. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -32,31 +32,33 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `83db425`, preserved on `codex/milestone-runoff-capacity`;
-[packet](p01/runoff-capacity/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Finite physical reservoir geometry: [packet](p01/reservoir-geometry/README.md) and
+[milestone ledger](GIT_MILESTONES.md). The qualified code marker is recorded with the checkpoint.
 
-One immutable owner now admits up to sixteen funded runoff commitments against exact shared
-network/mapping/material/receiver and authority/Production data. It checks all incoming obligations
-with actual occupancy before admitting budgets or reconciling real custody/craft candidates. Disjoint
-intervals do not reuse headroom. Capacity-only changes have their own revision and complete-state plans.
-Cancellation releases capacity, retains a non-reusable reservation ID and leaves held source stock
-unchanged; subsequent explicit custody changes may release it. Empty owners retain calibration/history.
+A fixed physical-storage wrapper now binds source, optional buffer and receiver custody to finite
+watertight open vessels. Geometric capacities must match receiving witnesses. Exact floor-band fills
+separate actual stock from projected inflows and conserve microlitre residuals. All mapped raw/derived
+contents count, including unrelated source stock. Cancellation retains geometry and physical limits;
+unmapped new sources, overlapping support, stale geometry plans and overfilling deliveries reject.
 
-[Qualification](p01/runoff-capacity/qualification/verification-summary.json): full managed build with
-zero warnings/errors; **1,004 tests (675 Core + 329 Hosting, zero skips)**, nine new cases and a passing
-nine-case test-only followup; 46 real host inspections (21 new + 25 old). Five valid capacity archives
-have independent source/receiver accounting; all sixteen pending slots fit a 12,259-byte fixture.
-Five prior runoff archives remain byte-identical. All 166 architecture links and 22 frozen hashes pass.
-Retained compiler/analyzer failures and execution boundaries are linked. Native scoped critique found
-no actionable issues; no feasibility/acceptance gate changed.
+[Qualification](p01/reservoir-geometry/qualification/verification-summary.json): clean solution build,
+**1,018 tests (689 Core + 329 Hosting, zero skips)** with fourteen new cases; 26 real host inspections
+including five independently checked archives and 21 invalid cases. The independent fill oracle uses
+integer binary search rather than managed floor bands. The 4,096-column wrapper is 169,401 bytes.
+Five prior capacity archives remain byte-identical; 172 architecture links and 22 frozen hashes pass.
+Test-first compiler failure and bounded native critique are retained; no gates changed.
 
-The normalized archive/operator and reservation owner remain standalone. Exclusive durable world
-admission, hydraulic arrival/settlement, physical reservoirs, multi-fluid/network composition and
-history/reservation compaction require their own contracts. The maximum-pending fixture is not combined
-production performance proof. No gameplay/visual change or full native/rendered campaign is claimed.
+This profile assumes watertight floors/walls and one incompressible calibrated material. It does not
+prove terrain support, connect inlets to outlets, schedule arrivals, simulate flow/pressure or admit
+lived state to a durable world. Maximum support correctness is not combined workload performance.
+No gameplay/visual change or full native/rendered campaign is claimed. Timeless reference and verifier
+hooks are updated; complete-wrapper publication remains required for integration.
 
 Prior dependencies remain preserved:
 
+- [Runoff capacity ownership](p01/runoff-capacity/README.md), `83db425`, milestone
+  `codex/milestone-runoff-capacity`: shared pending obligations, logical revisions, cancellation and
+  actual custody/Production reconciliation; 1,004 tests and 46 inspections. Durable world admission remains open.
 - [Funded runoff projections](p01/runoff-budgets/README.md), `02f2819`, milestone
   `codex/milestone-runoff-budgets`: exact effective-depth/source funding, weighted drainage and shared
   terminal headroom within one projection; 995 tests, 25 inspections and a 65,536-column archive.
@@ -79,8 +81,8 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include exclusive durable capacity ownership and physical source/buffer/receiver
-geometry, plus the complete macro profile: crust/boundary history, climate/water partitioning and coast
+Next dependencies include exclusive durable reservoir ownership, terrain-supported vessel boundaries
+and inlet/outlet connections, plus the complete macro profile: crust/boundary history, climate/water partitioning and coast
 connections. Live hydraulic stages need arrival rules, backpressure, topology revalidation, encounter
 Wait and exact history. A retained local terrain interpreter and complete allocation/world ownership
 must compose occupancy, construction, support and custody before live terrain admission. Never reroll

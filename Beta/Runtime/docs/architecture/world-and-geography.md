@@ -290,6 +290,74 @@ contracts. Known Production cannot be omitted and separately owned capacities ca
 free by another subsystem. A fixed single-material/network domain is a bounded supported profile;
 heterogeneous fluids and interacting networks require explicit compatible composition.
 
+## Domain contract: finite physical reservoirs
+
+[ReservoirGeometry](../../src/OpenFantasy.Core/Geography/ReservoirGeometry.cs) defines an authored,
+watertight, open vessel in one world/branch/realm. Each column occupies one square metre at signed X/Y,
+with vertical support `[BottomZ, SpillZ)`. Floors, missing-column boundaries and perimeter walls are
+assumed impermeable up to the common spill plane. Adjacent vessels remain separated by those walls.
+This shape is not evidence that terrain supplies the walls, that a lake reaches the sea, or that an
+inlet connects to a watershed outlet. A supported liquid profile interprets the exact material as
+incompressible; item names, hardness and a volume calibration do not infer a phase/reaction taxonomy.
+
+A vessel contains 1–4,096 unique horizontal columns, each 1–1,024 metres deep. Capacity is the checked
+sum of column heights times **1,000,000,000 microlitres per cubic metre**. Elevation differences use
+`Int128` before bounded conversion; absolute heights never multiply a signed world coordinate into a
+narrow quantity. Four-neighbour traversal from one minimum-floor column must reach every column along
+nondecreasing floor elevations. This conservative contour profile rejects disconnected minima and
+perched pockets that cannot share the assumed equilibrium fill. It does not model siphons, pressure,
+sealed cave chambers, aquifers, separate connected pools or history-dependent overtopping.
+
+`Fill(volume)` inverts the vessel's volume/height relation through sorted floor bands. It returns an
+immutable [ReservoirFill](../../src/OpenFantasy.Core/Geography/ReservoirFill.cs): actual volume, base
+surface as signed whole metres plus unsigned billionths, residual microlitres and each column's volume.
+Above one square metre, one microlitre is one billionth of a metre in height. Integer division retains
+its remainder; one extra microlitre goes to each of the first eligible columns in global Y/X order.
+The base surface therefore describes the common level before those discrete residuals. Empty fill
+reports the minimum floor with all column volumes zero. Full fill reports the spill plane. No rounding
+creates stock, and input/enumeration order does not change the result. These columns are distribution
+witnesses of existing custody, not separate material lots or a new coarse/detail source partition.
+
+[LiquidReservoirState](../../src/OpenFantasy.Core/Geography/LiquidReservoirState.cs) composes a complete
+runoff capacity owner with fixed geometry for every receiving custodian and active wet-source custodian.
+Additional same-owner mapped stores provide finite buffers. The collection supports 1–256 vessels and
+at most 4,096 columns in total. Each geometry has a distinct reservoir identity and custodian; reservoir
+identities cannot alias admitted authority, Production, material or macro roles. Scopes must match the
+runoff realm. Shared X/Y columns may belong to different vessels only with nonoverlapping half-open
+vertical intervals. Vertically stacked vessels are isolated by the declared watertight boundary model.
+
+Every terminal's capacity witness must equal its geometric capacity exactly; counted-unit limits remain
+independent. All raw and derived contents of every mapped store use the exact material calibration,
+including stock unrelated to a pending runoff input. Actual fills use all current contents. Projected
+receiver fills add all pending obligations; promises never appear in the actual fill. Sources do not
+add their reserved stock again. Canceling the last commitment keeps all mappings, capacities and current
+contents. Newly admitted wet sources must already have mapped geometry. Geometry membership cannot be
+implicitly pruned or enlarged by capacity operations.
+
+`PlanApply` wraps a separately prepared capacity-owner operation, validates its complete physical
+candidate and returns a [LiquidReservoirPlan](../../src/OpenFantasy.Core/Geography/LiquidReservoirPlan.cs).
+Its `ApplyTo` precondition hashes the entire wrapper, including geometry. A capacity-only plan can be
+valid while the wrapper rejects an overfilled source/buffer or unmapped new source. The trusted world
+publisher must install the complete wrapper atomically and exclusively; publishing an inner capacity or
+inventory candidate bypasses this boundary. The wrapper does not authenticate transfers, authorize
+geometric changes, create reservation identities, settle flow or repair arbitrary caller-supplied stock.
+
+The [reservoir v1 archive](../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV1.cs) has a
+24,000,000-byte bound and four fields: tag, exact existing capacity-owner archive, geometry collection and
+fill witnesses. The collection starts with unsigned-32 count and length-prefixed geometry frames. Each
+geometry retains world/branch/realm, reservoir/custodian IDs, signed-64 spill height and 24-byte X/Y/bottom
+rows in canonical Y/X order. Geometry order follows reservoir ID. Each projection witness contains the
+reservoir ID, existing and incoming units, then actual and projected fills. A fill contains volume,
+signed surface metres, unsigned fraction/remainder and one unsigned-64 volume per canonical column.
+Decode bounds counts/lengths/total support, reconstructs the whole physical owner, rederives every fill
+and compares exact bytes. The `--inspect-liquid-reservoirs` operator is privileged and read-only.
+
+Terrain-supported walls/floors, inlets/outlets, coast connection, actual arrivals, backpressure, phase
+changes and topology edits require their own retained contracts. This equilibrium geometry cannot
+teleport stock, supply atmospheric water, bypass encounter Wait or substitute for exact lived history.
+The full geological design retains porous storage, underdark/cave flooding and heterogeneous liquids;
+unsupported configurations require explicit profiles rather than being coerced into this vessel model.
+
 ## Domain contract: funded terrain material
 
 [TerrainMaterialDeposit](../../src/OpenFantasy.Core/Geography/TerrainMaterialDeposit.cs) binds one

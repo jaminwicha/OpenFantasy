@@ -44,6 +44,9 @@ public static class LocalAuthorityFiles
     public static WatershedRunoffCapacityState ReadWatershedRunoffCapacity(string path) =>
         WatershedRunoffCapacityCodecV1.Decode(Read(path, WatershedRunoffCapacityCodecV1.MaximumEncodedByteLength));
 
+    public static LiquidReservoirState ReadLiquidReservoirs(string path) =>
+        LiquidReservoirCodecV1.Decode(Read(path, LiquidReservoirCodecV1.MaximumEncodedByteLength));
+
     private static byte[] Read(string path, int maximum)
     {
         using FileStream stream = File.OpenRead(path);
