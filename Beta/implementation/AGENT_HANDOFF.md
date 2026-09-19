@@ -32,45 +32,54 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `5dd8110`, preserved on `codex/milestone-reservoir-boundaries`;
-[packet](p01/reservoir-boundaries/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `7df18df`, preserved on `codex/milestone-live-excavation`;
+[packet](p01/live-excavation/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Reservoir boundary assessment now reads actual retained terrain, full corporeal clearance and completed
-construction from the same world. It checks the whole nominal interior, floor and exposed walls,
-including risers and region seams, under an explicit pinned sealing-material/thickness policy. Exact
-millimetre members and installed output provenance determine constructed coverage; incomplete projects,
-input stock and rounded colliders cannot supply seals. Positive-area gaps, missing terrain, obstructions,
-coordinate/work limits and the transport profile's unproved physical gates prevent success.
+Live local excavation now couples owned worker actions, earned effort, exact terrain/source lineage,
+material custody and direct support in one durable publication. Fresh profile ten retains selected dry
+cells, exact material/tool pins and work progress. The separate action preserves solid terrain and issues
+nothing until completion; completing work removes the cell and creates its whole-source lot together.
+Crafting/recrafting consumes that stock without restoring terrain or losing provenance. Players and NPCs
+use the same action contract. Default farm content and prior saved profiles are unchanged.
 
-The host's `--inspect-reservoir-boundaries` command assesses an exact recorded commit and external
-policy, returning complete world/reservoir/policy pins and named failures without changing the save.
-This is a derived read-only assessment, not a new world profile, action gate, pressure-strength proof,
-live breach model or implicit policy migration. Existing reservoir/transport admission remains unchanged.
+Every work attempt checks actual actor-to-face reach, current tools/revisions/control, reading holds,
+and potential removal against all actor/structure direct support plus gathering anchors. Unsafe work
+refuses atomically. Construction/excavation share each owner's advancing-action/personal-time budget.
+Same-batch workers cannot both use a stale region revision. Dry extraction excludes reservoir/macro
+owners; support refusal is not collapse, strength, route safety or a water-breach model.
 
-[Qualification](p01/reservoir-boundaries/qualification/verification-summary.json): clean full solution
-build; **1,118 managed cases (726 Core +392 Hosting), 37 new, zero skips**. 21 actual host inspections
-preserve five databases byte-for-byte. A tank completed by real funded NPC work qualifies; variants with
-a one-millimetre slit, displaced wall or intrusive material fail. Before/after-work and reverse historical
-reads preserve exact outcomes. All 15 focused fixture artifacts match independent full-suite recreation.
-The test sheet material/work calibration is synthetic; no production balance or strength claim follows.
-Terrain fixtures begin from authored excavations, not a live mining command.
+[Qualification](p01/live-excavation/qualification/verification-summary.json): **1,141 managed tests
+(726 Core +415 Hosting), 23 new, zero skips/failures**. Final full solution build is clean. 123 actual
+commits earn effort and complete three work actions. **144 ordinary Host calls +two actual process kills**
+prove before/after-completion recovery, exact receipts, retry refusal and out-of-order recorded history;
+ten independent retained-byte witnesses check work/effort/terrain/custody. All126 fixture files match
+independent full-suite recreation. Three-work/one-cubic-metre yield calibration is synthetic.
 
-Actual Godot headless foundation passes. Gameplay adapters are unchanged, so farm/rendered/device runs
-were not repeated or newly claimed. All 211 architecture links, 22 frozen hashes and the exact 19-file
-predecessor index pass. The complete all-systems verifier was not run; its targeted checks were invoked
-directly. Expected test-first compiler failure remains retained. Bounded native source/reference review
-found no remaining consequential mismatch. No threshold, deadline or gate was weakened, and no Claude
-or other external paid-model call was used.
+Actual Godot headless foundation and native farm create/reopen/history pass. No rendered mining, art or
+physical-device acceptance is claimed. All225 architecture links,22 frozen hashes and the exact19-file
+predecessor index pass. The all-systems verifier was not run; targeted tools ran directly and the new
+check is wired into it. Retained failures include test-first/fixture errors, a receipt-order assertion
+corrected against actual actor-order execution, and an unexplained MSB4166 child-process exit in the
+first parallel build; the complete serial build passed. No thresholds/deadlines were weakened.
 
-Next integration must couple terrain edits, material custody, actor/structure support, containment and
-hazard consequences in one durable publication. It must preserve water through breaches and define real
-physical gate shutters/openings and displaced volume. External diagnostic policy cannot silently become
-saved simulation law. The local stratified terrain and macro material interpreter remain separate.
-Strength, damage/maintenance, continuous/partial flow, exposure, phases, encounter-scoped hydraulic Wait,
-streaming, production workloads/performance and full campaign/native/rendered acceptance remain open.
+Bounded native critique corrected shared material calibration, direct face reach and per-owner combined
+labor. Follow-up source/reference review found no remaining consequential mismatch. No external paid
+Claude/Fable call was used. The [excavation reference](../Runtime/docs/architecture/excavation.md) and its
+world/material/persistence dependencies describe the implemented contract without temporal language.
+
+Next work must integrate broader generated extraction ownership/vertical access, construction support
+consequences and durable physical containment. Reservoir composition needs retained sealing policy,
+real shutters/openings, displaced volume and conserved spilled material before terrain mutation is legal
+in a wet world. Never silently install the external diagnostic policy or join incompatible terrain
+interpreters. General hardness/tool tuning, work mandates, mining presentation, collapse/hazards,
+continuous fluids, streaming and production performance remain open.
 
 Prior dependencies remain preserved:
 
+- [Reservoir boundary assessment](p01/reservoir-boundaries/README.md), `5dd8110`, milestone
+  `codex/milestone-reservoir-boundaries`: exact terrain/completed-material coverage under external
+  sealing policy, nominal interiors, gaps/obstructions and unproved gates; 1,118 tests and21 read-only
+  inspections/five unchanged saves. No durable containment law, live breach or strength claim.
 - [Durable reservoir transport](p01/reservoir-transport/README.md), `6ef6e83`, milestone
   `codex/milestone-reservoir-transport`: fresh profile-nine actual conserved discrete gate delivery,
   shared step throughput, reading holds and exact history; 1,081 distinct managed cases, 95 host calls/
@@ -110,12 +119,12 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Next dependencies include durable containment policy and terrain/construction/occupancy/custody
-publication, plus complete macro crust/boundary history, climate/water partitioning and coast connections.
+Remaining composition dependencies include durable containment policy and wet-terrain/construction/
+occupancy/custody publication, plus complete macro crust/boundary history, climate/water partitioning
+and coast connections.
 Extending discrete transport requires original/delivered/remaining source intervals and incoming holds,
-pressure-dependent flow, topology revalidation, exposure, encounter Wait and exact history. A retained
-local terrain interpreter and complete allocation/world ownership must compose occupancy, construction,
-support and custody before live terrain admission. Never reroll established facts, overwrite lived places
+pressure-dependent flow, topology revalidation, exposure, encounter Wait and exact history. The macro terrain interpreter and complete allocation/world ownership remain separate from the
+qualified selected-cell dry excavation profile. Never reroll established facts, overwrite lived places
 or implicitly migrate saves. Follow the full P01/P02 plan and
 [geological contracts](../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md). Development stays on
 `codex/runtime-foundation`.

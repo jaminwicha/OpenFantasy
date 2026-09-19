@@ -45,6 +45,8 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-reservoir-transport` | `6ef6e83` | Actual conserved discrete gravity-gated delivery in fresh profile nine, shared step throughput, reading holds and exact source/history; 1,081 distinct managed cases, 95 operator calls/eight process kills and headless foundation/farm. [Evidence](p01/reservoir-transport/README.md). Authored seals/fixed topology; no continuous fluids, terrain support, flooding, player controls, performance or full phase acceptance. |
 | `codex/milestone-reservoir-boundaries` | `5dd8110` | Exact read-only nominal containment assessment against retained terrain and completed material, explicit sealing/thickness policy, gap/obstruction/gate failures and recorded-world operator; 1,118 tests, 21 actual inspections/five unchanged saves and headless foundation. [Evidence](p01/reservoir-boundaries/README.md). No changed world admission, terrain mutation, strength, breach dynamics, physical gate proof or full phase acceptance. |
 
+| `codex/milestone-live-excavation` | `7df18df` | Durable selected-cell excavation in fresh dry profile ten: actual player/NPC effort, exact source entitlement, atomic whole-cell issuance/removal and direct support refusal; 1,141 tests,144 ordinary Host calls/two process kills, exact history and native headless foundation/farm. [Evidence](p01/live-excavation/README.md) retains corrected critic findings and an unconfirmed initial parallel-build child exit followed by a clean full serial build. No generated mining frontier, wet-world composition, collapse, player mining controls, production balance/performance or full-gate closure. |
+
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
 `codex/runtime-foundation`; the earlier milestones were preserved and none was checked out.
@@ -144,3 +146,8 @@ and actual completed construction; it does not convert saved reservoir profiles 
 authorities. Development remains on `codex/runtime-foundation`; prior milestones, frozen specs and the
 exact unrelated predecessor index remain intact. No checkout switch, force move, push, merge or full
 game/phase acceptance accompanies this marker.
+
+The live-excavation marker preserves source, timeless reference and retained qualification at
+`7df18df50b6fd349473882594d98828b06d874bf`. Development remains on `codex/runtime-foundation`;
+prior milestones, all frozen designs and unrelated staged predecessor changes remain intact.
+No checkout switch, force update, push, merge or full-phase closure accompanied this checkpoint.
