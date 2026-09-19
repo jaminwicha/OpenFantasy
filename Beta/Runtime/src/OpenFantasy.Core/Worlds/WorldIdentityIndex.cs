@@ -33,7 +33,7 @@ internal enum WorldIdentityRole
     CraftRecipeDefinition, PhysicalRecipeDefinition, PhysicalMaterialDefinition, ProductionBatch, TransformedLot,
     StatProfileDefinition, LevelCurveDefinition, CurrencyDefinition, CurrencyAccount, RewardDefinition, QuestDefinition,
     ConstructionDefinition, ConstructionToolDefinition, ConstructionWorkUnit, ConstructionProject, Structure,
-    GeographyBasin, GeographyFormation, GeographySubstrate, GeographyBoundary, GeographyTerminal, GeographyProvince
+    GeographyBasin, GeographyFormation, GeographySubstrate, GeographyBoundary, GeographyTerminal, GeographyProvince, Reservoir
 }
 
 /// <summary>One immutable terrain dependency set; reference equality is the only reuse criterion.</summary>

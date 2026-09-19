@@ -36,6 +36,7 @@ public static class WorldAdmissionValidator
         admission.ReadProduction();
         admission.ReadQuests();
         admission.ReadConstruction();
+        admission.ReadReservoirs();
         return admission.Complete();
     }
 
@@ -112,6 +113,21 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed);
+
+        internal void ReadReservoirs()
+        {
+            if (world.Reservoirs is not { } reservoirs)
+            {
+                return;
+            }
+            var material = reservoirs.Capacity.Domain.Material;
+            Definition(material.Item.DefinitionId, WorldIdentityRole.ItemDefinition, material.Item.Version);
+            Definition(material.Physical.DefinitionId, WorldIdentityRole.PhysicalMaterialDefinition, material.Physical.Version);
+            foreach (var geometry in reservoirs.Geometries)
+            {
+                Add(geometry.ReservoirId, WorldIdentityRole.Reservoir, unique: true);
+            }
+        }
 
         internal void ReadConstruction()
         {

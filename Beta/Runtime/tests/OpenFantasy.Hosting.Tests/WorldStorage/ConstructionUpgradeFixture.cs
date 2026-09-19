@@ -14,9 +14,9 @@ internal sealed class ConstructionUpgradeFixture
 {
     private ulong _identity = 7_400_000;
 
-    internal WorldSnapshot QuestGenesis()
+    internal WorldSnapshot QuestGenesis(string seed = "construction-recovery")
     {
-        WorldSnapshot gathering = GatheringFarmAdmission.CreateEmbedded("construction-recovery", "Traveler");
+        WorldSnapshot gathering = GatheringFarmAdmission.CreateEmbedded(seed, "Traveler");
         ProductionSnapshot production = ProductionFarmAdmission.CreateProduction(gathering);
         var basis = new WorldSnapshot(gathering.Inventory, gathering.Space, gathering.Residents,
             WorldProductionMigration.ComputeTargetAdmissionVersion(gathering.AdmissionVersion, production),
@@ -36,9 +36,9 @@ internal sealed class ConstructionUpgradeFixture
             WorldConstructionMigration.ComputeTargetAdmissionVersion(world.AdmissionVersion, admission), admission);
     }
 
-    internal WorldSnapshot CreateSource(string path, bool completeQuest = false)
+    internal WorldSnapshot CreateSource(string path, bool completeQuest = false, WorldSnapshot? genesis = null)
     {
-        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(path, QuestGenesis());
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(path, genesis ?? QuestGenesis());
         WorldSnapshot world = authority.InspectForHost().State;
         if (!completeQuest)
         {

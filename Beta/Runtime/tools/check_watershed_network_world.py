@@ -31,22 +31,23 @@ def fields(data):
     return result
 
 
-def verify_admission_frame(fixture):
+def verify_admission_frame(fixture, profile="network"):
     """Independent outer wire/pin oracle; existing inner domain payloads are retained byte-for-byte."""
-    watershed = (fixture / 'network.bin').read_bytes()
+    watershed = (fixture / ('reservoirs.bin' if profile == 'reservoir' else 'network.bin')).read_bytes()
     basis = (fixture / 'basis.bin').read_bytes()
     path = [fields(basis)]
     for version in [5, 4, 3]:
         assert path[-1][:2] == [b'world.snapshot', struct.pack('>Q', version)]
         path.append(fields(path[-1][2]))
     assert path[-1][:2] == [b'world.snapshot', struct.pack('>Q', 1)]
-    path[-1][5] = hashlib.sha256(frame([b'world.watershed-network-admission.v1', path[-1][5],
+    tag = b'world.reservoir-admission.v1' if profile == 'reservoir' else b'world.watershed-network-admission.v1'
+    path[-1][5] = hashlib.sha256(frame([tag, path[-1][5],
                                       hashlib.sha256(watershed).digest()])).digest()
     nested = frame(path.pop())
     for parent in reversed(path):
         parent[2] = nested
         nested = frame(parent)
-    expected = frame([b'world.snapshot', struct.pack('>Q', 7), nested, watershed])
+    expected = frame([b'world.snapshot', struct.pack('>Q', 8 if profile == 'reservoir' else 7), nested, watershed])
     assert expected == (fixture / 'genesis.bin').read_bytes()
     return hashlib.sha256(expected).hexdigest()
 
@@ -56,11 +57,15 @@ def main():
     parser.add_argument('--dotnet', type=Path, required=True)
     parser.add_argument('--fixture', type=Path, required=True)
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--profile', choices=['network', 'reservoir'], default='network')
     args = parser.parse_args()
+    version = 8 if args.profile == 'reservoir' else 7
+    create_option = '--create-reservoir-world' if version == 8 else '--create-watershed-network-world'
+    artifact_name = 'reservoirs.bin' if version == 8 else 'network.bin'
     root = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
-    work = output.parent / ('watershed-network-world-' + uuid.uuid4().hex)
+    work = output.parent / (args.profile + '-world-' + uuid.uuid4().hex)
     work.mkdir()
     database = work / 'world.sqlite'
     fixture = args.fixture.resolve()
@@ -69,7 +74,7 @@ def main():
     command = [str(dotnet), str(root / 'src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll')]
     env = dict(os.environ, DOTNET_ROOT=str(dotnet.parent))
     report = dict(status='running', startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                  scope='Admitted watershed network; actual composed-world host create, commits, kill/recover and exact history',
+                  scope=args.profile + '; actual composed-world host create, commits, kill/recover and exact history',
                   fixtureSha256={p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(fixture.iterdir()) if p.is_file()},
                   runs=[], crashes=[])
 
@@ -91,20 +96,22 @@ def main():
 
     def assert_history(revision):
         value = run('history ' + str(revision), '--inspect-recorded-world', database, revision)
-        assert value['ProfileVersion'] == 7 and value['RecordedRevision'] == revision
+        assert value['ProfileVersion'] == version and value['RecordedRevision'] == revision
         assert value['StateHash'] == expected['WorldHashes'][revision]
         assert value['WatershedNetwork']['ContentHash'] == expected['NetworkHash']
+        if version == 8:
+            assert value['Reservoirs']['ContentHash'] == expected['ReservoirHashes'][revision]
         assert value['HasReadingHold'] == (revision == expected['HeldRevision'])
         return value
 
     try:
-        report['independentAdmissionHash'] = verify_admission_frame(fixture)
+        report['independentAdmissionHash'] = verify_admission_frame(fixture, args.profile)
         assert report['independentAdmissionHash'] == expected['WorldHashes'][0]
-        created = run('create', '--create-watershed-network-world', database, fixture / 'basis.bin', fixture / 'network.bin')
+        created = run('create', create_option, database, fixture / 'basis.bin', fixture / artifact_name)
         assert created['StateHash'] == expected['WorldHashes'][0]
         assert created['WatershedNetwork']['ContentHash'] == expected['NetworkHash']
-        run('refuse existing destination', '--create-watershed-network-world', database,
-            fixture / 'basis.bin', fixture / 'network.bin', exit_code=1)
+        run('refuse existing destination', create_option, database,
+            fixture / 'basis.bin', fixture / artifact_name, exit_code=1)
         assert_history(0)
         for boundary, revision in [('before', 0), ('after', 1)]:
             selected = command + ['--probe-world-step-crash', str(database), str(fixture / 'step-1.bin'), boundary]
@@ -130,6 +137,8 @@ def main():
             value = run('step ' + str(revision), '--execute-world-step', database, fixture / f'step-{revision}.bin')
             assert value['Revision'] == revision and value['StateHash'] == expected['WorldHashes'][revision]
             assert value['WatershedNetwork']['ContentHash'] == expected['NetworkHash']
+            if version == 8:
+                assert value['Reservoirs']['ContentHash'] == expected['ReservoirHashes'][revision]
         before = hashlib.sha256(database.read_bytes()).hexdigest()
         for revision in [expected['FinalRevision'], 0, expected['HeldRevision'], 1]:
             value = assert_history(revision)
@@ -147,7 +156,7 @@ def main():
     finally:
         report['finishedUtc'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
         output.write_text(json.dumps(report, indent=2) + '\n')
-    print('watershed network world: ' + report['status'], flush=True)
+    print(args.profile + ' world: ' + report['status'], flush=True)
     return 0 if report['status'] == 'passed' else 1
 
 

@@ -284,8 +284,8 @@ validate scope, receiver ownership, calibration, actual occupancy and closed ide
 privileged `--inspect-runoff-capacity` operator reads this archive without mutating a world.
 
 This owner does not schedule arrivals, settle/partially consume a flow, release source stock, alter
-receiver geometry, change topology or integrate time. Physical buffers, staged backpressure, Wait,
-exact lived history and durable world admission must compose this capacity boundary with their own
+receiver geometry, change topology or integrate time. The physical wrapper and world binding below
+compose its storage and durable ownership. Staged backpressure and encounter Wait require their own
 contracts. Known Production cannot be omitted and separately owned capacities cannot be treated as
 free by another subsystem. A fixed single-material/network domain is a bounded supported profile;
 heterogeneous fluids and interacting networks require explicit compatible composition.
@@ -357,6 +357,32 @@ changes and topology edits require their own retained contracts. This equilibriu
 teleport stock, supply atmospheric water, bypass encounter Wait or substitute for exact lived history.
 The full geological design retains porous storage, underdark/cave flooding and heterogeneous liquids;
 unsupported configurations require explicit profiles rather than being coerced into this vessel model.
+
+## Runtime binding: exclusive reservoir ownership
+
+[WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) profile eight owns one complete
+`LiquidReservoirState`. Its inventory and Production must match the world's exact material roots.
+The world's network is derived from that owner, never admitted as an independent competing copy.
+World identity admission registers every reservoir ID and the item/physical definition pins alongside
+terrain, bodies, languages, quests and construction. A stored reservoir cannot be reused as a command,
+receipt or spawned identity. Shared definitions require exact pins across all components.
+
+[WorldStepProcessor](../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) applies the physical check
+to gathering, ordinary handovers, crafting, quest delivery and construction material changes. The check
+uses the latest accepted wrapper within the batch, before publishing planner side effects. A material
+rejection becomes an ordinary `Unavailable` receipt with original inventory and no spent effort,
+retired input, production batch, paid reward, installed structure or spawned reservation from that action.
+Time and independently accepted movement still follow the normal batch rules. Unchanged material state
+retains the same wrapper; accepted changes retain geometry/domain and rebuild actual/projected fills.
+
+Advancing time, opening a reading hold or passing an input interval's end does not settle runoff,
+release its source reservation or drop outstanding receiving capacity. Empty/canceled owners retain
+all physical mappings. No action in this profile edits geometry, admits/cancels a commitment or simulates
+liquid arrivals. The same transaction owns physical state, custody, Production and receipts; historical
+reconstruction uses the exact recorded profile. The [persistence contract](persistence-and-history.md)
+defines fresh admission, canonical bytes and outer size limits. The default farm remains its explicitly
+admitted profile; this binding does not infer terrain walls, visualize water or insert reservoirs into
+played saves.
 
 ## Domain contract: funded terrain material
 

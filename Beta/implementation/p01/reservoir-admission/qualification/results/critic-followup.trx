@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="23ba9d03-00c1-4112-97d6-a95d4e6f2f96" name="@mac 2026-09-19 13:35:12" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-19T13:35:12.9141770-05:00" queuing="2026-09-19T13:35:12.9141770-05:00" start="2026-09-19T13:35:08.8988860-05:00" finish="2026-09-19T13:35:13.2004010-05:00" />
+  <TestSettings name="default" id="33f872f2-b3ea-41f6-8ce4-2496eeb234e6">
+    <Deployment runDeploymentRoot="_mac_2026-09-19_13_35_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="569f7ab7-f611-4972-a7e3-db301dc0fc60" testId="62e967c2-eaa6-0d28-46c5-74e1bc4e620a" testName="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.ValidIndependentGeometrySubstitutionStillFailsReplay(table: &quot;world_head&quot;)" computerName="mac" duration="00:00:00.2710252" startTime="2026-09-19T13:35:12.5798890-05:00" endTime="2026-09-19T13:35:12.8509840-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="569f7ab7-f611-4972-a7e3-db301dc0fc60" />
+    <UnitTestResult executionId="dbc10692-3e61-4ef6-ba33-378f7941c26f" testId="b8924eae-a50d-4e07-3db0-d223b129f5d8" testName="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.ValidIndependentGeometrySubstitutionStillFailsReplay(table: &quot;world_checkpoints&quot;)" computerName="mac" duration="00:00:00.2867457" startTime="2026-09-19T13:35:12.8521010-05:00" endTime="2026-09-19T13:35:13.1389260-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dbc10692-3e61-4ef6-ba33-378f7941c26f" />
+    <UnitTestResult executionId="29928a9c-4b33-4b1f-b947-8c89d41ee3a9" testId="cd45a14e-e4a6-dac5-ac60-5bc7d58bddb8" testName="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.ValidIndependentGeometrySubstitutionStillFailsReplay(table: &quot;world_genesis&quot;)" computerName="mac" duration="00:00:00.4145069" startTime="2026-09-19T13:35:12.1637410-05:00" endTime="2026-09-19T13:35:12.5788530-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29928a9c-4b33-4b1f-b947-8c89d41ee3a9" />
+    <UnitTestResult executionId="27191197-45ca-4a16-9ea0-b9d1ad9e25b2" testId="6ef8c802-08ff-6dad-bf9a-e965edd76cad" testName="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedHandoverCannotUndoAnotherActorsAcceptedCraftInTheSameBatch" computerName="mac" duration="00:00:00.7559264" startTime="2026-09-19T13:35:11.3720670-05:00" endTime="2026-09-19T13:35:12.1542710-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27191197-45ca-4a16-9ea0-b9d1ad9e25b2">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 0000000000000000000000000070ea52
+Actual:   0000000000000000000000000070ea50</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedHandoverCannotUndoAnotherActorsAcceptedCraftInTheSameBatch() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ReservoirWorldRecoveryTests.cs:line 283
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.ValidIndependentGeometrySubstitutionStillFailsReplay(table: &quot;world_genesis&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cd45a14e-e4a6-dac5-ac60-5bc7d58bddb8">
+      <Execution id="29928a9c-4b33-4b1f-b947-8c89d41ee3a9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests" name="ValidIndependentGeometrySubstitutionStillFailsReplay" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.ValidIndependentGeometrySubstitutionStillFailsReplay(table: &quot;world_head&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="62e967c2-eaa6-0d28-46c5-74e1bc4e620a">
+      <Execution id="569f7ab7-f611-4972-a7e3-db301dc0fc60" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests" name="ValidIndependentGeometrySubstitutionStillFailsReplay" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedHandoverCannotUndoAnotherActorsAcceptedCraftInTheSameBatch" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6ef8c802-08ff-6dad-bf9a-e965edd76cad">
+      <Execution id="27191197-45ca-4a16-9ea0-b9d1ad9e25b2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests" name="RejectedHandoverCannotUndoAnotherActorsAcceptedCraftInTheSameBatch" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.ValidIndependentGeometrySubstitutionStillFailsReplay(table: &quot;world_checkpoints&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b8924eae-a50d-4e07-3db0-d223b129f5d8">
+      <Execution id="dbc10692-3e61-4ef6-ba33-378f7941c26f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests" name="ValidIndependentGeometrySubstitutionStillFailsReplay" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="62e967c2-eaa6-0d28-46c5-74e1bc4e620a" executionId="569f7ab7-f611-4972-a7e3-db301dc0fc60" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8924eae-a50d-4e07-3db0-d223b129f5d8" executionId="dbc10692-3e61-4ef6-ba33-378f7941c26f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd45a14e-e4a6-dac5-ac60-5bc7d58bddb8" executionId="29928a9c-4b33-4b1f-b947-8c89d41ee3a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6ef8c802-08ff-6dad-bf9a-e965edd76cad" executionId="27191197-45ca-4a16-9ea0-b9d1ad9e25b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="3" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.66]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.10]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.40]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.27]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:02.27]       Expected: 0000000000000000000000000070ea52
+[xUnit.net 00:00:02.27]       Actual:   0000000000000000000000000070ea50
+[xUnit.net 00:00:02.27]       Stack Trace:
+[xUnit.net 00:00:02.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ReservoirWorldRecoveryTests.cs(283,0): at OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedHandoverCannotUndoAnotherActorsAcceptedCraftInTheSameBatch()
+[xUnit.net 00:00:02.27]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.27]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.26]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-19T13:35:12.1637960-05:00">
+        <Text>[xUnit.net 00:00:02.27]     OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedHandoverCannotUndoAnotherActorsAcceptedCraftInTheSameBatch [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

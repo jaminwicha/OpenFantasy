@@ -1,0 +1,744 @@
+{
+  "architectureLinks": 178,
+  "frozenHashes": 22,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "links": [
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/StratifiedTerrainGenerator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionBounds.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/GroundRouteSearch.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershed.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldWatershedAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedNetworkPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedOutletClosure.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedNetwork.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedNetworkCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldWatershedNetworkAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainMapper.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedTerrain.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainMapping.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainColumn.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffRequest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffInput.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffTerminal.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffFunding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedRunoff.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffDomain.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirGeometry.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirFill.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialDeposit.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPartition.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialAllocation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedMaterialIdentities.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialProduction.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../../spec-v1_1/ECOLOGY_AND_FLUIDS.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Actors"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Language"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Observations"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResident.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/ActorPresence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Progression"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalConstructionController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../../spec-v1_1/LANGUAGE_AND_AFTERLIFE.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmGame.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmCanvas.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/Presentation"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInputMap.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInputRouter.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmTargetSelection.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmActionOffer.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmActionOffers.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmQuickWheel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmQuickWheelModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInventoryModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInventoryScreen.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/Presentation/FarmDaylight.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../spec-v1_1/PRESENTATION_CONTRACTS.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../art-style-calibration/README.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "runtime-and-authority.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "identity-and-determinism.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actors-and-society.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "materials-and-activities.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "presentation-and-interaction.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "content-and-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Custody"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Production"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md#domain-contract-funded-terrain-material"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md#domain-contract-terrain-and-production-composition"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md#domain-contract-shared-material-allocation-registry"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md#domain-contract-funded-runoff-budgets"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Gathering/GatherPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Production/InstantCraftPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Quests/DeliveryQuestPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md#domain-contract-shared-runoff-capacity-ownership"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md#domain-contract-finite-physical-reservoirs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/WorldInstant.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/Exposure"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/Scheduling"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/Exposure/ExposurePacingV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/OpenFantasy.Core.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Host/OpenFantasy.Host.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../client/OpenFantasy.Client.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../global.json"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../toolchain.json"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/SqliteCountedAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirBinding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "content-and-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV7.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV8.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldProductionUpgrade.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldQuestUpgrade.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldConstructionUpgrade.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldUpgradePublication.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/History/HistoryAddress.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/History/HistoryRequest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/History/HistoryCommitSelection.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/RecordedWorldState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../src/OpenFantasy.Core/Content/PackageManifest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../src/OpenFantasy.Core/Content/PackageResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../src/OpenFantasy.Hosting/Content"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../spec-v1_1/REQUIREMENTS.json"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../spec-v1_1/IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../spec-v1_1/CROSS_SYSTEM_SYNERGIES.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/EntityId.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/CanonicalEncodingV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/CONTRACTS.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/RuleMath.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/WorldInstant.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/CounterRandomV1.cs"
+    }
+  ],
+  "frozenFiles": [
+    "spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md",
+    "spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md",
+    "spec-v1_1/COVERAGE.json",
+    "spec-v1_1/CRITIC_REVIEW.md",
+    "spec-v1_1/CROSS_SYSTEM_SYNERGIES.md",
+    "spec-v1_1/DECISIONS.md",
+    "spec-v1_1/ECOLOGY_AND_FLUIDS.md",
+    "spec-v1_1/GDD.md",
+    "spec-v1_1/GENERATION_VALIDATION.md",
+    "spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md",
+    "spec-v1_1/IMPLEMENTATION_HANDOFF.md",
+    "spec-v1_1/IMPLEMENTATION_PLAN.md",
+    "spec-v1_1/INTEGRATION_CRITIC.md",
+    "spec-v1_1/LANGUAGE_AND_AFTERLIFE.md",
+    "spec-v1_1/LOCAL_REUSE_DECISIONS.md",
+    "spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md",
+    "spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md",
+    "spec-v1_1/PRESENTATION_CONTRACTS.md",
+    "spec-v1_1/README.md",
+    "spec-v1_1/REQUIREMENTS.json",
+    "spec-v1_1/TECHNICAL_DESIGN.md",
+    "spec-v1_1/VALIDATION.md"
+  ],
+  "documentCheckCorrection": "Initial check included living Beta/README.md in the historical manifest; frozen check correctly scopes entries to spec-v1_1/."
+}

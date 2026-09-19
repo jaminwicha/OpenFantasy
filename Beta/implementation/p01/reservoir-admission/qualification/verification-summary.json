@@ -1,0 +1,82 @@
+{
+  "status": "passed",
+  "scope": "Fresh profile-eight reservoir ownership; shared action gate, canonical persistence and recovery. No live flow, terrain support or phase completion.",
+  "build": {
+    "log": "build.log",
+    "warnings": 0,
+    "errors": 0,
+    "finalChangeAfterBuild": "Only test refinements/documentation; Hosting test follow-up recompiles unchanged runtime and updated fixtures."
+  },
+  "managed": {
+    "core": {
+      "total": 689,
+      "passed": 689,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting": {
+      "total": 346,
+      "passed": 346,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "criticFollowup": {
+      "total": 5,
+      "passed": 5,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "coverage": "Full 1,035-case regression, then strengthened five-case follow-up replaces four earlier cases and adds the opposite actor ordering. 1,036 distinct cases; not one uninterrupted final suite run. No skips.",
+    "newCases": 18
+  },
+  "operators": {
+    "reservoir-world.json": {
+      "calls": 28,
+      "processKills": 2,
+      "status": "passed",
+      "independentAdmissionHash": "b17cf87668dc29f77d8b2158cfd0d265694640d6c4c3f4706b46ca6f4557f3fa"
+    },
+    "network-world.json": {
+      "calls": 27,
+      "processKills": 2,
+      "status": "passed",
+      "independentAdmissionHash": "dbe0267ae90bdf46b80eec0cc12aa68474be11b006241096ff65a25c5f3031df"
+    }
+  },
+  "native": {
+    "foundation": "native-foundation.log: actual Godot C# headless foundation-v1 report; no errors",
+    "farm": {
+      "status": "passed",
+      "stages": 2,
+      "rendered": false
+    }
+  },
+  "maximum": {
+    "WorldBytes": 3475157,
+    "NetworkColumns": 65536,
+    "ReservoirColumns": 4096,
+    "Bound": 16777216,
+    "PerformanceQualified": false
+  },
+  "preservation": {
+    "architectureLinks": 178,
+    "frozenHashes": 22,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "critic": "Read-only native design/integration/source/tests/reference review. Fixed successor ownership-drop path; strengthened post-commit geometry-only tampering and both canonical action orders. No further consequential findings; critic did not execute tests.",
+  "failures": [
+    "test-first.log: missing new APIs plus incorrect test enum; implementation/API spelling correction.",
+    "expanded-test.log and expanded-test-2.log: fixture used internal WithCustody, wrong identity property and allocation argument order; corrected fixture without runtime relaxation.",
+    "expanded-test-3.log, expanded-test-4.log, gather-diagnostic.log: gather preflight unavailable because effort was 20 vs400 required. Fixture now advances through real idle steps to full1000; no gate changed.",
+    "critic-followup.log: original actor ordering was give then craft. Fresh deterministic seed fixtures now explicitly assert and pass both orders.",
+    "Initial document check accidentally included living README in historical manifest; corrected scope to the22 frozen spec-v1_1 entries."
+  ],
+  "limits": [
+    "Explicit fresh construction genesis only; no lived-save migration or default farm/presentation change.",
+    "One calibrated incompressible material; authored watertight supports. No terrain-supported boundaries, inlets/outlets, arrival/settlement, phase change, climate/coast or hydraulic Wait proof.",
+    "No world commands to admit/cancel commitments or edit geometry; immutable standalone plans are not durable commands.",
+    "Network/reservoir support maximum is storage correctness, not maximum simultaneous Production/pending/vessel workload performance.",
+    "Duplicate canonical inventory/Production bytes must match exactly; complete world retains original16MiB bound. Outer size may reject individually valid archives.",
+    "All full campaign, art, UI, device/export, co-op, performance, independent/human acceptance gates remain open."
+  ]
+}

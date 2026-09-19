@@ -2,6 +2,7 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Progression;
 using OpenFantasy.Core.Quests;
@@ -60,11 +61,20 @@ public sealed class WorldStepProcessor
         QuestSnapshot? quests = state.Quests;
         ConstructionSnapshot? construction = state.Construction;
         LocalSpatialSnapshot space = state.Space;
+        LiquidReservoirState? reservoirs = state.Reservoirs;
         HashSet<EntityId> worked = [];
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
         foreach (WorldActionCommand action in batch.Actions)
         {
+            // Material validation covers the entire action, including its non-inventory side effects.
+            var previousGathering = gathering;
+            var previousProduction = production;
+            var previousProgression = progression;
+            var previousQuests = quests;
+            var previousConstruction = construction;
+            var previousSpace = space;
+            bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
             if (action.Intent is WorkConstructionIntent)
@@ -82,7 +92,7 @@ public sealed class WorldStepProcessor
                 createdIds = plan.CreatedIds;
                 if (plan.Succeeded)
                 {
-                    worked.Add(action.ActorId);
+                    performedWork = true;
                 }
             }
             else if (action.Intent is DeliveryQuestIntent)
@@ -135,6 +145,26 @@ public sealed class WorldStepProcessor
                     resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
                 }
             }
+            if (!WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled))
+            {
+                gathering = previousGathering;
+                production = previousProduction;
+                progression = previousProgression;
+                quests = previousQuests;
+                construction = previousConstruction;
+                space = previousSpace;
+                performedWork = false;
+                createdIds = [];
+                resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
+            }
+            else
+            {
+                reservoirs = reconciled;
+            }
+            if (performedWork)
+            {
+                worked.Add(action.ActorId);
+            }
             var receipt = WorldActionReceipt.Create(action, sequence, resolution.Rejection);
             Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
             if (resolution.SpawnedId is { } spawned)
@@ -178,7 +208,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs);
         return new WorldStepDecision(candidate, receipts, identities);
     }
 

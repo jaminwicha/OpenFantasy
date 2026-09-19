@@ -31,7 +31,7 @@ boundary; a second authority or IPC layer is not a prerequisite for engine porta
 
 [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) is the immutable composed world
 root. It binds inventory authority, spatial state, residents, calendar, dialogues and the optional
-gathering, production, progression, quest, construction and single-basin or network geography admitted by its
+gathering, production, progression, quest, construction, geography and physical reservoirs admitted by its
 saved profile. World revision and advancing-step count are separate counters.
 
 [WorldAdmissionValidator](../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs) checks the
@@ -66,6 +66,12 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    host-selected [WorldStepBatch](../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs) against the
    committed profile, scope, revision and hold state. Domain planners recheck rights, resources,
    bodies, reach and dependencies. The batch bounds per-actor action/movement selection.
+   For reservoir worlds, [WorldReservoirBinding](../../src/OpenFantasy.Core/Worlds/WorldReservoirBinding.cs)
+   reconciles each material candidate against the latest accepted physical owner before reserving spawned
+   identities or publishing any side effect. Rejection restores gathering, Production, quests/rewards,
+   construction and space together. Rejected construction does not consume the actor's movement slot.
+   Earlier accepted actions remain accepted; validating only the final batch state would hide transient
+   physical violations. Ordinary successors cannot add or remove reservoir ownership.
 4. [WorldCommitPreparation](../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs) prepares
    canonical state, outcomes and identity reservations. Gameplay rejection is an outcome; malformed
    dispatch, identity conflict or storage failure is not a fabricated gameplay receipt.

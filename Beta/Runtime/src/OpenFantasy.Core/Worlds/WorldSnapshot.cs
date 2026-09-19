@@ -24,9 +24,10 @@ public sealed class WorldSnapshot
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues = null,
         GatheringSnapshot? gathering = null, ProductionSnapshot? production = null,
         ProgressionSnapshot? progression = null, QuestSnapshot? quests = null, ConstructionSnapshot? construction = null,
-        PreparedWatershed? watershed = null, PreparedWatershedNetwork? watershedNetwork = null)
+        PreparedWatershed? watershed = null, PreparedWatershedNetwork? watershedNetwork = null,
+        LiquidReservoirState? reservoirs = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, null)
     {
     }
 
@@ -35,7 +36,7 @@ public sealed class WorldSnapshot
         ulong revision, ulong advancingSteps, IEnumerable<DialogueSession>? dialogues, GatheringSnapshot? gathering,
         ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests,
         ConstructionSnapshot? construction, PreparedWatershed? watershed, PreparedWatershedNetwork? watershedNetwork,
-        WorldIdentityIndex? previous)
+        LiquidReservoirState? reservoirs, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -92,7 +93,16 @@ public sealed class WorldSnapshot
         Quests = quests;
         Construction = construction;
         Watershed = watershed;
-        WatershedNetwork = watershedNetwork;
+        Reservoirs = reservoirs;
+        if (reservoirs is not null)
+        {
+            if (watershed is not null || watershedNetwork is not null || construction is null)
+            {
+                throw new ArgumentException("Reservoir ownership requires construction and exclusively owns its network.");
+            }
+            WorldReservoirBinding.Validate(reservoirs, inventory, production);
+        }
+        WatershedNetwork = reservoirs?.Capacity.Domain.Network ?? watershedNetwork;
         if (watershed is not null && watershedNetwork is not null)
         {
             throw new ArgumentException("A world cannot independently own both a single basin and a watershed network.");
@@ -133,7 +143,8 @@ public sealed class WorldSnapshot
     public ConstructionSnapshot? Construction { get; }
     public PreparedWatershed? Watershed { get; }
     public PreparedWatershedNetwork? WatershedNetwork { get; }
-    public ushort ProfileVersion => WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
+    public LiquidReservoirState? Reservoirs { get; }
+    public ushort ProfileVersion => Reservoirs is not null ? (ushort)8 : WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
         : Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
         : Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;
     public WorldIdentityIndex IdentityIndex { get; }
@@ -145,7 +156,14 @@ public sealed class WorldSnapshot
     internal WorldSnapshot WithState(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, WorldInstant calendar, ulong revision, ulong advancingSteps,
         IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production,
-        ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction = null) =>
-        new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, WatershedNetwork, IdentityIndex);
+        ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction,
+        LiquidReservoirState? reservoirs)
+    {
+        if ((Reservoirs is null) != (reservoirs is null))
+        {
+            throw new ArgumentException("A world successor cannot add or remove physical reservoir ownership.");
+        }
+        return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, reservoirs, IdentityIndex);
+    }
 }

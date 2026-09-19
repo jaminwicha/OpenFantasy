@@ -292,3 +292,12 @@ See the [capacity contract](docs/architecture/world-and-geography.md#domain-cont
 including geometric capacities and separate actual/projected fill levels. Its authored watertight
 vessels do not establish live terrain walls or flow. See the
 [reservoir contract](docs/architecture/world-and-geography.md#domain-contract-finite-physical-reservoirs).
+
+`--create-reservoir-world <new-world.sqlite> <construction-genesis.bin> <reservoirs.bin>` admits an
+explicit unplayed construction basis with exactly matching inventory/Production and complete physical
+reservoir ownership. All material actions then pass the physical/capacity gate before durable publication;
+time alone does not move liquid or release promises. The default farm is unchanged. See the
+[world binding](docs/architecture/world-and-geography.md#runtime-binding-exclusive-reservoir-ownership).
+`OPENFANTASY_RESERVOIR_WORLD_EVIDENCE` retains the hosting fixture; the full verifier runs
+`tools/check_watershed_network_world.py --profile reservoir` for independent outer-byte verification,
+actual commit crashes, restart and exact history through the host.

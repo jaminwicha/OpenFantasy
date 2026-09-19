@@ -57,6 +57,8 @@ internal sealed class HostApplication
                     _composed.CreateWatershedWorld(database, basis, watershed),
                 ["--create-watershed-network-world", var database, var basis, var network] =>
                     _composed.CreateWatershedNetworkWorld(database, basis, network),
+                ["--create-reservoir-world", var database, var basis, var reservoirs] =>
+                    _composed.CreateReservoirWorld(database, basis, reservoirs),
                 ["--execute-world-step", var database, var step] => _composed.ExecuteStep(database, step),
                 ["--probe-world-step-crash", var database, var step, var boundary] =>
                     _composed.ExecuteStep(database, step, boundary),
@@ -105,6 +107,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --execute-local-command <world.sqlite> <command.bin> <principal-id> <session-id>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-world <world.sqlite> <construction-genesis.bin> <prepared-basin.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-watershed-network-world <world.sqlite> <construction-genesis.bin> <prepared-network.bin>");
+        _output.WriteLine("       OpenFantasy.Host --create-reservoir-world <world.sqlite> <construction-genesis.bin> <reservoirs.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>");
         _output.WriteLine("These commands require exclusive local database access; they do not authenticate network clients.");
     }

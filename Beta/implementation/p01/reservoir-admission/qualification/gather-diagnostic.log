@@ -1,0 +1,15 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.13]     OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedGatherDoesNotIssueSourceSpendEffortOrReserveSpawnedIdentity [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedGatherDoesNotIssueSourceSpendEffortOrReserveSpawnedIdentity [694 ms]
+  Error Message:
+   {"Rejection":2,"RemainingSwings":5,"NextUnissuedUnit":0,"UnitCapacity":160,"Power":1,"Effort":20,"Protection":0,"ReservedBy":null}
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.ReservoirWorldRecoveryTests.RejectedGatherDoesNotIssueSourceSpendEffortOrReserveSpawnedIdentity() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ReservoirWorldRecoveryTests.cs:line 111
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 727 ms - OpenFantasy.Hosting.Tests.dll (net8.0)

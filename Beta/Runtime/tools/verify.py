@@ -39,6 +39,7 @@ def main():
     env["OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE"] = str(test_results / "terrain-material-fixture")
     env["OPENFANTASY_RUNOFF_EVIDENCE"] = str(test_results / "runoff-fixture")
     env["OPENFANTASY_RUNOFF_CAPACITY_EVIDENCE"] = str(test_results / "runoff-capacity-fixture")
+    env["OPENFANTASY_RESERVOIR_WORLD_EVIDENCE"] = str(test_results / "reservoir-world-fixture")
     env["OPENFANTASY_RESERVOIR_EVIDENCE"] = str(test_results / "reservoir-fixture")
     env["OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE"] = str(test_results / "material-production-fixture")
     env["OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE"] = str(test_results / "material-registry-fixture")
@@ -140,6 +141,10 @@ def main():
             "--dotnet", dotnet, "--fixture", test_results / "watershed-network-world-fixture",
             "--output", artifacts / "watershed-network-world.json"])
         inspection_report = artifacts / "contract-inspections.json"
+        run("reservoir-world-persistence", [sys.executable, root / "tools/check_watershed_network_world.py",
+            "--dotnet", dotnet, "--fixture", test_results / "reservoir-world-fixture", "--profile", "reservoir",
+            "--output", artifacts / "reservoir-world.json"])
+
         run("watershed-network-inspections", [sys.executable, root / "tools/check_watershed_network.py",
             "--dotnet", dotnet, "--maximum-fixture", test_results / "watershed-network-fixture",
             "--output", artifacts / "watershed-network.json"])

@@ -41,6 +41,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 5 | Quest world plus construction, installed material and derived collision |
 | 6 | Complete construction world plus one immutable prepared watershed |
 | 7 | Complete construction world plus one immutable prepared watershed network |
+| 8 | Complete construction world plus one exclusive physical reservoir/capacity owner and its network |
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
@@ -58,8 +59,25 @@ basis. The outer snapshot has tag `world.snapshot`, unsigned-64 profile `7`, exa
 and exact network archive. Its step interpreter retains the existing action and receipt semantics.
 
 All decode/admission paths enforce identity roles across components. Admission is not insertion of
-geography into a lived save. Profiles six and seven use the same schema-three writer and full-journal
+geography into a lived save. Profiles six through eight use the same schema-three writer and full-journal
 recovery; they add no migration commit, separate writer or clock.
+
+[Profile eight](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV8.cs) frames unsigned-64 profile `8`,
+a genuine profile-five basis and the unchanged complete `LiquidReservoirCodecV1` archive. The latter
+owns the sole network; an independent basin/network argument rejects. Inventory and Production occur
+in both nested formats, but exact content equality is mandatory. They are duplicate serialized evidence
+of one authority, never independently writable roots. Both nested and complete-world bounds apply;
+the outer limit remains 16 MiB even though a standalone reservoir archive permits more. This explicit
+format reuses existing interpreters and does not silently normalize or discard prior archives.
+
+[Fresh reservoir admission](../../src/OpenFantasy.Core/Worlds/WorldReservoirAdmission.cs) requires an
+unplayed profile-five construction world and the exact inventory/Production of the supplied owner.
+The new admission pin is SHA-256 of an OFC frame tagged `world.reservoir-admission.v1`, prior admission
+hash bytes and complete reservoir hash bytes. It retains that pin in the nested basis. Ordinary profile-eight
+batches use the existing action interpreter, schema-three transaction, historical identity reservations
+and exact replay. `--create-reservoir-world` requires a new destination; `--inspect-recorded-world`
+reports the exact physical owner at the selected commit. These privileged operations confer no network
+authentication and introduce no migration of a lived save.
 
 The [dry terrain candidate archive](../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs)
 is a separately versioned preparation artifact, not another composed-world profile or a replacement
