@@ -1,0 +1,220 @@
+{
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "Builder": "49354ca83f251b3ce9d363158e0786a4",
+  "VisitedStandingHeights": [
+    256,
+    320,
+    384,
+    448,
+    512,
+    576,
+    640,
+    704,
+    768,
+    832
+  ],
+  "UnderpassClearanceSubunits": 512,
+  "BodyHeightSubunits": 464,
+  "States": [
+    {
+      "Revision": 0,
+      "Hash": "4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a",
+      "PlayerFeet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "BuilderFeet": {
+        "X": 27776,
+        "Y": 83584,
+        "Z": 256,
+        "Cell": {
+          "X": 108,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 0
+    },
+    {
+      "Revision": 63,
+      "Hash": "d7a24ea2f6109b03d6eec80e7856839e5c64042c50fbeac971d5ee480b291e19",
+      "PlayerFeet": {
+        "X": 27072,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "BuilderFeet": {
+        "X": 27264,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 1
+    },
+    {
+      "Revision": 134,
+      "Hash": "9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e",
+      "PlayerFeet": {
+        "X": 26912,
+        "Y": 83072,
+        "Z": 512,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "BuilderFeet": {
+        "X": 27264,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 1
+    },
+    {
+      "Revision": 135,
+      "Hash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "PlayerFeet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "BuilderFeet": {
+        "X": 27264,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 1
+    },
+    {
+      "Revision": 177,
+      "Hash": "318061655d79887fd82c75acea809f191feb2fe5a3e91b363ab5118f341ef947",
+      "PlayerFeet": {
+        "X": 27776,
+        "Y": 83584,
+        "Z": 832,
+        "Cell": {
+          "X": 108,
+          "Y": 326,
+          "Z": 3
+        }
+      },
+      "BuilderFeet": {
+        "X": 27264,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 1
+    },
+    {
+      "Revision": 249,
+      "Hash": "9a9bbe934e1305a99b37cd0f890071de24c0b5a0fb5e6ab61e3c6f7861574c53",
+      "PlayerFeet": {
+        "X": 25984,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "BuilderFeet": {
+        "X": 27264,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 1
+    },
+    {
+      "Revision": 425,
+      "Hash": "ec4d6d1017e8b1f0ecafd4c9b3202b4a346344080e7ba1880dbea6fc4bf58bcf",
+      "PlayerFeet": {
+        "X": 27776,
+        "Y": 83584,
+        "Z": 256,
+        "Cell": {
+          "X": 108,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "BuilderFeet": {
+        "X": 27776,
+        "Y": 83584,
+        "Z": 832,
+        "Cell": {
+          "X": 108,
+          "Y": 326,
+          "Z": 3
+        }
+      },
+      "CompletedWork": 1
+    },
+    {
+      "Revision": 585,
+      "Hash": "a927235dccd8e09dcc89d84ee71bf19315a003c371092d14db87214cdcad45f3",
+      "PlayerFeet": {
+        "X": 27008,
+        "Y": 83840,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 327,
+          "Z": 1
+        }
+      },
+      "BuilderFeet": {
+        "X": 27776,
+        "Y": 83584,
+        "Z": 256,
+        "Cell": {
+          "X": 108,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 1
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:05.36]     OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests.FundedStairsCarryOrdinaryPlayerAndNpcTravelAcrossRestartAndStackedSpace [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests.FundedStairsCarryOrdinaryPlayerAndNpcTravelAcrossRestartAndStackedSpace [3 s]
+  Error Message:
+   Walking from SubunitPosition { X = 27264, Y = 83328, Z = 256, Cell = CellCoordinate { X = 106, Y = 325, Z = 1 } } to SubunitPosition { X = 27776, Y = 83584, Z = 832, Cell = CellCoordinate { X = 108, Y = 326, Z = 3 } } returned ExpansionLimit after 2048 expansions.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldFixture.NextStep(WorldSnapshot world, EntityId actor, SubunitPosition destination, SubunitPosition& waypoint) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StairNavigationWorldFixture.cs:line 97
+   at OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldFixture.WalkTo(SqliteWorldAuthority authority, WorldSnapshot world, EntityId actor, SubunitPosition destination, Action`1 observe) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StairNavigationWorldFixture.cs:line 131
+   at OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests.FundedStairsCarryOrdinaryPlayerAndNpcTravelAcrossRestartAndStackedSpace() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StairNavigationWorldTests.cs:line 83
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/hosting-stairs-01.trx
+
+Failed!  - Failed:     1, Passed:     1, Skipped:     0, Total:     2, Duration: 3 s - OpenFantasy.Hosting.Tests.dll (net8.0)

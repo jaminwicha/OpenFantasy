@@ -53,6 +53,7 @@ staged transfers. Neither a contributing-column count nor a graphical ocean plan
 | Prepare reward | [ActorRewardPlanner](../../src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs) | Validate admitted progression/currency definitions and funding; calculate candidate state |
 | Build | [ConstructionPlanner](../../src/OpenFantasy.Core/Construction/ConstructionPlanner.cs) | Builder/tool/work eligibility, reserved material, physical access and atomic installed geometry |
 | Climb | [WorldClimbResolver](../../src/OpenFantasy.Core/Worlds/WorldClimbResolver.cs) | Actual movement/manipulation capability, swept clearance, continuous projected support and shared earned effort |
+| Walk stairs | [Ordinary walking](stair-navigation.md) | Actual tread contact and full-body clearance; one existing movement sample, no climb effort or hand requirement |
 
 The farm admission connects finite oak/berry gathering, ration crafting and Wren's six-wood agreement.
 Its funded reward is 420 XP and 200 gil. Delivered wood remains reserved for Wren's seedling guard;

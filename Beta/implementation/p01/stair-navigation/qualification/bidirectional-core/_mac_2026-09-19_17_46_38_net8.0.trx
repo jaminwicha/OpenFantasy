@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="4d0717a1-db19-4076-978b-5719718e0fc6" name="@mac 2026-09-19 17:46:38" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-19T17:46:38.8529570-05:00" queuing="2026-09-19T17:46:38.8529570-05:00" start="2026-09-19T17:46:36.9390980-05:00" finish="2026-09-19T17:46:38.8700060-05:00" />
+  <TestSettings name="default" id="49c4a689-1d8b-4062-afa4-57f9d09c2d5a">
+    <Deployment runDeploymentRoot="_mac_2026-09-19_17_46_38" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="43cc4e5f-f215-416f-acfc-9629a72354f6" testId="26fa79c5-f1b4-1c03-8d01-d5af2cd6ef75" testName="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Mixed_tread_contact_requires_real_contact_at_the_foot_height" computerName="mac" duration="00:00:00.0069358" startTime="2026-09-19T17:46:38.6678890-05:00" endTime="2026-09-19T17:46:38.6748480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43cc4e5f-f215-416f-acfc-9629a72354f6" />
+    <UnitTestResult executionId="665f4b33-de8d-43cb-84e8-600d81b136f0" testId="6baead10-0d16-1611-e515-5df82e18a3cc" testName="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Ordinary_samples_ascend_and_descend_real_treads_without_manipulation" computerName="mac" duration="00:00:00.0089319" startTime="2026-09-19T17:46:38.6582070-05:00" endTime="2026-09-19T17:46:38.6672430-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="665f4b33-de8d-43cb-84e8-600d81b136f0" />
+    <UnitTestResult executionId="ce3fdb17-13ad-4f8d-b04c-91029417c456" testId="7bdad2e4-9c00-938b-3ae8-b2ce7f767ce7" testName="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Removed_treads_invalidate_the_route_and_cannot_snap_a_later_sample_upstairs" computerName="mac" duration="00:00:00.0040879" startTime="2026-09-19T17:46:38.8058170-05:00" endTime="2026-09-19T17:46:38.8099300-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce3fdb17-13ad-4f8d-b04c-91029417c456" />
+    <UnitTestResult executionId="26539ee8-865d-414f-a782-9ab50213f91d" testId="2c4429a2-4d84-6906-3806-aa3dadf7bedc" testName="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Legacy_constructed_support_does_not_silently_acquire_stair_walking" computerName="mac" duration="00:00:00.0023514" startTime="2026-09-19T17:46:38.6755030-05:00" endTime="2026-09-19T17:46:38.6778760-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="26539ee8-865d-414f-a782-9ab50213f91d" />
+    <UnitTestResult executionId="a7947570-7180-47b0-b568-34a82de2b34b" testId="4ffcbe85-3c2b-4865-6c4a-b6b69385a917" testName="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Placement_uses_the_matching_walk_budget_without_changing_legacy_limits" computerName="mac" duration="00:00:00.1249889" startTime="2026-09-19T17:46:38.6725940-05:00" endTime="2026-09-19T17:46:38.7976240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7947570-7180-47b0-b568-34a82de2b34b" />
+    <UnitTestResult executionId="3a6b7ccb-ef2e-4d32-9b0d-e19374260f24" testId="6de25598-8e91-bc0c-2cd5-6011b24c7ec7" testName="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Missing_cells_budget_and_grid_residue_have_distinct_truthful_results" computerName="mac" duration="00:00:00.0043777" startTime="2026-09-19T17:46:38.6679890-05:00" endTime="2026-09-19T17:46:38.6723920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3a6b7ccb-ef2e-4d32-9b0d-e19374260f24" />
+    <UnitTestResult executionId="15978392-5d1d-47d7-a954-beb8ab08ffa1" testId="12fcde70-4be3-c29e-d0f4-4f158060f7c1" testName="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Quantized_physical_tops_retain_contact_and_upward_sweeps_respect_overhangs" computerName="mac" duration="00:00:00.0107005" startTime="2026-09-19T17:46:38.6780260-05:00" endTime="2026-09-19T17:46:38.6887520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="15978392-5d1d-47d7-a954-beb8ab08ffa1" />
+    <UnitTestResult executionId="bb6e7b05-11ad-4058-a175-661783737bf8" testId="289ef0f5-31c0-7ec4-ffaf-8f58cbe296e0" testName="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Numeric_boundary_refuses_without_wrapping" computerName="mac" duration="00:00:00.0057213" startTime="2026-09-19T17:46:38.7992810-05:00" endTime="2026-09-19T17:46:38.8055240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bb6e7b05-11ad-4058-a175-661783737bf8" />
+    <UnitTestResult executionId="039fcd4b-d3d1-4c64-8463-15560491dd35" testId="072f18ef-852a-691e-a30a-3e394cf654e3" testName="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Every_waypoint_replays_through_the_same_ordinary_movement_kernel" computerName="mac" duration="00:00:00.0876716" startTime="2026-09-19T17:46:38.5746560-05:00" endTime="2026-09-19T17:46:38.6677330-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="039fcd4b-d3d1-4c64-8463-15560491dd35" />
+    <UnitTestResult executionId="e2a10248-546c-4708-abac-6fb1b6b825b5" testId="803c425f-0e59-a5a6-402b-851b8d52d8c1" testName="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Too_high_a_riser_or_a_body_spanning_three_levels_refuses" computerName="mac" duration="00:00:00.0704391" startTime="2026-09-19T17:46:38.5746510-05:00" endTime="2026-09-19T17:46:38.6521780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2a10248-546c-4708-abac-6fb1b6b825b5" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Legacy_constructed_support_does_not_silently_acquire_stair_walking" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2c4429a2-4d84-6906-3806-aa3dadf7bedc">
+      <Execution id="26539ee8-865d-414f-a782-9ab50213f91d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.StairWalkingTests" name="Legacy_constructed_support_does_not_silently_acquire_stair_walking" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Missing_cells_budget_and_grid_residue_have_distinct_truthful_results" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="6de25598-8e91-bc0c-2cd5-6011b24c7ec7">
+      <Execution id="3a6b7ccb-ef2e-4d32-9b0d-e19374260f24" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests" name="Missing_cells_budget_and_grid_residue_have_distinct_truthful_results" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Every_waypoint_replays_through_the_same_ordinary_movement_kernel" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="072f18ef-852a-691e-a30a-3e394cf654e3">
+      <Execution id="039fcd4b-d3d1-4c64-8463-15560491dd35" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests" name="Every_waypoint_replays_through_the_same_ordinary_movement_kernel" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Ordinary_samples_ascend_and_descend_real_treads_without_manipulation" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="6baead10-0d16-1611-e515-5df82e18a3cc">
+      <Execution id="665f4b33-de8d-43cb-84e8-600d81b136f0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.StairWalkingTests" name="Ordinary_samples_ascend_and_descend_real_treads_without_manipulation" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Numeric_boundary_refuses_without_wrapping" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="289ef0f5-31c0-7ec4-ffaf-8f58cbe296e0">
+      <Execution id="bb6e7b05-11ad-4058-a175-661783737bf8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests" name="Numeric_boundary_refuses_without_wrapping" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Quantized_physical_tops_retain_contact_and_upward_sweeps_respect_overhangs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="12fcde70-4be3-c29e-d0f4-4f158060f7c1">
+      <Execution id="15978392-5d1d-47d7-a954-beb8ab08ffa1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.StairWalkingTests" name="Quantized_physical_tops_retain_contact_and_upward_sweeps_respect_overhangs" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Removed_treads_invalidate_the_route_and_cannot_snap_a_later_sample_upstairs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="7bdad2e4-9c00-938b-3ae8-b2ce7f767ce7">
+      <Execution id="ce3fdb17-13ad-4f8d-b04c-91029417c456" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests" name="Removed_treads_invalidate_the_route_and_cannot_snap_a_later_sample_upstairs" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Placement_uses_the_matching_walk_budget_without_changing_legacy_limits" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="4ffcbe85-3c2b-4865-6c4a-b6b69385a917">
+      <Execution id="a7947570-7180-47b0-b568-34a82de2b34b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.WalkingRouteTests" name="Placement_uses_the_matching_walk_budget_without_changing_legacy_limits" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Too_high_a_riser_or_a_body_spanning_three_levels_refuses" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="803c425f-0e59-a5a6-402b-851b8d52d8c1">
+      <Execution id="e2a10248-546c-4708-abac-6fb1b6b825b5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.StairWalkingTests" name="Too_high_a_riser_or_a_body_spanning_three_levels_refuses" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.StairWalkingTests.Mixed_tread_contact_requires_real_contact_at_the_foot_height" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="26fa79c5-f1b4-1c03-8d01-d5af2cd6ef75">
+      <Execution id="43cc4e5f-f215-416f-acfc-9629a72354f6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.StairWalkingTests" name="Mixed_tread_contact_requires_real_contact_at_the_foot_height" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="26fa79c5-f1b4-1c03-8d01-d5af2cd6ef75" executionId="43cc4e5f-f215-416f-acfc-9629a72354f6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6baead10-0d16-1611-e515-5df82e18a3cc" executionId="665f4b33-de8d-43cb-84e8-600d81b136f0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7bdad2e4-9c00-938b-3ae8-b2ce7f767ce7" executionId="ce3fdb17-13ad-4f8d-b04c-91029417c456" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2c4429a2-4d84-6906-3806-aa3dadf7bedc" executionId="26539ee8-865d-414f-a782-9ab50213f91d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4ffcbe85-3c2b-4865-6c4a-b6b69385a917" executionId="a7947570-7180-47b0-b568-34a82de2b34b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6de25598-8e91-bc0c-2cd5-6011b24c7ec7" executionId="3a6b7ccb-ef2e-4d32-9b0d-e19374260f24" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="12fcde70-4be3-c29e-d0f4-4f158060f7c1" executionId="15978392-5d1d-47d7-a954-beb8ab08ffa1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="289ef0f5-31c0-7ec4-ffaf-8f58cbe296e0" executionId="bb6e7b05-11ad-4058-a175-661783737bf8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="072f18ef-852a-691e-a30a-3e394cf654e3" executionId="039fcd4b-d3d1-4c64-8463-15560491dd35" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="803c425f-0e59-a5a6-402b-851b8d52d8c1" executionId="e2a10248-546c-4708-abac-6fb1b6b825b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="10" executed="10" passed="10" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.44]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.88]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.09]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.39]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

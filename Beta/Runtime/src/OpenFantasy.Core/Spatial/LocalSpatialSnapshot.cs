@@ -73,7 +73,7 @@ public sealed partial class LocalSpatialSnapshot
         return QueryVolume(actorId, BodyVolume.At(feet, actor.Condition.Definition.ClearanceDimensions));
     }
 
-    /// <summary>Prepares one bounded cardinal, fixed-elevation grounded move against all swept dependencies.</summary>
+    /// <summary>Prepares bounded cardinal movement under admitted contact rules; stepped worlds derive destination elevation.</summary>
     public SpatialMoveResult PrepareMove(EntityId actorId, ulong expectedRevision, long deltaX, long deltaY)
     {
         if ((deltaX == 0) == (deltaY == 0) || deltaX < -MaximumMoveSubunits || deltaX > MaximumMoveSubunits
@@ -89,6 +89,10 @@ public sealed partial class LocalSpatialSnapshot
         if (!actor.Condition.CanLocomote(LocomotionMode.Ground))
         {
             return new SpatialMoveResult(SpatialMoveStatus.NoGroundLocomotion);
+        }
+        if (GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction)
+        {
+            return PrepareWalkFrom(actorId, actor.Feet, deltaX, deltaY);
         }
         try
         {
@@ -139,7 +143,13 @@ public sealed partial class LocalSpatialSnapshot
         {
             return clearance;
         }
-        return GroundSupport == GroundSupportMode.TerrainOnly ? clearance : FootingQuery.Query(_terrain, Structures, volume);
+        return GroundSupport switch
+        {
+            GroundSupportMode.TerrainOnly => clearance,
+            GroundSupportMode.SteppedTerrainAndConstruction => FootingQuery.QueryStepped(_terrain, Structures, volume,
+                StepHeight(GetActor(actorId))),
+            _ => FootingQuery.Query(_terrain, Structures, volume)
+        };
     }
 
     private SpatialOccupancy QueryClearance(EntityId actorId, BodyVolume volume)

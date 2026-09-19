@@ -93,7 +93,7 @@ public sealed class ConstructionPlanner
                 new GroundAccessRequirement(value.ActorId, space.GetActor(value.ActorId).Feet, value.To))).Distinct().ToArray();
             StructurePlacementResult placement = space.PrepareStructurePlacement(
                 project.Definition.CreateStructure(structureId, project.SiteFeet,
-                    space.GroundSupport == GroundSupportMode.TerrainAndConstruction), access);
+                    space.GroundSupport != GroundSupportMode.TerrainOnly), access);
             if (placement.Status != StructurePlacementStatus.Prepared)
             {
                 return Reject(WorldActionRejection.Unavailable);

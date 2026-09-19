@@ -1,0 +1,208 @@
+{
+  "scope": "Fresh dry profile12: actual funded stairs and upper floor, ordinary player/NPC movement, same-XY multi-level occupancy, recovery and exact history",
+  "status": "passed",
+  "build": {
+    "file": "build.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "total": 1189,
+    "core": 763,
+    "hosting": 426,
+    "new": 16,
+    "skipped": 0,
+    "reports": [
+      {
+        "file": "full-tests/_mac_2026-09-19_17_51_02_net8.0.trx",
+        "total": 763,
+        "executed": 763,
+        "passed": 763,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      {
+        "file": "full-tests/_mac_2026-09-19_17_51_12_net8.0.trx",
+        "total": 426,
+        "executed": 426,
+        "passed": 426,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      }
+    ]
+  },
+  "host": {
+    "report": "recovery-host-1.json",
+    "ordinaryCalls": 20,
+    "externalProcessKills": 2,
+    "independentByteWitnesses": 9,
+    "beforeStepRevision": 134,
+    "afterStepRevision": 135,
+    "effortBefore": 1000,
+    "effortAfter": 1000
+  },
+  "legacyHost": {
+    "report": "legacy-recovery-host-1.json",
+    "profile": 11,
+    "ordinaryCalls": 26,
+    "externalProcessKills": 2,
+    "independentByteWitnesses": 9
+  },
+  "journey": {
+    "file": "fixture/journey.json",
+    "commits": 585,
+    "recordedBoundaries": 8,
+    "visitedStandingHeights": [
+      256,
+      320,
+      384,
+      448,
+      512,
+      576,
+      640,
+      704,
+      768,
+      832
+    ],
+    "underpassClearanceSubunits": 512,
+    "bodyHeightSubunits": 464
+  },
+  "native": {
+    "foundation": "godot-foundation.log",
+    "farm": "native-farm.json",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "recreation": {
+    "sameBytes": true,
+    "files": 7,
+    "original": {
+      "completed-journey.sqlite": "47911ae5f9e29c17cc78e4eaff52157ea3646f4d70b2add5980af201e4a2f932",
+      "expected.json": "d39720aa687e526f273d460c7bebb041706b5d6cd323bc23ed1281d7c3e7e2bf",
+      "genesis.bin": "4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a",
+      "journey.json": "1775b9a3d3afd3af7088cc2aefecf99f251e1995bea1d7b48175b0cbca923c09",
+      "midstairs.sqlite": "33c1e236b180c92f15736b23fb6f5af27769de650fdf732597289d510b940d24",
+      "ordinary-step.bin": "5be30a2525f3e4eadb22b7c2e65c0aacc71f6d739dee1e6a23f364bd967afeb8",
+      "post-step.sqlite": "0ba8868d281b45f65c0b295d3c7bae4a6749e62b17d07386a89ef61a484ec287"
+    },
+    "recreated": {
+      "completed-journey.sqlite": "47911ae5f9e29c17cc78e4eaff52157ea3646f4d70b2add5980af201e4a2f932",
+      "expected.json": "d39720aa687e526f273d460c7bebb041706b5d6cd323bc23ed1281d7c3e7e2bf",
+      "genesis.bin": "4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a",
+      "journey.json": "1775b9a3d3afd3af7088cc2aefecf99f251e1995bea1d7b48175b0cbca923c09",
+      "midstairs.sqlite": "33c1e236b180c92f15736b23fb6f5af27769de650fdf732597289d510b940d24",
+      "ordinary-step.bin": "5be30a2525f3e4eadb22b7c2e65c0aacc71f6d739dee1e6a23f364bd967afeb8",
+      "post-step.sqlite": "0ba8868d281b45f65c0b295d3c7bae4a6749e62b17d07386a89ef61a484ec287"
+    }
+  },
+  "preservation": {
+    "architectureLinks": 255,
+    "missingLinks": [],
+    "frozenSpecCount": 22,
+    "frozenSpecHashes": {
+      "spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md": true,
+      "spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md": true,
+      "spec-v1_1/COVERAGE.json": true,
+      "spec-v1_1/CRITIC_REVIEW.md": true,
+      "spec-v1_1/CROSS_SYSTEM_SYNERGIES.md": true,
+      "spec-v1_1/DECISIONS.md": true,
+      "spec-v1_1/ECOLOGY_AND_FLUIDS.md": true,
+      "spec-v1_1/GDD.md": true,
+      "spec-v1_1/GENERATION_VALIDATION.md": true,
+      "spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md": true,
+      "spec-v1_1/IMPLEMENTATION_HANDOFF.md": true,
+      "spec-v1_1/IMPLEMENTATION_PLAN.md": true,
+      "spec-v1_1/INTEGRATION_CRITIC.md": true,
+      "spec-v1_1/LANGUAGE_AND_AFTERLIFE.md": true,
+      "spec-v1_1/LOCAL_REUSE_DECISIONS.md": true,
+      "spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md": true,
+      "spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md": true,
+      "spec-v1_1/PRESENTATION_CONTRACTS.md": true,
+      "spec-v1_1/README.md": true,
+      "spec-v1_1/REQUIREMENTS.json": true,
+      "spec-v1_1/TECHNICAL_DESIGN.md": true,
+      "spec-v1_1/VALIDATION.md": true
+    },
+    "predecessorStagedCount": 19,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "predecessorFiles": [
+      "README.md",
+      "docs/MILESTONE_8.md",
+      "src/Client/GameController.cs",
+      "src/Client/GameWindows.cs",
+      "src/Net/Protocol.cs",
+      "src/Net/ServerNode.cs",
+      "src/Sim/FrontierGen.cs",
+      "src/Sim/SelfTest.cs",
+      "src/Sim/SettlementGen.cs",
+      "src/Sim/SimConstants.cs",
+      "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+      "src/Sim/SiteGen/SiteFloor.cs",
+      "src/Sim/SiteGen/SiteGenerator.cs",
+      "src/Sim/SiteGen/SiteRecipe.cs",
+      "src/Sim/SiteGen/SiteValidator.cs",
+      "src/Sim/SiteGen/TempleEmbedder.cs",
+      "src/Sim/World.Instances.cs",
+      "src/Sim/World.Settlements.cs",
+      "src/Sim/World.cs"
+    ],
+    "runtimeNamingFiles": 678,
+    "namingViolations": [],
+    "diffCheck": "passed",
+    "pythonAst": "passed"
+  },
+  "review": {
+    "kind": "bounded native source critic",
+    "findings": [
+      "Profile-matched placement budget corrected; legacy256 retained.",
+      "Directed bidirectional search retains2048 shared node budget and separately caps transition qualifications.",
+      "Missing support planes propagate independently of a blocked unshifted origin; public regression retained."
+    ],
+    "externalClaudeCalls": 0
+  },
+  "retainedFailures": [
+    {
+      "file": "test-first.log",
+      "disposition": "Expected missing-type test-first compilation failure."
+    },
+    {
+      "file": "core-focused.log",
+      "disposition": "Incorrect new legacy long-route expectation corrected; unchanged256 limit and nearby success asserted."
+    },
+    {
+      "file": "hosting-stairs-01.log",
+      "disposition": "Direct NPC work-to-upper-floor search exhausted2048. Bounded directed bidirectional search fixes unchanged fixture; no test-only waypoint or budget increase."
+    }
+  ],
+  "allSystemsVerifierRun": false,
+  "openGates": [
+    "Occupied-floor tunnel/removal structural consequences",
+    "Strength, damage/collapse, stacked construction",
+    "Cross-elevation work/interaction and navigation throughput",
+    "Wet composition with durable seals, openings and conserved displaced volume",
+    "Rendered multi-floor interaction/choreography, OS/devices, accepted production art",
+    "Full181 requirements, remaining UI acceptance and P00-P14 campaign"
+  ]
+}

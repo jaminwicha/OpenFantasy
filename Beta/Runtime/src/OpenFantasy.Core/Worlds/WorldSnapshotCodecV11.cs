@@ -23,8 +23,20 @@ public static class WorldSnapshotCodecV11
         {
             throw new ArgumentException("This codec requires the construction-supported excavation world profile.", nameof(world));
         }
-        byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", Number(11), AuthorityEncodingV1.Encode(world.Inventory),
-            WorldSpatialCodecV2.Encode(world.Space), EncodeResidents(world.Residents), world.AdmissionVersion.ToByteArray(),
+        return EncodeComplete(world, 11, WorldSpatialCodecV2.Encode(world.Space));
+    }
+
+    internal static byte[] EncodeComplete(WorldSnapshot world, ushort worldVersion, byte[] spatialBytes)
+    {
+        ArgumentNullException.ThrowIfNull(world);
+        ArgumentNullException.ThrowIfNull(spatialBytes);
+        if (worldVersion is not 11 and not 12 || world.ProfileVersion != worldVersion
+            || world.Excavation is null || world.Construction is null)
+        {
+            throw new ArgumentException("The complete snapshot requires its explicit construction-supported profile.", nameof(world));
+        }
+        byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", Number(worldVersion), AuthorityEncodingV1.Encode(world.Inventory),
+            spatialBytes, EncodeResidents(world.Residents), world.AdmissionVersion.ToByteArray(),
             Signed(world.Calendar.Days), Number((ulong)world.Calendar.MillisecondsWithinDay), Number(world.Revision),
             Number(world.AdvancingSteps), EncodeDialogues(world.Dialogues), GatheringCodecV1.Encode(world.Gathering!),
             ProductionCodecV1.Encode(world.Production!), ProgressionCodecV1.Encode(world.Progression!),
@@ -36,13 +48,19 @@ public static class WorldSnapshotCodecV11
         return bytes;
     }
 
-    public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes)
+    public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes) => DecodeComplete(bytes, 11, 2);
+
+    internal static WorldSnapshot DecodeComplete(ReadOnlySpan<byte> bytes, ushort worldVersion, ushort spatialVersion)
     {
+        if ((worldVersion != 11 || spatialVersion != 2) && (worldVersion != 12 || spatialVersion != 3))
+        {
+            throw new ArgumentException("The world and spatial interpreters must select the same explicit support profile.");
+        }
         try
         {
             var reader = new WorldFrameReader(bytes, WorldSnapshotCodec.MaximumStateByteLength, 17);
             reader.Tag("world.snapshot"u8);
-            if (reader.Number() != 11)
+            if (reader.Number() != worldVersion)
             {
                 throw new FormatException("Unsupported construction-supported world version.");
             }
@@ -63,10 +81,13 @@ public static class WorldSnapshotCodecV11
             reader.Complete();
 
             // Grounded actor admission needs the retained construction's actual support surfaces.
-            LocalSpatialSnapshot space = WorldSpatialCodecV2.Decode(spatialBytes, construction.GetStructures(supportsActors: true));
+            var structures = construction.GetStructures(supportsActors: true);
+            LocalSpatialSnapshot space = spatialVersion == 2
+                ? WorldSpatialCodecV2.Decode(spatialBytes, structures)
+                : WorldSpatialCodecV3.Decode(spatialBytes, structures);
             var restored = new WorldSnapshot(inventory, space, residents, admission, calendar, revision, advancingSteps,
                 dialogues, gathering, production, progression, quests, construction, excavation: excavation);
-            if (!Encode(restored).AsSpan().SequenceEqual(bytes))
+            if (restored.ProfileVersion != worldVersion || !WorldSnapshotCodec.Encode(restored).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The construction-supported world is not canonical.");
             }

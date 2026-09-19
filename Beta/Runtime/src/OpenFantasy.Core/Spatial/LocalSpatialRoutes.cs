@@ -2,6 +2,17 @@ namespace OpenFantasy.Core.Spatial;
 
 public sealed partial class LocalSpatialSnapshot
 {
+    public const int DefaultWalkingRouteExpansions = 2048;
+    public const int MaximumWalkingRouteExpansions = 4096;
+
+    public GroundRouteResult QueryWalkingRoute(EntityId actorId, SubunitPosition destination,
+        int maximumExpansions = DefaultWalkingRouteExpansions) =>
+        QueryWalkingRoute(actorId, GetActor(actorId).Feet, destination, maximumExpansions);
+
+    public GroundRouteResult QueryWalkingRoute(EntityId actorId, SubunitPosition from, SubunitPosition destination,
+        int maximumExpansions = DefaultWalkingRouteExpansions) =>
+        new WalkingRouteSearch(this, actorId, maximumExpansions).Find(from, destination);
+
     public GroundRouteResult QueryGroundRoute(EntityId actorId, SubunitPosition destination,
         int maximumExpansions = GroundRouteSearch.MaximumExpansions) =>
         QueryGroundRoute(actorId, GetActor(actorId).Feet, destination, maximumExpansions);
@@ -12,7 +23,9 @@ public sealed partial class LocalSpatialSnapshot
     /// </summary>
     public GroundRouteResult QueryGroundRoute(EntityId actorId, SubunitPosition from, SubunitPosition destination,
         int maximumExpansions = GroundRouteSearch.MaximumExpansions) =>
-        new GroundRouteSearch(this, actorId, maximumExpansions).Find(from, destination);
+        GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction
+            ? QueryWalkingRoute(actorId, from, destination, maximumExpansions)
+            : new GroundRouteSearch(this, actorId, maximumExpansions).Find(from, destination);
 
     internal SpatialOccupancy QueryGroundSegment(EntityId actorId, SubunitPosition from, SubunitPosition to)
     {

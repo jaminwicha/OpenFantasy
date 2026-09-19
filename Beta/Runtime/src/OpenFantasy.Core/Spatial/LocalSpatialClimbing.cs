@@ -20,7 +20,7 @@ public sealed partial class LocalSpatialSnapshot
         {
             return new(SpatialMoveStatus.NoGroundLocomotion);
         }
-        if (GroundSupport != GroundSupportMode.TerrainAndConstruction
+        if (GroundSupport is not GroundSupportMode.TerrainAndConstruction and not GroundSupportMode.SteppedTerrainAndConstruction
             || !actor.Condition.SupportsFunction(BodyFunction.Manipulation)
             || Math.Abs(deltaZ) > actor.Condition.Definition.ClearanceDimensions.HeightSubunits)
         {
@@ -37,7 +37,9 @@ public sealed partial class LocalSpatialSnapshot
             foreach (SpatialOccupancy occupancy in new[] { QueryVolume(actorId, end),
                 QueryClearance(actorId, start.Union(bend)), QueryClearance(actorId, bend.Union(end)),
                 FootingQuery.QueryBand(_terrain, Structures, start.Union(end),
-                    Math.Min(actor.Feet.Z, destination.Z), Math.Max(actor.Feet.Z, destination.Z)) })
+                    checked(Math.Min(actor.Feet.Z, destination.Z)
+                        - (GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction ? StepHeight(actor) : 0)),
+                    Math.Max(actor.Feet.Z, destination.Z)) })
             {
                 if (occupancy != SpatialOccupancy.Clear)
                 {

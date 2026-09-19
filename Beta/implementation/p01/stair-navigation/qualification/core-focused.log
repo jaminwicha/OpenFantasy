@@ -1,0 +1,17 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.53]     OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Placement_uses_the_matching_walk_budget_without_changing_legacy_limits [FAIL]
+  Failed OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Placement_uses_the_matching_walk_budget_without_changing_legacy_limits [150 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Prepared
+Actual:   AccessLimit
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Spatial.WalkingRouteTests.Placement_uses_the_matching_walk_budget_without_changing_legacy_limits() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/WalkingRouteTests.cs:line 81
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/core-focused/_mac_2026-09-19_17_37_38_net8.0.trx
+
+Failed!  - Failed:     1, Passed:     9, Skipped:     0, Total:    10, Duration: 284 ms - OpenFantasy.Core.Tests.dll (net8.0)

@@ -41,6 +41,7 @@ def main():
     env["OPENFANTASY_RUNOFF_CAPACITY_EVIDENCE"] = str(test_results / "runoff-capacity-fixture")
     env["OPENFANTASY_EXCAVATION_EVIDENCE"] = str(test_results / "excavation-fixture")
     env["OPENFANTASY_CONSTRUCTED_SUPPORT_EVIDENCE"] = str(test_results / "constructed-support-fixture")
+    env["OPENFANTASY_STAIR_NAVIGATION_EVIDENCE"] = str(test_results / "stair-navigation-fixture")
     env["OPENFANTASY_RESERVOIR_BOUNDARY_EVIDENCE"] = str(test_results / "reservoir-boundary-fixture")
     env["OPENFANTASY_RESERVOIR_TRANSPORT_EVIDENCE"] = str(test_results / "reservoir-transport-fixture")
     env["OPENFANTASY_RUNOFF_COMMAND_EVIDENCE"] = str(test_results / "runoff-command-fixture")
@@ -157,6 +158,9 @@ def main():
         run("constructed-support-persistence", [sys.executable, root / "tools/check_constructed_support.py",
             "--dotnet", dotnet, "--fixture", test_results / "constructed-support-fixture",
             "--output", artifacts / "constructed-support.json"])
+        run("stair-navigation-persistence", [sys.executable, root / "tools/check_constructed_support.py",
+            "--dotnet", dotnet, "--fixture", test_results / "stair-navigation-fixture",
+            "--output", artifacts / "stair-navigation.json"])
 
         run("reservoir-boundary-assessment", [sys.executable, root / "tools/check_reservoir_boundaries.py",
             "--dotnet", dotnet, "--fixture", test_results / "reservoir-boundary-fixture",

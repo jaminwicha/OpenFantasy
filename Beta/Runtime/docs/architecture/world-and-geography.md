@@ -27,8 +27,10 @@ It is not a general geological event log. Old interpretations remain pinned.
 
 [LocalSpatialSnapshot](../../src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs) composes at most
 16 nonoverlapping regions and 64 actors with exact common scope and rule pins. Movement uses integer
-body clearance, supporting terrain, occupied bodies and installed structures. Cardinal movement
-preserves feet elevation. The explicit [constructed-footing profile](constructed-footing.md) adds exact
+body clearance, supporting terrain, occupied bodies and installed structures. Earlier contact profiles
+preserve feet elevation during ordinary cardinal movement; [stepped navigation](stair-navigation.md)
+derives elevation from actual supported treads in its explicit interpretation.
+The [constructed-footing profile](constructed-footing.md) adds exact
 installed member support and a separate assisted ledge action with full-body sweeps and earned effort.
 Local interaction checks equal feet
 elevation, bounded centre reach and a clear segment. The

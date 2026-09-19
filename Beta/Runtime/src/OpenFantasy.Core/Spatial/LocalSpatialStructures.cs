@@ -25,11 +25,23 @@ public sealed partial class LocalSpatialSnapshot
     }
 
     public StructurePlacementResult PrepareStructurePlacement(SpatialStructure proposed,
-        IEnumerable<GroundAccessRequirement> requiredAccess, int maximumExpansions = GroundRouteSearch.MaximumExpansions)
+        IEnumerable<GroundAccessRequirement> requiredAccess, int? maximumExpansions = null)
     {
         ArgumentNullException.ThrowIfNull(proposed);
         ArgumentNullException.ThrowIfNull(requiredAccess);
-        GroundRouteSearch.ValidateBudget(maximumExpansions);
+        int budget = maximumExpansions ?? (GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction
+            ? DefaultWalkingRouteExpansions : GroundRouteSearch.MaximumExpansions);
+        if (GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction)
+        {
+            if (budget is < 1 or > MaximumWalkingRouteExpansions)
+            {
+                throw new ArgumentOutOfRangeException(nameof(maximumExpansions));
+            }
+        }
+        else
+        {
+            GroundRouteSearch.ValidateBudget(budget);
+        }
         List<GroundAccessRequirement> access = [];
         foreach (GroundAccessRequirement requirement in requiredAccess)
         {
@@ -58,7 +70,7 @@ public sealed partial class LocalSpatialSnapshot
             foreach (GroundAccessRequirement requirement in access)
             {
                 GroundRouteResult route = candidate.QueryGroundRoute(requirement.ActorId,
-                    requirement.From, requirement.To, maximumExpansions);
+                    requirement.From, requirement.To, budget);
                 if (route.Status != GroundRouteStatus.Reachable)
                 {
                     return new StructurePlacementResult(route.Status switch

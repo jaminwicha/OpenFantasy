@@ -8,6 +8,10 @@ interpretation. `TerrainOnly` preserves grounded occupancy on whole terrain-cell
 every body cell must be loaded and empty, and the complete body must avoid other actors and structure
 colliders. Missing dependencies refuse admission or traversal.
 
+`SteppedTerrainAndConstruction` is the separate [ordinary stair interpretation](stair-navigation.md),
+with bounded mixed-height contact and derived ordinary movement elevation. The single-height rules
+below describe `TerrainAndConstruction`, the retained interpretation of profile eleven.
+
 [ConstructionDefinition](../../src/OpenFantasy.Core/Construction/ConstructionDefinition.cs) derives
 collision envelopes and [bearing surfaces](../../src/OpenFantasy.Core/Spatial/StructureBearingSurface.cs)
 from the same exact millimetre members. Only completed projects supply authoritative surfaces through
@@ -62,9 +66,10 @@ the successful action suppresses that actor's ordinary movement sample in the sa
 spends no climb effort and changes no climb position. An ordinary advancing batch still has its normal
 time/recovery behavior. Held interactions cannot climb or earn effort.
 
-Players and hosted NPCs use the same action. Automatic NPC route selection remains same-floor.
+Players and hosted NPCs use the same action. Profile-eleven NPC route selection remains same-floor;
+[profile twelve](stair-navigation.md) routes ordinary samples through derived stair elevations.
 Resource anchors and addressed conversation retain their separate terrain-grounded and equal-elevation
-contracts; adding constructed actor footing does not silently reinterpret them. General stair routing,
+contracts; adding constructed actor footing does not silently reinterpret them. Arbitrary stair geometry,
 ladders, flight, ramps, cross-floor interaction, ability-specific movement, action offers, controls and
 animation require explicit bindings to these authority rules.
 
@@ -91,6 +96,6 @@ world bound and schema-three exclusive writer/recovery rules remain in force.
 
 [Action version nine](../../src/OpenFantasy.Core/Worlds/WorldActionCodecV9.cs) uses the ordinary
 ten-field actor-action envelope. Its intent frame is `world.action.climb`, version one, followed by
-signed 64-bit X/Y/Z deltas. The action is bounded to 512 bytes and accepted only by step profile eleven.
-Excavation action eight is accepted by both dry profiles ten and eleven; terrain replacement preserves
+signed 64-bit X/Y/Z deltas. The action is bounded to 512 bytes and accepted by step profiles eleven/twelve.
+Excavation action eight is accepted by dry profiles ten through twelve; terrain replacement preserves
 the selected contact interpretation and checks actor/structure support before publication.

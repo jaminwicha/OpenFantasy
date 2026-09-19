@@ -4,5 +4,6 @@ namespace OpenFantasy.Core.Spatial;
 public enum GroundSupportMode
 {
     TerrainOnly = 1,
-    TerrainAndConstruction = 2
+    TerrainAndConstruction = 2,
+    SteppedTerrainAndConstruction = 3
 }

@@ -1,0 +1,331 @@
+{
+  "startedUtc": "2026-09-19T22:53:09.377452+00:00",
+  "scope": "Native local movement, addressed dialogue hold, finite handover and exact paused-view reopen",
+  "rendered": false,
+  "status": "passed",
+  "runs": [
+    {
+      "stage": "create",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-walkthrough",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/native-farm-c247166a8d5f4e27a31939c830c3c53b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/native-farm-c247166a8d5f4e27a31939c830c3c53b/walkthrough.json",
+        "create"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm walkthrough passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/native-farm-c247166a8d5f4e27a31939c830c3c53b/walkthrough.json\n",
+      "stderr": ""
+    },
+    {
+      "stage": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-walkthrough",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/native-farm-c247166a8d5f4e27a31939c830c3c53b/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/native-farm-c247166a8d5f4e27a31939c830c3c53b/walkthrough.json",
+        "reopen"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative farm walkthrough passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/native-farm-c247166a8d5f4e27a31939c830c3c53b/walkthrough.json\n",
+      "stderr": ""
+    }
+  ],
+  "create": {
+    "Kind": "native-farm-walkthrough-v1",
+    "Stage": "create",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Failure": null,
+    "ProbeStage": 6,
+    "IsLocallyPaused": true,
+    "IsWindowFocused": true,
+    "HasPendingAction": false,
+    "HasReadingHold": false,
+    "TalkOfferAtPress": {
+      "ExpectedActorRevision": 28,
+      "Target": 16
+    },
+    "Initial": "{\"World\":\"532f47db8fb5de95dfc8560e9a0ef032\",\"Day\":0,\"Millisecond\":32400000,\"Wood\":8,\"StorageRevision\":0,\"Actors\":[{\"Id\":\"c7d63dbcc418014f5b87c36acea65ff6\",\"DisplayName\":\"Wren\",\"X\":26496,\"Y\":82560,\"Z\":256,\"PresenceRevision\":0},{\"Id\":\"e378e9407e63d212602d16a1540acd3b\",\"DisplayName\":\"Traveler\",\"X\":25984,\"Y\":83328,\"Z\":256,\"PresenceRevision\":0}],\"Dialogue\":null}",
+    "Final": "{\"World\":\"532f47db8fb5de95dfc8560e9a0ef032\",\"Day\":0,\"Millisecond\":32457600,\"Wood\":2,\"StorageRevision\":1,\"Actors\":[{\"Id\":\"c7d63dbcc418014f5b87c36acea65ff6\",\"DisplayName\":\"Wren\",\"X\":27008,\"Y\":82560,\"Z\":256,\"PresenceRevision\":16},{\"Id\":\"e378e9407e63d212602d16a1540acd3b\",\"DisplayName\":\"Traveler\",\"X\":26560,\"Y\":83008,\"Z\":256,\"PresenceRevision\":28}],\"Dialogue\":null}",
+    "Checks": [
+      "Native host opened source-pinned farm with eight player wood.",
+      "Named movement input approached Wren through the real Godot adapter.",
+      "Reading hold kept both characters and calendar unchanged for at least 500 ms.",
+      "Native give action committed six wood, leaving two, while the conversation stayed held.",
+      "Native continue action closed the addressed dialogue."
+    ],
+    "DurationMilliseconds": 2670
+  },
+  "reopen": {
+    "Kind": "native-farm-walkthrough-v1",
+    "Stage": "reopen",
+    "Status": "passed",
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "Failure": null,
+    "ProbeStage": 0,
+    "IsLocallyPaused": true,
+    "IsWindowFocused": true,
+    "HasPendingAction": false,
+    "HasReadingHold": false,
+    "TalkOfferAtPress": null,
+    "Initial": "{\"World\":\"532f47db8fb5de95dfc8560e9a0ef032\",\"Day\":0,\"Millisecond\":32457600,\"Wood\":2,\"StorageRevision\":1,\"Actors\":[{\"Id\":\"c7d63dbcc418014f5b87c36acea65ff6\",\"DisplayName\":\"Wren\",\"X\":27008,\"Y\":82560,\"Z\":256,\"PresenceRevision\":16},{\"Id\":\"e378e9407e63d212602d16a1540acd3b\",\"DisplayName\":\"Traveler\",\"X\":26560,\"Y\":83008,\"Z\":256,\"PresenceRevision\":28}],\"Dialogue\":null}",
+    "Final": "{\"World\":\"532f47db8fb5de95dfc8560e9a0ef032\",\"Day\":0,\"Millisecond\":32457600,\"Wood\":2,\"StorageRevision\":1,\"Actors\":[{\"Id\":\"c7d63dbcc418014f5b87c36acea65ff6\",\"DisplayName\":\"Wren\",\"X\":27008,\"Y\":82560,\"Z\":256,\"PresenceRevision\":16},{\"Id\":\"e378e9407e63d212602d16a1540acd3b\",\"DisplayName\":\"Traveler\",\"X\":26560,\"Y\":83008,\"Z\":256,\"PresenceRevision\":28}],\"Dialogue\":null}",
+    "Checks": [
+      "Exact paused public view restored after native process restart."
+    ],
+    "DurationMilliseconds": 220
+  },
+  "recordedHistory": {
+    "status": "passed",
+    "checks": [
+      {
+        "Contract": "recorded-world-state-v1",
+        "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+        "BranchId": "8631b15e15085ca2e4026a87d81ee2d7",
+        "SourceHeadRevision": 34,
+        "SourceHeadHash": "0041c4375ad81ed27dcb44fc5ba6ee95e89fceb2015834b4df810f6e16b76862",
+        "RecordedRevision": 34,
+        "StateHash": "0041c4375ad81ed27dcb44fc5ba6ee95e89fceb2015834b4df810f6e16b76862",
+        "ProfileVersion": 1,
+        "Calendar": {
+          "Days": 0,
+          "MillisecondsWithinDay": 32457600
+        },
+        "AdvancingSteps": 32,
+        "HasReadingHold": false,
+        "Watershed": null,
+        "WatershedNetwork": null,
+        "Reservoirs": null,
+        "Transport": null,
+        "Actors": [
+          {
+            "ActorId": "c7d63dbcc418014f5b87c36acea65ff6",
+            "DisplayName": "Wren",
+            "Position": {
+              "X": 27008,
+              "Y": 82560,
+              "Z": 256,
+              "Cell": {
+                "X": 105,
+                "Y": 322,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 16,
+            "SourceItemQuantity": 6
+          },
+          {
+            "ActorId": "e378e9407e63d212602d16a1540acd3b",
+            "DisplayName": "Traveler",
+            "Position": {
+              "X": 26560,
+              "Y": 83008,
+              "Z": 256,
+              "Cell": {
+                "X": 103,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 28,
+            "SourceItemQuantity": 2
+          }
+        ],
+        "SourceLotCount": 2,
+        "CraftedLotCount": 0,
+        "StructureCount": 0
+      },
+      {
+        "Contract": "recorded-world-state-v1",
+        "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+        "BranchId": "8631b15e15085ca2e4026a87d81ee2d7",
+        "SourceHeadRevision": 34,
+        "SourceHeadHash": "0041c4375ad81ed27dcb44fc5ba6ee95e89fceb2015834b4df810f6e16b76862",
+        "RecordedRevision": 0,
+        "StateHash": "2e4323e70faab23fb0796c75a0f094a37e4300a7966185a2a3ecd2ba31a8c58d",
+        "ProfileVersion": 1,
+        "Calendar": {
+          "Days": 0,
+          "MillisecondsWithinDay": 32400000
+        },
+        "AdvancingSteps": 0,
+        "HasReadingHold": false,
+        "Watershed": null,
+        "WatershedNetwork": null,
+        "Reservoirs": null,
+        "Transport": null,
+        "Actors": [
+          {
+            "ActorId": "c7d63dbcc418014f5b87c36acea65ff6",
+            "DisplayName": "Wren",
+            "Position": {
+              "X": 26496,
+              "Y": 82560,
+              "Z": 256,
+              "Cell": {
+                "X": 103,
+                "Y": 322,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 0,
+            "SourceItemQuantity": 0
+          },
+          {
+            "ActorId": "e378e9407e63d212602d16a1540acd3b",
+            "DisplayName": "Traveler",
+            "Position": {
+              "X": 25984,
+              "Y": 83328,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 325,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 0,
+            "SourceItemQuantity": 8
+          }
+        ],
+        "SourceLotCount": 1,
+        "CraftedLotCount": 0,
+        "StructureCount": 0
+      },
+      {
+        "Contract": "recorded-world-state-v1",
+        "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+        "BranchId": "8631b15e15085ca2e4026a87d81ee2d7",
+        "SourceHeadRevision": 34,
+        "SourceHeadHash": "0041c4375ad81ed27dcb44fc5ba6ee95e89fceb2015834b4df810f6e16b76862",
+        "RecordedRevision": 1,
+        "StateHash": "53fc860070383a2cbf90fc1948d8046544182eda05f45d97c6b715887761d651",
+        "ProfileVersion": 1,
+        "Calendar": {
+          "Days": 0,
+          "MillisecondsWithinDay": 32401800
+        },
+        "AdvancingSteps": 1,
+        "HasReadingHold": false,
+        "Watershed": null,
+        "WatershedNetwork": null,
+        "Reservoirs": null,
+        "Transport": null,
+        "Actors": [
+          {
+            "ActorId": "c7d63dbcc418014f5b87c36acea65ff6",
+            "DisplayName": "Wren",
+            "Position": {
+              "X": 26528,
+              "Y": 82560,
+              "Z": 256,
+              "Cell": {
+                "X": 103,
+                "Y": 322,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 1,
+            "SourceItemQuantity": 0
+          },
+          {
+            "ActorId": "e378e9407e63d212602d16a1540acd3b",
+            "DisplayName": "Traveler",
+            "Position": {
+              "X": 25984,
+              "Y": 83296,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 325,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 1,
+            "SourceItemQuantity": 8
+          }
+        ],
+        "SourceLotCount": 1,
+        "CraftedLotCount": 0,
+        "StructureCount": 0
+      },
+      {
+        "Contract": "recorded-world-state-v1",
+        "WorldId": "532f47db8fb5de95dfc8560e9a0ef032",
+        "BranchId": "8631b15e15085ca2e4026a87d81ee2d7",
+        "SourceHeadRevision": 34,
+        "SourceHeadHash": "0041c4375ad81ed27dcb44fc5ba6ee95e89fceb2015834b4df810f6e16b76862",
+        "RecordedRevision": 34,
+        "StateHash": "0041c4375ad81ed27dcb44fc5ba6ee95e89fceb2015834b4df810f6e16b76862",
+        "ProfileVersion": 1,
+        "Calendar": {
+          "Days": 0,
+          "MillisecondsWithinDay": 32457600
+        },
+        "AdvancingSteps": 32,
+        "HasReadingHold": false,
+        "Watershed": null,
+        "WatershedNetwork": null,
+        "Reservoirs": null,
+        "Transport": null,
+        "Actors": [
+          {
+            "ActorId": "c7d63dbcc418014f5b87c36acea65ff6",
+            "DisplayName": "Wren",
+            "Position": {
+              "X": 27008,
+              "Y": 82560,
+              "Z": 256,
+              "Cell": {
+                "X": 105,
+                "Y": 322,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 16,
+            "SourceItemQuantity": 6
+          },
+          {
+            "ActorId": "e378e9407e63d212602d16a1540acd3b",
+            "DisplayName": "Traveler",
+            "Position": {
+              "X": 26560,
+              "Y": 83008,
+              "Z": 256,
+              "Cell": {
+                "X": 103,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 28,
+            "SourceItemQuantity": 2
+          }
+        ],
+        "SourceLotCount": 2,
+        "CraftedLotCount": 0,
+        "StructureCount": 0
+      }
+    ],
+    "invalidBoundariesRejected": 3,
+    "databaseSha256Before": "d343fec2abb2c82fd155954d4122b8300ddc854b00ead33204162be4310de570",
+    "databaseSha256After": "d343fec2abb2c82fd155954d4122b8300ddc854b00ead33204162be4310de570"
+  },
+  "artifactSha256": {
+    "native-farm-c247166a8d5f4e27a31939c830c3c53b/walkthrough.json": "c1f94188229d4b8e68384a680c2afe362162bac256d6933609920ff346013deb",
+    "native-farm-c247166a8d5f4e27a31939c830c3c53b/walkthrough.reopen.json": "11579de6cb098550256cc77a8ab403970265c162496b72ab167e7905e151f463",
+    "native-farm-c247166a8d5f4e27a31939c830c3c53b/world.sqlite": "d343fec2abb2c82fd155954d4122b8300ddc854b00ead33204162be4310de570"
+  },
+  "finishedUtc": "2026-09-19T22:53:15.280293+00:00"
+}

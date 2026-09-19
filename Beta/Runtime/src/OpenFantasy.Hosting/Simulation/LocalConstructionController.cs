@@ -30,6 +30,10 @@ internal sealed class LocalConstructionController
             return false;
         }
         SubunitPosition feet = world.Space.GetActor(resident.ActorId).Feet;
+        if (world.ProfileVersion == 12 && feet.Z != resident.HomeFeet.Z)
+        {
+            return true;
+        }
         Int128 x = (Int128)feet.X - resident.HomeFeet.X;
         Int128 y = (Int128)feet.Y - resident.HomeFeet.Y;
         Int128 radius = (Int128)resident.WanderRadiusCells * SubunitPosition.SubunitsPerCell;
@@ -52,7 +56,9 @@ internal sealed class LocalConstructionController
         {
             return null;
         }
-        GroundRouteResult route = world.Space.QueryGroundRoute(actor.ActorId, destination);
+        GroundRouteResult route = world.ProfileVersion == 12
+            ? world.Space.QueryWalkingRoute(actor.ActorId, destination)
+            : world.Space.QueryGroundRoute(actor.ActorId, destination);
         if (route.Status != GroundRouteStatus.Reachable || route.NextWaypoint is not { } next)
         {
             return null;

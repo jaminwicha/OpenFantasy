@@ -134,7 +134,7 @@ public sealed class WorldSnapshot
             throw new ArgumentException("The production profile requires its retained gathering component.");
         }
         Excavation = excavation;
-        if (space.GroundSupport == GroundSupportMode.TerrainAndConstruction && excavation is null)
+        if (space.GroundSupport != GroundSupportMode.TerrainOnly && excavation is null)
         {
             throw new ArgumentException("Constructed actor support requires the complete dry extraction profile.");
         }
@@ -165,7 +165,8 @@ public sealed class WorldSnapshot
     public LiquidReservoirState? Reservoirs { get; }
     public ReservoirTransportState? Transport { get; }
     public ExcavationSnapshot? Excavation { get; }
-    public ushort ProfileVersion => Space.GroundSupport == GroundSupportMode.TerrainAndConstruction ? (ushort)11
+    public ushort ProfileVersion => Space.GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction ? (ushort)12
+        : Space.GroundSupport == GroundSupportMode.TerrainAndConstruction ? (ushort)11
         : Excavation is not null ? (ushort)10 : Transport is not null ? (ushort)9 : Reservoirs is not null ? (ushort)8 : WatershedNetwork is not null ? (ushort)7 : Watershed is not null ? (ushort)6
         : Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
         : Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;

@@ -84,7 +84,7 @@ ID, owner ID, item pin, physical material archive, tool pin, required work, comp
 XYZ. Coordinates are signed big-endian 64-bit values, work is unsigned 64-bit, identities are 16 bytes and
 item pins are 48 bytes. Site revision equals completed work. Decode validates values and exact re-encoding.
 Action version eight contains the six intent fields above under `world.action.excavate`, version one;
-its command bound is 512 bytes. Step profiles ten and eleven admit it. Older encodings keep their meanings.
+its command bound is 512 bytes. Step profiles ten through twelve admit it. Older encodings keep their meanings.
 
 The [constructed-footing composition](constructed-footing.md) retains excavation with explicit
 installed-floor support and assisted traversal. Excavation preserves that support interpretation when

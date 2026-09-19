@@ -1,0 +1,50 @@
+{
+  "Scope": "Actual funded nine-tread assembly, ordinary mid-stair movement across a riser, with no climb action or effort cost",
+  "ProfileVersion": 12,
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "Actor": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "PreRevision": 134,
+  "PreHash": "9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e",
+  "PostRevision": 135,
+  "PostHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+  "PreFeet": {
+    "X": 26912,
+    "Y": 83072,
+    "Z": 512,
+    "Cell": {
+      "X": 105,
+      "Y": 324,
+      "Z": 2
+    }
+  },
+  "PostFeet": {
+    "X": 26944,
+    "Y": 83072,
+    "Z": 576,
+    "Cell": {
+      "X": 105,
+      "Y": 324,
+      "Z": 2
+    }
+  },
+  "EffortBefore": 1000,
+  "EffortAfter": 1000,
+  "History": [
+    {
+      "Revision": 0,
+      "Hash": "4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a"
+    },
+    {
+      "Revision": 63,
+      "Hash": "d7a24ea2f6109b03d6eec80e7856839e5c64042c50fbeac971d5ee480b291e19"
+    },
+    {
+      "Revision": 134,
+      "Hash": "9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e"
+    },
+    {
+      "Revision": 135,
+      "Hash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b"
+    }
+  ]
+}

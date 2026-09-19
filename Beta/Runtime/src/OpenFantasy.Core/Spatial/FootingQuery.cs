@@ -6,6 +6,57 @@ namespace OpenFantasy.Core.Spatial;
 /// <summary>Exact union coverage of the complete swept footprint; never treats rounded collision area as material.</summary>
 internal static class FootingQuery
 {
+    internal static SpatialOccupancy QueryStepped(TerrainVolumeQueries terrain,
+        IReadOnlyList<SpatialStructure> structures, BodyVolume volume, long maximumDrop)
+    {
+        SpatialOccupancy coverage = QueryBand(terrain, structures, volume,
+            checked(volume.MinimumZ - maximumDrop), volume.MinimumZ);
+        if (coverage != SpatialOccupancy.Clear)
+        {
+            return coverage;
+        }
+        return CandidateHeights(terrain, structures, volume, volume.MinimumZ, volume.MinimumZ, out _).Count != 0
+            ? SpatialOccupancy.Clear : SpatialOccupancy.Unsupported;
+    }
+
+    internal static SortedSet<long> CandidateHeights(TerrainVolumeQueries terrain,
+        IReadOnlyList<SpatialStructure> structures, BodyVolume footprint, long minimumZ, long maximumZ,
+        out bool missingTerrain)
+    {
+        missingTerrain = false;
+        SortedSet<long> heights = [];
+        const long ticks = StructureBearingSurface.TicksPerSubunit;
+        long firstPlane = SubunitPosition.CellOf(minimumZ);
+        if (minimumZ % SubunitPosition.SubunitsPerCell != 0) firstPlane++;
+        long lastPlane = SubunitPosition.CellOf(maximumZ);
+        for (long plane = firstPlane; plane <= lastPlane; plane++)
+        {
+            bool found = false;
+            for (long y = footprint.MinimumCell.Y; y <= footprint.MaximumCell.Y; y++)
+            {
+                for (long x = footprint.MinimumCell.X; x <= footprint.MaximumCell.X; x++)
+                {
+                    TerrainCell? support = terrain.FindCell(new(x, y, plane - 1));
+                    missingTerrain |= support is null;
+                    found |= support?.IsSolid == true;
+                }
+            }
+            if (found) heights.Add(checked(plane * SubunitPosition.SubunitsPerCell));
+        }
+        foreach (StructureBearingSurface surface in structures.SelectMany(value => value.BearingSurfaces))
+        {
+            if (surface.StandingZ >= minimumZ && surface.StandingZ <= maximumZ
+                && surface.Bounds.MinU < (Int128)footprint.MaximumX * ticks
+                && surface.Bounds.MaxU > (Int128)footprint.MinimumX * ticks
+                && surface.Bounds.MinV < (Int128)footprint.MaximumY * ticks
+                && surface.Bounds.MaxV > (Int128)footprint.MinimumY * ticks)
+            {
+                heights.Add(surface.StandingZ);
+            }
+        }
+        return heights;
+    }
+
     internal static SpatialOccupancy Query(TerrainVolumeQueries terrain,
         IReadOnlyList<SpatialStructure> structures, BodyVolume volume) =>
         QueryBand(terrain, structures, volume, volume.MinimumZ, volume.MinimumZ);

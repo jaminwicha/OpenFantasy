@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c5895769-4872-4e90-ad20-7a515165fc15" name="@mac 2026-09-19 17:47:11" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-19T17:47:11.5239320-05:00" queuing="2026-09-19T17:47:11.5239320-05:00" start="2026-09-19T17:47:07.9677400-05:00" finish="2026-09-19T17:47:24.8319340-05:00" />
+  <TestSettings name="default" id="a0c0a614-2307-46e8-8ec8-aed86b7c2a70">
+    <Deployment runDeploymentRoot="_mac_2026-09-19_17_47_11" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="7f733646-7f10-4cc6-8bb6-3304fdd7c657" testId="811e3dda-b0ec-0010-9cb4-8c93dbd3b843" testName="OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests.FundedStairsCarryOrdinaryPlayerAndNpcTravelAcrossRestartAndStackedSpace" computerName="mac" duration="00:00:14.5374137" startTime="2026-09-19T17:47:10.2248000-05:00" endTime="2026-09-19T17:47:24.7625660-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f733646-7f10-4cc6-8bb6-3304fdd7c657" />
+    <UnitTestResult executionId="312ff1af-ce48-4c89-a7e5-407964f53ee6" testId="bf4c6457-ac84-cc03-9872-ff2bdacf0b4f" testName="OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests.SteppedAdmissionPreservesProfileElevenBytesAndRejectsPlayedReadmission" computerName="mac" duration="00:00:00.4792692" startTime="2026-09-19T17:47:09.7339310-05:00" endTime="2026-09-19T17:47:10.2193020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="312ff1af-ce48-4c89-a7e5-407964f53ee6" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests.FundedStairsCarryOrdinaryPlayerAndNpcTravelAcrossRestartAndStackedSpace" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="811e3dda-b0ec-0010-9cb4-8c93dbd3b843">
+      <Execution id="7f733646-7f10-4cc6-8bb6-3304fdd7c657" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests" name="FundedStairsCarryOrdinaryPlayerAndNpcTravelAcrossRestartAndStackedSpace" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests.SteppedAdmissionPreservesProfileElevenBytesAndRejectsPlayedReadmission" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bf4c6457-ac84-cc03-9872-ff2bdacf0b4f">
+      <Execution id="312ff1af-ce48-4c89-a7e5-407964f53ee6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StairNavigationWorldTests" name="SteppedAdmissionPreservesProfileElevenBytesAndRejectsPlayedReadmission" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="811e3dda-b0ec-0010-9cb4-8c93dbd3b843" executionId="7f733646-7f10-4cc6-8bb6-3304fdd7c657" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bf4c6457-ac84-cc03-9872-ff2bdacf0b4f" executionId="312ff1af-ce48-4c89-a7e5-407964f53ee6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.57]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.95]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.16]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:16.25]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
