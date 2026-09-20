@@ -22,6 +22,7 @@ branches to record major progress. This is shared project discipline for all aut
 
 | Branch | Commit | Qualified scope and limits |
 |---|---|---|
+| `codex/milestone-reservoir-containment` | `5441293` | Fresh profile19 saved sealing policy, exact material pins and mandatory fixed nominal-envelope admission; real crafting/construction, containment-only completion rollback, exact history and schema3 atomicity. 1,499 distinct managed cases, 12 Host calls/two external kills, headless foundation/farm and unchanged 1,334-commit worksite recovery. [Evidence](p02/reservoir-containment/README.md). Physical gates, fluid loads, breach/spill consequences, immersion, playable water, production scale and full phases remain open. |
 | `codex/milestone-playable-worksite` | `7da8fcc` | Two genuinely funded projects, stairs/decks, contextual mining/climbing, exact visible settlement and four-process native save/recovery with unchanged deadlines; 1,487 managed cases and final legacy wheel control pass. Pure-C# replay improvements preserve all 1,334 historical hashes. [Evidence](p02/playable-worksite/README.md) retains failures, source review and measured startup/allocation limits. Provisional art/UX, OS/devices, multiplayer, wet composition, production history/performance and full phases remain open. |
 | `codex/milestone-live-event-descent` | `e668cd7` | Fresh profile18 live intact event settlement and exact durable continuation/publication; one-pass closed-save historical reader preserves complete verification. 1,459 distinct retained/new tests, 83 Host calls/six external kills plus two exact operator controls, legacy fixture/source/spec/index preservation. [Evidence](p02/live-event-descent/README.md) retains the original timeout and measured roughly 50% allocation reduction. Common 256-subunit live fall only; unequal release, fracture/injury, visual/device and production/full-phase gates remain open. |
 | `codex/milestone-event-descent-assessment` | `25da978` | Event-ordered unequal intact geometric descents, stopped-body reinsertion and complete-world read-only assessment with exact impact demand. 1,435 distinct tests, eight actual Host inspections, unchanged save bytes and bounded partial Fable critique. [Evidence](p02/event-descent/README.md). No live profile change, fracture/debris/injury, production latency/rendering or full-phase closure. |
@@ -238,3 +239,11 @@ hash cache remain in its ancestry. All failed probes, bounds and open production
 retained. Development continues on `codex/runtime-foundation`; previous markers, all 22 frozen
 specification hashes and the exact unrelated predecessor index remain unchanged. No checkout switch,
 force move, push, merge or full-phase closure accompanies this marker.
+
+The reservoir-containment marker preserves `5441293b6458f2adab360b22049a61a099d58f86`, including
+saved policy authority, real material reconciliation, independently reviewed construction refusal,
+exact recovery, native controls and source-aligned architecture. The full regression passes 1,498 cases;
+the final targeted run adds one new regression for 1,499 distinct cases. Development remains on
+`codex/runtime-foundation`; prior markers, all 22 frozen specifications and the exact unrelated 19-file
+predecessor index are preserved. No checkout switch, force move, push, merge or full-phase acceptance
+accompanies this fixed-vessel checkpoint.

@@ -10,6 +10,9 @@ simply be combined with dry construction. The [architecture reference](../../../
 describes the implemented ownership, action and persistence contracts. The core and application remain C#;
 no native kernel, IPC worker or additional material authority is introduced.
 
+Qualified commit: `5441293b6458f2adab360b22049a61a099d58f86`, preserved on
+`codex/milestone-reservoir-containment`. Development remains on `codex/runtime-foundation`.
+
 ## Implementation and meaningful behavior
 
 - Fresh admission retains the complete profile-eight basis and pins the prior admission plus the full

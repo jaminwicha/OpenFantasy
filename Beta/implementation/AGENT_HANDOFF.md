@@ -59,6 +59,8 @@ and the [continuation design](p02/reservoir-containment/DESIGN.md) distinguish f
 shutters/ports, structural fluid loads, conserved breach/spill outcomes and occupied wet space. Those
 remain required full P01/P02 dependencies, along with flowing/reactive materials and playable water.
 This checkpoint changes no default rendered scene and closes no full phase, performance, art or device gate.
+Qualified commit `5441293` is preserved on `codex/milestone-reservoir-containment`; development remains
+on `codex/runtime-foundation`.
 
 ## Prior playable worksite
 
