@@ -1,5 +1,7 @@
 # Coupled contact assessment
 
+Code/evidence: `7e16d11eafbb13ac2277d3f56afaf20e7f37ed0d`, preserved on `codex/milestone-coupled-contact-assessment`.
+
 The portable core can assess exact support and loads across multiple intact assemblies in a complete
 read-only candidate scene. Existing save formats and live settlement keep their prior interpretation.
 This completes the contact/load dependency component needed before coupled motion; it does not publish

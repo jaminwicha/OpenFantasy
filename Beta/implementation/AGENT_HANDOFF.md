@@ -34,7 +34,8 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 [Coupled contact assessment](p02/coupled-contact-assessment/README.md) and its
 [architecture](../Runtime/docs/architecture/structural-contact-assessment.md) are qualified;
-commit/checkpoint are recorded in the [milestone ledger](GIT_MILESTONES.md).
+code/evidence commit `7e16d11` is preserved on `codex/milestone-coupled-contact-assessment`;
+see the [milestone ledger](GIT_MILESTONES.md).
 
 The new read-only scene retains complete terrain lineage, fabrication/backing and actor bodies while
 checking clear proposed geometry. Shared mass binding partitions exact base contact across foreign
