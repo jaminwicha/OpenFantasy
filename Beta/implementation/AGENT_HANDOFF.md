@@ -54,14 +54,21 @@ remain partial; broader review fleets still lack demonstrated value. The full so
 a final Core-only repeat covered the two added tests with all application pins unchanged. The actual new
 Host probe ran; the full all-systems verifier and rendered/device acceptance did not.
 
-**Next dependency:** owned contact response and whole-member joint separation with conserved located
-material, followed by versioned durable integration of interacting trajectories. Member mass shares and
-transmitted load are not salvage rights; impact energy is not an injury/toughness policy. Preserve complete
-collision/support, body condition, command/time and original source/backing. The larger event-work bound
-requires an explicit journal/outcome/root-capacity proof before replacing the live pending owner; tiny
-continuation slices cannot bypass the existing limits. Sub-member fracture, harmful injuries, longer
-flight, wet composition, generated extraction rights and multi-floor presentation remain open, as do
-production scale/exports/devices, 1–4-player pacing and the whole campaign. No full phase gate is closed.
+**Next dependency:** versioned durable integration of the qualified intact event trajectories, retaining
+the owned harmless-impact limits. The bounded source review on 2026-09-19 puts this integration before
+joint separation: the current contact, load and spatial owners require intact assemblies, and a bearing
+describes load transfer rather than a mechanical bond. Do not add another isolated fracture assessment
+as a prerequisite to using the existing intact kernel. Preserve complete collision/support, body condition,
+command/time and original source/backing; revalidate terminal loads after actual ore/custody/time changes.
+Prove journal/outcome/root capacity for the larger event-work bound before accepting durable work; tiny
+continuation slices cannot bypass existing limits. Retain exact legacy bytes and test restart, interruption,
+retry and the original command's sole terminal receipt in a real funded-world journey.
+
+Owned contact response and whole-member joint separation follow with explicit bond/failure semantics and
+conserved located material. Member mass shares and transmitted load are not salvage rights; impact energy
+is not an injury/toughness policy. Sub-member fracture, harmful injuries, longer flight, wet composition,
+generated extraction rights and multi-floor presentation remain open, as do production scale/exports/devices,
+1–4-player pacing and the whole campaign. No full phase gate is closed.
 Development remains on `codex/runtime-foundation`.
 
 Prior dependencies remain preserved:

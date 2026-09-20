@@ -70,8 +70,20 @@ The larger event bound also cannot be passed blindly into the existing per-termi
 reservation scheme. Admission must prove journal/outcome/root capacity for the chosen continuation budget;
 tiny slices at the maximum event catalog can exceed the existing retained limits. Those limits stay fixed.
 
-Next, implement the owned contact response and whole-member joint separation,
-retaining source-backed located material; then integrate the complete consequence with the durable owner.
+The 2026-09-19 status/next-step review changes the sequence: integrate the qualified intact event
+trajectories with the versioned durable owner first, retaining the existing harmless-impact limits.
+`ConstructionContactScene` validates a uniform intact pose; the bearing model and physical projection
+also bind the original assembly. `VerticalBearing` describes compression transfer, while `BracedFace`
+declares rated load transfer without an authored bond-failure law. Neither grants a mechanical bond that
+can simply be marked broken. A separate fracture assessment would not remove the pending-work integration
+obligation. This ordering brings existing behavior into the real loop before expanding that new domain.
+
+Acceptance for that integration includes a real funded-world interacting trajectory, final load validation
+after actual ore/custody/time effects, exact legacy bytes, pre-acceptance capacity proof, interruption/restart
+and retry with one original command receipt and time/material publication. Existing bounds remain fixed.
+Then implement owned contact response and whole-member joint separation with explicit mechanical semantics
+and conserved source-backed located material. This is a sequencing decision, not runtime qualification;
+no application or timeless architecture contract changes in this planning update.
 Sub-member fragmentation/salvage and harmful actor impacts need explicit material/anatomical contracts.
 Wet composition, generated extraction rights, multi-floor rendering, production workloads, devices,
 1–4-player timing and the full P00–P14 campaign remain open. No acceptance threshold is lowered.
