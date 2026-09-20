@@ -1,0 +1,217 @@
+{
+  "Scope": "Two genuinely funded assemblies and one rider descend 256 subunits through saved event-ordered work; this live fixture does not qualify unequal falls",
+  "ProfileVersion": 18,
+  "DescentMode": "EventOrdered",
+  "WorldId": "4955a478907a739f49ff302c94a798ad",
+  "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+  "SiteId": "737570706f7274730000000000000004",
+  "SourceId": "737570706f7274730000000000000005",
+  "TerrainSourceId": "7b64d238811537a5088f9d7f68dcb6b0",
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "Builder": "49354ca83f251b3ce9d363158e0786a4",
+  "BeforeRevision": 154,
+  "BeforeHash": "4aa14d242ed684f37612ebb13df62fc3bcaf78aca1db87b17715ec8e005c35f3",
+  "PendingRevision": 155,
+  "PendingHash": "6554fdb9099c5ae96151b78062058e433ed3cef01046669d1e4d89f31e75cb1c",
+  "AfterRevision": 166,
+  "AfterHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+  "PreRevision": 154,
+  "PreHash": "4aa14d242ed684f37612ebb13df62fc3bcaf78aca1db87b17715ec8e005c35f3",
+  "PostRevision": 166,
+  "PostHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+  "TriggerCauseId": "0000000000000000000000000070eae5",
+  "CommandId": "0000000000000000000000000070eae4",
+  "ReceiptHex": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100000000000000000000000000070EAE4000000102D222BEFA7A8B2CD7BA0A05A00950F27000000104955A478907A739F49FF302C94A798AD000000102A89AF71F707591D46CFE34B9B60F96C000000201975E64554E7E6C51EC1203A9D0DA54B4B614525DEBD167F10CDE77CD50180130000000800000000000000A6000000080000000000000001000000080000000000000000",
+  "Continuations": 11,
+  "TriggerFile": "trigger.bin",
+  "BeforeFile": "before.sqlite",
+  "AfterFile": "after.sqlite",
+  "ContinuationFiles": [
+    "continuation-001.bin",
+    "continuation-002.bin",
+    "continuation-003.bin",
+    "continuation-004.bin",
+    "continuation-005.bin",
+    "continuation-006.bin",
+    "continuation-007.bin",
+    "continuation-008.bin",
+    "continuation-009.bin",
+    "continuation-010.bin",
+    "continuation-011.bin"
+  ],
+  "PendingFiles": [
+    "pending-0.sqlite",
+    "pending-1.sqlite",
+    "pending-2.sqlite",
+    "pending-3.sqlite",
+    "pending-4.sqlite",
+    "pending-5.sqlite",
+    "pending-6.sqlite",
+    "pending-7.sqlite",
+    "pending-8.sqlite",
+    "pending-9.sqlite",
+    "pending-10.sqlite"
+  ],
+  "BeforeSteps": 149,
+  "AfterSteps": 150,
+  "SourceLotId": "ae868989be7ddbf0ebcb56d424495380",
+  "LowerStructureId": "1325c4ff7eee3f43b504100006b19723",
+  "UpperStructureId": "c33b714d90c649a89f55daf3b5b13a1d",
+  "BeforeInventoryHash": "b706d5ee433662cfebc8d1f4a6a560b40795393dda6f6a1112423f455544590d",
+  "AfterInventoryHash": "7fdd824f624137fd8dff5e3dd57d99de73f295d48068591bbd4a3324e68113bc",
+  "BeforePhysicalHash": "fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37",
+  "AfterPhysicalHash": "89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20",
+  "PolicyHash": "76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0",
+  "SettlementPolicyHash": "18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb",
+  "CoupledPolicyHash": "f3feefb04f185f66087ffaf019b30090225ee3a288fb0dda6359b59de884b215",
+  "ConsequencePolicyHash": "728be4192c1ad26c17ff37ee57c3448f6f7f8666314980369bd24a3be1a46ffc",
+  "AssessmentInputPin": "fb998afa1f024803065d25da7059146b052670c16a6c4d8bb58242d14252fd5e",
+  "CompletedWorkUnits": 11,
+  "MaximumTotalWorkUnits": 28,
+  "Events": [
+    {
+      "DropSubunits": 256,
+      "BodyIds": [
+        "1325c4ff7eee3f43b504100006b19723",
+        "49354ca83f251b3ce9d363158e0786a4",
+        "c33b714d90c649a89f55daf3b5b13a1d"
+      ]
+    }
+  ],
+  "ImpactDemands": [
+    {
+      "BodyId": "1325c4ff7eee3f43b504100006b19723",
+      "IsActor": false,
+      "MassMilligrams": 270000,
+      "DropSubunits": 256,
+      "EnergyNumeratorPicojoules": "677376000000000",
+      "EnergyDenominator": 256,
+      "FlightMilliseconds": 452,
+      "IsHarmless": true
+    },
+    {
+      "BodyId": "49354ca83f251b3ce9d363158e0786a4",
+      "IsActor": true,
+      "MassMilligrams": 71060000,
+      "DropSubunits": 256,
+      "EnergyNumeratorPicojoules": "178275328000000000",
+      "EnergyDenominator": 256,
+      "FlightMilliseconds": 452,
+      "IsHarmless": true
+    },
+    {
+      "BodyId": "c33b714d90c649a89f55daf3b5b13a1d",
+      "IsActor": false,
+      "MassMilligrams": 270000,
+      "DropSubunits": 256,
+      "EnergyNumeratorPicojoules": "677376000000000",
+      "EnergyDenominator": 256,
+      "FlightMilliseconds": 452,
+      "IsHarmless": true
+    }
+  ],
+  "Projects": [
+    {
+      "ProjectId": "00636f75706c65640000000000000001",
+      "StructureId": "1325c4ff7eee3f43b504100006b19723",
+      "InstalledLotId": "4fc2dd55ba39fc889df5efd0b5ca7c90",
+      "BatchId": "3c4592ed3f4b5d37bff729e59cf562fb"
+    },
+    {
+      "ProjectId": "00636f75706c65640000000000000002",
+      "StructureId": "c33b714d90c649a89f55daf3b5b13a1d",
+      "InstalledLotId": "ad3e92880d7853759890e58fd3e6d453",
+      "BatchId": "c5bf66d0a715622653e7d644c27d9f98"
+    }
+  ],
+  "Actors": [
+    {
+      "ActorId": "49354ca83f251b3ce9d363158e0786a4",
+      "X": 27264,
+      "Y": 83328,
+      "Z": 320,
+      "Revision": 42
+    },
+    {
+      "ActorId": "c7da6de6f885e3516d9dfd3dab51cf6b",
+      "X": 27264,
+      "Y": 82816,
+      "Z": 0,
+      "Revision": 105
+    }
+  ],
+  "History": [
+    {
+      "Revision": 0,
+      "Hash": "d491e461bee169b1834d7ede677123a0aa4fe87e76fcf91875c5e618a3908c58"
+    },
+    {
+      "Revision": 38,
+      "Hash": "11a6b072b273d8f7425aae60c5d4863a06f2148abaf459fcf42df2f9ff6f57d2"
+    },
+    {
+      "Revision": 47,
+      "Hash": "dc5cbc8e72bee9c09399324646ba4beb08426f365c4260995dd359e7b2100d9a"
+    },
+    {
+      "Revision": 48,
+      "Hash": "b342688e5ebca56fc29bd8f1ce870303fef7a335d9f5f79ea5f0c0d45770855b"
+    },
+    {
+      "Revision": 65,
+      "Hash": "16d9b79f87d18c7f866661ba8b08c067de11ce31366668152e1a705208441404"
+    },
+    {
+      "Revision": 154,
+      "Hash": "4aa14d242ed684f37612ebb13df62fc3bcaf78aca1db87b17715ec8e005c35f3"
+    },
+    {
+      "Revision": 155,
+      "Hash": "6554fdb9099c5ae96151b78062058e433ed3cef01046669d1e4d89f31e75cb1c"
+    },
+    {
+      "Revision": 156,
+      "Hash": "6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8"
+    },
+    {
+      "Revision": 157,
+      "Hash": "dcc2babe1469c08109d187a6857ae3c6a63a24d3380ca274b79f6ed4f1067797"
+    },
+    {
+      "Revision": 158,
+      "Hash": "725dcd9efe333cfa114af4b996449fb03af5750ec6fcb69a0e575c75c6e882fc"
+    },
+    {
+      "Revision": 159,
+      "Hash": "1553a636e8a2926b5ab976ba52cfd3dfafabdfb74e02a707c4ae8f645d7a135c"
+    },
+    {
+      "Revision": 160,
+      "Hash": "4e21bb5d30873a024aab15bdaecbe8fc9dc9134e0ef2d7bc75302e6b21ccf2f3"
+    },
+    {
+      "Revision": 161,
+      "Hash": "c441f730356f769930c1c8f459be4c1aa35d43ffcb7d4c93338535424069a21e"
+    },
+    {
+      "Revision": 162,
+      "Hash": "d91994402eaac990183e227311f90d7405d0bf57db2afa85677ab5662d66e1c3"
+    },
+    {
+      "Revision": 163,
+      "Hash": "7e378743970c6d62172d7c5d4a14fd83923f2bbb2c7dfecae60b5b48f0482380"
+    },
+    {
+      "Revision": 164,
+      "Hash": "3d1fc94f3561e77e571faa2d25deb5051f7db2f72b9158451da8f822f9557751"
+    },
+    {
+      "Revision": 165,
+      "Hash": "762c8a4e69d978a07f84fab3a7cea9f93e467cbf3409e36bde6f93595ca0a3cb"
+    },
+    {
+      "Revision": 166,
+      "Hash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "status": "completed_partial_review_integrated",
+  "process_exit_code": 0,
+  "elapsed_seconds": 136.563,
+  "total_cost_usd": 1.6540470000000003,
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1436,
+      "outputTokens": 18,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001526,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 26,
+      "outputTokens": 11576,
+      "cacheReadInputTokens": 413604,
+      "cacheCreationInputTokens": 48503,
+      "webSearchRequests": 0,
+      "costUSD": 1.6525210000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 5676,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "context_status": "verified",
+  "requested_model": "fable[1m]",
+  "time_limit_seconds": 300,
+  "client_budget_usd": 2,
+  "context_sha256": "3a0af2a192118823fadc43e648b63a830e61dd7a2b9390dc1f6dd5b8ff296122",
+  "result_subtype": "success",
+  "result_error": false,
+  "result_words": 498,
+  "requested_max_words": 350,
+  "raw_private_directory": "/private/tmp/openfantasy-fable-live-event-descent-20260919",
+  "substantiated_defects": 0,
+  "credit_savings_claimed": false,
+  "dispositions": "review-dispositions.md"
+}

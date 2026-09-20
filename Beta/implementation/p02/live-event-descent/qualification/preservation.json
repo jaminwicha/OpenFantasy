@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "runtime_source_pins": 563,
+  "architecture_local_links": 388,
+  "broken_links": [],
+  "frozen_spec_documents": 22,
+  "unrelated_predecessor_index_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "legacy_fixture_files_byte_identical": 20,
+  "python_ast_checked": [
+    "check_coupled_settlement.py",
+    "check_structural_settlement.py",
+    "verify.py"
+  ]
+}

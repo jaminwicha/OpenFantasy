@@ -1,0 +1,76 @@
+{
+  "status": "partial; actual Host qualification failed at unchanged deadline",
+  "scope": "Fresh profile18 durable event-ordered intact settlement; one-cell funded fixture proves common256 drop, not unequal live drops",
+  "implementation_commit": "8f19911dd1af47809dc7e9c9403e681489af8c58",
+  "build": "build-final.log",
+  "build_errors": 0,
+  "build_warnings": 0,
+  "managed_reports": [
+    {
+      "file": "Beta/implementation/p02/live-event-descent/qualification/regression/_mac_2026-09-19_23_44_03_net8.0.trx",
+      "passed": 951,
+      "failed": 0,
+      "total": 951,
+      "executed": 951,
+      "times": {
+        "creation": "2026-09-19T23:44:03.7741820-05:00",
+        "queuing": "2026-09-19T23:44:03.7741820-05:00",
+        "start": "2026-09-19T23:44:02.2184180-05:00",
+        "finish": "2026-09-19T23:44:17.1996800-05:00"
+      }
+    },
+    {
+      "file": "Beta/implementation/p02/live-event-descent/qualification/regression/_mac_2026-09-19_23_44_19_net8.0.trx",
+      "passed": 499,
+      "failed": 0,
+      "total": 499,
+      "executed": 499,
+      "times": {
+        "creation": "2026-09-19T23:44:19.4311170-05:00",
+        "queuing": "2026-09-19T23:44:19.4311170-05:00",
+        "start": "2026-09-19T23:44:17.7152880-05:00",
+        "finish": "2026-09-19T23:51:23.5650370-05:00"
+      }
+    }
+  ],
+  "total_distinct_passed": 1450,
+  "new_cases": 15,
+  "managed_skips": 0,
+  "host_report": "host.json",
+  "host_status": "failed",
+  "ordinary_host_calls_attempted": 20,
+  "ordinary_host_calls_completed": 19,
+  "maximum_completed_call_seconds": 26.355439917184412,
+  "failed_call": "exact history 156",
+  "unchanged_host_timeout_seconds": 30,
+  "actual_six_boundary_process_kills_completed": 0,
+  "fixture_files": 28,
+  "legacy_byte_identical_files": 20,
+  "source_pins": "runtime-source-sha256.json",
+  "preservation": "preservation.json",
+  "reviews": "review-dispositions.md",
+  "external_review": "external-review.json",
+  "milestone_created": false,
+  "not_run_or_unqualified": [
+    "Remainder of failed external Host history/crash campaign",
+    "Full all-systems verifier",
+    "Native rendered/Godot/device/export acceptance",
+    "Live unequal release, impact/fracture/debris",
+    "Production workload, latency or maximum-scene feasibility",
+    "C++ comparison or Native AOT qualification"
+  ],
+  "remaining": [
+    "Investigate retained 30-second historical-read failure; preserve threshold and exact outputs",
+    "Complete actual Host history/retry and six commit-boundary kills before qualifying this integration",
+    "Earned broader release geometry for unequal live motion; explicit whole-member bond/failure ownership",
+    "Multi-floor playable presentation, generated excavation rights and wet composition",
+    "Full original phase/production gates"
+  ],
+  "same_command_diagnostic": {
+    "report": "history-deadline-diagnostic.json",
+    "elapsed_seconds": 15.991295875050128,
+    "passed": true,
+    "cause_established": false,
+    "does_not_qualify_failed_campaign": true
+  }
+}

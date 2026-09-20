@@ -1,0 +1,18 @@
+{
+  "purpose": "One exact-command diagnostic after retained deadline failure; does not replace failed campaign or prove its cause",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-event-descent/qualification/coupled-settlement-profile18-f366f5669ddf4a9890aa6be11de5e2e4/normal.sqlite",
+    "156"
+  ],
+  "timeoutSeconds": 30,
+  "exitCode": 0,
+  "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":166,\"SourceHeadHash\":\"e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c\",\"RecordedRevision\":156,\"StateHash\":\"6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8\",\"ProfileVersion\":18,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+  "stderr": "",
+  "timedOut": false,
+  "elapsedSeconds": 15.991295875050128,
+  "childUserCpuSeconds": 14.23414,
+  "childSystemCpuSeconds": 0.851348
+}
