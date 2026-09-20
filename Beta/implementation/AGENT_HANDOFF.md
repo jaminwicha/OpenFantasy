@@ -42,8 +42,9 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Playable local worksite](p02/playable-worksite/README.md) has its implementation and initial managed evidence:
-**953 Core + 528 Hosting/client cases passed** after the hash-cache correction. Fresh profile18 content includes two genuinely funded
+[Playable local worksite](p02/playable-worksite/README.md) is qualified within its recorded bounds:
+**953 Core + 534 Hosting/client cases passed** after the movement-admission correction (1,487 total,
+zero failed/skipped). Fresh profile18 content includes two genuinely funded
 projects, a natural contour under one existing generator, stairs/decks and three-unit excavation.
 Public geometry and contextual Mine/Climb offers connect to the existing Godot/session owners.
 The separate `--worksite` entry preserves farm saves. The initial content/client change introduced no Core law.
@@ -66,11 +67,12 @@ and remaining allocation remain open. The exact preserved save reopened natively
 The [final rendered journey](p02/playable-worksite/qualification/native-worksite-movement-admission.json)
 passes all four processes with unchanged bounds: fresh 21.374 s, build 84.020 s, mine 27.477 s, reopen 22.021 s.
 Exact paused state/save preservation and seven rendered captures remain in its packet. Prior timing and
-assertion failures remain retained; this pass does not retroactively qualify them. The full managed
-regression for movement-root reuse is in progress; no new milestone is recorded until it passes.
+assertion failures remain retained; this pass does not retroactively qualify them. The [full managed regression](p02/playable-worksite/qualification/full-regression-movement-admission.log)
+passes all 1,487 cases. Movement-root reuse and its focused proof are committed at `518e802`; the final
+qualified worksite checkpoint is preserved on `codex/milestone-playable-worksite`.
 Initial implementation remains at `e3e9040`; cache/strict probes at `f57b021`. Ecosystem `ffc0ad6` records
-native observation/deadline lessons, with three installed skill copies verified. Existing legacy-wheel
-qualification and the measured native profiling limitations remain linked in the packet.
+native observation/deadline lessons, with three installed skill copies verified. The final legacy-wheel
+control also passes; native profiling limitations remain linked in the packet.
 Following dependencies remain the full P01/P02 integration and feasibility plan, including durable
 containment and wet composition, broader physical consequences, macro/history scaling and presentation.
 The worksite proves a bounded playable connection, not production latency, art, UX, devices or a full

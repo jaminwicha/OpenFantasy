@@ -8,6 +8,12 @@ source or simulation law. A subsequent measured recovery fix memoizes the immuta
 hash; a subsequent transition-local reuse retains an already admitted movement candidate. Neither adds
 a native bridge, new authority, changed bytes or skipped verification.
 
+**Final bounded qualification:** 1,487 managed cases passed, the strict four-process rendered journey
+passed with every original limit, and all 1,334 retained historical candidate hashes match. The final
+worksite checkpoint is preserved on `codex/milestone-playable-worksite`; movement-root reuse is committed
+at `518e802`. Prior failed runs remain below. This qualifies the described worksite, not full phases,
+production performance, accepted art/UX, physical devices or multiplayer.
+
 ## Implemented scope
 
 - Two unstarted projects use distinct funded supply commitments and ordinary Wren construction.
@@ -227,6 +233,10 @@ The [authority measurement](qualification/open-profile-movement-admission.json) 
 retain the actual results. Cumulative allocation is about 16.3% lower than the preceding cache version;
 elapsed times are individual shared-host observations, not a promised speedup. Remaining 18.5 GB of
 replay allocation and linear journal scaling remain production issues. No history or check was removed.
+Source review also identified repeated immutable terrain encoding and unused diagnostic graph-pin
+composition as possible later targets. Neither was changed. Any future cache must preserve defensive
+public buffers and per-successor isolation; deferring diagnostic serialization must retain its existing
+archive-size rejection. The trace supports further measurement, not a waiver of those contracts.
 
 The [separate native preserved-save reopen](qualification/native-open-movement-admission.json) passed
 in 19.821 s total, including the original 30-second opening bound. The exact paused public hash and database
@@ -239,8 +249,14 @@ all four ordinary processes: fresh 21.374 s, build 84.020 s, mine 27.477 s and r
 Every process exited zero without engine errors; seven captures were produced, prior public hashes
 recovered exactly and the final paused save stayed byte-identical. The integration lead inspected the
 upper deck, lower stance and settled scene; provisional block geometry, faint cutaways and large text HUD
-remain explicit presentation limits. A full managed regression follows this source boundary before a
-milestone can be recorded.
+remain explicit presentation limits. The [full managed regression](qualification/full-regression-movement-admission.log)
+then passed 953 Core + 534 Hosting/client cases (1,487 total), with no failed/skipped cases. Hosting took
+4 minutes 15 seconds on this shared host; that is observed test-run duration, not a controlled speedup.
+The build completed without warnings/errors. This is the final qualified application source boundary.
+The [original farm wheel control](qualification/legacy-native-wheel-movement-admission.json) also passed
+both native processes under its retained 45-second bounds, with four rendered captures and exact paused
+save/public-state preservation. The full worksite and this legacy control use controlled background
+fixtures; neither substitutes for real OS-focus, keyboard/controller hardware or human acceptance.
 
 Six new movement tests exercise two successful actors in profiles 17/18, a later unavailable destination,
 a genuine structural overload after an accepted earlier move, pure-interpreter unauthorized input versus

@@ -1,0 +1,27 @@
+{
+  "applicationCommit": "518e802",
+  "managed": [
+    {
+      "file": "full-regression-movement-admission/_mac_2026-09-20_02_14_40_net8.0.trx",
+      "passed": 953,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "file": "full-regression-movement-admission/_mac_2026-09-20_02_14_48_net8.0.trx",
+      "passed": 534,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "nativeWorksite": "passed: four separate processes, same deadlines, exact paused state/save",
+  "legacyWheel": "passed: two processes, same 45-second deadline, exact paused state/save",
+  "candidateHistoryHashes": 1334,
+  "specFilesPreserved": 22,
+  "architectureLinks": 402,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "verifiedApplicationSources": 580,
+  "applicationBinaryHashesPreserved": true,
+  "gateLimitsChanged": false,
+  "scope": "Bounded playable worksite; full P01/P02, production history/performance, art/UX, OS/devices, multiplayer remain open."
+}

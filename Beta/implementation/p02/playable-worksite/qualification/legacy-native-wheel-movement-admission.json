@@ -1,0 +1,718 @@
+{
+  "status": "passed",
+  "rendered": true,
+  "backgroundRender": true,
+  "startedUtc": "2026-09-20T07:19:26.929825+00:00",
+  "scope": "Native wheel input, inspection, real gathering and exact reopened world; injected events are not physical device acceptance",
+  "runs": [
+    {
+      "phase": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-wheel",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-wheel-42d85s1y/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-wheel-42d85s1y/fresh.json",
+        "fresh",
+        "--background-render"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--farm-wheel",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-wheel-42d85s1y/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-wheel-42d85s1y/reopen.json",
+        "reopen",
+        "--background-render"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "observations": {
+    "fresh": {
+      "Status": "passed",
+      "Error": null,
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "Reopen": false,
+      "Checks": [
+        "Pointer/stick/discrete inspection, neutral dead zones, field-shortcut isolation, Tab containment and B cancellation preserve pause and require movement release.",
+        "Background rendering ignores native window notifications; explicit fixture focus still exercises cancellation separately.",
+        "World time continues without player movement; controller selection and confirmation harvest exactly one unit from the pinned plant.",
+        "Disconnect and focus loss cancel without spending; the final paused world is ready for exact reopening."
+      ],
+      "FocusEvents": [
+        "143: entered",
+        "2796: exited",
+        "2893: entered"
+      ],
+      "BackgroundRender": true,
+      "NativeWindowFocused": true,
+      "BindWindowFocus": false,
+      "FinalView": {
+        "WorldId": {
+          "High": 11838943175866674348,
+          "Low": 6566761377563931012
+        },
+        "BranchId": {
+          "High": 3117603463796623977,
+          "Low": 1547435577907761989
+        },
+        "PlayerActorId": {
+          "High": 11740567274192566031,
+          "Low": 3901590248268668208
+        },
+        "Calendar": {
+          "Days": 0,
+          "MillisecondsWithinDay": 32493600
+        },
+        "HasReadingHold": false,
+        "IsResolvingConsequences": false,
+        "Actors": [
+          {
+            "ActorId": {
+              "High": 11740567274192566031,
+              "Low": 3901590248268668208
+            },
+            "DisplayName": "Traveler",
+            "Feet": {
+              "X": 25984,
+              "Y": 83392,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 325,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 2,
+            "ControllerKind": 1
+          },
+          {
+            "ActorId": {
+              "High": 17734771146330126369,
+              "Low": 3755393924890045491
+            },
+            "DisplayName": "Wren",
+            "Feet": {
+              "X": 25984,
+              "Y": 82560,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 322,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 16,
+            "ControllerKind": 2
+          }
+        ],
+        "PlayerInventory": {
+          "CustodianId": {
+            "High": 3551574659632768418,
+            "Low": 7866543934556346698
+          },
+          "Revision": 1,
+          "Quantity": 11,
+          "Lots": [
+            {
+              "LotId": {
+                "High": 1696821205204844772,
+                "Low": 14233350353809258915
+              },
+              "DefinitionId": {
+                "High": 11982809337836041595,
+                "Low": 18373582298239785721
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 5470128972612045146,
+                "Low": 18086807705569776730
+              },
+              "DefinitionId": {
+                "High": 17440792895996343150,
+                "Low": 13598911669572622528
+              },
+              "Revision": 0,
+              "Quantity": 8,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 8225799703908409572,
+                "Low": 3329847337192323368
+              },
+              "DefinitionId": {
+                "High": 1872794200646237673,
+                "Low": 5975632165003488037
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 12348966039127127034,
+                "Low": 12996924021006885104
+              },
+              "DefinitionId": {
+                "High": 17440792895996343150,
+                "Low": 13598911669572622528
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            }
+          ]
+        },
+        "GatheringNodes": [
+          {
+            "NodeId": {
+              "High": 2639486879359783236,
+              "Low": 2635907145496061359
+            },
+            "DisplayName": "Berry Bush",
+            "Feet": {
+              "X": 27008,
+              "Y": 85120,
+              "Z": 256,
+              "Cell": {
+                "X": 105,
+                "Y": 332,
+                "Z": 1
+              }
+            },
+            "Revision": 0,
+            "Kind": 2,
+            "RequiredTool": 2,
+            "RemainingSwings": 4,
+            "Visibility": 1
+          },
+          {
+            "NodeId": {
+              "High": 7485666049006258407,
+              "Low": 6889325985582867310
+            },
+            "DisplayName": "Oak",
+            "Feet": {
+              "X": 25984,
+              "Y": 83840,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 327,
+                "Z": 1
+              }
+            },
+            "Revision": 1,
+            "Kind": 1,
+            "RequiredTool": 1,
+            "RemainingSwings": 4,
+            "Visibility": 1
+          }
+        ],
+        "GatheringTools": [
+          {
+            "LotId": {
+              "High": 1696821205204844772,
+              "Low": 14233350353809258915
+            },
+            "Revision": 0,
+            "Kind": 2,
+            "Power": 1
+          },
+          {
+            "LotId": {
+              "High": 8225799703908409572,
+              "Low": 3329847337192323368
+            },
+            "Revision": 0,
+            "Kind": 1,
+            "Power": 1
+          }
+        ],
+        "PlayerGatherEffort": 120,
+        "Worksite": null,
+        "Crafting": {
+          "Revision": 0,
+          "Recipes": [
+            {
+              "RecipeId": {
+                "High": 7909665981591724340,
+                "Low": 12637442341572758209
+              },
+              "Version": {
+                "Value": "747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142"
+              },
+              "Key": "craft_rations",
+              "Terms": [
+                {
+                  "DefinitionId": {
+                    "High": 17440792895996343150,
+                    "Low": 13598911669572622528
+                  },
+                  "Quantity": 1,
+                  "Role": 1
+                },
+                {
+                  "DefinitionId": {
+                    "High": 2321613972237266223,
+                    "Low": 8645526191670244961
+                  },
+                  "Quantity": 2,
+                  "Role": 1
+                },
+                {
+                  "DefinitionId": {
+                    "High": 6052033973718802550,
+                    "Low": 15899431500196879021
+                  },
+                  "Quantity": 2,
+                  "Role": 2
+                },
+                {
+                  "DefinitionId": {
+                    "High": 11425103842346022574,
+                    "Low": 7338629654356999930
+                  },
+                  "Quantity": 1,
+                  "Role": 3
+                }
+              ]
+            }
+          ]
+        },
+        "Dialogue": null,
+        "Progression": null,
+        "Quests": [],
+        "Construction": []
+      },
+      "IsWheelOpen": false,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "CurrentTarget": null,
+      "Offers": [
+        {
+          "Action": 1,
+          "TargetId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "Label": "Talk",
+          "CanExecute": true,
+          "BlockingReason": null
+        },
+        {
+          "Action": 2,
+          "TargetId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "Label": "Give",
+          "CanExecute": true,
+          "BlockingReason": null
+        },
+        {
+          "Action": 5,
+          "TargetId": null,
+          "Label": "Continue",
+          "CanExecute": false,
+          "BlockingReason": "There is no addressed conversation to close."
+        },
+        {
+          "Action": 3,
+          "TargetId": {
+            "High": 7485666049006258407,
+            "Low": 6889325985582867310
+          },
+          "Label": "Chop oak",
+          "CanExecute": false,
+          "BlockingReason": "You are too tired to gather; rest a moment."
+        },
+        {
+          "Action": 4,
+          "TargetId": null,
+          "Label": "Pack rations",
+          "CanExecute": false,
+          "BlockingReason": "Pack two berries and one wood to make two rations."
+        }
+      ],
+      "FocusOwner": null,
+      "WheelSelection": null,
+      "WheelCanExecute": null,
+      "ConfirmDisabled": true,
+      "PointerSeen": "(168, 56.5)",
+      "LastWheelButton": "A pressed=True accept=True",
+      "AcceptBindings": [
+        "Enter",
+        "Kp Enter",
+        "Space",
+        "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)"
+      ],
+      "PointerGlobal": "(-352, 940)",
+      "Navigation": "(0, 0)",
+      "HasPendingAction": false,
+      "ElapsedMilliseconds": 3791
+    },
+    "reopen": {
+      "Status": "passed",
+      "Error": null,
+      "Runtime": ".NET 10.0.12",
+      "DisplayDriver": "macOS",
+      "Reopen": true,
+      "Checks": [
+        "Process reopening restores the paused world without restoring an action selection."
+      ],
+      "FocusEvents": [
+        "159: entered"
+      ],
+      "BackgroundRender": true,
+      "NativeWindowFocused": true,
+      "BindWindowFocus": false,
+      "FinalView": {
+        "WorldId": {
+          "High": 11838943175866674348,
+          "Low": 6566761377563931012
+        },
+        "BranchId": {
+          "High": 3117603463796623977,
+          "Low": 1547435577907761989
+        },
+        "PlayerActorId": {
+          "High": 11740567274192566031,
+          "Low": 3901590248268668208
+        },
+        "Calendar": {
+          "Days": 0,
+          "MillisecondsWithinDay": 32493600
+        },
+        "HasReadingHold": false,
+        "IsResolvingConsequences": false,
+        "Actors": [
+          {
+            "ActorId": {
+              "High": 11740567274192566031,
+              "Low": 3901590248268668208
+            },
+            "DisplayName": "Traveler",
+            "Feet": {
+              "X": 25984,
+              "Y": 83392,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 325,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 2,
+            "ControllerKind": 1
+          },
+          {
+            "ActorId": {
+              "High": 17734771146330126369,
+              "Low": 3755393924890045491
+            },
+            "DisplayName": "Wren",
+            "Feet": {
+              "X": 25984,
+              "Y": 82560,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 322,
+                "Z": 1
+              }
+            },
+            "PresenceRevision": 16,
+            "ControllerKind": 2
+          }
+        ],
+        "PlayerInventory": {
+          "CustodianId": {
+            "High": 3551574659632768418,
+            "Low": 7866543934556346698
+          },
+          "Revision": 1,
+          "Quantity": 11,
+          "Lots": [
+            {
+              "LotId": {
+                "High": 1696821205204844772,
+                "Low": 14233350353809258915
+              },
+              "DefinitionId": {
+                "High": 11982809337836041595,
+                "Low": 18373582298239785721
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 5470128972612045146,
+                "Low": 18086807705569776730
+              },
+              "DefinitionId": {
+                "High": 17440792895996343150,
+                "Low": 13598911669572622528
+              },
+              "Revision": 0,
+              "Quantity": 8,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 8225799703908409572,
+                "Low": 3329847337192323368
+              },
+              "DefinitionId": {
+                "High": 1872794200646237673,
+                "Low": 5975632165003488037
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            },
+            {
+              "LotId": {
+                "High": 12348966039127127034,
+                "Low": 12996924021006885104
+              },
+              "DefinitionId": {
+                "High": 17440792895996343150,
+                "Low": 13598911669572622528
+              },
+              "Revision": 0,
+              "Quantity": 1,
+              "Provenance": 1,
+              "AvailableForDelivery": true
+            }
+          ]
+        },
+        "GatheringNodes": [
+          {
+            "NodeId": {
+              "High": 2639486879359783236,
+              "Low": 2635907145496061359
+            },
+            "DisplayName": "Berry Bush",
+            "Feet": {
+              "X": 27008,
+              "Y": 85120,
+              "Z": 256,
+              "Cell": {
+                "X": 105,
+                "Y": 332,
+                "Z": 1
+              }
+            },
+            "Revision": 0,
+            "Kind": 2,
+            "RequiredTool": 2,
+            "RemainingSwings": 4,
+            "Visibility": 1
+          },
+          {
+            "NodeId": {
+              "High": 7485666049006258407,
+              "Low": 6889325985582867310
+            },
+            "DisplayName": "Oak",
+            "Feet": {
+              "X": 25984,
+              "Y": 83840,
+              "Z": 256,
+              "Cell": {
+                "X": 101,
+                "Y": 327,
+                "Z": 1
+              }
+            },
+            "Revision": 1,
+            "Kind": 1,
+            "RequiredTool": 1,
+            "RemainingSwings": 4,
+            "Visibility": 1
+          }
+        ],
+        "GatheringTools": [
+          {
+            "LotId": {
+              "High": 1696821205204844772,
+              "Low": 14233350353809258915
+            },
+            "Revision": 0,
+            "Kind": 2,
+            "Power": 1
+          },
+          {
+            "LotId": {
+              "High": 8225799703908409572,
+              "Low": 3329847337192323368
+            },
+            "Revision": 0,
+            "Kind": 1,
+            "Power": 1
+          }
+        ],
+        "PlayerGatherEffort": 120,
+        "Worksite": null,
+        "Crafting": {
+          "Revision": 0,
+          "Recipes": [
+            {
+              "RecipeId": {
+                "High": 7909665981591724340,
+                "Low": 12637442341572758209
+              },
+              "Version": {
+                "Value": "747fe3e60f887cce01aa5d6838c60b732dd39321235bdb9bac6a508b74c29142"
+              },
+              "Key": "craft_rations",
+              "Terms": [
+                {
+                  "DefinitionId": {
+                    "High": 17440792895996343150,
+                    "Low": 13598911669572622528
+                  },
+                  "Quantity": 1,
+                  "Role": 1
+                },
+                {
+                  "DefinitionId": {
+                    "High": 2321613972237266223,
+                    "Low": 8645526191670244961
+                  },
+                  "Quantity": 2,
+                  "Role": 1
+                },
+                {
+                  "DefinitionId": {
+                    "High": 6052033973718802550,
+                    "Low": 15899431500196879021
+                  },
+                  "Quantity": 2,
+                  "Role": 2
+                },
+                {
+                  "DefinitionId": {
+                    "High": 11425103842346022574,
+                    "Low": 7338629654356999930
+                  },
+                  "Quantity": 1,
+                  "Role": 3
+                }
+              ]
+            }
+          ]
+        },
+        "Dialogue": null,
+        "Progression": null,
+        "Quests": [],
+        "Construction": []
+      },
+      "IsWheelOpen": false,
+      "IsLocallyPaused": true,
+      "IsWindowFocused": true,
+      "CurrentTarget": null,
+      "Offers": [
+        {
+          "Action": 1,
+          "TargetId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "Label": "Talk",
+          "CanExecute": true,
+          "BlockingReason": null
+        },
+        {
+          "Action": 2,
+          "TargetId": {
+            "High": 17734771146330126369,
+            "Low": 3755393924890045491
+          },
+          "Label": "Give",
+          "CanExecute": true,
+          "BlockingReason": null
+        },
+        {
+          "Action": 5,
+          "TargetId": null,
+          "Label": "Continue",
+          "CanExecute": false,
+          "BlockingReason": "There is no addressed conversation to close."
+        },
+        {
+          "Action": 3,
+          "TargetId": {
+            "High": 7485666049006258407,
+            "Low": 6889325985582867310
+          },
+          "Label": "Chop oak",
+          "CanExecute": false,
+          "BlockingReason": "You are too tired to gather; rest a moment."
+        },
+        {
+          "Action": 4,
+          "TargetId": null,
+          "Label": "Pack rations",
+          "CanExecute": false,
+          "BlockingReason": "Pack two berries and one wood to make two rations."
+        }
+      ],
+      "FocusOwner": null,
+      "WheelSelection": null,
+      "WheelCanExecute": null,
+      "ConfirmDisabled": true,
+      "PointerSeen": null,
+      "LastWheelButton": null,
+      "AcceptBindings": [
+        "Enter",
+        "Kp Enter",
+        "Space",
+        "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)"
+      ],
+      "PointerGlobal": "(-352, 940)",
+      "Navigation": "(0, 0)",
+      "HasPendingAction": false,
+      "ElapsedMilliseconds": 523
+    }
+  },
+  "artifactSha256": {
+    "native-wheel-42d85s1y/fresh.aftermath.png": "236e7bb91592a1e85072f3954756ac2d16c7ab505c04bf1578358d9709a79902",
+    "native-wheel-42d85s1y/fresh.blocked.png": "1acab2a97f352e262d0fdf2f08f7202e44321bc7590af574483b47bc88c66a15",
+    "native-wheel-42d85s1y/fresh.json": "3b5381ec4058252d91f6b0f35b689909a0544a6ed34543d582b8435eeea41259",
+    "native-wheel-42d85s1y/fresh.neutral.png": "fb10b02df2d7a2c1a17c036ef57769815406b6671f9864908a36e75cc1dcf511",
+    "native-wheel-42d85s1y/fresh.ready.png": "7aa088280d64e2e0b7e568e12048eaf36a0a655cd214055672672eb82ba93572",
+    "native-wheel-42d85s1y/reopen.json": "851453f6ca2d27373ec2fa4a9ce80d6b6522f04c09dae55467d71d348c6527e0",
+    "native-wheel-42d85s1y/world.sqlite": "78934961c26eb2d73b7d4ae8640179dd62eea03fff9784574f4e4b153dea3920"
+  },
+  "finishedUtc": "2026-09-20T07:19:36.640610+00:00"
+}
