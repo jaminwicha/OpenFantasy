@@ -1,3 +1,5 @@
+using OpenFantasy.Core.Quests;
+
 namespace OpenFantasy.Client;
 
 /// <summary>One open wheel: stable cardinal slots and target identities, refreshed permitted previews.</summary>
@@ -15,9 +17,12 @@ internal sealed class FarmQuickWheelModel
     internal FarmQuickWheelModel(IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
         _view = Array.AsReadOnly(_slots);
-        for (int index = 0; index < Order.Length; index++)
+        FarmSemanticAction[] order = offers.ContainsKey(FarmSemanticAction.Excavate)
+            ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
+            : Order;
+        for (int index = 0; index < order.Length; index++)
         {
-            if (offers.TryGetValue(Order[index], out FarmActionOffer? offer))
+            if (offers.TryGetValue(order[index], out FarmActionOffer? offer))
             {
                 _slots[index] = new FarmWheelSlot(offer);
             }
@@ -55,7 +60,12 @@ internal sealed class FarmWheelSlot
         if (offer.TargetId is { } target)
         {
             PinnedTarget = new FarmTarget(target, offer.TargetName,
-                offer.Action == FarmSemanticAction.Gather ? FarmTargetKind.Harvestable : FarmTargetKind.Person, null);
+                offer.Action switch
+                {
+                    FarmSemanticAction.Gather => FarmTargetKind.Harvestable,
+                    FarmSemanticAction.Excavate or FarmSemanticAction.Traverse => FarmTargetKind.Excavation,
+                    _ => FarmTargetKind.Person
+                }, null);
         }
     }
 
@@ -67,6 +77,12 @@ internal sealed class FarmWheelSlot
             && candidate.Scope.PrincipalId == scope.PrincipalId && candidate.Scope.SessionId == scope.SessionId
             && candidate.Scope.ActorId == scope.ActorId && candidate.Scope.WorldId == scope.WorldId
             && candidate.Scope.BranchId == scope.BranchId;
+        if (Action == FarmSemanticAction.Traverse && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
+            || candidate?.Intent != _original.Intent))
+            same = false;
+        if (_original.Intent is DeliveryQuestIntent quest
+            && (candidate?.Intent is not DeliveryQuestIntent currentQuest || currentQuest.QuestId != quest.QuestId
+                || currentQuest.QuestVersion != quest.QuestVersion)) same = false;
         Offer = same ? candidate! : new FarmActionOffer(Action, scope, _original.Label, _original.TargetName,
             _original.TargetId, _original.CostText, "", null,
             "This choice changed or is no longer visible. Close the wheel and choose again.");

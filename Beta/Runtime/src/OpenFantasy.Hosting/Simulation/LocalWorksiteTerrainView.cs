@@ -1,0 +1,24 @@
+using System.Collections.ObjectModel;
+using OpenFantasy.Core.Terrain;
+
+namespace OpenFantasy.Hosting.Simulation;
+
+/// <summary>Complete committed occupancy inside these bounds. Outside cells remain unknown, not empty.</summary>
+public sealed class LocalWorksiteTerrainView
+{
+    internal LocalWorksiteTerrainView(TerrainRegionSnapshot region)
+    {
+        Bounds = region.Bounds;
+        Revision = region.Revision;
+        Occupancy = Array.AsReadOnly(region.Cells.Select(cell => cell.IsSolid).ToArray());
+    }
+
+    public TerrainRegionBounds Bounds { get; }
+    public ulong Revision { get; }
+
+    /// <summary>Solid flags in Bounds.CoordinateAt(index) order, including known empty cells.</summary>
+    public ReadOnlyCollection<bool> Occupancy { get; }
+
+    /// <summary>Returns committed occupancy; an out-of-bounds coordinate is rejected.</summary>
+    public bool IsSolid(CellCoordinate cell) => Occupancy[Bounds.IndexOf(cell)];
+}

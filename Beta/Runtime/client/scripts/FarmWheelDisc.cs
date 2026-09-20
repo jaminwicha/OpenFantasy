@@ -7,7 +7,7 @@ internal sealed partial class FarmWheelDisc : Control
 {
     private const float OuterRadius = 164;
     private const float InnerRadius = 66;
-    private readonly Texture2D[] _icons = new Texture2D[4];
+    private readonly Dictionary<FarmSemanticAction, Texture2D> _icons = [];
     private FarmQuickWheelModel? _model;
     private bool _stickReleased;
     internal Vector2? LastPointerPosition { get; private set; }
@@ -17,9 +17,12 @@ internal sealed partial class FarmWheelDisc : Control
 
     public override void _Ready()
     {
-        string[] names = ["talk", "gather", "craft", "give"];
-        for (int index = 0; index < names.Length; index++)
-            _icons[index] = GD.Load<Texture2D>($"res://assets/ui/{names[index]}.svg");
+        foreach ((FarmSemanticAction action, string name) in new[]
+        {
+            (FarmSemanticAction.Speak, "talk"), (FarmSemanticAction.Gather, "gather"),
+            (FarmSemanticAction.Craft, "craft"), (FarmSemanticAction.Give, "give"),
+            (FarmSemanticAction.Excavate, "excavate"), (FarmSemanticAction.Traverse, "traverse")
+        }) _icons[action] = GD.Load<Texture2D>($"res://assets/ui/{name}.svg");
     }
 
     internal void ShowModel(FarmQuickWheelModel model)
@@ -115,8 +118,13 @@ internal sealed partial class FarmWheelDisc : Control
             DrawColoredPolygon(polygon.ToArray(), selected ? new Color(0.27f, 0.36f, 0.35f) : new Color(0.09f, 0.16f, 0.18f));
             DrawPolyline([.. polygon, polygon[0]], selected ? new Color(1, 0.91f, 0.58f) : new Color(0.51f, 0.56f, 0.51f), selected ? 3 : 1, true);
             Vector2 at = center + Vector2.FromAngle(angle) * 116;
-            DrawTextureRect(_icons[index], new Rect2(at - new Vector2(21, 31), new Vector2(42, 42)), false);
-            string label = new[] { "Talk", "Gather", "Craft", "Give" }[index];
+            DrawTextureRect(_icons[slot.Action], new Rect2(at - new Vector2(21, 31), new Vector2(42, 42)), false);
+            string label = slot.Action switch
+            {
+                FarmSemanticAction.Speak => "Talk", FarmSemanticAction.Gather => "Gather",
+                FarmSemanticAction.Craft => "Craft", FarmSemanticAction.Give => "Give",
+                FarmSemanticAction.Excavate => "Mine", FarmSemanticAction.Traverse => "Climb", _ => "Action"
+            };
             float width = font.GetStringSize(label, fontSize: 16).X;
             DrawString(font, at + new Vector2(-width / 2, 31), label, fontSize: 16, modulate: new Color(0.94f, 0.91f, 0.81f));
             if (!slot.Offer.CanExecute)

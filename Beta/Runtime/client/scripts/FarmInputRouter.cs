@@ -49,6 +49,8 @@ internal enum FarmSemanticAction
     OpenWheel,
     CloseWheel,
     ConfirmWheel,
+    Excavate,
+    Traverse,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -327,6 +329,7 @@ internal sealed class FarmInputRouter
     {
         FarmInputLayer.World => action is FarmSemanticAction.Speak or FarmSemanticAction.Give
             or FarmSemanticAction.Gather or FarmSemanticAction.Craft
+            or FarmSemanticAction.Excavate or FarmSemanticAction.Traverse
             or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,
         FarmInputLayer.Dialogue => action is FarmSemanticAction.Give or FarmSemanticAction.CloseDialogue,
         _ => false,

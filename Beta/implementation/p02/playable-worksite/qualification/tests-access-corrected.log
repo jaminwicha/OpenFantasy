@@ -1,0 +1,14 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:52.20]     OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck [47 s]
+  Error Message:
+   Assert.Single() Failure: The collection was empty
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.ConstructionUpgradeFixture.Act(SqliteWorldAuthority authority, WorldSnapshot world, EntityId actor, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ConstructionUpgradeFixture.cs:line 81
+   at OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorksiteContentTests.cs:line 154
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/access-corrected/_mac_2026-09-20_00_56_46_net8.0.trx
+
+Failed!  - Failed:     1, Passed:    19, Skipped:     0, Total:    20, Duration: 51 s - OpenFantasy.Hosting.Tests.dll (net8.0)

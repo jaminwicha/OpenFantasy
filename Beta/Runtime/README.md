@@ -373,3 +373,17 @@ original receipt and physical/material changes publish once at completion. The s
 before readiness, while read-only opening/history never progress it. `tools/check_consequence_continuation.py`
 qualifies real trigger/intermediate/final process-kill boundaries using `OPENFANTASY_CONSEQUENCE_EVIDENCE`
 fixtures from managed tests. The default playable farm remains on its existing profile.
+
+## Separate worksite entry
+
+`python3 tools/play.py --worksite` opens Wren's authored worksite in its own
+`user://worlds/wrens-worksite.sqlite` save. The default farm and its earlier saves remain separate.
+Speak with Wren and fund both tasks, gathering the additional wood with the normal tool action.
+Keep the work routes clear while Wren builds. Walk onto the stairs using ordinary movement;
+Q/right shoulder selects the worksite face, and V/right-stick click opens contextual Mine/Climb
+actions. Direction selects a sector; Enter/controller A confirms. Costs and blocked reasons remain
+inspectable.
+
+The visible geometry is a functional demonstration with explicit material/load calibration, not the
+accepted production art or final timber balance. See [local worksite architecture](docs/architecture/local-worksite.md)
+and the [qualification record](../implementation/p02/playable-worksite/README.md) for actual evidence and limits.

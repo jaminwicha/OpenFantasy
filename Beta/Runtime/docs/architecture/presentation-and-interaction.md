@@ -34,7 +34,9 @@ Neither preview nor execution silently substitutes a target, recipe or ingredien
 
 [FarmQuickWheel](../../client/scripts/FarmQuickWheel.cs) and its
 [model](../../client/scripts/FarmQuickWheelModel.cs) present four stable cardinal actions: Talk,
-Gather, Craft and Give. Opening selects none. Direction or pointer selection inspects; explicit
+Gather, Craft and Give. An explicitly selected [worksite face](local-worksite.md) substitutes Mine and
+Climb in the relevant sectors, without changing the number of choices. Open slots retain their exact
+quest identity or ledge displacement; changed operations require a new selection. Opening selects none. Direction or pointer selection inspects; explicit
 confirmation acts. Cancel, focus loss and disconnect do not submit. Opening stops player movement
 but preserves host time policy: running time continues and an existing pause remains paused.
 

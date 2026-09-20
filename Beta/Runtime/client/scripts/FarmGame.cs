@@ -34,6 +34,7 @@ public partial class FarmGame : Node2D
     internal bool ProductionProfile { get; init; } = true;
     internal bool QuestProfile { get; init; }
     internal bool ConstructionProfile { get; init; }
+    internal bool WorksiteProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -84,7 +85,13 @@ public partial class FarmGame : Node2D
             GetWindow().FocusEntered += OnFocusEntered;
             GetWindow().FocusExited += OnFocusExited;
         }
-        _hud.Message("Opening the farm…");
+        _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (WorksiteProfile)
+        {
+            string worksiteSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-worksite.sqlite");
+            _opening = FarmClientSession.OpenWorksiteAsync(worksiteSave, "aldermere-worksite-v1", "Traveler");
+            return;
+        }
         bool production = GatheringProfile && ProductionProfile;
         bool quests = production && QuestProfile;
         bool construction = quests && ConstructionProfile;
@@ -128,7 +135,9 @@ public partial class FarmGame : Node2D
                 _session = opening.Result;
                 _targets = new FarmTargetSelection(_session.WrenActorId);
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
-                if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message("Find Wren by the rows.");
+                if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
+                    ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : "Find Wren by the rows.");
             }
             else
             {
@@ -163,22 +172,24 @@ public partial class FarmGame : Node2D
         _targets.Refresh(view);
         _canvas.Present(new FarmCanvasFrame(view.Calendar, view.Actors.Select(actor => new FarmActorFrame(
             actor.ActorId, actor.DisplayName, actor.Feet, actor.ActorId == view.PlayerActorId,
-            actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire)),
+            actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire,
+            multilevel: view.Worksite is not null)),
             view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
                 node.RequiredTool, node.Visibility)),
-            view.Construction.Where(project => project.IsCompleted).Select(project =>
-                new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet))));
+            view.Worksite is null ? view.Construction.Where(project => project.IsCompleted).Select(project =>
+                new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [], view.Worksite));
         Vector2 focus = _canvas.FocusPosition;
         if (view.Dialogue is { } conversation)
         {
             LocalActorView speaker = view.Actors.Single(value => value.ActorId == conversation.SpeakerActorId);
-            focus = (focus + FarmCanvasCoordinates.Position(speaker.Feet)) / 2;
+            focus = (focus + _canvas.Project(speaker.Feet)) / 2;
         }
         _camera.Position = focus + new Vector2(0, -26);
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
         _presented = _session.CreateOffers(view, _targets.Selected);
         _canvas.PresentTarget(_targets.Selected);
-        _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view), _action is not null,
+        _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view),
+            _action is not null || view.IsResolvingConsequences,
             _input.Paused || !_input.Focused, _presented, _targets);
         _inventory.Present(view, _session.World.ReadRunState());
         if (_wheel.Model is { } wheel)
@@ -225,7 +236,7 @@ public partial class FarmGame : Node2D
     private FarmInputSituation Situation() => new(
         SessionOpen: _session is not null,
         ReadingHold: _session?.World.ReadView().HasReadingHold ?? false,
-        ActionPending: _action is not null);
+        ActionPending: _action is not null || (_session?.World.ReadView().IsResolvingConsequences ?? false));
 
     private static FarmDirectionalInput ReadWalkingInput()
     {
@@ -412,6 +423,8 @@ public partial class FarmGame : Node2D
         if (target is null) return null;
         LocalActorView? person = view.Actors.FirstOrDefault(actor => actor.ActorId == target.Id);
         if (person is not null) return target with { Kind = FarmTargetKind.Person, Feet = person.Feet };
+        LocalExcavationView? site = view.Worksite?.ExcavationTargets.FirstOrDefault(value => value.SiteId == target.Id);
+        if (site is not null) return target with { Kind = FarmTargetKind.Excavation, Feet = site.Stance };
         LocalGatherNodeView? plant = view.GatheringNodes.FirstOrDefault(node => node.NodeId == target.Id);
         return target with { Kind = plant is null ? target.Kind : FarmTargetKind.Harvestable, Feet = plant?.Feet };
     }

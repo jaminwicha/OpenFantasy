@@ -65,6 +65,7 @@ internal sealed class FarmActionOffers
                     target.Name, target.Id, NoCost, "", intent: null, reason);
             }
         }
+        WorksiteActionOffers.Add(offers, view, scope, selectedTarget);
         return new ReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>(offers);
     }
 
@@ -110,27 +111,27 @@ internal sealed class FarmActionOffers
     {
         LocalDialogueView? dialogue = view.Dialogue;
         LocalQuestView? quest = dialogue is null ? null
-            : view.Quests.SingleOrDefault(value => value.GiverActorId == dialogue.SpeakerActorId);
+            : FarmQuestActions.AddressedQuest(view);
         if (dialogue is null || quest is null)
         {
             return new FarmActionOffer(FarmSemanticAction.Give, scope, "Ask about tasks", "Wren", null,
                 "Not yet known", "", intent: null, SpeakFirst);
         }
-        string reward = $"Reward: {quest.RewardExperience} XP and {quest.RewardCurrency} {quest.CurrencyUnit}";
+        string reward = $"{quest.Title} · Reward: {quest.RewardExperience} XP and {quest.RewardCurrency} {quest.CurrencyUnit}";
         if (quest.Status is null)
         {
             string? blocker = quest.CanAccept ? null : "This task cannot be accepted right now.";
             return new FarmActionOffer(FarmSemanticAction.Give, scope, "Accept task", dialogue.SpeakerName,
-                quest.GiverActorId, $"Commit to {quest.RequiredQuantity} wood", "You agreed to bring wood for the orchard.",
-                blocker is null ? FarmQuestActions.Request(view) : null, blocker, dialogue.DialogueId, reward);
+                quest.GiverActorId, $"Commit to {quest.RequiredQuantity} wood", $"You accepted {quest.Title}.",
+                blocker is null ? FarmQuestActions.Request(view, quest) : null, blocker, dialogue.DialogueId, reward);
         }
         string? deliveryBlocker = quest.Status == ActorQuestStatus.Completed
-            ? "You have already delivered the orchard supplies."
+            ? $"You have already completed {quest.Title}."
             : quest.CanComplete ? null
             : $"You need {quest.RequiredQuantity} available wood (you have {quest.EligibleQuantity}).";
         return new FarmActionOffer(FarmSemanticAction.Give, scope, "Deliver", dialogue.SpeakerName,
             quest.GiverActorId, $"{quest.RequiredQuantity} wood", "You delivered the supplies and received Wren's reward.",
-            deliveryBlocker is null ? FarmQuestActions.Request(view) : null, deliveryBlocker, dialogue.DialogueId, reward);
+            deliveryBlocker is null ? FarmQuestActions.Request(view, quest) : null, deliveryBlocker, dialogue.DialogueId, reward);
     }
 
     private static FarmActionOffer CloseDialogue(LocalWorldView view, FarmActionScope scope)

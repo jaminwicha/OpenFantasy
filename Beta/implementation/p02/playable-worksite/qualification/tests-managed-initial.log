@@ -1,0 +1,29 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.82]     OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Fresh_worksite_is_canonical_seeded_unworked_and_retains_authentic_farm_stock [FAIL]
+[xUnit.net 00:00:01.99]     OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Fresh_worksite_is_canonical_seeded_unworked_and_retains_authentic_farm_stock [504 ms]
+  Error Message:
+   System.ArgumentException : Local terrain requires one exact scope, seed and generation rules pin. (Parameter 'regions')
+  Stack Trace:
+     at OpenFantasy.Core.Spatial.LocalSpatialSnapshot.ReadRegions(IEnumerable`1 regions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 197
+   at OpenFantasy.Core.Spatial.LocalSpatialSnapshot..ctor(TerrainScope scope, IEnumerable`1 regions, IEnumerable`1 actors, IEnumerable`1 structures, GroundSupportMode groundSupport, StructureSupportMode structureSupport) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 43
+   at OpenFantasy.Hosting.Content.WorksiteFarmBuilder.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/WorksiteFarmBuilder.cs:line 43
+   at OpenFantasy.Hosting.Content.WorksiteFarmAdmission.CreateEmbedded(String seedText, String playerName) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/WorksiteFarmAdmission.cs:line 21
+   at OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Fresh_worksite_is_canonical_seeded_unworked_and_retains_authentic_farm_stock() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorksiteContentTests.cs:line 25
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck [163 ms]
+  Error Message:
+   System.ArgumentException : Local terrain requires one exact scope, seed and generation rules pin. (Parameter 'regions')
+  Stack Trace:
+     at OpenFantasy.Core.Spatial.LocalSpatialSnapshot.ReadRegions(IEnumerable`1 regions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 197
+   at OpenFantasy.Core.Spatial.LocalSpatialSnapshot..ctor(TerrainScope scope, IEnumerable`1 regions, IEnumerable`1 actors, IEnumerable`1 structures, GroundSupportMode groundSupport, StructureSupportMode structureSupport) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 43
+   at OpenFantasy.Hosting.Content.WorksiteFarmBuilder.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/WorksiteFarmBuilder.cs:line 43
+   at OpenFantasy.Hosting.Content.WorksiteFarmAdmission.CreateEmbedded(String seedText, String playerName) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/WorksiteFarmAdmission.cs:line 21
+   at OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorksiteContentTests.cs:line 84
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/managed-initial/_mac_2026-09-20_00_44_22_net8.0.trx
+
+Failed!  - Failed:     2, Passed:     8, Skipped:     0, Total:    10, Duration: 12 s - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -1,4 +1,5 @@
 using Godot;
+using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Client.Presentation;
 
@@ -17,11 +18,13 @@ internal partial class FarmActorView : Node2D
     private double _animationClock;
     private int _facingRow;
     private bool _ownActor;
+    private SubunitPosition _observedFeet;
 
     internal void Setup(FarmActorFrame actor, FarmVisualAssets assets)
     {
         TextureFilter = TextureFilterEnum.Nearest;
-        _target = _previous = FarmCanvasCoordinates.Position(actor.Feet);
+        _target = _previous = Project(actor);
+        _observedFeet = actor.Feet;
         Position = _target;
         _sprite = new Sprite2D
         {
@@ -44,23 +47,37 @@ internal partial class FarmActorView : Node2D
 
     internal void Present(FarmActorFrame actor, FarmVisualAssets assets)
     {
-        Vector2 next = FarmCanvasCoordinates.Position(actor.Feet);
+        Vector2 next = Project(actor);
         Vector2 motion = next - _target;
+        // A committed vertical displacement is not a north/south walking command. World
+        // movement can also project to zero pixels when elevation cancels screen Y.
+        Vector2 walking = actor.IsMultilevel
+            ? new Vector2(actor.Feet.X - _observedFeet.X, actor.Feet.Y - _observedFeet.Y)
+            : motion;
+        if (walking != Vector2.Zero)
+        {
+            _facingRow = Math.Abs(walking.X) > Math.Abs(walking.Y)
+                ? walking.X < 0 ? 2 : 3
+                : walking.Y < 0 ? 1 : 0;
+            _motionAge = 0;
+        }
+        else if (actor.IsMultilevel && actor.Feet.Z != _observedFeet.Z)
+        {
+            _motionAge = MotionGraceSeconds;
+        }
         if (motion != Vector2.Zero)
         {
-            _facingRow = Math.Abs(motion.X) > Math.Abs(motion.Y)
-                ? motion.X < 0 ? 2 : 3
-                : motion.Y < 0 ? 1 : 0;
             _previous = Position;
             _target = next;
             _interpolationAge = 0;
-            _motionAge = 0;
             if (_previous.DistanceSquaredTo(_target) > 160 * 160)
             {
                 _previous = _target;
                 Position = _target;
             }
         }
+        _observedFeet = actor.Feet;
+        ZIndex = actor.IsMultilevel ? WorksiteCoordinates.DepthIndex(actor.Feet.Z, actor: true) : 0;
         _sprite.Texture = assets.ActorTexture(actor.SpriteKind);
         _nameplate.Text = actor.DisplayName;
         // The local player's cyan ground ring identifies them without covering an adjacent NPC's name.
@@ -69,6 +86,9 @@ internal partial class FarmActorView : Node2D
         _ownActor = actor.IsOwnActor;
         QueueRedraw();
     }
+
+    private static Vector2 Project(FarmActorFrame actor) => actor.IsMultilevel
+        ? WorksiteCoordinates.Position(actor.Feet) : FarmCanvasCoordinates.Position(actor.Feet);
 
     public override void _Process(double delta)
     {

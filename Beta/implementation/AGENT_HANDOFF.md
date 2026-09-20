@@ -42,49 +42,29 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Live event-ordered intact settlement](p02/live-event-descent/README.md) is qualified for its stated
-functional scope, preserved at `e668cd7` on `codex/milestone-live-event-descent`. Source `8f19911` adds explicit fresh profile18, a direct root/V3 pending cursor and
-actual event work under unchanged legacy meanings. Follow-up `0783db8` removes duplicate full recovery
-in closed-save historical operators. The [architecture](../Runtime/docs/architecture/event-descent.md)
-and [historical reader](../Runtime/docs/architecture/persistence-and-history.md) describe the live contracts.
+[Playable local worksite](p02/playable-worksite/README.md) has its implementation and managed evidence:
+**951 Core + 528 Hosting/client cases passed**. Fresh profile18 content includes two genuinely funded
+projects, a natural contour under one existing generator, stairs/decks and three-unit excavation.
+Public geometry and contextual Mine/Climb offers connect to the existing Godot/session owners.
+The separate `--worksite` entry preserves farm saves. No Core source or simulation law changed.
+[Architecture](../Runtime/docs/architecture/local-worksite.md) describes the bounded interfaces.
 
-[Final evidence](p02/live-event-descent/qualification/verification-summary-final.json) retains **1,459
-distinct cases**: the prior 1,450-case full solution regression plus nine new cases among 33 final targeted
-tests. All existing Core/Hosting implementation sources remain unchanged after that full pass; three Host
-operators use the new reader. Actual qualification passes **83 Host operations and six external kills**,
-plus two other historical-operator controls with exact previous outputs. Slowest ordinary call: 17.694 seconds
-under the original 30-second deadline. All 564 application source pins, 390 architecture links, 22 frozen
-specifications, 28 new fixture files and the exact unrelated predecessor index are verified; 20 legacy fixture
-files were recreated byte-identically. The full all-systems verifier and rendered/device acceptance did not run.
+Independent native-source critique and actual failures corrected incompatible terrain-rule composition,
+missing player access witnesses, a post-settlement climb-out trap and two wheel choice-substitution risks.
+Original failing logs remain in the packet. Full managed qualification proves the real funded build,
+walk, rider/settlement, partial-mining restart and climb-out journey. The old rendered wheel/reopen passed.
+**Next dependency: qualify the new rendered four-process worksite journey** using its exact controls,
+partial saves, pending continuation, above/below presentation and final return/reopen; inspect captures
+and retain any failures. The native probe and client have rebuilt. No new worksite native/latency/art/device
+or full-phase acceptance is claimed yet. Demonstration material calibration is explicit.
 
-The [original timeout](p02/live-event-descent/qualification/host.json) remains preserved. Source inspection
-and [measurement](p02/live-event-descent/qualification/history-read-timing/README.md) established two complete
-replays for one closed-save historical query. The new reader keeps the same exclusive lease and complete
-validation in one replay, reducing cumulative allocations by roughly 50% for this fixture. Its remaining
-3.17 GB per replay and full-journal costs are unresolved scale concerns; no production latency pass is claimed.
-One bounded Fable publication review found no substantiated defect in its partial scope; native review
-covered the additive reader. Review economics and limits remain in the packet; no larger fleet is justified.
-
-The funded live fixture proves a common 256-subunit fall with one real excavation/source/time result. It
-does not prove an earned unequal live release. The prior read-only kernel proves separate 256/768 descents
-and stopped-material catching; those are different claims. No full phase or production gate is closed.
-
-**Next dependency:** build a playable two-level worksite using these established owners. Use an explicit
-fresh save/content entry, preserving all existing farm saves and openers. Real gathering/delivery funds
-construction; ordinary stairs allow travel above/below; earned mining changes the passage; removing a rated
-support visibly settles the intact member/rider. Add bounded terrain/physical-member projections to
-`LocalWorldView`, finite multilevel presentation and floor-aware targets to the existing wheel/offer flow.
-`LocalWorldSession` already supports climb/excavate/resume and NPC construction already follows stair routes.
-Do not expose raw authority/private source claims or make production depend on test fixtures. Prove native
-input, above/below readability, wrong-floor/stale refusal, focus handling and actual restart of partial work.
-Human clarity/art approval remains separate. This advances the planned P02 excavation/building integration;
-do not add another isolated fracture assessment as a prerequisite to the playable intact loop.
-
-Later unequal release needs owned geometry or explicit whole-member bond/failure semantics; a bearing is
-load transfer, not glue. Preserve complete outside collision/support, body condition, original backing and
-real terminal ore/custody/time loads. Harmful impacts/injuries, sub-member fracture/debris, longer flights,
-wet composition, generated rights, production scale/exports/devices, 1–4-player pacing and the full campaign
-remain open. Development continues on `codex/runtime-foundation`; the pure C# owner decision remains fixed.
+The prior [live event-ordered settlement](p02/live-event-descent/README.md) remains preserved at
+`e668cd7` on `codex/milestone-live-event-descent`: 1,459 distinct retained/new tests, 83 Host operations,
+six external kills and two historical controls. One-pass closed-save history keeps complete validation,
+with measured roughly50% cumulative-allocation reduction for that fixture; remaining3.17GB/replay and
+full-journal scaling remain open. Its original timeout and partial external review remain retained.
+Live common256-subunit fall and read-only unequal-trajectory assessment are distinct proofs. The owner’s
+pure-C# decision is fixed; no native kernel/IPC migration is active.
 
 Prior dependencies remain preserved:
 

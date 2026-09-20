@@ -49,6 +49,30 @@ internal sealed class FarmClientSession : IAsyncDisposable
             : FarmWorldAdmission.CreateEmbedded(seedText, playerName);
         SqliteWorldAuthority authority = FarmSaveOpener.Open(savePath, genesis, productionProfile, upgradeSourcePath,
             questProfile, gatheringUpgradeSourcePath, constructionProfile, productionUpgradeSourcePath);
+        return Attach(authority);
+    });
+
+    /// <summary>An explicit fresh-content entry; it never upgrades or opens a different farm profile.</summary>
+    internal static Task<FarmClientSession> OpenWorksiteAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+    {
+        WorldSnapshot genesis = WorksiteFarmAdmission.CreateEmbedded(seedText, playerName);
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        SqliteWorldAuthority authority = File.Exists(savePath)
+            ? SqliteWorldAuthority.OpenExisting(savePath) : SqliteWorldAuthority.CreateNew(savePath, genesis);
+        try
+        {
+            FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis);
+        }
+        catch
+        {
+            authority.Dispose();
+            throw;
+        }
+        return Attach(authority);
+    });
+
+    private static FarmClientSession Attach(SqliteWorldAuthority authority)
+    {
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;
@@ -57,7 +81,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
             ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
             var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
             EntityId wood = current.Gathering?.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Oak)
-                .Definition.YieldDefinition.DefinitionId ?? genesis.Inventory.Sources.Single().Definition.DefinitionId;
+                .Definition.YieldDefinition.DefinitionId ?? current.Inventory.Sources.Single().Definition.DefinitionId;
             EntityId? berries = current.Gathering?.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
                 .Definition.YieldDefinition.DefinitionId;
             var world = new LocalWorldSession(authority, player.ActorId, delivery);
@@ -68,7 +92,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
             authority.Dispose();
             throw;
         }
-    });
+    }
 
     /// <summary>Read-only: selecting targets, lots and quest operations from a snapshot changes nothing.</summary>
     internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view, FarmTarget? selectedTarget = null)

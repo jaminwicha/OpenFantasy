@@ -8,10 +8,16 @@ namespace OpenFantasy.Client;
 /// <summary>Builds an explicit owned request from the addressed public offer; rewards remain authority-owned.</summary>
 internal static class FarmQuestActions
 {
-    internal static DeliveryQuestIntent Request(LocalWorldView view)
+    /// <summary>Keep an accepted task first, then a new offer, then completed records in stable identity order.</summary>
+    internal static LocalQuestView? AddressedQuest(LocalWorldView view) => view.Quests
+        .Where(value => value.GiverActorId == view.Dialogue?.SpeakerActorId)
+        .OrderBy(value => value.Status == ActorQuestStatus.Completed ? 2 : value.Status is null ? 1 : 0)
+        .ThenBy(value => value.DefinitionId).FirstOrDefault();
+
+    internal static DeliveryQuestIntent Request(LocalWorldView view, LocalQuestView? selected = null)
     {
-        LocalQuestView quest = view.Quests.SingleOrDefault(value => value.GiverActorId == view.Dialogue?.SpeakerActorId)
-            ?? throw new InvalidOperationException("Speak with Wren about the orchard first.");
+        LocalQuestView quest = selected ?? AddressedQuest(view)
+            ?? throw new InvalidOperationException("Speak with Wren about available tasks first.");
         LocalProgressionView actor = view.Progression
             ?? throw new InvalidOperationException("This save does not have quest progression.");
         ulong giverRevision = view.Actors.Single(value => value.ActorId == quest.GiverActorId).PresenceRevision;
@@ -23,7 +29,7 @@ internal static class FarmQuestActions
         if (!quest.CanComplete)
         {
             throw new InvalidOperationException(quest.Status == ActorQuestStatus.Completed
-                ? "You have already delivered the orchard supplies." : "You need six available wood in your pack.");
+                ? $"You have already completed {quest.Title}." : $"You need {quest.RequiredQuantity} available wood in your pack.");
         }
         List<SourceLotSelection> selections = [];
         ulong remaining = quest.RequiredQuantity;

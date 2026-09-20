@@ -4,7 +4,7 @@ using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
 
-internal enum FarmTargetKind { Person, Harvestable }
+internal enum FarmTargetKind { Person, Harvestable, Excavation }
 
 /// <summary>A known selection. An absent position means it is no longer in the public view.</summary>
 internal sealed record FarmTarget(EntityId Id, string Name, FarmTargetKind Kind, SubunitPosition? Feet);
@@ -31,6 +31,9 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             .Select(actor => new FarmTarget(actor.ActorId, actor.DisplayName, FarmTargetKind.Person, actor.Feet))
             .Concat(view.GatheringNodes.Select(node =>
                 new FarmTarget(node.NodeId, node.DisplayName, FarmTargetKind.Harvestable, node.Feet)))
+            .Concat(view.Worksite?.ExcavationTargets.Select(site => new FarmTarget(site.SiteId,
+                "Worksite face", FarmTargetKind.Excavation,
+                site.Stance)) ?? [])
             .OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
         if (Selected is { } selected)
         {

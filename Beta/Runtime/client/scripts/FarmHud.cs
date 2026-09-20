@@ -118,9 +118,19 @@ internal sealed partial class FarmHud : CanvasLayer
         PresentOffer(FarmSemanticAction.Craft, "C", blockedByLayer: pending || paused || speaking);
         PresentOffer(FarmSemanticAction.CloseDialogue, "E", blockedByLayer: pending || paused || !speaking);
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
-        LocalConstructionView? project = view.Construction.FirstOrDefault();
+        LocalConstructionView? project = view.Construction.FirstOrDefault(value => !value.IsCompleted)
+            ?? view.Construction.FirstOrDefault();
         _project.Visible = project is not null;
         _project.Text = project is null ? "" : DescribeProject(view, project, paused);
+        if (view.Worksite is not null)
+        {
+            long elevation = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).Feet.Z;
+            _clock.Text += $" · Height {elevation / 256.0:0.##} m";
+            _project.Visible = true;
+            _project.Text = (view.IsResolvingConsequences ? "Finishing the work…"
+                : project is null ? "Ask Wren about worksite supplies." : _project.Text)
+                + "\nQ: choose worksite face · V: Mine / Climb · Walk on stairs";
+        }
         _dialogue.Visible = speaking;
         if (view.Dialogue is { } dialogue)
         {
@@ -178,7 +188,7 @@ internal sealed partial class FarmHud : CanvasLayer
 
     private static string DescribeSpeech(LocalWorldView view, LocalDialogueView dialogue, LocalConstructionView? project)
     {
-        LocalQuestView? quest = view.Quests.SingleOrDefault(value => value.GiverActorId == dialogue.SpeakerActorId);
+        LocalQuestView? quest = FarmQuestActions.AddressedQuest(view);
         if (quest is null)
         {
             return dialogue.SpeakerName + "\n" + dialogue.Text;
@@ -186,6 +196,7 @@ internal sealed partial class FarmHud : CanvasLayer
         string text = dialogue.SpeakerName + " · " + quest.Title + "\n";
         if (quest.Status == ActorQuestStatus.Completed)
         {
+            if (view.Worksite is not null) return text + "The supplies are set aside. Clear the work area so I can build.";
             return text + (project is not null && project.BuilderActorId == dialogue.SpeakerActorId
                 ? project.IsCompleted ? "A small guard for the first sapling. That's a start."
                     : "I've set the wood aside. Let me get to work when we're done talking."
@@ -197,6 +208,12 @@ internal sealed partial class FarmHud : CanvasLayer
 
     private static string DescribeProject(LocalWorldView view, LocalConstructionView project, bool paused)
     {
+        if (view.Worksite is not null)
+        {
+            return project.IsCompleted ? project.DisplayName + " built · Saved with the worksite."
+                : $"{project.DisplayName} · {project.CompletedWork * 100 / project.RequiredWork}% fitted"
+                    + (paused || view.HasReadingHold ? " · World waiting" : " · Supply Wren and keep the route clear.");
+        }
         if (project.IsCompleted)
         {
             return "Seedling guard built · Saved with the farm.";

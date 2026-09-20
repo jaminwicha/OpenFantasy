@@ -40,7 +40,8 @@ public partial class Bootstrap : Control
         // Only disposable probes may detach OS focus for controlled rendering. Fixture focus
         // still exercises the same readiness/cancellation policy; native OS binding is tested separately.
         bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
-            or ["--farm-action-offers", _, _, "--background-render"];
+            or ["--farm-action-offers", _, _, "--background-render"]
+            or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
         if (arguments.Contains("--background-render") && !backgroundProbe)
         {
             GD.PushError("Background rendering requires a supported disposable probe invocation.");
@@ -53,7 +54,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--farm-wheel", var wheelSave, var wheelReport, var wheelMode] && wheelMode is "fresh" or "reopen")
+        if (arguments is ["--worksite-probe", var worksiteSave, var worksiteReport, var worksiteMode]
+            && worksiteMode is "fresh" or "build" or "mine" or "reopen")
+        {
+            if (File.Exists(worksiteSave) == (worksiteMode == "fresh"))
+            {
+                GD.PushError("The worksite probe requires a fresh path or its exact retained previous stage.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { WorksiteProfile = true, SavePathOverride = worksiteSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new WorksitePlayProbe(game, worksiteReport, worksiteMode));
+        }
+        else if (arguments is ["--farm-wheel", var wheelSave, var wheelReport, var wheelMode] && wheelMode is "fresh" or "reopen")
         {
             if (File.Exists(wheelSave) != (wheelMode == "reopen"))
             {
@@ -182,6 +197,10 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else if (arguments is ["--worksite"])
+        {
+            AddChild(new FarmGame { WorksiteProfile = true });
         }
         else
         {

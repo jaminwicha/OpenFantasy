@@ -3,6 +3,7 @@ using System.Text;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client.Presentation;
 
@@ -24,7 +25,8 @@ public sealed record FarmActorFrame
 {
     private static readonly UTF8Encoding _strictUtf8 = new(false, true);
 
-    public FarmActorFrame(EntityId actorId, string displayName, SubunitPosition feet, bool isOwnActor, FarmSpriteKind spriteKind)
+    public FarmActorFrame(EntityId actorId, string displayName, SubunitPosition feet, bool isOwnActor, FarmSpriteKind spriteKind,
+        bool multilevel = false)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(displayName);
         if (displayName.Length > 128 || _strictUtf8.GetByteCount(displayName) > 128
@@ -32,12 +34,20 @@ public sealed record FarmActorFrame
         {
             throw new ArgumentException("The actor's public presentation fields exceed this view's profile.");
         }
-        FarmCanvasCoordinates.Validate(feet);
+        if (multilevel)
+        {
+            WorksiteCoordinates.Validate(feet);
+        }
+        else
+        {
+            FarmCanvasCoordinates.Validate(feet);
+        }
         ActorId = actorId;
         DisplayName = displayName;
         Feet = feet;
         IsOwnActor = isOwnActor;
         SpriteKind = spriteKind;
+        IsMultilevel = multilevel;
     }
 
     public EntityId ActorId { get; }
@@ -45,6 +55,7 @@ public sealed record FarmActorFrame
     public SubunitPosition Feet { get; }
     public bool IsOwnActor { get; }
     public FarmSpriteKind SpriteKind { get; }
+    public bool IsMultilevel { get; }
 }
 
 /// <summary>A copied public projection. Its construction does not authorize observation or expose a host snapshot.</summary>
@@ -53,13 +64,18 @@ public sealed class FarmCanvasFrame
     public const int MaximumActors = 64;
 
     public FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors,
-        IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null, IEnumerable<FarmStructureFrame>? structures = null)
+        IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null, IEnumerable<FarmStructureFrame>? structures = null,
+        LocalWorksiteView? worksite = null)
     {
         ArgumentNullException.ThrowIfNull(actors);
         var selected = new SortedDictionary<EntityId, FarmActorFrame>();
         foreach (FarmActorFrame actor in actors)
         {
             ArgumentNullException.ThrowIfNull(actor);
+            if (actor.IsMultilevel != (worksite is not null))
+            {
+                throw new ArgumentException("Actor projection mode must match the frame's explicit worksite mode.", nameof(actors));
+            }
             if (selected.Count == MaximumActors || !selected.TryAdd(actor.ActorId, actor))
             {
                 throw new ArgumentException("A farm view requires unique visible actor identities within its bound.", nameof(actors));
@@ -99,10 +115,12 @@ public sealed class FarmCanvasFrame
             }
         }
         Structures = Array.AsReadOnly(installed.Values.ToArray());
+        Worksite = worksite;
     }
 
     public WorldInstant Calendar { get; }
     public ReadOnlyCollection<FarmActorFrame> Actors { get; }
     public ReadOnlyCollection<FarmGatherNodeFrame> GatheringNodes { get; }
     public ReadOnlyCollection<FarmStructureFrame> Structures { get; }
+    public LocalWorksiteView? Worksite { get; }
 }
