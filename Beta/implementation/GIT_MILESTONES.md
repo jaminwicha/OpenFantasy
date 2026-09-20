@@ -51,6 +51,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-construction-physical` | `159e431` | Fresh dry profile13 retains complete physical member lifecycle independently of fabrication, with conserved installed material and atomic completion/identity publication. 1,274 tests, 26 new-profile Host calls/two kills, 20 legacy calls/two kills, headless foundation/farm and seven identical recreated files. [Evidence](p02/construction-physical/README.md). Exact-component support and pre-work refusal are qualified; live collapse, debris, actor falling, universal load admission, production performance/art/devices and full gates remain open. |
 | `codex/milestone-structural-policy-motion` | `ca724fb` | Complete canonical authored load policy, inactive-template topology validation and exact whole-body vertical first-contact queries. 1,321 managed tests, 47 new, six new/five prior fixture files recreated exactly, bounded native critique and 300 reference links. [Evidence](p02/collapse-motion/README.md). Read-only dependencies: no installed world policy, live collapse/impact/debris, pending continuation, new native/crash campaign, performance/art/devices or full-gate closure. |
 | `codex/milestone-structural-policy-admission` | `c6b032c` | Fresh profile14 durable full policy, identity ownership and stable complete local action/movement gates; builder-carried stock/byproduct accounting conserves mass without double-counting installed backing. 1,334 tests, new17/two-kill and prior26/two-kill Host controls, headless foundation/farm and25 identical fixture files. [Evidence](p02/structural-policy-admission/README.md). Terminal refusals only: no pending/live collapse, impacts/debris, production performance/art/devices or full-gate closure. |
+| `codex/milestone-structural-settlement` | `92dd90a` | Fresh profile15 actual atomic excavation with one intact assembly/rider descent, complete swept collision and retained backing/foundation identities. 1,350 tests, new17+legacy5 ordinary Host calls/two kills, prior17/two-kill control, headless foundation/farm and14 exact old fixtures. [Evidence](p02/structural-settlement/README.md). Explicit harmless one-cell calibration; pending continuation, harmful impact/fracture, multiple-assembly closure, wet composition, production performance/art/devices and full gates remain open. |
 
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
@@ -191,3 +192,11 @@ runtime policy authority, carried-project mass correction, timeless references a
 A terminal overload refusal creates no consequence job; full coupled collapse remains open. Development
 stays on `codex/runtime-foundation`; earlier markers, frozen specifications and the exact unrelated predecessor
 index are preserved. No checkout switch, force move, push, merge or full-phase closure accompanies this marker.
+
+The structural-settlement marker preserves `92dd90a342f7a1fb887540fab36ebfb53d49db89`, including actual
+funded member/rider motion, conserved source/material ownership, current-pose load binding, timeless
+reference and crash/retry/history qualification. The original failed compile/fixture/probe attempts remain
+retained alongside corrected passing checks. This bounded atomic interpretation does not close durable
+pending-work or broader collapse gates. Development remains on `codex/runtime-foundation`; previous
+markers, all frozen designs and the exact unrelated staged predecessor work remain intact. No checkout
+switch, force move, push, merge or full-phase closure accompanies this checkpoint.
