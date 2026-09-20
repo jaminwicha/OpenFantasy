@@ -1,0 +1,68 @@
+{
+  "status": "passed for the stated functional checkpoint; full phase/production gates remain open",
+  "scope": "Fresh profile18 durable event-ordered intact settlement; one-cell funded fixture proves common256 drop, not unequal live drops",
+  "implementation_commits": [
+    "8f19911dd1af47809dc7e9c9403e681489af8c58",
+    "0783db82fa58d7542750819d52a5e5b3e5dc598b"
+  ],
+  "build": "build-history-reader.log",
+  "build_errors": 0,
+  "build_warnings": 0,
+  "managed_prior_full_regression": [
+    {
+      "file": "Beta/implementation/p02/live-event-descent/qualification/regression/_mac_2026-09-19_23_44_03_net8.0.trx",
+      "passed": 951,
+      "failed": 0,
+      "total": 951,
+      "executed": 951,
+      "times": {
+        "creation": "2026-09-19T23:44:03.7741820-05:00",
+        "queuing": "2026-09-19T23:44:03.7741820-05:00",
+        "start": "2026-09-19T23:44:02.2184180-05:00",
+        "finish": "2026-09-19T23:44:17.1996800-05:00"
+      }
+    },
+    {
+      "file": "Beta/implementation/p02/live-event-descent/qualification/regression/_mac_2026-09-19_23_44_19_net8.0.trx",
+      "passed": 499,
+      "failed": 0,
+      "total": 499,
+      "executed": 499,
+      "times": {
+        "creation": "2026-09-19T23:44:19.4311170-05:00",
+        "queuing": "2026-09-19T23:44:19.4311170-05:00",
+        "start": "2026-09-19T23:44:17.7152880-05:00",
+        "finish": "2026-09-19T23:51:23.5650370-05:00"
+      }
+    }
+  ],
+  "managed_final_targeted": "history-reader-verification.json",
+  "total_distinct_retained_and_new": 1459,
+  "new_reader_cases": 9,
+  "final_targeted_cases": 33,
+  "cadence": "Original full suite 1450 retained; 33 targeted final-binary cases include nine new. Existing Core/Hosting implementations unchanged after the full suite; new reader and three Host routes separately qualified.",
+  "host_report": "host-after-reader.json",
+  "ordinary_host_calls": 83,
+  "actual_process_kills": 6,
+  "maximum_ordinary_call_seconds": 17.693901458289474,
+  "unchanged_ordinary_deadline_seconds": 30,
+  "other_operators": "other-history-operators.json",
+  "other_operator_calls": 2,
+  "original_failure_retained": "host.json",
+  "first_same_command_diagnostic_retained": "history-deadline-diagnostic.json",
+  "performance_measurement": "history-read-timing/summary.json",
+  "performance_interpretation": "Duplicate verified replay removed; about 50% less cumulative allocation for this diagnostic. Per-replay costs and production performance remain unqualified.",
+  "source_pins": "history-reader-source-sha256.json",
+  "preservation": "preservation-final.json",
+  "review": "review-dispositions.md",
+  "reader_review": "history-read-timing/README.md",
+  "not_run_or_unqualified": [
+    "Full all-systems verifier",
+    "A second full solution regression after the additive reader",
+    "Rendered/native worksite presentation, art, audio or human playtest",
+    "Device/export and1\u20134player acceptance",
+    "Unequal live release, harmful impact/injury, fracture/debris or wet composition",
+    "Production throughput/latency or maximum catalogs"
+  ],
+  "next": "Native two-level worksite binding through existing construction, stairs, mining, wheel/session owners; preserve existing farm saves."
+}

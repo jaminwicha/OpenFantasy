@@ -1,0 +1,67 @@
+{
+  "baseline_commit": "ec41604d0104c93c3bbf257314730537b54ee3ef",
+  "interpretation": "One full verified replay replaces two for closed-save historical operators; live authority and replay invariants unchanged",
+  "configuration": "Debug",
+  "iterations_per_mode": 3,
+  "requested_revision": 156,
+  "verified_source_head": 166,
+  "canonical_state_and_head_pins_identical": true,
+  "fixture_sha256": "f73fa3f119960a8d46b1655fd6df2013557e01486e23d9d4ce9fc4c65dec64bc",
+  "fixture_and_copies_unchanged": true,
+  "baseline_total_allocation_bytes": [
+    6345190296,
+    6342824976,
+    6342847808
+  ],
+  "closed_total_allocation_bytes": [
+    3176225144,
+    3171376728,
+    3171364384
+  ],
+  "allocation_reduction_fractions": [
+    0.49942791376922324,
+    0.5000056378664295,
+    0.5000093837975941
+  ],
+  "baseline_total_cpu_ms": [
+    13826.632000000001,
+    12200.307,
+    12548.546999999999
+  ],
+  "closed_total_cpu_ms": [
+    5810.799,
+    4134.692,
+    4201.69
+  ],
+  "baseline_total_wall_ms": [
+    29440.6771,
+    20407.7062,
+    14960.2588
+  ],
+  "closed_total_wall_ms": [
+    4922.019,
+    3972.2405,
+    4045.8902
+  ],
+  "caveats": [
+    "Cumulative allocation is not resident memory",
+    "Sequential Debug measurements on a shared machine are not a production speedup guarantee",
+    "Wall-time variation does not establish the cause of the retained first timeout",
+    "Full per-replay allocation remains about3.17GB; production scale remains unqualified",
+    "No Core implementation, byte or validation semantics changed"
+  ],
+  "harness_source_sha256": {
+    "Program.cs": "ee899bf62e9c14a76dafc4898b04d65141d7c5b3c996054e309ba390f25a2437",
+    "TimingProbe.csproj": "0358d4721330fa7a602da12c92863c96abb9cd548e5d74f887ff4ff88c568fcf"
+  },
+  "machine": {
+    "architecture": "arm64",
+    "os": "Darwin",
+    "os_version": "15.6.1",
+    "sdk": "10.0.401",
+    "host_target": "net10.0",
+    "core_hosting_target": "net8.0",
+    "shared_machine": true
+  },
+  "implementation_commit": "0783db82fa58d7542750819d52a5e5b3e5dc598b"
+}

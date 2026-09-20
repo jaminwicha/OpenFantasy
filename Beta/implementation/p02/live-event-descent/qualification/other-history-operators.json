@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "scope": "Actual calls through both other closed-save historical operators, exact prior output and unchanged save bytes",
+  "timeout_seconds": 30,
+  "runs": [
+    {
+      "name": "descent",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-construction-descent",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "154",
+        "737570706f7274730000000000000004"
+      ],
+      "elapsed_seconds": 4.7594596249982715,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"construction-descent-assessment-v1\",\"PublicationAuthority\":false,\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":154,\"SourceHeadHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"RecordedRevision\":154,\"StateHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"SiteId\":\"737570706f7274730000000000000004\",\"InputPin\":\"a6b782438c142e6cc7f0c6b9018a751f7309e001bfd04fec7efb35f77fa6794f\",\"PolicyHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"SettlementPolicyHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"CoupledPolicyHash\":\"f3feefb04f185f66087ffaf019b30090225ee3a288fb0dda6359b59de884b215\",\"CompletedWorkUnits\":11,\"MaximumTotalWorkUnits\":28,\"IsComplete\":true,\"IsFailed\":false,\"FailureReason\":null,\"Events\":[{\"DropSubunits\":256,\"BodyIds\":[\"1325c4ff7eee3f43b504100006b19723\",\"49354ca83f251b3ce9d363158e0786a4\",\"c33b714d90c649a89f55daf3b5b13a1d\"]}],\"ImpactDemands\":[{\"BodyId\":\"1325c4ff7eee3f43b504100006b19723\",\"IsActor\":false,\"DropSubunits\":256,\"MassMilligrams\":270000,\"EnergyNumeratorPicojoules\":\"677376000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true},{\"BodyId\":\"49354ca83f251b3ce9d363158e0786a4\",\"IsActor\":true,\"DropSubunits\":256,\"MassMilligrams\":71060000,\"EnergyNumeratorPicojoules\":\"178275328000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true},{\"BodyId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"IsActor\":false,\"DropSubunits\":256,\"MassMilligrams\":270000,\"EnergyNumeratorPicojoules\":\"677376000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true}],\"CandidatePhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"CandidateActors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"Feet\":{\"X\":27264,\"Y\":83328,\"Z\":320,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"Revision\":42,\"ConditionHash\":\"84a2c5796adbdab5996ab1497a5f8aa1b4fe590450248ed67fc168034aa19abf\"},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"Feet\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"Revision\":105,\"ConditionHash\":\"1281a14049a24bfb8338627d318c900d333a4af5c69fa98d53c5b1c872c7f14b\"}]}\n",
+      "stderr": "",
+      "stdout_exactly_matches_previous": true,
+      "database_sha256_before": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60",
+      "database_sha256_after": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60"
+    },
+    {
+      "name": "reservoir",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-reservoir-boundaries",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/contained-world.sqlite",
+        "1",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/reservoir-boundaries/qualification/fixture/seal-policy.bin"
+      ],
+      "elapsed_seconds": 0.4082278343848884,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"reservoir-boundary-assessment-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":1,\"SourceHeadHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"RecordedRevision\":1,\"StateHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"ProfileVersion\":8,\"WorldHash\":\"1113a9aeff47f27639431c4f7dc98410725f1ccce965bfce30335783aa835ea1\",\"ReservoirHash\":\"40ff2ab1457db63b47ccf14fda49ab6da70c9ddacca55485442e4631a03659c0\",\"PolicyHash\":\"32d69f92a0f5a3afbdc1c02546c7f842c2dfc67b6ef26c6db1f6258c95078a44\",\"Completed\":true,\"IsContained\":true,\"Results\":[{\"ReservoirId\":\"776f726c64776174000000000000001e\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]},{\"ReservoirId\":\"776f726c64776174000000000000001f\",\"Completed\":true,\"IsContained\":true,\"InteriorCells\":2,\"BoundaryFaces\":9,\"TerrainSealedFaces\":9,\"ConstructedSealedFaces\":0,\"Failures\":{},\"Samples\":[]}]}\n",
+      "stderr": "",
+      "stdout_exactly_matches_previous": true,
+      "database_sha256_before": "a330c3ae5c518b2b0be52b1bfac8bb38c3f65572ffb038940644d0b5f56a24b9",
+      "database_sha256_after": "a330c3ae5c518b2b0be52b1bfac8bb38c3f65572ffb038940644d0b5f56a24b9"
+    }
+  ]
+}

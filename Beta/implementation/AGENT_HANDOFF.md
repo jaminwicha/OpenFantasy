@@ -42,59 +42,57 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Work in progress: profile18 explicitly selects event-ordered intact settlement, with a new root and
-pending cursor and unchanged legacy interpretations. Implementation `8f19911` builds cleanly and passes
-1,450 managed tests (951 Core + 499 Hosting); one bounded Fable publication review found no substantiated
-defect in its partial inspected scope. The actual Host campaign failed its unchanged 30-second deadline on historical revision 156 after
-19 completed calls; its six external kill cases were not reached. One exact-command diagnostic then
-passed in 15.99 seconds, without establishing the cause or qualifying the failed campaign. Twenty regenerated
-legacy fixture files remain byte-identical. A one-cell excavation under the retained fully supported
-stack produces a common drop, so that live fixture cannot substantiate unequal falls. Keep broader
-trigger/geometry acceptance separate. See the [qualification packet](p02/live-event-descent/README.md), preserved with the failed probe in `8b484cc`.
+[Live event-ordered intact settlement](p02/live-event-descent/README.md) is qualified for its stated
+functional scope. Source `8f19911` adds explicit fresh profile18, a direct root/V3 pending cursor and
+actual event work under unchanged legacy meanings. Follow-up `0783db8` removes duplicate full recovery
+in closed-save historical operators. The [architecture](../Runtime/docs/architecture/event-descent.md)
+and [historical reader](../Runtime/docs/architecture/persistence-and-history.md) describe the live contracts.
 
-[Event-ordered descent assessment](p02/event-descent/README.md) is qualified; implementation `8279268`,
-code/evidence `25da978`, preserved on `codex/milestone-event-descent-assessment`. The
-[architecture](../Runtime/docs/architecture/event-descent.md) describes immutable event work, different
-landing distances, stopped-material reinsertion, complete-scene world binding and exact impact demand.
-This is a collision/assessment prerequisite. Live profile17 remains the qualified common-trajectory owner;
-no world/journal/pending-work interpretation, default gameplay or existing simulation source changed.
+[Final evidence](p02/live-event-descent/qualification/verification-summary-final.json) retains **1,459
+distinct cases**: the prior 1,450-case full solution regression plus nine new cases among 33 final targeted
+tests. All existing Core/Hosting implementation sources remain unchanged after that full pass; three Host
+operators use the new reader. Actual qualification passes **83 Host operations and six external kills**,
+plus two other historical-operator controls with exact previous outputs. Slowest ordinary call: 17.694 seconds
+under the original 30-second deadline. All 564 application source pins, 390 architecture links, 22 frozen
+specifications, 28 new fixture files and the exact unrelated predecessor index are verified; 20 legacy fixture
+files were recreated byte-identically. The full all-systems verifier and rendered/device acceptance did not run.
 
-[Evidence](p02/event-descent/qualification/verification-summary.json): **1,435 distinct passing tests
-(942 Core + 493 Hosting), 26 new**, eight actual read-only Host calls and unchanged complete save/fixture
-bytes. Core scenes prove 256/768 independent drops and a higher slab/rider caught after 704 by material
-that stopped after 256. The actual funded-world assessment matches the original three-member/rider fall
-in 11 geometric units, conserving backing, body condition and real mass without source/time publication.
-All 557 source pins, 380 architecture links, 22 frozen documents and the exact unrelated predecessor index
-pass. Maximum Host call 7.35 seconds under the same 30-second deadline; no production latency is claimed.
+The [original timeout](p02/live-event-descent/qualification/host.json) remains preserved. Source inspection
+and [measurement](p02/live-event-descent/qualification/history-read-timing/README.md) established two complete
+replays for one closed-save historical query. The new reader keeps the same exclusive lease and complete
+validation in one replay, reducing cumulative allocations by roughly 50% for this fixture. Its remaining
+3.17 GB per replay and full-journal costs are unresolved scale concerns; no production latency pass is claimed.
+One bounded Fable publication review found no substantiated defect in its partial scope; native review
+covered the additive reader. Review economics and limits remain in the packet; no larger fleet is justified.
 
-One bounded Fable review took 154.773 seconds and $1.1310065 API-equivalent, finding no substantiated
-collision/work-bound defect. Its two hypotheses were resolved by a constructor invariant and a new
-paired head-contact regression. [Coverage and economics](p02/event-descent/qualification/review-dispositions.md)
-remain partial; broader review fleets still lack demonstrated value. The full solution regression passed;
-a final Core-only repeat covered the two added tests with all application pins unchanged. The actual new
-Host probe ran; the full all-systems verifier and rendered/device acceptance did not.
+The funded live fixture proves a common 256-subunit fall with one real excavation/source/time result. It
+does not prove an earned unequal live release. The prior read-only kernel proves separate 256/768 descents
+and stopped-material catching; those are different claims. No full phase or production gate is closed.
 
-**Next dependency:** finish qualification of implementation `8f19911`, beginning with the retained
-historical-read deadline failure and the still-unrun external crash cases. Keep the same thresholds;
-measure replay/validation costs without assuming a language defect. No integration milestone is accepted.
-Then continue the durable intact event trajectory work under the owned harmless-impact limits. The bounded source review on 2026-09-19 puts this integration before
-joint separation: the current contact, load and spatial owners require intact assemblies, and a bearing
-describes load transfer rather than a mechanical bond. Do not add another isolated fracture assessment
-as a prerequisite to using the existing intact kernel. Preserve complete collision/support, body condition,
-command/time and original source/backing; revalidate terminal loads after actual ore/custody/time changes.
-Prove journal/outcome/root capacity for the larger event-work bound before accepting durable work; tiny
-continuation slices cannot bypass existing limits. Retain exact legacy bytes and test restart, interruption,
-retry and the original command's sole terminal receipt in a real funded-world journey.
+**Next dependency:** build a playable two-level worksite using these established owners. Use an explicit
+fresh save/content entry, preserving all existing farm saves and openers. Real gathering/delivery funds
+construction; ordinary stairs allow travel above/below; earned mining changes the passage; removing a rated
+support visibly settles the intact member/rider. Add bounded terrain/physical-member projections to
+`LocalWorldView`, finite multilevel presentation and floor-aware targets to the existing wheel/offer flow.
+`LocalWorldSession` already supports climb/excavate/resume and NPC construction already follows stair routes.
+Do not expose raw authority/private source claims or make production depend on test fixtures. Prove native
+input, above/below readability, wrong-floor/stale refusal, focus handling and actual restart of partial work.
+Human clarity/art approval remains separate. This advances the planned P02 excavation/building integration;
+do not add another isolated fracture assessment as a prerequisite to the playable intact loop.
 
-Owned contact response and whole-member joint separation follow with explicit bond/failure semantics and
-conserved located material. Member mass shares and transmitted load are not salvage rights; impact energy
-is not an injury/toughness policy. Sub-member fracture, harmful injuries, longer flight, wet composition,
-generated extraction rights and multi-floor presentation remain open, as do production scale/exports/devices,
-1–4-player pacing and the whole campaign. No full phase gate is closed.
-Development remains on `codex/runtime-foundation`.
+Later unequal release needs owned geometry or explicit whole-member bond/failure semantics; a bearing is
+load transfer, not glue. Preserve complete outside collision/support, body condition, original backing and
+real terminal ore/custody/time loads. Harmful impacts/injuries, sub-member fracture/debris, longer flights,
+wet composition, generated rights, production scale/exports/devices, 1–4-player pacing and the full campaign
+remain open. Development continues on `codex/runtime-foundation`; the pure C# owner decision remains fixed.
 
 Prior dependencies remain preserved:
 
+- [Event-ordered descent assessment](p02/event-descent/README.md), `25da978`, milestone
+  `codex/milestone-event-descent-assessment`: complete-world read-only event trajectories, independent
+  256/768 drops and a higher member/rider caught after 704 by material stopped after 256; 1,435 tests and eight
+  actual Host inspections. No live interpretation changed at that historical checkpoint; partial bounded
+  Fable review and all source/save preservation evidence remain in its packet.
 - [Live coupled settlement](p02/coupled-settlement/README.md), `463509d`, milestone
   `codex/milestone-coupled-settlement`: fresh profile17 owned foreign support, exact bearing-based group,
   common harmless motion and dynamic durable reservations; 1,409 tests, 59 Host calls/six kills, headless

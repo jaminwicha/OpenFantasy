@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "current_application_source_pins": 564,
+  "changed_existing_files_since_full_regression": [
+    "Beta/Runtime/src/OpenFantasy.Host/ConstructionDescentOperator.cs",
+    "Beta/Runtime/src/OpenFantasy.Host/RecordedWorldOperator.cs",
+    "Beta/Runtime/src/OpenFantasy.Host/ReservoirBoundaryOperator.cs"
+  ],
+  "new_application_file": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/RecordedWorldReader.cs",
+  "all_existing_core_and_hosting_implementation_sources_unchanged": true,
+  "frozen_documents": 22,
+  "architecture_local_links": 390,
+  "broken_links": [],
+  "new_fixture_files_unchanged": 28,
+  "earlier_legacy_fixture_proof": "legacy-fixture-recreation.json",
+  "unrelated_predecessor_index_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

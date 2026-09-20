@@ -1,10 +1,17 @@
 # Live event-ordered intact settlement
 
-**Partial qualification:** implementation `8f19911` builds cleanly and passes **1,450 distinct tests
-(951 Core + 499 Hosting), with no failures or skips**. The [actual Host campaign](qualification/host.json)
-failed the unchanged 30-second deadline while reading recorded revision 156 after 19 completed calls.
-Its six external crash cases were not reached. No integration milestone or full phase gate is accepted.
-The [verification summary](qualification/verification-summary.json) records the exact scope.
+**Qualified scope:** fresh profile18 live intact event settlement, with explicit saved interpretation,
+actual pending work, conserved material/occupants and exactly-once terminal publication. Implementation
+`8f19911` and closed-save reader correction `0783db8` are covered by the retained **1,450-case full
+regression plus nine new reader cases**; 33 targeted tests pass on final binaries. The corrected
+[actual Host campaign](qualification/host-after-reader.json) passes **83 ordinary operations and six
+external commit-boundary kills**, with unchanged 30-second deadlines. Two additional historical operators
+reproduce prior outputs exactly. The [final summary](qualification/verification-summary-final.json) separates
+this checkpoint from production, visual and full-phase acceptance.
+
+The [original failed campaign](qualification/host.json) and its same-command diagnostic remain preserved.
+That timeout motivated the demonstrated duplicate-replay correction; its complete environmental cause is
+not established. This checkpoint proves a real common 256-subunit fall, not an earned unequal live release.
 
 ## Implemented boundary
 
@@ -51,20 +58,23 @@ this fixture would bypass the release and material owners that still need implem
 [Full regression](qualification/regression.log) and [TRX results](qualification/regression/) retain the
 managed outcomes. Focused [Core](qualification/core-focused.log) and [Hosting](qualification/hosting-focused.log)
 runs precede that complete pass. These establish managed admission, continuation and recovery behavior;
-they do not substitute for the incomplete external process-kill campaign.
+they do not substitute for the separately completed external process-kill campaign.
 
 The shared Host probe selects `--profile 18` explicitly and independently checks the root, V3 cursors,
 fabrication/source backing, unchanged pending state, journal/identity/outcome ledgers, retry and exact
 history. Its six planned external kills cover before/after trigger, intermediate continuation and terminal
 publication. Existing thresholds remain 30 seconds per ordinary command and commit-barrier signal wait,
-with 10 seconds for post-kill cleanup. The campaign attempted 20 ordinary calls; 19 completed, with a
-maximum of 26.355 seconds, before the historical-read timeout. No planned external kill was reached.
+with 10 seconds for post-kill cleanup. The original campaign attempted 20 ordinary calls; 19 completed, with a
+maximum of 26.355 seconds, before the historical-read timeout. No planned external kill was reached in
+that attempt. After the reader correction, the complete campaign passes 83 ordinary calls and all six
+kills; its slowest ordinary call is 17.694 seconds. The commands, assertions, fixture geometry and original
+deadlines are unchanged.
 
 A single [same-command diagnostic](qualification/history-deadline-diagnostic.json) completed the failed
 revision query in 15.991 seconds (14.234 user CPU plus 0.851 system CPU seconds). No heavy test/build run
 from this task overlapped either attempt. The later pass neither proves contention caused the timeout
-nor qualifies the failed full campaign. Preserve the original report/database and investigate the actual
-replay/validation cost before closing this integration. These Debug operator timings are not a production
+nor qualifies the failed full campaign by itself. The subsequent source correction and complete rerun
+provide the final qualification evidence; the original report/database stay intact. These Debug operator timings are not a production
 performance benchmark or evidence that C++ would outperform C#.
 
 [Preservation checks](qualification/preservation.json) verify 563 application source pins, 388 architecture
@@ -81,11 +91,39 @@ included a small auxiliary-model charge. This is neither measured subscription s
 acceptance. The dispositions retain the resolved sizing hypothesis and real reservation/replay scale costs;
 they do not justify a larger review fleet.
 
+## Historical-read cost correction
+
+Implementation `0783db8` adds the closed-save `RecordedWorldReader` and routes the three historical
+operators through one complete verified replay. The previous operator opened an authority with full
+recovery and immediately replayed the same trace again for its requested state. Existing live-authority
+reads, database ownership and the complete verifier remain unchanged. The selected state is returned only
+after all later history, ledgers, checkpoints and the final head agree.
+
+[Measurements](qualification/history-read-timing/README.md) retain three diagnostic runs per path,
+exact identical state/head pins and approximately 50% fewer cumulative allocated bytes (6.34 GB to 3.17 GB).
+These are Debug observations on a shared machine, not peak memory or production throughput. The original
+timeout remains unexplained in full; one replay still allocates heavily. The final solution build is clean
+and [33 targeted tests](qualification/history-reader-tests.log) pass, including nine new reader cases.
+The complete external Host campaign passes with unchanged commands, geometry and 30-second deadlines.
+[Two additional actual operator calls](qualification/other-history-operators.json) exercise historical
+descent and reservoir-boundary inspection, returning exactly the previous output and unchanged database
+bytes. All three changed Host routes therefore have actual process evidence. Per-replay allocation,
+full-journal cost and representative production workloads still require substantial further work.
+
 ## Next dependencies and open gates
 
-First resolve the retained Host deadline and complete the remaining actual history/crash campaign.
-The next gameplay proof then needs owned release geometry that can produce unequal live trajectories, with
-earned costs, complete outside obstacles and conserved material. Retained whole-member mechanical bonds
+The next playable integration is an
+explicit fresh two-level worksite: real gathering/delivery funds construction, ordinary stairs support
+walking above/below, earned excavation changes the passage, and a rated support removal visibly settles
+an intact member/rider by the qualified harmless distance. Existing farm saves/openers remain intact;
+production content must not depend on test fixtures. Reuse the session, NPC route and contextual wheel
+owners. Add bounded terrain/physical-member projections, floor-aware targeting and clear occlusion;
+`FarmCanvasCoordinates` currently accepts only the original fixed height. Native interaction, actual
+restart, visual readability and human review remain acceptance requirements. This is a partial P02
+binding and introduces no new phase closure or claim of approved production art.
+
+A subsequent gameplay proof needs owned release geometry that can produce unequal live trajectories,
+with earned costs, complete outside obstacles and conserved material. Retained whole-member mechanical bonds
 must remain distinct from load-transfer bearings: vertical contact is not glue, and separating a bond does
 not create salvage rights. Fracture, located debris, harmful impact/injury, long flights, liquid displacement
 and generated extraction ownership remain separate contracts.

@@ -1,0 +1,75 @@
+{
+  "mode": "split",
+  "configuration": "Debug",
+  "results": [
+    {
+      "attempt": 0,
+      "open": {
+        "WallMilliseconds": 17396.4182,
+        "CpuMilliseconds": 7636.59,
+        "AllocatedBytes": 3173535312,
+        "Gen0": 521,
+        "Gen1": 386,
+        "Gen2": 257
+      },
+      "read": {
+        "WallMilliseconds": 12044.2589,
+        "CpuMilliseconds": 6190.042,
+        "AllocatedBytes": 3171654984,
+        "Gen0": 481,
+        "Gen1": 341,
+        "Gen2": 215
+      },
+      "SourceHeadRevision": 166,
+      "SourceHeadHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+      "Revision": 156,
+      "StateHash": "6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8"
+    },
+    {
+      "attempt": 1,
+      "open": {
+        "WallMilliseconds": 10365.2339,
+        "CpuMilliseconds": 6100.067,
+        "AllocatedBytes": 3171436840,
+        "Gen0": 415,
+        "Gen1": 270,
+        "Gen2": 148
+      },
+      "read": {
+        "WallMilliseconds": 10042.4723,
+        "CpuMilliseconds": 6100.24,
+        "AllocatedBytes": 3171388136,
+        "Gen0": 415,
+        "Gen1": 276,
+        "Gen2": 148
+      },
+      "SourceHeadRevision": 166,
+      "SourceHeadHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+      "Revision": 156,
+      "StateHash": "6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8"
+    },
+    {
+      "attempt": 2,
+      "open": {
+        "WallMilliseconds": 8136.8696,
+        "CpuMilliseconds": 6314.53,
+        "AllocatedBytes": 3171433152,
+        "Gen0": 412,
+        "Gen1": 266,
+        "Gen2": 146
+      },
+      "read": {
+        "WallMilliseconds": 6823.3892,
+        "CpuMilliseconds": 6234.017,
+        "AllocatedBytes": 3171414656,
+        "Gen0": 414,
+        "Gen1": 272,
+        "Gen2": 147
+      },
+      "SourceHeadRevision": 166,
+      "SourceHeadHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+      "Revision": 156,
+      "StateHash": "6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8"
+    }
+  ]
+}

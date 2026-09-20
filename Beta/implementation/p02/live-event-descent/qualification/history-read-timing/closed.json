@@ -1,0 +1,54 @@
+{
+  "mode": "closed",
+  "configuration": "Debug",
+  "results": [
+    {
+      "attempt": 0,
+      "open": null,
+      "read": {
+        "WallMilliseconds": 4922.019,
+        "CpuMilliseconds": 5810.799,
+        "AllocatedBytes": 3176225144,
+        "Gen0": 519,
+        "Gen1": 383,
+        "Gen2": 254
+      },
+      "SourceHeadRevision": 166,
+      "SourceHeadHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+      "Revision": 156,
+      "StateHash": "6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8"
+    },
+    {
+      "attempt": 1,
+      "open": null,
+      "read": {
+        "WallMilliseconds": 3972.2405,
+        "CpuMilliseconds": 4134.692,
+        "AllocatedBytes": 3171376728,
+        "Gen0": 488,
+        "Gen1": 347,
+        "Gen2": 221
+      },
+      "SourceHeadRevision": 166,
+      "SourceHeadHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+      "Revision": 156,
+      "StateHash": "6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8"
+    },
+    {
+      "attempt": 2,
+      "open": null,
+      "read": {
+        "WallMilliseconds": 4045.8902,
+        "CpuMilliseconds": 4201.69,
+        "AllocatedBytes": 3171364384,
+        "Gen0": 487,
+        "Gen1": 348,
+        "Gen2": 221
+      },
+      "SourceHeadRevision": 166,
+      "SourceHeadHash": "e8a6b272ca930df28a60fee3654b2ef6e4cd0bf870da622e78e4b0cf2f96f77c",
+      "Revision": 156,
+      "StateHash": "6f6f9e3f3d3c94f658f93159bc8610b9857fc6dd8aae5db99b736096f95369b8"
+    }
+  ]
+}

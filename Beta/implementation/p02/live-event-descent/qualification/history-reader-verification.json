@@ -1,0 +1,32 @@
+{
+  "implementation_commit": "0783db82fa58d7542750819d52a5e5b3e5dc598b",
+  "build": "build-history-reader.log",
+  "managed_report": "Beta/implementation/p02/live-event-descent/qualification/history-reader-tests/_mac_2026-09-20_00_11_58_net8.0.trx",
+  "counters": {
+    "total": "33",
+    "executed": "33",
+    "passed": "33",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "new_reader_cases": 9,
+  "previous_distinct_cases_retained": 1450,
+  "total_distinct_retained_and_new": 1459,
+  "cadence": "Prior full solution regression retained; 33 focused final-binary tests for additive reader and unchanged legacy/history/storage contracts. All preexisting Core and Hosting implementation hashes unchanged; three Host callers now use new service. Full suite not redundantly rerun.",
+  "comparison": "history-read-timing/summary.json",
+  "source_pins": "history-reader-source-sha256.json",
+  "external_campaign": "host-after-reader.json",
+  "verification_thresholds_changed": false,
+  "external_campaign_status": "passed"
+}
