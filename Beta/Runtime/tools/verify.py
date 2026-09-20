@@ -46,6 +46,7 @@ def main():
     env["OPENFANTASY_CONSEQUENCE_EVIDENCE"] = str(test_results / "consequence-fixture")
     env["OPENFANTASY_STRUCTURAL_SETTLEMENT_EVIDENCE"] = str(test_results / "structural-settlement-fixture")
     env["OPENFANTASY_COUPLED_SETTLEMENT_EVIDENCE"] = str(test_results / "coupled-settlement-fixture")
+    env["OPENFANTASY_EVENT_DESCENT_EVIDENCE"] = str(test_results / "event-descent-fixture")
     env["OPENFANTASY_COLLAPSE_MOTION_EVIDENCE"] = str(test_results / "collapse-motion-fixture")
     env["OPENFANTASY_STRUCTURAL_LOAD_EVIDENCE"] = str(test_results / "structural-load-fixture")
     env["OPENFANTASY_STAIR_NAVIGATION_EVIDENCE"] = str(test_results / "stair-navigation-fixture")
@@ -178,6 +179,9 @@ def main():
         run("coupled-settlement", [sys.executable, root / "tools/check_coupled_settlement.py",
             "--dotnet", dotnet, "--fixture", test_results / "coupled-settlement-fixture",
             "--output", artifacts / "coupled-settlement.json"])
+        run("event-descent-assessment", [sys.executable, root / "tools/check_event_descent.py",
+            "--dotnet", dotnet, "--fixture", test_results / "event-descent-fixture",
+            "--output", artifacts / "event-descent.json"])
 
         run("structural-load-planning", [sys.executable, root / "tools/check_structural_loads.py",
             "--dotnet", dotnet, "--fixture", test_results / "structural-load-fixture",

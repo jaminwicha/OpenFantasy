@@ -4,6 +4,12 @@ See the [architecture reference](docs/architecture/README.md) for state ownershi
 data flow and enduring design contracts. [Documentation navigation](docs/README.md) separates that
 reference from build instructions, preserved specifications and implementation evidence.
 
+`OpenFantasy.Host --inspect-construction-descent <world.sqlite> <commit-revision> <site-id>` reads an
+exact recorded world and assesses the proposed removal of one incomplete excavation site. Its
+[event-descent contract](docs/architecture/event-descent.md) retains stopped material as obstacles for
+later falls, reports real impact demand and validates complete original loads. This read-only operator
+does not publish movement, earn mining rights or alter the existing live coupled-settlement profile.
+
 `OpenFantasy.Host --inspect-watershed-network <prepared-network.bin>` validates and reports a finite
 macro network archive. It checks exact member derivation, adjacent downstream links, acyclic routes,
 composed contribution counts, bounded terminals and shared-face identities. This read-only operator

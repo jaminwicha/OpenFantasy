@@ -86,5 +86,8 @@ Session restart resumes pending work before readiness; read-only recovery and hi
 This interpretation owns intact groups with a shared harmless vertical trajectory. It does not calculate
 unequal interacting trajectories, fracture, debris, deforming joints, momentum, harmful impact, long flight
 or liquid displacement. Conservatively refusing such geometry preserves those separate ownership contracts.
+A separate [event-descent assessment](event-descent.md) resolves successive stopping events against retained
+obstacles and reports impact demand. Its diagnostic result does not change this profile's live resolver,
+pending-work bound, command authorization or harmless-translation byte interpretation.
 A finite local group does not establish world-wide asynchronous simulation, production latency, multiplayer
 pacing, rendered motion or presentation quality.

@@ -23,6 +23,7 @@ different kind of person.
 | [Structural policy and motion](structural-policy-and-motion.md) | How does saved load policy govern actions, carried materials and movement, and how are descent paths checked? |
 | [Intact settlement](structural-settlement.md) | How does excavation atomically lower intact material and riders onto known rated ground? |
 | [Coupled intact settlement](coupled-settlement.md) | How do separately backed assemblies share support and publish a bounded common descent with their riders? |
+| [Event-ordered descent](event-descent.md) | How do unequal landing events retain stopped obstacles, actual mass and explicit impact-response boundaries? |
 | [Consequence continuation](consequence-continuation.md) | How do accepted physical changes resume after restart and publish once without spending extra time? |
 | [Physical construction](construction-physical.md) | How do member condition and placement retain completed work, material ownership and atomic persistence? |
 | [Reservoir transport](reservoir-transport.md) | How do scheduled gates move actual water, preserve provenance and share time/capacity? |
