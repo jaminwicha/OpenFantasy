@@ -14,8 +14,7 @@ internal sealed class RecordedWorldOperator
         {
             throw new ArgumentException("The recorded commit must be an unsigned decimal integer.", nameof(commitText));
         }
-        using SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(databasePath);
-        RecordedWorldState recorded = authority.ReadRecordedStateForHost(revision);
+        RecordedWorldState recorded = RecordedWorldReader.ReadForHost(databasePath, revision);
         WorldSnapshot state = recorded.State;
         return JsonSerializer.Serialize(new
         {

@@ -51,6 +51,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 15 | Immutable harmless-settlement calibration and atomic excavation with intact member/occupant descent |
 | 16 | Reserved advancing interval, retained geometric consequence cursor and original deferred receipt |
 | 17 | Explicit foreign-construction support, bounded coupled intact settlement policy and its reserved consequence cursor |
+| 18 | Explicit event-ordered intact descent with a V3 cursor and actual scene-dependent work reservations |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -98,6 +99,13 @@ admission, complete retained load-policy hash and coupled policy hash. It does n
 Profile seventeen shares schema four's sole writer and continuation journal with profile sixteen;
 its explicit step codec selects the new interpretation without changing prior step bytes. Reservation
 headroom uses the admitted assembly-dependent work bound, not profile sixteen's single-assembly bound.
+
+[Profile eighteen](event-descent.md#explicit-live-interpretation) appends the selected descent mode to a
+direct twenty-four-field root and uses the V3 pending/resolution codecs. Fresh admission accepts only
+an unplayed, unheld profile-seventeen genesis without pending work. Complete policies remain pinned;
+ordinary successors retain the mode. The actual event scene determines the work bound used by saved
+continuations and capacity reservations. Schema four and the exclusive writer remain shared; prior
+profiles keep their recorded interpretation.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
@@ -230,6 +238,15 @@ Those types do not themselves reconstruct a world or move an actor through time.
 source head's revision and hash. It uses synchronous full-journal recovery under the writer gate.
 It is a privileged operator read, with no player knowledge filtering. It provides neither arbitrary
 interior-time reconstruction nor generated prehistory, branch travel or a player-facing atlas.
+
+For a closed save, [RecordedWorldReader.ReadForHost](../../src/OpenFantasy.Hosting/Worlds/RecordedWorldReader.cs)
+acquires the same exclusive database lease and selects the requested state during one complete replay.
+Selection never stops verification early: later commits, checkpoints, outcomes, identity rows and the
+final head must all agree before the result is returned. The lease is disposed on success or failure;
+the immutable result retains the verified source-head pin without retaining a database connection.
+Closed-save history, descent and reservoir-boundary operators use this path. An active authority keeps
+its serialized instance operation and live-head comparison. Neither path uses a historical-state cache,
+trusts a checkpoint in place of replay, creates a missing save or advances pending work.
 
 ## Design contracts: chronology and travel
 

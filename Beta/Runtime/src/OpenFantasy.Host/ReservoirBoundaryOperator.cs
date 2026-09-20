@@ -16,8 +16,7 @@ internal sealed class ReservoirBoundaryOperator
             throw new ArgumentException("The recorded commit must be an unsigned decimal integer.", nameof(commitText));
         }
         ReservoirSealPolicy policy = LocalAuthorityFiles.ReadReservoirSealPolicy(policyPath);
-        using SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(databasePath);
-        RecordedWorldState recorded = authority.ReadRecordedStateForHost(revision);
+        RecordedWorldState recorded = RecordedWorldReader.ReadForHost(databasePath, revision);
         var assessment = new ReservoirBoundaryEvaluator().Assess(recorded.State, policy);
         return JsonSerializer.Serialize(new
         {

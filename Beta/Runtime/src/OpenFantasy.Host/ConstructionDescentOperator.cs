@@ -17,8 +17,7 @@ internal sealed class ConstructionDescentOperator
             throw new ArgumentException("The recorded commit must be an unsigned decimal integer.", nameof(commitText));
         }
         EntityId siteId = EntityId.Parse(siteText);
-        using SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(databasePath);
-        RecordedWorldState recorded = authority.ReadRecordedStateForHost(revision);
+        RecordedWorldState recorded = RecordedWorldReader.ReadForHost(databasePath, revision);
         WorldSnapshot basis = recorded.State;
         var site = basis.Excavation?.Sites.SingleOrDefault(value => value.SiteId == siteId)
             ?? throw new ArgumentException("The proposed site must belong to the exact recorded world.", nameof(siteText));
