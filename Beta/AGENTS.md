@@ -32,6 +32,13 @@ For player interfaces and input, also read the living `implementation/PLAYER_INT
 
 Implementation lives in `Runtime/`. Keep one portable C# core, an in-process host and a Godot C# presentation adapter. Use retained tests and real state whenever behavior is claimed. Core code must not reference Godot or depend on client timing. Do not introduce an IPC bridge or another authority without the recorded qualification evidence.
 
+Owner decision, 2026-09-20: retain C# for the core and application to keep development streamlined and
+simple. The [C++ assessment](implementation/CORE_LANGUAGE_CPP_ASSESSMENT.md) is retained research, not
+an active migration or native-kernel backlog. Keep the portable core decoupled; address measured costs
+through C# algorithms, data layout, allocation and scheduling while preserving all acceptance gates.
+Do not add a C++/Rust core, custom native calculation layer or IPC worker without a new explicit owner
+decision. Existing Godot/.NET/storage dependencies are unaffected by this application-language choice.
+
 Preserve unrelated staged predecessor changes. The predecessor project compiles only its `src/` tree; this directory's `.gdignore` prevents its editor from importing nested projects. Validate those boundaries after build changes. Original source archives remain immutable; record any deliberate integration-only predecessor configuration changes separately.
 
 The central task owns integration. Assign bounded file ownership to workers and independent critics. Artists own native asset production separately from engine builders. Codex and Claude may use the same contracts and evidence. Do not invoke a heavyweight game-generation workflow by default.

@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-19. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-20. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -20,6 +20,16 @@ linked packets. The preserved specification is authoritative. Read only task-rel
    an implementation task. The [maintenance hook](../AGENTS.md#architecture-reference-and-maintenance-hook)
    requires same-change updates for architectural changes and a bounded source review at phase handoff.
 
+## Core language assessment
+
+The owner-requested [C#/C++ decision specification](CORE_LANGUAGE_CPP_ASSESSMENT.md) and
+[source inventory](CORE_LANGUAGE_CPP_EVIDENCE.json) assess execution, in-process native versus IPC,
+performance hypotheses, compatibility, effort, projected source size and conditional qualification.
+Owner decision, 2026-09-20: retain C# for the core and application for simplicity. Native alternatives
+remain research; no migration, custom native kernel or IPC worker is in the active plan. Preserve core
+decoupling and address measured costs in C#. No comparative benchmark or new language gate is accepted;
+the complete existing LANG gates remain in force. A language change requires a new owner decision.
+
 ## Architecture documentation
 
 The [backfill record](architecture-reference/README.md) reconciles the reference with the retained
@@ -31,6 +41,16 @@ project hook. Ecosystem commit `4e83086` records the portable hook and verified 
 All 123 reference links resolve; the bounded factual review corrections are retained in the packet.
 
 ## Latest increment
+
+Work in progress: profile18 explicitly selects event-ordered intact settlement, with a new root and
+pending cursor and unchanged legacy interpretations. Implementation `8f19911` builds cleanly and passes
+1,450 managed tests (951 Core + 499 Hosting); one bounded Fable publication review found no substantiated
+defect in its partial inspected scope. The actual Host campaign failed its unchanged 30-second deadline on historical revision 156 after
+19 completed calls; its six external kill cases were not reached. One exact-command diagnostic then
+passed in 15.99 seconds, without establishing the cause or qualifying the failed campaign. Twenty regenerated
+legacy fixture files remain byte-identical. A one-cell excavation under the retained fully supported
+stack produces a common drop, so that live fixture cannot substantiate unequal falls. Keep broader
+trigger/geometry acceptance separate. See the [qualification packet](p02/live-event-descent/README.md), preserved with the failed probe in `8b484cc`.
 
 [Event-ordered descent assessment](p02/event-descent/README.md) is qualified; implementation `8279268`,
 code/evidence `25da978`, preserved on `codex/milestone-event-descent-assessment`. The
@@ -54,8 +74,10 @@ remain partial; broader review fleets still lack demonstrated value. The full so
 a final Core-only repeat covered the two added tests with all application pins unchanged. The actual new
 Host probe ran; the full all-systems verifier and rendered/device acceptance did not.
 
-**Next dependency:** versioned durable integration of the qualified intact event trajectories, retaining
-the owned harmless-impact limits. The bounded source review on 2026-09-19 puts this integration before
+**Next dependency:** finish qualification of implementation `8f19911`, beginning with the retained
+historical-read deadline failure and the still-unrun external crash cases. Keep the same thresholds;
+measure replay/validation costs without assuming a language defect. No integration milestone is accepted.
+Then continue the durable intact event trajectory work under the owned harmless-impact limits. The bounded source review on 2026-09-19 puts this integration before
 joint separation: the current contact, load and spatial owners require intact assemblies, and a bearing
 describes load transfer rather than a mechanical bond. Do not add another isolated fracture assessment
 as a prerequisite to using the existing intact kernel. Preserve complete collision/support, body condition,
