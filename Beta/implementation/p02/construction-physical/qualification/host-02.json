@@ -1,0 +1,2921 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-20T00:01:01.424912+00:00",
+  "scope": "Profile-13 initial physical member creation; exact source retirement, identity rows, history, retries and two real commit-boundary kills",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02",
+  "runs": [
+    {
+      "name": "normal history 62",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "62"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":62,\"SourceHeadHash\":\"eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb\",\"RecordedRevision\":62,\"StateHash\":\"eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32506200},\"AdvancingSteps\":59,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary physical construction completion",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/completion-step.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":63,\"ProfileVersion\":13,\"StateHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d\",\"ConstructionHash\":\"c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879\",\"Members\":[{\"ElementId\":\"6e687b3b4bc64cfa6c434ba1950f12e4\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":5004,\"VolumeMicrolitres\":191406250},{\"ElementId\":\"39be17f12fce8355ba2d417e19838d48\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":10008,\"VolumeMicrolitres\":382812500},{\"ElementId\":\"49ce25a93fb93f3000db13d1fdef27cd\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":2,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":15012,\"VolumeMicrolitres\":574218750},{\"ElementId\":\"1e188f28209d0ce87af78e26742dcf75\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":3,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":20016,\"VolumeMicrolitres\":765625000},{\"ElementId\":\"053feb9ffac20e5df63fe86297d9ccce\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":4,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":25019,\"VolumeMicrolitres\":957031250},{\"ElementId\":\"00b07a976ba3b0f2bd6abf5f48c23bf5\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":5,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":30023,\"VolumeMicrolitres\":1148437500},{\"ElementId\":\"01c93e2d3bedfa6cdb2c648509f7a2f9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":6,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":35026,\"VolumeMicrolitres\":1339843750},{\"ElementId\":\"a7f27d393181763226e3ce7bcda2f88b\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":7,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":38294,\"VolumeMicrolitres\":1464843750},{\"ElementId\":\"5c200bccc306dd786847f2a5cc8a9b38\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":8,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000},{\"ElementId\":\"15d7cfe129fb04ae30123de105e63e43\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":9,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":40030,\"VolumeMicrolitres\":1531250000},{\"ElementId\":\"f4f00d3cb78834f8e557203965bd97e9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":10,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":45034,\"VolumeMicrolitres\":1722656250},{\"ElementId\":\"881666bbc45cee1f18ae062fc5be6014\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":11,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000}]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "63"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":63,\"StateHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d\",\"ConstructionHash\":\"c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879\",\"Members\":[{\"ElementId\":\"6e687b3b4bc64cfa6c434ba1950f12e4\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":5004,\"VolumeMicrolitres\":191406250},{\"ElementId\":\"39be17f12fce8355ba2d417e19838d48\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":10008,\"VolumeMicrolitres\":382812500},{\"ElementId\":\"49ce25a93fb93f3000db13d1fdef27cd\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":2,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":15012,\"VolumeMicrolitres\":574218750},{\"ElementId\":\"1e188f28209d0ce87af78e26742dcf75\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":3,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":20016,\"VolumeMicrolitres\":765625000},{\"ElementId\":\"053feb9ffac20e5df63fe86297d9ccce\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":4,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":25019,\"VolumeMicrolitres\":957031250},{\"ElementId\":\"00b07a976ba3b0f2bd6abf5f48c23bf5\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":5,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":30023,\"VolumeMicrolitres\":1148437500},{\"ElementId\":\"01c93e2d3bedfa6cdb2c648509f7a2f9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":6,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":35026,\"VolumeMicrolitres\":1339843750},{\"ElementId\":\"a7f27d393181763226e3ce7bcda2f88b\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":7,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":38294,\"VolumeMicrolitres\":1464843750},{\"ElementId\":\"5c200bccc306dd786847f2a5cc8a9b38\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":8,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000},{\"ElementId\":\"15d7cfe129fb04ae30123de105e63e43\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":9,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":40030,\"VolumeMicrolitres\":1531250000},{\"ElementId\":\"f4f00d3cb78834f8e557203965bd97e9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":10,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":45034,\"VolumeMicrolitres\":1722656250},{\"ElementId\":\"881666bbc45cee1f18ae062fc5be6014\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":11,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000}]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 62",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "62"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":62,\"StateHash\":\"eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32506200},\"AdvancingSteps\":59,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 39",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "39"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":39,\"StateHash\":\"688e6325816fecdc5a306f5e2b23f962587dbb77aa716b0baa483a3d41bb9310\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32464800},\"AdvancingSteps\":36,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27744,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":1,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 38",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "38"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":38,\"StateHash\":\"e55a81197d3a3b03daa34bae9d15f3ea761ad7f18662cdb573525567866f8182\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32463000},\"AdvancingSteps\":35,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 37",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "37"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":37,\"StateHash\":\"bca072ea4f0923ecfea9b18e9442809d13442480e0fd3d04b50f7cb4a9a7b6d4\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32463000},\"AdvancingSteps\":35,\"HasReadingHold\":true,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":0,\"StateHash\":\"29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal refuse committed completion retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/completion-step.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 62",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "62"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":62,\"SourceHeadHash\":\"eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb\",\"RecordedRevision\":62,\"StateHash\":\"eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32506200},\"AdvancingSteps\":59,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "retry rolled-back physical completion",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/completion-step.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":63,\"ProfileVersion\":13,\"StateHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d\",\"ConstructionHash\":\"c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879\",\"Members\":[{\"ElementId\":\"6e687b3b4bc64cfa6c434ba1950f12e4\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":5004,\"VolumeMicrolitres\":191406250},{\"ElementId\":\"39be17f12fce8355ba2d417e19838d48\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":10008,\"VolumeMicrolitres\":382812500},{\"ElementId\":\"49ce25a93fb93f3000db13d1fdef27cd\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":2,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":15012,\"VolumeMicrolitres\":574218750},{\"ElementId\":\"1e188f28209d0ce87af78e26742dcf75\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":3,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":20016,\"VolumeMicrolitres\":765625000},{\"ElementId\":\"053feb9ffac20e5df63fe86297d9ccce\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":4,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":25019,\"VolumeMicrolitres\":957031250},{\"ElementId\":\"00b07a976ba3b0f2bd6abf5f48c23bf5\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":5,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":30023,\"VolumeMicrolitres\":1148437500},{\"ElementId\":\"01c93e2d3bedfa6cdb2c648509f7a2f9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":6,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":35026,\"VolumeMicrolitres\":1339843750},{\"ElementId\":\"a7f27d393181763226e3ce7bcda2f88b\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":7,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":38294,\"VolumeMicrolitres\":1464843750},{\"ElementId\":\"5c200bccc306dd786847f2a5cc8a9b38\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":8,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000},{\"ElementId\":\"15d7cfe129fb04ae30123de105e63e43\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":9,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":40030,\"VolumeMicrolitres\":1531250000},{\"ElementId\":\"f4f00d3cb78834f8e557203965bd97e9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":10,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":45034,\"VolumeMicrolitres\":1722656250},{\"ElementId\":\"881666bbc45cee1f18ae062fc5be6014\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":11,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000}]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "63"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":63,\"StateHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d\",\"ConstructionHash\":\"c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879\",\"Members\":[{\"ElementId\":\"6e687b3b4bc64cfa6c434ba1950f12e4\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":5004,\"VolumeMicrolitres\":191406250},{\"ElementId\":\"39be17f12fce8355ba2d417e19838d48\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":10008,\"VolumeMicrolitres\":382812500},{\"ElementId\":\"49ce25a93fb93f3000db13d1fdef27cd\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":2,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":15012,\"VolumeMicrolitres\":574218750},{\"ElementId\":\"1e188f28209d0ce87af78e26742dcf75\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":3,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":20016,\"VolumeMicrolitres\":765625000},{\"ElementId\":\"053feb9ffac20e5df63fe86297d9ccce\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":4,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":25019,\"VolumeMicrolitres\":957031250},{\"ElementId\":\"00b07a976ba3b0f2bd6abf5f48c23bf5\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":5,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":30023,\"VolumeMicrolitres\":1148437500},{\"ElementId\":\"01c93e2d3bedfa6cdb2c648509f7a2f9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":6,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":35026,\"VolumeMicrolitres\":1339843750},{\"ElementId\":\"a7f27d393181763226e3ce7bcda2f88b\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":7,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":38294,\"VolumeMicrolitres\":1464843750},{\"ElementId\":\"5c200bccc306dd786847f2a5cc8a9b38\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":8,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000},{\"ElementId\":\"15d7cfe129fb04ae30123de105e63e43\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":9,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":40030,\"VolumeMicrolitres\":1531250000},{\"ElementId\":\"f4f00d3cb78834f8e557203965bd97e9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":10,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":45034,\"VolumeMicrolitres\":1722656250},{\"ElementId\":\"881666bbc45cee1f18ae062fc5be6014\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":11,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000}]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 62",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "62"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":62,\"StateHash\":\"eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32506200},\"AdvancingSteps\":59,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 39",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "39"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":39,\"StateHash\":\"688e6325816fecdc5a306f5e2b23f962587dbb77aa716b0baa483a3d41bb9310\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32464800},\"AdvancingSteps\":36,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27744,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":1,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 38",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "38"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":38,\"StateHash\":\"e55a81197d3a3b03daa34bae9d15f3ea761ad7f18662cdb573525567866f8182\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32463000},\"AdvancingSteps\":35,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 37",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "37"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":37,\"StateHash\":\"bca072ea4f0923ecfea9b18e9442809d13442480e0fd3d04b50f7cb4a9a7b6d4\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32463000},\"AdvancingSteps\":35,\"HasReadingHold\":true,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":0,\"StateHash\":\"29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before refuse committed completion retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/completion-step.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "63"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":63,\"StateHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d\",\"ConstructionHash\":\"c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879\",\"Members\":[{\"ElementId\":\"6e687b3b4bc64cfa6c434ba1950f12e4\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":5004,\"VolumeMicrolitres\":191406250},{\"ElementId\":\"39be17f12fce8355ba2d417e19838d48\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":10008,\"VolumeMicrolitres\":382812500},{\"ElementId\":\"49ce25a93fb93f3000db13d1fdef27cd\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":2,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":15012,\"VolumeMicrolitres\":574218750},{\"ElementId\":\"1e188f28209d0ce87af78e26742dcf75\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":3,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":20016,\"VolumeMicrolitres\":765625000},{\"ElementId\":\"053feb9ffac20e5df63fe86297d9ccce\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":4,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":25019,\"VolumeMicrolitres\":957031250},{\"ElementId\":\"00b07a976ba3b0f2bd6abf5f48c23bf5\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":5,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":30023,\"VolumeMicrolitres\":1148437500},{\"ElementId\":\"01c93e2d3bedfa6cdb2c648509f7a2f9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":6,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":35026,\"VolumeMicrolitres\":1339843750},{\"ElementId\":\"a7f27d393181763226e3ce7bcda2f88b\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":7,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":38294,\"VolumeMicrolitres\":1464843750},{\"ElementId\":\"5c200bccc306dd786847f2a5cc8a9b38\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":8,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000},{\"ElementId\":\"15d7cfe129fb04ae30123de105e63e43\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":9,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":40030,\"VolumeMicrolitres\":1531250000},{\"ElementId\":\"f4f00d3cb78834f8e557203965bd97e9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":10,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":45034,\"VolumeMicrolitres\":1722656250},{\"ElementId\":\"881666bbc45cee1f18ae062fc5be6014\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":11,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000}]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "63"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":63,\"StateHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d\",\"ConstructionHash\":\"c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879\",\"Members\":[{\"ElementId\":\"6e687b3b4bc64cfa6c434ba1950f12e4\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":5004,\"VolumeMicrolitres\":191406250},{\"ElementId\":\"39be17f12fce8355ba2d417e19838d48\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":10008,\"VolumeMicrolitres\":382812500},{\"ElementId\":\"49ce25a93fb93f3000db13d1fdef27cd\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":2,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":15012,\"VolumeMicrolitres\":574218750},{\"ElementId\":\"1e188f28209d0ce87af78e26742dcf75\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":3,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":20016,\"VolumeMicrolitres\":765625000},{\"ElementId\":\"053feb9ffac20e5df63fe86297d9ccce\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":4,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":25019,\"VolumeMicrolitres\":957031250},{\"ElementId\":\"00b07a976ba3b0f2bd6abf5f48c23bf5\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":5,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":30023,\"VolumeMicrolitres\":1148437500},{\"ElementId\":\"01c93e2d3bedfa6cdb2c648509f7a2f9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":6,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":35026,\"VolumeMicrolitres\":1339843750},{\"ElementId\":\"a7f27d393181763226e3ce7bcda2f88b\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":7,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":38294,\"VolumeMicrolitres\":1464843750},{\"ElementId\":\"5c200bccc306dd786847f2a5cc8a9b38\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":8,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000},{\"ElementId\":\"15d7cfe129fb04ae30123de105e63e43\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":9,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":40030,\"VolumeMicrolitres\":1531250000},{\"ElementId\":\"f4f00d3cb78834f8e557203965bd97e9\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":10,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":45034,\"VolumeMicrolitres\":1722656250},{\"ElementId\":\"881666bbc45cee1f18ae062fc5be6014\",\"StructureId\":\"a4d2f4b238eb839e075c0d0efd125fd4\",\"MemberIndex\":11,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"926b677d638561ab739eaf7b98b0425a\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000}]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 62",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "62"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":62,\"StateHash\":\"eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32506200},\"AdvancingSteps\":59,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 39",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "39"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":39,\"StateHash\":\"688e6325816fecdc5a306f5e2b23f962587dbb77aa716b0baa483a3d41bb9310\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32464800},\"AdvancingSteps\":36,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27744,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":1,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 38",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "38"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":38,\"StateHash\":\"e55a81197d3a3b03daa34bae9d15f3ea761ad7f18662cdb573525567866f8182\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32463000},\"AdvancingSteps\":35,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 37",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "37"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":37,\"StateHash\":\"bca072ea4f0923ecfea9b18e9442809d13442480e0fd3d04b50f7cb4a9a7b6d4\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32463000},\"AdvancingSteps\":35,\"HasReadingHold\":true,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":63,\"SourceHeadHash\":\"fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747\",\"RecordedRevision\":0,\"StateHash\":\"29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801\",\"ProfileVersion\":13,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf\",\"ConstructionHash\":\"2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0\",\"Members\":[]},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after refuse committed completion retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/completion-step.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    }
+  ],
+  "crashes": [
+    {
+      "boundary": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/completion-step.bin",
+        "before"
+      ],
+      "pid": 4853,
+      "signalTimeoutSeconds": 30,
+      "termination": "external process.kill; no graceful Dispose",
+      "signal": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "readOnlyDatabaseSha256": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68"
+    },
+    {
+      "boundary": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/completion-step.bin",
+        "after"
+      ],
+      "pid": 4875,
+      "signalTimeoutSeconds": 30,
+      "termination": "external process.kill; no graceful Dispose",
+      "signal": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "readOnlyDatabaseSha256": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68"
+    }
+  ],
+  "independentStates": [
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/before-completion.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 62,
+      "AdvancingSteps": 59,
+      "StateHash": "eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb",
+      "ConstructionHash": "2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0",
+      "ProductionHash": "532890a2d63cb904df291a15855605e7f5d34a233a4d5ec291e412790ae6b466",
+      "InventoryHash": "0948bb16e2d31a6adc9a1600a16c1925ee8de41bd27314891ca33d10331e98d7",
+      "CustodyHash": "e9a16484e6ed8d20d5c1a3159d96735be21cffc597d13d5de1d3325bf0931990",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "6285694d826a1d173f4a81d6370befeb4dc34beb26817fa5af004eaa93645687",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf",
+      "PhysicalRevision": 0,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": null,
+      "Members": [],
+      "ReservedSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "RetiredSourceClaims": [],
+      "MemberIdentityRows": [],
+      "IdentityRows": 72,
+      "IdentityLedgerHash": "b990617d63c28ee51d6a878ed9163eadc610f80a328844ffea6099ae72bed8db",
+      "ReceiptRows": 4,
+      "ReceiptLedgerHash": "efdc0d4f364d7dde39453b38ebd79ee537d952cd0af97d36e01f3eecb53bda3f",
+      "JournalRows": 62,
+      "JournalHash": "164ffaf0b1ff36e85ba8f63ff6aab6d79dbcf5c5167463fecb6d111d392363be"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/fixture/after-completion.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/normal.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 62,
+      "AdvancingSteps": 59,
+      "StateHash": "eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb",
+      "ConstructionHash": "2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0",
+      "ProductionHash": "532890a2d63cb904df291a15855605e7f5d34a233a4d5ec291e412790ae6b466",
+      "InventoryHash": "0948bb16e2d31a6adc9a1600a16c1925ee8de41bd27314891ca33d10331e98d7",
+      "CustodyHash": "e9a16484e6ed8d20d5c1a3159d96735be21cffc597d13d5de1d3325bf0931990",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "6285694d826a1d173f4a81d6370befeb4dc34beb26817fa5af004eaa93645687",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf",
+      "PhysicalRevision": 0,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": null,
+      "Members": [],
+      "ReservedSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "RetiredSourceClaims": [],
+      "MemberIdentityRows": [],
+      "IdentityRows": 72,
+      "IdentityLedgerHash": "b990617d63c28ee51d6a878ed9163eadc610f80a328844ffea6099ae72bed8db",
+      "ReceiptRows": 4,
+      "ReceiptLedgerHash": "efdc0d4f364d7dde39453b38ebd79ee537d952cd0af97d36e01f3eecb53bda3f",
+      "JournalRows": 62,
+      "JournalHash": "164ffaf0b1ff36e85ba8f63ff6aab6d79dbcf5c5167463fecb6d111d392363be"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/before.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    },
+    {
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/construction-physical-0598c2573a644186b9ef7c8b613f0f02/after.sqlite",
+      "ProfileVersion": 13,
+      "WorldId": "4955a478907a739f49ff302c94a798ad",
+      "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+      "Revision": 63,
+      "AdvancingSteps": 60,
+      "StateHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "InventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "CustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+      "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+      "SourceLotsHash": "53cddc45741ca9483505ebdd397b6cb86f70637ca7221a35a2e86bf78eb779dd",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+      "PhysicalRevision": 1,
+      "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+      "Installed": {
+        "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+        "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+        "BatchId": "337551508f0fe9b03c3f4024356ad8dc",
+        "CommandId": "0000000000000000000000000070ea82"
+      },
+      "Members": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 0,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 5004,
+          "VolumeMicrolitres": 191406250
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 1,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 10008,
+          "VolumeMicrolitres": 382812500
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 2,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 15012,
+          "VolumeMicrolitres": 574218750
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 3,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 20016,
+          "VolumeMicrolitres": 765625000
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 4,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 25019,
+          "VolumeMicrolitres": 957031250
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 5,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 30023,
+          "VolumeMicrolitres": 1148437500
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 6,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 35026,
+          "VolumeMicrolitres": 1339843750
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 7,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 38294,
+          "VolumeMicrolitres": 1464843750
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 8,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 9,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 40030,
+          "VolumeMicrolitres": 1531250000
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 10,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 45034,
+          "VolumeMicrolitres": 1722656250
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "MemberIndex": 11,
+          "Revision": 0,
+          "ConditionParts": 10000,
+          "Disposition": "Standing",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": 0
+          },
+          "InstalledLotId": "926b677d638561ab739eaf7b98b0425a",
+          "MassMilligrams": 3267,
+          "VolumeMicrolitres": 125000000
+        }
+      ],
+      "ReservedSourceClaims": [],
+      "RetiredSourceClaims": [
+        {
+          "LotId": "34d03c3d4eaf6940fd9dcb45f3c650dc",
+          "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+          "Start": 0,
+          "End": 6,
+          "Revision": 0
+        }
+      ],
+      "MemberIdentityRows": [
+        {
+          "ElementId": "6e687b3b4bc64cfa6c434ba1950f12e4",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "39be17f12fce8355ba2d417e19838d48",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "49ce25a93fb93f3000db13d1fdef27cd",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "1e188f28209d0ce87af78e26742dcf75",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "053feb9ffac20e5df63fe86297d9ccce",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "00b07a976ba3b0f2bd6abf5f48c23bf5",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "01c93e2d3bedfa6cdb2c648509f7a2f9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "a7f27d393181763226e3ce7bcda2f88b",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "5c200bccc306dd786847f2a5cc8a9b38",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "15d7cfe129fb04ae30123de105e63e43",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "f4f00d3cb78834f8e557203965bd97e9",
+          "Sequence": 63,
+          "Kind": 4
+        },
+        {
+          "ElementId": "881666bbc45cee1f18ae062fc5be6014",
+          "Sequence": 63,
+          "Kind": 4
+        }
+      ],
+      "IdentityRows": 91,
+      "IdentityLedgerHash": "0850782a08f9028e73e496a2274d0aa55c30d33c9e7e7ff25c539c88d8aca4fe",
+      "ReceiptRows": 5,
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "JournalRows": 63,
+      "JournalHash": "fcf3256848b03371b7a89f213eda8f665f70a0a0a8e4e65efd071ed0a5d0b950"
+    }
+  ],
+  "fixtureSha256": {
+    "after-completion.sqlite": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68",
+    "before-completion.sqlite": "9b794b65a41d1b5728311c5e34311c500ca3410d78c3617b8544646c2d16f861",
+    "completion-step.bin": "ced8a11106ad28c74f95a05fd6cc420509df4f43c2d599e63719d4e4c2aa2a19",
+    "expected.json": "d755afab1517fd30a895239c01f8dee8f4cfcbb52e4c0695e966c595a62fd701",
+    "genesis.bin": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801",
+    "occupied-upstairs.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea",
+    "occupied-upstairs.sqlite": "7335680243db9ba7462ae32a309de1f02f7deaeb3c0f43932c7fefd3b95480a2"
+  },
+  "independentMemberIds": [
+    "6e687b3b4bc64cfa6c434ba1950f12e4",
+    "39be17f12fce8355ba2d417e19838d48",
+    "49ce25a93fb93f3000db13d1fdef27cd",
+    "1e188f28209d0ce87af78e26742dcf75",
+    "053feb9ffac20e5df63fe86297d9ccce",
+    "00b07a976ba3b0f2bd6abf5f48c23bf5",
+    "01c93e2d3bedfa6cdb2c648509f7a2f9",
+    "a7f27d393181763226e3ce7bcda2f88b",
+    "5c200bccc306dd786847f2a5cc8a9b38",
+    "15d7cfe129fb04ae30123de105e63e43",
+    "f4f00d3cb78834f8e557203965bd97e9",
+    "881666bbc45cee1f18ae062fc5be6014"
+  ],
+  "independentStepHash": "ced8a11106ad28c74f95a05fd6cc420509df4f43c2d599e63719d4e4c2aa2a19",
+  "independentActionHash": "d663dbb8f85b9e8876b001b03ccff17afa1bdcf06c7e73163b9cf739bd799a6d",
+  "genesisWitness": {
+    "ProfileVersion": 13,
+    "WorldId": "4955a478907a739f49ff302c94a798ad",
+    "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+    "Revision": 0,
+    "AdvancingSteps": 0,
+    "StateHash": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801",
+    "ConstructionHash": "2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0",
+    "ProductionHash": "532890a2d63cb904df291a15855605e7f5d34a233a4d5ec291e412790ae6b466",
+    "InventoryHash": "759dc9a451a9da2d98e5c2bf2a0e977849937e99994abe7eb40aba2a2b422325",
+    "CustodyHash": "9fa7250e60e8a1413374e65c60fafd824faea895ea3917086dc2a9090dc13024",
+    "SourcesHash": "3383250a393a161e847a23a527e0df0189a38aa98acfb054733b67a573e51898",
+    "SourceLotsHash": "4d2592546a6a7cd89f42b386c3518cfac2ff2a0e171b4785c75a5dce691ee327",
+    "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+    "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+    "PhysicalHash": "14a0a8fccd84bf5cbf05d0644a45dde83ef6ae6370b46f3c455d272f0218becf",
+    "PhysicalRevision": 0,
+    "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+    "Installed": null,
+    "Members": [],
+    "ReservedSourceClaims": [],
+    "RetiredSourceClaims": []
+  },
+  "ordinaryReadOnlyDatabaseSha256": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68",
+  "fixtureFilesChanged": [],
+  "finishedUtc": "2026-09-20T00:01:39.668565+00:00"
+}

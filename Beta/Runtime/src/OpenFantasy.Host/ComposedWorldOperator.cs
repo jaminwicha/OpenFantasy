@@ -73,6 +73,7 @@ internal sealed class ComposedWorldOperator
             Contract = "composed-world-operator-v1", WorldId = state.WorldId.ToString(),
             BranchId = state.BranchId.ToString(), state.Revision, state.ProfileVersion,
             StateHash = state.ContentHash.Value,
+            ConstructionPhysical = state.ConstructionPhysical is { } physical ? new ConstructionPhysicalDiagnosticReport(physical) : null,
             Watershed = state.Watershed is { } plan ? new WatershedDiagnosticReport(plan) : null,
             WatershedNetwork = state.WatershedNetwork is { } network ? new WatershedNetworkDiagnosticReport(network) : null,
             Reservoirs = state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,

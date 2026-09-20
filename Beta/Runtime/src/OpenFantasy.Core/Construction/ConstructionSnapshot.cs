@@ -132,7 +132,9 @@ public sealed class ConstructionSnapshot
         {
             throw new ArgumentException("Construction-only material batches require one fully worked, installed project.");
         }
-        var expected = GetStructures(world.Space.GroundSupport != GroundSupportMode.TerrainOnly);
+        world.ConstructionPhysical?.ValidateStableGeometry(world.Space);
+        var expected = world.ConstructionPhysical?.GetStructures()
+            ?? GetStructures(world.Space.GroundSupport != GroundSupportMode.TerrainOnly);
         if (world.Space.Structures.Count != expected.Count || expected.Where((value, index) =>
                 value.StructureId != world.Space.Structures[index].StructureId
                 || !value.Boxes.SequenceEqual(world.Space.Structures[index].Boxes)

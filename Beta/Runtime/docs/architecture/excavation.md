@@ -49,6 +49,12 @@ must also retain support. Such refusal preserves earned excavation progress, mat
 The check proves direct support under the local spatial rules; it does not adjudicate structural loads,
 collapse debris, safe routes after removal or a dynamically expanding hazard region.
 
+When the world retains [physical construction members](construction-physical.md), that proposed complete
+hole must preserve terrain support for every exact connected component. The check precedes partial labor
+as well as final extraction; the original assembly's lowest collider cannot stand in for a detached higher
+component. The ordinary candidate-action gate also validates physical contact before issuing identities
+or successful receipts. An unsupported consequence is refused until its complete collapse contract exists.
+
 Until the work threshold is reached, the published terrain and inventory remain unchanged. Completion
 creates exactly one deterministic raw lot covering the entire admitted source interval and places it in
 the worker's primary inventory. Terrain removal, progress, effort, inventory/storage revisions and the

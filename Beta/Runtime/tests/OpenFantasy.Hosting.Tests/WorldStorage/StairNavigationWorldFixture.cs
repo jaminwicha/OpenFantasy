@@ -25,7 +25,7 @@ internal sealed class StairNavigationWorldFixture
     internal EntityId Player { get; }
     internal EntityId Builder { get; }
 
-    internal StairNavigationWorldFixture()
+    internal StairNavigationWorldFixture(bool physicalConstruction = false)
     {
         var dry = new ConstructedSupportWorldFixture();
         Actions = dry.Actions;
@@ -71,6 +71,7 @@ internal sealed class StairNavigationWorldFixture
             progression: basis.Progression, quests: basis.Quests, construction: construction, excavation: basis.Excavation);
         LegacyGenesis = WorldConstructedSupportAdmission.CreateGenesis(authored);
         Genesis = WorldSteppedSupportAdmission.CreateGenesis(LegacyGenesis);
+        if (physicalConstruction) { Genesis = WorldConstructionPhysicalAdmission.CreateGenesis(Genesis); }
     }
 
     internal WorldSnapshot FundAndBuild(string path)

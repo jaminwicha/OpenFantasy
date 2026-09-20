@@ -103,6 +103,10 @@ loads to explicitly rated supports. Its bounded failure plan conserves mass and 
 it does not change physical placement, retire material or publish collapse. Load survival and complete
 spatial footing are separate obligations.
 
+[Physical construction](construction-physical.md) separately retains each completed member's condition
+and placement, preserving original work and material provenance. Its owner joins the ordinary durable
+completion transaction; supplied physical changes are not automatic collapse or actor damage actions.
+
 ## Design contract: construction, condition and management
 
 Rooms, floors, subfloors, tunnels, sewers, castles, crypts and towns occupy real terrain and structures.

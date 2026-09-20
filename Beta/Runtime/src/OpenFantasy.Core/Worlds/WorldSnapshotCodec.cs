@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
             3 => WorldSnapshotCodecV3.Encode(state),
+            13 => WorldSnapshotCodecV13.Encode(state),
             12 => WorldSnapshotCodecV12.Encode(state),
             11 => WorldSnapshotCodecV11.Encode(state),
             10 => WorldSnapshotCodecV10.Encode(state),
@@ -27,11 +28,12 @@ public static class WorldSnapshotCodec
     }
 
     public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes) =>
-        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 17) switch
+        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 18) switch
         {
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
+            13 => WorldSnapshotCodecV13.Decode(bytes),
             12 => WorldSnapshotCodecV12.Decode(bytes),
             11 => WorldSnapshotCodecV11.Decode(bytes),
             10 => WorldSnapshotCodecV10.Decode(bytes),

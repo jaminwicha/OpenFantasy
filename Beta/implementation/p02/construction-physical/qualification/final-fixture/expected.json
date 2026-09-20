@@ -1,0 +1,68 @@
+{
+  "Scope": "Actual quest-funded NPC completion with twelve pristine physical members; no damage or collapse command",
+  "ProfileVersion": 13,
+  "WorldId": "4955a478907a739f49ff302c94a798ad",
+  "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+  "PreRevision": 62,
+  "PreHash": "eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb",
+  "PostRevision": 63,
+  "PostHash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747",
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "Builder": "49354ca83f251b3ce9d363158e0786a4",
+  "CommandId": "0000000000000000000000000070ea82",
+  "ReceiptHex": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100000000000000000000000000070EA82000000103413AA071B2C33D2FFF2D8369104FF0C000000104955A478907A739F49FF302C94A798AD000000102A89AF71F707591D46CFE34B9B60F96C00000020D663DBB8F85B9E8876B001B03CCFF17AFA1BDCF06C7E73163B9CF739BD799A6D00000008000000000000003F000000080000000000000001000000080000000000000000",
+  "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+  "ExpectedMemberIds": [
+    "6e687b3b4bc64cfa6c434ba1950f12e4",
+    "39be17f12fce8355ba2d417e19838d48",
+    "49ce25a93fb93f3000db13d1fdef27cd",
+    "1e188f28209d0ce87af78e26742dcf75",
+    "053feb9ffac20e5df63fe86297d9ccce",
+    "00b07a976ba3b0f2bd6abf5f48c23bf5",
+    "01c93e2d3bedfa6cdb2c648509f7a2f9",
+    "a7f27d393181763226e3ce7bcda2f88b",
+    "5c200bccc306dd786847f2a5cc8a9b38",
+    "15d7cfe129fb04ae30123de105e63e43",
+    "f4f00d3cb78834f8e557203965bd97e9",
+    "881666bbc45cee1f18ae062fc5be6014"
+  ],
+  "MemberCount": 12,
+  "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+  "PhysicalRevision": 1,
+  "PhysicalBeforeRevision": 0,
+  "PhysicalAfterRevision": 1,
+  "PreConstructionHash": "2c4e50042fe7f25b3e95961190601aa3c61ec28bc0571e6ed107f8d9430d10f0",
+  "PostConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+  "PreProductionHash": "532890a2d63cb904df291a15855605e7f5d34a233a4d5ec291e412790ae6b466",
+  "PostProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+  "PreInventoryHash": "0948bb16e2d31a6adc9a1600a16c1925ee8de41bd27314891ca33d10331e98d7",
+  "PostInventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+  "PreCustodyHash": "e9a16484e6ed8d20d5c1a3159d96735be21cffc597d13d5de1d3325bf0931990",
+  "PostCustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+  "History": [
+    {
+      "Revision": 0,
+      "Hash": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801"
+    },
+    {
+      "Revision": 37,
+      "Hash": "bca072ea4f0923ecfea9b18e9442809d13442480e0fd3d04b50f7cb4a9a7b6d4"
+    },
+    {
+      "Revision": 38,
+      "Hash": "e55a81197d3a3b03daa34bae9d15f3ea761ad7f18662cdb573525567866f8182"
+    },
+    {
+      "Revision": 39,
+      "Hash": "688e6325816fecdc5a306f5e2b23f962587dbb77aa716b0baa483a3d41bb9310"
+    },
+    {
+      "Revision": 62,
+      "Hash": "eae66ac8fb70abda5aa0673a2ce888f1bf333b5cee919591e9d3cf665ef659bb"
+    },
+    {
+      "Revision": 63,
+      "Hash": "fbf9e07e1a7583813c7c0113fb14febc0cbc4557a5ba6d2a9223f24caf771747"
+    }
+  ]
+}

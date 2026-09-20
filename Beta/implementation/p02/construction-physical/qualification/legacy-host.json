@@ -1,0 +1,696 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-20T00:01:02.282367+00:00",
+  "scope": "Actual host ordinary stairs with exact construction, positions, accrued effort, unchanged receipt ledger and two commit-boundary kills",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b",
+  "runs": [
+    {
+      "name": "normal history 134",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/normal.sqlite",
+        "134"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":134,\"SourceHeadHash\":\"9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e\",\"RecordedRevision\":134,\"StateHash\":\"9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32635800},\"AdvancingSteps\":131,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26912,\"Y\":83072,\"Z\":512,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":105,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary stair step",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/fixture/ordinary-step.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":135,\"ProfileVersion\":12,\"StateHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 135",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/normal.sqlite",
+        "135"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":135,\"StateHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32637600},\"AdvancingSteps\":132,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26944,\"Y\":83072,\"Z\":576,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":106,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 134",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/normal.sqlite",
+        "134"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":134,\"StateHash\":\"9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32635800},\"AdvancingSteps\":131,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26912,\"Y\":83072,\"Z\":512,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":105,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/normal.sqlite",
+        "63"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":63,\"StateHash\":\"d7a24ea2f6109b03d6eec80e7856839e5c64042c50fbeac971d5ee480b291e19\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/normal.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":0,\"StateHash\":\"4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "normal refuse committed ordinary stair step retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/fixture/ordinary-step.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 134",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "134"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":134,\"SourceHeadHash\":\"9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e\",\"RecordedRevision\":134,\"StateHash\":\"9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32635800},\"AdvancingSteps\":131,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26912,\"Y\":83072,\"Z\":512,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":105,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "retry rolled-back ordinary stair step",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/fixture/ordinary-step.bin"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":135,\"ProfileVersion\":12,\"StateHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 135",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "135"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":135,\"StateHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32637600},\"AdvancingSteps\":132,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26944,\"Y\":83072,\"Z\":576,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":106,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 134",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "134"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":134,\"StateHash\":\"9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32635800},\"AdvancingSteps\":131,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26912,\"Y\":83072,\"Z\":512,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":105,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "63"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":63,\"StateHash\":\"d7a24ea2f6109b03d6eec80e7856839e5c64042c50fbeac971d5ee480b291e19\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":0,\"StateHash\":\"4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "before refuse committed ordinary stair step retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/fixture/ordinary-step.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 135",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/after.sqlite",
+        "135"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":135,\"StateHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32637600},\"AdvancingSteps\":132,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26944,\"Y\":83072,\"Z\":576,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":106,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 135",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/after.sqlite",
+        "135"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":135,\"StateHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32637600},\"AdvancingSteps\":132,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26944,\"Y\":83072,\"Z\":576,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":106,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 134",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/after.sqlite",
+        "134"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":134,\"StateHash\":\"9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32635800},\"AdvancingSteps\":131,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26912,\"Y\":83072,\"Z\":512,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":105,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 63",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/after.sqlite",
+        "63"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":63,\"StateHash\":\"d7a24ea2f6109b03d6eec80e7856839e5c64042c50fbeac971d5ee480b291e19\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":24,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27072,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":325,\"Z\":1}},\"PresenceRevision\":34,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/after.sqlite",
+        "0"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":135,\"SourceHeadHash\":\"991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b\",\"RecordedRevision\":0,\"StateHash\":\"4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a\",\"ProfileVersion\":12,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"ConstructionPhysical\":null,\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27776,\"Y\":83584,\"Z\":256,\"Cell\":{\"X\":108,\"Y\":326,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":25984,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":101,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":10}],\"SourceLotCount\":4,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "after refuse committed ordinary stair step retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/fixture/ordinary-step.bin"
+      ],
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    }
+  ],
+  "crashes": [
+    {
+      "boundary": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/fixture/ordinary-step.bin",
+        "before"
+      ],
+      "pid": 4844,
+      "signalTimeoutSeconds": 30,
+      "termination": "external process.kill; no graceful Dispose",
+      "signal": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "readOnlyDatabaseSha256": "0ba8868d281b45f65c0b295d3c7bae4a6749e62b17d07386a89ef61a484ec287"
+    },
+    {
+      "boundary": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/construction-physical/qualification/constructed-support-17182063327040b5a3930d1dfe1c032b/after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p01/stair-navigation/qualification/fixture/ordinary-step.bin",
+        "after"
+      ],
+      "pid": 4873,
+      "signalTimeoutSeconds": 30,
+      "termination": "external process.kill; no graceful Dispose",
+      "signal": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": "",
+      "readOnlyDatabaseSha256": "0ba8868d281b45f65c0b295d3c7bae4a6749e62b17d07386a89ef61a484ec287"
+    }
+  ],
+  "independentStates": [
+    {
+      "database": "normal.sqlite",
+      "Revision": 134,
+      "AdvancingSteps": 131,
+      "StateHash": "9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e",
+      "Feet": {
+        "X": 26912,
+        "Y": 83072,
+        "Z": 512,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 105,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "normal.sqlite",
+      "Revision": 135,
+      "AdvancingSteps": 132,
+      "StateHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "Feet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 106,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "normal.sqlite",
+      "Revision": 135,
+      "AdvancingSteps": 132,
+      "StateHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "Feet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 106,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "before.sqlite",
+      "Revision": 134,
+      "AdvancingSteps": 131,
+      "StateHash": "9c327fdba95843d4c81b85bbff68853e362a5061df7ffb875da501148998e05e",
+      "Feet": {
+        "X": 26912,
+        "Y": 83072,
+        "Z": 512,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 105,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "before.sqlite",
+      "Revision": 135,
+      "AdvancingSteps": 132,
+      "StateHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "Feet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 106,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "before.sqlite",
+      "Revision": 135,
+      "AdvancingSteps": 132,
+      "StateHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "Feet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 106,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "after.sqlite",
+      "Revision": 135,
+      "AdvancingSteps": 132,
+      "StateHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "Feet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 106,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "after.sqlite",
+      "Revision": 135,
+      "AdvancingSteps": 132,
+      "StateHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "Feet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 106,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    },
+    {
+      "database": "after.sqlite",
+      "Revision": 135,
+      "AdvancingSteps": 132,
+      "StateHash": "991e4def24fc8063682b96fa7d89ba50d136f366e7952fa967833c962798c61b",
+      "Feet": {
+        "X": 26944,
+        "Y": 83072,
+        "Z": 576,
+        "Cell": {
+          "X": 105,
+          "Y": 324,
+          "Z": 2
+        }
+      },
+      "Effort": 1000,
+      "ActorRevision": 106,
+      "ConstructionHash": "c1479302e64a11a01351548dda5c26fd42207bd6a9e3da3f023a8a3050884879",
+      "Installed": [
+        {
+          "ProjectId": "0e4c7d7182d612ffd75c5871d4feadd1",
+          "StructureId": "a4d2f4b238eb839e075c0d0efd125fd4",
+          "GuardLotId": "926b677d638561ab739eaf7b98b0425a",
+          "CompletionCommandId": "0000000000000000000000000070ea82"
+        }
+      ],
+      "ProductionHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+      "AuthorizedDeliveries": [
+        {
+          "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+          "SessionId": "f2b9284a438cae81296d7b3445fd1e2a"
+        }
+      ],
+      "AuthorityHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+      "TerrainHash": "83df87ab680b98f8a7eccc76cfb8a8f25adce661c884d02777ac84ede6152b44",
+      "ExcavationHash": "492ff58b88c3ff4ea18c278cc68d819485c5a0e99578d1d0008c3cab2d83dd81",
+      "ReceiptLedgerHash": "d60cfd8c05bcfc7410392cc977fd7f705fc25328d0957e2ef04a0a4ad732703b",
+      "ReceiptLedgerRows": 5
+    }
+  ],
+  "profileVersion": 12,
+  "operation": "ordinary stair step",
+  "fixtureSha256": {
+    "completed-journey.sqlite": "47911ae5f9e29c17cc78e4eaff52157ea3646f4d70b2add5980af201e4a2f932",
+    "expected.json": "d39720aa687e526f273d460c7bebb041706b5d6cd323bc23ed1281d7c3e7e2bf",
+    "genesis.bin": "4fc1e819a1c5d40c8ce0a250c5f6c6ea541ed647a6664350c1fcb81bace49a0a",
+    "journey.json": "1775b9a3d3afd3af7088cc2aefecf99f251e1995bea1d7b48175b0cbca923c09",
+    "midstairs.sqlite": "33c1e236b180c92f15736b23fb6f5af27769de650fdf732597289d510b940d24",
+    "ordinary-step.bin": "5be30a2525f3e4eadb22b7c2e65c0aacc71f6d739dee1e6a23f364bd967afeb8",
+    "post-step.sqlite": "0ba8868d281b45f65c0b295d3c7bae4a6749e62b17d07386a89ef61a484ec287"
+  },
+  "independentStepHash": "5be30a2525f3e4eadb22b7c2e65c0aacc71f6d739dee1e6a23f364bd967afeb8",
+  "ordinaryMovementWitness": {
+    "ActorId": "c7da6de6f885e3516d9dfd3dab51cf6b",
+    "PrincipalId": "2d222befa7a8b2cd7ba0a05a00950f27",
+    "SessionId": "f2b9284a438cae81296d7b3445fd1e2a",
+    "DeltaX": 32,
+    "DeltaY": 0,
+    "ResolvedDeltaZ": 64,
+    "ExpectedAdvancingSteps": 131,
+    "ExpectedPostFeet": {
+      "X": 26944,
+      "Y": 83072,
+      "Z": 576,
+      "Cell": {
+        "X": 105,
+        "Y": 324,
+        "Z": 2
+      }
+    },
+    "EffortBefore": 1000,
+    "EffortAfter": 1000
+  },
+  "ordinaryReadOnlyDatabaseSha256": "0ba8868d281b45f65c0b295d3c7bae4a6749e62b17d07386a89ef61a484ec287",
+  "finishedUtc": "2026-09-20T00:01:38.117827+00:00"
+}

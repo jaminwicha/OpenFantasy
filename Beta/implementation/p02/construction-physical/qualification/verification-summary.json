@@ -1,0 +1,204 @@
+{
+  "scope": "Fresh dry profile13 durable physical construction ownership and safe support refusal; no live damage/collapse publication",
+  "status": "passed",
+  "build": {
+    "file": "build-final.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "total": 1274,
+    "core": 836,
+    "hosting": 438,
+    "new": 33,
+    "skipped": 0,
+    "reports": [
+      {
+        "file": "full-tests-final/_mac_2026-09-19_19_03_26_net8.0.trx",
+        "total": 836,
+        "executed": 836,
+        "passed": 836,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      {
+        "file": "full-tests-final/_mac_2026-09-19_19_03_38_net8.0.trx",
+        "total": 438,
+        "executed": 438,
+        "passed": 438,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      }
+    ]
+  },
+  "host": {
+    "report": "host-02.json",
+    "ordinaryProcessCalls": 26,
+    "externalProcessKills": 2,
+    "independentCanonicalAndMaterialWitness": true,
+    "fixtureFilesUnchanged": true
+  },
+  "legacy": {
+    "profile": 12,
+    "report": "legacy-host.json",
+    "ordinaryProcessCalls": 20,
+    "externalProcessKills": 2,
+    "originalFixtureUnchanged": true
+  },
+  "native": {
+    "foundation": "foundation.json",
+    "farm": "native-farm.json",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "recreation": {
+    "sameBytes": true,
+    "files": 7,
+    "original": {
+      "after-completion.sqlite": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68",
+      "expected.json": "d755afab1517fd30a895239c01f8dee8f4cfcbb52e4c0695e966c595a62fd701",
+      "before-completion.sqlite": "9b794b65a41d1b5728311c5e34311c500ca3410d78c3617b8544646c2d16f861",
+      "genesis.bin": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801",
+      "completion-step.bin": "ced8a11106ad28c74f95a05fd6cc420509df4f43c2d599e63719d4e4c2aa2a19",
+      "occupied-upstairs.sqlite": "7335680243db9ba7462ae32a309de1f02f7deaeb3c0f43932c7fefd3b95480a2",
+      "occupied-upstairs.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea"
+    },
+    "recreated": {
+      "after-completion.sqlite": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68",
+      "expected.json": "d755afab1517fd30a895239c01f8dee8f4cfcbb52e4c0695e966c595a62fd701",
+      "before-completion.sqlite": "9b794b65a41d1b5728311c5e34311c500ca3410d78c3617b8544646c2d16f861",
+      "genesis.bin": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801",
+      "completion-step.bin": "ced8a11106ad28c74f95a05fd6cc420509df4f43c2d599e63719d4e4c2aa2a19",
+      "occupied-upstairs.sqlite": "7335680243db9ba7462ae32a309de1f02f7deaeb3c0f43932c7fefd3b95480a2",
+      "occupied-upstairs.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea"
+    },
+    "finalRecreated": {
+      "after-completion.sqlite": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68",
+      "expected.json": "d755afab1517fd30a895239c01f8dee8f4cfcbb52e4c0695e966c595a62fd701",
+      "before-completion.sqlite": "9b794b65a41d1b5728311c5e34311c500ca3410d78c3617b8544646c2d16f861",
+      "genesis.bin": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801",
+      "completion-step.bin": "ced8a11106ad28c74f95a05fd6cc420509df4f43c2d599e63719d4e4c2aa2a19",
+      "occupied-upstairs.sqlite": "7335680243db9ba7462ae32a309de1f02f7deaeb3c0f43932c7fefd3b95480a2",
+      "occupied-upstairs.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea"
+    },
+    "finalDirectory": "final-fixture"
+  },
+  "preservation": {
+    "architectureLinks": 288,
+    "missingLinks": [],
+    "frozenSpecCount": 22,
+    "frozenSpecHashes": {
+      "spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md": true,
+      "spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md": true,
+      "spec-v1_1/COVERAGE.json": true,
+      "spec-v1_1/CRITIC_REVIEW.md": true,
+      "spec-v1_1/CROSS_SYSTEM_SYNERGIES.md": true,
+      "spec-v1_1/DECISIONS.md": true,
+      "spec-v1_1/ECOLOGY_AND_FLUIDS.md": true,
+      "spec-v1_1/GDD.md": true,
+      "spec-v1_1/GENERATION_VALIDATION.md": true,
+      "spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md": true,
+      "spec-v1_1/IMPLEMENTATION_HANDOFF.md": true,
+      "spec-v1_1/IMPLEMENTATION_PLAN.md": true,
+      "spec-v1_1/INTEGRATION_CRITIC.md": true,
+      "spec-v1_1/LANGUAGE_AND_AFTERLIFE.md": true,
+      "spec-v1_1/LOCAL_REUSE_DECISIONS.md": true,
+      "spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md": true,
+      "spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md": true,
+      "spec-v1_1/PRESENTATION_CONTRACTS.md": true,
+      "spec-v1_1/README.md": true,
+      "spec-v1_1/REQUIREMENTS.json": true,
+      "spec-v1_1/TECHNICAL_DESIGN.md": true,
+      "spec-v1_1/VALIDATION.md": true
+    },
+    "predecessorStagedCount": 19,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "predecessorFiles": [
+      "README.md",
+      "docs/MILESTONE_8.md",
+      "src/Client/GameController.cs",
+      "src/Client/GameWindows.cs",
+      "src/Net/Protocol.cs",
+      "src/Net/ServerNode.cs",
+      "src/Sim/FrontierGen.cs",
+      "src/Sim/SelfTest.cs",
+      "src/Sim/SettlementGen.cs",
+      "src/Sim/SimConstants.cs",
+      "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+      "src/Sim/SiteGen/SiteFloor.cs",
+      "src/Sim/SiteGen/SiteGenerator.cs",
+      "src/Sim/SiteGen/SiteRecipe.cs",
+      "src/Sim/SiteGen/SiteValidator.cs",
+      "src/Sim/SiteGen/TempleEmbedder.cs",
+      "src/Sim/World.Instances.cs",
+      "src/Sim/World.Settlements.cs",
+      "src/Sim/World.cs"
+    ],
+    "runtimeNamingFiles": 962,
+    "namingViolations": [],
+    "diffCheck": "passed",
+    "pythonAst": "passed"
+  },
+  "review": {
+    "kind": "bounded native source review and corrective guard recheck; separate author for mining regressions",
+    "externalClaudeCalls": 0,
+    "findings": [
+      {
+        "issue": "Original assembly minimum admitted detached floating material",
+        "resolution": "Exact connected-component grounding and Falling exclusion, positive/negative/quantization regressions",
+        "recheck": "no consequential issue found"
+      },
+      {
+        "issue": "Support-removing excavation could throw only at final world admission",
+        "resolution": "Complete-hole preflight before partial work and candidate action guard before publication; one-work and three-work regressions prove legacy negative control and atomic refusal",
+        "recheck": "No leaked work, source or spawned IDs; old-profile guards inert"
+      }
+    ]
+  },
+  "retainedFailures": [],
+  "earlierEvidence": {
+    "files": [
+      "build-01.log",
+      "build-02.log",
+      "core-01.log",
+      "hosting-01.log",
+      "focused-02.log",
+      "full-tests.log",
+      "host-01.json"
+    ],
+    "disposition": "Retained earlier successful runs before the final contact/publication guards; final acceptance uses final reports above."
+  },
+  "allSystemsVerifierRun": false,
+  "openGates": [
+    "Live structural policy, affected closure and universal movement/material load admission",
+    "Durable pending collapse without extra simulation time",
+    "Conserved fracture/debris and collateral terrain source transformations",
+    "Actor contact recomputation, checked trajectory/landing and effects",
+    "Resting member load paths and wide fragment collision grouping",
+    "Wet containment, displacement/spill and hydraulic composition",
+    "Production material calibration, CPU/latency and bounded maximum-load qualification",
+    "Multi-floor presentation, production art/audio, OS/devices and all181 requirements/full P00-P14 campaign"
+  ]
+}

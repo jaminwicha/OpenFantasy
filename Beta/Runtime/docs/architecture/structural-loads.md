@@ -28,6 +28,9 @@ face at matching heights. A declared braced joint requires a positive shared ver
 does not invent bracing, and material hardness is not load capacity. Definition geometry must fit its
 explicit rating; ground members cannot acquire an authored joint that bypasses their terrain footing.
 Member condition scales capacity by integer parts out of 10,000; zero condition fails explicitly.
+A world with a [physical construction owner](construction-physical.md) supplies retained standing-member
+condition; external condition overrides are rejected. Detached members require a new contact model and
+are refused by this static binder.
 
 [StableTerrainBearing](../../src/OpenFantasy.Core/Structures/StableTerrainBearing.cs) declares a finite
 boundary at a retained solid cell with its exact source/material and positive capacity. Solidity alone

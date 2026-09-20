@@ -204,6 +204,14 @@ public static class WorldAdmissionValidator
                     Add(installed.CompletionCommandId, WorldIdentityRole.CauseReference);
                 }
             }
+            if (world.ConstructionPhysical is { } physical)
+            {
+                foreach (var member in physical.Members)
+                {
+                    Require(member.StructureId, WorldIdentityRole.Structure);
+                    Add(member.ElementId, WorldIdentityRole.ConstructionMember, unique: true);
+                }
+            }
         }
 
         internal void ReadQuests()

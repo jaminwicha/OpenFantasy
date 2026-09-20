@@ -64,6 +64,11 @@ public sealed class ConstructionBearingModel
         var ratings = templates.Take(ConstructionSnapshot.MaximumDefinitions + 1).ToArray();
         var anchors = foundations.Take(StructuralLoadGraph.MaximumElements + 1).ToArray();
         var wear = (conditions ?? []).Take(ConstructionSnapshot.MaximumProjects * ConstructionDefinition.MaximumMembers + 1).ToArray();
+        if (world.ConstructionPhysical is { } physical && (wear.Length != 0
+            || physical.Members.Any(value => value.Disposition != ConstructionMemberDisposition.Standing)))
+        {
+            throw new ArgumentException("Retained physical condition cannot be replaced by diagnostic wear; detached material requires a new contact model.");
+        }
         if (ratings.Length > ConstructionSnapshot.MaximumDefinitions || ratings.Select(value => value.DefinitionId).Distinct().Count() != ratings.Length
             || anchors.Length == 0 || anchors.Length > StructuralLoadGraph.MaximumElements
             || anchors.Select(value => value.ElementId).Distinct().Count() != anchors.Length
@@ -114,7 +119,9 @@ public sealed class ConstructionBearingModel
                 MillimetreBox member = project.Definition.Members[(int)index];
                 EntityId id = MemberIdentity(installed.StructureId, index);
                 StructuralMemberRating rating = template.Members[(int)index];
-                uint condition = conditionByMember.Remove((installed.StructureId, index), out uint declared) ? declared : 10000;
+                uint condition = world.ConstructionPhysical is { } retained
+                    ? retained.GetMember(installed.StructureId, index).ConditionParts
+                    : conditionByMember.Remove((installed.StructureId, index), out uint declared) ? declared : 10000;
                 elements.Add(new(id, memberMasses[(int)index], new(0), rating.Capacity, condition, false, rating.MinimumSupportCount));
                 members.Add(new(id, project.ProjectId, installed.StructureId, installed.GuardLotId, index,
                     memberMasses[(int)index], new(member.VolumeMicrolitres)));

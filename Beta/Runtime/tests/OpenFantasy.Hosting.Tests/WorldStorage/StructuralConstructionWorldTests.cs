@@ -131,6 +131,43 @@ public sealed class StructuralConstructionWorldTests
         return fixture.WalkTo(authority, world, fixture.Player, StairNavigationWorldFixture.UpperDeck);
     }
 
+    [Fact]
+    public void Retained_physical_condition_cannot_be_overridden_or_detached_geometry_ignored_by_the_load_model()
+    {
+        using var files = new StorageFiles();
+        WorldSnapshot world = new StairNavigationWorldFixture(physicalConstruction: true).FundAndBuild(files.Path);
+        ConstructionBearingModel pristine = Bind(world);
+        var physical = world.ConstructionPhysical!;
+        StructuralMemberReference deck = pristine.Members.Single(value => value.ElementId == Deck(pristine, world));
+        ConstructionMemberState member = physical.GetMember(deck.StructureId, deck.MemberIndex);
+        var damaged = physical.WithMember(physical.Revision,
+            member.WithState(member.Revision, 5000, default, ConstructionMemberDisposition.Standing));
+        WorldSnapshot changed = WithPhysical(damaged);
+        Assert.Equal(5000U, Bind(changed).Graph.Elements.Single(value => value.ElementId == deck.ElementId).ConditionParts);
+        Assert.Throws<ArgumentException>(() => ConstructionBearingModel.Bind(changed, pristine.Templates, pristine.Foundations,
+            Catalog(changed), [new(deck.StructureId, deck.MemberIndex, 10000)]));
+
+        // Supplied domain state proves geometry reconstruction, not an executed fall or impact.
+        var unsupported = physical.WithMember(physical.Revision,
+            member.WithState(member.Revision, 5000, new(0, 0, 64), ConstructionMemberDisposition.Resting));
+        Assert.Throws<ArgumentException>(() => WithPhysical(unsupported));
+        var detached = physical.WithMember(physical.Revision,
+            member.WithState(member.Revision, 5000, new(0, -1040, -512), ConstructionMemberDisposition.Resting));
+        WorldSnapshot shifted = WithPhysical(detached);
+        byte[] bytes = WorldSnapshotCodec.Encode(shifted);
+        WorldSnapshot restored = WorldSnapshotCodec.Decode(bytes);
+        Assert.Equal(bytes, WorldSnapshotCodec.Encode(restored));
+        Assert.Equal(detached.ContentHash, restored.ConstructionPhysical!.ContentHash);
+        Assert.Throws<ArgumentException>(() => Bind(restored));
+        Assert.Equal(world.Construction!.ContentHash, restored.Construction!.ContentHash);
+        Assert.Equal(world.Production!.ContentHash, restored.Production!.ContentHash);
+
+        WorldSnapshot WithPhysical(ConstructionPhysicalSnapshot candidate) => new(world.Inventory,
+            world.Space.WithStructures(candidate.GetStructures()), world.Residents, world.AdmissionVersion, world.Calendar,
+            world.Revision, world.AdvancingSteps, world.Dialogues, world.Gathering, world.Production, world.Progression,
+            world.Quests, world.Construction, excavation: world.Excavation, constructionPhysical: candidate);
+    }
+
     private static ConstructionBearingModel Bind(WorldSnapshot world, ulong rightLegCapacity = 100_000_000)
     {
         ConstructionDefinition definition = world.Construction!.Projects.Single().Definition;

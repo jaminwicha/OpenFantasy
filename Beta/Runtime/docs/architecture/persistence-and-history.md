@@ -46,6 +46,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 10 | Complete dry construction world plus finite local excavation ownership and earned work |
 | 11 | Complete dry excavation world with installed-member actor support and assisted vertical traversal |
 | 12 | Complete dry excavation world with bounded mixed-height contact and ordinary stair movement/navigation |
+| 13 | Complete stepped dry world plus separately revised physical construction members and material backing |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -59,6 +60,12 @@ spatial version two selects their contact rules. Fresh admission and climb actio
 [Profile twelve](stair-navigation.md#hosted-actors-and-persistence) uses that complete root with spatial
 version three and the stepped contact interpreter. XY-only ordinary movement replays against that
 explicit profile. Opening a profile-eleven save does not change its movement or contact semantics.
+
+The [physical construction root](construction-physical.md#canonical-persistence-and-extension-boundary)
+retains a direct eighteen-field frame and decodes fabrication and member state before actor admission.
+Its complete root uses the same schema-three writer and identity journal; older saves keep their existing
+interpretations. Completion-derived member identities and physical state publish in the same transaction
+as the earned work, installed output and receipt.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
@@ -76,7 +83,7 @@ basis. The outer snapshot has tag `world.snapshot`, unsigned-64 profile `7`, exa
 and exact network archive. Its step interpreter retains the existing action and receipt semantics.
 
 All decode/admission paths enforce identity roles across components. Admission is not insertion of
-geography into a lived save. Profiles six through twelve use the same schema-three writer and full-journal
+geography into a lived save. Profiles six through thirteen use the same schema-three writer and full-journal
 recovery; they add no migration commit, separate writer or clock.
 
 [Profile eight](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV8.cs) frames unsigned-64 profile `8`,

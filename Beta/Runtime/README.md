@@ -340,3 +340,15 @@ ratings are not authenticated world policy and no collapse is published. See the
 [structural contract](docs/architecture/structural-loads.md) for mass ownership, rated contact, continuation
 cost and the separate obligation to recheck physical footing. `OPENFANTASY_STRUCTURAL_LOAD_EVIDENCE`
 retains the actual funded/occupied construction fixture used by `tools/check_structural_loads.py`.
+
+
+### Physical construction ownership
+
+Fresh dry profile thirteen retains physical member condition and placement separately from completed
+construction work. `WorldConstructionPhysicalAdmission.CreateGenesis` explicitly selects it from an
+unplayed profile-twelve genesis. Ordinary NPC construction creates member identities and material-backed
+state in the same durable completion commit. Existing saves keep their interpretation. Historical Host
+reports include `ConstructionPhysical` hashes and member/source information; they do not certify load
+safety or live collapse. See [physical construction](docs/architecture/construction-physical.md).
+`OPENFANTASY_CONSTRUCTION_PHYSICAL_EVIDENCE` retains the actual completion and upstairs fixture used by
+`tools/check_construction_physical.py` for commit-kill/retry/history qualification.

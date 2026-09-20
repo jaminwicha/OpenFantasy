@@ -14,9 +14,10 @@ below describe `TerrainAndConstruction`, the retained interpretation of profile 
 
 [ConstructionDefinition](../../src/OpenFantasy.Core/Construction/ConstructionDefinition.cs) derives
 collision envelopes and [bearing surfaces](../../src/OpenFantasy.Core/Spatial/StructureBearingSurface.cs)
-from the same exact millimetre members. Only completed projects supply authoritative surfaces through
-[ConstructionSnapshot](../../src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs). World admission
-compares both sorted colliders and surfaces with those rederived from retained construction. Geometry
+from the same exact millimetre members. Completed projects supply authoritative geometry through
+[ConstructionSnapshot](../../src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs), or its separately
+retained [physical member owner](construction-physical.md) in profile thirteen. World admission compares
+both sorted colliders and surfaces with the applicable exact projection. Geometry
 alone cannot prove funding, completed labor or ownership of the installed output.
 
 A bearing surface retains exact XY bounds and physical top height in 1/256 millimetre ticks. One spatial

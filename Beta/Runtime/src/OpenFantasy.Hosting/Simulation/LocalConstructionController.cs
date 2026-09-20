@@ -30,7 +30,7 @@ internal sealed class LocalConstructionController
             return false;
         }
         SubunitPosition feet = world.Space.GetActor(resident.ActorId).Feet;
-        if (world.ProfileVersion == 12 && feet.Z != resident.HomeFeet.Z)
+        if (world.Space.GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction && feet.Z != resident.HomeFeet.Z)
         {
             return true;
         }
@@ -56,7 +56,7 @@ internal sealed class LocalConstructionController
         {
             return null;
         }
-        GroundRouteResult route = world.ProfileVersion == 12
+        GroundRouteResult route = world.Space.GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction
             ? world.Space.QueryWalkingRoute(actor.ActorId, destination)
             : world.Space.QueryGroundRoute(actor.ActorId, destination);
         if (route.Status != GroundRouteStatus.Reachable || route.NextWaypoint is not { } next)

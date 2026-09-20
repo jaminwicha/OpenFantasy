@@ -64,6 +64,7 @@ public sealed class WorldStepProcessor
         ProgressionSnapshot? progression = state.Progression;
         QuestSnapshot? quests = state.Quests;
         ConstructionSnapshot? construction = state.Construction;
+        ConstructionPhysicalSnapshot? physical = state.ConstructionPhysical;
         LocalSpatialSnapshot space = state.Space;
         LiquidReservoirState? reservoirs = state.Reservoirs;
         ReservoirTransportState? transport = state.Transport;
@@ -80,6 +81,7 @@ public sealed class WorldStepProcessor
             var previousProgression = progression;
             var previousQuests = quests;
             var previousConstruction = construction;
+            var previousPhysical = physical;
             var previousSpace = space;
             var previousReservoirs = reservoirs;
             var previousTransport = transport;
@@ -88,7 +90,7 @@ public sealed class WorldStepProcessor
             IReadOnlyList<EntityId> createdIds = [];
             if (action.Intent is ClimbIntent)
             {
-                if (gathering is null || state.ProfileVersion is not 11 and not 12)
+                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13)
                 {
                     throw new InvalidOperationException("This saved profile does not interpret assisted climbing.");
                 }
@@ -211,7 +213,8 @@ public sealed class WorldStepProcessor
                     resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
                 }
             }
-            if (!WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
+            if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
+                || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport))
             {
                 excavation = previousExcavation;
@@ -220,6 +223,7 @@ public sealed class WorldStepProcessor
                 progression = previousProgression;
                 quests = previousQuests;
                 construction = previousConstruction;
+                physical = previousPhysical;
                 space = previousSpace;
                 reservoirs = previousReservoirs;
                 transport = previousTransport;
@@ -229,6 +233,8 @@ public sealed class WorldStepProcessor
             }
             else
             {
+                physical = reconciledPhysical;
+                createdIds = physicalIds;
                 reservoirs = reconciled;
                 transport = reconciledTransport;
             }
@@ -290,8 +296,36 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical);
         return new WorldStepDecision(candidate, receipts, identities);
+    }
+
+    private static bool TryReconcilePhysical(ConstructionPhysicalSnapshot? physical, ConstructionSnapshot? construction, LocalSpatialSnapshot space,
+        IReadOnlyList<EntityId> createdIds, Func<EntityId, bool> occupied,
+        out ConstructionPhysicalSnapshot? candidate, out IReadOnlyList<EntityId> combinedIds)
+    {
+        candidate = physical;
+        combinedIds = createdIds;
+        if (physical is null) { return true; }
+        try
+        {
+            candidate = physical.ReconcileCompletions(construction
+                ?? throw new ArgumentException("Physical construction cannot lose its fabrication history."));
+            candidate.ValidateStableGeometry(space);
+            var prior = physical.Members.Select(value => value.ElementId).ToHashSet();
+            EntityId[] added = candidate.Members.Select(value => value.ElementId).Where(value => !prior.Contains(value)).ToArray();
+            EntityId[] all = createdIds.Concat(added).ToArray();
+            if (added.Any(occupied) || all.Distinct().Count() != all.Length)
+            {
+                return false;
+            }
+            combinedIds = all;
+            return true;
+        }
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+        {
+            return false;
+        }
     }
 
     private static bool FitsProduction(ProductionSnapshot? production, CountedAuthorityState inventory)
