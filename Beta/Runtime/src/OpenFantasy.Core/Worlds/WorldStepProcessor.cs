@@ -8,6 +8,7 @@ using OpenFantasy.Core.Progression;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Terrain;
+using OpenFantasy.Core.Structures;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -38,6 +39,22 @@ public sealed class WorldStepProcessor
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
         }
 
+        if ((batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null))
+        {
+            throw new InvalidOperationException("Pending work accepts only its explicit continuation.");
+        }
+        if (state.PendingExcavation is not null)
+        {
+            return WorldConsequenceProcessor.Continue(this, state, batch, historicallyOccupied);
+        }
+        return WorldConsequenceProcessor.TryBegin(state, batch, historicallyOccupied)
+            ?? DecideImmediate(state, batch, historicallyOccupied);
+    }
+
+    internal WorldStepDecision DecideImmediate(WorldSnapshot state, WorldStepBatch batch,
+        Func<EntityId, bool>? historicallyOccupied, ConstructionSettlementResolution? completedSettlement = null,
+        WorldActionCommand? acceptedCommand = null)
+    {
         ulong sequence = checked(state.Revision + 1);
         HashSet<EntityId> reserved = [];
         List<WorldCommittedIdentity> identities = [];
@@ -56,7 +73,12 @@ public sealed class WorldStepProcessor
         Reserve(batch.CauseId, WorldCommittedIdentityKind.CommitCause);
         foreach (WorldActionCommand action in batch.Actions)
         {
-            Reserve(action.CommandId, WorldCommittedIdentityKind.Command);
+            if (acceptedCommand is null) { Reserve(action.CommandId, WorldCommittedIdentityKind.Command); }
+            else if (batch.Actions.Count != 1 || action.ContentHash != acceptedCommand.ContentHash
+                || action.CommandId != acceptedCommand.CommandId)
+            {
+                throw new InvalidOperationException("Only the exact accepted excavation can finish without a new command identity.");
+            }
         }
         CountedAuthorityState inventory = state.Inventory;
         GatheringSnapshot? gathering = state.Gathering;
@@ -95,9 +117,10 @@ public sealed class WorldStepProcessor
                 var validationResidents = beforeTimeBoundary ? state.Residents.Select(resident => resident.ExperienceStep()) : residents;
                 ulong validationSteps = beforeTimeBoundary ? checked(advancingSteps + 1) : advancingSteps;
                 var validationGathering = beforeTimeBoundary ? gathering?.AdvanceStep(validationSteps) : gathering;
-                _ = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
+                var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
                     reservoirs, transport, excavation, proposedPhysical);
+                if (state.ConsequencePolicy is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
                 return true;
             }
             catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
@@ -124,7 +147,7 @@ public sealed class WorldStepProcessor
             IReadOnlyList<EntityId> createdIds = [];
             if (action.Intent is ClimbIntent)
             {
-                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15)
+                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16)
                 {
                     throw new InvalidOperationException("This saved profile does not interpret assisted climbing.");
                 }
@@ -141,8 +164,10 @@ public sealed class WorldStepProcessor
                 {
                     throw new InvalidOperationException("This saved profile does not interpret excavation.");
                 }
-                var plan = _excavation.Plan(state, inventory, space, gathering, production, excavation, action,
-                    batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0, Occupied, physical);
+                var plan = completedSettlement is not null
+                    ? _excavation.PlanResolved(state, action, Occupied, completedSettlement)
+                    : _excavation.Plan(state, inventory, space, gathering, production, excavation, action,
+                        batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0, Occupied, physical);
                 resolution = new(plan.Inventory, dialogues, plan.Rejection, plan.SpawnedId);
                 excavation = plan.Excavation;
                 gathering = plan.Gathering;

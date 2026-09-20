@@ -1,0 +1,120 @@
+{
+  "status": "bounded-functional-qualification-passed",
+  "scope": "Fresh dry profile16 durable isolated excavation with real bounded intact-settlement work; no production latency or broad collapse acceptance",
+  "build": {
+    "file": "build-final.log",
+    "warnings": 0,
+    "errors": 0,
+    "runtimeSourceFileCount": 536,
+    "runtimeSourcesUnchangedThroughFinalQualification": true
+  },
+  "tests": {
+    "status": "passed",
+    "total": 1371,
+    "core": 900,
+    "hosting": 471,
+    "new": 21,
+    "reports": [
+      {
+        "file": "managed-final/_mac_2026-09-19_21_04_54_net8.0.trx",
+        "total": 471,
+        "executed": 471,
+        "passed": 471,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      {
+        "file": "managed-final/_mac_2026-09-19_21_04_19_net8.0.trx",
+        "total": 900,
+        "executed": 900,
+        "passed": 900,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      }
+    ]
+  },
+  "host": {
+    "report": "host-16-final.json",
+    "ordinaryCalls": 43,
+    "actualProcessKills": 6,
+    "maximumOrdinaryCallSeconds": 4.901652249973267,
+    "deadlineSeconds": 30,
+    "exactFullLedgersAndHistory": true
+  },
+  "legacyControl": {
+    "report": "legacy-host-15.json",
+    "profile15OrdinaryCalls": 17,
+    "profile14OrdinaryCalls": 5,
+    "actualProcessKills": 2
+  },
+  "native": {
+    "foundation": "foundation.json",
+    "farm": "native-farm.json",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "preservation": {
+    "report": "preservation.json",
+    "oldProfileFixtureFilesRecreatedExactly": 10,
+    "newContinuationFixtureFilesRecreatedExactly": 16,
+    "frozenSpecs": 22,
+    "architectureLinks": 336,
+    "predecessorIndexedFiles": 19
+  },
+  "review": "native-review.md",
+  "upstream": {
+    "report": "ecosystem-learning.json",
+    "commit": "e25ade3",
+    "installedSkillCopies": 3
+  },
+  "retainedFailures": [
+    {
+      "file": "build-focused.log",
+      "disposition": "Test internal spatial-codec access replaced with complete public snapshot normalization"
+    },
+    {
+      "file": "build-corrected.log",
+      "disposition": "Journal sizing now consumes Core-owned exact receipt byte requirement; private codec visibility unchanged"
+    },
+    {
+      "file": "focused.log",
+      "disposition": "One new test corrected kind-order comparison; runtime canonical identity order preserved; final1371 pass"
+    },
+    {
+      "file": "host-16.json",
+      "disposition": "Historical read timed out at30s; same command passes at4.73s after own heavy work finished, complete serial follow-up passes unchanged limit; cause unconfirmed"
+    }
+  ],
+  "historicalReadRecheck": "historical-read-recheck.json",
+  "fullAllSystemsVerifierRun": false,
+  "verifierHookTestedDirectly": true,
+  "unqualified": [
+    "Production replay/latency and maximum-world performance; initial timeout cause remains unconfirmed",
+    "Broader affected-neighbor closure and multiple moving assemblies",
+    "Harmful impacts/injuries, fracture/debris, deformation and long flight",
+    "Cross-assembly resting and wet-terrain/fluid consequences",
+    "Rendered consequence gameplay, art/audio, devices/exports, multiplayer and full phase/game acceptance"
+  ]
+}

@@ -3,13 +3,14 @@ using System.Security.Cryptography;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Terrain;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Hosting.Simulation;
 
 /// <summary>The local host's current scheduling policy, independent of which client panel is visible.</summary>
-public enum LocalWorldRunState { Unavailable, Paused, Waiting, Running }
+public enum LocalWorldRunState { Unavailable, Paused, Waiting, Running, Resolving }
 
 /// <summary>
 /// Owns one durable local authority and its fixed-rate input cutoff. Authentication is the admitted
@@ -71,6 +72,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
         lock (_inputs)
         {
             if (_failure is not null || _stopRequested) return LocalWorldRunState.Unavailable;
+            if (_view.IsResolvingConsequences) return LocalWorldRunState.Resolving;
             if (!_ready) return LocalWorldRunState.Paused;
             return _view.HasReadingHold ? LocalWorldRunState.Waiting : LocalWorldRunState.Running;
         }
@@ -100,8 +102,9 @@ public sealed class LocalWorldSession : IAsyncDisposable
         lock (_inputs)
         {
             EnsureInputAvailable();
-            _movementX = _ready ? dx : 0;
-            _movementY = _ready ? dy : 0;
+            bool acceptsMovement = _ready && !_view.IsResolvingConsequences;
+            _movementX = acceptsMovement ? dx : 0;
+            _movementY = acceptsMovement ? dy : 0;
             _movementAt = _time.GetTimestamp();
         }
     }
@@ -130,36 +133,43 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 return prior;
             }
-            if (command.Intent is CraftIntent && _authority.InspectForHost().State.ProfileVersion < 3)
+            WorldSnapshot state = _authority.ReadStateForHost();
+            bool durablePending = state.PendingExcavation is not null;
+            if (state.PendingExcavation is { } accepted
+                && !WorldActionCodec.Encode(accepted.Command).AsSpan().SequenceEqual(encoded))
+            {
+                throw new AuthorityDispatchException("The world must finish its retained consequence command before selecting another action.");
+            }
+            if (command.Intent is CraftIntent && state.ProfileVersion < 3)
             {
                 throw new AuthorityDispatchException("This saved rules profile does not admit crafting actions.");
             }
             if (command.Intent is OpenFantasy.Core.Quests.DeliveryQuestIntent
-                && _authority.InspectForHost().State.ProfileVersion < 4)
+                && state.ProfileVersion < 4)
             {
                 throw new AuthorityDispatchException("This saved profile does not support quest actions.");
             }
             if (command.Intent is OpenFantasy.Core.Spatial.ClimbIntent
-                && _authority.ReadStateForHost().ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15)
+                && state.ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16)
             {
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
-            if (command.Intent is OpenFantasy.Core.Terrain.ExcavateIntent
-                && _authority.ReadStateForHost().ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15)
+            if (command.Intent is ExcavateIntent
+                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16)
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }
             if (command.Intent is OpenFantasy.Core.Geography.ScheduleRunoffTransportIntent
-                && _authority.ReadStateForHost().ProfileVersion != 9)
+                && state.ProfileVersion != 9)
             {
                 throw new AuthorityDispatchException("This saved profile does not support scheduled reservoir transport.");
             }
             if (command.Intent is OpenFantasy.Core.Geography.RunoffCommitmentIntent
-                && _authority.ReadStateForHost().ProfileVersion is not 8 and not 9)
+                && state.ProfileVersion is not 8 and not 9)
             {
                 throw new AuthorityDispatchException("This saved profile does not support runoff commitments.");
             }
-            if (command.Intent is WorkConstructionIntent && _authority.ReadStateForHost().ProfileVersion < 5)
+            if (command.Intent is WorkConstructionIntent && state.ProfileVersion < 5)
             {
                 throw new AuthorityDispatchException("This saved profile does not support construction work.");
             }
@@ -170,23 +180,26 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 {
                     if (!existing.Bytes.AsSpan().SequenceEqual(encoded))
                     {
-                        throw new AuthorityDispatchException("One actor action is already pending; it has not been acknowledged as durable.");
+                        throw new AuthorityDispatchException("One actor action is awaiting its terminal result.");
                     }
                     result = existing.Completion.Task;
                 }
                 else
                 {
-                    if (!_ready)
+                    if (!_ready && !durablePending)
                     {
                         throw new AuthorityDispatchException("The local session is not ready to select a new action.");
                     }
                     // The check runs under the serialized owner, before this request joins a batch.
-                    bool occupied;
-                    try { occupied = _authority.IsIdentityOccupiedForHost(command.CommandId); }
-                    catch (Exception error) { Fail(error); throw; }
-                    if (occupied)
+                    if (!durablePending)
                     {
-                        throw new AuthorityDispatchException("The command identity is already occupied.");
+                        bool occupied;
+                        try { occupied = _authority.IsIdentityOccupiedForHost(command.CommandId); }
+                        catch (Exception error) { Fail(error); throw; }
+                        if (occupied)
+                        {
+                            throw new AuthorityDispatchException("The command identity is already occupied.");
+                        }
                     }
                     _pending = new PendingLocalAction(command, encoded);
                     result = _pending.Completion.Task;
@@ -253,6 +266,16 @@ public sealed class LocalWorldSession : IAsyncDisposable
         await _serialization.WaitAsync(_stop.Token).ConfigureAwait(false);
         try
         {
+            lock (_inputs)
+            {
+                if (_stopRequested) { return; }
+            }
+            WorldSnapshot state = _authority.ReadStateForHost();
+            if (state.PendingExcavation is not null)
+            {
+                ContinueConsequences(state);
+                return;
+            }
             PendingLocalAction? pending;
             long x;
             long y;
@@ -264,10 +287,13 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 x = fresh ? _movementX : 0;
                 y = fresh ? _movementY : 0;
             }
-            WorldSnapshot state = _authority.ReadStateForHost();
             if (state.HasReadingHold && pending is null) { return; }
             List<WorldMovementInput> movement = [];
-            if (!state.HasReadingHold)
+            if (SelectsConsequenceTrigger(state, pending))
+            {
+                ClearMovement();
+            }
+            else if (!state.HasReadingHold)
             {
                 movement.AddRange(_npcs.SelectMovement(state));
                 if (x != 0 || y != 0) { movement.Add(new WorldMovementInput(_delivery, _playerActorId, x, y)); }
@@ -277,16 +303,61 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 return;
             }
-            WorldStepDecision decision = _authority.Commit(batch);
-            Volatile.Write(ref _view, new LocalWorldView(decision.Candidate, _playerActorId));
-            if (pending is not null)
-            {
-                WorldActionReceipt receipt = decision.Receipts.Single(value => value.CommandId == pending.Command.CommandId);
-                CompletePending(pending, receipt, null);
-            }
+            CommitSelectedBatch(batch, pending);
         }
         finally { _serialization.Release(); }
     }
+
+    private void ContinueConsequences(WorldSnapshot state)
+    {
+        PendingLocalAction? awaiting;
+        lock (_inputs)
+        {
+            if (_stopRequested) { return; }
+            _movementX = 0;
+            _movementY = 0;
+            awaiting = _pending;
+        }
+        if (awaiting is not null && !WorldActionCodec.Encode(state.PendingExcavation!.Command).AsSpan()
+            .SequenceEqual(awaiting.Bytes))
+        {
+            throw new InvalidDataException("The local waiter differs from the retained consequence command.");
+        }
+        var batch = new WorldStepBatch(NewCause(null), state.WorldId, state.BranchId, state.Revision,
+            state.AdvancingSteps, WorldBatchKind.ConsequenceContinuation, [], [], state.ProfileVersion);
+        CommitSelectedBatch(batch, awaiting);
+    }
+
+    private void CommitSelectedBatch(WorldStepBatch batch, PendingLocalAction? awaiting)
+    {
+        WorldStepDecision decision = _authority.Commit(batch);
+        Volatile.Write(ref _view, new LocalWorldView(decision.Candidate, _playerActorId));
+        if (decision.Candidate.PendingExcavation is { } pending)
+        {
+            ClearMovement();
+            if (awaiting is not null && !WorldActionCodec.Encode(pending.Command).AsSpan().SequenceEqual(awaiting.Bytes))
+            {
+                throw new InvalidDataException("The committed consequence command differs from the local waiter.");
+            }
+        }
+        else if (awaiting is not null)
+        {
+            WorldActionReceipt receipt = decision.Receipts.Single(value => value.CommandId == awaiting.Command.CommandId);
+            CompletePending(awaiting, receipt, null);
+        }
+    }
+
+    private void ClearMovement()
+    {
+        lock (_inputs)
+        {
+            _movementX = 0;
+            _movementY = 0;
+        }
+    }
+
+    private static bool SelectsConsequenceTrigger(WorldSnapshot state, PendingLocalAction? pending) =>
+        state.ConsequencePolicy is not null && !state.HasReadingHold && pending?.Command.Intent is ExcavateIntent;
 
     private WorldStepBatch? SelectAdmissibleBatch(WorldSnapshot state, ref PendingLocalAction? pending,
         IReadOnlyList<WorldMovementInput> movement)
@@ -329,6 +400,12 @@ public sealed class LocalWorldSession : IAsyncDisposable
         IEnumerable<WorldMovementInput> movement, bool includeNpcActions)
     {
         EntityId cause = NewCause(pending?.Command.CommandId);
+        if (SelectsConsequenceTrigger(state, pending))
+        {
+            // Select the isolated trigger before asking NPCs for any competing work or movement.
+            return new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision, state.AdvancingSteps,
+                WorldBatchKind.AdvancingStep, [], [pending!.Command], state.ProfileVersion);
+        }
         List<WorldActionCommand> actions = pending is null ? [] : [pending.Command];
         if (includeNpcActions && !state.HasReadingHold)
         {

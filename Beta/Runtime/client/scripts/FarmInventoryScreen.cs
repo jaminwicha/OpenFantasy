@@ -72,6 +72,7 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
         _time.Text = runState switch
         {
             LocalWorldRunState.Running => "World continuing",
+            LocalWorldRunState.Resolving => "Resolving world changes",
             LocalWorldRunState.Waiting => "World waiting",
             LocalWorldRunState.Paused => "World paused",
             _ => "World unavailable"

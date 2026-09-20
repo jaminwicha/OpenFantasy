@@ -36,13 +36,17 @@ internal sealed class WorldJournalRecovery
     {
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
-        if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold)
+        if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
         {
             throw new InvalidDataException("The local world genesis does not start at an unheld commit zero.");
         }
         if (genesis.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 && database.SchemaVersion != WorldDatabaseSchemaThree.Version)
         {
             throw new InvalidDataException("A production, quest or construction genesis requires its declared world schema.");
+        }
+        if ((genesis.ProfileVersion == 16) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
+        {
+            throw new InvalidDataException("A consequence continuation genesis requires its exclusive world schema.");
         }
         WorldSnapshot state = genesis;
         WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
@@ -69,7 +73,8 @@ internal sealed class WorldJournalRecovery
             ExpectedJournalEntry expected = PrepareEntry(database.SchemaVersion, stored, state,
                 genesis.IdentityIndex, stateHash, identities.ContainsKey, steps, migrations);
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(usage, stored.Sequence, stored.AdvancingSteps,
-                (ulong)expected.Commands.Count, (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length);
+                (ulong)expected.Commands.Count, (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length,
+                state.PendingExcavation is null ? expected.Candidate.PendingExcavation : null);
             VerifyCommit(stored, expected.Stored);
             foreach (StoredWorldCommandOutcome command in expected.Commands)
             {
@@ -114,6 +119,10 @@ internal sealed class WorldJournalRecovery
         if (database.SchemaVersion == WorldDatabaseSchemaThree.Version && state.ProfileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15)
         {
             throw new InvalidDataException("The third world schema has no accepted production, quest or construction admission.");
+        }
+        if ((state.ProfileVersion == 16) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
+        {
+            throw new InvalidDataException("The consequence continuation world and its exclusive schema disagree.");
         }
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps

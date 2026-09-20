@@ -44,6 +44,7 @@ public sealed class LocalWorldView
         PlayerActorId = playerActorId;
         Calendar = state.Calendar;
         HasReadingHold = state.HasReadingHold;
+        IsResolvingConsequences = state.PendingExcavation is not null;
         Actors = Array.AsReadOnly(state.Residents.Select(resident =>
         {
             var presence = state.Space.GetActor(resident.ActorId);
@@ -107,6 +108,7 @@ public sealed class LocalWorldView
     public EntityId PlayerActorId { get; }
     public WorldInstant Calendar { get; }
     public bool HasReadingHold { get; }
+    public bool IsResolvingConsequences { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }
     public ReadOnlyCollection<LocalGatherNodeView> GatheringNodes { get; }

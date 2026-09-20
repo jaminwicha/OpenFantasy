@@ -1,6 +1,13 @@
 # Durable consequence continuation: retained integration map
 
-This is a reviewed design dependency, not implemented behavior or an accepted feasibility gate.
+**Refinement, 2026-09-19:** the [durable continuation implementation](../consequence-continuation/README.md)
+reserves the selected interval at trigger and charges it only at terminal publication, including refusal.
+The original clock-at-trigger proposal below is retained as design history. Deferring the charge preserves
+exact capped effort, exposure and gathering bindings without a duplicated predecessor or inverse transition.
+Use the [timeless contract](../../../Runtime/docs/architecture/consequence-continuation.md) for the implemented
+owner. Broader affected closure and physical consequence gates remain open.
+
+The following is the original reviewed design dependency, not an accepted feasibility gate.
 The atomic harmless-settlement slice has no pending root and no intermediate save. General collapse
 still requires retained bounded work and automatic host continuation. This map preserves the native
 agent investigation so later work need not repeat it.

@@ -21,6 +21,7 @@ different kind of person.
 | [Structural loads](structural-loads.md) | How do funded members, carried goods, rated bearings and bounded failure plans conserve mass? |
 | [Structural policy and motion](structural-policy-and-motion.md) | How does saved load policy govern actions, carried materials and movement, and how are descent paths checked? |
 | [Intact settlement](structural-settlement.md) | How does excavation atomically lower intact material and riders onto known rated ground? |
+| [Consequence continuation](consequence-continuation.md) | How do accepted physical changes resume after restart and publish once without spending extra time? |
 | [Physical construction](construction-physical.md) | How do member condition and placement retain completed work, material ownership and atomic persistence? |
 | [Reservoir transport](reservoir-transport.md) | How do scheduled gates move actual water, preserve provenance and share time/capacity? |
 | [Reservoir boundaries](reservoir-boundaries.md) | What proves floors and walls against actual terrain and completed material, including narrow gaps? |

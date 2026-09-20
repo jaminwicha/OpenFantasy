@@ -86,8 +86,9 @@ canonical bytes and complete root invariants. The 16 MiB root limit, schema-thre
 identity rules and terminal receipts remain unchanged. Crash recovery either retains the predecessor or
 replays the entire accepted settlement; no partial unsupported root is published.
 
-This atomic bounded interpretation has no durable pending operation. Larger affected closures require a
-separate continuation contract retaining stable basis, complete policy, original command and bounded cursor.
+Profile fifteen publishes the bounded operation atomically. [Profile sixteen's consequence owner](consequence-continuation.md)
+retains the same geometry through durable continuations with a stable basis, complete policy, original command
+and bounded query cursor. Larger affected closures require additional geometry and consequence ownership.
 Continuations must resume without actor input, add no second time/effort interval and issue the original
 command's result and source exactly once. Overload breakage, deformation, debris transformations, harmful
 impacts, longer flight, resting on other assemblies and wet displacement retain their separate ownership

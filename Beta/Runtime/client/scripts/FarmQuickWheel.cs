@@ -70,6 +70,7 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
         _time.Text = runState switch
         {
             LocalWorldRunState.Running => "World continuing",
+            LocalWorldRunState.Resolving => "Resolving world changes",
             LocalWorldRunState.Waiting => "World waiting",
             LocalWorldRunState.Paused => "World paused · Inspection only",
             _ => "World unavailable"

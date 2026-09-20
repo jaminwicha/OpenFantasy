@@ -49,6 +49,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 13 | Complete stepped dry world plus separately revised physical construction members and material backing |
 | 14 | Complete physical world plus immutable load policy, represented carried/project mass and stable action/movement admission |
 | 15 | Immutable harmless-settlement calibration and atomic excavation with intact member/occupant descent |
+| 16 | Reserved advancing interval, retained geometric consequence cursor and original deferred receipt |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -230,3 +231,10 @@ History indexing and archive compaction preserve every promised destination loss
 pressure is visible backpressure, not permission to erase quiet eras or worlds without active quests.
 These broader obligations come from the [technical design](../../../spec-v1_1/TECHNICAL_DESIGN.md)
 and [geological history contract](../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md).
+
+## Reserved physical consequences
+
+The [durable consequence contract](consequence-continuation.md) retains eligible profile-sixteen excavation
+work across explicit continuation commits. The authoritative scene and game clocks remain unchanged until
+terminal publication charges the reserved advancing interval once, including on refusal. Active sessions
+resume before client readiness; read-only opening and recorded history do not advance pending work.

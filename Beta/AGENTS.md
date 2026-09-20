@@ -70,3 +70,8 @@ a coordinated interval. Do not repeatedly grab focus, close another task's appli
 deadlines or convert interrupted runs to passes. Record observed window/Control focus and host
 readiness; keep failures and their original assertions. Continue independent work when foreground
 access is unavailable. Controlled-focus rendering never substitutes for physical/OS acceptance.
+
+For deadline-sensitive validation, avoid overlapping this task's heavy builds, full regressions and
+resource-intensive probes. Continue lightweight independent work. Preserve timing failures and repeat
+a diagnostic with the same command/threshold after removing this self-imposed overlap; a later pass
+alone neither establishes contention as the cause nor closes a production latency/scale gate.

@@ -1,0 +1,99 @@
+{
+  "Scope": "Funded intact settlement with a reserved interval and durable geometric continuations",
+  "ProfileVersion": 16,
+  "WorldId": "4955a478907a739f49ff302c94a798ad",
+  "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+  "SiteId": "737570706f7274730000000000000004",
+  "SourceId": "737570706f7274730000000000000005",
+  "TerrainSourceId": "7b64d238811537a5088f9d7f68dcb6b0",
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "Builder": "49354ca83f251b3ce9d363158e0786a4",
+  "PreRevision": 94,
+  "PreHash": "6bf198d31428a6a59dee9ec2db898f2a818ab6d3104ab449c11dc35b1ec02bd2",
+  "PostRevision": 100,
+  "PostHash": "45a69311fc283e90f4aec7714d81669b593193388f9f4f573eda41571e5a9c33",
+  "BeforeRevision": 94,
+  "BeforeHash": "6bf198d31428a6a59dee9ec2db898f2a818ab6d3104ab449c11dc35b1ec02bd2",
+  "PendingRevision": 95,
+  "PendingHash": "c9c40c9564214ce23d2dac6430c48bb718f6f37563c887c7bb46f20c28baedcf",
+  "AfterRevision": 100,
+  "AfterHash": "45a69311fc283e90f4aec7714d81669b593193388f9f4f573eda41571e5a9c33",
+  "TriggerCauseId": "0000000000000000000000000070eaa5",
+  "CommandId": "0000000000000000000000000070eaa4",
+  "ReceiptHex": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100000000000000000000000000070EAA4000000102D222BEFA7A8B2CD7BA0A05A00950F27000000104955A478907A739F49FF302C94A798AD000000102A89AF71F707591D46CFE34B9B60F96C00000020C3395A5C9D787BFA8391ABFFAC58DAB92BA807CA14CFBBD0048D643D4294A6C0000000080000000000000064000000080000000000000001000000080000000000000000",
+  "Continuations": 5,
+  "TriggerFile": "trigger.bin",
+  "BeforeFile": "before.sqlite",
+  "AfterFile": "after.sqlite",
+  "ContinuationFiles": [
+    "continuation-001.bin",
+    "continuation-002.bin",
+    "continuation-003.bin",
+    "continuation-004.bin",
+    "continuation-005.bin"
+  ],
+  "PendingFiles": [
+    "pending-0.sqlite",
+    "pending-1.sqlite",
+    "pending-2.sqlite",
+    "pending-3.sqlite",
+    "pending-4.sqlite"
+  ],
+  "BeforeSteps": 91,
+  "AfterSteps": 92,
+  "SourceLotId": "60471ba571b0a0562e3f3fcb148766ba",
+  "BeforeInventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+  "AfterInventoryHash": "1ed9005b8e6377a4d8d8be8f68a42d9a4f7d71a5418d0f49d85460bb7ba43d1b",
+  "BeforePhysicalHash": "47de6679f4727a3a8c48619bf35ed52201246fc0fd700f8761441a2554200f8a",
+  "AfterPhysicalHash": "8a0a11b8afc6bc4547442e50b724cb5eef661448256af5e0938f9a96e9bdc989",
+  "Actors": [
+    {
+      "ActorId": "49354ca83f251b3ce9d363158e0786a4",
+      "X": 27264,
+      "Y": 83072,
+      "Z": 64,
+      "Revision": 57
+    },
+    {
+      "ActorId": "c7da6de6f885e3516d9dfd3dab51cf6b",
+      "X": 27008,
+      "Y": 83072,
+      "Z": 0,
+      "Revision": 33
+    }
+  ],
+  "History": [
+    {
+      "Revision": 0,
+      "Hash": "90f35d381cd9a5c9b0f793c02c86dfbae06ae7147f7ae641f9982f045af1bf98"
+    },
+    {
+      "Revision": 94,
+      "Hash": "6bf198d31428a6a59dee9ec2db898f2a818ab6d3104ab449c11dc35b1ec02bd2"
+    },
+    {
+      "Revision": 95,
+      "Hash": "c9c40c9564214ce23d2dac6430c48bb718f6f37563c887c7bb46f20c28baedcf"
+    },
+    {
+      "Revision": 96,
+      "Hash": "3ef5ea86514ade1399ea233520f0ab7af97460d3d20830833e6c5c011c4d6333"
+    },
+    {
+      "Revision": 97,
+      "Hash": "f530ac9991aa9a8feb5c686401b1f3bf23bde20ec56c614598c4cfa092461bf0"
+    },
+    {
+      "Revision": 98,
+      "Hash": "218e2e484f77470715e8026bec7cc2fecdc37c97888a2d518193d052e579c0b0"
+    },
+    {
+      "Revision": 99,
+      "Hash": "c81e73f9cddd6611d0747611c1f4a041f9b16c2e24a008ecc9914e8ce54fd254"
+    },
+    {
+      "Revision": 100,
+      "Hash": "45a69311fc283e90f4aec7714d81669b593193388f9f4f573eda41571e5a9c33"
+    }
+  ]
+}

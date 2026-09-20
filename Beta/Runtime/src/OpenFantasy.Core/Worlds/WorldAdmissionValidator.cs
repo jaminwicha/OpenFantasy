@@ -41,6 +41,7 @@ public static class WorldAdmissionValidator
         admission.ReadTransport();
         admission.ReadExcavation();
         admission.ReadStructuralPolicy();
+        admission.ReadPendingExcavation();
         return admission.Complete();
     }
 
@@ -117,6 +118,18 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed);
+
+        internal void ReadPendingExcavation()
+        {
+            if (world.PendingExcavation is not { } pending) { return; }
+            Add(pending.Command.CommandId, WorldIdentityRole.PendingCommand, unique: true);
+            Add(pending.TriggerCauseId, WorldIdentityRole.CauseReference, unique: true);
+            Add(pending.ReservedSourceId, WorldIdentityRole.PendingPublication, unique: true);
+            foreach (var identity in pending.ResultReservations)
+            {
+                Add(identity, WorldIdentityRole.PendingPublication, unique: true);
+            }
+        }
 
         internal void ReadReservoirs()
         {

@@ -29,9 +29,10 @@ public sealed class WorldSnapshot
         PreparedWatershed? watershed = null, PreparedWatershedNetwork? watershedNetwork = null,
         LiquidReservoirState? reservoirs = null, ReservoirTransportState? transport = null, ExcavationSnapshot? excavation = null,
         ConstructionPhysicalSnapshot? constructionPhysical = null, ConstructionLoadPolicy? structuralPolicy = null,
-        StructuralSettlementPolicy? structuralSettlementPolicy = null)
+        StructuralSettlementPolicy? structuralSettlementPolicy = null,
+        ConsequenceExecutionPolicy? consequencePolicy = null, PendingExcavation? pendingExcavation = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, null)
     {
     }
 
@@ -42,7 +43,8 @@ public sealed class WorldSnapshot
         ConstructionSnapshot? construction, PreparedWatershed? watershed, PreparedWatershedNetwork? watershedNetwork,
         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
         ConstructionPhysicalSnapshot? constructionPhysical, ConstructionLoadPolicy? structuralPolicy,
-        StructuralSettlementPolicy? structuralSettlementPolicy, WorldIdentityIndex? previous)
+        StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
+        PendingExcavation? pendingExcavation, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -142,6 +144,13 @@ public sealed class WorldSnapshot
         ConstructionPhysical = constructionPhysical;
         StructuralPolicy = structuralPolicy;
         StructuralSettlementPolicy = structuralSettlementPolicy;
+        ConsequencePolicy = consequencePolicy;
+        PendingExcavation = pendingExcavation;
+        if (consequencePolicy is not null && structuralSettlementPolicy is null
+            || pendingExcavation is not null && consequencePolicy is null)
+        {
+            throw new ArgumentException("Pending consequences require the complete settlement and execution policies.");
+        }
         if (structuralSettlementPolicy is not null && structuralPolicy is null)
         {
             throw new ArgumentException("Settlement requires the complete structural policy owner.");
@@ -165,6 +174,7 @@ public sealed class WorldSnapshot
         {
             throw new ArgumentException("Structural policy requires complete physical construction in its exact terrain scope.");
         }
+        PendingExcavation?.ValidateForWorld(this);
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
         if (structuralPolicy is not null)
         {
@@ -195,7 +205,9 @@ public sealed class WorldSnapshot
     public ConstructionPhysicalSnapshot? ConstructionPhysical { get; }
     public ConstructionLoadPolicy? StructuralPolicy { get; }
     public StructuralSettlementPolicy? StructuralSettlementPolicy { get; }
-    public ushort ProfileVersion => StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
+    public ConsequenceExecutionPolicy? ConsequencePolicy { get; }
+    public PendingExcavation? PendingExcavation { get; }
+    public ushort ProfileVersion => ConsequencePolicy is not null ? (ushort)16 : StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
         : ConstructionPhysical is not null ? (ushort)13
         : Space.GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction ? (ushort)12
         : Space.GroundSupport == GroundSupportMode.TerrainAndConstruction ? (ushort)11
@@ -215,6 +227,10 @@ public sealed class WorldSnapshot
         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
         ConstructionPhysicalSnapshot? constructionPhysical)
     {
+        if (PendingExcavation is not null)
+        {
+            throw new InvalidOperationException("Resolve or retain the pending interval before changing world state.");
+        }
         if (space.GroundSupport != Space.GroundSupport)
         {
             throw new ArgumentException("A successor must retain its admitted ground support rules.");
@@ -236,6 +252,12 @@ public sealed class WorldSnapshot
             throw new ArgumentException("A world successor must retain the sole transport and physical owner together.");
         }
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, IdentityIndex);
     }
+    internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
+        Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
+        Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
+        Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
+        Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
+        ConsequencePolicy, pending, IdentityIndex);
 }

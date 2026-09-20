@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/consequence-continuation/qualification/consequence-c180a7aa76714d7885b236aeefe13aa8/normal.sqlite",
+    "97"
+  ],
+  "timeoutSeconds": 30,
+  "context": "Same failed historical read after this task completed its managed/build work; other desktop tasks are not controlled.",
+  "exitCode": 0,
+  "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":100,\"SourceHeadHash\":\"45a69311fc283e90f4aec7714d81669b593193388f9f4f573eda41571e5a9c33\",\"RecordedRevision\":97,\"StateHash\":\"f530ac9991aa9a8feb5c686401b1f3bf23bde20ec56c614598c4cfa092461bf0\",\"ProfileVersion\":16,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32563800},\"AdvancingSteps\":91,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"47de6679f4727a3a8c48619bf35ed52201246fc0fd700f8761441a2554200f8a\",\"ConstructionHash\":\"7fedd85ae81edcb5e3b9fe6dc1342119cbcec2cebd9c8d63db61a3552c763726\",\"Members\":[{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"fabc28348139bd7c1f681a4d1db9e102a2c030fb84e42df8405916fbb29dbdb1\",\"TemplateCount\":1,\"FoundationCount\":1049,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83072,\"Z\":320,\"Cell\":{\"X\":106,\"Y\":324,\"Z\":1}},\"PresenceRevision\":56,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27008,\"Y\":83072,\"Z\":0,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":0}},\"PresenceRevision\":33,\"SourceItemQuantity\":4}],\"SourceLotCount\":4,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+  "stderr": "",
+  "status": "passed",
+  "elapsedSeconds": 4.730781875085086
+}

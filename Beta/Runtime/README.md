@@ -352,3 +352,12 @@ reports include `ConstructionPhysical` hashes and member/source information; the
 safety or live collapse. See [physical construction](docs/architecture/construction-physical.md).
 `OPENFANTASY_CONSTRUCTION_PHYSICAL_EVIDENCE` retains the actual completion and upstairs fixture used by
 `tools/check_construction_physical.py` for commit-kill/retry/history qualification.
+
+
+Fresh dry profile sixteen adds [durable consequence continuation](docs/architecture/consequence-continuation.md)
+to the intact-settlement interpretation. Eligible isolated excavation retains its command and reserved time
+interval while actual geometric queries progress. Schema four journals explicit continuation rows; the
+original receipt and physical/material changes publish once at completion. The session resumes saved work
+before readiness, while read-only opening/history never progress it. `tools/check_consequence_continuation.py`
+qualifies real trigger/intermediate/final process-kill boundaries using `OPENFANTASY_CONSEQUENCE_EVIDENCE`
+fixtures from managed tests. The default playable farm remains on its existing profile.

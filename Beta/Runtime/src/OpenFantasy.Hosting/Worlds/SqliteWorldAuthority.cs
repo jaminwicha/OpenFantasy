@@ -34,14 +34,19 @@ public sealed class SqliteWorldAuthority : IDisposable
     public static SqliteWorldAuthority CreateNew(string path, WorldSnapshot genesis)
     {
         ArgumentNullException.ThrowIfNull(genesis);
-        if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold)
+        if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
         {
             throw new ArgumentException("A new local world requires commit zero, step zero and no committed dialogue.", nameof(genesis));
         }
         byte[] bytes = WorldSnapshotCodec.Encode(genesis);
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
-        WorldDatabase database = WorldDatabase.Open(path, create: true,
-            accepted.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 ? WorldDatabaseSchemaThree.Version : WorldDatabaseSchema.Version);
+        int schemaVersion = accepted.ProfileVersion switch
+        {
+            16 => WorldDatabaseSchemaFour.Version,
+            3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 => WorldDatabaseSchemaThree.Version,
+            _ => WorldDatabaseSchema.Version
+        };
+        WorldDatabase database = WorldDatabase.Open(path, create: true, schemaVersion);
         try
         {
             database.Initialize(bytes);
@@ -125,7 +130,8 @@ public sealed class SqliteWorldAuthority : IDisposable
                 batch, identity => _database.ContainsIdentity(identity));
             WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence, prepared.Stored.AdvancingSteps,
                 (ulong)prepared.Commands.Count, (ulong)prepared.Stored.AcceptedBatch.Length,
-                (ulong)prepared.Stored.Outcomes.Length);
+                (ulong)prepared.Stored.Outcomes.Length,
+                _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null);
             return prepared.Decision;
         }
     }
@@ -161,7 +167,8 @@ public sealed class SqliteWorldAuthority : IDisposable
                 batch, identity => _database.ContainsIdentity(identity, transaction));
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence,
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,
-                (ulong)prepared.Stored.AcceptedBatch.Length, (ulong)prepared.Stored.Outcomes.Length);
+                (ulong)prepared.Stored.AcceptedBatch.Length, (ulong)prepared.Stored.Outcomes.Length,
+                _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null);
             try
             {
                 _database.WriteCommit(prepared.Stored, transaction);
@@ -198,7 +205,8 @@ public sealed class SqliteWorldAuthority : IDisposable
 
     /// <summary>
     /// Retrieves an exact terminal receipt only after current control checks. An old origin session
-    /// remains immutable retry content; fresh requests must instead match the current delivery session.
+    /// remains immutable retry content for terminal or retained pending commands; fresh requests
+    /// must instead match the current delivery session. A pending command has no terminal receipt yet.
     /// </summary>
     public WorldActionReceipt? FindReceipt(WorldActionCommand command, TrustedCommandDelivery delivery)
     {
@@ -220,6 +228,14 @@ public sealed class SqliteWorldAuthority : IDisposable
                     throw new AuthorityDispatchException("The command identity already names different content.");
                 }
                 return WorldReceiptCodecV1.Decode(prior.Receipt);
+            }
+            if (_state.PendingExcavation is { } pending && pending.Command.CommandId == command.CommandId)
+            {
+                if (!WorldActionCodec.Encode(pending.Command).AsSpan().SequenceEqual(WorldActionCodec.Encode(command)))
+                {
+                    throw new AuthorityDispatchException("The pending command identity already names different content.");
+                }
+                return null;
             }
             if (command.OriginSessionId != delivery.SessionId)
             {

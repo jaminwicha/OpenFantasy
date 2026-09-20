@@ -27,7 +27,8 @@ internal sealed class StructuralSettlementWorldFixture
 
     internal StructuralSettlementWorldFixture(bool admitSettlement = true,
         SettlementLowerSupport lowerSupport = SettlementLowerSupport.Rated,
-        long safeActorDrop = 256, long safeMemberDrop = 256, bool overhangCollision = false)
+        long safeActorDrop = 256, long safeMemberDrop = 256, bool overhangCollision = false,
+        int? consequenceWorkBudget = null)
     {
         this.overhangCollision = overhangCollision;
         var platform = new ConstructedSupportWorldFixture();
@@ -62,6 +63,10 @@ internal sealed class StructuralSettlementWorldFixture
         LegacyGenesis14 = WorldStructuralPolicyAdmission.CreateGenesis(physical, PolicyFor(physical));
         Genesis = admitSettlement ? WorldStructuralSettlementAdmission.CreateGenesis(LegacyGenesis14,
             new StructuralSettlementPolicy(256, safeActorDrop, safeMemberDrop, 9800)) : LegacyGenesis14;
+        if (consequenceWorkBudget is { } budget)
+        {
+            Genesis = WorldConsequenceAdmission.CreateGenesis(Genesis, new ConsequenceExecutionPolicy(budget));
+        }
     }
 
     internal ConstructionUpgradeFixture Actions { get; }

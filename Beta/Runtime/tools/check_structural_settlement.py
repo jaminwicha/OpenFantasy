@@ -55,7 +55,7 @@ def settlement_policy(data):
 def state_witness(data, expected):
     root = read_frame(data, 'world.snapshot')
     profile = number(root[1])
-    assert profile in (14, 15) and len(root) == {14: 19, 15: 20}[profile]
+    assert profile in (14, 15, 16) and len(root) == {14: 19, 15: 20, 16: 22}[profile]
     spatial = read_frame(root[3], 'world.spatial', 8)
     assert number(spatial[1]) == 3
     authority = read_frame(root[2], 'authority.counted-state', 9)
@@ -215,7 +215,7 @@ def state_witness(data, expected):
                 ExcavationHash=digest(root[16]), RequiredWork=number(site[9]), CompletedWork=number(site[10]),
                 MaterialPin=site[6].hex(), YieldQuantity=quantity, Issued=issued,
                 StructuralPolicy=load_policy, PolicyIdentities=identities,
-                StructuralSettlementPolicy=settlement_policy(root[19]) if profile == 15 else None)
+                StructuralSettlementPolicy=settlement_policy(root[19]) if profile >= 15 else None)
 
 
 def main():

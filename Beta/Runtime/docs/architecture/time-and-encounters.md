@@ -83,3 +83,10 @@ connection is insufficient. An active connected player has no automatic decision
 disconnect and its host-policy handoff are recorded external decisions, replayed as records rather
 than recalculated from wall time. Full policies and numeric encounter budgets are owned by the
 [technical design](../../../spec-v1_1/TECHNICAL_DESIGN.md).
+
+## Reserved physical consequences
+
+The [durable consequence contract](consequence-continuation.md) retains eligible profile-sixteen excavation
+work across explicit continuation commits. The authoritative scene and game clocks remain unchanged until
+terminal publication charges the reserved advancing interval once, including on refusal. Active sessions
+resume before client readiness; read-only opening and recorded history do not advance pending work.

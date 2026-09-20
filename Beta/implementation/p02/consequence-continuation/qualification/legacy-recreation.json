@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "profiles": [
+    14,
+    15
+  ],
+  "files": {
+    "after-settlement.sqlite": true,
+    "before-settlement.sqlite": true,
+    "expected.json": true,
+    "genesis.bin": true,
+    "legacy-after.sqlite": true,
+    "legacy-before.sqlite": true,
+    "legacy-expected.json": true,
+    "legacy-genesis.bin": true,
+    "legacy-step.bin": true,
+    "settlement-step.bin": true
+  },
+  "reference": "../../structural-settlement/qualification/host-15-final.json"
+}

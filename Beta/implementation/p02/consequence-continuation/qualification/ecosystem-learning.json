@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "ecosystemCommit": "e25ade3",
+  "maintainedSkill": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+  "installedCopies": [
+    {
+      "target": "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+      "sha256": "2f48aaec4abe37b71bc7d9fea62db18fcad3f6306f1f8ce5cd99730479f38b7c"
+    },
+    {
+      "target": "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+      "sha256": "2f48aaec4abe37b71bc7d9fea62db18fcad3f6306f1f8ce5cd99730479f38b7c"
+    },
+    {
+      "target": "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md",
+      "sha256": "2f48aaec4abe37b71bc7d9fea62db18fcad3f6306f1f8ce5cd99730479f38b7c"
+    }
+  ],
+  "scope": "Serialize this task\u2019s heavy workloads around deadline-sensitive validation; retain failure and threshold; later pass does not prove contention.",
+  "backupReceipt": "/Users/alucinor/.local/share/gamedev-ai-ecosystem/skill-sync/deadline-validation-2026-09-19/receipt.json",
+  "skillValidation": "quick_validate.py via uv with pyyaml: Skill is valid",
+  "preservation": "Initial guard found a divergent legacy Gemini installation; no changes were made to it. Maintained targets follow the existing synchronization manifest."
+}

@@ -1,6 +1,7 @@
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Terrain;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting.Worlds;
@@ -33,6 +34,7 @@ internal sealed class WorldCommitPreparation
             throw new InvalidDataException("The prepared world did not advance one commit revision.");
         }
         Dictionary<EntityId, WorldActionCommand> actions = batch.Actions.ToDictionary(action => action.CommandId);
+        AccountForPendingCommand(state, batch, decision.Candidate, actions);
         List<StoredWorldCommandOutcome> commands = [];
         foreach (WorldActionReceipt receipt in decision.Receipts)
         {
@@ -61,7 +63,8 @@ internal sealed class WorldCommitPreparation
     {
         if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
-            || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold)
+            || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
+            || (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null))
         {
             throw new AuthorityDispatchException("The selected batch does not match the current world revision or hold.");
         }
@@ -82,10 +85,51 @@ internal sealed class WorldCommitPreparation
         }
     }
 
+    private static void AccountForPendingCommand(WorldSnapshot state, WorldStepBatch batch, WorldSnapshot candidate,
+        Dictionary<EntityId, WorldActionCommand> actions)
+    {
+        if (state.PendingExcavation is { } previous)
+        {
+            if (batch.Kind != WorldBatchKind.ConsequenceContinuation || batch.Actions.Count != 0 || batch.Movement.Count != 0)
+            {
+                throw new InvalidDataException("Pending consequences require an isolated continuation.");
+            }
+            if (candidate.PendingExcavation is { } continuing)
+            {
+                if (!SameCommand(previous.Command, continuing.Command)
+                    || previous.TriggerCauseId != continuing.TriggerCauseId || previous.BasisRevision != continuing.BasisRevision)
+                {
+                    throw new InvalidDataException("A continuation changed its retained command or trigger binding.");
+                }
+            }
+            else
+            {
+                // Completion owes the original accepted command its one terminal outcome.
+                actions.Add(previous.Command.CommandId, previous.Command);
+            }
+        }
+        else if (candidate.PendingExcavation is { } started)
+        {
+            if (state.ConsequencePolicy is null || batch.Kind != WorldBatchKind.AdvancingStep
+                || batch.Actions.Count != 1 || batch.Movement.Count != 0
+                || batch.Actions[0].Intent is not ExcavateIntent || !SameCommand(batch.Actions[0], started.Command)
+                || started.TriggerCauseId != batch.CauseId || started.BasisRevision != state.Revision
+                || !actions.Remove(started.Command.CommandId))
+            {
+                throw new InvalidDataException("A deferred outcome does not match one exact newly retained excavation command.");
+            }
+            // No receipt is eligible here: the command is now owned by the candidate's pending state.
+        }
+    }
+
+    private static bool SameCommand(WorldActionCommand left, WorldActionCommand right) =>
+        WorldActionCodec.Encode(left).AsSpan().SequenceEqual(WorldActionCodec.Encode(right));
+
     private static WorldCommitKind Map(WorldBatchKind kind) => kind switch
     {
         WorldBatchKind.AdvancingStep => WorldCommitKind.AdvancingStep,
         WorldBatchKind.HeldInteraction => WorldCommitKind.HeldInteraction,
+        WorldBatchKind.ConsequenceContinuation => WorldCommitKind.ConsequenceContinuation,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
 
