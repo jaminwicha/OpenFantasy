@@ -64,8 +64,13 @@ public sealed class ConstructionBearingModel
         var ratings = templates.Take(ConstructionSnapshot.MaximumDefinitions + 1).ToArray();
         var anchors = foundations.Take(StructuralLoadGraph.MaximumElements + 1).ToArray();
         var wear = (conditions ?? []).Take(ConstructionSnapshot.MaximumProjects * ConstructionDefinition.MaximumMembers + 1).ToArray();
+        bool allowsSettlement = world.StructuralSettlementPolicy is not null;
+        if (allowsSettlement && world.ConstructionPhysical is null)
+        {
+            throw new ArgumentException("Structural settlement requires retained physical member placement.");
+        }
         if (world.ConstructionPhysical is { } physical && (wear.Length != 0
-            || physical.Members.Any(value => value.Disposition != ConstructionMemberDisposition.Standing)))
+            || !allowsSettlement && physical.Members.Any(value => value.Disposition != ConstructionMemberDisposition.Standing)))
         {
             throw new ArgumentException("Retained physical condition cannot be replaced by diagnostic wear; detached material requires a new contact model.");
         }
@@ -91,9 +96,22 @@ public sealed class ConstructionBearingModel
         {
             var region = world.Space.Regions.SingleOrDefault(value => value.Bounds.Contains(anchor.Cell));
             var cell = region?.GetCell(anchor.Cell);
-            if (cell is null || !cell.IsSolid || cell.SourceId != anchor.SourceId || cell.Material != anchor.Material)
+            if (cell is null || cell.SourceId != anchor.SourceId || cell.Material != anchor.Material)
             {
                 throw new ArgumentException("A declared stable bearing must match a retained solid terrain source and material.");
+            }
+            if (!cell.IsSolid)
+            {
+                // The policy and its identity remain retained. Only exact completed excavation can
+                // retire this contact; absent terrain or an unowned hole never becomes empty support.
+                bool retired = allowsSettlement && cell.IsExcavated && world.Excavation is { } excavation
+                    && excavation.Sites.Any(site => site.IsComplete && site.Cell == anchor.Cell
+                        && site.TerrainSourceId == anchor.SourceId && site.Material.Item == anchor.Material);
+                if (!retired)
+                {
+                    throw new ArgumentException("An inactive foundation requires its exact completed excavation owner.");
+                }
+                continue;
             }
             elements.Add(new(anchor.ElementId, new(0), new(0), anchor.Capacity, 10000, true, 0));
             const long cellTicks = SubunitPosition.SubunitsPerCell * StructureBearingSurface.TicksPerSubunit;
@@ -113,6 +131,8 @@ public sealed class ConstructionBearingModel
             template.ValidateFor(project.Definition);
             usedTemplates.Add(template.DefinitionId);
             var installed = project.Installed!;
+            SubunitPosition origin = allowsSettlement
+                ? SettledOrigin(project, world.ConstructionPhysical!) : project.SiteFeet;
             IReadOnlyList<MassMilligrams> memberMasses = masses.MemberMasses(project.Definition);
             for (uint index = 0; index < project.Definition.Members.Count; index++)
             {
@@ -125,12 +145,12 @@ public sealed class ConstructionBearingModel
                 elements.Add(new(id, memberMasses[(int)index], new(0), rating.Capacity, condition, false, rating.MinimumSupportCount));
                 members.Add(new(id, project.ProjectId, installed.StructureId, installed.GuardLotId, index,
                     memberMasses[(int)index], new(member.VolumeMicrolitres)));
-                StructureBearingSurface surface = StructureBearingSurface.FromMember(member, project.SiteFeet);
+                StructureBearingSurface surface = StructureBearingSurface.FromMember(member, origin);
                 contacts.Add(new(id, surface.Bounds, surface.StandingZ, surface.TopTicks));
                 if (member.MinZ == 0)
                 {
                     var weights = StructuralContactWeights.Resolve(surface.Bounds,
-                        terrainContacts.Where(value => value.StandingZ == project.SiteFeet.Z));
+                        terrainContacts.Where(value => value.StandingZ == origin.Z));
                     AddBearings(id, weights, bearings);
                 }
             }
@@ -173,6 +193,33 @@ public sealed class ConstructionBearingModel
         structureId.ToByteArray(), CanonicalEncodingV1.Unsigned64(memberIndex));
 
     public static EntityId ActorIdentity(EntityId actorId) => Identity("structure.actor-load.v1", actorId.ToByteArray());
+
+    /// <summary>
+    /// The settlement profile admits only intact rigid vertical translation onto rated terrain.
+    /// Uniform placement preserves the exact authored joint faces; this does not qualify a trajectory,
+    /// impact response, cross-assembly resting contact or a replacement material-strength rating.
+    /// </summary>
+    private static SubunitPosition SettledOrigin(ConstructionProject project, ConstructionPhysicalSnapshot physical)
+    {
+        EntityId structureId = project.Installed!.StructureId;
+        ConstructionMemberState first = physical.GetMember(structureId, 0);
+        SubunitPosition displacement = first.Displacement;
+        if (first.Disposition is not ConstructionMemberDisposition.Standing and not ConstructionMemberDisposition.Resting
+            || displacement.X != 0 || displacement.Y != 0 || displacement.Z > 0
+            || first.Disposition == ConstructionMemberDisposition.Standing && displacement != default)
+        {
+            throw new ArgumentException("Settlement supports only standing or vertically descended rigid assemblies.");
+        }
+        for (uint index = 1; index < project.Definition.Members.Count; index++)
+        {
+            ConstructionMemberState member = physical.GetMember(structureId, index);
+            if (member.Displacement != displacement || member.Disposition != first.Disposition)
+            {
+                throw new ArgumentException("Every assembly member must retain one uniform settlement pose and disposition.");
+            }
+        }
+        return project.SiteFeet.Offset(0, 0, displacement.Z);
+    }
 
     private static EntityId BearingIdentity(EntityId upper, EntityId lower) =>
         Identity("structure.bearing.v1", upper.ToByteArray(), lower.ToByteArray());

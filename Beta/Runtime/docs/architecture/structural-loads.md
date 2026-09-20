@@ -36,8 +36,9 @@ does not invent bracing, and material hardness is not load capacity. Definition 
 explicit rating; ground members cannot acquire an authored joint that bypasses their terrain footing.
 Member condition scales capacity by integer parts out of 10,000; zero condition fails explicitly.
 A world with a [physical construction owner](construction-physical.md) supplies retained standing-member
-condition; external condition overrides are rejected. Detached members require a new contact model and
-are refused by this static binder.
+condition; external condition overrides are rejected. Earlier profiles refuse displaced members. The
+[intact settlement profile](structural-settlement.md) binds uniformly translated assemblies at their current
+origins, preserves surviving authored joints and retires active foundations only through exact owned excavation.
 
 [StableTerrainBearing](../../src/OpenFantasy.Core/Structures/StableTerrainBearing.cs) declares a finite
 boundary at a retained solid cell with its exact source/material and positive capacity. Solidity alone

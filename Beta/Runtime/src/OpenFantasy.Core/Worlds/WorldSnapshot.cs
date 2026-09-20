@@ -28,9 +28,10 @@ public sealed class WorldSnapshot
         ProgressionSnapshot? progression = null, QuestSnapshot? quests = null, ConstructionSnapshot? construction = null,
         PreparedWatershed? watershed = null, PreparedWatershedNetwork? watershedNetwork = null,
         LiquidReservoirState? reservoirs = null, ReservoirTransportState? transport = null, ExcavationSnapshot? excavation = null,
-        ConstructionPhysicalSnapshot? constructionPhysical = null, ConstructionLoadPolicy? structuralPolicy = null)
+        ConstructionPhysicalSnapshot? constructionPhysical = null, ConstructionLoadPolicy? structuralPolicy = null,
+        StructuralSettlementPolicy? structuralSettlementPolicy = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, null)
     {
     }
 
@@ -40,7 +41,8 @@ public sealed class WorldSnapshot
         ProductionSnapshot? production, ProgressionSnapshot? progression, QuestSnapshot? quests,
         ConstructionSnapshot? construction, PreparedWatershed? watershed, PreparedWatershedNetwork? watershedNetwork,
         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
-        ConstructionPhysicalSnapshot? constructionPhysical, ConstructionLoadPolicy? structuralPolicy, WorldIdentityIndex? previous)
+        ConstructionPhysicalSnapshot? constructionPhysical, ConstructionLoadPolicy? structuralPolicy,
+        StructuralSettlementPolicy? structuralSettlementPolicy, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -139,6 +141,11 @@ public sealed class WorldSnapshot
         Excavation = excavation;
         ConstructionPhysical = constructionPhysical;
         StructuralPolicy = structuralPolicy;
+        StructuralSettlementPolicy = structuralSettlementPolicy;
+        if (structuralSettlementPolicy is not null && structuralPolicy is null)
+        {
+            throw new ArgumentException("Settlement requires the complete structural policy owner.");
+        }
         if (constructionPhysical is not null && (construction is null || excavation is null
             || space.GroundSupport != GroundSupportMode.SteppedTerrainAndConstruction
             || constructionPhysical.ConstructionHash != construction.ContentHash
@@ -187,7 +194,8 @@ public sealed class WorldSnapshot
     public ExcavationSnapshot? Excavation { get; }
     public ConstructionPhysicalSnapshot? ConstructionPhysical { get; }
     public ConstructionLoadPolicy? StructuralPolicy { get; }
-    public ushort ProfileVersion => StructuralPolicy is not null ? (ushort)14
+    public StructuralSettlementPolicy? StructuralSettlementPolicy { get; }
+    public ushort ProfileVersion => StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
         : ConstructionPhysical is not null ? (ushort)13
         : Space.GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction ? (ushort)12
         : Space.GroundSupport == GroundSupportMode.TerrainAndConstruction ? (ushort)11
@@ -228,6 +236,6 @@ public sealed class WorldSnapshot
             throw new ArgumentException("A world successor must retain the sole transport and physical owner together.");
         }
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, IdentityIndex);
     }
 }

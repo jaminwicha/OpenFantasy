@@ -1,9 +1,11 @@
 using OpenFantasy.Core.Actors;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Custody;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Structures;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Terrain;
@@ -13,9 +15,11 @@ public sealed class ExcavationPlanner
 {
     public ExcavationPlan Plan(WorldSnapshot world, CountedAuthorityState inventory, LocalSpatialSnapshot space,
         GatheringSnapshot gathering, ProductionSnapshot production, ExcavationSnapshot excavation,
-        WorldActionCommand command, bool advancing, bool held, Func<EntityId, bool> occupied)
+        WorldActionCommand command, bool advancing, bool held, Func<EntityId, bool> occupied,
+        ConstructionPhysicalSnapshot? physical = null)
     {
-        ExcavationPlan Reject(WorldActionRejection reason) => new(inventory, space, gathering, excavation, reason, null);
+        physical ??= world.ConstructionPhysical;
+        ExcavationPlan Reject(WorldActionRejection reason) => new(inventory, space, gathering, excavation, reason, null, physical);
         if (command.Intent is not ExcavateIntent intent || world.WorldId != command.WorldId || world.BranchId != command.BranchId)
         {
             throw new ArgumentException("Excavation requires the selected world's explicit action.");
@@ -59,9 +63,21 @@ public sealed class ExcavationPlanner
                 return Reject(WorldActionRejection.OutOfReach);
             }
             var changedRegion = region.Excavate(region.Revision, [site.Cell]);
-            var changedSpace = new LocalSpatialSnapshot(space.Scope,
-                space.Regions.Select(r => ReferenceEquals(r, region) ? changedRegion : r), space.Actors, space.Structures, space.GroundSupport);
-            world.ConstructionPhysical?.ValidateStableGeometry(changedSpace);
+            var regions = space.Regions.Select(r => ReferenceEquals(r, region) ? changedRegion : r).ToArray();
+            LocalSpatialSnapshot changedSpace;
+            ConstructionPhysicalSnapshot? changedPhysical = physical;
+            if (world.StructuralSettlementPolicy is { } settlement)
+            {
+                var settled = new ConstructionSettlementResolver().Resolve(space, regions,
+                    physical ?? throw new ArgumentException("Settlement requires physical construction."), settlement);
+                changedSpace = settled.Space;
+                changedPhysical = settled.Physical;
+            }
+            else
+            {
+                changedSpace = new LocalSpatialSnapshot(space.Scope, regions, space.Actors, space.Structures, space.GroundSupport);
+                physical?.ValidateStableGeometry(changedSpace);
+            }
             if (gathering.Nodes.Any(n => ResourceInteractionQueries.QueryAnchor(changedSpace, n.Feet) != SpatialOccupancy.Clear))
             {
                 return Reject(WorldActionRejection.Unavailable);
@@ -71,7 +87,7 @@ public sealed class ExcavationPlanner
             var changedExcavation = excavation.WithSite(worked);
             if (!worked.IsComplete)
             {
-                return new(inventory, space, changedGathering, changedExcavation, WorldActionRejection.None, null);
+                return new(inventory, space, changedGathering, changedExcavation, WorldActionRejection.None, null, physical);
             }
             if (inventory.Custody.Lots.Count + production.Lots.Count >= CustodySnapshot.MaximumLots
                 || storage.UnitCapacity - inventory.Custody.GetStoredQuantity(bag) < site.Quantity)
@@ -89,7 +105,7 @@ public sealed class ExcavationPlanner
                 inventory.Custody.Lots.Append(lot));
             var changedInventory = inventory.WithCustody(custody);
             production.ValidateForAuthority(changedInventory);
-            return new(changedInventory, changedSpace, changedGathering, changedExcavation, WorldActionRejection.None, spawned);
+            return new(changedInventory, changedSpace, changedGathering, changedExcavation, WorldActionRejection.None, spawned, changedPhysical);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
         {

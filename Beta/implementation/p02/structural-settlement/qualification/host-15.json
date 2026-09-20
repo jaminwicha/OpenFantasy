@@ -1,0 +1,35 @@
+{
+  "status": "failed",
+  "startedUtc": "2026-09-20T01:24:16.077909+00:00",
+  "scope": "Profile-15 atomic final excavation, safe member/rider settling, single issuance, history, retry and two commit-boundary kills",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/structural-settlement/qualification/structural-settlement-fdee74fbcde84b5bb71dfdc7f8b5adfe",
+  "runs": [],
+  "crashes": [],
+  "independentStates": [],
+  "unresolvedExpectations": [],
+  "unqualifiedClaims": [
+    "Durable pending or time-sliced operations",
+    "Damaging impacts or fracture",
+    "Lateral motion or arbitrarily large collapse"
+  ],
+  "fixtureSha256": {
+    "after-settlement.sqlite": "343e136ebe896047bdd7c6af534962669fadc67bc153fe5b6f77e98e2b443ea9",
+    "before-settlement.sqlite": "8ad6496b04fe9af53e9116038f80fe576d3bad583359c19257efdb36d966e469",
+    "expected.json": "e79d7b245923f4446a75b75f50d9e37083098b8667dd433d6467a3031284811b",
+    "genesis.bin": "23edb5f9b7e69676c284306d117a175dc6ef2d3f8e37d0040618ec44ba76a212",
+    "legacy-after.sqlite": "8bb20c791ca36fe50a8430926a907ee66c0893e3b7b7d11be2a34387bfa52ee6",
+    "legacy-before.sqlite": "fae88d476289223f904d8e703e2a47f18a9f9fa8664496e4e1fa4ed9ca42f8bb",
+    "legacy-expected.json": "56435e23b0c45b4e30c5e06c37af14923d36c2878678cc6a284538aab3da0165",
+    "legacy-genesis.bin": "317da240a4412abb33384b006286e918bc92e62ec43635ea3fcced888ab67722",
+    "legacy-step.bin": "d131a18f4560167f88d7fdfda484591c48b8f6088bf27bf83fa9c1f83d52bc72",
+    "settlement-step.bin": "5c52b44917f7e62a453932ad3c8d33ebde7c79ac40585b61045c3eb264c727a9"
+  },
+  "failure": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_structural_settlement.py\", line 350, in main\n    assert read_frame(step[8], 'world.step-movement') == [b'world.step-movement']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "fixtureFilesChanged": [],
+  "finishedUtc": "2026-09-20T01:24:16.091998+00:00",
+  "hostInvocationCount": 0,
+  "actualProcessKillCount": 0,
+  "unresolvedExpectationCount": 0,
+  "unqualifiedClaimCount": 3
+}

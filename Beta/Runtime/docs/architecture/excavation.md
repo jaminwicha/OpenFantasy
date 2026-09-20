@@ -44,7 +44,9 @@ structure collision occlude the segment; the stance cannot extend reach or bend 
 This is a point reach test, not a swept animation or a guarantee that every part of the face is exposed.
 
 Every work attempt prepares potential whole-cell removal and reconstructs the complete spatial set.
-Missing clearance/support for any actor or installed structure refuses the action. Gathering anchors
+Earlier profiles require clearance/support for every actor and installed structure without displacement.
+The [intact settlement profile](structural-settlement.md) instead prepares complete bounded harmless descent
+before constructing the stable spatial root; unhandled motion still refuses the action. Gathering anchors
 must also retain support. Such refusal preserves earned excavation progress, material and work effort.
 The check proves direct support under the local spatial rules; it does not adjudicate structural loads,
 collapse debris, safe routes after removal or a dynamically expanding hazard region.
@@ -90,7 +92,7 @@ ID, owner ID, item pin, physical material archive, tool pin, required work, comp
 XYZ. Coordinates are signed big-endian 64-bit values, work is unsigned 64-bit, identities are 16 bytes and
 item pins are 48 bytes. Site revision equals completed work. Decode validates values and exact re-encoding.
 Action version eight contains the six intent fields above under `world.action.excavate`, version one;
-its command bound is 512 bytes. Step profiles ten through twelve admit it. Older encodings keep their meanings.
+its command bound is 512 bytes. Step profiles ten through fifteen admit it. Older encodings keep their meanings.
 
 The [constructed-footing composition](constructed-footing.md) retains excavation with explicit
 installed-floor support and assisted traversal. Excavation preserves that support interpretation when

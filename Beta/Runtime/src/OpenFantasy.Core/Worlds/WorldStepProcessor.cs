@@ -87,8 +87,16 @@ public sealed class WorldStepProcessor
             {
                 // Use the same complete root admission as publication. This includes actual carried
                 // goods and every occupant; checking only the acting character misses shared loads.
-                _ = state.WithState(proposedInventory, space, residents, calendar, sequence, advancingSteps,
-                    proposedDialogues, gathering, production, progression, quests, construction,
+                // During action preparation the selected advancing step has not yet been applied.
+                // Its earned labor is validated against that eventual time boundary, exactly once.
+                bool beforeTimeBoundary = state.StructuralSettlementPolicy is not null
+                    && batch.Kind == WorldBatchKind.AdvancingStep && advancingSteps == state.AdvancingSteps;
+                var validationCalendar = beforeTimeBoundary ? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep) : calendar;
+                var validationResidents = beforeTimeBoundary ? state.Residents.Select(resident => resident.ExperienceStep()) : residents;
+                ulong validationSteps = beforeTimeBoundary ? checked(advancingSteps + 1) : advancingSteps;
+                var validationGathering = beforeTimeBoundary ? gathering?.AdvanceStep(validationSteps) : gathering;
+                _ = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
+                    proposedDialogues, validationGathering, production, progression, quests, construction,
                     reservoirs, transport, excavation, proposedPhysical);
                 return true;
             }
@@ -116,7 +124,7 @@ public sealed class WorldStepProcessor
             IReadOnlyList<EntityId> createdIds = [];
             if (action.Intent is ClimbIntent)
             {
-                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14)
+                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15)
                 {
                     throw new InvalidOperationException("This saved profile does not interpret assisted climbing.");
                 }
@@ -134,11 +142,12 @@ public sealed class WorldStepProcessor
                     throw new InvalidOperationException("This saved profile does not interpret excavation.");
                 }
                 var plan = _excavation.Plan(state, inventory, space, gathering, production, excavation, action,
-                    batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0, Occupied);
+                    batch.Kind == WorldBatchKind.AdvancingStep, dialogues.Count != 0, Occupied, physical);
                 resolution = new(plan.Inventory, dialogues, plan.Rejection, plan.SpawnedId);
                 excavation = plan.Excavation;
                 gathering = plan.Gathering;
                 space = plan.Space;
+                physical = plan.Physical;
                 performedWork = plan.Succeeded;
             }
             else if (action.Intent is ScheduleRunoffTransportIntent)
@@ -268,6 +277,14 @@ public sealed class WorldStepProcessor
             if (performedWork)
             {
                 worked.Add(action.ActorId);
+                foreach (ActorPresence actor in space.Actors)
+                {
+                    if (actor.Feet != previousSpace.GetActor(actor.ActorId).Feet)
+                    {
+                        // Coupled displacement consumes this actor's selected movement opportunity.
+                        worked.Add(actor.ActorId);
+                    }
+                }
             }
             var receipt = WorldActionReceipt.Create(action, sequence, resolution.Rejection);
             Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);

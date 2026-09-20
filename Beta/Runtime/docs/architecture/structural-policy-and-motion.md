@@ -21,7 +21,8 @@ exactly one template, including definitions without an installed project. Comple
 and joint validation precedes filtering templates to installed assemblies for the existing
 [load model](structural-loads.md). The model validates retained terrain sources/materials, actual body
 versions and carried item masses. Policy callers cannot substitute member condition; a world with a
-physical member owner supplies its retained standing-member condition.
+physical member owner supplies its retained condition. Earlier profiles bind standing members; the
+[intact settlement profile](structural-settlement.md) also binds uniform vertical resting placements.
 
 The asset is an authored interpretation, not a finding that all solid terrain is bedrock or that its
 capacities represent production balance. Binding by itself remains a read-only assessment. The structural
@@ -78,7 +79,8 @@ one calendar/exposure/effort recovery; a held interaction retains held timing. F
 the same complete root admission, so a local action check cannot bypass the saved-world invariant.
 
 These are terminal refusals that preserve stable authority; they do not create pending consequence work.
-They are not the design's physical response to overload. Coupled collapse needs a transaction owner that
+The separate [intact settlement profile](structural-settlement.md) admits bounded harmless foundation-removal
+consequences. These stable-load refusals are not the design's physical response to overload. Coupled collapse needs a transaction owner that
 intercepts such unstable candidates and publishes all consequences together; a refusal is not a completed fall.
 
 [WorldSnapshotCodecV14](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV14.cs) retains a direct

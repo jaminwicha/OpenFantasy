@@ -48,6 +48,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 12 | Complete dry excavation world with bounded mixed-height contact and ordinary stair movement/navigation |
 | 13 | Complete stepped dry world plus separately revised physical construction members and material backing |
 | 14 | Complete physical world plus immutable load policy, represented carried/project mass and stable action/movement admission |
+| 15 | Immutable harmless-settlement calibration and atomic excavation with intact member/occupant descent |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -74,6 +75,10 @@ successors retain it unchanged. Stable-load validation covers every resident, ac
 and installed member allocation before publication. Derived graphs and their world-dependent pins are
 not encoded in the root. This keeps hashing nonrecursive while exact history recovers both the owned
 policy and its material/occupancy inputs. A failure refusal is not a saved partial collapse.
+
+[Profile fifteen](structural-settlement.md) appends settlement calibration to a direct twenty-field root.
+Its ordinary advancing transaction publishes bounded intact descent, occupants and source issuance
+together. It retains schema three and terminal outcomes; it has no saved partial operation or continuation.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The

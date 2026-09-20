@@ -32,6 +32,7 @@ internal sealed class RecordedWorldOperator
             state.HasReadingHold,
             ConstructionPhysical = state.ConstructionPhysical is { } physical ? new ConstructionPhysicalDiagnosticReport(physical) : null,
             StructuralPolicy = state.StructuralPolicy is { } policy ? new ConstructionLoadPolicyDiagnosticReport(policy) : null,
+            StructuralSettlementPolicy = state.StructuralSettlementPolicy is { } settlement ? new StructuralSettlementPolicyDiagnosticReport(settlement) : null,
             Watershed = state.Watershed is { } plan ? new WatershedDiagnosticReport(plan) : null,
             WatershedNetwork = state.WatershedNetwork is { } network ? new WatershedNetworkDiagnosticReport(network) : null,
             Reservoirs = state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,

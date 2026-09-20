@@ -1,0 +1,85 @@
+{
+  "Scope": "Legacy structural profile refuses support removal",
+  "ProfileVersion": 14,
+  "WorldId": "4955a478907a739f49ff302c94a798ad",
+  "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+  "PreRevision": 94,
+  "PreHash": "edf3ea883269ecd4df317d9f236c0f0cc7c78d326eefe164d337ec5d2c6c3fb8",
+  "PostRevision": 95,
+  "PostHash": "3eb4f9ff61508ecdd11f5debe57dd4f0ecd293be677663e9d296ad6a42c37506",
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "Builder": "49354ca83f251b3ce9d363158e0786a4",
+  "CommandId": "0000000000000000000000000070eaa4",
+  "ReceiptHex": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100000000000000000000000000070EAA4000000102D222BEFA7A8B2CD7BA0A05A00950F27000000104955A478907A739F49FF302C94A798AD000000102A89AF71F707591D46CFE34B9B60F96C00000020C3395A5C9D787BFA8391ABFFAC58DAB92BA807CA14CFBBD0048D643D4294A6C000000008000000000000005F000000080000000000000002000000080000000000000002",
+  "PrePlayerFeet": {
+    "X": 27008,
+    "Y": 83072,
+    "Z": 0
+  },
+  "PostPlayerFeet": {
+    "X": 27008,
+    "Y": 83072,
+    "Z": 0
+  },
+  "PreBuilderFeet": {
+    "X": 27264,
+    "Y": 83072,
+    "Z": 320
+  },
+  "PostBuilderFeet": {
+    "X": 27264,
+    "Y": 83072,
+    "Z": 320
+  },
+  "StructureId": "c33b714d90c649a89f55daf3b5b13a1d",
+  "MemberIndex": 0,
+  "ElementId": "7e5fee6d1c79e5834fa91da6eecacaf2",
+  "PreMemberRevision": 0,
+  "PostMemberRevision": 0,
+  "PreDisplacement": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "PostDisplacement": {
+    "X": 0,
+    "Y": 0,
+    "Z": 0
+  },
+  "PhysicalBeforeRevision": 1,
+  "PhysicalAfterRevision": 1,
+  "PrePhysicalHash": "47de6679f4727a3a8c48619bf35ed52201246fc0fd700f8761441a2554200f8a",
+  "PostPhysicalHash": "47de6679f4727a3a8c48619bf35ed52201246fc0fd700f8761441a2554200f8a",
+  "PreConstructionHash": "7fedd85ae81edcb5e3b9fe6dc1342119cbcec2cebd9c8d63db61a3552c763726",
+  "PostConstructionHash": "7fedd85ae81edcb5e3b9fe6dc1342119cbcec2cebd9c8d63db61a3552c763726",
+  "PreProductionHash": "25ddec09cf4033595d51ea9423bff2ceebf87773dc12ae9b6cbe5e6857b4a929",
+  "PostProductionHash": "25ddec09cf4033595d51ea9423bff2ceebf87773dc12ae9b6cbe5e6857b4a929",
+  "PreInventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+  "PostInventoryHash": "e89e5a58af8d5218fb024d8306d60467340677c9db445bc78bea531bea683fa9",
+  "PreCustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+  "PostCustodyHash": "a94acc9cb18910e90232d8ad75c58ba12948dba8d62c9eef6e34ee38e28a55e6",
+  "SiteId": "737570706f7274730000000000000004",
+  "PreWork": 0,
+  "PostWork": 0,
+  "LotId": "60471ba571b0a0562e3f3fcb148766ba",
+  "SourceId": "737570706f7274730000000000000005",
+  "TerrainSourceId": "7b64d238811537a5088f9d7f68dcb6b0",
+  "Quantity": 1,
+  "DestinationCustodianId": "138a52c349153bbdc85ac7a82db56546",
+  "PolicyHash": "3044d5e57be361d2a8c76ad77ae87d282245c22ed39d2281f4b7836f8a7b74a7",
+  "SettlementPolicyHash": null,
+  "History": [
+    {
+      "Revision": 0,
+      "Hash": "f6404470983c08c98860e9ddd4e2662ec5d3c54077dd0521db0b79805743b631"
+    },
+    {
+      "Revision": 94,
+      "Hash": "edf3ea883269ecd4df317d9f236c0f0cc7c78d326eefe164d337ec5d2c6c3fb8"
+    },
+    {
+      "Revision": 95,
+      "Hash": "3eb4f9ff61508ecdd11f5debe57dd4f0ecd293be677663e9d296ad6a42c37506"
+    }
+  ]
+}

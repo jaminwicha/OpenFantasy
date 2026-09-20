@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "scope": "Fresh dry profile15: atomic harmless intact structure/rider settlement after actual excavation; general collapse and pending continuation remain open",
+  "build": {
+    "file": "build-final.log",
+    "warnings": 0,
+    "errors": 0,
+    "runtimeSourcesUnchangedThroughFixtureRepair": true
+  },
+  "tests": {
+    "total": 1350,
+    "core": 890,
+    "hosting": 460,
+    "new": 16,
+    "reports": [
+      {
+        "file": "managed-final/_mac_2026-09-19_20_20_57_net8.0.trx",
+        "total": 890,
+        "executed": 890,
+        "passed": 890,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      {
+        "file": "hosting-final/_mac_2026-09-19_20_27_53_net8.0.trx",
+        "total": 460,
+        "executed": 460,
+        "passed": 460,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      }
+    ],
+    "initialFullRegression": "managed-final.log",
+    "correctedFixtureRegression": "hosting-final.log"
+  },
+  "host": {
+    "report": "host-15-final.json",
+    "profile15OrdinaryCalls": 17,
+    "legacy14RefusalOrdinaryCalls": 5,
+    "externalProcessKills": 2,
+    "totalInvocations": 24,
+    "unresolvedExpectations": 0,
+    "exactFullLedgersRetryAndHistory": true,
+    "suppressedRiderMovement": true
+  },
+  "priorProfileControl": {
+    "report": "legacy-host-14.json",
+    "profile": 14,
+    "ordinaryCalls": 17,
+    "externalProcessKills": 2
+  },
+  "native": {
+    "foundation": "foundation.json",
+    "farm": "native-farm.json",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "legacyRecreation": {
+    "report": "legacy-recreation.json",
+    "files": 14,
+    "sameBytes": true
+  },
+  "preservation": {
+    "report": "preservation.json",
+    "architectureLinks": 319,
+    "frozenSpecs": 22,
+    "exact19FilePredecessorIndex": true
+  },
+  "review": {
+    "kind": "Bounded native source critique, independent kernel tests, authored real-action integration and independent Python/Host byte-ledger oracle; factual architecture review",
+    "externalClaudeCalls": 0
+  },
+  "retainedFailures": [
+    {
+      "file": "core-focused.log",
+      "cause": "New test referenced an internal canonical helper",
+      "resolution": "Independent public-byte mutation; production visibility unchanged"
+    },
+    {
+      "file": "managed-final.log",
+      "cause": "New overhang fixture omitted required same-floor actor access witnesses",
+      "resolution": "Complete original witnesses retained; authentic build then trench approach; corrected460-case Hosting regression passes"
+    },
+    {
+      "file": "overhang-fix.log",
+      "cause": "Initial targeted attempt used system SDK8 under pinned SDK10 global.json; no build ran",
+      "resolution": "Qualified SDK path; single overhang case and final Hosting suite pass"
+    },
+    {
+      "file": "host-15.json",
+      "cause": "Probe expected no movement before fixture added selected rider movement; zero Host calls occurred",
+      "resolution": "Strict exact trusted+32X row and suppressed motion verified;24-invocation final probe passes"
+    }
+  ],
+  "correctedSourceFindings": [
+    "Preview all clock/gathering/exposure components together, only in new15 to preserve14 replay",
+    "Bound terrain enumeration before public resolver materialization"
+  ],
+  "fullAllSystemsVerifierRun": false,
+  "verifierHookTestedDirectly": true,
+  "unqualified": [
+    "Durable pending and automatic time-sliced continuation",
+    "Multiple falling assemblies, harmful impact/injury, overload fracture/debris, rotation and long flight",
+    "Cross-assembly resting and new collision grouping",
+    "Wet breach/spill integration and generated excavation frontier",
+    "Production performance, art, rendered/device acceptance and full phase/game completion"
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "timeoutSeconds": 60,
+  "rendered": false,
+  "runs": [
+    {
+      "name": "host",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-foundation"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "client",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--smoke-test"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "host": {
+    "Contract": "foundation-v1",
+    "Runtime": ".NET 10.0.12",
+    "Entity": "d44d5db6f7ad5bf9b706bd53beeff840",
+    "Sample": 18095130603190839654,
+    "Day": 0,
+    "Millisecond": 0
+  },
+  "client": {
+    "Contract": "foundation-v1",
+    "Runtime": ".NET 10.0.12",
+    "Entity": "d44d5db6f7ad5bf9b706bd53beeff840",
+    "Sample": 18095130603190839654,
+    "Day": 0,
+    "Millisecond": 0
+  }
+}

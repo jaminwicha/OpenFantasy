@@ -107,7 +107,9 @@ structural-load gate over every action and movement by itself. The separate
 immutable policy and validates all current action/movement loads. It charges builder-carried project stock
 and byproducts to their builder and installed backing to members exactly once. Stable-load refusal preserves
 pre-action state and records a terminal rejection receipt, without queuing an executable action or consequence
-job. Physical consequences still require complete atomic collapse publication.
+job. The separate [intact settlement profile](structural-settlement.md) couples a bounded harmless fall
+with excavation, complete occupant placement and source issuance. General collapse retains its broader
+consequence and continuation contracts.
 
 ## Canonical persistence and extension boundary
 

@@ -1,0 +1,89 @@
+{
+  "files": [
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/policy-fixture/after-completion.sqlite",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/fixture/after-completion.sqlite",
+      "sameBytes": true,
+      "sha256": "7306b681c709f823e56812c7206520bfd03de7b88689db9f1366740fdaaca3a1"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/policy-fixture/expected.json",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/fixture/expected.json",
+      "sameBytes": true,
+      "sha256": "959ebc764f829322cd6f48f100b17bc0f102e5b0088c42efe954076c30fc60b8"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/policy-fixture/before-completion.sqlite",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/fixture/before-completion.sqlite",
+      "sameBytes": true,
+      "sha256": "758b4d560aafb8bcc786f46fb6b021119e007ff4be538c3bb33e11b8c6198ffe"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/policy-fixture/genesis.bin",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/fixture/genesis.bin",
+      "sameBytes": true,
+      "sha256": "184e015cc829d7b9e80a3f992dfdc066a9b805c37ff7938fa5775bef72308be1"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/policy-fixture/completion-step.bin",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/fixture/completion-step.bin",
+      "sameBytes": true,
+      "sha256": "a58aca553ba4b3f5305d871c3c8a0a3836a11bc78a1a5b365ea7c1589ee13301"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/policy-fixture/occupied-upstairs.sqlite",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/fixture/occupied-upstairs.sqlite",
+      "sameBytes": true,
+      "sha256": "ba11a711007721c50eaf9c1c009489cdbe10a644a8fbd9c89007a81b0faae6b1"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/policy-fixture/occupied-upstairs.bin",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/fixture/occupied-upstairs.bin",
+      "sameBytes": true,
+      "sha256": "fccfde23f48311a0ccf7b6f02ff8f6453e54d033aebc123528c631dbdfb88889"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/physical-fixture/after-completion.sqlite",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/legacy-physical-fixture/after-completion.sqlite",
+      "sameBytes": true,
+      "sha256": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/physical-fixture/expected.json",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/legacy-physical-fixture/expected.json",
+      "sameBytes": true,
+      "sha256": "d755afab1517fd30a895239c01f8dee8f4cfcbb52e4c0695e966c595a62fd701"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/physical-fixture/before-completion.sqlite",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/legacy-physical-fixture/before-completion.sqlite",
+      "sameBytes": true,
+      "sha256": "9b794b65a41d1b5728311c5e34311c500ca3410d78c3617b8544646c2d16f861"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/physical-fixture/genesis.bin",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/legacy-physical-fixture/genesis.bin",
+      "sameBytes": true,
+      "sha256": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/physical-fixture/completion-step.bin",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/legacy-physical-fixture/completion-step.bin",
+      "sameBytes": true,
+      "sha256": "ced8a11106ad28c74f95a05fd6cc420509df4f43c2d599e63719d4e4c2aa2a19"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/physical-fixture/occupied-upstairs.sqlite",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/legacy-physical-fixture/occupied-upstairs.sqlite",
+      "sameBytes": true,
+      "sha256": "7335680243db9ba7462ae32a309de1f02f7deaeb3c0f43932c7fefd3b95480a2"
+    },
+    {
+      "new": "Beta/implementation/p02/structural-settlement/qualification/managed-final/physical-fixture/occupied-upstairs.bin",
+      "old": "Beta/implementation/p02/structural-policy-admission/qualification/legacy-physical-fixture/occupied-upstairs.bin",
+      "sameBytes": true,
+      "sha256": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea"
+    }
+  ],
+  "sameBytes": true
+}
