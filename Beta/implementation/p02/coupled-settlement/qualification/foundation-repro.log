@@ -1,0 +1,14 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.77]     OpenFantasy.Hosting.Tests.WorldStorage.CoupledFoundationAdmissionTests.Unowned_rated_foundation_removal_is_counterfactual_only_and_cannot_enter_a_coupled_world [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.CoupledFoundationAdmissionTests.Unowned_rated_foundation_removal_is_counterfactual_only_and_cannot_enter_a_coupled_world [663 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.ArgumentException)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.CoupledFoundationAdmissionTests.Unowned_rated_foundation_removal_is_counterfactual_only_and_cannot_enter_a_coupled_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/CoupledFoundationAdmissionTests.cs:line 54
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/foundation-repro/_mac_2026-09-19_22_25_22_net8.0.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 692 ms - OpenFantasy.Hosting.Tests.dll (net8.0)

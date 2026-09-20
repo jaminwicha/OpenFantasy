@@ -1,0 +1,67 @@
+{
+  "scope": "Fresh profile17 owned cross-assembly support, exact shared intact trajectory, rider/material conservation and durable excavation publication.",
+  "implementation_commit": "eee42eedbb11f5dfd78b4f943554f10af8cf3369",
+  "build": "build-final.log",
+  "build_errors": 0,
+  "build_warnings": 0,
+  "managed_reports": [
+    {
+      "file": "Beta/implementation/p02/coupled-settlement/qualification/managed-final/_mac_2026-09-19_22_27_47_net8.0.trx",
+      "passed": 918,
+      "failed": 0,
+      "times": {
+        "creation": "2026-09-19T22:27:47.6987860-05:00",
+        "queuing": "2026-09-19T22:27:47.6987860-05:00",
+        "start": "2026-09-19T22:27:45.2457320-05:00",
+        "finish": "2026-09-19T22:27:58.1955360-05:00"
+      }
+    },
+    {
+      "file": "Beta/implementation/p02/coupled-settlement/qualification/managed-final/_mac_2026-09-19_22_28_00_net8.0.trx",
+      "passed": 491,
+      "failed": 0,
+      "times": {
+        "creation": "2026-09-19T22:28:00.6872840-05:00",
+        "queuing": "2026-09-19T22:28:00.6872840-05:00",
+        "start": "2026-09-19T22:27:58.6990590-05:00",
+        "finish": "2026-09-19T22:34:22.8515000-05:00"
+      }
+    }
+  ],
+  "total_passed": 1409,
+  "new_cases": 24,
+  "host_report": "host-17.json",
+  "ordinary_host_calls": 59,
+  "actual_process_kills": 6,
+  "maximum_ordinary_call_seconds": 19.35848725028336,
+  "unchanged_host_timeout_seconds": 30,
+  "native_headless_reports": [
+    "foundation.json",
+    "native-farm.json"
+  ],
+  "legacy_recreation": "legacy-recreation.json",
+  "legacy_files_recreated": 26,
+  "new_fixture_recreation": "fixture-recreation.json",
+  "new_fixture_files_recreated": 20,
+  "source_pins": "runtime-source-sha256.json",
+  "source_files_unchanged_through_qualification": 547,
+  "preservation": "preservation.json",
+  "reviews": "review-dispositions.md",
+  "external_review": "external-review.json",
+  "upstream_learning": "ecosystem-learning.json",
+  "retained_failed_regression": "foundation-repro.log",
+  "corrected_regression": "foundation-fixed.log",
+  "not_run": [
+    "Full all-systems verifier",
+    "Rendered coupled motion, OS/device or art acceptance",
+    "Production latency/scale qualification",
+    "Full 32-assembly live world"
+  ],
+  "remaining": [
+    "Unequal interacting trajectories and independent fragments",
+    "Fracture/debris, harmful impact/injury, longer flight and deforming joints",
+    "Wet composition, generated extraction rights and multi-floor presentation",
+    "Production export/devices, 1\u20134-player pacing, art/audio/human acceptance",
+    "Full P00\u2013P14 campaign and feasibility gates"
+  ]
+}

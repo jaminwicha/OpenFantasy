@@ -1,0 +1,14 @@
+{
+  "ecosystem_commit": "5aa4099",
+  "scope": "Keep diagnostic proposal permissions separate from authoritative world admission.",
+  "source": "GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+  "installed_targets": 3,
+  "skill_validation": "passed",
+  "verified_manifests": {
+    "authority-review-boundary-2026-09-19.json": 3,
+    "delegation-skill-alignment.json": 71,
+    "critic-review-routing-2026-09-19.json": 11
+  },
+  "guarded_backup": "/Users/alucinor/.local/share/gamedev-ai-ecosystem/skill-sync/authority-review-boundary-2026-09-19/receipt.json",
+  "unrelated_ecosystem_changes": "preserved"
+}

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="67e5cbbb-ac45-48f6-afa5-77943f6e900a" name="@mac 2026-09-19 22:16:01" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-19T22:16:01.2950000-05:00" queuing="2026-09-19T22:16:01.2950000-05:00" start="2026-09-19T22:15:58.5489150-05:00" finish="2026-09-19T22:16:01.3009210-05:00" />
+  <TestSettings name="default" id="c67d6add-87ba-42c9-8083-308e4c90424a">
+    <Deployment runDeploymentRoot="_mac_2026-09-19_22_16_01" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="55485c59-494a-42ae-bec1-ddf0c76db69d" testId="bd7091f7-c245-de9e-6925-38ca71eb6c8c" testName="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Foreign_assembly_support_is_explicit_and_preserved_by_spatial_successors" computerName="mac" duration="00:00:00.0288446" startTime="2026-09-19T22:16:01.1732810-05:00" endTime="2026-09-19T22:16:01.2021760-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55485c59-494a-42ae-bec1-ddf0c76db69d" />
+    <UnitTestResult executionId="6120dbaf-68c1-4508-8724-e7d3dd9af108" testId="6faa1ce6-545c-35e5-d57b-43a465ac94c1" testName="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive(assemblies: 2, work: 256)" computerName="mac" duration="00:00:00.0001371" startTime="2026-09-19T22:16:01.1251220-05:00" endTime="2026-09-19T22:16:01.1252780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6120dbaf-68c1-4508-8724-e7d3dd9af108" />
+    <UnitTestResult executionId="53636ff7-441e-4e23-a54d-f5221cda0b52" testId="2733b2ca-3716-f2e2-a2b5-dafcc1088c82" testName="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive(assemblies: 32, work: 2176)" computerName="mac" duration="00:00:00.0008469" startTime="2026-09-19T22:16:01.1236500-05:00" endTime="2026-09-19T22:16:01.1248900-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53636ff7-441e-4e23-a54d-f5221cda0b52" />
+    <UnitTestResult executionId="8d817058-ad3c-40ae-8026-be9c90f05058" testId="9a7cbc76-5870-951d-1865-c16d4299c9cc" testName="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive(assemblies: 1, work: 192)" computerName="mac" duration="00:00:00.0281380" startTime="2026-09-19T22:16:01.0847020-05:00" endTime="2026-09-19T22:16:01.1202240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d817058-ad3c-40ae-8026-be9c90f05058" />
+    <UnitTestResult executionId="ee870ad7-7203-4c52-a24e-de6b823bbbd5" testId="90b9749d-f9f1-e239-c4b8-516e9d6061be" testName="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Terrain_and_foreign_material_jointly_cover_a_complete_structure_base" computerName="mac" duration="00:00:00.0083599" startTime="2026-09-19T22:16:01.2027470-05:00" endTime="2026-09-19T22:16:01.2111720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee870ad7-7203-4c52-a24e-de6b823bbbd5" />
+    <UnitTestResult executionId="4f967b26-fcbf-478d-a944-8f8ba82f0dbd" testId="250d60c7-c075-06e9-5514-594a120fb7d4" testName="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Rounded_top_fringes_and_missing_lower_support_cannot_complete_a_foreign_base" computerName="mac" duration="00:00:00.0459866" startTime="2026-09-19T22:16:01.1267950-05:00" endTime="2026-09-19T22:16:01.1728250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f967b26-fcbf-478d-a944-8f8ba82f0dbd" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Foreign_assembly_support_is_explicit_and_preserved_by_spatial_successors" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="bd7091f7-c245-de9e-6925-38ca71eb6c8c">
+      <Execution id="55485c59-494a-42ae-bec1-ddf0c76db69d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests" name="Foreign_assembly_support_is_explicit_and_preserved_by_spatial_successors" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive(assemblies: 1, work: 192)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="9a7cbc76-5870-951d-1865-c16d4299c9cc">
+      <Execution id="8d817058-ad3c-40ae-8026-be9c90f05058" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests" name="Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Terrain_and_foreign_material_jointly_cover_a_complete_structure_base" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="90b9749d-f9f1-e239-c4b8-516e9d6061be">
+      <Execution id="ee870ad7-7203-4c52-a24e-de6b823bbbd5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests" name="Terrain_and_foreign_material_jointly_cover_a_complete_structure_base" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive(assemblies: 2, work: 256)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="6faa1ce6-545c-35e5-d57b-43a465ac94c1">
+      <Execution id="6120dbaf-68c1-4508-8724-e7d3dd9af108" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests" name="Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive(assemblies: 32, work: 2176)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2733b2ca-3716-f2e2-a2b5-dafcc1088c82">
+      <Execution id="53636ff7-441e-4e23-a54d-f5221cda0b52" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests" name="Coupled_policy_has_an_exact_finite_work_bound_and_canonical_archive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests.Rounded_top_fringes_and_missing_lower_support_cannot_complete_a_foreign_base" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="250d60c7-c075-06e9-5514-594a120fb7d4">
+      <Execution id="4f967b26-fcbf-478d-a944-8f8ba82f0dbd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Spatial.ConstructionSupportModeTests" name="Rounded_top_fringes_and_missing_lower_support_cannot_complete_a_foreign_base" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="bd7091f7-c245-de9e-6925-38ca71eb6c8c" executionId="55485c59-494a-42ae-bec1-ddf0c76db69d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6faa1ce6-545c-35e5-d57b-43a465ac94c1" executionId="6120dbaf-68c1-4508-8724-e7d3dd9af108" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2733b2ca-3716-f2e2-a2b5-dafcc1088c82" executionId="53636ff7-441e-4e23-a54d-f5221cda0b52" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a7cbc76-5870-951d-1865-c16d4299c9cc" executionId="8d817058-ad3c-40ae-8026-be9c90f05058" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90b9749d-f9f1-e239-c4b8-516e9d6061be" executionId="ee870ad7-7203-4c52-a24e-de6b823bbbd5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="250d60c7-c075-06e9-5514-594a120fb7d4" executionId="4f967b26-fcbf-478d-a944-8f8ba82f0dbd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.63]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.33]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.60]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.80]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

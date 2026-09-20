@@ -1,0 +1,1066 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-20T03:34:38.812058+00:00",
+  "runs": [
+    {
+      "name": "ordinary transition 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/trigger.bin"
+      ],
+      "elapsedSeconds": 5.621955583337694,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":155,\"ProfileVersion\":17,\"StateHash\":\"876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary transition 1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-001.bin"
+      ],
+      "elapsedSeconds": 5.007000875193626,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":156,\"ProfileVersion\":17,\"StateHash\":\"d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary transition 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-002.bin"
+      ],
+      "elapsedSeconds": 5.653381041251123,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":157,\"ProfileVersion\":17,\"StateHash\":\"a4fa64a939e3b1b7a6ad2936f850a8e0a326baa1646b3fe25ef32adc080ab19b\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary transition 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-003.bin"
+      ],
+      "elapsedSeconds": 5.828262499999255,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":158,\"ProfileVersion\":17,\"StateHash\":\"17319d5e7c49484c8c36e5d17644721d7ee5c982c36ed798ee3aa6a48f9cc5ec\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary transition 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-004.bin"
+      ],
+      "elapsedSeconds": 5.371802874840796,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":159,\"ProfileVersion\":17,\"StateHash\":\"4795b2fc7a09ff5b264c9bbefa411b3fa159c5427454be6ff824d65afd0fb626\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary transition 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-005.bin"
+      ],
+      "elapsedSeconds": 8.318116833921522,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":160,\"ProfileVersion\":17,\"StateHash\":\"e231808e981ca4374ce95f548ad6bea7ba0b20bbd0707ccd17d9988c040020e1\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary transition 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-006.bin"
+      ],
+      "elapsedSeconds": 5.4876401661895216,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":161,\"ProfileVersion\":17,\"StateHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary transition 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin"
+      ],
+      "elapsedSeconds": 5.544717208947986,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":162,\"ProfileVersion\":17,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "0"
+      ],
+      "elapsedSeconds": 10.787387124728411,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":0,\"StateHash\":\"792f80fe6f13c3306c36f070a674b47042b6a0d3f12b98dd22a4504a0df1f0ed\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32400000},\"AdvancingSteps\":0,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"49f3c83c22c1b325bf524f43c4c25f2f33c49744cfc4dbdc5e1525e7035c2fdb\",\"ConstructionHash\":\"3734a68fadc0c5d45b21ca54694ed477ee66e8b71ead8fc02dcd857c57ba3af9\",\"Members\":[]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26752,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":104,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26240,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":14}],\"SourceLotCount\":5,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 38",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "38"
+      ],
+      "elapsedSeconds": 9.38092887494713,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":38,\"StateHash\":\"5a2fb634bad84804a7e66fd143b3dd6c37ae511c64379debb8a0989b76a1c43a\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32459400},\"AdvancingSteps\":33,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":0,\"ContentHash\":\"49f3c83c22c1b325bf524f43c4c25f2f33c49744cfc4dbdc5e1525e7035c2fdb\",\"ConstructionHash\":\"3734a68fadc0c5d45b21ca54694ed477ee66e8b71ead8fc02dcd857c57ba3af9\",\"Members\":[]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26752,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":104,\"Y\":325,\"Z\":1}},\"PresenceRevision\":0,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26240,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":327,\"Z\":1}},\"PresenceRevision\":32,\"SourceItemQuantity\":2}],\"SourceLotCount\":6,\"CraftedLotCount\":0,\"StructureCount\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 47",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "47"
+      ],
+      "elapsedSeconds": 10.23966758325696,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":47,\"StateHash\":\"00b5efd61d8759e8a9f2e7c741552f808b5b157ee998439226a0e13f8d9d1ea7\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32475600},\"AdvancingSteps\":42,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"b9cc56771cef8eaac5070524f4cee0cb9f3296e578de6cf6fa9e499d859cd104\",\"ConstructionHash\":\"4c9d4235098ba7412f768a0432febe1347b4d4aa5965c2a7ad669a7252861e88\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26752,\"Y\":83072,\"Z\":256,\"Cell\":{\"X\":104,\"Y\":324,\"Z\":1}},\"PresenceRevision\":8,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26240,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":327,\"Z\":1}},\"PresenceRevision\":32,\"SourceItemQuantity\":2}],\"SourceLotCount\":5,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 48",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "48"
+      ],
+      "elapsedSeconds": 19.35848725028336,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":48,\"StateHash\":\"172972b9ede9af1812d748e01806f42f07fed7e4bc326e32f9389dc3c6e5b873\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32477400},\"AdvancingSteps\":43,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":1,\"ContentHash\":\"b9cc56771cef8eaac5070524f4cee0cb9f3296e578de6cf6fa9e499d859cd104\",\"ConstructionHash\":\"4c9d4235098ba7412f768a0432febe1347b4d4aa5965c2a7ad669a7252861e88\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27008,\"Y\":83072,\"Z\":512,\"Cell\":{\"X\":105,\"Y\":324,\"Z\":2}},\"PresenceRevision\":9,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26240,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":327,\"Z\":1}},\"PresenceRevision\":32,\"SourceItemQuantity\":2}],\"SourceLotCount\":5,\"CraftedLotCount\":2,\"StructureCount\":1}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 65",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "65"
+      ],
+      "elapsedSeconds": 13.480236292351037,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":65,\"StateHash\":\"6d5bc73357c0b3fbe281f560ab6aa60927975e835f8d91aa79b873c575b7898d\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32508000},\"AdvancingSteps\":60,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27520,\"Y\":83072,\"Z\":512,\"Cell\":{\"X\":107,\"Y\":324,\"Z\":2}},\"PresenceRevision\":25,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":26240,\"Y\":83840,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":327,\"Z\":1}},\"PresenceRevision\":32,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 154",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "154"
+      ],
+      "elapsedSeconds": 9.008401291910559,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":154,\"StateHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 155",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "155"
+      ],
+      "elapsedSeconds": 8.324210041668266,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":155,\"StateHash\":\"876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 156",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "156"
+      ],
+      "elapsedSeconds": 7.93983754189685,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":156,\"StateHash\":\"d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 157",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "157"
+      ],
+      "elapsedSeconds": 7.954638125374913,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":157,\"StateHash\":\"a4fa64a939e3b1b7a6ad2936f850a8e0a326baa1646b3fe25ef32adc080ab19b\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 158",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "158"
+      ],
+      "elapsedSeconds": 7.985936999786645,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":158,\"StateHash\":\"17319d5e7c49484c8c36e5d17644721d7ee5c982c36ed798ee3aa6a48f9cc5ec\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 159",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "159"
+      ],
+      "elapsedSeconds": 7.700744832865894,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":159,\"StateHash\":\"4795b2fc7a09ff5b264c9bbefa411b3fa159c5427454be6ff824d65afd0fb626\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 160",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "160"
+      ],
+      "elapsedSeconds": 7.662593042012304,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":160,\"StateHash\":\"e231808e981ca4374ce95f548ad6bea7ba0b20bbd0707ccd17d9988c040020e1\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 161",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "161"
+      ],
+      "elapsedSeconds": 7.772266666870564,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":161,\"StateHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "exact history 162",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "162"
+      ],
+      "elapsedSeconds": 8.358252834063023,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":162,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32670000},\"AdvancingSteps\":150,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":320,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":42,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":3}],\"SourceLotCount\":4,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "accepted trigger replay refuses",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/trigger.bin"
+      ],
+      "elapsedSeconds": 4.357798291835934,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "accepted completion replay refuses",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin"
+      ],
+      "elapsedSeconds": 4.2594051249325275,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The selected batch does not match the current world revision or hold.\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before recovery",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "154"
+      ],
+      "elapsedSeconds": 8.160737541969866,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":154,\"SourceHeadHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"RecordedRevision\":154,\"StateHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 0",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/trigger.bin"
+      ],
+      "elapsedSeconds": 4.324306875001639,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":155,\"ProfileVersion\":17,\"StateHash\":\"876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-001.bin"
+      ],
+      "elapsedSeconds": 4.975748334079981,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":156,\"ProfileVersion\":17,\"StateHash\":\"d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-002.bin"
+      ],
+      "elapsedSeconds": 4.482707374729216,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":157,\"ProfileVersion\":17,\"StateHash\":\"a4fa64a939e3b1b7a6ad2936f850a8e0a326baa1646b3fe25ef32adc080ab19b\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-003.bin"
+      ],
+      "elapsedSeconds": 4.264148584101349,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":158,\"ProfileVersion\":17,\"StateHash\":\"17319d5e7c49484c8c36e5d17644721d7ee5c982c36ed798ee3aa6a48f9cc5ec\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-004.bin"
+      ],
+      "elapsedSeconds": 4.686357374768704,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":159,\"ProfileVersion\":17,\"StateHash\":\"4795b2fc7a09ff5b264c9bbefa411b3fa159c5427454be6ff824d65afd0fb626\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-005.bin"
+      ],
+      "elapsedSeconds": 5.29891691589728,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":160,\"ProfileVersion\":17,\"StateHash\":\"e231808e981ca4374ce95f548ad6bea7ba0b20bbd0707ccd17d9988c040020e1\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-006.bin"
+      ],
+      "elapsedSeconds": 5.219290959183127,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":161,\"ProfileVersion\":17,\"StateHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger before resume 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin"
+      ],
+      "elapsedSeconds": 5.9550614999607205,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":162,\"ProfileVersion\":17,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after recovery",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "155"
+      ],
+      "elapsedSeconds": 7.664612625259906,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":155,\"SourceHeadHash\":\"876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461\",\"RecordedRevision\":155,\"StateHash\":\"876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after resume 1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-001.bin"
+      ],
+      "elapsedSeconds": 4.59857266722247,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":156,\"ProfileVersion\":17,\"StateHash\":\"d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after resume 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-002.bin"
+      ],
+      "elapsedSeconds": 4.773715415969491,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":157,\"ProfileVersion\":17,\"StateHash\":\"a4fa64a939e3b1b7a6ad2936f850a8e0a326baa1646b3fe25ef32adc080ab19b\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after resume 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-003.bin"
+      ],
+      "elapsedSeconds": 4.534199375193566,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":158,\"ProfileVersion\":17,\"StateHash\":\"17319d5e7c49484c8c36e5d17644721d7ee5c982c36ed798ee3aa6a48f9cc5ec\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after resume 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-004.bin"
+      ],
+      "elapsedSeconds": 4.4679877501912415,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":159,\"ProfileVersion\":17,\"StateHash\":\"4795b2fc7a09ff5b264c9bbefa411b3fa159c5427454be6ff824d65afd0fb626\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after resume 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-005.bin"
+      ],
+      "elapsedSeconds": 5.3356265421025455,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":160,\"ProfileVersion\":17,\"StateHash\":\"e231808e981ca4374ce95f548ad6bea7ba0b20bbd0707ccd17d9988c040020e1\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after resume 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-006.bin"
+      ],
+      "elapsedSeconds": 4.469341333024204,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":161,\"ProfileVersion\":17,\"StateHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "trigger after resume 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin"
+      ],
+      "elapsedSeconds": 4.430764874909073,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":162,\"ProfileVersion\":17,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before recovery",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "155"
+      ],
+      "elapsedSeconds": 7.471776874735951,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":155,\"SourceHeadHash\":\"876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461\",\"RecordedRevision\":155,\"StateHash\":\"876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before resume 1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-001.bin"
+      ],
+      "elapsedSeconds": 4.677756583783776,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":156,\"ProfileVersion\":17,\"StateHash\":\"d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before resume 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-002.bin"
+      ],
+      "elapsedSeconds": 4.403300000354648,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":157,\"ProfileVersion\":17,\"StateHash\":\"a4fa64a939e3b1b7a6ad2936f850a8e0a326baa1646b3fe25ef32adc080ab19b\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before resume 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-003.bin"
+      ],
+      "elapsedSeconds": 4.406195958144963,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":158,\"ProfileVersion\":17,\"StateHash\":\"17319d5e7c49484c8c36e5d17644721d7ee5c982c36ed798ee3aa6a48f9cc5ec\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before resume 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-004.bin"
+      ],
+      "elapsedSeconds": 4.162763749714941,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":159,\"ProfileVersion\":17,\"StateHash\":\"4795b2fc7a09ff5b264c9bbefa411b3fa159c5427454be6ff824d65afd0fb626\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before resume 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-005.bin"
+      ],
+      "elapsedSeconds": 4.500152625143528,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":160,\"ProfileVersion\":17,\"StateHash\":\"e231808e981ca4374ce95f548ad6bea7ba0b20bbd0707ccd17d9988c040020e1\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before resume 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-006.bin"
+      ],
+      "elapsedSeconds": 4.4694859171286225,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":161,\"ProfileVersion\":17,\"StateHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation before resume 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin"
+      ],
+      "elapsedSeconds": 4.328026041854173,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":162,\"ProfileVersion\":17,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation after recovery",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "156"
+      ],
+      "elapsedSeconds": 7.473228624556214,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":156,\"SourceHeadHash\":\"d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3\",\"RecordedRevision\":156,\"StateHash\":\"d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation after resume 2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-002.bin"
+      ],
+      "elapsedSeconds": 4.324659749865532,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":157,\"ProfileVersion\":17,\"StateHash\":\"a4fa64a939e3b1b7a6ad2936f850a8e0a326baa1646b3fe25ef32adc080ab19b\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation after resume 3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-003.bin"
+      ],
+      "elapsedSeconds": 4.634500958956778,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":158,\"ProfileVersion\":17,\"StateHash\":\"17319d5e7c49484c8c36e5d17644721d7ee5c982c36ed798ee3aa6a48f9cc5ec\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation after resume 4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-004.bin"
+      ],
+      "elapsedSeconds": 4.522586334031075,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":159,\"ProfileVersion\":17,\"StateHash\":\"4795b2fc7a09ff5b264c9bbefa411b3fa159c5427454be6ff824d65afd0fb626\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation after resume 5",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-005.bin"
+      ],
+      "elapsedSeconds": 4.333091959357262,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":160,\"ProfileVersion\":17,\"StateHash\":\"e231808e981ca4374ce95f548ad6bea7ba0b20bbd0707ccd17d9988c040020e1\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation after resume 6",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-006.bin"
+      ],
+      "elapsedSeconds": 4.416122457943857,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":161,\"ProfileVersion\":17,\"StateHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "continuation after resume 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin"
+      ],
+      "elapsedSeconds": 5.400656500365585,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":162,\"ProfileVersion\":17,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "terminal before recovery",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/terminal-before.sqlite",
+        "161"
+      ],
+      "elapsedSeconds": 9.163050208240747,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":161,\"SourceHeadHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"RecordedRevision\":161,\"StateHash\":\"c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "terminal before resume 7",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/terminal-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin"
+      ],
+      "elapsedSeconds": 6.171732000075281,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"composed-world-operator-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"Revision\":162,\"ProfileVersion\":17,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null}\n",
+      "stderr": ""
+    },
+    {
+      "name": "terminal after recovery",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/terminal-after.sqlite",
+        "162"
+      ],
+      "elapsedSeconds": 9.086357584223151,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":162,\"SourceHeadHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"RecordedRevision\":162,\"StateHash\":\"d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32670000},\"AdvancingSteps\":150,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":320,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"PresenceRevision\":42,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":3}],\"SourceLotCount\":4,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    }
+  ],
+  "crashes": [
+    {
+      "stage": "trigger",
+      "boundary": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/trigger.bin",
+        "before"
+      ],
+      "pid": 42947,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stage": "trigger",
+      "boundary": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/trigger-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/trigger.bin",
+        "after"
+      ],
+      "pid": 43125,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stage": "continuation",
+      "boundary": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-001.bin",
+        "before"
+      ],
+      "pid": 43282,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stage": "continuation",
+      "boundary": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/continuation-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-001.bin",
+        "after"
+      ],
+      "pid": 43457,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stage": "terminal",
+      "boundary": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/terminal-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin",
+        "before"
+      ],
+      "pid": 43595,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "stage": "terminal",
+      "boundary": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2/terminal-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/fixture-final/continuation-007.bin",
+        "after"
+      ],
+      "pid": 43689,
+      "signalTimeoutSeconds": 30,
+      "signal": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "independentStates": [
+    {
+      "file": "before.sqlite",
+      "hash": "1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07",
+      "revision": 154,
+      "ledgerHashes": {
+        "identities": "78cc9c41f117b9277917d291dd682dddfb3574e24b496157cbea58da6dd60623",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "fafef59562c40e4bcd84675db719bd98c1a0d0bd35a53699393b14af9cfb1a10"
+      }
+    },
+    {
+      "file": "pending-0.sqlite",
+      "hash": "876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461",
+      "revision": 155,
+      "ledgerHashes": {
+        "identities": "b4e6f9e76cc5231dddfd3e5cb68b5a3be243d678d33790915f165150c86c6ee8",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "87bf8a23f2dca8c56a9c7b84021eea8b1057cb5f591b953bedf92651a2912482"
+      }
+    },
+    {
+      "file": "pending-1.sqlite",
+      "hash": "d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3",
+      "revision": 156,
+      "ledgerHashes": {
+        "identities": "30ebb571d83cbed1d09a2c04459a8b08da5d97785ff02eb7e1eaa8d5d3111e73",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "a38092ad9c4a6da4d91597f9172a96ce52d28af3ed22f8fe56f8003f9b021b24"
+      }
+    },
+    {
+      "file": "pending-2.sqlite",
+      "hash": "a4fa64a939e3b1b7a6ad2936f850a8e0a326baa1646b3fe25ef32adc080ab19b",
+      "revision": 157,
+      "ledgerHashes": {
+        "identities": "0e3729eab288662ee3063ab769ba4598239334bf8f177a2db63d2425876ca7f2",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "9d2ed50a7540afdc60372a039c5c24b98bee729c25a3724e7a7db6eb5dc0ca4a"
+      }
+    },
+    {
+      "file": "pending-3.sqlite",
+      "hash": "17319d5e7c49484c8c36e5d17644721d7ee5c982c36ed798ee3aa6a48f9cc5ec",
+      "revision": 158,
+      "ledgerHashes": {
+        "identities": "edeca81a924dc9ed4698eeccfae677c528075eeb7a9014e0be4ce55cd16e5595",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "20ae5dbf8ec082dcbd7de4d185c1ea5e4706e2c429ae03a2175affff3b15abd3"
+      }
+    },
+    {
+      "file": "pending-4.sqlite",
+      "hash": "4795b2fc7a09ff5b264c9bbefa411b3fa159c5427454be6ff824d65afd0fb626",
+      "revision": 159,
+      "ledgerHashes": {
+        "identities": "9c46a14651fd377d42c7f33e1bf8c398788043dcff56b13a4666a27837958f91",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "12336419011541e6cf6ff3bc651b779df426c1a56f358e78fc8b897f0c645d71"
+      }
+    },
+    {
+      "file": "pending-5.sqlite",
+      "hash": "e231808e981ca4374ce95f548ad6bea7ba0b20bbd0707ccd17d9988c040020e1",
+      "revision": 160,
+      "ledgerHashes": {
+        "identities": "aaa040af8a9672de9d5a9fd10e00fc0f726bf4007fcc8e12bdbee4f2befa8620",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "05cfba9fdeee8be15d6c725d543c898491d3b5b3cc029c5e7f1ad5ec9c47e2fa"
+      }
+    },
+    {
+      "file": "pending-6.sqlite",
+      "hash": "c271d9868837fb4e627eb4c23394d010cfc974b4b8d442ddf64dfb1f4e7cba8c",
+      "revision": 161,
+      "ledgerHashes": {
+        "identities": "f42f1f3714b0ba6974bb8ae243b7c36703b705448de0ae97ab9660b40360b7b1",
+        "commands": "bec99b726a7277daf1e2a1e9bb7467888db049eb1826581a8006fa58f595ed42",
+        "journal": "a164d05f07302bbef7f10b018e87a6c83de665d746bf2e8f7d9fb5f29069c977"
+      }
+    },
+    {
+      "file": "after.sqlite",
+      "hash": "d751ad61aff13cdfe1d13bc5cd3fccde5990948fd52020d5124d03aed10925b3",
+      "revision": 162,
+      "ledgerHashes": {
+        "identities": "635641593698938511e3184b350b0925f1a2deac8cbf29d5d39bb3aebc67fc93",
+        "commands": "3bb76364f55c07c2daabb256a50f45034a671f3f8f00c34b6f59a87bbee93cab",
+        "journal": "c0bbcfbbf4166d75b3d1ac4f6c4047b76ecae74778889ad1278872ff29ba6799"
+      }
+    }
+  ],
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-settlement/qualification/coupled-settlement-802dc80922264298bd9063f91e4747d2",
+  "unqualifiedClaims": [
+    "Whole-root CPU bound",
+    "Unequal trajectories, fracture or harmful impact",
+    "Rendered or device presentation",
+    "Production acceptance"
+  ],
+  "finishedUtc": "2026-09-20T03:41:23.591514+00:00",
+  "ordinaryHostCalls": 59,
+  "actualProcessKills": 6,
+  "fixtureSha256": {
+    "pending-1.sqlite": "c0518a8c30bc62d6d43a80bdf41b3a53fbb548bb9684818ce120f9717fa3706e",
+    "pending.sqlite": "25b37b8e00bc82690e0c441bf93248c6c001fb87187ebaee1160147638006ec1",
+    "pending-3.sqlite": "23c5bd99c24a863bb7dadcb3c77da00299ed7852d8a93dafb7f072049b8a9b44",
+    "expected.json": "e87d5d4bf45e4e10a317b19e7ee298ae6de7794ad39a08323758534ee4356d94",
+    "after.sqlite": "3f7477fd2baf884c4b5c0c9e4950d8c0a00179fb551cbdd7020225615ec89d30",
+    "trigger.bin": "2a8de9e30f74ca4bf74e79b7b149c2e90896ffd11d65270d496938ce6ea5c3fc",
+    "continuation-004.bin": "16b61b07e733d28f08aaabfed0e2370a9373c832f4a3ebd929c2a1b153428972",
+    "continuation-005.bin": "fd5c08457e019e422da96a6dfe6cc860167ebbb6c924a6ae6cfb69122344dbed",
+    "continuation-007.bin": "4d84275404dd0d845ae071bee389eda5888f0d9a0b5a3fdff9af6d34f5acb5ec",
+    "continuation-006.bin": "f5995637a03e4e838bc9248ef0c230ffd77f06056a198e8a2dbc7e3c86f4ee7d",
+    "continuation-002.bin": "0c28ead41e3eec105851d2de8bf448c27786b951703c00f68c4f172509e0a6d9",
+    "continuation-003.bin": "a88eb02858ebf65990dd1f51db1fe3e45f4ed14f51efcd174a3f32f556788b3e",
+    "continuation-001.bin": "d87aef2bc275dee3bce3da825cc97e220df0ec5ae6ccaf1df50c1e66ed908ce5",
+    "pending-5.sqlite": "9b4f962d424e16d7cf1c2f2b56a05fb8f1e607c00729d3e377741f3cd861f769",
+    "genesis.bin": "792f80fe6f13c3306c36f070a674b47042b6a0d3f12b98dd22a4504a0df1f0ed",
+    "pending-0.sqlite": "25b37b8e00bc82690e0c441bf93248c6c001fb87187ebaee1160147638006ec1",
+    "before.sqlite": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60",
+    "pending-2.sqlite": "063b576a292ce6cac1e6afa7c28c6abf627018d3f4d617eab46333886e7d1192",
+    "pending-6.sqlite": "576c03a57dc15d3d8f2fa3d01d69bd1f8a4550a336efca2a87ab8ad1073b2425",
+    "pending-4.sqlite": "b22db8b3aa4fafd5f36f6ff3bbbafe0ecaabf93a20ba47aed61824bb3f6ccdf5"
+  }
+}

@@ -60,6 +60,11 @@ doctrine. Follow [GIT_MILESTONES.md](implementation/GIT_MILESTONES.md): commit v
 increments, preserve major checkpoints with named branches, and never include unrelated
 staged work. A milestone records the exact accepted scope; it does not automatically close a phase.
 
+When diagnostic or counterfactual calculations enter live authority, retain separate permission checks.
+Proposed holes, unearned resources and alternate policy choices may be valid analysis inputs but invalid
+persisted state. Keep an explicit authority entrypoint and a regression where diagnostics accept an
+otherwise valid proposal that complete world admission must reject.
+
 ## Shared desktop
 
 Owner clarification, 2026-09-11: other conversations run Godot games on this desktop and can take

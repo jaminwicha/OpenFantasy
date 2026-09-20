@@ -1,0 +1,47 @@
+{
+  "requested_model": "fable[1m]",
+  "status": "completed_pending_review",
+  "provider_subtype": "success",
+  "provider_error": false,
+  "elapsed_seconds": 166.71,
+  "client_timeout_seconds": 300,
+  "client_budget_usd": 2,
+  "reported_api_equivalent_usd": 1.44401475,
+  "billing_note": "Provider API-equivalent usage; not a measured subscription deduction or demonstrated credit saving.",
+  "turns": 11,
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1483,
+      "outputTokens": 14,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001553,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 12,
+      "outputTokens": 12735,
+      "cacheReadInputTokens": 130607,
+      "cacheCreationInputTokens": 38647,
+      "webSearchRequests": 0,
+      "costUSD": 1.4424617499999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 9469,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "context_postflight": "verified",
+  "context_manifest_sha256": "a21ea208727ccc1db45fe93599248ceac2b525442b7d0ab38bfa6614797bf9a9",
+  "raw_artifacts": "/private/tmp/openfantasy-fable-coupled-20260919",
+  "raw_response_sha256": "2bb670136e17bce4c19801d3c33741213e898fd3717c1b864ab9cc268f3815d5"
+}

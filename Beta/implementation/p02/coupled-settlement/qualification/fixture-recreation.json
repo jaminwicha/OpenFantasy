@@ -1,0 +1,85 @@
+{
+  "status": "passed",
+  "files": [
+    {
+      "file": "after.sqlite",
+      "sha256": "3f7477fd2baf884c4b5c0c9e4950d8c0a00179fb551cbdd7020225615ec89d30"
+    },
+    {
+      "file": "before.sqlite",
+      "sha256": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60"
+    },
+    {
+      "file": "continuation-001.bin",
+      "sha256": "d87aef2bc275dee3bce3da825cc97e220df0ec5ae6ccaf1df50c1e66ed908ce5"
+    },
+    {
+      "file": "continuation-002.bin",
+      "sha256": "0c28ead41e3eec105851d2de8bf448c27786b951703c00f68c4f172509e0a6d9"
+    },
+    {
+      "file": "continuation-003.bin",
+      "sha256": "a88eb02858ebf65990dd1f51db1fe3e45f4ed14f51efcd174a3f32f556788b3e"
+    },
+    {
+      "file": "continuation-004.bin",
+      "sha256": "16b61b07e733d28f08aaabfed0e2370a9373c832f4a3ebd929c2a1b153428972"
+    },
+    {
+      "file": "continuation-005.bin",
+      "sha256": "fd5c08457e019e422da96a6dfe6cc860167ebbb6c924a6ae6cfb69122344dbed"
+    },
+    {
+      "file": "continuation-006.bin",
+      "sha256": "f5995637a03e4e838bc9248ef0c230ffd77f06056a198e8a2dbc7e3c86f4ee7d"
+    },
+    {
+      "file": "continuation-007.bin",
+      "sha256": "4d84275404dd0d845ae071bee389eda5888f0d9a0b5a3fdff9af6d34f5acb5ec"
+    },
+    {
+      "file": "expected.json",
+      "sha256": "e87d5d4bf45e4e10a317b19e7ee298ae6de7794ad39a08323758534ee4356d94"
+    },
+    {
+      "file": "genesis.bin",
+      "sha256": "792f80fe6f13c3306c36f070a674b47042b6a0d3f12b98dd22a4504a0df1f0ed"
+    },
+    {
+      "file": "pending-0.sqlite",
+      "sha256": "25b37b8e00bc82690e0c441bf93248c6c001fb87187ebaee1160147638006ec1"
+    },
+    {
+      "file": "pending-1.sqlite",
+      "sha256": "c0518a8c30bc62d6d43a80bdf41b3a53fbb548bb9684818ce120f9717fa3706e"
+    },
+    {
+      "file": "pending-2.sqlite",
+      "sha256": "063b576a292ce6cac1e6afa7c28c6abf627018d3f4d617eab46333886e7d1192"
+    },
+    {
+      "file": "pending-3.sqlite",
+      "sha256": "23c5bd99c24a863bb7dadcb3c77da00299ed7852d8a93dafb7f072049b8a9b44"
+    },
+    {
+      "file": "pending-4.sqlite",
+      "sha256": "b22db8b3aa4fafd5f36f6ff3bbbafe0ecaabf93a20ba47aed61824bb3f6ccdf5"
+    },
+    {
+      "file": "pending-5.sqlite",
+      "sha256": "9b4f962d424e16d7cf1c2f2b56a05fb8f1e607c00729d3e377741f3cd861f769"
+    },
+    {
+      "file": "pending-6.sqlite",
+      "sha256": "576c03a57dc15d3d8f2fa3d01d69bd1f8a4550a336efca2a87ab8ad1073b2425"
+    },
+    {
+      "file": "pending.sqlite",
+      "sha256": "25b37b8e00bc82690e0c441bf93248c6c001fb87187ebaee1160147638006ec1"
+    },
+    {
+      "file": "trigger.bin",
+      "sha256": "2a8de9e30f74ca4bf74e79b7b149c2e90896ffd11d65270d496938ce6ea5c3fc"
+    }
+  ]
+}
