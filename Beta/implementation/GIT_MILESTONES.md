@@ -48,6 +48,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-constructed-support` | `2dcdd79` | Fresh dry profile11 with completed-member actor footing, exact XY support and earned assisted vertical traversal;1,173 tests,26 real Host calls/two process kills, exact history and native headless foundation/farm. [Evidence](p01/constructed-footing/README.md) proves real quest-funded NPC construction then actual climb/reopen. No ordinary stair routing, load strength/collapse, wet-world composition, player climb controls, production performance or full-gate closure. |
 | `codex/milestone-stair-navigation` | `d4f01b4` | Fresh dry profile12 ordinary stairs and bounded directed multi-level routes; 1,189 tests, 20 new-profile Host calls/two process kills, legacy26/two-kill regression and native headless foundation/farm. [Evidence](p01/stair-navigation/README.md) proves a real quest-funded nine-tread/deck assembly, 585-commit player/NPC journey, stacked occupancy and automatic downstairs return. Same route budget after a retained real failure; no load/collapse, wet composition, rendered stair, throughput or full-gate acceptance. |
 | `codex/milestone-structural-load-planning` | `ca149cb` | Actual funded member/actor mass binding, explicitly rated DAG and immutable bounded cascading failure plans with trusted-graph canonical resume; 1,241 tests, 14 fresh Host inspections, independent integer/byte oracle and headless foundation. [Evidence](p02/structural-loads/README.md). Read-only diagnostic scope: no live collapse, debris, actor falling, world-profile publication, production strength/latency or full-gate closure. |
+| `codex/milestone-construction-physical` | `159e431` | Fresh dry profile13 retains complete physical member lifecycle independently of fabrication, with conserved installed material and atomic completion/identity publication. 1,274 tests, 26 new-profile Host calls/two kills, 20 legacy calls/two kills, headless foundation/farm and seven identical recreated files. [Evidence](p02/construction-physical/README.md). Exact-component support and pre-work refusal are qualified; live collapse, debris, actor falling, universal load admission, production performance/art/devices and full gates remain open. |
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -168,3 +169,10 @@ qualification. The source world is unchanged. Actor load survival is explicitly 
 footing; physical collapse still needs complete consequence publication, conserved debris and checked
 falling/landing. Canonical restore binds an expected graph as well as a dependency pin. This checkpoint
 closes no full phase and changes no predecessor history or frozen specification.
+
+The construction-physical marker preserves `159e4316c6e2a5336e1eb68b6065615f228bf040` with source,
+timeless references and bounded qualification. Completion-derived members share the original material
+backing; supplied displaced poses do not claim an executed fall. Actual collapse and its complete world
+publication remain the next dependency. Development stays on `codex/runtime-foundation`; all previous
+markers, 22 frozen designs and the exact unrelated predecessor index are preserved. No switch, force move,
+push, merge or full-phase closure accompanies this marker.
