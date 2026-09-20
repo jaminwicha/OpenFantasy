@@ -1,0 +1,13 @@
+{
+  "base": "source-pins.json",
+  "sourceOverrides": {
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs": "5b5c71d020d5394b00d04f79753516fca0cbe9714acaaafa3d6997ddf7023f6a",
+    "Beta/Runtime/client/scripts/WorksitePlayProbe.cs": "2d41b98117e014c021d293103dcc010cd0ed10dee940fd90d3882c41ab757597"
+  },
+  "verifiedApplicationFiles": 580,
+  "applicationBinaries": {
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "442803d6b951427badfebaef094a30b809107777242546bad653ace680de2b59",
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "21b4257579ee9a228aa864f9c9a363001dc5ffe8b2ee561c1f7312f187373574",
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "643ef6523094d8afbf2c566dd3976e9ed82f81a8e79d12ff7546def140d4e2b7"
+  }
+}

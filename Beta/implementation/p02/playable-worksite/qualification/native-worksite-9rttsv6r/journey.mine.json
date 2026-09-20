@@ -1,0 +1,235 @@
+{
+  "Kind": "native-worksite-play-v1",
+  "Mode": "mine",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "terminal-mining",
+  "InitialHash": "B564BC25D75DE985BF6ABA0DCA234A81400039FA6988A9BB6CE65764BC658543",
+  "FinalHash": "948D5D09B77099C5C3F57B4CC2D6C4D3C24E473E4E1C730554B996623EEF7716",
+  "Checks": [
+    "Exact prior public world recovered before readiness, with no transient target or wheel restored.",
+    "After recovery, the presented mining offer reports the completed face; initial presented blocker: You are too tired; rest a moment.",
+    "Resumed mining removes one retained cell and visibly settles only its supported deck; completed extraction cannot repeat.",
+    "Ordinary assisted climb returns from the mined stance using the same actual footing and clearance rules."
+  ],
+  "Inputs": [
+    {
+      "_stage": "opening",
+      "Key": "Escape",
+      "Milliseconds": 28943
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "R",
+      "Milliseconds": 28952
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28962
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28975
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28988
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28998
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "V",
+      "Milliseconds": 29625
+    },
+    {
+      "_stage": "terminal-mining",
+      "Button": "DpadRight",
+      "Milliseconds": 29630
+    },
+    {
+      "_stage": "terminal-mining",
+      "Button": "A",
+      "Milliseconds": 29632
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "V",
+      "Milliseconds": 31872
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Right",
+      "Milliseconds": 31873
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Enter",
+      "Milliseconds": 31873
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "V",
+      "Milliseconds": 34227
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Down",
+      "Milliseconds": 34229
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Enter",
+      "Milliseconds": 34229
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Escape",
+      "Milliseconds": 34367
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 35267,
+  "Actors": [
+    {
+      "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+      "Feet": {
+        "X": 26912,
+        "Y": 82752,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 323,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+      "Feet": {
+        "X": 29824,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 116,
+          "Y": 324,
+          "Z": 1
+        }
+      }
+    }
+  ],
+  "Construction": [
+    {
+      "ProjectId": {
+        "High": 8420070808789219585,
+        "Low": 4647054864564120019
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration raised work deck",
+      "SiteFeet": {
+        "X": 29440,
+        "Y": 83200,
+        "Z": 256,
+        "Cell": {
+          "X": 115,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 29312,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 114,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 200,
+      "RequiredWork": 200,
+      "IsCompleted": true
+    },
+    {
+      "ProjectId": {
+        "High": 10045680948196407278,
+        "Low": 13286953669266571270
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration stairs and fixed deck",
+      "SiteFeet": {
+        "X": 28160,
+        "Y": 82944,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 28288,
+        "Y": 82816,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 323,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 200,
+      "RequiredWork": 200,
+      "IsCompleted": true
+    }
+  ],
+  "Excavation": [
+    {
+      "SiteId": {
+        "High": 16857601010363160984,
+        "Low": 10444368446927687185
+      },
+      "Cell": {
+        "X": 115,
+        "Y": 325,
+        "Z": 0
+      },
+      "Stance": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      },
+      "SiteRevision": 3,
+      "TerrainRevision": 1,
+      "RequiredWork": 3,
+      "CompletedWork": 3,
+      "RequiredToolDefinitionId": {
+        "High": 1872794200646237673,
+        "Low": 5975632165003488037
+      },
+      "DestinationRevision": 7,
+      "IsComplete": true,
+      "RemainingWork": 0
+    }
+  ],
+  "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+}

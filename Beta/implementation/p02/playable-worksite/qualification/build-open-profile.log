@@ -1,0 +1,12 @@
+  Determining projects to restore...
+  Restored /tmp/openfantasy-worksite-open-profile/Profile.csproj (in 462 ms).
+  2 of 3 projects are up-to-date for restore.
+/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk/10.0.401/Microsoft.Common.CurrentVersion.targets(1846,5): error MSB3202: The project file "../../Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj" was not found. [/tmp/openfantasy-worksite-open-profile/Profile.csproj]
+
+Build FAILED.
+
+/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk/10.0.401/Microsoft.Common.CurrentVersion.targets(1846,5): error MSB3202: The project file "../../Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj" was not found. [/tmp/openfantasy-worksite-open-profile/Profile.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:01.20

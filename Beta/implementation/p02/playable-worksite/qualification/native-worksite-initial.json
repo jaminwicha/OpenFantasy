@@ -1,0 +1,119 @@
+{
+  "status": "failed",
+  "rendered": true,
+  "startedUtc": "2026-09-20T06:13:07.577602+00:00",
+  "scope": "Injected native input, actual earned construction/mining, stairs, visible settlement and separate-process restart; no physical-device/art/full-phase acceptance",
+  "runs": [
+    {
+      "phase": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--worksite-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-6z0s8mx8/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-6z0s8mx8/journey.json",
+        "fresh",
+        "--background-render"
+      ],
+      "exitCode": 1,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": "ERROR: Native worksite probe failed: System.InvalidOperationException: The reached floor differs from the expected physical floor: SubunitPosition { X = 25984, Y = 83616, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 339\n   at OpenFantasy.Client.WorksitePlayProbe.Walk(SubunitPosition destination) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 252\n   at OpenFantasy.Client.WorksitePlayProbe.FundAndBegin() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 71\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 50\n   at: void OpenFantasy.Client.WorksitePlayProbe+<_Ready>d__10.MoveNext() (res://scripts/WorksitePlayProbe.cs:50)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.WorksitePlayProbe+<_Ready>d__10.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:50)\n       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [4] void System.Threading.Tasks.Task.RunContinuations(object)\n       [5] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [6] bool System.Threading.Tasks.Task.TrySetException(object)\n       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [8] void OpenFantasy.Client.WorksitePlayProbe+<FundAndBegin>d__11.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:71)\n       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [11] void System.Threading.Tasks.Task.RunContinuations(object)\n       [12] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [13] bool System.Threading.Tasks.Task.TrySetException(object)\n       [14] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [15] void OpenFantasy.Client.WorksitePlayProbe+<Walk>d__18.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:252)\n       [16] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [17] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [18] void System.Threading.Tasks.Task.RunContinuations(object)\n       [19] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()\n       [20] void OpenFantasy.Client.WorksitePlayProbe+<Delay>d__30.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:311)\n       [21] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [22] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [23] void System.Threading.Tasks.Task.RunContinuations(object)\n       [24] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()\n       [25] void OpenFantasy.Client.WorksitePlayProbe+<Frame>d__31.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:313)\n       [26] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [27] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [28] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)\n"
+    }
+  ],
+  "observations": {
+    "fresh": {
+      "Kind": "native-worksite-play-v1",
+      "Mode": "fresh",
+      "Status": "failed",
+      "Error": "System.InvalidOperationException: The reached floor differs from the expected physical floor: SubunitPosition { X = 25984, Y = 83616, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 339\n   at OpenFantasy.Client.WorksitePlayProbe.Walk(SubunitPosition destination) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 252\n   at OpenFantasy.Client.WorksitePlayProbe.FundAndBegin() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 71\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 50",
+      "Stage": "gathering",
+      "InitialHash": "9BAA831ECF575BB2C6AE0FEEE496058F9764721B864A9692D405699396929356",
+      "FinalHash": "6621163B3DFB8122ECFCBDF390B2815CA995B7599A4E7C1969A6DF99A6096247",
+      "Checks": [],
+      "Inputs": [
+        {
+          "_stage": "opening",
+          "Key": "Escape",
+          "Milliseconds": 1418
+        }
+      ],
+      "Display": "macOS",
+      "FocusRequests": 0,
+      "IsWindowFocused": true,
+      "IsLocallyPaused": false,
+      "DurationMilliseconds": 2941,
+      "Actors": [
+        {
+          "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+          "Feet": {
+            "X": 26912,
+            "Y": 82560,
+            "Z": 256,
+            "Cell": {
+              "X": 105,
+              "Y": 322,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+          "Feet": {
+            "X": 25984,
+            "Y": 83616,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 326,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Construction": [],
+      "Excavation": [
+        {
+          "SiteId": {
+            "High": 16857601010363160984,
+            "Low": 10444368446927687185
+          },
+          "Cell": {
+            "X": 115,
+            "Y": 325,
+            "Z": 0
+          },
+          "Stance": {
+            "X": 29824,
+            "Y": 83328,
+            "Z": 0,
+            "Cell": {
+              "X": 116,
+              "Y": 325,
+              "Z": 0
+            }
+          },
+          "SiteRevision": 0,
+          "TerrainRevision": 0,
+          "RequiredWork": 3,
+          "CompletedWork": 0,
+          "RequiredToolDefinitionId": {
+            "High": 1872794200646237673,
+            "Low": 5975632165003488037
+          },
+          "DestinationRevision": 0,
+          "IsComplete": false,
+          "RemainingWork": 3
+        }
+      ],
+      "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+    }
+  },
+  "failure": "Native worksite failed at fresh",
+  "artifactSha256": {
+    "native-worksite-6z0s8mx8/journey.fresh.failed.json": "83dd84137c965526a8adc4f364f0e149a348bb1065f4fb3e98753f978572bbf0",
+    "native-worksite-6z0s8mx8/world.sqlite": "51f2dad3c4f25a6772a33e1dccc5cd1744ae272a5222ae5f1f1a0bbf1d3adba9"
+  },
+  "finishedUtc": "2026-09-20T06:13:13.588797+00:00"
+}

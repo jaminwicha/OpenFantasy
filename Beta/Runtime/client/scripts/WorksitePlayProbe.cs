@@ -7,6 +7,7 @@ using OpenFantasy.Core;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content;
 using OpenFantasy.Hosting.Simulation;
 
@@ -53,6 +54,7 @@ internal sealed partial class WorksitePlayProbe(FarmGame game, string reportPath
                 await PauseAndSettle();
             }
             await Capture(mode);
+            CheckJourneyDeadline();
             Report("passed", null);
             game.RequestClose();
         }
@@ -152,7 +154,13 @@ internal sealed partial class WorksitePlayProbe(FarmGame game, string reportPath
         _stage = "terminal-mining";
         Require(View.Worksite!.ExcavationTargets.Single().CompletedWork == 1, "Expected actual saved partial mining.");
         await SelectFace();
-        long[] before = View.Worksite.Members.Select(member => member.Origin.Z).ToArray();
+        var before = View.Worksite.Members.ToDictionary(member => (member.StructureId, member.MemberIndex));
+        LocalWorksiteMemberView[] moving = before.Values
+            .Where(member => member.Origin == WorksiteFarmLayout.RemovableDeckOrigin).ToArray();
+        Require(before.Count == 14 && moving.Length == 2
+            && moving.Select(member => member.StructureId).Distinct().Count() == 1,
+            "The complete removable assembly must be identified before mining.");
+        EntityId movingStructure = moving[0].StructureId;
         for (int attempt = 0; !View.Worksite!.ExcavationTargets.Single().IsComplete; attempt++)
         {
             Require(attempt < 3, "Mining repeated beyond the remaining admitted work.");
@@ -162,12 +170,25 @@ internal sealed partial class WorksitePlayProbe(FarmGame game, string reportPath
                 && View.Worksite!.ExcavationTargets.Single().CompletedWork > work,
                 "The captured mining action did not finish its actual consequences.", 30);
         }
-        long[] after = View.Worksite!.Members.Select(member => member.Origin.Z).ToArray();
-        Require(before.Zip(after).Count(pair => pair.First - pair.Second == 256) == 2
-            && before.Zip(after).All(pair => pair.First == pair.Second || pair.First - pair.Second == 256),
-            "Only the removable assembly's two members must settle by one metre.");
+        var after = View.Worksite!.Members.ToDictionary(member => (member.StructureId, member.MemberIndex));
+        Require(before.Count == after.Count && before.Keys.All(after.ContainsKey),
+            "Settlement changed the complete set of installed member identities.");
+        foreach (var (identity, prior) in before)
+        {
+            LocalWorksiteMemberView current = after[identity];
+            SubunitPosition expected = prior.StructureId == movingStructure ? prior.Origin.Offset(0, 0, -256) : prior.Origin;
+            Require(current.Origin == expected && current.Geometry == prior.Geometry
+                && current.ConditionParts == prior.ConditionParts,
+                "Settlement changed the wrong member, geometry, condition or displacement: " + identity);
+        }
         await Capture("settled");
-        Require(!game.CurrentOffers[FarmSemanticAction.Excavate].CanExecute, "A finished excavation was offered for duplicate extraction.");
+        string? initialBlocker = game.CurrentOffers[FarmSemanticAction.Excavate].BlockingReason;
+        await Until(() => View.Worksite!.PlayerEffort >= View.Worksite.EffortPerWork
+            && View.Worksite.CanManipulate && !View.IsResolvingConsequences && !game.HasPendingAction
+            && !game.CurrentOffers[FarmSemanticAction.Excavate].CanExecute
+            && game.CurrentOffers[FarmSemanticAction.Excavate].BlockingReason == "This face has already been excavated.",
+            "A completed face must remain blocked after both effort and its presented offer refresh.", 15);
+        _checks.Add("After recovery, the presented mining offer reports the completed face; initial presented blocker: " + initialBlocker);
         await WheelAction(FarmSemanticAction.Traverse, 2, controller: false);
         await Until(() => Player.Feet == WorksiteFarmLayout.PitApproach && !game.HasPendingAction,
             "The confirmed ascent did not return to the real upper ground.");
@@ -225,31 +246,66 @@ internal sealed partial class WorksitePlayProbe(FarmGame game, string reportPath
 
     private async Task ApproachWren()
     {
+        (ulong Player, ulong Target)? previous = null;
+        var stable = Stopwatch.StartNew();
         await Until(() =>
         {
-            SubunitPosition target = View.Actors.Single(actor => actor.ControllerKind == OpenFantasy.Core.Worlds.ResidentControllerKind.Host).Feet;
-            long dx = target.X - Player.Feet.X, dy = target.Y - Player.Feet.Y;
-            if (dx * dx + dy * dy <= 384L * 384) { SetMovement(null); return true; }
-            SetMovement(Math.Abs(dx) > Math.Abs(dy) ? dx > 0 ? "walk_right" : "walk_left" : dy > 0 ? "walk_down" : "walk_up");
-            return false;
+            LocalWorldView view = View;
+            LocalActorView player = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId);
+            LocalActorView wren = view.Actors.Single(actor => actor.ControllerKind == ResidentControllerKind.Host);
+            long dx = wren.Feet.X - player.Feet.X, dy = wren.Feet.Y - player.Feet.Y;
+            if (dx * dx + dy * dy > 384L * 384)
+            {
+                SetMovement(Math.Abs(dx) > Math.Abs(dy) ? dx > 0 ? "walk_right" : "walk_left" : dy > 0 ? "walk_down" : "walk_up");
+                previous = null;
+                stable.Restart();
+                return false;
+            }
+            SetMovement(null);
+            var revisions = (player.PresenceRevision, wren.PresenceRevision);
+            if (previous != revisions)
+            {
+                previous = revisions;
+                stable.Restart();
+            }
+            return stable.ElapsedMilliseconds >= 150 && !game.HasPendingAction
+                && game.CurrentOffers.TryGetValue(FarmSemanticAction.Speak, out FarmActionOffer? offer)
+                && offer.CanExecute && offer.Scope.ExpectedActorRevision == player.PresenceRevision
+                && offer.Intent is SpeakToActorIntent speak && speak.TargetActorId == wren.ActorId
+                && speak.ExpectedTargetRevision == wren.PresenceRevision;
         }, "The player did not approach Wren.", 20);
-        await Delay(0.2);
+        _checks.Add("Released movement and both presented Talk revisions settled before one deliberate E press.");
     }
 
     private async Task Walk(SubunitPosition destination)
     {
-        await Until(() =>
+        var timer = Stopwatch.StartNew();
+        while (true)
         {
+            Require(!game.HasFailed && timer.Elapsed.TotalSeconds < 20,
+                "Walking did not reach and settle at " + destination);
             SubunitPosition feet = Player.Feet;
-            if (feet.X == destination.X && feet.Y == destination.Y) { SetMovement(null); return true; }
+            if (feet.X == destination.X && feet.Y == destination.Y)
+            {
+                SetMovement(null);
+                // A movement sample already owned by the host may finish after key release.
+                // Observe that result and correct through ordinary input; never snap the actor.
+                await Delay(0.2);
+                Require(timer.Elapsed.TotalSeconds < 20, "Walking exceeded its 20-second settling bound.");
+                if (Player.Feet.X == destination.X && Player.Feet.Y == destination.Y)
+                {
+                    Require(Player.Feet.Z == destination.Z,
+                        "The reached floor differs from the expected physical floor: " + Player.Feet);
+                    return;
+                }
+                continue;
+            }
             Require((destination.X - feet.X) % 32 == 0 && (destination.Y - feet.Y) % 32 == 0,
                 "Movement left the admitted input lattice.");
             SetMovement(feet.X != destination.X ? feet.X < destination.X ? "walk_right" : "walk_left"
                 : feet.Y < destination.Y ? "walk_down" : "walk_up");
-            return false;
-        }, "Walking did not reach " + destination, 20);
-        await Delay(0.2);
-        Require(Player.Feet == destination, "The reached floor differs from the expected physical floor: " + Player.Feet);
+            await Frame();
+        }
     }
 
     private async Task PauseAndSettle()
@@ -296,10 +352,12 @@ internal sealed partial class WorksitePlayProbe(FarmGame game, string reportPath
     private async Task Until(Func<bool> condition, string failure, double seconds = 10)
     {
         var timer = Stopwatch.StartNew();
-        while (!condition())
+        while (true)
         {
-            Require(!game.HasFailed && _elapsed.Elapsed.TotalSeconds < 180, "Worksite journey failed or exceeded its 180-second bound at " + _stage);
+            bool satisfied = condition();
+            CheckJourneyDeadline();
             Require(timer.Elapsed.TotalSeconds < seconds, failure);
+            if (satisfied) return;
             await Frame();
         }
     }
@@ -310,7 +368,14 @@ internal sealed partial class WorksitePlayProbe(FarmGame game, string reportPath
         while (timer.Elapsed.TotalSeconds < seconds) await Frame();
     }
 
-    private async Task Frame() => await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+    private async Task Frame()
+    {
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        CheckJourneyDeadline();
+    }
+
+    private void CheckJourneyDeadline() => Require(!game.HasFailed && _elapsed.Elapsed.TotalSeconds < 180,
+        "Worksite journey failed or exceeded its 180-second bound at " + _stage);
 
     private async Task Capture(string stage)
     {

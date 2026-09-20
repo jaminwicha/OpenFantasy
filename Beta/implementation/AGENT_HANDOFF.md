@@ -42,21 +42,30 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Playable local worksite](p02/playable-worksite/README.md) has its implementation and managed evidence:
-**951 Core + 528 Hosting/client cases passed**. Fresh profile18 content includes two genuinely funded
+[Playable local worksite](p02/playable-worksite/README.md) has its implementation and initial managed evidence:
+**953 Core + 528 Hosting/client cases passed** after the hash-cache correction. Fresh profile18 content includes two genuinely funded
 projects, a natural contour under one existing generator, stairs/decks and three-unit excavation.
 Public geometry and contextual Mine/Climb offers connect to the existing Godot/session owners.
-The separate `--worksite` entry preserves farm saves. No Core source or simulation law changed.
+The separate `--worksite` entry preserves farm saves. The initial content/client change introduced no Core law.
 [Architecture](../Runtime/docs/architecture/local-worksite.md) describes the bounded interfaces.
 
 Independent native-source critique and actual failures corrected incompatible terrain-rule composition,
 missing player access witnesses, a post-settlement climb-out trap and two wheel choice-substitution risks.
 Original failing logs remain in the packet. Full managed qualification proves the real funded build,
-walk, rider/settlement, partial-mining restart and climb-out journey. The old rendered wheel/reopen passed.
-**Next dependency: qualify the new rendered four-process worksite journey** using its exact controls,
-partial saves, pending continuation, above/below presentation and final return/reopen; inspect captures
-and retain any failures. The native probe and client have rebuilt. No new worksite native/latency/art/device
-or full-phase acceptance is claimed yet. Demonstration material calibration is explicit.
+walk, rider/settlement, partial-mining restart and climb-out journey. The old rendered wheel/reopen and
+initial four-process worksite run passed. Stronger reviewed native assertions later passed gameplay but
+missed the final 30-second opening bound; the packet preserves every failure and assertion correction.
+Measured recovery identifies repeated immutable-root hash serialization, addressed with a thread-safe
+per-root digest cache while retaining all complete replay/admission/byte checks. Full regression and
+all 1,334 historical candidate hashes pass. Measured recovery allocation fell about16.2%, while remaining
+22.1GB/replay and history scaling stay open. **Current dependency: final rendered journey under the same
+native deadlines**, plus the original wheel control. Ecosystem `ffc0ad6` preserves the reusable native
+observation/deadline lessons with three installed skill copies verified.
+Initial implementation is preserved at `e3e9040`; no final worksite milestone is claimed yet.
+Following dependencies remain the full P01/P02 integration and feasibility plan, including durable
+containment and wet composition, broader physical consequences, macro/history scaling and presentation.
+The worksite proves a bounded playable connection, not production latency, art, UX, devices or a full
+phase. Demonstration material calibration, provisional cutaways/HUD and generic reopened hints are explicit.
 
 The prior [live event-ordered settlement](p02/live-event-descent/README.md) remains preserved at
 `e668cd7` on `codex/milestone-live-event-descent`: 1,459 distinct retained/new tests, 83 Host operations,

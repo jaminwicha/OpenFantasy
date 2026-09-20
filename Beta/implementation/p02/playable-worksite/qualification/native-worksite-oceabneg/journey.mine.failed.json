@@ -1,0 +1,212 @@
+{
+  "Kind": "native-worksite-play-v1",
+  "Mode": "mine",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: A completed face must remain blocked independently of temporary effort or readiness.\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 382\n   at OpenFantasy.Client.WorksitePlayProbe.CompleteMining() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 188\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 52",
+  "Stage": "terminal-mining",
+  "InitialHash": "FA1B0E445094B57CD127CE032010DBF24E58F7D74FC61991130C57FE733B0814",
+  "FinalHash": "F099B3CA983DEF9BEFFBFFB62D9A0F944E8A2F8AA86B0A010652B1F81E93F797",
+  "Checks": [
+    "Exact prior public world recovered before readiness, with no transient target or wheel restored."
+  ],
+  "Inputs": [
+    {
+      "_stage": "opening",
+      "Key": "Escape",
+      "Milliseconds": 28796
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "R",
+      "Milliseconds": 28806
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28816
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28827
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28838
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Q",
+      "Milliseconds": 28847
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "V",
+      "Milliseconds": 29514
+    },
+    {
+      "_stage": "terminal-mining",
+      "Button": "DpadRight",
+      "Milliseconds": 29519
+    },
+    {
+      "_stage": "terminal-mining",
+      "Button": "A",
+      "Milliseconds": 29521
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "V",
+      "Milliseconds": 31814
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Right",
+      "Milliseconds": 31816
+    },
+    {
+      "_stage": "terminal-mining",
+      "Key": "Enter",
+      "Milliseconds": 31816
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": false,
+  "DurationMilliseconds": 34064,
+  "Actors": [
+    {
+      "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+      "Feet": {
+        "X": 26912,
+        "Y": 82272,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 321,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+      "Feet": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      }
+    }
+  ],
+  "Construction": [
+    {
+      "ProjectId": {
+        "High": 8420070808789219585,
+        "Low": 4647054864564120019
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration raised work deck",
+      "SiteFeet": {
+        "X": 29440,
+        "Y": 83200,
+        "Z": 256,
+        "Cell": {
+          "X": 115,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 29312,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 114,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 200,
+      "RequiredWork": 200,
+      "IsCompleted": true
+    },
+    {
+      "ProjectId": {
+        "High": 10045680948196407278,
+        "Low": 13286953669266571270
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration stairs and fixed deck",
+      "SiteFeet": {
+        "X": 28160,
+        "Y": 82944,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 28288,
+        "Y": 82816,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 323,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 200,
+      "RequiredWork": 200,
+      "IsCompleted": true
+    }
+  ],
+  "Excavation": [
+    {
+      "SiteId": {
+        "High": 16857601010363160984,
+        "Low": 10444368446927687185
+      },
+      "Cell": {
+        "X": 115,
+        "Y": 325,
+        "Z": 0
+      },
+      "Stance": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      },
+      "SiteRevision": 3,
+      "TerrainRevision": 1,
+      "RequiredWork": 3,
+      "CompletedWork": 3,
+      "RequiredToolDefinitionId": {
+        "High": 1872794200646237673,
+        "Low": 5975632165003488037
+      },
+      "DestinationRevision": 7,
+      "IsComplete": true,
+      "RemainingWork": 0
+    }
+  ],
+  "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+}

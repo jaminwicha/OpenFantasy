@@ -1,0 +1,113 @@
+{
+  "Kind": "native-worksite-play-v1",
+  "Mode": "fresh",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: E did not open Wren\u0027s conversation.\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 383\n   at OpenFantasy.Client.WorksitePlayProbe.Until(Func\u00601 condition, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 338\n   at OpenFantasy.Client.WorksitePlayProbe.FundAndBegin() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 84\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 50",
+  "Stage": "funding",
+  "InitialHash": "9BAA831ECF575BB2C6AE0FEEE496058F9764721B864A9692D405699396929356",
+  "FinalHash": "C1BEE2E9F84A035C04A683A0D04498BB69BBB29EB2AFD8F079B971BCF7F6A32C",
+  "Checks": [
+    "Four ordinary tool actions gathered finite source stock before either project was funded."
+  ],
+  "Inputs": [
+    {
+      "_stage": "opening",
+      "Key": "Escape",
+      "Milliseconds": 1271
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 3702
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 5702
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 7776
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 9776
+    },
+    {
+      "_stage": "funding",
+      "Key": "E",
+      "Milliseconds": 11659
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": false,
+  "DurationMilliseconds": 21698,
+  "Actors": [
+    {
+      "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+      "Feet": {
+        "X": 26496,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 324,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+      "Feet": {
+        "X": 26208,
+        "Y": 82784,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 323,
+          "Z": 1
+        }
+      }
+    }
+  ],
+  "Construction": [],
+  "Excavation": [
+    {
+      "SiteId": {
+        "High": 16857601010363160984,
+        "Low": 10444368446927687185
+      },
+      "Cell": {
+        "X": 115,
+        "Y": 325,
+        "Z": 0
+      },
+      "Stance": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      },
+      "SiteRevision": 0,
+      "TerrainRevision": 0,
+      "RequiredWork": 3,
+      "CompletedWork": 0,
+      "RequiredToolDefinitionId": {
+        "High": 1872794200646237673,
+        "Low": 5975632165003488037
+      },
+      "DestinationRevision": 4,
+      "IsComplete": false,
+      "RemainingWork": 3
+    }
+  ],
+  "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+}

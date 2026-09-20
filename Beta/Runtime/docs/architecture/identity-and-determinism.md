@@ -30,6 +30,13 @@ trailing fields and malformed encodings reject rather than fall through to a per
 The [primitive contract](../../src/OpenFantasy.Core/CONTRACTS.md) owns exact derivation field order
 and golden-vector semantics; this reference does not redefine its wire format.
 
+[WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) memoizes its canonical digest per
+immutable root. Concurrent first readers can compute independently; atomic reference publication
+retains one complete immutable `ContentHash`. A successor owns a new cache. The cache is neither a
+serialized field nor an admission shortcut: encoded inputs are fixed before validation can request
+the digest, and persistence still encodes and verifies full canonical bytes. Mutable encoding buffers
+are not retained or shared by this cache.
+
 ## Numeric domains
 
 Authoritative geometry uses signed 64-bit coordinates at 1/256 cell. The physical profile binds

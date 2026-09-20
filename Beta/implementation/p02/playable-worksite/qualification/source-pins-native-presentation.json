@@ -1,0 +1,13 @@
+{
+  "base": "source-pins.json",
+  "sourceOverrides": {
+    "Beta/Runtime/client/scripts/WorksitePlayProbe.cs": "fc603086b095664b60b79a7ef12e8ebcf54c8c72b53d1b4e82c96a8db65e5805"
+  },
+  "verifiedApplicationFiles": 580,
+  "nativeReport": "native-worksite-presentation.json",
+  "applicationBinaries": {
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "2523e914b626b1b4a117ca8373c1c3579a17155a0b68ece824d453e307be1f16",
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "985f44d4d01a2d9dc3e107f59251f41550cdab038cca6aa97ca34e0d9d704508",
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "4f1b6e4d09daa6215cb3e26edc3f1aee60b22dd770d91a914b6384f85cc8efe0"
+  }
+}

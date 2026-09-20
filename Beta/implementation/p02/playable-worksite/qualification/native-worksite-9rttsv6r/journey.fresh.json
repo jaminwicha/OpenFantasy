@@ -1,0 +1,214 @@
+{
+  "Kind": "native-worksite-play-v1",
+  "Mode": "fresh",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "funding",
+  "InitialHash": "9BAA831ECF575BB2C6AE0FEEE496058F9764721B864A9692D405699396929356",
+  "FinalHash": "F8FE26064E6DCC53F7B942EC908992617FEC5C2D7EB8CF70E03916A296322877",
+  "Checks": [
+    "Four ordinary tool actions gathered finite source stock before either project was funded.",
+    "Released movement and both presented Talk revisions settled before one deliberate E press.",
+    "Two addressed quests fund distinct projects; Wren routes and starts actual construction after dialogue closes."
+  ],
+  "Inputs": [
+    {
+      "_stage": "opening",
+      "Key": "Escape",
+      "Milliseconds": 1322
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 3629
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 5686
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 7677
+    },
+    {
+      "_stage": "gathering",
+      "Key": "F",
+      "Milliseconds": 9686
+    },
+    {
+      "_stage": "funding",
+      "Key": "E",
+      "Milliseconds": 12307
+    },
+    {
+      "_stage": "funding",
+      "Key": "G",
+      "Milliseconds": 12398
+    },
+    {
+      "_stage": "funding",
+      "Key": "G",
+      "Milliseconds": 12491
+    },
+    {
+      "_stage": "funding",
+      "Key": "G",
+      "Milliseconds": 12603
+    },
+    {
+      "_stage": "funding",
+      "Key": "G",
+      "Milliseconds": 12690
+    },
+    {
+      "_stage": "funding",
+      "Key": "E",
+      "Milliseconds": 12795
+    },
+    {
+      "_stage": "funding",
+      "Key": "Escape",
+      "Milliseconds": 20520
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 21450,
+  "Actors": [
+    {
+      "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+      "Feet": {
+        "X": 29312,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 114,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+      "Feet": {
+        "X": 26496,
+        "Y": 83840,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    }
+  ],
+  "Construction": [
+    {
+      "ProjectId": {
+        "High": 8420070808789219585,
+        "Low": 4647054864564120019
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration raised work deck",
+      "SiteFeet": {
+        "X": 29440,
+        "Y": 83200,
+        "Z": 256,
+        "Cell": {
+          "X": 115,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 29312,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 114,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 25,
+      "RequiredWork": 200,
+      "IsCompleted": false
+    },
+    {
+      "ProjectId": {
+        "High": 10045680948196407278,
+        "Low": 13286953669266571270
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration stairs and fixed deck",
+      "SiteFeet": {
+        "X": 28160,
+        "Y": 82944,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 28288,
+        "Y": 82816,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 323,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 0,
+      "RequiredWork": 200,
+      "IsCompleted": false
+    }
+  ],
+  "Excavation": [
+    {
+      "SiteId": {
+        "High": 16857601010363160984,
+        "Low": 10444368446927687185
+      },
+      "Cell": {
+        "X": 115,
+        "Y": 325,
+        "Z": 0
+      },
+      "Stance": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      },
+      "SiteRevision": 0,
+      "TerrainRevision": 0,
+      "RequiredWork": 3,
+      "CompletedWork": 0,
+      "RequiredToolDefinitionId": {
+        "High": 1872794200646237673,
+        "Low": 5975632165003488037
+      },
+      "DestinationRevision": 6,
+      "IsComplete": false,
+      "RemainingWork": 3
+    }
+  ],
+  "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+}

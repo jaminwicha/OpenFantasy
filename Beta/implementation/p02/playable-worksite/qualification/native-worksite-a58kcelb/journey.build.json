@@ -1,0 +1,230 @@
+{
+  "Kind": "native-worksite-play-v1",
+  "Mode": "build",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "partial-mining",
+  "InitialHash": "F4E225CD55CCBD8A27118A73109283E16182860C7CAA0415AEE80C6154A64773",
+  "FinalHash": "EB0A8F02D84BA8F3249E3B98070758602DA54B33BE96CF26CCF156A0271F791A",
+  "Checks": [
+    "Exact prior public world recovered before readiness, with no transient target or wheel restored.",
+    "Ordinary walking climbed the built stairs, crossed both upper decks and descended, without assisted teleportation.",
+    "Injected focus loss cancels an inspected mining choice; focus return submits nothing.",
+    "A controller wheel descent and keyboard wheel mining action consumed actual effort; partial mining remains saved."
+  ],
+  "Inputs": [
+    {
+      "_stage": "opening",
+      "Key": "Escape",
+      "Milliseconds": 15797
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "R",
+      "Milliseconds": 94378
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "Q",
+      "Milliseconds": 94389
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "Q",
+      "Milliseconds": 94400
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "Q",
+      "Milliseconds": 94410
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "Q",
+      "Milliseconds": 94418
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "V",
+      "Milliseconds": 94473
+    },
+    {
+      "_stage": "lower-stance",
+      "Button": "DpadDown",
+      "Milliseconds": 94480
+    },
+    {
+      "_stage": "lower-stance",
+      "Button": "A",
+      "Milliseconds": 94482
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "V",
+      "Milliseconds": 94586
+    },
+    {
+      "_stage": "lower-stance",
+      "Key": "Right",
+      "Milliseconds": 94587
+    },
+    {
+      "_stage": "partial-mining",
+      "Key": "V",
+      "Milliseconds": 94915
+    },
+    {
+      "_stage": "partial-mining",
+      "Key": "Right",
+      "Milliseconds": 94916
+    },
+    {
+      "_stage": "partial-mining",
+      "Key": "Enter",
+      "Milliseconds": 94916
+    },
+    {
+      "_stage": "partial-mining",
+      "Key": "Escape",
+      "Milliseconds": 95210
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 96110,
+  "Actors": [
+    {
+      "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+      "Feet": {
+        "X": 26912,
+        "Y": 82272,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 321,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+      "Feet": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      }
+    }
+  ],
+  "Construction": [
+    {
+      "ProjectId": {
+        "High": 8420070808789219585,
+        "Low": 4647054864564120019
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration raised work deck",
+      "SiteFeet": {
+        "X": 29440,
+        "Y": 83200,
+        "Z": 256,
+        "Cell": {
+          "X": 115,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 29312,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 114,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 200,
+      "RequiredWork": 200,
+      "IsCompleted": true
+    },
+    {
+      "ProjectId": {
+        "High": 10045680948196407278,
+        "Low": 13286953669266571270
+      },
+      "BuilderActorId": {
+        "High": 2039877146358383767,
+        "Low": 8947965925755627041
+      },
+      "DisplayName": "Demonstration stairs and fixed deck",
+      "SiteFeet": {
+        "X": 28160,
+        "Y": 82944,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 28288,
+        "Y": 82816,
+        "Z": 256,
+        "Cell": {
+          "X": 110,
+          "Y": 323,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 200,
+      "RequiredWork": 200,
+      "IsCompleted": true
+    }
+  ],
+  "Excavation": [
+    {
+      "SiteId": {
+        "High": 16857601010363160984,
+        "Low": 10444368446927687185
+      },
+      "Cell": {
+        "X": 115,
+        "Y": 325,
+        "Z": 0
+      },
+      "Stance": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      },
+      "SiteRevision": 1,
+      "TerrainRevision": 0,
+      "RequiredWork": 3,
+      "CompletedWork": 1,
+      "RequiredToolDefinitionId": {
+        "High": 1872794200646237673,
+        "Low": 5975632165003488037
+      },
+      "DestinationRevision": 6,
+      "IsComplete": false,
+      "RemainingWork": 2
+    }
+  ],
+  "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+}

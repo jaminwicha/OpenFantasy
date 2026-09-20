@@ -1,0 +1,86 @@
+{
+  "Kind": "native-worksite-play-v1",
+  "Mode": "fresh",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: The reached floor differs from the expected physical floor: SubunitPosition { X = 25984, Y = 83616, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 339\n   at OpenFantasy.Client.WorksitePlayProbe.Walk(SubunitPosition destination) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 252\n   at OpenFantasy.Client.WorksitePlayProbe.FundAndBegin() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 71\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 50",
+  "Stage": "gathering",
+  "InitialHash": "9BAA831ECF575BB2C6AE0FEEE496058F9764721B864A9692D405699396929356",
+  "FinalHash": "6621163B3DFB8122ECFCBDF390B2815CA995B7599A4E7C1969A6DF99A6096247",
+  "Checks": [],
+  "Inputs": [
+    {
+      "_stage": "opening",
+      "Key": "Escape",
+      "Milliseconds": 1418
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": false,
+  "DurationMilliseconds": 2941,
+  "Actors": [
+    {
+      "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+      "Feet": {
+        "X": 26912,
+        "Y": 82560,
+        "Z": 256,
+        "Cell": {
+          "X": 105,
+          "Y": 322,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+      "Feet": {
+        "X": 25984,
+        "Y": 83616,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    }
+  ],
+  "Construction": [],
+  "Excavation": [
+    {
+      "SiteId": {
+        "High": 16857601010363160984,
+        "Low": 10444368446927687185
+      },
+      "Cell": {
+        "X": 115,
+        "Y": 325,
+        "Z": 0
+      },
+      "Stance": {
+        "X": 29824,
+        "Y": 83328,
+        "Z": 0,
+        "Cell": {
+          "X": 116,
+          "Y": 325,
+          "Z": 0
+        }
+      },
+      "SiteRevision": 0,
+      "TerrainRevision": 0,
+      "RequiredWork": 3,
+      "CompletedWork": 0,
+      "RequiredToolDefinitionId": {
+        "High": 1872794200646237673,
+        "Low": 5975632165003488037
+      },
+      "DestinationRevision": 0,
+      "IsComplete": false,
+      "RemainingWork": 3
+    }
+  ],
+  "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+}

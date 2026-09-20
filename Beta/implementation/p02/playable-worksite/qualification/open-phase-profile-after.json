@@ -1,0 +1,26 @@
+{
+  "Revision": 1334,
+  "exactCandidateHashes": true,
+  "phases": [
+    {
+      "stage": "batch-decode",
+      "milliseconds": 23.724636,
+      "allocatedBytes": 2672600
+    },
+    {
+      "stage": "deterministic-decide",
+      "milliseconds": 20775.921402,
+      "allocatedBytes": 19774975464
+    },
+    {
+      "stage": "candidate-encode",
+      "milliseconds": 1695.607634,
+      "allocatedBytes": 2257668472
+    },
+    {
+      "stage": "candidate-hash",
+      "milliseconds": 148.491163,
+      "allocatedBytes": 74704
+    }
+  ]
+}

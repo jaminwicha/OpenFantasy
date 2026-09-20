@@ -1,0 +1,4 @@
+# Disposable native databases stay local; runner reports retain their hashes.
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

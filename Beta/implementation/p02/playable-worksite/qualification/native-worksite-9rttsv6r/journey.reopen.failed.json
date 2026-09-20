@@ -1,0 +1,20 @@
+{
+  "Kind": "native-worksite-play-v1",
+  "Mode": "reopen",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: The worksite did not open.\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 404\n   at OpenFantasy.Client.WorksitePlayProbe.Until(Func\u00601 condition, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 359\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 30",
+  "Stage": "opening",
+  "InitialHash": null,
+  "FinalHash": null,
+  "Checks": [],
+  "Inputs": [],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 30095,
+  "Actors": null,
+  "Construction": null,
+  "Excavation": null,
+  "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+}

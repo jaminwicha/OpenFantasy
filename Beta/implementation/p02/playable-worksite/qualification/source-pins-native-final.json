@@ -1,0 +1,8 @@
+{
+  "base": "source-pins.json",
+  "sourceOverrides": {
+    "Beta/Runtime/client/scripts/WorksitePlayProbe.cs": "0dac530938f1da661b8fcdea98977fe6553311899b7609486beb011bb16ce3f5"
+  },
+  "nativeReport": "native-worksite-final.json",
+  "note": "All 580 application sources verified against base plus this probe override before the stricter run; run failed at the presentation assertion."
+}

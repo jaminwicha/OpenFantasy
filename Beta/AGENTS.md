@@ -62,6 +62,11 @@ thresholds; independent review remains mandatory wherever specified. Retain fail
 local review from independent/human acceptance, and keep one compact current handoff linking
 evidence. Do not reload or duplicate historical qualification detail for routine work.
 
+Native fixtures follow the shared [verification skill](../../GameDevAIEcosystem/skills/game-verification-loop/SKILL.md):
+synchronize live state with presented offers and settled input, enforce deadlines on successful waits,
+and prove the intended rejection and complete entity identities. Strengthening a probe never authorizes
+automatic command retries, relaxed deadlines or changes to game rules merely to make it pass.
+
 The owner's 2026-09-10 direction makes incremental commits and milestone branches project
 doctrine. Follow [GIT_MILESTONES.md](implementation/GIT_MILESTONES.md): commit verified coherent
 increments, preserve major checkpoints with named branches, and never include unrelated

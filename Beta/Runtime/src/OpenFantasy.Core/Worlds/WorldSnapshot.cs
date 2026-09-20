@@ -20,6 +20,7 @@ namespace OpenFantasy.Core.Worlds;
 public sealed class WorldSnapshot
 {
     private readonly Dictionary<EntityId, WorldResident> _residents;
+    private ContentHash? _contentHash;
 
     public WorldSnapshot(CountedAuthorityState inventory, LocalSpatialSnapshot space,
         IEnumerable<WorldResident> residents, ContentHash admissionVersion, WorldInstant calendar,
@@ -233,7 +234,18 @@ public sealed class WorldSnapshot
         : Construction is not null ? (ushort)5 : Quests is not null ? (ushort)4
         : Production is not null ? (ushort)3 : Gathering is null ? (ushort)1 : (ushort)2;
     public WorldIdentityIndex IdentityIndex { get; }
-    public ContentHash ContentHash => ContentHash.Compute(WorldSnapshotCodec.Encode(this));
+    /// <summary>The canonical digest belongs to this immutable root; successors own independent caches.</summary>
+    public ContentHash ContentHash
+    {
+        get
+        {
+            ContentHash? cached = Volatile.Read(ref _contentHash);
+            if (cached is not null) return cached;
+            ContentHash computed = ContentHash.Compute(WorldSnapshotCodec.Encode(this));
+            // Concurrent first readers may compute independently; publish one complete immutable digest.
+            return Interlocked.CompareExchange(ref _contentHash, computed, null) ?? computed;
+        }
+    }
     public bool HasReadingHold => Dialogues.Count != 0;
     public WorldResident GetResident(EntityId actorId) => _residents.TryGetValue(actorId, out WorldResident? resident)
         ? resident : throw new ArgumentException("The actor is not admitted in this locality.", nameof(actorId));
