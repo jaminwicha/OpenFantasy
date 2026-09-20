@@ -1,0 +1,110 @@
+{
+  "scope": "Canonical authored structural policy and bounded vertical first-contact queries over actual funded worlds; read-only, no live collapse publication",
+  "status": "passed",
+  "build": {
+    "file": "build-reviewed.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "total": 1321,
+    "core": 881,
+    "hosting": 440,
+    "new": 47,
+    "skipped": 0,
+    "reports": [
+      {
+        "total": 881,
+        "executed": 881,
+        "passed": 881,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0,
+        "file": "managed-final/_mac_2026-09-19_19_25_57_net8.0.trx"
+      },
+      {
+        "total": 440,
+        "executed": 440,
+        "passed": 440,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0,
+        "file": "managed-final/_mac_2026-09-19_19_26_11_net8.0.trx"
+      }
+    ]
+  },
+  "recreation": {
+    "sameBytes": true,
+    "newFiles": 6,
+    "priorStructuralFiles": 5,
+    "detail": "preservation.json"
+  },
+  "preservation": {
+    "architectureLinks": 300,
+    "frozenSpecs": 22,
+    "exactPredecessorIndex": true,
+    "runtimeNaming": true,
+    "pythonAst": true
+  },
+  "review": {
+    "kind": "Native bounded source critique, independent adversarial test author, corrective topology recheck and factual architecture review",
+    "externalClaudeCalls": 0,
+    "correctedFindings": [
+      "Unbuilt valid-face circular braces now rejected at policy construction and archive decode; weak unsupported DAG control retained",
+      "Documentation maximum corrected to16 and complete-policy hash identified as enclosing-owner obligation, distinct from current model InputPin"
+    ],
+    "queryFindings": "No consequential issue in reviewed scope"
+  },
+  "retainedFailures": [
+    {
+      "file": "core-build-01.log",
+      "cause": "Int128 relational patterns require constants",
+      "resolution": "Explicit wide comparisons; clean final build and regression"
+    },
+    {
+      "file": "preservation.json:initialCheckCorrection",
+      "cause": "One-off checker included the live README in frozen-spec rows",
+      "resolution": "All22 frozen spec hashes pass; live README matches HEAD exactly; its historical update predates this increment"
+    }
+  ],
+  "earlierEvidence": {
+    "files": [
+      "descent-01.log",
+      "hosted-01.log",
+      "focused-02.log",
+      "build-final.log"
+    ],
+    "disposition": "Pre-final topology/catalog changes; retained but not used as final acceptance"
+  },
+  "allSystemsVerifierRun": false,
+  "nativeClientRun": false,
+  "externalProcessKillRun": false,
+  "openGates": [
+    "Durable full-policy world ownership and universal affected-load admission",
+    "Pending consequence continuation without extra time or effort",
+    "Coupled member/actor trajectories, impacts, resting load paths and conserved debris",
+    "Atomic terrain/physical/material/actor/effect/identity/receipt publication and actual crash/retry/history qualification",
+    "Wet containment, displacement and conserved spills",
+    "Production balance/performance, multi-floor presentation, art/audio, devices and complete181-requirement/P00-P14 campaign"
+  ]
+}

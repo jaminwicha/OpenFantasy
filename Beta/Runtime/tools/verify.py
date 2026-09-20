@@ -42,6 +42,7 @@ def main():
     env["OPENFANTASY_EXCAVATION_EVIDENCE"] = str(test_results / "excavation-fixture")
     env["OPENFANTASY_CONSTRUCTED_SUPPORT_EVIDENCE"] = str(test_results / "constructed-support-fixture")
     env["OPENFANTASY_CONSTRUCTION_PHYSICAL_EVIDENCE"] = str(test_results / "construction-physical-fixture")
+    env["OPENFANTASY_COLLAPSE_MOTION_EVIDENCE"] = str(test_results / "collapse-motion-fixture")
     env["OPENFANTASY_STRUCTURAL_LOAD_EVIDENCE"] = str(test_results / "structural-load-fixture")
     env["OPENFANTASY_STAIR_NAVIGATION_EVIDENCE"] = str(test_results / "stair-navigation-fixture")
     env["OPENFANTASY_RESERVOIR_BOUNDARY_EVIDENCE"] = str(test_results / "reservoir-boundary-fixture")

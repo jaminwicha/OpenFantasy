@@ -1,0 +1,100 @@
+{
+  "recreation": {
+    "original": {
+      "motion.json": "b2f9bd901d8c9319f40c710c7baef7579dc87de1c90af2b7a93928536275b345",
+      "occupied-world.sqlite": "56c0b65a9015c894152acb4ababff27e87db510f89eced1d94e0d03bbfb243e3",
+      "policy-graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "policy-world.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea",
+      "policy.bin": "71a7cf6ccd6886d34e5e9f681b289412973dfbd00220296da5f1e861f5b3d74d",
+      "policy.json": "693ef160be0b44e6adec9dddc60ffc220b249feb53095a2a64afd71e31b08dd5"
+    },
+    "recreated": {
+      "motion.json": "b2f9bd901d8c9319f40c710c7baef7579dc87de1c90af2b7a93928536275b345",
+      "occupied-world.sqlite": "56c0b65a9015c894152acb4ababff27e87db510f89eced1d94e0d03bbfb243e3",
+      "policy-graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "policy-world.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea",
+      "policy.bin": "71a7cf6ccd6886d34e5e9f681b289412973dfbd00220296da5f1e861f5b3d74d",
+      "policy.json": "693ef160be0b44e6adec9dddc60ffc220b249feb53095a2a64afd71e31b08dd5"
+    },
+    "sameBytes": true
+  },
+  "legacyStructuralRecreation": {
+    "original": {
+      "completed.bin": "fe537e9be830f41936495ddf43ef320661ddc12153faed564442fb5e4780261b",
+      "expected.json": "7639c5df0afdc393315ee3304813634234ab15733dde083afbb52f5ce0154170",
+      "graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "occupied-world.sqlite": "6db67898f8252f88226e15ac9fc1993c87053542cea9f285a0288e38b87669a8",
+      "pending.bin": "3b333358062abd19a27dc4736d9a6134a023f65e00d62c414616c204303a8299"
+    },
+    "recreated": {
+      "completed.bin": "fe537e9be830f41936495ddf43ef320661ddc12153faed564442fb5e4780261b",
+      "expected.json": "7639c5df0afdc393315ee3304813634234ab15733dde083afbb52f5ce0154170",
+      "graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "occupied-world.sqlite": "6db67898f8252f88226e15ac9fc1993c87053542cea9f285a0288e38b87669a8",
+      "pending.bin": "3b333358062abd19a27dc4736d9a6134a023f65e00d62c414616c204303a8299"
+    },
+    "sameBytes": true
+  },
+  "architectureLinks": 300,
+  "missingLinks": [],
+  "frozenSpecCount": 22,
+  "frozenSpecHashes": {
+    "spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md": true,
+    "spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md": true,
+    "spec-v1_1/COVERAGE.json": true,
+    "spec-v1_1/CRITIC_REVIEW.md": true,
+    "spec-v1_1/CROSS_SYSTEM_SYNERGIES.md": true,
+    "spec-v1_1/DECISIONS.md": true,
+    "spec-v1_1/ECOLOGY_AND_FLUIDS.md": true,
+    "spec-v1_1/GDD.md": true,
+    "spec-v1_1/GENERATION_VALIDATION.md": true,
+    "spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md": true,
+    "spec-v1_1/IMPLEMENTATION_HANDOFF.md": true,
+    "spec-v1_1/IMPLEMENTATION_PLAN.md": true,
+    "spec-v1_1/INTEGRATION_CRITIC.md": true,
+    "spec-v1_1/LANGUAGE_AND_AFTERLIFE.md": true,
+    "spec-v1_1/LOCAL_REUSE_DECISIONS.md": true,
+    "spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md": true,
+    "spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md": true,
+    "spec-v1_1/PRESENTATION_CONTRACTS.md": true,
+    "spec-v1_1/README.md": true,
+    "spec-v1_1/REQUIREMENTS.json": true,
+    "spec-v1_1/TECHNICAL_DESIGN.md": true,
+    "spec-v1_1/VALIDATION.md": true
+  },
+  "predecessorStagedCount": 19,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "predecessorFiles": [
+    "README.md",
+    "docs/MILESTONE_8.md",
+    "src/Client/GameController.cs",
+    "src/Client/GameWindows.cs",
+    "src/Net/Protocol.cs",
+    "src/Net/ServerNode.cs",
+    "src/Sim/FrontierGen.cs",
+    "src/Sim/SelfTest.cs",
+    "src/Sim/SettlementGen.cs",
+    "src/Sim/SimConstants.cs",
+    "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+    "src/Sim/SiteGen/SiteFloor.cs",
+    "src/Sim/SiteGen/SiteGenerator.cs",
+    "src/Sim/SiteGen/SiteRecipe.cs",
+    "src/Sim/SiteGen/SiteValidator.cs",
+    "src/Sim/SiteGen/TempleEmbedder.cs",
+    "src/Sim/World.Instances.cs",
+    "src/Sim/World.Settlements.cs",
+    "src/Sim/World.cs"
+  ],
+  "runtimeNamingFiles": 701,
+  "namingViolations": [],
+  "diffCheck": "passed",
+  "pythonAst": "passed",
+  "initialCheckCorrection": {
+    "failed": "One-off preservation check initially treated every manifest row as a frozen spec",
+    "file": "Beta/README.md",
+    "oldManifestHash": "0135fbabe867cfca98a3e08c050f650736d1c1bce6853b86e1aec000ae9f4d6f",
+    "actualAndHeadHash": "8bce6d353ad7b3ce9609b2177ec1a4ee4233261b849c21c9c7f0f02f85e3acc7",
+    "lastReadmeCommit": "38b0375",
+    "resolution": "Check the 22 spec-v1_1 rows as in preceding checkpoints; separately prove the live index unchanged from HEAD. No spec or manifest edited."
+  }
+}

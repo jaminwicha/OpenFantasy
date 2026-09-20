@@ -127,3 +127,8 @@ Pending-job basis pins must exclude their own changing cursor. Revalidating only
 movement, carried goods, crafting, gathering and transfers can change loads. Collision grouping, resting
 material load paths, trajectory/impact laws and wet containment must remain explicit rather than inferred
 from this lifecycle representation.
+
+The [vertical descent query](structural-policy-and-motion.md#first-contact-and-the-swept-prefix) checks
+complete supplied bodies against remaining material and occupants without admitting an unsupported
+intermediate world. Physical ownership must retain and reintroduce each moved member; a query's selected
+obstacle set is not permission to erase material or publish a landing without load/impact checks.

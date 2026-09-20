@@ -168,7 +168,54 @@ public sealed class StructuralConstructionWorldTests
             world.Quests, world.Construction, excavation: world.Excavation, constructionPhysical: candidate);
     }
 
-    private static ConstructionBearingModel Bind(WorldSnapshot world, ulong rightLegCapacity = 100_000_000)
+    [Fact]
+    public void Canonical_policy_recovers_exact_loads_from_real_funded_occupied_construction()
+    {
+        using var files = new StorageFiles();
+        WorldSnapshot world = OccupiedDeck(new StairNavigationWorldFixture(physicalConstruction: true), files.Path);
+        ConstructionLoadPolicy policy = Policy(world, 50_000_000);
+        byte[] bytes = ConstructionLoadPolicyCodecV1.Encode(policy);
+        ConstructionLoadPolicy restored = ConstructionLoadPolicyCodecV1.Decode(bytes, policy.ContentHash,
+            TestContext.Current.CancellationToken);
+        Assert.Equal(bytes, ConstructionLoadPolicyCodecV1.Encode(restored));
+        ConstructionBearingModel original = policy.Bind(world);
+        ConstructionBearingModel rebound = restored.Bind(WorldSnapshotCodec.Decode(WorldSnapshotCodec.Encode(world)));
+        Assert.Equal(original.InputPin, rebound.InputPin);
+        Assert.Equal(StructuralLoadCodec.EncodeGraph(original.Graph), StructuralLoadCodec.EncodeGraph(rebound.Graph));
+        Assert.Empty(Finish(StructuralLoadResolution.Begin(rebound.Graph, [])).Failures);
+        EntityId removed = Foundation(rebound, 108, 327);
+        StructuralLoadResolution result = Finish(StructuralLoadResolution.Begin(rebound.Graph, [removed]));
+        Assert.Contains(result.Failures, value => value.ElementId == Deck(rebound, world));
+        Assert.Contains(result.Failures, value => value.ElementId == ConstructionBearingModel.ActorIdentity(
+            world.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player).ActorId));
+        Assert.Equal(rebound.Graph.TotalInputMass, result.AcceptedFoundationLoad + result.FailedInputMass);
+        using (SqliteWorldAuthority reopened = SqliteWorldAuthority.OpenExisting(files.Path))
+        {
+            Assert.Equal(world.ContentHash, reopened.InspectForHost().State.ContentHash);
+        }
+        string? directory = Environment.GetEnvironmentVariable("OPENFANTASY_COLLAPSE_MOTION_EVIDENCE");
+        if (directory is not null)
+        {
+            Directory.CreateDirectory(directory);
+            File.WriteAllBytes(Path.Combine(directory, "policy.bin"), bytes);
+            File.WriteAllBytes(Path.Combine(directory, "policy-world.bin"), WorldSnapshotCodec.Encode(world));
+            File.WriteAllBytes(Path.Combine(directory, "policy-graph.bin"), StructuralLoadCodec.EncodeGraph(rebound.Graph));
+            File.WriteAllText(Path.Combine(directory, "policy.json"), JsonSerializer.Serialize(new
+            {
+                Scope = "Canonical authored policy binds actual funded occupied world; ratings not installed in the world and no collapse published",
+                PolicyHash = policy.ContentHash.Value, WorldHash = world.ContentHash.Value, InputPin = rebound.InputPin.Value,
+                GraphHash = ContentHash.Compute(StructuralLoadCodec.EncodeGraph(rebound.Graph)).Value,
+                RemovedFoundation = removed.ToString(), FailureCount = result.Failures.Count,
+                TotalMassMilligrams = rebound.Graph.TotalInputMass.ToString(),
+                AcceptedFoundationMass = result.AcceptedFoundationLoad.ToString(), FailedMass = result.FailedInputMass.ToString()
+            }, new JsonSerializerOptions { WriteIndented = true }));
+        }
+    }
+
+    private static ConstructionBearingModel Bind(WorldSnapshot world, ulong rightLegCapacity = 100_000_000) =>
+        Policy(world, rightLegCapacity).Bind(world);
+
+    private static ConstructionLoadPolicy Policy(WorldSnapshot world, ulong rightLegCapacity)
     {
         ConstructionDefinition definition = world.Construction!.Projects.Single().Definition;
         var ratings = definition.Members.Select((member, index) => new StructuralMemberRating((uint)index,
@@ -181,7 +228,7 @@ public sealed class StructuralConstructionWorldTests
         var anchors = world.Space.Regions.SelectMany(region => region.Cells).Where(cell => cell.IsSolid && cell.Coordinate.Z == 0)
             .Select(cell => new StableTerrainBearing(EntityId.DeriveSpawned(cell.SourceId!.Value, 900000), cell.Coordinate,
                 cell.SourceId.Value, cell.Material!, new(1_000_000_000)));
-        return ConstructionBearingModel.Bind(world, [template], anchors, Catalog(world));
+        return new(world.Space.Scope, [template], anchors, Catalog(world));
     }
 
     private static StructuralMassCatalog Catalog(WorldSnapshot world)

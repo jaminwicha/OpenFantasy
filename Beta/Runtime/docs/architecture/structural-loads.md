@@ -37,6 +37,10 @@ boundary at a retained solid cell with its exact source/material and positive ca
 does not establish stable bedrock or geological self-support. These declarations define the graph's
 external foundation boundary; their author must justify the omitted surrounding strata.
 
+The [policy and motion contracts](structural-policy-and-motion.md) provide a canonical complete policy
+asset and first-contact swept-descent queries. These preserve policy dependencies and actual collision
+material; they do not install live collapse law or replace complete world admission.
+
 ## Contact, topology and accounting
 
 [StructuralContactWeights](../../src/OpenFantasy.Core/Structures/StructuralContactWeights.cs) partitions
