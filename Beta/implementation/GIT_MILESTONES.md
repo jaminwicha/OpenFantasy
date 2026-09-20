@@ -22,6 +22,7 @@ branches to record major progress. This is shared project discipline for all aut
 
 | Branch | Commit | Qualified scope and limits |
 |---|---|---|
+| `codex/milestone-coupled-settlement` | `463509d` | Fresh profile17 live cross-assembly support and one shared intact harmless trajectory, complete outside sweeps, rider/material conservation and dynamic durable/journal reservations. 1,409 tests, 59 ordinary Host calls/six kills, headless foundation/farm, 20 new/26 legacy exact files. [Evidence](p02/coupled-settlement/README.md) retains the reproduced admission defect and partial external review. Unequal trajectories, fracture/impact/injury, wet composition, presentation, production performance and full gates remain open. |
 | `codex/milestone-coupled-contact-assessment` | `7e16d11` | Read-only exact foreign-assembly support, complete candidate/policy pins, shared mass accounting and conservative load neighborhoods; 1,385 tests, 26 byte-exact prior fixtures and preserved source/design/index contracts. [Evidence](p02/coupled-contact-assessment/README.md). Live coupled motion/publication and whole phase gates remain open. Three bounded external critics yielded a contract clarification, no verified runtime defect and one budget failure; fleet expansion remains evidence-dependent. |
 | `codex/milestone-farm-input-foundation` | `b1482db` | Connected farm/gather/craft/quest/NPC construction and client input foundation; 825 tests and retained native journeys. [Evidence](p01/input-focus/README.md). Provisional art, general UI, physical device/export qualification and full phase exits remain open. |
 | `codex/milestone-action-previews` | `b40f28c` | Captured farm action offers, visible costs and read-only inspection; code `3ae7855`, 832 tests, all retained native journeys and rendered review. [Evidence](p01/action-offers/README.md). Full wheels/management, physical devices, art acceptance and phase exits remain open. |
@@ -211,3 +212,11 @@ Development remains on `codex/runtime-foundation`; prior markers, 22 frozen spec
 predecessor index remain intact. Original failures remain retained. The functional checkpoint does not
 close production latency or broader collapse gates. Ecosystem commit `e25ade3` preserves the portable
 validation scheduling clarification. No checkout switch, force update, push or merge accompanied this marker.
+
+The coupled-settlement marker preserves `463509d05e313578a479d13bffd423e1568e3432` with implementation `eee42ee`,
+source-aligned references, independently checked fabrication/source/member/actor conservation and actual
+commit-boundary crash recovery. The pre-change checkpoint is `codex/checkpoint-coupled-settlement-base`.
+Development stays on `codex/runtime-foundation`; every previous marker, frozen specification and the exact
+unrelated predecessor index remains intact. The original admission failure remains recorded. Ecosystem
+`5aa4099` preserves the reusable diagnostic/authority boundary. No checkout switch, force update, push,
+merge or full-phase/production acceptance accompanies this marker.

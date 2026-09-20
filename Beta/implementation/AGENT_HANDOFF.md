@@ -32,40 +32,44 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Coupled contact assessment](p02/coupled-contact-assessment/README.md) and its
-[architecture](../Runtime/docs/architecture/structural-contact-assessment.md) are qualified;
-code/evidence commit `7e16d11` is preserved on `codex/milestone-coupled-contact-assessment`;
-see the [milestone ledger](GIT_MILESTONES.md).
+[Live coupled settlement](p02/coupled-settlement/README.md) is qualified; implementation `eee42ee`,
+code/evidence `463509d`, preserved on `codex/milestone-coupled-settlement`.
+The [architecture](../Runtime/docs/architecture/coupled-settlement.md) defines fresh profile17's owned
+foreign-assembly support, exact bearing-based moving group, common harmless trajectory and complete
+outside collision scene. Dynamic work/source/result/journal reservations extend the existing durable
+owner. Earlier profiles retain their bytes and limits; no played-save migration is implied.
 
-The new read-only scene retains complete terrain lineage, fabrication/backing and actor bodies while
-checking clear proposed geometry. Shared mass binding partitions exact base contact across foreign
-assemblies, retains internal joints and checks actor footing. Selected counterfactual policies are fully
-pinned and have no world authority. Conservative connected load neighborhoods include alternate supports,
-shared occupants and complete rigid membership. Existing Bind, saves and live settlement are unchanged.
+[Evidence](p02/coupled-settlement/qualification/verification-summary.json): **1,409 tests pass
+(918 Core + 491 Hosting), 24 new**; 59 ordinary Host calls, six real before/after trigger/continuation/
+terminal kills, headless foundation/farm, 20 exact new and 26 exact legacy fixture files. All 547 source
+pins, 369 reference links, 22 frozen documents and the exact 19-file predecessor index pass. The real
+154-commit setup funds/builds both assemblies and earns the NPC climb; seven actual geometric units
+then lower three backed members and the rider together, publishing one receipt/source/time interval.
+The largest ordinary call is 19.36 seconds under the unchanged 30-second limit; production latency,
+rendered motion and full phase acceptance are not claimed.
 
-[Evidence](p02/coupled-contact-assessment/qualification/verification-summary.json): **1,385 tests pass
-(912 Core + 473 Hosting), 14 new**, clean build; 26 exact recreated legacy files, 538 unchanged source pins,
-344 architecture links, 22 frozen documents and the exact 19-file predecessor index. Two actual funded
-Hosting worlds preserve ordinary graph bytes before/after settlement. The two-assembly test has real
-quest/fabrication backing but supplied initial/endpoint geometry, not a played or safely swept coupled fall.
-No new process-kill/rendered/device/performance/all-systems gate is claimed.
+A lead-found authority/diagnostic foundation-retirement defect was reproduced, corrected and retained
+as a red/green regression. One bounded Fable review completed for $1.44401475 API-equivalent usage,
+found no substantiated unsafe acceptance, and prompted exact-bearing carried-base selection. Its
+[partial coverage and dispositions](p02/coupled-settlement/qualification/review-dispositions.md) remain
+explicit. Larger retrospective fleets still lack sufficient demonstrated value; standing recommended
+bounded review approval remains. Ecosystem `5aa4099` preserves the authority-boundary lesson with three
+guarded installed updates; the same rule is in the local implementation instructions.
 
-The source critic's actor-hover finding was corrected and regression-tested. Three bounded Fable calls
-returned two partial reviews and one budget-exhausted run, for $5.167653 reported API-equivalent usage.
-No external claim established a runtime defect; explicit counterfactual policy selection was clarified.
-[Dispositions](p02/coupled-contact-assessment/qualification/review-dispositions.md) retain limits and checks.
-Standing recommended Fable review approval is captured locally/upstream (`dc187b1`, 11 installed updates);
-implementation stays Astra-led. Larger earlier-phase fleets await demonstrated value; no paid retries.
-
-**Next dependency:** versioned live cross-assembly support and coupled intact trajectories/publication.
-Use complete old/new load dependencies plus swept collision closure, preserve conserved material/riders,
-and rederive durable work/journal reservations. Profile16's 192-unit bound and save meaning remain fixed.
-Begin with a useful coherent moving group; unequal trajectories, fracture/debris, harmful impact/injury,
-long flight, wet composition, generated extraction rights and multi-floor presentation remain open.
-The entire campaign below remains required. Development stays on `codex/runtime-foundation`.
+**Next dependency:** unequal interacting trajectories/contact response and conserved fracture/debris,
+with explicit harmful-impact/injury ownership. Preserve exact support, outside collision closure,
+material/custody, body condition, original command/time and durable bounds; a rigid shared translation
+must not become a permissive fallback. Wet composition, generated extraction rights and multi-floor
+presentation remain open, as do production scale/exports/devices, 1–4-player pacing and the whole campaign.
+No full phase gate is closed. Development remains on `codex/runtime-foundation`.
 
 Prior dependencies remain preserved:
 
+- [Coupled contact assessment](p02/coupled-contact-assessment/README.md), `7e16d11`, milestone
+  `codex/milestone-coupled-contact-assessment`: read-only complete contact/policy pins, exact foreign support,
+  shared mass and conservative neighborhoods; 1,385 tests and 26 old exact files. Three bounded external
+  reviews were partial/incomplete, with no verified runtime defect. Their results and economics remain
+  retained; this historical checkpoint did not yet prove a live coupled fall.
 - [Durable consequence continuation](p02/consequence-continuation/README.md), `757bf18`, milestone
   `codex/milestone-consequence-continuation`: fresh profile16 reserves one accepted excavation interval, retains
   actual geometric cursors and publishes the original sole receipt/material/time once. Schema4 has explicit
