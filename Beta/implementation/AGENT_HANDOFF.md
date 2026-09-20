@@ -58,10 +58,13 @@ missed the final 30-second opening bound; the packet preserves every failure and
 Measured recovery identifies repeated immutable-root hash serialization, addressed with a thread-safe
 per-root digest cache while retaining all complete replay/admission/byte checks. Full regression and
 all 1,334 historical candidate hashes pass. Measured recovery allocation fell about16.2%, while remaining
-22.1GB/replay and history scaling stay open. **Current dependency: final rendered journey under the same
-native deadlines**, plus the original wheel control. Ecosystem `ffc0ad6` preserves the reusable native
+22.1GB/replay and history scaling stay open. **Current blocker: native save opening still misses its
+30-second bound**, including the post-cache mining restart at30.062s. Diagnose actual native recovery
+against the preserved closed save before another full journey; keep workload, thresholds and complete
+verification. No attribution to rendering or shared load is established. Ecosystem `ffc0ad6` preserves the reusable native
 observation/deadline lessons with three installed skill copies verified.
-Initial implementation is preserved at `e3e9040`; no final worksite milestone is claimed yet.
+Initial implementation is preserved at `e3e9040`, hash cache/strict probes at `f57b021`; no final worksite
+milestone is claimed. The packet retains the old wheel control and its post-cache follow-up.
 Following dependencies remain the full P01/P02 integration and feasibility plan, including durable
 containment and wet composition, broader physical consequences, macro/history scaling and presentation.
 The worksite proves a bounded playable connection, not production latency, art, UX, devices or a full

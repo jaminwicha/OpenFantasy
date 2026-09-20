@@ -1,0 +1,539 @@
+{
+  "status": "failed",
+  "rendered": true,
+  "startedUtc": "2026-09-20T06:53:30.961389+00:00",
+  "scope": "Injected native input, actual earned construction/mining, stairs, visible settlement and separate-process restart; no physical-device/art/full-phase acceptance",
+  "runs": [
+    {
+      "phase": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--worksite-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-sjpnj57g/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-sjpnj57g/journey.json",
+        "fresh",
+        "--background-render"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "build",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--worksite-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-sjpnj57g/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-sjpnj57g/journey.json",
+        "build",
+        "--background-render"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "mine",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--worksite-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-sjpnj57g/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-sjpnj57g/journey.json",
+        "mine",
+        "--background-render"
+      ],
+      "exitCode": 1,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": "ERROR: Native worksite probe failed: System.InvalidOperationException: The worksite did not open.\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 404\n   at OpenFantasy.Client.WorksitePlayProbe.Until(Func`1 condition, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 359\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 30\n   at: void OpenFantasy.Client.WorksitePlayProbe+<_Ready>d__10.MoveNext() (res://scripts/WorksitePlayProbe.cs:30)\n   C# backtrace (most recent call first):\n       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)\n       [1] void OpenFantasy.Client.WorksitePlayProbe+<_Ready>d__10.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:30)\n       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [4] void System.Threading.Tasks.Task.RunContinuations(object)\n       [5] void System.Threading.Tasks.Task.FinishSlow(bool)\n       [6] bool System.Threading.Tasks.Task.TrySetException(object)\n       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)\n       [8] void OpenFantasy.Client.WorksitePlayProbe+<Until>d__29.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:359)\n       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)\n       [11] void System.Threading.Tasks.Task.RunContinuations(object)\n       [12] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()\n       [13] void OpenFantasy.Client.WorksitePlayProbe+<Frame>d__31.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:375)\n       [14] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)\n       [15] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()\n       [16] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)\n"
+    }
+  ],
+  "observations": {
+    "fresh": {
+      "Kind": "native-worksite-play-v1",
+      "Mode": "fresh",
+      "Status": "passed",
+      "Error": null,
+      "Stage": "funding",
+      "InitialHash": "9BAA831ECF575BB2C6AE0FEEE496058F9764721B864A9692D405699396929356",
+      "FinalHash": "7EE9EF7B740429378B4F59283D4E5BB2614B1E19E072A77F19FDD3DE9487D138",
+      "Checks": [
+        "Four ordinary tool actions gathered finite source stock before either project was funded.",
+        "Released movement and both presented Talk revisions settled before one deliberate E press.",
+        "Two addressed quests fund distinct projects; Wren routes and starts actual construction after dialogue closes."
+      ],
+      "Inputs": [
+        {
+          "_stage": "opening",
+          "Key": "Escape",
+          "Milliseconds": 1419
+        },
+        {
+          "_stage": "gathering",
+          "Key": "F",
+          "Milliseconds": 3642
+        },
+        {
+          "_stage": "gathering",
+          "Key": "F",
+          "Milliseconds": 5625
+        },
+        {
+          "_stage": "gathering",
+          "Key": "F",
+          "Milliseconds": 7634
+        },
+        {
+          "_stage": "gathering",
+          "Key": "F",
+          "Milliseconds": 9625
+        },
+        {
+          "_stage": "funding",
+          "Key": "E",
+          "Milliseconds": 12242
+        },
+        {
+          "_stage": "funding",
+          "Key": "G",
+          "Milliseconds": 12315
+        },
+        {
+          "_stage": "funding",
+          "Key": "G",
+          "Milliseconds": 12416
+        },
+        {
+          "_stage": "funding",
+          "Key": "G",
+          "Milliseconds": 12516
+        },
+        {
+          "_stage": "funding",
+          "Key": "G",
+          "Milliseconds": 12616
+        },
+        {
+          "_stage": "funding",
+          "Key": "E",
+          "Milliseconds": 12716
+        },
+        {
+          "_stage": "funding",
+          "Key": "Escape",
+          "Milliseconds": 20922
+        }
+      ],
+      "Display": "macOS",
+      "FocusRequests": 0,
+      "IsWindowFocused": true,
+      "IsLocallyPaused": true,
+      "DurationMilliseconds": 21875,
+      "Actors": [
+        {
+          "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+          "Feet": {
+            "X": 29312,
+            "Y": 83328,
+            "Z": 256,
+            "Cell": {
+              "X": 114,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+          "Feet": {
+            "X": 26496,
+            "Y": 83840,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 327,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Construction": [
+        {
+          "ProjectId": {
+            "High": 8420070808789219585,
+            "Low": 4647054864564120019
+          },
+          "BuilderActorId": {
+            "High": 2039877146358383767,
+            "Low": 8947965925755627041
+          },
+          "DisplayName": "Demonstration raised work deck",
+          "SiteFeet": {
+            "X": 29440,
+            "Y": 83200,
+            "Z": 256,
+            "Cell": {
+              "X": 115,
+              "Y": 325,
+              "Z": 1
+            }
+          },
+          "WorkFeet": {
+            "X": 29312,
+            "Y": 83328,
+            "Z": 256,
+            "Cell": {
+              "X": 114,
+              "Y": 325,
+              "Z": 1
+            }
+          },
+          "CompletedWork": 25,
+          "RequiredWork": 200,
+          "IsCompleted": false
+        },
+        {
+          "ProjectId": {
+            "High": 10045680948196407278,
+            "Low": 13286953669266571270
+          },
+          "BuilderActorId": {
+            "High": 2039877146358383767,
+            "Low": 8947965925755627041
+          },
+          "DisplayName": "Demonstration stairs and fixed deck",
+          "SiteFeet": {
+            "X": 28160,
+            "Y": 82944,
+            "Z": 256,
+            "Cell": {
+              "X": 110,
+              "Y": 324,
+              "Z": 1
+            }
+          },
+          "WorkFeet": {
+            "X": 28288,
+            "Y": 82816,
+            "Z": 256,
+            "Cell": {
+              "X": 110,
+              "Y": 323,
+              "Z": 1
+            }
+          },
+          "CompletedWork": 0,
+          "RequiredWork": 200,
+          "IsCompleted": false
+        }
+      ],
+      "Excavation": [
+        {
+          "SiteId": {
+            "High": 16857601010363160984,
+            "Low": 10444368446927687185
+          },
+          "Cell": {
+            "X": 115,
+            "Y": 325,
+            "Z": 0
+          },
+          "Stance": {
+            "X": 29824,
+            "Y": 83328,
+            "Z": 0,
+            "Cell": {
+              "X": 116,
+              "Y": 325,
+              "Z": 0
+            }
+          },
+          "SiteRevision": 0,
+          "TerrainRevision": 0,
+          "RequiredWork": 3,
+          "CompletedWork": 0,
+          "RequiredToolDefinitionId": {
+            "High": 1872794200646237673,
+            "Low": 5975632165003488037
+          },
+          "DestinationRevision": 6,
+          "IsComplete": false,
+          "RemainingWork": 3
+        }
+      ],
+      "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+    },
+    "build": {
+      "Kind": "native-worksite-play-v1",
+      "Mode": "build",
+      "Status": "passed",
+      "Error": null,
+      "Stage": "partial-mining",
+      "InitialHash": "7EE9EF7B740429378B4F59283D4E5BB2614B1E19E072A77F19FDD3DE9487D138",
+      "FinalHash": "B628E9921234BC39A1EB2A781CC9E567ACD6FD5A9D7CC65828379894258CD693",
+      "Checks": [
+        "Exact prior public world recovered before readiness, with no transient target or wheel restored.",
+        "Ordinary walking climbed the built stairs, crossed both upper decks and descended, without assisted teleportation.",
+        "Injected focus loss cancels an inspected mining choice; focus return submits nothing.",
+        "A controller wheel descent and keyboard wheel mining action consumed actual effort; partial mining remains saved."
+      ],
+      "Inputs": [
+        {
+          "_stage": "opening",
+          "Key": "Escape",
+          "Milliseconds": 9256
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "R",
+          "Milliseconds": 83874
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "Q",
+          "Milliseconds": 83887
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "Q",
+          "Milliseconds": 83905
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "Q",
+          "Milliseconds": 83917
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "Q",
+          "Milliseconds": 83928
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "V",
+          "Milliseconds": 83995
+        },
+        {
+          "_stage": "lower-stance",
+          "Button": "DpadDown",
+          "Milliseconds": 84002
+        },
+        {
+          "_stage": "lower-stance",
+          "Button": "A",
+          "Milliseconds": 84005
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "V",
+          "Milliseconds": 84137
+        },
+        {
+          "_stage": "lower-stance",
+          "Key": "Right",
+          "Milliseconds": 84137
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "V",
+          "Milliseconds": 84466
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "Right",
+          "Milliseconds": 84466
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "Enter",
+          "Milliseconds": 84466
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "Escape",
+          "Milliseconds": 84751
+        }
+      ],
+      "Display": "macOS",
+      "FocusRequests": 0,
+      "IsWindowFocused": true,
+      "IsLocallyPaused": true,
+      "DurationMilliseconds": 85660,
+      "Actors": [
+        {
+          "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+          "Feet": {
+            "X": 26912,
+            "Y": 82784,
+            "Z": 256,
+            "Cell": {
+              "X": 105,
+              "Y": 323,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+          "Feet": {
+            "X": 29824,
+            "Y": 83328,
+            "Z": 0,
+            "Cell": {
+              "X": 116,
+              "Y": 325,
+              "Z": 0
+            }
+          }
+        }
+      ],
+      "Construction": [
+        {
+          "ProjectId": {
+            "High": 8420070808789219585,
+            "Low": 4647054864564120019
+          },
+          "BuilderActorId": {
+            "High": 2039877146358383767,
+            "Low": 8947965925755627041
+          },
+          "DisplayName": "Demonstration raised work deck",
+          "SiteFeet": {
+            "X": 29440,
+            "Y": 83200,
+            "Z": 256,
+            "Cell": {
+              "X": 115,
+              "Y": 325,
+              "Z": 1
+            }
+          },
+          "WorkFeet": {
+            "X": 29312,
+            "Y": 83328,
+            "Z": 256,
+            "Cell": {
+              "X": 114,
+              "Y": 325,
+              "Z": 1
+            }
+          },
+          "CompletedWork": 200,
+          "RequiredWork": 200,
+          "IsCompleted": true
+        },
+        {
+          "ProjectId": {
+            "High": 10045680948196407278,
+            "Low": 13286953669266571270
+          },
+          "BuilderActorId": {
+            "High": 2039877146358383767,
+            "Low": 8947965925755627041
+          },
+          "DisplayName": "Demonstration stairs and fixed deck",
+          "SiteFeet": {
+            "X": 28160,
+            "Y": 82944,
+            "Z": 256,
+            "Cell": {
+              "X": 110,
+              "Y": 324,
+              "Z": 1
+            }
+          },
+          "WorkFeet": {
+            "X": 28288,
+            "Y": 82816,
+            "Z": 256,
+            "Cell": {
+              "X": 110,
+              "Y": 323,
+              "Z": 1
+            }
+          },
+          "CompletedWork": 200,
+          "RequiredWork": 200,
+          "IsCompleted": true
+        }
+      ],
+      "Excavation": [
+        {
+          "SiteId": {
+            "High": 16857601010363160984,
+            "Low": 10444368446927687185
+          },
+          "Cell": {
+            "X": 115,
+            "Y": 325,
+            "Z": 0
+          },
+          "Stance": {
+            "X": 29824,
+            "Y": 83328,
+            "Z": 0,
+            "Cell": {
+              "X": 116,
+              "Y": 325,
+              "Z": 0
+            }
+          },
+          "SiteRevision": 1,
+          "TerrainRevision": 0,
+          "RequiredWork": 3,
+          "CompletedWork": 1,
+          "RequiredToolDefinitionId": {
+            "High": 1872794200646237673,
+            "Low": 5975632165003488037
+          },
+          "DestinationRevision": 6,
+          "IsComplete": false,
+          "RemainingWork": 2
+        }
+      ],
+      "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+    },
+    "mine": {
+      "Kind": "native-worksite-play-v1",
+      "Mode": "mine",
+      "Status": "failed",
+      "Error": "System.InvalidOperationException: The worksite did not open.\n   at OpenFantasy.Client.WorksitePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 404\n   at OpenFantasy.Client.WorksitePlayProbe.Until(Func`1 condition, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 359\n   at OpenFantasy.Client.WorksitePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs:line 30",
+      "Stage": "opening",
+      "InitialHash": null,
+      "FinalHash": null,
+      "Checks": [],
+      "Inputs": [],
+      "Display": "macOS",
+      "FocusRequests": 0,
+      "IsWindowFocused": true,
+      "IsLocallyPaused": true,
+      "DurationMilliseconds": 30062,
+      "Actors": null,
+      "Construction": null,
+      "Excavation": null,
+      "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+    }
+  },
+  "failure": "Native worksite failed at mine",
+  "artifactSha256": {
+    "native-worksite-sjpnj57g/journey.build.json": "8e5d7c21ec95fb768f0f9d6911aae517f30f58a37e56dd3eb42e7773040b8088",
+    "native-worksite-sjpnj57g/journey.build.png": "92d9510cb2dd5b622c61036df247d2306a6c6a9a87ca525953bff22366f16c21",
+    "native-worksite-sjpnj57g/journey.fresh.json": "04ecc2664b1a8fe983c287cff1222f178a251b01d1012a24638f6c9679761799",
+    "native-worksite-sjpnj57g/journey.fresh.png": "b7e175e708823f90f64aafffb74479a927bbc9cbfb0a86137fadf60c14c73b17",
+    "native-worksite-sjpnj57g/journey.lower-stance.png": "750e20f6d01d84c3701dc9a71ed2d609b9e0415da880baf4a44b6ecb5ff95de6",
+    "native-worksite-sjpnj57g/journey.mine.failed.json": "2051071364e659e0c0b87187f018bb3e8b22bf82a7ba775676ad07f7aa3aa2bb",
+    "native-worksite-sjpnj57g/journey.upper-deck.png": "334e2b5c42f88a86097e6b4572f7bd05d5df3bc27c14493d0de16863d1ca5730",
+    "native-worksite-sjpnj57g/world.sqlite": "a6d1c6a83cbd7f52e26bb4492fe2ee6e23a57b0b3126080d19c5505f3b78e356",
+    "native-worksite-sjpnj57g/world.sqlite-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "native-worksite-sjpnj57g/world.sqlite-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finishedUtc": "2026-09-20T06:56:00.615826+00:00"
+}

@@ -49,8 +49,13 @@ source. The measured C# hash-cache correction has its own regression and native 
 
 The [post-cache full regression](qualification/full-regression-hash-cache.log) passed **1,481 cases**:
 953 Core and 528 Hosting/client, zero failed/skipped. Hosting took 8 minutes 45 seconds; this remains
-correctness evidence. The cache and final probe sources now await the final rendered journey under the
-unchanged deadlines. No worksite milestone is qualified until that result passes.
+correctness evidence. No worksite milestone is qualified until the final rendered journey passes.
+The [post-cache native run](qualification/native-worksite-hash-cache.json) passed fresh and build, then
+missed the 30-second opening bound at the mining restart (30.062 s). **Final native qualification remains
+open.** Commit `f57b021` preserves the cache, probe fixes and managed evidence; the cache's measured
+allocation reduction did not establish compliance with native startup time. No deadline was relaxed.
+The [post-cache legacy wheel](qualification/legacy-native-wheel-hash-cache.json) passed its fresh/reopen
+processes and four rendered states under the retained 45-second bounds, with exact paused save bytes.
 
 - Initial projection checks: eight passed.
 - Initial relevant client/legacy checks: 46 passed, including exact offers and input/wheel behavior.
@@ -132,7 +137,13 @@ process deadline. These do not change any prior gate or imply production latency
     validations, interpreter, canonical encoding and complete replay comparisons remain. Independent
     bounded source critique checked constructor initialization, recursion, reviewed immutable components
     and concurrency, finding no blocker. Concurrent cold computations may duplicate work safely. This
-is no exhaustive transitive-alias audit or production history-scale acceptance.
+    is no exhaustive transitive-alias audit or production history-scale acceptance.
+14. The post-cache native run still exceeded the opening bound. Its successful fresh/build stages and
+    failure are retained separately. The next investigation must measure the actual native opening path
+    against a closed preserved save, including remaining repeated validation/serialization and client
+    scheduling costs. Rendering/shared-resource interference is a hypothesis, not an established cause.
+    Resolve this with bounded diagnostics before another full journey; preserve the 30-second bound,
+    world/history workload and complete verification.
 
 One critic's initial face-bounds finding was withdrawn after rereading the changed layout. Native
 review produced actionable content and choice-pinning corrections; no external provider call or
