@@ -1,0 +1,132 @@
+{
+  "scope": "Fresh dry profile14 owns immutable structural load policy and enforces stable complete local action/movement loads; no live collapse publication",
+  "status": "passed",
+  "build": {
+    "file": "build-final.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "total": 1334,
+    "core": 881,
+    "hosting": 453,
+    "new": 13,
+    "reports": [
+      {
+        "total": 881,
+        "executed": 881,
+        "passed": 881,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0,
+        "file": "managed-final/_mac_2026-09-19_19_50_01_net8.0.trx"
+      },
+      {
+        "total": 453,
+        "executed": 453,
+        "passed": 453,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0,
+        "file": "managed-final/_mac_2026-09-19_19_50_22_net8.0.trx"
+      }
+    ]
+  },
+  "host": {
+    "report": "host-14.json",
+    "profile": 14,
+    "ordinaryProcessCalls": 17,
+    "externalProcessKills": 2,
+    "independentPolicyCanonicalAndIdentityWitness": true,
+    "exactFullLedgersRetryAndHistory": true
+  },
+  "legacyHost": {
+    "report": "legacy-host-13.json",
+    "profile": 13,
+    "ordinaryProcessCalls": 26,
+    "externalProcessKills": 2
+  },
+  "native": {
+    "foundation": "foundation.json",
+    "farm": "native-farm.json",
+    "rendered": false,
+    "physicalDevices": false
+  },
+  "recreation": {
+    "report": "recreation.json",
+    "sameBytes": true,
+    "newFixtureFiles": 7,
+    "priorPhysicalFiles": 7,
+    "priorStructuralFiles": 5,
+    "priorMotionFiles": 6
+  },
+  "preservation": {
+    "report": "preservation.json",
+    "architectureLinks": 306,
+    "frozenSpecs": 22,
+    "exactPredecessorIndex": true
+  },
+  "review": {
+    "kind": "Bounded native source critique, independent admission/quest tests, corrective ownership recheck and factual architecture review",
+    "externalClaudeCalls": 0,
+    "correctedFindings": [
+      {
+        "issue": "BuilderCarried project custody was absent from primary-inventory-only diagnostic loads",
+        "resolution": "Profile14 charges project raw and transformed byproducts to builder, excludes only installed backing allocated to members, and rejects unlocated live custody",
+        "proof": "Exact total mass through actual delivery/installation/travel; real quest-delivery overload and spare-custody controls; corrective critic found no remaining ownership gap"
+      },
+      {
+        "issue": "Documentation overstated incomplete policy pins and implied a queued consequence",
+        "resolution": "Profile14 InputPin binds full policy transitively via root; valid replacement changes retained root/hash history; refusals are terminal and create no pending job"
+      }
+    ]
+  },
+  "retainedFailures": [
+    {
+      "file": "focused-01.log",
+      "cause": "Two policy archive test calls omitted xUnit cancellation token",
+      "resolution": "Pass TestContext.Current.CancellationToken; clean final build"
+    },
+    {
+      "file": "focused-02.log",
+      "cause": "Supplied held-dialogue fixture placed listener outside speech reach",
+      "resolution": "Explicit reachable fresh position before validating held-admission refusal; full final suite passes"
+    }
+  ],
+  "earlierEvidence": {
+    "files": [
+      "core-build-01.log",
+      "focused-02.log"
+    ],
+    "disposition": "Initial core build and eleven earlier successful focused cases precede final fixture correction; final acceptance uses full rebuilt reports"
+  },
+  "allSystemsVerifierRun": false,
+  "openGates": [
+    "Durable pending consequence work and automatic host continuation without extra time or effort",
+    "Foundation removal/retirement and complete affected-neighbor policy composition",
+    "Coupled member/actor trajectories, impacts, resting loads and conserved fracture/debris",
+    "Atomic collapse terrain/physical/custody/effect/identity/receipt publication and actual collapse crash/history proving",
+    "Whole-scene graph/hash latency, production force calibration and throughput",
+    "Wet displacement/spill, usable multi-floor art/animation/audio, devices and complete181-requirement/P00-P14 campaign"
+  ]
+}

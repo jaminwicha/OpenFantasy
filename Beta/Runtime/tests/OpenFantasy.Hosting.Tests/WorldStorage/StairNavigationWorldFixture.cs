@@ -74,9 +74,9 @@ internal sealed class StairNavigationWorldFixture
         if (physicalConstruction) { Genesis = WorldConstructionPhysicalAdmission.CreateGenesis(Genesis); }
     }
 
-    internal WorldSnapshot FundAndBuild(string path)
+    internal WorldSnapshot FundAndBuild(string path, WorldSnapshot? genesis = null)
     {
-        WorldSnapshot world = Actions.CreateSource(path, completeQuest: true, genesis: Genesis);
+        WorldSnapshot world = Actions.CreateSource(path, completeQuest: true, genesis: genesis ?? Genesis);
         using SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(path);
         world = Actions.Act(authority, world, Player, new CloseDialogueIntent(world.Dialogues.Single().DialogueId));
         var controller = new LocalNpcController();

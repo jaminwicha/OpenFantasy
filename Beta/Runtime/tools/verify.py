@@ -42,6 +42,7 @@ def main():
     env["OPENFANTASY_EXCAVATION_EVIDENCE"] = str(test_results / "excavation-fixture")
     env["OPENFANTASY_CONSTRUCTED_SUPPORT_EVIDENCE"] = str(test_results / "constructed-support-fixture")
     env["OPENFANTASY_CONSTRUCTION_PHYSICAL_EVIDENCE"] = str(test_results / "construction-physical-fixture")
+    env["OPENFANTASY_STRUCTURAL_POLICY_EVIDENCE"] = str(test_results / "structural-policy-fixture")
     env["OPENFANTASY_COLLAPSE_MOTION_EVIDENCE"] = str(test_results / "collapse-motion-fixture")
     env["OPENFANTASY_STRUCTURAL_LOAD_EVIDENCE"] = str(test_results / "structural-load-fixture")
     env["OPENFANTASY_STAIR_NAVIGATION_EVIDENCE"] = str(test_results / "stair-navigation-fixture")
@@ -161,6 +162,9 @@ def main():
         run("construction-physical-persistence", [sys.executable, root / "tools/check_construction_physical.py",
             "--dotnet", dotnet, "--fixture", test_results / "construction-physical-fixture",
             "--output", artifacts / "construction-physical.json"])
+        run("structural-policy-persistence", [sys.executable, root / "tools/check_construction_physical.py",
+            "--dotnet", dotnet, "--fixture", test_results / "structural-policy-fixture",
+            "--output", artifacts / "structural-policy.json"])
 
         run("structural-load-planning", [sys.executable, root / "tools/check_structural_loads.py",
             "--dotnet", dotnet, "--fixture", test_results / "structural-load-fixture",

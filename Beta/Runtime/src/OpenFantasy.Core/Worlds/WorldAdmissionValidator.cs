@@ -5,6 +5,7 @@ using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Language;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Structures;
 using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Worlds;
@@ -39,6 +40,7 @@ public static class WorldAdmissionValidator
         admission.ReadReservoirs();
         admission.ReadTransport();
         admission.ReadExcavation();
+        admission.ReadStructuralPolicy();
         return admission.Complete();
     }
 
@@ -150,6 +152,39 @@ public static class WorldAdmissionValidator
                 Definition(site.Material.Item.DefinitionId, WorldIdentityRole.ItemDefinition, site.Material.Item.Version);
                 Definition(site.Material.Physical.DefinitionId, WorldIdentityRole.PhysicalMaterialDefinition, site.Material.Physical.Version);
                 Definition(site.RequiredTool.DefinitionId, WorldIdentityRole.ItemDefinition, site.RequiredTool.Version);
+            }
+        }
+
+        internal void ReadStructuralPolicy()
+        {
+            if (world.StructuralPolicy is not { } policy)
+            {
+                return;
+            }
+            foreach (ConstructionBearingTemplate template in policy.Templates)
+            {
+                Definition(template.DefinitionId, WorldIdentityRole.ConstructionDefinition, template.DefinitionVersion);
+            }
+            foreach (StableTerrainBearing foundation in policy.Foundations)
+            {
+                Add(foundation.ElementId, WorldIdentityRole.StructuralFoundation, unique: true);
+                if (!terrain.TryGetRole(foundation.SourceId, out WorldIdentityRole role) || role != WorldIdentityRole.TerrainSource)
+                {
+                    throw new ArgumentException("A structural foundation must reference admitted terrain ancestry.");
+                }
+                Definition(foundation.Material.DefinitionId, WorldIdentityRole.ItemDefinition, foundation.Material.Version);
+            }
+            foreach (StructuralBodyMass body in policy.Masses.Bodies)
+            {
+                Definition(body.DefinitionId, WorldIdentityRole.BodyDefinition, body.BodyVersion);
+            }
+            foreach (StructuralItemMass item in policy.Masses.SupplementalItems)
+            {
+                Definition(item.Item.DefinitionId, WorldIdentityRole.ItemDefinition, item.Item.Version);
+            }
+            foreach (ActorPresence actor in world.Space.Actors)
+            {
+                Add(ConstructionBearingModel.ActorIdentity(actor.ActorId), WorldIdentityRole.StructuralActorLoad, unique: true);
             }
         }
 

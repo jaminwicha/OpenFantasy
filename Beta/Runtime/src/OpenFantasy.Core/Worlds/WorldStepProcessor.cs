@@ -72,6 +72,32 @@ public sealed class WorldStepProcessor
         HashSet<EntityId> worked = [];
         List<DialogueSession> dialogues = state.Dialogues.ToList();
         List<WorldActionReceipt> receipts = [];
+        WorldInstant calendar = state.Calendar;
+        ulong advancingSteps = state.AdvancingSteps;
+        IEnumerable<WorldResident> residents = state.Residents;
+
+        bool FitsStructuralPolicy(CountedAuthorityState proposedInventory,
+            IEnumerable<DialogueSession> proposedDialogues, ConstructionPhysicalSnapshot? proposedPhysical)
+        {
+            if (state.StructuralPolicy is null)
+            {
+                return true;
+            }
+            try
+            {
+                // Use the same complete root admission as publication. This includes actual carried
+                // goods and every occupant; checking only the acting character misses shared loads.
+                _ = state.WithState(proposedInventory, space, residents, calendar, sequence, advancingSteps,
+                    proposedDialogues, gathering, production, progression, quests, construction,
+                    reservoirs, transport, excavation, proposedPhysical);
+                return true;
+            }
+            catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+            {
+                return false;
+            }
+        }
+
         foreach (WorldActionCommand action in batch.Actions)
         {
             // Material validation covers the entire action, including its non-inventory side effects.
@@ -90,7 +116,7 @@ public sealed class WorldStepProcessor
             IReadOnlyList<EntityId> createdIds = [];
             if (action.Intent is ClimbIntent)
             {
-                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13)
+                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14)
                 {
                     throw new InvalidOperationException("This saved profile does not interpret assisted climbing.");
                 }
@@ -215,7 +241,8 @@ public sealed class WorldStepProcessor
             }
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
                 || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
-                || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport))
+                || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
+                || !FitsStructuralPolicy(resolution.Inventory, resolution.Dialogues, reconciledPhysical))
             {
                 excavation = previousExcavation;
                 gathering = previousGathering;
@@ -257,9 +284,6 @@ public sealed class WorldStepProcessor
             receipts.Add(receipt);
         }
 
-        WorldInstant calendar = state.Calendar;
-        ulong advancingSteps = state.AdvancingSteps;
-        IEnumerable<WorldResident> residents = state.Residents;
         if (batch.Kind == WorldBatchKind.AdvancingStep)
         {
             // The already selected step contributes once, including when an action opens a hold.
@@ -290,7 +314,12 @@ public sealed class WorldStepProcessor
                     SpatialMoveResult move = space.PrepareMove(input.ActorId, actor.Revision, input.DeltaX, input.DeltaY);
                     if (move.Status == SpatialMoveStatus.Prepared)
                     {
+                        LocalSpatialSnapshot previousSpace = space;
                         space = space.WithActors(space.Actors.Select(other => other.ActorId == input.ActorId ? move.Candidate! : other));
+                        if (!FitsStructuralPolicy(inventory, dialogues, physical))
+                        {
+                            space = previousSpace;
+                        }
                     }
                 }
             }

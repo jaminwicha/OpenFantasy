@@ -1,0 +1,51 @@
+{
+  "new": {
+    "files": 7,
+    "sameBytes": true,
+    "sha256": {
+      "after-completion.sqlite": "7306b681c709f823e56812c7206520bfd03de7b88689db9f1366740fdaaca3a1",
+      "before-completion.sqlite": "758b4d560aafb8bcc786f46fb6b021119e007ff4be538c3bb33e11b8c6198ffe",
+      "completion-step.bin": "a58aca553ba4b3f5305d871c3c8a0a3836a11bc78a1a5b365ea7c1589ee13301",
+      "expected.json": "959ebc764f829322cd6f48f100b17bc0f102e5b0088c42efe954076c30fc60b8",
+      "genesis.bin": "184e015cc829d7b9e80a3f992dfdc066a9b805c37ff7938fa5775bef72308be1",
+      "occupied-upstairs.bin": "fccfde23f48311a0ccf7b6f02ff8f6453e54d033aebc123528c631dbdfb88889",
+      "occupied-upstairs.sqlite": "ba11a711007721c50eaf9c1c009489cdbe10a644a8fbd9c89007a81b0faae6b1"
+    }
+  },
+  "physical13": {
+    "files": 7,
+    "sameBytes": true,
+    "sha256": {
+      "after-completion.sqlite": "92478333d136543e04d52d8ff79a79068ad333c35f1045629d7c7d7209dece68",
+      "before-completion.sqlite": "9b794b65a41d1b5728311c5e34311c500ca3410d78c3617b8544646c2d16f861",
+      "completion-step.bin": "ced8a11106ad28c74f95a05fd6cc420509df4f43c2d599e63719d4e4c2aa2a19",
+      "expected.json": "d755afab1517fd30a895239c01f8dee8f4cfcbb52e4c0695e966c595a62fd701",
+      "genesis.bin": "29ce648a3487e837f3fc48542e646d92c26f965e9e08afff3bff6de77602a801",
+      "occupied-upstairs.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea",
+      "occupied-upstairs.sqlite": "7335680243db9ba7462ae32a309de1f02f7deaeb3c0f43932c7fefd3b95480a2"
+    }
+  },
+  "structural12": {
+    "files": 5,
+    "sameBytes": true,
+    "sha256": {
+      "completed.bin": "fe537e9be830f41936495ddf43ef320661ddc12153faed564442fb5e4780261b",
+      "expected.json": "7639c5df0afdc393315ee3304813634234ab15733dde083afbb52f5ce0154170",
+      "graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "occupied-world.sqlite": "6db67898f8252f88226e15ac9fc1993c87053542cea9f285a0288e38b87669a8",
+      "pending.bin": "3b333358062abd19a27dc4736d9a6134a023f65e00d62c414616c204303a8299"
+    }
+  },
+  "motion13": {
+    "files": 6,
+    "sameBytes": true,
+    "sha256": {
+      "motion.json": "b2f9bd901d8c9319f40c710c7baef7579dc87de1c90af2b7a93928536275b345",
+      "occupied-world.sqlite": "56c0b65a9015c894152acb4ababff27e87db510f89eced1d94e0d03bbfb243e3",
+      "policy-graph.bin": "76a6e6e9ac614d62b604cb2c2b57fda8382565b873a1cca1009c79cda4ff3604",
+      "policy-world.bin": "a96c63eb6237fe17074e1cb2885062e66bf2923e221cb29179b410e1ae0462ea",
+      "policy.bin": "71a7cf6ccd6886d34e5e9f681b289412973dfbd00220296da5f1e861f5b3d74d",
+      "policy.json": "693ef160be0b44e6adec9dddc60ffc220b249feb53095a2a64afd71e31b08dd5"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "total": 1334,
+  "core": 881,
+  "hosting": 453,
+  "new": 13,
+  "reports": [
+    {
+      "total": 881,
+      "executed": 881,
+      "passed": 881,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0,
+      "file": "managed-final/_mac_2026-09-19_19_50_01_net8.0.trx"
+    },
+    {
+      "total": 453,
+      "executed": 453,
+      "passed": 453,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0,
+      "file": "managed-final/_mac_2026-09-19_19_50_22_net8.0.trx"
+    }
+  ]
+}

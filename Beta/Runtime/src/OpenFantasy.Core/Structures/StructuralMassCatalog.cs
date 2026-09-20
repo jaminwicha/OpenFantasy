@@ -7,8 +7,8 @@ using OpenFantasy.Core.Worlds;
 namespace OpenFantasy.Core.Structures;
 
 /// <summary>
-/// Finite external mass calibration. Actor loads cover the actual body and primary inventory only;
-/// this catalog does not establish storage geometry, material strength or complete world ownership.
+/// Finite mass calibration. Structural worlds include explicitly builder-carried project custody;
+/// older diagnostic worlds retain their primary-inventory interpretation.
 /// </summary>
 public sealed class StructuralMassCatalog
 {
@@ -75,8 +75,9 @@ public sealed class StructuralMassCatalog
     }
 
     /// <summary>
-    /// Adds the pinned body's mass and live raw/transformed lots in its resident's primary inventory.
-    /// Reservations and equipment do not remove carried mass; retired ingredients are not live lots.
+    /// Adds the pinned body and live carried goods. In a structural world, builder-carried project
+    /// custody also counts; installed backing belongs to members instead. Reservations and equipment
+    /// do not remove carried mass, and retired ingredients are not live lots.
     /// </summary>
     public UInt128 ActorLoad(WorldSnapshot world, EntityId actorId)
     {
@@ -87,12 +88,28 @@ public sealed class StructuralMassCatalog
         {
             throw new ArgumentException("The actor requires an exact body mass calibration.", nameof(world));
         }
-        EntityId custodian = world.GetResident(actorId).InventoryCustodianId;
+        HashSet<EntityId> carried = [world.GetResident(actorId).InventoryCustodianId];
+        HashSet<EntityId> installedBacking = [];
+        if (world.StructuralPolicy is not null && world.Construction is { } construction)
+        {
+            foreach (ConstructionProject project in construction.Projects.Where(value => value.BuilderActorId == actorId))
+            {
+                if (project.StockLocation != ConstructionStockLocation.BuilderCarried)
+                {
+                    throw new ArgumentException("Project stock requires an explicit spatial load owner.", nameof(world));
+                }
+                carried.Add(project.ProjectCustodianId);
+                if (project.Installed is { } installed)
+                {
+                    installedBacking.Add(installed.GuardLotId);
+                }
+            }
+        }
         Dictionary<EntityId, StructuralItemMass> masses = ResolveItems(world.Production?.Recipes.AsEnumerable() ?? []);
         UInt128 load = body.Mass.Value;
         foreach (CountedSourceLot lot in world.Inventory.Custody.Lots)
         {
-            if (lot.CustodianId == custodian)
+            if (carried.Contains(lot.CustodianId))
             {
                 load = checked(load + LotMass(masses, lot.Definition, lot.Quantity));
             }
@@ -101,7 +118,7 @@ public sealed class StructuralMassCatalog
         {
             foreach (TransformedLot lot in production.Lots)
             {
-                if (lot.CustodianId == custodian)
+                if (carried.Contains(lot.CustodianId) && !installedBacking.Contains(lot.LotId))
                 {
                     load = checked(load + LotMass(masses, lot.Definition, lot.Quantity));
                 }

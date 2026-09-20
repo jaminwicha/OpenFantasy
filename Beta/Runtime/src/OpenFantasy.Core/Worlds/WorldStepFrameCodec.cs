@@ -10,7 +10,7 @@ internal static class WorldStepFrameCodec
     internal static byte[] Encode(WorldStepBatch batch, ushort profileVersion)
     {
         ArgumentNullException.ThrowIfNull(batch);
-        if (batch.ProfileVersion != profileVersion || profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13)
+        if (batch.ProfileVersion != profileVersion || profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14)
         {
             throw new ArgumentException("A newer rules profile requires its own step codec.", nameof(batch));
         }
@@ -32,7 +32,7 @@ internal static class WorldStepFrameCodec
     {
         var reader = new WorldFrameReader(bytes, MaximumBatchByteLength, 10);
         reader.Tag("world.step-batch"u8);
-        if (profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 || reader.Number() != profileVersion)
+        if (profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 || reader.Number() != profileVersion)
         {
             throw new FormatException("Unsupported world step version.");
         }

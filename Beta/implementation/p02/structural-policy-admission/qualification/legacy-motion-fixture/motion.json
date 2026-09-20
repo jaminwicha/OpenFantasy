@@ -1,0 +1,144 @@
+{
+  "Scope": "Read-only candidate geometry after actual funded construction and occupied travel; no collapse publication or material retirement",
+  "WorldHash": "ffd2a81615acd6f515b467c6d19b09d2cff6e975ce7321c048602a065a59eb55",
+  "Revision": 217,
+  "PhysicalHash": "853817819be875935a91af6cad985582e709261c5c2fde9dc7e5a398af1b659d",
+  "MaterialHash": "038114488b9ec622bb5662b2fd8c0de5a54ed1647c44fcafa0d54220504f637a",
+  "Observations": [
+    {
+      "Case": "actor_without_deck",
+      "Status": 0,
+      "DropSubunits": 576,
+      "ReachedVolume": {
+        "Minimum": {
+          "X": 27686,
+          "Y": 83514,
+          "Z": 256,
+          "Cell": {
+            "X": 108,
+            "Y": 326,
+            "Z": 1
+          }
+        },
+        "Maximum": {
+          "X": 27866,
+          "Y": 83654,
+          "Z": 720,
+          "Cell": {
+            "X": 108,
+            "Y": 326,
+            "Z": 2
+          }
+        }
+      }
+    },
+    {
+      "Case": "deck_without_legs",
+      "Status": 0,
+      "DropSubunits": 512,
+      "ReachedVolume": {
+        "Minimum": {
+          "X": 27648,
+          "Y": 83168,
+          "Z": 256,
+          "Cell": {
+            "X": 108,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "Maximum": {
+          "X": 28128,
+          "Y": 83968,
+          "Z": 320,
+          "Cell": {
+            "X": 109,
+            "Y": 328,
+            "Z": 1
+          }
+        }
+      }
+    },
+    {
+      "Case": "actor_above_reintroduced_deck",
+      "Status": 0,
+      "DropSubunits": 512,
+      "ReachedVolume": {
+        "Minimum": {
+          "X": 27686,
+          "Y": 83514,
+          "Z": 320,
+          "Cell": {
+            "X": 108,
+            "Y": 326,
+            "Z": 1
+          }
+        },
+        "Maximum": {
+          "X": 27866,
+          "Y": 83654,
+          "Z": 784,
+          "Cell": {
+            "X": 108,
+            "Y": 326,
+            "Z": 3
+          }
+        }
+      }
+    },
+    {
+      "Case": "actor_contact",
+      "Status": 2,
+      "DropSubunits": 112,
+      "ReachedVolume": {
+        "Minimum": {
+          "X": 27686,
+          "Y": 83514,
+          "Z": 720,
+          "Cell": {
+            "X": 108,
+            "Y": 326,
+            "Z": 2
+          }
+        },
+        "Maximum": {
+          "X": 27866,
+          "Y": 83654,
+          "Z": 1184,
+          "Cell": {
+            "X": 108,
+            "Y": 326,
+            "Z": 4
+          }
+        }
+      }
+    },
+    {
+      "Case": "material_actor_contact",
+      "Status": 2,
+      "DropSubunits": 48,
+      "ReachedVolume": {
+        "Minimum": {
+          "X": 27648,
+          "Y": 83168,
+          "Z": 720,
+          "Cell": {
+            "X": 108,
+            "Y": 324,
+            "Z": 2
+          }
+        },
+        "Maximum": {
+          "X": 28128,
+          "Y": 83968,
+          "Z": 784,
+          "Cell": {
+            "X": 109,
+            "Y": 328,
+            "Z": 3
+          }
+        }
+      }
+    }
+  ]
+}

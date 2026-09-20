@@ -21,6 +21,13 @@ conflicting exact item definitions refuses binding. The installed construction l
 custodian and is not also carried by its builder. A primary-inventory binding does not establish spatial
 load ownership for arbitrary storage, vehicles, attachments or every other custodian.
 
+The durable structural profile additionally charges every explicitly builder-carried project custodian
+to its builder. Its live raw stock and transformed byproducts count, while installed backing is excluded
+from the actor and allocated exactly once to members. Complete root admission refuses any live material
+custody without one of these represented locations. Thus quest delivery transfers physical load to the
+builder, and installation moves mass from carried goods to the assembly. Earlier diagnostic profiles
+retain their primary-inventory-only interpretation and graph bytes.
+
 [ConstructionBearingTemplate](../../src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs)
 provides complete member ordinals, capacity, maximum horizontal span and minimum surviving support count
 for one exact construction definition. A vertical bearing requires a positive overlapping horizontal
@@ -38,8 +45,8 @@ does not establish stable bedrock or geological self-support. These declarations
 external foundation boundary; their author must justify the omitted surrounding strata.
 
 The [policy and motion contracts](structural-policy-and-motion.md) provide a canonical complete policy
-asset and first-contact swept-descent queries. These preserve policy dependencies and actual collision
-material; they do not install live collapse law or replace complete world admission.
+asset, durable stable-world gate and first-contact swept-descent queries. These preserve policy dependencies
+and actual collision material; they do not publish live collapse or replace complete world admission.
 
 ## Contact, topology and accounting
 

@@ -1,7 +1,8 @@
-"""Qualify initial profile-13 physical member creation through real Host commits and kills.
+"""Qualify profile-13/14 physical member creation through real Host commits and kills.
 
 The managed authority supplies closed pre/post-completion fixtures. Independent OFC
 reads check the complete root, original material backing and derived member identities.
+Profile 14 also retains and independently verifies the complete immutable load policy.
 This bounded probe does not qualify collapse, falling, damage, or occupant settlement.
 """
 import argparse
@@ -46,9 +47,105 @@ def source_claim(lot):
                 SourceId=lot[5].hex(), Start=number(lot[6]), End=number(lot[7]), Revision=number(lot[8]))
 
 
+def policy_witness(data, spatial, definition_bytes):
+    """Read the complete policy independently; do not substitute a derived load result."""
+    assert len(data) <= 4 * 1024 * 1024
+    policy = read_frame(data, 'construction.load-policy.v1', 6)
+    scope = read_frame(policy[1], 'structure.terrain-scope', 4)
+    assert scope[1:] == spatial[2:5] and len(set(scope[1:])) == 3
+    assert all(len(value) == 16 for value in scope[1:])
+    templates = [read_frame(value, 'construction.bearing-template.v1', 5)
+                 for value in read_frame(policy[2], 'structure.policy-templates')[1:]]
+    foundations = [read_frame(value, 'structure.stable-terrain-bearing', 9)
+                   for value in read_frame(policy[3], 'structure.policy-foundations')[1:]]
+    bodies = [read_frame(value, 'structure.body-mass', 4)
+              for value in read_frame(policy[4], 'structure.policy-bodies')[1:]]
+    items = [read_frame(value, 'structure.item-mass', 4)
+             for value in read_frame(policy[5], 'structure.policy-items')[1:]]
+    assert 1 <= len(templates) <= 16 and 1 <= len(foundations) <= 4096
+    assert len(bodies) <= 64 and len(items) <= 256
+    for catalog in [templates, foundations, bodies, items]:
+        ids = [value[1] for value in catalog]
+        assert all(len(value) == 16 for value in ids) and ids == sorted(set(ids))
+    definition = read_frame(definition_bytes, 'construction.definition', 12)
+    boxes = [[number(coordinate, True) for coordinate in read_frame(value, 'construction.member', 7)[1:]]
+             for value in read_frame(definition[8], 'construction.members')[1:]]
+    assert {value[1]: value[2].hex() for value in templates} == {definition[2]: digest(definition_bytes)}
+    for template in templates:
+        assert len(template[2]) == 32
+        ratings = [read_frame(value, 'structure.member-rating', 5)
+                   for value in read_frame(template[3], 'structure.member-ratings')[1:]]
+        assert 1 <= len(ratings) == len(boxes) <= 32
+        for ordinal, rating in enumerate(ratings):
+            assert number(rating[1]) == ordinal and number(rating[2]) > 0
+            assert 1 <= number(rating[3]) <= 8000 and 1 <= number(rating[4]) <= 32
+            box = boxes[ordinal]
+            assert max(box[3] - box[0], box[4] - box[1]) <= number(rating[3])
+        joints = [read_frame(value, 'structure.member-joint', 4)
+                  for value in read_frame(template[4], 'structure.member-joints')[1:]]
+        assert len(joints) <= 1024
+        pairs = [(number(value[1]), number(value[2])) for value in joints]
+        assert pairs == sorted(set(pairs))
+        incoming, outgoing = [0] * len(ratings), [[] for _ in ratings]
+        for joint, (upper, lower) in zip(joints, pairs):
+            assert upper != lower and 0 <= upper < len(ratings) and 0 <= lower < len(ratings)
+            kind = number(joint[3])
+            assert kind in [0, 1]
+            high, low = boxes[upper], boxes[lower]
+            x, y, z = [max(0, min(high[axis + 3], low[axis + 3]) - max(high[axis], low[axis]))
+                       for axis in range(3)]
+            area = (x * y if high[2] == low[5] else 0) if kind == 0 else (
+                y * z if high[3] == low[0] or high[0] == low[3] else
+                x * z if high[4] == low[1] or high[1] == low[4] else 0)
+            assert high[2] > 0 and area > 0
+            incoming[lower] += 1
+            outgoing[upper].append(lower)
+        ready = [index for index, count in enumerate(incoming) if count == 0]
+        visited = 0
+        while ready:
+            current = ready.pop()
+            visited += 1
+            for lower in outgoing[current]:
+                incoming[lower] -= 1
+                if incoming[lower] == 0:
+                    ready.append(lower)
+        assert visited == len(ratings)
+    cells, sources, material_pins = set(), set(), {}
+    for anchor in foundations:
+        cell = tuple(number(value, True) for value in anchor[2:5])
+        assert cell not in cells and anchor[5] not in sources
+        cells.add(cell)
+        sources.add(anchor[5])
+        assert all(-(1 << 63) <= coordinate * 256 < (coordinate + 1) * 256 <= (1 << 63) - 1
+                   for coordinate in cell)
+        assert len(anchor[5]) == len(anchor[6]) == 16 and len(anchor[7]) == 32 and number(anchor[8]) > 0
+        assert material_pins.setdefault(anchor[6], anchor[7]) == anchor[7]
+    for value in bodies + items:
+        assert len(value[2]) == 32 and number(value[3]) > 0
+    body_pins = {value[1]: value[2].hex() for value in bodies}
+    for body_bytes in read_frame(spatial[6], 'world.bodies')[1:]:
+        body = read_frame(body_bytes, 'actor.body-definition', 7)
+        assert body_pins[body[2]] == digest(body_bytes)
+    actor_loads = []
+    for presence_bytes in read_frame(spatial[7], 'world.presences')[1:]:
+        presence = read_frame(presence_bytes, 'world.presence', 9)
+        binding = read_frame(presence[2], 'actor.form-binding', 9)
+        assert number(binding[1]) == 1 and len(binding[2]) == 16
+        actor_loads.append(dict(ActorId=binding[2].hex(),
+                               ElementId=hashlib.sha256(frame('structure.actor-load.v1', binding[2])).digest()[:16].hex()))
+    foundation_ids = [value[1].hex() for value in foundations]
+    actor_ids = [value['ElementId'] for value in actor_loads]
+    assert len(set(foundation_ids + actor_ids)) == len(foundations) + len(actor_loads)
+    diagnostic = dict(ContentHash=digest(data), TemplateCount=len(templates), FoundationCount=len(foundations),
+                      BodyDefinitionCount=len(bodies), SupplementalItemCount=len(items))
+    identities = dict(FoundationIds=foundation_ids, ActorLoads=actor_loads)
+    return diagnostic, identities
+
+
 def state_witness(data):
-    root = read_frame(data, 'world.snapshot', 18)
-    assert number(root[1]) == 13
+    root = read_frame(data, 'world.snapshot')
+    profile = number(root[1])
+    assert profile in [13, 14] and len(root) == {13: 18, 14: 19}[profile]
     spatial = read_frame(root[3], 'world.spatial', 8)
     assert number(spatial[1]) == 3
     authority = read_frame(root[2], 'authority.counted-state', 9)
@@ -144,7 +241,7 @@ def state_witness(data):
         assert [number(item) for item in claim[3:6]] == [output_index, 0, 1]
         assert not any(lot[1].hex() in {value['LotId'] for value in retired} for lot in raw_lots)
 
-    return dict(ProfileVersion=13, WorldId=world.hex(), BranchId=branch.hex(), Revision=number(root[8]),
+    witness = dict(ProfileVersion=profile, WorldId=world.hex(), BranchId=branch.hex(), Revision=number(root[8]),
                 AdvancingSteps=number(root[9]), StateHash=digest(data), ConstructionHash=digest(root[15]),
                 ProductionHash=digest(root[12]), InventoryHash=digest(root[2]), CustodyHash=digest(authority[3]),
                 SourcesHash=digest(authority[7]), SourceLotsHash=digest(custody[5]), TerrainHash=digest(spatial[5]),
@@ -152,6 +249,9 @@ def state_witness(data):
                 ProjectId=project[2].hex(), Installed=installed, Members=members,
                 ReservedSourceClaims=sorted(reserved, key=lambda value: value['LotId']),
                 RetiredSourceClaims=sorted(retired, key=lambda value: value['LotId']))
+    if profile == 14:
+        witness['StructuralPolicy'], witness['PolicyIdentities'] = policy_witness(root[18], spatial, definitions[1])
+    return witness
 
 
 def ledger_hash(rows):
@@ -197,10 +297,20 @@ def main():
             assert number(head[0]) == expected[prefix + 'Revision']
             assert digest(head[1]) == head[2].hex() == expected[prefix + 'Hash']
             witness = state_witness(head[1])
+            assert witness['ProfileVersion'] == profile
             assert witness['WorldId'] == expected['WorldId'] and witness['BranchId'] == expected['BranchId']
             for key in ['ConstructionHash', 'ProductionHash', 'InventoryHash', 'CustodyHash']:
                 assert witness[key] == expected[prefix + key], key
             identities = connection.execute('SELECT identity,sequence,kind FROM world_occupied_identity ORDER BY identity').fetchall()
+            genesis_row = connection.execute('SELECT state,hash FROM world_genesis').fetchone()
+            assert genesis_row[0] == genesis_bytes and genesis_row[1].hex() == digest(genesis_bytes)
+            if profile == 14:
+                assert fields(head[1])[18] == fields(genesis_bytes)[18]
+                assert witness['StructuralPolicy']['ContentHash'] == expected['PolicyHash']
+                reserved_ids = set(witness['PolicyIdentities']['FoundationIds']) | {
+                    value['ElementId'] for value in witness['PolicyIdentities']['ActorLoads']}
+                assert not reserved_ids.intersection(member_ids)
+                assert not any(row[0].hex() in reserved_ids for row in identities)
             commands = connection.execute('SELECT principal,command_id,sequence,command,receipt FROM world_command_outcomes '
                                           'ORDER BY principal,command_id').fetchall()
             journal = connection.execute('SELECT sequence,kind,cause_id,advancing_steps,accepted_batch,outcomes,before_hash,after_hash '
@@ -234,7 +344,8 @@ def main():
         return witness, ledgers
 
     def check_report(value, witness):
-        assert value['ProfileVersion'] == 13 and value['StateHash'] == witness['StateHash']
+        assert value['ProfileVersion'] == profile and value['StateHash'] == witness['StateHash']
+        assert value['StructuralPolicy'] == witness.get('StructuralPolicy')
         physical = value['ConstructionPhysical']
         assert physical['Revision'] == witness['PhysicalRevision']
         assert physical['ContentHash'] == witness['PhysicalHash'] and physical['ConstructionHash'] == witness['ConstructionHash']
@@ -248,9 +359,10 @@ def main():
 
     def history(database, item, prefix):
         value = run(f'{database.stem} history {item["Revision"]}', '--inspect-recorded-world', database, item['Revision'])
-        assert value['Contract'] == 'recorded-world-state-v1' and value['ProfileVersion'] == 13
+        assert value['Contract'] == 'recorded-world-state-v1' and value['ProfileVersion'] == profile
         assert value['RecordedRevision'] == item['Revision'] and value['StateHash'] == item['Hash']
         assert value['SourceHeadRevision'] == expected[prefix + 'Revision'] and value['SourceHeadHash'] == expected[prefix + 'Hash']
+        assert value['StructuralPolicy'] == genesis.get('StructuralPolicy')
         if item['Revision'] in retained:
             check_report(value, retained[item['Revision']])
         else:
@@ -269,18 +381,23 @@ def main():
     try:
         work.mkdir()
         expected = json.loads((fixture / 'expected.json').read_text())
-        assert expected.get('ProfileVersion', 13) == 13
+        profile = expected.get('ProfileVersion', 13)
+        assert profile in [13, 14]
+        if profile == 14:
+            report['scope'] = ('Profile-14 durable load policy and stable physical completion; exact source retirement, '
+                               'identity rows, history, retries and two real commit-boundary kills; no collapse')
         assert expected['PostRevision'] == expected['PreRevision'] + 1 and expected['MemberCount'] == 12
         assert expected['PhysicalBeforeRevision'] == 0 and expected['PhysicalAfterRevision'] == 1
         report['fixtureSha256'] = {path.name: digest(path.read_bytes()) for path in sorted(fixture.iterdir()) if path.is_file()}
         assert not any(name.endswith(('-wal', '-shm', '-journal')) for name in report['fixtureSha256']), 'Fixture must be closed.'
+        genesis_bytes = (fixture / 'genesis.bin').read_bytes()
         member_ids = [member_identity(expected['StructureId'], ordinal) for ordinal in range(12)]
         assert len(set(member_ids)) == 12 and member_ids == expected['ExpectedMemberIds']
         report['independentMemberIds'] = member_ids
         step_path = fixture / 'completion-step.bin'
         step_bytes = step_path.read_bytes()
         step = read_frame(step_bytes, 'world.step-batch', 10)
-        assert number(step[1]) == 13 and number(step[5]) == expected['PreRevision'] and number(step[7]) == 1
+        assert number(step[1]) == profile and number(step[5]) == expected['PreRevision'] and number(step[7]) == 1
         assert step[3].hex() == expected['WorldId'] and step[4].hex() == expected['BranchId']
         assert read_frame(step[8], 'world.step-movement') == [b'world.step-movement']
         actions = read_frame(step[9], 'world.step-actions', 2)
@@ -303,9 +420,16 @@ def main():
         assert all(number(row[1]) == expected['PostRevision'] for row in new_rows)
         assert len(after_ledgers['commands']) == len(before_ledgers['commands']) + 1
         assert len(after_ledgers['journal']) == len(before_ledgers['journal']) + 1
-        genesis = state_witness((fixture / 'genesis.bin').read_bytes())
+        genesis = state_witness(genesis_bytes)
+        assert genesis['ProfileVersion'] == profile
         assert genesis['Revision'] == genesis['AdvancingSteps'] == genesis['PhysicalRevision'] == 0 and not genesis['Members']
         assert genesis['WorldId'] == expected['WorldId'] and genesis['BranchId'] == expected['BranchId']
+        if profile == 14:
+            assert genesis['StructuralPolicy'] == before['StructuralPolicy'] == after['StructuralPolicy']
+            assert genesis['PolicyIdentities'] == before['PolicyIdentities'] == after['PolicyIdentities']
+            assert genesis['StructuralPolicy']['ContentHash'] == expected['PolicyHash']
+            report['policyIdentityCoverage'] = dict(**genesis['PolicyIdentities'], CommittedIdentityRows=0,
+                scope='Declarations and derived actor-load identities in retained genesis; this schema has no sequence-zero identity rows')
         retained = {0: genesis, expected['PreRevision']: before, expected['PostRevision']: after}
         expected_history = {item['Revision']: item['Hash'] for item in expected['History']}
         assert len(expected_history) == len(expected['History'])

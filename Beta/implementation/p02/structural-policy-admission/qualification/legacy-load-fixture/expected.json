@@ -1,0 +1,393 @@
+{
+  "Scope": "Read-only structural failure plan bound to actual funded construction and occupied deck; no world collapse is committed",
+  "InputPin": "c3a1d3ee53af9b967d23366be47868c235c145046d6de60fcd82ad0c1c7a3a13",
+  "WorldHash": "318061655d79887fd82c75acea809f191feb2fe5a3e91b363ab5118f341ef947",
+  "TotalInputMass": "143370000",
+  "AcceptedFoundationLoad": "71225172",
+  "FailedInputMass": "72144828",
+  "Pass": 5,
+  "TotalEvaluations": 5210,
+  "Members": [
+    {
+      "ElementId": {
+        "High": 49674386665615602,
+        "Low": 13648932036663196661
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 5,
+      "Mass": {
+        "Value": 30023
+      },
+      "Volume": {
+        "Value": 1148437500
+      }
+    },
+    {
+      "ElementId": {
+        "High": 128702428356672108,
+        "Low": 15793108515842138873
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 6,
+      "Mass": {
+        "Value": 35026
+      },
+      "Volume": {
+        "Value": 1339843750
+      }
+    },
+    {
+      "ElementId": {
+        "High": 378279966061760093,
+        "Low": 17744156567015115982
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 4,
+      "Mass": {
+        "Value": 25019
+      },
+      "Volume": {
+        "Value": 957031250
+      }
+    },
+    {
+      "ElementId": {
+        "High": 1573955160768185518,
+        "Low": 3463899100077243971
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 9,
+      "Mass": {
+        "Value": 40030
+      },
+      "Volume": {
+        "Value": 1531250000
+      }
+    },
+    {
+      "ElementId": {
+        "High": 2168640623087521000,
+        "Low": 8860707087683800949
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 3,
+      "Mass": {
+        "Value": 20016
+      },
+      "Volume": {
+        "Value": 765625000
+      }
+    },
+    {
+      "ElementId": {
+        "High": 4160789430393537365,
+        "Low": 13415450874856312136
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 1,
+      "Mass": {
+        "Value": 10008
+      },
+      "Volume": {
+        "Value": 382812500
+      }
+    },
+    {
+      "ElementId": {
+        "High": 5318229618819940144,
+        "Low": 61664812529035213
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 2,
+      "Mass": {
+        "Value": 15012
+      },
+      "Volume": {
+        "Value": 574218750
+      }
+    },
+    {
+      "ElementId": {
+        "High": 6638318824817352056,
+        "Low": 7514241297206123320
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 8,
+      "Mass": {
+        "Value": 3267
+      },
+      "Volume": {
+        "Value": 125000000
+      }
+    },
+    {
+      "ElementId": {
+        "High": 7955744236354555130,
+        "Low": 7801162136898441956
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 0,
+      "Mass": {
+        "Value": 5004
+      },
+      "Volume": {
+        "Value": 191406250
+      }
+    },
+    {
+      "ElementId": {
+        "High": 9806138195285175839,
+        "Low": 1778365705108742164
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 11,
+      "Mass": {
+        "Value": 3267
+      },
+      "Volume": {
+        "Value": 125000000
+      }
+    },
+    {
+      "ElementId": {
+        "High": 12101872833295119922,
+        "Low": 2802310424280889483
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 7,
+      "Mass": {
+        "Value": 38294
+      },
+      "Volume": {
+        "Value": 1464843750
+      }
+    },
+    {
+      "ElementId": {
+        "High": 17649621494093329656,
+        "Low": 16525712788551473129
+      },
+      "ProjectId": {
+        "High": 1030336341240845055,
+        "Low": 15518375661939895761
+      },
+      "StructureId": {
+        "High": 11876824213625734046,
+        "Low": 530313214149418964
+      },
+      "InstalledLotId": {
+        "High": 10550640340283777451,
+        "Low": 8331289306059522650
+      },
+      "MemberIndex": 10,
+      "Mass": {
+        "Value": 45034
+      },
+      "Volume": {
+        "Value": 1722656250
+      }
+    }
+  ],
+  "Actors": [
+    {
+      "ElementId": {
+        "High": 7566012749484560504,
+        "Low": 13145253668043319419
+      },
+      "ActorId": {
+        "High": 5275206824032017212,
+        "Low": 16848919575151478436
+      },
+      "BodyVersion": {
+        "Value": "7d5feea6de9d9a8d9a4d0a3254e5ebaf42248c955989c7d108294b9f70b7e136"
+      },
+      "BodyAndCarriedMass": {
+        "Value": 71000000
+      }
+    },
+    {
+      "ElementId": {
+        "High": 16359516856568956539,
+        "Low": 8685031887015177238
+      },
+      "ActorId": {
+        "High": 14400943597250011985,
+        "Low": 7898747762786815851
+      },
+      "BodyVersion": {
+        "Value": "7d5feea6de9d9a8d9a4d0a3254e5ebaf42248c955989c7d108294b9f70b7e136"
+      },
+      "BodyAndCarriedMass": {
+        "Value": 72100000
+      }
+    }
+  ],
+  "Failures": [
+    {
+      "ElementId": {
+        "High": 2634688102534205535,
+        "Low": 6912342021345955365
+      },
+      "Reason": 1,
+      "Load": "0",
+      "Pass": 0
+    },
+    {
+      "ElementId": {
+        "High": 6638318824817352056,
+        "Low": 7514241297206123320
+      },
+      "Reason": 2,
+      "Load": "36072414",
+      "Pass": 1
+    },
+    {
+      "ElementId": {
+        "High": 9806138195285175839,
+        "Low": 1778365705108742164
+      },
+      "Reason": 4,
+      "Load": "72141561",
+      "Pass": 2
+    },
+    {
+      "ElementId": {
+        "High": 12101872833295119922,
+        "Low": 2802310424280889483
+      },
+      "Reason": 2,
+      "Load": "72138294",
+      "Pass": 3
+    },
+    {
+      "ElementId": {
+        "High": 16359516856568956539,
+        "Low": 8685031887015177238
+      },
+      "Reason": 2,
+      "Load": "72100000",
+      "Pass": 4
+    }
+  ]
+}

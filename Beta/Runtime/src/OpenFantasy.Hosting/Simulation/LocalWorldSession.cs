@@ -140,12 +140,12 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 throw new AuthorityDispatchException("This saved profile does not support quest actions.");
             }
             if (command.Intent is OpenFantasy.Core.Spatial.ClimbIntent
-                && _authority.ReadStateForHost().ProfileVersion is not 11 and not 12 and not 13)
+                && _authority.ReadStateForHost().ProfileVersion is not 11 and not 12 and not 13 and not 14)
             {
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
             if (command.Intent is OpenFantasy.Core.Terrain.ExcavateIntent
-                && _authority.ReadStateForHost().ProfileVersion is not 10 and not 11 and not 12 and not 13)
+                && _authority.ReadStateForHost().ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14)
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }

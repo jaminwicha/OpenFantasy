@@ -102,7 +102,12 @@ through other actions and travel. Damage/displacement transitions are domain ope
 actor commands in this profile. The [static load binder](structural-loads.md) consumes retained condition
 for standing assemblies, rejects external condition overrides, and refuses detached material requiring a
 new contact interpretation. Neither completion reconciliation nor that standalone model is a live
-structural-load gate over every action and movement.
+structural-load gate over every action and movement by itself. The separate
+[structural world profile](structural-policy-and-motion.md#durable-stable-world-authority) owns the full
+immutable policy and validates all current action/movement loads. It charges builder-carried project stock
+and byproducts to their builder and installed backing to members exactly once. Stable-load refusal preserves
+pre-action state and records a terminal rejection receipt, without queuing an executable action or consequence
+job. Physical consequences still require complete atomic collapse publication.
 
 ## Canonical persistence and extension boundary
 
