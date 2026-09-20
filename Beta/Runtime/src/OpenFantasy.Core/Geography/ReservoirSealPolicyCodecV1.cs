@@ -5,7 +5,7 @@ using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Geography;
 
-/// <summary>Canonical external assessment policy; this archive does not mutate a world's admitted rules.</summary>
+/// <summary>Canonical sealing policy; world authority requires explicit complete-root admission of this archive.</summary>
 public static class ReservoirSealPolicyCodecV1
 {
     public const int MaximumEncodedByteLength = 4000;

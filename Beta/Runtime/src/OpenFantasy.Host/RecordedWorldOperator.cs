@@ -35,6 +35,13 @@ internal sealed class RecordedWorldOperator
             Watershed = state.Watershed is { } plan ? new WatershedDiagnosticReport(plan) : null,
             WatershedNetwork = state.WatershedNetwork is { } network ? new WatershedNetworkDiagnosticReport(network) : null,
             Reservoirs = state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,
+            ReservoirSeals = state.ReservoirSeals is { } seals ? new
+            {
+                ContentHash = seals.Version.Value,
+                LiquidDefinitionId = seals.Liquid.DefinitionId.ToString(),
+                LiquidVersion = seals.Liquid.Version.Value,
+                RuleCount = seals.Rules.Count
+            } : null,
             Transport = state.Transport is { } transport ? new ReservoirTransportDiagnosticReport(transport) : null,
             Actors = state.Residents.Select(resident => new
             {

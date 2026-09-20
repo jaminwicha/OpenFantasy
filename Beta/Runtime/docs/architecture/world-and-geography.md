@@ -386,6 +386,9 @@ unsupported configurations require explicit profiles rather than being coerced i
 against retained local terrain and exact completed construction under an explicit sealing policy. It
 reports gaps, obstructions and missing dependencies without changing this owner's admission rules.
 A successful read-only geometric assessment does not qualify strength, live breach handling or gates.
+The [contained fixed-reservoir profile](reservoir-containment.md) separately retains that sealing policy
+and makes complete geometry and material-pin checks mandatory at world admission and publication.
+It preserves the same stock/capacity owner while excluding transport and displaced physical members.
 
 ## Runtime binding: exclusive reservoir ownership
 

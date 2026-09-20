@@ -43,7 +43,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         int schemaVersion = accepted.ProfileVersion switch
         {
             16 or 17 or 18 => WorldDatabaseSchemaFour.Version,
-            3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 => WorldDatabaseSchemaThree.Version,
+            3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 19 => WorldDatabaseSchemaThree.Version,
             _ => WorldDatabaseSchema.Version
         };
         WorldDatabase database = WorldDatabase.Open(path, create: true, schemaVersion);

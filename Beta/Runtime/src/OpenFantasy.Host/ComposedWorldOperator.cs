@@ -8,6 +8,14 @@ namespace OpenFantasy.Host;
 /// <summary>Privileged offline operations under the existing exclusive composed-world authority.</summary>
 internal sealed class ComposedWorldOperator
 {
+    internal string CreateContainedReservoirWorld(string database, string basisPath, string sealPolicyPath)
+    {
+        WorldSnapshot genesis = WorldReservoirContainmentAdmission.CreateGenesis(
+            LocalAuthorityFiles.ReadComposedGenesis(basisPath), LocalAuthorityFiles.ReadReservoirSealPolicy(sealPolicyPath));
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(database, genesis);
+        return Report(authority);
+    }
+
     internal string CreateReservoirTransportWorld(string database, string basisPath, string transportPath)
     {
         WorldSnapshot genesis = WorldReservoirTransportAdmission.CreateGenesis(
@@ -79,6 +87,13 @@ internal sealed class ComposedWorldOperator
             Watershed = state.Watershed is { } plan ? new WatershedDiagnosticReport(plan) : null,
             WatershedNetwork = state.WatershedNetwork is { } network ? new WatershedNetworkDiagnosticReport(network) : null,
             Reservoirs = state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,
+            ReservoirSeals = state.ReservoirSeals is { } seals ? new
+            {
+                ContentHash = seals.Version.Value,
+                LiquidDefinitionId = seals.Liquid.DefinitionId.ToString(),
+                LiquidVersion = seals.Liquid.Version.Value,
+                RuleCount = seals.Rules.Count
+            } : null,
             Transport = state.Transport is { } transport ? new ReservoirTransportDiagnosticReport(transport) : null
         });
     }

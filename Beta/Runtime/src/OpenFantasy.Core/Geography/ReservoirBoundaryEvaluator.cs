@@ -17,6 +17,15 @@ public sealed class ReservoirBoundaryEvaluator
     public ReservoirBoundaryAssessment Assess(WorldSnapshot world, ReservoirSealPolicy policy,
         CancellationToken cancellationToken = default)
     {
+        IReadOnlyList<ReservoirBoundaryResult> results = AssessBoundaries(world, policy, cancellationToken);
+        return new(world.ContentHash, world.Reservoirs!.ContentHash, policy.Version, results);
+    }
+
+    // Complete root admission consumes the same geometry without requesting a hash of the root
+    // being admitted. Public diagnostic reports add their dependency pins only after evaluation.
+    internal IReadOnlyList<ReservoirBoundaryResult> AssessBoundaries(WorldSnapshot world, ReservoirSealPolicy policy,
+        CancellationToken cancellationToken = default)
+    {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(policy);
         cancellationToken.ThrowIfCancellationRequested();
@@ -59,7 +68,7 @@ public sealed class ReservoirBoundaryEvaluator
             results.Add(result.Build());
         }
         cancellationToken.ThrowIfCancellationRequested();
-        return new(world.ContentHash, reservoirs.ContentHash, policy.Version, results);
+        return results.AsReadOnly();
     }
 
     private static ReservoirBoundaryMember[] ReadMembers(WorldSnapshot world) => world.Construction!.Projects

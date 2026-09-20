@@ -1,0 +1,50 @@
+{
+  "Scope": "Fixed retained basins with explicitly authored initial holes and real water custody; no flow or earned excavation",
+  "ProfileVersion": 19,
+  "SchemaVersion": 3,
+  "PolicyHash": "32d69f92a0f5a3afbdc1c02546c7f842c2dfc67b6ef26c6db1f6258c95078a44",
+  "WorldId": "4955a478907a739f49ff302c94a798ad",
+  "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+  "Player": "c7da6de6f885e3516d9dfd3dab51cf6b",
+  "SourceId": "776f726c647761740000000000000003",
+  "PreRevision": 0,
+  "PreHash": "cae7d4cc323801bf5c2976f093c73fb8cafca2484aa50ebbed22c58ca600bd76",
+  "PostRevision": 1,
+  "PostHash": "5ec501c0ae1b921fe4e2e74c11acfedf69c9474ab4bb757eb3e120ed5b564d09",
+  "CommandId": "0000000000000000000000000070ea40",
+  "ReceiptHex": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100000000000000000000000000070EA40000000102D222BEFA7A8B2CD7BA0A05A00950F27000000104955A478907A739F49FF302C94A798AD000000102A89AF71F707591D46CFE34B9B60F96C00000020C9ED706719C012126DED7E8967105817973BDB39DA2CDAC23F5E041FCC725E94000000080000000000000001000000080000000000000001000000080000000000000000",
+  "History": [
+    {
+      "Revision": 0,
+      "Hash": "cae7d4cc323801bf5c2976f093c73fb8cafca2484aa50ebbed22c58ca600bd76"
+    },
+    {
+      "Revision": 1,
+      "Hash": "5ec501c0ae1b921fe4e2e74c11acfedf69c9474ab4bb757eb3e120ed5b564d09"
+    },
+    {
+      "Revision": 2,
+      "Hash": "42b2e55e855b722d06dbbd2aa8fe3f798c18c018a25ddfe5a71ceb027319824b"
+    },
+    {
+      "Revision": 3,
+      "Hash": "cdcc72eea8fde0460138201c84841ca957836e07fa993ed8c7a67dbf2fcbbf46"
+    }
+  ],
+  "ReservoirHashes": [
+    "40ff2ab1457db63b47ccf14fda49ab6da70c9ddacca55485442e4631a03659c0",
+    "9de36e815dbad0b9ccba14faf565706bb780002232df67fed94573a77eb7412e",
+    "9de36e815dbad0b9ccba14faf565706bb780002232df67fed94573a77eb7412e",
+    "9de36e815dbad0b9ccba14faf565706bb780002232df67fed94573a77eb7412e"
+  ],
+  "Receipts": [
+    {
+      "CommandId": "0000000000000000000000000070ea40",
+      "Rejection": "None"
+    },
+    {
+      "CommandId": "0000000000000000000000000070ea42",
+      "Rejection": "Unavailable"
+    }
+  ]
+}

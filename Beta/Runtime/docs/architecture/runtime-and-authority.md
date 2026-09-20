@@ -24,8 +24,9 @@ are pinned in [global.json](../../global.json) and [toolchain.json](../../toolch
 
 Core application types have cohesive responsibilities, immutable values and explicit dependencies.
 Composition is preferred to broad inheritance trees or service locators. Module folders need not
-be assemblies or services. A native kernel requires a measured workload and a small replaceable
-boundary; a second authority or IPC layer is not a prerequisite for engine portability.
+be assemblies or services. The core and application use C# in one process; portability comes from
+engine-free domain contracts. Algorithms, data layout, allocation and scheduling are the optimization
+boundaries. A custom native kernel or IPC worker is outside this architecture.
 
 ## Runtime bindings: state ownership
 
@@ -41,6 +42,12 @@ owner or silently revert its contact law. Stable admission uses the world's reta
 carried/installed mass and complete candidate scene. A separately selected read-only calibration cannot
 replace that authority. Saved [consequence work](consequence-continuation.md) reserves the original action's
 advancing interval while its geometry is evaluated; provisional motion is not a second published world.
+
+[Contained reservoir worlds](reservoir-containment.md) retain their immutable sealing policy in the
+same root as fixed vessels, material stock and terrain. Complete admission requires actual closed floors
+and walls, clear nominal interiors and admitted material pins. Read-only inspection under another policy
+cannot change the saved interpretation. Fixed containment excludes displaced construction and transport;
+joining them requires explicit volume, load, actuation and consequence contracts.
 
 [WorldAdmissionValidator](../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs) checks the
 composition, including actor/control/presence consistency, definition pins, dialogue participants,
@@ -83,6 +90,10 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    Earlier accepted actions remain accepted; validating only the final batch state would hide transient
    physical violations. Ordinary successors cannot add or remove reservoir ownership.
    Transport worlds additionally preserve the [scheduled funding journal](reservoir-transport.md).
+   Contained worlds additionally validate the reconciled material candidate against their retained seals.
+   This includes construction's selected eventual work/time boundary and all occupants. Rejection restores
+   the complete attempted action; a successful post-time movement root can be reused only after complete
+   admission and encoding. Action preflights never stand in for the eventual published root.
    After actions and the selected calendar increment, due stages run in canonical arrival/identity order,
    unless a reading hold is active; they precede movement. Actual stock, receiving obligations and new
    fragment identities join the same candidate. A blocked stage retains all water and capacity in place.

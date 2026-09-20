@@ -35,8 +35,10 @@ canonical frame tagged `geography.reservoir-seal-policy.v1`, followed by the 48-
 bound is 4,000 bytes. Decode bounds counts and sizes, validates rules and requires exact re-encoding;
 duplicate IDs, alternate ordering, invalid thickness, unknown tags and trailing data reject.
 
-The policy is an explicit external input to inspection. It does not amend the saved world's material
-rules, install a new capability or assert a supported production material catalog.
+The policy is an explicit external input to inspection. Supplying it to inspection does not amend the
+saved world's material rules or install a capability. [Contained reservoir admission](reservoir-containment.md)
+separately retains the complete policy in its world root and enforces it on publication. Both uses share
+the same geometric evaluator; authority additionally requires every material pin to be admitted.
 
 ## Domain contract: interiors, floors and exposed walls
 
@@ -66,6 +68,10 @@ The evaluator reads only projects with a retained `InstalledStructure`. The comp
 already binds those projects to their completed work, exact Production batch and live reserved output.
 The installed output item's pin determines sealing, not its input stock, tool, display label or a freely
 supplied collider. An unfinished project contributes no material faces.
+
+These boxes use the original project origin and authored member geometry. They prove fixed construction;
+they do not follow physical member displacement or deterioration. The contained-world profile excludes
+those alternative owners rather than interpreting original boxes as moved material.
 
 [Exact boundary boxes](../../src/OpenFantasy.Core/Geography/ReservoirBoundaryBox.cs) combine project
 origins and authored `MillimetreBox` members without rounding. Coordinates use 1/256 millimetre ticks:
@@ -106,3 +112,7 @@ recovers the save and reconstructs the requested exact committed state. The resu
 and selected-state pins, policy hash, coverage totals and named failures. Unsealed or incomplete geometry
 is a successful inspection with `IsContained = false`; malformed input or an unavailable commit fails
 the command. Inspection publishes no command, new material, edited terrain or changed history.
+
+Complete-root containment calls the internal geometric path before constructing a hash-bound report.
+This avoids hashing a root during its own admission. The public diagnostic result still carries the
+complete world, reservoir and supplied-policy hashes; its arithmetic and refusal rules are shared.

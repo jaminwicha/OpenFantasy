@@ -38,6 +38,7 @@ public static class WorldAdmissionValidator
         admission.ReadQuests();
         admission.ReadConstruction();
         admission.ReadReservoirs();
+        admission.ReadReservoirSeals();
         admission.ReadTransport();
         admission.ReadExcavation();
         admission.ReadStructuralPolicy();
@@ -151,6 +152,35 @@ public static class WorldAdmissionValidator
             {
                 Add(geometry.ReservoirId, WorldIdentityRole.Reservoir, unique: true);
             }
+        }
+
+        internal void ReadReservoirSeals()
+        {
+            if (world.ReservoirSeals is not { } seals)
+            {
+                return;
+            }
+            RequireMaterialPin(seals.Liquid.DefinitionId, seals.Liquid.Version);
+            foreach (var rule in seals.Rules)
+            {
+                RequireMaterialPin(rule.Material.DefinitionId, rule.Material.Version);
+            }
+        }
+
+        private void RequireMaterialPin(EntityId identity, ContentHash version)
+        {
+            // A durable sealing rule calibrates existing material; it does not introduce a new
+            // content definition or replace an admitted terrain/Production pin, even when unused.
+            bool terrainMaterial = terrain.TryGetMaterialPin(identity, out ContentHash? terrainVersion)
+                && terrainVersion == version;
+            bool admittedMaterial = _roles.TryGetValue(identity, out WorldIdentityRole role)
+                && role == WorldIdentityRole.ItemDefinition
+                && _definitionPins.TryGetValue(identity, out ContentHash? admittedVersion) && admittedVersion == version;
+            if (!terrainMaterial && !admittedMaterial)
+            {
+                throw new ArgumentException("Owned reservoir sealing requires exact already admitted material definitions.");
+            }
+            Definition(identity, WorldIdentityRole.ItemDefinition, version);
         }
 
         internal void ReadExcavation()

@@ -52,6 +52,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 16 | Reserved advancing interval, retained geometric consequence cursor and original deferred receipt |
 | 17 | Explicit foreign-construction support, bounded coupled intact settlement policy and its reserved consequence cursor |
 | 18 | Explicit event-ordered intact descent with a V3 cursor and actual scene-dependent work reservations |
+| 19 | Complete fixed-reservoir world with immutable sealing rules and mandatory geometric containment |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -107,6 +108,13 @@ ordinary successors retain the mode. The actual event scene determines the work 
 continuations and capacity reservations. Schema four and the exclusive writer remain shared; prior
 profiles keep their recorded interpretation.
 
+[Profile nineteen](reservoir-containment.md) stores a direct eighteen-field root with raw spatial
+version one, fixed construction, the complete reservoir archive and the complete sealing-policy archive.
+It uses schema three's atomic terminal transaction, not schema four's consequence cursor. Its fresh
+admission accepts an unplayed, unheld profile-eight basis and pins the prior admission plus the complete
+policy hash. Ordinary actions retain that policy. All geometric and material-pin checks run during
+decode and complete candidate admission; reading an older save never installs this interpretation.
+
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
 [profile-seven codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV7.cs) embeds a genuine
@@ -152,7 +160,8 @@ instants (signed-64 days plus signed-32 milliseconds) and canonical basin input 
 The command is bounded to 2,048 bytes and sixteen input rows. Decode rejects partial/duplicate/reordered
 rows, hidden dry funding, unknown kinds/versions and trailing fields by validating and re-encoding exact bytes.
 
-Action version and world profile version are distinct: runoff controls execute in profiles eight and nine.
+Action version and world profile version are distinct: runoff controls execute in profiles eight, nine
+and nineteen.
 Both constructor and decoder paths reject their insertion into older world batches; the local session
 checks the profile before queuing. Existing snapshot/step encodings, global command/batch bounds and
 schema-three tables remain unchanged. Accepted capacity-only operations and rejected controls receive

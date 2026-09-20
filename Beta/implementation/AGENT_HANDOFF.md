@@ -42,6 +42,26 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Durable fixed reservoir containment](p02/reservoir-containment/README.md) adds fresh profile nineteen:
+one retained sealing policy, actual closed nominal geometry, complete material pins and atomic action
+admission over the existing reservoir owner. Direct canonical decoding and exact schema-three recovery
+retain that interpretation; profiles one through eighteen remain unchanged. **1,499 distinct cases pass**:
+full 953 Core + 545 Hosting/client regression, followed by twelve targeted cases including one new
+critic-requested construction rollback case. The final build has zero warnings/errors. Twelve real Host
+calls and two external commit-boundary kills pass; headless Godot/Host foundation and the two-process farm
+control pass. The preserved 1,334-commit profile-eighteen worksite replays exactly, unchanged.
+
+Independent review caught a test-coverage gap: the ice refusal used an older material rule. The added
+honest overhang earns funding, movement and labor, succeeds under the older profile, then proves that
+owned containment refuses the identical completion without consuming materials/work or suppressing
+unrelated movement/time. Exact reopen/history pass. [Architecture](../Runtime/docs/architecture/reservoir-containment.md)
+and the [continuation design](p02/reservoir-containment/DESIGN.md) distinguish fixed sealing from physical
+shutters/ports, structural fluid loads, conserved breach/spill outcomes and occupied wet space. Those
+remain required full P01/P02 dependencies, along with flowing/reactive materials and playable water.
+This checkpoint changes no default rendered scene and closes no full phase, performance, art or device gate.
+
+## Prior playable worksite
+
 [Playable local worksite](p02/playable-worksite/README.md) is qualified within its recorded bounds:
 **953 Core + 534 Hosting/client cases passed** after the movement-admission correction (1,487 total,
 zero failed/skipped). Fresh profile18 content includes two genuinely funded
@@ -73,8 +93,8 @@ qualified worksite checkpoint is preserved on `codex/milestone-playable-worksite
 Initial implementation remains at `e3e9040`; cache/strict probes at `f57b021`. Ecosystem `ffc0ad6` records
 native observation/deadline lessons, with three installed skill copies verified. The final legacy-wheel
 control also passes; native profiling limitations remain linked in the packet.
-Following dependencies remain the full P01/P02 integration and feasibility plan, including durable
-containment and wet composition, broader physical consequences, macro/history scaling and presentation.
+Following dependencies remain the full P01/P02 integration and feasibility plan, including wet composition beyond fixed
+containment, broader physical consequences, macro/history scaling and presentation.
 The worksite proves a bounded playable connection, not production latency, art, UX, devices or a full
 phase. Demonstration material calibration, provisional cutaways/HUD and generic reopened hints are explicit.
 
@@ -195,7 +215,7 @@ Prior dependencies remain preserved:
   actions, process-kill recovery and exact history. [Network preparation](p01/watershed-network/README.md),
   `23851fa`, and [single-basin persistence](p01/watershed-admission/README.md), `bf96ed9`, remain preserved.
 
-Remaining composition dependencies include durable containment policy and wet-terrain/construction/
+Remaining composition dependencies extend retained fixed containment into wet-terrain/construction/
 occupancy/custody publication, plus complete macro crust/boundary history, climate/water partitioning
 and coast connections.
 Extending discrete transport requires original/delivered/remaining source intervals and incoming holds,

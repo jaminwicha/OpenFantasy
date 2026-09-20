@@ -29,6 +29,7 @@ different kind of person.
 | [Physical construction](construction-physical.md) | How do member condition and placement retain completed work, material ownership and atomic persistence? |
 | [Reservoir transport](reservoir-transport.md) | How do scheduled gates move actual water, preserve provenance and share time/capacity? |
 | [Reservoir boundaries](reservoir-boundaries.md) | What proves floors and walls against actual terrain and completed material, including narrow gaps? |
+| [Reservoir containment](reservoir-containment.md) | How do retained seals govern complete world admission, real actions and exact recovery? |
 | [Actors and society](actors-and-society.md) | How do bodies, knowledge, relationships, cultures, institutions and narratives interact? |
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
 | [Presentation and interaction](presentation-and-interaction.md) | How do actions, menus, maps, animation, art and audio express the simulation? |

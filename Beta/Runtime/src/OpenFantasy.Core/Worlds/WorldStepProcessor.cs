@@ -98,31 +98,36 @@ public sealed class WorldStepProcessor
         ulong advancingSteps = state.AdvancingSteps;
         IEnumerable<WorldResident> residents = state.Residents;
 
-        bool FitsStructuralPolicy(CountedAuthorityState proposedInventory,
+        bool FitsCompleteCandidate(CountedAuthorityState proposedInventory,
             IEnumerable<DialogueSession> proposedDialogues, ConstructionPhysicalSnapshot? proposedPhysical,
+            LiquidReservoirState? proposedReservoirs, ReservoirTransportState? proposedTransport,
             out WorldSnapshot? admittedCandidate)
         {
             admittedCandidate = null;
-            if (state.StructuralPolicy is null)
+            if (state.StructuralPolicy is null && state.ReservoirSeals is null)
             {
                 return true;
             }
             try
             {
                 // Use the same complete root admission as publication. This includes actual carried
-                // goods and every occupant; checking only the acting character misses shared loads.
+                // goods and every occupant, including the full nominal contained reservoir envelope.
                 // During action preparation the selected advancing step has not yet been applied.
                 // Its earned labor is validated against that eventual time boundary, exactly once.
-                bool beforeTimeBoundary = state.StructuralSettlementPolicy is not null
+                bool beforeTimeBoundary = (state.StructuralSettlementPolicy is not null || state.ReservoirSeals is not null)
                     && batch.Kind == WorldBatchKind.AdvancingStep && advancingSteps == state.AdvancingSteps;
                 var validationCalendar = beforeTimeBoundary ? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep) : calendar;
                 var validationResidents = beforeTimeBoundary ? state.Residents.Select(resident => resident.ExperienceStep()) : residents;
                 ulong validationSteps = beforeTimeBoundary ? checked(advancingSteps + 1) : advancingSteps;
                 var validationGathering = beforeTimeBoundary ? gathering?.AdvanceStep(validationSteps) : gathering;
+                // The contained profile must join the accepted material candidate with its own
+                // reconciled physical storage. Earlier profiles retain their exact interpreter.
+                var validationReservoirs = state.ReservoirSeals is not null ? proposedReservoirs : reservoirs;
+                var validationTransport = state.ReservoirSeals is not null ? proposedTransport : transport;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    reservoirs, transport, excavation, proposedPhysical);
-                if (state.ConsequencePolicy is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
+                    validationReservoirs, validationTransport, excavation, proposedPhysical);
+                if (state.ConsequencePolicy is not null || state.ReservoirSeals is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
                 admittedCandidate = admitted;
                 return true;
             }
@@ -279,7 +284,8 @@ public sealed class WorldStepProcessor
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
                 || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
-                || !FitsStructuralPolicy(resolution.Inventory, resolution.Dialogues, reconciledPhysical, out _))
+                || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
+                    reconciled, reconciledTransport, out _))
             {
                 excavation = previousExcavation;
                 gathering = previousGathering;
@@ -362,7 +368,7 @@ public sealed class WorldStepProcessor
                     {
                         LocalSpatialSnapshot previousSpace = space;
                         space = space.WithActors(space.Actors.Select(other => other.ActorId == input.ActorId ? move.Candidate! : other));
-                        if (FitsStructuralPolicy(inventory, dialogues, physical, out WorldSnapshot? admitted))
+                        if (FitsCompleteCandidate(inventory, dialogues, physical, reservoirs, transport, out WorldSnapshot? admitted))
                         {
                             // Only movement runs after the actual time boundary and all action effects.
                             // Later rejected moves restore this same space; successful moves replace it.

@@ -1,0 +1,4 @@
+# Disposable save files stay local; reports retain their identities and hashes.
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
