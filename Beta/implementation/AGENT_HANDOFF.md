@@ -32,39 +32,46 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Live coupled settlement](p02/coupled-settlement/README.md) is qualified; implementation `eee42ee`,
-code/evidence `463509d`, preserved on `codex/milestone-coupled-settlement`.
-The [architecture](../Runtime/docs/architecture/coupled-settlement.md) defines fresh profile17's owned
-foreign-assembly support, exact bearing-based moving group, common harmless trajectory and complete
-outside collision scene. Dynamic work/source/result/journal reservations extend the existing durable
-owner. Earlier profiles retain their bytes and limits; no played-save migration is implied.
+[Event-ordered descent assessment](p02/event-descent/README.md) is qualified; implementation `8279268`,
+code/evidence `25da978`, preserved on `codex/milestone-event-descent-assessment`. The
+[architecture](../Runtime/docs/architecture/event-descent.md) describes immutable event work, different
+landing distances, stopped-material reinsertion, complete-scene world binding and exact impact demand.
+This is a collision/assessment prerequisite. Live profile17 remains the qualified common-trajectory owner;
+no world/journal/pending-work interpretation, default gameplay or existing simulation source changed.
 
-[Evidence](p02/coupled-settlement/qualification/verification-summary.json): **1,409 tests pass
-(918 Core + 491 Hosting), 24 new**; 59 ordinary Host calls, six real before/after trigger/continuation/
-terminal kills, headless foundation/farm, 20 exact new and 26 exact legacy fixture files. All 547 source
-pins, 369 reference links, 22 frozen documents and the exact 19-file predecessor index pass. The real
-154-commit setup funds/builds both assemblies and earns the NPC climb; seven actual geometric units
-then lower three backed members and the rider together, publishing one receipt/source/time interval.
-The largest ordinary call is 19.36 seconds under the unchanged 30-second limit; production latency,
-rendered motion and full phase acceptance are not claimed.
+[Evidence](p02/event-descent/qualification/verification-summary.json): **1,435 distinct passing tests
+(942 Core + 493 Hosting), 26 new**, eight actual read-only Host calls and unchanged complete save/fixture
+bytes. Core scenes prove 256/768 independent drops and a higher slab/rider caught after 704 by material
+that stopped after 256. The actual funded-world assessment matches the original three-member/rider fall
+in 11 geometric units, conserving backing, body condition and real mass without source/time publication.
+All 557 source pins, 380 architecture links, 22 frozen documents and the exact unrelated predecessor index
+pass. Maximum Host call 7.35 seconds under the same 30-second deadline; no production latency is claimed.
 
-A lead-found authority/diagnostic foundation-retirement defect was reproduced, corrected and retained
-as a red/green regression. One bounded Fable review completed for $1.44401475 API-equivalent usage,
-found no substantiated unsafe acceptance, and prompted exact-bearing carried-base selection. Its
-[partial coverage and dispositions](p02/coupled-settlement/qualification/review-dispositions.md) remain
-explicit. Larger retrospective fleets still lack sufficient demonstrated value; standing recommended
-bounded review approval remains. Ecosystem `5aa4099` preserves the authority-boundary lesson with three
-guarded installed updates; the same rule is in the local implementation instructions.
+One bounded Fable review took 154.773 seconds and $1.1310065 API-equivalent, finding no substantiated
+collision/work-bound defect. Its two hypotheses were resolved by a constructor invariant and a new
+paired head-contact regression. [Coverage and economics](p02/event-descent/qualification/review-dispositions.md)
+remain partial; broader review fleets still lack demonstrated value. The full solution regression passed;
+a final Core-only repeat covered the two added tests with all application pins unchanged. The actual new
+Host probe ran; the full all-systems verifier and rendered/device acceptance did not.
 
-**Next dependency:** unequal interacting trajectories/contact response and conserved fracture/debris,
-with explicit harmful-impact/injury ownership. Preserve exact support, outside collision closure,
-material/custody, body condition, original command/time and durable bounds; a rigid shared translation
-must not become a permissive fallback. Wet composition, generated extraction rights and multi-floor
-presentation remain open, as do production scale/exports/devices, 1–4-player pacing and the whole campaign.
-No full phase gate is closed. Development remains on `codex/runtime-foundation`.
+**Next dependency:** owned contact response and whole-member joint separation with conserved located
+material, followed by versioned durable integration of interacting trajectories. Member mass shares and
+transmitted load are not salvage rights; impact energy is not an injury/toughness policy. Preserve complete
+collision/support, body condition, command/time and original source/backing. The larger event-work bound
+requires an explicit journal/outcome/root-capacity proof before replacing the live pending owner; tiny
+continuation slices cannot bypass the existing limits. Sub-member fracture, harmful injuries, longer
+flight, wet composition, generated extraction rights and multi-floor presentation remain open, as do
+production scale/exports/devices, 1–4-player pacing and the whole campaign. No full phase gate is closed.
+Development remains on `codex/runtime-foundation`.
 
 Prior dependencies remain preserved:
 
+- [Live coupled settlement](p02/coupled-settlement/README.md), `463509d`, milestone
+  `codex/milestone-coupled-settlement`: fresh profile17 owned foreign support, exact bearing-based group,
+  common harmless motion and dynamic durable reservations; 1,409 tests, 59 Host calls/six kills, headless
+  foundation/farm and 20 new/26 old exact fixture files. The lead-found foundation admission regression
+  was fixed; its authority/diagnostic lesson is retained in local doctrine and ecosystem `5aa4099`.
+  External critique was partial. Live unequal trajectories/fracture, rendering and full gates remain open.
 - [Coupled contact assessment](p02/coupled-contact-assessment/README.md), `7e16d11`, milestone
   `codex/milestone-coupled-contact-assessment`: read-only complete contact/policy pins, exact foreign support,
   shared mass and conservative neighborhoods; 1,385 tests and 26 old exact files. Three bounded external

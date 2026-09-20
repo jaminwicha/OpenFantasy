@@ -22,6 +22,7 @@ branches to record major progress. This is shared project discipline for all aut
 
 | Branch | Commit | Qualified scope and limits |
 |---|---|---|
+| `codex/milestone-event-descent-assessment` | `25da978` | Event-ordered unequal intact geometric descents, stopped-body reinsertion and complete-world read-only assessment with exact impact demand. 1,435 distinct tests, eight actual Host inspections, unchanged save bytes and bounded partial Fable critique. [Evidence](p02/event-descent/README.md). No live profile change, fracture/debris/injury, production latency/rendering or full-phase closure. |
 | `codex/milestone-coupled-settlement` | `463509d` | Fresh profile17 live cross-assembly support and one shared intact harmless trajectory, complete outside sweeps, rider/material conservation and dynamic durable/journal reservations. 1,409 tests, 59 ordinary Host calls/six kills, headless foundation/farm, 20 new/26 legacy exact files. [Evidence](p02/coupled-settlement/README.md) retains the reproduced admission defect and partial external review. Unequal trajectories, fracture/impact/injury, wet composition, presentation, production performance and full gates remain open. |
 | `codex/milestone-coupled-contact-assessment` | `7e16d11` | Read-only exact foreign-assembly support, complete candidate/policy pins, shared mass accounting and conservative load neighborhoods; 1,385 tests, 26 byte-exact prior fixtures and preserved source/design/index contracts. [Evidence](p02/coupled-contact-assessment/README.md). Live coupled motion/publication and whole phase gates remain open. Three bounded external critics yielded a contract clarification, no verified runtime defect and one budget failure; fleet expansion remains evidence-dependent. |
 | `codex/milestone-farm-input-foundation` | `b1482db` | Connected farm/gather/craft/quest/NPC construction and client input foundation; 825 tests and retained native journeys. [Evidence](p01/input-focus/README.md). Provisional art, general UI, physical device/export qualification and full phase exits remain open. |
@@ -220,3 +221,10 @@ Development stays on `codex/runtime-foundation`; every previous marker, frozen s
 unrelated predecessor index remains intact. The original admission failure remains recorded. Ecosystem
 `5aa4099` preserves the reusable diagnostic/authority boundary. No checkout switch, force update, push,
 merge or full-phase/production acceptance accompanies this marker.
+
+The event-descent-assessment marker preserves `25da97892d72629e7bdb425b4608aba658645e0f`, with implementation
+`8279268` and pre-change checkpoint `codex/checkpoint-event-descent-base`. Its unequal trajectories are
+qualified domain calculations; the retained live profile17 still publishes its original common descent.
+Every original simulation source is unchanged. Development remains on `codex/runtime-foundation`, with
+all earlier markers, frozen designs and the exact unrelated predecessor index preserved. No checkout
+switch, force move, push, merge or full-phase/production acceptance accompanies this marker.
