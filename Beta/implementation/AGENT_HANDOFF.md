@@ -32,44 +32,45 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `ca724fb`, preserved on `codex/milestone-structural-policy-motion`;
-[packet](p02/collapse-motion/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `c6b032c`, preserved on `codex/milestone-structural-policy-admission`;
+[packet](p02/structural-policy-admission/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Complete authored `ConstructionLoadPolicy` now owns exact scope, all admitted templates, stable source/
-material anchors and calibrated body/item masses. Its canonical expected-hash archive validates identity
-roles, checked projection, full catalogs and acyclic topology even for unbuilt definitions. Weak or
-unsupported acyclic designs remain valid failure-resolution inputs. Binding validates the complete
-construction catalog before selecting installed assemblies; it does not install world law. A future
-pending owner must include the full policy hash separately from the existing active-model `InputPin`.
+Fresh dry profile fourteen owns the full immutable load policy in a direct nineteen-field root. Admission
+pins prior interpretation plus complete policy; ordinary successors retain it. Encoding is pure and does
+not recursively bind a graph. Foundation and derived actor-load identities, complete catalogs and unused
+calibration pins join world identity admission. Old formats and default farm remain unchanged; no migration.
 
-`VerticalDescentQuery` accepts bounded unsupported candidate scenes while preserving strict stable-world
-admission. Every solid/material top and stationary actor head participates in first contact. The complete
-swept body must be clear; exact same-plane footing is required. Unknown terrain, partial/nonbearing ledges,
-actor contact and a clear finite horizon remain explicit outcomes, never invented safe landings. Queries
-move no state and do not apply time, impacts, damage or load certification.
+`WorldStructuralBinding` rejects any failure in the first complete load pass. Every action candidate and
+ordinary actor move checks all actual current occupants, carried goods, fabrication and physical state
+before publication. A failed action restores its entire candidate before generated IDs or a successful receipt are
+issued; failed movement preserves that actor's pose/revision. Advancing steps add their normal time once,
+while held actions retain held timing. These are terminal refusals: no pending consequence job is created.
 
-Real quest-funded physical construction and ordinary player/NPC travel prove actor/floor contact, a deck's
-own remaining-leg obstruction, landing on reintroduced deck material, and both actor/material contact with
-an NPC below. Separate archived-policy binding recovers the exact occupied-world graph and conserved
-failure assessment. Candidate obstacle omissions are supplied query inputs, not published collapse.
+Critique found that primary-inventory diagnostic loads omitted explicitly builder-carried project custody.
+Profile fourteen now counts its raw stock and transformed byproducts, excluding only installed backing
+allocated to members. Nonempty unlocated custody is refused; empty spare storage remains valid. Real quest
+delivery shifts weight from donor to builder, and real installation moves exactly the member mass out of
+builder-carried goods. Total mass remains equal from genesis through delivery, completion and upstairs travel.
+Old diagnostic profiles retain their primary-inventory interpretation and exact graph bytes.
 
-[Qualification](p02/collapse-motion/qualification/verification-summary.json): **1,321 managed tests
-(881 Core + 440 Hosting), 47 new, zero failures/skips**, clean solution build. Six new fixture files and
-five prior structural fixtures recreate byte-for-byte. All 300 architecture links, 22 frozen specifications
-and the exact 19-file predecessor index pass. Bounded native critique found the inactive-template cycle
-gap; constructor validation and archive rejection resolve it with weak-DAG controls. Factual review
-corrected the 16-definition bound and full-policy pin obligation. Initial compiler and one-off preservation
-checker failures remain recorded. No gate/deadline was weakened and no external Claude/Fable call was used.
-No new native client, external crash campaign, rendered/device/art, performance or full-phase acceptance
-is claimed; this checkpoint adds read-only domain dependencies and leaves actual collapse integration open.
+[Qualification](p02/structural-policy-admission/qualification/verification-summary.json): **1,334 tests
+(881 Core + 453 Hosting), 13 new, zero failures/skips**, clean solution build. The new profile's 17 ordinary Host
+calls/two external commit kills and prior profile's 26-call/two-kill control pass, with complete ledger, retry and
+history checks. Actual Host/Godot headless foundation and native farm pass. Seven new and eighteen prior
+fixture files recreate exactly. All 306 architecture links, 22 frozen specs and the exact 19-file predecessor
+index pass. Independent source correction recheck found no remaining carried-stock ownership gap. Two
+analyzer errors and one invalid held-dialogue fixture remain recorded with fixes. No gates/deadlines were
+weakened, no Claude/Fable call used, and no live collapse, performance, rendered/device/art or phase closure
+is claimed. The checker ran directly with its new verifier hook; the full all-systems campaign did not run.
 
-**Next dependency:** actual coupled support-removal consequences. Install the canonical calibrated policy
-with explicit fresh-profile root ownership, revisions and the full affected dependency closure, including
-movement, carried goods and neighbors. Existing excavation
-still refuses unsupported geometry; prepare the entire terrain/member/occupant/material consequence before
+**Next dependency:** actual coupled support-removal and overload consequences. The durable policy and
+stable local action/movement boundary now exist; extend them with the full affected neighbor closure.
+Existing actions still refuse unstable geometry or loads; prepare the entire terrain/member/occupant/material consequence before
 final admission, retaining the final swing/source issuance until publication. Add durable pending work with
 a distinct continuation contract that does not advance calendar, exposure or effort again; the host must
-resume it without actor input. Pin the stable job basis separately from its own cursor. Publish terrain,
+resume it without actor input. Pin the stable job basis separately from its own cursor. Profile14's model
+InputPin includes the full policy transitively through WorldHash; a pending basis must preserve that complete
+policy dependency without incorporating its changing continuation record. Publish terrain,
 physical construction, custody, actors/effects, identities and receipts atomically, then qualify actual
 restart/crash/retry/history. Do not call static plans or lifecycle ownership live collapse.
 
@@ -80,12 +81,22 @@ collision and its original installed output; fracture/debris needs a conserved t
 copies of a quantity-one lot. Extend resting load paths and collision grouping explicitly before fragments
 exceed the existing assembly span. Pending future IDs must not reserve twice or alias existing cause roles.
 
+Foundation declarations currently require retained solid source cells. Actual terrain removal must explicitly
+retire their active support while preserving historical policy, not silently prune stale anchors. Standing-only
+binding cannot certify detached material. Every material custody requires explicit load location, including
+future storage/vehicles; do not revert to primary-inventory-only accounting when adding new systems.
+
 Elevated work/task interaction, usable multi-floor presentation, generated extraction rights, hardness/
 tools and production throughput remain open. Wet composition still requires durable sealing policy,
 real openings, displaced volume and conserved spill handling; diagnostic policy cannot replace law.
 
 Prior dependencies remain preserved:
 
+- [Policy and swept descent](p02/collapse-motion/README.md), `ca724fb`, milestone
+  `codex/milestone-structural-policy-motion`: complete canonical policy asset, inactive-template DAG checks
+  and exact whole-body vertical first-contact queries; 1,321 tests, six new/five prior files reproduced.
+  Read-only candidate geometry with clear partial/actor/unknown/horizon outcomes; no published motion,
+  impact, policy authority at that checkpoint or full-phase acceptance.
 - [Physical construction](p02/construction-physical/README.md), `159e431`, milestone
   `codex/milestone-construction-physical`: fresh profile13 complete member condition/displacement ownership,
   atomic completion identities, conserved installed backing and exact-component support admission; 1,274

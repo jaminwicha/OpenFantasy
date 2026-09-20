@@ -50,6 +50,7 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-structural-load-planning` | `ca149cb` | Actual funded member/actor mass binding, explicitly rated DAG and immutable bounded cascading failure plans with trusted-graph canonical resume; 1,241 tests, 14 fresh Host inspections, independent integer/byte oracle and headless foundation. [Evidence](p02/structural-loads/README.md). Read-only diagnostic scope: no live collapse, debris, actor falling, world-profile publication, production strength/latency or full-gate closure. |
 | `codex/milestone-construction-physical` | `159e431` | Fresh dry profile13 retains complete physical member lifecycle independently of fabrication, with conserved installed material and atomic completion/identity publication. 1,274 tests, 26 new-profile Host calls/two kills, 20 legacy calls/two kills, headless foundation/farm and seven identical recreated files. [Evidence](p02/construction-physical/README.md). Exact-component support and pre-work refusal are qualified; live collapse, debris, actor falling, universal load admission, production performance/art/devices and full gates remain open. |
 | `codex/milestone-structural-policy-motion` | `ca724fb` | Complete canonical authored load policy, inactive-template topology validation and exact whole-body vertical first-contact queries. 1,321 managed tests, 47 new, six new/five prior fixture files recreated exactly, bounded native critique and 300 reference links. [Evidence](p02/collapse-motion/README.md). Read-only dependencies: no installed world policy, live collapse/impact/debris, pending continuation, new native/crash campaign, performance/art/devices or full-gate closure. |
+| `codex/milestone-structural-policy-admission` | `c6b032c` | Fresh profile14 durable full policy, identity ownership and stable complete local action/movement gates; builder-carried stock/byproduct accounting conserves mass without double-counting installed backing. 1,334 tests, new17/two-kill and prior26/two-kill Host controls, headless foundation/farm and25 identical fixture files. [Evidence](p02/structural-policy-admission/README.md). Terminal refusals only: no pending/live collapse, impacts/debris, production performance/art/devices or full-gate closure. |
 
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
@@ -184,3 +185,9 @@ timeless reference and bounded managed/funded-world qualification. Candidate con
 do not publish consequences. Live policy ownership and complete atomic collapse remain open. Development
 stays on `codex/runtime-foundation`; previous markers, frozen specifications and the exact unrelated
 predecessor index remain intact. No switch, force move, push, merge or phase closure accompanies this marker.
+
+The structural-policy-admission marker preserves `c6b032cf5c63dd062a39e64612df0254c8b875df`, including
+runtime policy authority, carried-project mass correction, timeless references and real recovery qualification.
+A terminal overload refusal creates no consequence job; full coupled collapse remains open. Development
+stays on `codex/runtime-foundation`; earlier markers, frozen specifications and the exact unrelated predecessor
+index are preserved. No checkout switch, force move, push, merge or full-phase closure accompanies this marker.
