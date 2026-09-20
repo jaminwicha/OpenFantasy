@@ -32,57 +32,58 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `92dd90a`, preserved on `codex/milestone-structural-settlement`;
-[packet](p02/structural-settlement/README.md), [continuation integration map](p02/structural-settlement/CONTINUATION_DESIGN.md)
+Code/evidence: `757bf18`, preserved on `codex/milestone-consequence-continuation`;
+[packet](p02/consequence-continuation/README.md), [architecture contract](../Runtime/docs/architecture/consequence-continuation.md)
 and [milestone ledger](GIT_MILESTONES.md).
 
-Fresh dry profile fifteen owns immutable harmless-settlement calibration in a direct twenty-field root.
-Actual excavation can lower one intact rigid assembly and its riders onto known rated terrain within
-the original selected exploration interval. Every member/rider has a complete swept path against outside
-obstacles. Settled material is reinserted before independent actors seek landings. Missing ground, partial
-ledges, actor/foreign-member collisions, unsafe drops and unresolved flight refuse the entire action.
-Moved actors cannot also consume their selected XY movement. Material backing, condition, identities and
-original joints remain intact; current origins drive the final complete load graph. Removed foundations
-retain their policy identities and retire active contact only through exact completed excavation ownership.
+Fresh dry profile sixteen retains an immutable consequence budget and one accepted excavation command.
+The isolated trigger reserves its interval while stable terrain, actors, material, effort and clocks remain
+unchanged. Real geometric work advances through saved cursors; final publication consumes the completed
+calculation and charges exactly one interval, including refusal. The original command gets one terminal
+receipt, and material is issued only once. This refines the earlier clock-at-trigger proposal; the
+[original integration map](p02/structural-settlement/CONTINUATION_DESIGN.md) remains as annotated design history.
 
-The real funded fixture performs quest delivery, NPC fabrication, walking, climbing and excavation, then
-drops a slab and rider one cell while suppressing the rider's selected +32X input. A real funded overhang
-refuses to pass through the excavator. Final work/source/terrain/member/occupant/receipt publication is one
-ordinary commit. A calibrated one-metre fall takes 452 integer milliseconds within the original 1,800ms
-step. These are authored harmless thresholds; no damaging impact, fracture or universal physics claim.
-Profile fifteen previews clock, exposure and gathering together at action admission; older replay semantics
-remain unchanged. The default farm and all earlier formats retain their existing admission.
+Schema four has explicit continuation kind four. Exact pending retries remain authenticated; the session
+resumes before readiness without new player/NPC controls. Stopping cancels waiting, not saved work. Read-only
+opening/history never advances the cursor. Temporary source/result reservations prevent future identity
+collisions, and journal capacity is checked before accepting a job. Resolving is a distinct view/run state.
 
-[Qualification](p02/structural-settlement/qualification/verification-summary.json): **1,350 tests pass
-(890 Core + 460 Hosting), 16 new**, clean build. The settlement probe passes 17 new-profile ordinary calls,
-five legacy-refusal calls and two external kills; prior profile 14 completion passes 17 calls/two kills.
-Headless Host/Godot foundation and native farm pass. Fourteen old fixture files recreate exactly; 319
-architecture links, 22 frozen specs and the exact 19-file predecessor index pass. Native source critique,
-independent kernel tests and Python byte/ledger oracle are retained. A test-helper compile error, invalid
-overhang access fixture, system-SDK mismatch and obsolete probe movement expectation were fixed without
-weakening runtime contracts or deadlines; original failures remain in the packet. Corrected full Hosting
-regression passes. No Claude/Fable used, rendered/device/art/performance acceptance or phase closure claimed.
-The targeted verifier hook ran directly; the full all-systems campaign did not run.
+[Qualification](p02/consequence-continuation/qualification/verification-summary.json): **1,371 tests pass
+(900 Core + 471 Hosting), 21 new**, clean build. The new probe passes 43 ordinary Host calls/six real kills;
+older15/14 controls pass 22 ordinary calls/two kills. Headless foundation/farm pass. Ten old fixture files and
+16 new continuation files recreate exactly; 336 architecture links, 22 frozen specs and the exact 19-file
+predecessor index pass. Full journal/outcome/identity comparison and exact history are independently checked.
+Native critics reviewed Core/Hosting integration, independent tests, documentation and probe assertions.
+A geometry-preparation overflow refusal was corrected; original compile/assertion failures remain recorded.
 
-**Next dependency:** broaden the actual consequence owner beyond one harmless intact assembly, with durable
-pending work and a complete affected neighbor closure. The atomic slice has no pending cursor. Use the
-[retained protocol map](p02/structural-settlement/CONTINUATION_DESIGN.md): explicit continuation batch and
-schema kind, exhaustive deferred receipt accounting, exact pending retries and host resume before client
-readiness. The trigger spends one time interval; continuations add no calendar/exposure/effort. Preserve
-final swing/source entitlement until complete publication, reserve original command once and result/spawn
-once, and pin complete stable dependencies separately from the changing cursor. Qualify actual saved
-pending restart/crash/retry/history; read-only history must never advance work.
+The first process probe exceeded the 30-second deadline on one historical read. Its cause is unconfirmed.
+The same command later passes in 4.73 seconds; the complete serial probe's maximum ordinary call is 4.90 seconds
+under the unchanged 30-second limit. The original failure remains retained. Production replay/latency is
+unqualified; query-count slicing does not bound setup, restoration, complete-root hashing or load admission.
+No full all-systems verifier, new rendered consequence/device/art acceptance or phase closure is claimed.
 
-Multiple moving assemblies, surviving/deforming joints, harmful impacts/injuries, long flight and explicit
-airborne ownership remain open. Existing geometry admission requires terrain-grounded components;
-cross-assembly resting needs explicit contact and load rules. One installed quantity cannot become copied
-debris lots; fracture needs conserved transformation and collision grouping beyond existing span limits.
-The whole-scene graph/hash cost is not performance-qualified. Keep complete carried project/byproduct mass
-and explicit load ownership for every future storage or vehicle. Generated extraction rights/hardness,
-elevated interaction, multi-floor presentation and wet containment/opening/spill composition remain open.
+Local doctrine and ecosystem commit `e25ade3` clarify separating this task's heavy builds/regressions from
+deadline-sensitive probes while continuing lightweight work, preserving failures and keeping thresholds.
+The maintained verification skill and three installed copies are synchronized through guarded backups;
+[record](p02/consequence-continuation/qualification/ecosystem-learning.json). No external model calls were used.
+
+**Next dependency:** complete the affected-neighbor closure and explicit contact/load ownership needed for
+multiple interacting assemblies. Preserve the durable command/time/identity owner and prove actual coupled
+consequences through it. The geometric interpreter still admits one uniformly descending intact assembly,
+harmless member/body drops and terrain-grounded components. It does not yet admit surviving/deforming joints,
+fracture/debris, harmful impact/injury, long flight or cross-assembly resting. One installed quantity cannot
+become duplicated debris. Broader collision groups and physical transformations require conserved ownership.
+Generated extraction rights/hardness, elevated interaction, multi-floor presentation and wet containment/
+opening/spill composition remain open, along with the whole campaign below. Development remains on
+`codex/runtime-foundation`.
 
 Prior dependencies remain preserved:
 
+- [Atomic intact settlement](p02/structural-settlement/README.md), `92dd90a`, milestone
+  `codex/milestone-structural-settlement`: profile15 actual harmless member/rider descent with complete
+  sweeps, conserved backing/foundation identities and one-commit issuance; 1,350 tests, 24 new/legacy Host
+  invocations plus 19 prior-control invocations, four total kills, headless foundation/farm and 14 old exact
+  fixtures. Atomic interpretation at that checkpoint; broader closure and damage remain open.
 - [Durable structural policy](p02/structural-policy-admission/README.md), `c6b032c`, milestone
   `codex/milestone-structural-policy-admission`: profile14 immutable complete load policy, identities and
   stable action/movement gate, conserved builder-carried stock/byproducts and installed backing;1,334 tests,
