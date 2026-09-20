@@ -44,7 +44,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A production, quest or construction genesis requires its declared world schema.");
         }
-        if ((genesis.ProfileVersion is 16 or 17) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
+        if ((genesis.ProfileVersion is 16 or 17 or 18) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
         {
             throw new InvalidDataException("A consequence continuation genesis requires its exclusive world schema.");
         }
@@ -121,7 +121,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The third world schema has no accepted production, quest or construction admission.");
         }
-        if ((state.ProfileVersion is 16 or 17) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
+        if ((state.ProfileVersion is 16 or 17 or 18) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
         {
             throw new InvalidDataException("The consequence continuation world and its exclusive schema disagree.");
         }

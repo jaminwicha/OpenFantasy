@@ -147,7 +147,7 @@ public sealed class WorldStepProcessor
             IReadOnlyList<EntityId> createdIds = [];
             if (action.Intent is ClimbIntent)
             {
-                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17)
+                if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18)
                 {
                     throw new InvalidOperationException("This saved profile does not interpret assisted climbing.");
                 }

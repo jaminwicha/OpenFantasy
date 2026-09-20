@@ -67,7 +67,9 @@ public sealed class PendingExcavation
         try
         {
             var regions = ExcavationPlanner.CandidateRegions(basis.Space, site);
-            resolution = basis.CoupledSettlementPolicy is not null
+            resolution = basis.DescentMode == ConstructionDescentMode.EventOrdered
+                ? ConstructionSettlementResolution.BeginEventOrdered(basis, regions)
+                : basis.CoupledSettlementPolicy is not null
                 ? ConstructionSettlementResolution.BeginCoupled(basis, regions)
                 : ConstructionSettlementResolution.Begin(basis.Space, regions, basis.ConstructionPhysical!, basis.StructuralSettlementPolicy!);
         }
@@ -85,9 +87,10 @@ public sealed class PendingExcavation
 
     internal void ValidateForWorld(WorldSnapshot world)
     {
-        if (world.ProfileVersion is not 16 and not 17 || world.HasReadingHold || world.ConsequencePolicy!.ContentHash != Policy.ContentHash
+        if (world.ProfileVersion is not 16 and not 17 and not 18 || world.HasReadingHold || world.ConsequencePolicy!.ContentHash != Policy.ContentHash
             || Resolution.IsCoupled != (world.CoupledSettlementPolicy is not null)
-            || Resolution.MaximumTotalWorkUnits != (world.CoupledSettlementPolicy?.MaximumWorkUnits
+            || Resolution.IsEventOrdered != (world.DescentMode == ConstructionDescentMode.EventOrdered)
+            || !Resolution.IsEventOrdered && Resolution.MaximumTotalWorkUnits != (world.CoupledSettlementPolicy?.MaximumWorkUnits
                 ?? ConstructionSettlementResolution.MaximumWorkUnits)
             || world.Revision != checked(BasisRevision + 1 + ContinuationCount)
             || ContinuationCount >= MaximumContinuationCount

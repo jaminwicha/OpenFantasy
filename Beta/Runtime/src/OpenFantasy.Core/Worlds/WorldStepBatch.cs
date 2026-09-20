@@ -47,7 +47,7 @@ public sealed class WorldStepBatch
     {
         ArgumentNullException.ThrowIfNull(movement);
         ArgumentNullException.ThrowIfNull(actions);
-        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
+        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
         {
             throw new ArgumentException("The world batch kind or cause identity is invalid.");
         }
@@ -65,11 +65,11 @@ public sealed class WorldStepBatch
         foreach (WorldActionCommand command in actions)
         {
             ArgumentNullException.ThrowIfNull(command);
-            if (command.Intent is ClimbIntent && profileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17)
+            if (command.Intent is ClimbIntent && profileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18)
             {
                 throw new ArgumentException("Assisted climbing requires its explicit world profile.");
             }
-            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17)
+            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18)
             {
                 throw new ArgumentException("Excavation requires its explicit world profile.");
             }
@@ -105,7 +105,7 @@ public sealed class WorldStepBatch
             throw new ArgumentException("A held interaction has discrete actions and no movement samples.");
         }
         if (kind == WorldBatchKind.ConsequenceContinuation
-            && (profileVersion is not 16 and not 17 || moving.Count != 0 || acting.Count != 0))
+            && (profileVersion is not 16 and not 17 and not 18 || moving.Count != 0 || acting.Count != 0))
         {
             throw new ArgumentException("Consequence continuation accepts no new controls or commands.");
         }

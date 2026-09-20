@@ -15,7 +15,7 @@ public static class ConstructionSettlementResolutionCodecV2
     public static byte[] Encode(ConstructionSettlementResolution resolution)
     {
         ArgumentNullException.ThrowIfNull(resolution);
-        if (!resolution.IsCoupled) { throw new ArgumentException("This codec requires a coupled settlement cursor.", nameof(resolution)); }
+        if (!resolution.IsCoupled || resolution.IsEventOrdered) { throw new ArgumentException("This codec requires a common-trajectory coupled settlement cursor.", nameof(resolution)); }
         return CanonicalEncodingV1.Frame("construction.settlement-resolution.v2", resolution.InputPin.ToByteArray(),
             CanonicalEncodingV1.Unsigned64(resolution.CompletedWorkUnits),
             CanonicalEncodingV1.Unsigned64(resolution.IsFailed ? 2UL : resolution.IsComplete ? 1UL : 0UL));

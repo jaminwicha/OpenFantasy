@@ -53,7 +53,8 @@ A query-count budget is consequently not a wall-clock or production throughput g
 
 The pending basis is the complete job-free root at the captured original revision. Profile sixteen uses
 its fixed single-assembly interpretation; [profile seventeen](coupled-settlement.md) retains its own coupled
-policy, versioned cursor and assembly-dependent work bound.
+policy, versioned cursor and assembly-dependent work bound. [Profile eighteen](event-descent.md#explicit-live-interpretation)
+selects event-ordered intact motion and the actual scene-dependent event-query bound through its V3 cursor.
 Every semantic component and policy is pinned. Current revision and cursor are outside that basis;
 no duplicate world snapshot or inverse effort/respawn operation is needed. Saved pending revision must
 be `basis revision + 1 + continuation count`. Each nonterminal continuation accounts for its full authored
@@ -80,7 +81,8 @@ decoding validates canonical bytes and the complete stable world. The 16 MiB roo
 
 [Schema four](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaFour.cs) admits commit kind 4 for
 continuation; kind 3 remains reserved for migration. Profiles sixteen and seventeen require schema four, while earlier
-profiles retain their exact schemas. No separate pending table becomes a second authority. Commit, head,
+profiles retain their exact schemas. Profile eighteen also uses schema four and preserves the same sole
+transaction owner. No separate pending table becomes a second authority. Commit, head,
 checkpoint, terminal outcomes and issued identities are written in the existing single transaction.
 [WorldCommitPreparation](../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs) accounts exhaustively:
 an ordinary input receives its terminal outcome, an exact trigger becomes retained pending work, and a
@@ -102,6 +104,8 @@ Read-only opening and recorded-history reconstruction never advance the cursor o
 
 The durable owner covers one isolated excavation and bounded intact settlement. Profile seventeen adds
 [explicit coupled group ownership](coupled-settlement.md), including cross-assembly contact, one uniform
-trajectory and dynamic reservations. Concurrent jobs, unequal interacting trajectories, fracture/debris
-conservation, harmful impacts, surviving/deforming joints, long flight, wet displacement and world-wide
+trajectory and dynamic reservations. Profile eighteen explicitly selects the event kernel without changing
+earlier saves. Its one-site excavation trigger does not establish general independent release scenarios.
+Concurrent jobs, broader live removal/release geometry, fracture/debris conservation, harmful impacts,
+surviving/deforming joints, long flight, wet displacement and world-wide
 asynchronous simulation require separate domain owners and qualification. Durable continuation preserves those obligations; it does not substitute for them.

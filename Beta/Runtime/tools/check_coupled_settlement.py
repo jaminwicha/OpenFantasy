@@ -1,7 +1,8 @@
-"""Exercise a live coupled intact group, saved work, history and six external commit-boundary kills.
+"""Exercise a selected profile-17/18 intact group, saved work and six external commit-boundary kills.
 
 Independent canonical-frame and SQLite ledger checks accompany actual Host replay. Uses closed
 managed funded-world fixtures, never constructs an alternate database authority or relaxes deadlines.
+The shared fixture proves equal-distance group settlement, not unequal live trajectories.
 """
 import argparse
 from contextlib import closing
@@ -43,15 +44,18 @@ def main():
     for name in ('dotnet', 'fixture', 'output'):
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--configuration', default='Debug')
+    parser.add_argument('--profile', type=int, choices=(17, 18), default=17)
     args = parser.parse_args()
     runtime = Path(__file__).resolve().parents[1]
     dotnet, fixture, output = args.dotnet.resolve(), args.fixture.resolve(), args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
-    work = output.parent / ('coupled-settlement-' + uuid.uuid4().hex)
+    work = output.parent / (f'coupled-settlement-profile{args.profile}-' + uuid.uuid4().hex)
     work.mkdir()
     command = [str(dotnet), str(runtime / 'src/OpenFantasy.Host/bin' / args.configuration / 'net10.0/OpenFantasy.Host.dll')]
     env = dict(os.environ, DOTNET_ROOT=str(dotnet.parent))
     report = dict(status='running', startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                  profileVersion=args.profile,
+                  scope=f'Profile {args.profile}: funded equal-distance intact settlement, saved work, retry, history and six commit-boundary kills',
                   runs=[], crashes=[], independentStates=[], workDirectory=str(work),
                   unqualifiedClaims=['Whole-root CPU bound', 'Unequal trajectories, fracture or harmful impact',
                                      'Rendered or device presentation', 'Production acceptance'])
@@ -82,13 +86,22 @@ def main():
 
     try:
         expected = json.loads((fixture / 'expected.json').read_text())
+        assert expected.get('ProfileVersion', args.profile) == args.profile
+        root_fields = 24 if args.profile == 18 else 23
+        cursor_version = 3 if args.profile == 18 else 2
         paths = [fixture / expected['BeforeFile']] + [fixture / name for name in expected['PendingFiles']] + [fixture / expected['AfterFile']]
         batches = [fixture / expected['TriggerFile']] + [fixture / name for name in expected['ContinuationFiles']]
         refs = [database(path) for path in paths]
         assert len(paths) == len(batches) + 1 and len(batches) > 2
-        roots = [read_frame(value[0], 'world.snapshot', 23) for value in refs]
-        assert all(len(root) == 23 and number(root[1]) == 17 for root in roots)
+        roots = [read_frame(value[0], 'world.snapshot', root_fields) for value in refs]
+        assert all(len(root) == root_fields and number(root[1]) == args.profile for root in roots)
+        if args.profile == 18:
+            assert all(number(root[23]) == 2 for root in roots)
         assert all(value[1] == (fixture / 'genesis.bin').read_bytes() for value in refs)
+        genesis = read_frame(refs[0][1], 'world.snapshot', root_fields)
+        assert len(genesis) == root_fields and number(genesis[1]) == args.profile
+        if args.profile == 18:
+            assert number(genesis[23]) == 2
         policy = read_frame(roots[0][20], 'world.consequence-policy.v1', 2)
         budget = number(policy[1])
         assert budget == 1 and all(root[20] == roots[0][20] for root in roots)
@@ -103,18 +116,18 @@ def main():
         pin = None
         for index, root in enumerate(roots[1:-1]):
             assert all(value == roots[0][field] for field, value in enumerate(root[:21]) if field != 8)
-            job = read_frame(root[21], 'world.pending-excavation.v2', 7)
+            job = read_frame(root[21], f'world.pending-excavation.v{cursor_version}', 7)
             assert job[1] == action and job[2] == trigger[2]
             assert number(job[3]) == before['Revision'] and job[4].hex() == before['StateHash']
             assert number(job[5]) == index and number(root[8]) == before['Revision'] + 1 + index
-            cursor = read_frame(job[6], 'construction.settlement-resolution.v2', 4)
+            cursor = read_frame(job[6], f'construction.settlement-resolution.v{cursor_version}', 4)
             assert len(job[6]) <= 512 and number(cursor[2]) == index * budget and number(cursor[3]) == 0
             pin = cursor[1] if pin is None else pin
             assert cursor[1] == pin
         for index, path in enumerate(batches):
             batch = read_frame(path.read_bytes(), 'world.step-batch', 10)
             old, new = refs[index], refs[index + 1]
-            assert number(batch[1]) == 17 and number(batch[5]) == number(roots[index][8])
+            assert number(batch[1]) == args.profile and number(batch[5]) == number(roots[index][8])
             assert number(batch[6]) == before['AdvancingSteps'] and batch[3:5] == trigger[3:5]
             assert read_frame(batch[8], 'world.step-movement', 1) == [b'world.step-movement']
             assert number(batch[7]) == (1 if index == 0 else 4)
@@ -266,7 +279,7 @@ def main():
                       ordinaryHostCalls=len(report['runs']), actualProcessKills=sum(row.get('exitCode', 0) < 0 for row in report['crashes']),
                       fixtureSha256=originals)
         output.write_text(json.dumps(report, indent=2) + '\n')
-    print('coupled settlement: ' + report['status'], flush=True)
+    print(f'coupled settlement profile {args.profile}: ' + report['status'], flush=True)
     return 0 if report['status'] == 'passed' else 1
 
 

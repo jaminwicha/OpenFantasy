@@ -89,5 +89,7 @@ or liquid displacement. Conservatively refusing such geometry preserves those se
 A separate [event-descent assessment](event-descent.md) resolves successive stopping events against retained
 obstacles and reports impact demand. Its diagnostic result does not change this profile's live resolver,
 pending-work bound, command authorization or harmless-translation byte interpretation.
+Profile eighteen explicitly selects that event calculation through a new admitted root and pending cursor;
+it preserves the same separate command, material, clock and complete-load checks.
 A finite local group does not establish world-wide asynchronous simulation, production latency, multiplayer
 pacing, rendered motion or presentation quality.

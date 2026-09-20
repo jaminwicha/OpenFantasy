@@ -17,8 +17,9 @@ public sealed class ConstructionSettlementResolution
     public const int DefaultWorkBudget = 16;
     public const int MaximumWorkBudget = 256;
     public const int MaximumWorkUnits = 2 * ConstructionDefinition.MaximumMembers + 2 * LocalSpatialSnapshot.MaximumActors;
-    private readonly ConstructionSettlementScene _scene;
-    private readonly Progress _progress;
+    private readonly ConstructionSettlementScene? _scene;
+    private readonly Progress? _progress;
+    private readonly ConstructionDescentAssessment? _eventAssessment;
 
     private ConstructionSettlementResolution(ConstructionSettlementScene scene, Progress progress)
     {
@@ -26,15 +27,21 @@ public sealed class ConstructionSettlementResolution
         _progress = progress;
     }
 
-    public ContentHash InputPin => _scene.InputPin;
-    public int MaximumTotalWorkUnits => _scene.MaximumWorkUnits;
-    internal bool IsCoupled => _scene.IsCoupled;
-    public ulong CompletedWorkUnits => _progress.CompletedWorkUnits;
+    private ConstructionSettlementResolution(ConstructionDescentAssessment assessment)
+    {
+        _eventAssessment = assessment;
+    }
+
+    public ContentHash InputPin => _eventAssessment?.InputPin ?? _scene!.InputPin;
+    public int MaximumTotalWorkUnits => _eventAssessment?.MaximumTotalWorkUnits ?? _scene!.MaximumWorkUnits;
+    internal bool IsCoupled => IsEventOrdered || _scene!.IsCoupled;
+    internal bool IsEventOrdered => _eventAssessment is not null;
+    public ulong CompletedWorkUnits => _eventAssessment?.CompletedWorkUnits ?? _progress!.CompletedWorkUnits;
     /// <summary>True for either a completed candidate or a terminal refusal.</summary>
-    public bool IsComplete => _progress.Phase is Phase.Complete or Phase.Failed;
-    public bool IsFailed => _progress.Phase == Phase.Failed;
-    public string? FailureReason => _progress.FailureReason;
-    public ConstructionSettlementResult Result => _progress.Result
+    public bool IsComplete => _eventAssessment?.IsComplete ?? _progress!.Phase is Phase.Complete or Phase.Failed;
+    public bool IsFailed => _eventAssessment?.IsFailed ?? _progress!.Phase == Phase.Failed;
+    public string? FailureReason => IsEventOrdered ? _eventAssessment!.FailureReason : _progress!.FailureReason;
+    public ConstructionSettlementResult Result => IsEventOrdered ? _eventAssessment!.Result : _progress!.Result
         ?? throw new InvalidOperationException("Only successful completed settlement has an admitted geometric result.");
 
     public static ConstructionSettlementResolution Begin(LocalSpatialSnapshot space,
@@ -46,7 +53,26 @@ public sealed class ConstructionSettlementResolution
     }
 
     public static ConstructionSettlementResolution BeginCoupled(WorldSnapshot basis,
-        IEnumerable<TerrainRegionSnapshot> candidateRegions) => Prepare(new ConstructionSettlementScene(basis, candidateRegions));
+        IEnumerable<TerrainRegionSnapshot> candidateRegions)
+    {
+        ArgumentNullException.ThrowIfNull(basis);
+        if (basis.ProfileVersion != 17)
+        {
+            throw new ArgumentException("Common-trajectory coupled settlement requires its original world interpretation.", nameof(basis));
+        }
+        return Prepare(new ConstructionSettlementScene(basis, candidateRegions));
+    }
+
+    public static ConstructionSettlementResolution BeginEventOrdered(WorldSnapshot basis,
+        IEnumerable<TerrainRegionSnapshot> candidateRegions)
+    {
+        ArgumentNullException.ThrowIfNull(basis);
+        if (basis.ProfileVersion != 18)
+        {
+            throw new ArgumentException("Event-ordered settlement requires its explicitly admitted world interpretation.", nameof(basis));
+        }
+        return new(ConstructionDescentAssessment.Begin(basis, candidateRegions));
+    }
 
     private static ConstructionSettlementResolution Prepare(ConstructionSettlementScene scene)
     {
@@ -72,25 +98,30 @@ public sealed class ConstructionSettlementResolution
             throw new ArgumentOutOfRangeException(nameof(workBudget));
         }
         if (IsComplete) { return this; }
-        var next = new Progress(_progress);
+        if (_eventAssessment is not null)
+        {
+            return new(_eventAssessment.Advance(workBudget));
+        }
+        ConstructionSettlementScene scene = _scene!;
+        var next = new Progress(_progress!);
         for (int unit = 0; unit < workBudget && next.Phase is not Phase.Complete and not Phase.Failed; unit++)
         {
-            if (next.CompletedWorkUnits >= (ulong)_scene.MaximumWorkUnits)
+            if (next.CompletedWorkUnits >= (ulong)scene.MaximumWorkUnits)
             {
                 throw new InvalidOperationException("Settlement exceeded its proved finite geometric work bound.");
             }
             next.CompletedWorkUnits++;
             try
             {
-                next.PerformUnit(_scene);
-                next.Normalize(_scene);
+                next.PerformUnit(scene);
+                next.Normalize(scene);
             }
             catch (Exception error) when (IsGeometricFailure(error))
             {
                 next.Fail(error);
             }
         }
-        return new(_scene, next);
+        return new(scene, next);
     }
 
     private static bool IsGeometricFailure(Exception error) => error is ArgumentException or InvalidOperationException or OverflowException;

@@ -35,7 +35,7 @@ internal sealed class ConstructionSettlementScene
     {
         ArgumentNullException.ThrowIfNull(basis);
         ArgumentNullException.ThrowIfNull(regions);
-        if (basis.ProfileVersion != 17 || basis.PendingExcavation is not null)
+        if (basis.ProfileVersion is not 17 and not 18 || basis.PendingExcavation is not null)
         {
             throw new ArgumentException("Coupled settlement requires a stable world with its owned support policy.", nameof(basis));
         }

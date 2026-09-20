@@ -10,6 +10,12 @@ exact recorded world and assesses the proposed removal of one incomplete excavat
 later falls, reports real impact demand and validates complete original loads. This read-only operator
 does not publish movement, earn mining rights or alter the existing live coupled-settlement profile.
 
+Fresh structural worlds can explicitly select event-ordered settlement through
+`WorldEventSettlementAdmission.CreateGenesis`. Profile18 saves retain that selection and resume pending
+excavation through the ordinary Host/session authority; existing saves keep their original interpretation.
+See the [live event contract](docs/architecture/event-descent.md#explicit-live-interpretation) for command,
+material, time and journal bounds. This selection does not change the default farm's content or presentation.
+
 `OpenFantasy.Host --inspect-watershed-network <prepared-network.bin>` validates and reports a finite
 macro network archive. It checks exact member derivation, adjacent downstream links, acyclic routes,
 composed contribution counts, bounded terminals and shared-face identities. This read-only operator

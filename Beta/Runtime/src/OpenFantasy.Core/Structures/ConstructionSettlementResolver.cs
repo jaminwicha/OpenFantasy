@@ -19,6 +19,9 @@ public sealed class ConstructionSettlementResolver
     public ConstructionSettlementResult ResolveCoupled(WorldSnapshot basis, IEnumerable<TerrainRegionSnapshot> regions)
         => Complete(ConstructionSettlementResolution.BeginCoupled(basis, regions));
 
+    public ConstructionSettlementResult ResolveEventOrdered(WorldSnapshot basis, IEnumerable<TerrainRegionSnapshot> regions)
+        => Complete(ConstructionSettlementResolution.BeginEventOrdered(basis, regions));
+
     private static ConstructionSettlementResult Complete(ConstructionSettlementResolution resolution)
     {
         while (!resolution.IsComplete)

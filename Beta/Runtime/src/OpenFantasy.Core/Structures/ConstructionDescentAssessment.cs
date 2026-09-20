@@ -65,7 +65,7 @@ public sealed class ConstructionDescentAssessment
     {
         ArgumentNullException.ThrowIfNull(basis);
         ArgumentNullException.ThrowIfNull(candidateRegions);
-        if (basis.ProfileVersion != 17 || basis.PendingExcavation is not null)
+        if (basis.ProfileVersion is not 17 and not 18 || basis.PendingExcavation is not null)
         {
             throw new ArgumentException("Event descent assessment requires a stable coupled structural world.", nameof(basis));
         }

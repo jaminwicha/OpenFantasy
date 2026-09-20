@@ -11,11 +11,13 @@ namespace OpenFantasy.Hosting.Tests.Simulation;
 public sealed class CoupledSettlementSessionTests
 {
     [Theory]
-    [InlineData(false)]
-    [InlineData(true)]
-    public async Task Profile_seventeen_queues_excavation_and_climbing_for_normal_durable_adjudication(bool climbing)
+    [InlineData(false, false)]
+    [InlineData(true, false)]
+    [InlineData(false, true)]
+    [InlineData(true, true)]
+    public async Task Coupled_profiles_queue_excavation_and_climbing_for_normal_durable_adjudication(bool climbing, bool eventOrdered)
     {
-        var fixture = new CoupledSettlementWorldFixture();
+        var fixture = new CoupledSettlementWorldFixture(eventOrdered: eventOrdered);
         WorldSnapshot genesis = fixture.Genesis;
         using var files = new SessionFiles();
         var authority = SqliteWorldAuthority.CreateNew(files.Path, genesis);
@@ -41,7 +43,8 @@ public sealed class CoupledSettlementSessionTests
         Assert.Equal(climbing ? WorldActionRejection.Unavailable : WorldActionRejection.RevisionConflict, receipt.Rejection);
         session.SetReady(false);
         WorldSnapshot after = authority.ReadStateForHost();
-        Assert.Equal((ushort)17, after.ProfileVersion);
+        Assert.Equal((ushort)(eventOrdered ? 18 : 17), after.ProfileVersion);
+        Assert.Equal(genesis.DescentMode, after.DescentMode);
         Assert.Equal(1UL, after.Revision);
         Assert.Equal(1UL, after.AdvancingSteps);
         Assert.Equal(genesis.Calendar.AddMilliseconds(1800), after.Calendar);

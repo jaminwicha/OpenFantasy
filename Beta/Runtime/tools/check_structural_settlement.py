@@ -55,9 +55,11 @@ def settlement_policy(data):
 def state_witness(data, expected):
     root = read_frame(data, 'world.snapshot')
     profile = number(root[1])
-    assert profile in (14, 15, 16, 17) and len(root) == {14: 19, 15: 20, 16: 22, 17: 23}[profile]
+    assert profile in (14, 15, 16, 17, 18) and len(root) == {14: 19, 15: 20, 16: 22, 17: 23, 18: 24}[profile]
+    if profile == 18:
+        assert number(root[23]) == 2
     spatial = read_frame(root[3], 'world.spatial', 8)
-    assert number(spatial[1]) == (4 if profile == 17 else 3)
+    assert number(spatial[1]) == (4 if profile in (17, 18) else 3)
     authority = read_frame(root[2], 'authority.counted-state', 9)
     custody = read_frame(authority[3], 'custody.snapshot.v1', 6)
     construction = read_frame(root[15], 'construction.snapshot', 7)
@@ -65,7 +67,7 @@ def state_witness(data, expected):
     world, branch = construction[2:4]
     assert spatial[2:4] == custody[1:3] == production[2:4] == [world, branch]
     assert world.hex() == expected['WorldId'] and branch.hex() == expected['BranchId']
-    if profile != 17:
+    if profile not in (17, 18):
         definition_bytes = read_frame(construction[5], 'construction.definitions', 2)[1]
         definition = read_frame(definition_bytes, 'construction.definition', 12)
         project = read_frame(read_frame(construction[6], 'construction.projects', 2)[1], 'construction.project', 17)
@@ -134,7 +136,7 @@ def state_witness(data, expected):
                                 InstalledLotId=installed['GuardLotId'], MassMilligrams=masses[ordinal],
                                 VolumeMicrolitres=volumes[ordinal]))
     else:
-        # Profile seventeen keeps every independent fabrication cohort and its complete template catalog.
+        # Coupled profiles keep every independent fabrication cohort and its complete template catalog.
         definition_bytes = read_frame(construction[5], 'construction.definitions')[1:]
         definitions = [read_frame(value, 'construction.definition', 12) for value in definition_bytes]
         projects = [read_frame(value, 'construction.project', 17)
@@ -344,13 +346,16 @@ def state_witness(data, expected):
                 MaterialPin=site[6].hex(), YieldQuantity=quantity, Issued=issued,
                 StructuralPolicy=load_policy, PolicyIdentities=identities,
                 StructuralSettlementPolicy=settlement_policy(root[19]) if profile >= 15 else None)
-    if profile == 17:
+    if profile in (17, 18):
         coupled = read_frame(root[22], 'construction.coupled-settlement-policy.v1', 2)
         assemblies = number(coupled[1])
         assert len(root[22]) <= 128 and 1 <= assemblies <= 32
         assert frame('construction.coupled-settlement-policy.v1', coupled[1]) == root[22]
+        # This retained policy's common-trajectory limit is not the event cursor's scene-derived work bound.
         witness['CoupledSettlementPolicy'] = dict(ContentHash=digest(root[22]), MaximumAssemblies=assemblies,
                                                    MaximumWorkUnits=2 * assemblies * 32 + 2 * 64)
+    if profile == 18:
+        witness['DescentMode'] = 2
     return witness
 
 

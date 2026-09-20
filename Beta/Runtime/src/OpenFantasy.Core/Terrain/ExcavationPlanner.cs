@@ -48,6 +48,7 @@ public sealed class ExcavationPlanner
             {
                 if (completedResolution?.IsFailed == true) { return Reject(WorldActionRejection.Unavailable); }
                 var settled = completedResolution is not null ? completedResolution.Result
+                    : world.DescentMode == ConstructionDescentMode.EventOrdered ? new ConstructionSettlementResolver().ResolveEventOrdered(world, regions)
                     : world.CoupledSettlementPolicy is not null ? new ConstructionSettlementResolver().ResolveCoupled(world, regions)
                     : new ConstructionSettlementResolver().Resolve(space, regions,
                         physical ?? throw new ArgumentException("Settlement requires physical construction."), settlement);

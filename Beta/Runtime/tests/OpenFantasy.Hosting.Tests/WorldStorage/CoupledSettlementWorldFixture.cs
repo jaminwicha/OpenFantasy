@@ -38,7 +38,8 @@ internal sealed class CoupledSettlementWorldFixture
     internal static readonly EntityId UpperProjectId = Id(2);
     private readonly List<WorldSnapshot> preparationHistory = [];
 
-    internal CoupledSettlementWorldFixture(int consequenceWorkBudget = 1, int maximumAssemblies = 2)
+    internal CoupledSettlementWorldFixture(int consequenceWorkBudget = 1, int maximumAssemblies = 2,
+        bool eventOrdered = false)
     {
         var original = new ConstructedSupportWorldFixture();
         Actions = original.Actions;
@@ -112,12 +113,14 @@ internal sealed class CoupledSettlementWorldFixture
         WorldSnapshot structural = WorldStructuralPolicyAdmission.CreateGenesis(physical, PolicyFor(physical));
         LegacyGenesis16 = WorldConsequenceAdmission.CreateGenesis(WorldStructuralSettlementAdmission.CreateGenesis(structural,
             new StructuralSettlementPolicy(256, 256, 256, 9800)), new ConsequenceExecutionPolicy(consequenceWorkBudget));
-        Genesis = WorldCoupledSettlementAdmission.CreateGenesis(LegacyGenesis16, new CoupledSettlementPolicy(maximumAssemblies));
+        LegacyGenesis17 = WorldCoupledSettlementAdmission.CreateGenesis(LegacyGenesis16, new CoupledSettlementPolicy(maximumAssemblies));
+        Genesis = eventOrdered ? WorldEventSettlementAdmission.CreateGenesis(LegacyGenesis17) : LegacyGenesis17;
     }
 
     internal ConstructionUpgradeFixture Actions { get; }
     internal WorldSnapshot Genesis { get; }
     internal WorldSnapshot LegacyGenesis16 { get; }
+    internal WorldSnapshot LegacyGenesis17 { get; }
     internal EntityId Player { get; }
     internal EntityId Builder { get; }
     internal EntityId Tool { get; }
