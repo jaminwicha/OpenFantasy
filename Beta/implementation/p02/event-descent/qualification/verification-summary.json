@@ -1,0 +1,112 @@
+{
+  "scope": "Event-ordered intact geometric descent and complete-world read-only assessment; existing live profile17 remains unchanged.",
+  "implementation_commit": "82792686bd7144254d4d414c07337c8a17e56f81",
+  "build": "build-final.log",
+  "build_errors": 0,
+  "build_warnings": 0,
+  "managed_reports": [
+    {
+      "file": "Beta/implementation/p02/event-descent/qualification/core-final/_mac_2026-09-19_23_13_41_net8.0.trx",
+      "passed": 942,
+      "failed": 0,
+      "total": 942,
+      "times": {
+        "creation": "2026-09-19T23:13:41.4987950-05:00",
+        "queuing": "2026-09-19T23:13:41.4987950-05:00",
+        "start": "2026-09-19T23:13:39.8330940-05:00",
+        "finish": "2026-09-19T23:13:49.5023770-05:00"
+      }
+    },
+    {
+      "file": "Beta/implementation/p02/event-descent/qualification/regression/_mac_2026-09-19_23_07_08_net8.0.trx",
+      "passed": 493,
+      "failed": 0,
+      "total": 493,
+      "times": {
+        "creation": "2026-09-19T23:07:08.4212470-05:00",
+        "queuing": "2026-09-19T23:07:08.4212470-05:00",
+        "start": "2026-09-19T23:07:06.5622700-05:00",
+        "finish": "2026-09-19T23:12:27.2762320-05:00"
+      }
+    }
+  ],
+  "total_distinct_passed": 1435,
+  "new_cases": 26,
+  "initial_focused_reports": [
+    {
+      "file": "Beta/implementation/p02/event-descent/qualification/focused/_mac_2026-09-19_23_04_54_net8.0.trx",
+      "passed": 22,
+      "failed": 0,
+      "total": 22,
+      "times": {
+        "creation": "2026-09-19T23:04:54.3417520-05:00",
+        "queuing": "2026-09-19T23:04:54.3417520-05:00",
+        "start": "2026-09-19T23:04:52.4916720-05:00",
+        "finish": "2026-09-19T23:04:54.4058580-05:00"
+      }
+    },
+    {
+      "file": "Beta/implementation/p02/event-descent/qualification/focused/_mac_2026-09-19_23_05_03_net8.0.trx",
+      "passed": 2,
+      "failed": 0,
+      "total": 2,
+      "times": {
+        "creation": "2026-09-19T23:05:03.3434940-05:00",
+        "queuing": "2026-09-19T23:05:03.3434940-05:00",
+        "start": "2026-09-19T23:04:54.6929840-05:00",
+        "finish": "2026-09-19T23:05:13.7923850-05:00"
+      }
+    }
+  ],
+  "initial_full_regression_reports": [
+    {
+      "file": "Beta/implementation/p02/event-descent/qualification/regression/_mac_2026-09-19_23_06_55_net8.0.trx",
+      "passed": 940,
+      "failed": 0,
+      "total": 940,
+      "times": {
+        "creation": "2026-09-19T23:06:55.1713500-05:00",
+        "queuing": "2026-09-19T23:06:55.1713500-05:00",
+        "start": "2026-09-19T23:06:53.1137760-05:00",
+        "finish": "2026-09-19T23:07:06.0352470-05:00"
+      }
+    },
+    {
+      "file": "Beta/implementation/p02/event-descent/qualification/regression/_mac_2026-09-19_23_07_08_net8.0.trx",
+      "passed": 493,
+      "failed": 0,
+      "total": 493,
+      "times": {
+        "creation": "2026-09-19T23:07:08.4212470-05:00",
+        "queuing": "2026-09-19T23:07:08.4212470-05:00",
+        "start": "2026-09-19T23:07:06.5622700-05:00",
+        "finish": "2026-09-19T23:12:27.2762320-05:00"
+      }
+    }
+  ],
+  "cadence": "Initial full solution regression: 940 Core + 493 Hosting. After two critic-derived test cases only, final Core regression: 942. All 557 application source pins unchanged between runs; Hosting was not redundantly repeated.",
+  "host_report": "host-first.json",
+  "ordinary_host_calls": 8,
+  "maximum_ordinary_call_seconds": 7.345489709172398,
+  "unchanged_host_timeout_seconds": 30,
+  "read_only_database_bytes_unchanged": true,
+  "fixture_files": 8,
+  "actual_process_kills": 0,
+  "source_pins": "runtime-source-sha256.json",
+  "preservation": "preservation.json",
+  "reviews": "review-dispositions.md",
+  "external_review": "external-review.json",
+  "not_run": [
+    "Full all-systems verifier (new hook itself executed)",
+    "Live unequal descent, harmful impact, fracture or debris publication",
+    "New commit-boundary crash qualification (no new authority or saved profile)",
+    "Rendered motion, art/audio, OS/device or desktop export acceptance",
+    "Production workload/latency qualification or maximum-scene execution"
+  ],
+  "remaining": [
+    "Owned impact/contact response and joint separation with source-backed located material",
+    "Versioned durable publication; reservations must fit unchanged root/journal/outcome bounds",
+    "Harmful injury, sub-member fracture/salvage, longer flight and wet composition",
+    "Generated extraction rights, multi-floor presentation, 1\u20134-player timing and full P00\u2013P14 campaign"
+  ]
+}

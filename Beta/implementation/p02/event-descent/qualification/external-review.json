@@ -1,0 +1,51 @@
+{
+  "requested_model": "fable[1m]",
+  "reported_models": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1478,
+      "outputTokens": 20,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001578,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 6,
+      "outputTokens": 11666,
+      "cacheReadInputTokens": 34834,
+      "cacheCreationInputTokens": 26868,
+      "webSearchRequests": 0,
+      "costUSD": 1.1294285,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 9665,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "status": "completed_pending_review",
+  "provider_subtype": "success",
+  "provider_error": false,
+  "elapsed_seconds": 154.773,
+  "turns": 7,
+  "api_equivalent_usd": 1.1310065,
+  "client_cap_usd": 2,
+  "timeout_seconds": 300,
+  "context_status": "verified",
+  "context_sha256": "205918223b65cb5dc717388da9a83372832d018424c7e492e7b3457c5160ff22",
+  "permission_denials": [],
+  "automatic_retries": 0,
+  "raw_output_directory": "/private/tmp/openfantasy-fable-event-descent-20260919",
+  "word_count": 517,
+  "requested_word_limit": 400,
+  "coverage": "primary collision event and query sources; tests, codecs, Host and full footing internals not inspected",
+  "savings_claimed": false,
+  "lead_review_status": "reviewed; hypotheses resolved without runtime changes"
+}

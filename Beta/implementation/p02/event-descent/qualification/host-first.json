@@ -1,0 +1,450 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-20T04:14:26.973844+00:00",
+  "scope": "Read-only funded historical event descent and exact impact demands",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1",
+  "runs": [
+    {
+      "name": "assess-selected",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-construction-descent",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "154",
+        "737570706f7274730000000000000004"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 7.070343500003219,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"construction-descent-assessment-v1\",\"PublicationAuthority\":false,\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":154,\"SourceHeadHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"RecordedRevision\":154,\"StateHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"SiteId\":\"737570706f7274730000000000000004\",\"InputPin\":\"a6b782438c142e6cc7f0c6b9018a751f7309e001bfd04fec7efb35f77fa6794f\",\"PolicyHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"SettlementPolicyHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"CoupledPolicyHash\":\"f3feefb04f185f66087ffaf019b30090225ee3a288fb0dda6359b59de884b215\",\"CompletedWorkUnits\":11,\"MaximumTotalWorkUnits\":28,\"IsComplete\":true,\"IsFailed\":false,\"FailureReason\":null,\"Events\":[{\"DropSubunits\":256,\"BodyIds\":[\"1325c4ff7eee3f43b504100006b19723\",\"49354ca83f251b3ce9d363158e0786a4\",\"c33b714d90c649a89f55daf3b5b13a1d\"]}],\"ImpactDemands\":[{\"BodyId\":\"1325c4ff7eee3f43b504100006b19723\",\"IsActor\":false,\"DropSubunits\":256,\"MassMilligrams\":270000,\"EnergyNumeratorPicojoules\":\"677376000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true},{\"BodyId\":\"49354ca83f251b3ce9d363158e0786a4\",\"IsActor\":true,\"DropSubunits\":256,\"MassMilligrams\":71060000,\"EnergyNumeratorPicojoules\":\"178275328000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true},{\"BodyId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"IsActor\":false,\"DropSubunits\":256,\"MassMilligrams\":270000,\"EnergyNumeratorPicojoules\":\"677376000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true}],\"CandidatePhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"CandidateActors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"Feet\":{\"X\":27264,\"Y\":83328,\"Z\":320,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"Revision\":42,\"ConditionHash\":\"84a2c5796adbdab5996ab1497a5f8aa1b4fe590450248ed67fc168034aa19abf\"},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"Feet\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"Revision\":105,\"ConditionHash\":\"1281a14049a24bfb8338627d318c900d333a4af5c69fa98d53c5b1c872c7f14b\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "name": "assess-selected-repeat",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-construction-descent",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "154",
+        "737570706f7274730000000000000004"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 7.006077499594539,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"construction-descent-assessment-v1\",\"PublicationAuthority\":false,\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":154,\"SourceHeadHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"RecordedRevision\":154,\"StateHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"SiteId\":\"737570706f7274730000000000000004\",\"InputPin\":\"a6b782438c142e6cc7f0c6b9018a751f7309e001bfd04fec7efb35f77fa6794f\",\"PolicyHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"SettlementPolicyHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"CoupledPolicyHash\":\"f3feefb04f185f66087ffaf019b30090225ee3a288fb0dda6359b59de884b215\",\"CompletedWorkUnits\":11,\"MaximumTotalWorkUnits\":28,\"IsComplete\":true,\"IsFailed\":false,\"FailureReason\":null,\"Events\":[{\"DropSubunits\":256,\"BodyIds\":[\"1325c4ff7eee3f43b504100006b19723\",\"49354ca83f251b3ce9d363158e0786a4\",\"c33b714d90c649a89f55daf3b5b13a1d\"]}],\"ImpactDemands\":[{\"BodyId\":\"1325c4ff7eee3f43b504100006b19723\",\"IsActor\":false,\"DropSubunits\":256,\"MassMilligrams\":270000,\"EnergyNumeratorPicojoules\":\"677376000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true},{\"BodyId\":\"49354ca83f251b3ce9d363158e0786a4\",\"IsActor\":true,\"DropSubunits\":256,\"MassMilligrams\":71060000,\"EnergyNumeratorPicojoules\":\"178275328000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true},{\"BodyId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"IsActor\":false,\"DropSubunits\":256,\"MassMilligrams\":270000,\"EnergyNumeratorPicojoules\":\"677376000000000\",\"EnergyDenominator\":256,\"FlightMilliseconds\":452,\"IsHarmless\":true}],\"CandidatePhysical\":{\"Revision\":3,\"ContentHash\":\"89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"CandidateActors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"Feet\":{\"X\":27264,\"Y\":83328,\"Z\":320,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":1}},\"Revision\":42,\"ConditionHash\":\"84a2c5796adbdab5996ab1497a5f8aa1b4fe590450248ed67fc168034aa19abf\"},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"Feet\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"Revision\":105,\"ConditionHash\":\"1281a14049a24bfb8338627d318c900d333a4af5c69fa98d53c5b1c872c7f14b\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "name": "recorded-selected",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "154"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 6.924995000008494,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":154,\"SourceHeadHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"RecordedRevision\":154,\"StateHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    },
+    {
+      "name": "assess-unbuilt-genesis",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-construction-descent",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "0",
+        "737570706f7274730000000000000004"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 6.8895596247166395,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"construction-descent-assessment-v1\",\"PublicationAuthority\":false,\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":154,\"SourceHeadHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"RecordedRevision\":0,\"StateHash\":\"792f80fe6f13c3306c36f070a674b47042b6a0d3f12b98dd22a4504a0df1f0ed\",\"SiteId\":\"737570706f7274730000000000000004\",\"InputPin\":\"bf048ee3e1b42e69b9bba260db419d071badc3c4a56249437ae1c25975cdabf1\",\"PolicyHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"SettlementPolicyHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"CoupledPolicyHash\":\"f3feefb04f185f66087ffaf019b30090225ee3a288fb0dda6359b59de884b215\",\"CompletedWorkUnits\":0,\"MaximumTotalWorkUnits\":0,\"IsComplete\":true,\"IsFailed\":false,\"FailureReason\":null,\"Events\":[],\"ImpactDemands\":[],\"CandidatePhysical\":{\"Revision\":0,\"ContentHash\":\"49f3c83c22c1b325bf524f43c4c25f2f33c49744cfc4dbdc5e1525e7035c2fdb\",\"ConstructionHash\":\"3734a68fadc0c5d45b21ca54694ed477ee66e8b71ead8fc02dcd857c57ba3af9\",\"Members\":[]},\"CandidateActors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"Feet\":{\"X\":26752,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":104,\"Y\":325,\"Z\":1}},\"Revision\":0,\"ConditionHash\":\"84a2c5796adbdab5996ab1497a5f8aa1b4fe590450248ed67fc168034aa19abf\"},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"Feet\":{\"X\":26240,\"Y\":83328,\"Z\":256,\"Cell\":{\"X\":102,\"Y\":325,\"Z\":1}},\"Revision\":0,\"ConditionHash\":\"1281a14049a24bfb8338627d318c900d333a4af5c69fa98d53c5b1c872c7f14b\"}]}\n",
+      "stderr": ""
+    },
+    {
+      "name": "reject-unknown-site",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-construction-descent",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "154",
+        "ffffffffffffffffffffffffffffffff"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 6.985349833033979,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The proposed site must belong to the exact recorded world. (Parameter 'siteText')\n",
+      "stderr": ""
+    },
+    {
+      "name": "reject-future-revision",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-construction-descent",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "155",
+        "737570706f7274730000000000000004"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 3.8748136670328677,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The requested commit exceeds the current recorded head. (Parameter 'revision')\n",
+      "stderr": ""
+    },
+    {
+      "name": "reject-negative-revision",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-construction-descent",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "-1",
+        "737570706f7274730000000000000004"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 0.03959808312356472,
+      "exitCode": 1,
+      "stdout": "Inspection failed: The recorded commit must be an unsigned decimal integer. (Parameter 'commitText')\n",
+      "stderr": ""
+    },
+    {
+      "name": "recorded-selected-final",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/event-descent/qualification/event-descent-f8153f19eccc4d27a34e049e5c12adc1/assessment.sqlite",
+        "154"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 7.345489709172398,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"4955a478907a739f49ff302c94a798ad\",\"BranchId\":\"2a89af71f707591d46cfe34b9b60f96c\",\"SourceHeadRevision\":154,\"SourceHeadHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"RecordedRevision\":154,\"StateHash\":\"1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07\",\"ProfileVersion\":17,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":32668200},\"AdvancingSteps\":149,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":2,\"ContentHash\":\"fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37\",\"ConstructionHash\":\"a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a\",\"Members\":[{\"ElementId\":\"c275efd984fd1c39f9212e38ebc320fe\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":180000,\"VolumeMicrolitres\":1500000000},{\"ElementId\":\"6806906750d1e4105481fc92785957f3\",\"StructureId\":\"1325c4ff7eee3f43b504100006b19723\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"4fc2dd55ba39fc889df5efd0b5ca7c90\",\"MassMilligrams\":90000,\"VolumeMicrolitres\":750000000},{\"ElementId\":\"7e5fee6d1c79e5834fa91da6eecacaf2\",\"StructureId\":\"c33b714d90c649a89f55daf3b5b13a1d\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"ad3e92880d7853759890e58fd3e6d453\",\"MassMilligrams\":270000,\"VolumeMicrolitres\":250000000}]},\"StructuralPolicy\":{\"ContentHash\":\"76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0\",\"TemplateCount\":2,\"FoundationCount\":1066,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"49354ca83f251b3ce9d363158e0786a4\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":27264,\"Y\":83328,\"Z\":576,\"Cell\":{\"X\":106,\"Y\":325,\"Z\":2}},\"PresenceRevision\":41,\"SourceItemQuantity\":1},{\"ActorId\":\"c7da6de6f885e3516d9dfd3dab51cf6b\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":27264,\"Y\":82816,\"Z\":0,\"Cell\":{\"X\":106,\"Y\":323,\"Z\":0}},\"PresenceRevision\":105,\"SourceItemQuantity\":2}],\"SourceLotCount\":3,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    }
+  ],
+  "unqualifiedClaims": [
+    "Live publication or policy mutation",
+    "Crash recovery or commit boundaries",
+    "Harmful response, fracture, debris, or full-game simulation",
+    "Completed-site control fixture"
+  ],
+  "fixtureSha256": {
+    "basis.bin": "1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07",
+    "basis.sqlite": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60",
+    "candidate-region-0.bin": "b4c73915b45a14770c9cc5efc2e09754f796ca0d51b24dd55c9eb274109ad45d",
+    "candidate-region-1.bin": "13a9d257794d19e2669ecc25cd3c5ad9b813c9f623d98dc886a9f22103ae9fed",
+    "candidate-region-2.bin": "1262ec8a12ed14862be1a1a2c6b3c7969ec5f718edfb40972a204e1675e92fc8",
+    "candidate-region-3.bin": "39b2cc85c962d62fa2a8153e43e05b63dd65e301f490ac790e54fc18f575d92b",
+    "complete-cursor.bin": "2f44c4269aa5aeadb56dd6096e0c0a01ab0e0e684fb5d7ac64f073189684f751",
+    "expected.json": "ea8177650b67bf4f07d67d354e32a04d4eaf8427b41fdccf98728a1fccd067d9"
+  },
+  "databaseSha256Before": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60",
+  "independentWitness": {
+    "StateHash": "1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07",
+    "SourceRevision": 154,
+    "OriginalPhysicalHash": "fac8b48a189e4817afc22fa18aed71a152c69d0689a396801895541947c9ba37",
+    "Backing": {
+      "1325c4ff7eee3f43b504100006b19723": {
+        "StructureId": "1325c4ff7eee3f43b504100006b19723",
+        "GuardLotId": "4fc2dd55ba39fc889df5efd0b5ca7c90",
+        "GuardLotRevision": 0,
+        "BatchId": "3c4592ed3f4b5d37bff729e59cf562fb",
+        "CommandId": "0000000000000000000000000070ea74",
+        "ProjectCustodianId": "a1c8a8f42d7b523ef271b091443d3dfa",
+        "ProjectId": "00636f75706c65640000000000000001",
+        "DefinitionId": "8b7a469daf80f46ca75bb5dc181f06d6",
+        "RetiredSourceClaims": [
+          {
+            "LotId": "048325996a05d475303400e27870e9ae",
+            "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+            "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+            "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+            "Start": 2,
+            "End": 8,
+            "Revision": 2
+          }
+        ]
+      },
+      "c33b714d90c649a89f55daf3b5b13a1d": {
+        "StructureId": "c33b714d90c649a89f55daf3b5b13a1d",
+        "GuardLotId": "ad3e92880d7853759890e58fd3e6d453",
+        "GuardLotRevision": 0,
+        "BatchId": "c5bf66d0a715622653e7d644c27d9f98",
+        "CommandId": "0000000000000000000000000070ea88",
+        "ProjectCustodianId": "00636f75706c65640000000000000004",
+        "ProjectId": "00636f75706c65640000000000000002",
+        "DefinitionId": "00636f75706c656400000000000000cc",
+        "RetiredSourceClaims": [
+          {
+            "LotId": "00636f75706c65640000000000000007",
+            "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+            "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+            "SourceId": "00636f75706c65640000000000000006",
+            "Start": 0,
+            "End": 4,
+            "Revision": 1
+          },
+          {
+            "LotId": "14aa8cc3ffb2021534ec4a66af259b5e",
+            "DefinitionId": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+            "DefinitionVersion": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+            "SourceId": "96125c5a154ad7b2350a990dcdabd979",
+            "Start": 0,
+            "End": 2,
+            "Revision": 0
+          }
+        ]
+      }
+    },
+    "Members": [
+      {
+        "ElementId": "c275efd984fd1c39f9212e38ebc320fe",
+        "StructureId": "1325c4ff7eee3f43b504100006b19723",
+        "MemberIndex": 0,
+        "Revision": 0,
+        "ConditionParts": 10000,
+        "Disposition": "Standing",
+        "Displacement": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "InstalledLotId": "4fc2dd55ba39fc889df5efd0b5ca7c90",
+        "MassMilligrams": 180000,
+        "VolumeMicrolitres": 1500000000
+      },
+      {
+        "ElementId": "6806906750d1e4105481fc92785957f3",
+        "StructureId": "1325c4ff7eee3f43b504100006b19723",
+        "MemberIndex": 1,
+        "Revision": 0,
+        "ConditionParts": 10000,
+        "Disposition": "Standing",
+        "Displacement": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "InstalledLotId": "4fc2dd55ba39fc889df5efd0b5ca7c90",
+        "MassMilligrams": 90000,
+        "VolumeMicrolitres": 750000000
+      },
+      {
+        "ElementId": "7e5fee6d1c79e5834fa91da6eecacaf2",
+        "StructureId": "c33b714d90c649a89f55daf3b5b13a1d",
+        "MemberIndex": 0,
+        "Revision": 0,
+        "ConditionParts": 10000,
+        "Disposition": "Standing",
+        "Displacement": {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        "InstalledLotId": "ad3e92880d7853759890e58fd3e6d453",
+        "MassMilligrams": 270000,
+        "VolumeMicrolitres": 250000000
+      }
+    ],
+    "ActorMasses": {
+      "49354ca83f251b3ce9d363158e0786a4": 71060000,
+      "c7da6de6f885e3516d9dfd3dab51cf6b": 72000000
+    },
+    "LedgerCounts": {
+      "world_commits": 154,
+      "world_command_outcomes": 10,
+      "world_occupied_identity": 187
+    },
+    "InventoryHash": "b706d5ee433662cfebc8d1f4a6a560b40795393dda6f6a1112423f455544590d",
+    "ProductionHash": "af353d6f811f5b5af6aec8fdb58d5e2239f5e60e5216e8cdd71b161216680484",
+    "SourcesHash": "3fb595e8a9a3d295efb9c377d08a90def01b529ca889b413f34094612ae3948f",
+    "PolicyHash": "76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0"
+  },
+  "databaseSha256After": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60",
+  "readOnlyBytesUnchanged": true,
+  "invocationCount": 8,
+  "assessment": {
+    "Contract": "construction-descent-assessment-v1",
+    "PublicationAuthority": false,
+    "WorldId": "4955a478907a739f49ff302c94a798ad",
+    "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+    "SourceHeadRevision": 154,
+    "SourceHeadHash": "1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07",
+    "RecordedRevision": 154,
+    "StateHash": "1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07",
+    "SiteId": "737570706f7274730000000000000004",
+    "InputPin": "a6b782438c142e6cc7f0c6b9018a751f7309e001bfd04fec7efb35f77fa6794f",
+    "PolicyHash": "76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0",
+    "SettlementPolicyHash": "18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb",
+    "CoupledPolicyHash": "f3feefb04f185f66087ffaf019b30090225ee3a288fb0dda6359b59de884b215",
+    "CompletedWorkUnits": 11,
+    "MaximumTotalWorkUnits": 28,
+    "IsComplete": true,
+    "IsFailed": false,
+    "FailureReason": null,
+    "Events": [
+      {
+        "DropSubunits": 256,
+        "BodyIds": [
+          "1325c4ff7eee3f43b504100006b19723",
+          "49354ca83f251b3ce9d363158e0786a4",
+          "c33b714d90c649a89f55daf3b5b13a1d"
+        ]
+      }
+    ],
+    "ImpactDemands": [
+      {
+        "BodyId": "1325c4ff7eee3f43b504100006b19723",
+        "IsActor": false,
+        "DropSubunits": 256,
+        "MassMilligrams": 270000,
+        "EnergyNumeratorPicojoules": "677376000000000",
+        "EnergyDenominator": 256,
+        "FlightMilliseconds": 452,
+        "IsHarmless": true
+      },
+      {
+        "BodyId": "49354ca83f251b3ce9d363158e0786a4",
+        "IsActor": true,
+        "DropSubunits": 256,
+        "MassMilligrams": 71060000,
+        "EnergyNumeratorPicojoules": "178275328000000000",
+        "EnergyDenominator": 256,
+        "FlightMilliseconds": 452,
+        "IsHarmless": true
+      },
+      {
+        "BodyId": "c33b714d90c649a89f55daf3b5b13a1d",
+        "IsActor": false,
+        "DropSubunits": 256,
+        "MassMilligrams": 270000,
+        "EnergyNumeratorPicojoules": "677376000000000",
+        "EnergyDenominator": 256,
+        "FlightMilliseconds": 452,
+        "IsHarmless": true
+      }
+    ],
+    "CandidatePhysical": {
+      "Revision": 3,
+      "ContentHash": "89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20",
+      "ConstructionHash": "a99f57b6ed636031ef1a294fc35a32c342828a37df96142b7ae9bd9e67d0b07a",
+      "Members": [
+        {
+          "ElementId": "c275efd984fd1c39f9212e38ebc320fe",
+          "StructureId": "1325c4ff7eee3f43b504100006b19723",
+          "MemberIndex": 0,
+          "Revision": 1,
+          "ConditionParts": 10000,
+          "Disposition": "Resting",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": -256,
+            "Cell": {
+              "X": 0,
+              "Y": 0,
+              "Z": -1
+            }
+          },
+          "InstalledLotId": "4fc2dd55ba39fc889df5efd0b5ca7c90",
+          "MassMilligrams": 180000,
+          "VolumeMicrolitres": 1500000000
+        },
+        {
+          "ElementId": "6806906750d1e4105481fc92785957f3",
+          "StructureId": "1325c4ff7eee3f43b504100006b19723",
+          "MemberIndex": 1,
+          "Revision": 1,
+          "ConditionParts": 10000,
+          "Disposition": "Resting",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": -256,
+            "Cell": {
+              "X": 0,
+              "Y": 0,
+              "Z": -1
+            }
+          },
+          "InstalledLotId": "4fc2dd55ba39fc889df5efd0b5ca7c90",
+          "MassMilligrams": 90000,
+          "VolumeMicrolitres": 750000000
+        },
+        {
+          "ElementId": "7e5fee6d1c79e5834fa91da6eecacaf2",
+          "StructureId": "c33b714d90c649a89f55daf3b5b13a1d",
+          "MemberIndex": 0,
+          "Revision": 1,
+          "ConditionParts": 10000,
+          "Disposition": "Resting",
+          "Displacement": {
+            "X": 0,
+            "Y": 0,
+            "Z": -256,
+            "Cell": {
+              "X": 0,
+              "Y": 0,
+              "Z": -1
+            }
+          },
+          "InstalledLotId": "ad3e92880d7853759890e58fd3e6d453",
+          "MassMilligrams": 270000,
+          "VolumeMicrolitres": 250000000
+        }
+      ]
+    },
+    "CandidateActors": [
+      {
+        "ActorId": "49354ca83f251b3ce9d363158e0786a4",
+        "Feet": {
+          "X": 27264,
+          "Y": 83328,
+          "Z": 320,
+          "Cell": {
+            "X": 106,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "Revision": 42,
+        "ConditionHash": "84a2c5796adbdab5996ab1497a5f8aa1b4fe590450248ed67fc168034aa19abf"
+      },
+      {
+        "ActorId": "c7da6de6f885e3516d9dfd3dab51cf6b",
+        "Feet": {
+          "X": 27264,
+          "Y": 82816,
+          "Z": 0,
+          "Cell": {
+            "X": 106,
+            "Y": 323,
+            "Z": 0
+          }
+        },
+        "Revision": 105,
+        "ConditionHash": "1281a14049a24bfb8338627d318c900d333a4af5c69fa98d53c5b1c872c7f14b"
+      }
+    ]
+  },
+  "fixtureSha256After": {
+    "basis.bin": "1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07",
+    "basis.sqlite": "8a3416414c7c5892119fae70439064ed0ee5170aa9b87420ba60dd72575e8f60",
+    "candidate-region-0.bin": "b4c73915b45a14770c9cc5efc2e09754f796ca0d51b24dd55c9eb274109ad45d",
+    "candidate-region-1.bin": "13a9d257794d19e2669ecc25cd3c5ad9b813c9f623d98dc886a9f22103ae9fed",
+    "candidate-region-2.bin": "1262ec8a12ed14862be1a1a2c6b3c7969ec5f718edfb40972a204e1675e92fc8",
+    "candidate-region-3.bin": "39b2cc85c962d62fa2a8153e43e05b63dd65e301f490ac790e54fc18f575d92b",
+    "complete-cursor.bin": "2f44c4269aa5aeadb56dd6096e0c0a01ab0e0e684fb5d7ac64f073189684f751",
+    "expected.json": "ea8177650b67bf4f07d67d354e32a04d4eaf8427b41fdccf98728a1fccd067d9"
+  },
+  "finishedUtc": "2026-09-20T04:15:13.166255+00:00"
+}

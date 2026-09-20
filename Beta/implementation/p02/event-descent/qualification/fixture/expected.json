@@ -1,0 +1,90 @@
+{
+  "Contract": "construction-descent-assessment-fixture-v1",
+  "ProfileVersion": 17,
+  "WorldId": "4955a478907a739f49ff302c94a798ad",
+  "BranchId": "2a89af71f707591d46cfe34b9b60f96c",
+  "SiteId": "737570706f7274730000000000000004",
+  "SourceRevision": 154,
+  "SourceHash": "1534dd5ae13acd2a3db3595ecbeba8a4838f171fa6b180450dbea9f1477c1d07",
+  "InputPin": "a6b782438c142e6cc7f0c6b9018a751f7309e001bfd04fec7efb35f77fa6794f",
+  "PolicyHash": "76915497526f01e2f02110cb9b439e2662f3c61813e48adbe2cf1d3e2c2a33f0",
+  "SettlementPolicyHash": "18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb",
+  "CoupledPolicyHash": "f3feefb04f185f66087ffaf019b30090225ee3a288fb0dda6359b59de884b215",
+  "CompletedWorkUnits": 11,
+  "MaximumTotalWorkUnits": 28,
+  "IsComplete": true,
+  "IsFailed": false,
+  "ResultPhysicalHash": "89275f67a04a4d0840b11d871ba7bade31d9d48b6c19e60b35df89c33b2bad20",
+  "CandidateRegionHashes": [
+    "b4c73915b45a14770c9cc5efc2e09754f796ca0d51b24dd55c9eb274109ad45d",
+    "13a9d257794d19e2669ecc25cd3c5ad9b813c9f623d98dc886a9f22103ae9fed",
+    "1262ec8a12ed14862be1a1a2c6b3c7969ec5f718edfb40972a204e1675e92fc8",
+    "39b2cc85c962d62fa2a8153e43e05b63dd65e301f490ac790e54fc18f575d92b"
+  ],
+  "ResultActors": [
+    {
+      "ActorId": "49354ca83f251b3ce9d363158e0786a4",
+      "Feet": {
+        "X": 27264,
+        "Y": 83328,
+        "Z": 320,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "Revision": 42,
+      "BindingHash": "d9ae12ec9a1c1bd790abca2651081b0d53ed2017a74088aa62414e1780215dc2",
+      "ConditionHash": "84a2c5796adbdab5996ab1497a5f8aa1b4fe590450248ed67fc168034aa19abf"
+    },
+    {
+      "ActorId": "c7da6de6f885e3516d9dfd3dab51cf6b",
+      "Feet": {
+        "X": 27264,
+        "Y": 82816,
+        "Z": 0,
+        "Cell": {
+          "X": 106,
+          "Y": 323,
+          "Z": 0
+        }
+      },
+      "Revision": 105,
+      "BindingHash": "89d83d8c9bb73e379dbd6ca2a6afe2ca70228631a89cdb15bfc3f2f02bc9023f",
+      "ConditionHash": "1281a14049a24bfb8338627d318c900d333a4af5c69fa98d53c5b1c872c7f14b"
+    }
+  ],
+  "ImpactDemands": [
+    {
+      "BodyId": "1325c4ff7eee3f43b504100006b19723",
+      "IsActor": false,
+      "DropSubunits": 256,
+      "MassMilligrams": 270000,
+      "EnergyNumeratorPicojoules": "677376000000000",
+      "EnergyDenominator": 256,
+      "FlightMilliseconds": 452,
+      "IsHarmless": true
+    },
+    {
+      "BodyId": "49354ca83f251b3ce9d363158e0786a4",
+      "IsActor": true,
+      "DropSubunits": 256,
+      "MassMilligrams": 71060000,
+      "EnergyNumeratorPicojoules": "178275328000000000",
+      "EnergyDenominator": 256,
+      "FlightMilliseconds": 452,
+      "IsHarmless": true
+    },
+    {
+      "BodyId": "c33b714d90c649a89f55daf3b5b13a1d",
+      "IsActor": false,
+      "DropSubunits": 256,
+      "MassMilligrams": 270000,
+      "EnergyNumeratorPicojoules": "677376000000000",
+      "EnergyDenominator": 256,
+      "FlightMilliseconds": 452,
+      "IsHarmless": true
+    }
+  ]
+}
