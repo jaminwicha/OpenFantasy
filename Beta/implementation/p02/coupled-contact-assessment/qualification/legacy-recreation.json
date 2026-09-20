@@ -1,0 +1,152 @@
+[
+  {
+    "profile": "profile15",
+    "reference": "Beta/implementation/p02/consequence-continuation/qualification/legacy15",
+    "recreated": "/private/tmp/openfantasy-contact-regression-20260919/legacy15",
+    "files": [
+      {
+        "file": "after-settlement.sqlite",
+        "sha256": "343e136ebe896047bdd7c6af534962669fadc67bc153fe5b6f77e98e2b443ea9",
+        "byte_exact": true
+      },
+      {
+        "file": "before-settlement.sqlite",
+        "sha256": "8ad6496b04fe9af53e9116038f80fe576d3bad583359c19257efdb36d966e469",
+        "byte_exact": true
+      },
+      {
+        "file": "expected.json",
+        "sha256": "e79d7b245923f4446a75b75f50d9e37083098b8667dd433d6467a3031284811b",
+        "byte_exact": true
+      },
+      {
+        "file": "genesis.bin",
+        "sha256": "23edb5f9b7e69676c284306d117a175dc6ef2d3f8e37d0040618ec44ba76a212",
+        "byte_exact": true
+      },
+      {
+        "file": "legacy-after.sqlite",
+        "sha256": "8bb20c791ca36fe50a8430926a907ee66c0893e3b7b7d11be2a34387bfa52ee6",
+        "byte_exact": true
+      },
+      {
+        "file": "legacy-before.sqlite",
+        "sha256": "fae88d476289223f904d8e703e2a47f18a9f9fa8664496e4e1fa4ed9ca42f8bb",
+        "byte_exact": true
+      },
+      {
+        "file": "legacy-expected.json",
+        "sha256": "56435e23b0c45b4e30c5e06c37af14923d36c2878678cc6a284538aab3da0165",
+        "byte_exact": true
+      },
+      {
+        "file": "legacy-genesis.bin",
+        "sha256": "317da240a4412abb33384b006286e918bc92e62ec43635ea3fcced888ab67722",
+        "byte_exact": true
+      },
+      {
+        "file": "legacy-step.bin",
+        "sha256": "d131a18f4560167f88d7fdfda484591c48b8f6088bf27bf83fa9c1f83d52bc72",
+        "byte_exact": true
+      },
+      {
+        "file": "settlement-step.bin",
+        "sha256": "5c52b44917f7e62a453932ad3c8d33ebde7c79ac40585b61045c3eb264c727a9",
+        "byte_exact": true
+      }
+    ],
+    "all_byte_exact": true,
+    "generated_at": "Beta/implementation/p02/coupled-contact-assessment/qualification/legacy15",
+    "retention": "Exact canonical bytes already retained in the referenced prior packet; generated duplicate kept privately."
+  },
+  {
+    "profile": "profile16",
+    "reference": "Beta/implementation/p02/consequence-continuation/qualification/fixture-final",
+    "recreated": "/private/tmp/openfantasy-contact-regression-20260919/legacy16",
+    "files": [
+      {
+        "file": "after.sqlite",
+        "sha256": "f072571d551c800c76eb7c4afee8fcda3203863455f24f5ebb751189b5295a9e",
+        "byte_exact": true
+      },
+      {
+        "file": "before.sqlite",
+        "sha256": "5a679306e4f84618458cb51714eefebeca13150c72518fadf6b77a580a461b4b",
+        "byte_exact": true
+      },
+      {
+        "file": "continuation-001.bin",
+        "sha256": "4c55112d20d17862e46f874844fdf8b9ffed8d9797a7d07449404deb4860db01",
+        "byte_exact": true
+      },
+      {
+        "file": "continuation-002.bin",
+        "sha256": "ad19e692a08af791991cf82cd9c4f73ce7d8ff72f7e0a6fb508b3b0dcb1afee0",
+        "byte_exact": true
+      },
+      {
+        "file": "continuation-003.bin",
+        "sha256": "e153338b0b54a0d4ed9d4b4bad61a0d2abdff1277b81e15ae253c410442e85af",
+        "byte_exact": true
+      },
+      {
+        "file": "continuation-004.bin",
+        "sha256": "94ab7e871a8c5a3a85212e78788010934d0ce71a3cd35eaaec72657eb75aa6ab",
+        "byte_exact": true
+      },
+      {
+        "file": "continuation-005.bin",
+        "sha256": "4046bbd6de542a1a1f8daf6ea677b0f219ddf12dc5f17e5f644bbc03766f5830",
+        "byte_exact": true
+      },
+      {
+        "file": "expected.json",
+        "sha256": "9bea23ff098741c26d304e600d28cc4292bc35af12399ec06bc385514c9a19bd",
+        "byte_exact": true
+      },
+      {
+        "file": "genesis.bin",
+        "sha256": "90f35d381cd9a5c9b0f793c02c86dfbae06ae7147f7ae641f9982f045af1bf98",
+        "byte_exact": true
+      },
+      {
+        "file": "pending-0.sqlite",
+        "sha256": "6078bc4de8b9cd07867e23c9df9e000b9c4398bf0a47de9e721dbdfed02c2405",
+        "byte_exact": true
+      },
+      {
+        "file": "pending-1.sqlite",
+        "sha256": "6495fcd20db5cf5695f6410e294890feca0139485e4d6ce8c4242a5ca9e32a03",
+        "byte_exact": true
+      },
+      {
+        "file": "pending-2.sqlite",
+        "sha256": "c1c693e611f0f30bf67db60e31350f3063cea6f7401d92812094ac545583b8a3",
+        "byte_exact": true
+      },
+      {
+        "file": "pending-3.sqlite",
+        "sha256": "aeabe1227dfa2d3cb8988cefaf869364557fa69eb336d5d7d23e3b4565cfd134",
+        "byte_exact": true
+      },
+      {
+        "file": "pending-4.sqlite",
+        "sha256": "981860279fb22ac7dbf8e75dc05656fac39d971d15b67b23fe7af6af869ad21d",
+        "byte_exact": true
+      },
+      {
+        "file": "pending.sqlite",
+        "sha256": "6078bc4de8b9cd07867e23c9df9e000b9c4398bf0a47de9e721dbdfed02c2405",
+        "byte_exact": true
+      },
+      {
+        "file": "trigger.bin",
+        "sha256": "b16a474e1cb07aeccd2f29b92cd3da148f214d99d159a4dbfc247e4cd2b3a0eb",
+        "byte_exact": true
+      }
+    ],
+    "all_byte_exact": true,
+    "generated_at": "Beta/implementation/p02/coupled-contact-assessment/qualification/legacy16",
+    "retention": "Exact canonical bytes already retained in the referenced prior packet; generated duplicate kept privately."
+  }
+]

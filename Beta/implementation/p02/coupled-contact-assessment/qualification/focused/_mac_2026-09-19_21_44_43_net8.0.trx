@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="edcb9238-598e-407c-9176-56633868ff36" name="@mac 2026-09-19 21:44:43" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-19T21:44:43.8411820-05:00" queuing="2026-09-19T21:44:43.8411830-05:00" start="2026-09-19T21:44:41.0596070-05:00" finish="2026-09-19T21:44:43.9335880-05:00" />
+  <TestSettings name="default" id="ef7b9534-2a75-4829-b33d-929a4ebb0453">
+    <Deployment runDeploymentRoot="_mac_2026-09-19_21_44_43" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="7f89b85f-7583-4358-aa61-91baeee8030b" testId="85c30b66-c26c-fdb6-c73b-22b96e93bc33" testName="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests.A_changed_foundation_reaches_its_dependent_actor_and_the_actors_alternate_support" computerName="mac" duration="00:00:00.0316479" startTime="2026-09-19T21:44:43.5306110-05:00" endTime="2026-09-19T21:44:43.5623810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f89b85f-7583-4358-aa61-91baeee8030b" />
+    <UnitTestResult executionId="8a22e554-ab3c-4739-9c8e-d978306a5610" testId="5fe903b8-7cd3-64a9-ba37-c142d7f392bc" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Stable_binding_remains_terrain_only_and_the_new_scene_is_not_a_publishable_root" computerName="mac" duration="00:00:00.0505489" startTime="2026-09-19T21:44:43.7628600-05:00" endTime="2026-09-19T21:44:43.8134570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a22e554-ab3c-4739-9c8e-d978306a5610" />
+    <UnitTestResult executionId="01d9cdff-50de-4ad0-9d02-0c2046cddfd6" testId="53ee0f01-439c-fbc0-226f-d66e94019135" testName="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests.Multiple_seed_components_are_canonical_copied_and_read_only" computerName="mac" duration="00:00:00.0126308" startTime="2026-09-19T21:44:43.5630110-05:00" endTime="2026-09-19T21:44:43.5756970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="01d9cdff-50de-4ad0-9d02-0c2046cddfd6" />
+    <UnitTestResult executionId="c5e13881-5b3a-4df0-88d6-fa525570cbcf" testId="85d259d1-b541-b34a-8716-22935475d0f7" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Enumeration_order_does_not_change_scene_graph_or_full_dependency_pin" computerName="mac" duration="00:00:00.4353764" startTime="2026-09-19T21:44:43.1887900-05:00" endTime="2026-09-19T21:44:43.6303010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c5e13881-5b3a-4df0-88d6-fa525570cbcf" />
+    <UnitTestResult executionId="f9f44485-2adb-45f7-bdc8-82150a8e11c5" testId="2695812f-a4ab-4c12-880a-a1b89cdde2bd" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.An_exact_member_capacity_accepts_the_unoccupied_stack_but_the_real_rider_overloads_its_lower_base" computerName="mac" duration="00:00:00.0339810" startTime="2026-09-19T21:44:43.6834630-05:00" endTime="2026-09-19T21:44:43.7175200-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9f44485-2adb-45f7-bdc8-82150a8e11c5" />
+    <UnitTestResult executionId="a1704cd9-4390-4131-bf09-0667537993b9" testId="0974f5dd-3c65-33a6-bb3b-785dc1f31e1c" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Unused_mass_calibration_still_changes_the_pin_and_invalidates_an_existing_partial_resolution" computerName="mac" duration="00:00:00.0270358" startTime="2026-09-19T21:44:43.8375960-05:00" endTime="2026-09-19T21:44:43.8646940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a1704cd9-4390-4131-bf09-0667537993b9" />
+    <UnitTestResult executionId="59171f5a-ce95-4c88-84c4-0329c96a77cd" testId="39c65d6f-ab55-ae52-52ad-9abf794ea7c9" testName="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests.Empty_duplicate_unknown_and_excessive_seeds_are_rejected_before_closure" computerName="mac" duration="00:00:00.3257272" startTime="2026-09-19T21:44:43.1887970-05:00" endTime="2026-09-19T21:44:43.5244040-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59171f5a-ce95-4c88-84c4-0329c96a77cd" />
+    <UnitTestResult executionId="ea52d2e6-2a9e-4923-b2df-221cb819ee94" testId="73bd0aea-7724-e68e-923c-1795ec57936f" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Scene_substitution_cannot_remove_an_actor_replace_terrain_or_reset_member_condition" computerName="mac" duration="00:00:00.0180858" startTime="2026-09-19T21:44:43.8652750-05:00" endTime="2026-09-19T21:44:43.8834070-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea52d2e6-2a9e-4923-b2df-221cb819ee94" />
+    <UnitTestResult executionId="38992e75-8f5f-4b75-8fe9-edd8923e62a1" testId="f227629e-4820-a16a-823d-07a633b2cf62" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.A_lower_member_change_selects_both_rigid_assemblies_and_the_rider_without_unrelated_ground_actors" computerName="mac" duration="00:00:00.0226321" startTime="2026-09-19T21:44:43.8139750-05:00" endTime="2026-09-19T21:44:43.8366560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="38992e75-8f5f-4b75-8fe9-edd8923e62a1" />
+    <UnitTestResult executionId="6996397f-99e4-4ca8-8c9f-c08c52524b41" testId="e71f078b-143c-f6f7-1821-a28d431bb354" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.A_clear_actor_one_subunit_above_the_complete_floor_cannot_acquire_a_load_contact" computerName="mac" duration="00:00:00.0176297" startTime="2026-09-19T21:44:43.7446110-05:00" endTime="2026-09-19T21:44:43.7622900-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6996397f-99e4-4ca8-8c9f-c08c52524b41" />
+    <UnitTestResult executionId="6013436a-13e8-4bc1-8060-8ebac5eeb08f" testId="a9a755bf-ec58-a9d9-d2c5-d164bbf82c96" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Funded_separate_installed_outputs_transfer_exact_member_and_carried_loads_through_a_foreign_assembly" computerName="mac" duration="00:00:00.0259918" startTime="2026-09-19T21:44:43.7181160-05:00" endTime="2026-09-19T21:44:43.7441560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6013436a-13e8-4bc1-8060-8ebac5eeb08f" />
+    <UnitTestResult executionId="e2255900-c968-480f-bcc4-36a2ff27de63" testId="e5ef6c6a-393a-0ff4-57b1-eb6a2e7abfb7" testName="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge" computerName="mac" duration="00:00:00.0359239" startTime="2026-09-19T21:44:43.6313460-05:00" endTime="2026-09-19T21:44:43.6821200-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e2255900-c968-480f-bcc4-36a2ff27de63">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : An admitted actor requires complete clear space, direct support and exclusive occupancy. (Parameter 'actors')</Message>
+          <StackTrace>   at OpenFantasy.Core.Spatial.LocalSpatialSnapshot..ctor(TerrainScope scope, IEnumerable`1 regions, IEnumerable`1 actors, IEnumerable`1 structures, GroundSupportMode groundSupport) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 52
+   at OpenFantasy.Core.Tests.Structures.ConstructionContactFixture.Create(Int32 upperOffsetX) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Structures/ConstructionContactFixture.cs:line 67
+   at OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Structures/ConstructionContactAssessmentTests.cs:line 144
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests.A_changed_foundation_reaches_its_dependent_actor_and_the_actors_alternate_support" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="85c30b66-c26c-fdb6-c73b-22b96e93bc33">
+      <Execution id="7f89b85f-7583-4358-aa61-91baeee8030b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests" name="A_changed_foundation_reaches_its_dependent_actor_and_the_actors_alternate_support" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Enumeration_order_does_not_change_scene_graph_or_full_dependency_pin" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="85d259d1-b541-b34a-8716-22935475d0f7">
+      <Execution id="c5e13881-5b3a-4df0-88d6-fa525570cbcf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="Enumeration_order_does_not_change_scene_graph_or_full_dependency_pin" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Unused_mass_calibration_still_changes_the_pin_and_invalidates_an_existing_partial_resolution" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="0974f5dd-3c65-33a6-bb3b-785dc1f31e1c">
+      <Execution id="a1704cd9-4390-4131-bf09-0667537993b9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="Unused_mass_calibration_still_changes_the_pin_and_invalidates_an_existing_partial_resolution" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.A_lower_member_change_selects_both_rigid_assemblies_and_the_rider_without_unrelated_ground_actors" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="f227629e-4820-a16a-823d-07a633b2cf62">
+      <Execution id="38992e75-8f5f-4b75-8fe9-edd8923e62a1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="A_lower_member_change_selects_both_rigid_assemblies_and_the_rider_without_unrelated_ground_actors" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="e5ef6c6a-393a-0ff4-57b1-eb6a2e7abfb7">
+      <Execution id="e2255900-c968-480f-bcc4-36a2ff27de63" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Funded_separate_installed_outputs_transfer_exact_member_and_carried_loads_through_a_foreign_assembly" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="a9a755bf-ec58-a9d9-d2c5-d164bbf82c96">
+      <Execution id="6013436a-13e8-4bc1-8060-8ebac5eeb08f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="Funded_separate_installed_outputs_transfer_exact_member_and_carried_loads_through_a_foreign_assembly" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Scene_substitution_cannot_remove_an_actor_replace_terrain_or_reset_member_condition" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="73bd0aea-7724-e68e-923c-1795ec57936f">
+      <Execution id="ea52d2e6-2a9e-4923-b2df-221cb819ee94" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="Scene_substitution_cannot_remove_an_actor_replace_terrain_or_reset_member_condition" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests.Multiple_seed_components_are_canonical_copied_and_read_only" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="53ee0f01-439c-fbc0-226f-d66e94019135">
+      <Execution id="01d9cdff-50de-4ad0-9d02-0c2046cddfd6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests" name="Multiple_seed_components_are_canonical_copied_and_read_only" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.A_clear_actor_one_subunit_above_the_complete_floor_cannot_acquire_a_load_contact" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="e71f078b-143c-f6f7-1821-a28d431bb354">
+      <Execution id="6996397f-99e4-4ca8-8c9f-c08c52524b41" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="A_clear_actor_one_subunit_above_the_complete_floor_cannot_acquire_a_load_contact" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests.Empty_duplicate_unknown_and_excessive_seeds_are_rejected_before_closure" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="39c65d6f-ab55-ae52-52ad-9abf794ea7c9">
+      <Execution id="59171f5a-ce95-4c88-84c4-0329c96a77cd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionLoadNeighborhoodTests" name="Empty_duplicate_unknown_and_excessive_seeds_are_rejected_before_closure" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Stable_binding_remains_terrain_only_and_the_new_scene_is_not_a_publishable_root" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="5fe903b8-7cd3-64a9-ba37-c142d7f392bc">
+      <Execution id="8a22e554-ab3c-4739-9c8e-d978306a5610" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="Stable_binding_remains_terrain_only_and_the_new_scene_is_not_a_publishable_root" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.An_exact_member_capacity_accepts_the_unoccupied_stack_but_the_real_rider_overloads_its_lower_base" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2695812f-a4ab-4c12-880a-a1b89cdde2bd">
+      <Execution id="f9f44485-2adb-45f7-bdc8-82150a8e11c5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests" name="An_exact_member_capacity_accepts_the_unoccupied_stack_but_the_real_rider_overloads_its_lower_base" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="85c30b66-c26c-fdb6-c73b-22b96e93bc33" executionId="7f89b85f-7583-4358-aa61-91baeee8030b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5fe903b8-7cd3-64a9-ba37-c142d7f392bc" executionId="8a22e554-ab3c-4739-9c8e-d978306a5610" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53ee0f01-439c-fbc0-226f-d66e94019135" executionId="01d9cdff-50de-4ad0-9d02-0c2046cddfd6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85d259d1-b541-b34a-8716-22935475d0f7" executionId="c5e13881-5b3a-4df0-88d6-fa525570cbcf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2695812f-a4ab-4c12-880a-a1b89cdde2bd" executionId="f9f44485-2adb-45f7-bdc8-82150a8e11c5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0974f5dd-3c65-33a6-bb3b-785dc1f31e1c" executionId="a1704cd9-4390-4131-bf09-0667537993b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39c65d6f-ab55-ae52-52ad-9abf794ea7c9" executionId="59171f5a-ce95-4c88-84c4-0329c96a77cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="73bd0aea-7724-e68e-923c-1795ec57936f" executionId="ea52d2e6-2a9e-4923-b2df-221cb819ee94" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f227629e-4820-a16a-823d-07a633b2cf62" executionId="38992e75-8f5f-4b75-8fe9-edd8923e62a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e71f078b-143c-f6f7-1821-a28d431bb354" executionId="6996397f-99e4-4ca8-8c9f-c08c52524b41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a9a755bf-ec58-a9d9-d2c5-d164bbf82c96" executionId="6013436a-13e8-4bc1-8060-8ebac5eeb08f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e5ef6c6a-393a-0ff4-57b1-eb6a2e7abfb7" executionId="e2255900-c968-480f-bcc4-36a2ff27de63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="12" executed="12" passed="11" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.19]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.46]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.02]       System.ArgumentException : An admitted actor requires complete clear space, direct support and exclusive occupancy. (Parameter 'actors')
+[xUnit.net 00:00:02.02]       Stack Trace:
+[xUnit.net 00:00:02.02]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs(52,0): at OpenFantasy.Core.Spatial.LocalSpatialSnapshot..ctor(TerrainScope scope, IEnumerable`1 regions, IEnumerable`1 actors, IEnumerable`1 structures, GroundSupportMode groundSupport)
+[xUnit.net 00:00:02.02]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Structures/ConstructionContactFixture.cs(67,0): at OpenFantasy.Core.Tests.Structures.ConstructionContactFixture.Create(Int32 upperOffsetX)
+[xUnit.net 00:00:02.02]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Structures/ConstructionContactAssessmentTests.cs(144,0): at OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge()
+[xUnit.net 00:00:02.02]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.02]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.22]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-19T21:44:43.6878800-05:00">
+        <Text>[xUnit.net 00:00:02.02]     OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

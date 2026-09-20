@@ -1,0 +1,239 @@
+{
+  "policy": "Standing owner review approval 2026-09-19; one read-only run per assignment, 300 seconds, $2 client budget. No retry/substitution.",
+  "billing_note": "Client reports API-equivalent usage, not measured subscription-credit deduction. Client budget can overshoot at an in-flight turn. The selected review model is Fable; native CLI metadata also reports small Haiku auxiliary calls.",
+  "runs": [
+    {
+      "assignment": "prior-consequences",
+      "transport_status": "completed_pending_review",
+      "provider_status": "success",
+      "is_error": false,
+      "elapsed_seconds": 171.748,
+      "requested_model": "fable[1m]",
+      "reported_models": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1275,
+          "outputTokens": 19,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.0013700000000000001,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-fable-5-1": {
+          "inputTokens": 24,
+          "outputTokens": 13810,
+          "cacheReadInputTokens": 385189,
+          "cacheCreationInputTokens": 55133,
+          "webSearchRequests": 0,
+          "costUSD": 1.8896972499999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 7371,
+          "canonicalModel": "claude-fable-5-1",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "reported_api_equivalent_cost_usd": 1.8910672499999999,
+      "usage": {
+        "input_tokens": 24,
+        "cache_creation_input_tokens": 55133,
+        "cache_read_input_tokens": 385189,
+        "output_tokens": 13810,
+        "output_tokens_details": {
+          "thinking_tokens": 7371
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 55133,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 5296,
+            "cache_read_input_tokens": 56179,
+            "cache_creation_input_tokens": 1847,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 1847
+            },
+            "type": "message",
+            "model": null
+          }
+        ],
+        "speed": "standard"
+      },
+      "permission_denials": [],
+      "context_status": "verified",
+      "repeat_run": false,
+      "result_present": true
+    },
+    {
+      "assignment": "prior-settlement",
+      "transport_status": "process_error",
+      "provider_status": "error_max_budget_usd",
+      "is_error": true,
+      "elapsed_seconds": 202.023,
+      "requested_model": "fable[1m]",
+      "reported_models": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1276,
+          "outputTokens": 14,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.001346,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-fable-5-1": {
+          "inputTokens": 36,
+          "outputTokens": 15655,
+          "cacheReadInputTokens": 639427,
+          "cacheCreationInputTokens": 54486,
+          "webSearchRequests": 0,
+          "costUSD": 2.0326867500000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 9198,
+          "canonicalModel": "claude-fable-5-1",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "reported_api_equivalent_cost_usd": 2.03403275,
+      "usage": {
+        "input_tokens": 34,
+        "cache_creation_input_tokens": 53112,
+        "cache_read_input_tokens": 581892,
+        "output_tokens": 11577,
+        "output_tokens_details": {
+          "thinking_tokens": 7799
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 53112,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 1170,
+            "cache_read_input_tokens": 56623,
+            "cache_creation_input_tokens": 912,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 912
+            },
+            "type": "message",
+            "model": null
+          }
+        ],
+        "speed": "standard"
+      },
+      "permission_denials": [],
+      "context_status": "verified",
+      "repeat_run": false,
+      "result_present": false
+    },
+    {
+      "assignment": "current-contact",
+      "transport_status": "completed_pending_review",
+      "provider_status": "success",
+      "is_error": false,
+      "elapsed_seconds": 129.259,
+      "requested_model": "fable[1m]",
+      "reported_models": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 1519,
+          "outputTokens": 15,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.001594,
+          "contextWindow": 200000,
+          "maxOutputTokens": 32000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-haiku-4-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        },
+        "claude-fable-5-1": {
+          "inputTokens": 8,
+          "outputTokens": 10089,
+          "cacheReadInputTokens": 71396,
+          "cacheCreationInputTokens": 35929,
+          "webSearchRequests": 0,
+          "costUSD": 1.2409590000000001,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 64000,
+          "thinkingTokens": 7025,
+          "canonicalModel": "claude-fable-5-1",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "reported_api_equivalent_cost_usd": 1.242553,
+      "usage": {
+        "input_tokens": 8,
+        "cache_creation_input_tokens": 35929,
+        "cache_read_input_tokens": 71396,
+        "output_tokens": 10089,
+        "output_tokens_details": {
+          "thinking_tokens": 7025
+        },
+        "server_tool_use": {
+          "web_search_requests": 0,
+          "web_fetch_requests": 0
+        },
+        "service_tier": "standard",
+        "cache_creation": {
+          "ephemeral_1h_input_tokens": 35929,
+          "ephemeral_5m_input_tokens": 0
+        },
+        "inference_geo": "not_available",
+        "iterations": [
+          {
+            "input_tokens": 2,
+            "output_tokens": 2512,
+            "cache_read_input_tokens": 32599,
+            "cache_creation_input_tokens": 7753,
+            "cache_creation": {
+              "ephemeral_5m_input_tokens": 0,
+              "ephemeral_1h_input_tokens": 7753
+            },
+            "type": "message",
+            "model": null
+          }
+        ],
+        "speed": "standard"
+      },
+      "permission_denials": [],
+      "context_status": "verified",
+      "repeat_run": false,
+      "result_present": true
+    }
+  ],
+  "total_reported_api_equivalent_cost_usd": 5.167653,
+  "assessment": "No verified runtime defect from three external runs; one useful contract clarification, two incomplete-scope completed reports, one budget failure. Large-fleet expansion deferred; owner routing remains recommended."
+}

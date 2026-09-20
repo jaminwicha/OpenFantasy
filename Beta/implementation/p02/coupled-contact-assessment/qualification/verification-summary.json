@@ -1,0 +1,94 @@
+{
+  "scope": "Read-only coupled structural contact and load assessment; existing durable profiles unchanged.",
+  "build": "build-fixture-corrected.log",
+  "build_errors": 0,
+  "build_warnings": 0,
+  "managed_reports": [
+    {
+      "file": "Beta/implementation/p02/coupled-contact-assessment/qualification/managed-final/_mac_2026-09-19_21_48_26_net8.0.trx",
+      "counts": {
+        "total": "912",
+        "executed": "912",
+        "passed": "912",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-09-19T21:48:26.2689920-05:00",
+        "queuing": "2026-09-19T21:48:26.2689920-05:00",
+        "start": "2026-09-19T21:48:24.0230980-05:00",
+        "finish": "2026-09-19T21:48:36.3301140-05:00"
+      }
+    },
+    {
+      "file": "Beta/implementation/p02/coupled-contact-assessment/qualification/managed-final/_mac_2026-09-19_21_48_38_net8.0.trx",
+      "counts": {
+        "total": "473",
+        "executed": "473",
+        "passed": "473",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "times": {
+        "creation": "2026-09-19T21:48:38.8793910-05:00",
+        "queuing": "2026-09-19T21:48:38.8793910-05:00",
+        "start": "2026-09-19T21:48:36.8846460-05:00",
+        "finish": "2026-09-19T21:52:07.2135360-05:00"
+      }
+    }
+  ],
+  "total_passed": 1385,
+  "new_cases": 14,
+  "source_pins": "runtime-source-sha256.json",
+  "legacy_recreation": "legacy-recreation.json",
+  "preservation": "preservation.json",
+  "reviews": "review-dispositions.md",
+  "external_usage": "external-reviews.json",
+  "not_run": [
+    "new process-kill operator probe",
+    "new rendered or device/art acceptance",
+    "all-systems verifier",
+    "production latency/scale qualification"
+  ],
+  "remaining": [
+    "live coupled multi-assembly trajectories and publication",
+    "versioned contact rule/work and journal bounds",
+    "fracture/debris, harmful impact and injury, general flight",
+    "wet breach and multi-floor presentation",
+    "full phase and campaign acceptance"
+  ],
+  "retained_failures": [
+    {
+      "file": "build-focused.log",
+      "disposition": "Three test analyzer errors corrected; no runtime change."
+    },
+    {
+      "file": "focused.log",
+      "disposition": "11 Core pass/1 invalid supplied-stance fixture failure;2 Hosting pass. Moved only diagnostic builder stance to knownclear terrain. Corrected12Core pass and complete1385pass."
+    }
+  ],
+  "ecosystem_commit": "dc187b1",
+  "milestone_scope": "Exact domain contact/load interpretation, canonical dependencies and conservative load neighborhood; no live coupled collapse."
+}

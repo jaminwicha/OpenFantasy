@@ -5,7 +5,8 @@
     "ecosystem": "../../../GameDevAIEcosystem",
     "codex_skills": "~/.codex/skills",
     "shared_skills": "~/.agents/skills",
-    "claude": "~/.claude"
+    "claude": "~/.claude",
+    "codex": "~/.codex"
   },
   "inputs": [
     {

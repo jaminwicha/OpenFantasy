@@ -68,6 +68,34 @@ public sealed class ConstructionLoadPolicy
 
     public ConstructionBearingModel Bind(WorldSnapshot world)
     {
+        ValidateWorldCatalog(world);
+        return ConstructionBearingModel.Bind(world, InstalledTemplates(world), Foundations, Masses);
+    }
+
+    /// <summary>
+    /// Assesses complete candidate contacts between intact assemblies using retained material and
+    /// carried loads. This grants no placement, excavation, trajectory or stable-world authority.
+    /// </summary>
+    public ConstructionBearingModel AssessContacts(ConstructionContactScene scene)
+    {
+        ArgumentNullException.ThrowIfNull(scene);
+        ValidateWorldCatalog(scene.Basis);
+        if (scene.Basis.StructuralPolicy is null)
+        {
+            throw new ArgumentException("Coupled assessment requires a complete retained structural load owner.", nameof(scene));
+        }
+        return ConstructionBearingModel.AssessContacts(scene, InstalledTemplates(scene.Basis), this);
+    }
+
+    private IEnumerable<ConstructionBearingTemplate> InstalledTemplates(WorldSnapshot world)
+    {
+        HashSet<EntityId> installed = world.Construction!.Projects.Where(value => value.Installed is not null)
+            .Select(value => value.Definition.DefinitionId).ToHashSet();
+        return Templates.Where(value => installed.Contains(value.DefinitionId));
+    }
+
+    private void ValidateWorldCatalog(WorldSnapshot world)
+    {
         ArgumentNullException.ThrowIfNull(world);
         if (world.Space.Scope != Scope || world.Construction is not { } construction
             || construction.Definitions.Count != Templates.Count)
@@ -83,10 +111,6 @@ public sealed class ConstructionLoadPolicy
             }
             template.ValidateFor(definition);
         }
-        HashSet<EntityId> installed = construction.Projects.Where(value => value.Installed is not null)
-            .Select(value => value.Definition.DefinitionId).ToHashSet();
-        return ConstructionBearingModel.Bind(world, Templates.Where(value => installed.Contains(value.DefinitionId)),
-            Foundations, Masses);
     }
 
     private static void ValidateTopology(ConstructionBearingTemplate template)

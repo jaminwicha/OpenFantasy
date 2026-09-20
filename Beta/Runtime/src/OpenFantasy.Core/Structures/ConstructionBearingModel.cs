@@ -4,6 +4,7 @@ using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Terrain;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Structures;
@@ -21,9 +22,12 @@ public sealed class ConstructionBearingModel
 {
     private ConstructionBearingModel(WorldSnapshot world, StructuralLoadGraph graph,
         IEnumerable<StructuralMemberReference> members, IEnumerable<StructuralActorReference> actors,
-        IEnumerable<StableTerrainBearing> foundations, IEnumerable<ConstructionBearingTemplate> templates)
+        IEnumerable<StableTerrainBearing> foundations, IEnumerable<ConstructionBearingTemplate> templates,
+        ContentHash? candidateScenePin = null, ContentHash? policyPin = null)
     {
         WorldHash = world.ContentHash;
+        CandidateScenePin = candidateScenePin;
+        PolicyPin = policyPin;
         Graph = graph;
         Members = Array.AsReadOnly(members.OrderBy(value => value.ElementId).ToArray());
         Actors = Array.AsReadOnly(actors.OrderBy(value => value.ElementId).ToArray());
@@ -39,8 +43,15 @@ public sealed class ConstructionBearingModel
                     CanonicalEncodingV1.Unsigned64(unchecked((ulong)value.Cell.Y)),
                     CanonicalEncodingV1.Unsigned64(unchecked((ulong)value.Cell.Z)), value.SourceId.ToByteArray(),
                     value.Material.DefinitionId.ToByteArray(), value.Material.Version.ToByteArray())).ToArray())));
+        if (candidateScenePin is not null && policyPin is not null)
+        {
+            InputPin = ContentHash.Compute(CanonicalEncodingV1.Frame("construction.contact-assessment.v1",
+                InputPin.ToByteArray(), candidateScenePin.ToByteArray(), policyPin.ToByteArray()));
+        }
     }
 
+    public ContentHash? CandidateScenePin { get; }
+    public ContentHash? PolicyPin { get; }
     public ContentHash WorldHash { get; }
     public ContentHash InputPin { get; }
     public StructuralLoadGraph Graph { get; }
@@ -51,7 +62,17 @@ public sealed class ConstructionBearingModel
 
     public static ConstructionBearingModel Bind(WorldSnapshot world, IEnumerable<ConstructionBearingTemplate> templates,
         IEnumerable<StableTerrainBearing> foundations, StructuralMassCatalog masses,
-        IEnumerable<StructuralMemberCondition>? conditions = null)
+        IEnumerable<StructuralMemberCondition>? conditions = null) =>
+        BindCore(world, templates, foundations, masses, conditions);
+
+    internal static ConstructionBearingModel AssessContacts(ConstructionContactScene scene,
+        IEnumerable<ConstructionBearingTemplate> templates, ConstructionLoadPolicy policy) =>
+        BindCore(scene.Basis, templates, policy.Foundations, policy.Masses, null, scene, policy.ContentHash);
+
+    private static ConstructionBearingModel BindCore(WorldSnapshot world, IEnumerable<ConstructionBearingTemplate> templates,
+        IEnumerable<StableTerrainBearing> foundations, StructuralMassCatalog masses,
+        IEnumerable<StructuralMemberCondition>? conditions, ConstructionContactScene? candidate = null,
+        ContentHash? policyPin = null)
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(templates);
@@ -64,7 +85,8 @@ public sealed class ConstructionBearingModel
         var ratings = templates.Take(ConstructionSnapshot.MaximumDefinitions + 1).ToArray();
         var anchors = foundations.Take(StructuralLoadGraph.MaximumElements + 1).ToArray();
         var wear = (conditions ?? []).Take(ConstructionSnapshot.MaximumProjects * ConstructionDefinition.MaximumMembers + 1).ToArray();
-        bool allowsSettlement = world.StructuralSettlementPolicy is not null;
+        bool allowsSettlement = candidate is not null || world.StructuralSettlementPolicy is not null;
+        ConstructionPhysicalSnapshot? boundPhysical = candidate?.Physical ?? world.ConstructionPhysical;
         if (allowsSettlement && world.ConstructionPhysical is null)
         {
             throw new ArgumentException("Structural settlement requires retained physical member placement.");
@@ -92,9 +114,10 @@ public sealed class ConstructionBearingModel
         List<StructuralMemberReference> members = [];
         List<StructuralActorReference> actors = [];
         List<StructuralContactSurface> contacts = [];
+        List<(EntityId Element, EntityId Structure, BoundaryRectangle Bounds, long StandingZ)> bases = [];
         foreach (StableTerrainBearing anchor in anchors.OrderBy(value => value.ElementId))
         {
-            var region = world.Space.Regions.SingleOrDefault(value => value.Bounds.Contains(anchor.Cell));
+            var region = (candidate?.Regions ?? world.Space.Regions).SingleOrDefault(value => value.Bounds.Contains(anchor.Cell));
             var cell = region?.GetCell(anchor.Cell);
             if (cell is null || cell.SourceId != anchor.SourceId || cell.Material != anchor.Material)
             {
@@ -102,9 +125,10 @@ public sealed class ConstructionBearingModel
             }
             if (!cell.IsSolid)
             {
-                // The policy and its identity remain retained. Only exact completed excavation can
-                // retire this contact; absent terrain or an unowned hole never becomes empty support.
-                bool retired = allowsSettlement && cell.IsExcavated && world.Excavation is { } excavation
+                // Stable roots retire contact only through exact completed excavation. A read-only
+                // candidate may propose additional holes, without earning work or material rights.
+                bool retired = candidate is not null && cell.IsExcavated
+                    || allowsSettlement && cell.IsExcavated && world.Excavation is { } excavation
                     && excavation.Sites.Any(site => site.IsComplete && site.Cell == anchor.Cell
                         && site.TerrainSourceId == anchor.SourceId && site.Material.Item == anchor.Material);
                 if (!retired)
@@ -131,15 +155,15 @@ public sealed class ConstructionBearingModel
             template.ValidateFor(project.Definition);
             usedTemplates.Add(template.DefinitionId);
             var installed = project.Installed!;
-            SubunitPosition origin = allowsSettlement
-                ? SettledOrigin(project, world.ConstructionPhysical!) : project.SiteFeet;
+            SubunitPosition origin = candidate?.OriginFor(project) ?? (allowsSettlement
+                ? SettledOrigin(project, world.ConstructionPhysical!) : project.SiteFeet);
             IReadOnlyList<MassMilligrams> memberMasses = masses.MemberMasses(project.Definition);
             for (uint index = 0; index < project.Definition.Members.Count; index++)
             {
                 MillimetreBox member = project.Definition.Members[(int)index];
                 EntityId id = MemberIdentity(installed.StructureId, index);
                 StructuralMemberRating rating = template.Members[(int)index];
-                uint condition = world.ConstructionPhysical is { } retained
+                uint condition = boundPhysical is { } retained
                     ? retained.GetMember(installed.StructureId, index).ConditionParts
                     : conditionByMember.Remove((installed.StructureId, index), out uint declared) ? declared : 10000;
                 elements.Add(new(id, memberMasses[(int)index], new(0), rating.Capacity, condition, false, rating.MinimumSupportCount));
@@ -149,9 +173,7 @@ public sealed class ConstructionBearingModel
                 contacts.Add(new(id, surface.Bounds, surface.StandingZ, surface.TopTicks));
                 if (member.MinZ == 0)
                 {
-                    var weights = StructuralContactWeights.Resolve(surface.Bounds,
-                        terrainContacts.Where(value => value.StandingZ == origin.Z));
-                    AddBearings(id, weights, bearings);
+                    bases.Add((id, installed.StructureId, surface.Bounds, origin.Z));
                 }
             }
             foreach (StructuralMemberJoint joint in template.Joints)
@@ -167,7 +189,20 @@ public sealed class ConstructionBearingModel
         {
             throw new ArgumentException("A structural rating or condition cannot refer to an absent completed member.");
         }
-        foreach (ActorPresence actor in world.Space.Actors)
+        // Resolve base partitions after collecting every member surface. Assembly enumeration must
+        // never determine whether a foreign supporting member exists. Each patch owns load once.
+        Dictionary<EntityId, EntityId> structureByMember = members.ToDictionary(value => value.ElementId, value => value.StructureId);
+        foreach (var footing in bases)
+        {
+            IEnumerable<StructuralContactSurface> eligible = candidate is null ? terrainContacts : contacts.Where(value =>
+                !structureByMember.TryGetValue(value.ElementId, out EntityId owner) || owner != footing.Structure);
+            var weights = StructuralContactWeights.Resolve(footing.Bounds, eligible.Where(value =>
+                value.StandingZ == footing.StandingZ && (candidate is null
+                    || value.PhysicalTop == (Int128)footing.StandingZ * StructureBearingSurface.TicksPerSubunit)));
+            AddBearings(footing.Element, weights, bearings);
+        }
+        var candidateTerrain = candidate is null ? null : new TerrainVolumeQueries(candidate.Regions);
+        foreach (ActorPresence actor in candidate?.Actors ?? world.Space.Actors)
         {
             ulong mass = checked((ulong)masses.ActorLoad(world, actor.ActorId));
             EntityId id = ActorIdentity(actor.ActorId);
@@ -178,6 +213,20 @@ public sealed class ConstructionBearingModel
             long drop = world.Space.GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction
                 ? Math.Min(LocalSpatialSnapshot.MaximumOrdinaryStepHeightSubunits,
                     actor.Condition.Definition.ClearanceDimensions.HeightSubunits / 4) : 0;
+            if (candidateTerrain is not null)
+            {
+                SpatialOccupancy footing = world.Space.GroundSupport switch
+                {
+                    GroundSupportMode.TerrainOnly => candidateTerrain.Query(volume, requireGroundSupport: true),
+                    GroundSupportMode.SteppedTerrainAndConstruction => FootingQuery.QueryStepped(candidateTerrain,
+                        candidate!.Physical.GetStructures(), volume, drop),
+                    _ => FootingQuery.Query(candidateTerrain, candidate!.Physical.GetStructures(), volume)
+                };
+                if (footing != SpatialOccupancy.Clear)
+                {
+                    throw new ArgumentException("A candidate actor requires complete footing with contact at its actual feet plane.");
+                }
+            }
             long minimum = checked(actor.Feet.Z - drop);
             var weights = StructuralContactWeights.Resolve(footprint, contacts.Where(value =>
                 value.StandingZ >= minimum && value.StandingZ <= actor.Feet.Z));
@@ -186,7 +235,7 @@ public sealed class ConstructionBearingModel
             actors.Add(new(id, actor.ActorId, actor.Condition.Definition.Version, new(mass)));
             AddBearings(id, weights, bearings);
         }
-        return new(world, new(elements, bearings), members, actors, anchors, ratings);
+        return new(world, new(elements, bearings), members, actors, anchors, ratings, candidate?.InputPin, policyPin);
     }
 
     public static EntityId MemberIdentity(EntityId structureId, uint memberIndex) => Identity("structure.member.v1",

@@ -1,0 +1,20 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.02]     OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge [FAIL]
+  Failed OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge [35 ms]
+  Error Message:
+   System.ArgumentException : An admitted actor requires complete clear space, direct support and exclusive occupancy. (Parameter 'actors')
+  Stack Trace:
+     at OpenFantasy.Core.Spatial.LocalSpatialSnapshot..ctor(TerrainScope scope, IEnumerable`1 regions, IEnumerable`1 actors, IEnumerable`1 structures, GroundSupportMode groundSupport) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 52
+   at OpenFantasy.Core.Tests.Structures.ConstructionContactFixture.Create(Int32 upperOffsetX) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Structures/ConstructionContactFixture.cs:line 67
+   at OpenFantasy.Core.Tests.Structures.ConstructionContactAssessmentTests.Clear_but_incomplete_member_contact_is_rejected_for_a_gap_and_a_half_width_ledge() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Structures/ConstructionContactAssessmentTests.cs:line 144
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-contact-assessment/qualification/focused/_mac_2026-09-19_21_44_43_net8.0.trx
+
+Failed!  - Failed:     1, Passed:    11, Skipped:     0, Total:    12, Duration: 694 ms - OpenFantasy.Core.Tests.dll (net8.0)
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coupled-contact-assessment/qualification/focused/_mac_2026-09-19_21_44_52_net8.0.trx
+
+Passed!  - Failed:     0, Passed:     2, Skipped:     0, Total:     2, Duration: 12 s - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -49,6 +49,10 @@ The [policy and motion contracts](structural-policy-and-motion.md) provide a can
 asset, durable stable-world gate and first-contact swept-descent queries. These preserve policy dependencies
 and actual collision material; they do not publish live collapse or replace complete world admission.
 
+The separate [coupled contact assessment](structural-contact-assessment.md) reuses this material and load
+binding for a complete proposed scene. Its exact external base partition can include foreign assemblies,
+and its dependency includes the complete candidate and policy. It does not change the stable-world base law.
+
 ## Contact, topology and accounting
 
 [StructuralContactWeights](../../src/OpenFantasy.Core/Structures/StructuralContactWeights.cs) partitions

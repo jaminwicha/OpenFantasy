@@ -19,6 +19,7 @@ different kind of person.
 | [Constructed footing](constructed-footing.md) | How do completed floors support actors and preserve safe assisted traversal through saves? |
 | [Stair navigation](stair-navigation.md) | How do ordinary steps and routes preserve real elevations and actors above/below each other? |
 | [Structural loads](structural-loads.md) | How do funded members, carried goods, rated bearings and bounded failure plans conserve mass? |
+| [Coupled contact assessment](structural-contact-assessment.md) | How do candidate assemblies share exact support, preserve mass and identify load-dependent neighbors? |
 | [Structural policy and motion](structural-policy-and-motion.md) | How does saved load policy govern actions, carried materials and movement, and how are descent paths checked? |
 | [Intact settlement](structural-settlement.md) | How does excavation atomically lower intact material and riders onto known rated ground? |
 | [Consequence continuation](consequence-continuation.md) | How do accepted physical changes resume after restart and publish once without spending extra time? |

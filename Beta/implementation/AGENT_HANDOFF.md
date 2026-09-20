@@ -32,53 +32,46 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `757bf18`, preserved on `codex/milestone-consequence-continuation`;
-[packet](p02/consequence-continuation/README.md), [architecture contract](../Runtime/docs/architecture/consequence-continuation.md)
-and [milestone ledger](GIT_MILESTONES.md).
+[Coupled contact assessment](p02/coupled-contact-assessment/README.md) and its
+[architecture](../Runtime/docs/architecture/structural-contact-assessment.md) are qualified;
+commit/checkpoint are recorded in the [milestone ledger](GIT_MILESTONES.md).
 
-Fresh dry profile sixteen retains an immutable consequence budget and one accepted excavation command.
-The isolated trigger reserves its interval while stable terrain, actors, material, effort and clocks remain
-unchanged. Real geometric work advances through saved cursors; final publication consumes the completed
-calculation and charges exactly one interval, including refusal. The original command gets one terminal
-receipt, and material is issued only once. This refines the earlier clock-at-trigger proposal; the
-[original integration map](p02/structural-settlement/CONTINUATION_DESIGN.md) remains as annotated design history.
+The new read-only scene retains complete terrain lineage, fabrication/backing and actor bodies while
+checking clear proposed geometry. Shared mass binding partitions exact base contact across foreign
+assemblies, retains internal joints and checks actor footing. Selected counterfactual policies are fully
+pinned and have no world authority. Conservative connected load neighborhoods include alternate supports,
+shared occupants and complete rigid membership. Existing Bind, saves and live settlement are unchanged.
 
-Schema four has explicit continuation kind four. Exact pending retries remain authenticated; the session
-resumes before readiness without new player/NPC controls. Stopping cancels waiting, not saved work. Read-only
-opening/history never advances the cursor. Temporary source/result reservations prevent future identity
-collisions, and journal capacity is checked before accepting a job. Resolving is a distinct view/run state.
+[Evidence](p02/coupled-contact-assessment/qualification/verification-summary.json): **1,385 tests pass
+(912 Core + 473 Hosting), 14 new**, clean build; 26 exact recreated legacy files, 538 unchanged source pins,
+344 architecture links, 22 frozen documents and the exact 19-file predecessor index. Two actual funded
+Hosting worlds preserve ordinary graph bytes before/after settlement. The two-assembly test has real
+quest/fabrication backing but supplied initial/endpoint geometry, not a played or safely swept coupled fall.
+No new process-kill/rendered/device/performance/all-systems gate is claimed.
 
-[Qualification](p02/consequence-continuation/qualification/verification-summary.json): **1,371 tests pass
-(900 Core + 471 Hosting), 21 new**, clean build. The new probe passes 43 ordinary Host calls/six real kills;
-older15/14 controls pass 22 ordinary calls/two kills. Headless foundation/farm pass. Ten old fixture files and
-16 new continuation files recreate exactly; 336 architecture links, 22 frozen specs and the exact 19-file
-predecessor index pass. Full journal/outcome/identity comparison and exact history are independently checked.
-Native critics reviewed Core/Hosting integration, independent tests, documentation and probe assertions.
-A geometry-preparation overflow refusal was corrected; original compile/assertion failures remain recorded.
+The source critic's actor-hover finding was corrected and regression-tested. Three bounded Fable calls
+returned two partial reviews and one budget-exhausted run, for $5.167653 reported API-equivalent usage.
+No external claim established a runtime defect; explicit counterfactual policy selection was clarified.
+[Dispositions](p02/coupled-contact-assessment/qualification/review-dispositions.md) retain limits and checks.
+Standing recommended Fable review approval is captured locally/upstream (`dc187b1`, 11 installed updates);
+implementation stays Astra-led. Larger earlier-phase fleets await demonstrated value; no paid retries.
 
-The first process probe exceeded the 30-second deadline on one historical read. Its cause is unconfirmed.
-The same command later passes in 4.73 seconds; the complete serial probe's maximum ordinary call is 4.90 seconds
-under the unchanged 30-second limit. The original failure remains retained. Production replay/latency is
-unqualified; query-count slicing does not bound setup, restoration, complete-root hashing or load admission.
-No full all-systems verifier, new rendered consequence/device/art acceptance or phase closure is claimed.
-
-Local doctrine and ecosystem commit `e25ade3` clarify separating this task's heavy builds/regressions from
-deadline-sensitive probes while continuing lightweight work, preserving failures and keeping thresholds.
-The maintained verification skill and three installed copies are synchronized through guarded backups;
-[record](p02/consequence-continuation/qualification/ecosystem-learning.json). No external model calls were used.
-
-**Next dependency:** complete the affected-neighbor closure and explicit contact/load ownership needed for
-multiple interacting assemblies. Preserve the durable command/time/identity owner and prove actual coupled
-consequences through it. The geometric interpreter still admits one uniformly descending intact assembly,
-harmless member/body drops and terrain-grounded components. It does not yet admit surviving/deforming joints,
-fracture/debris, harmful impact/injury, long flight or cross-assembly resting. One installed quantity cannot
-become duplicated debris. Broader collision groups and physical transformations require conserved ownership.
-Generated extraction rights/hardness, elevated interaction, multi-floor presentation and wet containment/
-opening/spill composition remain open, along with the whole campaign below. Development remains on
-`codex/runtime-foundation`.
+**Next dependency:** versioned live cross-assembly support and coupled intact trajectories/publication.
+Use complete old/new load dependencies plus swept collision closure, preserve conserved material/riders,
+and rederive durable work/journal reservations. Profile16's 192-unit bound and save meaning remain fixed.
+Begin with a useful coherent moving group; unequal trajectories, fracture/debris, harmful impact/injury,
+long flight, wet composition, generated extraction rights and multi-floor presentation remain open.
+The entire campaign below remains required. Development stays on `codex/runtime-foundation`.
 
 Prior dependencies remain preserved:
 
+- [Durable consequence continuation](p02/consequence-continuation/README.md), `757bf18`, milestone
+  `codex/milestone-consequence-continuation`: fresh profile16 reserves one accepted excavation interval, retains
+  actual geometric cursors and publishes the original sole receipt/material/time once. Schema4 has explicit
+  continuations, authenticated retry, session resume before readiness and finite journal headroom;
+  1,371 tests, 65 ordinary Host calls/eight real kills, 26 recreated files and headless foundation/farm.
+  Initial 30-second historical-read timeout remains retained; later same-threshold pass does not close
+  production latency. Broader interacting motion and phase gates remain open.
 - [Atomic intact settlement](p02/structural-settlement/README.md), `92dd90a`, milestone
   `codex/milestone-structural-settlement`: profile15 actual harmless member/rider descent with complete
   sweeps, conserved backing/foundation identities and one-commit issuance; 1,350 tests, 24 new/legacy Host
@@ -222,9 +215,14 @@ society/ecology/magic/construction/narrative scope; this index does not replace 
 
 ## Execution discipline
 
-Astra works directly by default. Each optional Claude task requires fresh explicit approval for its
-bounded deliverable, benefit and finite usage limit; exactly `fable[1m]` if approved. No paid retry,
-substitution or relay. Earlier permission and “continue” do not authorize another assignment.
+Owner steering, 2026-09-19: Astra implements directly by default. The owner gives standing
+approval and recommends Claude Fable for bounded review/critic assignments, using exactly
+`fable[1m]`; these reviews do not need a new approval question each time. Prepare a concrete
+scope, expected benefit and finite time/usage limit, and use read-only tools by default.
+Implementation or other non-review delegation still requires explicit approval per assignment.
+No silent model substitution, automatic paid retry or relay agent. Keep review proportional:
+one useful independent critic at a coherent checkpoint, not duplicate ceremonial reviews.
+Report failures and friction honestly; unchanged correctness and acceptance gates still apply.
 [Prior evidence](p01/action-offers/delegation.json) records overhead and unverified credit savings.
 Approved work uses [DELEGATION_CONTEXT.json](DELEGATION_CONTEXT.json) and the ecosystem's local
 skill/docs/spec/steering synchronization hook. Assign file ownership; shared docs remain authoritative.

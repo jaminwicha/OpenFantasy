@@ -1,0 +1,14 @@
+{
+  "commit": "dc187b1",
+  "preserved_checkpoint": "codex/checkpoint-review-routing-2026-09-19",
+  "policy": "Standing recommended fable[1m] critics; other external implementation still per-assignment approval. Finite read-only tasks, no paidretry/substitution/relay.",
+  "guarded_installed_updates": 11,
+  "installed_transition_manifest": "GameDevAIEcosystem/manifests/critic-review-routing-2026-09-19.json",
+  "installed_backups": "/Users/alucinor/.local/share/gamedev-ai-ecosystem/skill-sync/critic-review-routing-2026-09-19/receipt.json",
+  "skill_validators": "Both changed skills pass quick_validate.py.",
+  "active_manifests_verified_entries": 208,
+  "manifest_metadata_repair": "Seven stale source pins refreshed only after committed source and installed bytes proved identical; no unrelated installed file overwritten.",
+  "local_context_recipe_fix": "Added explicit codex root for the already approved global instruction target.",
+  "native_cli_output_location": "Private temporary directories, because the home directory is itself a Git checkout.",
+  "scope_note": "Fable reviews are provider subprocess tasks dispatched directly by the lead, without relay agents or a runtime IPC layer."
+}

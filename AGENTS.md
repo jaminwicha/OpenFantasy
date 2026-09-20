@@ -6,14 +6,15 @@ The predecessor remains a preservation and migration source. Successor implement
 
 The central task owns integration. Receive explicit file ownership and acceptance criteria before delegated edits; inspect the current working tree and preserve others' changes. Do not stage, reset or commit unrelated work. Record durable decisions and evidence in shared project documents rather than model-private memory. Model-specific entrypoints route here and must not become competing specifications.
 
-Owner steering, 2026-09-10: Astra works directly by default, using its native tools and
-capabilities without routine inter-agent handoffs. Claude/Fable is an optional exception:
-first prepare a concrete bounded task, expected benefit and usage limit, then request the
-owner's explicit approval for that assignment before any model call. Earlier authorization
-and a request to continue implementation do not authorize a new delegation. When approved,
-use exactly `fable[1m]`, with no silent substitution or automatic paid retry. Follow the shared
-handoff's local skill/context synchronization hook; keep review and results compact and
-report measured friction honestly. Do not create relay agents to perform this process.
+Owner steering, 2026-09-19: Astra implements directly by default. The owner gives standing
+approval and recommends Claude Fable for bounded review/critic assignments, using exactly
+`fable[1m]`; these reviews do not need a new approval question each time. Prepare a concrete
+scope, expected benefit and finite time/usage limit, and use read-only tools by default.
+Implementation or other non-review delegation still requires explicit approval per assignment.
+No silent model substitution, automatic paid retry or relay agent. Keep review proportional:
+one useful independent critic at a coherent checkpoint, not duplicate ceremonial reviews.
+Report failures and friction honestly; unchanged correctness and acceptance gates still apply.
+Approved work uses the maintained skill/context synchronization hook; shared project contracts remain authoritative.
 
 Commit coherent implementation increments along the way. At verified major progress,
 create a preserved milestone branch without switching the checkout. Follow the shared
