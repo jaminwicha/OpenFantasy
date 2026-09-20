@@ -32,40 +32,40 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-Code/evidence: `159e431`, preserved on `codex/milestone-construction-physical`;
-[packet](p02/construction-physical/README.md) and [milestone ledger](GIT_MILESTONES.md).
+Code/evidence: `ca724fb`, preserved on `codex/milestone-structural-policy-motion`;
+[packet](p02/collapse-motion/README.md) and [milestone ledger](GIT_MILESTONES.md).
 
-Fresh dry profile thirteen retains every installed member's condition, displacement and disposition
-separately from construction work and material history. Complete canonical coverage, exact geometry,
-revision guards and stable member identities preserve one original installed output with conserved
-mass/volume. Real funded NPC completion creates all members and reserves their identities in the same
-transaction as work, material and receipt. Historical identity collision rolls the whole action back.
-Partial labor changes the fabrication pin without creating members early. Old saves retain their bytes;
-this admission does not change the default farm or migrate lived worlds.
+Complete authored `ConstructionLoadPolicy` now owns exact scope, all admitted templates, stable source/
+material anchors and calibrated body/item masses. Its canonical expected-hash archive validates identity
+roles, checked projection, full catalogs and acyclic topology even for unbuilt definitions. Weak or
+unsupported acyclic designs remain valid failure-resolution inputs. Binding validates the complete
+construction catalog before selecting installed assemblies; it does not install world law. A future
+pending owner must include the full policy hash separately from the existing active-model `InputPin`.
 
-Stable-world geometry validates the lowest members of every exact face-connected component. Detached
-floating parts and Falling publications are refused; a supplied grounded displaced pose is representable
-without claiming an executed fall. Candidate action admission checks this contact before publication;
-excavation checks the complete proposed hole before spending even partial labor. Static load binding
-uses retained condition and refuses external overrides or detached material needing new contact rules.
+`VerticalDescentQuery` accepts bounded unsupported candidate scenes while preserving strict stable-world
+admission. Every solid/material top and stationary actor head participates in first contact. The complete
+swept body must be clear; exact same-plane footing is required. Unknown terrain, partial/nonbearing ledges,
+actor contact and a clear finite horizon remain explicit outcomes, never invented safe landings. Queries
+move no state and do not apply time, impacts, damage or load certification.
 
-[Qualification](p02/construction-physical/qualification/verification-summary.json): **1,274 managed tests
-(836 Core + 438 Hosting), 33 new, zero failures/skips**, clean solution build, actual Host/Godot headless
-foundation and native farm. The new profile passes 26 ordinary Host calls/two external commit kills; the prior profile passes
-20 calls/two-kill controls. Independent Python verifies the eighteen-field root, twelve member identities,
-exact mass allocation, raw-source retirement, sole installed output and full identity/receipt/journal rows.
-Seven fixture files recreate byte-for-byte. Reverse history/retry does not change the saves. 288 reference
-links, 22 frozen hashes and the exact 19-file predecessor index pass. No rendered/OS/device/art, production
-workload or full-phase acceptance is claimed; the new checker ran directly, not the full all-systems campaign.
+Real quest-funded physical construction and ordinary player/NPC travel prove actor/floor contact, a deck's
+own remaining-leg obstruction, landing on reintroduced deck material, and both actor/material contact with
+an NPC below. Separate archived-policy binding recovers the exact occupied-world graph and conserved
+failure assessment. Candidate obstacle omissions are supplied query inputs, not published collapse.
 
-Bounded native review found aggregate assembly footing could hide floating components, then that excavation
-could defer this failure until final world admission. Exact-component and pre-publication guards resolve
-both; one-work and three-work mining regressions explicitly prove the legacy negative control and unchanged
-material/work/source ownership. Supplied scene setup is labelled, distinct from actual funded completion.
-No gate/deadline was weakened and no external Claude/Fable call was used.
+[Qualification](p02/collapse-motion/qualification/verification-summary.json): **1,321 managed tests
+(881 Core + 440 Hosting), 47 new, zero failures/skips**, clean solution build. Six new fixture files and
+five prior structural fixtures recreate byte-for-byte. All 300 architecture links, 22 frozen specifications
+and the exact 19-file predecessor index pass. Bounded native critique found the inactive-template cycle
+gap; constructor validation and archive rejection resolve it with weak-DAG controls. Factual review
+corrected the 16-definition bound and full-policy pin obligation. Initial compiler and one-off preservation
+checker failures remain recorded. No gate/deadline was weakened and no external Claude/Fable call was used.
+No new native client, external crash campaign, rendered/device/art, performance or full-phase acceptance
+is claimed; this checkpoint adds read-only domain dependencies and leaves actual collapse integration open.
 
-**Next dependency:** actual coupled support-removal consequences. Bind durable calibrated force policy and
-the full affected dependency closure, including movement, carried goods and neighbors. Existing excavation
+**Next dependency:** actual coupled support-removal consequences. Install the canonical calibrated policy
+with explicit fresh-profile root ownership, revisions and the full affected dependency closure, including
+movement, carried goods and neighbors. Existing excavation
 still refuses unsupported geometry; prepare the entire terrain/member/occupant/material consequence before
 final admission, retaining the final swing/source issuance until publication. Add durable pending work with
 a distinct continuation contract that does not advance calendar, exposure or effort again; the host must
@@ -73,8 +73,9 @@ resume it without actor input. Pin the stable job basis separately from its own 
 physical construction, custody, actors/effects, identities and receipts atomically, then qualify actual
 restart/crash/retry/history. Do not call static plans or lifecycle ownership live collapse.
 
-Recompute complete actor contact, including newly exposed lower surfaces, and prove a clear full-body fall
-path and landing or explicit airborne ownership. Missing terrain is not empty. Detached material keeps
+Use the checked descent query for complete actor/member contact, including exposed lower surfaces, then
+resolve coupled trajectories, impact time/injuries and safe landing or explicit airborne ownership. Its
+first-contact/horizon result alone does not publish motion. Missing terrain is not empty. Detached material keeps
 collision and its original installed output; fracture/debris needs a conserved transform rather than N
 copies of a quantity-one lot. Extend resting load paths and collision grouping explicitly before fragments
 exceed the existing assembly span. Pending future IDs must not reserve twice or alias existing cause roles.
@@ -85,6 +86,12 @@ real openings, displaced volume and conserved spill handling; diagnostic policy 
 
 Prior dependencies remain preserved:
 
+- [Physical construction](p02/construction-physical/README.md), `159e431`, milestone
+  `codex/milestone-construction-physical`: fresh profile13 complete member condition/displacement ownership,
+  atomic completion identities, conserved installed backing and exact-component support admission; 1,274
+  tests, new-profile26/two-kill and prior-profile20/two-kill Host controls, headless foundation/farm and seven
+  identical recreated files. Excavation preflights the whole hole before partial labor. No executed fall,
+  live collapse, debris, universal load gate or full phase acceptance.
 - [Structural failure planning](p02/structural-loads/README.md), `ca149cb`, milestone
   `codex/milestone-structural-load-planning`: actual funded member/actor mass, explicit rated DAG,
   conserved cascading failure and trusted-graph canonical resume; 1,241 tests, 14 Host inspections and

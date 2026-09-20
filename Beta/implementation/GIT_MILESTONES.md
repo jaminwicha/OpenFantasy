@@ -49,6 +49,8 @@ branches to record major progress. This is shared project discipline for all aut
 | `codex/milestone-stair-navigation` | `d4f01b4` | Fresh dry profile12 ordinary stairs and bounded directed multi-level routes; 1,189 tests, 20 new-profile Host calls/two process kills, legacy26/two-kill regression and native headless foundation/farm. [Evidence](p01/stair-navigation/README.md) proves a real quest-funded nine-tread/deck assembly, 585-commit player/NPC journey, stacked occupancy and automatic downstairs return. Same route budget after a retained real failure; no load/collapse, wet composition, rendered stair, throughput or full-gate acceptance. |
 | `codex/milestone-structural-load-planning` | `ca149cb` | Actual funded member/actor mass binding, explicitly rated DAG and immutable bounded cascading failure plans with trusted-graph canonical resume; 1,241 tests, 14 fresh Host inspections, independent integer/byte oracle and headless foundation. [Evidence](p02/structural-loads/README.md). Read-only diagnostic scope: no live collapse, debris, actor falling, world-profile publication, production strength/latency or full-gate closure. |
 | `codex/milestone-construction-physical` | `159e431` | Fresh dry profile13 retains complete physical member lifecycle independently of fabrication, with conserved installed material and atomic completion/identity publication. 1,274 tests, 26 new-profile Host calls/two kills, 20 legacy calls/two kills, headless foundation/farm and seven identical recreated files. [Evidence](p02/construction-physical/README.md). Exact-component support and pre-work refusal are qualified; live collapse, debris, actor falling, universal load admission, production performance/art/devices and full gates remain open. |
+| `codex/milestone-structural-policy-motion` | `ca724fb` | Complete canonical authored load policy, inactive-template topology validation and exact whole-body vertical first-contact queries. 1,321 managed tests, 47 new, six new/five prior fixture files recreated exactly, bounded native critique and 300 reference links. [Evidence](p02/collapse-motion/README.md). Read-only dependencies: no installed world policy, live collapse/impact/debris, pending continuation, new native/crash campaign, performance/art/devices or full-gate closure. |
+
 
 The inventory-inspection branch records bounded code `3eed739` and retained evidence at
 `ea56b64981f9f5409248dc9bb728af08439db386`. The development checkout continues on
@@ -176,3 +178,9 @@ backing; supplied displaced poses do not claim an executed fall. Actual collapse
 publication remain the next dependency. Development stays on `codex/runtime-foundation`; all previous
 markers, 22 frozen designs and the exact unrelated predecessor index are preserved. No switch, force move,
 push, merge or full-phase closure accompanies this marker.
+
+The structural-policy-motion marker preserves `ca724fbc3f76e5b392245a9bd67e073e7c66a0b0` with source,
+timeless reference and bounded managed/funded-world qualification. Candidate contacts and load assessments
+do not publish consequences. Live policy ownership and complete atomic collapse remain open. Development
+stays on `codex/runtime-foundation`; previous markers, frozen specifications and the exact unrelated
+predecessor index remain intact. No switch, force move, push, merge or phase closure accompanies this marker.
