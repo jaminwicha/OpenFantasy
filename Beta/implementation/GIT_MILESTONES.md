@@ -22,6 +22,7 @@ branches to record major progress. This is shared project discipline for all aut
 
 | Branch | Commit | Qualified scope and limits |
 |---|---|---|
+| `codex/milestone-playable-worksite` | `7da8fcc` | Two genuinely funded projects, stairs/decks, contextual mining/climbing, exact visible settlement and four-process native save/recovery with unchanged deadlines; 1,487 managed cases and final legacy wheel control pass. Pure-C# replay improvements preserve all 1,334 historical hashes. [Evidence](p02/playable-worksite/README.md) retains failures, source review and measured startup/allocation limits. Provisional art/UX, OS/devices, multiplayer, wet composition, production history/performance and full phases remain open. |
 | `codex/milestone-live-event-descent` | `e668cd7` | Fresh profile18 live intact event settlement and exact durable continuation/publication; one-pass closed-save historical reader preserves complete verification. 1,459 distinct retained/new tests, 83 Host calls/six external kills plus two exact operator controls, legacy fixture/source/spec/index preservation. [Evidence](p02/live-event-descent/README.md) retains the original timeout and measured roughly 50% allocation reduction. Common 256-subunit live fall only; unequal release, fracture/injury, visual/device and production/full-phase gates remain open. |
 | `codex/milestone-event-descent-assessment` | `25da978` | Event-ordered unequal intact geometric descents, stopped-body reinsertion and complete-world read-only assessment with exact impact demand. 1,435 distinct tests, eight actual Host inspections, unchanged save bytes and bounded partial Fable critique. [Evidence](p02/event-descent/README.md). No live profile change, fracture/debris/injury, production latency/rendering or full-phase closure. |
 | `codex/milestone-coupled-settlement` | `463509d` | Fresh profile17 live cross-assembly support and one shared intact harmless trajectory, complete outside sweeps, rider/material conservation and dynamic durable/journal reservations. 1,409 tests, 59 ordinary Host calls/six kills, headless foundation/farm, 20 new/26 legacy exact files. [Evidence](p02/coupled-settlement/README.md) retains the reproduced admission defect and partial external review. Unequal trajectories, fracture/impact/injury, wet composition, presentation, production performance and full gates remain open. |
@@ -229,3 +230,11 @@ qualified domain calculations; the retained live profile17 still publishes its o
 Every original simulation source is unchanged. Development remains on `codex/runtime-foundation`, with
 all earlier markers, frozen designs and the exact unrelated predecessor index preserved. No checkout
 switch, force move, push, merge or full-phase/production acceptance accompanies this marker.
+
+The playable-worksite marker preserves `7da8fcc50c31ec91fa474cde715fc243f39d8c6a`, including
+complete managed qualification, the strict four-process rendered journey and the original farm's
+native wheel control. Movement-root reuse is committed at `518e802`; initial content and the earlier
+hash cache remain in its ancestry. All failed probes, bounds and open production obligations are
+retained. Development continues on `codex/runtime-foundation`; previous markers, all 22 frozen
+specification hashes and the exact unrelated predecessor index remain unchanged. No checkout switch,
+force move, push, merge or full-phase closure accompanies this marker.
