@@ -43,7 +43,7 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 ## Latest increment
 
 [Live event-ordered intact settlement](p02/live-event-descent/README.md) is qualified for its stated
-functional scope. Source `8f19911` adds explicit fresh profile18, a direct root/V3 pending cursor and
+functional scope, preserved at `e668cd7` on `codex/milestone-live-event-descent`. Source `8f19911` adds explicit fresh profile18, a direct root/V3 pending cursor and
 actual event work under unchanged legacy meanings. Follow-up `0783db8` removes duplicate full recovery
 in closed-save historical operators. The [architecture](../Runtime/docs/architecture/event-descent.md)
 and [historical reader](../Runtime/docs/architecture/persistence-and-history.md) describe the live contracts.
