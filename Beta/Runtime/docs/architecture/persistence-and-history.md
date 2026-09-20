@@ -50,6 +50,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 14 | Complete physical world plus immutable load policy, represented carried/project mass and stable action/movement admission |
 | 15 | Immutable harmless-settlement calibration and atomic excavation with intact member/occupant descent |
 | 16 | Reserved advancing interval, retained geometric consequence cursor and original deferred receipt |
+| 17 | Explicit foreign-construction support, bounded coupled intact settlement policy and its reserved consequence cursor |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -80,6 +81,23 @@ policy and its material/occupancy inputs. A failure refusal is not a saved parti
 [Profile fifteen](structural-settlement.md) appends settlement calibration to a direct twenty-field root.
 Its ordinary advancing transaction publishes bounded intact descent, occupants and source issuance
 together. It retains schema three and terminal outcomes; it has no saved partial operation or continuation.
+
+[Profile seventeen](coupled-settlement.md) retains a direct twenty-three-field root. The
+[codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV17.cs) keeps profile sixteen's component order,
+uses spatial version four and `PendingExcavationCodecV2`, then appends the complete
+[CoupledSettlementPolicy](../../src/OpenFantasy.Core/Structures/CoupledSettlementPolicy.cs) archive.
+Spatial version four implies stepped actor footing and `StructureSupportMode.TerrainAndConstruction`;
+older spatial interpreters require terrain-only structure support and cannot silently drop the new law.
+Construction and physical members decode before their supporting spatial scene. The optional pending
+cursor is restored only against the exact stable root, including its coupled policy and complete
+retained load interpretation. Canonical reconstruction and the enclosing 16 MiB bound still apply.
+
+[Fresh coupled admission](../../src/OpenFantasy.Core/Worlds/WorldCoupledSettlementAdmission.cs) accepts only
+an unplayed, unheld profile-sixteen genesis with no pending work. Its admission frame pins the prior
+admission, complete retained load-policy hash and coupled policy hash. It does not migrate a lived save.
+Profile seventeen shares schema four's sole writer and continuation journal with profile sixteen;
+its explicit step codec selects the new interpretation without changing prior step bytes. Reservation
+headroom uses the admitted assembly-dependent work bound, not profile sixteen's single-assembly bound.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
@@ -234,7 +252,7 @@ and [geological history contract](../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md)
 
 ## Reserved physical consequences
 
-The [durable consequence contract](consequence-continuation.md) retains eligible profile-sixteen excavation
-work across explicit continuation commits. The authoritative scene and game clocks remain unchanged until
+The [durable consequence contract](consequence-continuation.md) retains eligible profile-sixteen and profile-seventeen excavation
+work across explicit continuation commits, each under its own geometric interpreter and finite work bound. The authoritative scene and game clocks remain unchanged until
 terminal publication charges the reserved advancing interval once, including on refusal. Active sessions
 resume before client readiness; read-only opening and recorded history do not advance pending work.

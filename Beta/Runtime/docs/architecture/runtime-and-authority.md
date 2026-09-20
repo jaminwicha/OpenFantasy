@@ -34,6 +34,14 @@ root. It binds inventory authority, spatial state, residents, calendar, dialogue
 gathering, production, progression, quest, construction, geography and physical reservoirs admitted by its
 saved profile. World revision and advancing-step count are separate counters.
 
+Dry structural profiles retain fabrication, physical member placement and complete load policy in that
+same root. [Coupled settlement](coupled-settlement.md) adds an explicit construction-support interpretation
+and finite assembly policy. Ordinary successors retain both; an unrelated action cannot drop the physical
+owner or silently revert its contact law. Stable admission uses the world's retained load policy, actual
+carried/installed mass and complete candidate scene. A separately selected read-only calibration cannot
+replace that authority. Saved [consequence work](consequence-continuation.md) reserves the original action's
+advancing interval while its geometry is evaluated; provisional motion is not a second published world.
+
 [WorldAdmissionValidator](../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs) checks the
 composition, including actor/control/presence consistency, definition pins, dialogue participants,
 material relationships and identity roles across the complete finite admitted root.

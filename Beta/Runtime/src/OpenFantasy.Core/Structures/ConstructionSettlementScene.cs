@@ -12,6 +12,8 @@ namespace OpenFantasy.Core.Structures;
 internal sealed class ConstructionSettlementScene
 {
     private readonly HashSet<EntityId> _riderIds = [];
+    private readonly HashSet<EntityId> _movingIds = [];
+    private readonly WorldSnapshot? _basis;
 
     internal ConstructionSettlementScene(LocalSpatialSnapshot space, IEnumerable<TerrainRegionSnapshot> regions,
         ConstructionPhysicalSnapshot physical, StructuralSettlementPolicy policy)
@@ -29,6 +31,26 @@ internal sealed class ConstructionSettlementScene
         InputPin = ComputeInputPin();
     }
 
+    internal ConstructionSettlementScene(WorldSnapshot basis, IEnumerable<TerrainRegionSnapshot> regions)
+    {
+        ArgumentNullException.ThrowIfNull(basis);
+        ArgumentNullException.ThrowIfNull(regions);
+        if (basis.ProfileVersion != 17 || basis.PendingExcavation is not null)
+        {
+            throw new ArgumentException("Coupled settlement requires a stable world with its owned support policy.", nameof(basis));
+        }
+        _basis = basis;
+        OriginalSpace = basis.Space;
+        OriginalPhysical = basis.ConstructionPhysical!;
+        Policy = basis.StructuralSettlementPolicy!;
+        Regions = new VerticalDescentQuery(basis.Space.Scope, regions, [], []).Regions.ToArray();
+        Terrain = new(Regions);
+        InputPin = ContentHash.Compute(CanonicalEncodingV1.Frame("construction.settlement-input.v2",
+            basis.ContentHash.ToByteArray(), basis.CoupledSettlementPolicy!.ContentHash.ToByteArray(),
+            CanonicalEncodingV1.Frame("settlement.candidate-regions", Regions.Select(region =>
+                (ReadOnlyMemory<byte>)region.ComputeContentHash().ToByteArray()).ToArray())));
+    }
+
     internal LocalSpatialSnapshot OriginalSpace { get; }
     internal ConstructionPhysicalSnapshot OriginalPhysical { get; }
     internal StructuralSettlementPolicy Policy { get; }
@@ -36,13 +58,23 @@ internal sealed class ConstructionSettlementScene
     internal TerrainVolumeQueries Terrain { get; }
     internal ContentHash InputPin { get; }
     internal SpatialStructure? Moving { get; private set; }
+    internal SubunitBox[] MovingBoxes { get; private set; } = [];
+    internal bool IsCoupled => _basis is not null;
+    internal int MaximumWorkUnits => _basis?.CoupledSettlementPolicy!.MaximumWorkUnits
+        ?? ConstructionSettlementResolution.MaximumWorkUnits;
     internal SubunitBox[] Bases { get; private set; } = [];
     internal ActorPresence[] Riders { get; private set; } = [];
     internal VerticalDescentQuery? MovingScene { get; private set; }
     internal bool IsRider(EntityId actorId) => _riderIds.Contains(actorId);
+    internal bool IsMoving(EntityId structureId) => _movingIds.Contains(structureId);
 
     internal void Prepare()
     {
+        if (_basis is not null)
+        {
+            PrepareCoupled(_basis);
+            return;
+        }
         var affected = OriginalPhysical.GetStructures().Where(structure => structure.Boxes
             .Where(box => box.Minimum.Z == structure.GroundPlaneZ)
             .Any(box => Terrain.Query(box.Volume, requireGroundSupport: true) != SpatialOccupancy.Clear)).ToArray();
@@ -52,6 +84,8 @@ internal sealed class ConstructionSettlementScene
         }
         if (affected.Length == 0) { return; }
         Moving = affected[0];
+        _movingIds.Add(Moving.StructureId);
+        MovingBoxes = Moving.Boxes.ToArray();
         ConstructionProject project = OriginalPhysical.Construction.Projects.Single(value => value.Installed?.StructureId == Moving.StructureId);
         ValidateIntactPlacement(project);
         FindRiders();
@@ -59,6 +93,65 @@ internal sealed class ConstructionSettlementScene
         Riders = OriginalSpace.Actors.Where(actor => IsRider(actor.ActorId)).ToArray();
         MovingScene = new(OriginalSpace.Scope, Regions,
             OriginalPhysical.GetStructures().Where(structure => structure.StructureId != Moving.StructureId),
+            OriginalSpace.Actors.Where(actor => !IsRider(actor.ActorId)));
+    }
+
+    private void PrepareCoupled(WorldSnapshot basis)
+    {
+        SpatialStructure[] structures = OriginalPhysical.GetStructures().ToArray();
+        // A lost terrain contact can invalidate one base while its dependents still stand on the
+        // original material. Follow the old support graph upward, including whole rigid assemblies.
+        foreach (SpatialStructure structure in structures)
+        {
+            if (structure.Boxes.Where(box => box.Minimum.Z == structure.GroundPlaneZ).Any(box =>
+                FootingQuery.Query(Terrain, structures.Where(other => other.StructureId != structure.StructureId).ToArray(),
+                    box.Volume) != SpatialOccupancy.Clear))
+            {
+                _movingIds.Add(structure.StructureId);
+            }
+        }
+        if (_movingIds.Count == 0) { return; }
+        ConstructionBearingModel model = basis.StructuralPolicy!.Bind(basis);
+        var membership = model.Members.ToDictionary(member => member.ElementId, member => member.StructureId);
+        bool expanded;
+        do
+        {
+            expanded = false;
+            foreach (StructuralBearing bearing in model.Graph.Bearings)
+            {
+                if (membership.TryGetValue(bearing.SupportingElementId, out EntityId supporting)
+                    && _movingIds.Contains(supporting)
+                    && membership.TryGetValue(bearing.SupportedElementId, out EntityId supported))
+                {
+                    expanded |= _movingIds.Add(supported);
+                }
+            }
+        } while (expanded);
+        if (_movingIds.Count > basis.CoupledSettlementPolicy!.MaximumAssemblies)
+        {
+            throw new ArgumentException("The coupled moving group exceeds its admitted assembly bound.");
+        }
+        SpatialStructure[] moving = structures.Where(structure => IsMoving(structure.StructureId)).ToArray();
+        Moving = moving[0];
+        MovingBoxes = moving.SelectMany(structure => structure.Boxes).ToArray();
+        foreach (ConstructionProject project in OriginalPhysical.Construction.Projects.Where(project =>
+            project.Installed is { } installed && IsMoving(installed.StructureId)))
+        {
+            ValidateIntactPlacement(project);
+        }
+        // Carried bases keep their internal group contacts. Only external bases seek a new floor;
+        // every member still sweeps against all retained outside terrain, structures and bodies.
+        var carriedBases = model.Graph.Bearings.Where(bearing =>
+                membership.TryGetValue(bearing.SupportingElementId, out EntityId supporting) && IsMoving(supporting)
+                && membership.TryGetValue(bearing.SupportedElementId, out EntityId supported) && supported != supporting)
+            .Select(bearing => bearing.SupportedElementId).ToHashSet();
+        Bases = moving.SelectMany(structure => structure.Boxes.Where((box, index) =>
+            box.Minimum.Z == structure.GroundPlaneZ
+            && !carriedBases.Contains(ConstructionBearingModel.MemberIdentity(structure.StructureId, (uint)index)))).ToArray();
+        if (Bases.Length == 0) { throw new ArgumentException("A coupled group requires an external base."); }
+        FindRiders(moving);
+        Riders = OriginalSpace.Actors.Where(actor => IsRider(actor.ActorId)).ToArray();
+        MovingScene = new(OriginalSpace.Scope, Regions, structures.Where(structure => !IsMoving(structure.StructureId)),
             OriginalSpace.Actors.Where(actor => !IsRider(actor.ActorId)));
     }
 
@@ -92,6 +185,9 @@ internal sealed class ConstructionSettlementScene
     }
 
     private void FindRiders()
+        => FindRiders([Moving!]);
+
+    private void FindRiders(SpatialStructure[] moving)
     {
         const long ticks = StructureBearingSurface.TicksPerSubunit;
         foreach (ActorPresence actor in OriginalSpace.Actors)
@@ -99,12 +195,14 @@ internal sealed class ConstructionSettlementScene
             BodyVolume volume = BodyVolume.At(actor.Feet, actor.Condition.Definition.ClearanceDimensions);
             var footprint = new BoundaryRectangle((Int128)volume.MinimumX * ticks, (Int128)volume.MinimumY * ticks,
                 (Int128)volume.MaximumX * ticks, (Int128)volume.MaximumY * ticks);
-            var surfaces = Moving!.BearingSurfaces.Where(surface => surface.TopTicks == (Int128)actor.Feet.Z * ticks
-                && surface.Bounds.MinU < footprint.MaxU && surface.Bounds.MaxU > footprint.MinU
-                && surface.Bounds.MinV < footprint.MaxV && surface.Bounds.MaxV > footprint.MinV).ToArray();
+            var surfaces = moving.SelectMany(structure => structure.BearingSurfaces
+                .Where(surface => surface.TopTicks == (Int128)actor.Feet.Z * ticks
+                    && surface.Bounds.MinU < footprint.MaxU && surface.Bounds.MaxU > footprint.MinU
+                    && surface.Bounds.MinV < footprint.MaxV && surface.Bounds.MaxV > footprint.MinV)
+                .Select(surface => new StructuralContactSurface(structure.StructureId, surface.Bounds,
+                    surface.StandingZ, surface.TopTicks))).ToArray();
             if (surfaces.Length == 0) { continue; }
-            _ = StructuralContactWeights.Resolve(footprint, surfaces.Select(surface =>
-                new StructuralContactSurface(Moving.StructureId, surface.Bounds, surface.StandingZ, surface.TopTicks)));
+            _ = StructuralContactWeights.Resolve(footprint, surfaces);
             _riderIds.Add(actor.ActorId);
         }
     }

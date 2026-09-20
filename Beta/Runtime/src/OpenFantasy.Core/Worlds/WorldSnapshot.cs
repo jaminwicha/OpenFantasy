@@ -30,9 +30,10 @@ public sealed class WorldSnapshot
         LiquidReservoirState? reservoirs = null, ReservoirTransportState? transport = null, ExcavationSnapshot? excavation = null,
         ConstructionPhysicalSnapshot? constructionPhysical = null, ConstructionLoadPolicy? structuralPolicy = null,
         StructuralSettlementPolicy? structuralSettlementPolicy = null,
-        ConsequenceExecutionPolicy? consequencePolicy = null, PendingExcavation? pendingExcavation = null)
+        ConsequenceExecutionPolicy? consequencePolicy = null, PendingExcavation? pendingExcavation = null,
+        CoupledSettlementPolicy? coupledSettlementPolicy = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, null)
     {
     }
 
@@ -44,7 +45,7 @@ public sealed class WorldSnapshot
         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
         ConstructionPhysicalSnapshot? constructionPhysical, ConstructionLoadPolicy? structuralPolicy,
         StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
-        PendingExcavation? pendingExcavation, WorldIdentityIndex? previous)
+        PendingExcavation? pendingExcavation, CoupledSettlementPolicy? coupledSettlementPolicy, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -146,6 +147,12 @@ public sealed class WorldSnapshot
         StructuralSettlementPolicy = structuralSettlementPolicy;
         ConsequencePolicy = consequencePolicy;
         PendingExcavation = pendingExcavation;
+        CoupledSettlementPolicy = coupledSettlementPolicy;
+        if ((coupledSettlementPolicy is not null) != (space.StructureSupport == StructureSupportMode.TerrainAndConstruction)
+            || coupledSettlementPolicy is not null && consequencePolicy is null)
+        {
+            throw new ArgumentException("Coupled construction support requires its complete consequence policy and explicit spatial interpretation.");
+        }
         if (consequencePolicy is not null && structuralSettlementPolicy is null
             || pendingExcavation is not null && consequencePolicy is null)
         {
@@ -207,7 +214,8 @@ public sealed class WorldSnapshot
     public StructuralSettlementPolicy? StructuralSettlementPolicy { get; }
     public ConsequenceExecutionPolicy? ConsequencePolicy { get; }
     public PendingExcavation? PendingExcavation { get; }
-    public ushort ProfileVersion => ConsequencePolicy is not null ? (ushort)16 : StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
+    public CoupledSettlementPolicy? CoupledSettlementPolicy { get; }
+    public ushort ProfileVersion => CoupledSettlementPolicy is not null ? (ushort)17 : ConsequencePolicy is not null ? (ushort)16 : StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
         : ConstructionPhysical is not null ? (ushort)13
         : Space.GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction ? (ushort)12
         : Space.GroundSupport == GroundSupportMode.TerrainAndConstruction ? (ushort)11
@@ -231,7 +239,7 @@ public sealed class WorldSnapshot
         {
             throw new InvalidOperationException("Resolve or retain the pending interval before changing world state.");
         }
-        if (space.GroundSupport != Space.GroundSupport)
+        if (space.GroundSupport != Space.GroundSupport || space.StructureSupport != Space.StructureSupport)
         {
             throw new ArgumentException("A successor must retain its admitted ground support rules.");
         }
@@ -252,12 +260,12 @@ public sealed class WorldSnapshot
             throw new ArgumentException("A world successor must retain the sole transport and physical owner together.");
         }
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, IdentityIndex);
     }
     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
         Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
-        ConsequencePolicy, pending, IdentityIndex);
+        ConsequencePolicy, pending, CoupledSettlementPolicy, IdentityIndex);
 }

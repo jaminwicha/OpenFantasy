@@ -36,7 +36,7 @@ labor uses the same complete-hole preflight, but discards projected movement and
 is immutable. `Advance` executes actual base-contact, member-sweep, rider-sweep or actor-footing/landing
 queries; it preserves computed progress between calls. Uniform intact descent, safe distances, outside
 collision groups and known rated terrain obey the [settlement contract](structural-settlement.md).
-The synchronous resolver exhausts the same calculation. The finite bound is 192 geometric work units: at most
+The synchronous resolver exhausts the same calculation. Profile sixteen's finite bound is 192 geometric work units: at most
 32 base contacts, 32 member sweeps, 64 rider sweeps and 64 actor units. An actor unit checks footing
 and may then query descent, so a work unit is not a single primitive query. Zero-work phase transitions do
 not manufacture progress. Terminal advancement is idempotent, and a failed result cannot expose placements.
@@ -51,7 +51,9 @@ A query-count budget is consequently not a wall-clock or production throughput g
 
 ## Stable dependency and identity reservations
 
-The pending basis is the complete job-free profile-sixteen root at the captured original revision.
+The pending basis is the complete job-free root at the captured original revision. Profile sixteen uses
+its fixed single-assembly interpretation; [profile seventeen](coupled-settlement.md) retains its own coupled
+policy, versioned cursor and assembly-dependent work bound.
 Every semantic component and policy is pinned. Current revision and cursor are outside that basis;
 no duplicate world snapshot or inverse effort/respawn operation is needed. Saved pending revision must
 be `basis revision + 1 + continuation count`. Each nonterminal continuation accounts for its full authored
@@ -77,7 +79,7 @@ trigger cause, original revision, basis hash, continuation count and geometric a
 decoding validates canonical bytes and the complete stable world. The 16 MiB root bound remains in force.
 
 [Schema four](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaFour.cs) admits commit kind 4 for
-continuation; kind 3 remains reserved for migration. Profile sixteen requires schema four, while earlier
+continuation; kind 3 remains reserved for migration. Profiles sixteen and seventeen require schema four, while earlier
 profiles retain their exact schemas. No separate pending table becomes a second authority. Commit, head,
 checkpoint, terminal outcomes and issued identities are written in the existing single transaction.
 [WorldCommitPreparation](../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs) accounts exhaustively:
@@ -98,8 +100,8 @@ Read-only opening and recorded-history reconstruction never advance the cursor o
 
 ## Extension boundaries
 
-The durable owner covers one isolated excavation and the bounded intact-settlement interpretation. It
-provides neither concurrent consequence jobs nor a complete affected-neighbor closure. Multiple moving
-assemblies, fracture/debris conservation, harmful impacts, surviving/deforming joints, long flight,
-cross-assembly resting, wet displacement and world-wide asynchronous simulation require explicit domain
-owners and qualification. Durable continuation preserves those obligations; it does not substitute for them.
+The durable owner covers one isolated excavation and bounded intact settlement. Profile seventeen adds
+[explicit coupled group ownership](coupled-settlement.md), including cross-assembly contact, one uniform
+trajectory and dynamic reservations. Concurrent jobs, unequal interacting trajectories, fracture/debris
+conservation, harmful impacts, surviving/deforming joints, long flight, wet displacement and world-wide
+asynchronous simulation require separate domain owners and qualification. Durable continuation preserves those obligations; it does not substitute for them.

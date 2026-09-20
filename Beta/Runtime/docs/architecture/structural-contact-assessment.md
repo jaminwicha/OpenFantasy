@@ -29,8 +29,14 @@ The receiver policy is explicitly selected for this read-only calculation and ma
 basis world's retained calibration. This supports comparing authored capacities or mass calibrations
 without replacing world rules. `PolicyPin` identifies that selection; it is not a claim of authority.
 The basis must have a structural owner to provide complete located custody. Actual stable-world
-admission obtains its policy from `world.StructuralPolicy`. A future consequence publisher must likewise
-use and verify its retained policy; it cannot promote an arbitrary counterfactual assessment to authority.
+admission obtains its policy from `world.StructuralPolicy`. In explicit profile seventeen, `Bind` verifies
+that receiver policy equals the retained policy and constructs the complete scene from the world itself.
+The [coupled consequence owner](coupled-settlement.md) uses this same owned interpretation; an arbitrary
+counterfactual assessment cannot be promoted to authority.
+
+Authoritative coupled binding shares exact contact arithmetic while retaining the stricter foundation
+retirement law: each inactive rated cell needs its completed owned excavation with matching source and
+material. Diagnostic proposed holes never confer permission to persist an unowned removal.
 
 Every lowest member's complete exact bottom footprint is partitioned once among rated terrain and
 foreign assembly members whose exact tops coincide with its base plane. All member surfaces are collected
@@ -49,8 +55,10 @@ overload and cascading failure. Complete geometry and adequate strength remain s
 A proposed hole removes that terrain contact from this calculation without asserting completed excavation.
 The retained inventory is the mass basis: loot that a future transaction might issue is absent from this
 assessment. A publication owner must assess its complete proposed custody and all final consequences before
-admitting a root. The ordinary `Bind` method and stable save profiles retain their terrain-only base law;
-the candidate assessment does not relax those gates or rewrite existing continuation bounds.
+admitting a root. Stable profiles fourteen through sixteen retain their terrain-only base law.
+Profile seventeen explicitly selects foreign-assembly support through its saved spatial mode and coupled
+policy; it does not reinterpret earlier saves or enlarge their continuation reservations. The standalone
+candidate API remains read-only even when its basis already owns the coupled interpretation.
 
 ## Conservative load neighborhood
 
@@ -71,8 +79,10 @@ unlisted input from an assessment. Finite graph bounds do not establish a frame-
 A load neighborhood is not a swept-collision neighborhood and does not mean every included object falls.
 Foreign walls, bodies and overhangs can intersect a moving assembly despite having no initial bearing edge.
 Coupled motion must retain those obstacles, determine synchronized trajectories and contact response, then
-reinsert conserved material before assessing subsequent support. Cross-assembly live settlement therefore
-needs an explicit versioned world interpretation, complete collision ownership and a correspondingly proved
-continuation/journal reservation bound. The existing
-[durable consequence owner](consequence-continuation.md) provides command, time and publication ownership;
+reinsert conserved material before assessing subsequent support. The explicit
+[coupled settlement profile](coupled-settlement.md) owns a bounded intact group with one common downward
+displacement, complete outside obstacles and a separately derived continuation/journal reservation bound.
+The [durable consequence owner](consequence-continuation.md) retains command, time and publication ownership;
 this read-only assessment supplies contact and load dependencies without substituting for those obligations.
+Unequal group trajectories, contact impacts, fracture/debris and scale qualification require further
+explicit interpretations rather than treating the conservative load neighborhood as a motion plan.

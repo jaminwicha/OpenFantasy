@@ -8,7 +8,7 @@ internal static class WorldSpatialCodecV2
     internal static byte[] Encode(LocalSpatialSnapshot space)
     {
         ArgumentNullException.ThrowIfNull(space);
-        if (space.GroundSupport != GroundSupportMode.TerrainAndConstruction)
+        if (space.GroundSupport != GroundSupportMode.TerrainAndConstruction || space.StructureSupport != StructureSupportMode.TerrainOnly)
         {
             throw new ArgumentException("Spatial version two requires terrain and construction ground support.", nameof(space));
         }

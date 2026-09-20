@@ -91,8 +91,10 @@ public sealed class ConstructionPhysicalSnapshot
     public ReadOnlyCollection<SpatialStructure> GetStructures() => _structures;
 
     /// <summary>
-    /// Stable-world contact admission: every exact connected component keeps its own terrain-grounded
-    /// lowest members. This proves neither structural load safety nor a trajectory into the supplied placement.
+    /// Stable-world contact admission: every exact connected component keeps its own supported
+    /// lowest members under the selected support interpretation. Foreign contact excludes the complete
+    /// assembly itself; the load owner separately proves exact material contact and acyclic load paths.
+    /// This proves neither structural load safety nor a trajectory into the supplied placement.
     /// Complete clearance and exclusive occupancy remain the local spatial owner's responsibility.
     /// Terrain contact uses conservative envelopes, retaining the existing physical bottom gap of less than
     /// one subunit where outward quantization places the collider on a supported cell plane.
@@ -139,9 +141,13 @@ public sealed class ConstructionPhysicalSnapshot
                 Int128 lowest = component.Min(index => exact[index].MinZ);
                 foreach (int index in component.Where(index => exact[index].MinZ == lowest))
                 {
-                    if (terrain.Query(collision[index].Volume, requireGroundSupport: true) != SpatialOccupancy.Clear)
+                    SpatialOccupancy support = space.StructureSupport == StructureSupportMode.TerrainOnly
+                        ? terrain.Query(collision[index].Volume, requireGroundSupport: true)
+                        : FootingQuery.Query(terrain, space.Structures.Where(value =>
+                            value.StructureId != project.Installed!.StructureId).ToArray(), collision[index].Volume);
+                    if (support != SpatialOccupancy.Clear)
                     {
-                        throw new ArgumentException("Every detached physical component requires complete terrain support under its lowest members.", nameof(space));
+                        throw new ArgumentException("Every detached physical component requires complete admitted support under its lowest members.", nameof(space));
                     }
                 }
             }

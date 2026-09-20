@@ -48,6 +48,7 @@ public sealed class ExcavationPlanner
             {
                 if (completedResolution?.IsFailed == true) { return Reject(WorldActionRejection.Unavailable); }
                 var settled = completedResolution is not null ? completedResolution.Result
+                    : world.CoupledSettlementPolicy is not null ? new ConstructionSettlementResolver().ResolveCoupled(world, regions)
                     : new ConstructionSettlementResolver().Resolve(space, regions,
                         physical ?? throw new ArgumentException("Settlement requires physical construction."), settlement);
                 changedSpace = settled.Space;
@@ -55,7 +56,8 @@ public sealed class ExcavationPlanner
             }
             else
             {
-                changedSpace = new LocalSpatialSnapshot(space.Scope, regions, space.Actors, space.Structures, space.GroundSupport);
+                changedSpace = new LocalSpatialSnapshot(space.Scope, regions, space.Actors, space.Structures,
+                    space.GroundSupport, space.StructureSupport);
                 physical?.ValidateStableGeometry(changedSpace);
             }
             if (gathering.Nodes.Any(n => ResourceInteractionQueries.QueryAnchor(changedSpace, n.Feet) != SpatialOccupancy.Clear))

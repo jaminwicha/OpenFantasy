@@ -67,11 +67,18 @@ def policy_witness(data, spatial, definition_bytes):
     for catalog in [templates, foundations, bodies, items]:
         ids = [value[1] for value in catalog]
         assert all(len(value) == 16 for value in ids) and ids == sorted(set(ids))
-    definition = read_frame(definition_bytes, 'construction.definition', 12)
-    boxes = [[number(coordinate, True) for coordinate in read_frame(value, 'construction.member', 7)[1:]]
-             for value in read_frame(definition[8], 'construction.members')[1:]]
-    assert {value[1]: value[2].hex() for value in templates} == {definition[2]: digest(definition_bytes)}
+    definitions_bytes = [definition_bytes] if isinstance(definition_bytes, bytes) else list(definition_bytes)
+    assert 1 <= len(definitions_bytes) <= 16
+    definitions = [read_frame(value, 'construction.definition', 12) for value in definitions_bytes]
+    definition_ids = [value[2] for value in definitions]
+    assert all(len(value) == 16 for value in definition_ids) and definition_ids == sorted(set(definition_ids))
+    by_definition = {value[2]: value for value in definitions}
+    assert {value[1]: value[2].hex() for value in templates} == {
+        value[2]: digest(encoded) for value, encoded in zip(definitions, definitions_bytes)}
     for template in templates:
+        definition = by_definition[template[1]]
+        boxes = [[number(coordinate, True) for coordinate in read_frame(value, 'construction.member', 7)[1:]]
+                 for value in read_frame(definition[8], 'construction.members')[1:]]
         assert len(template[2]) == 32
         ratings = [read_frame(value, 'structure.member-rating', 5)
                    for value in read_frame(template[3], 'structure.member-ratings')[1:]]

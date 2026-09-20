@@ -9,7 +9,7 @@ internal static class WorldSpatialCodecV1
 {
     internal static byte[] Encode(LocalSpatialSnapshot space)
     {
-        if (space.GroundSupport != GroundSupportMode.TerrainOnly)
+        if (space.GroundSupport != GroundSupportMode.TerrainOnly || space.StructureSupport != StructureSupportMode.TerrainOnly)
         {
             throw new ArgumentException("Spatial version one requires terrain-only ground support.", nameof(space));
         }
@@ -22,6 +22,10 @@ internal static class WorldSpatialCodecV1
 
     internal static byte[] EncodeComponents(LocalSpatialSnapshot space, ulong version)
     {
+        if ((version == 4) != (space.StructureSupport == StructureSupportMode.TerrainAndConstruction))
+        {
+            throw new ArgumentException("Spatial component versions must retain their admitted construction support interpretation.", nameof(space));
+        }
         BodyDefinition[] definitions = space.Actors.Select(actor => actor.Condition.Definition)
             .GroupBy(definition => definition.DefinitionId).Select(group => group.First())
             .OrderBy(definition => definition.DefinitionId).ToArray();

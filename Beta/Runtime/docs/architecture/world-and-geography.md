@@ -41,6 +41,19 @@ support legal local routing, not an unrestricted global pathfinder.
 work, whole-cell source issuance and terrain removal publish together, with direct support validation.
 The terrain value object's standalone operation remains distinct from that authorized world action.
 
+[Coupled construction support](coupled-settlement.md) is a separate spatial interpretation from actor
+footing. `LocalSpatialSnapshot.StructureSupport` defaults to terrain-only bases; explicit profile
+seventeen permits complete coverage by terrain and foreign assemblies. A structure never supplies its
+own external support. Local checks use conservative collider footprints and exact foreign top patches;
+the physical member owner checks each connected component's lowest members, and the retained load
+model separately requires exact material contact and an acyclic rated bearing graph. Thus visual overlap
+or rounded collider fringes cannot create a missing load path. Earlier profiles keep their original law.
+
+The bounded live consequence joins one intact moving group under a common downward displacement with
+its affected riders and the original excavation transaction. This local support interpretation does not
+supply natural-rock span mechanics, fracture/debris, arbitrary unequal trajectories, fluid breach behavior
+or large-world structural scheduling; those remain distinct physical and publication obligations.
+
 ## Runtime binding: immutable watershed preparation
 
 [WatershedPlanner](../../src/OpenFantasy.Core/Geography/WatershedPlanner.cs) accepts an explicit

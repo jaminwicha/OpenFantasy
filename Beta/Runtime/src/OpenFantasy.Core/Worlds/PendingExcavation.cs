@@ -22,7 +22,7 @@ public sealed class PendingExcavation
         ContinuationCount = continuationCount;
         Resolution = resolution;
         Policy = policy;
-        ulong continuationLimit = MaximumContinuations(policy);
+        ulong continuationLimit = MaximumContinuations(policy, resolution.MaximumTotalWorkUnits);
         var results = new List<EntityId>();
         // Reserve both admissible outcomes at every possible terminal commit, without issuing them.
         for (ulong offset = 2; offset <= checked(continuationLimit + 1); offset++)
@@ -47,7 +47,7 @@ public sealed class PendingExcavation
     public ConstructionSettlementResolution Resolution { get; }
     public EntityId ReservedSourceId => EntityId.DeriveSpawned(Command.CommandId, 0);
     public ReadOnlyCollection<EntityId> ResultReservations { get; }
-    public ulong MaximumContinuationCount => MaximumContinuations(Policy);
+    public ulong MaximumContinuationCount => MaximumContinuations(Policy, Resolution.MaximumTotalWorkUnits);
     public int MaximumTerminalOutcomesByteLength => Math.Max(
         WorldReceiptCodecV1.EncodeBatch([WorldActionReceipt.Create(Command,
             checked(BasisRevision + 1 + MaximumContinuationCount), WorldActionRejection.None)]).Length,
@@ -55,8 +55,9 @@ public sealed class PendingExcavation
             checked(BasisRevision + 1 + MaximumContinuationCount), WorldActionRejection.Unavailable)]).Length);
     internal ConsequenceExecutionPolicy Policy { get; }
 
-    internal static ulong MaximumContinuations(ConsequenceExecutionPolicy policy) => checked(
-        1UL + ((ulong)ConstructionSettlementResolution.MaximumWorkUnits + (ulong)policy.WorkUnitsPerContinuation - 1)
+    internal static ulong MaximumContinuations(ConsequenceExecutionPolicy policy,
+        int maximumWorkUnits = ConstructionSettlementResolution.MaximumWorkUnits) => checked(
+        1UL + ((ulong)maximumWorkUnits + (ulong)policy.WorkUnitsPerContinuation - 1)
             / (ulong)policy.WorkUnitsPerContinuation);
 
     internal static PendingExcavation? Begin(WorldSnapshot basis, WorldActionCommand command, EntityId cause)
@@ -65,8 +66,10 @@ public sealed class PendingExcavation
         ConstructionSettlementResolution resolution;
         try
         {
-            resolution = ConstructionSettlementResolution.Begin(basis.Space,
-                ExcavationPlanner.CandidateRegions(basis.Space, site), basis.ConstructionPhysical!, basis.StructuralSettlementPolicy!);
+            var regions = ExcavationPlanner.CandidateRegions(basis.Space, site);
+            resolution = basis.CoupledSettlementPolicy is not null
+                ? ConstructionSettlementResolution.BeginCoupled(basis, regions)
+                : ConstructionSettlementResolution.Begin(basis.Space, regions, basis.ConstructionPhysical!, basis.StructuralSettlementPolicy!);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
         {
@@ -82,9 +85,12 @@ public sealed class PendingExcavation
 
     internal void ValidateForWorld(WorldSnapshot world)
     {
-        if (world.ProfileVersion != 16 || world.HasReadingHold || world.ConsequencePolicy!.ContentHash != Policy.ContentHash
+        if (world.ProfileVersion is not 16 and not 17 || world.HasReadingHold || world.ConsequencePolicy!.ContentHash != Policy.ContentHash
+            || Resolution.IsCoupled != (world.CoupledSettlementPolicy is not null)
+            || Resolution.MaximumTotalWorkUnits != (world.CoupledSettlementPolicy?.MaximumWorkUnits
+                ?? ConstructionSettlementResolution.MaximumWorkUnits)
             || world.Revision != checked(BasisRevision + 1 + ContinuationCount)
-            || ContinuationCount >= MaximumContinuations(Policy)
+            || ContinuationCount >= MaximumContinuationCount
             || ContinuationCount != 0 && Resolution.IsComplete
             || Resolution.CompletedWorkUnits != checked(ContinuationCount * (ulong)Policy.WorkUnitsPerContinuation))
         {

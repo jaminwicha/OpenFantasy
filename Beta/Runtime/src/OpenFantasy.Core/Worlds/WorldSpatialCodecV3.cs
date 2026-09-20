@@ -8,7 +8,7 @@ internal static class WorldSpatialCodecV3
     internal static byte[] Encode(LocalSpatialSnapshot space)
     {
         ArgumentNullException.ThrowIfNull(space);
-        if (space.GroundSupport != GroundSupportMode.SteppedTerrainAndConstruction)
+        if (space.GroundSupport != GroundSupportMode.SteppedTerrainAndConstruction || space.StructureSupport != StructureSupportMode.TerrainOnly)
         {
             throw new ArgumentException("Spatial version three requires stepped terrain and construction support.", nameof(space));
         }

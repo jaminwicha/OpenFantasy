@@ -17,6 +17,7 @@ public static class ConstructionSettlementResolutionCodecV1
     public static byte[] Encode(ConstructionSettlementResolution resolution)
     {
         ArgumentNullException.ThrowIfNull(resolution);
+        if (resolution.IsCoupled) { throw new ArgumentException("Coupled settlement requires its versioned codec.", nameof(resolution)); }
         return CanonicalEncodingV1.Frame("construction.settlement-resolution.v1", resolution.InputPin.ToByteArray(),
             CanonicalEncodingV1.Unsigned64(resolution.CompletedWorkUnits),
             CanonicalEncodingV1.Unsigned64(resolution.IsFailed ? 2UL : resolution.IsComplete ? 1UL : 0UL));

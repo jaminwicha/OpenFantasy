@@ -19,7 +19,8 @@ internal static class WorldJournalPolicy
     internal const ulong CheckpointCommitInterval = 10_000;
 
     internal static WorldJournalAdvance Advance(WorldJournalUsage current, ulong sequence, ulong steps,
-        ulong commandCount, ulong batchBytes, ulong outcomeBytes, PendingExcavation? newlyPending = null)
+        ulong commandCount, ulong batchBytes, ulong outcomeBytes, PendingExcavation? newlyPending = null,
+        ushort profileVersion = 16)
     {
         ulong commands = checked(current.CommandOutcomeCount + commandCount);
         ulong bytes = checked(current.AcceptedJournalBytes + batchBytes + outcomeBytes);
@@ -29,7 +30,7 @@ internal static class WorldJournalPolicy
         }
         if (newlyPending is not null)
         {
-            RequireCompletionCapacity(newlyPending, sequence, steps, commands, bytes);
+            RequireCompletionCapacity(newlyPending, sequence, steps, commands, bytes, profileVersion);
         }
         bool checkpoint = checked(sequence - current.LastCheckpointSequence) >= CheckpointCommitInterval
             || checked(steps - current.LastCheckpointSteps) >= CheckpointStepInterval;
@@ -39,7 +40,7 @@ internal static class WorldJournalPolicy
     }
 
     private static void RequireCompletionCapacity(PendingExcavation pending, ulong sequence, ulong steps,
-        ulong commands, ulong bytes)
+        ulong commands, ulong bytes, ushort profileVersion)
     {
         ulong continuations = pending.MaximumContinuationCount;
         ulong finalSequence = checked(sequence + continuations);
@@ -47,7 +48,7 @@ internal static class WorldJournalPolicy
         // The accepted cause is used only to size the fixed-width continuation frame. It is not
         // selected or reserved again; each real continuation supplies a fresh unoccupied cause.
         var continuation = new WorldStepBatch(pending.TriggerCauseId, command.WorldId, command.BranchId,
-            sequence, steps, WorldBatchKind.ConsequenceContinuation, [], [], profileVersion: 16);
+            sequence, steps, WorldBatchKind.ConsequenceContinuation, [], [], profileVersion);
         ulong batchLength = (ulong)WorldStepCodec.Encode(continuation).Length;
         ulong emptyOutcomes = (ulong)WorldReceiptCodecV1.EncodeBatch([]).Length;
         ulong terminalOutcomes = checked((ulong)pending.MaximumTerminalOutcomesByteLength);

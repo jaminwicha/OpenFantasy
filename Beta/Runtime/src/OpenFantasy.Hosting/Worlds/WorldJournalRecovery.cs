@@ -44,7 +44,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A production, quest or construction genesis requires its declared world schema.");
         }
-        if ((genesis.ProfileVersion == 16) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
+        if ((genesis.ProfileVersion is 16 or 17) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
         {
             throw new InvalidDataException("A consequence continuation genesis requires its exclusive world schema.");
         }
@@ -74,7 +74,8 @@ internal sealed class WorldJournalRecovery
                 genesis.IdentityIndex, stateHash, identities.ContainsKey, steps, migrations);
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(usage, stored.Sequence, stored.AdvancingSteps,
                 (ulong)expected.Commands.Count, (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length,
-                state.PendingExcavation is null ? expected.Candidate.PendingExcavation : null);
+                state.PendingExcavation is null ? expected.Candidate.PendingExcavation : null,
+                state.ProfileVersion);
             VerifyCommit(stored, expected.Stored);
             foreach (StoredWorldCommandOutcome command in expected.Commands)
             {
@@ -120,7 +121,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The third world schema has no accepted production, quest or construction admission.");
         }
-        if ((state.ProfileVersion == 16) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
+        if ((state.ProfileVersion is 16 or 17) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
         {
             throw new InvalidDataException("The consequence continuation world and its exclusive schema disagree.");
         }

@@ -23,7 +23,8 @@ public sealed partial class LocalSpatialSnapshot
 
     public LocalSpatialSnapshot(TerrainScope scope, IEnumerable<TerrainRegionSnapshot> regions,
         IEnumerable<ActorPresence> actors, IEnumerable<SpatialStructure>? structures = null,
-        GroundSupportMode groundSupport = GroundSupportMode.TerrainOnly)
+        GroundSupportMode groundSupport = GroundSupportMode.TerrainOnly,
+        StructureSupportMode structureSupport = StructureSupportMode.TerrainOnly)
     {
         ArgumentNullException.ThrowIfNull(scope);
         ArgumentNullException.ThrowIfNull(regions);
@@ -32,7 +33,12 @@ public sealed partial class LocalSpatialSnapshot
         {
             throw new ArgumentOutOfRangeException(nameof(groundSupport));
         }
+        if (!Enum.IsDefined(structureSupport))
+        {
+            throw new ArgumentOutOfRangeException(nameof(structureSupport));
+        }
         GroundSupport = groundSupport;
+        StructureSupport = structureSupport;
         Scope = scope;
         Regions = ReadRegions(regions);
         _terrain = new TerrainVolumeQueries(Regions);
@@ -56,12 +62,13 @@ public sealed partial class LocalSpatialSnapshot
 
     public TerrainScope Scope { get; }
     public GroundSupportMode GroundSupport { get; }
+    public StructureSupportMode StructureSupport { get; }
     public ReadOnlyCollection<TerrainRegionSnapshot> Regions { get; }
     public ReadOnlyCollection<ActorPresence> Actors { get; }
     public ReadOnlyCollection<SpatialStructure> Structures { get; }
 
-    public LocalSpatialSnapshot WithActors(IEnumerable<ActorPresence> actors) => new(Scope, Regions, actors, Structures, GroundSupport);
-    public LocalSpatialSnapshot WithStructures(IEnumerable<SpatialStructure> structures) => new(Scope, Regions, Actors, structures, GroundSupport);
+    public LocalSpatialSnapshot WithActors(IEnumerable<ActorPresence> actors) => new(Scope, Regions, actors, Structures, GroundSupport, StructureSupport);
+    public LocalSpatialSnapshot WithStructures(IEnumerable<SpatialStructure> structures) => new(Scope, Regions, Actors, structures, GroundSupport, StructureSupport);
 
     public ActorPresence GetActor(EntityId actorId) => _actors.TryGetValue(actorId, out ActorPresence? actor)
         ? actor : throw new ArgumentException("The actor is outside this admitted local spatial set.", nameof(actorId));

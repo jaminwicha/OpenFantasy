@@ -55,9 +55,9 @@ def settlement_policy(data):
 def state_witness(data, expected):
     root = read_frame(data, 'world.snapshot')
     profile = number(root[1])
-    assert profile in (14, 15, 16) and len(root) == {14: 19, 15: 20, 16: 22}[profile]
+    assert profile in (14, 15, 16, 17) and len(root) == {14: 19, 15: 20, 16: 22, 17: 23}[profile]
     spatial = read_frame(root[3], 'world.spatial', 8)
-    assert number(spatial[1]) == 3
+    assert number(spatial[1]) == (4 if profile == 17 else 3)
     authority = read_frame(root[2], 'authority.counted-state', 9)
     custody = read_frame(authority[3], 'custody.snapshot.v1', 6)
     construction = read_frame(root[15], 'construction.snapshot', 7)
@@ -65,73 +65,201 @@ def state_witness(data, expected):
     world, branch = construction[2:4]
     assert spatial[2:4] == custody[1:3] == production[2:4] == [world, branch]
     assert world.hex() == expected['WorldId'] and branch.hex() == expected['BranchId']
-    definition_bytes = read_frame(construction[5], 'construction.definitions', 2)[1]
-    definition = read_frame(definition_bytes, 'construction.definition', 12)
-    project = read_frame(read_frame(construction[6], 'construction.projects', 2)[1], 'construction.project', 17)
-    assert project[3] == definition[2] and project[4].hex() == digest(definition_bytes)
-    boxes = [[number(value, True) for value in read_frame(row, 'construction.member', 7)[1:]]
-             for row in read_frame(definition[8], 'construction.members')[1:]]
-    assert 1 <= len(boxes) <= 32
-    volumes = []
-    for box in boxes:
-        assert all(box[axis] < box[axis + 3] for axis in range(3))
-        volumes.append((box[3] - box[0]) * (box[4] - box[1]) * (box[5] - box[2]))
-    recipe = read_frame(definition[5], 'craft.recipe', 6)
-    assert definition[5] in read_frame(production[5], 'production.recipes')[1:]
-    physical_recipe = read_frame(recipe[3], 'production.recipe', 9)
-    terms = [read_frame(value, 'production.recipe-term', 6)
-             for value in read_frame(physical_recipe[8], 'production.recipe-terms')[2:]]
-    output_index = number(definition[6])
-    output = [term for term in terms if number(term[2]) != 1][output_index]
-    assert number(output[2]) == 2 and number(output[5]) == 1
-    materials = [value for value in read_frame(physical_recipe[7], 'production.material-catalog')[2:]
-                 if fields(value)[3] == output[3]]
-    assert len(materials) == 1 and digest(materials[0]) == output[4].hex()
-    material = read_frame(materials[0], 'production.material', 8)
-    mass, volume = number(material[5]), number(material[6])
-    assert sum(volumes) == volume
-    masses = [mass * member_volume // volume for member_volume in volumes]
-    remainder = mass - sum(masses)
-    assert 0 <= remainder < len(masses)
-    masses = [value + (ordinal < remainder) for ordinal, value in enumerate(masses)]
+    if profile != 17:
+        definition_bytes = read_frame(construction[5], 'construction.definitions', 2)[1]
+        definition = read_frame(definition_bytes, 'construction.definition', 12)
+        project = read_frame(read_frame(construction[6], 'construction.projects', 2)[1], 'construction.project', 17)
+        assert project[3] == definition[2] and project[4].hex() == digest(definition_bytes)
+        boxes = [[number(value, True) for value in read_frame(row, 'construction.member', 7)[1:]]
+                 for row in read_frame(definition[8], 'construction.members')[1:]]
+        assert 1 <= len(boxes) <= 32
+        volumes = []
+        for box in boxes:
+            assert all(box[axis] < box[axis + 3] for axis in range(3))
+            volumes.append((box[3] - box[0]) * (box[4] - box[1]) * (box[5] - box[2]))
+        recipe = read_frame(definition[5], 'craft.recipe', 6)
+        assert definition[5] in read_frame(production[5], 'production.recipes')[1:]
+        physical_recipe = read_frame(recipe[3], 'production.recipe', 9)
+        terms = [read_frame(value, 'production.recipe-term', 6)
+                 for value in read_frame(physical_recipe[8], 'production.recipe-terms')[2:]]
+        output_index = number(definition[6])
+        output = [term for term in terms if number(term[2]) != 1][output_index]
+        assert number(output[2]) == 2 and number(output[5]) == 1
+        materials = [value for value in read_frame(physical_recipe[7], 'production.material-catalog')[2:]
+                     if fields(value)[3] == output[3]]
+        assert len(materials) == 1 and digest(materials[0]) == output[4].hex()
+        material = read_frame(materials[0], 'production.material', 8)
+        mass, volume = number(material[5]), number(material[6])
+        assert sum(volumes) == volume
+        masses = [mass * member_volume // volume for member_volume in volumes]
+        remainder = mass - sum(masses)
+        assert 0 <= remainder < len(masses)
+        masses = [value + (ordinal < remainder) for ordinal, value in enumerate(masses)]
 
-    physical = read_frame(root[17], 'construction.physical.v1', 6)
-    assert len(root[17]) <= 256 * 1024 and physical[1].hex() == digest(root[15])
-    assert physical[2:4] == [world, branch]
-    rows = read_frame(physical[5], 'construction.physical.members.v1')[1:]
-    assert len(rows) <= 1024
-    installed = None
-    if project[15]:
-        placement = read_frame(project[15], 'construction.installed', 6)
-        installed = dict(StructureId=placement[1].hex(), GuardLotId=placement[2].hex(),
-                         GuardLotRevision=number(placement[3]), BatchId=placement[4].hex(),
-                         CommandId=placement[5].hex(), ProjectCustodianId=project[8].hex())
-        assert len(rows) == len(boxes)
-        lots = [read_frame(value, 'production.lot', 10)
-                for value in read_frame(production[7], 'production.lots')[1:]]
-        guards = [lot for lot in lots if lot[2] == placement[2]]
-        assert len(guards) == 1 and guards[0][3] == project[8] and guards[0][9] == project[9]
-        assert number(guards[0][7]) == number(placement[3]) and number(guards[0][8]) == 0
-        claim = read_frame(guards[0][6], 'production.output-claim', 6)
-        assert claim[2] == placement[4] and [number(value) for value in claim[3:]] == [output_index, 0, 1]
+        physical = read_frame(root[17], 'construction.physical.v1', 6)
+        assert len(root[17]) <= 256 * 1024 and physical[1].hex() == digest(root[15])
+        assert physical[2:4] == [world, branch]
+        rows = read_frame(physical[5], 'construction.physical.members.v1')[1:]
+        assert len(rows) <= 1024
+        installed = None
+        if project[15]:
+            placement = read_frame(project[15], 'construction.installed', 6)
+            installed = dict(StructureId=placement[1].hex(), GuardLotId=placement[2].hex(),
+                             GuardLotRevision=number(placement[3]), BatchId=placement[4].hex(),
+                             CommandId=placement[5].hex(), ProjectCustodianId=project[8].hex())
+            assert len(rows) == len(boxes)
+            lots = [read_frame(value, 'production.lot', 10)
+                    for value in read_frame(production[7], 'production.lots')[1:]]
+            guards = [lot for lot in lots if lot[2] == placement[2]]
+            assert len(guards) == 1 and guards[0][3] == project[8] and guards[0][9] == project[9]
+            assert number(guards[0][7]) == number(placement[3]) and number(guards[0][8]) == 0
+            claim = read_frame(guards[0][6], 'production.output-claim', 6)
+            assert claim[2] == placement[4] and [number(value) for value in claim[3:]] == [output_index, 0, 1]
+            batches = [read_frame(value, 'production.batch', 9)
+                       for value in read_frame(production[6], 'production.batches')[1:]]
+            backing = [batch for batch in batches if batch[2] == placement[4]]
+            assert len(backing) == 1 and backing[0][3] == placement[5] and backing[0][4:6] == [project[6], project[8]]
+        else:
+            assert not rows
+        members = []
+        for ordinal, value in enumerate(rows):
+            row = read_frame(value, 'construction.physical.member.v1', 9)
+            assert installed is not None and row[1].hex() == installed['StructureId'] and number(row[2]) == ordinal
+            disposition = number(row[8])
+            assert disposition in (1, 2, 3) and number(row[4]) <= 10_000
+            members.append(dict(ElementId=member_identity(row[1].hex(), ordinal), StructureId=row[1].hex(),
+                                MemberIndex=ordinal, Revision=number(row[3]), ConditionParts=number(row[4]),
+                                Disposition={1: 'Standing', 2: 'Falling', 3: 'Resting'}[disposition],
+                                Displacement=position(number(value, True) for value in row[5:8]),
+                                InstalledLotId=installed['GuardLotId'], MassMilligrams=masses[ordinal],
+                                VolumeMicrolitres=volumes[ordinal]))
+    else:
+        # Profile seventeen keeps every independent fabrication cohort and its complete template catalog.
+        definition_bytes = read_frame(construction[5], 'construction.definitions')[1:]
+        definitions = [read_frame(value, 'construction.definition', 12) for value in definition_bytes]
+        projects = [read_frame(value, 'construction.project', 17)
+                    for value in read_frame(construction[6], 'construction.projects')[1:]]
+        assert 1 <= len(definitions) <= 16 and 1 <= len(projects) <= 32
+        for ids in ([value[2] for value in definitions], [value[2] for value in projects]):
+            assert all(len(value) == 16 for value in ids) and ids == sorted(set(ids))
+        raw_lots = [read_frame(value, 'custody.source-lot.v1', 11)
+                    for value in read_frame(custody[5], 'custody.lots.v1')[1:]]
+        production_lots = [read_frame(value, 'production.lot', 10)
+                           for value in read_frame(production[7], 'production.lots')[1:]]
         batches = [read_frame(value, 'production.batch', 9)
                    for value in read_frame(production[6], 'production.batches')[1:]]
-        backing = [batch for batch in batches if batch[2] == placement[4]]
-        assert len(backing) == 1 and backing[0][3] == placement[5] and backing[0][4:6] == [project[6], project[8]]
-    else:
-        assert not rows
-    members = []
-    for ordinal, value in enumerate(rows):
-        row = read_frame(value, 'construction.physical.member.v1', 9)
-        assert installed is not None and row[1].hex() == installed['StructureId'] and number(row[2]) == ordinal
-        disposition = number(row[8])
-        assert disposition in (1, 2, 3) and number(row[4]) <= 10_000
-        members.append(dict(ElementId=member_identity(row[1].hex(), ordinal), StructureId=row[1].hex(),
-                            MemberIndex=ordinal, Revision=number(row[3]), ConditionParts=number(row[4]),
-                            Disposition={1: 'Standing', 2: 'Falling', 3: 'Resting'}[disposition],
-                            Displacement=position(number(value, True) for value in row[5:8]),
-                            InstalledLotId=installed['GuardLotId'], MassMilligrams=masses[ordinal],
-                            VolumeMicrolitres=volumes[ordinal]))
+        admitted_sources = {value[1]: value for value in (
+            read_frame(row, 'authority.source', 5) for row in read_frame(authority[7], 'authority.sources')[1:])}
+        calibrations = {}
+        for definition, encoded in zip(definitions, definition_bytes):
+            boxes = [[number(value, True) for value in read_frame(row, 'construction.member', 7)[1:]]
+                     for row in read_frame(definition[8], 'construction.members')[1:]]
+            assert 1 <= len(boxes) <= 32
+            volumes = []
+            for box in boxes:
+                assert all(box[axis] < box[axis + 3] for axis in range(3))
+                volumes.append((box[3] - box[0]) * (box[4] - box[1]) * (box[5] - box[2]))
+            recipe = read_frame(definition[5], 'craft.recipe', 6)
+            assert definition[5] in read_frame(production[5], 'production.recipes')[1:]
+            physical_recipe = read_frame(recipe[3], 'production.recipe', 9)
+            terms = [read_frame(value, 'production.recipe-term', 6)
+                     for value in read_frame(physical_recipe[8], 'production.recipe-terms')[2:]]
+            outputs = [value for value in terms if number(value[2]) != 1]
+            output_index = number(definition[6])
+            assert 0 <= output_index < len(outputs)
+            output = outputs[output_index]
+            assert number(output[2]) == 2 and number(output[5]) == 1
+            materials = [value for value in read_frame(physical_recipe[7], 'production.material-catalog')[2:]
+                         if fields(value)[3] == output[3]]
+            assert len(materials) == 1 and digest(materials[0]) == output[4].hex()
+            material = read_frame(materials[0], 'production.material', 8)
+            mass, volume = number(material[5]), number(material[6])
+            assert mass > 0 and volume > 0 and sum(volumes) == volume
+            masses = [mass * member_volume // volume for member_volume in volumes]
+            remainder = mass - sum(masses)
+            assert 0 <= remainder < len(masses)
+            masses = [value + (ordinal < remainder) for ordinal, value in enumerate(masses)]
+            bindings = [read_frame(value, 'craft.item-physical', 6)
+                        for value in read_frame(recipe[4], 'craft.bindings')[1:]]
+            physical_items = {(value[4], value[5]): (value[2], value[3]) for value in bindings}
+            assert len(physical_items) == len(bindings)
+            inputs = [value for value in terms if number(value[2]) == 1]
+            input_units = {physical_items[(value[3], value[4])]: number(value[5]) for value in inputs}
+            assert len(input_units) == len(inputs) == 1
+            calibrations[definition[2]] = dict(Version=digest(encoded), Definition=definition, Recipe=recipe,
+                OutputIndex=output_index, OutputCount=len(outputs), OutputItem=physical_items[(output[3], output[4])],
+                InputUnits=input_units, Masses=masses, Volumes=volumes)
+
+        physical = read_frame(root[17], 'construction.physical.v1', 6)
+        assert len(root[17]) <= 256 * 1024 and physical[1].hex() == digest(root[15])
+        assert physical[2:4] == [world, branch] and number(physical[4]) <= number(root[8])
+        rows = [read_frame(value, 'construction.physical.member.v1', 9)
+                for value in read_frame(physical[5], 'construction.physical.members.v1')[1:]]
+        row_keys = [(value[1], number(value[2])) for value in rows]
+        assert len(rows) <= 1024 and row_keys == sorted(set(row_keys))
+        installed, member_specs, retired_ranges = {}, {}, {}
+        backing_lots, backing_batches, retired_lots = set(), set(), set()
+        for project in projects:
+            calibration = calibrations[project[3]]
+            assert project[4].hex() == calibration['Version']
+            if not project[15]:
+                continue
+            placement = read_frame(project[15], 'construction.installed', 6)
+            structure = placement[1].hex()
+            assert structure not in installed and placement[2] not in backing_lots and placement[4] not in backing_batches
+            backing_lots.add(placement[2])
+            backing_batches.add(placement[4])
+            spawned = lambda ordinal: hashlib.sha256(frame('entity.spawned', placement[5], ordinal.to_bytes(8, 'big'))).digest()[:16]
+            assert placement[1] == spawned(calibration['OutputCount'] + 1)
+            assert placement[2] == spawned(calibration['OutputIndex'] + 1) and placement[4] == spawned(0)
+            guard = [lot for lot in production_lots if lot[2] == placement[2]]
+            assert len(guard) == 1 and guard[0][3] == project[8] and guard[0][9] == project[9]
+            assert tuple(guard[0][4:6]) == calibration['OutputItem']
+            assert number(guard[0][7]) == number(placement[3]) and number(guard[0][8]) == 0
+            claim = read_frame(guard[0][6], 'production.output-claim', 6)
+            assert claim[2] == placement[4] and [number(value) for value in claim[3:]] == [calibration['OutputIndex'], 0, 1]
+            backing = [batch for batch in batches if batch[2] == placement[4]]
+            assert len(backing) == 1 and backing[0][3] == placement[5] and backing[0][4:6] == [project[6], project[8]]
+            assert backing[0][6] == calibration['Recipe'][2]
+            assert backing[0][7].hex() == digest(calibration['Definition'][5])
+            input_totals, retired = {}, []
+            for value in read_frame(backing[0][8], 'production.retired')[1:]:
+                ingredient = read_frame(value, 'production.ingredient', 8)
+                assert number(ingredient[2]) == 1 and ingredient[3] not in retired_lots
+                retired_lots.add(ingredient[3])
+                claim = read_frame(ingredient[7], 'production.source-claim', 5)
+                source_row = admitted_sources[claim[2]]
+                start, end = number(claim[3]), number(claim[4])
+                assert 0 <= start < end <= number(source_row[4]) and source_row[2:4] == ingredient[5:7]
+                intervals = retired_ranges.setdefault(claim[2], [])
+                assert all(end <= left or start >= right for left, right in intervals)
+                intervals.append((start, end))
+                assert not any(lot[1] == ingredient[3] or lot[5] == claim[2]
+                               and start < number(lot[7]) and number(lot[6]) < end for lot in raw_lots)
+                item = tuple(ingredient[5:7])
+                input_totals[item] = input_totals.get(item, 0) + end - start
+                retired.append(dict(LotId=ingredient[3].hex(), DefinitionId=ingredient[5].hex(),
+                    DefinitionVersion=ingredient[6].hex(), SourceId=claim[2].hex(), Start=start, End=end,
+                    Revision=number(ingredient[4])))
+            assert input_totals == calibration['InputUnits']
+            assert not any(lot[10] == project[9] for lot in raw_lots)
+            installed[structure] = dict(StructureId=structure, GuardLotId=placement[2].hex(),
+                GuardLotRevision=number(placement[3]), BatchId=placement[4].hex(), CommandId=placement[5].hex(),
+                ProjectCustodianId=project[8].hex(), ProjectId=project[2].hex(), DefinitionId=project[3].hex(),
+                RetiredSourceClaims=sorted(retired, key=lambda value: value['LotId']))
+            for ordinal, (mass, volume) in enumerate(zip(calibration['Masses'], calibration['Volumes'])):
+                member_specs[(placement[1], ordinal)] = (installed[structure], mass, volume)
+        assert set(row_keys) == set(member_specs)
+        members = []
+        for row, (structure, ordinal) in zip(rows, row_keys):
+            cohort, mass, volume = member_specs[(structure, ordinal)]
+            disposition = number(row[8])
+            assert disposition in (1, 2, 3) and number(row[4]) <= 10_000 and number(row[3]) <= number(physical[4])
+            members.append(dict(ElementId=member_identity(structure.hex(), ordinal), StructureId=structure.hex(),
+                MemberIndex=ordinal, Revision=number(row[3]), ConditionParts=number(row[4]),
+                Disposition={1: 'Standing', 2: 'Falling', 3: 'Resting'}[disposition],
+                Displacement=position(number(value, True) for value in row[5:8]),
+                InstalledLotId=cohort['GuardLotId'], MassMilligrams=mass, VolumeMicrolitres=volume))
 
     actors = {}
     controls = {}
@@ -201,7 +329,7 @@ def state_witness(data, expected):
             selected.append(dict(Region=len(regions) - 1, Index=index, IsExcavated=index in edits))
     assert len(selected) == 1
     load_policy, identities = policy_witness(root[18], spatial, definition_bytes)
-    return dict(ProfileVersion=profile, WorldId=world.hex(), BranchId=branch.hex(), StateHash=digest(data),
+    witness = dict(ProfileVersion=profile, WorldId=world.hex(), BranchId=branch.hex(), StateHash=digest(data),
                 Revision=number(root[8]), AdvancingSteps=number(root[9]),
                 CalendarMilliseconds=number(root[6], True) * 86_400_000 + number(root[7]),
                 ConstructionHash=digest(root[15]), ProductionHash=digest(root[12]),
@@ -216,6 +344,14 @@ def state_witness(data, expected):
                 MaterialPin=site[6].hex(), YieldQuantity=quantity, Issued=issued,
                 StructuralPolicy=load_policy, PolicyIdentities=identities,
                 StructuralSettlementPolicy=settlement_policy(root[19]) if profile >= 15 else None)
+    if profile == 17:
+        coupled = read_frame(root[22], 'construction.coupled-settlement-policy.v1', 2)
+        assemblies = number(coupled[1])
+        assert len(root[22]) <= 128 and 1 <= assemblies <= 32
+        assert frame('construction.coupled-settlement-policy.v1', coupled[1]) == root[22]
+        witness['CoupledSettlementPolicy'] = dict(ContentHash=digest(root[22]), MaximumAssemblies=assemblies,
+                                                   MaximumWorkUnits=2 * assemblies * 32 + 2 * 64)
+    return witness
 
 
 def main():

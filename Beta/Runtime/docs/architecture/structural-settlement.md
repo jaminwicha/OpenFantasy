@@ -30,7 +30,7 @@ profile it passes the complete current physical scene and proposed terrain to
 before constructing a stable spatial root. Partial labor discards the projected motion and source issuance;
 the final swing publishes them only with the completed site, exact raw lot and terminal receipt.
 
-The resolver checks all assemblies for lost lowest-member terrain support. At most one affected assembly
+The profile-fifteen/sixteen resolver checks all assemblies for lost lowest-member terrain support. At most one affected assembly
 is admitted per removal. Every member retains a uniform vertical placement and disposition; horizontal
 translation, partial detachment and rotation require a different collision interpretation. Moving contact
 planes must be exact subunit planes, avoiding a rounded collider standing in for a separated physical face.
@@ -88,8 +88,9 @@ replays the entire accepted settlement; no partial unsupported root is published
 
 Profile fifteen publishes the bounded operation atomically. [Profile sixteen's consequence owner](consequence-continuation.md)
 retains the same geometry through durable continuations with a stable basis, complete policy, original command
-and bounded query cursor. Larger affected closures require additional geometry and consequence ownership.
+and bounded query cursor. [Profile seventeen](coupled-settlement.md) supplies versioned cross-assembly support
+and an intact group with one shared trajectory. Its moving closure and finite work bound are explicit.
 Continuations must resume without actor input, add no second time/effort interval and issue the original
 command's result and source exactly once. Overload breakage, deformation, debris transformations, harmful
-impacts, longer flight, resting on other assemblies and wet displacement retain their separate ownership
+impacts, longer flight, unequal interacting trajectories and wet displacement retain their separate ownership
 obligations. An intact fall does not satisfy those contracts or erase their acceptance gates.

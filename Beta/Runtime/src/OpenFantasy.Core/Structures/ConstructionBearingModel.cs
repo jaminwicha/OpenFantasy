@@ -67,12 +67,19 @@ public sealed class ConstructionBearingModel
 
     internal static ConstructionBearingModel AssessContacts(ConstructionContactScene scene,
         IEnumerable<ConstructionBearingTemplate> templates, ConstructionLoadPolicy policy) =>
-        BindCore(scene.Basis, templates, policy.Foundations, policy.Masses, null, scene, policy.ContentHash);
+        BindCore(scene.Basis, templates, policy.Foundations, policy.Masses, null, scene, policy.ContentHash,
+            allowProposedFoundationRemoval: true);
+
+    internal static ConstructionBearingModel BindCoupled(WorldSnapshot world,
+        IEnumerable<ConstructionBearingTemplate> templates, ConstructionLoadPolicy policy) =>
+        BindCore(world, templates, policy.Foundations, policy.Masses, null,
+            new ConstructionContactScene(world, world.Space.Regions, world.ConstructionPhysical!, world.Space.Actors),
+            policy.ContentHash);
 
     private static ConstructionBearingModel BindCore(WorldSnapshot world, IEnumerable<ConstructionBearingTemplate> templates,
         IEnumerable<StableTerrainBearing> foundations, StructuralMassCatalog masses,
         IEnumerable<StructuralMemberCondition>? conditions, ConstructionContactScene? candidate = null,
-        ContentHash? policyPin = null)
+        ContentHash? policyPin = null, bool allowProposedFoundationRemoval = false)
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(templates);
@@ -127,7 +134,7 @@ public sealed class ConstructionBearingModel
             {
                 // Stable roots retire contact only through exact completed excavation. A read-only
                 // candidate may propose additional holes, without earning work or material rights.
-                bool retired = candidate is not null && cell.IsExcavated
+                bool retired = allowProposedFoundationRemoval && candidate is not null && cell.IsExcavated
                     || allowsSettlement && cell.IsExcavated && world.Excavation is { } excavation
                     && excavation.Sites.Any(site => site.IsComplete && site.Cell == anchor.Cell
                         && site.TerrainSourceId == anchor.SourceId && site.Material.Item == anchor.Material);

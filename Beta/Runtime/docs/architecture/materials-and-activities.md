@@ -70,6 +70,18 @@ The explicit [constructed-footing composition](constructed-footing.md) derives a
 from those same completed physical members. Actor support is exact in XY; it does not establish load
 strength or allow the construction geometry to exist before its work and material publication.
 
+[Coupled intact settlement](coupled-settlement.md) lets explicitly admitted assemblies bear on one
+another while retaining separate project, installed-lot and member identities. The complete owned load
+policy partitions contact without adding a second aggregate assembly mass. Builder-carried raw stock
+and byproducts remain actor loads; installed backing contributes through the exact member allocation
+once. Changing support cannot turn that backing into spendable stock or silently hide carried mass.
+
+An eligible excavating action retains its earned work, source interval, physical members and occupants
+under one [reserved consequence owner](consequence-continuation.md). The bounded group moves together;
+final material issuance and placement share one publication. A failed geometric or load result cannot
+leave partially moved members or an independently issued mining reward. Unequal motion, fracture,
+debris recovery, harmful impacts and general repair require their own conserved transitions.
+
 Exact action retries return their durable outcomes. Repeated delivery or completion cannot pay again.
 The quest participation checks and authority transaction/receipts enforce that once-only boundary;
 the pure reward planner does not persist acknowledgement or prevent repeated use on its own.

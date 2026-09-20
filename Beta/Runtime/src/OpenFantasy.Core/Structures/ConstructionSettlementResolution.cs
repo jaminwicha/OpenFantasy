@@ -2,11 +2,12 @@ using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Terrain;
+using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Structures;
 
 /// <summary>
-/// Immutable geometric continuation for one intact assembly and its affected actors. Each work unit
+/// Immutable geometric continuation for an intact moving group and its affected actors. Each work unit
 /// executes a base contact, member sweep, rider sweep, or actor footing/landing query. Dependency
 /// preparation, bounded array copies and final complete-scene admission are not sliced latency claims.
 /// Partial placements are private calculations and never an admitted spatial state.
@@ -26,6 +27,8 @@ public sealed class ConstructionSettlementResolution
     }
 
     public ContentHash InputPin => _scene.InputPin;
+    public int MaximumTotalWorkUnits => _scene.MaximumWorkUnits;
+    internal bool IsCoupled => _scene.IsCoupled;
     public ulong CompletedWorkUnits => _progress.CompletedWorkUnits;
     /// <summary>True for either a completed candidate or a terminal refusal.</summary>
     public bool IsComplete => _progress.Phase is Phase.Complete or Phase.Failed;
@@ -39,6 +42,14 @@ public sealed class ConstructionSettlementResolution
         StructuralSettlementPolicy policy)
     {
         var scene = new ConstructionSettlementScene(space, candidateRegions, physical, policy);
+        return Prepare(scene);
+    }
+
+    public static ConstructionSettlementResolution BeginCoupled(WorldSnapshot basis,
+        IEnumerable<TerrainRegionSnapshot> candidateRegions) => Prepare(new ConstructionSettlementScene(basis, candidateRegions));
+
+    private static ConstructionSettlementResolution Prepare(ConstructionSettlementScene scene)
+    {
         var progress = new Progress(scene);
         try
         {
@@ -64,7 +75,7 @@ public sealed class ConstructionSettlementResolution
         var next = new Progress(_progress);
         for (int unit = 0; unit < workBudget && next.Phase is not Phase.Complete and not Phase.Failed; unit++)
         {
-            if (next.CompletedWorkUnits >= MaximumWorkUnits)
+            if (next.CompletedWorkUnits >= (ulong)_scene.MaximumWorkUnits)
             {
                 throw new InvalidOperationException("Settlement exceeded its proved finite geometric work bound.");
             }
@@ -136,7 +147,7 @@ public sealed class ConstructionSettlementResolution
                     Drop = contact.DropSubunits;
                     break;
                 case Phase.Members:
-                    ConstructionSettlementScene.ValidateSweep(scene.MovingScene!, scene.Moving!.Boxes[Cursor], Drop!.Value);
+                    ConstructionSettlementScene.ValidateSweep(scene.MovingScene!, scene.MovingBoxes[Cursor], Drop!.Value);
                     break;
                 case Phase.Riders:
                     ActorPresence rider = scene.Riders[Cursor];
@@ -166,7 +177,7 @@ public sealed class ConstructionSettlementResolution
                 Phase = Phase.Members;
                 Cursor = 0;
             }
-            if (Phase == Phase.Members && Cursor == scene.Moving!.Boxes.Count)
+            if (Phase == Phase.Members && Cursor == scene.MovingBoxes.Length)
             {
                 Phase = Phase.Riders;
                 Cursor = 0;
@@ -175,7 +186,7 @@ public sealed class ConstructionSettlementResolution
             {
                 long drop = Drop!.Value;
                 Physical = Physical.WithMembers(Physical.Revision, Physical.Members
-                    .Where(member => member.StructureId == scene.Moving!.StructureId)
+                    .Where(member => scene.IsMoving(member.StructureId))
                     .Select(member => member.WithState(member.Revision, member.ConditionParts,
                         member.Displacement.Offset(0, 0, -drop), ConstructionMemberDisposition.Resting)));
                 Actors = Actors.Select(actor => scene.IsRider(actor.ActorId)
@@ -186,7 +197,7 @@ public sealed class ConstructionSettlementResolution
             if (Phase == Phase.Actors && Cursor == Actors.Length)
             {
                 var candidate = new LocalSpatialSnapshot(scene.OriginalSpace.Scope, scene.Regions, Actors,
-                    Physical.GetStructures(), scene.OriginalSpace.GroundSupport);
+                    Physical.GetStructures(), scene.OriginalSpace.GroundSupport, scene.OriginalSpace.StructureSupport);
                 Physical.ValidateStableGeometry(candidate);
                 Result = new(candidate, Physical);
                 Phase = Phase.Complete;

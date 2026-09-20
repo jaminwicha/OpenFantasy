@@ -69,6 +69,14 @@ public sealed class ConstructionLoadPolicy
     public ConstructionBearingModel Bind(WorldSnapshot world)
     {
         ValidateWorldCatalog(world);
+        if (world.CoupledSettlementPolicy is not null)
+        {
+            if (world.StructuralPolicy?.ContentHash != ContentHash)
+            {
+                throw new ArgumentException("An admitted coupled world uses only its retained complete load policy.", nameof(world));
+            }
+            return ConstructionBearingModel.BindCoupled(world, InstalledTemplates(world), this);
+        }
         return ConstructionBearingModel.Bind(world, InstalledTemplates(world), Foundations, Masses);
     }
 

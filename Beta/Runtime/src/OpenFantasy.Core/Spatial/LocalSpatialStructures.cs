@@ -97,7 +97,15 @@ public sealed partial class LocalSpatialSnapshot
         bool unsupported = false;
         foreach (SubunitBox box in proposed.Boxes)
         {
-            SpatialOccupancy status = _terrain.Query(box.Volume, box.Minimum.Z == proposed.GroundPlaneZ);
+            bool isBase = box.Minimum.Z == proposed.GroundPlaneZ;
+            SpatialOccupancy status = _terrain.Query(box.Volume,
+                isBase && StructureSupport == StructureSupportMode.TerrainOnly);
+            if (status == SpatialOccupancy.Clear && isBase
+                && StructureSupport == StructureSupportMode.TerrainAndConstruction)
+            {
+                status = FootingQuery.Query(_terrain,
+                    Structures.Where(value => value.StructureId != proposed.StructureId).ToArray(), box.Volume);
+            }
             missing |= status == SpatialOccupancy.Unavailable;
             blocked |= status == SpatialOccupancy.BlockedTerrain;
             unsupported |= status == SpatialOccupancy.Unsupported;

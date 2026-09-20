@@ -42,7 +42,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         int schemaVersion = accepted.ProfileVersion switch
         {
-            16 => WorldDatabaseSchemaFour.Version,
+            16 or 17 => WorldDatabaseSchemaFour.Version,
             3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 => WorldDatabaseSchemaThree.Version,
             _ => WorldDatabaseSchema.Version
         };
@@ -131,7 +131,8 @@ public sealed class SqliteWorldAuthority : IDisposable
             WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence, prepared.Stored.AdvancingSteps,
                 (ulong)prepared.Commands.Count, (ulong)prepared.Stored.AcceptedBatch.Length,
                 (ulong)prepared.Stored.Outcomes.Length,
-                _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null);
+                _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
+                _state.ProfileVersion);
             return prepared.Decision;
         }
     }
@@ -168,7 +169,8 @@ public sealed class SqliteWorldAuthority : IDisposable
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence,
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,
                 (ulong)prepared.Stored.AcceptedBatch.Length, (ulong)prepared.Stored.Outcomes.Length,
-                _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null);
+                _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
+                _state.ProfileVersion);
             try
             {
                 _database.WriteCommit(prepared.Stored, transaction);
