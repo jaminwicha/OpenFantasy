@@ -1,0 +1,174 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "--path",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+    "--",
+    "--worksite-probe",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-open-movement-0x_s9n7u/world.sqlite",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-open-movement-0x_s9n7u/journey.json",
+    "reopen",
+    "--background-render"
+  ],
+  "exitCode": 0,
+  "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+  "stderr": "",
+  "unchangedSave": true,
+  "artifacts": {
+    "native-open-movement-0x_s9n7u/journey.reopen.png": "94551e878bdde0fff5cdf43d105ddf820bcee99e774ee7ab00778dcf0ce14f0a",
+    "native-open-movement-0x_s9n7u/journey.reopen.json": "87322891c398c9ea1aa978f3766ac33c04eff2972657c6f7bb3dce5e2117d4e0",
+    "native-open-movement-0x_s9n7u/journey.mine.json": "b0e7a0aacb19d8c008f4d75cbe1b52a69dd4fee7110b1ccf3e0629f9fb42cca7",
+    "native-open-movement-0x_s9n7u/world.sqlite": "6686a2756af3bff1fc6c4f263261da6abe885c37217196a2dafe21f89d314253"
+  },
+  "observation": {
+    "Kind": "native-worksite-play-v1",
+    "Mode": "reopen",
+    "Status": "passed",
+    "Error": null,
+    "Stage": "opening",
+    "InitialHash": "948D5D09B77099C5C3F57B4CC2D6C4D3C24E473E4E1C730554B996623EEF7716",
+    "FinalHash": "948D5D09B77099C5C3F57B4CC2D6C4D3C24E473E4E1C730554B996623EEF7716",
+    "Checks": [
+      "Exact prior public world recovered before readiness, with no transient target or wheel restored."
+    ],
+    "Inputs": [],
+    "Display": "macOS",
+    "FocusRequests": 0,
+    "IsWindowFocused": true,
+    "IsLocallyPaused": true,
+    "DurationMilliseconds": 19821,
+    "Actors": [
+      {
+        "Id": "1c4f1974f62104977c2d8f99e2f6a621",
+        "Feet": {
+          "X": 26912,
+          "Y": 82752,
+          "Z": 256,
+          "Cell": {
+            "X": 105,
+            "Y": 323,
+            "Z": 1
+          }
+        }
+      },
+      {
+        "Id": "6627928ee5d3a3406ec85cbbf6892b87",
+        "Feet": {
+          "X": 29824,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 116,
+            "Y": 324,
+            "Z": 1
+          }
+        }
+      }
+    ],
+    "Construction": [
+      {
+        "ProjectId": {
+          "High": 8420070808789219585,
+          "Low": 4647054864564120019
+        },
+        "BuilderActorId": {
+          "High": 2039877146358383767,
+          "Low": 8947965925755627041
+        },
+        "DisplayName": "Demonstration raised work deck",
+        "SiteFeet": {
+          "X": 29440,
+          "Y": 83200,
+          "Z": 256,
+          "Cell": {
+            "X": 115,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "WorkFeet": {
+          "X": 29312,
+          "Y": 83328,
+          "Z": 256,
+          "Cell": {
+            "X": 114,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "CompletedWork": 200,
+        "RequiredWork": 200,
+        "IsCompleted": true
+      },
+      {
+        "ProjectId": {
+          "High": 10045680948196407278,
+          "Low": 13286953669266571270
+        },
+        "BuilderActorId": {
+          "High": 2039877146358383767,
+          "Low": 8947965925755627041
+        },
+        "DisplayName": "Demonstration stairs and fixed deck",
+        "SiteFeet": {
+          "X": 28160,
+          "Y": 82944,
+          "Z": 256,
+          "Cell": {
+            "X": 110,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "WorkFeet": {
+          "X": 28288,
+          "Y": 82816,
+          "Z": 256,
+          "Cell": {
+            "X": 110,
+            "Y": 323,
+            "Z": 1
+          }
+        },
+        "CompletedWork": 200,
+        "RequiredWork": 200,
+        "IsCompleted": true
+      }
+    ],
+    "Excavation": [
+      {
+        "SiteId": {
+          "High": 16857601010363160984,
+          "Low": 10444368446927687185
+        },
+        "Cell": {
+          "X": 115,
+          "Y": 325,
+          "Z": 0
+        },
+        "Stance": {
+          "X": 29824,
+          "Y": 83328,
+          "Z": 0,
+          "Cell": {
+            "X": 116,
+            "Y": 325,
+            "Z": 0
+          }
+        },
+        "SiteRevision": 3,
+        "TerrainRevision": 1,
+        "RequiredWork": 3,
+        "CompletedWork": 3,
+        "RequiredToolDefinitionId": {
+          "High": 1872794200646237673,
+          "Low": 5975632165003488037
+        },
+        "DestinationRevision": 7,
+        "IsComplete": true,
+        "RemainingWork": 0
+      }
+    ],
+    "Limitation": "Injected native controls and controlled background focus; not physical device or human art acceptance."
+  }
+}

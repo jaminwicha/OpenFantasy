@@ -1,0 +1,13 @@
+{
+  "frozenSpecFiles": 22,
+  "architectureLinks": 402,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "originalSavedHistorySha256": "6686a2756af3bff1fc6c4f263261da6abe885c37217196a2dafe21f89d314253",
+  "verifiedApplicationSources": 580,
+  "changedApplicationSources": [
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+    "Beta/Runtime/client/scripts/WorksitePlayProbe.cs"
+  ],
+  "scope": "Preservation and source pin checks; runtime qualification recorded separately."
+}

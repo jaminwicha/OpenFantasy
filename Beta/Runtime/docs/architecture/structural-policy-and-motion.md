@@ -75,8 +75,12 @@ current carried goods, production, construction and reconciled physical members.
 all of its side effects, including partial work, custody, source issuance, dialogue and component revisions.
 Ordinary movement checks current post-action loads after each actor's proposed move, preserving earlier
 accepted movement while refusing an unstable destination. The selected advancing step still contributes
-one calendar/exposure/effort recovery; a held interaction retains held timing. Final publication repeats
-the same complete root admission, so a local action check cannot bypass the saved-world invariant.
+one calendar/exposure/effort recovery; a held interaction retains held timing. A successful movement check
+retains its complete admitted root after the actual time boundary. Later accepted moves replace that root;
+rejected moves restore its space. When no further component changes follow, this exact immutable root is
+the final candidate. Action preflights are never reused this way because they can synthesize a future
+time boundary. Without a retained movement root, final candidate construction performs complete admission.
+Required canonical size/encoding checks and durable receipt, identity and byte verification remain in force.
 
 These are terminal refusals that preserve stable authority; they do not create pending consequence work.
 The separate [intact settlement profile](structural-settlement.md) admits bounded harmless foundation-removal

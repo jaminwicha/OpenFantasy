@@ -55,16 +55,22 @@ Original failing logs remain in the packet. Full managed qualification proves th
 walk, rider/settlement, partial-mining restart and climb-out journey. The old rendered wheel/reopen and
 initial four-process worksite run passed. Stronger reviewed native assertions later passed gameplay but
 missed the final 30-second opening bound; the packet preserves every failure and assertion correction.
-Measured recovery identifies repeated immutable-root hash serialization, addressed with a thread-safe
-per-root digest cache while retaining all complete replay/admission/byte checks. Full regression and
-all 1,334 historical candidate hashes pass. Measured recovery allocation fell about16.2%, while remaining
-22.1GB/replay and history scaling stay open. **Current blocker: native save opening still misses its
-30-second bound**, including the post-cache mining restart at30.062s. Diagnose actual native recovery
-against the preserved closed save before another full journey; keep workload, thresholds and complete
-verification. No attribution to rendering or shared load is established. Ecosystem `ffc0ad6` preserves the reusable native
-observation/deadline lessons with three installed skill copies verified.
-Initial implementation is preserved at `e3e9040`, hash cache/strict probes at `f57b021`; no final worksite
-milestone is claimed. The packet retains the old wheel control and its post-cache follow-up.
+Measured recovery identified repeated immutable-root hash serialization, addressed by the per-root
+digest cache at `f57b021`. Actual managed tracing inside Godot then exposed repeated complete-root
+admission after movement. The transition now retains its last fully admitted post-time movement root;
+action preflights remain separate, rejected moves restore prior space and all encoding/storage checks
+remain. Six new structural movement/custody regressions pass, and all 1,334 historical candidate hashes
+still match. Same-save console recovery measured 17.482 s / 18.511 GB allocation; production journal scaling
+and remaining allocation remain open. The exact preserved save reopened natively in 19.821 s, unchanged.
+
+The [final rendered journey](p02/playable-worksite/qualification/native-worksite-movement-admission.json)
+passes all four processes with unchanged bounds: fresh 21.374 s, build 84.020 s, mine 27.477 s, reopen 22.021 s.
+Exact paused state/save preservation and seven rendered captures remain in its packet. Prior timing and
+assertion failures remain retained; this pass does not retroactively qualify them. The full managed
+regression for movement-root reuse is in progress; no new milestone is recorded until it passes.
+Initial implementation remains at `e3e9040`; cache/strict probes at `f57b021`. Ecosystem `ffc0ad6` records
+native observation/deadline lessons, with three installed skill copies verified. Existing legacy-wheel
+qualification and the measured native profiling limitations remain linked in the packet.
 Following dependencies remain the full P01/P02 integration and feasibility plan, including durable
 containment and wet composition, broader physical consequences, macro/history scaling and presentation.
 The worksite proves a bounded playable connection, not production latency, art, UX, devices or a full

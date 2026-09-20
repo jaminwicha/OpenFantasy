@@ -1,0 +1,28 @@
+{
+  "pid": 74531,
+  "runtime": ".NET 10.0.12",
+  "Revision": 1334,
+  "AdvancingSteps": 1326,
+  "records": [
+    {
+      "stage": "fresh-admission",
+      "milliseconds": 411.5777,
+      "allocatedBytes": 73623568
+    },
+    {
+      "stage": "complete-save-recovery",
+      "milliseconds": 17482.0187,
+      "allocatedBytes": 18510763768
+    },
+    {
+      "stage": "inspection",
+      "milliseconds": 0.7257,
+      "allocatedBytes": 5096
+    },
+    {
+      "stage": "attach-and-view",
+      "milliseconds": 8.0226,
+      "allocatedBytes": 46184
+    }
+  ]
+}

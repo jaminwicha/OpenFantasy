@@ -5,7 +5,8 @@ multilevel geometry and the ordinary Godot controls. It advances the planned exc
 integration; it does not close P01, P02, production scale, art, devices, multiplayer or the full campaign.
 The owner’s pure-C# decision remains fixed. Initial content/client implementation changes no Core
 source or simulation law. A subsequent measured recovery fix memoizes the immutable world's canonical
-hash; it adds no native bridge, new authority, changed bytes or skipped verification.
+hash; a subsequent transition-local reuse retains an already admitted movement candidate. Neither adds
+a native bridge, new authority, changed bytes or skipped verification.
 
 ## Implemented scope
 
@@ -45,14 +46,15 @@ Implementation commit `e3e9040` preserves that managed checkpoint. The first mov
 journey passed in four separate Godot processes, with seven captures inspected by the integration lead.
 Stricter independent review exposed additional probe assertion gaps, subsequently corrected. Its later
 final reopen missed the unchanged 30-second limit, so the initial native pass does not qualify the final
-source. The measured C# hash-cache correction has its own regression and native qualification below.
+source. The measured C# hash-cache correction and later admitted-movement reuse have separate regression
+and native qualification below.
 
 The [post-cache full regression](qualification/full-regression-hash-cache.log) passed **1,481 cases**:
 953 Core and 528 Hosting/client, zero failed/skipped. Hosting took 8 minutes 45 seconds; this remains
-correctness evidence. No worksite milestone is qualified until the final rendered journey passes.
+correctness evidence. That source boundary still required a passing final rendered journey.
 The [post-cache native run](qualification/native-worksite-hash-cache.json) passed fresh and build, then
-missed the 30-second opening bound at the mining restart (30.062 s). **Final native qualification remains
-open.** Commit `f57b021` preserves the cache, probe fixes and managed evidence; the cache's measured
+missed the 30-second opening bound at the mining restart (30.062 s). Native qualification remained
+open at that source boundary. Commit `f57b021` preserves the cache, probe fixes and managed evidence; the cache's measured
 allocation reduction did not establish compliance with native startup time. No deadline was relaxed.
 The [post-cache legacy wheel](qualification/legacy-native-wheel-hash-cache.json) passed its fresh/reopen
 processes and four rendered states under the retained 45-second bounds, with exact paused save bytes.
@@ -186,6 +188,67 @@ not a controlled latency benchmark. The native sample ran during the first autho
 separate phase timing also varied, so no CPU-speedup percentage is asserted. Remaining roughly 22 GB of
 cumulative replay allocation and full-journal scaling are unresolved production costs. No workload,
 deadline, history depth, comparison or validation was removed to obtain the reduction.
+
+## Native recovery diagnosis and admitted movement reuse
+
+The [managed native trace](qualification/native-open-trace/summary.json) samples the actual Godot
+opening path on a copy of the retained 1,334-commit save. Its bounded 15-second prefix places roughly
+60% of sampled replay thread time beneath structural admission and 37% beneath the action/movement
+preflight helper. These inclusive measurements overlap. Canonical framing and graph construction remain
+substantial; this prefix is not an allocation census, a complete-history distribution or a controlled CPU
+benchmark. The first process-lifetime trace lacked managed rundown and failed parsing; its original log
+is preserved and was not used for attribution. Ending collection before native host teardown produced
+the usable symbolized trace. That diagnostic intentionally ends before the complete journey and is not
+an acceptance run. Raw traces remain locally at the hashed paths in the report.
+
+Independent source review identified duplicate complete-root construction after successful movement.
+The movement preflight had already admitted all final components, including the actual calendar,
+resident exposure and gathering recovery, then discarded that root before constructing the same state
+again. `WorldStepProcessor` now retains the last successful movement root within that transition.
+Later rejected moves restore its space; successful moves replace it. Action preflights are discarded,
+since they can project a future time boundary. Profiles without structural admission and batches without
+a retained movement candidate follow the original final construction path. Complete validation and the
+explicit consequence-profile encoding check still precede capture; storage still verifies complete bytes,
+receipts, identities, checkpoints and history. There is no persistent or cross-transition validation cache.
+
+A separate bounded critic reviewed the actual diff and its timeless documentation and found no
+consequential issue. The review specifically checked null initialization, assignment after encoding,
+rollback, multiple movement inputs, post-time ordering and the absence of later component mutations.
+The critic did not independently run benchmarks or claim full game review.
+
+| Same retained saved workload | Root hash cache | Admitted movement reuse |
+| --- | ---: | ---: |
+| Complete authority recovery, elapsed | 23.899 s | 17.482 s |
+| Complete authority recovery, cumulative allocation | 22.104 GB | 18.511 GB |
+| Exact historical candidate hashes | 1,334/1,334 | 1,334/1,334 |
+
+The [authority measurement](qualification/open-profile-movement-admission.json) and
+[independent candidate-byte comparison](qualification/open-phase-profile-movement-admission.json)
+retain the actual results. Cumulative allocation is about 16.3% lower than the preceding cache version;
+elapsed times are individual shared-host observations, not a promised speedup. Remaining 18.5 GB of
+replay allocation and linear journal scaling remain production issues. No history or check was removed.
+
+The [separate native preserved-save reopen](qualification/native-open-movement-admission.json) passed
+in 19.821 s total, including the original 30-second opening bound. The exact paused public hash and database
+bytes remained unchanged. This bounded diagnostic does not replace the full fresh/build/mine/reopen
+journey, managed regression, human playtesting or physical-device acceptance.
+
+The [complete rendered follow-up](qualification/native-worksite-movement-admission.json) then passed
+all four ordinary processes: fresh 21.374 s, build 84.020 s, mine 27.477 s and reopen 22.021 s. The unchanged
+30-second opening limit was enforced in every stage, alongside all original action/overall deadlines.
+Every process exited zero without engine errors; seven captures were produced, prior public hashes
+recovered exactly and the final paused save stayed byte-identical. The integration lead inspected the
+upper deck, lower stance and settled scene; provisional block geometry, faint cutaways and large text HUD
+remain explicit presentation limits. A full managed regression follows this source boundary before a
+milestone can be recorded.
+
+Six new movement tests exercise two successful actors in profiles 17/18, a later unavailable destination,
+a genuine structural overload after an accepted earlier move, pure-interpreter unauthorized input versus
+Host rejection, and an accepted one-unit transfer followed by recipient movement. They construct the
+expected complete state independently and verify one calendar/exposure/recovery step, actual source
+partition, receipt/identity reservations, exact reopen/history and duplicate refusal. The initial test
+build failed only the xUnit analyzer's `Assert.Single` overload rule; the corrected predicate overload
+preserves the assertion. Both build logs remain. No application source changed for that correction.
 
 ## Preserved limits
 

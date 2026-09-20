@@ -99,8 +99,10 @@ public sealed class WorldStepProcessor
         IEnumerable<WorldResident> residents = state.Residents;
 
         bool FitsStructuralPolicy(CountedAuthorityState proposedInventory,
-            IEnumerable<DialogueSession> proposedDialogues, ConstructionPhysicalSnapshot? proposedPhysical)
+            IEnumerable<DialogueSession> proposedDialogues, ConstructionPhysicalSnapshot? proposedPhysical,
+            out WorldSnapshot? admittedCandidate)
         {
+            admittedCandidate = null;
             if (state.StructuralPolicy is null)
             {
                 return true;
@@ -121,6 +123,7 @@ public sealed class WorldStepProcessor
                     proposedDialogues, validationGathering, production, progression, quests, construction,
                     reservoirs, transport, excavation, proposedPhysical);
                 if (state.ConsequencePolicy is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
+                admittedCandidate = admitted;
                 return true;
             }
             catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
@@ -276,7 +279,7 @@ public sealed class WorldStepProcessor
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
                 || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
-                || !FitsStructuralPolicy(resolution.Inventory, resolution.Dialogues, reconciledPhysical))
+                || !FitsStructuralPolicy(resolution.Inventory, resolution.Dialogues, reconciledPhysical, out _))
             {
                 excavation = previousExcavation;
                 gathering = previousGathering;
@@ -326,6 +329,7 @@ public sealed class WorldStepProcessor
             receipts.Add(receipt);
         }
 
+        WorldSnapshot? admittedMovement = null;
         if (batch.Kind == WorldBatchKind.AdvancingStep)
         {
             // The already selected step contributes once, including when an action opens a hold.
@@ -358,7 +362,13 @@ public sealed class WorldStepProcessor
                     {
                         LocalSpatialSnapshot previousSpace = space;
                         space = space.WithActors(space.Actors.Select(other => other.ActorId == input.ActorId ? move.Candidate! : other));
-                        if (!FitsStructuralPolicy(inventory, dialogues, physical))
+                        if (FitsStructuralPolicy(inventory, dialogues, physical, out WorldSnapshot? admitted))
+                        {
+                            // Only movement runs after the actual time boundary and all action effects.
+                            // Later rejected moves restore this same space; successful moves replace it.
+                            admittedMovement = admitted;
+                        }
+                        else
                         {
                             space = previousSpace;
                         }
@@ -366,7 +376,7 @@ public sealed class WorldStepProcessor
                 }
             }
         }
-        WorldSnapshot candidate = state.WithState(inventory, space, residents, calendar, sequence,
+        WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
             advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical);
         return new WorldStepDecision(candidate, receipts, identities);
     }

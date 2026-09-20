@@ -1,0 +1,391 @@
+{
+  "sourceCommit": "f57b021",
+  "tool": "dotnet-trace 10.0.745401, isolated /private/tmp/openfantasy-diagnostics-tools install",
+  "runtime": ".NET 10.0.12 in Godot 4.6 .NET, macOS Apple M2",
+  "profiles": [
+    "dotnet-sampled-thread-time",
+    "gc-verbose"
+  ],
+  "saveSha256": "6686a2756af3bff1fc6c4f263261da6abe885c37217196a2dafe21f89d314253",
+  "revisions": 1334,
+  "samplingScope": "First 15 seconds of actual rendered Godot opening. Diagnostic prefix only, not full recovery or acceptance run. Duration stops the child before a final fixture result.",
+  "firstAttempt": "Godot completed paused reopen in27.864s, unchanged exact public state and save bytes, but trace lacked runtime rundown and parser failed Read past end of stream; not used for hotspot attribution. Follow-up bounded collection ended before process teardown and converted successfully.",
+  "interpretation": "Approximate sampled thread time within replay, includes managed code at allocation/GC boundaries and unmanaged waits; not an allocation census or controlled CPU benchmark. Prefix has more construction than later saved history.",
+  "sampledReplayMilliseconds": 13925.665039033523,
+  "inclusiveTop": [
+    {
+      "method": "System.Private.CoreLib!System.Threading.PortableThreadPool+WorkerThread.WorkerThreadStart()",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "OpenFantasy.Hosting!OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.OpenExisting(class System.String)",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "System.Private.CoreLib!System.Threading.ThreadPoolWorkQueue.Dispatch()",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "OpenFantasy.Hosting!OpenFantasy.Hosting.Worlds.WorldJournalRecovery.Replay(class OpenFantasy.Hosting.Worlds.WorldDatabase,value class System.Nullable`1<unsigned int64>)",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "System.Private.CoreLib!System.Threading.Thread.StartCallback()",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "System.Private.CoreLib!System.Threading.Tasks.Task.ExecuteWithThreadLocal(class System.Threading.Tasks.Task&,class System.Threading.Thread)",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "OpenFantasy.Client!OpenFantasy.Client.FarmClientSession+<>c__DisplayClass18_0.<OpenWorksiteAsync>b__0()",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "System.Private.CoreLib!System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(class System.Threading.Thread,class System.Threading.ExecutionContext,class System.Threading.ContextCallback,class System.Object)",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "OpenFantasy.Hosting!OpenFantasy.Hosting.Worlds.WorldJournalRecovery.Recover(class OpenFantasy.Hosting.Worlds.WorldDatabase)",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "System.Private.CoreLib!System.Threading.Tasks.Task`1[System.__Canon].InnerInvoke()",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "OpenFantasy.Hosting!OpenFantasy.Hosting.Worlds.WorldJournalRecovery.VerifyAndReplay(class OpenFantasy.Hosting.Worlds.WorldDatabase,value class System.Nullable`1<unsigned int64>)",
+      "milliseconds": 13925.665039033523,
+      "percent": 100.0
+    },
+    {
+      "method": "OpenFantasy.Hosting!OpenFantasy.Hosting.Worlds.WorldJournalRecovery.PrepareEntry(int32,class OpenFantasy.Hosting.Worlds.StoredWorldCommit,class OpenFantasy.Core.Worlds.WorldSnapshot,class OpenFantasy.Core.Worlds.WorldIdentityIndex,class OpenFantasy.Core.Content.ContentHash,class System.Func`2<value class OpenFantasy.Core.EntityId,bool>,class OpenFantasy.Hosting.Worlds.WorldCommitPreparation,class OpenFantasy.Hosting.Worlds.WorldProfileMigrationReplay)",
+      "milliseconds": 13804.823716028115,
+      "percent": 99.13224020061742
+    },
+    {
+      "method": "OpenFantasy.Hosting!OpenFantasy.Hosting.Worlds.WorldCommitPreparation.Prepare(class OpenFantasy.Core.Worlds.WorldSnapshot,class OpenFantasy.Core.Worlds.WorldIdentityIndex,class OpenFantasy.Core.Content.ContentHash,class OpenFantasy.Core.Worlds.WorldStepBatch,class System.Func`2<value class OpenFantasy.Core.EntityId,bool>)",
+      "milliseconds": 13800.33500706073,
+      "percent": 99.10000684619733
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(class OpenFantasy.Core.Worlds.WorldSnapshot,class OpenFantasy.Core.Worlds.WorldStepBatch,class System.Func`2<value class OpenFantasy.Core.EntityId,bool>)",
+      "milliseconds": 12784.081797564671,
+      "percent": 91.80230719129749
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldStepProcessor.DecideImmediate(class OpenFantasy.Core.Worlds.WorldSnapshot,class OpenFantasy.Core.Worlds.WorldStepBatch,class System.Func`2<value class OpenFantasy.Core.EntityId,bool>,class OpenFantasy.Core.Structures.ConstructionSettlementResolution,class OpenFantasy.Core.Worlds.WorldActionCommand)",
+      "milliseconds": 12780.65346356467,
+      "percent": 91.77768837423996
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldSnapshot..ctor(class OpenFantasy.Core.Authority.CountedAuthorityState,class OpenFantasy.Core.Spatial.LocalSpatialSnapshot,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Worlds.WorldResident>,class OpenFantasy.Core.Content.ContentHash,value class OpenFantasy.Core.WorldInstant,unsigned int64,unsigned int64,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Worlds.DialogueSession>,class OpenFantasy.Core.Gathering.GatheringSnapshot,class OpenFantasy.Core.Production.ProductionSnapshot,class OpenFantasy.Core.Progression.ProgressionSnapshot,class OpenFantasy.Core.Quests.QuestSnapshot,class OpenFantasy.Core.Construction.ConstructionSnapshot,class OpenFantasy.Core.Geography.PreparedWatershed,class OpenFantasy.Core.Geography.PreparedWatershedNetwork,class OpenFantasy.Core.Geography.LiquidReservoirState,class OpenFantasy.Core.Geography.ReservoirTransportState,class OpenFantasy.Core.Terrain.ExcavationSnapshot,class OpenFantasy.Core.Construction.ConstructionPhysicalSnapshot,class OpenFantasy.Core.Structures.ConstructionLoadPolicy,class OpenFantasy.Core.Structures.StructuralSettlementPolicy,class OpenFantasy.Core.Worlds.ConsequenceExecutionPolicy,class OpenFantasy.Core.Worlds.PendingExcavation,class OpenFantasy.Core.Structures.CoupledSettlementPolicy,value class OpenFantasy.Core.Structures.ConstructionDescentMode,class OpenFantasy.Core.Worlds.WorldIdentityIndex)",
+      "milliseconds": 9257.627622269598,
+      "percent": 66.47889056874874
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldSnapshot.WithState(class OpenFantasy.Core.Authority.CountedAuthorityState,class OpenFantasy.Core.Spatial.LocalSpatialSnapshot,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Worlds.WorldResident>,value class OpenFantasy.Core.WorldInstant,unsigned int64,unsigned int64,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Worlds.DialogueSession>,class OpenFantasy.Core.Gathering.GatheringSnapshot,class OpenFantasy.Core.Production.ProductionSnapshot,class OpenFantasy.Core.Progression.ProgressionSnapshot,class OpenFantasy.Core.Quests.QuestSnapshot,class OpenFantasy.Core.Construction.ConstructionSnapshot,class OpenFantasy.Core.Geography.LiquidReservoirState,class OpenFantasy.Core.Geography.ReservoirTransportState,class OpenFantasy.Core.Terrain.ExcavationSnapshot,class OpenFantasy.Core.Construction.ConstructionPhysicalSnapshot)",
+      "milliseconds": 9240.534959961858,
+      "percent": 66.35614840699324
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldStructuralBinding.ValidateStable(class OpenFantasy.Core.Worlds.WorldSnapshot)",
+      "milliseconds": 8308.943550295846,
+      "percent": 59.66640391683949
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionLoadPolicy.Bind(class OpenFantasy.Core.Worlds.WorldSnapshot)",
+      "milliseconds": 7854.731264828577,
+      "percent": 56.40471203933048
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionBearingModel.BindCoupled(class OpenFantasy.Core.Worlds.WorldSnapshot,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.ConstructionBearingTemplate>,class OpenFantasy.Core.Structures.ConstructionLoadPolicy)",
+      "milliseconds": 7854.731264828577,
+      "percent": 56.40471203933048
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldStepProcessor+<>c__DisplayClass9_0.<DecideImmediate>g__FitsStructuralPolicy|2(class OpenFantasy.Core.Authority.CountedAuthorityState,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Worlds.DialogueSession>,class OpenFantasy.Core.Construction.ConstructionPhysicalSnapshot)",
+      "milliseconds": 5178.198804528357,
+      "percent": 37.18457100622418
+    },
+    {
+      "method": "System.Linq!System.Linq.Enumerable+IListSelectIterator`2[System.__Canon,System.ReadOnlyMemory`1[System.Byte]].ToArray()",
+      "milliseconds": 5011.554851288365,
+      "percent": 35.98790317906555
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionBearingModel.BindCore(class OpenFantasy.Core.Worlds.WorldSnapshot,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.ConstructionBearingTemplate>,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.StableTerrainBearing>,class OpenFantasy.Core.Structures.StructuralMassCatalog,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.StructuralMemberCondition>,class OpenFantasy.Core.Structures.ConstructionContactScene,class OpenFantasy.Core.Content.ContentHash,bool)",
+      "milliseconds": 4620.356571183524,
+      "percent": 33.178713966138794
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.CanonicalEncodingV1.Frame(class System.String,value class System.ReadOnlyMemory`1<unsigned int8>[])",
+      "milliseconds": 3676.22987551966,
+      "percent": 26.398953767846763
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionContactScene..ctor(class OpenFantasy.Core.Worlds.WorldSnapshot,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Terrain.TerrainRegionSnapshot>,class OpenFantasy.Core.Construction.ConstructionPhysicalSnapshot,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Spatial.ActorPresence>)",
+      "milliseconds": 3234.374420400153,
+      "percent": 23.22599611102399
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldSnapshotCodecV18.Encode(class OpenFantasy.Core.Worlds.WorldSnapshot)",
+      "milliseconds": 3221.492288206925,
+      "percent": 23.133489705354172
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldSnapshotCodec.Encode(class OpenFantasy.Core.Worlds.WorldSnapshot)",
+      "milliseconds": 3217.9989131439825,
+      "percent": 23.10840382936081
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Construction.ConstructionPlanner.Plan(class OpenFantasy.Core.Worlds.WorldSnapshot,class OpenFantasy.Core.Authority.CountedAuthorityState,class OpenFantasy.Core.Production.ProductionSnapshot,class OpenFantasy.Core.Construction.ConstructionSnapshot,class OpenFantasy.Core.Spatial.LocalSpatialSnapshot,class OpenFantasy.Core.Worlds.WorldActionCommand,bool,bool,class System.Func`2<value class OpenFantasy.Core.EntityId,bool>)",
+      "milliseconds": 2610.045129713354,
+      "percent": 18.742696470132085
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.LocalSpatialSnapshot.PrepareStructurePlacement(class OpenFantasy.Core.Spatial.SpatialStructure,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Spatial.GroundAccessRequirement>,value class System.Nullable`1<int32>)",
+      "milliseconds": 2589.823052242138,
+      "percent": 18.597482023177246
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.LocalSpatialSnapshot.QueryGroundRoute(value class OpenFantasy.Core.EntityId,value class OpenFantasy.Core.Spatial.SubunitPosition,value class OpenFantasy.Core.Spatial.SubunitPosition,int32)",
+      "milliseconds": 2572.7054530208907,
+      "percent": 18.474560789805146
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.LocalSpatialSnapshot.QueryWalkingRoute(value class OpenFantasy.Core.EntityId,value class OpenFantasy.Core.Spatial.SubunitPosition,value class OpenFantasy.Core.Spatial.SubunitPosition,int32)",
+      "milliseconds": 2572.7054530208907,
+      "percent": 18.474560789805146
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.WalkingRouteSearch.Find(value class OpenFantasy.Core.Spatial.SubunitPosition,value class OpenFantasy.Core.Spatial.SubunitPosition)",
+      "milliseconds": 2572.7054530208907,
+      "percent": 18.474560789805146
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.WalkingRouteSearch.Search(value class OpenFantasy.Core.Spatial.SubunitPosition,value class OpenFantasy.Core.Spatial.SubunitPosition)",
+      "milliseconds": 2563.7078969697714,
+      "percent": 18.409949469441635
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.LocalSpatialSnapshot.PrepareWalkFrom(value class OpenFantasy.Core.EntityId,value class OpenFantasy.Core.Spatial.SubunitPosition,int64,int64)",
+      "milliseconds": 2427.5250546556626,
+      "percent": 17.43202244094864
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionBearingModel..ctor(class OpenFantasy.Core.Worlds.WorldSnapshot,class OpenFantasy.Core.Structures.StructuralLoadGraph,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.StructuralMemberReference>,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.StructuralActorReference>,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.StableTerrainBearing>,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.ConstructionBearingTemplate>,class OpenFantasy.Core.Content.ContentHash,class OpenFantasy.Core.Content.ContentHash)",
+      "milliseconds": 2269.2600761426174,
+      "percent": 16.29552391057734
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionLoadPolicyCodecV1.Encode(class OpenFantasy.Core.Structures.ConstructionLoadPolicy)",
+      "milliseconds": 2228.8474436062306,
+      "percent": 16.00532137861129
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionLoadPolicyCodecV1.Collection(class System.String,class System.Collections.Generic.IEnumerable`1<unsigned int8[]>)",
+      "milliseconds": 2141.474475177066,
+      "percent": 15.377897351218278
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.FootingQuery.QueryBand(class OpenFantasy.Core.Spatial.TerrainVolumeQueries,class System.Collections.Generic.IReadOnlyList`1<class OpenFantasy.Core.Spatial.SpatialStructure>,value class OpenFantasy.Core.Spatial.BodyVolume,int64,int64)",
+      "milliseconds": 1977.9054028617668,
+      "percent": 14.203310199676025
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionLoadPolicyCodecV1+<>c.<Encode>b__7_0(class OpenFantasy.Core.Structures.StableTerrainBearing)",
+      "milliseconds": 1891.835119959173,
+      "percent": 13.585240738279822
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Geography.BoundarySurfaceCoverage.CoveredArea(class OpenFantasy.Core.Geography.BoundaryRectangle,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Geography.BoundaryRectangle>,value class System.Threading.CancellationToken)",
+      "milliseconds": 1787.5216017843238,
+      "percent": 12.836166867247744
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionContactScene.ComputeInputPin()",
+      "milliseconds": 1516.0065255394377,
+      "percent": 10.886421016806622
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Worlds.WorldSnapshot.get_ContentHash()",
+      "milliseconds": 1489.4491443729867,
+      "percent": 10.69571284529732
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.LocalSpatialSnapshot.QueryVolume(value class OpenFantasy.Core.EntityId,value class OpenFantasy.Core.Spatial.BodyVolume)",
+      "milliseconds": 1481.3750270919043,
+      "percent": 10.637732725436253
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Spatial.FootingQuery.QueryStepped(class OpenFantasy.Core.Spatial.TerrainVolumeQueries,class System.Collections.Generic.IReadOnlyList`1<class OpenFantasy.Core.Spatial.SpatialStructure>,value class OpenFantasy.Core.Spatial.BodyVolume,int64)",
+      "milliseconds": 1359.1325590265744,
+      "percent": 9.759911323566502
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Construction.ConstructionCodecV1.Encode(class OpenFantasy.Core.Construction.ConstructionSnapshot)",
+      "milliseconds": 1334.1741631304344,
+      "percent": 9.580685442244627
+    }
+  ],
+  "exclusiveManagedTop": [
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.CanonicalEncodingV1.Frame(class System.String,value class System.ReadOnlyMemory`1<unsigned int8>[])",
+      "milliseconds": 3253.2180251207974,
+      "percent": 23.361311765018435
+    },
+    {
+      "method": "System.Private.CoreLib!System.Collections.Generic.List`1[System.__Canon]..ctor(int32)",
+      "milliseconds": 907.362816555581,
+      "percent": 6.515759312120826
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.CanonicalEncodingV1.Unsigned64(unsigned int64)",
+      "milliseconds": 657.0526250598016,
+      "percent": 4.718285433536485
+    },
+    {
+      "method": "System.Private.CoreLib!System.Threading.Thread.<PollGC>g__PollGCWorker|67_0()",
+      "milliseconds": 572.5181646965777,
+      "percent": 4.11124469166689
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.EntityId.ToByteArray()",
+      "milliseconds": 510.3625731461816,
+      "percent": 3.664906284300531
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionBearingModel.BindCore(class OpenFantasy.Core.Worlds.WorldSnapshot,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.ConstructionBearingTemplate>,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.StableTerrainBearing>,class OpenFantasy.Core.Structures.StructuralMassCatalog,class System.Collections.Generic.IEnumerable`1<class OpenFantasy.Core.Structures.StructuralMemberCondition>,class OpenFantasy.Core.Structures.ConstructionContactScene,class OpenFantasy.Core.Content.ContentHash,bool)",
+      "milliseconds": 464.5626616585082,
+      "percent": 3.336017779806874
+    },
+    {
+      "method": "System.Private.CoreLib!System.Collections.Generic.List`1[System.__Canon].AddWithResize(!0)",
+      "milliseconds": 437.7499810414463,
+      "percent": 3.1434763066211686
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionLoadPolicyCodecV1+<>c.<Encode>b__7_0(class OpenFantasy.Core.Structures.StableTerrainBearing)",
+      "milliseconds": 374.8019732535354,
+      "percent": 2.6914475696705944
+    },
+    {
+      "method": "System.Private.CoreLib!System.Text.Encoding.GetBytes(class System.String)",
+      "milliseconds": 347.51504315803845,
+      "percent": 2.49550051781338
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionContactScene.ValidateRegions()",
+      "milliseconds": 263.30924541358695,
+      "percent": 1.8908198974737171
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.ConstructionLoadPolicyCodecV1.Signed(int64)",
+      "milliseconds": 254.16807412391358,
+      "percent": 1.825177278151403
+    },
+    {
+      "method": "System.Private.CoreLib!System.Collections.Generic.Dictionary`2[OpenFantasy.Core.EntityId,OpenFantasy.Core.Worlds.WorldIdentityRole].Resize()",
+      "milliseconds": 234.49794516079055,
+      "percent": 1.6839263654805334
+    },
+    {
+      "method": "System.Linq!System.Linq.Enumerable.Count(class System.Collections.Generic.IEnumerable`1<!!0>)",
+      "milliseconds": 226.40434966787757,
+      "percent": 1.6258063728609589
+    },
+    {
+      "method": "System.Private.CoreLib!System.Collections.Generic.Dictionary`2[OpenFantasy.Core.EntityId,OpenFantasy.Core.Worlds.WorldIdentityRole].Initialize(int32)",
+      "milliseconds": 205.28887224875348,
+      "percent": 1.4741764337525747
+    },
+    {
+      "method": "System.Private.CoreLib!System.Convert.FromHexString(class System.String)",
+      "milliseconds": 194.15059873514247,
+      "percent": 1.3941926521350323
+    },
+    {
+      "method": "System.Collections!System.Collections.Generic.SortedSet`1[OpenFantasy.Core.EntityId]..ctor(class System.Collections.Generic.IEnumerable`1<!0>)",
+      "milliseconds": 191.9318715381205,
+      "percent": 1.378260004101327
+    },
+    {
+      "method": "System.Linq!System.Linq.Enumerable+IListSelectIterator`2[System.__Canon,System.ReadOnlyMemory`1[System.Byte]].ToArray()",
+      "milliseconds": 187.1149578262498,
+      "percent": 1.3436698161399698
+    },
+    {
+      "method": "System.Private.CoreLib!System.Collections.Generic.List`1[System.__Canon].System.Collections.Generic.IEnumerable<T>.GetEnumerator()",
+      "milliseconds": 179.43994072850023,
+      "percent": 1.2885556289450562
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.StructuralLoadCodec+<>c.<EncodeGraph>b__3_0(class OpenFantasy.Core.Structures.StructuralElement)",
+      "milliseconds": 179.11123586085682,
+      "percent": 1.2861952040265907
+    },
+    {
+      "method": "System.Security.Cryptography!System.Security.Cryptography.SHA256.HashData(value class System.ReadOnlySpan`1<unsigned int8>)",
+      "milliseconds": 173.16664300982507,
+      "percent": 1.2435071684148684
+    },
+    {
+      "method": "System.Collections!System.Collections.Generic.SortedDictionary`2[OpenFantasy.Core.EntityId,System.UInt128].Add(!0,!1)",
+      "milliseconds": 164.74187907271698,
+      "percent": 1.1830090599691063
+    },
+    {
+      "method": "System.Linq!System.Linq.Enumerable.OrderBy(class System.Collections.Generic.IEnumerable`1<!!0>,class System.Func`2<!!0,!!1>)",
+      "milliseconds": 159.74075284067885,
+      "percent": 1.147096044554618
+    },
+    {
+      "method": "System.Private.CoreLib!System.SZArrayHelper.GetEnumerator()",
+      "milliseconds": 138.5430032891786,
+      "percent": 0.994875310449043
+    },
+    {
+      "method": "OpenFantasy.Core!OpenFantasy.Core.Structures.StructuralLoadResolution.Advance(int32)",
+      "milliseconds": 136.60231639220683,
+      "percent": 0.9809392658039071
+    },
+    {
+      "method": "System.Linq!System.Linq.Enumerable+DistinctIterator`1[System.Int128].ToArray()",
+      "milliseconds": 131.69349194522601,
+      "percent": 0.9456890681780026
+    }
+  ],
+  "rawTracesRetainedLocally": [
+    {
+      "path": "/private/tmp/openfantasy-managed-open-mz5eyytr/native.nettrace",
+      "sha256": "9544cfbfd2353f78ea3ce2cb7b6ca16af89787e2b310a954f5f02c46da65cf1d",
+      "bytes": 33914683
+    },
+    {
+      "path": "/private/tmp/openfantasy-managed-open-mz5eyytr/native.speedscope.json",
+      "sha256": "6c9c86d6b3e3ba22db918806d3cbda6b5c423dcd952fb859f0bdbbc290fd14fa",
+      "bytes": 36019060
+    },
+    {
+      "path": "/private/tmp/openfantasy-managed-open-mz5eyytr/native-bounded.nettrace",
+      "sha256": "e593ba5fbfb59d7e3d1a6d147e70233d09c738ea8f35a44224b620a7e9b2d314",
+      "bytes": 24418690
+    },
+    {
+      "path": "/private/tmp/openfantasy-managed-open-mz5eyytr/native-bounded.speedscope.json",
+      "sha256": "4c4b4dcf69adef3781ac6fccf27858dbcbee8b365638792b02541ffd478063af",
+      "bytes": 43910376
+    }
+  ]
+}

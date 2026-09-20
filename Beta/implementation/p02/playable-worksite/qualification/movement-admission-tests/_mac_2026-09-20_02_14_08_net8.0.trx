@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="18048e07-c85e-4af1-9fd5-64d0f5d88bd0" name="@mac 2026-09-20 02:14:08" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-20T02:14:08.4416680-05:00" queuing="2026-09-20T02:14:08.4416680-05:00" start="2026-09-20T02:14:05.0480360-05:00" finish="2026-09-20T02:14:08.8001970-05:00" />
+  <TestSettings name="default" id="125f4c36-9a7b-4dd3-a25f-087e8639632d">
+    <Deployment runDeploymentRoot="_mac_2026-09-20_02_14_08" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2d34b0b0-84fb-4db0-99bd-4d4143c43a59" testId="c6dacb16-f050-fc99-a46b-d0dbfd24c150" testName="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;overloaded&quot;)" computerName="mac" duration="00:00:00.3019538" startTime="2026-09-20T02:14:08.1079650-05:00" endTime="2026-09-20T02:14:08.4099820-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d34b0b0-84fb-4db0-99bd-4d4143c43a59" />
+    <UnitTestResult executionId="c615e91d-54fe-4131-9105-e674c0b5bdf5" testId="85ec036d-31ff-474d-4e05-404f6060183d" testName="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;unauthorized&quot;)" computerName="mac" duration="00:00:00.2763112" startTime="2026-09-20T02:14:07.5522120-05:00" endTime="2026-09-20T02:14:07.8285870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c615e91d-54fe-4131-9105-e674c0b5bdf5" />
+    <UnitTestResult executionId="bd111787-62d3-477c-af15-64fbf13f9d0b" testId="9735d91d-bb1c-9923-6edf-b7491b0f56d6" testName="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Accepted_material_transfer_then_recipient_movement_keeps_exact_custody_outcome_and_recovery" computerName="mac" duration="00:00:00.8469047" startTime="2026-09-20T02:14:06.3863480-05:00" endTime="2026-09-20T02:14:07.2395000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bd111787-62d3-477c-af15-64fbf13f9d0b" />
+    <UnitTestResult executionId="6875f88e-1c91-43f4-83fc-d5a2a58374f4" testId="fb3fb94f-9b43-6778-4fcc-446ebeb5533e" testName="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;unavailable&quot;)" computerName="mac" duration="00:00:00.3334117" startTime="2026-09-20T02:14:08.4108040-05:00" endTime="2026-09-20T02:14:08.7442790-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6875f88e-1c91-43f4-83fc-d5a2a58374f4" />
+    <UnitTestResult executionId="e581f605-c30e-42b9-b958-ebc787207d61" testId="e3c5f28c-cd3d-7955-eb2a-65eada97a1d4" testName="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;accepted&quot;)" computerName="mac" duration="00:00:00.2776065" startTime="2026-09-20T02:14:07.8294260-05:00" endTime="2026-09-20T02:14:08.1070890-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e581f605-c30e-42b9-b958-ebc787207d61" />
+    <UnitTestResult executionId="86695fa4-1a4f-43d2-b85a-eaf5d07ba2de" testId="5d10e477-4b3e-751e-5c59-2082af897ae1" testName="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: False, laterOutcome: &quot;accepted&quot;)" computerName="mac" duration="00:00:00.2987966" startTime="2026-09-20T02:14:07.2523620-05:00" endTime="2026-09-20T02:14:07.5513180-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="86695fa4-1a4f-43d2-b85a-eaf5d07ba2de" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;unavailable&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fb3fb94f-9b43-6778-4fcc-446ebeb5533e">
+      <Execution id="6875f88e-1c91-43f4-83fc-d5a2a58374f4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests" name="Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;unauthorized&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="85ec036d-31ff-474d-4e05-404f6060183d">
+      <Execution id="c615e91d-54fe-4131-9105-e674c0b5bdf5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests" name="Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;overloaded&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c6dacb16-f050-fc99-a46b-d0dbfd24c150">
+      <Execution id="2d34b0b0-84fb-4db0-99bd-4d4143c43a59" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests" name="Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: False, laterOutcome: &quot;accepted&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5d10e477-4b3e-751e-5c59-2082af897ae1">
+      <Execution id="86695fa4-1a4f-43d2-b85a-eaf5d07ba2de" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests" name="Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary(eventOrdered: True, laterOutcome: &quot;accepted&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e3c5f28c-cd3d-7955-eb2a-65eada97a1d4">
+      <Execution id="e581f605-c30e-42b9-b958-ebc787207d61" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests" name="Later_movement_preserves_every_preceding_accepted_pose_and_one_time_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests.Accepted_material_transfer_then_recipient_movement_keeps_exact_custody_outcome_and_recovery" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9735d91d-bb1c-9923-6edf-b7491b0f56d6">
+      <Execution id="bd111787-62d3-477c-af15-64fbf13f9d0b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.StructuralMovementAdmissionTests" name="Accepted_material_transfer_then_recipient_movement_keeps_exact_custody_outcome_and_recovery" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c6dacb16-f050-fc99-a46b-d0dbfd24c150" executionId="2d34b0b0-84fb-4db0-99bd-4d4143c43a59" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85ec036d-31ff-474d-4e05-404f6060183d" executionId="c615e91d-54fe-4131-9105-e674c0b5bdf5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9735d91d-bb1c-9923-6edf-b7491b0f56d6" executionId="bd111787-62d3-477c-af15-64fbf13f9d0b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb3fb94f-9b43-6778-4fcc-446ebeb5533e" executionId="6875f88e-1c91-43f4-83fc-d5a2a58374f4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3c5f28c-cd3d-7955-eb2a-65eada97a1d4" executionId="e581f605-c30e-42b9-b958-ebc787207d61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5d10e477-4b3e-751e-5c59-2082af897ae1" executionId="86695fa4-1a4f-43d2-b85a-eaf5d07ba2de" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.42]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.71]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.89]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.30]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
