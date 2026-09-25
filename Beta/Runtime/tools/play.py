@@ -28,6 +28,7 @@ def main():
     parser.add_argument("--dotnet", help="Pinned dotnet executable; alternatively OPENFANTASY_DOTNET")
     parser.add_argument("--godot", help="Pinned Godot .NET executable; alternatively OPENFANTASY_GODOT")
     selection = parser.add_mutually_exclusive_group()
+    selection.add_argument("--encounters", action="store_true", help="Open the separate in-place encounter journey save")
     selection.add_argument("--breach", action="store_true", help="Open the separate earned terrain-breach save")
     selection.add_argument("--watercourse", action="store_true", help="Open the separate finite-water farm save")
     selection.add_argument("--worksite", action="store_true", help="Open the separate fresh-content worksite save; preserve every farm save")
@@ -61,10 +62,12 @@ def main():
         if args.prepare_only:
             print("Pinned native client prepared. No gameplay save was opened.", flush=True)
             return 0
-        place = "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
+        place = "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
         print(f"Opening Wren’s {place}. WASD/arrows: walk; E: talk; G: quest; F: gather; Q: target; V: actions; Esc: pause.", flush=True)
         command = [str(godot), "--path", str(root / "client")]
-        if args.breach:
+        if args.encounters:
+            command += ["--", "--encounters"]
+        elif args.breach:
             command += ["--", "--breach"]
         elif args.watercourse:
             command += ["--", "--watercourse"]

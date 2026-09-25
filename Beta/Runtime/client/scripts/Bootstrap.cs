@@ -41,6 +41,7 @@ public partial class Bootstrap : Control
         // still exercises the same readiness/cancellation policy; native OS binding is tested separately.
         bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
             or ["--farm-action-offers", _, _, "--background-render"]
+            or ["--encounter-probe", _, _, "fresh" or "duel" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -56,7 +57,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--breach-probe", var breachSave, var breachReport, var breachMode]
+        if (arguments is ["--encounter-probe", var encounterSave, var encounterReport, var encounterMode]
+            && encounterMode is "fresh" or "duel" or "reopen")
+        {
+            if (File.Exists(encounterSave) == (encounterMode == "fresh"))
+            {
+                GD.PushError("The encounter probe requires a fresh path or its retained previous stage.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { EncounterProfile = true, SavePathOverride = encounterSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new EncounterPlayProbe(game, encounterReport, encounterMode));
+        }
+        else if (arguments is ["--breach-probe", var breachSave, var breachReport, var breachMode]
             && breachMode is "fresh" or "breach" or "reopen")
         {
             if (File.Exists(breachSave) == (breachMode == "fresh"))
@@ -227,6 +242,10 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else if (arguments is ["--encounters"])
+        {
+            AddChild(new FarmGame { EncounterProfile = true });
         }
         else if (arguments is ["--breach"])
         {

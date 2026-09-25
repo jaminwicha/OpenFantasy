@@ -473,3 +473,21 @@ This is a dry-bank excavation/flow connection, with provisional cutaway renderin
 starter-tool/material balance. Swimming, fluid loads, gates, production art and broader ecology retain
 separate requirements. See [architecture](docs/architecture/terrain-liquid-breach.md) and
 [qualification](../implementation/p02/native-terrain-breach/README.md).
+
+
+## In-place encounters
+
+Run `python3 tools/play.py --encounters` to open the separate source-backed encounter world at
+`user://worlds/wrens-encounters.sqlite`. Existing farm saves remain selected by their original launch
+routes. Q/right shoulder selects a wolf; E/controller A engages it. V/right-stick click opens the
+icon wheel for inspection and explicit confirmation. During combat E/A queues Strike and G/X queues
+Wait. Required decisions hold world time; pause remains Esc/Start. I/View opens the pack without
+changing that time rule. At a victorious outcome E/A or the Continue button returns to exploration,
+preserving wounds and recovery. An incapacitated initiating player currently cannot leave the outcome.
+
+The source wolf idle/walk sprite and modest hit reactions are provisional. Damage feedback follows
+actual HP changes; acceptance of an attack means queued, not already resolved. The
+[native encounter architecture](docs/architecture/native-encounters.md) describes the public boundary.
+`tools/check_native_encounter.py` runs isolated injected native journeys and exact process reopening;
+its `--rendered` option uses an unfocusable background fixture. Those checks do not replace human art,
+physical controller, accessibility or production-platform acceptance.

@@ -9,6 +9,7 @@ internal sealed class FarmVisualAssets : IDisposable
     private readonly ImageTexture _wren;
     private readonly Texture2D _squire;
     private readonly int[] _groundIds;
+    private Texture2D? _wolf;
     private Texture2D? _oak;
     private Texture2D? _berry;
 
@@ -35,8 +36,17 @@ internal sealed class FarmVisualAssets : IDisposable
     {
         FarmSpriteKind.Wren => _wren,
         FarmSpriteKind.Squire => _squire,
+        FarmSpriteKind.Wolf => WolfTexture(),
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
+
+    private Texture2D WolfTexture()
+    {
+        _wolf ??= GD.Load<Texture2D>("res://assets/encounters/bramble_wolf.png");
+        if (_wolf.GetWidth() != 48 || _wolf.GetHeight() != 96)
+            throw new InvalidDataException("The retained wolf sheet has incompatible frame geometry.");
+        return _wolf;
+    }
 
     internal Texture2D GatherNodeTexture(GatherToolKind kind)
     {

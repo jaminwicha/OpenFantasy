@@ -11,6 +11,10 @@ internal partial class FarmActorView : Node2D
     private const double MotionGraceSeconds = 0.12;
     private Sprite2D _sprite = null!;
     private Label _nameplate = null!;
+    private Label _damage = null!;
+    private int? _observedHp;
+    private double _hitAge = 1;
+    private bool _incapacitated;
     private Vector2 _previous;
     private Vector2 _target;
     private double _interpolationAge;
@@ -42,6 +46,12 @@ internal partial class FarmActorView : Node2D
         _nameplate.AddThemeColorOverride("font_outline_color", new Color("15261f"));
         _nameplate.AddThemeConstantOverride("outline_size", 4);
         AddChild(_nameplate);
+        _damage = new Label { Position = new Vector2(-30, -88), Size = new Vector2(60, 24),
+            HorizontalAlignment = HorizontalAlignment.Center, MouseFilter = Control.MouseFilterEnum.Ignore, Visible = false };
+        _damage.AddThemeColorOverride("font_color", new Color("ffb79a"));
+        _damage.AddThemeColorOverride("font_outline_color", new Color("251416"));
+        _damage.AddThemeConstantOverride("outline_size", 4);
+        AddChild(_damage);
         Present(actor, assets);
     }
 
@@ -79,9 +89,19 @@ internal partial class FarmActorView : Node2D
         _observedFeet = actor.Feet;
         ZIndex = actor.IsMultilevel ? WorksiteCoordinates.DepthIndex(actor.Feet.Z, actor: true) : 0;
         _sprite.Texture = assets.ActorTexture(actor.SpriteKind);
-        _nameplate.Text = actor.DisplayName;
+        _nameplate.Text = actor.DisplayName + (actor.IsIncapacitated ? " · down" : "");
+        _incapacitated = actor.IsIncapacitated;
+        if (actor.CurrentHp is { } hp)
+        {
+            if (_observedHp is { } before && hp < before)
+            {
+                _damage.Text = (before - hp).ToString(System.Globalization.CultureInfo.InvariantCulture);
+                _hitAge = 0;
+            }
+            _observedHp = hp;
+        }
         // The local player's cyan ground ring identifies them without covering an adjacent NPC's name.
-        _nameplate.Visible = !actor.IsOwnActor;
+        _nameplate.Visible = !actor.IsOwnActor && (actor.SpriteKind != FarmSpriteKind.Wolf || actor.IsSelected);
         _nameplate.AddThemeColorOverride("font_color", actor.IsOwnActor ? new Color("bce9ff") : new Color("fff0ce"));
         _ownActor = actor.IsOwnActor;
         QueueRedraw();
@@ -101,7 +121,13 @@ internal partial class FarmActorView : Node2D
             _animationClock = (_animationClock + delta) % (4.0 / 7.0);
             column = _walkColumns[(int)(_animationClock * 7) % _walkColumns.Length];
         }
-        _sprite.Frame = _facingRow * 3 + column;
+        _sprite.Frame = _facingRow * 3 + (_incapacitated ? 1 : column);
+        _hitAge = Math.Min(1, _hitAge + delta);
+        _sprite.Modulate = _hitAge < 0.16 ? new Color(1, 0.45f, 0.4f)
+            : _incapacitated ? new Color(0.52f, 0.52f, 0.58f) : Colors.White;
+        _sprite.Position = _hitAge < 0.22 ? new Vector2((float)Math.Sin(_hitAge * 80) * 2, 0) : Vector2.Zero;
+        _damage.Visible = _hitAge < 0.8;
+        _damage.Position = new Vector2(-30, -88 - (float)_hitAge * 12);
     }
 
     public override void _Draw()

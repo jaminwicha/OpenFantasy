@@ -82,6 +82,10 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal static Task<FarmClientSession> OpenBreachAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
         OpenSelection(savePath, BreachFarmAdmission.CreateEmbedded(seedText, playerName)));
 
+    /// <summary>Opens the source-backed encounter journey as a separate explicit save selection.</summary>
+    internal static Task<FarmClientSession> OpenEncounterAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+        OpenSelection(savePath, EncounterJourneyAdmission.CreateEmbedded(seedText, playerName)));
+
     private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
@@ -105,7 +109,10 @@ internal sealed class FarmClientSession : IAsyncDisposable
         {
             WorldSnapshot current = authority.InspectForHost().State;
             WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
-            WorldResident wren = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Host);
+            EntityId? questGiver = current.Quests?.Definitions.Select(quest => (EntityId?)quest.GiverActorId).Distinct().SingleOrDefault();
+            WorldResident wren = questGiver is { } giver
+                ? current.GetResident(giver)
+                : current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Host);
             ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
             var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
             EntityId wood = current.Gathering?.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Oak)

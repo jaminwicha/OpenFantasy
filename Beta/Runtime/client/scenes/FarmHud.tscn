@@ -1,6 +1,11 @@
-[gd_scene load_steps=5 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="Script" path="res://scripts/FarmHud.cs" id="1"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/engage.svg" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/strike.svg" id="3"]
+[ext_resource type="Texture2D" path="res://assets/ui/wait.svg" id="4"]
+[ext_resource type="Texture2D" path="res://assets/ui/leave.svg" id="5"]
 
 [sub_resource type="StyleBoxFlat" id="PanelStyle"]
 bg_color = Color(0.098, 0.165, 0.180, 0.933)
@@ -143,6 +148,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 16
 autowrap_mode = 3
 
+[node name="EncounterStatus" type="Label" parent="Root/Footer/Column"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+
 [node name="ActionPreview" type="Label" parent="Root/Footer/Column"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -212,3 +224,39 @@ autowrap_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 text = "Continue  [E]"
+
+[node name="EnterEncounter" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(76, 42)
+icon = ExtResource("2")
+expand_icon = true
+theme_override_constants/icon_max_width = 28
+
+[node name="Strike" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(76, 42)
+icon = ExtResource("3")
+expand_icon = true
+theme_override_constants/icon_max_width = 28
+
+[node name="Wait" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(76, 42)
+icon = ExtResource("4")
+expand_icon = true
+theme_override_constants/icon_max_width = 28
+
+[node name="ReleaseEncounter" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(76, 42)
+icon = ExtResource("5")
+expand_icon = true
+theme_override_constants/icon_max_width = 28

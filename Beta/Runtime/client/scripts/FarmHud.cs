@@ -1,4 +1,5 @@
 using Godot;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Hosting.Simulation;
 
@@ -16,6 +17,7 @@ internal sealed partial class FarmHud : CanvasLayer
     private Label _project = null!;
     private Label _preview = null!;
     private Label _speech = null!;
+    private FarmEncounterStatus _encounter = null!;
     private PanelContainer _dialogue = null!;
     private Button _talk = null!;
     private Button _give = null!;
@@ -68,6 +70,11 @@ internal sealed partial class FarmHud : CanvasLayer
         BindOfferButton(FarmSemanticAction.Gather, _gather);
         BindOfferButton(FarmSemanticAction.Craft, _craft);
         BindOfferButton(FarmSemanticAction.CloseDialogue, _close);
+        _encounter = new FarmEncounterStatus(GetNode<Label>("%EncounterStatus"));
+        BindOfferButton(FarmSemanticAction.EnterEncounter, GetNode<Button>("%EnterEncounter"));
+        BindOfferButton(FarmSemanticAction.Strike, GetNode<Button>("%Strike"));
+        BindOfferButton(FarmSemanticAction.Wait, GetNode<Button>("%Wait"));
+        BindOfferButton(FarmSemanticAction.ReleaseEncounter, GetNode<Button>("%ReleaseEncounter"));
         _pause.Pressed += () => Request(FarmSemanticAction.TogglePause);
         _preview.Text = InspectHint;
     }
@@ -117,6 +124,14 @@ internal sealed partial class FarmHud : CanvasLayer
         PresentOffer(FarmSemanticAction.Gather, "F", blockedByLayer: pending || paused || speaking);
         PresentOffer(FarmSemanticAction.Craft, "C", blockedByLayer: pending || paused || speaking);
         PresentOffer(FarmSemanticAction.CloseDialogue, "E", blockedByLayer: pending || paused || !speaking);
+        foreach (FarmSemanticAction action in new[] { FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike,
+            FarmSemanticAction.Wait, FarmSemanticAction.ReleaseEncounter })
+            PresentOffer(action, action == FarmSemanticAction.Wait ? "G" : "E", pending || paused || speaking);
+        _encounter.Present(view, paused);
+        GetNode<Label>("Root/Footer/Column/Actions/Movement").Text = view.Encounter?.IsOutcome == true
+            ? view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
+                : "Incapacitated\nYour save is retained."
+            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait" : "Move\nWASD / arrows";
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
         LocalConstructionView? project = view.Construction.FirstOrDefault(value => !value.IsCompleted)
             ?? view.Construction.FirstOrDefault();
@@ -135,6 +150,8 @@ internal sealed partial class FarmHud : CanvasLayer
             _project.Text = (view.IsResolvingConsequences ? "Finishing the work…" : activity)
                 + "\nQ: choose work face · V: " + (worksite.SupportsAssistedTraversal ? "Mine / Climb" : "Mine");
         }
+        if (view.IsInEncounter || view.EncounterLifecycle is not null
+            && targets.Selected?.Kind != FarmTargetKind.Excavation && !speaking) _project.Visible = false;
         _dialogue.Visible = speaking;
         if (view.Dialogue is { } dialogue)
         {
@@ -163,7 +180,9 @@ internal sealed partial class FarmHud : CanvasLayer
             return;
         }
         button.Visible = true;
-        button.Text = offer.SpendsSomething ? $"{offer.Label}  [{key}]\n{offer.CostText}" : $"{offer.Label}  [{key}]";
+        button.Text = action is FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike
+            or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter ? $"[{key}]"
+            : offer.SpendsSomething ? $"{offer.Label}  [{key}]\n{offer.CostText}" : $"{offer.Label}  [{key}]";
         button.Disabled = blockedByLayer || !offer.CanExecute;
         button.TooltipText = Explain(offer);
     }

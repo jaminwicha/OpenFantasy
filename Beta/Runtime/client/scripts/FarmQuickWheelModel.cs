@@ -17,7 +17,9 @@ internal sealed class FarmQuickWheelModel
     internal FarmQuickWheelModel(IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
         _view = Array.AsReadOnly(_slots);
-        FarmSemanticAction[] order = offers.ContainsKey(FarmSemanticAction.Excavate)
+        FarmSemanticAction[] order = offers.Keys.Any(IsEncounterAction)
+            ? [FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike, FarmSemanticAction.Wait, FarmSemanticAction.ReleaseEncounter]
+            : offers.ContainsKey(FarmSemanticAction.Excavate)
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
             : Order;
         for (int index = 0; index < order.Length; index++)
@@ -28,6 +30,9 @@ internal sealed class FarmQuickWheelModel
             }
         }
     }
+
+    internal static bool IsEncounterAction(FarmSemanticAction action) => action is FarmSemanticAction.EnterEncounter
+        or FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter;
 
     internal void Select(int index)
     {
@@ -64,6 +69,7 @@ internal sealed class FarmWheelSlot
                 {
                     FarmSemanticAction.Gather => FarmTargetKind.Harvestable,
                     FarmSemanticAction.Excavate or FarmSemanticAction.Traverse => FarmTargetKind.Excavation,
+                    FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike => FarmTargetKind.Encounter,
                     _ => FarmTargetKind.Person
                 }, null);
         }
@@ -80,6 +86,8 @@ internal sealed class FarmWheelSlot
         if (Action == FarmSemanticAction.Traverse && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
             || candidate?.Intent != _original.Intent))
             same = false;
+        if (FarmQuickWheelModel.IsEncounterAction(Action) && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
+            || candidate?.Intent != _original.Intent)) same = false;
         if (_original.Intent is DeliveryQuestIntent quest
             && (candidate?.Intent is not DeliveryQuestIntent currentQuest || currentQuest.QuestId != quest.QuestId
                 || currentQuest.QuestVersion != quest.QuestVersion)) same = false;

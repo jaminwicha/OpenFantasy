@@ -10,7 +10,10 @@ using OpenFantasy.Core.Worlds;
 namespace OpenFantasy.Hosting.Simulation;
 
 public sealed record LocalActorView(EntityId ActorId, string DisplayName, SubunitPosition Feet,
-    ulong PresenceRevision, ResidentControllerKind ControllerKind);
+    ulong PresenceRevision, ResidentControllerKind ControllerKind)
+{
+    public bool IsIncapacitated { get; init; }
+}
 public sealed record LocalItemLotView(EntityId LotId, EntityId DefinitionId, ulong Revision, ulong Quantity,
     IngredientLotKind Provenance = IngredientLotKind.Source, bool AvailableForDelivery = true);
 public sealed record LocalDialogueView(EntityId DialogueId, EntityId SpeakerActorId, string SpeakerName, string Text);
@@ -49,6 +52,7 @@ public sealed class LocalWorldView
         Calendar = state.Calendar;
         HasReadingHold = state.HasReadingHold;
         EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
+        EncounterActions = LocalEncounterActionView.Project(state, playerActorId);
         IsResolvingConsequences = state.PendingExcavation is not null;
         if (state.Pacing?.Encounter is { } timing)
         {
@@ -67,7 +71,10 @@ public sealed class LocalWorldView
         {
             var presence = state.Space.GetActor(resident.ActorId);
             return new LocalActorView(resident.ActorId, resident.DisplayName, presence.Feet,
-                presence.Revision, resident.ControllerKind);
+                presence.Revision, resident.ControllerKind)
+            {
+                IsIncapacitated = state.Progression?.GetActor(resident.ActorId).CurrentHp == 0
+            };
         }).ToArray());
         EntityId storage = state.GetResident(playerActorId).InventoryCustodianId;
         PlayerInventory = new LocalInventoryView(storage, state.Inventory.Custody.GetStorage(storage).Revision,
@@ -132,6 +139,7 @@ public sealed class LocalWorldView
     public bool IsInEncounter => Encounter is not null;
     public LocalEncounterView? Encounter { get; }
     public LocalEncounterLifecycleView? EncounterLifecycle { get; }
+    public LocalEncounterActionView? EncounterActions { get; }
     public ReadOnlyCollection<LocalEncounterActorView> EncounterActors { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }

@@ -40,6 +40,8 @@ internal sealed class FarmActionOffers
     {
         ArgumentNullException.ThrowIfNull(view);
         FarmActionScope scope = FarmActionScope.From(_delivery, view);
+        if (EncounterActionOffers.Create(view, scope, selectedTarget) is { } encounterOffers)
+            return encounterOffers;
         var offers = new Dictionary<FarmSemanticAction, FarmActionOffer>
         {
             [FarmSemanticAction.Speak] = Speak(view, scope),
@@ -66,6 +68,18 @@ internal sealed class FarmActionOffers
             }
         }
         WorksiteActionOffers.Add(offers, view, scope, selectedTarget);
+        if (view.EncounterLifecycle is { PlayerCanAct: false })
+        {
+            string reason = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).IsIncapacitated
+                ? "You are incapacitated and cannot act."
+                : "You are recovering; advance world time until you are ready.";
+            foreach (var (action, offer) in offers.ToArray())
+            {
+                if (action == FarmSemanticAction.CloseDialogue) continue;
+                offers[action] = new FarmActionOffer(action, offer.Scope, offer.Label, offer.TargetName,
+                    offer.TargetId, offer.CostText, offer.CompletionText, null, reason, offer.DialogueId, offer.DetailText);
+            }
+        }
         return new ReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>(offers);
     }
 

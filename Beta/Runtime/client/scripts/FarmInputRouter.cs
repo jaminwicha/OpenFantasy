@@ -51,6 +51,10 @@ internal enum FarmSemanticAction
     ConfirmWheel,
     Excavate,
     Traverse,
+    EnterEncounter,
+    Strike,
+    Wait,
+    ReleaseEncounter,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -72,10 +76,17 @@ internal enum FarmInputLayer
     Inventory,
     /// <summary>The quick wheel owns selection and confirmation without changing host timing.</summary>
     Wheel,
+    /// <summary>Encounter choices own input; walking and ordinary farm actions are suppressed.</summary>
+    Encounter,
 }
 
 /// <summary>World facts the router does not own, read from the current projection at each decision.</summary>
-internal readonly record struct FarmInputSituation(bool SessionOpen, bool ReadingHold, bool ActionPending);
+internal readonly record struct FarmInputSituation(bool SessionOpen, bool ReadingHold, bool ActionPending)
+{
+    internal bool IsInEncounter { get; init; }
+    internal bool HasEncounterEntry { get; init; }
+    internal bool IsEncounterOutcome { get; init; }
+}
 
 /// <summary>One discrete device event translated to the routed action names it matches.</summary>
 internal readonly record struct FarmInputSignal(IReadOnlyList<string> Actions, bool Pressed, bool Echo)
@@ -172,6 +183,7 @@ internal sealed class FarmInputRouter
         if (Paused) return FarmInputLayer.Paused;
         if (!situation.SessionOpen) return FarmInputLayer.Opening;
         if (situation.ReadingHold) return FarmInputLayer.Dialogue;
+        if (situation.IsInEncounter) return FarmInputLayer.Encounter;
         return FarmInputLayer.World;
     }
 
@@ -207,10 +219,10 @@ internal sealed class FarmInputRouter
             FarmSemanticAction.None => false,
             FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused or FarmInputLayer.Inventory or FarmInputLayer.Wheel),
             FarmSemanticAction.OpenInventory => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
-                && layer is FarmInputLayer.World or FarmInputLayer.Paused,
+                && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
             FarmSemanticAction.CloseInventory => layer == FarmInputLayer.Inventory,
             FarmSemanticAction.OpenWheel => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
-                && layer is FarmInputLayer.World or FarmInputLayer.Paused,
+                && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
             FarmSemanticAction.CloseWheel => layer == FarmInputLayer.Wheel,
             FarmSemanticAction.ConfirmWheel => layer == FarmInputLayer.Wheel && !Paused
                 && !situation.ActionPending && !situation.ReadingHold,
@@ -244,6 +256,10 @@ internal sealed class FarmInputRouter
             _heldActions.Add(action);
         }
         FarmSemanticAction requested = Resolve(Layer(situation), signal.Actions);
+        if (requested == FarmSemanticAction.Speak && situation.HasEncounterEntry)
+            requested = FarmSemanticAction.EnterEncounter;
+        if (requested == FarmSemanticAction.Strike && situation.IsEncounterOutcome)
+            requested = FarmSemanticAction.ReleaseEncounter;
         return new FarmInputDecision(Consumed: true, Permits(situation, requested) ? requested : FarmSemanticAction.None);
     }
 
@@ -307,9 +323,9 @@ internal sealed class FarmInputRouter
     private static FarmSemanticAction Bind(FarmInputLayer layer, string action) => (layer, action) switch
     {
         (FarmInputLayer.Wheel, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseWheel,
-        (FarmInputLayer.World or FarmInputLayer.Paused, FarmInputActions.QuickWheel) => FarmSemanticAction.OpenWheel,
+        (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused, FarmInputActions.QuickWheel) => FarmSemanticAction.OpenWheel,
         (FarmInputLayer.Inventory, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.Inventory) => FarmSemanticAction.CloseInventory,
-        (FarmInputLayer.World or FarmInputLayer.Paused, FarmInputActions.Inventory) => FarmSemanticAction.OpenInventory,
+        (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused, FarmInputActions.Inventory) => FarmSemanticAction.OpenInventory,
         (FarmInputLayer.Dialogue, FarmInputActions.Pause) => FarmSemanticAction.CloseDialogue,
         (_, FarmInputActions.Pause) => FarmSemanticAction.TogglePause,
         (FarmInputLayer.Paused, FarmInputActions.Cancel) => FarmSemanticAction.TogglePause,
@@ -322,6 +338,10 @@ internal sealed class FarmInputRouter
         (FarmInputLayer.World, FarmInputActions.Craft) => FarmSemanticAction.Craft,
         (FarmInputLayer.World, FarmInputActions.NextTarget) => FarmSemanticAction.NextTarget,
         (FarmInputLayer.World, FarmInputActions.ClearTarget) => FarmSemanticAction.ClearTarget,
+        (FarmInputLayer.Encounter, FarmInputActions.Interact) => FarmSemanticAction.Strike,
+        (FarmInputLayer.Encounter, FarmInputActions.Give) => FarmSemanticAction.Wait,
+        (FarmInputLayer.Encounter, FarmInputActions.NextTarget) => FarmSemanticAction.NextTarget,
+        (FarmInputLayer.Encounter, FarmInputActions.ClearTarget) => FarmSemanticAction.ClearTarget,
         _ => FarmSemanticAction.None,
     };
 
@@ -329,8 +349,10 @@ internal sealed class FarmInputRouter
     {
         FarmInputLayer.World => action is FarmSemanticAction.Speak or FarmSemanticAction.Give
             or FarmSemanticAction.Gather or FarmSemanticAction.Craft
-            or FarmSemanticAction.Excavate or FarmSemanticAction.Traverse
+            or FarmSemanticAction.Excavate or FarmSemanticAction.Traverse or FarmSemanticAction.EnterEncounter
             or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,
+        FarmInputLayer.Encounter => action is FarmSemanticAction.Strike or FarmSemanticAction.Wait
+            or FarmSemanticAction.ReleaseEncounter or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,
         FarmInputLayer.Dialogue => action is FarmSemanticAction.Give or FarmSemanticAction.CloseDialogue,
         _ => false,
     };

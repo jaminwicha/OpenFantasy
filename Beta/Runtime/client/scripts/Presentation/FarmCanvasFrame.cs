@@ -17,7 +17,8 @@ public sealed record FarmStructureFrame(EntityId ProjectId, string DisplayName, 
 public enum FarmSpriteKind
 {
     Wren = 1,
-    Squire = 2
+    Squire = 2,
+    Wolf = 3
 }
 
 /// <summary>Permitted public appearance data for one displayed actor, without private simulation state.</summary>
@@ -56,6 +57,9 @@ public sealed record FarmActorFrame
     public bool IsOwnActor { get; }
     public FarmSpriteKind SpriteKind { get; }
     public bool IsMultilevel { get; }
+    public bool IsIncapacitated { get; init; }
+    public bool IsSelected { get; init; }
+    public int? CurrentHp { get; init; }
 }
 
 /// <summary>A copied public projection. Its construction does not authorize observation or expose a host snapshot.</summary>

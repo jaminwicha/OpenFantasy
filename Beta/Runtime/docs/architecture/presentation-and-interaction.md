@@ -111,3 +111,9 @@ Detailed contracts: [interface navigation](../../../implementation/PLAYER_INTERF
 [audio](../../../spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md),
 [onboarding](../../../spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md) and
 [art calibration](../../../art-style-calibration/README.md).
+
+## Native encounter choices
+
+The [native encounter reference](native-encounters.md) specifies public ability offers, the encounter
+input context, captured wheel choices and condition-driven visual feedback over the durable lifecycle.
+Its interfaces use the same authenticated session and timing policy as ordinary world interaction.

@@ -37,6 +37,7 @@ public partial class FarmGame : Node2D
     internal bool WorksiteProfile { get; init; }
     internal bool WatercourseProfile { get; init; }
     internal bool BreachProfile { get; init; }
+    internal bool EncounterProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -94,6 +95,12 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (EncounterProfile)
+        {
+            string encounterSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-encounters.sqlite");
+            _opening = FarmClientSession.OpenEncounterAsync(encounterSave, "encounter-lifecycle-world", "Traveler");
+            return;
+        }
         if (BreachProfile)
         {
             string breachSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-breach.sqlite");
@@ -157,6 +164,7 @@ public partial class FarmGame : Node2D
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : EncounterProfile ? "Q selects a wolf. E engages; V inspects its actions. Encounters wait for your choice."
                     : BreachProfile ? "Follow the north bank east. Q selects the divider; V opens its mining action."
                     : WatercourseProfile ? "Visit Wren by the rows. Follow the dry bank east to the watercourse."
                     : "Find Wren by the rows.");
@@ -194,8 +202,12 @@ public partial class FarmGame : Node2D
         _targets.Refresh(view);
         _canvas.Present(new FarmCanvasFrame(view.Calendar, view.Actors.Select(actor => new FarmActorFrame(
             actor.ActorId, actor.DisplayName, actor.Feet, actor.ActorId == view.PlayerActorId,
-            actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire,
-            multilevel: view.Worksite is not null || view.Liquids is not null)),
+            actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren
+                : view.EncounterLifecycle?.Entries.Any(entry => entry.TargetActorId == actor.ActorId) == true
+                    ? FarmSpriteKind.Wolf : FarmSpriteKind.Squire,
+            multilevel: view.Worksite is not null || view.Liquids is not null)
+            { IsIncapacitated = actor.IsIncapacitated, IsSelected = _targets.Selected?.Id == actor.ActorId,
+                CurrentHp = view.EncounterActors.FirstOrDefault(value => value.ActorId == actor.ActorId)?.CurrentHp }),
             view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
                 node.RequiredTool, node.Visibility)),
             view.Worksite?.HasPhysicalConstruction != true ? view.Construction.Where(project => project.IsCompleted).Select(project =>
@@ -258,7 +270,10 @@ public partial class FarmGame : Node2D
     private FarmInputSituation Situation() => new(
         SessionOpen: _session is not null,
         ReadingHold: _session?.World.ReadView().HasReadingHold ?? false,
-        ActionPending: _action is not null || (_session?.World.ReadView().IsResolvingConsequences ?? false));
+        ActionPending: _action is not null || (_session?.World.ReadView().IsResolvingConsequences ?? false))
+    { IsInEncounter = _session?.World.ReadView().IsInEncounter ?? false,
+        IsEncounterOutcome = _session?.World.ReadView().Encounter?.IsOutcome ?? false,
+        HasEncounterEntry = _presented.ContainsKey(FarmSemanticAction.EnterEncounter) };
 
     private static FarmDirectionalInput ReadWalkingInput()
     {
@@ -444,7 +459,7 @@ public partial class FarmGame : Node2D
     {
         if (target is null) return null;
         LocalActorView? person = view.Actors.FirstOrDefault(actor => actor.ActorId == target.Id);
-        if (person is not null) return target with { Kind = FarmTargetKind.Person, Feet = person.Feet };
+        if (person is not null) return target with { Feet = person.Feet };
         LocalExcavationView? site = view.Worksite?.ExcavationTargets.FirstOrDefault(value => value.SiteId == target.Id);
         if (site is not null) return target with { Kind = FarmTargetKind.Excavation, Feet = site.Stance };
         LocalGatherNodeView? plant = view.GatheringNodes.FirstOrDefault(node => node.NodeId == target.Id);

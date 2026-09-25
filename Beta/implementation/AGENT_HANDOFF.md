@@ -42,6 +42,30 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Native encounter controls and presentation](p02/native-encounters/README.md) connects the existing
+profile24/schema6 authority to a separate `--encounters` Godot launch. Public projections expose the
+player's own legal grants/costs; contextual buttons, hotkeys and the wheel capture exact targets and
+timing. Source wolf artwork, observed-HP hit feedback and persistent incapacity make the duel visible.
+The core/application remain pure C#; Core source, canonical bytes and storage contracts are unchanged.
+
+All 645 Hosting/client cases pass, including 14 new cases; solution and final client builds have zero
+warnings/errors. The final three-process rendered journey qualifies entry, required-choice holds,
+blocked ordinary input, wheel Strike, exact mid-duel reopen, real wolf HP0/player HP2 outcome, pointer
+release and exact released reopen. Four Host reads independently verify the exact entry boundaries.
+Startup-isolated rendering observes no native focus. Original farm/wheel headless controls pass.
+[Review](p02/native-encounters/REVIEW.md) retains all failures and final independent visual corrections.
+This increment does not claim a new full Core regression or final art/device acceptance.
+
+Next extend native choice coverage (confirmed Wait and defeated-player behavior), broader ability
+selection and lifecycle recovery/flee/rescue against the same owners. Richer animation/audio, co-op,
+wet/structural dependency closure, scale and all full campaign/platform/art/device gates remain open.
+The ordinary native launch is unchanged; no phase closes. The
+[native interaction reference](../Runtime/docs/architecture/native-encounters.md) documents ownership.
+Ecosystem commit `ffd9bf7` preserves the proven background-render/input-boundary lessons with three
+installed skill copies verified. No external model was invoked for this increment.
+
+## Prior coordinated encounter lifecycle
+
 [Coordinated encounter lifecycle](p02/encounter-lifecycle/README.md) adds fresh profile 24/schema 6:
 ordinary exploration, authenticated scenario entry, in-place confrontation/staging, actual physical
 combat, safe outcome release and another encounter share the complete terrain/liquid/farm world.
