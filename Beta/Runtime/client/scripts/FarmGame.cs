@@ -36,6 +36,7 @@ public partial class FarmGame : Node2D
     internal bool ConstructionProfile { get; init; }
     internal bool WorksiteProfile { get; init; }
     internal bool WatercourseProfile { get; init; }
+    internal bool BreachProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -64,7 +65,7 @@ public partial class FarmGame : Node2D
         _input = new FarmInputRouter(StartPaused);
         AddChild(_canvas);
         Rect2 bounds = _canvas.LocalBounds;
-        if (WatercourseProfile)
+        if (WatercourseProfile || BreachProfile)
         {
             // Keep the open channel and lower pool visible between the ordinary HUD panels.
             // Integer zoom preserves the surface pixels and does not change interaction distances.
@@ -93,6 +94,12 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (BreachProfile)
+        {
+            string breachSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-breach.sqlite");
+            _opening = FarmClientSession.OpenBreachAsync(breachSave, "aldermere-breach-v1", "Traveler");
+            return;
+        }
         if (WorksiteProfile)
         {
             string worksiteSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-worksite.sqlite");
@@ -150,6 +157,7 @@ public partial class FarmGame : Node2D
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : BreachProfile ? "Follow the north bank east. Q selects the divider; V opens its mining action."
                     : WatercourseProfile ? "Visit Wren by the rows. Follow the dry bank east to the watercourse."
                     : "Find Wren by the rows.");
             }
@@ -190,7 +198,7 @@ public partial class FarmGame : Node2D
             multilevel: view.Worksite is not null || view.Liquids is not null)),
             view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
                 node.RequiredTool, node.Visibility)),
-            view.Worksite is null ? view.Construction.Where(project => project.IsCompleted).Select(project =>
+            view.Worksite?.HasPhysicalConstruction != true ? view.Construction.Where(project => project.IsCompleted).Select(project =>
                 new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [], view.Worksite, view.Liquids));
         Vector2 focus = _canvas.FocusPosition;
         if (view.Dialogue is { } conversation)
@@ -198,7 +206,7 @@ public partial class FarmGame : Node2D
             LocalActorView speaker = view.Actors.Single(value => value.ActorId == conversation.SpeakerActorId);
             focus = (focus + _canvas.Project(speaker.Feet)) / 2;
         }
-        _camera.Position = focus + new Vector2(0, WatercourseProfile ? 72 : -26);
+        _camera.Position = focus + new Vector2(0, BreachProfile ? 96 : WatercourseProfile ? 72 : -26);
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
         _presented = _session.CreateOffers(view, _targets.Selected);
         _canvas.PresentTarget(_targets.Selected);

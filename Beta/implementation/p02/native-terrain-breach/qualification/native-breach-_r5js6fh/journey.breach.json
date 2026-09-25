@@ -1,0 +1,515 @@
+{
+  "Kind": "native-terrain-breach-play-v1",
+  "Mode": "breach",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "pause-resume",
+  "InitialHash": "CD4197964713834EF290585B213D10BF08B77EEF8A6BE5AAC75977DB510D1608",
+  "FinalHash": "8E40FD785163B4FFF80B5B8F1BCFAFE22CDE51899BE2EFCA62A364D2B78CB030",
+  "Checks": [
+    "Separate process recovered exact paused terrain, work, water, actors and inventory.",
+    "Two deliberate actions finish saved labor; one substrate lot is issued and finite water reaches the lower receiver."
+  ],
+  "Inputs": [
+    {
+      "_stage": "opening",
+      "Key": "Escape",
+      "Milliseconds": 1533
+    },
+    {
+      "_stage": "resume-mining",
+      "Key": "R",
+      "Milliseconds": 1539
+    },
+    {
+      "_stage": "resume-mining",
+      "Key": "Q",
+      "Milliseconds": 1542
+    },
+    {
+      "_stage": "resume-mining",
+      "Key": "Q",
+      "Milliseconds": 1545
+    },
+    {
+      "_stage": "resume-mining",
+      "Key": "Q",
+      "Milliseconds": 1572
+    },
+    {
+      "_stage": "resume-mining",
+      "Key": "Q",
+      "Milliseconds": 1578
+    },
+    {
+      "_stage": "resume-mining",
+      "Key": "V",
+      "Milliseconds": 1582
+    },
+    {
+      "_stage": "resume-mining",
+      "Button": "DpadRight",
+      "Milliseconds": 1585
+    },
+    {
+      "_stage": "resume-mining",
+      "Button": "A",
+      "Milliseconds": 1586
+    },
+    {
+      "_stage": "breach",
+      "Key": "V",
+      "Milliseconds": 2465
+    },
+    {
+      "_stage": "breach",
+      "Key": "Right",
+      "Milliseconds": 2466
+    },
+    {
+      "_stage": "breach",
+      "Key": "Enter",
+      "Milliseconds": 2466
+    },
+    {
+      "_stage": "pause-resume",
+      "Key": "Escape",
+      "Milliseconds": 2720
+    },
+    {
+      "_stage": "pause-resume",
+      "Key": "Escape",
+      "Milliseconds": 3634
+    },
+    {
+      "_stage": "pause-resume",
+      "Key": "Escape",
+      "Milliseconds": 3662
+    }
+  ],
+  "Observations": [
+    {
+      "Stage": "opening",
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32688000
+      },
+      "Site": {
+        "SiteId": {
+          "High": 3962432830642390469,
+          "Low": 4715766177186542219
+        },
+        "Cell": {
+          "X": 116,
+          "Y": 329,
+          "Z": 0
+        },
+        "Stance": {
+          "X": 29824,
+          "Y": 84096,
+          "Z": 256,
+          "Cell": {
+            "X": 116,
+            "Y": 328,
+            "Z": 1
+          }
+        },
+        "SiteRevision": 1,
+        "TerrainRevision": 1,
+        "RequiredWork": 3,
+        "CompletedWork": 1,
+        "RequiredToolDefinitionId": {
+          "High": 1872794200646237673,
+          "Low": 5975632165003488037
+        },
+        "DestinationRevision": 0,
+        "ReachMode": 2,
+        "IsComplete": false,
+        "RemainingWork": 2
+      },
+      "DividerSolid": true,
+      "TotalMicrolitres": 6000000000,
+      "ReceiverMicrolitres": 0,
+      "Cells": [
+        {
+          "Coordinate": {
+            "X": 110,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 111,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 112,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 113,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 114,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 115,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        }
+      ],
+      "Feet": {
+        "X": 29824,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 116,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "flowing",
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32729400
+      },
+      "Site": {
+        "SiteId": {
+          "High": 3962432830642390469,
+          "Low": 4715766177186542219
+        },
+        "Cell": {
+          "X": 116,
+          "Y": 329,
+          "Z": 0
+        },
+        "Stance": {
+          "X": 29824,
+          "Y": 84096,
+          "Z": 256,
+          "Cell": {
+            "X": 116,
+            "Y": 328,
+            "Z": 1
+          }
+        },
+        "SiteRevision": 3,
+        "TerrainRevision": 2,
+        "RequiredWork": 3,
+        "CompletedWork": 3,
+        "RequiredToolDefinitionId": {
+          "High": 1872794200646237673,
+          "Low": 5975632165003488037
+        },
+        "DestinationRevision": 1,
+        "ReachMode": 2,
+        "IsComplete": true,
+        "RemainingWork": 0
+      },
+      "DividerSolid": false,
+      "TotalMicrolitres": 6000000000,
+      "ReceiverMicrolitres": 7000000,
+      "Cells": [
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 2000000
+        },
+        {
+          "Coordinate": {
+            "X": 118,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 1000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 1000000
+        },
+        {
+          "Coordinate": {
+            "X": 110,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 111,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 112,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 113,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 998000000
+        },
+        {
+          "Coordinate": {
+            "X": 114,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 996000000
+        },
+        {
+          "Coordinate": {
+            "X": 115,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 990000000
+        },
+        {
+          "Coordinate": {
+            "X": 116,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 9000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 3000000
+        }
+      ],
+      "Feet": {
+        "X": 29824,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 116,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "final",
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 32733000
+      },
+      "Site": {
+        "SiteId": {
+          "High": 3962432830642390469,
+          "Low": 4715766177186542219
+        },
+        "Cell": {
+          "X": 116,
+          "Y": 329,
+          "Z": 0
+        },
+        "Stance": {
+          "X": 29824,
+          "Y": 84096,
+          "Z": 256,
+          "Cell": {
+            "X": 116,
+            "Y": 328,
+            "Z": 1
+          }
+        },
+        "SiteRevision": 3,
+        "TerrainRevision": 2,
+        "RequiredWork": 3,
+        "CompletedWork": 3,
+        "RequiredToolDefinitionId": {
+          "High": 1872794200646237673,
+          "Low": 5975632165003488037
+        },
+        "DestinationRevision": 1,
+        "ReachMode": 2,
+        "IsComplete": true,
+        "RemainingWork": 0
+      },
+      "DividerSolid": false,
+      "TotalMicrolitres": 6000000000,
+      "ReceiverMicrolitres": 13000000,
+      "Cells": [
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 4000000
+        },
+        {
+          "Coordinate": {
+            "X": 118,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 3000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 3000000
+        },
+        {
+          "Coordinate": {
+            "X": 110,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 111,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 1000000000
+        },
+        {
+          "Coordinate": {
+            "X": 112,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 999000000
+        },
+        {
+          "Coordinate": {
+            "X": 113,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 996000000
+        },
+        {
+          "Coordinate": {
+            "X": 114,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 994000000
+        },
+        {
+          "Coordinate": {
+            "X": 115,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 987000000
+        },
+        {
+          "Coordinate": {
+            "X": 116,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 11000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 3000000
+        }
+      ],
+      "Feet": {
+        "X": 29824,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 116,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 4623,
+  "Actors": [
+    {
+      "Id": "dfa72ca63b361f0a45cec7629fe7da4c",
+      "Feet": {
+        "X": 26496,
+        "Y": 82560,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 322,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "e3258ea068f01e1f94572eab61002199",
+      "Feet": {
+        "X": 29824,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 116,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    }
+  ],
+  "Limitation": "Controlled background focus and injected native input; no human art or physical device acceptance."
+}

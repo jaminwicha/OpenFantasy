@@ -14,7 +14,10 @@ internal static class WorksiteActionOffers
         LocalExcavationView? site = worksite.ExcavationTargets.FirstOrDefault(value => value.SiteId == selected.Id);
         SubunitPosition feet = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).Feet;
         offers[FarmSemanticAction.Excavate] = Mine(worksite, scope, selected, site, feet);
-        offers[FarmSemanticAction.Traverse] = Traverse(worksite, scope, selected, site, feet);
+        if (worksite.SupportsAssistedTraversal)
+        {
+            offers[FarmSemanticAction.Traverse] = Traverse(worksite, scope, selected, site, feet);
+        }
     }
 
     private static FarmActionOffer Mine(LocalWorksiteView view, FarmActionScope scope, FarmTarget target,
@@ -23,16 +26,26 @@ internal static class WorksiteActionOffers
         LocalExcavationToolView? tool = view.Tools.FirstOrDefault(value => value.DefinitionId == site?.RequiredToolDefinitionId);
         string? blocker = CommonBlocker(view, site) ?? (site!.IsComplete ? "This face has already been excavated."
             : tool is null ? "You need the matching mining tool in your own pack."
-            : feet.Z != site.Stance.Z ? "Reach the lower work stance before mining."
+            : feet.Z != site.Stance.Z ? site.ReachMode == ExcavationReachMode.RaisedBankTop
+                ? "Reach the bank work stance before mining." : "Reach the lower work stance before mining."
             : !Near(feet, site.Stance, 448) ? "Move closer to the work stance."
             : null);
         return new FarmActionOffer(FarmSemanticAction.Excavate, scope, "Excavate", target.Name, target.Id,
             $"{view.EffortPerWork} effort", "You worked the selected face.",
             site is null || tool is null ? null : new ExcavateIntent(site.SiteId, site.SiteRevision,
                 site.TerrainRevision, tool.LotId, tool.Revision, site.DestinationRevision), blocker,
-            detailText: site is null ? "Choose a visible worksite face."
-                : $"Work {site.CompletedWork}/{site.RequiredWork}. Final work removes this cell and may settle supported material. "
-                    + "Reach, obstructions and safe consequences are checked on confirmation.");
+            detailText: MiningDetail(view, site));
+    }
+
+    private static string MiningDetail(LocalWorksiteView view, LocalExcavationView? site)
+    {
+        if (site is null) return "Choose a visible worksite face.";
+        string consequence = site.ReachMode == ExcavationReachMode.RaisedBankTop
+            ? "Final work removes this cell and may open a path for nearby water. "
+            : view.HasPhysicalConstruction ? "Final work removes this cell and may settle supported material. "
+            : "Final work removes this cell. ";
+        return $"Work {site.CompletedWork}/{site.RequiredWork}. " + consequence
+            + "Reach, obstructions and safe consequences are checked on confirmation.";
     }
 
     private static FarmActionOffer Traverse(LocalWorksiteView view, FarmActionScope scope, FarmTarget target,

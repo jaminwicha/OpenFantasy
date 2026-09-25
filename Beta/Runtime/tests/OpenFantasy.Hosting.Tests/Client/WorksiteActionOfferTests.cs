@@ -22,7 +22,7 @@ public sealed class WorksiteActionOfferTests
     public void Mining_requires_the_admitted_domain_and_an_explicit_visible_site_target()
     {
         var fixture = new MiningFixture();
-        foreach (WorldSnapshot legacy in new[] { fixture.Source.Genesis, WorldServiceFixture.Genesis() })
+        foreach (WorldSnapshot legacy in new[] { fixture.Source.Basis, WorldServiceFixture.Genesis() })
         {
             EntityId player = Player(legacy);
             var offers = Offers(legacy, player).Create(new LocalWorldView(legacy, player), fixture.Target);
@@ -122,7 +122,7 @@ public sealed class WorksiteActionOfferTests
         FarmTarget chosen = Assert.IsType<FarmTarget>(selection.Selected);
         Assert.Equal(fixture.Target.Id, chosen.Id);
         Assert.Equal(fixture.Target.Feet, chosen.Feet);
-        selection.Refresh(fixture.View(fixture.Source.Genesis));
+        selection.Refresh(fixture.View(fixture.Source.Basis));
         Assert.Equal(fixture.Target.Id, selection.Selected!.Id);
         Assert.Null(selection.Selected.Feet);
         Assert.Equal(before, WorldSnapshotCodec.Encode(state));

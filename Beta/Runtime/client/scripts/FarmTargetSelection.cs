@@ -1,5 +1,6 @@
 using OpenFantasy.Core;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Terrain;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
@@ -32,7 +33,8 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             .Concat(view.GatheringNodes.Select(node =>
                 new FarmTarget(node.NodeId, node.DisplayName, FarmTargetKind.Harvestable, node.Feet)))
             .Concat(view.Worksite?.ExcavationTargets.Select(site => new FarmTarget(site.SiteId,
-                "Worksite face", FarmTargetKind.Excavation,
+                site.ReachMode == ExcavationReachMode.RaisedBankTop
+                    ? site.IsComplete ? "Opening" : "Bank face" : "Worksite face", FarmTargetKind.Excavation,
                 site.Stance)) ?? [])
             .OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
         if (Selected is { } selected)

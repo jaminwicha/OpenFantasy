@@ -1,0 +1,1241 @@
+{
+  "status": "passed",
+  "rendered": true,
+  "startedUtc": "2026-09-25T18:04:29.564699+00:00",
+  "scope": "Injected native input, partial excavation restart, final breach, conserved rendered flow and paused restart; no physical-device/art/full-phase acceptance",
+  "runs": [
+    {
+      "phase": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--breach-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/native-breach-_r5js6fh/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/native-breach-_r5js6fh/journey.json",
+        "fresh",
+        "--background-render"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "breach",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--breach-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/native-breach-_r5js6fh/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/native-breach-_r5js6fh/journey.json",
+        "breach",
+        "--background-render"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "phase": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--breach-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/native-breach-_r5js6fh/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/native-breach-_r5js6fh/journey.json",
+        "reopen",
+        "--background-render"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\nOpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    }
+  ],
+  "observations": {
+    "fresh": {
+      "Kind": "native-terrain-breach-play-v1",
+      "Mode": "fresh",
+      "Status": "passed",
+      "Error": null,
+      "Stage": "partial-mining",
+      "InitialHash": "3E98C5E77B15886C987791A677E80EC589557F88626F831F708D10A47D7EDF09",
+      "FinalHash": "CD4197964713834EF290585B213D10BF08B77EEF8A6BE5AAC75977DB510D1608",
+      "Checks": [
+        "Focus loss cancels inspection; return submits no mining command.",
+        "One confirmed wheel action saves partial labor while the divider remains solid and the receiver dry."
+      ],
+      "Inputs": [
+        {
+          "_stage": "opening",
+          "Key": "Escape",
+          "Milliseconds": 1192
+        },
+        {
+          "_stage": "bank-walk",
+          "Key": "R",
+          "Milliseconds": 8776
+        },
+        {
+          "_stage": "bank-walk",
+          "Key": "Q",
+          "Milliseconds": 8787
+        },
+        {
+          "_stage": "bank-walk",
+          "Key": "Q",
+          "Milliseconds": 8790
+        },
+        {
+          "_stage": "bank-walk",
+          "Key": "Q",
+          "Milliseconds": 8812
+        },
+        {
+          "_stage": "bank-walk",
+          "Key": "Q",
+          "Milliseconds": 8820
+        },
+        {
+          "_stage": "cancel-mining",
+          "Key": "V",
+          "Milliseconds": 8905
+        },
+        {
+          "_stage": "cancel-mining",
+          "Key": "Right",
+          "Milliseconds": 8908
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "V",
+          "Milliseconds": 9354
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "Right",
+          "Milliseconds": 9355
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "Enter",
+          "Milliseconds": 9355
+        },
+        {
+          "_stage": "partial-mining",
+          "Key": "Escape",
+          "Milliseconds": 9390
+        }
+      ],
+      "Observations": [
+        {
+          "Stage": "opening",
+          "Calendar": {
+            "Days": 0,
+            "MillisecondsWithinDay": 32400000
+          },
+          "Site": {
+            "SiteId": {
+              "High": 3962432830642390469,
+              "Low": 4715766177186542219
+            },
+            "Cell": {
+              "X": 116,
+              "Y": 329,
+              "Z": 0
+            },
+            "Stance": {
+              "X": 29824,
+              "Y": 84096,
+              "Z": 256,
+              "Cell": {
+                "X": 116,
+                "Y": 328,
+                "Z": 1
+              }
+            },
+            "SiteRevision": 0,
+            "TerrainRevision": 1,
+            "RequiredWork": 3,
+            "CompletedWork": 0,
+            "RequiredToolDefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "DestinationRevision": 0,
+            "ReachMode": 2,
+            "IsComplete": false,
+            "RemainingWork": 3
+          },
+          "DividerSolid": true,
+          "TotalMicrolitres": 6000000000,
+          "ReceiverMicrolitres": 0,
+          "Cells": [
+            {
+              "Coordinate": {
+                "X": 110,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 111,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 112,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 113,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 114,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 115,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            }
+          ],
+          "Feet": {
+            "X": 25984,
+            "Y": 83328,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Stage": "final",
+          "Calendar": {
+            "Days": 0,
+            "MillisecondsWithinDay": 32688000
+          },
+          "Site": {
+            "SiteId": {
+              "High": 3962432830642390469,
+              "Low": 4715766177186542219
+            },
+            "Cell": {
+              "X": 116,
+              "Y": 329,
+              "Z": 0
+            },
+            "Stance": {
+              "X": 29824,
+              "Y": 84096,
+              "Z": 256,
+              "Cell": {
+                "X": 116,
+                "Y": 328,
+                "Z": 1
+              }
+            },
+            "SiteRevision": 1,
+            "TerrainRevision": 1,
+            "RequiredWork": 3,
+            "CompletedWork": 1,
+            "RequiredToolDefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "DestinationRevision": 0,
+            "ReachMode": 2,
+            "IsComplete": false,
+            "RemainingWork": 2
+          },
+          "DividerSolid": true,
+          "TotalMicrolitres": 6000000000,
+          "ReceiverMicrolitres": 0,
+          "Cells": [
+            {
+              "Coordinate": {
+                "X": 110,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 111,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 112,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 113,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 114,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 115,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            }
+          ],
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Display": "macOS",
+      "FocusRequests": 0,
+      "IsWindowFocused": true,
+      "IsLocallyPaused": true,
+      "DurationMilliseconds": 10347,
+      "Actors": [
+        {
+          "Id": "dfa72ca63b361f0a45cec7629fe7da4c",
+          "Feet": {
+            "X": 26496,
+            "Y": 82560,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 322,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Id": "e3258ea068f01e1f94572eab61002199",
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Limitation": "Controlled background focus and injected native input; no human art or physical device acceptance."
+    },
+    "breach": {
+      "Kind": "native-terrain-breach-play-v1",
+      "Mode": "breach",
+      "Status": "passed",
+      "Error": null,
+      "Stage": "pause-resume",
+      "InitialHash": "CD4197964713834EF290585B213D10BF08B77EEF8A6BE5AAC75977DB510D1608",
+      "FinalHash": "8E40FD785163B4FFF80B5B8F1BCFAFE22CDE51899BE2EFCA62A364D2B78CB030",
+      "Checks": [
+        "Separate process recovered exact paused terrain, work, water, actors and inventory.",
+        "Two deliberate actions finish saved labor; one substrate lot is issued and finite water reaches the lower receiver."
+      ],
+      "Inputs": [
+        {
+          "_stage": "opening",
+          "Key": "Escape",
+          "Milliseconds": 1533
+        },
+        {
+          "_stage": "resume-mining",
+          "Key": "R",
+          "Milliseconds": 1539
+        },
+        {
+          "_stage": "resume-mining",
+          "Key": "Q",
+          "Milliseconds": 1542
+        },
+        {
+          "_stage": "resume-mining",
+          "Key": "Q",
+          "Milliseconds": 1545
+        },
+        {
+          "_stage": "resume-mining",
+          "Key": "Q",
+          "Milliseconds": 1572
+        },
+        {
+          "_stage": "resume-mining",
+          "Key": "Q",
+          "Milliseconds": 1578
+        },
+        {
+          "_stage": "resume-mining",
+          "Key": "V",
+          "Milliseconds": 1582
+        },
+        {
+          "_stage": "resume-mining",
+          "Button": "DpadRight",
+          "Milliseconds": 1585
+        },
+        {
+          "_stage": "resume-mining",
+          "Button": "A",
+          "Milliseconds": 1586
+        },
+        {
+          "_stage": "breach",
+          "Key": "V",
+          "Milliseconds": 2465
+        },
+        {
+          "_stage": "breach",
+          "Key": "Right",
+          "Milliseconds": 2466
+        },
+        {
+          "_stage": "breach",
+          "Key": "Enter",
+          "Milliseconds": 2466
+        },
+        {
+          "_stage": "pause-resume",
+          "Key": "Escape",
+          "Milliseconds": 2720
+        },
+        {
+          "_stage": "pause-resume",
+          "Key": "Escape",
+          "Milliseconds": 3634
+        },
+        {
+          "_stage": "pause-resume",
+          "Key": "Escape",
+          "Milliseconds": 3662
+        }
+      ],
+      "Observations": [
+        {
+          "Stage": "opening",
+          "Calendar": {
+            "Days": 0,
+            "MillisecondsWithinDay": 32688000
+          },
+          "Site": {
+            "SiteId": {
+              "High": 3962432830642390469,
+              "Low": 4715766177186542219
+            },
+            "Cell": {
+              "X": 116,
+              "Y": 329,
+              "Z": 0
+            },
+            "Stance": {
+              "X": 29824,
+              "Y": 84096,
+              "Z": 256,
+              "Cell": {
+                "X": 116,
+                "Y": 328,
+                "Z": 1
+              }
+            },
+            "SiteRevision": 1,
+            "TerrainRevision": 1,
+            "RequiredWork": 3,
+            "CompletedWork": 1,
+            "RequiredToolDefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "DestinationRevision": 0,
+            "ReachMode": 2,
+            "IsComplete": false,
+            "RemainingWork": 2
+          },
+          "DividerSolid": true,
+          "TotalMicrolitres": 6000000000,
+          "ReceiverMicrolitres": 0,
+          "Cells": [
+            {
+              "Coordinate": {
+                "X": 110,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 111,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 112,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 113,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 114,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 115,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            }
+          ],
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Stage": "flowing",
+          "Calendar": {
+            "Days": 0,
+            "MillisecondsWithinDay": 32729400
+          },
+          "Site": {
+            "SiteId": {
+              "High": 3962432830642390469,
+              "Low": 4715766177186542219
+            },
+            "Cell": {
+              "X": 116,
+              "Y": 329,
+              "Z": 0
+            },
+            "Stance": {
+              "X": 29824,
+              "Y": 84096,
+              "Z": 256,
+              "Cell": {
+                "X": 116,
+                "Y": 328,
+                "Z": 1
+              }
+            },
+            "SiteRevision": 3,
+            "TerrainRevision": 2,
+            "RequiredWork": 3,
+            "CompletedWork": 3,
+            "RequiredToolDefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "DestinationRevision": 1,
+            "ReachMode": 2,
+            "IsComplete": true,
+            "RemainingWork": 0
+          },
+          "DividerSolid": false,
+          "TotalMicrolitres": 6000000000,
+          "ReceiverMicrolitres": 7000000,
+          "Cells": [
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 2000000
+            },
+            {
+              "Coordinate": {
+                "X": 118,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 1000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 330,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 1000000
+            },
+            {
+              "Coordinate": {
+                "X": 110,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 111,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 112,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 113,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 998000000
+            },
+            {
+              "Coordinate": {
+                "X": 114,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 996000000
+            },
+            {
+              "Coordinate": {
+                "X": 115,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 990000000
+            },
+            {
+              "Coordinate": {
+                "X": 116,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 9000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 3000000
+            }
+          ],
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Stage": "final",
+          "Calendar": {
+            "Days": 0,
+            "MillisecondsWithinDay": 32733000
+          },
+          "Site": {
+            "SiteId": {
+              "High": 3962432830642390469,
+              "Low": 4715766177186542219
+            },
+            "Cell": {
+              "X": 116,
+              "Y": 329,
+              "Z": 0
+            },
+            "Stance": {
+              "X": 29824,
+              "Y": 84096,
+              "Z": 256,
+              "Cell": {
+                "X": 116,
+                "Y": 328,
+                "Z": 1
+              }
+            },
+            "SiteRevision": 3,
+            "TerrainRevision": 2,
+            "RequiredWork": 3,
+            "CompletedWork": 3,
+            "RequiredToolDefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "DestinationRevision": 1,
+            "ReachMode": 2,
+            "IsComplete": true,
+            "RemainingWork": 0
+          },
+          "DividerSolid": false,
+          "TotalMicrolitres": 6000000000,
+          "ReceiverMicrolitres": 13000000,
+          "Cells": [
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 4000000
+            },
+            {
+              "Coordinate": {
+                "X": 118,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 3000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 330,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 3000000
+            },
+            {
+              "Coordinate": {
+                "X": 110,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 111,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 112,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 999000000
+            },
+            {
+              "Coordinate": {
+                "X": 113,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 996000000
+            },
+            {
+              "Coordinate": {
+                "X": 114,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 994000000
+            },
+            {
+              "Coordinate": {
+                "X": 115,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 987000000
+            },
+            {
+              "Coordinate": {
+                "X": 116,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 11000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 3000000
+            }
+          ],
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Display": "macOS",
+      "FocusRequests": 0,
+      "IsWindowFocused": true,
+      "IsLocallyPaused": true,
+      "DurationMilliseconds": 4623,
+      "Actors": [
+        {
+          "Id": "dfa72ca63b361f0a45cec7629fe7da4c",
+          "Feet": {
+            "X": 26496,
+            "Y": 82560,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 322,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Id": "e3258ea068f01e1f94572eab61002199",
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Limitation": "Controlled background focus and injected native input; no human art or physical device acceptance."
+    },
+    "reopen": {
+      "Kind": "native-terrain-breach-play-v1",
+      "Mode": "reopen",
+      "Status": "passed",
+      "Error": null,
+      "Stage": "opening",
+      "InitialHash": "8E40FD785163B4FFF80B5B8F1BCFAFE22CDE51899BE2EFCA62A364D2B78CB030",
+      "FinalHash": "8E40FD785163B4FFF80B5B8F1BCFAFE22CDE51899BE2EFCA62A364D2B78CB030",
+      "Checks": [
+        "Separate process recovered exact paused terrain, work, water, actors and inventory."
+      ],
+      "Inputs": [],
+      "Observations": [
+        {
+          "Stage": "opening",
+          "Calendar": {
+            "Days": 0,
+            "MillisecondsWithinDay": 32733000
+          },
+          "Site": {
+            "SiteId": {
+              "High": 3962432830642390469,
+              "Low": 4715766177186542219
+            },
+            "Cell": {
+              "X": 116,
+              "Y": 329,
+              "Z": 0
+            },
+            "Stance": {
+              "X": 29824,
+              "Y": 84096,
+              "Z": 256,
+              "Cell": {
+                "X": 116,
+                "Y": 328,
+                "Z": 1
+              }
+            },
+            "SiteRevision": 3,
+            "TerrainRevision": 2,
+            "RequiredWork": 3,
+            "CompletedWork": 3,
+            "RequiredToolDefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "DestinationRevision": 1,
+            "ReachMode": 2,
+            "IsComplete": true,
+            "RemainingWork": 0
+          },
+          "DividerSolid": false,
+          "TotalMicrolitres": 6000000000,
+          "ReceiverMicrolitres": 13000000,
+          "Cells": [
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 4000000
+            },
+            {
+              "Coordinate": {
+                "X": 118,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 3000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 330,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 3000000
+            },
+            {
+              "Coordinate": {
+                "X": 110,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 111,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 112,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 999000000
+            },
+            {
+              "Coordinate": {
+                "X": 113,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 996000000
+            },
+            {
+              "Coordinate": {
+                "X": 114,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 994000000
+            },
+            {
+              "Coordinate": {
+                "X": 115,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 987000000
+            },
+            {
+              "Coordinate": {
+                "X": 116,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 11000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 3000000
+            }
+          ],
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Stage": "final",
+          "Calendar": {
+            "Days": 0,
+            "MillisecondsWithinDay": 32733000
+          },
+          "Site": {
+            "SiteId": {
+              "High": 3962432830642390469,
+              "Low": 4715766177186542219
+            },
+            "Cell": {
+              "X": 116,
+              "Y": 329,
+              "Z": 0
+            },
+            "Stance": {
+              "X": 29824,
+              "Y": 84096,
+              "Z": 256,
+              "Cell": {
+                "X": 116,
+                "Y": 328,
+                "Z": 1
+              }
+            },
+            "SiteRevision": 3,
+            "TerrainRevision": 2,
+            "RequiredWork": 3,
+            "CompletedWork": 3,
+            "RequiredToolDefinitionId": {
+              "High": 1872794200646237673,
+              "Low": 5975632165003488037
+            },
+            "DestinationRevision": 1,
+            "ReachMode": 2,
+            "IsComplete": true,
+            "RemainingWork": 0
+          },
+          "DividerSolid": false,
+          "TotalMicrolitres": 6000000000,
+          "ReceiverMicrolitres": 13000000,
+          "Cells": [
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 4000000
+            },
+            {
+              "Coordinate": {
+                "X": 118,
+                "Y": 329,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 3000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 330,
+                "Z": -1
+              },
+              "VolumeMicrolitres": 3000000
+            },
+            {
+              "Coordinate": {
+                "X": 110,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 111,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 1000000000
+            },
+            {
+              "Coordinate": {
+                "X": 112,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 999000000
+            },
+            {
+              "Coordinate": {
+                "X": 113,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 996000000
+            },
+            {
+              "Coordinate": {
+                "X": 114,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 994000000
+            },
+            {
+              "Coordinate": {
+                "X": 115,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 987000000
+            },
+            {
+              "Coordinate": {
+                "X": 116,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 11000000
+            },
+            {
+              "Coordinate": {
+                "X": 117,
+                "Y": 329,
+                "Z": 0
+              },
+              "VolumeMicrolitres": 3000000
+            }
+          ],
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Display": "macOS",
+      "FocusRequests": 0,
+      "IsWindowFocused": true,
+      "IsLocallyPaused": true,
+      "DurationMilliseconds": 1627,
+      "Actors": [
+        {
+          "Id": "dfa72ca63b361f0a45cec7629fe7da4c",
+          "Feet": {
+            "X": 26496,
+            "Y": 82560,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 322,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Id": "e3258ea068f01e1f94572eab61002199",
+          "Feet": {
+            "X": 29824,
+            "Y": 84096,
+            "Z": 256,
+            "Cell": {
+              "X": 116,
+              "Y": 328,
+              "Z": 1
+            }
+          }
+        }
+      ],
+      "Limitation": "Controlled background focus and injected native input; no human art or physical device acceptance."
+    }
+  },
+  "artifactSha256": {
+    "native-breach-_r5js6fh/journey.breach.json": "d439b8896525a940e0c360e64b4019dc6311123968d7ef882737f8d55a9d9be2",
+    "native-breach-_r5js6fh/journey.breach.png": "53babee4d8278fddee8212dffde5c5b1308c6964a6acab8eb5d70c1dda663284",
+    "native-breach-_r5js6fh/journey.divider.png": "d3898c37ea26c77ba7f2e2ffa7f96dad544b1fc6f4cd7315c8423404e9b342fb",
+    "native-breach-_r5js6fh/journey.flowing.png": "282607cd3a294d4e0debf33ba0053c4cfb78396a2a126f209b4a4b7ee20f3bda",
+    "native-breach-_r5js6fh/journey.fresh.json": "7366a0189fa762fa6db2e650c91234f1e13e1f8c5197bd7666683a77aa672641",
+    "native-breach-_r5js6fh/journey.fresh.png": "ac75e68eff1c94ee32a8c3ea4c82fb19ec15b17c41b79e9e0a3afb30d1312d75",
+    "native-breach-_r5js6fh/journey.mining-wheel.png": "f31302324a163b9f40af49b7ae8724ff9dff92085569134f89f1bfcc8e16a39a",
+    "native-breach-_r5js6fh/journey.reopen.json": "566e95b5a7468cb9dd87b6bfce179ba184e42d36d2547fca868a06f3d206ccdb",
+    "native-breach-_r5js6fh/journey.reopen.png": "2773433b808ab4b7dd82b0414a573821af6efc8ba199a8497ed00cc8b56fdd4a",
+    "native-breach-_r5js6fh/world.sqlite": "98f41b26253c5909771442786ba73918aacd64dff1fe9729bfb25e240863a1b4"
+  },
+  "finishedUtc": "2026-09-25T18:04:50.584148+00:00"
+}

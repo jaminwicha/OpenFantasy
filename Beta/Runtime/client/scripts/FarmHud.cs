@@ -122,14 +122,18 @@ internal sealed partial class FarmHud : CanvasLayer
             ?? view.Construction.FirstOrDefault();
         _project.Visible = project is not null;
         _project.Text = project is null ? "" : DescribeProject(view, project, paused);
-        if (view.Worksite is not null)
+        if (view.Worksite is { } worksite)
         {
             long elevation = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).Feet.Z;
             _clock.Text += $" · Height {elevation / 256.0:0.##} m";
             _project.Visible = true;
-            _project.Text = (view.IsResolvingConsequences ? "Finishing the work…"
-                : project is null ? "Ask Wren about worksite supplies." : _project.Text)
-                + "\nQ: choose worksite face · V: Mine / Climb · Walk on stairs";
+            string activity = project is not null ? _project.Text
+                : worksite.HasPhysicalConstruction ? "Ask Wren about worksite supplies."
+                : worksite.ExcavationTargets.Count == 1
+                    ? $"Excavation {worksite.ExcavationTargets[0].CompletedWork}/{worksite.ExcavationTargets[0].RequiredWork}"
+                    : "Select a work face to inspect excavation.";
+            _project.Text = (view.IsResolvingConsequences ? "Finishing the work…" : activity)
+                + "\nQ: choose work face · V: " + (worksite.SupportsAssistedTraversal ? "Mine / Climb" : "Mine");
         }
         _dialogue.Visible = speaking;
         if (view.Dialogue is { } dialogue)
@@ -196,7 +200,7 @@ internal sealed partial class FarmHud : CanvasLayer
         string text = dialogue.SpeakerName + " · " + quest.Title + "\n";
         if (quest.Status == ActorQuestStatus.Completed)
         {
-            if (view.Worksite is not null) return text + "The supplies are set aside. Clear the work area so I can build.";
+            if (view.Worksite?.HasPhysicalConstruction == true) return text + "The supplies are set aside. Clear the work area so I can build.";
             return text + (project is not null && project.BuilderActorId == dialogue.SpeakerActorId
                 ? project.IsCompleted ? "A small guard for the first sapling. That's a start."
                     : "I've set the wood aside. Let me get to work when we're done talking."
@@ -208,7 +212,7 @@ internal sealed partial class FarmHud : CanvasLayer
 
     private static string DescribeProject(LocalWorldView view, LocalConstructionView project, bool paused)
     {
-        if (view.Worksite is not null)
+        if (view.Worksite?.HasPhysicalConstruction == true)
         {
             return project.IsCompleted ? project.DisplayName + " built · Saved with the worksite."
                 : $"{project.DisplayName} · {project.CompletedWork * 100 / project.RequiredWork}% fitted"

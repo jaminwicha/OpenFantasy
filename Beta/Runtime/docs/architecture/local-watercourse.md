@@ -44,11 +44,26 @@ Each occupied cell retains its own Z and fractional volume. The view does not de
 surface from total stock: transient upper and lower portions can be separated. The complete-world
 material partition remains the sole liquid inventory; the public geometry is an immutable projection.
 
+## Excavation composition
+
+The [terrain-bound breach](terrain-liquid-breach.md) shares this liquid projection while also exposing
+owned work targets through `LocalWorksiteView`. The separate `--breach` entry opens
+`user://worlds/wrens-breach.sqlite` using the same strict world, branch, admission and profile selection.
+It neither upgrades another farm save nor introduces another simulation owner. Public work, terrain and
+liquid observations come from the same committed world.
+
+Partial work retains the solid divider and dry receiver. On earned completion the next projection shows
+the removed cell, the issued substrate in the player's pack and actual subsequent liquid transfers.
+Selecting the divider captures its exact work/tool/revision inputs through the ordinary wheel. This
+selection admits Mine but no assisted Climb. The completed target retains its inspectable completion
+blocker; neither inspection nor cosmetic water animation submits a command.
+
 ## Native presentation
 
 [WatercourseView](../../client/scripts/Presentation/WatercourseView.cs) draws an open-channel oblique
 cutaway using the same 32-pixel/metre projection as actors, targets and the camera. This selection uses
-integer one-times zoom and a southward camera offset to keep the channel between the existing HUD panels. Known floor and rear
+integer one-times zoom and a southward camera offset (72 pixels for the watercourse,
+96 for the deeper breach receiver) to keep the channel between the existing HUD panels. Known floor and rear
 bank geometry come from occupancy. The front earth is omitted to reveal lower layers. A proved dry
 support tile is restored under an actor where its ground plane overlaps the cutaway, avoiding a false
 immersion cue. This is a bounded open-channel view, not a general cave, overhang or underwater renderer.
@@ -58,6 +73,15 @@ and its [exported sheet](../../client/assets/watercourse/water-surface.png). Two
 frames. Placement and vertical fill derive from committed quantities; cosmetic frames derive from the
 public calendar and stop under its holds. Ripple animation conveys neither replenishment nor a measured
 velocity. Nearest filtering preserves pixels. Render nodes cannot change world state.
+
+When liquid and worksite observations coexist, the liquid renderer owns terrain and the worksite's
+duplicate terrain layer is hidden. Physical members keep their independent renderer. Ordinary completed
+guard sprites remain visible whenever there is no physical-construction owner. A raised-bank target's
+unfilled boundary and selected marker identify the solid cell top, then move to the removed cell's
+base when actual occupancy is empty; its authored dry stance remains the action anchor. The boundary
+draws no lid, speculative fracture or water. The opened target has an explicit completion label. HUD
+hints follow the traversal/physical-construction capabilities instead of treating all excavation as a
+stair worksite. These cues are interface annotations, not physical material.
 
 The native kit is calibration material. File integrity, runtime projection, visual review and owner art
 acceptance are distinct claims. Terrain cutaways and inherited farm assets retain their own presentation

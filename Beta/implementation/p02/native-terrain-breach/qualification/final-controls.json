@@ -1,0 +1,91 @@
+[
+  {
+    "name": "targeted-label",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "-m:1",
+      "--filter",
+      "FullyQualifiedName~FarmTargetSelectionTests|FullyQualifiedName~BreachActionOfferTests",
+      "--logger",
+      "trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/targeted-label"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 3.1730303750373423
+  },
+  {
+    "name": "native-final",
+    "command": [
+      "python3",
+      "tools/check_native_breach.py",
+      "--dotnet",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "--godot",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--rendered",
+      "--output",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/native-final.json"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 21.107742125168443
+  },
+  {
+    "name": "watercourse-control",
+    "command": [
+      "python3",
+      "tools/check_native_watercourse.py",
+      "--dotnet",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "--godot",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--rendered",
+      "--output",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/watercourse-control.json"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 39.32879937486723
+  },
+  {
+    "name": "farm-control",
+    "command": [
+      "python3",
+      "tools/check_native_farm.py",
+      "--dotnet",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "--godot",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--output",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-terrain-breach/qualification/farm-control.json"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 5.707579292356968
+  },
+  {
+    "name": "host-foundation",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+      "--inspect-foundation"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.05665362533181906
+  },
+  {
+    "name": "godot-foundation",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+      "--headless",
+      "--path",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+      "--",
+      "--smoke-test"
+    ],
+    "exitCode": 0,
+    "durationSeconds": 0.5323747079819441
+  }
+]

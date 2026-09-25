@@ -42,6 +42,7 @@ public partial class Bootstrap : Control
         bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
             or ["--farm-action-offers", _, _, "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
+            or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
         if (arguments.Contains("--background-render") && !backgroundProbe)
         {
@@ -55,7 +56,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--watercourse-probe", var watercourseSave, var watercourseReport, var watercourseMode]
+        if (arguments is ["--breach-probe", var breachSave, var breachReport, var breachMode]
+            && breachMode is "fresh" or "breach" or "reopen")
+        {
+            if (File.Exists(breachSave) == (breachMode == "fresh"))
+            {
+                GD.PushError("The breach probe requires a fresh path or its exact retained previous stage.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { BreachProfile = true, SavePathOverride = breachSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new BreachPlayProbe(game, breachReport, breachMode));
+        }
+        else if (arguments is ["--watercourse-probe", var watercourseSave, var watercourseReport, var watercourseMode]
             && watercourseMode is "fresh" or "reopen")
         {
             if (File.Exists(watercourseSave) != (watercourseMode == "reopen"))
@@ -212,6 +227,10 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else if (arguments is ["--breach"])
+        {
+            AddChild(new FarmGame { BreachProfile = true });
         }
         else if (arguments is ["--watercourse"])
         {

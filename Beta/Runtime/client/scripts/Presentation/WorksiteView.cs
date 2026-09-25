@@ -19,9 +19,15 @@ internal sealed class WorksiteView
         canvas.AddChild(_terrain);
     }
 
-    internal void Present(LocalWorksiteView? view, long ownFeetHeight)
+    internal void Present(LocalWorksiteView? view, long ownFeetHeight, bool showTerrain = true)
     {
-        if (!ReferenceEquals(view, _presented))
+        bool changed = !ReferenceEquals(view, _presented);
+        if (showTerrain && view is not null && (changed || !_terrain.Visible))
+        {
+            _terrain.Setup(view);
+        }
+        _terrain.Visible = showTerrain && view is not null;
+        if (changed)
         {
             var included = view?.Members.Select(member => new MemberKey(member.StructureId, member.MemberIndex)).ToHashSet() ?? [];
             foreach (MemberKey key in _members.Keys.Where(key => !included.Contains(key)).ToArray())
@@ -31,10 +37,8 @@ internal sealed class WorksiteView
                 _members.Remove(key);
             }
             _presented = view;
-            _terrain.Visible = view is not null;
             if (view is not null)
             {
-                _terrain.Setup(view);
                 foreach (LocalWorksiteMemberView observed in view.Members)
                 {
                     var key = new MemberKey(observed.StructureId, observed.MemberIndex);

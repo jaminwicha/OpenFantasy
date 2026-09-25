@@ -17,7 +17,7 @@ namespace OpenFantasy.Hosting.Tests.Simulation;
 public sealed class LocalWorksiteViewTests
 {
     [Fact]
-    public void Legacy_views_stay_without_a_worksite_until_both_excavation_and_physical_geometry_are_admitted()
+    public void Excavation_views_report_traversal_and_physical_ownership_as_separate_admitted_capabilities()
     {
         WorldSnapshot original = WorldServiceFixture.Genesis();
         Assert.Null(new LocalWorldView(original, WorldServiceFixture.Id(10)).Worksite);
@@ -25,11 +25,18 @@ public sealed class LocalWorksiteViewTests
         WorldSnapshot stepped = WorldSteppedSupportAdmission.CreateGenesis(fixture.Genesis);
         foreach (WorldSnapshot legacy in new[] { fixture.ExcavationGenesis, fixture.Genesis, stepped })
         {
-            Assert.Null(new LocalWorldView(legacy, fixture.Player).Worksite);
+            LocalWorksiteView work = Assert.IsType<LocalWorksiteView>(new LocalWorldView(legacy, fixture.Player).Worksite);
+            Assert.False(work.HasPhysicalConstruction);
+            Assert.Equal(legacy.ProfileVersion is 11 or 12, work.SupportsAssistedTraversal);
+            Assert.Empty(work.Members);
+            Assert.Single(work.ExcavationTargets);
+            AssertTerrain(legacy, work);
         }
         WorldSnapshot physical = WorldConstructionPhysicalAdmission.CreateGenesis(stepped);
         LocalWorksiteView worksite = Assert.IsType<LocalWorksiteView>(new LocalWorldView(physical, fixture.Player).Worksite);
         Assert.Empty(worksite.Members);
+        Assert.True(worksite.HasPhysicalConstruction);
+        Assert.True(worksite.SupportsAssistedTraversal);
         Assert.Single(worksite.ExcavationTargets);
         AssertTerrain(physical, worksite);
     }
@@ -63,6 +70,8 @@ public sealed class LocalWorksiteViewTests
         Assert.Equal(GatherRulesV1.EffortPerSwing, worksite.EffortPerWork);
         Assert.True(worksite.CanManipulate);
         Assert.False(worksite.IsResolvingConsequences);
+        Assert.True(worksite.HasPhysicalConstruction);
+        Assert.True(worksite.SupportsAssistedTraversal);
         AssertTerrain(state, worksite);
         AssertPrivateStateIsAbsent(state, worksite);
 

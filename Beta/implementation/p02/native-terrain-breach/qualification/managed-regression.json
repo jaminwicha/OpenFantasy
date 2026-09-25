@@ -1,0 +1,49 @@
+{
+  "runs": [
+    {
+      "file": "full-regression/_mac_2026-09-25_12_58_54_net8.0.trx",
+      "counters": {
+        "total": "1020",
+        "executed": "1020",
+        "passed": "1020",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    {
+      "file": "full-regression/_mac_2026-09-25_12_59_01_net8.0.trx",
+      "counters": {
+        "total": "585",
+        "executed": "585",
+        "passed": "585",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  ],
+  "passed": 1605,
+  "failed": 0,
+  "subsequentSourceChange": "Only the completed-target display label changed from Opened bank face to Opening; rebuilt, targeted selection tests and final native journey qualify that correction."
+}

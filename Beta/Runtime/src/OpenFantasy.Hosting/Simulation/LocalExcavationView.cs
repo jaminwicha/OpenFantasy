@@ -11,7 +11,8 @@ namespace OpenFantasy.Hosting.Simulation;
 /// </summary>
 public sealed record LocalExcavationView(EntityId SiteId, CellCoordinate Cell, SubunitPosition Stance,
     ulong SiteRevision, ulong TerrainRevision, ulong RequiredWork, ulong CompletedWork,
-    EntityId RequiredToolDefinitionId, ulong DestinationRevision)
+    EntityId RequiredToolDefinitionId, ulong DestinationRevision,
+    ExcavationReachMode ReachMode = ExcavationReachMode.SameLevelSide)
 {
     public bool IsComplete => CompletedWork == RequiredWork;
     public ulong RemainingWork => RequiredWork - CompletedWork;

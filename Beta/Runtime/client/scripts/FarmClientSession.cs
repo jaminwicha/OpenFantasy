@@ -75,6 +75,15 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal static Task<FarmClientSession> OpenWatercourseAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
     {
         WorldSnapshot genesis = WatercourseFarmAdmission.CreateEmbedded(seedText, playerName);
+        return OpenSelection(savePath, genesis);
+    });
+
+    /// <summary>Opens the earned terrain breach as its own explicitly selected world.</summary>
+    internal static Task<FarmClientSession> OpenBreachAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+        OpenSelection(savePath, BreachFarmAdmission.CreateEmbedded(seedText, playerName)));
+
+    private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis)
+    {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
         SqliteWorldAuthority authority = File.Exists(savePath)
             ? SqliteWorldAuthority.OpenExisting(savePath) : SqliteWorldAuthority.CreateNew(savePath, genesis);
@@ -88,7 +97,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
             throw;
         }
         return Attach(authority);
-    });
+    }
 
     private static FarmClientSession Attach(SqliteWorldAuthority authority)
     {

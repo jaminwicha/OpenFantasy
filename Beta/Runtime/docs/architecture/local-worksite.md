@@ -38,7 +38,9 @@ The `--worksite` application argument selects this entry; the default farm retai
 ## Public geometry and interactions
 
 [LocalWorksiteView](../../src/OpenFantasy.Hosting/Simulation/LocalWorksiteView.cs) exposes committed
-terrain occupancy and installed member geometry within the explicitly sight-complete locality. It
+terrain occupancy and installed member geometry within the explicitly sight-complete locality. A worksite view exists whenever excavation is admitted, independently of physical construction.
+`HasPhysicalConstruction` identifies ownership of retained member condition/displacement; without it,
+`Members` is empty and ordinary completed farm structures retain their separate appearance. It
 also exposes only the controlled actor's owned excavation targets, request revisions, matching tools,
 effort and manipulation capability. Raw source claims, unissued output, another actor's custody and
 pending calculation cursors remain private. Unknown terrain outside the supplied bounds is not empty.
@@ -46,13 +48,17 @@ During consequence resolution, geometry remains the committed pre-publication st
 explicitly reports resolution in progress.
 
 [WorksiteActionOffers](../../client/scripts/WorksiteActionOffers.cs) offers mining and assisted ledge
-traversal only for an explicitly selected excavation target. A nearby known terrain contour can suggest
+traversal only for an explicitly selected excavation target. `SupportsAssistedTraversal` reflects the
+admitted world interpretation; extraction alone does not grant a Climb offer. The terrain-bound liquid
+profile exposes mining without assisted traversal. Each target preserves its declared reach mode and
+stance, including a raised-bank approach. A nearby known terrain contour can suggest
 one bounded ledge request; it does not reproduce authoritative body-clearance, sweep or reach rules.
 The captured intent includes the actual target/tool/revisions or exact traversal displacement. The
 host remains the sole judge of acceptance. Wrong-floor mining, insufficient effort, absent tools and
 completed excavation have inspectable blockers. Normal stairs use ordinary walking.
 
-The existing four-sector wheel substitutes Mine and Climb for the selected worksite context. Opening
+The existing four-sector wheel substitutes Mine and, where admitted, Climb for the selected worksite
+context. An unsupported traversal sector remains absent. Opening
 selects nothing; direction or pointer input inspects and explicit confirmation submits. An open slot
 cannot change a traversal destination or quest definition during refresh. A changed choice requires
 reopening. Captured offers retain the existing session binding, stale-revision refusal and idempotent

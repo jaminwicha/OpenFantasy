@@ -42,6 +42,26 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Native terrain breach](p02/native-terrain-breach/README.md) connects the earned profile21 divider to a
+separate `--breach` entry/save, public owned work targets, captured Mine actions and actual terrain/water
+rendering. The core/application remain pure C#; no Core law, canonical archive or storage schema changes.
+Excavation no longer implies physical construction or assisted traversal: those are explicit capabilities.
+Ordinary guard appearances survive the combined view; unsupported Climb is absent. A three-process native
+journey saves partial labor, reopens and earns the opening, then reopens the exact paused result. All
+6,000 litres remain conserved and exactly one substrate unit is issued without changing prior lots.
+
+Full regression passes **1,020 Core +585 Hosting/client =1,605**, zero failed/skipped; final build has zero
+warnings/errors. A subsequent display-label-only correction passes ten targeted tests and the final
+rendered journey (10.347s/4.623s/1.627s), with unchanged deadlines. Independent source/image review caught
+misleading hints, HUD pool clipping and an ambiguous opening cue; corrected captures and original failures
+are retained in the packet. This is a bounded dry-bank/native connection, not full P01/P02, production
+art/audio/device, wet occupancy, gates/loads, reactive fluids/ecology, Wait/coarse coupling or scale
+acceptance. Those dependencies and the near16MiB experimental-reserve gap remain open. Original farm, rendered watercourse and Host/Godot foundation controls also pass. Native engine
+alternatives remain research only. [Architecture](../Runtime/docs/architecture/local-watercourse.md#excavation-composition)
+records the player/presentation boundary.
+
+## Prior terrain/liquid breach
+
 [Earned terrain breach](p02/terrain-liquid-breach/README.md) adds fresh profile21: actual retained solid
 capacity, known vertical vents, raised-bank mining reach, complete partial-work opening preflight and
 atomic substrate/terrain/liquid publication. Core/application remain C#. A 175-commit ordinary farm
@@ -56,9 +76,8 @@ zero warnings/errors. Independent review caught/fixed session profile routing an
 admission. **21 real Host operations and two external process kills** pass, including independently
 reconstructed post-breach archives, every journal entry, duplicate refusal and history tamper rejection.
 Host/Godot foundation and original two-process farm controls pass; the preserved 1,334-commit worksite
-recovers exactly with unchanged database bytes. The native breach selection/action offer/rendered journey
-is the next integration step; the content
-factory and session dispatch do not themselves establish playable acceptance. Old native selections,
+recovers exactly with unchanged database bytes. That engine checkpoint alone did not establish native breach acceptance; the separate integration
+packet above supplies the selection/action/rendered journey without changing its authority laws. Old native selections,
 saves, frozen specifications and phase gates remain preserved. [Architecture](../Runtime/docs/architecture/terrain-liquid-breach.md)
 describes the complete bounded contract. Wet occupancy, gates/loads, reactive liquids/ecology, broader
 physical consequences, Wait/coarse coupling, art/audio/devices and all full phases remain open.

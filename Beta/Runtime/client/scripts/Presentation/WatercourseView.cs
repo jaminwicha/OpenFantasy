@@ -19,6 +19,7 @@ internal sealed partial class WatercourseView : Node2D
     private int _frame;
     private FarmVisualAssets _assets = null!;
     private FarmActorFrame[] _actors = [];
+    private IReadOnlyList<LocalExcavationView> _excavationTargets = [];
 
     internal void Setup(FarmVisualAssets assets) => _assets = assets;
 
@@ -37,18 +38,23 @@ internal sealed partial class WatercourseView : Node2D
         }
     }
 
-    internal void Present(LocalLiquidView? view, WorldInstant calendar, IReadOnlyList<FarmActorFrame> actors)
+    internal void Present(LocalLiquidView? view, WorldInstant calendar, IReadOnlyList<FarmActorFrame> actors,
+        LocalWorksiteView? worksite = null)
     {
         Visible = view is not null;
         if (view is null)
         {
             _view = null;
             _floors.Clear();
+            _excavationTargets = [];
             return;
         }
         EnsureSurface();
         int frame = (int)(calendar.MillisecondsWithinDay / CosmeticFrameMilliseconds % 4);
-        if (ReferenceEquals(_view, view) && frame == _frame && _actors.SequenceEqual(actors))
+        IReadOnlyList<LocalExcavationView> targets = worksite is null
+            ? Array.Empty<LocalExcavationView>() : worksite.ExcavationTargets;
+        if (ReferenceEquals(_view, view) && frame == _frame && _actors.SequenceEqual(actors)
+            && _excavationTargets.SequenceEqual(targets))
         {
             return;
         }
@@ -58,6 +64,7 @@ internal sealed partial class WatercourseView : Node2D
         }
         _view = view;
         _actors = actors.ToArray();
+        _excavationTargets = targets;
         _frame = frame;
         QueueRedraw();
     }
@@ -148,6 +155,26 @@ internal sealed partial class WatercourseView : Node2D
             DrawVolume(cell);
         }
         DrawOccupiedDryBank();
+        DrawExcavationTops();
+    }
+
+    private void DrawExcavationTops()
+    {
+        foreach (LocalExcavationView target in _excavationTargets.Where(target =>
+            target.ReachMode == ExcavationReachMode.RaisedBankTop))
+        {
+            LocalLiquidTerrainView? region = _view!.Terrain.SingleOrDefault(value => value.Bounds.Contains(target.Cell));
+            if (region is null)
+            {
+                continue;
+            }
+            // A solid target is marked at its top. After removal, move this unfilled cue to
+            // the removed cell's base so the rear bank cannot read as an unbroken target lid.
+            // Occupancy, not work progress or predicted water, chooses the boundary plane.
+            Vector2 origin = Point(target.Cell, target.Cell.Z + (region.IsSolid(target.Cell) ? 1 : 0));
+            var outline = new Rect2(origin + Vector2.One, new Vector2(TilePixels - 2, TilePixels - 2));
+            DrawRect(outline, new Color("c4b684"), filled: false, width: 1);
+        }
     }
 
     private void DrawOccupiedDryBank()

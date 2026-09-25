@@ -2,6 +2,7 @@ using Godot;
 using OpenFantasy.Client.Presentation;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Client;
 
@@ -70,8 +71,11 @@ public partial class FarmCanvas : Node2D
             return;
         }
         _daylight.Present(frame.Calendar);
-        _worksite.Present(frame.Worksite, frame.Actors.Single(actor => actor.IsOwnActor).Feet.Z);
-        _watercourse.Present(frame.Liquids, frame.Calendar, frame.Actors);
+        // Both public views may describe the same committed terrain. The liquid cutaway owns
+        // that terrain layer when present; physical members retain their independent owner.
+        _worksite.Present(frame.Worksite, frame.Actors.Single(actor => actor.IsOwnActor).Feet.Z,
+            showTerrain: frame.Liquids is null);
+        _watercourse.Present(frame.Liquids, frame.Calendar, frame.Actors, frame.Worksite);
         _targetMarker.ZIndex = frame.IsMultilevel ? 4_095 : 20;
         HashSet<EntityId> included = frame.Actors.Select(actor => actor.ActorId).ToHashSet();
         foreach (EntityId id in _actors.Keys.Where(id => !included.Contains(id)).ToArray())
@@ -103,14 +107,25 @@ public partial class FarmCanvas : Node2D
         _targetMarker.Visible = target?.Feet is not null;
         if (target?.Feet is { } feet)
         {
+            var site = target.Kind == FarmTargetKind.Excavation
+                ? _frame?.Worksite?.ExcavationTargets.FirstOrDefault(value => value.SiteId == target.Id) : null;
+            if (site is { ReachMode: ExcavationReachMode.RaisedBankTop })
+            {
+                // The raised stance remains the action anchor. The field cue identifies the
+                // worked top/opening itself, rather than marking the worker's dry bank as ore.
+                bool solid = _frame!.Worksite!.Terrain.Single(region => region.Bounds.Contains(site.Cell)).IsSolid(site.Cell);
+                feet = new SubunitPosition(checked(site.Cell.X * 256 + 128), checked(site.Cell.Y * 256 + 128),
+                    checked((site.Cell.Z + (solid ? 1 : 0)) * 256));
+            }
             _targetMarker.Position = Project(feet);
         }
     }
 
     private void PresentStructures(FarmCanvasFrame frame)
     {
-        // The source sapling-guard sprite remains correct only for the legacy farm profile.
-        IEnumerable<FarmStructureFrame> structures = frame.Worksite is null ? frame.Structures : [];
+        // Excavation alone does not supply physical member appearances. Retain the ordinary
+        // completed guard art until the view explicitly owns physical construction geometry.
+        IEnumerable<FarmStructureFrame> structures = frame.Worksite?.HasPhysicalConstruction == true ? [] : frame.Structures;
         HashSet<EntityId> included = structures.Select(value => value.ProjectId).ToHashSet();
         foreach (EntityId identity in _structures.Keys.Where(identity => !included.Contains(identity)).ToArray())
         {

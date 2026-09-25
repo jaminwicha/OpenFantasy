@@ -409,3 +409,17 @@ pause hold the saved flow; reopening continues the same placement. There is no r
 action. The open-channel cutaway and native surface kit are provisional calibration, not production art
 acceptance. See [the architecture](docs/architecture/local-watercourse.md) and
 [the integration packet](../implementation/p02/native-watercourse/README.md).
+
+## Separate terrain-breach entry
+
+`python3 tools/play.py --breach` opens the authored divider and lower receiver in
+`user://worlds/wrens-breach.sqlite`. Walk east along the north bank, use Q to select the divider,
+then V, Right and Enter to inspect and confirm mining. Three deliberate work actions remove it;
+partial labor survives closing the game. Water then crosses the opening from the same finite stock.
+The contextual wheel exposes no unsupported climbing. Other farm/worksite/watercourse saves keep
+separate selections and are never implicitly migrated.
+
+This is a dry-bank excavation/flow connection, with provisional cutaway rendering and calibrated
+starter-tool/material balance. Swimming, fluid loads, gates, production art and broader ecology retain
+separate requirements. See [architecture](docs/architecture/terrain-liquid-breach.md) and
+[qualification](../implementation/p02/native-terrain-breach/README.md).

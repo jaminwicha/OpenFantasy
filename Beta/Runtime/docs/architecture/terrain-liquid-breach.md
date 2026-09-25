@@ -93,6 +93,16 @@ six cubic metres of water above an intact divider and an empty lower trench. Thr
 extract the original substrate with an actually held starter tool. No initial work, quest reward, fabricated
 ore conversion or recurring water supply is implied by this content admission.
 
+## Player boundary
+
+[The separate native entry](local-watercourse.md#excavation-composition) selects this content through
+[FarmClientSession](../../client/scripts/FarmClientSession.cs). Its public worksite projection exposes
+owned targets, declared reach mode, permitted tools and exact request revisions; no raw source claim or
+unissued entitlement becomes visible. Physical construction and assisted traversal are explicit absent
+capabilities for this profile. The normal input router, captured action offers and sole host remain the
+owners of input, intent and execution. Rendering combines the committed terrain and liquid observations
+without submitting work or moving stock.
+
 ## Adjacent contracts
 
 Occupied wet space needs exposure, displacement and body behavior. Structures bearing or sealing water

@@ -81,8 +81,7 @@ public sealed class LocalWorldView
             }
         }
         GatheringTools = Array.AsReadOnly(tools.OrderBy(tool => tool.LotId).ToArray());
-        Worksite = state.Excavation is not null && state.ConstructionPhysical is not null
-            ? new LocalWorksiteView(state, playerActorId) : null;
+        Worksite = state.Excavation is not null ? new LocalWorksiteView(state, playerActorId) : null;
         Liquids = state.LiquidCells is not null ? new LocalLiquidView(state) : null;
         DialogueSession? dialogue = state.Dialogues.FirstOrDefault(value => value.ListenerActorId == playerActorId);
         if (dialogue is not null)
