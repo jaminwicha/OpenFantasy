@@ -52,6 +52,10 @@ source and old rules remain unchanged. The client rebuild is clean; no new full 
 [Review](p02/encounter-choice-validation/REVIEW.md) preserves the initial queue-synchronization failure
 and its exact recorded diagnosis. No deadlines or game rules changed; no external model was invoked.
 
+Qualified commit `04c4ce1` is preserved on `codex/milestone-encounter-choice-validation`. All46 prior
+markers,22 frozen specs and the exact unrelated19-file index remain intact. Development continues on
+`codex/runtime-foundation`; retained artifact hashes and693 local documentation links are verified.
+
 Next implement the [finite-aid contract](p02/encounter-choice-validation/RECOVERY_DESIGN.md): a new
 profile25 with voluntary care permission, real nearby neutral helper, finite raw/crafted Potion claims,
 atomic HP/debt/phase effects and durable recovery. Critic-found last-damage/HP lineage and production
