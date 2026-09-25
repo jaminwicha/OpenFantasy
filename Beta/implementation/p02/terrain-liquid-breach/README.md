@@ -9,6 +9,9 @@ The [design](DESIGN.md) fixes the bounded composition and full-plan dependencies
 [architecture](../../../Runtime/docs/architecture/terrain-liquid-breach.md) describes ownership, reach,
 venting, exact topology, serialization and transaction rules.
 
+Qualified commit: `6fce6ba506ec6ed72449bf1338364d02d718245b`, preserved on
+`codex/milestone-terrain-liquid-breach`. Development remains on `codex/runtime-foundation`.
+
 ## Evidence and scope
 
 The actual farm journey uses ordinary movement from the original start to the dry mining bank. Revision

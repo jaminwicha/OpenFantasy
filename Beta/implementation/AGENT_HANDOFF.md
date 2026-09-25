@@ -63,6 +63,9 @@ saves, frozen specifications and phase gates remain preserved. [Architecture](..
 describes the complete bounded contract. Wet occupancy, gates/loads, reactive liquids/ecology, broader
 physical consequences, Wait/coarse coupling, art/audio/devices and all full phases remain open.
 
+Qualified commit `6fce6ba` is preserved on `codex/milestone-terrain-liquid-breach`; development remains
+on `codex/runtime-foundation`. No phase closure or native breach acceptance is inferred.
+
 ## Prior native watercourse
 
 [Native finite watercourse](p02/native-watercourse/README.md) connects fresh profile twenty content to the
