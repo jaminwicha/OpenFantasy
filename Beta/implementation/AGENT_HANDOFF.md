@@ -65,6 +65,9 @@ source findings and failure dispositions. The fixes prevent caller-selected RNG,
 and generic/static identity poisoning; prospective episode families cannot be consumed by ordinary
 commands. All 44 older milestones, 22 frozen specs and the unrelated 19-file index remain preserved.
 
+Qualified commit `cc31f08` is preserved on `codex/milestone-encounter-lifecycle`. Development remains
+on `codex/runtime-foundation`; the marker records this bounded qualification without closing a phase.
+
 Next connect native battle controls, target/action presentation and in-place choreography to these
 same owners and public lifecycle projections. Flee/rescue, broader effects/healing/death/rewards,
 joining/merging, independent co-op, wet/structural dependency closure, scale and all full campaign,
