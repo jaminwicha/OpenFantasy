@@ -63,6 +63,8 @@ materials/reactions, ecology, Wait/coarse-detail coupling and production scale r
 The [design](p02/liquid-cell-flow/DESIGN.md) corrects the dependency sequence: the full specification's
 finite-volume cellular solver precedes mechanical shutters; prior indivisible source-to-terminal transport
 cannot represent intermediate stock. No full phase or production/presentation gate closes here.
+Qualified commit `7ae5cad` is preserved on `codex/milestone-liquid-cell-flow`; development remains on
+`codex/runtime-foundation`. Frozen designs, old fixtures and the unrelated predecessor index are unchanged.
 
 ## Prior fixed containment
 

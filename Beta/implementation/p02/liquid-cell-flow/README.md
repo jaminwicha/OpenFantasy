@@ -11,6 +11,9 @@ represent intermediate channel stock. Mechanical controls, fluid loads and the o
 remain required. The [architecture reference](../../../Runtime/docs/architecture/liquid-cell-flow.md)
 describes the implemented interfaces, laws and boundaries.
 
+Qualified commit: `7ae5cad59adaf8f485055dd7122833603828361a`, preserved on
+`codex/milestone-liquid-cell-flow`. Development remains on `codex/runtime-foundation`.
+
 ## Implemented behavior
 
 - Exact portions exhaust each mapped custodian's live liquid holdings, with no missing, duplicate or
