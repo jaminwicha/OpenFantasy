@@ -64,8 +64,9 @@ carry and revalidate support/hazards. Joining/merging, controller handoff, indep
 closure/fallback, production scale and all campaign gates remain open. No ordinary launch/save is changed.
 [World pacing architecture](../Runtime/docs/architecture/world-pacing.md) records the source bindings.
 
-Development remains on `codex/runtime-foundation`; preserve all42 earlier markers,22 frozen designs and
-the unrelated19-file predecessor index. The core/application remain pure C#, with no native/IPC migration.
+Qualified commit `9770fa5` is preserved on `codex/milestone-live-encounter-pacing`. Development remains
+on `codex/runtime-foundation`; all42 earlier markers,22 frozen designs and the unrelated19-file
+predecessor index are preserved. The core/application remain pure C#, with no native/IPC migration.
 
 ## Prior portable timing
 

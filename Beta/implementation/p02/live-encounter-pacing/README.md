@@ -4,6 +4,9 @@ This increment connects the retained Wait clock to the complete terrain/liquid/f
 host session, SQLite authority and exact historical replay. The core/application remain pure C#.
 The normal farm, worksite, watercourse and breach entries keep their saved interpretations.
 
+Qualified commit `9770fa5` is preserved on `codex/milestone-live-encounter-pacing`. Development stays
+on `codex/runtime-foundation`; no checkout switch, force move, push or merge accompanies the marker.
+
 ## Qualified behavior
 
 Fresh profile22 retains every profile21 owner and adds permanent world pacing. Optional encounter
