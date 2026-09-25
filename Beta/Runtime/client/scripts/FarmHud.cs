@@ -130,7 +130,7 @@ internal sealed partial class FarmHud : CanvasLayer
         _encounter.Present(view, paused);
         GetNode<Label>("Root/Footer/Column/Actions/Movement").Text = view.Encounter?.IsOutcome == true
             ? view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
-                : "Incapacitated\nYour save is retained."
+                : "Incapacitated\nAid unavailable"
             : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait" : "Move\nWASD / arrows";
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
         LocalConstructionView? project = view.Construction.FirstOrDefault(value => !value.IsCompleted)

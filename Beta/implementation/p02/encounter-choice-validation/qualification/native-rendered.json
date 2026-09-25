@@ -1,0 +1,37 @@
+{
+  "status": "failed",
+  "rendered": true,
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-hv_berih",
+  "runs": [
+    {
+      "label": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-hv_berih/background-client",
+        "--",
+        "--encounter-defeat-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-hv_berih/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-hv_berih/journey.json",
+        "fresh",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "exitCode": 1,
+      "seconds": 9.96412979112938,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-hv_berih/fresh.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-hv_berih/fresh.stderr.log"
+    }
+  ],
+  "startedUtc": "2026-09-25T21:37:04.877274+00:00",
+  "scope": "Original-source native Wait and actual player incapacity, blocked outcome input, exact second-process paused reopen; no invented release/recovery or physical-device/art acceptance",
+  "failure": "Process failed at fresh",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_encounter_defeat.py\", line 239, in main\n    run(mode, command, 180)\n    ~~~^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_encounter_defeat.py\", line 215, in run\n    require(item['seconds'] < limit and result.returncode == 0 and 'ERROR:' not in stdout + stderr,\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n            'Process failed at ' + label)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_encounter_defeat.py\", line 23, in require\n    raise AssertionError(message)\nAssertionError: Process failed at fresh\n",
+  "artifactSha256": {
+    "native-encounter-defeat-hv_berih/fresh.stderr.log": "0e75ca3cb8267ae9c45d1f5600910741d8aca5f3c04786fcf7c8f157f4dff3e1",
+    "native-encounter-defeat-hv_berih/fresh.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-encounter-defeat-hv_berih/journey.fresh.failed.json": "1f821774c1fbb282e0bc96ea0e77bec2e83630bc2528e9a50bdd7b58a5b2c113",
+    "native-encounter-defeat-hv_berih/world.sqlite": "4ea3f7bc9937ec30c0aceceabacf42e5785f0339c2359004e910974586c0cafb"
+  },
+  "finishedUtc": "2026-09-25T21:37:15.145064+00:00"
+}

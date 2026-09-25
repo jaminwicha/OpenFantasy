@@ -1,0 +1,274 @@
+{
+  "status": "passed",
+  "rendered": true,
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3",
+  "runs": [
+    {
+      "label": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/background-client",
+        "--",
+        "--encounter-defeat-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/journey.json",
+        "fresh",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "exitCode": 0,
+      "seconds": 18.216189375147223,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/fresh.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/fresh.stderr.log"
+    },
+    {
+      "label": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/background-client",
+        "--",
+        "--encounter-defeat-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/journey.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "exitCode": 0,
+      "seconds": 7.47859291639179,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/reopen.stderr.log"
+    },
+    {
+      "label": "recorded-1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/world.sqlite",
+        "1"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 1.1318124160170555,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-1.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-1.stderr.log"
+    },
+    {
+      "label": "recorded-2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/world.sqlite",
+        "2"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 1.0744820828549564,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-2.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-2.stderr.log"
+    },
+    {
+      "label": "recorded-3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/world.sqlite",
+        "3"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 1.1248557078652084,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-3.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-3.stderr.log"
+    },
+    {
+      "label": "recorded-4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/world.sqlite",
+        "4"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 1.213920374866575,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-4.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-4.stderr.log"
+    },
+    {
+      "label": "recorded-194",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/world.sqlite",
+        "194"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 1.1310193752869964,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-194.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-choice-validation/qualification/native-encounter-defeat-vu8_n8_3/recorded-194.stderr.log"
+    }
+  ],
+  "startedUtc": "2026-09-25T21:39:49.199647+00:00",
+  "scope": "Original-source native Wait and actual player incapacity, blocked outcome input, exact second-process paused reopen; no invented release/recovery or physical-device/art acceptance",
+  "inputFormsReached": [
+    "wheel",
+    "keyboard-g",
+    "controller-x",
+    "pointer-button"
+  ],
+  "oracle": {
+    "entryRevision": 2,
+    "finalRevision": 194,
+    "finalHash": "f93fd95ef338cc51bfe35706992f41f3346a49ce59e30cd70d4d2488d9e4ae20",
+    "reconstructedEncounterRoots": 193,
+    "preEntryOrdinarySteps": 1,
+    "playerId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+    "wolfId": "6e639095512c3b072f23995b90271601",
+    "playerWaitsQueued": 7,
+    "playerWaitsResolved": 7,
+    "waits": [
+      {
+        "revision": 8,
+        "commandId": "3dd5b80876d695196a3352cd421fe222",
+        "delay": 125
+      },
+      {
+        "revision": 35,
+        "commandId": "55d3a37a34fcd85e96bb987d42ebf2fb",
+        "delay": 125
+      },
+      {
+        "revision": 64,
+        "commandId": "fa0f395cd6729a2705e6afafa88a4a0a",
+        "delay": 125
+      },
+      {
+        "revision": 93,
+        "commandId": "a6ae98787afcc24fd6700b6c88bd2fb6",
+        "delay": 125
+      },
+      {
+        "revision": 122,
+        "commandId": "a8054544378dde546e2d269717f4609d",
+        "delay": 125
+      },
+      {
+        "revision": 151,
+        "commandId": "fedd80c074d1d1af47581691e0a4e9d4",
+        "delay": 125
+      },
+      {
+        "revision": 180,
+        "commandId": "eb460e74aa69c54f1f94818358d42357",
+        "delay": 125
+      }
+    ],
+    "wolfDamage": [
+      {
+        "revision": 7,
+        "damage": 9,
+        "hpBefore": 60,
+        "hpAfter": 51,
+        "delay": 134
+      },
+      {
+        "revision": 39,
+        "damage": 10,
+        "hpBefore": 51,
+        "hpAfter": 41,
+        "delay": 134
+      },
+      {
+        "revision": 70,
+        "damage": 10,
+        "hpBefore": 41,
+        "hpAfter": 31,
+        "delay": 134
+      },
+      {
+        "revision": 101,
+        "damage": 10,
+        "hpBefore": 31,
+        "hpAfter": 21,
+        "delay": 134
+      },
+      {
+        "revision": 132,
+        "damage": 9,
+        "hpBefore": 21,
+        "hpAfter": 12,
+        "delay": 134
+      },
+      {
+        "revision": 163,
+        "damage": 10,
+        "hpBefore": 12,
+        "hpAfter": 2,
+        "delay": 134
+      },
+      {
+        "revision": 194,
+        "damage": 2,
+        "hpBefore": 2,
+        "hpAfter": 0,
+        "delay": 134
+      }
+    ],
+    "tacticalTicks": 162,
+    "retainedActors": 4,
+    "sourceContentSha256": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b",
+    "commandReceipts": 15,
+    "identities": 225,
+    "boundaryHashes": {
+      "1": "b92f5f20af2aadaa0b7e074f38088762d14a9eea1239c9ec427cf9862fb71244",
+      "2": "0825fff9038f4f31535d97b1d4bc7cf99fa055682cf99be55f8dccbb111064e3",
+      "3": "9adc25c3d719eca9dae6d8f9867d254a5e2a8f4bf4fc8dd691d0b3ebcf771a95",
+      "4": "bf9c57ddc98e37117b3c7b5c6150c520a58ca480c875020be4006b1a85c6dba1",
+      "194": "f93fd95ef338cc51bfe35706992f41f3346a49ce59e30cd70d4d2488d9e4ae20"
+    },
+    "limitation": "Pre-entry NPC movement is verified by real Host replay and the exact pre-entry root pin; only entry onward is independently reconstructed."
+  },
+  "exactRecordedBoundaries": [
+    1,
+    2,
+    3,
+    4,
+    194
+  ],
+  "originalProjectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "artifactSha256": {
+    "native-encounter-defeat-vu8_n8_3/fresh.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-vu8_n8_3/fresh.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-encounter-defeat-vu8_n8_3/journey.costed-wait.png": "7e60a8c4ba68fd35ea4628b5a2e2dabdaa7dedb9c7633d1983e6c3710b368078",
+    "native-encounter-defeat-vu8_n8_3/journey.defeat-inspection.png": "0740497619658b0fb4c69bd60298bebd23a1c0164336077b8809cd18dd0fcbb0",
+    "native-encounter-defeat-vu8_n8_3/journey.fresh.json": "732e270aaaff7b310eb66ce52b82e4fe9839a391c227dd2910bbfdf93990df0b",
+    "native-encounter-defeat-vu8_n8_3/journey.fresh.png": "296d29dea91ceaccbb5ca7da935847ee6149f462744f95efe7e9ed56217e039a",
+    "native-encounter-defeat-vu8_n8_3/journey.outcome.png": "ef21d3d02578e3cf3ee46d4e0f2e381fe733df427ca50d07f17187a0f03c1cb2",
+    "native-encounter-defeat-vu8_n8_3/journey.reopen.json": "c76fd63c64b9fa37b15a02c47b6238aadc5b8823ecad82e8ab3e07d23bf421f2",
+    "native-encounter-defeat-vu8_n8_3/journey.reopen.png": "142b03f1cb69e9d3fe10c5ad5511ef3af3f959cd1841c93aa871dd085d80b66d",
+    "native-encounter-defeat-vu8_n8_3/journey.waiting.png": "3ae70f36bd6e4f6c5ed7864be2c52ccfb7032da39f7c134b0b8f0d558abd11c3",
+    "native-encounter-defeat-vu8_n8_3/recorded-1.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-vu8_n8_3/recorded-1.stdout.log": "89c80bac4c473e0cec28f59a6217a2de228467ad72b53700a99fc42b3eb18833",
+    "native-encounter-defeat-vu8_n8_3/recorded-194.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-vu8_n8_3/recorded-194.stdout.log": "63a08fac25cf39ddd7ed6581d0bfdeeff79698ef23d1d34a55e57fcdc7fb42ad",
+    "native-encounter-defeat-vu8_n8_3/recorded-2.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-vu8_n8_3/recorded-2.stdout.log": "8045e210bda272d1cf75f487f3f64bced794fbff487e18c5a5346f52274e5e10",
+    "native-encounter-defeat-vu8_n8_3/recorded-3.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-vu8_n8_3/recorded-3.stdout.log": "f94552deaaf9eb523bc85996051868d4adc38059b92fa0c06a3110fb89fd226e",
+    "native-encounter-defeat-vu8_n8_3/recorded-4.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-vu8_n8_3/recorded-4.stdout.log": "9a5ed50f6812325e292694c122d12c4af77aa1e24d473c346860f4b67dba3c5b",
+    "native-encounter-defeat-vu8_n8_3/reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-vu8_n8_3/reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-encounter-defeat-vu8_n8_3/world.sqlite": "4ea40c7df441b0fa72fa9ef3ccf72d52516c3f2dbd75b4c185ef301df385ba6d"
+  },
+  "finishedUtc": "2026-09-25T21:40:22.777351+00:00"
+}

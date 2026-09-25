@@ -489,5 +489,7 @@ The source wolf idle/walk sprite and modest hit reactions are provisional. Damag
 actual HP changes; acceptance of an attack means queued, not already resolved. The
 [native encounter architecture](docs/architecture/native-encounters.md) describes the public boundary.
 `tools/check_native_encounter.py` runs isolated injected native journeys and exact process reopening;
-its `--rendered` option uses an unfocusable background fixture. Those checks do not replace human art,
+`tools/check_native_encounter_defeat.py` exercises deliberate costed Wait, actual incapacity, inspection
+and exact paused reopening. Both support `--rendered` with disposable unfocusable startup settings.
+Those checks do not replace human art,
 physical controller, accessibility or production-platform acceptance.

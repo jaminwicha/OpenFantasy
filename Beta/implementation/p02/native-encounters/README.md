@@ -63,9 +63,10 @@ shared client settings were deleted or changed by this cleanup.
 
 ## Remaining obligations
 
-The source profile currently grants one player attack. General ability browsing/targeting, confirmed
-native Wait input and native defeated-player behavior require broader journeys. Costed Wait and outcome
-projection have managed authority coverage; this does not substitute for those native journeys.
+The source profile currently grants one player attack. General ability browsing/targeting remains open.
+Confirmed native Wait and defeated-player behavior were still pending at this checkpoint; the later
+[choice qualification](../encounter-choice-validation/README.md) supplies those actual native journeys.
+That follow-up proves incapacity and retention, not an implemented defeat continuation.
 Flee/rescue, healing/death/rewards, richer animation/audio, independent co-op, wet/structural dependency
 closure, scale, physical input, accessibility, approved art, desktop exports and all full campaign/phase
 gates remain open. An incapacitated initiating player cannot currently release; the UI says so.

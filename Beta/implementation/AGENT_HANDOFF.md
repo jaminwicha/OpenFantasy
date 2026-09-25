@@ -42,6 +42,24 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Native Wait and incapacitated outcome](p02/encounter-choice-validation/README.md) qualifies seven
+actual costed Waits through wheel, keyboard, controller and pointer, ending with original player HP0
+and wolf HP62. Two rendered Godot processes and five Host historical reads pass. An independent
+calculation reconstructs all193 encounter roots,15 receipts and225 identities. Exact paused reopen,
+disabled outcome actions and usable inspection retain all four bodies and their custody. Six final
+frames pass independent readability review; the UI clearly reports unavailable aid. Core/Hosting
+source and old rules remain unchanged. The client rebuild is clean; no new full managed suite is claimed.
+[Review](p02/encounter-choice-validation/REVIEW.md) preserves the initial queue-synchronization failure
+and its exact recorded diagnosis. No deadlines or game rules changed; no external model was invoked.
+
+Next implement the [finite-aid contract](p02/encounter-choice-validation/RECOVERY_DESIGN.md): a new
+profile25 with voluntary care permission, real nearby neutral helper, finite raw/crafted Potion claims,
+atomic HP/debt/phase effects and durable recovery. Critic-found last-damage/HP lineage and production
+partition constraints are explicit. **Recovery is designed, not implemented**; current defeated-player
+continuation and all broader lifecycle, campaign, art/device/platform and production gates remain open.
+
+## Prior native encounter controls
+
 [Native encounter controls and presentation](p02/native-encounters/README.md) connects the existing
 profile24/schema6 authority to a separate `--encounters` Godot launch. Public projections expose the
 player's own legal grants/costs; contextual buttons, hotkeys and the wheel capture exact targets and

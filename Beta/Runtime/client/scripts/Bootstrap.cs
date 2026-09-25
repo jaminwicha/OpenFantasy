@@ -42,6 +42,7 @@ public partial class Bootstrap : Control
         bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
             or ["--farm-action-offers", _, _, "--background-render"]
             or ["--encounter-probe", _, _, "fresh" or "duel" or "reopen", "--background-render"]
+            or ["--encounter-defeat-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -57,7 +58,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--encounter-probe", var encounterSave, var encounterReport, var encounterMode]
+        if (arguments is ["--encounter-defeat-probe", var defeatSave, var defeatReport, var defeatMode]
+            && defeatMode is "fresh" or "reopen")
+        {
+            if (File.Exists(defeatSave) == (defeatMode == "fresh"))
+            {
+                GD.PushError("The defeat probe requires a fresh path or its retained previous stage.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { EncounterProfile = true, SavePathOverride = defeatSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new EncounterDefeatPlayProbe(game, defeatReport, defeatMode));
+        }
+        else if (arguments is ["--encounter-probe", var encounterSave, var encounterReport, var encounterMode]
             && encounterMode is "fresh" or "duel" or "reopen")
         {
             if (File.Exists(encounterSave) == (encounterMode == "fresh"))

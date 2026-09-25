@@ -20,7 +20,7 @@ internal sealed class FarmEncounterStatus(Label label)
             EncounterLifecyclePhase.Staging => "Encounter · Holding positions",
             EncounterLifecyclePhase.Outcome => lifecycle.ReleaseActionHash is not null
                 ? "Encounter over · Continue exploring when ready."
-                : "Incapacitated · This encounter cannot be released; the save is retained.",
+                : "Incapacitated · No aid is available in this encounter.",
             _ => view.Encounter?.PlayerDecisionQueued == true ? "Choice queued · Waiting for resolution"
                 : view.Encounter?.PlayerIsDue == true ? "Choose your action · World waiting"
                 : "Recovering · World time continues until a choice is needed"
