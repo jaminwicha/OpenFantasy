@@ -4,6 +4,9 @@ This increment connects actual retained Squire Strike and Bramble Wolf attacks t
 terrain/liquid/farm authority, real HP/MP, deterministic damage, durable choices and coordinated Wait.
 The core and application remain pure C#. Ordinary native launch entries and lived saves are unchanged.
 
+Qualified commit `60a2463` is preserved on `codex/milestone-encounter-actions`. Development remains
+on `codex/runtime-foundation`; no old marker was moved, checkout switched, or push/merge performed.
+
 ## Behavior
 
 Fresh profile23 adds an explicit action owner over complete profile22, sharing schema5. The wolf is

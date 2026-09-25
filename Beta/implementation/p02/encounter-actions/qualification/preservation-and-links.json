@@ -91,7 +91,7 @@
     "codex/milestone-watershed-terrain-mapping": "41865edfa17a1d8476946261007abbe0ec53f334",
     "codex/milestone-live-encounter-pacing": "9770fa52e3be46d32981637ac83d1bf90e3dba76"
   },
-  "linksVerified": 687,
+  "linksVerified": 689,
   "changedCSharpSha256": {
     "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyContractDecodingV1.cs": "8201109ae29f0030a4cca0d2ca2fc7a9b38bd9bb37711e3e926dcffb79798f4d",
     "Beta/Runtime/src/OpenFantasy.Core/Actors/BodyFunctions.cs": "abe6e9db8fff5b437f68a62731496d54c7a0dbc1625d60ed4f2733f04a373986",
@@ -148,5 +148,7 @@
     "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/EncounterCombatWorldFixture.cs": "8e094d21da690e50e0c7ff7167e863850b8bdd3395fb098b482ae0d14cf70ec7",
     "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/EncounterCombatWorldTests.cs": "cb9c9a87e39472acc1a02c1726ee948c36153ab3cd266f3c9e688d66aec0ddfb"
   },
-  "note": "Exact preserved designs, old markers and predecessor index. Source names/text checked for changed C# only. No full-phase, device, scale or maximum-root qualification claimed."
+  "note": "Exact preserved designs, old markers and predecessor index. Source names/text checked for changed C# only. No full-phase, device, scale or maximum-root qualification claimed.",
+  "qualifiedCommit": "60a24630049309af40a0b9cfdfa6ff7676c68e4a",
+  "milestone": "codex/milestone-encounter-actions"
 }

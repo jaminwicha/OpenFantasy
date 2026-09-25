@@ -64,6 +64,10 @@ all campaign/native/art/audio/device gates remain open. The ordinary native farm
 [Encounter action architecture](../Runtime/docs/architecture/encounter-actions.md) documents the contracts.
 The core/application remain pure C#, with no native/IPC migration.
 
+Qualified commit `60a2463` is preserved on `codex/milestone-encounter-actions`. The old profile22
+external oracle and headless native farm/foundation controls also pass. All43 previous milestones,22
+frozen specifications and the unrelated19-file predecessor index remain preserved; no phase closes.
+
 ## Prior live coordinated pacing
 
 [Live coordinated encounter pacing](p02/live-encounter-pacing/README.md) connects Wait timing to the
