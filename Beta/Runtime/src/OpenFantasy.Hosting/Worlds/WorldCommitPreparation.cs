@@ -19,7 +19,7 @@ internal sealed class WorldCommitPreparation
         try
         {
             decision = _processor.Decide(state, batch,
-                identity => genesisIdentities.Contains(identity) || historicallyOccupied(identity));
+                identity => genesisIdentities.ContainsEntity(identity) || historicallyOccupied(identity));
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
         {
@@ -65,8 +65,9 @@ internal sealed class WorldCommitPreparation
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
             || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
             || (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null)
-            || (batch.Kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterDecision or WorldBatchKind.EncounterResolution)
-                != (state.Pacing?.Encounter is not null))
+            || batch.Kind != WorldBatchKind.EncounterLifecycle
+                && (batch.Kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterDecision or WorldBatchKind.EncounterResolution)
+                    != (state.Pacing?.Encounter is not null))
         {
             throw new AuthorityDispatchException("The selected batch does not match the current world revision or hold.");
         }
@@ -135,6 +136,7 @@ internal sealed class WorldCommitPreparation
         WorldBatchKind.TacticalAdvance => WorldCommitKind.TacticalAdvance,
         WorldBatchKind.EncounterDecision => WorldCommitKind.EncounterDecision,
         WorldBatchKind.EncounterResolution => WorldCommitKind.EncounterResolution,
+        WorldBatchKind.EncounterLifecycle => WorldCommitKind.EncounterLifecycle,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
 

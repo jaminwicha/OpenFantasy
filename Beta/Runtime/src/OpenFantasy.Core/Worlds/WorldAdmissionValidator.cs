@@ -45,6 +45,7 @@ public static class WorldAdmissionValidator
         admission.ReadPendingExcavation();
         admission.ReadPacing();
         admission.ReadEncounterActions();
+        admission.ReadEncounterLifecycle();
         return admission.Complete();
     }
 
@@ -120,7 +121,7 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<EntityId, ContentHash> _definitionPins = [];
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
-        internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed);
+        internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed, world.EncounterLifecycle);
 
         internal void ReadPacing()
         {
@@ -134,6 +135,24 @@ public static class WorldAdmissionValidator
             }
         }
 
+        internal void ReadEncounterLifecycle()
+        {
+            if (world.EncounterLifecycle is not { } lifecycle) return;
+            foreach (var ability in lifecycle.Abilities)
+            {
+                Definition(ability.DefinitionId, WorldIdentityRole.EncounterAbility, ability.Version);
+            }
+            foreach (var scenario in lifecycle.Scenarios)
+            {
+                Definition(scenario.DefinitionId, WorldIdentityRole.EncounterScenario, scenario.Version);
+            }
+            if (!lifecycle.HasEncounter && lifecycle.Actions is { } lastEpisode)
+            {
+                Add(lastEpisode.Scope.EncounterId, WorldIdentityRole.Encounter, unique: true);
+                ReadResolutionReferences(lastEpisode);
+            }
+        }
+
         internal void ReadEncounterActions()
         {
             if (world.EncounterActions is not { } actions) return;
@@ -141,6 +160,11 @@ public static class WorldAdmissionValidator
             {
                 Definition(ability.DefinitionId, WorldIdentityRole.EncounterAbility, ability.Version);
             }
+            ReadResolutionReferences(actions);
+        }
+
+        private void ReadResolutionReferences(OpenFantasy.Core.Encounters.EncounterActionSnapshot actions)
+        {
             if (actions.LastResolution is { } last)
             {
                 Add(last.DecisionCommandId, WorldIdentityRole.CauseReference, unique: true);

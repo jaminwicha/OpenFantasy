@@ -383,6 +383,21 @@ bounded NPC selection and canonical storage. This operator preserves ordinary fa
 `OPENFANTASY_ENCOUNTER_ACTION_EVIDENCE` exports the managed durable duel consumed by
 `tools/check_encounter_actions.py` for independent full-root/RNG/SQLite and external commit-kill checks.
 
+### Exploration and encounter lifecycle
+
+`--create-encounter-journey <world.sqlite> <seed> <player-name>` creates a separate fresh
+profile-twenty-four exploration world with the real Squire, Wren and two Bramble Wolves. Explicit
+scenario entry, in-place confrontation/staging, physical combat and outcome release share one
+schema-six authority. Entry/release earn no time; recovery debt and fractional process carry survive
+release, restart and another encounter. Ordinary activity respects incapacity and recovery.
+
+Read [encounter lifecycle](docs/architecture/encounter-lifecycle.md) for authority-derived episode
+identities, complete dry-world safety, public entry/release observations and retained archive rules.
+This operator does not change the normal native launch or migrate an existing save. Native battle
+controls/choreography, broader effects, general hazard closure and campaign gates remain separate.
+`OPENFANTASY_ENCOUNTER_LIFECYCLE_EVIDENCE=<directory>` exports the managed lifecycle fixture for
+`tools/check_encounter_lifecycle.py` to reconstruct roots, journals and real entry/release crash recovery.
+
 ### Standalone timing and structural inspection
 
 `--inspect-encounter-timing <timing.bin> <world-id> <branch-id> <encounter-id>` validates a bounded

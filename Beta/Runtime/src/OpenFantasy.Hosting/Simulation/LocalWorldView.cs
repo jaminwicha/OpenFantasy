@@ -48,6 +48,7 @@ public sealed class LocalWorldView
         PlayerActorId = playerActorId;
         Calendar = state.Calendar;
         HasReadingHold = state.HasReadingHold;
+        EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
         IsResolvingConsequences = state.PendingExcavation is not null;
         if (state.Pacing?.Encounter is { } timing)
         {
@@ -130,6 +131,7 @@ public sealed class LocalWorldView
     public bool IsResolvingConsequences { get; }
     public bool IsInEncounter => Encounter is not null;
     public LocalEncounterView? Encounter { get; }
+    public LocalEncounterLifecycleView? EncounterLifecycle { get; }
     public ReadOnlyCollection<LocalEncounterActorView> EncounterActors { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }

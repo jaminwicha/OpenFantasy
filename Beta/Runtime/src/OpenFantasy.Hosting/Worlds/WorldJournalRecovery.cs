@@ -49,6 +49,10 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("An encounter pacing genesis requires its exclusive world schema.");
         }
+        if ((genesis.ProfileVersion == 24) != (database.SchemaVersion == WorldDatabaseSchemaSix.Version))
+        {
+            throw new InvalidDataException("An encounter lifecycle genesis requires its exclusive world schema.");
+        }
         WorldSnapshot state = genesis;
         WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
         byte[] stateBytes = genesisBytes;
@@ -129,6 +133,10 @@ internal sealed class WorldJournalRecovery
         if ((state.ProfileVersion is 22 or 23) != (database.SchemaVersion == WorldDatabaseSchemaFive.Version))
         {
             throw new InvalidDataException("The encounter pacing world and its exclusive schema disagree.");
+        }
+        if ((state.ProfileVersion == 24) != (database.SchemaVersion == WorldDatabaseSchemaSix.Version))
+        {
+            throw new InvalidDataException("The encounter lifecycle world and its exclusive schema disagree.");
         }
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps

@@ -41,6 +41,11 @@ public static class WorldPacingAdmission
         {
             throw new ArgumentException("Pacing must own the exact clock of its complete terrain/liquid world.");
         }
+        if (world.EncounterLifecycle is not null)
+        {
+            WorldEncounterLifecycleAdmission.ValidatePacing(world);
+            return;
+        }
         UInt128 milliseconds = pacing.Progress.Elapsed.TotalMilliseconds;
         UInt128 expectedSteps;
         if (pacing.Encounter is { } encounter)

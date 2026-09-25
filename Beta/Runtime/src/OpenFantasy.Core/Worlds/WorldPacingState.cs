@@ -107,6 +107,16 @@ public sealed class WorldPacingState
             : new(WorldId, BranchId, OriginCalendar, next.Progress.Capture(), timing, EncounterOriginExposure);
     }
 
+    /// <summary>Retains all earned exposure and carry; complete lifecycle authority admits release.</summary>
+    public WorldPacingState EndEncounter()
+    {
+        if (Encounter is null)
+        {
+            throw new InvalidOperationException("No active encounter can be released.");
+        }
+        return new(WorldId, BranchId, OriginCalendar, Progress.Capture());
+    }
+
     private static WorldInstant AddExposure(WorldInstant origin, LocalExposureDuration elapsed)
     {
         // Add normalized days separately: valid exposure can exceed signed64 milliseconds.

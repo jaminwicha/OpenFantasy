@@ -42,6 +42,37 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Coordinated encounter lifecycle](p02/encounter-lifecycle/README.md) adds fresh profile 24/schema 6:
+ordinary exploration, authenticated scenario entry, in-place confrontation/staging, actual physical
+combat, safe outcome release and another encounter share the complete terrain/liquid/farm world.
+The permanent ledger retains readiness debt and fractional process carry. Incapacitated actors retain
+identity/body/custody while ordinary actions, cooperation and movement respect actual eligibility.
+The core/application remain pure C#, with no native/IPC migration.
+
+The real two-wolf source journey ends its first duel with wolf HP 0/player HP 2, then releases and
+reenters without resetting player debt 125 or 300 ms carry. A premature action refuses; a separately
+selected costed wolf Wait enables the next earned tick. A separate exact-save continuation pays
+recovery, funds Wren through actual conversation/quest delivery and completes 200-work construction.
+Independent reconstruction covers all 188 main-trace roots/187 commits/18 receipts, with 17 Host calls
+and four external entry/release commit-boundary kills. That oracle does not reconstruct the separate
+work branch. Old profile23 external and headless native farm/foundation controls also pass.
+
+Full regression passes 1,150 Core + 629 Hosting/client = 1,779 cases. After the final static-identity
+admission correction and two new cases, the rebuilt 1,150 Core and 46 encounter-focused Hosting cases
+also pass: 1,781 distinct managed cases across this composite qualification, zero failed/skipped.
+The final solution build has zero warnings/errors. [Review](p02/encounter-lifecycle/REVIEW.md) retains
+source findings and failure dispositions. The fixes prevent caller-selected RNG, unsupported speed
+and generic/static identity poisoning; prospective episode families cannot be consumed by ordinary
+commands. All 44 older milestones, 22 frozen specs and the unrelated 19-file index remain preserved.
+
+Next connect native battle controls, target/action presentation and in-place choreography to these
+same owners and public lifecycle projections. Flee/rescue, broader effects/healing/death/rewards,
+joining/merging, independent co-op, wet/structural dependency closure, scale and all full campaign,
+platform/art/audio/device gates remain open. The ordinary native launch is unchanged. No phase closes.
+[Lifecycle architecture](../Runtime/docs/architecture/encounter-lifecycle.md) is the maintained reference.
+
+## Prior source-backed encounter actions
+
 [Source-backed encounter actions](p02/encounter-actions/README.md) adds fresh profile23 over the complete
 paced terrain/liquid/farm world, sharing schema5. Actual Squire Strike and Bramble Wolf attacks use
 source-pinned stats, grants, real anatomy/range, HP/MP and deterministic saved damage draws. Wren remains

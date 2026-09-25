@@ -80,7 +80,7 @@ public static class EncounterActionCodecV1
         Number(ability.PowerTenths), Number(checked((ulong)ability.RangeSubunits)), Number(ability.ReadinessCostNumerator),
         Number(ability.ReadinessCostDenominator), Number(ability.ManaCost), Number(ability.MinimumLevel), Number((ulong)ability.RequiredFunction));
 
-    private static EncounterAbilityDefinition DecodeAbility(ReadOnlySpan<byte> bytes)
+    internal static EncounterAbilityDefinition DecodeAbility(ReadOnlySpan<byte> bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumAbilityByteLength, 12);
         reader.Tag("encounter.ability.v1"u8);
@@ -93,10 +93,10 @@ public static class EncounterActionCodecV1
         return result;
     }
 
-    private static byte[] EncodeCombatant(EncounterCombatant actor) => Frame("encounter.combatant.v1",
+    internal static byte[] EncodeCombatant(EncounterCombatant actor) => Frame("encounter.combatant.v1",
         actor.ActorId.ToByteArray(), Number(actor.Side), Identities(actor.AbilityIds));
 
-    private static EncounterCombatant DecodeCombatant(ReadOnlySpan<byte> bytes)
+    internal static EncounterCombatant DecodeCombatant(ReadOnlySpan<byte> bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumCombatantByteLength, 4);
         reader.Tag("encounter.combatant.v1"u8);

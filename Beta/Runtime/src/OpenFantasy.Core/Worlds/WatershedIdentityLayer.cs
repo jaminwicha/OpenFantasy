@@ -10,6 +10,7 @@ internal sealed class WatershedIdentityLayer
     private readonly PreparedWatershedNetwork? _network;
     private readonly Dictionary<EntityId, WorldIdentityRole> _roles = [];
     private readonly TerrainIdentityLayer _terrain;
+    private readonly Lazy<HashSet<ulong>> _identityPrefixes;
 
     internal WatershedIdentityLayer(PreparedWatershed? watershed, PreparedWatershedNetwork? network, TerrainIdentityLayer terrain)
     {
@@ -33,6 +34,7 @@ internal sealed class WatershedIdentityLayer
             }
         }
         ValidateTerrain();
+        _identityPrefixes = new(() => _roles.Keys.Select(identity => identity.High).ToHashSet());
     }
 
     private void AddBasin(PreparedWatershed watershed)
@@ -53,6 +55,7 @@ internal sealed class WatershedIdentityLayer
     internal bool Matches(PreparedWatershed? watershed, PreparedWatershedNetwork? network, TerrainIdentityLayer terrain) =>
         ReferenceEquals(_watershed, watershed) && ReferenceEquals(_network, network) && ReferenceEquals(_terrain, terrain);
     internal bool Contains(EntityId identity) => _roles.ContainsKey(identity);
+    internal bool ContainsPrefix(ulong prefix) => _identityPrefixes.Value.Contains(prefix);
 
     internal void ValidateScope(TerrainScope scope)
     {

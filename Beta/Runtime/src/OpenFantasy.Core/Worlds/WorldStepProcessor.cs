@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Gathering;
@@ -40,6 +41,14 @@ public sealed class WorldStepProcessor
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
         }
 
+        if (batch.Kind == WorldBatchKind.EncounterLifecycle)
+        {
+            return WorldEncounterLifecycleProcessor.Decide(state, batch, historicallyOccupied);
+        }
+        if (state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging or EncounterLifecyclePhase.Outcome)
+        {
+            throw new InvalidOperationException("This encounter phase requires its lifecycle boundary.");
+        }
         if (state.EncounterActions is not null)
         {
             return WorldEncounterActionProcessor.Decide(state, batch, historicallyOccupied);
@@ -111,6 +120,7 @@ public sealed class WorldStepProcessor
         WorldInstant calendar = state.Calendar;
         ulong advancingSteps = state.AdvancingSteps;
         WorldPacingState? pacing = state.Pacing;
+        var lifecycle = state.EncounterLifecycle?.RetainBoundary();
         IEnumerable<WorldResident> residents = state.Residents;
 
         bool FitsCompleteCandidate(CountedAuthorityState proposedInventory,
@@ -133,6 +143,7 @@ public sealed class WorldStepProcessor
                 bool beforeTimeBoundary = (state.StructuralSettlementPolicy is not null || state.ReservoirSeals is not null)
                     && batch.Kind == WorldBatchKind.AdvancingStep && advancingSteps == state.AdvancingSteps;
                 var validationPacing = beforeTimeBoundary ? pacing?.AdvanceExploration() : pacing;
+                var validationLifecycle = beforeTimeBoundary ? state.EncounterLifecycle?.AdvanceExploration() : lifecycle;
                 var validationCalendar = validationPacing?.Calendar
                     ?? (beforeTimeBoundary ? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep) : calendar);
                 var validationResidents = beforeTimeBoundary ? state.Residents.Select(resident => resident.ExperienceStep()) : residents;
@@ -145,10 +156,10 @@ public sealed class WorldStepProcessor
                 // Action admission validates the eventual clock without speculatively flowing material.
                 // Only the actual advancing boundary below selects and applies liquid transfers.
                 var validationLiquidCells = beforeTimeBoundary && proposedLiquidCells is not null
-                    ? proposedLiquidCells.AdvanceBoundary(validationCalendar) : proposedLiquidCells;
+                    ? proposedLiquidCells.AdvanceBoundary(state.EncounterLifecycle is null ? validationCalendar : validationPacing!.ProcessBoundary) : proposedLiquidCells;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing);
+                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle);
                 if (state.ConsequencePolicy is not null || state.ReservoirSeals is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
                 admittedCandidate = admitted;
                 return true;
@@ -176,7 +187,11 @@ public sealed class WorldStepProcessor
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
-            if (action.Intent is ClimbIntent)
+            if (state.EncounterLifecycle is not null && !WorldActorAvailability.PermitsAction(state, action))
+            {
+                resolution = new(inventory, dialogues, WorldActionRejection.Unavailable, null);
+            }
+            else if (action.Intent is ClimbIntent)
             {
                 if (gathering is null || state.ProfileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18)
                 {
@@ -366,6 +381,7 @@ public sealed class WorldStepProcessor
         {
             // The already selected step contributes once, including when an action opens a hold.
             pacing = pacing?.AdvanceExploration();
+            lifecycle = state.EncounterLifecycle?.AdvanceExploration();
             calendar = pacing?.Calendar ?? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);
             advancingSteps = checked(advancingSteps + 1);
             if (transport is not null)
@@ -384,13 +400,14 @@ public sealed class WorldStepProcessor
             if (liquidCells is not null)
             {
                 // A failed bounded plan aborts the whole selected step; no partial flow or time is published.
-                liquidCells = _liquidFlow.PlanAdvance(liquidCells, calendar, dialogues.Count != 0).ApplyTo(liquidCells);
+                liquidCells = _liquidFlow.PlanAdvance(liquidCells, state.EncounterLifecycle is null ? calendar : pacing!.ProcessBoundary, dialogues.Count != 0).ApplyTo(liquidCells);
             }
             if (dialogues.Count == 0)
             {
                 foreach (WorldMovementInput input in batch.Movement)
                 {
-                    if (worked.Contains(input.ActorId) || !inventory.CanControl(input.Delivery, input.ActorId))
+                    if (worked.Contains(input.ActorId) || !inventory.CanControl(input.Delivery, input.ActorId)
+                        || !WorldActorAvailability.CanAct(state, input.ActorId))
                     {
                         continue;
                     }
@@ -415,7 +432,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle);
         if (liquidCells is not null && admittedMovement is null)
         {
             // Fragment growth must also fit the complete retained root before authority preparation succeeds.

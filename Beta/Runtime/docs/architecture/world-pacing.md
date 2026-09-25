@@ -10,9 +10,10 @@ duration; no resident is silently outside the clock.
 
 The fixed process rate produces one interval per 1,800 ms, retaining the remainder. `ProcessIntervals`
 counts those earned intervals; `ProcessBoundary` is origin plus their whole duration. `AdvancingSteps`
-counts selected advancing batches instead. These measures coincide in exploration and differ in an
-encounter. A process must use its appropriate measure rather than assuming a commit or tactical tick
-grants one exploration interval.
+counts selected advancing batches instead. These measures coincide for an exploration-only history;
+a world retaining tactical history must keep them distinct even after returning to exploration.
+A process must use its appropriate measure rather than assuming a commit or tactical tick grants
+one exploration interval.
 
 | Accepted boundary | Calendar and resident exposure | Process effects |
 | --- | --- | --- |
@@ -21,6 +22,7 @@ grants one exploration interval.
 | Queue Wait choice | Zero | Authenticated pending choice only |
 | Resolve Wait choice | Zero | Positive readiness debt; no passive work |
 | Tactical advance | 50 ms, five tactical units | Only a newly completed 1,800 ms interval earns passive effects |
+| Profile-twenty-four entry, staging or outcome release | Zero | Retains debt, carry and actual positions |
 
 Thirty-five tactical ticks retain 1,750 ms of carry. The next tick earns one interval; restart preserves
 that carry and boundary. Choices, resolution, focus loss, waiting for a human and host stalls never
@@ -42,9 +44,11 @@ count. Profile-twenty-two encounters exclude dialogue holds and admit only Wait 
 its 64-resident bound; the timing component's 128-actor capacity neither expands it nor supplies fallback.
 
 Pacing cannot be added or removed through ordinary `WithState` calls. Genesis admission is distinct
-from an encounter-entry gameplay action. The profile interpreter has no release operation: discarding
-readiness debt or a fractional process remainder is not a legal return to exploration. Entry, joining,
-merging and release require explicit admission contracts preserving those obligations.
+from an encounter-entry gameplay action. Profile twenty-two has no release operation. Discarding
+readiness debt or a fractional process remainder is not a legal return to exploration.
+[Profile twenty-four's lifecycle](encounter-lifecycle.md) supplies explicit entry and outcome release
+while keeping permanent pacing, debt and cumulative exploration/tactical accounting. Joining and
+merging require separate admission contracts.
 
 [QueueEncounterWaitIntent](../../src/OpenFantasy.Core/Encounters/QueueEncounterWaitIntent.cs) names the
 encounter and expected timing revision. [Action version ten](../../src/OpenFantasy.Core/Worlds/WorldActionCodecV10.cs)
@@ -72,11 +76,17 @@ and other encounter actions require their own complete legality and consequence 
 ability requests, actual HP/MP consequences, explicit bystanders and derived incapacitated-actor
 eligibility. It retains the complete timing rows, permanent carry and process rules described here.
 
+Profile twenty-four retains all accepted tactical ticks across successive episodes. Release ends the
+active timing binding without resetting exposure or remainder. Its ordinary preflights and fluid
+advancement use `ProcessBoundary`, so a fractional calendar after release cannot skip or duplicate a
+liquid interval. An exploration step pays at most 180 tactical units of permanent actor debt, but a
+recovering actor cannot also act or move using the readiness earned by that same step.
+
 ## Host selection and observations
 
 [LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) selects encounter work
 only while ready. It combines the pending player request with due NPC choices (Wait in profile
-twenty-two, legal physical actions or Wait in profile twenty-three), then holds for
+twenty-two, legal physical actions or Wait in profiles twenty-three/twenty-four), then holds for
 required human choices, resolves the first due boundary, or selects one tactical tick. Input never
 supplies elapsed time. Monotonic deadlines and the no-catch-up policy remain applicable.
 
@@ -85,7 +95,9 @@ it cannot fall back to exploration movement, work or time. A host-only failure f
 failure policy. [LocalWorldView](../../src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs) exposes
 encounter identity/revision, elapsed units, player readiness, queued-choice status and required-decision
 status. Gathering visibility uses earned process intervals. This observation contract is separate from
-native battle controls, animation and choreography.
+native battle controls, animation and choreography. Profile twenty-four also exposes its
+[lifecycle observation](encounter-lifecycle.md#content-and-public-session-boundary), including permanent
+player debt, captured entry targets and an eligible outcome-release token.
 
 ## Storage and replay
 
@@ -107,6 +119,11 @@ encounter-resolution commit kinds. The same
 SQLite writer atomically stores state, batch, outcomes and identities. Migration kind three remains a
 table-level allowance inherited from schema three; recovery rejects those rows in schema five because
 this interpretation defines no migration.
+
+Profile twenty-four uses exclusive [schema six](encounter-lifecycle.md#canonical-persistence-and-scope)
+with an additional zero-duration lifecycle commit kind. It preserves the pacing codec while replacing
+fixed episode ownership with the permanent lifecycle archive; existing schema-five saves do not acquire
+that interpretation on opening.
 
 [WorldGenesisAdmission](../../src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs) rejects fresh
 databases with elapsed exposure, timing progress or already queued choices. Canonical bytes alone do

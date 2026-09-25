@@ -29,7 +29,7 @@ internal sealed class SqliteConnectionLease : IDisposable
     }
 
     internal static SqliteConnectionLease OpenSupportedWorld(string path)
-        => Open(path, false, WorldApplicationId, 0, [2, 3, 4, 5]);
+        => Open(path, false, WorldApplicationId, 0, [2, 3, 4, 5, 6]);
 
     private static SqliteConnectionLease Open(string path, bool create, int applicationId, int schemaVersion,
         IReadOnlyList<int> supportedVersions)

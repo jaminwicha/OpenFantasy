@@ -22,7 +22,8 @@ internal sealed partial class WorldDatabase : IDisposable
     internal static WorldDatabase Open(string path, bool create, int schemaVersion = WorldDatabaseSchema.Version)
     {
         if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version
-            and not WorldDatabaseSchemaFour.Version and not WorldDatabaseSchemaFive.Version)
+            and not WorldDatabaseSchemaFour.Version and not WorldDatabaseSchemaFive.Version
+            and not WorldDatabaseSchemaSix.Version)
         {
             throw new ArgumentOutOfRangeException(nameof(schemaVersion));
         }
@@ -84,6 +85,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaThree.Version => WorldDatabaseSchemaThree.Tables,
         WorldDatabaseSchemaFour.Version => WorldDatabaseSchemaFour.Tables,
         WorldDatabaseSchemaFive.Version => WorldDatabaseSchemaFive.Tables,
+        WorldDatabaseSchemaSix.Version => WorldDatabaseSchemaSix.Tables,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 

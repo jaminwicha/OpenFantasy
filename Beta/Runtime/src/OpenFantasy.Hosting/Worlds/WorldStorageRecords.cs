@@ -11,7 +11,8 @@ internal enum WorldCommitKind
     ConsequenceContinuation = 4,
     TacticalAdvance = 5,
     EncounterDecision = 6,
-    EncounterResolution = 7
+    EncounterResolution = 7,
+    EncounterLifecycle = 8
 }
 
 internal enum WorldIdentityKind

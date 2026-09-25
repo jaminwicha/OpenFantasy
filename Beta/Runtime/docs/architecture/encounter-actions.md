@@ -9,6 +9,11 @@ requires no elapsed time, queued choice, random draw or previous resolution. It 
 basis and action archive, including the common terrain seed. Ordinary successors cannot add or
 remove this owner or change an older world's interpretation.
 
+[Profile twenty-four's permanent lifecycle](encounter-lifecycle.md) owns the same action component
+inside its current/last episode archive. It adds explicit entry, staging and outcome release while
+retaining the source-backed action law. Those transitions do not change profile twenty-three's fixed
+encounter semantics.
+
 [EncounterActionSnapshot](../../src/OpenFantasy.Core/Encounters/EncounterActionSnapshot.cs) owns
 immutable ability definitions, explicit actor grants and encounter sides, retained ability requests,
 the next deterministic damage draw and the last resolution. [Progression](../../src/OpenFantasy.Core/Progression)
@@ -70,9 +75,11 @@ death, succession, remains, afterlife and resurrection design.
 
 An encounter has an outcome when at most one living positive side remains. Remaining choices are
 cancelled, and the session holds the resulting complete state. Readiness debt and fractional process
-carry are retained. Outcome neither releases exploration nor grants rewards, drops or respawn.
-Entry, staging, joining, safe release, healing and broader effects require their own explicit
-contracts; outcome is not permission to discard their obligations.
+carry are retained. Outcome alone neither releases exploration nor grants rewards, drops or respawn.
+Profile twenty-three has no release transition. Profile twenty-four's
+[lifecycle contract](encounter-lifecycle.md#entry-staging-and-release) requires an authenticated release
+by the living initiator, pinned to the exact outcome and current complete world admission. Joining,
+healing, death and broader effects have separate contracts.
 
 Eligible due actors are derived from timing plus authoritative HP and sides. This preserves the
 portable timing component's complete actor rows and the original profile-twenty-two Wait semantics.
@@ -89,6 +96,11 @@ source stats, an empty inventory and wallet, no granted language or labor, and a
 body with a functional natural weapon. Wren remains the same quest-bearing bystander. The actual
 project owner supplies the watercourse owner; adding another host-controlled resident cannot select
 a different owner by accident.
+
+[EncounterJourneyAdmission](../../src/OpenFantasy.Hosting/Content/EncounterJourneyAdmission.cs)
+creates a separate four-resident exploration world with two such wolves and two explicitly authored
+scenarios. Its shared source definitions do not duplicate actor identities, possessions or earned work.
+The [lifecycle reference](encounter-lifecycle.md) describes its complete ownership and public entry view.
 
 Strike retains power 10, MP cost 0 and level requirement 1. Its source range 48 plus the original
 player grace 8 maps to 448 spatial subunits. The wolf's power 10 and range 44 map to 352 subunits.
@@ -127,3 +139,7 @@ boundary and verifies exact hashes, draws, resources, outcomes and checkpoints b
 Canonical shape alone does not authenticate a command. The operator
 `--create-encounter-world <database> <seed> <player-name>` admits the source-backed fresh world without
 migrating lived saves or selecting a new ordinary native launch.
+
+Profile twenty-four instead retains the action archive inside the permanent lifecycle and uses
+[schema six](encounter-lifecycle.md#canonical-persistence-and-scope). Its derived episode identity pins
+the damage stream independently of caller-chosen command and cause identities.

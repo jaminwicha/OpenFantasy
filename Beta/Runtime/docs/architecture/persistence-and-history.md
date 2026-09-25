@@ -57,6 +57,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 21 | Terrain-derived liquid capacity and owned excavation with explicit raised-bank reach and finite provenance headroom |
 | 22 | Permanent accepted exposure, coordinated Wait timing and fractional process carry over the complete terrain/liquid world |
 | 23 | Source-pinned physical abilities, exact pending requests, damage randomness and real progression resources over the complete paced world |
+| 24 | Permanent encounter scenarios, phases, cumulative exploration/tactical clocks and readiness debt across authenticated entry and outcome release |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -141,6 +142,21 @@ its complete 128 KiB allowance alongside liquid and pacing. Schema five explicit
 profiles. Actual HP/MP, saved damage draw position, cancellation, timing debt and ordinary queue receipts
 replay in the same authority. Incapacity preserves identities/custody and outcome holds the encounter;
 neither implies death rewards, migration or safe release.
+
+[Profile twenty-four](encounter-lifecycle.md) retains a direct 22-field root with pacing at index twenty
+and the complete lifecycle archive at index twenty-one. Its current/last action archive is nested in
+that owner; released history cannot route ordinary work into an inactive encounter. The enclosing
+16 MiB allowance reserves the maximum 512 KiB lifecycle archive alongside liquid and pacing. Exclusive
+[schema six](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSix.cs) admits lifecycle commit kind
+eight while preserving schema five's definition and older meanings. Entry and release use action
+protocol twelve and receive ordinary exact receipts; actionless staging has no actor receipt. Accepted
+entry reserves the authority-derived episode identity in the same historical ledger. Its derivation
+pins world, branch, seed, scenario/version and encounter ordinal, independent of command/cause IDs.
+Each scenario's complete future identity family is reserved against generic roles; only an accepted
+entry may claim the exact next member after checking actual entities and retained history.
+Recovery replays these boundaries and complete clock/debt/carry relationships through the existing
+writer contract. Fresh admission refuses preloaded episode history, elapsed intervals or recovery debt;
+there is no implicit migration from a lived profile-twenty-two or twenty-three save.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The

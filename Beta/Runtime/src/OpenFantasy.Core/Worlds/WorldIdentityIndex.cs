@@ -1,19 +1,27 @@
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Worlds;
 
 /// <summary>
-/// Immutable identities admitted in one local root, including named historical causes.
+/// Immutable identity and prospective namespace index for one local root, including named historical causes.
 /// Membership does not prove a committed cause, authenticate a caller or cover absent world history.
 /// </summary>
 public sealed class WorldIdentityIndex
 {
     private readonly Dictionary<EntityId, WorldIdentityRole> _dynamicRoles;
+    private readonly HashSet<ulong> _encounterFamilies;
 
-    internal WorldIdentityIndex(Dictionary<EntityId, WorldIdentityRole> dynamicRoles, TerrainIdentityLayer terrain, WatershedIdentityLayer watershed)
+    internal WorldIdentityIndex(Dictionary<EntityId, WorldIdentityRole> dynamicRoles, TerrainIdentityLayer terrain, WatershedIdentityLayer watershed, EncounterLifecycleSnapshot? lifecycle = null)
     {
         _dynamicRoles = new Dictionary<EntityId, WorldIdentityRole>(dynamicRoles);
+        _encounterFamilies = lifecycle is null ? [] : lifecycle.Scenarios
+            .Select(scenario => EncounterEpisodeIdentity.Family(lifecycle, scenario.DefinitionId).High).ToHashSet();
+        if (lifecycle is not null && (_encounterFamilies.Count != lifecycle.Scenarios.Count
+            || dynamicRoles.Any(pair => _encounterFamilies.Contains(pair.Key.High) && pair.Value != WorldIdentityRole.Encounter)
+            || _encounterFamilies.Any(prefix => terrain.ContainsPrefix(prefix) || watershed.ContainsPrefix(prefix))))
+            throw new ArgumentException("Episode identity families must be distinct and cannot alias other admitted roles.");
         Terrain = terrain;
         Watershed = watershed;
     }
@@ -22,7 +30,10 @@ public sealed class WorldIdentityIndex
 
     internal WatershedIdentityLayer Watershed { get; }
 
-    public bool Contains(EntityId identity) => _dynamicRoles.ContainsKey(identity) || Terrain.Contains(identity) || Watershed.Contains(identity);
+    public bool Contains(EntityId identity) => _encounterFamilies.Contains(identity.High) || ContainsEntity(identity);
+
+    /// <summary>Actual admitted entities/references, excluding prospective episode namespace reservations.</summary>
+    public bool ContainsEntity(EntityId identity) => _dynamicRoles.ContainsKey(identity) || Terrain.Contains(identity) || Watershed.Contains(identity);
 }
 
 internal enum WorldIdentityRole
@@ -34,7 +45,7 @@ internal enum WorldIdentityRole
     StatProfileDefinition, LevelCurveDefinition, CurrencyDefinition, CurrencyAccount, RewardDefinition, QuestDefinition,
     ConstructionDefinition, ConstructionToolDefinition, ConstructionWorkUnit, ConstructionProject, Structure,
     GeographyBasin, GeographyFormation, GeographySubstrate, GeographyBoundary, GeographyTerminal, GeographyProvince, Reservoir, ReservoirConnection, RunoffTransportStage, ExcavationSite, ConstructionMember,
-    StructuralFoundation, StructuralActorLoad, PendingCommand, PendingPublication, Encounter, ProcessUnit, EncounterAbility
+    StructuralFoundation, StructuralActorLoad, PendingCommand, PendingPublication, Encounter, ProcessUnit, EncounterAbility, EncounterScenario
 }
 
 /// <summary>One immutable terrain dependency set; reference equality is the only reuse criterion.</summary>
@@ -43,6 +54,7 @@ internal sealed class TerrainIdentityLayer
     private readonly TerrainRegionSnapshot[] _regions;
     private readonly Dictionary<EntityId, WorldIdentityRole> _roles;
     private readonly Dictionary<EntityId, ContentHash> _materialPins;
+    private readonly Lazy<HashSet<ulong>> _identityPrefixes;
 
     internal TerrainIdentityLayer(IEnumerable<TerrainRegionSnapshot> regions,
         Dictionary<EntityId, WorldIdentityRole> roles, Dictionary<EntityId, ContentHash> materialPins)
@@ -51,6 +63,7 @@ internal sealed class TerrainIdentityLayer
         // The builder transfers these private dictionaries and never mutates them after construction.
         _roles = roles;
         _materialPins = materialPins;
+        _identityPrefixes = new(() => _roles.Keys.Select(identity => identity.High).ToHashSet());
     }
 
     internal bool Matches(IReadOnlyList<TerrainRegionSnapshot> regions)
@@ -70,6 +83,8 @@ internal sealed class TerrainIdentityLayer
     }
 
     internal bool Contains(EntityId identity) => _roles.ContainsKey(identity);
+
+    internal bool ContainsPrefix(ulong prefix) => _identityPrefixes.Value.Contains(prefix);
 
     internal bool TryGetRole(EntityId identity, out WorldIdentityRole role) => _roles.TryGetValue(identity, out role);
 

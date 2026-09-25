@@ -30,6 +30,7 @@ internal sealed class RecordedWorldOperator
             state.AdvancingSteps,
             state.HasReadingHold,
             Pacing = state.Pacing is { } pacing ? new WorldPacingDiagnosticReport(pacing, state) : null,
+            EncounterLifecycle = state.EncounterLifecycle is not null ? new EncounterLifecycleDiagnosticReport(state) : null,
             EncounterActions = state.EncounterActions is not null ? new EncounterActionDiagnosticReport(state) : null,
             ConstructionPhysical = state.ConstructionPhysical is { } physical ? new ConstructionPhysicalDiagnosticReport(physical) : null,
             StructuralPolicy = state.StructuralPolicy is { } policy ? new ConstructionLoadPolicyDiagnosticReport(policy) : null,

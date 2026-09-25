@@ -136,19 +136,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 return prior;
             }
             WorldSnapshot state = _authority.ReadStateForHost();
-            if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent and not QueueEncounterAbilityIntent)
-            {
-                throw new AuthorityDispatchException("An active encounter accepts only its retained encounter choices.");
-            }
-            if (command.Intent is QueueEncounterWaitIntent or QueueEncounterAbilityIntent && state.Pacing?.Encounter is null)
-            {
-                throw new AuthorityDispatchException("An encounter choice requires an active admitted encounter.");
-            }
-            if (command.Intent is QueueEncounterAbilityIntent && state.EncounterActions is null
-                || WorldEncounterActions.IsOutcome(state))
-            {
-                throw new AuthorityDispatchException("This encounter does not admit another ability or timing action.");
-            }
+            ValidateEncounterSelection(state, command);
             bool durablePending = state.PendingExcavation is not null;
             if (state.PendingExcavation is { } accepted
                 && !WorldActionCodec.Encode(accepted.Command).AsSpan().SequenceEqual(encoded))
@@ -170,7 +158,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
             if (command.Intent is ExcavateIntent
-                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22)
+                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24)
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }
@@ -223,6 +211,26 @@ public sealed class LocalWorldSession : IAsyncDisposable
         }
         finally { _serialization.Release(); }
         return await result.ConfigureAwait(false);
+    }
+
+    private static void ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
+    {
+        if (command.Intent is EnterEncounterIntent or ReleaseEncounterIntent)
+        {
+            if (state.EncounterLifecycle is null || state.HasReadingHold)
+                throw new AuthorityDispatchException("A lifecycle choice requires its admitted world without a reading hold.");
+            // Exact phase, target, identity and captured revisions receive normal durable receipts.
+            return;
+        }
+        if (state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
+            or EncounterLifecyclePhase.Outcome)
+            throw new AuthorityDispatchException("This lifecycle boundary accepts only entry or release requests.");
+        if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent and not QueueEncounterAbilityIntent)
+            throw new AuthorityDispatchException("An active encounter accepts only its retained encounter choices.");
+        if (command.Intent is QueueEncounterWaitIntent or QueueEncounterAbilityIntent && state.Pacing?.Encounter is null)
+            throw new AuthorityDispatchException("An encounter choice requires an active admitted encounter.");
+        if (command.Intent is QueueEncounterAbilityIntent && state.EncounterActions is null || WorldEncounterActions.IsOutcome(state))
+            throw new AuthorityDispatchException("This encounter does not admit another ability or timing action.");
     }
 
     public Task StopAsync()
@@ -302,6 +310,12 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 x = fresh ? _movementX : 0;
                 y = fresh ? _movementY : 0;
             }
+            if (pending?.Command.Intent is EnterEncounterIntent or ReleaseEncounterIntent
+                || state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging)
+            {
+                TickLifecycle(state, pending);
+                return;
+            }
             if (state.Pacing?.Encounter is not null)
             {
                 TickEncounter(state, pending);
@@ -326,6 +340,21 @@ public sealed class LocalWorldSession : IAsyncDisposable
             CommitSelectedBatch(batch, pending);
         }
         finally { _serialization.Release(); }
+    }
+
+    private void TickLifecycle(WorldSnapshot state, PendingLocalAction? pending)
+    {
+        ClearMovement();
+        var batch = new WorldStepBatch(NewCause(pending?.Command.CommandId), state.WorldId, state.BranchId,
+            state.Revision, state.AdvancingSteps, WorldBatchKind.EncounterLifecycle, [],
+            pending is null ? [] : [pending.Command], state.ProfileVersion);
+        try { _authority.Preview(batch); }
+        catch (AuthorityDispatchException error) when (pending is not null)
+        {
+            CompletePending(pending, null, error);
+            return;
+        }
+        CommitSelectedBatch(batch, pending);
     }
 
     private void TickEncounter(WorldSnapshot state, PendingLocalAction? pending)

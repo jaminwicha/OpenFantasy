@@ -1,3 +1,4 @@
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Worlds;
 
@@ -11,6 +12,14 @@ internal static class WorldGenesisAdmission
         if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
         {
             throw new ArgumentException("A new local world requires unheld commit zero and step zero.", nameof(genesis));
+        }
+        if (genesis.EncounterLifecycle is { } lifecycle && (lifecycle.Revision != 0
+            || lifecycle.Phase != EncounterLifecyclePhase.Exploration || lifecycle.EncounterCount != 0
+            || lifecycle.ExplorationSteps != 0 || lifecycle.TacticalTicks != 0 || lifecycle.EntryTacticalTicks != 0
+            || lifecycle.ScenarioId is not null || lifecycle.Actions is not null
+            || lifecycle.Debts.Any(debt => debt.RemainingDelay != 0)))
+        {
+            throw new ArgumentException("A fresh lifecycle cannot import an encounter episode, elapsed intervals or readiness debt.", nameof(genesis));
         }
         if (genesis.EncounterActions is { } actions && (actions.Revision != 0 || actions.Pending.Count != 0
             || actions.LastResolution is not null || actions.Random.NextCounter != 0 || actions.Random.Exhausted

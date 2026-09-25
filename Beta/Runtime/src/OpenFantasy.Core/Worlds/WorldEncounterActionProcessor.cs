@@ -82,11 +82,14 @@ internal static class WorldEncounterActionProcessor
             gathering = gathering.AdvanceStep(nextPacing.ProcessIntervals);
             liquids = new LiquidCellPlanner().PlanAdvance(liquids, nextPacing.ProcessBoundary, false).ApplyTo(liquids);
         }
+        bool outcome = actions.Combatants.Where(actor => actor.Side != 0 && progression.GetActor(actor.ActorId).CurrentHp > 0)
+            .Select(actor => actor.Side).Distinct().Count() <= 1;
+        var lifecycle = world.EncounterLifecycle?.ObserveActive(timing, actions, tick, outcome);
         var candidate = world.WithState(world.Inventory, world.Space,
             world.Residents.Select(actor => actor.Experience(duration)), nextPacing.Calendar, revision,
             tick ? checked(world.AdvancingSteps + 1) : world.AdvancingSteps,
             world.Dialogues, gathering, world.Production, progression, world.Quests, world.Construction,
-            world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing, actions);
+            world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing, lifecycle is null ? actions : null, lifecycle);
         _ = WorldSnapshotCodec.Encode(candidate);
         return new WorldStepDecision(candidate, receipts, identities);
     }

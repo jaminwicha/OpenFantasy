@@ -26,7 +26,7 @@ public sealed class LocalNpcController
         }
         foreach (WorldResident resident in state.Residents)
         {
-            if (resident.ControllerKind != ResidentControllerKind.Host)
+            if (resident.ControllerKind != ResidentControllerKind.Host || !WorldActorAvailability.CanAct(state, resident.ActorId))
             {
                 continue;
             }
@@ -52,12 +52,13 @@ public sealed class LocalNpcController
             {
                 continue;
             }
+            ulong cadence = state.EncounterLifecycle is null ? state.AdvancingSteps : state.ProcessIntervals;
             // Sixteen possible movement samples, then forty-eight idle steps. No wall-clock seed.
-            if (state.AdvancingSteps % 64 >= 16)
+            if (cadence % 64 >= 16)
             {
                 continue;
             }
-            int direction = Direction(state.WorldId, resident.ActorId, state.AdvancingSteps / 64);
+            int direction = Direction(state.WorldId, resident.ActorId, cadence / 64);
             long x = direction == 0 ? 32 : direction == 1 ? -32 : 0;
             long y = direction == 2 ? 32 : direction == 3 ? -32 : 0;
             ActorPresence actor = state.Space.GetActor(resident.ActorId);
@@ -87,7 +88,7 @@ public sealed class LocalNpcController
         }
         foreach (WorldResident resident in state.Residents)
         {
-            if (resident.ControllerKind != ResidentControllerKind.Host
+            if (resident.ControllerKind != ResidentControllerKind.Host || !WorldActorAvailability.CanAct(state, resident.ActorId)
                 || _construction.FindCommitment(state, resident.ActorId) is not { } project)
             {
                 continue;
