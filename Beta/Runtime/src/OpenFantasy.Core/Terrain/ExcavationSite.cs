@@ -12,11 +12,12 @@ public sealed class ExcavationSite
 
     public ExcavationSite(EntityId siteId, CellCoordinate cell, EntityId terrainSourceId, EntityId countedSourceId,
         EntityId ownerActorId, ItemPhysicalBinding material, CountedItemDefinition requiredTool,
-        ulong requiredWork, ulong completedWork, SubunitPosition stance)
+        ulong requiredWork, ulong completedWork, SubunitPosition stance,
+        ExcavationReachMode reachMode = ExcavationReachMode.SameLevelSide)
     {
         ArgumentNullException.ThrowIfNull(material);
         ArgumentNullException.ThrowIfNull(requiredTool);
-        if (requiredWork is 0 or > MaximumWork || completedWork > requiredWork
+        if (!Enum.IsDefined(reachMode) || requiredWork is 0 or > MaximumWork || completedWork > requiredWork
             || CellVolumeMicrolitres % material.Physical.VolumePerUnit.Value != 0
             || material.Physical.VolumePerUnit.Value > CellVolumeMicrolitres
             || siteId == terrainSourceId || siteId == countedSourceId || terrainSourceId == countedSourceId)
@@ -24,11 +25,12 @@ public sealed class ExcavationSite
             throw new ArgumentException("Excavation needs finite work, distinct source roles and exact whole-cell material calibration.");
         }
         CellCoordinate adjacent = stance.Cell;
-        if (adjacent.Z != cell.Z || Int128.Abs((Int128)adjacent.X - cell.X) + Int128.Abs((Int128)adjacent.Y - cell.Y) != 1
+        long stanceCellZ = reachMode == ExcavationReachMode.RaisedBankTop ? checked(cell.Z + 1) : cell.Z;
+        if (adjacent.Z != stanceCellZ || Int128.Abs((Int128)adjacent.X - cell.X) + Int128.Abs((Int128)adjacent.Y - cell.Y) != 1
             || stance.X != checked(adjacent.X * 256 + 128) || stance.Y != checked(adjacent.Y * 256 + 128)
-            || stance.Z != checked(cell.Z * 256))
+            || stance.Z != checked(stanceCellZ * 256))
         {
-            throw new ArgumentException("An excavation stance is the centred grounded cell next to one horizontal target face.");
+            throw new ArgumentException("An excavation stance is a centred cardinal neighbour at the admitted side or raised-bank elevation.");
         }
         SiteId = siteId;
         Cell = cell;
@@ -40,6 +42,7 @@ public sealed class ExcavationSite
         RequiredWork = requiredWork;
         CompletedWork = completedWork;
         Stance = stance;
+        ReachMode = reachMode;
         _ = checked(Quantity * material.Physical.MassPerUnit.Value);
     }
 
@@ -55,7 +58,8 @@ public sealed class ExcavationSite
     public ulong Revision => CompletedWork;
     public ulong Quantity => CellVolumeMicrolitres / Material.Physical.VolumePerUnit.Value;
     public SubunitPosition Stance { get; }
+    public ExcavationReachMode ReachMode { get; }
     public bool IsComplete => CompletedWork == RequiredWork;
     internal ExcavationSite Work() => new(SiteId, Cell, TerrainSourceId, CountedSourceId, OwnerActorId, Material,
-        RequiredTool, RequiredWork, checked(CompletedWork + 1), Stance);
+        RequiredTool, RequiredWork, checked(CompletedWork + 1), Stance, ReachMode);
 }

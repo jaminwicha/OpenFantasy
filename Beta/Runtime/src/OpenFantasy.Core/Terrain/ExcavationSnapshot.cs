@@ -38,7 +38,8 @@ public sealed class ExcavationSnapshot
         Sites = Array.AsReadOnly(rows.Values.ToArray());
     }
     public ReadOnlyCollection<ExcavationSite> Sites { get; }
-    public ContentHash ContentHash => ContentHash.Compute(ExcavationCodecV1.Encode(this));
+    public ContentHash ContentHash => ContentHash.Compute(Sites.All(site => site.ReachMode == ExcavationReachMode.SameLevelSide)
+        ? ExcavationCodecV1.Encode(this) : ExcavationCodecV2.Encode(this));
     internal ExcavationSnapshot WithSite(ExcavationSite changed) => new(Sites.Select(s => s.SiteId == changed.SiteId ? changed : s));
 
     internal void ValidateForWorld(WorldSnapshot world)

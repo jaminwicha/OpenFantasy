@@ -10,7 +10,7 @@ origin identity and positive half-open unit interval. Raw portions use absolute 
 produced portions use offsets within an existing derived lot. Their disjoint union must exactly exhaust
 the corresponding custodian's live holdings. Unknown, missing, duplicated or overfull claims reject.
 
-The detailed domain contains every cell inside the fixed vessel geometries, including empty cells,
+In the fixed profile, the detailed domain contains every cell inside the vessel geometries, including empty cells,
 with at most 4,096 cells and 16,384 normalized portions. Adjacent intervals coalesce only in the same
 cell and origin. Material volume per unit must divide 1,000,000,000 microlitres exactly; rates and amounts
 use that indivisible unit. Cell quantity derives from its portions and cannot exceed one cubic metre.
@@ -56,7 +56,7 @@ calendar and liquid revision zero. [WorldLiquidCellBinding](../../src/OpenFantas
 requires the component's boundary to equal the world calendar and its revision to equal advancing steps.
 Ordinary successors retain this owner; opening an older save does not install it.
 
-The retained sealing policy validates every complete root. Detailed flow additionally requires
+The retained sealing policy validates every complete profile-twenty root. This flow composition requires
 terrain-supplied enclosure, with no construction supplying sealing faces. Nominal interiors stay clear
 of bodies and installed solids. Excavation, scheduled reservoir transport, movable physical members and
 structural owners are incompatible with this composition. These guards prevent unsupported pressure,
@@ -92,6 +92,10 @@ The privileged Host operator is
 `--create-liquid-cell-world <world.sqlite> <profile19-genesis.bin> <liquid-cells.bin>`.
 Execution and recorded history use the existing authority. Reports expose the actual cell quantities,
 volumes, intervals, calibration and boundary; they are diagnostics, not permitted player projections.
+
+The separate [terrain-bound composition](terrain-liquid-breach.md) derives capacity from actual voids,
+permits owned excavation of internal dividers and reserves provenance/serialization headroom. It keeps
+profile twenty unchanged and does not infer permission for occupied water or structural pressure.
 
 ## Design obligations at adjoining boundaries
 

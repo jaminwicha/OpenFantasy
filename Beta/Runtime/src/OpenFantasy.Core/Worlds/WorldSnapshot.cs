@@ -160,7 +160,16 @@ public sealed class WorldSnapshot
         {
             throw new ArgumentException("Detailed liquid placement requires the complete contained reservoir owner.");
         }
-        if (reservoirSeals is not null && (reservoirs is null || transport is not null || excavation is not null
+        bool terrainLiquid = liquidCells?.Topology is not null;
+        if (terrainLiquid && (excavation is null || space.GroundSupport != GroundSupportMode.TerrainOnly))
+        {
+            throw new ArgumentException("Terrain-bound liquid requires explicit excavation and dry terrain-supported actors.");
+        }
+        if (!terrainLiquid && excavation?.Sites.Any(site => site.ReachMode != ExcavationReachMode.SameLevelSide) == true)
+        {
+            throw new ArgumentException("Raised-bank extraction requires the terrain-bound liquid world interpretation.");
+        }
+        if (reservoirSeals is not null && (reservoirs is null || transport is not null || excavation is not null && !terrainLiquid
             || constructionPhysical is not null || structuralPolicy is not null || structuralSettlementPolicy is not null
             || consequencePolicy is not null || pendingExcavation is not null || coupledSettlementPolicy is not null))
         {
@@ -196,7 +205,7 @@ public sealed class WorldSnapshot
         {
             throw new ArgumentException("Constructed actor support requires the complete dry extraction profile.");
         }
-        if (excavation is not null && (construction is null || watershed is not null || watershedNetwork is not null || reservoirs is not null))
+        if (excavation is not null && (construction is null || watershed is not null || watershedNetwork is not null || reservoirs is not null && !terrainLiquid))
         {
             throw new ArgumentException("Local extraction exclusively requires its dry construction profile.");
         }
@@ -249,7 +258,7 @@ public sealed class WorldSnapshot
     public PendingExcavation? PendingExcavation { get; }
     public CoupledSettlementPolicy? CoupledSettlementPolicy { get; }
     public ConstructionDescentMode DescentMode { get; }
-    public ushort ProfileVersion => LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
+    public ushort ProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
         : DescentMode == ConstructionDescentMode.EventOrdered ? (ushort)18
         : CoupledSettlementPolicy is not null ? (ushort)17 : ConsequencePolicy is not null ? (ushort)16 : StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
         : ConstructionPhysical is not null ? (ushort)13

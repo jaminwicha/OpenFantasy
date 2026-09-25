@@ -292,7 +292,7 @@ public sealed class WorldStepProcessor
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
                 || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
-                || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells)
+                || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells, space, state.ReservoirSeals)
                 || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
                     reconciled, reconciledTransport, reconciledLiquidCells, out _))
             {

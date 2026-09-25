@@ -12,6 +12,11 @@ public static class WorldReservoirContainmentBinding
         {
             return;
         }
+        if (world.LiquidCells?.Topology is not null)
+        {
+            WorldTerrainLiquidBinding.Validate(world);
+            return;
+        }
         if (world.Reservoirs is null || world.Transport is not null || world.Excavation is not null
             || world.ConstructionPhysical is not null || world.StructuralPolicy is not null)
         {

@@ -36,7 +36,7 @@ requires an advancing, unheld action opportunity, manipulation, an owned suitabl
 once and suppresses that actor's movement sample for the selected step. The normal advancing step earns
 its ordinary effort and personal/calendar exposure once. Held interactions earn no work or effort.
 
-The stance is the centered, grounded cell beside a horizontal face of the target. It must be reachable
+The original same-level stance is the centered, grounded cell beside a horizontal face of the target. It must be reachable
 and supported. [Access](../../src/OpenFantasy.Core/Terrain/ExcavationAccess.cs) also traces directly from
 the actor's actual body center to a point one spatial subunit outside that target face, under the same
 448-subunit horizontal reach limit. The target remains solid during this test. Intervening terrain and installed
@@ -63,6 +63,11 @@ the worker's primary inventory. Terrain removal, progress, effort, inventory/sto
 command receipt publish in one ordinary durable world commit. Combined raw/transformed capacities,
 protection, historical identity collisions and numeric bounds still apply. Failed completion retains the
 prior work and solid cell. Repeating a completed site's action cannot issue more material.
+
+The [terrain-bound liquid composition](terrain-liquid-breach.md) adds an explicit raised-bank top face
+and proves the eventual opening before partial work. It publishes changed void capacity and conserved
+water placement together with substrate issuance. The V2 extraction archive retains the reach mode;
+old all-side site archives and interpreter meanings remain unchanged.
 
 ## Conservation and continued use
 
@@ -92,7 +97,7 @@ ID, owner ID, item pin, physical material archive, tool pin, required work, comp
 XYZ. Coordinates are signed big-endian 64-bit values, work is unsigned 64-bit, identities are 16 bytes and
 item pins are 48 bytes. Site revision equals completed work. Decode validates values and exact re-encoding.
 Action version eight contains the six intent fields above under `world.action.excavate`, version one;
-its command bound is 512 bytes. Step profiles ten through fifteen admit it. Older encodings keep their meanings.
+its command bound is 512 bytes. Step profiles ten through eighteen and twenty-one admit it. Older encodings keep their meanings.
 
 The [constructed-footing composition](constructed-footing.md) retains excavation with explicit
 installed-floor support and assisted traversal. Excavation preserves that support interpretation when

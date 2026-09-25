@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Geography;
+using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -20,7 +21,7 @@ internal static class WorldLiquidCellBinding
     }
 
     internal static bool TryReconcile(LiquidCellState? current, LiquidReservoirState? reservoirs,
-        out LiquidCellState? candidate)
+        out LiquidCellState? candidate, LocalSpatialSnapshot? space = null, ReservoirSealPolicy? seals = null)
     {
         candidate = current;
         if (current is null)
@@ -33,6 +34,13 @@ internal static class WorldLiquidCellBinding
         }
         try
         {
+            if (current.Topology is not null)
+            {
+                if (space is null || seals is null) return false;
+                var topology = TerrainLiquidTopology.Create(reservoirs, space.Regions, seals);
+                candidate = current.RebindTerrain(reservoirs, topology);
+                return true;
+            }
             candidate = current.ReservoirHash == reservoirs.ContentHash ? current : current.Rebind(reservoirs);
             return true;
         }

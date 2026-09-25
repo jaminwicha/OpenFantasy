@@ -15,7 +15,7 @@ public sealed class LiquidCellState
     private readonly Lazy<ContentHash> _contentHash;
 
     internal LiquidCellState(LiquidReservoirState reservoirs, LiquidFlowProfile profile, WorldInstant boundary,
-        ulong revision, IEnumerable<LiquidCellPortion> portions)
+        ulong revision, IEnumerable<LiquidCellPortion> portions, TerrainLiquidTopology? topology = null)
     {
         ArgumentNullException.ThrowIfNull(reservoirs);
         ArgumentNullException.ThrowIfNull(profile);
@@ -36,7 +36,9 @@ public sealed class LiquidCellState
             throw new ArgumentException("The liquid unit volume must divide one cubic metre exactly.", nameof(reservoirs));
         }
         UnitsPerCell = ReservoirGeometry.MicrolitresPerCubicMetre / VolumePerUnit.Value;
-        DomainCells = BuildDomain(reservoirs);
+        topology?.ValidateReservoirs(reservoirs);
+        Topology = topology;
+        DomainCells = topology?.OpenCells ?? BuildDomain(reservoirs);
         Portions = Normalize(portions);
         var domain = DomainCells.ToHashSet();
         var amounts = new SortedDictionary<LiquidCellKey, ulong>();
@@ -55,11 +57,13 @@ public sealed class LiquidCellState
         }
         Quantities = new ReadOnlyDictionary<LiquidCellKey, ulong>(amounts);
         ValidateCoverage();
-        _contentHash = new(() => ContentHash.Compute(LiquidCellStateCodecV1.Encode(this)));
+        _contentHash = new(() => ContentHash.Compute(Topology is null
+            ? LiquidCellStateCodecV1.Encode(this) : LiquidCellStateCodecV2.Encode(this)));
     }
 
     public ContentHash ReservoirHash { get; }
     public LiquidFlowProfile Profile { get; }
+    public TerrainLiquidTopology? Topology { get; }
     public WorldInstant Boundary { get; }
     public ulong Revision { get; }
     public ReadOnlyCollection<LiquidCellPortion> Portions { get; }
@@ -70,7 +74,8 @@ public sealed class LiquidCellState
     public ContentHash ContentHash => _contentHash.Value;
 
     public static LiquidCellState Create(LiquidReservoirState reservoirs, LiquidFlowProfile profile,
-        WorldInstant boundary, IEnumerable<LiquidCellPortion> portions) => new(reservoirs, profile, boundary, 0, portions);
+        WorldInstant boundary, IEnumerable<LiquidCellPortion> portions, TerrainLiquidTopology? topology = null) =>
+        new(reservoirs, profile, boundary, 0, portions, topology);
 
     public LiquidCellState Rebind(LiquidReservoirState reservoirs)
     {
@@ -81,11 +86,21 @@ public sealed class LiquidCellState
         {
             throw new ArgumentException("Liquid placement cannot silently change its domain or physical envelope.", nameof(reservoirs));
         }
-        return reservoirs.ContentHash == ReservoirHash ? this : new(reservoirs, Profile, Boundary, Revision, Portions);
+        return reservoirs.ContentHash == ReservoirHash ? this : new(reservoirs, Profile, Boundary, Revision, Portions, Topology);
+    }
+
+    /// <summary>Rebinds proved terrain without moving, relabeling or changing any retained liquid interval or clock.</summary>
+    public LiquidCellState RebindTerrain(LiquidReservoirState reservoirs, TerrainLiquidTopology topology)
+    {
+        ArgumentNullException.ThrowIfNull(topology);
+        LiquidCellState rebound = Rebind(reservoirs);
+        topology.ValidateReservoirs(reservoirs);
+        return rebound.Topology?.ContentHash == topology.ContentHash ? rebound
+            : new(reservoirs, Profile, Boundary, Revision, Portions, topology);
     }
 
     internal LiquidCellState WithPlacement(WorldInstant boundary, ulong revision, IEnumerable<LiquidCellPortion> portions) =>
-        new(_reservoirs, Profile, boundary, revision, portions);
+        new(_reservoirs, Profile, boundary, revision, portions, Topology);
 
     internal LiquidCellState AdvanceBoundary(WorldInstant nextBoundary)
     {
@@ -96,7 +111,7 @@ public sealed class LiquidCellState
         return WithPlacement(nextBoundary, checked(Revision + 1), Portions);
     }
 
-    private static ReadOnlyCollection<LiquidCellKey> BuildDomain(LiquidReservoirState reservoirs)
+    internal static ReadOnlyCollection<LiquidCellKey> BuildDomain(LiquidReservoirState reservoirs)
     {
         long count = reservoirs.Geometries.Sum(geometry => geometry.Columns.Sum(column =>
             checked((long)((Int128)geometry.SpillZ - column.BottomZ))));

@@ -1,0 +1,36 @@
+{
+  "reviewer": "native Astra independent domain/integration critic",
+  "scope": "Root21 bindings, topology, mutation ordering, byte formats and session routing",
+  "findings": [
+    {
+      "issue": "LocalWorldSession excavation allowlist omitted21",
+      "disposition": "Added21 only; session queue/refusal/retry regression passes."
+    }
+  ],
+  "conclusions": [
+    "Topology is rederived from retained terrain before world admission and V2 decode.",
+    "Nominal envelope and declared spill-plane cells exclude bodies and installed members.",
+    "Eventual opening is proved before partial effort; failed action restores all attempted components.",
+    "Flow uses the existing conservative start-of-step budgets after selected time exactly once.",
+    "Positive integral disjoint portions plus aggregate <=16384 units bounds arbitrary normalized fragmentation."
+  ],
+  "limits": [
+    "No production-scale latency or native player-interface acceptance.",
+    "Near16MiB valid-root reserve threshold has not been exercised with a complete actual-world fixture.",
+    "No external Fable calls in this increment."
+  ],
+  "focusedResults": {
+    "core": 37,
+    "hosting": 15,
+    "failed": 0,
+    "skipped": 0
+  },
+  "finalCertificateReview": {
+    "result": "No substantive correctness/publication defect found",
+    "maximumV2BytesAt16384Portions": 1310949,
+    "retainedComponentReserve": 1400000,
+    "wholeRootBoundBytes": 16777216,
+    "scope": "Exact conservative row bound, outer-frame reserve arithmetic, complete action preflight/rollback, movement/final encoding, fixed-width selected time",
+    "limitation": "No actual complete-world fixture at near16MiB reserve exhaustion; this threshold branch is source-reviewed rather than experimentally qualified."
+  }
+}

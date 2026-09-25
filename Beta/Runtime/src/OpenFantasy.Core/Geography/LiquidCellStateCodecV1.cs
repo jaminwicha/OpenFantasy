@@ -14,6 +14,17 @@ public static class LiquidCellStateCodecV1
     public static byte[] Encode(LiquidCellState state)
     {
         ArgumentNullException.ThrowIfNull(state);
+        if (state.Topology is not null)
+        {
+            throw new ArgumentException("The original liquid archive cannot discard terrain topology.", nameof(state));
+        }
+        return CanonicalEncodingV1.Frame("geography.liquid-cells.v1", CanonicalEncodingV1.Unsigned64(state.Revision),
+            Signed(state.Boundary.Days), CanonicalEncodingV1.Unsigned64((ulong)state.Boundary.MillisecondsWithinDay),
+            state.ReservoirHash.ToByteArray(), EncodeProfile(state.Profile), EncodeRows(state));
+    }
+
+    internal static byte[] EncodeRows(LiquidCellState state)
+    {
         byte[] rows = new byte[state.Portions.Count * PortionRowByteLength];
         for (int index = 0; index < state.Portions.Count; index++)
         {
@@ -28,9 +39,7 @@ public static class LiquidCellStateCodecV1
             BinaryPrimitives.WriteUInt64BigEndian(row[64..], portion.Start);
             BinaryPrimitives.WriteUInt64BigEndian(row[72..], portion.End);
         }
-        return CanonicalEncodingV1.Frame("geography.liquid-cells.v1", CanonicalEncodingV1.Unsigned64(state.Revision),
-            Signed(state.Boundary.Days), CanonicalEncodingV1.Unsigned64((ulong)state.Boundary.MillisecondsWithinDay),
-            state.ReservoirHash.ToByteArray(), EncodeProfile(state.Profile), rows);
+        return rows;
     }
 
     public static LiquidCellState Decode(ReadOnlySpan<byte> bytes, LiquidReservoirState reservoirs)
@@ -83,14 +92,14 @@ public static class LiquidCellStateCodecV1
     internal static byte[] EncodeProfile(LiquidFlowProfile profile) => CanonicalEncodingV1.Frame("geography.liquid-flow-profile.v1",
         CanonicalEncodingV1.Unsigned64(profile.DownwardUnitsPerFace), CanonicalEncodingV1.Unsigned64(profile.LateralUnitsPerFace));
 
-    private static byte[] Signed(long value)
+    internal static byte[] Signed(long value)
     {
         byte[] bytes = new byte[8];
         BinaryPrimitives.WriteInt64BigEndian(bytes, value);
         return bytes;
     }
 
-    private static LiquidFlowProfile DecodeProfile(ReadOnlySpan<byte> bytes)
+    internal static LiquidFlowProfile DecodeProfile(ReadOnlySpan<byte> bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumProfileByteLength, 3);
         reader.Tag("geography.liquid-flow-profile.v1"u8);

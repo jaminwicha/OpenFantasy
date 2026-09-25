@@ -65,6 +65,11 @@ public sealed class ExcavationPlanner
             {
                 return Reject(WorldActionRejection.Unavailable);
             }
+            // Prove the complete eventual opening before spending even partial labor.
+            if (world.LiquidCells?.Topology is not null)
+            {
+                WorldTerrainLiquidBinding.ValidateOpening(world, changedSpace);
+            }
             var worked = site.Work();
             var changedGathering = gathering.SpendEffort(actor.ActorId);
             var changedExcavation = excavation.WithSite(worked);

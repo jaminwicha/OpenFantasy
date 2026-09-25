@@ -42,6 +42,29 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Earned terrain breach](p02/terrain-liquid-breach/README.md) adds fresh profile21: actual retained solid
+capacity, known vertical vents, raised-bank mining reach, complete partial-work opening preflight and
+atomic substrate/terrain/liquid publication. Core/application remain C#. A 175-commit ordinary farm
+journey walks to the bank, saves/reopens partial labor, earns final extraction and proves successive
+neighboring water arrivals. The same 6,000 litres and exact histories remain conserved. A finite
+16,384-unit certificate bounds normalized provenance fragments; the whole root reserves the V2 liquid
+component allowance. The actual near16MiB reserve-exhaustion threshold remains source-reviewed rather
+than experimentally exercised; scalable provenance/continuation and production scale remain open.
+
+The complete regression passes **1,020 Core + 575 Hosting/client = 1,595**, zero failed/skipped; build has
+zero warnings/errors. Independent review caught/fixed session profile routing and confirmed root/byte
+admission. **21 real Host operations and two external process kills** pass, including independently
+reconstructed post-breach archives, every journal entry, duplicate refusal and history tamper rejection.
+Host/Godot foundation and original two-process farm controls pass; the preserved 1,334-commit worksite
+recovers exactly with unchanged database bytes. The native breach selection/action offer/rendered journey
+is the next integration step; the content
+factory and session dispatch do not themselves establish playable acceptance. Old native selections,
+saves, frozen specifications and phase gates remain preserved. [Architecture](../Runtime/docs/architecture/terrain-liquid-breach.md)
+describes the complete bounded contract. Wet occupancy, gates/loads, reactive liquids/ecology, broader
+physical consequences, Wait/coarse coupling, art/audio/devices and all full phases remain open.
+
+## Prior native watercourse
+
 [Native finite watercourse](p02/native-watercourse/README.md) connects fresh profile twenty content to the
 inhabited farm: real closed channel terrain, finite 6,000 litres, actual per-cell public geometry, native
 surface art, ordinary bank walking/gathering/conversation and funded 200-work construction. The separate

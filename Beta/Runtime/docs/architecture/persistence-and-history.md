@@ -54,6 +54,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 18 | Explicit event-ordered intact descent with a V3 cursor and actual scene-dependent work reservations |
 | 19 | Complete fixed-reservoir world with immutable sealing rules and mandatory geometric containment |
 | 20 | Terrain-contained reservoir world with exact detailed liquid placement and selected-boundary cellular flow |
+| 21 | Terrain-derived liquid capacity and owned excavation with explicit raised-bank reach and finite provenance headroom |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -122,6 +123,10 @@ controls. Fresh admission binds an unplayed profile nineteen basis to its comple
 The liquid boundary and revision match calendar and advancing steps. Schema three commits the whole
 selected flow stage atomically; fragment exhaustion throws before publication and has no resumable
 cursor in this interpretation. Older profile bytes and their action semantics remain unchanged.
+
+[Profile twenty-one](terrain-liquid-breach.md) has a direct twenty-field root, V2 liquid and extraction
+components, rederived exact terrain topology and reserved liquid serialization headroom. It uses the
+same schema-three writer, authenticated actions and exact history without migrating older worlds.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The

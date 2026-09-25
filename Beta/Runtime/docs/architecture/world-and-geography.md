@@ -395,6 +395,11 @@ cell intervals and selected-boundary neighbor transfers. It uses these portions 
 the equilibrium fill remains an aggregate witness and cannot stand in for a moving front. Detailed
 allocation excludes pending runoff commitments and shares the same custody and Production authority.
 
+The [terrain-bound breach composition](terrain-liquid-breach.md) derives actual void capacity from retained
+terrain and joins earned extraction to conserved local flow. Its nominal envelope bounds potential water
+space; current solid cells have no capacity. Dry bodies and installed members remain outside that envelope
+and its declared vents.
+
 ## Runtime binding: exclusive reservoir ownership
 
 [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) profile eight owns one complete

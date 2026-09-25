@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Geography;
 
@@ -8,6 +9,8 @@ internal sealed class LiquidCellDiagnosticReport
 {
     internal LiquidCellDiagnosticReport(LiquidCellState state)
     {
+        TopologyHash = state.Topology?.ContentHash.Value;
+        OpenCapacityMicrolitres = state.Topology?.OpenCapacity.Value;
         ContentHash = state.ContentHash.Value;
         ReservoirHash = state.ReservoirHash.Value;
         ProfileHash = state.Profile.Version.Value;
@@ -33,7 +36,11 @@ internal sealed class LiquidCellDiagnosticReport
         ActualMicrolitres = Contents.Aggregate(0UL, (sum, contents) => checked(sum + contents.ActualMicrolitres));
     }
 
-    public string PlacementInterpretation => "retained-liquid-cells-v1";
+    public string PlacementInterpretation => TopologyHash is null ? "retained-liquid-cells-v1" : "retained-terrain-liquid-cells-v2";
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public string? TopologyHash { get; }
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+    public ulong? OpenCapacityMicrolitres { get; }
     public string ContentHash { get; }
     public string ReservoirHash { get; }
     public string ProfileHash { get; }
