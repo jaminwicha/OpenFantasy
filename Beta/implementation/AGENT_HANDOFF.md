@@ -61,6 +61,10 @@ allowances; then add complete damage/incapacity gates, source-backed field encou
 presentation. [Design](p02/encounter-timing/DESIGN.md) preserves those dependencies and all wet/co-op/scale
 obligations. [Architecture](../Runtime/docs/architecture/encounter-timing.md) records the stable contract.
 
+Qualified commit `0b01a2e` is preserved on `codex/milestone-encounter-timing`. Development remains on
+`codex/runtime-foundation`; all41 previous markers,22 frozen designs and the unrelated19-file predecessor
+index are preserved. No full phase closes.
+
 ## Prior native terrain breach
 
 [Native terrain breach](p02/native-terrain-breach/README.md) connects the earned profile21 divider to a

@@ -4,6 +4,10 @@
 the live encounter work described in [DESIGN](DESIGN.md). It does not create a second duel game or
 change any existing world profile. The owner's pure-C# decision remains fixed.
 
+Qualified commit `0b01a2e` is preserved on `codex/milestone-encounter-timing`; development stays on
+`codex/runtime-foundation`. All41 earlier milestone branches retain their exact commits. No checkout
+switch, push, merge or full-phase closure accompanies this component checkpoint.
+
 ## Implemented scope
 
 - Scoped immutable readiness, required-human decision barrier before automatic resolution,
