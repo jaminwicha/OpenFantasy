@@ -56,6 +56,10 @@ Startup-isolated rendering observes no native focus. Original farm/wheel headles
 [Review](p02/native-encounters/REVIEW.md) retains all failures and final independent visual corrections.
 This increment does not claim a new full Core regression or final art/device acceptance.
 
+Qualified commit `43b2ac1` is preserved on `codex/milestone-native-encounters`. Development remains
+on `codex/runtime-foundation`; all 45 earlier markers, 22 frozen specs and the exact unrelated 19-file
+predecessor index remain intact. Source/reference links and final report artifact hashes are verified.
+
 Next extend native choice coverage (confirmed Wait and defeated-player behavior), broader ability
 selection and lifecycle recovery/flee/rescue against the same owners. Richer animation/audio, co-op,
 wet/structural dependency closure, scale and all full campaign/platform/art/device gates remain open.
