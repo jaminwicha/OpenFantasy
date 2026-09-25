@@ -40,6 +40,10 @@ public sealed class WorldStepProcessor
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
         }
 
+        if (state.EncounterActions is not null)
+        {
+            return WorldEncounterActionProcessor.Decide(state, batch, historicallyOccupied);
+        }
         if (state.Pacing?.Encounter is not null)
         {
             return WorldEncounterProcessor.Decide(state, batch, historicallyOccupied);

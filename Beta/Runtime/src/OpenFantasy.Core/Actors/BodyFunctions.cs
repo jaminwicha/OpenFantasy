@@ -18,7 +18,8 @@ public enum BodyFunction
     UndulatingSupport = 7,
     SpectralPerception = 8,
     SpectralMotion = 9,
-    Vocalization = 10
+    Vocalization = 10,
+    NaturalWeapon = 11
 }
 
 public enum LocomotionMode

@@ -50,8 +50,10 @@ barriers and exposure carry. The [complete world pacing binding](world-pacing.md
 choices, 50 ms tactical ticks, zero-duration queue/resolution commits and exact SQLite recovery for a
 coordinated resident set. Permanent pacing separates selected advancing batches from earned 1,800 ms
 process intervals. Passive gathering recovery and real liquid flow publish only at those boundaries.
-Dialogue holds and exploration retain their own semantics; damage and encounter lifecycle have distinct
-admission requirements.
+Dialogue holds and exploration retain their own semantics. [Physical encounter actions](encounter-actions.md)
+bind real resources, anatomy, targeting, damage and incapacity through a separate complete profile.
+Safe encounter entry and release remain distinct admission requirements; an outcome retains both
+readiness debt and process carry.
 
 Encounter stages are exploration, confrontation, staging, ready/hold, resolving, outcome and release.
 Admission claims participants and consequential dependencies before hostile effects apply. Staging

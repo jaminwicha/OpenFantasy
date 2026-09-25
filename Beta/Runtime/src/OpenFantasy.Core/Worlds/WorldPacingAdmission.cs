@@ -48,7 +48,7 @@ public static class WorldPacingAdmission
             LocalExposureDuration origin = pacing.EncounterOriginExposure!.Value;
             if (origin.TotalMilliseconds % ExposurePacingV1.ExplorationMillisecondsPerStep != 0
                 || !encounter.Actors.Select(actor => actor.ActorId).SequenceEqual(world.Residents.Select(resident => resident.ActorId))
-                || encounter.Decisions.Any(decision => decision.Kind != EncounterDecisionKind.Wait))
+                || encounter.Decisions.Any(decision => decision.Kind != EncounterDecisionKind.Wait && world.EncounterActions is null))
             {
                 throw new ArgumentException("The coordinated timing owner requires complete residents and admitted Wait choices.");
             }
@@ -85,7 +85,7 @@ public static class WorldPacingAdmission
     {
         var actor = world.Progression?.Actors.Single(value => value.ActorId == actorId)
             ?? throw new ArgumentException("Timing requires actual admitted actor progression.");
-        if (actor.CurrentHp == 0 || actor.Stats.Speed <= 0)
+        if (actor.CurrentHp == 0 && world.EncounterActions is null || actor.Stats.Speed <= 0)
         {
             throw new ArgumentException("This timing interpretation requires living capable actors with positive speed.");
         }

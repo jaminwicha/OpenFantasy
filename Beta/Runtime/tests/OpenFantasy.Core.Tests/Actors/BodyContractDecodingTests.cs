@@ -33,7 +33,7 @@ public sealed class BodyContractDecodingTests
             Assert.Equal(record.GetProperty("sha256").GetString(), restored.ComputeContentHash().Value);
             foreach (BodyFunction function in Enum.GetValues<BodyFunction>())
             {
-                if (function == BodyFunction.Vocalization)
+                if (function is BodyFunction.Vocalization or BodyFunction.NaturalWeapon)
                 {
                     Assert.Empty(restored.FunctionalSlots(function));
                     continue;
@@ -115,7 +115,7 @@ public sealed class BodyContractDecodingTests
         List<byte[]> parts = Fields(Fields(original)[5]);
         byte[] functionTag = Text("actor.body-functions");
         foreach (byte[] functions in new[] { Frame([functionTag, Number(2), Number(2)]),
-            Frame([functionTag, Number(2), Number(1)]), Frame([functionTag, Number(11)]),
+            Frame([functionTag, Number(2), Number(1)]), Frame([functionTag, Number(12)]),
             Frame([functionTag, .. Enumerable.Repeat(Number(1), 11)]) })
         {
             List<byte[]> changed = [.. parts];

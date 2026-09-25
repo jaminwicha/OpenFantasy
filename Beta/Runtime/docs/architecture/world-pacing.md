@@ -38,7 +38,7 @@ An optional encounter includes every resident in canonical identity order. Actua
 normalized speed (`Stats.Speed * 10`); dead or nonpositive-speed actors refuse this interpretation.
 Players require human decisions and NPCs use automatic decisions. Admission checks the exact resident
 set, speed, controller policy, calendar, resident exposure, timing revision bound and advancing-batch
-count. Active encounters exclude dialogue holds and admit only Wait choices. The complete world retains
+count. Profile-twenty-two encounters exclude dialogue holds and admit only Wait choices. The complete world retains
 its 64-resident bound; the timing component's 128-actor capacity neither expands it nor supplies fallback.
 
 Pacing cannot be added or removed through ordinary `WithState` calls. Genesis admission is distinct
@@ -58,7 +58,7 @@ queue receipt, including rejection. Applied means queued, not resolved. Resoluti
 boundary, with no second command receipt or duplicated resource grant. Historical cause, command and
 result identities remain reserved by the durable ledger.
 
-Decision batches are Wait-only and nonempty. Resolution and tactical batches are actionless; all three
+Profile-twenty-two decision batches are Wait-only and nonempty. Resolution and tactical batches are actionless; all three
 exclude movement. The timing owner enforces required-human barriers and canonical confirmation order.
 An unavailable system boundary refuses without committing. Only tactical advance increments advancing
 steps or exposure. At a newly completed process interval, gathering advances once and the existing liquid
@@ -68,11 +68,15 @@ Source-backed liquid, recovery, time and readiness publish in one complete trans
 Construction and mining require actual labor actions, not passive elapsed-time rewards. Those actions,
 movement and dialogue are unavailable during this Wait-only interpretation. Damage, healing, incapacity
 and other encounter actions require their own complete legality and consequence contracts.
+[Physical encounter actions](encounter-actions.md) define profile twenty-three with authenticated
+ability requests, actual HP/MP consequences, explicit bystanders and derived incapacitated-actor
+eligibility. It retains the complete timing rows, permanent carry and process rules described here.
 
 ## Host selection and observations
 
 [LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) selects encounter work
-only while ready. It combines the pending player request with due NPC Wait requests, then holds for
+only while ready. It combines the pending player request with due NPC choices (Wait in profile
+twenty-two, legal physical actions or Wait in profile twenty-three), then holds for
 required human choices, resolves the first due boundary, or selects one tactical tick. Input never
 supplies elapsed time. Monotonic deadlines and the no-catch-up policy remain applicable.
 
@@ -98,7 +102,8 @@ complete admission. The 16 MiB bound reserves maximum liquid and pacing archive 
 pending choices have serialization headroom. Independent identity and journal limits still apply.
 
 [Schema five](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaFive.cs) exclusively stores this
-profile, adding tactical-advance, encounter-decision and encounter-resolution commit kinds. The same
+paced family, profiles twenty-two and twenty-three, adding tactical-advance, encounter-decision and
+encounter-resolution commit kinds. The same
 SQLite writer atomically stores state, batch, outcomes and identities. Migration kind three remains a
 table-level allowance inherited from schema three; recovery rejects those rows in schema five because
 this interpretation defines no migration.

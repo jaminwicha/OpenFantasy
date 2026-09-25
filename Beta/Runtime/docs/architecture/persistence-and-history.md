@@ -56,6 +56,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 20 | Terrain-contained reservoir world with exact detailed liquid placement and selected-boundary cellular flow |
 | 21 | Terrain-derived liquid capacity and owned excavation with explicit raised-bank reach and finite provenance headroom |
 | 22 | Permanent accepted exposure, coordinated Wait timing and fractional process carry over the complete terrain/liquid world |
+| 23 | Source-pinned physical abilities, exact pending requests, damage randomness and real progression resources over the complete paced world |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -134,6 +135,12 @@ and pacing serialization headroom. Exclusive schema five admits explicit tactica
 commit kinds. The writer and exact replay remain shared; a fresh genesis cannot import elapsed time or
 queued choices. The world calendar, resident exposure and last complete liquid/gathering process boundary
 are distinct but exactly reconciled. Its applied Wait receipt confirms queuing, not action resolution.
+
+[Profile twenty-three](encounter-actions.md) adds the action owner to a direct 22-field root and reserves
+its complete 128 KiB allowance alongside liquid and pacing. Schema five explicitly accepts both paced
+profiles. Actual HP/MP, saved damage draw position, cancellation, timing debt and ordinary queue receipts
+replay in the same authority. Incapacity preserves identities/custody and outcome holds the encounter;
+neither implies death rewards, migration or safe release.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The

@@ -17,6 +17,13 @@ condition; world admission joins those records by identity.
 profiles, level progress, reward rules and currency ledgers. The farm content binds actual source
 definitions and a funded delivery agreement rather than manufacturing display-only XP or money.
 
+[Physical encounter actions](encounter-actions.md) use those same progression resources for damage
+and MP costs. Explicit ability grants require actual functional anatomy, including `NaturalWeapon`
+for the authored wolf's teeth. Missing ancestors disable their descendant functions. Zero HP excludes
+an actor from combat choices without destroying its identity, possessions or body; it is incapacity,
+separate from the complete lifecycle contract below. Encounter sides are local assignments, not
+inferred species hostility or moral alignment.
+
 [LocalNpcController](../../src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs) proposes
 bounded home wandering. [LocalConstructionController](../../src/OpenFantasy.Hosting/Simulation/LocalConstructionController.cs)
 proposes legal routes and work with the actor's real tool and commitment. The shared world processor

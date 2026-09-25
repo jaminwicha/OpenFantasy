@@ -128,8 +128,15 @@ public sealed partial class LocalSpatialSnapshot
     }
 
     /// <summary>Geometry only: same feet elevation, exact 3-cell XY center range and a clear center segment.</summary>
-    public SpatialInteraction QueryInteraction(EntityId actorId, EntityId targetActorId)
+    public SpatialInteraction QueryInteraction(EntityId actorId, EntityId targetActorId) =>
+        QueryInteraction(actorId, targetActorId, InteractionRangeSubunits);
+
+    public SpatialInteraction QueryInteraction(EntityId actorId, EntityId targetActorId, long maximumRangeSubunits)
     {
+        if (maximumRangeSubunits is < 1 or > InteractionRangeSubunits)
+        {
+            throw new ArgumentOutOfRangeException(nameof(maximumRangeSubunits));
+        }
         if (actorId == targetActorId)
         {
             throw new ArgumentException("An interaction requires two distinct actors.", nameof(targetActorId));
@@ -140,7 +147,8 @@ public sealed partial class LocalSpatialSnapshot
         {
             return SpatialInteraction.DifferentFloor;
         }
-        return TerrainSightline.Query(_terrain, _volumes[actorId], _volumes[targetActorId], Structures);
+        return TerrainSightline.QueryCenters(_terrain, _volumes[actorId].DoubledCenter,
+            _volumes[targetActorId].DoubledCenter, maximumRangeSubunits, Structures);
     }
 
     private SpatialOccupancy QueryVolume(EntityId actorId, BodyVolume volume)

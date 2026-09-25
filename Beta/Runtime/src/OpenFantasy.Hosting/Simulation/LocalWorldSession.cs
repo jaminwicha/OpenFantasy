@@ -75,7 +75,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
             if (_failure is not null || _stopRequested) return LocalWorldRunState.Unavailable;
             if (_view.IsResolvingConsequences) return LocalWorldRunState.Resolving;
             if (!_ready) return LocalWorldRunState.Paused;
-            return _view.HasReadingHold || _view.Encounter?.HasRequiredDecisions == true
+            return _view.HasReadingHold || _view.Encounter?.HasRequiredDecisions == true || _view.Encounter?.IsOutcome == true
                 ? LocalWorldRunState.Waiting : LocalWorldRunState.Running;
         }
     }
@@ -136,13 +136,18 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 return prior;
             }
             WorldSnapshot state = _authority.ReadStateForHost();
-            if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent)
+            if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent and not QueueEncounterAbilityIntent)
             {
-                throw new AuthorityDispatchException("An active encounter accepts only its retained Wait choices.");
+                throw new AuthorityDispatchException("An active encounter accepts only its retained encounter choices.");
             }
-            if (command.Intent is QueueEncounterWaitIntent && state.Pacing?.Encounter is null)
+            if (command.Intent is QueueEncounterWaitIntent or QueueEncounterAbilityIntent && state.Pacing?.Encounter is null)
             {
-                throw new AuthorityDispatchException("A Wait choice requires an active admitted encounter.");
+                throw new AuthorityDispatchException("An encounter choice requires an active admitted encounter.");
+            }
+            if (command.Intent is QueueEncounterAbilityIntent && state.EncounterActions is null
+                || WorldEncounterActions.IsOutcome(state))
+            {
+                throw new AuthorityDispatchException("This encounter does not admit another ability or timing action.");
             }
             bool durablePending = state.PendingExcavation is not null;
             if (state.PendingExcavation is { } accepted
@@ -326,6 +331,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private void TickEncounter(WorldSnapshot state, PendingLocalAction? pending)
     {
         ClearMovement();
+        if (WorldEncounterActions.IsOutcome(state)) return;
         var timing = state.Pacing!.Encounter!;
         EntityId cause = NewCause(pending?.Command.CommandId);
         HashSet<EntityId> selected = [cause];
@@ -335,19 +341,19 @@ public sealed class LocalWorldSession : IAsyncDisposable
             selected.Add(pending.Command.CommandId);
             actions.Add(pending.Command);
         }
-        actions.AddRange(_npcs.SelectEncounterWaits(state, () => AllocateSelectedIdentity(selected)));
+        actions.AddRange(_npcs.SelectEncounterChoices(state, () => AllocateSelectedIdentity(selected)));
         WorldBatchKind kind;
         if (actions.Count != 0)
         {
             kind = WorldBatchKind.EncounterDecision;
         }
-        else if (timing.RequiredDecisions.Count != 0)
+        else if (WorldEncounterActions.HasRequiredDecisions(state))
         {
             return;
         }
         else
         {
-            kind = timing.DueActors.Count == 0 ? WorldBatchKind.TacticalAdvance : WorldBatchKind.EncounterResolution;
+            kind = WorldEncounterActions.DueActors(state).Count == 0 ? WorldBatchKind.TacticalAdvance : WorldBatchKind.EncounterResolution;
         }
         var batch = new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision,
             state.AdvancingSteps, kind, [], actions, state.ProfileVersion);

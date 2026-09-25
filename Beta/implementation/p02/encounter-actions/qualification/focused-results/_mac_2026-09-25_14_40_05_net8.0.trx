@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="108a072f-03c2-419d-8903-bd1694c6403f" name="@mac 2026-09-25 14:40:05" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-25T14:40:05.6441290-05:00" queuing="2026-09-25T14:40:05.6441290-05:00" start="2026-09-25T14:40:02.2835250-05:00" finish="2026-09-25T14:40:05.6597050-05:00" />
+  <TestSettings name="default" id="70b195ef-580b-4ca6-bbe2-dbe254b55153">
+    <Deployment runDeploymentRoot="_mac_2026-09-25_14_40_05" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="ed7b60c8-5ab3-4cc0-8350-aa9263793aa8" testId="2a20a596-99cf-b271-b46a-67a08c110f8c" testName="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Alternate_authored_extreme_attack_commits_target_HP_zero_and_replays_without_intermediate_overflow" computerName="mac" duration="00:00:00.2753672" startTime="2026-09-25T14:40:05.1090070-05:00" endTime="2026-09-25T14:40:05.3844390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed7b60c8-5ab3-4cc0-8350-aa9263793aa8" />
+    <UnitTestResult executionId="2f87b381-0a06-4d90-a562-817799a1e267" testId="f1769468-291f-0fae-3f41-97d5cb4b9e39" testName="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Alternate_authored_loss_of_actual_hands_or_jaw_refuses_only_the_corresponding_physical_ability(wolf: True)" computerName="mac" duration="00:00:00.2081518" startTime="2026-09-25T14:40:04.7000120-05:00" endTime="2026-09-25T14:40:04.9082410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f87b381-0a06-4d90-a562-817799a1e267" />
+    <UnitTestResult executionId="6997c064-4caa-4e61-90b8-0c66511c84b3" testId="87c1ca07-d486-2240-6c24-cb9d65e21d82" testName="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Alternate_authored_loss_of_actual_hands_or_jaw_refuses_only_the_corresponding_physical_ability(wolf: False)" computerName="mac" duration="00:00:00.1988534" startTime="2026-09-25T14:40:04.9090750-05:00" endTime="2026-09-25T14:40:05.1079780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6997c064-4caa-4e61-90b8-0c66511c84b3" />
+    <UnitTestResult executionId="eef2a1c4-725a-40a6-8e95-95041442a479" testId="115fcec3-d20e-e00a-c1b9-967517554085" testName="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action" computerName="mac" duration="00:00:00.9366249" startTime="2026-09-25T14:40:03.7347390-05:00" endTime="2026-09-25T14:40:04.6897730-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eef2a1c4-725a-40a6-8e95-95041442a479">
+      <Output>
+        <ErrorInfo>
+          <Message>System.IO.IOException : The process cannot access the file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-storage-c8b409f1891645c4a08ecbc59c1b0ba2/world.sqlite3' because it is being used by another process.</Message>
+          <StackTrace>   at Microsoft.Win32.SafeHandles.SafeFileHandle.Init(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Int64&amp; fileLength, UnixFileMode&amp; filePermissions)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+   at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.ReadAllBytes(String path)
+   at OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/EncounterCombatWorldTests.cs:line 60
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ba444641-539b-4d64-af63-9b823486b762" testId="fa23fed4-1b38-af20-00a9-c09f0c6d9fd6" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterCombatSessionTests.Stale_and_unauthenticated_choices_cannot_replace_the_human_barrier_and_Wait_incurred_debt_has_no_draw" computerName="mac" duration="00:00:00.2742573" startTime="2026-09-25T14:40:04.7092490-05:00" endTime="2026-09-25T14:40:04.9835650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba444641-539b-4d64-af63-9b823486b762" />
+    <UnitTestResult executionId="cfb52a95-6ac8-401a-a72b-2ef707afcff1" testId="760358fd-83bd-fb58-0b53-92679d36e1ed" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterCombatSessionTests.Automatic_wolf_choice_waits_for_player_and_queued_attack_restarts_without_early_damage_or_catchup" computerName="mac" duration="00:00:00.9636350" startTime="2026-09-25T14:40:03.7347390-05:00" endTime="2026-09-25T14:40:04.7071520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cfb52a95-6ac8-401a-a72b-2ef707afcff1" />
+    <UnitTestResult executionId="07011d99-5bf1-4c93-9930-f739dbd36479" testId="ec8324f0-9a28-a2ab-5e03-3235adce8091" testName="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Refused_choices_and_unauthorized_delivery_cannot_spend_resources_draw_or_bypass_required_decisions" computerName="mac" duration="00:00:00.2239929" startTime="2026-09-25T14:40:05.3853020-05:00" endTime="2026-09-25T14:40:05.6093600-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="07011d99-5bf1-4c93-9930-f739dbd36479" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterCombatSessionTests.Automatic_wolf_choice_waits_for_player_and_queued_attack_restarts_without_early_damage_or_catchup" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="760358fd-83bd-fb58-0b53-92679d36e1ed">
+      <Execution id="cfb52a95-6ac8-401a-a72b-2ef707afcff1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterCombatSessionTests" name="Automatic_wolf_choice_waits_for_player_and_queued_attack_restarts_without_early_damage_or_catchup" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterCombatSessionTests.Stale_and_unauthenticated_choices_cannot_replace_the_human_barrier_and_Wait_incurred_debt_has_no_draw" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fa23fed4-1b38-af20-00a9-c09f0c6d9fd6">
+      <Execution id="ba444641-539b-4d64-af63-9b823486b762" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterCombatSessionTests" name="Stale_and_unauthenticated_choices_cannot_replace_the_human_barrier_and_Wait_incurred_debt_has_no_draw" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Alternate_authored_extreme_attack_commits_target_HP_zero_and_replays_without_intermediate_overflow" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2a20a596-99cf-b271-b46a-67a08c110f8c">
+      <Execution id="ed7b60c8-5ab3-4cc0-8350-aa9263793aa8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests" name="Alternate_authored_extreme_attack_commits_target_HP_zero_and_replays_without_intermediate_overflow" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Alternate_authored_loss_of_actual_hands_or_jaw_refuses_only_the_corresponding_physical_ability(wolf: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f1769468-291f-0fae-3f41-97d5cb4b9e39">
+      <Execution id="2f87b381-0a06-4d90-a562-817799a1e267" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests" name="Alternate_authored_loss_of_actual_hands_or_jaw_refuses_only_the_corresponding_physical_ability" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="115fcec3-d20e-e00a-c1b9-967517554085">
+      <Execution id="eef2a1c4-725a-40a6-8e95-95041442a479" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests" name="Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Refused_choices_and_unauthorized_delivery_cannot_spend_resources_draw_or_bypass_required_decisions" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ec8324f0-9a28-a2ab-5e03-3235adce8091">
+      <Execution id="07011d99-5bf1-4c93-9930-f739dbd36479" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests" name="Refused_choices_and_unauthorized_delivery_cannot_spend_resources_draw_or_bypass_required_decisions" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Alternate_authored_loss_of_actual_hands_or_jaw_refuses_only_the_corresponding_physical_ability(wolf: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="87c1ca07-d486-2240-6c24-cb9d65e21d82">
+      <Execution id="6997c064-4caa-4e61-90b8-0c66511c84b3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests" name="Alternate_authored_loss_of_actual_hands_or_jaw_refuses_only_the_corresponding_physical_ability" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="2a20a596-99cf-b271-b46a-67a08c110f8c" executionId="ed7b60c8-5ab3-4cc0-8350-aa9263793aa8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f1769468-291f-0fae-3f41-97d5cb4b9e39" executionId="2f87b381-0a06-4d90-a562-817799a1e267" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="87c1ca07-d486-2240-6c24-cb9d65e21d82" executionId="6997c064-4caa-4e61-90b8-0c66511c84b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="115fcec3-d20e-e00a-c1b9-967517554085" executionId="eef2a1c4-725a-40a6-8e95-95041442a479" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fa23fed4-1b38-af20-00a9-c09f0c6d9fd6" executionId="ba444641-539b-4d64-af63-9b823486b762" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="760358fd-83bd-fb58-0b53-92679d36e1ed" executionId="cfb52a95-6ac8-401a-a72b-2ef707afcff1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ec8324f0-9a28-a2ab-5e03-3235adce8091" executionId="07011d99-5bf1-4c93-9930-f739dbd36479" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="6" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.38]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.80]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.02]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.04]       System.IO.IOException : The process cannot access the file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-storage-c8b409f1891645c4a08ecbc59c1b0ba2/world.sqlite3' because it is being used by another process.
+[xUnit.net 00:00:02.04]       Stack Trace:
+[xUnit.net 00:00:02.05]            at Microsoft.Win32.SafeHandles.SafeFileHandle.Init(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Int64&amp; fileLength, UnixFileMode&amp; filePermissions)
+[xUnit.net 00:00:02.05]            at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+[xUnit.net 00:00:02.05]            at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+[xUnit.net 00:00:02.05]            at System.IO.File.ReadAllBytes(String path)
+[xUnit.net 00:00:02.05]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/EncounterCombatWorldTests.cs(60,0): at OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action()
+[xUnit.net 00:00:02.05]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.05]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.96]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-25T14:40:04.6995860-05:00">
+        <Text>[xUnit.net 00:00:02.04]     OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

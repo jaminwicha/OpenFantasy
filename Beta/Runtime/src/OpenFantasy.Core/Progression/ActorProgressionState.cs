@@ -39,6 +39,9 @@ public sealed class ActorProgressionState
     public int CurrentMp { get; }
     public ActorStatValues Stats { get; }
 
+    internal ActorProgressionState WithResources(int currentHp, int currentMp) =>
+        new(ActorId, checked(Revision + 1), Profile, Curve, Level, Experience, currentHp, currentMp);
+
     internal ActorProgressionState GainExperience(ulong amount)
     {
         ulong experience = checked(Experience + amount);

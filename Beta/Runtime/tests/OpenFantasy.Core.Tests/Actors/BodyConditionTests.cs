@@ -15,7 +15,7 @@ public sealed class BodyConditionTests
             Assert.Equal(expected.GetProperty("sha256").GetString(), condition.ComputeContentHash().Value);
             foreach (BodyFunction function in Enum.GetValues<BodyFunction>())
             {
-                if (function == BodyFunction.Vocalization)
+                if (function is BodyFunction.Vocalization or BodyFunction.NaturalWeapon)
                 {
                     Assert.Empty(condition.FunctionalSlots(function));
                     continue;

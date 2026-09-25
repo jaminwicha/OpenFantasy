@@ -16,7 +16,7 @@ public static class BodyContractDecodingV1
     private const int MaximumLocomotionRequirementByteLength = 64;
     private const int MaximumInjuriesByteLength = 44_000;
     private const int MaximumInjuryByteLength = 192;
-    private const int KnownFunctionCount = 10;
+    private const int KnownFunctionCount = (int)BodyFunction.NaturalWeapon;
     private const int KnownLocomotionModeCount = 5;
 
     public static BodyDefinition DecodeDefinition(ReadOnlySpan<byte> bytes)

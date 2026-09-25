@@ -1,0 +1,32 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.45]     OpenFantasy.Core.Tests.Actors.BodyContractDecodingTests.Function_and_locomotion_order_enums_and_anatomical_feasibility_reject [FAIL]
+  Failed OpenFantasy.Core.Tests.Actors.BodyContractDecodingTests.Function_and_locomotion_order_enums_and_anatomical_feasibility_reject [2 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.FormatException)
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Actors.BodyContractDecodingTests.AssertBadDefinition(Byte[] bytes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Actors/BodyContractDecodingTests.cs:line 363
+   at OpenFantasy.Core.Tests.Actors.BodyContractDecodingTests.Function_and_locomotion_order_enums_and_anatomical_feasibility_reject() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Actors/BodyContractDecodingTests.cs:line 123
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-actions/qualification/focused-results/_mac_2026-09-25_14_40_01_net8.0.trx
+
+Failed!  - Failed:     1, Passed:    57, Skipped:     0, Total:    58, Duration: 307 ms - OpenFantasy.Core.Tests.dll (net8.0)
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.04]     OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action [936 ms]
+  Error Message:
+   System.IO.IOException : The process cannot access the file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-storage-c8b409f1891645c4a08ecbc59c1b0ba2/world.sqlite3' because it is being used by another process.
+  Stack Trace:
+     at Microsoft.Win32.SafeHandles.SafeFileHandle.Init(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Int64& fileLength, UnixFileMode& filePermissions)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64& fileLength, UnixFileMode& filePermissions, Boolean failForSymlink, Boolean& wasSymlink, Func`4 createOpenException)
+   at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.ReadAllBytes(String path)
+   at OpenFantasy.Hosting.Tests.WorldStorage.EncounterCombatWorldTests.Actual_duel_recovers_queued_and_lethal_boundaries_with_one_receipt_draw_and_cost_per_action() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/EncounterCombatWorldTests.cs:line 60
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-actions/qualification/focused-results/_mac_2026-09-25_14_40_05_net8.0.trx
+
+Failed!  - Failed:     1, Passed:     6, Skipped:     0, Total:     7, Duration: 1 s - OpenFantasy.Hosting.Tests.dll (net8.0)

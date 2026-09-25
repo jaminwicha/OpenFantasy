@@ -45,7 +45,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A consequence continuation genesis requires its exclusive world schema.");
         }
-        if ((genesis.ProfileVersion == 22) != (database.SchemaVersion == WorldDatabaseSchemaFive.Version))
+        if ((genesis.ProfileVersion is 22 or 23) != (database.SchemaVersion == WorldDatabaseSchemaFive.Version))
         {
             throw new InvalidDataException("An encounter pacing genesis requires its exclusive world schema.");
         }
@@ -126,7 +126,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The consequence continuation world and its exclusive schema disagree.");
         }
-        if ((state.ProfileVersion == 22) != (database.SchemaVersion == WorldDatabaseSchemaFive.Version))
+        if ((state.ProfileVersion is 22 or 23) != (database.SchemaVersion == WorldDatabaseSchemaFive.Version))
         {
             throw new InvalidDataException("The encounter pacing world and its exclusive schema disagree.");
         }

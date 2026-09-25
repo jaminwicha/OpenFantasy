@@ -21,7 +21,7 @@ internal sealed class BreachFarmWater
     internal BreachFarmWater(WorldSnapshot farm)
     {
         _farm = farm;
-        _owner = farm.Residents.Single(resident => resident.ControllerKind == ResidentControllerKind.Host).ActorId;
+        _owner = farm.Construction!.Projects.Single().OwnerActorId;
         _store = Instance("water.custody");
         _source = Instance("water.source");
         _budget = Instance("water.closed-budget");

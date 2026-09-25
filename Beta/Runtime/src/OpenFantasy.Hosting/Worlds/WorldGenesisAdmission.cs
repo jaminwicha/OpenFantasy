@@ -12,6 +12,12 @@ internal static class WorldGenesisAdmission
         {
             throw new ArgumentException("A new local world requires unheld commit zero and step zero.", nameof(genesis));
         }
+        if (genesis.EncounterActions is { } actions && (actions.Revision != 0 || actions.Pending.Count != 0
+            || actions.LastResolution is not null || actions.Random.NextCounter != 0 || actions.Random.Exhausted
+            || WorldEncounterActions.IsOutcome(genesis)))
+        {
+            throw new ArgumentException("A fresh encounter cannot import decisions, damage outcomes or consumed rolls.", nameof(genesis));
+        }
         if (genesis.Pacing is not { } pacing)
         {
             return;

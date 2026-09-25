@@ -13,6 +13,12 @@ gathering, production, quest and construction admissions retain their own input 
 Admission establishes the relationship between source data and playable state; the client does not
 invent equivalent-looking values when a source is missing.
 
+[Encounter admission](encounter-actions.md#content-hosting-and-presentation) binds the retained Squire
+Strike and Bramble Wolf records to real abilities, stats and a complete occupied farm world. Source
+range/ATB transforms and newly authored anatomy are explicit. The extra resident is present before
+custody and reservoir binding, has no invented stock or language grant, and leaves Wren's quest intact.
+This source binding is distinct from full ability, monster and death-reward migration.
+
 ## Design contract: preservation and packages
 
 Predecessor code, content and assets are preservation sources. Full import covers entities, species,

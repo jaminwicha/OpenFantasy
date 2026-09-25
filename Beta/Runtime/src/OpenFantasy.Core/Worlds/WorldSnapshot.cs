@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Geography;
@@ -34,9 +35,9 @@ public sealed class WorldSnapshot
         ConsequenceExecutionPolicy? consequencePolicy = null, PendingExcavation? pendingExcavation = null,
         CoupledSettlementPolicy? coupledSettlementPolicy = null,
         ConstructionDescentMode descentMode = ConstructionDescentMode.CommonTrajectory,
-        ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null)
+        ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, null)
     {
     }
 
@@ -50,7 +51,7 @@ public sealed class WorldSnapshot
         StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
         PendingExcavation? pendingExcavation, CoupledSettlementPolicy? coupledSettlementPolicy,
         ConstructionDescentMode descentMode, ReservoirSealPolicy? reservoirSeals, LiquidCellState? liquidCells,
-        WorldPacingState? pacing, WorldIdentityIndex? previous)
+        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -157,6 +158,7 @@ public sealed class WorldSnapshot
         ReservoirSeals = reservoirSeals;
         LiquidCells = liquidCells;
         Pacing = pacing;
+        EncounterActions = encounterActions;
         if (liquidCells is not null && reservoirSeals is null)
         {
             throw new ArgumentException("Detailed liquid placement requires the complete contained reservoir owner.");
@@ -216,6 +218,7 @@ public sealed class WorldSnapshot
         }
         PendingExcavation?.ValidateForWorld(this);
         WorldPacingAdmission.Validate(this);
+        WorldEncounterActionAdmission.Validate(this);
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
         if (structuralPolicy is not null)
         {
@@ -261,8 +264,9 @@ public sealed class WorldSnapshot
     public CoupledSettlementPolicy? CoupledSettlementPolicy { get; }
     public ConstructionDescentMode DescentMode { get; }
     public WorldPacingState? Pacing { get; }
+    public EncounterActionSnapshot? EncounterActions { get; }
     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
-    public ushort ProfileVersion => Pacing is not null ? (ushort)22 : BaseProfileVersion;
+    public ushort ProfileVersion => EncounterActions is not null ? (ushort)23 : Pacing is not null ? (ushort)22 : BaseProfileVersion;
     internal ushort BaseProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
         : DescentMode == ConstructionDescentMode.EventOrdered ? (ushort)18
         : CoupledSettlementPolicy is not null ? (ushort)17 : ConsequencePolicy is not null ? (ushort)16 : StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
@@ -294,7 +298,7 @@ public sealed class WorldSnapshot
         IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production,
         ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction,
         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
-        ConstructionPhysicalSnapshot? constructionPhysical, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null)
+        ConstructionPhysicalSnapshot? constructionPhysical, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null)
     {
         if (PendingExcavation is not null)
         {
@@ -330,13 +334,18 @@ public sealed class WorldSnapshot
         {
             throw new ArgumentException("A successor must retain its process clock owner.");
         }
+        encounterActions ??= EncounterActions;
+        if ((encounterActions is null) != (EncounterActions is null))
+        {
+            throw new ArgumentException("A successor must retain its encounter action owner.");
+        }
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, IdentityIndex);
     }
     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
         Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
-        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, IdentityIndex);
+        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, EncounterActions, IdentityIndex);
 }

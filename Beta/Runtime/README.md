@@ -364,10 +364,24 @@ at complete 1,800 ms process boundaries. No elapsed time comes from a decision h
 
 Read [world pacing](docs/architecture/world-pacing.md) for canonical bytes, schema five, queue receipts,
 process carry and session selection. This is a durable timing integration, not an ordinary playable
-combat entry: attacks, staging, release and native battle presentation remain separate work. It neither
+combat entry: staging, release and native battle presentation remain separate work. It neither
 changes the normal farm launch nor migrates existing saves.
 `OPENFANTASY_ENCOUNTER_PACING_EVIDENCE` exports the managed fixture consumed by
 `tools/check_live_encounter_pacing.py` for independent full-state, SQLite and external-kill checks.
+
+### Source-backed physical encounters
+
+`--create-encounter-world <world.sqlite> <seed> <player-name>` admits a separate fresh profile-twenty-three
+Squire-versus-Bramble-Wolf encounter, with Wren as a coupled quest-bearing bystander. Actual source
+Strike/bite grants, anatomy, range, HP/MP, deterministic damage draws and positive readiness debt share
+the complete farm/terrain/liquid authority. Queue receipts precede resolution; zero HP incapacitates
+without deleting identity or possessions. Outcome holds the encounter with timing/process obligations
+retained. Native attack controls, entry/staging/release, full death and rewards remain separate work.
+
+Read [encounter actions](docs/architecture/encounter-actions.md) for exact rules, source transforms,
+bounded NPC selection and canonical storage. This operator preserves ordinary farm launches and old saves.
+`OPENFANTASY_ENCOUNTER_ACTION_EVIDENCE` exports the managed durable duel consumed by
+`tools/check_encounter_actions.py` for independent full-root/RNG/SQLite and external commit-kill checks.
 
 ### Standalone timing and structural inspection
 

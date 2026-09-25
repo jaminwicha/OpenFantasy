@@ -9,6 +9,13 @@ namespace OpenFantasy.Host;
 /// <summary>Privileged offline operations under the existing exclusive composed-world authority.</summary>
 internal sealed class ComposedWorldOperator
 {
+    internal string CreateEncounterWorld(string database, string seed, string playerName)
+    {
+        var genesis = OpenFantasy.Hosting.Content.EncounterFarmAdmission.CreateEmbedded(seed, playerName);
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(database, genesis);
+        return Report(authority);
+    }
+
     internal string CreatePacedWorld(string database, string basisPath, string encounterText)
     {
         WorldSnapshot genesis = WorldPacingAdmission.CreateFresh(LocalAuthorityFiles.ReadComposedGenesis(basisPath),
@@ -104,7 +111,8 @@ internal sealed class ComposedWorldOperator
             BranchId = state.BranchId.ToString(), state.Revision, state.ProfileVersion,
             StateHash = state.ContentHash.Value,
             state.Calendar, state.AdvancingSteps,
-            Pacing = state.Pacing is { } pacing ? new WorldPacingDiagnosticReport(pacing) : null,
+            Pacing = state.Pacing is { } pacing ? new WorldPacingDiagnosticReport(pacing, state) : null,
+            EncounterActions = state.EncounterActions is not null ? new EncounterActionDiagnosticReport(state) : null,
             ConstructionPhysical = state.ConstructionPhysical is { } physical ? new ConstructionPhysicalDiagnosticReport(physical) : null,
             StructuralPolicy = state.StructuralPolicy is { } policy ? new ConstructionLoadPolicyDiagnosticReport(policy) : null,
             StructuralSettlementPolicy = state.StructuralSettlementPolicy is { } settlement ? new StructuralSettlementPolicyDiagnosticReport(settlement) : null,

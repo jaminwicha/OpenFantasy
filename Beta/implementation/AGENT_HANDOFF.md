@@ -42,6 +42,30 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Source-backed encounter actions](p02/encounter-actions/README.md) adds fresh profile23 over the complete
+paced terrain/liquid/farm world, sharing schema5. Actual Squire Strike and Bramble Wolf attacks use
+source-pinned stats, grants, real anatomy/range, HP/MP and deterministic saved damage draws. Wren remains
+a quest-bearing bystander. Applied receipts mean queued; separate resolution commits resources, debt,
+random position and cancellation atomically. Only tactical ticks earn time and full process intervals.
+
+The complete regression passes **1,119 Core +600 Hosting/client =1,719** cases, zero failed/skipped;
+solution build has zero warnings/errors. The independent oracle reconstructs all176 complete roots
+and175 ledger entries, with21 ordinary Host processes and four external commit-boundary kills.
+The source-backed175-commit duel reaches real HP0, preserves all identities/bodies/custody/currency/jobs
+and recovers queued first/lethal boundaries. Zero HP is incapacity; outcome holds safely with debt and
+process carry retained. No death/reward/respawn or release is inferred. Critic-found restore and extreme
+arithmetic defects, plus actual source-composition and fixture failures, are corrected and retained in
+[the review](p02/encounter-actions/REVIEW.md). Qualification details belong to the packet.
+
+Next connect legal entry/staging/release and native presentation over these same owners. Release must
+retain action debt/process carry and revalidate support/hazards. Healing, broader abilities/effects,
+full lifecycle, controller handoff, joining/merging, independent co-op, dependency closure, scale and
+all campaign/native/art/audio/device gates remain open. The ordinary native farm entry is unchanged.
+[Encounter action architecture](../Runtime/docs/architecture/encounter-actions.md) documents the contracts.
+The core/application remain pure C#, with no native/IPC migration.
+
+## Prior live coordinated pacing
+
 [Live coordinated encounter pacing](p02/live-encounter-pacing/README.md) connects Wait timing to the
 complete terrain/liquid/farm world, actual session and exclusive schema5. Fresh profile22 retains every
 profile21 owner. Authenticated queue/resolution boundaries earn no time; accepted tactical ticks earn

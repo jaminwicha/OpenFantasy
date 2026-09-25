@@ -15,7 +15,9 @@ public sealed record LocalItemLotView(EntityId LotId, EntityId DefinitionId, ulo
     IngredientLotKind Provenance = IngredientLotKind.Source, bool AvailableForDelivery = true);
 public sealed record LocalDialogueView(EntityId DialogueId, EntityId SpeakerActorId, string SpeakerName, string Text);
 public sealed record LocalEncounterView(EntityId EncounterId, ulong TimingRevision, ulong ElapsedTacticalUnits,
-    bool PlayerIsDue, bool PlayerDecisionQueued, bool HasRequiredDecisions);
+    bool PlayerIsDue, bool PlayerDecisionQueued, bool HasRequiredDecisions, bool IsOutcome = false);
+
+public sealed record LocalEncounterActorView(EntityId ActorId, int CurrentHp, int MaximumHp, bool IsIncapacitated, ushort Side);
 
 public sealed class LocalInventoryView
 {
@@ -50,9 +52,16 @@ public sealed class LocalWorldView
         if (state.Pacing?.Encounter is { } timing)
         {
             Encounter = new LocalEncounterView(timing.EncounterId, timing.Revision, timing.ElapsedTacticalUnits,
-                timing.DueActors.Any(actor => actor.ActorId == playerActorId),
-                timing.Decisions.Any(decision => decision.ActorId == playerActorId), timing.RequiredDecisions.Count != 0);
+                WorldEncounterActions.DueActors(state).Any(actor => actor.ActorId == playerActorId),
+                timing.Decisions.Any(decision => decision.ActorId == playerActorId), WorldEncounterActions.HasRequiredDecisions(state), WorldEncounterActions.IsOutcome(state));
         }
+        EncounterActors = Array.AsReadOnly(state.EncounterActions is { } actions
+            ? actions.Combatants.Select(actor =>
+            {
+                var resources = state.Progression!.GetActor(actor.ActorId);
+                return new LocalEncounterActorView(actor.ActorId, resources.CurrentHp, resources.Stats.MaxHp,
+                    resources.CurrentHp == 0, actor.Side);
+            }).ToArray() : []);
         Actors = Array.AsReadOnly(state.Residents.Select(resident =>
         {
             var presence = state.Space.GetActor(resident.ActorId);
@@ -121,6 +130,7 @@ public sealed class LocalWorldView
     public bool IsResolvingConsequences { get; }
     public bool IsInEncounter => Encounter is not null;
     public LocalEncounterView? Encounter { get; }
+    public ReadOnlyCollection<LocalEncounterActorView> EncounterActors { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }
     public ReadOnlyCollection<LocalGatherNodeView> GatheringNodes { get; }

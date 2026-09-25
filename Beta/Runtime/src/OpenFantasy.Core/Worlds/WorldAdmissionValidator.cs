@@ -44,6 +44,7 @@ public static class WorldAdmissionValidator
         admission.ReadStructuralPolicy();
         admission.ReadPendingExcavation();
         admission.ReadPacing();
+        admission.ReadEncounterActions();
         return admission.Complete();
     }
 
@@ -130,6 +131,23 @@ public static class WorldAdmissionValidator
             foreach (var decision in encounter.Decisions)
             {
                 Add(decision.DecisionId, WorldIdentityRole.CauseReference, unique: true);
+            }
+        }
+
+        internal void ReadEncounterActions()
+        {
+            if (world.EncounterActions is not { } actions) return;
+            foreach (var ability in actions.Abilities)
+            {
+                Definition(ability.DefinitionId, WorldIdentityRole.EncounterAbility, ability.Version);
+            }
+            if (actions.LastResolution is { } last)
+            {
+                Add(last.DecisionCommandId, WorldIdentityRole.CauseReference, unique: true);
+                foreach (EntityId cancelled in last.CancelledDecisionIds)
+                {
+                    Add(cancelled, WorldIdentityRole.CauseReference, unique: true);
+                }
             }
         }
 

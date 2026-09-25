@@ -42,6 +42,8 @@ internal sealed class HostApplication
             string? report = arguments switch
             {
                 ["--inspect-foundation"] => CreateFoundationReport(),
+                ["--create-encounter-world", var database, var seed, var name] =>
+                    _composed.CreateEncounterWorld(database, seed, name),
                 ["--inspect-encounter-timing", var path, var world, var branch, var encounter] =>
                     _encounters.Inspect(path, world, branch, encounter),
                 ["--inspect-command", var path] => _contracts.InspectCommand(path),
