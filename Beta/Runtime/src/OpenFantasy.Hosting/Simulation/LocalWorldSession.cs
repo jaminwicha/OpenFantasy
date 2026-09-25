@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Terrain;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Worlds;
@@ -74,7 +75,8 @@ public sealed class LocalWorldSession : IAsyncDisposable
             if (_failure is not null || _stopRequested) return LocalWorldRunState.Unavailable;
             if (_view.IsResolvingConsequences) return LocalWorldRunState.Resolving;
             if (!_ready) return LocalWorldRunState.Paused;
-            return _view.HasReadingHold ? LocalWorldRunState.Waiting : LocalWorldRunState.Running;
+            return _view.HasReadingHold || _view.Encounter?.HasRequiredDecisions == true
+                ? LocalWorldRunState.Waiting : LocalWorldRunState.Running;
         }
     }
 
@@ -102,7 +104,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
         lock (_inputs)
         {
             EnsureInputAvailable();
-            bool acceptsMovement = _ready && !_view.IsResolvingConsequences;
+            bool acceptsMovement = _ready && !_view.IsResolvingConsequences && !_view.IsInEncounter;
             _movementX = acceptsMovement ? dx : 0;
             _movementY = acceptsMovement ? dy : 0;
             _movementAt = _time.GetTimestamp();
@@ -134,6 +136,14 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 return prior;
             }
             WorldSnapshot state = _authority.ReadStateForHost();
+            if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent)
+            {
+                throw new AuthorityDispatchException("An active encounter accepts only its retained Wait choices.");
+            }
+            if (command.Intent is QueueEncounterWaitIntent && state.Pacing?.Encounter is null)
+            {
+                throw new AuthorityDispatchException("A Wait choice requires an active admitted encounter.");
+            }
             bool durablePending = state.PendingExcavation is not null;
             if (state.PendingExcavation is { } accepted
                 && !WorldActionCodec.Encode(accepted.Command).AsSpan().SequenceEqual(encoded))
@@ -155,7 +165,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
             if (command.Intent is ExcavateIntent
-                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21)
+                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22)
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }
@@ -287,6 +297,11 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 x = fresh ? _movementX : 0;
                 y = fresh ? _movementY : 0;
             }
+            if (state.Pacing?.Encounter is not null)
+            {
+                TickEncounter(state, pending);
+                return;
+            }
             if (state.HasReadingHold && pending is null) { return; }
             List<WorldMovementInput> movement = [];
             if (SelectsConsequenceTrigger(state, pending))
@@ -306,6 +321,48 @@ public sealed class LocalWorldSession : IAsyncDisposable
             CommitSelectedBatch(batch, pending);
         }
         finally { _serialization.Release(); }
+    }
+
+    private void TickEncounter(WorldSnapshot state, PendingLocalAction? pending)
+    {
+        ClearMovement();
+        var timing = state.Pacing!.Encounter!;
+        EntityId cause = NewCause(pending?.Command.CommandId);
+        HashSet<EntityId> selected = [cause];
+        List<WorldActionCommand> actions = [];
+        if (pending is not null)
+        {
+            selected.Add(pending.Command.CommandId);
+            actions.Add(pending.Command);
+        }
+        actions.AddRange(_npcs.SelectEncounterWaits(state, () => AllocateSelectedIdentity(selected)));
+        WorldBatchKind kind;
+        if (actions.Count != 0)
+        {
+            kind = WorldBatchKind.EncounterDecision;
+        }
+        else if (timing.RequiredDecisions.Count != 0)
+        {
+            return;
+        }
+        else
+        {
+            kind = timing.DueActors.Count == 0 ? WorldBatchKind.TacticalAdvance : WorldBatchKind.EncounterResolution;
+        }
+        var batch = new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision,
+            state.AdvancingSteps, kind, [], actions, state.ProfileVersion);
+        try
+        {
+            _authority.Preview(batch);
+        }
+        catch (AuthorityDispatchException error) when (pending is not null)
+        {
+            // A refused selected request leaves this encounter at the same boundary. It cannot
+            // select ordinary movement, work or exploration time as a fallback.
+            CompletePending(pending, null, error);
+            return;
+        }
+        CommitSelectedBatch(batch, pending);
     }
 
     private void ContinueConsequences(WorldSnapshot state)

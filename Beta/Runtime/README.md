@@ -354,7 +354,22 @@ faults a running local session; recoverable fluid continuation remains unqualifi
 `OPENFANTASY_LIQUID_CELL_FIXTURE_OUTPUT` retains the twelve-step fixture for the standalone
 `tools/check_liquid_cell_flow.py` Host, independent oracle and external commit-kill qualifier.
 
-### Standalone structural failure inspection
+### Coordinated encounter pacing
+
+`--create-paced-world <world.sqlite> <profile21-genesis.bin> <encounter-id|none>` creates a fresh
+profile-twenty-two world through the real SQLite authority. It retains every terrain/liquid/farm owner
+and adds a permanent exposure clock. An optional complete-resident encounter accepts authenticated
+Wait choices; selected tactical ticks earn 50 ms, with gathering recovery and actual fluid flow only
+at complete 1,800 ms process boundaries. No elapsed time comes from a decision hold or restart.
+
+Read [world pacing](docs/architecture/world-pacing.md) for canonical bytes, schema five, queue receipts,
+process carry and session selection. This is a durable timing integration, not an ordinary playable
+combat entry: attacks, staging, release and native battle presentation remain separate work. It neither
+changes the normal farm launch nor migrates existing saves.
+`OPENFANTASY_ENCOUNTER_PACING_EVIDENCE` exports the managed fixture consumed by
+`tools/check_live_encounter_pacing.py` for independent full-state, SQLite and external-kill checks.
+
+### Standalone timing and structural inspection
 
 `--inspect-encounter-timing <timing.bin> <world-id> <branch-id> <encounter-id>` validates a bounded
 canonical timing archive and reports independent next-tick/next-confirmation proposals, their exact

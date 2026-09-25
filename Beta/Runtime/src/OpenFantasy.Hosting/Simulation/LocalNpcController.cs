@@ -4,6 +4,7 @@ using System.Text;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Worlds;
 
@@ -19,7 +20,7 @@ public sealed class LocalNpcController
     {
         ArgumentNullException.ThrowIfNull(state);
         List<WorldMovementInput> inputs = [];
-        if (state.HasReadingHold)
+        if (state.HasReadingHold || state.Pacing?.Encounter is not null)
         {
             return inputs.AsReadOnly();
         }
@@ -80,7 +81,7 @@ public sealed class LocalNpcController
     internal IReadOnlyList<WorldActionCommand> SelectActions(WorldSnapshot state, Func<EntityId> newIdentity)
     {
         List<WorldActionCommand> actions = [];
-        if (state.HasReadingHold || state.Construction is null)
+        if (state.HasReadingHold || state.Pacing?.Encounter is not null || state.Construction is null)
         {
             return actions.AsReadOnly();
         }
@@ -96,6 +97,34 @@ public sealed class LocalNpcController
             {
                 actions.Add(action);
             }
+        }
+        return actions.AsReadOnly();
+    }
+
+    internal IReadOnlyList<WorldActionCommand> SelectEncounterWaits(WorldSnapshot state, Func<EntityId> newIdentity)
+    {
+        ArgumentNullException.ThrowIfNull(state);
+        ArgumentNullException.ThrowIfNull(newIdentity);
+        List<WorldActionCommand> actions = [];
+        if (state.Pacing?.Encounter is not { } timing)
+        {
+            return actions.AsReadOnly();
+        }
+        HashSet<EntityId> chosen = timing.Decisions.Select(decision => decision.ActorId).ToHashSet();
+        foreach (EncounterActorTiming actor in timing.DueActors)
+        {
+            if (actor.Control != EncounterActorControl.Automatic || chosen.Contains(actor.ActorId))
+            {
+                continue;
+            }
+            if (state.GetResident(actor.ActorId).ControllerKind != ResidentControllerKind.Host)
+            {
+                throw new InvalidOperationException("An automatic encounter choice requires an admitted host resident.");
+            }
+            ActorControlBinding binding = state.Inventory.Controls.Single(value => value.ActorId == actor.ActorId);
+            actions.Add(new WorldActionCommand(newIdentity(), binding.PrincipalId, binding.SessionId, actor.ActorId,
+                state.WorldId, state.BranchId, state.Space.GetActor(actor.ActorId).Revision,
+                new QueueEncounterWaitIntent(timing.EncounterId, timing.Revision)));
         }
         return actions.AsReadOnly();
     }

@@ -29,6 +29,7 @@ internal sealed class RecordedWorldOperator
             state.Calendar,
             state.AdvancingSteps,
             state.HasReadingHold,
+            Pacing = state.Pacing is { } pacing ? new WorldPacingDiagnosticReport(pacing) : null,
             ConstructionPhysical = state.ConstructionPhysical is { } physical ? new ConstructionPhysicalDiagnosticReport(physical) : null,
             StructuralPolicy = state.StructuralPolicy is { } policy ? new ConstructionLoadPolicyDiagnosticReport(policy) : null,
             StructuralSettlementPolicy = state.StructuralSettlementPolicy is { } settlement ? new StructuralSettlementPolicyDiagnosticReport(settlement) : null,
@@ -48,6 +49,8 @@ internal sealed class RecordedWorldOperator
             {
                 ActorId = resident.ActorId.ToString(),
                 resident.DisplayName,
+                resident.ExperiencedTime,
+                Effort = state.Gathering?.GetActorWork(resident.ActorId).Effort,
                 Position = state.Space.GetActor(resident.ActorId).Feet,
                 PresenceRevision = state.Space.GetActor(resident.ActorId).Revision,
                 SourceItemQuantity = state.Inventory.Custody.GetStoredQuantity(resident.InventoryCustodianId)

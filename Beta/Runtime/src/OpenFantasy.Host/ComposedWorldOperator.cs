@@ -1,4 +1,5 @@
 using System.Text.Json;
+using OpenFantasy.Core;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting;
 using OpenFantasy.Hosting.Worlds;
@@ -8,6 +9,14 @@ namespace OpenFantasy.Host;
 /// <summary>Privileged offline operations under the existing exclusive composed-world authority.</summary>
 internal sealed class ComposedWorldOperator
 {
+    internal string CreatePacedWorld(string database, string basisPath, string encounterText)
+    {
+        WorldSnapshot genesis = WorldPacingAdmission.CreateFresh(LocalAuthorityFiles.ReadComposedGenesis(basisPath),
+            encounterText == "none" ? null : EntityId.Parse(encounterText));
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(database, genesis);
+        return Report(authority);
+    }
+
     internal string CreateLiquidCellWorld(string database, string basisPath, string liquidCellsPath)
     {
         WorldSnapshot basis = LocalAuthorityFiles.ReadComposedGenesis(basisPath);
@@ -94,6 +103,8 @@ internal sealed class ComposedWorldOperator
             Contract = "composed-world-operator-v1", WorldId = state.WorldId.ToString(),
             BranchId = state.BranchId.ToString(), state.Revision, state.ProfileVersion,
             StateHash = state.ContentHash.Value,
+            state.Calendar, state.AdvancingSteps,
+            Pacing = state.Pacing is { } pacing ? new WorldPacingDiagnosticReport(pacing) : null,
             ConstructionPhysical = state.ConstructionPhysical is { } physical ? new ConstructionPhysicalDiagnosticReport(physical) : null,
             StructuralPolicy = state.StructuralPolicy is { } policy ? new ConstructionLoadPolicyDiagnosticReport(policy) : null,
             StructuralSettlementPolicy = state.StructuralSettlementPolicy is { } settlement ? new StructuralSettlementPolicyDiagnosticReport(settlement) : null,

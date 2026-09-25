@@ -14,6 +14,8 @@ public sealed record LocalActorView(EntityId ActorId, string DisplayName, Subuni
 public sealed record LocalItemLotView(EntityId LotId, EntityId DefinitionId, ulong Revision, ulong Quantity,
     IngredientLotKind Provenance = IngredientLotKind.Source, bool AvailableForDelivery = true);
 public sealed record LocalDialogueView(EntityId DialogueId, EntityId SpeakerActorId, string SpeakerName, string Text);
+public sealed record LocalEncounterView(EntityId EncounterId, ulong TimingRevision, ulong ElapsedTacticalUnits,
+    bool PlayerIsDue, bool PlayerDecisionQueued, bool HasRequiredDecisions);
 
 public sealed class LocalInventoryView
 {
@@ -45,6 +47,12 @@ public sealed class LocalWorldView
         Calendar = state.Calendar;
         HasReadingHold = state.HasReadingHold;
         IsResolvingConsequences = state.PendingExcavation is not null;
+        if (state.Pacing?.Encounter is { } timing)
+        {
+            Encounter = new LocalEncounterView(timing.EncounterId, timing.Revision, timing.ElapsedTacticalUnits,
+                timing.DueActors.Any(actor => actor.ActorId == playerActorId),
+                timing.Decisions.Any(decision => decision.ActorId == playerActorId), timing.RequiredDecisions.Count != 0);
+        }
         Actors = Array.AsReadOnly(state.Residents.Select(resident =>
         {
             var presence = state.Space.GetActor(resident.ActorId);
@@ -61,10 +69,10 @@ public sealed class LocalWorldView
         Crafting = state.Production is { } production ? new LocalCraftingView(production, state.Construction is { } construction
             ? construction.IsConstructionRecipe : null) : null;
         GatheringNodes = Array.AsReadOnly(state.Gathering is { } gathering
-            ? gathering.Nodes.Where(node => node.VisibilityAt(state.AdvancingSteps) != GatherNodeVisibility.Absent)
+            ? gathering.Nodes.Where(node => node.VisibilityAt(state.ProcessIntervals) != GatherNodeVisibility.Absent)
                 .Select(node => new LocalGatherNodeView(node.NodeId, node.Definition.DisplayName, node.Feet,
                     node.Revision, node.Definition.Kind, node.Definition.RequiredToolKind,
-                    (uint)node.RemainingSwings, node.VisibilityAt(state.AdvancingSteps)))
+                    (uint)node.RemainingSwings, node.VisibilityAt(state.ProcessIntervals)))
                 .OrderBy(node => node.NodeId).ToArray()
             : []);
         List<LocalGatherToolLotView> tools = [];
@@ -111,6 +119,8 @@ public sealed class LocalWorldView
     public WorldInstant Calendar { get; }
     public bool HasReadingHold { get; }
     public bool IsResolvingConsequences { get; }
+    public bool IsInEncounter => Encounter is not null;
+    public LocalEncounterView? Encounter { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }
     public ReadOnlyCollection<LocalGatherNodeView> GatheringNodes { get; }

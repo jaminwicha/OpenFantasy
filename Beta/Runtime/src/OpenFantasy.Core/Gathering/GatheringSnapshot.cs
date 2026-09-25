@@ -107,7 +107,7 @@ public sealed class GatheringSnapshot
     public void ValidateForWorld(WorldSnapshot world)
     {
         ArgumentNullException.ThrowIfNull(world);
-        if (world.WorldId != WorldId || world.BranchId != BranchId || world.AdvancingSteps != AdvancingStep
+        if (world.WorldId != WorldId || world.BranchId != BranchId || world.ProcessIntervals != AdvancingStep
             || !world.Inventory.Actors.SequenceEqual(Actors.Select(actor => actor.ActorId)))
         {
             throw new ArgumentException("Gathering scope, committed clock and complete actor work set must match the world.");

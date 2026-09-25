@@ -97,12 +97,12 @@ not two successive operations. Counter exhaustion reports an unavailable proposa
 writes the input, opens a world database or publishes consequences. Caller-supplied scope and action
 pins are explicitly unauthenticated.
 
-The [local world pacing binding](time-and-encounters.md#runtime-binding-local-session-pacing) retains
-its exploration 1800 ms interval and dialogue hold semantics. Routing tactical 50 ms ticks through that
-ordinary advancing path would mischarge time and process allowances. A live encounter world binding
-requires versioned interval ownership for residents, work, regrowth, liquids and effects, retained
-fractional schedules, complete identity admission, authenticated commands and atomic history. A hold's
-wall-clock duration cannot be replayed as catch-up work on release.
+The [complete world pacing binding](world-pacing.md) authenticates Wait commands and publishes timing,
+resident exposure, calendar and earned passive-process intervals through the existing durable authority.
+Exploration contributes 1,800 ms; tactical ticks contribute 50 ms, retaining the remainder before
+passive gathering recovery or liquid flow can advance. Decision and confirmation boundaries earn no time.
+Explicit batch kinds prevent tactical ticks from receiving exploration allowances. The diagnostic above
+remains read-only and does not gain publication authority from that binding.
 
 The [Wait design contract](time-and-encounters.md#design-contract-wait-encounters) owns encounter stages,
 legal staging, complete dependency closure, controller handoff, joining/merging, coordinated versus

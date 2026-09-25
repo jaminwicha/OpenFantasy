@@ -53,7 +53,10 @@ requires an explicit continuation contract; neither silent stalling nor a larger
 [WorldLiquidCellAdmission](../../src/OpenFantasy.Core/Worlds/WorldLiquidCellAdmission.cs) creates a fresh
 detailed world from an unplayed, unheld contained-reservoir world with the identical material owner and
 calendar and liquid revision zero. [WorldLiquidCellBinding](../../src/OpenFantasy.Core/Worlds/WorldLiquidCellBinding.cs)
-requires the component's boundary to equal the world calendar and its revision to equal advancing steps.
+requires the component boundary and revision to match the applicable process clock. In profiles twenty
+and twenty-one, those are the world calendar and advancing-step count. The [paced composition](world-pacing.md)
+uses the last earned process boundary and completed interval count; its partial tactical exposure remains
+retained in pacing.
 Ordinary successors retain this owner; opening an older save does not install it.
 
 The retained sealing policy validates every complete profile-twenty root. This flow composition requires
@@ -102,6 +105,7 @@ profile twenty unchanged and does not infer permission for occupied water or str
 Mechanical ports and shutters require finite displaced volume, exact poses, swept clearance, effort and
 actual transfer between custodians. Breaches and changing capacity require conserved spill outcomes;
 fluid loads and occupied spaces require structural, displacement, buoyancy and exposure rules. Other
-liquids, phase changes, reactions, ecology, coarse/detail exchange and temporal encounter coupling need
-their own compatible state and publication contracts. Rendering and sound consume permitted committed
+liquids, phase changes, reactions, ecology, coarse/detail exchange and independent encounter-pocket coupling need
+their own compatible state and publication contracts. Coordinated Wait uses the explicit process clock
+described above. Rendering and sound consume permitted committed
 outcomes. A retained flow component alone does not provide those integrations.

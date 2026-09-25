@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Quests;
@@ -16,6 +17,7 @@ public static class WorldActionCodec
         ArgumentNullException.ThrowIfNull(command);
         return command.Intent switch
         {
+            QueueEncounterWaitIntent => WorldActionCodecV10.Encode(command),
             ClimbIntent => WorldActionCodecV9.Encode(command),
             ExcavateIntent => WorldActionCodecV8.Encode(command),
             ScheduleRunoffTransportIntent => WorldActionCodecV7.Encode(command),
@@ -31,6 +33,7 @@ public static class WorldActionCodec
     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
         WorldCodecVersion.Read(bytes, "world.actor-action"u8, MaximumCommandByteLength, 10) switch
         {
+            10 => WorldActionCodecV10.Decode(bytes),
             1 => WorldActionCodecV1.Decode(bytes),
             2 => WorldActionCodecV2.Decode(bytes),
             3 => WorldActionCodecV3.Decode(bytes),

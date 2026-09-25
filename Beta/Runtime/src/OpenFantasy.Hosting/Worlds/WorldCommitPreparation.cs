@@ -64,7 +64,9 @@ internal sealed class WorldCommitPreparation
         if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
             || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
-            || (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null))
+            || (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null)
+            || (batch.Kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterDecision or WorldBatchKind.EncounterResolution)
+                != (state.Pacing?.Encounter is not null))
         {
             throw new AuthorityDispatchException("The selected batch does not match the current world revision or hold.");
         }
@@ -130,6 +132,9 @@ internal sealed class WorldCommitPreparation
         WorldBatchKind.AdvancingStep => WorldCommitKind.AdvancingStep,
         WorldBatchKind.HeldInteraction => WorldCommitKind.HeldInteraction,
         WorldBatchKind.ConsequenceContinuation => WorldCommitKind.ConsequenceContinuation,
+        WorldBatchKind.TacticalAdvance => WorldCommitKind.TacticalAdvance,
+        WorldBatchKind.EncounterDecision => WorldCommitKind.EncounterDecision,
+        WorldBatchKind.EncounterResolution => WorldCommitKind.EncounterResolution,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
 

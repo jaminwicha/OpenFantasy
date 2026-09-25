@@ -34,14 +34,12 @@ public sealed class SqliteWorldAuthority : IDisposable
     public static SqliteWorldAuthority CreateNew(string path, WorldSnapshot genesis)
     {
         ArgumentNullException.ThrowIfNull(genesis);
-        if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
-        {
-            throw new ArgumentException("A new local world requires commit zero, step zero and no committed dialogue.", nameof(genesis));
-        }
+        WorldGenesisAdmission.Validate(genesis);
         byte[] bytes = WorldSnapshotCodec.Encode(genesis);
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         int schemaVersion = accepted.ProfileVersion switch
         {
+            22 => WorldDatabaseSchemaFive.Version,
             16 or 17 or 18 => WorldDatabaseSchemaFour.Version,
             3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 19 or 20 or 21 => WorldDatabaseSchemaThree.Version,
             _ => WorldDatabaseSchema.Version

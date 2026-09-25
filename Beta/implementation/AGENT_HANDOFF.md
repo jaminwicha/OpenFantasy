@@ -42,28 +42,38 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Encounter timing and exposure](p02/encounter-timing/README.md) qualifies the portable C# Wait timing
-component: exact five-unit ticks, required-human choices before automatic resolution, deterministic
-ordering, positive retained debt, strict scoped archives and existing exposure carry. Its bounded Host
-diagnostic publishes no world effects. The original exposure subject/rate and exact current timing pin
-are checked on restore; plausible timing bytes are explicitly not authenticated history or effect grants.
+[Live coordinated encounter pacing](p02/live-encounter-pacing/README.md) connects Wait timing to the
+complete terrain/liquid/farm world, actual session and exclusive schema5. Fresh profile22 retains every
+profile21 owner. Authenticated queue/resolution boundaries earn no time; accepted tactical ticks earn
+50 ms. Permanent process carry grants gathering recovery and real liquid flow only at a complete
+1,800 ms interval. Resident exposure, calendar, carry, timing/debt and ordinary receipts commit together.
+Applied Wait receipts mean queued, not resolved. Mining/building receive no passive labor credit.
 
-The complete Core suite passes **1,064 cases** (44 new), zero failed/skipped; solution build has zero
-warnings/errors. An independent integer/byte oracle passes **35 Host processes**, including six sequential
-separate-process recoveries and 21 malformed/foreign-scope refusals. Four independent exposure vectors,
-including wide tactical time, and source critique pass. Original analyzer/script failures remain retained.
-Unchanged Hosting/client/native behavior uses the previous checkpoint's evidence; no rerun is claimed.
+Full managed regression passes **1,083 Core +593 Hosting/client =1,676**, zero failed/skipped; solution
+build has zero warnings/errors. An independent oracle reconstructs all44 complete states across43 commits,
+checks every SQLite ledger and passes14 ordinary Host processes plus2 external commit-boundary kills.
+Actual flow/recovery begins at tick36 after a restart retaining1,750 ms carry. Critic-found resident
+exposure and pending-choice serialization-headroom gaps are fixed. The initial oracle helper error and
+all evidence remain in the packet. Headless native farm/recovery and Host/Godot foundation controls also
+pass. Maximum-root headroom is source-reviewed, not experimentally qualified.
 
-This is a component prerequisite, not a live combat world/profile, SQLite encounter recovery, full Wait
-pocket/continuation, HP consequence owner, native encounter or phase closure. Next bind versioned 50 ms
-tactical time and persisted process intervals to the ordinary world without multiplying 1800 ms exploration
-allowances; then add complete damage/incapacity gates, source-backed field encounters and native action
-presentation. [Design](p02/encounter-timing/DESIGN.md) preserves those dependencies and all wet/co-op/scale
-obligations. [Architecture](../Runtime/docs/architecture/encounter-timing.md) records the stable contract.
+This is durable live timing, not playable combat or phase closure. Active encounters are admitted only
+at fresh genesis and support costed Wait. Next implement source-backed action legality, HP/incapacity and
+effects, then legal entry/staging/release and native presentation. Release must retain action debt/process
+carry and revalidate support/hazards. Joining/merging, controller handoff, independent co-op, full dependency
+closure/fallback, production scale and all campaign gates remain open. No ordinary launch/save is changed.
+[World pacing architecture](../Runtime/docs/architecture/world-pacing.md) records the source bindings.
 
-Qualified commit `0b01a2e` is preserved on `codex/milestone-encounter-timing`. Development remains on
-`codex/runtime-foundation`; all41 previous markers,22 frozen designs and the unrelated19-file predecessor
-index are preserved. No full phase closes.
+Development remains on `codex/runtime-foundation`; preserve all42 earlier markers,22 frozen designs and
+the unrelated19-file predecessor index. The core/application remain pure C#, with no native/IPC migration.
+
+## Prior portable timing
+
+[Encounter timing and exposure](p02/encounter-timing/README.md), commit `0b01a2e` preserved on
+`codex/milestone-encounter-timing`, establishes portable Wait readiness, required choices, positive debt,
+scoped archives and exposure carry. Its checkpoint passed1,064 Core cases and35 independent Host
+processes; it did not yet bind live world/SQLite effects. That diagnostic-only historical scope remains
+preserved while the newer world binding above uses explicit admission and authenticated replay.
 
 ## Prior native terrain breach
 

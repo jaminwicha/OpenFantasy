@@ -8,7 +8,10 @@ internal enum WorldCommitKind
     AdvancingStep = 1,
     HeldInteraction = 2,
     ProfileMigration = 3,
-    ConsequenceContinuation = 4
+    ConsequenceContinuation = 4,
+    TacticalAdvance = 5,
+    EncounterDecision = 6,
+    EncounterResolution = 7
 }
 
 internal enum WorldIdentityKind

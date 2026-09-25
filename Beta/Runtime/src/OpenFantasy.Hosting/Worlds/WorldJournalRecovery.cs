@@ -36,10 +36,7 @@ internal sealed class WorldJournalRecovery
     {
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
-        if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
-        {
-            throw new InvalidDataException("The local world genesis does not start at an unheld commit zero.");
-        }
+        WorldGenesisAdmission.Validate(genesis);
         if (genesis.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 19 or 20 or 21 && database.SchemaVersion != WorldDatabaseSchemaThree.Version)
         {
             throw new InvalidDataException("A production, quest or construction genesis requires its declared world schema.");
@@ -47,6 +44,10 @@ internal sealed class WorldJournalRecovery
         if ((genesis.ProfileVersion is 16 or 17 or 18) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
         {
             throw new InvalidDataException("A consequence continuation genesis requires its exclusive world schema.");
+        }
+        if ((genesis.ProfileVersion == 22) != (database.SchemaVersion == WorldDatabaseSchemaFive.Version))
+        {
+            throw new InvalidDataException("An encounter pacing genesis requires its exclusive world schema.");
         }
         WorldSnapshot state = genesis;
         WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
@@ -124,6 +125,10 @@ internal sealed class WorldJournalRecovery
         if ((state.ProfileVersion is 16 or 17 or 18) != (database.SchemaVersion == WorldDatabaseSchemaFour.Version))
         {
             throw new InvalidDataException("The consequence continuation world and its exclusive schema disagree.");
+        }
+        if ((state.ProfileVersion == 22) != (database.SchemaVersion == WorldDatabaseSchemaFive.Version))
+        {
+            throw new InvalidDataException("The encounter pacing world and its exclusive schema disagree.");
         }
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps

@@ -43,6 +43,7 @@ public static class WorldAdmissionValidator
         admission.ReadExcavation();
         admission.ReadStructuralPolicy();
         admission.ReadPendingExcavation();
+        admission.ReadPacing();
         return admission.Complete();
     }
 
@@ -119,6 +120,18 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed);
+
+        internal void ReadPacing()
+        {
+            if (world.Pacing is not { } pacing) return;
+            Definition(WorldPacingState.ProcessRate.OutputUnitId, WorldIdentityRole.ProcessUnit, WorldPacingState.ProcessRate.RulesVersion);
+            if (pacing.Encounter is not { } encounter) return;
+            Add(encounter.EncounterId, WorldIdentityRole.Encounter, unique: true);
+            foreach (var decision in encounter.Decisions)
+            {
+                Add(decision.DecisionId, WorldIdentityRole.CauseReference, unique: true);
+            }
+        }
 
         internal void ReadPendingExcavation()
         {

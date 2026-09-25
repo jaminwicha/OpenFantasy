@@ -110,3 +110,10 @@ need load, pressure and failure rules. Mechanical gates, pumps, spill beyond the
 with different properties, reactions, phase changes, ecology, offscreen exchange and temporal encounter
 boundaries each need compatible state and publication contracts. Presentation consumes permitted committed
 geometry and receipts; a Host diagnostic does not establish a native action interface or art acceptance.
+
+## Coordinated pacing composition
+
+[World pacing](world-pacing.md) retains this complete terrain/liquid/excavation ownership in an explicit
+profile with accepted tactical exposure and process carry. Liquid placement advances only at its earned
+1,800 ms boundary, which can precede the partial world calendar. Ordinary exploration retains the
+existing excavation rules; active Wait permits timing boundaries only and grants no mining labor.

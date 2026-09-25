@@ -75,6 +75,8 @@ internal sealed class HostApplication
                     _composed.CreateContainedReservoirWorld(database, basis, seals),
                 ["--create-liquid-cell-world", var database, var basis, var cells] =>
                     _composed.CreateLiquidCellWorld(database, basis, cells),
+                ["--create-paced-world", var database, var basis, var encounter] =>
+                    _composed.CreatePacedWorld(database, basis, encounter),
                 ["--create-reservoir-transport-world", var database, var basis, var transport] =>
                     _composed.CreateReservoirTransportWorld(database, basis, transport),
                 ["--execute-world-step", var database, var step] => _composed.ExecuteStep(database, step),
@@ -132,6 +134,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --create-reservoir-world <world.sqlite> <construction-genesis.bin> <reservoirs.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-contained-reservoir-world <world.sqlite> <profile8-genesis.bin> <seal-policy.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-liquid-cell-world <world.sqlite> <profile19-genesis.bin> <liquid-cells.bin>");
+        _output.WriteLine("       OpenFantasy.Host --create-paced-world <world.sqlite> <profile21-genesis.bin> <encounter-id|none>");
         _output.WriteLine("       OpenFantasy.Host --create-reservoir-transport-world <world.sqlite> <construction-genesis.bin> <reservoir-transport.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>");
         _output.WriteLine("These commands require exclusive local database access; they do not authenticate network clients.");

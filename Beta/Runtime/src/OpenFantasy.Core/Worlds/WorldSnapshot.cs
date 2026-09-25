@@ -34,9 +34,9 @@ public sealed class WorldSnapshot
         ConsequenceExecutionPolicy? consequencePolicy = null, PendingExcavation? pendingExcavation = null,
         CoupledSettlementPolicy? coupledSettlementPolicy = null,
         ConstructionDescentMode descentMode = ConstructionDescentMode.CommonTrajectory,
-        ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null)
+        ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, null)
     {
     }
 
@@ -50,7 +50,7 @@ public sealed class WorldSnapshot
         StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
         PendingExcavation? pendingExcavation, CoupledSettlementPolicy? coupledSettlementPolicy,
         ConstructionDescentMode descentMode, ReservoirSealPolicy? reservoirSeals, LiquidCellState? liquidCells,
-        WorldIdentityIndex? previous)
+        WorldPacingState? pacing, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -156,6 +156,7 @@ public sealed class WorldSnapshot
         DescentMode = descentMode;
         ReservoirSeals = reservoirSeals;
         LiquidCells = liquidCells;
+        Pacing = pacing;
         if (liquidCells is not null && reservoirSeals is null)
         {
             throw new ArgumentException("Detailed liquid placement requires the complete contained reservoir owner.");
@@ -214,6 +215,7 @@ public sealed class WorldSnapshot
             throw new ArgumentException("Structural policy requires complete physical construction in its exact terrain scope.");
         }
         PendingExcavation?.ValidateForWorld(this);
+        WorldPacingAdmission.Validate(this);
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
         if (structuralPolicy is not null)
         {
@@ -258,7 +260,10 @@ public sealed class WorldSnapshot
     public PendingExcavation? PendingExcavation { get; }
     public CoupledSettlementPolicy? CoupledSettlementPolicy { get; }
     public ConstructionDescentMode DescentMode { get; }
-    public ushort ProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
+    public WorldPacingState? Pacing { get; }
+    public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
+    public ushort ProfileVersion => Pacing is not null ? (ushort)22 : BaseProfileVersion;
+    internal ushort BaseProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
         : DescentMode == ConstructionDescentMode.EventOrdered ? (ushort)18
         : CoupledSettlementPolicy is not null ? (ushort)17 : ConsequencePolicy is not null ? (ushort)16 : StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
         : ConstructionPhysical is not null ? (ushort)13
@@ -289,7 +294,7 @@ public sealed class WorldSnapshot
         IEnumerable<DialogueSession> dialogues, GatheringSnapshot? gathering, ProductionSnapshot? production,
         ProgressionSnapshot? progression, QuestSnapshot? quests, ConstructionSnapshot? construction,
         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
-        ConstructionPhysicalSnapshot? constructionPhysical, LiquidCellState? liquidCells = null)
+        ConstructionPhysicalSnapshot? constructionPhysical, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null)
     {
         if (PendingExcavation is not null)
         {
@@ -320,13 +325,18 @@ public sealed class WorldSnapshot
         {
             throw new ArgumentException("A world successor must retain its detailed liquid placement owner.");
         }
+        pacing ??= Pacing;
+        if ((pacing is null) != (Pacing is null))
+        {
+            throw new ArgumentException("A successor must retain its process clock owner.");
+        }
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, IdentityIndex);
     }
     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
         Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
-        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, IdentityIndex);
+        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, IdentityIndex);
 }

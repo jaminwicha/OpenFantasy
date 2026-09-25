@@ -40,6 +40,14 @@ public sealed class WorldStepProcessor
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
         }
 
+        if (state.Pacing?.Encounter is not null)
+        {
+            return WorldEncounterProcessor.Decide(state, batch, historicallyOccupied);
+        }
+        if (batch.Kind is WorldBatchKind.EncounterDecision or WorldBatchKind.EncounterResolution or WorldBatchKind.TacticalAdvance)
+        {
+            throw new InvalidOperationException("No active encounter owns the selected tactical boundary.");
+        }
         if ((batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null))
         {
             throw new InvalidOperationException("Pending work accepts only its explicit continuation.");
@@ -98,6 +106,7 @@ public sealed class WorldStepProcessor
         List<WorldActionReceipt> receipts = [];
         WorldInstant calendar = state.Calendar;
         ulong advancingSteps = state.AdvancingSteps;
+        WorldPacingState? pacing = state.Pacing;
         IEnumerable<WorldResident> residents = state.Residents;
 
         bool FitsCompleteCandidate(CountedAuthorityState proposedInventory,
@@ -119,10 +128,12 @@ public sealed class WorldStepProcessor
                 // Its earned labor is validated against that eventual time boundary, exactly once.
                 bool beforeTimeBoundary = (state.StructuralSettlementPolicy is not null || state.ReservoirSeals is not null)
                     && batch.Kind == WorldBatchKind.AdvancingStep && advancingSteps == state.AdvancingSteps;
-                var validationCalendar = beforeTimeBoundary ? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep) : calendar;
+                var validationPacing = beforeTimeBoundary ? pacing?.AdvanceExploration() : pacing;
+                var validationCalendar = validationPacing?.Calendar
+                    ?? (beforeTimeBoundary ? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep) : calendar);
                 var validationResidents = beforeTimeBoundary ? state.Residents.Select(resident => resident.ExperienceStep()) : residents;
                 ulong validationSteps = beforeTimeBoundary ? checked(advancingSteps + 1) : advancingSteps;
-                var validationGathering = beforeTimeBoundary ? gathering?.AdvanceStep(validationSteps) : gathering;
+                var validationGathering = beforeTimeBoundary ? gathering?.AdvanceStep(validationPacing?.ProcessIntervals ?? validationSteps) : gathering;
                 // The contained profile must join the accepted material candidate with its own
                 // reconciled physical storage. Earlier profiles retain their exact interpreter.
                 var validationReservoirs = state.ReservoirSeals is not null ? proposedReservoirs : reservoirs;
@@ -133,7 +144,7 @@ public sealed class WorldStepProcessor
                     ? proposedLiquidCells.AdvanceBoundary(validationCalendar) : proposedLiquidCells;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells);
+                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing);
                 if (state.ConsequencePolicy is not null || state.ReservoirSeals is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
                 admittedCandidate = admitted;
                 return true;
@@ -350,7 +361,8 @@ public sealed class WorldStepProcessor
         if (batch.Kind == WorldBatchKind.AdvancingStep)
         {
             // The already selected step contributes once, including when an action opens a hold.
-            calendar = calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);
+            pacing = pacing?.AdvanceExploration();
+            calendar = pacing?.Calendar ?? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);
             advancingSteps = checked(advancingSteps + 1);
             if (transport is not null)
             {
@@ -363,7 +375,7 @@ public sealed class WorldStepProcessor
                     Reserve(identity, WorldCommittedIdentityKind.SpawnedEntity);
                 }
             }
-            gathering = gathering?.AdvanceStep(advancingSteps);
+            gathering = gathering?.AdvanceStep(pacing?.ProcessIntervals ?? advancingSteps);
             residents = state.Residents.Select(resident => resident.ExperienceStep());
             if (liquidCells is not null)
             {
@@ -399,7 +411,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing);
         if (liquidCells is not null && admittedMovement is null)
         {
             // Fragment growth must also fit the complete retained root before authority preparation succeeds.

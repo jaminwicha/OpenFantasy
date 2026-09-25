@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_encounter_pacing.py", line 302, in <module>
+    main()
+    ~~~~^^
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_encounter_pacing.py", line 218, in main
+    predicted, outcomes = predict(root_of(states[revision - 1]), (fixture / f'step-{revision}.bin').read_bytes())
+                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_encounter_pacing.py", line 138, in predict
+    return frame('world.snapshot', *result[1:]), sorted(receipts, key=lambda encoded: read_frame(encoded)[2])
+                                                 ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_encounter_pacing.py", line 138, in <lambda>
+    return frame('world.snapshot', *result[1:]), sorted(receipts, key=lambda encoded: read_frame(encoded)[2])
+                                                                                      ~~~~~~~~~~^^^^^^^^^
+TypeError: read_frame() missing 1 required positional argument: 'tag'

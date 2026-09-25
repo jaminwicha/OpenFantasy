@@ -68,6 +68,8 @@ public sealed class WorldResident
     public LocalExposureDuration ExperiencedTime { get; }
     public ResidentUtterance? OpeningUtterance { get; }
 
-    internal WorldResident ExperienceStep() => new(ActorId, InventoryCustodianId, DisplayName, ControllerKind,
-        HomeFeet, WanderRadiusCells, Comprehension, ExperiencedTime.Add(ExposurePacingV1.FromExplorationSteps(1)), OpeningUtterance);
+    internal WorldResident ExperienceStep() => Experience(ExposurePacingV1.FromExplorationSteps(1));
+
+    internal WorldResident Experience(LocalExposureDuration duration) => new(ActorId, InventoryCustodianId, DisplayName, ControllerKind,
+        HomeFeet, WanderRadiusCells, Comprehension, ExperiencedTime.Add(duration), OpeningUtterance);
 }

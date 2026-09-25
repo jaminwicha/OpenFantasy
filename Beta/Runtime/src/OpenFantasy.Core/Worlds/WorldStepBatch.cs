@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Geography;
@@ -8,7 +9,7 @@ using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
 
-public enum WorldBatchKind { AdvancingStep = 1, HeldInteraction = 2, ConsequenceContinuation = 4 }
+public enum WorldBatchKind { AdvancingStep = 1, HeldInteraction = 2, ConsequenceContinuation = 4, TacticalAdvance = 5, EncounterDecision = 6, EncounterResolution = 7 }
 
 /// <summary>One control sample selected at the host cutoff; it cannot request extra simulation time.</summary>
 public sealed record WorldMovementInput
@@ -47,7 +48,7 @@ public sealed class WorldStepBatch
     {
         ArgumentNullException.ThrowIfNull(movement);
         ArgumentNullException.ThrowIfNull(actions);
-        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
+        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
         {
             throw new ArgumentException("The world batch kind or cause identity is invalid.");
         }
@@ -65,11 +66,15 @@ public sealed class WorldStepBatch
         foreach (WorldActionCommand command in actions)
         {
             ArgumentNullException.ThrowIfNull(command);
+            if (command.Intent is QueueEncounterWaitIntent && (profileVersion != 22 || kind != WorldBatchKind.EncounterDecision))
+            {
+                throw new ArgumentException("Encounter choices require their explicit decision boundary.");
+            }
             if (command.Intent is ClimbIntent && profileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18)
             {
                 throw new ArgumentException("Assisted climbing requires its explicit world profile.");
             }
-            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21)
+            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22)
             {
                 throw new ArgumentException("Excavation requires its explicit world profile.");
             }
@@ -108,6 +113,15 @@ public sealed class WorldStepBatch
             && (profileVersion is not 16 and not 17 and not 18 || moving.Count != 0 || acting.Count != 0))
         {
             throw new ArgumentException("Consequence continuation accepts no new controls or commands.");
+        }
+        if (kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterResolution or WorldBatchKind.EncounterDecision)
+        {
+            if (profileVersion != 22 || moving.Count != 0
+                || kind == WorldBatchKind.EncounterDecision && (acting.Count == 0 || acting.Values.Any(command => command.Intent is not QueueEncounterWaitIntent))
+                || kind != WorldBatchKind.EncounterDecision && acting.Count != 0)
+            {
+                throw new ArgumentException("Encounter boundaries require complete decision-only or actionless tactical inputs.");
+            }
         }
         CauseId = causeId;
         WorldId = worldId;

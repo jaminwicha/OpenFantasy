@@ -45,10 +45,13 @@ per-face allowance. Flow preparation in an action preflight never creates a seco
 
 ## Design contract: Wait encounters
 
-The [portable encounter timing component](encounter-timing.md) owns canonical actor readiness,
-required-choice barriers, zero-duration confirmations and scoped exposure carry. It produces immutable
-proposals and exact component archives. Its presence does not convert the local world's dialogue hold
-or exploration interval into a live encounter, authenticate timing ancestry, or grant action effects.
+The [portable encounter timing component](encounter-timing.md) owns canonical readiness, required-choice
+barriers and exposure carry. The [complete world pacing binding](world-pacing.md) adds authenticated Wait
+choices, 50 ms tactical ticks, zero-duration queue/resolution commits and exact SQLite recovery for a
+coordinated resident set. Permanent pacing separates selected advancing batches from earned 1,800 ms
+process intervals. Passive gathering recovery and real liquid flow publish only at those boundaries.
+Dialogue holds and exploration retain their own semantics; damage and encounter lifecycle have distinct
+admission requirements.
 
 Encounter stages are exploration, confrontation, staging, ready/hold, resolving, outcome and release.
 Admission claims participants and consequential dependencies before hostile effects apply. Staging

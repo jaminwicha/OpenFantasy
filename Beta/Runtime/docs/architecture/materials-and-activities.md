@@ -172,3 +172,11 @@ unchanged; releasing stock is a separate custody operation.
 adds geometric volume limits to mapped sources, buffers and receivers. It counts all raw/derived goods
 once under one exact incompressible-material calibration. Equilibrium column fills are projections of
 that custody; they do not issue per-cell source claims or supply an unlimited waiting-flow buffer.
+
+## Applicable process intervals
+
+The [coordinated world pacing owner](world-pacing.md) distinguishes advancing batches from earned
+1,800 ms passive-process intervals. Gathering validation, recovery and public regrowth visibility use
+`WorldSnapshot.ProcessIntervals`; legacy worlds retain their advancing-step interpretation. Tactical
+ticks accumulate fractional exposure rather than granting repeated exploration allowances. Construction
+and excavation still require their actual actions and earn no labor from that passive carry.

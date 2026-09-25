@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-encounter-pacing/qualification/live-encounter-pacing-fb6e6c31ce5b48cb81a7068df82b3b8f",
+  "runs": [],
+  "crashes": [],
+  "error": "TypeError(\"read_frame() missing 1 required positional argument: 'tag'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_encounter_pacing.py\", line 218, in main\n    predicted, outcomes = predict(root_of(states[revision - 1]), (fixture / f'step-{revision}.bin').read_bytes())\n                          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_encounter_pacing.py\", line 138, in predict\n    return frame('world.snapshot', *result[1:]), sorted(receipts, key=lambda encoded: read_frame(encoded)[2])\n                                                 ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_encounter_pacing.py\", line 138, in <lambda>\n    return frame('world.snapshot', *result[1:]), sorted(receipts, key=lambda encoded: read_frame(encoded)[2])\n                                                                                      ~~~~~~~~~~^^^^^^^^^\nTypeError: read_frame() missing 1 required positional argument: 'tag'\n"
+}

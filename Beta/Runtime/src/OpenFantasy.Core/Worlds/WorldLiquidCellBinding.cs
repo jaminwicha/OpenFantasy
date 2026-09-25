@@ -13,8 +13,8 @@ internal static class WorldLiquidCellBinding
             return;
         }
         if (world.Reservoirs is not { } reservoirs || world.ReservoirSeals is null
-            || cells.ReservoirHash != reservoirs.ContentHash || cells.Boundary != world.Calendar
-            || cells.Revision != world.AdvancingSteps)
+            || cells.ReservoirHash != reservoirs.ContentHash || cells.Boundary != (world.Pacing?.ProcessBoundary ?? world.Calendar)
+            || cells.Revision != world.ProcessIntervals)
         {
             throw new ArgumentException("Detailed liquid requires the exact contained material owner, calendar and advancing-step boundary.");
         }
