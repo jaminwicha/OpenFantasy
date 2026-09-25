@@ -59,6 +59,10 @@ public sealed class WorldSnapshot
         ArgumentNullException.ThrowIfNull(space);
         ArgumentNullException.ThrowIfNull(residents);
         ArgumentNullException.ThrowIfNull(admissionVersion);
+        if (production?.SupportsConsumption == true)
+        {
+            throw new ArgumentException("Administered material requires a complete care-enabled world profile.", nameof(production));
+        }
         if (space.Scope.WorldId != inventory.WorldId || space.Scope.BranchId != inventory.BranchId)
         {
             throw new ArgumentException("Presence and inventory must belong to the same world and branch.");

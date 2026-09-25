@@ -62,6 +62,22 @@ internal sealed class ProductionIdentityRegistry
                 Add(reservation, "reservation");
             }
         }
+        var commandIds = state.Batches.Select(batch => batch.CommandId).ToHashSet();
+        foreach (ConsumedItemClaim claim in state.ConsumedItems)
+        {
+            if (!commandIds.Add(claim.CommandId))
+                throw new ArgumentException("A consumed item command cannot be reused by another consumption or production batch.");
+            Add(claim.ConsumptionId, "consumption");
+            Add(claim.CommandId, "command");
+            Add(claim.ActorId, "actor");
+            Add(claim.RecipientActorId, "actor");
+            Add(claim.CustodianId, "custodian");
+            RetiredIngredient ingredient = claim.Ingredient;
+            Add(ingredient.LotId, ingredient.Kind == IngredientLotKind.Source ? "raw-lot" : "derived-lot");
+            AddPin(ingredient.Definition.DefinitionId, "item", ingredient.Definition.Version);
+            if (ingredient.Source is { } source) Add(source.SourceId, "source");
+            else Add(ingredient.Output!.BatchId, "batch");
+        }
     }
 
     private ProductionIdentityRegistry(ProductionIdentityRegistry original)

@@ -40,6 +40,7 @@ different kind of person.
 | [Detailed liquid flow](liquid-cell-flow.md) | How does source-backed liquid move between cells without relaying or losing material? |
 | [Actors and society](actors-and-society.md) | How do bodies, knowledge, relationships, cultures, institutions and narratives interact? |
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
+| [Item consumption](item-consumption.md) | How do candidate material retirement and explicit production archives retain consumed rights without granting treatment or world publication? |
 | [Presentation and interaction](presentation-and-interaction.md) | How do actions, menus, maps, animation, art and audio express the simulation? |
 | [Content and composition](content-and-composition.md) | How are source content, procedural opportunities, progression and cross-system changes admitted? |
 

@@ -39,7 +39,7 @@ public sealed class InstantCraftPlanner
         List<RetiredIngredient> retired = [];
         foreach (IngredientRequest selected in request.Ingredients)
         {
-            RetiredIngredient? ingredient = SelectIngredient(inventory, production, request.CustodianId, selected);
+            RetiredIngredient? ingredient = MaterialLotSelection.Select(inventory, production, request.CustodianId, selected);
             if (ingredient is null)
             {
                 return Reject(WorldActionRejection.Unavailable);
@@ -81,31 +81,6 @@ public sealed class InstantCraftPlanner
         {
             return Reject(WorldActionRejection.Unavailable);
         }
-    }
-
-    private static RetiredIngredient? SelectIngredient(CountedAuthorityState inventory, ProductionSnapshot production,
-        EntityId custodianId, IngredientRequest selected)
-    {
-        if (selected.Kind == IngredientLotKind.Source)
-        {
-            CountedSourceLot? lot = inventory.Custody.Lots.FirstOrDefault(value => value.LotId == selected.LotId);
-            if (lot is null || lot.CustodianId != custodianId || lot.Revision != selected.ExpectedRevision
-                || lot.Protection != LotProtection.None || lot.ReservedBy is not null || selected.Quantity > lot.Quantity)
-            {
-                return null;
-            }
-            return new RetiredIngredient(lot.LotId, lot.Revision, lot.Definition,
-                new SourceInterval(lot.Source.SourceId, lot.Source.Start, checked(lot.Source.Start + selected.Quantity)));
-        }
-        TransformedLot? derived = production.Lots.FirstOrDefault(value => value.LotId == selected.LotId);
-        if (derived is null || derived.CustodianId != custodianId || derived.Revision != selected.ExpectedRevision
-            || derived.Protection != LotProtection.None || derived.ReservedBy is not null || selected.Quantity > derived.Quantity)
-        {
-            return null;
-        }
-        return new RetiredIngredient(derived.LotId, derived.Revision, derived.Definition,
-            new ProductionOutputInterval(derived.Output.BatchId, derived.Output.OutputIndex,
-                derived.Output.Start, checked(derived.Output.Start + selected.Quantity)));
     }
 
     private static bool MatchesRecipe(CraftRecipeDefinition recipe, IEnumerable<RetiredIngredient> retired)

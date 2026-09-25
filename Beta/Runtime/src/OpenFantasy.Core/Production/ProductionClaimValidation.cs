@@ -32,6 +32,11 @@ internal static class ProductionClaimValidation
         {
             AddOutputClaim(state, batches, outputClaims, lot.Output, lot.Definition);
         }
+        foreach (ConsumedItemClaim claim in state.ConsumedItems)
+        {
+            if (claim.Ingredient.Output is { } output)
+                AddOutputClaim(state, batches, outputClaims, output, claim.Ingredient.Definition);
+        }
         foreach (ProductionBatch batch in state.Batches)
         {
             CraftRecipeDefinition recipe = state.GetRecipe(batch.RecipeId);
@@ -57,8 +62,9 @@ internal static class ProductionClaimValidation
             }
         }
         ValidateAcyclic(dependencies);
-        ValidateLotHistory(state.Batches.SelectMany(batch => batch.Ingredients), state.Lots);
-        ValidateDisjointRaw(state.Batches.SelectMany(batch => batch.Ingredients)
+        RetiredIngredient[] retired = RetiredItems(state).ToArray();
+        ValidateLotHistory(retired, state.Lots);
+        ValidateDisjointRaw(retired
             .Where(value => value.Source is not null).Select(value => (value.Source!, value.Definition)));
     }
 
@@ -78,7 +84,7 @@ internal static class ProductionClaimValidation
 
     internal static void ValidateSourceClaims(ProductionSnapshot state, CountedAuthorityState inventory)
     {
-        RetiredIngredient[] retired = state.Batches.SelectMany(batch => batch.Ingredients).ToArray();
+        RetiredIngredient[] retired = RetiredItems(state).ToArray();
         foreach (RetiredIngredient ingredient in retired.Where(value => value.Source is not null))
         {
             SourceInterval interval = ingredient.Source!;
@@ -104,6 +110,9 @@ internal static class ProductionClaimValidation
             }
         }
     }
+
+    private static IEnumerable<RetiredIngredient> RetiredItems(ProductionSnapshot state) =>
+        state.Batches.SelectMany(batch => batch.Ingredients).Concat(state.ConsumedItems.Select(claim => claim.Ingredient));
 
     private static void ValidateDisjointRaw(IEnumerable<(SourceInterval Interval, CountedItemDefinition Definition)> claims)
     {

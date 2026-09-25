@@ -61,7 +61,8 @@ internal static class MaterialTransformCommitter
                 ? storage with { Revision = checked(storage.Revision + 1) } : storage), rawLots);
         CountedAuthorityState candidateInventory = inventory.WithCustody(custody);
         var candidateProduction = new ProductionSnapshot(production.WorldId, production.BranchId, checked(production.Revision + 1),
-            production.Recipes, [.. production.Batches, batch], derivedLots);
+            production.Recipes, [.. production.Batches, batch], derivedLots,
+            production.SupportsConsumption ? production.ConsumedItems : null);
         candidateProduction.ValidateForAuthority(candidateInventory);
         return new CraftPlan(candidateInventory, candidateProduction, WorldActionRejection.None, created);
     }

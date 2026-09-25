@@ -31,6 +31,7 @@
     <None Update="Fixtures/encounter-exposure-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/production-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/production-ledger-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/production-consumption-v2.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/world-production-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/actors-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/observations-v1.json" CopyToOutputDirectory="PreserveNewest" />

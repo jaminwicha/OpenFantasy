@@ -42,6 +42,33 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Accountable item consumption](p02/item-consumption/README.md) supplies pure-C# domain candidates
+that retain exact raw/produced dose rights, command-derived identity and acting/recipient/custodian
+participants. V2 production retains these dispositions through crafting and canonical restore;
+old V1 bytes stay separate. Every existing complete-world profile rejects the enabled owner, so
+this does not yet expose live Use/Aid or change HP, saves or gameplay. The
+[architecture reference](../Runtime/docs/architecture/item-consumption.md) separates material
+consistency from actual permission, raw issuance proof and durable history.
+
+The retained Potion/three-berry recipe fixture exercises raw consumption, actual fabrication,
+crafted consumption, component restore and another craft with finite 240,000 mg accounting under
+explicit test calibration. Four independent Python byte/hash vectors and two adversarial archives
+cross-check actual C# candidates. The critic-found arbitrary consumption identity is fixed at
+construction/restore; the [review](p02/item-consumption/REVIEW.md) retains that finding and test-build
+failures. The final solution build has zero warnings/errors; full regression passes 1,200 Core +
+649 Hosting/client = 1,849 cases, zero failed/skipped. Both V2 and existing V1 independent fixtures
+reproduce exactly. All47 prior milestones,22 frozen specs and the unrelated19-file index are intact.
+No full recovery gate closes; this increment includes no new native/crash/production-scale claim.
+
+Next finish the [profile25 finite-aid contract](p02/encounter-choice-validation/RECOVERY_DESIGN.md):
+prior care agreement, exact outcome acknowledgment, real neutral nearby helper and atomic dose/HP/
+debt/phase effects, preserving the lethal attack through an ordered resource supersession witness.
+Join raw issuance/history and all geography/material retirement consumers before admitting V2 to
+any complete world. Durable recovery and native defeat → aid → renewed choice remain required.
+The current defeated player still has no continuation; all broader gates remain open.
+
+## Prior native choice validation
+
 [Native Wait and incapacitated outcome](p02/encounter-choice-validation/README.md) qualifies seven
 actual costed Waits through wheel, keyboard, controller and pointer, ending with original player HP0
 and wolf HP62. Two rendered Godot processes and five Host historical reads pass. An independent

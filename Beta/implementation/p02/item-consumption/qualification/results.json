@@ -1,0 +1,45 @@
+{
+  "status": "qualified-standalone-material-dependency",
+  "build": {
+    "log": "build-03.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "focused-core-01.log": {
+      "failed": 0,
+      "passed": 115,
+      "skipped": 0,
+      "sha256": "eadf2933c9d8d670e234cf358c4d264bda2486000dff834c22cd71c0d109d835"
+    },
+    "focused-supply-01.log": {
+      "failed": 0,
+      "passed": 4,
+      "skipped": 0,
+      "sha256": "53af1782b66f8109791ba31410033b4afffe586d2ddb8da71ea930da50d4b7b1"
+    },
+    "full-core.log": {
+      "failed": 0,
+      "passed": 1200,
+      "skipped": 0,
+      "sha256": "3ac25ca2fc89916fe91d379d70b0fdf7aed87a5efa019d2300d5e1c989025450"
+    },
+    "full-hosting.log": {
+      "failed": 0,
+      "passed": 649,
+      "skipped": 0,
+      "sha256": "845edfa2715b477fc4de116bdb380ac9098deb583919f3c0e1694e9f12c13350"
+    }
+  },
+  "totalDistinctManagedCases": 1849,
+  "newManagedCases": 54,
+  "independentVectors": 4,
+  "independentMalformedArchives": 2,
+  "sourceFilesVerified": 23,
+  "preservation": "preservation-and-vectors.json",
+  "externalModelCalls": 0,
+  "liveRecoveryImplemented": false,
+  "nativeOrCrashAcceptanceClaimed": false,
+  "fullPhaseClosure": false,
+  "verifiedLocalDocLinks": 729
+}

@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "priorMilestonesPreserved": 47,
+  "frozenSpecsPreserved": 22,
+  "unrelatedStagedFilesPreserved": 19,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "independentFixturesReproduced": {
+    "production-consumption-v2.json": "de649e858f6574faa363e86177c352181e9a93c532cae037e6207b301b89679a",
+    "production-ledger-v1.json": "c99dda211cd17cc266f981e1082b6ec82878cee1ff33bd68e5731dd272be8a47"
+  }
+}

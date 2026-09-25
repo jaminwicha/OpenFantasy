@@ -1,0 +1,28 @@
+{
+  "scope": "Source/project and independent fixture inputs used by build-03 and subsequent tests; documentation is excluded.",
+  "files": {
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ConsumeItemRequest.cs": "78c1b6593208e26f08fc239bad3941d9fac08cce0a6598c189ba77073acbd5fb",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ConsumedItemClaim.cs": "5e6c62f65569265bcd4e6f5fc1519af2d0d5a2e70fe9698a823fba4f9a291365",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/InstantCraftPlanner.cs": "ccaeff8e5bbe5083eb3972533d8b07a150f18e4a34dbe71cfdd54bcbfcb3ca31",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ItemConsumptionPlan.cs": "79685ebdc2d97207c9f81b761776348061a454d60301011b938ffbbc19bd432b",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ItemConsumptionPlanner.cs": "95113eea527c9bb6e3a3d3866097dd57e53807a73d8e0b9c7388efb4884a9f7c",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialLotSelection.cs": "50a3ac64506915a4f4d5d0abeba023a377521ac351fa89dda731f42b8dcc52cc",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/MaterialTransformCommitter.cs": "ba486c9f9aa839ace94c94e864f496afcf81cd7835099d0845a398d5c5f0b032",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionClaimValidation.cs": "4d13883d9a5d43274090c6daa01adc82a75a852f08cd5449f4ff1debe86b49b5",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV1.cs": "7b17c218b874f3c79b70758425413fb792c4abbf7cc966126e85733ebe871838",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV2.cs": "6f413ae455572819782cf36a2a59536f715f25c970b54ade35fab285818de846",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionIdentityRegistry.cs": "a4c3c83e0ed7d799fe131f155baf3608ce7b1e431ded076adb265897db0388f0",
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionSnapshot.cs": "11362ad31a84b14ef6110b7e1864957befe26bdcc22a8493c22a6a3925028b39",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs": "0e127c6dabb27b061f5622be09007694b885dba1e91e97d4054590b6527f6afe",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/generate_production_consumption_vectors.py": "34ea492f78b510a7800adcf34e5ad9e7a75a7af8e1624a4478111a103e10b677",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Fixtures/production-consumption-v2.json": "de649e858f6574faa363e86177c352181e9a93c532cae037e6207b301b89679a",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj": "a48fb3844f3c1243b7280a612282139d05f2650d8afb336b0ba32b6a11186a00",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ConsumptionCodecTests.cs": "7f8405bfadc7dda6e77bf3c0571dbc6fd193dcbdd29d17e4031129232fb76244",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ConsumptionFixture.cs": "03c59b86545c71200464aee80eb559ab63ef26102d3178d49415fff91bdc4457",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ConsumptionLedgerTests.cs": "90113e978aa2eead0f6233b5d7518576a240d3845447e4f142c78b7fdf6dabbc",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ItemConsumptionGoldenTests.cs": "d53c41d819008f8871dbd210ce63374d676d8c1674ade7ed505717f8ece1504b",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ItemConsumptionPlannerTests.cs": "9951bff02a315953e2a8c8a29f0cdd1a1c02988869a5f486d7f707f82c6d6e9c",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyFixture.cs": "f47d25d7192244f6d6b5cbe9a3db4b9927c6626587c97709661592f4c65ba218",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs": "3cac91a8854eb0efd19ced2d9339071e95fe26148f1a9d3fcf25c31c1928c567"
+  }
+}

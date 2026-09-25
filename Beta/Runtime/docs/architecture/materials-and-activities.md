@@ -15,6 +15,13 @@ spendable, and byproducts cannot create additional ancestral rights. Physical bi
 item definition to material measures; counted units, milligrams and volume are not substituted by
 unchecked integer arithmetic.
 
+The standalone [item-consumption owner](item-consumption.md) adds explicit retained dispositions for
+actual raw or produced goods. Its planner validates owned stock and prepares coupled inventory and
+production candidates; complete output partitions prevent reintroducing consumed material. Raw source
+bounds and disjointness still require a complete authority's issuance/history join. Production V2
+retains these claims, while existing world roots reject the enabled owner pending a complete care
+profile. The component grants no health effect, recipient permission, time or durable publication.
+
 [Funded terrain material](world-and-geography.md#domain-contract-funded-terrain-material) reuses this
 counted authority for an explicitly finite homogeneous slab. Detail changes partition existing source
 intervals between coarse and cell-bound custodians; quantities remain derived from actual lots. A

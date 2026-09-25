@@ -8,12 +8,14 @@ public static class ProductionCodecV1
 {
     public const int MaximumSnapshotByteLength = 16 * 1024 * 1024;
     public const int MaximumRecipeByteLength = 128 * 1024;
-    private const int MaximumBatchByteLength = 32 * 1024;
-    private const int MaximumLotByteLength = 512;
+    internal const int MaximumBatchByteLength = 32 * 1024;
+    internal const int MaximumLotByteLength = 512;
 
     public static byte[] Encode(ProductionSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
+        if (state.SupportsConsumption)
+            throw new ArgumentException("Production V1 cannot encode a consumption-enabled owner.", nameof(state));
         return Frame("production.snapshot", Number(1), Id(state.WorldId), Id(state.BranchId), Number(state.Revision),
             Collection("production.recipes", state.Recipes.Select(EncodeRecipe)),
             Collection("production.batches", state.Batches.Select(EncodeBatch)),
@@ -139,7 +141,7 @@ public static class ProductionCodecV1
         Id(batch.CommandId), Id(batch.ActorId), Id(batch.CustodianId), Id(batch.RecipeId), batch.RecipeVersion.ToByteArray(),
         Collection("production.retired", batch.Ingredients.Select(EncodeRetired)));
 
-    private static ProductionBatch DecodeBatch(ReadOnlySpan<byte> bytes)
+    internal static ProductionBatch DecodeBatch(ReadOnlySpan<byte> bytes)
     {
         var reader = new CanonicalProductionReader(bytes, MaximumBatchByteLength, 9);
         reader.ExpectTag("production.batch"u8);
@@ -163,11 +165,11 @@ public static class ProductionCodecV1
         return new ProductionBatch(id, command, actor, custodian, recipe, version, values);
     }
 
-    private static byte[] EncodeRetired(RetiredIngredient value) => Frame("production.ingredient", Number(1),
+    internal static byte[] EncodeRetired(RetiredIngredient value) => Frame("production.ingredient", Number(1),
         Number((ulong)value.Kind), Id(value.LotId), Number(value.Revision), Id(value.Definition.DefinitionId),
         value.Definition.Version.ToByteArray(), value.Source is { } source ? EncodeSource(source) : EncodeOutput(value.Output!));
 
-    private static RetiredIngredient DecodeRetired(ReadOnlySpan<byte> bytes)
+    internal static RetiredIngredient DecodeRetired(ReadOnlySpan<byte> bytes)
     {
         var reader = new CanonicalProductionReader(bytes, 384, 8);
         reader.ExpectTag("production.ingredient"u8);
@@ -186,11 +188,11 @@ public static class ProductionCodecV1
         };
     }
 
-    private static byte[] EncodeLot(TransformedLot lot) => Frame("production.lot", Number(1), Id(lot.LotId),
+    internal static byte[] EncodeLot(TransformedLot lot) => Frame("production.lot", Number(1), Id(lot.LotId),
         Id(lot.CustodianId), Id(lot.Definition.DefinitionId), lot.Definition.Version.ToByteArray(), EncodeOutput(lot.Output),
         Number(lot.Revision), Number((ulong)lot.Protection), lot.ReservedBy is { } reserved ? Id(reserved) : []);
 
-    private static TransformedLot DecodeLot(ReadOnlySpan<byte> bytes)
+    internal static TransformedLot DecodeLot(ReadOnlySpan<byte> bytes)
     {
         var reader = new CanonicalProductionReader(bytes, MaximumLotByteLength, 10);
         reader.ExpectTag("production.lot"u8);

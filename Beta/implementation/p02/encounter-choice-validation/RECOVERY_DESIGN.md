@@ -1,7 +1,8 @@
 # Encounter aftermath and finite aid: implementation contract
 
-Status: designed dependency; not executable recovery. The current profile24 behavior and its exact
-replays remain preserved. This contract implements part of the existing defeat/healing obligations;
+Status: designed recovery; [accountable material candidates](../item-consumption/README.md) are its
+first executable dependency. No live care state or recovery is admitted. The current profile24 behavior
+and its exact replays remain preserved. This contract implements part of the existing defeat/healing obligations;
 it does not replace flight, surrender, rescue, captivity, death, succession or the full injury design.
 
 ## Evidence and conflict
@@ -75,7 +76,7 @@ Claims retain the exact raw source or produced output interval, original lot/rev
 recipient, helper, cause and result identity. Retain the administered material disposition explicitly;
 it is not a completed metabolism simulation or capacity-free transferable storage.
 
-The existing production owner has no terminal consumption sink: recipes require actual output, and
+The V1 production owner has no terminal consumption sink: recipes require actual output, and
 every produced interval must remain live or retired into another recipe. Therefore do not silently
 delete a Potion, fabricate an empty bottle with the Potion's full mass, or hide the dose in a fake
 craft. Extend the complete raw/produced partition admission to include administered claims, including
@@ -83,12 +84,20 @@ source prefixes, lot history and overlap with fabrication, constructions and oth
 same dose being consumed, delivered, crafted or installed twice. Raw and crafted remedies must share
 this contract; neither may become an unaccounted special case.
 
-This is a production-owner change, not only a root-level afterthought. Its constructor currently
-rejects missing produced intervals before world admission can run. Version the production
-construction/decoding boundary to accept and validate the exact external administered claims, and
-bind those claims back to the same care owner in complete admission. Combine fabrication and care
-claims for overlap and surviving-lot revision checks. Do not create two independently editable ledgers
-that can disagree about which dose remains spendable.
+This is a production-owner change, not only a root-level afterthought. Production V2 now includes
+explicit consumption claims in its constructor/partition validation, exact provenance, shared lot
+history and canonical encoding. Its candidate planner preserves complete produced-output coverage;
+generic raw source validation proves finite bounds/disjointness, not issuance completeness. The new
+owner is rejected by every existing complete world profile. Bind those exact claims back to the same
+care owner in complete admission and join actual source issuance/history before enabling profile25.
+Do not create independently editable ledgers that can disagree about which dose remains spendable.
+
+Composition seams include `ExcavationSnapshot`, `WatershedRunoffDomain`,
+`WatershedRunoffCapacityState`, `TerrainMaterialRegistry` and `WorldAdmissionValidator`.
+Their current recipe-retirement scans must explicitly include or reject consumed dispositions as
+appropriate; no consumed excavation source may become available terrain or reserve capacity again.
+The shared material committer preserves claims through later crafting. Review other owner rebuilds
+when they become reachable from the new profile, preserving V1 behavior.
 
 The world root owns all of these components. A planner can construct a candidate; only the complete
 world transaction may publish it. Profile25 encoding and applicable component versions retain the
@@ -99,7 +108,7 @@ the new owner. Exhausted bounds refuse safely with a diagnostic, without losing 
 
 | Increment | Owners and exit evidence |
 |---|---|
-| Accountable consumption | Dose definitions/claims and canonical care state; exact raw/produced partition coverage, collision/capacity/adversarial restore tests, unchanged old bytes. No live recovery claim yet. |
+| Accountable consumption | Material candidates and V2 claims are implemented as a dependency; bounded evidence is in the [packet](../item-consumption/README.md). Canonical care state and complete raw issuance/history coverage remain required alongside exact produced partitions, collision/capacity/adversarial restore proof and unchanged old bytes. No live recovery claim yet. |
 | Complete authority | Profile25 root/admission, acknowledgment and aid protocols, world dispatcher and atomic phase/resource publication. Prove permission, actual body/range/stock/revision, capped HP, positive cost, unchanged RNG/debts/carry and all failed-action conservation. |
 | Durable hosting/content | Source-pinned finite remedy/recipe, admitted nearby helper/agreement, exclusive storage, identity/retry/restart and pending-action recovery. Independent actual-process reconstruction plus kills immediately before/after acknowledgment and treatment. |
 | Native continuation | Truthful available-aid preview and costs, explicit acknowledgment, visible helper action and observed HP. Real source defeat → aid → fresh choice in same encounter → eventual legal outcome/release; exact reopen at each boundary. |
