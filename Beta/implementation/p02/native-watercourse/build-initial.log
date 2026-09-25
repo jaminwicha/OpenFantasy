@@ -1,0 +1,11 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/WatercourseFarmBuilder.cs(49,93): error CS0246: The type or namespace name 'ContentHash' could not be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj]
+  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/WatercourseFarmBuilder.cs(49,93): error CS0246: The type or namespace name 'ContentHash' could not be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:05.87

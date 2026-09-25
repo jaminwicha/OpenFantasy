@@ -1,0 +1,19 @@
+{
+  "ledger": "client/assets/watercourse/ownership.json",
+  "assets": {
+    "water-surface-calibration-v1": {
+      "source": "art-source/watercourse/water-surface-calibration-v1.aseprite",
+      "output": "client/assets/watercourse/water-surface.png",
+      "cell": [32, 32],
+      "frames": 8,
+      "columns": 4,
+      "pivot": [0, 0],
+      "max_colors": 6,
+      "padding": 0,
+      "tags": [
+        {"name": "surface_a", "from_frame": 1, "to_frame": 4, "direction": "forward"},
+        {"name": "surface_b", "from_frame": 5, "to_frame": 8, "direction": "forward"}
+      ]
+    }
+  }
+}

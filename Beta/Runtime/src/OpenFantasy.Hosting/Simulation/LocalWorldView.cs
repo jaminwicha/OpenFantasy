@@ -83,6 +83,7 @@ public sealed class LocalWorldView
         GatheringTools = Array.AsReadOnly(tools.OrderBy(tool => tool.LotId).ToArray());
         Worksite = state.Excavation is not null && state.ConstructionPhysical is not null
             ? new LocalWorksiteView(state, playerActorId) : null;
+        Liquids = state.LiquidCells is not null ? new LocalLiquidView(state) : null;
         DialogueSession? dialogue = state.Dialogues.FirstOrDefault(value => value.ListenerActorId == playerActorId);
         if (dialogue is not null)
         {
@@ -117,6 +118,7 @@ public sealed class LocalWorldView
     public ReadOnlyCollection<LocalGatherToolLotView> GatheringTools { get; }
     public uint? PlayerGatherEffort { get; }
     public LocalWorksiteView? Worksite { get; }
+    public LocalLiquidView? Liquids { get; }
     public LocalCraftingView? Crafting { get; }
     public LocalDialogueView? Dialogue { get; }
     public LocalProgressionView? Progression { get; }

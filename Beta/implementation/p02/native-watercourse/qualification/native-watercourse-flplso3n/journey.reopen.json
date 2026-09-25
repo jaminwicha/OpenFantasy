@@ -1,0 +1,333 @@
+{
+  "Kind": "native-watercourse-play-v1",
+  "Mode": "reopen",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "opening",
+  "InitialHash": "F116C10D0B85ED8AE8124372D0E723268CF20D3ABA2E30E09B3EC013B1BBEDFF",
+  "FinalHash": "F116C10D0B85ED8AE8124372D0E723268CF20D3ABA2E30E09B3EC013B1BBEDFF",
+  "Checks": [
+    "The separate process recovered the exact paused public world and cell placement."
+  ],
+  "Inputs": [],
+  "Water": [
+    {
+      "Stage": "opening",
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 33463800
+      },
+      "TotalMicrolitres": 6000000000,
+      "UpperMicrolitres": 3640000000,
+      "LowerMicrolitres": 2356000000,
+      "Cells": [
+        {
+          "Coordinate": {
+            "X": 116,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 349000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 336000000
+        },
+        {
+          "Coordinate": {
+            "X": 118,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 340000000
+        },
+        {
+          "Coordinate": {
+            "X": 119,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 329000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 339000000
+        },
+        {
+          "Coordinate": {
+            "X": 118,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 328000000
+        },
+        {
+          "Coordinate": {
+            "X": 119,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 335000000
+        },
+        {
+          "Coordinate": {
+            "X": 110,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 616000000
+        },
+        {
+          "Coordinate": {
+            "X": 111,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 613000000
+        },
+        {
+          "Coordinate": {
+            "X": 112,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 611000000
+        },
+        {
+          "Coordinate": {
+            "X": 113,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 606000000
+        },
+        {
+          "Coordinate": {
+            "X": 114,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 601000000
+        },
+        {
+          "Coordinate": {
+            "X": 115,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 593000000
+        },
+        {
+          "Coordinate": {
+            "X": 116,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 4000000
+        }
+      ]
+    },
+    {
+      "Stage": "final",
+      "Calendar": {
+        "Days": 0,
+        "MillisecondsWithinDay": 33463800
+      },
+      "TotalMicrolitres": 6000000000,
+      "UpperMicrolitres": 3640000000,
+      "LowerMicrolitres": 2356000000,
+      "Cells": [
+        {
+          "Coordinate": {
+            "X": 116,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 349000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 336000000
+        },
+        {
+          "Coordinate": {
+            "X": 118,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 340000000
+        },
+        {
+          "Coordinate": {
+            "X": 119,
+            "Y": 329,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 329000000
+        },
+        {
+          "Coordinate": {
+            "X": 117,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 339000000
+        },
+        {
+          "Coordinate": {
+            "X": 118,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 328000000
+        },
+        {
+          "Coordinate": {
+            "X": 119,
+            "Y": 330,
+            "Z": -1
+          },
+          "VolumeMicrolitres": 335000000
+        },
+        {
+          "Coordinate": {
+            "X": 110,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 616000000
+        },
+        {
+          "Coordinate": {
+            "X": 111,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 613000000
+        },
+        {
+          "Coordinate": {
+            "X": 112,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 611000000
+        },
+        {
+          "Coordinate": {
+            "X": 113,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 606000000
+        },
+        {
+          "Coordinate": {
+            "X": 114,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 601000000
+        },
+        {
+          "Coordinate": {
+            "X": 115,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 593000000
+        },
+        {
+          "Coordinate": {
+            "X": 116,
+            "Y": 329,
+            "Z": 0
+          },
+          "VolumeMicrolitres": 4000000
+        }
+      ]
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "IsWindowFocused": true,
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 3454,
+  "Actors": [
+    {
+      "Id": "da610479fa8e248743babd4e452284b0",
+      "Feet": {
+        "X": 27200,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Id": "fc56e332a1029044ee43fdf0bf95b1d0",
+      "Feet": {
+        "X": 29312,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 114,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    }
+  ],
+  "Construction": [
+    {
+      "ProjectId": {
+        "High": 3467126042368163788,
+        "Low": 1883939738424802008
+      },
+      "BuilderActorId": {
+        "High": 15735863494950397063,
+        "Low": 4880421290074342576
+      },
+      "DisplayName": "Small sapling guard",
+      "SiteFeet": {
+        "X": 27213,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "WorkFeet": {
+        "X": 27264,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 106,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "CompletedWork": 200,
+      "RequiredWork": 200,
+      "IsCompleted": true
+    }
+  ],
+  "Limitation": "Controlled background focus and injected native input; no human art or physical device acceptance."
+}

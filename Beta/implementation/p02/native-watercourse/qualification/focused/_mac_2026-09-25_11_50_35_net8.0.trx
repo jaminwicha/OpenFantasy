@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2a316e66-f170-4d76-883e-e330add0c651" name="@mac 2026-09-25 11:50:35" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-25T11:50:35.8532000-05:00" queuing="2026-09-25T11:50:35.8532000-05:00" start="2026-09-25T11:50:31.7516950-05:00" finish="2026-09-25T11:50:37.9935730-05:00" />
+  <TestSettings name="default" id="d006d14a-2f9d-4572-be7c-c9d9a7df50e4">
+    <Deployment runDeploymentRoot="_mac_2026-09-25_11_50_35" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="925904ee-20d2-4b25-b165-0f71843cfe0b" testId="d48470b1-cd74-ec13-7c42-4d18045eb3c9" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world" computerName="mac" duration="00:00:01.4403640" startTime="2026-09-25T11:50:35.8972230-05:00" endTime="2026-09-25T11:50:37.4741540-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="925904ee-20d2-4b25-b165-0f71843cfe0b">
+      <Output>
+        <ErrorInfo>
+          <Message>The original funded sapling guard must remain reachable and buildable.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WatercourseFarmContentTests.cs:line 192
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2d6e2efe-34a0-4abe-8c13-412fb90aab2f" testId="65b0d8e5-e5bf-581d-d6fa-e049b9f97419" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;aldermere-watercourse-v1&quot;)" computerName="mac" duration="00:00:00.5378244" startTime="2026-09-25T11:50:35.3585270-05:00" endTime="2026-09-25T11:50:35.8964210-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d6e2efe-34a0-4abe-8c13-412fb90aab2f" />
+    <UnitTestResult executionId="7a69cb6c-8461-4b23-8941-80b99146c07e" testId="adccf771-e6a8-e830-f96c-7598b4bcd8c3" testName="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Original_farm_and_equilibrium_only_worlds_do_not_claim_detailed_liquid_placement" computerName="mac" duration="00:00:00.2139195" startTime="2026-09-25T11:50:34.4355370-05:00" endTime="2026-09-25T11:50:34.6495460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a69cb6c-8461-4b23-8941-80b99146c07e" />
+    <UnitTestResult executionId="1874efec-fb1d-401e-ad58-8e5e07b224e4" testId="50954a12-113c-fc70-a671-5fc6314261e5" testName="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Public_projection_contains_only_actual_occupied_geometry_and_known_terrain" computerName="mac" duration="00:00:00.5717742" startTime="2026-09-25T11:50:33.8531710-05:00" endTime="2026-09-25T11:50:34.4314910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1874efec-fb1d-401e-ad58-8e5e07b224e4" />
+    <UnitTestResult executionId="de810aa2-bac2-4db0-9100-7d1b67973924" testId="5a46554e-fa99-070d-607b-565f1091e6a7" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;channel-03&quot;)" computerName="mac" duration="00:00:00.5512839" startTime="2026-09-25T11:50:34.8063650-05:00" endTime="2026-09-25T11:50:35.3577150-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="de810aa2-bac2-4db0-9100-7d1b67973924" />
+    <UnitTestResult executionId="ac2cded1-e2a2-4e76-8567-640c82c40527" testId="719a1984-c358-e662-85c0-14917ae0bd74" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;watercourse-second-seed&quot;)" computerName="mac" duration="00:00:00.9471881" startTime="2026-09-25T11:50:33.8531640-05:00" endTime="2026-09-25T11:50:34.8054550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac2cded1-e2a2-4e76-8567-640c82c40527" />
+    <UnitTestResult executionId="81a8d556-7a93-4fa2-be6b-b433222cc6d0" testId="805ccc15-1515-0d98-6eed-bf59d6eff919" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Finite_head_stock_still_moves_after_one_minute_of_selected_local_steps_without_refill" computerName="mac" duration="00:00:00.4744768" startTime="2026-09-25T11:50:37.4754080-05:00" endTime="2026-09-25T11:50:37.9499550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81a8d556-7a93-4fa2-be6b-b433222cc6d0" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Original_farm_and_equilibrium_only_worlds_do_not_claim_detailed_liquid_placement" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="adccf771-e6a8-e830-f96c-7598b4bcd8c3">
+      <Execution id="7a69cb6c-8461-4b23-8941-80b99146c07e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests" name="Original_farm_and_equilibrium_only_worlds_do_not_claim_detailed_liquid_placement" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;watercourse-second-seed&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="719a1984-c358-e662-85c0-14917ae0bd74">
+      <Execution id="ac2cded1-e2a2-4e76-8567-640c82c40527" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Finite_head_stock_still_moves_after_one_minute_of_selected_local_steps_without_refill" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="805ccc15-1515-0d98-6eed-bf59d6eff919">
+      <Execution id="81a8d556-7a93-4fa2-be6b-b433222cc6d0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Finite_head_stock_still_moves_after_one_minute_of_selected_local_steps_without_refill" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Public_projection_contains_only_actual_occupied_geometry_and_known_terrain" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="50954a12-113c-fc70-a671-5fc6314261e5">
+      <Execution id="1874efec-fb1d-401e-ad58-8e5e07b224e4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests" name="Public_projection_contains_only_actual_occupied_geometry_and_known_terrain" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d48470b1-cd74-ec13-7c42-4d18045eb3c9">
+      <Execution id="925904ee-20d2-4b25-b165-0f71843cfe0b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;channel-03&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5a46554e-fa99-070d-607b-565f1091e6a7">
+      <Execution id="de810aa2-bac2-4db0-9100-7d1b67973924" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;aldermere-watercourse-v1&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="65b0d8e5-e5bf-581d-d6fa-e049b9f97419">
+      <Execution id="2d6e2efe-34a0-4abe-8c13-412fb90aab2f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d48470b1-cd74-ec13-7c42-4d18045eb3c9" executionId="925904ee-20d2-4b25-b165-0f71843cfe0b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65b0d8e5-e5bf-581d-d6fa-e049b9f97419" executionId="2d6e2efe-34a0-4abe-8c13-412fb90aab2f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="adccf771-e6a8-e830-f96c-7598b4bcd8c3" executionId="7a69cb6c-8461-4b23-8941-80b99146c07e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50954a12-113c-fc70-a671-5fc6314261e5" executionId="1874efec-fb1d-401e-ad58-8e5e07b224e4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5a46554e-fa99-070d-607b-565f1091e6a7" executionId="de810aa2-bac2-4db0-9100-7d1b67973924" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="719a1984-c358-e662-85c0-14917ae0bd74" executionId="ac2cded1-e2a2-4e76-8567-640c82c40527" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="805ccc15-1515-0d98-6eed-bf59d6eff919" executionId="81a8d556-7a93-4fa2-be6b-b433222cc6d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="6" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.78]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.96]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.62]       The original funded sapling guard must remain reachable and buildable.
+[xUnit.net 00:00:04.62]       Stack Trace:
+[xUnit.net 00:00:04.62]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WatercourseFarmContentTests.cs(192,0): at OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world()
+[xUnit.net 00:00:04.62]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:04.62]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:05.10]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-25T11:50:37.4806460-05:00">
+        <Text>[xUnit.net 00:00:04.62]     OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

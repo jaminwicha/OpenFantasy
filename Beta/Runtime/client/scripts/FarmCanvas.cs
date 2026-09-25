@@ -16,6 +16,7 @@ public partial class FarmCanvas : Node2D
     private Node2D _actorLayer = null!;
     private FarmDaylight _daylight = null!;
     private WorksiteView _worksite = null!;
+    private WatercourseView _watercourse = null!;
     private bool _ready;
     private readonly FarmTargetMarker _targetMarker = new() { Name = "TargetMarker", ZIndex = 20, Visible = false };
 
@@ -25,7 +26,7 @@ public partial class FarmCanvas : Node2D
         : Project(_frame.Actors.Single(actor => actor.IsOwnActor).Feet);
 
     /// <summary>Uses the same explicit projection as actors, terrain, target cues and camera framing.</summary>
-    public Vector2 Project(SubunitPosition feet) => _frame?.Worksite is not null
+    public Vector2 Project(SubunitPosition feet) => _frame?.IsMultilevel == true
         ? WorksiteCoordinates.Position(feet) : FarmCanvasCoordinates.Position(feet);
 
     public override void _Ready()
@@ -40,6 +41,9 @@ public partial class FarmCanvas : Node2D
         _actorLayer = new Node2D { Name = "Actors", YSortEnabled = true };
         AddChild(_actorLayer);
         _worksite = new WorksiteView(this, _actorLayer);
+        _watercourse = new WatercourseView { Name = "Watercourse", ZIndex = 2 };
+        _watercourse.Setup(_assets);
+        AddChild(_watercourse);
         AddChild(_targetMarker);
         _ready = true;
         if (_frame is not null)
@@ -67,7 +71,8 @@ public partial class FarmCanvas : Node2D
         }
         _daylight.Present(frame.Calendar);
         _worksite.Present(frame.Worksite, frame.Actors.Single(actor => actor.IsOwnActor).Feet.Z);
-        _targetMarker.ZIndex = frame.Worksite is null ? 20 : 4_095;
+        _watercourse.Present(frame.Liquids, frame.Calendar, frame.Actors);
+        _targetMarker.ZIndex = frame.IsMultilevel ? 4_095 : 20;
         HashSet<EntityId> included = frame.Actors.Select(actor => actor.ActorId).ToHashSet();
         foreach (EntityId id in _actors.Keys.Where(id => !included.Contains(id)).ToArray())
         {
@@ -94,7 +99,7 @@ public partial class FarmCanvas : Node2D
 
     internal void PresentTarget(FarmTarget? target)
     {
-        _targetMarker.ZIndex = _frame?.Worksite is null ? 20 : 4_095;
+        _targetMarker.ZIndex = _frame?.IsMultilevel == true ? 4_095 : 20;
         _targetMarker.Visible = target?.Feet is not null;
         if (target?.Feet is { } feet)
         {
@@ -122,6 +127,7 @@ public partial class FarmCanvas : Node2D
                 _structures.Add(structure.ProjectId, view);
             }
             view.Present(structure);
+            view.ZIndex = frame.IsMultilevel ? WorksiteCoordinates.DepthIndex(structure.Feet.Z, actor: true) : 0;
         }
     }
 
@@ -146,7 +152,7 @@ public partial class FarmCanvas : Node2D
             {
                 view.Present(node, _assets);
             }
-            view.ZIndex = frame.Worksite is null ? 0 : WorksiteCoordinates.DepthIndex(node.Feet.Z, actor: true);
+            view.ZIndex = frame.IsMultilevel ? WorksiteCoordinates.DepthIndex(node.Feet.Z, actor: true) : 0;
         }
     }
 }

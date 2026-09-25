@@ -1,0 +1,13 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:04.62]     OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world [1 s]
+  Error Message:
+   The original funded sapling guard must remain reachable and buildable.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WatercourseFarmContentTests.cs:line 192
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-watercourse/qualification/focused/_mac_2026-09-25_11_50_35_net8.0.trx
+
+Failed!  - Failed:     1, Passed:     6, Skipped:     0, Total:     7, Duration: 4 s - OpenFantasy.Hosting.Tests.dll (net8.0)

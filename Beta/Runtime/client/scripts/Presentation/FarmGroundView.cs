@@ -33,7 +33,7 @@ internal partial class FarmGroundView : Node2D
         DrawRect(FarmCanvasCoordinates.LocalBounds, new Color("283b33"), filled: false, width: 2);
     }
 
-    private static Vector2I AtlasCoordinate(int tile, int x, int y)
+    internal static Vector2I AtlasCoordinate(int tile, int x, int y)
     {
         // Preserve the predecessor's explicitly wrapping visual-only variant selector.
         int variant = unchecked((x * 73_856_093) ^ (y * 19_349_663)) & 0x7fffffff;

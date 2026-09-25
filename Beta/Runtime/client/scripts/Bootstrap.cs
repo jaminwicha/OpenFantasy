@@ -41,6 +41,7 @@ public partial class Bootstrap : Control
         // still exercises the same readiness/cancellation policy; native OS binding is tested separately.
         bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
             or ["--farm-action-offers", _, _, "--background-render"]
+            or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
         if (arguments.Contains("--background-render") && !backgroundProbe)
         {
@@ -54,7 +55,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--worksite-probe", var worksiteSave, var worksiteReport, var worksiteMode]
+        if (arguments is ["--watercourse-probe", var watercourseSave, var watercourseReport, var watercourseMode]
+            && watercourseMode is "fresh" or "reopen")
+        {
+            if (File.Exists(watercourseSave) != (watercourseMode == "reopen"))
+            {
+                GD.PushError("The watercourse probe requires its exact fresh or retained save.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { WatercourseProfile = true, SavePathOverride = watercourseSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new WatercoursePlayProbe(game, watercourseReport, watercourseMode));
+        }
+        else if (arguments is ["--worksite-probe", var worksiteSave, var worksiteReport, var worksiteMode]
             && worksiteMode is "fresh" or "build" or "mine" or "reopen")
         {
             if (File.Exists(worksiteSave) == (worksiteMode == "fresh"))
@@ -197,6 +212,10 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else if (arguments is ["--watercourse"])
+        {
+            AddChild(new FarmGame { WatercourseProfile = true });
         }
         else if (arguments is ["--worksite"])
         {

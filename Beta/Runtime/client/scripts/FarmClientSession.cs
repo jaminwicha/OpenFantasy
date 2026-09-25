@@ -71,6 +71,25 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return Attach(authority);
     });
 
+    /// <summary>Opens the finite authored watercourse without migrating an existing farm selection.</summary>
+    internal static Task<FarmClientSession> OpenWatercourseAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+    {
+        WorldSnapshot genesis = WatercourseFarmAdmission.CreateEmbedded(seedText, playerName);
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        SqliteWorldAuthority authority = File.Exists(savePath)
+            ? SqliteWorldAuthority.OpenExisting(savePath) : SqliteWorldAuthority.CreateNew(savePath, genesis);
+        try
+        {
+            FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis);
+        }
+        catch
+        {
+            authority.Dispose();
+            throw;
+        }
+        return Attach(authority);
+    });
+
     private static FarmClientSession Attach(SqliteWorldAuthority authority)
     {
         try

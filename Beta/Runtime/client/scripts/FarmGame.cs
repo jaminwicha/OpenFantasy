@@ -35,6 +35,7 @@ public partial class FarmGame : Node2D
     internal bool QuestProfile { get; init; }
     internal bool ConstructionProfile { get; init; }
     internal bool WorksiteProfile { get; init; }
+    internal bool WatercourseProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -63,6 +64,12 @@ public partial class FarmGame : Node2D
         _input = new FarmInputRouter(StartPaused);
         AddChild(_canvas);
         Rect2 bounds = _canvas.LocalBounds;
+        if (WatercourseProfile)
+        {
+            // Keep the open channel and lower pool visible between the ordinary HUD panels.
+            // Integer zoom preserves the surface pixels and does not change interaction distances.
+            _camera.Zoom = Vector2.One;
+        }
         _camera.LimitLeft = (int)bounds.Position.X;
         _camera.LimitTop = (int)bounds.Position.Y;
         _camera.LimitRight = (int)bounds.End.X;
@@ -90,6 +97,12 @@ public partial class FarmGame : Node2D
         {
             string worksiteSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-worksite.sqlite");
             _opening = FarmClientSession.OpenWorksiteAsync(worksiteSave, "aldermere-worksite-v1", "Traveler");
+            return;
+        }
+        if (WatercourseProfile)
+        {
+            string watercourseSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-watercourse.sqlite");
+            _opening = FarmClientSession.OpenWatercourseAsync(watercourseSave, "aldermere-watercourse-v1", "Traveler");
             return;
         }
         bool production = GatheringProfile && ProductionProfile;
@@ -137,6 +150,7 @@ public partial class FarmGame : Node2D
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : WatercourseProfile ? "Visit Wren by the rows. Follow the dry bank east to the watercourse."
                     : "Find Wren by the rows.");
             }
             else
@@ -173,18 +187,18 @@ public partial class FarmGame : Node2D
         _canvas.Present(new FarmCanvasFrame(view.Calendar, view.Actors.Select(actor => new FarmActorFrame(
             actor.ActorId, actor.DisplayName, actor.Feet, actor.ActorId == view.PlayerActorId,
             actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren : FarmSpriteKind.Squire,
-            multilevel: view.Worksite is not null)),
+            multilevel: view.Worksite is not null || view.Liquids is not null)),
             view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
                 node.RequiredTool, node.Visibility)),
             view.Worksite is null ? view.Construction.Where(project => project.IsCompleted).Select(project =>
-                new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [], view.Worksite));
+                new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [], view.Worksite, view.Liquids));
         Vector2 focus = _canvas.FocusPosition;
         if (view.Dialogue is { } conversation)
         {
             LocalActorView speaker = view.Actors.Single(value => value.ActorId == conversation.SpeakerActorId);
             focus = (focus + _canvas.Project(speaker.Feet)) / 2;
         }
-        _camera.Position = focus + new Vector2(0, -26);
+        _camera.Position = focus + new Vector2(0, WatercourseProfile ? 72 : -26);
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
         _presented = _session.CreateOffers(view, _targets.Selected);
         _canvas.PresentTarget(_targets.Selected);

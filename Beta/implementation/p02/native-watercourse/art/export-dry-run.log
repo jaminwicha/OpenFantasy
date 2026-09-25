@@ -1,0 +1,14 @@
+aseprite-mcp: driving Aseprite 1.3.18.5-dev
+Processing request of type CallToolRequest
+Processing request of type ListToolsRequest
+Processing request of type CallToolRequest
+{
+  "published": false,
+  "assets": {
+    "water-surface-calibration-v1": {
+      "frames": 8,
+      "colors": 5,
+      "matches_runtime": false
+    }
+  }
+}

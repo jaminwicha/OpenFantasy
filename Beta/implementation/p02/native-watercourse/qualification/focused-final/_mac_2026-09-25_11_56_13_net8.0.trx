@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="9d1823b5-07c2-4db3-9721-2a7bd2666690" name="@mac 2026-09-25 11:56:13" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-25T11:56:13.5108950-05:00" queuing="2026-09-25T11:56:13.5108950-05:00" start="2026-09-25T11:56:10.0364700-05:00" finish="2026-09-25T11:56:20.6719570-05:00" />
+  <TestSettings name="default" id="e282b8ff-b407-43d5-9908-1b8a03efb037">
+    <Deployment runDeploymentRoot="_mac_2026-09-25_11_56_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2436ff67-3f35-43e0-90b1-cad69a042385" testId="adccf771-e6a8-e830-f96c-7598b4bcd8c3" testName="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Original_farm_and_equilibrium_only_worlds_do_not_claim_detailed_liquid_placement" computerName="mac" duration="00:00:00.2677891" startTime="2026-09-25T11:56:12.1917900-05:00" endTime="2026-09-25T11:56:12.4596910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2436ff67-3f35-43e0-90b1-cad69a042385" />
+    <UnitTestResult executionId="e762bfd9-9ccc-4576-8178-fcbcb8354eb7" testId="719a1984-c358-e662-85c0-14917ae0bd74" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;watercourse-second-seed&quot;)" computerName="mac" duration="00:00:01.0895929" startTime="2026-09-25T11:56:11.5316730-05:00" endTime="2026-09-25T11:56:12.6261700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e762bfd9-9ccc-4576-8178-fcbcb8354eb7" />
+    <UnitTestResult executionId="8ce32d50-079f-4059-9106-155b0a65fa5a" testId="805ccc15-1515-0d98-6eed-bf59d6eff919" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Finite_head_stock_still_moves_after_one_minute_of_selected_local_steps_without_refill" computerName="mac" duration="00:00:00.5109363" startTime="2026-09-25T11:56:20.1127730-05:00" endTime="2026-09-25T11:56:20.6238180-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ce32d50-079f-4059-9106-155b0a65fa5a" />
+    <UnitTestResult executionId="7dfbdb98-539f-4dbe-97fd-b5fdd90ca122" testId="50954a12-113c-fc70-a671-5fc6314261e5" testName="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Public_projection_contains_only_actual_occupied_geometry_and_known_terrain" computerName="mac" duration="00:00:00.6437188" startTime="2026-09-25T11:56:11.5316800-05:00" endTime="2026-09-25T11:56:12.1828730-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7dfbdb98-539f-4dbe-97fd-b5fdd90ca122" />
+    <UnitTestResult executionId="1611e1d6-ac37-4280-aab1-0d5d0ed27137" testId="5a46554e-fa99-070d-607b-565f1091e6a7" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;channel-03&quot;)" computerName="mac" duration="00:00:00.6155682" startTime="2026-09-25T11:56:12.6274980-05:00" endTime="2026-09-25T11:56:13.2431460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1611e1d6-ac37-4280-aab1-0d5d0ed27137" />
+    <UnitTestResult executionId="fa310f3e-863b-4641-8839-dc0115006a3d" testId="65b0d8e5-e5bf-581d-d6fa-e049b9f97419" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;aldermere-watercourse-v1&quot;)" computerName="mac" duration="00:00:00.6087595" startTime="2026-09-25T11:56:13.2441110-05:00" endTime="2026-09-25T11:56:13.8529490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa310f3e-863b-4641-8839-dc0115006a3d" />
+    <UnitTestResult executionId="7dba233a-56cc-45a3-aa7e-f0ce59f08419" testId="d48470b1-cd74-ec13-7c42-4d18045eb3c9" testName="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world" computerName="mac" duration="00:00:06.2567522" startTime="2026-09-25T11:56:13.8538730-05:00" endTime="2026-09-25T11:56:20.1109560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7dba233a-56cc-45a3-aa7e-f0ce59f08419" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Original_farm_and_equilibrium_only_worlds_do_not_claim_detailed_liquid_placement" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="adccf771-e6a8-e830-f96c-7598b4bcd8c3">
+      <Execution id="2436ff67-3f35-43e0-90b1-cad69a042385" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests" name="Original_farm_and_equilibrium_only_worlds_do_not_claim_detailed_liquid_placement" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;watercourse-second-seed&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="719a1984-c358-e662-85c0-14917ae0bd74">
+      <Execution id="e762bfd9-9ccc-4576-8178-fcbcb8354eb7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Finite_head_stock_still_moves_after_one_minute_of_selected_local_steps_without_refill" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="805ccc15-1515-0d98-6eed-bf59d6eff919">
+      <Execution id="8ce32d50-079f-4059-9106-155b0a65fa5a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Finite_head_stock_still_moves_after_one_minute_of_selected_local_steps_without_refill" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Public_projection_contains_only_actual_occupied_geometry_and_known_terrain" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="50954a12-113c-fc70-a671-5fc6314261e5">
+      <Execution id="7dfbdb98-539f-4dbe-97fd-b5fdd90ca122" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests" name="Public_projection_contains_only_actual_occupied_geometry_and_known_terrain" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d48470b1-cd74-ec13-7c42-4d18045eb3c9">
+      <Execution id="7dba233a-56cc-45a3-aa7e-f0ce59f08419" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Ordinary_walk_dialogue_funded_work_and_flow_share_one_exact_durable_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;channel-03&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5a46554e-fa99-070d-607b-565f1091e6a7">
+      <Execution id="1611e1d6-ac37-4280-aab1-0d5d0ed27137" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests.Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm(seed: &quot;aldermere-watercourse-v1&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="65b0d8e5-e5bf-581d-d6fa-e049b9f97419">
+      <Execution id="fa310f3e-863b-4641-8839-dc0115006a3d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WatercourseFarmContentTests" name="Fresh_authored_channel_is_canonical_sealed_and_preserves_the_real_farm" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="adccf771-e6a8-e830-f96c-7598b4bcd8c3" executionId="2436ff67-3f35-43e0-90b1-cad69a042385" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="719a1984-c358-e662-85c0-14917ae0bd74" executionId="e762bfd9-9ccc-4576-8178-fcbcb8354eb7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="805ccc15-1515-0d98-6eed-bf59d6eff919" executionId="8ce32d50-079f-4059-9106-155b0a65fa5a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="50954a12-113c-fc70-a671-5fc6314261e5" executionId="7dfbdb98-539f-4dbe-97fd-b5fdd90ca122" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5a46554e-fa99-070d-607b-565f1091e6a7" executionId="1611e1d6-ac37-4280-aab1-0d5d0ed27137" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="65b0d8e5-e5bf-581d-d6fa-e049b9f97419" executionId="fa310f3e-863b-4641-8839-dc0115006a3d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d48470b1-cd74-ec13-7c42-4d18045eb3c9" executionId="7dba233a-56cc-45a3-aa7e-f0ce59f08419" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.41]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.78]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.97]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:10.11]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

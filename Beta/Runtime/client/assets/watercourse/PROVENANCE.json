@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "status": "original_native_pixel_art_calibration_not_human_accepted_production",
+  "styleReference": "restrained-history-proposal-v06",
+  "acceptanceRecord": "Beta/art-style-calibration/acceptance.json",
+  "referenceSha256": "7017ee5aa6f5a87a23e3d1ccf711a990d7be7be21560374de8571c26d24030ef",
+  "farmPaletteReference": "Beta/Runtime/client/assets/native-farm/tiles.png",
+  "farmPaletteReferenceSha256": "401e2d79a74e8c82ae273a4c9a1e6bf1f2e400ea13f4252f622b559befcb1a0d",
+  "authoring": "Original artist-directed pixel art authored through native Aseprite Lua pixel/cel operations on three raster layers. The saved native master owns all later edits. No external image intake or procedural noise.",
+  "nativeEditor": "Aseprite 1.3.18.5-dev",
+  "mcpTransport": "Existing local stdio aseprite-mcp invoked by maintained native_asset.py; no directly exposed session namespace claimed.",
+  "mcpRevision": "8b206267ba2e91de1e4b0de00b71d1fd569b0868",
+  "nativeProbe": "Beta/implementation/p02/native-watercourse/art/native-tool-probe.log",
+  "owningMaster": "Beta/Runtime/art-source/watercourse/water-surface-calibration-v1.aseprite",
+  "masterSha256": "934a40261567c90db50b3ed9e0bee631b1157c541e0530e18d64549386bd4bb2",
+  "sourceLayers": [
+    "Surface body",
+    "Quiet reflected tones",
+    "Cosmetic ripple accents"
+  ],
+  "export": "Beta/Runtime/client/assets/watercourse/water-surface.png",
+  "exportSha256": "6e926605ac4d04aa839481e73cd9de464511f6636c025f4a5a6c66347328c4f3",
+  "metadata": "Beta/Runtime/client/assets/watercourse/water-surface.json",
+  "exportGuard": "Beta/Runtime/art-source/watercourse/export-contract.json",
+  "gridPixels": [
+    32,
+    32
+  ],
+  "sheetPixels": [
+    128,
+    64
+  ],
+  "pixelsPerMetre": 32,
+  "pivotPixels": [
+    0,
+    0
+  ],
+  "sampling": "nearest; no mipmaps; no filtering blur",
+  "variantRows": [
+    {
+      "row": 0,
+      "tag": "surface_a",
+      "frameIndices": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "row": 1,
+      "tag": "surface_b",
+      "frameIndices": [
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "frameDurationMs": 240,
+  "loopMs": 960,
+  "opaqueSurface": true,
+  "clipOwner": "Engine clips to actual admitted wet surface geometry; the tile is not occupancy or fill evidence.",
+  "animationSemantics": "Cosmetic surface ambience only. Intended client contract derives phase from committed calendar time (8640 simulated milliseconds per frame), freezing it under reading/pause. No flow direction, replenishment, source motion, depth, fall or material claim.",
+  "variation": "Two independently placed compositions. Keep chosen variant stable by presentation address; cosmetic phase only. No authoritative RNG.",
+  "humanAcceptance": false,
+  "enginePlaybackValidated": false,
+  "toolSetupChanges": false,
+  "remainingLimits": [
+    "Native-size and 4x stills visually inspected; temporal differences and GIF timings checked.",
+    "Native-editor animation export supplied; no in-engine playback or human animation acceptance performed.",
+    "Quiet five-color calibration; V06 detail fidelity and contextual bank/lighting readability need scene review."
+  ],
+  "mcpLocalPatch": "Existing first-frame PNG correction; tool probe passed, no server files modified for this task.",
+  "nativePreview": "Beta/implementation/p02/native-watercourse/art/water-tiled-4x.gif"
+}

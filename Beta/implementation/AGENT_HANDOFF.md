@@ -42,6 +42,27 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Native finite watercourse](p02/native-watercourse/README.md) connects fresh profile twenty content to the
+inhabited farm: real closed channel terrain, finite 6,000 litres, actual per-cell public geometry, native
+surface art, ordinary bank walking/gathering/conversation and funded 200-work construction. The separate
+`--watercourse` entry and save preserve default farm/worksite selections. C# Core/storage laws and formats
+are unchanged. [Architecture](../Runtime/docs/architecture/local-watercourse.md) describes authority,
+observation and the bounded cutaway. The full regression passes **983 Core + 560 Hosting/client = 1,543**,
+zero failed/skipped; final build has zero warnings/errors. Two rendered processes pass the real journey
+and exact paused reopen; independent image review confirms pool visibility and dry-bank footing. The
+native editable Aseprite kit is calibration, not human production-art acceptance.
+
+The actual durable test exposed inherited construction `AccessLimit` from the far east bank: current
+player-to-exit routes exhaust the 256-expansion budget. A real command safely refuses without material/work
+loss; ordinary walking back to NorthBank lets the same funded project complete within its original bound.
+Both failures and the corrected explicit limitation proof remain retained. No route budget or game gate
+was relaxed. A scalable access proof and visible NPC blocker remain required. Initial native automation
+passed but its camera hid the pool behind the HUD; corrected integer 1x framing is separately pictured.
+Wet occupancy, water interaction/gates/breaches/loads, reactive materials, ecology, recoverable fragmentation,
+Wait/coarse coupling, production art/audio/devices and full phases remain open.
+
+## Prior liquid cell flow
+
 [Source-backed liquid cell flow](p02/liquid-cell-flow/README.md) adds fresh profile twenty: actual
 raw-source/produced-lot placement, conservative downward/lateral transfers under shared starting budgets,
 complete material reconciliation, selected-clock/reading holds and exact schema-three history. It retains

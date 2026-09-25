@@ -27,7 +27,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dotnet", help="Pinned dotnet executable; alternatively OPENFANTASY_DOTNET")
     parser.add_argument("--godot", help="Pinned Godot .NET executable; alternatively OPENFANTASY_GODOT")
-    parser.add_argument("--worksite", action="store_true", help="Open the separate fresh-content worksite save; preserve every farm save")
+    selection = parser.add_mutually_exclusive_group()
+    selection.add_argument("--watercourse", action="store_true", help="Open the separate finite-water farm save")
+    selection.add_argument("--worksite", action="store_true", help="Open the separate fresh-content worksite save; preserve every farm save")
     parser.add_argument("--prepare-only", action="store_true", help="Check, build and import without opening or selecting a save")
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
@@ -58,10 +60,12 @@ def main():
         if args.prepare_only:
             print("Pinned native client prepared. No gameplay save was opened.", flush=True)
             return 0
-        place = "worksite" if args.worksite else "farm"
+        place = "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
         print(f"Opening Wren’s {place}. WASD/arrows: walk; E: talk; G: quest; F: gather; Q: target; V: actions; Esc: pause.", flush=True)
         command = [str(godot), "--path", str(root / "client")]
-        if args.worksite:
+        if args.watercourse:
+            command += ["--", "--watercourse"]
+        elif args.worksite:
             command += ["--", "--worksite"]
         return subprocess.run(command, cwd=root, env=env).returncode
     except (OSError, RuntimeError, subprocess.SubprocessError) as error:

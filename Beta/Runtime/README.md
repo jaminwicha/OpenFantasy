@@ -398,3 +398,14 @@ inspectable.
 The visible geometry is a functional demonstration with explicit material/load calibration, not the
 accepted production art or final timber balance. See [local worksite architecture](docs/architecture/local-worksite.md)
 and the [qualification record](../implementation/p02/playable-worksite/README.md) for actual evidence and limits.
+
+## Separate watercourse entry
+
+`python3 tools/play.py --watercourse` opens the finite stepped channel beside Wren's farm in
+`user://worlds/wrens-watercourse.sqlite`. It keeps the normal farm and worksite saves separate.
+Walk along the dry banks east of Wren; ordinary gathering, conversation, quest delivery and construction
+remain available. Six thousand litres drain from the upper reach into the pool and settle. Reading and
+pause hold the saved flow; reopening continues the same placement. There is no refill, swimming or water-use
+action. The open-channel cutaway and native surface kit are provisional calibration, not production art
+acceptance. See [the architecture](docs/architecture/local-watercourse.md) and
+[the integration packet](../implementation/p02/native-watercourse/README.md).

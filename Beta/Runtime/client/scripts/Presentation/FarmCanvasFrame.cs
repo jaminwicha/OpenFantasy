@@ -65,16 +65,16 @@ public sealed class FarmCanvasFrame
 
     public FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors,
         IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null, IEnumerable<FarmStructureFrame>? structures = null,
-        LocalWorksiteView? worksite = null)
+        LocalWorksiteView? worksite = null, LocalLiquidView? liquids = null)
     {
         ArgumentNullException.ThrowIfNull(actors);
         var selected = new SortedDictionary<EntityId, FarmActorFrame>();
         foreach (FarmActorFrame actor in actors)
         {
             ArgumentNullException.ThrowIfNull(actor);
-            if (actor.IsMultilevel != (worksite is not null))
+            if (actor.IsMultilevel != (worksite is not null || liquids is not null))
             {
-                throw new ArgumentException("Actor projection mode must match the frame's explicit worksite mode.", nameof(actors));
+                throw new ArgumentException("Actor projection mode must match the frame's explicit geometry mode.", nameof(actors));
             }
             if (selected.Count == MaximumActors || !selected.TryAdd(actor.ActorId, actor))
             {
@@ -116,6 +116,7 @@ public sealed class FarmCanvasFrame
         }
         Structures = Array.AsReadOnly(installed.Values.ToArray());
         Worksite = worksite;
+        Liquids = liquids;
     }
 
     public WorldInstant Calendar { get; }
@@ -123,4 +124,6 @@ public sealed class FarmCanvasFrame
     public ReadOnlyCollection<FarmGatherNodeFrame> GatheringNodes { get; }
     public ReadOnlyCollection<FarmStructureFrame> Structures { get; }
     public LocalWorksiteView? Worksite { get; }
+    public LocalLiquidView? Liquids { get; }
+    public bool IsMultilevel => Worksite is not null || Liquids is not null;
 }

@@ -1,0 +1,57 @@
+{
+  "status": "technical_calibration_checks_passed_not_human_art_acceptance",
+  "sheetSize": [
+    128,
+    64
+  ],
+  "tileSize": [
+    32,
+    32
+  ],
+  "allOpaque": true,
+  "usedColors": [
+    "#2b5967",
+    "#326673",
+    "#3b747d",
+    "#49858a",
+    "#659b9d"
+  ],
+  "uniqueFramesPerVariant": [
+    4,
+    4
+  ],
+  "variantsAreNotMirrorsOrFlips": true,
+  "matchingBorderColor": "#326673",
+  "changedPixelsBetweenFramesIncludingLoop": [
+    [
+      22,
+      35,
+      37,
+      8
+    ],
+    [
+      24,
+      26,
+      28,
+      8
+    ]
+  ],
+  "nativePreviewFrames": 4,
+  "nativePreviewDurationsMs": [
+    240,
+    240,
+    240,
+    240
+  ],
+  "nativeSourcePreservedDuringExportAndPreview": true,
+  "sourceSha256": "934a40261567c90db50b3ed9e0bee631b1157c541e0530e18d64549386bd4bb2",
+  "sheetSha256": "6e926605ac4d04aa839481e73cd9de464511f6636c025f4a5a6c66347328c4f3",
+  "python": "3.12.13",
+  "Pillow": "12.3.0",
+  "mcp": "1.30.0",
+  "reviewLimits": [
+    "Native-size and 4x stills visually inspected; temporal differences and GIF timings checked.",
+    "Native-editor animation export supplied; no in-engine playback or human animation acceptance performed.",
+    "Quiet five-color calibration; V06 detail fidelity and contextual bank/lighting readability need scene review."
+  ]
+}
