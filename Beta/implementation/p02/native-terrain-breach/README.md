@@ -89,3 +89,9 @@ required. The profile21 near16MiB reserve exhaustion threshold remains source-re
 empirically exercised; this packet does not change that status. Existing far-bank construction access
 limits remain recorded. Full campaign requirements, frozen designs and all prior acceptance thresholds
 are preserved.
+
+Qualified commit `e45eec1` is preserved on `codex/milestone-native-terrain-breach`. Development remains
+on `codex/runtime-foundation`; all40 prior markers,22 frozen specification hashes and the exact
+19-file predecessor index are unchanged. The final validation checked630 local links and1,550
+source/config pins. No checkout switch, force update, push, merge or full-phase closure accompanies
+this marker.

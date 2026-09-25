@@ -60,6 +60,10 @@ acceptance. Those dependencies and the near16MiB experimental-reserve gap remain
 alternatives remain research only. [Architecture](../Runtime/docs/architecture/local-watercourse.md#excavation-composition)
 records the player/presentation boundary.
 
+Qualified commit `e45eec1` is preserved on `codex/milestone-native-terrain-breach`; development stays
+on `codex/runtime-foundation`. All40 earlier markers,22 frozen specs and the unrelated19-file
+predecessor index remain unchanged. No full phase closes at this checkpoint.
+
 ## Prior terrain/liquid breach
 
 [Earned terrain breach](p02/terrain-liquid-breach/README.md) adds fresh profile21: actual retained solid
