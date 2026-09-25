@@ -67,3 +67,9 @@ Wait/coarse coupling and human/device/art acceptance remain required.
 The inherited construction access search needs a scalable, properly scoped proof and visible NPC blocker;
 an unknown route must not be mistaken for a physical dead end. No full P00/P01/P02 or production gate
 closes here. Frozen specifications, previous milestones and the unrelated predecessor index are preserved.
+
+Qualified commit `3df0937` is preserved on `codex/milestone-native-watercourse`. Development stays on
+`codex/runtime-foundation`. [Final checks](qualification/final-validation.json) retain 1,024 source/config/asset
+pins, 467 unchanged prior Core/storage sources, 555 resolved local links, 22 unchanged frozen specifications,
+38 unchanged prior milestone branches and the exact unrelated 19-file predecessor index. No checkout switch,
+force move, push, merge or full-phase closure accompanies the marker.

@@ -60,6 +60,9 @@ was relaxed. A scalable access proof and visible NPC blocker remain required. In
 passed but its camera hid the pool behind the HUD; corrected integer 1x framing is separately pictured.
 Wet occupancy, water interaction/gates/breaches/loads, reactive materials, ecology, recoverable fragmentation,
 Wait/coarse coupling, production art/audio/devices and full phases remain open.
+Qualified commit `3df0937` is preserved on `codex/milestone-native-watercourse`; development remains
+on `codex/runtime-foundation`. Original farm/foundation controls pass; all frozen designs and the unrelated
+predecessor index remain unchanged.
 
 ## Prior liquid cell flow
 
