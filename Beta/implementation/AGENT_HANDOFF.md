@@ -59,6 +59,8 @@ failures. The final solution build has zero warnings/errors; full regression pas
 649 Hosting/client = 1,849 cases, zero failed/skipped. Both V2 and existing V1 independent fixtures
 reproduce exactly. All47 prior milestones,22 frozen specs and the unrelated19-file index are intact.
 No full recovery gate closes; this increment includes no new native/crash/production-scale claim.
+Qualified commit `04e6dba` is preserved on `codex/milestone-item-consumption`; development remains
+on `codex/runtime-foundation`.
 
 Next finish the [profile25 finite-aid contract](p02/encounter-choice-validation/RECOVERY_DESIGN.md):
 prior care agreement, exact outcome acknowledgment, real neutral nearby helper and atomic dose/HP/

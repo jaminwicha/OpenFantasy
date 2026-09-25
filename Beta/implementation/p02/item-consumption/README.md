@@ -36,6 +36,7 @@ Both new V2 and existing V1 independent generators reproduce their retained fixt
 All 47 prior milestones, 22 frozen specification hashes and the exact unrelated 19-file predecessor
 index are preserved. No native or external-process recovery experiment accompanies this domain-only
 increment. No external model was invoked. The development checkout remains `codex/runtime-foundation`.
+Qualified commit `04e6dba14351b9cf0836a9ac76aa785a2003e364` is preserved on `codex/milestone-item-consumption`.
 
 The retained-content fixture uses the original Potion payload (40 HP / 0 MP) and actual three-berry
 recipe. Physical mass is explicitly authored for this test: 20,000 mg per berry and 60,000 mg per
