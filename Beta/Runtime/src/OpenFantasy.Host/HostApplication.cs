@@ -26,6 +26,7 @@ internal sealed class HostApplication
     private readonly StructuralLoadOperator _structuralLoads = new();
     private readonly ConstructionDescentOperator _constructionDescent = new();
     private readonly ComposedWorldOperator _composed = new();
+    private readonly EncounterTimingOperator _encounters = new();
 
     public HostApplication(TextWriter output)
     {
@@ -41,6 +42,8 @@ internal sealed class HostApplication
             string? report = arguments switch
             {
                 ["--inspect-foundation"] => CreateFoundationReport(),
+                ["--inspect-encounter-timing", var path, var world, var branch, var encounter] =>
+                    _encounters.Inspect(path, world, branch, encounter),
                 ["--inspect-command", var path] => _contracts.InspectCommand(path),
                 ["--inspect-custody", var path] => _contracts.InspectCustody(path),
                 ["--inspect-package", var manifest, var payload] => _contracts.InspectPackage(manifest, payload),
@@ -105,6 +108,7 @@ internal sealed class HostApplication
     {
         _output.WriteLine("OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation");
         _output.WriteLine("       OpenFantasy.Host --inspect-command <command.bin>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-encounter-timing <timing.bin> <world-id> <branch-id> <encounter-id>");
         _output.WriteLine("       OpenFantasy.Host --inspect-custody <snapshot.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>");
         _output.WriteLine("       OpenFantasy.Host --create-world <world.sqlite> <genesis.bin>");

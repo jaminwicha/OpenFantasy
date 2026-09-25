@@ -45,6 +45,11 @@ per-face allowance. Flow preparation in an action preflight never creates a seco
 
 ## Design contract: Wait encounters
 
+The [portable encounter timing component](encounter-timing.md) owns canonical actor readiness,
+required-choice barriers, zero-duration confirmations and scoped exposure carry. It produces immutable
+proposals and exact component archives. Its presence does not convert the local world's dialogue hold
+or exploration interval into a live encounter, authenticate timing ancestry, or grant action effects.
+
 Encounter stages are exploration, confrontation, staging, ready/hold, resolving, outcome and release.
 Admission claims participants and consequential dependencies before hostile effects apply. Staging
 uses legal positions and routes. Camera movement, actor choreography and audio provide an in-place

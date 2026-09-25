@@ -356,6 +356,12 @@ faults a running local session; recoverable fluid continuation remains unqualifi
 
 ### Standalone structural failure inspection
 
+`--inspect-encounter-timing <timing.bin> <world-id> <branch-id> <encounter-id>` validates a bounded
+canonical timing archive and reports independent next-tick/next-confirmation proposals, their exact
+bytes and hashes. It writes no state and authenticates no world history, controller or action pin.
+Read [the timing architecture](docs/architecture/encounter-timing.md) for scope, exposure carry and
+the separate live-world admission requirements.
+
 `--inspect-structural-resolution <checkpoint.bin> <trusted-graph.bin> <dependency-pin>` validates a
 bounded canonical structural checkpoint against separately supplied expected dependencies, resumes its
 immutable failure plan, and reports exact load accounting and result hashes. It reads files only; supplied

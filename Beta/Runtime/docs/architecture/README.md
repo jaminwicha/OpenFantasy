@@ -14,6 +14,7 @@ different kind of person.
 | [Identity and determinism](identity-and-determinism.md) | Which bytes, numbers, random streams and orderings define the same world? |
 | [Persistence and history](persistence-and-history.md) | What is stored, replayed, migrated and addressed through history? |
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |
+| [Encounter timing](encounter-timing.md) | How do portable readiness, required choices, retained debt and exposure carry preserve exact tactical time? |
 | [World and geography](world-and-geography.md) | How do terrain, watersheds, streaming, planes, geological history and ecology fit together? |
 | [Local worksite](local-worksite.md) | How do funded building, multilevel public geometry, contextual mining and a separate save entry connect? |
 | [Local watercourse](local-watercourse.md) | How do finite flowing water, an earned divider breach, public cell geometry and the inhabited farm connect? |

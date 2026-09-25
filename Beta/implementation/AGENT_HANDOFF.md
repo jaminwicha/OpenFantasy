@@ -42,6 +42,27 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Encounter timing and exposure](p02/encounter-timing/README.md) qualifies the portable C# Wait timing
+component: exact five-unit ticks, required-human choices before automatic resolution, deterministic
+ordering, positive retained debt, strict scoped archives and existing exposure carry. Its bounded Host
+diagnostic publishes no world effects. The original exposure subject/rate and exact current timing pin
+are checked on restore; plausible timing bytes are explicitly not authenticated history or effect grants.
+
+The complete Core suite passes **1,064 cases** (44 new), zero failed/skipped; solution build has zero
+warnings/errors. An independent integer/byte oracle passes **35 Host processes**, including six sequential
+separate-process recoveries and 21 malformed/foreign-scope refusals. Four independent exposure vectors,
+including wide tactical time, and source critique pass. Original analyzer/script failures remain retained.
+Unchanged Hosting/client/native behavior uses the previous checkpoint's evidence; no rerun is claimed.
+
+This is a component prerequisite, not a live combat world/profile, SQLite encounter recovery, full Wait
+pocket/continuation, HP consequence owner, native encounter or phase closure. Next bind versioned 50 ms
+tactical time and persisted process intervals to the ordinary world without multiplying 1800 ms exploration
+allowances; then add complete damage/incapacity gates, source-backed field encounters and native action
+presentation. [Design](p02/encounter-timing/DESIGN.md) preserves those dependencies and all wet/co-op/scale
+obligations. [Architecture](../Runtime/docs/architecture/encounter-timing.md) records the stable contract.
+
+## Prior native terrain breach
+
 [Native terrain breach](p02/native-terrain-breach/README.md) connects the earned profile21 divider to a
 separate `--breach` entry/save, public owned work targets, captured Mine actions and actual terrain/water
 rendering. The core/application remain pure C#; no Core law, canonical archive or storage schema changes.
