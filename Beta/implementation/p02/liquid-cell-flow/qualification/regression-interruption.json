@@ -1,0 +1,28 @@
+{
+  "status": "incomplete, not accepted",
+  "observedUtc": "2026-09-25T16:22:07.845261+00:00",
+  "reason": "Run started September20 and had no final Hosting result after the session resumed September25; cause not established. Core TRX passed. Preserve initial log and process sample.",
+  "stoppedOwnedProcesses": [
+    {
+      "pid": 83017,
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test Beta/Runtime/OpenFantasy.sln --no-build --no-restore -m:1 --logger trx --results-directory Beta/implementation/p02/liquid-cell-flow/qualification/full-regression",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 83040,
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet exec /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk/10.0.401/vstest.console.dll --framework:.NETCoreApp,Version=v8.0 --logger:trx --resultsDirectory:/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/liquid-cell-flow/qualification/full-regression /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll --logger:Console;Verbosity=minimal --nologo --artifactsProcessingMode-collect --testSessionCorrelationId:83017_071b71e5-2d78-4f46-8d12-ffb4802c5f9e",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 83041,
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet exec --runtimeconfig /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.runtimeconfig.json --depsfile /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.deps.json /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/testhost.dll --port 55006 --endpoint 127.0.0.1:055006 --role client --parentprocessid 83040 --telemetryoptedin false",
+      "signal": "SIGTERM"
+    },
+    {
+      "pid": 83047,
+      "command": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests @@ /var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/tmp9217Lz.tmp",
+      "signal": "SIGTERM"
+    }
+  ],
+  "followup": "Rerun same complete checks without changed assertions or gates."
+}

@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-20. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-25. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -41,6 +41,30 @@ project hook. Ecosystem commit `4e83086` records the portable hook and verified 
 All 123 reference links resolve; the bounded factual review corrections are retained in the packet.
 
 ## Latest increment
+
+[Source-backed liquid cell flow](p02/liquid-cell-flow/README.md) adds fresh profile twenty: actual
+raw-source/produced-lot placement, conservative downward/lateral transfers under shared starting budgets,
+complete material reconciliation, selected-clock/reading holds and exact schema-three history. It retains
+C# and the existing sole material/world authority. Host reports actual cells instead of equilibrium head.
+The [architecture](../Runtime/docs/architecture/liquid-cell-flow.md) defines the finite domain and format.
+The full resumed regression passes **983 Core + 553 Hosting/client = 1,536 cases**, zero failed/skipped;
+the final build has zero warnings/errors. An independent exact-unit oracle matches all thirteen retained
+states; **37 Host calls and two external commit-boundary kills** pass. The original complete run returned
+no final Hosting result across the September 20–25 interruption and is retained as incomplete, not accepted.
+Headless Godot/Host foundation and the two-process farm pass. The preserved profile eighteen worksite's
+1,334 commits recover exactly in 16.550 seconds with unchanged database bytes. No rendered scene changes.
+
+Independent source review requested a durable fragment-limit proof. A real receipt-bearing authority
+attempt needs 16,386 portions from 16,384 valid initial portions, aborts and preserves all state, time,
+material, ledgers and database bytes through exact reopen. The current session faults at this bound;
+recoverable fluid continuation is not implemented. Fixed terrain enclosure excludes construction sealing,
+breaches, occupied wet space, physical gates and fluid loads. Those, native liquid presentation, further
+materials/reactions, ecology, Wait/coarse-detail coupling and production scale remain required dependencies.
+The [design](p02/liquid-cell-flow/DESIGN.md) corrects the dependency sequence: the full specification's
+finite-volume cellular solver precedes mechanical shutters; prior indivisible source-to-terminal transport
+cannot represent intermediate stock. No full phase or production/presentation gate closes here.
+
+## Prior fixed containment
 
 [Durable fixed reservoir containment](p02/reservoir-containment/README.md) adds fresh profile nineteen:
 one retained sealing policy, actual closed nominal geometry, complete material pins and atomic action

@@ -102,6 +102,12 @@ qualify shared-code changes; none close the complete game/phase/platform/art gat
 
 ## Required continuation toward the full fluid specification
 
+Follow-up dependency review: the full specification's starting-state finite-volume cellular solver
+precedes the mechanical port sequence below. [Detailed liquid flow](../liquid-cell-flow/DESIGN.md)
+establishes retained actual placement and a causal multi-step front; profile nine's indivisible direct
+source-to-terminal delivery cannot represent throat stock or supply that solver. The numbered physical
+composition obligations remain required after this prerequisite; no prior interpretation is replaced.
+
 1. Retain finite physical port/throat geometry and shutter displacement. Revise the capacity/placement
    interpretation wherever material occupies nominal liquid volume; account for water remaining inside
    a channel. Introduce a genuine actuation law with retained material identity, mass, exact closed/open

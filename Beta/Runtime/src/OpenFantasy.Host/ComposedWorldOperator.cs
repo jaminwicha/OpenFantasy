@@ -8,6 +8,19 @@ namespace OpenFantasy.Host;
 /// <summary>Privileged offline operations under the existing exclusive composed-world authority.</summary>
 internal sealed class ComposedWorldOperator
 {
+    internal string CreateLiquidCellWorld(string database, string basisPath, string liquidCellsPath)
+    {
+        WorldSnapshot basis = LocalAuthorityFiles.ReadComposedGenesis(basisPath);
+        if (basis.ProfileVersion != 19 || basis.Reservoirs is null)
+        {
+            throw new ArgumentException("Detailed liquid creation requires a profile-nineteen contained reservoir basis.");
+        }
+        WorldSnapshot genesis = WorldLiquidCellAdmission.CreateGenesis(basis,
+            LocalAuthorityFiles.ReadLiquidCells(liquidCellsPath, basis.Reservoirs));
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(database, genesis);
+        return Report(authority);
+    }
+
     internal string CreateContainedReservoirWorld(string database, string basisPath, string sealPolicyPath)
     {
         WorldSnapshot genesis = WorldReservoirContainmentAdmission.CreateGenesis(
@@ -86,7 +99,8 @@ internal sealed class ComposedWorldOperator
             StructuralSettlementPolicy = state.StructuralSettlementPolicy is { } settlement ? new StructuralSettlementPolicyDiagnosticReport(settlement) : null,
             Watershed = state.Watershed is { } plan ? new WatershedDiagnosticReport(plan) : null,
             WatershedNetwork = state.WatershedNetwork is { } network ? new WatershedNetworkDiagnosticReport(network) : null,
-            Reservoirs = state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,
+            Reservoirs = state.LiquidCells is null && state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,
+            LiquidCells = state.LiquidCells is { } cells ? new LiquidCellDiagnosticReport(cells) : null,
             ReservoirSeals = state.ReservoirSeals is { } seals ? new
             {
                 ContentHash = seals.Version.Value,

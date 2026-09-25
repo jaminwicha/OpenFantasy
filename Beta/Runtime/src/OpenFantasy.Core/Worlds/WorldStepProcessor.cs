@@ -26,6 +26,7 @@ public sealed class WorldStepProcessor
     private readonly ConstructionPlanner _construction = new();
     private readonly WorldRunoffResolver _runoff = new();
     private readonly WorldTransportResolver _transport = new();
+    private readonly LiquidCellPlanner _liquidFlow = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
@@ -90,6 +91,7 @@ public sealed class WorldStepProcessor
         LocalSpatialSnapshot space = state.Space;
         LiquidReservoirState? reservoirs = state.Reservoirs;
         ReservoirTransportState? transport = state.Transport;
+        LiquidCellState? liquidCells = state.LiquidCells;
         ExcavationSnapshot? excavation = state.Excavation;
         HashSet<EntityId> worked = [];
         List<DialogueSession> dialogues = state.Dialogues.ToList();
@@ -101,6 +103,7 @@ public sealed class WorldStepProcessor
         bool FitsCompleteCandidate(CountedAuthorityState proposedInventory,
             IEnumerable<DialogueSession> proposedDialogues, ConstructionPhysicalSnapshot? proposedPhysical,
             LiquidReservoirState? proposedReservoirs, ReservoirTransportState? proposedTransport,
+            LiquidCellState? proposedLiquidCells,
             out WorldSnapshot? admittedCandidate)
         {
             admittedCandidate = null;
@@ -124,9 +127,13 @@ public sealed class WorldStepProcessor
                 // reconciled physical storage. Earlier profiles retain their exact interpreter.
                 var validationReservoirs = state.ReservoirSeals is not null ? proposedReservoirs : reservoirs;
                 var validationTransport = state.ReservoirSeals is not null ? proposedTransport : transport;
+                // Action admission validates the eventual clock without speculatively flowing material.
+                // Only the actual advancing boundary below selects and applies liquid transfers.
+                var validationLiquidCells = beforeTimeBoundary && proposedLiquidCells is not null
+                    ? proposedLiquidCells.AdvanceBoundary(validationCalendar) : proposedLiquidCells;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    validationReservoirs, validationTransport, excavation, proposedPhysical);
+                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells);
                 if (state.ConsequencePolicy is not null || state.ReservoirSeals is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
                 admittedCandidate = admitted;
                 return true;
@@ -150,6 +157,7 @@ public sealed class WorldStepProcessor
             var previousSpace = space;
             var previousReservoirs = reservoirs;
             var previousTransport = transport;
+            var previousLiquidCells = liquidCells;
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
@@ -284,8 +292,9 @@ public sealed class WorldStepProcessor
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
                 || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
+                || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells)
                 || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
-                    reconciled, reconciledTransport, out _))
+                    reconciled, reconciledTransport, reconciledLiquidCells, out _))
             {
                 excavation = previousExcavation;
                 gathering = previousGathering;
@@ -297,6 +306,7 @@ public sealed class WorldStepProcessor
                 space = previousSpace;
                 reservoirs = previousReservoirs;
                 transport = previousTransport;
+                liquidCells = previousLiquidCells;
                 performedWork = false;
                 createdIds = [];
                 resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
@@ -307,6 +317,7 @@ public sealed class WorldStepProcessor
                 createdIds = physicalIds;
                 reservoirs = reconciled;
                 transport = reconciledTransport;
+                liquidCells = reconciledLiquidCells;
             }
             if (performedWork)
             {
@@ -354,6 +365,11 @@ public sealed class WorldStepProcessor
             }
             gathering = gathering?.AdvanceStep(advancingSteps);
             residents = state.Residents.Select(resident => resident.ExperienceStep());
+            if (liquidCells is not null)
+            {
+                // A failed bounded plan aborts the whole selected step; no partial flow or time is published.
+                liquidCells = _liquidFlow.PlanAdvance(liquidCells, calendar, dialogues.Count != 0).ApplyTo(liquidCells);
+            }
             if (dialogues.Count == 0)
             {
                 foreach (WorldMovementInput input in batch.Movement)
@@ -368,7 +384,7 @@ public sealed class WorldStepProcessor
                     {
                         LocalSpatialSnapshot previousSpace = space;
                         space = space.WithActors(space.Actors.Select(other => other.ActorId == input.ActorId ? move.Candidate! : other));
-                        if (FitsCompleteCandidate(inventory, dialogues, physical, reservoirs, transport, out WorldSnapshot? admitted))
+                        if (FitsCompleteCandidate(inventory, dialogues, physical, reservoirs, transport, liquidCells, out WorldSnapshot? admitted))
                         {
                             // Only movement runs after the actual time boundary and all action effects.
                             // Later rejected moves restore this same space; successful moves replace it.
@@ -383,7 +399,13 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells);
+        if (liquidCells is not null && admittedMovement is null)
+        {
+            // Fragment growth must also fit the complete retained root before authority preparation succeeds.
+            // A reused movement candidate already passed this exact encoding boundary.
+            _ = WorldSnapshotCodec.Encode(candidate);
+        }
         return new WorldStepDecision(candidate, receipts, identities);
     }
 

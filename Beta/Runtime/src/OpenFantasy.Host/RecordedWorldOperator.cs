@@ -34,7 +34,8 @@ internal sealed class RecordedWorldOperator
             StructuralSettlementPolicy = state.StructuralSettlementPolicy is { } settlement ? new StructuralSettlementPolicyDiagnosticReport(settlement) : null,
             Watershed = state.Watershed is { } plan ? new WatershedDiagnosticReport(plan) : null,
             WatershedNetwork = state.WatershedNetwork is { } network ? new WatershedNetworkDiagnosticReport(network) : null,
-            Reservoirs = state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,
+            Reservoirs = state.LiquidCells is null && state.Reservoirs is { } reservoirs ? new LiquidReservoirDiagnosticReport(reservoirs) : null,
+            LiquidCells = state.LiquidCells is { } cells ? new LiquidCellDiagnosticReport(cells) : null,
             ReservoirSeals = state.ReservoirSeals is { } seals ? new
             {
                 ContentHash = seals.Version.Value,

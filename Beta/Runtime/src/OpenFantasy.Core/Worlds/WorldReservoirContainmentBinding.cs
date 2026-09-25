@@ -22,5 +22,9 @@ public static class WorldReservoirContainmentBinding
         {
             throw new ArgumentException("A contained reservoir world requires complete sealed nominal interiors, floors and walls without occupants.", nameof(world));
         }
+        if (world.LiquidCells is not null && results.Any(result => result.ConstructedSealedFaces != 0))
+        {
+            throw new ArgumentException("Detailed liquid flow requires terrain-supplied enclosure until construction pressure and fluid loads are admitted.", nameof(world));
+        }
     }
 }

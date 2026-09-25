@@ -24,6 +24,10 @@ transport, excavation, physical member displacement, structural policies and con
 Constructor guards prevent incompatible owners from being discarded by profile or codec selection.
 The geometry is a sealing proof, not pressure strength, structural load support or safe immersion.
 
+[Detailed liquid flow](liquid-cell-flow.md) retains this invariant and adds exact spatial material
+portions. It requires terrain-supplied enclosure: any construction contributing a sealing face rejects.
+The same boundary assessment establishes this restriction without a second geometric calculation.
+
 ## Runtime binding: complete actions and publication
 
 [WorldStepProcessor](../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) reconciles each action's

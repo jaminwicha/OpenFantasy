@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "name": "host-foundation",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-foundation"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 0.18175395810976624,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "native-foundation",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--smoke-test"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 0.9839500002563,
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\n",
+      "stderr": ""
+    },
+    {
+      "name": "preserved-profile18-exact-recovery",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/playable-worksite/qualification/native-worksite-9rttsv6r/world.sqlite",
+        "1334"
+      ],
+      "timeoutSeconds": 30,
+      "elapsedSeconds": 16.550049833022058,
+      "exitCode": 0,
+      "stdout": "{\"Contract\":\"recorded-world-state-v1\",\"WorldId\":\"27780120a79f2d8e3e73688a97bfbfd8\",\"BranchId\":\"0d967d9bc0c2ad7f76d78559cd16ca76\",\"SourceHeadRevision\":1334,\"SourceHeadHash\":\"409f9c800261a3e48761280d3db46edf870cf4bfbe15ac5353fa0a930966ec6c\",\"RecordedRevision\":1334,\"StateHash\":\"409f9c800261a3e48761280d3db46edf870cf4bfbe15ac5353fa0a930966ec6c\",\"ProfileVersion\":18,\"Calendar\":{\"Days\":0,\"MillisecondsWithinDay\":34786800},\"AdvancingSteps\":1326,\"HasReadingHold\":false,\"ConstructionPhysical\":{\"Revision\":3,\"ContentHash\":\"c5d47463aa0e51a01d755ae8bcf7c819e483d564be7981ffbb53d4028ed4c6d6\",\"ConstructionHash\":\"998d85b046a9ed3e779c3fc5eb1f86dc58725dc14d948cbc0976222951b021a2\",\"Members\":[{\"ElementId\":\"a75444e5a3a5b367bb596b77208a57d2\",\"StructureId\":\"00f9c605b1bb8d57a3c21dd57422e4d3\",\"MemberIndex\":0,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"7f02712be8047bf193e387b0f2ed3065\",\"MassMilligrams\":93674,\"VolumeMicrolitres\":1062500000},{\"ElementId\":\"9df7f7a68936e480ae6bba4dcd4e84ca\",\"StructureId\":\"00f9c605b1bb8d57a3c21dd57422e4d3\",\"MemberIndex\":1,\"Revision\":1,\"ConditionParts\":10000,\"Disposition\":\"Resting\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":-256,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":-1}},\"InstalledLotId\":\"7f02712be8047bf193e387b0f2ed3065\",\"MassMilligrams\":176326,\"VolumeMicrolitres\":2000000000},{\"ElementId\":\"cddd81889152e5b57759898e49441802\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":0,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":5004,\"VolumeMicrolitres\":191406250},{\"ElementId\":\"63f5d920b77cbbe2a284d77230361815\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":1,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":10008,\"VolumeMicrolitres\":382812500},{\"ElementId\":\"8e53801950731736461263fea3d5cebf\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":2,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":15012,\"VolumeMicrolitres\":574218750},{\"ElementId\":\"74bebb2202b12ffe8a9f01dfba3d5265\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":3,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":20016,\"VolumeMicrolitres\":765625000},{\"ElementId\":\"187ac3e3322340d1c66d9488191ba55c\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":4,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":25019,\"VolumeMicrolitres\":957031250},{\"ElementId\":\"10f06309721f0a7a7e82bbb09056e13f\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":5,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":30023,\"VolumeMicrolitres\":1148437500},{\"ElementId\":\"074894a2ecf0b4ce6a8e8889d70f9d5d\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":6,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":35026,\"VolumeMicrolitres\":1339843750},{\"ElementId\":\"6e4bc10cf2ca80afa64a4a0e1b16700f\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":7,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":38294,\"VolumeMicrolitres\":1464843750},{\"ElementId\":\"ca8b452a9b68b0fbb8a9937332c23277\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":8,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000},{\"ElementId\":\"e66093e09ae3a07b9fefce810f4c6101\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":9,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":40030,\"VolumeMicrolitres\":1531250000},{\"ElementId\":\"3a75c9cf58e8bc4db474677fb21a3aea\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":10,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":45034,\"VolumeMicrolitres\":1722656250},{\"ElementId\":\"d8704164155e3e8bc217ed1ca2157db5\",\"StructureId\":\"9de4acae48ee0567e1afe6b27187743b\",\"MemberIndex\":11,\"Revision\":0,\"ConditionParts\":10000,\"Disposition\":\"Standing\",\"Displacement\":{\"X\":0,\"Y\":0,\"Z\":0,\"Cell\":{\"X\":0,\"Y\":0,\"Z\":0}},\"InstalledLotId\":\"e3b97e8766cdae543590ead615e909d9\",\"MassMilligrams\":3267,\"VolumeMicrolitres\":125000000}]},\"StructuralPolicy\":{\"ContentHash\":\"55f3feb4f5638fdf814161262ec67e257766b4170c532ee6d7cb26b82d00a407\",\"TemplateCount\":2,\"FoundationCount\":1025,\"BodyDefinitionCount\":1,\"SupplementalItemCount\":4},\"StructuralSettlementPolicy\":{\"ContentHash\":\"18910691dbaa22390f1bb8093a3bc129b0e3e6aacd1bce7a465be6be4d8a45fb\",\"MaximumDropSubunits\":256,\"SafeActorDropSubunits\":256,\"SafeMemberDropSubunits\":256,\"GravityMillimetresPerSecondSquared\":9800},\"Watershed\":null,\"WatershedNetwork\":null,\"Reservoirs\":null,\"LiquidCells\":null,\"ReservoirSeals\":null,\"Transport\":null,\"Actors\":[{\"ActorId\":\"1c4f1974f62104977c2d8f99e2f6a621\",\"DisplayName\":\"Wren\",\"Position\":{\"X\":26912,\"Y\":82752,\"Z\":256,\"Cell\":{\"X\":105,\"Y\":323,\"Z\":1}},\"PresenceRevision\":267,\"SourceItemQuantity\":1},{\"ActorId\":\"6627928ee5d3a3406ec85cbbf6892b87\",\"DisplayName\":\"Traveler\",\"Position\":{\"X\":29824,\"Y\":83072,\"Z\":256,\"Cell\":{\"X\":116,\"Y\":324,\"Z\":1}},\"PresenceRevision\":468,\"SourceItemQuantity\":3}],\"SourceLotCount\":4,\"CraftedLotCount\":4,\"StructureCount\":2}\n",
+      "stderr": ""
+    }
+  ],
+  "foundation": [
+    {
+      "Contract": "foundation-v1",
+      "Runtime": ".NET 10.0.12",
+      "Entity": "d44d5db6f7ad5bf9b706bd53beeff840",
+      "Sample": 18095130603190839654,
+      "Day": 0,
+      "Millisecond": 0
+    },
+    {
+      "Contract": "foundation-v1",
+      "Runtime": ".NET 10.0.12",
+      "Entity": "d44d5db6f7ad5bf9b706bd53beeff840",
+      "Sample": 18095130603190839654,
+      "Day": 0,
+      "Millisecond": 0
+    }
+  ],
+  "preservedSaveSha256": "6686a2756af3bff1fc6c4f263261da6abe885c37217196a2dafe21f89d314253"
+}

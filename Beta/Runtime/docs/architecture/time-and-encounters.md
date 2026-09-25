@@ -38,6 +38,11 @@ advances neither calendar nor exposure, including the close that releases the fi
 regrowth and construction earn no held or offline work. This local dialogue hold is a concrete
 runtime behavior; it is not an implementation of encounter pockets or independent co-op timing.
 
+[Detailed liquid flow](liquid-cell-flow.md) processes the selected calendar boundary once after actions
+and before movement. Opening a reading hold advances its boundary without moving liquid. Closing in
+a held batch advances neither boundary nor liquid; the next advancing step receives only its ordinary
+per-face allowance. Flow preparation in an action preflight never creates a second simulation step.
+
 ## Design contract: Wait encounters
 
 Encounter stages are exploration, confrontation, staging, ready/hold, resolving, outcome and release.

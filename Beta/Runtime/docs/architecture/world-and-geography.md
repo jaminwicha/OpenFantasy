@@ -390,6 +390,11 @@ The [contained fixed-reservoir profile](reservoir-containment.md) separately ret
 and makes complete geometry and material-pin checks mandatory at world admission and publication.
 It preserves the same stock/capacity owner while excluding transport and displaced physical members.
 
+[Detailed liquid placement](liquid-cell-flow.md) gives an explicitly contained world source-backed
+cell intervals and selected-boundary neighbor transfers. It uses these portions for actual local volume;
+the equilibrium fill remains an aggregate witness and cannot stand in for a moving front. Detailed
+allocation excludes pending runoff commitments and shares the same custody and Production authority.
+
 ## Runtime binding: exclusive reservoir ownership
 
 [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) profile eight owns one complete

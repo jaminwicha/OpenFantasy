@@ -343,6 +343,17 @@ qualify the authored transport gates. See [boundary contracts](docs/architecture
 The verification fixture is retained with `OPENFANTASY_RESERVOIR_BOUNDARY_EVIDENCE`; the verifier invokes
 `tools/check_reservoir_boundaries.py` against actual terrain and NPC-built tank saves.
 
+Profile twenty adds exact source-backed liquid cells to a fresh terrain-contained profile nineteen
+world. `--create-liquid-cell-world <world.sqlite> <profile19-genesis.bin> <liquid-cells.bin>` retains
+the initial placement; ordinary world steps move its existing intervals downward and laterally under
+starting-state quantity/capacity budgets. [Detailed liquid flow](docs/architecture/liquid-cell-flow.md)
+defines holds, material reconciliation, cell/fragment bounds and persistence. Host inspection reports
+actual cell placement instead of the equilibrium surface. This does not change the default rendered
+scene or supply occupied wet-space, gates, pressure or reactions. Fragment overflow aborts the step and
+faults a running local session; recoverable fluid continuation remains unqualified.
+`OPENFANTASY_LIQUID_CELL_FIXTURE_OUTPUT` retains the twelve-step fixture for the standalone
+`tools/check_liquid_cell_flow.py` Host, independent oracle and external commit-kill qualifier.
+
 ### Standalone structural failure inspection
 
 `--inspect-structural-resolution <checkpoint.bin> <trusted-graph.bin> <dependency-pin>` validates a

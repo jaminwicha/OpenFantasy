@@ -49,6 +49,10 @@ and walls, clear nominal interiors and admitted material pins. Read-only inspect
 cannot change the saved interpretation. Fixed containment excludes displaced construction and transport;
 joining them requires explicit volume, load, actuation and consequence contracts.
 
+[Detailed liquid worlds](liquid-cell-flow.md) retain exact cell portions backed by those same live
+holdings. Flow moves portions, never mints material or opens another custody ledger. The component
+pins its material owner and calendar boundary; material actions reconcile it before complete admission.
+
 [WorldAdmissionValidator](../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs) checks the
 composition, including actor/control/presence consistency, definition pins, dialogue participants,
 material relationships and identity roles across the complete finite admitted root.

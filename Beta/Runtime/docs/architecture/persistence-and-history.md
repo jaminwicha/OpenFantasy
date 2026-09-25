@@ -53,6 +53,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 17 | Explicit foreign-construction support, bounded coupled intact settlement policy and its reserved consequence cursor |
 | 18 | Explicit event-ordered intact descent with a V3 cursor and actual scene-dependent work reservations |
 | 19 | Complete fixed-reservoir world with immutable sealing rules and mandatory geometric containment |
+| 20 | Terrain-contained reservoir world with exact detailed liquid placement and selected-boundary cellular flow |
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -114,6 +115,13 @@ It uses schema three's atomic terminal transaction, not schema four's consequenc
 admission accepts an unplayed, unheld profile-eight basis and pins the prior admission plus the complete
 policy hash. Ordinary actions retain that policy. All geometric and material-pin checks run during
 decode and complete candidate admission; reading an older save never installs this interpretation.
+
+[Profile twenty](liquid-cell-flow.md) adds exact source/produced-lot cell portions as the nineteenth
+field of that direct root. It requires terrain-supplied enclosure and excludes pending runoff and its
+controls. Fresh admission binds an unplayed profile nineteen basis to its complete initial placement.
+The liquid boundary and revision match calendar and advancing steps. Schema three commits the whole
+selected flow stage atomically; fragment exhaustion throws before publication and has no resumable
+cursor in this interpretation. Older profile bytes and their action semantics remain unchanged.
 
 The [profile-six codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs) embeds a genuine
 profile-five basis and a pinned watershed archive. The
