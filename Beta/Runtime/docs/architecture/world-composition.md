@@ -44,6 +44,11 @@ is a supported rule for a particular profile, not a universal definition of life
 machine or spirit. Restoring HP does not regrow an arm, cure poison, resurrect a dead person or restore
 an inherited estate unless an explicit operation provides that behavior.
 
+One owner per fact permits checked projections and retained witnesses. For example, encounter timing
+and the permanent readiness ledger carry reconciled readings of the same debt. Complete-world
+admission enforces their relationship; neither may evolve independently. Before removing apparently
+duplicated state, identify its consumers, reconstruction role and admission invariant.
+
 Relations also keep distinct meanings. Affection is not consent; party membership is not inventory
 ownership; a legal title is not physical control; spatial proximity is not perception. Bilateral
 agreements retain the relevant participants and terms. A patient's permission does not authorize
@@ -80,6 +85,12 @@ revisions. A combat result records an event; it does not own the target's curren
 Later damage, treatment or regeneration follows the same ordered resource-change contract. The
 single canonical resource owner stores current truth; retained journal/checkpoint evidence proves
 the authorized sequence. A self-consistent archive alone cannot authenticate a fabricated history.
+
+One actor revision can change HP, MP, level and capacities together. Its history envelope contains
+all those changes rather than inventing multiple actor revisions for one level reward. Rewards that
+leave HP/MP unchanged still participate when the actor revision advances. One command may contain
+ordered changes to several actors; its private candidates publish together. Referenced causes must
+resolve to admitted action evidence, and replay establishes that the journal actually produced them.
 
 Repeated requests return the original receipt. Conflicting selected inputs either resolve in the
 declared order or reject; they cannot spend the same dose twice. The action definition names whether
@@ -127,6 +138,8 @@ automatically freeze a distant town. Dependency edges name the relevant coupling
 | Pets, mounts and vehicles | Actors, assemblies, containment, attachment, needs, cargo and control | Feeding, riding and maintenance share ordinary custody/activity rules; riders keep their identities |
 | Trade and markets | Cargo ownership, funds, orders, route commitments, local knowledge and institutions | Prices inform proposals; exchange moves both goods and money atomically, caravan losses change real supply |
 | Society and politics | Beliefs, motives, directed affinities, agreements, membership and office mandates | A political event produces scoped evidence and feasible decisions, not universal omniscient mood edits |
+| Species, cultures and personal development | Inherited anatomy/affinities, individual variation, learned norms, language and historical affiliations | Cultural learning changes acquired knowledge and practices through events; ancestry does not determine ethics or instantly replace clothing, possessions or architecture |
+| Deities, research and discovery | Declared divine powers, learned techniques and versioned discovered definitions | Exceptional powers and researched spells retain explicit causes, costs and applicable typed operations; they do not bypass world admission through arbitrary field edits |
 | Narrative and quests | Causal events, participant roles, facts, commitments and knowledge | Rescue can become a remembered relationship or quest event without a second scripted truth |
 | Geography and generation | Versioned candidate definitions, topology, chronology and established facts | Composition validates resource/access/history compatibility before acceptance; lived contradictions cannot trigger rerolls |
 | Planes, dreams and time travel | Spatial/realm address, branch incarnation, tethers, carried dependencies and history | Transit accounts for the coupled group; neither travel nor a dream grants free healing or cloned goods |
@@ -136,6 +149,12 @@ NPC reactions pass through evidence, belief, goals and capabilities. An observed
 memory, modify a relationship under its rules or satisfy an obligation. It does not necessarily grant
 affection, and unseen people do not learn it automatically. This distinction connects small actions
 to political and narrative consequences without making every event an arbitrary global score change.
+
+Sharing infrastructure does not erase domain laws. Material/cohort partitions can share exact interval
+accounting; vitality, structural condition and readiness debt retain different transition rules.
+Batch ancestry must be acyclic, while recipe-definition cycles require a separate bounded-process
+policy. Attaching an existing component, consuming it in a transformation and repairing it in place
+declare different identity and material dispositions. Stable history records those distinctions.
 
 ## Encapsulation, extension and validation
 
@@ -155,3 +174,7 @@ Finite detailed histories are implementation envelopes, not a rule that a person
 the game's temporal-access contract. Avoid an unbounded event list copied inside every entity, and
 avoid deleting provenance to fit a bound. Save compatibility and migration are explicit, separately
 qualified transitions; newer rules do not silently reinterpret older worlds.
+
+Compacted evidence retains accessible causal archives, exact interval ownership and branch provenance.
+A summary hash by itself cannot answer historical queries or authenticate the discarded events.
+Rollover must remain replayable and must reject spending or exporting the same retained interval again.

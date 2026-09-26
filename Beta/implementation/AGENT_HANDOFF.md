@@ -57,13 +57,23 @@ results from durable, authenticated history. No care/profile25/native/recovery g
 Commit `604b6d0` is preserved on `codex/milestone-resource-composition`. Its 200 local documentation
 links, 49 prior milestones, frozen specs and unrelated staged predecessor changes are preserved.
 
-Separate authorized `fable[1m]` Max-effort runs implement generic ordered resource history and perform
-three-pass cross-system composition analysis. Their output is not included in this qualification.
+The authorized `fable[1m]` Max-effort history implementation hit its 1,200-second timeout with only
+two untested fragments: [preserved output and failure](p02/resource-history/README.md). It is not
+runtime code or qualification. No automatic paid retry occurred; approval for one smaller follow-up
+is pending. The separate three-pass analysis and independent Fable Max-effort review both completed
+with verified context. The critic checked the full requirements ledger and plan, correcting several
+false defect claims. The [integration disposition](world-composition-refinement/INTEGRATION_DECISION.md)
+accepts the useful direction with further actor-revision, recipe-cycle and phase corrections. The
+architecture reference now distinguishes checked witnesses from competing owners and retains broader
+cross-domain laws. These deliverables are not part of the resource-primitives qualification.
 After review, integrate history into every writer, replace the care-only last-attack seam and qualify
-ordinary plus aftermath treatment. The owner also requires a separate independent Fable challenge
-review of the broader model, followed by accepted fixes and tests. Dispatch details are retained in
+ordinary plus aftermath treatment. Accepted broader model findings need real fixes/tests or explicit
+phase obligations; a design review does not close implementation gates. Dispatch details are retained in
 [pending delegation](p02/resource-composition/qualification/fable-dispatch.json). Ecosystem adapter
 commit `54ab14a` adds explicit effort selection; all 33 adapter tests pass and six installed copies match.
+Ecosystem commit `1d00246` adds reviewed witness/revision/causal-history lessons; the maintained skill
+and both installed copies match and pass the skill validator. The history worker timed out, so these
+runs have not demonstrated implementation credit savings; provider usage and limitations are retained.
 
 Owner steering, 2026-09-25 (credit allocation): delegate more actual implementation to Claude
 `fable[1m]` with Max effort (`--effort max`) while Astra owns review and integration. This is project
@@ -87,8 +97,11 @@ identifies level-up resource restoration as a required caller of any future owne
 The unfinished care integration is backed up at
 `codex/checkpoint-care-wip-before-motion-research-20260926T000024Z` (`edc0d55`), with its
 [file manifest and restore guidance](checkpoints/care-wip-before-motion-research-20260926T000024Z.json).
-This is a WIP backup, not an acceptance milestone: build02 failed in tests; later test edits and the
-complete care path remain unbuilt/unqualified. The source-backed care fixture is incomplete. Two
+This is a WIP backup, not an acceptance milestone: build02 failed in tests. A later clean build and
+1,315 Core + 665 Hosting/client = 1,980 passing cases are retained in
+[checks03](p02/encounter-care/qualification/checks-integration-03.json), with no failures or skips.
+The exact tested WIP is preserved at `codex/checkpoint-care-composition-tested-wip-20260926T011925Z`
+(`6e14121`). The source-backed complete care fixture and live care path remain unqualified. Two
 native worker turns failed with authentication errors; no substitute independent review is claimed.
 Existing durable genesis explicitly refuses the draft care owner pending its storage/resume contract.
 The unrelated predecessor index is preserved. Continue from these files; do not discard the backup or

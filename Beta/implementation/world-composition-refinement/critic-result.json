@@ -1,0 +1,76 @@
+{
+  "status": "completed_pending_review",
+  "elapsed_seconds": 652.84,
+  "total_cost_usd": 10.74331175,
+  "usage": {
+    "input_tokens": 290,
+    "cache_creation_input_tokens": 378573,
+    "cache_read_input_tokens": 1828835,
+    "output_tokens": 54198,
+    "output_tokens_details": {
+      "thinking_tokens": 18502
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 378573,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [
+      {
+        "input_tokens": 32,
+        "output_tokens": 1013,
+        "cache_read_input_tokens": 375942,
+        "cache_creation_input_tokens": 8904,
+        "cache_creation": {
+          "ephemeral_5m_input_tokens": 0,
+          "ephemeral_1h_input_tokens": 8904
+        },
+        "type": "message",
+        "model": null
+      }
+    ],
+    "speed": "standard"
+  },
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1783,
+      "outputTokens": 12,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001843,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 290,
+      "outputTokens": 54198,
+      "cacheReadInputTokens": 1828835,
+      "cacheCreationInputTokens": 378573,
+      "webSearchRequests": 0,
+      "costUSD": 10.74146875,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 18502,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "context_status": "verified",
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "client_usage_estimate_cap_usd": 12,
+  "timeout_seconds": 1200,
+  "billing_note": "Provider list-price estimate; not verified subscription credit deduction. Main Fable used the 1,000,000 context window. Native CLI also reported a small auxiliary Haiku utility call; no substitute worker model was requested.",
+  "acceptance": "Independent critique completed; recommendations require lead disposition, no runtime test claim."
+}

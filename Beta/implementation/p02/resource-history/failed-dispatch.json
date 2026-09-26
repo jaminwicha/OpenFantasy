@@ -1,0 +1,23 @@
+{
+  "status": "timeout",
+  "process_exit_code": -9,
+  "elapsed_seconds": 1200.053,
+  "total_cost_usd": null,
+  "usage": null,
+  "model_usage": null,
+  "provider_status": "timeout",
+  "context_status": "verified",
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "timeout_seconds": 1200,
+  "client_usage_estimate_cap_usd": 12,
+  "qualified": false,
+  "tests_run": false,
+  "complete_history": false,
+  "codec_present": false,
+  "partial_files_sha256": {
+    "partial/ActorResourceReading.cs.txt": "66b06387c04ae2e3f0cb64e87773b793eb026e661f03139d276172381f08ec3a",
+    "partial/ResourceHistoryRejection.cs.txt": "9bed77d954c0a4e9f18ec5b825e6d70c3924034ca78ea59f4dc1c91427757d68"
+  },
+  "follow_up": "Separate owner approval requested; no automatic retry."
+}

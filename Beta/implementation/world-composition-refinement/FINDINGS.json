@@ -1,0 +1,521 @@
+{
+  "schema": "openfantasy.world-composition-refinement.findings.v1",
+  "generated": "2026-09-25",
+  "author": "Claude fable[1m], Max effort, delegated read-only analysis",
+  "reviewer": "Astra (integration); independent Fable critic (follow-up)",
+  "analysis_document": "ANALYSIS.md",
+  "claims": {
+    "source_changed": false,
+    "build_run": false,
+    "tests_run": false,
+    "git_used": false,
+    "resource_history_inspected": false,
+    "care_wip_types_inspected": "listed only; RestorativeItemPlanner.cs read"
+  },
+  "status_legend": {
+    "IMPL": "runtime binding present in the WIP tree per reference and source read",
+    "CAND": "standalone executable domain candidate not admitted to a complete world",
+    "WIP": "present in tree; recorded unbuilt/unqualified by the handoff",
+    "DESIGN": "obligation from frozen spec or reference without an API",
+    "GAP": "no owner and no explicit obligation; decision needed"
+  },
+  "inputs": [
+    "AGENTS.md",
+    "Beta/AGENTS.md",
+    "Beta/implementation/AGENT_HANDOFF.md#L1-L115",
+    "Beta/implementation/WORLD_COMPOSITION_DECISION.md",
+    "Beta/Runtime/docs/architecture/*.md (36 pages)",
+    "Beta/spec-v1_1/TECHNICAL_DESIGN.md",
+    "Beta/spec-v1_1/CROSS_SYSTEM_SYNERGIES.md",
+    "Beta/spec-v1_1/ECOLOGY_AND_FLUIDS.md",
+    "Beta/spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md",
+    "Beta/spec-v1_1/LANGUAGE_AND_AFTERLIFE.md",
+    "Beta/implementation/p02/encounter-choice-validation/RECOVERY_DESIGN.md",
+    "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorProgressionState.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/ActorPresence.cs"
+  ],
+  "not_inspected": [
+    "Beta/Runtime/src/OpenFantasy.Core/Progression/ResourceHistory* (in flight, other worker)",
+    "Beta/Runtime/src/OpenFantasy.Core/Care/{CareSnapshot,CareAgreement,CareAcknowledgment,AdministerRemedyIntent,CareCodecV1,RestorativeRemedyDefinition}.cs",
+    "Beta/spec-v1_1/REQUIREMENTS.json",
+    "Beta/spec-v1_1/COVERAGE.json",
+    "Beta/spec-v1_1/IMPLEMENTATION_PLAN.md",
+    "Beta/Runtime/tests/**",
+    "Beta/Runtime/client/**"
+  ],
+  "coverage": [
+    {"domain": "self/NPC/ally treatment", "impl": "dose+HP candidate, supplier authentication", "candidate_or_wip": "care owner (WIP)", "design": "permission, delivery mode, treatment activity", "findings": ["WC-01", "WC-05", "WC-06", "WC-13"]},
+    {"domain": "injuries and death", "impl": "body functions, HP0 incapacity", "candidate_or_wip": null, "design": "injury records, ResolveDeath, afterlife forms", "findings": ["WC-04", "WC-05"]},
+    {"domain": "crafting", "impl": "instant craft, V2 consumption partition", "candidate_or_wip": "V2 rejected by all complete worlds", "design": "process graph, jobs, research", "findings": ["WC-09", "WC-14"]},
+    {"domain": "magic research and effects", "impl": "MP spend, source-backed abilities", "candidate_or_wip": null, "design": "effect instances, researched definitions", "findings": ["WC-12"]},
+    {"domain": "wear and repair", "impl": "construction member condition", "candidate_or_wip": null, "design": "item condition, repair operation", "findings": ["WC-10", "WC-19"]},
+    {"domain": "mining", "impl": "owned sites, fixed work, harmless settlement", "candidate_or_wip": "terrain material registry", "design": "hardness, tool wear, collapse", "findings": ["WC-08", "WC-19"]},
+    {"domain": "multilevel construction", "impl": "footing, stairs, load policy refusal", "candidate_or_wip": null, "design": "upper-floor work, collapse publication", "findings": ["WC-08"]},
+    {"domain": "fluids/lava/ice", "impl": "water cells, gates, breach", "candidate_or_wip": "runoff budgets", "design": "lava, ice, reactions, heterogeneous materials", "findings": []},
+    {"domain": "weather/climate", "impl": "funded runoff from finite source", "candidate_or_wip": null, "design": "forcing, exposure effects", "findings": ["WC-12"]},
+    {"domain": "geological time", "impl": null, "candidate_or_wip": "dry terrain candidates", "design": "versioned stages, reconstruction", "findings": []},
+    {"domain": "ecology", "impl": "node regrowth per process interval", "candidate_or_wip": null, "design": "cohorts, food webs, dispersal", "findings": []},
+    {"domain": "mounts/pets/vehicles", "impl": null, "candidate_or_wip": null, "design": "attachment relation, assemblies, motion frame", "findings": ["WC-18", "WC-11"]},
+    {"domain": "custody", "impl": "counted intervals, reservations", "candidate_or_wip": null, "design": "title vs custody, individual items", "findings": ["WC-10", "WC-11"]},
+    {"domain": "trade/caravans/economy", "impl": "one funded delivery quest", "candidate_or_wip": null, "design": "quotes, markets, routes", "findings": ["WC-11", "WC-13", "WC-15"]},
+    {"domain": "relationships/birth/marriage/succession", "impl": null, "candidate_or_wip": null, "design": "directed edges, lifecycle, estates", "findings": ["WC-05", "WC-15"]},
+    {"domain": "institutions/war", "impl": null, "candidate_or_wip": null, "design": "mandates, aggregate resolvers", "findings": ["WC-15"]},
+    {"domain": "knowledge/language/culture", "impl": "comprehension bands, utterances", "candidate_or_wip": "resource observations", "design": "evidence, culture", "findings": ["WC-15"]},
+    {"domain": "dreams/planes", "impl": "realm scope, tether anchor field", "candidate_or_wip": "history types", "design": "sessions, transit", "findings": []},
+    {"domain": "time travel", "impl": "recorded commit reads (privileged)", "candidate_or_wip": "history types", "design": "branches, export ledger", "findings": ["WC-20"]},
+    {"domain": "procedural generation/rejection", "impl": "bounded seed search with refusal", "candidate_or_wip": null, "design": "witnesses, pruning revalidation", "findings": ["WC-17"]},
+    {"domain": "progression path/DC", "impl": "stat profiles, XP, level refill", "candidate_or_wip": null, "design": "vector assessment", "findings": ["WC-07", "WC-17"]},
+    {"domain": "active/passive time", "impl": "pacing, ticks, carry, process intervals", "candidate_or_wip": null, "design": "per-subject anchors, phase order", "findings": ["WC-02", "WC-12"]},
+    {"domain": "Wait/co-op", "impl": "coordinated Wait, holds", "candidate_or_wip": null, "design": "pockets, merges, deadlines", "findings": ["WC-02", "WC-03"]},
+    {"domain": "streaming/distant simulation", "impl": "single locality root", "candidate_or_wip": null, "design": "residency, batching, staged work", "findings": []},
+    {"domain": "UI/animation/audio/perception", "impl": "captured offers, views, HP feedback", "candidate_or_wip": null, "design": "performance cues, audio, perception", "findings": ["WC-16", "WC-15"]}
+  ],
+  "findings": [
+    {
+      "id": "WC-01",
+      "title": "Last-resolution HP equality makes a past result own current HP",
+      "severity": "High",
+      "priority": 1,
+      "status": "IMPL seam (profiles 23/24); ordered resource evidence WIP elsewhere",
+      "phase": "A: care increment",
+      "scenario": "Lethal attack then authorized aid or level gain; admission compares retained post-damage HP with current HP and refuses.",
+      "evidence": [
+        {"path": "Beta/implementation/p02/encounter-choice-validation/RECOVERY_DESIGN.md", "lines": "29-35"},
+        {"path": "Beta/Runtime/docs/architecture/encounter-actions.md", "lines": "17-24"},
+        {"path": "Beta/implementation/WORLD_COMPOSITION_DECISION.md", "lines": "57-59,84-87"},
+        {"path": "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorProgressionState.cs", "lines": "84-86"}
+      ],
+      "resolution": "Admission compares current HP to the latest ordered resource change for the actor (any cause); every writer appends one; resolution records reference the change revision; new profile keeps old interpretation for old bytes.",
+      "alternatives": ["per-treatment supersession witness (rejected by decision)", "drop the check (rejected: replay must prove sequence)"],
+      "tests": [
+        {"name": "DamageThenAidAdmitsAndReplays", "expect": "admission passes; replay equal"},
+        {"name": "TamperedHpWithoutChangeRecordRefuses", "expect": "admission and replay refuse"},
+        {"name": "LevelGainProducesOneChangeRecord", "expect": "record with cause LevelGain only when level gained"},
+        {"name": "ExactRetryReturnsOriginalReceipt", "expect": "no second change"},
+        {"name": "Profile24BytesKeepEqualityInterpretation", "expect": "old saves unchanged"},
+        {"name": "ChangeRecordWithoutOwnerRevisionImpossible", "expect": "guard against parallel ledger"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionAdmission.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorProgressionState.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterActionSnapshot.cs",
+        "Beta/Runtime/docs/architecture/actor-resources.md",
+        "Beta/Runtime/docs/architecture/encounter-actions.md"
+      ],
+      "open_decisions": ["D-01"],
+      "migration_risk": "new profile; 16 MiB reserve must include the evidence owner"
+    },
+    {
+      "id": "WC-02",
+      "title": "Exposure stored twice; design needs per-subject divergence",
+      "severity": "Medium now, High later",
+      "priority": 4,
+      "status": "IMPL duplicate reconciled by admission; divergence DESIGN",
+      "phase": "B: passive effects (anchor); later independent co-op",
+      "scenario": "Held pocket, uncoupled dependant, rider on ship; no resident can differ from world exposure today.",
+      "evidence": [
+        {"path": "Beta/Runtime/docs/architecture/world-pacing.md", "lines": "5-9"},
+        {"path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs", "lines": "71-74"},
+        {"path": "Beta/Runtime/docs/architecture/persistence-and-history.md", "lines": "137-139"},
+        {"path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md", "lines": "74-81"}
+      ],
+      "resolution": "Declare pacing canonical now with an equality test; introduce ExposureAnchor per subject with coupling edges on attachment/support/treatment relations as an explicit profile.",
+      "alternatives": ["keep one world clock until multiplayer (risk: passive effects built on wrong subject)"],
+      "tests": [
+        {"name": "ResidentExposureMustEqualPacing", "expect": "admission refuses divergence (verify existing)"},
+        {"name": "HeldSubjectEarnsNoExposure", "expect": "release adds none retroactively"},
+        {"name": "SplitIntervalEquivalencePerAnchoredProcess", "expect": "1+1 == 2"},
+        {"name": "CoupledRiderShipAnchorsAdvanceTogether", "expect": "detach stops coupling at boundary"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPacingState.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Exposure/",
+        "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterExposureBinding.cs",
+        "Beta/Runtime/docs/architecture/time-and-encounters.md",
+        "Beta/Runtime/docs/architecture/world-pacing.md"
+      ],
+      "open_decisions": ["D-04"],
+      "migration_risk": "root change; new profile; lived coordinated saves unchanged"
+    },
+    {
+      "id": "WC-03",
+      "title": "Readiness debt duplicated between timing rows and lifecycle ledger",
+      "severity": "Low-Medium",
+      "priority": 6,
+      "status": "IMPL copy-in/out; equality check during Active unverified",
+      "phase": "A: care increment",
+      "scenario": "Restart during Active with disagreeing copies; forged ledger.",
+      "evidence": [
+        {"path": "Beta/Runtime/docs/architecture/encounter-lifecycle.md", "lines": "78-79"},
+        {"path": "Beta/Runtime/docs/architecture/encounter-timing.md", "lines": "12-15"}
+      ],
+      "resolution": "Timing canonical during Active, ledger otherwise; admission invariant that they agree during Active; document.",
+      "alternatives": ["timing rows reference the ledger instead of copying"],
+      "tests": [
+        {"name": "EntryActiveReleaseDebtRoundTrip", "expect": "per-actor debt preserved"},
+        {"name": "TamperedLedgerDuringActiveRefuses", "expect": "admission refuses"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleAdmission.cs"
+      ],
+      "open_decisions": [],
+      "migration_risk": "none if check already exists"
+    },
+    {
+      "id": "WC-04",
+      "title": "Body condition owned by spatial presence",
+      "severity": "Medium",
+      "priority": 8,
+      "status": "IMPL placement; injuries DESIGN",
+      "phase": "E: injury/restoration increment (SYN-08)",
+      "scenario": "Injury changes must not be invalidated by movement revisions and vice versa.",
+      "evidence": [
+        {"path": "Beta/Runtime/src/OpenFantasy.Core/Spatial/ActorPresence.cs", "lines": "7-38"},
+        {"path": "Beta/Runtime/docs/architecture/actors-and-society.md", "lines": "12-15"},
+        {"path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md", "lines": "131"}
+      ],
+      "resolution": "ActorBodyState facet with own revision; presence pins body revision; new spatial codec version.",
+      "alternatives": ["defer until first injury feature (recommended entry criterion)"],
+      "tests": [
+        {"name": "InjuryDoesNotChangePresenceRevision", "expect": "independent revisions"},
+        {"name": "MovementDoesNotChangeBodyRevision", "expect": "independent revisions"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Spatial/ActorPresence.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Actors/"
+      ],
+      "open_decisions": ["D-08"],
+      "migration_risk": "spatial codec version; earlier profiles keep bytes"
+    },
+    {
+      "id": "WC-05",
+      "title": "No life-state/capability facet; living re-derived in four places; incapacitated actors immortal and stuck",
+      "severity": "High (design)",
+      "priority": 3,
+      "status": "IMPL threshold; life state DESIGN",
+      "phase": "A: evaluator; B: life state",
+      "scenario": "Defeated solo player with no helper holds forever; no bleed-out, no finish, poison cannot progress.",
+      "evidence": [
+        {"path": "Beta/implementation/p02/encounter-choice-validation/RECOVERY_DESIGN.md", "lines": "17-22"},
+        {"path": "Beta/Runtime/docs/architecture/encounter-actions.md", "lines": "69-78"},
+        {"path": "Beta/Runtime/docs/architecture/encounter-lifecycle.md", "lines": "83-88"},
+        {"path": "Beta/Runtime/docs/architecture/world-composition.md", "lines": "41-45"},
+        {"path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md", "lines": "141"}
+      ],
+      "resolution": "One ActorCapabilityQuery with typed reasons used by all callers; then explicit LifeState facet changed only by typed transitions; ResolveDeath once-only.",
+      "alternatives": ["shared helper deriving from HP only (sufficient for care increment only)"],
+      "tests": [
+        {"name": "CapabilityParityAcrossAllCallers", "expect": "same verdict and reason"},
+        {"name": "Hp0RegenerationNoOscillation", "expect": "per D-03 rule"},
+        {"name": "DeathTransitionOnceWithExactRetry", "expect": "one receipt, one transition"},
+        {"name": "TargetingIncapacitatedPerD02", "expect": "declared rule"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActorAvailability.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActions.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Care/"
+      ],
+      "open_decisions": ["D-02", "D-03"],
+      "migration_risk": "life state is a new root facet: new profile"
+    },
+    {
+      "id": "WC-06",
+      "title": "Remedy policy hard-coded in planner; no typed delivery mode",
+      "severity": "Medium",
+      "priority": 2,
+      "status": "IMPL policy in planner; RestorativeRemedyDefinition WIP not inspected",
+      "phase": "A: care increment",
+      "scenario": "Bandage at full HP; Potion into unconscious mouth; external salve; spell without hands.",
+      "evidence": [
+        {"path": "Beta/Runtime/src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs", "lines": "36-40"},
+        {"path": "Beta/Runtime/docs/architecture/world-composition.md", "lines": "86-88"},
+        {"path": "Beta/implementation/WORLD_COMPOSITION_DECISION.md", "lines": "49-53"}
+      ],
+      "resolution": "Definition carries NoEffectPolicy, DeliveryMode, anatomical requirement and amount pin; planner reads them; capability query checks compatibility.",
+      "alternatives": [],
+      "tests": [
+        {"name": "NoEffectPolicyVariants", "expect": "RefuseBeforeCost vs SpendAttempt behave per definition"},
+        {"name": "UnconsciousIngestRefusesExternalPasses", "expect": "typed reasons"},
+        {"name": "StaleDefinitionVersionRefuses", "expect": "amount bound to version"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Care/RestorativeRemedyDefinition.cs"
+      ],
+      "open_decisions": [],
+      "migration_risk": "none (definition content)"
+    },
+    {
+      "id": "WC-07",
+      "title": "Level-gain refill is an untracked resource writer",
+      "severity": "Medium",
+      "priority": 2,
+      "status": "IMPL",
+      "phase": "A: care increment",
+      "scenario": "XP reward after damage refills HP without evidence.",
+      "evidence": [
+        {"path": "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorProgressionState.cs", "lines": "73-87"},
+        {"path": "Beta/implementation/WORLD_COMPOSITION_DECISION.md", "lines": "61-63"}
+      ],
+      "resolution": "Route refill through ordered resource change with cause LevelGain under profile flag RefillOnLevelGain.",
+      "alternatives": [],
+      "tests": [
+        {"name": "LevelGainProducesOneChangeRecord", "expect": "see WC-01"},
+        {"name": "RefillRespectsEffectiveMaximum", "expect": "future modifier-aware"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorProgressionState.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs"
+      ],
+      "open_decisions": ["D-06"],
+      "migration_risk": "none"
+    },
+    {
+      "id": "WC-08",
+      "title": "Two mutually exclusive profile lineages with no join plan",
+      "severity": "High",
+      "priority": 5,
+      "status": "IMPL guards; join GAP",
+      "phase": "C: structural join (after care)",
+      "scenario": "Mining beneath an occupied floor during a paused encounter with breached water and care: no profile admits members and pacing together.",
+      "evidence": [
+        {"path": "Beta/Runtime/docs/architecture/persistence-and-history.md", "lines": "30-60"},
+        {"path": "Beta/Runtime/docs/architecture/liquid-cell-flow.md", "lines": "61-66"},
+        {"path": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md", "lines": "29-32"},
+        {"path": "Beta/Runtime/docs/architecture/reservoir-containment.md", "lines": "22-25"},
+        {"path": "Beta/Runtime/docs/architecture/structural-settlement.md", "lines": "18-21"},
+        {"path": "Beta/Runtime/docs/architecture/consequence-continuation.md", "lines": "12-23"}
+      ],
+      "resolution": "Written join plan: 24+members+policy (collapse refused), then continuation under pacing with pending work as encounter admission dependency, then flow with construction sealing; each step lists relaxed invariants.",
+      "alternatives": ["defer entirely (rejected: both lineages keep growing apart)"],
+      "tests": [
+        {"name": "JoinGenesisAdmissionFromUnplayed24", "expect": "admits"},
+        {"name": "EachExclusionGuardHasNamedTest", "expect": "retired deliberately"},
+        {"name": "ExcavationWithRiderDuringWaitRefuses", "expect": "typed reason"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+        "new admission/codec files"
+      ],
+      "open_decisions": [],
+      "migration_risk": "codec field positions; schema kinds; reserved-interval semantics under ticks"
+    },
+    {
+      "id": "WC-09",
+      "title": "Bounded embedded ledgers have no provenance-preserving rollover",
+      "severity": "Medium now, High later",
+      "priority": 9,
+      "status": "IMPL bounds; rollover GAP",
+      "phase": "D: before endurance qualification",
+      "scenario": "257th consumption or 4,097th transport stage refuses.",
+      "evidence": [
+        {"path": "Beta/Runtime/docs/architecture/item-consumption.md", "lines": "99"},
+        {"path": "Beta/Runtime/docs/architecture/world-and-geography.md", "lines": "281-283"},
+        {"path": "Beta/Runtime/docs/architecture/reservoir-transport.md", "lines": "87-90"},
+        {"path": "Beta/Runtime/docs/architecture/world-composition.md", "lines": "153-157"}
+      ],
+      "resolution": "Versioned compaction commit: seal oldest claims into a coverage witness in the root, archive sealed claims via checkpoint-linked archive, validate against witness plus live claims.",
+      "alternatives": ["raise bounds with endurance test showing 16 MiB reserve holds", "move claims wholesale to journal"],
+      "tests": [
+        {"name": "ThreeHundredConsumptionsAcrossRollover", "expect": "exact partition"},
+        {"name": "ForgedCoverageWitnessRefuses", "expect": "refuse"},
+        {"name": "ReplayThroughCompactionCommit", "expect": "equal"},
+        {"name": "SealedIntervalReconsumptionRefuses", "expect": "refuse"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionClaimValidation.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV2.cs",
+        "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs",
+        "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema*.cs"
+      ],
+      "open_decisions": [],
+      "migration_risk": "Production V3 codec; new commit kind"
+    },
+    {
+      "id": "WC-10",
+      "title": "Individual items need identity, condition and provenance beyond counted lots",
+      "severity": "Medium",
+      "priority": 10,
+      "status": "GAP",
+      "phase": "D: wear/repair increment",
+      "scenario": "A particular sword with maker, repairs and wear; tool wear per work action.",
+      "evidence": [
+        {"path": "Beta/spec-v1_1/LANGUAGE_AND_AFTERLIFE.md", "lines": "41"},
+        {"path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md", "lines": "161,165"},
+        {"path": "Beta/Runtime/docs/architecture/construction-physical.md", "lines": "25-36"},
+        {"path": "Beta/Runtime/docs/architecture/reservoir-transport.md", "lines": "59-61"}
+      ],
+      "resolution": "ItemInstance facet keyed by a never-split quantity-one lot ID; Maintain production operation retiring materials with disposition target = instance/member.",
+      "alternatives": ["separate instance ledger outside custody (rejected: second custody authority)"],
+      "tests": [
+        {"name": "WholeTransferKeepsIdAndFacet", "expect": "same ID"},
+        {"name": "SplitOfInstanceRefuses", "expect": "refuse"},
+        {"name": "RepairRetiresMaterialOnceNotInstance", "expect": "condition revised"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Custody/CountedSourceLot.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodyTransferPlanner.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Production/",
+        "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionMemberState.cs"
+      ],
+      "open_decisions": [],
+      "migration_risk": "custody codec extension"
+    },
+    {
+      "id": "WC-11",
+      "title": "Currency inside Progression; custody conflates owner and custodian",
+      "severity": "Medium",
+      "priority": 11,
+      "status": "IMPL placement; markets DESIGN",
+      "phase": "D: trade increment",
+      "scenario": "Shop, institution and estate wallets; mule carrying player goods; theft.",
+      "evidence": [
+        {"path": "Beta/Runtime/docs/architecture/actors-and-society.md", "lines": "15-17"},
+        {"path": "Beta/Runtime/docs/architecture/materials-and-activities.md", "lines": "147-151"},
+        {"path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md", "lines": "141,145,149"}
+      ],
+      "resolution": "Wallet ledger keyed by any custodian identity, transferred atomically with goods; later ownership-claim relation distinct from custody.",
+      "alternatives": ["coin as counted lots from a mint source (D-05)"],
+      "tests": [
+        {"name": "InstitutionWalletExists", "expect": "non-actor custodian holds funds"},
+        {"name": "GoodsAndMoneyAtomicExchange", "expect": "either side failure refuses both"},
+        {"name": "RemainsCustodyKeepsCoins", "expect": "on death"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Progression/",
+        "Beta/Runtime/src/OpenFantasy.Core/Custody/"
+      ],
+      "open_decisions": ["D-05"],
+      "migration_risk": "progression codec; wallet owner move"
+    },
+    {
+      "id": "WC-12",
+      "title": "No persistent effect owner and no declared process phase order",
+      "severity": "High",
+      "priority": 7,
+      "status": "DESIGN",
+      "phase": "B: passive recovery increment",
+      "scenario": "Poison and regeneration in one boundary at 3 HP; enchant twice remove one; hold must not expire effects.",
+      "evidence": [
+        {"path": "Beta/Runtime/docs/architecture/world-composition.md", "lines": "96-105"},
+        {"path": "Beta/implementation/WORLD_COMPOSITION_DECISION.md", "lines": "73-77"},
+        {"path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md", "lines": "153,165"},
+        {"path": "Beta/Runtime/docs/architecture/runtime-and-authority.md", "lines": "101-103"}
+      ],
+      "resolution": "EffectInstance owner (source, target facet, definition, stacking, anchor, expiry, carry, attributable contributions); versioned per-profile phase table; per-effect order (phase, definition ID, instance ID); one ordered change per effect; declare integrable vs per-step per process.",
+      "alternatives": ["net arithmetic per boundary (rejected by reference)"],
+      "tests": [
+        {"name": "PoisonBeforeRegenerationOrderFixture", "expect": "declared order; threshold after each"},
+        {"name": "RemoveFirstEnchantmentKeepsSecond", "expect": "attributable contributions"},
+        {"name": "HoldFreezesExpiry", "expect": "no retroactive expiry"},
+        {"name": "SplitIntervalEquivalenceForIntegrableProcesses", "expect": "equal"},
+        {"name": "LiquidDeclaredPerStep", "expect": "documented non-integrable"}
+      ],
+      "affected": [
+        "new Beta/Runtime/src/OpenFantasy.Core/Effects/",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPacingState.cs",
+        "Beta/Runtime/docs/architecture/time-and-encounters.md"
+      ],
+      "open_decisions": ["D-03"],
+      "migration_risk": "new root owner; new profile"
+    },
+    {
+      "id": "WC-13",
+      "title": "Scoped permission relation",
+      "severity": "Medium",
+      "priority": 3,
+      "status": "WIP one-off (care agreement)",
+      "phase": "A: first use; extraction on second use",
+      "scenario": "NPC helper under standing party policy; site extraction rights; delegated caregiver.",
+      "evidence": [
+        {"path": "Beta/implementation/WORLD_COMPOSITION_DECISION.md", "lines": "26-44"},
+        {"path": "Beta/Runtime/docs/architecture/excavation.md", "lines": "30"},
+        {"path": "Beta/Runtime/docs/architecture/world-composition.md", "lines": "47-51"}
+      ],
+      "resolution": "InteractionPermission relation (grantor, grantee, kind, subject, resource scope, revision, revocation) in a relations owner; extract after second real use.",
+      "alternatives": [],
+      "tests": [
+        {"name": "RevokedBeforeCommitRefuses", "expect": "refuse"},
+        {"name": "PermissionDoesNotSpendStock", "expect": "helper stock right separate"},
+        {"name": "NpcInitiatesUnderPolicy", "expect": "no player confirmation"},
+        {"name": "PermissionGrantsNoControlOrCustody", "expect": "refuse control/custody"}
+      ],
+      "affected": ["Beta/Runtime/src/OpenFantasy.Core/Care/", "new relations owner"],
+      "open_decisions": [],
+      "migration_risk": "new root owner when extracted"
+    },
+    {
+      "id": "WC-14",
+      "title": "Publication checklist and admission coverage",
+      "severity": "Medium",
+      "priority": 2,
+      "status": "IMPL scattered",
+      "phase": "A: care increment (V2 admission)",
+      "scenario": "A new disposition kind is missed by one of five scans.",
+      "evidence": [
+        {"path": "Beta/implementation/p02/encounter-choice-validation/RECOVERY_DESIGN.md", "lines": "102-107"},
+        {"path": "Beta/Runtime/docs/architecture/runtime-and-authority.md", "lines": "84-103"}
+      ],
+      "resolution": "Ordered versioned reconciliation list per profile in code plus a coverage test failing when a component or disposition kind lacks a participant; document order once.",
+      "alternatives": [],
+      "tests": [
+        {"name": "UnjoinedComponentFailsChecklist", "expect": "test-build fake component rejected"},
+        {"name": "NewDispositionSeenByEveryScan", "expect": "excavation, runoff, registry, admission"}
+      ],
+      "affected": [
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+        "Beta/Runtime/docs/architecture/runtime-and-authority.md"
+      ],
+      "open_decisions": [],
+      "migration_risk": "none"
+    },
+    {"id": "WC-15", "title": "Evidence records generalising Observations", "severity": "Low", "priority": 12, "status": "CAND (resources only)", "phase": "E: society/trade", "resolution": "Typed evidence with commit stamp, subject, observer scope; planners and UI consume evidence only.", "tests": [{"name": "NpcAidsNpcUnseen", "expect": "player view unchanged; journal proves"}], "affected": ["Beta/Runtime/src/OpenFantasy.Core/Observations/"], "open_decisions": []},
+    {"id": "WC-16", "title": "Presentation cue deduplication from receipts", "severity": "Low", "priority": 13, "status": "DESIGN", "phase": "E: native care acceptance", "resolution": "Performance requests keyed by (command ID, phase) derived from receipts/observations; rejoin suppresses duplicates.", "tests": [{"name": "RefusedCommitPlaysNoHealCue", "expect": "no cue"}], "affected": ["Beta/Runtime/client/scripts/Presentation/"], "open_decisions": []},
+    {"id": "WC-17", "title": "Balance stays vector-valued; witnesses durable and privileged", "severity": "Low", "priority": 14, "status": "DESIGN", "phase": "E: generation", "resolution": "ChallengeAssessment vector; GenerationWitness stored and revalidated by dependency revision; never in forecasts.", "tests": [{"name": "PruningRevalidatesWitnessFirst", "expect": "no reroll"}], "affected": [], "open_decisions": []},
+    {"id": "WC-18", "title": "Vehicles as mobile assemblies with attachment relation", "severity": "Low", "priority": 15, "status": "DESIGN", "phase": "E: travel", "resolution": "Reuse physical member owner with motion frame and displacement-aware geometry; attachment edge names coupling law.", "tests": [{"name": "UnloadBoardedShipKeepsCoupledSet", "expect": "identities, cargo, links preserved"}], "affected": ["Beta/Runtime/src/OpenFantasy.Core/Construction/"], "open_decisions": []},
+    {"id": "WC-19", "title": "Record fixed-work mining adaptation against TD hardness/tool wear", "severity": "Low", "priority": 16, "status": "IMPL adaptation", "phase": "D: wear", "resolution": "Record in work record; migration trigger = tool condition exists.", "tests": [], "affected": ["Beta/Runtime/docs/architecture/excavation.md"], "open_decisions": []},
+    {"id": "WC-20", "title": "RNG stream registry rule", "severity": "Low", "priority": 17, "status": "IMPL per owner", "phase": "E: next randomness consumer", "resolution": "One stream per (domain, responsible identity) persisted with its outcome; test no two owners share a domain tag.", "tests": [{"name": "NoDuplicateRngDomainTags", "expect": "unique"}], "affected": ["Beta/Runtime/docs/architecture/identity-and-determinism.md"], "open_decisions": []}
+  ],
+  "decisions": [
+    {"id": "D-01", "question": "Does the resolution record keep post-damage HP as a field?", "recommendation": "Yes as history; admission uses the change revision", "revisit_trigger": "replay cost exceeds envelope"},
+    {"id": "D-02", "question": "Are attacks on incapacitated actors legal?", "recommendation": "Illegal by default; declared finish action with own rule", "revisit_trigger": "death implementation"},
+    {"id": "D-03", "question": "Does passive recovery apply at HP 0?", "recommendation": "No; stabilisation precedes regeneration (hysteresis)", "revisit_trigger": "defeat pacing playtest"},
+    {"id": "D-04", "question": "Per-subject exposure anchors now or with co-op?", "recommendation": "With passive effects (step B)", "revisit_trigger": "passive effects deferred past co-op"},
+    {"id": "D-05", "question": "Coin as counted lots or wallet ledger?", "recommendation": "Wallet ledger first", "revisit_trigger": "mint budgets or coin provenance content"},
+    {"id": "D-06", "question": "Level-gain refill retained?", "recommendation": "Yes as profile rule via ordered evidence", "revisit_trigger": "effective-maximum modifiers"},
+    {"id": "D-07", "question": "Extract generic staged-work envelope now?", "recommendation": "No; wait for collapse or flood staging", "revisit_trigger": "second pending kind"},
+    {"id": "D-08", "question": "Split body state from presence before injuries?", "recommendation": "No; entry criterion of injury increment", "revisit_trigger": "first injury feature"}
+  ],
+  "integration_plan": [
+    {"step": "A", "name": "Care increment on profile-24 lineage", "findings": ["WC-01", "WC-06", "WC-07", "WC-14", "WC-03", "WC-13", "WC-05"], "depends_on": ["ordered resource evidence (in flight)"], "migration_risk": "new profile; reserve headroom"},
+    {"step": "B", "name": "Passive effects", "findings": ["WC-12", "WC-02", "WC-05"], "depends_on": ["A"], "migration_risk": "root change; new profile"},
+    {"step": "C", "name": "Structural join", "findings": ["WC-08"], "depends_on": ["A"], "migration_risk": "codec positions; schema kinds; interval semantics under ticks"},
+    {"step": "D", "name": "Materials and economy", "findings": ["WC-09", "WC-10", "WC-11", "WC-19"], "depends_on": ["A"], "migration_risk": "Production V3; compaction commit kind"},
+    {"step": "E", "name": "Later", "findings": ["WC-04", "WC-15", "WC-16", "WC-17", "WC-18", "WC-20"], "depends_on": ["B", "C", "D"], "migration_risk": "spatial codec; relations owner"}
+  ],
+  "objections": [
+    "Only WC-01/06/07/14 and the capability evaluator are asked of the care increment; the rest are planned with entry criteria.",
+    "Ordered evidence is not event sourcing: deltas for pools only; owner keeps value; journal remains history; guard test prevents a parallel ledger.",
+    "Phase table orders processes within one branch step; coupling between subjects is decided by anchors and relation edges, not a global transaction.",
+    "Per-subject anchors may be premature; counter-argument is rework of passive effects built on a world-wide duration.",
+    "Coverage-witness compaction loses live per-claim detail; sealed archive remains in checkpoints/journal; alternative is raised bounds with endurance evidence.",
+    "Profile join is both a composition and a scheduling problem; the plan names both."
+  ],
+  "uncertainties": [
+    "Admission equality of lifecycle ledger vs timing rows during Active not verified in source (WC-03).",
+    "Care WIP definition may already carry policy/delivery fields (WC-06).",
+    "Test project layout beyond tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs not inspected; test placements are proposals.",
+    "No claim that the in-flight ordered resource evidence satisfies WC-01."
+  ]
+}

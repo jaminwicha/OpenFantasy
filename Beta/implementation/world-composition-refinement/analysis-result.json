@@ -1,0 +1,41 @@
+{
+  "status": "completed_pending_review",
+  "elapsed_seconds": 942.939,
+  "context_status": "verified",
+  "total_cost_usd": 9.92015875,
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1821,
+      "outputTokens": 15,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001896,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 162,
+      "outputTokens": 74693,
+      "cacheReadInputTokens": 485091,
+      "cacheCreationInputTokens": 303036,
+      "webSearchRequests": 0,
+      "costUSD": 9.91826275,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 24330,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "cost_note": "Provider list-price estimate, not verified subscription credit deduction.",
+  "auxiliary_model_note": "Native CLI also reports a small auxiliary Haiku entry; no fallback or extra model was selected by the lead.",
+  "acceptance": "Candidate analysis only; requirements/plan coverage and source assertions require independent correction."
+}

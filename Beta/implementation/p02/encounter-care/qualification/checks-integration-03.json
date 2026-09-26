@@ -1,0 +1,40 @@
+{
+  "status": "passing_managed_checks_on_preserved_wip_not_feature_acceptance",
+  "source_snapshot": "6e14121b6f02626da6de70f1ed291864766a5520",
+  "source_reference": "codex/checkpoint-care-composition-tested-wip-20260926T011925Z",
+  "build": {
+    "warnings": 0,
+    "errors": 0,
+    "log": "build-integration-03.log"
+  },
+  "tests": {
+    "core-integration-03.trx": {
+      "total": 1315,
+      "passed": 1315,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting-integration-03.trx": {
+      "total": 665,
+      "passed": 665,
+      "failed": 0,
+      "notExecuted": 0
+    }
+  },
+  "total_passed": 1980,
+  "native_or_durable_care_tests": false,
+  "live_care_qualified": false,
+  "historical_failures_retained": [
+    "build-initial.log",
+    "build-integration-02.log"
+  ],
+  "frozen_specs_unchanged": true,
+  "predecessor_index_unchanged": true,
+  "sha256": {
+    "core-integration-03.trx": "1881d9edd54fa214ced363b2b13cc723f6b397f7b4a23cf0ae4e223dba62d92f",
+    "core-integration-03.log": "a8e125914c2d6ca684a24708563668cef3dc7a812c0037b6d57fe0025c837dad",
+    "hosting-integration-03.trx": "d523fc057c5bf651ab73738a0d2ab18e9e0aa7387e705f7b658b848687089359",
+    "hosting-integration-03.log": "f4c9ad2b7407570fbc11eed261e7a473b4dbd085292b47a7fb21ffbccc96fd5b",
+    "build-integration-03.log": "6096e7883ac1a76c9481682e4e717b0c7f3eefbd9afc5a343339c6b7fecb9a73"
+  }
+}

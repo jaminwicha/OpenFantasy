@@ -1,0 +1,267 @@
+{
+  "source": "../../spec-v1_1/COVERAGE.json",
+  "source_sha256": "302b72f0990edd558440775d77fd48e6ecd16f2e3f0f845d499e1cd77e4d1864",
+  "scope": "Explicit requirement IDs in the independent JSON report; range endpoints are not expanded. This is a phase lookup, not per-requirement acceptance or exhaustive coverage.",
+  "entries": [
+    {
+      "requirement_id": "RQ-004",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-005",
+      "introduction_phase": "P04",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-015",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P08"
+    },
+    {
+      "requirement_id": "RQ-021",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-029",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P05"
+    },
+    {
+      "requirement_id": "RQ-031",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P07"
+    },
+    {
+      "requirement_id": "RQ-040",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P08"
+    },
+    {
+      "requirement_id": "RQ-046",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P09"
+    },
+    {
+      "requirement_id": "RQ-049",
+      "introduction_phase": "P04",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-053",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P10"
+    },
+    {
+      "requirement_id": "RQ-054",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-070",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P10"
+    },
+    {
+      "requirement_id": "RQ-071",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-072",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P10"
+    },
+    {
+      "requirement_id": "RQ-074",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P10"
+    },
+    {
+      "requirement_id": "RQ-075",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P13"
+    },
+    {
+      "requirement_id": "RQ-088",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-099",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-104",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-105",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-107",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-108",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-111",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-112",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-114",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-115",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-116",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-117",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-119",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-121",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P13"
+    },
+    {
+      "requirement_id": "RQ-126",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-127",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-128",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-129",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-131",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-132",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-134",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-136",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-137",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-140",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-141",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-146",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-147",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-148",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P11"
+    },
+    {
+      "requirement_id": "RQ-150",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-151",
+      "introduction_phase": "P00",
+      "full_completion_phase": "P10"
+    },
+    {
+      "requirement_id": "RQ-161",
+      "introduction_phase": "P00",
+      "full_completion_phase": "P10"
+    },
+    {
+      "requirement_id": "RQ-169",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P12"
+    },
+    {
+      "requirement_id": "RQ-173",
+      "introduction_phase": "P02",
+      "full_completion_phase": "P09"
+    },
+    {
+      "requirement_id": "RQ-174",
+      "introduction_phase": "P01",
+      "full_completion_phase": "P08"
+    },
+    {
+      "requirement_id": "RQ-175",
+      "introduction_phase": "P03",
+      "full_completion_phase": "P10"
+    },
+    {
+      "requirement_id": "RQ-176",
+      "introduction_phase": "P00",
+      "full_completion_phase": "P09"
+    }
+  ]
+}

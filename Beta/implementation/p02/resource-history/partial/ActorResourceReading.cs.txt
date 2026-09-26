@@ -1,0 +1,65 @@
+using OpenFantasy.Core.Content;
+
+namespace OpenFantasy.Core.Progression.ResourceHistory;
+
+/// <summary>Progression and resource values observed on one actor revision; the actor remains the owner.</summary>
+public readonly record struct ActorResourceReading
+{
+    public ActorResourceReading(int level, ulong experience, int currentHp, int currentMp, int maximumHp, int maximumMp)
+    {
+        if (level < 1 || level > LevelProgressionDefinition.MaximumSupportedLevel || maximumHp < 1 || maximumMp < 0
+            || currentHp < 0 || currentHp > maximumHp || currentMp < 0 || currentMp > maximumMp)
+        {
+            throw new ArgumentException("A resource reading requires a supported level and resources within their capacities.");
+        }
+        Level = level;
+        Experience = experience;
+        CurrentHp = currentHp;
+        CurrentMp = currentMp;
+        MaximumHp = maximumHp;
+        MaximumMp = maximumMp;
+    }
+
+    public int Level { get; }
+    public ulong Experience { get; }
+    public int CurrentHp { get; }
+    public int CurrentMp { get; }
+    public int MaximumHp { get; }
+    public int MaximumMp { get; }
+
+    public static ActorResourceReading From(ActorProgressionState actor)
+    {
+        ArgumentNullException.ThrowIfNull(actor);
+        return new(actor.Level, actor.Experience, actor.CurrentHp, actor.CurrentMp, actor.Stats.MaxHp, actor.Stats.MaxMp);
+    }
+}
+
+/// <summary>The exact statistic profile and level curve versions an actor revision was calculated with.</summary>
+public readonly record struct ActorDefinitionPins
+{
+    public ActorDefinitionPins(EntityId profileDefinitionId, ContentHash profileVersion,
+        EntityId curveDefinitionId, ContentHash curveVersion)
+    {
+        ArgumentNullException.ThrowIfNull(profileVersion);
+        ArgumentNullException.ThrowIfNull(curveVersion);
+        if (profileDefinitionId == curveDefinitionId)
+        {
+            throw new ArgumentException("A statistic profile and a level curve cannot share one definition identity.");
+        }
+        ProfileDefinitionId = profileDefinitionId;
+        ProfileVersion = profileVersion;
+        CurveDefinitionId = curveDefinitionId;
+        CurveVersion = curveVersion;
+    }
+
+    public EntityId ProfileDefinitionId { get; }
+    public ContentHash ProfileVersion { get; }
+    public EntityId CurveDefinitionId { get; }
+    public ContentHash CurveVersion { get; }
+
+    public static ActorDefinitionPins From(ActorProgressionState actor)
+    {
+        ArgumentNullException.ThrowIfNull(actor);
+        return new(actor.Profile.DefinitionId, actor.Profile.Version, actor.Curve.DefinitionId, actor.Curve.Version);
+    }
+}

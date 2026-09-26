@@ -260,3 +260,13 @@ the final targeted run adds one new regression for 1,499 distinct cases. Develop
 `codex/runtime-foundation`; prior markers, all 22 frozen specifications and the exact unrelated 19-file
 predecessor index are preserved. No checkout switch, force move, push, merge or full-phase acceptance
 accompanies this fixed-vessel checkpoint.
+
+
+The `codex/milestone-world-composition-refinement` marker preserves the reviewed three-pass analysis,
+independent Fable challenge, lead disposition, timeless-reference clarifications and retained failure
+records. It qualifies the documentation/review scope only. The separately tested care/material WIP
+is recoverable at `codex/checkpoint-care-composition-tested-wip-20260926T011925Z` (`6e14121`): clean build,
+1,980 managed cases, no failures/skips, but no accepted live/durable/native care flow. The raw analysis
+checkpoint is `codex/checkpoint-composition-review-20260926T010637Z` (`69ddf77`). Earlier references,
+frozen specs and unrelated predecessor index remain preserved. The Max-effort history implementation
+hit its finite limit; a smaller follow-up remains pending approval, with no automatic paid retry.

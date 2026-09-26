@@ -1,0 +1,14 @@
+{
+  "commit": "1d00246aa08292db47b2716102f0fa8014130017",
+  "checkpoint": "codex/checkpoint-composition-witnesses-20260926T011741Z",
+  "backup_manifest": "/Users/alucinor/.codex/skill-backups/composition-witnesses-20260926T011741Z/manifest.json",
+  "sha256": "3429636f03a7aeae745cb95cae482b51ee426f068755f0fd8b621b4540373f94",
+  "copies": [
+    "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-technical-design/SKILL.md",
+    "/Users/alucinor/.codex/skills/game-technical-design/SKILL.md",
+    "/Users/alucinor/.claude/skills/game-technical-design/SKILL.md"
+  ],
+  "scope": "Technical-design composition lessons only; unrelated ecosystem changes preserved.",
+  "preparation_failure": "First preflight assumed an absent .agents copy; failed before mutation. Corrected to the two installed copies.",
+  "skill_validator": "Pass via /private/tmp/openfantasy-skill-validation YAML dependency; initial stale dependency-directory attempt failed before validation."
+}

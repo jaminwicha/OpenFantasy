@@ -77,6 +77,8 @@ automatic release or rescue transition in this interpretation.
 
 The permanent ledger retains readiness debt for every resident, including bystanders and incapacitated
 actors. Entry copies it into the new timing owner; accepted active boundaries copy resulting debt back.
+While an episode exists, complete-world admission requires every timing row to equal its permanent
+ledger row, including the Outcome phase. These reconciled witnesses cannot drift independently.
 Release changes neither that debt nor earned exposure. Each ordinary exploration step pays at most
 180 tactical units per actor, clamped at zero. Held interactions and lifecycle boundaries pay none.
 

@@ -1,0 +1,63 @@
+namespace OpenFantasy.Core.Progression.ResourceHistory;
+
+/// <summary>Distinct continuity invariants that ordered resource evidence can violate.</summary>
+public enum ResourceHistoryRejection
+{
+    None = 0,
+    /// <summary>The evidence, basis or current snapshot names another world or branch.</summary>
+    WrongScope = 1,
+    /// <summary>The decoded evidence pins a basis snapshot other than the supplied one.</summary>
+    StaleBasis = 2,
+    /// <summary>The supplied current snapshot or actor is older than the admitted evidence.</summary>
+    StaleCurrentState = 3,
+    /// <summary>The actor is not part of the admitted basis actor set.</summary>
+    UnknownActor = 4,
+    /// <summary>World sequences or ordinals do not advance in the declared order.</summary>
+    OutOfOrder = 5,
+    /// <summary>The same world sequence and ordinal, and therefore effect identity, already exists.</summary>
+    DuplicateEffect = 6,
+    /// <summary>An ordinal gap shows an effect of the same world sequence is absent.</summary>
+    MissingEffect = 7,
+    /// <summary>One accepted command cannot commit resource effects at two world sequences.</summary>
+    ReplayedCommand = 8,
+    /// <summary>The command identity aliases the world, branch, an actor, a definition or an account.</summary>
+    AliasedIdentity = 9,
+    /// <summary>The change was prepared from an actor revision older than the replayed head.</summary>
+    StaleActorRevision = 10,
+    /// <summary>An actor revision between the replayed head and this change has no evidence.</summary>
+    MissingActorChange = 11,
+    /// <summary>The same actor revision carries different level, experience, health or magic values.</summary>
+    IncompatibleActorState = 12,
+    /// <summary>The change pins a statistic profile or level curve other than the actor's admitted pins.</summary>
+    ConflictingDefinition = 13,
+    /// <summary>The transition retains the original actor, so there is no actor revision to evidence.</summary>
+    NoActorChange = 14,
+    /// <summary>The recorded after-values do not follow the named operation's law from the before-values.</summary>
+    UnlawfulEffect = 15,
+    /// <summary>The bounded storage envelope is full; it is not a lifetime healing limit.</summary>
+    CapacityExceeded = 16
+}
+
+/// <summary>Thrown when an effect list cannot be admitted as one continuous history.</summary>
+public sealed class ResourceHistoryAdmissionException : ArgumentException
+{
+    public ResourceHistoryAdmissionException(ResourceHistoryRejection rejection, string message) : base(message)
+    {
+        Rejection = rejection;
+    }
+
+    public ResourceHistoryRejection Rejection { get; }
+}
+
+/// <summary>Thrown when resource-history bytes are malformed, non-canonical, oversized or inadmissible.</summary>
+public sealed class ResourceHistoryFormatException : FormatException
+{
+    public ResourceHistoryFormatException(string message, ResourceHistoryRejection rejection = ResourceHistoryRejection.None)
+        : base(message)
+    {
+        Rejection = rejection;
+    }
+
+    /// <summary>The violated continuity invariant, or None for a pure encoding problem.</summary>
+    public ResourceHistoryRejection Rejection { get; }
+}
