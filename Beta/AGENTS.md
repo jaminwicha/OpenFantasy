@@ -43,6 +43,22 @@ Preserve unrelated staged predecessor changes. The predecessor project compiles 
 
 The central task owns integration. Assign bounded file ownership to workers and independent critics. Artists own native asset production separately from engine builders. Codex and Claude may use the same contracts and evidence. Do not invoke a heavyweight game-generation workflow by default.
 
+## Credit-aware implementation delegation
+
+Owner steering, 2026-09-25: use Claude `fable[1m]` with **Max effort** (`--effort max`) for delegated
+implementation and independent review. The one-million-context selector and effort are explicit
+project doctrine; never silently substitute or downgrade them. This authorizes substantial bounded
+implementation assignments in this project while Astra conserves credits through integration and
+review of coherent units. It supersedes the earlier implementation-only-by-Astra default here.
+
+Use the maintained cross-agent delegation adapter directly, with isolated checkouts or disjoint
+ownership, synchronized/pinned project context, finite time/usage limits and compact results.
+Offload real code, tests and analysis rather than merely arranging repeated reviews. Astra reviews
+the actual changes and relevant evidence at useful checkpoints; unchanged feasibility, correctness,
+native and human acceptance gates remain in force. Request a distinct independent review for the
+world-composition refinement, including challenges and extrapolation beyond the proposed design.
+Retain partial work and report friction; no recursive fleet, relay agent or automatic paid retry.
+
 ## Runtime application style
 
 Apply the [world composition contract](Runtime/docs/architecture/world-composition.md): preserve

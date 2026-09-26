@@ -13,17 +13,20 @@ public enum ActorRewardRejection
 /// <summary>Private candidate only. Quest completion and this reward must commit atomically in the calling authority.</summary>
 public sealed class ActorRewardPlan
 {
-    internal ActorRewardPlan(ProgressionSnapshot candidate, ActorRewardRejection rejection, IEnumerable<int> levelsGained)
+    internal ActorRewardPlan(ProgressionSnapshot candidate, ActorRewardRejection rejection, IEnumerable<int> levelsGained,
+        ActorResourceTransition? actorTransition = null)
     {
         Candidate = candidate;
         Rejection = rejection;
         LevelsGained = Array.AsReadOnly(levelsGained.ToArray());
+        ActorTransition = actorTransition;
     }
 
     public bool Succeeded => Rejection == ActorRewardRejection.None;
     public ProgressionSnapshot Candidate { get; }
     public ActorRewardRejection Rejection { get; }
     public ReadOnlyCollection<int> LevelsGained { get; }
+    public ActorResourceTransition? ActorTransition { get; }
 }
 
 /// <summary>
@@ -52,13 +55,14 @@ public static class ActorRewardPlanner
         }
         try
         {
-            ActorProgressionState nextActor = actor.GainExperience(reward.Experience);
+            ActorResourceTransition transition = actor.GainExperience(reward.Experience);
+            ActorProgressionState nextActor = transition.Candidate;
             CurrencyAccount recipient = state.Currency.GetActorAccount(actorId);
             CurrencyLedger nextCurrency = reward.CurrencyAmount == 0 ? state.Currency
                 : state.Currency.PayReward(reserve, recipient, reward.CurrencyAmount);
-            ProgressionSnapshot candidate = state.WithReward(nextActor, nextCurrency);
+            ProgressionSnapshot candidate = state.WithActorState(nextActor, nextCurrency);
             return new ActorRewardPlan(candidate, ActorRewardRejection.None,
-                Enumerable.Range(actor.Level + 1, nextActor.Level - actor.Level));
+                Enumerable.Range(actor.Level + 1, nextActor.Level - actor.Level), transition);
         }
         catch (OverflowException)
         {

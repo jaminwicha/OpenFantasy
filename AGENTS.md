@@ -1,5 +1,10 @@
 # Shared project entrypoint
 
+Owner update, 2026-09-25: for this project's credit-constrained implementation, delegate substantial
+coding/testing and independent review units to Claude `fable[1m]` with Max effort (`--effort max`).
+Astra integrates and reviews. This supersedes the older implementation-only-by-Astra default below;
+follow the detailed delegation doctrine in `Beta/AGENTS.md`, with explicit scope and finite limits.
+
 For the successor game, read [implementation instructions](Beta/AGENTS.md) and the [current agent handoff](Beta/implementation/AGENT_HANDOFF.md) before choosing work. They apply equally to Codex, Claude and other authorized workers. Read only the task-relevant contracts after that; do not reload the whole research archive for every assignment.
 
 The predecessor remains a preservation and migration source. Successor implementation lives in `Beta/Runtime/`, with stable `OpenFantasy` runtime names. Do not infer permission to change predecessor files from a successor assignment.

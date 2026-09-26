@@ -39,10 +39,38 @@ public sealed class ActorProgressionState
     public int CurrentMp { get; }
     public ActorStatValues Stats { get; }
 
-    internal ActorProgressionState WithResources(int currentHp, int currentMp) =>
-        new(ActorId, checked(Revision + 1), Profile, Curve, Level, Experience, currentHp, currentMp);
+    /// <summary>Prepares capped damage. Target legality and the damage rule belong to the invoking action.</summary>
+    public ActorResourceTransition TakeDamage(uint amount)
+    {
+        int actual = (int)Math.Min(amount, (uint)CurrentHp);
+        return PrepareResources(ActorResourceOperation.Damage, amount, CurrentHp - actual, CurrentMp);
+    }
 
-    internal ActorProgressionState GainExperience(ulong amount)
+    /// <summary>Prepares additive vitality restoration; it does not treat injuries or decide life/death eligibility.</summary>
+    public ActorResourceTransition RestoreHealth(uint amount)
+    {
+        int actual = (int)Math.Min(amount, (uint)(Stats.MaxHp - CurrentHp));
+        return PrepareResources(ActorResourceOperation.HealthRestoration, amount, CurrentHp + actual, CurrentMp);
+    }
+
+    /// <summary>Prepares the exact magic cost. Insufficient resources cannot pay a partial cost.</summary>
+    public ActorResourceTransition SpendMagic(uint amount)
+    {
+        if (amount > (uint)CurrentMp)
+        {
+            throw new InvalidOperationException("The actor cannot pay the complete magic cost.");
+        }
+        return PrepareResources(ActorResourceOperation.MagicExpenditure, amount, CurrentHp, CurrentMp - (int)amount);
+    }
+
+    private ActorResourceTransition PrepareResources(ActorResourceOperation operation, uint amount, int hp, int mp)
+    {
+        var candidate = hp == CurrentHp && mp == CurrentMp ? this
+            : new ActorProgressionState(ActorId, checked(Revision + 1), Profile, Curve, Level, Experience, hp, mp);
+        return new(this, candidate, operation, amount);
+    }
+
+    internal ActorResourceTransition GainExperience(ulong amount)
     {
         ulong experience = checked(Experience + amount);
         int level = Level;
@@ -53,7 +81,8 @@ public sealed class ActorProgressionState
         }
         ActorStatValues stats = Profile.Calculate(level);
         bool advanced = level != Level;
-        return new ActorProgressionState(ActorId, checked(Revision + 1), Profile, Curve, level, experience,
+        var candidate = new ActorProgressionState(ActorId, checked(Revision + 1), Profile, Curve, level, experience,
             advanced ? stats.MaxHp : CurrentHp, advanced ? stats.MaxMp : CurrentMp);
+        return new(this, candidate, ActorResourceOperation.ExperienceReward, amount);
     }
 }

@@ -77,6 +77,14 @@ pins and combined raw/derived lot and storage bounds. Material mass remains atta
 recipe bindings. Retired ancestral recipe inputs are backing for their output; counting both as
 live or consumed mass would count the same material twice.
 
+## Restorative composition
+
+For restorative composition, [RestorativeItemPlanner](../../src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs)
+combines this exact dose retirement with a capped resource transition. Its coupled candidate supports
+self-use and another recipient without depending on a combat aftermath acknowledgment. Permission,
+anatomical delivery, reach, time, encounter consequences and persistence belong to the complete action.
+The [actor-resource contract](actor-resources.md) distinguishes those responsibilities.
+
 ## Canonical archive ownership
 
 The optional `consumedItems` constructor argument explicitly selects production ownership:

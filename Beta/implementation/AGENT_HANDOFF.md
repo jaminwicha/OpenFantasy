@@ -42,6 +42,37 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Named resource operations and restorative composition](p02/resource-composition/README.md) implement
+controller-neutral damage, capped additive healing, exact MP costs and XP/reward transitions over the
+single existing HP/MP owner. Actual combat and rewards use them. The source-backed item planner
+couples one raw/crafted Potion with self/external health restoration; failed/no-effect/stale/overflow
+attempts return all original owners. Full-health use does not consume a dose under this remedy policy.
+
+The exact nine-file implementation/test change, isolated over committed `13b3379` without care WIP,
+builds cleanly and passes all 1,222 Core + 665 Hosting/client = 1,887 cases, zero failed/skipped.
+[Evidence](p02/resource-composition/qualification/verification.json) and
+[review](p02/resource-composition/REVIEW.md) retain the scope and all failed setup/test attempts.
+[Actor resources](../Runtime/docs/architecture/actor-resources.md) distinguishes transient candidate
+results from durable, authenticated history. No care/profile25/native/recovery gate closes.
+
+Separate authorized `fable[1m]` Max-effort runs implement generic ordered resource history and perform
+three-pass cross-system composition analysis. Their output is not included in this qualification.
+After review, integrate history into every writer, replace the care-only last-attack seam and qualify
+ordinary plus aftermath treatment. The owner also requires a separate independent Fable challenge
+review of the broader model, followed by accepted fixes and tests. Dispatch details are retained in
+[pending delegation](p02/resource-composition/qualification/fable-dispatch.json). Ecosystem adapter
+commit `54ab14a` adds explicit effort selection; all 33 adapter tests pass and six installed copies match.
+
+Owner steering, 2026-09-25 (credit allocation): delegate more actual implementation to Claude
+`fable[1m]` with Max effort (`--effort max`) while Astra owns review and integration. This is project
+doctrine and authorizes bounded implementation work
+within the active project; it supersedes the earlier Astra-only implementation default for this
+credit-constrained work. Use cohesive assignments, explicit ownership, finite limits and the
+maintained context/skill verification hook. No model substitution, automatic paid retries or relay
+agents. Keep correctness gates unchanged and report delegation friction and usage honestly.
+Perform further cross-system composition passes and a distinct independent Fable challenge review;
+turn accepted findings into implementation and adversarial tests rather than document-only closure.
+
 Owner steering, 2026-09-25: [typed world composition](WORLD_COMPOSITION_DECISION.md) is the selected
 direction for healing and the wider simulation: meaningful domain actions over shared typed facets,
 relations and atomic transactions. Before continuing care, separate recovery acknowledgment from

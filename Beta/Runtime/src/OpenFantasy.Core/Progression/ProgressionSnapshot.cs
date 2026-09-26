@@ -101,9 +101,19 @@ public sealed class ProgressionSnapshot
         }
     }
 
-    internal ProgressionSnapshot WithReward(ActorProgressionState actor, CurrencyLedger currency) =>
+    internal ProgressionSnapshot WithActorState(ActorProgressionState actor, CurrencyLedger currency) =>
         new(WorldId, BranchId, checked(Revision + 1), Profiles, Curves,
             Actors.Select(value => value.ActorId == actor.ActorId ? actor : value), currency);
+
+    internal ProgressionSnapshot WithResourceTransition(ActorResourceTransition transition)
+    {
+        if (!ReferenceEquals(GetActor(transition.Before.ActorId), transition.Before))
+        {
+            throw new ArgumentException("The prepared resource transition must use this exact actor basis.", nameof(transition));
+        }
+        return ReferenceEquals(transition.Before, transition.Candidate) ? this
+            : WithActorState(transition.Candidate, Currency);
+    }
 
     private void Register(EntityId identity)
     {

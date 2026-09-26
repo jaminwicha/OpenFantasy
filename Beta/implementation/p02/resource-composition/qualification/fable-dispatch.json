@@ -1,0 +1,18 @@
+{
+  "task_root": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-fable-resources-is2e76fu",
+  "worker": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-fable-resources-is2e76fu/worktree",
+  "source_snapshot": "6125a625f9a94c17eb070d0b7d69d624286cfc24",
+  "context": {
+    "manifest": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-fable-resources-is2e76fu/context.json",
+    "sha256": "2721c2e31bb931b3ab76a977093444b504293695a50325f2e33ad4d9b9809541"
+  },
+  "model": "fable[1m]",
+  "effort": "max",
+  "timeout_seconds": 1200,
+  "max_budget_usd": 12,
+  "status": "dispatched_pending_review",
+  "adapter_commit": "54ab14a",
+  "analysis_output": "analysis-run",
+  "implementation_output": "implementation-run",
+  "independent_challenge_review": "Required after analysis and Astra review; not yet dispatched"
+}

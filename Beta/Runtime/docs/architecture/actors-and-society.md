@@ -17,6 +17,11 @@ condition; world admission joins those records by identity.
 profiles, level progress, reward rules and currency ledgers. The farm content binds actual source
 definitions and a funded delivery agreement rather than manufacturing display-only XP or money.
 
+[Actor resources](actor-resources.md) defines named immutable damage, restoration, MP expenditure
+and reward transitions over that same progression owner. Restorative item composition couples exact
+material consumption and capped HP changes without making either candidate a complete treatment
+authority or a second health store.
+
 [Physical encounter actions](encounter-actions.md) use those same progression resources for damage
 and MP costs. Explicit ability grants require actual functional anatomy, including `NaturalWeapon`
 for the authored wolf's teeth. Missing ancestors disable their descendant functions. Zero HP excludes

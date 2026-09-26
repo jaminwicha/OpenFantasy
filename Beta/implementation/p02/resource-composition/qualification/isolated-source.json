@@ -1,0 +1,44 @@
+{
+  "base_head": "13b33793b6f6f46592b2a7bc89fd8b4d9b8d6186",
+  "isolated_root": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-resource-isolated-osef4_6j",
+  "implementation_scope": "Exactly these nine implementation/test files over committed HEAD; unfinished care/material profile excluded",
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorResourceTransition.cs",
+      "sha256": "2a17fd76938205699e4122754e0e20751e1b0acc9412a5a1cdbafca7a2f9ea3e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorProgressionState.cs",
+      "sha256": "a0dbdf3fec608ff0fbe53ad7d8e39e761e90f1156843ef804af25d1e5bcb3f7b"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs",
+      "sha256": "0bbf9c01809e79685d9f9e4f96f78d890b7c59a819bf7c822621d464368a50f4"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Progression/ProgressionSnapshot.cs",
+      "sha256": "b7165f06e3a25c88f337cdd4e07e6138070a4df84f861fa91629ecec9b3ebd5d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs",
+      "sha256": "e655de97f9a38d7507eade89c23380d1c555cc6ad083a4fbd07f6a096a0d2fb8"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/RestorativeItemPlan.cs",
+      "sha256": "52e32e3fcf9aba65f648c34025aceb63540749293782414ffdb3d174e2c493a9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs",
+      "sha256": "dbfb2238ce3c9aa219d72a537786bfb087a08a311dc3b779300b9531141b4a38"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ActorResourceTransitionTests.cs",
+      "sha256": "0f6151b07c10822fcdb2d7809a20e0bf7dd2255a0ebfa7f53eee6a9781f37003"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Production/RestorativeItemTests.cs",
+      "sha256": "839cc1f7979c2f6a87d380d915d19f2c50da59e2df4284d895ad57654908cb7c"
+    }
+  ],
+  "path_normalization": "Canonical /private path prevents duplicate NuGet restore graph nodes through the macOS /var alias."
+}

@@ -149,14 +149,15 @@ internal static class WorldEncounterActionProcessor
                 variation = checked(900U + (uint)stream.NextUInt64(201));
                 random = stream.CaptureState();
                 beforeHp = (uint)target.CurrentHp;
-                damage = Math.Min(beforeHp, EncounterActionRules.ComputePhysicalDamage(source.Stats.Attack,
+                var damageEffect = target.TakeDamage(EncounterActionRules.ComputePhysicalDamage(source.Stats.Attack,
                     target.Stats.Defense, ability.PowerTenths, variation));
-                afterHp = beforeHp - damage;
+                damage = checked((uint)-damageEffect.Health.Delta);
+                afterHp = (uint)damageEffect.Candidate.CurrentHp;
                 mana = ability.ManaCost;
                 var changed = progression.Actors.Select(value => value.ActorId == target.ActorId
-                    ? value.WithResources((int)afterHp, value.CurrentMp)
+                    ? damageEffect.Candidate
                     : value.ActorId == source.ActorId && mana != 0
-                        ? value.WithResources(value.CurrentHp, checked(value.CurrentMp - (int)mana)) : value);
+                        ? value.SpendMagic(mana).Candidate : value);
                 progression = new ProgressionSnapshot(progression.WorldId, progression.BranchId, checked(progression.Revision + 1),
                     progression.Profiles, progression.Curves, changed, progression.Currency);
                 status = EncounterActionResolutionStatus.Damaged;
