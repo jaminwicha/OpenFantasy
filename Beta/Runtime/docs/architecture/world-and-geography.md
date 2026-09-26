@@ -285,7 +285,8 @@ contract, never silent deletion of history.
 Every separately validated custody/Production candidate must pass `PlanReconcile` before publication
 under this owner. An otherwise legal delivery may be rejected because it consumes held receiving space.
 Reconciliation requires advancing custody with unchanged scope/admission, preserves the presence or absence
-of Production, and retains exact admitted recipes and prior production batches. Changed Production must
+of Production and its consumption profile, and retains exact admitted recipes, prior production batches
+and consumed-item claims. Changed Production must
 advance its own revision. Every active forcing input is re-prepared against the successor to revalidate
 actual source reservations, pins, protection, receiver contents and complete aggregate headroom. A missing
 source hold or overfull receiver rejects the entire candidate. The same-state operation is idempotent.
@@ -609,6 +610,8 @@ internally; their integrating world must own the complete allocation scope.
 admission, source intervals and active cells. All allocation views share the same counted inventory
 and production proof. [Shared evidence](../../src/OpenFantasy.Core/Geography/TerrainMaterialProduction.cs)
 validates Production against actual authority once per composition and indexes direct raw retirements.
+Those retirements include both recipe ingredients and explicit item-consumption claims. Produced
+output consumption adds no second copy of its already-retired raw ancestry.
 Raw and transformed lots share the 4,096-live-lot ceiling and each custodian's actual counted capacity.
 Production and live derived revisions cannot exceed the custody root; retired ingredient revisions
 precede it. Geographic and allocation identities cannot alias production roles. Shared item/physical
@@ -654,6 +657,13 @@ is 22,500,000 bytes. Both require production proof, validate complete compositio
 re-encoding. Existing v1 codecs preserve raw-only bytes and explicitly reject attached production;
 no encoder silently drops evidence. Content hashes dispatch to the matching explicit profile.
 The privileged `--inspect-material-production` operator reads registry v2 without changing a world.
+
+Consumption-capable production uses explicit registry/state V3 archives. Runoff requests, routing,
+capacity, reservoir and transport owners use their corresponding V2 archives; each retains the complete
+production V2 evidence even when its consumed collection is empty. Ordinary successor reconciliation
+preserves the selected interpretation in both directions. See
+[composed material evidence](item-consumption.md#composed-material-evidence) for the exact version table,
+history-retention contract and complete-world publication boundary.
 
 This standalone composition reuses the production ledger's finite recipes, batches and provenance.
 It does not bind terrain registries to the live world, authorize extraction, supply geological profiles,

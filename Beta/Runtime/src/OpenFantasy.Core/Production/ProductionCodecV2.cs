@@ -88,7 +88,7 @@ public static class ProductionCodecV2
         }
     }
 
-    private static byte[] EncodeClaim(ConsumedItemClaim claim) => CanonicalEncodingV1.Frame("production.consumed-item",
+    internal static byte[] EncodeClaim(ConsumedItemClaim claim) => CanonicalEncodingV1.Frame("production.consumed-item",
         Number(1), claim.ConsumptionId.ToByteArray(), claim.CommandId.ToByteArray(), claim.ActorId.ToByteArray(),
         claim.RecipientActorId.ToByteArray(), claim.CustodianId.ToByteArray(), ProductionCodecV1.EncodeRetired(claim.Ingredient));
 

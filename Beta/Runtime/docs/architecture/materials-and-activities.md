@@ -38,9 +38,10 @@ inventory. A transfer remains attributed to its original allocation's source int
 receiving storage is another allocation's coarse custodian. Shared detail and storage limits apply to
 all allocations together; successful validation of separate slab states alone cannot establish that.
 Attached production participates in combined storage/lot limits and identity/calibration checks.
-Crafting consumes stock outside representation custody and atomically retains its history alongside
-the allocation views. Reconciliation preserves exact prior batches and recipe admission; it cannot
-restore consumed source rights by replacing the proof.
+Crafting and item consumption retire stock outside representation custody and retain their history
+alongside the allocation views. [Composed material evidence](item-consumption.md#composed-material-evidence)
+counts direct raw retirements once and preserves exact prior batches, consumption claims and recipe
+admission. Reconciliation cannot restore consumed source rights by replacing the proof.
 
 [Funded runoff budgets](world-and-geography.md#domain-contract-funded-runoff-budgets) use existing
 reserved raw source intervals and exact volume calibration to prepare finite downstream obligations.

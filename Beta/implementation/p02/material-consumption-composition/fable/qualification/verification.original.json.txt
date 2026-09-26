@@ -1,0 +1,43 @@
+{
+  "assignment": "Independent review and hardening of geography/material composition with accountable item consumption",
+  "reviewer": "Claude Fable 5.1 (fable[1m], Max effort)",
+  "date": "2026-09-25",
+  "base": "c2547c61f34135d90673c6a587c269e641beca6a",
+  "candidateSource": "29 files from tested WIP 6e14121 (candidate-files.json)",
+  "toolchain": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet (10.0.401)",
+  "restore": {
+    "command": "dotnet restore Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj --locked-mode --ignore-failed-sources --disable-parallel",
+    "exitCode": 0
+  },
+  "runs": [
+    {
+      "name": "focused-fixed-01",
+      "command": "dotnet test <Core.Tests.csproj> --no-restore -m:1 -p:UseSharedCompilation=false --filter 'FullyQualifiedName~Geography|FullyQualifiedName~Excavation' --logger 'trx;LogFileName=material-review.trx'",
+      "source": "candidate + F1 fix + ConsumptionReviewTests.cs",
+      "total": 278, "passed": 278, "failed": 0, "skipped": 0,
+      "note": "trx later overwritten by focused-fixed-02 with identical source and counts"
+    },
+    {
+      "name": "defect-witness-unfixed",
+      "command": "dotnet test <Core.Tests.csproj> --no-restore -m:1 -p:UseSharedCompilation=false --filter 'FullyQualifiedName~ConsumptionReviewCapacityTests|FullyQualifiedName~Legacy_registry_reconciliation' --logger 'trx;LogFileName=material-review-defect-witness-unfixed.trx'",
+      "source": "candidate with ProductionRetirementHistory.ValidateSuccessor temporarily reverted to the one-directional check",
+      "total": 3, "passed": 1, "failed": 2, "skipped": 0,
+      "failed": ["TerrainMaterialRegistryTests.Legacy_registry_reconciliation_cannot_silently_acquire_the_consumption_profile (Assert.Throws: No exception was thrown)", "ConsumptionReviewCapacityTests.Legacy_capacity_reconciliation_cannot_silently_acquire_the_consumption_profile (Assert.Throws: No exception was thrown)"],
+      "artifact": "material-review-defect-witness-unfixed.trx",
+      "retained": true
+    },
+    {
+      "name": "focused-fixed-02",
+      "command": "same as focused-fixed-01",
+      "source": "final worktree state (fix restored)",
+      "total": 278, "passed": 278, "failed": 0, "skipped": 0,
+      "artifact": "material-review.trx"
+    }
+  ],
+  "edits": [
+    "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionRetirementHistory.cs",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ConsumptionReviewTests.cs"
+  ],
+  "notRun": ["full Core regression", "Hosting/client tests", "native/performance probes"],
+  "worldConsumptionAdmission": "unchanged (WorldSnapshot still rejects enabled owners)"
+}

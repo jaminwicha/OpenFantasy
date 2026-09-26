@@ -29,7 +29,8 @@ public sealed class LiquidReservoirState
         Geometries = copy.OrderBy(g => g.ReservoirId).ToList().AsReadOnly();
         ValidateRolesAndSupport();
         Projections = Geometries.Select(Project).ToList().AsReadOnly();
-        _contentHash = new(() => ContentHash.Compute(LiquidReservoirCodecV1.Encode(this)));
+        _contentHash = new(() => ContentHash.Compute(Capacity.Production?.SupportsConsumption == true
+            ? LiquidReservoirCodecV2.Encode(this) : LiquidReservoirCodecV1.Encode(this)));
     }
 
     public WatershedRunoffCapacityState Capacity { get; }

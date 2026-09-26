@@ -36,7 +36,8 @@ public sealed class WatershedRunoffCapacityState
             ValidateBasis(runoff);
         }
         Receivers = AggregateReceivers().ToList().AsReadOnly();
-        _contentHash = new(() => ContentHash.Compute(WatershedRunoffCapacityCodecV1.Encode(this)));
+        _contentHash = new(() => ContentHash.Compute(Production?.SupportsConsumption == true
+            ? WatershedRunoffCapacityCodecV2.Encode(this) : WatershedRunoffCapacityCodecV1.Encode(this)));
     }
 
     public WatershedRunoffDomain Domain { get; }
@@ -154,20 +155,10 @@ public sealed class WatershedRunoffCapacityState
         {
             return;
         }
-        if (Production is null || next is null || next.Revision <= Production.Revision
-            || next.WorldId != Production.WorldId || next.BranchId != Production.BranchId
-            || next.Recipes.Count != Production.Recipes.Count
-            || Production.Recipes.Any(prior => !next.Recipes.Any(r => r.DefinitionId == prior.DefinitionId && r.Version == prior.Version)))
+        if (Production is null || next is null)
         {
             throw new ArgumentException("Production must remain explicit, advance and preserve its admitted recipes.");
         }
-        foreach (var prior in Production.Batches)
-        {
-            var retained = next.Batches.SingleOrDefault(b => b.BatchId == prior.BatchId);
-            if (retained is null || !ProductionCodecV1.EncodeBatch(prior).AsSpan().SequenceEqual(ProductionCodecV1.EncodeBatch(retained)))
-            {
-                throw new ArgumentException("Capacity reconciliation cannot discard or rewrite production history.");
-            }
-        }
+        ProductionRetirementHistory.ValidateSuccessor(Production, next);
     }
 }

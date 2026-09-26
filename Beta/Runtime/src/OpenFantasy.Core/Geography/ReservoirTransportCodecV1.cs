@@ -12,11 +12,13 @@ public static class ReservoirTransportCodecV1
     private const int MaximumStageBytes = 1024;
     private const int MaximumJournalBytes = 4_300_000;
 
-    public static byte[] Encode(ReservoirTransportState state)
+    public static byte[] Encode(ReservoirTransportState state) => EncodeTransport(state, consumption: false);
+
+    internal static byte[] EncodeTransport(ReservoirTransportState state, bool consumption)
     {
         ArgumentNullException.ThrowIfNull(state);
-        byte[] bytes = CanonicalEncodingV1.Frame("geography.reservoir-transport.v1", Number(state.Revision),
-            WatershedRunoffCodecV1.EncodeInstant(state.Boundary), LiquidReservoirCodecV1.Encode(state.Reservoirs),
+        byte[] bytes = CanonicalEncodingV1.Frame(consumption ? "geography.reservoir-transport.v2" : "geography.reservoir-transport.v1", Number(state.Revision),
+            WatershedRunoffCodecV1.EncodeInstant(state.Boundary), LiquidReservoirCodecV1.EncodeReservoirs(state.Reservoirs, consumption),
             EncodeConnections(state.Connections), CanonicalEncodingV1.Frame("geography.transport-stages.v1",
                 state.Stages.Select(s => (ReadOnlyMemory<byte>)EncodeStage(s)).ToArray()));
         if (bytes.Length > MaximumEncodedByteLength)
@@ -26,16 +28,19 @@ public static class ReservoirTransportCodecV1
         return bytes;
     }
 
-    public static ReservoirTransportState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default)
+    public static ReservoirTransportState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
+        DecodeTransport(bytes, cancellationToken, consumption: false);
+
+    internal static ReservoirTransportState DecodeTransport(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
             var reader = new WorldFrameReader(bytes, MaximumEncodedByteLength, 6);
-            reader.Tag("geography.reservoir-transport.v1"u8);
+            reader.Tag(consumption ? "geography.reservoir-transport.v2"u8 : "geography.reservoir-transport.v1"u8);
             ulong revision = reader.Number();
             WorldInstant boundary = WatershedRunoffCodecV1.ReadInstant(reader.Exact(12));
-            var physical = LiquidReservoirCodecV1.Decode(reader.Field(LiquidReservoirCodecV1.MaximumEncodedByteLength), cancellationToken);
+            var physical = LiquidReservoirCodecV1.DecodeReservoirs(reader.Field(LiquidReservoirCodecV1.MaximumEncodedByteLength), cancellationToken, consumption);
             var connections = DecodeConnections(reader.Field(ReservoirTransportState.MaximumConnections * ConnectionRowBytes));
             var stages = new List<RunoffTransportStage>();
             var journal = new WorldFrameReader(reader.Field(MaximumJournalBytes), MaximumJournalBytes, ReservoirTransportState.MaximumStages + 1);
@@ -48,7 +53,7 @@ public static class ReservoirTransportCodecV1
             journal.Complete();
             reader.Complete();
             var restored = new ReservoirTransportState(physical, connections, stages, revision, boundary);
-            if (!Encode(restored).AsSpan().SequenceEqual(bytes))
+            if (!EncodeTransport(restored, consumption).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The transport owner is not canonical.");
             }

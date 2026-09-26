@@ -83,7 +83,7 @@ public sealed class WatershedRunoffDomain
             if (production.ContainsIdentityMatching(network.MaterialIdentities.Contains)
                 || production.Revision > inventory.Custody.Revision
                 || production.Lots.Any(l => l.Revision > inventory.Custody.Revision)
-                || production.Batches.SelectMany(b => b.Ingredients).Any(i => i.Revision >= inventory.Custody.Revision))
+                || ProductionRetirementHistory.Retirements(production).Any(r => r.Ingredient.Revision >= inventory.Custody.Revision))
             {
                 throw new ArgumentException("Production roles and revisions must agree with the runoff custody basis.");
             }

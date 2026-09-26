@@ -34,7 +34,8 @@ public sealed class WatershedRunoffRequest
         Material = material;
         Inputs = ReadBounded(inputs, input => input.BasinId);
         Terminals = ReadBounded(terminals, terminal => terminal.BasinId);
-        _contentHash = new(() => ContentHash.Compute(WatershedRunoffCodecV1.EncodeRequest(this)));
+        _contentHash = new(() => ContentHash.Compute(Production?.SupportsConsumption == true
+            ? WatershedRunoffCodecV2.EncodeRequest(this) : WatershedRunoffCodecV1.EncodeRequest(this)));
     }
 
     public PreparedWatershedNetwork Network { get; }

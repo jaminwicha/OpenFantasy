@@ -61,7 +61,8 @@ public sealed class TerrainMaterialRegistry
             OtherQuantity = checked(OtherQuantity + state.OtherQuantity);
             RetiredQuantity = checked(RetiredQuantity + state.RetiredQuantity);
         }
-        _contentHash = new(() => ContentHash.Compute(Production is null ? TerrainMaterialRegistryCodecV1.Encode(this) : TerrainMaterialRegistryCodecV2.Encode(this)));
+        _contentHash = new(() => ContentHash.Compute(Production is null ? TerrainMaterialRegistryCodecV1.Encode(this)
+            : Production.SupportsConsumption ? TerrainMaterialRegistryCodecV3.Encode(this) : TerrainMaterialRegistryCodecV2.Encode(this)));
     }
 
     public PreparedWatershedTerrain Terrain { get; }
@@ -185,9 +186,10 @@ public sealed class TerrainMaterialRegistry
         {
             throw new ArgumentException("A shared custodian cannot represent both coarse and detailed terrain.");
         }
-        if (Production is not null && Production.Batches.Any(batch => (coarse.Contains(batch.CustodianId)
-            || fine.Contains(batch.CustodianId)) && batch.Ingredients.Any(ingredient => ingredient.Source is { } source
-                && Allocations.Any(allocation => allocation.Deposit.Intersect(source) is not null))))
+        if (Production is not null && ProductionRetirementHistory.Retirements(Production).Any(retirement =>
+            (coarse.Contains(retirement.CustodianId) || fine.Contains(retirement.CustodianId))
+            && retirement.Ingredient.Source is { } source
+            && Allocations.Any(allocation => allocation.Deposit.Intersect(source) is not null)))
         {
             throw new ArgumentException("Production cannot consume allocated sources in any terrain representation custodian.");
         }

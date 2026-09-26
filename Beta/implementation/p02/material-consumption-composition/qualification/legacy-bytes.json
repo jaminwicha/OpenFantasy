@@ -1,0 +1,190 @@
+{
+  "status": "passed",
+  "files": [
+    {
+      "new": "legacy/terrain/active-cap.bin",
+      "retained": "Beta/implementation/p01/terrain-materials/qualification/fixture/active-cap.bin",
+      "sha256": "a4b12116dbecc51515ddd71bbe0742fbd518d72fe417daa0dbcfd4d86b0468b8"
+    },
+    {
+      "new": "legacy/terrain/lot-cap.bin",
+      "retained": "Beta/implementation/p01/terrain-materials/qualification/fixture/lot-cap.bin",
+      "sha256": "8ac3399932a9c226716198d01700c9fea6b8dc7fb941cf5db27bbcd38c028aca"
+    },
+    {
+      "new": "legacy/terrain/partial-transfer.bin",
+      "retained": "Beta/implementation/p01/terrain-materials/qualification/fixture/partial-transfer.bin",
+      "sha256": "0138829988acdf2e4899e68555c4b5ac4df009eea1dfb585902d2e7ae03e56b2"
+    },
+    {
+      "new": "legacy/registry/active-cap.bin",
+      "retained": "Beta/implementation/p01/material-registry/qualification/fixture/active-cap.bin",
+      "sha256": "31ba4cf35270c516d5a8ec95866887250b4f2247b194b22f3c0ec8394c23c10a"
+    },
+    {
+      "new": "legacy/registry/interior-transfer.bin",
+      "retained": "Beta/implementation/p01/material-registry/qualification/fixture/interior-transfer.bin",
+      "sha256": "58a4f81ed7531d4907cfc45151dc881dd004f8ab6b2bfdb93abbc631fb290532"
+    },
+    {
+      "new": "legacy/registry/maximum-network.bin",
+      "retained": "Beta/implementation/p01/material-registry/qualification/fixture/maximum-network.bin",
+      "sha256": "2af5b5da7d4488ecad722339519893d4f8c70df990ac206fbe2f322073bbe839"
+    },
+    {
+      "new": "legacy/registry/two-allocations.bin",
+      "retained": "Beta/implementation/p01/material-registry/qualification/fixture/two-allocations.bin",
+      "sha256": "c2c6ab0000fb3f03e69b70a76c675a42d8f095939939f93f3c42c5521cf5a524"
+    },
+    {
+      "new": "legacy/production/attached.bin",
+      "retained": "Beta/implementation/p01/material-production/qualification/fixture/attached.bin",
+      "sha256": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b"
+    },
+    {
+      "new": "legacy/production/chained-prefixes.bin",
+      "retained": "Beta/implementation/p01/material-production/qualification/fixture/chained-prefixes.bin",
+      "sha256": "78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef"
+    },
+    {
+      "new": "legacy/production/combined-lot-cap.bin",
+      "retained": "Beta/implementation/p01/material-production/qualification/fixture/combined-lot-cap.bin",
+      "sha256": "f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035"
+    },
+    {
+      "new": "legacy/production/crafted-reloaded.bin",
+      "retained": "Beta/implementation/p01/material-production/qualification/fixture/crafted-reloaded.bin",
+      "sha256": "c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649"
+    },
+    {
+      "new": "legacy/runoff/crafted-occupancy.bin",
+      "retained": "Beta/implementation/p01/runoff-budgets/qualification/fixture/crafted-occupancy.bin",
+      "sha256": "1061a3346f7abf200f0ff015b7afa15e345325f55d902e3a0ed8147358831ee5"
+    },
+    {
+      "new": "legacy/runoff/dry.bin",
+      "retained": "Beta/implementation/p01/runoff-budgets/qualification/fixture/dry.bin",
+      "sha256": "62e9ade7adcd863c8a12d4f3c22fa4afa09f71b95203cfe548fce02f0e0b25b0"
+    },
+    {
+      "new": "legacy/runoff/maximum-network.bin",
+      "retained": "Beta/implementation/p01/runoff-budgets/qualification/fixture/maximum-network.bin",
+      "sha256": "663fd9794455a52107b25f863e03571b3226b045a70103daca0d3daf0e6f8a0c"
+    },
+    {
+      "new": "legacy/runoff/shared-receiver.bin",
+      "retained": "Beta/implementation/p01/runoff-budgets/qualification/fixture/shared-receiver.bin",
+      "sha256": "73344d313023fd5d9d7acb1d7953068dec83effbdf7a783a560d21e64ffc9fc9"
+    },
+    {
+      "new": "legacy/runoff/unequal-runoff.bin",
+      "retained": "Beta/implementation/p01/runoff-budgets/qualification/fixture/unequal-runoff.bin",
+      "sha256": "efcdaa3809cfefc7a56432564c1559c7c788d844605722bae13fc12e9ea47801"
+    },
+    {
+      "new": "legacy/capacity/crafted-held.bin",
+      "retained": "Beta/implementation/p01/runoff-capacity/qualification/fixtures/crafted-held.bin",
+      "sha256": "a273fee5c78481ddde72a766f6ed3520504df32e692ead88692de3735f3439ea"
+    },
+    {
+      "new": "legacy/capacity/empty-closed.bin",
+      "retained": "Beta/implementation/p01/runoff-capacity/qualification/fixtures/empty-closed.bin",
+      "sha256": "2d487fdacdd456528e454aed153fb6cc79f4adebc8481ad5b738e4f13d76c0d2"
+    },
+    {
+      "new": "legacy/capacity/maximum-pending.bin",
+      "retained": "Beta/implementation/p01/runoff-capacity/qualification/fixtures/maximum-pending.bin",
+      "sha256": "17cefce3b6a4d0fd3515dc93fb4f310f403ba05b96f1ef75c698ba1d669951e0"
+    },
+    {
+      "new": "legacy/capacity/one-canceled.bin",
+      "retained": "Beta/implementation/p01/runoff-capacity/qualification/fixtures/one-canceled.bin",
+      "sha256": "8534280425cbcfed765e7a5cb5d4c7ab660c99256e77a64a07860814b94b43c8"
+    },
+    {
+      "new": "legacy/capacity/two-held.bin",
+      "retained": "Beta/implementation/p01/runoff-capacity/qualification/fixtures/two-held.bin",
+      "sha256": "024b205d28871b94ee90f3265c0583dc1ef1b56d0823cbc956567dd4d14676d1"
+    },
+    {
+      "new": "legacy/reservoir/canceled-buffer.bin",
+      "retained": "Beta/implementation/p01/reservoir-geometry/qualification/fixtures/canceled-buffer.bin",
+      "sha256": "1b67d8d91335647c5b97846c5e0c3e9782553e9ee9f1052baa045c011df1c176"
+    },
+    {
+      "new": "legacy/reservoir/crafted-source.bin",
+      "retained": "Beta/implementation/p01/reservoir-geometry/qualification/fixtures/crafted-source.bin",
+      "sha256": "9e8fee11a72f41e9aeb96f4e5021333c89689147caf41c21cb45a74f82ebbc47"
+    },
+    {
+      "new": "legacy/reservoir/maximum-columns.bin",
+      "retained": "Beta/implementation/p01/reservoir-geometry/qualification/fixtures/maximum-columns.bin",
+      "sha256": "5fc298ced3e17b9b8499b774124b23b0137be624d9a60f4d0ba6865976fc0f8b"
+    },
+    {
+      "new": "legacy/reservoir/stacked.bin",
+      "retained": "Beta/implementation/p01/reservoir-geometry/qualification/fixtures/stacked.bin",
+      "sha256": "4f5e579e9e699a45936c54ecc4ac6f27f4217035daccb793ac375570ef34a21e"
+    },
+    {
+      "new": "legacy/reservoir/two-held.bin",
+      "retained": "Beta/implementation/p01/reservoir-geometry/qualification/fixtures/two-held.bin",
+      "sha256": "2f2ab6cb348ad01cc8b44c00bfb170f7c18b9fda03da15cf49f9a4cdb024c396"
+    },
+    {
+      "new": "legacy/transport/basis.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/basis.bin",
+      "sha256": "6fdd443096f41a7c200bdb642c2ccbeb1a42680ab63df8a4bbc17645172efbb0"
+    },
+    {
+      "new": "legacy/transport/genesis.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/genesis.bin",
+      "sha256": "35b247c68a7662246d2c4f9a7e157ad8879e624acbb07ef8205ed42446279d4c"
+    },
+    {
+      "new": "legacy/transport/step-1.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-1.bin",
+      "sha256": "c93984f5bc00ce24d6b4da3a2296fc43c0274c142da370a96009901176e8d4ae"
+    },
+    {
+      "new": "legacy/transport/step-2.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-2.bin",
+      "sha256": "98c78fb9125d563ef94e15f44b7f0b605a3d8f8ffff845f1d7b275ad54d412c5"
+    },
+    {
+      "new": "legacy/transport/step-3.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-3.bin",
+      "sha256": "d5f315795a24c43377a12ad7ad95692bc65a55428f57f257ee0aa36aefea75fc"
+    },
+    {
+      "new": "legacy/transport/step-4.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-4.bin",
+      "sha256": "83d0e7efbaaf27ab264b52b8705ebc9339cf981f6cd4280b1bad5753433031f8"
+    },
+    {
+      "new": "legacy/transport/step-5.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-5.bin",
+      "sha256": "7b5ff0e3cf072c0e62efc3baf8337c9602aa28dab366a912f5ef1ed8802da2e5"
+    },
+    {
+      "new": "legacy/transport/step-6.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-6.bin",
+      "sha256": "1d07ee9093188cb0f272e1143189b871741b3403f7bbaef9be3243ffbded277b"
+    },
+    {
+      "new": "legacy/transport/step-7.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-7.bin",
+      "sha256": "8e5a77292aa27d5266cfb4b8ae637b38f93da39cb19a79a71749684251c7ca79"
+    },
+    {
+      "new": "legacy/transport/step-8.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/step-8.bin",
+      "sha256": "0b8740a4983bd68ee69ed56a7727ba3a172c4e66fa45365d6420682d93ca4af9"
+    },
+    {
+      "new": "legacy/transport/transport.bin",
+      "retained": "Beta/implementation/p01/reservoir-transport/qualification/fixture/transport.bin",
+      "sha256": "885b3a15daacfcbdc4f796b36437368d5e44550b8df63d8cb5a695fd0ae64b10"
+    }
+  ]
+}

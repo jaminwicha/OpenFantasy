@@ -1,0 +1,41 @@
+{
+  "status": "passed_standalone_material_integration",
+  "base_revision": "c2547c61f34135d90673c6a587c269e641beca6a",
+  "source_manifest": "isolated-source.json",
+  "tests": {
+    "core": {
+      "total": 1247,
+      "passed": 1247,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting": {
+      "total": 665,
+      "passed": 665,
+      "failed": 0,
+      "notExecuted": 0
+    }
+  },
+  "passed": 1912,
+  "build": {
+    "warnings": 0,
+    "errors": 0
+  },
+  "new_archive_fixtures_checked": 13,
+  "adversarial_oracle_cases_rejected": 4,
+  "legacy_fixture_bytes_identical": 37,
+  "full_world_consumption_enabled": false,
+  "care_or_native_or_production_acceptance": false,
+  "review": "../fable/REVIEW.md",
+  "failed_evidence_retained": [
+    "archive-oracle-01.json",
+    "../fable/qualification/material-review-defect-witness-unfixed.trx"
+  ],
+  "no_thresholds_relaxed": true,
+  "separate_care_wip_compatibility": {
+    "passed": 71,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "Preserved working-tree Care tests only, excluded from accepted unit and 1912 count; no native/durable/world-care acceptance."
+  }
+}

@@ -42,6 +42,22 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Material consumption composition](p02/material-consumption-composition/README.md) joins direct raw
+and produced consumption to terrain partitions, excavation issuance, runoff capacity and nested
+reservoir/transport evidence. Explicit V3 terrain and V2 water archives retain consumption-capable
+production; existing complete-world consumption admission remains disabled. The independent Fable
+review fixed a silent profile-upgrade defect and added three meaningful regressions. Its initial
+compound shell denial and the actual returned evidence are retained; no paid retry occurred.
+
+The exact 30-file implementation/test unit, isolated over `c2547c6` without care WIP, builds cleanly
+and passes 1,247 Core + 665 Hosting/client = 1,912 cases, zero failed/skipped. Independent byte checks
+cover 13 new archives and four refusals; 37 prior fixtures reproduce exactly. A separate 71-case
+care-WIP compatibility check passes but does not qualify live care. [Verification](p02/material-consumption-composition/qualification/verification.json)
+retains source hashes, failures and scope. Architecture references describe the shared retirement
+contract and unchanged-profile rule. Preserved on `codex/milestone-material-consumption-composition`.
+Next remains ordered resource history, all writer/causal bindings and ordinary plus aftermath care;
+do not infer completed world consumption or recovery from these material proofs.
+
 [Named resource operations and restorative composition](p02/resource-composition/README.md) implement
 controller-neutral damage, capped additive healing, exact MP costs and XP/reward transitions over the
 single existing HP/MP owner. Actual combat and rewards use them. The source-backed item planner

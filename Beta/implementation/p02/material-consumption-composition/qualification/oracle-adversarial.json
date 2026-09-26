@@ -1,0 +1,29 @@
+{
+  "scope": "Independent Python fixture oracle only; runtime refusal is covered separately by C# tests.",
+  "cases": [
+    {
+      "case": "missing-retirement",
+      "rejected": true,
+      "sha256": "94ccd82b34e8ad51aecdfd145c564dba13b7c30fdad77f9fb4c5c4d858231bbd",
+      "error_type": "AssertionError"
+    },
+    {
+      "case": "double-counted-ancestry",
+      "rejected": true,
+      "sha256": "3aca3a69394b6fda1778472a9d8811ce66e19a2931270a0b7562cd3a4cec731b",
+      "error_type": "AssertionError"
+    },
+    {
+      "case": "truncated",
+      "rejected": true,
+      "sha256": "b42d2eb9eb686d00793cde708d177dc4e6c27736e45e14a84d25bd90065073c5",
+      "error_type": "AssertionError"
+    },
+    {
+      "case": "trailing",
+      "rejected": true,
+      "sha256": "e5657368ae55b0f024b5e47467e6878d25c98a768e4350e6ab50d48b5a770210",
+      "error_type": "AssertionError"
+    }
+  ]
+}

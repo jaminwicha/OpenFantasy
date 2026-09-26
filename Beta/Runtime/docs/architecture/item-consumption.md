@@ -12,8 +12,9 @@ The operation has no health, mana, consent, reach, anatomy, encounter or time ef
 recipient records a participant; it does not establish permission to treat that actor or prove that
 treatment occurred. No care action, UI, world codec or durable recovery protocol follows from this
 standalone material candidate. [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs)
-rejects every consumption-enabled production owner, including an empty one, until a complete
-care-enabled world profile supplies those bindings.
+rejects consumption-enabled production under existing world interpretations, including an empty
+enabled owner. A new complete-world interpretation must supply the affected admission and persistence
+bindings before publishing consumption.
 
 ## Selection, authority and revisions
 
@@ -76,6 +77,50 @@ joins world/branch scope, actor/custodian participants, shared identity roles, d
 pins and combined raw/derived lot and storage bounds. Material mass remains attached to the actual
 recipe bindings. Retired ancestral recipe inputs are backing for their output; counting both as
 live or consumed mass would count the same material twice.
+
+## Composed material evidence
+
+[ProductionRetirementHistory](../../src/OpenFantasy.Core/Production/ProductionRetirementHistory.cs)
+enumerates direct recipe-input and item-consumption retirements together. It retains each retirement's
+custodian and exact ingredient. A consumed produced output contributes its output interval, not a
+second expansion of the raw ancestry already retired by its recipe batches. Successor validation
+requires advancing changed state, fixed world/branch and recipe admission, an unchanged consumption
+profile in both directions, and byte-identical prior batches and consumed claims. Ordinary
+reconciliation cannot silently select a different archive interpretation. These checks establish continuity
+of evidence; they do not authenticate the action that created it.
+
+Terrain material composition uses direct **raw** retirements to close its allocated source partition.
+Allocated stock must leave all relevant coarse/cell representation custodians before it can retire.
+Refinement or demotion retains that disposition rather than recreating the consumed interval. The
+shared registry checks all allocations together; moving stock into another allocation's representation
+custodian does not bypass extraction. Retired lot revisions precede the complete custody root.
+
+[ExcavationSnapshot](../../src/OpenFantasy.Core/Terrain/ExcavationSnapshot.cs) accounts for live raw
+rights plus direct recipe/consumption retirement when validating its exact issued prefix. This
+component-level accounting does not enable consumption in an older complete-world profile.
+
+Runoff preparation and receiver-capacity reconciliation include the same direct retirement evidence.
+Consuming unreserved received stock can free actual receiver capacity, while reserved funding,
+scheduled transport and existing claims remain intact. Reconciliation rejects erased or rewritten
+history even when the supplied replacement components are internally consistent. Reservoir projections
+and transport candidates continue to derive from that complete reconciled capacity owner.
+
+The archives make the new interpretation explicit:
+
+| Composed owner | Existing archive | Consumption-capable archive |
+| --- | --- | --- |
+| Terrain material state | V1 raw-only / V2 recipe production | [TerrainMaterialCodecV3](../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV3.cs) |
+| Shared material registry | V1 raw-only / V2 recipe production | [TerrainMaterialRegistryCodecV3](../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV3.cs) |
+| Runoff request and prepared routing | V1 | [WatershedRunoffCodecV2](../../src/OpenFantasy.Core/Geography/WatershedRunoffCodecV2.cs) |
+| Receiver capacity | V1 | [WatershedRunoffCapacityCodecV2](../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV2.cs) |
+| Reservoir geometry and fill | V1 | [LiquidReservoirCodecV2](../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV2.cs) |
+| Scheduled reservoir transport | V1 | [ReservoirTransportCodecV2](../../src/OpenFantasy.Core/Geography/ReservoirTransportCodecV2.cs) |
+
+Each new archive retains the complete production V2 owner, even when its consumed collection is empty.
+An absent or legacy production owner cannot masquerade as that interpretation, and an older codec
+cannot drop consumed evidence. Nested tags, bounded reads and canonical reconstruction apply at each
+layer. Content hashes select the corresponding explicit archive. Independent component restore does
+not grant world publication or silently migrate a retained save.
 
 ## Restorative composition
 

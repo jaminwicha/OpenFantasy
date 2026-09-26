@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Custody;
+using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Terrain;
@@ -60,7 +61,8 @@ public sealed class ExcavationSnapshot
             }
             world.Production!.ValidateMaterialBinding(site.Material);
             IEnumerable<SourceInterval> claims = world.Inventory.Custody.Lots.Where(l => l.Source.SourceId == site.CountedSourceId).Select(l => l.Source)
-                .Concat(world.Production.Batches.SelectMany(b => b.Ingredients).Where(i => i.Source?.SourceId == site.CountedSourceId).Select(i => i.Source!));
+                .Concat(ProductionRetirementHistory.Retirements(world.Production).Select(r => r.Ingredient)
+                    .Where(i => i.Source?.SourceId == site.CountedSourceId).Select(i => i.Source!));
             ulong cursor = 0;
             foreach (var claim in claims.OrderBy(c => c.Start))
             {

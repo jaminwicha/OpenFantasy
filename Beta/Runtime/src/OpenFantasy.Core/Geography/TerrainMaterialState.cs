@@ -39,7 +39,8 @@ public sealed class TerrainMaterialState
     public CountedAuthorityState Inventory { get; }
     public ReadOnlyCollection<CellCoordinate> ActiveCells { get; }
     public ulong Revision => Inventory.Custody.Revision;
-    public ContentHash ContentHash => ContentHash.Compute(ProductionEvidence is null ? TerrainMaterialCodecV1.Encode(this) : TerrainMaterialCodecV2.Encode(this));
+    public ContentHash ContentHash => ContentHash.Compute(ProductionEvidence is null ? TerrainMaterialCodecV1.Encode(this)
+            : Production!.SupportsConsumption ? TerrainMaterialCodecV3.Encode(this) : TerrainMaterialCodecV2.Encode(this));
     public ulong CoarseQuantity { get; }
     public ulong DetailedQuantity { get; }
     public ulong OtherQuantity { get; }

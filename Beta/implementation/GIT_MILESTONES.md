@@ -270,3 +270,13 @@ is recoverable at `codex/checkpoint-care-composition-tested-wip-20260926T011925Z
 checkpoint is `codex/checkpoint-composition-review-20260926T010637Z` (`69ddf77`). Earlier references,
 frozen specs and unrelated predecessor index remain preserved. The Max-effort history implementation
 hit its finite limit; a smaller follow-up remains pending approval, with no automatic paid retry.
+
+
+The `codex/milestone-material-consumption-composition` marker preserves the isolated 30-file
+material-retirement/explicit-codec integration and reviewed Fable correction. Qualification includes
+a clean build, 1,912 managed cases, 13 independently checked new archives, four oracle refusals and
+37 byte-identical legacy fixtures. A separate 71-case care-WIP compatibility check is not live-care
+acceptance. All 51 prior milestones, 23 tracked frozen specs and unrelated staged predecessor changes
+remain intact. The before-integration WIP is preserved at
+`codex/checkpoint-before-material-consumption-integration-20260926T013444Z` (`cc184f7`). No complete-world
+consumption, durable treatment, native recovery or production-scale gate closes with this milestone.

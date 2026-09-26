@@ -30,7 +30,8 @@ public sealed class ReservoirTransportState
         Revision = revision;
         Boundary = boundary;
         Validate();
-        _contentHash = new(() => ContentHash.Compute(ReservoirTransportCodecV1.Encode(this)));
+        _contentHash = new(() => ContentHash.Compute(Reservoirs.Capacity.Production?.SupportsConsumption == true
+            ? ReservoirTransportCodecV2.Encode(this) : ReservoirTransportCodecV1.Encode(this)));
     }
 
     public LiquidReservoirState Reservoirs { get; }

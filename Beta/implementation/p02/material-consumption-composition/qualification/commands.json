@@ -1,0 +1,60 @@
+[
+  {
+    "name": "restore",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "restore",
+      "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-material-composition-ggd03nz5/worktree/Beta/Runtime/OpenFantasy.sln",
+      "--locked-mode",
+      "--ignore-failed-sources",
+      "--disable-parallel"
+    ],
+    "exit_code": 0,
+    "seconds": 2.143
+  },
+  {
+    "name": "build",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "build",
+      "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-material-composition-ggd03nz5/worktree/Beta/Runtime/OpenFantasy.sln",
+      "--no-restore",
+      "-m:1",
+      "-p:UseSharedCompilation=false"
+    ],
+    "exit_code": 0,
+    "seconds": 18.495
+  },
+  {
+    "name": "core",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-material-composition-ggd03nz5/worktree/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "--logger",
+      "trx;LogFileName=core.trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-consumption-composition/qualification"
+    ],
+    "exit_code": 0,
+    "seconds": 14.817
+  },
+  {
+    "name": "hosting",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-material-composition-ggd03nz5/worktree/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "--logger",
+      "trx;LogFileName=hosting.trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-consumption-composition/qualification"
+    ],
+    "exit_code": 0,
+    "seconds": 370.91
+  }
+]

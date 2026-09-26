@@ -15,7 +15,7 @@ public static class TerrainMaterialRegistryCodecV1
 
     public static byte[] Encode(TerrainMaterialRegistry registry) => EncodeRegistry(registry, withProduction: false);
 
-    internal static byte[] EncodeRegistry(TerrainMaterialRegistry registry, bool withProduction)
+    internal static byte[] EncodeRegistry(TerrainMaterialRegistry registry, bool withProduction, bool consumption = false)
     {
         ArgumentNullException.ThrowIfNull(registry);
         if (withProduction != (registry.Production is not null))
@@ -26,9 +26,9 @@ public static class TerrainMaterialRegistryCodecV1
             AuthorityEncodingV1.Encode(registry.Inventory), EncodeAllocations(registry)];
         if (withProduction)
         {
-            fields.Add(ProductionCodecV1.Encode(registry.Production!));
+            fields.Add(GeographyProductionCodec.Encode(registry.Production, consumption));
         }
-        byte[] bytes = CanonicalEncodingV1.Frame(withProduction ? "geography.terrain-material-registry.v2"
+        byte[] bytes = CanonicalEncodingV1.Frame(consumption ? "geography.terrain-material-registry.v3" : withProduction ? "geography.terrain-material-registry.v2"
             : "geography.terrain-material-registry.v1", fields.ToArray());
         if (bytes.Length > (withProduction ? TerrainMaterialRegistryCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength))
         {
@@ -40,22 +40,22 @@ public static class TerrainMaterialRegistryCodecV1
     public static TerrainMaterialRegistry Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
         DecodeRegistry(bytes, withProduction: false, cancellationToken);
 
-    internal static TerrainMaterialRegistry DecodeRegistry(ReadOnlySpan<byte> bytes, bool withProduction, CancellationToken cancellationToken)
+    internal static TerrainMaterialRegistry DecodeRegistry(ReadOnlySpan<byte> bytes, bool withProduction, CancellationToken cancellationToken, bool consumption = false)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
             var reader = new CanonicalTerrainReader(bytes,
                 withProduction ? TerrainMaterialRegistryCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength,
-                withProduction ? 5U : 4U, withProduction ? "geography.terrain-material-registry.v2"u8 : "geography.terrain-material-registry.v1"u8);
+                withProduction ? 5U : 4U, consumption ? "geography.terrain-material-registry.v3"u8 : withProduction ? "geography.terrain-material-registry.v2"u8 : "geography.terrain-material-registry.v1"u8);
             PreparedWatershedTerrain terrain = WatershedTerrainCodecV1.Decode(reader.ReadField(WatershedTerrainCodecV1.MaximumEncodedByteLength), cancellationToken);
             CountedAuthorityState inventory = AuthorityEncodingV1.Decode(reader.ReadField(AuthorityEncodingV1.MaximumStateByteLength));
             ReadOnlySpan<byte> rows = reader.ReadField(MaximumAllocationsByteLength);
             ProductionSnapshot? production = withProduction
-                ? ProductionCodecV1.Decode(reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength)) : null;
+                ? GeographyProductionCodec.Decode(reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength), consumption) : null;
             reader.Complete();
             var registry = DecodeAllocations(rows, terrain, inventory, cancellationToken, production);
-            if (!EncodeRegistry(registry, withProduction).AsSpan().SequenceEqual(bytes))
+            if (!EncodeRegistry(registry, withProduction, consumption).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The material registry is not canonical.");
             }

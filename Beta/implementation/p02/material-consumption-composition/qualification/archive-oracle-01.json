@@ -1,0 +1,20 @@
+{
+  "status": "failed",
+  "scope": "Independent fixture checks for direct retirement and nested consumption ownership.\n\nThis reads retained test output. Diagnostic synthetic rows are never persisted or submitted as game\nstate. The oracle does not authenticate commands, reconstruct recipe mass, or admit complete worlds.\n",
+  "archives": {
+    "TerrainMaterialRegistry-legacy": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b",
+    "ReservoirTransportState-legacy": "0e3bf967862db7b37827cda12e8a24ca8310dad848c854cb43123f694ad5f644",
+    "WatershedRunoffCapacityState-legacy": "dc11010d61159ad890be1bba9ec17ecf54c50dc799dacb56d4d6dae9718e8b9a",
+    "LiquidReservoirState-new": "eed92549a93f4f49760cdd3617ce8e821dd4ec39e123f0b38fb64b88376f49db",
+    "WatershedRunoffCapacityState-new": "c81bc135d51e6662eba46dd48362b308efd2abbc530123023f739d98fc976eaf",
+    "crafted-consumption": "0fe22dbae4599d3a5ab8da09de5d66e1c3951e640eb710691e2efc8d27a258dd",
+    "LiquidReservoirState-legacy": "87d14a90b32175ddd588b8414ff75db55f3d5601a5e6f8b30f74753c274fe792",
+    "TerrainMaterialRegistry-new": "d4aa3517aafe8b4bc2f820ae6f28774a2c6698010c827b409b4d924a3d847cc4",
+    "TerrainMaterialState-legacy": "ea5ee962c0df1eacd0ebab4e15ac1ffc3c8f5ffa60a4652e8e539e57bdd578de",
+    "PreparedWatershedRunoff-legacy": "03f2905668d24853b90d92b939913765b3055f8a767504e81f7f6510a453662d",
+    "ReservoirTransportState-new": "7b5be738cd8b77f103be2bbf94e3c06960f31a6ae6dc9511915eeb685d0a2668",
+    "TerrainMaterialState-new": "990334ff2adfd073223f1eac2159b5bdd7d0feb79068a6012f585ec55dc31e29",
+    "PreparedWatershedRunoff-new": "1dea1341c7fef2be69508e877e97b12319ec26e8d5b8ff8138f96fa5a36d3199"
+  },
+  "failure": "AssertionError()"
+}

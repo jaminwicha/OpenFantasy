@@ -20,7 +20,8 @@ public sealed class PreparedWatershedRunoff
         _ = request.Material.Physical.MassPerUnit.Multiply(inputUnits);
         Terminals = terminals.OrderBy(t => t.BasinId).ToList().AsReadOnly();
         Receivers = receivers.OrderBy(r => r.CustodianId).ToList().AsReadOnly();
-        _contentHash = new(() => ContentHash.Compute(WatershedRunoffCodecV1.Encode(this)));
+        _contentHash = new(() => ContentHash.Compute(Request.Production?.SupportsConsumption == true
+            ? WatershedRunoffCodecV2.Encode(this) : WatershedRunoffCodecV1.Encode(this)));
     }
 
     public WatershedRunoffRequest Request { get; }
