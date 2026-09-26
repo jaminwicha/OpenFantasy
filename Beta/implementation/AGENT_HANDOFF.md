@@ -72,6 +72,11 @@ lessons. Both maintained skills pass the skill validator, and their six source/i
 The validator's missing YAML dependency was supplied only in a temporary directory. Project-specific
 rules, motion parameters and human acceptance stay in this project.
 
+Design/research commit `24941f6` is preserved on `codex/milestone-world-composition-design-20260925`.
+Its [focused validation](model-and-motion-validation.json) checks 184 local links, 22 unchanged frozen
+specifications, 48 prior milestones and the exact predecessor index. This marker qualifies the
+documentation/decision scope only; the separate care WIP and all runtime/native gates remain open.
+
 [Accountable item consumption](p02/item-consumption/README.md) supplies pure-C# domain candidates
 that retain exact raw/produced dose rights, command-derived identity and acting/recipient/custodian
 participants. V2 production retains these dispositions through crafting and canonical restore;
