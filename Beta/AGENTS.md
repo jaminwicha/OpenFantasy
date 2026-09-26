@@ -45,6 +45,14 @@ The central task owns integration. Assign bounded file ownership to workers and 
 
 ## Runtime application style
 
+Apply the [world composition contract](Runtime/docs/architecture/world-composition.md): preserve
+meaningful domain concepts while composing typed facets, relations and shared operations. Keep one
+canonical owner per fact and one complete transaction for coupled effects. Distinguish confirmation,
+permission, actor commitment and receipt; active actions and passive processes share only contracts
+whose semantics match. Extract reusable boundaries through real contrasting cases, without a universal
+ECS/property bag, parallel authority or wholesale rewrite. The [healing decision](implementation/WORLD_COMPOSITION_DECISION.md)
+records the current application and remaining proofs.
+
 The owner requires modular, human-readable, object-oriented application and engine code. This preference applies to the runtime C# files; supporting scripts and tools are outside this style-refactor scope.
 
 - Give each type a cohesive domain or application responsibility. Keep entry points and engine callbacks short, delegating named operations to the appropriate owner.

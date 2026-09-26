@@ -1,5 +1,12 @@
 # Encounter aftermath and finite aid: implementation contract
 
+Design refinement, 2026-09-25: the [world composition decision](../../WORLD_COMPOSITION_DECISION.md)
+supersedes this document's proposed feature-specific owner/acknowledgment shape. Preserve the concrete
+defeat/dose/HP/debt/time/RNG/restart/native acceptance scenario below. Implement it through shared typed
+treatment/resource operations and a separate aftermath policy; ordinary healing does not require a
+defeat acknowledgment. The current draft is backed up and unqualified. The earlier text remains to
+explain its constraints and history, not as an instruction to build a competing care authority.
+
 Status: designed recovery; [accountable material candidates](../item-consumption/README.md) are its
 first executable dependency. No live care state or recovery is admitted. The current profile24 behavior
 and its exact replays remain preserved. This contract implements part of the existing defeat/healing obligations;

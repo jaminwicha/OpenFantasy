@@ -11,6 +11,7 @@ different kind of person.
 | Subject | Questions answered |
 | --- | --- |
 | [Runtime and authority](runtime-and-authority.md) | Which module owns state? How does an action become durable? Where do adapters belong? |
+| [World composition](world-composition.md) | How do meaningful domain actions compose typed facets, relations, active/passive processes and atomic cross-system changes? |
 | [Identity and determinism](identity-and-determinism.md) | Which bytes, numbers, random streams and orderings define the same world? |
 | [Persistence and history](persistence-and-history.md) | What is stored, replayed, migrated and addressed through history? |
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |

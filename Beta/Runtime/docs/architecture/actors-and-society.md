@@ -33,6 +33,10 @@ desires, relationships or institutions.
 
 ## Design contract: one person, several forms of control
 
+The [world composition contract](world-composition.md) distinguishes facets, capabilities, typed
+relations, activities and causal observations. Treatment, self-use and passive effects compose those
+owners without making health, consent or relationships properties of a combat UI acknowledgment.
+
 Player and NPC depth shares one character model: anatomy, traits, capabilities, needs, possessions,
 learning, experiences, relationships, commitments and history. Controller permission and decision
 cadence vary; intrinsic capability does not depend on whether a human is steering. Detailed and

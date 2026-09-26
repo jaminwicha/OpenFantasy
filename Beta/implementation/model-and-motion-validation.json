@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-25",
+  "scope": "Design/research/doctrine only; no runtime acceptance promoted",
+  "docs_local_links_checked": 184,
+  "broken_links": 0,
+  "frozen_specs_preserved": 22,
+  "previous_milestones_preserved": 48,
+  "predecessor_index_preserved": true,
+  "ecosystem_commit": "88d41e3e0019455a3a3afcd8f3f2ca5df017c1e4",
+  "skill_validation": "Both quick_validate.py runs passed using temporary PyYAML 6.0.3; system and bundled Python initially lacked yaml. Six source/installed files match.",
+  "critic": "Bounded independent design review: supports hybrid; recommendations integrated for single HP ownership, level-up writer, acknowledgment meanings, passive exposure, scoped relationship evidence.",
+  "runtime_validation": "Not rerun for documents. WIP care build/test failures and incomplete fixture remain preserved. No movement implementation or matching native capture.",
+  "wip_checkpoint": "codex/checkpoint-care-wip-before-motion-research-20260926T000024Z",
+  "owned_files": [
+    "Beta/AGENTS.md",
+    "Beta/Runtime/docs/architecture/README.md",
+    "Beta/Runtime/docs/architecture/actors-and-society.md",
+    "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+    "Beta/Runtime/docs/architecture/world-composition.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/WORLD_COMPOSITION_DECISION.md",
+    "Beta/implementation/CLASSIC_MOVEMENT_RESEARCH.md",
+    "Beta/implementation/p02/encounter-choice-validation/RECOVERY_DESIGN.md",
+    "Beta/implementation/checkpoints/care-wip-before-motion-research-20260926T000024Z.json"
+  ]
+}

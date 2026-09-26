@@ -42,6 +42,36 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+Owner steering, 2026-09-25: [typed world composition](WORLD_COMPOSITION_DECISION.md) is the selected
+direction for healing and the wider simulation: meaningful domain actions over shared typed facets,
+relations and atomic transactions. Before continuing care, separate recovery acknowledgment from
+permission/helper commitment/receipt and replace its one-off HP supersession seam with the smallest
+reusable ordered resource-effect contract. Do not reinterpret profile24 or duplicate HP ownership.
+The [timeless reference](../Runtime/docs/architecture/world-composition.md) states the design contract;
+it is not an implemented generic framework. The bounded independent design review agrees and also
+identifies level-up resource restoration as a required caller of any future ownership extraction.
+
+The unfinished care integration is backed up at
+`codex/checkpoint-care-wip-before-motion-research-20260926T000024Z` (`edc0d55`), with its
+[file manifest and restore guidance](checkpoints/care-wip-before-motion-research-20260926T000024Z.json).
+This is a WIP backup, not an acceptance milestone: build02 failed in tests; later test edits and the
+complete care path remain unbuilt/unqualified. The source-backed care fixture is incomplete. Two
+native worker turns failed with authentication errors; no substitute independent review is claimed.
+Existing durable genesis explicitly refuses the draft care owner pending its storage/resume contract.
+The unrelated predecessor index is preserved. Continue from these files; do not discard the backup or
+promote the unfinished profile because its core files compiled during an earlier failed build.
+
+The owner also requests restrained classic 16-bit+ movement and Reddit study before more animation
+changes. [Research and calibration](CLASSIC_MOVEMENT_RESEARCH.md) distinguishes source observations
+from suspected causes, retains the accepted visual style and requires a build-identified moving
+specimen. Movement code/assets have not been changed by this research pass; the reported clip has
+not been identified. Apply this direction before expanding the animation kit.
+
+Ecosystem commit `88d41e3` persists the reusable composition/acknowledgment and restrained-motion
+lessons. Both maintained skills pass the skill validator, and their six source/installed copies match.
+The validator's missing YAML dependency was supplied only in a temporary directory. Project-specific
+rules, motion parameters and human acceptance stay in this project.
+
 [Accountable item consumption](p02/item-consumption/README.md) supplies pure-C# domain candidates
 that retain exact raw/produced dose rights, command-derived identity and acting/recipient/custodian
 participants. V2 production retains these dispositions through crafting and canonical restore;
@@ -62,9 +92,10 @@ No full recovery gate closes; this increment includes no new native/crash/produc
 Qualified commit `04e6dba` is preserved on `codex/milestone-item-consumption`; development remains
 on `codex/runtime-foundation`.
 
-Next finish the [profile25 finite-aid contract](p02/encounter-choice-validation/RECOVERY_DESIGN.md):
-prior care agreement, exact outcome acknowledgment, real neutral nearby helper and atomic dose/HP/
-debt/phase effects, preserving the lethal attack through an ordered resource supersession witness.
+Next implement the [refined composition decision](WORLD_COMPOSITION_DECISION.md) through the retained
+[finite-aid scenario](p02/encounter-choice-validation/RECOVERY_DESIGN.md): shared typed resource effects,
+separate aftermath policy, prior permission and real helper, with atomic dose/HP/debt/phase changes.
+Preserve the lethal attack as history and prove both ordinary treatment and defeated-player aid.
 Join raw issuance/history and all geography/material retirement consumers before admitting V2 to
 any complete world. Durable recovery and native defeat → aid → renewed choice remain required.
 The current defeated player still has no continuation; all broader gates remain open.

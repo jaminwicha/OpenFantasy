@@ -78,6 +78,11 @@ mechanics through summaries, policies and exception handling rather than hundred
 
 ## Design contract: animation, art and audio
 
+Classic pixel locomotion uses readable contact poses, coherent small body responses and quiet idle
+holds. Visual richness does not require continuous motion. Separate walking, running, purposeful
+actions, hits and forced movement; match gait to observed travel without letting animation determine
+physical progress. Frame counts, timing and secondary motion are calibrated at actual gameplay scale.
+
 Semantic actions emit performance requests for posture, gesture, emotion, interaction, objects and
 spatial context. Idle quirks, breathing, glances, animal behavior and environmental motion express
 character and world state. Visual variation uses restrained reusable combinations rather than repeated
