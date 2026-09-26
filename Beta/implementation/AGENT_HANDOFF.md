@@ -54,6 +54,8 @@ builds cleanly and passes all 1,222 Core + 665 Hosting/client = 1,887 cases, zer
 [review](p02/resource-composition/REVIEW.md) retain the scope and all failed setup/test attempts.
 [Actor resources](../Runtime/docs/architecture/actor-resources.md) distinguishes transient candidate
 results from durable, authenticated history. No care/profile25/native/recovery gate closes.
+Commit `604b6d0` is preserved on `codex/milestone-resource-composition`. Its 200 local documentation
+links, 49 prior milestones, frozen specs and unrelated staged predecessor changes are preserved.
 
 Separate authorized `fable[1m]` Max-effort runs implement generic ordered resource history and perform
 three-pass cross-system composition analysis. Their output is not included in this qualification.
