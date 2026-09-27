@@ -42,6 +42,13 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+World resource integration is the active assignment. A bounded Fable Max implementation joins the
+accepted continuity component to real encounter/reward/treatment writers and complete-world causal
+checks in an isolated copy of the preserved care WIP. Existing durable genesis refusal remains until
+its separate recovery contract is proven. Ownership, checkpoint and acceptance are retained in
+[p02/world-resource-integration](p02/world-resource-integration/TASK.md). No new gate is claimed yet.
+
+
 [Ordered resource history](p02/resource-history/README.md) now composes all named resource/XP
 operations into ordered command batches anchored to an exact admitted basis. Canonical restore
 replays complete actor revisions, including zero-XP and unchanged-resource rewards. The isolated
@@ -63,7 +70,10 @@ care exception, and ordinary/aftermath durable/native treatment. This standalone
 no world profile or player action and closes no full phase, performance or human acceptance gate.
 Owner update, 2026-09-27: Opus 5.5 with one-million-token context is an approved alternative alongside
 `fable[1m]`, retaining Max effort and finite limits. Verify exact selector/model/context before use.
-Ecosystem commit `d8555c1` records this project-scoped routing; actual Opus access has not been tested.
+Ecosystem commit `d8555c1` records this project-scoped routing. [Compatibility findings](CLAUDE_MODEL_COMPATIBILITY.md)
+confirm Opus5.5 requires client2.1.280+, while the current client is2.1.268; actual account access is
+untested. Ecosystem `2e42704` refreshes standard context pins and portable model/effort guidance;
+guarded installed-file synchronization waits for the active worker to finish.
 
 [Material consumption composition](p02/material-consumption-composition/README.md) joins direct raw
 and produced consumption to terrain partitions, excavation issuance, runoff capacity and nested

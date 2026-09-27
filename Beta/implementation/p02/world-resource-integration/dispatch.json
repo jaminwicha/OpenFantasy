@@ -1,0 +1,28 @@
+{
+  "model": "fable[1m]",
+  "effort": "max",
+  "timeout_seconds": 1800,
+  "max_budget_usd": 15,
+  "checkpoint": "520b6d5154fff4b91b47b908f66f760571cdcc39",
+  "context_sha256": "01a9ebb5671e055bf23f1c9c558f3ee10154784e955106bd52f7642bbdfd8ca5",
+  "scope": [
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV25.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionAdmission.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResource*.cs",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/WorldResources/**",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Care/**",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/**",
+    "Beta/Runtime/docs/architecture/world-resource-history.md",
+    "Beta/implementation/p02/world-resource-integration/worker/**"
+  ],
+  "status": "running",
+  "runner_session_id": 97959,
+  "local_task_metadata": "/private/tmp/openfantasy-world-resource-task.json"
+}
