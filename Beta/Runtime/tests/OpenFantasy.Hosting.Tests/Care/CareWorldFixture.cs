@@ -28,7 +28,8 @@ internal sealed class CareWorldFixture
     private readonly RestorativeSupplyFixture _supply = new();
     private ulong _identity = 10_000;
 
-    internal CareWorldFixture(bool craftedDose = false, ulong? rewardExperience = null, uint? strikeMana = null, bool invalidNormalizedSpeedOnReward = false)
+    internal CareWorldFixture(bool craftedDose = false, ulong? rewardExperience = null, uint? strikeMana = null,
+        bool invalidNormalizedSpeedOnReward = false, bool enduranceProfile = false)
     {
         CraftedDose = craftedDose;
         WorldSnapshot source = _journey.Genesis;
@@ -53,6 +54,23 @@ internal sealed class CareWorldFixture
             source.Production!.Recipes.Append(_supply.Recipe), [], []);
         var admission = ContentHash.Compute(source.ContentHash.ToByteArray().Concat(_supply.Recipe.Version.ToByteArray()).ToArray());
         var progression = source.Progression!;
+        if (enduranceProfile)
+        {
+            // Fresh stress calibration preserves real abilities, damage, MP and readiness operations.
+            // Large initial pools and short admitted delays let the real journal cross archive limits.
+            var profiles = progression.Profiles.Select(profile => new ActorStatProfileDefinition(profile.DefinitionId,
+                profile.Key, profile.DisplayName, profile.Kind,
+                new ActorStatValues(100_000, 4096, profile.BaseStats.Attack, profile.BaseStats.Magic,
+                    profile.BaseStats.Defense, 10_000), profile.Growth, profile.HeritageModifiers)).ToArray();
+            progression = new ProgressionSnapshot(progression.WorldId, progression.BranchId, 0, profiles,
+                progression.Curves, progression.Actors.Select(actor =>
+                {
+                    var profile = profiles.Single(value => value.DefinitionId == actor.Profile.DefinitionId);
+                    var stats = profile.Calculate(actor.Level);
+                    return new ActorProgressionState(actor.ActorId, 0, profile, actor.Curve, actor.Level,
+                        actor.Experience, stats.MaxHp, stats.MaxMp);
+                }), progression.Currency);
+        }
         if (invalidNormalizedSpeedOnReward)
         {
             // Legal fresh content whose next level exceeds the encounter interpreter's speed range.
@@ -189,6 +207,17 @@ internal sealed class CareWorldFixture
         Assert.True(state.Progression!.GetActor(Player).CurrentHp > 0);
         Assert.Equal(0, state.Progression.GetActor(Wolf).CurrentHp);
         return Commit(authority, Batch(state, WorldBatchKind.EncounterLifecycle, [_journey.Release(state)])).Candidate;
+    }
+
+    internal WorldSnapshot BeginCombat(CareWorldSession session)
+    {
+        MoveHelper(session);
+        var state = session.ReadStateForHost();
+        state = Commit(session, Batch(state, WorldBatchKind.EncounterLifecycle,
+            [_journey.Enter(state, _journey.FirstScenario)])).Candidate;
+        for (int stage = 0; stage < 2; stage++)
+            state = Commit(session, Batch(state, WorldBatchKind.EncounterLifecycle)).Candidate;
+        return state;
     }
 
     internal WorldSnapshot CompleteQuest(CareWorldSession authority)

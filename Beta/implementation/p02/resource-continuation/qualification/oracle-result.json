@@ -1,0 +1,28 @@
+{
+  "verified_segments_and_current": [
+    {
+      "sha256": "c13c57cfaa80306b9f57ed59090aab21ff7f67b43bb9beeb17817876e61d4423",
+      "boundary": 549,
+      "basis_sequence": 0,
+      "batches": 256,
+      "effects": 383
+    },
+    {
+      "sha256": "51ceec596aed1a7e4a421fc50b32e5f60ea4ca41eb36d55d7a91520a588236d0",
+      "boundary": 1061,
+      "basis_sequence": 549,
+      "batches": 256,
+      "effects": 384
+    },
+    {
+      "sha256": "a35acb73fc15badc7522dd3b8813f8dc247f40ebf831835e8015ea77822f4cee",
+      "boundary": 1077,
+      "basis_sequence": 1061,
+      "batches": 8,
+      "effects": 12
+    }
+  ],
+  "resource_batches": 520,
+  "corrupt_archive_sequences_refused": 4,
+  "scope": "Independent exact framing, reference chain and full actor revision continuity; not host authentication or gameplay damage arithmetic."
+}

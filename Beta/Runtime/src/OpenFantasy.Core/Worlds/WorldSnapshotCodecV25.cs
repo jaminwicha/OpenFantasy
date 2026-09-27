@@ -29,7 +29,9 @@ public static class WorldSnapshotCodecV25
         byte[] pacingBytes = WorldPacingCodecV1.Encode(world.Pacing);
         byte[] actionBytes = EncounterLifecycleCodecV1.Encode(world.EncounterLifecycle);
         byte[] careBytes = CareCodecV1.Encode(world.Care);
-        byte[] resourceBytes = WorldResourceHistoryCodecV1.Encode(world.ResourceHistory!);
+        byte[] resourceBytes = WorldResourceHistoryCodec.Encode(world.ResourceHistory!);
+        int maximumResourceBytes = world.ResourceHistory!.ArchiveAnchor is null
+            ? WorldResourceHistoryCodecV1.MaximumEncodedByteLength : WorldResourceHistoryCodec.MaximumEncodedByteLength;
         byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", Number(25), AuthorityEncodingV1.Encode(world.Inventory),
             EncodeComponents(world.Space, 1), EncodeResidents(world.Residents), world.AdmissionVersion.ToByteArray(),
             Signed(world.Calendar.Days), Number((ulong)world.Calendar.MillisecondsWithinDay), Number(world.Revision),
@@ -39,14 +41,14 @@ public static class WorldSnapshotCodecV25
             LiquidReservoirCodecV2.Encode(world.Reservoirs), ReservoirSealPolicyCodecV1.Encode(world.ReservoirSeals),
             liquidBytes, ExcavationCodecV2.Encode(world.Excavation), pacingBytes, actionBytes, careBytes, resourceBytes);
         if ((long)bytes.Length - liquidBytes.Length - pacingBytes.Length - actionBytes.Length - careBytes.Length - resourceBytes.Length
-            + LiquidCellStateCodecV2.MaximumEncodedByteLength + WorldPacingCodecV1.MaximumEncodedByteLength + EncounterLifecycleCodecV1.MaximumEncodedByteLength + CareCodecV1.MaximumEncodedByteLength + WorldResourceHistoryCodecV1.MaximumEncodedByteLength > WorldSnapshotCodec.MaximumStateByteLength)
+            + LiquidCellStateCodecV2.MaximumEncodedByteLength + WorldPacingCodecV1.MaximumEncodedByteLength + EncounterLifecycleCodecV1.MaximumEncodedByteLength + CareCodecV1.MaximumEncodedByteLength + maximumResourceBytes > WorldSnapshotCodec.MaximumStateByteLength)
         {
             throw new ArgumentException("The complete terrain-bound encounter world exceeds its retained storage bound.", nameof(world));
         }
         return bytes;
     }
 
-    public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes)
+    public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null)
     {
         try
         {
@@ -77,7 +79,7 @@ public static class WorldSnapshotCodecV25
             EncounterLifecycleSnapshot lifecycle = EncounterLifecycleCodecV1.Decode(
                 reader.Field(EncounterLifecycleCodecV1.MaximumEncodedByteLength), pacing.WorldId, pacing.BranchId);
             CareSnapshot care = CareCodecV1.Decode(reader.Field(CareCodecV1.MaximumEncodedByteLength));
-            var resources = WorldResourceHistoryCodecV1.Decode(reader.Field(WorldResourceHistoryCodecV1.MaximumEncodedByteLength));
+            var resources = WorldResourceHistoryCodec.Decode(reader.Field(WorldResourceHistoryCodec.MaximumEncodedByteLength), archiveAnchor);
             reader.Complete();
             // Installed colliders belong to retained construction, never a duplicated spatial payload.
             var components = DecodeComponents(spatialBytes, 1);

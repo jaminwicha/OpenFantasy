@@ -45,3 +45,9 @@ aftermath transaction portions of items2–5; it does not close their ordinary-c
 historical-authentication obligations. Managed journeys and a useful independent critic supply part
 of item8. Items1,6,7 and native/human acceptance still require their actual proofs. Durable genesis
 refusal remains deliberate; no canonical decoder or passing unit suite substitutes for that gate.
+
+The [Core archive continuation](../resource-continuation/README.md) supplies part of item7: actual
+complete-boundary cuts, retrieved source bytes, bounded context and520-command replay across two
+resource segments. It does not complete host-authenticated publication, other owner lifetimes or
+roster/rule evolution. The [durable plan](../resource-continuation/DURABLE_INTEGRATION_PLAN.md) retains
+those next proofs and the multiple-reward boundary counterexample explicitly.

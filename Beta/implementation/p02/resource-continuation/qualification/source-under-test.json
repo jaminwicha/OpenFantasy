@@ -1,0 +1,21 @@
+{
+  "base": "4c8865e1d0496ceceb85463a5f331b2f7a3e54ea",
+  "files": {
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs": "d62362235424d2839d6b2224f685675ba73395eaebf31f1e5b67116810d04a35",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceArchiveAnchor.cs": "4d19ec29783e707d3f148f721099a503a3bbbd1dcde416973e422cf8cc2bd7d6",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceArchiveReference.cs": "15d191032edef0b81935af39fec28702a61cfcf7216a34753842124a5d93f40e",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceArchiveSegment.cs": "6148c3a13a508c45918fcccf631a31fc806e77dcb50e14eafc43b9f201a95664",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceContinuation.cs": "ad3bac14223c9458d90ec900b2777482ebe71af2b33ced3cb15299dc952aa0de",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs": "496abf2446c5cf1cf3cac57e396431a90c209f306e54e7872b153a6f10ff472d",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs": "ef7679e3f792f06d8c77f19ec4e421f3c79fd4931747067656f4cb2d8018bfc7",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs": "1708762bb6fbedaf4b45a5ca2da9a6a26e024e82b5ecd35a9cd4b0bb0e728a60",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs": "7a9155ef51d2e9c832e11f86fd0f0d7034b101941163aaed4d0f818009b2440a",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV25.cs": "9723cd97db8350e01f2839f3cd74763f1230d977a885e8af2d189e8ac181d74a",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepDecision.cs": "f14dbd3322a62359cec047932785b28fab8d9d1817c61d7160cd0985c231aac2",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs": "1be82890d2b4d33b75c495ab536857fe1782cab1e8845f7f332c9d9dee1c0b57",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs": "770544cc5ba9cf097984052dd094afddfd222b65c188e6995c5758828c0925d4",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldSession.cs": "8b2273bdd88c6304e141480aaae56c0685e697c9e8efce10a3c93d431c7110e9",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceContinuationTests.cs": "86e744e1d98a4a28e0b1b2c1d3316025565ddd85ff4ec3f532eb4fafea5e8cd3",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs": "d8644e0825bad2cc20e1b896b32df0d367ae2a648570312b6d8e8646b1253f1b"
+  }
+}

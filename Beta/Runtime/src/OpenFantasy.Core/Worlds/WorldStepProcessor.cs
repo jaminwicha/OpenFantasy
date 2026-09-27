@@ -41,7 +41,19 @@ public sealed class WorldStepProcessor
         {
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
         }
+        if (state.ResourceHistory?.ArchiveAnchor is not null && historicallyOccupied is null)
+            throw new InvalidOperationException("Continued resource history requires the complete historical identity lookup.");
 
+        var prepared = WorldResourceContinuation.Prepare(state, batch);
+        if (prepared.Sealed is not null && historicallyOccupied is null)
+            throw new InvalidOperationException("Resource archival continuation requires the complete historical identity lookup.");
+        var decision = DecidePrepared(prepared.State, batch, historicallyOccupied);
+        return prepared.Sealed is null ? decision
+            : new WorldStepDecision(decision.Candidate, decision.Receipts, decision.Identities, prepared.Sealed);
+    }
+
+    private WorldStepDecision DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied)
+    {
         if (batch.Kind == WorldBatchKind.Care)
         {
             return WorldCareProcessor.Decide(state, batch, historicallyOccupied);

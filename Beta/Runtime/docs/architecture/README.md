@@ -42,6 +42,7 @@ different kind of person.
 | [Actors and society](actors-and-society.md) | How do bodies, knowledge, relationships, cultures, institutions and narratives interact? |
 | [Actor resources](actor-resources.md) | How do named damage, restoration, magic costs and rewards compose with exact item consumption while preserving one HP/MP owner? |
 | [World resource history](world-resource-history.md) | How do actual attacks, quest rewards and treatments prove ordered resource continuity and roll back with complete world transactions? |
+| [Resource archive continuation](resource-archive-continuation.md) | How does a complete world cross resource-history segment bounds while retaining retrievable evidence and exact boundaries? |
 | [Aftermath care](aftermath-care.md) | How are prior permission, recovery acknowledgment, helper commitment and finite treatment composed without equating them? |
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
 | [Item consumption](item-consumption.md) | How do candidate material retirement and explicit production archives retain consumed rights without granting treatment or world publication? |

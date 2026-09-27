@@ -9,7 +9,7 @@ namespace OpenFantasy.Core.Worlds;
 public sealed class WorldResourceHistory
 {
     public WorldResourceHistory(ContentHash anchorAdmission, ActorResourceHistory history,
-        IEnumerable<WorldResourceEvidence> evidence)
+        IEnumerable<WorldResourceEvidence> evidence, WorldResourceArchiveAnchor? archiveAnchor = null)
     {
         ArgumentNullException.ThrowIfNull(anchorAdmission);
         ArgumentNullException.ThrowIfNull(history);
@@ -24,15 +24,21 @@ public sealed class WorldResourceHistory
         }
         if (retained.Count != history.Batches.Count)
             throw new ArgumentException("Every resource batch requires retained domain evidence.");
+        if (archiveAnchor is not null && (archiveAnchor.AdmissionVersion != anchorAdmission
+            || archiveAnchor.Progression.ContentHash != history.Basis.ContentHash
+            || archiveAnchor.Reference.BoundarySequence != history.BasisWorldSequence))
+            throw new ArgumentException("A continued resource segment requires the exact retrieved boundary progression.");
         AnchorAdmission = anchorAdmission;
         History = history;
         Evidence = retained.AsReadOnly();
+        ArchiveAnchor = archiveAnchor;
     }
 
     public ContentHash AnchorAdmission { get; }
     public ActorResourceHistory History { get; }
     public ReadOnlyCollection<WorldResourceEvidence> Evidence { get; }
-    public ContentHash ContentHash => ContentHash.Compute(WorldResourceHistoryCodecV1.Encode(this));
+    public WorldResourceArchiveAnchor? ArchiveAnchor { get; }
+    public ContentHash ContentHash => ContentHash.Compute(WorldResourceHistoryCodec.Encode(this));
 
     internal static WorldResourceHistory CreateFresh(ContentHash admission, ProgressionSnapshot basis) =>
         new(admission, new ActorResourceHistory(basis, 0, []), []);
@@ -42,7 +48,7 @@ public sealed class WorldResourceHistory
         if (History.Batches.Count == ActorResourceHistory.MaximumBatches
             || History.ChangeCount + batch.Changes.Count > ActorResourceHistory.MaximumChanges)
             throw new WorldResourceContinuationRequiredException();
-        return new(AnchorAdmission, History.Append(batch), Evidence.Append(evidence));
+        return new(AnchorAdmission, History.Append(batch), Evidence.Append(evidence), ArchiveAnchor);
     }
 }
 

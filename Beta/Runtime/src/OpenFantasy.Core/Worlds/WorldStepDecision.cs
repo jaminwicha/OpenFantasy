@@ -10,14 +10,16 @@ public sealed record WorldCommittedIdentity(EntityId Identity, WorldCommittedIde
 public sealed class WorldStepDecision
 {
     internal WorldStepDecision(WorldSnapshot candidate, IEnumerable<WorldActionReceipt> receipts,
-        IEnumerable<WorldCommittedIdentity> identities)
+        IEnumerable<WorldCommittedIdentity> identities, WorldResourceArchiveSegment? sealedResourceSegment = null)
     {
         Candidate = candidate;
         Receipts = Array.AsReadOnly(receipts.OrderBy(receipt => receipt.CommandId).ToArray());
         Identities = Array.AsReadOnly(identities.OrderBy(identity => identity.Identity).ToArray());
+        SealedResourceSegment = sealedResourceSegment;
     }
 
     public WorldSnapshot Candidate { get; }
     public ReadOnlyCollection<WorldActionReceipt> Receipts { get; }
     public ReadOnlyCollection<WorldCommittedIdentity> Identities { get; }
+    public WorldResourceArchiveSegment? SealedResourceSegment { get; }
 }

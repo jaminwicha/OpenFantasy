@@ -352,7 +352,7 @@ public sealed class WorldResourceJourneyTests
             excavation: world.Excavation, pacing: world.Pacing, encounterLifecycle: lifecycle ?? world.EncounterLifecycle,
             care: world.Care, resourceHistory: resources);
 
-    private static byte[][] ReadFrame(byte[] bytes)
+    internal static byte[][] ReadFrame(byte[] bytes)
     {
         int count = checked((int)BinaryPrimitives.ReadUInt32BigEndian(bytes.AsSpan(8)));
         var fields = new byte[count][];
@@ -367,7 +367,7 @@ public sealed class WorldResourceJourneyTests
         return fields;
     }
 
-    private static byte[] WriteFrame(byte[][] fields)
+    internal static byte[] WriteFrame(byte[][] fields)
     {
         byte[] bytes = new byte[12 + fields.Sum(field => 4 + field.Length)];
         "OFC\0"u8.CopyTo(bytes);

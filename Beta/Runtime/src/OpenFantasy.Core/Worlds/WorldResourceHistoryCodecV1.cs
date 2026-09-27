@@ -16,6 +16,8 @@ public static class WorldResourceHistoryCodecV1
     public static byte[] Encode(WorldResourceHistory value)
     {
         ArgumentNullException.ThrowIfNull(value);
+        if (value.ArchiveAnchor is not null)
+            throw new ArgumentException("A continued resource history requires the explicit archive-reference codec.", nameof(value));
         return CanonicalEncodingV1.Frame("world.resource-history", Number(1), value.AnchorAdmission.ToByteArray(),
             Number(value.History.BasisWorldSequence), ProgressionCodecV1.Encode(value.History.Basis),
             ActorResourceHistoryCodecV1.Encode(value.History), CanonicalEncodingV1.Frame("world.resource-evidence",

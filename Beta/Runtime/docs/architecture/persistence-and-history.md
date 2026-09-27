@@ -64,7 +64,8 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
 authenticate the embedded basis. [WorldGenesisAdmission](../../src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs)
 refuses care-enabled worlds until host-authenticated continuation and the complete storage/replay
-binding are supplied. A snapshot interpreter is not permission to select a storage schema.
+binding are supplied. The [Core continuation contract](resource-archive-continuation.md) produces
+sealed closing bytes with the candidate; a continued root requires its retrieved boundary context. A snapshot interpreter is not permission to select a storage schema.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight

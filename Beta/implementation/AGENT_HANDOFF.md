@@ -42,6 +42,29 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Resource archive continuation](p02/resource-continuation/README.md) now reserves complete next-batch
+capacity, seals exact closing world bytes, and carries a bounded retrieved anchor without retaining
+an ancestor chain. Actual520-resource-command replay crosses two automatic256-batch boundaries;
+raw/crafted pending care, historical ID reuse and cross-cut corruption are covered. Independent
+native review found no blocking Core defect. A separate Python oracle verifies archive links and
+all actor revisions, with four corrupt sequences rejected.
+
+[Verification](p02/resource-continuation/qualification/verification.json) records1,355 Core +688
+Hosting/client =2,043 passing managed cases, zero failures/skips. The final clean build and all23
+affected cases verify the last profile25-only V1 size-reservation adjustment; source manifests
+preserve the distinction from the earlier full regression. Final oracle bytes reproduce exactly.
+Preserved on `codex/milestone-resource-continuation`; pre-change checkpoint is in the packet.
+All23 frozen specs,54 earlier milestones and the unrelated19-file predecessor index are intact.
+Architecture references describe the real continuation and retrieval contracts; progress stays here.
+
+**Next dependency:** the [durable integration plan](p02/resource-continuation/DURABLE_INTEGRATION_PLAN.md)
+distinguishes closing revisionN from atomic archive/successor publication atN+1. Explicit schema7,
+stored-byte retrieval/replay, crash/idempotency and storage accounting remain unimplemented. Care
+genesis still refuses durable admission. The255-batch/two-real-reward case is retained as a required
+host-qualification counterexample. Other care/material limits, ordinary/native treatment, full
+journal lifetime, production scale and all broader phase gates remain open. No new paid Claude
+request ran; the prior external failures and authorization remain recorded below.
+
 [Complete-world resource integration](p02/world-resource-integration/README.md) now binds actual
 attack damage/MP, funded quest XP/refills and finite raw/crafted treatment to exact ordered causal
 history. The care-only last-attack HP exception is removed. Complete-world rollback, seeded replay,

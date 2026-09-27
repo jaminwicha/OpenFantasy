@@ -8,9 +8,11 @@ level and XP remain owned by `ActorProgressionState`; history is immutable causa
 The care-enabled complete-world profile owns this history together with progression, quests,
 material consumption and encounter lifecycle. Earlier profiles retain their own bytes and rules.
 
-The anchor contains the complete fresh progression basis, world/branch scope, sequence zero
-and world admission pin. The complete actor set replays from that basis. The profile requires
-one progression revision per recorded command batch, including rewards of zero XP. Comparing
+The initial anchor contains the complete fresh progression basis, world/branch scope, sequence
+zero and world admission pin. A [continued segment](resource-archive-continuation.md) instead binds
+the exact retrieved closing progression and world sequence. The complete actor set replays from
+that basis. The profile requires one progression revision per recorded command batch above the
+basis revision, including rewards of zero XP. Comparing
 only final HP, or accepting an unexplained later revision, does not establish continuity.
 
 An embedded basis and matching admission label establish structural consistency, not provenance.
@@ -54,23 +56,21 @@ commitment, treatment and the command's receipt.
 
 ## Serialization and continuation
 
-[WorldResourceHistoryCodecV1](../../src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs)
-frames the admission anchor, basis, standalone continuity archive and typed causal witnesses.
-Parsing bounds collection counts and field sizes, refuses unknown evidence, and requires
-canonical re-encoding. Complete-world decoding additionally validates each cause against
-the other restored owners, including actor membership before accessing historical resources.
+[WorldResourceHistoryCodec](../../src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs)
+preserves the original inline V1 frame and explicitly selects V2 for an archive-backed anchor.
+Both retain bounded active continuity and typed causal witnesses. Parsing refuses unknown evidence
+and requires canonical re-encoding. Complete-world decoding additionally validates each cause
+against the other restored owners, including actor membership before accessing historical resources.
 Malformed cross-owner references are admission errors and decode as `FormatException`.
-The complete profile includes this entire owner in its hash.
+The complete profile includes the entire active owner and its exact archive reference in its hash.
 
-The underlying limits of 256 batches and 1,024 effects describe one archive segment, not
-character lifetime. Before appending beyond a segment, `WorldResourceContinuationRequiredException`
-escapes the catches that translate ordinary action failures into rejected receipts. Resource
-progress cannot silently become permanently unavailable because an archive is full.
+The underlying limits of 256 batches and 1,024 effects describe one archive segment, not character
+lifetime. [Continuation](resource-archive-continuation.md) reserves the complete next batch and seals
+the exact closing world before capacity is exceeded. Appending without available capacity still
+raises `WorldResourceContinuationRequiredException`, outside ordinary gameplay-rejection catches.
 
-Continuous durable play requires authenticated end-of-step segment continuation, retrievable
-prior cause/branch evidence, and an exact admitted successor anchor before publication.
-Retaining only a hash, silently deleting history, or treating overflow as a gameplay cap does
-not satisfy that contract. Actor roster and definition changes also require explicit admitted
-boundaries. The retained treatment policy covers aftermath recovery; ordinary treatment,
-delivery modes and broader medical policies compose through the same resource/material laws
-under their own complete-world admission rules.
+Continuous durable play also requires authenticated end-of-step archive publication, retrievable
+prior cause/branch evidence and host replay. Retaining only a hash, silently deleting history or
+treating overflow as a permanent gameplay refusal does not satisfy that contract. Actor roster and
+definition changes require explicit admitted boundaries. Ordinary treatment, delivery modes and
+broader medical policies compose through the same resource/material laws under their own rules.

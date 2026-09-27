@@ -39,13 +39,13 @@ public static class WorldSnapshotCodec
         };
     }
 
-    public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes) =>
+    public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null) =>
         WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 24) switch
         {
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
-            25 => WorldSnapshotCodecV25.Decode(bytes),
+            25 => WorldSnapshotCodecV25.Decode(bytes, archiveAnchor),
             24 => WorldSnapshotCodecV24.Decode(bytes),
             23 => WorldSnapshotCodecV23.Decode(bytes),
             22 => WorldSnapshotCodecV22.Decode(bytes),

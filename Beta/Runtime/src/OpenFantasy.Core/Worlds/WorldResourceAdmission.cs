@@ -18,23 +18,43 @@ internal static class WorldResourceAdmission
         var history = retained.History;
         var progression = world.Progression!;
         var lifecycle = world.EncounterLifecycle!;
+        var anchor = retained.ArchiveAnchor;
         if (world.ProfileVersion != 25 || retained.AnchorAdmission != world.AdmissionVersion
-            || history.BasisWorldSequence != 0 || history.Basis.Revision != 0
-            || progression.Revision != (ulong)history.Batches.Count
-            || history.Basis.Actors.Any(actor => actor.Revision != 0)
+            || anchor is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
+                || history.Basis.Actors.Any(actor => actor.Revision != 0))
+            || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count)
             || history.Basis.Currency.Currency.DefinitionId != progression.Currency.Currency.DefinitionId
             || history.Basis.Currency.Currency.Version != progression.Currency.Currency.Version
             || world.Revision == 0 && history.Basis.ContentHash != progression.ContentHash)
-            throw new ArgumentException("Resource history requires its exact fresh admitted progression and world boundary.");
+            throw new ArgumentException("Resource history requires its exact admitted progression and world boundary.");
+        anchor?.ValidateSuccessor(world);
         history.ValidateCurrent(progression, world.Revision);
         var heads = history.Basis.Actors.ToDictionary(actor => actor.ActorId);
         var currency = history.Basis.Currency;
         var draws = new Dictionary<EntityId, CounterRandomV1>();
-        var attacks = new Dictionary<EntityId, WorldEncounterResourceEvidence>();
+        var attacks = new Dictionary<EntityId, (EntityId Encounter, EncounterActionResolution Resolution)>();
         var episodes = new Dictionary<ulong, EntityId>();
         var rewards = new HashSet<EntityId>();
         var treatments = new HashSet<EntityId>();
         ulong? previousEpisode = null;
+        if (anchor is not null)
+        {
+            rewards.UnionWith(anchor.Quests.Participations.Where(value => value.Status == ActorQuestStatus.Completed)
+                .Select(value => value.CompletionCommandId!.Value));
+            treatments.UnionWith(anchor.Care.Treatments.Select(value => value.TreatmentId));
+            foreach (var acknowledgment in anchor.Care.Acknowledgments)
+                attacks.TryAdd(acknowledgment.Defeat.DecisionCommandId, (acknowledgment.EncounterId, acknowledgment.Defeat));
+            if (anchor.Lifecycle.Actions is { } archivedActions)
+            {
+                previousEpisode = anchor.Lifecycle.EncounterCount - 1;
+                episodes.Add(previousEpisode.Value, archivedActions.Scope.EncounterId);
+                var draw = BeginDraw(lifecycle, archivedActions.Scope.EncounterId);
+                draw.Restore(archivedActions.Random);
+                draws.Add(archivedActions.Scope.EncounterId, draw);
+                if (archivedActions.LastResolution is { Status: EncounterActionResolutionStatus.Damaged } last)
+                    attacks.TryAdd(last.DecisionCommandId, (archivedActions.Scope.EncounterId, last));
+            }
+        }
         for (int index = 0; index < history.Batches.Count; index++)
         {
             var batch = history.Batches[index];
@@ -44,15 +64,15 @@ internal static class WorldResourceAdmission
             {
                 case WorldEncounterResourceEvidence attack:
                     expected = ValidateAttack(world, batch, attack, heads, draws, episodes, ref previousEpisode);
-                    attacks.Add(attack.CommandId, attack);
+                    attacks.Add(attack.CommandId, (attack.EncounterId, attack.Resolution));
                     break;
                 case WorldRewardResourceEvidence reward:
-                    expected = ValidateReward(world, batch, reward, heads, checked((ulong)index), ref currency);
-                    rewards.Add(reward.CommandId);
+                    if (!rewards.Add(reward.CommandId)) throw new ArgumentException("An archived quest cannot pay another reward.");
+                    expected = ValidateReward(world, batch, reward, heads, checked(history.Basis.Revision + (ulong)index), ref currency);
                     break;
                 case WorldTreatmentResourceEvidence treatment:
                     expected = ValidateTreatment(world, batch, treatment, heads);
-                    treatments.Add(treatment.TreatmentId);
+                    if (!treatments.Add(treatment.TreatmentId)) throw new ArgumentException("An archived treatment cannot restore resources again.");
                     break;
                 default:
                     throw new ArgumentException("Unsupported world resource cause.");
@@ -187,10 +207,10 @@ internal static class WorldResourceAdmission
     private static CounterRandomV1 BeginDraw(EncounterLifecycleSnapshot lifecycle, EntityId encounter) =>
         new(lifecycle.Seed.ToByteArray(), EncounterActionSnapshot.RulesPin.Value, EncounterActionSnapshot.RandomDomain, encounter);
 
-    private static void RequireAttack(Dictionary<EntityId, WorldEncounterResourceEvidence> attacks,
+    private static void RequireAttack(Dictionary<EntityId, (EntityId Encounter, EncounterActionResolution Resolution)> attacks,
         EntityId encounter, EncounterActionResolution resolution)
     {
-        if (!attacks.TryGetValue(resolution.DecisionCommandId, out var attack) || attack.EncounterId != encounter
+        if (!attacks.TryGetValue(resolution.DecisionCommandId, out var attack) || attack.Encounter != encounter
             || !EncounterActionCodecV1.EncodeResolution(attack.Resolution).AsSpan()
                 .SequenceEqual(EncounterActionCodecV1.EncodeResolution(resolution)))
             throw new ArgumentException("The original attack boundary must remain exactly represented in causal history.");
