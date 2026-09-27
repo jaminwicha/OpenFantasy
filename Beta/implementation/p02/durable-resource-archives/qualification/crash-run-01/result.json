@@ -1,0 +1,733 @@
+{
+  "status": "passed",
+  "startedUtc": "2026-09-27T21:00:45.553431+00:00",
+  "runs": [
+    {
+      "label": "archive-normal",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/archive/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal.stderr",
+      "seconds": 3.285795333329588,
+      "exitCode": 0
+    },
+    {
+      "label": "archive-normal-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/archive/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal-duplicate.stderr",
+      "seconds": 3.039815042167902,
+      "exitCode": 1
+    },
+    {
+      "label": "archive-normal-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal.sqlite3",
+        "549"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-normal-retained-before.stderr",
+      "seconds": 3.1615116661414504,
+      "exitCode": 0
+    },
+    {
+      "label": "archive-before-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before.sqlite3",
+        "549"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-reopen.stderr",
+      "seconds": 3.1568687078543007,
+      "exitCode": 0
+    },
+    {
+      "label": "archive-before-retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/archive/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-retry.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-retry.stderr",
+      "seconds": 4.201113416813314,
+      "exitCode": 0
+    },
+    {
+      "label": "archive-before-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/archive/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-duplicate.stderr",
+      "seconds": 4.515509374905378,
+      "exitCode": 1
+    },
+    {
+      "label": "archive-before-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before.sqlite3",
+        "549"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before-retained-before.stderr",
+      "seconds": 3.9771166248247027,
+      "exitCode": 0
+    },
+    {
+      "label": "archive-after-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after.sqlite3",
+        "550"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after-reopen.stderr",
+      "seconds": 4.317604333162308,
+      "exitCode": 0
+    },
+    {
+      "label": "archive-after-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/archive/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after-duplicate.stderr",
+      "seconds": 4.394678540993482,
+      "exitCode": 1
+    },
+    {
+      "label": "archive-after-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after.sqlite3",
+        "549"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after-retained-before.stderr",
+      "seconds": 7.055597708094865,
+      "exitCode": 0
+    },
+    {
+      "label": "raw-care-normal",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/raw-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal.stderr",
+      "seconds": 1.7919171247631311,
+      "exitCode": 0
+    },
+    {
+      "label": "raw-care-normal-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/raw-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal-duplicate.stderr",
+      "seconds": 1.671238416340202,
+      "exitCode": 1
+    },
+    {
+      "label": "raw-care-normal-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal.sqlite3",
+        "225"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-normal-retained-before.stderr",
+      "seconds": 1.6283383751288056,
+      "exitCode": 0
+    },
+    {
+      "label": "raw-care-before-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before.sqlite3",
+        "225"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-reopen.stderr",
+      "seconds": 1.5802258751355112,
+      "exitCode": 0
+    },
+    {
+      "label": "raw-care-before-retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/raw-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-retry.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-retry.stderr",
+      "seconds": 1.6573567078448832,
+      "exitCode": 0
+    },
+    {
+      "label": "raw-care-before-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/raw-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-duplicate.stderr",
+      "seconds": 1.7735913330689073,
+      "exitCode": 1
+    },
+    {
+      "label": "raw-care-before-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before.sqlite3",
+        "225"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before-retained-before.stderr",
+      "seconds": 2.301099792122841,
+      "exitCode": 0
+    },
+    {
+      "label": "raw-care-after-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after.sqlite3",
+        "226"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after-reopen.stderr",
+      "seconds": 1.9183202907443047,
+      "exitCode": 0
+    },
+    {
+      "label": "raw-care-after-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/raw-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after-duplicate.stderr",
+      "seconds": 1.6238552923314273,
+      "exitCode": 1
+    },
+    {
+      "label": "raw-care-after-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after.sqlite3",
+        "225"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after-retained-before.stderr",
+      "seconds": 1.670112416613847,
+      "exitCode": 0
+    },
+    {
+      "label": "crafted-care-normal",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/crafted-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal.stderr",
+      "seconds": 1.4648736249655485,
+      "exitCode": 0
+    },
+    {
+      "label": "crafted-care-normal-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/crafted-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal-duplicate.stderr",
+      "seconds": 1.3123328327201307,
+      "exitCode": 1
+    },
+    {
+      "label": "crafted-care-normal-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal.sqlite3",
+        "226"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-normal-retained-before.stderr",
+      "seconds": 1.1112632090225816,
+      "exitCode": 0
+    },
+    {
+      "label": "crafted-care-before-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before.sqlite3",
+        "226"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-reopen.stderr",
+      "seconds": 1.0521102920174599,
+      "exitCode": 0
+    },
+    {
+      "label": "crafted-care-before-retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/crafted-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-retry.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-retry.stderr",
+      "seconds": 1.1073644580319524,
+      "exitCode": 0
+    },
+    {
+      "label": "crafted-care-before-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/crafted-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-duplicate.stderr",
+      "seconds": 1.0072564161382616,
+      "exitCode": 1
+    },
+    {
+      "label": "crafted-care-before-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before.sqlite3",
+        "226"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before-retained-before.stderr",
+      "seconds": 1.09619174990803,
+      "exitCode": 0
+    },
+    {
+      "label": "crafted-care-after-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after.sqlite3",
+        "227"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after-reopen.stderr",
+      "seconds": 1.1079067499376833,
+      "exitCode": 0
+    },
+    {
+      "label": "crafted-care-after-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/crafted-care/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after-duplicate.stderr",
+      "seconds": 1.0545043339952826,
+      "exitCode": 1
+    },
+    {
+      "label": "crafted-care-after-retained-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after.sqlite3",
+        "226"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after-retained-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after-retained-before.stderr",
+      "seconds": 1.15790562517941,
+      "exitCode": 0
+    }
+  ],
+  "crashes": [
+    {
+      "label": "archive-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/archive/batch.ofc",
+        "before"
+      ],
+      "boundary": "before",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-before.stderr",
+      "pid": 13911,
+      "signalSeconds": 2.9679549168795347,
+      "notification": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.0038873753510415554
+    },
+    {
+      "label": "archive-after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/archive/batch.ofc",
+        "after"
+      ],
+      "boundary": "after",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/archive-after.stderr",
+      "pid": 14042,
+      "signalSeconds": 3.498883708845824,
+      "notification": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.00356720807030797
+    },
+    {
+      "label": "raw-care-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/raw-care/batch.ofc",
+        "before"
+      ],
+      "boundary": "before",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-before.stderr",
+      "pid": 14274,
+      "signalSeconds": 1.727632625028491,
+      "notification": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.0037428750656545162
+    },
+    {
+      "label": "raw-care-after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/raw-care/batch.ofc",
+        "after"
+      ],
+      "boundary": "after",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/raw-care-after.stderr",
+      "pid": 14572,
+      "signalSeconds": 2.0010500829666853,
+      "notification": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.0039034998044371605
+    },
+    {
+      "label": "crafted-care-before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/crafted-care/batch.ofc",
+        "before"
+      ],
+      "boundary": "before",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-before.stderr",
+      "pid": 14699,
+      "signalSeconds": 0.9996837922371924,
+      "notification": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.0038087498396635056
+    },
+    {
+      "label": "crafted-care-after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-fixtures/crafted-care/batch.ofc",
+        "after"
+      ],
+      "boundary": "after",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/crash-run-01/crafted-care-after.stderr",
+      "pid": 14718,
+      "signalSeconds": 0.9865509159862995,
+      "notification": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.0038072075694799423
+    }
+  ],
+  "fixtures": {
+    "archive": {
+      "selectedReceipts": 0,
+      "archivePublished": true
+    },
+    "raw-care": {
+      "selectedReceipts": 1,
+      "newTreatments": 1,
+      "consumedDoses": 1,
+      "consumptionId": "47c26be4f50408ac584156c715a4044a",
+      "hpAfter": 40
+    },
+    "crafted-care": {
+      "selectedReceipts": 1,
+      "newTreatments": 1,
+      "consumedDoses": 1,
+      "consumptionId": "a51efaea62947d929806e0d9286c89f0",
+      "hpAfter": 40
+    }
+  },
+  "hostSha256": "16addcb73726c809f9b3efc4430c32bd93f6e252193a728cebb5fcf4f651e3d9",
+  "limitations": [
+    "Expected gameplay roots originate in the managed fixture; this checks storage and recovery, not independent gameplay laws.",
+    "Process SIGKILL qualification does not establish power-loss, hardware, throughput, native UI, or whole-game acceptance."
+  ],
+  "externalKills": 6,
+  "completeFixturePairs": 3,
+  "fixturesUnchanged": true,
+  "hostUnchanged": true,
+  "finishedUtc": "2026-09-27T21:02:08.240445+00:00",
+  "artifacts": {
+    "archive-after-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-after-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "archive-after-reopen.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-after-reopen.stdout": "83e062b0a5768ff0b21b8a797688c8f7b25d69bbb0be70e6868b3032d6e7e099",
+    "archive-after-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-after-retained-before.stdout": "50bd090f1149b11064cb07ca661fe93e2b9d70d519430066ad87944ab56d66d0",
+    "archive-after.sqlite3": "a23d7c19e77e7b97a9fbaac6891b92d1bcb86c2136c86bc52ca11ccec7fc30d7",
+    "archive-after.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "archive-after.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-after.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-after.stdout": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "archive-before-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-before-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "archive-before-reopen.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-before-reopen.stdout": "bb222f68991572ab0de844e15e3e029a89b5fb8dc4336ad87b63784ab1862456",
+    "archive-before-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-before-retained-before.stdout": "50bd090f1149b11064cb07ca661fe93e2b9d70d519430066ad87944ab56d66d0",
+    "archive-before-retry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-before-retry.stdout": "cf422ba8e50af0448210a50ddf1b003fde28ba4f28e0e53ff1e1422e72bf2e4c",
+    "archive-before.sqlite3": "a23d7c19e77e7b97a9fbaac6891b92d1bcb86c2136c86bc52ca11ccec7fc30d7",
+    "archive-before.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "archive-before.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-before.stdout": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "archive-expected-after.sqlite3": "c7dc058afec97d128a1458267ee8e882d2c7643fb7e680f98da8a4039ee66e9e",
+    "archive-expected-after.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "archive-expected-after.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-expected-before.sqlite3": "e10841b94c89271b264d336421b9d2aa13d0d7ee5bdda63591cd3ac5254e0e22",
+    "archive-expected-before.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "archive-expected-before.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-normal-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-normal-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "archive-normal-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-normal-retained-before.stdout": "50bd090f1149b11064cb07ca661fe93e2b9d70d519430066ad87944ab56d66d0",
+    "archive-normal.sqlite3": "a23d7c19e77e7b97a9fbaac6891b92d1bcb86c2136c86bc52ca11ccec7fc30d7",
+    "archive-normal.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "archive-normal.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archive-normal.stdout": "cf422ba8e50af0448210a50ddf1b003fde28ba4f28e0e53ff1e1422e72bf2e4c",
+    "crafted-care-after-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-after-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "crafted-care-after-reopen.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-after-reopen.stdout": "5c83917c737b06bab57b7605d6683323e440eab25bc2fba08b5289cc0853d9f8",
+    "crafted-care-after-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-after-retained-before.stdout": "71237e6d7f3631010ee5c670e85be9ade1479f453d4f82b86fc17a30d94cd5e5",
+    "crafted-care-after.sqlite3": "d5504763a3f536acbaa24b00b8a992abe02f84a5de7bc34a8c7202ab61dd7b58",
+    "crafted-care-after.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "crafted-care-after.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-after.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-after.stdout": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "crafted-care-before-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-before-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "crafted-care-before-reopen.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-before-reopen.stdout": "37217636a364a0c84f5c7907df5ad97e723577164f2b8615588d1ed17561506f",
+    "crafted-care-before-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-before-retained-before.stdout": "71237e6d7f3631010ee5c670e85be9ade1479f453d4f82b86fc17a30d94cd5e5",
+    "crafted-care-before-retry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-before-retry.stdout": "cfe837610c4473924781f55a3113b4b7d010c4c419a853d97d14ff9de6e5a261",
+    "crafted-care-before.sqlite3": "d5504763a3f536acbaa24b00b8a992abe02f84a5de7bc34a8c7202ab61dd7b58",
+    "crafted-care-before.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "crafted-care-before.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-before.stdout": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "crafted-care-expected-after.sqlite3": "51d7ffb4d03ce18bda334294d6d7edc36f6793fb54d9840b40ea41e7dfc47e63",
+    "crafted-care-expected-after.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "crafted-care-expected-after.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-expected-before.sqlite3": "4586ef18d9372b0140023f9567fe5adc3a99f3bf2cdac38dba404633908629c3",
+    "crafted-care-expected-before.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "crafted-care-expected-before.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-normal-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-normal-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "crafted-care-normal-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-normal-retained-before.stdout": "71237e6d7f3631010ee5c670e85be9ade1479f453d4f82b86fc17a30d94cd5e5",
+    "crafted-care-normal.sqlite3": "d5504763a3f536acbaa24b00b8a992abe02f84a5de7bc34a8c7202ab61dd7b58",
+    "crafted-care-normal.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "crafted-care-normal.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "crafted-care-normal.stdout": "cfe837610c4473924781f55a3113b4b7d010c4c419a853d97d14ff9de6e5a261",
+    "raw-care-after-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-after-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "raw-care-after-reopen.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-after-reopen.stdout": "7310194417eeb3b10e6b835a4a11ac041c4005a9e4c817801040d3dba3c99b35",
+    "raw-care-after-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-after-retained-before.stdout": "d144d1567b33f08c209f50a8f7369abb3952f1cfe4ba72124162f8f7dc00ba24",
+    "raw-care-after.sqlite3": "831dd4d2028fb6103ba538910eb34a00022dc61e291ab1b9b3af9cc10bbf6e3f",
+    "raw-care-after.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "raw-care-after.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-after.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-after.stdout": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "raw-care-before-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-before-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "raw-care-before-reopen.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-before-reopen.stdout": "a3215ec837cfaf72f93fdede849fadf21dedc1c5a09c386e626f257be37cd6b1",
+    "raw-care-before-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-before-retained-before.stdout": "d144d1567b33f08c209f50a8f7369abb3952f1cfe4ba72124162f8f7dc00ba24",
+    "raw-care-before-retry.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-before-retry.stdout": "4a2ee30cdcf07ca704903c7db47e7ee4d843c6205b529c9ceed6494de15f5308",
+    "raw-care-before.sqlite3": "831dd4d2028fb6103ba538910eb34a00022dc61e291ab1b9b3af9cc10bbf6e3f",
+    "raw-care-before.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "raw-care-before.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-before.stdout": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "raw-care-expected-after.sqlite3": "c02ce81f902e736a731705c61099b18c4877138e56709d5153f1b1647f6c93c6",
+    "raw-care-expected-after.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "raw-care-expected-after.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-expected-before.sqlite3": "dddc5949c9b8d3daa217b030b085ddcf99db92af9bfeb98aaf11ee6e3140d117",
+    "raw-care-expected-before.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "raw-care-expected-before.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-normal-duplicate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-normal-duplicate.stdout": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "raw-care-normal-retained-before.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-normal-retained-before.stdout": "d144d1567b33f08c209f50a8f7369abb3952f1cfe4ba72124162f8f7dc00ba24",
+    "raw-care-normal.sqlite3": "831dd4d2028fb6103ba538910eb34a00022dc61e291ab1b9b3af9cc10bbf6e3f",
+    "raw-care-normal.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "raw-care-normal.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-normal.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "raw-care-normal.stdout": "4a2ee30cdcf07ca704903c7db47e7ee4d843c6205b529c9ceed6494de15f5308"
+  }
+}

@@ -1,0 +1,4 @@
+# Exact SQLite fixtures and process-crash databases are retained in crash-evidence.tar.gz.
+# Keep unpacked local copies without duplicating the binary packet in source control.
+qualification/crash-fixtures/**/*.sqlite3*
+qualification/crash-run-01/*.sqlite3*

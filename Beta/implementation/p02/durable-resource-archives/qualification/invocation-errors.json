@@ -1,0 +1,7 @@
+[
+  {
+    "check": "crash qualification initial invocation",
+    "error": "Host path selected net8.0, which does not exist. Host is net10.0. Preflight failed before spawning or changing fixtures.",
+    "correction": "Located built Host output and selected net10.0; no deadline or assertion changed."
+  }
+]

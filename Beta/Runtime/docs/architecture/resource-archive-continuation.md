@@ -60,11 +60,33 @@ reject missing and extra archives, rather than regenerate missing storage and ca
 
 ## Durable publication contract
 
-The durable host excludes care-enabled worlds. Before admitting them, an explicit storage schema
-must write the sealed bytes, accepted batch, outcomes, identities, successor root and scheduled
-checkpoint inside the same transaction, then publish memory only after commit. Preview prepares
-without writing. A crash yields both archive and successor or neither; an uncertain outcome
-requires recovery. Historical reads retain their source-head pin and retrieve the same evidence.
+[Schema seven](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSeven.cs) exclusively binds
+care-enabled profile25 to `world_resource_segments`. Each append-only row records world, branch,
+ordinal, boundary sequence, publication sequence, boundary hash and complete closing bytes. The
+boundary is revisionN; its publication is commitN+1. The publishing commit's before-hash equals
+the boundary hash, and its sequence is a foreign key. Scope/ordinal and publication are unique.
+Older schemas retain their exact definitions; opening a save does not migrate its interpretation.
+
+[SqliteWorldAuthority](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs) writes the archive
+after the commit row and before the head, in the same transaction as outcomes, identities and any
+scheduled checkpoint. Storage checks the exact prior head bytes and admitted genesis scope.
+Only transaction success publishes memory. Preview prepares without writing; uncertain storage
+outcomes require reopening. The existing exclusive lease also owns consistent new-file backups.
+
+[WorldResourceArchiveReplay](../../src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs)
+walks actual stored rows alongside deterministic journal replay. Each required row must exactly
+match the closing replay root and expected seal, then decode with the preceding retrieved anchor.
+Missing, altered, unscheduled and trailing rows fail. Complete head/checkpoint comparison and the
+permanent identity ledger still apply. Recovery never replaces missing evidence with a regenerated
+seal. Privileged `ReadResourceArchiveForHost` verifies the complete journal under the writer gate
+and returns a detached immutable segment with publication sequence and the source-head revision/hash.
+It neither exposes a live database resolver nor grants player knowledge. Historical state reads use
+the same verification path; these synchronous operator operations do not belong on a client frame.
+
+[WorldJournalPolicy](../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs) accounts separately
+for archive count/bytes and accepted batch/outcome bytes. It checks the development envelope before
+publication, reconstructs identical usage during recovery and throws a host stop when exhausted.
+The archive envelope is1,024segments/256MiB; the unchanged accepted-journal limits still apply.
 
 The resource segment bounds are not gameplay limits. This continuation mechanism does not remove
 other retained-care/material collection limits, the host journal's development envelope, or roster

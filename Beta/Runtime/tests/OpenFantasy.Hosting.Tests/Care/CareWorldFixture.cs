@@ -29,7 +29,8 @@ internal sealed class CareWorldFixture
     private ulong _identity = 10_000;
 
     internal CareWorldFixture(bool craftedDose = false, ulong? rewardExperience = null, uint? strikeMana = null,
-        bool invalidNormalizedSpeedOnReward = false, bool enduranceProfile = false)
+        bool invalidNormalizedSpeedOnReward = false, bool enduranceProfile = false,
+        bool pairedRewardBoundary = false, bool invalidSecondRewardSpeed = false)
     {
         CraftedDose = craftedDose;
         WorldSnapshot source = _journey.Genesis;
@@ -46,14 +47,41 @@ internal sealed class CareWorldFixture
             added.Add(new(PotionLot, HelperStorage, _supply.Potion, new(PotionSource, 0, 2), 0));
             sources = sources.Append(new(PotionSource, _supply.Potion, 2));
         }
+        var storages = source.Inventory.Custody.Storages.AsEnumerable();
+        var policies = source.Inventory.Policies.AsEnumerable();
+        var reservations = source.Inventory.ReservationIds.AsEnumerable();
+        if (pairedRewardBoundary)
+        {
+            storages = storages.Append(new CustodianStorage(Id(11), 16, 0));
+            policies = policies.Append(new CustodianAccessPolicy(Id(11), Player, CustodyDepositRule.AnyControlledActor));
+            reservations = reservations.Append(Id(12));
+        }
         var inventory = new CountedAuthorityState(new(source.WorldId, source.BranchId, 0,
-            source.Inventory.Custody.Storages, source.Inventory.Custody.Lots.Concat(added)),
+            storages, source.Inventory.Custody.Lots.Concat(added)),
             checked(source.Inventory.AdmittedUnitCapacity + (craftedDose ? 6UL : 8UL)), source.Inventory.Actors,
-            source.Inventory.Controls, source.Inventory.Policies, sources, source.Inventory.ReservationIds);
+            source.Inventory.Controls, policies, sources, reservations);
         var production = new ProductionSnapshot(source.WorldId, source.BranchId, 0,
             source.Production!.Recipes.Append(_supply.Recipe), [], []);
         var admission = ContentHash.Compute(source.ContentHash.ToByteArray().Concat(_supply.Recipe.Version.ToByteArray()).ToArray());
         var progression = source.Progression!;
+        if (pairedRewardBoundary)
+        {
+            // Real bites accumulate history; a later ordinary strike ends the encounter at the
+            // chosen count. Distinct fresh profiles also isolate the second reward's late failure.
+            var lastRecipient = new[] { Player, Helper }.Order().Last();
+            var profiles = progression.Actors.Select((actor, index) => new ActorStatProfileDefinition(
+                Id((ulong)(20 + index)), "paired_reward_actor_" + index, "Paired reward actor " + index,
+                ActorStatProfileKind.Class, new ActorStatValues(100_000, 4096,
+                    actor.ActorId == Player ? 1_000_000 : 1, 1, 0,
+                    invalidSecondRewardSpeed && actor.ActorId == lastRecipient ? (int)(uint.MaxValue / 10) : 10_000),
+                invalidSecondRewardSpeed && actor.ActorId == lastRecipient
+                    ? ActorStatModifiers.Zero with { Speed = 1 } : ActorStatModifiers.Zero,
+                ActorStatModifiers.Zero)).ToArray();
+            var actors = progression.Actors.Select((actor, index) => new ActorProgressionState(actor.ActorId, 0,
+                profiles[index], progression.GetActor(Player).Curve, 1, 0, 100_000, 4096));
+            progression = new ProgressionSnapshot(progression.WorldId, progression.BranchId, 0,
+                profiles, progression.Curves, actors, progression.Currency);
+        }
         if (enduranceProfile)
         {
             // Fresh stress calibration preserves real abilities, damage, MP and readiness operations.
@@ -99,7 +127,34 @@ internal sealed class CareWorldFixture
                 quest.MaterialReservationId, calibrated);
             quests = new QuestSnapshot(quests.WorldId, quests.BranchId, 0, [definition], []);
         }
-        var basis = new WorldSnapshot(inventory, source.Space, source.Residents, admission, source.Calendar, 0, 0,
+        var residents = source.Residents.AsEnumerable();
+        if (pairedRewardBoundary)
+        {
+            var originalReward = quests.Definitions.Single().Reward;
+            var reciprocal = new DeliveryQuestDefinition(Id(13), "reciprocal_berries", "Reciprocal berries",
+                "Bring three berries to the traveler's reserved stock.", Player, 1, _supply.Berries, 3,
+                Id(11), Id(12), new ActorRewardDefinition(Id(14), "reciprocal_berry_reward", 1000,
+                    originalReward.Currency, originalReward.ReserveAccountId, originalReward.CurrencyAmount));
+            quests = new QuestSnapshot(quests.WorldId, quests.BranchId, 0, quests.Definitions.Append(reciprocal), []);
+            // The inherited 200-gil reserve funds only the original 200-gil reward. Admit another
+            // explicit finite 200-gil allocation for the reciprocal obligation before any play.
+            var currency = progression.Currency;
+            var funded = new CurrencyLedger(currency.WorldId, currency.BranchId, 0, currency.Currency,
+                checked(currency.AdmittedSupply + reciprocal.Reward.CurrencyAmount),
+                currency.Accounts.Select(account => account.AccountId == reciprocal.Reward.ReserveAccountId
+                    ? new CurrencyAccount(account.AccountId, account.Kind, account.ActorId,
+                        checked(account.Balance + reciprocal.Reward.CurrencyAmount), 0) : account));
+            progression = new ProgressionSnapshot(progression.WorldId, progression.BranchId, 0,
+                progression.Profiles, progression.Curves, progression.Actors, funded);
+            Assert.Equal(quests.Definitions.Aggregate(0UL, (sum, quest) => sum + quest.Reward.CurrencyAmount),
+                funded.GetAccount(originalReward.ReserveAccountId).Balance);
+            var utterance = source.GetResident(Helper).OpeningUtterance!;
+            residents = residents.Select(resident => resident.ActorId != Player ? resident : new WorldResident(
+                resident.ActorId, resident.InventoryCustodianId, resident.DisplayName, resident.ControllerKind,
+                resident.HomeFeet, resident.WanderRadiusCells, resident.Comprehension, resident.ExperiencedTime,
+                new ResidentUtterance(Id(15), utterance.Channel, utterance.ChannelVersion, "I can use some berries for our journey.")));
+        }
+        var basis = new WorldSnapshot(inventory, source.Space, residents, admission, source.Calendar, 0, 0,
             gathering: source.Gathering, production: production, progression: progression,
             quests: quests, construction: source.Construction);
 

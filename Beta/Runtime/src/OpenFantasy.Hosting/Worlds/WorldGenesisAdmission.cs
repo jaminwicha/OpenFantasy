@@ -9,9 +9,18 @@ internal static class WorldGenesisAdmission
 {
     internal static void Validate(WorldSnapshot genesis)
     {
-        if (genesis.Care is not null)
+        if (genesis.Care is { } care && (care.Revision != 0 || care.Acknowledgments.Count != 0
+            || care.Treatments.Count != 0 || care.Pending is not null
+            || genesis.ResourceHistory is not { ArchiveAnchor: null } resources
+            || resources.AnchorAdmission != genesis.AdmissionVersion
+            || resources.History.BasisWorldSequence != 0 || resources.History.Batches.Count != 0
+            || resources.Evidence.Count != 0 || genesis.Progression!.Revision != 0
+            || resources.History.Basis.ContentHash != genesis.Progression.ContentHash
+            || genesis.Progression.Actors.Any(actor => actor.Revision != 0)
+            || genesis.Production!.Revision != 0 || genesis.Production.Batches.Count != 0
+            || genesis.Production.Lots.Count != 0 || genesis.Production.ConsumedItems.Count != 0))
         {
-            throw new ArgumentException("Care ownership requires a dedicated durable schema and pending-obligation recovery contract.", nameof(genesis));
+            throw new ArgumentException("Fresh care requires unearned material, resource and care owners with their exact initial basis.", nameof(genesis));
         }
         if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
         {

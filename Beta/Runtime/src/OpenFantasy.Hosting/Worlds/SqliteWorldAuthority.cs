@@ -39,6 +39,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         int schemaVersion = accepted.ProfileVersion switch
         {
+            25 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,
             16 or 17 or 18 => WorldDatabaseSchemaFour.Version,
@@ -131,7 +132,7 @@ public sealed class SqliteWorldAuthority : IDisposable
                 (ulong)prepared.Commands.Count, (ulong)prepared.Stored.AcceptedBatch.Length,
                 (ulong)prepared.Stored.Outcomes.Length,
                 _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
-                _state.ProfileVersion);
+                _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0));
             return prepared.Decision;
         }
     }
@@ -156,6 +157,16 @@ public sealed class SqliteWorldAuthority : IDisposable
         }
     }
 
+    /// <summary>Creates a consistent new-file backup under the existing exclusive writer lease.</summary>
+    internal void BackupForHost(string path)
+    {
+        lock (_gate)
+        {
+            EnsureAvailable();
+            _database.BackupToNewFile(path);
+        }
+    }
+
     internal WorldStepDecision Commit(WorldStepBatch batch, Action<AuthorityCommitBoundary>? fault)
     {
         ArgumentNullException.ThrowIfNull(batch);
@@ -169,10 +180,14 @@ public sealed class SqliteWorldAuthority : IDisposable
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,
                 (ulong)prepared.Stored.AcceptedBatch.Length, (ulong)prepared.Stored.Outcomes.Length,
                 _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
-                _state.ProfileVersion);
+                _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0));
             try
             {
                 _database.WriteCommit(prepared.Stored, transaction);
+                if (prepared.ResourceArchive is { } archive)
+                {
+                    _database.WriteResourceArchive(archive, transaction);
+                }
                 foreach (StoredWorldCommandOutcome command in prepared.Commands)
                 {
                     _database.WriteCommandOutcome(command, transaction);
@@ -277,6 +292,36 @@ public sealed class SqliteWorldAuthority : IDisposable
                 if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
                 {
                     throw new InvalidDataException("Historical reconstruction does not match the pinned live head.");
+                }
+                return recorded;
+            }
+            catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
+            {
+                _requiresRecovery = true;
+                throw;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Retrieves one archive from actual storage after complete replay verification under the writer
+    /// lock. Privileged operator work; this grants no player visibility and is not a frame callback.
+    /// </summary>
+    public RecordedWorldResourceArchive ReadResourceArchiveForHost(ulong ordinal)
+    {
+        lock (_gate)
+        {
+            EnsureAvailable();
+            if (ordinal >= _usage.ResourceArchiveCount)
+            {
+                throw new ArgumentOutOfRangeException(nameof(ordinal), "The requested resource archive has not been published.");
+            }
+            try
+            {
+                RecordedWorldResourceArchive recorded = new WorldJournalRecovery().ReadResourceArchive(_database, ordinal);
+                if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
+                {
+                    throw new InvalidDataException("Archive retrieval does not match the pinned live head.");
                 }
                 return recorded;
             }

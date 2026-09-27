@@ -1,0 +1,94 @@
+{
+  "status": "passed-bounded-durable-increment",
+  "baseline": "c3ed6316d4f36286cd85447e744e0330b57305ef",
+  "managed_checks": {
+    "focused": {
+      "trx": "focused/_mac_2026-09-27_15_58_39_net8.0.trx",
+      "total": 30,
+      "executed": 30,
+      "passed": 30,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "core": {
+      "trx": "core/_mac_2026-09-27_16_05_28_net8.0.trx",
+      "total": 1355,
+      "executed": 1355,
+      "passed": 1355,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "boundary": {
+      "trx": "boundary/_mac_2026-09-27_16_08_26_net8.0.trx",
+      "total": 3,
+      "executed": 3,
+      "passed": 1,
+      "failed": 2,
+      "notExecuted": 0
+    },
+    "boundary-02": {
+      "trx": "boundary-02/_mac_2026-09-27_16_11_04_net8.0.trx",
+      "total": 3,
+      "executed": 3,
+      "passed": 3,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting": {
+      "trx": "hosting/_mac_2026-09-27_16_12_20_net8.0.trx",
+      "total": 698,
+      "executed": 698,
+      "passed": 698,
+      "failed": 0,
+      "notExecuted": 0
+    }
+  },
+  "crash": {
+    "result": "crash-run-01/result.json",
+    "status": "passed",
+    "external_sigkill_count": 6,
+    "host_operations": 30,
+    "fixture_pairs": [
+      "archive",
+      "raw-care",
+      "crafted-care"
+    ],
+    "same_production_sources_and_host_binaries_as_final": true
+  },
+  "builds": {
+    "passed": [
+      "build-01.log",
+      "build-02.log",
+      "build-03.log",
+      "build-05.log",
+      "build-06.log"
+    ],
+    "failed_retained": [
+      "build-04.log"
+    ],
+    "failure": "Test accessed internal Core capacity constructor; replaced with public prepared dry runoff creation and cancellation."
+  },
+  "critic": "../REVIEW.md",
+  "preservation": "preservation.json",
+  "source": "source-final.json",
+  "limitations": [
+    "Core and Hosting runtime sources/binaries are identical to crash qualification; later changes are test fixtures only.",
+    "Archive publication and raw/crafted care crash probes are separate transactions; combined pending-care/archive/treatment probe remains required.",
+    "Ordinary session, native care, other owner lifetime, production throughput and full phase/human gates remain open."
+  ],
+  "distinct_managed_cases": 2053,
+  "all_current_managed_cases_pass": true,
+  "full_phase_gate_closed": false,
+  "retained_failed_test_run": {
+    "run": "boundary",
+    "failed": 2,
+    "disposition": "Paired fresh fixture reserved only200gil for two200gil rewards. Added conserved fresh backing for second obligation; default fixtures and runtime funding guard unchanged. Both cases pass in boundary-02 and full Hosting."
+  },
+  "legacy_schema_definitions_unchanged": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ]
+}

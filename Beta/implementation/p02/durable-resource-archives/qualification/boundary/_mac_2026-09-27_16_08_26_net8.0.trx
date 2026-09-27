@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="caefd376-7fc0-4e92-8d56-c0b0eb4ed41e" name="@mac 2026-09-27 16:08:26" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-27T16:08:26.4556210-05:00" queuing="2026-09-27T16:08:26.4556210-05:00" start="2026-09-27T16:08:22.4784970-05:00" finish="2026-09-27T16:08:38.7717610-05:00" />
+  <TestSettings name="default" id="969d6833-65f7-4dc2-b8b1-f5ec7e56a4a4">
+    <Deployment runDeploymentRoot="_mac_2026-09-27_16_08_26" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="6c366ba3-75eb-4395-9610-26ff74ca1e5f" testId="f508e024-5a9e-cdf5-448d-c647653700ab" testName="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: True)" computerName="mac" duration="00:00:06.4264084" startTime="2026-09-27T16:08:32.2876820-05:00" endTime="2026-09-27T16:08:38.7148400-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c366ba3-75eb-4395-9610-26ff74ca1e5f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = ffc78c88f91378606689dab244adec897c4b9aa16ca7066a18cf71b218a6e9b8, CommandId = ca250000000000000000000000002b37, CommitSequence = 1058, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 331
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryJourney.Prepare(CareWorldSession session) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 192
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Boolean rejectSecond) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 29
+   at InvokeStub_PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d97ed7b6-44ca-4256-b5bc-35b743ca4f28" testId="0e0c6e43-4ec6-3677-8f70-c546656bc4db" testName="OpenFantasy.Hosting.Tests.Care.CareGenesisAdmissionTests.Structurally_conserved_crafted_stock_with_zero_production_revision_is_not_fresh_genesis" computerName="mac" duration="00:00:00.8314540" startTime="2026-09-27T16:08:24.6264190-05:00" endTime="2026-09-27T16:08:25.4648090-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d97ed7b6-44ca-4256-b5bc-35b743ca4f28" />
+    <UnitTestResult executionId="c1de78f1-0caa-4fb4-85e6-adebe4fe46d8" testId="8495a3b1-4113-eea9-bfcb-df6d8361ff4b" testName="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: False)" computerName="mac" duration="00:00:07.5461857" startTime="2026-09-27T16:08:24.6264170-05:00" endTime="2026-09-27T16:08:32.2861280-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1de78f1-0caa-4fb4-85e6-adebe4fe46d8">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = ffc78c88f91378606689dab244adec897c4b9aa16ca7066a18cf71b218a6e9b8, CommandId = ca250000000000000000000000002b37, CommitSequence = 1058, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 331
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryJourney.Prepare(CareWorldSession session) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 192
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Boolean rejectSecond) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareGenesisAdmissionTests.Structurally_conserved_crafted_stock_with_zero_production_revision_is_not_fresh_genesis" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0e0c6e43-4ec6-3677-8f70-c546656bc4db">
+      <Execution id="d97ed7b6-44ca-4256-b5bc-35b743ca4f28" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareGenesisAdmissionTests" name="Structurally_conserved_crafted_stock_with_zero_production_revision_is_not_fresh_genesis" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8495a3b1-4113-eea9-bfcb-df6d8361ff4b">
+      <Execution id="c1de78f1-0caa-4fb4-85e6-adebe4fe46d8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests" name="Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f508e024-5a9e-cdf5-448d-c647653700ab">
+      <Execution id="6c366ba3-75eb-4395-9610-26ff74ca1e5f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests" name="Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f508e024-5a9e-cdf5-448d-c647653700ab" executionId="6c366ba3-75eb-4395-9610-26ff74ca1e5f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0e0c6e43-4ec6-3677-8f70-c546656bc4db" executionId="d97ed7b6-44ca-4256-b5bc-35b743ca4f28" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8495a3b1-4113-eea9-bfcb-df6d8361ff4b" executionId="c1de78f1-0caa-4fb4-85e6-adebe4fe46d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="1" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.51]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.92]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.11]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:08.82]       Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[xUnit.net 00:00:08.82]       [1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = ffc78c88f91378606689dab244adec897c4b9aa16ca7066a18cf71b218a6e9b8, CommandId = ca250000000000000000000000002b37, CommitSequence = 1058, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+[xUnit.net 00:00:08.82]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:08.82]                   Expected: Applied
+[xUnit.net 00:00:08.82]                   Actual:   Rejected
+[xUnit.net 00:00:08.83]       Stack Trace:
+[xUnit.net 00:00:08.83]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(331,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch)
+[xUnit.net 00:00:08.83]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs(192,0): at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryJourney.Prepare(CareWorldSession session)
+[xUnit.net 00:00:08.83]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs(29,0): at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Boolean rejectSecond)
+[xUnit.net 00:00:08.83]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:08.83]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:15.25]       Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[xUnit.net 00:00:15.25]       [1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = ffc78c88f91378606689dab244adec897c4b9aa16ca7066a18cf71b218a6e9b8, CommandId = ca250000000000000000000000002b37, CommitSequence = 1058, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+[xUnit.net 00:00:15.25]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:15.25]                   Expected: Applied
+[xUnit.net 00:00:15.25]                   Actual:   Rejected
+[xUnit.net 00:00:15.25]       Stack Trace:
+[xUnit.net 00:00:15.25]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(331,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch)
+[xUnit.net 00:00:15.25]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs(192,0): at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryJourney.Prepare(CareWorldSession session)
+[xUnit.net 00:00:15.25]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs(29,0): at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Boolean rejectSecond)
+[xUnit.net 00:00:15.25]            at InvokeStub_PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Object, Span`1)
+[xUnit.net 00:00:15.25]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:15.25]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T16:08:32.2950450-05:00">
+        <Text>[xUnit.net 00:00:08.82]     OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: False) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T16:08:38.7168940-05:00">
+        <Text>[xUnit.net 00:00:15.25]     OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: True) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

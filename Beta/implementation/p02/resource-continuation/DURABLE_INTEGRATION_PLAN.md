@@ -1,7 +1,10 @@
 # Durable archive integration dependency
 
-This is the next host change, not completed storage support. The Core continuation returns exact
-sealed bytes with the next candidate; `WorldGenesisAdmission` still rejects care-enabled roots.
+This is the retained host integration contract. The subsequent
+[durable implementation packet](../durable-resource-archives/README.md) records implementation and
+qualification against it. Schema7 now admits fresh care-enabled roots and publishes archive bytes
+with the next candidate. A contract item is complete only where that packet supplies actual evidence;
+native/ordinary care, other owner continuation and full game lifetime remain separate obligations.
 
 ## Storage and transaction
 
@@ -59,8 +62,8 @@ controller authorization and fresh eligible action; recovery does not fabricate 
 - Missing/changed/reordered/wrong-scope/orphan archives, edited anchor references, forged rewards,
   reused historical identities, stale offers, mismatched schema/profile and care pending state fail.
 - Complete-batch reservation near a boundary:255 resource batches followed by two actual quest rewards
-  at their deterministic command positions, plus later rejection/rollback. This critic-suggested case
-  remains unqualified by the current single-attack stress journey.
+  at their deterministic command positions, plus later rejection/rollback. The subsequent durable
+  packet qualifies this critic-suggested case with254 actual bites, one victory and two funded rewards.
 - Legacy schema/profile fixtures and full affected managed regression; independent source/byte review.
   Native ordinary/aftermath treatment and physical/human acceptance remain their own subsequent gates.
 

@@ -23,7 +23,7 @@ internal sealed partial class WorldDatabase : IDisposable
     {
         if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version
             and not WorldDatabaseSchemaFour.Version and not WorldDatabaseSchemaFive.Version
-            and not WorldDatabaseSchemaSix.Version)
+            and not WorldDatabaseSchemaSix.Version and not WorldDatabaseSchemaSeven.Version)
         {
             throw new ArgumentOutOfRangeException(nameof(schemaVersion));
         }
@@ -34,7 +34,7 @@ internal sealed partial class WorldDatabase : IDisposable
         {
             if (!create)
             {
-                lease.ValidateSchema(TablesFor(lease.SchemaVersion), WorldDatabaseSchema.Indexes);
+                lease.ValidateSchema(TablesFor(lease.SchemaVersion), IndexesFor(lease.SchemaVersion));
                 using SqliteCommand foreignKeys = lease.CreateCommand("PRAGMA foreign_key_check");
                 using SqliteDataReader violations = foreignKeys.ExecuteReader();
                 if (violations.Read())
@@ -76,7 +76,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WriteCheckpoint(new(0, 0, genesis), transaction);
         transaction.Commit();
         _lease.ValidateMetadata();
-        _lease.ValidateSchema(TablesFor(SchemaVersion), WorldDatabaseSchema.Indexes);
+        _lease.ValidateSchema(TablesFor(SchemaVersion), IndexesFor(SchemaVersion));
     }
 
     private static IReadOnlyDictionary<string, string> TablesFor(int version) => version switch
@@ -86,6 +86,18 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaFour.Version => WorldDatabaseSchemaFour.Tables,
         WorldDatabaseSchemaFive.Version => WorldDatabaseSchemaFive.Tables,
         WorldDatabaseSchemaSix.Version => WorldDatabaseSchemaSix.Tables,
+        WorldDatabaseSchemaSeven.Version => WorldDatabaseSchemaSeven.Tables,
+        _ => throw new InvalidDataException("The world database schema is unsupported.")
+    };
+
+    private static IReadOnlyDictionary<string, string> IndexesFor(int version) => version switch
+    {
+        WorldDatabaseSchema.Version => WorldDatabaseSchema.Indexes,
+        WorldDatabaseSchemaThree.Version => WorldDatabaseSchemaThree.Indexes,
+        WorldDatabaseSchemaFour.Version => WorldDatabaseSchemaFour.Indexes,
+        WorldDatabaseSchemaFive.Version => WorldDatabaseSchemaFive.Indexes,
+        WorldDatabaseSchemaSix.Version => WorldDatabaseSchemaSix.Indexes,
+        WorldDatabaseSchemaSeven.Version => WorldDatabaseSchemaSeven.Indexes,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 

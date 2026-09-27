@@ -18,8 +18,9 @@ only final HP, or accepting an unexplained later revision, does not establish co
 An embedded basis and matching admission label establish structural consistency, not provenance.
 The host must admit genesis and replay the actual accepted commands before trusting such a root.
 Historical authentication, range, body capability, input selection, permissions and publication
-cannot be established from resource labels alone. Durable host admission excludes care-enabled
-roots; canonical encoding and in-memory world transactions do not confer storage admission.
+cannot be established from resource labels alone. Durable admission requires fresh unearned care,
+material and resource owners under the explicit schema-seven contract. Continued roots are restored
+through actual journal/archive retrieval, never admitted as a new genesis.
 
 ## Named causes and complete transactions
 

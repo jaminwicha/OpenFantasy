@@ -17,12 +17,13 @@ The [world schema](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs) 
 | `world_command_outcomes` | Principal/command identity, exact bytes and durable receipt |
 | `world_occupied_identity` | Historical committed identity reservations and roles |
 | `world_checkpoints` | Canonical state at declared recovery boundaries |
+| `world_resource_segments` (schema7) | Exact closing roots, immutable scope/ordinal and atomic successor publication sequence |
 
 [Schema three](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs) extends accepted
 commit/identity kinds for profile transitions. Schema version and snapshot profile version are
 different dimensions; adding a profile does not imply a new writer or database.
 
-The transaction writes the commit, outcomes, occupied identities, head and any checkpoint together.
+The transaction writes the commit, any resource archive, outcomes, occupied identities, head and any checkpoint together.
 Only a successful commit publishes the candidate in memory. An uncertain storage outcome requires
 recovery before more writes. Restart checks exact persisted bytes and relationships, not just an
 apparently valid head hash.
@@ -58,14 +59,19 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 22 | Permanent accepted exposure, coordinated Wait timing and fractional process carry over the complete terrain/liquid world |
 | 23 | Source-pinned physical abilities, exact pending requests, damage randomness and real progression resources over the complete paced world |
 | 24 | Permanent encounter scenarios, phases, cumulative exploration/tactical clocks and readiness debt across authenticated entry and outcome release |
-| 25 | Canonical in-memory aftermath care, consumption-enabled material owners and ordered causal resource history; durable genesis admission is disabled |
+| 25 | Aftermath care, consumption-enabled material owners and ordered causal resource history with explicit schema-seven archive publication |
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
 authenticate the embedded basis. [WorldGenesisAdmission](../../src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs)
-refuses care-enabled worlds until host-authenticated continuation and the complete storage/replay
-binding are supplied. The [Core continuation contract](resource-archive-continuation.md) produces
-sealed closing bytes with the candidate; a continued root requires its retrieved boundary context. A snapshot interpreter is not permission to select a storage schema.
+admits only fresh care/resource/material owners with revision zero, no earned care or material
+history, no archive and the exact initial progression basis. The
+[continuation contract](resource-archive-continuation.md) produces sealed closing bytes with the
+candidate and publishes them atomically through schema seven. Recovery verifies actual retrieved
+archives against complete replay; a continued root requires its boundary context. Schema/profile
+pairing is checked at both genesis and the replayed head. A snapshot interpreter alone is not
+permission to select a storage schema. The durable authority accepts trusted selected care batches;
+the ordinary session scheduler and presentation need their own care action bindings.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight

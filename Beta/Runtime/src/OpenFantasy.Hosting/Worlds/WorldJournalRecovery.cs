@@ -20,11 +20,19 @@ internal sealed class WorldJournalRecovery
         return new RecordedWorldState(selected, trace.Head.State.Revision, trace.Head.StateHash);
     }
 
-    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision)
+    internal RecordedWorldResourceArchive ReadResourceArchive(WorldDatabase database, ulong ordinal)
+    {
+        ReplayedWorld trace = VerifyAndReplay(database, null, ordinal);
+        WorldResourceArchiveSegment selected = trace.SelectedArchive
+            ?? throw new ArgumentOutOfRangeException(nameof(ordinal), "The requested resource archive is not in the recorded world.");
+        return new(selected, trace.ArchivePublicationSequence, trace.Head.State.Revision, trace.Head.StateHash);
+    }
+
+    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null)
     {
         try
         {
-            return Replay(database, selectedRevision);
+            return Replay(database, selectedRevision, selectedOrdinal);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or FormatException or OverflowException)
         {
@@ -32,7 +40,7 @@ internal sealed class WorldJournalRecovery
         }
     }
 
-    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision)
+    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal)
     {
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
@@ -53,6 +61,10 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("An encounter lifecycle genesis requires its exclusive world schema.");
         }
+        if ((genesis.ProfileVersion == 25) != (database.SchemaVersion == WorldDatabaseSchemaSeven.Version))
+        {
+            throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
+        }
         WorldSnapshot state = genesis;
         WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
         byte[] stateBytes = genesisBytes;
@@ -62,6 +74,7 @@ internal sealed class WorldJournalRecovery
         Dictionary<(EntityId Principal, EntityId Command), StoredWorldCommandOutcome> commands = [];
         var steps = new WorldCommitPreparation();
         var migrations = new WorldProfileMigrationReplay();
+        using var archives = new WorldResourceArchiveReplay(database, selectedOrdinal);
         using IEnumerator<StoredWorldCheckpoint> checkpoints = database.ReadCheckpoints().GetEnumerator();
         if (!checkpoints.MoveNext())
         {
@@ -80,8 +93,9 @@ internal sealed class WorldJournalRecovery
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(usage, stored.Sequence, stored.AdvancingSteps,
                 (ulong)expected.Commands.Count, (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length,
                 state.PendingExcavation is null ? expected.Candidate.PendingExcavation : null,
-                state.ProfileVersion);
+                state.ProfileVersion, (ulong)(expected.ResourceArchive?.Encode().Length ?? 0));
             VerifyCommit(stored, expected.Stored);
+            archives.Verify(expected.ResourceArchive, stored, stateBytes);
             foreach (StoredWorldCommandOutcome command in expected.Commands)
             {
                 if (!commands.TryAdd((command.PrincipalId, command.CommandId), command))
@@ -122,6 +136,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The world contains a checkpoint beyond its accepted journal.");
         }
+        archives.Complete();
         if (database.SchemaVersion == WorldDatabaseSchemaThree.Version && state.ProfileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 19 and not 20 and not 21)
         {
             throw new InvalidDataException("The third world schema has no accepted production, quest or construction admission.");
@@ -138,6 +153,10 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The encounter lifecycle world and its exclusive schema disagree.");
         }
+        if ((state.ProfileVersion == 25) != (database.SchemaVersion == WorldDatabaseSchemaSeven.Version))
+        {
+            throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
+        }
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps
             || !head.State.AsSpan().SequenceEqual(stateBytes))
@@ -146,7 +165,8 @@ internal sealed class WorldJournalRecovery
         }
         VerifyCommandTable(database, commands);
         VerifyIdentityTable(database, identities);
-        return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected);
+        return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected,
+            archives.Selected, archives.SelectedPublicationSequence);
     }
 
     private static ExpectedJournalEntry PrepareEntry(int schemaVersion, StoredWorldCommit stored,
@@ -164,7 +184,8 @@ internal sealed class WorldJournalRecovery
         WorldStepBatch batch = WorldStepCodec.Decode(stored.AcceptedBatch);
         PreparedWorldCommit step = steps.Prepare(state, genesisIdentities,
             stateHash, batch, historicallyOccupied);
-        return new(step.Decision.Candidate, step.CandidateBytes, step.Stored, step.Commands, step.Identities);
+        return new(step.Decision.Candidate, step.CandidateBytes, step.Stored, step.Commands, step.Identities,
+            step.Decision.SealedResourceSegment);
     }
 
     private static void VerifyCommit(StoredWorldCommit stored, StoredWorldCommit expected)
@@ -223,10 +244,12 @@ internal sealed class WorldJournalRecovery
         }
     }
 
-    private sealed record ReplayedWorld(RecoveredWorld Head, WorldSnapshot? Selected);
+    private sealed record ReplayedWorld(RecoveredWorld Head, WorldSnapshot? Selected,
+        WorldResourceArchiveSegment? SelectedArchive, ulong ArchivePublicationSequence);
 }
 
 internal sealed record ExpectedJournalEntry(WorldSnapshot Candidate, byte[] CandidateBytes, StoredWorldCommit Stored,
-    IReadOnlyList<StoredWorldCommandOutcome> Commands, IReadOnlyList<StoredWorldIdentity> Identities);
+    IReadOnlyList<StoredWorldCommandOutcome> Commands, IReadOnlyList<StoredWorldIdentity> Identities,
+    WorldResourceArchiveSegment? ResourceArchive = null);
 
 internal sealed record RecoveredWorld(WorldSnapshot Genesis, WorldSnapshot State, ContentHash StateHash, WorldJournalUsage Usage);

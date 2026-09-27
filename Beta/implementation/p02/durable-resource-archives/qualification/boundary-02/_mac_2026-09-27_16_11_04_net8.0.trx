@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a48268c1-2340-4135-99f9-4863b6ba4bd0" name="@mac 2026-09-27 16:11:04" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-27T16:11:04.0940230-05:00" queuing="2026-09-27T16:11:04.0940230-05:00" start="2026-09-27T16:11:00.2676420-05:00" finish="2026-09-27T16:11:56.2903900-05:00" />
+  <TestSettings name="default" id="c7771839-e75d-496b-91ea-dc1e62cbd78c">
+    <Deployment runDeploymentRoot="_mac_2026-09-27_16_11_04" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="979a3c39-b7ae-4d72-a325-735930e3cbcf" testId="f508e024-5a9e-cdf5-448d-c647653700ab" testName="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: True)" computerName="mac" duration="00:00:25.4322768" startTime="2026-09-27T16:11:30.7747410-05:00" endTime="2026-09-27T16:11:56.2074650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="979a3c39-b7ae-4d72-a325-735930e3cbcf" />
+    <UnitTestResult executionId="93a95738-9e36-4ac2-83bf-60edcd2b80ee" testId="8495a3b1-4113-eea9-bfcb-df6d8361ff4b" testName="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: False)" computerName="mac" duration="00:00:28.5050073" startTime="2026-09-27T16:11:02.2561520-05:00" endTime="2026-09-27T16:11:30.7667850-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93a95738-9e36-4ac2-83bf-60edcd2b80ee" />
+    <UnitTestResult executionId="67585389-77b0-4a96-92bb-5529f763edc5" testId="0e0c6e43-4ec6-3677-8f70-c546656bc4db" testName="OpenFantasy.Hosting.Tests.Care.CareGenesisAdmissionTests.Structurally_conserved_crafted_stock_with_zero_production_revision_is_not_fresh_genesis" computerName="mac" duration="00:00:00.9700779" startTime="2026-09-27T16:11:02.2561590-05:00" endTime="2026-09-27T16:11:03.2338270-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67585389-77b0-4a96-92bb-5529f763edc5" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareGenesisAdmissionTests.Structurally_conserved_crafted_stock_with_zero_production_revision_is_not_fresh_genesis" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0e0c6e43-4ec6-3677-8f70-c546656bc4db">
+      <Execution id="67585389-77b0-4a96-92bb-5529f763edc5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareGenesisAdmissionTests" name="Structurally_conserved_crafted_stock_with_zero_production_revision_is_not_fresh_genesis" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8495a3b1-4113-eea9-bfcb-df6d8361ff4b">
+      <Execution id="93a95738-9e36-4ac2-83bf-60edcd2b80ee" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests" name="Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f508e024-5a9e-cdf5-448d-c647653700ab">
+      <Execution id="979a3c39-b7ae-4d72-a325-735930e3cbcf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests" name="Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f508e024-5a9e-cdf5-448d-c647653700ab" executionId="979a3c39-b7ae-4d72-a325-735930e3cbcf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8495a3b1-4113-eea9-bfcb-df6d8361ff4b" executionId="93a95738-9e36-4ac2-83bf-60edcd2b80ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0e0c6e43-4ec6-3677-8f70-c546656bc4db" executionId="67585389-77b0-4a96-92bb-5529f763edc5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.47]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.89]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.10]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:55.12]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

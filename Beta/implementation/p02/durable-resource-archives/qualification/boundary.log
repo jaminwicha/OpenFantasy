@@ -1,0 +1,33 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:08.82]     OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: False) [7 s]
+  Error Message:
+   Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = ffc78c88f91378606689dab244adec897c4b9aa16ca7066a18cf71b218a6e9b8, CommandId = ca250000000000000000000000002b37, CommitSequence = 1058, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 331
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryJourney.Prepare(CareWorldSession session) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 192
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Boolean rejectSecond) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:15.25]     OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: True) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(rejectSecond: True) [6 s]
+  Error Message:
+   Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = ffc78c88f91378606689dab244adec897c4b9aa16ca7066a18cf71b218a6e9b8, CommandId = ca250000000000000000000000002b37, CommitSequence = 1058, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 331
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryJourney.Prepare(CareWorldSession session) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 192
+   at OpenFantasy.Hosting.Tests.Care.PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Boolean rejectSecond) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/PairedRewardBoundaryTests.cs:line 29
+   at InvokeStub_PairedRewardBoundaryTests.Two_actual_rewards_reserve_the_whole_batch_at_255_and_preserve_later_command_rollback(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-resource-archives/qualification/boundary/_mac_2026-09-27_16_08_26_net8.0.trx
+
+Failed!  - Failed:     2, Passed:     1, Skipped:     0, Total:     3, Duration: 14 s - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -42,6 +42,31 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Durable resource archives](p02/durable-resource-archives/README.md) now bind schema 7/profile 25 to
+atomic archive/successor publication, exact stored-byte replay, raw/crafted care recovery and separate
+archive accounting. Privileged archive retrieval and recorded state reads retain source-head pins.
+Actual 520-resource-command storage crosses two cuts; the 255-batch/two-funded-reward case proves
+complete-batch reservation and later-command rollback. A structurally conserved crafted-stock root
+is correctly rejected as fresh genesis. Independent native review found no blocking runtime defect.
+
+[Verification](p02/durable-resource-archives/qualification/verification.json) records clean builds,
+1,355 Core + 698 Hosting/client = 2,053 passing managed cases, zero failures/skips, plus six external
+SIGKILL probes and 30 Host operations. Production sources/Host binaries match the crash-qualified bytes;
+all 1,032 C# source hashes remained fixed through broad regression. Original failed fixture/build/invocation
+attempts and their corrections remain retained. All 23 frozen specs, 55 earlier milestones and the
+unrelated 19-file predecessor index are intact. Architecture references are updated with the real
+storage and recovery contracts. Preserved on `codex/milestone-durable-resource-archives`; pre-change
+checkpoint `codex/checkpoint-before-durable-resource-20260927T221400Z` resolves to `c3ed631`.
+
+**Next dependency:** [combined-care proof and session/native binding](p02/durable-resource-archives/NEXT_BINDING.md).
+First exercise an actual archive cut and raw/crafted treatment in the same pending-care transaction;
+the current durable crash probes cover those separately. Then bind player acknowledgment and separate
+host-helper commitment to scheduler, public offers and Godot controls. Ordinary medical policies,
+other owner continuation, full journal lifetime, production scale and all broader phase/human gates
+remain open. No paid Claude request was retried; prior external friction/authorization remains below.
+
+### Earlier retained increments
+
 [Resource archive continuation](p02/resource-continuation/README.md) now reserves complete next-batch
 capacity, seals exact closing world bytes, and carries a bounded retrieved anchor without retaining
 an ancestor chain. Actual520-resource-command replay crosses two automatic256-batch boundaries;
@@ -57,7 +82,7 @@ Preserved on `codex/milestone-resource-continuation`; pre-change checkpoint is i
 All23 frozen specs,54 earlier milestones and the unrelated19-file predecessor index are intact.
 Architecture references describe the real continuation and retrieval contracts; progress stays here.
 
-**Next dependency:** the [durable integration plan](p02/resource-continuation/DURABLE_INTEGRATION_PLAN.md)
+**Dependency recorded at this earlier checkpoint:** the [durable integration plan](p02/resource-continuation/DURABLE_INTEGRATION_PLAN.md)
 distinguishes closing revisionN from atomic archive/successor publication atN+1. Explicit schema7,
 stored-byte retrieval/replay, crash/idempotency and storage accounting remain unimplemented. Care
 genesis still refuses durable admission. The255-batch/two-real-reward case is retained as a required
@@ -81,7 +106,7 @@ remain retained. All23 frozen specs,53 prior milestones and the unrelated19-file
 remain unchanged. Architecture references now describe real bindings and keep progress out of the
 encyclopedic pages; the documentation-maintenance hook remains part of every coherent change.
 
-**Next dependency:** authenticated end-of-step archive continuation and the complete
+**Dependency recorded at this earlier checkpoint:** authenticated end-of-step archive continuation and the complete
 [host schema/replay binding](p02/world-resource-integration/HOST_BOUNDARIES.md), then ordinary/aftermath
 durable recovery and native treatment. `WorldGenesisAdmission` still refuses care roots. No archive
 lifetime, durable/native care, performance, human acceptance or full phase gate is closed here.

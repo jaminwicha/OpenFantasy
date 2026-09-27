@@ -3,7 +3,9 @@
 This checklist retains the complete acceptance contract; partial integration does not reduce it.
 The [in-memory world integration](../world-resource-integration/README.md) binds actual attacks,
 funded rewards and aftermath treatment, including complete causal checks, rollback and canonical
-restore. Trusted durable admission and lifetime continuation remain separate unmet dependencies.
+restore. [Durable resource archives](../durable-resource-archives/README.md) add explicit schema-seven
+fresh admission, actual retrieved-byte replay and atomic archive publication. Lifetime continuation
+for all other retained owners remains separate.
 The standalone continuity component must not be enabled merely because its archive round-trips.
 
 1. **Admitted anchor and scope.** Select an explicit new world/storage contract. Resolve the history
@@ -43,11 +45,15 @@ The standalone continuity component must not be enabled merely because its archi
 The in-memory milestone supplies the present writers/order, original attack truth and narrow
 aftermath transaction portions of items2–5; it does not close their ordinary-care, broad medical or
 historical-authentication obligations. Managed journeys and a useful independent critic supply part
-of item8. Items1,6,7 and native/human acceptance still require their actual proofs. Durable genesis
-refusal remains deliberate; no canonical decoder or passing unit suite substitutes for that gate.
+of item8. The durable packet supplies actual fresh/replay authority for item1, raw/crafted care reopen,
+resource/reward history, idempotency and process-crash portions of item6, and the resource-owner
+publication/retrieval portion of item7. Native/human acceptance and full lifetime/evolution remain
+open; no canonical decoder or passing unit suite substitutes for those gates.
 
 The [Core archive continuation](../resource-continuation/README.md) supplies part of item7: actual
 complete-boundary cuts, retrieved source bytes, bounded context and520-command replay across two
-resource segments. It does not complete host-authenticated publication, other owner lifetimes or
-roster/rule evolution. The [durable plan](../resource-continuation/DURABLE_INTEGRATION_PLAN.md) retains
-those next proofs and the multiple-reward boundary counterexample explicitly.
+resource segments. The subsequent durable packet authenticates both actual stored cuts and the
+255-batch/two-real-reward boundary, including later-command rollback. The
+[durable contract](../resource-continuation/DURABLE_INTEGRATION_PLAN.md) and
+[next binding](../durable-resource-archives/NEXT_BINDING.md) retain remaining combined-care, scheduler,
+native and other owner lifetime proofs explicitly.

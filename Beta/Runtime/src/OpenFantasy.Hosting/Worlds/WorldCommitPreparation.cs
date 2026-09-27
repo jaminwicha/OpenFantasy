@@ -65,7 +65,7 @@ internal sealed class WorldCommitPreparation
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
             || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
             || (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null)
-            || batch.Kind != WorldBatchKind.EncounterLifecycle
+            || batch.Kind is not WorldBatchKind.EncounterLifecycle and not WorldBatchKind.Care
                 && (batch.Kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterDecision or WorldBatchKind.EncounterResolution)
                     != (state.Pacing?.Encounter is not null))
         {
@@ -137,6 +137,7 @@ internal sealed class WorldCommitPreparation
         WorldBatchKind.EncounterDecision => WorldCommitKind.EncounterDecision,
         WorldBatchKind.EncounterResolution => WorldCommitKind.EncounterResolution,
         WorldBatchKind.EncounterLifecycle => WorldCommitKind.EncounterLifecycle,
+        WorldBatchKind.Care => WorldCommitKind.Care,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
 
@@ -152,4 +153,8 @@ internal sealed class WorldCommitPreparation
 
 internal sealed record PreparedWorldCommit(WorldStepDecision Decision, byte[] CandidateBytes,
     StoredWorldCommit Stored, IReadOnlyList<StoredWorldCommandOutcome> Commands,
-    IReadOnlyList<StoredWorldIdentity> Identities);
+    IReadOnlyList<StoredWorldIdentity> Identities)
+{
+    internal StoredWorldResourceArchive? ResourceArchive { get; } = Decision.SealedResourceSegment is { } segment
+        ? new(segment.Reference, Stored.Sequence, segment.Encode()) : null;
+}
