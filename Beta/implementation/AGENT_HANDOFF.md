@@ -42,11 +42,14 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-World resource integration is the active assignment. A bounded Fable Max implementation joins the
-accepted continuity component to real encounter/reward/treatment writers and complete-world causal
-checks in an isolated copy of the preserved care WIP. Existing durable genesis refusal remains until
-its separate recovery contract is proven. Ownership, checkpoint and acceptance are retained in
-[p02/world-resource-integration](p02/world-resource-integration/TASK.md). No new gate is claimed yet.
+World resource integration remains the next implementation dependency. Its bounded Fable Max run
+ended with native file-permission denials, no changed code and no tests: [retained result and design](p02/world-resource-integration/failed-dispatch/README.md).
+There was no pending user prompt. The 1,323-second / $6.50 estimate is overhead without accepted
+implementation; the scoped-rule mismatch is unresolved and no automatic paid retry was started.
+The unreviewed design and two denied-write payloads are preserved outside runtime compilation.
+Existing durable genesis refusal remains until its separate recovery contract is proven. Ownership,
+checkpoint and acceptance remain in [the assignment](p02/world-resource-integration/TASK.md).
+All correctness gates and care WIP remain unchanged; Astra can continue directly from these inputs.
 
 
 [Ordered resource history](p02/resource-history/README.md) now composes all named resource/XP
@@ -73,7 +76,8 @@ Owner update, 2026-09-27: Opus 5.5 with one-million-token context is an approved
 Ecosystem commit `d8555c1` records this project-scoped routing. [Compatibility findings](CLAUDE_MODEL_COMPATIBILITY.md)
 confirm Opus5.5 requires client2.1.280+, while the current client is2.1.268; actual account access is
 untested. Ecosystem `2e42704` refreshes standard context pins and portable model/effort guidance;
-guarded installed-file synchronization waits for the active worker to finish.
+guarded installed-file synchronization applied eight reviewed copies after the worker finished; all
+71 entries verify. Client 2.1.268 is backed up; no upgrade or paid Opus request has been started.
 
 [Material consumption composition](p02/material-consumption-composition/README.md) joins direct raw
 and produced consumption to terrain partitions, excavation issuance, runoff capacity and nested

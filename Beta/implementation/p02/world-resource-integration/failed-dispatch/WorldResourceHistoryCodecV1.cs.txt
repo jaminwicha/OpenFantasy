@@ -1,0 +1,81 @@
+using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Progression;
+using OpenFantasy.Core.Progression.ResourceHistory;
+
+namespace OpenFantasy.Core.Worlds;
+
+/// <summary>
+/// Canonical bytes of the complete-world resource owner: anchor admission, anchored basis progression,
+/// ordered history and causal records. Decoding proves structure and canonical form only; the embedded
+/// basis is authenticated by the host's root chain, not by the history that continues from it.
+/// </summary>
+public static class WorldResourceHistoryCodecV1
+{
+    public const int MaximumRecordByteLength = 128;
+    public const int MaximumRecordsByteLength = 16 + (MaximumRecordByteLength + 4) * ActorResourceHistory.MaximumBatches + 64;
+    public const int MaximumEncodedByteLength = ProgressionCodecV1.MaximumSnapshotByteLength
+        + ActorResourceHistoryCodecV1.MaximumEncodedByteLength + MaximumRecordsByteLength + 256;
+
+    public static byte[] Encode(WorldResourceHistory history)
+    {
+        ArgumentNullException.ThrowIfNull(history);
+        return CanonicalEncodingV1.Frame("world.resource-history", Number(1), history.AnchorAdmission.ToByteArray(),
+            Number(history.History.BasisWorldSequence), ProgressionCodecV1.Encode(history.History.Basis),
+            ActorResourceHistoryCodecV1.Encode(history.History),
+            CanonicalEncodingV1.Frame("world.resource-causes", history.Records.Select(record => (ReadOnlyMemory<byte>)EncodeRecord(record)).ToArray()));
+    }
+
+    public static WorldResourceHistory Decode(ReadOnlySpan<byte> bytes)
+    {
+        try
+        {
+            var reader = new WorldFrameReader(bytes, MaximumEncodedByteLength, 7);
+            reader.Tag("world.resource-history"u8);
+            reader.Version();
+            var admission = new ContentHash(Convert.ToHexString(reader.Exact(32)).ToLowerInvariant());
+            ulong basisSequence = reader.Number();
+            ProgressionSnapshot basis = ProgressionCodecV1.Decode(reader.Field(ProgressionCodecV1.MaximumSnapshotByteLength));
+            ActorResourceHistory history = ActorResourceHistoryCodecV1.Decode(
+                reader.Field(ActorResourceHistoryCodecV1.MaximumEncodedByteLength), basis, basisSequence);
+            var records = new WorldFrameReader(reader.Field(MaximumRecordsByteLength), MaximumRecordsByteLength,
+                ActorResourceHistory.MaximumBatches + 1);
+            records.Tag("world.resource-causes"u8);
+            List<WorldResourceCauseRecord> values = [];
+            while (records.Remaining != 0)
+            {
+                values.Add(DecodeRecord(records.Field(MaximumRecordByteLength)));
+            }
+            records.Complete();
+            reader.Complete();
+            var result = new WorldResourceHistory(admission, history, values);
+            if (!Encode(result).AsSpan().SequenceEqual(bytes))
+            {
+                throw new FormatException("The world resource history is not canonical.");
+            }
+            return result;
+        }
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException or ProgressionFormatException)
+        {
+            throw new FormatException("The world resource history violates its structural invariants.", error);
+        }
+    }
+
+    private static byte[] EncodeRecord(WorldResourceCauseRecord record) => CanonicalEncodingV1.Frame("world.resource-cause",
+        Number(1), record.CommandId.ToByteArray(), Number((ulong)record.Kind), record.ActorId.ToByteArray(),
+        Number(record.VariationPermille));
+
+    private static WorldResourceCauseRecord DecodeRecord(ReadOnlySpan<byte> bytes)
+    {
+        var reader = new WorldFrameReader(bytes, MaximumRecordByteLength, 6);
+        reader.Tag("world.resource-cause"u8);
+        reader.Version();
+        var command = reader.Identity();
+        var kind = (WorldResourceCauseKind)checked((int)reader.Number());
+        var actor = reader.Identity();
+        uint variation = checked((uint)reader.Number());
+        reader.Complete();
+        return new(command, kind, actor, variation);
+    }
+
+    private static byte[] Number(ulong value) => CanonicalEncodingV1.Unsigned64(value);
+}

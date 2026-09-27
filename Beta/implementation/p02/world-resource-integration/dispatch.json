@@ -22,7 +22,11 @@
     "Beta/Runtime/docs/architecture/world-resource-history.md",
     "Beta/implementation/p02/world-resource-integration/worker/**"
   ],
-  "status": "running",
+  "status": "permission_denied",
   "runner_session_id": 97959,
-  "local_task_metadata": "/private/tmp/openfantasy-world-resource-task.json"
+  "local_task_metadata": "/private/tmp/openfantasy-world-resource-task.json",
+  "result": "failed-dispatch/result.json",
+  "runtime_changes": 0,
+  "tests_run": 0,
+  "paid_retry_started": false
 }

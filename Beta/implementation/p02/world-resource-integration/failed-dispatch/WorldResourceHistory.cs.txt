@@ -1,0 +1,110 @@
+using System.Collections.ObjectModel;
+using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Progression;
+using OpenFantasy.Core.Progression.ResourceHistory;
+
+namespace OpenFantasy.Core.Worlds;
+
+/// <summary>The domain writer that produced one retained resource batch; each kind names its own evidence owner.</summary>
+public enum WorldResourceCauseKind
+{
+    /// <summary>An admitted encounter ability resolved at a world sequence; evidence is the selected decision command.</summary>
+    EncounterAbility = 1,
+    /// <summary>A completed delivery quest reward; evidence is the retained completion command of the participation.</summary>
+    QuestReward = 2,
+    /// <summary>An accepted finite restorative treatment; evidence is the retained care treatment record.</summary>
+    RestorativeTreatment = 3
+}
+
+/// <summary>
+/// Immutable causal record retained beside one history batch. It keeps the acting actor and the exact
+/// deterministic damage draw so complete-world admission can recompute the amount from admitted rules.
+/// </summary>
+public sealed record WorldResourceCauseRecord
+{
+    public WorldResourceCauseRecord(EntityId commandId, WorldResourceCauseKind kind, EntityId actorId, uint variationPermille)
+    {
+        if (!Enum.IsDefined(kind) || kind != WorldResourceCauseKind.EncounterAbility && variationPermille != 0)
+            throw new ArgumentException("A resource cause record retains a supported writer kind and a draw only for ability damage.");
+        CommandId = commandId;
+        Kind = kind;
+        ActorId = actorId;
+        VariationPermille = variationPermille;
+    }
+
+    /// <summary>The command whose committed effects the batch records; equals the batch command identity.</summary>
+    public EntityId CommandId { get; }
+    public WorldResourceCauseKind Kind { get; }
+    /// <summary>Attacker, rewarded actor or helper, depending on the kind.</summary>
+    public EntityId ActorId { get; }
+    /// <summary>The retained deterministic damage variation (900–1,100 permille) for ability damage; zero otherwise.</summary>
+    public uint VariationPermille { get; }
+}
+
+/// <summary>
+/// Complete-world owner of ordered resource continuity: a fresh anchored progression basis, the replayable
+/// ordered batches and one causal record per batch. The current progression remains the sole HP/MP/XP owner.
+/// Structural and causal admission happens in <see cref="WorldResourceAdmission"/>; authenticating the root
+/// that carries this owner remains the host's genesis/journal responsibility.
+/// </summary>
+public sealed class WorldResourceHistory
+{
+    public WorldResourceHistory(ContentHash anchorAdmission, ActorResourceHistory history, IEnumerable<WorldResourceCauseRecord> records)
+    {
+        ArgumentNullException.ThrowIfNull(anchorAdmission);
+        ArgumentNullException.ThrowIfNull(history);
+        ArgumentNullException.ThrowIfNull(records);
+        var retained = records.ToArray();
+        if (retained.Length != history.Batches.Count)
+            throw new ArgumentException("Every retained resource batch requires exactly one causal record.");
+        for (int index = 0; index < retained.Length; index++)
+        {
+            ArgumentNullException.ThrowIfNull(retained[index]);
+            if (retained[index].CommandId != history.Batches[index].CommandId)
+                throw new ArgumentException("A causal record must name its own batch command in order.");
+        }
+        AnchorAdmission = anchorAdmission;
+        History = history;
+        Records = Array.AsReadOnly(retained);
+    }
+
+    /// <summary>The complete-world admission hash under which the anchored basis was admitted.</summary>
+    public ContentHash AnchorAdmission { get; }
+    public ActorResourceHistory History { get; }
+    public ReadOnlyCollection<WorldResourceCauseRecord> Records { get; }
+    public EntityId WorldId => History.Basis.WorldId;
+    public EntityId BranchId => History.Basis.BranchId;
+    public ContentHash ContentHash => ContentHash.Compute(WorldResourceHistoryCodecV1.Encode(this));
+
+    /// <summary>Anchors an empty history at the exact fresh admitted progression and world sequence zero.</summary>
+    public static WorldResourceHistory CreateFresh(ContentHash admission, ProgressionSnapshot basis) =>
+        new(admission, new ActorResourceHistory(basis, 0, []), []);
+
+    public WorldResourceCauseRecord? FindRecord(EntityId commandId) => Records.FirstOrDefault(record => record.CommandId == commandId);
+
+    /// <summary>
+    /// Appends one committed command's effects. Envelope exhaustion is not an ordinary rejection: it raises
+    /// an explicit continuation obligation so no writer can silently freeze resource progress.
+    /// </summary>
+    internal WorldResourceHistory Append(ResourceChangeBatch batch, WorldResourceCauseRecord record)
+    {
+        ArgumentNullException.ThrowIfNull(batch);
+        ArgumentNullException.ThrowIfNull(record);
+        if (History.Batches.Count >= ActorResourceHistory.MaximumBatches
+            || History.ChangeCount + batch.Changes.Count > ActorResourceHistory.MaximumChanges)
+            throw new WorldResourceContinuationRequiredException(History.Batches.Count, History.ChangeCount);
+        return new(AnchorAdmission, History.Append(batch), Records.Append(record));
+    }
+}
+
+/// <summary>
+/// The retained segment envelope is full. This is a storage envelope, never a gameplay cap: the host must
+/// provide authenticated archival continuation with accessible causal evidence before further resource
+/// progress. It deliberately does not derive from the exceptions that processors translate into rejections.
+/// </summary>
+public sealed class WorldResourceContinuationRequiredException(int retainedBatches, int retainedChanges)
+    : Exception($"Resource history retains {retainedBatches} batches and {retainedChanges} changes; authenticated continuation is required before further resource progress.")
+{
+    public int RetainedBatches { get; } = retainedBatches;
+    public int RetainedChanges { get; } = retainedChanges;
+}
