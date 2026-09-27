@@ -2,6 +2,7 @@ using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Care;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Terrain;
@@ -29,6 +30,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private readonly TrustedCommandDelivery _delivery;
     private readonly TimeProvider _time;
     private readonly LocalNpcController _npcs = new();
+    private readonly LocalCareController _care = new();
     private readonly Task _loop;
     private LocalWorldView _view;
     private PendingLocalAction? _pending;
@@ -59,7 +61,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
         _playerActorId = playerActorId;
         _delivery = delivery;
         _time = timeProvider;
-        _view = new LocalWorldView(state, playerActorId);
+        _view = ProjectView(state);
         _loop = Task.Run(RunAsync);
     }
 
@@ -158,7 +160,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
             if (command.Intent is ExcavateIntent
-                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24)
+                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25)
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }
@@ -215,6 +217,24 @@ public sealed class LocalWorldSession : IAsyncDisposable
 
     private static void ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
     {
+        if (command.Intent is AdministerRemedyIntent)
+        {
+            throw new AuthorityDispatchException("This local adapter selects treatment through the admitted host helper.");
+        }
+        if (command.Intent is AcknowledgeCareIntent acknowledgment)
+        {
+            if (state.Care is null || state.HasReadingHold || state.PendingExcavation is not null)
+                throw new AuthorityDispatchException("Care acknowledgment requires its available care boundary.");
+            var agreement = state.Care.Agreements.SingleOrDefault(value => value.AgreementId == acknowledgment.AgreementId);
+            if (agreement is not null && LocalCareController.HostControl(state, agreement.HelperActorId) is null)
+                throw new AuthorityDispatchException("This local care route requires an admitted host helper.");
+            // Stale phase, revision and agreement choices still receive durable terminal receipts.
+            return;
+        }
+        if (state.Care?.Pending is not null)
+        {
+            throw new AuthorityDispatchException("The retained care obligation excludes other local actions.");
+        }
         if (command.Intent is EnterEncounterIntent or ReleaseEncounterIntent)
         {
             if (state.EncounterLifecycle is null || state.HasReadingHold)
@@ -310,6 +330,11 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 x = fresh ? _movementX : 0;
                 y = fresh ? _movementY : 0;
             }
+            if (pending?.Command.Intent is AcknowledgeCareIntent || state.Care?.Pending is not null)
+            {
+                TickCare(state, pending);
+                return;
+            }
             if (pending?.Command.Intent is EnterEncounterIntent or ReleaseEncounterIntent
                 || state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging)
             {
@@ -340,6 +365,27 @@ public sealed class LocalWorldSession : IAsyncDisposable
             CommitSelectedBatch(batch, pending);
         }
         finally { _serialization.Release(); }
+    }
+
+    private void TickCare(WorldSnapshot state, PendingLocalAction? pending)
+    {
+        ClearMovement();
+        WorldActionCommand? command = pending?.Command
+            ?? _care.SelectTreatment(state, _authority.IsIdentityOccupiedForHost);
+        if (command is null)
+        {
+            return;
+        }
+        var batch = new WorldStepBatch(NewCause(command.CommandId), state.WorldId, state.BranchId,
+            state.Revision, state.AdvancingSteps, WorldBatchKind.Care, [], [command], state.ProfileVersion);
+        try { _authority.Preview(batch); }
+        catch (AuthorityDispatchException error) when (pending is not null)
+        {
+            CompletePending(pending, null, error);
+            return;
+        }
+        // Acknowledgment and helper commitment occupy distinct serialized cutoffs and receipts.
+        CommitSelectedBatch(batch, pending);
     }
 
     private void TickLifecycle(WorldSnapshot state, PendingLocalAction? pending)
@@ -423,7 +469,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private void CommitSelectedBatch(WorldStepBatch batch, PendingLocalAction? awaiting)
     {
         WorldStepDecision decision = _authority.Commit(batch);
-        Volatile.Write(ref _view, new LocalWorldView(decision.Candidate, _playerActorId));
+        Volatile.Write(ref _view, ProjectView(decision.Candidate));
         if (decision.Candidate.PendingExcavation is { } pending)
         {
             ClearMovement();
@@ -438,6 +484,9 @@ public sealed class LocalWorldSession : IAsyncDisposable
             CompletePending(awaiting, receipt, null);
         }
     }
+
+    private LocalWorldView ProjectView(WorldSnapshot state) => new(state, _playerActorId,
+        state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)));
 
     private void ClearMovement()
     {

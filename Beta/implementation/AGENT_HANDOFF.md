@@ -42,6 +42,31 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Care session and combined archive publication](p02/care-session/README.md) binds the patient's exact
+acknowledgment to one terminal receipt and selects real Host-helper treatment at a later ready cutoff.
+The helper uses its own admitted control. Pending care survives pause/reopen without free time or work;
+a stable acknowledgment-scoped helper command identity prevents silent automatic retries after rejection
+or collision. Public care offers/status omit private helper custody and credentials. Profile 25 preserves
+its actual excavation action through the session. Architecture pages are updated in the same increment.
+
+The combined raw/crafted proof fills history through 256 real attacks, then archives the pending-care
+root in the same transaction as one actual dose/restoration. Four external SIGKILL cases and 20 Host
+operations pass; source/binaries are unchanged after the corrected clean build. Seven session tests pass.
+[Final verification](p02/care-session/qualification/verification.json) records 707 passing Hosting/client
+cases, zero failures/skips. Core sources/tests retain their unchanged 1,355-case prior qualification.
+Original compile/test failures and strengthened successful-wait deadline enforcement are retained. The independent source critic found no blocking runtime issue.
+Preserved on `codex/milestone-care-session`. Pre-change checkpoint:
+`codex/checkpoint-before-care-session-20260927T212325Z` at `daca1b4`. All 23 frozen specs, 56 earlier
+milestones and the unrelated 19-file predecessor index remain intact; 654 architecture links resolve.
+
+**Next dependency:** explicit fresh care-enabled content admission and actual client/Godot offers,
+wheel/input/status/icon routing, followed by native and physical/human validation. Retain pending-care/
+currency corruption and treatment→later funded reward/refill→attack trace combinations. Ordinary medical
+policies, other owner continuation, full journal lifetime, production scale and all broader phase gates
+remain open. No paid Claude request was retried; prior external friction/authorization remains below.
+
+### Earlier retained increments
+
 [Durable resource archives](p02/durable-resource-archives/README.md) now bind schema 7/profile 25 to
 atomic archive/successor publication, exact stored-byte replay, raw/crafted care recovery and separate
 archive accounting. Privileged archive retrieval and recorded state reads retain source-head pins.
@@ -58,14 +83,13 @@ unrelated 19-file predecessor index are intact. Architecture references are upda
 storage and recovery contracts. Preserved on `codex/milestone-durable-resource-archives`; pre-change
 checkpoint `codex/checkpoint-before-durable-resource-20260927T221400Z` resolves to `c3ed631`.
 
-**Next dependency:** [combined-care proof and session/native binding](p02/durable-resource-archives/NEXT_BINDING.md).
+**Dependency recorded at this earlier checkpoint:** [combined-care proof and session/native binding](p02/durable-resource-archives/NEXT_BINDING.md).
 First exercise an actual archive cut and raw/crafted treatment in the same pending-care transaction;
 the current durable crash probes cover those separately. Then bind player acknowledgment and separate
 host-helper commitment to scheduler, public offers and Godot controls. Ordinary medical policies,
 other owner continuation, full journal lifetime, production scale and all broader phase/human gates
 remain open. No paid Claude request was retried; prior external friction/authorization remains below.
 
-### Earlier retained increments
 
 [Resource archive continuation](p02/resource-continuation/README.md) now reserves complete next-batch
 capacity, seals exact closing world bytes, and carries a bounded retrieved anchor without retaining

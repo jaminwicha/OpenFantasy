@@ -70,8 +70,10 @@ history, no archive and the exact initial progression basis. The
 candidate and publishes them atomically through schema seven. Recovery verifies actual retrieved
 archives against complete replay; a continued root requires its boundary context. Schema/profile
 pairing is checked at both genesis and the replayed head. A snapshot interpreter alone is not
-permission to select a storage schema. The durable authority accepts trusted selected care batches;
-the ordinary session scheduler and presentation need their own care action bindings.
+permission to select a storage schema. The durable authority accepts trusted selected care batches.
+The [local care adapter](aftermath-care.md#local-session-and-public-observations) selects patient
+acknowledgment and later helper commitment at distinct ready cutoffs. Its occupied-identity guard
+survives reopening; recovery alone selects no treatment. Native presentation requires a separate binding.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight

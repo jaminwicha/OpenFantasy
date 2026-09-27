@@ -64,6 +64,7 @@ internal static class SessionFixture
             Assert.True(watch.Elapsed < TimeSpan.FromSeconds(5), "The controlled session did not reach its expected boundary.");
             await Task.Delay(1, TestContext.Current.CancellationToken);
         }
+        Assert.True(watch.Elapsed < TimeSpan.FromSeconds(5), "The controlled session reached its boundary after the deadline.");
     }
 }
 

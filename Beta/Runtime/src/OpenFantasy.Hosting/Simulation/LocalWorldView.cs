@@ -44,7 +44,7 @@ public sealed class LocalInventoryView
 /// </summary>
 public sealed class LocalWorldView
 {
-    internal LocalWorldView(WorldSnapshot state, EntityId playerActorId)
+    internal LocalWorldView(WorldSnapshot state, EntityId playerActorId, bool careHelperSelectionOccupied = false)
     {
         WorldId = state.WorldId;
         BranchId = state.BranchId;
@@ -53,6 +53,7 @@ public sealed class LocalWorldView
         HasReadingHold = state.HasReadingHold;
         EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
         EncounterActions = LocalEncounterActionView.Project(state, playerActorId);
+        Care = LocalCareView.Project(state, playerActorId, careHelperSelectionOccupied);
         IsResolvingConsequences = state.PendingExcavation is not null;
         if (state.Pacing?.Encounter is { } timing)
         {
@@ -140,6 +141,7 @@ public sealed class LocalWorldView
     public LocalEncounterView? Encounter { get; }
     public LocalEncounterLifecycleView? EncounterLifecycle { get; }
     public LocalEncounterActionView? EncounterActions { get; }
+    public LocalCareView? Care { get; }
     public ReadOnlyCollection<LocalEncounterActorView> EncounterActors { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }

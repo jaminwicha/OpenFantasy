@@ -27,12 +27,16 @@ internal sealed class CareWorldFixture
     private readonly EncounterJourneyWorldFixture _journey = new();
     private readonly RestorativeSupplyFixture _supply = new();
     private ulong _identity = 10_000;
+    private readonly int _defeatBoundaryLimit;
 
     internal CareWorldFixture(bool craftedDose = false, ulong? rewardExperience = null, uint? strikeMana = null,
         bool invalidNormalizedSpeedOnReward = false, bool enduranceProfile = false,
-        bool pairedRewardBoundary = false, bool invalidSecondRewardSpeed = false)
+        bool pairedRewardBoundary = false, bool invalidSecondRewardSpeed = false, bool archiveCareBoundary = false)
     {
         CraftedDose = craftedDose;
+        // The archive fixture deliberately needs 256 actual bites, with separate Wait/choice/tick
+        // commits between them. Its finite 1,600-boundary budget does not alter the ordinary fixture.
+        _defeatBoundaryLimit = archiveCareBoundary ? 1600 : 1000;
         WorldSnapshot source = _journey.Genesis;
         HelperStorage = source.GetResident(Helper).InventoryCustodianId;
         Assert.DoesNotContain(source.Inventory.Custody.Lots, lot => lot.CustodianId == HelperStorage
@@ -64,6 +68,19 @@ internal sealed class CareWorldFixture
             source.Production!.Recipes.Append(_supply.Recipe), [], []);
         var admission = ContentHash.Compute(source.ContentHash.ToByteArray().Concat(_supply.Recipe.Version.ToByteArray()).ToArray());
         var progression = source.Progression!;
+        if (archiveCareBoundary)
+        {
+            // Explicit fresh test calibration: every actual seeded bite deals the rule's one-HP
+            // minimum, so 256 accepted damage operations incapacitate the 256-HP patient exactly.
+            var profiles = progression.Actors.Select((actor, index) => new ActorStatProfileDefinition(
+                Id((ulong)(40 + index)), "archive_care_actor_" + index, "Archive care actor " + index,
+                ActorStatProfileKind.Class, new ActorStatValues(actor.ActorId == Player ? 256 : 100_000,
+                    4096, 1, 1, 100, 10_000), ActorStatModifiers.Zero, ActorStatModifiers.Zero)).ToArray();
+            var actors = progression.Actors.Select((actor, index) => new ActorProgressionState(actor.ActorId, 0,
+                profiles[index], actor.Curve, 1, 0, profiles[index].BaseStats.MaxHp, profiles[index].BaseStats.MaxMp));
+            progression = new ProgressionSnapshot(progression.WorldId, progression.BranchId, 0,
+                profiles, progression.Curves, actors, progression.Currency);
+        }
         if (pairedRewardBoundary)
         {
             // Real bites accumulate history; a later ordinary strike ends the encounter at the
@@ -235,7 +252,7 @@ internal sealed class CareWorldFixture
             state = Commit(authority, Batch(state, WorldBatchKind.EncounterLifecycle)).Candidate;
         for (int boundary = 0; state.EncounterLifecycle!.Phase != EncounterLifecyclePhase.Outcome; boundary++)
         {
-            Assert.True(boundary < 1_000, "Actual Wait/bite defeat exceeded the finite fixture boundary bound.");
+            Assert.True(boundary < _defeatBoundaryLimit, "Actual Wait/bite defeat exceeded the finite fixture boundary bound.");
             var prior = state;
             state = NextCombatBoundary(authority, playerAttacks: false);
             if (state.Progression!.GetActor(Player).CurrentHp == 0) BeforeDefeat = prior;

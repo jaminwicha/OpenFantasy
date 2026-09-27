@@ -55,5 +55,7 @@ complete-boundary cuts, retrieved source bytes, bounded context and520-command r
 resource segments. The subsequent durable packet authenticates both actual stored cuts and the
 255-batch/two-real-reward boundary, including later-command rollback. The
 [durable contract](../resource-continuation/DURABLE_INTEGRATION_PLAN.md) and
-[next binding](../durable-resource-archives/NEXT_BINDING.md) retain remaining combined-care, scheduler,
-native and other owner lifetime proofs explicitly.
+[original binding plan](../durable-resource-archives/NEXT_BINDING.md) retain the original proof sequence.
+The [care session packet](../care-session/README.md) supplies combined pending-care/archive/treatment
+crash proof and bounded player/helper scheduling; native control, ordinary care and other owner lifetime
+proofs remain open. Its707-case full Hosting regression passes; unchanged Core evidence is retained.

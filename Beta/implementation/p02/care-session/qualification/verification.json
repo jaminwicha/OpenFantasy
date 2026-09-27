@@ -1,0 +1,65 @@
+{
+  "status": "passed-bounded-care-session-increment",
+  "baseline": "daca1b425b6ee190997ea4ea7f375a08cf012299",
+  "managedChecks": {
+    "focused": {
+      "trx": "focused/_mac_2026-09-27_16_57_09_net8.0.trx",
+      "total": 9,
+      "executed": 9,
+      "passed": 5,
+      "failed": 4,
+      "notExecuted": 0
+    },
+    "session-02": {
+      "trx": "session-02/_mac_2026-09-27_17_01_05_net8.0.trx",
+      "total": 7,
+      "executed": 7,
+      "passed": 7,
+      "failed": 0,
+      "notExecuted": 0
+    },
+    "hosting": {
+      "trx": "hosting/_mac_2026-09-27_17_01_35_net8.0.trx",
+      "total": 707,
+      "executed": 707,
+      "passed": 707,
+      "failed": 0,
+      "notExecuted": 0
+    }
+  },
+  "builds": {
+    "passed": [
+      "build-02.log",
+      "build-03.log"
+    ],
+    "retainedFailure": "build-01.log"
+  },
+  "fullHostingCases": 707,
+  "retainedUnchangedCoreCases": 1355,
+  "coreEvidence": "../../durable-resource-archives/qualification/verification.json",
+  "coreRerun": false,
+  "coreSourcesAndTestsUnchanged": true,
+  "crash": {
+    "result": "crash-run-01/result.json",
+    "status": "passed",
+    "externalSigkills": 4,
+    "hostOperations": 20,
+    "maxNormalOperationSeconds": 4.895862207747996,
+    "operationAndSignalDeadlineSeconds": 30,
+    "killDeadlineSeconds": 5,
+    "sameProductionSourcesAndHostBinariesAsFinal": true
+  },
+  "allRuntimeSourcesFixedDuringRegression": true,
+  "sourceFileCount": 1036,
+  "source": "source-final.json",
+  "preservation": "preservation.json",
+  "review": "../REVIEW.md",
+  "failuresAndCorrections": "../README.md",
+  "limitations": [
+    "Native care controls/content admission and physical/human acceptance remain open.",
+    "Core1355 result is retained from unchanged baseline; not rerun in this increment.",
+    "Full Hosting log reports22m9s; suite duration is not production throughput or latency acceptance.",
+    "Other owner lifetime, ordinary medical policy, full journal lifetime and all broader game gates remain open."
+  ],
+  "phaseGateClosed": false
+}

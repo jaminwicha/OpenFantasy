@@ -10,7 +10,8 @@ Fresh admission excludes earned care/material/resource history. Recovery replays
 acknowledgment and treatment commands, preserving a pending obligation and its existing terminal
 acknowledgment receipt. Reopening grants no helper action, fabricated dose or treatment receipt.
 The [archive contract](resource-archive-continuation.md) retains older causal resource evidence.
-The ordinary session scheduler and presentation require separate care action bindings.
+The local session binds patient acknowledgment and host-helper selection separately. Native controls
+and explicit fresh content admission require their own presentation and composition contracts.
 
 A `CareAgreement` names the patient, helper and permitted remedy before treatment. An
 `AcknowledgeCareIntent` records the patient's controller acknowledging an exact incapacitating
@@ -44,6 +45,41 @@ and the corresponding [resource-history batch](world-resource-history.md) togeth
 treatment to its prior acknowledgment/agreement, exact one-dose claim, participant identities,
 resource revision and remedy. Resource admission preserves and replays the original defeat and
 later restoration; it does not replace the last attack's historical HP with current HP.
+
+## Local session and public observations
+
+[LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) admits the patient's
+`AcknowledgeCareIntent` into one isolated Care batch. It returns that command's terminal receipt before
+a later ready cutoff may select helper work. Both boundaries clear sampled movement and select no
+ordinary NPC work, tactical tick or exploration time. Exact receipt retrieval precedes readiness and
+new-action restrictions, so retrying an acknowledged request neither repeats consent nor treats the patient.
+While care is pending, other local actions are refused; another acknowledgment can receive its ordinary
+durable rejection. Stale acknowledgments are evaluated against the actual boundary, never refreshed silently.
+
+[LocalCareController](../../src/OpenFantasy.Hosting/Simulation/LocalCareController.cs) selects the actual
+remedy only for a Host resident with an admitted control binding. It constructs the treatment command
+with that helper's principal and session. The player's adapter neither accepts a foreign actor command
+nor impersonates the helper. Core agreements remain controller-neutral; another player-controlled helper
+needs a separately authenticated adapter. This local policy exposes that route as unavailable.
+
+One automatic helper selection identity belongs to each scoped acknowledgment. It is the first sixteen
+bytes of SHA-256 over ASCII `local.care-selection.v1`, followed by the sixteen-byte world, branch,
+acknowledgment and helper identities in that order. The authority's complete occupied-identity ledger
+guards selection. An occupied identity, including a rejected earlier selection or collision, requires
+attention; the controller does not mint another identity to retry. A missing eligible dose or helper
+produces no selected command. Dispatch/storage failures remain host failures rather than fabricated care.
+
+Reopening reconstructs the public view but performs no helper work until readiness. Losing readiness
+prevents later cutoffs; an already selected transaction may finish under the session's ordinary serialized
+commit policy. Pending care retains Outcome and therefore reports Waiting when ready, Paused otherwise.
+
+[LocalCareView](../../src/OpenFantasy.Hosting/Simulation/LocalCareView.cs), available through
+`LocalWorldView.Care`, projects only the current patient's applicable lethal outcome or pending care.
+Offers contain helper identity/name, eligibility/reason and the exact acknowledgment intent. Its opaque
+action hash is a stale-boundary token. Pending status distinguishes available automatic work, unavailable
+care and an occupied selection needing attention. It exposes no helper credentials, material lots,
+quantities or provenance. The projection grants no physical action to an incapacitated actor and is not
+a general perception, consent or medical UI model.
 
 ## Canonical scope and extension boundaries
 

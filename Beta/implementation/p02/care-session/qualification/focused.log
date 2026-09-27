@@ -1,0 +1,44 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:03.49]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: False) [2 s]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 56
+   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 78
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:05.08]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: True) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: True) [1 s]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 56
+   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 78
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:09.17]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route [FAIL]
+[xUnit.net 00:00:09.86]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route [147 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Reachable
+Actual:   ExpansionLimit
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 289
+--- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control [678 ms]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 153
+   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 168
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-session/qualification/focused/_mac_2026-09-27_16_57_09_net8.0.trx
+
+Failed!  - Failed:     4, Passed:     5, Skipped:     0, Total:     9, Duration: 1 m 2 s - OpenFantasy.Hosting.Tests.dll (net8.0)

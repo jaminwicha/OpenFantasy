@@ -138,7 +138,10 @@ legacy rewards, drops or respawn are imported.
 release requests, actionless staging, active decisions/resolution/ticks, or ordinary exploration
 according to the retained phase. It clears sampled movement at lifecycle and encounter boundaries;
 old movement cannot spill into resumed exploration. A ready session resumes the retained phase after
-recovery. Outcome holds until an eligible explicit release. Existing exact receipt lookup precedes
+recovery. Outcome holds until an eligible explicit release or separately admitted
+[aftermath-care boundary](aftermath-care.md#local-session-and-public-observations). Care acknowledgment
+and actual helper treatment occupy distinct ready cutoffs, without granting exploration release.
+Existing exact receipt lookup precedes
 new-action eligibility; attaching to the same queued bytes does not execute another command.
 
 [LocalEncounterLifecycleView](../../src/OpenFantasy.Hosting/Simulation/LocalEncounterLifecycleView.cs),

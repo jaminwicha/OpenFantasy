@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c54646be-3689-4eff-8167-e8de061c9ced" name="@mac 2026-09-27 16:57:09" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-27T16:57:09.5458610-05:00" queuing="2026-09-27T16:57:09.5458610-05:00" start="2026-09-27T16:57:05.5979910-05:00" finish="2026-09-27T16:58:09.2807050-05:00" />
+  <TestSettings name="default" id="8f295b2b-6a21-42e4-93c0-d35ac9deef12">
+    <Deployment runDeploymentRoot="_mac_2026-09-27_16_57_09" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="48ba88af-e3c6-4061-9ca5-2727f5537bef" testId="12055346-d806-5766-4ad2-3fe11951a9ab" testName="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities(collideConsumption: True)" computerName="mac" duration="00:00:01.7767921" startTime="2026-09-27T16:57:13.2672980-05:00" endTime="2026-09-27T16:57:15.0441610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="48ba88af-e3c6-4061-9ca5-2727f5537bef" />
+    <UnitTestResult executionId="cded6fed-41fb-4ecb-8cd7-b894c50926bb" testId="5ab8450f-4014-e003-42ad-3139d8adb0a0" testName="OpenFantasy.Hosting.Tests.Care.CombinedCareArchiveTests.Actual_pending_care_archives_256_lethal_journey_changes_with_its_single_dose_successor(crafted: False)" computerName="mac" duration="00:00:29.8264900" startTime="2026-09-27T16:57:39.4133360-05:00" endTime="2026-09-27T16:58:09.2400290-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cded6fed-41fb-4ecb-8cd7-b894c50926bb" />
+    <UnitTestResult executionId="6af5ae48-5ec6-4171-ab9e-1e3bd1f16be8" testId="90c4c96a-50c1-7cbf-1956-3ac1e02b0c30" testName="OpenFantasy.Hosting.Tests.Care.CombinedCareArchiveTests.Actual_pending_care_archives_256_lethal_journey_changes_with_its_single_dose_successor(crafted: True)" computerName="mac" duration="00:00:32.4415196" startTime="2026-09-27T16:57:06.9663680-05:00" endTime="2026-09-27T16:57:39.4126270-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6af5ae48-5ec6-4171-ab9e-1e3bd1f16be8" />
+    <UnitTestResult executionId="1f22623a-a9b2-4fcd-b77f-4c690619283d" testId="cf5a5e25-96e2-753d-4d73-b66bb3b2567e" testName="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control" computerName="mac" duration="00:00:00.6783997" startTime="2026-09-27T16:57:15.1964650-05:00" endTime="2026-09-27T16:57:15.8752720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1f22623a-a9b2-4fcd-b77f-4c690619283d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.True() Failure
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 153
+   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 168
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c8356f96-25a8-436f-9ebe-ea1a651731a9" testId="b93b3258-b99f-276c-cd62-33cc523570a4" testName="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Human_controlled_helper_is_not_impersonated_by_the_local_host_even_with_core_care_permission" computerName="mac" duration="00:00:00.7241896" startTime="2026-09-27T16:57:15.8768940-05:00" endTime="2026-09-27T16:57:16.6011370-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c8356f96-25a8-436f-9ebe-ea1a651731a9" />
+    <UnitTestResult executionId="9414eaae-a88b-4ca5-bfff-fe07b03ce641" testId="49eab81d-f006-a4c1-2b51-b270546d6505" testName="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: False)" computerName="mac" duration="00:00:02.5094395" startTime="2026-09-27T16:57:06.9663730-05:00" endTime="2026-09-27T16:57:09.5070540-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9414eaae-a88b-4ca5-bfff-fe07b03ce641">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.True() Failure
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 56
+   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 78
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="aebe5f3f-5c6b-493a-be11-48eefc2cb9e1" testId="e8bacd94-431e-9219-f600-26edaf2091ef" testName="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities(collideConsumption: False)" computerName="mac" duration="00:00:02.1591150" startTime="2026-09-27T16:57:11.1066810-05:00" endTime="2026-09-27T16:57:13.2663950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aebe5f3f-5c6b-493a-be11-48eefc2cb9e1" />
+    <UnitTestResult executionId="53db6602-485e-44c8-b69f-4fdc2b5353fa" testId="5b492985-9647-2ad4-ed31-4e75870a0641" testName="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: True)" computerName="mac" duration="00:00:01.5832501" startTime="2026-09-27T16:57:09.5184920-05:00" endTime="2026-09-27T16:57:11.1032870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53db6602-485e-44c8-b69f-4fdc2b5353fa">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.True() Failure
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 56
+   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 78
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ed4af926-d7f6-47a3-af7a-6a6bb6490775" testId="c26a9f76-a5d5-5245-e418-d80e47e59ff0" testName="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route" computerName="mac" duration="00:00:00.1473385" startTime="2026-09-27T16:57:15.0461190-05:00" endTime="2026-09-27T16:57:15.1940080-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed4af926-d7f6-47a3-af7a-6a6bb6490775">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: Reachable
+Actual:   ExpansionLimit</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs:line 289
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CombinedCareArchiveTests.Actual_pending_care_archives_256_lethal_journey_changes_with_its_single_dose_successor(crafted: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="90c4c96a-50c1-7cbf-1956-3ac1e02b0c30">
+      <Execution id="6af5ae48-5ec6-4171-ab9e-1e3bd1f16be8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CombinedCareArchiveTests" name="Actual_pending_care_archives_256_lethal_journey_changes_with_its_single_dose_successor" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5b492985-9647-2ad4-ed31-4e75870a0641">
+      <Execution id="53db6602-485e-44c8-b69f-4fdc2b5353fa" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests" name="Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities(collideConsumption: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="12055346-d806-5766-4ad2-3fe11951a9ab">
+      <Execution id="48ba88af-e3c6-4061-9ca5-2727f5537bef" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests" name="Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CombinedCareArchiveTests.Actual_pending_care_archives_256_lethal_journey_changes_with_its_single_dose_successor(crafted: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5ab8450f-4014-e003-42ad-3139d8adb0a0">
+      <Execution id="cded6fed-41fb-4ecb-8cd7-b894c50926bb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CombinedCareArchiveTests" name="Actual_pending_care_archives_256_lethal_journey_changes_with_its_single_dose_successor" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="49eab81d-f006-a4c1-2b51-b270546d6505">
+      <Execution id="9414eaae-a88b-4ca5-bfff-fe07b03ce641" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests" name="Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Human_controlled_helper_is_not_impersonated_by_the_local_host_even_with_core_care_permission" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b93b3258-b99f-276c-cd62-33cc523570a4">
+      <Execution id="c8356f96-25a8-436f-9ebe-ea1a651731a9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests" name="Human_controlled_helper_is_not_impersonated_by_the_local_host_even_with_core_care_permission" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c26a9f76-a5d5-5245-e418-d80e47e59ff0">
+      <Execution id="ed4af926-d7f6-47a3-af7a-6a6bb6490775" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests" name="Care_enabled_exploration_preserves_its_real_excavation_action_route" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities(collideConsumption: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e8bacd94-431e-9219-f600-26edaf2091ef">
+      <Execution id="aebe5f3f-5c6b-493a-be11-48eefc2cb9e1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests" name="Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cf5a5e25-96e2-753d-4d73-b66bb3b2567e">
+      <Execution id="1f22623a-a9b2-4fcd-b77f-4c690619283d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CareSessionTests" name="Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="12055346-d806-5766-4ad2-3fe11951a9ab" executionId="48ba88af-e3c6-4061-9ca5-2727f5537bef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ab8450f-4014-e003-42ad-3139d8adb0a0" executionId="cded6fed-41fb-4ecb-8cd7-b894c50926bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90c4c96a-50c1-7cbf-1956-3ac1e02b0c30" executionId="6af5ae48-5ec6-4171-ab9e-1e3bd1f16be8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf5a5e25-96e2-753d-4d73-b66bb3b2567e" executionId="1f22623a-a9b2-4fcd-b77f-4c690619283d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b93b3258-b99f-276c-cd62-33cc523570a4" executionId="c8356f96-25a8-436f-9ebe-ea1a651731a9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="49eab81d-f006-a4c1-2b51-b270546d6505" executionId="9414eaae-a88b-4ca5-bfff-fe07b03ce641" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e8bacd94-431e-9219-f600-26edaf2091ef" executionId="aebe5f3f-5c6b-493a-be11-48eefc2cb9e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b492985-9647-2ad4-ed31-4e75870a0641" executionId="53db6602-485e-44c8-b69f-4fdc2b5353fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c26a9f76-a5d5-5245-e418-d80e47e59ff0" executionId="ed4af926-d7f6-47a3-af7a-6a6bb6490775" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="5" failed="4" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.36]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.72]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.90]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.49]       Assert.True() Failure
+[xUnit.net 00:00:03.49]       Expected: True
+[xUnit.net 00:00:03.49]       Actual:   False
+[xUnit.net 00:00:03.50]       Stack Trace:
+[xUnit.net 00:00:03.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs(56,0): at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted)
+[xUnit.net 00:00:03.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs(78,0): at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted)
+[xUnit.net 00:00:03.50]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.08]       Assert.True() Failure
+[xUnit.net 00:00:05.08]       Expected: True
+[xUnit.net 00:00:05.08]       Actual:   False
+[xUnit.net 00:00:05.08]       Stack Trace:
+[xUnit.net 00:00:05.08]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs(56,0): at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted)
+[xUnit.net 00:00:05.08]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs(78,0): at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(Boolean crafted)
+[xUnit.net 00:00:05.08]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:09.17]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:09.17]       Expected: Reachable
+[xUnit.net 00:00:09.17]       Actual:   ExpansionLimit
+[xUnit.net 00:00:09.18]       Stack Trace:
+[xUnit.net 00:00:09.18]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs(289,0): at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route()
+[xUnit.net 00:00:09.18]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:09.86]       Assert.True() Failure
+[xUnit.net 00:00:09.86]       Expected: True
+[xUnit.net 00:00:09.86]       Actual:   False
+[xUnit.net 00:00:09.86]       Stack Trace:
+[xUnit.net 00:00:09.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs(153,0): at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control()
+[xUnit.net 00:00:09.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CareSessionTests.cs(168,0): at OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control()
+[xUnit.net 00:00:09.86]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:03.23]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T16:57:09.5147410-05:00">
+        <Text>[xUnit.net 00:00:03.49]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: False) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T16:57:11.1043460-05:00">
+        <Text>[xUnit.net 00:00:05.08]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T16:57:15.1947230-05:00">
+        <Text>[xUnit.net 00:00:09.17]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T16:57:15.8759790-05:00">
+        <Text>[xUnit.net 00:00:09.86]     OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
