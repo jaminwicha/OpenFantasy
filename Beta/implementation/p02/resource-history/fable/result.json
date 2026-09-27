@@ -1,0 +1,131 @@
+{
+  "status": "completed_pending_review",
+  "elapsed_seconds": 442.041,
+  "requested_model": "fable[1m]",
+  "total_cost_usd": 4.653439500000001,
+  "requested_effort": "max",
+  "permission_denials": [],
+  "model_usage": {
+    "claude-haiku-4-5-20251001": {
+      "inputTokens": 1367,
+      "outputTokens": 15,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 0,
+      "webSearchRequests": 0,
+      "costUSD": 0.001442,
+      "contextWindow": 200000,
+      "maxOutputTokens": 32000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-haiku-4-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    },
+    "claude-fable-5-1": {
+      "inputTokens": 226,
+      "outputTokens": 34716,
+      "cacheReadInputTokens": 461430,
+      "cacheCreationInputTokens": 139929,
+      "webSearchRequests": 0,
+      "costUSD": 4.6519975,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 26885,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "usage_is_subscription_deduction": false,
+  "retry": false,
+  "read_only": true,
+  "result_error": false,
+  "context_postflight": {
+    "status": "verified",
+    "inputs": [
+      {
+        "path": "/Users/alucinor/.claude/skills/game-technical-design/SKILL.md",
+        "sha256": "3429636f03a7aeae745cb95cae482b51ee426f068755f0fd8b621b4540373f94"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-technical-design/SKILL.md",
+        "sha256": "3429636f03a7aeae745cb95cae482b51ee426f068755f0fd8b621b4540373f94"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/tools/sync_portable_skills.py",
+        "sha256": "5c99d4184c31e160eab33a0559797ad4a98b6da7f5ae746831b13b96e0d06491"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/AGENTS.md",
+        "sha256": "194e64c9d3702408fded47bfd26d43b56e1ef9435d1c36f0c29f2f8171193f6e"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/AGENTS.md",
+        "sha256": "c456701a9f640f111e9730264b1c62a9613248d9526af011b581bbee1165170e"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/docs/architecture/actor-resources.md",
+        "sha256": "2c6061313ba70eabc80b4627afd9d0ba4fd0a46a0c8a2d36ced25d6dc551b967"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Progression/ProgressionCodecV1.cs",
+        "sha256": "d9a4fa290bd3d49825e6eea07dadff02fe524286dcb4e4f490539f272d248791"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceChange.cs",
+        "sha256": "ab245da2bc9e667f814b52530a62c2e6db81d3b63b00e8559f71dcbbe0edf93d"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistory.cs",
+        "sha256": "fcef3901dc445e278d93ea64a85336192ad3fec43d0ebea1c3b0eb25a73bea16"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistoryCodecV1.cs",
+        "sha256": "09061d3572185886e086ba195ef85a63f7e53eff53a06941992d71a8748b8167"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Progression/ResourceHistory/ResourceChangeBatch.cs",
+        "sha256": "0ff05e32106b454ac7db78e455e3f34ca0dd8f755c03828aedc8322dff4dff8c"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Progression/ResourceHistory/ResourceChangeCause.cs",
+        "sha256": "cb43f1bfb1ade7b841cf3cf02701191eb50be108765227c79e4c2bfd213d7f6a"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ResourceHistory/ActorResourceHistoryTests.cs",
+        "sha256": "19d395a6dc6d91ee66395273265c8b26c98742d1d3aa20417eb5e2cbbb6b2e5e"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ResourceHistory/ResourceHistoryBoundaryTests.cs",
+        "sha256": "b0e4135d94dc2feabfcf35127f91f00ebab18c51f1627ec2e87d8f05ba9184a2"
+      },
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/AGENT_HANDOFF.md",
+        "sha256": "b7f207a19564961cabee35fbec057735fb124034b30084be791d8eccf6dc2d44"
+      },
+      {
+        "path": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-resource-review-_m7bkhms/candidate-files.json",
+        "sha256": "5b0cef4cdf14fda6574bc26a9107c9e3af7d9d48df32098cc0a293a21bc54257"
+      },
+      {
+        "path": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-resource-review-_m7bkhms/context.json",
+        "sha256": "d3082bfdd493adc9afad839ba27781c8d8d7ddbc120d0e1565841ab9dfb35861"
+      },
+      {
+        "path": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-resource-review-_m7bkhms/manifests/skills.json",
+        "sha256": "3d192ed85337ad881bb615405728c86d08d42d405988147af22eb201be0f8b00"
+      },
+      {
+        "path": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-resource-review-_m7bkhms/recipe.json",
+        "sha256": "1efdd4eda81837f3273c17db011face84c49e9da946e9b30498ad57555e99240"
+      },
+      {
+        "path": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-resource-review-_m7bkhms/skills/game-technical-design/SKILL.md",
+        "sha256": "3429636f03a7aeae745cb95cae482b51ee426f068755f0fd8b621b4540373f94"
+      },
+      {
+        "path": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-resource-review-_m7bkhms/task.md",
+        "sha256": "afa330c641f26f29e9131c51da98870502c27c1abc4f86320e8e623689a81cae"
+      }
+    ]
+  }
+}

@@ -2,7 +2,8 @@
 
 Owner update, 2026-09-25: for this project's credit-constrained implementation, delegate substantial
 coding/testing and independent review units to Claude `fable[1m]` with Max effort (`--effort max`).
-Astra integrates and reviews. This supersedes the older implementation-only-by-Astra default below;
+Astra integrates and reviews. Owner update, 2026-09-27: Opus 5.5 with one-million-token context
+is also approved, retaining Max effort; verify its supported selector before use. This supersedes the older implementation-only-by-Astra default below;
 follow the detailed delegation doctrine in `Beta/AGENTS.md`, with explicit scope and finite limits.
 
 For the successor game, read [implementation instructions](Beta/AGENTS.md) and the [current agent handoff](Beta/implementation/AGENT_HANDOFF.md) before choosing work. They apply equally to Codex, Claude and other authorized workers. Read only the task-relevant contracts after that; do not reload the whole research archive for every assignment.

@@ -67,7 +67,47 @@ The transition result adds no actor field and does not alter the existing progre
 formats. Material consumption uses its explicit V2 production contract. Restoring these independent
 components proves their structural consistency; it does not authenticate a treatment event.
 
-Generic persistent resource evidence requires an explicit complete-world contract: command/cause,
+## Ordered continuity evidence
+
+[ActorResourceHistory](../../src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistory.cs)
+replays a bounded segment from a separately admitted progression basis to the complete current actor
+set. It is standalone consistency evidence, not another current HP/MP owner or a world admission API.
+`ActorResourceChange` re-executes a named law over the exact prior actor revision and checks the whole
+result, including level, XP and resource capacities. No-op damage/restoration/MP transitions add no
+record; every XP revision remains recorded, including zero XP. Reordering, omission and substituted
+actor/profile/curve pins cannot be hidden by comparing only final HP.
+
+`ResourceChangeBatch` contains the ordered actor changes from one committed command. World sequence
+and command ordinal order batches; several commands can share a world sequence. Ordinal gaps are
+legal for rejected or non-resource commands. Every batch is strictly later than the basis world
+sequence, so segment boundaries represent completed steps; mid-step rollover is not admitted. Effects within a command have contiguous ordinals.
+The progression revision advances at least once per retained batch, not once per actor effect.
+The current actor roster and admitted profile/curve sets match the segment basis exactly; changes
+to those sets require an explicitly admitted segment boundary. Currency retains its own authority.
+
+The causal reference pins an evidence identity and rule definition/version. Local checks prevent
+scope/actor/account/rule identity aliases and conflicting rule pins. They do not resolve the evidence,
+authenticate a command, or prove its requested amount, permission, payment or randomness. An attack
+may resolve an earlier selected command at a later world sequence. History must publish or roll back
+with the complete action, including later geography/material reconciliation. Repeated passive effects
+require a world-owned process-occurrence contract. This component only enforces unique batch command
+identities; causal evidence identities may repeat across effects and batches. The world must bind each
+occurrence to its continuing source and prevent duplicate application.
+
+[ActorResourceHistoryCodecV1](../../src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistoryCodecV1.cs)
+encodes scope, basis sequence/hash, command positions, causes, operations and before/after actor
+readings. Decode requires the caller's exact separately admitted basis and boundary. It bounds frames,
+counts and arithmetic, replays the history and requires exact canonical re-encoding. Direct domain
+construction can refuse with `ArgumentException`, `InvalidOperationException` for unpaid magic, or
+`OverflowException` for arithmetic limits. Decode maps these to `ProgressionFormatException`; complete
+transaction callers must handle the domain refusals without publishing partial candidates. It neither embeds
+a replacement basis nor changes old progression/encounter/world bytes. A segment holds at most 256
+batches, 128 changes per batch and 1,024 total changes. These are bounded archive envelopes, not limits
+on character lifetime. Continuous play requires authenticated archival continuation with accessible
+causal evidence before the envelope fills; dropping records or retaining only an unreachable hash
+cannot justify advancement. The component itself provides no rollover/publication mechanism.
+
+Complete-world resource history requires an explicit contract: command/cause,
 definition pins, world ordering, actor revisions and actual deltas must join the durable journal.
 Every writer, including unchanged-resource XP rewards, must participate. A previous damage record
 remains true at its own boundary; later authorized changes must be proven rather than dropping the

@@ -1,0 +1,29 @@
+{
+  "batches": 6,
+  "actorRevisions": 6,
+  "finalHp": 63,
+  "finalMp": 12,
+  "level": 2,
+  "refused": [
+    "missing-xp",
+    "reordered",
+    "wrong-basis",
+    "truncated",
+    "trailing"
+  ],
+  "scope": "six-effect calibration only; no world authentication or journal replay",
+  "files": {
+    "basis.bin": {
+      "sha256": "eb85a7ee1c5c11374c132bd1242a5efbe24997316b3abd48d06a1aa8093ed64b",
+      "bytes": 2573
+    },
+    "current.bin": {
+      "sha256": "5c55570d4add4ac8bd50c65e42d07b1d1b370c53f6e006e2603cd37d4fcbf84a",
+      "bytes": 2573
+    },
+    "history.bin": {
+      "sha256": "94a19734c7e22c4acf58ca293473fbde11c724b6b74073258a9fa89e25e0b47a",
+      "bytes": 5358
+    }
+  }
+}

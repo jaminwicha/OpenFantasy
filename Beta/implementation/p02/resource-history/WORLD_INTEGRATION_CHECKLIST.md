@@ -1,0 +1,41 @@
+# Complete-world integration acceptance
+
+This is the next dependency checklist, not completed implementation or reduced production scope.
+The standalone continuity component must not be enabled merely because its archive round-trips.
+
+1. **Admitted anchor and scope.** Select an explicit new world/storage contract. Resolve the history
+   basis and world boundary from admitted genesis or authenticated retained checkpoint/journal
+   evidence. Do not trust a basis supplied only by the history that claims to prove it. Preserve all
+   earlier world/profile/archive bytes and admission rules.
+2. **Every writer and actual ordering.** Bind encounter damage/caster MP, ordinary and aftermath
+   treatment, and quest XP/rewards. Retain XP-only revisions. Use deterministic command execution
+   positions; actionless attack resolution keeps the earlier selected command identity at its actual
+   resolution boundary. Publish no batch for rejected or rolled-back actions. Future passive writers
+   need distinct owned occurrences and earned exposure, not timer-driven mutations.
+3. **Causal authentication.** Resolve each operation to retained ability/draw/reward/remedy evidence,
+   actual amount, rule pins and actor participants. Component-valid fabricated causes, substituted
+   amounts and missing cost/payment/permission must fail complete-world admission and replay.
+4. **Historical attack truth.** Replace the care-specific last-attack exception with generic ordered
+   continuity from the original attack boundary. Preserve the old attack result and RNG evidence.
+   Do not require its past HP to remain current, or remove its original correctness check.
+5. **Complete atomic treatment.** Permission, helper commitment, delivery mode, anatomy, reach,
+   readiness, selected raw/crafted dose, restoration, source/material/geography reconciliation and
+   resulting encounter phase succeed or fail together. Recovery acknowledgment remains distinct from
+   permission and durable receipt. Conscious ordinary care and incapacitated aftermath care use the
+   same restoration/material laws with their respective policies.
+6. **Recovery and idempotency.** Prove exact save/reopen and journal reconstruction after attack,
+   treatment, reward without level gain, reward with refill, and subsequent attack. Crash around
+   publication, duplicate retry, reused identities and stale offers cannot create an extra effect,
+   consume another item or lose an earned revision. Include player/NPC controller parity.
+7. **Continuous lifetime and evolution.** Provide authenticated segment continuation before envelope
+   exhaustion; retain accessible prior causal and branch evidence. Explicitly migrate roster/rule
+   admission at a segment boundary when that functionality is introduced. Test crossing an actual
+   storage bound. A hash without retrievable proof, record deletion or permanent gameplay refusal
+   is not a complete continuous-play solution.
+8. **End-to-end qualification.** Run affected managed/integration and durable host tests, independent
+   adversarial review, then native ordinary/aftermath interaction and physical/human acceptance at
+   their existing gates. Shared desktop focus remains controlled; no visual claim comes from this
+   component suite. Structural/wet-world joins and all broader scope remain in their original phases.
+
+The remaining care/profile25 files in the shared checkout are WIP, including genesis refusal. Reuse
+reviewed pieces only after these proofs; they are not an already accepted world binding.

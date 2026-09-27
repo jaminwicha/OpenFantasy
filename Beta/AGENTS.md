@@ -51,6 +51,11 @@ project doctrine; never silently substitute or downgrade them. This authorizes s
 implementation assignments in this project while Astra conserves credits through integration and
 review of coherent units. It supersedes the earlier implementation-only-by-Astra default here.
 
+Owner steering, 2026-09-27: Claude Opus 5.5 with one-million-token context is also an approved
+alternative for these bounded implementation and review assignments. Retain Max effort. Verify the
+exact supported native selector and returned model/context before claiming a run uses that model;
+do not guess an alias or silently substitute. Fable remains an available established route.
+
 Use the maintained cross-agent delegation adapter directly, with isolated checkouts or disjoint
 ownership, synchronized/pinned project context, finite time/usage limits and compact results.
 Offload real code, tests and analysis rather than merely arranging repeated reviews. Astra reviews

@@ -1,0 +1,70 @@
+{
+  "status": "qualified standalone continuity component",
+  "base": "9aea44f74b8465b7faf24b949e7c236eeb630d69",
+  "source_manifest": "final-source.json",
+  "tests": {
+    "core-final": {
+      "total": 1284,
+      "executed": 1284,
+      "passed": 1284,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    },
+    "hosting": {
+      "total": 665,
+      "executed": 665,
+      "passed": 665,
+      "failed": 0,
+      "error": 0,
+      "timeout": 0,
+      "aborted": 0,
+      "inconclusive": 0,
+      "passedButRunAborted": 0,
+      "notRunnable": 0,
+      "notExecuted": 0,
+      "disconnected": 0,
+      "warning": 0,
+      "completed": 0,
+      "inProgress": 0,
+      "pending": 0
+    }
+  },
+  "total_passed": 1949,
+  "failed": 0,
+  "skipped": 0,
+  "focused_history_cases": 37,
+  "build_warnings": 0,
+  "build_errors": 0,
+  "oracle": "oracle.json",
+  "independent_review": "../fable/REVIEW.md",
+  "review_changes": "Five tests and documentation precision; six runtime files unchanged after critic",
+  "unchanged_frozen_specs": 23,
+  "unchanged_prior_milestones": 52,
+  "predecessor_index_sha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "valid_document_links": 142,
+  "ecosystem_commit": "d8555c1e7022d0c4bc4c1d76390a5540f0cc900f",
+  "prior_failed_attempts": [
+    "test-first.log",
+    "history-initial.log",
+    "history-focused.log",
+    "history-focused-02.log"
+  ],
+  "scope_exclusions": [
+    "care/profile25 WIP",
+    "complete-world causal authentication",
+    "durable history admission and archive continuation",
+    "native gameplay and human acceptance",
+    "performance and production-scale qualification"
+  ]
+}

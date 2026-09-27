@@ -1,0 +1,60 @@
+[
+  {
+    "name": "restore",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "restore",
+      "OpenFantasy.sln",
+      "--locked-mode",
+      "--ignore-failed-sources",
+      "--disable-parallel"
+    ],
+    "exit": 0,
+    "seconds": 4.212
+  },
+  {
+    "name": "build",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "build",
+      "OpenFantasy.sln",
+      "--no-restore",
+      "-m:1",
+      "-p:UseSharedCompilation=false"
+    ],
+    "exit": 0,
+    "seconds": 51.146
+  },
+  {
+    "name": "core",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "--logger",
+      "trx;LogFileName=core.trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-history/qualification"
+    ],
+    "exit": 0,
+    "seconds": 24.862
+  },
+  {
+    "name": "hosting",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "--logger",
+      "trx;LogFileName=hosting.trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-history/qualification"
+    ],
+    "exit": 0,
+    "seconds": 579.0
+  }
+]

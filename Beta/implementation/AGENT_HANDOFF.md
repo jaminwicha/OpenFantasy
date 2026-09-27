@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-25. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-27. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -42,6 +42,29 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Ordered resource history](p02/resource-history/README.md) now composes all named resource/XP
+operations into ordered command batches anchored to an exact admitted basis. Canonical restore
+replays complete actor revisions, including zero-XP and unchanged-resource rewards. The isolated
+eight-file unit over `9aea44f` excludes care WIP, builds cleanly and passes 1,284 Core + 665
+Hosting/client = 1,949 cases, zero failed/skipped; 37 are history cases. The independent byte oracle
+checks a real six-effect chain and five corruptions. Existing progression golden fixtures pass.
+
+The independent read-only `fable[1m]` Max review completed with verified context and no permission
+denials, found no runtime defect, and added value through five focused test cases plus clearer
+boundary documentation. Its 442-second / $4.65 list-price estimate is not measured subscription
+credit savings. No paid implementation retry occurred: Astra completed this component directly.
+[Verification](p02/resource-history/qualification/verification.json) retains source hashes, original
+compile failures, 52 preserved milestones, 23 unchanged frozen specs and the exact predecessor index.
+Preserved on `codex/milestone-resource-history`; pre-change care WIP remains recoverable at `ee57167`.
+
+The [next integration checklist](p02/resource-history/WORLD_INTEGRATION_CHECKLIST.md) requires causal
+world admission, every writer, authenticated archive continuation, replacement of the last-attack
+care exception, and ordinary/aftermath durable/native treatment. This standalone component enables
+no world profile or player action and closes no full phase, performance or human acceptance gate.
+Owner update, 2026-09-27: Opus 5.5 with one-million-token context is an approved alternative alongside
+`fable[1m]`, retaining Max effort and finite limits. Verify exact selector/model/context before use.
+Ecosystem commit `d8555c1` records this project-scoped routing; actual Opus access has not been tested.
+
 [Material consumption composition](p02/material-consumption-composition/README.md) joins direct raw
 and produced consumption to terrain partitions, excavation issuance, runoff capacity and nested
 reservoir/transport evidence. Explicit V3 terrain and V2 water archives retain consumption-capable
@@ -74,9 +97,9 @@ Commit `604b6d0` is preserved on `codex/milestone-resource-composition`. Its 200
 links, 49 prior milestones, frozen specs and unrelated staged predecessor changes are preserved.
 
 The authorized `fable[1m]` Max-effort history implementation hit its 1,200-second timeout with only
-two untested fragments: [preserved output and failure](p02/resource-history/README.md). It is not
-runtime code or qualification. No automatic paid retry occurred; approval for one smaller follow-up
-is pending. The separate three-pass analysis and independent Fable Max-effort review both completed
+two untested fragments: [preserved output and failure](p02/resource-history/README.md). Those fragments are not
+runtime code or qualification. No automatic paid retry occurred; the proposed smaller follow-up
+was not run and is superseded by the direct implementation above. The separate three-pass analysis and independent Fable Max-effort review both completed
 with verified context. The critic checked the full requirements ledger and plan, correcting several
 false defect claims. The [integration disposition](world-composition-refinement/INTEGRATION_DECISION.md)
 accepts the useful direction with further actor-revision, recipe-cycle and phase corrections. The

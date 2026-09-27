@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-restore",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--logger",
+    "trx;LogFileName=core-final.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-history/qualification"
+  ],
+  "exit": 0,
+  "seconds": 45.508
+}

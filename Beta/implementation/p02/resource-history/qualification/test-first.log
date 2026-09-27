@@ -1,0 +1,12 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ResourceHistory/ActorResourceHistoryTests.cs(3,36): error CS0234: The type or namespace name 'ResourceHistory' does not exist in the namespace 'OpenFantasy.Core.Progression' (are you missing an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ResourceHistory/ActorResourceHistoryTests.cs(101,21): error CS0246: The type or namespace name 'ResourceChangeCause' could not be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ResourceHistory/ActorResourceHistoryTests.cs(3,36): error CS0234: The type or namespace name 'ResourceHistory' does not exist in the namespace 'OpenFantasy.Core.Progression' (are you missing an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ResourceHistory/ActorResourceHistoryTests.cs(101,21): error CS0246: The type or namespace name 'ResourceChangeCause' could not be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:05.07

@@ -12,7 +12,7 @@ public static class ProgressionCodecV1
     public const int MaximumCurrencyByteLength = 1024;
     public const int MaximumRewardByteLength = 2048;
     public const int MaximumLedgerByteLength = 128 * 1024;
-    private const int MaximumActorByteLength = 512;
+    internal const int MaximumActorByteLength = 512;
     private const int MaximumAccountByteLength = 256;
     private const int MaximumCollectionByteLength = 192 * 1024;
 
@@ -235,12 +235,12 @@ public static class ProgressionCodecV1
         }
     }
 
-    private static byte[] EncodeActor(ActorProgressionState actor) => Frame("progression.actor", Number(1),
+    internal static byte[] EncodeActor(ActorProgressionState actor) => Frame("progression.actor", Number(1),
         Id(actor.ActorId), Number(actor.Revision), Id(actor.Profile.DefinitionId), actor.Profile.Version.ToByteArray(),
         Id(actor.Curve.DefinitionId), actor.Curve.Version.ToByteArray(), Number((ulong)actor.Level),
         Number(actor.Experience), Number((ulong)actor.CurrentHp), Number((ulong)actor.CurrentMp));
 
-    private static ActorProgressionState DecodeActor(ReadOnlySpan<byte> bytes,
+    internal static ActorProgressionState DecodeActor(ReadOnlySpan<byte> bytes,
         IReadOnlyList<ActorStatProfileDefinition> profiles, IReadOnlyList<LevelProgressionDefinition> curves)
     {
         var reader = new ProgressionFrameReader(bytes, MaximumActorByteLength, 12);
