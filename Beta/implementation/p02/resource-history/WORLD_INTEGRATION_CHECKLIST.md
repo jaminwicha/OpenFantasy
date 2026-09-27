@@ -1,6 +1,9 @@
 # Complete-world integration acceptance
 
-This is the next dependency checklist, not completed implementation or reduced production scope.
+This checklist retains the complete acceptance contract; partial integration does not reduce it.
+The [in-memory world integration](../world-resource-integration/README.md) binds actual attacks,
+funded rewards and aftermath treatment, including complete causal checks, rollback and canonical
+restore. Trusted durable admission and lifetime continuation remain separate unmet dependencies.
 The standalone continuity component must not be enabled merely because its archive round-trips.
 
 1. **Admitted anchor and scope.** Select an explicit new world/storage contract. Resolve the history
@@ -37,5 +40,8 @@ The standalone continuity component must not be enabled merely because its archi
    their existing gates. Shared desktop focus remains controlled; no visual claim comes from this
    component suite. Structural/wet-world joins and all broader scope remain in their original phases.
 
-The remaining care/profile25 files in the shared checkout are WIP, including genesis refusal. Reuse
-reviewed pieces only after these proofs; they are not an already accepted world binding.
+The in-memory milestone supplies the present writers/order, original attack truth and narrow
+aftermath transaction portions of items2–5; it does not close their ordinary-care, broad medical or
+historical-authentication obligations. Managed journeys and a useful independent critic supply part
+of item8. Items1,6,7 and native/human acceptance still require their actual proofs. Durable genesis
+refusal remains deliberate; no canonical decoder or passing unit suite substitutes for that gate.

@@ -1,0 +1,14 @@
+{
+  "revision": "2b7fbc9299c529e95ee1fa0fccc6216ad22748a0",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "timeout_seconds": 900,
+  "max_budget_usd": 8,
+  "context_sha256": "b7d2508cb3617bd8ae2714a59dfc0230d07f925f3fd7812bbb722229e65b8d95",
+  "status": "timeout",
+  "preflight_failure": "Initial overly broad skill manifest reached undeclared target roots; replaced with exact selected skill mapping. No model request occurred.",
+  "runner_session_id": 42517,
+  "result": "opus-review/result.json",
+  "actual_model_verified": false,
+  "paid_retry_started": false
+}

@@ -60,6 +60,10 @@ the caller owns medical permission, delivery mode, anatomy, reach, readiness/act
 participation, geography/material joins and historical command identity. Recipient identity alone
 does not establish permission; HP zero alone does not establish death or ability to drink.
 
+The [aftermath-care caller](aftermath-care.md) supplies a separate prior agreement, exact defeat
+acknowledgment, capable reachable neutral helper and pinned remedy. It couples the actual dose,
+restoration, readiness debt, encounter resumption and resource history in one complete transaction.
+
 ## Storage and history boundary
 
 Actor bytes remain owned by [ProgressionCodecV1](../../src/OpenFantasy.Core/Progression/ProgressionCodecV1.cs).
@@ -112,6 +116,11 @@ definition pins, world ordering, actor revisions and actual deltas must join the
 Every writer, including unchanged-resource XP rewards, must participate. A previous damage record
 remains true at its own boundary; later authorized changes must be proven rather than dropping the
 comparison against current resources. Existing profiles retain their exact admission rules.
+
+The care-enabled profile implements the in-memory and canonical
+[world resource binding](world-resource-history.md): retained domain witnesses, seeded attack
+recomputation, funded quest reward replay and atomic history rollback. Its host authentication
+and continuous archive contract remain distinct from the standalone component's consistency checks.
 
 Passive recovery additionally requires an owned exposure clock, rates, carry, ordering and interruption
 rules. Calling the restoration primitive from a timer or presentation event does not provide those

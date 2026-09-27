@@ -3,6 +3,7 @@ using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Progression;
+using OpenFantasy.Core.Progression.ResourceHistory;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -21,6 +22,7 @@ internal static class WorldEncounterActionProcessor
         var timing = basis;
         var actions = world.EncounterActions!;
         var progression = world.Progression!;
+        var resourceHistory = world.ResourceHistory;
         ulong revision = checked(world.Revision + 1);
         HashSet<EntityId> reserved = [];
         List<WorldCommittedIdentity> identities = [];
@@ -55,7 +57,7 @@ internal static class WorldEncounterActionProcessor
         }
         else if (batch.Kind == WorldBatchKind.EncounterResolution)
         {
-            (timing, actions, progression) = Resolve(world, revision);
+            (timing, actions, progression, resourceHistory) = Resolve(world, revision);
         }
         else
         {
@@ -89,7 +91,7 @@ internal static class WorldEncounterActionProcessor
             world.Residents.Select(actor => actor.Experience(duration)), nextPacing.Calendar, revision,
             tick ? checked(world.AdvancingSteps + 1) : world.AdvancingSteps,
             world.Dialogues, gathering, world.Production, progression, world.Quests, world.Construction,
-            world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing, lifecycle is null ? actions : null, lifecycle);
+            world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing, lifecycle is null ? actions : null, lifecycle, resourceHistory: resourceHistory);
         _ = WorldSnapshotCodec.Encode(candidate);
         return new WorldStepDecision(candidate, receipts, identities);
     }
@@ -114,7 +116,7 @@ internal static class WorldEncounterActionProcessor
             ? WorldEncounterActions.EvaluateAbility(world, command.ActorId, intent) : WorldActionRejection.None;
     }
 
-    private static (EncounterTimingSnapshot Timing, EncounterActionSnapshot Actions, ProgressionSnapshot Progression)
+    private static (EncounterTimingSnapshot Timing, EncounterActionSnapshot Actions, ProgressionSnapshot Progression, WorldResourceHistory? Resources)
         Resolve(WorldSnapshot world, ulong sequence)
     {
         var basis = world.Pacing!.Encounter!;
@@ -126,12 +128,14 @@ internal static class WorldEncounterActionProcessor
         var choice = basis.Decisions.SingleOrDefault(decision => decision.ActorId == actor.ActorId)
             ?? throw new InvalidOperationException("The first due actor has no admitted choice.");
         var progression = world.Progression!;
+        var resourceHistory = world.ResourceHistory;
         var random = actions.Random;
         ulong delay = actor.StandardDelay;
         EntityId? targetId = null;
         EntityId? abilityId = null;
         uint damage = 0, beforeHp = 0, afterHp = 0, mana = 0, variation = 0;
         var status = EncounterActionResolutionStatus.Wait;
+        List<ActorResourceChange> resourceChanges = [];
         if (choice.Kind == EncounterDecisionKind.Action)
         {
             var command = actions.Pending.Single(value => value.CommandId == choice.DecisionId);
@@ -154,10 +158,17 @@ internal static class WorldEncounterActionProcessor
                 damage = checked((uint)-damageEffect.Health.Delta);
                 afterHp = (uint)damageEffect.Candidate.CurrentHp;
                 mana = ability.ManaCost;
+                var magicEffect = source.SpendMagic(mana);
+                if (resourceHistory is not null)
+                {
+                    var cause = new ResourceChangeCause(command.CommandId, ability.DefinitionId, ability.Version);
+                    resourceChanges.Add(ActorResourceChange.FromTransition(0, cause, damageEffect));
+                    if (mana != 0) resourceChanges.Add(ActorResourceChange.FromTransition(1, cause, magicEffect));
+                }
                 var changed = progression.Actors.Select(value => value.ActorId == target.ActorId
                     ? damageEffect.Candidate
                     : value.ActorId == source.ActorId && mana != 0
-                        ? value.SpendMagic(mana).Candidate : value);
+                        ? magicEffect.Candidate : value);
                 progression = new ProgressionSnapshot(progression.WorldId, progression.BranchId, checked(progression.Revision + 1),
                     progression.Profiles, progression.Curves, changed, progression.Currency);
                 status = EncounterActionResolutionStatus.Damaged;
@@ -174,6 +185,12 @@ internal static class WorldEncounterActionProcessor
             targetId, abilityId, status, damage, beforeHp, afterHp, mana, delay, variation, cancelled);
         var nextActions = actions.WithResolution(actions.Pending.Where(value => value.CommandId != choice.DecisionId
             && !cancelled.Contains(value.CommandId)), random, resolution);
-        return (timing, nextActions, progression);
+        if (resourceHistory is not null && resourceChanges.Count != 0)
+        {
+            var request = actions.Pending.Single(value => value.CommandId == choice.DecisionId);
+            resourceHistory = resourceHistory.Append(new(sequence, 0, choice.DecisionId, resourceChanges),
+                new WorldEncounterResourceEvidence(world.EncounterLifecycle!.ScenarioId!.Value, request, resolution));
+        }
+        return (timing, nextActions, progression, resourceHistory);
     }
 }

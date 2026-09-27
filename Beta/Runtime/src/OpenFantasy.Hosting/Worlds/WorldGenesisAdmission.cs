@@ -9,6 +9,10 @@ internal static class WorldGenesisAdmission
 {
     internal static void Validate(WorldSnapshot genesis)
     {
+        if (genesis.Care is not null)
+        {
+            throw new ArgumentException("Care ownership requires a dedicated durable schema and pending-obligation recovery contract.", nameof(genesis));
+        }
         if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
         {
             throw new ArgumentException("A new local world requires unheld commit zero and step zero.", nameof(genesis));

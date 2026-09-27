@@ -41,6 +41,8 @@ different kind of person.
 | [Detailed liquid flow](liquid-cell-flow.md) | How does source-backed liquid move between cells without relaying or losing material? |
 | [Actors and society](actors-and-society.md) | How do bodies, knowledge, relationships, cultures, institutions and narratives interact? |
 | [Actor resources](actor-resources.md) | How do named damage, restoration, magic costs and rewards compose with exact item consumption while preserving one HP/MP owner? |
+| [World resource history](world-resource-history.md) | How do actual attacks, quest rewards and treatments prove ordered resource continuity and roll back with complete world transactions? |
+| [Aftermath care](aftermath-care.md) | How are prior permission, recovery acknowledgment, helper commitment and finite treatment composed without equating them? |
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
 | [Item consumption](item-consumption.md) | How do candidate material retirement and explicit production archives retain consumed rights without granting treatment or world publication? |
 | [Presentation and interaction](presentation-and-interaction.md) | How do actions, menus, maps, animation, art and audio express the simulation? |

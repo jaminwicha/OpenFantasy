@@ -42,15 +42,36 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-World resource integration remains the next implementation dependency. Its bounded Fable Max run
-ended with native file-permission denials, no changed code and no tests: [retained result and design](p02/world-resource-integration/failed-dispatch/README.md).
-There was no pending user prompt. The 1,323-second / $6.50 estimate is overhead without accepted
-implementation; the scoped-rule mismatch is unresolved and no automatic paid retry was started.
-The unreviewed design and two denied-write payloads are preserved outside runtime compilation.
-Existing durable genesis refusal remains until its separate recovery contract is proven. Ownership,
-checkpoint and acceptance remain in [the assignment](p02/world-resource-integration/TASK.md).
-All correctness gates and care WIP remain unchanged; Astra can continue directly from these inputs.
+[Complete-world resource integration](p02/world-resource-integration/README.md) now binds actual
+attack damage/MP, funded quest XP/refills and finite raw/crafted treatment to exact ordered causal
+history. The care-only last-attack HP exception is removed. Complete-world rollback, seeded replay,
+original damage truth, full currency payment and canonical profile25 restoration are covered.
+This is an **in-memory integration milestone**, preserved on `codex/milestone-world-resource-integration`.
 
+[Verification](p02/world-resource-integration/qualification/verification.json) records 2,039 distinct
+passing managed cases: full Core 1,355 and earlier full Hosting/client 680, followed by the final
+clean build, full Core rerun and all19 expanded affected journeys. Only profile25 resource admission
+and its test file changed after the broad Hosting run; the two source manifests preserve that limit.
+The native independent critic found two defects (episode ordinal ownership and malformed actor
+reference handling), both fixed with regressions. Original failed builds/fixtures and review outcomes
+remain retained. All23 frozen specs,53 prior milestones and the unrelated19-file predecessor index
+remain unchanged. Architecture references now describe real bindings and keep progress out of the
+encyclopedic pages; the documentation-maintenance hook remains part of every coherent change.
+
+**Next dependency:** authenticated end-of-step archive continuation and the complete
+[host schema/replay binding](p02/world-resource-integration/HOST_BOUNDARIES.md), then ordinary/aftermath
+durable recovery and native treatment. `WorldGenesisAdmission` still refuses care roots. No archive
+lifetime, durable/native care, performance, human acceptance or full phase gate is closed here.
+
+Delegation friction is explicit: the [Fable coding run](p02/world-resource-integration/failed-dispatch/README.md)
+was denied writes, produced no implementation/tests and was not waiting for approval. After backing
+up2.1.268 and installing client2.1.280, the exact Opus5.5/1M/Max [review](p02/world-resource-integration/opus-review/README.md)
+timed out at900seconds without output or model/usage metadata. Actual Opus access/cost remains
+unconfirmed; no automatic paid retry ran. Astra completed this unit with one useful native critic.
+Neither failed external run demonstrates credit savings. The scoped write-permission mismatch is
+unresolved; [compatibility findings](CLAUDE_MODEL_COMPATIBILITY.md) distinguish published support from
+actual execution. Ecosystem `aced220` records the early owned-write verification lesson; all71
+maintained skill/context mappings verified after guarded synchronization.
 
 [Ordered resource history](p02/resource-history/README.md) now composes all named resource/XP
 operations into ordered command batches anchored to an exact admitted basis. Canonical restore
@@ -71,14 +92,6 @@ The [next integration checklist](p02/resource-history/WORLD_INTEGRATION_CHECKLIS
 world admission, every writer, authenticated archive continuation, replacement of the last-attack
 care exception, and ordinary/aftermath durable/native treatment. This standalone component enables
 no world profile or player action and closes no full phase, performance or human acceptance gate.
-Owner update, 2026-09-27: Opus 5.5 with one-million-token context is an approved alternative alongside
-`fable[1m]`, retaining Max effort and finite limits. Verify exact selector/model/context before use.
-Ecosystem commit `d8555c1` records this project-scoped routing. [Compatibility findings](CLAUDE_MODEL_COMPATIBILITY.md)
-confirm Opus5.5 requires client2.1.280+, while the current client is2.1.268; actual account access is
-untested. Ecosystem `2e42704` refreshes standard context pins and portable model/effort guidance;
-guarded installed-file synchronization applied eight reviewed copies after the worker finished; all
-71 entries verify. Client 2.1.268 is backed up; no upgrade or paid Opus request has been started.
-
 [Material consumption composition](p02/material-consumption-composition/README.md) joins direct raw
 and produced consumption to terrain partitions, excavation issuance, runoff capacity and nested
 reservoir/transport evidence. Explicit V3 terrain and V2 water archives retain consumption-capable

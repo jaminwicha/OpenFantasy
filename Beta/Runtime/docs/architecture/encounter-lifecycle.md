@@ -89,6 +89,11 @@ work and movement use the same eligibility. Speaking, giving and quest delivery 
 counterpart. HP0 preserves the actor's body, occupancy, possessions and identity; this is incapacity,
 not the broader death lifecycle. Authenticated retrieval of an earlier exact receipt remains available.
 
+The [aftermath-care composition](aftermath-care.md) adds a separately interpreted recovery boundary:
+an exact outcome acknowledgment and a capable neutral helper's finite treatment can resume the same
+episode, preserving historical damage and charging helper debt. This is distinct from voluntary
+outcome release; ordinary movement and action availability retain their positive-HP requirement.
+
 For cumulative exploration steps `E` and tactical ticks `T`:
 
 ```

@@ -19,8 +19,10 @@ The standalone [item-consumption owner](item-consumption.md) adds explicit retai
 actual raw or produced goods. Its planner validates owned stock and prepares coupled inventory and
 production candidates; complete output partitions prevent reintroducing consumed material. Raw source
 bounds and disjointness still require a complete authority's issuance/history join. Production V2
-retains these claims, while existing world roots reject the enabled owner pending a complete care
-profile. The component grants no health effect, recipient permission, time or durable publication.
+retains these claims. Profiles through 24 reject the enabled owner; the explicit
+[aftermath-care composition](aftermath-care.md) joins it to treatment and resource evidence in
+in-memory complete-world transactions. The component grants no health effect, recipient permission,
+time or durable publication.
 
 [Funded terrain material](world-and-geography.md#domain-contract-funded-terrain-material) reuses this
 counted authority for an explicitly finite homogeneous slab. Detail changes partition existing source

@@ -10,7 +10,7 @@ public static class EncounterActionCodecV1
     public const int MaximumEncodedByteLength = 128 * 1_024;
     private const int MaximumAbilityByteLength = 1_024;
     private const int MaximumCombatantByteLength = 640;
-    private const int MaximumResolutionByteLength = 2_048;
+    internal const int MaximumResolutionByteLength = 2_048;
 
     public static byte[] Encode(EncounterActionSnapshot snapshot)
     {
@@ -124,14 +124,14 @@ public static class EncounterActionCodecV1
         return new RandomCounterState(algorithm, fingerprint, counter, exhausted == 1);
     }
 
-    private static byte[] EncodeResolution(EncounterActionResolution resolution) => Frame("encounter.action-resolution.v1",
+    internal static byte[] EncodeResolution(EncounterActionResolution resolution) => Frame("encounter.action-resolution.v1",
         Number(resolution.WorldSequence), Number(resolution.TimingRevision), resolution.ActorId.ToByteArray(),
         resolution.DecisionCommandId.ToByteArray(), resolution.TargetActorId?.ToByteArray() ?? [],
         resolution.AbilityDefinitionId?.ToByteArray() ?? [], Number((ulong)resolution.Status), Number(resolution.Damage),
         Number(resolution.TargetHpBefore), Number(resolution.TargetHpAfter), Number(resolution.ManaSpent), Number(resolution.Delay),
         Number(resolution.VariationPermille), Identities(resolution.CancelledDecisionIds));
 
-    private static EncounterActionResolution DecodeResolution(ReadOnlySpan<byte> bytes)
+    internal static EncounterActionResolution DecodeResolution(ReadOnlySpan<byte> bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumResolutionByteLength, 15);
         reader.Tag("encounter.action-resolution.v1"u8);

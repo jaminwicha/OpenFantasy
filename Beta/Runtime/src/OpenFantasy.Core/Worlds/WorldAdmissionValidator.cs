@@ -46,6 +46,8 @@ public static class WorldAdmissionValidator
         admission.ReadPacing();
         admission.ReadEncounterActions();
         admission.ReadEncounterLifecycle();
+        admission.ReadCare();
+        admission.ReadResourceHistory();
         return admission.Complete();
     }
 
@@ -122,6 +124,59 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed, world.EncounterLifecycle);
+
+        internal void ReadResourceHistory()
+        {
+            if (world.ResourceHistory is not { } history) return;
+            foreach (var evidence in history.Evidence)
+            {
+                Add(evidence.CommandId, WorldIdentityRole.CauseReference);
+                if (evidence is WorldEncounterResourceEvidence attack)
+                {
+                    Add(attack.EncounterId, WorldIdentityRole.Encounter);
+                    Require(attack.ScenarioId, WorldIdentityRole.EncounterScenario);
+                    foreach (var cancelled in attack.Resolution.CancelledDecisionIds)
+                        Add(cancelled, WorldIdentityRole.CauseReference);
+                }
+                else if (evidence is WorldTreatmentResourceEvidence treatment)
+                    Require(treatment.TreatmentId, WorldIdentityRole.CareTreatment);
+            }
+        }
+
+        internal void ReadCare()
+        {
+            if (world.Care is not { } care) return;
+            foreach (var remedy in care.Remedies)
+            {
+                Definition(remedy.DefinitionId, WorldIdentityRole.CareRemedy, remedy.Version);
+                Definition(remedy.Item.DefinitionId, WorldIdentityRole.ItemDefinition, remedy.Item.Version);
+            }
+            foreach (var agreement in care.Agreements)
+            {
+                Definition(agreement.AgreementId, WorldIdentityRole.CareAgreement, agreement.Version);
+                Require(agreement.PatientActorId, WorldIdentityRole.Actor);
+                Require(agreement.HelperActorId, WorldIdentityRole.Actor);
+                Require(agreement.RemedyDefinitionId, WorldIdentityRole.CareRemedy);
+            }
+            foreach (var acknowledgment in care.Acknowledgments)
+            {
+                Add(acknowledgment.AcknowledgmentId, WorldIdentityRole.CareAcknowledgment, unique: true);
+                Add(acknowledgment.CommandId, WorldIdentityRole.CauseReference);
+                Add(acknowledgment.EncounterId, WorldIdentityRole.Encounter);
+                Add(acknowledgment.Defeat.DecisionCommandId, WorldIdentityRole.CauseReference);
+                Require(acknowledgment.Defeat.ActorId, WorldIdentityRole.Actor);
+                Require(acknowledgment.Defeat.TargetActorId!.Value, WorldIdentityRole.Actor);
+                Require(acknowledgment.Defeat.AbilityDefinitionId!.Value, WorldIdentityRole.EncounterAbility);
+                foreach (var cancelled in acknowledgment.Defeat.CancelledDecisionIds)
+                    Add(cancelled, WorldIdentityRole.CauseReference);
+            }
+            foreach (var treatment in care.Treatments)
+            {
+                Add(treatment.TreatmentId, WorldIdentityRole.CareTreatment, unique: true);
+                Add(treatment.CommandId, WorldIdentityRole.CauseReference);
+                Require(treatment.ConsumptionId, WorldIdentityRole.ItemConsumption);
+            }
+        }
 
         internal void ReadPacing()
         {
@@ -444,6 +499,24 @@ public static class WorldAdmissionValidator
                             throw new ArgumentException("Retired gathering rights cannot extend beyond the retained issuance cursor.");
                         }
                     }
+                }
+            }
+            foreach (ConsumedItemClaim claim in production.ConsumedItems)
+            {
+                Add(claim.ConsumptionId, WorldIdentityRole.ItemConsumption, unique: true);
+                Add(claim.CommandId, WorldIdentityRole.CauseReference);
+                Require(claim.ActorId, WorldIdentityRole.Actor);
+                Require(claim.RecipientActorId, WorldIdentityRole.Actor);
+                Require(claim.CustodianId, WorldIdentityRole.Custodian);
+                var ingredient = claim.Ingredient;
+                Add(ingredient.LotId, ingredient.Kind == IngredientLotKind.Source
+                    ? WorldIdentityRole.Lot : WorldIdentityRole.TransformedLot);
+                if (ingredient.Source is { } source)
+                {
+                    Require(source.SourceId, WorldIdentityRole.CountedSource);
+                    var node = world.Gathering!.Nodes.FirstOrDefault(value => value.SourceId == source.SourceId);
+                    if (node is not null && source.End > node.NextUnissuedUnit)
+                        throw new ArgumentException("Consumed gathering rights cannot exceed actual source issuance.");
                 }
             }
             foreach (TransformedLot lot in production.Lots)

@@ -6,6 +6,7 @@ using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Progression;
+using OpenFantasy.Core.Progression.ResourceHistory;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Terrain;
@@ -41,6 +42,14 @@ public sealed class WorldStepProcessor
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
         }
 
+        if (batch.Kind == WorldBatchKind.Care)
+        {
+            return WorldCareProcessor.Decide(state, batch, historicallyOccupied);
+        }
+        if (state.Care?.Pending is not null)
+        {
+            throw new InvalidOperationException("An acknowledged care obligation must resolve before another world activity.");
+        }
         if (batch.Kind == WorldBatchKind.EncounterLifecycle)
         {
             return WorldEncounterLifecycleProcessor.Decide(state, batch, historicallyOccupied);
@@ -106,6 +115,7 @@ public sealed class WorldStepProcessor
         GatheringSnapshot? gathering = state.Gathering;
         ProductionSnapshot? production = state.Production;
         ProgressionSnapshot? progression = state.Progression;
+        var resourceHistory = state.ResourceHistory;
         QuestSnapshot? quests = state.Quests;
         ConstructionSnapshot? construction = state.Construction;
         ConstructionPhysicalSnapshot? physical = state.ConstructionPhysical;
@@ -159,7 +169,7 @@ public sealed class WorldStepProcessor
                     ? proposedLiquidCells.AdvanceBoundary(state.EncounterLifecycle is null ? validationCalendar : validationPacing!.ProcessBoundary) : proposedLiquidCells;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle);
+                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, resourceHistory: resourceHistory);
                 if (state.ConsequencePolicy is not null || state.ReservoirSeals is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
                 admittedCandidate = admitted;
                 return true;
@@ -170,13 +180,15 @@ public sealed class WorldStepProcessor
             }
         }
 
-        foreach (WorldActionCommand action in batch.Actions)
+        for (int actionIndex = 0; actionIndex < batch.Actions.Count; actionIndex++)
         {
+            WorldActionCommand action = batch.Actions[actionIndex];
             // Material validation covers the entire action, including its non-inventory side effects.
             var previousExcavation = excavation;
             var previousGathering = gathering;
             var previousProduction = production;
             var previousProgression = progression;
+            var previousResourceHistory = resourceHistory;
             var previousQuests = quests;
             var previousConstruction = construction;
             var previousPhysical = physical;
@@ -281,6 +293,16 @@ public sealed class WorldStepProcessor
                 progression = plan.CandidateProgression;
                 quests = plan.CandidateQuests;
                 createdIds = plan.CreatedIds;
+                if (plan.Rejection == WorldActionRejection.None && action.Intent is CompleteDeliveryQuestIntent completed
+                    && resourceHistory is not null)
+                {
+                    var reward = quests.FindDefinition(completed.QuestId)!.Reward;
+                    var cause = new ResourceChangeCause(action.CommandId, reward.DefinitionId, reward.Version);
+                    var change = new ActorResourceChange(0, cause, ActorResourceOperation.ExperienceReward,
+                        reward.Experience, previousProgression!.GetActor(action.ActorId), progression.GetActor(action.ActorId));
+                    resourceHistory = resourceHistory.Append(new(sequence, checked((uint)actionIndex), action.CommandId, [change]),
+                        new WorldRewardResourceEvidence(action.CommandId));
+                }
             }
             else if (action.Intent is GatherIntent)
             {
@@ -330,6 +352,7 @@ public sealed class WorldStepProcessor
                 gathering = previousGathering;
                 production = previousProduction;
                 progression = previousProgression;
+                resourceHistory = previousResourceHistory;
                 quests = previousQuests;
                 construction = previousConstruction;
                 physical = previousPhysical;
@@ -432,7 +455,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, resourceHistory: resourceHistory);
         if (liquidCells is not null && admittedMovement is null)
         {
             // Fragment growth must also fit the complete retained root before authority preparation succeeds.

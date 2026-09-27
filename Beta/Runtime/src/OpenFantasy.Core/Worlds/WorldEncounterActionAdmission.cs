@@ -70,7 +70,7 @@ public static class WorldEncounterActionAdmission
             if (last.WorldSequence > world.Revision || last.TimingRevision > timing.Revision
                 || !actions.Combatants.Any(actor => actor.ActorId == last.ActorId)
                 || last.TargetActorId is { } target && !actions.Combatants.Any(actor => actor.ActorId == target)
-                || last.Status == EncounterActionResolutionStatus.Damaged
+                || last.Status == EncounterActionResolutionStatus.Damaged && world.ResourceHistory is null
                     && world.Progression!.GetActor(last.TargetActorId!.Value).CurrentHp != last.TargetHpAfter)
             {
                 throw new ArgumentException("The retained action outcome disagrees with complete world state.");

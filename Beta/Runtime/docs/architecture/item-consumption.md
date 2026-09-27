@@ -12,9 +12,10 @@ The operation has no health, mana, consent, reach, anatomy, encounter or time ef
 recipient records a participant; it does not establish permission to treat that actor or prove that
 treatment occurred. No care action, UI, world codec or durable recovery protocol follows from this
 standalone material candidate. [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs)
-rejects consumption-enabled production under existing world interpretations, including an empty
-enabled owner. A new complete-world interpretation must supply the affected admission and persistence
-bindings before publishing consumption.
+rejects consumption-enabled production under profiles through 24, including an empty enabled owner.
+The [aftermath-care composition](aftermath-care.md) explicitly admits this owner together with
+treatment and [resource history](world-resource-history.md) for in-memory profile 25 transactions.
+Its durable host admission remains closed; encoding a candidate does not grant storage publication.
 
 ## Selection, authority and revisions
 

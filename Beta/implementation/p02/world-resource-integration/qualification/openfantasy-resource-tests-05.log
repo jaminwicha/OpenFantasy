@@ -1,0 +1,53 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:21.66]     OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1000, levelGain: True) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1000, levelGain: True) [1 s]
+  Error Message:
+   Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 231
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 194
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 182
+   at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs:line 23
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:23.59]     OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 0, levelGain: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 0, levelGain: False) [1 s]
+  Error Message:
+   Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 231
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 194
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 182
+   at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs:line 23
+   at InvokeStub_WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:24.82]     OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1, levelGain: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1, levelGain: False) [1 s]
+  Error Message:
+   Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 231
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 194
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 182
+   at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs:line 23
+   at InvokeStub_WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /private/tmp/openfantasy-resource-tests-05/_mac_2026-09-27_14_42_47_net8.0.trx
+
+Failed!  - Failed:     3, Passed:     8, Skipped:     0, Total:    11, Duration: 23 s - OpenFantasy.Hosting.Tests.dll (net8.0)

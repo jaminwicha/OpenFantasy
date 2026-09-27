@@ -22,6 +22,10 @@ create another health ledger. Timing owns readiness and queued decision pins. Co
 requires exact actor coverage and a one-to-one match between timing action choices and retained
 requests.
 
+The care-enabled composition additionally retains [ordered resource history](world-resource-history.md).
+It checks the original successful attack against its historical stats, draw and paired HP/MP effects.
+Later treatment or earned level refills explain current resources without rewriting that attack.
+
 An encounter side is a local participation assignment. Side zero means a coupled bystander; positive
 different sides permit opposing targets. Sides are not species hostility, alignment, faction membership
 or general relationship policy. Bystanders retain their bodies, inventory, quests and applicable

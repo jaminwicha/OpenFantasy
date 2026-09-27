@@ -58,6 +58,13 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 22 | Permanent accepted exposure, coordinated Wait timing and fractional process carry over the complete terrain/liquid world |
 | 23 | Source-pinned physical abilities, exact pending requests, damage randomness and real progression resources over the complete paced world |
 | 24 | Permanent encounter scenarios, phases, cumulative exploration/tactical clocks and readiness debt across authenticated entry and outcome release |
+| 25 | Canonical in-memory aftermath care, consumption-enabled material owners and ordered causal resource history; durable genesis admission is disabled |
+
+[Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
+changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
+authenticate the embedded basis. [WorldGenesisAdmission](../../src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs)
+refuses care-enabled worlds until host-authenticated continuation and the complete storage/replay
+binding are supplied. A snapshot interpreter is not permission to select a storage schema.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight

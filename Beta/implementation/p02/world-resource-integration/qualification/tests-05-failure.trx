@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="9911e5b3-bdab-4a11-8612-1f530ef70884" name="@mac 2026-09-27 14:42:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-27T14:42:47.7860080-05:00" queuing="2026-09-27T14:42:47.7860080-05:00" start="2026-09-27T14:42:36.1740210-05:00" finish="2026-09-27T14:43:04.9516390-05:00" />
+  <TestSettings name="default" id="4d766abb-b82d-42d0-82f6-e3be8c709701">
+    <Deployment runDeploymentRoot="_mac_2026-09-27_14_42_47" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="6de62ef9-4dc0-42b2-ba9c-354bc7dcf1d6" testId="344f1a27-d5ad-c705-c031-e55e5cfb2209" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Stale_treatment_rejection_retains_resource_history_and_dose" computerName="mac" duration="00:00:01.5641250" startTime="2026-09-27T14:42:56.2293410-05:00" endTime="2026-09-27T14:42:57.7940680-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6de62ef9-4dc0-42b2-ba9c-354bc7dcf1d6" />
+    <UnitTestResult executionId="81646635-e791-4920-ae36-55fd0986f2ce" testId="cf7bf3c7-9802-f5e3-c34c-1db365b99b92" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Altered_claimed_random_draw_fails_even_when_actor_continuity_is_unchanged" computerName="mac" duration="00:00:06.0482872" startTime="2026-09-27T14:42:41.5371040-05:00" endTime="2026-09-27T14:42:47.6040760-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81646635-e791-4920-ae36-55fd0986f2ce" />
+    <UnitTestResult executionId="fa97f212-01dd-4e38-9a95-686f1cc8e0b3" testId="61920b68-358a-53de-75f3-6b8e55802632" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1000, levelGain: True)" computerName="mac" duration="00:00:01.1538134" startTime="2026-09-27T14:42:57.8102630-05:00" endTime="2026-09-27T14:42:59.0205870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fa97f212-01dd-4e38-9a95-686f1cc8e0b3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 231
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 194
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 182
+   at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs:line 23
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="dc1f7dc8-62cf-4fe6-ab3f-1d8a5794b8ca" testId="68de3646-be40-d49a-96da-fc81aa4c3c82" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Admission_pin_and_basis_boundary_cannot_be_substituted" computerName="mac" duration="00:00:02.2146184" startTime="2026-09-27T14:42:47.6809000-05:00" endTime="2026-09-27T14:42:49.8960030-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dc1f7dc8-62cf-4fe6-ab3f-1d8a5794b8ca" />
+    <UnitTestResult executionId="c63899a7-99a4-46f4-9c6a-b153058b0583" testId="974211e7-96a4-2ea5-3021-2802946e1692" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1, levelGain: False)" computerName="mac" duration="00:00:01.2115843" startTime="2026-09-27T14:43:00.9588350-05:00" endTime="2026-09-27T14:43:02.1734610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c63899a7-99a4-46f4-9c6a-b153058b0583">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 231
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 194
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 182
+   at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs:line 23
+   at InvokeStub_WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5a6fc8f7-85b0-4698-b2bb-e6a60813de82" testId="4f479724-21f2-1b7c-8bec-7006b912460b" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 0, levelGain: False)" computerName="mac" duration="00:00:01.9281707" startTime="2026-09-27T14:42:59.0227390-05:00" endTime="2026-09-27T14:43:00.9525890-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5a6fc8f7-85b0-4698-b2bb-e6a60813de82">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 231
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 194
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 182
+   at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs:line 23
+   at InvokeStub_WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="99a976c1-6ac0-4f3f-9a44-12374961ceeb" testId="e7910b1c-5d63-e6ac-4a11-8588eea46acc" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_attacks_treatment_and_resumed_combat_keep_complete_causal_history(crafted: True)" computerName="mac" duration="00:00:03.8287701" startTime="2026-09-27T14:42:52.3827010-05:00" endTime="2026-09-27T14:42:56.2117450-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="99a976c1-6ac0-4f3f-9a44-12374961ceeb" />
+    <UnitTestResult executionId="7cf0c514-9b97-4179-ba9e-d7528f4249c9" testId="b811dadd-9c0b-8b94-509b-90a33ea000ad" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_attacks_treatment_and_resumed_combat_keep_complete_causal_history(crafted: False)" computerName="mac" duration="00:00:02.4711754" startTime="2026-09-27T14:42:49.9092200-05:00" endTime="2026-09-27T14:42:52.3806340-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7cf0c514-9b97-4179-ba9e-d7528f4249c9" />
+    <UnitTestResult executionId="4fa00cf2-1e77-4d87-a2eb-87b2b6c8e6d0" testId="03df123c-f997-50be-89ca-349f5dc00395" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Paired_attack_cannot_omit_damage_or_magic_by_reverting_the_corresponding_current_actor(omitDamage: False)" computerName="mac" duration="00:00:00.8495752" startTime="2026-09-27T14:43:03.9479610-05:00" endTime="2026-09-27T14:43:04.7976230-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4fa00cf2-1e77-4d87-a2eb-87b2b6c8e6d0" />
+    <UnitTestResult executionId="564b67fe-2962-47e0-becd-a981df43442f" testId="d2e0d171-43eb-005e-88f7-97fb76f26768" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Component_valid_wrong_rule_cause_fails_world_admission" computerName="mac" duration="00:00:00.8363916" startTime="2026-09-27T14:43:02.1835730-05:00" endTime="2026-09-27T14:43:03.0201120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="564b67fe-2962-47e0-becd-a981df43442f" />
+    <UnitTestResult executionId="51ca9102-177b-434b-972c-eb2c6e9802fb" testId="0115a808-24e2-a78d-2239-9effdedaaeea" testName="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Paired_attack_cannot_omit_damage_or_magic_by_reverting_the_corresponding_current_actor(omitDamage: True)" computerName="mac" duration="00:00:00.9209450" startTime="2026-09-27T14:43:03.0258140-05:00" endTime="2026-09-27T14:43:03.9468290-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="51ca9102-177b-434b-972c-eb2c6e9802fb" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Component_valid_wrong_rule_cause_fails_world_admission" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d2e0d171-43eb-005e-88f7-97fb76f26768">
+      <Execution id="564b67fe-2962-47e0-becd-a981df43442f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Component_valid_wrong_rule_cause_fails_world_admission" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Paired_attack_cannot_omit_damage_or_magic_by_reverting_the_corresponding_current_actor(omitDamage: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="03df123c-f997-50be-89ca-349f5dc00395">
+      <Execution id="4fa00cf2-1e77-4d87-a2eb-87b2b6c8e6d0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Paired_attack_cannot_omit_damage_or_magic_by_reverting_the_corresponding_current_actor" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_attacks_treatment_and_resumed_combat_keep_complete_causal_history(crafted: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e7910b1c-5d63-e6ac-4a11-8588eea46acc">
+      <Execution id="99a976c1-6ac0-4f3f-9a44-12374961ceeb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Actual_attacks_treatment_and_resumed_combat_keep_complete_causal_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_attacks_treatment_and_resumed_combat_keep_complete_causal_history(crafted: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b811dadd-9c0b-8b94-509b-90a33ea000ad">
+      <Execution id="7cf0c514-9b97-4179-ba9e-d7528f4249c9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Actual_attacks_treatment_and_resumed_combat_keep_complete_causal_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Altered_claimed_random_draw_fails_even_when_actor_continuity_is_unchanged" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cf7bf3c7-9802-f5e3-c34c-1db365b99b92">
+      <Execution id="81646635-e791-4920-ae36-55fd0986f2ce" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Altered_claimed_random_draw_fails_even_when_actor_continuity_is_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 0, levelGain: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4f479724-21f2-1b7c-8bec-7006b912460b">
+      <Execution id="5a6fc8f7-85b0-4698-b2bb-e6a60813de82" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1000, levelGain: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="61920b68-358a-53de-75f3-6b8e55802632">
+      <Execution id="fa97f212-01dd-4e38-9a95-686f1cc8e0b3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Stale_treatment_rejection_retains_resource_history_and_dose" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="344f1a27-d5ad-c705-c031-e55e5cfb2209">
+      <Execution id="6de62ef9-4dc0-42b2-ba9c-354bc7dcf1d6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Stale_treatment_rejection_retains_resource_history_and_dose" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Paired_attack_cannot_omit_damage_or_magic_by_reverting_the_corresponding_current_actor(omitDamage: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0115a808-24e2-a78d-2239-9effdedaaeea">
+      <Execution id="51ca9102-177b-434b-972c-eb2c6e9802fb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Paired_attack_cannot_omit_damage_or_magic_by_reverting_the_corresponding_current_actor" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Admission_pin_and_basis_boundary_cannot_be_substituted" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="68de3646-be40-d49a-96da-fc81aa4c3c82">
+      <Execution id="dc1f7dc8-62cf-4fe6-ab3f-1d8a5794b8ca" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Admission_pin_and_basis_boundary_cannot_be_substituted" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1, levelGain: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="974211e7-96a4-2ea5-3021-2802946e1692">
+      <Execution id="c63899a7-99a4-46f4-9c6a-b153058b0583" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests" name="Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="344f1a27-d5ad-c705-c031-e55e5cfb2209" executionId="6de62ef9-4dc0-42b2-ba9c-354bc7dcf1d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf7bf3c7-9802-f5e3-c34c-1db365b99b92" executionId="81646635-e791-4920-ae36-55fd0986f2ce" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="61920b68-358a-53de-75f3-6b8e55802632" executionId="fa97f212-01dd-4e38-9a95-686f1cc8e0b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68de3646-be40-d49a-96da-fc81aa4c3c82" executionId="dc1f7dc8-62cf-4fe6-ab3f-1d8a5794b8ca" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="974211e7-96a4-2ea5-3021-2802946e1692" executionId="c63899a7-99a4-46f4-9c6a-b153058b0583" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4f479724-21f2-1b7c-8bec-7006b912460b" executionId="5a6fc8f7-85b0-4698-b2bb-e6a60813de82" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e7910b1c-5d63-e6ac-4a11-8588eea46acc" executionId="99a976c1-6ac0-4f3f-9a44-12374961ceeb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b811dadd-9c0b-8b94-509b-90a33ea000ad" executionId="7cf0c514-9b97-4179-ba9e-d7528f4249c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="03df123c-f997-50be-89ca-349f5dc00395" executionId="4fa00cf2-1e77-4d87-a2eb-87b2b6c8e6d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d2e0d171-43eb-005e-88f7-97fb76f26768" executionId="564b67fe-2962-47e0-becd-a981df43442f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0115a808-24e2-a78d-2239-9effdedaaeea" executionId="51ca9102-177b-434b-972c-eb2c6e9802fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="11" executed="11" passed="8" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:01.07]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.23]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.03]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:21.66]       Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[xUnit.net 00:00:21.66]       [0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+[xUnit.net 00:00:21.66]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:21.66]                   Expected: Applied
+[xUnit.net 00:00:21.66]                   Actual:   Rejected
+[xUnit.net 00:00:21.66]       Stack Trace:
+[xUnit.net 00:00:21.66]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(231,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch)
+[xUnit.net 00:00:21.66]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(194,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent)
+[xUnit.net 00:00:21.66]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(182,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority)
+[xUnit.net 00:00:21.66]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs(23,0): at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain)
+[xUnit.net 00:00:21.66]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:21.66]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:23.60]       Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[xUnit.net 00:00:23.60]       [0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+[xUnit.net 00:00:23.60]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:23.60]                   Expected: Applied
+[xUnit.net 00:00:23.60]                   Actual:   Rejected
+[xUnit.net 00:00:23.60]       Stack Trace:
+[xUnit.net 00:00:23.60]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(231,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch)
+[xUnit.net 00:00:23.60]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(194,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent)
+[xUnit.net 00:00:23.60]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(182,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority)
+[xUnit.net 00:00:23.60]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs(23,0): at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain)
+[xUnit.net 00:00:23.60]            at InvokeStub_WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(Object, Span`1)
+[xUnit.net 00:00:23.60]            at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:24.82]       Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[xUnit.net 00:00:24.82]       [0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 045c95fac3cf4d5eafe4c72084a5c0d22a8b36a2a6dbd72478dbbd8c5bead57b, CommandId = ca2500000000000000000000000027e3, CommitSequence = 212, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+[xUnit.net 00:00:24.82]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:24.82]                   Expected: Applied
+[xUnit.net 00:00:24.82]                   Actual:   Rejected
+[xUnit.net 00:00:24.82]       Stack Trace:
+[xUnit.net 00:00:24.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(231,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Commit(CareWorldSession authority, WorldStepBatch batch)
+[xUnit.net 00:00:24.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(194,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.Act(CareWorldSession session, WorldSnapshot state, WorldActionIntent intent)
+[xUnit.net 00:00:24.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(182,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture.CompleteQuest(CareWorldSession authority)
+[xUnit.net 00:00:24.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/WorldResourceJourneyTests.cs(23,0): at OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(UInt64 experience, Boolean levelGain)
+[xUnit.net 00:00:24.82]            at InvokeStub_WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(Object, Span`1)
+[xUnit.net 00:00:24.82]            at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:27.46]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T14:42:59.0307300-05:00">
+        <Text>[xUnit.net 00:00:21.66]     OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1000, levelGain: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T14:43:00.9721370-05:00">
+        <Text>[xUnit.net 00:00:23.59]     OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 0, levelGain: False) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T14:43:02.1954340-05:00">
+        <Text>[xUnit.net 00:00:24.82]     OpenFantasy.Hosting.Tests.Care.WorldResourceJourneyTests.Actual_funded_quest_retains_zero_XP_and_level_refill_after_combat(experience: 1, levelGain: False) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -177,6 +177,19 @@ public sealed class EncounterLifecycleSnapshot
             EncounterLifecyclePhase.Exploration, Debts, ScenarioId, Actions);
     }
 
+    internal EncounterLifecycleSnapshot ResumeAfterCare(EncounterTimingSnapshot timing)
+    {
+        RequirePhase(EncounterLifecyclePhase.Outcome);
+        ArgumentNullException.ThrowIfNull(timing);
+        ulong units = checked((TacticalTicks - EntryTacticalTicks) * EncounterTimingSnapshot.UnitsPerTick);
+        if (timing.Scope != Actions!.Scope || timing.ElapsedTacticalUnits != units || timing.Decisions.Count != 0
+            || !timing.Actors.Select(actor => actor.ActorId).SequenceEqual(Debts.Select(debt => debt.ActorId)))
+            throw new ArgumentException("Care must preserve the exact encounter, elapsed units and complete actor set without restoring choices.");
+        return Next(ExplorationSteps, TacticalTicks, EntryTacticalTicks, EncounterCount,
+            EncounterLifecyclePhase.Active, timing.Actors.Select(actor => new EncounterReadinessDebt(actor.ActorId, actor.RemainingDelay)),
+            ScenarioId, Actions);
+    }
+
     public EncounterLifecycleSnapshot AdvanceExploration()
     {
         RequirePhase(EncounterLifecyclePhase.Exploration);
