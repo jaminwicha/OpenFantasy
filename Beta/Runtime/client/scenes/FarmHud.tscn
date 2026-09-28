@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Script" path="res://scripts/FarmHud.cs" id="1"]
 
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" path="res://assets/ui/strike.svg" id="3"]
 [ext_resource type="Texture2D" path="res://assets/ui/wait.svg" id="4"]
 [ext_resource type="Texture2D" path="res://assets/ui/leave.svg" id="5"]
+[ext_resource type="Texture2D" path="res://assets/ui/care.svg" id="6"]
 
 [sub_resource type="StyleBoxFlat" id="PanelStyle"]
 bg_color = Color(0.098, 0.165, 0.180, 0.933)
@@ -258,5 +259,14 @@ visible = false
 layout_mode = 2
 custom_minimum_size = Vector2(76, 42)
 icon = ExtResource("5")
+expand_icon = true
+theme_override_constants/icon_max_width = 28
+
+[node name="AcknowledgeCare" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(76, 42)
+icon = ExtResource("6")
 expand_icon = true
 theme_override_constants/icon_max_width = 28

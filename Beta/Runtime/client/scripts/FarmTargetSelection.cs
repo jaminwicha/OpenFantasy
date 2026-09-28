@@ -28,7 +28,7 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             _scope = scope;
         }
         // Stable identity order does not jump around when people move or distances change.
-        IEnumerable<FarmTarget> encounterTargets = EncounterTargets(view);
+        IEnumerable<FarmTarget> encounterTargets = EncounterTargets(view).Concat(CareTargets(view));
         _candidates = (view.IsInEncounter ? encounterTargets : view.Actors.Where(actor => actor.ActorId == speakerId && actor.ActorId != view.PlayerActorId)
             .Select(actor => new FarmTarget(actor.ActorId, actor.DisplayName, FarmTargetKind.Person, actor.Feet))
             .Concat(view.GatheringNodes.Select(node =>
@@ -40,8 +40,11 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             .OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
         if (Selected is { } selected)
         {
+            // Losing an applicable action does not make a still-observed person disappear.
+            LocalActorView? retained = selected.Kind == FarmTargetKind.Person
+                ? view.Actors.FirstOrDefault(actor => actor.ActorId == selected.Id) : null;
             Selected = _candidates.FirstOrDefault(target => target.Id == selected.Id)
-                ?? selected with { Feet = null };
+                ?? selected with { Feet = retained?.Feet };
         }
     }
 
@@ -74,5 +77,13 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
         return targets.Distinct().Select(identity => view.Actors.FirstOrDefault(actor => actor.ActorId == identity))
             .Where(actor => actor is not null).Select(actor => new FarmTarget(actor!.ActorId,
                 actor.DisplayName, FarmTargetKind.Encounter, actor.Feet));
+    }
+
+    private static IEnumerable<FarmTarget> CareTargets(LocalWorldView view)
+    {
+        IEnumerable<EntityId> helpers = view.Care?.Offers.Select(offer => offer.HelperActorId) ?? [];
+        if (view.Care?.HelperActorId is { } pendingHelper) helpers = helpers.Append(pendingHelper);
+        return helpers.Distinct().Select(identity => view.Actors.Single(actor => actor.ActorId == identity))
+            .Select(actor => new FarmTarget(actor.ActorId, actor.DisplayName, FarmTargetKind.Person, actor.Feet));
     }
 }

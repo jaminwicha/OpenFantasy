@@ -18,14 +18,16 @@ internal sealed class FarmEncounterStatus(Label label)
                 : "Recovering · Exploration time restores readiness; injuries remain.",
             EncounterLifecyclePhase.Confrontation => "Encounter · Taking notice",
             EncounterLifecyclePhase.Staging => "Encounter · Holding positions",
-            EncounterLifecyclePhase.Outcome => lifecycle.ReleaseActionHash is not null
+            EncounterLifecyclePhase.Outcome => view.Care is { } care ? DescribeCare(care)
+                : lifecycle.ReleaseActionHash is not null
                 ? "Encounter over · Continue exploring when ready."
                 : "Incapacitated · No aid is available in this encounter.",
             _ => view.Encounter?.PlayerDecisionQueued == true ? "Choice queued · Waiting for resolution"
                 : view.Encounter?.PlayerIsDue == true ? "Choose your action · World waiting"
                 : "Recovering · World time continues until a choice is needed"
         };
-        if (paused) status = lifecycle.Phase == EncounterLifecyclePhase.Exploration
+        if (paused && view.Care is not null) status = "Paused · " + status;
+        else if (paused) status = lifecycle.Phase == EncounterLifecyclePhase.Exploration
             ? "Paused · Exploration held" : "Paused · Encounter held";
         var own = view.EncounterActors.FirstOrDefault(actor => actor.ActorId == view.PlayerActorId);
         string opponents = string.Join(" · ", view.EncounterActors.Where(actor => actor.Side != 0 && actor.Side != own?.Side)
@@ -35,4 +37,12 @@ internal sealed class FarmEncounterStatus(Label label)
         label.TooltipText = $"Remaining recovery: {lifecycle.PlayerRecoveryDelay / 100.0:0.##} seconds of advancing world time. "
             + "Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.";
     }
+
+    private static string DescribeCare(LocalCareView care) => care.Status switch
+    {
+        LocalCareStatus.Available => "Incapacitated · Help is available. Inspect care to continue.",
+        LocalCareStatus.Pending => $"{care.HelperName ?? "Your helper"} is preparing to help · World waiting",
+        LocalCareStatus.NeedsAttention => "Care is interrupted · Help is still needed.",
+        _ => "Incapacitated · Nearby help is unavailable."
+    };
 }

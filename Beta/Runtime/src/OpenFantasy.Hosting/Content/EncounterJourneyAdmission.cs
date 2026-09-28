@@ -23,12 +23,17 @@ public static class EncounterJourneyAdmission
         return Create(new FarmContentFiles(contentRoot), contentRoot, seedText, playerName);
     }
 
-    private static WorldSnapshot Create(FarmContentFiles files, string? contentRoot, string seedText, string playerName)
+    internal static WorldSnapshot Create(FarmContentFiles files, string? contentRoot, string seedText, string playerName,
+        Func<WorldSnapshot, WorldSnapshot>? composeFreshFarm = null)
     {
         WorldSnapshot farm = EncounterFarmBasis.Create(files, contentRoot, seedText, playerName);
         EncounterFarmSources sources = EncounterFarmSources.Load(files);
         WorldSnapshot first = new EncounterFarmWolf(farm, sources, "wolf-first", 256).AddToFreshFarm();
         WorldSnapshot occupied = new EncounterFarmWolf(first, sources, "wolf-second", -256).AddToFreshFarm();
+        if (composeFreshFarm is not null)
+        {
+            occupied = composeFreshFarm(occupied);
+        }
         // All four resident inventories and actor access witnesses exist before the actual
         // source, reservoir and liquid-cell owners bind their complete custody interpretation.
         WorldSnapshot basis = new BreachFarmBuilder(occupied).Build();

@@ -14,7 +14,11 @@ internal static class EncounterActionOffers
         FarmActionScope scope, FarmTarget? selected)
     {
         Dictionary<FarmSemanticAction, FarmActionOffer> offers = [];
-        if (view.IsInEncounter)
+        if (view.Care is { } care)
+        {
+            offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(care, scope, selected);
+        }
+        else if (view.IsInEncounter)
         {
             if (view.EncounterLifecycle?.Phase == EncounterLifecyclePhase.Outcome || view.Encounter!.IsOutcome)
             {
@@ -40,6 +44,40 @@ internal static class EncounterActionOffers
         }
         else return null;
         return new ReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>(offers);
+    }
+
+    private static FarmActionOffer AcknowledgeCare(LocalCareView care, FarmActionScope scope, FarmTarget? selected)
+    {
+        const string detail = "Acknowledge your prior care agreement. This does not restore health or spend a dose; "
+            + "the named helper must administer one real dose in a separate action when the world is ready.";
+        if (care.PendingAcknowledgmentId is not null)
+        {
+            string blocker = care.Status switch
+            {
+                LocalCareStatus.Pending => "Care acknowledged. Waiting for the helper's separate treatment action.",
+                LocalCareStatus.NeedsAttention => "Care needs attention. The helper's treatment is blocked.",
+                _ => "Care acknowledged, but the helper cannot currently administer treatment."
+            };
+            return new(FarmSemanticAction.AcknowledgeCare, scope, "Acknowledge care", care.HelperName ?? "Care helper",
+                care.HelperActorId, FarmActionOffers.NoCost, "", null, blocker, detailText: detail);
+        }
+
+        // A lingering opponent selection is not a care-helper selection. One named agreement is
+        // unambiguous; explicit person selection and multiple agreements never silently fall back.
+        LocalCareAcknowledgmentView[] choices = care.Offers.Where(offer => offer.HelperActorId == selected?.Id).ToArray();
+        if (choices.Length == 0 && (selected is null || selected.Kind == FarmTargetKind.Encounter))
+        {
+            choices = care.Offers.ToArray();
+        }
+        LocalCareAcknowledgmentView? choice = choices.Length == 1 ? choices[0] : null;
+        string? unavailable = choice is null
+            ? choices.Length > 1 ? "Choose one care helper with an unambiguous prior agreement."
+                : "Choose a helper with a prior care agreement."
+            : !choice.CanAcknowledge ? "This helper cannot currently provide the agreed care." : null;
+        return new(FarmSemanticAction.AcknowledgeCare, scope, "Acknowledge care",
+            choice?.HelperName ?? selected?.Name ?? "Care helper", choice?.HelperActorId ?? selected?.Id,
+            FarmActionOffers.NoCost, "Care acknowledged; treatment has not yet been administered.",
+            unavailable is null ? choice!.Intent : null, unavailable, detailText: detail);
     }
 
     private static FarmActionOffer Strike(LocalWorldView view, FarmActionScope scope, FarmTarget? selected)

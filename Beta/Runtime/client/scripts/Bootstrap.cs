@@ -43,6 +43,7 @@ public partial class Bootstrap : Control
             or ["--farm-action-offers", _, _, "--background-render"]
             or ["--encounter-probe", _, _, "fresh" or "duel" or "reopen", "--background-render"]
             or ["--encounter-defeat-probe", _, _, "fresh" or "reopen", "--background-render"]
+            or ["--care-probe", _, _, "wheel" or "keyboard" or "controller" or "pointer" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -58,7 +59,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--encounter-defeat-probe", var defeatSave, var defeatReport, var defeatMode]
+        if (arguments is ["--care-probe", var careSave, var careReport, var careMode]
+            && careMode is "wheel" or "keyboard" or "controller" or "pointer" or "reopen")
+        {
+            if (File.Exists(careSave) != (careMode == "reopen"))
+            {
+                GD.PushError("The care probe requires a fresh path or its exact retained save.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { CareProfile = true, SavePathOverride = careSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new CarePlayProbe(game, careReport, careMode));
+        }
+        else if (arguments is ["--encounter-defeat-probe", var defeatSave, var defeatReport, var defeatMode]
             && defeatMode is "fresh" or "reopen")
         {
             if (File.Exists(defeatSave) == (defeatMode == "fresh"))
@@ -257,6 +272,10 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else if (arguments is ["--care"])
+        {
+            AddChild(new FarmGame { CareProfile = true });
         }
         else if (arguments is ["--encounters"])
         {

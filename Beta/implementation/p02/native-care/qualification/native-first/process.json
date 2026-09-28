@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "--headless",
+    "--path",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+    "--",
+    "--care-probe",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-first/world.sqlite",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-first/journey.json",
+    "wheel",
+    "--background-render"
+  ],
+  "exit": -6,
+  "seconds": 1.2194992499426007,
+  "errors": true
+}

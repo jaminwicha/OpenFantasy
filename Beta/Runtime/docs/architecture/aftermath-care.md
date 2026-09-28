@@ -10,8 +10,9 @@ Fresh admission excludes earned care/material/resource history. Recovery replays
 acknowledgment and treatment commands, preserving a pending obligation and its existing terminal
 acknowledgment receipt. Reopening grants no helper action, fabricated dose or treatment receipt.
 The [archive contract](resource-archive-continuation.md) retains older causal resource evidence.
-The local session binds patient acknowledgment and host-helper selection separately. Native controls
-and explicit fresh content admission require their own presentation and composition contracts.
+The local session binds patient acknowledgment and host-helper selection separately. The
+[native controls](native-encounters.md#care-interaction) capture that acknowledgment without granting
+the patient control over the helper.
 
 A `CareAgreement` names the patient, helper and permitted remedy before treatment. An
 `AcknowledgeCareIntent` records the patient's controller acknowledging an exact incapacitating
@@ -82,6 +83,23 @@ quantities or provenance. The projection grants no physical action to an incapac
 a general perception, consent or medical UI model.
 
 ## Canonical scope and extension boundaries
+
+[CareJourneyAdmission](../../src/OpenFantasy.Hosting/Content/CareJourneyAdmission.cs) explicitly
+creates a fresh care-enabled encounter journey. It composes finite custody and helper placement before
+geography binds the complete root, then admits care and resource history through `WorldCareAdmission`.
+The ordinary encounter selection retains its own profile and admission bytes. Opening a care world
+checks the selected world, branch, profile and admission; it never upgrades a lived encounter save.
+
+[CareFarmSources](../../src/OpenFantasy.Hosting/Content/CareFarmSources.cs) pins the retained item
+packet and original item/recipe files, including Potion's 40 HP effect and `craft_potion`'s three berries
+to one Potion. [CareFarmBuilder](../../src/OpenFantasy.Hosting/Content/CareFarmBuilder.cs) gives Wren
+two raw Potions and six berries with actual source rights and storage capacity. There is no earned
+crafted stock. Physical calibration conserves all three admitted berry units' mass and volume in one
+dose, without inventing a vessel. This calibration is distinct from the original recipe payload.
+Wren's authored home lies one cell north of the player with zero wander radius, admitted body clearance
+and a 256-subunit remedy reach. His existing control, dialogue and quest roles remain intact; combat
+statistics and abilities retain their original source witnesses. These are fresh scenario parameters,
+not universal helper behavior, medical range or resource supply rules.
 
 Fresh composition requires an unearned encounter/material basis and pins its complete basis with
 the care definitions. `CareCodecV1`, `WorldActionCodecV13`, `WorldStepCodecV25` and

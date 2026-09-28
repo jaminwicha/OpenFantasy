@@ -1,0 +1,84 @@
+{
+  "status": "passed-scoped-increment",
+  "sourceHead": "74eb231053627551af4a23dadeabadfe54e69562",
+  "checkpoint": "codex/checkpoint-before-native-care-20260927T225315Z",
+  "milestone": "codex/milestone-native-care",
+  "finishedUtc": "2026-09-28T00:17:33.268067+00:00",
+  "managed": {
+    "passed": 291,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "All Client, Content, Simulation and Care namespaces in Hosting.Tests",
+    "trx": "regression/_mac_2026-09-27_19_04_47_net8.0.trx",
+    "earlierFocusedPassed": 54,
+    "fullSuiteRerun": false,
+    "retainedPriorQualification": "care-session:1355 Core/707 Hosting; Core/storage code unchanged",
+    "changesAfterManagedRegression": [
+      "Beta/Runtime/client/scripts/CarePlayProbe.cs"
+    ],
+    "finalBuild": "build-05.log",
+    "warnings": 0,
+    "errors": 0
+  },
+  "native": {
+    "finalRenderedReport": "native-rendered-02.json",
+    "controls": [
+      "wheel",
+      "keyboard",
+      "controller",
+      "pointer"
+    ],
+    "nativeProcesses": 8,
+    "recordedHistoryProcesses": 16,
+    "pausedReopens": 4,
+    "observedFocusRequests": 0,
+    "observedNativeFocus": false,
+    "earlierHeadlessReport": "native-headless-01.json",
+    "originalProfile24Regression": "original-defeat-regression.json",
+    "originalReconstructedRoots": 193,
+    "limitsSeconds": {
+      "process": 180,
+      "probe": 150,
+      "history": 30
+    },
+    "sameSixApplicationDllsAfterValidation": true
+  },
+  "sourceManifests": [
+    "source-before-validation.json",
+    "source-final.json"
+  ],
+  "sourceFileCount": 1042,
+  "preservation": {
+    "frozenSpecCount": 23,
+    "earlierMilestones": 57,
+    "predecessorStagedFiles": 19,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "checkpointVerified": true
+  },
+  "architecture": {
+    "sameChangePages": [
+      "aftermath-care.md",
+      "native-encounters.md",
+      "encounter-lifecycle.md",
+      "persistence-and-history.md"
+    ],
+    "localLinksChecked": 661,
+    "brokenLinks": 0
+  },
+  "artifacts": {
+    "archive": "native-evidence.tar.gz",
+    "archiveSha256": "5fbf9b819e8824c9d6601ef7f251ed078c602bbed1c422ae04b291523490bea4",
+    "files": 173,
+    "archiveBytes": 4072358,
+    "everyMemberVerified": true
+  },
+  "critic": "../REVIEW.md",
+  "failedAttempts": "../FAILURES.md",
+  "limitations": [
+    "Native paths use raw stock; managed tests also exercise crafted stock.",
+    "Native reopen proves completed treatment, not pending helper restart.",
+    "Background renders and injected events do not close human, physical device, OS foreground focus, art or platform gates.",
+    "No ordinary medical, continuation/lifetime, production performance or full phase claim.",
+    "No paid Claude request retried; no credit savings claimed."
+  ]
+}

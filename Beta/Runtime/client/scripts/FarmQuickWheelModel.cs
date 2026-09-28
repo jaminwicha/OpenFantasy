@@ -18,7 +18,8 @@ internal sealed class FarmQuickWheelModel
     {
         _view = Array.AsReadOnly(_slots);
         FarmSemanticAction[] order = offers.Keys.Any(IsEncounterAction)
-            ? [FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike, FarmSemanticAction.Wait, FarmSemanticAction.ReleaseEncounter]
+            ? [FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike, FarmSemanticAction.Wait,
+                offers.ContainsKey(FarmSemanticAction.AcknowledgeCare) ? FarmSemanticAction.AcknowledgeCare : FarmSemanticAction.ReleaseEncounter]
             : offers.ContainsKey(FarmSemanticAction.Excavate)
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
             : Order;
@@ -32,7 +33,8 @@ internal sealed class FarmQuickWheelModel
     }
 
     internal static bool IsEncounterAction(FarmSemanticAction action) => action is FarmSemanticAction.EnterEncounter
-        or FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter;
+        or FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter
+        or FarmSemanticAction.AcknowledgeCare;
 
     internal void Select(int index)
     {

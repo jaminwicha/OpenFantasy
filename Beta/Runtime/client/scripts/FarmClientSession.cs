@@ -86,6 +86,10 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal static Task<FarmClientSession> OpenEncounterAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
         OpenSelection(savePath, EncounterJourneyAdmission.CreateEmbedded(seedText, playerName)));
 
+    /// <summary>Opens the care-enabled journey explicitly, without upgrading an earlier encounter save.</summary>
+    internal static Task<FarmClientSession> OpenCareAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+        OpenSelection(savePath, CareJourneyAdmission.CreateEmbedded(seedText, playerName)));
+
     private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);

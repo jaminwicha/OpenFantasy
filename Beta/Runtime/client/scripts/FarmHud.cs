@@ -75,6 +75,7 @@ internal sealed partial class FarmHud : CanvasLayer
         BindOfferButton(FarmSemanticAction.Strike, GetNode<Button>("%Strike"));
         BindOfferButton(FarmSemanticAction.Wait, GetNode<Button>("%Wait"));
         BindOfferButton(FarmSemanticAction.ReleaseEncounter, GetNode<Button>("%ReleaseEncounter"));
+        BindOfferButton(FarmSemanticAction.AcknowledgeCare, GetNode<Button>("%AcknowledgeCare"));
         _pause.Pressed += () => Request(FarmSemanticAction.TogglePause);
         _preview.Text = InspectHint;
     }
@@ -125,11 +126,12 @@ internal sealed partial class FarmHud : CanvasLayer
         PresentOffer(FarmSemanticAction.Craft, "C", blockedByLayer: pending || paused || speaking);
         PresentOffer(FarmSemanticAction.CloseDialogue, "E", blockedByLayer: pending || paused || !speaking);
         foreach (FarmSemanticAction action in new[] { FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike,
-            FarmSemanticAction.Wait, FarmSemanticAction.ReleaseEncounter })
+            FarmSemanticAction.Wait, FarmSemanticAction.ReleaseEncounter, FarmSemanticAction.AcknowledgeCare })
             PresentOffer(action, action == FarmSemanticAction.Wait ? "G" : "E", pending || paused || speaking);
         _encounter.Present(view, paused);
         GetNode<Label>("Root/Footer/Column/Actions/Movement").Text = view.Encounter?.IsOutcome == true
-            ? view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
+            ? view.Care is { } care ? CareHint(care.Status)
+                : view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
                 : "Incapacitated\nAid unavailable"
             : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait" : "Move\nWASD / arrows";
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
@@ -181,7 +183,7 @@ internal sealed partial class FarmHud : CanvasLayer
         }
         button.Visible = true;
         button.Text = action is FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike
-            or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter ? $"[{key}]"
+            or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter or FarmSemanticAction.AcknowledgeCare ? $"[{key}]"
             : offer.SpendsSomething ? $"{offer.Label}  [{key}]\n{offer.CostText}" : $"{offer.Label}  [{key}]";
         button.Disabled = blockedByLayer || !offer.CanExecute;
         button.TooltipText = Explain(offer);
@@ -208,6 +210,14 @@ internal sealed partial class FarmHud : CanvasLayer
         }
         return text;
     }
+
+    private static string CareHint(LocalCareStatus status) => status switch
+    {
+        LocalCareStatus.Available => "Help is available\nE / A: care · V: inspect",
+        LocalCareStatus.Pending => "Care pending\nV: inspect",
+        LocalCareStatus.NeedsAttention => "Care interrupted\nV: inspect",
+        _ => "Aid unavailable\nV: inspect"
+    };
 
     private static string DescribeSpeech(LocalWorldView view, LocalDialogueView dialogue, LocalConstructionView? project)
     {

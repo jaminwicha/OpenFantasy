@@ -23,7 +23,8 @@ internal sealed partial class FarmWheelDisc : Control
             (FarmSemanticAction.Craft, "craft"), (FarmSemanticAction.Give, "give"),
             (FarmSemanticAction.Excavate, "excavate"), (FarmSemanticAction.Traverse, "traverse"),
             (FarmSemanticAction.EnterEncounter, "engage"), (FarmSemanticAction.Strike, "strike"),
-            (FarmSemanticAction.Wait, "wait"), (FarmSemanticAction.ReleaseEncounter, "leave")
+            (FarmSemanticAction.Wait, "wait"), (FarmSemanticAction.ReleaseEncounter, "leave"),
+            (FarmSemanticAction.AcknowledgeCare, "care")
         }) _icons[action] = GD.Load<Texture2D>($"res://assets/ui/{name}.svg");
     }
 
@@ -127,7 +128,8 @@ internal sealed partial class FarmWheelDisc : Control
                 FarmSemanticAction.Craft => "Craft", FarmSemanticAction.Give => "Give",
                 FarmSemanticAction.Excavate => "Mine", FarmSemanticAction.Traverse => "Climb",
                 FarmSemanticAction.EnterEncounter => "Engage", FarmSemanticAction.Strike => "Strike",
-                FarmSemanticAction.Wait => "Wait", FarmSemanticAction.ReleaseEncounter => "Continue", _ => "Action"
+                FarmSemanticAction.Wait => "Wait", FarmSemanticAction.ReleaseEncounter => "Continue",
+                FarmSemanticAction.AcknowledgeCare => "Care", _ => "Action"
             };
             float width = font.GetStringSize(label, fontSize: 16).X;
             DrawString(font, at + new Vector2(-width / 2, 31), label, fontSize: 16, modulate: new Color(0.94f, 0.91f, 0.81f));

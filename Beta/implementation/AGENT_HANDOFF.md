@@ -42,6 +42,36 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Fresh care content and native interaction](p02/native-care/README.md) explicitly admits a profile25
+journey with original Potion/recipe witnesses, two real doses and six berries in Wren's custody,
+and physically reachable fresh helper placement. Original combat stats and the profile24 fingerprint
+remain unchanged. `tools/play.py --care` selects a separate save. Contextual Interact, icon and wheel
+capture exact patient acknowledgment; separate Host-helper treatment spends one real dose and resumes
+the same encounter. Pending/blocked status, privacy, stale offers, cancellation and focus rules remain
+explicit. Architecture references are updated in the same change, with progress confined to this packet.
+
+[Verification](p02/native-care/qualification/verification.json) records a clean build and all 291 affected
+client/content/session/care tests passing, zero failures/skips. Final rendered wheel, keyboard,
+focused-controller-button and pointer journeys pass 8 native processes plus 16 recorded Host reads;
+all 4 paused reopens preserve exact state. The original profile24 native defeat/independent-oracle
+regression also passes. Final native binaries are pinned. The full earlier Core/storage qualification
+is retained, not misreported as rerun. The probe's initial pointer/HUD synchronization failure and
+build/sandbox failures are retained with unchanged deadlines. One native critic reviewed source,
+documentation and verification scope. No paid Claude retry ran.
+
+Preserved on `codex/milestone-native-care`; pre-change checkpoint
+`codex/checkpoint-before-native-care-20260927T225315Z` resolves to `74eb231`. All 23 frozen specs,
+57 earlier milestones and the unrelated 19-file predecessor index remain intact; 661 architecture links
+resolve. 173 native evidence files are archived with verified hashes. Current art/nameplate presentation
+remains provisional; controlled renders do not close human/physical, export or performance gates.
+
+**Next dependency:** pending-care/currency corruption and treatment→later funded reward/refill→attack
+integration combinations; ordinary care policy, native crafted-stock/pending-care journeys, care/material
+continuation and full journal lifetime as their prerequisites permit. Native completed-treatment reopening
+is proven; native pending-treatment reopening is not. All broader phase gates remain open.
+
+### Earlier retained increments
+
 [Care session and combined archive publication](p02/care-session/README.md) binds the patient's exact
 acknowledgment to one terminal receipt and selects real Host-helper treatment at a later ready cutoff.
 The helper uses its own admitted control. Pending care survives pause/reopen without free time or work;
@@ -59,13 +89,11 @@ Preserved on `codex/milestone-care-session`. Pre-change checkpoint:
 `codex/checkpoint-before-care-session-20260927T212325Z` at `daca1b4`. All 23 frozen specs, 56 earlier
 milestones and the unrelated 19-file predecessor index remain intact; 654 architecture links resolve.
 
-**Next dependency:** explicit fresh care-enabled content admission and actual client/Godot offers,
+**Dependency recorded at this earlier checkpoint:** explicit fresh care-enabled content admission and actual client/Godot offers,
 wheel/input/status/icon routing, followed by native and physical/human validation. Retain pending-care/
 currency corruption and treatment→later funded reward/refill→attack trace combinations. Ordinary medical
 policies, other owner continuation, full journal lifetime, production scale and all broader phase gates
 remain open. No paid Claude request was retried; prior external friction/authorization remains below.
-
-### Earlier retained increments
 
 [Durable resource archives](p02/durable-resource-archives/README.md) now bind schema 7/profile 25 to
 atomic archive/successor publication, exact stored-byte replay, raw/crafted care recovery and separate

@@ -1,0 +1,270 @@
+{
+  "status": "passed",
+  "rendered": false,
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch",
+  "runs": [
+    {
+      "label": "fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--encounter-defeat-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/journey.json",
+        "fresh",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "exitCode": 0,
+      "seconds": 13.410157999955118,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/fresh.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/fresh.stderr.log"
+    },
+    {
+      "label": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--encounter-defeat-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/journey.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "exitCode": 0,
+      "seconds": 3.7028222079388797,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/reopen.stderr.log"
+    },
+    {
+      "label": "recorded-1",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/world.sqlite",
+        "1"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 0.7831001253798604,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-1.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-1.stderr.log"
+    },
+    {
+      "label": "recorded-2",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/world.sqlite",
+        "2"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 0.7730367495678365,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-2.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-2.stderr.log"
+    },
+    {
+      "label": "recorded-3",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/world.sqlite",
+        "3"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 0.7751828753389418,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-3.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-3.stderr.log"
+    },
+    {
+      "label": "recorded-4",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/world.sqlite",
+        "4"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 0.779261542018503,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-4.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-4.stderr.log"
+    },
+    {
+      "label": "recorded-194",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/world.sqlite",
+        "194"
+      ],
+      "timeoutSeconds": 30,
+      "exitCode": 0,
+      "seconds": 0.7696871659718454,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-194.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-care/qualification/native-encounter-defeat-u4ekv4ch/recorded-194.stderr.log"
+    }
+  ],
+  "startedUtc": "2026-09-28T00:13:54.575324+00:00",
+  "scope": "Original-source native Wait and actual player incapacity, blocked outcome input, exact second-process paused reopen; no invented release/recovery or physical-device/art acceptance",
+  "inputFormsReached": [
+    "wheel",
+    "keyboard-g",
+    "controller-x",
+    "pointer-button"
+  ],
+  "oracle": {
+    "entryRevision": 2,
+    "finalRevision": 194,
+    "finalHash": "973ed0f4322012e326cb19183ac64dd24be386b7345752dea05defb6c2268bcf",
+    "reconstructedEncounterRoots": 193,
+    "preEntryOrdinarySteps": 1,
+    "playerId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+    "wolfId": "6e639095512c3b072f23995b90271601",
+    "playerWaitsQueued": 7,
+    "playerWaitsResolved": 7,
+    "waits": [
+      {
+        "revision": 8,
+        "commandId": "3f620ac702c892e3c27c421713635cfe",
+        "delay": 125
+      },
+      {
+        "revision": 35,
+        "commandId": "8a77c8e95a46ddc5d0f57d971d63287b",
+        "delay": 125
+      },
+      {
+        "revision": 64,
+        "commandId": "091e6485d08f951492a6f9dbb688f464",
+        "delay": 125
+      },
+      {
+        "revision": 93,
+        "commandId": "d50113f448ddd313ad056c05133d826a",
+        "delay": 125
+      },
+      {
+        "revision": 122,
+        "commandId": "1ccac7c9f6d1d984eda9fda83c9eaae4",
+        "delay": 125
+      },
+      {
+        "revision": 151,
+        "commandId": "fe872c86cf6636e885aed48c589d109a",
+        "delay": 125
+      },
+      {
+        "revision": 180,
+        "commandId": "01f6a7ed0889dc9fc9f79cde1362b592",
+        "delay": 125
+      }
+    ],
+    "wolfDamage": [
+      {
+        "revision": 7,
+        "damage": 9,
+        "hpBefore": 60,
+        "hpAfter": 51,
+        "delay": 134
+      },
+      {
+        "revision": 39,
+        "damage": 10,
+        "hpBefore": 51,
+        "hpAfter": 41,
+        "delay": 134
+      },
+      {
+        "revision": 70,
+        "damage": 10,
+        "hpBefore": 41,
+        "hpAfter": 31,
+        "delay": 134
+      },
+      {
+        "revision": 101,
+        "damage": 10,
+        "hpBefore": 31,
+        "hpAfter": 21,
+        "delay": 134
+      },
+      {
+        "revision": 132,
+        "damage": 9,
+        "hpBefore": 21,
+        "hpAfter": 12,
+        "delay": 134
+      },
+      {
+        "revision": 163,
+        "damage": 10,
+        "hpBefore": 12,
+        "hpAfter": 2,
+        "delay": 134
+      },
+      {
+        "revision": 194,
+        "damage": 2,
+        "hpBefore": 2,
+        "hpAfter": 0,
+        "delay": 134
+      }
+    ],
+    "tacticalTicks": 162,
+    "retainedActors": 4,
+    "sourceContentSha256": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b",
+    "commandReceipts": 15,
+    "identities": 225,
+    "boundaryHashes": {
+      "1": "b92f5f20af2aadaa0b7e074f38088762d14a9eea1239c9ec427cf9862fb71244",
+      "2": "0825fff9038f4f31535d97b1d4bc7cf99fa055682cf99be55f8dccbb111064e3",
+      "3": "9adc25c3d719eca9dae6d8f9867d254a5e2a8f4bf4fc8dd691d0b3ebcf771a95",
+      "4": "bf9c57ddc98e37117b3c7b5c6150c520a58ca480c875020be4006b1a85c6dba1",
+      "194": "973ed0f4322012e326cb19183ac64dd24be386b7345752dea05defb6c2268bcf"
+    },
+    "limitation": "Pre-entry NPC movement is verified by real Host replay and the exact pre-entry root pin; only entry onward is independently reconstructed."
+  },
+  "exactRecordedBoundaries": [
+    1,
+    2,
+    3,
+    4,
+    194
+  ],
+  "originalProjectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "artifactSha256": {
+    "native-encounter-defeat-u4ekv4ch/fresh.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-u4ekv4ch/fresh.stdout.log": "d722d7c49f13b611a1d129fd1dc422351e1c0ff6b1976ee90eaff97d8394d908",
+    "native-encounter-defeat-u4ekv4ch/journey.fresh.json": "32f19fed79475a7be2fdc9a7f3b394d5305833254675686ff34bda31b73c4f9a",
+    "native-encounter-defeat-u4ekv4ch/journey.reopen.json": "a8adfc72f65625a0ce2175bfc407b08afed073106f9c9e7a303f849ee3d8547e",
+    "native-encounter-defeat-u4ekv4ch/recorded-1.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-u4ekv4ch/recorded-1.stdout.log": "f3caf6c5c3e04f6489a0e2795254e322fe93742f6a37accadde4f595fe9157b5",
+    "native-encounter-defeat-u4ekv4ch/recorded-194.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-u4ekv4ch/recorded-194.stdout.log": "f17888db0dfe0549365d9e9096c5fd56be674b1fd923664c6ddf3ad922c3470d",
+    "native-encounter-defeat-u4ekv4ch/recorded-2.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-u4ekv4ch/recorded-2.stdout.log": "2475069575dcd04ee83e88b4efef9a7369e79449e3b86e094e83f1dbc30227f2",
+    "native-encounter-defeat-u4ekv4ch/recorded-3.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-u4ekv4ch/recorded-3.stdout.log": "e7e5977139579b377af421ebd1bdfaf7344dc7987f6d493d921f37f72822fc69",
+    "native-encounter-defeat-u4ekv4ch/recorded-4.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-u4ekv4ch/recorded-4.stdout.log": "86ed70c41051681543f9169a971f6941b118baeaf82585de9340969da612eb1c",
+    "native-encounter-defeat-u4ekv4ch/reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-encounter-defeat-u4ekv4ch/reopen.stdout.log": "d722d7c49f13b611a1d129fd1dc422351e1c0ff6b1976ee90eaff97d8394d908",
+    "native-encounter-defeat-u4ekv4ch/world.sqlite": "7a8c8cc85eb20e19835ffcf249cff1ef1446326cd3156b7d20b79e210180cd82"
+  },
+  "finishedUtc": "2026-09-28T00:14:16.782931+00:00"
+}

@@ -181,3 +181,9 @@ dry actors outside nominal wet volumes; it does not integrate occupied wet passa
 settlement, general staging movement, encounter joining/merging, independent co-op, broader effects or
 death/reward systems. Native battle controls, choreography, animation and presentation have separate
 contracts. A successful in-place transition makes no claim about those wider mechanisms.
+
+The explicit [care journey](aftermath-care.md#canonical-scope-and-extension-boundaries) composes a
+fresh profile-twenty-five world over these encounter rules, retaining original combat statistics and
+adding finite remedy stock and prior care permission. Its native selection uses a separate save and
+refuses an incompatible earlier encounter selection. Care acknowledgment and helper treatment use
+their own complete-world boundaries; neither fabricates an encounter release or elapsed time.

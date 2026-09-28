@@ -21,7 +21,8 @@ refusal; inspection cannot silently choose a different target or episode.
 
 [FarmInputRouter](../../client/scripts/FarmInputRouter.cs) owns a distinct encounter input context.
 Ordinary movement and farming do not reach the host while that context is active. The same Interact
-intention selects entry, strike or outcome release as appropriate; Alternate action selects Wait.
+intention selects entry, strike, outcome release or care acknowledgment as appropriate; Alternate
+action selects Wait only in its applicable combat context.
 Target cycling identifies actual observed opponents. Clearing a selection allows the sole opposing
 actor to be selected contextually, without reinterpreting an explicitly selected different target.
 
@@ -33,6 +34,29 @@ offers between HUD and hotkeys, while the host independently validates submitted
 The encounter hold is a world rule, not a UI pause. Opening pack or wheel leaves readiness unchanged.
 Explicit pause and window focus use the existing local host readiness policy. Held navigation directions
 must be released after a blocking context before they can become world movement again.
+
+## Care interaction
+
+The public [care projection](aftermath-care.md#local-session-and-public-observations) takes precedence
+over ordinary outcome actions. `EncounterActionOffers` captures the exact agreement, episode, lifecycle
+revision and action hash. Its explanation distinguishes acknowledgment from later treatment and dose
+consumption. Available, unavailable, pending and attention-required care remain visible for inspection;
+a blocked offer grants no command. Strike, Wait, exploration release and ordinary farm actions are
+excluded while this care context owns input.
+
+An explicitly selected person must match the helper. With no person selected, a sole applicable offer
+can name its helper even if the old opponent remains selected. Multiple agreements are not silently
+ranked or substituted; ambiguous care remains blocked. Target cycling includes the publicly named
+helper without exposing private inventory, credentials or material provenance.
+
+The four-slot encounter wheel assigns its fourth slot to care when constructed from care offers.
+That draft retains its action, helper and exact acknowledgment tokens. A later refresh can block it,
+but cannot turn it into Continue or Strike. Cancellation and focus loss discard the draft without
+acknowledgment. The care icon and hover/focus text share the same presented offer as contextual
+Interact. A successful acknowledgment receipt says only that acknowledgment committed and care is
+pending. Health restoration and completion of care appear after the separate helper transaction.
+An explicitly selected helper retains its observed position after care completes; losing an applicable
+action does not make that person disappear or silently select an opponent.
 
 ## Presentation and persistence
 

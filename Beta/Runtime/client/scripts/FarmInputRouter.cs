@@ -55,6 +55,7 @@ internal enum FarmSemanticAction
     Strike,
     Wait,
     ReleaseEncounter,
+    AcknowledgeCare,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -86,6 +87,7 @@ internal readonly record struct FarmInputSituation(bool SessionOpen, bool Readin
     internal bool IsInEncounter { get; init; }
     internal bool HasEncounterEntry { get; init; }
     internal bool IsEncounterOutcome { get; init; }
+    internal bool HasCareAcknowledgment { get; init; }
 }
 
 /// <summary>One discrete device event translated to the routed action names it matches.</summary>
@@ -226,6 +228,10 @@ internal sealed class FarmInputRouter
             FarmSemanticAction.CloseWheel => layer == FarmInputLayer.Wheel,
             FarmSemanticAction.ConfirmWheel => layer == FarmInputLayer.Wheel && !Paused
                 && !situation.ActionPending && !situation.ReadingHold,
+            FarmSemanticAction.AcknowledgeCare => layer == FarmInputLayer.Encounter
+                && situation.HasCareAcknowledgment && !situation.ActionPending,
+            FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter
+                when situation.HasCareAcknowledgment => false,
             _ => !situation.ActionPending && LayerAccepts(layer, action),
         };
     }
@@ -258,7 +264,9 @@ internal sealed class FarmInputRouter
         FarmSemanticAction requested = Resolve(Layer(situation), signal.Actions);
         if (requested == FarmSemanticAction.Speak && situation.HasEncounterEntry)
             requested = FarmSemanticAction.EnterEncounter;
-        if (requested == FarmSemanticAction.Strike && situation.IsEncounterOutcome)
+        if (requested == FarmSemanticAction.Strike && situation.HasCareAcknowledgment)
+            requested = FarmSemanticAction.AcknowledgeCare;
+        else if (requested == FarmSemanticAction.Strike && situation.IsEncounterOutcome)
             requested = FarmSemanticAction.ReleaseEncounter;
         return new FarmInputDecision(Consumed: true, Permits(situation, requested) ? requested : FarmSemanticAction.None);
     }

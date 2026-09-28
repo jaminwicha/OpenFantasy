@@ -50,7 +50,7 @@ describes shared budgets and atomic validation. `tools/check_material_registry.p
 `OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE` fixtures through the full verifier. This domain composition is
 separate from playable mining, production retirement and durable world admission.
 
-This is the retained development runtime: a portable C# core, shared durable hosting library, headless executable, Godot C# client and executable tests. The native farm now connects player/NPC movement, Wren's original opening dialogue, a finite six-wood handover and save/reopen through one authoritative world. Terrain, bodies, language, custody, dialogue and time persist together. The gathering profile additionally admits real source tools, finite oak/berry reserves, earned effort, depletion and advancing-step regrowth. The production profile turns actual ingredients into rations and recoverable offcuts, retains consumed raw/derived rights, and upgrades an existing gathered save on a verified copy. The quest profile adds source-derived class/stats/XP, finite gil wallets and Wren’s funded six-wood agreement. Acceptance, reserved delivery, 420 XP and 200 gil commit once and survive a preserved upgrade/reopen. The construction profile connects the delivered wood to Wren’s routed movement and 200 authoritative work steps, creating one small physical seedling guard and three offcuts. Work and material geometry persist together; reading holds and pause stop work. Automated native journeys qualify both fresh games and progressed-save continuations. Food use, general building, Wait combat and multiplayer remain pending. The [increment record](../implementation/p01/native-loop/WORLD_CONTRACT.md) and [preparation packet](../implementation/p00/README.md) distinguish measured behavior from full phase exits.
+This is the retained development runtime: a portable C# core, shared durable hosting library, headless executable, Godot C# client and executable tests. The native farm now connects player/NPC movement, Wren's original opening dialogue, a finite six-wood handover and save/reopen through one authoritative world. Terrain, bodies, language, custody, dialogue and time persist together. The gathering profile additionally admits real source tools, finite oak/berry reserves, earned effort, depletion and advancing-step regrowth. The production profile turns actual ingredients into rations and recoverable offcuts, retains consumed raw/derived rights, and upgrades an existing gathered save on a verified copy. The quest profile adds source-derived class/stats/XP, finite gil wallets and Wren’s funded six-wood agreement. Acceptance, reserved delivery, 420 XP and 200 gil commit once and survive a preserved upgrade/reopen. The construction profile connects the delivered wood to Wren’s routed movement and 200 authoritative work steps, creating one small physical seedling guard and three offcuts. Work and material geometry persist together; reading holds and pause stop work. Automated native journeys qualify both fresh games and progressed-save continuations. Food use, general building and multiplayer remain pending; separate encounter and care launch routes are described below. The [increment record](../implementation/p01/native-loop/WORLD_CONTRACT.md) and [preparation packet](../implementation/p00/README.md) distinguish measured behavior from full phase exits.
 
 ## Build and verify
 
@@ -363,8 +363,8 @@ Wait choices; selected tactical ticks earn 50 ms, with gathering recovery and ac
 at complete 1,800 ms process boundaries. No elapsed time comes from a decision hold or restart.
 
 Read [world pacing](docs/architecture/world-pacing.md) for canonical bytes, schema five, queue receipts,
-process carry and session selection. This is a durable timing integration, not an ordinary playable
-combat entry: staging, release and native battle presentation remain separate work. It neither
+process carry and session selection. This operator creates the durable timing profile. Playable staging, release and native controls
+are composed by the separate encounter journey described below. It neither
 changes the normal farm launch nor migrates existing saves.
 `OPENFANTASY_ENCOUNTER_PACING_EVIDENCE` exports the managed fixture consumed by
 `tools/check_live_encounter_pacing.py` for independent full-state, SQLite and external-kill checks.
@@ -376,7 +376,8 @@ Squire-versus-Bramble-Wolf encounter, with Wren as a coupled quest-bearing bysta
 Strike/bite grants, anatomy, range, HP/MP, deterministic damage draws and positive readiness debt share
 the complete farm/terrain/liquid authority. Queue receipts precede resolution; zero HP incapacitates
 without deleting identity or possessions. Outcome holds the encounter with timing/process obligations
-retained. Native attack controls, entry/staging/release, full death and rewards remain separate work.
+retained. The separate encounter journey binds native attack controls and entry/staging/release;
+full death and rewards require broader game contracts.
 
 Read [encounter actions](docs/architecture/encounter-actions.md) for exact rules, source transforms,
 bounded NPC selection and canonical storage. This operator preserves ordinary farm launches and old saves.
@@ -393,8 +394,9 @@ release, restart and another encounter. Ordinary activity respects incapacity an
 
 Read [encounter lifecycle](docs/architecture/encounter-lifecycle.md) for authority-derived episode
 identities, complete dry-world safety, public entry/release observations and retained archive rules.
-This operator does not change the normal native launch or migrate an existing save. Native battle
-controls/choreography, broader effects, general hazard closure and campaign gates remain separate.
+This operator does not change the normal native launch or migrate an existing save. The explicit
+`--encounters` and `--care` launches bind native controls below. Production choreography, broader
+effects, general hazard closure and campaign gates remain separate.
 `OPENFANTASY_ENCOUNTER_LIFECYCLE_EVIDENCE=<directory>` exports the managed lifecycle fixture for
 `tools/check_encounter_lifecycle.py` to reconstruct roots, journals and real entry/release crash recovery.
 
@@ -493,3 +495,19 @@ actual HP changes; acceptance of an attack means queued, not already resolved. T
 and exact paused reopening. Both support `--rendered` with disposable unfocusable startup settings.
 Those checks do not replace human art,
 physical controller, accessibility or production-platform acceptance.
+
+Run `python3 tools/play.py --care` for the explicit care-enabled encounter journey at
+`user://worlds/wrens-care.sqlite`. Wren starts one cell north with two real Potions and six berries;
+the original three-berry Potion recipe and 40 HP effect are source-pinned. Original combat statistics
+remain unchanged. This is a fresh profile selection, not a migration of existing encounter saves.
+After actual defeat, E/A or the care icon acknowledges the prior agreement. V/right-stick click
+opens the wheel for inspection and confirmation. Acknowledgment restores no HP and spends no item;
+Wren must separately administer a real owned dose when the world is ready. The same encounter then
+resumes, retaining combat state and charging the helper's recovery. Pending or blocked care stays
+inspectable. Other actions cannot bypass incapacity. Pause and focus loss retain their existing rules.
+
+`tools/check_native_care.py` drives disposable care journeys through the actual Godot input adapter,
+checks retained transaction boundaries and reopens each saved world in another process. Its
+`--controls all` selects wheel, keyboard, controller-event and pointer-event journeys; `--rendered`
+uses isolated startup no-focus settings and captures images. Injected controls and background renders
+do not establish physical-device, foreground-focus, human art or production-platform acceptance.

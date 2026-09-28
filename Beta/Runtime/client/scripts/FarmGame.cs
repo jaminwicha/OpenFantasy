@@ -38,6 +38,7 @@ public partial class FarmGame : Node2D
     internal bool WatercourseProfile { get; init; }
     internal bool BreachProfile { get; init; }
     internal bool EncounterProfile { get; init; }
+    internal bool CareProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -95,6 +96,12 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (CareProfile)
+        {
+            string careSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-care.sqlite");
+            _opening = FarmClientSession.OpenCareAsync(careSave, "encounter-lifecycle-world", "Traveler");
+            return;
+        }
         if (EncounterProfile)
         {
             string encounterSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-encounters.sqlite");
@@ -164,6 +171,7 @@ public partial class FarmGame : Node2D
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : CareProfile ? "Wren is nearby to help. Q selects a wolf; V inspects actions and their costs."
                     : EncounterProfile ? "Q selects a wolf. E engages; V inspects its actions. Encounters wait for your choice."
                     : BreachProfile ? "Follow the north bank east. Q selects the divider; V opens its mining action."
                     : WatercourseProfile ? "Visit Wren by the rows. Follow the dry bank east to the watercourse."
@@ -273,6 +281,7 @@ public partial class FarmGame : Node2D
         ActionPending: _action is not null || (_session?.World.ReadView().IsResolvingConsequences ?? false))
     { IsInEncounter = _session?.World.ReadView().IsInEncounter ?? false,
         IsEncounterOutcome = _session?.World.ReadView().Encounter?.IsOutcome ?? false,
+        HasCareAcknowledgment = _presented.ContainsKey(FarmSemanticAction.AcknowledgeCare),
         HasEncounterEntry = _presented.ContainsKey(FarmSemanticAction.EnterEncounter) };
 
     private static FarmDirectionalInput ReadWalkingInput()
