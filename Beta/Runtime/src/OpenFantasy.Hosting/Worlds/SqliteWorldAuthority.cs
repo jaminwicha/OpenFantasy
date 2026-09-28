@@ -39,6 +39,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         int schemaVersion = accepted.ProfileVersion switch
         {
+            27 => WorldDatabaseSchemaEight.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,
@@ -132,7 +133,8 @@ public sealed class SqliteWorldAuthority : IDisposable
                 (ulong)prepared.Commands.Count, (ulong)prepared.Stored.AcceptedBatch.Length,
                 (ulong)prepared.Stored.Outcomes.Length,
                 _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
-                _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0));
+                _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0),
+                (ulong)(prepared.MaterialCareArchive?.State.Length ?? 0));
             return prepared.Decision;
         }
     }
@@ -180,13 +182,18 @@ public sealed class SqliteWorldAuthority : IDisposable
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,
                 (ulong)prepared.Stored.AcceptedBatch.Length, (ulong)prepared.Stored.Outcomes.Length,
                 _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
-                _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0));
+                _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0),
+                (ulong)(prepared.MaterialCareArchive?.State.Length ?? 0));
             try
             {
                 _database.WriteCommit(prepared.Stored, transaction);
                 if (prepared.ResourceArchive is { } archive)
                 {
                     _database.WriteResourceArchive(archive, transaction);
+                }
+                if (prepared.MaterialCareArchive is { } materialCareArchive)
+                {
+                    _database.WriteMaterialCareArchive(materialCareArchive, transaction);
                 }
                 foreach (StoredWorldCommandOutcome command in prepared.Commands)
                 {
@@ -292,6 +299,36 @@ public sealed class SqliteWorldAuthority : IDisposable
                 if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
                 {
                     throw new InvalidDataException("Historical reconstruction does not match the pinned live head.");
+                }
+                return recorded;
+            }
+            catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
+            {
+                _requiresRecovery = true;
+                throw;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Retrieves jointly closed material, care and resource history after complete journal verification.
+    /// Privileged operator work under the writer lock; it does not confer player knowledge.
+    /// </summary>
+    public RecordedWorldMaterialCareArchive ReadMaterialCareArchiveForHost(ulong ordinal)
+    {
+        lock (_gate)
+        {
+            EnsureAvailable();
+            if (ordinal >= _usage.MaterialCareArchiveCount)
+            {
+                throw new ArgumentOutOfRangeException(nameof(ordinal), "The requested material and care archive has not been published.");
+            }
+            try
+            {
+                RecordedWorldMaterialCareArchive recorded = new WorldJournalRecovery().ReadMaterialCareArchive(_database, ordinal);
+                if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
+                {
+                    throw new InvalidDataException("Archive retrieval does not match the pinned live head.");
                 }
                 return recorded;
             }

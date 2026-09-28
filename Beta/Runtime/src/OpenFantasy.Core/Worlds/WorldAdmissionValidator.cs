@@ -441,7 +441,7 @@ public static class WorldAdmissionValidator
                 return;
             }
             quests.ValidateForAuthority(world.Inventory, progression);
-            if (quests.Revision > world.Revision || progression.Revision > world.Revision
+            if (quests.Revision > world.MaximumActionRevision || progression.Revision > world.MaximumActionRevision
                 || progression.Currency.Revision > progression.Revision
                 || progression.Actors.Any(actor => actor.Revision > progression.Revision)
                 || progression.Currency.Accounts.Any(account => account.Revision > progression.Currency.Revision))
@@ -498,9 +498,9 @@ public static class WorldAdmissionValidator
                 return;
             }
             production.ValidateForAuthority(world.Inventory);
-            if (production.Revision > world.Revision)
+            if (production.Revision > world.MaximumActionRevision)
             {
-                throw new ArgumentException("Production revisions cannot exceed committed world revisions.");
+                throw new ArgumentException("Production revisions cannot exceed the committed world's action capacity.");
             }
             foreach (CraftRecipeDefinition recipe in production.Recipes)
             {
@@ -511,6 +511,10 @@ public static class WorldAdmissionValidator
                     Definition(binding.Item.DefinitionId, WorldIdentityRole.ItemDefinition, binding.Item.Version);
                     Definition(binding.Physical.DefinitionId, WorldIdentityRole.PhysicalMaterialDefinition, binding.Physical.Version);
                 }
+            }
+            if (production.Continuation is { SupportsCompleteWorld: true } context)
+            {
+                ReadImportedProduction(context);
             }
             foreach (ProductionBatch batch in production.Batches)
             {
@@ -554,6 +558,37 @@ public static class WorldAdmissionValidator
             foreach (TransformedLot lot in production.Lots)
             {
                 Add(lot.LotId, WorldIdentityRole.TransformedLot);
+                Require(lot.CustodianId, WorldIdentityRole.Custodian);
+            }
+        }
+
+        private void ReadImportedProduction(ProductionContinuationContext context)
+        {
+            foreach (var witness in context.Basis.BatchWitnesses)
+            {
+                Add(witness.BatchId, WorldIdentityRole.ProductionBatch, unique: true);
+                Add(witness.CommandId, WorldIdentityRole.CauseReference);
+                Require(witness.ActorId, WorldIdentityRole.Actor);
+                Require(witness.CustodianId, WorldIdentityRole.Custodian);
+                Require(witness.RecipeId, WorldIdentityRole.CraftRecipeDefinition);
+            }
+            foreach (var retired in context.Basis.RawRetirements)
+            {
+                Require(retired.CustodianId, WorldIdentityRole.Custodian);
+                Require(retired.Source.SourceId, WorldIdentityRole.CountedSource);
+            }
+            foreach (var batch in context.ConstructionBatches)
+            {
+                foreach (var ingredient in batch.Ingredients)
+                {
+                    Add(ingredient.LotId, WorldIdentityRole.Lot);
+                    Require(ingredient.Source!.SourceId, WorldIdentityRole.CountedSource);
+                }
+            }
+            foreach (var lot in context.Basis.TransformedLots)
+            {
+                Add(lot.LotId, WorldIdentityRole.TransformedLot);
+                Require(lot.Output.BatchId, WorldIdentityRole.ProductionBatch);
                 Require(lot.CustodianId, WorldIdentityRole.Custodian);
             }
         }

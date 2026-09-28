@@ -40,7 +40,55 @@ Commit `2f91983`, preserved on `codex/milestone-architecture-reference`, records
 project hook. Ecosystem commit `4e83086` records the portable hook and verified five-entrypoint sync.
 All 123 reference links resolve; the bounded factual review corrections are retained in the packet.
 
+## Active assignment
+
+Finish the [coordinated world continuation](p02/coordinated-world-continuation/README.md) campaign.
+Its managed integration is verified below; external recovery exceeded the unchanged 30-second
+bound twice, and native post-cut use/reopening remain unqualified. Normal fresh-game admission
+remains profile26. There are no active worker edit assignments or running qualification processes.
+
+The [recovery profile](p02/coordinated-world-continuation/RECOVERY_FOLLOWUP.md) measured one disposable
+instrumented replay: 29.645 seconds total, with 11.325 seconds in world encoding and 5.946 seconds
+in resource-cause validation. Timings overlap. Source/save hashes and the selected root were preserved.
+Target repeated canonical serialization first, retaining an immutable candidate frame if the bounded
+implementation/review supports it. Do not skip admission checks, trust checkpoints instead of replay,
+raise deadlines or repeat acceptance until one run happens to pass. Take a recoverable checkpoint
+before that major change, then prove exact bytes and unchanged external BeforeCommit/AfterCommit
+recovery before native post-cut qualification. The profiling command is not acceptance.
+
 ## Latest increment
+
+[Coordinated complete-world continuation](p02/coordinated-world-continuation/README.md) adds explicit
+fresh world27 / Host schema8, with Production V9 after a joint material/care/resource cut. It preserves
+the actual profile26 graph: gathering/shared effort, crafting/custody, quests/progression, construction
+and installed backing, wet excavation/liquid, pacing, encounters and both care forms. The world journal
+remains the sole action history. Exact issued source rights, full batch headroom, permanent identities,
+actual retrieved archive bytes and atomic durable publication are retained. Lived saves are not upgraded.
+
+A clean final build and **1,577 full Core +886 full Hosting +2 additional concurrent-builder cases =
+2,465 distinct managed passes**, zero final failures/skips, qualify this bounded scope. The final build
+adds only two test sources; application source and binaries match the full-regression build. All 49
+retained Core/world25/26 frames reproduce exactly (7,206,387 bytes). Actual journeys include 520 finite
+doses with three archives and 80/600 Potions remaining; 520 conserving recrafts and two material-only
+cuts; wet mining/gathering; installed construction; and separately quest-funded concurrent builders
+whose partial work survives a cut/reopen. Later archive damage invalidates earlier-history reads.
+
+Two independent native source critics found continuation defects that Astra corrected and tested.
+Fable's bounded partial delivery used verified Fable/1M/Max (1,595.111 seconds, $16.78311325 client
+estimate); its build commands were denied because absolute paths did not match the relative allowlist.
+No paid retry or credit-savings claim occurred. [Failures](p02/coordinated-world-continuation/FAILURES.md),
+[review](p02/coordinated-world-continuation/REVIEW.md) and [verification](p02/coordinated-world-continuation/qualification/verification.json)
+retain original outcomes. The portable command-matching lesson is committed upstream at `ade87ab`
+and synchronized to three installed skill copies; its optional YAML validator was unavailable.
+
+The managed checkpoint is preserved on `codex/milestone-coordinated-world-managed`; resolve that ref
+for its exact commit. All 72 preceding milestones, 23 frozen specifications and the unrelated 19-file
+predecessor index remain intact. Full external crash/native/production acceptance is explicitly open:
+one BeforeCommit kill was executed, its reopen exceeded 30 seconds twice, and AfterCommit was not
+reached. Full requirements, other physical/transport/registry joins, lifetime scaling, devices,
+multiplayer, art/audio and human acceptance remain required.
+
+### Preceding live-material milestone
 
 [Live material transaction evidence](p02/live-material-evidence/README.md) observes actual accepted
 profile26 actions and reconstructs a selected commit from a fully verified saved journal. Gathering,
@@ -384,7 +432,7 @@ Hosting/client =2,043 passing managed cases, zero failures/skips. The final clea
 affected cases verify the last profile25-only V1 size-reservation adjustment; source manifests
 preserve the distinction from the earlier full regression. Final oracle bytes reproduce exactly.
 Preserved on `codex/milestone-resource-continuation`; pre-change checkpoint is in the packet.
-All23 frozen specs,54 earlier milestones and the unrelated19-file predecessor index are intact.
+All23 frozen specs,54 earlier milestones and the unrelated 19-file predecessor index are intact.
 Architecture references describe the real continuation and retrieval contracts; progress stays here.
 
 **Dependency recorded at this earlier checkpoint:** the [durable integration plan](p02/resource-continuation/DURABLE_INTEGRATION_PLAN.md)
@@ -407,7 +455,7 @@ clean build, full Core rerun and all19 expanded affected journeys. Only profile2
 and its test file changed after the broad Hosting run; the two source manifests preserve that limit.
 The native independent critic found two defects (episode ordinal ownership and malformed actor
 reference handling), both fixed with regressions. Original failed builds/fixtures and review outcomes
-remain retained. All23 frozen specs,53 prior milestones and the unrelated19-file predecessor index
+remain retained. All23 frozen specs,53 prior milestones and the unrelated 19-file predecessor index
 remain unchanged. Architecture references now describe real bindings and keep progress out of the
 encyclopedic pages; the documentation-maintenance hook remains part of every coherent change.
 
@@ -557,7 +605,7 @@ cross-check actual C# candidates. The critic-found arbitrary consumption identit
 construction/restore; the [review](p02/item-consumption/REVIEW.md) retains that finding and test-build
 failures. The final solution build has zero warnings/errors; full regression passes 1,200 Core +
 649 Hosting/client = 1,849 cases, zero failed/skipped. Both V2 and existing V1 independent fixtures
-reproduce exactly. All47 prior milestones,22 frozen specs and the unrelated19-file index are intact.
+reproduce exactly. All47 prior milestones,22 frozen specs and the unrelated 19-file index are intact.
 No full recovery gate closes; this increment includes no new native/crash/production-scale claim.
 Qualified commit `04e6dba` is preserved on `codex/milestone-item-consumption`; development remains
 on `codex/runtime-foundation`.
@@ -583,7 +631,7 @@ source and old rules remain unchanged. The client rebuild is clean; no new full 
 and its exact recorded diagnosis. No deadlines or game rules changed; no external model was invoked.
 
 Qualified commit `04c4ce1` is preserved on `codex/milestone-encounter-choice-validation`. All46 prior
-markers,22 frozen specs and the exact unrelated19-file index remain intact. Development continues on
+markers,22 frozen specs and the exact unrelated 19-file index remain intact. Development continues on
 `codex/runtime-foundation`; retained artifact hashes and693 local documentation links are verified.
 
 Next implement the [finite-aid contract](p02/encounter-choice-validation/RECOVERY_DESIGN.md): a new
@@ -680,7 +728,7 @@ The core/application remain pure C#, with no native/IPC migration.
 
 Qualified commit `60a2463` is preserved on `codex/milestone-encounter-actions`. The old profile22
 external oracle and headless native farm/foundation controls also pass. All43 previous milestones,22
-frozen specifications and the unrelated19-file predecessor index remain preserved; no phase closes.
+frozen specifications and the unrelated 19-file predecessor index remain preserved; no phase closes.
 
 ## Prior live coordinated pacing
 
@@ -707,7 +755,7 @@ closure/fallback, production scale and all campaign gates remain open. No ordina
 [World pacing architecture](../Runtime/docs/architecture/world-pacing.md) records the source bindings.
 
 Qualified commit `9770fa5` is preserved on `codex/milestone-live-encounter-pacing`. Development remains
-on `codex/runtime-foundation`; all42 earlier markers,22 frozen designs and the unrelated19-file
+on `codex/runtime-foundation`; all42 earlier markers,22 frozen designs and the unrelated 19-file
 predecessor index are preserved. The core/application remain pure C#, with no native/IPC migration.
 
 ## Prior portable timing
@@ -739,7 +787,7 @@ alternatives remain research only. [Architecture](../Runtime/docs/architecture/l
 records the player/presentation boundary.
 
 Qualified commit `e45eec1` is preserved on `codex/milestone-native-terrain-breach`; development stays
-on `codex/runtime-foundation`. All40 earlier markers,22 frozen specs and the unrelated19-file
+on `codex/runtime-foundation`. All40 earlier markers,22 frozen specs and the unrelated 19-file
 predecessor index remain unchanged. No full phase closes at this checkpoint.
 
 ## Prior terrain/liquid breach

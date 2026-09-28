@@ -159,4 +159,7 @@ internal sealed record PreparedWorldCommit(WorldStepDecision Decision, byte[] Ca
 {
     internal StoredWorldResourceArchive? ResourceArchive { get; } = Decision.SealedResourceSegment is { } segment
         ? new(segment.Reference, Stored.Sequence, segment.Encode()) : null;
+
+    internal StoredWorldMaterialCareArchive? MaterialCareArchive { get; } = Decision.SealedMaterialCareSegment is { } segment
+        ? new(segment.Reference, Stored.Sequence, segment.Encode()) : null;
 }

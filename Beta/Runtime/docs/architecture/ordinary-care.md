@@ -82,7 +82,7 @@ ordinary advancing command or a zero-time Care batch to bypass encounter timing.
 ## Public controls and patient-owned permission
 
 [LocalRestorativeView](../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeView.cs), exposed as
-`LocalWorldView.Restorative`, projects the profile26 player's known self-use policies and permissions
+`LocalWorldView.Restorative`, projects the profile26/27 player's known self-use policies and permissions
 owned by that patient. Earlier profiles have no ordinary-care projection. Known blocked self-use
 choices remain inspectable with their typed reason and no executable intent. Each use offer identifies
 the item, pinned restoration amount, capped HP gain at the observed health and exploration duration.
@@ -212,7 +212,11 @@ more ordinary uses than consumed claims.
 
 The standalone [care continuation frontier](care-continuation.md) preserves cumulative use counts,
 grants, revocations and care chronology while bounding active records. It does not rotate consumed
-material claims or change the profile26 limits above. Existing worlds refuse that continued owner.
+material claims or change the profile26 limits above. Profiles25/26 refuse that continued owner.
+The explicit [coordinated profile27](coordinated-world-continuation.md) closes material, care and
+resource owners together before the whole next batch and its future actionable headroom exceed
+those windows. It preserves exact permission and prior-use facts through an authenticated joint
+archive; it does not silently upgrade a lived ordinary-care world or grant unbounded Host storage.
 
 Lifetime material/care continuation requires an explicit admitted protocol that preserves provenance,
 permissions, identity occupation and completed effects. Resource segment rotation alone supplies no

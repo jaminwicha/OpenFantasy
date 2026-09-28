@@ -154,6 +154,7 @@ authenticates archived history nor selects a complete-world storage profile.
 | V6 | Ordered material history including terrain refinement/demotion, with retained optional construction capability | The exact terrain-capable context and matching opaque terrain, gathering and construction evidence as selected |
 | V7 | Ordered material history including reserved transport, with retained optional construction capability | The exact transport-capable context and matching opaque transport, gathering and construction evidence as selected |
 | V8 | Ordered partial/final mining and joined gathering with exact site, terrain, shared effort and action frontiers | The exact excavation-capable context and matching opaque work evidence; the complete component codec also requires actual-owner dependencies |
+| V9 | Complete-world crafting and consumption with exact admitted raw issuance and retained construction | The material context from the actual coordinated world boundary; world journal replay authenticates other material writers |
 
 V4 decoding validates canonical component structure and joins the supplied actual source proofs.
 The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
@@ -201,3 +202,17 @@ standalone material planner or codec.
 The explicit [live material observations](live-material-evidence.md) expose accepted actions from the
 complete ordinary-care world transaction, including wet excavation and partial work. They preserve
 actual sequential candidates and rollback, but are not a continued owner or an imported material grant.
+
+## Complete-world material interpretation
+
+[Production V9](../../src/OpenFantasy.Core/Production/ProductionCodecV9.cs) is selected only by an
+explicit [coordinated world cut](coordinated-world-continuation.md). It keeps craft/consumption revision
+meaning and imported output accounting, while gathering, transfers, delivery and work remain with
+their existing owners. It creates no `MaterialOperationHistory`. The complete world checks an exact
+partition of actual issued raw rights; Host journal replay checks the actions and intermediate custody
+changes. A structural lower bound on custody revisions cannot authenticate those changes.
+
+The coordinated identity index retains imported producer roles and original installed backing.
+Nested planners receive complete historical identity lookup, excluding only the current command
+whose uniqueness the world has already checked and reserved. That exclusion does not clear any other
+selected, derived or historical identity. V3–V8 keep their separate capability and decoder restrictions.

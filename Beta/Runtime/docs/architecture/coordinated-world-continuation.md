@@ -1,0 +1,113 @@
+# Coordinated world continuation
+
+## Scope and owners
+
+[WorldCoordinatedAdmission](../../src/OpenFantasy.Core/Worlds/WorldCoordinatedAdmission.cs) selects an
+explicit complete-world interpretation at fresh ordinary-care genesis. Profile27 preserves gathering,
+shared effort, crafting, custody, construction and installed backing, delivery quests, progression,
+wet excavation, reservoirs and detailed liquid flow, pacing, encounters and both forms of care.
+A lived profile26 save does not acquire this interpretation on opening. Earlier profile and component
+frames retain their own rules, including capacity refusals.
+
+The existing world journal is the single ordered action history. Production revisions count crafts
+and consumption. Raw transfers, gathering, delivery and partial work advance their actual owners;
+they do not invent Production operations or duplicate the journal in a second material log.
+One world commit can apply one action per admitted actor. Cumulative Production, quest, progression
+and aggregate construction revisions count domain operations, so they can exceed the number of world commits. Profile27's
+structural upper bound uses the existing per-batch actor limit with overflow-safe arithmetic; exact
+operation counts and order still come from owner validation and journal replay. Earlier profiles
+retain their original admission rules.
+Each builder's work still fits that actor's actual advancing steps and experienced time.
+[WorldCoordinatedContinuation](../../src/OpenFantasy.Core/Worlds/WorldCoordinatedContinuation.cs) owns
+the initial issuance baseline and the latest joint archive anchor. Each canonical fact continues to
+belong to its domain owner.
+
+## Exact material rights
+
+[WorldSourceIssuanceBaseline](../../src/OpenFantasy.Core/Worlds/WorldSourceIssuanceBaseline.cs) captures
+actual initial raw intervals, gathering issue cursors and initially extracted sites. Later issued rights
+come from the current gathering and excavation owners. Source capacity is an upper bound, never an
+allocation. Archived direct raw retirement, active direct raw retirement and live raw intervals must
+be disjoint and together equal all admitted issued rights. Missing units are as invalid as overlaps.
+
+Production V9 uses the [continued material frontier](production-continuation.md) inside this complete
+world. Original producer witnesses and surviving output partitions preserve lineage, spent prefixes
+and holes. A recrafted input contributes its actual output interval; ancestry does not consume the
+same raw units a second time. The complete world validates issuance; deterministic Host replay
+validates the actions that moved, crafted, consumed or earned those rights. Structural conservation,
+monotonic counters and matching hashes do not establish that an action was authorized.
+
+World crafting, care and source delivery supply permanent historical identity lookup after a cut.
+The world reserves each current command before invoking a domain planner; its adapter excludes only
+that current command from the planner's duplicate check. Other prior commands and created identities
+remain occupied. Source delivery admits this complete-world contract explicitly, while unsupported
+standalone continued profiles retain their refusal. Imported producer witnesses and original installed
+construction ingredient identities participate in the complete world's role index.
+
+## One complete closing boundary
+
+[WorldMaterialCareContinuation](../../src/OpenFantasy.Core/Worlds/WorldMaterialCareContinuation.cs)
+reserves capacity for the complete next batch plus future selectable work before interpreting any
+command. A boundary does not split a batch, earn time or clear pending aid, partial excavation or
+unfinished construction. Material-only closure can have an empty resource segment; resource-only
+closure can carry care with no new operation. The capacity rules preserve a further actionable offer
+so a full active window cannot hide the command needed to advance it.
+
+[WorldMaterialCareArchiveSegment](../../src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveSegment.cs)
+retains the exact complete closing bytes. Its reference names world, branch, ordinal, closing world
+revision and byte hash. The joint anchor retains qualified bounded material and care frontiers,
+resource basis, source identity and dependent-owner context. It retains neither a parent root nor an
+ancestor-anchor chain. Full historical evidence lives in stored archives and the journal.
+
+The closing world revision and latest care-operation sequence are distinct. New causal effects belong
+after the complete closing world boundary even when no care occurred near that boundary. Continuing
+care preserves pending acknowledgment, permanent revocations and patient treatment witnesses.
+Material, resource and care windows close together; completed causes cannot be replayed for another
+restoration or disposition. Nested reservoirs and liquid owners bind the same actual Production and
+inventory, with current topology and volumes preserved.
+
+## Canonical decoding and authenticated retrieval
+
+[WorldSnapshotCodecV27](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV27.cs) uses inline owners
+before the first joint cut and explicit continued frames afterwards. A post-cut root requires its exact
+joint anchor. An encoded binding or supplied hash alone is insufficient. Archive decoding checks
+bounded stored bytes, scope, ordinal, hash and canonical resealing using the preceding verified anchor.
+An iterative reader needs only the current anchor, rather than an in-memory history tree.
+
+Structural decoding does not authenticate genesis or accepted history. The Host derives each expected
+cut from replay of its actual journal and compares the actual retrieved archive bytes to the complete
+prior replay root. Missing, substituted, unscheduled or trailing archive rows invalidate recovery,
+including a request for a state or archive earlier than the damaged row.
+
+## Durable transaction and budget
+
+[Schema eight](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaEight.cs) binds profile27 to
+`world_material_care_segments`. The separate resource archive table belongs to schema7/profile25–26.
+Each joint row records scope, ordinal, boundary revision/hash, publication revision and exact closing
+bytes. Revision N closes at publication N+1. Both scope/ordinal and publication are unique.
+
+[SqliteWorldAuthority](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs) publishes the
+commit row, archive, receipts, permanent identities, head and any scheduled checkpoint in one SQL
+transaction. Storage matches the archive to the actual stored prior head, admitted genesis and
+publishing commit. Preview writes none of them. An uncertain result invalidates the open authority;
+reopening determines whether the whole transaction committed.
+
+[WorldMaterialCareArchiveReplay](../../src/OpenFantasy.Hosting/Worlds/WorldMaterialCareArchiveReplay.cs)
+checks every stored joint archive alongside full command replay. Historical reads and privileged
+`ReadMaterialCareArchiveForHost` verify through the current head before returning detached evidence
+with source-head pins. These synchronous operator reads do not belong on a presentation frame.
+
+[WorldJournalPolicy](../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs) counts joint archive
+bytes separately from accepted journal bytes. Its joint envelope is 1,024 archives/256 MiB; complete
+states retain the 16 MiB bound and the existing command/journal limits remain unchanged. The two archive
+families cannot be combined to increase a world's budget. Consistent backups preserve both the
+required archive family and every other authoritative table.
+
+## Extension boundaries
+
+This interpretation composes the ordinary-care graph. It does not add separate structural-physics,
+transport, settlement consequences or macro terrain-registry owners, change source-world roles, or
+qualify unlimited storage and production throughput. Extending that graph requires complete admission,
+matching nested codecs and evidence that every live writer preserves closure. The detached
+[live material observations](live-material-evidence.md) are a separate diagnostic contract and do not
+mint material rights or replace archive verification.

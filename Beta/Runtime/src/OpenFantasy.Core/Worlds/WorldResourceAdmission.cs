@@ -20,8 +20,9 @@ internal static class WorldResourceAdmission
         var progression = world.Progression!;
         var lifecycle = world.EncounterLifecycle!;
         var anchor = retained.ArchiveAnchor;
-        if (world.ProfileVersion is not (25 or 26) || retained.AnchorAdmission != world.AdmissionVersion
-            || anchor is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
+        var joint = retained.CoordinatedAnchor;
+        if (world.ProfileVersion is not (25 or 26 or 27) || retained.AnchorAdmission != world.AdmissionVersion
+            || anchor is null && joint is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
                 || history.Basis.Actors.Any(actor => actor.Revision != 0))
             || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count)
             || history.Basis.Currency.Currency.DefinitionId != progression.Currency.Currency.DefinitionId
@@ -57,6 +58,25 @@ internal static class WorldResourceAdmission
                 draws.Add(archivedActions.Scope.EncounterId, draw);
                 if (archivedActions.LastResolution is { Status: EncounterActionResolutionStatus.Damaged } last)
                     attacks.TryAdd(last.DecisionCommandId, (archivedActions.Scope.EncounterId, last));
+            }
+        }
+        if (joint is not null)
+        {
+            // The coordinated boundary archived every completed use and pair. Only completed quests,
+            // the carried pending defeat and the retained episode seed the following causal segment.
+            rewards.UnionWith(joint.Quests.Participations.Where(value => value.Status == ActorQuestStatus.Completed)
+                .Select(value => value.CompletionCommandId!.Value));
+            if (joint.Care.Pending is { } carried)
+                attacks.TryAdd(carried.Defeat.DecisionCommandId, (carried.EncounterId, carried.Defeat));
+            if (joint.Lifecycle.Actions is { } closedActions)
+            {
+                previousEpisode = joint.Lifecycle.EncounterCount - 1;
+                episodes.Add(previousEpisode.Value, closedActions.Scope.EncounterId);
+                var closedDraw = BeginDraw(lifecycle, closedActions.Scope.EncounterId);
+                closedDraw.Restore(closedActions.Random);
+                draws.Add(closedActions.Scope.EncounterId, closedDraw);
+                if (closedActions.LastResolution is { Status: EncounterActionResolutionStatus.Damaged } closing)
+                    attacks.TryAdd(closing.DecisionCommandId, (closedActions.Scope.EncounterId, closing));
             }
         }
         for (int index = 0; index < history.Batches.Count; index++)
@@ -212,7 +232,7 @@ internal static class WorldResourceAdmission
     private static IReadOnlyList<ActorResourceChange> ValidateRestorativeUse(WorldSnapshot world, ResourceChangeBatch batch,
         WorldRestorativeUseResourceEvidence evidence, Dictionary<EntityId, ActorProgressionState> heads)
     {
-        if (world.ProfileVersion != 26 || world.Care?.Ordinary is not { } ordinary)
+        if (world.ProfileVersion is not (26 or 27) || world.Care?.Ordinary is not { } ordinary)
             throw new ArgumentException("Ordinary restoration evidence requires its explicit ordinary-care world profile.");
         var use = ordinary.Uses.SingleOrDefault(value => value.UseId == evidence.UseId)
             ?? throw new ArgumentException("Ordinary restoration requires its actual retained completed use.");

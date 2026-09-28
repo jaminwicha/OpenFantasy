@@ -9,7 +9,8 @@ namespace OpenFantasy.Core.Worlds;
 public sealed class WorldResourceHistory
 {
     public WorldResourceHistory(ContentHash anchorAdmission, ActorResourceHistory history,
-        IEnumerable<WorldResourceEvidence> evidence, WorldResourceArchiveAnchor? archiveAnchor = null)
+        IEnumerable<WorldResourceEvidence> evidence, WorldResourceArchiveAnchor? archiveAnchor = null,
+        WorldMaterialCareArchiveAnchor? coordinatedAnchor = null)
     {
         ArgumentNullException.ThrowIfNull(anchorAdmission);
         ArgumentNullException.ThrowIfNull(history);
@@ -28,11 +29,23 @@ public sealed class WorldResourceHistory
             || archiveAnchor.Progression.ContentHash != history.Basis.ContentHash
             || archiveAnchor.Reference.BoundarySequence != history.BasisWorldSequence))
             throw new ArgumentException("A continued resource segment requires the exact retrieved boundary progression.");
+        if (coordinatedAnchor is not null && (archiveAnchor is not null
+            || coordinatedAnchor.AdmissionVersion != anchorAdmission
+            || coordinatedAnchor.Progression.ContentHash != history.Basis.ContentHash
+            || coordinatedAnchor.Reference.BoundarySequence != history.BasisWorldSequence))
+            throw new ArgumentException("A coordinated resource segment requires the exact closing progression of its joint boundary.");
         AnchorAdmission = anchorAdmission;
         History = history;
         Evidence = retained.AsReadOnly();
         ArchiveAnchor = archiveAnchor;
+        CoordinatedAnchor = coordinatedAnchor;
     }
+
+    /// <summary>
+    /// Explicit causal baseline of a coordinated cut. Unlike the resource-only anchor it retains no
+    /// completed care record, because care and material windows close at the same boundary.
+    /// </summary>
+    public WorldMaterialCareArchiveAnchor? CoordinatedAnchor { get; }
 
     public ContentHash AnchorAdmission { get; }
     public ActorResourceHistory History { get; }
@@ -48,7 +61,7 @@ public sealed class WorldResourceHistory
         if (History.Batches.Count == ActorResourceHistory.MaximumBatches
             || History.ChangeCount + batch.Changes.Count > ActorResourceHistory.MaximumChanges)
             throw new WorldResourceContinuationRequiredException();
-        return new(AnchorAdmission, History.Append(batch), Evidence.Append(evidence), ArchiveAnchor);
+        return new(AnchorAdmission, History.Append(batch), Evidence.Append(evidence), ArchiveAnchor, CoordinatedAnchor);
     }
 }
 

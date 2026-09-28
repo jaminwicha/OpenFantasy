@@ -37,7 +37,7 @@ public sealed class LocalRestorativeView
 
     internal static LocalRestorativeView? Project(WorldSnapshot world, EntityId playerActorId)
     {
-        if (world.ProfileVersion != 26 || world.Care?.Ordinary is not { } ordinary
+        if (world.ProfileVersion is not (26 or 27) || world.Care?.Ordinary is not { } ordinary
             || !world.Inventory.Actors.Contains(playerActorId)) return null;
         var actor = world.Progression!.GetActor(playerActorId);
         var offers = ordinary.Definitions.Where(value => value.DeliveryMode == RestorativeDeliveryMode.SelfUse)

@@ -8,7 +8,7 @@ internal sealed partial class WorldDatabase
 {
     internal IEnumerable<StoredWorldResourceArchive> ReadResourceArchives()
     {
-        if (SchemaVersion < WorldDatabaseSchemaSeven.Version)
+        if (SchemaVersion != WorldDatabaseSchemaSeven.Version)
         {
             yield break;
         }

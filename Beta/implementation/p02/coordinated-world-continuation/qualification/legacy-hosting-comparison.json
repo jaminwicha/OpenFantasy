@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "files": [
+    {
+      "file": "Beta/implementation/p02/coordinated-world-continuation/qualification/care-legacy-hosting-final/world-25.bin",
+      "baseline": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-hosting-final/world-25.bin",
+      "bytes": 55323,
+      "sha256": "1844f97105a8144c3076c8edf7dbe1d12917dfc6e90410511385ad1d33001634"
+    },
+    {
+      "file": "Beta/implementation/p02/coordinated-world-continuation/qualification/care-legacy-hosting-final/world-26.bin",
+      "baseline": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-hosting-final/world-26.bin",
+      "bytes": 56654,
+      "sha256": "9c897e368ad8f0bf3d2e524104401ae997ac3b93c65e013442f5e5d43b20548c"
+    }
+  ],
+  "count": 2,
+  "bytes": 111977
+}

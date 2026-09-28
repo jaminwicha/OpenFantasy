@@ -20,7 +20,8 @@ internal static class GeographyProductionCodec
             {
                 throw new ArgumentException("Continued geography requires its exact explicit production capability.", nameof(production));
             }
-            return context.SupportsConstruction ? ProductionCodecV5.Encode(production)
+            return context.SupportsCompleteWorld ? ProductionCodecV9.Encode(production)
+                : context.SupportsConstruction ? ProductionCodecV5.Encode(production)
                 : context.SupportsMaterialOperations ? ProductionCodecV4.Encode(production)
                 : ProductionCodecV3.Encode(production);
         }

@@ -66,16 +66,22 @@ public sealed class WorldStepProcessor
         if (state.ResourceHistory?.ArchiveAnchor is not null && historicallyOccupied is null)
             throw new InvalidOperationException("Continued resource history requires the complete historical identity lookup.");
 
+        if (state.Coordination?.Anchor is not null && historicallyOccupied is null)
+            throw new InvalidOperationException("Coordinated continuation requires the complete historical identity lookup.");
+
         var prepared = WorldResourceContinuation.Prepare(state, batch);
         if (prepared.Sealed is not null && historicallyOccupied is null)
             throw new InvalidOperationException("Resource archival continuation requires the complete historical identity lookup.");
+        var joint = WorldMaterialCareContinuation.Prepare(prepared.State, batch);
+        if (joint.Sealed is not null && historicallyOccupied is null)
+            throw new InvalidOperationException("Coordinated archival continuation requires the complete historical identity lookup.");
         // Observations bind the prepared root that is actually interpreted. When preparation sealed
         // an archive segment that root differs from the selected input, whose hash is kept beside it.
         var materialEvidence = observeMaterial ? new WorldMaterialEvidenceCollector(state, prepared.State) : null;
-        var decision = DecidePrepared(prepared.State, batch, historicallyOccupied, materialEvidence);
-        return prepared.Sealed is null ? decision
+        var decision = DecidePrepared(joint.State, batch, historicallyOccupied, materialEvidence);
+        return prepared.Sealed is null && joint.Sealed is null ? decision
             : new WorldStepDecision(decision.Candidate, decision.Receipts, decision.Identities, prepared.Sealed,
-                decision.MaterialEvidence);
+                decision.MaterialEvidence, joint.Sealed);
     }
 
     private WorldStepDecision DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied,

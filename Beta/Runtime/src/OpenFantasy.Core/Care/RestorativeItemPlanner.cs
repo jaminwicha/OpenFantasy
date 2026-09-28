@@ -13,17 +13,19 @@ public sealed class RestorativeItemPlanner
 {
     public RestorativeItemPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
         ProgressionSnapshot progression, TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId,
-        ConsumeItemRequest dose, ulong expectedPatientRevision, uint restoredHp)
+        ConsumeItemRequest dose, ulong expectedPatientRevision, uint restoredHp,
+        Func<EntityId, bool>? isIdentityOccupied = null)
     {
         ArgumentNullException.ThrowIfNull(progression);
         ArgumentNullException.ThrowIfNull(production);
-        if (production.IsContinued)
+        if (production.IsContinued && production.Continuation?.SupportsCompleteWorld != true)
         {
             throw new ArgumentException("Restorative use requires coordinated material and care continuation.", nameof(production));
         }
         RestorativeItemPlan Reject(WorldActionRejection reason) => new(inventory, production, progression, reason);
         // Material admission authenticates the supplier before any patient state is inspected.
-        var consumption = new ItemConsumptionPlanner().Plan(inventory, production, delivery, actorId, commandId, dose);
+        var consumption = new ItemConsumptionPlanner().Plan(inventory, production, delivery, actorId, commandId, dose,
+            isIdentityOccupied: isIdentityOccupied);
         if (consumption.Rejection != WorldActionRejection.None)
         {
             return Reject(consumption.Rejection);

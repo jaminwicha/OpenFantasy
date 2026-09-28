@@ -60,9 +60,13 @@ public sealed class ExcavationSnapshot
                 throw new ArgumentException("Extraction requires exact terrain ancestry, exclusive finite issuance, worker and tool bindings.");
             }
             world.Production!.ValidateMaterialBinding(site.Material);
+            // The coordinated world joins archived direct retirement with its active segment exactly once.
+            IEnumerable<SourceInterval?> retired = world.Production.Continuation is { SupportsCompleteWorld: true } coordinated
+                ? ProductionRetirementHistory.CurrentRetirements(world.Production).Select(r => r.Ingredient.Source)
+                    .Concat(coordinated.Basis.RawRetirements.Select(r => (SourceInterval?)r.Source))
+                : ProductionRetirementHistory.Retirements(world.Production).Select(r => r.Ingredient.Source);
             IEnumerable<SourceInterval> claims = world.Inventory.Custody.Lots.Where(l => l.Source.SourceId == site.CountedSourceId).Select(l => l.Source)
-                .Concat(ProductionRetirementHistory.Retirements(world.Production).Select(r => r.Ingredient)
-                    .Where(i => i.Source?.SourceId == site.CountedSourceId).Select(i => i.Source!));
+                .Concat(retired.Where(s => s?.SourceId == site.CountedSourceId).Select(s => s!));
             ulong cursor = 0;
             foreach (var claim in claims.OrderBy(c => c.Start))
             {

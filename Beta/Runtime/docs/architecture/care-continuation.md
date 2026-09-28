@@ -55,14 +55,16 @@ create it. A context alone cannot mint a dose, authorize a helper or prove histo
 
 Care continuation is a standalone domain contract. World profiles25/26 retain inline care; their
 [world admission](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) refuses a continued care owner.
-An explicit complete-world interpretation must coordinate care closure with material claims and
-[causal resource history](world-resource-history.md), archive the exact closing root and publish
-the resulting owners in one durable transaction. Resource-only rotation preserves the complete
+The explicit [coordinated world](coordinated-world-continuation.md) joins care closure with material
+claims and [causal resource history](world-resource-history.md), archives the exact closing root and
+publishes the resulting owners in one durable transaction. Profile27 selects this interpretation at
+fresh genesis; opening a lived profile25/26 save preserves its existing interpretation. Resource-only rotation preserves the complete
 care record window and does not invoke this protocol.
 
 The care watermark records the latest care operation, which can predate the closing world revision.
-The coordinated world anchor must separately enforce that closing revision, including material-only
-cuts that retain an unchanged care context. The component watermark cannot replace that world boundary.
+The coordinated world anchor separately enforces that closing revision, including material-only
+cuts that retain an unchanged care context. New acknowledgments, treatments, uses and revocations
+follow the world boundary; the exact carried pending acknowledgment and closed revocations remain valid. The component watermark cannot replace that world boundary.
 
 That composition must preserve pending aid and reserve its treatment/consumption headroom, account
 for every potential writer before a selected batch, and retain full rollback. Structural care

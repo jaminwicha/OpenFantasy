@@ -31,7 +31,8 @@ internal sealed class WorldCraftResolver
         {
             return Reject(WorldActionRejection.Unavailable);
         }
-        CraftPlan plan = _crafting.Plan(inventory, production, delivery, actor.ActorId, command.CommandId, intent.Request);
+        CraftPlan plan = _crafting.Plan(inventory, production, delivery, actor.ActorId, command.CommandId, intent.Request,
+            production.IsContinued ? identity => identity != command.CommandId && occupied(identity) : null);
         return plan.CreatedIds.Any(occupied) ? Reject(WorldActionRejection.Unavailable) : plan;
     }
 }

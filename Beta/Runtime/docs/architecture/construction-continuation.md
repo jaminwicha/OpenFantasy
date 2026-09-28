@@ -90,7 +90,7 @@ its mass and volume; byproducts remain ordinary carried contents.
 
 ## Complete-world and persistence boundary
 
-These are explicit standalone composition contracts. Existing complete-world profiles and their
+These are explicit standalone composition contracts. Earlier complete-world profiles and their
 legacy construction planner retain their continued-production guards. Actual source frames establish
 the component's current actor/quest/time context; they do not publish the continued component owners
 as a new world or authenticate an archive.
@@ -100,3 +100,11 @@ interpretation, retrieve and verify real historical bytes, preserve permanent id
 all affected owners atomically. It must also preserve or reconstruct the work qualification boundary
 from authenticated state. Opaque in-memory evidence or a bounded historical batch set does not replace
 that protocol. See [resource archive continuation](resource-archive-continuation.md).
+
+The [coordinated complete world](coordinated-world-continuation.md) provides a separate Production V9
+binding over the ordinary-care graph. It retains actual current work in `ConstructionSnapshot` and
+original installed batches in the joint material context. The existing world journal authenticates
+funding, each builder's work/time and completion; it does not import the standalone operation log.
+Aggregate work revisions can include several builders in one world step, while each builder remains
+bounded by that actor's actual advancing steps and experienced time. Structural-physics composition
+retains its separate admission contract.

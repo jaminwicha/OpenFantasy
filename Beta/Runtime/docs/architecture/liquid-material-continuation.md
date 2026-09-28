@@ -85,8 +85,10 @@ generic rebinding cannot relabel consumed or newly crafted water.
 
 ## Composition boundaries
 
-These are standalone component contracts. Complete world admission rejects continued material owners
-until the coordinated world/resource/care and authenticated archive protocol admits them.
+These component contracts do not independently enable complete-world publication. Profiles1–26
+reject continued material owners. The [coordinated profile27](coordinated-world-continuation.md)
+qualifies its own Production V9 context through the actual jointly rebased reservoir and complete
+world archive. Its internal geography dependency factory is distinct from standalone construction.
 [Reserved gate transport](transport-material-continuation.md) selects its own V7 typed custody
 transition through a qualified complete transport-owner cut and explicit nested V4 geography frames.
 Independent capacity cuts cannot replace that transport boundary. The separate
@@ -95,3 +97,8 @@ joining that interpretation with liquid ownership and excavation source/effort r
 integration responsibility. Liquid V3 dependencies retain their selected Production V3/V4/V5 profiles;
 they do not silently accept V6 terrain or V7 transport operations. Component continuation does not grant those
 permissions or alter legacy world profiles.
+
+A coordinated cut rebinds detailed cells without running another flow interval. Its complete-world
+codec supplies the exact joint geography dependency; direct standalone dependency construction
+refuses this capability. Subsequent world actions still reconcile current holdings and terrain and
+apply the ordinary single selected time boundary.

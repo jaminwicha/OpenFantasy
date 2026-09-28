@@ -52,7 +52,9 @@ internal static class WorldCareProcessor
                 {
                     (candidate, rejection) = command.Intent is AcknowledgeCareIntent acknowledge
                         ? (Acknowledge(world, command, acknowledge, sequence), WorldActionRejection.None)
-                        : Administer(world, command, (AdministerRemedyIntent)command.Intent, sequence);
+                        : Administer(world, command, (AdministerRemedyIntent)command.Intent, sequence,
+                            world.Production!.IsContinued
+                                ? identity => identity != command.CommandId && Occupied(identity) : null);
                     if (candidate is not null) _ = WorldSnapshotCodec.Encode(candidate);
                 }
                 catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
@@ -103,7 +105,7 @@ internal static class WorldCareProcessor
     }
 
     private static (WorldSnapshot? Candidate, WorldActionRejection Rejection) Administer(WorldSnapshot world,
-        WorldActionCommand command, AdministerRemedyIntent intent, ulong sequence)
+        WorldActionCommand command, AdministerRemedyIntent intent, ulong sequence, Func<EntityId, bool>? occupied)
     {
         var care = world.Care!;
         var acknowledgment = care.Pending!;
@@ -114,7 +116,7 @@ internal static class WorldCareProcessor
             new(command.PrincipalId, command.OriginSessionId), command.ActorId, command.CommandId,
             new(world.GetResident(command.ActorId).InventoryCustodianId, intent.ExpectedStorageRevision,
                 intent.ExpectedProductionRevision, agreement.PatientActorId, remedy.Item, intent.Ingredient),
-            intent.ExpectedPatientProgressionRevision, remedy.RestoredHp);
+            intent.ExpectedPatientProgressionRevision, remedy.RestoredHp, occupied);
         if (restoration.Rejection != WorldActionRejection.None) return (null, restoration.Rejection);
         int hp = restoration.ActorTransition!.Candidate.CurrentHp;
         var basisTiming = world.Pacing!.Encounter!;

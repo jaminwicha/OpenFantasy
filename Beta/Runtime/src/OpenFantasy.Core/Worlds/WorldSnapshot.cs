@@ -38,9 +38,10 @@ public sealed class WorldSnapshot
         CoupledSettlementPolicy? coupledSettlementPolicy = null,
         ConstructionDescentMode descentMode = ConstructionDescentMode.CommonTrajectory,
         ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null,
-        EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null)
+        EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null,
+        WorldCoordinatedContinuation? coordination = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination, null)
     {
     }
 
@@ -54,17 +55,17 @@ public sealed class WorldSnapshot
         StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
         PendingExcavation? pendingExcavation, CoupledSettlementPolicy? coupledSettlementPolicy,
         ConstructionDescentMode descentMode, ReservoirSealPolicy? reservoirSeals, LiquidCellState? liquidCells,
-        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldIdentityIndex? previous)
+        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldCoordinatedContinuation? coordination, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
         ArgumentNullException.ThrowIfNull(residents);
         ArgumentNullException.ThrowIfNull(admissionVersion);
-        if (production?.IsContinued == true)
+        if (production?.IsContinued == true && (coordination is null || !production.Continuation!.SupportsCompleteWorld))
         {
             throw new ArgumentException("World admission requires a coordinated material, care and resource continuation profile.", nameof(production));
         }
-        if (care?.Continuation is not null)
+        if (care?.Continuation is not null && coordination is null)
         {
             throw new ArgumentException("Continued care requires a coordinated material, care and resource world profile.", nameof(care));
         }
@@ -182,6 +183,7 @@ public sealed class WorldSnapshot
         EncounterLifecycle = encounterLifecycle;
         Care = care;
         ResourceHistory = resourceHistory;
+        Coordination = coordination;
         if (liquidCells is not null && reservoirSeals is null)
         {
             throw new ArgumentException("Detailed liquid placement requires the complete contained reservoir owner.");
@@ -243,6 +245,7 @@ public sealed class WorldSnapshot
         WorldPacingAdmission.Validate(this);
         WorldCareAdmission.Validate(this);
         WorldResourceAdmission.Validate(this);
+        WorldCoordinatedAdmission.Validate(this);
         WorldEncounterActionAdmission.Validate(this);
         WorldEncounterLifecycleAdmission.Validate(this);
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
@@ -267,6 +270,11 @@ public sealed class WorldSnapshot
     public ContentHash AdmissionVersion { get; }
     public WorldInstant Calendar { get; }
     public ulong Revision { get; }
+
+    // Domain revisions count actor operations, while a complete world revision counts batches.
+    // Legacy interpretations retain their original single-operation admission bound.
+    internal UInt128 MaximumActionRevision => (UInt128)Revision
+        * (uint)(Coordination is null ? 1 : WorldStepBatch.MaximumActorsPerBatch);
     public ulong AdvancingSteps { get; }
     public ReadOnlyCollection<WorldResident> Residents { get; }
     public ReadOnlyCollection<DialogueSession> Dialogues { get; }
@@ -292,11 +300,13 @@ public sealed class WorldSnapshot
     public WorldPacingState? Pacing { get; }
     public CareSnapshot? Care { get; }
     public WorldResourceHistory? ResourceHistory { get; }
+    /// <summary>Non-null selects the explicit coordinated material, care and resource interpretation.</summary>
+    public WorldCoordinatedContinuation? Coordination { get; }
     public EncounterLifecycleSnapshot? EncounterLifecycle { get; }
     public EncounterActionSnapshot? EncounterActions => EncounterLifecycle is { } lifecycle
         ? lifecycle.HasEncounter ? lifecycle.Actions : null : _standaloneEncounterActions;
     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
-    public ushort ProfileVersion => Care?.SupportsOrdinary == true ? (ushort)26 : Care is not null ? (ushort)25 : EncounterLifecycle is not null ? (ushort)24 : EncounterActions is not null ? (ushort)23 : Pacing is not null ? (ushort)22 : BaseProfileVersion;
+    public ushort ProfileVersion => Coordination is not null ? (ushort)27 : Care?.SupportsOrdinary == true ? (ushort)26 : Care is not null ? (ushort)25 : EncounterLifecycle is not null ? (ushort)24 : EncounterActions is not null ? (ushort)23 : Pacing is not null ? (ushort)22 : BaseProfileVersion;
     internal ushort BaseProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
         : DescentMode == ConstructionDescentMode.EventOrdered ? (ushort)18
         : CoupledSettlementPolicy is not null ? (ushort)17 : ConsequencePolicy is not null ? (ushort)16 : StructuralSettlementPolicy is not null ? (ushort)15 : StructuralPolicy is not null ? (ushort)14
@@ -390,12 +400,25 @@ public sealed class WorldSnapshot
             throw new ArgumentException("A successor must retain its care owner.");
         if (care is not null && !ReferenceEquals(care, Care)) Care!.ValidateSuccessor(care);
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, Coordination, IdentityIndex);
     }
     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
         Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
-        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, IdentityIndex);
+        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, IdentityIndex);
+
+    /// <summary>
+    /// Explicit coordinated closure at the same revision. Only representations change; time, work,
+    /// custody, material and resources stay exact. Permanent identities remain the host lookup's duty.
+    /// </summary>
+    internal WorldSnapshot WithCoordinatedCut(ProductionSnapshot production, LiquidReservoirState reservoirs,
+        LiquidCellState liquidCells, CareSnapshot care, WorldResourceHistory resourceHistory,
+        WorldCoordinatedContinuation coordination) => new(
+        Inventory, Space, Residents, AdmissionVersion, Calendar, Revision, AdvancingSteps,
+        Dialogues, Gathering, production, Progression, Quests, Construction, Watershed, null, reservoirs,
+        null, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
+        ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells,
+        Pacing, _standaloneEncounterActions, EncounterLifecycle, care, resourceHistory, coordination, null);
 }

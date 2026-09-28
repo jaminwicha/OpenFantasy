@@ -1,0 +1,28 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:08.13]     OpenFantasy.Hosting.Tests.Care.CoordinatedSourcePartitionTests.Archived_direct_retirement_cannot_be_reissued_as_live_raw_stock [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedSourcePartitionTests.Archived_direct_retirement_cannot_be_reissued_as_live_raw_stock [1 s]
+  Error Message:
+   System.ArgumentException : Raw source units cannot remain live and retired or be consumed more than once.
+  Stack Trace:
+     at OpenFantasy.Core.Production.ProductionClaimValidation.ValidateDisjointRaw(IEnumerable`1 claims) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/ProductionClaimValidation.cs:line 137
+   at OpenFantasy.Core.Production.ProductionClaimValidation.ValidateSourceClaims(ProductionSnapshot state, CountedAuthorityState inventory) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/ProductionClaimValidation.cs:line 107
+   at OpenFantasy.Core.Production.ProductionSnapshot.ValidateForAuthority(CountedAuthorityState inventory) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/ProductionSnapshot.cs:line 250
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedSourcePartitionTests.Archived_direct_retirement_cannot_be_reissued_as_live_raw_stock() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedSourcePartitionTests.cs:line 64
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:12.87]     OpenFantasy.Hosting.Tests.Care.CoordinatedLiveWriterTests.Partial_wet_excavation_continues_then_gathering_issues_real_stock_after_two_cuts [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedLiveWriterTests.Partial_wet_excavation_continues_then_gathering_issues_real_stock_after_two_cuts [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: SubunitPosition { X = 29824, Y = 84160, Z = 256, Cell = CellCoordinate { X = 116, Y = 328, Z = 1 } }
+Actual:   SubunitPosition { X = 29824, Y = 84128, Z = 256, Cell = CellCoordinate { X = 116, Y = 328, Z = 1 } }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CoordinatedLiveWriterJourney.Walk(EntityId actor, SubunitPosition target, Boolean interaction) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedLiveWriterJourney.cs:line 122
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedLiveWriterJourney.WalkToBerries() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedLiveWriterJourney.cs:line 139
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedLiveWriterTests.Partial_wet_excavation_continues_then_gathering_issues_real_stock_after_two_cuts() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedLiveWriterTests.cs:line 92
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/focused-02.trx
+
+Failed!  - Failed:     2, Passed:    26, Skipped:     0, Total:    28, Duration: 22 s - OpenFantasy.Hosting.Tests.dll (net8.0)

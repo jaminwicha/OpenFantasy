@@ -1,0 +1,31 @@
+{
+  "startedUtc": "2026-09-28T21:23:59.566786+00:00",
+  "kind": "hosting",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Coordinated|FullyQualifiedName~MaterialCareSchemaAdmissionTests|FullyQualifiedName~MaterialCareJournalPolicyTests",
+    "--logger",
+    "trx;LogFileName=focused-03.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification"
+  ],
+  "environment": {
+    "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-focused-03",
+    "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/care-legacy-focused-03",
+    "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/earned-supply-focused-03",
+    "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-focused-03/excavation",
+    "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-focused-03/transport",
+    "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-focused-03/terrain",
+    "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-focused-03/registry",
+    "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-focused-03/production",
+    "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-focused-03/consumption"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 27.077864749822766,
+  "finishedUtc": "2026-09-28T21:24:26.645908+00:00"
+}

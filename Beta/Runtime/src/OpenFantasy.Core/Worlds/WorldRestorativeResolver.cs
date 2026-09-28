@@ -19,7 +19,7 @@ internal sealed class WorldRestorativeResolver
         if (!inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
             return Reject(WorldActionRejection.NotAuthorized);
         if (space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision) return Reject(WorldActionRejection.RevisionConflict);
-        if (kind != WorldBatchKind.AdvancingStep || basis.ProfileVersion != 26 || care.Ordinary is not { } ordinary
+        if (kind != WorldBatchKind.AdvancingStep || basis.ProfileVersion is not 26 and not 27 || care.Ordinary is not { } ordinary
             || basis.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration || care.Pending is not null
             || basis.PendingExcavation is not null || readingHold || progression.GetActor(command.ActorId).CurrentHp <= 0
             || basis.EncounterLifecycle.GetDebt(command.ActorId).RemainingDelay != 0)
@@ -51,7 +51,10 @@ internal sealed class WorldRestorativeResolver
                 new(command.PrincipalId, command.OriginSessionId), command.ActorId, command.CommandId,
                 new(basis.GetResident(command.ActorId).InventoryCustodianId, intent.ExpectedStorageRevision,
                     intent.ExpectedProductionRevision, intent.RecipientActorId, remedy.Item, intent.Ingredient),
-                intent.ExpectedPatientProgressionRevision, remedy.RestoredHp);
+                intent.ExpectedPatientProgressionRevision, remedy.RestoredHp,
+                // The world has already reserved this selected command. Keep every other current
+                // and historical identity occupied for the nested material operation.
+                production.IsContinued ? identity => identity != command.CommandId && occupied(identity) : null);
             if (plan.Rejection != WorldActionRejection.None) return Reject(plan.Rejection);
             var transition = plan.ActorTransition!;
             var use = new RestorativeUse(useId, command.CommandId, command.ActorId, intent.RecipientActorId,

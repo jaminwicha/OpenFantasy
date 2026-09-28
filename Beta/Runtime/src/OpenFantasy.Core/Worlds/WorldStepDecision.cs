@@ -14,9 +14,11 @@ public sealed class WorldStepDecision
 
     internal WorldStepDecision(WorldSnapshot candidate, IEnumerable<WorldActionReceipt> receipts,
         IEnumerable<WorldCommittedIdentity> identities, WorldResourceArchiveSegment? sealedResourceSegment = null,
-        IEnumerable<WorldMaterialActionEvidence>? materialEvidence = null)
+        IEnumerable<WorldMaterialActionEvidence>? materialEvidence = null,
+        WorldMaterialCareArchiveSegment? sealedMaterialCareSegment = null)
     {
         Candidate = candidate;
+        SealedMaterialCareSegment = sealedMaterialCareSegment;
         Receipts = Array.AsReadOnly(receipts.OrderBy(receipt => receipt.CommandId).ToArray());
         Identities = Array.AsReadOnly(identities.OrderBy(identity => identity.Identity).ToArray());
         SealedResourceSegment = sealedResourceSegment;
@@ -45,6 +47,12 @@ public sealed class WorldStepDecision
     public ReadOnlyCollection<WorldActionReceipt> Receipts { get; }
     public ReadOnlyCollection<WorldCommittedIdentity> Identities { get; }
     public WorldResourceArchiveSegment? SealedResourceSegment { get; }
+
+    /// <summary>
+    /// The detached complete closing root of a coordinated cut prepared before this batch. It is
+    /// unpublished; the durable owner archives it atomically with the batch or publishes neither.
+    /// </summary>
+    public WorldMaterialCareArchiveSegment? SealedMaterialCareSegment { get; }
 
     /// <summary>
     /// Bounded per-action observations captured only by the explicit material-evidence path, in the

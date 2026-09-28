@@ -18,12 +18,14 @@ The [world schema](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs) 
 | `world_occupied_identity` | Historical committed identity reservations and roles |
 | `world_checkpoints` | Canonical state at declared recovery boundaries |
 | `world_resource_segments` (schema7) | Exact closing roots, immutable scope/ordinal and atomic successor publication sequence |
+| `world_material_care_segments` (schema8) | Exact joint material/care/resource closing roots and atomic successor publication sequence |
 
 [Schema three](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs) extends accepted
 commit/identity kinds for profile transitions. Schema version and snapshot profile version are
 different dimensions; adding a profile does not imply a new writer or database.
 
-The transaction writes the commit, any resource archive, outcomes, occupied identities, head and any checkpoint together.
+The transaction writes the commit, the profile's optional archive, outcomes, occupied identities,
+head and any checkpoint together. Schema seven and eight use distinct archive families.
 Only a successful commit publishes the candidate in memory. An uncertain storage outcome requires
 recovery before more writes. Restart checks exact persisted bytes and relationships, not just an
 apparently valid head hash.
@@ -61,6 +63,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 24 | Permanent encounter scenarios, phases, cumulative exploration/tactical clocks and readiness debt across authenticated entry and outcome release |
 | 25 | Aftermath care, consumption-enabled material owners and ordered causal resource history with explicit schema-seven archive publication |
 | 26 | Ordinary restorative use, patient-owned assistance permission and revocation over the complete care/resource world, retaining schema-seven publication |
+| 27 | The complete ordinary-care graph with coordinated material/care/resource closure, exact source issuance and schema-eight publication |
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
@@ -84,6 +87,14 @@ patient resource boundary, policy, permission and command position. Fresh admiss
 ordinary policy and grants before play. Schema seven accepts profiles 25 and 26 explicitly at genesis
 and replayed head; reopening never upgrades a lived profile-25 world. Resource continuation carries
 ordinary uses and permission revocations across the same atomic archive transaction.
+
+[Profile 27](coordinated-world-continuation.md) is an explicit fresh opt-in over the ordinary-care
+graph. Its joint cut captures the actual complete world, rebases Production V9, Care V3 and resource
+history together, and retains the same inventory, work, terrain/liquid, quest and actor facts. The
+schema-eight table stores exact closing bytes; the world journal remains the sole ordered action log.
+Decoding after a cut requires the actual joint anchor, and Host recovery verifies every archive
+against complete replay. Neither opening a lived profile26 save nor supplying a component context
+selects this interpretation. The embedded ordinary-care factory retains its own profile26 admission.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight
@@ -290,6 +301,8 @@ The full-journal profile has an explicit recovery envelope in
 by 6,000 advancing steps or 10,000 commits. These limits describe this storage algorithm, not a
 promised world lifespan or production throughput. Reaching the envelope visibly stops the host;
 it cannot discard history, relax the bound or turn the failure into a rejected player action.
+Resource archives and joint material/care archives each have a separate 1,024-row/256 MiB envelope
+under their exclusive schema/profile family. They cannot be combined to expand one world's budget.
 
 ## Migration and publication
 

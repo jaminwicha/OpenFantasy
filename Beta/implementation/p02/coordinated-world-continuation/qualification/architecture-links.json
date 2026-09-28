@@ -1,0 +1,3307 @@
+{
+  "status": "passed",
+  "count": 825,
+  "limitation": "File targets only; fragments not checked.",
+  "links": [
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainLiquidTopology.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidCellState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldTerrainLiquidAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldTerrainLiquidBinding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationReachMode.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationAccess.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV21.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidCellStateCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepCodecV21.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/BreachFarmAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "local-watercourse.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "../../client/scripts/FarmClientSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-liquid-breach.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "actor-resources.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-resource-history.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionCompletionEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/StratifiedTerrainGenerator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionBounds.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/GroundRouteSearch.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershed.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldWatershedAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedNetworkPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedOutletClosure.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedNetwork.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedNetworkCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldWatershedNetworkAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainMapper.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedTerrain.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainMapping.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainColumn.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffRequest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffInput.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffTerminal.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffFunding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedRunoff.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffDomain.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "liquid-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirGeometry.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirFill.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-boundaries.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-containment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "terrain-liquid-breach.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/RunoffCommitmentIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldRunoffResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialDeposit.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPartition.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialAllocation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedMaterialIdentities.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialProduction.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "liquid-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../../spec-v1_1/ECOLOGY_AND_FLUIDS.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/stair-navigation.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/stair-navigation.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/FootingQuery.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/stair-navigation.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/LocalSpatialWalking.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/stair-navigation.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/WalkingRouteSearch.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/stair-navigation.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalConstructionController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/stair-navigation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSteppedSupportAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/stair-navigation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV12.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/VerticalMotionScene.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/VerticalMotionBody.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/VerticalMotionResolution.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/VerticalMotionCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionDescentAssessment.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionDescentAssessmentCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEventSettlementAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionDescentMode.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementResolution.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV18.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/PendingExcavationCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementResolutionCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralImpactDemand.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/event-descent.md",
+      "target": "../../src/OpenFantasy.Host/ConstructionDescentOperator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalEncounterActionView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/EncounterActionOffers.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/FarmActionOffer.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/FarmClientSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/FarmInputRouter.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/FarmQuickWheelModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/FarmGame.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/FarmEncounterStatus.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/Presentation/FarmActorView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "../../client/scripts/Presentation/FarmHealthFeedback.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/GroundSupportMode.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionDefinition.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/StructureBearingSurface.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/FootingQuery.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/ClimbIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/LocalSpatialClimbing.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldClimbResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldConstructedSupportAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV11.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/constructed-footing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldActionCodecV9.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffDomain.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/GeographyProductionDependencies.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirTransportAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirConnection.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Geography/RunoffTransportStage.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Geography/RunoffTransportRouting.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Geography/RunoffTransportCustody.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ScheduleRunoffTransportIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldTransportResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-transport.md",
+      "target": "reservoir-boundaries.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WatercourseFarmAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WatercourseFarmBuilder.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WatercourseFarmLayout.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WatercourseFarmWater.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalLiquidView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "terrain-liquid-breach.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../client/scripts/Presentation/WatercourseView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../art-source/watercourse/water-surface-calibration-v1.aseprite"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-watercourse.md",
+      "target": "../../client/assets/watercourse/water-surface.png"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Actors"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Language"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Observations"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResident.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/ActorPresence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Core/Progression"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "actor-resources.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalConstructionController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "world-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actors-and-society.md",
+      "target": "../../../spec-v1_1/LANGUAGE_AND_AFTERLIFE.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStructuralSettlementAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralSettlementPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionBearingModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV15.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-settlement.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WorksiteFarmAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WorksiteFarmConstruction.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WorksiteFarmTerrain.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/WorksiteFarmPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../client/scripts/FarmClientSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorksiteView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../client/scripts/WorksiteActionOffers.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../client/scripts/Presentation/WorksiteCoordinates.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "target": "../../client/scripts/Presentation/WorksiteView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionContactScene.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionLoadPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionBearingModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralLoadResolution.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionLoadNeighborhood.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-contact-assessment.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmGame.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmCanvas.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/Presentation"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInputMap.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInputRouter.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmTargetSelection.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmActionOffer.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmActionOffers.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmQuickWheel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmQuickWheelModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "local-worksite.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/RestorativeActionOffers.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInventoryModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/FarmInventoryScreen.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../client/scripts/Presentation/FarmDaylight.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../spec-v1_1/PRESENTATION_CONTRACTS.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "../../../art-style-calibration/README.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/presentation-and-interaction.md",
+      "target": "native-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/MaterialExcavationState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/MaterialExcavationPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationWorkEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV8.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterScenarioDefinition.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EnterEncounterIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterEpisodeIdentity.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/ReleaseEncounterIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldActorAvailability.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldPacingState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/EncounterJourneyAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/EncounterFarmSources.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalEncounterLifecycleView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterLifecycleCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV24.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldActionCodecV12.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSix.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Care/CareContinuationContext.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Care/CareCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEncounterActionAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterActionSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Progression"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/QueueEncounterAbilityIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEncounterActions.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/CounterRandomV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/EncounterFarmAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/EncounterJourneyAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalEncounterController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterActionCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV23.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-actions.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepDecision.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/RecordedWorldMaterialEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/live-material-evidence.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "runtime-and-authority.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "identity-and-determinism.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-timing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "native-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-worksite.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-watercourse.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-loads.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-contact-assessment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-policy-and-motion.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "event-descent.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-boundaries.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-containment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-liquid-breach.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actors-and-society.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actor-resources.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "care-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "materials-and-activities.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "material-continuation-basis.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "live-material-evidence.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "presentation-and-interaction.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "content-and-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Custody"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Production"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Gathering/GatherPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Production/InstantCraftPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Quests/DeliveryQuestPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldClimbResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "reservoir-boundaries.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "structural-loads.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/WorldInstant.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/Exposure"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/Scheduling"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../src/OpenFantasy.Core/Exposure/ExposurePacingV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "encounter-timing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/time-and-encounters.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirBoundaryEvaluator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirBoundaryAssessment.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirSealPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirSealPolicyCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "reservoir-containment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirBoundaryBox.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "../../src/OpenFantasy.Core/Geography/BoundarySurfaceCoverage.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-boundaries.md",
+      "target": "../../src/OpenFantasy.Host/ReservoirBoundaryOperator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionPhysicalSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionMemberState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "structural-loads.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldConstructionPhysicalAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "structural-loads.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "structural-policy-and-motion.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "construction-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionPhysicalCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV13.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/construction-physical.md",
+      "target": "structural-policy-and-motion.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceContinuation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveSegment.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveAnchor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSeven.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "material-continuation-basis.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "care-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "live-material-evidence.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirSealPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirContainmentBinding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "reservoir-boundaries.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirContainmentAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV19.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepCodecV19.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/reservoir-containment.md",
+      "target": "../../src/OpenFantasy.Host/ComposedWorldOperator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/OpenFantasy.Core.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Host/OpenFantasy.Host.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../client/OpenFantasy.Client.csproj"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../global.json"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../toolchain.json"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "reservoir-containment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/SqliteCountedAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirBinding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "content-and-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidCellState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidCellPortion.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "liquid-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidCellPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidCellPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldLiquidCellAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldLiquidCellBinding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidCellStateCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV20.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepCodecV20.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/liquid-cell-flow.md",
+      "target": "terrain-liquid-breach.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldConsequenceAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/ConsequenceExecutionPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldConsequenceProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/PendingExcavation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementResolution.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementResolutionCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "event-descent.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV16.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/PendingExcavationCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaFour.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/consequence-continuation.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainRepresentationBoundary.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainRepresentationEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/MaterialContinuationReplay.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainProductionDependencies.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCoordinatedAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCoordinatedContinuation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSourceIssuanceBaseline.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldMaterialCareContinuation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveSegment.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV27.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaEight.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldMaterialCareArchiveReplay.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coordinated-world-continuation.md",
+      "target": "live-material-evidence.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "native-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "structural-policy-and-motion.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV17.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Structures/CoupledSettlementPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCoupledSettlementAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "event-descent.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "reservoir-containment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "terrain-liquid-breach.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSix.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV6.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV7.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV8.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldActionCodecV6.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV9.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldActionCodecV7.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldProductionUpgrade.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldQuestUpgrade.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldConstructionUpgrade.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldUpgradePublication.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/History/HistoryAddress.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/History/HistoryRequest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Core/History/HistoryCommitSelection.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/RecordedWorldState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/RecordedWorldReader.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationSite.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldExcavationAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavateIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationAccess.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "terrain-liquid-breach.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV10.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "structural-loads.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldPacingState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "encounter-timing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldPacingAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/QueueEncounterWaitIntent.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldActionCodecV10.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEncounterProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldPacingCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV22.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaFive.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-pacing.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Care/OrdinaryCareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Care/RestorativeUseDefinition.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Care/CarePermission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/RestorativeAvailability.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../client/scripts/RestorativeActionOffers.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../client/scripts/FarmQuickWheelModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Care/RestorativeUse.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldResourceEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/RestorativeJourneyAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "care-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "construction-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "live-material-evidence.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ItemConsumptionPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ItemConsumptionPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ConsumeItemRequest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/IngredientRequest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Authority/TrustedCommandDelivery.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/MaterialLotSelection.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ConsumedItemClaim.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/RetiredIngredient.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionClaimValidation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/MaterialTransformCommitter.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionRetirementHistory.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "liquid-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "actor-resources.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "material-continuation-basis.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "materials-and-activities.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "identity-and-determinism.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "native-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCareActions.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalCareController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalCareView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/CareJourneyAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/CareFarmSources.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/CareFarmBuilder.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "target": "care-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/ProductionContinuationBasis.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/ImportedOutputBudget.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/DirectRawRetirementRange.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/ProductionBatchWitness.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "construction-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/ProductionContinuationBasisEncoding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/material-continuation-basis.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/transport-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/transport-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TransportMaterialBoundary.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/transport-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/transport-material-continuation.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/transport-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/transport-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/GeographyProductionDependencies.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterTimingSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterTimingScope.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterActorTiming.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterTimingCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterExposureBinding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Core/Exposure/ExposureProgress.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Core/Encounters/EncounterExposureCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "../../src/OpenFantasy.Host/EncounterTimingOperator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/encounter-timing.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldCoupledSettlementAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Structures/CoupledSettlementPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/StructureSupportMode.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "structural-contact-assessment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementScene.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementResolution.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionSettlementResolutionCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/PendingExcavationCodecV2.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV17.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/coupled-settlement.md",
+      "target": "event-descent.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../src/OpenFantasy.Core/Content/PackageManifest.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../src/OpenFantasy.Core/Content/PackageResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../src/OpenFantasy.Hosting/Content"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../spec-v1_1/REQUIREMENTS.json"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../spec-v1_1/IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/content-and-composition.md",
+      "target": "../../../spec-v1_1/CROSS_SYSTEM_SYNERGIES.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionLoadPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "structural-loads.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionLoadPolicyCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStructuralPolicyAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStructuralBinding.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV14.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/VerticalDescentQuery.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/VerticalDescentResult.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-policy-and-motion.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/EntityId.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/CanonicalEncodingV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/CONTRACTS.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/RuleMath.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/WorldInstant.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+      "target": "../../src/OpenFantasy.Core/CounterRandomV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ActorProgressionState.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ActorResourceTransition.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ActorRewardPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Care/RestorativeItemPlan.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ProgressionCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistory.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "../../src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistoryCodecV1.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "world-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/actor-resources.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "material-continuation-basis.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/MaterialOperationHistory.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "construction-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Gathering/GatherIssueEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "liquid-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "live-material-evidence.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV9.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionBearingModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralMassCatalog.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StableTerrainBearing.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "structural-policy-and-motion.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "structural-contact-assessment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralContactWeights.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralLoadGraph.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralLoadResolution.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Core/Structures/StructuralLoadCodec.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "../../src/OpenFantasy.Host/StructuralLoadOperator.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/structural-loads.md",
+      "target": "materials-and-activities.md"
+    }
+  ]
+}

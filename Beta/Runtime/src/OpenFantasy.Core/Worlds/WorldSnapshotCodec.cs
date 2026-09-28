@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
             3 => WorldSnapshotCodecV3.Encode(state),
+            27 => WorldSnapshotCodecV27.Encode(state),
             26 => WorldSnapshotCodecV26.Encode(state),
             25 => WorldSnapshotCodecV25.Encode(state),
             24 => WorldSnapshotCodecV24.Encode(state),
@@ -46,6 +47,8 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
+            27 => archiveAnchor is null ? WorldSnapshotCodecV27.Decode(bytes)
+                : throw new FormatException("The coordinated world does not accept a resource-only archive anchor."),
             26 => WorldSnapshotCodecV26.Decode(bytes, archiveAnchor),
             25 => WorldSnapshotCodecV25.Decode(bytes, archiveAnchor),
             24 => WorldSnapshotCodecV24.Decode(bytes),
@@ -71,4 +74,13 @@ public static class WorldSnapshotCodec
             4 => WorldSnapshotCodecV4.Decode(bytes),
             _ => throw new FormatException("Unsupported saved world profile.")
         };
+
+    /// <summary>
+    /// Explicit joint decode context of the coordinated world. A null anchor restores only a world that
+    /// has not yet cut; every other profile keeps its own unchanged entrypoint.
+    /// </summary>
+    public static WorldSnapshot DecodeCoordinated(ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor? coordinatedAnchor) =>
+        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 24) == 27
+            ? WorldSnapshotCodecV27.Decode(bytes, coordinatedAnchor)
+            : throw new FormatException("Only the coordinated world profile accepts a joint decode context.");
 }

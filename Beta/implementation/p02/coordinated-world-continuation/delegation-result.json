@@ -1,0 +1,47 @@
+{
+  "subtype": "success",
+  "is_error": false,
+  "duration_ms": 1595111,
+  "num_turns": 165,
+  "total_cost_usd": 16.783113250000003,
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 44,
+      "outputTokens": 153488,
+      "cacheReadInputTokens": 4006053,
+      "cacheCreationInputTokens": 405338,
+      "webSearchRequests": 0,
+      "costUSD": 16.783113250000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 88892,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01E1doSVwRkXJ6dsfhYNPbKL",
+      "tool_input": {
+        "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet build /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-restore -m:1 -p:UseSharedCompilation=false --verbosity quiet 2>&1 | tail -n 40",
+        "timeout": 600000,
+        "description": "Build the Hosting test project with its Core dependency"
+      }
+    },
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01Kf1URZXzfDa28E9XuEt44T",
+      "tool_input": {
+        "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet build /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-restore -m:1 -p:UseSharedCompilation=false --verbosity quiet",
+        "timeout": 600000,
+        "description": "Build the Hosting test project with its Core dependency"
+      }
+    }
+  ],
+  "contextPostflight": "verified",
+  "outcome": "partial_unbuilt_permission_denied",
+  "privateTask": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-coordinated-world-6swnjz4r",
+  "retry": false
+}

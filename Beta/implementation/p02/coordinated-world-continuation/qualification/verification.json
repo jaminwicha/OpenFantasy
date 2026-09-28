@@ -1,0 +1,179 @@
+{
+  "status": "passed-managed-scope",
+  "distinctTests": 2465,
+  "reports": {
+    "core-final": {
+      "counters": {
+        "total": "1577",
+        "executed": "1577",
+        "passed": "1577",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "command": {
+        "startedUtc": "2026-09-28T21:30:00.847674+00:00",
+        "kind": "core",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=core-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-core-final",
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/care-legacy-core-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/earned-supply-core-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-core-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-core-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-core-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-core-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-core-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-core-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 236.42531420802698,
+        "finishedUtc": "2026-09-28T21:33:57.209759+00:00"
+      }
+    },
+    "hosting-final": {
+      "counters": {
+        "total": "886",
+        "executed": "886",
+        "passed": "886",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "command": {
+        "startedUtc": "2026-09-28T21:34:11.558779+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=hosting-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-hosting-final",
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/care-legacy-hosting-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/earned-supply-hosting-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-hosting-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-hosting-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-hosting-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-hosting-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-hosting-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-hosting-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 2137.6650034999475,
+        "finishedUtc": "2026-09-28T22:09:49.218968+00:00"
+      }
+    },
+    "concurrent-builders-01": {
+      "counters": {
+        "total": "2",
+        "executed": "2",
+        "passed": "2",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "command": {
+        "startedUtc": "2026-09-28T22:11:36.206118+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~CoordinatedConcurrentConstructionTests",
+          "--logger",
+          "trx;LogFileName=concurrent-builders-01.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-concurrent-builders-01",
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/care-legacy-concurrent-builders-01",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/earned-supply-concurrent-builders-01",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-concurrent-builders-01/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-concurrent-builders-01/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-concurrent-builders-01/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-concurrent-builders-01/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-concurrent-builders-01/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/legacy-concurrent-builders-01/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 7.515111208893359,
+        "finishedUtc": "2026-09-28T22:11:43.721742+00:00"
+      }
+    }
+  },
+  "finalBuild": "integration-build-08",
+  "fullRegressionBuild": "integration-build-06",
+  "productionExecutionFilesUnchanged": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll"
+  ],
+  "sourceDeltaAfterFullBuild": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedConcurrentConstructionTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedConstructionJourney.cs"
+  ],
+  "changedPriorSourceInputs": [],
+  "limits": [
+    "External BeforeCommit recovery exceeded30 seconds twice; AfterCommit kill not reached.",
+    "Godot post-cut and production/platform/device/human gates remain open."
+  ],
+  "legacyComparisonRecords": [
+    "legacy-core-comparison.json",
+    "legacy-hosting-comparison.json"
+  ],
+  "whitespaceCheck": {
+    "sourceDocsScripts": "passed",
+    "rawEvidence": "Original durable-01 log/TRX whitespace retained exactly; raw tool output excluded from style-only check."
+  }
+}

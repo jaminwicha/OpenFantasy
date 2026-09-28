@@ -28,8 +28,12 @@ internal static class ProductionContinuationValidation
             || state.ConsumedItems.Any(value => priorCommands.Contains(value.CommandId)))
             throw new ArgumentException("A segment cannot reuse an imported producer or its command identity.");
 
+        bool completeWorld = context.SupportsCompleteWorld;
         Dictionary<EntityId, LotBoundary> boundaries = Boundaries(state);
-        var retirements = ProductionRetirementHistory.CurrentRetirements(state).ToArray();
+        // Coordinated raw custody belongs to the world inventory and its exact issuance partition is
+        // admitted by the complete world, so only transformed rights are frozen in this segment.
+        var retirements = ProductionRetirementHistory.CurrentRetirements(state)
+            .Where(value => !completeWorld || value.Ingredient.Source is null).ToArray();
         foreach (var retirement in retirements)
         {
             if (!boundaries.TryGetValue(retirement.Ingredient.LotId, out LotBoundary? boundary)
@@ -47,17 +51,57 @@ internal static class ProductionContinuationValidation
         }
         foreach (LotBoundary boundary in boundaries.Values)
         {
+            if (completeWorld && boundary.Source is not null) continue;
             (ulong cursor, ulong revision) = Remaining(boundary, byLot[boundary.LotId]);
             if (boundary.Source is not null) continue; // Its surviving suffix is owned by inventory.
             live.TryGetValue(boundary.LotId, out TransformedLot? remainder);
-            ValidateRemainder(boundary, cursor, revision, remainder is null ? null : LotBoundary.From(remainder));
+            // The construction owner validates the exact reservation of its installed output.
+            LotBoundary expected = completeWorld && remainder is not null && IsLocalConstructionOutput(state, boundary)
+                ? boundary with { ReservedBy = remainder.ReservedBy } : boundary;
+            ValidateRemainder(expected, cursor, revision, remainder is null ? null : LotBoundary.From(remainder));
         }
+    }
+
+    private static bool IsLocalConstructionOutput(ProductionSnapshot state, LotBoundary boundary) =>
+        boundary.Output is { } output
+        && state.Batches.FirstOrDefault(value => value.BatchId == output.BatchId) is { } batch
+        && state.Continuation!.ConstructionRecipeIds.Contains(batch.RecipeId);
+
+    private static void ValidateWorldInventory(ProductionSnapshot state, CountedAuthorityState inventory)
+    {
+        ProductionContinuationContext context = state.Continuation!;
+        ProductionContinuationBasis basis = context.Basis;
+        ulong operations = checked((ulong)state.Batches.Count + (ulong)state.ConsumedItems.Count);
+        // Transfers, gathering, delivery and extraction advance custody through their own owners, so
+        // the craft and consumption total is a lower bound here and never a second operation counter.
+        if (inventory.Custody.Revision < checked(basis.CustodyRevision + operations))
+            throw new ArgumentException("Coordinated custody cannot precede its retained craft and consumption operations.");
+        if (ProductionContinuationContext.AdmissionHash(inventory) != context.AuthorityAdmissionHash)
+            throw new ArgumentException("Changing continued source, control or custody admission requires its integrated authority contract.");
+        var operationsByCustodian = state.Batches.Select(value => value.CustodianId)
+            .Concat(state.ConsumedItems.Select(value => value.CustodianId)).ToLookup(value => value);
+        if (context.Storages.Count != inventory.Custody.Storages.Count)
+            throw new ArgumentException("Continued material operations cannot silently replace storage admission.");
+        var currentStorages = inventory.Custody.Storages.ToDictionary(value => value.CustodianId);
+        foreach (CustodianStorage baseline in context.Storages)
+        {
+            if (!currentStorages.TryGetValue(baseline.CustodianId, out CustodianStorage? current)
+                || current.UnitCapacity != baseline.UnitCapacity
+                || current.Revision < checked(baseline.Revision + (ulong)operationsByCustodian[baseline.CustodianId].Count()))
+                throw new ArgumentException("Every storage preserves its capacity and at least its local operation revisions.");
+        }
+        var custodians = inventory.Policies.Select(value => value.CustodianId).ToHashSet();
+        if (basis.RawRetirements.Any(value => !custodians.Contains(value.CustodianId))
+            || basis.BatchWitnesses.Any(value => !inventory.Actors.Contains(value.ActorId)
+                || !custodians.Contains(value.CustodianId)))
+            throw new ArgumentException("Imported live provenance retains its actual actor and custodian bindings.");
     }
 
     internal static void ValidateInventory(ProductionSnapshot state, CountedAuthorityState inventory)
     {
         if (state.MaterialHistory is not null) { MaterialContinuationValidation.ValidateInventory(state, inventory); return; }
         ProductionContinuationContext context = state.Continuation!;
+        if (context.SupportsCompleteWorld) { ValidateWorldInventory(state, inventory); return; }
         ProductionContinuationBasis basis = context.Basis;
         ulong operations = checked((ulong)state.Batches.Count + (ulong)state.ConsumedItems.Count);
         if (inventory.Custody.Revision != checked(basis.CustodyRevision + operations))

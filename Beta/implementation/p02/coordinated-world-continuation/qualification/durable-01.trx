@@ -1,0 +1,294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d0dc41cb-3002-48af-84ec-d096f68515c9" name="@mac 2026-09-28 15:57:20" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T15:57:20.1133760-05:00" queuing="2026-09-28T15:57:20.1133770-05:00" start="2026-09-28T15:57:05.5348250-05:00" finish="2026-09-28T15:57:20.1324900-05:00" />
+  <TestSettings name="default" id="7ddaab45-836a-4b4a-bcf8-0df4dca70449">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_15_57_20" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="81fd3d93-ba7f-4377-ac6f-7c14c2fb72de" testId="87ec3adf-6bf6-dc50-26ca-862c7f36be71" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;DELETE FROM world_material_care_segments WHERE ord&quot;···)" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7667910-05:00" endTime="2026-09-28T15:57:19.7667910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81fd3d93-ba7f-4377-ac6f-7c14c2fb72de">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f075a2d6-0053-4c4d-9709-2d748a769890" testId="9f98d698-1130-8ed7-448f-a297052270c9" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET state=zero&quot;···)" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7652100-05:00" endTime="2026-09-28T15:57:19.7652100-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f075a2d6-0053-4c4d-9709-2d748a769890">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="73677a0f-2f73-4917-90d6-ad869b3c03e3" testId="c074e944-790e-6ed7-50b8-b37e46b36341" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: True)" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7688230-05:00" endTime="2026-09-28T15:57:19.7688230-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="73677a0f-2f73-4917-90d6-ad869b3c03e3">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5acf845f-1ed6-4687-8f98-0989e6e3a31a" testId="84b8d859-3c1e-d7a1-f966-af59a31ec1f2" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: False)" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7693960-05:00" endTime="2026-09-28T15:57:19.7693960-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5acf845f-1ed6-4687-8f98-0989e6e3a31a">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d689b5ad-11e3-425d-bc0e-93c8e5141dd2" testId="f68b6fa5-bb19-d5e8-2832-f97b32bf1f0b" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Actual_finite_doses_cross_multiple_joint_cuts_and_reopen_with_exact_receipts" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7699010-05:00" endTime="2026-09-28T15:57:19.7699010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d689b5ad-11e3-425d-bc0e-93c8e5141dd2">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9c939939-b7cf-467c-827d-18b477363cc1" testId="f18eb452-ad2b-ded3-25f8-018f94978144" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET ordinal=x'&quot;···)" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7361200-05:00" endTime="2026-09-28T15:57:19.7361200-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9c939939-b7cf-467c-827d-18b477363cc1">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6f7c8f04-be11-42d0-bb88-72463d08e4f4" testId="d5593081-385c-4403-c052-77e80ce51401" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET boundary_h&quot;···)" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7623670-05:00" endTime="2026-09-28T15:57:19.7623670-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f7c8f04-be11-42d0-bb88-72463d08e4f4">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="42298786-66cb-44d6-b73b-8e8c2ad9c3c9" testId="718381d7-2cba-f344-c5df-00a26540ead2" testName="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET world_id=z&quot;···)" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T15:57:19.7590640-05:00" endTime="2026-09-28T15:57:19.7590640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="42298786-66cb-44d6-b73b-8e8c2ad9c3c9">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Actual_finite_doses_cross_multiple_joint_cuts_and_reopen_with_exact_receipts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f68b6fa5-bb19-d5e8-2832-f97b32bf1f0b">
+      <Execution id="d689b5ad-11e3-425d-bc0e-93c8e5141dd2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="Actual_finite_doses_cross_multiple_joint_cuts_and_reopen_with_exact_receipts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c074e944-790e-6ed7-50b8-b37e46b36341">
+      <Execution id="73677a0f-2f73-4917-90d6-ad869b3c03e3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="84b8d859-3c1e-d7a1-f966-af59a31ec1f2">
+      <Execution id="5acf845f-1ed6-4687-8f98-0989e6e3a31a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET ordinal=x'&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f18eb452-ad2b-ded3-25f8-018f94978144">
+      <Execution id="9c939939-b7cf-467c-827d-18b477363cc1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET state=zero&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9f98d698-1130-8ed7-448f-a297052270c9">
+      <Execution id="f075a2d6-0053-4c4d-9709-2d748a769890" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET boundary_h&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d5593081-385c-4403-c052-77e80ce51401">
+      <Execution id="6f7c8f04-be11-42d0-bb88-72463d08e4f4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;DELETE FROM world_material_care_segments WHERE ord&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="87ec3adf-6bf6-dc50-26ca-862c7f36be71">
+      <Execution id="81fd3d93-ba7f-4377-ac6f-7c14c2fb72de" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: &quot;UPDATE world_material_care_segments SET world_id=z&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="718381d7-2cba-f344-c5df-00a26540ead2">
+      <Execution id="42298786-66cb-44d6-b73b-8e8c2ad9c3c9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests" name="Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="87ec3adf-6bf6-dc50-26ca-862c7f36be71" executionId="81fd3d93-ba7f-4377-ac6f-7c14c2fb72de" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9f98d698-1130-8ed7-448f-a297052270c9" executionId="f075a2d6-0053-4c4d-9709-2d748a769890" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c074e944-790e-6ed7-50b8-b37e46b36341" executionId="73677a0f-2f73-4917-90d6-ad869b3c03e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="84b8d859-3c1e-d7a1-f966-af59a31ec1f2" executionId="5acf845f-1ed6-4687-8f98-0989e6e3a31a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f68b6fa5-bb19-d5e8-2832-f97b32bf1f0b" executionId="d689b5ad-11e3-425d-bc0e-93c8e5141dd2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f18eb452-ad2b-ded3-25f8-018f94978144" executionId="9c939939-b7cf-467c-827d-18b477363cc1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5593081-385c-4403-c052-77e80ce51401" executionId="6f7c8f04-be11-42d0-bb88-72463d08e4f4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="718381d7-2cba-f344-c5df-00a26540ead2" executionId="42298786-66cb-44d6-b73b-8e8c2ad9c3c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="0" failed="8" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.30]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.88]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.15]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:13.54]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.54]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.54]       Expected: Applied
+[xUnit.net 00:00:13.54]       Actual:   Rejected
+[xUnit.net 00:00:13.54]       Stack Trace:
+[xUnit.net 00:00:13.54]         
+[xUnit.net 00:00:13.54]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.54]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.54]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.54]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.56]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.56]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.56]       Expected: Applied
+[xUnit.net 00:00:13.56]       Actual:   Rejected
+[xUnit.net 00:00:13.56]       Stack Trace:
+[xUnit.net 00:00:13.56]         
+[xUnit.net 00:00:13.56]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.56]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.56]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.56]       Expected: Applied
+[xUnit.net 00:00:13.56]       Actual:   Rejected
+[xUnit.net 00:00:13.56]       Stack Trace:
+[xUnit.net 00:00:13.56]         
+[xUnit.net 00:00:13.56]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.56]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.56]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.56]       Expected: Applied
+[xUnit.net 00:00:13.56]       Actual:   Rejected
+[xUnit.net 00:00:13.56]       Stack Trace:
+[xUnit.net 00:00:13.56]         
+[xUnit.net 00:00:13.56]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.56]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.56]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.56]       Expected: Applied
+[xUnit.net 00:00:13.56]       Actual:   Rejected
+[xUnit.net 00:00:13.56]       Stack Trace:
+[xUnit.net 00:00:13.56]         
+[xUnit.net 00:00:13.56]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.56]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.56]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.56]       Expected: Applied
+[xUnit.net 00:00:13.56]       Actual:   Rejected
+[xUnit.net 00:00:13.56]       Stack Trace:
+[xUnit.net 00:00:13.56]         
+[xUnit.net 00:00:13.56]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.56]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.56]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.56]       Expected: Applied
+[xUnit.net 00:00:13.56]       Actual:   Rejected
+[xUnit.net 00:00:13.56]       Stack Trace:
+[xUnit.net 00:00:13.56]         
+[xUnit.net 00:00:13.56]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.56]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+[xUnit.net 00:00:13.56]       ---- Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.56]       Expected: Applied
+[xUnit.net 00:00:13.56]       Actual:   Rejected
+[xUnit.net 00:00:13.56]       Stack Trace:
+[xUnit.net 00:00:13.56]         
+[xUnit.net 00:00:13.56]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:13.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor()
+[xUnit.net 00:00:13.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.57]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:19.9956210-05:00">
+        <Text>[xUnit.net 00:00:13.54]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET ordinal=x'"···) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:20.0020430-05:00">
+        <Text>[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET world_id=z"···) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:20.0020980-05:00">
+        <Text>[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET boundary_h"···) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:20.0021470-05:00">
+        <Text>[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET state=zero"···) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:20.0021830-05:00">
+        <Text>[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "DELETE FROM world_material_care_segments WHERE ord"···) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:20.0022180-05:00">
+        <Text>[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:20.0024940-05:00">
+        <Text>[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: False) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T15:57:20.0025340-05:00">
+        <Text>[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Actual_finite_doses_cross_multiple_joint_cuts_and_reopen_with_exact_receipts [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

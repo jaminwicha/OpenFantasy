@@ -1,0 +1,11 @@
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedSourcePartitionTests.cs(72,64): error CS1061: 'CountedAuthorityState' does not contain a definition for 'WithCustody' and no accessible extension method 'WithCustody' accepting a first argument of type 'CountedAuthorityState' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedBatchCapacityTests.cs(61,17): error xUnit2013: Do not use Assert.Equal() to check for collection size. Use Assert.Single instead. (https://xunit.net/xunit.analyzers/rules/xUnit2013) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedSourcePartitionTests.cs(72,64): error CS1061: 'CountedAuthorityState' does not contain a definition for 'WithCustody' and no accessible extension method 'WithCustody' accepting a first argument of type 'CountedAuthorityState' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedBatchCapacityTests.cs(61,17): error xUnit2013: Do not use Assert.Equal() to check for collection size. Use Assert.Single instead. (https://xunit.net/xunit.analyzers/rules/xUnit2013) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:49.32

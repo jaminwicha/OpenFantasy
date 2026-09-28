@@ -19,7 +19,8 @@ public sealed class ProductionContinuationContext
     private ProductionContinuationContext(ProductionContinuationBasis basis, CountedAuthorityState inventory,
         ProductionSnapshot production, bool supportsMaterialOperations = false, GatheringSnapshot? gathering = null,
         ConstructionSnapshot? construction = null, bool supportsConstruction = false, TerrainRepresentationBoundary? terrainRepresentation = null,
-        TransportMaterialBoundary? reservedTransport = null, ExcavationMaterialBoundary? excavation = null)
+        TransportMaterialBoundary? reservedTransport = null, ExcavationMaterialBoundary? excavation = null,
+        bool completeWorld = false)
     {
         Basis = basis;
         Ordinal = checked((production.Continuation?.Ordinal ?? 0) + 1);
@@ -35,15 +36,22 @@ public sealed class ProductionContinuationContext
         Excavation = excavation;
         if ((terrainRepresentation is not null ? 1 : 0) + (reservedTransport is not null ? 1 : 0) + (excavation is not null ? 1 : 0) > 1)
             throw new ArgumentException("Terrain and reserved transport require distinct explicitly qualified profiles.");
+        SupportsCompleteWorld = completeWorld;
+        if (completeWorld && (supportsMaterialOperations || supportsConstruction || terrainRepresentation is not null
+                || reservedTransport is not null || excavation is not null || construction is null)
+            || !completeWorld && production.Continuation?.SupportsCompleteWorld == true)
+            throw new ArgumentException("The coordinated world keeps custody, work and construction with their actual owners.");
+        // The coordinated world retains original installed construction batches without ordered operations.
+        bool retainsConstruction = supportsConstruction || completeWorld;
         ConstructionRecipeIds = Array.AsReadOnly((construction?.Definitions.Select(value => value.MaterialTransform.DefinitionId)
             ?? production.Continuation?.ConstructionRecipeIds.AsEnumerable() ?? Array.Empty<EntityId>()).Order().ToArray());
         if (ConstructionRecipeIds.Count > ConstructionSnapshot.MaximumDefinitions
-            || !supportsConstruction && ConstructionRecipeIds.Count != 0
+            || !retainsConstruction && ConstructionRecipeIds.Count != 0
             || supportsConstruction && ConstructionRecipeIds.Count == 0
-            || production.Continuation is { SupportsConstruction: true } prior
+            || production.Continuation is { } prior && (prior.SupportsConstruction || prior.SupportsCompleteWorld)
                 && !ConstructionRecipeIds.SequenceEqual(prior.ConstructionRecipeIds))
             throw new ArgumentException("Construction continuation retains its exact bounded admitted recipe catalog.");
-        ConstructionBatches = ConstructionBatchArchive.Capture(production, basis, construction, supportsConstruction, ConstructionRecipeIds);
+        ConstructionBatches = ConstructionBatchArchive.Capture(production, basis, construction, retainsConstruction, ConstructionRecipeIds);
         if (checked(BaseBatchCount + BaseConsumedItemCount) > BaseProductionRevision
             || BaseMaterialOperationCount > BaseProductionRevision)
             throw new ArgumentException("A continuation boundary requires a cumulative revision for every retained operation.");
@@ -57,7 +65,7 @@ public sealed class ProductionContinuationContext
         if (recipes.Length > 5 * 1024 * 1024)
             throw new ArgumentException("The continuation recipe admission exceeds its bounded frame.");
         List<ReadOnlyMemory<byte>> fields = [
-            Number(excavation is not null ? 6UL : reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
+            Number(completeWorld ? 7UL : excavation is not null ? 6UL : reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
             Number(BaseBatchCount), Number(BaseConsumedItemCount), Number(SupportsConsumption ? 1UL : 0UL), recipes,
             AuthorityAdmissionHash.ToByteArray(), CanonicalEncodingV1.Frame("continuation.storages.v1",
                 Storages.Select(value => (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("continuation.storage.v1",
@@ -95,7 +103,14 @@ public sealed class ProductionContinuationContext
             fields.Add(Number(supportsConstruction ? 1UL : 0UL));
             fields.Add(excavation.ContentHash.ToByteArray());
         }
-        ContentHash = ContentHash.Compute(CanonicalEncodingV1.Frame("production.continuation-context", fields.ToArray()));
+        if (completeWorld)
+        {
+            fields.Add(CanonicalEncodingV1.Frame("continuation.construction-recipes.v1", ConstructionRecipeIds
+                .Select(value => (ReadOnlyMemory<byte>)value.ToByteArray()).ToArray()));
+            fields.Add(CanonicalEncodingV1.Frame("continuation.construction-batches.v1", ConstructionBatches
+                .Select(value => (ReadOnlyMemory<byte>)ProductionCodecV1.EncodeBatch(value)).ToArray()));
+        }
+        ContentHash =ContentHash.Compute(CanonicalEncodingV1.Frame("production.continuation-context", fields.ToArray()));
     }
 
     public ProductionContinuationBasis Basis { get; }
@@ -106,6 +121,11 @@ public sealed class ProductionContinuationContext
     public bool SupportsConsumption { get; }
     public bool SupportsMaterialOperations { get; }
     public bool SupportsConstruction { get; }
+    /// <summary>
+    /// Selected only by a coordinated complete-world cut. Crafting and consumption keep their revision
+    /// meaning while raw custody, gathering and work stay with the world's actual owners.
+    /// </summary>
+    public bool SupportsCompleteWorld { get; }
     public bool SupportsExcavation => Excavation is not null;
     public ExcavationMaterialBoundary? Excavation { get; }
     public bool SupportsReservedTransport => ReservedTransport is not null;
@@ -154,6 +174,11 @@ public sealed class ProductionContinuationContext
         GatheringSnapshot gathering) =>
         new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering, construction,
             true, excavation: excavation);
+
+    internal static ProductionContinuationContext CaptureWorld(CountedAuthorityState inventory,
+        ProductionSnapshot production, ConstructionSnapshot construction) =>
+        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production,
+            construction: construction, completeWorld: true);
 
     private static ProductionContinuationBasis CaptureOrdinaryBasis(CountedAuthorityState inventory, ProductionSnapshot production)
     {

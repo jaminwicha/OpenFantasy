@@ -36,7 +36,8 @@ public sealed class ExcavationPlanner
         WorldActionCommand command, bool advancing, bool held, Func<EntityId, bool> occupied,
         ConstructionPhysicalSnapshot? physical, ConstructionSettlementResolution? completedResolution, bool continued)
     {
-        if (production.IsContinued != continued || continued && production.Continuation?.SupportsExcavation != true)
+        if (production.IsContinued != continued && production.Continuation?.SupportsCompleteWorld != true
+            || continued && production.Continuation?.SupportsExcavation != true)
         {
             throw new ArgumentException("Excavation requires an admitted continuation issuance contract.", nameof(production));
         }

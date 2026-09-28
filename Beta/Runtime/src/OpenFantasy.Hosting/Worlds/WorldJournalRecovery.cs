@@ -28,6 +28,14 @@ internal sealed class WorldJournalRecovery
         return new(selected, trace.ArchivePublicationSequence, trace.Head.State.Revision, trace.Head.StateHash);
     }
 
+    internal RecordedWorldMaterialCareArchive ReadMaterialCareArchive(WorldDatabase database, ulong ordinal)
+    {
+        ReplayedWorld trace = VerifyAndReplay(database, null, selectedMaterialCareOrdinal: ordinal);
+        WorldMaterialCareArchiveSegment selected = trace.SelectedMaterialCareArchive
+            ?? throw new ArgumentOutOfRangeException(nameof(ordinal), "The requested material and care archive is not in the recorded world.");
+        return new(selected, trace.MaterialCarePublicationSequence, trace.Head.State.Revision, trace.Head.StateHash);
+    }
+
     internal RecordedWorldMaterialEvidence ReadMaterialEvidence(WorldDatabase database, ulong sequence)
     {
         ReplayedWorld trace = VerifyAndReplay(database, null, selectedMaterialSequence: sequence);
@@ -37,11 +45,11 @@ internal sealed class WorldJournalRecovery
             trace.Head.State.Revision, trace.Head.StateHash);
     }
 
-    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null, ulong? selectedMaterialSequence = null)
+    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null, ulong? selectedMaterialSequence = null, ulong? selectedMaterialCareOrdinal = null)
     {
         try
         {
-            return Replay(database, selectedRevision, selectedOrdinal, selectedMaterialSequence);
+            return Replay(database, selectedRevision, selectedOrdinal, selectedMaterialSequence, selectedMaterialCareOrdinal);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or FormatException or OverflowException)
         {
@@ -49,7 +57,7 @@ internal sealed class WorldJournalRecovery
         }
     }
 
-    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal, ulong? selectedMaterialSequence)
+    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal, ulong? selectedMaterialSequence, ulong? selectedMaterialCareOrdinal)
     {
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
@@ -74,6 +82,10 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
         }
+        if ((genesis.ProfileVersion == 27) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        {
+            throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
+        }
         WorldSnapshot state = genesis;
         WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
         SelectedMaterialObservation? selectedMaterial = null;
@@ -85,6 +97,7 @@ internal sealed class WorldJournalRecovery
         var steps = new WorldCommitPreparation();
         var migrations = new WorldProfileMigrationReplay();
         using var archives = new WorldResourceArchiveReplay(database, selectedOrdinal);
+        using var materialCareArchives = new WorldMaterialCareArchiveReplay(database, selectedMaterialCareOrdinal);
         using IEnumerator<StoredWorldCheckpoint> checkpoints = database.ReadCheckpoints().GetEnumerator();
         if (!checkpoints.MoveNext())
         {
@@ -103,7 +116,8 @@ internal sealed class WorldJournalRecovery
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(usage, stored.Sequence, stored.AdvancingSteps,
                 (ulong)expected.Commands.Count, (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length,
                 state.PendingExcavation is null ? expected.Candidate.PendingExcavation : null,
-                state.ProfileVersion, (ulong)(expected.ResourceArchive?.Encode().Length ?? 0));
+                state.ProfileVersion, (ulong)(expected.ResourceArchive?.Encode().Length ?? 0),
+                (ulong)(expected.MaterialCareArchive?.Encode().Length ?? 0));
             VerifyCommit(stored, expected.Stored);
             if (stored.Sequence == selectedMaterialSequence)
             {
@@ -111,6 +125,7 @@ internal sealed class WorldJournalRecovery
                     expected.MaterialEvidence ?? throw new InvalidDataException("The selected entry did not observe its material transaction."));
             }
             archives.Verify(expected.ResourceArchive, stored, stateBytes);
+            materialCareArchives.Verify(expected.MaterialCareArchive, stored, stateBytes);
             foreach (StoredWorldCommandOutcome command in expected.Commands)
             {
                 if (!commands.TryAdd((command.PrincipalId, command.CommandId), command))
@@ -152,6 +167,7 @@ internal sealed class WorldJournalRecovery
             throw new InvalidDataException("The world contains a checkpoint beyond its accepted journal.");
         }
         archives.Complete();
+        materialCareArchives.Complete();
         if (database.SchemaVersion == WorldDatabaseSchemaThree.Version && state.ProfileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 19 and not 20 and not 21)
         {
             throw new InvalidDataException("The third world schema has no accepted production, quest or construction admission.");
@@ -172,6 +188,10 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
         }
+        if ((state.ProfileVersion == 27) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        {
+            throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
+        }
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps
             || !head.State.AsSpan().SequenceEqual(stateBytes))
@@ -181,7 +201,8 @@ internal sealed class WorldJournalRecovery
         VerifyCommandTable(database, commands);
         VerifyIdentityTable(database, identities);
         return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected,
-            archives.Selected, archives.SelectedPublicationSequence, selectedMaterial);
+            archives.Selected, archives.SelectedPublicationSequence, selectedMaterial,
+            materialCareArchives.Selected, materialCareArchives.SelectedPublicationSequence);
     }
 
     private static ExpectedJournalEntry PrepareEntry(int schemaVersion, StoredWorldCommit stored,
@@ -202,7 +223,8 @@ internal sealed class WorldJournalRecovery
         PreparedWorldCommit step = steps.Prepare(state, genesisIdentities,
             stateHash, batch, historicallyOccupied, captureMaterialEvidence);
         return new(step.Decision.Candidate, step.CandidateBytes, step.Stored, step.Commands, step.Identities,
-            step.Decision.SealedResourceSegment, captureMaterialEvidence ? step.Decision.MaterialEvidence : null);
+            step.Decision.SealedResourceSegment, captureMaterialEvidence ? step.Decision.MaterialEvidence : null,
+            step.Decision.SealedMaterialCareSegment);
     }
 
     private static void VerifyCommit(StoredWorldCommit stored, StoredWorldCommit expected)
@@ -262,7 +284,8 @@ internal sealed class WorldJournalRecovery
     }
 
     private sealed record ReplayedWorld(RecoveredWorld Head, WorldSnapshot? Selected,
-        WorldResourceArchiveSegment? SelectedArchive, ulong ArchivePublicationSequence, SelectedMaterialObservation? SelectedMaterial);
+        WorldResourceArchiveSegment? SelectedArchive, ulong ArchivePublicationSequence, SelectedMaterialObservation? SelectedMaterial,
+        WorldMaterialCareArchiveSegment? SelectedMaterialCareArchive, ulong MaterialCarePublicationSequence);
 
     private sealed record SelectedMaterialObservation(ContentHash BeforeHash, ContentHash AfterHash,
         IReadOnlyList<WorldMaterialActionEvidence> Evidence);
@@ -270,6 +293,7 @@ internal sealed class WorldJournalRecovery
 
 internal sealed record ExpectedJournalEntry(WorldSnapshot Candidate, byte[] CandidateBytes, StoredWorldCommit Stored,
     IReadOnlyList<StoredWorldCommandOutcome> Commands, IReadOnlyList<StoredWorldIdentity> Identities,
-    WorldResourceArchiveSegment? ResourceArchive = null, IReadOnlyList<WorldMaterialActionEvidence>? MaterialEvidence = null);
+    WorldResourceArchiveSegment? ResourceArchive = null, IReadOnlyList<WorldMaterialActionEvidence>? MaterialEvidence = null,
+    WorldMaterialCareArchiveSegment? MaterialCareArchive = null);
 
 internal sealed record RecoveredWorld(WorldSnapshot Genesis, WorldSnapshot State, ContentHash StateHash, WorldJournalUsage Usage);

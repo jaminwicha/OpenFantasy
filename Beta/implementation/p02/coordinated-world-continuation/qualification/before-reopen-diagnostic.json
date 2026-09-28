@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/external-crash-01/before.sqlite3",
+    "1569"
+  ],
+  "timeoutSeconds": 30,
+  "scope": "One same-command diagnostic; original timeout retained; no production latency closure.",
+  "status": "failed",
+  "timedOut": true,
+  "seconds": 30.01807125005871
+}

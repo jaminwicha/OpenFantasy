@@ -15,9 +15,15 @@ public static class ProductionCodecV3
     public static byte[] Encode(ProductionSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
-        if (state.Continuation is not { } context || context.SupportsMaterialOperations)
+        if (state.Continuation is not { } context || context.SupportsMaterialOperations || context.SupportsCompleteWorld)
             throw new ArgumentException("Production V3 requires an explicitly continued owner.", nameof(state));
-        byte[] bytes = CanonicalEncodingV1.Frame("production.snapshot", Number(3), state.WorldId.ToByteArray(),
+        return EncodeFrame(state, context, 3);
+    }
+
+    /// <summary>Shared continued frame; each public codec selects its own interpretation and version.</summary>
+    internal static byte[] EncodeFrame(ProductionSnapshot state, ProductionContinuationContext context, ulong version)
+    {
+        byte[] bytes = CanonicalEncodingV1.Frame("production.snapshot", Number(version), state.WorldId.ToByteArray(),
             state.BranchId.ToByteArray(), Number(state.Revision), context.ContentHash.ToByteArray(),
             Number(state.TotalBatchCount), Number(state.TotalConsumedItemCount),
             Collection("production.batches", state.Batches.Select(ProductionCodecV1.EncodeBatch),
@@ -35,11 +41,16 @@ public static class ProductionCodecV3
     public static ProductionSnapshot Decode(ReadOnlySpan<byte> bytes, ProductionContinuationContext context)
     {
         ArgumentNullException.ThrowIfNull(context);
+        return DecodeFrame(bytes, context, 3);
+    }
+
+    internal static ProductionSnapshot DecodeFrame(ReadOnlySpan<byte> bytes, ProductionContinuationContext context, ulong version)
+    {
         try
         {
             var reader = new CanonicalProductionReader(bytes, MaximumSnapshotByteLength, 11);
             reader.ExpectTag("production.snapshot"u8);
-            reader.ExpectVersion(3);
+            reader.ExpectVersion(version);
             EntityId world = reader.ReadIdentity();
             EntityId branch = reader.ReadIdentity();
             ulong revision = reader.ReadUnsigned64();
@@ -74,7 +85,7 @@ public static class ProductionCodecV3
             if (!context.SupportsConsumption && claims.Count != 0
                 || result.TotalBatchCount != totalBatches || result.TotalConsumedItemCount != totalConsumed)
                 throw new ArgumentException("Continued production counters and consumption profile must match their exact context.");
-            if (!bytes.SequenceEqual(Encode(result)))
+            if (!bytes.SequenceEqual(version == ProductionCodecV9.Version ? ProductionCodecV9.Encode(result) : Encode(result)))
                 throw CanonicalProductionReader.Failure(ProductionFormatFailure.NonCanonical,
                     "Continued production fields must be canonically ordered.");
             return result;

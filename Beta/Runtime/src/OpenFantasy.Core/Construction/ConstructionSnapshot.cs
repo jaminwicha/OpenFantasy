@@ -58,7 +58,7 @@ public sealed class ConstructionSnapshot
     public void ValidateForWorld(WorldSnapshot world)
     {
         ArgumentNullException.ThrowIfNull(world);
-        if (world.Production?.IsContinued == true)
+        if (world.Production?.Continuation is { SupportsCompleteWorld: false })
             throw new ArgumentException("Complete-world construction retains its original inline production interpretation.", nameof(world));
         ValidateComponents(world, world.Inventory, world.Production, world.Space, world.ConstructionPhysical);
     }
@@ -90,7 +90,7 @@ public sealed class ConstructionSnapshot
     private void ValidateComponents(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot? production,
         LocalSpatialSnapshot space, ConstructionPhysicalSnapshot? physical)
     {
-        if (world.WorldId != WorldId || world.BranchId != BranchId || Revision > world.Revision
+        if (world.WorldId != WorldId || world.BranchId != BranchId || Revision > world.MaximumActionRevision
             || production is null || inventory.WorldId != WorldId || inventory.BranchId != BranchId
             || production.WorldId != WorldId || production.BranchId != BranchId
             || space.Scope.WorldId != WorldId || space.Scope.BranchId != BranchId
@@ -172,7 +172,7 @@ public sealed class ConstructionSnapshot
         {
             throw new ArgumentException("Construction-only material batches require one fully worked, installed project.");
         }
-        if (production.Continuation is { SupportsConstruction: true } context
+        if (production.Continuation is { } context && (context.SupportsConstruction || context.SupportsCompleteWorld)
             && context.Basis.BatchWitnesses.Any(value => context.ConstructionRecipeIds.Contains(value.RecipeId)
                 && (!installedBatches.Contains(value.BatchId) || !context.ConstructionBatches.Any(batch => batch.BatchId == value.BatchId))))
             throw new ArgumentException("Every imported construction recipe producer requires one installed project and its complete original batch.");

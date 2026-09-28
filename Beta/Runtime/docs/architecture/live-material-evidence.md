@@ -84,3 +84,7 @@ sequences are invalid requests. Results retain their original head pins when lat
 The operation is synchronous privileged inspection, with the existing bounded full-journal cost. It must
 not run on a player frame or confer player knowledge. It writes no save rows, introduces no schema or
 migration, and does not turn a structurally consistent edited database into proof of trusted provenance.
+
+The privileged observation reader remains bound to profile26. The explicit
+[coordinated profile27](coordinated-world-continuation.md) uses its own full archive/replay path; this
+diagnostic seam does not implicitly acquire nested continued-owner pinning or a new profile binding.

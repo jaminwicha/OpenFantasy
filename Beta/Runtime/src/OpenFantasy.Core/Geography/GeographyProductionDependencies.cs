@@ -18,13 +18,16 @@ public sealed class GeographyProductionDependencies
 
     private GeographyProductionDependencies(WatershedRunoffCapacityState owner,
         IReadOnlyCollection<GatherIssueEvidence>? gatherEvidence,
-        IReadOnlyCollection<ConstructionCompletionEvidence>? constructionEvidence, bool transport)
+        IReadOnlyCollection<ConstructionCompletionEvidence>? constructionEvidence, bool transport,
+        bool completeWorld = false)
     {
         ArgumentNullException.ThrowIfNull(owner);
         Context = owner.Production?.Continuation
             ?? throw new ArgumentException("Geography dependencies require an actual continued capacity owner.", nameof(owner));
         if (Context.SupportsReservedTransport != transport)
             throw new ArgumentException("Reserved transport dependencies require its actual complete transport owner.");
+        if (Context.SupportsCompleteWorld != completeWorld)
+            throw new ArgumentException("Only the coordinated world qualifies its own nested geography.");
         Qualification = owner.ContinuationQualification
             ?? throw new ArgumentException("Geography dependencies require the actual admitted fixed domain cut.", nameof(owner));
         GatherEvidence = Copy(gatherEvidence, MaterialOperationHistory.MaximumOperations);
@@ -58,6 +61,16 @@ public sealed class GeographyProductionDependencies
         TransportEvidence = Copy(transportEvidence, MaterialOperationHistory.MaximumOperations);
     }
 
+    private GeographyProductionDependencies(LiquidReservoirState owner, bool completeWorld)
+        : this(owner.Capacity, null, null, transport: false, completeWorld: completeWorld)
+    {
+        ReservoirGeometryHashes = Array.AsReadOnly(owner.Geometries.Select(value => value.ContentHash).ToArray());
+    }
+
+    /// <summary>Captured only from the reservoir owner that a coordinated world cut actually rebased.</summary>
+    internal static GeographyProductionDependencies ForCompleteWorld(LiquidReservoirState owner) =>
+        new(owner ?? throw new ArgumentNullException(nameof(owner)), completeWorld: true);
+
     public ProductionContinuationContext Context { get; }
     public ReadOnlyCollection<GatherIssueEvidence> GatherEvidence { get; }
     public ReadOnlyCollection<ConstructionCompletionEvidence> ConstructionEvidence { get; }
@@ -69,7 +82,8 @@ public sealed class GeographyProductionDependencies
 
     internal ProductionSnapshot Decode(ReadOnlySpan<byte> bytes)
     {
-        return Context.SupportsReservedTransport ? ProductionCodecV7.Decode(bytes, Context, GatherEvidence, ConstructionEvidence, TransportEvidence)
+        return Context.SupportsCompleteWorld ? ProductionCodecV9.Decode(bytes, Context)
+            : Context.SupportsReservedTransport ?ProductionCodecV7.Decode(bytes, Context, GatherEvidence, ConstructionEvidence, TransportEvidence)
             : Context.SupportsConstruction ? ProductionCodecV5.Decode(bytes, Context, GatherEvidence, ConstructionEvidence)
             : Context.SupportsMaterialOperations ? ProductionCodecV4.Decode(bytes, Context, GatherEvidence)
             : ProductionCodecV3.Decode(bytes, Context);

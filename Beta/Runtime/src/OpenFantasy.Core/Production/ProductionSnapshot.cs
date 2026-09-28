@@ -65,7 +65,8 @@ public sealed class ProductionSnapshot
         : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsExcavation == true ? ProductionCodecV8.Encode(this)
+    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsCompleteWorld == true ? ProductionCodecV9.Encode(this)
+        : Continuation?.SupportsExcavation == true ? ProductionCodecV8.Encode(this)
         : Continuation?.SupportsReservedTransport == true ? ProductionCodecV7.Encode(this)
         : Continuation?.SupportsTerrainRepresentation == true ? ProductionCodecV6.Encode(this)
         : Continuation?.SupportsConstruction == true ? ProductionCodecV5.Encode(this)
@@ -195,6 +196,24 @@ public sealed class ProductionSnapshot
         var context = ProductionContinuationContext.CaptureExcavation(inventory, this, excavation, construction, gathering);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
+    /// <summary>
+    /// Coordinated complete-world cut. Crafting and consumption keep their revision meaning; raw custody,
+    /// gathering and work remain with the world's actual owners, so no material operation history exists.
+    /// </summary>
+    internal ProductionSnapshot ContinueWorld(CountedAuthorityState inventory, ConstructionSnapshot construction)
+    {
+        ArgumentNullException.ThrowIfNull(inventory);
+        ArgumentNullException.ThrowIfNull(construction);
+        if (Continuation is { SupportsCompleteWorld: false })
+            throw new ArgumentException("A standalone continued owner cannot join the coordinated complete world.");
+        var context = ProductionContinuationContext.CaptureWorld(inventory, this, construction);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context);
         result.ValidateForAuthority(inventory);
         _ = result.ContentHash;
         return result;

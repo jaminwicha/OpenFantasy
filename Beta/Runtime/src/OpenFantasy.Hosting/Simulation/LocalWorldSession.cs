@@ -161,7 +161,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
             if (command.Intent is ExcavateIntent
-                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26)
+                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27)
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }
@@ -219,7 +219,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private static void ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
     {
         if (command.Intent is UseRestorativeItemIntent or RevokeCarePermissionIntent
-            && (state.ProfileVersion != 26 || state.HasReadingHold || state.PendingExcavation is not null
+            && (state.ProfileVersion is not (26 or 27) || state.HasReadingHold || state.PendingExcavation is not null
                 || state.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration || state.Care?.Pending is not null))
         {
             throw new AuthorityDispatchException("Ordinary care requires its admitted unheld exploration boundary.");

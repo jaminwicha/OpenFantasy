@@ -10,6 +10,13 @@ public static class WorldResourceHistoryCodec
     public static byte[] Encode(WorldResourceHistory value)
     {
         ArgumentNullException.ThrowIfNull(value);
+        if (value.CoordinatedAnchor is { } joint)
+        {
+            // The inner V1 frame stays structural; the outer V3 frame binds the exact joint boundary.
+            var active = new WorldResourceHistory(value.AnchorAdmission, value.History, value.Evidence);
+            return CanonicalEncodingV1.Frame("world.resource-history", CanonicalEncodingV1.Unsigned64(3),
+                joint.EncodeBinding(), WorldResourceHistoryCodecV1.Encode(active));
+        }
         if (value.ArchiveAnchor is not { } anchor) return WorldResourceHistoryCodecV1.Encode(value);
         var reference = anchor.Reference;
         // The inner V1 frame remains a structural archive; the outer V2 frame binds its actual basis.
@@ -19,6 +26,30 @@ public static class WorldResourceHistoryCodec
                 reference.BranchId.ToByteArray(), CanonicalEncodingV1.Unsigned64(reference.Ordinal),
                 CanonicalEncodingV1.Unsigned64(reference.BoundarySequence), reference.BoundaryHash.ToByteArray()),
             WorldResourceHistoryCodecV1.Encode(body));
+    }
+
+    /// <summary>Restores the causal segment that follows one exact supplied coordinated boundary.</summary>
+    public static WorldResourceHistory DecodeCoordinated(ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor coordinatedAnchor)
+    {
+        ArgumentNullException.ThrowIfNull(coordinatedAnchor);
+        try
+        {
+            var reader = new WorldFrameReader(bytes, MaximumEncodedByteLength, 4);
+            reader.Tag("world.resource-history"u8);
+            if (reader.Number() != 3) throw new FormatException("A coordinated resource history requires its explicit joint version.");
+            if (!reader.Field(512).SequenceEqual(coordinatedAnchor.EncodeBinding()))
+                throw new FormatException("The supplied joint boundary does not match the exact retained binding.");
+            var body = WorldResourceHistoryCodecV1.Decode(reader.Field(WorldResourceHistoryCodecV1.MaximumEncodedByteLength));
+            reader.Complete();
+            var value = new WorldResourceHistory(body.AnchorAdmission, body.History, body.Evidence,
+                coordinatedAnchor: coordinatedAnchor);
+            if (!Encode(value).AsSpan().SequenceEqual(bytes)) throw new FormatException("Coordinated resource history is not canonical.");
+            return value;
+        }
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+        {
+            throw new FormatException("Coordinated resource history violates its joint boundary.", error);
+        }
     }
 
     public static WorldResourceHistory Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null)

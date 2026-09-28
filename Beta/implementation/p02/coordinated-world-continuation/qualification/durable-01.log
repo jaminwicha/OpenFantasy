@@ -1,0 +1,109 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:13.54]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET ordinal=x'"···) [FAIL]
+[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET world_id=z"···) [FAIL]
+[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET boundary_h"···) [FAIL]
+[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET state=zero"···) [FAIL]
+[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "DELETE FROM world_material_care_segments WHERE ord"···) [FAIL]
+[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: True) [FAIL]
+[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: False) [FAIL]
+[xUnit.net 00:00:13.56]     OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Actual_finite_doses_cross_multiple_joint_cuts_and_reopen_with_exact_receipts [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET ordinal=x'"···) [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET world_id=z"···) [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET boundary_h"···) [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "UPDATE world_material_care_segments SET state=zero"···) [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Later_archive_damage_blocks_recovery_and_selection_of_an_earlier_archive(mutation: "DELETE FROM world_material_care_segments WHERE ord"···) [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: True) [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.The_cut_receipt_identity_archive_and_head_commit_or_roll_back_together(afterCommit: False) [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.DurableMaterialCareArchiveTests.Actual_finite_doses_cross_multiple_joint_cuts_and_reopen_with_exact_receipts [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney' threw in its constructor
+---- Assert.Equal() Failure: Values differ
+Expected: Applied
+Actual:   Rejected
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.DurableMaterialCareJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DurableMaterialCareArchiveTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-01.trx
+
+Failed!  - Failed:     8, Passed:     0, Skipped:     0, Total:     8, Duration: 34 ms - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -9,7 +9,8 @@ internal static class WorldResourceContinuation
 {
     internal static (WorldSnapshot State, WorldResourceArchiveSegment? Sealed) Prepare(WorldSnapshot world, WorldStepBatch batch)
     {
-        if (world.ResourceHistory is not { } resources) return (world, null);
+        // The coordinated world closes its resource window only through its joint boundary.
+        if (world.ResourceHistory is not { } resources || world.Coordination is not null) return (world, null);
         (int batches, int effects) = RequiredCapacity(batch);
         if (resources.History.Batches.Count + batches <= ActorResourceHistory.MaximumBatches
             && resources.History.ChangeCount + effects <= ActorResourceHistory.MaximumChanges)
@@ -25,7 +26,7 @@ internal static class WorldResourceContinuation
             encounterLifecycle: world.EncounterLifecycle, care: world.Care, resourceHistory: continued), segment);
     }
 
-    private static (int Batches, int Effects) RequiredCapacity(WorldStepBatch batch)
+    internal static (int Batches, int Effects) RequiredCapacity(WorldStepBatch batch)
     {
         if (batch.Kind == WorldBatchKind.EncounterResolution) return (1, 2);
         if (batch.Kind == WorldBatchKind.Care)

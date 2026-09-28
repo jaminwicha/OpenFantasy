@@ -212,3 +212,13 @@ the same sequential world transaction. Their named owner pins distinguish interm
 from later passive processes, and whole-candidate refusal leaves no observation. Verified Host retrieval
 reconstructs one recorded batch while checking the complete journal through its source head. This
 observation seam retains no alternate mutable state and does not grant source rights or archive closure.
+
+## Coordinated history boundaries
+
+The [coordinated world protocol](coordinated-world-continuation.md) closes material, care and resource
+windows together. A single complete-world journal orders actions, and each domain keeps its existing
+revision meaning. The joint anchor owns only the qualified continuation boundary; it does not become
+a second owner of live custody, terrain, liquid, work, HP or permissions. Exact source accounting and
+imported producer roles belong to complete admission. Authenticating actions and permanently occupied
+identities belongs to full Host replay. New care follows the closing world revision even when its
+component watermark is older. Existing rule catalogs remain pinned across the same boundary.

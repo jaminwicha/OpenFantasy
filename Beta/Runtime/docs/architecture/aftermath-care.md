@@ -5,7 +5,9 @@
 [CareSnapshot](../../src/OpenFantasy.Core/Care/CareSnapshot.cs) retains pinned remedies, prior
 care agreements, recovery acknowledgments and actual treatments. It does not own current HP,
 inventory, body capability or encounter time. Those facts remain in their canonical owners.
-The composition uses the complete-world authority and explicit schema-seven durable storage.
+The composition uses the complete-world authority and explicit schema-seven durable storage for
+profiles25/26. The [coordinated world](coordinated-world-continuation.md) uses schema eight to close
+care, material and resource history together while preserving pending obligations.
 Fresh admission excludes earned care/material/resource history. Recovery replays the exact
 acknowledgment and treatment commands, preserving a pending obligation and its existing terminal
 acknowledgment receipt. Reopening grants no helper action, fabricated dose or treatment receipt.

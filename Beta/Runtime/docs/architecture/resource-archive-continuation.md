@@ -96,7 +96,7 @@ and rule-migration requirements. Those owners need their own admitted continuati
 Archive bytes need explicit storage accounting and retrieval policy; a bounded current root does
 not imply unlimited disk capacity or qualified production throughput.
 
-## Extension contract: coordinated material and care continuation
+## Coordinated material and care interpretation
 
 Resource, care and material histories describe different facts. Resource batches prove effects;
 ordinary uses and aftermath records prove their named causes; production claims account for the
@@ -117,10 +117,10 @@ qualify those rights against actual issuance and the full world before using the
 
 The separate [continued production owner](production-continuation.md) gives material operations an
 explicit active-window interpretation. It does not replace this resource anchor or let care effects
-outlive their causes without a jointly admitted closure. Existing world profiles refuse that owner.
+outlive their causes without a jointly admitted closure. Profiles1–26 refuse that owner.
 
 The standalone [care frontier](care-continuation.md) retains exact pending aid, grants/revocations,
-cumulative counts and latest patient treatment witnesses in Care V3. Existing world profiles also
+cumulative counts and latest patient treatment witnesses in Care V3. Profiles1–26 also
 refuse that continued owner. Its care-operation watermark does not replace the closing world revision
 or the causal resource anchor; those boundaries must agree through the coordinated interpretation.
 
@@ -133,3 +133,10 @@ care/material histories under their current interpretation.
 The [live material evidence seam](live-material-evidence.md) observes accepted actions in their actual
 complete-world transaction. It separates world publication order from per-action order and retains no
 ancestor root. It does not replace closure, material conservation, retrieved archives or authenticated replay.
+
+[Profile27's coordinated protocol](coordinated-world-continuation.md) implements the separate joint
+closure and schema8 publication contract. It can close an empty resource window when material or
+care requires the boundary. Resource-history V3 binds that exact joint anchor; V1 refuses to discard
+either kind of anchor. The schema7 resource-only protocol and its historical command outcomes remain
+unchanged. The complete world journal, rather than an additional material operation log, orders the
+actual raw custody, gathering, crafting and work actions.

@@ -19,7 +19,8 @@ An embedded basis and matching admission label establish structural consistency,
 The host must admit genesis and replay the actual accepted commands before trusting such a root.
 Historical authentication, range, body capability, input selection, permissions and publication
 cannot be established from resource labels alone. Durable admission requires fresh unearned care,
-material and resource owners under the explicit schema-seven contract. Continued roots are restored
+material and resource owners under the explicit schema-seven contract, or schema eight for the
+[coordinated material/care world](coordinated-world-continuation.md). Continued roots are restored
 through actual journal/archive retrieval, never admitted as a new genesis.
 
 ## Named causes and complete transactions
@@ -61,7 +62,8 @@ commitment, treatment and the command's receipt.
 
 [WorldResourceHistoryCodec](../../src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs)
 preserves the original inline V1 frame and explicitly selects V2 for an archive-backed anchor.
-Both retain bounded active continuity and typed causal witnesses. Parsing refuses unknown evidence
+V3 binds a joint material/care anchor and its exact closing progression basis. Each interpretation
+retains bounded active continuity and typed causal witnesses. Parsing refuses unknown evidence
 and requires canonical re-encoding. Complete-world decoding additionally validates each cause
 against the other restored owners, including actor membership before accessing historical resources.
 Malformed cross-owner references are admission errors and decode as `FormatException`.
@@ -71,6 +73,10 @@ The underlying limits of 256 batches and 1,024 effects describe one archive segm
 lifetime. [Continuation](resource-archive-continuation.md) reserves the complete next batch and seals
 the exact closing world before capacity is exceeded. Appending without available capacity still
 raises `WorldResourceContinuationRequiredException`, outside ordinary gameplay-rejection catches.
+The coordinated profile reserves all potential writers plus future actionable headroom and closes
+resource, material and care windows together. A material-only cut can retain no new resource batches;
+it still starts the next causal segment at the complete closing world revision. Pending care carries
+its exact original defeat witness, while completed quest and encounter evidence seed the next segment.
 
 Continuous durable play also requires authenticated end-of-step archive publication, retrievable
 prior cause/branch evidence and host replay. Retaining only a hash, silently deleting history or

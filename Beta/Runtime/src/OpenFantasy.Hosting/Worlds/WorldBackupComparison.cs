@@ -24,6 +24,12 @@ internal static class WorldBackupComparison
         RequireEqual(source.ReadCheckpoints(), copy.ReadCheckpoints(), (left, right) =>
             left.Sequence == right.Sequence && left.AdvancingSteps == right.AdvancingSteps
             && left.State.AsSpan().SequenceEqual(right.State));
+        RequireEqual(source.ReadResourceArchives(), copy.ReadResourceArchives(), (left, right) =>
+            left.Reference == right.Reference && left.PublicationSequence == right.PublicationSequence
+            && left.State.AsSpan().SequenceEqual(right.State));
+        RequireEqual(source.ReadMaterialCareArchives(), copy.ReadMaterialCareArchives(), (left, right) =>
+            left.Reference == right.Reference && left.PublicationSequence == right.PublicationSequence
+            && left.State.AsSpan().SequenceEqual(right.State));
     }
 
     private static void RequireEqual<T>(IEnumerable<T> source, IEnumerable<T> copy, Func<T, T, bool> equal)

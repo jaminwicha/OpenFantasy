@@ -22,7 +22,7 @@ public sealed class ConstructionPlanner
         ArgumentNullException.ThrowIfNull(construction);
         ArgumentNullException.ThrowIfNull(space);
         ArgumentNullException.ThrowIfNull(command);
-        if (production.IsContinued)
+        if (production.IsContinued && production.Continuation?.SupportsCompleteWorld != true)
         {
             throw new ArgumentException("Construction requires qualified archived producer and ingredient witnesses.", nameof(production));
         }

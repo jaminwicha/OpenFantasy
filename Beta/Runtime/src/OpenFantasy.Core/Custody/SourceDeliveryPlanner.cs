@@ -18,9 +18,13 @@ public sealed class SourceDeliveryPlanner
         ArgumentNullException.ThrowIfNull(production);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(request);
-        if (production.IsContinued)
+        if (production.IsContinued && production.Continuation?.SupportsCompleteWorld != true)
         {
             throw new ArgumentException("Source delivery requires an admitted continuation transfer contract.", nameof(production));
+        }
+        if (production.IsContinued && historicallyOccupied is null)
+        {
+            throw new ArgumentException("Continued source delivery requires permanent historical identity lookup.", nameof(historicallyOccupied));
         }
         try
         {

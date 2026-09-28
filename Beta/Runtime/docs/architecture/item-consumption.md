@@ -194,7 +194,7 @@ with an exact captured context, imported-right partitioning and mandatory histor
 V4 adds explicitly ordered source/custody operations to those material windows; consumption records
 remain exact dispositions, and source delivery remains a transfer. V5 adds qualified construction
 completion while retaining the captured consumption capability; enabling construction does not enable
-consumption in a profile that lacks it. Neither interpretation enables
+consumption in a profile that lacks it. Neither standalone interpretation enables
 continued restorative use or complete-world publication. Those actions must join their material history
 to care/resource closure and verified archive retrieval before existing profile capacities can be extended.
 
@@ -207,3 +207,8 @@ and the test calibration makes no claim that legacy content supplied physical ma
 See [materials and activities](materials-and-activities.md),
 [identity and determinism](identity-and-determinism.md) and
 [persistence and history](persistence-and-history.md) for the surrounding owners and publication rules.
+
+The explicit [coordinated world](coordinated-world-continuation.md) binds Production V9, Care V3 and
+causal resources at one complete boundary. Ordinary and aftermath use keep the same permissions,
+finite-dose accounting and resource laws after the cut. The active consumption list and care causes
+rotate together; full prior records remain in verified Host archives.
