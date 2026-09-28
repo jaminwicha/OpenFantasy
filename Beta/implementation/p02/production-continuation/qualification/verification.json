@@ -1,0 +1,150 @@
+{
+  "recordedUtc": "2026-09-28T04:47:13.634022+00:00",
+  "scope": "Standalone context-bound production continuation; existing complete-world consumers explicitly refuse it.",
+  "baseCommit": "d23d94df8962df6e1590e55e7eb000fcb3503581",
+  "build": {
+    "final": "build-02.log",
+    "exitCode": 0,
+    "warnings": 0,
+    "errors": 0,
+    "retainedInitialFailure": "build-01.log"
+  },
+  "tests": {
+    "continuation-01": {
+      "report": "continuation-01.trx",
+      "log": "continuation-01.log",
+      "counters": {
+        "total": 52,
+        "executed": 52,
+        "passed": 52,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-27T23:28:44.3478140-05:00",
+        "queuing": "2026-09-27T23:28:44.3478140-05:00",
+        "start": "2026-09-27T23:28:39.7079580-05:00",
+        "finish": "2026-09-27T23:28:52.2543220-05:00"
+      },
+      "exitCode": 0
+    },
+    "core-01": {
+      "report": "core-01.trx",
+      "log": "core-01.log",
+      "counters": {
+        "total": 1446,
+        "executed": 1446,
+        "passed": 1446,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-27T23:29:21.9554300-05:00",
+        "queuing": "2026-09-27T23:29:21.9554300-05:00",
+        "start": "2026-09-27T23:29:19.5875540-05:00",
+        "finish": "2026-09-27T23:29:39.0593700-05:00"
+      },
+      "exitCode": 0
+    },
+    "hosting-01": {
+      "report": "hosting-01.trx",
+      "log": "hosting-01.log",
+      "counters": {
+        "total": 783,
+        "executed": 783,
+        "passed": 783,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-27T23:31:00.8591190-05:00",
+        "queuing": "2026-09-27T23:31:00.8591190-05:00",
+        "start": "2026-09-27T23:30:55.6735400-05:00",
+        "finish": "2026-09-27T23:46:05.0729510-05:00"
+      },
+      "exitCode": 0
+    }
+  },
+  "distinctFullRegressionPasses": 2229,
+  "focusedSelection": {
+    "newCases": 41,
+    "retainedBasisCases": 11,
+    "includedInFullCore": true
+  },
+  "journeys": [
+    "530 actual raw consumptions through two material cuts; exact finite remainder and cumulative revisions.",
+    "531 actual crafts through two material cuts; original byproduct witness, raw retirement once and no recursive context chain.",
+    "Closed component bytes retained by fixture and decoded with actual prior contexts; successor contexts reconstructed exactly."
+  ],
+  "independentReview": {
+    "report": "../REVIEW.md",
+    "route": "native critic",
+    "storageRevisionFinding": "Fixed and covered by seven targeted regressions; fix reviewed, no blocking source finding.",
+    "humanAcceptance": false
+  },
+  "pins": {
+    "source-pins.json": {
+      "checkedFiles": 1176,
+      "unchanged": true
+    },
+    "execution-pins.json": {
+      "checkedFiles": 15,
+      "unchanged": true
+    }
+  },
+  "preservation": {
+    "checkpoint": "codex/checkpoint-before-production-continuation-20260928T041433Z",
+    "checkpointMatchesBase": true,
+    "frozenSpecsUnchanged": 23,
+    "priorMilestonesUnchanged": 63,
+    "unrelatedStagedFiles": 19,
+    "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "documents": {
+    "reference": "../../../../Runtime/docs/architecture/production-continuation.md",
+    "linkReport": "document-links.json",
+    "anchorsChecked": false
+  },
+  "limits": [
+    "Standalone imported raw rights and craft/consume only; typed source issuance, transfers, reservations and other admission changes require coordinated integration.",
+    "No complete-world material/care continuation, actual healing-dose continuation, persistent archive retrieval/replay or native post-cut use is claimed.",
+    "No new crash, performance, platform, multiplayer, art or human qualification; full requirements and production gates remain open.",
+    "Historical identity predicate and supplied context are authority dependencies, not archive authenticity proofs."
+  ],
+  "thresholdsRelaxed": false,
+  "claudeRetry": false,
+  "creditSavingsClaimed": false
+}

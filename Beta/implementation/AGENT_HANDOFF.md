@@ -42,40 +42,56 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Exact material continuation basis](p02/material-care-continuation/README.md) implements the first
-component of the coordinated material/care proposal: immutable surviving lots, remaining output
-intervals, direct raw-retirement coverage and nonrecursive live-producer metadata. Custody, item pins,
-protections, reservations and absolute revisions remain exact. Capture validates the supplied complete
-owners; it grants no issuance, archive authenticity, restored authority or history-capacity relief.
-Existing planners, V1/V2 codecs, profiles, Host storage and client behavior are unchanged.
+[Explicit production continuation](p02/production-continuation/README.md) adds a context-bound V3
+material owner over the preserved exact basis. Actual crafting and consumption can cross history
+boundaries while retaining live rights, absolute revisions, cumulative counters, exact direct raw
+retirement and immediate producer witnesses. Contexts retain bounded facts, without recursive owners
+or ancestry. Continued planners require complete historical identity lookup. Old V1/V2 semantics
+remain intact; world, care, construction, source delivery, excavation and terrain/runoff entrypoints
+explicitly refuse this standalone representation until their coordinated integration is qualified.
 
-[Verification](p02/material-care-continuation/qualification/verification.json): clean final solution
-build; **235 affected Core cases pass**, including **11 new basis cases**, zero failures/skips. Actual
-craft/consume/gather journeys, a 65-batch chain, internal output holes, explicit diagnostic/world
-issuance distinction and 4,096-lot encoding are covered. This is targeted Core qualification, not full
-Core/Hosting regression, world continuation or a scale claim. Initial passing runs remain retained;
-an exact negative-rejection assertion motivated the final affected rerun.
+[Verification](p02/production-continuation/qualification/verification.json): the final solution build
+passes without warnings/errors; full regression passes **1,446 Core + 783 Hosting = 2,229 cases**,
+zero failures/skips. The 52-case focused run (41 new and 11 retained basis cases) also passes and is
+included in the Core total. Hosting reports 15m05s; this is no production-performance claim. All 1,176
+source/configuration pins and 15 execution pins remain unchanged.
 
-The [independent native review](p02/material-care-continuation/REVIEW.md) resolved two test findings;
-no blocking source defect remains. New timeless [architecture documentation](../Runtime/docs/architecture/material-continuation-basis.md)
-and affected index/consumption/archive descriptions are updated in the same change. Source and final
-execution pins remain unchanged. No Claude retry or credit saving is claimed.
+The journeys perform **530 actual raw consumptions** and **531 actual crafts**, each across two real
+cuts. They preserve a surviving original byproduct, finite stock, exact counters and historical
+identity refusal. Closed component bytes and reconstructed contexts round-trip exactly. This is
+material-domain evidence, not administered healing, durable world archives, recovery or throughput.
+The [independent review](p02/production-continuation/REVIEW.md) found and resolved a per-storage
+revision gap, covered by seven targeted regressions; no blocking source finding remains. The initial
+build failure remains in [corrections](p02/production-continuation/FAILURES.md).
 
-Preservation: pre-change checkpoint `codex/checkpoint-before-material-frontier-20260928T035421Z` at
-`42774390`; all 23 frozen specs, 62 prior milestones and the unrelated 19-file predecessor index are
-preserved. Verified component: `codex/milestone-material-continuation-basis`.
+The timeless [production continuation reference](../Runtime/docs/architecture/production-continuation.md)
+and dependent basis/consumption/archive descriptions are updated in the same change. Two native
+workers handled disjoint implementation/tests; Astra owns integration, guards, execution and Git.
+One native critic reviewed the consequential invariants. No Claude retry or credit saving is claimed.
 
-**Next dependency:** implement the complete [coordinated material/care continuation](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md),
-starting with explicitly versioned continued owners and exact imported-right accounting. Bind source
-issuance, permanent identities, construction/terrain/nested liquid consumers, care/resource closure,
-preemptive capacity scheduling and actual Host archive retrieval/replay. The new basis is a reusable
-structural dependency, not that protocol. Retain >256 actual-dose and surviving-crafted-ancestry proofs
-across two cuts, process kills and native post-cut use/reopen. Do not truncate histories, raise bounds
-or reinterpret profile25/26. Combat items still need due-actor Wait binding. Full journal lifetime,
-all 181 requirements and full P01/P02/P14 production/platform/scale/multiplayer/art/audio/human gates
-remain open.
+Preservation: pre-change checkpoint `codex/checkpoint-before-production-continuation-20260928T041433Z`
+at `d23d94d`; all 23 frozen specs, 63 prior milestones and unrelated 19-file predecessor staging remain
+pinned. Verified component: `codex/milestone-production-continuation`.
+
+**Next dependency:** extend this canonical material owner with typed post-cut source issuance and
+custody-operation evidence, then qualify construction witnesses, terrain/excavation coverage and
+nested liquid owners/codecs. Complete the [coordinated material/care protocol](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md)
+with care/resource closure, preemptive whole-batch capacity scheduling, permanent identities and real
+Host archive retrieval/replay. The standalone owner freezes admission and imports existing raw rights
+only; this must not reduce gathering, mining, trade or acquisition scope. Retain >256 actual-dose and
+surviving-crafted-ancestry proofs across two cuts, rollback, process kills and native post-cut use/reopen.
+Do not truncate histories, raise bounds or reinterpret profile25/26. Combat items still need due-actor
+Wait binding. Full journal lifetime, all 181 requirements and full P01/P02/P14 production/platform/scale,
+multiplayer/art/audio/human gates remain open.
 
 ### Earlier retained increments
+
+[Exact material continuation basis](p02/material-care-continuation/README.md), preserved on
+`codex/milestone-material-continuation-basis` (`d23d94d`), establishes immutable live lots, remaining
+output intervals, direct raw retirement and nonrecursive producer metadata. Its clean build and 235
+affected Core cases, including 11 basis cases, are retained alongside independent review and exact
+source/execution pins. Capture alone grants no issuance, archive authenticity or restored authority.
+The new continued owner builds on this contract; full-world integration remains separate.
 
 [Ordinary care recovery qualification](p02/restorative-recovery/README.md), preserved on
 `codex/milestone-restorative-recovery` (`42774390`), proves bounded profile26 external interruption

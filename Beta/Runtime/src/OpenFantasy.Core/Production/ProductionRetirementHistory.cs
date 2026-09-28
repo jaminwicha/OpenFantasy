@@ -7,6 +7,13 @@ internal static class ProductionRetirementHistory
     // the producing batches; expanding that ancestry here would count the source material twice.
     internal static IEnumerable<(EntityId CustodianId, RetiredIngredient Ingredient)> Retirements(ProductionSnapshot state)
     {
+        if (state.IsContinued)
+            throw new ArgumentException("Complete retirement records require the archived segments of a continued owner.", nameof(state));
+        return CurrentRetirements(state);
+    }
+
+    internal static IEnumerable<(EntityId CustodianId, RetiredIngredient Ingredient)> CurrentRetirements(ProductionSnapshot state)
+    {
         foreach (var batch in state.Batches)
         {
             foreach (var ingredient in batch.Ingredients)
@@ -30,6 +37,7 @@ internal static class ProductionRetirementHistory
         // reconciliation can neither drop it (erasing retained claims) nor acquire it (silently
         // re-versioning a legacy archive); a profile change is an explicit composition, not a successor.
         if (next.Revision <= prior.Revision || next.WorldId != prior.WorldId || next.BranchId != prior.BranchId
+            || prior.Continuation?.ContentHash != next.Continuation?.ContentHash
             || prior.SupportsConsumption != next.SupportsConsumption
             || next.Recipes.Count != prior.Recipes.Count
             || prior.Recipes.Any(recipe => !next.Recipes.Any(r => r.DefinitionId == recipe.DefinitionId && r.Version == recipe.Version)))

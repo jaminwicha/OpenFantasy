@@ -78,6 +78,10 @@ public sealed class WatershedRunoffDomain
         }
         if (production is not null)
         {
+            if (production.IsContinued)
+            {
+                throw new ArgumentException("Runoff admission requires complete inline production history.", nameof(production));
+            }
             production.ValidateForAuthority(inventory);
             production.ValidateMaterialBinding(Material);
             if (production.ContainsIdentityMatching(network.MaterialIdentities.Contains)

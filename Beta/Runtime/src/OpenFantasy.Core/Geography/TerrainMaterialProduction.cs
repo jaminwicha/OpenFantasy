@@ -11,6 +11,10 @@ internal sealed class TerrainMaterialProduction
 
     internal TerrainMaterialProduction(ProductionSnapshot snapshot, CountedAuthorityState inventory)
     {
+        if (snapshot.IsContinued)
+        {
+            throw new ArgumentException("Terrain material admission requires complete inline production history.", nameof(snapshot));
+        }
         snapshot.ValidateForAuthority(inventory);
         if (snapshot.Revision > inventory.Custody.Revision
             || snapshot.Lots.Any(l => l.Revision > inventory.Custody.Revision)

@@ -30,6 +30,10 @@ public sealed class ExcavationPlanner
         WorldActionCommand command, bool advancing, bool held, Func<EntityId, bool> occupied,
         ConstructionPhysicalSnapshot? physical, ConstructionSettlementResolution? completedResolution)
     {
+        if (production.IsContinued)
+        {
+            throw new ArgumentException("Excavation requires an admitted continuation issuance contract.", nameof(production));
+        }
         physical ??= world.ConstructionPhysical;
         ExcavationPlan Reject(WorldActionRejection reason) => new(inventory, space, gathering, excavation, reason, null, physical);
         var eligibility = ValidateRequest(world, inventory, space, gathering, excavation, command, advancing, held);

@@ -179,9 +179,16 @@ retirement. It must preserve definition pins, surviving-lot lineage and exact ou
 retaining retrievable full historical provenance outside the active window. Counts, an archive hash
 or an unverified supplied basis cannot establish those facts. The standalone
 [material continuation basis](material-continuation-basis.md) captures surviving lots, exact live
-output intervals and direct retirement from the supplied complete owners. It provides no archive
-authentication or continued owner interpretation; production V2 validates its complete retained
-batches and consumed claims directly.
+output intervals and direct retirement from the supplied material owners. Repeated capture combines
+the imported coverage with active dispositions; it does not expand produced ancestry twice. Capture
+itself provides no archive authentication or continued owner interpretation; production V2 validates
+its complete retained batches and consumed claims directly.
+
+[Production continuation](production-continuation.md) supplies a separate V3 domain interpretation
+with an exact captured context, imported-right partitioning and mandatory historical identity lookup.
+It supports material crafting/consumption windows; it does not enable continued restorative use or
+complete-world publication. Those actions must join their material history to care/resource closure
+and verified archive retrieval before existing profile capacities can be extended.
 
 The [restorative supply tests](../../tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs)
 bind the retained Potion payload and three-berries-to-one-Potion recipe to a separately authored

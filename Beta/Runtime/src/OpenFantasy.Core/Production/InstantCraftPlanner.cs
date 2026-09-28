@@ -8,12 +8,15 @@ namespace OpenFantasy.Core.Production;
 public sealed class InstantCraftPlanner
 {
     public CraftPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
-        TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, CraftRequest request)
+        TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, CraftRequest request,
+        Func<EntityId, bool>? isIdentityOccupied = null)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(production);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(request);
+        if (production.IsContinued && isIdentityOccupied is null)
+            throw new ArgumentException("Continued production requires permanent historical identity lookup.", nameof(isIdentityOccupied));
         CraftPlan Reject(WorldActionRejection rejection) => new(inventory, production, rejection, []);
         if (!inventory.CanControl(delivery, actorId))
         {
@@ -68,8 +71,9 @@ public sealed class InstantCraftPlanner
         EntityId[] created = Enumerable.Range(0, recipe.Outputs.Count + 1)
             .Select(index => EntityId.DeriveSpawned(commandId, (ulong)index)).ToArray();
         if (created.Distinct().Count() != created.Length || created.Any(id => id == commandId
-            || inventory.ContainsIdentity(id) || production.ContainsIdentity(id))
-            || inventory.ContainsIdentity(commandId) || production.ContainsIdentity(commandId))
+            || inventory.ContainsIdentity(id) || production.ContainsIdentity(id) || isIdentityOccupied?.Invoke(id) == true)
+            || inventory.ContainsIdentity(commandId) || production.ContainsIdentity(commandId)
+            || isIdentityOccupied?.Invoke(commandId) == true)
         {
             return Reject(WorldActionRejection.Unavailable);
         }
@@ -78,6 +82,10 @@ public sealed class InstantCraftPlanner
             return MaterialTransformCommitter.Prepare(inventory, production, actorId, commandId, request, recipe, retired, created);
         }
         catch (OverflowException)
+        {
+            return Reject(WorldActionRejection.Unavailable);
+        }
+        catch (ProductionFormatException error) when (error.Failure == ProductionFormatFailure.LimitExceeded)
         {
             return Reject(WorldActionRejection.Unavailable);
         }

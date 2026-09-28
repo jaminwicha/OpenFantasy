@@ -24,7 +24,7 @@ internal static class ProductionClaimValidation
                 if (ingredient.Output is { } output)
                 {
                     AddOutputClaim(state, batches, outputClaims, output, ingredient.Definition);
-                    dependencies[batch.BatchId].Add(output.BatchId);
+                    if (batches.ContainsKey(output.BatchId)) dependencies[batch.BatchId].Add(output.BatchId);
                 }
             }
         }
@@ -61,6 +61,14 @@ internal static class ProductionClaimValidation
                 }
             }
         }
+        if (state.Continuation is { } context)
+        {
+            foreach (ImportedOutputBudget budget in context.Basis.OutputBudgets)
+            {
+                outputClaims.TryGetValue((budget.BatchId, budget.OutputIndex), out var claims);
+                ValidateImportedPartition(budget, claims ?? []);
+            }
+        }
         ValidateAcyclic(dependencies);
         RetiredIngredient[] retired = RetiredItems(state).ToArray();
         ValidateLotHistory(retired, state.Lots);
@@ -85,16 +93,18 @@ internal static class ProductionClaimValidation
     internal static void ValidateSourceClaims(ProductionSnapshot state, CountedAuthorityState inventory)
     {
         RetiredIngredient[] retired = RetiredItems(state).ToArray();
-        foreach (RetiredIngredient ingredient in retired.Where(value => value.Source is not null))
+        var rawRetired = retired.Where(value => value.Source is not null).Select(value => (Interval: value.Source!, value.Definition))
+            .Concat(state.Continuation?.Basis.RawRetirements.Select(value => (Interval: value.Source, value.Definition)) ?? []);
+        foreach (var ingredient in rawRetired)
         {
-            SourceInterval interval = ingredient.Source!;
+            SourceInterval interval = ingredient.Interval;
             AdmittedCountedSource? source = inventory.Sources.FirstOrDefault(value => value.SourceId == interval.SourceId);
             if (source is null || source.Definition != ingredient.Definition || interval.End > source.UnitCapacity)
             {
                 throw new ArgumentException("Retired raw rights must fit an exact finite admitted source.");
             }
         }
-        ValidateDisjointRaw(retired.Where(value => value.Source is not null).Select(value => (value.Source!, value.Definition))
+        ValidateDisjointRaw(rawRetired
             .Concat(inventory.Custody.Lots.Select(lot => (lot.Source, lot.Definition))));
         ILookup<EntityId, RetiredIngredient> byLot = retired.ToLookup(value => value.LotId);
         foreach (CountedSourceLot lot in inventory.Custody.Lots)
@@ -138,13 +148,15 @@ internal static class ProductionClaimValidation
     {
         if (!batches.TryGetValue(output.BatchId, out ProductionBatch? batch))
         {
-            throw new ArgumentException("A transformed claim cannot invent an absent production batch.");
+            if (state.Continuation is not { } context || !context.Basis.GetOutputBudget(output.BatchId, output.OutputIndex).Covers(output, item))
+                throw new ArgumentException("A transformed claim cannot invent an absent producing budget.");
         }
-        CraftRecipeDefinition recipe = state.GetRecipe(batch.RecipeId);
-        if (output.OutputIndex >= recipe.Outputs.Count || output.End > recipe.Outputs[(int)output.OutputIndex].Count
-            || recipe.ItemFor(recipe.Outputs[(int)output.OutputIndex]) != item)
+        else
         {
-            throw new ArgumentException("A transformed claim must fit its exact batch output definition and finite interval.");
+            CraftRecipeDefinition recipe = state.GetRecipe(batch.RecipeId);
+            if (output.OutputIndex >= recipe.Outputs.Count || output.End > recipe.Outputs[(int)output.OutputIndex].Count
+                || recipe.ItemFor(recipe.Outputs[(int)output.OutputIndex]) != item)
+                throw new ArgumentException("A transformed claim must fit its exact batch output definition and finite interval.");
         }
         var key = (output.BatchId, output.OutputIndex);
         if (!claims.TryGetValue(key, out var entries))
@@ -153,6 +165,27 @@ internal static class ProductionClaimValidation
             claims[key] = entries;
         }
         entries.Add((output.Start, output.End));
+    }
+
+    private static void ValidateImportedPartition(ImportedOutputBudget budget, List<(ulong Start, ulong End)> claims)
+    {
+        var ordered = claims.OrderBy(value => value.Start).ToArray();
+        int index = 0;
+        foreach (var interval in budget.Intervals)
+        {
+            ulong cursor = interval.Start;
+            while (index < ordered.Length && ordered[index].Start < interval.End)
+            {
+                var claim = ordered[index++];
+                if (claim.Start != cursor || claim.End > interval.End)
+                    throw new ArgumentException("Imported output claims overlap or cross previously spent holes.");
+                cursor = claim.End;
+            }
+            if (cursor != interval.End)
+                throw new ArgumentException("Imported output rights must remain live or be explicitly retired exactly once.");
+        }
+        if (index != ordered.Length)
+            throw new ArgumentException("A transformed claim exceeds the actual imported live budget.");
     }
 
     private static void ValidateAcyclic(Dictionary<EntityId, HashSet<EntityId>> dependencies)

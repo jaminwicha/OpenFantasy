@@ -75,7 +75,9 @@ and subsequent dispositions, retain historical identities and preserve cumulativ
 causes and resource effects must close at the same boundary as the consumed material they reference.
 Terrain, excavation, construction and nested liquid owners must recognize the same interpretation.
 
-The capture operation supplies no such transition. The complete production V1/V2 owners and their
-append-only successor checks retain their own contracts. See [item consumption](item-consumption.md)
+The capture operation supplies no such transition. [Production continuation](production-continuation.md)
+uses a separately bound context for structural material operations; it does not grant coordinated
+world publication. The complete production V1/V2 owners and their append-only successor checks retain
+their own contracts. See [item consumption](item-consumption.md)
 and [resource archive continuation](resource-archive-continuation.md) for the publication, replay,
 capacity-scheduling and cross-owner obligations.

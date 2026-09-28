@@ -115,6 +115,10 @@ rights and direct raw retirement from complete supplied owners. It is an immutab
 not a resource archive anchor or an independently authenticated grant. A coordinated boundary must
 qualify those rights against actual issuance and the full world before using them in continued state.
 
+The separate [continued production owner](production-continuation.md) gives material operations an
+explicit active-window interpretation. It does not replace this resource anchor or let care effects
+outlive their causes without a jointly admitted closure. Existing world profiles refuse that owner.
+
 Changing active-window semantics requires an explicitly admitted interpretation and matching nested
 codecs. Existing profiles retain their capacity refusals as well as their successful outcomes; replay
 cannot reinterpret a historically refused at-capacity command as a newly accepted use. Opening a

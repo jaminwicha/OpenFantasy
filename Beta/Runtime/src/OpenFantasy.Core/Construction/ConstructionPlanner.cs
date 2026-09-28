@@ -22,6 +22,10 @@ public sealed class ConstructionPlanner
         ArgumentNullException.ThrowIfNull(construction);
         ArgumentNullException.ThrowIfNull(space);
         ArgumentNullException.ThrowIfNull(command);
+        if (production.IsContinued)
+        {
+            throw new ArgumentException("Construction requires qualified archived producer and ingredient witnesses.", nameof(production));
+        }
         ConstructionPlan Reject(WorldActionRejection rejection) => new(inventory, production, construction, space, rejection, []);
         var delivery = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);
         if (command.WorldId != world.WorldId || command.BranchId != world.BranchId

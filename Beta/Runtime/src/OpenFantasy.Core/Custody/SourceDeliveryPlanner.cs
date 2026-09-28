@@ -18,6 +18,10 @@ public sealed class SourceDeliveryPlanner
         ArgumentNullException.ThrowIfNull(production);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(request);
+        if (production.IsContinued)
+        {
+            throw new ArgumentException("Source delivery requires an admitted continuation transfer contract.", nameof(production));
+        }
         SourceDeliveryPlan Reject(WorldActionRejection reason) => new(inventory, reason, [], []);
         if (!inventory.CanControl(delivery, actorId)
             || !inventory.AllowsTransfer(actorId, request.SourceCustodianId, request.DestinationCustodianId))

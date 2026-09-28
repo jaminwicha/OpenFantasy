@@ -18,8 +18,8 @@ public static class ProductionCodecV2
     public static byte[] Encode(ProductionSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
-        if (!state.SupportsConsumption)
-            throw new ArgumentException("Production V2 requires an explicitly consumption-enabled owner.", nameof(state));
+        if (!state.SupportsConsumption || state.IsContinued)
+            throw new ArgumentException("Production V2 requires a complete, explicitly consumption-enabled owner.", nameof(state));
         byte[] bytes = CanonicalEncodingV1.Frame("production.snapshot", Number(2), state.WorldId.ToByteArray(),
             state.BranchId.ToByteArray(), Number(state.Revision),
             Collection("production.recipes", state.Recipes.Select(ProductionCodecV1.EncodeRecipe),
@@ -92,7 +92,7 @@ public static class ProductionCodecV2
         Number(1), claim.ConsumptionId.ToByteArray(), claim.CommandId.ToByteArray(), claim.ActorId.ToByteArray(),
         claim.RecipientActorId.ToByteArray(), claim.CustodianId.ToByteArray(), ProductionCodecV1.EncodeRetired(claim.Ingredient));
 
-    private static ConsumedItemClaim DecodeClaim(ReadOnlySpan<byte> bytes)
+    internal static ConsumedItemClaim DecodeClaim(ReadOnlySpan<byte> bytes)
     {
         var reader = new CanonicalProductionReader(bytes, MaximumConsumedItemByteLength, 8);
         reader.ExpectTag("production.consumed-item"u8);

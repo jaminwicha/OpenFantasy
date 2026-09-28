@@ -1,0 +1,20 @@
+{
+  "scope": "Managed test and Host OpenFantasy assemblies plus direct runtime manifests; application dependencies included before full regression. No platform performance qualification.",
+  "files": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "c98ef6f6d84dfffb0c4313cd6f375e05d708d03cc7df3cdc3c656b8e433ad434",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "199b61d8e7361fc3c637de019a52d7bcc8691d172e9b9bb7cae619d8c4045d43",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.deps.json": "4d498d1d403ef8eee91619ba501b02afc34ca6ad6ff572358d51fe9889d7a53e",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.runtimeconfig.json": "f88aba3ed92a6a9e10f1a5dc2d1b29dcd88c0dd1e8c780f32d641ef47c0fb2d0",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "c67343417e62971aa2d64e1048704b7075899c75a1b74919394d3bf371a7e567",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "199b61d8e7361fc3c637de019a52d7bcc8691d172e9b9bb7cae619d8c4045d43",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "18f1e35c976c357f4808b242e3ad4a260d9e8bc7423e713b18a8cd270995452a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.deps.json": "84025248240ad2f5563530b9ef1f4e604fafe87d90d7dbcfa5e8d31131ea4f3d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.runtimeconfig.json": "f88aba3ed92a6a9e10f1a5dc2d1b29dcd88c0dd1e8c780f32d641ef47c0fb2d0",
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "199b61d8e7361fc3c637de019a52d7bcc8691d172e9b9bb7cae619d8c4045d43",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "18f1e35c976c357f4808b242e3ad4a260d9e8bc7423e713b18a8cd270995452a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "a26e3742d51416070dc586d439681871a3f5a62caaaa4388a88f9f89469e4414",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.runtimeconfig.json": "f9bc8e9f0c46247078ed47309f19a7576b4b94e4300e9de0003917d6bd2d667a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.deps.json": "1b867a0915cc1b7a3f7f770b5ec76613a718fa36e0536a82bc811e2ecb34d67e"
+  }
+}

@@ -30,6 +30,7 @@ internal sealed class ProductionIdentityRegistry
                 _calibrations[binding.Item.DefinitionId] = binding.Physical.Pin();
             }
         }
+        if (state.Continuation is { } context) AddContinuation(context.Basis);
         foreach (ProductionBatch batch in state.Batches)
         {
             Add(batch.BatchId, "batch");
@@ -85,6 +86,40 @@ internal sealed class ProductionIdentityRegistry
         _roles = new(original._roles);
         _pins = new(original._pins);
         _calibrations = new(original._calibrations);
+    }
+
+    private void AddContinuation(ProductionContinuationBasis basis)
+    {
+        foreach (ProductionBatchWitness witness in basis.BatchWitnesses)
+        {
+            Add(witness.BatchId, "batch");
+            Add(witness.CommandId, "command");
+            Add(witness.ActorId, "actor");
+            Add(witness.CustodianId, "custodian");
+            AddPin(witness.RecipeId, "craft-recipe", witness.RecipeVersion);
+        }
+        foreach (CountedSourceLot lot in basis.RawLots)
+        {
+            Add(lot.LotId, "raw-lot");
+            Add(lot.CustodianId, "custodian");
+            Add(lot.Source.SourceId, "source");
+            AddPin(lot.Definition.DefinitionId, "item", lot.Definition.Version);
+            if (lot.ReservedBy is { } reservation) Add(reservation, "reservation");
+        }
+        foreach (TransformedLot lot in basis.TransformedLots)
+        {
+            Add(lot.LotId, "derived-lot");
+            Add(lot.CustodianId, "custodian");
+            Add(lot.Output.BatchId, "batch");
+            AddPin(lot.Definition.DefinitionId, "item", lot.Definition.Version);
+            if (lot.ReservedBy is { } reservation) Add(reservation, "reservation");
+        }
+        foreach (DirectRawRetirementRange range in basis.RawRetirements)
+        {
+            Add(range.CustodianId, "custodian");
+            Add(range.Source.SourceId, "source");
+            AddPin(range.Definition.DefinitionId, "item", range.Definition.Version);
+        }
     }
 
     internal bool Contains(EntityId identity) => _roles.ContainsKey(identity);

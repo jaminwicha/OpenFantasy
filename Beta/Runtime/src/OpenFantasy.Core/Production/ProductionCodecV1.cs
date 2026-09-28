@@ -14,8 +14,8 @@ public static class ProductionCodecV1
     public static byte[] Encode(ProductionSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
-        if (state.SupportsConsumption)
-            throw new ArgumentException("Production V1 cannot encode a consumption-enabled owner.", nameof(state));
+        if (state.SupportsConsumption || state.IsContinued)
+            throw new ArgumentException("Production V1 cannot encode a consumption-enabled or continued owner.", nameof(state));
         return Frame("production.snapshot", Number(1), Id(state.WorldId), Id(state.BranchId), Number(state.Revision),
             Collection("production.recipes", state.Recipes.Select(EncodeRecipe)),
             Collection("production.batches", state.Batches.Select(EncodeBatch)),

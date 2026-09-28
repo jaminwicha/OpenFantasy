@@ -5,7 +5,7 @@ using OpenFantasy.Core.Custody;
 
 namespace OpenFantasy.Core.Production;
 
-/// <summary>Complete bounded production history and live derived contents for one world/branch.</summary>
+/// <summary>Bounded production history and live derived contents, optionally tied to an exact closing context.</summary>
 public sealed class ProductionSnapshot
 {
     public const int MaximumRecipes = 32;
@@ -17,10 +17,18 @@ public sealed class ProductionSnapshot
     public ProductionSnapshot(EntityId worldId, EntityId branchId, ulong revision,
         IEnumerable<CraftRecipeDefinition> recipes, IEnumerable<ProductionBatch> batches, IEnumerable<TransformedLot> lots,
         IEnumerable<ConsumedItemClaim>? consumedItems = null)
+        : this(worldId, branchId, revision, recipes, batches, lots, consumedItems, null)
+    {
+    }
+
+    internal ProductionSnapshot(EntityId worldId, EntityId branchId, ulong revision,
+        IEnumerable<CraftRecipeDefinition> recipes, IEnumerable<ProductionBatch> batches, IEnumerable<TransformedLot> lots,
+        IEnumerable<ConsumedItemClaim>? consumedItems, ProductionContinuationContext? continuation)
     {
         WorldId = worldId;
         BranchId = branchId;
         Revision = revision;
+        Continuation = continuation;
         Recipes = ProductionCollections.Copy(recipes, MaximumRecipes, value => value.DefinitionId);
         Batches = ProductionCollections.Copy(batches, MaximumBatches, value => value.BatchId);
         Lots = ProductionCollections.Copy(lots, MaximumLots, value => value.LotId);
@@ -30,6 +38,7 @@ public sealed class ProductionSnapshot
             throw new ArgumentException("Consumed item history requires a retained production revision for each operation.", nameof(revision));
         _identities = new ProductionIdentityRegistry(this);
         ProductionClaimValidation.Validate(this);
+        if (IsContinued) ProductionContinuationValidation.Validate(this);
     }
 
     public EntityId WorldId { get; }
@@ -40,9 +49,28 @@ public sealed class ProductionSnapshot
     public ReadOnlyCollection<TransformedLot> Lots { get; }
     public bool SupportsConsumption { get; }
     public ReadOnlyCollection<ConsumedItemClaim> ConsumedItems { get; }
-    public ContentHash ContentHash => ContentHash.Compute(SupportsConsumption
+    public ProductionContinuationContext? Continuation { get; }
+    public bool IsContinued => Continuation is not null;
+    public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
+    public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
+    public ContentHash ContentHash => ContentHash.Compute(IsContinued ? ProductionCodecV3.Encode(this) : SupportsConsumption
         ? ProductionCodecV2.Encode(this) : ProductionCodecV1.Encode(this));
     public bool ContainsIdentity(EntityId identity) => _identities.Contains(identity);
+
+    /// <summary>
+    /// Captures the actual closing owners and starts an empty local segment without changing live rights.
+    /// This structural operation does not publish an archive, authenticate issuance or admit a world.
+    /// The caller retains the complete closing bytes and permanent identity registry separately.
+    /// </summary>
+    public ProductionSnapshot Continue(CountedAuthorityState inventory)
+    {
+        ProductionContinuationContext context = ProductionContinuationContext.Capture(inventory, this);
+        var next = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context);
+        next.ValidateForAuthority(inventory);
+        _ = ProductionCodecV3.Encode(next);
+        return next;
+    }
 
     internal bool ContainsIdentityMatching(Func<EntityId, bool> predicate) => _identities.ContainsMatching(predicate);
     internal void ValidateMaterialBinding(ItemPhysicalBinding binding) => _identities.ValidateMaterialBinding(binding);
@@ -73,6 +101,7 @@ public sealed class ProductionSnapshot
         }
         _identities.ValidateAuthority(inventory);
         ProductionClaimValidation.ValidateSourceClaims(this, inventory);
+        if (IsContinued) ProductionContinuationValidation.ValidateInventory(this, inventory);
         foreach (ProductionBatch batch in Batches)
         {
             if (!inventory.Actors.Contains(batch.ActorId)

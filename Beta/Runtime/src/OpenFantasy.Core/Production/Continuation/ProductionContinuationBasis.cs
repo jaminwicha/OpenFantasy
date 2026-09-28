@@ -47,8 +47,11 @@ public sealed class ProductionContinuationBasis
         OutputBudgets = CaptureOutputBudgets(TransformedLots);
         _outputBudgets = OutputBudgets.ToDictionary(value => (value.BatchId, value.OutputIndex));
         var liveProducers = OutputBudgets.Select(value => value.BatchId).ToHashSet();
-        BatchWitnesses = Array.AsReadOnly(production.Batches.Where(value => liveProducers.Contains(value.BatchId))
-            .OrderBy(value => value.BatchId).Select(value => new ProductionBatchWitness(value)).ToArray());
+        IEnumerable<ProductionBatchWitness> priorWitnesses = production.Continuation is { } context
+            ? context.Basis.BatchWitnesses : [];
+        BatchWitnesses = Array.AsReadOnly(production.Batches.Select(value => new ProductionBatchWitness(value))
+            .Concat(priorWitnesses).Where(value => liveProducers.Contains(value.BatchId))
+            .OrderBy(value => value.BatchId).ToArray());
         if (BatchWitnesses.Count != liveProducers.Count || BatchWitnesses.Count > MaximumBatchWitnesses)
             throw new ArgumentException("Every imported live output requires one bounded actual producing witness.", nameof(production));
         ContentHash = ContentHash.Compute(ProductionContinuationBasisEncoding.Encode(this));
@@ -90,12 +93,12 @@ public sealed class ProductionContinuationBasis
 
     private static ReadOnlyCollection<DirectRawRetirementRange> CaptureRawRetirements(ProductionSnapshot production)
     {
-        List<DirectRawRetirementRange> copied = [];
-        foreach (var retirement in ProductionRetirementHistory.Retirements(production))
+        List<DirectRawRetirementRange> copied = production.Continuation?.Basis.RawRetirements.ToList() ?? [];
+        foreach (var retirement in ProductionRetirementHistory.CurrentRetirements(production))
         {
             if (retirement.Ingredient.Source is not { } source) continue;
-            if (copied.Count == MaximumRawRetirementRanges)
-                throw new ArgumentException("Direct raw retirement exceeds the exact coverage envelope.", nameof(production));
+            if (copied.Count == 2 * MaximumRawRetirementRanges)
+                throw new ArgumentException("The imported and active raw retirement input exceeds its bounded envelope.", nameof(production));
             copied.Add(new(retirement.CustodianId, retirement.Ingredient.Definition,
                 new(source.SourceId, source.Start, source.End)));
         }
@@ -120,6 +123,8 @@ public sealed class ProductionContinuationBasis
             }
             normalized.Add(range);
         }
+        if (normalized.Count > MaximumRawRetirementRanges)
+            throw new ArgumentException("Normalized direct raw retirement exceeds its exact coverage envelope.", nameof(production));
         return normalized.AsReadOnly();
     }
 

@@ -7,6 +7,10 @@ internal static class GeographyProductionCodec
 {
     internal static byte[] Encode(ProductionSnapshot? production, bool consumption)
     {
+        if (production?.IsContinued == true)
+        {
+            throw new ArgumentException("Geography archives require complete inline production history.", nameof(production));
+        }
         if ((production?.SupportsConsumption == true) != consumption)
         {
             throw new ArgumentException("The geography archive must retain its exact consumption ownership profile.");

@@ -16,6 +16,11 @@ public sealed class RestorativeItemPlanner
         ConsumeItemRequest dose, ulong expectedPatientRevision, uint restoredHp)
     {
         ArgumentNullException.ThrowIfNull(progression);
+        ArgumentNullException.ThrowIfNull(production);
+        if (production.IsContinued)
+        {
+            throw new ArgumentException("Restorative use requires coordinated material and care continuation.", nameof(production));
+        }
         RestorativeItemPlan Reject(WorldActionRejection reason) => new(inventory, production, progression, reason);
         // Material admission authenticates the supplier before any patient state is inspected.
         var consumption = new ItemConsumptionPlanner().Plan(inventory, production, delivery, actorId, commandId, dose);

@@ -60,6 +60,10 @@ public sealed class WorldSnapshot
         ArgumentNullException.ThrowIfNull(space);
         ArgumentNullException.ThrowIfNull(residents);
         ArgumentNullException.ThrowIfNull(admissionVersion);
+        if (production?.IsContinued == true)
+        {
+            throw new ArgumentException("World admission requires a coordinated material, care and resource continuation profile.", nameof(production));
+        }
         if ((production?.SupportsConsumption == true) != (care is not null) || care is not null && encounterLifecycle is null
             || (care is null) != (resourceHistory is null))
         {

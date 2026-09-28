@@ -8,12 +8,15 @@ namespace OpenFantasy.Core.Production;
 public sealed class ItemConsumptionPlanner
 {
     public ItemConsumptionPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
-        TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, ConsumeItemRequest request)
+        TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, ConsumeItemRequest request,
+        Func<EntityId, bool>? isIdentityOccupied = null)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(production);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(request);
+        if (production.IsContinued && isIdentityOccupied is null)
+            throw new ArgumentException("Continued production requires permanent historical identity lookup.", nameof(isIdentityOccupied));
         ItemConsumptionPlan Reject(WorldActionRejection reason) => new(inventory, production, reason);
         if (!inventory.CanControl(delivery, actorId)) return Reject(WorldActionRejection.NotAuthorized);
         CustodianAccessPolicy? policy = inventory.Policies.FirstOrDefault(value => value.CustodianId == request.CustodianId);
@@ -32,7 +35,8 @@ public sealed class ItemConsumptionPlanner
             return Reject(WorldActionRejection.Unavailable);
         EntityId consumptionId = EntityId.DeriveSpawned(commandId, 0);
         if (commandId == consumptionId || inventory.ContainsIdentity(commandId) || production.ContainsIdentity(commandId)
-            || inventory.ContainsIdentity(consumptionId) || production.ContainsIdentity(consumptionId))
+            || inventory.ContainsIdentity(consumptionId) || production.ContainsIdentity(consumptionId)
+            || isIdentityOccupied?.Invoke(commandId) == true || isIdentityOccupied?.Invoke(consumptionId) == true)
             return Reject(WorldActionRejection.Unavailable);
         try
         {
@@ -77,9 +81,9 @@ public sealed class ItemConsumptionPlanner
         CountedAuthorityState candidateInventory = inventory.WithCustody(custody);
         var candidateProduction = new ProductionSnapshot(production.WorldId, production.BranchId,
             checked(production.Revision + 1), production.Recipes, production.Batches, derived,
-            [.. production.ConsumedItems, claim]);
+            [.. production.ConsumedItems, claim], production.Continuation);
         candidateProduction.ValidateForAuthority(candidateInventory);
-        _ = ProductionCodecV2.Encode(candidateProduction);
+        _ = candidateProduction.ContentHash;
         return new(candidateInventory, candidateProduction, WorldActionRejection.None, claim);
     }
 }
