@@ -1,0 +1,21 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:03.25]     OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: True) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: True) [2 s]
+  Error Message:
+   System.NullReferenceException : Object reference not set to an instance of an object.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardContinuationTests.cs:line 99
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.48]     OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: False) [1 s]
+  Error Message:
+   System.NullReferenceException : Object reference not set to an instance of an object.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardContinuationTests.cs:line 99
+   at InvokeStub_CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-continuation/qualification/focused-01/_mac_2026-09-27_19_39_38_net8.0.trx
+
+Failed!  - Failed:     2, Passed:     2, Skipped:     0, Total:     4, Duration: 3 s - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -28,5 +28,6 @@
     <Compile Include="../../client/scripts/EncounterActionOffers.cs" Link="Client/EncounterActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmActionOffers.cs" Link="Client/FarmActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmClientSession.cs" Link="Client/FarmClientSession.cs" />
+    <Compile Include="../../client/scripts/Presentation/FarmHealthFeedback.cs" Link="Client/FarmHealthFeedback.cs" />
   </ItemGroup>
 </Project>

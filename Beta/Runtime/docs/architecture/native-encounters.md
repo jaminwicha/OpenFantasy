@@ -68,6 +68,14 @@ world position, anatomy or timing. A newly created view establishes its current 
 replaying historic damage. Incapacity dims the retained body; it does not create a corpse or remove
 custody. Source appearance is explicitly bound to the admitted actor role, not inferred from its name.
 
+[FarmHealthFeedback](../../client/scripts/Presentation/FarmHealthFeedback.cs) compares consecutive
+permitted HP observations. A decrease retains the damage cue; an increase uses a brief mint tint and a
+stationary signed amount without additional sprite motion. The cue describes observed HP restoration,
+including a level refill, rather than asserting a medical cause or an anatomical repair. Repeated equal
+observations do not restart it. Losing HP visibility discards the baseline and transient cue; the next
+observation and a newly opened view establish a baseline without replaying an unobserved change. The
+latest observed change replaces the earlier cue; this display is not a complete event ledger.
+
 The explicit encounter launch opens a separate selected world. It checks the save against that
 selection and preserves existing files. The durable
 [lifecycle](encounter-lifecycle.md), [physical actions](encounter-actions.md) and

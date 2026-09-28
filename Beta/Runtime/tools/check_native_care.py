@@ -11,6 +11,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
 import sqlite3
 import subprocess
 import tempfile
@@ -132,7 +133,7 @@ def verify_source(initial, final, runtime, agreement, remedy):
                 playerSourceHp=source_player['hp'], wolfSourceHp=source_wolf['hp'])
 
 
-def verify_history(path, runtime):
+def verify_history(path, runtime, *, pending_continuation=False):
     saved = database(path)
     genesis_bytes, genesis_hash = saved['genesis']
     final_sequence, final_steps, final_bytes, final_hash = saved['head']
@@ -179,7 +180,7 @@ def verify_history(path, runtime):
     ack_revision, treatment_revision = (number(row[0]) for row in care_rows)
     require(number(acknowledgment[5]) == ack_revision and number(treatment[5]) == treatment_revision, 'Care record sequence differs from journal')
     selected_commands = {}
-    player_attacks = []
+    player_attacks, earlier_attacks = [], []
     for row in rows:
         sequence, kind, cause, steps, batch_bytes, outcome_bytes, before_hash, after_hash = row
         batch = read_frame(batch_bytes, 'world.step-batch', 10)
@@ -202,8 +203,12 @@ def verify_history(path, runtime):
             if kind == 9:
                 require(len(actions) == 1 and not read_frame(batch[8], 'world.step-movement')[1:], 'Care batch contains competing activity')
             if action[5] == player and number(action[1]) == 11:
-                require(number(sequence) > treatment_revision, 'Player attacked instead of deliberately reaching defeat')
-                player_attacks.append(action[2])
+                if number(sequence) > treatment_revision:
+                    player_attacks.append(action[2])
+                else:
+                    require(pending_continuation and number(sequence) < ack_revision,
+                            'Player attack was not part of the declared pre-care combat setup')
+                    earlier_attacks.append(action[2])
     require(prior_hash == final_hash and sorted(commands) == saved['commands'], 'Head chain or exact receipt ledger differs')
     ack = selected_commands[acknowledgment[2]][1]
     administer = selected_commands[treatment[2]][1]
@@ -233,6 +238,7 @@ def verify_history(path, runtime):
                 resumedAttackRevision=number(resumed[1]), finalRevision=number(final_sequence), finalHash=final_hash.hex(),
                 acknowledgmentCommand=acknowledgment[2].hex(), helperCommand=treatment[2].hex(),
                 consumptionId=claim[2].hex(), restoredHp=number(treatment[9]), helperDelay=number(treatment[11]),
+                earlierPlayerAttacks=len(earlier_attacks),
                 retainedCommandReceipts=len(commands), expectedHashes={str(number(row[0])): row[7].hex() for row in rows})
 
 
@@ -242,6 +248,8 @@ def main():
         parser.add_argument('--' + name, type=Path, required=True)
     parser.add_argument('--rendered', action='store_true')
     parser.add_argument('--controls', choices=(*CONTROLS, 'all'), default='wheel')
+    parser.add_argument('--pending-save', type=Path,
+                        help='Copy an actual production care save with a pending acknowledgment; prove paused reopen then readiness')
     args = parser.parse_args()
     runtime = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
@@ -251,13 +259,15 @@ def main():
     env = dict(os.environ, DOTNET_ROOT=str(sdk), PATH=str(sdk) + os.pathsep + os.environ.get('PATH', ''))
     client = runtime / 'client'
     project_bytes = (client / 'project.godot').read_bytes()
-    controls = CONTROLS if args.controls == 'all' else (args.controls,)
+    require(args.pending_save is None or args.controls == 'wheel', 'Pending continuation has its own fixed three-process sequence')
+    controls = ('pending',) if args.pending_save else CONTROLS if args.controls == 'all' else (args.controls,)
     report = dict(status='running', rendered=args.rendered, controls=list(controls), workDirectory=str(work), runs=[], journeys={},
                   originalProjectSha256=sha(project_bytes).hex(),
                   startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   scope='Injected native controls, actual schema7/profile25 care publication and paused second-process recovery.',
                   limits=dict(nativeProcessSeconds=180, nativeProbeSeconds=150, recordedProcessSeconds=30,
-                              maximumNativeProcesses=2 * len(controls), maximumRecordedProcesses=5 * len(controls)),
+                              maximumNativeProcesses=(3 if args.pending_save else 2) * len(controls),
+                              maximumRecordedProcesses=5 * len(controls)),
                   limitations=['Historical roots and gameplay legality use real Host replay; this is not independent full-root or damage-law reconstruction.',
                                'Controlled background rendering/injected input does not establish physical-device, OS-focus, art, performance or full-phase acceptance.'])
 
@@ -302,32 +312,47 @@ def main():
             (launch_client / 'project.godot').write_text(config.replace('[display]', '[display]\nwindow/size/no_focus=true', 1))
         for control in controls:
             world, prefix = work / (control + '.sqlite3'), work / (control + '.json')
+            if args.pending_save:
+                source = args.pending_save.resolve()
+                require(source.is_file() and not any(Path(str(source) + suffix).exists() for suffix in ('-wal', '-shm')),
+                        'Pending source must be a closed SQLite backup without sidecars')
+                report['pendingSource'] = dict(path=str(source), sha256=sha(source.read_bytes()).hex())
+                shutil.copyfile(source, world)
             observations = {}
-            for phase in ('fresh', 'reopen'):
-                before = sha(world.read_bytes()) if phase == 'reopen' else None
+            phases = ('pending', 'resume', 'reopen') if args.pending_save else ('fresh', 'reopen')
+            for phase in phases:
+                before = sha(world.read_bytes()) if phase in ('pending', 'reopen') else None
                 command = [args.godot.resolve()]
                 if not args.rendered:
                     command.append('--headless')
                 command += ['--path', launch_client, '--', '--care-probe', world, prefix,
-                            control if phase == 'fresh' else 'reopen', '--background-render']
+                            control if phase == 'fresh' else phase, '--background-render']
                 run(control + '-' + phase, command, 180)
-                observed = json.loads((work / (control + '.' + phase + '.json')).read_text())
+                observed = json.loads((work / (control + '.' + ('fresh' if phase == 'resume' else phase) + '.json')).read_text())
                 observations[phase] = observed
                 require(observed['Kind'] == 'native-care-v1' and observed['Status'] == 'passed'
-                        and observed['Mode'] == (control if phase == 'fresh' else 'reopen')
+                        and observed['Mode'] == (control if phase == 'fresh' else phase)
                         and observed['FocusRequests'] == 0 and observed['IsLocallyPaused']
                         and observed['DurationMilliseconds'] < 150000, 'Incomplete native care result')
                 if args.rendered:
                     require(observed['Display'] != 'headless' and observed['Unfocusable'] and not observed['NativeFocused']
                             and not observed['ObservedNativeFocus'] and observed['StartupNoFocus'], 'Native focus isolation failed')
+                if phase == 'pending':
+                    require(sha(world.read_bytes()) == before and observed['InitialHash'] == observed['FinalHash'],
+                            'Paused pending reopen changed the exact save or public state')
+                if phase == 'resume':
+                    require(observed['InitialHash'] == observations['pending']['FinalHash'],
+                            'A second process changed pending care before readiness')
                 if phase == 'reopen':
-                    require(sha(world.read_bytes()) == before and observed['InitialHash'] == observations['fresh']['FinalHash']
+                    require(sha(world.read_bytes()) == before and observed['InitialHash'] == observations['resume' if args.pending_save else 'fresh']['FinalHash']
                             and observed['InitialHash'] == observed['FinalHash'], 'Second process changed the exact paused save/public state')
-            selected_inputs = [value for value in observations['fresh']['Inputs'] if value['Stage'] == 'acknowledge-' + control]
+            active = observations['resume' if args.pending_save else 'fresh']
+            selected_inputs = [value for value in active['Inputs']
+                               if value['Stage'] == ('resume-pending' if args.pending_save else 'acknowledge-' + control)]
             require(selected_inputs, 'No actual care input recorded for requested control')
-            input_key = 'PointerControl' if control == 'pointer' else 'Key' if control == 'keyboard' else 'Controller'
+            input_key = 'PointerControl' if control == 'pointer' else 'Key' if control in ('keyboard', 'pending') else 'Controller'
             require(any(input_key in value for value in selected_inputs), 'Requested input form was not exercised')
-            verification = verify_history(world, runtime)
+            verification = verify_history(world, runtime, pending_continuation=args.pending_save is not None)
             report['journeys'][control] = verification
             frozen = sha(world.read_bytes())
             ack, treated = verification['acknowledgmentRevision'], verification['treatmentRevision']
@@ -367,8 +392,12 @@ def main():
             verification['recordedBoundariesVerified'] = revisions
             del verification['expectedHashes']
             if args.rendered:
-                expected = {control + '.' + stage + '.png' for stage in ('defeat', 'care-inspection', 'treated', 'reopen')}
+                stages = ('pending', 'pending-before-resume', 'restoration', 'treated', 'reopen') if args.pending_save else (
+                    'defeat', 'care-inspection', 'restoration', 'treated', 'reopen')
+                expected = {control + '.' + stage + '.png' for stage in stages}
                 require({path.name for path in work.glob(control + '.*.png')} == expected, 'Missing rendered care evidence')
+            if args.pending_save:
+                require(sha(source.read_bytes()).hex() == report['pendingSource']['sha256'], 'Pending-care source backup changed')
         require((client / 'project.godot').read_bytes() == project_bytes, 'Shared project configuration changed')
         require(report['sourceSha256'] == {str(path): sha(path.read_bytes()).hex() for path in source_paths},
                 'Verifier, Host or native probe changed during qualification')

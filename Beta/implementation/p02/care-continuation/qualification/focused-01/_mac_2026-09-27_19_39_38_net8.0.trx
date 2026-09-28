@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="42a2a8c0-11b6-419f-8a62-d3c2779cd968" name="@mac 2026-09-27 19:39:38" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-27T19:39:38.1213320-05:00" queuing="2026-09-27T19:39:38.1213320-05:00" start="2026-09-27T19:39:36.1575150-05:00" finish="2026-09-27T19:39:41.1515980-05:00" />
+  <TestSettings name="default" id="391c9777-2e40-4c84-a6e3-849e6cd42e64">
+    <Deployment runDeploymentRoot="_mac_2026-09-27_19_39_38" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="bbdf9c73-238c-45af-b033-a50c834c7a72" testId="ab640d11-3951-2cbf-5d83-f7ef0c0c9062" testName="OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: True)" computerName="mac" duration="00:00:02.3825439" startTime="2026-09-27T19:39:37.4868000-05:00" endTime="2026-09-27T19:39:39.8813720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bbdf9c73-238c-45af-b033-a50c834c7a72">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardContinuationTests.cs:line 99
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2e195c8f-9fc0-4ff7-a93b-6668a67a44b6" testId="bc3fd416-bcca-fcd0-1153-e3d71a5bcb54" testName="OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: False)" computerName="mac" duration="00:00:01.2283716" startTime="2026-09-27T19:39:39.8823120-05:00" endTime="2026-09-27T19:39:41.1109980-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e195c8f-9fc0-4ff7-a93b-6668a67a44b6">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NullReferenceException : Object reference not set to an instance of an object.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Boolean crafted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardContinuationTests.cs:line 99
+   at InvokeStub_CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2e6fe0f6-4331-4214-a0a9-f6d72f8a73b3" testId="6a0bbb07-8d43-288f-29e3-8bd58cbe0045" testName="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Admission_and_reappearance_establish_baselines_without_replaying_unobserved_health_changes" computerName="mac" duration="00:00:00.0002267" startTime="2026-09-27T19:39:37.5112950-05:00" endTime="2026-09-27T19:39:37.5115700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e6fe0f6-4331-4214-a0a9-f6d72f8a73b3" />
+    <UnitTestResult executionId="b7b5d725-3923-4e9c-905c-1f93176679bd" testId="c3563d37-c0e9-91a7-a227-c83990cb7266" testName="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Actual_restoration_replaces_damage_and_repeated_observation_does_not_restart_the_cue" computerName="mac" duration="00:00:00.0141572" startTime="2026-09-27T19:39:37.4867940-05:00" endTime="2026-09-27T19:39:37.5060160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b7b5d725-3923-4e9c-905c-1f93176679bd" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bc3fd416-bcca-fcd0-1153-e3d71a5bcb54">
+      <Execution id="2e195c8f-9fc0-4ff7-a93b-6668a67a44b6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests" name="Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ab640d11-3951-2cbf-5d83-f7ef0c0c9062">
+      <Execution id="bbdf9c73-238c-45af-b033-a50c834c7a72" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests" name="Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Actual_restoration_replaces_damage_and_repeated_observation_does_not_restart_the_cue" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c3563d37-c0e9-91a7-a227-c83990cb7266">
+      <Execution id="b7b5d725-3923-4e9c-905c-1f93176679bd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests" name="Actual_restoration_replaces_damage_and_repeated_observation_does_not_restart_the_cue" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Admission_and_reappearance_establish_baselines_without_replaying_unobserved_health_changes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6a0bbb07-8d43-288f-29e3-8bd58cbe0045">
+      <Execution id="2e6fe0f6-4331-4214-a0a9-f6d72f8a73b3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests" name="Admission_and_reappearance_establish_baselines_without_replaying_unobserved_health_changes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ab640d11-3951-2cbf-5d83-f7ef0c0c9062" executionId="bbdf9c73-238c-45af-b033-a50c834c7a72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc3fd416-bcca-fcd0-1153-e3d71a5bcb54" executionId="2e195c8f-9fc0-4ff7-a93b-6668a67a44b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a0bbb07-8d43-288f-29e3-8bd58cbe0045" executionId="2e6fe0f6-4331-4214-a0a9-f6d72f8a73b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3563d37-c0e9-91a7-a227-c83990cb7266" executionId="b7b5d725-3923-4e9c-905c-1f93176679bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="2" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.35]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.65]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.82]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.25]       System.NullReferenceException : Object reference not set to an instance of an object.
+[xUnit.net 00:00:03.25]       Stack Trace:
+[xUnit.net 00:00:03.25]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardContinuationTests.cs(99,0): at OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Boolean crafted)
+[xUnit.net 00:00:03.25]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.25]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.48]       System.NullReferenceException : Object reference not set to an instance of an object.
+[xUnit.net 00:00:04.48]       Stack Trace:
+[xUnit.net 00:00:04.48]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardContinuationTests.cs(99,0): at OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Boolean crafted)
+[xUnit.net 00:00:04.48]            at InvokeStub_CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(Object, Span`1)
+[xUnit.net 00:00:04.48]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:04.49]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T19:39:39.8854970-05:00">
+        <Text>[xUnit.net 00:00:03.25]     OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T19:39:41.1121550-05:00">
+        <Text>[xUnit.net 00:00:04.48]     OpenFantasy.Hosting.Tests.Care.CareRewardContinuationTests.Actual_care_victory_funded_reward_and_later_attack_preserve_the_complete_earned_trace(crafted: False) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

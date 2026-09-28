@@ -1,0 +1,21 @@
+{
+  "fixture": "production-pending-care",
+  "seed": "encounter-lifecycle-world",
+  "playerName": "Traveler",
+  "worldId": "6dcb0a2342385d9f20c2ceb785f56d32",
+  "branchId": "4bc2210fe97d62fb5b6558d9e263e0d0",
+  "playerActorId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+  "helperActorId": "5d652f48a612a324027911ffd13cf5f9",
+  "encounterId": "599ae3447a241f1166c195fecc955d03",
+  "acknowledgmentId": "5c3e799c9ef376561275def57519e29d",
+  "acknowledgmentCommandId": "ca25feed0000000000000000000000d0",
+  "headRevision": 193,
+  "headHash": "7bf8b0461746437d1dbf9b25ea64f648cb2f3fd84a2848d548d744a047e5ebd4",
+  "admissionHash": "fc5ee5ccc299e674196bb745160e1c6842c72a4f31dd4a473f6783ca7d50b31e",
+  "actionHash": "434ddd7eeffd1f7ed0d8f8af418e67d5f024830e5376cd928324ecdb1a04c500",
+  "timingHash": "21b5feea2ad582780e397be7f2838a78940f74c0da23ae1cbbab56f5f6cb1252",
+  "worldRootHash": "7bf8b0461746437d1dbf9b25ea64f648cb2f3fd84a2848d548d744a047e5ebd4",
+  "playerHp": 0,
+  "treatments": 0,
+  "consumedDoses": 0
+}

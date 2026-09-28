@@ -505,9 +505,19 @@ opens the wheel for inspection and confirmation. Acknowledgment restores no HP a
 Wren must separately administer a real owned dose when the world is ready. The same encounter then
 resumes, retaining combat state and charging the helper's recovery. Pending or blocked care stays
 inspectable. Other actions cannot bypass incapacity. Pause and focus loss retain their existing rules.
+Observed HP gains show a brief mint tint and signed amount without additional sprite motion. Opening
+a saved world establishes the current HP baseline without replaying historical damage or restoration.
 
 `tools/check_native_care.py` drives disposable care journeys through the actual Godot input adapter,
 checks retained transaction boundaries and reopens each saved world in another process. Its
 `--controls all` selects wheel, keyboard, controller-event and pointer-event journeys; `--rendered`
 uses isolated startup no-focus settings and captures images. Injected controls and background renders
 do not establish physical-device, foreground-focus, human art or production-platform acceptance.
+
+`--pending-save /absolute/path/pending.sqlite3` instead copies an existing closed backup containing
+an actual pending acknowledgment. Three separate native processes prove paused recovery, explicit
+unpause followed by helper treatment and a real attack, and exact post-treatment recovery. The source
+backup stays unchanged; this path does not create or qualify a native acknowledgment. The managed
+`CareRewardContinuationTests` can export a reproducible production-admitted pending backup when
+`OPENFANTASY_CARE_CONTINUATION_EVIDENCE` names an empty evidence directory. Omit `--controls all` for
+this mode. It supports the same `--rendered`, tool-path and output options as fresh journeys.

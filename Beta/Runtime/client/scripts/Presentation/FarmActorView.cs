@@ -11,9 +11,8 @@ internal partial class FarmActorView : Node2D
     private const double MotionGraceSeconds = 0.12;
     private Sprite2D _sprite = null!;
     private Label _nameplate = null!;
-    private Label _damage = null!;
-    private int? _observedHp;
-    private double _hitAge = 1;
+    private Label _healthDelta = null!;
+    private readonly FarmHealthFeedback _health = new();
     private bool _incapacitated;
     private Vector2 _previous;
     private Vector2 _target;
@@ -46,12 +45,11 @@ internal partial class FarmActorView : Node2D
         _nameplate.AddThemeColorOverride("font_outline_color", new Color("15261f"));
         _nameplate.AddThemeConstantOverride("outline_size", 4);
         AddChild(_nameplate);
-        _damage = new Label { Position = new Vector2(-30, -88), Size = new Vector2(60, 24),
+        _healthDelta = new Label { Name = "HealthDelta", Position = new Vector2(-30, -88), Size = new Vector2(60, 24),
             HorizontalAlignment = HorizontalAlignment.Center, MouseFilter = Control.MouseFilterEnum.Ignore, Visible = false };
-        _damage.AddThemeColorOverride("font_color", new Color("ffb79a"));
-        _damage.AddThemeColorOverride("font_outline_color", new Color("251416"));
-        _damage.AddThemeConstantOverride("outline_size", 4);
-        AddChild(_damage);
+        _healthDelta.AddThemeColorOverride("font_outline_color", new Color("251416"));
+        _healthDelta.AddThemeConstantOverride("outline_size", 4);
+        AddChild(_healthDelta);
         Present(actor, assets);
     }
 
@@ -91,15 +89,7 @@ internal partial class FarmActorView : Node2D
         _sprite.Texture = assets.ActorTexture(actor.SpriteKind);
         _nameplate.Text = actor.DisplayName + (actor.IsIncapacitated ? " · down" : "");
         _incapacitated = actor.IsIncapacitated;
-        if (actor.CurrentHp is { } hp)
-        {
-            if (_observedHp is { } before && hp < before)
-            {
-                _damage.Text = (before - hp).ToString(System.Globalization.CultureInfo.InvariantCulture);
-                _hitAge = 0;
-            }
-            _observedHp = hp;
-        }
+        _health.Observe(actor.CurrentHp);
         // The local player's cyan ground ring identifies them without covering an adjacent NPC's name.
         _nameplate.Visible = !actor.IsOwnActor && (actor.SpriteKind != FarmSpriteKind.Wolf || actor.IsSelected);
         _nameplate.AddThemeColorOverride("font_color", actor.IsOwnActor ? new Color("bce9ff") : new Color("fff0ce"));
@@ -122,12 +112,18 @@ internal partial class FarmActorView : Node2D
             column = _walkColumns[(int)(_animationClock * 7) % _walkColumns.Length];
         }
         _sprite.Frame = _facingRow * 3 + (_incapacitated ? 1 : column);
-        _hitAge = Math.Min(1, _hitAge + delta);
-        _sprite.Modulate = _hitAge < 0.16 ? new Color(1, 0.45f, 0.4f)
+        _health.Advance(delta);
+        double age = _health.AgeSeconds;
+        bool damaged = _health.Change == FarmHealthChange.Damage;
+        bool restored = _health.Change == FarmHealthChange.Restoration;
+        _sprite.Modulate = damaged && age < 0.16 ? new Color(1, 0.45f, 0.4f)
+            : restored && age < 0.24 ? new Color(0.7f, 1, 0.82f)
             : _incapacitated ? new Color(0.52f, 0.52f, 0.58f) : Colors.White;
-        _sprite.Position = _hitAge < 0.22 ? new Vector2((float)Math.Sin(_hitAge * 80) * 2, 0) : Vector2.Zero;
-        _damage.Visible = _hitAge < 0.8;
-        _damage.Position = new Vector2(-30, -88 - (float)_hitAge * 12);
+        _sprite.Position = damaged && age < 0.22 ? new Vector2((float)Math.Sin(age * 80) * 2, 0) : Vector2.Zero;
+        _healthDelta.Text = (restored ? "+" : "") + _health.Amount.ToString(System.Globalization.CultureInfo.InvariantCulture);
+        _healthDelta.AddThemeColorOverride("font_color", new Color(restored ? "a8edc5" : "ffb79a"));
+        _healthDelta.Visible = _health.IsVisible;
+        _healthDelta.Position = new Vector2(-30, -88 - (damaged ? (float)age * 12 : 0));
     }
 
     public override void _Draw()

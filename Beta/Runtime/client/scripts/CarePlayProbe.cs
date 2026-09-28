@@ -34,13 +34,18 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
     {
         try
         {
-            Require(mode is "wheel" or "keyboard" or "controller" or "pointer" or "reopen", "Unknown care probe mode.");
+            Require(mode is "wheel" or "keyboard" or "controller" or "pointer" or "pending" or "resume" or "reopen",
+                "Unknown care probe mode.");
             await Until(() => game.CurrentView?.EncounterLifecycle is not null && game.CurrentOffers.Count > 0,
                 "Care world did not open.", 30);
             game.InjectFixtureFocus(true);
             Require(game.IsLocallyPaused, "The disposable care world must open paused.");
             _initial = PublicHash();
-            if (mode == "reopen")
+            if (mode is "pending" or "resume")
+            {
+                await ReopenPendingCare();
+            }
+            else if (mode == "reopen")
             {
                 using var prior = JsonDocument.Parse(File.ReadAllText(Output("fresh", "json")));
                 Require(prior.RootElement.GetProperty("Status").GetString() == "passed"
@@ -49,6 +54,7 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
                 await Delay(0.5);
                 Require(PublicHash() == _initial && game.CurrentTarget is null && !game.IsWheelOpen,
                     "Paused recovery changed state or replayed an input draft.");
+                Require(!HealthDelta().Visible, "Reopening replayed a historical health cue.");
                 _checks.Add("Separate process restores exact post-care state while paused, without replaying input.");
             }
             else
@@ -59,7 +65,7 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
             }
             await PauseAndSettle();
             Observe("final");
-            await Capture(mode == "reopen" ? "reopen" : "treated");
+            await Capture(mode is "reopen" or "pending" ? mode : "treated");
             Deadline();
             Report("passed", null);
             game.RequestClose();
@@ -174,15 +180,61 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
             GetViewport().GuiGetFocusOwner()?.ReleaseFocus();
             Tap(Key.E);
         }
+        await AwaitTreatmentAndAttack(exact.EncounterId, before.Calendar);
+    }
+
+    private async Task ReopenPendingCare()
+    {
+        _stage = "pending-reopen";
+        Require(View.Progression!.Hp == 0 && View.Care is { Status: LocalCareStatus.Pending,
+            PendingAcknowledgmentId: not null }, "The retained save must contain real pending care.");
+        Require(Offer(FarmSemanticAction.AcknowledgeCare) is { CanExecute: false, Intent: null }
+            && !game.HasPendingAction, "Reopening must expose pending status without another acknowledgment.");
+        _positions = View.Actors.ToDictionary(actor => actor.ActorId, actor => actor.Feet);
+        ushort side = View.EncounterActors.Single(actor => actor.ActorId == View.PlayerActorId).Side;
+        _wolf = View.EncounterActors.Single(actor => actor.Side != 0 && actor.Side != side).ActorId;
+        string pending = PublicHash();
+        Observe("pending");
+        await Delay(0.5);
+        Require(PublicHash() == pending && !game.HasPendingAction && game.CurrentTarget is null,
+            "Paused reopen selected work, changed state or restored an old input target.");
+        if (mode == "pending")
+        {
+            game.InjectFixtureFocus(false);
+            await Delay(0.3);
+            game.InjectFixtureFocus(true);
+            await Frame();
+            Require(game.IsLocallyPaused && PublicHash() == pending, "Focus return bypassed explicit pause.");
+            _checks.Add("Actual acknowledged care remains unchanged through paused native reopen and focus loss/return.");
+            return;
+        }
+        using var previous = JsonDocument.Parse(File.ReadAllText(Output("pending", "json")));
+        Require(previous.RootElement.GetProperty("Status").GetString() == "passed"
+            && previous.RootElement.GetProperty("FinalHash").GetString() == pending,
+            "The second pending-care process differs before explicit readiness.");
+        EntityId episode = View.Encounter!.EncounterId;
+        var calendar = View.Calendar;
+        await Capture("pending-before-resume");
+        _stage = "resume-pending";
+        Tap(Key.Escape);
+        await AwaitTreatmentAndAttack(episode, calendar);
+    }
+
+    private async Task AwaitTreatmentAndAttack(EntityId episode, WorldInstant calendar)
+    {
         await Until(() => !game.HasPendingAction && View.Progression!.Hp > 0 && View.Care is null,
-            "One native acknowledgment did not lead to separate actual helper treatment.");
-        Require(View.Encounter!.EncounterId == exact.EncounterId
+            "Pending care did not lead to separate actual helper treatment.");
+        Require(View.Encounter!.EncounterId == episode
             && View.EncounterLifecycle!.Phase == EncounterLifecyclePhase.Active && PositionsUnchanged(),
             "Care changed episode identity or teleported a participant.");
+        await Until(() => HealthDelta() is { Visible: true, Text: "+40" },
+            "Committed restoration did not reach the native health cue.");
         Observe("restored");
+        await Capture("restoration");
+        _checks.Add("Actual HP restoration has a signed native cue; reopening does not replay it.");
         // The exact zero-duration care transactions and helper debt are checked from their saved
         // boundaries; a later rendered sample may already include an ordinary tactical tick.
-        Require(View.Calendar.CompareTo(before.Calendar) >= 0, "Care moved world time backwards.");
+        Require(View.Calendar.CompareTo(calendar) >= 0, "Care moved world time backwards.");
         await Until(() => Offer(FarmSemanticAction.Strike)?.CanExecute == true && !game.HasPendingAction,
             "Restoration did not return the player to a lawful action.", 15);
         int hp = Wolf.CurrentHp;
@@ -190,7 +242,7 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
         Tap(Key.E);
         await Until(() => !game.HasPendingAction && Wolf.CurrentHp < hp,
             "The restored player could not land a real subsequent attack.", 15);
-        _checks.Add("One explicit native care choice is followed by helper treatment and a real resumed player attack.");
+        _checks.Add("The acknowledged care is followed by helper treatment and a real resumed player attack.");
     }
 
     private async Task OpenCareWheel()
@@ -219,6 +271,8 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
         Require(PublicHash() == held, "Paused care journey continued changing.");
     }
     private LocalWorldView View => game.CurrentView ?? throw new InvalidOperationException("No public view.");
+    private Label HealthDelta() => game.GetChildren().OfType<FarmCanvas>().Single()
+        .GetNode<Label>("Actors/Actor_" + View.PlayerActorId + "/HealthDelta");
     private LocalEncounterActorView Wolf => View.EncounterActors.Single(actor => actor.ActorId == _wolf);
     private FarmActionOffer? Offer(FarmSemanticAction action) => game.CurrentOffers.GetValueOrDefault(action);
     private bool PositionsUnchanged() => View.Actors.Count == _positions.Count
@@ -226,6 +280,7 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
     private string PublicHash() => Convert.ToHexString(SHA256.HashData(Encoding.UTF8.GetBytes(JsonSerializer.Serialize(View))));
     private void Observe(string label) => _observations.Add(new { Label = label, View, game.IsLocallyPaused,
         game.IsWindowFocused, game.HasPendingAction, game.IsWheelOpen, Target = game.CurrentTarget,
+        HealthCue = new { HealthDelta().Text, HealthDelta().Visible },
         Offers = game.CurrentOffers.Values.Select(offer => new { offer.Action, offer.Label, offer.TargetId,
             offer.TargetName, offer.CostText, offer.DetailText, offer.BlockingReason }).ToArray() });
     private void Tap(Key key)
@@ -298,7 +353,7 @@ internal sealed partial class CarePlayProbe(FarmGame game, string reportPath, st
         Require(image.SavePng(Output(stage, "png")) == Error.Ok, "Care image could not be saved.");
     }
     private string Output(string stage, string extension) => Path.ChangeExtension(reportPath, null) + "." + stage + "." + extension;
-    private void Report(string status, string? error) => File.WriteAllText(Output(mode == "reopen" ? "reopen" : "fresh",
+    private void Report(string status, string? error) => File.WriteAllText(Output(mode is "reopen" or "pending" ? mode : "fresh",
         status == "passed" ? "json" : "failed.json"), JsonSerializer.Serialize(new
         {
             Kind = "native-care-v1", Mode = mode, Status = status, Error = error, Stage = _stage,

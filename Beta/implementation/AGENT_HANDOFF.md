@@ -42,6 +42,36 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Care continuation and observed health feedback](p02/care-continuation/README.md) proves raw/crafted
+finite treatment through actual victory, Wren's funded reward, earned level refill and a later attack
+in one lived world. Reopening, receipt reuse and three distinct corruption cases retain exact causal
+boundaries. New native pending-care recovery waits through pause/focus loss, then requires explicit
+readiness before one real helper dose and a resumed attack. A signed mint HP-gain cue adds no sprite
+motion or world effect; new views do not replay historic feedback.
+
+[Verification](p02/care-continuation/qualification/verification.json): clean build; **295 affected
+client/content/session/care tests pass**, zero failed/skipped. Rendered pending continuation and all
+four fresh control routes pass **11 native processes plus 20 recorded Host reads**; the earlier
+headless pending route also passes. Final source and six application DLLs remain pinned. One independent
+native source critic found no actionable defect. Build/test-access and sandbox failures remain recorded.
+Core/Hosting authority is unchanged; broader prior qualification is retained, not claimed as rerun.
+
+Same-change architecture updates document health observations and correct the stale item-consumption
+publication boundary. All 679 architecture/proposal local links resolve. All 23 frozen specs, 58 earlier
+milestones and unrelated 19-file predecessor staging remain intact. The 123 native artifact files are
+archived with verified hashes. Preserved on `codex/milestone-care-continuation`; pre-change checkpoint
+`codex/checkpoint-before-care-continuation-20260928T002007Z` resolves to `53e2574`.
+
+**Next dependency:** [ordinary restorative use](p02/care-continuation/ORDINARY_CARE_NEXT.md) is a
+source-linked proposal, not implemented profile26 support. Bind self/ally permission, delivery and
+actual time/resource/material history before offering ordinary use; active combat must use due-actor
+resolution. Retain native crafted-stock care, care/material continuation and full journal lifetime.
+Native pending input has a real managed acknowledgment; native reward continuation is not proven.
+Nameplate/cue spacing remains provisional. Human/physical, art, production-platform, scale, multiplayer
+and full phase gates remain open. No paid Claude retry or credit-saving claim.
+
+### Earlier retained increments
+
 [Fresh care content and native interaction](p02/native-care/README.md) explicitly admits a profile25
 journey with original Potion/recipe witnesses, two real doses and six berries in Wren's custody,
 and physically reachable fresh helper placement. Original combat stats and the profile24 fingerprint
@@ -65,12 +95,10 @@ Preserved on `codex/milestone-native-care`; pre-change checkpoint
 resolve. 173 native evidence files are archived with verified hashes. Current art/nameplate presentation
 remains provisional; controlled renders do not close human/physical, export or performance gates.
 
-**Next dependency:** pending-care/currency corruption and treatment→later funded reward/refill→attack
+**Dependency recorded at this earlier checkpoint:** pending-care/currency corruption and treatment→later funded reward/refill→attack
 integration combinations; ordinary care policy, native crafted-stock/pending-care journeys, care/material
 continuation and full journal lifetime as their prerequisites permit. Native completed-treatment reopening
 is proven; native pending-treatment reopening is not. All broader phase gates remain open.
-
-### Earlier retained increments
 
 [Care session and combined archive publication](p02/care-session/README.md) binds the patient's exact
 acknowledgment to one terminal receipt and selects real Host-helper treatment at a later ready cutoff.

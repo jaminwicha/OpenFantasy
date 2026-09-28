@@ -14,8 +14,11 @@ treatment occurred. No care action, UI, world codec or durable recovery protocol
 standalone material candidate. [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs)
 rejects consumption-enabled production under profiles through 24, including an empty enabled owner.
 The [aftermath-care composition](aftermath-care.md) explicitly admits this owner together with
-treatment and [resource history](world-resource-history.md) for in-memory profile 25 transactions.
-Its durable host admission remains closed; encoding a candidate does not grant storage publication.
+treatment and [resource history](world-resource-history.md) for profile 25 transactions. Schema-seven
+durable authority publishes those complete-world transactions and replays their actual commands,
+receipts and archive boundaries. The local session and native controls bind patient acknowledgment
+and separate helper treatment. Encoding a standalone material candidate does not grant publication
+or enable ordinary item use; each action needs its own permission, eligibility and time contract.
 
 ## Selection, authority and revisions
 

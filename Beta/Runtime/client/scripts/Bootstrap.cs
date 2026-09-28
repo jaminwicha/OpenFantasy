@@ -43,7 +43,7 @@ public partial class Bootstrap : Control
             or ["--farm-action-offers", _, _, "--background-render"]
             or ["--encounter-probe", _, _, "fresh" or "duel" or "reopen", "--background-render"]
             or ["--encounter-defeat-probe", _, _, "fresh" or "reopen", "--background-render"]
-            or ["--care-probe", _, _, "wheel" or "keyboard" or "controller" or "pointer" or "reopen", "--background-render"]
+            or ["--care-probe", _, _, "wheel" or "keyboard" or "controller" or "pointer" or "pending" or "resume" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -60,9 +60,9 @@ public partial class Bootstrap : Control
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
         if (arguments is ["--care-probe", var careSave, var careReport, var careMode]
-            && careMode is "wheel" or "keyboard" or "controller" or "pointer" or "reopen")
+            && careMode is "wheel" or "keyboard" or "controller" or "pointer" or "pending" or "resume" or "reopen")
         {
-            if (File.Exists(careSave) != (careMode == "reopen"))
+            if (File.Exists(careSave) != (careMode is "pending" or "resume" or "reopen"))
             {
                 GD.PushError("The care probe requires a fresh path or its exact retained save.");
                 GetTree().Quit(1);

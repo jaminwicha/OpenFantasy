@@ -1,0 +1,75 @@
+{
+  "status": "passed-scoped-increment",
+  "sourceHead": "53e257493bdfa60979c62f4926e0ea8a8aca6eb2",
+  "checkpoint": "codex/checkpoint-before-care-continuation-20260928T002007Z",
+  "milestone": "codex/milestone-care-continuation",
+  "finishedUtc": "2026-09-28T00:52:31.865932+00:00",
+  "managed": {
+    "passed": 295,
+    "failed": 0,
+    "skipped": 0,
+    "scope": "All Client, Content, Simulation and Care namespaces in Hosting.Tests",
+    "trx": "regression-02/_mac_2026-09-27_19_48_59_net8.0.trx",
+    "focusedPassed": 4,
+    "fullSuiteRerun": false,
+    "finalBuild": "build-03.log",
+    "warnings": 0,
+    "errors": 0,
+    "retainedPriorQualification": "care-session: 1355 Core / 707 Hosting; Core/Hosting authority unchanged"
+  },
+  "native": {
+    "pendingRendered": "native-pending-rendered-01.json",
+    "pendingHeadless": "native-pending-headless-01.json",
+    "freshControlRendered": "native-controls-rendered-01.json",
+    "renderedNativeProcesses": 11,
+    "renderedHostHistoricalReads": 20,
+    "additionalHeadlessNativeProcesses": 3,
+    "additionalHeadlessHostHistoricalReads": 4,
+    "pendingInput": "pending-source-02/metadata.json",
+    "limitsSeconds": {
+      "process": 180,
+      "probe": 150,
+      "history": 30
+    },
+    "observedFocusRequests": 0,
+    "observedNativeFocus": false,
+    "sameSixApplicationDllsAfterValidation": true
+  },
+  "preservation": {
+    "frozenSpecs": 23,
+    "earlierMilestones": 58,
+    "predecessorStagedFiles": 19,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "checkpointVerified": true
+  },
+  "sourceManifests": [
+    "source-before-validation.json",
+    "source-final.json"
+  ],
+  "sourceFileCount": 1046,
+  "architecture": {
+    "sameChangePages": [
+      "item-consumption.md",
+      "native-encounters.md"
+    ],
+    "architectureAndProposalLocalLinks": 679,
+    "brokenLinks": 0
+  },
+  "artifacts": {
+    "archive": "native-evidence.tar.gz",
+    "archiveSha256": "a2ba861bfe4d83cb8290817e64381f81ae25c79acf0f529b50d95287ac5e22a8",
+    "files": 123,
+    "archiveBytes": 3139887,
+    "everyMemberVerified": true
+  },
+  "critic": "../REVIEW.md",
+  "failedAttempts": "../FAILURES.md",
+  "limitations": [
+    "Reward/crafting continuation is managed evidence; native pending input was acknowledged through actual managed commands.",
+    "Native paths use raw stock; crafted-stock native interaction remains open.",
+    "Controlled background renders/injected events do not qualify physical devices, foreground focus, human usability or art.",
+    "Nearby nameplate/cue layout remains provisional.",
+    "Ordinary care proposal is not implemented; no full phase, scale, multiplayer or production-platform claim.",
+    "No paid Claude request retried and no credit savings claimed."
+  ]
+}
