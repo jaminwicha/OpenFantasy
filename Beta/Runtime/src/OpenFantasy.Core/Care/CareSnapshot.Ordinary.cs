@@ -33,20 +33,26 @@ public sealed partial class CareSnapshot
         }
     }
 
-    private void ValidateAddedOrdinaryPositions(CareSnapshot successor)
+    private void ValidateAddedPositions(CareSnapshot successor)
     {
-        if (Ordinary is not { } previous || successor.Ordinary is not { } current) return;
-        var oldCommands = OrdinaryPositions(previous).Select(value => value.Command).ToHashSet();
         ulong lastAftermath = Acknowledgments.Select(value => value.WorldSequence)
             .Concat(Treatments.Select(value => value.WorldSequence)).DefaultIfEmpty(0UL).Max();
-        if (OrdinaryPositions(current).Any(value => !oldCommands.Contains(value.Command) && value.Sequence <= lastAftermath))
-            throw new ArgumentException("A new ordinary care operation cannot be inserted before retained aftermath history.");
-        ulong lastOrdinary = OrdinaryPositions(previous).Select(value => value.Sequence).DefaultIfEmpty(0UL).Max();
+        ulong lastOrdinary = 0;
+        if (Ordinary is { } previous && successor.Ordinary is { } current)
+        {
+            var oldCommands = OrdinaryPositions(previous).Select(value => value.Command).ToHashSet();
+            if (OrdinaryPositions(current).Any(value => !oldCommands.Contains(value.Command) && value.Sequence <= lastAftermath))
+                throw new ArgumentException("A new ordinary care operation cannot be inserted before retained aftermath history.");
+            lastOrdinary = OrdinaryPositions(previous).Select(value => value.Sequence).DefaultIfEmpty(0UL).Max();
+        }
+        // Aftermath owns an entire world sequence. A successor can append multiple completed
+        // pairs, but cannot fill an earlier gap merely because its final snapshot is chronological.
+        ulong lastSequence = Math.Max(lastOrdinary, lastAftermath);
         var oldAcknowledgments = Acknowledgments.Select(value => value.AcknowledgmentId).ToHashSet();
         var oldTreatments = Treatments.Select(value => value.TreatmentId).ToHashSet();
-        if (successor.Acknowledgments.Any(value => !oldAcknowledgments.Contains(value.AcknowledgmentId) && value.WorldSequence <= lastOrdinary)
-            || successor.Treatments.Any(value => !oldTreatments.Contains(value.TreatmentId) && value.WorldSequence <= lastOrdinary))
-            throw new ArgumentException("New aftermath care must follow retained ordinary care.");
+        if (successor.Acknowledgments.Any(value => !oldAcknowledgments.Contains(value.AcknowledgmentId) && value.WorldSequence <= lastSequence)
+            || successor.Treatments.Any(value => !oldTreatments.Contains(value.TreatmentId) && value.WorldSequence <= lastSequence))
+            throw new ArgumentException("New aftermath care must follow every retained care operation.");
     }
 
     private static IEnumerable<(EntityId Command, ulong Sequence, uint Ordinal)> OrdinaryPositions(OrdinaryCareSnapshot state) =>

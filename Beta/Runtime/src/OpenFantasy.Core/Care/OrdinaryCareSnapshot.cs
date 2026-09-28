@@ -14,7 +14,21 @@ public sealed class OrdinaryCareSnapshot
 
     public OrdinaryCareSnapshot(IEnumerable<RestorativeUseDefinition> definitions,
         IEnumerable<CarePermission> permissions, IEnumerable<RestorativeUse> uses)
+        : this(null, definitions, permissions, uses)
     {
+    }
+
+    /// <summary>Continued owner: retained uses after the exact closed boundary named by its context.</summary>
+    internal OrdinaryCareSnapshot(IEnumerable<RestorativeUseDefinition> definitions,
+        IEnumerable<CarePermission> permissions, IEnumerable<RestorativeUse> uses, CareContinuationContext continuation)
+        : this(continuation ?? throw new ArgumentNullException(nameof(continuation)), definitions, permissions, uses)
+    {
+    }
+
+    private OrdinaryCareSnapshot(CareContinuationContext? continuation, IEnumerable<RestorativeUseDefinition> definitions,
+        IEnumerable<CarePermission> permissions, IEnumerable<RestorativeUse> uses)
+    {
+        Continuation = continuation;
         Definitions = Copy(definitions, value => value.DefinitionId, MaximumDefinitions);
         Permissions = Copy(permissions, value => value.PermissionId, MaximumPermissions);
         Uses = Copy(uses, value => value.UseId, MaximumUses);
@@ -49,9 +63,14 @@ public sealed class OrdinaryCareSnapshot
                     throw new ArgumentException("Ordinary assistance must precede revocation of its exact patient-owned permission.");
             }
         }
-        Revision = checked((ulong)Uses.Count + (ulong)Permissions.Count(value => value.Revocation is not null));
+        continuation?.RequireOrdinary(Definitions, Permissions, Uses);
+        // Revocations persist in their permissions, so each counts once however many boundaries close.
+        Revision = checked(TotalUses + (ulong)Permissions.Count(value => value.Revocation is not null));
     }
 
+    /// <summary>Null for an inline owner whose retained uses are its complete history.</summary>
+    public CareContinuationContext? Continuation { get; }
+    public ulong TotalUses => checked((Continuation?.ArchivedOrdinaryUses ?? 0) + (ulong)Uses.Count);
     public ReadOnlyCollection<RestorativeUseDefinition> Definitions { get; }
     public ReadOnlyCollection<CarePermission> Permissions { get; }
     public ReadOnlyCollection<RestorativeUse> Uses { get; }
@@ -68,7 +87,7 @@ public sealed class OrdinaryCareSnapshot
     {
         ArgumentNullException.ThrowIfNull(use);
         RequireLater(use.WorldSequence, use.CommandOrdinal);
-        return new(Definitions, Permissions, Uses.Append(use));
+        return new(Continuation, Definitions, Permissions, Uses.Append(use));
     }
 
     public OrdinaryCareSnapshot Revoke(CarePermissionRevocation revocation)
@@ -76,11 +95,13 @@ public sealed class OrdinaryCareSnapshot
         ArgumentNullException.ThrowIfNull(revocation);
         RequireLater(revocation.WorldSequence, revocation.CommandOrdinal);
         var permission = GetPermission(revocation.PermissionId).Revoke(revocation);
-        return new(Definitions, Permissions.Select(value => value.PermissionId == permission.PermissionId ? permission : value), Uses);
+        return new(Continuation, Definitions, Permissions.Select(value => value.PermissionId == permission.PermissionId ? permission : value), Uses);
     }
 
     internal void ValidateSuccessor(OrdinaryCareSnapshot successor)
     {
+        if (!CareContinuationContext.Same(Continuation, successor.Continuation))
+            throw new ArgumentException("An ordinary care successor stays within its exact continuation.");
         if (successor.Revision < Revision
             || !Definitions.Select(value => (value.DefinitionId, value.Version))
                 .SequenceEqual(successor.Definitions.Select(value => (value.DefinitionId, value.Version)))
@@ -111,7 +132,8 @@ public sealed class OrdinaryCareSnapshot
 
     private void RequireLater(ulong sequence, uint ordinal)
     {
-        if (Uses.Any(value => Compare(sequence, ordinal, value.WorldSequence, value.CommandOrdinal) <= 0)
+        if (Continuation is { } continuation && continuation.Frontier.Closes(sequence)
+            || Uses.Any(value => Compare(sequence, ordinal, value.WorldSequence, value.CommandOrdinal) <= 0)
             || Permissions.Any(value => value.Revocation is { } revoked
                 && Compare(sequence, ordinal, revoked.WorldSequence, revoked.CommandOrdinal) <= 0))
             throw new ArgumentException("A new ordinary care operation must follow every retained operation.");

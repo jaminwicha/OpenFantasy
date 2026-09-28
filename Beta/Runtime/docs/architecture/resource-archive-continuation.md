@@ -119,6 +119,11 @@ The separate [continued production owner](production-continuation.md) gives mate
 explicit active-window interpretation. It does not replace this resource anchor or let care effects
 outlive their causes without a jointly admitted closure. Existing world profiles refuse that owner.
 
+The standalone [care frontier](care-continuation.md) retains exact pending aid, grants/revocations,
+cumulative counts and latest patient treatment witnesses in Care V3. Existing world profiles also
+refuse that continued owner. Its care-operation watermark does not replace the closing world revision
+or the causal resource anchor; those boundaries must agree through the coordinated interpretation.
+
 Changing active-window semantics requires an explicitly admitted interpretation and matching nested
 codecs. Existing profiles retain their capacity refusals as well as their successful outcomes; replay
 cannot reinterpret a historically refused at-capacity command as a newly accepted use. Opening a

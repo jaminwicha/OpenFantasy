@@ -1,0 +1,32 @@
+{
+  "assignment": "Care domain continuation implementation; integration lead completes uncovered tests and reviews",
+  "requestedModel": "fable[1m]",
+  "effort": "max",
+  "timeoutSeconds": 1800,
+  "clientEstimateCapUsd": 10,
+  "actualModels": {
+    "claude-fable-5-1": {
+      "inputTokens": 30,
+      "outputTokens": 105964,
+      "cacheReadInputTokens": 1290206,
+      "cacheCreationInputTokens": 206543,
+      "webSearchRequests": 0,
+      "costUSD": 9.7519115,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 77052,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "elapsedSeconds": 1153.836,
+  "reportedCostUsd": 9.7519115,
+  "permissionDenials": [],
+  "contextPreflight": "verified",
+  "contextPostflight": "verified",
+  "outcome": "partial implementation; four tests written; no builds or tests run by worker",
+  "automaticRetry": false,
+  "subscriptionCreditSavingsProven": false,
+  "rawOutputPrivate": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-world-care-7oba41qa/run"
+}

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="bd65436b-c463-4c67-8d5b-c772ee4e9f03" name="@mac 2026-09-28 13:19:08" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T13:19:08.8848270-05:00" queuing="2026-09-28T13:19:08.8848270-05:00" start="2026-09-28T13:19:02.1978630-05:00" finish="2026-09-28T13:19:08.8905490-05:00" />
+  <TestSettings name="default" id="4cef3256-dc87-4d6f-a785-b53c36205338">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_13_19_08" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="c0e593a1-cbeb-4fda-9468-e0ce4927d431" testId="0fc0a219-810c-74fd-ca9f-b8d14ca2abb6" testName="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;ordinary-empty&quot;, expectedHash: &quot;&quot;)" computerName="mac" duration="00:00:00.0240655" startTime="2026-09-28T13:19:08.7266390-05:00" endTime="2026-09-28T13:19:08.7507720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0e593a1-cbeb-4fda-9468-e0ce4927d431" />
+    <UnitTestResult executionId="8df6aab0-bbee-4c05-aec8-8a5512e0da05" testId="53fb7a8c-c467-64b9-e2f5-a7b19b3ab615" testName="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;ordinary-mixed-revoked&quot;, expectedHash: &quot;&quot;)" computerName="mac" duration="00:00:00.0052284" startTime="2026-09-28T13:19:08.7792850-05:00" endTime="2026-09-28T13:19:08.7845890-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8df6aab0-bbee-4c05-aec8-8a5512e0da05" />
+    <UnitTestResult executionId="b5f0018d-0490-4691-88a4-aef1a8110870" testId="18491e31-863d-c880-bddb-aab8eb0bff3f" testName="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-full&quot;, expectedHash: &quot;&quot;)" computerName="mac" duration="00:00:00.0944173" startTime="2026-09-28T13:19:08.6311670-05:00" endTime="2026-09-28T13:19:08.7257980-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b5f0018d-0490-4691-88a4-aef1a8110870" />
+    <UnitTestResult executionId="b3ca199f-9163-4fe2-8e8c-1da0851b7f6e" testId="74932d4f-09cc-7f5e-3002-759ae07d42e5" testName="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-empty&quot;, expectedHash: &quot;&quot;)" computerName="mac" duration="00:00:00.0005859" startTime="2026-09-28T13:19:08.7850940-05:00" endTime="2026-09-28T13:19:08.7857410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3ca199f-9163-4fe2-8e8c-1da0851b7f6e" />
+    <UnitTestResult executionId="d7b3c934-afe8-4194-b6d1-acf205ca5c75" testId="678f3e9a-8c6e-7c3a-2ce7-9a30e7aff39a" testName="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-pending&quot;, expectedHash: &quot;&quot;)" computerName="mac" duration="00:00:00.0013940" startTime="2026-09-28T13:19:08.7772300-05:00" endTime="2026-09-28T13:19:08.7788190-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d7b3c934-afe8-4194-b6d1-acf205ca5c75" />
+    <UnitTestResult executionId="f9b9fe55-ecf4-4c05-b015-8ac1309704dc" testId="571b3437-1c54-65cd-71a1-c638138a3882" testName="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;ordinary-full&quot;, expectedHash: &quot;&quot;)" computerName="mac" duration="00:00:00.0244988" startTime="2026-09-28T13:19:08.7512530-05:00" endTime="2026-09-28T13:19:08.7758510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9b9fe55-ecf4-4c05-b015-8ac1309704dc" />
+    <UnitTestResult executionId="6199e6fe-85d5-4032-985f-64eecd644794" testId="470a8ddc-51ea-d4fd-e722-ae635e811198" testName="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-complete&quot;, expectedHash: &quot;&quot;)" computerName="mac" duration="00:00:00.0915585" startTime="2026-09-28T13:19:08.5204600-05:00" endTime="2026-09-28T13:19:08.6243150-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6199e6fe-85d5-4032-985f-64eecd644794" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-empty&quot;, expectedHash: &quot;&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="74932d4f-09cc-7f5e-3002-759ae07d42e5">
+      <Execution id="b3ca199f-9163-4fe2-8e8c-1da0851b7f6e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests" name="Original_care_frames_keep_their_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-full&quot;, expectedHash: &quot;&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="18491e31-863d-c880-bddb-aab8eb0bff3f">
+      <Execution id="b5f0018d-0490-4691-88a4-aef1a8110870" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests" name="Original_care_frames_keep_their_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-complete&quot;, expectedHash: &quot;&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="470a8ddc-51ea-d4fd-e722-ae635e811198">
+      <Execution id="6199e6fe-85d5-4032-985f-64eecd644794" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests" name="Original_care_frames_keep_their_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;ordinary-full&quot;, expectedHash: &quot;&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="571b3437-1c54-65cd-71a1-c638138a3882">
+      <Execution id="f9b9fe55-ecf4-4c05-b015-8ac1309704dc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests" name="Original_care_frames_keep_their_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;ordinary-empty&quot;, expectedHash: &quot;&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="0fc0a219-810c-74fd-ca9f-b8d14ca2abb6">
+      <Execution id="c0e593a1-cbeb-4fda-9468-e0ce4927d431" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests" name="Original_care_frames_keep_their_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;ordinary-mixed-revoked&quot;, expectedHash: &quot;&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="53fb7a8c-c467-64b9-e2f5-a7b19b3ab615">
+      <Execution id="8df6aab0-bbee-4c05-aec8-8a5512e0da05" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests" name="Original_care_frames_keep_their_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests.Original_care_frames_keep_their_exact_bytes(name: &quot;aftermath-pending&quot;, expectedHash: &quot;&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="678f3e9a-8c6e-7c3a-2ce7-9a30e7aff39a">
+      <Execution id="d7b3c934-afe8-4194-b6d1-acf205ca5c75" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.CareLegacyCompatibilityTests" name="Original_care_frames_keep_their_exact_bytes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0fc0a219-810c-74fd-ca9f-b8d14ca2abb6" executionId="c0e593a1-cbeb-4fda-9468-e0ce4927d431" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="53fb7a8c-c467-64b9-e2f5-a7b19b3ab615" executionId="8df6aab0-bbee-4c05-aec8-8a5512e0da05" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="18491e31-863d-c880-bddb-aab8eb0bff3f" executionId="b5f0018d-0490-4691-88a4-aef1a8110870" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="74932d4f-09cc-7f5e-3002-759ae07d42e5" executionId="b3ca199f-9163-4fe2-8e8c-1da0851b7f6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="678f3e9a-8c6e-7c3a-2ce7-9a30e7aff39a" executionId="d7b3c934-afe8-4194-b6d1-acf205ca5c75" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="571b3437-1c54-65cd-71a1-c638138a3882" executionId="f9b9fe55-ecf4-4c05-b015-8ac1309704dc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="470a8ddc-51ea-d4fd-e722-ae635e811198" executionId="6199e6fe-85d5-4032-985f-64eecd644794" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.89]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.29]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.73]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:03.12]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

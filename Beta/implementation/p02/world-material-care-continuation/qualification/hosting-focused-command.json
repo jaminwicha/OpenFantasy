@@ -1,0 +1,30 @@
+{
+  "startedUtc": "2026-09-28T18:50:46.862388+00:00",
+  "kind": "hosting",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~CareContinuationAdmissionTests|FullyQualifiedName~MaterialCareStressSupplyTests",
+    "--logger",
+    "trx;LogFileName=hosting-focused.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification"
+  ],
+  "environment": {
+    "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-hosting-focused",
+    "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/earned-supply-hosting-focused",
+    "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/excavation",
+    "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/transport",
+    "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/terrain",
+    "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/registry",
+    "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/production",
+    "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/consumption"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 33.7082520830445,
+  "finishedUtc": "2026-09-28T18:51:20.571463+00:00"
+}

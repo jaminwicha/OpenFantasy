@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ebc45fdf-0182-4316-972f-3fa42f74ce90" name="@mac 2026-09-28 13:50:51" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T13:50:51.2357000-05:00" queuing="2026-09-28T13:50:51.2357000-05:00" start="2026-09-28T13:50:47.7016040-05:00" finish="2026-09-28T13:51:20.4449240-05:00" />
+  <TestSettings name="default" id="0b8b37fa-a104-45bf-b6e1-87f403c8fdeb">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_13_50_51" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="30b320e3-1f41-47cf-9eb2-d56d195e59ea" testId="98891248-3d0d-46b3-13c3-d61a17d54373" testName="OpenFantasy.Hosting.Tests.Care.MaterialCareStressSupplyTests.Finite_doses_and_real_seeded_combat_support_hundreds_of_later_full_treatments" computerName="mac" duration="00:00:30.7437475" startTime="2026-09-28T13:50:49.5289800-05:00" endTime="2026-09-28T13:51:20.2811860-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30b320e3-1f41-47cf-9eb2-d56d195e59ea" />
+    <UnitTestResult executionId="4f828aa5-78f1-4bb3-a410-7dcca90398a8" testId="40be2c81-d59f-0b0b-2390-ca30a7db4d58" testName="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Authored_world_frames_preserve_the_precontinuation_bytes(ordinary: False, hash: &quot;1844f97105a8144c3076c8edf7dbe1d12917dfc6e904105113&quot;···)" computerName="mac" duration="00:00:00.3303006" startTime="2026-09-28T13:50:50.5589620-05:00" endTime="2026-09-28T13:50:50.8895950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f828aa5-78f1-4bb3-a410-7dcca90398a8" />
+    <UnitTestResult executionId="d044a75d-3f0b-483e-943e-5a1368b6b7b5" testId="80feb808-67f1-f678-ba6c-c8fcb0f7d359" testName="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Component_care_closure_cannot_silently_upgrade_an_existing_world(ordinary: False)" computerName="mac" duration="00:00:00.3269529" startTime="2026-09-28T13:50:51.2590240-05:00" endTime="2026-09-28T13:50:51.5860640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d044a75d-3f0b-483e-943e-5a1368b6b7b5" />
+    <UnitTestResult executionId="57d93f0e-cad9-4607-bf12-173b1c69fce3" testId="edfd4e21-6fee-f918-f8b6-8c4324921452" testName="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Authored_world_frames_preserve_the_precontinuation_bytes(ordinary: True, hash: &quot;9c897e368ad8f0bf3d2e524104401ae997ac3b93c65e013442&quot;···)" computerName="mac" duration="00:00:01.0127248" startTime="2026-09-28T13:50:49.5289760-05:00" endTime="2026-09-28T13:50:50.5525620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="57d93f0e-cad9-4607-bf12-173b1c69fce3" />
+    <UnitTestResult executionId="8a49fede-0735-4069-a980-39c50f089b10" testId="0c116c6b-bc4f-66c1-8aae-7d031e43a3e5" testName="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Component_care_closure_cannot_silently_upgrade_an_existing_world(ordinary: True)" computerName="mac" duration="00:00:00.3618880" startTime="2026-09-28T13:50:50.8959280-05:00" endTime="2026-09-28T13:50:51.2579670-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a49fede-0735-4069-a980-39c50f089b10" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Component_care_closure_cannot_silently_upgrade_an_existing_world(ordinary: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0c116c6b-bc4f-66c1-8aae-7d031e43a3e5">
+      <Execution id="8a49fede-0735-4069-a980-39c50f089b10" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests" name="Component_care_closure_cannot_silently_upgrade_an_existing_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.MaterialCareStressSupplyTests.Finite_doses_and_real_seeded_combat_support_hundreds_of_later_full_treatments" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="98891248-3d0d-46b3-13c3-d61a17d54373">
+      <Execution id="30b320e3-1f41-47cf-9eb2-d56d195e59ea" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.MaterialCareStressSupplyTests" name="Finite_doses_and_real_seeded_combat_support_hundreds_of_later_full_treatments" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Component_care_closure_cannot_silently_upgrade_an_existing_world(ordinary: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="80feb808-67f1-f678-ba6c-c8fcb0f7d359">
+      <Execution id="d044a75d-3f0b-483e-943e-5a1368b6b7b5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests" name="Component_care_closure_cannot_silently_upgrade_an_existing_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Authored_world_frames_preserve_the_precontinuation_bytes(ordinary: False, hash: &quot;1844f97105a8144c3076c8edf7dbe1d12917dfc6e904105113&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="40be2c81-d59f-0b0b-2390-ca30a7db4d58">
+      <Execution id="4f828aa5-78f1-4bb3-a410-7dcca90398a8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests" name="Authored_world_frames_preserve_the_precontinuation_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests.Authored_world_frames_preserve_the_precontinuation_bytes(ordinary: True, hash: &quot;9c897e368ad8f0bf3d2e524104401ae997ac3b93c65e013442&quot;···)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="edfd4e21-6fee-f918-f8b6-8c4324921452">
+      <Execution id="57d93f0e-cad9-4607-bf12-173b1c69fce3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CareContinuationAdmissionTests" name="Authored_world_frames_preserve_the_precontinuation_bytes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="98891248-3d0d-46b3-13c3-d61a17d54373" executionId="30b320e3-1f41-47cf-9eb2-d56d195e59ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40be2c81-d59f-0b0b-2390-ca30a7db4d58" executionId="4f828aa5-78f1-4bb3-a410-7dcca90398a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="80feb808-67f1-f678-ba6c-c8fcb0f7d359" executionId="d044a75d-3f0b-483e-943e-5a1368b6b7b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="edfd4e21-6fee-f918-f8b6-8c4324921452" executionId="57d93f0e-cad9-4607-bf12-173b1c69fce3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0c116c6b-bc4f-66c1-8aae-7d031e43a3e5" executionId="8a49fede-0735-4069-a980-39c50f089b10" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="5" executed="5" passed="5" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.95]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.20]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:32.10]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -11,9 +11,9 @@ namespace OpenFantasy.Hosting.Tests.Care;
 /// </summary>
 internal sealed class OrdinaryCareArchiveFixture
 {
-    internal OrdinaryCareArchiveFixture()
+    internal OrdinaryCareArchiveFixture(bool materialCareStress = false)
     {
-        Journey = new CareWorldFixture(pairedRewardBoundary: true);
+        Journey = new CareWorldFixture(pairedRewardBoundary: true, materialCareStress: materialCareStress);
         var basis = Journey.Genesis;
         var remedy = Assert.Single(basis.Care!.Remedies);
         var form = basis.Space.GetActor(Journey.Player).Binding;

@@ -31,8 +31,11 @@ internal sealed class CareWorldFixture
 
     internal CareWorldFixture(bool craftedDose = false, ulong? rewardExperience = null, uint? strikeMana = null,
         bool invalidNormalizedSpeedOnReward = false, bool enduranceProfile = false,
-        bool pairedRewardBoundary = false, bool invalidSecondRewardSpeed = false, bool archiveCareBoundary = false)
+        bool pairedRewardBoundary = false, bool invalidSecondRewardSpeed = false, bool archiveCareBoundary = false,
+        bool materialCareStress = false)
     {
+        if (materialCareStress && (!pairedRewardBoundary || craftedDose || enduranceProfile || archiveCareBoundary))
+            throw new ArgumentException("Material/care stress calibration requires the fresh paired-reward basis alone.");
         CraftedDose = craftedDose;
         // The archive fixture deliberately needs 256 actual bites, with separate Wait/choice/tick
         // commits between them. Its finite 1,600-boundary budget does not alter the ordinary fixture.
@@ -41,17 +44,26 @@ internal sealed class CareWorldFixture
         HelperStorage = source.GetResident(Helper).InventoryCustodianId;
         Assert.DoesNotContain(source.Inventory.Custody.Lots, lot => lot.CustodianId == HelperStorage
             && (lot.Definition == _supply.Potion || lot.Definition == _supply.Berries));
+        ulong berryUnits = materialCareStress ? 60UL : 6UL;
+        ulong potionUnits = materialCareStress ? 600UL : 2UL;
         var added = new List<CountedSourceLot>
         {
-            new(BerryLot, HelperStorage, _supply.Berries, new(BerrySource, 0, 6), 0)
+            new(BerryLot, HelperStorage, _supply.Berries, new(BerrySource, 0, berryUnits), 0)
         };
-        var sources = source.Inventory.Sources.Append(new AdmittedCountedSource(BerrySource, _supply.Berries, 6));
+        var sources = source.Inventory.Sources.Append(new AdmittedCountedSource(BerrySource, _supply.Berries, berryUnits));
         if (!craftedDose)
         {
-            added.Add(new(PotionLot, HelperStorage, _supply.Potion, new(PotionSource, 0, 2), 0));
-            sources = sources.Append(new(PotionSource, _supply.Potion, 2));
+            added.Add(new(PotionLot, HelperStorage, _supply.Potion, new(PotionSource, 0, potionUnits), 0));
+            sources = sources.Append(new(PotionSource, _supply.Potion, potionUnits));
         }
         var storages = source.Inventory.Custody.Storages.AsEnumerable();
+        if (materialCareStress)
+        {
+            // Finite fresh supply occupies real capacity; no earned stock or lived state is edited.
+            storages = storages.Select(storage => storage.CustodianId == HelperStorage
+                ? new CustodianStorage(storage.CustodianId, checked(storage.UnitCapacity + berryUnits + potionUnits), 0)
+                : storage);
+        }
         var policies = source.Inventory.Policies.AsEnumerable();
         var reservations = source.Inventory.ReservationIds.AsEnumerable();
         if (pairedRewardBoundary)
@@ -62,7 +74,7 @@ internal sealed class CareWorldFixture
         }
         var inventory = new CountedAuthorityState(new(source.WorldId, source.BranchId, 0,
             storages, source.Inventory.Custody.Lots.Concat(added)),
-            checked(source.Inventory.AdmittedUnitCapacity + (craftedDose ? 6UL : 8UL)), source.Inventory.Actors,
+            checked(source.Inventory.AdmittedUnitCapacity + berryUnits + (craftedDose ? 0UL : potionUnits)), source.Inventory.Actors,
             source.Inventory.Controls, policies, sources, reservations);
         var production = new ProductionSnapshot(source.WorldId, source.BranchId, 0,
             source.Production!.Recipes.Append(_supply.Recipe), [], []);
@@ -89,7 +101,7 @@ internal sealed class CareWorldFixture
             var profiles = progression.Actors.Select((actor, index) => new ActorStatProfileDefinition(
                 Id((ulong)(20 + index)), "paired_reward_actor_" + index, "Paired reward actor " + index,
                 ActorStatProfileKind.Class, new ActorStatValues(100_000, 4096,
-                    actor.ActorId == Player ? 1_000_000 : 1, 1, 0,
+                    actor.ActorId == Player ? 1_000_000 : materialCareStress && actor.ActorId == Wolf ? 100 : 1, 1, 0,
                     invalidSecondRewardSpeed && actor.ActorId == lastRecipient ? (int)(uint.MaxValue / 10) : 10_000),
                 invalidSecondRewardSpeed && actor.ActorId == lastRecipient
                     ? ActorStatModifiers.Zero with { Speed = 1 } : ActorStatModifiers.Zero,

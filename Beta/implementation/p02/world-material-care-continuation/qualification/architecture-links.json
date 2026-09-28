@@ -1,0 +1,426 @@
+{
+  "pages": 5,
+  "resolvingLinks": 105,
+  "links": [
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "runtime-and-authority.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "world-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "identity-and-determinism.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "time-and-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "encounter-timing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "world-pacing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "encounter-actions.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "encounter-lifecycle.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "native-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "world-and-geography.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "local-worksite.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "local-watercourse.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "excavation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "excavation-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "constructed-footing.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "stair-navigation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "structural-loads.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "structural-contact-assessment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "structural-policy-and-motion.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "structural-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "coupled-settlement.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "event-descent.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "consequence-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "construction-physical.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "reservoir-transport.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "reservoir-boundaries.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "reservoir-containment.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "terrain-liquid-breach.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "liquid-cell-flow.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "liquid-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "transport-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "terrain-material-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "actors-and-society.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "actor-resources.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "care-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "materials-and-activities.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "material-continuation-basis.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "construction-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "presentation-and-interaction.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "content-and-composition.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/README.md",
+      "to": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "resource-archive-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "native-encounters.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldCareActions.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Simulation/LocalCareController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Simulation/LocalCareView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Content/CareJourneyAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Content/CareFarmSources.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Content/CareFarmBuilder.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "ordinary-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+      "to": "care-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "aftermath-care.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Care/OrdinaryCareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Care/RestorativeUseDefinition.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Care/CarePermission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/RestorativeAvailability.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeView.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../client/scripts/RestorativeActionOffers.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../client/scripts/FarmQuickWheelModel.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeController.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Care/RestorativeUse.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceEvidence.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "persistence-and-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "../../src/OpenFantasy.Hosting/Content/RestorativeJourneyAdmission.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+      "to": "care-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Care/CareContinuationContext.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Care/CareCodecV3.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+      "to": "world-resource-history.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceContinuation.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveSegment.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveAnchor.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSeven.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "item-consumption.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "material-continuation-basis.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "production-continuation.md"
+    },
+    {
+      "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+      "to": "care-continuation.md"
+    }
+  ]
+}

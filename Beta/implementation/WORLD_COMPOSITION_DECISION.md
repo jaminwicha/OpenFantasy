@@ -18,8 +18,12 @@ qualified consumption evidence remain unchanged. Frozen specifications retain th
 Implementation follow-through: the [ordinary-care packet](p02/ordinary-care/README.md) records the
 explicit profile26 exploration binding, patient-owned permissions, shared material/resource operation
 and durable archive integration. The [timeless reference](../Runtime/docs/architecture/ordinary-care.md)
-describes its actual contracts. Native offers, combat-item use, medical activities and passive processes,
-and continued care/material ownership remain required work; this does not close the broader decision.
+describes its actual contracts. The [interface packet](p02/restorative-interface/README.md) records
+bounded native self-use and helper-owned aid. The
+[care-frontier packet](p02/world-material-care-continuation/README.md) records the standalone Care V3
+dependency and actual finite-supply/combat preparation. Coordinated complete-world care/material
+continuation, combat-item use, medical activities and passive processes remain required work;
+these bounded integrations do not close the broader decision.
 
 ## What the care exercise exposed
 

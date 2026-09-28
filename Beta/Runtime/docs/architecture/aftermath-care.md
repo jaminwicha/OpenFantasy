@@ -111,4 +111,7 @@ policy and explicit Care V2 interpretation. Anatomy, conditions, ongoing consent
 require their own eligibility and time contracts. They may reuse the actual material and
 resource operations without inheriting this narrow aftermath policy. Continuous play also requires
 authenticated archival continuation across resource, care and material evidence; bounded retained
-collections are storage envelopes, not accepted lifetime treatment limits.
+collections are storage envelopes, not accepted lifetime treatment limits. The standalone
+[care continuation frontier](care-continuation.md) preserves pending aid, cumulative totals and
+latest patient treatment witnesses across explicit domain cuts. Existing world profiles refuse
+that continued owner until a coordinated world interpretation supplies the other authority contracts.

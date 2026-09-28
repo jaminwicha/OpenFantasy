@@ -15,14 +15,24 @@ public sealed partial class CareSnapshot
         IEnumerable<RestorativeRemedyDefinition> remedies, IEnumerable<CareAgreement> agreements,
         IEnumerable<CareAcknowledgment> acknowledgments, IEnumerable<CareTreatment> treatments,
         OrdinaryCareSnapshot? ordinary = null)
+        : this(null, worldId, branchId, revision, remedies, agreements, acknowledgments, treatments, ordinary)
+    {
+    }
+
+    private CareSnapshot(CareContinuationContext? continuation, EntityId worldId, EntityId branchId, ulong revision,
+        IEnumerable<RestorativeRemedyDefinition> remedies, IEnumerable<CareAgreement> agreements,
+        IEnumerable<CareAcknowledgment> acknowledgments, IEnumerable<CareTreatment> treatments,
+        OrdinaryCareSnapshot? ordinary)
     {
         if (worldId == branchId) throw new ArgumentException("Care requires distinct world and branch identities.");
         Remedies = Copy(remedies, value => value.DefinitionId, MaximumRemedies);
         Agreements = Copy(agreements, value => value.AgreementId, MaximumAgreements);
         Acknowledgments = Copy(acknowledgments, value => value.AcknowledgmentId, MaximumAcknowledgments);
         Treatments = Copy(treatments, value => value.TreatmentId, MaximumTreatments);
+        Continuation = continuation;
+        ValidateContinuation(ordinary);
         if (Remedies.Count == 0 || ordinary is null && Agreements.Count == 0
-            || revision != checked((ulong)(Acknowledgments.Count + Treatments.Count) + (ordinary?.Revision ?? 0)))
+            || revision != checked(TotalAcknowledgments + TotalTreatments + (ordinary?.Revision ?? 0)))
             throw new ArgumentException("Care requires authored catalogs and exactly one revision per accepted care operation.");
         foreach (var agreement in Agreements)
         {
@@ -84,23 +94,31 @@ public sealed partial class CareSnapshot
     public CareAcknowledgment GetAcknowledgment(EntityId id) => Acknowledgments.SingleOrDefault(value => value.AcknowledgmentId == id)
         ?? throw new ArgumentException("The acknowledgment is outside this care owner.");
 
-    internal CareSnapshot Acknowledge(CareAcknowledgment acknowledgment) => new(WorldId, BranchId, checked(Revision + 1),
+    // Structural append paths; the world still authenticates and publishes each operation.
+    public CareSnapshot Acknowledge(CareAcknowledgment acknowledgment) => new(Continuation, WorldId, BranchId, checked(Revision + 1),
         Remedies, Agreements, Acknowledgments.Append(acknowledgment), Treatments, Ordinary);
-    internal CareSnapshot Treat(CareTreatment treatment) => new(WorldId, BranchId, checked(Revision + 1),
+    public CareSnapshot Treat(CareTreatment treatment) => new(Continuation, WorldId, BranchId, checked(Revision + 1),
         Remedies, Agreements, Acknowledgments, Treatments.Append(treatment), Ordinary);
 
-    internal CareSnapshot WithOrdinary(OrdinaryCareSnapshot ordinary)
+    public CareSnapshot WithOrdinary(OrdinaryCareSnapshot ordinary)
     {
         ArgumentNullException.ThrowIfNull(ordinary);
         if (Ordinary is null) throw new InvalidOperationException("Ordinary care requires explicit admission.");
         Ordinary.ValidateSuccessor(ordinary);
         if (ordinary.Revision <= Ordinary.Revision) throw new ArgumentException("Ordinary care must append an actual operation.");
-        return new(WorldId, BranchId, checked(Revision + ordinary.Revision - Ordinary.Revision),
+        var successor = new CareSnapshot(Continuation, WorldId, BranchId, checked(Revision + ordinary.Revision - Ordinary.Revision),
             Remedies, Agreements, Acknowledgments, Treatments, ordinary);
+        // The existing aftermath records are passed unchanged; validate the new cross-care
+        // positions without repeatedly re-encoding the already preserved aftermath history.
+        ValidateAddedPositions(successor);
+        return successor;
     }
 
-    internal void ValidateSuccessor(CareSnapshot successor)
+    public void ValidateSuccessor(CareSnapshot successor)
     {
+        ArgumentNullException.ThrowIfNull(successor);
+        if (!CareContinuationContext.Same(Continuation, successor.Continuation))
+            throw new ArgumentException("A care successor stays within its exact continuation; closure is a separate transition.");
         if (successor.WorldId != WorldId || successor.BranchId != BranchId
             || successor.SupportsOrdinary != SupportsOrdinary
             || (SupportsOrdinary ? successor.Revision <= Revision : successor.Revision != checked(Revision + 1))
@@ -110,13 +128,17 @@ public sealed partial class CareSnapshot
             || Treatments.Any(value => !successor.Treatments.Any(next => CareCodecV1.EncodeTreatment(value).AsSpan().SequenceEqual(CareCodecV1.EncodeTreatment(next)))))
             throw new ArgumentException("A care successor preserves authored permission and every accepted operation exactly.");
         Ordinary?.ValidateSuccessor(successor.Ordinary!);
-        ValidateAddedOrdinaryPositions(successor);
+        ValidateAddedPositions(successor);
     }
 
     private void ValidateChronology()
     {
         CareAcknowledgment? active = null;
         Dictionary<EntityId, CareTreatment> priorByPatient = [];
+        if (Continuation is { } continuation)
+        {
+            foreach (var witness in continuation.PatientWitnesses) priorByPatient[witness.PatientActorId] = witness.Treatment;
+        }
         var acknowledgments = Acknowledgments.ToDictionary(value => value.WorldSequence);
         var treatments = Treatments.ToDictionary(value => value.WorldSequence);
         foreach (ulong sequence in acknowledgments.Keys.Concat(treatments.Keys).Order())

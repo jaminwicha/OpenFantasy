@@ -1,0 +1,24 @@
+{
+  "startedUtc": "2026-09-28T18:46:14.956142+00:00",
+  "kind": "focused",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~CareFrontierBoundaryTests.Successor_validation",
+    "--logger",
+    "trx;LogFileName=chronology-pair-red.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification"
+  ],
+  "environment": {
+    "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-chronology-pair-red",
+    "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/earned-supply-chronology-pair-red"
+  },
+  "exitCode": 1,
+  "elapsedSeconds": 2.6756051247939467,
+  "finishedUtc": "2026-09-28T18:46:17.632197+00:00"
+}

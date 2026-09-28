@@ -42,6 +42,44 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Care history frontier and full-world supply preparation](p02/world-material-care-continuation/README.md)
+implements standalone Care V3: cumulative operation totals, exact pending aid, persistent revoked
+grants and bounded per-patient treatment witnesses, without a parent history chain. Explicit legacy-world
+admission refuses the continued owner. Public appends preserve cross-care chronology; independent
+review found two real backdating gaps, both demonstrated by failing regressions and fixed.
+
+The final clean build and **1,577 full Core +104 affected Hosting =1,681 managed cases** pass with
+zero skips. All nine retained Care/world25/26 frames (638,645 bytes) reproduce exactly. Structural
+journeys cover 520 uses and 520 aftermath pairs across cuts, full 256-record windows, pending aid,
+revocation, all eight patient witnesses and malformed/context/catalog controls. Actual durable stress
+preparation retains 600 finite raw Potions and 60 berries while earning **25,337 HP damage from 254
+seeded bites across 1,059 accepted world steps**, then reopens exactly. It consumes zero doses and
+performs no coordinated material/care cut; no artificial lived-health edits or lifetime proof are claimed.
+
+Fable returned partial source/test work at its $10 estimate cap (reported $9.7519115; 1,153.836s,
+`claude-fable-5-1`, context1,000,000, requested Max). No denials or context drift occurred. Astra completed
+coverage/integration; a distinct independent native critic confirmed the chronology defects. No paid
+retry or subscription-saving claim. [Review](p02/world-material-care-continuation/REVIEW.md),
+[failures](p02/world-material-care-continuation/FAILURES.md) and
+[verification](p02/world-material-care-continuation/qualification/verification.json) retain the evidence.
+
+Five architecture pages are current with 105 resolving file links; the living composition decision is
+updated. All 70 prior milestones, 23 frozen specs and predecessor staging remain unchanged. The initial
+checkpoint is `codex/checkpoint-before-world-material-care-continuation-20260928T180955Z`; the partial
+pre-integration snapshot is `codex/checkpoint-care-frontier-before-integration-20260928T184342Z` (`00cbd84`).
+Verified scope is preserved on `codex/milestone-care-history-frontier`; resolve it for the exact commit.
+
+**Next dependency:** complete the coordinated full-world material/care/resource protocol, preserving
+actual profile26's gathering, wet excavation, liquid, construction/backing, quests and encounters.
+Care V3 is allocated; world27, ProductionV9 and schema8 remain proposed, not enabled. Bind the actual
+world closing revision separately from the latest-care watermark. Add authenticated Host archives and
+all live material writers, >256 actual doses and surviving recraft ancestry through multiple cuts,
+rollback/headroom, real process kills and native post-cut use/reopen. The finite-supply fixture now
+provides actual stock and earned damage for that journey. Full scope, physical-expansion, production,
+platform, multiplayer, art and human gates remain open.
+
+### Preceding excavation milestone
+
 [Excavation material continuation](p02/excavation-material-continuation/README.md) joins actual dry
 site work, current terrain, shared Gathering effort and actor action opportunities with Production V8.
 Every partial/final mining and joined gathering swing retains genuine evidence; a partial swing changes

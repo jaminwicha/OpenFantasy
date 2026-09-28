@@ -17,6 +17,7 @@ public static class CareCodecV1
     {
         ArgumentNullException.ThrowIfNull(state);
         if (state.SupportsOrdinary) throw new ArgumentException("Care V1 cannot discard ordinary care ownership.");
+        if (state.Continuation is not null) throw new ArgumentException("Care V1 cannot discard a continuation frontier.");
         byte[] bytes = Frame("care.snapshot", Number(1), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),
             Number(state.Revision), Collection("care.remedies", state.Remedies.Select(EncodeRemedy)),
             Collection("care.agreements", state.Agreements.Select(EncodeAgreement)),

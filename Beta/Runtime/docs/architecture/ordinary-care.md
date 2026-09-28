@@ -210,6 +210,10 @@ capacity is checked first when both are full; complete-world accounting makes or
 of total consumed claims. The distinct diagnostic categories do not imply that a valid world can retain
 more ordinary uses than consumed claims.
 
+The standalone [care continuation frontier](care-continuation.md) preserves cumulative use counts,
+grants, revocations and care chronology while bounding active records. It does not rotate consumed
+material claims or change the profile26 limits above. Existing worlds refuse that continued owner.
+
 Lifetime material/care continuation requires an explicit admitted protocol that preserves provenance,
 permissions, identity occupation and completed effects. Resource segment rotation alone supplies no
 such protocol. Capacity explanations identify the implementation boundary rather than reporting

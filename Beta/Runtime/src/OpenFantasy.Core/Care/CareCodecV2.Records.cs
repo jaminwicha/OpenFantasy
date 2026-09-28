@@ -31,7 +31,7 @@ public static partial class CareCodecV2
         Number(value.WorldSequence), Number(value.CommandOrdinal), Number(value.PatientRevisionBefore), Number((ulong)value.MaximumHp),
         Number((ulong)value.HpBefore), Number((ulong)value.HpAfter), Number(value.ExplorationMilliseconds));
 
-    private static RestorativeUseDefinition DecodeUseDefinition(byte[] bytes)
+    internal static RestorativeUseDefinition DecodeUseDefinition(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumUseDefinitionBytes, 7);
         reader.Tag("care.use-definition.v1"u8);
@@ -54,7 +54,7 @@ public static partial class CareCodecV2
         return value;
     }
 
-    private static CarePermission DecodePermission(byte[] bytes)
+    internal static CarePermission DecodePermission(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumPermissionBytes, 3);
         reader.Tag("care.permission.v1"u8);
@@ -79,7 +79,7 @@ public static partial class CareCodecV2
         return value;
     }
 
-    private static RestorativeUse DecodeUse(byte[] bytes)
+    internal static RestorativeUse DecodeUse(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumUseBytes, 18);
         reader.Tag("care.ordinary-use.v1"u8);

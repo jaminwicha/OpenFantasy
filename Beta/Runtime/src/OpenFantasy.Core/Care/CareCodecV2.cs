@@ -17,6 +17,7 @@ public static partial class CareCodecV2
     {
         ArgumentNullException.ThrowIfNull(state);
         if (state.Ordinary is not { } ordinary) throw new ArgumentException("Care V2 requires an explicit ordinary owner.");
+        if (state.Continuation is not null) throw new ArgumentException("Care V2 cannot discard a continuation frontier.");
         byte[] bytes = Frame("care.snapshot", Number(2), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),
             Number(state.Revision), Collection("care.remedies", state.Remedies.Select(CareCodecV1.EncodeRemedy)),
             Collection("care.agreements", state.Agreements.Select(CareCodecV1.EncodeAgreement)),

@@ -1,0 +1,686 @@
+{
+  "scope": "Standalone care frontier and actual full-world supply/earned-injury preparation. Complete-world continuation remains unimplemented.",
+  "reports": {
+    "focused-final": {
+      "counters": {
+        "total": 131,
+        "executed": 131,
+        "passed": 131,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T18:49:57.903678+00:00",
+        "kind": "focused",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~Care",
+          "--logger",
+          "trx;LogFileName=focused-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-focused-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/earned-supply-focused-final"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 28.30392950028181,
+        "finishedUtc": "2026-09-28T18:50:26.210470+00:00"
+      }
+    },
+    "hosting-focused": {
+      "counters": {
+        "total": 5,
+        "executed": 5,
+        "passed": 5,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T18:50:46.862388+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~CareContinuationAdmissionTests|FullyQualifiedName~MaterialCareStressSupplyTests",
+          "--logger",
+          "trx;LogFileName=hosting-focused.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-hosting-focused",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/earned-supply-hosting-focused",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-focused/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 33.7082520830445,
+        "finishedUtc": "2026-09-28T18:51:20.571463+00:00"
+      }
+    },
+    "core-final": {
+      "counters": {
+        "total": 1577,
+        "executed": 1577,
+        "passed": 1577,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T18:51:26.975157+00:00",
+        "kind": "core",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=core-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-core-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/earned-supply-core-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-core-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-core-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-core-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-core-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-core-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-core-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 252.07645970908925,
+        "finishedUtc": "2026-09-28T18:55:39.079385+00:00"
+      }
+    },
+    "hosting-final": {
+      "counters": {
+        "total": 104,
+        "executed": 104,
+        "passed": 104,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T18:55:54.241697+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~Care|FullyQualifiedName~WorldResource",
+          "--logger",
+          "trx;LogFileName=hosting-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-hosting-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/earned-supply-hosting-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-material-care-continuation/qualification/legacy-hosting-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 309.66991033405066,
+        "finishedUtc": "2026-09-28T19:01:03.920603+00:00"
+      }
+    }
+  },
+  "distinctManagedCases": 1681,
+  "allSelectedCasesPassed": true,
+  "compatibilityFrames": {
+    "ordinary-mixed-revoked.bin": {
+      "bytes": 2582,
+      "sha256": "376b7b56af6571c3a06b6a0838c68cd076efd0fda5c5711b8859d6084af2f4c5"
+    },
+    "ordinary-full.bin": {
+      "bytes": 90524,
+      "sha256": "ca1a65d65ca92535c0d093a88cbc2fb46388fcd137799f99bb90a97d67f46d45"
+    },
+    "ordinary-empty.bin": {
+      "bytes": 1436,
+      "sha256": "9cff0a1d0e415851e069bbd2836bd81781ab40bc6917704bbf8fb6eb56131e8f"
+    },
+    "aftermath-pending.bin": {
+      "bytes": 971,
+      "sha256": "d219dbc035a33443d76659b441f707020f9bf9e2cbb505404f3b1716ff48e89d"
+    },
+    "aftermath-full.bin": {
+      "bytes": 428811,
+      "sha256": "82f05003b0873a3b27740cff2eedcb2d45c5ffd150313eb5742d728a2e4fe4be"
+    },
+    "aftermath-empty.bin": {
+      "bytes": 523,
+      "sha256": "48366460b032007d5bdb0fed7c09e1fb5fe3a970734adeb5656bd39cfc0145ca"
+    },
+    "aftermath-complete.bin": {
+      "bytes": 1821,
+      "sha256": "ad896aa6a5b75daf7e176a86f814405e8ec8137960725db3a2bd02179325a014"
+    },
+    "world-25.bin": {
+      "bytes": 55323,
+      "sha256": "1844f97105a8144c3076c8edf7dbe1d12917dfc6e90410511385ad1d33001634"
+    },
+    "world-26.bin": {
+      "bytes": 56654,
+      "sha256": "9c897e368ad8f0bf3d2e524104401ae997ac3b93c65e013442f5e5d43b20548c"
+    }
+  },
+  "exactFrameCount": 9,
+  "exactFrameBytes": 638645,
+  "preservedMilestones": 70,
+  "preservedFrozenSpecs": 23,
+  "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "sourcePins": "source-pins-build-final.json",
+  "executionPins": "execution-pins-build-final.json",
+  "pinsMatch": true,
+  "earnedSupply": {
+    "calibration": "Finite fresh 600 raw potions, 60 berries, 100 attack wolf; original 40-HP remedy and recipe.",
+    "initialHash": "213a49790e7bfe2ef6ecc880d871792fd146b4c326cce86e42af87d818c5a6e9",
+    "injuredHash": "2ca3cc3d53d6ad1b071aedf719bc0be200092e8f91073fc544743dae74ab1317",
+    "actualDamage": 25337,
+    "actualBites": 254,
+    "committedWorldRevision": 1059,
+    "rawDoses": 600,
+    "consumedDoses": 0,
+    "resourceChanges": 255,
+    "reopenedExactly": true,
+    "continuationQualified": false
+  },
+  "architecture": {
+    "pages": 5,
+    "resolvingLinks": 105,
+    "links": [
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "runtime-and-authority.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "world-composition.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "identity-and-determinism.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "persistence-and-history.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "time-and-encounters.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "encounter-timing.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "world-pacing.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "encounter-actions.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "encounter-lifecycle.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "native-encounters.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "world-and-geography.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "local-worksite.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "local-watercourse.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "excavation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "excavation-material-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "constructed-footing.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "stair-navigation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "structural-loads.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "structural-contact-assessment.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "structural-policy-and-motion.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "structural-settlement.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "coupled-settlement.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "event-descent.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "consequence-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "construction-physical.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "reservoir-transport.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "reservoir-boundaries.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "reservoir-containment.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "terrain-liquid-breach.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "liquid-cell-flow.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "liquid-material-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "transport-material-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "terrain-material-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "actors-and-society.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "actor-resources.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "world-resource-history.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "resource-archive-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "ordinary-care.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "care-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "aftermath-care.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "materials-and-activities.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "item-consumption.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "material-continuation-basis.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "production-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "construction-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "presentation-and-interaction.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "content-and-composition.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "../../../implementation/AGENT_HANDOFF.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/README.md",
+        "to": "../../../implementation/AGENT_HANDOFF.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "resource-archive-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "native-encounters.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldCareActions.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "world-resource-history.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Simulation/LocalCareController.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Simulation/LocalCareView.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Content/CareJourneyAdmission.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Content/CareFarmSources.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Content/CareFarmBuilder.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "ordinary-care.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/aftermath-care.md",
+        "to": "care-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "aftermath-care.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Care/OrdinaryCareSnapshot.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Care/RestorativeUseDefinition.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Care/CarePermission.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/RestorativeAvailability.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeView.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../client/scripts/RestorativeActionOffers.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../client/scripts/FarmQuickWheelModel.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeController.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Care/RestorativeUse.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceEvidence.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "persistence-and-history.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "../../src/OpenFantasy.Hosting/Content/RestorativeJourneyAdmission.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "world-resource-history.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/ordinary-care.md",
+        "to": "care-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Care/CareContinuationContext.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Care/CareSnapshot.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Care/CareCodecV3.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/care-continuation.md",
+        "to": "world-resource-history.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceContinuation.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveSegment.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveAnchor.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSeven.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "../../src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "item-consumption.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "material-continuation-basis.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "production-continuation.md"
+      },
+      {
+        "from": "Beta/Runtime/docs/architecture/resource-archive-continuation.md",
+        "to": "care-continuation.md"
+      }
+    ]
+  },
+  "review": "../REVIEW.md",
+  "failures": "../FAILURES.md"
+}
