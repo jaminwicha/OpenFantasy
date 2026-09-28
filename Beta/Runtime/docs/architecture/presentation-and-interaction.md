@@ -40,10 +40,31 @@ quest identity or ledge displacement; changed operations require a new selection
 confirmation acts. Cancel, focus loss and disconnect do not submit. Opening stops player movement
 but preserves host time policy: running time continues and an existing pause remains paused.
 
+Known [ordinary restorative actions](ordinary-care.md) add a separate Care page without moving the
+four primary sectors. Q/right shoulder or the page control changes pages only while the wheel owns
+input; it never cycles the world target or commits a choice. Changing pages clears selection. Personal
+medicine and patient-owned permission withdrawal use the same exact public offers as the HUD. An
+open restorative choice pins its actor, recipient, permission and ingredient revisions; a changed
+choice becomes unavailable until the wheel is reopened. The helper's private stock and executable
+controller commands are not exposed by the player's permission controls.
+
+[RestorativeActionOffers](../../client/scripts/RestorativeActionOffers.cs) translates typed eligibility
+into an item label, effect, cost and known blocker. Full health, missing medicine and retained-history
+capacity are different explanations. The personal-use HUD button is icon-led with an inspection
+tooltip; withdrawal's details state its permanent effect on the selected agreement. Both require a
+ready player session, and neither bypasses encounter timing. Helper aid is selected independently by
+the Host under the patient's prior permission, not synthesized as a player item command.
+
+The actor presentation observes the controlled player's permitted progression HP during both exploration
+and encounters. Other actors use only their permitted encounter HP projection. Consecutive observed
+changes drive the same short signed health cue; the initial observation and reopening produce no
+historical cue. This presentation neither changes health nor exposes private NPC progression.
+
 [FarmInventoryModel](../../client/scripts/FarmInventoryModel.cs) and
 [FarmInventoryScreen](../../client/scripts/FarmInventoryScreen.cs) inspect actual owned stock,
 tools and recipe information. Display groups distinguish raw/derived and protected/reserved stock
-without merging canonical lots. The pack does not execute equipment, use or transfer operations.
+without merging canonical lots. Known restorative items expose their admitted physical label and
+strength and direct use to the Care page. The pack does not execute equipment, use or transfer operations.
 
 ## Design contract: a small immediate interface
 

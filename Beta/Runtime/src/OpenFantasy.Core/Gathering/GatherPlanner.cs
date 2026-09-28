@@ -22,7 +22,7 @@ public sealed class GatherPlanner
         LocalSpatialSnapshot space = currentSpace ?? world.Space;
         if (space.Scope != world.Space.Scope || command.Intent is not GatherIntent intent || command.WorldId != world.WorldId || command.BranchId != world.BranchId
             || currentInventory.WorldId != world.WorldId || currentInventory.BranchId != world.BranchId
-            || gathering.WorldId != world.WorldId || gathering.BranchId != world.BranchId || gathering.AdvancingStep != world.AdvancingSteps)
+            || gathering.WorldId != world.WorldId || gathering.BranchId != world.BranchId || gathering.AdvancingStep != world.ProcessIntervals)
         {
             throw new ArgumentException("Gather planning requires one exact world, branch, step and supported action.");
         }

@@ -39,6 +39,7 @@ public partial class FarmGame : Node2D
     internal bool BreachProfile { get; init; }
     internal bool EncounterProfile { get; init; }
     internal bool CareProfile { get; init; }
+    internal bool RestorativeProfile { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -96,6 +97,12 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (RestorativeProfile)
+        {
+            string restorativeSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-restorative.sqlite");
+            _opening = FarmClientSession.OpenRestorativeAsync(restorativeSave, "encounter-lifecycle-world", "Traveler");
+            return;
+        }
         if (CareProfile)
         {
             string careSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-care.sqlite");
@@ -171,6 +178,7 @@ public partial class FarmGame : Node2D
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : RestorativeProfile ? "V opens actions; Q changes wheel pages. Inspect Care for your medicine and Wren's permission."
                     : CareProfile ? "Wren is nearby to help. Q selects a wolf; V inspects actions and their costs."
                     : EncounterProfile ? "Q selects a wolf. E engages; V inspects its actions. Encounters wait for your choice."
                     : BreachProfile ? "Follow the north bank east. Q selects the divider; V opens its mining action."
@@ -215,7 +223,8 @@ public partial class FarmGame : Node2D
                     ? FarmSpriteKind.Wolf : FarmSpriteKind.Squire,
             multilevel: view.Worksite is not null || view.Liquids is not null)
             { IsIncapacitated = actor.IsIncapacitated, IsSelected = _targets.Selected?.Id == actor.ActorId,
-                CurrentHp = view.EncounterActors.FirstOrDefault(value => value.ActorId == actor.ActorId)?.CurrentHp }),
+                CurrentHp = actor.ActorId == view.PlayerActorId ? view.Progression?.Hp
+                    : view.EncounterActors.FirstOrDefault(value => value.ActorId == actor.ActorId)?.CurrentHp }),
             view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
                 node.RequiredTool, node.Visibility)),
             view.Worksite?.HasPhysicalConstruction != true ? view.Construction.Where(project => project.IsCompleted).Select(project =>
@@ -282,6 +291,7 @@ public partial class FarmGame : Node2D
     { IsInEncounter = _session?.World.ReadView().IsInEncounter ?? false,
         IsEncounterOutcome = _session?.World.ReadView().Encounter?.IsOutcome ?? false,
         HasCareAcknowledgment = _presented.ContainsKey(FarmSemanticAction.AcknowledgeCare),
+        HasWheelPages = _wheel.Model?.PageCount > 1,
         HasEncounterEntry = _presented.ContainsKey(FarmSemanticAction.EnterEncounter) };
 
     private static FarmDirectionalInput ReadWalkingInput()
@@ -318,6 +328,11 @@ public partial class FarmGame : Node2D
         if (action is FarmSemanticAction.OpenWheel or FarmSemanticAction.CloseWheel)
         {
             ChangeWheel(action == FarmSemanticAction.OpenWheel);
+            return;
+        }
+        if (action == FarmSemanticAction.NextWheelPage)
+        {
+            _wheel.NextPage();
             return;
         }
         if (action == FarmSemanticAction.ConfirmWheel)

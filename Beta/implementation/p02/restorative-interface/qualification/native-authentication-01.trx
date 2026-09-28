@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="31d95d43-5aea-4a00-a24d-7e51ea113495" name="@mac 2026-09-27 22:18:07" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-27T22:18:07.7858410-05:00" queuing="2026-09-27T22:18:07.7858410-05:00" start="2026-09-27T22:18:05.6524010-05:00" finish="2026-09-27T22:18:26.4581180-05:00" />
+  <TestSettings name="default" id="193f41b7-627c-46c0-8cbc-7781ebd08d26">
+    <Deployment runDeploymentRoot="_mac_2026-09-27_22_18_07" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="9e4e0a56-fd57-4e8c-98a0-2e05ebeeae6a" testId="8b982366-749b-0c20-76e5-9ac5f38fe85e" testName="OpenFantasy.Hosting.Tests.Care.RestorativeNativeResultTests.Opt_in_native_restorative_results_replay_exact_real_doses_permissions_and_resource_boundaries" computerName="mac" duration="00:00:19.0919791" startTime="2026-09-27T22:18:07.2644450-05:00" endTime="2026-09-27T22:18:26.3627950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e4e0a56-fd57-4e8c-98a0-2e05ebeeae6a" />
+    <UnitTestResult executionId="45b5e682-eef2-47a9-b832-e9881ff75b17" testId="6a0bbb07-8d43-288f-29e3-8bd58cbe0045" testName="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Admission_and_reappearance_establish_baselines_without_replaying_unobserved_health_changes" computerName="mac" duration="00:00:00.0002825" startTime="2026-09-27T22:18:07.2995130-05:00" endTime="2026-09-27T22:18:07.2998510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45b5e682-eef2-47a9-b832-e9881ff75b17" />
+    <UnitTestResult executionId="315cf464-3018-49da-a0d5-4033c01f8f57" testId="c3563d37-c0e9-91a7-a227-c83990cb7266" testName="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Actual_restoration_replaces_damage_and_repeated_observation_does_not_restart_the_cue" computerName="mac" duration="00:00:00.0201219" startTime="2026-09-27T22:18:07.2644510-05:00" endTime="2026-09-27T22:18:07.2923330-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="315cf464-3018-49da-a0d5-4033c01f8f57" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.RestorativeNativeResultTests.Opt_in_native_restorative_results_replay_exact_real_doses_permissions_and_resource_boundaries" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8b982366-749b-0c20-76e5-9ac5f38fe85e">
+      <Execution id="9e4e0a56-fd57-4e8c-98a0-2e05ebeeae6a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.RestorativeNativeResultTests" name="Opt_in_native_restorative_results_replay_exact_real_doses_permissions_and_resource_boundaries" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Actual_restoration_replaces_damage_and_repeated_observation_does_not_restart_the_cue" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c3563d37-c0e9-91a7-a227-c83990cb7266">
+      <Execution id="315cf464-3018-49da-a0d5-4033c01f8f57" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests" name="Actual_restoration_replaces_damage_and_repeated_observation_does_not_restart_the_cue" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests.Admission_and_reappearance_establish_baselines_without_replaying_unobserved_health_changes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6a0bbb07-8d43-288f-29e3-8bd58cbe0045">
+      <Execution id="45b5e682-eef2-47a9-b832-e9881ff75b17" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.FarmHealthFeedbackTests" name="Admission_and_reappearance_establish_baselines_without_replaying_unobserved_health_changes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="8b982366-749b-0c20-76e5-9ac5f38fe85e" executionId="9e4e0a56-fd57-4e8c-98a0-2e05ebeeae6a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a0bbb07-8d43-288f-29e3-8bd58cbe0045" executionId="45b5e682-eef2-47a9-b832-e9881ff75b17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c3563d37-c0e9-91a7-a227-c83990cb7266" executionId="315cf464-3018-49da-a0d5-4033c01f8f57" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.23]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.73]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.95]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:20.13]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

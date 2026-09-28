@@ -522,12 +522,30 @@ backup stays unchanged; this path does not create or qualify a native acknowledg
 `OPENFANTASY_CARE_CONTINUATION_EVIDENCE` names an empty evidence directory. Omit `--controls all` for
 this mode. It supports the same `--rendered`, tool-path and output options as fresh journeys.
 
-The Hosting API `RestorativeJourneyAdmission.CreateEmbedded` admits a separate fresh profile26 for
-ordinary exploration care. It partitions the same two source Potions between the player and Wren;
+Run `python3 tools/play.py --restorative` for the separate ordinary-care journey at
+`user://worlds/wrens-restorative.sqlite`. `RestorativeJourneyAdmission.CreateEmbedded` admits its
+fresh profile26, partitioning the same two source Potions between the player and Wren;
 `WorldRestorativeActions.Prepare` captures an exact self-use or permitted helper dose. Complete world
 steps publish consumption, capped restoration and exploration time together. A controlled player can
 submit these explicit commands through `LocalWorldSession`; reading holds and encounter boundaries
 refuse them. [Ordinary-care architecture](docs/architecture/ordinary-care.md) documents permission,
-revocation, persistence and the separate material-history limit. There is no ordinary-care launch flag,
-native offer/menu or combat-item binding; `--care` retains the aftermath scenario above. See the
-[implementation packet](../implementation/p02/ordinary-care/README.md) for qualification and follow-through.
+revocation, persistence and the separate material-history limit. V/right-stick click opens the wheel;
+Q/right shoulder changes to the Care page. Up selects personal medicine and Right selects permission
+withdrawal; Enter/controller A or Confirm commits the inspected choice. The HUD bottle icon also uses
+your own Potion. Full health, unavailable stock and storage-history limits explain why use is blocked.
+Withdrawal permanently stops future ordinary aid under that agreement; it leaves the separate aftermath
+agreement intact. Wren independently offers ordinary aid only with active permission, actual owned
+medicine, physical eligibility and enough missing HP for the complete dose. Inspection does not pause a
+running world, and no menu takes control of Wren's stock. The pack identifies your known Potion and its
+strength. Combat-item binding remains separate; `--care` retains the earlier aftermath scenario.
+
+`RestorativeNativeFixtureExportTests` earns injury and raw/crafted medicine through actual managed
+gameplay, exporting backups when `OPENFANTASY_RESTORATIVE_NATIVE_EVIDENCE` names a directory.
+`tools/check_native_restorative.py --dotnet <path> --godot <path> --fixtures <directory> --output <json>`
+continues those saves with pointer/keyboard/controller input, independent helper aid, permission
+withdrawal and a separate paused reopen process. `--rendered` uses disposable startup no-focus settings.
+The produced manifest feeds `RestorativeNativeResultTests` through `OPENFANTASY_RESTORATIVE_NATIVE_RESULTS`
+to authenticate exact journal command, dose, resource and time effects. Native controls do not imply
+the preparatory injury/crafting happened natively. See the
+[implementation packet](../implementation/p02/restorative-interface/README.md) for measured qualification
+and remaining lifetime-history, combat, platform and acceptance obligations.

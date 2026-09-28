@@ -1,0 +1,191 @@
+{
+  "status": "passed",
+  "rendered": true,
+  "controls": [
+    "wheel"
+  ],
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3",
+  "runs": [
+    {
+      "label": "wheel-fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/background-client",
+        "--",
+        "--care-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.json",
+        "wheel",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-fresh.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-fresh.stderr.log",
+      "exitCode": 0,
+      "seconds": 16.101877541281283
+    },
+    {
+      "label": "wheel-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/background-client",
+        "--",
+        "--care-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 5.039158666040748
+    },
+    {
+      "label": "wheel-recorded-193",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.sqlite3",
+        "193"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-193.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-193.stderr.log",
+      "exitCode": 0,
+      "seconds": 1.2484978339634836
+    },
+    {
+      "label": "wheel-recorded-194",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.sqlite3",
+        "194"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-194.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-194.stderr.log",
+      "exitCode": 0,
+      "seconds": 1.2011411669664085
+    },
+    {
+      "label": "wheel-recorded-195",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.sqlite3",
+        "195"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-195.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-195.stderr.log",
+      "exitCode": 0,
+      "seconds": 1.0963250827044249
+    },
+    {
+      "label": "wheel-recorded-210",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel.sqlite3",
+        "210"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-210.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/wheel-recorded-210.stderr.log",
+      "exitCode": 0,
+      "seconds": 1.214692915789783
+    }
+  ],
+  "journeys": {
+    "wheel": {
+      "source": {
+        "sourceRecordsSha256": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b",
+        "potionPayloadSha256": "3b7a5fdd562795e58d68a11007763b88cd25d40841c739c4fef9495161c097aa",
+        "recipePayloadSha256": "dd98e32ef5f0442f9d1c37d10d431aab74226a77f73bc6858a5075e4dad41dc2",
+        "playerSourceHp": 60,
+        "wolfSourceHp": 62
+      },
+      "playerId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+      "helperId": "5d652f48a612a324027911ffd13cf5f9",
+      "wolfId": "6e639095512c3b072f23995b90271601",
+      "acknowledgmentRevision": 194,
+      "treatmentRevision": 195,
+      "resumedAttackRevision": 210,
+      "finalRevision": 210,
+      "finalHash": "6b586894126aa57cfb1f4339219f29a07049baa863cffccbe5eb48b34cd6eca6",
+      "acknowledgmentCommand": "d9c5b8c33a6f107183e54911b4079783",
+      "helperCommand": "8007b5160ca0fb4bf80ec6620809978f",
+      "consumptionId": "d468d3e09ac9d2ecbddacb623882431a",
+      "restoredHp": 40,
+      "helperDelay": 1000,
+      "earlierPlayerAttacks": 0,
+      "retainedCommandReceipts": 18,
+      "recordedBoundariesVerified": [
+        193,
+        194,
+        195,
+        210
+      ]
+    }
+  },
+  "originalProjectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "startedUtc": "2026-09-28T03:18:52.208353+00:00",
+  "scope": "Injected native controls, actual schema7/profile25 care publication and paused second-process recovery.",
+  "limits": {
+    "nativeProcessSeconds": 180,
+    "nativeProbeSeconds": 150,
+    "recordedProcessSeconds": 30,
+    "maximumNativeProcesses": 2,
+    "maximumRecordedProcesses": 5
+  },
+  "limitations": [
+    "Historical roots and gameplay legality use real Host replay; this is not independent full-root or damage-law reconstruction.",
+    "Controlled background rendering/injected input does not establish physical-device, OS-focus, art, performance or full-phase acceptance."
+  ],
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_care.py": "486112afa7f1930d372620df3790e8f4d7c12aa9a1fd7e6f0542f9cd1cdb8e53",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CarePlayProbe.cs": "9b427b4ad998678047740f9380f321b3f090b740c3d34b23469b2405ef5e5075",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_construction_physical.py": "a4678e83edf503734b061be62c497ad8b3155e3281af7e14a8d1fc2ef02a462e",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_encounter_actions.py": "717d156123e7887a299ec8289f289d715f57150bc3786d40920a58927a15eae3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_excavation.py": "75b426bd186c7217db108fbe0e760b195b3e575dda84d932fda9eec91c019576",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "8c5347eeb5576545c269db3fe47e0c41449c1f9d587ff06d83be2bf56f15ab57",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "2229035218e1c0bcfc1e0bdf9b98acb3bed456c08f25ebbc12694462f51c291c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "292679b8e0618b48491e4b5ad4bd5b2c9b1991258fddba98faf09c5e8b06f4b7",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "674f8492a05764ac9d0bf2b61c4aea28aa03b3114871f8799dca623f56ff3ce8",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "2229035218e1c0bcfc1e0bdf9b98acb3bed456c08f25ebbc12694462f51c291c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "292679b8e0618b48491e4b5ad4bd5b2c9b1991258fddba98faf09c5e8b06f4b7"
+  },
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "native-care-_l6mqbq3/wheel-fresh.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-_l6mqbq3/wheel-fresh.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-care-_l6mqbq3/wheel-recorded-193.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-_l6mqbq3/wheel-recorded-193.stdout.log": "4858ed6c6689db8a04387bddfb52f97ecaf3e0ce89ed72f6483e9122ba7143c3",
+    "native-care-_l6mqbq3/wheel-recorded-194.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-_l6mqbq3/wheel-recorded-194.stdout.log": "6c6399047560812f5439ecd01607d3d5b19b08920bc9ea2a46362b5e6174eab9",
+    "native-care-_l6mqbq3/wheel-recorded-195.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-_l6mqbq3/wheel-recorded-195.stdout.log": "66a150369ff93026d72c6616ffe88d8c5e163cd4b54a5f3eb20350246e2bf19d",
+    "native-care-_l6mqbq3/wheel-recorded-210.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-_l6mqbq3/wheel-recorded-210.stdout.log": "fdfa39625e09d8549974087a4803c289745d6743cf07cb3318f840b7ed576f4f",
+    "native-care-_l6mqbq3/wheel-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-_l6mqbq3/wheel-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-care-_l6mqbq3/wheel.care-inspection.png": "1178d9ec6b32cfae84663d3557de95d21d909db1c2918ca418cbccb5d01f58a3",
+    "native-care-_l6mqbq3/wheel.defeat.png": "6d17f38de84daafa4589745707414cbacfa94723d28535378234781dad968500",
+    "native-care-_l6mqbq3/wheel.fresh.json": "4a057e75e111773ebe10519921272aee5c5e2c0d45446bfb4201f6b7338fd7bc",
+    "native-care-_l6mqbq3/wheel.reopen.json": "5cd395c520b1a6561c4f3be7eee44aa15e80a6279c88d5309d2d0be16d73c845",
+    "native-care-_l6mqbq3/wheel.reopen.png": "6430db5054283e4f13388c4f12d7c6b9dfd8366cb30b5c003704d789406f601b",
+    "native-care-_l6mqbq3/wheel.restoration.png": "24a755e71ac5e4f0798b848b246ee613f4a09a65dc8c9c2d2867b9112f6f3ea2",
+    "native-care-_l6mqbq3/wheel.sqlite3": "ffe71d6170a354b9e35604bc48c3c7034375d0b78ac6d149c4e90512928c8390",
+    "native-care-_l6mqbq3/wheel.treated.png": "441068e6c37765561b48c9ac0ac115edef1788fcef4a26e25fd7e87202b39c3f"
+  },
+  "finishedUtc": "2026-09-28T03:19:18.346010+00:00"
+}

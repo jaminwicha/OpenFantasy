@@ -7,29 +7,46 @@ internal sealed class FarmQuickWheelModel
 {
     private static readonly FarmSemanticAction[] Order =
         [FarmSemanticAction.Speak, FarmSemanticAction.Gather, FarmSemanticAction.Craft, FarmSemanticAction.Give];
-    private readonly FarmWheelSlot?[] _slots = new FarmWheelSlot?[4];
-    private readonly IReadOnlyList<FarmWheelSlot?> _view;
+    private readonly List<IReadOnlyList<FarmWheelSlot?>> _pages = [];
+    private int _pageIndex;
 
-    internal IReadOnlyList<FarmWheelSlot?> Slots => _view;
+    internal IReadOnlyList<FarmWheelSlot?> Slots => _pages[_pageIndex];
+    internal int PageCount => _pages.Count;
+    internal string PageName => _pageIndex == 0 ? "Actions" : "Care";
     internal int? SelectedIndex { get; private set; }
-    internal FarmWheelSlot? Selected => SelectedIndex is { } index ? _slots[index] : null;
+    internal FarmWheelSlot? Selected => SelectedIndex is { } index ? Slots[index] : null;
 
     internal FarmQuickWheelModel(IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
-        _view = Array.AsReadOnly(_slots);
         FarmSemanticAction[] order = offers.Keys.Any(IsEncounterAction)
             ? [FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike, FarmSemanticAction.Wait,
                 offers.ContainsKey(FarmSemanticAction.AcknowledgeCare) ? FarmSemanticAction.AcknowledgeCare : FarmSemanticAction.ReleaseEncounter]
             : offers.ContainsKey(FarmSemanticAction.Excavate)
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
             : Order;
+        AddPage(order, offers);
+        if (offers.ContainsKey(FarmSemanticAction.UseRestorative) || offers.ContainsKey(FarmSemanticAction.RevokeCarePermission))
+        {
+            AddPage([FarmSemanticAction.UseRestorative, FarmSemanticAction.RevokeCarePermission,
+                FarmSemanticAction.None, FarmSemanticAction.None], offers);
+        }
+    }
+
+    private void AddPage(FarmSemanticAction[] order, IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
+    {
+        FarmWheelSlot?[] slots = new FarmWheelSlot?[4];
         for (int index = 0; index < order.Length; index++)
         {
-            if (offers.TryGetValue(order[index], out FarmActionOffer? offer))
-            {
-                _slots[index] = new FarmWheelSlot(offer);
-            }
+            if (offers.TryGetValue(order[index], out var offer)) slots[index] = new FarmWheelSlot(offer);
         }
+        _pages.Add(Array.AsReadOnly(slots));
+    }
+
+    internal void NextPage()
+    {
+        if (PageCount == 1) return;
+        _pageIndex = (_pageIndex + 1) % PageCount;
+        SelectedIndex = null;
     }
 
     internal static bool IsEncounterAction(FarmSemanticAction action) => action is FarmSemanticAction.EnterEncounter
@@ -38,13 +55,13 @@ internal sealed class FarmQuickWheelModel
 
     internal void Select(int index)
     {
-        if (index < 0 || index >= _slots.Length) throw new ArgumentOutOfRangeException(nameof(index));
-        if (_slots[index] is not null) SelectedIndex = index;
+        if (index < 0 || index >= Slots.Count) throw new ArgumentOutOfRangeException(nameof(index));
+        if (Slots[index] is not null) SelectedIndex = index;
     }
 
     internal void Refresh(Func<FarmTarget?, IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>> readOffers)
     {
-        foreach (FarmWheelSlot? slot in _slots)
+        foreach (FarmWheelSlot? slot in _pages.SelectMany(page => page))
         {
             if (slot is null) continue;
             IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = readOffers(slot.PinnedTarget);
@@ -90,6 +107,9 @@ internal sealed class FarmWheelSlot
             same = false;
         if (FarmQuickWheelModel.IsEncounterAction(Action) && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
             || candidate?.Intent != _original.Intent)) same = false;
+        if (Action is FarmSemanticAction.UseRestorative or FarmSemanticAction.RevokeCarePermission
+            && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision || candidate?.Intent != _original.Intent))
+            same = false;
         if (_original.Intent is DeliveryQuestIntent quest
             && (candidate?.Intent is not DeliveryQuestIntent currentQuest || currentQuest.QuestId != quest.QuestId
                 || currentQuest.QuestVersion != quest.QuestVersion)) same = false;

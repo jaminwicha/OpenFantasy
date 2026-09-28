@@ -1,0 +1,282 @@
+{
+  "status": "failed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7",
+  "rendered": true,
+  "runs": [
+    {
+      "label": "raw-pointer-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json",
+        "pointer",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer-active.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 6.193865374661982
+    },
+    {
+      "label": "raw-pointer-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 5.921534833032638
+    },
+    {
+      "label": "raw-keyboard-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json",
+        "keyboard",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard-active.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 7.31769008282572
+    },
+    {
+      "label": "raw-keyboard-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 6.965807958971709
+    },
+    {
+      "label": "crafted-controller-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/metadata.json",
+        "controller",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller-active.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 7.100500707980245
+    },
+    {
+      "label": "crafted-controller-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/metadata.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 7.646422958932817
+    },
+    {
+      "label": "helper-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/helper/metadata.json",
+        "helper",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper-active.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 7.177358374930918
+    },
+    {
+      "label": "helper-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/helper/metadata.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/helper-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 6.868098666891456
+    }
+  ],
+  "journeys": [
+    {
+      "name": "raw-self",
+      "label": "raw-pointer",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-pointer.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.sqlite3": "9c326ea45d18e79fa2f2ff164398477de5921f5be4a61daa92631200458516b4",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.ofc": "4016c4fa79e5a1aa1654bd0639fe55f8685df5118424789169c5098b83c81046",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json": "526dee34dbd3ac8f27b8562df009818fba936b557779da4f31f71dacb0d0517b"
+      },
+      "finalDatabaseSha256": "a3b9162d2a6e2247ea20386471f9507a2c64c1b7aa438d5fadc3fb6230d1e98c"
+    },
+    {
+      "name": "raw-self",
+      "label": "raw-keyboard",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/raw-keyboard.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.sqlite3": "9c326ea45d18e79fa2f2ff164398477de5921f5be4a61daa92631200458516b4",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.ofc": "4016c4fa79e5a1aa1654bd0639fe55f8685df5118424789169c5098b83c81046",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json": "526dee34dbd3ac8f27b8562df009818fba936b557779da4f31f71dacb0d0517b"
+      },
+      "finalDatabaseSha256": "d7a618620bee1f3f919bbf0f7469d9a609dbd1a3fbf37c1ce543c661a98482ae"
+    },
+    {
+      "name": "crafted-self",
+      "label": "crafted-controller",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/crafted-controller.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/before.sqlite3": "1ccc5905d809de9f5dbbcefb3c8fae8f86839e41735f66b75faea9a3d8bb8100",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/before.ofc": "7e017e332b45047ffabf1394b5aa081b9199a0ddb6ee63935a5aece2c3b69693",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/metadata.json": "a77b366625ac7be79c609948074465bb41523db6e4c58aaf3d4e4e5aa49dc46e"
+      },
+      "finalDatabaseSha256": "56a4fa4c7d8905b1a1af21926b844b24529cb9362476630867815adc81415259"
+    }
+  ],
+  "limits": {
+    "nativeProcessSeconds": 180,
+    "nativeProbeSeconds": 150,
+    "maximumNativeProcesses": 10
+  },
+  "startedUtc": "2026-09-28T03:14:23.949641+00:00",
+  "scope": "Managed-earned source-stat injury and finite stock; native personal use, helper action, permission withdrawal and paused separate-process recovery.",
+  "limitations": [
+    "Managed recorded-boundary authentication is required separately; UI observations alone do not prove authoritative item/time effects.",
+    "Injected input and background focus do not establish physical-device, OS-focus, art, performance or full-phase acceptance."
+  ],
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py": "4e230e6b0208013a45cf1b32c2404ebc4b8f44874866133cf6bb435f219b5cc2",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": "0d0cd73194440cb7a9fdd2d557b74fa9a53e59d8eac04ce33bba68454f48fe4f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "8c5347eeb5576545c269db3fe47e0c41449c1f9d587ff06d83be2bf56f15ab57",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "2229035218e1c0bcfc1e0bdf9b98acb3bed456c08f25ebbc12694462f51c291c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "292679b8e0618b48491e4b5ad4bd5b2c9b1991258fddba98faf09c5e8b06f4b7",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "674f8492a05764ac9d0bf2b61c4aea28aa03b3114871f8799dca623f56ff3ce8",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "2229035218e1c0bcfc1e0bdf9b98acb3bed456c08f25ebbc12694462f51c291c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "292679b8e0618b48491e4b5ad4bd5b2c9b1991258fddba98faf09c5e8b06f4b7"
+  },
+  "failure": "Helper journey submitted a player item action",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 123, in main\n    require(inputs == [{'Stage': 'act-helper', 'Key': 'Escape'}], 'Helper journey submitted a player item action')\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 22, in require\n    raise AssertionError(message)\nAssertionError: Helper journey submitted a player item action\n",
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "native-restorative-9q51iuu7/crafted-controller-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/crafted-controller-active.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/crafted-controller-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/crafted-controller-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/crafted-controller.active.json": "dac075d7f68f19b7166d3377904ac761f919eed6fd4be9eea1ab3756aaab7d40",
+    "native-restorative-9q51iuu7/crafted-controller.final.png": "772de1e4fc61d0adc7cb866678a63b13c70d33961c347f0b17212c38a285fd34",
+    "native-restorative-9q51iuu7/crafted-controller.inspection.png": "8638b41a7c4aa387dbd3ab01f2d02664205832d181b245b36a1da7a2a96c4b37",
+    "native-restorative-9q51iuu7/crafted-controller.reopen.json": "550d39ae930a4fd90d44e6abadedd5775e727938b5baea9a7fb2d33d5d4f78c3",
+    "native-restorative-9q51iuu7/crafted-controller.reopen.png": "ade75902a61ff123ca98bb4dec9a6fc90fd941fe6d91614f41c8f0af3ac903e5",
+    "native-restorative-9q51iuu7/crafted-controller.restoration.png": "a0f8ba3df8cd84da497dad8ecb3831f9abef1ea4117f5b4a3c70aedcf9bc02e4",
+    "native-restorative-9q51iuu7/crafted-controller.sqlite3": "56a4fa4c7d8905b1a1af21926b844b24529cb9362476630867815adc81415259",
+    "native-restorative-9q51iuu7/helper-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/helper-active.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/helper-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/helper-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/helper.active.json": "388ac1b68fadacaec4be09886a6124b3b68a74ca1e89071ec82adee919b74391",
+    "native-restorative-9q51iuu7/helper.final.png": "9c8c306f64b1418d0ac54a666c2434292b5de34a05bf9f8d2ba408fd863d0d63",
+    "native-restorative-9q51iuu7/helper.inspection.png": "c920dbd0b29d8be0ff9309b56c259f846c72f66fda9eb91c0930447cafd1b84d",
+    "native-restorative-9q51iuu7/helper.reopen.json": "6f717ce292277d2ab657bb5d32d4065b7675234eac3768e7a2b48434f508a7e4",
+    "native-restorative-9q51iuu7/helper.reopen.png": "b1112f50e324e159390621cd68fc9b446d5da5a674e501cfbe778c968ad046a8",
+    "native-restorative-9q51iuu7/helper.restoration.png": "c77e11fa9d049a17ea071028b3c1e3a61e3f4dec6cd82e579e039bce7171191d",
+    "native-restorative-9q51iuu7/helper.sqlite3": "89ea070f377a47539e8ed24fc0c1d6faad0faec21d672cbdea1eddadcda7e5c2",
+    "native-restorative-9q51iuu7/raw-keyboard-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/raw-keyboard-active.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/raw-keyboard-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/raw-keyboard-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/raw-keyboard.active.json": "4965c7ff6a612ac7e3149d8c593edbd6a23f3303e2adf5d5c6715e66a7eed482",
+    "native-restorative-9q51iuu7/raw-keyboard.final.png": "9c8c306f64b1418d0ac54a666c2434292b5de34a05bf9f8d2ba408fd863d0d63",
+    "native-restorative-9q51iuu7/raw-keyboard.inspection.png": "c920dbd0b29d8be0ff9309b56c259f846c72f66fda9eb91c0930447cafd1b84d",
+    "native-restorative-9q51iuu7/raw-keyboard.reopen.json": "1f00bdec914a547990dcedf0b245a54f9bd9f9ee0342ec38d0f755d8fb07709c",
+    "native-restorative-9q51iuu7/raw-keyboard.reopen.png": "b1112f50e324e159390621cd68fc9b446d5da5a674e501cfbe778c968ad046a8",
+    "native-restorative-9q51iuu7/raw-keyboard.restoration.png": "6e0c2a97427c0e09d5b9601ac7c7ac8d1ad073d5fa0c1c3a3d78e04825f678ab",
+    "native-restorative-9q51iuu7/raw-keyboard.sqlite3": "d7a618620bee1f3f919bbf0f7469d9a609dbd1a3fbf37c1ce543c661a98482ae",
+    "native-restorative-9q51iuu7/raw-pointer-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/raw-pointer-active.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/raw-pointer-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-9q51iuu7/raw-pointer-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-9q51iuu7/raw-pointer.active.json": "867454ec0b552e38f19005bb09c70a6cc49e71b61d212d6a21af102c8069a149",
+    "native-restorative-9q51iuu7/raw-pointer.final.png": "5926ffcd3671251fd9075aeb5b0eab2fb263f5d8d9715b701c673efb830afee1",
+    "native-restorative-9q51iuu7/raw-pointer.inspection.png": "c920dbd0b29d8be0ff9309b56c259f846c72f66fda9eb91c0930447cafd1b84d",
+    "native-restorative-9q51iuu7/raw-pointer.reopen.json": "001b5e3795d355633c3ad3068b59ff126909660c316a0a875135c6168d064907",
+    "native-restorative-9q51iuu7/raw-pointer.reopen.png": "b1112f50e324e159390621cd68fc9b446d5da5a674e501cfbe778c968ad046a8",
+    "native-restorative-9q51iuu7/raw-pointer.restoration.png": "9ac2efd99a4c5834031127d157dd50d5c3777bb8652b8720dedd6e062d927ad2",
+    "native-restorative-9q51iuu7/raw-pointer.sqlite3": "a3b9162d2a6e2247ea20386471f9507a2c64c1b7aa438d5fadc3fb6230d1e98c"
+  },
+  "finishedUtc": "2026-09-28T03:15:19.589593+00:00"
+}

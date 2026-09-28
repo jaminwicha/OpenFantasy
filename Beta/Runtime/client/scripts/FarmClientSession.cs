@@ -90,6 +90,9 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal static Task<FarmClientSession> OpenCareAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
         OpenSelection(savePath, CareJourneyAdmission.CreateEmbedded(seedText, playerName)));
 
+    internal static Task<FarmClientSession> OpenRestorativeAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+        OpenSelection(savePath, RestorativeJourneyAdmission.CreateEmbedded(seedText, playerName)));
+
     private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);

@@ -42,6 +42,46 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Ordinary care controls and helper selection](p02/restorative-interface/README.md) adds typed
+eligibility/capacity explanations, public personal-use and patient-withdrawal offers, a separate Care
+wheel page and `--restorative` launch. The four primary sectors stay stable. Helpers choose their own
+full-dose assistance under actual control, stock and permission; stable identities suppress unchanged
+refused choices, and queued player actions take priority at that cutoff. Exploration health feedback
+uses the player's existing public HP. No helper inventory or control leaks into player commands.
+
+The actual post-combat harvest → Potion craft journey uncovered a gathering clock mismatch.
+`GatherPlanner` now validates its owner against `ProcessIntervals`, matching admission and recovery;
+advancing batches and elapsed process intervals remain distinct. The regression earns injury,
+gathers three berries, crafts the original dose and compares exact preview with durable publication.
+Independent source review confirms legacy/history compatibility. Architecture references for care,
+consumption, authority, presentation and materials are updated in the same change. Timeless contracts
+stay in the reference; evidence stays here.
+
+[Managed evidence](p02/restorative-interface/qualification/managed-rollup.json) records **546 distinct
+affected cases with passing final outcomes**, no unresolved failures/skips, across the retained broad
+and focused follow-ups; this is not a new complete solution regression. Final build is clean.
+[Native evidence](p02/restorative-interface/qualification/native-restorative-03.json) passes five action
+journeys and five separate exact reopen processes; recorded replay authenticates all five databases.
+The older care control passes two more rendered processes and four Host history inspections. Startup
+no-focus and observed native focus remain checked. [Failures](p02/restorative-interface/FAILURES.md)
+retain fixture, clock, display and verifier corrections. No gate/threshold was relaxed, external
+Claude retry launched or credit savings claimed.
+
+Preservation: original checkpoint `codex/checkpoint-before-restorative-interface-20260928T023110Z`
+at `2054b51`; successor WIP `fafeff2` preserved before the clock correction at
+`codex/checkpoint-before-gather-clock-fix-20260928T030838Z`. The accepted scope is preserved on
+`codex/milestone-restorative-interface`; verification/preservation evidence is linked from the packet.
+
+**Next dependency:** actual lossless continuation of retained material consumption and ordinary care,
+not merely the already implemented resource-history archive. Both 256-entry limits are explicit
+development bounds and are not accepted lifetime gameplay caps. Bind combat items to due-actor Wait
+choices, retain profile26 external process-kill proof, and continue the full P01/P02 campaign. Broader
+NPC crafting/refill, permissions, activity/body policies, production scale/platform/multiplayer,
+art/audio and physical/human acceptance remain open. Managed-earned crafting followed by native use
+does not claim a complete native medicine-crafting menu. The complete 181-requirement scope remains.
+
+### Earlier retained increments
+
 [Ordinary exploration care](p02/ordinary-care/README.md) implements fresh profile26 self-use and
 living-recipient assistance through shared material retirement, capped progression restoration and
 normal exploration time. Patient-owned permission/revocation is distinct from supplier control and
@@ -66,7 +106,7 @@ Pre-change checkpoint `codex/checkpoint-before-ordinary-care-20260928T014354Z` r
 Preserved on `codex/milestone-ordinary-care`; all 23 frozen specs, 59 earlier milestones and the
 unrelated 19-file predecessor index retain their pinned bytes/refs.
 
-**Next dependency:** distinguish care/material history capacity from gameplay unavailability, then
+At that checkpoint the next dependency was to distinguish capacity from gameplay unavailability, then
 bind actual public self/ally offers, helper-owned selection and native raw/crafted/reopened journeys.
 Resource-history archives do not remove the separate 256-consumption envelope. Keep real continuation
 of care/material owners and full journal lifetime; do not make this a lifetime gameplay cap. Active
@@ -74,9 +114,6 @@ combat item use must enter the due-actor Wait machinery. Profile26 external proc
 is still required; managed reopen/corruption does not replace it. Late complete-admission rollback is
 source-reviewed, not newly forced by ordinary-care tests. Broader medical/grant/activity policies,
 production scale/platform/multiplayer, art and human/physical gates remain open.
-
-### Earlier retained increments
-
 
 [Care continuation and observed health feedback](p02/care-continuation/README.md) proves raw/crafted
 finite treatment through actual victory, Wren's funded reward, earned level refill and a later attack

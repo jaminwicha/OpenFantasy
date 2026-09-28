@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2130dcda-96bd-4c0d-93c9-e28b5f183f09" name="@mac 2026-09-27 22:07:54" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-27T22:07:54.0667670-05:00" queuing="2026-09-27T22:07:54.0667670-05:00" start="2026-09-27T22:07:48.1157980-05:00" finish="2026-09-27T22:07:54.0721500-05:00" />
+  <TestSettings name="default" id="8f15d467-942d-491b-8d97-b696ee44d26f">
+    <Deployment runDeploymentRoot="_mac_2026-09-27_22_07_54" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="6f7a7301-6d26-43ae-98b2-5456847b5bef" testId="fc5a50f9-09cb-55c4-c2f9-4cfd7d67c678" testName="OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(name: &quot;crafted-self&quot;)" computerName="mac" duration="00:00:03.2623062" startTime="2026-09-27T22:07:50.6868540-05:00" endTime="2026-09-27T22:07:53.9726390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f7a7301-6d26-43ae-98b2-5456847b5bef">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Gather planning requires one exact world, branch, step and supported action.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherPlanner.Plan(WorldSnapshot world, CountedAuthorityState currentInventory, GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot currentSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherPlanner.cs:line 27
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideImmediate(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, ConstructionSettlementResolution completedSettlement, WorldActionCommand acceptedCommand) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 343
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 95
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 52
+   at OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.CraftPlayerDose(OrdinaryCareWorldFixture fixture, CareWorldSession session, SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/RestorativeNativeFixtureExportTests.cs:line 142
+   at OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(String name) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/RestorativeNativeFixtureExportTests.cs:line 37
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(name: &quot;crafted-self&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fc5a50f9-09cb-55c4-c2f9-4cfd7d67c678">
+      <Execution id="6f7a7301-6d26-43ae-98b2-5456847b5bef" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests" name="Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="fc5a50f9-09cb-55c4-c2f9-4cfd7d67c678" executionId="6f7a7301-6d26-43ae-98b2-5456847b5bef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.32]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.56]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.92]       System.ArgumentException : Gather planning requires one exact world, branch, step and supported action.
+[xUnit.net 00:00:04.92]       Stack Trace:
+[xUnit.net 00:00:04.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherPlanner.cs(27,0): at OpenFantasy.Core.Gathering.GatherPlanner.Plan(WorldSnapshot world, CountedAuthorityState currentInventory, GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot currentSpace)
+[xUnit.net 00:00:04.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(343,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideImmediate(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, ConstructionSettlementResolution completedSettlement, WorldActionCommand acceptedCommand)
+[xUnit.net 00:00:04.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(95,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:04.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(52,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:04.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/RestorativeNativeFixtureExportTests.cs(142,0): at OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.CraftPlayerDose(OrdinaryCareWorldFixture fixture, CareWorldSession session, SqliteWorldAuthority authority)
+[xUnit.net 00:00:04.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/RestorativeNativeFixtureExportTests.cs(37,0): at OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(String name)
+[xUnit.net 00:00:04.92]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:04.92]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.93]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-27T22:07:53.9902190-05:00">
+        <Text>[xUnit.net 00:00:04.92]     OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(name: "crafted-self") [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

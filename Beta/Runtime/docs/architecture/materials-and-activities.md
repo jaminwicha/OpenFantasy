@@ -190,3 +190,9 @@ The [coordinated world pacing owner](world-pacing.md) distinguishes advancing ba
 `WorldSnapshot.ProcessIntervals`; legacy worlds retain their advancing-step interpretation. Tactical
 ticks accumulate fractional exposure rather than granting repeated exploration allowances. Construction
 and excavation still require their actual actions and earn no labor from that passive carry.
+
+Both complete-world admission and `GatherPlanner` validate gathering's snapshot boundary against
+that process clock. Advancing-batch count alone cannot validate a gathering action after an encounter,
+because tactical elapsed time can complete additional process intervals. Returning to exploration
+preserves earned effort and finite source progress without resetting either clock or granting extra
+recovery. Worlds without pacing obtain their process count from the advancing-step fallback.

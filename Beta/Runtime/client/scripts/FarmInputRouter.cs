@@ -56,6 +56,9 @@ internal enum FarmSemanticAction
     Wait,
     ReleaseEncounter,
     AcknowledgeCare,
+    UseRestorative,
+    RevokeCarePermission,
+    NextWheelPage,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -88,6 +91,7 @@ internal readonly record struct FarmInputSituation(bool SessionOpen, bool Readin
     internal bool HasEncounterEntry { get; init; }
     internal bool IsEncounterOutcome { get; init; }
     internal bool HasCareAcknowledgment { get; init; }
+    internal bool HasWheelPages { get; init; }
 }
 
 /// <summary>One discrete device event translated to the routed action names it matches.</summary>
@@ -226,6 +230,7 @@ internal sealed class FarmInputRouter
             FarmSemanticAction.OpenWheel => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
                 && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
             FarmSemanticAction.CloseWheel => layer == FarmInputLayer.Wheel,
+            FarmSemanticAction.NextWheelPage => layer == FarmInputLayer.Wheel && situation.HasWheelPages,
             FarmSemanticAction.ConfirmWheel => layer == FarmInputLayer.Wheel && !Paused
                 && !situation.ActionPending && !situation.ReadingHold,
             FarmSemanticAction.AcknowledgeCare => layer == FarmInputLayer.Encounter
@@ -331,6 +336,7 @@ internal sealed class FarmInputRouter
     private static FarmSemanticAction Bind(FarmInputLayer layer, string action) => (layer, action) switch
     {
         (FarmInputLayer.Wheel, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseWheel,
+        (FarmInputLayer.Wheel, FarmInputActions.NextTarget) => FarmSemanticAction.NextWheelPage,
         (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused, FarmInputActions.QuickWheel) => FarmSemanticAction.OpenWheel,
         (FarmInputLayer.Inventory, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.Inventory) => FarmSemanticAction.CloseInventory,
         (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused, FarmInputActions.Inventory) => FarmSemanticAction.OpenInventory,
@@ -358,6 +364,7 @@ internal sealed class FarmInputRouter
         FarmInputLayer.World => action is FarmSemanticAction.Speak or FarmSemanticAction.Give
             or FarmSemanticAction.Gather or FarmSemanticAction.Craft
             or FarmSemanticAction.Excavate or FarmSemanticAction.Traverse or FarmSemanticAction.EnterEncounter
+            or FarmSemanticAction.UseRestorative or FarmSemanticAction.RevokeCarePermission
             or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,
         FarmInputLayer.Encounter => action is FarmSemanticAction.Strike or FarmSemanticAction.Wait
             or FarmSemanticAction.ReleaseEncounter or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,

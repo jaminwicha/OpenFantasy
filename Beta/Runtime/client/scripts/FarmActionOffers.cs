@@ -56,6 +56,7 @@ internal sealed class FarmActionOffers
         {
             offers[FarmSemanticAction.Craft] = Craft(view, scope);
         }
+        RestorativeActionOffers.Add(view, scope, selectedTarget, offers);
         if (selectedTarget is { } target && (target.Id != _wrenActorId
             || view.Actors.All(actor => actor.ActorId != target.Id)))
         {

@@ -44,6 +44,7 @@ public partial class Bootstrap : Control
             or ["--encounter-probe", _, _, "fresh" or "duel" or "reopen", "--background-render"]
             or ["--encounter-defeat-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--care-probe", _, _, "wheel" or "keyboard" or "controller" or "pointer" or "pending" or "resume" or "reopen", "--background-render"]
+            or ["--restorative-probe", _, _, _, "keyboard" or "controller" or "pointer" or "helper" or "revoke" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -59,7 +60,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--care-probe", var careSave, var careReport, var careMode]
+        if (arguments is ["--restorative-probe", var restorativeSave, var restorativeReport, var restorativeMetadata, var restorativeMode]
+            && restorativeMode is "keyboard" or "controller" or "pointer" or "helper" or "revoke" or "reopen")
+        {
+            if (!File.Exists(restorativeSave) || !File.Exists(restorativeMetadata))
+            {
+                GD.PushError("The restorative probe requires its exact earned fixture and metadata.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { RestorativeProfile = true, SavePathOverride = restorativeSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new RestorativePlayProbe(game, restorativeReport, restorativeMetadata, restorativeMode));
+        }
+        else if (arguments is ["--care-probe", var careSave, var careReport, var careMode]
             && careMode is "wheel" or "keyboard" or "controller" or "pointer" or "pending" or "resume" or "reopen")
         {
             if (File.Exists(careSave) != (careMode is "pending" or "resume" or "reopen"))
@@ -272,6 +287,10 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else if (arguments is ["--restorative"])
+        {
+            AddChild(new FarmGame { RestorativeProfile = true });
         }
         else if (arguments is ["--care"])
         {

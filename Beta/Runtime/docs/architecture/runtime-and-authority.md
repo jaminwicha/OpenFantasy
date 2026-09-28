@@ -81,6 +81,11 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
 2. [LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) checks control
    and selects a bounded batch. One player action can be pending; identical pending bytes share its
    eventual outcome and a different request is refused while that slot is occupied.
+   [Ordinary helper aid](ordinary-care.md) is a Host-owned proposal under separate helper control and
+   patient permission. Actors already assigned a player/NPC action are excluded as helper or patient
+   from that cutoff's aid selection. A stable semantic proposal identity prevents an unchanged refused
+   helper choice from becoming an automatic new command on each clock tick; clocks and unrelated
+   storage activity do not select a replacement identity.
 3. [WorldStepProcessor](../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) evaluates the
    host-selected [WorldStepBatch](../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs) against the
    committed profile, scope, revision and hold state. Domain planners recheck rights, resources,

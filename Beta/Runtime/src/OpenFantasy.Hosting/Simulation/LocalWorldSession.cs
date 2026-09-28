@@ -31,6 +31,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private readonly TimeProvider _time;
     private readonly LocalNpcController _npcs = new();
     private readonly LocalCareController _care = new();
+    private readonly LocalRestorativeController _restorative = new();
     private readonly Task _loop;
     private LocalWorldView _view;
     private PendingLocalAction? _pending;
@@ -562,6 +563,9 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 selected.Add(pending.Command.CommandId);
             }
             actions.AddRange(_npcs.SelectActions(state, () => AllocateSelectedIdentity(selected)));
+            var excluded = actions.Select(action => action.ActorId).ToHashSet();
+            actions.AddRange(_restorative.SelectActions(state,
+                identity => selected.Contains(identity) || _authority.IsIdentityOccupiedForHost(identity), excluded));
         }
         return new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision, state.AdvancingSteps,
             state.HasReadingHold ? WorldBatchKind.HeldInteraction : WorldBatchKind.AdvancingStep,

@@ -72,6 +72,9 @@ internal sealed class FarmInventoryModel(EntityId woodDefinitionId, EntityId? be
 
     private static (string Name, string Description) DescribeRecipeMaterial(LocalWorldView view, EntityId definition)
     {
+        var restorative = view.Restorative?.SelfUseOffers.FirstOrDefault(value => value.ItemDefinitionId == definition);
+        if (restorative is not null)
+            return (restorative.ItemName, $"Restores up to {restorative.HealHitPoints} HP during exploration. Inspect the Care wheel page to use a dose.");
         LocalCraftTermView? term = FarmCrafting.RationsRecipe(view)?.Terms.FirstOrDefault(value => value.DefinitionId == definition);
         return term?.Role switch
         {

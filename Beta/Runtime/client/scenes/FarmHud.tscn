@@ -270,3 +270,12 @@ custom_minimum_size = Vector2(76, 42)
 icon = ExtResource("6")
 expand_icon = true
 theme_override_constants/icon_max_width = 28
+
+[node name="UseRestorative" type="Button" parent="Root/Footer/Column/Actions"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+custom_minimum_size = Vector2(48, 42)
+icon = ExtResource("6")
+expand_icon = true
+theme_override_constants/icon_max_width = 28

@@ -1,0 +1,53 @@
+{
+  "scope": "Only completed-run disposable symlinks removed; exact launch configs retained. Native runners recreate links; no target contents removed.",
+  "launches": [
+    {
+      "directory": "Beta/implementation/p02/restorative-interface/qualification/native-restorative-w3oibu0o/background-client",
+      "retainedConfigurationSha256": "3b3dc874f22ce20e15f8c0cd3f6273166e6f1377495b09d809245dd4f97493a4",
+      "removedDisposableLinks": {
+        "packages.lock.json": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/packages.lock.json",
+        "scenes": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes",
+        ".godot": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot",
+        "OpenFantasy.Client.csproj": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/OpenFantasy.Client.csproj",
+        "scripts": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts",
+        "assets": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets"
+      }
+    },
+    {
+      "directory": "Beta/implementation/p02/restorative-interface/qualification/native-restorative-tnsbvv47/background-client",
+      "retainedConfigurationSha256": "3b3dc874f22ce20e15f8c0cd3f6273166e6f1377495b09d809245dd4f97493a4",
+      "removedDisposableLinks": {
+        "packages.lock.json": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/packages.lock.json",
+        "scenes": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes",
+        ".godot": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot",
+        "OpenFantasy.Client.csproj": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/OpenFantasy.Client.csproj",
+        "scripts": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts",
+        "assets": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets"
+      }
+    },
+    {
+      "directory": "Beta/implementation/p02/restorative-interface/qualification/native-restorative-9q51iuu7/background-client",
+      "retainedConfigurationSha256": "3b3dc874f22ce20e15f8c0cd3f6273166e6f1377495b09d809245dd4f97493a4",
+      "removedDisposableLinks": {
+        "packages.lock.json": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/packages.lock.json",
+        "scenes": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes",
+        ".godot": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot",
+        "OpenFantasy.Client.csproj": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/OpenFantasy.Client.csproj",
+        "scripts": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts",
+        "assets": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets"
+      }
+    },
+    {
+      "directory": "Beta/implementation/p02/restorative-interface/qualification/native-care-_l6mqbq3/background-client",
+      "retainedConfigurationSha256": "3b3dc874f22ce20e15f8c0cd3f6273166e6f1377495b09d809245dd4f97493a4",
+      "removedDisposableLinks": {
+        "packages.lock.json": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/packages.lock.json",
+        "scenes": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes",
+        ".godot": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot",
+        "OpenFantasy.Client.csproj": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/OpenFantasy.Client.csproj",
+        "scripts": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts",
+        "assets": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets"
+      }
+    }
+  ]
+}

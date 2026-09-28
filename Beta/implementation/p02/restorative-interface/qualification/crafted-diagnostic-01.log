@@ -1,0 +1,18 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:04.92]     OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(name: "crafted-self") [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(name: "crafted-self") [3 s]
+  Error Message:
+   System.ArgumentException : Gather planning requires one exact world, branch, step and supported action.
+  Stack Trace:
+     at OpenFantasy.Core.Gathering.GatherPlanner.Plan(WorldSnapshot world, CountedAuthorityState currentInventory, GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot currentSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherPlanner.cs:line 27
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideImmediate(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, ConstructionSettlementResolution completedSettlement, WorldActionCommand acceptedCommand) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 343
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 95
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 52
+   at OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.CraftPlayerDose(OrdinaryCareWorldFixture fixture, CareWorldSession session, SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/RestorativeNativeFixtureExportTests.cs:line 142
+   at OpenFantasy.Hosting.Tests.Care.RestorativeNativeFixtureExportTests.Actual_source_stat_injury_and_finite_stock_produce_native_ready_restorative_inputs(String name) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/RestorativeNativeFixtureExportTests.cs:line 37
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/crafted-diagnostic-01.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 3 s - OpenFantasy.Hosting.Tests.dll (net8.0)

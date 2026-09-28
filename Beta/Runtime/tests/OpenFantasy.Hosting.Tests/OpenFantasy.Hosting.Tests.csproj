@@ -26,6 +26,7 @@
     <Compile Include="../../client/scripts/FarmQuickWheelModel.cs" Link="Client/FarmQuickWheelModel.cs" />
     <Compile Include="../../client/scripts/WorksiteActionOffers.cs" Link="Client/WorksiteActionOffers.cs" />
     <Compile Include="../../client/scripts/EncounterActionOffers.cs" Link="Client/EncounterActionOffers.cs" />
+    <Compile Include="../../client/scripts/RestorativeActionOffers.cs" Link="Client/RestorativeActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmActionOffers.cs" Link="Client/FarmActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmClientSession.cs" Link="Client/FarmClientSession.cs" />
     <Compile Include="../../client/scripts/Presentation/FarmHealthFeedback.cs" Link="Client/FarmHealthFeedback.cs" />

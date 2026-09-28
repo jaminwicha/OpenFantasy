@@ -1,0 +1,60 @@
+{
+  "status": "failed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-w3oibu0o",
+  "rendered": true,
+  "runs": [
+    {
+      "label": "raw-pointer-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-w3oibu0o/background-client",
+        "--",
+        "--restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-w3oibu0o/raw-pointer.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-w3oibu0o/raw-pointer.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json",
+        "pointer",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-w3oibu0o/raw-pointer-active.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/native-restorative-w3oibu0o/raw-pointer-active.stderr.log",
+      "exitCode": 1,
+      "seconds": 17.746528208255768
+    }
+  ],
+  "journeys": [],
+  "limits": {
+    "nativeProcessSeconds": 180,
+    "nativeProbeSeconds": 150,
+    "maximumNativeProcesses": 10
+  },
+  "startedUtc": "2026-09-28T03:12:21.768087+00:00",
+  "scope": "Managed-earned source-stat injury and finite stock; native personal use, helper action, permission withdrawal and paused separate-process recovery.",
+  "limitations": [
+    "Managed recorded-boundary authentication is required separately; UI observations alone do not prove authoritative item/time effects.",
+    "Injected input and background focus do not establish physical-device, OS-focus, art, performance or full-phase acceptance."
+  ],
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py": "4e230e6b0208013a45cf1b32c2404ebc4b8f44874866133cf6bb435f219b5cc2",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": "0d0cd73194440cb7a9fdd2d557b74fa9a53e59d8eac04ce33bba68454f48fe4f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "8c5347eeb5576545c269db3fe47e0c41449c1f9d587ff06d83be2bf56f15ab57",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "2229035218e1c0bcfc1e0bdf9b98acb3bed456c08f25ebbc12694462f51c291c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "292679b8e0618b48491e4b5ad4bd5b2c9b1991258fddba98faf09c5e8b06f4b7",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "a4203a846c636b50fad289806f30d131ac6e29135aa82191e7f39c3af6826843",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "2229035218e1c0bcfc1e0bdf9b98acb3bed456c08f25ebbc12694462f51c291c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "292679b8e0618b48491e4b5ad4bd5b2c9b1991258fddba98faf09c5e8b06f4b7"
+  },
+  "failure": "Native process failed at raw-pointer-active",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 105, in main\n    run(label + '-' + phase, command)\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 70, in run\n    require(item['seconds'] < 180 and result.returncode == 0 and 'ERROR:' not in stdout.read_text() + stderr.read_text(),\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n            'Native process failed at ' + label)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 22, in require\n    raise AssertionError(message)\nAssertionError: Native process failed at raw-pointer-active\n",
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "native-restorative-w3oibu0o/raw-pointer-active.stderr.log": "b614b6600027c157707248f89f3584dae7c856c8b7a7af0a3c522e563c0d62fb",
+    "native-restorative-w3oibu0o/raw-pointer-active.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-w3oibu0o/raw-pointer.active.failed.json": "d206fe8a6037e04e22f3f750b259dc9d3172070044cafe679c058002d18b5266",
+    "native-restorative-w3oibu0o/raw-pointer.inspection.png": "c920dbd0b29d8be0ff9309b56c259f846c72f66fda9eb91c0930447cafd1b84d",
+    "native-restorative-w3oibu0o/raw-pointer.sqlite3": "eb56fb27fc4e3f6ad75acef0bca7a17c549424b8b2208f12520432618d7ae505"
+  },
+  "finishedUtc": "2026-09-28T03:12:39.557091+00:00"
+}

@@ -76,6 +76,7 @@ internal sealed partial class FarmHud : CanvasLayer
         BindOfferButton(FarmSemanticAction.Wait, GetNode<Button>("%Wait"));
         BindOfferButton(FarmSemanticAction.ReleaseEncounter, GetNode<Button>("%ReleaseEncounter"));
         BindOfferButton(FarmSemanticAction.AcknowledgeCare, GetNode<Button>("%AcknowledgeCare"));
+        BindOfferButton(FarmSemanticAction.UseRestorative, GetNode<Button>("%UseRestorative"));
         _pause.Pressed += () => Request(FarmSemanticAction.TogglePause);
         _preview.Text = InspectHint;
     }
@@ -125,6 +126,7 @@ internal sealed partial class FarmHud : CanvasLayer
         PresentOffer(FarmSemanticAction.Gather, "F", blockedByLayer: pending || paused || speaking);
         PresentOffer(FarmSemanticAction.Craft, "C", blockedByLayer: pending || paused || speaking);
         PresentOffer(FarmSemanticAction.CloseDialogue, "E", blockedByLayer: pending || paused || !speaking);
+        PresentOffer(FarmSemanticAction.UseRestorative, "", blockedByLayer: pending || paused || speaking);
         foreach (FarmSemanticAction action in new[] { FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike,
             FarmSemanticAction.Wait, FarmSemanticAction.ReleaseEncounter, FarmSemanticAction.AcknowledgeCare })
             PresentOffer(action, action == FarmSemanticAction.Wait ? "G" : "E", pending || paused || speaking);
@@ -182,7 +184,7 @@ internal sealed partial class FarmHud : CanvasLayer
             return;
         }
         button.Visible = true;
-        button.Text = action is FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike
+        button.Text = action == FarmSemanticAction.UseRestorative ? "" : action is FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike
             or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter or FarmSemanticAction.AcknowledgeCare ? $"[{key}]"
             : offer.SpendsSomething ? $"{offer.Label}  [{key}]\n{offer.CostText}" : $"{offer.Label}  [{key}]";
         button.Disabled = blockedByLayer || !offer.CanExecute;

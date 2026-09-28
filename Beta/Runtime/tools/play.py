@@ -29,6 +29,7 @@ def main():
     parser.add_argument("--godot", help="Pinned Godot .NET executable; alternatively OPENFANTASY_GODOT")
     selection = parser.add_mutually_exclusive_group()
     selection.add_argument("--care", action="store_true", help="Open the separate encounter journey with finite companion care")
+    selection.add_argument("--restorative", action="store_true", help="Open the separate ordinary-care journey with a personal Potion and permitted companion aid")
     selection.add_argument("--encounters", action="store_true", help="Open the separate in-place encounter journey save")
     selection.add_argument("--breach", action="store_true", help="Open the separate earned terrain-breach save")
     selection.add_argument("--watercourse", action="store_true", help="Open the separate finite-water farm save")
@@ -63,10 +64,12 @@ def main():
         if args.prepare_only:
             print("Pinned native client prepared. No gameplay save was opened.", flush=True)
             return 0
-        place = "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
+        place = "restorative journey" if args.restorative else "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
         print(f"Opening Wren’s {place}. WASD/arrows: walk; E: talk; G: quest; F: gather; Q: target; V: actions; Esc: pause.", flush=True)
         command = [str(godot), "--path", str(root / "client")]
-        if args.care:
+        if args.restorative:
+            command += ["--", "--restorative"]
+        elif args.care:
             command += ["--", "--care"]
         elif args.encounters:
             command += ["--", "--encounters"]

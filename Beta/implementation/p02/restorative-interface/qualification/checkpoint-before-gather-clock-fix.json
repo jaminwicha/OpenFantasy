@@ -1,0 +1,9 @@
+{
+  "ref": "codex/checkpoint-before-gather-clock-fix-20260928T030838Z",
+  "snapshot": "fafeff2576564563cfb27c778ab257469667e791",
+  "parent": "2054b51bcf951acd13228e80af9d48995d06c106",
+  "tree": "1b5db420e0243ea41c1728154c7ead47b0a976c0",
+  "scope": "Successor runtime/docs/new restorative-interface packet; unrelated staged predecessor excluded",
+  "verification": "WIP: build05 clean; affected334pass11fixturefail; followup66pass1gatherfail; crafted diagnostic confirms process-clock mismatch; native unrun",
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

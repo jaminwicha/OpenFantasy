@@ -1,0 +1,52 @@
+{
+  "runs": [
+    {
+      "file": "affected-01.trx",
+      "totals": {
+        "Passed": 334,
+        "Failed": 11
+      }
+    },
+    {
+      "file": "full-dose-fixture-01.trx",
+      "totals": {
+        "Passed": 2
+      }
+    },
+    {
+      "file": "care-followup-01.trx",
+      "totals": {
+        "Passed": 66,
+        "Failed": 1
+      }
+    },
+    {
+      "file": "crafted-clock-fix-01.trx",
+      "totals": {
+        "Passed": 1
+      }
+    },
+    {
+      "file": "core-clocks-01.trx",
+      "totals": {
+        "Passed": 167
+      }
+    },
+    {
+      "file": "host-clocks-01.trx",
+      "totals": {
+        "Passed": 36
+      }
+    },
+    {
+      "file": "native-authentication-01.trx",
+      "totals": {
+        "Passed": 3
+      }
+    }
+  ],
+  "distinctFinalOutcomes": {
+    "Passed": 546
+  },
+  "unresolved": []
+}

@@ -1,0 +1,51 @@
+{
+  "status": "passed-with-explicit-scope",
+  "build": "build-07.log",
+  "managed": {
+    "distinctAffectedCases": 546,
+    "finalFailures": 0,
+    "skips": 0,
+    "record": "managed-rollup.json",
+    "interpretation": "Passing affected evidence across broad and focused runs; not a fresh full solution regression. Retained failures have explicit corrections and passing reruns."
+  },
+  "native": {
+    "ordinary": "native-restorative-03.json",
+    "ordinaryProcesses": 10,
+    "resultDatabasesAuthenticated": 5,
+    "authentication": "native-authentication-01.trx",
+    "legacy": "native-care-control-01.json",
+    "legacyProcesses": 2,
+    "legacyRecordedHostInspections": 4,
+    "scope": "Managed-earned injury/crafting; native input, helper aid, patient withdrawal, health feedback and separate paused recovery. Background renders observe no native focus."
+  },
+  "review": "../REVIEW.md",
+  "architecture": {
+    "sameChangeUpdated": true,
+    "references": [
+      "ordinary-care",
+      "item-consumption",
+      "presentation-and-interaction",
+      "runtime-and-authority",
+      "materials-and-activities"
+    ],
+    "checkedLocalLinks": 877
+  },
+  "preservation": {
+    "base": "2054b51bcf951acd13228e80af9d48995d06c106",
+    "priorMilestones": 60,
+    "frozenSpecs": 23,
+    "unrelatedIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "beforeClockFix": "checkpoint-before-gather-clock-fix.json",
+    "runtimeSourcePins": "final-runtime-source.json",
+    "acceptedMilestone": "codex/milestone-restorative-interface"
+  },
+  "failures": "../FAILURES.md",
+  "openGates": [
+    "Lossless lifetime material/care history continuation; retained256bounds are not lifetime gameplay caps",
+    "Due-actor Wait combat item binding",
+    "Profile26 external process-kill recovery",
+    "Broader native medicine crafting/refill and medical/permission/activity policy",
+    "Full P01/P02 and P14 production campaign: scale, platforms, multiplayer, physical/OS devices, art/audio and human acceptance"
+  ],
+  "externalDelegation": "No Claude run or paid retry; no claimed external-credit savings"
+}

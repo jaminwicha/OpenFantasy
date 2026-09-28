@@ -54,6 +54,7 @@ public sealed class LocalWorldView
         EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
         EncounterActions = LocalEncounterActionView.Project(state, playerActorId);
         Care = LocalCareView.Project(state, playerActorId, careHelperSelectionOccupied);
+        Restorative = LocalRestorativeView.Project(state, playerActorId);
         IsResolvingConsequences = state.PendingExcavation is not null;
         if (state.Pacing?.Encounter is { } timing)
         {
@@ -142,6 +143,7 @@ public sealed class LocalWorldView
     public LocalEncounterLifecycleView? EncounterLifecycle { get; }
     public LocalEncounterActionView? EncounterActions { get; }
     public LocalCareView? Care { get; }
+    public LocalRestorativeView? Restorative { get; }
     public ReadOnlyCollection<LocalEncounterActorView> EncounterActors { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }

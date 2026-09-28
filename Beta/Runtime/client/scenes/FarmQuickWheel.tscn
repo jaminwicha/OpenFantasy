@@ -77,6 +77,13 @@ layout_mode = 2
 text = "Close [V / Esc]"
 tooltip_text = "Close without acting. V, Escape, right-stick click or controller B."
 
+[node name="NextWheelPage" type="Button" parent="WheelRoot/Panel/Column/Header"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Care [Q]"
+tooltip_text = "Inspect the other action page. Q or controller right shoulder changes pages without acting."
+
 [node name="WheelTime" type="Label" parent="WheelRoot/Panel/Column"]
 unique_name_in_owner = true
 layout_mode = 2

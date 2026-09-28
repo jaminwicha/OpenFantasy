@@ -13,6 +13,7 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
     private Label _time = null!;
     private Button _confirm = null!;
     private Button _close = null!;
+    private Button _nextPage = null!;
     private Control? _returnFocus;
     private bool _canConfirm;
     internal FarmQuickWheelModel? Model { get; private set; }
@@ -27,10 +28,12 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
         _time = GetNode<Label>("%WheelTime");
         _confirm = GetNode<Button>("%ConfirmChoice");
         _close = GetNode<Button>("%CloseWheel");
+        _nextPage = GetNode<Button>("%NextWheelPage");
         _disc.SelectionChanged += RefreshDetails;
         _disc.ConfirmRequested += RequestConfirmation;
         _confirm.Pressed += RequestConfirmation;
         _close.Pressed += () => ActionRequested?.Invoke(FarmSemanticAction.CloseWheel);
+        _nextPage.Pressed += () => ActionRequested?.Invoke(FarmSemanticAction.NextWheelPage);
         // Cardinal input chooses a sector. Godot's fallback spatial focus navigation must stay here;
         // Tab deliberately leaves the disc for the explicit confirmation and close controls.
         NodePath discPath = _disc.GetPathTo(_disc);
@@ -38,7 +41,12 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
         _disc.FocusNeighborBottom = discPath;
         _disc.FocusNeighborLeft = discPath;
         _disc.FocusNeighborRight = discPath;
-        Control[] controls = [_disc, _confirm, _close];
+        SetFocusChain(false);
+    }
+
+    private void SetFocusChain(bool hasPages)
+    {
+        Control[] controls = hasPages ? [_disc, _confirm, _nextPage, _close] : [_disc, _confirm, _close];
         for (int i = 0; i < controls.Length; i++)
         {
             controls[i].FocusNext = controls[i].GetPathTo(controls[(i + 1) % controls.Length]);
@@ -50,9 +58,20 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
     {
         _returnFocus = GetViewport().GuiGetFocusOwner();
         Model = new FarmQuickWheelModel(offers);
+        _nextPage.Visible = Model.PageCount > 1;
+        SetFocusChain(Model.PageCount > 1);
         _disc.ShowModel(Model);
         _root.Show();
         _disc.GrabFocus();
+    }
+
+    internal void NextPage()
+    {
+        if (Model is null) return;
+        Model.NextPage();
+        _disc.ShowModel(Model);
+        _disc.GrabFocus();
+        RefreshDetails();
     }
 
     internal void Close()
@@ -82,6 +101,7 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
 
     private void RefreshDetails()
     {
+        _nextPage.Text = Model?.PageName == "Care" ? "Actions [Q]" : "Care [Q]";
         FarmActionOffer? offer = Model?.Selected?.Offer;
         _name.Text = offer?.Label ?? "Choose an action";
         _details.Text = offer is null ? "Point to a symbol, press a direction, or use the left stick.\n\nSelecting only shows details."

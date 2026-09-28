@@ -48,7 +48,7 @@ collisions against the supplied inventory and production. These checks do not re
 world's historical identity reservation or durable receipt lookup.
 
 Ordinary selection, authorization and revision refusals retain the original owners and return no
-claim or created identities. Checked-arithmetic and supported archive-capacity failures also refuse
+claim or created identities. Checked-arithmetic and supported canonical-size failures also refuse
 without a partial candidate. Invalid inventory/production composition remains an error rather than
 being treated as an ordinary gameplay selection.
 
@@ -151,6 +151,21 @@ noncanonical, truncated, trailing or over-limit data. `ContentHash` uses the own
 codec. Limits include 256 consumption claims, no more claims than the production revision, bounded
 individual/collection frames and a 16 MiB production archive. Revision/count consistency is not an
 authenticated transition history.
+
+The 256-claim bound is shared by every action that consumes through this production owner, including
+aftermath remedies and ordinary restorative use. `ItemConsumptionPlanner` refuses a full collection
+with `Unavailable` before preparing material changes. The complete ordinary-care assessment adds a
+typed `MaterialHistoryCapacity` explanation and withholds its executable offer; it separately checks
+the ordinary-care owner's 256-use bound. This preflight does not reserve either capacity, so the
+authority evaluates the progressively updated owners again when selecting the action's effects.
+
+[Resource-history continuation](world-resource-history.md) rotates causal HP/MP/resource batches; it
+preserves this complete production owner and its consumed claims. Removing a live lot frees live
+storage, but neither that removal nor a resource segment cut frees retained consumption history.
+The bound is not a gameplay lifetime quota. Extending consumption beyond it requires an explicit
+admitted continuation protocol preserving issued rights, retirement provenance, historical identities
+and the exactly-once effects of composed actions. No such extension follows from encoding a component,
+increasing a count limit or archiving a resource segment.
 
 The [restorative supply tests](../../tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs)
 bind the retained Potion payload and three-berries-to-one-Potion recipe to a separately authored
