@@ -20,6 +20,10 @@ and existing source holds remain intact. The reservoir geometry and domain stay 
 reconciliation. `Rebind` accepts an exact compatible material root only when all retained portions still
 cover its live holdings. It cannot silently relabel raw stock as a newly crafted lot.
 
+[Material continuation](liquid-material-continuation.md) supplies an explicit reservoir cut. Detailed
+placement can rebind that qualified owner without changing portions or time; the changed reservoir
+hash invalidates earlier flow plans. Component support does not enable continued world admission.
+
 `ReservoirFill` describes the equilibrium distribution of aggregate stock. It is not the actual local
 surface of a moving front. Detailed placement and volume come from the retained cell portions alone;
 the Host's detailed-world diagnostics report these and suppress the equilibrium surface report.

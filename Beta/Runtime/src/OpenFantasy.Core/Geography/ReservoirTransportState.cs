@@ -15,6 +15,10 @@ public sealed class ReservoirTransportState
         IEnumerable<RunoffTransportStage> stages, ulong revision, WorldInstant boundary)
     {
         ArgumentNullException.ThrowIfNull(reservoirs);
+        if (reservoirs.Capacity.Production?.IsContinued == true)
+        {
+            throw new ArgumentException("Reserved transport requires its own joined material continuation contract.", nameof(reservoirs));
+        }
         ArgumentNullException.ThrowIfNull(connections);
         ArgumentNullException.ThrowIfNull(stages);
         var gates = connections.Take(MaximumConnections + 1).ToArray();

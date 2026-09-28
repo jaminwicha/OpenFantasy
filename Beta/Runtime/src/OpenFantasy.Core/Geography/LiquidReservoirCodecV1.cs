@@ -14,7 +14,7 @@ public static class LiquidReservoirCodecV1
 
     public static byte[] Encode(LiquidReservoirState state) => EncodeReservoirs(state, consumption: false);
 
-    internal static byte[] EncodeReservoirs(LiquidReservoirState state, bool consumption)
+    internal static byte[] EncodeReservoirs(LiquidReservoirState state, bool consumption, bool continued = false)
     {
         ArgumentNullException.ThrowIfNull(state);
         using var geometries = new MemoryStream();
@@ -34,7 +34,7 @@ public static class LiquidReservoirCodecV1
             WriteFill(witnesses, projection.ActualFill);
             WriteFill(witnesses, projection.ProjectedFill);
         }
-        byte[] encoded = CanonicalEncodingV1.Frame(consumption ? "geography.liquid-reservoirs.v2" : "geography.liquid-reservoirs.v1", WatershedRunoffCapacityCodecV1.EncodeCapacity(state.Capacity, consumption),
+        byte[] encoded = CanonicalEncodingV1.Frame(continued ? "geography.liquid-reservoirs.v3" : consumption ? "geography.liquid-reservoirs.v2" : "geography.liquid-reservoirs.v1", WatershedRunoffCapacityCodecV1.EncodeCapacity(state.Capacity, consumption, continued),
             geometries.ToArray(), witnesses.ToArray());
         if (geometries.Length > MaximumCollectionBytes || witnesses.Length > MaximumWitnessBytes || encoded.Length > MaximumEncodedByteLength)
         {
@@ -46,13 +46,14 @@ public static class LiquidReservoirCodecV1
     public static LiquidReservoirState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
         DecodeReservoirs(bytes, cancellationToken, consumption: false);
 
-    internal static LiquidReservoirState DecodeReservoirs(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption)
+    internal static LiquidReservoirState DecodeReservoirs(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption,
+        GeographyProductionDependencies? dependencies = null)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
-            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 4, consumption ? "geography.liquid-reservoirs.v2"u8 : "geography.liquid-reservoirs.v1"u8);
-            var capacity = WatershedRunoffCapacityCodecV1.DecodeCapacity(reader.ReadField(WatershedRunoffCapacityCodecV1.MaximumEncodedByteLength), cancellationToken, consumption);
+            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 4, dependencies is not null ? "geography.liquid-reservoirs.v3"u8 : consumption ? "geography.liquid-reservoirs.v2"u8 : "geography.liquid-reservoirs.v1"u8);
+            var capacity = WatershedRunoffCapacityCodecV1.DecodeCapacity(reader.ReadField(WatershedRunoffCapacityCodecV1.MaximumEncodedByteLength), cancellationToken, consumption, dependencies);
             var collection = reader.ReadField(MaximumCollectionBytes);
             _ = reader.ReadField(MaximumWitnessBytes);
             reader.Complete();
@@ -93,8 +94,9 @@ public static class LiquidReservoirCodecV1
             {
                 throw new FormatException("The reservoir collection has trailing bytes.");
             }
-            var state = LiquidReservoirState.Create(capacity, geometries);
-            if (!EncodeReservoirs(state, consumption).AsSpan().SequenceEqual(bytes))
+            var state = dependencies is null ? LiquidReservoirState.Create(capacity, geometries)
+                : LiquidReservoirState.RestoreContinued(capacity, geometries, dependencies);
+            if (!EncodeReservoirs(state, consumption, dependencies is not null).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("Reservoir geometry or fill witnesses differ from canonical reconstruction.");
             }

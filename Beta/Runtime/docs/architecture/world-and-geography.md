@@ -294,6 +294,12 @@ This boundary validates composition; it does not authenticate an external comman
 caller-supplied custody changes are legal transfers. Transfer/craft planners remain responsible for their
 own operation invariants. The publisher must not install their unwrapped candidates directly.
 
+[Explicit material continuation](liquid-material-continuation.md) derives a new segment from the
+actual closing owner and re-prepares every pending request without advancing logical capacity time
+or changing held quantities. Ordinary reconciliation cannot replace that continuation context.
+Nested V3 geography archives require exact external continuation dependencies; V1/V2 preserve their
+inline-history interpretation.
+
 The [capacity v1 archive](../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV1.cs) is a
 23,500,000-byte bounded standalone frame. Its eight fields are tag, domain, authority, optional Production,
 unsigned-64 owner revision, pending rows, closed identities and receiver witnesses. Shared network and
@@ -658,9 +664,12 @@ re-encoding. Existing v1 codecs preserve raw-only bytes and explicitly reject at
 no encoder silently drops evidence. Content hashes dispatch to the matching explicit profile.
 The privileged `--inspect-material-production` operator reads registry v2 without changing a world.
 
-Consumption-capable production uses explicit registry/state V3 archives. Runoff requests, routing,
-capacity, reservoir and transport owners use their corresponding V2 archives; each retains the complete
-production V2 evidence even when its consumed collection is empty. Ordinary successor reconciliation
+Consumption-capable inline production uses explicit registry/state V3 archives. Inline runoff requests,
+routing, capacity, reservoir and transport owners use their corresponding V2 archives; each retains the
+complete production V2 evidence even when its consumed collection is empty. Qualified
+[continued liquid owners](liquid-material-continuation.md) instead use explicit geography V3 frames
+with nested Production V3/V4/V5 dependencies; terrain and reserved transport reject continued owners.
+Ordinary successor reconciliation
 preserves the selected interpretation in both directions. See
 [composed material evidence](item-consumption.md#composed-material-evidence) for the exact version table,
 history-retention contract and complete-world publication boundary.

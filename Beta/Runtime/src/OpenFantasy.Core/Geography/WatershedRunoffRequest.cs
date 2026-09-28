@@ -14,6 +14,14 @@ public sealed class WatershedRunoffRequest
         CountedAuthorityState inventory, ProductionSnapshot? production, EntityId reservationId, EntityId ownerActorId,
         WorldInstant start, WorldInstant end, ItemPhysicalBinding material, IEnumerable<WatershedRunoffInput> inputs,
         IEnumerable<WatershedRunoffTerminal> terminals)
+        : this(network, mapping, inventory, production, reservationId, ownerActorId, start, end, material, inputs, terminals, null)
+    {
+    }
+
+    internal WatershedRunoffRequest(PreparedWatershedNetwork network, WatershedTerrainMapping mapping,
+        CountedAuthorityState inventory, ProductionSnapshot? production, EntityId reservationId, EntityId ownerActorId,
+        WorldInstant start, WorldInstant end, ItemPhysicalBinding material, IEnumerable<WatershedRunoffInput> inputs,
+        IEnumerable<WatershedRunoffTerminal> terminals, RunoffMaterialContinuation? continuation)
     {
         ArgumentNullException.ThrowIfNull(network);
         ArgumentNullException.ThrowIfNull(mapping);
@@ -34,7 +42,14 @@ public sealed class WatershedRunoffRequest
         Material = material;
         Inputs = ReadBounded(inputs, input => input.BasinId);
         Terminals = ReadBounded(terminals, terminal => terminal.BasinId);
-        _contentHash = new(() => ContentHash.Compute(Production?.SupportsConsumption == true
+        ContinuationQualification = continuation;
+        if (production?.IsContinued == true)
+        {
+            (continuation ?? throw new ArgumentException("Use the actual continued capacity owner to create a runoff request."))
+                .Validate(WatershedRunoffDomain.From(this), production);
+        }
+        _contentHash = new(() => ContentHash.Compute(Production?.IsContinued == true ? WatershedRunoffCodecV3.EncodeRequest(this)
+            : Production?.SupportsConsumption == true
             ? WatershedRunoffCodecV2.EncodeRequest(this) : WatershedRunoffCodecV1.EncodeRequest(this)));
     }
 
@@ -50,6 +65,7 @@ public sealed class WatershedRunoffRequest
     public ReadOnlyCollection<WatershedRunoffInput> Inputs { get; }
     public ReadOnlyCollection<WatershedRunoffTerminal> Terminals { get; }
     public ContentHash ContentHash => _contentHash.Value;
+    internal RunoffMaterialContinuation? ContinuationQualification { get; }
 
     private static ReadOnlyCollection<T> ReadBounded<T>(IEnumerable<T> values, Func<T, EntityId> identity) where T : class
     {

@@ -17,7 +17,7 @@ public static class WatershedRunoffCapacityCodecV1
 
     public static byte[] Encode(WatershedRunoffCapacityState state) => EncodeCapacity(state, consumption: false);
 
-    internal static byte[] EncodeCapacity(WatershedRunoffCapacityState state, bool consumption)
+    internal static byte[] EncodeCapacity(WatershedRunoffCapacityState state, bool consumption, bool continued = false)
     {
         ArgumentNullException.ThrowIfNull(state);
         int stride = CommitmentHeaderByteLength + state.Domain.Network.Basins.Count * InputByteLength;
@@ -48,8 +48,8 @@ public static class WatershedRunoffCapacityCodecV1
             BinaryPrimitives.WriteUInt64BigEndian(row[40..], receiver.ProjectedVolume.Value);
             BinaryPrimitives.WriteUInt64BigEndian(row[48..], receiver.Capacity.Value);
         }
-        var bytes = CanonicalEncodingV1.Frame(consumption ? "geography.watershed.runoff-capacity.v2" : "geography.watershed.runoff-capacity.v1", EncodeDomain(state.Domain),
-            AuthorityEncodingV1.Encode(state.Inventory), GeographyProductionCodec.Encode(state.Production, consumption),
+        var bytes = CanonicalEncodingV1.Frame(continued ? "geography.watershed.runoff-capacity.v3" : consumption ? "geography.watershed.runoff-capacity.v2" : "geography.watershed.runoff-capacity.v1", EncodeDomain(state.Domain),
+            AuthorityEncodingV1.Encode(state.Inventory), GeographyProductionCodec.Encode(state.Production, consumption, continued),
             EncodeRevision(state.Revision), pending, closed, receivers);
         if (bytes.Length > MaximumEncodedByteLength)
         {
@@ -61,16 +61,17 @@ public static class WatershedRunoffCapacityCodecV1
     public static WatershedRunoffCapacityState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
         DecodeCapacity(bytes, cancellationToken, consumption: false);
 
-    internal static WatershedRunoffCapacityState DecodeCapacity(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption)
+    internal static WatershedRunoffCapacityState DecodeCapacity(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption,
+        GeographyProductionDependencies? dependencies = null)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
-            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 8, consumption ? "geography.watershed.runoff-capacity.v2"u8 : "geography.watershed.runoff-capacity.v1"u8);
+            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 8, dependencies is not null ? "geography.watershed.runoff-capacity.v3"u8 : consumption ? "geography.watershed.runoff-capacity.v2"u8 : "geography.watershed.runoff-capacity.v1"u8);
             var domain = DecodeDomain(reader.ReadField(MaximumDomainByteLength), cancellationToken);
             var inventory = AuthorityEncodingV1.Decode(reader.ReadField(AuthorityEncodingV1.MaximumStateByteLength));
             var productionBytes = reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength);
-            var production = GeographyProductionCodec.Decode(productionBytes, consumption);
+            var production = GeographyProductionCodec.Decode(productionBytes, consumption, dependencies);
             ulong revision = reader.ReadUnsigned64();
             int stride = CommitmentHeaderByteLength + domain.Network.Basins.Count * InputByteLength;
             var pendingBytes = reader.ReadField(WatershedRunoffCapacityState.MaximumPending * stride);
@@ -90,7 +91,7 @@ public static class WatershedRunoffCapacityCodecV1
                 var request = new WatershedRunoffRequest(domain.Network, domain.Mapping, inventory, production,
                     EntityId.FromBytes(row[..16]), domain.OwnerActorId, WatershedRunoffCodecV1.ReadInstant(row.Slice(16, 12)),
                     WatershedRunoffCodecV1.ReadInstant(row.Slice(28, 12)), domain.Material,
-                    WatershedRunoffCodecV1.ReadInputs(row[40..], cancellationToken), domain.Terminals);
+                    WatershedRunoffCodecV1.ReadInputs(row[40..], cancellationToken), domain.Terminals, dependencies?.Qualification);
                 pending.Add(planner.Prepare(request, cancellationToken));
             }
             List<EntityId> closed = [];
@@ -98,8 +99,8 @@ public static class WatershedRunoffCapacityCodecV1
             {
                 closed.Add(EntityId.FromBytes(closedBytes.Slice(offset, EntityId.ByteLength)));
             }
-            var state = new WatershedRunoffCapacityState(domain, inventory, production, revision, pending, closed);
-            if (!EncodeCapacity(state, consumption).AsSpan().SequenceEqual(bytes))
+            var state = new WatershedRunoffCapacityState(domain, inventory, production, revision, pending, closed, dependencies?.Qualification);
+            if (!EncodeCapacity(state, consumption, dependencies is not null).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The capacity archive differs from its canonical state and rederived obligations.");
             }

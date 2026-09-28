@@ -121,7 +121,10 @@ The archives make the new interpretation explicit:
 | Reservoir geometry and fill | V1 | [LiquidReservoirCodecV2](../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV2.cs) |
 | Scheduled reservoir transport | V1 | [ReservoirTransportCodecV2](../../src/OpenFantasy.Core/Geography/ReservoirTransportCodecV2.cs) |
 
-Each new archive retains the complete production V2 owner, even when its consumed collection is empty.
+These inline-history archives retain the complete production V2 owner, even when its consumed collection
+is empty. Qualified [continued liquid owners](liquid-material-continuation.md) use explicit geography V3
+frames with nested Production V3/V4/V5 dependencies instead. Terrain and reserved transport reject
+continued material owners; their inline formats do not grant continuation permission.
 An absent or legacy production owner cannot masquerade as that interpretation, and an older codec
 cannot drop consumed evidence. Nested tags, bounded reads and canonical reconstruction apply at each
 layer. Content hashes select the corresponding explicit archive. Independent component restore does

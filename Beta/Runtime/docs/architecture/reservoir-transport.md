@@ -94,8 +94,10 @@ The integrating world also checks fixed domain/geometry and monotone retained co
 rebinding already validated material actions. A transport plan's `ApplyTo` pins the entire owner hash,
 including its gate catalog, journal and processed calendar boundary.
 
-When capacity explicitly carries consumption-enabled production, reservoir and transport archives use
-their V2 formats and retain all nested evidence. Reconciliation preserves that interpretation and exact
+When capacity explicitly carries consumption-enabled inline production, reservoir and transport archives
+use their V2 formats and retain all nested evidence. Reserved transport rejects
+[continued material owners](liquid-material-continuation.md); its delivery requires a separately
+qualified custody transition. Reconciliation preserves the inline interpretation and exact
 prior consumption claims; consuming unreserved receiver stock does not erase scheduled funding or
 release a source hold. This [component composition](item-consumption.md#composed-material-evidence)
 does not enable consumption in an older complete-world profile.

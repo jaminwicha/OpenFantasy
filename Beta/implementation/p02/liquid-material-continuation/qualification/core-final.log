@@ -1,0 +1,15 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:03.21]     OpenFantasy.Core.Tests.Production.ProductionContinuationBoundaryTests.Runoff_and_nested_archive_do_not_silently_drop_the_imported_context [FAIL]
+  Failed OpenFantasy.Core.Tests.Production.ProductionContinuationBoundaryTests.Runoff_and_nested_archive_do_not_silently_drop_the_imported_context [1 ms]
+  Error Message:
+   System.ArgumentException : Use the actual continued capacity owner to create a runoff request.
+  Stack Trace:
+     at OpenFantasy.Core.Geography.WatershedRunoffRequest..ctor(PreparedWatershedNetwork network, WatershedTerrainMapping mapping, CountedAuthorityState inventory, ProductionSnapshot production, EntityId reservationId, EntityId ownerActorId, WorldInstant start, WorldInstant end, ItemPhysicalBinding material, IEnumerable`1 inputs, IEnumerable`1 terminals, RunoffMaterialContinuation continuation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffRequest.cs:line 48
+   at OpenFantasy.Core.Geography.WatershedRunoffRequest..ctor(PreparedWatershedNetwork network, WatershedTerrainMapping mapping, CountedAuthorityState inventory, ProductionSnapshot production, EntityId reservationId, EntityId ownerActorId, WorldInstant start, WorldInstant end, ItemPhysicalBinding material, IEnumerable`1 inputs, IEnumerable`1 terminals) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffRequest.cs:line 17
+   at OpenFantasy.Core.Tests.Production.ProductionContinuationBoundaryTests.Runoff_and_nested_archive_do_not_silently_drop_the_imported_context() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/ProductionContinuationBoundaryTests.cs:line 46
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/liquid-material-continuation/qualification/core-final.trx
+
+Failed!  - Failed:     1, Passed:  1513, Skipped:     0, Total:  1514, Duration: 38 s - OpenFantasy.Core.Tests.dll (net8.0)

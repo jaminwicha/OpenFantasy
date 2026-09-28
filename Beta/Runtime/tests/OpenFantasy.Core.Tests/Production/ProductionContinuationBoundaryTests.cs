@@ -41,17 +41,25 @@ namespace OpenFantasy.Core.Tests.Production
             var original = new WatershedRunoffPlanner().Prepare(request, TestContext.Current.CancellationToken);
             byte[] before = WatershedRunoffCodecV1.Encode(original);
             var inventory = request.Inventory;
-            var production = new ProductionSnapshot(inventory.WorldId, inventory.BranchId, 0, [], [], [])
-                .Continue(inventory);
-            var proposed = new WatershedRunoffRequest(request.Network, request.Mapping, inventory, production,
+            var inline = new ProductionSnapshot(inventory.WorldId, inventory.BranchId, 0, [], [], []);
+            var production = inline.Continue(inventory);
+            var admission = Assert.Throws<ArgumentException>(() => new WatershedRunoffRequest(request.Network, request.Mapping, inventory, production,
+                request.ReservationId, request.OwnerActorId, request.Start, request.End, request.Material,
+                request.Inputs, request.Terminals));
+            Assert.StartsWith("Use the actual continued capacity owner to create a runoff request.", admission.Message);
+
+            var qualifiedRequest = new WatershedRunoffRequest(request.Network, request.Mapping, inventory, inline,
                 request.ReservationId, request.OwnerActorId, request.Start, request.End, request.Material,
                 request.Inputs, request.Terminals);
-
-            var admission = Assert.Throws<ArgumentException>(() => new WatershedRunoffPlanner()
-                .Prepare(proposed, TestContext.Current.CancellationToken));
-            Assert.StartsWith("Runoff admission requires complete inline production history.", admission.Message);
-            var encoding = Assert.Throws<ArgumentException>(() => _ = proposed.ContentHash);
+            var capacity = WatershedRunoffCapacityState.Create(new WatershedRunoffPlanner()
+                .Prepare(qualifiedRequest, TestContext.Current.CancellationToken));
+            capacity = capacity.PlanContinue(TestContext.Current.CancellationToken).ApplyTo(capacity);
+            var continuedRunoff = Assert.Single(capacity.Pending);
+            var encoding = Assert.Throws<ArgumentException>(() => WatershedRunoffCodecV1.Encode(continuedRunoff));
             Assert.StartsWith("Geography archives require complete inline production history.", encoding.Message);
+            byte[] explicitBytes = WatershedRunoffCodecV3.Encode(continuedRunoff);
+            Assert.Equal(explicitBytes, WatershedRunoffCodecV3.Encode(WatershedRunoffCodecV3.Decode(explicitBytes,
+                new GeographyProductionDependencies(capacity), TestContext.Current.CancellationToken)));
             Assert.Equal(before, WatershedRunoffCodecV1.Encode(original));
         }
 

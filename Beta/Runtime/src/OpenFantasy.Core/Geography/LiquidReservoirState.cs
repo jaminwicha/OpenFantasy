@@ -13,7 +13,8 @@ public sealed class LiquidReservoirState
     public const int MaximumTotalColumns = 4096;
     private readonly Lazy<ContentHash> _contentHash;
 
-    private LiquidReservoirState(WatershedRunoffCapacityState capacity, IEnumerable<ReservoirGeometry> geometries)
+    private LiquidReservoirState(WatershedRunoffCapacityState capacity, IEnumerable<ReservoirGeometry> geometries,
+        IReadOnlyList<ContentHash>? qualifiedGeometryHashes = null)
     {
         ArgumentNullException.ThrowIfNull(capacity);
         ArgumentNullException.ThrowIfNull(geometries);
@@ -27,9 +28,15 @@ public sealed class LiquidReservoirState
             throw new ArgumentException("Reservoir ownership and total geometric support must be unique and bounded.");
         }
         Geometries = copy.OrderBy(g => g.ReservoirId).ToList().AsReadOnly();
+        if (capacity.Production?.IsContinued == true && (qualifiedGeometryHashes is null
+            || !Geometries.Select(value => value.ContentHash).SequenceEqual(qualifiedGeometryHashes)))
+        {
+            throw new ArgumentException("Continued reservoirs must retain the exact geometries qualified by their actual prior owner.");
+        }
         ValidateRolesAndSupport();
         Projections = Geometries.Select(Project).ToList().AsReadOnly();
-        _contentHash = new(() => ContentHash.Compute(Capacity.Production?.SupportsConsumption == true
+        _contentHash = new(() => ContentHash.Compute(Capacity.Production?.IsContinued == true ? LiquidReservoirCodecV3.Encode(this)
+            : Capacity.Production?.SupportsConsumption == true
             ? LiquidReservoirCodecV2.Encode(this) : LiquidReservoirCodecV1.Encode(this)));
     }
 
@@ -41,11 +48,15 @@ public sealed class LiquidReservoirState
     public static LiquidReservoirState Create(WatershedRunoffCapacityState capacity, IEnumerable<ReservoirGeometry> geometries) =>
         new(capacity, geometries);
 
+    internal static LiquidReservoirState RestoreContinued(WatershedRunoffCapacityState capacity,
+        IEnumerable<ReservoirGeometry> geometries, GeographyProductionDependencies dependencies) =>
+        new(capacity, geometries, dependencies.ReservoirGeometryHashes);
+
     public LiquidReservoirPlan PlanApply(WatershedRunoffCapacityPlan capacityPlan)
     {
         ArgumentNullException.ThrowIfNull(capacityPlan);
         var next = capacityPlan.ApplyTo(Capacity);
-        return new(this, new(next, Geometries));
+        return new(this, new(next, Geometries, Geometries.Select(value => value.ContentHash).ToArray()));
     }
 
     private void ValidateRolesAndSupport()

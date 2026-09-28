@@ -29,7 +29,16 @@ internal sealed class ConstructionContinuationFixture
     internal static readonly EntityId Movable = Id(7);
     internal static readonly EntityId RecraftId = Id(8);
     internal static readonly EntityId UnreservedWood = Id(9);
-    private static readonly Lazy<LegacyBoundary> EarnedBoundary = new(EarnBoundary);
+    internal static readonly EntityId LiquidReceiver = Id(10);
+    internal static readonly EntityId LiquidRunoffReservation = Id(11);
+    private static readonly Lazy<LegacyBoundary> EarnedBoundary = new(() => EarnBoundary());
+    private static readonly Lazy<LegacyBoundary> EarnedLiquidBoundary = new(() => EarnBoundary(withLiquidReceiver: true));
+    private static readonly Lazy<ConstructionContinuationFixture> EarnedLiquidReady = new(() =>
+    {
+        var journey = new ConstructionContinuationFixture(withLiquidReceiver: true);
+        journey.WorkUntil(199);
+        return journey;
+    });
     private static readonly Lazy<ConstructionContinuationFixture> EarnedReady = new(() =>
     {
         var journey = new ConstructionContinuationFixture();
@@ -39,11 +48,11 @@ internal sealed class ConstructionContinuationFixture
     private readonly HashSet<EntityId> _occupied;
     private ulong _next = 100_000;
 
-    internal ConstructionContinuationFixture(bool readyToComplete = false)
+    internal ConstructionContinuationFixture(bool readyToComplete = false, bool withLiquidReceiver = false)
     {
         if (readyToComplete)
         {
-            var ready = EarnedReady.Value;
+            var ready = withLiquidReceiver ? EarnedLiquidReady.Value : EarnedReady.Value;
             SourceWorld = ready.SourceWorld;
             LegacyWorld = ready.LegacyWorld;
             Inventory = ready.Inventory;
@@ -54,7 +63,7 @@ internal sealed class ConstructionContinuationFixture
             _next = ready._next;
             return;
         }
-        var boundary = EarnedBoundary.Value;
+        var boundary = withLiquidReceiver ? EarnedLiquidBoundary.Value : EarnedBoundary.Value;
         SourceWorld = boundary.World;
         LegacyWorld = boundary.World;
         Inventory = SourceWorld.Inventory;
@@ -195,23 +204,34 @@ internal sealed class ConstructionContinuationFixture
         return Production.Lots.Single(value => value.LotId == EntityId.DeriveSpawned(command, 1));
     }
 
-    private static LegacyBoundary EarnBoundary()
+    private static LegacyBoundary EarnBoundary(bool withLiquidReceiver = false)
     {
         var quest = QuestFixture.Create(funds: 400);
         var basis = quest.World;
         var original = basis.Inventory;
+        IEnumerable<CustodianStorage> storages = original.Custody.Storages.Append(new(StoreB, 6, 0));
+        IEnumerable<CustodianAccessPolicy> policies = original.Policies.Select(value => new CustodianAccessPolicy(
+            value.CustodianId, value.OwnerActorId, CustodyDepositRule.AnyControlledActor))
+            .Append(new(StoreB, Builder, CustodyDepositRule.AnyControlledActor));
+        IEnumerable<EntityId> reservations = original.ReservationIds.Append(ReserveB);
+        if (withLiquidReceiver)
+        {
+            reservations = reservations.Append(LiquidRunoffReservation);
+            // This unused receiver is part of fresh admission before quest funding or work.
+            storages = storages.Append(new(LiquidReceiver, 64, 0));
+            policies = policies.Append(new(LiquidReceiver, Builder, CustodyDepositRule.OwnerOnly));
+        }
         var inventory = new CountedAuthorityState(new(original.WorldId, original.BranchId, 0,
-            original.Custody.Storages.Append(new(StoreB, 6, 0)),
+            storages,
             original.Custody.Lots.Concat([
                 new CountedSourceLot(WoodB, AdmissionFixture.Id(60), AdmissionFixture.Material, new(Id(20), 0, 6), 0),
                 new CountedSourceLot(Movable, AdmissionFixture.Id(60), AdmissionFixture.Material, new(Id(21), 0, 1), 0),
                 new CountedSourceLot(UnreservedWood, AdmissionFixture.Id(61), AdmissionFixture.Material, new(Id(22), 0, 6), 0)])),
             original.AdmittedUnitCapacity + 13, original.Actors, original.Controls,
-            original.Policies.Select(value => new CustodianAccessPolicy(value.CustodianId, value.OwnerActorId,
-                CustodyDepositRule.AnyControlledActor)).Append(new(StoreB, Builder, CustodyDepositRule.AnyControlledActor)),
+            policies,
             original.Sources.Concat([new AdmittedCountedSource(Id(20), AdmissionFixture.Material, 6),
                 new AdmittedCountedSource(Id(21), AdmissionFixture.Material, 1),
-                new AdmittedCountedSource(Id(22), AdmissionFixture.Material, 6)]), original.ReservationIds.Append(ReserveB));
+                new AdmittedCountedSource(Id(22), AdmissionFixture.Material, 6)]), reservations);
         var second = new DeliveryQuestDefinition(QuestB, "second_guard", "Second guard", "Bring six more wood.",
             Builder, 1, AdmissionFixture.Material, 6, StoreB, ReserveB, quest.Definition.Reward);
         var quests = new QuestSnapshot(basis.WorldId, basis.BranchId, 0, [quest.Definition, second], []);

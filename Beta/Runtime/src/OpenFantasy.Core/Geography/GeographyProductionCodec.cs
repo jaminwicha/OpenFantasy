@@ -5,8 +5,18 @@ namespace OpenFantasy.Core.Geography;
 /// <summary>Selects an explicit production interpretation without silently upgrading retained geography.</summary>
 internal static class GeographyProductionCodec
 {
-    internal static byte[] Encode(ProductionSnapshot? production, bool consumption)
+    internal static byte[] Encode(ProductionSnapshot? production, bool consumption, bool continued = false)
     {
+        if (continued)
+        {
+            if (production?.Continuation is not { } context || production.SupportsConsumption != consumption)
+            {
+                throw new ArgumentException("Continued geography requires its exact explicit production capability.", nameof(production));
+            }
+            return context.SupportsConstruction ? ProductionCodecV5.Encode(production)
+                : context.SupportsMaterialOperations ? ProductionCodecV4.Encode(production)
+                : ProductionCodecV3.Encode(production);
+        }
         if (production?.IsContinued == true)
         {
             throw new ArgumentException("Geography archives require complete inline production history.", nameof(production));
@@ -18,8 +28,17 @@ internal static class GeographyProductionCodec
         return production is null ? [] : consumption ? ProductionCodecV2.Encode(production) : ProductionCodecV1.Encode(production);
     }
 
-    internal static ProductionSnapshot? Decode(ReadOnlySpan<byte> bytes, bool consumption)
+    internal static ProductionSnapshot? Decode(ReadOnlySpan<byte> bytes, bool consumption,
+        GeographyProductionDependencies? dependencies = null)
     {
+        if (dependencies is not null)
+        {
+            if (dependencies.Context.SupportsConsumption != consumption)
+            {
+                throw new FormatException("Continued geography requires the exact production capability.");
+            }
+            return dependencies.Decode(bytes);
+        }
         if (bytes.IsEmpty)
         {
             if (consumption)

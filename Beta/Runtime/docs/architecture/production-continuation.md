@@ -146,10 +146,13 @@ small live window implies unlimited archive storage or qualified production thro
 World admission requires one coordinated interpretation for material retirement, care causes and
 resource effects. Terrain/excavation coverage, installed construction ingredients, nested liquid
 reservations and new source issuance must recognize the same boundary. Existing world, construction,
-terrain/runoff, source delivery, excavation and restorative-use entrypoints refuse unsupported
+terrain, source delivery, excavation and restorative-use entrypoints refuse unsupported
 continued owners explicitly; legacy geography encoders cannot discard their context. The explicit
 material adapters provide standalone source/custody composition, while the separate V5 construction
-adapter qualifies reserved completion and physical candidates. Neither enables those world paths.
+adapter qualifies reserved completion and physical candidates. The explicit
+[liquid continuation](liquid-material-continuation.md) contracts preserve runoff obligations and
+reservoir ownership through cuts, with nested context-bound codecs. These adapters do not enable
+continued world paths or reserved gate transport.
 
 The complete protocol must schedule before accepted obligations lose headroom, preserve captured
 command meanings, publish archive/receipt/identity/head changes atomically and recover from actual

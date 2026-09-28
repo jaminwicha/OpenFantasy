@@ -1,6 +1,8 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
 
 namespace OpenFantasy.Core.Geography;
@@ -14,13 +16,14 @@ public sealed class WatershedRunoffCapacityState
 
     internal WatershedRunoffCapacityState(WatershedRunoffDomain domain, CountedAuthorityState inventory,
         ProductionSnapshot? production, ulong revision, IEnumerable<PreparedWatershedRunoff> pending,
-        IEnumerable<EntityId> closed)
+        IEnumerable<EntityId> closed, RunoffMaterialContinuation? continuation = null)
     {
         Domain = domain;
         Inventory = inventory;
         Production = production;
         Revision = revision;
-        domain.ValidateAuthority(inventory, production);
+        ContinuationQualification = continuation;
+        domain.ValidateAuthority(inventory, production, continuation);
         domain.ValidateReceivers(inventory, production);
         Pending = pending.Take(MaximumPending + 1).OrderBy(p => p.Request.ReservationId).ToList().AsReadOnly();
         Closed = closed.Take(MaximumClosed + 1).Order().ToList().AsReadOnly();
@@ -36,7 +39,8 @@ public sealed class WatershedRunoffCapacityState
             ValidateBasis(runoff);
         }
         Receivers = AggregateReceivers().ToList().AsReadOnly();
-        _contentHash = new(() => ContentHash.Compute(Production?.SupportsConsumption == true
+        _contentHash = new(() => ContentHash.Compute(Production?.IsContinued == true ? WatershedRunoffCapacityCodecV3.Encode(this)
+            : Production?.SupportsConsumption == true
             ? WatershedRunoffCapacityCodecV2.Encode(this) : WatershedRunoffCapacityCodecV1.Encode(this)));
     }
 
@@ -48,17 +52,25 @@ public sealed class WatershedRunoffCapacityState
     public ReadOnlyCollection<EntityId> Closed { get; }
     public ReadOnlyCollection<WatershedRunoffReceiverTotal> Receivers { get; }
     public ContentHash ContentHash => _contentHash.Value;
+    internal RunoffMaterialContinuation? ContinuationQualification { get; }
 
     public static WatershedRunoffCapacityState Create(PreparedWatershedRunoff first)
     {
         ArgumentNullException.ThrowIfNull(first);
-        return new(WatershedRunoffDomain.From(first.Request), first.Request.Inventory, first.Request.Production, 0, [first], []);
+        return new(WatershedRunoffDomain.From(first.Request), first.Request.Inventory, first.Request.Production, 0, [first], [],
+            first.Request.ContinuationQualification);
     }
+
+    /// <summary>Creates another forcing request within this exact admitted domain and material context.</summary>
+    public WatershedRunoffRequest CreateRequest(EntityId reservationId, WorldInstant start, WorldInstant end,
+        IEnumerable<WatershedRunoffInput> inputs) =>
+        new(Domain.Network, Domain.Mapping, Inventory, Production, reservationId, Domain.OwnerActorId,
+            start, end, Domain.Material, inputs, Domain.Terminals, ContinuationQualification);
 
     public WatershedRunoffCapacityPlan PlanAdmit(PreparedWatershedRunoff runoff)
     {
         ArgumentNullException.ThrowIfNull(runoff);
-        return new(this, new(Domain, Inventory, Production, checked(Revision + 1), Pending.Append(runoff), Closed));
+        return new(this, new(Domain, Inventory, Production, checked(Revision + 1), Pending.Append(runoff), Closed, ContinuationQualification));
     }
 
     /// <summary>Releases capacity only. Held source stock retains its existing reservation metadata.</summary>
@@ -69,7 +81,30 @@ public sealed class WatershedRunoffCapacityState
             throw new ArgumentException("Only an active forcing commitment can be canceled.");
         }
         return new(this, new(Domain, Inventory, Production, checked(Revision + 1),
-            Pending.Where(p => p.Request.ReservationId != reservationId), Closed.Append(reservationId)));
+            Pending.Where(p => p.Request.ReservationId != reservationId), Closed.Append(reservationId), ContinuationQualification));
+    }
+
+    /// <summary>Captures this exact closing material owner without advancing capacity or changing any pending obligation.</summary>
+    public WatershedRunoffCapacityPlan PlanContinue(CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return PlanContinuation(RequireProduction().Continue(Inventory), cancellationToken);
+    }
+
+    /// <summary>Explicitly selects ordered material continuation from this owner's actual closing inventory and production.</summary>
+    public WatershedRunoffCapacityPlan PlanContinueMaterial(GatheringSnapshot? gathering = null,
+        CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return PlanContinuation(RequireProduction().ContinueMaterial(Inventory, gathering), cancellationToken);
+    }
+
+    /// <summary>Explicitly selects construction-capable continuation using its exact admitted material boundary.</summary>
+    public WatershedRunoffCapacityPlan PlanContinueConstruction(MaterialConstructionState state,
+        GatheringSnapshot? gathering = null, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        return PlanContinuation(RequireProduction().ContinueConstruction(Inventory, state, gathering), cancellationToken);
     }
 
     public WatershedRunoffCapacityPlan PlanReconcile(CountedAuthorityState inventory, ProductionSnapshot? production,
@@ -87,22 +122,79 @@ public sealed class WatershedRunoffCapacityState
             throw new ArgumentException("Reconciliation requires advancing custody with unchanged scope and admission.");
         }
         ValidateProductionSuccessor(production);
+        var refreshed = Reprepare(inventory, production, ContinuationQualification, cancellationToken);
+        cancellationToken.ThrowIfCancellationRequested();
+        return new(this, new(Domain, inventory, production, checked(Revision + 1), refreshed, Closed, ContinuationQualification));
+    }
+
+    private ProductionSnapshot RequireProduction() => Production
+        ?? throw new ArgumentException("Material continuation requires an explicit production owner.");
+
+    private WatershedRunoffCapacityPlan PlanContinuation(ProductionSnapshot production, CancellationToken cancellation)
+    {
+        var continuation = RunoffMaterialContinuation.Capture(this, production);
+        var refreshed = Reprepare(Inventory, production, continuation, cancellation);
+        var next = new WatershedRunoffCapacityState(Domain, Inventory, production, Revision, refreshed, Closed, continuation);
+        if (next.Inventory.ContentHash != Inventory.ContentHash || next.Domain.ContentHash != Domain.ContentHash
+            || next.Revision != Revision || production.Revision != Production!.Revision
+            || production.SupportsConsumption != Production.SupportsConsumption
+            || !next.Closed.SequenceEqual(Closed) || !next.Receivers.SequenceEqual(Receivers)
+            || next.Pending.Count != Pending.Count)
+        {
+            throw new ArgumentException("A material cut must preserve exact capacity ownership and receiving projections.");
+        }
+        for (int index = 0; index < Pending.Count; index++)
+        {
+            cancellation.ThrowIfCancellationRequested();
+            var prior = Pending[index];
+            var continued = next.Pending[index];
+            if (prior.Request.ReservationId != continued.Request.ReservationId
+                || prior.Request.Start != continued.Request.Start || prior.Request.End != continued.Request.End
+                || !prior.Request.Inputs.SequenceEqual(continued.Request.Inputs)
+                || !prior.Request.Terminals.SequenceEqual(continued.Request.Terminals)
+                || prior.TotalInputUnits != continued.TotalInputUnits || prior.TotalInputVolume != continued.TotalInputVolume
+                || !prior.Terminals.SequenceEqual(continued.Terminals) || !prior.Receivers.SequenceEqual(continued.Receivers))
+            {
+                throw new ArgumentException("A material cut cannot alter a pending forcing obligation.");
+            }
+            foreach (var basin in Domain.Network.Basins)
+            {
+                cancellation.ThrowIfCancellationRequested();
+                foreach (var column in basin.Columns)
+                {
+                    if (prior.ContributingUnits(basin.BasinId, column.Index) != continued.ContributingUnits(basin.BasinId, column.Index))
+                    {
+                        throw new ArgumentException("A material cut cannot alter retained runoff contributions.");
+                    }
+                }
+            }
+        }
+        cancellation.ThrowIfCancellationRequested();
+        return new(this, next);
+    }
+
+    private List<PreparedWatershedRunoff> Reprepare(CountedAuthorityState inventory, ProductionSnapshot? production,
+        RunoffMaterialContinuation? continuation, CancellationToken cancellation)
+    {
         var planner = new WatershedRunoffPlanner();
         var refreshed = new List<PreparedWatershedRunoff>();
         foreach (var pending in Pending)
         {
-            cancellationToken.ThrowIfCancellationRequested();
+            cancellation.ThrowIfCancellationRequested();
             var request = pending.Request;
             refreshed.Add(planner.Prepare(new(Domain.Network, Domain.Mapping, inventory, production, request.ReservationId,
-                Domain.OwnerActorId, request.Start, request.End, Domain.Material, request.Inputs, Domain.Terminals), cancellationToken));
+                Domain.OwnerActorId, request.Start, request.End, Domain.Material, request.Inputs, Domain.Terminals, continuation), cancellation));
         }
-        cancellationToken.ThrowIfCancellationRequested();
-        return new(this, new(Domain, inventory, production, checked(Revision + 1), refreshed, Closed));
+        return refreshed;
     }
 
     /// <summary>Internal completion publication after the transport planner moves the entire exact funding bill.</summary>
     internal WatershedRunoffCapacityPlan PlanComplete(EntityId reservationId, CountedAuthorityState inventory)
     {
+        if (Production?.IsContinued == true)
+        {
+            throw new ArgumentException("Reserved runoff completion requires its own joined material continuation contract.");
+        }
         if (!Pending.Any(p => p.Request.ReservationId == reservationId) || inventory.Custody.Revision <= Inventory.Custody.Revision
             || Inventory.WithCustody(inventory.Custody).ContentHash != inventory.ContentHash
             || inventory.Custody.Lots.Any(l => l.ReservedBy == reservationId))

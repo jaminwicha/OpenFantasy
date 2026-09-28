@@ -1,0 +1,262 @@
+{
+  "recordedUtc": "2026-09-28T06:41:54.934897+00:00",
+  "scope": "Standalone runoff, capacity and reservoir material continuation; legacy complete-world guards retained.",
+  "baseCommit": "d65d3e117c56181b139b970521503bceb8104a78",
+  "milestone": "codex/milestone-liquid-material-continuation",
+  "build": {
+    "final": "build-03.log",
+    "exitCode": 0,
+    "warnings": 0,
+    "errors": 0,
+    "retainedInitialFailure": "build-01.log"
+  },
+  "tests": {
+    "legacy-before": {
+      "report": "legacy-before.trx",
+      "log": "legacy-before.log",
+      "counters": {
+        "total": 30,
+        "executed": 30,
+        "passed": 30,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T01:11:08.5140310-05:00",
+        "queuing": "2026-09-28T01:11:08.5140310-05:00",
+        "start": "2026-09-28T01:11:05.4631050-05:00",
+        "finish": "2026-09-28T01:11:10.2854210-05:00"
+      },
+      "exitCode": 0
+    },
+    "legacy-consumption-before": {
+      "report": "legacy-consumption-before.trx",
+      "log": "legacy-consumption-before.log",
+      "counters": {
+        "total": 3,
+        "executed": 3,
+        "passed": 3,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T01:12:22.8251070-05:00",
+        "queuing": "2026-09-28T01:12:22.8251070-05:00",
+        "start": "2026-09-28T01:12:20.4080580-05:00",
+        "finish": "2026-09-28T01:12:22.8305060-05:00"
+      },
+      "exitCode": 0
+    },
+    "focused-02": {
+      "report": "focused-02.trx",
+      "log": "focused-02.log",
+      "counters": {
+        "total": 23,
+        "executed": 23,
+        "passed": 23,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T01:28:51.5462840-05:00",
+        "queuing": "2026-09-28T01:28:51.5462840-05:00",
+        "start": "2026-09-28T01:28:49.5655470-05:00",
+        "finish": "2026-09-28T01:28:53.9763340-05:00"
+      },
+      "exitCode": 0
+    },
+    "core-final": {
+      "report": "core-final.trx",
+      "log": "core-final.log",
+      "counters": {
+        "total": 1514,
+        "executed": 1514,
+        "passed": 1513,
+        "failed": 1,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T01:29:58.6510640-05:00",
+        "queuing": "2026-09-28T01:29:58.6510640-05:00",
+        "start": "2026-09-28T01:29:57.0226780-05:00",
+        "finish": "2026-09-28T01:30:36.8126200-05:00"
+      },
+      "exitCode": 1
+    },
+    "core-final-03": {
+      "report": "core-final-03.trx",
+      "log": "core-final-03.log",
+      "counters": {
+        "total": 1514,
+        "executed": 1514,
+        "passed": 1514,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T01:33:03.4356690-05:00",
+        "queuing": "2026-09-28T01:33:03.4356690-05:00",
+        "start": "2026-09-28T01:33:01.4830110-05:00",
+        "finish": "2026-09-28T01:33:42.3869390-05:00"
+      },
+      "exitCode": 0
+    },
+    "hosting-final": {
+      "report": "hosting-final.trx",
+      "log": "hosting-final.log",
+      "counters": {
+        "total": 238,
+        "executed": 238,
+        "passed": 238,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T01:34:13.1199110-05:00",
+        "queuing": "2026-09-28T01:34:13.1199110-05:00",
+        "start": "2026-09-28T01:34:09.0351030-05:00",
+        "finish": "2026-09-28T01:35:29.6347020-05:00"
+      },
+      "exitCode": 0
+    }
+  },
+  "distinctFinalRegressionPasses": 1752,
+  "newCasesIncludedInFullCore": 23,
+  "hostingSelection": {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "--filter",
+      "FullyQualifiedName~Reservoir|FullyQualifiedName~Runoff|FullyQualifiedName~Liquid|FullyQualifiedName~Watershed|FullyQualifiedName~Production|FullyQualifiedName~Construction",
+      "--logger",
+      "trx;LogFileName=hosting-final.trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/liquid-material-continuation/qualification"
+    ],
+    "scope": "Existing affected material,geography,construction and production admission/recovery; no new world/profile/native contract."
+  },
+  "compatibility": {
+    "report": "legacy-comparison-final.json",
+    "preChangeFixtures": 23,
+    "totalBytes": 4076295,
+    "allExact": true,
+    "baselineExecutedBeforeRebuild": true
+  },
+  "pins": {
+    "source-pins-03.json": {
+      "checkedFiles": 1208,
+      "unchanged": true
+    },
+    "execution-pins-03.json": {
+      "checkedFiles": 15,
+      "unchanged": true
+    }
+  },
+  "sourceInventory": {
+    "count": 1208,
+    "includesEveryRuntimeCSharpFile": true,
+    "csharpFiles": 1134,
+    "scope": "C# source, csproj, props, targets, sln and JSON files; not all Godot scenes or art assets."
+  },
+  "preservation": {
+    "checkpoint": "codex/checkpoint-before-liquid-material-continuation-20260928T060945Z",
+    "checkpointMatchesBase": true,
+    "frozenSpecsUnchanged": 23,
+    "priorMilestonesUnchanged": 66,
+    "unrelatedStagedFiles": 19,
+    "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "independentReview": {
+    "report": "../REVIEW.md",
+    "route": "native critic",
+    "sourceOnly": true,
+    "remainingActionableFindings": 0,
+    "humanAcceptance": false
+  },
+  "limits": [
+    "No continued complete-world admission, new Host writer/schema or native presentation binding.",
+    "Terrain representation, reserved transport and excavation need typed joined operations; guards remain.",
+    "Pending coarse runoff remains incompatible with detailed cell placement; allocated consumption/recrafting cannot silently rebind.",
+    "Supplied actual-owner dependencies are not authenticated durable archive retrieval.",
+    "Complete material/care/resource closure, permanent historical identity lookup and durable construction work resume remain required.",
+    "No new process-kill, native, performance, multiplayer, platform, art or human acceptance; all full production gates remain open."
+  ],
+  "thresholdsRelaxed": false,
+  "claudeRetry": false,
+  "creditSavingsClaimed": false,
+  "documents": {
+    "linkReport": "document-links.json",
+    "checkedLocalLinks": 968,
+    "brokenLocalLinks": 0,
+    "anchorsChecked": false
+  }
+}

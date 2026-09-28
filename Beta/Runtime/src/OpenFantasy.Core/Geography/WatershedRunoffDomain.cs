@@ -53,8 +53,18 @@ public sealed class WatershedRunoffDomain
     internal static WatershedRunoffDomain From(WatershedRunoffRequest request) =>
         new(request.Network, request.Mapping, request.OwnerActorId, request.Material, request.Terminals);
 
-    internal void ValidateAuthority(CountedAuthorityState inventory, ProductionSnapshot? production)
+    internal void ValidateAuthority(CountedAuthorityState inventory, ProductionSnapshot? production,
+        RunoffMaterialContinuation? continuation = null)
     {
+        if (production?.IsContinued == true)
+        {
+            (continuation ?? throw new ArgumentException("Continued runoff requires an actual admitted domain cut."))
+                .Validate(this, production);
+        }
+        else if (continuation is not null)
+        {
+            throw new ArgumentException("Runoff continuation qualification cannot replace its production capability.");
+        }
         var network = Network;
         if (inventory.WorldId != network.Scope.WorldId || inventory.BranchId != network.Scope.BranchId
             || !inventory.Actors.Contains(OwnerActorId)
@@ -78,16 +88,12 @@ public sealed class WatershedRunoffDomain
         }
         if (production is not null)
         {
-            if (production.IsContinued)
-            {
-                throw new ArgumentException("Runoff admission requires complete inline production history.", nameof(production));
-            }
             production.ValidateForAuthority(inventory);
             production.ValidateMaterialBinding(Material);
             if (production.ContainsIdentityMatching(network.MaterialIdentities.Contains)
                 || production.Revision > inventory.Custody.Revision
                 || production.Lots.Any(l => l.Revision > inventory.Custody.Revision)
-                || ProductionRetirementHistory.Retirements(production).Any(r => r.Ingredient.Revision >= inventory.Custody.Revision))
+                || ProductionRetirementHistory.CurrentRetirements(production).Any(r => r.Ingredient.Revision >= inventory.Custody.Revision))
             {
                 throw new ArgumentException("Production roles and revisions must agree with the runoff custody basis.");
             }

@@ -61,7 +61,7 @@ internal sealed class WatershedRunoffFunding
 
     private void ValidateScope()
     {
-        WatershedRunoffDomain.From(_request).ValidateAuthority(_request.Inventory, _request.Production);
+        WatershedRunoffDomain.From(_request).ValidateAuthority(_request.Inventory, _request.Production, _request.ContinuationQualification);
         if (!_request.Inventory.ReservationIds.Contains(_request.ReservationId))
         {
             throw new ArgumentException("The forcing reservation must be admitted by the complete authority.");

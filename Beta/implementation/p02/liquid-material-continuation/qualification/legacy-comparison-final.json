@@ -1,0 +1,120 @@
+{
+  "scope": "Exact pre-change qualified assemblies versus final passing1514case Core run; all23 retained V1/V2 fixtures unchanged.",
+  "files": {
+    "capacity/crafted-held.bin": {
+      "sha256": "a273fee5c78481ddde72a766f6ed3520504df32e692ead88692de3735f3439ea",
+      "bytes": 6595,
+      "identical": true
+    },
+    "capacity/empty-closed.bin": {
+      "sha256": "2d487fdacdd456528e454aed153fb6cc79f4adebc8481ad5b738e4f13d76c0d2",
+      "bytes": 4733,
+      "identical": true
+    },
+    "capacity/maximum-pending.bin": {
+      "sha256": "17cefce3b6a4d0fd3515dc93fb4f310f403ba05b96f1ef75c698ba1d669951e0",
+      "bytes": 12259,
+      "identical": true
+    },
+    "capacity/one-canceled.bin": {
+      "sha256": "8534280425cbcfed765e7a5cb5d4c7ab660c99256e77a64a07860814b94b43c8",
+      "bytes": 4989,
+      "identical": true
+    },
+    "capacity/two-held.bin": {
+      "sha256": "024b205d28871b94ee90f3265c0583dc1ef1b56d0823cbc956567dd4d14676d1",
+      "bytes": 5229,
+      "identical": true
+    },
+    "consumption/LiquidReservoirState-legacy.bin": {
+      "sha256": "87d14a90b32175ddd588b8414ff75db55f3d5601a5e6f8b30f74753c274fe792",
+      "bytes": 3765,
+      "identical": true
+    },
+    "consumption/LiquidReservoirState-new.bin": {
+      "sha256": "eed92549a93f4f49760cdd3617ce8e821dd4ec39e123f0b38fb64b88376f49db",
+      "bytes": 4422,
+      "identical": true
+    },
+    "consumption/PreparedWatershedRunoff-legacy.bin": {
+      "sha256": "03f2905668d24853b90d92b939913765b3055f8a767504e81f7f6510a453662d",
+      "bytes": 3041,
+      "identical": true
+    },
+    "consumption/PreparedWatershedRunoff-new.bin": {
+      "sha256": "1dea1341c7fef2be69508e877e97b12319ec26e8d5b8ff8138f96fa5a36d3199",
+      "bytes": 3698,
+      "identical": true
+    },
+    "consumption/ReservoirTransportState-legacy.bin": {
+      "sha256": "0e3bf967862db7b37827cda12e8a24ca8310dad848c854cb43123f694ad5f644",
+      "bytes": 4198,
+      "identical": true
+    },
+    "consumption/ReservoirTransportState-new.bin": {
+      "sha256": "7b5be738cd8b77f103be2bbf94e3c06960f31a6ae6dc9511915eeb685d0a2668",
+      "bytes": 4855,
+      "identical": true
+    },
+    "consumption/WatershedRunoffCapacityState-legacy.bin": {
+      "sha256": "dc11010d61159ad890be1bba9ec17ecf54c50dc799dacb56d4d6dae9718e8b9a",
+      "bytes": 3057,
+      "identical": true
+    },
+    "consumption/WatershedRunoffCapacityState-new.bin": {
+      "sha256": "c81bc135d51e6662eba46dd48362b308efd2abbc530123023f739d98fc976eaf",
+      "bytes": 3714,
+      "identical": true
+    },
+    "reservoir/canceled-buffer.bin": {
+      "sha256": "1b67d8d91335647c5b97846c5e0c3e9782553e9ee9f1052baa045c011df1c176",
+      "bytes": 6083,
+      "identical": true
+    },
+    "reservoir/crafted-source.bin": {
+      "sha256": "9e8fee11a72f41e9aeb96f4e5021333c89689147caf41c21cb45a74f82ebbc47",
+      "bytes": 7264,
+      "identical": true
+    },
+    "reservoir/maximum-columns.bin": {
+      "sha256": "5fc298ced3e17b9b8499b774124b23b0137be624d9a60f4d0ba6865976fc0f8b",
+      "bytes": 169401,
+      "identical": true
+    },
+    "reservoir/stacked.bin": {
+      "sha256": "4f5e579e9e699a45936c54ecc4ac6f27f4217035daccb793ac375570ef34a21e",
+      "bytes": 5641,
+      "identical": true
+    },
+    "reservoir/two-held.bin": {
+      "sha256": "2f2ab6cb348ad01cc8b44c00bfb170f7c18b9fda03da15cf49f9a4cdb024c396",
+      "bytes": 5897,
+      "identical": true
+    },
+    "runoff/crafted-occupancy.bin": {
+      "sha256": "1061a3346f7abf200f0ff015b7afa15e345325f55d902e3a0ed8147358831ee5",
+      "bytes": 6145,
+      "identical": true
+    },
+    "runoff/dry.bin": {
+      "sha256": "62e9ade7adcd863c8a12d4f3c22fa4afa09f71b95203cfe548fce02f0e0b25b0",
+      "bytes": 3991,
+      "identical": true
+    },
+    "runoff/maximum-network.bin": {
+      "sha256": "663fd9794455a52107b25f863e03571b3226b045a70103daca0d3daf0e6f8a0c",
+      "bytes": 3798726,
+      "identical": true
+    },
+    "runoff/shared-receiver.bin": {
+      "sha256": "73344d313023fd5d9d7acb1d7953068dec83effbdf7a783a560d21e64ffc9fc9",
+      "bytes": 4376,
+      "identical": true
+    },
+    "runoff/unequal-runoff.bin": {
+      "sha256": "efcdaa3809cfefc7a56432564c1559c7c788d844605722bae13fc12e9ea47801",
+      "bytes": 4216,
+      "identical": true
+    }
+  }
+}
