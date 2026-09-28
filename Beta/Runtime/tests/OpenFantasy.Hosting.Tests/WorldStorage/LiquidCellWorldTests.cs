@@ -208,6 +208,9 @@ public sealed class LiquidCellWorldTests
             AssertConserved(after);
             Assert.Equal(200UL, Quantity(after, LiquidCellWorldFixture.SourceCell(2, -1)));
             Assert.Equal(0UL, Quantity(after, LiquidCellWorldFixture.SourceCell(2, -2)));
+            var frame = Assert.IsType<WorldCanonicalFrame>(decision.CandidateFrame);
+            Assert.True(frame.IsBoundTo(after));
+            Assert.Equal(WorldSnapshotCodec.Encode(after), frame.ToArray());
             Assert.DoesNotContain(decision.Identities, identity => raw.CreatedIds.Contains(identity.Identity));
             Assert.Equal(WorldReceiptCodecV1.Encode(receipt), WorldReceiptCodecV1.Encode(
                 authority.FindReceipt(filter, ConstructionUpgradeFixture.Delivery(after, player))!));
@@ -247,8 +250,12 @@ public sealed class LiquidCellWorldTests
             for (int step = 0; !world.Construction!.Projects.Single().IsCompleted; step++)
             {
                 Assert.True(step < 256, "Funded work must finish within the retained finite farm project bound.");
-                world = authority.Commit(fixture.Materials.Actions.Batch(world,
-                    controller.SelectActions(world, fixture.Materials.Actions.NextIdentity), controller.SelectMovement(world))).Candidate;
+                var decision = authority.Commit(fixture.Materials.Actions.Batch(world,
+                    controller.SelectActions(world, fixture.Materials.Actions.NextIdentity), controller.SelectMovement(world)));
+                world = decision.Candidate;
+                var frame = Assert.IsType<WorldCanonicalFrame>(decision.CandidateFrame);
+                Assert.True(frame.IsBoundTo(world));
+                Assert.Equal(WorldSnapshotCodec.Encode(world), frame.ToArray());
                 AssertBound(world);
                 AssertConserved(world);
             }

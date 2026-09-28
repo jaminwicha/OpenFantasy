@@ -285,6 +285,30 @@ independent of this archive's preparation envelope.
 
 ## Recovery and bounded storage
 
+### Canonical candidate ownership
+
+[WorldCanonicalFrame](../../src/OpenFantasy.Core/Worlds/WorldCanonicalFrame.cs) owns canonical bytes
+captured through `WorldSnapshotCodec.Encode` for one exact immutable `WorldSnapshot`. Its constructor
+is private, exports copy the backing array, and its lazy digest hashes only those owned bytes. Binding
+uses object identity; a different root with equal bytes cannot borrow the frame. A frame retains no
+predecessor or global cache and adds no persisted flag, schema or interpreter version.
+
+[WorldStepDecision](../../src/OpenFantasy.Core/Worlds/WorldStepDecision.cs) carries an optional frame
+when preparation already encoded its final candidate. Capture stays at the existing envelope checks,
+including inside per-action rejection boundaries. Action preflight frames are discarded. Movement
+retains a frame only with its exact admitted final root; later refused moves preserve that pair. Care
+rollback clears both candidate and frame before preparing its fallback. Archive wrappers forward the
+continued candidate's frame, separately from the archive's closing root.
+
+[WorldCommitPreparation](../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs) checks this
+binding and obtains a defensive byte copy for durable rows. Candidates without a frame use the
+ordinary encoder at the Host boundary. A frame and that copy can coexist while the prepared decision
+is retained; consumers should release completed decisions rather than accumulate them. Serialization
+reuse does not cache admission, authenticate history or authorize publication. Full world validation,
+actual retrieved archive decoding and complete journal replay remain required.
+
+### Recovery envelopes
+
 Each complete canonical snapshot fits the existing 16 MiB bound. The network archive has its own
 four-million-byte bound inside that envelope. Individually valid components do not guarantee a valid
 combined size: an oversized composition rejects before new-save publication. Limits are not expanded

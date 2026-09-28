@@ -79,6 +79,12 @@ cut from replay of its actual journal and compares the actual retrieved archive 
 prior replay root. Missing, substituted, unscheduled or trailing archive rows invalidate recovery,
 including a request for a state or archive earlier than the damaged row.
 
+An optional [canonical candidate frame](persistence-and-history.md#canonical-candidate-ownership)
+carries already encoded bytes from preparation into durable publication. The archive wrapper retains
+the frame of the exact continued candidate, never substitutes the closing root's frame, and does not
+change archive decoding or authentication. The frame is transient serialization ownership; it is not
+a trusted checkpoint or a second source of world state.
+
 ## Durable transaction and budget
 
 [Schema eight](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaEight.cs) binds profile27 to

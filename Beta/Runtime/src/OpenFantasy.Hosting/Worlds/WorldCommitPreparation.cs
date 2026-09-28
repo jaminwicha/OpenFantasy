@@ -27,7 +27,14 @@ internal sealed class WorldCommitPreparation
         {
             throw new AuthorityDispatchException("The selected batch cannot be committed in the current world.");
         }
-        byte[] after = WorldSnapshotCodec.Encode(decision.Candidate);
+        WorldCanonicalFrame? frame = decision.CandidateFrame;
+        if (frame is not null && !frame.IsBoundTo(decision.Candidate))
+        {
+            throw new InvalidDataException("A prepared canonical frame does not belong to its exact candidate.");
+        }
+        // Preparation that already encoded this exact root supplies its bytes; a candidate that
+        // carries no frame is encoded here, where it always was. The stored row owns its own copy.
+        byte[] after = frame is null ? WorldSnapshotCodec.Encode(decision.Candidate) : frame.ToArray();
         byte[] acceptedBatch = WorldStepCodec.Encode(batch);
         byte[] outcomes = WorldReceiptCodecV1.EncodeBatch(decision.Receipts);
         ulong sequence = decision.Candidate.Revision;
@@ -58,7 +65,8 @@ internal sealed class WorldCommitPreparation
             value.Identity, sequence, Map(value.Kind))).ToArray();
         return new PreparedWorldCommit(decision, after,
             new StoredWorldCommit(sequence, Map(batch.Kind), batch.CauseId, decision.Candidate.AdvancingSteps,
-                acceptedBatch, outcomes, beforeHash, ContentHash.Compute(after)), commands.AsReadOnly(), identities);
+                acceptedBatch, outcomes, beforeHash, frame?.ContentHash ?? ContentHash.Compute(after)),
+            commands.AsReadOnly(), identities);
     }
 
     private static void ValidateDispatch(WorldSnapshot state, WorldStepBatch batch)

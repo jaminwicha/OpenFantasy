@@ -1,0 +1,39 @@
+{
+  "status": "completed_pending_review",
+  "process_exit_code": 0,
+  "elapsed_seconds": 833.615,
+  "total_cost_usd": 7.772813749999999,
+  "model_usage": {
+    "claude-fable-5-1": {
+      "inputTokens": 36,
+      "outputTokens": 63065,
+      "cacheReadInputTokens": 2008255,
+      "cacheCreationInputTokens": 205857,
+      "webSearchRequests": 0,
+      "costUSD": 7.772813749999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 37174,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "context_status": "verified",
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "permissionDenials": [],
+  "contextPostflightSha256": "6106cb2f78aa65b2bc046fb3b31c664964974dc229e70db9b8391e56a5f25c6d",
+  "returnedContext": 1000000,
+  "limits": {
+    "seconds": 1200,
+    "clientEstimateUsd": 12
+  },
+  "privateRunDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-canonical-frame-2lqm83l_/run",
+  "limitations": [
+    "Client cost is an estimate, not subscription credit accounting.",
+    "No controlled Astra comparison or net credit-savings claim.",
+    "Max effort is pinned in the launch; returned token counts do not independently certify an effort setting."
+  ],
+  "integration": "Astra source review plus independent native critic; final qualification is separate."
+}

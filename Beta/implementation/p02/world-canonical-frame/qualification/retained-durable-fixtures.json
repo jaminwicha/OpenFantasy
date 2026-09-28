@@ -1,0 +1,28 @@
+{
+  "status": "exact-match",
+  "baselineBuild": "integration-build-03",
+  "finalManagedBuild": "integration-build-06",
+  "files": [
+    {
+      "file": "before.ofc",
+      "bytes": 732434,
+      "sha256": "28d066904ad79b36790f9e3a1592990c808710a3333506680a8302b54a4a4a79"
+    },
+    {
+      "file": "after.ofc",
+      "bytes": 52476,
+      "sha256": "13ec310e34dfa86a2da8a5cf09a1ebbc0712f0d9139aed61aa4c0b9c78f33adb"
+    },
+    {
+      "file": "final.ofc",
+      "bytes": 76569,
+      "sha256": "bf989710d34c27cc1a9a3d78ea5475214a5423e44fa68d81c823a3c5135fcee0"
+    },
+    {
+      "file": "batch.ofc",
+      "bytes": 796,
+      "sha256": "d9bc134c28945811db8dbafdc48c23b4755985e944d621f1fb66c5a161895abd"
+    }
+  ],
+  "scope": "Actual generated canonical roots/batch across the earlier durable run and final full Hosting regression."
+}

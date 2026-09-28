@@ -109,6 +109,9 @@ public sealed class StructuralMovementAdmissionTests
         Assert.Equal(batch.CauseId, cause.Identity);
         Assert.Equal(WorldCommittedIdentityKind.CommitCause, cause.Kind);
         AssertExactAdvance(before, expected, committed.Candidate);
+        var frame = Assert.IsType<WorldCanonicalFrame>(committed.CandidateFrame);
+        Assert.True(frame.IsBoundTo(committed.Candidate));
+        Assert.Equal(WorldSnapshotCodec.Encode(expected), frame.ToArray());
     }
 
     [Fact]

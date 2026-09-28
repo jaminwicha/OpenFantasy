@@ -92,8 +92,8 @@ internal static class WorldEncounterActionProcessor
             tick ? checked(world.AdvancingSteps + 1) : world.AdvancingSteps,
             world.Dialogues, gathering, world.Production, progression, world.Quests, world.Construction,
             world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing, lifecycle is null ? actions : null, lifecycle, resourceHistory: resourceHistory);
-        _ = WorldSnapshotCodec.Encode(candidate);
-        return new WorldStepDecision(candidate, receipts, identities);
+        WorldCanonicalFrame candidateFrame = WorldCanonicalFrame.Capture(candidate);
+        return new WorldStepDecision(candidate, receipts, identities, candidateFrame: candidateFrame);
     }
 
     private static WorldActionRejection ValidateChoice(WorldSnapshot world, EncounterTimingSnapshot basis, WorldActionCommand command)

@@ -15,9 +15,15 @@ public sealed class WorldStepDecision
     internal WorldStepDecision(WorldSnapshot candidate, IEnumerable<WorldActionReceipt> receipts,
         IEnumerable<WorldCommittedIdentity> identities, WorldResourceArchiveSegment? sealedResourceSegment = null,
         IEnumerable<WorldMaterialActionEvidence>? materialEvidence = null,
-        WorldMaterialCareArchiveSegment? sealedMaterialCareSegment = null)
+        WorldMaterialCareArchiveSegment? sealedMaterialCareSegment = null,
+        WorldCanonicalFrame? candidateFrame = null)
     {
+        if (candidateFrame is not null && !candidateFrame.IsBoundTo(candidate))
+        {
+            throw new InvalidOperationException("A canonical frame must belong to the exact prepared candidate.");
+        }
         Candidate = candidate;
+        CandidateFrame = candidateFrame;
         SealedMaterialCareSegment = sealedMaterialCareSegment;
         Receipts = Array.AsReadOnly(receipts.OrderBy(receipt => receipt.CommandId).ToArray());
         Identities = Array.AsReadOnly(identities.OrderBy(identity => identity.Identity).ToArray());
@@ -44,6 +50,13 @@ public sealed class WorldStepDecision
     }
 
     public WorldSnapshot Candidate { get; }
+
+    /// <summary>
+    /// The canonical bytes captured for exactly this candidate where its preparation already
+    /// encoded it, otherwise null. It is unpublished serialization evidence, not admission; the
+    /// durable owner encodes a candidate that carries none.
+    /// </summary>
+    public WorldCanonicalFrame? CandidateFrame { get; }
     public ReadOnlyCollection<WorldActionReceipt> Receipts { get; }
     public ReadOnlyCollection<WorldCommittedIdentity> Identities { get; }
     public WorldResourceArchiveSegment? SealedResourceSegment { get; }

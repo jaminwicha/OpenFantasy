@@ -1,0 +1,243 @@
+{
+  "status": "passed",
+  "count": 47,
+  "bytes": 7094410,
+  "files": [
+    {
+      "relative": "care-legacy-core-final/aftermath-complete.bin",
+      "bytes": 1821,
+      "sha256": "ad896aa6a5b75daf7e176a86f814405e8ec8137960725db3a2bd02179325a014"
+    },
+    {
+      "relative": "care-legacy-core-final/aftermath-empty.bin",
+      "bytes": 523,
+      "sha256": "48366460b032007d5bdb0fed7c09e1fb5fe3a970734adeb5656bd39cfc0145ca"
+    },
+    {
+      "relative": "care-legacy-core-final/aftermath-full.bin",
+      "bytes": 428811,
+      "sha256": "82f05003b0873a3b27740cff2eedcb2d45c5ffd150313eb5742d728a2e4fe4be"
+    },
+    {
+      "relative": "care-legacy-core-final/aftermath-pending.bin",
+      "bytes": 971,
+      "sha256": "d219dbc035a33443d76659b441f707020f9bf9e2cbb505404f3b1716ff48e89d"
+    },
+    {
+      "relative": "care-legacy-core-final/ordinary-empty.bin",
+      "bytes": 1436,
+      "sha256": "9cff0a1d0e415851e069bbd2836bd81781ab40bc6917704bbf8fb6eb56131e8f"
+    },
+    {
+      "relative": "care-legacy-core-final/ordinary-full.bin",
+      "bytes": 90524,
+      "sha256": "ca1a65d65ca92535c0d093a88cbc2fb46388fcd137799f99bb90a97d67f46d45"
+    },
+    {
+      "relative": "care-legacy-core-final/ordinary-mixed-revoked.bin",
+      "bytes": 2582,
+      "sha256": "376b7b56af6571c3a06b6a0838c68cd076efd0fda5c5711b8859d6084af2f4c5"
+    },
+    {
+      "relative": "legacy-core-final/consumption/LiquidReservoirState-legacy.bin",
+      "bytes": 3765,
+      "sha256": "87d14a90b32175ddd588b8414ff75db55f3d5601a5e6f8b30f74753c274fe792"
+    },
+    {
+      "relative": "legacy-core-final/consumption/LiquidReservoirState-new.bin",
+      "bytes": 4422,
+      "sha256": "eed92549a93f4f49760cdd3617ce8e821dd4ec39e123f0b38fb64b88376f49db"
+    },
+    {
+      "relative": "legacy-core-final/consumption/PreparedWatershedRunoff-legacy.bin",
+      "bytes": 3041,
+      "sha256": "03f2905668d24853b90d92b939913765b3055f8a767504e81f7f6510a453662d"
+    },
+    {
+      "relative": "legacy-core-final/consumption/PreparedWatershedRunoff-new.bin",
+      "bytes": 3698,
+      "sha256": "1dea1341c7fef2be69508e877e97b12319ec26e8d5b8ff8138f96fa5a36d3199"
+    },
+    {
+      "relative": "legacy-core-final/consumption/ReservoirTransportState-legacy.bin",
+      "bytes": 4198,
+      "sha256": "0e3bf967862db7b37827cda12e8a24ca8310dad848c854cb43123f694ad5f644"
+    },
+    {
+      "relative": "legacy-core-final/consumption/ReservoirTransportState-new.bin",
+      "bytes": 4855,
+      "sha256": "7b5be738cd8b77f103be2bbf94e3c06960f31a6ae6dc9511915eeb685d0a2668"
+    },
+    {
+      "relative": "legacy-core-final/consumption/TerrainMaterialRegistry-legacy.bin",
+      "bytes": 5129,
+      "sha256": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b"
+    },
+    {
+      "relative": "legacy-core-final/consumption/TerrainMaterialRegistry-new.bin",
+      "bytes": 6018,
+      "sha256": "d4aa3517aafe8b4bc2f820ae6f28774a2c6698010c827b409b4d924a3d847cc4"
+    },
+    {
+      "relative": "legacy-core-final/consumption/TerrainMaterialState-legacy.bin",
+      "bytes": 4691,
+      "sha256": "ea5ee962c0df1eacd0ebab4e15ac1ffc3c8f5ffa60a4652e8e539e57bdd578de"
+    },
+    {
+      "relative": "legacy-core-final/consumption/TerrainMaterialState-new.bin",
+      "bytes": 5580,
+      "sha256": "990334ff2adfd073223f1eac2159b5bdd7d0feb79068a6012f585ec55dc31e29"
+    },
+    {
+      "relative": "legacy-core-final/consumption/WatershedRunoffCapacityState-legacy.bin",
+      "bytes": 3057,
+      "sha256": "dc11010d61159ad890be1bba9ec17ecf54c50dc799dacb56d4d6dae9718e8b9a"
+    },
+    {
+      "relative": "legacy-core-final/consumption/WatershedRunoffCapacityState-new.bin",
+      "bytes": 3714,
+      "sha256": "c81bc135d51e6662eba46dd48362b308efd2abbc530123023f739d98fc976eaf"
+    },
+    {
+      "relative": "legacy-core-final/consumption/crafted-consumption.bin",
+      "bytes": 6576,
+      "sha256": "0fe22dbae4599d3a5ab8da09de5d66e1c3951e640eb710691e2efc8d27a258dd"
+    },
+    {
+      "relative": "legacy-core-final/production/attached.bin",
+      "bytes": 5129,
+      "sha256": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b"
+    },
+    {
+      "relative": "legacy-core-final/production/chained-prefixes.bin",
+      "bytes": 7334,
+      "sha256": "78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef"
+    },
+    {
+      "relative": "legacy-core-final/production/combined-lot-cap.bin",
+      "bytes": 861770,
+      "sha256": "f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035"
+    },
+    {
+      "relative": "legacy-core-final/production/crafted-reloaded.bin",
+      "bytes": 6117,
+      "sha256": "c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649"
+    },
+    {
+      "relative": "legacy-core-final/registry/active-cap.bin",
+      "bytes": 171441,
+      "sha256": "31ba4cf35270c516d5a8ec95866887250b4f2247b194b22f3c0ec8394c23c10a"
+    },
+    {
+      "relative": "legacy-core-final/registry/interior-transfer.bin",
+      "bytes": 5178,
+      "sha256": "58a4f81ed7531d4907cfc45151dc881dd004f8ab6b2bfdb93abbc631fb290532"
+    },
+    {
+      "relative": "legacy-core-final/registry/maximum-network.bin",
+      "bytes": 3367561,
+      "sha256": "2af5b5da7d4488ecad722339519893d4f8c70df990ac206fbe2f322073bbe839"
+    },
+    {
+      "relative": "legacy-core-final/registry/two-allocations.bin",
+      "bytes": 4282,
+      "sha256": "c2c6ab0000fb3f03e69b70a76c675a42d8f095939939f93f3c42c5521cf5a524"
+    },
+    {
+      "relative": "legacy-core-final/terrain/active-cap.bin",
+      "bytes": 974377,
+      "sha256": "a4b12116dbecc51515ddd71bbe0742fbd518d72fe417daa0dbcfd4d86b0468b8"
+    },
+    {
+      "relative": "legacy-core-final/terrain/lot-cap.bin",
+      "bytes": 1026577,
+      "sha256": "8ac3399932a9c226716198d01700c9fea6b8dc7fb941cf5db27bbcd38c028aca"
+    },
+    {
+      "relative": "legacy-core-final/terrain/partial-transfer.bin",
+      "bytes": 3524,
+      "sha256": "0138829988acdf2e4899e68555c4b5ac4df009eea1dfb585902d2e7ae03e56b2"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-blocked.bin",
+      "bytes": 4198,
+      "sha256": "2b8228ea04d606864bbe8fac2522e69857297dd563f8c7232ef8f9eb440fa564"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-canceled.bin",
+      "bytes": 4114,
+      "sha256": "967d96c899b39b6f0eeff5df3e3e55003e97f535b417c47ec2039943d7ab7f16"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-single-completed.bin",
+      "bytes": 4098,
+      "sha256": "c242dcb2edc446330527f54eb8fd306ede84e06a0edef119783a1af0e261f0b0"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-single-initial.bin",
+      "bytes": 3994,
+      "sha256": "925e46db3922b3b1b33ab7ca7bb3a19b99bc347abd99d6546de3e21d47f064da"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-single-scheduled.bin",
+      "bytes": 4198,
+      "sha256": "2b5be4fe4730a5ef2954b6dc4f31ad2f613bea6eb29906e6be0811553e27c498"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-split-completed.bin",
+      "bytes": 5522,
+      "sha256": "5d06c628b44a3645b2f89755e05922c457973c066601b0a7f05b8382defc5f2d"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-split-initial.bin",
+      "bytes": 5249,
+      "sha256": "b867ee4ce807a9df4bb77f1a931dfc9531be0b884a3b339dca078ec56f84eea3"
+    },
+    {
+      "relative": "legacy-core-final/transport/v1-split-scheduled.bin",
+      "bytes": 5485,
+      "sha256": "113ebb9794b95c3da5442584aff22cde77b4aa99414e541471202da53a4b2171"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-blocked.bin",
+      "bytes": 4447,
+      "sha256": "fd9f2f2d8a4369852fd42d6d32b8fbda240fa2f8a7b28319907a89c48f2b6397"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-canceled.bin",
+      "bytes": 4363,
+      "sha256": "34b1b6b462204011027d640d77e1a8a848efa4e75fba1f3988c08f96c1a1959f"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-single-completed.bin",
+      "bytes": 4347,
+      "sha256": "4c59ce0f42555c6ec5f4ab701c977172e9de2258d9728b828f318c4c5bb83c71"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-single-initial.bin",
+      "bytes": 4243,
+      "sha256": "40cb56e1a266b1844aba40e8a47ee581374c1fb596c15ee97f3fe23c3d83baa7"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-single-scheduled.bin",
+      "bytes": 4447,
+      "sha256": "7320ff8aae4409574383be3e6b68d81fc3030e6d057729f8e5d1d44f7386fee7"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-split-completed.bin",
+      "bytes": 5771,
+      "sha256": "984d31f0b29e076e349cc184c3627119ecf427e77fddfebe8ed563fa3f1a7ffa"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-split-initial.bin",
+      "bytes": 5498,
+      "sha256": "949fdef57c4038167dd6459ada7113c59cfbc9cbaf0a5b6b11a1d10195db57e5"
+    },
+    {
+      "relative": "legacy-core-final/transport/v2-split-scheduled.bin",
+      "bytes": 5734,
+      "sha256": "eaddd149eef386a0a9604bcb4289c94043262b20e9fff4ecec22a1cbd394319c"
+    }
+  ],
+  "scope": "Recreated Core canonical fixtures compared with prior accepted checkpoint."
+}

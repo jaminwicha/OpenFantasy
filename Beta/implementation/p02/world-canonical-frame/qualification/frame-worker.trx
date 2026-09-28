@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="71459944-5d10-4819-80ef-6c927a5101c7" name="@mac 2026-09-28 17:34:41" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T17:34:41.5858400-05:00" queuing="2026-09-28T17:34:41.5858410-05:00" start="2026-09-28T17:34:00.1830770-05:00" finish="2026-09-28T17:35:20.0128750-05:00" />
+  <TestSettings name="default" id="63585a9a-a0ad-4022-a8cc-f58dfaed02e4">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_17_34_41" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="8ef6ba4f-6d2a-4347-8ac6-beb49be5b8e5" testId="560789bc-739a-c943-1a80-712c808afffb" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.An_automatic_resource_archive_keeps_the_candidate_frame_through_publication_and_replay" computerName="mac" duration="00:00:30.0462412" startTime="2026-09-28T17:34:42.0762920-05:00" endTime="2026-09-28T17:35:12.1256420-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ef6ba4f-6d2a-4347-8ac6-beb49be5b8e5" />
+    <UnitTestResult executionId="a01f3917-b697-4d43-a9cb-be9caf99ab34" testId="d72cdaee-4b38-c953-b52a-e1b057fca94f" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.Movement_lifecycle_encounter_and_care_decisions_carry_the_frame_of_their_final_candidate" computerName="mac" duration="00:00:04.5963543" startTime="2026-09-28T17:35:13.3670630-05:00" endTime="2026-09-28T17:35:17.9727060-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a01f3917-b697-4d43-a9cb-be9caf99ab34" />
+    <UnitTestResult executionId="f3d5db44-f8e2-4430-a86e-1d0a03071d70" testId="9492ac12-a1dd-c3dc-b4c2-672569dc42f0" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_captured_frame_reproduces_the_unchanged_encoder_and_survives_mutated_exports" computerName="mac" duration="00:00:00.6212404" startTime="2026-09-28T17:35:18.0108250-05:00" endTime="2026-09-28T17:35:18.6341400-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f3d5db44-f8e2-4430-a86e-1d0a03071d70" />
+    <UnitTestResult executionId="a38131da-efd3-4ee4-987a-d579d5c54bcf" testId="e251713c-16d6-2aaf-eec9-30c9187c7169" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.An_automatic_joint_archive_keeps_the_frame_of_its_continued_candidate" computerName="mac" duration="00:00:17.9901008" startTime="2026-09-28T17:34:22.9207230-05:00" endTime="2026-09-28T17:34:40.9928830-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a38131da-efd3-4ee4-987a-d579d5c54bcf" />
+    <UnitTestResult executionId="ae3646a5-1a4c-412e-bdfa-26d150e2baf2" testId="cde99492-55b2-c3ec-26d8-891c5d45049d" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_frame_binds_only_its_exact_root_and_a_decision_refuses_the_frame_of_an_equal_twin" computerName="mac" duration="00:00:00.5625654" startTime="2026-09-28T17:35:18.6415300-05:00" endTime="2026-09-28T17:35:19.2043130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae3646a5-1a4c-412e-bdfa-26d150e2baf2" />
+    <UnitTestResult executionId="bc1817a5-7910-46bf-a22c-858388773b34" testId="598e5ddb-85fd-88da-9e2c-fa10e63eba9a" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.Commit_preparation_stores_the_captured_bytes_and_owns_a_copy_independent_of_the_frame" computerName="mac" duration="00:00:01.1709274" startTime="2026-09-28T17:35:12.1815200-05:00" endTime="2026-09-28T17:35:13.3603230-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bc1817a5-7910-46bf-a22c-858388773b34" />
+    <UnitTestResult executionId="61e4e9bd-67c4-468f-9a75-00e384005304" testId="6a523613-6dcd-2967-1eda-c9da5fb4a68c" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_reused_movement_root_carries_its_own_frame_and_never_an_earlier_preflight" computerName="mac" duration="00:00:01.0527572" startTime="2026-09-28T17:34:41.0185960-05:00" endTime="2026-09-28T17:34:42.0717110-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="61e4e9bd-67c4-468f-9a75-00e384005304" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_captured_frame_reproduces_the_unchanged_encoder_and_survives_mutated_exports" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9492ac12-a1dd-c3dc-b4c2-672569dc42f0">
+      <Execution id="f3d5db44-f8e2-4430-a86e-1d0a03071d70" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests" name="A_captured_frame_reproduces_the_unchanged_encoder_and_survives_mutated_exports" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.An_automatic_resource_archive_keeps_the_candidate_frame_through_publication_and_replay" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="560789bc-739a-c943-1a80-712c808afffb">
+      <Execution id="8ef6ba4f-6d2a-4347-8ac6-beb49be5b8e5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests" name="An_automatic_resource_archive_keeps_the_candidate_frame_through_publication_and_replay" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.An_automatic_joint_archive_keeps_the_frame_of_its_continued_candidate" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e251713c-16d6-2aaf-eec9-30c9187c7169">
+      <Execution id="a38131da-efd3-4ee4-987a-d579d5c54bcf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests" name="An_automatic_joint_archive_keeps_the_frame_of_its_continued_candidate" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_reused_movement_root_carries_its_own_frame_and_never_an_earlier_preflight" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6a523613-6dcd-2967-1eda-c9da5fb4a68c">
+      <Execution id="61e4e9bd-67c4-468f-9a75-00e384005304" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests" name="A_reused_movement_root_carries_its_own_frame_and_never_an_earlier_preflight" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.Commit_preparation_stores_the_captured_bytes_and_owns_a_copy_independent_of_the_frame" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="598e5ddb-85fd-88da-9e2c-fa10e63eba9a">
+      <Execution id="bc1817a5-7910-46bf-a22c-858388773b34" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests" name="Commit_preparation_stores_the_captured_bytes_and_owns_a_copy_independent_of_the_frame" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_frame_binds_only_its_exact_root_and_a_decision_refuses_the_frame_of_an_equal_twin" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cde99492-55b2-c3ec-26d8-891c5d45049d">
+      <Execution id="ae3646a5-1a4c-412e-bdfa-26d150e2baf2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests" name="A_frame_binds_only_its_exact_root_and_a_decision_refuses_the_frame_of_an_equal_twin" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.Movement_lifecycle_encounter_and_care_decisions_carry_the_frame_of_their_final_candidate" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d72cdaee-4b38-c953-b52a-e1b057fca94f">
+      <Execution id="a01f3917-b697-4d43-a9cb-be9caf99ab34" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests" name="Movement_lifecycle_encounter_and_care_decisions_carry_the_frame_of_their_final_candidate" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="560789bc-739a-c943-1a80-712c808afffb" executionId="8ef6ba4f-6d2a-4347-8ac6-beb49be5b8e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d72cdaee-4b38-c953-b52a-e1b057fca94f" executionId="a01f3917-b697-4d43-a9cb-be9caf99ab34" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9492ac12-a1dd-c3dc-b4c2-672569dc42f0" executionId="f3d5db44-f8e2-4430-a86e-1d0a03071d70" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e251713c-16d6-2aaf-eec9-30c9187c7169" executionId="a38131da-efd3-4ee4-987a-d579d5c54bcf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cde99492-55b2-c3ec-26d8-891c5d45049d" executionId="ae3646a5-1a4c-412e-bdfa-26d150e2baf2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="598e5ddb-85fd-88da-9e2c-fa10e63eba9a" executionId="bc1817a5-7910-46bf-a22c-858388773b34" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6a523613-6dcd-2967-1eda-c9da5fb4a68c" executionId="61e4e9bd-67c4-468f-9a75-00e384005304" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.02] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:03.58]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:14.30]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:17.72]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:01:14.62]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

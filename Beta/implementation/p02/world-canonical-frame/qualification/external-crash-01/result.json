@@ -1,0 +1,55 @@
+{
+  "status": "failed",
+  "startedUtc": "2026-09-28T22:42:37.173242+00:00",
+  "runs": [
+    {
+      "label": "normal",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/external-crash-01/normal.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-hosting-final/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/external-crash-01/normal.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/external-crash-01/normal.stderr",
+      "timedOut": true,
+      "seconds": 30.021255500148982
+    }
+  ],
+  "crashes": [],
+  "completedCases": [],
+  "fixturesDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-hosting-final",
+  "fixtureHashes": {
+    "after.ofc": "13ec310e34dfa86a2da8a5cf09a1ebbc0712f0d9139aed61aa4c0b9c78f33adb",
+    "after.sqlite3": "be4d6b16136cc44861ea5204e2ae0d3cf74f4390fd7bf3e546d9d59a83898351",
+    "batch.ofc": "d9bc134c28945811db8dbafdc48c23b4755985e944d621f1fb66c5a161895abd",
+    "before.ofc": "28d066904ad79b36790f9e3a1592990c808710a3333506680a8302b54a4a4a79",
+    "before.sqlite3": "b76ba268d17bc1e1dae95d1a575fab69c2ca447317ee3997fbc2b32df15b07a7",
+    "final.ofc": "bf989710d34c27cc1a9a3d78ea5475214a5423e44fa68d81c823a3c5135fcee0",
+    "final.sqlite3": "814f0afc093031d1c9308d3e1c89683b2afbdda0076b2c636b084d2e4fb23773",
+    "metadata.json": "73bdd4c25cf72ce5a31249b5a2600e05f8443b5a386d297485cd68c3ac307f2a"
+  },
+  "executionHashes": {
+    "Microsoft.Data.Sqlite.dll": "b98d957462be432895b00dccca012d3c127e118d3d4262418014b92c7bbd66cf",
+    "OpenFantasy.Core.dll": "de1936da384bb55be89de246813d93cd8ce0a11f13ba40d46db7d4ce13a19129",
+    "OpenFantasy.Host.deps.json": "1b867a0915cc1b7a3f7f770b5ec76613a718fa36e0536a82bc811e2ecb34d67e",
+    "OpenFantasy.Host.dll": "8ccd91b07cb29802e3beae80764fa5b38ace37c53c8c9f153083f3bac878b305",
+    "OpenFantasy.Host.runtimeconfig.json": "f9bc8e9f0c46247078ed47309f19a7576b4b94e4300e9de0003917d6bd2d667a",
+    "OpenFantasy.Hosting.dll": "7a9cc08ffb49327d75d0eb69c8b3409ac976178f7032c1e68081b382c1219210",
+    "SQLitePCLRaw.batteries_v2.dll": "1ee3c6ff4d39171690d6ff6f84b4d876ed038ca28e39bb6e74995f52d2aacf8b",
+    "SQLitePCLRaw.core.dll": "b72c9dfe1479a568d6b84e249eaf949e76c757888f8056fb6ddb9c0480e0dd25",
+    "SQLitePCLRaw.provider.e_sqlite3.dll": "1d4cb69b3aaf6a9cf40dfe179cc16dd678f12bc024b212d4297654e0a29e220d"
+  },
+  "limitations": [
+    "Managed fixture supplies expected gameplay; this is storage/atomicity qualification.",
+    "No native UI, device, latency or general production throughput acceptance."
+  ],
+  "archiveCountBefore": 2,
+  "archiveCountAfter": 3,
+  "error": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/verify_crash_recovery.py\", line 235, in main\n    check_report(runner.run(boundary, \"--execute-world-step\", path, fixtures / \"batch.ofc\"), after)\n                 ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/verify_crash_recovery.py\", line 81, in run\n    done = subprocess.run(command, env=self.environment, stdout=out, stderr=err, timeout=RUN_SECONDS)\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 557, in run\n    stdout, stderr = process.communicate(input, timeout=timeout)\n                     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 1221, in communicate\n    stdout, stderr = self._communicate(input, endtime, timeout)\n                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 2179, in _communicate\n    self.wait(timeout=self._remaining_time(endtime))\n    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 1279, in wait\n    return self._wait(timeout=timeout)\n           ~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/opt/homebrew/Cellar/python@3.14/3.14.5/Frameworks/Python.framework/Versions/3.14/lib/python3.14/subprocess.py\", line 2076, in _wait\n    raise TimeoutExpired(self.args, timeout)\nsubprocess.TimeoutExpired: Command '['/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll', '--execute-world-step', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/external-crash-01/normal.sqlite3', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-world-continuation/qualification/durable-hosting-final/batch.ofc']' timed out after 30 seconds\n",
+  "fixturesUnchanged": true,
+  "executionUnchanged": true,
+  "externalKills": 0
+}

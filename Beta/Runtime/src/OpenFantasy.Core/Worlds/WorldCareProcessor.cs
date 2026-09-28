@@ -40,6 +40,8 @@ internal static class WorldCareProcessor
             };
         }
         WorldSnapshot? candidate = null;
+        // Assigned and cleared together with the candidate; a refused root leaves no frame behind.
+        WorldCanonicalFrame? candidateFrame = null;
         EntityId[] created = command.Intent is AcknowledgeCareIntent
             ? [EntityId.DeriveSpawned(command.CommandId, 0)]
             : [EntityId.DeriveSpawned(command.CommandId, 0), EntityId.DeriveSpawned(command.CommandId, 1)];
@@ -55,13 +57,14 @@ internal static class WorldCareProcessor
                         : Administer(world, command, (AdministerRemedyIntent)command.Intent, sequence,
                             world.Production!.IsContinued
                                 ? identity => identity != command.CommandId && Occupied(identity) : null);
-                    if (candidate is not null) _ = WorldSnapshotCodec.Encode(candidate);
+                    if (candidate is not null) candidateFrame = WorldCanonicalFrame.Capture(candidate);
                 }
                 catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
                 {
                     // No component is published until the entire candidate, including material and
                     // geometry joins, is admitted and fits the canonical durable envelope.
                     candidate = null;
+                    candidateFrame = null;
                     rejection = WorldActionRejection.Unavailable;
                 }
             }
@@ -70,7 +73,7 @@ internal static class WorldCareProcessor
         {
             candidate = Copy(world, sequence, world.Care, world.Inventory, world.Production!, world.Progression!,
                 world.EncounterLifecycle!.RetainBoundary(), world.Pacing!, world.Reservoirs!, world.LiquidCells!);
-            _ = WorldSnapshotCodec.Encode(candidate);
+            candidateFrame = WorldCanonicalFrame.Capture(candidate);
         }
         else
         {
@@ -83,7 +86,8 @@ internal static class WorldCareProcessor
         }
         var receipt = WorldActionReceipt.Create(command, sequence, rejection);
         Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
-        return new(candidate, [receipt], identities, materialEvidence: materialEvidence?.Snapshot());
+        return new(candidate, [receipt], identities, materialEvidence: materialEvidence?.Snapshot(),
+            candidateFrame: candidateFrame);
     }
 
     private static WorldActionRejection ValidateControl(WorldSnapshot world, WorldActionCommand command)

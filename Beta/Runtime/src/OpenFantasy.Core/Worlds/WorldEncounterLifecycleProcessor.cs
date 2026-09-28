@@ -79,8 +79,8 @@ internal static class WorldEncounterLifecycleProcessor
             revision, world.AdvancingSteps, world.Dialogues, world.Gathering, world.Production,
             world.Progression, world.Quests, world.Construction, world.Reservoirs, world.Transport,
             world.Excavation, world.ConstructionPhysical, world.LiquidCells, pacing, encounterLifecycle: lifecycle);
-        _ = WorldSnapshotCodec.Encode(candidate);
-        return new(candidate, receipts, identities);
+        WorldCanonicalFrame candidateFrame = WorldCanonicalFrame.Capture(candidate);
+        return new(candidate, receipts, identities, candidateFrame: candidateFrame);
     }
 
     private static WorldActionRejection ValidateControl(WorldSnapshot world, WorldActionCommand command)

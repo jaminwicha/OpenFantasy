@@ -1,0 +1,172 @@
+{
+  "status": "diagnostic-complete",
+  "sameDatabaseHashes": true,
+  "sameInspection": true,
+  "baseline": "Beta/implementation/p02/coordinated-world-continuation/qualification/recovery-profile-01",
+  "current": "Beta/implementation/p02/world-canonical-frame/qualification/recovery-profile-01",
+  "stages": {
+    "inspection-command": {
+      "before": {
+        "stage": "inspection-command",
+        "calls": 1,
+        "inclusiveMilliseconds": 30123.899334,
+        "inclusiveThreadAllocatedBytes": 16450101528
+      },
+      "after": {
+        "stage": "inspection-command",
+        "calls": 1,
+        "inclusiveMilliseconds": 29162.764625,
+        "inclusiveThreadAllocatedBytes": 12469787152
+      }
+    },
+    "full-replay": {
+      "before": {
+        "stage": "full-replay",
+        "calls": 1,
+        "inclusiveMilliseconds": 29644.752,
+        "inclusiveThreadAllocatedBytes": 16441177456
+      },
+      "after": {
+        "stage": "full-replay",
+        "calls": 1,
+        "inclusiveMilliseconds": 28503.171125,
+        "inclusiveThreadAllocatedBytes": 12460832584
+      }
+    },
+    "commit-preparation": {
+      "before": {
+        "stage": "commit-preparation",
+        "calls": 1569,
+        "inclusiveMilliseconds": 28662.264033,
+        "inclusiveThreadAllocatedBytes": 16295783920
+      },
+      "after": {
+        "stage": "commit-preparation",
+        "calls": 1569,
+        "inclusiveMilliseconds": 27019.500876,
+        "inclusiveThreadAllocatedBytes": 12315605208
+      }
+    },
+    "world-encode": {
+      "before": {
+        "stage": "world-encode",
+        "calls": 3659,
+        "inclusiveMilliseconds": 11324.777974,
+        "inclusiveThreadAllocatedBytes": 10904782680
+      },
+      "after": {
+        "stage": "world-encode",
+        "calls": 2090,
+        "inclusiveMilliseconds": 7451.529144,
+        "inclusiveThreadAllocatedBytes": 6465728904
+      }
+    },
+    "world-root": {
+      "before": {
+        "stage": "world-root",
+        "calls": 2092,
+        "inclusiveMilliseconds": 9926.093403,
+        "inclusiveThreadAllocatedBytes": 2332518176
+      },
+      "after": {
+        "stage": "world-root",
+        "calls": 2092,
+        "inclusiveMilliseconds": 11308.214759,
+        "inclusiveThreadAllocatedBytes": 2332393400
+      }
+    },
+    "resource-causes": {
+      "before": {
+        "stage": "resource-causes",
+        "calls": 2092,
+        "inclusiveMilliseconds": 5945.855067,
+        "inclusiveThreadAllocatedBytes": 1623303808
+      },
+      "after": {
+        "stage": "resource-causes",
+        "calls": 2092,
+        "inclusiveMilliseconds": 6665.938591,
+        "inclusiveThreadAllocatedBytes": 1623330896
+      }
+    },
+    "world-identities": {
+      "before": {
+        "stage": "world-identities",
+        "calls": 2092,
+        "inclusiveMilliseconds": 1443.528117,
+        "inclusiveThreadAllocatedBytes": 331473672
+      },
+      "after": {
+        "stage": "world-identities",
+        "calls": 2092,
+        "inclusiveMilliseconds": 1678.929416,
+        "inclusiveThreadAllocatedBytes": 331475480
+      }
+    },
+    "care-admission": {
+      "before": {
+        "stage": "care-admission",
+        "calls": 2092,
+        "inclusiveMilliseconds": 951.41668,
+        "inclusiveThreadAllocatedBytes": 62149848
+      },
+      "after": {
+        "stage": "care-admission",
+        "calls": 2092,
+        "inclusiveMilliseconds": 1007.755806,
+        "inclusiveThreadAllocatedBytes": 62129384
+      }
+    },
+    "ordinary-care": {
+      "before": {
+        "stage": "ordinary-care",
+        "calls": 2092,
+        "inclusiveMilliseconds": 931.212651,
+        "inclusiveThreadAllocatedBytes": 61212456
+      },
+      "after": {
+        "stage": "ordinary-care",
+        "calls": 2092,
+        "inclusiveMilliseconds": 982.222124,
+        "inclusiveThreadAllocatedBytes": 61184360
+      }
+    },
+    "source-partition": {
+      "before": {
+        "stage": "source-partition",
+        "calls": 2092,
+        "inclusiveMilliseconds": 143.742671,
+        "inclusiveThreadAllocatedBytes": 19416136
+      },
+      "after": {
+        "stage": "source-partition",
+        "calls": 2092,
+        "inclusiveMilliseconds": 174.201637,
+        "inclusiveThreadAllocatedBytes": 19411800
+      }
+    },
+    "production-continuation": {
+      "before": {
+        "stage": "production-continuation",
+        "calls": 516,
+        "inclusiveMilliseconds": 74.898835,
+        "inclusiveThreadAllocatedBytes": 43017768
+      },
+      "after": {
+        "stage": "production-continuation",
+        "calls": 516,
+        "inclusiveMilliseconds": 89.886244,
+        "inclusiveThreadAllocatedBytes": 43025576
+      }
+    }
+  },
+  "fullReplayAllocationReductionFraction": 0.24209609577247304,
+  "worldEncodeCallReduction": 1569,
+  "limitations": [
+    "Inclusive stage costs overlap; do not sum.",
+    "Allocated bytes are cumulative thread allocation, not peak/live heap.",
+    "Separate measurements on a shared machine do not isolate a causal wall-time improvement.",
+    "The90-second instrumented collection is not30-second recovery acceptance.",
+    "External normal recovery timed out; do not claim the complete crash matrix passed."
+  ]
+}

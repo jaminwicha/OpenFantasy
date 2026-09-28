@@ -1,0 +1,92 @@
+[
+  {
+    "stage": "inspection-command",
+    "calls": 1,
+    "inclusiveMilliseconds": 26617.673,
+    "inclusiveThreadAllocatedBytes": 12469954720
+  },
+  {
+    "stage": "full-replay",
+    "calls": 1,
+    "inclusiveMilliseconds": 25970.712208,
+    "inclusiveThreadAllocatedBytes": 12461000368
+  },
+  {
+    "stage": "commit-preparation",
+    "calls": 1569,
+    "inclusiveMilliseconds": 24717.730882,
+    "inclusiveThreadAllocatedBytes": 12315752336
+  },
+  {
+    "stage": "world-root",
+    "calls": 2092,
+    "inclusiveMilliseconds": 10271.90732,
+    "inclusiveThreadAllocatedBytes": 2332580744
+  },
+  {
+    "stage": "world-encode",
+    "calls": 2090,
+    "inclusiveMilliseconds": 6644.136313,
+    "inclusiveThreadAllocatedBytes": 6465709320
+  },
+  {
+    "stage": "resource-causes",
+    "calls": 2092,
+    "inclusiveMilliseconds": 6125.133524,
+    "inclusiveThreadAllocatedBytes": 1623466384
+  },
+  {
+    "stage": "care-use-version",
+    "calls": 470335,
+    "inclusiveMilliseconds": 1527.679156,
+    "inclusiveThreadAllocatedBytes": 850440520
+  },
+  {
+    "stage": "world-identities",
+    "calls": 2092,
+    "inclusiveMilliseconds": 1508.304991,
+    "inclusiveThreadAllocatedBytes": 331499064
+  },
+  {
+    "stage": "care-admission",
+    "calls": 2092,
+    "inclusiveMilliseconds": 913.692876,
+    "inclusiveThreadAllocatedBytes": 62138224
+  },
+  {
+    "stage": "ordinary-care",
+    "calls": 2092,
+    "inclusiveMilliseconds": 893.364568,
+    "inclusiveThreadAllocatedBytes": 61195256
+  },
+  {
+    "stage": "care-remedy-version",
+    "calls": 267835,
+    "inclusiveMilliseconds": 575.536668,
+    "inclusiveThreadAllocatedBytes": 237851832
+  },
+  {
+    "stage": "care-permission-grant",
+    "calls": 199920,
+    "inclusiveMilliseconds": 415.952303,
+    "inclusiveThreadAllocatedBytes": 187148888
+  },
+  {
+    "stage": "source-partition",
+    "calls": 2092,
+    "inclusiveMilliseconds": 159.706678,
+    "inclusiveThreadAllocatedBytes": 19414368
+  },
+  {
+    "stage": "production-continuation",
+    "calls": 516,
+    "inclusiveMilliseconds": 95.827817,
+    "inclusiveThreadAllocatedBytes": 43011824
+  },
+  {
+    "stage": "care-agreement-version",
+    "calls": 4132,
+    "inclusiveMilliseconds": 12.727159,
+    "inclusiveThreadAllocatedBytes": 3841888
+  }
+]

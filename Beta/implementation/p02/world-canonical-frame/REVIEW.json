@@ -1,0 +1,52 @@
+{
+  "reviewer": "world_continuation_contracts independent native critic",
+  "disposition": "No concrete correctness defect found in reviewed runtime source. No builds/tests run by critic.",
+  "reviewedHashes": {
+    "src/OpenFantasy.Core/Worlds/WorldCanonicalFrame.cs": "2250212eb7c26a849bad55179aa1dc4183b54df4f7ab5f2e9a7dfe82c4aa653d",
+    "src/OpenFantasy.Core/Worlds/WorldStepDecision.cs": "c9fffa02c8e61e2371e575de74202623f7c811409426e1deade9c337d350c032",
+    "src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs": "dc6eb5dff13e1b5572818119685baf36c3681663fbf9d9f1f97c8e8986983cb5",
+    "src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs": "147e59de8a7fec4bd77be63b802d99f51741369ac6e7df517f98f489559acbfd",
+    "src/OpenFantasy.Core/Worlds/WorldEncounterProcessor.cs": "5c64223f47a6ee18585c4485edda115eef1ddb7d31e2614908d0791d0d285d2a",
+    "src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs": "89d49a50055612534053a27a2d428e3737957ce8123ab0e04c22b4b334b40a2e",
+    "src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs": "ec1986713190fe822abd2697e9251f5a41da51c0da71fc074bd46d294ab28844",
+    "src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs": "7178d439bfae312ac517240567584efd2c7d5027746cb03220b478f439ff3101"
+  },
+  "currentHashes": {
+    "src/OpenFantasy.Core/Worlds/WorldCanonicalFrame.cs": "2250212eb7c26a849bad55179aa1dc4183b54df4f7ab5f2e9a7dfe82c4aa653d",
+    "src/OpenFantasy.Core/Worlds/WorldStepDecision.cs": "c9fffa02c8e61e2371e575de74202623f7c811409426e1deade9c337d350c032",
+    "src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs": "dc6eb5dff13e1b5572818119685baf36c3681663fbf9d9f1f97c8e8986983cb5",
+    "src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs": "147e59de8a7fec4bd77be63b802d99f51741369ac6e7df517f98f489559acbfd",
+    "src/OpenFantasy.Core/Worlds/WorldEncounterProcessor.cs": "5c64223f47a6ee18585c4485edda115eef1ddb7d31e2614908d0791d0d285d2a",
+    "src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs": "89d49a50055612534053a27a2d428e3737957ce8123ab0e04c22b4b334b40a2e",
+    "src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs": "ec1986713190fe822abd2697e9251f5a41da51c0da71fc074bd46d294ab28844",
+    "src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs": "7178d439bfae312ac517240567584efd2c7d5027746cb03220b478f439ff3101"
+  },
+  "unchanged": true,
+  "findings": [
+    "Private bytes and defensive exports; safe immutable lazy digest publication.",
+    "Exact candidate object binding checked by decision and Host.",
+    "Capture remains at existing refusal boundaries; movement/care root and frame stay paired.",
+    "Legacy null-frame Host encoding retained.",
+    "Archive wrapper forwards final frame; actual retrieved archive decoders unchanged.",
+    "No predecessor reference, global cache or validation bypass."
+  ],
+  "testSuggestions": [
+    "Accepted movement followed by rejected movement",
+    "Actual liquid advance after action preflight",
+    "Rejected care fallback",
+    "Automatic archive wrapping",
+    "Export mutation before and after first hash",
+    "Equal-byte different-root refusal",
+    "Legacy null-frame persistence"
+  ],
+  "scope": "These source hashes only; executable qualification is separate.",
+  "finalRuntimeHashesUnchanged": true,
+  "integrationReview": "Astra reviewed final runtime diff; only tests/docs/evidence were extended after worker return.",
+  "testSuggestionDisposition": {
+    "export-before-first-hash": "Added to existing frame test.",
+    "legacy-null-frame": "Added actual profile1 commit/reopen regression.",
+    "later-rejected-movement": "Added exact frame assertions to existing independently constructed five-case structural movement test, including whole-world overload refusal.",
+    "liquid-preflight": "Added exact frame assertions to existing liquid rollback/flow and actual NPC fabrication journeys.",
+    "care-and-archives": "Covered by worker tests; full regression retains deeper existing rollback and retrieval cases."
+  }
+}

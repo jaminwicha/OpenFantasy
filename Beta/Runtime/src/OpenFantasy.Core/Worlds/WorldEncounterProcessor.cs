@@ -76,8 +76,8 @@ internal static class WorldEncounterProcessor
             world.Residents.Select(resident => resident.Experience(duration)), nextPacing.Calendar, revision, advancing,
             world.Dialogues, gathering, world.Production, world.Progression, world.Quests, world.Construction,
             world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing);
-        _ = WorldSnapshotCodec.Encode(candidate);
-        return new WorldStepDecision(candidate, receipts, identities);
+        WorldCanonicalFrame candidateFrame = WorldCanonicalFrame.Capture(candidate);
+        return new WorldStepDecision(candidate, receipts, identities, candidateFrame: candidateFrame);
     }
 
     private static WorldActionRejection ValidateChoice(WorldSnapshot world, EncounterTimingSnapshot basis, WorldActionCommand command)

@@ -81,7 +81,7 @@ public sealed class WorldStepProcessor
         var decision = DecidePrepared(joint.State, batch, historicallyOccupied, materialEvidence);
         return prepared.Sealed is null && joint.Sealed is null ? decision
             : new WorldStepDecision(decision.Candidate, decision.Receipts, decision.Identities, prepared.Sealed,
-                decision.MaterialEvidence, joint.Sealed);
+                decision.MaterialEvidence, joint.Sealed, decision.CandidateFrame);
     }
 
     private WorldStepDecision DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied,
@@ -183,9 +183,10 @@ public sealed class WorldStepProcessor
             IEnumerable<DialogueSession> proposedDialogues, ConstructionPhysicalSnapshot? proposedPhysical,
             LiquidReservoirState? proposedReservoirs, ReservoirTransportState? proposedTransport,
             LiquidCellState? proposedLiquidCells,
-            out WorldSnapshot? admittedCandidate)
+            out WorldSnapshot? admittedCandidate, out WorldCanonicalFrame? admittedFrame)
         {
             admittedCandidate = null;
+            admittedFrame = null;
             if (state.StructuralPolicy is null && state.ReservoirSeals is null)
             {
                 return true;
@@ -216,8 +217,12 @@ public sealed class WorldStepProcessor
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
                     validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, care: care, resourceHistory: resourceHistory);
-                if (state.ConsequencePolicy is not null || state.ReservoirSeals is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
+                // The envelope check stays inside this admission: a root that cannot be encoded is
+                // refused here. Its bytes belong to this admitted root alone.
+                WorldCanonicalFrame? captured = state.ConsequencePolicy is not null || state.ReservoirSeals is not null
+                    ? WorldCanonicalFrame.Capture(admitted) : null;
                 admittedCandidate = admitted;
+                admittedFrame = captured;
                 return true;
             }
             catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
@@ -407,7 +412,7 @@ public sealed class WorldStepProcessor
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
                 || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells, space, state.ReservoirSeals)
                 || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
-                    reconciled, reconciledTransport, reconciledLiquidCells, out _))
+                    reconciled, reconciledTransport, reconciledLiquidCells, out _, out _))
             {
                 excavation = previousExcavation;
                 gathering = previousGathering;
@@ -472,6 +477,8 @@ public sealed class WorldStepProcessor
         }
 
         WorldSnapshot? admittedMovement = null;
+        // Replaced together with the admitted movement root, so it never describes an earlier one.
+        WorldCanonicalFrame? admittedMovementFrame = null;
         if (batch.Kind == WorldBatchKind.AdvancingStep)
         {
             // The already selected step contributes once, including when an action opens a hold.
@@ -512,11 +519,13 @@ public sealed class WorldStepProcessor
                     {
                         LocalSpatialSnapshot previousSpace = space;
                         space = space.WithActors(space.Actors.Select(other => other.ActorId == input.ActorId ? move.Candidate! : other));
-                        if (FitsCompleteCandidate(inventory, dialogues, physical, reservoirs, transport, liquidCells, out WorldSnapshot? admitted))
+                        if (FitsCompleteCandidate(inventory, dialogues, physical, reservoirs, transport, liquidCells,
+                            out WorldSnapshot? admitted, out WorldCanonicalFrame? admittedFrame))
                         {
                             // Only movement runs after the actual time boundary and all action effects.
                             // Later rejected moves restore this same space; successful moves replace it.
                             admittedMovement = admitted;
+                            admittedMovementFrame = admittedFrame;
                         }
                         else
                         {
@@ -528,13 +537,17 @@ public sealed class WorldStepProcessor
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
             advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: resourceHistory);
+        // Only the frame captured for the exact reused movement root accompanies it. A candidate
+        // that was never encoded here carries none and is encoded by its durable owner.
+        WorldCanonicalFrame? candidateFrame = admittedMovement is null ? null : admittedMovementFrame;
         if (liquidCells is not null && admittedMovement is null)
         {
             // Fragment growth must also fit the complete retained root before authority preparation succeeds.
             // A reused movement candidate already passed this exact encoding boundary.
-            _ = WorldSnapshotCodec.Encode(candidate);
+            candidateFrame = WorldCanonicalFrame.Capture(candidate);
         }
-        return new WorldStepDecision(candidate, receipts, identities, materialEvidence: materialEvidence?.Snapshot());
+        return new WorldStepDecision(candidate, receipts, identities, materialEvidence: materialEvidence?.Snapshot(),
+            candidateFrame: candidateFrame);
     }
 
     private static bool TryReconcilePhysical(ConstructionPhysicalSnapshot? physical, ConstructionSnapshot? construction, LocalSpatialSnapshot space,

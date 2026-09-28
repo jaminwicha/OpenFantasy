@@ -1,0 +1,173 @@
+{
+  "status": "passed-managed-scope-recovery-deadline-open",
+  "distinctTests": 2473,
+  "reports": {
+    "frame-integration-01": {
+      "counters": {
+        "total": "19",
+        "executed": "19",
+        "passed": "19",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "command": {
+        "startedUtc": "2026-09-28T22:39:43.223914+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~WorldCanonicalFrameTests|FullyQualifiedName~StructuralMovementAdmissionTests|FullyQualifiedName~LiquidCellWorldTests",
+          "--logger",
+          "trx;LogFileName=frame-integration-01.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/durable-frame-integration-01",
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/care-legacy-frame-integration-01",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/earned-supply-frame-integration-01",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-frame-integration-01/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-frame-integration-01/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-frame-integration-01/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-frame-integration-01/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-frame-integration-01/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-frame-integration-01/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 158.44309812504798,
+        "finishedUtc": "2026-09-28T22:42:21.671573+00:00"
+      }
+    },
+    "core-final": {
+      "counters": {
+        "total": "1577",
+        "executed": "1577",
+        "passed": "1577",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "command": {
+        "startedUtc": "2026-09-28T22:45:17.288433+00:00",
+        "kind": "core",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=core-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/durable-core-final",
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/care-legacy-core-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/earned-supply-core-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-core-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-core-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-core-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-core-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-core-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-core-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 334.0127847921103,
+        "finishedUtc": "2026-09-28T22:50:51.332130+00:00"
+      }
+    },
+    "hosting-final": {
+      "counters": {
+        "total": "896",
+        "executed": "896",
+        "passed": "896",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "command": {
+        "startedUtc": "2026-09-28T22:50:51.938467+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=hosting-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/durable-hosting-final",
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/care-legacy-hosting-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/earned-supply-hosting-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-hosting-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-hosting-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-hosting-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-hosting-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-hosting-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-canonical-frame/qualification/legacy-hosting-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 2064.163710415829,
+        "finishedUtc": "2026-09-28T23:25:16.161426+00:00"
+      }
+    }
+  },
+  "build": "integration-build-01",
+  "sourcePinsUnchanged": 1295,
+  "executionPinsUnchanged": 9,
+  "canonicalFixtureCount": 53,
+  "externalRecovery": {
+    "status": "failed",
+    "externalKills": 0,
+    "report": "external-crash-01/result.json"
+  },
+  "limitations": [
+    "Unchanged external30-second normal recovery timed out; crash matrix remains open.",
+    "Native post-cut use/reopen, production lifetime/latency, platforms/devices and human acceptance remain open.",
+    "Instrumented allocation is cumulative, not peak/live memory."
+  ],
+  "whitespaceCheck": {
+    "sourceDocsScriptsJson": "passed",
+    "rawEvidence": "Original logs/TRX/stdout/stderr retained; excluded from style-only whitespace checks."
+  }
+}
