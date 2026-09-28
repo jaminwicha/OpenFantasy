@@ -1,0 +1,61 @@
+{
+  "recordedUtc": "2026-09-28T04:11:56.238109+00:00",
+  "baseRevision": "427743907159ad75ed6a46623e823cc800bdba8a",
+  "scope": "Standalone exact material basis; no changed world, Host, client, source issuance or continuation authority.",
+  "build": {
+    "report": "build-02.log",
+    "passed": true,
+    "warnings": 0,
+    "errors": 0,
+    "initialReport": "build-01.log"
+  },
+  "tests": [
+    {
+      "report": "basis-01.trx",
+      "total": 11,
+      "passed": 11,
+      "failed": 0,
+      "skipped": 0,
+      "newBasisCases": 11
+    },
+    {
+      "report": "material-regression-01.trx",
+      "total": 235,
+      "passed": 235,
+      "failed": 0,
+      "skipped": 0,
+      "newBasisCases": 11
+    },
+    {
+      "report": "material-regression-02.trx",
+      "total": 235,
+      "passed": 235,
+      "failed": 0,
+      "skipped": 0,
+      "newBasisCases": 11
+    }
+  ],
+  "distinctFinalAffectedCases": 235,
+  "fullRegression": false,
+  "nativeOrProcessKillRun": false,
+  "review": "../REVIEW.md",
+  "sourcePinCount": 1169,
+  "sourcePins": "source-pins-final.json",
+  "executionPins": "execution-pins-final.json",
+  "pinsUnchangedAcrossFinalRun": true,
+  "initialSourcePinDifference": "Exact gathering-cursor rejection assertion only; initial pins retained in source-pins.json.",
+  "documentation": "document-links.json",
+  "preservation": {
+    "checkpoint": "codex/checkpoint-before-material-frontier-20260928T035421Z",
+    "frozenSpecsUnchanged": 23,
+    "priorMilestonesUnchanged": 62,
+    "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "limitations": [
+    "Capture is not an authenticated material/care archive or continued owner.",
+    "Existing history bounds, codecs, profiles and publication behavior unchanged.",
+    "No >256 operations/two cuts, live provenance ancestry continuation or dependent owner/Host/native binding proved.",
+    "No production throughput, full journal lifetime or full-phase acceptance claim."
+  ],
+  "failedBuildsOrExecutedTests": 0
+}

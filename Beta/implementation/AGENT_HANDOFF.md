@@ -42,40 +42,50 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Ordinary care recovery qualification](p02/restorative-recovery/README.md) closes the bounded profile26
-external process-interruption proof without changing runtime rules or formats. Five actual journeys
-cover raw/crafted self-use, helper assistance, stocked patient revocation and assistance co-published
-with a resource archive. Four use original statistics; the archive case labels its authored stress
-statistics and earns every combat/resource effect through actual commands.
+[Exact material continuation basis](p02/material-care-continuation/README.md) implements the first
+component of the coordinated material/care proposal: immutable surviving lots, remaining output
+intervals, direct raw-retirement coverage and nonrecursive live-producer metadata. Custody, item pins,
+protections, reservations and absolute revisions remain exact. Capture validates the supplied complete
+owners; it grants no issuance, archive authenticity, restored authority or history-capacity relief.
+Existing planners, V1/V2 codecs, profiles, Host storage and client behavior are unchanged.
 
-[Verification](p02/restorative-recovery/qualification/verification.json): clean final build; **six
-passing managed cases**, including exact receipt retrieval and changed-content/wrong-delivery refusal
-on all fifteen actual recovered databases. **Ten SIGKILL probes, 61 Host calls and eleven deliberate
-corruption refusals** pass complete root/table comparison with unchanged 30-second/5-second limits.
-Maximum observed Host call: 19.78 s; no production performance claim. Sources/execution files remain
-pinned. This is targeted qualification, not a new full regression or power-loss/hardware proof.
+[Verification](p02/material-care-continuation/qualification/verification.json): clean final solution
+build; **235 affected Core cases pass**, including **11 new basis cases**, zero failures/skips. Actual
+craft/consume/gather journeys, a 65-batch chain, internal output holes, explicit diagnostic/world
+issuance distinction and 4,096-lot encoding are covered. This is targeted Core qualification, not full
+Core/Hosting regression, world continuation or a scale claim. Initial passing runs remain retained;
+an exact negative-rejection assertion motivated the final affected rerun.
 
-The [independent source review](p02/restorative-recovery/REVIEW.md) found an execution-dependency pin
-gap, corrected before the first external run. [Corrections](p02/restorative-recovery/FAILURES.md) also
-retain the source-manifest path and milestone-inventory fixes. Same-change timeless architecture
-updates cover publication/acknowledgment and coordinated material/care conservation; the existing
-project/ecosystem documentation maintenance hook is verified. No Claude retry or credit saving is claimed.
+The [independent native review](p02/material-care-continuation/REVIEW.md) resolved two test findings;
+no blocking source defect remains. New timeless [architecture documentation](../Runtime/docs/architecture/material-continuation-basis.md)
+and affected index/consumption/archive descriptions are updated in the same change. Source and final
+execution pins remain unchanged. No Claude retry or credit saving is claimed.
 
-Preservation: checkpoint `codex/checkpoint-before-restorative-recovery-20260928T043500Z` at `8a827638`;
-all 23 frozen specs, 61 prior milestone refs and the 19 unrelated staged predecessor files retain their
-bytes/targets. The complete 229-file execution archive is hash-verified. Accepted scope is preserved on
-`codex/milestone-restorative-recovery`; the packet records restoration and reproduction instructions.
+Preservation: pre-change checkpoint `codex/checkpoint-before-material-frontier-20260928T035421Z` at
+`42774390`; all 23 frozen specs, 62 prior milestones and the unrelated 19-file predecessor index are
+preserved. Verified component: `codex/milestone-material-continuation-basis`.
 
-**Next dependency:** implement [coordinated material/care continuation](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md).
-Consumed claims, production batches, care causes and resource effects must close together with bounded
-verified live rights and retrievable provenance. The proposal identifies nested construction/terrain/
-liquid witnesses, capacity scheduling and required >256 operation/ancestry proofs; it is not implemented.
-Do not truncate histories, raise bounds, silently reinterpret profile25/26 or claim resource cuts solve
-material lifetime. Combat items still need due-actor Wait binding. Full journal lifetime, broader native
-crafting/NPC supply/medical policies, all 181 requirements and full P01/P02/P14 production, platform,
-scale, multiplayer, physical/OS, art/audio and human acceptance remain open.
+**Next dependency:** implement the complete [coordinated material/care continuation](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md),
+starting with explicitly versioned continued owners and exact imported-right accounting. Bind source
+issuance, permanent identities, construction/terrain/nested liquid consumers, care/resource closure,
+preemptive capacity scheduling and actual Host archive retrieval/replay. The new basis is a reusable
+structural dependency, not that protocol. Retain >256 actual-dose and surviving-crafted-ancestry proofs
+across two cuts, process kills and native post-cut use/reopen. Do not truncate histories, raise bounds
+or reinterpret profile25/26. Combat items still need due-actor Wait binding. Full journal lifetime,
+all 181 requirements and full P01/P02/P14 production/platform/scale/multiplayer/art/audio/human gates
+remain open.
 
 ### Earlier retained increments
+
+[Ordinary care recovery qualification](p02/restorative-recovery/README.md), preserved on
+`codex/milestone-restorative-recovery` (`42774390`), proves bounded profile26 external interruption
+with five actual journeys, ten SIGKILL probes, 61 Host calls, fifteen complete recovered databases,
+eleven deliberate corruption refusals and six managed cases. Four journeys use original statistics;
+the resource-cut case labels stress calibration. The packet retains exact execution/source pins,
+corrected dependency-pin and inventory findings, 229 hash-verified archived evidence files and
+same-change architecture updates. Runtime rules/formats are unchanged. These retained results are
+not rerun by the material-basis component and do not establish material/care lifetime continuation.
+
 
 [Ordinary care controls and helper selection](p02/restorative-interface/README.md), preserved on
 `codex/milestone-restorative-interface` (`8a827638`), adds typed capacity explanations, exact personal

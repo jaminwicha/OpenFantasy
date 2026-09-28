@@ -110,6 +110,11 @@ issued source rights, crafted-output partitions and surviving lot lineage. A bou
 quietly accumulate all predecessor roots or replace that proof with a cumulative count. Full closed
 records remain retrievable and their storage participates in the publication budget.
 
+The standalone [material basis](material-continuation-basis.md) captures exact surviving material
+rights and direct raw retirement from complete supplied owners. It is an immutable observation,
+not a resource archive anchor or an independently authenticated grant. A coordinated boundary must
+qualify those rights against actual issuance and the full world before using them in continued state.
+
 Changing active-window semantics requires an explicitly admitted interpretation and matching nested
 codecs. Existing profiles retain their capacity refusals as well as their successful outcomes; replay
 cannot reinterpret a historically refused at-capacity command as a newly accepted use. Opening a

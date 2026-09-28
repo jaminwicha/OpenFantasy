@@ -47,6 +47,7 @@ different kind of person.
 | [Aftermath care](aftermath-care.md) | How are prior permission, recovery acknowledgment, helper commitment and finite treatment composed without equating them? |
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
 | [Item consumption](item-consumption.md) | How do candidate material retirement and explicit production archives retain consumed rights without granting treatment or world publication? |
+| [Material continuation basis](material-continuation-basis.md) | How are exact surviving material rights and direct retirement captured without granting issuance, continued spending or archive authenticity? |
 | [Presentation and interaction](presentation-and-interaction.md) | How do actions, menus, maps, animation, art and audio express the simulation? |
 | [Content and composition](content-and-composition.md) | How are source content, procedural opportunities, progression and cross-system changes admitted? |
 

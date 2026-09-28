@@ -177,8 +177,11 @@ continuation interpretation before any of those records can leave its active sta
 A compact material basis must distinguish issued raw rights, live raw/produced claims and irreversible
 retirement. It must preserve definition pins, surviving-lot lineage and exact output allocation while
 retaining retrievable full historical provenance outside the active window. Counts, an archive hash
-or an unverified supplied basis cannot establish those facts. Such a basis is an extension contract;
-production V2 instead validates its complete retained batches and consumed claims directly.
+or an unverified supplied basis cannot establish those facts. The standalone
+[material continuation basis](material-continuation-basis.md) captures surviving lots, exact live
+output intervals and direct retirement from the supplied complete owners. It provides no archive
+authentication or continued owner interpretation; production V2 validates its complete retained
+batches and consumed claims directly.
 
 The [restorative supply tests](../../tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs)
 bind the retained Potion payload and three-berries-to-one-Potion recipe to a separately authored
