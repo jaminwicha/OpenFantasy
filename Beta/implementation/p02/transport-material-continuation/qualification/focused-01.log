@@ -1,0 +1,45 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.84]     OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationTests.Multi_route_head_failure_rolls_back_every_fragment_cause_and_proof_without_spending_sibling_throughput [FAIL]
+[xUnit.net 00:00:01.85]     OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation(consumption: True) [FAIL]
+  Failed OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationTests.Multi_route_head_failure_rolls_back_every_fragment_cause_and_proof_without_spending_sibling_throughput [1 ms]
+  Error Message:
+   System.ArgumentException : Runoff requires every basin, including dry ones, and every terminal exactly once.
+  Stack Trace:
+     at OpenFantasy.Core.Geography.WatershedRunoffFunding..ctor(WatershedRunoffRequest request, CancellationToken cancellation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffFunding.cs:line 20
+   at OpenFantasy.Core.Geography.WatershedRunoffPlanner.Prepare(WatershedRunoffRequest request, CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffPlanner.cs:line 10
+   at OpenFantasy.Core.Tests.Geography.ReservoirTransportFixture..ctor(UInt64 freeSource, UInt64 receiverUnits, Boolean splitDestinations, Boolean secondBudget, UInt64 maximumUnits) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirTransportFixture.cs:line 48
+   at OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationFixture..ctor(Boolean split, Boolean secondBudget, UInt64 freeSource, UInt64 receiverUnits, UInt64 maximumUnits, Boolean consumption) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirTransportContinuationFixture.cs:line 28
+   at OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationTests.Multi_route_head_failure_rolls_back_every_fragment_cause_and_proof_without_spending_sibling_throughput() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirTransportContinuationTests.cs:line 137
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation(consumption: True) [22 ms]
+  Error Message:
+   Assert.ThrowsAny() Failure: Exception type was not compatible
+Expected: typeof(System.FormatException)
+Actual:   typeof(System.ArgumentException)
+---- System.ArgumentException : Reserved transport decoding requires its actual complete owner qualification. (Parameter 'dependencies')
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation(Boolean consumption) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirTransportContinuationCodecTests.cs:line 109
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at OpenFantasy.Core.Geography.ReservoirTransportCodecV3.Decode(ReadOnlySpan`1 bytes, GeographyProductionDependencies dependencies, CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirTransportCodecV3.cs:line 17
+   at OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.<>c__DisplayClass2_0.<Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation>b__13() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirTransportContinuationCodecTests.cs:line 109
+[xUnit.net 00:00:01.87]     OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation(consumption: False) [FAIL]
+  Failed OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation(consumption: False) [15 ms]
+  Error Message:
+   Assert.ThrowsAny() Failure: Exception type was not compatible
+Expected: typeof(System.FormatException)
+Actual:   typeof(System.ArgumentException)
+---- System.ArgumentException : Reserved transport decoding requires its actual complete owner qualification. (Parameter 'dependencies')
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation(Boolean consumption) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirTransportContinuationCodecTests.cs:line 109
+   at InvokeStub_ReservoirTransportContinuationCodecTests.Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+----- Inner Stack Trace -----
+   at OpenFantasy.Core.Geography.ReservoirTransportCodecV3.Decode(ReadOnlySpan`1 bytes, GeographyProductionDependencies dependencies, CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirTransportCodecV3.cs:line 17
+   at OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationCodecTests.<>c__DisplayClass2_0.<Explicit_transport_and_nested_versions_never_downgrade_the_material_interpretation>b__13() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Geography/ReservoirTransportContinuationCodecTests.cs:line 109
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/focused-01.trx
+
+Failed!  - Failed:     3, Passed:    16, Skipped:     0, Total:    19, Duration: 2 s - OpenFantasy.Core.Tests.dll (net8.0)

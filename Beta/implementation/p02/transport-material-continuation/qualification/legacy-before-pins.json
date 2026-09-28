@@ -1,0 +1,102 @@
+{
+  "scope": "16 actual legacy transport/consumption-geography tests on unchanged runtime, including real split/blocked/completed/canceled journeys.",
+  "files": {
+    "consumption/LiquidReservoirState-legacy.bin": {
+      "bytes": 3765,
+      "sha256": "87d14a90b32175ddd588b8414ff75db55f3d5601a5e6f8b30f74753c274fe792"
+    },
+    "consumption/LiquidReservoirState-new.bin": {
+      "bytes": 4422,
+      "sha256": "eed92549a93f4f49760cdd3617ce8e821dd4ec39e123f0b38fb64b88376f49db"
+    },
+    "consumption/PreparedWatershedRunoff-legacy.bin": {
+      "bytes": 3041,
+      "sha256": "03f2905668d24853b90d92b939913765b3055f8a767504e81f7f6510a453662d"
+    },
+    "consumption/PreparedWatershedRunoff-new.bin": {
+      "bytes": 3698,
+      "sha256": "1dea1341c7fef2be69508e877e97b12319ec26e8d5b8ff8138f96fa5a36d3199"
+    },
+    "consumption/ReservoirTransportState-legacy.bin": {
+      "bytes": 4198,
+      "sha256": "0e3bf967862db7b37827cda12e8a24ca8310dad848c854cb43123f694ad5f644"
+    },
+    "consumption/ReservoirTransportState-new.bin": {
+      "bytes": 4855,
+      "sha256": "7b5be738cd8b77f103be2bbf94e3c06960f31a6ae6dc9511915eeb685d0a2668"
+    },
+    "consumption/WatershedRunoffCapacityState-legacy.bin": {
+      "bytes": 3057,
+      "sha256": "dc11010d61159ad890be1bba9ec17ecf54c50dc799dacb56d4d6dae9718e8b9a"
+    },
+    "consumption/WatershedRunoffCapacityState-new.bin": {
+      "bytes": 3714,
+      "sha256": "c81bc135d51e6662eba46dd48362b308efd2abbc530123023f739d98fc976eaf"
+    },
+    "transport/v1-blocked.bin": {
+      "bytes": 4198,
+      "sha256": "2b8228ea04d606864bbe8fac2522e69857297dd563f8c7232ef8f9eb440fa564"
+    },
+    "transport/v1-canceled.bin": {
+      "bytes": 4114,
+      "sha256": "967d96c899b39b6f0eeff5df3e3e55003e97f535b417c47ec2039943d7ab7f16"
+    },
+    "transport/v1-single-completed.bin": {
+      "bytes": 4098,
+      "sha256": "c242dcb2edc446330527f54eb8fd306ede84e06a0edef119783a1af0e261f0b0"
+    },
+    "transport/v1-single-initial.bin": {
+      "bytes": 3994,
+      "sha256": "925e46db3922b3b1b33ab7ca7bb3a19b99bc347abd99d6546de3e21d47f064da"
+    },
+    "transport/v1-single-scheduled.bin": {
+      "bytes": 4198,
+      "sha256": "2b5be4fe4730a5ef2954b6dc4f31ad2f613bea6eb29906e6be0811553e27c498"
+    },
+    "transport/v1-split-completed.bin": {
+      "bytes": 5522,
+      "sha256": "5d06c628b44a3645b2f89755e05922c457973c066601b0a7f05b8382defc5f2d"
+    },
+    "transport/v1-split-initial.bin": {
+      "bytes": 5249,
+      "sha256": "b867ee4ce807a9df4bb77f1a931dfc9531be0b884a3b339dca078ec56f84eea3"
+    },
+    "transport/v1-split-scheduled.bin": {
+      "bytes": 5485,
+      "sha256": "113ebb9794b95c3da5442584aff22cde77b4aa99414e541471202da53a4b2171"
+    },
+    "transport/v2-blocked.bin": {
+      "bytes": 4447,
+      "sha256": "fd9f2f2d8a4369852fd42d6d32b8fbda240fa2f8a7b28319907a89c48f2b6397"
+    },
+    "transport/v2-canceled.bin": {
+      "bytes": 4363,
+      "sha256": "34b1b6b462204011027d640d77e1a8a848efa4e75fba1f3988c08f96c1a1959f"
+    },
+    "transport/v2-single-completed.bin": {
+      "bytes": 4347,
+      "sha256": "4c59ce0f42555c6ec5f4ab701c977172e9de2258d9728b828f318c4c5bb83c71"
+    },
+    "transport/v2-single-initial.bin": {
+      "bytes": 4243,
+      "sha256": "40cb56e1a266b1844aba40e8a47ee581374c1fb596c15ee97f3fe23c3d83baa7"
+    },
+    "transport/v2-single-scheduled.bin": {
+      "bytes": 4447,
+      "sha256": "7320ff8aae4409574383be3e6b68d81fc3030e6d057729f8e5d1d44f7386fee7"
+    },
+    "transport/v2-split-completed.bin": {
+      "bytes": 5771,
+      "sha256": "984d31f0b29e076e349cc184c3627119ecf427e77fddfebe8ed563fa3f1a7ffa"
+    },
+    "transport/v2-split-initial.bin": {
+      "bytes": 5498,
+      "sha256": "949fdef57c4038167dd6459ada7113c59cfbc9cbaf0a5b6b11a1d10195db57e5"
+    },
+    "transport/v2-split-scheduled.bin": {
+      "bytes": 5734,
+      "sha256": "eaddd149eef386a0a9604bcb4289c94043262b20e9fff4ecec22a1cbd394319c"
+    }
+  },
+  "totalBytes": 106458
+}

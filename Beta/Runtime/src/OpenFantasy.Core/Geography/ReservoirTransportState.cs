@@ -1,6 +1,9 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Exposure;
+using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Production;
 
 namespace OpenFantasy.Core.Geography;
 
@@ -12,13 +15,10 @@ public sealed class ReservoirTransportState
     private readonly Lazy<ContentHash> _contentHash;
 
     internal ReservoirTransportState(LiquidReservoirState reservoirs, IEnumerable<ReservoirConnection> connections,
-        IEnumerable<RunoffTransportStage> stages, ulong revision, WorldInstant boundary)
+        IEnumerable<RunoffTransportStage> stages, ulong revision, WorldInstant boundary,
+        TransportMaterialContinuation? continuation = null)
     {
         ArgumentNullException.ThrowIfNull(reservoirs);
-        if (reservoirs.Capacity.Production?.IsContinued == true)
-        {
-            throw new ArgumentException("Reserved transport requires its own joined material continuation contract.", nameof(reservoirs));
-        }
         ArgumentNullException.ThrowIfNull(connections);
         ArgumentNullException.ThrowIfNull(stages);
         var gates = connections.Take(MaximumConnections + 1).ToArray();
@@ -33,8 +33,18 @@ public sealed class ReservoirTransportState
         Stages = journal.OrderBy(s => s.StageId).ToList().AsReadOnly();
         Revision = revision;
         Boundary = boundary;
+        ContinuationQualification = continuation;
+        if (reservoirs.Capacity.Production?.IsContinued == true)
+        {
+            if (reservoirs.Capacity.Production.Continuation?.SupportsReservedTransport != true || continuation is null)
+                throw new ArgumentException("Continued transport requires an actual complete-owner V7 cut.", nameof(reservoirs));
+            continuation.Validate(this);
+        }
+        else if (continuation is not null)
+            throw new ArgumentException("Transport qualification cannot replace its explicit material interpretation.");
         Validate();
-        _contentHash = new(() => ContentHash.Compute(Reservoirs.Capacity.Production?.SupportsConsumption == true
+        _contentHash = new(() => ContentHash.Compute(Reservoirs.Capacity.Production?.IsContinued == true ? ReservoirTransportCodecV3.Encode(this)
+            : Reservoirs.Capacity.Production?.SupportsConsumption == true
             ? ReservoirTransportCodecV2.Encode(this) : ReservoirTransportCodecV1.Encode(this)));
     }
 
@@ -44,13 +54,22 @@ public sealed class ReservoirTransportState
     public ulong Revision { get; }
     public WorldInstant Boundary { get; }
     public ContentHash ContentHash => _contentHash.Value;
+    internal TransportMaterialContinuation? ContinuationQualification { get; }
 
     public static ReservoirTransportState Create(LiquidReservoirState reservoirs, IEnumerable<ReservoirConnection> connections,
         WorldInstant boundary) => new(reservoirs, connections, [], 0, boundary);
 
     public ReservoirTransportPlan PlanSchedule(EntityId stageId, EntityId reservationId, WorldInstant dueAt,
-        IEnumerable<RunoffTransportRoute> routes)
+        IEnumerable<RunoffTransportRoute> routes, Func<EntityId, bool>? historicallyOccupied = null)
     {
+        if (Reservoirs.Capacity.Production?.IsContinued == true)
+        {
+            ArgumentNullException.ThrowIfNull(historicallyOccupied);
+            EntityId cause = ReservoirTransportEvidence.DeliveryCause(stageId);
+            if (ContainsIdentity(stageId) || historicallyOccupied(stageId)
+                || cause == stageId || ContainsIdentity(cause) || historicallyOccupied(cause))
+                throw new ArgumentException("A continued schedule requires fresh stage and delivery identities.");
+        }
         var runoff = Reservoirs.Capacity.Pending.SingleOrDefault(p => p.Request.ReservationId == reservationId)
             ?? throw new ArgumentException("A transport stage requires an active funded commitment.");
         if (dueAt < runoff.Request.End || dueAt < Boundary.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep))
@@ -59,7 +78,31 @@ public sealed class ReservoirTransportState
         }
         var stage = new RunoffTransportStage(stageId, reservationId, dueAt, RunoffTransportStage.Fingerprint(runoff.Request),
             runoff.TotalInputUnits, routes);
-        return new(this, new(Reservoirs, Connections, Stages.Append(stage), checked(Revision + 1), Boundary), [stageId]);
+        return new(this, new(Reservoirs, Connections, Stages.Append(stage), checked(Revision + 1), Boundary, ContinuationQualification), [stageId]);
+    }
+
+    /// <summary>Explicitly selects reserved transport continuation from this actual complete owner.</summary>
+    public ReservoirTransportPlan PlanContinueTransport(GatheringSnapshot? gathering = null,
+        MaterialConstructionState? construction = null, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        ProductionSnapshot production = Reservoirs.Capacity.Production
+            ?? throw new ArgumentException("Reserved transport continuation requires an explicit production owner.");
+        var next = production.ContinueTransport(Reservoirs.Capacity.Inventory, TransportMaterialBoundary.Capture(this), construction, gathering);
+        var capacityPlan = Reservoirs.Capacity.PlanContinuation(next, cancellationToken);
+        var physical = Reservoirs.PlanApply(capacityPlan).ApplyTo(Reservoirs);
+        var qualification = TransportMaterialContinuation.Capture(this, next);
+        var candidate = new ReservoirTransportState(physical, Connections, Stages, Revision, Boundary, qualification);
+        cancellationToken.ThrowIfCancellationRequested();
+        return new(this, candidate);
+    }
+
+    /// <summary>Closes the current qualified material segment without changing stage, physical or calendar facts.</summary>
+    public ReservoirTransportPlan PlanContinue(CancellationToken cancellationToken = default)
+    {
+        if (Reservoirs.Capacity.Production?.Continuation?.SupportsReservedTransport != true)
+            throw new ArgumentException("Select reserved transport continuation explicitly before retaining further cuts.");
+        return PlanContinueTransport(cancellationToken: cancellationToken);
     }
 
     /// <summary>Applies an exact physical-owner plan while preserving every scheduled funding obligation.</summary>
@@ -86,7 +129,7 @@ public sealed class ReservoirTransportState
         {
             throw new ArgumentException("Transport rebinding preserves fixed domain, geometry and all retained commitment history.");
         }
-        return new(this, new(reservoirs, Connections, Stages, checked(Revision + 1), Boundary));
+        return new(this, new(reservoirs, Connections, Stages, checked(Revision + 1), Boundary, ContinuationQualification));
     }
 
     public ReservoirTransportPlan PlanCancel(EntityId reservationId)
@@ -95,7 +138,7 @@ public sealed class ReservoirTransportState
         var physical = Reservoirs.PlanApply(capacity).ApplyTo(Reservoirs);
         var journal = Stages.Select(s => s.ReservationId == reservationId && s.IsPending
             ? s.WithStatus(RunoffTransportStatus.Canceled, Boundary) : s);
-        return new(this, new(physical, Connections, journal, checked(Revision + 1), Boundary));
+        return new(this, new(physical, Connections, journal, checked(Revision + 1), Boundary, ContinuationQualification));
     }
 
     public ReservoirTransportPlan PlanAdvance(WorldInstant boundary, bool readingHold = false,

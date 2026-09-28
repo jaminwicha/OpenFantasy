@@ -86,10 +86,12 @@ generic rebinding cannot relabel consumed or newly crafted water.
 ## Composition boundaries
 
 These are standalone component contracts. Complete world admission rejects continued material owners
-until the coordinated world/resource/care and authenticated archive protocol admits them. Reserved
-gate transport still requires its own typed custody transition. The separate
+until the coordinated world/resource/care and authenticated archive protocol admits them.
+[Reserved gate transport](transport-material-continuation.md) selects its own V7 typed custody
+transition through a qualified complete transport-owner cut and explicit nested V4 geography frames.
+Independent capacity cuts cannot replace that transport boundary. The separate
 [terrain continuation](terrain-material-continuation.md) contract records coarse/detail partitioning;
 joining that interpretation with liquid ownership and excavation source/effort remains a complete
 integration responsibility. Liquid V3 dependencies retain their selected Production V3/V4/V5 profiles;
-they do not silently accept V6 terrain operations. Component continuation does not grant those
+they do not silently accept V6 terrain or V7 transport operations. Component continuation does not grant those
 permissions or alter legacy world profiles.

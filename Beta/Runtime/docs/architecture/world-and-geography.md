@@ -671,8 +671,10 @@ routing, capacity, reservoir and transport owners use their corresponding V2 arc
 complete production V2 evidence even when its consumed collection is empty. Qualified
 [continued liquid owners](liquid-material-continuation.md) instead use explicit geography V3 frames
 with nested Production V3/V4/V5 dependencies. Qualified terrain state/registry V4 frames instead retain
-Production V6 and its typed representation evidence; arbitrary generic contexts and reserved transport
-remain unsupported.
+Production V6 and its typed representation evidence. Qualified
+[transport continuation](transport-material-continuation.md) instead uses transport V3, nested liquid
+V4 frames and Production V7 with actual delivery proofs. Arbitrary generic contexts cannot supply
+these geographic permissions, and terrain/transport capabilities require a separate joined contract.
 Ordinary successor reconciliation
 preserves the selected interpretation in both directions. See
 [composed material evidence](item-consumption.md#composed-material-evidence) for the exact version table,

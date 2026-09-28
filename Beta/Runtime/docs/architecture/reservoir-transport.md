@@ -58,8 +58,9 @@ none. Aggregate terminal totals do not permit arbitrary redistribution of source
 held raw lot at the actual source-claim boundaries. Each destination receives those exact intervals,
 with the same material/source identity. The first interval retains the parent lot ID with advancing
 revision; additional fragments derive stable IDs from the stage and canonical fragment ordinal.
-Existing and historically occupied identities reject the stage. Unrelated lots and Production history
-remain exact. Touched stores and complete custody advance once per accepted stage; no transferred unit
+Existing and historically occupied identities reject the stage. Unrelated lots remain exact; inline
+Production history remains unchanged, while explicit V7 records a typed delivery operation.
+Touched stores and complete custody advance once per accepted stage; no transferred unit
 remains available at its source.
 
 The planner retires the completed capacity commitment in the same transition that debits sources and
@@ -95,9 +96,10 @@ rebinding already validated material actions. A transport plan's `ApplyTo` pins 
 including its gate catalog, journal and processed calendar boundary.
 
 When capacity explicitly carries consumption-enabled inline production, reservoir and transport archives
-use their V2 formats and retain all nested evidence. Reserved transport rejects
-[continued material owners](liquid-material-continuation.md); its delivery requires a separately
-qualified custody transition. Reconciliation preserves the inline interpretation and exact
+use their V2 formats and retain all nested evidence. Explicit
+[transport material continuation](transport-material-continuation.md) derives V7 from the actual
+complete transport owner and uses transport V3 with nested geography V4 archives. Arbitrary generic
+continued material cannot supply that qualification. Reconciliation preserves its selected interpretation and exact
 prior consumption claims; consuming unreserved receiver stock does not erase scheduled funding or
 release a source hold. This [component composition](item-consumption.md#composed-material-evidence)
 does not enable consumption in an older complete-world profile.

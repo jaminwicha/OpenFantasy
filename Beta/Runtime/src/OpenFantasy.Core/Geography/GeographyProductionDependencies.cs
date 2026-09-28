@@ -12,10 +12,19 @@ public sealed class GeographyProductionDependencies
     public GeographyProductionDependencies(WatershedRunoffCapacityState owner,
         IReadOnlyCollection<GatherIssueEvidence>? gatherEvidence = null,
         IReadOnlyCollection<ConstructionCompletionEvidence>? constructionEvidence = null)
+        : this(owner, gatherEvidence, constructionEvidence, transport: false)
+    {
+    }
+
+    private GeographyProductionDependencies(WatershedRunoffCapacityState owner,
+        IReadOnlyCollection<GatherIssueEvidence>? gatherEvidence,
+        IReadOnlyCollection<ConstructionCompletionEvidence>? constructionEvidence, bool transport)
     {
         ArgumentNullException.ThrowIfNull(owner);
         Context = owner.Production?.Continuation
             ?? throw new ArgumentException("Geography dependencies require an actual continued capacity owner.", nameof(owner));
+        if (Context.SupportsReservedTransport != transport)
+            throw new ArgumentException("Reserved transport dependencies require its actual complete transport owner.");
         Qualification = owner.ContinuationQualification
             ?? throw new ArgumentException("Geography dependencies require the actual admitted fixed domain cut.", nameof(owner));
         GatherEvidence = Copy(gatherEvidence, MaterialOperationHistory.MaximumOperations);
@@ -35,15 +44,33 @@ public sealed class GeographyProductionDependencies
         ReservoirGeometryHashes = Array.AsReadOnly(owner.Geometries.Select(value => value.ContentHash).ToArray());
     }
 
+    public GeographyProductionDependencies(ReservoirTransportState owner,
+        IReadOnlyCollection<GatherIssueEvidence>? gatherEvidence = null,
+        IReadOnlyCollection<ConstructionCompletionEvidence>? constructionEvidence = null,
+        IReadOnlyCollection<ReservoirTransportEvidence>? transportEvidence = null)
+        : this((owner ?? throw new ArgumentNullException(nameof(owner))).Reservoirs.Capacity,
+            gatherEvidence, constructionEvidence, transport: true)
+    {
+        TransportQualification = owner.ContinuationQualification
+            ?? throw new ArgumentException("Transport dependencies require the actual admitted material cut.", nameof(owner));
+        TransportOwnerHash = owner.ContentHash;
+        ReservoirGeometryHashes = Array.AsReadOnly(owner.Reservoirs.Geometries.Select(value => value.ContentHash).ToArray());
+        TransportEvidence = Copy(transportEvidence, MaterialOperationHistory.MaximumOperations);
+    }
+
     public ProductionContinuationContext Context { get; }
     public ReadOnlyCollection<GatherIssueEvidence> GatherEvidence { get; }
     public ReadOnlyCollection<ConstructionCompletionEvidence> ConstructionEvidence { get; }
+    public ReadOnlyCollection<ReservoirTransportEvidence> TransportEvidence { get; } = Array.AsReadOnly(Array.Empty<ReservoirTransportEvidence>());
+    internal ContentHash? TransportOwnerHash { get; }
+    internal TransportMaterialContinuation? TransportQualification { get; }
     internal RunoffMaterialContinuation Qualification { get; }
     internal ReadOnlyCollection<ContentHash>? ReservoirGeometryHashes { get; }
 
     internal ProductionSnapshot Decode(ReadOnlySpan<byte> bytes)
     {
-        return Context.SupportsConstruction ? ProductionCodecV5.Decode(bytes, Context, GatherEvidence, ConstructionEvidence)
+        return Context.SupportsReservedTransport ? ProductionCodecV7.Decode(bytes, Context, GatherEvidence, ConstructionEvidence, TransportEvidence)
+            : Context.SupportsConstruction ? ProductionCodecV5.Decode(bytes, Context, GatherEvidence, ConstructionEvidence)
             : Context.SupportsMaterialOperations ? ProductionCodecV4.Decode(bytes, Context, GatherEvidence)
             : ProductionCodecV3.Decode(bytes, Context);
     }

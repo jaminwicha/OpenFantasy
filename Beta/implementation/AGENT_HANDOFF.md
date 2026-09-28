@@ -42,76 +42,58 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Terrain material continuation](p02/terrain-material-continuation/README.md) adds qualified actual-registry
-cuts and typed refinement/demotion, with fixed allocation/active-cell evidence, exact source retirement,
-produced ancestry and nested terrain V4 / Production V6 archives. Generic Production cuts cannot erase
-geographic violations. Permanent historical identity lookup remains mandatory. Actual construction
-completion can coexist with this terrain capability, preserving original source batches across cuts.
+[Reserved transport continuation](p02/transport-material-continuation/README.md) introduces qualified
+complete-owner cuts, typed reserved delivery and Production V7 with transport V3 / nested liquid V4
+archives. Source reservations, exact raw/produced rights, incoming capacity, complete stage journals,
+gate catalogs, storage revisions and processed time survive cuts. Delivery uses a cause distinct from
+its scheduled stage; failed head/material/throughput candidates publish no partial material or identity.
+Generic Production or lower capacity cuts cannot bypass transport qualification.
 
-The clean solution build, **1,535 distinct Core +331 affected Hosting =1,866 managed cases with passing
-final outcomes**, 24 byte-exact pre-change fixtures and [independent critique](p02/terrain-material-continuation/REVIEW.md)
-qualify this standalone component. Core evidence is composite: the substantive full run passed 1,534
-cases; the final 40-case registry run fixes its one diagnostic-prefix failure after a literal-only edit.
-Both original failures remain in the [failure record](p02/terrain-material-continuation/FAILURES.md).
-All 21 new cases pass, including the actual 512-operation refusal/cut/resume boundary and three-cut
-mixed extraction/craft/recraft/consume journey. The unchanged 512 case ran in 694.17 then 145.61 seconds
-after redundant prefix reconstruction was removed; shared-machine timings do not close performance gates.
-All seven affected architecture references are current, with 191 resolving local file links.
+The clean solution build and **1,556 full Core +331 affected Hosting =1,887 managed cases** pass,
+including all 21 new transport cases. The actual 511-transfer setup reaches delivery operation 512,
+blocks a sibling without releasing funding, cuts, refuses extra same-boundary throughput and resumes
+at the next actual step. A three-cut mixed craft/recraft/consume/split-delivery journey, raw-plus-produced
+head controls, sibling throughput after rollback, historical identities and actual construction/dry
+transport composition pass. All **24 pre-change binary fixtures (106,458 bytes)** reproduce exactly.
+[Independent critique](p02/transport-material-continuation/REVIEW.md) strengthened genuine sibling-proof
+substitution to reach the exact produced-prefix refusal. No blocking runtime finding remained. Original
+test-only integration failures remain in [FAILURES.md](p02/transport-material-continuation/FAILURES.md).
+Seven architecture pages are current, with 202 resolving local file links. Timings do not qualify scale.
 
-Base `9d9f236` is preserved by `codex/checkpoint-before-terrain-material-continuation-20260928T064510Z`.
-Before replay optimization, WIP `b5881bb11acb` preserves source/tests/docs/evidence on
-`codex/checkpoint-terrain-before-replay-optimization-20260928T163146Z`, including its known failed check.
-The verified increment is preserved by `codex/milestone-terrain-material-continuation`; resolve that ref
-for its exact commit. All 67 prior milestones, 23 frozen specs and unrelated predecessor staging remain
-unchanged. The [verification record](p02/terrain-material-continuation/qualification/verification.json)
-pins exact source/execution and report scope. External Claude routes were not automatically retried;
-no credit savings are claimed.
+Base `c3dd90a` is preserved on
+`codex/checkpoint-before-transport-material-continuation-20260928T164740Z`; all 68 prior milestones,
+23 frozen specs and unrelated predecessor staging remain unchanged. The verified increment is preserved
+by `codex/milestone-transport-material-continuation`; resolve that ref for the exact commit. The
+[verification record](p02/transport-material-continuation/qualification/verification.json) pins source,
+execution, reports and preservation. Native runtime and independent critic assignments were bounded;
+Astra owns integration/tests/docs/Git. No automatic external retry or credit saving is claimed.
 
-Next joins remain reserved transport and excavation continuation, followed by complete-world
-material/care/resource and combined liquid/terrain publication with authenticated durable archive
-retrieval and recovery. These component cuts do not admit a live world, grant mining labor, migrate a
-save or close any native, production-scale, platform, art, human or full campaign gate.
+**Next dependency:** actual excavation source/effort and partial/completed-work continuation, then
+complete-world material/care/resource and combined liquid/terrain publication. Complete the
+[coordinated material/care protocol](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md) with authentic
+Host archive retrieval/replay, >256 actual doses with surviving ancestry, two cuts, rollback, external
+kills and native use/reopen. Component qualification cannot authenticate stored history or grant new
+source issuance. Construction work state also needs authenticated resume. Do not truncate history,
+raise bounds or reinterpret older world profiles. Combat items still require due-actor Wait binding.
+All 181 requirements and full P01/P02/P14 production/platform/scale, multiplayer/art/audio/human gates
+remain open. This component does not admit a live world, grant mining labor or close a native gate.
 
-[Liquid owners across material boundaries](p02/liquid-material-continuation/README.md) adds explicit
-capacity cuts and nested V3 geography codecs. Actual closing owners qualify the fixed domain/context;
-reservoir continuation also pins the exact geometry catalog. A generic material cut cannot hide
-historical identity/revision violations and gain geography admission. Pending runoff retains every
-source reservation, forcing window, contribution, incoming total and capacity revision. Old plans
-become stale; ordinary reconciliation cannot replace a continuation context.
+### Preceding geography increments
 
-The clean solution build and **1,514 full Core +238 affected Hosting =1,752 cases** pass, including all
-23 new Core cases. Genuine V3/V4 craft/recraft/consume journeys cross an initial selection and
-two further cuts; actual raw and produced water fall/spread across cuts. Counted and physical headroom
-refusals have separate successful custody-action controls, followed by accepted reconciliation after
-cancellation. Nested V4 gathering and V5 actual construction completion require the correct opaque
-proof at every layer. All **23 pre-change V1/V2 binary fixtures reproduce exactly**.
+[Terrain material continuation](p02/terrain-material-continuation/README.md), `c3dd90a`, is preserved on
+`codex/milestone-terrain-material-continuation`. Actual-registry cuts and typed refine/demote operations
+retain fixed allocation/active-cell evidence and exact direct retirement under terrain V4 / Production
+V6. Its retained composite 1,535 Core +331 Hosting qualification includes the 512-operation boundary,
+actual construction composition, 24 exact legacy fixtures and independent callback/qualification review.
+The packet preserves two diagnostic failures, the separate WIP checkpoint before replay optimization
+and measured replay-cost observations. Terrain/transport capability joining remains distinct work.
 
-[Independent review](p02/liquid-material-continuation/REVIEW.md) verified the qualification boundary
-and identified missing decoder/proof controls and a fixture reservation mismatch, now corrected.
-[Failures](p02/liquid-material-continuation/FAILURES.md) retain the initial analyzer/API build failure
-and the old regression expecting a later refusal. Its corrected test retains generic refusal, legacy
-encoding refusal, exact old bytes and qualified V3 reconstruction. Runtime sources are unchanged
-since the first successful build. Architecture references are updated in the same change.
-
-Checkpoint `codex/checkpoint-before-liquid-material-continuation-20260928T060945Z` preserves `d65d3e1`;
-66 prior milestones, 23 frozen specs and unrelated predecessor staging are pinned in the packet.
-Native workers owned disjoint runtime/tests; one independent critic reviewed the completed source
-and necessary deltas; Astra integrates, executes checks and owns docs/Git. No automatic external retry
-or credit saving is claimed. The verified increment is preserved by
-`codex/milestone-liquid-material-continuation`; [verification](p02/liquid-material-continuation/qualification/verification.json)
-pins the exact tested source and execution files, preserved boundaries and remaining limits.
-
-**Next dependency:** continued terrain source coverage and typed material representation changes,
-reserved gate transport and partial/completed excavation need distinct joined operations; their guards
-remain. Complete the [coordinated material/care protocol](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md)
-with world closure, care/resource scheduling, authentic Host archive retrieval/replay, >256 actual-dose
-and surviving-ancestry journeys, two cuts, rollback, external kills and native use/reopen. Geography
-qualification comes from actual owners and has no arbitrary public decoder; authenticated reconstruction
-must retrieve and validate the closing history. New geography over historical material needs explicit
-admission, not a generic context injection. Construction work state likewise needs authenticated resume.
-Do not truncate history, raise bounds or reinterpret old world profiles. Combat items still need due-actor
-Wait binding. All 181 requirements and full P01/P02/P14 production/platform/scale, multiplayer/art/audio/
-human gates remain open. This component scope does not reduce mining, construction, acquisition or care.
+[Liquid material continuation](p02/liquid-material-continuation/README.md), `9d9f236`, is preserved on
+`codex/milestone-liquid-material-continuation`. Actual capacity/reservoir cuts pin domain/context and
+geometry while nested geography V3 retains Production V3/V4/V5. Real craft/recraft/consume and detailed
+raw/produced flow across cuts, pending obligations, exact source proofs and physical/counted headroom
+controls passed 1,514 Core +238 Hosting cases and 23 exact old fixtures. Its packet retains original
+failures and critic corrections. Those component proofs do not establish complete-world authentication.
 
 ### Earlier retained increments
 

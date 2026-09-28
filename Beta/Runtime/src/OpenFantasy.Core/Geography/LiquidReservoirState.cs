@@ -35,7 +35,8 @@ public sealed class LiquidReservoirState
         }
         ValidateRolesAndSupport();
         Projections = Geometries.Select(Project).ToList().AsReadOnly();
-        _contentHash = new(() => ContentHash.Compute(Capacity.Production?.IsContinued == true ? LiquidReservoirCodecV3.Encode(this)
+        _contentHash = new(() => ContentHash.Compute(Capacity.Production?.Continuation?.SupportsReservedTransport == true ? LiquidReservoirCodecV4.Encode(this)
+            : Capacity.Production?.IsContinued == true ? LiquidReservoirCodecV3.Encode(this)
             : Capacity.Production?.SupportsConsumption == true
             ? LiquidReservoirCodecV2.Encode(this) : LiquidReservoirCodecV1.Encode(this)));
     }

@@ -39,7 +39,8 @@ public sealed class WatershedRunoffCapacityState
             ValidateBasis(runoff);
         }
         Receivers = AggregateReceivers().ToList().AsReadOnly();
-        _contentHash = new(() => ContentHash.Compute(Production?.IsContinued == true ? WatershedRunoffCapacityCodecV3.Encode(this)
+        _contentHash = new(() => ContentHash.Compute(Production?.Continuation?.SupportsReservedTransport == true ? WatershedRunoffCapacityCodecV4.Encode(this)
+            : Production?.IsContinued == true ? WatershedRunoffCapacityCodecV3.Encode(this)
             : Production?.SupportsConsumption == true
             ? WatershedRunoffCapacityCodecV2.Encode(this) : WatershedRunoffCapacityCodecV1.Encode(this)));
     }
@@ -130,7 +131,7 @@ public sealed class WatershedRunoffCapacityState
     private ProductionSnapshot RequireProduction() => Production
         ?? throw new ArgumentException("Material continuation requires an explicit production owner.");
 
-    private WatershedRunoffCapacityPlan PlanContinuation(ProductionSnapshot production, CancellationToken cancellation)
+    internal WatershedRunoffCapacityPlan PlanContinuation(ProductionSnapshot production, CancellationToken cancellation)
     {
         var continuation = RunoffMaterialContinuation.Capture(this, production);
         var refreshed = Reprepare(Inventory, production, continuation, cancellation);
@@ -189,12 +190,22 @@ public sealed class WatershedRunoffCapacityState
     }
 
     /// <summary>Internal completion publication after the transport planner moves the entire exact funding bill.</summary>
-    internal WatershedRunoffCapacityPlan PlanComplete(EntityId reservationId, CountedAuthorityState inventory)
+    internal WatershedRunoffCapacityPlan PlanComplete(EntityId reservationId, CountedAuthorityState inventory, ProductionSnapshot? production = null)
     {
+        production ??= Production;
         if (Production?.IsContinued == true)
         {
-            throw new ArgumentException("Reserved runoff completion requires its own joined material continuation contract.");
+            if (Production.Continuation?.SupportsReservedTransport != true || production?.MaterialHistory?.Operations.LastOrDefault()
+                is not MaterialReservedTransportOperation delivery || delivery.Evidence.ReservationId != reservationId
+                || delivery.Evidence.BeforeInventoryHash != Inventory.ContentHash
+                || delivery.Evidence.BeforeProductionHash != Production.ContentHash
+                || delivery.Evidence.AfterInventoryHash != inventory.ContentHash)
+                throw new ArgumentException("Reserved completion requires its actual joined V7 delivery operation.");
+            ValidateProductionSuccessor(production);
         }
+        else if (production?.ContentHash != Production?.ContentHash)
+            throw new ArgumentException("Inline transport cannot replace its complete production owner.");
+        production?.ValidateForAuthority(inventory);
         if (!Pending.Any(p => p.Request.ReservationId == reservationId) || inventory.Custody.Revision <= Inventory.Custody.Revision
             || Inventory.WithCustody(inventory.Custody).ContentHash != inventory.ContentHash
             || inventory.Custody.Lots.Any(l => l.ReservedBy == reservationId))
@@ -203,9 +214,9 @@ public sealed class WatershedRunoffCapacityState
         }
         var planner = new WatershedRunoffPlanner();
         var remaining = Pending.Where(p => p.Request.ReservationId != reservationId).Select(p => planner.Prepare(
-            new(Domain.Network, Domain.Mapping, inventory, Production, p.Request.ReservationId, Domain.OwnerActorId,
-                p.Request.Start, p.Request.End, Domain.Material, p.Request.Inputs, Domain.Terminals))).ToArray();
-        return new(this, new(Domain, inventory, Production, checked(Revision + 1), remaining, Closed.Append(reservationId)));
+            new(Domain.Network, Domain.Mapping, inventory, production, p.Request.ReservationId, Domain.OwnerActorId,
+                p.Request.Start, p.Request.End, Domain.Material, p.Request.Inputs, Domain.Terminals, ContinuationQualification))).ToArray();
+        return new(this, new(Domain, inventory, production, checked(Revision + 1), remaining, Closed.Append(reservationId), ContinuationQualification));
     }
 
     private void ValidateBasis(PreparedWatershedRunoff runoff)

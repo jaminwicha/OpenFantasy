@@ -16,7 +16,7 @@ public static class WatershedRunoffCodecV1
 
     public static byte[] Encode(PreparedWatershedRunoff runoff) => EncodeRunoff(runoff, consumption: false);
 
-    internal static byte[] EncodeRunoff(PreparedWatershedRunoff runoff, bool consumption, bool continued = false)
+    internal static byte[] EncodeRunoff(PreparedWatershedRunoff runoff, bool consumption, bool continued = false, bool transport = false)
     {
         ArgumentNullException.ThrowIfNull(runoff);
         byte[] columns = new byte[runoff.Request.Network.ColumnCount * sizeof(ulong)];
@@ -38,7 +38,7 @@ public static class WatershedRunoffCodecV1
             terminal.CustodianId.WriteBytes(row[16..]);
             BinaryPrimitives.WriteUInt64BigEndian(row[32..], terminal.IncomingUnits);
         }
-        byte[] bytes = CanonicalEncodingV1.Frame(continued ? "geography.watershed.runoff.v3" : consumption ? "geography.watershed.runoff.v2" : "geography.watershed.runoff.v1", EncodeRequest(runoff.Request, consumption, continued), columns, terminals);
+        byte[] bytes = CanonicalEncodingV1.Frame(transport ? "geography.watershed.runoff.v4" : continued ? "geography.watershed.runoff.v3" : consumption ? "geography.watershed.runoff.v2" : "geography.watershed.runoff.v1", EncodeRequest(runoff.Request, consumption, continued, transport), columns, terminals);
         if (bytes.Length > MaximumEncodedByteLength)
         {
             throw new ArgumentException("The runoff archive exceeds its finite bound.");
@@ -50,18 +50,18 @@ public static class WatershedRunoffCodecV1
         DecodeRunoff(bytes, cancellationToken, consumption: false);
 
     internal static PreparedWatershedRunoff DecodeRunoff(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption,
-        GeographyProductionDependencies? dependencies = null)
+        GeographyProductionDependencies? dependencies = null, bool transport = false)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
-            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 4, dependencies is not null ? "geography.watershed.runoff.v3"u8 : consumption ? "geography.watershed.runoff.v2"u8 : "geography.watershed.runoff.v1"u8);
-            WatershedRunoffRequest request = DecodeRequest(reader.ReadField(MaximumRequestByteLength), cancellationToken, consumption, dependencies);
+            var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 4, transport ? "geography.watershed.runoff.v4"u8 : dependencies is not null ? "geography.watershed.runoff.v3"u8 : consumption ? "geography.watershed.runoff.v2"u8 : "geography.watershed.runoff.v1"u8);
+            WatershedRunoffRequest request = DecodeRequest(reader.ReadField(MaximumRequestByteLength), cancellationToken, consumption, dependencies, transport);
             _ = reader.ReadExactField(request.Network.ColumnCount * sizeof(ulong));
             _ = reader.ReadExactField(request.Terminals.Count * TerminalByteLength);
             reader.Complete();
             PreparedWatershedRunoff candidate = new WatershedRunoffPlanner().Prepare(request, cancellationToken);
-            if (!EncodeRunoff(candidate, consumption, dependencies is not null).AsSpan().SequenceEqual(bytes))
+            if (!EncodeRunoff(candidate, consumption, dependencies is not null, transport).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The runoff archive differs from canonical inputs or rederived routing quantities.");
             }
@@ -74,13 +74,13 @@ public static class WatershedRunoffCodecV1
         }
     }
 
-    internal static byte[] EncodeRequest(WatershedRunoffRequest request, bool consumption = false, bool continued = false)
+    internal static byte[] EncodeRequest(WatershedRunoffRequest request, bool consumption = false, bool continued = false, bool transport = false)
     {
         byte[] inputs = EncodeInputs(request.Inputs);
         byte[] terminals = EncodeTerminals(request.Terminals);
-        byte[] bytes = CanonicalEncodingV1.Frame(continued ? "geography.watershed.runoff-request.v3" : consumption ? "geography.watershed.runoff-request.v2" : "geography.watershed.runoff-request.v1", WatershedNetworkCodecV1.Encode(request.Network),
+        byte[] bytes = CanonicalEncodingV1.Frame(transport ? "geography.watershed.runoff-request.v4" : continued ? "geography.watershed.runoff-request.v3" : consumption ? "geography.watershed.runoff-request.v2" : "geography.watershed.runoff-request.v1", WatershedNetworkCodecV1.Encode(request.Network),
             WatershedTerrainCodecV1.EncodeMapping(request.Mapping), AuthorityEncodingV1.Encode(request.Inventory),
-            GeographyProductionCodec.Encode(request.Production, consumption, continued), request.ReservationId.ToByteArray(),
+            GeographyProductionCodec.Encode(request.Production, consumption, continued, transport), request.ReservationId.ToByteArray(),
             request.OwnerActorId.ToByteArray(), EncodeInstant(request.Start), EncodeInstant(request.End), request.Material.Item.DefinitionId.ToByteArray(),
             request.Material.Item.Version.ToByteArray(), MaterialRecipeCodecV1.EncodeMaterial(request.Material.Physical), inputs, terminals);
         if (bytes.Length > MaximumRequestByteLength)
@@ -91,14 +91,14 @@ public static class WatershedRunoffCodecV1
     }
 
     internal static WatershedRunoffRequest DecodeRequest(ReadOnlySpan<byte> bytes, CancellationToken cancellation, bool consumption = false,
-        GeographyProductionDependencies? dependencies = null)
+        GeographyProductionDependencies? dependencies = null, bool transport = false)
     {
-        var reader = new CanonicalTerrainReader(bytes, MaximumRequestByteLength, 14, dependencies is not null ? "geography.watershed.runoff-request.v3"u8 : consumption ? "geography.watershed.runoff-request.v2"u8 : "geography.watershed.runoff-request.v1"u8);
+        var reader = new CanonicalTerrainReader(bytes, MaximumRequestByteLength, 14, transport ? "geography.watershed.runoff-request.v4"u8 : dependencies is not null ? "geography.watershed.runoff-request.v3"u8 : consumption ? "geography.watershed.runoff-request.v2"u8 : "geography.watershed.runoff-request.v1"u8);
         var network = WatershedNetworkCodecV1.Decode(reader.ReadField(WatershedNetworkCodecV1.MaximumEncodedByteLength), cancellation);
         var mapping = WatershedTerrainCodecV1.ReadMapping(reader.ReadField(256));
         var inventory = AuthorityEncodingV1.Decode(reader.ReadField(AuthorityEncodingV1.MaximumStateByteLength));
         ReadOnlySpan<byte> productionBytes = reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength);
-        var production = GeographyProductionCodec.Decode(productionBytes, consumption, dependencies);
+        var production = GeographyProductionCodec.Decode(productionBytes, consumption, dependencies, transport);
         EntityId reservation = reader.ReadIdentity(), owner = reader.ReadIdentity();
         WorldInstant start = ReadInstant(reader.ReadExactField(12)), end = ReadInstant(reader.ReadExactField(12));
         var item = new CountedItemDefinition(reader.ReadIdentity(), reader.ReadHash());

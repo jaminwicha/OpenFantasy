@@ -14,6 +14,7 @@ internal static class MaterialOperationCodec
     {
         byte[] payload = operation switch
         {
+            MaterialReservedTransportOperation transport => transport.Evidence.ContentHash.ToByteArray(),
             MaterialTerrainRepresentationOperation terrain => terrain.Evidence.ContentHash.ToByteArray(),
             MaterialConstructionOperation construction => construction.Evidence.ContentHash.ToByteArray(),
             MaterialCraftOperation craft => craft.Batch.BatchId.ToByteArray(),
@@ -35,7 +36,8 @@ internal static class MaterialOperationCodec
         IReadOnlyDictionary<EntityId, ProductionBatch> batches, IReadOnlyDictionary<EntityId, ConsumedItemClaim> claims,
         IReadOnlyDictionary<ContentHash, GatherIssueEvidence> evidence,
         IReadOnlyDictionary<ContentHash, ConstructionCompletionEvidence>? constructionEvidence = null,
-        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.TerrainRepresentationEvidence>? terrainEvidence = null)
+        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.TerrainRepresentationEvidence>? terrainEvidence = null,
+        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.ReservoirTransportEvidence>? transportEvidence = null)
     {
         var reader = new CanonicalProductionReader(bytes, MaximumByteLength, 6);
         reader.ExpectTag("production.material-operation"u8);
@@ -46,6 +48,12 @@ internal static class MaterialOperationCodec
         MaterialOperation result;
         switch (kind)
         {
+            case MaterialOperationKind.ReservedTransport:
+                ContentHash transportHash = ReadHash(ref reader);
+                if (transportEvidence is null || !transportEvidence.TryGetValue(transportHash, out var transport))
+                    throw new ArgumentException("Transport decoding requires its actual opaque delivery evidence.");
+                result = new MaterialReservedTransportOperation(sequence, transport);
+                break;
             case MaterialOperationKind.TerrainRepresentation:
                 ContentHash terrainHash = ReadHash(ref reader);
                 if (terrainEvidence is null || !terrainEvidence.TryGetValue(terrainHash, out var terrain))

@@ -1,0 +1,27 @@
+{
+  "startedUtc": "2026-09-28T16:51:57.061612+00:00",
+  "kind": "baseline",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ReservoirTransport|FullyQualifiedName~ConsumptionGeographyCodecTests",
+    "--logger",
+    "trx;LogFileName=before.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+  ],
+  "environment": {
+    "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/transport",
+    "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/terrain",
+    "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/registry",
+    "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/production",
+    "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/consumption"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 4.905004750005901,
+  "finishedUtc": "2026-09-28T16:52:01.969227+00:00"
+}

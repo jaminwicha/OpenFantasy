@@ -56,6 +56,8 @@ internal sealed class ProductionIdentityRegistry
             foreach (MaterialOperation operation in material.Operations)
             {
                 Add(operation.CommandId, "command");
+                if (operation is MaterialReservedTransportOperation transport)
+                    foreach (EntityId id in transport.Evidence.CreatedIds) Add(id, "raw-lot");
                 if (operation is MaterialTerrainRepresentationOperation representation)
                     foreach (EntityId id in representation.Evidence.CreatedIds) Add(id, "raw-lot");
                 if (operation is MaterialConstructionOperation construction)

@@ -125,7 +125,8 @@ These inline-history archives retain the complete production V2 owner, even when
 is empty. Qualified [continued liquid owners](liquid-material-continuation.md) use explicit geography V3
 frames with nested Production V3/V4/V5 dependencies instead. Qualified
 [terrain continuation](terrain-material-continuation.md) uses terrain state/registry V4 and Production V6;
-reserved transport still rejects continued owners. Inline formats do not grant continuation permission.
+[reserved transport continuation](transport-material-continuation.md) uses transport V3, nested liquid
+V4 and Production V7, preserving consumption as selected. Inline formats do not grant continuation permission.
 An absent or legacy production owner cannot masquerade as that interpretation, and an older codec
 cannot drop consumed evidence. Nested tags, bounded reads and canonical reconstruction apply at each
 layer. Content hashes select the corresponding explicit archive. Independent component restore does

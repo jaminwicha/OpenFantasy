@@ -6,7 +6,7 @@ using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
-public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7 }
+public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7, ReservedTransport = 8 }
 
 /// <summary>One ordered material transition; only its specific owner can create an accepted record.</summary>
 public abstract class MaterialOperation
@@ -72,4 +72,12 @@ public sealed class MaterialTerrainRepresentationOperation : MaterialOperation
     internal MaterialTerrainRepresentationOperation(ulong sequence, OpenFantasy.Core.Geography.TerrainRepresentationEvidence evidence)
         : base(sequence, evidence.CauseId, MaterialOperationKind.TerrainRepresentation) => Evidence = evidence;
     public OpenFantasy.Core.Geography.TerrainRepresentationEvidence Evidence { get; }
+}
+
+/// <summary>Actual delivery of one complete reserved transport stage.</summary>
+public sealed class MaterialReservedTransportOperation : MaterialOperation
+{
+    internal MaterialReservedTransportOperation(ulong sequence, OpenFantasy.Core.Geography.ReservoirTransportEvidence evidence)
+        : base(sequence, evidence.CauseId, MaterialOperationKind.ReservedTransport) => Evidence = evidence;
+    public OpenFantasy.Core.Geography.ReservoirTransportEvidence Evidence { get; }
 }

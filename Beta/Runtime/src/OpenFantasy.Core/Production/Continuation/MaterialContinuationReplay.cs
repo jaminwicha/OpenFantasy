@@ -45,6 +45,7 @@ internal sealed class MaterialContinuationReplay
             if (Occupied(operation.CommandId)) throw new ArgumentException("A material operation cannot reuse a retained identity.");
             switch (operation)
             {
+                case MaterialReservedTransportOperation transport: Transport(transport.Evidence); break;
                 case MaterialTerrainRepresentationOperation representation: Represent(representation.Evidence); break;
                 case MaterialConstructionOperation construction: Construct(construction.Evidence); break;
                 case MaterialCraftOperation craft: Craft(craft.Batch); break;
@@ -90,6 +91,22 @@ internal sealed class MaterialContinuationReplay
                 new(batch.BatchId, (uint)index, 0, output.Count), 0));
         }
         AdvanceCustody(batch.CustodianId);
+    }
+
+    private void Transport(ReservoirTransportEvidence evidence)
+    {
+        if (_state.Continuation?.ReservedTransport is not { } binding || evidence.CatalogHash != binding.CatalogHash
+            || evidence.BeforeInventoryHash != _inventory.ContentHash
+            || evidence.BeforeProductionHash != ProductionMaterialCodec.HashReplayPrefix(_state.Continuation, _replayed, _derived.Values)
+            || evidence.CauseId != ReservoirTransportEvidence.DeliveryCause(evidence.StageId)
+            || !_inventory.ReservationIds.Contains(evidence.ReservationId))
+            throw new ArgumentException("Reserved delivery requires genuine evidence for the exact preceding material owners.");
+        var result = RunoffTransportCustody.Move(_inventory, evidence.Material, evidence.ReservationId, evidence.StageId,
+            evidence.Units, evidence.Intervals, id => Occupied(id) || _commands.Contains(id));
+        if (result.Inventory.ContentHash != evidence.AfterInventoryHash || !result.CreatedIds.SequenceEqual(evidence.CreatedIds))
+            throw new ArgumentException("Reserved delivery evidence must reproduce every exact interval, identity and storage clock.");
+        foreach (EntityId identity in result.CreatedIds) Created(identity);
+        _inventory = result.Inventory;
     }
 
     private void Represent(TerrainRepresentationEvidence evidence)

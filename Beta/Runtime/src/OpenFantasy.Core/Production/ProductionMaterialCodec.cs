@@ -18,9 +18,11 @@ internal static class ProductionMaterialCodec
     {
         ArgumentNullException.ThrowIfNull(state);
         if (state.Continuation is not { SupportsMaterialOperations: true } context || state.MaterialHistory is null
-            || version == 4 && (context.SupportsConstruction || context.SupportsTerrainRepresentation)
-            || version == 5 && (!context.SupportsConstruction || context.SupportsTerrainRepresentation)
-            || version == 6 && !context.SupportsTerrainRepresentation || version is not 4 and not 5 and not 6)
+            || version == 4 && (context.SupportsConstruction || context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
+            || version == 5 && (!context.SupportsConstruction || context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
+            || version == 6 && (!context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
+            || version == 7 && (!context.SupportsReservedTransport || context.SupportsTerrainRepresentation)
+            || version is not 4 and not 5 and not 6 and not 7)
             throw new ArgumentException("Production requires its exact explicitly continued capability.", nameof(state));
         return EncodeFields(context, version, state.Revision, state.Batches, state.Lots,
             state.ConsumedItems, state.MaterialHistory.Operations);
@@ -43,7 +45,7 @@ internal static class ProductionMaterialCodec
         var claims = ProductionCollections.Copy(operations.OfType<MaterialConsumptionOperation>().Select(value => value.Claim),
             ProductionSnapshot.MaximumConsumedItems, value => value.ConsumptionId);
         var lots = ProductionCollections.Copy(liveLots, ProductionSnapshot.MaximumLots, value => value.LotId);
-        ulong version = context.SupportsTerrainRepresentation ? 6UL : context.SupportsConstruction ? 5UL : 4UL;
+        ulong version = context.SupportsReservedTransport ? 7UL : context.SupportsTerrainRepresentation ? 6UL : context.SupportsConstruction ? 5UL : 4UL;
         return ContentHash.Compute(EncodeFields(context, version,
             checked(context.BaseProductionRevision + (ulong)operations.Count), batches, lots, claims, operations));
     }
@@ -74,23 +76,29 @@ internal static class ProductionMaterialCodec
     internal static ProductionSnapshot Decode(ReadOnlySpan<byte> bytes, ProductionContinuationContext context, ulong version,
         IReadOnlyCollection<OpenFantasy.Core.Gathering.GatherIssueEvidence> gatherEvidence,
         IReadOnlyCollection<OpenFantasy.Core.Construction.ConstructionCompletionEvidence> constructionEvidence,
-        IReadOnlyCollection<OpenFantasy.Core.Geography.TerrainRepresentationEvidence> terrainEvidence)
+        IReadOnlyCollection<OpenFantasy.Core.Geography.TerrainRepresentationEvidence> terrainEvidence,
+        IReadOnlyCollection<OpenFantasy.Core.Geography.ReservoirTransportEvidence>? transportEvidence = null)
     {
         ArgumentNullException.ThrowIfNull(context);
         ArgumentNullException.ThrowIfNull(gatherEvidence);
         ArgumentNullException.ThrowIfNull(constructionEvidence);
         ArgumentNullException.ThrowIfNull(terrainEvidence);
+        transportEvidence ??= [];
         try
         {
-            if (!context.SupportsMaterialOperations || version == 4 && (context.SupportsConstruction || context.SupportsTerrainRepresentation)
-                || version == 5 && (!context.SupportsConstruction || context.SupportsTerrainRepresentation)
-                || version == 6 && !context.SupportsTerrainRepresentation || version is not 4 and not 5 and not 6
+            if (!context.SupportsMaterialOperations || version == 4 && (context.SupportsConstruction || context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
+                || version == 5 && (!context.SupportsConstruction || context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
+                || version == 6 && (!context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
+                || version == 7 && (!context.SupportsReservedTransport || context.SupportsTerrainRepresentation)
+                || version is not 4 and not 5 and not 6 and not 7
                 || gatherEvidence.Count > MaterialOperationHistory.MaximumOperations
                 || constructionEvidence.Count > Construction.ConstructionSnapshot.MaximumProjects
-                || terrainEvidence.Count > MaterialOperationHistory.MaximumOperations)
+                || terrainEvidence.Count > MaterialOperationHistory.MaximumOperations
+                || transportEvidence.Count > MaterialOperationHistory.MaximumOperations)
                 throw new ArgumentException("Material decoding requires its exact context and bounded actual evidence.");
             var proofs = Proofs(gatherEvidence, MaterialOperationHistory.MaximumOperations, value => value.ContentHash);
             var constructionProofs = Proofs(constructionEvidence, Construction.ConstructionSnapshot.MaximumProjects, value => value.ContentHash);
+            var transportProofs = Proofs(transportEvidence, MaterialOperationHistory.MaximumOperations, value => value.ContentHash);
             var terrainProofs = Proofs(terrainEvidence, MaterialOperationHistory.MaximumOperations, value => value.ContentHash);
             var reader = new CanonicalProductionReader(bytes, MaximumSnapshotByteLength, 13);
             reader.ExpectTag("production.snapshot"u8);
@@ -131,7 +139,7 @@ internal static class ProductionMaterialCodec
             var claimMap = claims.ToDictionary(value => value.ConsumptionId);
             var ordered = new List<MaterialOperation>();
             while (operations.RemainingFields != 0)
-                ordered.Add(MaterialOperationCodec.Decode(operations.ReadField(MaterialOperationCodec.MaximumByteLength), batchMap, claimMap, proofs, constructionProofs, terrainProofs));
+                ordered.Add(MaterialOperationCodec.Decode(operations.ReadField(MaterialOperationCodec.MaximumByteLength), batchMap, claimMap, proofs, constructionProofs, terrainProofs, transportProofs));
             operations.Complete();
             reader.Complete();
             var result = new ProductionSnapshot(world, branch, revision, context.Recipes, batchValues, lotValues,

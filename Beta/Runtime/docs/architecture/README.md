@@ -40,6 +40,7 @@ different kind of person.
 | [Terrain liquid breach](terrain-liquid-breach.md) | How does earned excavation open conserved flow while preserving dry occupants, source custody and exact history? |
 | [Detailed liquid flow](liquid-cell-flow.md) | How does source-backed liquid move between cells without relaying or losing material? |
 | [Liquid material continuation](liquid-material-continuation.md) | How do runoff obligations, physical capacity and detailed placement survive material history cuts without losing provenance or admitting stale plans? |
+| [Transport material continuation](transport-material-continuation.md) | How do reserved deliveries preserve exact custody, stages, clocks and physical acceptance across material history cuts? |
 | [Terrain material continuation](terrain-material-continuation.md) | How do allocated source rights, exact retirement and coarse/detail representation survive history cuts without regenerating mined or consumed material? |
 | [Actors and society](actors-and-society.md) | How do bodies, knowledge, relationships, cultures, institutions and narratives interact? |
 | [Actor resources](actor-resources.md) | How do named damage, restoration, magic costs and rewards compose with exact item consumption while preserving one HP/MP owner? |

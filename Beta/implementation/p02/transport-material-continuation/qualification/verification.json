@@ -1,0 +1,405 @@
+{
+  "recordedUtc": "2026-09-28T17:21:52.397399+00:00",
+  "scope": "Standalone reserved transport continuation with Production V7 and explicit nested liquid V4, not complete-world archive admission.",
+  "baseCommit": "c3dd90ab9c8470beab2f80bd9490f93614016ff0",
+  "milestone": "codex/milestone-transport-material-continuation",
+  "build": {
+    "startedUtc": "2026-09-28T17:09:52.847437+00:00",
+    "kind": "build",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "build",
+      "Beta/Runtime/OpenFantasy.sln",
+      "--no-restore",
+      "-m:1",
+      "-p:UseSharedCompilation=false",
+      "--verbosity",
+      "quiet"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsedSeconds": 6.554762625135481,
+    "finishedUtc": "2026-09-28T17:09:59.402673+00:00"
+  },
+  "tests": {
+    "before": {
+      "report": "before.trx",
+      "log": "before.log",
+      "counters": {
+        "total": 16,
+        "executed": 16,
+        "passed": 16,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T11:52:01.7716060-05:00",
+        "queuing": "2026-09-28T11:52:01.7716060-05:00",
+        "start": "2026-09-28T11:51:58.3941150-05:00",
+        "finish": "2026-09-28T11:52:01.8581930-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T16:51:57.061612+00:00",
+        "kind": "baseline",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~ReservoirTransport|FullyQualifiedName~ConsumptionGeographyCodecTests",
+          "--logger",
+          "trx;LogFileName=before.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-before/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 4.905004750005901,
+        "finishedUtc": "2026-09-28T16:52:01.969227+00:00"
+      }
+    },
+    "focused-01": {
+      "report": "focused-01.trx",
+      "log": "focused-01.log",
+      "counters": {
+        "total": 19,
+        "executed": 19,
+        "passed": 16,
+        "failed": 3,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T12:07:00.3906130-05:00",
+        "queuing": "2026-09-28T12:07:00.3906130-05:00",
+        "start": "2026-09-28T12:06:58.1122120-05:00",
+        "finish": "2026-09-28T12:07:03.1427930-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T17:06:57.337147+00:00",
+        "kind": "focused",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~ReservoirTransportContinuation&FullyQualifiedName!~Shared_throughput_or_the_actual_512",
+          "--logger",
+          "trx;LogFileName=focused-01.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+        ],
+        "environment": {},
+        "exitCode": 1,
+        "elapsedSeconds": 5.846831541042775,
+        "finishedUtc": "2026-09-28T17:07:03.184466+00:00"
+      }
+    },
+    "focused-02": {
+      "report": "focused-02.trx",
+      "log": "focused-02.log",
+      "counters": {
+        "total": 19,
+        "executed": 19,
+        "passed": 18,
+        "failed": 1,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T12:09:33.9124050-05:00",
+        "queuing": "2026-09-28T12:09:33.9124050-05:00",
+        "start": "2026-09-28T12:09:31.9775700-05:00",
+        "finish": "2026-09-28T12:09:36.7289920-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T17:09:31.343109+00:00",
+        "kind": "focused",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~ReservoirTransportContinuation&FullyQualifiedName!~Shared_throughput_or_the_actual_512",
+          "--logger",
+          "trx;LogFileName=focused-02.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+        ],
+        "environment": {},
+        "exitCode": 1,
+        "elapsedSeconds": 5.418414290994406,
+        "finishedUtc": "2026-09-28T17:09:36.762076+00:00"
+      }
+    },
+    "focused-03": {
+      "report": "focused-03.trx",
+      "log": "focused-03.log",
+      "counters": {
+        "total": 19,
+        "executed": 19,
+        "passed": 19,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T12:10:10.9950600-05:00",
+        "queuing": "2026-09-28T12:10:10.9950610-05:00",
+        "start": "2026-09-28T12:10:09.0050370-05:00",
+        "finish": "2026-09-28T12:10:13.9767330-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T17:10:08.457223+00:00",
+        "kind": "focused",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~ReservoirTransportContinuation&FullyQualifiedName!~Shared_throughput_or_the_actual_512",
+          "--logger",
+          "trx;LogFileName=focused-03.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+        ],
+        "environment": {},
+        "exitCode": 0,
+        "elapsedSeconds": 5.56195104168728,
+        "finishedUtc": "2026-09-28T17:10:14.019673+00:00"
+      }
+    },
+    "core-final": {
+      "report": "core-final.trx",
+      "log": "core-final.log",
+      "counters": {
+        "total": 1556,
+        "executed": 1556,
+        "passed": 1556,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T12:10:27.4119870-05:00",
+        "queuing": "2026-09-28T12:10:27.4119870-05:00",
+        "start": "2026-09-28T12:10:25.2043270-05:00",
+        "finish": "2026-09-28T12:14:22.6790060-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T17:10:24.233797+00:00",
+        "kind": "core",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=core-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-core-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-core-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-core-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-core-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification/legacy-core-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 239.26966904196888,
+        "finishedUtc": "2026-09-28T17:14:23.507139+00:00"
+      }
+    },
+    "hosting-final": {
+      "report": "hosting-final.trx",
+      "log": "hosting-final.log",
+      "counters": {
+        "total": 331,
+        "executed": 331,
+        "passed": 331,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T12:14:59.9090460-05:00",
+        "queuing": "2026-09-28T12:14:59.9090460-05:00",
+        "start": "2026-09-28T12:14:50.9169440-05:00",
+        "finish": "2026-09-28T12:21:47.0759350-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T17:14:46.786145+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~Reservoir|FullyQualifiedName~Runoff|FullyQualifiedName~Liquid|FullyQualifiedName~Watershed|FullyQualifiedName~Production|FullyQualifiedName~Construction|FullyQualifiedName~Terrain|FullyQualifiedName~Excavation|FullyQualifiedName~WorldResourceContinuation|FullyQualifiedName~Restorative|FullyQualifiedName~CareRewardContinuation",
+          "--logger",
+          "trx;LogFileName=hosting-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+        ],
+        "environment": {},
+        "exitCode": 0,
+        "elapsedSeconds": 420.9664222919382,
+        "finishedUtc": "2026-09-28T17:21:47.758385+00:00"
+      }
+    }
+  },
+  "qualification": {
+    "coreCases": 1556,
+    "hostingCases": 331,
+    "totalDistinctCases": 1887,
+    "newTransportCases": 21,
+    "allFullRunOutcomesPassed": true
+  },
+  "actualBoundaryCases": [
+    {
+      "testName": "OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationTests.Shared_throughput_or_the_actual_512_material_boundary_never_grants_a_second_delivery_at_the_same_time(fullMaterialWindow: False)",
+      "outcome": "Passed",
+      "duration": "00:00:00.0220290"
+    },
+    {
+      "testName": "OpenFantasy.Core.Tests.Geography.ReservoirTransportContinuationTests.Shared_throughput_or_the_actual_512_material_boundary_never_grants_a_second_delivery_at_the_same_time(fullMaterialWindow: True)",
+      "outcome": "Passed",
+      "duration": "00:02:16.2767162"
+    }
+  ],
+  "legacyBinaryCompatibility": {
+    "count": 24,
+    "totalBytes": 106458,
+    "allReproducedExactly": true,
+    "files": {
+      "transport/v2-single-completed.bin": "4c59ce0f42555c6ec5f4ab701c977172e9de2258d9728b828f318c4c5bb83c71",
+      "transport/v1-single-initial.bin": "925e46db3922b3b1b33ab7ca7bb3a19b99bc347abd99d6546de3e21d47f064da",
+      "transport/v2-canceled.bin": "34b1b6b462204011027d640d77e1a8a848efa4e75fba1f3988c08f96c1a1959f",
+      "transport/v2-single-scheduled.bin": "7320ff8aae4409574383be3e6b68d81fc3030e6d057729f8e5d1d44f7386fee7",
+      "transport/v2-single-initial.bin": "40cb56e1a266b1844aba40e8a47ee581374c1fb596c15ee97f3fe23c3d83baa7",
+      "transport/v1-blocked.bin": "2b8228ea04d606864bbe8fac2522e69857297dd563f8c7232ef8f9eb440fa564",
+      "transport/v2-split-initial.bin": "949fdef57c4038167dd6459ada7113c59cfbc9cbaf0a5b6b11a1d10195db57e5",
+      "transport/v2-split-completed.bin": "984d31f0b29e076e349cc184c3627119ecf427e77fddfebe8ed563fa3f1a7ffa",
+      "transport/v2-blocked.bin": "fd9f2f2d8a4369852fd42d6d32b8fbda240fa2f8a7b28319907a89c48f2b6397",
+      "transport/v1-split-initial.bin": "b867ee4ce807a9df4bb77f1a931dfc9531be0b884a3b339dca078ec56f84eea3",
+      "transport/v1-single-scheduled.bin": "2b5be4fe4730a5ef2954b6dc4f31ad2f613bea6eb29906e6be0811553e27c498",
+      "transport/v1-canceled.bin": "967d96c899b39b6f0eeff5df3e3e55003e97f535b417c47ec2039943d7ab7f16",
+      "transport/v1-split-completed.bin": "5d06c628b44a3645b2f89755e05922c457973c066601b0a7f05b8382defc5f2d",
+      "transport/v2-split-scheduled.bin": "eaddd149eef386a0a9604bcb4289c94043262b20e9fff4ecec22a1cbd394319c",
+      "transport/v1-single-completed.bin": "c242dcb2edc446330527f54eb8fd306ede84e06a0edef119783a1af0e261f0b0",
+      "transport/v1-split-scheduled.bin": "113ebb9794b95c3da5442584aff22cde77b4aa99414e541471202da53a4b2171",
+      "consumption/ReservoirTransportState-legacy.bin": "0e3bf967862db7b37827cda12e8a24ca8310dad848c854cb43123f694ad5f644",
+      "consumption/WatershedRunoffCapacityState-legacy.bin": "dc11010d61159ad890be1bba9ec17ecf54c50dc799dacb56d4d6dae9718e8b9a",
+      "consumption/LiquidReservoirState-new.bin": "eed92549a93f4f49760cdd3617ce8e821dd4ec39e123f0b38fb64b88376f49db",
+      "consumption/WatershedRunoffCapacityState-new.bin": "c81bc135d51e6662eba46dd48362b308efd2abbc530123023f739d98fc976eaf",
+      "consumption/LiquidReservoirState-legacy.bin": "87d14a90b32175ddd588b8414ff75db55f3d5601a5e6f8b30f74753c274fe792",
+      "consumption/PreparedWatershedRunoff-legacy.bin": "03f2905668d24853b90d92b939913765b3055f8a767504e81f7f6510a453662d",
+      "consumption/ReservoirTransportState-new.bin": "7b5be738cd8b77f103be2bbf94e3c06960f31a6ae6dc9511915eeb685d0a2668",
+      "consumption/PreparedWatershedRunoff-new.bin": "1dea1341c7fef2be69508e877e97b12319ec26e8d5b8ff8138f96fa5a36d3199"
+    }
+  },
+  "sourceAndExecution": {
+    "sourcePins": "source-pins-build-05.json",
+    "sourceFiles": 1229,
+    "allRuntimeCSharpCovered": 1155,
+    "executionPins": "execution-pins-build-05.json",
+    "executionFiles": 15,
+    "finalPinsMatch": true,
+    "scope": "C# source, project/build and JSON files; not all Godot scenes/art assets."
+  },
+  "preservation": {
+    "baseline": "preservation-before.json",
+    "priorMilestonesUnchanged": 68,
+    "frozenSpecificationsUnchanged": 23,
+    "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "review": "../REVIEW.md",
+  "retainedFailures": "../FAILURES.md",
+  "architectureLinks": "architecture-links.json",
+  "openGates": [
+    "Excavation source/effort continuation",
+    "Complete-world care/material/resource and liquid/terrain joins",
+    "Actual durable archive authentication/retrieval/recovery",
+    "Native gameplay, platforms, production scale and performance",
+    "All full campaign, art and human acceptance gates"
+  ]
+}

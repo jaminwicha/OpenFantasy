@@ -5,11 +5,18 @@ namespace OpenFantasy.Core.Geography;
 /// <summary>Selects an explicit production interpretation without silently upgrading retained geography.</summary>
 internal static class GeographyProductionCodec
 {
-    internal static byte[] Encode(ProductionSnapshot? production, bool consumption, bool continued = false)
+    internal static byte[] Encode(ProductionSnapshot? production, bool consumption, bool continued = false, bool transport = false)
     {
+        if (transport)
+        {
+            if (!continued || production?.Continuation?.SupportsReservedTransport != true || production.SupportsConsumption != consumption)
+                throw new ArgumentException("Transport geography requires its explicit V7 material owner.");
+            return ProductionCodecV7.Encode(production);
+        }
         if (continued)
         {
-            if (production?.Continuation is not { } context || production.SupportsConsumption != consumption)
+            if (production?.Continuation is not { } context || production.SupportsConsumption != consumption
+                || context.SupportsReservedTransport || context.SupportsTerrainRepresentation)
             {
                 throw new ArgumentException("Continued geography requires its exact explicit production capability.", nameof(production));
             }
@@ -29,11 +36,13 @@ internal static class GeographyProductionCodec
     }
 
     internal static ProductionSnapshot? Decode(ReadOnlySpan<byte> bytes, bool consumption,
-        GeographyProductionDependencies? dependencies = null)
+        GeographyProductionDependencies? dependencies = null, bool transport = false)
     {
         if (dependencies is not null)
         {
-            if (dependencies.Context.SupportsConsumption != consumption)
+            if (dependencies.Context.SupportsConsumption != consumption
+                || dependencies.Context.SupportsReservedTransport != transport
+                || transport && dependencies.TransportQualification is null)
             {
                 throw new FormatException("Continued geography requires the exact production capability.");
             }

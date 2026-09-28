@@ -14,11 +14,13 @@ public static class ReservoirTransportCodecV1
 
     public static byte[] Encode(ReservoirTransportState state) => EncodeTransport(state, consumption: false);
 
-    internal static byte[] EncodeTransport(ReservoirTransportState state, bool consumption)
+    internal static byte[] EncodeTransport(ReservoirTransportState state, bool consumption, bool continued = false)
     {
         ArgumentNullException.ThrowIfNull(state);
-        byte[] bytes = CanonicalEncodingV1.Frame(consumption ? "geography.reservoir-transport.v2" : "geography.reservoir-transport.v1", Number(state.Revision),
-            WatershedRunoffCodecV1.EncodeInstant(state.Boundary), LiquidReservoirCodecV1.EncodeReservoirs(state.Reservoirs, consumption),
+        if ((state.Reservoirs.Capacity.Production?.Continuation?.SupportsReservedTransport == true) != continued)
+            throw new ArgumentException("The transport archive must retain its explicit material interpretation.");
+        byte[] bytes = CanonicalEncodingV1.Frame(continued ? "geography.reservoir-transport.v3" : consumption ? "geography.reservoir-transport.v2" : "geography.reservoir-transport.v1", Number(state.Revision),
+            WatershedRunoffCodecV1.EncodeInstant(state.Boundary), LiquidReservoirCodecV1.EncodeReservoirs(state.Reservoirs, consumption, continued, transport: continued),
             EncodeConnections(state.Connections), CanonicalEncodingV1.Frame("geography.transport-stages.v1",
                 state.Stages.Select(s => (ReadOnlyMemory<byte>)EncodeStage(s)).ToArray()));
         if (bytes.Length > MaximumEncodedByteLength)
@@ -31,16 +33,17 @@ public static class ReservoirTransportCodecV1
     public static ReservoirTransportState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
         DecodeTransport(bytes, cancellationToken, consumption: false);
 
-    internal static ReservoirTransportState DecodeTransport(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption)
+    internal static ReservoirTransportState DecodeTransport(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken, bool consumption,
+        GeographyProductionDependencies? dependencies = null)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
             var reader = new WorldFrameReader(bytes, MaximumEncodedByteLength, 6);
-            reader.Tag(consumption ? "geography.reservoir-transport.v2"u8 : "geography.reservoir-transport.v1"u8);
+            reader.Tag(dependencies is not null ? "geography.reservoir-transport.v3"u8 : consumption ? "geography.reservoir-transport.v2"u8 : "geography.reservoir-transport.v1"u8);
             ulong revision = reader.Number();
             WorldInstant boundary = WatershedRunoffCodecV1.ReadInstant(reader.Exact(12));
-            var physical = LiquidReservoirCodecV1.DecodeReservoirs(reader.Field(LiquidReservoirCodecV1.MaximumEncodedByteLength), cancellationToken, consumption);
+            var physical = LiquidReservoirCodecV1.DecodeReservoirs(reader.Field(LiquidReservoirCodecV1.MaximumEncodedByteLength), cancellationToken, consumption, dependencies, transport: dependencies is not null);
             var connections = DecodeConnections(reader.Field(ReservoirTransportState.MaximumConnections * ConnectionRowBytes));
             var stages = new List<RunoffTransportStage>();
             var journal = new WorldFrameReader(reader.Field(MaximumJournalBytes), MaximumJournalBytes, ReservoirTransportState.MaximumStages + 1);
@@ -52,11 +55,13 @@ public static class ReservoirTransportCodecV1
             }
             journal.Complete();
             reader.Complete();
-            var restored = new ReservoirTransportState(physical, connections, stages, revision, boundary);
-            if (!EncodeTransport(restored, consumption).AsSpan().SequenceEqual(bytes))
+            var restored = new ReservoirTransportState(physical, connections, stages, revision, boundary, dependencies?.TransportQualification);
+            if (!EncodeTransport(restored, consumption, dependencies is not null).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The transport owner is not canonical.");
             }
+            if (dependencies is not null && restored.ContentHash != dependencies.TransportOwnerHash)
+                throw new FormatException("Transport decoding requires the exact current complete owner qualification, including its journal and clock.");
             cancellationToken.ThrowIfCancellationRequested();
             return restored;
         }
@@ -91,7 +96,7 @@ public static class ReservoirTransportCodecV1
         return routes.ToArray();
     }
 
-    private static byte[] EncodeConnections(IEnumerable<ReservoirConnection> connections)
+    internal static byte[] EncodeConnections(IEnumerable<ReservoirConnection> connections)
     {
         using var bytes = new MemoryStream();
         foreach (var connection in connections)

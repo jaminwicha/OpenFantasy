@@ -27,6 +27,11 @@ Terrain-capable owners require a qualified registry cut rather than the generic 
 This preserves geographic legality before historical records leave the active segment; ordinary
 material operations retain their own typed planners and are reconciled with the registry separately.
 
+V7 selects [reserved transport](transport-material-continuation.md) from an actual complete transport
+owner, preserving its journal, physical catalog and clock. Successful delivery adds one typed operation
+with a cause distinct from its scheduled stage. Generic Production cuts cannot bypass transport
+qualification. Optional gathering/construction capabilities compose with V7; terrain V6 does not.
+
 The context also pins the bounded storage set and non-custody authority admission. Each storage
 retains its capacity and advances its revision for each operation that actually touches that custodian.
 A transfer touches source and destination once; a multi-lot delivery also touches each storage once.
@@ -136,6 +141,7 @@ authenticates archived history nor selects a complete-world storage profile.
 | V4 | Active material operations, batches/claims and live outputs; cumulative counters | The exact material context and actual matching opaque gathering evidence for issuance entries |
 | V5 | Ordered material history including reserved construction completion | The exact construction-capable context, original construction batches and matching opaque gathering/completion evidence |
 | V6 | Ordered material history including terrain refinement/demotion, with retained optional construction capability | The exact terrain-capable context and matching opaque terrain, gathering and construction evidence as selected |
+| V7 | Ordered material history including reserved transport, with retained optional construction capability | The exact transport-capable context and matching opaque transport, gathering and construction evidence as selected |
 
 V4 decoding validates canonical component structure and joins the supplied actual source proofs.
 The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
@@ -164,8 +170,9 @@ continued owners explicitly; legacy geography encoders cannot discard their cont
 material adapters provide standalone source/custody composition, while the separate V5 construction
 adapter qualifies reserved completion and physical candidates. The explicit
 [liquid continuation](liquid-material-continuation.md) contracts preserve runoff obligations and
-reservoir ownership through cuts, with nested context-bound codecs. These adapters do not enable
-continued world paths or reserved gate transport.
+reservoir ownership through cuts, with nested context-bound codecs. The separate
+[transport adapter](transport-material-continuation.md) qualifies reserved gate delivery and its complete
+journal/clock boundary. These adapters do not enable continued world publication.
 The separate [terrain adapter](terrain-material-continuation.md) preserves fixed allocations and
 records representation operations under V6. It does not by itself join terrain and liquid histories
 or grant excavation issuance, effort spending or complete-world publication.

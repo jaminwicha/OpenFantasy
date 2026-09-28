@@ -64,7 +64,8 @@ public sealed class ProductionSnapshot
         : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsTerrainRepresentation == true ? ProductionCodecV6.Encode(this)
+    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsReservedTransport == true ? ProductionCodecV7.Encode(this)
+        : Continuation?.SupportsTerrainRepresentation == true ? ProductionCodecV6.Encode(this)
         : Continuation?.SupportsConstruction == true ? ProductionCodecV5.Encode(this)
         : MaterialHistory is not null ? ProductionCodecV4.Encode(this)
         : IsContinued ? ProductionCodecV3.Encode(this) : SupportsConsumption
@@ -135,13 +136,15 @@ public sealed class ProductionSnapshot
 
     private void RequireOrdinaryCut()
     {
-        if (Continuation?.SupportsTerrainRepresentation == true)
-            throw new ArgumentException("Terrain-capable material requires a cut through its actual admitted terrain registry.");
+        if (Continuation is { SupportsTerrainRepresentation: true } or { SupportsReservedTransport: true })
+            throw new ArgumentException("Geographic material requires a cut through its actual complete admitted owner.");
     }
 
     internal ProductionSnapshot ContinueTerrain(CountedAuthorityState inventory, TerrainRepresentationBoundary terrain,
         MaterialConstructionState? construction, GatheringSnapshot? gathering)
     {
+        if (Continuation?.SupportsReservedTransport == true)
+            throw new ArgumentException("Reserved transport cannot become terrain representation through a lower owner.");
         construction?.ValidateMaterialBoundary(inventory, this);
         if (MaterialHistory is { } retained)
         {
@@ -151,6 +154,27 @@ public sealed class ProductionSnapshot
             gathering ??= retained.Gathering;
         }
         var context = ProductionContinuationContext.CaptureTerrain(inventory, this, terrain, construction?.Construction, gathering);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
+    internal ProductionSnapshot ContinueTransport(CountedAuthorityState inventory, TransportMaterialBoundary transport,
+        MaterialConstructionState? construction, GatheringSnapshot? gathering)
+    {
+        if (Continuation?.SupportsTerrainRepresentation == true)
+            throw new ArgumentException("Terrain representation cannot become reserved transport through a lower owner.");
+        construction?.ValidateMaterialBoundary(inventory, this);
+        if (MaterialHistory is { } retained)
+        {
+            if (gathering is not null && (retained.Gathering is null
+                || gathering.ContentHash != retained.Gathering.AdvanceTo(gathering.AdvancingStep).ContentHash))
+                throw new ArgumentException("A transport cut cannot replace its retained source owner.", nameof(gathering));
+            gathering ??= retained.Gathering;
+        }
+        var context = ProductionContinuationContext.CaptureTransport(inventory, this, transport, construction?.Construction, gathering);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
         result.ValidateForAuthority(inventory);

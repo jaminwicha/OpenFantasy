@@ -32,7 +32,8 @@ internal sealed class ReservoirTransportFixture
         var lots = new List<CountedSourceLot> { new(HeldLot, SourceStore, Water, new(Source, 0, splitDestinations ? 2000UL : 1000UL), 0, LotProtection.None, Budget) };
         if (freeSource > 0) lots.Add(new(Id(22), SourceStore, Water, new(Source, 10000, 10000 + freeSource), 0));
         if (receiverUnits > 0) lots.Add(new(Id(23), Receiver, Water, new(Source, 30000, 30000 + receiverUnits), 0));
-        if (secondBudget) lots.Add(new(Id(24), SourceStore, Water, new(Source, 1000, 2000), 0, LotProtection.None, SecondBudget));
+        ulong secondSourceStart = splitDestinations ? 2000UL : 1000UL;
+        if (secondBudget) lots.Add(new(Id(24), SourceStore, Water, new(Source, secondSourceStart, secondSourceStart + 1000), 0, LotProtection.None, SecondBudget));
         if (splitDestinations) storages.Add(new(Id(26), 100000, 0));
         var inventory = new CountedAuthorityState(new(scope.WorldId, scope.BranchId, 0, storages, lots), 100000,
             [Owner], [new(Id(7), Id(8), Owner)], storages.Select(s => new CustodianAccessPolicy(s.CustodianId, Owner, CustodyDepositRule.OwnerOnly)),
@@ -45,7 +46,9 @@ internal sealed class ReservoirTransportFixture
         if (secondBudget)
         {
             Second = new WatershedRunoffPlanner().Prepare(new(network, request.Mapping, inventory, null, SecondBudget, Owner,
-                request.Start, request.End, material, [new(basins[0].BasinId, 1, new(Source, 1000, 2000), SourceStore)], terminals));
+                request.Start, request.End, material, basins.Select((basin, index) => index == 0
+                    ? new WatershedRunoffInput(basin.BasinId, 1, new(Source, secondSourceStart, secondSourceStart + 1000), SourceStore)
+                    : WatershedRunoffInput.Dry(basin.BasinId)), terminals));
             capacity = capacity.PlanAdmit(Second).ApplyTo(capacity);
         }
         var geometry = new List<ReservoirGeometry> { new(scope, SourceGeometry, SourceStore, 1, [new(0, 0, 0)]),

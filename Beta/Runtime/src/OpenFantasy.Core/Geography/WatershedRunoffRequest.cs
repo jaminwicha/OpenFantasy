@@ -48,7 +48,8 @@ public sealed class WatershedRunoffRequest
             (continuation ?? throw new ArgumentException("Use the actual continued capacity owner to create a runoff request."))
                 .Validate(WatershedRunoffDomain.From(this), production);
         }
-        _contentHash = new(() => ContentHash.Compute(Production?.IsContinued == true ? WatershedRunoffCodecV3.EncodeRequest(this)
+        _contentHash = new(() => ContentHash.Compute(Production?.Continuation?.SupportsReservedTransport == true ? WatershedRunoffCodecV4.EncodeRequest(this)
+            : Production?.IsContinued == true ? WatershedRunoffCodecV3.EncodeRequest(this)
             : Production?.SupportsConsumption == true
             ? WatershedRunoffCodecV2.EncodeRequest(this) : WatershedRunoffCodecV1.EncodeRequest(this)));
     }

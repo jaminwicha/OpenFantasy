@@ -1,0 +1,21 @@
+{
+  "startedUtc": "2026-09-28T17:06:57.337147+00:00",
+  "kind": "focused",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ReservoirTransportContinuation&FullyQualifiedName!~Shared_throughput_or_the_actual_512",
+    "--logger",
+    "trx;LogFileName=focused-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/transport-material-continuation/qualification"
+  ],
+  "environment": {},
+  "exitCode": 1,
+  "elapsedSeconds": 5.846831541042775,
+  "finishedUtc": "2026-09-28T17:07:03.184466+00:00"
+}
