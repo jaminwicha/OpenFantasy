@@ -15,7 +15,7 @@ public static class ProductionCodecV4
     public static byte[] Encode(ProductionSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
-        if (state.Continuation is not { SupportsMaterialOperations: true } context || state.MaterialHistory is null)
+        if (state.Continuation is not { SupportsMaterialOperations: true, SupportsConstruction: false } context || state.MaterialHistory is null)
             throw new ArgumentException("Production V4 requires an explicitly continued owner.", nameof(state));
         byte[] bytes = CanonicalEncodingV1.Frame("production.snapshot", Number(4), state.WorldId.ToByteArray(),
             state.BranchId.ToByteArray(), Number(state.Revision), context.ContentHash.ToByteArray(),
@@ -41,7 +41,7 @@ public static class ProductionCodecV4
         ArgumentNullException.ThrowIfNull(gatherEvidence);
         try
         {
-            if (!context.SupportsMaterialOperations || gatherEvidence.Count > MaterialOperationHistory.MaximumOperations)
+            if (!context.SupportsMaterialOperations || context.SupportsConstruction || gatherEvidence.Count > MaterialOperationHistory.MaximumOperations)
                 throw new ArgumentException("Material decoding requires an exact V4 context and bounded actual issuing evidence.");
             var proofs = gatherEvidence.ToDictionary(value => value.ContentHash);
             var reader = new CanonicalProductionReader(bytes, MaximumSnapshotByteLength, 13);

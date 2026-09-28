@@ -6,8 +6,9 @@
 inline history from an explicitly continued owner. `Continue(inventory)` captures the actual supplied
 boundary, retains its live lots, recipes, scope and cumulative revision, and opens empty bounded
 batch/consumption collections. `ContinueMaterial(inventory, gathering)` explicitly selects ordered
-material-operation interpretation; gathering admission is optional for custody-only use. Further cuts
-preserve the selected interpretation. The original owners remain immutable. A cut is representation work;
+material-operation interpretation; gathering admission is optional for custody-only use.
+`ContinueConstruction(inventory, constructionState, gathering)` selects V5 reserved-installation semantics
+and exact historical construction batches. Further cuts preserve the selected interpretation. The original owners remain immutable. A cut is representation work;
 it creates no item, transfer, material disposition, clock tick or actor resource effect.
 
 The continuation context retains the [material basis](material-continuation-basis.md), exact recipe
@@ -17,6 +18,8 @@ combine those bases with active records; ordinary operations advance the absolut
 Collection bounds apply to the active window, while raw coverage and live-right bounds remain explicit.
 V3 records craft/consumption revisions. V4 also advances production revision for each explicitly
 recorded gathering, transfer or delivery operation; its ordered history binds those custody changes.
+V5 adds one material operation for a completed construction transform. Partial construction work
+advances its own work owner without advancing material history.
 
 The context also pins the bounded storage set and non-custody authority admission. Each storage
 retains its capacity and advances its revision for each operation that actually touches that custodian.
@@ -64,8 +67,10 @@ or equipped stock cannot move; other protection flags survive the transfer. Sour
 requires unprotected, unreserved exact stock, moves the selected prefixes and assigns an admitted
 destination reservation. It issues no new material. A whole lot retains its identity at the next
 revision; a split retains the source suffix and gives its moved prefix a fresh child at revision zero.
-General protection toggles, transformed-lot transfers and purpose-qualified reserved-material moves
-require their own contracts rather than reuse of a permissive generic mutation.
+V5 [construction continuation](construction-continuation.md) adds a specific reserved-installation
+operation qualified by actual project work. General protection toggles, transformed-lot transfers and
+other purpose-qualified reserved-material moves require their own contracts rather than reuse of a
+permissive generic mutation.
 
 [GatherIssueEvidence](../../src/OpenFantasy.Core/Gathering/GatherIssueEvidence.cs) is produced only by
 successful `GatherPlanner.PlanWithEvidence`. It binds the exact accepted command, current world/space,
@@ -117,6 +122,7 @@ authenticates archived history nor selects a complete-world storage profile.
 | V2 | Complete inline batches, live outputs and consumed claims | None |
 | V3 | Active batches/claims and live outputs; absolute totals and context hash | The exact captured continuation context, including its consumption interpretation |
 | V4 | Active material operations, batches/claims and live outputs; cumulative counters | The exact material context and actual matching opaque gathering evidence for issuance entries |
+| V5 | Ordered material history including reserved construction completion | The exact construction-capable context, original construction batches and matching opaque gathering/completion evidence |
 
 V4 decoding validates canonical component structure and joins the supplied actual source proofs.
 The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
@@ -129,7 +135,9 @@ V4 adds a 512-operation ordered-history envelope. The optional gathering baselin
 bounded source admission; actual proof objects are required at decode, not reconstructed from a
 caller-provided source capacity or digest. This decode dependency does not authenticate Host storage.
 Its context carries at most 32 recipes, 256 storage baselines and the separately bounded material
-basis. Raw coverage is normalized before checking its final 16,640-range envelope; temporary merge
+basis. V5 retains these envelopes and at most 32 original source-only construction batches, each
+bound to its exact imported producer witness, plus the fixed construction recipe catalog of at most
+16 identities. It does not retain recursive ancestors. Raw coverage is normalized before checking its final 16,640-range envelope; temporary merge
 input is bounded by the imported and active envelopes together. Neither canonical compaction nor a
 small live window implies unlimited archive storage or qualified production throughput.
 
@@ -140,7 +148,8 @@ resource effects. Terrain/excavation coverage, installed construction ingredient
 reservations and new source issuance must recognize the same boundary. Existing world, construction,
 terrain/runoff, source delivery, excavation and restorative-use entrypoints refuse unsupported
 continued owners explicitly; legacy geography encoders cannot discard their context. The explicit
-material adapters provide standalone source/custody composition, without enabling those world paths.
+material adapters provide standalone source/custody composition, while the separate V5 construction
+adapter qualifies reserved completion and physical candidates. Neither enables those world paths.
 
 The complete protocol must schedule before accepted obligations lose headroom, preserve captured
 command meanings, publish archive/receipt/identity/head changes atomically and recover from actual

@@ -187,7 +187,9 @@ its complete retained batches and consumed claims directly.
 [Production continuation](production-continuation.md) supplies a separate V3 domain interpretation
 with an exact captured context, imported-right partitioning and mandatory historical identity lookup.
 V4 adds explicitly ordered source/custody operations to those material windows; consumption records
-remain exact dispositions, and source delivery remains a transfer. Neither interpretation enables
+remain exact dispositions, and source delivery remains a transfer. V5 adds qualified construction
+completion while retaining the captured consumption capability; enabling construction does not enable
+consumption in a profile that lacks it. Neither interpretation enables
 continued restorative use or complete-world publication. Those actions must join their material history
 to care/resource closure and verified archive retrieval before existing profile capacities can be extended.
 

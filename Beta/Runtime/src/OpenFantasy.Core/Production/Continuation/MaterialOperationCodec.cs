@@ -3,6 +3,7 @@ using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
@@ -13,6 +14,7 @@ internal static class MaterialOperationCodec
     {
         byte[] payload = operation switch
         {
+            MaterialConstructionOperation construction => construction.Evidence.ContentHash.ToByteArray(),
             MaterialCraftOperation craft => craft.Batch.BatchId.ToByteArray(),
             MaterialConsumptionOperation consume => consume.Claim.ConsumptionId.ToByteArray(),
             MaterialGatherOperation gather => gather.Evidence.ContentHash.ToByteArray(),
@@ -30,7 +32,8 @@ internal static class MaterialOperationCodec
 
     internal static MaterialOperation Decode(ReadOnlySpan<byte> bytes,
         IReadOnlyDictionary<EntityId, ProductionBatch> batches, IReadOnlyDictionary<EntityId, ConsumedItemClaim> claims,
-        IReadOnlyDictionary<ContentHash, GatherIssueEvidence> evidence)
+        IReadOnlyDictionary<ContentHash, GatherIssueEvidence> evidence,
+        IReadOnlyDictionary<ContentHash, ConstructionCompletionEvidence>? constructionEvidence = null)
     {
         var reader = new CanonicalProductionReader(bytes, MaximumByteLength, 6);
         reader.ExpectTag("production.material-operation"u8);
@@ -41,6 +44,14 @@ internal static class MaterialOperationCodec
         MaterialOperation result;
         switch (kind)
         {
+            case MaterialOperationKind.Construction:
+                ContentHash constructionHash = ReadHash(ref reader);
+                if (constructionEvidence is null || !constructionEvidence.TryGetValue(constructionHash, out ConstructionCompletionEvidence? construction)
+                    || !batches.TryGetValue(construction.Batch.BatchId, out ProductionBatch? constructionBatch)
+                    || !ProductionCodecV1.EncodeBatch(constructionBatch).AsSpan().SequenceEqual(ProductionCodecV1.EncodeBatch(construction.Batch)))
+                    throw new ArgumentException("Construction decoding requires the actual matching opaque completion evidence and full batch.");
+                result = new MaterialConstructionOperation(sequence, construction);
+                break;
             case MaterialOperationKind.Craft:
                 if (!batches.TryGetValue(reader.ReadIdentity(), out ProductionBatch? batch)) throw new ArgumentException("Craft operation requires its exact retained batch.");
                 result = new MaterialCraftOperation(sequence, batch);

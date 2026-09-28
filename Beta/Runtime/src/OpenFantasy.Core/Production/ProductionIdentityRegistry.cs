@@ -33,6 +33,11 @@ internal sealed class ProductionIdentityRegistry
         if (state.Continuation is { } context)
         {
             AddContinuation(context.Basis);
+            foreach (ProductionBatch batch in context.ConstructionBatches)
+            {
+                Add(EntityId.DeriveSpawned(batch.CommandId, (ulong)state.GetRecipe(batch.RecipeId).Outputs.Count + 1), "structure");
+                foreach (RetiredIngredient ingredient in batch.Ingredients) Add(ingredient.LotId, "raw-lot");
+            }
             if (context.GatheringBaseline is { } gathering)
             {
                 foreach (var node in gathering.Nodes)
@@ -51,6 +56,8 @@ internal sealed class ProductionIdentityRegistry
             foreach (MaterialOperation operation in material.Operations)
             {
                 Add(operation.CommandId, "command");
+                if (operation is MaterialConstructionOperation construction)
+                    Add(construction.Evidence.StructureId, "structure");
                 if (operation is MaterialGatherOperation gather)
                 {
                     Add(gather.Evidence.IssuedLot.LotId, "raw-lot");

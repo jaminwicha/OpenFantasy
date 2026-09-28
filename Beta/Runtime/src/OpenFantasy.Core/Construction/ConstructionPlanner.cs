@@ -26,6 +26,18 @@ public sealed class ConstructionPlanner
         {
             throw new ArgumentException("Construction requires qualified archived producer and ingredient witnesses.", nameof(production));
         }
+        return PlanQualified(world, inventory, production, construction, space, command, isAdvancingStep, held, occupied, false);
+    }
+
+    internal ConstructionPlan PlanContinued(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot production,
+        ConstructionSnapshot construction, LocalSpatialSnapshot space, WorldActionCommand command,
+        bool isAdvancingStep, bool held, Func<EntityId, bool> occupied) =>
+        PlanQualified(world, inventory, production, construction, space, command, isAdvancingStep, held, occupied, true);
+
+    private static ConstructionPlan PlanQualified(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot production,
+        ConstructionSnapshot construction, LocalSpatialSnapshot space, WorldActionCommand command,
+        bool isAdvancingStep, bool held, Func<EntityId, bool>? occupied, bool continued)
+    {
         ConstructionPlan Reject(WorldActionRejection rejection) => new(inventory, production, construction, space, rejection, []);
         var delivery = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);
         if (command.WorldId != world.WorldId || command.BranchId != world.BranchId
@@ -109,7 +121,8 @@ public sealed class ConstructionPlanner
                 return new ConstructionPlan(inventory, production, construction.WithProject(project.WithProgress(progress, null)),
                     space, WorldActionRejection.None, []);
             }
-            if (production.Batches.Count == ProductionSnapshot.MaximumBatches)
+            if (production.Batches.Count == ProductionSnapshot.MaximumBatches
+                || continued && production.MaterialHistory!.Operations.Count == MaterialOperationHistory.MaximumOperations)
             {
                 return Reject(WorldActionRejection.Unavailable);
             }
@@ -132,17 +145,21 @@ public sealed class ConstructionPlanner
             var request = new CraftRequest(recipe.DefinitionId, recipe.Version, production.Revision,
                 storage.CustodianId, storage.Revision, selections);
             var retired = stock.Select(value => new RetiredIngredient(value.LotId, value.Revision, value.Definition, value.Source)).ToArray();
+            EntityId guardLot = created[checked((int)project.Definition.InstalledOutputIndex + 1)];
+            var installed = new InstalledStructure(structureId, guardLot, 0, created[0], command.CommandId);
+            ConstructionProject completedProject = project.WithProgress(progress, installed);
+            ConstructionSnapshot completed = construction.WithProject(completedProject);
+            ConstructionCompletionEvidence? evidence = null;
             CraftPlan material = MaterialTransformCommitter.Prepare(inventory, production, actor.ActorId, command.CommandId,
-                request, recipe, retired, created[..^1], new InstalledOutputReservation(project.Definition.InstalledOutputIndex, project.ReservationId));
+                request, recipe, retired, created[..^1], new InstalledOutputReservation(project.Definition.InstalledOutputIndex, project.ReservationId),
+                continued ? (batch, candidateInventory) => evidence = new ConstructionCompletionEvidence(world, space, command,
+                    inventory, candidateInventory, production, construction, completed, completedProject, batch) : null);
             if (material.Rejection != WorldActionRejection.None)
             {
                 return Reject(material.Rejection);
             }
-            EntityId guardLot = created[checked((int)project.Definition.InstalledOutputIndex + 1)];
-            var installed = new InstalledStructure(structureId, guardLot, 0, created[0], command.CommandId);
-            ConstructionSnapshot completed = construction.WithProject(project.WithProgress(progress, installed));
             return new ConstructionPlan(material.CandidateInventory, material.CandidateProduction, completed,
-                placement.Candidate!, WorldActionRejection.None, created);
+                placement.Candidate!, WorldActionRejection.None, created, evidence);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
         {

@@ -1,0 +1,175 @@
+{
+  "recordedUtc": "2026-09-28T06:03:40.363216+00:00",
+  "scope": "Standalone V5 construction continuation; legacy whole-world guards retained.",
+  "baseCommit": "00127c4bdc0ab7be884d7b936763d09067369393",
+  "build": {
+    "final": "build-03.log",
+    "exitCode": 0,
+    "warnings": 0,
+    "errors": 0,
+    "retainedInitialFailure": "build-01.log"
+  },
+  "tests": {
+    "construction-02": {
+      "report": "construction-02.trx",
+      "log": "construction-02.log",
+      "counters": {
+        "total": 23,
+        "executed": 23,
+        "passed": 22,
+        "failed": 1,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:51:52.0302800-05:00",
+        "queuing": "2026-09-28T00:51:52.0302800-05:00",
+        "start": "2026-09-28T00:51:45.5162330-05:00",
+        "finish": "2026-09-28T00:52:12.8880880-05:00"
+      },
+      "exitCode": 1
+    },
+    "core-final": {
+      "report": "core-final.trx",
+      "log": "core-final.log",
+      "counters": {
+        "total": 1491,
+        "executed": 1491,
+        "passed": 1491,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:54:30.8446240-05:00",
+        "queuing": "2026-09-28T00:54:30.8446240-05:00",
+        "start": "2026-09-28T00:54:29.1468600-05:00",
+        "finish": "2026-09-28T00:55:18.3702200-05:00"
+      },
+      "exitCode": 0
+    },
+    "hosting-final": {
+      "report": "hosting-final.trx",
+      "log": "hosting-final.log",
+      "counters": {
+        "total": 257,
+        "executed": 257,
+        "passed": 257,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:55:41.4715370-05:00",
+        "queuing": "2026-09-28T00:55:41.4715370-05:00",
+        "start": "2026-09-28T00:55:39.6314200-05:00",
+        "finish": "2026-09-28T00:59:27.9248940-05:00"
+      },
+      "exitCode": 0
+    }
+  },
+  "distinctFinalRegressionPasses": 1748,
+  "newCasesIncludedInFullCore": 23,
+  "hostingSelection": "Construction|Structural|Settlement|Production|Restorative|GatheringAuthorityTests|QuestUpgrade",
+  "priorFullHosting": {
+    "commit": "d3958d753a143238dee8f2dd87ec9d48fce7c378",
+    "cases": 783,
+    "rerun": false
+  },
+  "journeys": [
+    "Actual funded agreements, 200 work actions for A and 1 for B before V5 selection, then 199 actual B work actions; two further material cuts and two byproduct recrafts.",
+    "Two installed guards, original source-only batches, 20 physical members and 540000 milligrams of member mass retained exactly.",
+    "512 actual raw transfers saturate unchanged operation window; completion refuses, cut preserves same unspent command/time and completion succeeds, followed by another cut.",
+    "Same raw inventory with different genuine byproduct recrafts cannot substitute another completion proof; structural decode succeeds then exact production-prefix authority validation rejects.",
+    "Genuine builder movement with stale space, repeated time, changed admission, permanent identity collisions, reserved recipe misuse and old proof replay refuse without partial owners."
+  ],
+  "independentReview": {
+    "report": "../REVIEW.md",
+    "route": "native critic",
+    "fixedFindings": [
+      "Stale spatial source frame.",
+      "Incomplete initial construction catalog.",
+      "Rogue construction producer losing classification across cut."
+    ],
+    "finalDelta": "V5-only imported producer/command collision guard reviewed.",
+    "remainingActionableFindings": 0,
+    "humanAcceptance": false
+  },
+  "pins": {
+    "source-pins-03.json": {
+      "checkedFiles": 1199,
+      "unchanged": true
+    },
+    "source-pin-addendum.json": {
+      "checkedFiles": 1,
+      "unchanged": true
+    },
+    "execution-pins-03.json": {
+      "checkedFiles": 15,
+      "unchanged": true
+    }
+  },
+  "sourceInventory": {
+    "count": 1200,
+    "includesEveryRuntimeCSharpFile": true,
+    "lateInventoryAddition": "ConstructionSourceFrame.cs",
+    "compiledSourceReport": "compiled-source-check.json",
+    "method": "Compiler SHA256 source checksum and PDB GUID/stamp matched to executed assembly; no application source/binary changed."
+  },
+  "preservation": {
+    "checkpoint": "codex/checkpoint-before-dependent-material-continuation-20260928T053257Z",
+    "checkpointMatchesBase": true,
+    "frozenSpecsUnchanged": 23,
+    "priorMilestonesUnchanged": 65,
+    "unrelatedStagedFiles": 19,
+    "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "documents": {
+    "reference": "../../../../Runtime/docs/architecture/construction-continuation.md",
+    "linkReport": "document-links.json",
+    "anchorsChecked": false,
+    "checkedLocalLinks": 945,
+    "brokenLocalLinks": 0
+  },
+  "limits": [
+    "V5 construction is standalone; no continued WorldSnapshot, care/resource/terrain/liquid join or new Host writer/schema.",
+    "Opaque construction work state has no public decoder; authenticated durable work resumption remains required.",
+    "Original physical profile consumption remains disabled; positive continued consumption is covered by retained separate material tests, not this constructed world.",
+    "Supplied contexts and actual opaque evidence are component dependencies, not durable archive authenticity.",
+    "No new native, external process-kill, performance, platform, multiplayer or human qualification; all full production gates remain open.",
+    "Legacy-byte checks use source/layout and roundtrip preservation, not a new pre-change fixed binary oracle."
+  ],
+  "thresholdsRelaxed": false,
+  "claudeRetry": false,
+  "creditSavingsClaimed": false
+}

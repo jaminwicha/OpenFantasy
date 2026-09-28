@@ -37,7 +37,8 @@ public sealed class InstantCraftPlanner
             return Reject(WorldActionRejection.RevisionConflict);
         }
         CraftRecipeDefinition? recipe = production.Recipes.FirstOrDefault(value => value.DefinitionId == request.RecipeId);
-        if (recipe is null || recipe.Version != request.RecipeVersion)
+        if (recipe is null || recipe.Version != request.RecipeVersion
+            || production.Continuation?.ConstructionRecipeIds.Contains(recipe.DefinitionId) == true)
         {
             return Reject(WorldActionRejection.Unavailable);
         }

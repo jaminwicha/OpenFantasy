@@ -11,8 +11,9 @@ public sealed class ConstructionPlan
 {
     internal ConstructionPlan(CountedAuthorityState inventory, ProductionSnapshot production,
         ConstructionSnapshot construction, LocalSpatialSnapshot space, WorldActionRejection rejection,
-        IEnumerable<EntityId> createdIds)
+        IEnumerable<EntityId> createdIds, ConstructionCompletionEvidence? evidence = null)
     {
+        Evidence = evidence;
         CandidateInventory = inventory;
         CandidateProduction = production;
         CandidateConstruction = construction;
@@ -21,6 +22,7 @@ public sealed class ConstructionPlan
         CreatedIds = Array.AsReadOnly(createdIds.ToArray());
     }
 
+    public ConstructionCompletionEvidence? Evidence { get; }
     public CountedAuthorityState CandidateInventory { get; }
     public ProductionSnapshot CandidateProduction { get; }
     public ConstructionSnapshot CandidateConstruction { get; }

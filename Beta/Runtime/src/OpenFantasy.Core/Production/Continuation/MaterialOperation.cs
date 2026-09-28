@@ -2,10 +2,11 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
-public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5 }
+public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6 }
 
 /// <summary>One ordered material transition; only its specific owner can create an accepted record.</summary>
 public abstract class MaterialOperation
@@ -55,4 +56,12 @@ public sealed class MaterialDeliveryOperation : MaterialOperation
     public EntityId ActorId { get; }
     public TrustedCommandDelivery Delivery { get; }
     public SourceDeliveryRequest Request { get; }
+}
+
+/// <summary>Reserved construction retirement with genuine work and installation qualification.</summary>
+public sealed class MaterialConstructionOperation : MaterialOperation
+{
+    internal MaterialConstructionOperation(ulong sequence, ConstructionCompletionEvidence evidence)
+        : base(sequence, evidence.Command.CommandId, MaterialOperationKind.Construction) => Evidence = evidence;
+    public ConstructionCompletionEvidence Evidence { get; }
 }

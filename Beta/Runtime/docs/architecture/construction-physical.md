@@ -111,6 +111,10 @@ job. The separate [intact settlement profile](structural-settlement.md) couples 
 with excavation, complete occupant placement and source issuance. General collapse retains its broader
 consequence and continuation contracts.
 
+[Construction continuation](construction-continuation.md) supplies an explicit standalone composition
+for earned work and reserved installation across material boundaries. It preserves existing physical
+members and exact historical backing without enabling continued complete-world publication.
+
 ## Canonical persistence and extension boundary
 
 [ConstructionPhysicalCodecV1](../../src/OpenFantasy.Core/Construction/ConstructionPhysicalCodecV1.cs) stores

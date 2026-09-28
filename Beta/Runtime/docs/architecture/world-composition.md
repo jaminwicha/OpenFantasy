@@ -129,6 +129,12 @@ earns neither healing nor hunger. Offline restoration does not manufacture elaps
 update may aggregate only where it preserves the declared ordering and intermediate consequences;
 damage, death and healing cannot be rearranged merely because their net arithmetic is convenient.
 
+A permission or readiness flag does not prove new exposure. A component applying work from external
+world frames retains the last accepted participant boundary and refuses repeated or backward frames.
+Partial labor and completion preserve the applicable clock and interruption semantics; representation
+changes do not refill a time budget. [Construction continuation](construction-continuation.md) applies
+this rule to bounded per-builder work qualification.
+
 Large dependency sets use deterministic bounded work and persisted continuation where required.
 An unfinished logical action does not publish half an invalid world. Causal reactions have stable
 ordering, explicit phase boundaries and finite budgets; recursive callbacks cannot loop until an

@@ -2,6 +2,7 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Production;
@@ -16,6 +17,7 @@ internal sealed class MaterialContinuationReplay
     private readonly HashSet<EntityId> _commands;
     private readonly Dictionary<EntityId, TransformedLot> _derived;
     private CountedAuthorityState _inventory;
+    private readonly List<MaterialOperation> _replayed = [];
 
     internal MaterialContinuationReplay(ProductionSnapshot state, CountedAuthorityState inventory)
     {
@@ -40,6 +42,7 @@ internal sealed class MaterialContinuationReplay
             if (Occupied(operation.CommandId)) throw new ArgumentException("A material operation cannot reuse a retained identity.");
             switch (operation)
             {
+                case MaterialConstructionOperation construction: Construct(construction.Evidence); break;
                 case MaterialCraftOperation craft: Craft(craft.Batch); break;
                 case MaterialConsumptionOperation consume: Consume(consume.Claim); break;
                 case MaterialGatherOperation gather: Gather(gather.Evidence); break;
@@ -47,6 +50,7 @@ internal sealed class MaterialContinuationReplay
                 case MaterialDeliveryOperation delivery: Deliver(delivery); break;
                 default: throw new ArgumentException("Unsupported ordered material operation.");
             }
+            _replayed.Add(operation);
             _occupied.Add(operation.CommandId);
             ValidateCapacity(_inventory);
         }
@@ -82,6 +86,65 @@ internal sealed class MaterialContinuationReplay
                 new(batch.BatchId, (uint)index, 0, output.Count), 0));
         }
         AdvanceCustody(batch.CustodianId);
+    }
+
+    private ProductionSnapshot CurrentProduction()
+    {
+        var batches = _replayed.Select(operation => operation switch
+        {
+            MaterialCraftOperation craft => craft.Batch,
+            MaterialConstructionOperation construction => construction.Evidence.Batch,
+            _ => null
+        }).OfType<ProductionBatch>();
+        var claims = _replayed.OfType<MaterialConsumptionOperation>().Select(value => value.Claim);
+        return new ProductionSnapshot(_state.WorldId, _state.BranchId,
+            checked(_state.Continuation!.BaseProductionRevision + (ulong)_replayed.Count), _state.Recipes,
+            batches, _derived.Values, _state.SupportsConsumption ? claims : null, _state.Continuation,
+            new MaterialOperationHistory(_state.Continuation, _replayed));
+    }
+
+    private void Construct(ConstructionCompletionEvidence evidence)
+    {
+        if (_state.Continuation?.SupportsConstruction != true
+            || evidence.BeforeInventoryHash != _inventory.ContentHash
+            || evidence.BeforeProductionHash != CurrentProduction().ContentHash
+            || evidence.Command.WorldId != _inventory.WorldId || evidence.Command.BranchId != _inventory.BranchId
+            || evidence.Command.ActorId != evidence.Batch.ActorId || evidence.Command.CommandId != evidence.Batch.CommandId
+            || !_inventory.CanControl(new(evidence.Command.PrincipalId, evidence.Command.OriginSessionId), evidence.Batch.ActorId)
+            || !_inventory.ReservationIds.Contains(evidence.ReservationId))
+            throw new ArgumentException("Construction retirement requires actual matching completion evidence and controller.");
+        ProductionBatch batch = evidence.Batch;
+        RequireOwner(batch.ActorId, batch.CustodianId, false);
+        Created(batch.BatchId);
+        var stock = _inventory.Custody.Lots.Where(value => value.ReservedBy == evidence.ReservationId).ToArray();
+        if (stock.Length != batch.Ingredients.Count || batch.Ingredients.Any(value => value.Kind != IngredientLotKind.Source))
+            throw new ArgumentException("Construction must retire its exact complete reserved raw stock.");
+        foreach (RetiredIngredient ingredient in batch.Ingredients)
+        {
+            CountedSourceLot lot = _inventory.Custody.GetLot(ingredient.LotId);
+            if (lot.CustodianId != batch.CustodianId || lot.Revision != ingredient.Revision || lot.Definition != ingredient.Definition
+                || lot.Protection != LotProtection.None || lot.ReservedBy != evidence.ReservationId
+                || lot.Source != ingredient.Source)
+                throw new ArgumentException("Construction retirement must match every original reserved source ingredient.");
+        }
+        var spent = batch.Ingredients.Select(value => value.LotId).ToHashSet();
+        ReplaceRaw(_inventory.Custody.Lots.Where(value => !spent.Contains(value.LotId)));
+        CraftRecipeDefinition recipe = _state.GetRecipe(batch.RecipeId);
+        if (evidence.InstalledOutputIndex >= recipe.Outputs.Count || recipe.Outputs[(int)evidence.InstalledOutputIndex].Count != 1
+            || evidence.StructureId != EntityId.DeriveSpawned(batch.CommandId, (ulong)recipe.Outputs.Count + 1))
+            throw new ArgumentException("Construction requires one exact quantity-one installed output and derived structure identity.");
+        for (int index = 0; index < recipe.Outputs.Count; index++)
+        {
+            EntityId id = EntityId.DeriveSpawned(batch.CommandId, checked((ulong)index + 1));
+            Created(id);
+            RecipeTerm output = recipe.Outputs[index];
+            _derived.Add(id, new(id, batch.CustodianId, recipe.ItemFor(output), new(batch.BatchId, (uint)index, 0, output.Count),
+                0, LotProtection.None, index == evidence.InstalledOutputIndex ? evidence.ReservationId : null));
+        }
+        Created(evidence.StructureId);
+        AdvanceCustody(batch.CustodianId);
+        if (_inventory.ContentHash != evidence.AfterInventoryHash)
+            throw new ArgumentException("Construction retirement must reproduce its genuinely qualified inventory exactly.");
     }
 
     private void Consume(ConsumedItemClaim claim)

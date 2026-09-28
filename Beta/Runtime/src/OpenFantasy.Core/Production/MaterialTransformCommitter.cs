@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Worlds;
 
@@ -12,7 +13,8 @@ internal static class MaterialTransformCommitter
 {
     internal static CraftPlan Prepare(CountedAuthorityState inventory, ProductionSnapshot production, EntityId actorId,
         EntityId commandId, CraftRequest request, CraftRecipeDefinition recipe, IReadOnlyList<RetiredIngredient> retired,
-        EntityId[] created, InstalledOutputReservation? installation = null)
+        EntityId[] created, InstalledOutputReservation? installation = null,
+        Func<ProductionBatch, CountedAuthorityState, ConstructionCompletionEvidence>? constructionEvidence = null)
     {
         var selected = retired.ToDictionary(value => value.LotId);
         List<CountedSourceLot> rawLots = [];
@@ -60,10 +62,25 @@ internal static class MaterialTransformCommitter
             inventory.Custody.Storages.Select(storage => storage.CustodianId == request.CustodianId
                 ? storage with { Revision = checked(storage.Revision + 1) } : storage), rawLots);
         CountedAuthorityState candidateInventory = inventory.WithCustody(custody);
+        MaterialOperation? operation = null;
+        if (production.MaterialHistory is not null)
+        {
+            if (installation is not null)
+            {
+                if (production.Continuation?.SupportsConstruction != true || constructionEvidence is null)
+                    throw new ArgumentException("Reserved completion requires explicit V5 and genuine construction qualification.");
+                operation = new MaterialConstructionOperation(checked(production.Revision + 1), constructionEvidence(batch, candidateInventory));
+            }
+            else
+            {
+                if (constructionEvidence is not null) throw new ArgumentException("Construction evidence requires its installed output reservation.");
+                operation = new MaterialCraftOperation(checked(production.Revision + 1), batch);
+            }
+        }
         var candidateProduction = new ProductionSnapshot(production.WorldId, production.BranchId, checked(production.Revision + 1),
             production.Recipes, [.. production.Batches, batch], derivedLots,
             production.SupportsConsumption ? production.ConsumedItems : null, production.Continuation,
-            production.MaterialHistory?.Append(production.Continuation!, new MaterialCraftOperation(checked(production.Revision + 1), batch)));
+            production.MaterialHistory?.Append(production.Continuation!, operation!));
         candidateProduction.ValidateForAuthority(candidateInventory);
         _ = candidateProduction.ContentHash;
         return new CraftPlan(candidateInventory, candidateProduction, WorldActionRejection.None, created);

@@ -42,48 +42,58 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Material custody/source continuation](p02/material-custody-continuation/README.md) adds explicit V4
-ordered gathering, raw transfer, reserved delivery, crafting and consumption across material cuts.
-Actual planner-produced issuance evidence, exact source cursor/effort history, intermediate combined
-capacity, original custody rules and permanent identities remain mandatory. The supplied current
-source owner is distinct from its historical baseline: refusal preserves actual spending and idle
-recovery; unrelated operations return no source replacement. V1/V2/V3 and whole-world guards remain.
+[Construction across material boundaries](p02/dependent-material-continuation/README.md) adds explicit
+V5 reserved installation, exact original construction backing and opaque work qualification. Initial
+selection binds the actual admitted construction/material boundary. Each builder needs a fresh actual
+frame; actor/body/terrain facts must match current source state. The frozen construction recipe catalog
+survives cuts, and ordinary crafting cannot acquire project installation permissions. Completion preserves
+existing physical members and returns material, work, geometry and new member identities atomically.
 
-[Verification](p02/material-custody-continuation/qualification/verification.json): clean solution
-build; **1,468 full Core + 89 affected Hosting = 1,557 distinct passing cases**, zero failures/skips.
-Core includes all 22 new cases. The 13-operation mixed journey preserves nine issued units through
-transfer/delivery/craft/consume and two cuts. The 1,028-operation journey crosses the unchanged
-512-entry limit twice, first proving each capacity refusal, with exact revisions and identity checks.
-The actual partial-excavation test proves an unsupported effort change is refused without overwriting
-its supplied owner. All 1,190 source/configuration and 15 execution pins remain unchanged.
+[Verification](p02/dependent-material-continuation/qualification/verification.json): clean solution
+build; **1,491 full Core + 257 affected Hosting = 1,748 distinct passing cases**, no failures/skips.
+Core includes all 23 new cases. The actual two-project journey earns both supply agreements, A's 200
+work actions and B's first action before selecting V5, then finishes B after genuine further time/work.
+Two further cuts preserve both guard lots, original batches, 20 physical members and ordinary byproduct
+recrafting. A separate 512-transfer journey proves unchanged-capacity refusal, cut and exact completion.
 
-The [independent review](p02/material-custody-continuation/REVIEW.md) requested intermediate
-raw-plus-derived capacity tests and explicit decode-then-authority-validation documentation. Both
-capacity cases pass; no blocking source finding remains. [Retained failures](p02/material-custody-continuation/FAILURES.md)
-record the invalid tool-power and support-removing excavation fixtures and their rule-preserving fixes.
-Two native workers handled disjoint implementation/tests; Astra integrated, reviewed, ran checks and
-maintained the timeless architecture. No Claude retry, model substitution or credit saving is claimed.
+[Independent review](p02/dependent-material-continuation/REVIEW.md) found and verified fixes for stale
+spatial frames, incomplete initial catalogs and construction producers losing classification at a cut.
+The original failed reused-completion test also passes after a V5-only structural identity check.
+[Failures](p02/dependent-material-continuation/FAILURES.md) retain compiler/diagnostic results and a
+source-inventory addendum verified against the actual compiled PDB. The C# source, project and JSON
+configuration inventory accounts for 1,200 files, alongside 15 execution pins. The unchanged full 783-case Hosting result belongs to the
+earlier base; only the affected 257 cases are rerun here. No performance claim follows from their timing.
 
-Preservation: checkpoint `codex/checkpoint-before-material-custody-continuation-20260928T045056Z`
-at `d3958d7`; 23 frozen specs, 64 earlier milestones and unrelated 19-file predecessor staging remain
-pinned. Verified component: `codex/milestone-material-custody-continuation` (resolved by preserved ref).
-No native/Host V4 publication, archive authenticity, process-kill or performance acceptance is implied.
-The prior full 783-case Hosting result is retained on the base commit; only the affected 89 cases are
-rerun here. V3 preservation is source/round-trip evidence, not a pre-change fixed binary vector.
+The timeless architecture reference and dependent pages are updated in the same change. Native workers
+handled disjoint implementation/tests; one critic reviewed invariants and necessary fixes; Astra owned
+integration, execution, docs and Git. No Claude retry or credit saving is claimed. Checkpoint
+`codex/checkpoint-before-dependent-material-continuation-20260928T053257Z` preserves `00127c4`.
+All 23 frozen specs, 65 earlier milestones and unrelated 19-file predecessor staging remain pinned.
+Verified component: `codex/milestone-construction-continuation` (resolved by its preserved ref).
 
-**Next dependency:** qualify construction witnesses, terrain/excavation coverage and nested liquid
-owners/codecs against the same material boundary. Additional source effort changes, transformed-lot
-transfers and admission/protection/reservation changes need typed joined transitions; V4's supported
-adapters must not imply universal mutation authority. Complete the
-[coordinated material/care protocol](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md) with
-care/resource closure, preemptive whole-batch capacity scheduling, permanent identities and actual
-Host archive retrieval/replay. Retain >256 actual-dose and surviving-crafted-ancestry proofs across
-two cuts, rollback, process kills and native post-cut use/reopen. Do not truncate histories, raise bounds
-or reinterpret profile25/26. Combat items still need due-actor Wait binding. Full journal lifetime,
-all 181 requirements and full P01/P02/P14 production/platform/scale, multiplayer/art/audio/human gates
-remain open. This component scope must not reduce gathering, mining, trade or acquisition requirements.
+**Next dependency:** explicit continued runoff/capacity/reservoir owners and nested codecs. Re-prepare
+pending obligations at cuts without changing reservations, source intervals, timing, contributions,
+projections or capacity revision. Qualify actual craft/consume reconciliation and produced/raw liquid
+flow across two cuts, with pending preservation/cancellation separate from no-pending detailed placement.
+Terrain repartition, reserved gate transport and partial/completed excavation still need distinct joined
+operations; preserve their guards. Complete the
+[coordinated material/care protocol](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md) with world
+closure, care/resource scheduling, authentic Host archive retrieval/replay, >256 actual-dose and
+surviving-ancestry journeys, two cuts, rollback, external kills and native use/reopen. Opaque construction
+work state has no public decoder; durable resume requires authenticated joined state. Do not truncate
+history, raise bounds or reinterpret old world profiles. Combat items still need due-actor Wait binding.
+All 181 requirements and full P01/P02/P14 production/platform/scale, multiplayer/art/audio/human gates
+remain open. This component scope does not reduce any mining, construction, acquisition or care requirement.
 
 ### Earlier retained increments
+
+[Material custody/source continuation](p02/material-custody-continuation/README.md), preserved on
+`codex/milestone-material-custody-continuation` (`00127c4`), introduces V4 ordered gathering, raw
+transfer/reserved delivery, craft and consumption. Its 13-operation mixed journey and 1,028-operation
+journey cross two material cuts with exact source/effort ownership, capacity, custody and identities.
+The retained clean build and 1,468 Core + 89 affected Hosting = 1,557-case result include 22 new cases,
+independent capacity review and original fixture failures. Its 1,190 source/configuration and 15
+execution pins belong to that checkpoint; complete-world and archive authentication remain separate.
 
 [Explicit production continuation](p02/production-continuation/README.md), preserved on
 `codex/milestone-production-continuation` (`d3958d7`), introduces context-bound V3 crafting and

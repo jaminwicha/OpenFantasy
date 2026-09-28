@@ -49,8 +49,10 @@ producers need no live-output witness in this observation. Their detailed proven
 to the complete source history and, under a qualified continuation protocol, retrievable archives.
 
 A witness hash identifies a record; it does not authenticate that record or supply its ingredients.
-Consumers such as installed construction require the full facts they validate. Replacing a direct
-batch reference therefore needs an explicit, authenticated archive-backed consumer contract.
+Consumers such as installed construction require the full facts they validate.
+[Construction continuation](construction-continuation.md) retains bounded original source-only batch
+records matched to these witnesses for structural component validation. Authenticating their durable
+origin still requires actual archive retrieval and complete-world replay.
 
 ## Bounds and canonical observation
 

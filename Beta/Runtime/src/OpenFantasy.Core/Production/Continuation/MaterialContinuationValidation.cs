@@ -15,7 +15,23 @@ internal static class MaterialContinuationValidation
             || state.Recipes.Zip(context.Recipes).Any(pair => !ProductionCodecV1.EncodeRecipe(pair.First).AsSpan()
                 .SequenceEqual(ProductionCodecV1.EncodeRecipe(pair.Second))))
             throw new ArgumentException("Ordered material history requires exact scope, admission and absolute revision.");
-        var batches = history.Operations.OfType<MaterialCraftOperation>().Select(value => value.Batch).OrderBy(value => value.BatchId).ToArray();
+        if (context.SupportsConstruction)
+        {
+            var importedBatchIds = context.Basis.BatchWitnesses.Select(value => value.BatchId).ToHashSet();
+            var importedCommands = context.Basis.BatchWitnesses.Select(value => value.CommandId).ToHashSet();
+            if (state.Batches.Any(value => importedBatchIds.Contains(value.BatchId))
+                || history.Operations.Any(value => importedCommands.Contains(value.CommandId)))
+                throw new ArgumentException("A V5 segment cannot reuse an imported producer identity or its original command.");
+        }
+        if (history.Operations.OfType<MaterialCraftOperation>().Any(value => context.ConstructionRecipeIds.Contains(value.Batch.RecipeId))
+            || history.Operations.OfType<MaterialConstructionOperation>().Any(value => !context.ConstructionRecipeIds.Contains(value.Evidence.Batch.RecipeId)))
+            throw new ArgumentException("Admitted construction recipes require the distinct genuinely qualified reserved completion operation.");
+        var batches = history.Operations.Select(value => value switch
+        {
+            MaterialCraftOperation craft => craft.Batch,
+            MaterialConstructionOperation construction => construction.Evidence.Batch,
+            _ => null
+        }).OfType<ProductionBatch>().OrderBy(value => value.BatchId).ToArray();
         var claims = history.Operations.OfType<MaterialConsumptionOperation>().Select(value => value.Claim).OrderBy(value => value.ConsumptionId).ToArray();
         if (batches.Length != state.Batches.Count || claims.Length != state.ConsumedItems.Count
             || batches.Zip(state.Batches).Any(pair => !ProductionCodecV1.EncodeBatch(pair.First).AsSpan().SequenceEqual(ProductionCodecV1.EncodeBatch(pair.Second)))

@@ -3,6 +3,7 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
@@ -14,7 +15,8 @@ namespace OpenFantasy.Core.Production;
 public sealed class ProductionContinuationContext
 {
     private ProductionContinuationContext(ProductionContinuationBasis basis, CountedAuthorityState inventory,
-        ProductionSnapshot production, bool supportsMaterialOperations = false, GatheringSnapshot? gathering = null)
+        ProductionSnapshot production, bool supportsMaterialOperations = false, GatheringSnapshot? gathering = null,
+        ConstructionSnapshot? construction = null, bool supportsConstruction = false)
     {
         Basis = basis;
         Ordinal = checked((production.Continuation?.Ordinal ?? 0) + 1);
@@ -24,6 +26,16 @@ public sealed class ProductionContinuationContext
         SupportsMaterialOperations = supportsMaterialOperations;
         BaseMaterialOperationCount = production.TotalMaterialOperationCount;
         GatheringBaseline = gathering;
+        SupportsConstruction = supportsConstruction;
+        ConstructionRecipeIds = Array.AsReadOnly((construction?.Definitions.Select(value => value.MaterialTransform.DefinitionId)
+            ?? production.Continuation?.ConstructionRecipeIds.AsEnumerable() ?? Array.Empty<EntityId>()).Order().ToArray());
+        if (ConstructionRecipeIds.Count > ConstructionSnapshot.MaximumDefinitions
+            || !supportsConstruction && ConstructionRecipeIds.Count != 0
+            || supportsConstruction && ConstructionRecipeIds.Count == 0
+            || production.Continuation is { SupportsConstruction: true } prior
+                && !ConstructionRecipeIds.SequenceEqual(prior.ConstructionRecipeIds))
+            throw new ArgumentException("Construction continuation retains its exact bounded admitted recipe catalog.");
+        ConstructionBatches = ConstructionBatchArchive.Capture(production, basis, construction, supportsConstruction, ConstructionRecipeIds);
         if (checked(BaseBatchCount + BaseConsumedItemCount) > BaseProductionRevision
             || BaseMaterialOperationCount > BaseProductionRevision)
             throw new ArgumentException("A continuation boundary requires a cumulative revision for every retained operation.");
@@ -37,7 +49,7 @@ public sealed class ProductionContinuationContext
         if (recipes.Length > 5 * 1024 * 1024)
             throw new ArgumentException("The continuation recipe admission exceeds its bounded frame.");
         List<ReadOnlyMemory<byte>> fields = [
-            Number(supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
+            Number(supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
             Number(BaseBatchCount), Number(BaseConsumedItemCount), Number(SupportsConsumption ? 1UL : 0UL), recipes,
             AuthorityAdmissionHash.ToByteArray(), CanonicalEncodingV1.Frame("continuation.storages.v1",
                 Storages.Select(value => (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("continuation.storage.v1",
@@ -47,6 +59,14 @@ public sealed class ProductionContinuationContext
             ValidateGathering(inventory, basis, gathering);
             fields.Add(Number(BaseMaterialOperationCount));
             fields.Add(gathering is null ? Array.Empty<byte>() : GatheringCodecV1.Encode(gathering));
+        }
+        if (supportsConstruction)
+        {
+            if (!supportsMaterialOperations) throw new ArgumentException("Construction continuation requires ordered material history.");
+            fields.Add(CanonicalEncodingV1.Frame("continuation.construction-recipes.v1", ConstructionRecipeIds
+                .Select(value => (ReadOnlyMemory<byte>)value.ToByteArray()).ToArray()));
+            fields.Add(CanonicalEncodingV1.Frame("continuation.construction-batches.v1", ConstructionBatches
+                .Select(value => (ReadOnlyMemory<byte>)ProductionCodecV1.EncodeBatch(value)).ToArray()));
         }
         ContentHash = ContentHash.Compute(CanonicalEncodingV1.Frame("production.continuation-context", fields.ToArray()));
     }
@@ -58,6 +78,9 @@ public sealed class ProductionContinuationContext
     public ulong BaseConsumedItemCount { get; }
     public bool SupportsConsumption { get; }
     public bool SupportsMaterialOperations { get; }
+    public bool SupportsConstruction { get; }
+    public ReadOnlyCollection<EntityId> ConstructionRecipeIds { get; }
+    public ReadOnlyCollection<ProductionBatch> ConstructionBatches { get; }
     public ulong BaseMaterialOperationCount { get; }
     public GatheringSnapshot? GatheringBaseline { get; }
     public ReadOnlyCollection<CraftRecipeDefinition> Recipes { get; }
@@ -67,11 +90,17 @@ public sealed class ProductionContinuationContext
 
     internal static ProductionContinuationContext Capture(CountedAuthorityState inventory, ProductionSnapshot production) =>
         new(ProductionContinuationBasis.Capture(inventory, production), inventory, production,
-            production.MaterialHistory is not null, production.MaterialHistory?.Gathering);
+            production.MaterialHistory is not null, production.MaterialHistory?.Gathering,
+            supportsConstruction: production.Continuation?.SupportsConstruction == true);
 
     internal static ProductionContinuationContext CaptureMaterial(CountedAuthorityState inventory,
         ProductionSnapshot production, GatheringSnapshot? gathering) =>
-        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering);
+        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering,
+            supportsConstruction: production.Continuation?.SupportsConstruction == true);
+
+    internal static ProductionContinuationContext CaptureConstruction(CountedAuthorityState inventory,
+        ProductionSnapshot production, ConstructionSnapshot construction, GatheringSnapshot? gathering) =>
+        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering, construction, true);
 
     private static void ValidateGathering(CountedAuthorityState inventory, ProductionContinuationBasis basis, GatheringSnapshot? gathering)
     {

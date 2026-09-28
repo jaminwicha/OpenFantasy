@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Quests;
@@ -57,12 +58,47 @@ public sealed class ConstructionSnapshot
     public void ValidateForWorld(WorldSnapshot world)
     {
         ArgumentNullException.ThrowIfNull(world);
+        if (world.Production?.IsContinued == true)
+            throw new ArgumentException("Complete-world construction retains its original inline production interpretation.", nameof(world));
+        ValidateComponents(world, world.Inventory, world.Production, world.Space, world.ConstructionPhysical);
+    }
+
+    /// <summary>Validates exact standalone V5 material, work and physical components without admitting a continued world.</summary>
+    public void ValidateForMaterialContinuation(WorldSnapshot world, CountedAuthorityState inventory,
+        ProductionSnapshot production, LocalSpatialSnapshot space, ConstructionPhysicalSnapshot? physical = null)
+    {
+        ArgumentNullException.ThrowIfNull(world);
+        ArgumentNullException.ThrowIfNull(inventory);
+        ArgumentNullException.ThrowIfNull(production);
+        ArgumentNullException.ThrowIfNull(space);
+        if (production.Continuation is not { SupportsConstruction: true })
+            throw new ArgumentException("Component construction admission requires the explicit V5 interpretation.", nameof(production));
+        ConstructionSourceFrame.ValidateSpace(world.Space, space);
+        if (!Definitions.Select(value => value.MaterialTransform.DefinitionId).Order().SequenceEqual(production.Continuation.ConstructionRecipeIds))
+            throw new ArgumentException("Construction component admission retains the exact originally captured construction recipe catalog.");
+        if ((world.ConstructionPhysical is null) != (physical is null))
+            throw new ArgumentException("Component admission must preserve the actual source world's physical interpretation.", nameof(physical));
+        production.ValidateForAuthority(inventory);
+        if (Projects.Any(project => inventory.ContainsIdentity(project.ProjectId) || production.ContainsIdentity(project.ProjectId))
+            || physical?.Members.Any(member => inventory.ContainsIdentity(member.ElementId)
+                || production.ContainsIdentity(member.ElementId) || Projects.Any(project => project.ProjectId == member.ElementId
+                    || project.Installed?.StructureId == member.ElementId)) == true)
+            throw new ArgumentException("Construction project and member identities cannot alias material or one another.");
+        ValidateComponents(world, inventory, production, space, physical);
+    }
+
+    private void ValidateComponents(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot? production,
+        LocalSpatialSnapshot space, ConstructionPhysicalSnapshot? physical)
+    {
         if (world.WorldId != WorldId || world.BranchId != BranchId || Revision > world.Revision
-            || world.Production is null || world.Quests is null || world.Progression is null)
+            || production is null || inventory.WorldId != WorldId || inventory.BranchId != BranchId
+            || production.WorldId != WorldId || production.BranchId != BranchId
+            || space.Scope.WorldId != WorldId || space.Scope.BranchId != BranchId
+            || physical is not null && (physical.ConstructionHash != ContentHash || physical.Revision > world.Revision)
+            || world.Quests is null || world.Progression is null)
         {
             throw new ArgumentException("Construction requires the retained production and quest world in one exact scope.");
         }
-        ProductionSnapshot production = world.Production;
         foreach (var builderProjects in Projects.GroupBy(value => value.BuilderActorId))
         {
             UInt128 workSteps = builderProjects.Aggregate((UInt128)0, (sum, value) => sum + value.Revision);
@@ -78,7 +114,7 @@ public sealed class ConstructionSnapshot
         {
             if (!production.Recipes.Any(value => value.DefinitionId == definition.MaterialTransform.DefinitionId
                     && value.Version == definition.MaterialTransform.Version)
-                || !world.Inventory.Sources.Any(value => value.Definition == definition.RequiredTool.Item))
+                || !inventory.Sources.Any(value => value.Definition == definition.RequiredTool.Item))
             {
                 throw new ArgumentException("Construction requires exact admitted transform and finite tool definition pins.");
             }
@@ -90,11 +126,11 @@ public sealed class ConstructionSnapshot
             DeliveryQuestDefinition? quest = world.Quests.FindDefinition(project.QuestId);
             if (quest is null || quest.GiverActorId != project.OwnerActorId
                 || quest.DestinationCustodianId != project.ProjectCustodianId || quest.MaterialReservationId != project.ReservationId
-                || !world.Inventory.Policies.Any(value => value.CustodianId == project.ProjectCustodianId && value.OwnerActorId == project.BuilderActorId)
-                || !world.Inventory.Actors.Contains(project.BuilderActorId)
+                || !inventory.Policies.Any(value => value.CustodianId == project.ProjectCustodianId && value.OwnerActorId == project.BuilderActorId)
+                || !inventory.Actors.Contains(project.BuilderActorId)
                 || world.GetResident(project.BuilderActorId).InventoryCustodianId == project.ProjectCustodianId
-                || project.RequiredAccess.Any(value => !world.Inventory.Actors.Contains(value.ActorId))
-                || world.Space.Actors.Any(actor => actor.Feet.Z == project.SiteFeet.Z
+                || project.RequiredAccess.Any(value => !inventory.Actors.Contains(value.ActorId))
+                || space.Actors.Any(actor => actor.Feet.Z == project.SiteFeet.Z
                     && !project.RequiredAccess.Any(value => value.ActorId == actor.ActorId))
                 || project.Definition.MaterialTransform.Inputs.Count != 1
                 || project.Definition.MaterialTransform.Inputs[0].Count != quest.Quantity
@@ -112,8 +148,12 @@ public sealed class ConstructionSnapshot
                 continue;
             }
             TransformedLot? lot = production.Lots.FirstOrDefault(value => value.LotId == installed.GuardLotId);
-            ProductionBatch? batch = production.Batches.FirstOrDefault(value => value.BatchId == installed.ProductionBatchId);
+            ProductionBatch? batch = production.Batches.FirstOrDefault(value => value.BatchId == installed.ProductionBatchId)
+                ?? production.Continuation?.ConstructionBatches.FirstOrDefault(value => value.BatchId == installed.ProductionBatchId);
+            if (batch is not null && !production.Batches.Any(value => value.BatchId == batch.BatchId))
+                ConstructionBatchArchive.ValidateWitness(batch, production.Continuation!.Basis);
             var recipe = project.Definition.MaterialTransform;
+            if (batch is not null) ConstructionBatchArchive.ValidateProject(project, production, batch);
             if (!installedLots.Add(installed.GuardLotId) || !installedBatches.Add(installed.ProductionBatchId)
                 || installed.StructureId != EntityId.DeriveSpawned(installed.CompletionCommandId, (ulong)recipe.Outputs.Count + 1)
                 || lot is null || lot.Revision != installed.GuardLotRevision || lot.Quantity != 1
@@ -123,22 +163,26 @@ public sealed class ConstructionSnapshot
                 || batch is null || batch.CommandId != installed.CompletionCommandId || batch.ActorId != project.BuilderActorId
                 || batch.CustodianId != project.ProjectCustodianId || batch.RecipeId != recipe.DefinitionId || batch.RecipeVersion != recipe.Version
                 || batch.Ingredients.Any(value => value.Kind != IngredientLotKind.Source)
-                || world.Inventory.Custody.Lots.Any(value => value.ReservedBy == project.ReservationId))
+                || inventory.Custody.Lots.Any(value => value.ReservedBy == project.ReservationId))
             {
                 throw new ArgumentException("An installed structure must exclusively retain its exact completed material batch and live output.");
             }
         }
-        if (production.Batches.Any(value => IsConstructionRecipe(value.RecipeId) && !installedBatches.Contains(value.BatchId)))
+        if (production.Batches.Concat(production.Continuation?.ConstructionBatches.AsEnumerable() ?? Array.Empty<ProductionBatch>()).Any(value => IsConstructionRecipe(value.RecipeId) && !installedBatches.Contains(value.BatchId)))
         {
             throw new ArgumentException("Construction-only material batches require one fully worked, installed project.");
         }
-        world.ConstructionPhysical?.ValidateStableGeometry(world.Space);
-        var expected = world.ConstructionPhysical?.GetStructures()
-            ?? GetStructures(world.Space.GroundSupport != GroundSupportMode.TerrainOnly);
-        if (world.Space.Structures.Count != expected.Count || expected.Where((value, index) =>
-                value.StructureId != world.Space.Structures[index].StructureId
-                || !value.Boxes.SequenceEqual(world.Space.Structures[index].Boxes)
-                || !value.BearingSurfaces.SequenceEqual(world.Space.Structures[index].BearingSurfaces)).Any())
+        if (production.Continuation is { SupportsConstruction: true } context
+            && context.Basis.BatchWitnesses.Any(value => context.ConstructionRecipeIds.Contains(value.RecipeId)
+                && (!installedBatches.Contains(value.BatchId) || !context.ConstructionBatches.Any(batch => batch.BatchId == value.BatchId))))
+            throw new ArgumentException("Every imported construction recipe producer requires one installed project and its complete original batch.");
+        physical?.ValidateStableGeometry(space);
+        var expected = physical?.GetStructures()
+            ?? GetStructures(space.GroundSupport != GroundSupportMode.TerrainOnly);
+        if (space.Structures.Count != expected.Count || expected.Where((value, index) =>
+                value.StructureId != space.Structures[index].StructureId
+                || !value.Boxes.SequenceEqual(space.Structures[index].Boxes)
+                || !value.BearingSurfaces.SequenceEqual(space.Structures[index].BearingSurfaces)).Any())
         {
             throw new ArgumentException("Authoritative spatial structures must exactly match the installed physical definitions.");
         }

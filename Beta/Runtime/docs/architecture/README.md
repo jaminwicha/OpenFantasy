@@ -49,6 +49,7 @@ different kind of person.
 | [Item consumption](item-consumption.md) | How do candidate material retirement and explicit production archives retain consumed rights without granting treatment or world publication? |
 | [Material continuation basis](material-continuation-basis.md) | How are exact surviving material rights and direct retirement captured without granting issuance, continued spending or archive authenticity? |
 | [Production continuation](production-continuation.md) | How do explicit continued material windows conserve imported rights and historical identities while remaining separate from complete-world archive publication? |
+| [Construction continuation](construction-continuation.md) | How do earned work, reserved installation and historical construction backing survive material boundaries without repeated work or recreated buildings? |
 | [Presentation and interaction](presentation-and-interaction.md) | How do actions, menus, maps, animation, art and audio express the simulation? |
 | [Content and composition](content-and-composition.md) | How are source content, procedural opportunities, progression and cross-system changes admitted? |
 

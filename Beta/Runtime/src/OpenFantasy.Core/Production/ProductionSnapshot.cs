@@ -3,6 +3,7 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
@@ -62,7 +63,8 @@ public sealed class ProductionSnapshot
         : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(MaterialHistory is not null ? ProductionCodecV4.Encode(this)
+    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsConstruction == true ? ProductionCodecV5.Encode(this)
+        : MaterialHistory is not null ? ProductionCodecV4.Encode(this)
         : IsContinued ? ProductionCodecV3.Encode(this) : SupportsConsumption
         ? ProductionCodecV2.Encode(this) : ProductionCodecV1.Encode(this));
     public bool ContainsIdentity(EntityId identity) => _identities.Contains(identity);
@@ -94,6 +96,31 @@ public sealed class ProductionSnapshot
             if (gathering is null) return Continue(inventory);
         }
         var context = ProductionContinuationContext.CaptureMaterial(inventory, this, gathering);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
+    /// <summary>Explicitly captures complete installed construction witnesses for standalone V5 composition.</summary>
+    public ProductionSnapshot ContinueConstruction(CountedAuthorityState inventory, MaterialConstructionState state,
+        GatheringSnapshot? gathering = null)
+    {
+        ArgumentNullException.ThrowIfNull(inventory);
+        ArgumentNullException.ThrowIfNull(state);
+        state.ValidateMaterialBoundary(inventory, this);
+        ConstructionSnapshot construction = state.Construction;
+        if (construction.WorldId != WorldId || construction.BranchId != BranchId)
+            throw new ArgumentException("Construction continuation requires the same exact scope.", nameof(construction));
+        if (MaterialHistory is { } retained)
+        {
+            if (gathering is not null && (retained.Gathering is null
+                || gathering.ContentHash != retained.Gathering.AdvanceTo(gathering.AdvancingStep).ContentHash))
+                throw new ArgumentException("A construction cut cannot replace its retained source owner.", nameof(gathering));
+            gathering ??= retained.Gathering;
+        }
+        var context = ProductionContinuationContext.CaptureConstruction(inventory, this, construction, gathering);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
         result.ValidateForAuthority(inventory);
