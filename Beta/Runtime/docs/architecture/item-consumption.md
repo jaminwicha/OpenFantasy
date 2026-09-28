@@ -19,6 +19,7 @@ durable authority publishes those complete-world transactions and replays their 
 receipts and archive boundaries. The local session and native controls bind patient acknowledgment
 and separate helper treatment. Encoding a standalone material candidate does not grant publication
 or enable ordinary item use; each action needs its own permission, eligibility and time contract.
+[Ordinary care](ordinary-care.md) binds these operations through its separate profile26 exploration policy.
 
 ## Selection, authority and revisions
 

@@ -1,0 +1,18 @@
+{
+  "recordedUtc": "2026-09-28T02:13:48.390391+00:00",
+  "specsUnchanged": 23,
+  "priorMilestonesUnchanged": 59,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "checkpointVerified": true,
+  "validationSourceFilesUnchanged": 1017,
+  "allRuntimeCSharpFiles": 1074,
+  "forbiddenRuntimeSourceToken": [],
+  "applicationBinaries": {
+    "src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "36ed1bc34c27dee3a508c674da4865f56023c93b5546d53e3a2d2103021cc687",
+    "src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "2070df1bc24dd2632404d9bda6d87842cb92cc8b193127b7aa741d7b11de7ba8",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "eea79ddf396da39e97cd0089d6daa31c3afdef137b42e7bcd2d3f9370ee836d5",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "36ed1bc34c27dee3a508c674da4865f56023c93b5546d53e3a2d2103021cc687",
+    "client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "2070df1bc24dd2632404d9bda6d87842cb92cc8b193127b7aa741d7b11de7ba8",
+    "src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "128a36548fed7cb2820ca935b75f06fce46ecd858eff569e0cb2e13345f0a300"
+  }
+}

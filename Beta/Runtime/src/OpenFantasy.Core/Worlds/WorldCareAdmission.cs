@@ -45,11 +45,12 @@ public static class WorldCareAdmission
     internal static void Validate(WorldSnapshot world)
     {
         if (world.Care is not { } care) return;
-        if (world.ProfileVersion != 25 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
+        if (world.ProfileVersion is not 25 and not 26 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
             || world.Production is not { SupportsConsumption: true } production || care.WorldId != world.WorldId
-            || care.BranchId != world.BranchId || care.Revision > world.Revision
-            || care.Treatments.Count != production.ConsumedItems.Count)
+            || care.BranchId != world.BranchId || !care.SupportsOrdinary && care.Revision > world.Revision
+            || care.Treatments.Count + (care.Ordinary?.Uses.Count ?? 0) != production.ConsumedItems.Count)
             throw new ArgumentException("Care requires a complete enabled lifecycle/material owner in its exact world scope.");
+        WorldRestorativeAdmission.Validate(world);
         foreach (var agreement in care.Agreements)
         {
             if (!world.Inventory.Actors.Contains(agreement.PatientActorId) || !world.Inventory.Actors.Contains(agreement.HelperActorId))

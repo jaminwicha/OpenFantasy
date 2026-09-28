@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Care;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Construction;
@@ -21,6 +22,7 @@ namespace OpenFantasy.Core.Worlds;
 public sealed class WorldStepProcessor
 {
     private readonly WorldActionResolver _actions = new();
+    private readonly WorldRestorativeResolver _restorative = new();
     private readonly ExcavationPlanner _excavation = new();
     private readonly GatherPlanner _gathering = new();
     private readonly WorldCraftResolver _crafting = new();
@@ -128,6 +130,7 @@ public sealed class WorldStepProcessor
         ProductionSnapshot? production = state.Production;
         ProgressionSnapshot? progression = state.Progression;
         var resourceHistory = state.ResourceHistory;
+        var care = state.Care;
         QuestSnapshot? quests = state.Quests;
         ConstructionSnapshot? construction = state.Construction;
         ConstructionPhysicalSnapshot? physical = state.ConstructionPhysical;
@@ -181,7 +184,7 @@ public sealed class WorldStepProcessor
                     ? proposedLiquidCells.AdvanceBoundary(state.EncounterLifecycle is null ? validationCalendar : validationPacing!.ProcessBoundary) : proposedLiquidCells;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, resourceHistory: resourceHistory);
+                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, care: care, resourceHistory: resourceHistory);
                 if (state.ConsequencePolicy is not null || state.ReservoirSeals is not null) { _ = WorldSnapshotCodec.Encode(admitted); }
                 admittedCandidate = admitted;
                 return true;
@@ -201,6 +204,7 @@ public sealed class WorldStepProcessor
             var previousProduction = production;
             var previousProgression = progression;
             var previousResourceHistory = resourceHistory;
+            var previousCare = care;
             var previousQuests = quests;
             var previousConstruction = construction;
             var previousPhysical = physical;
@@ -214,6 +218,20 @@ public sealed class WorldStepProcessor
             if (state.EncounterLifecycle is not null && !WorldActorAvailability.PermitsAction(state, action))
             {
                 resolution = new(inventory, dialogues, WorldActionRejection.Unavailable, null);
+            }
+            else if (action.Intent is UseRestorativeItemIntent or RevokeCarePermissionIntent)
+            {
+                if (care?.Ordinary is null || production is null || progression is null || resourceHistory is null)
+                    throw new InvalidOperationException("This saved profile does not interpret ordinary care.");
+                var plan = _restorative.Resolve(state, inventory, space, production, progression, care, resourceHistory,
+                    action, batch.Kind, dialogues.Count != 0, sequence, checked((uint)actionIndex), Occupied);
+                resolution = new(plan.Inventory, dialogues, plan.Rejection, null);
+                production = plan.Production;
+                progression = plan.Progression;
+                care = plan.Care;
+                resourceHistory = plan.ResourceHistory;
+                createdIds = plan.CreatedIds;
+                performedWork = plan.Rejection == WorldActionRejection.None;
             }
             else if (action.Intent is ClimbIntent)
             {
@@ -365,6 +383,7 @@ public sealed class WorldStepProcessor
                 production = previousProduction;
                 progression = previousProgression;
                 resourceHistory = previousResourceHistory;
+                care = previousCare;
                 quests = previousQuests;
                 construction = previousConstruction;
                 physical = previousPhysical;
@@ -467,7 +486,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, resourceHistory: resourceHistory);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: resourceHistory);
         if (liquidCells is not null && admittedMovement is null)
         {
             // Fragment growth must also fit the complete retained root before authority preparation succeeds.

@@ -521,3 +521,13 @@ backup stays unchanged; this path does not create or qualify a native acknowledg
 `CareRewardContinuationTests` can export a reproducible production-admitted pending backup when
 `OPENFANTASY_CARE_CONTINUATION_EVIDENCE` names an empty evidence directory. Omit `--controls all` for
 this mode. It supports the same `--rendered`, tool-path and output options as fresh journeys.
+
+The Hosting API `RestorativeJourneyAdmission.CreateEmbedded` admits a separate fresh profile26 for
+ordinary exploration care. It partitions the same two source Potions between the player and Wren;
+`WorldRestorativeActions.Prepare` captures an exact self-use or permitted helper dose. Complete world
+steps publish consumption, capped restoration and exploration time together. A controlled player can
+submit these explicit commands through `LocalWorldSession`; reading holds and encounter boundaries
+refuse them. [Ordinary-care architecture](docs/architecture/ordinary-care.md) documents permission,
+revocation, persistence and the separate material-history limit. There is no ordinary-care launch flag,
+native offer/menu or combat-item binding; `--care` retains the aftermath scenario above. See the
+[implementation packet](../implementation/p02/ordinary-care/README.md) for qualification and follow-through.

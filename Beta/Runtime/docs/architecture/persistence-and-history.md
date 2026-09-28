@@ -60,6 +60,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 23 | Source-pinned physical abilities, exact pending requests, damage randomness and real progression resources over the complete paced world |
 | 24 | Permanent encounter scenarios, phases, cumulative exploration/tactical clocks and readiness debt across authenticated entry and outcome release |
 | 25 | Aftermath care, consumption-enabled material owners and ordered causal resource history with explicit schema-seven archive publication |
+| 26 | Ordinary restorative use, patient-owned assistance permission and revocation over the complete care/resource world, retaining schema-seven publication |
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
@@ -76,6 +77,13 @@ acknowledgment and later helper commitment at distinct ready cutoffs. Its occupi
 survives reopening; recovery alone selects no treatment. The
 [native care binding](native-encounters.md#care-interaction) submits the captured patient acknowledgment
 through this adapter and reconstructs transient controls from the recovered public view.
+
+[Profile 26](ordinary-care.md) selects Care V2 and action V14 explicitly. Self-use and living assistance
+share the existing material-consumption and resource owners; retained uses identify the exact dose,
+patient resource boundary, policy, permission and command position. Fresh admission pins the complete
+ordinary policy and grants before play. Schema seven accepts profiles 25 and 26 explicitly at genesis
+and replayed head; reopening never upgrades a lived profile-25 world. Resource continuation carries
+ordinary uses and permission revocations across the same atomic archive transaction.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight

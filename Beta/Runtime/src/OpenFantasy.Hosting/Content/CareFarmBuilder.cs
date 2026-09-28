@@ -11,7 +11,7 @@ using OpenFantasy.Core.Worlds;
 namespace OpenFantasy.Hosting.Content;
 
 /// <summary>Composes finite fresh custody and nearby helper placement before geography binds the complete world.</summary>
-internal sealed class CareFarmBuilder(WorldSnapshot farm, CareFarmSources sources)
+internal sealed class CareFarmBuilder(WorldSnapshot farm, CareFarmSources sources, bool splitStock = false)
 {
     private readonly HashSet<EntityId> _newIdentities = [];
 
@@ -76,15 +76,25 @@ internal sealed class CareFarmBuilder(WorldSnapshot farm, CareFarmSources source
     {
         ulong addedCapacity = CareJourneyAdmission.InitialBerryQuantity + CareJourneyAdmission.InitialPotionQuantity;
         EntityId berrySource = Instance("supplied-berries.source"), potionSource = Instance("supplied-potion.source");
-        CountedSourceLot[] added =
+        List<CountedSourceLot> added =
         [
             new(Instance("supplied-berries.lot"), storage, berries, new(berrySource, 0, CareJourneyAdmission.InitialBerryQuantity), 0),
-            new(Instance("supplied-potion.lot"), storage, potion, new(potionSource, 0, CareJourneyAdmission.InitialPotionQuantity), 0)
+            new(Instance("supplied-potion.lot"), storage, potion, new(potionSource, 0, CareJourneyAdmission.InitialPotionQuantity - (splitStock ? 1UL : 0UL)), 0)
         ];
+        EntityId playerStorage = farm.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player).InventoryCustodianId;
+        if (splitStock)
+        {
+            // Explicit fresh ordinary-use composition assigns one existing source interval to its
+            // player owner; it neither changes deposit permissions nor grants a second source dose.
+            added.Add(new(Instance("player-potion.lot"), playerStorage, potion,
+                new(potionSource, CareJourneyAdmission.InitialPotionQuantity - 1, CareJourneyAdmission.InitialPotionQuantity), 0));
+        }
         var old = farm.Inventory;
         var custody = new CustodySnapshot(farm.WorldId, farm.BranchId, 0,
             old.Custody.Storages.Select(value => value.CustodianId == storage
-                ? new CustodianStorage(storage, checked(value.UnitCapacity + addedCapacity), value.Revision) : value),
+                ? new CustodianStorage(storage, checked(value.UnitCapacity + addedCapacity - (splitStock ? 1UL : 0UL)), value.Revision)
+                : splitStock && value.CustodianId == playerStorage
+                    ? new CustodianStorage(playerStorage, checked(value.UnitCapacity + 1), value.Revision) : value),
             old.Custody.Lots.Concat(added));
         return new(custody, checked(old.AdmittedUnitCapacity + addedCapacity), old.Actors, old.Controls, old.Policies,
             old.Sources.Concat([new(berrySource, berries, CareJourneyAdmission.InitialBerryQuantity),

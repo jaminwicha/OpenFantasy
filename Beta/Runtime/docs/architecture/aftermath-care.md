@@ -106,8 +106,9 @@ the care definitions. `CareCodecV1`, `WorldActionCodecV13`, `WorldStepCodecV25` 
 `WorldSnapshotCodecV25` retain explicit bounded formats. Earlier profiles keep their own rules.
 Canonical decoding proves internal relationships, not historical authorization or trusted genesis.
 
-Ordinary treatment, delivery modes, self-care, anatomy, conditions, ongoing consent and passive
-recovery require their own eligibility and time contracts. They may reuse the actual material and
+[Ordinary restorative use](ordinary-care.md) binds self/companion delivery through a separate exploration
+policy and explicit Care V2 interpretation. Anatomy, conditions, ongoing consent and passive recovery
+require their own eligibility and time contracts. They may reuse the actual material and
 resource operations without inheriting this narrow aftermath policy. Continuous play also requires
 authenticated archival continuation across resource, care and material evidence; bounded retained
 collections are storage envelopes, not accepted lifetime treatment limits.

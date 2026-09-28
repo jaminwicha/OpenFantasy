@@ -16,6 +16,7 @@ public static class CareCodecV1
     public static byte[] Encode(CareSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
+        if (state.SupportsOrdinary) throw new ArgumentException("Care V1 cannot discard ordinary care ownership.");
         byte[] bytes = Frame("care.snapshot", Number(1), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),
             Number(state.Revision), Collection("care.remedies", state.Remedies.Select(EncodeRemedy)),
             Collection("care.agreements", state.Agreements.Select(EncodeAgreement)),
@@ -72,7 +73,7 @@ public static class CareCodecV1
         Number(value.PatientRevisionBefore), Number((ulong)value.MaximumHp), Number((ulong)value.HpAfter),
         Number(value.HelperNormalizedSpeed), Number(value.HelperDelay));
 
-    private static RestorativeRemedyDefinition DecodeRemedy(byte[] bytes)
+    internal static RestorativeRemedyDefinition DecodeRemedy(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumDefinitionBytes, 6);
         reader.Tag("care.remedy.v1"u8);
@@ -82,7 +83,7 @@ public static class CareCodecV1
         return value;
     }
 
-    private static CareAgreement DecodeAgreement(byte[] bytes)
+    internal static CareAgreement DecodeAgreement(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumDefinitionBytes, 6);
         reader.Tag("care.agreement.v1"u8);
@@ -91,7 +92,7 @@ public static class CareCodecV1
         return value;
     }
 
-    private static CareAcknowledgment DecodeAcknowledgment(byte[] bytes)
+    internal static CareAcknowledgment DecodeAcknowledgment(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumAcknowledgmentBytes, 9);
         reader.Tag("care.acknowledgment.v1"u8);
@@ -102,7 +103,7 @@ public static class CareCodecV1
         return value;
     }
 
-    private static CareTreatment DecodeTreatment(byte[] bytes)
+    internal static CareTreatment DecodeTreatment(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumTreatmentBytes, 12);
         reader.Tag("care.treatment.v1"u8);

@@ -140,6 +140,8 @@ public static class WorldAdmissionValidator
                 }
                 else if (evidence is WorldTreatmentResourceEvidence treatment)
                     Require(treatment.TreatmentId, WorldIdentityRole.CareTreatment);
+                else if (evidence is WorldRestorativeUseResourceEvidence use)
+                    Require(use.UseId, WorldIdentityRole.RestorativeUse);
             }
         }
 
@@ -157,6 +159,36 @@ public static class WorldAdmissionValidator
                 Require(agreement.PatientActorId, WorldIdentityRole.Actor);
                 Require(agreement.HelperActorId, WorldIdentityRole.Actor);
                 Require(agreement.RemedyDefinitionId, WorldIdentityRole.CareRemedy);
+            }
+            if (care.Ordinary is { } ordinary)
+            {
+                foreach (var definition in ordinary.Definitions)
+                {
+                    Definition(definition.DefinitionId, WorldIdentityRole.RestorativeUseDefinition, definition.Version);
+                    Require(definition.RemedyDefinitionId, WorldIdentityRole.CareRemedy);
+                    foreach (var form in definition.SupportedForms)
+                        Definition(form.DefinitionId, WorldIdentityRole.BodyDefinition, form.Version);
+                }
+                foreach (var permission in ordinary.Permissions)
+                {
+                    Add(permission.PermissionId, WorldIdentityRole.CarePermission, unique: true);
+                    Require(permission.PatientActorId, WorldIdentityRole.Actor);
+                    Require(permission.HelperActorId, WorldIdentityRole.Actor);
+                    Require(permission.UseDefinitionId, WorldIdentityRole.RestorativeUseDefinition);
+                    if (permission.Revocation is { } revoke)
+                    {
+                        Add(revoke.RevocationId, WorldIdentityRole.CarePermissionRevocation, unique: true);
+                        Add(revoke.CommandId, WorldIdentityRole.CauseReference);
+                    }
+                }
+                foreach (var use in ordinary.Uses)
+                {
+                    Add(use.UseId, WorldIdentityRole.RestorativeUse, unique: true);
+                    Add(use.CommandId, WorldIdentityRole.CauseReference);
+                    Require(use.ActorId, WorldIdentityRole.Actor);
+                    Require(use.RecipientActorId, WorldIdentityRole.Actor);
+                    Require(use.ConsumptionId, WorldIdentityRole.ItemConsumption);
+                }
             }
             foreach (var acknowledgment in care.Acknowledgments)
             {

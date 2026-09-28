@@ -15,6 +15,12 @@ This records the chosen design direction, not a claim that a generic interaction
 implemented. The finite-care work in progress is preserved before adapting it. Existing saves and
 qualified consumption evidence remain unchanged. Frozen specifications retain their historical bytes.
 
+Implementation follow-through: the [ordinary-care packet](p02/ordinary-care/README.md) records the
+explicit profile26 exploration binding, patient-owned permissions, shared material/resource operation
+and durable archive integration. The [timeless reference](../Runtime/docs/architecture/ordinary-care.md)
+describes its actual contracts. Native offers, combat-item use, medical activities and passive processes,
+and continued care/material ownership remain required work; this does not close the broader decision.
+
 ## What the care exercise exposed
 
 The draft has strong conservation, identity and ordering checks, but its shape is too tied to one

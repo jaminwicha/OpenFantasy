@@ -30,7 +30,9 @@ internal static class WorldResourceContinuation
         if (batch.Kind == WorldBatchKind.EncounterResolution) return (1, 2);
         if (batch.Kind == WorldBatchKind.Care)
             return batch.Actions.Any(command => command.Intent is AdministerRemedyIntent) ? (1, 1) : (0, 0);
-        int rewards = batch.Actions.Count(command => command.Intent is CompleteDeliveryQuestIntent);
-        return (rewards, rewards);
+        // Reserve every potential writer before the whole step is interpreted. A later refusal
+        // may leave capacity unused, but must never cause a cut midway through accepted commands.
+        int writers = batch.Actions.Count(command => command.Intent is CompleteDeliveryQuestIntent or UseRestorativeItemIntent);
+        return (writers, writers);
     }
 }

@@ -42,6 +42,42 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Ordinary exploration care](p02/ordinary-care/README.md) implements fresh profile26 self-use and
+living-recipient assistance through shared material retirement, capped progression restoration and
+normal exploration time. Patient-owned permission/revocation is distinct from supplier control and
+stock. Current-candidate ordering resolves simultaneous requests; profile25 retains its exact bytes
+and aftermath rules. The same schema-seven writer retains use/permission evidence across actual
+resource archive cuts, permanent identities, receipts and complete recovery.
+
+The fresh scenario partitions the same two original Potion source units between player and Wren,
+retaining the original recipe, combat stats and rewards. Generic player session commands obey readiness,
+reading holds, pause and receipt reuse; no ordinary native menu or automatic helper policy is implied.
+
+[Verification](p02/ordinary-care/qualification/verification.json): clean final build, **1,394 Core +
+742 Hosting = 2,136 passing managed cases**, zero failures/skips; the focused 15 ordinary-care cases
+also pass. The full Hosting run took 16m21s; no threshold changed, cause or production performance
+conclusion is claimed. Source/binaries remained fixed. [Failures](p02/ordinary-care/FAILURES.md) preserve
+fixture/compiler corrections. One independent native critic found no blocking source defect and
+clarified retained-owner capacity reporting. No paid Claude retry or credit-saving claim.
+
+Same-change timeless reference updates cover ordinary care, world composition, consumption,
+resource/archive history and profile26 persistence. Implementation history stays in this packet.
+Pre-change checkpoint `codex/checkpoint-before-ordinary-care-20260928T014354Z` resolves to `5235f7a`.
+Preserved on `codex/milestone-ordinary-care`; all 23 frozen specs, 59 earlier milestones and the
+unrelated 19-file predecessor index retain their pinned bytes/refs.
+
+**Next dependency:** distinguish care/material history capacity from gameplay unavailability, then
+bind actual public self/ally offers, helper-owned selection and native raw/crafted/reopened journeys.
+Resource-history archives do not remove the separate 256-consumption envelope. Keep real continuation
+of care/material owners and full journal lifetime; do not make this a lifetime gameplay cap. Active
+combat item use must enter the due-actor Wait machinery. Profile26 external process-kill qualification
+is still required; managed reopen/corruption does not replace it. Late complete-admission rollback is
+source-reviewed, not newly forced by ordinary-care tests. Broader medical/grant/activity policies,
+production scale/platform/multiplayer, art and human/physical gates remain open.
+
+### Earlier retained increments
+
+
 [Care continuation and observed health feedback](p02/care-continuation/README.md) proves raw/crafted
 finite treatment through actual victory, Wren's funded reward, earned level refill and a later attack
 in one lived world. Reopening, receipt reuse and three distinct corruption cases retain exact causal
@@ -70,7 +106,6 @@ Native pending input has a real managed acknowledgment; native reward continuati
 Nameplate/cue spacing remains provisional. Human/physical, art, production-platform, scale, multiplayer
 and full phase gates remain open. No paid Claude retry or credit-saving claim.
 
-### Earlier retained increments
 
 [Fresh care content and native interaction](p02/native-care/README.md) explicitly admits a profile25
 journey with original Potion/recipe witnesses, two real doses and six berries in Wren's custody,

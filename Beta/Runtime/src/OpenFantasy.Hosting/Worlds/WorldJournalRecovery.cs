@@ -61,7 +61,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("An encounter lifecycle genesis requires its exclusive world schema.");
         }
-        if ((genesis.ProfileVersion == 25) != (database.SchemaVersion == WorldDatabaseSchemaSeven.Version))
+        if ((genesis.ProfileVersion is 25 or 26) != (database.SchemaVersion == WorldDatabaseSchemaSeven.Version))
         {
             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
         }
@@ -153,7 +153,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The encounter lifecycle world and its exclusive schema disagree.");
         }
-        if ((state.ProfileVersion == 25) != (database.SchemaVersion == WorldDatabaseSchemaSeven.Version))
+        if ((state.ProfileVersion is 25 or 26) != (database.SchemaVersion == WorldDatabaseSchemaSeven.Version))
         {
             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
         }

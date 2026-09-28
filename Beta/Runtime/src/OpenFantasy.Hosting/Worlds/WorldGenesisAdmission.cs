@@ -11,6 +11,7 @@ internal static class WorldGenesisAdmission
     {
         if (genesis.Care is { } care && (care.Revision != 0 || care.Acknowledgments.Count != 0
             || care.Treatments.Count != 0 || care.Pending is not null
+            || care.Ordinary is { } ordinary && (ordinary.Uses.Count != 0 || ordinary.Permissions.Any(value => !value.IsActive))
             || genesis.ResourceHistory is not { ArchiveAnchor: null } resources
             || resources.AnchorAdmission != genesis.AdmissionVersion
             || resources.History.BasisWorldSequence != 0 || resources.History.Batches.Count != 0

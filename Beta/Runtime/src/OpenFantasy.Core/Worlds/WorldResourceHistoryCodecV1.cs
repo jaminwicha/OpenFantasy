@@ -5,7 +5,10 @@ using OpenFantasy.Core.Progression.ResourceHistory;
 
 namespace OpenFantasy.Core.Worlds;
 
-/// <summary>Canonical bounded structure; embedded anchors still require trusted genesis or journal admission.</summary>
+/// <summary>
+/// Canonical bounded structure with explicitly tagged causes. New cause tags require their complete
+/// world profile; embedded anchors and evidence alone never establish trusted genesis or permission.
+/// </summary>
 public static class WorldResourceHistoryCodecV1
 {
     private const int MaximumEvidenceByteLength = 4096;
@@ -62,6 +65,8 @@ public static class WorldResourceHistoryCodecV1
             WorldRewardResourceEvidence reward => CanonicalEncodingV1.Frame("world.resource-reward.v1", reward.CommandId.ToByteArray()),
             WorldTreatmentResourceEvidence treatment => CanonicalEncodingV1.Frame("world.resource-treatment.v1",
                 treatment.CommandId.ToByteArray(), treatment.TreatmentId.ToByteArray()),
+            WorldRestorativeUseResourceEvidence use => CanonicalEncodingV1.Frame("world.resource-restorative-use.v1",
+                WorldActionCodec.Encode(use.Request), use.UseId.ToByteArray()),
             _ => throw new ArgumentException("Unsupported resource evidence.")
         };
         if (bytes.Length > MaximumEvidenceByteLength) throw new ArgumentException("Resource evidence exceeds its storage envelope.");
@@ -82,6 +87,8 @@ public static class WorldResourceHistoryCodecV1
         }
         else if (tag.SequenceEqual("world.resource-reward.v1"u8)) evidence = new WorldRewardResourceEvidence(reader.Identity());
         else if (tag.SequenceEqual("world.resource-treatment.v1"u8)) evidence = new WorldTreatmentResourceEvidence(reader.Identity(), reader.Identity());
+        else if (tag.SequenceEqual("world.resource-restorative-use.v1"u8)) evidence = new WorldRestorativeUseResourceEvidence(
+            WorldActionCodec.Decode(reader.Field(WorldActionCodecV14.MaximumCommandByteLength)), reader.Identity());
         else throw new FormatException("Unsupported resource evidence.");
         reader.Complete();
         return evidence;

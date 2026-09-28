@@ -1,3 +1,4 @@
+using OpenFantasy.Core.Care;
 using OpenFantasy.Core.Encounters;
 
 namespace OpenFantasy.Core.Worlds;
@@ -39,4 +40,22 @@ public sealed class WorldRewardResourceEvidence(EntityId commandId) : WorldResou
 public sealed class WorldTreatmentResourceEvidence(EntityId commandId, EntityId treatmentId) : WorldResourceEvidence(commandId)
 {
     public EntityId TreatmentId { get; } = treatmentId;
+}
+
+/// <summary>Retains one selected ordinary-use request and its distinct completed-use witness.</summary>
+public sealed class WorldRestorativeUseResourceEvidence : WorldResourceEvidence
+{
+    public WorldRestorativeUseResourceEvidence(WorldActionCommand request, EntityId useId)
+        : base((request ?? throw new ArgumentNullException(nameof(request))).CommandId)
+    {
+        if (request.Intent is not UseRestorativeItemIntent || useId != EntityId.DeriveSpawned(request.CommandId, 1))
+        {
+            throw new ArgumentException("Ordinary restoration evidence requires its selected use request and deterministic completed-use identity.", nameof(request));
+        }
+        Request = request;
+        UseId = useId;
+    }
+
+    public WorldActionCommand Request { get; }
+    public EntityId UseId { get; }
 }

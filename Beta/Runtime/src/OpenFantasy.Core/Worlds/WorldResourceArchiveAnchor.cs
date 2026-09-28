@@ -29,6 +29,7 @@ public sealed class WorldResourceArchiveAnchor
         Care = care;
         Quests = quests;
         Lifecycle = lifecycle;
+        ProfileVersion = boundary.ProfileVersion;
     }
 
     public WorldResourceArchiveReference Reference { get; }
@@ -37,11 +38,12 @@ public sealed class WorldResourceArchiveAnchor
     internal CareSnapshot Care { get; }
     internal QuestSnapshot Quests { get; }
     internal EncounterLifecycleSnapshot Lifecycle { get; }
+    internal ushort ProfileVersion { get; }
 
     internal void ValidateSuccessor(WorldSnapshot world)
     {
         ArgumentNullException.ThrowIfNull(world);
-        if (world.WorldId != Reference.WorldId || world.BranchId != Reference.BranchId
+        if (world.WorldId != Reference.WorldId || world.BranchId != Reference.BranchId || world.ProfileVersion != ProfileVersion
             || world.AdmissionVersion != AdmissionVersion || world.Revision < Reference.BoundarySequence
             || world.Care is not { } care || world.Quests is not { } quests
             || world.EncounterLifecycle is not { } lifecycle)
@@ -103,6 +105,29 @@ public sealed class WorldResourceArchiveAnchor
                 || !CareCodecV1.EncodeTreatment(previous).AsSpan().SequenceEqual(CareCodecV1.EncodeTreatment(current)))
             {
                 throw new ArgumentException("A resource successor cannot remove or rewrite completed treatment.");
+            }
+        }
+        ValidateOrdinaryCare(successor);
+    }
+
+    private void ValidateOrdinaryCare(CareSnapshot successor)
+    {
+        if (Care.SupportsOrdinary != successor.SupportsOrdinary)
+        {
+            throw new ArgumentException("A resource successor cannot replace its ordinary-care interpretation.");
+        }
+        if (Care.Ordinary is not { } prior) return;
+        var current = successor.Ordinary!;
+        // The care owner preserves complete definition, grant, revocation and use records. The
+        // archive additionally forbids inserting a later revocation before its closed boundary.
+        prior.ValidateSuccessor(current);
+        foreach (var permission in prior.Permissions)
+        {
+            var retained = current.GetPermission(permission.PermissionId);
+            if (permission.Revocation is null && retained.Revocation is { } added
+                && added.WorldSequence <= Reference.BoundarySequence)
+            {
+                throw new ArgumentException("A later permission revocation cannot be inserted before its sealed boundary.");
             }
         }
     }

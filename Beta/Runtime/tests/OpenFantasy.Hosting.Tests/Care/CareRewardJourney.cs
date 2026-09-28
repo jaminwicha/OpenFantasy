@@ -18,13 +18,13 @@ internal sealed class CareRewardJourney
     private ulong _identity = 1;
     private readonly bool _crafted;
 
-    internal CareRewardJourney(bool crafted)
+    internal CareRewardJourney(bool crafted, WorldSnapshot? genesis = null)
     {
         _crafted = crafted;
         // Raw is the exact production selection. The existing crafted fixture authors only fresh
         // finite berry stock/recipe calibration; it grants no earned Potion, HP, level or reward.
-        Genesis = crafted ? new CareWorldFixture(craftedDose: true).Genesis
-            : CareJourneyAdmission.CreateEmbedded(EncounterJourneyWorldFixture.SeedText, EncounterJourneyWorldFixture.PlayerName);
+        Genesis = genesis ?? (crafted ? new CareWorldFixture(craftedDose: true).Genesis
+            : CareJourneyAdmission.CreateEmbedded(EncounterJourneyWorldFixture.SeedText, EncounterJourneyWorldFixture.PlayerName));
         Player = Genesis.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player).ActorId;
         Helper = Genesis.Quests!.Definitions.Single().GiverActorId;
         First = Genesis.EncounterLifecycle!.Scenarios.Single(value => value.Key == EncounterJourneyAdmission.FirstScenarioKey);

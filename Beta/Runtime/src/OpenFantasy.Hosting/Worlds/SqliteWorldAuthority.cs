@@ -39,7 +39,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
         int schemaVersion = accepted.ProfileVersion switch
         {
-            25 => WorldDatabaseSchemaSeven.Version,
+            25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,
             16 or 17 or 18 => WorldDatabaseSchemaFour.Version,

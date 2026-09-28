@@ -18,6 +18,7 @@ public static class WorldActionCodec
         ArgumentNullException.ThrowIfNull(command);
         return command.Intent switch
         {
+            UseRestorativeItemIntent or RevokeCarePermissionIntent => WorldActionCodecV14.Encode(command),
             AcknowledgeCareIntent or AdministerRemedyIntent => WorldActionCodecV13.Encode(command),
             EnterEncounterIntent or ReleaseEncounterIntent => WorldActionCodecV12.Encode(command),
             QueueEncounterAbilityIntent => WorldActionCodecV11.Encode(command),
@@ -37,6 +38,7 @@ public static class WorldActionCodec
     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
         WorldCodecVersion.Read(bytes, "world.actor-action"u8, MaximumCommandByteLength, 10) switch
         {
+            14 => WorldActionCodecV14.Decode(bytes),
             13 => WorldActionCodecV13.Decode(bytes),
             12 => WorldActionCodecV12.Decode(bytes),
             11 => WorldActionCodecV11.Decode(bytes),

@@ -5,7 +5,7 @@
 [WorldResourceContinuation](../../src/OpenFantasy.Core/Worlds/WorldResourceContinuation.cs) reserves
 capacity for the complete next world batch before its resource writers run. A physical resolution
 reserves one batch and both target/caster effects; a treatment reserves one batch/effect; quest
-rewards reserve their actual potential command count. A cut cannot split a command, split the
+rewards and ordinary restorative uses reserve their complete potential command count. A cut cannot split a command, split the
 world transaction or relocate an effect to another world sequence.
 
 When the active segment lacks capacity, [WorldResourceArchiveSegment](../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveSegment.cs)
@@ -29,9 +29,11 @@ It does not retain the root, active history or a chain of ancestor anchors. Prio
 remains in retrievable archive bytes, rather than accumulating in the current snapshot.
 
 Resource admission starts from this exact progression and currency basis. It carries forward
-completed quest rewards, care acknowledgments/treatments, the current episode's RNG position and
+completed quest rewards, care acknowledgments/treatments and ordinary uses, the current episode's RNG position and
 original attack witnesses still referenced by care or the lifecycle. Old completed records remain
-exact; accepted quests may complete later. Catalog pins, scope, admission and monotonic clocks
+exact; accepted quests may complete later. Ordinary definitions and permission grants remain pinned;
+revocations retain their exact order, and a successor cannot insert a newly claimed revocation before
+the sealed boundary. Catalog pins, scope, admission and monotonic clocks
 cannot change across the cut. New effects still replay through the named damage, MP, XP and
 restoration laws; a prior reward or treatment cannot execute a second time.
 
@@ -61,7 +63,7 @@ reject missing and extra archives, rather than regenerate missing storage and ca
 ## Durable publication contract
 
 [Schema seven](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaSeven.cs) exclusively binds
-care-enabled profile25 to `world_resource_segments`. Each append-only row records world, branch,
+care-enabled profiles25 and26 to `world_resource_segments`. Each append-only row records world, branch,
 ordinal, boundary sequence, publication sequence, boundary hash and complete closing bytes. The
 boundary is revisionN; its publication is commitN+1. The publishing commit's before-hash equals
 the boundary hash, and its sequence is a foreign key. Scope/ordinal and publication are unique.

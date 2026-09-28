@@ -24,19 +24,20 @@ through actual journal/archive retrieval, never admitted as a new genesis.
 
 ## Named causes and complete transactions
 
-[WorldResourceEvidence](../../src/OpenFantasy.Core/Worlds/WorldResourceEvidence.cs) has three
+[WorldResourceEvidence](../../src/OpenFantasy.Core/Worlds/WorldResourceEvidence.cs) has four
 domain-specific forms, each attached to one ordered command batch:
 
 | Cause | Retained evidence and checks | Coupled publication |
 | --- | --- | --- |
 | Encounter ability | Exact selected request, scenario, episode and full original resolution; replayed seeded draw, historical attacker/target stats, granted ability, damage and complete MP cost | Target damage, caster MP, random state, readiness and choices |
 | Quest reward | Actual once-only completion command and pinned reward; earned level and XP law; finite reserve payment replayed through `ActorRewardPlanner` | Delivered material, reserved project stock, currency, XP/level/refill and quest completion |
+| Ordinary restorative use | Exact selected request, use, policy, historical patient resources and scoped permission before any revocation | Actual dose retirement, capped HP restoration and one ordinary exploration step |
 | Treatment | Actual treatment, acknowledged defeat, prior care agreement, remedy and separately retained one-dose consumption | Source/crafted dose retirement, restoration, geography/material reconciliation, helper debt and encounter resumption |
 
 [WorldResourceAdmission](../../src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs) reconstructs
 the expected complete effects from each cause. A component-valid edit that removes a caster's
 MP cost, substitutes a remedy rule for damage, changes a random draw or omits reward payment
-still fails world admission. It checks every completed quest and treatment has its resource
+still fails world admission. It checks every completed quest, treatment and ordinary use has its resource
 batch, and compares the exact replayed currency ledger including account revisions.
 
 Encounter draws are replayed independently from each authority-derived episode's seed and
@@ -52,6 +53,7 @@ position in the world batch's deterministic actor order, including gaps for othe
 Actionless encounter resolution records the earlier selected command at the resolution's
 world sequence. Rejected requests produce no resource batch. The complete-world preflight
 rolls history back with progression, quests and material owners after a later rejection.
+The ordinary-use witness retains its exact world-command ordinal and a distinct evidence tag; profile25 rejects that cause.
 Acknowledging recovery creates no resource change and is distinct from permission, helper
 commitment, treatment and the command's receipt.
 

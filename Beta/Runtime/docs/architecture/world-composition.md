@@ -97,6 +97,12 @@ declared order or reject; they cannot spend the same dose twice. The action defi
 failure occurs before commitment, spends a declared attempt cost, or completes a separately paid
 activity stage. There is no universal rollback of already earned time or partially completed labor.
 
+[Ordinary restorative use](ordinary-care.md) and [aftermath care](aftermath-care.md) are concrete
+contrasting compositions. Both consume exact material and restore progression-owned HP through the
+same planner. Ordinary self-use needs no second acknowledgment; assistance uses the patient's scoped
+permission and the supplier's independent control. Aftermath care retains its separate recovery choice,
+pending obligation and encounter-resumption policy. Shared primitives do not erase those distinctions.
+
 Cross-system consequences needed for a valid boundary are part of that same transaction. For example,
 restoring an incapacitated combatant can change encounter eligibility; the encounter coordinator
 reconciles participation and phase before publication. Treatment does not directly dictate the

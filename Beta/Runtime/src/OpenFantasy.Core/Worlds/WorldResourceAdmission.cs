@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Care;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Progression;
 using OpenFantasy.Core.Progression.ResourceHistory;
@@ -19,7 +20,7 @@ internal static class WorldResourceAdmission
         var progression = world.Progression!;
         var lifecycle = world.EncounterLifecycle!;
         var anchor = retained.ArchiveAnchor;
-        if (world.ProfileVersion != 25 || retained.AnchorAdmission != world.AdmissionVersion
+        if (world.ProfileVersion is not (25 or 26) || retained.AnchorAdmission != world.AdmissionVersion
             || anchor is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
                 || history.Basis.Actors.Any(actor => actor.Revision != 0))
             || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count)
@@ -36,12 +37,15 @@ internal static class WorldResourceAdmission
         var episodes = new Dictionary<ulong, EntityId>();
         var rewards = new HashSet<EntityId>();
         var treatments = new HashSet<EntityId>();
+        var ordinaryUses = new HashSet<EntityId>();
         ulong? previousEpisode = null;
         if (anchor is not null)
         {
             rewards.UnionWith(anchor.Quests.Participations.Where(value => value.Status == ActorQuestStatus.Completed)
                 .Select(value => value.CompletionCommandId!.Value));
             treatments.UnionWith(anchor.Care.Treatments.Select(value => value.TreatmentId));
+            if (anchor.Care.Ordinary is { } ordinary)
+                ordinaryUses.UnionWith(ordinary.Uses.Select(value => value.UseId));
             foreach (var acknowledgment in anchor.Care.Acknowledgments)
                 attacks.TryAdd(acknowledgment.Defeat.DecisionCommandId, (acknowledgment.EncounterId, acknowledgment.Defeat));
             if (anchor.Lifecycle.Actions is { } archivedActions)
@@ -74,6 +78,10 @@ internal static class WorldResourceAdmission
                     expected = ValidateTreatment(world, batch, treatment, heads);
                     if (!treatments.Add(treatment.TreatmentId)) throw new ArgumentException("An archived treatment cannot restore resources again.");
                     break;
+                case WorldRestorativeUseResourceEvidence use:
+                    expected = ValidateRestorativeUse(world, batch, use, heads);
+                    if (!ordinaryUses.Add(use.UseId)) throw new ArgumentException("An archived ordinary use cannot restore resources again.");
+                    break;
                 default:
                     throw new ArgumentException("Unsupported world resource cause.");
             }
@@ -84,8 +92,9 @@ internal static class WorldResourceAdmission
         }
         if (!rewards.SetEquals(world.Quests!.Participations.Where(value => value.Status == ActorQuestStatus.Completed)
                 .Select(value => value.CompletionCommandId!.Value))
-            || !treatments.SetEquals(world.Care!.Treatments.Select(value => value.TreatmentId)))
-            throw new ArgumentException("Every completed quest and treatment must retain exactly one resource batch.");
+            || !treatments.SetEquals(world.Care!.Treatments.Select(value => value.TreatmentId))
+            || !ordinaryUses.SetEquals(world.Care.Ordinary?.Uses.Select(value => value.UseId) ?? []))
+            throw new ArgumentException("Every completed quest, treatment and ordinary use must retain exactly one resource batch.");
 
         if (!ProgressionCodecV1.EncodeLedger(currency).AsSpan().SequenceEqual(ProgressionCodecV1.EncodeLedger(progression.Currency)))
             throw new ArgumentException("Resource rewards must preserve their exact funded currency payments and account revisions.");
@@ -200,9 +209,92 @@ internal static class WorldResourceAdmission
         return [ActorResourceChange.FromTransition(0, new(treatment.TreatmentId, remedy.DefinitionId, remedy.Version), transition)];
     }
 
+    private static IReadOnlyList<ActorResourceChange> ValidateRestorativeUse(WorldSnapshot world, ResourceChangeBatch batch,
+        WorldRestorativeUseResourceEvidence evidence, Dictionary<EntityId, ActorProgressionState> heads)
+    {
+        if (world.ProfileVersion != 26 || world.Care?.Ordinary is not { } ordinary)
+            throw new ArgumentException("Ordinary restoration evidence requires its explicit ordinary-care world profile.");
+        var use = ordinary.Uses.SingleOrDefault(value => value.UseId == evidence.UseId)
+            ?? throw new ArgumentException("Ordinary restoration requires its actual retained completed use.");
+        var request = evidence.Request;
+        var intent = (UseRestorativeItemIntent)request.Intent;
+        var definition = ordinary.GetDefinition(use.UseDefinitionId);
+        var remedy = world.Care.GetRemedy(definition.RemedyDefinitionId);
+        var patient = RequireActor(heads, use.RecipientActorId);
+        var source = RequireActor(heads, use.ActorId);
+        if (request.WorldId != world.WorldId || request.BranchId != world.BranchId
+            || !world.Inventory.CanControl(new TrustedCommandDelivery(request.PrincipalId, request.OriginSessionId), request.ActorId)
+            || use.CommandId != request.CommandId || use.ActorId != request.ActorId
+            || use.WorldSequence != batch.WorldSequence || use.CommandOrdinal != batch.CommandOrdinal
+            || batch.CommandOrdinal >= WorldStepBatch.MaximumActorsPerBatch
+            || use.RecipientActorId != intent.RecipientActorId || use.UseDefinitionId != intent.UseDefinitionId
+            || use.UseDefinitionVersion != definition.Version || intent.UseDefinitionVersion != definition.Version
+            || definition.RemedyVersion != remedy.Version || use.ExplorationMilliseconds != definition.ExplorationMilliseconds
+            || request.ExpectedActorRevision > world.Space.GetActor(request.ActorId).Revision
+            || intent.ExpectedPatientPresenceRevision > world.Space.GetActor(use.RecipientActorId).Revision
+            || source.CurrentHp <= 0 || patient.CurrentHp <= 0 || patient.CurrentHp >= patient.Stats.MaxHp
+            || use.PatientRevisionBefore != patient.Revision || intent.ExpectedPatientProgressionRevision != patient.Revision
+            || use.MaximumHp != patient.Stats.MaxHp || use.HpBefore != patient.CurrentHp)
+        {
+            throw new ArgumentException("Ordinary use requires its exact selected request, ordered command and historical living resource boundary.");
+        }
+        ValidateOrdinaryPermission(ordinary, definition, use, intent);
+        ValidateOrdinaryDose(world, use, intent, remedy);
+        var transition = patient.RestoreHealth(remedy.RestoredHp);
+        if (use.PatientRevisionAfter != transition.Candidate.Revision || use.HpAfter != transition.Candidate.CurrentHp)
+            throw new ArgumentException("An ordinary use must retain the exact capped restoration from its historical patient state.");
+        return [ActorResourceChange.FromTransition(0, new(use.UseId, remedy.DefinitionId, remedy.Version), transition)];
+    }
+
+    private static void ValidateOrdinaryPermission(OrdinaryCareSnapshot ordinary, RestorativeUseDefinition definition,
+        RestorativeUse use, UseRestorativeItemIntent intent)
+    {
+        if (use.PermissionId != intent.PermissionId || use.PermissionGrantVersion != intent.PermissionGrantVersion
+            || use.PermissionRevision != intent.ExpectedPermissionRevision)
+            throw new ArgumentException("An ordinary use retains exactly the selected permission witness.");
+        if (use.ActorId == use.RecipientActorId)
+        {
+            if (definition.DeliveryMode != RestorativeDeliveryMode.SelfUse || use.PermissionId is not null
+                || use.PermissionGrantVersion is not null || use.PermissionRevision is not null)
+                throw new ArgumentException("Self-use requires its self-delivery policy without an invented assistance permission.");
+            return;
+        }
+        if (definition.DeliveryMode != RestorativeDeliveryMode.LivingAssistance || use.PermissionId is not { } permissionId)
+            throw new ArgumentException("Living assistance requires its own exact permission and delivery policy.");
+        var permission = ordinary.GetPermission(permissionId);
+        if (permission.PatientActorId != use.RecipientActorId || permission.HelperActorId != use.ActorId
+            || permission.UseDefinitionId != definition.DefinitionId || permission.UseDefinitionVersion != definition.Version
+            || permission.GrantVersion != use.PermissionGrantVersion || use.PermissionRevision != 0)
+            throw new ArgumentException("Living assistance must retain its original scoped permission grant.");
+        if (permission.Revocation is { } revocation
+            && (revocation.WorldSequence < use.WorldSequence
+                || revocation.WorldSequence == use.WorldSequence && revocation.CommandOrdinal <= use.CommandOrdinal))
+        {
+            throw new ArgumentException("A completed ordinary use cannot follow or share the command position of its permission revocation.");
+        }
+    }
+
+    private static void ValidateOrdinaryDose(WorldSnapshot world, RestorativeUse use, UseRestorativeItemIntent intent,
+        RestorativeRemedyDefinition remedy)
+    {
+        var claim = world.Production!.ConsumedItems.SingleOrDefault(value => value.ConsumptionId == use.ConsumptionId)
+            ?? throw new ArgumentException("An ordinary use requires its exact retained single-dose consumption.");
+        var storage = world.Inventory.Custody.GetStorage(world.GetResident(use.ActorId).InventoryCustodianId);
+        var ingredient = intent.Ingredient;
+        if (claim.CommandId != use.CommandId || claim.ActorId != use.ActorId || claim.RecipientActorId != use.RecipientActorId
+            || claim.CustodianId != storage.CustodianId || intent.ExpectedStorageRevision >= storage.Revision
+            || intent.ExpectedProductionRevision >= world.Production.Revision
+            || ingredient.Quantity != 1 || claim.Ingredient.Quantity != 1 || claim.Ingredient.Definition != remedy.Item
+            || ingredient.Kind != claim.Ingredient.Kind || ingredient.LotId != claim.Ingredient.LotId
+            || ingredient.ExpectedRevision != claim.Ingredient.Revision)
+        {
+            throw new ArgumentException("Ordinary restoration retains the exact selected dose, supplier custody and material revisions.");
+        }
+    }
+
     private static ActorProgressionState RequireActor(Dictionary<EntityId, ActorProgressionState> heads, EntityId actorId) =>
         heads.TryGetValue(actorId, out var actor) ? actor
-            : throw new ArgumentException("A resource cause requires an actor in its admitted progression basis.");
+                : throw new ArgumentException("A resource cause requires an actor in its admitted progression basis.");
 
     private static CounterRandomV1 BeginDraw(EncounterLifecycleSnapshot lifecycle, EntityId encounter) =>
         new(lifecycle.Seed.ToByteArray(), EncounterActionSnapshot.RulesPin.Value, EncounterActionSnapshot.RandomDomain, encounter);

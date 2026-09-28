@@ -22,11 +22,14 @@ public static class CareJourneyAdmission
         return Create(new FarmContentFiles(contentRoot), contentRoot, seedText, playerName);
     }
 
-    private static WorldSnapshot Create(FarmContentFiles files, string? contentRoot, string seedText, string playerName)
+    internal static WorldSnapshot CreateOrdinaryBasis(FarmContentFiles files, string? contentRoot, string seedText, string playerName) =>
+        Create(files, contentRoot, seedText, playerName, splitStock: true);
+
+    private static WorldSnapshot Create(FarmContentFiles files, string? contentRoot, string seedText, string playerName, bool splitStock = false)
     {
         CareFarmSources sources = CareFarmSources.Load(files);
         WorldSnapshot journey = EncounterJourneyAdmission.Create(files, contentRoot, seedText, playerName,
-            farm => new CareFarmBuilder(farm, sources).Build());
+            farm => new CareFarmBuilder(farm, sources, splitStock).Build());
         WorldResident patient = journey.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player);
         EntityId helper = journey.Quests!.Definitions.Select(value => value.GiverActorId).Distinct().Single();
         EntityId remedyId = Definition("remedies/potion");
