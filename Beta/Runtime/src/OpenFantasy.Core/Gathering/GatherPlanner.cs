@@ -14,6 +14,14 @@ public sealed class GatherPlanner
 {
     public GatherPlan Plan(WorldSnapshot world, CountedAuthorityState currentInventory,
         GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot? currentSpace = null)
+        => PlanCore(world, currentInventory, gathering, command, currentSpace, false);
+
+    public GatherPlan PlanWithEvidence(WorldSnapshot world, CountedAuthorityState currentInventory,
+        GatheringSnapshot gathering, WorldActionCommand command)
+        => PlanCore(world, currentInventory, gathering, command, null, true);
+
+    private static GatherPlan PlanCore(WorldSnapshot world, CountedAuthorityState currentInventory,
+        GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot? currentSpace, bool captureEvidence)
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(currentInventory);
@@ -114,8 +122,10 @@ public sealed class GatherPlanner
                 checked(currentInventory.Custody.Revision + 1), currentInventory.Custody.Storages.Select(value =>
                     value.CustodianId == destinationId ? value with { Revision = checked(value.Revision + 1) } : value),
                 [.. currentInventory.Custody.Lots, lot]);
-            return new GatherPlan(currentInventory.WithCustody(custody), gathering.Harvest(harvested, effort.Spend()),
-                WorldActionRejection.None, spawned);
+            CountedAuthorityState candidate = currentInventory.WithCustody(custody);
+            GatheringSnapshot gathered = gathering.Harvest(harvested, effort.Spend());
+            return new GatherPlan(candidate, gathered, WorldActionRejection.None, spawned,
+                captureEvidence ? new GatherIssueEvidence(world, space, command, currentInventory, candidate, gathering, gathered, lot) : null);
         }
         catch (OverflowException)
         {

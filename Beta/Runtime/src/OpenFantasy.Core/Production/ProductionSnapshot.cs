@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
+using OpenFantasy.Core.Gathering;
 
 namespace OpenFantasy.Core.Production;
 
@@ -23,12 +24,16 @@ public sealed class ProductionSnapshot
 
     internal ProductionSnapshot(EntityId worldId, EntityId branchId, ulong revision,
         IEnumerable<CraftRecipeDefinition> recipes, IEnumerable<ProductionBatch> batches, IEnumerable<TransformedLot> lots,
-        IEnumerable<ConsumedItemClaim>? consumedItems, ProductionContinuationContext? continuation)
+        IEnumerable<ConsumedItemClaim>? consumedItems, ProductionContinuationContext? continuation,
+        MaterialOperationHistory? materialHistory = null)
     {
         WorldId = worldId;
         BranchId = branchId;
         Revision = revision;
         Continuation = continuation;
+        MaterialHistory = materialHistory;
+        if ((materialHistory is not null) != (continuation?.SupportsMaterialOperations == true))
+            throw new ArgumentException("Material history and its continued interpretation must be selected together.");
         Recipes = ProductionCollections.Copy(recipes, MaximumRecipes, value => value.DefinitionId);
         Batches = ProductionCollections.Copy(batches, MaximumBatches, value => value.BatchId);
         Lots = ProductionCollections.Copy(lots, MaximumLots, value => value.LotId);
@@ -51,9 +56,14 @@ public sealed class ProductionSnapshot
     public ReadOnlyCollection<ConsumedItemClaim> ConsumedItems { get; }
     public ProductionContinuationContext? Continuation { get; }
     public bool IsContinued => Continuation is not null;
+    public MaterialOperationHistory? MaterialHistory { get; }
+    public ulong TotalMaterialOperationCount => MaterialHistory is { } history
+        ? checked(Continuation!.BaseMaterialOperationCount + (ulong)history.Operations.Count)
+        : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(IsContinued ? ProductionCodecV3.Encode(this) : SupportsConsumption
+    public ContentHash ContentHash => ContentHash.Compute(MaterialHistory is not null ? ProductionCodecV4.Encode(this)
+        : IsContinued ? ProductionCodecV3.Encode(this) : SupportsConsumption
         ? ProductionCodecV2.Encode(this) : ProductionCodecV1.Encode(this));
     public bool ContainsIdentity(EntityId identity) => _identities.Contains(identity);
 
@@ -66,10 +76,29 @@ public sealed class ProductionSnapshot
     {
         ProductionContinuationContext context = ProductionContinuationContext.Capture(inventory, this);
         var next = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
-            SupportsConsumption ? [] : null, context);
+            SupportsConsumption ? [] : null, context,
+            context.SupportsMaterialOperations ? new MaterialOperationHistory(context, []) : null);
         next.ValidateForAuthority(inventory);
-        _ = ProductionCodecV3.Encode(next);
+        _ = next.ContentHash;
         return next;
+    }
+
+    /// <summary>Selects ordered custody/source interpretation explicitly; it does not migrate a world or authenticate source history.</summary>
+    public ProductionSnapshot ContinueMaterial(CountedAuthorityState inventory, GatheringSnapshot? gathering = null)
+    {
+        if (MaterialHistory is { } retained)
+        {
+            if (gathering is not null && (retained.Gathering is null
+                || gathering.ContentHash != retained.Gathering.AdvanceTo(gathering.AdvancingStep).ContentHash))
+                throw new ArgumentException("A material cut cannot replace its retained source owner.", nameof(gathering));
+            if (gathering is null) return Continue(inventory);
+        }
+        var context = ProductionContinuationContext.CaptureMaterial(inventory, this, gathering);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
     }
 
     internal bool ContainsIdentityMatching(Func<EntityId, bool> predicate) => _identities.ContainsMatching(predicate);

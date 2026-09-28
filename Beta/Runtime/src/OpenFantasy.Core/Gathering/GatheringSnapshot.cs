@@ -104,6 +104,25 @@ public sealed class GatheringSnapshot
         return new GatheringSnapshot(WorldId, BranchId, nextOrdinal, nodes, Tools, Actors.Select(actor => actor.Advance()));
     }
 
+    /// <summary>Exact idle recovery over committed process intervals; no harvesting or other effort spending occurs here.</summary>
+    public GatheringSnapshot AdvanceTo(ulong nextOrdinal)
+    {
+        if (nextOrdinal < AdvancingStep)
+            throw new ArgumentOutOfRangeException(nameof(nextOrdinal), "Gathering cannot reverse its committed process clock.");
+        if (nextOrdinal == AdvancingStep) return this;
+        ulong elapsed = nextOrdinal - AdvancingStep;
+        var nodes = Nodes.Select(node =>
+        {
+            uint power = Tools.Where(tool => tool.Kind == node.Definition.RequiredToolKind).Max(tool => tool.Power);
+            ulong fullCycle = checked((ulong)node.Definition.MaxSwings * power);
+            return node.RespawnAtAdvancingStep is { } due && due <= nextOrdinal
+                && node.UnitCapacity - node.NextUnissuedUnit >= fullCycle ? node.Regrow() : node;
+        });
+        return new(WorldId, BranchId, nextOrdinal, nodes, Tools, Actors.Select(actor =>
+            new GatherActorWork(actor.ActorId, (uint)UInt128.Min(GatherRulesV1.MaximumEffort,
+                (UInt128)actor.Effort + (UInt128)elapsed * GatherRulesV1.EffortPerAdvancingStep))));
+    }
+
     public void ValidateForWorld(WorldSnapshot world)
     {
         ArgumentNullException.ThrowIfNull(world);

@@ -22,6 +22,22 @@ public sealed class SourceDeliveryPlanner
         {
             throw new ArgumentException("Source delivery requires an admitted continuation transfer contract.", nameof(production));
         }
+        try
+        {
+            return Prepare(inventory, delivery, actorId, commandId, request,
+                id => production.ContainsIdentity(id) || historicallyOccupied?.Invoke(id) == true,
+                candidate => production.ValidateForAuthority(candidate), () => production.ValidateForAuthority(inventory));
+        }
+        catch (Exception error) when (error is ArgumentException or CustodyConflictException or OverflowException)
+        {
+            return new SourceDeliveryPlan(inventory, WorldActionRejection.Unavailable, [], []);
+        }
+    }
+
+    internal static SourceDeliveryPlan Prepare(CountedAuthorityState inventory, TrustedCommandDelivery delivery,
+        EntityId actorId, EntityId commandId, SourceDeliveryRequest request, Func<EntityId, bool> occupied,
+        Action<CountedAuthorityState> validateCandidate, Action? validateInitial = null)
+    {
         SourceDeliveryPlan Reject(WorldActionRejection reason) => new(inventory, reason, [], []);
         if (!inventory.CanControl(delivery, actorId)
             || !inventory.AllowsTransfer(actorId, request.SourceCustodianId, request.DestinationCustodianId))
@@ -34,9 +50,8 @@ public sealed class SourceDeliveryPlanner
         }
         try
         {
-            production.ValidateForAuthority(inventory);
-            if (inventory.ContainsIdentity(commandId) || production.ContainsIdentity(commandId)
-                || historicallyOccupied?.Invoke(commandId) == true)
+            validateInitial?.Invoke();
+            if (inventory.ContainsIdentity(commandId) || occupied(commandId))
             {
                 return Reject(WorldActionRejection.Unavailable);
             }
@@ -65,7 +80,7 @@ public sealed class SourceDeliveryPlanner
             {
                 return Reject(WorldActionRejection.Unavailable);
             }
-            return Move(inventory, production, commandId, request, historicallyOccupied);
+            return Move(inventory, commandId, request, occupied, validateCandidate);
         }
         catch (Exception error) when (error is ArgumentException or CustodyConflictException or OverflowException)
         {
@@ -73,8 +88,8 @@ public sealed class SourceDeliveryPlanner
         }
     }
 
-    private static SourceDeliveryPlan Move(CountedAuthorityState inventory, ProductionSnapshot production,
-        EntityId commandId, SourceDeliveryRequest request, Func<EntityId, bool>? historicallyOccupied)
+    private static SourceDeliveryPlan Move(CountedAuthorityState inventory, EntityId commandId, SourceDeliveryRequest request,
+        Func<EntityId, bool> occupied, Action<CountedAuthorityState> validateCandidate)
     {
         HashSet<EntityId> selectedIds = request.Selections.Select(value => value.LotId).ToHashSet();
         List<CountedSourceLot> lots = inventory.Custody.Lots.Where(value => !selectedIds.Contains(value.LotId)).ToList();
@@ -93,8 +108,7 @@ public sealed class SourceDeliveryPlanner
                 // The canonical selection index allocates a distinct child even for several partial lots.
                 movedId = EntityId.DeriveSpawned(commandId, checked((ulong)index));
                 if (movedId == commandId || inventory.ContainsIdentity(movedId)
-                    || production.ContainsIdentity(movedId) || createdIds.Contains(movedId)
-                    || historicallyOccupied?.Invoke(movedId) == true)
+                    || createdIds.Contains(movedId) || occupied(movedId))
                 {
                     return new SourceDeliveryPlan(inventory, WorldActionRejection.Unavailable, [], []);
                 }
@@ -114,7 +128,7 @@ public sealed class SourceDeliveryPlanner
         var custody = new CustodySnapshot(inventory.WorldId, inventory.BranchId,
             checked(inventory.Custody.Revision + 1), storages, lots);
         CountedAuthorityState candidate = inventory.WithCustody(custody);
-        production.ValidateForAuthority(candidate);
+        validateCandidate(candidate);
         return new SourceDeliveryPlan(candidate, WorldActionRejection.None, createdIds, deliveredIds);
     }
 }

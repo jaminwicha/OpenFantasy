@@ -8,6 +8,7 @@ internal static class ProductionContinuationValidation
 {
     internal static void Validate(ProductionSnapshot state)
     {
+        if (state.MaterialHistory is not null) { MaterialContinuationValidation.Validate(state); return; }
         ProductionContinuationContext context = state.Continuation!;
         ProductionContinuationBasis basis = context.Basis;
         ulong operations = checked((ulong)state.Batches.Count + (ulong)state.ConsumedItems.Count);
@@ -55,6 +56,7 @@ internal static class ProductionContinuationValidation
 
     internal static void ValidateInventory(ProductionSnapshot state, CountedAuthorityState inventory)
     {
+        if (state.MaterialHistory is not null) { MaterialContinuationValidation.ValidateInventory(state, inventory); return; }
         ProductionContinuationContext context = state.Continuation!;
         ProductionContinuationBasis basis = context.Basis;
         ulong operations = checked((ulong)state.Batches.Count + (ulong)state.ConsumedItems.Count);

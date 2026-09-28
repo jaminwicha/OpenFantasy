@@ -29,6 +29,8 @@ public sealed class InstantCraftPlanner
         }
         // This is a state-composition invariant, not a rejection of an untrusted gameplay selection.
         production.ValidateForAuthority(inventory);
+        if (production.MaterialHistory?.Operations.Count == MaterialOperationHistory.MaximumOperations)
+            return Reject(WorldActionRejection.Unavailable);
         CustodianStorage storage = inventory.Custody.GetStorage(request.CustodianId);
         if (request.ExpectedProductionRevision != production.Revision || request.ExpectedStorageRevision != storage.Revision)
         {

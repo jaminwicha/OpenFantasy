@@ -30,7 +30,36 @@ internal sealed class ProductionIdentityRegistry
                 _calibrations[binding.Item.DefinitionId] = binding.Physical.Pin();
             }
         }
-        if (state.Continuation is { } context) AddContinuation(context.Basis);
+        if (state.Continuation is { } context)
+        {
+            AddContinuation(context.Basis);
+            if (context.GatheringBaseline is { } gathering)
+            {
+                foreach (var node in gathering.Nodes)
+                {
+                    Add(node.NodeId, "gather-node");
+                    Add(node.SourceId, "source");
+                    AddPin(node.Definition.DefinitionId, "gather-node-definition", node.Definition.Version);
+                    AddPin(node.Definition.YieldDefinition.DefinitionId, "item", node.Definition.YieldDefinition.Version);
+                }
+                foreach (var tool in gathering.Tools) AddPin(tool.Definition.DefinitionId, "item", tool.Definition.Version);
+                foreach (var actor in gathering.Actors) Add(actor.ActorId, "actor");
+            }
+        }
+        if (state.MaterialHistory is { } material)
+        {
+            foreach (MaterialOperation operation in material.Operations)
+            {
+                Add(operation.CommandId, "command");
+                if (operation is MaterialGatherOperation gather)
+                {
+                    Add(gather.Evidence.IssuedLot.LotId, "raw-lot");
+                    Add(gather.Evidence.IssuedLot.CustodianId, "custodian");
+                    Add(gather.Evidence.IssuedLot.Source.SourceId, "source");
+                    AddPin(gather.Evidence.IssuedLot.Definition.DefinitionId, "item", gather.Evidence.IssuedLot.Definition.Version);
+                }
+            }
+        }
         foreach (ProductionBatch batch in state.Batches)
         {
             Add(batch.BatchId, "batch");

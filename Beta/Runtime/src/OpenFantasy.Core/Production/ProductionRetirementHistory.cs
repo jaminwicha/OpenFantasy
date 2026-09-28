@@ -44,6 +44,13 @@ internal static class ProductionRetirementHistory
         {
             throw new ArgumentException("Production reconciliation requires advancing state, an unchanged consumption profile and unchanged recipe admission.");
         }
+        if (prior.MaterialHistory is { } history)
+        {
+            if (next.MaterialHistory is not { } retained || retained.Operations.Count < history.Operations.Count
+                || history.Operations.Zip(retained.Operations).Any(pair => !MaterialOperationCodec.Encode(pair.First).AsSpan()
+                    .SequenceEqual(MaterialOperationCodec.Encode(pair.Second))))
+                throw new ArgumentException("Material reconciliation cannot remove, reorder or rewrite its retained typed operations.");
+        }
         Dictionary<EntityId, ProductionBatch> batches = next.Batches.ToDictionary(b => b.BatchId);
         foreach (var batch in prior.Batches)
         {

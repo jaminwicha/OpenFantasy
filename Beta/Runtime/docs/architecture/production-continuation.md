@@ -5,7 +5,9 @@
 [ProductionSnapshot](../../src/OpenFantasy.Core/Production/ProductionSnapshot.cs) separates a complete
 inline history from an explicitly continued owner. `Continue(inventory)` captures the actual supplied
 boundary, retains its live lots, recipes, scope and cumulative revision, and opens empty bounded
-batch/consumption collections. The original owners remain immutable. A cut is representation work;
+batch/consumption collections. `ContinueMaterial(inventory, gathering)` explicitly selects ordered
+material-operation interpretation; gathering admission is optional for custody-only use. Further cuts
+preserve the selected interpretation. The original owners remain immutable. A cut is representation work;
 it creates no item, transfer, material disposition, clock tick or actor resource effect.
 
 The continuation context retains the [material basis](material-continuation-basis.md), exact recipe
@@ -13,10 +15,13 @@ admission and consumption interpretation, ordinal and cumulative operation count
 It does not retain a prior root, owner or recursive ancestor chain. Total batch/consumption counts
 combine those bases with active records; ordinary operations advance the absolute production revision.
 Collection bounds apply to the active window, while raw coverage and live-right bounds remain explicit.
+V3 records craft/consumption revisions. V4 also advances production revision for each explicitly
+recorded gathering, transfer or delivery operation; its ordered history binds those custody changes.
 
 The context also pins the bounded storage set and non-custody authority admission. Each storage
-retains its capacity and advances its revision by the number of active operations spending from that
-custodian. Unaffected storages stay exact. A normalized admission hash freezes actors, control/policy
+retains its capacity and advances its revision for each operation that actually touches that custodian.
+A transfer touches source and destination once; a multi-lot delivery also touches each storage once.
+Unaffected storages stay exact. A normalized admission hash freezes actors, control/policy
 bindings, sources, reservations and capacities while excluding changing live lots and custody/storage
 revisions. Only that digest and bounded storage baselines are retained, not the complete inventory.
 Changing those admissions requires its own qualified transition.
@@ -35,13 +40,52 @@ are resolved historical dependencies rather than cycles in the active recipe gra
 Direct raw retirement combines the captured coverage with active raw dispositions once. Recrafting
 an imported output does not retire its original raw ancestry again. Captured raw live rights must
 remain fully accounted by live claims and active retirement, without overlap, loss or resurrection.
-The standalone continued owner accepts no additional post-cut raw issuance. Gathering and excavation
-need explicit source-owner continuation contracts before admitting new rights; capacity alone is not
-such a grant. This boundary does not amend the game's requirement for renewable acquisition.
+V3 accepts no additional post-cut raw issuance. V4 admits gathering only through exact planner-produced
+source evidence and its known cursor chain. Other issuance families, including excavation, require
+their own source-owner continuation contracts; capacity alone is not a grant.
 
 Surviving lot identities retain their exact provenance, item pins and revision lineage. Custody,
-protection and reservations remain distinct from global output coverage. New operations use the same
+protection and reservations remain distinct from global output coverage. V3 preserves their captured
+values; V4 changes them only through the corresponding typed operation. New operations use the same
 selection, control, finite recipe and disposition rules as inline production.
+
+## Ordered custody and source operations
+
+[MaterialOperationHistory](../../src/OpenFantasy.Core/Production/Continuation/MaterialOperationHistory.cs)
+binds a bounded sequence of typed craft, consumption, gathering, raw transfer and source-delivery
+operations inside the Production owner. It is historical evidence, not a second active inventory.
+Raw live lots remain owned by `CountedAuthorityState`; transformed live lots remain in Production.
+Craft and consumption entries reference their exact retained records. Operation order and absolute
+revisions prevent a final aggregate total from concealing invalid intermediate custody or spending.
+
+Ordinary raw transfer preserves its established rules: exact command/control and revisions, source
+ownership, destination deposit permission, prefix splitting and deterministic child identity. Reserved
+or equipped stock cannot move; other protection flags survive the transfer. Source delivery instead
+requires unprotected, unreserved exact stock, moves the selected prefixes and assigns an admitted
+destination reservation. It issues no new material. A whole lot retains its identity at the next
+revision; a split retains the source suffix and gives its moved prefix a fresh child at revision zero.
+General protection toggles, transformed-lot transfers and purpose-qualified reserved-material moves
+require their own contracts rather than reuse of a permissive generic mutation.
+
+[GatherIssueEvidence](../../src/OpenFantasy.Core/Gathering/GatherIssueEvidence.cs) is produced only by
+successful `GatherPlanner.PlanWithEvidence`. It binds the exact accepted command, current world/space,
+before/after inventory and gathering hashes, process interval and issued lot. It retains no complete
+world, inventory or source-owner chain. Ordinary `GatherPlanner.Plan` does not compute this extra
+archival evidence. The material bridge rechecks combined raw/transformed storage and lot bounds and
+permanent identities, which the ordinary complete-world caller otherwise supplies.
+
+The optional bounded gathering baseline records the actual source/effort owner at the cut. The bridge
+requires an explicitly supplied actual current gathering owner and compares it with the reconstructed
+history plus deterministic idle recovery to `world.ProcessIntervals`. `GatheringSnapshot.AdvanceTo`
+reproduces repeated idle `AdvanceStep`: effort saturates, a depleted node can regrow once, and its
+issued cursor never resets. Current spatial, actor, tool, control and effort checks still run for the
+new action. The world/space hash is per-action evidence; movement and time do not require preserving
+one old whole-world hash for the entire segment.
+
+An unrelated climb or excavation can spend the same effort owner. If that makes the actual source
+owner differ from the supported history, the bridge refuses the mismatch; it must not restore inferred
+effort over actual spending. Such cross-owner mutations require explicit joined transitions. The
+actual gathering snapshot remains the active owner; its retained baseline is validation evidence.
 
 ## Permanent identities and publication
 
@@ -62,7 +106,8 @@ continued production and binds its payload to the exact continuation context. De
 context and exact canonical reconstruction. The context is obtained from its actual supplied closing
 owners; arbitrary observation bytes have no public path to mint an imported grant.
 
-Production V1/V2 retain their original bytes and meanings and refuse a continued owner. Opening an
+Production V1/V2 retain their original bytes and meanings and refuse a continued owner. V3 preserves
+its exact interpretation and refuses the V4 operation history. Opening an
 old save does not reinterpret its capacity refusals or migrate it. A V3 component round trip neither
 authenticates archived history nor selects a complete-world storage profile.
 
@@ -71,8 +116,18 @@ authenticates archived history nor selects a complete-world storage profile.
 | V1 | Complete inline batches and live outputs; consumption disabled | None |
 | V2 | Complete inline batches, live outputs and consumed claims | None |
 | V3 | Active batches/claims and live outputs; absolute totals and context hash | The exact captured continuation context, including its consumption interpretation |
+| V4 | Active material operations, batches/claims and live outputs; cumulative counters | The exact material context and actual matching opaque gathering evidence for issuance entries |
+
+V4 decoding validates canonical component structure and joins the supplied actual source proofs.
+The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
+second step reconstructs ordered raw/transformed custody, permissions, storage/lot revisions and
+combined capacity at every intermediate operation. A successful decode alone is not admitted
+inventory and cannot establish that an omitted issuance interval still matches the actual owner.
 
 V3 retains the 16 MiB production frame limit and the 256 active-batch/256 active-consumption bounds.
+V4 adds a 512-operation ordered-history envelope. The optional gathering baseline retains its own
+bounded source admission; actual proof objects are required at decode, not reconstructed from a
+caller-provided source capacity or digest. This decode dependency does not authenticate Host storage.
 Its context carries at most 32 recipes, 256 storage baselines and the separately bounded material
 basis. Raw coverage is normalized before checking its final 16,640-range envelope; temporary merge
 input is bounded by the imported and active envelopes together. Neither canonical compaction nor a
@@ -84,7 +139,8 @@ World admission requires one coordinated interpretation for material retirement,
 resource effects. Terrain/excavation coverage, installed construction ingredients, nested liquid
 reservations and new source issuance must recognize the same boundary. Existing world, construction,
 terrain/runoff, source delivery, excavation and restorative-use entrypoints refuse unsupported
-continued owners explicitly; legacy geography encoders cannot discard their context.
+continued owners explicitly; legacy geography encoders cannot discard their context. The explicit
+material adapters provide standalone source/custody composition, without enabling those world paths.
 
 The complete protocol must schedule before accepted obligations lose headroom, preserve captured
 command meanings, publish archive/receipt/identity/head changes atomically and recover from actual

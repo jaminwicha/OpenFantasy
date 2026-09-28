@@ -24,6 +24,8 @@ public sealed class ItemConsumptionPlanner
             return Reject(WorldActionRejection.NotAuthorized);
         // A malformed composition is a programmer/archive error, not an untrusted command refusal.
         production.ValidateForAuthority(inventory);
+        if (production.MaterialHistory?.Operations.Count == MaterialOperationHistory.MaximumOperations)
+            return Reject(WorldActionRejection.Unavailable);
         if (!production.SupportsConsumption || !inventory.Actors.Contains(request.RecipientActorId)
             || production.ConsumedItems.Count == ProductionSnapshot.MaximumConsumedItems)
             return Reject(WorldActionRejection.Unavailable);
@@ -81,7 +83,8 @@ public sealed class ItemConsumptionPlanner
         CountedAuthorityState candidateInventory = inventory.WithCustody(custody);
         var candidateProduction = new ProductionSnapshot(production.WorldId, production.BranchId,
             checked(production.Revision + 1), production.Recipes, production.Batches, derived,
-            [.. production.ConsumedItems, claim], production.Continuation);
+            [.. production.ConsumedItems, claim], production.Continuation,
+            production.MaterialHistory?.Append(production.Continuation!, new MaterialConsumptionOperation(checked(production.Revision + 1), claim)));
         candidateProduction.ValidateForAuthority(candidateInventory);
         _ = candidateProduction.ContentHash;
         return new(candidateInventory, candidateProduction, WorldActionRejection.None, claim);

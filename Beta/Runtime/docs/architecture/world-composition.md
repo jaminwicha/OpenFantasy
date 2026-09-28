@@ -74,6 +74,14 @@ callbacks. At publication, the authority validates identity, controller, permiss
 geometry, stock, capacity, time and all affected cross-owner invariants against the selected state.
 Every component candidate remains private until that transaction commits.
 
+A replay baseline is evidence about an earlier owner, not the current owner to publish. A refused
+interaction preserves the actual supplied state, including intervening time and spending. A plan that
+does not affect a particular owner leaves it untouched rather than returning an older reconstructed
+snapshot as its replacement. Optional candidate fields explicitly identify which additional owners
+change. [Material continuation](production-continuation.md) applies this distinction to gathering:
+its captured source baseline supports validation, while the actual sequential source/effort owner
+supplies the active state.
+
 Operations are semantic: consume an exact material interval, transfer custody, restore permitted
 vitality, add a defined condition, repair a specific part, pay action debt, or transition a lifecycle.
 Do not expose a public “set arbitrary field” primitive. Healing and structural repair can reuse the

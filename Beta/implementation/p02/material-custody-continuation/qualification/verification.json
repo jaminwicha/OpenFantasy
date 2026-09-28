@@ -1,0 +1,212 @@
+{
+  "recordedUtc": "2026-09-28T05:30:12.078422+00:00",
+  "scope": "Standalone explicit V4 ordered material continuation; complete-world guards retained.",
+  "baseCommit": "d3958d753a143238dee8f2dd87ec9d48fce7c378",
+  "build": {
+    "final": "build-03.log",
+    "exitCode": 0,
+    "warnings": 0,
+    "errors": 0
+  },
+  "tests": {
+    "material-01": {
+      "report": "material-01.trx",
+      "log": "material-01.log",
+      "counters": {
+        "total": 20,
+        "executed": 20,
+        "passed": 1,
+        "failed": 19,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:12:42.7008400-05:00",
+        "queuing": "2026-09-28T00:12:42.7008400-05:00",
+        "start": "2026-09-28T00:12:38.6866980-05:00",
+        "finish": "2026-09-28T00:12:43.5004770-05:00"
+      },
+      "exitCode": 1
+    },
+    "material-02": {
+      "report": "material-02.trx",
+      "log": "material-02.log",
+      "counters": {
+        "total": 22,
+        "executed": 22,
+        "passed": 21,
+        "failed": 1,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:19:08.9615580-05:00",
+        "queuing": "2026-09-28T00:19:08.9615580-05:00",
+        "start": "2026-09-28T00:19:05.7343340-05:00",
+        "finish": "2026-09-28T00:19:36.1536120-05:00"
+      },
+      "exitCode": 1
+    },
+    "excavation-03": {
+      "report": "excavation-03.trx",
+      "log": "excavation-03.log",
+      "counters": {
+        "total": 1,
+        "executed": 1,
+        "passed": 1,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:25:57.3476860-05:00",
+        "queuing": "2026-09-28T00:25:57.3476860-05:00",
+        "start": "2026-09-28T00:25:55.0498700-05:00",
+        "finish": "2026-09-28T00:25:57.3512920-05:00"
+      },
+      "exitCode": 0
+    },
+    "core-final": {
+      "report": "core-final.trx",
+      "log": "core-final.log",
+      "counters": {
+        "total": 1468,
+        "executed": 1468,
+        "passed": 1468,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:26:14.8621300-05:00",
+        "queuing": "2026-09-28T00:26:14.8621300-05:00",
+        "start": "2026-09-28T00:26:12.4600080-05:00",
+        "finish": "2026-09-28T00:27:01.0473450-05:00"
+      },
+      "exitCode": 0
+    },
+    "hosting-final": {
+      "report": "hosting-final.trx",
+      "log": "hosting-final.log",
+      "counters": {
+        "total": 89,
+        "executed": 89,
+        "passed": 89,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T00:27:33.8573160-05:00",
+        "queuing": "2026-09-28T00:27:33.8573160-05:00",
+        "start": "2026-09-28T00:27:31.6269400-05:00",
+        "finish": "2026-09-28T00:27:42.2741800-05:00"
+      },
+      "exitCode": 0
+    }
+  },
+  "distinctFinalRegressionPasses": 1557,
+  "newCasesIncludedInFullCore": 22,
+  "earlierFullHosting": {
+    "baseCommit": "d3958d753a143238dee8f2dd87ec9d48fce7c378",
+    "cases": 783,
+    "rerun": false
+  },
+  "journeys": [
+    "13 actual mixed operations through two cuts: 9 gathered units, 6 retired, 3 live/reserved, exact counters and real process time.",
+    "1028 actual operations including 1025 raw transfers; two 512-entry refusals followed by explicit cuts and exact continuation.",
+    "Actual partial excavation spends effort from 700 to 300; unsupported source mismatch refuses without replacing the supplied owner.",
+    "Raw-only legal capacity versus combined rejection; structurally valid reordered history rejects intermediate combined capacity on authority validation."
+  ],
+  "independentReview": {
+    "report": "../REVIEW.md",
+    "route": "native critic",
+    "blockingFindings": 0,
+    "followups": "Two capacity challenges and explicit decode-then-authority-validation documentation, implemented and passing.",
+    "humanAcceptance": false
+  },
+  "pins": {
+    "source-pins-03.json": {
+      "checkedFiles": 1190,
+      "unchanged": true
+    },
+    "execution-pins-03.json": {
+      "checkedFiles": 15,
+      "unchanged": true
+    }
+  },
+  "preservation": {
+    "checkpoint": "codex/checkpoint-before-material-custody-continuation-20260928T045056Z",
+    "checkpointMatchesBase": true,
+    "frozenSpecsUnchanged": 23,
+    "priorMilestonesUnchanged": 64,
+    "unrelatedStagedFiles": 19,
+    "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+  },
+  "documents": {
+    "reference": "../../../../Runtime/docs/architecture/production-continuation.md",
+    "linkReport": "document-links.json",
+    "anchorsChecked": false,
+    "checkedLocalLinks": 928,
+    "brokenLocalLinks": 0
+  },
+  "limits": [
+    "Standalone gathering/raw custody/craft/consume only; complete-world, care, construction, excavation and nested-liquid joins remain required.",
+    "Opaque source evidence, exact contexts and historical identity lookup are authority dependencies, not durable archive authentication.",
+    "No new Host V4 publication, process-kill, native presentation, production performance, platform, multiplayer or human qualification.",
+    "V3 preservation checks source layout and new-build before/after selection/roundtrip bytes, not a pre-change fixed binary vector."
+  ],
+  "thresholdsRelaxed": false,
+  "claudeRetry": false,
+  "creditSavingsClaimed": false
+}

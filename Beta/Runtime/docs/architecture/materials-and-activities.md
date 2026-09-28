@@ -24,6 +24,12 @@ retains these claims. Profiles through 24 reject the enabled owner; the explicit
 in-memory complete-world transactions. The component grants no health effect, recipient permission,
 time or durable publication.
 
+[Ordered material continuation](production-continuation.md) composes actual gathering issuance, raw
+transfers and reservation-bearing source delivery with crafting and consumption under one bounded
+history. Its source bridge requires the actual sequential gathering owner and preserves exact rights,
+operation order and revisions across material cuts. These standalone adapters do not replace complete
+world, terrain, care or durable archive admission.
+
 [Funded terrain material](world-and-geography.md#domain-contract-funded-terrain-material) reuses this
 counted authority for an explicitly finite homogeneous slab. Detail changes partition existing source
 intervals between coarse and cell-bound custodians; quantities remain derived from actual lots. A
@@ -196,3 +202,9 @@ that process clock. Advancing-batch count alone cannot validate a gathering acti
 because tactical elapsed time can complete additional process intervals. Returning to exploration
 preserves earned effort and finite source progress without resetting either clock or granting extra
 recovery. Worlds without pacing obtain their process count from the advancing-step fallback.
+
+`GatheringSnapshot.AdvanceTo` computes the exact result of idle process intervals without iterating
+every interval. It saturates effort and applies eligible regrowth without resetting issuance cursors.
+This is an idle transition, not a substitute for recorded harvesting, climbing or excavation effort.
+The material continuation bridge compares this reconstruction with the actual supplied gathering
+owner and refuses unrepresented changes. Advancing to a time cannot overwrite actual spending.

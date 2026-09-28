@@ -62,7 +62,8 @@ internal static class MaterialTransformCommitter
         CountedAuthorityState candidateInventory = inventory.WithCustody(custody);
         var candidateProduction = new ProductionSnapshot(production.WorldId, production.BranchId, checked(production.Revision + 1),
             production.Recipes, [.. production.Batches, batch], derivedLots,
-            production.SupportsConsumption ? production.ConsumedItems : null, production.Continuation);
+            production.SupportsConsumption ? production.ConsumedItems : null, production.Continuation,
+            production.MaterialHistory?.Append(production.Continuation!, new MaterialCraftOperation(checked(production.Revision + 1), batch)));
         candidateProduction.ValidateForAuthority(candidateInventory);
         _ = candidateProduction.ContentHash;
         return new CraftPlan(candidateInventory, candidateProduction, WorldActionRejection.None, created);

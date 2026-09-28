@@ -1,0 +1,593 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2b142551-9427-4117-8560-f504558f86ef" name="@mac 2026-09-28 00:12:42" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T00:12:42.7008400-05:00" queuing="2026-09-28T00:12:42.7008400-05:00" start="2026-09-28T00:12:38.6866980-05:00" finish="2026-09-28T00:12:43.5004770-05:00" />
+  <TestSettings name="default" id="642a4971-ca24-4ea7-990a-6feca2d394e0">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_00_12_42" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="722c4720-fa6e-4341-8ca1-f17669d60471" testId="9d1477f5-a3b1-a846-2c3a-5b5784dc7d85" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;duplicate&quot;)" computerName="mac" duration="00:00:00.0013614" startTime="2026-09-28T00:12:42.6417200-05:00" endTime="2026-09-28T00:12:42.6432170-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="722c4720-fa6e-4341-8ca1-f17669d60471">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 20
+   at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d0230d22-696b-4345-9ef7-747ab7278153" testId="69fcaff4-1378-0a43-959f-64d634974570" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Favorite_transfer_preserves_its_rule_while_delivery_and_consumption_remain_stricter" computerName="mac" duration="00:00:00.0024885" startTime="2026-09-28T00:12:42.6599920-05:00" endTime="2026-09-28T00:12:42.6629910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0230d22-696b-4345-9ef7-747ab7278153">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Favorite_transfer_preserves_its_rule_while_delivery_and_consumption_remain_stricter() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs:line 149
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b65b72f7-c10b-45ef-bc84-b1ba849733b3" testId="e9c3cae7-ac1b-f470-1274-2d5b26049901" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Bulk_idle_recovery_matches_old_one_step_rules_after_an_actual_partial_harvest" computerName="mac" duration="00:00:00.0014330" startTime="2026-09-28T00:12:42.6623240-05:00" endTime="2026-09-28T00:12:42.6638710-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b65b72f7-c10b-45ef-bc84-b1ba849733b3">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Bulk_idle_recovery_matches_old_one_step_rules_after_an_actual_partial_harvest() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs:line 12
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ce195bdf-ee26-4654-b71e-1cdc5191c4b2" testId="deba4dea-2572-ff00-f140-6af23196e06e" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(capacity: 40, canRegrow: True)" computerName="mac" duration="00:00:00.1280273" startTime="2026-09-28T00:12:42.4821280-05:00" endTime="2026-09-28T00:12:42.6330420-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce195bdf-ee26-4654-b71e-1cdc5191c4b2">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Depleted(UInt64 capacity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs:line 62
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(UInt64 capacity, Boolean canRegrow) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs:line 27
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="867313ea-eff8-4d71-9b19-52a50970005a" testId="66eda80d-9941-c508-5276-0e318649c96f" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;reorder&quot;)" computerName="mac" duration="00:00:00.1283634" startTime="2026-09-28T00:12:42.4819940-05:00" endTime="2026-09-28T00:12:42.6338620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="867313ea-eff8-4d71-9b19-52a50970005a">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 20
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="15e20e25-4237-44e3-ba0b-0517cf645f87" testId="fa3683aa-1201-4bd8-9259-d50f04e84d56" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;total&quot;)" computerName="mac" duration="00:00:00.0061332" startTime="2026-09-28T00:12:42.6656200-05:00" endTime="2026-09-28T00:12:42.6719700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="15e20e25-4237-44e3-ba0b-0517cf645f87">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 20
+   at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7ac66a17-6a73-45fc-8d66-7950c5aeecfd" testId="0b3841d8-f9b0-3823-1211-183a6097e78e" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(capacity: 20, canRegrow: False)" computerName="mac" duration="00:00:00.0035127" startTime="2026-09-28T00:12:42.6398070-05:00" endTime="2026-09-28T00:12:42.6471360-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ac66a17-6a73-45fc-8d66-7950c5aeecfd">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Depleted(UInt64 capacity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs:line 62
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(UInt64 capacity, Boolean canRegrow) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs:line 27
+   at InvokeStub_MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="90774ab0-8020-450d-874b-472e2b85fdd5" testId="2862c84b-e072-d134-2d62-a07cd6106dc9" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.A_previously_accepted_issue_cannot_be_replayed_after_the_next_cut" computerName="mac" duration="00:00:00.0019592" startTime="2026-09-28T00:12:43.2990270-05:00" endTime="2026-09-28T00:12:43.3011550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90774ab0-8020-450d-874b-472e2b85fdd5">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.A_previously_accepted_issue_cannot_be_replayed_after_the_next_cut() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 58
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8efaf2fb-d76e-4504-8350-4170532c396b" testId="10f64e28-abbd-c7cd-991a-e1347b1cd55b" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Stale_transfer_and_historically_occupied_split_or_gather_identity_spend_nothing" computerName="mac" duration="00:00:00.1263372" startTime="2026-09-28T00:12:42.4819890-05:00" endTime="2026-09-28T00:12:42.6338570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8efaf2fb-d76e-4504-8350-4170532c396b">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Stale_transfer_and_historically_occupied_split_or_gather_identity_spend_nothing() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs:line 208
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e9269a66-b35d-440c-9d34-a5d60e41c150" testId="169f16fe-288c-0612-8ca5-86fe28ef8a49" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_1028_material_operations_hit_the_512_envelope_twice_without_losing_custody_or_history" computerName="mac" duration="00:00:00.0591529" startTime="2026-09-28T00:12:42.6751030-05:00" endTime="2026-09-28T00:12:42.7346160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9269a66-b35d-440c-9d34-a5d60e41c150">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_1028_material_operations_hit_the_512_envelope_twice_without_losing_custody_or_history() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs:line 19
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ab948e17-dbcd-463c-b3d2-e53f3ec94e8e" testId="692642f5-0e41-4d2b-457d-3eb2bc51138a" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Material_interpretation_does_not_silently_rewrite_legacy_continuation_bytes" computerName="mac" duration="00:00:00.5800073" startTime="2026-09-28T00:12:42.6726720-05:00" endTime="2026-09-28T00:12:43.2531130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ab948e17-dbcd-463c-b3d2-e53f3ec94e8e" />
+    <UnitTestResult executionId="ac3fe4bc-a3c0-4a68-9900-a8b6a56438bd" testId="5e80f113-85f6-2353-51e9-297f7a41cebd" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Equal_backward_and_ulong_max_boundaries_preserve_exact_cursors_without_effort_overflow" computerName="mac" duration="00:00:00.0018853" startTime="2026-09-28T00:12:42.6599470-05:00" endTime="2026-09-28T00:12:42.6620000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac3fe4bc-a3c0-4a68-9900-a8b6a56438bd">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Depleted(UInt64 capacity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs:line 62
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Equal_backward_and_ulong_max_boundaries_preserve_exact_cursors_without_effort_overflow() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs:line 44
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="17a5884e-86ce-4bc7-8a70-3fb02fa6210a" testId="cf88411d-b214-7009-0db4-39af9edc07d8" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;command&quot;)" computerName="mac" duration="00:00:00.0012187" startTime="2026-09-28T00:12:42.6641210-05:00" endTime="2026-09-28T00:12:42.6654480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="17a5884e-86ce-4bc7-8a70-3fb02fa6210a">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 20
+   at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a8fa4ac6-5004-41c7-89ab-04b94ed2cf71" testId="3352f417-5584-4c94-3fbd-d6852583a090" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Actual_source_evidence_is_required_and_cannot_be_replaced_by_another_accepted_swing" computerName="mac" duration="00:00:00.0235982" startTime="2026-09-28T00:12:43.2738520-05:00" endTime="2026-09-28T00:12:43.2977560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a8fa4ac6-5004-41c7-89ab-04b94ed2cf71">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Actual_source_evidence_is_required_and_cannot_be_replaced_by_another_accepted_swing() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 93
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="747d5609-bc2e-460b-84ca-efac5fa36c41" testId="8bddade6-81cd-eb8e-22d8-096367b2c1cb" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;proof-hash&quot;)" computerName="mac" duration="00:00:00.0020027" startTime="2026-09-28T00:12:42.6385950-05:00" endTime="2026-09-28T00:12:42.6408480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="747d5609-bc2e-460b-84ca-efac5fa36c41">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 20
+   at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1f7603b2-c54c-4820-b586-7cf5d18af730" testId="4d8229c8-79f4-1a8e-5584-5b9aae5c79b3" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_issuance_transfers_reserved_deliveries_and_retirements_preserve_rights_across_two_cuts" computerName="mac" duration="00:00:00.0086949" startTime="2026-09-28T00:12:42.6659900-05:00" endTime="2026-09-28T00:12:42.6748550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1f7603b2-c54c-4820-b586-7cf5d18af730">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_issuance_transfers_reserved_deliveries_and_retirements_preserve_rights_across_two_cuts() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs:line 70
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="34cdcffd-f72c-40d8-a9a8-8b23689d53e8" testId="66aaeef1-9eb8-ac27-2ccb-88b6e5a16b6d" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.External_effort_spending_cannot_be_replaced_by_implicit_source_recovery" computerName="mac" duration="00:00:00.0022682" startTime="2026-09-28T00:12:42.6633480-05:00" endTime="2026-09-28T00:12:42.6657500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="34cdcffd-f72c-40d8-a9a8-8b23689d53e8">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.External_effort_spending_cannot_be_replaced_by_implicit_source_recovery() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs:line 168
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="bcb5ce0c-ecaf-4e94-96a6-bd1b3134b4a1" testId="05ef5faf-b159-2d91-2593-afd6393ca3d1" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;reorder-renumber&quot;)" computerName="mac" duration="00:00:00.0148189" startTime="2026-09-28T00:12:42.6443960-05:00" endTime="2026-09-28T00:12:42.6612140-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bcb5ce0c-ecaf-4e94-96a6-bd1b3134b4a1">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 20
+   at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="82b24c0b-8119-47ff-933d-b62d077adeaf" testId="753b122c-8656-ad54-e16b-75e051275b01" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Admitted_capacity_without_captured_source_owner_cannot_authorize_a_gather" computerName="mac" duration="00:00:00.0054886" startTime="2026-09-28T00:12:43.2674690-05:00" endTime="2026-09-28T00:12:43.2732570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82b24c0b-8119-47ff-933d-b62d077adeaf">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Admitted_capacity_without_captured_source_owner_cannot_authorize_a_gather() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 118
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2f2611ff-65e7-493c-a3d5-d68d5765b5af" testId="4a9f6193-a44d-ed73-529b-d74743f3e7fa" testName="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Dropping_an_issued_interval_and_rewriting_counters_cannot_match_the_actual_inventory" computerName="mac" duration="00:00:00.0130226" startTime="2026-09-28T00:12:43.2535200-05:00" endTime="2026-09-28T00:12:43.2668350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f2611ff-65e7-493c-a3d5-d68d5765b5af">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : The gathering tool kind or source power is outside this profile.</Message>
+          <StackTrace>   at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs:line 13
+   at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs:line 34
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs:line 37
+   at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Dropping_an_issued_interval_and_rewriting_counters_cannot_match_the_actual_inventory() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs:line 76
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Equal_backward_and_ulong_max_boundaries_preserve_exact_cursors_without_effort_overflow" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="5e80f113-85f6-2353-51e9-297f7a41cebd">
+      <Execution id="ac3fe4bc-a3c0-4a68-9900-a8b6a56438bd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests" name="Equal_backward_and_ulong_max_boundaries_preserve_exact_cursors_without_effort_overflow" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;proof-hash&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="8bddade6-81cd-eb8e-22d8-096367b2c1cb">
+      <Execution id="747d5609-bc2e-460b-84ca-efac5fa36c41" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Dropping_an_issued_interval_and_rewriting_counters_cannot_match_the_actual_inventory" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="4a9f6193-a44d-ed73-529b-d74743f3e7fa">
+      <Execution id="2f2611ff-65e7-493c-a3d5-d68d5765b5af" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Dropping_an_issued_interval_and_rewriting_counters_cannot_match_the_actual_inventory" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;command&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="cf88411d-b214-7009-0db4-39af9edc07d8">
+      <Execution id="17a5884e-86ce-4bc7-8a70-3fb02fa6210a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Admitted_capacity_without_captured_source_owner_cannot_authorize_a_gather" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="753b122c-8656-ad54-e16b-75e051275b01">
+      <Execution id="82b24c0b-8119-47ff-933d-b62d077adeaf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Admitted_capacity_without_captured_source_owner_cannot_authorize_a_gather" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.A_previously_accepted_issue_cannot_be_replayed_after_the_next_cut" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2862c84b-e072-d134-2d62-a07cd6106dc9">
+      <Execution id="90774ab0-8020-450d-874b-472e2b85fdd5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="A_previously_accepted_issue_cannot_be_replayed_after_the_next_cut" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Stale_transfer_and_historically_occupied_split_or_gather_identity_spend_nothing" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="10f64e28-abbd-c7cd-991a-e1347b1cd55b">
+      <Execution id="8efaf2fb-d76e-4504-8350-4170532c396b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests" name="Stale_transfer_and_historically_occupied_split_or_gather_identity_spend_nothing" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Actual_source_evidence_is_required_and_cannot_be_replaced_by_another_accepted_swing" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="3352f417-5584-4c94-3fbd-d6852583a090">
+      <Execution id="a8fa4ac6-5004-41c7-89ab-04b94ed2cf71" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Actual_source_evidence_is_required_and_cannot_be_replaced_by_another_accepted_swing" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Favorite_transfer_preserves_its_rule_while_delivery_and_consumption_remain_stricter" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="69fcaff4-1378-0a43-959f-64d634974570">
+      <Execution id="d0230d22-696b-4345-9ef7-747ab7278153" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests" name="Favorite_transfer_preserves_its_rule_while_delivery_and_consumption_remain_stricter" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;total&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="fa3683aa-1201-4bd8-9259-d50f04e84d56">
+      <Execution id="15e20e25-4237-44e3-ba0b-0517cf645f87" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;reorder-renumber&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="05ef5faf-b159-2d91-2593-afd6393ca3d1">
+      <Execution id="bcb5ce0c-ecaf-4e94-96a6-bd1b3134b4a1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Bulk_idle_recovery_matches_old_one_step_rules_after_an_actual_partial_harvest" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="e9c3cae7-ac1b-f470-1274-2d5b26049901">
+      <Execution id="b65b72f7-c10b-45ef-bc84-b1ba849733b3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests" name="Bulk_idle_recovery_matches_old_one_step_rules_after_an_actual_partial_harvest" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_issuance_transfers_reserved_deliveries_and_retirements_preserve_rights_across_two_cuts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="4d8229c8-79f4-1a8e-5584-5b9aae5c79b3">
+      <Execution id="1f7603b2-c54c-4820-b586-7cf5d18af730" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests" name="Actual_issuance_transfers_reserved_deliveries_and_retirements_preserve_rights_across_two_cuts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(capacity: 20, canRegrow: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="0b3841d8-f9b0-3823-1211-183a6097e78e">
+      <Execution id="7ac66a17-6a73-45fc-8d66-7950c5aeecfd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests" name="Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;reorder&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="66eda80d-9941-c508-5276-0e318649c96f">
+      <Execution id="867313ea-eff8-4d71-9b19-52a50970005a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Material_interpretation_does_not_silently_rewrite_legacy_continuation_bytes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="692642f5-0e41-4d2b-457d-3eb2bc51138a">
+      <Execution id="ab948e17-dbcd-463c-b3d2-e53f3ec94e8e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Material_interpretation_does_not_silently_rewrite_legacy_continuation_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.External_effort_spending_cannot_be_replaced_by_implicit_source_recovery" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="66aaeef1-9eb8-ac27-2ccb-88b6e5a16b6d">
+      <Execution id="34cdcffd-f72c-40d8-a9a8-8b23689d53e8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests" name="External_effort_spending_cannot_be_replaced_by_implicit_source_recovery" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(capacity: 40, canRegrow: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="deba4dea-2572-ff00-f140-6af23196e06e">
+      <Execution id="ce195bdf-ee26-4654-b71e-1cdc5191c4b2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests" name="Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_1028_material_operations_hit_the_512_envelope_twice_without_losing_custody_or_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="169f16fe-288c-0612-8ca5-86fe28ef8a49">
+      <Execution id="e9269a66-b35d-440c-9d34-a5d60e41c150" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests" name="Actual_1028_material_operations_hit_the_512_envelope_twice_without_losing_custody_or_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: &quot;duplicate&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="9d1477f5-a3b1-a846-2c3a-5b5784dc7d85">
+      <Execution id="722c4720-fa6e-4341-8ca1-f17669d60471" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests" name="Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9d1477f5-a3b1-a846-2c3a-5b5784dc7d85" executionId="722c4720-fa6e-4341-8ca1-f17669d60471" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="69fcaff4-1378-0a43-959f-64d634974570" executionId="d0230d22-696b-4345-9ef7-747ab7278153" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9c3cae7-ac1b-f470-1274-2d5b26049901" executionId="b65b72f7-c10b-45ef-bc84-b1ba849733b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="deba4dea-2572-ff00-f140-6af23196e06e" executionId="ce195bdf-ee26-4654-b71e-1cdc5191c4b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66eda80d-9941-c508-5276-0e318649c96f" executionId="867313ea-eff8-4d71-9b19-52a50970005a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fa3683aa-1201-4bd8-9259-d50f04e84d56" executionId="15e20e25-4237-44e3-ba0b-0517cf645f87" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b3841d8-f9b0-3823-1211-183a6097e78e" executionId="7ac66a17-6a73-45fc-8d66-7950c5aeecfd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2862c84b-e072-d134-2d62-a07cd6106dc9" executionId="90774ab0-8020-450d-874b-472e2b85fdd5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="10f64e28-abbd-c7cd-991a-e1347b1cd55b" executionId="8efaf2fb-d76e-4504-8350-4170532c396b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="169f16fe-288c-0612-8ca5-86fe28ef8a49" executionId="e9269a66-b35d-440c-9d34-a5d60e41c150" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="692642f5-0e41-4d2b-457d-3eb2bc51138a" executionId="ab948e17-dbcd-463c-b3d2-e53f3ec94e8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e80f113-85f6-2353-51e9-297f7a41cebd" executionId="ac3fe4bc-a3c0-4a68-9900-a8b6a56438bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf88411d-b214-7009-0db4-39af9edc07d8" executionId="17a5884e-86ce-4bc7-8a70-3fb02fa6210a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3352f417-5584-4c94-3fbd-d6852583a090" executionId="a8fa4ac6-5004-41c7-89ab-04b94ed2cf71" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8bddade6-81cd-eb8e-22d8-096367b2c1cb" executionId="747d5609-bc2e-460b-84ca-efac5fa36c41" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d8229c8-79f4-1a8e-5584-5b9aae5c79b3" executionId="1f7603b2-c54c-4820-b586-7cf5d18af730" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="66aaeef1-9eb8-ac27-2ccb-88b6e5a16b6d" executionId="34cdcffd-f72c-40d8-a9a8-8b23689d53e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="05ef5faf-b159-2d91-2593-afd6393ca3d1" executionId="bcb5ce0c-ecaf-4e94-96a6-bd1b3134b4a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="753b122c-8656-ad54-e16b-75e051275b01" executionId="82b24c0b-8119-47ff-933d-b62d077adeaf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4a9f6193-a44d-ed73-529b-d74743f3e7fa" executionId="2f2611ff-65e7-493c-a3d5-d68d5765b5af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="20" executed="20" passed="1" failed="19" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.30]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.74]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.96]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.96]       Stack Trace:
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs(62,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Depleted(UInt64 capacity)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs(27,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(UInt64 capacity, Boolean canRegrow)
+[xUnit.net 00:00:02.96]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.96]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.96]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.96]       Stack Trace:
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs(208,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Stale_transfer_and_historically_occupied_split_or_gather_identity_spend_nothing()
+[xUnit.net 00:00:02.96]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.96]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.96]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.96]       Stack Trace:
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(20,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change)
+[xUnit.net 00:00:02.96]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.96]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.97]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.97]       Stack Trace:
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(20,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change)
+[xUnit.net 00:00:02.97]            at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+[xUnit.net 00:00:02.97]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:02.97]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.97]       Stack Trace:
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(20,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change)
+[xUnit.net 00:00:02.97]            at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+[xUnit.net 00:00:02.97]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:02.97]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.97]       Stack Trace:
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs(62,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Depleted(UInt64 capacity)
+[xUnit.net 00:00:02.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs(27,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(UInt64 capacity, Boolean canRegrow)
+[xUnit.net 00:00:02.97]            at InvokeStub_MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(Object, Span`1)
+[xUnit.net 00:00:02.97]            at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:02.98]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.98]       Stack Trace:
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(20,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change)
+[xUnit.net 00:00:02.98]            at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+[xUnit.net 00:00:02.98]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:02.98]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.98]       Stack Trace:
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs(62,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Depleted(UInt64 capacity)
+[xUnit.net 00:00:02.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs(44,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Equal_backward_and_ulong_max_boundaries_preserve_exact_cursors_without_effort_overflow()
+[xUnit.net 00:00:02.98]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.98]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.99]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:02.99]       Stack Trace:
+[xUnit.net 00:00:02.99]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:02.99]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs(149,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Favorite_transfer_preserves_its_rule_while_delivery_and_consumption_remain_stricter()
+[xUnit.net 00:00:03.00]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.00]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.00]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.00]       Stack Trace:
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationClockTests.cs(12,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Bulk_idle_recovery_matches_old_one_step_rules_after_an_actual_partial_harvest()
+[xUnit.net 00:00:03.00]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.00]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.00]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.00]       Stack Trace:
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(20,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change)
+[xUnit.net 00:00:03.00]            at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+[xUnit.net 00:00:03.00]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:03.00]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.00]       Stack Trace:
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs(168,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.External_effort_spending_cannot_be_replaced_by_implicit_source_recovery()
+[xUnit.net 00:00:03.00]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.00]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.00]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.00]       Stack Trace:
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(20,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(String change)
+[xUnit.net 00:00:03.00]            at InvokeStub_MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(Object, Span`1)
+[xUnit.net 00:00:03.00]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:03.01]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.01]       Stack Trace:
+[xUnit.net 00:00:03.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs(70,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_issuance_transfers_reserved_deliveries_and_retirements_preserve_rights_across_two_cuts()
+[xUnit.net 00:00:03.01]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.01]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.06]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.06]       Stack Trace:
+[xUnit.net 00:00:03.06]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.06]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.06]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.06]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationTests.cs(19,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_1028_material_operations_hit_the_512_envelope_twice_without_losing_custody_or_history()
+[xUnit.net 00:00:03.06]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.06]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.64]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.64]       Stack Trace:
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(76,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Dropping_an_issued_interval_and_rewriting_counters_cannot_match_the_actual_inventory()
+[xUnit.net 00:00:03.64]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.64]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.64]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.64]       Stack Trace:
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(118,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Admitted_capacity_without_captured_source_owner_cannot_authorize_a_gather()
+[xUnit.net 00:00:03.64]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.64]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.64]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.64]       Stack Trace:
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(93,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Actual_source_evidence_is_required_and_cannot_be_replaced_by_another_accepted_swing()
+[xUnit.net 00:00:03.65]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.65]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.65]       System.ArgumentException : The gathering tool kind or source power is outside this profile.
+[xUnit.net 00:00:03.65]       Stack Trace:
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Gathering/GatherToolDefinition.cs(13,0): at OpenFantasy.Core.Gathering.GatherToolDefinition..ctor(CountedItemDefinition definition, GatherToolKind kind, UInt32 power)
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Gathering/GatheringFixture.cs(34,0): at OpenFantasy.Core.Tests.Gathering.GatheringFixture.Create(UInt32 effort, UInt32 power, UInt64 sourceCapacity, UInt64 cursor, Int32 swings, UInt64 step, Nullable`1 depletedAt, Nullable`1 feet, UInt64 storageCapacity, UInt64 nodeRevision, LotProtection protection, Nullable`1 toolOwner, Func`2 changeSpace)
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationFixture.cs(37,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationFixture.Create(UInt64 sourceCapacity, Boolean reserveProtectedStock)
+[xUnit.net 00:00:03.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Production/MaterialCustodyContinuationCodecTests.cs(58,0): at OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.A_previously_accepted_issue_cannot_be_replayed_after_the_next_cut()
+[xUnit.net 00:00:03.65]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.65]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.65]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6474220-05:00">
+        <Text>[xUnit.net 00:00:02.96]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(capacity: 40, canRegrow: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6491350-05:00">
+        <Text>[xUnit.net 00:00:02.96]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Stale_transfer_and_historically_occupied_split_or_gather_identity_spend_nothing [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6492950-05:00">
+        <Text>[xUnit.net 00:00:02.96]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: "reorder") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6542810-05:00">
+        <Text>[xUnit.net 00:00:02.97]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: "proof-hash") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6552320-05:00">
+        <Text>[xUnit.net 00:00:02.97]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: "duplicate") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6558620-05:00">
+        <Text>[xUnit.net 00:00:02.97]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Actual_depletion_recovers_once_at_the_old_threshold_only_if_a_full_cycle_remains(capacity: 20, canRegrow: False) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6680140-05:00">
+        <Text>[xUnit.net 00:00:02.98]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: "reorder-renumber") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.6685140-05:00">
+        <Text>[xUnit.net 00:00:02.98]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Equal_backward_and_ulong_max_boundaries_preserve_exact_cursors_without_effort_overflow [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.7166650-05:00">
+        <Text>[xUnit.net 00:00:02.99]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Favorite_transfer_preserves_its_rule_while_delivery_and_consumption_remain_stricter [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.7166940-05:00">
+        <Text>[xUnit.net 00:00:03.00]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationClockTests.Bulk_idle_recovery_matches_old_one_step_rules_after_an_actual_partial_harvest [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.7167210-05:00">
+        <Text>[xUnit.net 00:00:03.00]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: "command") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.7167450-05:00">
+        <Text>[xUnit.net 00:00:03.00]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.External_effort_spending_cannot_be_replaced_by_implicit_source_recovery [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.7167660-05:00">
+        <Text>[xUnit.net 00:00:03.00]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Ordered_issuance_and_exact_proof_joins_cannot_be_rewritten(change: "total") [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.7167990-05:00">
+        <Text>[xUnit.net 00:00:03.01]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_issuance_transfers_reserved_deliveries_and_retirements_preserve_rights_across_two_cuts [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:42.7487920-05:00">
+        <Text>[xUnit.net 00:00:03.06]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationTests.Actual_1028_material_operations_hit_the_512_envelope_twice_without_losing_custody_or_history [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:43.3617750-05:00">
+        <Text>[xUnit.net 00:00:03.64]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Dropping_an_issued_interval_and_rewriting_counters_cannot_match_the_actual_inventory [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:43.3618120-05:00">
+        <Text>[xUnit.net 00:00:03.64]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Admitted_capacity_without_captured_source_owner_cannot_authorize_a_gather [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:43.3618540-05:00">
+        <Text>[xUnit.net 00:00:03.64]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Actual_source_evidence_is_required_and_cannot_be_replaced_by_another_accepted_swing [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T00:12:43.3618830-05:00">
+        <Text>[xUnit.net 00:00:03.65]     OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.A_previously_accepted_issue_cannot_be_replayed_after_the_next_cut [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

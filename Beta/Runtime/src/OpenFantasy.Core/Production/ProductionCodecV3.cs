@@ -15,7 +15,7 @@ public static class ProductionCodecV3
     public static byte[] Encode(ProductionSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
-        if (state.Continuation is not { } context)
+        if (state.Continuation is not { } context || context.SupportsMaterialOperations)
             throw new ArgumentException("Production V3 requires an explicitly continued owner.", nameof(state));
         byte[] bytes = CanonicalEncodingV1.Frame("production.snapshot", Number(3), state.WorldId.ToByteArray(),
             state.BranchId.ToByteArray(), Number(state.Revision), context.ContentHash.ToByteArray(),
