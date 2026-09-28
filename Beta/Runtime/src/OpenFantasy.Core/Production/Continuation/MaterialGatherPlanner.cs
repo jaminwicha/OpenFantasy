@@ -15,6 +15,8 @@ public sealed class MaterialGatherPlanner
         ArgumentNullException.ThrowIfNull(actualGathering);
         ArgumentNullException.ThrowIfNull(command);
         MaterialContinuationCommit.Require(inventory, production, historical);
+        if (production.Continuation?.SupportsExcavation == true)
+            throw new ArgumentException("Excavation and gathering must share their actual work-opportunity owner.", nameof(production));
         MaterialOperationPlan Reject(WorldActionRejection reason) => new(inventory, production, reason, gathering: actualGathering);
         if (production.MaterialHistory!.Operations.Count == MaterialOperationHistory.MaximumOperations)
             return Reject(WorldActionRejection.Unavailable);

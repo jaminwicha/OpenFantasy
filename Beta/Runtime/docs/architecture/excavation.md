@@ -84,6 +84,11 @@ recrafting a derived object does not count its ancestral inputs again. The physi
 when the extracted material changes custody or form. This contract does not replace the production ledger
 or create a second spendable representation of terrain.
 
+The [joined excavation material owner](excavation-material-continuation.md) extends this coverage across
+explicit Production V8 boundaries. Partial mining and gathering both record earned work and shared
+effort in their actual order, even when custody does not change. Its component archive retains current
+terrain and actor action frontiers. That contract does not select a continued complete-world profile.
+
 ## Persistence and boundaries
 
 [World snapshot ten](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV10.cs) wraps a genuine

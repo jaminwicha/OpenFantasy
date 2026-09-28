@@ -14,6 +14,7 @@ internal static class MaterialOperationCodec
     {
         byte[] payload = operation switch
         {
+            MaterialExcavationWorkOperation work => work.Evidence.ContentHash.ToByteArray(),
             MaterialReservedTransportOperation transport => transport.Evidence.ContentHash.ToByteArray(),
             MaterialTerrainRepresentationOperation terrain => terrain.Evidence.ContentHash.ToByteArray(),
             MaterialConstructionOperation construction => construction.Evidence.ContentHash.ToByteArray(),
@@ -37,7 +38,8 @@ internal static class MaterialOperationCodec
         IReadOnlyDictionary<ContentHash, GatherIssueEvidence> evidence,
         IReadOnlyDictionary<ContentHash, ConstructionCompletionEvidence>? constructionEvidence = null,
         IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.TerrainRepresentationEvidence>? terrainEvidence = null,
-        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.ReservoirTransportEvidence>? transportEvidence = null)
+        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.ReservoirTransportEvidence>? transportEvidence = null,
+        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Terrain.ExcavationWorkEvidence>? excavationEvidence = null)
     {
         var reader = new CanonicalProductionReader(bytes, MaximumByteLength, 6);
         reader.ExpectTag("production.material-operation"u8);
@@ -48,6 +50,12 @@ internal static class MaterialOperationCodec
         MaterialOperation result;
         switch (kind)
         {
+            case MaterialOperationKind.ExcavationWork:
+                ContentHash excavationHash = ReadHash(ref reader);
+                if (excavationEvidence is null || !excavationEvidence.TryGetValue(excavationHash, out var excavation))
+                    throw new ArgumentException("Excavation decoding requires its actual opaque work evidence.");
+                result = new MaterialExcavationWorkOperation(sequence, excavation);
+                break;
             case MaterialOperationKind.ReservedTransport:
                 ContentHash transportHash = ReadHash(ref reader);
                 if (transportEvidence is null || !transportEvidence.TryGetValue(transportHash, out var transport))

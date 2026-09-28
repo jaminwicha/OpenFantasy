@@ -82,6 +82,11 @@ change. [Material continuation](production-continuation.md) applies this distinc
 its captured source baseline supports validation, while the actual sequential source/effort owner
 supplies the active state.
 
+[Excavation material continuation](excavation-material-continuation.md) joins partial work, shared effort,
+current terrain and material history under one candidate. A swing can change work without moving any
+stock, so unchanged inventory is insufficient to prove unchanged state. Its complete plan pin prevents
+an older work/terrain/frontier owner from accepting newer material merely because quantities match.
+
 Operations are semantic: consume an exact material interval, transfer custody, restore permitted
 vitality, add a defined condition, repair a specific part, pay action debt, or transition a lifecycle.
 Do not expose a public “set arbitrary field” primitive. Healing and structural repair can reuse the
@@ -134,6 +139,9 @@ world frames retains the last accepted participant boundary and refuses repeated
 Partial labor and completion preserve the applicable clock and interruption semantics; representation
 changes do not refill a time budget. [Construction continuation](construction-continuation.md) applies
 this rule to bounded per-builder work qualification.
+The [excavation owner](excavation-material-continuation.md) shares one frontier between mining and
+gathering: distinct actions cannot spend the same actor opportunity twice. A second actor can use the
+same global boundary, while no participant can rewind the already observed world or process boundary.
 
 Large dependency sets use deterministic bounded work and persisted continuation where required.
 An unfinished logical action does not publish half an invalid world. Causal reactions have stable

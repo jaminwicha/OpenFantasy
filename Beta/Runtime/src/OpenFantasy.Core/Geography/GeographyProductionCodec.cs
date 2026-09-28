@@ -16,7 +16,7 @@ internal static class GeographyProductionCodec
         if (continued)
         {
             if (production?.Continuation is not { } context || production.SupportsConsumption != consumption
-                || context.SupportsReservedTransport || context.SupportsTerrainRepresentation)
+                || context.SupportsReservedTransport || context.SupportsTerrainRepresentation || context.SupportsExcavation)
             {
                 throw new ArgumentException("Continued geography requires its exact explicit production capability.", nameof(production));
             }

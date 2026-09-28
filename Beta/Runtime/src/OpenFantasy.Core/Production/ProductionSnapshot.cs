@@ -1,3 +1,4 @@
+using OpenFantasy.Core.Terrain;
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
@@ -64,7 +65,8 @@ public sealed class ProductionSnapshot
         : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsReservedTransport == true ? ProductionCodecV7.Encode(this)
+    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsExcavation == true ? ProductionCodecV8.Encode(this)
+        : Continuation?.SupportsReservedTransport == true ? ProductionCodecV7.Encode(this)
         : Continuation?.SupportsTerrainRepresentation == true ? ProductionCodecV6.Encode(this)
         : Continuation?.SupportsConstruction == true ? ProductionCodecV5.Encode(this)
         : MaterialHistory is not null ? ProductionCodecV4.Encode(this)
@@ -136,14 +138,14 @@ public sealed class ProductionSnapshot
 
     private void RequireOrdinaryCut()
     {
-        if (Continuation is { SupportsTerrainRepresentation: true } or { SupportsReservedTransport: true })
+        if (Continuation is { SupportsTerrainRepresentation: true } or { SupportsReservedTransport: true } or { SupportsExcavation: true })
             throw new ArgumentException("Geographic material requires a cut through its actual complete admitted owner.");
     }
 
     internal ProductionSnapshot ContinueTerrain(CountedAuthorityState inventory, TerrainRepresentationBoundary terrain,
         MaterialConstructionState? construction, GatheringSnapshot? gathering)
     {
-        if (Continuation?.SupportsReservedTransport == true)
+        if (Continuation is { SupportsReservedTransport: true } or { SupportsExcavation: true })
             throw new ArgumentException("Reserved transport cannot become terrain representation through a lower owner.");
         construction?.ValidateMaterialBoundary(inventory, this);
         if (MaterialHistory is { } retained)
@@ -164,7 +166,7 @@ public sealed class ProductionSnapshot
     internal ProductionSnapshot ContinueTransport(CountedAuthorityState inventory, TransportMaterialBoundary transport,
         MaterialConstructionState? construction, GatheringSnapshot? gathering)
     {
-        if (Continuation?.SupportsTerrainRepresentation == true)
+        if (Continuation is { SupportsTerrainRepresentation: true } or { SupportsExcavation: true })
             throw new ArgumentException("Terrain representation cannot become reserved transport through a lower owner.");
         construction?.ValidateMaterialBoundary(inventory, this);
         if (MaterialHistory is { } retained)
@@ -175,6 +177,22 @@ public sealed class ProductionSnapshot
             gathering ??= retained.Gathering;
         }
         var context = ProductionContinuationContext.CaptureTransport(inventory, this, transport, construction?.Construction, gathering);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
+    internal ProductionSnapshot ContinueExcavation(CountedAuthorityState inventory, ExcavationMaterialBoundary excavation,
+        ConstructionSnapshot construction, GatheringSnapshot gathering)
+    {
+        if (Continuation is not null && !Continuation.SupportsExcavation)
+            throw new ArgumentException("Excavation requires its actual admitted complete source owner.");
+        if (MaterialHistory is { } history && (history.Excavation?.ContentHash != excavation.ContentHash
+            || history.Gathering?.ContentHash != gathering.ContentHash))
+            throw new ArgumentException("An excavation cut cannot replace current terrain, work or shared effort.");
+        var context = ProductionContinuationContext.CaptureExcavation(inventory, this, excavation, construction, gathering);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
         result.ValidateForAuthority(inventory);

@@ -1,0 +1,519 @@
+{
+  "checkedUtc": "2026-09-28T17:58:14.924682+00:00",
+  "scope": "Local file existence for six affected architecture pages; anchors and prose accuracy reviewed separately.",
+  "pages": [
+    "README.md",
+    "excavation.md",
+    "excavation-material-continuation.md",
+    "production-continuation.md",
+    "world-composition.md",
+    "construction-continuation.md"
+  ],
+  "links": [
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "runtime-and-authority.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-composition.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "identity-and-determinism.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "time-and-encounters.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-timing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-pacing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-actions.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-lifecycle.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "native-encounters.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-and-geography.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-worksite.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-watercourse.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "excavation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "excavation-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "constructed-footing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "stair-navigation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-loads.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-contact-assessment.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-policy-and-motion.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-settlement.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "coupled-settlement.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "event-descent.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "consequence-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-physical.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-transport.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-boundaries.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-containment.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-liquid-breach.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-cell-flow.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "transport-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actors-and-society.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actor-resources.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-resource-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "resource-archive-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "ordinary-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "aftermath-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "materials-and-activities.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "item-consumption.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "material-continuation-basis.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "production-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "presentation-and-interaction.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "content-and-composition.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationSite.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldExcavationAdmission.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavateIntent.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationAccess.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "structural-settlement.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "construction-physical.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "terrain-liquid-breach.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "excavation-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV10.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "constructed-footing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation.md",
+      "target": "structural-loads.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/MaterialExcavationState.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/MaterialExcavationPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "excavation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationWorkEvidence.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/excavation-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV8.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "material-continuation-basis.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "transport-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "excavation-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/MaterialOperationHistory.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "construction-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Gathering/GatherIssueEvidence.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV3.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "liquid-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "transport-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "excavation-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "resource-archive-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "production-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "excavation-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "ordinary-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "aftermath-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "construction-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-composition.md",
+      "target": "excavation-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "production-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "construction-physical.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "excavation-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionState.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionCompletionEvidence.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "resource-archive-continuation.md",
+      "exists": true
+    }
+  ]
+}

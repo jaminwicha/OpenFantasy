@@ -5,6 +5,7 @@ using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Production;
 
@@ -19,6 +20,7 @@ internal sealed class MaterialContinuationReplay
     private readonly Dictionary<EntityId, TransformedLot> _derived;
     private CountedAuthorityState _inventory;
     private TerrainRepresentationBoundary? _terrain;
+    private ExcavationMaterialBoundary? _excavation;
     private readonly List<MaterialOperation> _replayed = [];
 
     internal MaterialContinuationReplay(ProductionSnapshot state, CountedAuthorityState inventory)
@@ -27,6 +29,7 @@ internal sealed class MaterialContinuationReplay
         _expected = inventory;
         ProductionContinuationContext context = state.Continuation!;
         _terrain = context.TerrainRepresentation;
+        _excavation = context.Excavation;
         _inventory = inventory.WithCustody(new CustodySnapshot(state.WorldId, state.BranchId,
             context.Basis.CustodyRevision, context.Storages, context.Basis.RawLots));
         if (_inventory.ContentHash != context.Basis.InventoryHash)
@@ -45,6 +48,7 @@ internal sealed class MaterialContinuationReplay
             if (Occupied(operation.CommandId)) throw new ArgumentException("A material operation cannot reuse a retained identity.");
             switch (operation)
             {
+                case MaterialExcavationWorkOperation work: Work(work.Evidence); break;
                 case MaterialReservedTransportOperation transport: Transport(transport.Evidence); break;
                 case MaterialTerrainRepresentationOperation representation: Represent(representation.Evidence); break;
                 case MaterialConstructionOperation construction: Construct(construction.Evidence); break;
@@ -91,6 +95,49 @@ internal sealed class MaterialContinuationReplay
                 new(batch.BatchId, (uint)index, 0, output.Count), 0));
         }
         AdvanceCustody(batch.CustodianId);
+    }
+
+    private void Work(ExcavationWorkEvidence evidence)
+    {
+        var before = _excavation ?? throw new ArgumentException("Excavation requires its exact qualified owner.");
+        if (evidence.BeforeInventoryHash != _inventory.ContentHash
+            || evidence.BeforeProductionHash != ProductionMaterialCodec.HashReplayPrefix(_state.Continuation!, _replayed, _derived.Values)
+            || evidence.Command.WorldId != _inventory.WorldId || evidence.Command.BranchId != _inventory.BranchId
+            || !_inventory.CanControl(new(evidence.Command.PrincipalId, evidence.Command.OriginSessionId), evidence.Command.ActorId))
+            throw new ArgumentException("Work evidence requires the exact preceding material prefix and actual controller.");
+        var next = before.Apply(evidence);
+        if (evidence.GatherEvidence is { } gather)
+        {
+            if (evidence.Command.Intent is not GatherIntent || gather.WorldHash != evidence.WorldHash
+                || gather.IssuedLot != evidence.IssuedLot
+                || !WorldActionCodec.Encode(gather.Command).AsSpan().SequenceEqual(WorldActionCodec.Encode(evidence.Command)))
+                throw new ArgumentException("Joined gathering requires its exact actual issuing proof.");
+            Gather(gather);
+        }
+        else
+        {
+            if (evidence.Command.Intent is not ExcavateIntent intent)
+                throw new ArgumentException("An excavation work proof requires its actual intent.");
+            var site = before.Excavation.Sites.Single(value => value.SiteId == intent.SiteId);
+            var worked = next.Excavation.Sites.Single(value => value.SiteId == site.SiteId);
+            if (worked.IsComplete)
+            {
+                CountedSourceLot lot = evidence.IssuedLot ?? throw new ArgumentException("Completion must issue its exact finite raw source.");
+                if (lot.LotId != EntityId.DeriveSpawned(evidence.Command.CommandId, 0) || lot.Revision != 0
+                    || lot.Protection != LotProtection.None || lot.ReservedBy is not null || lot.Definition != site.Material.Item
+                    || lot.Source.SourceId != site.CountedSourceId || lot.Source.Start != 0 || lot.Source.End != site.Quantity)
+                    throw new ArgumentException("Completion cannot invent or substitute excavation material.");
+                RequireOwner(evidence.Command.ActorId, lot.CustodianId, true);
+                Created(lot.LotId);
+                ReplaceRaw([.. _inventory.Custody.Lots, lot]);
+                AdvanceCustody(lot.CustodianId);
+            }
+            else if (evidence.IssuedLot is not null)
+                throw new ArgumentException("Partial excavation spends effort without issuing material or changing storage.");
+        }
+        if (_inventory.ContentHash != evidence.AfterInventoryHash)
+            throw new ArgumentException("Work replay must reproduce exact material intervals and custody clocks.");
+        _excavation = next;
     }
 
     private void Transport(ReservoirTransportEvidence evidence)

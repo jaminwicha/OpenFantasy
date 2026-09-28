@@ -32,6 +32,12 @@ owner, preserving its journal, physical catalog and clock. Successful delivery a
 with a cause distinct from its scheduled stage. Generic Production cuts cannot bypass transport
 qualification. Optional gathering/construction capabilities compose with V7; terrain V6 does not.
 
+V8 selects [excavation work](excavation-material-continuation.md) from an actual joined dry owner.
+Every accepted partial/final mining or joined gathering swing advances the ordered material history.
+Partial mining leaves custody and storage revisions unchanged. Shared effort, current terrain and
+per-actor opportunity frontiers survive cuts. Static construction backing remains retained; independent
+construction mutation, generic gathering and geographic interpretations cannot bypass that joined owner.
+
 The context also pins the bounded storage set and non-custody authority admission. Each storage
 retains its capacity and advances its revision for each operation that actually touches that custodian.
 A transfer touches source and destination once; a multi-lot delivery also touches each storage once.
@@ -55,8 +61,8 @@ Direct raw retirement combines the captured coverage with active raw disposition
 an imported output does not retire its original raw ancestry again. Captured raw live rights must
 remain fully accounted by live claims and active retirement, without overlap, loss or resurrection.
 V3 accepts no additional post-cut raw issuance. V4 admits gathering only through exact planner-produced
-source evidence and its known cursor chain. Other issuance families, including excavation, require
-their own source-owner continuation contracts; capacity alone is not a grant.
+source evidence and its known cursor chain. V8 admits excavation only through the complete finite
+site/work/terrain contract, including exact direct retirement after extraction. Capacity alone is not a grant.
 
 Surviving lot identities retain their exact provenance, item pins and revision lineage. Custody,
 protection and reservations remain distinct from global output coverage. V3 preserves their captured
@@ -109,6 +115,11 @@ owner differ from the supported history, the bridge refuses the mismatch; it mus
 effort over actual spending. Such cross-owner mutations require explicit joined transitions. The
 actual gathering snapshot remains the active owner; its retained baseline is validation evidence.
 
+The V8 excavation adapter explicitly joins mining and gathering under that same effort owner. Both use
+its shared action frontier and current spatial regions, and both replay as excavation work operations;
+gathering retains its genuine issuing proof inside the work proof. This prevents a generic gathering
+entrypoint from spending another action against an older donor space or resetting mining effort.
+
 ## Permanent identities and publication
 
 Continued crafting and consumption require a caller-supplied complete historical identity lookup.
@@ -142,6 +153,7 @@ authenticates archived history nor selects a complete-world storage profile.
 | V5 | Ordered material history including reserved construction completion | The exact construction-capable context, original construction batches and matching opaque gathering/completion evidence |
 | V6 | Ordered material history including terrain refinement/demotion, with retained optional construction capability | The exact terrain-capable context and matching opaque terrain, gathering and construction evidence as selected |
 | V7 | Ordered material history including reserved transport, with retained optional construction capability | The exact transport-capable context and matching opaque transport, gathering and construction evidence as selected |
+| V8 | Ordered partial/final mining and joined gathering with exact site, terrain, shared effort and action frontiers | The exact excavation-capable context and matching opaque work evidence; the complete component codec also requires actual-owner dependencies |
 
 V4 decoding validates canonical component structure and joins the supplied actual source proofs.
 The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
@@ -176,6 +188,9 @@ journal/clock boundary. These adapters do not enable continued world publication
 The separate [terrain adapter](terrain-material-continuation.md) preserves fixed allocations and
 records representation operations under V6. It does not by itself join terrain and liquid histories
 or grant excavation issuance, effort spending or complete-world publication.
+The [excavation adapter](excavation-material-continuation.md) qualifies dry site work, shared gathering
+and exact source coverage, preserving static construction backing. It refuses unjoined load, settlement,
+liquid, encounter/care and pending-consequence owners; it does not admit a continued complete world.
 
 The complete protocol must schedule before accepted obligations lose headroom, preserve captured
 command meanings, publish archive/receipt/identity/head changes atomically and recover from actual

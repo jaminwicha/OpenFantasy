@@ -56,6 +56,13 @@ internal sealed class ProductionIdentityRegistry
             foreach (MaterialOperation operation in material.Operations)
             {
                 Add(operation.CommandId, "command");
+                if (operation is MaterialExcavationWorkOperation { Evidence.IssuedLot: { } issued })
+                {
+                    Add(issued.LotId, "raw-lot");
+                    Add(issued.CustodianId, "custodian");
+                    Add(issued.Source.SourceId, "source");
+                    AddPin(issued.Definition.DefinitionId, "item", issued.Definition.Version);
+                }
                 if (operation is MaterialReservedTransportOperation transport)
                     foreach (EntityId id in transport.Evidence.CreatedIds) Add(id, "raw-lot");
                 if (operation is MaterialTerrainRepresentationOperation representation)

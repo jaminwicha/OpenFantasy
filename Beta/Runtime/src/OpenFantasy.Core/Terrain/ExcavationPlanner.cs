@@ -17,20 +17,26 @@ public sealed class ExcavationPlanner
         GatheringSnapshot gathering, ProductionSnapshot production, ExcavationSnapshot excavation,
         WorldActionCommand command, bool advancing, bool held, Func<EntityId, bool> occupied,
         ConstructionPhysicalSnapshot? physical = null) => PlanCore(world, inventory, space, gathering, production,
-            excavation, command, advancing, held, occupied, physical, null);
+            excavation, command, advancing, held, occupied, physical, null, false);
 
     // Only the world consequence owner can supply a completed, basis-bound calculation.
     internal ExcavationPlan PlanResolved(WorldSnapshot world, WorldActionCommand command,
         Func<EntityId, bool> occupied, ConstructionSettlementResolution completedResolution) =>
         PlanCore(world, world.Inventory, world.Space, world.Gathering!, world.Production!, world.Excavation!,
-            command, true, false, occupied, world.ConstructionPhysical, completedResolution);
+            command, true, false, occupied, world.ConstructionPhysical, completedResolution, false);
+
+    internal ExcavationPlan PlanContinued(WorldSnapshot world, CountedAuthorityState inventory, LocalSpatialSnapshot space,
+        GatheringSnapshot gathering, ProductionSnapshot production, ExcavationSnapshot excavation,
+        WorldActionCommand command, bool advancing, bool held, Func<EntityId, bool> occupied,
+        ConstructionPhysicalSnapshot? physical) => PlanCore(world, inventory, space, gathering, production,
+            excavation, command, advancing, held, occupied, physical, null, true);
 
     private ExcavationPlan PlanCore(WorldSnapshot world, CountedAuthorityState inventory, LocalSpatialSnapshot space,
         GatheringSnapshot gathering, ProductionSnapshot production, ExcavationSnapshot excavation,
         WorldActionCommand command, bool advancing, bool held, Func<EntityId, bool> occupied,
-        ConstructionPhysicalSnapshot? physical, ConstructionSettlementResolution? completedResolution)
+        ConstructionPhysicalSnapshot? physical, ConstructionSettlementResolution? completedResolution, bool continued)
     {
-        if (production.IsContinued)
+        if (production.IsContinued != continued || continued && production.Continuation?.SupportsExcavation != true)
         {
             throw new ArgumentException("Excavation requires an admitted continuation issuance contract.", nameof(production));
         }
@@ -96,7 +102,7 @@ public sealed class ExcavationPlanner
                 inventory.Custody.Storages.Select(s => s.CustodianId == bag ? s with { Revision = checked(s.Revision + 1) } : s),
                 inventory.Custody.Lots.Append(lot));
             var changedInventory = inventory.WithCustody(custody);
-            production.ValidateForAuthority(changedInventory);
+            if (!continued) production.ValidateForAuthority(changedInventory);
             return new(changedInventory, changedSpace, changedGathering, changedExcavation, WorldActionRejection.None, spawned, changedPhysical);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)

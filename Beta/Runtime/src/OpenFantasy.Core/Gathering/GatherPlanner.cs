@@ -20,6 +20,10 @@ public sealed class GatherPlanner
         GatheringSnapshot gathering, WorldActionCommand command)
         => PlanCore(world, currentInventory, gathering, command, null, true);
 
+    internal GatherPlan PlanWithEvidence(WorldSnapshot world, CountedAuthorityState currentInventory,
+        GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot currentSpace)
+        => PlanCore(world, currentInventory, gathering, command, currentSpace, true);
+
     private static GatherPlan PlanCore(WorldSnapshot world, CountedAuthorityState currentInventory,
         GatheringSnapshot gathering, WorldActionCommand command, LocalSpatialSnapshot? currentSpace, bool captureEvidence)
     {

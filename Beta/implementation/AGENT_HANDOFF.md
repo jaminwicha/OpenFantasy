@@ -42,43 +42,50 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
-[Reserved transport continuation](p02/transport-material-continuation/README.md) introduces qualified
-complete-owner cuts, typed reserved delivery and Production V7 with transport V3 / nested liquid V4
-archives. Source reservations, exact raw/produced rights, incoming capacity, complete stage journals,
-gate catalogs, storage revisions and processed time survive cuts. Delivery uses a cause distinct from
-its scheduled stage; failed head/material/throughput candidates publish no partial material or identity.
-Generic Production or lower capacity cuts cannot bypass transport qualification.
+[Excavation material continuation](p02/excavation-material-continuation/README.md) joins actual dry
+site work, current terrain, shared Gathering effort and actor action opportunities with Production V8.
+Every partial/final mining and joined gathering swing retains genuine evidence; a partial swing changes
+no custody/storage revision. Exact source rights survive complete raw retirement, later recrafting and
+further cuts. Source-world roles and static construction funding/backing remain protected.
 
-The clean solution build and **1,556 full Core +331 affected Hosting =1,887 managed cases** pass,
-including all 21 new transport cases. The actual 511-transfer setup reaches delivery operation 512,
-blocks a sibling without releasing funding, cuts, refuses extra same-boundary throughput and resumes
-at the next actual step. A three-cut mixed craft/recraft/consume/split-delivery journey, raw-plus-produced
-head controls, sibling throughput after rollback, historical identities and actual construction/dry
-transport composition pass. All **24 pre-change binary fixtures (106,458 bytes)** reproduce exactly.
-[Independent critique](p02/transport-material-continuation/REVIEW.md) strengthened genuine sibling-proof
-substitution to reach the exact produced-prefix refusal. No blocking runtime finding remained. Original
-test-only integration failures remain in [FAILURES.md](p02/transport-material-continuation/FAILURES.md).
-Seven architecture pages are current, with 202 resolving local file links. Timings do not qualify scale.
+The clean build and **1,556 full Core +372 affected Hosting =1,928 managed cases** pass, including
+**41 new excavation cases**. Actual operation 512, same-frame refusal across cuts, distinct-actor shared
+frames, stale donor/recapture rejection, gathering through a retained hole, full-source retirement,
+combined capacity rollback and actual funded construction across two cuts all pass. All **48 retained
+binary fixtures (290,688 bytes)** reproduce exactly. The boundary test took 163.04 seconds; no production
+performance is qualified. [Independent review](p02/excavation-material-continuation/REVIEW.md) found and
+closed a current-world identity alias gap; executed tests cover batch and already retired raw aliases.
+The narrow first-cut gathering/installed identity allowance has positive controls. Original test-only
+build failures remain in [FAILURES.md](p02/excavation-material-continuation/FAILURES.md).
 
-Base `c3dd90a` is preserved on
-`codex/checkpoint-before-transport-material-continuation-20260928T164740Z`; all 68 prior milestones,
+Six architecture pages are current with 101 resolving local file links. Base `1fd9275` is preserved on
+`codex/checkpoint-before-excavation-material-continuation-20260928T172611Z`; all 69 prior milestones,
 23 frozen specs and unrelated predecessor staging remain unchanged. The verified increment is preserved
-by `codex/milestone-transport-material-continuation`; resolve that ref for the exact commit. The
-[verification record](p02/transport-material-continuation/qualification/verification.json) pins source,
-execution, reports and preservation. Native runtime and independent critic assignments were bounded;
+by `codex/milestone-excavation-material-continuation`; resolve it for the exact commit. The
+[verification record](p02/excavation-material-continuation/qualification/verification.json) pins source,
+execution, reports and preservation. Native workers and the independent critic had bounded assignments;
 Astra owns integration/tests/docs/Git. No automatic external retry or credit saving is claimed.
 
-**Next dependency:** actual excavation source/effort and partial/completed-work continuation, then
-complete-world material/care/resource and combined liquid/terrain publication. Complete the
-[coordinated material/care protocol](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md) with authentic
-Host archive retrieval/replay, >256 actual doses with surviving ancestry, two cuts, rollback, external
-kills and native use/reopen. Component qualification cannot authenticate stored history or grant new
-source issuance. Construction work state also needs authenticated resume. Do not truncate history,
-raise bounds or reinterpret older world profiles. Combat items still require due-actor Wait binding.
-All 181 requirements and full P01/P02/P14 production/platform/scale, multiplayer/art/audio/human gates
-remain open. This component does not admit a live world, grant mining labor or close a native gate.
+**Next dependency:** coordinated complete-world material/care/resource continuation with combined
+liquid/terrain, excavation and construction publication. Complete the
+[material/care protocol](p02/restorative-recovery/MATERIAL_CARE_CONTINUATION.md) with authentic Host archive
+retrieval/replay, >256 actual doses with surviving ancestry, two cuts, rollback, external kills and native
+use/reopen. Component source/work qualification is now available; it does not admit a continued live
+world or authenticate stored history. Both construction and excavation need authenticated joined-world
+resume. Dry excavation preserves disabled consumption; enabled consumption belongs to the coupled
+care/encounter/liquid world and remains an explicit required proof. Donor-only movement does not prove
+navigation into a newly opened component cell. Pending physical work cannot be restarted/discarded by
+a cut. Do not truncate history, raise bounds or reinterpret older world profiles. Combat items still
+require due-actor Wait binding. All 181 requirements and full P01/P02/P14 production/platform/scale,
+multiplayer/art/audio/human gates remain open.
 
 ### Preceding geography increments
+
+[Reserved transport continuation](p02/transport-material-continuation/README.md), `1fd9275`, is preserved
+on `codex/milestone-transport-material-continuation`: complete-owner transport cuts, typed reserved
+delivery and Production V7 with transport V3/liquid V4 archives. Its 1,887-case checkpoint, 24 exact old
+fixtures, three-cut mixed delivery, real 512 boundary, independent review and original failures remain
+in that packet. It does not qualify complete-world publication.
 
 [Terrain material continuation](p02/terrain-material-continuation/README.md), `c3dd90a`, is preserved on
 `codex/milestone-terrain-material-continuation`. Actual-registry cuts and typed refine/demote operations

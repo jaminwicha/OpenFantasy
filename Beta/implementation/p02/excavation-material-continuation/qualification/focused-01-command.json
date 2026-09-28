@@ -1,0 +1,21 @@
+{
+  "startedUtc": "2026-09-28T17:54:09.631333+00:00",
+  "kind": "focused",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "(FullyQualifiedName~MaterialExcavationContinuationTests|FullyQualifiedName~ExcavationContinuationCodecTests|FullyQualifiedName~ExcavationContinuationStaticOwnerTests)&FullyQualifiedName!~A_real_511_transfer_window",
+    "--logger",
+    "trx;LogFileName=focused-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/excavation-material-continuation/qualification"
+  ],
+  "environment": {},
+  "exitCode": 0,
+  "elapsedSeconds": 16.626728791743517,
+  "finishedUtc": "2026-09-28T17:54:26.259159+00:00"
+}

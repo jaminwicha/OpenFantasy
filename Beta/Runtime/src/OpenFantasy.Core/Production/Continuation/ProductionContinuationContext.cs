@@ -5,6 +5,7 @@ using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Geography;
+using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Production;
 
@@ -18,7 +19,7 @@ public sealed class ProductionContinuationContext
     private ProductionContinuationContext(ProductionContinuationBasis basis, CountedAuthorityState inventory,
         ProductionSnapshot production, bool supportsMaterialOperations = false, GatheringSnapshot? gathering = null,
         ConstructionSnapshot? construction = null, bool supportsConstruction = false, TerrainRepresentationBoundary? terrainRepresentation = null,
-        TransportMaterialBoundary? reservedTransport = null)
+        TransportMaterialBoundary? reservedTransport = null, ExcavationMaterialBoundary? excavation = null)
     {
         Basis = basis;
         Ordinal = checked((production.Continuation?.Ordinal ?? 0) + 1);
@@ -31,7 +32,8 @@ public sealed class ProductionContinuationContext
         SupportsConstruction = supportsConstruction;
         TerrainRepresentation = terrainRepresentation;
         ReservedTransport = reservedTransport;
-        if (terrainRepresentation is not null && reservedTransport is not null)
+        Excavation = excavation;
+        if ((terrainRepresentation is not null ? 1 : 0) + (reservedTransport is not null ? 1 : 0) + (excavation is not null ? 1 : 0) > 1)
             throw new ArgumentException("Terrain and reserved transport require distinct explicitly qualified profiles.");
         ConstructionRecipeIds = Array.AsReadOnly((construction?.Definitions.Select(value => value.MaterialTransform.DefinitionId)
             ?? production.Continuation?.ConstructionRecipeIds.AsEnumerable() ?? Array.Empty<EntityId>()).Order().ToArray());
@@ -55,7 +57,7 @@ public sealed class ProductionContinuationContext
         if (recipes.Length > 5 * 1024 * 1024)
             throw new ArgumentException("The continuation recipe admission exceeds its bounded frame.");
         List<ReadOnlyMemory<byte>> fields = [
-            Number(reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
+            Number(excavation is not null ? 6UL : reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
             Number(BaseBatchCount), Number(BaseConsumedItemCount), Number(SupportsConsumption ? 1UL : 0UL), recipes,
             AuthorityAdmissionHash.ToByteArray(), CanonicalEncodingV1.Frame("continuation.storages.v1",
                 Storages.Select(value => (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("continuation.storage.v1",
@@ -86,6 +88,13 @@ public sealed class ProductionContinuationContext
             fields.Add(Number(supportsConstruction ? 1UL : 0UL));
             fields.Add(reservedTransport.ContentHash.ToByteArray());
         }
+        if (excavation is not null)
+        {
+            if (!supportsMaterialOperations || gathering is null)
+                throw new ArgumentException("Excavation requires ordered material history and its shared effort owner.");
+            fields.Add(Number(supportsConstruction ? 1UL : 0UL));
+            fields.Add(excavation.ContentHash.ToByteArray());
+        }
         ContentHash = ContentHash.Compute(CanonicalEncodingV1.Frame("production.continuation-context", fields.ToArray()));
     }
 
@@ -97,6 +106,8 @@ public sealed class ProductionContinuationContext
     public bool SupportsConsumption { get; }
     public bool SupportsMaterialOperations { get; }
     public bool SupportsConstruction { get; }
+    public bool SupportsExcavation => Excavation is not null;
+    public ExcavationMaterialBoundary? Excavation { get; }
     public bool SupportsReservedTransport => ReservedTransport is not null;
     public TransportMaterialBoundary? ReservedTransport { get; }
     public bool SupportsTerrainRepresentation => TerrainRepresentation is not null;
@@ -138,9 +149,15 @@ public sealed class ProductionContinuationContext
         new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering, construction,
             construction is not null || production.Continuation?.SupportsConstruction == true, reservedTransport: transport);
 
+    internal static ProductionContinuationContext CaptureExcavation(CountedAuthorityState inventory,
+        ProductionSnapshot production, ExcavationMaterialBoundary excavation, ConstructionSnapshot construction,
+        GatheringSnapshot gathering) =>
+        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering, construction,
+            true, excavation: excavation);
+
     private static ProductionContinuationBasis CaptureOrdinaryBasis(CountedAuthorityState inventory, ProductionSnapshot production)
     {
-        if (production.Continuation is { SupportsTerrainRepresentation: true } or { SupportsReservedTransport: true })
+        if (production.Continuation is { SupportsTerrainRepresentation: true } or { SupportsReservedTransport: true } or { SupportsExcavation: true })
             throw new ArgumentException("Geographic continuation must capture its actual complete owner.");
         return ProductionContinuationBasis.Capture(inventory, production);
     }

@@ -20,6 +20,11 @@ and replay rules alongside terrain representation operations. Once terrain capab
 cuts must come through the validated registry, preserving its complete allocation and cell bindings;
 the generic Production cut methods cannot independently archive that coupled owner.
 
+The [excavation owner](excavation-material-continuation.md) retains the original construction catalog,
+installed backing, physical geometry and support interpretation under Production V8. This is static
+preservation: independent construction work/completion cannot mutate the joined excavation owner.
+Changed construction requires a complete transaction that joins both work and spatial contracts.
+
 Reserved installation has a distinct material interpretation. Ordinary crafting spends unreserved
 inputs and creates unreserved outputs. Construction instead spends the exact project-reserved raw
 stock and creates its one reserved installed output. These permissions cannot be inferred from a

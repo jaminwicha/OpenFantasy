@@ -19,7 +19,8 @@ public sealed class MaterialConstructionPlanner
         ArgumentNullException.ThrowIfNull(space);
         ArgumentNullException.ThrowIfNull(command);
         ArgumentNullException.ThrowIfNull(occupied);
-        if (production.Continuation is not { SupportsConstruction: true } || production.MaterialHistory is null)
+        if (production.Continuation is not { SupportsConstruction: true } || production.MaterialHistory is null
+            || production.Continuation.SupportsExcavation)
             throw new ArgumentException("Construction continuation requires explicit V5 material capability.", nameof(production));
         MaterialConstructionPlan Reject(WorldActionRejection rejection) => new(inventory, production, state, space, rejection, []);
         bool CurrentOccupied(EntityId identity) => occupied(identity)

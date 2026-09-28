@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Geography;
+using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Production;
 
@@ -16,6 +17,7 @@ public sealed class MaterialOperationHistory
         var commands = new HashSet<EntityId>();
         GatheringSnapshot? gathering = context.GatheringBaseline;
         TerrainRepresentationBoundary? terrain = context.TerrainRepresentation;
+        ExcavationMaterialBoundary? excavation = context.Excavation;
         var deliveredStages = new HashSet<EntityId>();
         foreach (MaterialOperation operation in operations)
         {
@@ -23,6 +25,14 @@ public sealed class MaterialOperationHistory
             if (values.Count == MaximumOperations || operation.Sequence != checked(context.BaseProductionRevision + (ulong)values.Count + 1)
                 || !commands.Add(operation.CommandId))
                 throw new ArgumentException("Material operations require bounded exact order and distinct permanent commands.");
+            if (context.SupportsExcavation && operation is MaterialGatherOperation or MaterialConstructionOperation)
+                throw new ArgumentException("Excavation work must use the shared terrain, effort and actor opportunity owner.");
+            if (operation is MaterialExcavationWorkOperation work)
+            {
+                excavation = (excavation ?? throw new ArgumentException("Excavation work requires its explicit V8 capability."))
+                    .Apply(work.Evidence);
+                gathering = work.Evidence.ReplayGathering(gathering ?? throw new ArgumentException("Excavation requires shared effort."));
+            }
             if (operation is MaterialReservedTransportOperation transport
                 && (context.ReservedTransport is not { } binding || transport.Evidence.CatalogHash != binding.CatalogHash
                     || !deliveredStages.Add(transport.Evidence.StageId)))
@@ -39,6 +49,8 @@ public sealed class MaterialOperationHistory
         Operations = values.AsReadOnly();
         Gathering = gathering;
         TerrainRepresentation = terrain;
+        Excavation = excavation;
+        ExcavationEvidence = Array.AsReadOnly(values.OfType<MaterialExcavationWorkOperation>().Select(value => value.Evidence).ToArray());
         TransportEvidence = Array.AsReadOnly(values.OfType<MaterialReservedTransportOperation>().Select(value => value.Evidence).ToArray());
         TerrainEvidence = Array.AsReadOnly(values.OfType<MaterialTerrainRepresentationOperation>().Select(value => value.Evidence).ToArray());
         if (values.OfType<MaterialConstructionOperation>().Count() > ConstructionSnapshot.MaximumProjects)
@@ -49,6 +61,8 @@ public sealed class MaterialOperationHistory
     public ReadOnlyCollection<MaterialOperation> Operations { get; }
     public GatheringSnapshot? Gathering { get; }
     public TerrainRepresentationBoundary? TerrainRepresentation { get; }
+    public ExcavationMaterialBoundary? Excavation { get; }
+    public ReadOnlyCollection<ExcavationWorkEvidence> ExcavationEvidence { get; }
     public ReadOnlyCollection<ReservoirTransportEvidence> TransportEvidence { get; }
     public ReadOnlyCollection<TerrainRepresentationEvidence> TerrainEvidence { get; }
     public ReadOnlyCollection<ConstructionCompletionEvidence> ConstructionEvidence { get; }

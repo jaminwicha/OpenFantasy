@@ -6,7 +6,7 @@ using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
-public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7, ReservedTransport = 8 }
+public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7, ReservedTransport = 8, ExcavationWork = 9 }
 
 /// <summary>One ordered material transition; only its specific owner can create an accepted record.</summary>
 public abstract class MaterialOperation
@@ -80,4 +80,12 @@ public sealed class MaterialReservedTransportOperation : MaterialOperation
     internal MaterialReservedTransportOperation(ulong sequence, OpenFantasy.Core.Geography.ReservoirTransportEvidence evidence)
         : base(sequence, evidence.CauseId, MaterialOperationKind.ReservedTransport) => Evidence = evidence;
     public OpenFantasy.Core.Geography.ReservoirTransportEvidence Evidence { get; }
+}
+
+/// <summary>One actual mining or gathering action qualified by the shared excavation owner.</summary>
+public sealed class MaterialExcavationWorkOperation : MaterialOperation
+{
+    internal MaterialExcavationWorkOperation(ulong sequence, OpenFantasy.Core.Terrain.ExcavationWorkEvidence evidence)
+        : base(sequence, evidence.Command.CommandId, MaterialOperationKind.ExcavationWork) => Evidence = evidence;
+    public OpenFantasy.Core.Terrain.ExcavationWorkEvidence Evidence { get; }
 }

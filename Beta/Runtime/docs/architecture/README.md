@@ -24,6 +24,7 @@ different kind of person.
 | [Local worksite](local-worksite.md) | How do funded building, multilevel public geometry, contextual mining and a separate save entry connect? |
 | [Local watercourse](local-watercourse.md) | How do finite flowing water, an earned divider breach, public cell geometry and the inhabited farm connect? |
 | [Local excavation](excavation.md) | How does mining couple labor, source custody and terrain removal in one durable action? |
+| [Excavation material continuation](excavation-material-continuation.md) | How do partial mining, shared gathering effort, earned source rights and changed terrain survive material history cuts? |
 | [Constructed footing](constructed-footing.md) | How do completed floors support actors and preserve safe assisted traversal through saves? |
 | [Stair navigation](stair-navigation.md) | How do ordinary steps and routes preserve real elevations and actors above/below each other? |
 | [Structural loads](structural-loads.md) | How do funded members, carried goods, rated bearings and bounded failure plans conserve mass? |
