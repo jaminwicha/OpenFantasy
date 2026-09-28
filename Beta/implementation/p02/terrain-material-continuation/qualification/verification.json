@@ -1,0 +1,410 @@
+{
+  "recordedUtc": "2026-09-28T16:42:54.874307+00:00",
+  "scope": "Standalone terrain registry/state continuation with explicit Production V6, not complete-world archive admission.",
+  "baseCommit": "9d9f23644932709b58c4bf3df6adf6ead9df8e21",
+  "milestone": "codex/milestone-terrain-material-continuation",
+  "build": {
+    "startedUtc": "2026-09-28T16:38:08.505047+00:00",
+    "kind": "build",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "build",
+      "Beta/Runtime/OpenFantasy.sln",
+      "--no-restore",
+      "-m:1",
+      "-p:UseSharedCompilation=false",
+      "--verbosity",
+      "quiet"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsedSeconds": 5.83514720806852,
+    "finishedUtc": "2026-09-28T16:38:14.340917+00:00"
+  },
+  "tests": {
+    "legacy-before": {
+      "report": "legacy-before.trx",
+      "log": "legacy-before.log",
+      "counters": {
+        "total": 65,
+        "executed": 65,
+        "passed": 65,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T01:46:04.7338150-05:00",
+        "queuing": "2026-09-28T01:46:04.7338150-05:00",
+        "start": "2026-09-28T01:46:02.3021130-05:00",
+        "finish": "2026-09-28T01:46:08.1009290-05:00"
+      }
+    },
+    "focused-01": {
+      "report": "focused-01.trx",
+      "log": "focused-01.log",
+      "counters": {
+        "total": 20,
+        "executed": 20,
+        "passed": 20,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T02:04:31.6385130-05:00",
+        "queuing": "2026-09-28T02:04:31.6385130-05:00",
+        "start": "2026-09-28T02:04:28.0862030-05:00",
+        "finish": "2026-09-28T02:04:37.5417850-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T07:04:26.847150+00:00",
+        "kind": "focused",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~TerrainMaterialContinuation&FullyQualifiedName!~unchanged_512",
+          "--logger",
+          "trx;LogFileName=focused-01.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification"
+        ],
+        "environment": {},
+        "exitCode": 0,
+        "elapsedSeconds": 10.774528292007744,
+        "finishedUtc": "2026-09-28T07:04:37.622464+00:00"
+      }
+    },
+    "core-01": {
+      "report": "core-01.trx",
+      "log": "core-01.log",
+      "counters": {
+        "total": 1535,
+        "executed": 1535,
+        "passed": 1534,
+        "failed": 1,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T02:04:50.7082920-05:00",
+        "queuing": "2026-09-28T02:04:50.7082920-05:00",
+        "start": "2026-09-28T02:04:47.9399920-05:00",
+        "finish": "2026-09-28T02:16:45.5920800-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T07:04:46.978570+00:00",
+        "kind": "core",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=core-01.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-01/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-01/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-01/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-01/consumption"
+        },
+        "exitCode": 1,
+        "elapsedSeconds": 719.1055199587718,
+        "finishedUtc": "2026-09-28T07:16:45.960737+00:00"
+      }
+    },
+    "core-02": {
+      "report": "core-02.trx",
+      "log": "core-02.log",
+      "counters": {
+        "total": 1535,
+        "executed": 1535,
+        "passed": 1534,
+        "failed": 1,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T11:35:00.9164930-05:00",
+        "queuing": "2026-09-28T11:35:00.9164940-05:00",
+        "start": "2026-09-28T11:34:57.1049420-05:00",
+        "finish": "2026-09-28T11:37:47.9893960-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T16:34:56.046176+00:00",
+        "kind": "core",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=core-02.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/consumption"
+        },
+        "exitCode": 1,
+        "elapsedSeconds": 172.21424570912495,
+        "finishedUtc": "2026-09-28T16:37:48.262924+00:00"
+      }
+    },
+    "registry-final": {
+      "report": "registry-final.trx",
+      "log": "registry-final.log",
+      "counters": {
+        "total": 40,
+        "executed": 40,
+        "passed": 40,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T11:38:47.5214010-05:00",
+        "queuing": "2026-09-28T11:38:47.5214010-05:00",
+        "start": "2026-09-28T11:38:45.1811340-05:00",
+        "finish": "2026-09-28T11:38:48.9015340-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T16:38:44.339002+00:00",
+        "kind": "focused",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~TerrainMaterialRegistryTests",
+          "--logger",
+          "trx;LogFileName=registry-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification"
+        ],
+        "environment": {},
+        "exitCode": 0,
+        "elapsedSeconds": 4.618696624878794,
+        "finishedUtc": "2026-09-28T16:38:48.958442+00:00"
+      }
+    },
+    "hosting-final": {
+      "report": "hosting-final.trx",
+      "log": "hosting-final.log",
+      "counters": {
+        "total": 331,
+        "executed": 331,
+        "passed": 331,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "times": {
+        "creation": "2026-09-28T11:39:05.2709620-05:00",
+        "queuing": "2026-09-28T11:39:05.2709620-05:00",
+        "start": "2026-09-28T11:39:03.2578570-05:00",
+        "finish": "2026-09-28T11:42:32.0885750-05:00"
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T16:39:02.495930+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~Reservoir|FullyQualifiedName~Runoff|FullyQualifiedName~Liquid|FullyQualifiedName~Watershed|FullyQualifiedName~Production|FullyQualifiedName~Construction|FullyQualifiedName~Terrain|FullyQualifiedName~Excavation|FullyQualifiedName~WorldResourceContinuation|FullyQualifiedName~Restorative|FullyQualifiedName~CareRewardContinuation",
+          "--logger",
+          "trx;LogFileName=hosting-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification"
+        ],
+        "environment": {},
+        "exitCode": 0,
+        "elapsedSeconds": 209.81436029216275,
+        "finishedUtc": "2026-09-28T16:42:32.313300+00:00"
+      }
+    }
+  },
+  "compositeQualification": {
+    "distinctCoreCases": 1535,
+    "allFinalCoreOutcomesPassed": true,
+    "newTerrainCases": 21,
+    "finalRegistryCases": 40,
+    "hostingCases": 331,
+    "totalDistinctCases": 1866,
+    "basis": "Substantive full Core02 plus final 40 registry cases after a diagnostic-literal-only correction; Hosting on final build. Two earlier full-run failures retained, not represented as a green full run.",
+    "sourceDifferenceAfterCore02": [
+      "Beta/Runtime/src/OpenFantasy.Core/Geography/TerrainMaterialProduction.cs"
+    ]
+  },
+  "importantReplayControls": {
+    "core-01": [
+      {
+        "testName": "OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Reordered_consume_and_transfer_fail_intermediate_capacity_with_corrected_revision_tokens",
+        "outcome": "Passed",
+        "duration": "00:00:00.1209767"
+      },
+      {
+        "testName": "OpenFantasy.Core.Tests.Construction.ConstructionContinuationCodecTests.Identical_raw_inventory_cannot_substitute_completion_evidence_from_a_different_derived_prefix",
+        "outcome": "Passed",
+        "duration": "00:00:00.4907035"
+      },
+      {
+        "testName": "OpenFantasy.Core.Tests.Geography.TerrainMaterialContinuationTests.The_unchanged_512_operation_bound_refuses_the_next_real_representation_change_until_a_cut",
+        "outcome": "Passed",
+        "duration": "00:11:34.1729261"
+      }
+    ],
+    "core-02": [
+      {
+        "testName": "OpenFantasy.Core.Tests.Construction.ConstructionContinuationCodecTests.Identical_raw_inventory_cannot_substitute_completion_evidence_from_a_different_derived_prefix",
+        "outcome": "Passed",
+        "duration": "00:00:00.0780086"
+      },
+      {
+        "testName": "OpenFantasy.Core.Tests.Production.MaterialCustodyContinuationCodecTests.Reordered_consume_and_transfer_fail_intermediate_capacity_with_corrected_revision_tokens",
+        "outcome": "Passed",
+        "duration": "00:00:00.1620863"
+      },
+      {
+        "testName": "OpenFantasy.Core.Tests.Geography.TerrainMaterialContinuationTests.The_unchanged_512_operation_bound_refuses_the_next_real_representation_change_until_a_cut",
+        "outcome": "Passed",
+        "duration": "00:02:25.6105236"
+      }
+    ]
+  },
+  "legacyBinaryCompatibility": {
+    "count": 24,
+    "totalBytes": 6492034,
+    "core01AndCore02Exact": true,
+    "files": {
+      "consumption/TerrainMaterialRegistry-legacy.bin": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b",
+      "consumption/ReservoirTransportState-legacy.bin": "0e3bf967862db7b37827cda12e8a24ca8310dad848c854cb43123f694ad5f644",
+      "consumption/WatershedRunoffCapacityState-legacy.bin": "dc11010d61159ad890be1bba9ec17ecf54c50dc799dacb56d4d6dae9718e8b9a",
+      "consumption/LiquidReservoirState-new.bin": "eed92549a93f4f49760cdd3617ce8e821dd4ec39e123f0b38fb64b88376f49db",
+      "consumption/WatershedRunoffCapacityState-new.bin": "c81bc135d51e6662eba46dd48362b308efd2abbc530123023f739d98fc976eaf",
+      "consumption/crafted-consumption.bin": "0fe22dbae4599d3a5ab8da09de5d66e1c3951e640eb710691e2efc8d27a258dd",
+      "consumption/LiquidReservoirState-legacy.bin": "87d14a90b32175ddd588b8414ff75db55f3d5601a5e6f8b30f74753c274fe792",
+      "consumption/TerrainMaterialRegistry-new.bin": "d4aa3517aafe8b4bc2f820ae6f28774a2c6698010c827b409b4d924a3d847cc4",
+      "consumption/TerrainMaterialState-legacy.bin": "ea5ee962c0df1eacd0ebab4e15ac1ffc3c8f5ffa60a4652e8e539e57bdd578de",
+      "consumption/PreparedWatershedRunoff-legacy.bin": "03f2905668d24853b90d92b939913765b3055f8a767504e81f7f6510a453662d",
+      "consumption/ReservoirTransportState-new.bin": "7b5be738cd8b77f103be2bbf94e3c06960f31a6ae6dc9511915eeb685d0a2668",
+      "consumption/TerrainMaterialState-new.bin": "990334ff2adfd073223f1eac2159b5bdd7d0feb79068a6012f585ec55dc31e29",
+      "consumption/PreparedWatershedRunoff-new.bin": "1dea1341c7fef2be69508e877e97b12319ec26e8d5b8ff8138f96fa5a36d3199",
+      "terrain/lot-cap.bin": "8ac3399932a9c226716198d01700c9fea6b8dc7fb941cf5db27bbcd38c028aca",
+      "terrain/active-cap.bin": "a4b12116dbecc51515ddd71bbe0742fbd518d72fe417daa0dbcfd4d86b0468b8",
+      "terrain/partial-transfer.bin": "0138829988acdf2e4899e68555c4b5ac4df009eea1dfb585902d2e7ae03e56b2",
+      "registry/maximum-network.bin": "2af5b5da7d4488ecad722339519893d4f8c70df990ac206fbe2f322073bbe839",
+      "registry/active-cap.bin": "31ba4cf35270c516d5a8ec95866887250b4f2247b194b22f3c0ec8394c23c10a",
+      "registry/two-allocations.bin": "c2c6ab0000fb3f03e69b70a76c675a42d8f095939939f93f3c42c5521cf5a524",
+      "registry/interior-transfer.bin": "58a4f81ed7531d4907cfc45151dc881dd004f8ab6b2bfdb93abbc631fb290532",
+      "production/combined-lot-cap.bin": "f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035",
+      "production/crafted-reloaded.bin": "c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649",
+      "production/chained-prefixes.bin": "78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef",
+      "production/attached.bin": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b"
+    }
+  },
+  "sourceAndExecution": {
+    "sourcePins": "source-pins-build-03.json",
+    "sourceFiles": 1218,
+    "allRuntimeCSharpCovered": 1144,
+    "executionPins": "execution-pins-build-03.json",
+    "executionFiles": 15,
+    "finalPinsMatch": true,
+    "scope": "C# source, project/build and JSON files; not all Godot scenes/art assets."
+  },
+  "preservation": {
+    "baseline": "preservation-before.json",
+    "priorMilestonesUnchanged": 67,
+    "frozenSpecificationsUnchanged": 23,
+    "unrelatedStagedDiffSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "wipCheckpoint": "replay-optimization-checkpoint.json"
+  },
+  "review": "../REVIEW.md",
+  "retainedFailures": "../FAILURES.md",
+  "architectureLinks": "architecture-links.json",
+  "openGates": [
+    "Complete-world care/material and liquid/terrain joins",
+    "Reserved transport and excavation continuation",
+    "Actual durable archive authentication/retrieval/recovery",
+    "Native gameplay, platforms, production scale and performance",
+    "All full campaign, art and human acceptance gates"
+  ]
+}

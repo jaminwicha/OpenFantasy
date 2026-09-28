@@ -4,6 +4,7 @@ using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Geography;
 
 namespace OpenFantasy.Core.Production;
 
@@ -16,7 +17,7 @@ public sealed class ProductionContinuationContext
 {
     private ProductionContinuationContext(ProductionContinuationBasis basis, CountedAuthorityState inventory,
         ProductionSnapshot production, bool supportsMaterialOperations = false, GatheringSnapshot? gathering = null,
-        ConstructionSnapshot? construction = null, bool supportsConstruction = false)
+        ConstructionSnapshot? construction = null, bool supportsConstruction = false, TerrainRepresentationBoundary? terrainRepresentation = null)
     {
         Basis = basis;
         Ordinal = checked((production.Continuation?.Ordinal ?? 0) + 1);
@@ -27,6 +28,7 @@ public sealed class ProductionContinuationContext
         BaseMaterialOperationCount = production.TotalMaterialOperationCount;
         GatheringBaseline = gathering;
         SupportsConstruction = supportsConstruction;
+        TerrainRepresentation = terrainRepresentation;
         ConstructionRecipeIds = Array.AsReadOnly((construction?.Definitions.Select(value => value.MaterialTransform.DefinitionId)
             ?? production.Continuation?.ConstructionRecipeIds.AsEnumerable() ?? Array.Empty<EntityId>()).Order().ToArray());
         if (ConstructionRecipeIds.Count > ConstructionSnapshot.MaximumDefinitions
@@ -49,7 +51,7 @@ public sealed class ProductionContinuationContext
         if (recipes.Length > 5 * 1024 * 1024)
             throw new ArgumentException("The continuation recipe admission exceeds its bounded frame.");
         List<ReadOnlyMemory<byte>> fields = [
-            Number(supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
+            Number(terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
             Number(BaseBatchCount), Number(BaseConsumedItemCount), Number(SupportsConsumption ? 1UL : 0UL), recipes,
             AuthorityAdmissionHash.ToByteArray(), CanonicalEncodingV1.Frame("continuation.storages.v1",
                 Storages.Select(value => (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("continuation.storage.v1",
@@ -68,6 +70,12 @@ public sealed class ProductionContinuationContext
             fields.Add(CanonicalEncodingV1.Frame("continuation.construction-batches.v1", ConstructionBatches
                 .Select(value => (ReadOnlyMemory<byte>)ProductionCodecV1.EncodeBatch(value)).ToArray()));
         }
+        if (terrainRepresentation is not null)
+        {
+            if (!supportsMaterialOperations) throw new ArgumentException("Terrain representation requires ordered material history.");
+            fields.Add(Number(supportsConstruction ? 1UL : 0UL));
+            fields.Add(terrainRepresentation.ContentHash.ToByteArray());
+        }
         ContentHash = ContentHash.Compute(CanonicalEncodingV1.Frame("production.continuation-context", fields.ToArray()));
     }
 
@@ -79,6 +87,8 @@ public sealed class ProductionContinuationContext
     public bool SupportsConsumption { get; }
     public bool SupportsMaterialOperations { get; }
     public bool SupportsConstruction { get; }
+    public bool SupportsTerrainRepresentation => TerrainRepresentation is not null;
+    public TerrainRepresentationBoundary? TerrainRepresentation { get; }
     public ReadOnlyCollection<EntityId> ConstructionRecipeIds { get; }
     public ReadOnlyCollection<ProductionBatch> ConstructionBatches { get; }
     public ulong BaseMaterialOperationCount { get; }
@@ -89,18 +99,33 @@ public sealed class ProductionContinuationContext
     public ContentHash ContentHash { get; }
 
     internal static ProductionContinuationContext Capture(CountedAuthorityState inventory, ProductionSnapshot production) =>
-        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production,
+        new(CaptureOrdinaryBasis(inventory, production), inventory, production,
             production.MaterialHistory is not null, production.MaterialHistory?.Gathering,
-            supportsConstruction: production.Continuation?.SupportsConstruction == true);
+            supportsConstruction: production.Continuation?.SupportsConstruction == true,
+            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation);
 
     internal static ProductionContinuationContext CaptureMaterial(CountedAuthorityState inventory,
         ProductionSnapshot production, GatheringSnapshot? gathering) =>
-        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering,
-            supportsConstruction: production.Continuation?.SupportsConstruction == true);
+        new(CaptureOrdinaryBasis(inventory, production), inventory, production, true, gathering,
+            supportsConstruction: production.Continuation?.SupportsConstruction == true,
+            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation);
 
     internal static ProductionContinuationContext CaptureConstruction(CountedAuthorityState inventory,
         ProductionSnapshot production, ConstructionSnapshot construction, GatheringSnapshot? gathering) =>
-        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering, construction, true);
+        new(CaptureOrdinaryBasis(inventory, production), inventory, production, true, gathering, construction, true, production.MaterialHistory?.TerrainRepresentation);
+
+    internal static ProductionContinuationContext CaptureTerrain(CountedAuthorityState inventory,
+        ProductionSnapshot production, TerrainRepresentationBoundary terrain, ConstructionSnapshot? construction,
+        GatheringSnapshot? gathering) =>
+        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production, true, gathering, construction,
+            construction is not null || production.Continuation?.SupportsConstruction == true, terrain);
+
+    private static ProductionContinuationBasis CaptureOrdinaryBasis(CountedAuthorityState inventory, ProductionSnapshot production)
+    {
+        if (production.Continuation?.SupportsTerrainRepresentation == true)
+            throw new ArgumentException("Terrain continuation must capture its actual complete registry.");
+        return ProductionContinuationBasis.Capture(inventory, production);
+    }
 
     private static void ValidateGathering(CountedAuthorityState inventory, ProductionContinuationBasis basis, GatheringSnapshot? gathering)
     {

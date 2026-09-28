@@ -3,6 +3,7 @@ using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Production;
@@ -17,6 +18,7 @@ internal sealed class MaterialContinuationReplay
     private readonly HashSet<EntityId> _commands;
     private readonly Dictionary<EntityId, TransformedLot> _derived;
     private CountedAuthorityState _inventory;
+    private TerrainRepresentationBoundary? _terrain;
     private readonly List<MaterialOperation> _replayed = [];
 
     internal MaterialContinuationReplay(ProductionSnapshot state, CountedAuthorityState inventory)
@@ -24,6 +26,7 @@ internal sealed class MaterialContinuationReplay
         _state = state;
         _expected = inventory;
         ProductionContinuationContext context = state.Continuation!;
+        _terrain = context.TerrainRepresentation;
         _inventory = inventory.WithCustody(new CustodySnapshot(state.WorldId, state.BranchId,
             context.Basis.CustodyRevision, context.Storages, context.Basis.RawLots));
         if (_inventory.ContentHash != context.Basis.InventoryHash)
@@ -42,6 +45,7 @@ internal sealed class MaterialContinuationReplay
             if (Occupied(operation.CommandId)) throw new ArgumentException("A material operation cannot reuse a retained identity.");
             switch (operation)
             {
+                case MaterialTerrainRepresentationOperation representation: Represent(representation.Evidence); break;
                 case MaterialConstructionOperation construction: Construct(construction.Evidence); break;
                 case MaterialCraftOperation craft: Craft(craft.Batch); break;
                 case MaterialConsumptionOperation consume: Consume(consume.Claim); break;
@@ -88,26 +92,31 @@ internal sealed class MaterialContinuationReplay
         AdvanceCustody(batch.CustodianId);
     }
 
-    private ProductionSnapshot CurrentProduction()
+    private void Represent(TerrainRepresentationEvidence evidence)
     {
-        var batches = _replayed.Select(operation => operation switch
-        {
-            MaterialCraftOperation craft => craft.Batch,
-            MaterialConstructionOperation construction => construction.Evidence.Batch,
-            _ => null
-        }).OfType<ProductionBatch>();
-        var claims = _replayed.OfType<MaterialConsumptionOperation>().Select(value => value.Claim);
-        return new ProductionSnapshot(_state.WorldId, _state.BranchId,
-            checked(_state.Continuation!.BaseProductionRevision + (ulong)_replayed.Count), _state.Recipes,
-            batches, _derived.Values, _state.SupportsConsumption ? claims : null, _state.Continuation,
-            new MaterialOperationHistory(_state.Continuation, _replayed));
+        TerrainRepresentationBoundary terrain = _terrain
+            ?? throw new ArgumentException("Terrain operations require the actual captured allocation owner.");
+        if (evidence.BeforeInventoryHash != _inventory.ContentHash
+            || evidence.BeforeProductionHash != ProductionMaterialCodec.HashReplayPrefix(_state.Continuation!, _replayed, _derived.Values))
+            throw new ArgumentException("Terrain evidence must match the exact preceding material owners.");
+        TerrainRepresentationBoundary next = terrain.Apply(evidence);
+        var result = new TerrainMaterialPartition(_inventory, terrain.Deposit(evidence.AllocationId),
+            terrain.Cells(evidence.AllocationId).ToArray(), evidence.Cells.ToArray(), evidence.CauseId, _inventory.Custody.Revision,
+            id => terrain.ContainsIdentity(id) || Occupied(id) || id != evidence.CauseId && _commands.Contains(id)).BuildRaw(evidence.Refining);
+        if (result.Inventory.ContentHash != evidence.AfterInventoryHash
+            || !result.CreatedIds.SequenceEqual(evidence.CreatedIds)
+            || !result.ActiveCells.SequenceEqual(next.Cells(evidence.AllocationId)))
+            throw new ArgumentException("Terrain evidence must reproduce the exact raw partition, created identities and cell bindings.");
+        foreach (EntityId id in result.CreatedIds) Created(id);
+        _inventory = result.Inventory;
+        _terrain = next;
     }
 
     private void Construct(ConstructionCompletionEvidence evidence)
     {
         if (_state.Continuation?.SupportsConstruction != true
             || evidence.BeforeInventoryHash != _inventory.ContentHash
-            || evidence.BeforeProductionHash != CurrentProduction().ContentHash
+            || evidence.BeforeProductionHash != ProductionMaterialCodec.HashReplayPrefix(_state.Continuation!, _replayed, _derived.Values)
             || evidence.Command.WorldId != _inventory.WorldId || evidence.Command.BranchId != _inventory.BranchId
             || evidence.Command.ActorId != evidence.Batch.ActorId || evidence.Command.CommandId != evidence.Batch.CommandId
             || !_inventory.CanControl(new(evidence.Command.PrincipalId, evidence.Command.OriginSessionId), evidence.Batch.ActorId)

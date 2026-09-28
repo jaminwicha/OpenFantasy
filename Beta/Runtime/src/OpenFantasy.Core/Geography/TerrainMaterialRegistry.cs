@@ -2,6 +2,8 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Production;
+using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Geography;
@@ -61,7 +63,11 @@ public sealed class TerrainMaterialRegistry
             OtherQuantity = checked(OtherQuantity + state.OtherQuantity);
             RetiredQuantity = checked(RetiredQuantity + state.RetiredQuantity);
         }
+        if (Production?.MaterialHistory?.TerrainRepresentation is { } representation
+            && TerrainRepresentationBoundary.Capture(this).ContentHash != representation.ContentHash)
+            throw new ArgumentException("Continued terrain requires its complete exact catalog and active-cell history.");
         _contentHash = new(() => ContentHash.Compute(Production is null ? TerrainMaterialRegistryCodecV1.Encode(this)
+            : Production.IsContinued ? TerrainMaterialRegistryCodecV4.Encode(this)
             : Production.SupportsConsumption ? TerrainMaterialRegistryCodecV3.Encode(this) : TerrainMaterialRegistryCodecV2.Encode(this)));
     }
 
@@ -129,6 +135,41 @@ public sealed class TerrainMaterialRegistry
         return new(Terrain, inventory, Allocations, ActiveBindings(), production);
     }
 
+    /// <summary>Selects typed terrain representation from this actual complete registry without changing material or cells.</summary>
+    public TerrainMaterialRegistryPlan PlanContinueTerrain(GatheringSnapshot? gathering = null,
+        MaterialConstructionState? construction = null, CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        ProductionSnapshot production = Production ?? throw new InvalidOperationException("Attach production before selecting terrain continuation.");
+        var boundary = TerrainRepresentationBoundary.Capture(this);
+        var nextProduction = production.ContinueTerrain(Inventory, boundary, construction, gathering);
+        return PlanCut(nextProduction, boundary, cancellationToken);
+    }
+
+    /// <summary>Captures another exact material boundary while retaining the selected terrain and optional construction capabilities.</summary>
+    public TerrainMaterialRegistryPlan PlanContinue(CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+        if (Production?.Continuation?.SupportsTerrainRepresentation != true)
+            throw new InvalidOperationException("Select terrain continuation explicitly before a retained cut.");
+        var boundary = TerrainRepresentationBoundary.Capture(this);
+        return PlanCut(Production.ContinueTerrain(Inventory, boundary, null, null), boundary, cancellationToken);
+    }
+
+    private TerrainMaterialRegistryPlan PlanCut(ProductionSnapshot production, TerrainRepresentationBoundary boundary,
+        CancellationToken cancellation)
+    {
+        var candidate = new TerrainMaterialRegistry(Terrain, Inventory, Allocations, ActiveBindings(), production);
+        if (candidate.Revision != Revision || production.Revision != Production!.Revision
+            || candidate.Inventory.ContentHash != Inventory.ContentHash
+            || TerrainRepresentationBoundary.Capture(candidate).ContentHash != boundary.ContentHash
+            || candidate.CoarseQuantity != CoarseQuantity || candidate.DetailedQuantity != DetailedQuantity
+            || candidate.OtherQuantity != OtherQuantity || candidate.RetiredQuantity != RetiredQuantity)
+            throw new ArgumentException("A terrain cut must preserve its exact material and representation boundary.");
+        cancellation.ThrowIfCancellationRequested();
+        return new(this, candidate);
+    }
+
     private void ValidateInventorySuccessor(CountedAuthorityState inventory)
     {
         if (inventory.Custody.Revision <= Revision || inventory.WorldId != Inventory.WorldId
@@ -144,7 +185,15 @@ public sealed class TerrainMaterialRegistry
         _ = GetState(allocationId);
         Dictionary<EntityId, CellCoordinate[]> active = ActiveBindings();
         active[allocationId] = candidate.ActiveCells.ToArray();
-        return new(Terrain, candidate.Inventory, Allocations, active, Production);
+        return new(Terrain, candidate.Inventory, Allocations, active, candidate.Production);
+    }
+
+    internal TerrainMaterialRegistry WithRepresentation(EntityId allocationId, TerrainMaterialPartitionResult result,
+        ProductionSnapshot production)
+    {
+        Dictionary<EntityId, CellCoordinate[]> active = ActiveBindings();
+        active[allocationId] = result.ActiveCells;
+        return new(Terrain, result.Inventory, Allocations, active, production);
     }
 
     private Dictionary<EntityId, CellCoordinate[]> ActiveBindings() =>
@@ -186,13 +235,7 @@ public sealed class TerrainMaterialRegistry
         {
             throw new ArgumentException("A shared custodian cannot represent both coarse and detailed terrain.");
         }
-        if (Production is not null && ProductionRetirementHistory.Retirements(Production).Any(retirement =>
-            (coarse.Contains(retirement.CustodianId) || fine.Contains(retirement.CustodianId))
-            && retirement.Ingredient.Source is { } source
-            && Allocations.Any(allocation => allocation.Deposit.Intersect(source) is not null)))
-        {
-            throw new ArgumentException("Production cannot consume allocated sources in any terrain representation custodian.");
-        }
+        _production?.ValidateRepresentationCustodians(Allocations);
         for (int i = 0; i < Allocations.Count; i++)
         {
             for (int j = i + 1; j < Allocations.Count; j++)

@@ -1,0 +1,45 @@
+{
+  "checked": 10,
+  "links": [
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/README.md",
+      "target": "../../../Runtime/docs/architecture/terrain-material-continuation.md"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/README.md",
+      "target": "qualification/verification.json"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/README.md",
+      "target": "FAILURES.md"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/README.md",
+      "target": "REVIEW.md"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/README.md",
+      "target": "qualification/preservation-before.json"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/README.md",
+      "target": "qualification/replay-optimization-checkpoint.json"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/REVIEW.md",
+      "target": "qualification/replay-optimization-checkpoint.json"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/FAILURES.md",
+      "target": "qualification/core-01.log"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/FAILURES.md",
+      "target": "qualification/core-02.log"
+    },
+    {
+      "source": "Beta/implementation/p02/terrain-material-continuation/FAILURES.md",
+      "target": "qualification/core-02-command.json"
+    }
+  ]
+}

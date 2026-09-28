@@ -14,6 +14,12 @@ V1–V4 keep their original interpretations and refuse construction-capable owne
 preserve that capability and its exact historical backing; an ordinary material cut cannot silently
 downgrade the owner or erase installation evidence.
 
+An actual [terrain registry](terrain-material-continuation.md) can select V6 with the same opaque
+construction state and retain both capabilities. Construction completion keeps its distinct evidence
+and replay rules alongside terrain representation operations. Once terrain capability is selected,
+cuts must come through the validated registry, preserving its complete allocation and cell bindings;
+the generic Production cut methods cannot independently archive that coupled owner.
+
 Reserved installation has a distinct material interpretation. Ordinary crafting spends unreserved
 inputs and creates unreserved outputs. Construction instead spends the exact project-reserved raw
 stock and creates its one reserved installed output. These permissions cannot be inferred from a
@@ -70,7 +76,7 @@ match their captured producer witness. The context retains at most 32 original b
 bounded project, with at most 64 direct ingredients each. Only direct source batches are needed for this
 construction interpretation; there is no recursive producer ancestry in those records.
 
-The construction recipe catalog is frozen with V5 admission and retained across every cut. Ordinary
+The construction recipe catalog is frozen with construction-capable admission and retained across every cut. Ordinary
 crafting cannot use these installation-only recipes. Every active or imported construction producer,
 including generic imported producer witnesses, must belong to one completed project. A project cannot
 claim a different batch, share another project's guard or retain raw stock under its completed project

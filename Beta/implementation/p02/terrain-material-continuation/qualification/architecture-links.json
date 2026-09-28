@@ -1,0 +1,962 @@
+{
+  "scope": "File targets in all seven affected architecture pages; fragments and external links not checked.",
+  "pages": 7,
+  "links": [
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "runtime-and-authority.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-composition.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "identity-and-determinism.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "time-and-encounters.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-timing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-pacing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-actions.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-lifecycle.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "native-encounters.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-and-geography.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-worksite.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-watercourse.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "excavation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "constructed-footing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "stair-navigation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-loads.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-contact-assessment.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-policy-and-motion.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-settlement.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "coupled-settlement.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "event-descent.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "consequence-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-physical.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-transport.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-boundaries.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-containment.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-liquid-breach.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-cell-flow.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actors-and-society.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actor-resources.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-resource-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "resource-archive-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "ordinary-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "aftermath-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "materials-and-activities.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "item-consumption.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "material-continuation-basis.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "production-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "presentation-and-interaction.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "content-and-composition.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "production-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "construction-physical.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionState.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/MaterialConstructionPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Construction/ConstructionCompletionEvidence.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/construction-continuation.md",
+      "target": "resource-archive-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ItemConsumptionPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ItemConsumptionPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "aftermath-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "world-resource-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "ordinary-care.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ConsumeItemRequest.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/IngredientRequest.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Authority/TrustedCommandDelivery.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/MaterialLotSelection.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ConsumedItemClaim.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/RetiredIngredient.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionClaimValidation.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/MaterialTransformCommitter.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionRetirementHistory.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/ExcavationSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV3.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV3.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCodecV2.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV2.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV2.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirTransportCodecV2.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "liquid-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Care/RestorativeItemPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "actor-resources.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV2.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "world-resource-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "material-continuation-basis.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "production-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "../../tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "materials-and-activities.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "identity-and-determinism.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/item-consumption.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffDomain.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/GeographyProductionDependencies.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "liquid-cell-flow.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/liquid-material-continuation.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "material-continuation-basis.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/MaterialOperationHistory.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "construction-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Gathering/GatherIssueEvidence.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/ProductionCodecV3.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "liquid-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "resource-archive-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/production-continuation.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/StratifiedTerrainGenerator.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionBounds.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "stair-navigation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "constructed-footing.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Spatial/GroundRouteSearch.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "excavation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "coupled-settlement.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershed.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldWatershedAdmission.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedNetworkPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedOutletClosure.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedNetwork.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedNetworkCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldWatershedNetworkAdmission.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainMapper.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedTerrain.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainMapping.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainColumn.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedTerrainCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffRequest.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffInput.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffTerminal.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffFunding.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/PreparedWatershedRunoff.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffDomain.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "liquid-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedRunoffCapacityCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-transport.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirGeometry.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/ReservoirFill.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirState.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/LiquidReservoirCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-boundaries.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-containment.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "liquid-cell-flow.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "terrain-liquid-breach.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/RunoffCommitmentIntent.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldRunoffResolver.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "persistence-and-history.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "reservoir-transport.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialDeposit.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialState.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPartition.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialAllocation.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/WatershedMaterialIdentities.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV1.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialProduction.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "terrain-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlanner.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCraftPlan.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistryCodecV2.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialCodecV2.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "liquid-material-continuation.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "item-consumption.md#composed-material-evidence",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../../spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "target": "../../../spec-v1_1/ECOLOGY_AND_FLUIDS.md",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainMaterialRegistry.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainRepresentationBoundary.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainRepresentationEvidence.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Production/Continuation/MaterialContinuationReplay.cs",
+      "exists": true
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/terrain-material-continuation.md",
+      "target": "../../src/OpenFantasy.Core/Geography/TerrainProductionDependencies.cs",
+      "exists": true
+    }
+  ],
+  "broken": []
+}

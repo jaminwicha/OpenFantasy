@@ -42,6 +42,36 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Terrain material continuation](p02/terrain-material-continuation/README.md) adds qualified actual-registry
+cuts and typed refinement/demotion, with fixed allocation/active-cell evidence, exact source retirement,
+produced ancestry and nested terrain V4 / Production V6 archives. Generic Production cuts cannot erase
+geographic violations. Permanent historical identity lookup remains mandatory. Actual construction
+completion can coexist with this terrain capability, preserving original source batches across cuts.
+
+The clean solution build, **1,535 distinct Core +331 affected Hosting =1,866 managed cases with passing
+final outcomes**, 24 byte-exact pre-change fixtures and [independent critique](p02/terrain-material-continuation/REVIEW.md)
+qualify this standalone component. Core evidence is composite: the substantive full run passed 1,534
+cases; the final 40-case registry run fixes its one diagnostic-prefix failure after a literal-only edit.
+Both original failures remain in the [failure record](p02/terrain-material-continuation/FAILURES.md).
+All 21 new cases pass, including the actual 512-operation refusal/cut/resume boundary and three-cut
+mixed extraction/craft/recraft/consume journey. The unchanged 512 case ran in 694.17 then 145.61 seconds
+after redundant prefix reconstruction was removed; shared-machine timings do not close performance gates.
+All seven affected architecture references are current, with 191 resolving local file links.
+
+Base `9d9f236` is preserved by `codex/checkpoint-before-terrain-material-continuation-20260928T064510Z`.
+Before replay optimization, WIP `b5881bb11acb` preserves source/tests/docs/evidence on
+`codex/checkpoint-terrain-before-replay-optimization-20260928T163146Z`, including its known failed check.
+The verified increment is preserved by `codex/milestone-terrain-material-continuation`; resolve that ref
+for its exact commit. All 67 prior milestones, 23 frozen specs and unrelated predecessor staging remain
+unchanged. The [verification record](p02/terrain-material-continuation/qualification/verification.json)
+pins exact source/execution and report scope. External Claude routes were not automatically retried;
+no credit savings are claimed.
+
+Next joins remain reserved transport and excavation continuation, followed by complete-world
+material/care/resource and combined liquid/terrain publication with authenticated durable archive
+retrieval and recovery. These component cuts do not admit a live world, grant mining labor, migrate a
+save or close any native, production-scale, platform, art, human or full campaign gate.
+
 [Liquid owners across material boundaries](p02/liquid-material-continuation/README.md) adds explicit
 capacity cuts and nested V3 geography codecs. Actual closing owners qualify the fixed domain/context;
 reservoir continuation also pins the exact geometry catalog. A generic material cut cannot hide

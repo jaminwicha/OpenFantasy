@@ -1,0 +1,24 @@
+{
+  "startedUtc": "2026-09-28T16:34:56.046176+00:00",
+  "kind": "core",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=core-02.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification"
+  ],
+  "environment": {
+    "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/terrain",
+    "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/registry",
+    "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/production",
+    "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification/legacy-core-02/consumption"
+  },
+  "exitCode": 1,
+  "elapsedSeconds": 172.21424570912495,
+  "finishedUtc": "2026-09-28T16:37:48.262924+00:00"
+}

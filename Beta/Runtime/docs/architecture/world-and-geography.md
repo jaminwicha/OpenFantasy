@@ -623,8 +623,10 @@ Production and live derived revisions cannot exceed the custody root; retired in
 precede it. Geographic and allocation identities cannot alias production roles. Shared item/physical
 bindings require exact identity and version agreement, including the physical calibration per item.
 
-Each allocation clips live raw source intervals and direct raw `RetiredIngredient` intervals to its
-original budget. Sorted claims cover that budget exactly once without holes or overlaps:
+Each allocation clips live raw source intervals and direct raw retirement intervals to its original
+budget. Inline history supplies the original `RetiredIngredient` records; explicit
+[terrain continuation](terrain-material-continuation.md) additionally retains imported ranges with
+their item pins and retiring custodians. Sorted claims cover the budget exactly once without holes or overlaps:
 
 `allocated = coarse + detailed + other live raw + retired raw`
 
@@ -668,15 +670,18 @@ Consumption-capable inline production uses explicit registry/state V3 archives. 
 routing, capacity, reservoir and transport owners use their corresponding V2 archives; each retains the
 complete production V2 evidence even when its consumed collection is empty. Qualified
 [continued liquid owners](liquid-material-continuation.md) instead use explicit geography V3 frames
-with nested Production V3/V4/V5 dependencies; terrain and reserved transport reject continued owners.
+with nested Production V3/V4/V5 dependencies. Qualified terrain state/registry V4 frames instead retain
+Production V6 and its typed representation evidence; arbitrary generic contexts and reserved transport
+remain unsupported.
 Ordinary successor reconciliation
 preserves the selected interpretation in both directions. See
 [composed material evidence](item-consumption.md#composed-material-evidence) for the exact version table,
 history-retention contract and complete-world publication boundary.
 
 This standalone composition reuses the production ledger's finite recipes, batches and provenance.
-It does not bind terrain registries to the live world, authorize extraction, supply geological profiles,
-compact long-lived consumption history or establish global ownership across independently admitted registries.
+Explicit terrain continuation carries those rights across bounded material windows. It does not bind
+terrain registries to the live world, authorize extraction, supply geological profiles, authenticate
+archived history or establish global ownership across independently admitted registries.
 
 ## Design contract: finite preparation and frontier streaming
 

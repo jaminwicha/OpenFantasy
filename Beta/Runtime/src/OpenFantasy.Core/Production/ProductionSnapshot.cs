@@ -4,6 +4,7 @@ using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Geography;
 
 namespace OpenFantasy.Core.Production;
 
@@ -63,7 +64,8 @@ public sealed class ProductionSnapshot
         : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsConstruction == true ? ProductionCodecV5.Encode(this)
+    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsTerrainRepresentation == true ? ProductionCodecV6.Encode(this)
+        : Continuation?.SupportsConstruction == true ? ProductionCodecV5.Encode(this)
         : MaterialHistory is not null ? ProductionCodecV4.Encode(this)
         : IsContinued ? ProductionCodecV3.Encode(this) : SupportsConsumption
         ? ProductionCodecV2.Encode(this) : ProductionCodecV1.Encode(this));
@@ -76,6 +78,7 @@ public sealed class ProductionSnapshot
     /// </summary>
     public ProductionSnapshot Continue(CountedAuthorityState inventory)
     {
+        RequireOrdinaryCut();
         ProductionContinuationContext context = ProductionContinuationContext.Capture(inventory, this);
         var next = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context,
@@ -88,6 +91,7 @@ public sealed class ProductionSnapshot
     /// <summary>Selects ordered custody/source interpretation explicitly; it does not migrate a world or authenticate source history.</summary>
     public ProductionSnapshot ContinueMaterial(CountedAuthorityState inventory, GatheringSnapshot? gathering = null)
     {
+        RequireOrdinaryCut();
         if (MaterialHistory is { } retained)
         {
             if (gathering is not null && (retained.Gathering is null
@@ -107,6 +111,7 @@ public sealed class ProductionSnapshot
     public ProductionSnapshot ContinueConstruction(CountedAuthorityState inventory, MaterialConstructionState state,
         GatheringSnapshot? gathering = null)
     {
+        RequireOrdinaryCut();
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(state);
         state.ValidateMaterialBoundary(inventory, this);
@@ -121,6 +126,31 @@ public sealed class ProductionSnapshot
             gathering ??= retained.Gathering;
         }
         var context = ProductionContinuationContext.CaptureConstruction(inventory, this, construction, gathering);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
+    private void RequireOrdinaryCut()
+    {
+        if (Continuation?.SupportsTerrainRepresentation == true)
+            throw new ArgumentException("Terrain-capable material requires a cut through its actual admitted terrain registry.");
+    }
+
+    internal ProductionSnapshot ContinueTerrain(CountedAuthorityState inventory, TerrainRepresentationBoundary terrain,
+        MaterialConstructionState? construction, GatheringSnapshot? gathering)
+    {
+        construction?.ValidateMaterialBoundary(inventory, this);
+        if (MaterialHistory is { } retained)
+        {
+            if (gathering is not null && (retained.Gathering is null
+                || gathering.ContentHash != retained.Gathering.AdvanceTo(gathering.AdvancingStep).ContentHash))
+                throw new ArgumentException("A terrain cut cannot replace its retained source owner.", nameof(gathering));
+            gathering ??= retained.Gathering;
+        }
+        var context = ProductionContinuationContext.CaptureTerrain(inventory, this, terrain, construction?.Construction, gathering);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
         result.ValidateForAuthority(inventory);

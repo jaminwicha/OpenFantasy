@@ -20,6 +20,12 @@ V3 records craft/consumption revisions. V4 also advances production revision for
 recorded gathering, transfer or delivery operation; its ordered history binds those custody changes.
 V5 adds one material operation for a completed construction transform. Partial construction work
 advances its own work owner without advancing material history.
+V6 adds explicit [terrain representation](terrain-material-continuation.md), selected from an actual
+funded registry. It can retain construction capability independently. Refinement/demotion advances
+one material operation while preserving crafting and consumption totals; a cut itself adds no operation.
+Terrain-capable owners require a qualified registry cut rather than the generic Production cut methods.
+This preserves geographic legality before historical records leave the active segment; ordinary
+material operations retain their own typed planners and are reconciled with the registry separately.
 
 The context also pins the bounded storage set and non-custody authority admission. Each storage
 retains its capacity and advances its revision for each operation that actually touches that custodian.
@@ -72,6 +78,12 @@ operation qualified by actual project work. General protection toggles, transfor
 other purpose-qualified reserved-material moves require their own contracts rather than reuse of a
 permissive generic mutation.
 
+Terrain refinement/demotion has its own V6 operation because it can split or coalesce several raw
+intervals, change their identities and advance both representation storages even when no raw stock
+moves. Its qualified evidence binds the actual material prefix and complete allocation/active-cell
+observation. Replay must reproduce the entire partition, including unchanged neighbors and all fresh
+identities. Ordinary transfer cannot substitute for that geometric operation.
+
 [GatherIssueEvidence](../../src/OpenFantasy.Core/Gathering/GatherIssueEvidence.cs) is produced only by
 successful `GatherPlanner.PlanWithEvidence`. It binds the exact accepted command, current world/space,
 before/after inventory and gathering hashes, process interval and issued lot. It retains no complete
@@ -123,6 +135,7 @@ authenticates archived history nor selects a complete-world storage profile.
 | V3 | Active batches/claims and live outputs; absolute totals and context hash | The exact captured continuation context, including its consumption interpretation |
 | V4 | Active material operations, batches/claims and live outputs; cumulative counters | The exact material context and actual matching opaque gathering evidence for issuance entries |
 | V5 | Ordered material history including reserved construction completion | The exact construction-capable context, original construction batches and matching opaque gathering/completion evidence |
+| V6 | Ordered material history including terrain refinement/demotion, with retained optional construction capability | The exact terrain-capable context and matching opaque terrain, gathering and construction evidence as selected |
 
 V4 decoding validates canonical component structure and joins the supplied actual source proofs.
 The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
@@ -153,6 +166,9 @@ adapter qualifies reserved completion and physical candidates. The explicit
 [liquid continuation](liquid-material-continuation.md) contracts preserve runoff obligations and
 reservoir ownership through cuts, with nested context-bound codecs. These adapters do not enable
 continued world paths or reserved gate transport.
+The separate [terrain adapter](terrain-material-continuation.md) preserves fixed allocations and
+records representation operations under V6. It does not by itself join terrain and liquid histories
+or grant excavation issuance, effort spending or complete-world publication.
 
 The complete protocol must schedule before accepted obligations lose headroom, preserve captured
 command meanings, publish archive/receipt/identity/head changes atomically and recover from actual

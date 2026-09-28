@@ -1,0 +1,101 @@
+{
+  "scope": "Exact fixed pre-change terrain/material and consumption-geography archive bytes from qualified 9d9f236 assemblies.",
+  "files": {
+    "consumption/LiquidReservoirState-legacy.bin": {
+      "bytes": 3765,
+      "sha256": "87d14a90b32175ddd588b8414ff75db55f3d5601a5e6f8b30f74753c274fe792"
+    },
+    "consumption/LiquidReservoirState-new.bin": {
+      "bytes": 4422,
+      "sha256": "eed92549a93f4f49760cdd3617ce8e821dd4ec39e123f0b38fb64b88376f49db"
+    },
+    "consumption/PreparedWatershedRunoff-legacy.bin": {
+      "bytes": 3041,
+      "sha256": "03f2905668d24853b90d92b939913765b3055f8a767504e81f7f6510a453662d"
+    },
+    "consumption/PreparedWatershedRunoff-new.bin": {
+      "bytes": 3698,
+      "sha256": "1dea1341c7fef2be69508e877e97b12319ec26e8d5b8ff8138f96fa5a36d3199"
+    },
+    "consumption/ReservoirTransportState-legacy.bin": {
+      "bytes": 4198,
+      "sha256": "0e3bf967862db7b37827cda12e8a24ca8310dad848c854cb43123f694ad5f644"
+    },
+    "consumption/ReservoirTransportState-new.bin": {
+      "bytes": 4855,
+      "sha256": "7b5be738cd8b77f103be2bbf94e3c06960f31a6ae6dc9511915eeb685d0a2668"
+    },
+    "consumption/TerrainMaterialRegistry-legacy.bin": {
+      "bytes": 5129,
+      "sha256": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b"
+    },
+    "consumption/TerrainMaterialRegistry-new.bin": {
+      "bytes": 6018,
+      "sha256": "d4aa3517aafe8b4bc2f820ae6f28774a2c6698010c827b409b4d924a3d847cc4"
+    },
+    "consumption/TerrainMaterialState-legacy.bin": {
+      "bytes": 4691,
+      "sha256": "ea5ee962c0df1eacd0ebab4e15ac1ffc3c8f5ffa60a4652e8e539e57bdd578de"
+    },
+    "consumption/TerrainMaterialState-new.bin": {
+      "bytes": 5580,
+      "sha256": "990334ff2adfd073223f1eac2159b5bdd7d0feb79068a6012f585ec55dc31e29"
+    },
+    "consumption/WatershedRunoffCapacityState-legacy.bin": {
+      "bytes": 3057,
+      "sha256": "dc11010d61159ad890be1bba9ec17ecf54c50dc799dacb56d4d6dae9718e8b9a"
+    },
+    "consumption/WatershedRunoffCapacityState-new.bin": {
+      "bytes": 3714,
+      "sha256": "c81bc135d51e6662eba46dd48362b308efd2abbc530123023f739d98fc976eaf"
+    },
+    "consumption/crafted-consumption.bin": {
+      "bytes": 6576,
+      "sha256": "0fe22dbae4599d3a5ab8da09de5d66e1c3951e640eb710691e2efc8d27a258dd"
+    },
+    "production/attached.bin": {
+      "bytes": 5129,
+      "sha256": "e8addb3b84a55184468a3fb4df286dd61eedeb7c4e3898704718a49ae543952b"
+    },
+    "production/chained-prefixes.bin": {
+      "bytes": 7334,
+      "sha256": "78c5e2e6e8e39817a5b2ec2809bbf7c457184004e760a598c82fa5d87e67aaef"
+    },
+    "production/combined-lot-cap.bin": {
+      "bytes": 861770,
+      "sha256": "f2768ba160fa3fad606ef83022ff25f8f747b7d2908bfabfe553a5cf34758035"
+    },
+    "production/crafted-reloaded.bin": {
+      "bytes": 6117,
+      "sha256": "c594632adc4e6217f252f26b6f28a014d62ac1efa5797f7c70732174ff4c0649"
+    },
+    "registry/active-cap.bin": {
+      "bytes": 171441,
+      "sha256": "31ba4cf35270c516d5a8ec95866887250b4f2247b194b22f3c0ec8394c23c10a"
+    },
+    "registry/interior-transfer.bin": {
+      "bytes": 5178,
+      "sha256": "58a4f81ed7531d4907cfc45151dc881dd004f8ab6b2bfdb93abbc631fb290532"
+    },
+    "registry/maximum-network.bin": {
+      "bytes": 3367561,
+      "sha256": "2af5b5da7d4488ecad722339519893d4f8c70df990ac206fbe2f322073bbe839"
+    },
+    "registry/two-allocations.bin": {
+      "bytes": 4282,
+      "sha256": "c2c6ab0000fb3f03e69b70a76c675a42d8f095939939f93f3c42c5521cf5a524"
+    },
+    "terrain/active-cap.bin": {
+      "bytes": 974377,
+      "sha256": "a4b12116dbecc51515ddd71bbe0742fbd518d72fe417daa0dbcfd4d86b0468b8"
+    },
+    "terrain/lot-cap.bin": {
+      "bytes": 1026577,
+      "sha256": "8ac3399932a9c226716198d01700c9fea6b8dc7fb941cf5db27bbcd38c028aca"
+    },
+    "terrain/partial-transfer.bin": {
+      "bytes": 3524,
+      "sha256": "0138829988acdf2e4899e68555c4b5ac4df009eea1dfb585902d2e7ae03e56b2"
+    }
+  }
+}

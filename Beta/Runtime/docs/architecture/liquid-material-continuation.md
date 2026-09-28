@@ -87,6 +87,9 @@ generic rebinding cannot relabel consumed or newly crafted water.
 
 These are standalone component contracts. Complete world admission rejects continued material owners
 until the coordinated world/resource/care and authenticated archive protocol admits them. Reserved
-gate transport still requires its own typed custody transition; terrain partitioning and excavation
-require their own joined source, effort and geometry contracts. Component continuation does not grant
-those permissions or alter legacy world profiles.
+gate transport still requires its own typed custody transition. The separate
+[terrain continuation](terrain-material-continuation.md) contract records coarse/detail partitioning;
+joining that interpretation with liquid ownership and excavation source/effort remains a complete
+integration responsibility. Liquid V3 dependencies retain their selected Production V3/V4/V5 profiles;
+they do not silently accept V6 terrain operations. Component continuation does not grant those
+permissions or alter legacy world profiles.

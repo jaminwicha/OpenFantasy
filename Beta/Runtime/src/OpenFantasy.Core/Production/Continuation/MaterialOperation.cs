@@ -6,7 +6,7 @@ using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
-public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6 }
+public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7 }
 
 /// <summary>One ordered material transition; only its specific owner can create an accepted record.</summary>
 public abstract class MaterialOperation
@@ -64,4 +64,12 @@ public sealed class MaterialConstructionOperation : MaterialOperation
     internal MaterialConstructionOperation(ulong sequence, ConstructionCompletionEvidence evidence)
         : base(sequence, evidence.Command.CommandId, MaterialOperationKind.Construction) => Evidence = evidence;
     public ConstructionCompletionEvidence Evidence { get; }
+}
+
+/// <summary>One actual qualified change between coarse and detailed terrain custody.</summary>
+public sealed class MaterialTerrainRepresentationOperation : MaterialOperation
+{
+    internal MaterialTerrainRepresentationOperation(ulong sequence, OpenFantasy.Core.Geography.TerrainRepresentationEvidence evidence)
+        : base(sequence, evidence.CauseId, MaterialOperationKind.TerrainRepresentation) => Evidence = evidence;
+    public OpenFantasy.Core.Geography.TerrainRepresentationEvidence Evidence { get; }
 }

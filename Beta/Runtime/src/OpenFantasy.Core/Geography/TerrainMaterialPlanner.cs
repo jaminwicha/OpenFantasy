@@ -12,6 +12,13 @@ public sealed class TerrainMaterialPlanner
         IEnumerable<CellCoordinate> cells, EntityId causeId, ulong expectedRevision,
         Func<EntityId, bool>? historicallyOccupied = null)
     {
+        CellCoordinate[] selected = SelectRefine(state, window, cells);
+        return new TerrainMaterialPartition(state, selected, causeId, expectedRevision, historicallyOccupied).Build(refining: true);
+    }
+
+    internal static CellCoordinate[] SelectRefine(TerrainMaterialState state, PreparedWatershedTerrain window,
+        IEnumerable<CellCoordinate> cells)
+    {
         ArgumentNullException.ThrowIfNull(state);
         ArgumentNullException.ThrowIfNull(window);
         if (window.Network.ComputeContentHash() != state.Deposit.NetworkHash
@@ -32,11 +39,17 @@ public sealed class TerrainMaterialPlanner
                 throw new InvalidOperationException("The cell is already detailed.");
             }
         }
-        return new TerrainMaterialPartition(state, selected, causeId, expectedRevision, historicallyOccupied).Build(refining: true);
+        return selected;
     }
 
     public TerrainMaterialPlan Demote(TerrainMaterialState state, IEnumerable<CellCoordinate> cells,
         EntityId causeId, ulong expectedRevision, Func<EntityId, bool>? historicallyOccupied = null)
+    {
+        CellCoordinate[] selected = SelectDemote(state, cells);
+        return new TerrainMaterialPartition(state, selected, causeId, expectedRevision, historicallyOccupied).Build(refining: false);
+    }
+
+    internal static CellCoordinate[] SelectDemote(TerrainMaterialState state, IEnumerable<CellCoordinate> cells)
     {
         ArgumentNullException.ThrowIfNull(state);
         CellCoordinate[] selected = ReadCells(cells);
@@ -47,7 +60,7 @@ public sealed class TerrainMaterialPlanner
                 throw new InvalidOperationException("Only an active detail cell can be demoted.");
             }
         }
-        return new TerrainMaterialPartition(state, selected, causeId, expectedRevision, historicallyOccupied).Build(refining: false);
+        return selected;
     }
 
     private static CellCoordinate[] ReadCells(IEnumerable<CellCoordinate> cells)

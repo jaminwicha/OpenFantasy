@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Geography;
 
 namespace OpenFantasy.Core.Production;
 
@@ -14,6 +15,7 @@ public sealed class MaterialOperationHistory
         var values = new List<MaterialOperation>();
         var commands = new HashSet<EntityId>();
         GatheringSnapshot? gathering = context.GatheringBaseline;
+        TerrainRepresentationBoundary? terrain = context.TerrainRepresentation;
         foreach (MaterialOperation operation in operations)
         {
             ArgumentNullException.ThrowIfNull(operation);
@@ -22,12 +24,17 @@ public sealed class MaterialOperationHistory
                 throw new ArgumentException("Material operations require bounded exact order and distinct permanent commands.");
             if (operation is MaterialConstructionOperation && !context.SupportsConstruction)
                 throw new ArgumentException("Construction operations require the explicit V5 capability.");
+            if (operation is MaterialTerrainRepresentationOperation representation)
+                terrain = (terrain ?? throw new ArgumentException("Terrain representation requires its explicit V6 capability."))
+                    .Apply(representation.Evidence);
             if (operation is MaterialGatherOperation gather)
                 gathering = gather.Evidence.Replay(gathering ?? throw new ArgumentException("Gather issuance requires a captured source owner."));
             values.Add(operation);
         }
         Operations = values.AsReadOnly();
         Gathering = gathering;
+        TerrainRepresentation = terrain;
+        TerrainEvidence = Array.AsReadOnly(values.OfType<MaterialTerrainRepresentationOperation>().Select(value => value.Evidence).ToArray());
         if (values.OfType<MaterialConstructionOperation>().Count() > ConstructionSnapshot.MaximumProjects)
             throw new ArgumentException("A segment retains at most one completion per bounded construction project.");
         ConstructionEvidence = Array.AsReadOnly(values.OfType<MaterialConstructionOperation>().Select(value => value.Evidence).ToArray());
@@ -35,6 +42,8 @@ public sealed class MaterialOperationHistory
     }
     public ReadOnlyCollection<MaterialOperation> Operations { get; }
     public GatheringSnapshot? Gathering { get; }
+    public TerrainRepresentationBoundary? TerrainRepresentation { get; }
+    public ReadOnlyCollection<TerrainRepresentationEvidence> TerrainEvidence { get; }
     public ReadOnlyCollection<ConstructionCompletionEvidence> ConstructionEvidence { get; }
     public ReadOnlyCollection<GatherIssueEvidence> GatherEvidence { get; }
     internal MaterialOperationHistory Append(ProductionContinuationContext context, MaterialOperation operation) => new(context, [.. Operations, operation]);

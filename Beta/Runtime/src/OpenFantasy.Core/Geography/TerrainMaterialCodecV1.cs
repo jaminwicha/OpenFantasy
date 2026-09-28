@@ -17,7 +17,7 @@ public static class TerrainMaterialCodecV1
 
     public static byte[] Encode(TerrainMaterialState state) => EncodeState(state, withProduction: false);
 
-    internal static byte[] EncodeState(TerrainMaterialState state, bool withProduction, bool consumption = false)
+    internal static byte[] EncodeState(TerrainMaterialState state, bool withProduction, bool consumption = false, bool continued = false)
     {
         ArgumentNullException.ThrowIfNull(state);
         if (withProduction != (state.Production is not null))
@@ -36,9 +36,9 @@ public static class TerrainMaterialCodecV1
         List<ReadOnlyMemory<byte>> fields = [EncodeDeposit(state.Deposit), AuthorityEncodingV1.Encode(state.Inventory), cells];
         if (withProduction)
         {
-            fields.Add(GeographyProductionCodec.Encode(state.Production, consumption));
+            fields.Add(continued ? ProductionCodecV6.Encode(state.Production!) : GeographyProductionCodec.Encode(state.Production, consumption));
         }
-        byte[] bytes = CanonicalEncodingV1.Frame(consumption ? "geography.terrain-material-state.v3" : withProduction ? "geography.terrain-material-state.v2"
+        byte[] bytes = CanonicalEncodingV1.Frame(continued ? "geography.terrain-material-state.v4" : consumption ? "geography.terrain-material-state.v3" : withProduction ? "geography.terrain-material-state.v2"
             : "geography.terrain-material-state.v1", fields.ToArray());
         if (bytes.Length > (withProduction ? TerrainMaterialCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength))
         {
@@ -50,14 +50,15 @@ public static class TerrainMaterialCodecV1
     public static TerrainMaterialState Decode(ReadOnlySpan<byte> bytes, CancellationToken cancellationToken = default) =>
         DecodeState(bytes, withProduction: false, cancellationToken);
 
-    internal static TerrainMaterialState DecodeState(ReadOnlySpan<byte> bytes, bool withProduction, CancellationToken cancellationToken, bool consumption = false)
+    internal static TerrainMaterialState DecodeState(ReadOnlySpan<byte> bytes, bool withProduction, CancellationToken cancellationToken, bool consumption = false,
+        TerrainProductionDependencies? dependencies = null)
     {
         cancellationToken.ThrowIfCancellationRequested();
         try
         {
             var reader = new CanonicalTerrainReader(bytes,
                 withProduction ? TerrainMaterialCodecV2.MaximumEncodedByteLength : MaximumEncodedByteLength,
-                withProduction ? 5U : 4U, consumption ? "geography.terrain-material-state.v3"u8 : withProduction ? "geography.terrain-material-state.v2"u8 : "geography.terrain-material-state.v1"u8);
+                withProduction ? 5U : 4U, dependencies is not null ? "geography.terrain-material-state.v4"u8 : consumption ? "geography.terrain-material-state.v3"u8 : withProduction ? "geography.terrain-material-state.v2"u8 : "geography.terrain-material-state.v1"u8);
             TerrainMaterialDeposit deposit = DecodeDeposit(reader.ReadField(MaximumDepositByteLength), cancellationToken);
             CountedAuthorityState inventory = AuthorityEncodingV1.Decode(reader.ReadField(AuthorityEncodingV1.MaximumStateByteLength));
             ReadOnlySpan<byte> cells = reader.ReadField(TerrainMaterialState.MaximumActiveCells * CellByteLength);
@@ -78,12 +79,17 @@ public static class TerrainMaterialCodecV1
                 }
                 active.Add(cell);
             }
-            ProductionSnapshot? production = withProduction
-                ? GeographyProductionCodec.Decode(reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength), consumption) : null;
+            ProductionSnapshot? production = null;
+            if (withProduction)
+            {
+                var productionBytes = reader.ReadField(ProductionCodecV1.MaximumSnapshotByteLength);
+                production = dependencies is not null ? dependencies.Decode(productionBytes)
+                    : GeographyProductionCodec.Decode(productionBytes, consumption);
+            }
             reader.Complete();
             var evidence = production is null ? null : new TerrainMaterialProduction(production, inventory);
             var state = new TerrainMaterialState(deposit, inventory, active, evidence);
-            if (!EncodeState(state, withProduction, consumption).AsSpan().SequenceEqual(bytes))
+            if (!EncodeState(state, withProduction, consumption, dependencies is not null).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The material archive is noncanonical.");
             }

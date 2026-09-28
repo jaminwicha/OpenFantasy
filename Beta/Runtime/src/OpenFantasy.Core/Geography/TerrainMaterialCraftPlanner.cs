@@ -17,6 +17,10 @@ public sealed class TerrainMaterialCraftPlanner
         ArgumentNullException.ThrowIfNull(request);
         ProductionSnapshot production = registry.Production
             ?? throw new InvalidOperationException("The registry requires attached production before crafting.");
+        if (production.IsContinued)
+        {
+            ArgumentNullException.ThrowIfNull(historicallyOccupied);
+        }
         TerrainMaterialCraftPlan Reject(WorldActionRejection rejection) => new(registry, registry, rejection, []);
         if (!registry.Inventory.CanControl(delivery, actorId))
         {
@@ -34,7 +38,7 @@ public sealed class TerrainMaterialCraftPlanner
         {
             return Reject(WorldActionRejection.Unavailable);
         }
-        CraftPlan craft = _crafting.Plan(registry.Inventory, production, delivery, actorId, commandId, request);
+        CraftPlan craft = _crafting.Plan(registry.Inventory, production, delivery, actorId, commandId, request, Occupied);
         if (craft.Rejection != WorldActionRejection.None)
         {
             return Reject(craft.Rejection);

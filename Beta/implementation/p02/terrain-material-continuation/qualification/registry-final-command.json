@@ -1,0 +1,21 @@
+{
+  "startedUtc": "2026-09-28T16:38:44.339002+00:00",
+  "kind": "focused",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~TerrainMaterialRegistryTests",
+    "--logger",
+    "trx;LogFileName=registry-final.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/terrain-material-continuation/qualification"
+  ],
+  "environment": {},
+  "exitCode": 0,
+  "elapsedSeconds": 4.618696624878794,
+  "finishedUtc": "2026-09-28T16:38:48.958442+00:00"
+}

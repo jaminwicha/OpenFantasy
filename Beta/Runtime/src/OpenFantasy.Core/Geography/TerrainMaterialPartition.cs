@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Custody;
+using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Geography;
@@ -6,7 +7,11 @@ namespace OpenFantasy.Core.Geography;
 /// <summary>Builds a whole interval partition before publishing any mutation; prefix-transfer commands are not synthetic intermediate commits.</summary>
 internal sealed class TerrainMaterialPartition
 {
-    private readonly TerrainMaterialState _state;
+    private readonly TerrainMaterialState? _state;
+    private readonly CountedAuthorityState _inventory;
+    private readonly TerrainMaterialDeposit _deposit;
+    private readonly IReadOnlyCollection<CellCoordinate> _activeCells;
+    private readonly List<EntityId> _createdIds = [];
     private readonly CellCoordinate[] _cells;
     private readonly EntityId _causeId;
     private readonly Func<EntityId, bool>? _historicallyOccupied;
@@ -14,12 +19,23 @@ internal sealed class TerrainMaterialPartition
 
     internal TerrainMaterialPartition(TerrainMaterialState state, CellCoordinate[] cells, EntityId causeId,
         ulong expectedRevision, Func<EntityId, bool>? historicallyOccupied)
+        : this(state.Inventory, state.Deposit, state.ActiveCells, cells, causeId, expectedRevision,
+            id => (state.Production?.ContainsIdentity(id) ?? false) || (historicallyOccupied?.Invoke(id) ?? false))
     {
         _state = state;
+    }
+
+    internal TerrainMaterialPartition(CountedAuthorityState inventory, TerrainMaterialDeposit deposit,
+        IReadOnlyCollection<CellCoordinate> activeCells, CellCoordinate[] cells, EntityId causeId,
+        ulong expectedRevision, Func<EntityId, bool>? historicallyOccupied)
+    {
+        _inventory = inventory;
+        _deposit = deposit;
+        _activeCells = activeCells;
         _cells = cells;
         _causeId = causeId;
         _historicallyOccupied = historicallyOccupied;
-        if (expectedRevision != state.Revision)
+        if (expectedRevision != inventory.Custody.Revision)
         {
             throw new InvalidOperationException("The material revision is stale.");
         }
@@ -27,18 +43,28 @@ internal sealed class TerrainMaterialPartition
         {
             throw new InvalidOperationException("The accepted cause identity is already occupied.");
         }
-        _revision = checked(state.Revision + 1);
+        _revision = checked(inventory.Custody.Revision + 1);
     }
 
     internal TerrainMaterialPlan Build(bool refining)
     {
-        TerrainMaterialDeposit deposit = _state.Deposit;
+        var state = _state ?? throw new InvalidOperationException("A standalone plan requires its actual material owner.");
+        if (state.Production?.IsContinued == true)
+            throw new ArgumentException("Continued representation changes require the complete registry operation.");
+        TerrainMaterialPartitionResult result = BuildRaw(refining);
+        var production = state.Production is null ? null : new TerrainMaterialProduction(state.Production, result.Inventory);
+        return new(state, new(state.Deposit, result.Inventory, result.ActiveCells, production));
+    }
+
+    internal TerrainMaterialPartitionResult BuildRaw(bool refining)
+    {
+        TerrainMaterialDeposit deposit = _deposit;
         EntityId from = refining ? deposit.CoarseCustodianId : deposit.FineCustodianId;
         EntityId to = refining ? deposit.FineCustodianId : deposit.CoarseCustodianId;
         SourceInterval[] intervals = _cells.Select(deposit.IntervalFor).ToArray();
         ulong[] moved = new ulong[intervals.Length];
         List<Part> parts = [];
-        foreach (CountedSourceLot lot in _state.Inventory.Custody.Lots)
+        foreach (CountedSourceLot lot in _inventory.Custody.Lots)
         {
             if (lot.CustodianId != from || lot.Source.SourceId != deposit.Source.SourceId)
             {
@@ -56,15 +82,13 @@ internal sealed class TerrainMaterialPartition
             parts = CoalesceCoarse(parts);
         }
         CountedSourceLot[] lots = Materialize(parts);
-        CustodianStorage[] storages = _state.Inventory.Custody.Storages.Select(storage =>
+        CustodianStorage[] storages = _inventory.Custody.Storages.Select(storage =>
             storage.CustodianId == from || storage.CustodianId == to
                 ? storage with { Revision = checked(storage.Revision + 1) } : storage).ToArray();
-        var custody = new CustodySnapshot(_state.Inventory.WorldId, _state.Inventory.BranchId, _revision, storages, lots);
-        IEnumerable<CellCoordinate> active = refining ? _state.ActiveCells.Concat(_cells) : _state.ActiveCells.Except(_cells);
-        var inventory = _state.Inventory.WithCustody(custody);
-        var production = _state.Production is null ? null : new TerrainMaterialProduction(_state.Production, inventory);
-        var candidate = new TerrainMaterialState(deposit, inventory, active, production);
-        return new(_state, candidate);
+        var custody = new CustodySnapshot(_inventory.WorldId, _inventory.BranchId, _revision, storages, lots);
+        IEnumerable<CellCoordinate> active = refining ? _activeCells.Concat(_cells) : _activeCells.Except(_cells);
+        var inventory = _inventory.WithCustody(custody);
+        return new(inventory, active.Order().ToArray(), _createdIds.ToArray());
     }
 
     private static void SplitLot(CountedSourceLot lot, SourceInterval[] intervals, EntityId destination,
@@ -123,7 +147,7 @@ internal sealed class TerrainMaterialPartition
 
     private bool CanCoalesce(Part first, Part second)
     {
-        TerrainMaterialDeposit deposit = _state.Deposit;
+        TerrainMaterialDeposit deposit = _deposit;
         return first.CustodianId == deposit.CoarseCustodianId && second.CustodianId == first.CustodianId
             && first.Source.SourceId == deposit.Source.SourceId && second.Source.SourceId == first.Source.SourceId
             && first.Source.End == second.Source.Start && first.Source.Start >= deposit.Source.Start && second.Source.End <= deposit.Source.End
@@ -153,17 +177,21 @@ internal sealed class TerrainMaterialPartition
             {
                 throw new InvalidOperationException("A material lot identity collides with a current or historical role.");
             }
+            _createdIds.Add(identity);
             lots.Add(new(identity, part.CustodianId, part.Original.Definition, part.Source, _revision,
                 part.Original.Protection, part.Original.ReservedBy));
         }
         return lots.ToArray();
     }
 
-    private bool IsOccupied(EntityId identity) => _state.Inventory.ContainsIdentity(identity)
-        || (_state.Production?.ContainsIdentity(identity) ?? false) || _state.Deposit.ReservesIdentity(identity) || (_historicallyOccupied?.Invoke(identity) ?? false);
+    private bool IsOccupied(EntityId identity) => _inventory.ContainsIdentity(identity)
+        || _deposit.ReservesIdentity(identity) || (_historicallyOccupied?.Invoke(identity) ?? false);
 
     private static IOrderedEnumerable<Part> Ordered(IEnumerable<Part> parts) =>
         parts.OrderBy(p => p.Source.SourceId).ThenBy(p => p.Source.Start).ThenBy(p => p.CustodianId);
 
     private sealed record Part(CountedSourceLot Original, SourceInterval Source, EntityId CustodianId, bool Changed);
 }
+
+internal sealed record TerrainMaterialPartitionResult(CountedAuthorityState Inventory, CellCoordinate[] ActiveCells,
+    EntityId[] CreatedIds);

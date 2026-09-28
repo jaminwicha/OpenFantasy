@@ -40,7 +40,8 @@ public sealed class TerrainMaterialState
     public ReadOnlyCollection<CellCoordinate> ActiveCells { get; }
     public ulong Revision => Inventory.Custody.Revision;
     public ContentHash ContentHash => ContentHash.Compute(ProductionEvidence is null ? TerrainMaterialCodecV1.Encode(this)
-            : Production!.SupportsConsumption ? TerrainMaterialCodecV3.Encode(this) : TerrainMaterialCodecV2.Encode(this));
+            : Production!.IsContinued ? TerrainMaterialCodecV4.Encode(this)
+            : Production.SupportsConsumption ? TerrainMaterialCodecV3.Encode(this) : TerrainMaterialCodecV2.Encode(this));
     public ulong CoarseQuantity { get; }
     public ulong DetailedQuantity { get; }
     public ulong OtherQuantity { get; }
@@ -94,6 +95,7 @@ public sealed class TerrainMaterialState
             throw new ArgumentException("Material geography cannot alias custody identities.");
         }
         ProductionEvidence?.ValidateDeposit(Deposit);
+        Production?.MaterialHistory?.TerrainRepresentation?.ValidateView(Deposit, ActiveCells);
         CustodianAccessPolicy? coarse = Inventory.Policies.SingleOrDefault(p => p.CustodianId == Deposit.CoarseCustodianId);
         CustodianAccessPolicy? fine = Inventory.Policies.SingleOrDefault(p => p.CustodianId == Deposit.FineCustodianId);
         if (coarse is null || fine is null || coarse.OwnerActorId != fine.OwnerActorId)
