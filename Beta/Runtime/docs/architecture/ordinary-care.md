@@ -163,6 +163,29 @@ existing inline structural history/archive-wrapper formats; profile25 rejects th
 admits the explicit profiles without changing its tables or upgrading lived saves. Complete recovery
 replays the actual commands and checks receipts, identity history, archive rows and head bytes.
 
+### Publication, interruption and acknowledgment
+
+An ordinary use publishes its item retirement, care witness, resource effect, elapsed interval and
+terminal receipt in one complete world commit. Revocation publishes the patient-owned permission
+change and its receipt under the same rule, without a dose or HP effect. A resource cut selected before
+that batch joins the same transaction: the closing root is the exact pre-batch world, and the new use
+belongs to the successor resource segment. The cut itself grants no time, item or restoration.
+
+[SqliteWorldAuthority.Commit](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs) writes all
+rows before committing SQLite and publishes its in-memory state only afterward. These are distinct
+boundaries:
+
+| Interruption boundary | Required recovered state |
+| --- | --- |
+| Before SQLite commit | The complete prior root, without the attempted outcome, identities or archive publication |
+| After SQLite commit but before acknowledgment | The complete successor root and durable outcome, including any co-published archive |
+| Exact authorized receipt lookup after recovery | The same outcome with no second dose, restoration, permission change or elapsed interval |
+
+A caller cannot infer which boundary won merely from a missing response. Recovery verifies the
+accepted journal and associated rows before admitting more work. Replaying an already accepted batch
+as a fresh commit is distinct from looking up its exact command receipt; the old batch cannot advance
+the new root. The [persistence contract](persistence-and-history.md) owns these recovery and retry rules.
+
 [RestorativeJourneyAdmission](../../src/OpenFantasy.Hosting/Content/RestorativeJourneyAdmission.cs)
 composes a fresh source-backed scenario with the original Potion effect, recipe, combat stats and
 quest rewards. It partitions the same two raw source doses between player and Wren, retaining six

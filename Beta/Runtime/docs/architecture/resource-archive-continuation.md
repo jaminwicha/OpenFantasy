@@ -95,3 +95,23 @@ other retained-care/material collection limits, the host journal's development e
 and rule-migration requirements. Those owners need their own admitted continuation contracts.
 Archive bytes need explicit storage accounting and retrieval policy; a bounded current root does
 not imply unlimited disk capacity or qualified production throughput.
+
+## Extension contract: coordinated material and care continuation
+
+Resource, care and material histories describe different facts. Resource batches prove effects;
+ordinary uses and aftermath records prove their named causes; production claims account for the
+actual disposed material. A coordinated continuation must seal a complete admitted boundary and
+reserve the whole next batch before changing any active window. It must retain pending obligations,
+permission revocations, absolute owner revisions and permanent command/result identities, while
+preserving exactly one material disposition and one resource effect for each completed use.
+
+The [material continuation contract](item-consumption.md#canonical-archive-ownership) also protects
+issued source rights, crafted-output partitions and surviving lot lineage. A bounded anchor cannot
+quietly accumulate all predecessor roots or replace that proof with a cumulative count. Full closed
+records remain retrievable and their storage participates in the publication budget.
+
+Changing active-window semantics requires an explicitly admitted interpretation and matching nested
+codecs. Existing profiles retain their capacity refusals as well as their successful outcomes; replay
+cannot reinterpret a historically refused at-capacity command as a newly accepted use. Opening a
+lived save is not authorization to migrate it. Resource-only continuation preserves the existing
+care/material histories under their current interpretation.

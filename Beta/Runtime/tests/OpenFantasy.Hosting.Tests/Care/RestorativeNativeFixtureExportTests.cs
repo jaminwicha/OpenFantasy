@@ -98,7 +98,7 @@ public sealed class RestorativeNativeFixtureExportTests
         Assert.Equal(before.ContentHash, authority.ReadStateForHost().ContentHash);
     }
 
-    private static WorldSnapshot CraftPlayerDose(OrdinaryCareWorldFixture fixture, CareWorldSession session,
+    internal static WorldSnapshot CraftPlayerDose(OrdinaryCareWorldFixture fixture, CareWorldSession session,
         SqliteWorldAuthority authority)
     {
         var state = session.ReadStateForHost();

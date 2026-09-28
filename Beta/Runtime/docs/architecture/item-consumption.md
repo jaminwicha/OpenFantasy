@@ -167,6 +167,19 @@ admitted continuation protocol preserving issued rights, retirement provenance, 
 and the exactly-once effects of composed actions. No such extension follows from encoding a component,
 increasing a count limit or archiving a resource segment.
 
+Continuation must preserve the coupled conservation proof, not only the consumption count. Consumed
+produced intervals close their originating batches' output partitions; subsequent recipes can also
+retain claims on those outputs. The separate 256-batch production bound therefore cannot be solved by
+rotating consumed-item records alone. Installed construction, excavation issuance and composed
+terrain/runoff owners refer to the same provenance. Each affected owner must recognize one explicit
+continuation interpretation before any of those records can leave its active state.
+
+A compact material basis must distinguish issued raw rights, live raw/produced claims and irreversible
+retirement. It must preserve definition pins, surviving-lot lineage and exact output allocation while
+retaining retrievable full historical provenance outside the active window. Counts, an archive hash
+or an unverified supplied basis cannot establish those facts. Such a basis is an extension contract;
+production V2 instead validates its complete retained batches and consumed claims directly.
+
 The [restorative supply tests](../../tests/OpenFantasy.Hosting.Tests/Production/RestorativeSupplyTests.cs)
 bind the retained Potion payload and three-berries-to-one-Potion recipe to a separately authored
 physical calibration. They exercise raw and crafted consumption, archive restoration, another craft
