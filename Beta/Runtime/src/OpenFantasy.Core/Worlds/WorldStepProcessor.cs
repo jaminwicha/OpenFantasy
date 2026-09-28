@@ -33,7 +33,27 @@ public sealed class WorldStepProcessor
     private readonly LiquidCellPlanner _liquidFlow = new();
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
+        Func<EntityId, bool>? historicallyOccupied = null) =>
+        DecideSelected(state, batch, historicallyOccupied, observeMaterial: false);
+
+    /// <summary>
+    /// Prepares the same transition as <see cref="Decide"/> and additionally returns one bounded
+    /// observation per accepted material or work action. This first binding interprets only the
+    /// complete profile 26 world and refuses material intents it cannot observe. The observations
+    /// are structural and unauthenticated; they are neither persisted nor a material grant.
+    /// </summary>
+    public WorldStepDecision DecideWithMaterialEvidence(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null)
+    {
+        ArgumentNullException.ThrowIfNull(state);
+        ArgumentNullException.ThrowIfNull(batch);
+        WorldMaterialEvidenceCoverage.RequireProfile(state);
+        WorldMaterialEvidenceCoverage.RequireCovered(batch);
+        return DecideSelected(state, batch, historicallyOccupied, observeMaterial: true);
+    }
+
+    private WorldStepDecision DecideSelected(WorldSnapshot state, WorldStepBatch batch,
+        Func<EntityId, bool>? historicallyOccupied, bool observeMaterial)
     {
         ArgumentNullException.ThrowIfNull(state);
         ArgumentNullException.ThrowIfNull(batch);
@@ -49,16 +69,21 @@ public sealed class WorldStepProcessor
         var prepared = WorldResourceContinuation.Prepare(state, batch);
         if (prepared.Sealed is not null && historicallyOccupied is null)
             throw new InvalidOperationException("Resource archival continuation requires the complete historical identity lookup.");
-        var decision = DecidePrepared(prepared.State, batch, historicallyOccupied);
+        // Observations bind the prepared root that is actually interpreted. When preparation sealed
+        // an archive segment that root differs from the selected input, whose hash is kept beside it.
+        var materialEvidence = observeMaterial ? new WorldMaterialEvidenceCollector(state, prepared.State) : null;
+        var decision = DecidePrepared(prepared.State, batch, historicallyOccupied, materialEvidence);
         return prepared.Sealed is null ? decision
-            : new WorldStepDecision(decision.Candidate, decision.Receipts, decision.Identities, prepared.Sealed);
+            : new WorldStepDecision(decision.Candidate, decision.Receipts, decision.Identities, prepared.Sealed,
+                decision.MaterialEvidence);
     }
 
-    private WorldStepDecision DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied)
+    private WorldStepDecision DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied,
+        WorldMaterialEvidenceCollector? materialEvidence)
     {
         if (batch.Kind == WorldBatchKind.Care)
         {
-            return WorldCareProcessor.Decide(state, batch, historicallyOccupied);
+            return WorldCareProcessor.Decide(state, batch, historicallyOccupied, materialEvidence);
         }
         if (state.Care?.Pending is not null)
         {
@@ -93,12 +118,12 @@ public sealed class WorldStepProcessor
             return WorldConsequenceProcessor.Continue(this, state, batch, historicallyOccupied);
         }
         return WorldConsequenceProcessor.TryBegin(state, batch, historicallyOccupied)
-            ?? DecideImmediate(state, batch, historicallyOccupied);
+            ?? DecideImmediate(state, batch, historicallyOccupied, materialEvidence: materialEvidence);
     }
 
     internal WorldStepDecision DecideImmediate(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied, ConstructionSettlementResolution? completedSettlement = null,
-        WorldActionCommand? acceptedCommand = null)
+        WorldActionCommand? acceptedCommand = null, WorldMaterialEvidenceCollector? materialEvidence = null)
     {
         ulong sequence = checked(state.Revision + 1);
         HashSet<EntityId> reserved = [];
@@ -403,6 +428,16 @@ public sealed class WorldStepProcessor
                 transport = reconciledTransport;
                 liquidCells = reconciledLiquidCells;
             }
+            if (materialEvidence is not null && resolution.Rejection == WorldActionRejection.None)
+            {
+                // Observed after complete admission and before any end-of-step process; a refusal
+                // or rollback above already restored the running candidates and reports nothing.
+                materialEvidence.Capture(actionIndex, action,
+                    new(inventory, previousProduction, previousGathering, previousExcavation, previousConstruction,
+                        previousSpace, previousQuests, previousProgression, previousCare, previousReservoirs, previousLiquidCells),
+                    new(resolution.Inventory, production, gathering, excavation, construction, space, quests,
+                        progression, care, reservoirs, liquidCells), resolution.SpawnedId, createdIds);
+            }
             if (performedWork)
             {
                 worked.Add(action.ActorId);
@@ -493,7 +528,7 @@ public sealed class WorldStepProcessor
             // A reused movement candidate already passed this exact encoding boundary.
             _ = WorldSnapshotCodec.Encode(candidate);
         }
-        return new WorldStepDecision(candidate, receipts, identities);
+        return new WorldStepDecision(candidate, receipts, identities, materialEvidence: materialEvidence?.Snapshot());
     }
 
     private static bool TryReconcilePhysical(ConstructionPhysicalSnapshot? physical, ConstructionSnapshot? construction, LocalSpatialSnapshot space,

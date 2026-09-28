@@ -1,0 +1,31 @@
+{
+  "requestedModel": "fable[1m]",
+  "effort": "max",
+  "limitSeconds": 1500,
+  "clientEstimateCapUsd": 8,
+  "actualModels": {
+    "claude-fable-5-1": {
+      "inputTokens": 28,
+      "outputTokens": 77829,
+      "cacheReadInputTokens": 1061382,
+      "cacheCreationInputTokens": 175427,
+      "webSearchRequests": 0,
+      "costUSD": 7.665615500000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 51124,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "elapsedSeconds": 795.295,
+  "reportedListCostUsd": 7.665615500000001,
+  "permissionDenials": [],
+  "contextPreflight": "verified",
+  "contextPostflight": "verified",
+  "outcome": "Source and six test cases delivered unbuilt; Astra integrates, adds actual work and Host tests, and verifies.",
+  "automaticRetry": false,
+  "subscriptionCreditSavingsProven": false,
+  "rawOutputPrivate": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-live-material-_u3_902x/run"
+}

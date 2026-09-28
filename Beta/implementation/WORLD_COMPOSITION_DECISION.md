@@ -21,7 +21,11 @@ and durable archive integration. The [timeless reference](../Runtime/docs/archit
 describes its actual contracts. The [interface packet](p02/restorative-interface/README.md) records
 bounded native self-use and helper-owned aid. The
 [care-frontier packet](p02/world-material-care-continuation/README.md) records the standalone Care V3
-dependency and actual finite-supply/combat preparation. Coordinated complete-world care/material
+dependency and actual finite-supply/combat preparation. The
+[live material packet](p02/live-material-evidence/README.md) adds optional observations inside the actual
+complete-world transaction and verified Host retrieval from recorded commands. It joins gathering,
+wet excavation, construction, quest funding, transfers, crafting and care under one observation seam;
+it creates no imported rights and does not enable a continued material world. Coordinated complete-world care/material
 continuation, combat-item use, medical activities and passive processes remain required work;
 these bounded integrations do not close the broader decision.
 

@@ -333,6 +333,35 @@ public sealed class SqliteWorldAuthority : IDisposable
         }
     }
 
+    /// <summary>
+    /// Reconstructs one recorded batch's accepted material observations after complete journal,
+    /// archive, receipt, identity and head verification. Privileged synchronous operator work under
+    /// the writer lock; it does not publish state or provide a player-visible inspection projection.
+    /// </summary>
+    public RecordedWorldMaterialEvidence ReadMaterialEvidenceForHost(ulong sequence)
+    {
+        lock (_gate)
+        {
+            EnsureAvailable();
+            if (_state.ProfileVersion != 26)
+                throw new InvalidOperationException("Live material observation requires the ordinary-care world interpretation.");
+            if (sequence == 0 || sequence > _state.Revision)
+                throw new ArgumentOutOfRangeException(nameof(sequence), "Material observation requires an existing non-genesis commit.");
+            try
+            {
+                var recorded = new WorldJournalRecovery().ReadMaterialEvidence(_database, sequence);
+                if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
+                    throw new InvalidDataException("Material observation does not match the pinned live head.");
+                return recorded;
+            }
+            catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
+            {
+                _requiresRecovery = true;
+                throw;
+            }
+        }
+    }
+
     private void EnsureAvailable()
     {
         ObjectDisposedException.ThrowIf(_disposed, this);

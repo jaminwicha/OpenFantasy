@@ -1,0 +1,251 @@
+{
+  "scope": "Optional profile26 live material/work observations and Host reconstruction from a completely verified journal. No new world/production/storage format or coordinated material continuation.",
+  "verifiedUtc": "2026-09-28T20:14:37.463061+00:00",
+  "build": {
+    "startedUtc": "2026-09-28T19:30:49.705618+00:00",
+    "kind": "build",
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "build",
+      "Beta/Runtime/OpenFantasy.sln",
+      "--no-restore",
+      "-m:1",
+      "-p:UseSharedCompilation=false",
+      "--verbosity",
+      "quiet"
+    ],
+    "environment": {},
+    "exitCode": 0,
+    "elapsedSeconds": 7.433448290918022,
+    "finishedUtc": "2026-09-28T19:30:57.139752+00:00"
+  },
+  "reports": {
+    "integration-02": {
+      "counters": {
+        "total": 21,
+        "executed": 21,
+        "passed": 21,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T19:31:16.056156+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--filter",
+          "FullyQualifiedName~LiveMaterial|FullyQualifiedName~RecordedMaterial",
+          "--logger",
+          "trx;LogFileName=integration-02.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/care-legacy-integration-02",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/earned-supply-integration-02",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-integration-02/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-integration-02/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-integration-02/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-integration-02/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-integration-02/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-integration-02/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 182.92145812464878,
+        "finishedUtc": "2026-09-28T19:34:18.980167+00:00"
+      }
+    },
+    "core-final": {
+      "counters": {
+        "total": 1577,
+        "executed": 1577,
+        "passed": 1577,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T19:35:09.388049+00:00",
+        "kind": "core",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=core-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/earned-supply-core-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-core-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-core-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-core-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-core-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-core-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-core-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 417.15351924998686,
+        "finishedUtc": "2026-09-28T19:42:06.547647+00:00"
+      }
+    },
+    "hosting-final": {
+      "counters": {
+        "total": 850,
+        "executed": 850,
+        "passed": 850,
+        "failed": 0,
+        "error": 0,
+        "timeout": 0,
+        "aborted": 0,
+        "inconclusive": 0,
+        "passedButRunAborted": 0,
+        "notRunnable": 0,
+        "notExecuted": 0,
+        "disconnected": 0,
+        "warning": 0,
+        "completed": 0,
+        "inProgress": 0,
+        "pending": 0
+      },
+      "execution": {
+        "startedUtc": "2026-09-28T19:42:23.923324+00:00",
+        "kind": "hosting",
+        "command": [
+          "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+          "test",
+          "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+          "--no-build",
+          "--no-restore",
+          "--logger",
+          "trx;LogFileName=hosting-final.trx",
+          "--results-directory",
+          "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification"
+        ],
+        "environment": {
+          "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/care-legacy-hosting-final",
+          "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/earned-supply-hosting-final",
+          "OPENFANTASY_EXCAVATION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-hosting-final/excavation",
+          "OPENFANTASY_TRANSPORT_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-hosting-final/transport",
+          "OPENFANTASY_TERRAIN_MATERIAL_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-hosting-final/terrain",
+          "OPENFANTASY_MATERIAL_REGISTRY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-hosting-final/registry",
+          "OPENFANTASY_MATERIAL_PRODUCTION_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-hosting-final/production",
+          "OPENFANTASY_CONSUMPTION_GEOGRAPHY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-material-evidence/qualification/legacy-hosting-final/consumption"
+        },
+        "exitCode": 0,
+        "elapsedSeconds": 1926.012799959164,
+        "finishedUtc": "2026-09-28T20:14:29.995522+00:00"
+      }
+    }
+  },
+  "distinctManagedCases": 2427,
+  "newIntegrationCases": 21,
+  "compatibilityFrames": [
+    {
+      "file": "aftermath-complete.bin",
+      "bytes": 1821,
+      "sha256": "ad896aa6a5b75daf7e176a86f814405e8ec8137960725db3a2bd02179325a014",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-before/aftermath-complete.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final/aftermath-complete.bin"
+    },
+    {
+      "file": "aftermath-empty.bin",
+      "bytes": 523,
+      "sha256": "48366460b032007d5bdb0fed7c09e1fb5fe3a970734adeb5656bd39cfc0145ca",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-before/aftermath-empty.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final/aftermath-empty.bin"
+    },
+    {
+      "file": "aftermath-full.bin",
+      "bytes": 428811,
+      "sha256": "82f05003b0873a3b27740cff2eedcb2d45c5ffd150313eb5742d728a2e4fe4be",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-before/aftermath-full.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final/aftermath-full.bin"
+    },
+    {
+      "file": "aftermath-pending.bin",
+      "bytes": 971,
+      "sha256": "d219dbc035a33443d76659b441f707020f9bf9e2cbb505404f3b1716ff48e89d",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-before/aftermath-pending.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final/aftermath-pending.bin"
+    },
+    {
+      "file": "ordinary-empty.bin",
+      "bytes": 1436,
+      "sha256": "9cff0a1d0e415851e069bbd2836bd81781ab40bc6917704bbf8fb6eb56131e8f",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-before/ordinary-empty.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final/ordinary-empty.bin"
+    },
+    {
+      "file": "ordinary-full.bin",
+      "bytes": 90524,
+      "sha256": "ca1a65d65ca92535c0d093a88cbc2fb46388fcd137799f99bb90a97d67f46d45",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-before/ordinary-full.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final/ordinary-full.bin"
+    },
+    {
+      "file": "ordinary-mixed-revoked.bin",
+      "bytes": 2582,
+      "sha256": "376b7b56af6571c3a06b6a0838c68cd076efd0fda5c5711b8859d6084af2f4c5",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/care-legacy-before/ordinary-mixed-revoked.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-core-final/ordinary-mixed-revoked.bin"
+    },
+    {
+      "file": "world-25.bin",
+      "bytes": 55323,
+      "sha256": "1844f97105a8144c3076c8edf7dbe1d12917dfc6e90410511385ad1d33001634",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/world-legacy-before/world-25.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-hosting-final/world-25.bin"
+    },
+    {
+      "file": "world-26.bin",
+      "bytes": 56654,
+      "sha256": "9c897e368ad8f0bf3d2e524104401ae997ac3b93c65e013442f5e5d43b20548c",
+      "retainedBaseline": "Beta/implementation/p02/world-material-care-continuation/qualification/world-legacy-before/world-26.bin",
+      "current": "Beta/implementation/p02/live-material-evidence/qualification/care-legacy-hosting-final/world-26.bin"
+    }
+  ],
+  "compatibilityBytes": 638645,
+  "preservedMilestones": 0,
+  "preservedFrozenSpecs": 23,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "architecture": {
+    "pages": 5,
+    "resolvingLocalFileLinks": 97
+  },
+  "sourceAndExecutionMatchBuild": "build-04",
+  "limitations": [
+    "No coordinated world27/ProductionV9/schema8 continuation enabled.",
+    "No new production throughput, native UI/device or human acceptance claim.",
+    "Public read-failure recovery flag reviewed in source; direct corruption tests exercise the replay reader."
+  ]
+}

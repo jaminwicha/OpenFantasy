@@ -206,3 +206,9 @@ qualified transitions; newer rules do not silently reinterpret older worlds.
 Compacted evidence retains accessible causal archives, exact interval ownership and branch provenance.
 A summary hash by itself cannot answer historical queries or authenticate the discarded events.
 Rollover must remain replayable and must reject spending or exporting the same retained interval again.
+
+[Live material observations](live-material-evidence.md) expose accepted work and material effects from
+the same sequential world transaction. Their named owner pins distinguish intermediate action state
+from later passive processes, and whole-candidate refusal leaves no observation. Verified Host retrieval
+reconstructs one recorded batch while checking the complete journal through its source head. This
+observation seam retains no alternate mutable state and does not grant source rights or archive closure.

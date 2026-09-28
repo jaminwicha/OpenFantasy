@@ -12,14 +12,16 @@ internal sealed class WorldCommitPreparation
     private readonly WorldStepProcessor _processor = new();
 
     internal PreparedWorldCommit Prepare(WorldSnapshot state, WorldIdentityIndex genesisIdentities,
-        ContentHash beforeHash, WorldStepBatch batch, Func<EntityId, bool> historicallyOccupied)
+        ContentHash beforeHash, WorldStepBatch batch, Func<EntityId, bool> historicallyOccupied, bool captureMaterialEvidence = false)
     {
         ValidateDispatch(state, batch);
         WorldStepDecision decision;
         try
         {
-            decision = _processor.Decide(state, batch,
-                identity => genesisIdentities.ContainsEntity(identity) || historicallyOccupied(identity));
+            bool Occupied(EntityId identity) => genesisIdentities.ContainsEntity(identity) || historicallyOccupied(identity);
+            decision = captureMaterialEvidence
+                ? _processor.DecideWithMaterialEvidence(state, batch, Occupied)
+                : _processor.Decide(state, batch, Occupied);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
         {

@@ -1,0 +1,11 @@
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/LiveMaterialWorkTests.cs(37,44): error CS1061: 'GatheringSnapshot' does not contain a definition for 'SpendEffort' and no accessible extension method 'SpendEffort' accepting a first argument of type 'GatheringSnapshot' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/LiveMaterialWorkTests.cs(64,100): error CS0246: The type or namespace name 'CellCoordinate' could not be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/LiveMaterialWorkTests.cs(37,44): error CS1061: 'GatheringSnapshot' does not contain a definition for 'SpendEffort' and no accessible extension method 'SpendEffort' accepting a first argument of type 'GatheringSnapshot' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/LiveMaterialWorkTests.cs(64,100): error CS0246: The type or namespace name 'CellCoordinate' could not be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:33.46

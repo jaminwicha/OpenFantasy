@@ -53,6 +53,7 @@ different kind of person.
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
 | [Item consumption](item-consumption.md) | How do candidate material retirement and explicit production archives retain consumed rights without granting treatment or world publication? |
 | [Material continuation basis](material-continuation-basis.md) | How are exact surviving material rights and direct retirement captured without granting issuance, continued spending or archive authenticity? |
+| [Live material transaction evidence](live-material-evidence.md) | How are actual accepted material/work transitions observed and reconstructed from a verified journal without changing authority or save semantics? |
 | [Production continuation](production-continuation.md) | How do explicit continued material windows conserve imported rights and historical identities while remaining separate from complete-world archive publication? |
 | [Construction continuation](construction-continuation.md) | How do earned work, reserved installation and historical construction backing survive material boundaries without repeated work or recreated buildings? |
 | [Presentation and interaction](presentation-and-interaction.md) | How do actions, menus, maps, animation, art and audio express the simulation? |

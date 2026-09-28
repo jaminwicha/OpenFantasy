@@ -129,3 +129,7 @@ codecs. Existing profiles retain their capacity refusals as well as their succes
 cannot reinterpret a historically refused at-capacity command as a newly accepted use. Opening a
 lived save is not authorization to migrate it. Resource-only continuation preserves the existing
 care/material histories under their current interpretation.
+
+The [live material evidence seam](live-material-evidence.md) observes accepted actions in their actual
+complete-world transaction. It separates world publication order from per-action order and retains no
+ancestor root. It does not replace closure, material conservation, retrieved archives or authenticated replay.

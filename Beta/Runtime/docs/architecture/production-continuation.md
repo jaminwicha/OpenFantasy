@@ -197,3 +197,7 @@ command meanings, publish archive/receipt/identity/head changes atomically and r
 retrieved bytes. See [resource archive continuation](resource-archive-continuation.md) and
 [persistence and history](persistence-and-history.md). Those requirements are not discharged by a
 standalone material planner or codec.
+
+The explicit [live material observations](live-material-evidence.md) expose accepted actions from the
+complete ordinary-care world transaction, including wet excavation and partial work. They preserve
+actual sequential candidates and rollback, but are not a continued owner or an imported material grant.

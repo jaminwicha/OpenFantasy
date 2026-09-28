@@ -42,6 +42,46 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Latest increment
 
+[Live material transaction evidence](p02/live-material-evidence/README.md) observes actual accepted
+profile26 actions and reconstructs a selected commit from a fully verified saved journal. Gathering,
+partial/final wet excavation, construction/backing, crafting, transfers, quest delivery, ordinary care
+and aftermath remedies retain exact action order and before/after owner pins. Refusals and rolled-back
+actions produce no material record. Normal decisions keep extra observation hashing disabled.
+The privileged Host reader verifies the entire journal through the current head, including later
+archives, checkpoints, receipts and identities; its result is detached from worlds and storage.
+
+The clean build has zero warnings/errors. **1,577 full Core +850 full Hosting =2,427 distinct managed
+cases** pass with zero skips; the 21 new integration cases are included in that total. All nine retained
+Care/world25/26 frames (638,645 bytes) reproduce exactly. Actual journeys cover wet excavation/flow,
+all 200 construction actions through installed backing, multi-actor ordering, late rollback, resource
+cuts and later-history corruption. [Verification](p02/live-material-evidence/qualification/verification.json)
+pins source/execution and exact reports. Five architecture pages are current with 97 resolving links.
+
+Fable delivered scoped Core implementation and six cases using verified `fable[1m]`, Max, 1M context;
+795.295s/$7.6656155 reported estimate, no denials or retry. Astra integrated, corrected and extended
+coverage and Host support. Independent Core and Host critics found no correctness defect in their
+bounded scopes. Original compile/fixture failures and the empty initial milestone-inventory correction
+remain in the [failure record](p02/live-material-evidence/FAILURES.md). The public read-error recovery
+flag remains source-reviewed; direct corruption tests exercise the replay reader. No subscription
+credit saving, native/device acceptance or production throughput is claimed.
+
+All 71 preceding milestones were reconciled against prior committed evidence and original HEAD;
+23 frozen specs and unrelated predecessor staging remain unchanged. Both pre-change and pre-Host WIP
+checkpoints are recorded in the packet. Verified scope is preserved on
+`codex/milestone-live-material-evidence`; resolve it for the exact commit.
+
+**Next dependency:** complete the coordinated full-world material/care/resource protocol, preserving
+actual profile26's gathering, wet excavation/liquid, construction/backing, quests and encounters.
+These observations do not mint material rights or certify every intermediate world owner. Resource,
+pacing and lifecycle closure still require explicit proof. Care V3 is allocated; world27,
+ProductionV9 and schema8 remain proposed and disabled. Bind actual closing-world revision separately
+from the latest-care watermark. Require real archived bytes, all live writers, multiple cuts with
+hundreds of actual doses and surviving recraft ancestry, pending-work/headroom, rollback, real process
+kills and native post-cut use/reopen. All 181 requirements and full production/platform/multiplayer,
+physical-expansion, content/art/audio and human acceptance gates remain open.
+
+### Preceding care-frontier milestone
+
 [Care history frontier and full-world supply preparation](p02/world-material-care-continuation/README.md)
 implements standalone Care V3: cumulative operation totals, exact pending aid, persistent revoked
 grants and bounded per-patient treatment witnesses, without a parent history chain. Explicit legacy-world

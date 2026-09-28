@@ -10,7 +10,8 @@ namespace OpenFantasy.Core.Worlds;
 /// <summary>Publishes recovery acknowledgment and finite helper care through the complete-world boundary.</summary>
 internal static class WorldCareProcessor
 {
-    internal static WorldStepDecision Decide(WorldSnapshot world, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied)
+    internal static WorldStepDecision Decide(WorldSnapshot world, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied,
+        WorldMaterialEvidenceCollector? materialEvidence = null)
     {
         if (world.Care is null || world.HasReadingHold || world.PendingExcavation is not null)
             throw new InvalidOperationException("Care requires its available complete-world owner.");
@@ -72,10 +73,15 @@ internal static class WorldCareProcessor
         else
         {
             foreach (var identity in created) Reserve(identity, WorldCommittedIdentityKind.SpawnedEntity);
+            // Only the administered dose is material. The admitted, encoded candidate is observed
+            // as prepared above; acknowledgment and every refusal report nothing.
+            if (command.Intent is AdministerRemedyIntent)
+                materialEvidence?.Capture(0, command, WorldMaterialEvidenceOwners.Of(world),
+                    WorldMaterialEvidenceOwners.Of(candidate), null, created);
         }
         var receipt = WorldActionReceipt.Create(command, sequence, rejection);
         Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
-        return new(candidate, [receipt], identities);
+        return new(candidate, [receipt], identities, materialEvidence: materialEvidence?.Snapshot());
     }
 
     private static WorldActionRejection ValidateControl(WorldSnapshot world, WorldActionCommand command)
