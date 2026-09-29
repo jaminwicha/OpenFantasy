@@ -1,0 +1,27 @@
+{
+ "Kind": "native-restorative-v1",
+ "Mode": "reopen",
+ "Status": "passed",
+ "Error": null,
+ "Stage": "opening",
+ "InitialHash": "25D3D5BF641FADFE684F9CF9CD109BDD58F235995C3DA699D21698FA27E43F8A",
+ "FinalHash": "25D3D5BF641FADFE684F9CF9CD109BDD58F235995C3DA699D21698FA27E43F8A",
+ "Checks": [
+  "Separate process preserves exact paused state without replaying selection or health feedback."
+ ],
+ "Inputs": [],
+ "Display": "macOS",
+ "FocusRequests": 0,
+ "Unfocusable": true,
+ "NativeFocused": false,
+ "ObservedNativeFocus": false,
+ "StartupNoFocus": true,
+ "IsLocallyPaused": true,
+ "IsWindowFocused": true,
+ "DurationMilliseconds": 29752,
+ "Limit": "Scripted managed preparation precedes the selected injected native action and paused recovery. This report does not prove its other supported action modes. Physical devices, OS focus, art and production gates remain open.",
+ "ObservationLabels": [
+  "opened",
+  "final"
+ ]
+}

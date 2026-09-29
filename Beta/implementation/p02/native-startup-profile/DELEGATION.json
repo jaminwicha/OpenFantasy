@@ -1,0 +1,14 @@
+{
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 900,
+  "budgetUsd": 9,
+  "status": "timeout",
+  "elapsedSeconds": 900.326,
+  "returnedModel": null,
+  "returnedContext": null,
+  "cost": null,
+  "contextPreflight": "verified",
+  "contextPostflight": "verified",
+  "limitation": "Timed out before final structured model/usage response and WORKER_RESULT completion. Local completed diagnostic reviewed separately; no net-credit-saving claim or paid retry."
+}

@@ -1,0 +1,2326 @@
+{
+ "kind": "native-startup-profile-v1",
+ "status": "diagnostic-complete",
+ "label": "run-01",
+ "startedUtc": "2026-09-29T02:21:31.028127+00:00",
+ "limits": {
+  "buildSeconds": 180,
+  "openingSeconds": 30,
+  "probeSeconds": 150,
+  "processSeconds": 180,
+  "hostSeconds": 90,
+  "aggregateSeconds": 900
+ },
+ "originalRun": {
+  "godotSha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+  "dotnetSha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+  "projectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "reopenDurationMilliseconds": 30179,
+  "reopenProcessSeconds": 34.373,
+  "hostDotnet10Seconds": 20.994
+ },
+ "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3",
+ "commit": 1581,
+ "commitHash": "63c0f4517e92fbc0c0da8e9c5fe4651b0203b87e427c6f602f0469b886e037da",
+ "disposableWork": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01",
+ "hypothesis": null,
+ "commands": [
+  {
+   "label": "build-client",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "client/OpenFantasy.Client.csproj",
+    "-p:RestoreLockedMode=true",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--verbosity",
+    "quiet"
+   ],
+   "cwd": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime",
+   "environmentAdded": {},
+   "boundSeconds": 180,
+   "loadBefore": [
+    14.6513671875,
+    18.95458984375,
+    18.57958984375
+   ],
+   "startedUtc": "2026-09-29T02:21:32.798987+00:00",
+   "exitCode": 0,
+   "wallSeconds": 18.63080924982205,
+   "childUserCpuSeconds": 32.594495,
+   "childSystemCpuSeconds": 2.492486,
+   "childrenMaxRssBytes": 491241472,
+   "loadAfter": [
+    13.783203125,
+    18.47216796875,
+    18.41455078125
+   ],
+   "finishedUtc": "2026-09-29T02:21:51.429913+00:00",
+   "stdoutBytes": 60,
+   "stderrBytes": 0
+  },
+  {
+   "label": "build-host",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "src/OpenFantasy.Host/OpenFantasy.Host.csproj",
+    "-p:RestoreLockedMode=true",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--verbosity",
+    "quiet"
+   ],
+   "cwd": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime",
+   "environmentAdded": {},
+   "boundSeconds": 161.36919075017795,
+   "loadBefore": [
+    13.783203125,
+    18.47216796875,
+    18.41455078125
+   ],
+   "startedUtc": "2026-09-29T02:21:51.433244+00:00",
+   "exitCode": 0,
+   "wallSeconds": 4.580045166891068,
+   "childUserCpuSeconds": 4.196715999999995,
+   "childSystemCpuSeconds": 0.7191969999999999,
+   "childrenMaxRssBytes": 491241472,
+   "loadAfter": [
+    13.39990234375,
+    18.314453125,
+    18.359375
+   ],
+   "finishedUtc": "2026-09-29T02:21:56.013427+00:00",
+   "stdoutBytes": 60,
+   "stderrBytes": 0
+  },
+  {
+   "label": "native-reopen",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "--path",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/client",
+    "--",
+    "--coordinated-restorative-probe",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/coordinated-revoke.sqlite3",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/coordinated-revoke.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc",
+    "reopen",
+    "--background-render"
+   ],
+   "cwd": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01",
+   "environmentAdded": {
+    "OPENFANTASY_NATIVE_STARTUP_REPORT": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/native-costs.json"
+   },
+   "boundSeconds": 180,
+   "loadBefore": [
+    13.39990234375,
+    18.314453125,
+    18.359375
+   ],
+   "startedUtc": "2026-09-29T02:21:56.053708+00:00",
+   "exitCode": 0,
+   "wallSeconds": 34.20707095786929,
+   "childUserCpuSeconds": 27.01319,
+   "childSystemCpuSeconds": 3.8682810000000005,
+   "childrenMaxRssBytes": 491241472,
+   "loadAfter": [
+    11.48876953125,
+    17.37646484375,
+    18.0166015625
+   ],
+   "finishedUtc": "2026-09-29T02:22:30.260923+00:00",
+   "stdoutBytes": 305,
+   "stderrBytes": 0
+  },
+  {
+   "label": "host-inspect",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/host/diagnostic.sqlite3",
+    "1581"
+   ],
+   "cwd": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/host",
+   "environmentAdded": {
+    "OPENFANTASY_NATIVE_STARTUP_REPORT": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/host/host-costs.json"
+   },
+   "boundSeconds": 90,
+   "loadBefore": [
+    11.48876953125,
+    17.37646484375,
+    18.0166015625
+   ],
+   "startedUtc": "2026-09-29T02:22:30.421800+00:00",
+   "exitCode": 0,
+   "wallSeconds": 40.63007254106924,
+   "childUserCpuSeconds": 24.308897,
+   "childSystemCpuSeconds": 1.921488,
+   "childrenMaxRssBytes": 491241472,
+   "loadAfter": [
+    11.7099609375,
+    16.5947265625,
+    17.693359375
+   ],
+   "finishedUtc": "2026-09-29T02:23:11.052018+00:00",
+   "stdoutBytes": 7691,
+   "stderrBytes": 0
+  }
+ ],
+ "limitation": "Instrumented diagnostic in a disposable copy; not deadline, native or production acceptance. Inclusive stages overlap; thread CPU and allocation belong to the measuring thread only.",
+ "pinsBefore": {
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3": {
+   "sha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+   "bytes": 5529600
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-wal": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-shm": {
+   "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+   "bytes": 32768
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.active.json": {
+   "sha256": "9170791fe0446ef11a18b5e9cdbb7b689fc34c20ed4936e1c9854203334e2436",
+   "bytes": 2326409
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.reopen.failed.json": {
+   "sha256": "59985f1a6131365952fb60dd6edaad169bbbca1a50ff34cd141f22b7e4ca078d",
+   "bytes": 1340
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json": {
+   "sha256": "7c11021a30ad3918c36eaf007556cef1a3ba2d98fa771a768cee4f865da8133c",
+   "bytes": 4282
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc": {
+   "sha256": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222",
+   "bytes": 59149
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot": {
+   "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+   "bytes": 549
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": {
+   "sha256": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+   "bytes": 14550
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot": {
+   "sha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+   "bytes": 356853024
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": {
+   "sha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+   "bytes": 141392
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+   "sha256": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+   "bytes": 222208
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": {
+   "sha256": "97ade4d7fe5f73b9201fbfc31bf8891a3e7ff26036d39edf30e8c31606b9443b",
+   "bytes": 920064
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  }
+ },
+ "sourceBefore": {
+  "files": 975,
+  "combinedSha256": "dd2d3548b66151379bc072ab7099bd0d41becd252bd010839da920c4901ec53c"
+ },
+ "instrumentation": [
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "full-replay",
+   "action": "append",
+   "anchor": "private\\ static\\ ReplayedWorld\\ Replay\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 60
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "replay-prepare-entry",
+   "action": "append",
+   "anchor": "private\\ static\\ ExpectedJournalEntry\\ PrepareEntry\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 209
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "verify-command-table",
+   "action": "append",
+   "anchor": "private\\ static\\ void\\ VerifyCommandTable\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 251
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "verify-identity-table",
+   "action": "append",
+   "anchor": "private\\ static\\ void\\ VerifyIdentityTable\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 272
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs",
+   "stage": "commit-preparation",
+   "action": "append",
+   "anchor": "internal\\ PreparedWorldCommit\\ Prepare\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 14
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+   "stage": "authority-open-existing",
+   "action": "append",
+   "anchor": "public\\ static\\ SqliteWorldAuthority\\ OpenExisting\\(string\\ path,\\ ReadOnlySpan<byte>\\ expectedGenesis(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 83
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+   "stage": "inspect-for-host",
+   "action": "append",
+   "anchor": "public\\ WorldInspection\\ InspectForHost\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 309
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+   "stage": "read-state-for-host",
+   "action": "append",
+   "anchor": "internal\\ WorldSnapshot\\ ReadStateForHost\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 190
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs",
+   "stage": "database-open",
+   "action": "append",
+   "anchor": "internal\\ static\\ WorldDatabase\\ Open\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 22
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs",
+   "stage": "genesis-admission",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ genesis(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 10
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs",
+   "stage": "resource-archive-verify",
+   "action": "append",
+   "anchor": "internal\\ void\\ Verify\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 23
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldMaterialCareArchiveReplay.cs",
+   "stage": "material-care-archive-verify",
+   "action": "append",
+   "anchor": "internal\\ void\\ Verify\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 23
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+   "stage": "local-world-session-constructor",
+   "action": "append",
+   "anchor": "internal\\ LocalWorldSession\\(SqliteWorldAuthority\\ authority,\\ EntityId\\ playerActorId,(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 49
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+   "stage": "initial-view-projection",
+   "action": "replace",
+   "anchor": "        _view = ProjectView\\(state\\);\\n        _loop = Task\\.Run\\(RunAsync\\);",
+   "anchorLine": 66
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs",
+   "stage": "world-encode",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(WorldSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 8
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldCanonicalFrame.cs",
+   "stage": "canonical-frame-capture",
+   "action": "append",
+   "anchor": "public\\ static\\ WorldCanonicalFrame\\ Capture\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 26
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+   "stage": "step-decide",
+   "action": "append",
+   "anchor": "private\\ WorldStepDecision\\ DecideSelected\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 55
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+   "stage": "world-root",
+   "action": "append",
+   "anchor": "private\\ WorldSnapshot\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 48
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+   "stage": "world-identities",
+   "action": "append",
+   "anchor": "public\\ static\\ WorldIdentityIndex\\ Validate\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 19
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs",
+   "stage": "resource-causes",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 16
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs",
+   "stage": "care-admission",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 45
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs",
+   "stage": "ordinary-care",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 31
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldCoordinatedAdmission.cs",
+   "stage": "coordinated-admission",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 35
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldSourceIssuanceBaseline.cs",
+   "stage": "source-partition",
+   "action": "append",
+   "anchor": "internal\\ void\\ ValidatePartition\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 108
+  },
+  {
+   "source": "src/OpenFantasy.Core/Production/Continuation/ProductionContinuationValidation.cs",
+   "stage": "production-continuation",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(ProductionSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 9
+  },
+  {
+   "source": "client/scripts/FarmClientSession.cs",
+   "stage": "open-coordinated-fixture",
+   "action": "append",
+   "anchor": "OpenCoordinatedFixtureAsync\\(string savePath, string expectedGenesisPath\\) => Task\\.Run\\(\\(\\) =>\\n    \\{",
+   "anchorLine": 101
+  },
+  {
+   "source": "client/scripts/FarmClientSession.cs",
+   "stage": "client-attach",
+   "action": "append",
+   "anchor": "private\\ static\\ FarmClientSession\\ Attach\\(SqliteWorldAuthority\\ authority,(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 161
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "game-ready",
+   "action": "append",
+   "anchor": "public\\ override\\ void\\ _Ready\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 68
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "process-frame",
+   "action": "append",
+   "anchor": "public\\ override\\ void\\ _Process\\(double\\ delta(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 167
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "opening-task-observed-complete",
+   "action": "append",
+   "anchor": "if \\(_opening is \\{ IsCompleted: true \\}\\)\\n        \\{",
+   "anchorLine": 183
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "first-present-begin",
+   "action": "append",
+   "anchor": "private\\ void\\ Present\\(LocalWorldView\\ view(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 226
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "create-offers",
+   "action": "replace",
+   "anchor": "        _presented = _session\\.CreateOffers\\(view, _targets\\.Selected\\);",
+   "anchorLine": 255
+  },
+  {
+   "source": "client/scripts/Bootstrap.cs",
+   "stage": "bootstrap-ready-begin",
+   "action": "append",
+   "anchor": "public\\ override\\ async\\ void\\ _Ready\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 10
+  }
+ ],
+ "instrumentationSkipped": [],
+ "instrumentedAssemblies": {
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "beea57ae447ce04a2f418843140d6d1fcf6034caafa8e09db793a27a106ee1e5",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "1e28c915355b892df9e5968e62771bce6c35a68f4b91453c86056a5649452ec1",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "442f7e9e58b0dc63b688840e46e4ab5f2fc105728a19009bfd348829a5508304",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "8ffa8e8ef2c89f96970d61b228c57a22b07e11f88d520af043c6f72a5bf3ffc4",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "1e28c915355b892df9e5968e62771bce6c35a68f4b91453c86056a5649452ec1",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "442f7e9e58b0dc63b688840e46e4ab5f2fc105728a19009bfd348829a5508304"
+ },
+ "instrumentedDifferFromProduction": true,
+ "nativeProbe": {
+  "reportWritten": true,
+  "status": "passed",
+  "stage": "opening",
+  "error": null,
+  "durationMilliseconds": 29752,
+  "display": "macOS",
+  "focus": {
+   "FocusRequests": 0,
+   "Unfocusable": true,
+   "NativeFocused": false,
+   "ObservedNativeFocus": false,
+   "StartupNoFocus": true,
+   "IsLocallyPaused": true,
+   "IsWindowFocused": true
+  },
+  "initialHash": "25D3D5BF641FADFE684F9CF9CD109BDD58F235995C3DA699D21698FA27E43F8A",
+  "finalHash": "25D3D5BF641FADFE684F9CF9CD109BDD58F235995C3DA699D21698FA27E43F8A",
+  "originalActiveFinalHash": "25D3D5BF641FADFE684F9CF9CD109BDD58F235995C3DA699D21698FA27E43F8A",
+  "copiedSaveSha256After": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+  "copiedSaveUnchanged": true,
+  "copiedWalBytesAfter": null
+ },
+ "nativeSummary": {
+  "available": true,
+  "lastFlushReason": "periodic",
+  "originUtc": "2026-09-29T02:22:00.0070240Z",
+  "processStartUtc": "2026-09-29T02:21:56.0565710Z",
+  "runtime": {
+   "framework": ".NET 10.0.12",
+   "version": "10.0.12",
+   "runtimeIdentifier": "osx-arm64",
+   "architecture": "Arm64",
+   "os": "macOS 15.6.1",
+   "coreLibrary": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App/10.0.12/System.Private.CoreLib.dll",
+   "processPath": "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+   "processorCount": 8,
+   "serverGc": false,
+   "gcLatency": "Interactive",
+   "debugger": false,
+   "tieredCompilation": "default",
+   "tieredPgo": "default",
+   "environment": {
+    "DOTNET_TieredCompilation": null,
+    "DOTNET_TieredPGO": null,
+    "DOTNET_TC_QuickJitForLoops": null,
+    "DOTNET_ReadyToRun": null,
+    "DOTNET_gcServer": null,
+    "DOTNET_gcConcurrent": null
+   },
+   "assemblies": [
+    {
+     "name": "OpenFantasy.Client",
+     "location": "",
+     "jitOptimizerDisabled": true
+    },
+    {
+     "name": "OpenFantasy.Core",
+     "location": "",
+     "jitOptimizerDisabled": true
+    },
+    {
+     "name": "OpenFantasy.Hosting",
+     "location": "",
+     "jitOptimizerDisabled": true
+    }
+   ]
+  },
+  "final": {
+   "name": "flush",
+   "ms": 30059.471125,
+   "thread": 4,
+   "processCpuMs": 30800.197,
+   "gen0": 1401,
+   "gen1": 435,
+   "gen2": 352,
+   "gcPauseMs": 1616.891,
+   "allocatedBytes": 11347854544,
+   "jitMs": 4423.849,
+   "jitMethods": 15742
+  },
+  "gcHeapBytes": 30910792,
+  "threadClockAvailable": true,
+  "openAtLastFlush": [],
+  "counters": {
+   "process-frame": 3466
+  },
+  "stages": [
+   {
+    "stage": "open-coordinated-fixture",
+    "calls": 1,
+    "wallMs": 28377.9,
+    "threadCpuMs": 19062.2,
+    "maxMs": 28377.93,
+    "allocatedMB": 10769.6,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "authority-open-existing",
+    "calls": 1,
+    "wallMs": 27787.3,
+    "threadCpuMs": 18562.2,
+    "maxMs": 27787.29,
+    "allocatedMB": 10760.4,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "full-replay",
+    "calls": 1,
+    "wallMs": 23788.3,
+    "threadCpuMs": 18459.9,
+    "maxMs": 23788.33,
+    "allocatedMB": 10750.5,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "replay-prepare-entry",
+    "calls": 1581,
+    "wallMs": 23176.3,
+    "threadCpuMs": 17996.7,
+    "maxMs": 386.96,
+    "allocatedMB": 10572.4,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "commit-preparation",
+    "calls": 1581,
+    "wallMs": 23106.2,
+    "threadCpuMs": 17937.4,
+    "maxMs": 386.92,
+    "allocatedMB": 10568.0,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "step-decide",
+    "calls": 1581,
+    "wallMs": 22536.0,
+    "threadCpuMs": 17477.6,
+    "maxMs": 386.01,
+    "allocatedMB": 10114.0,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "world-root",
+    "calls": 2120,
+    "wallMs": 8201.5,
+    "threadCpuMs": 6705.0,
+    "maxMs": 89.03,
+    "allocatedMB": 1208.8,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "world-encode",
+    "calls": 2116,
+    "wallMs": 7185.4,
+    "threadCpuMs": 5341.8,
+    "maxMs": 115.86,
+    "allocatedMB": 6187.5,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "canonical-frame-capture",
+    "calls": 2108,
+    "wallMs": 7126.8,
+    "threadCpuMs": 5316.8,
+    "maxMs": 115.87,
+    "allocatedMB": 6150.9,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "resource-causes",
+    "calls": 2120,
+    "wallMs": 3939.0,
+    "threadCpuMs": 3216.2,
+    "maxMs": 50.28,
+    "allocatedMB": 534.0,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "database-open",
+    "calls": 1,
+    "wallMs": 3934.3,
+    "threadCpuMs": 59.0,
+    "maxMs": 3934.3,
+    "allocatedMB": 0.2,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "world-identities",
+    "calls": 2120,
+    "wallMs": 1534.6,
+    "threadCpuMs": 1273.7,
+    "maxMs": 45.81,
+    "allocatedMB": 311.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "care-admission",
+    "calls": 2120,
+    "wallMs": 934.8,
+    "threadCpuMs": 807.8,
+    "maxMs": 7.27,
+    "allocatedMB": 59.4,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "ordinary-care",
+    "calls": 2120,
+    "wallMs": 910.8,
+    "threadCpuMs": 787.4,
+    "maxMs": 7.25,
+    "allocatedMB": 58.5,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "material-care-archive-verify",
+    "calls": 1581,
+    "wallMs": 263.8,
+    "threadCpuMs": 200.1,
+    "maxMs": 121.74,
+    "allocatedMB": 118.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "coordinated-admission",
+    "calls": 2120,
+    "wallMs": 225.7,
+    "threadCpuMs": 186.7,
+    "maxMs": 4.83,
+    "allocatedMB": 31.2,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "source-partition",
+    "calls": 2120,
+    "wallMs": 155.9,
+    "threadCpuMs": 135.7,
+    "maxMs": 4.2,
+    "allocatedMB": 18.7,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "game-ready",
+    "calls": 1,
+    "wallMs": 120.4,
+    "threadCpuMs": 99.4,
+    "maxMs": 120.39,
+    "allocatedMB": 1.1,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "present",
+    "calls": 125,
+    "wallMs": 113.4,
+    "threadCpuMs": 99.5,
+    "maxMs": 73.82,
+    "allocatedMB": 4.4,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "production-continuation",
+    "calls": 530,
+    "wallMs": 89.5,
+    "threadCpuMs": 66.2,
+    "maxMs": 3.96,
+    "allocatedMB": 42.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "client-attach",
+    "calls": 1,
+    "wallMs": 35.3,
+    "threadCpuMs": 29.9,
+    "maxMs": 35.31,
+    "allocatedMB": 0.6,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "local-world-session-constructor",
+    "calls": 1,
+    "wallMs": 31.1,
+    "threadCpuMs": 26.6,
+    "maxMs": 31.08,
+    "allocatedMB": 0.3,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "verify-identity-table",
+    "calls": 1,
+    "wallMs": 29.0,
+    "threadCpuMs": 26.1,
+    "maxMs": 28.96,
+    "allocatedMB": 9.0,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "verify-command-table",
+    "calls": 1,
+    "wallMs": 26.2,
+    "threadCpuMs": 20.9,
+    "maxMs": 26.22,
+    "allocatedMB": 9.5,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "initial-view-projection",
+    "calls": 1,
+    "wallMs": 25.3,
+    "threadCpuMs": 23.8,
+    "maxMs": 25.27,
+    "allocatedMB": 0.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "create-offers",
+    "calls": 125,
+    "wallMs": 14.9,
+    "threadCpuMs": 15.0,
+    "maxMs": 10.44,
+    "allocatedMB": 0.7,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "inspect-for-host",
+    "calls": 2,
+    "wallMs": 0.5,
+    "threadCpuMs": 0.5,
+    "maxMs": 0.43,
+    "allocatedMB": 0.0,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "genesis-admission",
+    "calls": 2,
+    "wallMs": 0.4,
+    "threadCpuMs": 0.4,
+    "maxMs": 0.37,
+    "allocatedMB": 0.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "resource-archive-verify",
+    "calls": 1581,
+    "wallMs": 0.3,
+    "threadCpuMs": 0.8,
+    "maxMs": 0.01,
+    "allocatedMB": 0.0,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "read-state-for-host",
+    "calls": 29,
+    "wallMs": 0.0,
+    "threadCpuMs": 0.0,
+    "maxMs": 0.0,
+    "allocatedMB": 0.0,
+    "threads": [
+     5,
+     7
+    ]
+   }
+  ],
+  "marks": [
+   {
+    "name": "bootstrap-ready-begin",
+    "ms": 0.691125,
+    "thread": 1,
+    "processCpuMs": 1727.653,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.776,
+    "allocatedBytes": 5619104,
+    "jitMs": 129.6755,
+    "jitMethods": 355
+   },
+   {
+    "name": "game-ready:begin",
+    "ms": 141.953291,
+    "thread": 1,
+    "processCpuMs": 1826.677,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.776,
+    "allocatedBytes": 7090608,
+    "jitMs": 197.0652,
+    "jitMethods": 953
+   },
+   {
+    "name": "game-ready:end",
+    "ms": 264.114416,
+    "thread": 1,
+    "processCpuMs": 1929.29,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.776,
+    "allocatedBytes": 8332496,
+    "jitMs": 249.6616,
+    "jitMethods": 1390
+   },
+   {
+    "name": "open-coordinated-fixture:begin",
+    "ms": 267.397541,
+    "thread": 5,
+    "processCpuMs": 1933.271,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.776,
+    "allocatedBytes": 8357096,
+    "jitMs": 253.5387,
+    "jitMethods": 1415
+   },
+   {
+    "name": "first-process-frame",
+    "ms": 301.188833,
+    "thread": 1,
+    "processCpuMs": 1989.695,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.776,
+    "allocatedBytes": 8644504,
+    "jitMs": 293.3561,
+    "jitMethods": 1642
+   },
+   {
+    "name": "authority-open-existing:begin",
+    "ms": 818.094666,
+    "thread": 5,
+    "processCpuMs": 2542.29,
+    "gen0": 2,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 8.373,
+    "allocatedBytes": 17354912,
+    "jitMs": 748.333,
+    "jitMethods": 5132
+   },
+   {
+    "name": "full-replay:begin",
+    "ms": 4815.4045,
+    "thread": 5,
+    "processCpuMs": 3407.946,
+    "gen0": 4,
+    "gen1": 3,
+    "gen2": 2,
+    "gcPauseMs": 17.459,
+    "allocatedBytes": 27675216,
+    "jitMs": 1147.9778,
+    "jitMethods": 5902
+   },
+   {
+    "name": "full-replay:end",
+    "ms": 28604.973291,
+    "thread": 5,
+    "processCpuMs": 29624.923,
+    "gen0": 1397,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.011,
+    "allocatedBytes": 11309454048,
+    "jitMs": 3712.6555,
+    "jitMethods": 12137
+   },
+   {
+    "name": "authority-open-existing:end",
+    "ms": 28607.461291,
+    "thread": 5,
+    "processCpuMs": 29627.39,
+    "gen0": 1397,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.011,
+    "allocatedBytes": 11310293112,
+    "jitMs": 3712.9973,
+    "jitMethods": 12144
+   },
+   {
+    "name": "client-attach:begin",
+    "ms": 28610.616875,
+    "thread": 5,
+    "processCpuMs": 29630.364,
+    "gen0": 1397,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.011,
+    "allocatedBytes": 11310411440,
+    "jitMs": 3714.7529,
+    "jitMethods": 12153
+   },
+   {
+    "name": "local-world-session-constructor:begin",
+    "ms": 28613.118875,
+    "thread": 5,
+    "processCpuMs": 29632.721,
+    "gen0": 1397,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.011,
+    "allocatedBytes": 11310530616,
+    "jitMs": 3715.7682,
+    "jitMethods": 12169
+   },
+   {
+    "name": "initial-view-projection:begin",
+    "ms": 28614.158208,
+    "thread": 5,
+    "processCpuMs": 29633.748,
+    "gen0": 1397,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.011,
+    "allocatedBytes": 11310713304,
+    "jitMs": 3715.8682,
+    "jitMethods": 12170
+   },
+   {
+    "name": "initial-view-projection:end",
+    "ms": 28640.564875,
+    "thread": 5,
+    "processCpuMs": 29662.322,
+    "gen0": 1397,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.011,
+    "allocatedBytes": 11310883176,
+    "jitMs": 3737.4113,
+    "jitMethods": 12377
+   },
+   {
+    "name": "local-world-session-constructor:end",
+    "ms": 28645.105541,
+    "thread": 5,
+    "processCpuMs": 29665.126,
+    "gen0": 1398,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.897,
+    "allocatedBytes": 11311006608,
+    "jitMs": 3737.4113,
+    "jitMethods": 12377
+   },
+   {
+    "name": "client-attach:end",
+    "ms": 28647.168541,
+    "thread": 5,
+    "processCpuMs": 29668.186,
+    "gen0": 1398,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.897,
+    "allocatedBytes": 11311128512,
+    "jitMs": 3738.8614,
+    "jitMethods": 12387
+   },
+   {
+    "name": "open-coordinated-fixture:end",
+    "ms": 28648.264166,
+    "thread": 5,
+    "processCpuMs": 29669.166,
+    "gen0": 1398,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.897,
+    "allocatedBytes": 11311242848,
+    "jitMs": 3738.8614,
+    "jitMethods": 12387
+   },
+   {
+    "name": "opening-task-observed-complete",
+    "ms": 28650.255666,
+    "thread": 1,
+    "processCpuMs": 29670.401,
+    "gen0": 1398,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.897,
+    "allocatedBytes": 11311366048,
+    "jitMs": 3738.8614,
+    "jitMethods": 12387
+   },
+   {
+    "name": "first-present-begin",
+    "ms": 28653.828,
+    "thread": 1,
+    "processCpuMs": 29673.398,
+    "gen0": 1398,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.897,
+    "allocatedBytes": 11311598784,
+    "jitMs": 3740.6413,
+    "jitMethods": 12404
+   },
+   {
+    "name": "first-offers-available",
+    "ms": 28715.04275,
+    "thread": 1,
+    "processCpuMs": 29725.418,
+    "gen0": 1398,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.897,
+    "allocatedBytes": 11313419568,
+    "jitMs": 3774.4777,
+    "jitMethods": 12810
+   },
+   {
+    "name": "probe-open-condition-satisfied",
+    "ms": 28716.095041,
+    "thread": 1,
+    "processCpuMs": 29726.47,
+    "gen0": 1398,
+    "gen1": 432,
+    "gen2": 350,
+    "gcPauseMs": 1604.897,
+    "allocatedBytes": 11313536144,
+    "jitMs": 3774.4777,
+    "jitMethods": 12810
+   }
+  ],
+  "commitPreparationSeries": {
+   "count": 1581,
+   "totalMs": 23106.2,
+   "medianMs": 6.97,
+   "p95Ms": 48.905,
+   "maxMs": 386.922,
+   "firstMs": 47.554,
+   "decileMeanMs": [
+    4.613,
+    5.513,
+    4.89,
+    6.143,
+    7.978,
+    7.681,
+    10.525,
+    30.541,
+    27.586,
+    40.735
+   ]
+  },
+  "firstCallsMs": {
+   "present": [
+    73.824,
+    1.931,
+    0.329,
+    0.37
+   ],
+   "create-offers": [
+    10.442,
+    0.128,
+    0.045,
+    0.047
+   ]
+  },
+  "windows": {
+   "bootstrapToGameReady": {
+    "wallMs": 141.3,
+    "processCpuMs": 99.0,
+    "gcPauseMs": 0.0,
+    "gen0": 0,
+    "gen1": 0,
+    "gen2": 0,
+    "allocatedMB": 1.4,
+    "jitMs": 67.4,
+    "jitMethods": 598,
+    "threads": [
+     1,
+     1
+    ]
+   },
+   "openingToProbeCondition": {
+    "wallMs": 28574.1,
+    "processCpuMs": 27899.8,
+    "gcPauseMs": 1603.1,
+    "gen0": 1397,
+    "gen1": 431,
+    "gen2": 349,
+    "allocatedMB": 10782.7,
+    "jitMs": 3577.4,
+    "jitMethods": 11857,
+    "threads": [
+     1,
+     1
+    ]
+   },
+   "openTask": {
+    "wallMs": 28380.9,
+    "processCpuMs": 27735.9,
+    "gcPauseMs": 1603.1,
+    "gen0": 1397,
+    "gen1": 431,
+    "gen2": 349,
+    "allocatedMB": 10779.3,
+    "jitMs": 3485.3,
+    "jitMethods": 10972,
+    "threads": [
+     5,
+     5
+    ]
+   },
+   "authorityOpen": {
+    "wallMs": 27789.4,
+    "processCpuMs": 27085.1,
+    "gcPauseMs": 1595.6,
+    "gen0": 1395,
+    "gen1": 431,
+    "gen2": 349,
+    "allocatedMB": 10769.8,
+    "jitMs": 2964.7,
+    "jitMethods": 7012,
+    "threads": [
+     5,
+     5
+    ]
+   },
+   "fullReplay": {
+    "wallMs": 23789.6,
+    "processCpuMs": 26217.0,
+    "gcPauseMs": 1586.6,
+    "gen0": 1393,
+    "gen1": 429,
+    "gen2": 348,
+    "allocatedMB": 10759.1,
+    "jitMs": 2564.7,
+    "jitMethods": 6235,
+    "threads": [
+     5,
+     5
+    ]
+   },
+   "clientAttach": {
+    "wallMs": 36.6,
+    "processCpuMs": 37.8,
+    "gcPauseMs": 0.9,
+    "gen0": 1,
+    "gen1": 0,
+    "gen2": 0,
+    "allocatedMB": 0.7,
+    "jitMs": 24.1,
+    "jitMethods": 234,
+    "threads": [
+     5,
+     5
+    ]
+   },
+   "sessionConstructor": {
+    "wallMs": 32.0,
+    "processCpuMs": 32.4,
+    "gcPauseMs": 0.9,
+    "gen0": 1,
+    "gen1": 0,
+    "gen2": 0,
+    "allocatedMB": 0.5,
+    "jitMs": 21.6,
+    "jitMethods": 208,
+    "threads": [
+     5,
+     5
+    ]
+   },
+   "initialView": {
+    "wallMs": 26.4,
+    "processCpuMs": 28.6,
+    "gcPauseMs": 0.0,
+    "gen0": 0,
+    "gen1": 0,
+    "gen2": 0,
+    "allocatedMB": 0.2,
+    "jitMs": 21.5,
+    "jitMethods": 207,
+    "threads": [
+     5,
+     5
+    ]
+   },
+   "taskEndToObserved": {
+    "wallMs": 2.0,
+    "processCpuMs": 1.2,
+    "gcPauseMs": 0.0,
+    "gen0": 0,
+    "gen1": 0,
+    "gen2": 0,
+    "allocatedMB": 0.1,
+    "jitMs": 0.0,
+    "jitMethods": 0,
+    "threads": [
+     5,
+     1
+    ]
+   },
+   "observedToProbeCondition": {
+    "wallMs": 65.8,
+    "processCpuMs": 56.1,
+    "gcPauseMs": 0.0,
+    "gen0": 0,
+    "gen1": 0,
+    "gen2": 0,
+    "allocatedMB": 2.1,
+    "jitMs": 35.6,
+    "jitMethods": 423,
+    "threads": [
+     1,
+     1
+    ]
+   }
+  },
+  "timeline": [
+   {
+    "ms": 504,
+    "commitsPrepared": 0,
+    "frames": 18,
+    "processCpuMs": 2222,
+    "gen0": 1,
+    "gen2": 1,
+    "gcPauseMs": 2
+   },
+   {
+    "ms": 2521,
+    "commitsPrepared": 0,
+    "frames": 255,
+    "processCpuMs": 3020,
+    "gen0": 4,
+    "gen2": 2,
+    "gcPauseMs": 17
+   },
+   {
+    "ms": 4538,
+    "commitsPrepared": 0,
+    "frames": 496,
+    "processCpuMs": 3312,
+    "gen0": 4,
+    "gen2": 2,
+    "gcPauseMs": 17
+   },
+   {
+    "ms": 6557,
+    "commitsPrepared": 314,
+    "frames": 739,
+    "processCpuMs": 5753,
+    "gen0": 66,
+    "gen2": 12,
+    "gcPauseMs": 88
+   },
+   {
+    "ms": 8599,
+    "commitsPrepared": 669,
+    "frames": 981,
+    "processCpuMs": 8231,
+    "gen0": 206,
+    "gen2": 55,
+    "gcPauseMs": 240
+   },
+   {
+    "ms": 10618,
+    "commitsPrepared": 911,
+    "frames": 1222,
+    "processCpuMs": 10364,
+    "gen0": 344,
+    "gen2": 104,
+    "gcPauseMs": 419
+   },
+   {
+    "ms": 12635,
+    "commitsPrepared": 1106,
+    "frames": 1463,
+    "processCpuMs": 12688,
+    "gen0": 480,
+    "gen2": 146,
+    "gcPauseMs": 573
+   },
+   {
+    "ms": 14652,
+    "commitsPrepared": 1193,
+    "frames": 1704,
+    "processCpuMs": 14963,
+    "gen0": 599,
+    "gen2": 165,
+    "gcPauseMs": 702
+   },
+   {
+    "ms": 16679,
+    "commitsPrepared": 1246,
+    "frames": 1945,
+    "processCpuMs": 17203,
+    "gen0": 718,
+    "gen2": 189,
+    "gcPauseMs": 825
+   },
+   {
+    "ms": 18691,
+    "commitsPrepared": 1286,
+    "frames": 2187,
+    "processCpuMs": 19379,
+    "gen0": 829,
+    "gen2": 219,
+    "gcPauseMs": 947
+   },
+   {
+    "ms": 20706,
+    "commitsPrepared": 1341,
+    "frames": 2426,
+    "processCpuMs": 21597,
+    "gen0": 937,
+    "gen2": 250,
+    "gcPauseMs": 1080
+   },
+   {
+    "ms": 22721,
+    "commitsPrepared": 1450,
+    "frames": 2665,
+    "processCpuMs": 23781,
+    "gen0": 1074,
+    "gen2": 271,
+    "gcPauseMs": 1195
+   },
+   {
+    "ms": 24733,
+    "commitsPrepared": 1503,
+    "frames": 2904,
+    "processCpuMs": 25853,
+    "gen0": 1192,
+    "gen2": 294,
+    "gcPauseMs": 1323
+   },
+   {
+    "ms": 27031,
+    "commitsPrepared": 1541,
+    "frames": 3146,
+    "processCpuMs": 27889,
+    "gen0": 1297,
+    "gen2": 320,
+    "gcPauseMs": 1509
+   },
+   {
+    "ms": 29052,
+    "commitsPrepared": 1581,
+    "frames": 3357,
+    "processCpuMs": 29961,
+    "gen0": 1400,
+    "gen2": 351,
+    "gcPauseMs": 1609
+   }
+  ]
+ },
+ "hostReference": {
+  "stdoutNamesPinnedCommitHash": true,
+  "copiedSaveUnchanged": true
+ },
+ "hostSummary": {
+  "available": true,
+  "lastFlushReason": "process-exit",
+  "originUtc": "2026-09-29T02:22:30.7164220Z",
+  "processStartUtc": "2026-09-29T02:22:30.4231600Z",
+  "runtime": {
+   "framework": ".NET 10.0.12",
+   "version": "10.0.12",
+   "runtimeIdentifier": "osx-arm64",
+   "architecture": "Arm64",
+   "os": "macOS 15.6.1",
+   "coreLibrary": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App/10.0.12/System.Private.CoreLib.dll",
+   "processPath": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+   "processorCount": 8,
+   "serverGc": false,
+   "gcLatency": "Interactive",
+   "debugger": false,
+   "tieredCompilation": "default",
+   "tieredPgo": "default",
+   "environment": {
+    "DOTNET_TieredCompilation": null,
+    "DOTNET_TieredPGO": null,
+    "DOTNET_TC_QuickJitForLoops": null,
+    "DOTNET_ReadyToRun": null,
+    "DOTNET_gcServer": null,
+    "DOTNET_gcConcurrent": null
+   },
+   "assemblies": [
+    {
+     "name": "OpenFantasy.Host",
+     "location": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+     "jitOptimizerDisabled": true
+    },
+    {
+     "name": "OpenFantasy.Hosting",
+     "location": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll",
+     "jitOptimizerDisabled": true
+    },
+    {
+     "name": "OpenFantasy.Core",
+     "location": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/run-01/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll",
+     "jitOptimizerDisabled": true
+    }
+   ]
+  },
+  "final": {
+   "name": "flush",
+   "ms": 40287.579375,
+   "thread": 2,
+   "processCpuMs": 26226.976,
+   "gen0": 1610,
+   "gen1": 642,
+   "gen2": 566,
+   "gcPauseMs": 2260.781,
+   "allocatedBytes": 11284326008,
+   "jitMs": 4321.5104,
+   "jitMethods": 11622
+  },
+  "gcHeapBytes": 21212680,
+  "threadClockAvailable": true,
+  "openAtLastFlush": [],
+  "counters": {},
+  "stages": [
+   {
+    "stage": "full-replay",
+    "calls": 1,
+    "wallMs": 33847.2,
+    "threadCpuMs": 21122.9,
+    "maxMs": 33847.24,
+    "allocatedMB": 10751.4,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "replay-prepare-entry",
+    "calls": 1581,
+    "wallMs": 32139.2,
+    "threadCpuMs": 20093.5,
+    "maxMs": 440.61,
+    "allocatedMB": 10573.1,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "commit-preparation",
+    "calls": 1581,
+    "wallMs": 32031.1,
+    "threadCpuMs": 20023.5,
+    "maxMs": 440.52,
+    "allocatedMB": 10568.8,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "step-decide",
+    "calls": 1581,
+    "wallMs": 31139.6,
+    "threadCpuMs": 19554.9,
+    "maxMs": 429.58,
+    "allocatedMB": 10114.7,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "world-root",
+    "calls": 2118,
+    "wallMs": 11806.5,
+    "threadCpuMs": 7699.8,
+    "maxMs": 177.09,
+    "allocatedMB": 1207.3,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "world-encode",
+    "calls": 2115,
+    "wallMs": 9720.7,
+    "threadCpuMs": 5986.8,
+    "maxMs": 148.96,
+    "allocatedMB": 6187.3,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "canonical-frame-capture",
+    "calls": 2108,
+    "wallMs": 9668.0,
+    "threadCpuMs": 5956.4,
+    "maxMs": 148.97,
+    "allocatedMB": 6151.0,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "database-open",
+    "calls": 1,
+    "wallMs": 6282.7,
+    "threadCpuMs": 85.7,
+    "maxMs": 6282.69,
+    "allocatedMB": 0.1,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "resource-causes",
+    "calls": 2118,
+    "wallMs": 5862.1,
+    "threadCpuMs": 3624.2,
+    "maxMs": 100.36,
+    "allocatedMB": 534.0,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "world-identities",
+    "calls": 2118,
+    "wallMs": 2167.7,
+    "threadCpuMs": 1456.3,
+    "maxMs": 77.38,
+    "allocatedMB": 309.9,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "care-admission",
+    "calls": 2118,
+    "wallMs": 1331.9,
+    "threadCpuMs": 917.0,
+    "maxMs": 41.65,
+    "allocatedMB": 59.5,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "ordinary-care",
+    "calls": 2118,
+    "wallMs": 1284.4,
+    "threadCpuMs": 892.7,
+    "maxMs": 41.62,
+    "allocatedMB": 58.6,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "material-care-archive-verify",
+    "calls": 1581,
+    "wallMs": 366.5,
+    "threadCpuMs": 234.4,
+    "maxMs": 154.2,
+    "allocatedMB": 118.1,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "coordinated-admission",
+    "calls": 2118,
+    "wallMs": 299.2,
+    "threadCpuMs": 209.3,
+    "maxMs": 11.46,
+    "allocatedMB": 31.2,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "source-partition",
+    "calls": 2118,
+    "wallMs": 213.2,
+    "threadCpuMs": 153.5,
+    "maxMs": 10.8,
+    "allocatedMB": 18.7,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "production-continuation",
+    "calls": 530,
+    "wallMs": 155.4,
+    "threadCpuMs": 77.9,
+    "maxMs": 24.32,
+    "allocatedMB": 42.1,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "verify-command-table",
+    "calls": 1,
+    "wallMs": 69.5,
+    "threadCpuMs": 25.7,
+    "maxMs": 69.51,
+    "allocatedMB": 9.5,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "verify-identity-table",
+    "calls": 1,
+    "wallMs": 62.1,
+    "threadCpuMs": 32.6,
+    "maxMs": 62.11,
+    "allocatedMB": 9.0,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "resource-archive-verify",
+    "calls": 1581,
+    "wallMs": 0.6,
+    "threadCpuMs": 0.9,
+    "maxMs": 0.2,
+    "allocatedMB": 0.0,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "genesis-admission",
+    "calls": 1,
+    "wallMs": 0.3,
+    "threadCpuMs": 0.3,
+    "maxMs": 0.34,
+    "allocatedMB": 0.1,
+    "threads": [
+     1
+    ]
+   }
+  ],
+  "marks": [
+   {
+    "name": "full-replay:begin",
+    "ms": 6289.725291,
+    "thread": 1,
+    "processCpuMs": 235.909,
+    "gen0": 0,
+    "gen1": 0,
+    "gen2": 0,
+    "gcPauseMs": 0,
+    "allocatedBytes": 375200,
+    "jitMs": 157.4185,
+    "jitMethods": 432
+   },
+   {
+    "name": "full-replay:end",
+    "ms": 40178.625958,
+    "thread": 1,
+    "processCpuMs": 26146.953,
+    "gen0": 1610,
+    "gen1": 642,
+    "gen2": 566,
+    "gcPauseMs": 2260.781,
+    "allocatedBytes": 11281961240,
+    "jitMs": 4264.7386,
+    "jitMethods": 10919
+   }
+  ],
+  "commitPreparationSeries": {
+   "count": 1581,
+   "totalMs": 32031.1,
+   "medianMs": 9.305,
+   "p95Ms": 61.576,
+   "maxMs": 440.517,
+   "firstMs": 52.157,
+   "decileMeanMs": [
+    5.449,
+    4.685,
+    6.521,
+    6.906,
+    8.683,
+    11.438,
+    17.833,
+    34.287,
+    29.314,
+    77.559
+   ]
+  },
+  "windows": {
+   "fullReplay": {
+    "wallMs": 33888.9,
+    "processCpuMs": 25911.0,
+    "gcPauseMs": 2260.8,
+    "gen0": 1610,
+    "gen1": 642,
+    "gen2": 566,
+    "allocatedMB": 10759.0,
+    "jitMs": 4107.3,
+    "jitMethods": 10487,
+    "threads": [
+     1,
+     1
+    ]
+   }
+  },
+  "timeline": [
+   {
+    "ms": 505,
+    "commitsPrepared": 0,
+    "frames": 0,
+    "processCpuMs": 89,
+    "gen0": 0,
+    "gen2": 0,
+    "gcPauseMs": 0
+   },
+   {
+    "ms": 8341,
+    "commitsPrepared": 212,
+    "frames": 0,
+    "processCpuMs": 2166,
+    "gen0": 38,
+    "gen2": 7,
+    "gcPauseMs": 47
+   },
+   {
+    "ms": 10359,
+    "commitsPrepared": 539,
+    "frames": 0,
+    "processCpuMs": 4635,
+    "gen0": 167,
+    "gen2": 58,
+    "gcPauseMs": 203
+   },
+   {
+    "ms": 12376,
+    "commitsPrepared": 783,
+    "frames": 0,
+    "processCpuMs": 6373,
+    "gen0": 320,
+    "gen2": 132,
+    "gcPauseMs": 388
+   },
+   {
+    "ms": 14420,
+    "commitsPrepared": 951,
+    "frames": 0,
+    "processCpuMs": 7932,
+    "gen0": 447,
+    "gen2": 193,
+    "gcPauseMs": 591
+   },
+   {
+    "ms": 16553,
+    "commitsPrepared": 1060,
+    "frames": 0,
+    "processCpuMs": 9367,
+    "gen0": 551,
+    "gen2": 245,
+    "gcPauseMs": 836
+   },
+   {
+    "ms": 18597,
+    "commitsPrepared": 1165,
+    "frames": 0,
+    "processCpuMs": 11500,
+    "gen0": 661,
+    "gen2": 270,
+    "gcPauseMs": 968
+   },
+   {
+    "ms": 20628,
+    "commitsPrepared": 1218,
+    "frames": 0,
+    "processCpuMs": 13224,
+    "gen0": 772,
+    "gen2": 300,
+    "gcPauseMs": 1080
+   },
+   {
+    "ms": 22653,
+    "commitsPrepared": 1260,
+    "frames": 0,
+    "processCpuMs": 14961,
+    "gen0": 893,
+    "gen2": 338,
+    "gcPauseMs": 1185
+   },
+   {
+    "ms": 24673,
+    "commitsPrepared": 1296,
+    "frames": 0,
+    "processCpuMs": 16808,
+    "gen0": 1012,
+    "gen2": 383,
+    "gcPauseMs": 1290
+   },
+   {
+    "ms": 26689,
+    "commitsPrepared": 1379,
+    "frames": 0,
+    "processCpuMs": 18604,
+    "gen0": 1126,
+    "gen2": 415,
+    "gcPauseMs": 1397
+   },
+   {
+    "ms": 28712,
+    "commitsPrepared": 1456,
+    "frames": 0,
+    "processCpuMs": 20358,
+    "gen0": 1263,
+    "gen2": 453,
+    "gcPauseMs": 1525
+   },
+   {
+    "ms": 30806,
+    "commitsPrepared": 1475,
+    "frames": 0,
+    "processCpuMs": 21025,
+    "gen0": 1306,
+    "gen2": 465,
+    "gcPauseMs": 1680
+   },
+   {
+    "ms": 32860,
+    "commitsPrepared": 1486,
+    "frames": 0,
+    "processCpuMs": 21515,
+    "gen0": 1334,
+    "gen2": 473,
+    "gcPauseMs": 1777
+   },
+   {
+    "ms": 34878,
+    "commitsPrepared": 1499,
+    "frames": 0,
+    "processCpuMs": 22208,
+    "gen0": 1375,
+    "gen2": 487,
+    "gcPauseMs": 1911
+   },
+   {
+    "ms": 36945,
+    "commitsPrepared": 1521,
+    "frames": 0,
+    "processCpuMs": 23257,
+    "gen0": 1439,
+    "gen2": 506,
+    "gcPauseMs": 2082
+   },
+   {
+    "ms": 38964,
+    "commitsPrepared": 1555,
+    "frames": 0,
+    "processCpuMs": 25134,
+    "gen0": 1547,
+    "gen2": 543,
+    "gcPauseMs": 2193
+   }
+  ]
+ },
+ "nativeToHost": [
+  {
+   "stage": "full-replay",
+   "calls": [
+    1,
+    1
+   ],
+   "nativeWallMs": 23788.3,
+   "hostWallMs": 33847.2,
+   "nativeThreadCpuMs": 18459.9,
+   "hostThreadCpuMs": 21122.9,
+   "wallRatio": 0.7
+  },
+  {
+   "stage": "replay-prepare-entry",
+   "calls": [
+    1581,
+    1581
+   ],
+   "nativeWallMs": 23176.3,
+   "hostWallMs": 32139.2,
+   "nativeThreadCpuMs": 17996.7,
+   "hostThreadCpuMs": 20093.5,
+   "wallRatio": 0.72
+  },
+  {
+   "stage": "commit-preparation",
+   "calls": [
+    1581,
+    1581
+   ],
+   "nativeWallMs": 23106.2,
+   "hostWallMs": 32031.1,
+   "nativeThreadCpuMs": 17937.4,
+   "hostThreadCpuMs": 20023.5,
+   "wallRatio": 0.72
+  },
+  {
+   "stage": "step-decide",
+   "calls": [
+    1581,
+    1581
+   ],
+   "nativeWallMs": 22536.0,
+   "hostWallMs": 31139.6,
+   "nativeThreadCpuMs": 17477.6,
+   "hostThreadCpuMs": 19554.9,
+   "wallRatio": 0.72
+  },
+  {
+   "stage": "world-root",
+   "calls": [
+    2120,
+    2118
+   ],
+   "nativeWallMs": 8201.5,
+   "hostWallMs": 11806.5,
+   "nativeThreadCpuMs": 6705.0,
+   "hostThreadCpuMs": 7699.8,
+   "wallRatio": null
+  },
+  {
+   "stage": "world-encode",
+   "calls": [
+    2116,
+    2115
+   ],
+   "nativeWallMs": 7185.4,
+   "hostWallMs": 9720.7,
+   "nativeThreadCpuMs": 5341.8,
+   "hostThreadCpuMs": 5986.8,
+   "wallRatio": null
+  },
+  {
+   "stage": "canonical-frame-capture",
+   "calls": [
+    2108,
+    2108
+   ],
+   "nativeWallMs": 7126.8,
+   "hostWallMs": 9668.0,
+   "nativeThreadCpuMs": 5316.8,
+   "hostThreadCpuMs": 5956.4,
+   "wallRatio": 0.74
+  },
+  {
+   "stage": "resource-causes",
+   "calls": [
+    2120,
+    2118
+   ],
+   "nativeWallMs": 3939.0,
+   "hostWallMs": 5862.1,
+   "nativeThreadCpuMs": 3216.2,
+   "hostThreadCpuMs": 3624.2,
+   "wallRatio": null
+  },
+  {
+   "stage": "database-open",
+   "calls": [
+    1,
+    1
+   ],
+   "nativeWallMs": 3934.3,
+   "hostWallMs": 6282.7,
+   "nativeThreadCpuMs": 59.0,
+   "hostThreadCpuMs": 85.7,
+   "wallRatio": 0.63
+  },
+  {
+   "stage": "world-identities",
+   "calls": [
+    2120,
+    2118
+   ],
+   "nativeWallMs": 1534.6,
+   "hostWallMs": 2167.7,
+   "nativeThreadCpuMs": 1273.7,
+   "hostThreadCpuMs": 1456.3,
+   "wallRatio": null
+  },
+  {
+   "stage": "care-admission",
+   "calls": [
+    2120,
+    2118
+   ],
+   "nativeWallMs": 934.8,
+   "hostWallMs": 1331.9,
+   "nativeThreadCpuMs": 807.8,
+   "hostThreadCpuMs": 917.0,
+   "wallRatio": null
+  },
+  {
+   "stage": "ordinary-care",
+   "calls": [
+    2120,
+    2118
+   ],
+   "nativeWallMs": 910.8,
+   "hostWallMs": 1284.4,
+   "nativeThreadCpuMs": 787.4,
+   "hostThreadCpuMs": 892.7,
+   "wallRatio": null
+  },
+  {
+   "stage": "material-care-archive-verify",
+   "calls": [
+    1581,
+    1581
+   ],
+   "nativeWallMs": 263.8,
+   "hostWallMs": 366.5,
+   "nativeThreadCpuMs": 200.1,
+   "hostThreadCpuMs": 234.4,
+   "wallRatio": 0.72
+  },
+  {
+   "stage": "coordinated-admission",
+   "calls": [
+    2120,
+    2118
+   ],
+   "nativeWallMs": 225.7,
+   "hostWallMs": 299.2,
+   "nativeThreadCpuMs": 186.7,
+   "hostThreadCpuMs": 209.3,
+   "wallRatio": null
+  },
+  {
+   "stage": "source-partition",
+   "calls": [
+    2120,
+    2118
+   ],
+   "nativeWallMs": 155.9,
+   "hostWallMs": 213.2,
+   "nativeThreadCpuMs": 135.7,
+   "hostThreadCpuMs": 153.5,
+   "wallRatio": null
+  },
+  {
+   "stage": "production-continuation",
+   "calls": [
+    530,
+    530
+   ],
+   "nativeWallMs": 89.5,
+   "hostWallMs": 155.4,
+   "nativeThreadCpuMs": 66.2,
+   "hostThreadCpuMs": 77.9,
+   "wallRatio": 0.58
+  },
+  {
+   "stage": "verify-identity-table",
+   "calls": [
+    1,
+    1
+   ],
+   "nativeWallMs": 29.0,
+   "hostWallMs": 62.1,
+   "nativeThreadCpuMs": 26.1,
+   "hostThreadCpuMs": 32.6,
+   "wallRatio": 0.47
+  },
+  {
+   "stage": "verify-command-table",
+   "calls": [
+    1,
+    1
+   ],
+   "nativeWallMs": 26.2,
+   "hostWallMs": 69.5,
+   "nativeThreadCpuMs": 20.9,
+   "hostThreadCpuMs": 25.7,
+   "wallRatio": 0.38
+  },
+  {
+   "stage": "genesis-admission",
+   "calls": [
+    2,
+    1
+   ],
+   "nativeWallMs": 0.4,
+   "hostWallMs": 0.3,
+   "nativeThreadCpuMs": 0.4,
+   "hostThreadCpuMs": 0.3,
+   "wallRatio": null
+  },
+  {
+   "stage": "resource-archive-verify",
+   "calls": [
+    1581,
+    1581
+   ],
+   "nativeWallMs": 0.3,
+   "hostWallMs": 0.6,
+   "nativeThreadCpuMs": 0.8,
+   "hostThreadCpuMs": 0.9,
+   "wallRatio": 0.5
+  }
+ ],
+ "pinsAfter": {
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3": {
+   "sha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+   "bytes": 5529600
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-wal": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-shm": {
+   "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+   "bytes": 32768
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.active.json": {
+   "sha256": "9170791fe0446ef11a18b5e9cdbb7b689fc34c20ed4936e1c9854203334e2436",
+   "bytes": 2326409
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.reopen.failed.json": {
+   "sha256": "59985f1a6131365952fb60dd6edaad169bbbca1a50ff34cd141f22b7e4ca078d",
+   "bytes": 1340
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json": {
+   "sha256": "7c11021a30ad3918c36eaf007556cef1a3ba2d98fa771a768cee4f865da8133c",
+   "bytes": 4282
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc": {
+   "sha256": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222",
+   "bytes": 59149
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot": {
+   "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+   "bytes": 549
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": {
+   "sha256": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+   "bytes": 14550
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot": {
+   "sha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+   "bytes": 356853024
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": {
+   "sha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+   "bytes": 141392
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+   "sha256": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+   "bytes": 222208
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": {
+   "sha256": "97ade4d7fe5f73b9201fbfc31bf8891a3e7ff26036d39edf30e8c31606b9443b",
+   "bytes": 920064
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  }
+ },
+ "pinsUnchanged": true,
+ "sourceAfter": {
+  "files": 975,
+  "combinedSha256": "dd2d3548b66151379bc072ab7099bd0d41becd252bd010839da920c4901ec53c"
+ },
+ "sourceUnchanged": true,
+ "elapsedSeconds": 100.87717933394015,
+ "finishedUtc": "2026-09-29T02:23:11.905471+00:00"
+}

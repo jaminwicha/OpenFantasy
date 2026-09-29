@@ -1,0 +1,33 @@
+{
+  "pythonSyntax": "passed",
+  "runtimeSourceUnchanged": true,
+  "frozenSpecs": 23,
+  "priorMilestones": 0,
+  "predecessorIndexUnchanged": true,
+  "diagnosticInputsUnchanged": true,
+  "allInstrumentationAnchorsMatched": true,
+  "scope": "Reviewed completed measurements and insertion diff; unchanged runtime suites not rerun; original native failure remains open.",
+  "artifacts": {
+    "HEAD_COMPONENT_SIZES.json": "4178b28d1c13f31ab462912bf0dfae88ef555e46e793c7ec2d176e8ed962568e",
+    "ASSIGNMENT.md": "1953dfc28146c72a6f65e0916ae984c9057b765c22a765a8e3eb0fd8d8ae0f78",
+    "DELEGATION.json": "5747eeaf6cc0820caab1a21738b89efee84b33145ab7830c7eb08c022bfec83d",
+    "profile_native_startup.py": "4bfd08d821698d2808e323544ca45cfdf24b0a515001b99824c5bc045f8c9231",
+    "PRESERVATION.json": "05c6e205ba23a035e1463f17aad473110182ed74d8c9f3eefc3fe291ada4bd1d",
+    "README.md": "fef398a49c3b60dbcb53cb70662ba542fbca7e7423d1e0b187a715a99369ea9c",
+    "WORKER_RESULT.md": "9ea42867b555e576b29d93fb4ffb76416610408fc94ee25b1fd06ba6a2ccd411",
+    "run-01/build-host.stdout.log": "c6880953b5b0025391fd111a56b37f3baabd2076ac320576a7e43be38a9dbb80",
+    "run-01/source-hashes.json": "5e35bd281fd47c9b7b6e3931d7ca4a10fe7ce0d8cfb81ad8d1c49d33e79bab15",
+    "run-01/result.json": "ad19a3804a0330fd5850d654b8df5e7d75724462bee68fbd0dcb7f2d6c083ee4",
+    "run-01/build-client.stdout.log": "3a70879ea663ddee4b5405d4ade46315060a07c29f35044b01c0afc90b8321eb",
+    "run-01/native-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "run-01/instrumentation.diff": "d1a9cdfae110ecbe34a26e91b3563dbe643d2f75c16d9d5ac3a32732b0288748",
+    "run-01/host-inspect.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-01/build-host.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-01/native-costs.json": "2302e9d1c908685050a9825da98579295f248436e2f7500c3c30080a8d881f97",
+    "run-01/build-client.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "run-01/host-inspect.stdout.log": "6d0e1b61006eb9e6c1c6be96a06b233218232b29f6251d7db496e2379bad388b",
+    "run-01/native-coordinated-revoke.reopen.json": "d7b35697e5bf23b1ab30f3e21f737efb6b2d02aa6e85deae08855fce1a56cae0",
+    "run-01/host-costs.json": "8a3e49b77a198096682f488106293d95ac661dfd602260b5de07576d6d818cfe",
+    "run-01/native-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

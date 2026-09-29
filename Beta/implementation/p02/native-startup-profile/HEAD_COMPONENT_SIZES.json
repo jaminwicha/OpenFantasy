@@ -1,0 +1,319 @@
+{
+  "source": "Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3",
+  "sourceSha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+  "headStateSha256": "63c0f4517e92fbc0c0da8e9c5fe4651b0203b87e427c6f602f0469b886e037da",
+  "totalBytes": 76718,
+  "fields": [
+    {
+      "name": "tag",
+      "bytes": 14,
+      "tag": null
+    },
+    {
+      "name": "version",
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "name": "inventory",
+      "bytes": 4840,
+      "tag": "authority.counted-state"
+    },
+    {
+      "name": "space",
+      "bytes": 8574,
+      "tag": "world.spatial"
+    },
+    {
+      "name": "residents",
+      "bytes": 2187,
+      "tag": "world.residents"
+    },
+    {
+      "name": "admission",
+      "bytes": 32,
+      "tag": null
+    },
+    {
+      "name": "calendar-days",
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "name": "calendar-ms",
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "name": "revision",
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "name": "advancing-steps",
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "name": "dialogues",
+      "bytes": 31,
+      "tag": "world.dialogues"
+    },
+    {
+      "name": "gathering",
+      "bytes": 1600,
+      "tag": "gather.snapshot"
+    },
+    {
+      "name": "production",
+      "bytes": 4351,
+      "tag": "production.snapshot"
+    },
+    {
+      "name": "progression",
+      "bytes": 4338,
+      "tag": "progression.snapshot"
+    },
+    {
+      "name": "quests",
+      "bytes": 1643,
+      "tag": "quest.snapshot"
+    },
+    {
+      "name": "construction",
+      "bytes": 5753,
+      "tag": "construction.snapshot"
+    },
+    {
+      "name": "reservoirs",
+      "bytes": 11304,
+      "tag": "geography.liquid-reservoirs.v3"
+    },
+    {
+      "name": "reservoir-seals",
+      "bytes": 274,
+      "tag": "geography.reservoir-seal-policy.v1"
+    },
+    {
+      "name": "liquid-cells",
+      "bytes": 709,
+      "tag": "geography.liquid-cells.v2"
+    },
+    {
+      "name": "excavation",
+      "bytes": 513,
+      "tag": "terrain.excavation.v2"
+    },
+    {
+      "name": "pacing",
+      "bytes": 283,
+      "tag": "world.pacing.v1"
+    },
+    {
+      "name": "encounter-lifecycle",
+      "bytes": 3674,
+      "tag": "encounter.lifecycle.v1"
+    },
+    {
+      "name": "coordination",
+      "bytes": 6349,
+      "tag": "world.coordinated-care.v1"
+    },
+    {
+      "name": "resource-history",
+      "bytes": 20101,
+      "tag": "world.resource-history"
+    }
+  ],
+  "scope": "Exact head field sizes from closed read-only SQLite query; not profiling or permission to omit fields.",
+  "inventoryFields": [
+    {
+      "ordinal": 0,
+      "bytes": 23,
+      "tag": null
+    },
+    {
+      "ordinal": 1,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 2,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 3,
+      "bytes": 2198,
+      "tag": "custody.snapshot.v1"
+    },
+    {
+      "ordinal": 4,
+      "bytes": 112,
+      "tag": "authority.actors"
+    },
+    {
+      "ordinal": 5,
+      "bytes": 422,
+      "tag": "authority.controls"
+    },
+    {
+      "ordinal": 6,
+      "bytes": 650,
+      "tag": "authority.policies"
+    },
+    {
+      "ordinal": 7,
+      "bytes": 1273,
+      "tag": "authority.sources"
+    },
+    {
+      "ordinal": 8,
+      "bytes": 98,
+      "tag": "authority.reservations"
+    }
+  ],
+  "productionFields": [
+    {
+      "ordinal": 0,
+      "bytes": 19,
+      "tag": null
+    },
+    {
+      "ordinal": 1,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 2,
+      "bytes": 16,
+      "tag": null
+    },
+    {
+      "ordinal": 3,
+      "bytes": 16,
+      "tag": null
+    },
+    {
+      "ordinal": 4,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 5,
+      "bytes": 32,
+      "tag": null
+    },
+    {
+      "ordinal": 6,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 7,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 8,
+      "bytes": 34,
+      "tag": "production.batches"
+    },
+    {
+      "ordinal": 9,
+      "bytes": 31,
+      "tag": "production.lots"
+    },
+    {
+      "ordinal": 10,
+      "bytes": 4115,
+      "tag": "production.consumed"
+    }
+  ],
+  "coordinationFields": [
+    {
+      "ordinal": 0,
+      "bytes": 25,
+      "tag": null
+    },
+    {
+      "ordinal": 1,
+      "bytes": 5574,
+      "tag": "care.snapshot"
+    },
+    {
+      "ordinal": 2,
+      "bytes": 488,
+      "tag": "world.source-issuance.v1"
+    },
+    {
+      "ordinal": 3,
+      "bytes": 234,
+      "tag": "world.material-care-binding.v1"
+    }
+  ],
+  "resource-historyFields": [
+    {
+      "ordinal": 0,
+      "bytes": 22,
+      "tag": null
+    },
+    {
+      "ordinal": 1,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 2,
+      "bytes": 234,
+      "tag": "world.material-care-binding.v1"
+    },
+    {
+      "ordinal": 3,
+      "bytes": 19809,
+      "tag": "world.resource-history"
+    }
+  ],
+  "spaceFields": [
+    {
+      "ordinal": 0,
+      "bytes": 13,
+      "tag": null
+    },
+    {
+      "ordinal": 1,
+      "bytes": 8,
+      "tag": null
+    },
+    {
+      "ordinal": 2,
+      "bytes": 16,
+      "tag": null
+    },
+    {
+      "ordinal": 3,
+      "bytes": 16,
+      "tag": null
+    },
+    {
+      "ordinal": 4,
+      "bytes": 16,
+      "tag": null
+    },
+    {
+      "ordinal": 5,
+      "bytes": 1395,
+      "tag": "world.regions"
+    },
+    {
+      "ordinal": 6,
+      "bytes": 5151,
+      "tag": "world.bodies"
+    },
+    {
+      "ordinal": 7,
+      "bytes": 1915,
+      "tag": "world.presences"
+    }
+  ]
+}

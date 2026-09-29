@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-28. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-29. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -57,13 +57,27 @@ Do not fabricate stock, relabel definitions or silently migrate that lived world
 is explicitly scripted Host movement; it omits autonomous policy until the native starting boundary.
 Normal startup remains the construction farm; ordinary care creates profile26; this fixture selects
 an existing profile27 save. Independent critic findings and the partial implementation timeout are
-retained in the packet. No paid worker remains active.
+retained in the packet. The [startup diagnostic](p02/native-startup-profile/README.md) now measures
+23.788s of full native replay,7.185s of world encoding and35ms of client attachment. Both measured
+processes actually load .NET10.0.12; the net8 client target did not identify its hosted runtime.
+Instrumented native reopening passes at29.752s, but does not replace the original failure.
+Fable completed the diagnostic then timed out before its final response; no paid worker remains active.
+Next isolate expensive codecs, then optimize only measured costs with all gates unchanged.
 
 Take a recoverable checkpoint before the next major change. Production lifetime/latency, physical
 platform/device, multiplayer, art/audio and human acceptance remain separate requirements. Broader
 P01/P02 gameplay work and the full P14 campaign are not reduced by this bounded proof.
 
 ## Latest increment
+
+[Native startup cost attribution](p02/native-startup-profile/README.md) preserves reproducible
+disposable-copy instrumentation, actual runtime identity and exact failed-save pins. The final head
+is76,718 bytes; intermediate replay allocates11.273GB. Client attachment is small. The standalone
+reference is slower than native on this run, so prior timing does not establish a native-only
+bottleneck. No production source or architecture contract changed; no runtime suites were rerun.
+Milestone: `codex/milestone-native-startup-attribution`. Original startup and production gates stay open.
+
+### Exact-origin selection checkpoint
 
 [Exact-origin save selection and native withdrawal qualification](p02/coordinated-native/README.md)
 adds an explicit existing-save Host selector with canonical fresh-genesis validation, full recovery
