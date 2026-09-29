@@ -1,0 +1,31 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.92]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Evidence_sequence_outside_its_segment_is_refused_after_a_decoded_cut [FAIL]
+[xUnit.net 00:00:02.31]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_recomputed_reference_admits_unauthenticated_history_as_structure_and_refuses_self_refuting_evidence [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Evidence_sequence_outside_its_segment_is_refused_after_a_decoded_cut [782 ms]
+  Error Message:
+   System.ArgumentException : A coordinated archive requires distinct scope identities and a positive closing boundary.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldMaterialCareArchiveReference..ctor(EntityId worldId, EntityId branchId, UInt64 ordinal, UInt64 boundarySequence, ContentHash boundaryHash) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveReference.cs:line 17
+   at OpenFantasy.Core.Worlds.WorldMaterialCareArchiveSegment.Seal(WorldSnapshot boundary) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveSegment.cs:line 42
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.CutAndDecode(CareWorldSession session, WorldMaterialCareArchiveAnchor previous, WorldSnapshot& reopened) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldPublicationTests.cs:line 102
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Evidence_sequence_outside_its_segment_is_refused_after_a_decoded_cut() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCodecQualificationTests.cs:line 161
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_recomputed_reference_admits_unauthenticated_history_as_structure_and_refuses_self_refuting_evidence [392 ms]
+  Error Message:
+   System.FormatException : Consent history violates its bounded evidence contract.
+---- System.ArgumentException : Consent evidence action positions must follow unique actor order within each world sequence.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldConsentedMaterialCodec.Decode(ReadOnlySpan`1 bytes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldConsentedMaterialCodec.cs:line 44
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.QualificationRewriteEvidence(Byte[] rootBytes, Action`1 change) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCodecQualificationTests.cs:line 328
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_recomputed_reference_admits_unauthenticated_history_as_structure_and_refuses_self_refuting_evidence() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCodecQualificationTests.cs:line 305
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at OpenFantasy.Core.Worlds.WorldConsentedMaterialHistory.ValidateActionOrder(IEnumerable`1 transfers) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldConsentedMaterialHistory.cs:line 73
+   at OpenFantasy.Core.Worlds.WorldConsentedMaterialHistory..ctor(IEnumerable`1 transfers) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldConsentedMaterialHistory.cs:line 40
+   at OpenFantasy.Core.Worlds.WorldConsentedMaterialCodec.Decode(ReadOnlySpan`1 bytes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldConsentedMaterialCodec.cs:line 35
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/consented-format-qualification/qualification/format-journey-20260929T090457Z.trx
+
+Failed!  - Failed:     2, Passed:    27, Skipped:     0, Total:    29, Duration: 15 s - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -1,0 +1,32 @@
+{
+  "status": "scoped_format_evidence_verified_formats_unfrozen",
+  "sourceHead": "1b922ba286766ee060b3c02990b755a2373f2da1",
+  "build": "qualification/format-build-20260929T091457Z.json",
+  "buildSha256": "7ac81c99de69785444b2d0c24bdfecc2d2bf5a9c9f0d723b4a796d06fbb3a72f",
+  "checks": [
+    {
+      "path": "qualification/format-focused-20260929T091542Z.json",
+      "passed": 88,
+      "elapsedSeconds": 18.39,
+      "buildAndSourceAndAssemblyPinsVerified": true
+    },
+    {
+      "path": "qualification/format-journey-20260929T091611Z.json",
+      "passed": 29,
+      "elapsedSeconds": 19.023,
+      "buildAndSourceAndAssemblyPinsVerified": true
+    }
+  ],
+  "distinctPassingTestIds": 117,
+  "existingCoreSelectionRetained": 77,
+  "existingWorldSelectionRetained": 24,
+  "frozenSpecsVerified": 23,
+  "legacyFixturesVerified": 52,
+  "fixtureSha256": "51bf661f1c576c13e15647370de6e41d7141ce81a8406a561eb39c95cfc372f2",
+  "runtimeExecutableSourcesUnchanged": true,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "fullRegressionRerun": false,
+  "nativeRun": false,
+  "acceptance": "Scoped format evidence only. Fixed legacy opaque-import provenance, max-root/protected-cut/context combinations and durable Host/archive authentication remain explicit residuals; no format freeze or full assignment, native, retained-save, phase or production gate closes.",
+  "affectedDocumentationLinksVerified": 112
+}

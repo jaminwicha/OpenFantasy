@@ -79,12 +79,15 @@ together with the focused world tests this is 1,883 distinct passes. Current
 five opt-in native cases remain unrun, not waived. All 23 frozen specs, 51 old fixtures and the
 unrelated predecessor index are preserved. No complete phase or production gate is closed.
 
-The four proof groups are complete; **do not redispatch NEXT_PROOF_UNIT.md**. Next use the
-[remaining qualification boundary](p02/world-consented-material/NEXT_QUALIFICATION.md): independent
-new-format byte vectors, reconciliation of remaining codec negatives and explicit review coverage,
-then actual durable Host/application integration. The in-memory Hosting.Tests fixtures execute Core;
-their assembly name is not SQLite, transport, native or retained-save qualification. Formats remain
-unfrozen and the original full Core assignment is not declared complete by this progress checkpoint.
+The four proof groups are complete; **do not redispatch NEXT_PROOF_UNIT.md**. The subsequent
+[format integration](p02/consented-format-qualification/INTEGRATION_REVIEW.md) adds independent vectors,
+codec/archive negatives and the previously excluded V10 operation-frame review. Its residual matrix
+is explicit; do not repeat the completed assignment or claim an independent whole-world encoder.
+The in-memory Hosting.Tests fixtures execute Core; their assembly name is not SQLite, transport,
+native or retained-save qualification. Formats remain unfrozen; remaining format/authority and full
+assignment obligations are not closed by this checkpoint. Use the
+[durable binding notes](p02/consented-format-qualification/DURABLE_BINDING_NOTES.md) and full integration
+plan for the next substantial Host implementation, keeping those residuals visible.
 
 Pre-change recoveries: `codex/checkpoint-before-consent-boundary-proof-20260929T080633Z` (`35f8a41`)
 and `codex/checkpoint-consent-proofs-before-hardening-20260929T082152Z` (`048bdf1`). Earlier WIP refs,
@@ -180,3 +183,23 @@ checkpoint relevant dirty/new work before every major change. Keep architecture 
 with code. Put detailed test history in its packet, then link it here rather than growing this index
 into another progress archive. Shared-desktop and risk-based verification rules remain in
 [implementation instructions](../AGENTS.md); no timing or acceptance threshold is waived.
+
+## Latest format qualification
+
+Fable's bounded 5.1/1M assignment completed with requested Max effort, verified context and no
+permission denials or substitution. Astra reviewed the output, replaced a broad exception assertion
+with the exact authority-replay failure, added 64/65 movement-sample coverage, and corrected an
+inaccurate V10 XML comment. No runtime behavior, format or acceptance limit changed; architecture
+already describes the contract correctly. The worker's failures, reports and open gaps are preserved.
+
+Final build passes with 88 consented Core and 29 complete-world cases (117 distinct, no failures or
+skips). These focused selections retain all prior cases in their scopes. The prior full 1,883-case
+regression was not rerun for additive tests/fixture links and a comment correction. See
+[review and qualification](p02/consented-format-qualification/INTEGRATION_REVIEW.md) and
+[final checks](p02/consented-format-qualification/qualification/FINAL_CHECKS.json).
+
+Recoveries: clean successor `codex/checkpoint-before-consented-format-qualification-20260929T084626Z`
+(`1b922ba`), and completed-worker WIP `codex/checkpoint-formats-before-integration-20260929T091403Z`
+(`5e808c1`). The accepted progress marker is `codex/milestone-consented-formats-20260929`.
+This milestone covers format evidence only; no Host/native/retained-save/full-phase gate closes.
+No external model job is active. Continue on `codex/runtime-foundation`, preserving predecessor staging.

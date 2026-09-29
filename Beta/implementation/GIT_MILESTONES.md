@@ -317,3 +317,15 @@ Formats remain unfrozen; byte-vector/remaining codec, durable Host/native/retain
 assignment/phase/production gates stay open. The marker is a backup pointer; work stays on
 `codex/runtime-foundation`. All 23 frozen specs, 51 old fixtures, prior refs and the unrelated
 19-file predecessor index remain intact. No branch switch, forced update, push or merge occurs.
+
+The `codex/milestone-consented-formats-20260929` marker preserves independently generated consent
+vectors, additive codec/archive tests, exact authority-replay refusals, the 64/65 movement bound and
+a corrected V10 API comment. A clean build and 117 distinct scoped cases pass (88 Core, 29 world);
+the earlier full regression is retained evidence, not rerun or relabelled as current full coverage.
+Runtime behavior and all limits are unchanged. The exact coverage, opaque-import limitations,
+retained failures and remaining format/Host/native/retained-save gates are recorded in
+[format integration](p02/consented-format-qualification/INTEGRATION_REVIEW.md).
+Pre-change refs are `codex/checkpoint-before-consented-format-qualification-20260929T084626Z`
+(`1b922ba`) and `codex/checkpoint-formats-before-integration-20260929T091403Z` (`5e808c1`).
+All 23 frozen specs, 52 existing fixtures and unrelated 19-file predecessor staging are preserved.
+This is a progress backup pointer on `codex/runtime-foundation`, not a format freeze or phase exit.
