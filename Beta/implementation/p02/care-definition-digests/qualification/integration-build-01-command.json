@@ -1,0 +1,18 @@
+{
+  "startedUtc": "2026-09-28T23:44:59.982018+00:00",
+  "kind": "build",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "Beta/Runtime/OpenFantasy.sln",
+    "--no-restore",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--verbosity",
+    "quiet"
+  ],
+  "environment": {},
+  "exitCode": 0,
+  "elapsedSeconds": 33.54696808382869,
+  "finishedUtc": "2026-09-28T23:45:33.532020+00:00"
+}

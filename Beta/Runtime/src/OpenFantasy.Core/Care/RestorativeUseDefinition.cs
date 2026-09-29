@@ -28,6 +28,9 @@ public sealed class RestorativeUseDefinition
     public const int MaximumSupportedForms = 16;
     public const ulong ExplorationDurationMilliseconds = 1_800;
 
+    // Retained by this exact owner only; never serialized, shared by identity or copied to another definition.
+    private ContentHash? _version;
+
     public RestorativeUseDefinition(EntityId definitionId, EntityId remedyDefinitionId, ContentHash remedyVersion,
         RestorativeDeliveryMode deliveryMode, IEnumerable<RestorativeFormBinding> supportedForms,
         ulong explorationMilliseconds = ExplorationDurationMilliseconds)
@@ -60,7 +63,22 @@ public sealed class RestorativeUseDefinition
     public RestorativeDeliveryMode DeliveryMode { get; }
     public ReadOnlyCollection<RestorativeFormBinding> SupportedForms { get; }
     public ulong ExplorationMilliseconds { get; }
-    public ContentHash Version => ContentHash.Compute(CareCodecV2.EncodeUseDefinition(this));
+    /// <summary>The canonical digest of these immutable facts, encoded at the first read and then retained.</summary>
+    public ContentHash Version
+    {
+        get
+        {
+            ContentHash? published = Volatile.Read(ref _version);
+            if (published is not null)
+            {
+                return published;
+            }
+
+            ContentHash computed = ContentHash.Compute(CareCodecV2.EncodeUseDefinition(this));
+            // Concurrent first readers may compute independently; publish one complete immutable digest.
+            return Interlocked.CompareExchange(ref _version, computed, null) ?? computed;
+        }
+    }
 
     public bool SupportsForm(EntityId definitionId, ContentHash version) =>
         SupportedForms.Any(value => value.DefinitionId == definitionId && value.Version == version);

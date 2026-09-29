@@ -1,0 +1,34 @@
+{
+  "status": "completed_pending_review",
+  "process_exit_code": 0,
+  "elapsed_seconds": 675.485,
+  "total_cost_usd": 4.344385,
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "context_status": "verified",
+  "returnedModels": {
+    "claude-fable-5-1": {
+      "inputTokens": 22,
+      "outputTokens": 37203,
+      "cacheReadInputTokens": 724140,
+      "cacheCreationInputTokens": 115149,
+      "webSearchRequests": 0,
+      "costUSD": 4.344385,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 18477,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "postflightStatus": "verified",
+  "contextSha256": "9f3e7488e8fc9f035eed8d1f2ca5e542d22d1bcc8f2948de98cb70bcced05490",
+  "rawEvidenceDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-care-digests-csz2wr0e/run",
+  "limits": {
+    "seconds": 900,
+    "clientEstimateUsd": 8
+  },
+  "creditSavingsEstablished": false
+}

@@ -22,6 +22,12 @@ encounter outcome. It neither creates medical permission nor performs bodily wor
 helper-controlled `AdministerRemedyIntent` commits the helper and supplies the actual dose.
 The resulting treatment witness and command receipt record different facts.
 
+Remedy definitions and agreements retain their canonical `Version` digest lazily on the exact immutable
+object. The first successful read invokes the canonical encoder; atomic publication makes concurrent
+readers observe one complete immutable hash. A failed encoding is not retained. The private digest
+does not enter canonical bytes, cross object identities or certify admission. A new definition or
+agreement computes from its own facts, while complete-world treatment checks remain authoritative.
+
 ## Eligibility and complete publication
 
 [WorldCareActions](../../src/OpenFantasy.Core/Worlds/WorldCareActions.cs) requires the exact

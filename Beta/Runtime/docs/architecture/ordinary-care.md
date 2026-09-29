@@ -25,6 +25,17 @@ revocation preserves its command, world sequence and ordinal. Historical uses re
 and revision, and must precede revocation. Self-use has no external permission tuple. Runtime grant
 creation and broader medical consent require their own admitted operations.
 
+Each immutable use definition and permission retains its canonical digest lazily on that exact
+object. The first successful read uses the canonical encoder; concurrent readers publish one complete
+immutable hash. Encoding failures leave nothing retained, so a later read retries. Constructor-owned
+form collections prevent caller mutations from changing the encoded facts. These private digests are
+not serialized or shared through entity identity, and they confer no admission or treatment authority.
+
+`CarePermission.GrantVersion` covers the original grant; `Version` also covers its revocation state.
+Revocation constructs a separate immutable permission with its own lazy digests. Equal grant hashes
+therefore do not imply equal complete permissions or an active grant. Permission checks and historical
+ordering remain necessary on every admitted use.
+
 ## Availability and exact selection
 
 [WorldRestorativeActions](../../src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs) shares one

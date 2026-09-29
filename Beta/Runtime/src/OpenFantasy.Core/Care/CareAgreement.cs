@@ -5,6 +5,9 @@ namespace OpenFantasy.Core.Care;
 /// <summary>Prior voluntary care permission between two actual actors for one pinned remedy definition.</summary>
 public sealed class CareAgreement
 {
+    // Retained by this exact owner only; never serialized, shared by identity or copied to another agreement.
+    private ContentHash? _version;
+
     public CareAgreement(EntityId agreementId, EntityId patientActorId, EntityId helperActorId,
         EntityId remedyDefinitionId, ContentHash remedyVersion)
     {
@@ -23,5 +26,20 @@ public sealed class CareAgreement
     public EntityId HelperActorId { get; }
     public EntityId RemedyDefinitionId { get; }
     public ContentHash RemedyVersion { get; }
-    public ContentHash Version => ContentHash.Compute(CareCodecV1.EncodeAgreement(this));
+    /// <summary>The canonical digest of these immutable facts, encoded at the first read and then retained.</summary>
+    public ContentHash Version
+    {
+        get
+        {
+            ContentHash? published = Volatile.Read(ref _version);
+            if (published is not null)
+            {
+                return published;
+            }
+
+            ContentHash computed = ContentHash.Compute(CareCodecV1.EncodeAgreement(this));
+            // Concurrent first readers may compute independently; publish one complete immutable digest.
+            return Interlocked.CompareExchange(ref _version, computed, null) ?? computed;
+        }
+    }
 }

@@ -1,0 +1,68 @@
+[
+  {
+    "stage": "inspection-command",
+    "calls": 1,
+    "inclusiveMilliseconds": 15536.641,
+    "inclusiveThreadAllocatedBytes": 11190962616
+  },
+  {
+    "stage": "full-replay",
+    "calls": 1,
+    "inclusiveMilliseconds": 13986.498917,
+    "inclusiveThreadAllocatedBytes": 11181991424
+  },
+  {
+    "stage": "commit-preparation",
+    "calls": 1569,
+    "inclusiveMilliseconds": 13316.307559,
+    "inclusiveThreadAllocatedBytes": 11039555024
+  },
+  {
+    "stage": "world-root",
+    "calls": 2092,
+    "inclusiveMilliseconds": 4699.495311,
+    "inclusiveThreadAllocatedBytes": 1256959128
+  },
+  {
+    "stage": "world-encode",
+    "calls": 2090,
+    "inclusiveMilliseconds": 3990.250769,
+    "inclusiveThreadAllocatedBytes": 6465661368
+  },
+  {
+    "stage": "resource-causes",
+    "calls": 2092,
+    "inclusiveMilliseconds": 2307.539895,
+    "inclusiveThreadAllocatedBytes": 559198280
+  },
+  {
+    "stage": "world-identities",
+    "calls": 2092,
+    "inclusiveMilliseconds": 889.958823,
+    "inclusiveThreadAllocatedBytes": 320133472
+  },
+  {
+    "stage": "care-admission",
+    "calls": 2092,
+    "inclusiveMilliseconds": 560.59584,
+    "inclusiveThreadAllocatedBytes": 62107768
+  },
+  {
+    "stage": "ordinary-care",
+    "calls": 2092,
+    "inclusiveMilliseconds": 550.376653,
+    "inclusiveThreadAllocatedBytes": 61170376
+  },
+  {
+    "stage": "source-partition",
+    "calls": 2092,
+    "inclusiveMilliseconds": 84.915921,
+    "inclusiveThreadAllocatedBytes": 19412696
+  },
+  {
+    "stage": "production-continuation",
+    "calls": 516,
+    "inclusiveMilliseconds": 65.603251,
+    "inclusiveThreadAllocatedBytes": 43024608
+  }
+]

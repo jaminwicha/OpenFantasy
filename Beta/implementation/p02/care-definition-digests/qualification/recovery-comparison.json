@@ -1,0 +1,117 @@
+{
+  "status": "diagnostic-complete",
+  "sameDatabase": true,
+  "exactInspectionBytes": true,
+  "sourceAndOriginalDatabaseUnchanged": true,
+  "allStageCallCountsUnchanged": true,
+  "cumulativeReplayAllocationReductionPercent": 10.262886940974248,
+  "priorReport": "Beta/implementation/p02/world-canonical-frame/qualification/recovery-profile-01/result.json",
+  "report": "Beta/implementation/p02/care-definition-digests/qualification/recovery-profile-01/result.json",
+  "stages": [
+    {
+      "stage": "inspection-command",
+      "callsBefore": 1,
+      "callsAfter": 1,
+      "allocatedBefore": 12469787152,
+      "allocatedAfter": 11190962616,
+      "millisecondsBefore": 29162.764625,
+      "millisecondsAfter": 15536.641
+    },
+    {
+      "stage": "full-replay",
+      "callsBefore": 1,
+      "callsAfter": 1,
+      "allocatedBefore": 12460832584,
+      "allocatedAfter": 11181991424,
+      "millisecondsBefore": 28503.171125,
+      "millisecondsAfter": 13986.498917
+    },
+    {
+      "stage": "commit-preparation",
+      "callsBefore": 1569,
+      "callsAfter": 1569,
+      "allocatedBefore": 12315605208,
+      "allocatedAfter": 11039555024,
+      "millisecondsBefore": 27019.500876,
+      "millisecondsAfter": 13316.307559
+    },
+    {
+      "stage": "world-root",
+      "callsBefore": 2092,
+      "callsAfter": 2092,
+      "allocatedBefore": 2332393400,
+      "allocatedAfter": 1256959128,
+      "millisecondsBefore": 11308.214759,
+      "millisecondsAfter": 4699.495311
+    },
+    {
+      "stage": "world-encode",
+      "callsBefore": 2090,
+      "callsAfter": 2090,
+      "allocatedBefore": 6465728904,
+      "allocatedAfter": 6465661368,
+      "millisecondsBefore": 7451.529144,
+      "millisecondsAfter": 3990.250769
+    },
+    {
+      "stage": "resource-causes",
+      "callsBefore": 2092,
+      "callsAfter": 2092,
+      "allocatedBefore": 1623330896,
+      "allocatedAfter": 559198280,
+      "millisecondsBefore": 6665.938591,
+      "millisecondsAfter": 2307.539895
+    },
+    {
+      "stage": "world-identities",
+      "callsBefore": 2092,
+      "callsAfter": 2092,
+      "allocatedBefore": 331475480,
+      "allocatedAfter": 320133472,
+      "millisecondsBefore": 1678.929416,
+      "millisecondsAfter": 889.958823
+    },
+    {
+      "stage": "care-admission",
+      "callsBefore": 2092,
+      "callsAfter": 2092,
+      "allocatedBefore": 62129384,
+      "allocatedAfter": 62107768,
+      "millisecondsBefore": 1007.755806,
+      "millisecondsAfter": 560.59584
+    },
+    {
+      "stage": "ordinary-care",
+      "callsBefore": 2092,
+      "callsAfter": 2092,
+      "allocatedBefore": 61184360,
+      "allocatedAfter": 61170376,
+      "millisecondsBefore": 982.222124,
+      "millisecondsAfter": 550.376653
+    },
+    {
+      "stage": "source-partition",
+      "callsBefore": 2092,
+      "callsAfter": 2092,
+      "allocatedBefore": 19411800,
+      "allocatedAfter": 19412696,
+      "millisecondsBefore": 174.201637,
+      "millisecondsAfter": 84.915921
+    },
+    {
+      "stage": "production-continuation",
+      "callsBefore": 516,
+      "callsAfter": 516,
+      "allocatedBefore": 43025576,
+      "allocatedAfter": 43024608,
+      "millisecondsBefore": 89.886244,
+      "millisecondsAfter": 65.603251
+    }
+  ],
+  "limitations": [
+    "Single diagnostic run per source revision; not a controlled causal latency comparison.",
+    "Inclusive stage costs overlap and must not be summed.",
+    "Allocation counts are cumulative, not peak or retained memory.",
+    "Separate unchanged external crash matrix establishes only its named workload/bounds."
+  ]
+}

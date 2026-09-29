@@ -42,48 +42,51 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Active assignment
 
-Finish the [coordinated world continuation](p02/coordinated-world-continuation/README.md) campaign.
-The [canonical-frame increment](p02/world-canonical-frame/README.md) is verified for managed behavior:
-2,473 full Core/Hosting passes and 53 byte-identical retained outputs. Recovery still exceeds the
-unchanged 30-second bound; actual post-cut native use/reopening remain unqualified. Normal fresh-game
-admission remains profile 26.
+Continue the [coordinated world continuation](p02/coordinated-world-continuation/README.md) campaign
+with the [actual post-cut native journey](p02/world-canonical-frame/NATIVE_FOLLOWUP.md). The unchanged
+external normal/BeforeCommit/AfterCommit matrix now passes on the real 520-dose ledger. Use an explicit
+profile27 fixture route with an admitted fresh genesis and actual earned/transferred player medicine;
+normal new games remain profile26. Prove public wheel use, cancellation/paused refusal, the exact dose/
+HP/identity changes and second-process reopening against complete histories/archives.
 
-Follow the [remaining-cost analysis](p02/world-canonical-frame/RECOVERY_FOLLOWUP.md). Its getter profile
-measured 470,335 use-version, 267,835 remedy-version and 199,920 permission-grant hash computations.
-The next bounded candidate is lazy digests owned by those exact immutable definitions/grants; preserve
-first-read refusal semantics and distinguish a revoked permission from its original grant. Repeated
-per-validation lookups remain an unmeasured alternative; do not jump to broad admission caches.
-Preserve every cause, permission, seeded draw, source partition, archive retrieval and full replay
-check. Take a new recoverable checkpoint before another major change. Do not raise limits, use a
-surrogate world or repeat acceptance until a run happens to pass. After a measured improvement,
-qualify exact external BeforeCommit/AfterCommit recovery and the
-[native post-cut journey](p02/world-canonical-frame/NATIVE_FOLLOWUP.md). Production lifetime/latency,
-platform/device, multiplayer, art/audio and human acceptance remain separate full-scope requirements.
+Take a recoverable checkpoint before the next major change. Preserve actual permission withdrawal,
+source rights, seeded draws, archive retrieval, full replay and the existing native/time bounds. No
+surrogate world, fabricated stock, automatic retry or implicit upgrade of lived saves. All external
+workers and task-owned qualification processes have finished. Production lifetime/latency, physical
+platform/device, multiplayer, art/audio and human acceptance remain separate requirements.
 
 ## Latest increment
 
-[Canonical world frames](p02/world-canonical-frame/README.md) reuse the exact final candidate bytes
-already produced at Core's existing envelope checks. Frames own defensive bytes, bind by exact root
-identity, preserve movement/care rollback and archive wrapping, and leave legacy Host encoding intact.
-No codec, schema, admission, archive-authentication or journal limit changes. Architecture references
-are current; 829 local file links resolve. Normal new games still select profile 26.
+[Immutable care definition digests](p02/care-definition-digests/README.md) retain canonical hashes on
+four exact immutable owners with safe lazy publication. A revoked permission owns separate grant and
+complete-record digests. Constructors, codecs, schemas, replay/admission and permission rules are
+unchanged. Same-change architecture references are current; all 829 local file links resolve.
 
-The clean build and full **1,577 Core + 896 Hosting = 2,473** managed cases pass without skips. All 53
-retained legacy/coordinated outputs match exactly. Independent native source review and Astra's final
-review cover the unchanged runtime hashes. Fable completed in 833.615 seconds with no denials,
-verified Fable/1M context, requested Max effort and a $7.77281375 client estimate; net credit savings
-are not established. Its verified postflight preceded shared-document updates. The active ecosystem
-sync-manifest repair is committed upstream at `7d50112`.
+Clean build; **1,583 full Core + 141 affected Hosting = 1,724 distinct passes**, zero failures/skips.
+The targeted Hosting selection is explicit; the previous full 896-case run remains retained, not
+claimed rerun. All 53 legacy/coordinated outputs remain byte-identical, as do source/execution pins.
+Astra and an independent native critic reviewed the final runtime hashes. Fable completed within its
+single bound in 675.485 seconds, with verified Fable/1M context, requested Max effort, no denials and a
+$4.344385 client estimate. Postflight verified before shared docs changed; net credit savings are unknown.
 
-The unchanged external test timed out on normal publication at 30.021 seconds, before planned kills.
-A same-ledger disposable profile reduced encodes 3,659→2,090 and cumulative replay allocation
-16.44→12.46 GB (24.2%), while all 2,092 root/resource admission calls remained. Inclusive full replay
-was 28.503 seconds; diagnostic bounds and separate machine timings are not acceptance. Original
-failures, inputs and execution pins remain retained. Full recovery/crash/native gates stay open.
+The unchanged external matrix passes all three normal/crash cases, ten ordinary commands and two real
+SIGKILLs under the original 30-second command/signal and five-second kill bounds. Slowest command:
+28.125 seconds. This is the retained workload's storage/atomicity proof, not general latency or native
+acceptance. A separate same-ledger diagnostic reduces cumulative replay allocation **12.46→11.18 GB
+(10.3%)**, with all 2,092 root/resource admission calls intact and identical inspection bytes. Its lower
+timing is not a controlled causal comparison; cumulative allocation is not peak/live memory.
 
-Preserved marker: `codex/milestone-world-canonical-frame` (resolve for exact commit). Its pre-change
-checkpoint is `codex/checkpoint-before-world-canonical-frame-20260928T221903Z` at `477c264`. All 73
-preceding milestones, 23 frozen specs and the unrelated 19-file predecessor index remain intact.
+Preserved marker: `codex/milestone-care-definition-digests` (resolve for exact commit). Pre-change
+checkpoint: `codex/checkpoint-before-care-definition-digests-20260928T233253Z` at `d933dee`. All 74 prior
+milestones, 23 frozen specs and the exact unrelated 19-file predecessor index are preserved.
+
+### Previous canonical-frame checkpoint
+
+[Canonical frames](p02/world-canonical-frame/README.md), milestone `codex/milestone-world-canonical-frame`
+at `d933dee`, reuse the exact candidate encoding at existing Core checks with legacy Host fallback.
+Its full 2,473-case regression and 53 identical outputs remain preserved. The original normal-recovery
+30.021-second timeout and the diagnostic allocation reduction 16.44→12.46 GB remain historical evidence;
+they are not rewritten by the later passing crash matrix.
 
 ### Previous coordinated-world checkpoint
 

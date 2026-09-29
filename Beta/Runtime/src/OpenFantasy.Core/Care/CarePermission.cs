@@ -8,6 +8,11 @@ namespace OpenFantasy.Core.Care;
 /// </summary>
 public sealed class CarePermission
 {
+    // Retained by this exact owner only. A revoked successor is another owner and encodes its own digests;
+    // neither value is shared by permission identity, serialized or evidence of permission.
+    private ContentHash? _grantVersion;
+    private ContentHash? _version;
+
     public CarePermission(EntityId permissionId, EntityId patientActorId, EntityId helperActorId,
         EntityId useDefinitionId, ContentHash useDefinitionVersion, CarePermissionRevocation? revocation = null)
     {
@@ -31,8 +36,40 @@ public sealed class CarePermission
     public CarePermissionRevocation? Revocation { get; }
     public ulong Revision => Revocation is null ? 0UL : 1UL;
     public bool IsActive => Revocation is null;
-    public ContentHash GrantVersion => ContentHash.Compute(CareCodecV2.EncodePermissionGrant(this));
-    public ContentHash Version => ContentHash.Compute(CareCodecV2.EncodePermission(this));
+
+    /// <summary>The canonical digest of the original grant alone, encoded at the first read and then retained.</summary>
+    public ContentHash GrantVersion
+    {
+        get
+        {
+            ContentHash? published = Volatile.Read(ref _grantVersion);
+            if (published is not null)
+            {
+                return published;
+            }
+
+            ContentHash computed = ContentHash.Compute(CareCodecV2.EncodePermissionGrant(this));
+            // Concurrent first readers may compute independently; publish one complete immutable digest.
+            return Interlocked.CompareExchange(ref _grantVersion, computed, null) ?? computed;
+        }
+    }
+
+    /// <summary>The canonical digest of the grant with this owner's revocation state, encoded at the first read.</summary>
+    public ContentHash Version
+    {
+        get
+        {
+            ContentHash? published = Volatile.Read(ref _version);
+            if (published is not null)
+            {
+                return published;
+            }
+
+            ContentHash computed = ContentHash.Compute(CareCodecV2.EncodePermission(this));
+            // Concurrent first readers may compute independently; publish one complete immutable digest.
+            return Interlocked.CompareExchange(ref _version, computed, null) ?? computed;
+        }
+    }
 
     public CarePermission Revoke(CarePermissionRevocation revocation)
     {
