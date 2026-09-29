@@ -329,3 +329,20 @@ Pre-change refs are `codex/checkpoint-before-consented-format-qualification-2026
 (`1b922ba`) and `codex/checkpoint-formats-before-integration-20260929T091403Z` (`5e808c1`).
 All 23 frozen specs, 52 existing fixtures and unrelated 19-file predecessor staging are preserved.
 This is a progress backup pointer on `codex/runtime-foundation`, not a format freeze or phase exit.
+
+The `codex/milestone-durable-consented-world-20260929` progress marker preserves the explicit
+profile-28 SQLite binding in schema eight, complete atomic paired publication, permanent identities,
+two actual coordinated cuts/reopening and updated timeless references. Qualification passes the
+integration build, 200 broad affected Host cases, 17 durable and 38 legacy cases, with 244 distinct
+passes after overlaps and verified equal runtime source/library bytes across the two builds.
+Two actual SIGKILLs at commit boundaries recover exact before/after ledgers; duplicate commands
+publish no second transfer. The actual net10 Host and 15 archived fixture inputs are separately pinned.
+[Integration review](p02/durable-consented-world/INTEGRATION_REVIEW.md) records failure dispositions,
+review scope, source bindings, delegation cost limits and remaining gates. The original worker fixture
+failure, overlapping checks and lead preflight-path failure remain preserved; no threshold was relaxed.
+Pre-change refs are `codex/checkpoint-before-durable-consented-world-20260929T092257Z` (`d88e039`) and
+`codex/checkpoint-durable-consent-before-integration-20260929T100036Z` (`55b6431`). All 23 frozen specs,
+53 existing fixtures and the exact 19-file staged predecessor index remain intact. Public paired
+ingress, asynchronous offers, native interaction, retained-save transition, remaining format proofs,
+production scale and full phase/campaign gates remain open. Work stays on `codex/runtime-foundation`;
+this is a backup pointer, with no branch switch, force update, push or merge.

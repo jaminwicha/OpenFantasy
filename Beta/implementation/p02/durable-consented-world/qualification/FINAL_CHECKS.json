@@ -1,0 +1,97 @@
+{
+  "status": "bounded_durable_host_qualified",
+  "sourceHead": "d88e0392464806f53afc2e668a6c959ac7c7f8d6",
+  "integrationBuild": {
+    "path": "qualification/durable-build-20260929T100138Z.json",
+    "sha256": "bb619673b2fcf875f00ac245f479ad944f791710dd7fe9799c1f704855fa6c03"
+  },
+  "workerBuild": {
+    "path": "qualification/durable-build-20260929T094952Z.json",
+    "sha256": "ca0d2035f4ca709728c00bdec2cd5d34d2ec8980a53ab9704bda2ab89c3501dd"
+  },
+  "checks": [
+    {
+      "path": "qualification/durable-focused-20260929T095011Z.json",
+      "sha256": "6508a0b2b9b6e24e1020b3c303ca4d4776cdb8148b87e653a17ce112d82bd18c",
+      "passed": 17,
+      "elapsedSeconds": 347.374,
+      "limitSeconds": 600,
+      "trx": {
+        "path": "qualification/durable-focused-20260929T095011Z.trx",
+        "sha256": "768b246e367a70a4845f0207b537fef8a3db29ed50cbf8ee5dad4ba0a2370870"
+      },
+      "sourceAndAssemblyPinsVerified": true
+    },
+    {
+      "path": "qualification/durable-legacy-20260929T095013Z.json",
+      "sha256": "61bf8f73eeebf8956be0e9dde9bf016b9fae5b04b3c0e4151bf82a897d7c3a63",
+      "passed": 38,
+      "elapsedSeconds": 421.573,
+      "limitSeconds": 600,
+      "trx": {
+        "path": "qualification/durable-legacy-20260929T095013Z.trx",
+        "sha256": "7a8313a7e7cef7e5e701c7ee14fb153ab3d2e94c0ac138d281340f95d3838313"
+      },
+      "sourceAndAssemblyPinsVerified": true
+    },
+    {
+      "path": "qualification/durable-hosting-20260929T100225Z.json",
+      "sha256": "3bfbcc08dd98f7c558b97cebd1c29950be7a48481222ac8b652c106d245a7858",
+      "passed": 200,
+      "elapsedSeconds": 497.432,
+      "limitSeconds": 600,
+      "trx": {
+        "path": "qualification/durable-hosting-20260929T100225Z.trx",
+        "sha256": "44d342e9e3fd07de39899f609d22b5b84f3f523ac895ecc7dee96c17fb38bc64"
+      },
+      "sourceAndAssemblyPinsVerified": true
+    }
+  ],
+  "distinctPassingTestIds": 244,
+  "requiredPriorManagedCasesRetained": 195,
+  "crossBuildRuntimeSourceEntriesEqual": 821,
+  "crossBuildNet8SourceAssemblyEntriesEqual": 3,
+  "additionalIntegrationTestSources": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ConsentedMaterialCarePolicyTests.cs"
+  ],
+  "currentSourcesAndAssembliesMatchIntegrationBuild": true,
+  "hostExecutablePins": {
+    "path": "qualification/HOST_EXECUTABLE_PINS.json",
+    "sha256": "1efe54e6f0baf854aafdcbcf1c1ec749930840e26ec60aab5a6c05319c8173c5"
+  },
+  "processQualification": {
+    "path": "qualification/process-loss-20260929T101213Z/result.json",
+    "sha256": "c8ffb36d841e86aab8540524ded047cc39c63b88d32a7ded6ab1d5b267978b26",
+    "actualSigkills": 2,
+    "normalControlAndBothRecoveryCasesPassed": true,
+    "allOriginalDeadlinesHeld": true,
+    "fixturesAndExecutionUnchanged": true
+  },
+  "fixtureArchive": {
+    "path": "qualification/FIXTURE_ARCHIVE.json",
+    "sha256": "a9c919ec8263ee823e033d4888dedb88f5846e0e090ab079581248323838d961",
+    "archiveSha256": "22eded8c2ab15c1a9837a33fcfeabb34caa69695810c622516933ac33a781bdd",
+    "verifiedMembers": 15
+  },
+  "frozenSpecsVerified": 23,
+  "existingFixturesVerifiedAgainstSourceHead": 53,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "workerReportsUnchangedSinceIntegrationCheckpoint": true,
+  "fullCoreRegressionRerun": false,
+  "nativeRun": false,
+  "powerLossQualification": false,
+  "wholeGameOrPhaseAcceptance": false,
+  "limitations": [
+    "Privileged selected-batch durability only; independently authenticated public two-party submission and persisted offers remain open.",
+    "Actual fixture reaches 850 commits and two archive cuts; scheduled-checkpoint thresholds have policy proofs, not a newly executed 6000-commit world journey.",
+    "Prior retained personal-dose world remains unchanged and still requires an admitted transition.",
+    "Format residuals remain open; this is not a format freeze.",
+    "Native/device, production-scale/history/streaming, content/art/audio and complete P00-P14 acceptance remain open."
+  ],
+  "retainedFailures": [
+    "durable-focused-20260929T094402Z.json",
+    "PROCESS_PREFLIGHT_FAILURE.json"
+  ],
+  "schedulingDeviation": "Worker focused and legacy runs overlapped; retained passes are not a production latency claim. Lead broad and process checks ran sequentially.",
+  "affectedDocumentationLocalLinksVerified": 141
+}

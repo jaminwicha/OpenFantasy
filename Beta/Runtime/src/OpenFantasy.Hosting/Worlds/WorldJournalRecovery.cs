@@ -82,7 +82,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
         }
-        if ((genesis.ProfileVersion == 27) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        if ((genesis.ProfileVersion is 27 or 28) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
         }
@@ -188,9 +188,15 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
         }
-        if ((state.ProfileVersion == 27) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        if ((state.ProfileVersion is 27 or 28) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
+        }
+        // The shared layout never converts one interpretation into the other. Every accepted root
+        // keeps the exact interpretation its genesis selected.
+        if (database.SchemaVersion == WorldDatabaseSchemaEight.Version && state.ProfileVersion != genesis.ProfileVersion)
+        {
+            throw new InvalidDataException("The coordinated world departed from its genesis-selected interpretation.");
         }
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps

@@ -37,9 +37,11 @@ public sealed class SqliteWorldAuthority : IDisposable
         WorldGenesisAdmission.Validate(genesis);
         byte[] bytes = WorldSnapshotCodec.Encode(genesis);
         WorldSnapshot accepted = WorldSnapshotCodec.Decode(bytes);
+        // Each interpretation is named. A fresh consented world shares the coordinated physical
+        // layout; its genesis, never the schema number, selects how the stored roots are read.
         int schemaVersion = accepted.ProfileVersion switch
         {
-            27 => WorldDatabaseSchemaEight.Version,
+            27 or 28 => WorldDatabaseSchemaEight.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,

@@ -28,9 +28,11 @@ internal static class WorldJournalPolicy
         ulong commandCount, ulong batchBytes, ulong outcomeBytes, PendingExcavation? newlyPending = null,
         ushort profileVersion = 16, ulong resourceArchiveBytes = 0, ulong materialCareArchiveBytes = 0)
     {
-        if (profileVersion != 27 && (materialCareArchiveBytes != 0
+        // Only the named coordinated and consented interpretations close joint material and care history.
+        bool jointArchives = profileVersion is 27 or 28;
+        if (!jointArchives && (materialCareArchiveBytes != 0
                 || current.MaterialCareArchiveCount != 0 || current.MaterialCareArchiveBytes != 0)
-            || profileVersion == 27 && (resourceArchiveBytes != 0
+            || jointArchives && (resourceArchiveBytes != 0
                 || current.ResourceArchiveCount != 0 || current.ResourceArchiveBytes != 0))
         {
             throw new InvalidDataException("World archive accounting must retain its explicit profile interpretation.");

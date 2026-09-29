@@ -1,0 +1,8 @@
+{
+  "ref": "codex/checkpoint-durable-consent-before-integration-20260929T100036Z",
+  "snapshot": "55b64312d17eb4daf7188c5b113e3cf1c9badf72",
+  "sourceHead": "d88e0392464806f53afc2e668a6c959ac7c7f8d6",
+  "scope": "Completed successor worker implementation, tests, architecture and lead harness; predecessor staging excluded",
+  "verification": "Worker build, 17 durable and 38 legacy cases passed; broad/policy/process-loss qualification pending",
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

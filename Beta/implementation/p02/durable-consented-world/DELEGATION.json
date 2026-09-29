@@ -1,0 +1,38 @@
+{
+  "status": "integrated_qualified_bounded_host_scope",
+  "taskPath": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-durable-consented-rrxwpw7f",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 2400,
+  "clientEstimateLimitUsd": 24,
+  "scope": "Actual SQLite profile28 publication and two-cut recovery, receipts/identities, failure/corruption tests, architecture",
+  "startedUtc": "2026-09-29T09:25:22.060988+00:00",
+  "adapterExitCode": 0,
+  "finishedUtc": "2026-09-29T09:58:15.461334+00:00",
+  "elapsed_seconds": 1972.071,
+  "total_cost_usd": 20.172086250000007,
+  "context_status": "verified",
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 186,
+      "outputTokens": 140527,
+      "cacheReadInputTokens": 25589025,
+      "cacheCreationInputTokens": 337331,
+      "webSearchRequests": 0,
+      "costUSD": 20.172086250000007,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 73436,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "isError": false,
+  "postflight": "verified",
+  "integrationReview": "INTEGRATION_REVIEW.md",
+  "finalChecks": "qualification/FINAL_CHECKS.json"
+}

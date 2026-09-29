@@ -1,0 +1,10 @@
+{
+  "targetFramework": "net10.0",
+  "host": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+  "hostSha256": "196a00c432983904d6ea1764460fe4d0695e2c700673f9c9087096be458cf2a5",
+  "integrationBuild": "durable-build-20260929T100138Z.json",
+  "loadedLibraryCopiesMatchPinnedBuild": {
+    "OpenFantasy.Core": "39e21e6770fb368eac79b459e84ed660ba107696e78fa1aa8cbd634491edbcd5",
+    "OpenFantasy.Hosting": "84b05d7bba54016ccf29e1d762ed67cd6c64c07f7f0ca951cba839c805b5e445"
+  }
+}

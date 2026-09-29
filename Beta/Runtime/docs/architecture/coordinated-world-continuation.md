@@ -87,7 +87,8 @@ a trusted checkpoint or a second source of world state.
 
 ## Durable transaction and budget
 
-[Schema eight](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaEight.cs) binds profile27 to
+[Schema eight](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaEight.cs) binds profile27 and
+the explicit [consented interpretation](#consented-material-interpretation) to
 `world_material_care_segments`. The separate resource archive table belongs to schema7/profile25–26.
 Each joint row records scope, ordinal, boundary revision/hash, publication revision and exact closing
 bytes. Revision N closes at publication N+1. Both scope/ordinal and publication are unique.
@@ -128,6 +129,18 @@ custodians. Transfer headroom joins the existing material/care/resource budget. 
 V11/context profile 9 and complete admission replays its produced-custody evidence; receipts and
 permanent identities remain separate facts. Snapshot/step decoding explicitly selects this profile.
 
-The profile-27 SQLite schema and replay bindings described above do not automatically support profile
-28. Authenticated dual-party ingress, durable publication and recovery require their own Host binding.
-The portable complete-world transaction and archive contracts cannot establish those guarantees.
+Schema eight stores both interpretations in the same physical layout: its joint archive table holds
+bounded opaque closing roots with scope, ordinal, boundary and publication, none of which is specific
+to one profile. The layout never selects an interpretation. Fresh creation names profiles 27 and 28
+explicitly, and recovery requires a profile-27 or profile-28 genesis for this schema. Every replayed
+step must carry the profile of the root it extends, this schema admits no profile migration, and the
+recovered head must keep the interpretation of its stored genesis. Archive publication checks the accepted
+genesis scope under either named profile, and journal accounting admits joint archives, and refuses
+the separate resource archive family, for those two profiles only. No other or greater profile is
+admitted, and opening never converts one interpretation into the other. A profile-27 save remains a
+profile-27 save; a step encoded under the other profile fails dispatch during replay.
+
+The durable binding is the privileged host-selected batch. It publishes both participants' receipts,
+every permanent identity, the archive, head and scheduled checkpoint in the one transaction described
+above. It is not authenticated dual-party ingress: see the
+[consented world](consented-world.md#durable-host-binding) boundary.

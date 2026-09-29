@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-consented-world/qualification/verify_process_recovery.py",
+    "--dotnet",
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "--host",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net8.0/OpenFantasy.Host.dll",
+    "--before-db",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-durable-consented-rrxwpw7f/durable-focused-20260929T095011Z-exports/before.sqlite3",
+    "--after-db",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-durable-consented-rrxwpw7f/durable-focused-20260929T095011Z-exports/after.sqlite3",
+    "--batch",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-durable-consented-rrxwpw7f/durable-focused-20260929T095011Z-exports/batch.ofc",
+    "--after-root",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-durable-consented-rrxwpw7f/durable-focused-20260929T095011Z-exports/after.ofc",
+    "--output",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-consented-world/qualification/process-loss-20260929T101112Z"
+  ],
+  "output": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-consented-world/qualification/process-loss-20260929T101112Z",
+  "status": "failed_preflight_no_host_process_started",
+  "reason": "Lead selected nonexistent net8.0 Host artifact; preserve request before correcting to the actual build target."
+}

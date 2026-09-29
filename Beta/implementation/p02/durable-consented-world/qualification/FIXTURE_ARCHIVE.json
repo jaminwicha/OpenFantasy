@@ -1,0 +1,23 @@
+{
+  "archive": "durable-fixtures.tar.gz",
+  "sha256": "22eded8c2ab15c1a9837a33fcfeabb34caa69695810c622516933ac33a781bdd",
+  "sourceFixture": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-durable-consented-rrxwpw7f/durable-focused-20260929T095011Z-exports",
+  "files": {
+    "acceptance-command.ofc": "7af5de7dcf9547207c80dede42c2bc3eadc123cfa4c3c19fae4cd46b7518378d",
+    "acceptance-receipt.ofc": "de10e8c7d2fc97ba083a815e776db95c703ff4d6922a02d4c037cc751eec08f1",
+    "after.ofc": "b4700aefe1a35fd4a2b0d94733e076ffbe6cef7ae9f0700e5e1e8e27ce33187b",
+    "after.sqlite3": "46f3c2632c38b915743e54ffa3d91eeb630c43025e375d1598279e7f87dd3a37",
+    "archive.ofc": "af2cf2777bad0eaa1b850cefd9a6de6eaf0bc1cb21e130b0c0d245a940e45a3e",
+    "batch.ofc": "613d571f39c8e47223ee0741f9bdcd89c9186fdb41a0839e8f0dec2f50523034",
+    "before.ofc": "af2cf2777bad0eaa1b850cefd9a6de6eaf0bc1cb21e130b0c0d245a940e45a3e",
+    "before.sqlite3": "0a14a957e3c5ff6bc17b127cc503b371a1e3073f2b4a2ba81202675d8776e03c",
+    "final.ofc": "0820d8ade74cd790e22ac08395ed8c40dfaf9b70fd77d84cc6e9f31b3b206b93",
+    "final.sqlite3": "1df9eaf2371abbf01d16060e1e2849d1323b273493953de7fb44ed09b437c032",
+    "genesis.ofc": "1de04765b07fbbe8e5190f2b9e4234ff4cc404fcfe8d268b55c9f18458a79adf",
+    "identities.json": "1334a0a9dd4007f248e5af19fe8dc6aa398ac0acf98a192d0f9a9a21a2f930ab",
+    "metadata.json": "4b1ec987c168f5aa27e399793c4e0212a0469176775bb83fdb6c23760d3a4b58",
+    "offer-command.ofc": "9cf42233d18bf218db905f3d5515b97acc71acdd59e34fdd3b659656dc665875",
+    "offer-receipt.ofc": "77667afe1adf85120000e2b226e35ff8ed862e2b6f79e14bdfb10ad5daa27499"
+  },
+  "restore": "Extract into a NEW empty directory with python3 -m tarfile -e durable-fixtures.tar.gz DEST. Run verify_process_recovery.py with the pinned dotnet/Host, DEST/before.sqlite3, DEST/after.sqlite3, DEST/batch.ofc, DEST/after.ofc and a NEW output directory. No original saved world is used."
+}

@@ -120,14 +120,59 @@ cut. That root retains its evidence. The successor imports actual surviving stoc
 basis and starts an empty segment history. Decoding a successor requires the matching anchor derived
 from decoded closing archive bytes. Repeating a cut preserves the capability and material ancestry.
 
-The Host must retain permanent identity occupancy across cuts and supply that lookup for continued
-decisions. Clearing segment evidence never makes old command or child identities available again.
+The Host retains permanent identity occupancy across cuts in its stored identity table and supplies
+that lookup for continued decisions and for replay. Clearing segment evidence never makes old command
+or child identities available again.
+
+## Durable Host binding
+
+[`SqliteWorldAuthority`](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs) admits a fresh
+profile-28 genesis by name and stores it in
+[schema eight](coordinated-world-continuation.md#durable-transaction-and-budget), whose layout it
+shares with profile 27. The stored genesis alone selects the interpretation. Recovery refuses a
+genesis of any other profile in that schema, a replayed step whose profile differs from the root it
+extends, and a recovered head that departs from its genesis profile. Opening with an expected genesis
+compares the exact canonical bytes after complete recovery.
+Nothing converts, relabels or falls back between interpretations, and no profile is admitted by
+being numerically greater than a supported one.
+
+One SQL transaction publishes the complete candidate root, the journal row, both participants'
+command receipts, every permanent identity, the closing archive when the batch required a cut, the
+head and any scheduled checkpoint. Permanent identities are the commit cause, both command
+identities, both receipt result identities and a split child. A refused pair still publishes its
+cause, both commands and both terminal receipts; it publishes no child. Loss before the commit leaves
+none of these rows; loss after it leaves all of them. An uncertain outcome invalidates the open
+authority, and reopening decides by complete replay.
+
+Recovery replays every accepted batch from the stored genesis and requires the journal, each archive,
+the command table, the identity table, every checkpoint and the head to equal that replay exactly.
+A stored archive whose bytes match its own recomputed hash is still refused unless it is the replayed
+closing root at that boundary. Historical state and archive selection verify through the current head
+first, so later damage also blocks reading an earlier archive. Identity occupancy is permanent across
+cuts: a closed offer, acceptance, retired split child or refused command can never name a new command,
+and a replayed batch is a stale dispatch that moves nothing. The journal, state and archive bounds of
+the [coordinated world](coordinated-world-continuation.md#durable-transaction-and-budget) apply unchanged.
+
+`Commit` is privileged. It receives batches the Host already selected and reconstructs each
+submitted delivery claim from the command itself in order to check current control. That consistency
+check is also what trusted replay performs; it does not authenticate either participant.
+`FindReceipt` is the local authorization boundary. It compares an independently supplied current
+delivery with the command's principal and the actor's current control before it reads any stored
+outcome, so a wrong delivery receives the same refusal whether or not an outcome exists. The stream
+key is principal plus command identity, with current control checked for the command's actor.
+Control of one participant does not grant access to another participant's stream. A principal that
+already controls both actors may access both authorized streams; their separate transfer approvals
+are still required. Naming another principal's command identity does not change the selected stream.
 
 ## Application boundaries
 
-The Core transaction does not provide persisted offers, expiration, withdrawal, reconnect, transport
-authentication or UI selection. These require explicit Host/application bindings. An asynchronous
-offer's creation receipt and the later transfer's outcome are different events; accepting later must
-not rewrite an earlier receipt. Native controls, durable Host recovery and migration of older worlds
-require their own qualifications. The standalone ordered production profile is not interchangeable
-with this coordinated-world interpretation.
+The durable binding does not provide public paired ingress. A service that accepts submissions from
+two parties must verify both actual deliveries before it selects a batch, reports availability or
+discloses a prior outcome. Identifiers copied into a payload, or the recipient named by an offer,
+supply neither delivery. Persisted offers, expiration, withdrawal, reconnect, transport authentication
+and UI selection likewise require explicit Host/application bindings. An asynchronous offer's
+creation receipt and the later transfer's outcome are different events; accepting later must not
+rewrite an earlier receipt. Native controls, non-player decisions, production history scale and
+migration of older worlds require their own qualifications. Fresh admission never upgrades or
+replaces a saved world of another interpretation. The standalone ordered production profile is not
+interchangeable with this coordinated-world interpretation.
