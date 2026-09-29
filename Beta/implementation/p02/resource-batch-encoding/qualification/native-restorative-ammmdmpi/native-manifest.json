@@ -1,0 +1,20 @@
+{
+  "journeys": [
+    {
+      "name": "coordinated-withdrawal",
+      "label": "coordinated-revoke",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-ammmdmpi/coordinated-revoke.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-ammmdmpi/coordinated-revoke.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-ammmdmpi/coordinated-revoke.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/before.sqlite3": "1dd7707f1860f720e6949cb2722a00b8b6dd6a4e58b82813549eb4eed7c53ca2",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/before.ofc": "570e1c01340ab87260143519bea11712a53a36d921314deb874acf1e4d2f0fab",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json": "7c11021a30ad3918c36eaf007556cef1a3ba2d98fa771a768cee4f865da8133c",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222"
+      },
+      "finalDatabaseSha256": "54c1a53d02a7f0493883bdfaa920ab38a9fb2d16126736384aed9a8c5f91ba34",
+      "expectedGenesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc"
+    }
+  ]
+}

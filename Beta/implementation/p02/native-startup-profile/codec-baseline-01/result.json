@@ -1,0 +1,183 @@
+{
+ "kind": "native-startup-profile-v1",
+ "status": "failed",
+ "label": "codec-baseline-01",
+ "startedUtc": "2026-09-29T02:27:09.605557+00:00",
+ "limits": {
+  "buildSeconds": 180,
+  "openingSeconds": 30,
+  "probeSeconds": 150,
+  "processSeconds": 180,
+  "hostSeconds": 90,
+  "aggregateSeconds": 240.0
+ },
+ "originalRun": {
+  "godotSha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+  "dotnetSha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+  "projectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "reopenDurationMilliseconds": 30179,
+  "reopenProcessSeconds": 34.373,
+  "hostDotnet10Seconds": 20.994
+ },
+ "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3",
+ "commit": 1581,
+ "commitHash": "63c0f4517e92fbc0c0da8e9c5fe4651b0203b87e427c6f602f0469b886e037da",
+ "disposableWork": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-01",
+ "hypothesis": null,
+ "commands": [],
+ "limitation": "Instrumented diagnostic in a disposable copy; not deadline, native or production acceptance. Inclusive stages overlap; thread CPU and allocation belong to the measuring thread only.",
+ "pinsBefore": {
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3": {
+   "sha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+   "bytes": 5529600
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-wal": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-shm": {
+   "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+   "bytes": 32768
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.active.json": {
+   "sha256": "9170791fe0446ef11a18b5e9cdbb7b689fc34c20ed4936e1c9854203334e2436",
+   "bytes": 2326409
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.reopen.failed.json": {
+   "sha256": "59985f1a6131365952fb60dd6edaad169bbbca1a50ff34cd141f22b7e4ca078d",
+   "bytes": 1340
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json": {
+   "sha256": "7c11021a30ad3918c36eaf007556cef1a3ba2d98fa771a768cee4f865da8133c",
+   "bytes": 4282
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc": {
+   "sha256": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222",
+   "bytes": 59149
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot": {
+   "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+   "bytes": 549
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": {
+   "sha256": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+   "bytes": 14550
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot": {
+   "sha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+   "bytes": 356853024
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": {
+   "sha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+   "bytes": 141392
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+   "sha256": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+   "bytes": 222208
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": {
+   "sha256": "97ade4d7fe5f73b9201fbfc31bf8891a3e7ff26036d39edf30e8c31606b9443b",
+   "bytes": 920064
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  }
+ },
+ "sourceBefore": {
+  "files": 975,
+  "combinedSha256": "dd2d3548b66151379bc072ab7099bd0d41becd252bd010839da920c4901ec53c"
+ },
+ "failure": "AssertionError('Expected one anchor for codec-reservoir-v2 in src/OpenFantasy.Core/Geography/LiquidReservoirCodecV2.cs, found 0')",
+ "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-startup-profile/profile_native_startup.py\", line 644, in main\n    report['instrumentation'], report['instrumentationSkipped'] = instrument(copy, output)\n                                                                  ~~~~~~~~~~^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-startup-profile/profile_native_startup.py\", line 470, in instrument\n    require(not required, 'Expected one anchor for %s in %s, found %d' % (label, relative, len(matches)))\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-startup-profile/profile_native_startup.py\", line 405, in require\n    raise AssertionError(message)\nAssertionError: Expected one anchor for codec-reservoir-v2 in src/OpenFantasy.Core/Geography/LiquidReservoirCodecV2.cs, found 0\n",
+ "pinsAfter": {
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3": {
+   "sha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+   "bytes": 5529600
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-wal": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-shm": {
+   "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+   "bytes": 32768
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.active.json": {
+   "sha256": "9170791fe0446ef11a18b5e9cdbb7b689fc34c20ed4936e1c9854203334e2436",
+   "bytes": 2326409
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.reopen.failed.json": {
+   "sha256": "59985f1a6131365952fb60dd6edaad169bbbca1a50ff34cd141f22b7e4ca078d",
+   "bytes": 1340
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json": {
+   "sha256": "7c11021a30ad3918c36eaf007556cef1a3ba2d98fa771a768cee4f865da8133c",
+   "bytes": 4282
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc": {
+   "sha256": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222",
+   "bytes": 59149
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot": {
+   "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+   "bytes": 549
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": {
+   "sha256": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+   "bytes": 14550
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot": {
+   "sha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+   "bytes": 356853024
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": {
+   "sha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+   "bytes": 141392
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+   "sha256": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+   "bytes": 222208
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": {
+   "sha256": "97ade4d7fe5f73b9201fbfc31bf8891a3e7ff26036d39edf30e8c31606b9443b",
+   "bytes": 920064
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  }
+ },
+ "pinsUnchanged": true,
+ "sourceAfter": {
+  "files": 975,
+  "combinedSha256": "dd2d3548b66151379bc072ab7099bd0d41becd252bd010839da920c4901ec53c"
+ },
+ "sourceUnchanged": true,
+ "elapsedSeconds": 2.777617583051324,
+ "finishedUtc": "2026-09-29T02:27:12.383207+00:00"
+}

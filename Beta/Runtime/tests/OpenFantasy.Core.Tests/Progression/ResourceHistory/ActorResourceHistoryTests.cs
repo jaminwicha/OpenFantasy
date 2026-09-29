@@ -30,6 +30,9 @@ public sealed class ActorResourceHistoryTests
         Assert.Equal(69, effects[4].Candidate.CurrentHp);
         Assert.Equal(12, effects[4].Candidate.CurrentMp);
         byte[] bytes = ActorResourceHistoryCodecV1.Encode(history);
+        // Pinned from the independently retained original six-effect history fixture.
+        Assert.Equal("94a19734c7e22c4acf58ca293473fbde11c724b6b74073258a9fa89e25e0b47a",
+            ContentHash.Compute(bytes).ToString());
         var restoredBasis = ProgressionCodecV1.Decode(ProgressionCodecV1.Encode(basis));
         var restored = ActorResourceHistoryCodecV1.Decode(bytes, restoredBasis, 20);
         restored.ValidateCurrent(state, 26);

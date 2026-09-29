@@ -111,6 +111,16 @@ on character lifetime. Continuous play requires authenticated archival continuat
 causal evidence before the envelope fills; dropping records or retaining only an unreachable hash
 cannot justify advancement. The component itself provides no rollover/publication mechanism.
 
+Each immutable `ResourceChangeBatch` lazily owns its V1 encoding. The codec copies that private
+buffer into the enclosing history frame; public encodes return independent arrays. Publication is
+thread-safe, and distinct batch objects never share a cache by command identity. A batch retains no
+history root, predecessor or global cache entry. The bytes live as long as the batch that owns them,
+including when multiple immutable histories share that batch. This trades bounded retained bytes
+for repeated serialization work; it does not cache validation, replay results or authority decisions.
+Capture must remain a pure function of deeply immutable batch fields, independent of history context;
+adding mutable or context-dependent fields requires revisiting this ownership before reusing bytes.
+Decode still constructs and validates every change and requires exact canonical re-encoding.
+
 Complete-world resource history requires an explicit contract: command/cause,
 definition pins, world ordering, actor revisions and actual deltas must join the durable journal.
 Every writer, including unchanged-resource XP rewards, must participate. A previous damage record

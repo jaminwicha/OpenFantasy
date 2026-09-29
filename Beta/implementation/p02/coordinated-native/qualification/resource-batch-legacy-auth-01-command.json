@@ -1,0 +1,48 @@
+{
+  "kind": "legacy-native",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Care.RestorativeNativeResultTests",
+    "--logger",
+    "trx;LogFileName=resource-batch-legacy-auth-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification"
+  ],
+  "startedUtc": "2026-09-29T04:10:14.988311+00:00",
+  "environment": {
+    "OPENFANTASY_RESTORATIVE_NATIVE_RESULTS": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/native-manifest.json"
+  },
+  "sourceSha256": {},
+  "expectedPasses": 1,
+  "expectedSkips": 0,
+  "exitCode": 0,
+  "elapsedSeconds": 20.351706457789987,
+  "finishedUtc": "2026-09-29T04:10:35.341166+00:00",
+  "testCounters": {
+    "total": "1",
+    "executed": "1",
+    "passed": "1",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "caseOutcomes": {
+    "Passed": 1
+  },
+  "qualificationFailures": []
+}

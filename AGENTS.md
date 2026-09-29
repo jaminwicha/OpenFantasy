@@ -1,5 +1,10 @@
 # Shared project entrypoint
 
+Owner steering, 2026-09-28: Fable 5.1 remains acceptable; more Opus 5.5 use is optional when
+beneficial, not a required switch. Both approved routes retain one-million context and Max effort.
+Use exact `fable[1m]` or `claude-opus-5-5[1m]` with verified returned model/context, finite limits,
+synchronized context and Astra integration. No silent fallback or automatic paid retry.
+
 Owner update, 2026-09-25: for this project's credit-constrained implementation, delegate substantial
 coding/testing and independent review units to Claude `fable[1m]` with Max effort (`--effort max`).
 Astra integrates and reviews. Owner update, 2026-09-27: Opus 5.5 with one-million-token context

@@ -1,5 +1,10 @@
 # Implementation instructions
 
+Owner steering, 2026-09-28: Fable 5.1 remains acceptable; more Opus 5.5 use is optional when
+beneficial, not a required switch. Both approved routes retain one-million context and Max effort.
+Use exact `fable[1m]` or `claude-opus-5-5[1m]` with verified returned model/context, finite limits,
+synchronized context and Astra integration. No silent fallback or automatic paid retry.
+
 The owner's 8 September 2026 implementation authorization overrides the earlier naming decision only: do not put the planning codename in source identifiers, namespaces, assemblies, packages, project metadata, executable names, comments or runtime strings. Use stable `OpenFantasy` names. Preserve historical document names and the existing planning-folder path. This is not a scope reduction or a request to rename archived source.
 
 The reviewed `spec-v1_1` documents remain the design baseline. `implementation/` records current work, owner overrides, measured evidence and pending exits. Preserve reviewed snapshots and hashes; do not rewrite an unrun qualification into a pass merely because a scaffold builds.

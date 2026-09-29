@@ -55,6 +55,9 @@ returned model/context and cost are unavailable. Pre/postflight verified. Its pe
 [worker note](WORKER_RESULT.md) remains unedited; this document is Astra's reviewed disposition.
 There is no automatic paid retry or claim of net credit savings.
 
-The [pre-change preservation record](PRESERVATION.json) pins the clean successor HEAD,76 earlier
-milestone refs,23 frozen specs and the unrelated predecessor index. The diagnostic milestone records
+The [pre-change preservation record](PRESERVATION.json) pins the clean successor HEAD,
+23 frozen specs and the unrelated predecessor index. Its milestone list is empty: the original
+Git prefix query did not enumerate branch names, so this record does not prove preservation of
+the earlier milestone refs. The subsequent resource-batch packet records a corrected nonempty
+inventory without rewriting this original evidence. The diagnostic milestone records
 measurement only; it does not close startup or production acceptance.

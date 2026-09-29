@@ -1,0 +1,1286 @@
+{
+ "kind": "native-startup-profile-v1",
+ "status": "diagnostic-complete",
+ "label": "codec-baseline-02",
+ "startedUtc": "2026-09-29T02:27:54.032494+00:00",
+ "limits": {
+  "buildSeconds": 180,
+  "openingSeconds": 30,
+  "probeSeconds": 150,
+  "processSeconds": 180,
+  "hostSeconds": 90,
+  "aggregateSeconds": 240.0
+ },
+ "originalRun": {
+  "godotSha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+  "dotnetSha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+  "projectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "reopenDurationMilliseconds": 30179,
+  "reopenProcessSeconds": 34.373,
+  "hostDotnet10Seconds": 20.994
+ },
+ "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3",
+ "commit": 1581,
+ "commitHash": "63c0f4517e92fbc0c0da8e9c5fe4651b0203b87e427c6f602f0469b886e037da",
+ "disposableWork": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02",
+ "hypothesis": null,
+ "commands": [
+  {
+   "label": "build-client",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "client/OpenFantasy.Client.csproj",
+    "-p:RestoreLockedMode=true",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--verbosity",
+    "quiet"
+   ],
+   "cwd": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime",
+   "environmentAdded": {},
+   "boundSeconds": 180,
+   "loadBefore": [
+    9.73291015625,
+    12.97705078125,
+    15.7568359375
+   ],
+   "startedUtc": "2026-09-29T02:27:55.800896+00:00",
+   "exitCode": 0,
+   "wallSeconds": 20.173425583634526,
+   "childUserCpuSeconds": 35.411033,
+   "childSystemCpuSeconds": 2.985026,
+   "childrenMaxRssBytes": 417628160,
+   "loadAfter": [
+    10.11181640625,
+    12.8486328125,
+    15.64501953125
+   ],
+   "finishedUtc": "2026-09-29T02:28:15.975234+00:00",
+   "stdoutBytes": 60,
+   "stderrBytes": 0
+  },
+  {
+   "label": "build-host",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "src/OpenFantasy.Host/OpenFantasy.Host.csproj",
+    "-p:RestoreLockedMode=true",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--verbosity",
+    "quiet"
+   ],
+   "cwd": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime",
+   "environmentAdded": {},
+   "boundSeconds": 159.82657441636547,
+   "loadBefore": [
+    10.11181640625,
+    12.8486328125,
+    15.64501953125
+   ],
+   "startedUtc": "2026-09-29T02:28:15.978631+00:00",
+   "exitCode": 0,
+   "wallSeconds": 6.566062208265066,
+   "childUserCpuSeconds": 5.18723,
+   "childSystemCpuSeconds": 0.9453960000000001,
+   "childrenMaxRssBytes": 417628160,
+   "loadAfter": [
+    9.8603515625,
+    12.705078125,
+    15.56103515625
+   ],
+   "finishedUtc": "2026-09-29T02:28:22.544855+00:00",
+   "stdoutBytes": 60,
+   "stderrBytes": 0
+  },
+  {
+   "label": "native-reopen",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "--path",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client",
+    "--",
+    "--coordinated-restorative-probe",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/coordinated-revoke.sqlite3",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/coordinated-revoke.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc",
+    "reopen",
+    "--background-render"
+   ],
+   "cwd": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02",
+   "environmentAdded": {
+    "OPENFANTASY_NATIVE_STARTUP_REPORT": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/native-costs.json"
+   },
+   "boundSeconds": 180,
+   "loadBefore": [
+    9.8603515625,
+    12.705078125,
+    15.56103515625
+   ],
+   "startedUtc": "2026-09-29T02:28:22.588935+00:00",
+   "exitCode": 1,
+   "wallSeconds": 35.79492541681975,
+   "childUserCpuSeconds": 21.409270999999997,
+   "childSystemCpuSeconds": 4.8695129999999995,
+   "childrenMaxRssBytes": 417628160,
+   "loadAfter": [
+    10.8056640625,
+    12.63916015625,
+    15.42138671875
+   ],
+   "finishedUtc": "2026-09-29T02:28:58.384707+00:00",
+   "stdoutBytes": 305,
+   "stderrBytes": 3394
+  }
+ ],
+ "limitation": "Instrumented diagnostic in a disposable copy; not deadline, native or production acceptance. Inclusive stages overlap; thread CPU and allocation belong to the measuring thread only.",
+ "pinsBefore": {
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3": {
+   "sha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+   "bytes": 5529600
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-wal": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-shm": {
+   "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+   "bytes": 32768
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.active.json": {
+   "sha256": "9170791fe0446ef11a18b5e9cdbb7b689fc34c20ed4936e1c9854203334e2436",
+   "bytes": 2326409
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.reopen.failed.json": {
+   "sha256": "59985f1a6131365952fb60dd6edaad169bbbca1a50ff34cd141f22b7e4ca078d",
+   "bytes": 1340
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json": {
+   "sha256": "7c11021a30ad3918c36eaf007556cef1a3ba2d98fa771a768cee4f865da8133c",
+   "bytes": 4282
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc": {
+   "sha256": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222",
+   "bytes": 59149
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot": {
+   "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+   "bytes": 549
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": {
+   "sha256": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+   "bytes": 14550
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot": {
+   "sha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+   "bytes": 356853024
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": {
+   "sha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+   "bytes": 141392
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+   "sha256": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+   "bytes": 222208
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": {
+   "sha256": "97ade4d7fe5f73b9201fbfc31bf8891a3e7ff26036d39edf30e8c31606b9443b",
+   "bytes": 920064
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  }
+ },
+ "sourceBefore": {
+  "files": 975,
+  "combinedSha256": "dd2d3548b66151379bc072ab7099bd0d41becd252bd010839da920c4901ec53c"
+ },
+ "instrumentation": [
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "full-replay",
+   "action": "append",
+   "anchor": "private\\ static\\ ReplayedWorld\\ Replay\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 60
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "replay-prepare-entry",
+   "action": "append",
+   "anchor": "private\\ static\\ ExpectedJournalEntry\\ PrepareEntry\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 209
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "verify-command-table",
+   "action": "append",
+   "anchor": "private\\ static\\ void\\ VerifyCommandTable\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 251
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+   "stage": "verify-identity-table",
+   "action": "append",
+   "anchor": "private\\ static\\ void\\ VerifyIdentityTable\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 272
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs",
+   "stage": "commit-preparation",
+   "action": "append",
+   "anchor": "internal\\ PreparedWorldCommit\\ Prepare\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 14
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+   "stage": "authority-open-existing",
+   "action": "append",
+   "anchor": "public\\ static\\ SqliteWorldAuthority\\ OpenExisting\\(string\\ path,\\ ReadOnlySpan<byte>\\ expectedGenesis(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 83
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+   "stage": "inspect-for-host",
+   "action": "append",
+   "anchor": "public\\ WorldInspection\\ InspectForHost\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 309
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+   "stage": "read-state-for-host",
+   "action": "append",
+   "anchor": "internal\\ WorldSnapshot\\ ReadStateForHost\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 190
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs",
+   "stage": "database-open",
+   "action": "append",
+   "anchor": "internal\\ static\\ WorldDatabase\\ Open\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 22
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs",
+   "stage": "genesis-admission",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ genesis(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 10
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs",
+   "stage": "resource-archive-verify",
+   "action": "append",
+   "anchor": "internal\\ void\\ Verify\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 23
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Worlds/WorldMaterialCareArchiveReplay.cs",
+   "stage": "material-care-archive-verify",
+   "action": "append",
+   "anchor": "internal\\ void\\ Verify\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 23
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+   "stage": "local-world-session-constructor",
+   "action": "append",
+   "anchor": "internal\\ LocalWorldSession\\(SqliteWorldAuthority\\ authority,\\ EntityId\\ playerActorId,(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 49
+  },
+  {
+   "source": "src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+   "stage": "initial-view-projection",
+   "action": "replace",
+   "anchor": "        _view = ProjectView\\(state\\);\\n        _loop = Task\\.Run\\(RunAsync\\);",
+   "anchorLine": 66
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs",
+   "stage": "world-encode",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(WorldSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 8
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldCanonicalFrame.cs",
+   "stage": "canonical-frame-capture",
+   "action": "append",
+   "anchor": "public\\ static\\ WorldCanonicalFrame\\ Capture\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 26
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+   "stage": "step-decide",
+   "action": "append",
+   "anchor": "private\\ WorldStepDecision\\ DecideSelected\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 55
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+   "stage": "world-root",
+   "action": "append",
+   "anchor": "private\\ WorldSnapshot\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 48
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+   "stage": "world-identities",
+   "action": "append",
+   "anchor": "public\\ static\\ WorldIdentityIndex\\ Validate\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 19
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs",
+   "stage": "resource-causes",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 16
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs",
+   "stage": "care-admission",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 45
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs",
+   "stage": "ordinary-care",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 31
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldCoordinatedAdmission.cs",
+   "stage": "coordinated-admission",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 35
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldSourceIssuanceBaseline.cs",
+   "stage": "source-partition",
+   "action": "append",
+   "anchor": "internal\\ void\\ ValidatePartition\\(WorldSnapshot\\ world(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 108
+  },
+  {
+   "source": "src/OpenFantasy.Core/Production/Continuation/ProductionContinuationValidation.cs",
+   "stage": "production-continuation",
+   "action": "append",
+   "anchor": "internal\\ static\\ void\\ Validate\\(ProductionSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 9
+  },
+  {
+   "source": "client/scripts/FarmClientSession.cs",
+   "stage": "open-coordinated-fixture",
+   "action": "append",
+   "anchor": "OpenCoordinatedFixtureAsync\\(string savePath, string expectedGenesisPath\\) => Task\\.Run\\(\\(\\) =>\\n    \\{",
+   "anchorLine": 101
+  },
+  {
+   "source": "client/scripts/FarmClientSession.cs",
+   "stage": "client-attach",
+   "action": "append",
+   "anchor": "private\\ static\\ FarmClientSession\\ Attach\\(SqliteWorldAuthority\\ authority,(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 161
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "game-ready",
+   "action": "append",
+   "anchor": "public\\ override\\ void\\ _Ready\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 68
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "process-frame",
+   "action": "append",
+   "anchor": "public\\ override\\ void\\ _Process\\(double\\ delta(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 167
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "opening-task-observed-complete",
+   "action": "append",
+   "anchor": "if \\(_opening is \\{ IsCompleted: true \\}\\)\\n        \\{",
+   "anchorLine": 183
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "first-present-begin",
+   "action": "append",
+   "anchor": "private\\ void\\ Present\\(LocalWorldView\\ view(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 226
+  },
+  {
+   "source": "client/scripts/FarmGame.cs",
+   "stage": "create-offers",
+   "action": "replace",
+   "anchor": "        _presented = _session\\.CreateOffers\\(view, _targets\\.Selected\\);",
+   "anchorLine": 255
+  },
+  {
+   "source": "client/scripts/Bootstrap.cs",
+   "stage": "bootstrap-ready-begin",
+   "action": "append",
+   "anchor": "public\\ override\\ async\\ void\\ _Ready\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 10
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs",
+   "stage": "codec-world-resource",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(WorldResourceHistory\\ value(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 10
+  },
+  {
+   "source": "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs",
+   "stage": "codec-world-resource-body",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(WorldResourceHistory\\ value(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 19
+  },
+  {
+   "source": "src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistoryCodecV1.cs",
+   "stage": "codec-actor-resource-history",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(ActorResourceHistory\\ history(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 11
+  },
+  {
+   "source": "src/OpenFantasy.Core/Production/ProductionCodecV2.cs",
+   "stage": "codec-production-v2",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(ProductionSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 18
+  },
+  {
+   "source": "src/OpenFantasy.Core/Production/ProductionCodecV9.cs",
+   "stage": "codec-production-v9",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(ProductionSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 13
+  },
+  {
+   "source": "src/OpenFantasy.Core/Authority/AuthorityEncodingV1.cs",
+   "stage": "codec-inventory",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(CountedAuthorityState\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 17
+  },
+  {
+   "source": "src/OpenFantasy.Core/Care/CareCodecV2.cs",
+   "stage": "codec-care-v2",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(CareSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 16
+  },
+  {
+   "source": "src/OpenFantasy.Core/Care/CareCodecV3.cs",
+   "stage": "codec-care-v3",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(CareSnapshot\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 23
+  },
+  {
+   "source": "src/OpenFantasy.Core/Geography/LiquidReservoirCodecV1.cs",
+   "stage": "codec-reservoir-body",
+   "action": "append",
+   "anchor": "internal\\ static\\ byte\\[\\]\\ EncodeReservoirs\\((?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 17
+  },
+  {
+   "source": "src/OpenFantasy.Core/Geography/LiquidReservoirCodecV3.cs",
+   "stage": "codec-reservoir-v3",
+   "action": "append",
+   "anchor": "public\\ static\\ byte\\[\\]\\ Encode\\(LiquidReservoirState\\ state(?:(?!=>)[^;{}])*?\\)\\n    \\{",
+   "anchorLine": 8
+  }
+ ],
+ "instrumentationSkipped": [],
+ "instrumentedAssemblies": {
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "af663f9ae6bd0cdb49cd37976100532f7c527805217643df7b2142f4d6f3d66f",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "b5a45529dd31080adfe89e48c41af21529b6fcebb224f048613aff9df4c3a5ce",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "647d8d6f21c96b11f5cdeae9baf07900a7afd3af728a823e30d871a267fae13e",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "ca0ddfb5be737abd7fe49d8a410bf5090d014cf90c9013d29446d2a61c7d3b3c",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "b5a45529dd31080adfe89e48c41af21529b6fcebb224f048613aff9df4c3a5ce",
+  "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "647d8d6f21c96b11f5cdeae9baf07900a7afd3af728a823e30d871a267fae13e"
+ },
+ "instrumentedDifferFromProduction": true,
+ "nativeProbe": {
+  "reportWritten": true,
+  "status": "failed",
+  "stage": "opening",
+  "error": "System.InvalidOperationException: Restorative world did not open.",
+  "durationMilliseconds": 30083,
+  "display": "macOS",
+  "focus": {
+   "FocusRequests": 0,
+   "Unfocusable": true,
+   "NativeFocused": false,
+   "ObservedNativeFocus": false,
+   "StartupNoFocus": true,
+   "IsLocallyPaused": true,
+   "IsWindowFocused": true
+  },
+  "initialHash": null,
+  "finalHash": null,
+  "originalActiveFinalHash": "25D3D5BF641FADFE684F9CF9CD109BDD58F235995C3DA699D21698FA27E43F8A",
+  "copiedSaveSha256After": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+  "copiedSaveUnchanged": true,
+  "copiedWalBytesAfter": 0
+ },
+ "nativeSummary": {
+  "available": true,
+  "lastFlushReason": "periodic",
+  "originUtc": "2026-09-29T02:28:27.3329740Z",
+  "processStartUtc": "2026-09-29T02:28:22.5897910Z",
+  "runtime": {
+   "framework": ".NET 10.0.12",
+   "version": "10.0.12",
+   "runtimeIdentifier": "osx-arm64",
+   "architecture": "Arm64",
+   "os": "macOS 15.6.1",
+   "coreLibrary": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App/10.0.12/System.Private.CoreLib.dll",
+   "processPath": "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+   "processorCount": 8,
+   "serverGc": false,
+   "gcLatency": "Interactive",
+   "debugger": false,
+   "tieredCompilation": "default",
+   "tieredPgo": "default",
+   "environment": {
+    "DOTNET_TieredCompilation": null,
+    "DOTNET_TieredPGO": null,
+    "DOTNET_TC_QuickJitForLoops": null,
+    "DOTNET_ReadyToRun": null,
+    "DOTNET_gcServer": null,
+    "DOTNET_gcConcurrent": null
+   },
+   "assemblies": [
+    {
+     "name": "OpenFantasy.Client",
+     "location": "",
+     "jitOptimizerDisabled": true
+    },
+    {
+     "name": "OpenFantasy.Core",
+     "location": "",
+     "jitOptimizerDisabled": true
+    },
+    {
+     "name": "OpenFantasy.Hosting",
+     "location": "",
+     "jitOptimizerDisabled": true
+    }
+   ]
+  },
+  "final": {
+   "name": "flush",
+   "ms": 30484.95825,
+   "thread": 4,
+   "processCpuMs": 25637.776,
+   "gen0": 615,
+   "gen1": 180,
+   "gen2": 169,
+   "gcPauseMs": 1854.86,
+   "allocatedBytes": 4869268328,
+   "jitMs": 8361.7717,
+   "jitMethods": 12263
+  },
+  "gcHeapBytes": 22690640,
+  "threadClockAvailable": true,
+  "openAtLastFlush": [
+   {
+    "stage": "open-coordinated-fixture",
+    "elapsedMs": 30140.128834,
+    "thread": 5
+   },
+   {
+    "stage": "authority-open-existing",
+    "elapsedMs": 29488.198667,
+    "thread": 5
+   },
+   {
+    "stage": "full-replay",
+    "elapsedMs": 28958.9475,
+    "thread": 5
+   }
+  ],
+  "counters": {
+   "process-frame": 3354
+  },
+  "stages": [
+   {
+    "stage": "replay-prepare-entry",
+    "calls": 1200,
+    "wallMs": 28008.7,
+    "threadCpuMs": 11882.9,
+    "maxMs": 312.69,
+    "allocatedMB": 4545.0,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "commit-preparation",
+    "calls": 1200,
+    "wallMs": 27783.8,
+    "threadCpuMs": 11814.2,
+    "maxMs": 312.65,
+    "allocatedMB": 4542.6,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "step-decide",
+    "calls": 1200,
+    "wallMs": 26803.3,
+    "threadCpuMs": 11446.5,
+    "maxMs": 301.71,
+    "allocatedMB": 4254.9,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "canonical-frame-capture",
+    "calls": 1347,
+    "wallMs": 11864.3,
+    "threadCpuMs": 4596.2,
+    "maxMs": 218.73,
+    "allocatedMB": 3007.6,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "world-encode",
+    "calls": 1350,
+    "wallMs": 11856.4,
+    "threadCpuMs": 4604.4,
+    "maxMs": 214.18,
+    "allocatedMB": 3016.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "world-root",
+    "calls": 1354,
+    "wallMs": 11153.4,
+    "threadCpuMs": 4993.6,
+    "maxMs": 208.69,
+    "allocatedMB": 744.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-world-resource",
+    "calls": 1354,
+    "wallMs": 6849.9,
+    "threadCpuMs": 2425.9,
+    "maxMs": 172.0,
+    "allocatedMB": 1992.4,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-world-resource-body",
+    "calls": 1358,
+    "wallMs": 6794.8,
+    "threadCpuMs": 2414.3,
+    "maxMs": 172.0,
+    "allocatedMB": 1964.7,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "resource-causes",
+    "calls": 1354,
+    "wallMs": 4732.1,
+    "threadCpuMs": 2068.8,
+    "maxMs": 130.04,
+    "allocatedMB": 358.3,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-actor-resource-history",
+    "calls": 1362,
+    "wallMs": 3839.9,
+    "threadCpuMs": 1366.7,
+    "maxMs": 158.43,
+    "allocatedMB": 1131.4,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "world-identities",
+    "calls": 1354,
+    "wallMs": 2083.2,
+    "threadCpuMs": 998.4,
+    "maxMs": 104.66,
+    "allocatedMB": 129.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-inventory",
+    "calls": 6739,
+    "wallMs": 941.2,
+    "threadCpuMs": 381.3,
+    "maxMs": 45.94,
+    "allocatedMB": 189.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-production-v2",
+    "calls": 4320,
+    "wallMs": 776.8,
+    "threadCpuMs": 364.2,
+    "maxMs": 21.97,
+    "allocatedMB": 224.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-reservoir-body",
+    "calls": 1506,
+    "wallMs": 775.3,
+    "threadCpuMs": 397.0,
+    "maxMs": 18.62,
+    "allocatedMB": 254.8,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-production-v9",
+    "calls": 1562,
+    "wallMs": 735.0,
+    "threadCpuMs": 418.1,
+    "maxMs": 18.69,
+    "allocatedMB": 298.4,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "database-open",
+    "calls": 1,
+    "wallMs": 450.6,
+    "threadCpuMs": 72.7,
+    "maxMs": 450.62,
+    "allocatedMB": 0.2,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-reservoir-v3",
+    "calls": 426,
+    "wallMs": 281.6,
+    "threadCpuMs": 170.2,
+    "maxMs": 11.1,
+    "allocatedMB": 127.8,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "care-admission",
+    "calls": 1354,
+    "wallMs": 277.5,
+    "threadCpuMs": 157.7,
+    "maxMs": 13.62,
+    "allocatedMB": 10.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "ordinary-care",
+    "calls": 1354,
+    "wallMs": 236.9,
+    "threadCpuMs": 136.9,
+    "maxMs": 13.59,
+    "allocatedMB": 9.6,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "coordinated-admission",
+    "calls": 1354,
+    "wallMs": 218.9,
+    "threadCpuMs": 117.1,
+    "maxMs": 13.1,
+    "allocatedMB": 10.2,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "material-care-archive-verify",
+    "calls": 1200,
+    "wallMs": 202.7,
+    "threadCpuMs": 82.6,
+    "maxMs": 201.12,
+    "allocatedMB": 25.9,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "source-partition",
+    "calls": 1354,
+    "wallMs": 152.6,
+    "threadCpuMs": 88.7,
+    "maxMs": 11.97,
+    "allocatedMB": 6.7,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "game-ready",
+    "calls": 1,
+    "wallMs": 141.2,
+    "threadCpuMs": 120.2,
+    "maxMs": 141.17,
+    "allocatedMB": 1.1,
+    "threads": [
+     1
+    ]
+   },
+   {
+    "stage": "codec-care-v3",
+    "calls": 286,
+    "wallMs": 136.6,
+    "threadCpuMs": 79.3,
+    "maxMs": 7.33,
+    "allocatedMB": 49.5,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "codec-care-v2",
+    "calls": 1080,
+    "wallMs": 67.6,
+    "threadCpuMs": 40.8,
+    "maxMs": 4.09,
+    "allocatedMB": 11.5,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "production-continuation",
+    "calls": 144,
+    "wallMs": 67.1,
+    "threadCpuMs": 30.7,
+    "maxMs": 9.87,
+    "allocatedMB": 11.4,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "genesis-admission",
+    "calls": 2,
+    "wallMs": 1.1,
+    "threadCpuMs": 1.0,
+    "maxMs": 0.98,
+    "allocatedMB": 0.1,
+    "threads": [
+     5
+    ]
+   },
+   {
+    "stage": "resource-archive-verify",
+    "calls": 1200,
+    "wallMs": 0.7,
+    "threadCpuMs": 0.8,
+    "maxMs": 0.4,
+    "allocatedMB": 0.0,
+    "threads": [
+     5
+    ]
+   }
+  ],
+  "marks": [
+   {
+    "name": "bootstrap-ready-begin",
+    "ms": 1.156,
+    "thread": 1,
+    "processCpuMs": 2091.93,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.291,
+    "allocatedBytes": 5628504,
+    "jitMs": 188.1,
+    "jitMethods": 388
+   },
+   {
+    "name": "game-ready:begin",
+    "ms": 188.089375,
+    "thread": 1,
+    "processCpuMs": 2229.703,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.291,
+    "allocatedBytes": 7104120,
+    "jitMs": 269.8261,
+    "jitMethods": 986
+   },
+   {
+    "name": "game-ready:end",
+    "ms": 340.854583,
+    "thread": 1,
+    "processCpuMs": 2354.137,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.291,
+    "allocatedBytes": 8347040,
+    "jitMs": 331.7472,
+    "jitMethods": 1423
+   },
+   {
+    "name": "open-coordinated-fixture:begin",
+    "ms": 344.76325,
+    "thread": 5,
+    "processCpuMs": 2358.843,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.291,
+    "allocatedBytes": 8371600,
+    "jitMs": 336.3637,
+    "jitMethods": 1448
+   },
+   {
+    "name": "first-process-frame",
+    "ms": 384.748083,
+    "thread": 1,
+    "processCpuMs": 2426.578,
+    "gen0": 1,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 1.291,
+    "allocatedBytes": 8658032,
+    "jitMs": 382.0199,
+    "jitMethods": 1693
+   },
+   {
+    "name": "authority-open-existing:begin",
+    "ms": 996.693625,
+    "thread": 5,
+    "processCpuMs": 3102.307,
+    "gen0": 2,
+    "gen1": 1,
+    "gen2": 1,
+    "gcPauseMs": 16.201,
+    "allocatedBytes": 17384672,
+    "jitMs": 905.4016,
+    "jitMethods": 5165
+   },
+   {
+    "name": "full-replay:begin",
+    "ms": 1525.944708,
+    "thread": 5,
+    "processCpuMs": 3438.022,
+    "gen0": 4,
+    "gen1": 3,
+    "gen2": 2,
+    "gcPauseMs": 28.568,
+    "allocatedBytes": 27131592,
+    "jitMs": 1176.8612,
+    "jitMethods": 5626
+   }
+  ],
+  "commitPreparationSeries": {
+   "count": 1200,
+   "totalMs": 27783.8,
+   "medianMs": 13.618,
+   "p95Ms": 74.738,
+   "maxMs": 312.65,
+   "firstMs": 65.295,
+   "decileMeanMs": [
+    6.744,
+    7.817,
+    7.693,
+    11.994,
+    28.096,
+    43.74,
+    21.867,
+    32.772,
+    26.925,
+    43.882
+   ]
+  },
+  "windows": {
+   "bootstrapToGameReady": {
+    "wallMs": 186.9,
+    "processCpuMs": 137.8,
+    "gcPauseMs": 0.0,
+    "gen0": 0,
+    "gen1": 0,
+    "gen2": 0,
+    "allocatedMB": 1.4,
+    "jitMs": 81.7,
+    "jitMethods": 598,
+    "threads": [
+     1,
+     1
+    ]
+   }
+  },
+  "timeline": [
+   {
+    "ms": 503,
+    "commitsPrepared": 0,
+    "frames": 9,
+    "processCpuMs": 2589,
+    "gen0": 1,
+    "gen2": 1,
+    "gcPauseMs": 1
+   },
+   {
+    "ms": 2521,
+    "commitsPrepared": 128,
+    "frames": 247,
+    "processCpuMs": 4607,
+    "gen0": 23,
+    "gen2": 3,
+    "gcPauseMs": 62
+   },
+   {
+    "ms": 4545,
+    "commitsPrepared": 378,
+    "frames": 488,
+    "processCpuMs": 7347,
+    "gen0": 86,
+    "gen2": 17,
+    "gcPauseMs": 145
+   },
+   {
+    "ms": 6633,
+    "commitsPrepared": 489,
+    "frames": 710,
+    "processCpuMs": 9105,
+    "gen0": 126,
+    "gen2": 28,
+    "gcPauseMs": 290
+   },
+   {
+    "ms": 8855,
+    "commitsPrepared": 561,
+    "frames": 934,
+    "processCpuMs": 10421,
+    "gen0": 155,
+    "gen2": 37,
+    "gcPauseMs": 412
+   },
+   {
+    "ms": 10960,
+    "commitsPrepared": 620,
+    "frames": 1145,
+    "processCpuMs": 11415,
+    "gen0": 182,
+    "gen2": 46,
+    "gcPauseMs": 608
+   },
+   {
+    "ms": 13026,
+    "commitsPrepared": 656,
+    "frames": 1379,
+    "processCpuMs": 12308,
+    "gen0": 200,
+    "gen2": 52,
+    "gcPauseMs": 689
+   },
+   {
+    "ms": 15136,
+    "commitsPrepared": 734,
+    "frames": 1619,
+    "processCpuMs": 13678,
+    "gen0": 240,
+    "gen2": 67,
+    "gcPauseMs": 851
+   },
+   {
+    "ms": 17168,
+    "commitsPrepared": 822,
+    "frames": 1853,
+    "processCpuMs": 15312,
+    "gen0": 289,
+    "gen2": 84,
+    "gcPauseMs": 1013
+   },
+   {
+    "ms": 19251,
+    "commitsPrepared": 872,
+    "frames": 2084,
+    "processCpuMs": 16417,
+    "gen0": 319,
+    "gen2": 95,
+    "gcPauseMs": 1137
+   },
+   {
+    "ms": 21295,
+    "commitsPrepared": 941,
+    "frames": 2316,
+    "processCpuMs": 17775,
+    "gen0": 365,
+    "gen2": 112,
+    "gcPauseMs": 1322
+   },
+   {
+    "ms": 23334,
+    "commitsPrepared": 1056,
+    "frames": 2547,
+    "processCpuMs": 19625,
+    "gen0": 443,
+    "gen2": 140,
+    "gcPauseMs": 1481
+   },
+   {
+    "ms": 25357,
+    "commitsPrepared": 1087,
+    "frames": 2772,
+    "processCpuMs": 20951,
+    "gen0": 467,
+    "gen2": 145,
+    "gcPauseMs": 1542
+   },
+   {
+    "ms": 27409,
+    "commitsPrepared": 1150,
+    "frames": 3016,
+    "processCpuMs": 23105,
+    "gen0": 529,
+    "gen2": 153,
+    "gcPauseMs": 1659
+   },
+   {
+    "ms": 29453,
+    "commitsPrepared": 1184,
+    "frames": 3247,
+    "processCpuMs": 24738,
+    "gen0": 584,
+    "gen2": 163,
+    "gcPauseMs": 1786
+   }
+  ]
+ },
+ "pinsAfter": {
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3": {
+   "sha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+   "bytes": 5529600
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-wal": {
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-shm": {
+   "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+   "bytes": 32768
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.active.json": {
+   "sha256": "9170791fe0446ef11a18b5e9cdbb7b689fc34c20ed4936e1c9854203334e2436",
+   "bytes": 2326409
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.reopen.failed.json": {
+   "sha256": "59985f1a6131365952fb60dd6edaad169bbbca1a50ff34cd141f22b7e4ca078d",
+   "bytes": 1340
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json": {
+   "sha256": "7c11021a30ad3918c36eaf007556cef1a3ba2d98fa771a768cee4f865da8133c",
+   "bytes": 4282
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc": {
+   "sha256": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222",
+   "bytes": 59149
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot": {
+   "sha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+   "bytes": 549
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": {
+   "sha256": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+   "bytes": 14550
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot": {
+   "sha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+   "bytes": 356853024
+  },
+  "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": {
+   "sha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+   "bytes": 141392
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+   "sha256": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+   "bytes": 222208
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": {
+   "sha256": "97ade4d7fe5f73b9201fbfc31bf8891a3e7ff26036d39edf30e8c31606b9443b",
+   "bytes": 920064
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": {
+   "sha256": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+   "bytes": 1947648
+  },
+  "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": {
+   "sha256": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+   "bytes": 1005056
+  }
+ },
+ "pinsUnchanged": true,
+ "sourceAfter": {
+  "files": 975,
+  "combinedSha256": "dd2d3548b66151379bc072ab7099bd0d41becd252bd010839da920c4901ec53c"
+ },
+ "sourceUnchanged": true,
+ "elapsedSeconds": 65.86014379188418,
+ "finishedUtc": "2026-09-29T02:28:59.892763+00:00"
+}

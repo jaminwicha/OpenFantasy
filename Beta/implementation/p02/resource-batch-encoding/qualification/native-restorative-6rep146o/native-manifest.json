@@ -1,0 +1,74 @@
+{
+  "journeys": [
+    {
+      "name": "raw-self",
+      "label": "raw-pointer",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/raw-pointer.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/raw-pointer.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/raw-pointer.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.sqlite3": "9c326ea45d18e79fa2f2ff164398477de5921f5be4a61daa92631200458516b4",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.ofc": "4016c4fa79e5a1aa1654bd0639fe55f8685df5118424789169c5098b83c81046",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json": "526dee34dbd3ac8f27b8562df009818fba936b557779da4f31f71dacb0d0517b"
+      },
+      "finalDatabaseSha256": "bdd5a5c8b94fc6a8c6930aebbc506a7abfbe168997ef64ab12c602d5dcd8899b"
+    },
+    {
+      "name": "raw-self",
+      "label": "raw-keyboard",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/raw-keyboard.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/raw-keyboard.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/raw-keyboard.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.sqlite3": "9c326ea45d18e79fa2f2ff164398477de5921f5be4a61daa92631200458516b4",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/before.ofc": "4016c4fa79e5a1aa1654bd0639fe55f8685df5118424789169c5098b83c81046",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/raw-self/metadata.json": "526dee34dbd3ac8f27b8562df009818fba936b557779da4f31f71dacb0d0517b"
+      },
+      "finalDatabaseSha256": "c89997c117af1b0014c0065b8a94b6097563d0ea548afbb52dbcc18343ccd8c4"
+    },
+    {
+      "name": "crafted-self",
+      "label": "crafted-controller",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/crafted-controller.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/crafted-controller.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/crafted-controller.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/before.sqlite3": "1ccc5905d809de9f5dbbcefb3c8fae8f86839e41735f66b75faea9a3d8bb8100",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/before.ofc": "7e017e332b45047ffabf1394b5aa081b9199a0ddb6ee63935a5aece2c3b69693",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/crafted-self/metadata.json": "a77b366625ac7be79c609948074465bb41523db6e4c58aaf3d4e4e5aa49dc46e"
+      },
+      "finalDatabaseSha256": "489a0ceaacacb9682a66741f89f73975b075530bd0be29077e1d7108881f7afc"
+    },
+    {
+      "name": "helper",
+      "label": "helper",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/helper",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/helper.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/helper.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/helper.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/helper/before.sqlite3": "3280e2511b7f46425739c245bff2dab9a54aa45f648ce9ac41d5321167bb2be7",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/helper/before.ofc": "634f4033a29f05503343ea5440182005bccacc79203e8c1725f595bcf54cee1a",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/helper/metadata.json": "20af5a9be421d5e67826213134ec6061141b028bb60aa68e6ef3d178e3a2006a"
+      },
+      "finalDatabaseSha256": "64403e0957e19e52e7433b133f71fac7ff6bc6770513d69d7b2d9d5a27059789"
+    },
+    {
+      "name": "revoke",
+      "label": "revoke",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/revoke",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/revoke.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/revoke.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/resource-batch-encoding/qualification/native-restorative-6rep146o/revoke.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/revoke/before.sqlite3": "9c326ea45d18e79fa2f2ff164398477de5921f5be4a61daa92631200458516b4",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/revoke/before.ofc": "4016c4fa79e5a1aa1654bd0639fe55f8685df5118424789169c5098b83c81046",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-interface/qualification/earned-fixtures-02/revoke/metadata.json": "d7c6bc1ac8f20203d9f77d2238dd1faafde9217f4fabaa33bb60c00950d85bec"
+      },
+      "finalDatabaseSha256": "140d85fe3450f090d79d1a97b3aca03c2463b21ca5f5ba82aa52b06bec8ad881"
+    }
+  ]
+}

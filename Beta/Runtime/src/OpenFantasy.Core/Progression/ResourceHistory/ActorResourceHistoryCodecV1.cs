@@ -14,7 +14,7 @@ public static class ActorResourceHistoryCodecV1
         return Frame("progression.resource-history", Number(1), history.Basis.WorldId.ToByteArray(),
             history.Basis.BranchId.ToByteArray(), Number(history.BasisWorldSequence),
             history.Basis.ContentHash.ToByteArray(),
-            Collection("progression.resource-batches", history.Batches.Select(EncodeBatch)));
+            Frame("progression.resource-batches", history.Batches.Select(batch => batch.EncodingV1).ToArray()));
     }
 
     public static ActorResourceHistory Decode(ReadOnlySpan<byte> bytes, ProgressionSnapshot admittedBasis,
@@ -59,7 +59,7 @@ public static class ActorResourceHistoryCodecV1
         }
     }
 
-    private static byte[] EncodeBatch(ResourceChangeBatch batch) => Frame("progression.resource-batch",
+    internal static byte[] EncodeBatch(ResourceChangeBatch batch) => Frame("progression.resource-batch",
         Number(1), Number(batch.WorldSequence), Number(batch.CommandOrdinal), batch.CommandId.ToByteArray(),
         Collection("progression.resource-changes", batch.Changes.Select(EncodeChange)));
 

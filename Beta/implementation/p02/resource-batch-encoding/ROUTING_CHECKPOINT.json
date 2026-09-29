@@ -1,0 +1,16 @@
+{
+  "sourceHead": "34ab451697242b00b3a78fd60eedf7227aef8cd8",
+  "ref": "codex/checkpoint-before-opus-preference-20260929T035343Z",
+  "snapshot": "6ba0bd6c4503a37d20621279066366191a9d0b58",
+  "scope": [
+    "AGENTS.md",
+    "Beta/AGENTS.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/Runtime/src/OpenFantasy.Core/Progression/ResourceHistory",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Progression/ResourceHistory/ResourceBatchEncodingTests.cs",
+    "Beta/Runtime/docs/architecture/actor-resources.md",
+    "Beta/implementation/p02/resource-batch-encoding",
+    "Beta/implementation/p02/native-startup-profile"
+  ],
+  "verification": "WIP:251 focused checks pass; native gate pending; diagnostic failure preserved."
+}

@@ -42,33 +42,45 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Active assignment
 
-Profile and resolve the continued-world native opening deadline, using the
-[save-selection packet](p02/coordinated-native/README.md) and its actual failed-run save. The final
-native withdrawal succeeds, but its separate reopen exceeds the unchanged 30s opening bound at
-30.179s. Earlier active/reopen and authoritative checks passed; they do not replace this failure.
-A read-only .NET 10 Host diagnosis recovers the exact failed save/head in 20.994s, preserving bytes;
-it does not identify the cause of native latency. Do not rerun until green or infer environmental cause
-without measurement. Keep complete original
-history/archive validation, exact expected genesis, and all 30s/150s/180s native limits.
+Owner steering, 2026-09-28: Fable 5.1 remains acceptable; Opus 5.5 is optional when useful.
+Both approved routes retain 1M context and Max effort. The Opus test assignment was previewed only,
+then left undispatched; it provides no account-access evidence and incurred no model request.
+No external worker remains active. Project and ecosystem guidance carry this clarification.
 
-The original post-cut personal-dose objective also remains open: the helper's gift is forbidden by
+The [immutable resource-batch increment](p02/resource-batch-encoding/README.md) now reduces full
+1,581-entry replay allocation by 13.43%, with identical recovered head and validation-call counts.
+The unmodified native coordinated withdrawal and separate reopen pass their unchanged limits;
+actual-ledger authentication also passes. The prior failed opening remains retained, and one later
+pass does not establish a latency cause or production-scale readiness. The current remaining replay
+allocation is 9.760 GB for that workload, so performance/lifetime work is still required.
+
+The original post-cut personal-dose objective remains open: the helper's gift is forbidden by
 OwnerOnly recipient custody, and this stress world's exact potion ingredient has no gathering source.
-Do not fabricate stock, relabel definitions or silently migrate that lived world. Current preparation
-is explicitly scripted Host movement; it omits autonomous policy until the native starting boundary.
-Normal startup remains the construction farm; ordinary care creates profile26; this fixture selects
-an existing profile27 save. Independent critic findings and the partial implementation timeout are
-retained in the packet. The [startup diagnostic](p02/native-startup-profile/README.md) now measures
-23.788s of full native replay,7.185s of world encoding and35ms of client attachment. Both measured
-processes actually load .NET10.0.12; the net8 client target did not identify its hosted runtime.
-Instrumented native reopening passes at29.752s, but does not replace the original failure.
-Fable completed the diagnostic then timed out before its final response; no paid worker remains active.
-Next isolate expensive codecs, then optimize only measured costs with all gates unchanged.
+Do not fabricate stock, relabel definitions or silently migrate that lived world. Any next binding
+must use legitimate actor permissions and earned source identity. A fresh-world demonstration cannot
+retroactively qualify the retained-world objective. Existing preparation is explicitly scripted Host
+movement; autonomous policy starts at the native boundary. Normal startup remains the construction
+farm; ordinary care creates profile26; the coordinated fixture selects an existing profile27 save.
 
-Take a recoverable checkpoint before the next major change. Production lifetime/latency, physical
-platform/device, multiplayer, art/audio and human acceptance remain separate requirements. Broader
-P01/P02 gameplay work and the full P14 campaign are not reduced by this bounded proof.
+Continue the remaining P01/P02 dependencies from the complete plan, with substantial bounded Fable
+implementation where useful and Astra integration. Preserve source/history authority and all existing
+30s opening, 150s probe and 180s native-process limits. The current increment also passes all five
+legacy native routes and their ledger authentication. Preserve another recoverable checkpoint
+before the next major change.
+Production lifetime/latency, physical platforms/devices, multiplayer, art/audio and human acceptance
+remain separate requirements. The full campaign through P14 is not reduced by these bounded proofs.
 
 ## Latest increment
+
+[Immutable resource-batch encoding](p02/resource-batch-encoding/README.md) reuses private bytes on
+exact immutable batch owners without changing codecs, schemas, replay or admission semantics.
+Clean build; 253 distinct managed cases including two actual-native authentication cases, the original
+three resource-history byte fixtures, and all six native routes/twelve processes pass. Independent Fable critique
+improved ordinary golden-byte coverage and copied-input tests; architecture and project doctrine are
+updated with the code. Complete same-save allocation falls 13.43%; no causal wall-time or production
+latency claim. Native controls and integration preservation are recorded in its packet. Milestone:
+`codex/milestone-resource-batch-encoding`. No full phase or production gate is closed by this increment.
+
 
 [Native startup cost attribution](p02/native-startup-profile/README.md) preserves reproducible
 disposable-copy instrumentation, actual runtime identity and exact failed-save pins. The final head

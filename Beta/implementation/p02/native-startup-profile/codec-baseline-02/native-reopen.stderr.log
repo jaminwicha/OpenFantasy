@@ -1,0 +1,23 @@
+ERROR: Native restorative probe failed: System.InvalidOperationException: Restorative world did not open.
+   at OpenFantasy.Client.RestorativePlayProbe.Require(Boolean condition, String message) in /private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/scripts/RestorativePlayProbe.cs:line 266
+   at OpenFantasy.Client.RestorativePlayProbe.Until(Func`1 predicate, String failure, Double seconds) in /private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/scripts/RestorativePlayProbe.cs:line 228
+   at OpenFantasy.Client.RestorativePlayProbe._Ready() in /private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/scripts/RestorativePlayProbe.cs:line 41
+   at: void OpenFantasy.Client.RestorativePlayProbe+<_Ready>d__22.MoveNext() (res://scripts/RestorativePlayProbe.cs:41)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void OpenFantasy.Client.RestorativePlayProbe+<_Ready>d__22.MoveNext() (/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/scripts/RestorativePlayProbe.cs:41)
+       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [4] void System.Threading.Tasks.Task.RunContinuations(object)
+       [5] void System.Threading.Tasks.Task.FinishSlow(bool)
+       [6] bool System.Threading.Tasks.Task.TrySetException(object)
+       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)
+       [8] void OpenFantasy.Client.RestorativePlayProbe+<Until>d__33.MoveNext() (/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/scripts/RestorativePlayProbe.cs:228)
+       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [11] void System.Threading.Tasks.Task.RunContinuations(object)
+       [12] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()
+       [13] void OpenFantasy.Client.RestorativePlayProbe+<Frame>d__35.MoveNext() (/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/codec-baseline-02/runtime/client/scripts/RestorativePlayProbe.cs:242)
+       [14] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [15] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [16] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)

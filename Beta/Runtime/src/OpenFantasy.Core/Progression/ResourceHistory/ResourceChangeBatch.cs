@@ -6,6 +6,7 @@ namespace OpenFantasy.Core.Progression.ResourceHistory;
 public sealed class ResourceChangeBatch
 {
     public const int MaximumChanges = 128;
+    private byte[]? _encodingV1;
 
     public ResourceChangeBatch(ulong worldSequence, uint commandOrdinal, EntityId commandId,
         IEnumerable<ActorResourceChange> changes)
@@ -31,4 +32,15 @@ public sealed class ResourceChangeBatch
     public uint CommandOrdinal { get; }
     public EntityId CommandId { get; }
     public ReadOnlyCollection<ActorResourceChange> Changes { get; }
+
+    // The codec copies this exact immutable batch's bytes into the enclosing frame. It never
+    // exposes the backing array, shares by command identity or retains an earlier history root.
+    // Capture must remain a pure function of deeply immutable batch fields, independent of history context.
+    internal ReadOnlyMemory<byte> EncodingV1 => Volatile.Read(ref _encodingV1) ?? CaptureEncodingV1();
+
+    private byte[] CaptureEncodingV1()
+    {
+        byte[] encoded = ActorResourceHistoryCodecV1.EncodeBatch(this);
+        return Interlocked.CompareExchange(ref _encodingV1, encoded, null) ?? encoded;
+    }
 }

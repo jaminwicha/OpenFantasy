@@ -1,0 +1,22 @@
+{
+ "Kind": "native-restorative-v1",
+ "Mode": "reopen",
+ "Status": "failed",
+ "Error": "System.InvalidOperationException: Restorative world did not open.\n   at OpenFantasy.Client.RestorativePlayProbe.Require(Boolean condition, String message) in /private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/resource-batch-after-01/runtime/client/scripts/RestorativePlayProbe.cs:line 266\n   at OpenFantasy.Client.RestorativePlayProbe.Until(Func`1 predicate, String failure, Double seconds) in /private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/resource-batch-after-01/runtime/client/scripts/RestorativePlayProbe.cs:line 228\n   at OpenFantasy.Client.RestorativePlayProbe._Ready() in /private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-startup-680lrb4x/resource-batch-after-01/runtime/client/scripts/RestorativePlayProbe.cs:line 41",
+ "Stage": "opening",
+ "InitialHash": null,
+ "FinalHash": null,
+ "Checks": [],
+ "Inputs": [],
+ "Display": "macOS",
+ "FocusRequests": 0,
+ "Unfocusable": true,
+ "NativeFocused": false,
+ "ObservedNativeFocus": false,
+ "StartupNoFocus": true,
+ "IsLocallyPaused": true,
+ "IsWindowFocused": true,
+ "DurationMilliseconds": 30093,
+ "Limit": "Scripted managed preparation precedes the selected injected native action and paused recovery. This report does not prove its other supported action modes. Physical devices, OS focus, art and production gates remain open.",
+ "ObservationLabels": []
+}
