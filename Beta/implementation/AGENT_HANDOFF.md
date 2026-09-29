@@ -42,79 +42,67 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
-Fable 5.1 remains acceptable; Opus 5.5 is optional when useful. Both approved routes retain 1M
-context and Max effort. Delegate substantial bounded work with synchronized context and finite
-limits; Astra integrates. No automatic paid retry, silent model substitution or relay agent.
+Fable 5.1 remains selected and acceptable; Opus 5.5 is optional when useful. Both approved routes
+retain 1M context and Max effort. Delegate substantial bounded work with synchronized context and
+finite limits; Astra integrates. No automatic paid retry, silent substitution or relay agent.
+No external model job is active.
 
-The latest accepted increment is the [durable consented-world Host binding](p02/durable-consented-world/INTEGRATION_REVIEW.md),
-preserved by `codex/milestone-durable-consented-world-20260929`. Fresh profile-28 worlds now use the
-explicit shared schema-eight layout, with one atomic publication for the complete world, both
-participants' receipts, permanent identities and coordinated history. Two actual automatic archive
-cuts, disposal/reopen, raw/produced/onward gifts, recrafting and care pass on the real SQLite owner.
-No older saved world is converted or reinterpreted.
+The latest accepted increment is [saved material proposals](p02/material-proposals/INTEGRATION_REVIEW.md),
+preserved by `codex/milestone-saved-material-proposals-20260929`. Fresh profile30/action16 worlds
+have independently authenticated local creation, acceptance, decline and withdrawal, deterministic
+expiry and immutable command receipts. Offers reserve nothing; settlement rechecks actual control,
+stock, body/reach/readiness, both opportunities and coupled physical/liquid/material effects.
+Open grants survive an actual automatic archive cut; both participants can retrieve archived terminal
+outcomes through a verified replay. The timeless [reference](../Runtime/docs/architecture/material-proposals.md)
+records exact ownership, time, disclosure and continuation rules.
 
-The integration build and broad affected Host selection pass 200 cases. The worker's 17 durable and
-38 legacy cases remain valid against identical runtime source/library bytes, for 244 distinct passing
-cases after overlaps. The final build adds two policy tests. Two actual SIGKILLs at commit boundaries
-recover exact all-or-none ledgers; normal and recovered duplicate commands move nothing.
-[Final checks](p02/durable-consented-world/qualification/FINAL_CHECKS.json) pin the separate builds,
-actual net10 Host, process results and 15 archived fixture inputs. All 23 frozen specs, 53 existing
-fixtures and the unrelated predecessor index remain preserved. Native/device, retained-save and
-production-scale gates stay open; no full Core suite was rerun for these Host-only changes.
+[Final checks](p02/material-proposals/qualification/FINAL_CHECKS.json) pin 1,941 distinct managed
+passes (Core1,684; Host200 + proposal30 + legacy36 with nine overlaps) and four actual SIGKILLs
+before/after creation and acceptance. Recovery checks every authoritative table, receipts, identities,
+exact retry and recorded history. These process fixtures cross no archive cut; the managed cut proof
+is separate. All 477 old tests/fixtures, 23 frozen specifications and unrelated staging remain exact.
+The independent critic found real carry, archived-outcome, revision and admission gaps; the bounded
+repair and Astra's contrasting tests address them. Original failures and precise exclusions remain in
+the packet. Three verified Fable5.1/1M/requested-Max jobs produced the implementation, critic and repair;
+client estimates and friction are recorded there, without claiming billing or net credit savings.
 
-The bounded Fable run returned `claude-fable-5-1`, 1M context, requested Max effort and verified
-pre/postflight context with no denials, model substitution or paid retry. Its client estimate was
-$20.17208625 in 1,972.071 seconds, within $24/2,400 seconds; this is not billing or proven net savings.
-The useful deliverable required a fixture correction and lead policy coverage. Concurrent worker
-checks departed from the scheduling doctrine; their original results remain retained. The lead's
-initial wrong-framework executable path failed preflight before starting a Host process and is also
-preserved. No external model job is active.
+Profile30 is a named sibling of paired profile28, not a combined route or lived migration. The
+nominal29 gap preserves old assertions. Each local submission selects one advancing step; actual
+multi-actor scheduling, admitted control/session transition and pair/proposal composition remain
+required before multiplayer integration. Historical participant lookup performs a full replay off
+frame callbacks; production indexing, response equalization and live hardware/I/O fault injection
+remain unqualified. NPC decisions, native UI/controls and network authentication remain open.
 
 Earlier accepted layers remain linked rather than redispatched:
-- [Raw bilateral custody](p02/consented-custody/README.md), `640e37f`, records the component boundary.
-- [Complete-world qualification](p02/world-consented-material/INTEGRATION_QUALIFICATION.md),
-  [boundary integration](p02/world-consented-material/BOUNDARY_PROOF_INTEGRATION.md) and
-  [codec critic disposition](p02/world-consented-material/CODEC_CRITIC_DISPOSITION.md) retain the
-  structural corrections, 1,883-case prior regression and exact independent-review exclusions.
-  Its four proof groups are complete; do not redispatch `NEXT_PROOF_UNIT.md`.
-- [Format integration](p02/consented-format-qualification/INTEGRATION_REVIEW.md), `d88e039`, adds
-  independent vectors and 117 scoped cases. Its residuals remain open: maximum roots, opaque-import
-  provenance, protected stock across cut/retirement and V10 bytes under a complete-world context.
-  The new durable binding does not freeze formats or supersede those limitations.
+- [Durable paired Host](p02/durable-consented-world/INTEGRATION_REVIEW.md), milestone
+  `codex/milestone-durable-consented-world-20260929`: explicit profile28/schema8, 244 distinct managed
+  cases, two actual kills and two real automatic archive cuts. It is privileged paired publication.
+- [Raw custody](p02/consented-custody/README.md), [world boundaries](p02/world-consented-material/BOUNDARY_PROOF_INTEGRATION.md)
+  and [formats](p02/consented-format-qualification/INTEGRATION_REVIEW.md) retain their evidence and
+  residuals. Do not redispatch their completed proof packets or claim format freeze.
 
-Next, implement the actual two-party submission/application boundary and persisted proposal lifecycle
-under the [full consented-custody integration plan](p02/consented-custody/INTEGRATION_PLAN.md).
-The durable API is a privileged selected-batch boundary; independently authenticated current
-submissions, saved offers, withdrawal/expiry/reconnect, stale stock/control/reach and NPC decisions
-remain required. Creation receipts and later transfer outcomes are separate events. Care permission
-or friendship never implies inventory consent. `LocalWorldSession` and restorative controller/view
-profile guards do not yet expose profile-28 gameplay.
+Continue the [full custody integration path](p02/consented-custody/INTEGRATION_PLAN.md): bind actual
+Host scheduling/control, player/NPC decisions and native presentation using the same authority.
+`LocalWorldSession` and restorative controller/view guards do not expose profile28/30 gameplay.
+Care permission or friendship never implies inventory consent.
 
-Recoverable pre-change state: `codex/checkpoint-before-durable-consented-world-20260929T092257Z`
-(`d88e039`). Completed-worker WIP before lead integration:
-`codex/checkpoint-durable-consent-before-integration-20260929T100036Z` (`55b6431`). Both exclude
-unrelated predecessor staging; the WIP pointer is not an acceptance claim. Work remains on
-`codex/runtime-foundation` and the new milestone is a preserved backup pointer.
+The original post-cut 520-dose personal-medicine objective remains open. That lived world's helper
+gift is forbidden by OwnerOnly custody, and the exact potion ingredient has no gathering source.
+Do not fabricate stock, relabel definitions, replace its save or silently migrate its history.
+A legal supported transition and the full joined native/reopen/history journey remain required.
 
-The original post-cut personal-dose objective remains open. This retained world's helper gift is
-forbidden by OwnerOnly recipient custody, and its exact potion ingredient has no gathering source.
-Do not fabricate stock, relabel definitions or silently migrate the lived world. The
-[consented-custody integration plan](p02/consented-custody/INTEGRATION_PLAN.md) retains the required
-produced-goods, history, durable authority, asynchronous proposal, NPC/native and full joined journey
-bindings. A standalone component or fresh-world demonstration cannot close the retained-world proof.
-
-Continue remaining P01/P02 dependencies against the full plan. Important unqualified joins include
-wet terrain/construction/occupancy/custody consequences, complete macro/history and streaming scale,
-NPC commitments and society, native presentation, content reachability and the full two-market
-cargo/escort circuit. This list is a navigation aid, not a replacement scope or priority order.
-Keep all original performance, recovery, source-preservation and human gates.
+Recoverable starting and WIP references are recorded in the proposal packet's preservation/checkpoint
+JSON files. They exclude unrelated predecessor staging; WIP snapshots are not acceptance claims.
+Continue remaining P01/P02 dependencies against the full plan, including geography/history/streaming,
+wet construction/occupancy/custody joins, NPC society, content reachability and the two-market
+cargo/escort circuit. This navigation list neither replaces the scope nor waives a gate.
 
 ## Latest verified runtime checkpoint
 
-`codex/milestone-durable-consented-world-20260929` preserves the explicit profile-28 SQLite binding,
-244 distinct managed passes, two actual process kills/recovery and the updated architecture reference.
-This is a durable Host progress marker, not public ingress, native interaction, retained-save migration,
-format freeze or full assignment/phase closure.
+`codex/milestone-saved-material-proposals-20260929` preserves the fresh profile30 saved-offer
+lifecycle, bounded carry, participant history, 1,941 distinct managed passes, four real process
+kills/recovery and current architecture. It is a local Host progress marker, not native gameplay,
+network authentication, retained-save migration, format freeze or full assignment/phase closure.
 
 `codex/milestone-consented-custody` preserves the bilateral counted-source authority, 147 passing
 cases, independent critique and corrections, eight retained pre-fix counterexamples and current
@@ -176,6 +164,8 @@ society/ecology/magic/construction/narrative scope; this index does not replace 
 - [Earlier handoff snapshot](AGENT_HANDOFF_2026-09-29_ARCHIVE.md): preserved historical progress,
   review/failure dispositions and links; it is not the current assignment or current routing policy.
 - [Full baseline and handoff](../spec-v1_1/IMPLEMENTATION_HANDOFF.md): all original production obligations.
+- [Proposal WIP handoff archive](AGENT_HANDOFF_2026-09-29_PROPOSAL_WIP_ARCHIVE.md): preserves the
+  superseded integration state; it is not the current assignment.
 - [Current delegation recipe](DELEGATION_CONTEXT.json): shared instructions/spec/skill synchronization.
 
 Work on `codex/runtime-foundation`. Preserve the unrelated 19-file staged predecessor work, original

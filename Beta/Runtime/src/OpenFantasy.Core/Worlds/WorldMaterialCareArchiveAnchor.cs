@@ -40,11 +40,20 @@ public sealed class WorldMaterialCareArchiveAnchor
         Lifecycle = lifecycle;
         Geography = geography;
         SourceBaselineHash = coordination.Sources.ContentHash;
-        ContentHash = ContentHash.Compute(CanonicalEncodingV1.Frame("world.material-care-anchor.v1", reference.Encode(),
-            AdmissionVersion.ToByteArray(), CanonicalEncodingV1.Unsigned64(LatestCareSequence),
+        Proposals = coordination.Proposals is { } book ? WorldMaterialProposalContinuationContext.Capture(book) : null;
+        List<ReadOnlyMemory<byte>> fields =
+        [
+            reference.Encode(), AdmissionVersion.ToByteArray(), CanonicalEncodingV1.Unsigned64(LatestCareSequence),
             production.ContentHash.ToByteArray(), care.ContentHash.ToByteArray(), progression.ContentHash.ToByteArray(),
             quests.ContentHash.ToByteArray(), ContentHash.Compute(EncounterLifecycleCodecV1.Encode(lifecycle)).ToByteArray(),
-            SourceBaselineHash.ToByteArray()));
+            SourceBaselineHash.ToByteArray()
+        ];
+        if (Proposals is not null)
+        {
+            // Appended only with the capability, so every anchor without it keeps its exact bytes.
+            fields.Add(Proposals.ContentHash.ToByteArray());
+        }
+        ContentHash = ContentHash.Compute(CanonicalEncodingV1.Frame("world.material-care-anchor.v1", fields.ToArray()));
     }
 
     public WorldMaterialCareArchiveReference Reference { get; }
@@ -62,6 +71,9 @@ public sealed class WorldMaterialCareArchiveAnchor
     /// <summary>Exact resource basis of the causal segment that follows this boundary.</summary>
     public ProgressionSnapshot Progression { get; }
     public ContentHash SourceBaselineHash { get; }
+
+    /// <summary>Null when the closing world interprets no saved proposals; otherwise its exact open offers.</summary>
+    public WorldMaterialProposalContinuationContext? Proposals { get; }
     public ContentHash ContentHash { get; }
     internal QuestSnapshot Quests { get; }
     internal EncounterLifecycleSnapshot Lifecycle { get; }
@@ -75,10 +87,12 @@ public sealed class WorldMaterialCareArchiveAnchor
         if (world.WorldId != Reference.WorldId || world.BranchId != Reference.BranchId
             || world.AdmissionVersion != AdmissionVersion || world.Revision < Reference.BoundarySequence
             || Production.SupportsConsentedWorld != (world.Coordination?.ConsentedMaterial is not null)
+            || (Proposals is not null) != (world.Coordination?.Proposals is not null)
             || world.Quests is not { } quests || world.EncounterLifecycle is not { } lifecycle)
         {
             throw new ArgumentException("A coordinated successor must retain its sealed world's scope and admission.");
         }
+        Proposals?.ValidateSuccessor(world.Coordination!.Proposals!, ClosingWorldSequence);
         ValidateQuests(quests);
         ValidateCareChronology(world.Care!);
         if (lifecycle.WorldId != Lifecycle.WorldId || lifecycle.BranchId != Lifecycle.BranchId

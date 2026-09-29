@@ -1,0 +1,7 @@
+{
+  "checkpoint": "codex/checkpoint-material-proposals-before-reviewed-repair-20260929T112901Z",
+  "snapshot": "b4e9cc2bd75b9e47bdc59eb74f8f1d7e6fc1d01f",
+  "sourceHead": "76209f22ed7d082c8227bdff54c071704014a6bd",
+  "scope": "All successor Beta changes/new files, excludes unrelated predecessor staging",
+  "verification": "Core1684 + Host200 baseline pass and worker64 focused cases; independent critic identifies unaccepted lifecycle defects; WIP not acceptance"
+}

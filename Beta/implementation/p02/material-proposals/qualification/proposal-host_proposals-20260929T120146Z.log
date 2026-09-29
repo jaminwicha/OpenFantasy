@@ -1,0 +1,29 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:04.42]     OpenFantasy.Hosting.Tests.Care.MaterialProposalIntegrationTests.Tactical_time_expires_an_open_offer_and_exploration_records_its_outcome_without_settling [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.MaterialProposalIntegrationTests.Tactical_time_expires_an_open_offer_and_exploration_records_its_outcome_without_settling [1 s]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.MaterialProposalIntegrationTests.Tactical_time_expires_an_open_offer_and_exploration_records_its_outcome_without_settling() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/MaterialProposalIntegrationTests.cs:line 142
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:01:12.83]     OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.An_open_offer_spans_an_owner_published_cut_and_settles_after_reopening [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.An_open_offer_spans_an_owner_published_cut_and_settles_after_reopening [44 s]
+  Error Message:
+   Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+  Stack Trace:
+     at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.An_open_offer_spans_an_owner_published_cut_and_settles_after_reopening() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/MaterialProposalHostTests.cs:line 545
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/proposal-host_proposals-20260929T120146Z.trx
+
+Failed!  - Failed:     2, Passed:    27, Skipped:     0, Total:    29, Duration: 1 m 11 s - OpenFantasy.Hosting.Tests.dll (net8.0)

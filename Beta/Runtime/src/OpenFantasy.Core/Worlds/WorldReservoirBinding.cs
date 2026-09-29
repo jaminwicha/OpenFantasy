@@ -17,7 +17,7 @@ internal static class WorldReservoirBinding
 
     internal static bool TryReconcile(LiquidReservoirState? current, CountedAuthorityState inventory,
         ProductionSnapshot? production, out LiquidReservoirState? candidate,
-        WorldConsentedTransferEvidence? transfer = null)
+        WorldConsentedTransferEvidence? transfer = null, WorldCustodyWitness? settlement = null)
     {
         candidate = current;
         if (current is null || Matches(current, inventory, production))
@@ -26,12 +26,16 @@ internal static class WorldReservoirBinding
         }
         try
         {
-            bool producedTransfer = transfer?.Approval.Command.Terms.LotKind
-                == Authority.ConsentedMaterial.ConsentedMaterialLotKind.Produced;
-            if (producedTransfer && (transfer!.OriginalInventoryHash != current.Capacity.Inventory.ContentHash
-                || transfer.OriginalProductionHash != current.Capacity.Production?.ContentHash
-                || transfer.CandidateInventoryHash != inventory.ContentHash
-                || transfer.CandidateProductionHash != production?.ContentHash))
+            // A saved proposal's settlement supplies the same owner hashes as paired evidence.
+            WorldCustodyWitness? witness = settlement ?? (transfer is null ? null : new WorldCustodyWitness(
+                transfer.Approval.Command.Terms.LotKind == Authority.ConsentedMaterial.ConsentedMaterialLotKind.Produced,
+                transfer.OriginalInventoryHash, transfer.OriginalProductionHash, transfer.CandidateInventoryHash,
+                transfer.CandidateProductionHash));
+            bool producedTransfer = witness?.Produced == true;
+            if (producedTransfer && (witness!.Value.OriginalInventoryHash != current.Capacity.Inventory.ContentHash
+                || witness.Value.OriginalProductionHash != current.Capacity.Production?.ContentHash
+                || witness.Value.CandidateInventoryHash != inventory.ContentHash
+                || witness.Value.CandidateProductionHash != production?.ContentHash))
             {
                 return false;
             }

@@ -1,0 +1,26 @@
+{
+  "status": "fixture_parsing_only_no_host_execution",
+  "harnessSha256": "2f3f401797f99752372b08599abb38bbfdc348464005ab05ccc80fe7fc0582a6",
+  "fixtureSourceEvidence": "proposal-host_proposals-20260929T110705Z.json",
+  "cases": [
+    {
+      "operation": "creation",
+      "commandId": "ca25feed0000000000000000000001e5",
+      "newIdentityCount": 4,
+      "archiveCountBefore": 0,
+      "archiveCountAfter": 0
+    },
+    {
+      "operation": "acceptance",
+      "commandId": "ca25feed0000000000000000000001df",
+      "newIdentityCount": 4,
+      "archiveCountBefore": 0,
+      "archiveCountAfter": 0
+    }
+  ],
+  "limitsUnchanged": {
+    "runSeconds": 30,
+    "killSeconds": 5
+  },
+  "note": "Adapts the explicit profile check to the reviewed nominal profile30 choice. Original profile29 preflight/failure evidence stays preserved. Actual process qualification must use final corrected runtime and newly exported fixtures."
+}

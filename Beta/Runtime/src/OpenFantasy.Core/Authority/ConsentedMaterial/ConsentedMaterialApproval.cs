@@ -1,9 +1,12 @@
 namespace OpenFantasy.Core.Authority.ConsentedMaterial;
 
 /// <summary>
-/// Both submitted approvals, each paired with the identity the host verified for its own delivery.
-/// Constructing the value authenticates nothing; neither delivery can stand in for the other and
-/// neither is derived from submitted claims.
+/// Both submitted approvals, each paired with the delivery recorded for its own submission. The
+/// simultaneous pair supplies two deliveries the host verified for the current step. A saved
+/// proposal supplies the sender's delivery recorded at creation: it is a historical grant compared
+/// with the current control binding, never a newly authenticated caller. Constructing the value
+/// authenticates nothing; neither delivery can stand in for the other and neither is derived from
+/// submitted claims.
 /// </summary>
 public sealed class ConsentedMaterialApproval
 {
@@ -27,8 +30,8 @@ public sealed class ConsentedMaterialApproval
 
     /// <summary>
     /// Checks the supplied current state: the acceptance binds this command, each participant's claims
-    /// equal their own verified delivery and current control, and each owns the named storage.
-    /// Deposit policies are neither consulted nor changed.
+    /// equal their own recorded delivery, that delivery equals the current control binding, and each
+    /// owns the named storage. Deposit policies are neither consulted nor changed.
     /// </summary>
     public bool IsApprovedByBothParticipants(CountedAuthorityState state)
     {
@@ -44,7 +47,7 @@ public sealed class ConsentedMaterialApproval
             && IsOwner(state, terms.RecipientActorId, terms.DestinationCustodianId);
     }
 
-    // Submitted claims must equal the host-verified delivery; neither is derived from the other.
+    // Submitted claims must equal the recorded delivery and the current binding; none derives another.
     private static bool IsCurrentController(CountedAuthorityState state, TrustedCommandDelivery delivery,
         EntityId claimedPrincipalId, EntityId claimedSessionId, EntityId actorId) =>
         claimedPrincipalId == delivery.PrincipalId && claimedSessionId == delivery.SessionId

@@ -346,3 +346,23 @@ Pre-change refs are `codex/checkpoint-before-durable-consented-world-20260929T09
 ingress, asynchronous offers, native interaction, retained-save transition, remaining format proofs,
 production scale and full phase/campaign gates remain open. Work stays on `codex/runtime-foundation`;
 this is a backup pointer, with no branch switch, force update, push or merge.
+
+
+The `codex/milestone-saved-material-proposals-20260929` marker preserves fresh profile30/action16
+saved offers in the schema-eight sole authority: independent local submissions, immutable receipts,
+actual expiry/readiness/opportunity/physical joins, exact open-grant carry and participant-visible
+archived outcomes. The integration build and 1,941 distinct managed cases pass: Core1,684 plus
+Host200, proposal Host30 and legacy36, with nine overlaps and exact runtime compatibility for the
+retained legacy run. Four actual SIGKILLs cover before/after creation and acceptance; complete ledgers,
+receipts, identities, retries and history recover exactly. Those process fixtures do not cross a cut;
+the automatic archive/carry proof is separately managed. [Integration review](p02/material-proposals/INTEGRATION_REVIEW.md)
+and [final checks](p02/material-proposals/qualification/FINAL_CHECKS.json) retain source/build pins,
+independent criticism, repaired defects, failures, delegation limits and remaining obligations.
+Pre-change `codex/checkpoint-before-material-proposals-20260929T102335Z` preserves `76209f2`;
+worker/repair WIP snapshots `eeaacf9`, `b4e9cc2` and `05a0adf` remain recoverable under their unique
+checkpoint refs recorded in the packet. All 477 old tests/fixtures, 23 frozen specs and the unrelated
+19-file predecessor index remain intact. Profile30 is a sibling, not a migrated or combined world.
+Actual session scheduling/control transition, native/NPC/network binding, production scale and the
+retained520-dose journey stay open, as do full phase/campaign gates. Work remains on
+`codex/runtime-foundation`; the milestone is a backup pointer, with no checkout switch, force update,
+push or merge.

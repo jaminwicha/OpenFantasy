@@ -263,7 +263,29 @@ public sealed class WorldStepProcessor
             WorldMaterialPair? materialPair = null;
             WorldConsentedTransferEvidence? materialTransfer = null;
             WorldActionRejection recipientRejection = WorldActionRejection.Unavailable;
-            if (action.Intent is OfferMaterialIntent or AcceptMaterialIntent)
+            WorldMaterialProposalSettlement? proposalSettlement = null;
+            EntityId? proposalCounterpart = null;
+            if (action.Intent is MaterialProposalIntent)
+            {
+                if (coordination?.Proposals is not { } book || production is null)
+                {
+                    throw new InvalidOperationException("This world does not interpret saved material proposals.");
+                }
+                WorldMaterialProposalPlan plan = WorldMaterialProposalResolver.Resolve(state, batch, inventory, space,
+                    production, book, dialogues.Count != 0, action, checked((uint)actionIndex), sequence, worked, Occupied);
+                resolution = new(plan.Inventory, dialogues, plan.Rejection, null);
+                if (plan.Rejection == WorldActionRejection.None)
+                {
+                    production = plan.Production;
+                    coordination = coordination.WithProposals(plan.Book);
+                    createdIds = plan.CreatedIds;
+                    proposalSettlement = plan.Settlement;
+                    proposalCounterpart = plan.CounterpartActorId;
+                    // Saving, declining and withdrawing declare; only a settlement performs work.
+                    performedWork = plan.Settlement is not null;
+                }
+            }
+            else if (action.Intent is OfferMaterialIntent or AcceptMaterialIntent)
             {
                 if (coordination?.ConsentedMaterial is not { } history || production is null || materialPairs is null)
                 {
@@ -454,7 +476,8 @@ public sealed class WorldStepProcessor
                 }
             }
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
-                || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled, materialTransfer)
+                || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled,
+                    materialTransfer, proposalSettlement?.Witness)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
                 || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells, space, state.ReservoirSeals)
                 || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
@@ -504,6 +527,11 @@ public sealed class WorldStepProcessor
                 {
                     worked.Add(materialPair.Acceptance.ActorId);
                 }
+                if (proposalCounterpart is { } counterpart)
+                {
+                    // The absent sender's opportunity of this step is spent by its settled offer.
+                    worked.Add(counterpart);
+                }
                 foreach (ActorPresence actor in space.Actors)
                 {
                     if (actor.Feet != previousSpace.GetActor(actor.ActorId).Feet)
@@ -544,6 +572,11 @@ public sealed class WorldStepProcessor
             lifecycle = state.EncounterLifecycle?.AdvanceExploration();
             calendar = pacing?.Calendar ?? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);
             advancingSteps = checked(advancingSteps + 1);
+            if (coordination?.Proposals is { } pendingProposals)
+            {
+                // Every action of this step preceded the boundary; offers due at the new count close here.
+                coordination = coordination.WithProposals(pendingProposals.ExpireDue(advancingSteps, sequence));
+            }
             if (transport is not null)
             {
                 var stages = transport.PlanAdvance(calendar, dialogues.Count != 0, Occupied);

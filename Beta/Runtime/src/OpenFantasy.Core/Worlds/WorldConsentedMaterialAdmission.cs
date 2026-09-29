@@ -61,6 +61,13 @@ public static class WorldConsentedMaterialAdmission
                 }
             }
         }
-        world.Production.ValidateCustodyEvidence(history.ProducedMovements);
+        if (world.Coordination!.Proposals is not { } proposals)
+        {
+            world.Production.ValidateCustodyEvidence(history.ProducedMovements);
+            return;
+        }
+        // The saved-proposal interpretation admits settlements only; production replays those.
+        WorldMaterialProposalAdmission.Validate(world, history, proposals, boundary);
+        world.Production.ValidateCustodyEvidence(proposals.ProducedMovements);
     }
 }

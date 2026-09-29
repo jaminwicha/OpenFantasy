@@ -49,6 +49,7 @@ public static class WorldAdmissionValidator
         admission.ReadCare();
         admission.ReadResourceHistory();
         admission.ReadConsentedMaterial();
+        admission.ReadMaterialProposals();
         return admission.Complete();
     }
 
@@ -146,6 +147,45 @@ public static class WorldAdmissionValidator
                 Add(terms.LotId, lotRole);
                 Add(transfer.MovedLotId, lotRole);
                 Require(transfer.RightsOwnerId, produced ? WorldIdentityRole.ProductionBatch : WorldIdentityRole.CountedSource);
+            }
+        }
+
+        internal void ReadMaterialProposals()
+        {
+            if (world.Coordination?.Proposals is not { } book)
+            {
+                return;
+            }
+            void Register(WorldMaterialProposal proposal)
+            {
+                Add(proposal.ProposalId, WorldIdentityRole.MaterialProposal, unique: true);
+                Add(proposal.CreationCommandId, WorldIdentityRole.CauseReference, unique: true);
+                Require(proposal.Terms.SenderActorId, WorldIdentityRole.Actor);
+                Require(proposal.Terms.RecipientActorId, WorldIdentityRole.Actor);
+                Require(proposal.Terms.SourceCustodianId, WorldIdentityRole.Custodian);
+                Require(proposal.Terms.DestinationCustodianId, WorldIdentityRole.Custodian);
+            }
+            foreach (WorldMaterialProposal proposal in book.Open)
+            {
+                Register(proposal);
+            }
+            foreach (WorldMaterialProposalOutcome outcome in book.Outcomes)
+            {
+                Register(outcome.Proposal);
+                if (outcome.TerminalCommandId is { } terminal)
+                {
+                    Add(terminal, WorldIdentityRole.CauseReference, unique: true);
+                }
+                if (outcome.Settlement is not { } settlement)
+                {
+                    continue;
+                }
+                var terms = outcome.Proposal.Terms;
+                bool produced = terms.LotKind == Authority.ConsentedMaterial.ConsentedMaterialLotKind.Produced;
+                WorldIdentityRole lotRole = produced ? WorldIdentityRole.TransformedLot : WorldIdentityRole.Lot;
+                Add(terms.LotId, lotRole);
+                Add(settlement.MovedLotId, lotRole);
+                Require(settlement.RightsOwnerId, produced ? WorldIdentityRole.ProductionBatch : WorldIdentityRole.CountedSource);
             }
         }
 

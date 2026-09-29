@@ -164,15 +164,29 @@ Control of one participant does not grant access to another participant's stream
 already controls both actors may access both authorized streams; their separate transfer approvals
 are still required. Naming another principal's command identity does not change the selected stream.
 
+## Saved offers are a separate interpretation
+
+The paired intents are never persisted offers, and profile 28 stores none. An offer that is created
+now and decided later belongs to the [saved material proposal](material-proposals.md) interpretation,
+which selects its own profile, action codec, typed owner and receipts at fresh admission. That
+interpretation reuses the shared material decision and the control, presence, body, reach and
+reconciliation rules described here. It does not interpret the paired intents, and a profile-28
+world never gains a proposal owner.
+
+Both interpretations use `ConsentedMaterialApproval`. The pair supplies two deliveries verified for
+the current step. A saved proposal supplies the sender's delivery recorded at creation, which is
+compared with the current control binding and never treated as a newly authenticated caller. A
+coordinated anchor without the saved-proposal capability refuses a successor that carries a
+proposal owner, and an anchor with it refuses a successor without one.
+
 ## Application boundaries
 
 The durable binding does not provide public paired ingress. A service that accepts submissions from
 two parties must verify both actual deliveries before it selects a batch, reports availability or
 discloses a prior outcome. Identifiers copied into a payload, or the recipient named by an offer,
-supply neither delivery. Persisted offers, expiration, withdrawal, reconnect, transport authentication
-and UI selection likewise require explicit Host/application bindings. An asynchronous offer's
-creation receipt and the later transfer's outcome are different events; accepting later must not
-rewrite an earlier receipt. Native controls, non-player decisions, production history scale and
+supply neither delivery. Transport authentication and UI selection require explicit
+Host/application bindings. An asynchronous offer's creation receipt and the later transfer's outcome
+are different events; accepting later never rewrites an earlier receipt. Native controls, non-player decisions, production history scale and
 migration of older worlds require their own qualifications. Fresh admission never upgrades or
 replaces a saved world of another interpretation. The standalone ordered production profile is not
 interchangeable with this coordinated-world interpretation.

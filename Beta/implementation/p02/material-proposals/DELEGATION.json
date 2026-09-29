@@ -1,0 +1,36 @@
+{
+  "status": "adapter_terminal_pending_review",
+  "taskPath": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-material-proposals-fz9ccmv7",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 3600,
+  "clientEstimateLimitUsd": 40,
+  "scope": "Saved material proposal lifecycle with complete-world and durable Host binding, independently supplied submission deliveries, tests and architecture",
+  "startedUtc": "2026-09-29T10:27:09.025437+00:00",
+  "wrapperPid": 73471,
+  "executionSessionId": 43741,
+  "adapterExitCode": 0,
+  "finishedUtc": "2026-09-29T11:10:58.410185+00:00",
+  "returnedModels": {
+    "claude-fable-5-1": {
+      "inputTokens": 108,
+      "outputTokens": 215071,
+      "cacheReadInputTokens": 16415856,
+      "cacheCreationInputTokens": 458090,
+      "webSearchRequests": 0,
+      "costUSD": 24.020394000000007,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 93196,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "elapsedSeconds": 2628.443,
+  "clientEstimateUsd": 24.020394000000007,
+  "preflight": "verified",
+  "postflight": "verified",
+  "permissionDenials": [],
+  "providerIsError": false
+}

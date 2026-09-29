@@ -1,0 +1,38 @@
+{
+  "status": "completed_pending_review",
+  "taskPath": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 2400,
+  "clientEstimateLimitUsd": 28,
+  "scope": "Reviewed proposal carry, participant historical outcome, structural admission and revision repairs, contrasting tests and architecture",
+  "startedUtc": "2026-09-29T11:30:18.804181+00:00",
+  "wrapperPid": 94451,
+  "adapterExitCode": 0,
+  "finishedUtc": "2026-09-29T11:51:58.820354+00:00",
+  "elapsed_seconds": 1297.875,
+  "total_cost_usd": 12.503375749999998,
+  "model_usage": {
+    "claude-fable-5-1": {
+      "inputTokens": 62,
+      "outputTokens": 109435,
+      "cacheReadInputTokens": 5523143,
+      "cacheCreationInputTokens": 282511,
+      "webSearchRequests": 0,
+      "costUSD": 12.503375749999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 59846,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "context_status": "verified",
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "denials": [],
+  "providerIsError": false,
+  "preflight": "verified",
+  "postflight": "verified"
+}

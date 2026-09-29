@@ -28,8 +28,8 @@ internal static class WorldJournalPolicy
         ulong commandCount, ulong batchBytes, ulong outcomeBytes, PendingExcavation? newlyPending = null,
         ushort profileVersion = 16, ulong resourceArchiveBytes = 0, ulong materialCareArchiveBytes = 0)
     {
-        // Only the named coordinated and consented interpretations close joint material and care history.
-        bool jointArchives = profileVersion is 27 or 28;
+        // Only the named coordinated, consented and saved-proposal interpretations close joint history.
+        bool jointArchives = profileVersion is 27 or 28 or 30;
         if (!jointArchives && (materialCareArchiveBytes != 0
                 || current.MaterialCareArchiveCount != 0 || current.MaterialCareArchiveBytes != 0)
             || jointArchives && (resourceArchiveBytes != 0

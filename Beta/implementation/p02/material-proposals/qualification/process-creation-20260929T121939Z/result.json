@@ -1,0 +1,248 @@
+{
+  "status": "passed",
+  "runs": [
+    {
+      "label": "normal",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal.sqlite3",
+        "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal.stderr",
+      "seconds": 1.6389958751387894,
+      "exitCode": 0
+    },
+    {
+      "label": "normal-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal.sqlite3",
+        "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal-duplicate.stderr",
+      "seconds": 1.2191256657242775,
+      "exitCode": 1
+    },
+    {
+      "label": "normal-history",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal.sqlite3",
+        "334"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal-history.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal-history.stderr",
+      "seconds": 1.361294999718666,
+      "exitCode": 0
+    },
+    {
+      "label": "before-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.sqlite3",
+        "334"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-reopen.stderr",
+      "seconds": 5.342439125292003,
+      "exitCode": 0
+    },
+    {
+      "label": "before-retry",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.sqlite3",
+        "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-retry.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-retry.stderr",
+      "seconds": 3.735638292040676,
+      "exitCode": 0
+    },
+    {
+      "label": "before-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.sqlite3",
+        "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-duplicate.stderr",
+      "seconds": 3.028630208224058,
+      "exitCode": 1
+    },
+    {
+      "label": "before-history",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.sqlite3",
+        "334"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-history.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before-history.stderr",
+      "seconds": 3.8519522082060575,
+      "exitCode": 0
+    },
+    {
+      "label": "after-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after.sqlite3",
+        "335"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after-reopen.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after-reopen.stderr",
+      "seconds": 3.607508124783635,
+      "exitCode": 0
+    },
+    {
+      "label": "after-duplicate",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after.sqlite3",
+        "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after-duplicate.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after-duplicate.stderr",
+      "seconds": 3.139308250043541,
+      "exitCode": 1
+    },
+    {
+      "label": "after-history",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after.sqlite3",
+        "334"
+      ],
+      "timeoutSeconds": 30,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after-history.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after-history.stderr",
+      "seconds": 3.0650748340412974,
+      "exitCode": 0
+    }
+  ],
+  "crashes": [
+    {
+      "label": "before",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.sqlite3",
+        "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc",
+        "before"
+      ],
+      "boundary": "before",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.stderr",
+      "pid": 6739,
+      "signalSeconds": 1.4849470406770706,
+      "notification": "{\"Boundary\":\"BeforeCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.0048155831173062325
+    },
+    {
+      "label": "after",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--probe-world-step-crash",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after.sqlite3",
+        "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc",
+        "after"
+      ],
+      "boundary": "after",
+      "signalTimeoutSeconds": 30,
+      "killTimeoutSeconds": 5,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after.stdout",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after.stderr",
+      "pid": 6838,
+      "signalSeconds": 3.003811083268374,
+      "notification": "{\"Boundary\":\"AfterCommit\"}\n",
+      "exitCode": -9,
+      "killSeconds": 0.016732792370021343
+    }
+  ],
+  "completedCases": [
+    {
+      "boundary": "normal",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/normal.sqlite3"
+    },
+    {
+      "boundary": "before",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/before.sqlite3"
+    },
+    {
+      "boundary": "after",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z/after.sqlite3"
+    }
+  ],
+  "startedUtc": "2026-09-29T12:19:39.574614+00:00",
+  "fixtureHashes": {
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/before.sqlite3": "15fdd547a4e7480499a5ebe77191e8c418b843cea57cae9f9037fd5522fa8d1f",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/after.sqlite3": "32d864f01b530b74457b13aaa1d0b0ebe695b562739a45629954ce5342c3836e",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/before.ofc": "07af61e9912f7984fcb5203a99e2ca7cd87b8cad40d114a6b7fe8fabd9aa847d",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/after.ofc": "94b6e6813cf47ebd48dfd58573e9bba9d6dade83b6673d511acdeea2e5639595",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/batch.ofc": "bee2f0b7d5fe091f779c1c77bd0df5e65d5f2af638a104ad5e48f8f9cfc9344b",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/command.ofc": "9d018f31f4e39e7b0f747fabb6179c3e9fe706ad216f9adedd8d24491a3bf15f",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/receipt.ofc": "1e7f4c2491cba8fca91bb9ba21517caa67dda4691ee0a4e7b1eca988fee20c8a",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit/metadata.json": "3398ba863a2bf94de501b0afb514807d35d1f71eb694fa409eec705e62d95deb"
+  },
+  "executionHashes": {
+    "Microsoft.Data.Sqlite.dll": "b98d957462be432895b00dccca012d3c127e118d3d4262418014b92c7bbd66cf",
+    "OpenFantasy.Core.dll": "900408a44f7500a0e905134508698cf9ae28c2353059092b59cd50220a4d74f2",
+    "OpenFantasy.Host.deps.json": "1b867a0915cc1b7a3f7f770b5ec76613a718fa36e0536a82bc811e2ecb34d67e",
+    "OpenFantasy.Host.dll": "c7c87287318e9d5b216ded5b80f968b0365c7d35e9bb18ccc5cfe003e4cf9c39",
+    "OpenFantasy.Host.runtimeconfig.json": "f9bc8e9f0c46247078ed47309f19a7576b4b94e4300e9de0003917d6bd2d667a",
+    "OpenFantasy.Hosting.dll": "2fcc2f8db451af6d54f5cab7b0ec1464b9378b4805813a04514495371bfec299",
+    "SQLitePCLRaw.batteries_v2.dll": "1ee3c6ff4d39171690d6ff6f84b4d876ed038ca28e39bb6e74995f52d2aacf8b",
+    "SQLitePCLRaw.core.dll": "b72c9dfe1479a568d6b84e249eaf949e76c757888f8056fb6ddb9c0480e0dd25",
+    "SQLitePCLRaw.provider.e_sqlite3.dll": "1d4cb69b3aaf6a9cf40dfe179cc16dd678f12bc024b212d4297654e0a29e220d"
+  },
+  "limitations": [
+    "Actual selected-batch process loss, not a network handshake or native input.",
+    "Managed fixture supplies full gameplay expectations; independent parsing checks lifecycle, exact ledgers and identities.",
+    "SIGKILL is not hardware power loss, retained-save migration or production scale."
+  ],
+  "operation": "creation",
+  "commandId": "ca25feed0000000000000000000001e5",
+  "newIdentityCount": 4,
+  "archiveCountBefore": 0,
+  "archiveCountAfter": 0,
+  "fixturesUnchanged": true,
+  "executionUnchanged": true,
+  "externalKills": 2
+}

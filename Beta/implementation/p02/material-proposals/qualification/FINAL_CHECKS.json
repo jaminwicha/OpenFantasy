@@ -1,0 +1,170 @@
+{
+  "status": "accepted_bounded_local_host_increment",
+  "sourceHead": "76209f22ed7d082c8227bdff54c071704014a6bd",
+  "integrationBuild": {
+    "evidence": "proposal-build-20260929T120811Z.json",
+    "sha256": "cce692cfe92facdc021db26f0172889bf7a9811f84e8e344db63a3adfd333850"
+  },
+  "checks": [
+    {
+      "evidence": "proposal-core-20260929T120925Z.json",
+      "sha256": "900cbabf7af5340f4749d8231cf485637c111a3404f005d4a5f0ad44efecef22",
+      "trxSha256": "0795291b14491abe056a37cec7ebcf1de2e27ca324f299723591750db22a072d",
+      "passed": 1684,
+      "elapsedSeconds": 150.362,
+      "limitSeconds": 600,
+      "buildEvidence": "Beta/implementation/p02/material-proposals/qualification/proposal-build-20260929T120811Z.json"
+    },
+    {
+      "evidence": "proposal-hosting-20260929T121201Z.json",
+      "sha256": "fe598c60d301ad8870dbce02149e9172590e0e8cbcb120ff84f716efe38e0968",
+      "trxSha256": "8eecce3373443ccbf3a89055bde8be90c67195e188911078b1713ae27da5373a",
+      "passed": 200,
+      "elapsedSeconds": 429.55,
+      "limitSeconds": 600,
+      "buildEvidence": "Beta/implementation/p02/material-proposals/qualification/proposal-build-20260929T120811Z.json"
+    },
+    {
+      "evidence": "proposal-host_proposals-20260929T120826Z.json",
+      "sha256": "883f6067f31b3f6426c926a2f44c5b4fb63a162a88c696f776c9c9c09b7968ad",
+      "trxSha256": "6e7a959829ebabf6bead84f1e5cc04d336e7d8bd475892a04771275521e33526",
+      "passed": 30,
+      "elapsedSeconds": 46.009,
+      "limitSeconds": 600,
+      "buildEvidence": "Beta/implementation/p02/material-proposals/qualification/proposal-build-20260929T120811Z.json"
+    },
+    {
+      "evidence": "proposal-legacy-20260929T114810Z.json",
+      "sha256": "24e88727f02fc5339c6be7876b9c8c03737c3b5ee64f2a9e045505a3249d5158",
+      "trxSha256": "5fd4a80169052453a164eba133239e563328c250a23b3dac8c42ae457561b64a",
+      "passed": 36,
+      "elapsedSeconds": 20.063,
+      "limitSeconds": 600,
+      "buildEvidence": "Beta/implementation/p02/material-proposals/qualification/proposal-build-20260929T114625Z.json"
+    }
+  ],
+  "distinctPassingCases": 1941,
+  "requiredPriorManagedCasesRetained": 200,
+  "crossBuildRuntimeSourceEntriesEqual": 833,
+  "crossBuildNet8LibraryEntriesEqual": 3,
+  "currentSourcesAndAssembliesMatchIntegrationBuild": true,
+  "hostExecutablePins": {
+    "evidence": "HOST_EXECUTABLE_PINS.json",
+    "sha256": "c72b9095293c28c4034a9f06a0764f45be122178e41ef5cc9176c670f5cd2af8"
+  },
+  "processQualification": [
+    {
+      "evidence": "process-acceptance-20260929T121939Z/result.json",
+      "sha256": "cca31ef6eb8dfef2f5a5019bcc09f57a7a650c98da71209b5be801b5308a5db5",
+      "operation": "acceptance",
+      "kills": 2,
+      "archiveCuts": 0
+    },
+    {
+      "evidence": "process-creation-20260929T121939Z/result.json",
+      "sha256": "c6c1d9d87d47c279f31ab4fa6572bea1b118ef57bc80b946d207871ba65f2715",
+      "operation": "creation",
+      "kills": 2,
+      "archiveCuts": 0
+    }
+  ],
+  "fixtureArchive": {
+    "evidence": "INTEGRATION_FIXTURE_ARCHIVE.json",
+    "sha256": "99f8d1d8adbbaf54901a8bf7756d7eebada05d8559af2b98f9a472f1c5dc07ae",
+    "memberCount": 32
+  },
+  "preservation": {
+    "existingTestFilesUnchanged": 477,
+    "frozenSpecsUnchanged": 23,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "checkpoint": "codex/checkpoint-before-material-proposals-20260929T102335Z",
+    "checkpointVerified": true
+  },
+  "checkpointsVerified": [
+    {
+      "ref": "codex/checkpoint-before-material-proposals-20260929T102335Z",
+      "commit": "76209f22ed7d082c8227bdff54c071704014a6bd"
+    },
+    {
+      "ref": "codex/checkpoint-material-proposals-before-integration-20260929T111456Z",
+      "commit": "eeaacf9e7dbcd842bfa205858945928684f8d65e"
+    },
+    {
+      "ref": "codex/checkpoint-material-proposals-before-reviewed-repair-20260929T112901Z",
+      "commit": "b4e9cc2bd75b9e47bdc59eb74f8f1d7e6fc1d01f"
+    },
+    {
+      "ref": "codex/checkpoint-material-proposals-repaired-before-integration-20260929T115320Z",
+      "commit": "05a0adf5e0cad4a94e8a72830b35210565d6d1d8"
+    }
+  ],
+  "originalReportsUnchanged": [
+    {
+      "path": "Beta/implementation/p02/material-proposals/WORKER_RESULT.md",
+      "sha256": "b0a3ff084a16e3a5196b345fcbc56222b83566592d65a8516e7b9862901cf3f0",
+      "checkpoint": "eeaacf9e7dbcd842bfa205858945928684f8d65e"
+    },
+    {
+      "path": "Beta/implementation/p02/material-proposals/IMPLEMENTATION_NOTES.md",
+      "sha256": "6cccc37194c2b89a4590acc9b5536b51ff0942830a899bcdbbcf0c00bfae8efe",
+      "checkpoint": "eeaacf9e7dbcd842bfa205858945928684f8d65e"
+    },
+    {
+      "path": "Beta/implementation/p02/material-proposals/INDEPENDENT_CRITIC.md",
+      "sha256": "5e34c0f70c74aa94c3ec2439a33de4bba4f2533f5c79be94dc08a44713e19e02",
+      "checkpoint": "05a0adf5e0cad4a94e8a72830b35210565d6d1d8"
+    },
+    {
+      "path": "Beta/implementation/p02/material-proposals/REPAIR_NOTES.md",
+      "sha256": "add6ba8facd2c6d7825268d0f2d46cefd6a6214fc909b0da21e8a8ca0c4191db",
+      "checkpoint": "05a0adf5e0cad4a94e8a72830b35210565d6d1d8"
+    },
+    {
+      "path": "Beta/implementation/p02/material-proposals/REPAIR_RESULT.md",
+      "sha256": "545cb5d3b808679e5bd887d9188e1cb9d4fdaa843fe68b6e636662ee0be21b09",
+      "checkpoint": "05a0adf5e0cad4a94e8a72830b35210565d6d1d8"
+    }
+  ],
+  "retainedFailures": [
+    {
+      "evidence": "proposal-build-20260929T120030Z.json",
+      "sha256": "51b1f925f1e26a179baf483b55b25fb48a8e1a41ca6ae2d0dc5da0ae0cd2baf5",
+      "error": "AssertionError('Command failed; preserve its log.')"
+    },
+    {
+      "evidence": "proposal-core_proposals-20260929T105552Z.json",
+      "sha256": "5482c985d8ba0ccad7449dfc7e58a90b39218d8b6e841f2b2ec160ba473bf44c",
+      "error": "AssertionError('Command failed; preserve its log.')"
+    },
+    {
+      "evidence": "proposal-host_proposals-20260929T105640Z.json",
+      "sha256": "6ea9d871d4eea208f31097f08b98bdf3746945fc376eec0566ff583901dbf1bd",
+      "error": "AssertionError('Command failed; preserve its log.')"
+    },
+    {
+      "evidence": "proposal-host_proposals-20260929T120146Z.json",
+      "sha256": "1b267eac8110a2b0993492d6a473d2fac787341eefdbd6ed3a88d2a30fbb95de",
+      "error": "AssertionError('Command failed; preserve its log.')"
+    },
+    {
+      "evidence": "proposal-legacy-20260929T110105Z.json",
+      "sha256": "35592a1f6b16c61d66fde1aab3d1cda03a64b37e36d87e4d6c58524ca2fc303f",
+      "error": "AssertionError('Command failed; preserve its log.')"
+    }
+  ],
+  "fullCoreRegressionRerun": true,
+  "nativeRun": false,
+  "hardwarePowerLossQualification": false,
+  "wholeGameOrPhaseAcceptance": false,
+  "limitsUnchanged": true,
+  "checksSequential": true,
+  "limitations": [
+    "Fresh explicit profile30; no lived-world migration or simultaneous-pair union.",
+    "Local independently supplied deliveries; no network handshake, control rollover or multiplayer scheduler.",
+    "Current and archived participant projections; full historical replay cost is not production-scale or timing-equalized.",
+    "Closed-save corruption and live SQL lease are proven; live hardware/I/O catch/fence remains source-reviewed only.",
+    "Four SIGKILLs cross no archive cut; actual automatic carry/cut is a separate managed proof.",
+    "NPC/native/retained520-dose journey, format freeze and full campaign gates remain open."
+  ],
+  "affectedDocumentationLocalFileLinksVerified": 225
+}

@@ -44,3 +44,15 @@ The existing source world may require an explicit supported rules/content transi
 operations can run. That is a real integration question, not permission to alter its saved genesis,
 inventory policies, medicine definitions or historical journal. Keep the full original objective
 visible when choosing that transition. No production or human acceptance threshold is relaxed.
+
+
+## Qualified increments and remaining joins
+
+The original requirements above remain intact. Accepted [complete-world boundaries](../world-consented-material/BOUNDARY_PROOF_INTEGRATION.md),
+[format checks](../consented-format-qualification/INTEGRATION_REVIEW.md), [durable paired publication](../durable-consented-world/INTEGRATION_REVIEW.md)
+and [saved local proposals](../material-proposals/INTEGRATION_REVIEW.md) provide distinct bindings.
+The latter qualifies fresh profile30 offers, independent local deliveries, actual cut carry,
+participant outcomes, expiry and process recovery. It does not admit a lived profile28 transition,
+combine simultaneous and saved routes, or implement multiplayer time selection/control rollover.
+Player/NPC policy, native presentation, the original retained-world journey and exchange/economy
+remain open; keep those rows' full evidence requirements when building on these increments.

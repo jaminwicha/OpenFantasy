@@ -55,6 +55,7 @@ different kind of person.
 | [Consented custody](consented-custody.md) | How do two independently authenticated participants approve one exact counted-source transfer without changing inventory access policy? |
 | [Consented production](consented-production.md) | How do exact material approvals and ordered custody evidence preserve raw and produced stock, independent of complete-world publication? |
 | [Consented world material](consented-world.md) | How are paired material decisions, physical eligibility and custody evidence composed, and what must complete-world publication enforce? |
+| [Saved material proposals](material-proposals.md) | How do separate offers, decisions and immutable receipts preserve exact material consent across time, persistence and history? |
 | [Item consumption](item-consumption.md) | How do candidate material retirement and explicit production archives retain consumed rights without granting treatment or world publication? |
 | [Material continuation basis](material-continuation-basis.md) | How are exact surviving material rights and direct retirement captured without granting issuance, continued spending or archive authenticity? |
 | [Live material transaction evidence](live-material-evidence.md) | How are actual accepted material/work transitions observed and reconstructed from a verified journal without changing authority or save semantics? |

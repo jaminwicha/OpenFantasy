@@ -10,7 +10,7 @@ namespace OpenFantasy.Hosting.Worlds;
 /// One in-process durable local-world owner. The host authenticates callers and selects fixed-step
 /// inputs before this privileged boundary; pending client input is not an accepted durable command.
 /// </summary>
-public sealed class SqliteWorldAuthority : IDisposable
+public sealed partial class SqliteWorldAuthority : IDisposable
 {
     private readonly object _gate = new();
     private readonly WorldDatabase _database;
@@ -41,7 +41,7 @@ public sealed class SqliteWorldAuthority : IDisposable
         // layout; its genesis, never the schema number, selects how the stored roots are read.
         int schemaVersion = accepted.ProfileVersion switch
         {
-            27 or 28 => WorldDatabaseSchemaEight.Version,
+            27 or 28 or 30 => WorldDatabaseSchemaEight.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,

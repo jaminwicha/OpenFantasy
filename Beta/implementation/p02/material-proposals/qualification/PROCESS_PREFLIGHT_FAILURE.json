@@ -1,0 +1,8 @@
+{
+  "status": "failed_before_host_execution",
+  "reason": "Lead independent decoder incorrectly used receipt field 1 (format version) as ResultId; permanent result identities are SHA256(exact receipt bytes) truncated to 16 bytes.",
+  "assertion": "Wrong newly occupied identities",
+  "sourceBeforeCorrectionSha256": "672fefcc118692a9d5c2feac783515292673de86fabee0c14b53b38ebfb61940",
+  "modelRequest": false,
+  "hostProcessStarted": false
+}

@@ -71,10 +71,17 @@ internal static class WorldMaterialCareContinuation
         int retainedTransfers = world.Coordination!.ConsentedMaterial?.Transfers.Count ?? 0;
         int transfers = batch.Actions.Count(command => command.Intent is OfferMaterialIntent);
         int completedAcknowledgments = care.Acknowledgments.Count - (care.Pending is null ? 0 : 1);
+        // Every open or newly created offer may close inside this segment, so each reserves one outcome.
+        WorldMaterialProposalBook? proposals = world.Coordination!.Proposals;
+        int retainedOutcomes = proposals?.Outcomes.Count ?? 0;
+        int closable = (proposals?.Open.Count ?? 0)
+            + batch.Actions.Count(command => command.Intent is ProposeMaterialIntent);
         bool progressed = production.Batches.Count + production.ConsumedItems.Count + history.Batches.Count
-            + care.Treatments.Count + completedAcknowledgments + retainedUses + retainedTransfers != 0;
+            + care.Treatments.Count + completedAcknowledgments + retainedUses + retainedTransfers + retainedOutcomes != 0;
         return progressed && (
-            retainedTransfers + transfers + ReservedOperations > WorldConsentedMaterialHistory.MaximumTransfers
+            proposals is not null
+                && retainedOutcomes + closable + ReservedOperations > WorldMaterialProposalBook.MaximumOutcomes
+            || retainedTransfers + transfers + ReservedOperations > WorldConsentedMaterialHistory.MaximumTransfers
             || history.Batches.Count + batches + ReservedOperations > ActorResourceHistory.MaximumBatches
             || history.ChangeCount + effects + ReservedResourceEffects > ActorResourceHistory.MaximumChanges
             || production.Batches.Count + crafts + ReservedOperations > ProductionSnapshot.MaximumBatches

@@ -1,0 +1,47 @@
+{
+  "status": "independent_fixture_parsing_passed_no_host_execution",
+  "managedBuild": "Beta/implementation/p02/material-proposals/qualification/proposal-build-20260929T105950Z.json",
+  "fixtureExportSource": "proposal-host_proposals-20260929T110005Z.json",
+  "cases": [
+    {
+      "fixture": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-material-proposals-fz9ccmv7/proposal-host_proposals-20260929T110005Z-exports/creation-before-commit",
+      "decoded": {
+        "operation": "creation",
+        "commandId": "ca25feed0000000000000000000001e5",
+        "newIdentityCount": 4
+      },
+      "archivesBefore": 0,
+      "archivesAfter": 0,
+      "fixtureHashes": {
+        "after.ofc": "1bbd073de55d0517a1ac8a41a24639f3eb9bcb1535da4123e429fe366619d567",
+        "after.sqlite3": "defa98f42b6c0d753a1e1354590e0b7d7aad8cbe3f34fb4a8c191493cb496964",
+        "batch.ofc": "1816a4b3174563f66f4fb0dd088046f27319bad4978405e5720b338b680ad1ce",
+        "before.ofc": "e4a7fa1be776b1a64bdf946354af12319d9aa495c275897d03f83de5e8f64701",
+        "before.sqlite3": "0f0c5c72fc929a4749dc21a743b1e8d45db78ca480bd1319054592ac921ad623",
+        "command.ofc": "9d018f31f4e39e7b0f747fabb6179c3e9fe706ad216f9adedd8d24491a3bf15f",
+        "metadata.json": "c906d2aa696e9be8a721eee251a98e62883ad6d0ace2905587a0cac7862bd700",
+        "receipt.ofc": "1e7f4c2491cba8fca91bb9ba21517caa67dda4691ee0a4e7b1eca988fee20c8a"
+      }
+    },
+    {
+      "fixture": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-material-proposals-fz9ccmv7/proposal-host_proposals-20260929T110005Z-exports/acceptance-before-commit",
+      "decoded": {
+        "operation": "acceptance",
+        "commandId": "ca25feed0000000000000000000001df",
+        "newIdentityCount": 4
+      },
+      "archivesBefore": 0,
+      "archivesAfter": 0,
+      "fixtureHashes": {
+        "after.ofc": "55dd52517a2734672ebfae2c56c9d23c3d00929ef95b6415cdd2f14a61462fa8",
+        "after.sqlite3": "fd490c84c969a369a4d42f090db2551264753c1a4af16eefa7b62a2fa562e4ba",
+        "batch.ofc": "93da82e2b09615fcb5bf757142fb59ca96fca67197e64905f45b2dd1702091f9",
+        "before.ofc": "d2afadcf7ff2505475737ae1b711c9d241f5cef0231de7dc815731af28841199",
+        "before.sqlite3": "4adab4b0a52b70fafcfa4873417893898ab3d4ad27e93494c8268da34ceaa928",
+        "command.ofc": "739718fe480f3527205b2434ffca3b97c95b014b25219e5e8a48e9f1143b0b10",
+        "metadata.json": "6df1504b1b797cfeb4464ec85de8456899e2d73d34418ebf9c9c5b659329d736",
+        "receipt.ofc": "dc1755b735ec7ec38c77f1abd4f45c71519a0f2a1bd7a434b3460c3c438bbe08"
+      }
+    }
+  ]
+}

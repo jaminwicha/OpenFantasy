@@ -45,7 +45,8 @@ internal enum WorldIdentityRole
     StatProfileDefinition, LevelCurveDefinition, CurrencyDefinition, CurrencyAccount, RewardDefinition, QuestDefinition,
     ConstructionDefinition, ConstructionToolDefinition, ConstructionWorkUnit, ConstructionProject, Structure,
     GeographyBasin, GeographyFormation, GeographySubstrate, GeographyBoundary, GeographyTerminal, GeographyProvince, Reservoir, ReservoirConnection, RunoffTransportStage, ExcavationSite, ConstructionMember,
-    StructuralFoundation, StructuralActorLoad, PendingCommand, PendingPublication, Encounter, ProcessUnit, EncounterAbility, EncounterScenario, ItemConsumption, CareRemedy, CareAgreement, CareAcknowledgment, CareTreatment, RestorativeUseDefinition, CarePermission, CarePermissionRevocation, RestorativeUse
+    StructuralFoundation, StructuralActorLoad, PendingCommand, PendingPublication, Encounter, ProcessUnit, EncounterAbility, EncounterScenario, ItemConsumption, CareRemedy, CareAgreement, CareAcknowledgment, CareTreatment, RestorativeUseDefinition, CarePermission, CarePermissionRevocation, RestorativeUse,
+    MaterialProposal
 }
 
 /// <summary>One immutable terrain dependency set; reference equality is the only reuse criterion.</summary>

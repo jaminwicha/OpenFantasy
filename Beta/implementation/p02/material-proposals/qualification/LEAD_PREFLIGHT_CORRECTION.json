@@ -1,0 +1,5 @@
+{
+  "status": "corrected_before_model_execution",
+  "reason": "Lead launch guard expected postflight verified from a dry-run preview; adapter preview correctly reports pinned_inputs_validated_sync_pending. No model request or output directory was created by the stopped guard.",
+  "previewStatus": "pinned_inputs_validated_sync_pending"
+}

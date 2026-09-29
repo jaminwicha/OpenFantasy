@@ -1,0 +1,36 @@
+{
+  "status": "review_returned_findings_require_repair",
+  "taskPath": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-critic-1f2iln34",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 900,
+  "clientEstimateLimitUsd": 12,
+  "scope": "Read-only lifecycle, authority and continuation correctness review of completed worker snapshot",
+  "startedUtc": "2026-09-29T11:16:25.616878+00:00",
+  "wrapperPid": 90845,
+  "adapterExitCode": 0,
+  "finishedUtc": "2026-09-29T11:26:28.373694+00:00",
+  "returnedModels": {
+    "claude-fable-5-1": {
+      "inputTokens": 28,
+      "outputTokens": 50151,
+      "cacheReadInputTokens": 1575005,
+      "cacheCreationInputTokens": 212695,
+      "webSearchRequests": 0,
+      "costUSD": 7.155481249999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 37547,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "elapsedSeconds": 600.516,
+  "clientEstimateUsd": 7.155481249999999,
+  "preflight": "verified",
+  "postflight": "verified",
+  "permissionDenials": [],
+  "providerIsError": false,
+  "reviewSha256": "5e34c0f70c74aa94c3ec2439a33de4bba4f2533f5c79be94dc08a44713e19e02"
+}

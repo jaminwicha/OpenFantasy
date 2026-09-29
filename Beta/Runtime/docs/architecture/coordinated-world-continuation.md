@@ -144,3 +144,26 @@ The durable binding is the privileged host-selected batch. It publishes both par
 every permanent identity, the archive, head and scheduled checkpoint in the one transaction described
 above. It is not authenticated dual-party ingress: see the
 [consented world](consented-world.md#durable-host-binding) boundary.
+
+## Saved proposal interpretation
+
+[World profile 30](material-proposals.md) explicitly selects a coordinated owner that also holds
+saved material proposals. It uses the same closing-root and derived-anchor mechanism. The closing
+archive retains every open offer and every outcome of the segment. The successor carries every open
+offer across the cut and starts with no outcomes, so a pending offer never disappears at a boundary.
+Closed proposal, command and split-child identities stay occupied through the stored identity table.
+
+The joint anchor of this interpretation also holds the bounded
+[proposal continuation context](material-proposals.md#carry-across-a-cut): the exact offers open in
+the closing owner. The anchor hash includes that context only when the closing world has the
+capability, so anchors of profiles 27 and 28 keep their exact bytes. A successor must keep the
+capability of its anchor, keep every carried offer exact as an open offer or a terminal outcome, and
+date every other offer after the closing world sequence. The check runs when a continuation is
+constructed and when a root is decoded against its actual anchor.
+
+The cut reservation adds one proposal outcome for every open and newly created offer to the existing
+material, care, resource and transfer headroom. It changes no earlier window, budget or schedule.
+
+Schema eight stores this interpretation in the same physical layout. Fresh creation, archive
+publication, journal accounting and recovery name profiles 27, 28 and 30; every other number,
+including 29, is refused. A world keeps the interpretation of its stored genesis.

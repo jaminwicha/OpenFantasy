@@ -1,3 +1,4 @@
+using OpenFantasy.Core;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting.Worlds;
@@ -7,20 +8,28 @@ internal sealed class WorldMaterialCareArchiveReplay : IDisposable
 {
     private readonly IEnumerator<StoredWorldMaterialCareArchive> _rows;
     private readonly ulong? _selectedOrdinal;
+    private readonly EntityId? _selectedProposalId;
     private WorldMaterialCareArchiveAnchor? _previousAnchor;
     private bool _hasRow;
 
-    internal WorldMaterialCareArchiveReplay(WorldDatabase database, ulong? selectedOrdinal)
+    internal WorldMaterialCareArchiveReplay(WorldDatabase database, ulong? selectedOrdinal,
+        EntityId? selectedProposalId = null)
     {
         _rows = database.ReadMaterialCareArchives().GetEnumerator();
         _selectedOrdinal = selectedOrdinal;
+        _selectedProposalId = selectedProposalId;
         _hasRow = _rows.MoveNext();
     }
 
     internal WorldMaterialCareArchiveSegment? Selected { get; private set; }
     internal ulong SelectedPublicationSequence { get; private set; }
 
-    internal void Verify(WorldMaterialCareArchiveSegment? expected, StoredWorldCommit publication, byte[] closingBytes)
+    /// <summary>The selected proposal's terminal outcome, found in the one retrieved root that closed it.</summary>
+    internal WorldMaterialProposalOutcome? SelectedProposalOutcome { get; private set; }
+
+    /// <param name="closing">The replayed closing root whose canonical bytes are <paramref name="closingBytes"/>.</param>
+    internal void Verify(WorldMaterialCareArchiveSegment? expected, StoredWorldCommit publication, byte[] closingBytes,
+        WorldSnapshot closing)
     {
         if (expected is not null)
         {
@@ -46,12 +55,29 @@ internal sealed class WorldMaterialCareArchiveReplay : IDisposable
                 Selected = retrieved;
                 SelectedPublicationSequence = stored.PublicationSequence;
             }
+            SelectProposalOutcome(closing);
             _hasRow = _rows.MoveNext();
         }
         if (_hasRow && _rows.Current.PublicationSequence <= publication.Sequence)
         {
             throw new InvalidDataException("The world contains an unscheduled material and care archive.");
         }
+    }
+
+    // The retrieved bytes were just proven identical to this replayed root, so its owner is the
+    // archived owner. A closed proposal leaves the live segment at exactly one cut.
+    private void SelectProposalOutcome(WorldSnapshot closing)
+    {
+        if (_selectedProposalId is not { } proposalId
+            || closing.Coordination?.Proposals?.FindOutcome(proposalId) is not { } outcome)
+        {
+            return;
+        }
+        if (SelectedProposalOutcome is not null)
+        {
+            throw new InvalidDataException("A proposal has more than one archived terminal outcome.");
+        }
+        SelectedProposalOutcome = outcome;
     }
 
     internal void Complete()

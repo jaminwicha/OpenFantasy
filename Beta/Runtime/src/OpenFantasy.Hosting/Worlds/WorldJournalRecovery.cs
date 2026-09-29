@@ -45,11 +45,21 @@ internal sealed class WorldJournalRecovery
             trace.Head.State.Revision, trace.Head.StateHash);
     }
 
-    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null, ulong? selectedMaterialSequence = null, ulong? selectedMaterialCareOrdinal = null)
+    /// <summary>
+    /// One complete verified replay that inspects every retrieved closing root for the terminal
+    /// outcome of one exact proposal identity. The result is unfiltered; the caller authorizes.
+    /// </summary>
+    internal RecordedWorldMaterialProposalOutcome ReadMaterialProposalOutcome(WorldDatabase database, EntityId proposalId)
+    {
+        ReplayedWorld trace = VerifyAndReplay(database, null, selectedProposalId: proposalId);
+        return new(trace.SelectedProposalOutcome, trace.Head.State.Revision, trace.Head.StateHash);
+    }
+
+    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null, ulong? selectedMaterialSequence = null, ulong? selectedMaterialCareOrdinal = null, EntityId? selectedProposalId = null)
     {
         try
         {
-            return Replay(database, selectedRevision, selectedOrdinal, selectedMaterialSequence, selectedMaterialCareOrdinal);
+            return Replay(database, selectedRevision, selectedOrdinal, selectedMaterialSequence, selectedMaterialCareOrdinal, selectedProposalId);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or FormatException or OverflowException)
         {
@@ -57,7 +67,7 @@ internal sealed class WorldJournalRecovery
         }
     }
 
-    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal, ulong? selectedMaterialSequence, ulong? selectedMaterialCareOrdinal)
+    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal, ulong? selectedMaterialSequence, ulong? selectedMaterialCareOrdinal, EntityId? selectedProposalId)
     {
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
@@ -82,7 +92,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
         }
-        if ((genesis.ProfileVersion is 27 or 28) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        if ((genesis.ProfileVersion is 27 or 28 or 30) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
         }
@@ -97,7 +107,8 @@ internal sealed class WorldJournalRecovery
         var steps = new WorldCommitPreparation();
         var migrations = new WorldProfileMigrationReplay();
         using var archives = new WorldResourceArchiveReplay(database, selectedOrdinal);
-        using var materialCareArchives = new WorldMaterialCareArchiveReplay(database, selectedMaterialCareOrdinal);
+        using var materialCareArchives = new WorldMaterialCareArchiveReplay(database, selectedMaterialCareOrdinal,
+            selectedProposalId);
         using IEnumerator<StoredWorldCheckpoint> checkpoints = database.ReadCheckpoints().GetEnumerator();
         if (!checkpoints.MoveNext())
         {
@@ -125,7 +136,7 @@ internal sealed class WorldJournalRecovery
                     expected.MaterialEvidence ?? throw new InvalidDataException("The selected entry did not observe its material transaction."));
             }
             archives.Verify(expected.ResourceArchive, stored, stateBytes);
-            materialCareArchives.Verify(expected.MaterialCareArchive, stored, stateBytes);
+            materialCareArchives.Verify(expected.MaterialCareArchive, stored, stateBytes, state);
             foreach (StoredWorldCommandOutcome command in expected.Commands)
             {
                 if (!commands.TryAdd((command.PrincipalId, command.CommandId), command))
@@ -188,7 +199,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
         }
-        if ((state.ProfileVersion is 27 or 28) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        if ((state.ProfileVersion is 27 or 28 or 30) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
         }
@@ -208,7 +219,8 @@ internal sealed class WorldJournalRecovery
         VerifyIdentityTable(database, identities);
         return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected,
             archives.Selected, archives.SelectedPublicationSequence, selectedMaterial,
-            materialCareArchives.Selected, materialCareArchives.SelectedPublicationSequence);
+            materialCareArchives.Selected, materialCareArchives.SelectedPublicationSequence,
+            materialCareArchives.SelectedProposalOutcome);
     }
 
     private static ExpectedJournalEntry PrepareEntry(int schemaVersion, StoredWorldCommit stored,
@@ -291,7 +303,8 @@ internal sealed class WorldJournalRecovery
 
     private sealed record ReplayedWorld(RecoveredWorld Head, WorldSnapshot? Selected,
         WorldResourceArchiveSegment? SelectedArchive, ulong ArchivePublicationSequence, SelectedMaterialObservation? SelectedMaterial,
-        WorldMaterialCareArchiveSegment? SelectedMaterialCareArchive, ulong MaterialCarePublicationSequence);
+        WorldMaterialCareArchiveSegment? SelectedMaterialCareArchive, ulong MaterialCarePublicationSequence,
+        WorldMaterialProposalOutcome? SelectedProposalOutcome);
 
     private sealed record SelectedMaterialObservation(ContentHash BeforeHash, ContentHash AfterHash,
         IReadOnlyList<WorldMaterialActionEvidence> Evidence);
@@ -303,3 +316,7 @@ internal sealed record ExpectedJournalEntry(WorldSnapshot Candidate, byte[] Cand
     WorldMaterialCareArchiveSegment? MaterialCareArchive = null);
 
 internal sealed record RecoveredWorld(WorldSnapshot Genesis, WorldSnapshot State, ContentHash StateHash, WorldJournalUsage Usage);
+
+/// <summary>An archived terminal outcome, or none, bound to the source head its replay verified.</summary>
+internal sealed record RecordedWorldMaterialProposalOutcome(WorldMaterialProposalOutcome? Outcome,
+    ulong SourceHeadRevision, ContentHash SourceHeadHash);

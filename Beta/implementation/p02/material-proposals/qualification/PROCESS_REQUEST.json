@@ -1,0 +1,31 @@
+{
+  "sourceEvidence": "proposal-host_proposals-20260929T120826Z.json",
+  "commands": [
+    [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/verify_process_recovery.py",
+      "--dotnet",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "--host",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+      "--fixture",
+      "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/creation-before-commit",
+      "--output",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-creation-20260929T121939Z"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.14/bin/python3.14",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/verify_process_recovery.py",
+      "--dotnet",
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "--host",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+      "--fixture",
+      "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-proposal-repair-3h6bc2ex/proposal-host_proposals-20260929T120826Z-exports/acceptance-before-commit",
+      "--output",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/material-proposals/qualification/process-acceptance-20260929T121939Z"
+    ]
+  ],
+  "limits": "30 seconds per Host operation; 5 seconds to terminate; sequential",
+  "scope": "Creation and acceptance, before and after commit; no coordinated cut in these fixtures"
+}
