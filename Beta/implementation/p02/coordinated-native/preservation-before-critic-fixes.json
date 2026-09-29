@@ -1,0 +1,13 @@
+{
+  "checkpoint": "codex/checkpoint-coordinated-native-before-critic-fixes-20260929T013641Z",
+  "snapshot": "8b02e695a5c95448a520ca9723214ae2c0cff9ea",
+  "parent": "4009ee409fc861c638c850e55768ed2eddf0ca5b",
+  "paths": [
+    "Beta/Runtime",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/README.md",
+    "Beta/implementation/p02/coordinated-native"
+  ],
+  "verification": "WIP: build, substantive managed fixture, coordinated and five legacy native routes and their full authentication pass. Critic provenance/absent-input/reporting findings remain unresolved; not final acceptance.",
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

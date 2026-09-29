@@ -1,0 +1,20 @@
+{
+  "checkpoint": "codex/checkpoint-coordinated-native-transfer-refused-20260929T005103Z",
+  "snapshot": "a9ecb37f39a5b4c84876e55d5440a348fd4467bb",
+  "parent": "4009ee409fc861c638c850e55768ed2eddf0ca5b",
+  "paths": [
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+    "Beta/Runtime/client/scripts/FarmClientSession.cs",
+    "Beta/Runtime/client/scripts/FarmGame.cs",
+    "Beta/Runtime/client/scripts/Bootstrap.cs",
+    "Beta/Runtime/tools/check_native_restorative.py",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeSelectionTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeFixtureTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeResultTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/p02/coordinated-native"
+  ],
+  "verification": "WIP: build succeeds; seven selection cases pass, three fixture cases fail at legitimate NotAuthorized helper gift, native/results unrun. Not acceptance.",
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

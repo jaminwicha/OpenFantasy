@@ -45,6 +45,7 @@ public partial class Bootstrap : Control
             or ["--encounter-defeat-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--care-probe", _, _, "wheel" or "keyboard" or "controller" or "pointer" or "pending" or "resume" or "reopen", "--background-render"]
             or ["--restorative-probe", _, _, _, "keyboard" or "controller" or "pointer" or "helper" or "revoke" or "reopen", "--background-render"]
+            or ["--coordinated-restorative-probe", _, _, _, _, "revoke" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -60,7 +61,22 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--restorative-probe", var restorativeSave, var restorativeReport, var restorativeMetadata, var restorativeMode]
+        if (arguments is ["--coordinated-restorative-probe", var coordinatedSave, var coordinatedReport,
+            var coordinatedMetadata, var coordinatedGenesis, var coordinatedMode]
+            && coordinatedMode is "revoke" or "reopen")
+        {
+            if (!File.Exists(coordinatedSave) || !File.Exists(coordinatedMetadata) || !File.Exists(coordinatedGenesis))
+            {
+                GD.PushError("The coordinated restorative probe requires its existing save, metadata and expected fresh genesis.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { RestorativeProfile = true, CoordinatedFixtureGenesisPath = coordinatedGenesis,
+                SavePathOverride = coordinatedSave, StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new RestorativePlayProbe(game, coordinatedReport, coordinatedMetadata, coordinatedMode));
+        }
+        else if (arguments is ["--restorative-probe", var restorativeSave, var restorativeReport, var restorativeMetadata, var restorativeMode]
             && restorativeMode is "keyboard" or "controller" or "pointer" or "helper" or "revoke" or "reopen")
         {
             if (!File.Exists(restorativeSave) || !File.Exists(restorativeMetadata))

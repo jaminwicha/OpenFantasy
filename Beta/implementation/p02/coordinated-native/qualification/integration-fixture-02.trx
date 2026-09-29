@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b48f052c-3e28-4765-8b6f-a1a0cd04b844" name="@mac 2026-09-28 20:46:09" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T20:46:09.9527910-05:00" queuing="2026-09-28T20:46:09.9527910-05:00" start="2026-09-28T20:42:25.7922020-05:00" finish="2026-09-28T20:46:10.2150520-05:00" />
+  <TestSettings name="default" id="86a23eb7-34a8-403a-af31-a013b2f7d3a3">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_20_46_09" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a33f01a8-82b4-4bf1-897b-97058a329a9a" testId="5538aabe-d095-6552-f41c-49d98320f11f" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis" computerName="mac" duration="00:00:00.2921960" startTime="2026-09-28T20:46:09.7212270-05:00" endTime="2026-09-28T20:46:10.0136900-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a33f01a8-82b4-4bf1-897b-97058a329a9a" />
+    <UnitTestResult executionId="8a81c9e6-a6fb-48bb-9c70-d84dad81beec" testId="da2e5376-1dec-ca7d-5577-a97845570ee8" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_readiness_and_accepted_movement_without_changing_its_source" computerName="mac" duration="00:00:00.0461055" startTime="2026-09-28T20:46:10.0156480-05:00" endTime="2026-09-28T20:46:10.0618330-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a81c9e6-a6fb-48bb-9c70-d84dad81beec" />
+    <UnitTestResult executionId="a12a0100-957d-415c-be8c-47b800348c4a" testId="96fe171e-257b-dbb9-cb10-f2c618112152" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_ready_permitted_helper_fails_for_reach_alone_and_its_policy_selects_no_aid" computerName="mac" duration="00:00:00.0056331" startTime="2026-09-28T20:46:10.0637120-05:00" endTime="2026-09-28T20:46:10.0694010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a12a0100-957d-415c-be8c-47b800348c4a" />
+    <UnitTestResult executionId="666109c1-06f2-46e3-99df-049353ba616f" testId="1aef3166-410d-c5a2-3ac6-e54b7e542f1d" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output" computerName="mac" duration="00:03:02.4317704" startTime="2026-09-28T20:43:07.2435180-05:00" endTime="2026-09-28T20:46:09.7009780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="666109c1-06f2-46e3-99df-049353ba616f" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5538aabe-d095-6552-f41c-49d98320f11f">
+      <Execution id="a33f01a8-82b4-4bf1-897b-97058a329a9a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests" name="The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_ready_permitted_helper_fails_for_reach_alone_and_its_policy_selects_no_aid" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="96fe171e-257b-dbb9-cb10-f2c618112152">
+      <Execution id="a12a0100-957d-415c-be8c-47b800348c4a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests" name="The_ready_permitted_helper_fails_for_reach_alone_and_its_policy_selects_no_aid" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_readiness_and_accepted_movement_without_changing_its_source" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="da2e5376-1dec-ca7d-5577-a97845570ee8">
+      <Execution id="8a81c9e6-a6fb-48bb-9c70-d84dad81beec" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests" name="The_retained_ledger_is_prepared_by_readiness_and_accepted_movement_without_changing_its_source" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1aef3166-410d-c5a2-3ac6-e54b7e542f1d">
+      <Execution id="666109c1-06f2-46e3-99df-049353ba616f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests" name="A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5538aabe-d095-6552-f41c-49d98320f11f" executionId="a33f01a8-82b4-4bf1-897b-97058a329a9a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da2e5376-1dec-ca7d-5577-a97845570ee8" executionId="8a81c9e6-a6fb-48bb-9c70-d84dad81beec" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="96fe171e-257b-dbb9-cb10-f2c618112152" executionId="a12a0100-957d-415c-be8c-47b800348c4a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1aef3166-410d-c5a2-3ac6-e54b7e542f1d" executionId="666109c1-06f2-46e3-99df-049353ba616f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.60]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.63]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.03]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:03:43.14]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

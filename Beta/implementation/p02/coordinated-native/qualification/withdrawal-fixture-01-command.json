@@ -1,0 +1,26 @@
+{
+  "startedUtc": "2026-09-29T01:18:31.002368+00:00",
+  "kind": "test",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~CoordinatedNative",
+    "--logger",
+    "trx;LogFileName=withdrawal-fixture-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification"
+  ],
+  "environment": {
+    "OPENFANTASY_COORDINATED_NATIVE_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01",
+    "OPENFANTASY_COORDINATED_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/durable-withdrawal-fixture-01",
+    "OPENFANTASY_CARE_COMPATIBILITY_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/care-legacy-withdrawal-fixture-01",
+    "OPENFANTASY_MATERIAL_CARE_STRESS_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/earned-supply-withdrawal-fixture-01"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 207.65967545798048,
+  "finishedUtc": "2026-09-29T01:21:58.663014+00:00"
+}

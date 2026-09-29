@@ -42,20 +42,51 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Active assignment
 
-Continue the [coordinated world continuation](p02/coordinated-world-continuation/README.md) campaign
-with the [actual post-cut native journey](p02/world-canonical-frame/NATIVE_FOLLOWUP.md). The unchanged
-external normal/BeforeCommit/AfterCommit matrix now passes on the real 520-dose ledger. Use an explicit
-profile27 fixture route with an admitted fresh genesis and actual earned/transferred player medicine;
-normal new games remain profile26. Prove public wheel use, cancellation/paused refusal, the exact dose/
-HP/identity changes and second-process reopening against complete histories/archives.
+Profile and resolve the continued-world native opening deadline, using the
+[save-selection packet](p02/coordinated-native/README.md) and its actual failed-run save. The final
+native withdrawal succeeds, but its separate reopen exceeds the unchanged 30s opening bound at
+30.179s. Earlier active/reopen and authoritative checks passed; they do not replace this failure.
+A read-only .NET 10 Host diagnosis recovers the exact failed save/head in 20.994s, preserving bytes;
+it does not identify the cause of native latency. Do not rerun until green or infer environmental cause
+without measurement. Keep complete original
+history/archive validation, exact expected genesis, and all 30s/150s/180s native limits.
 
-Take a recoverable checkpoint before the next major change. Preserve actual permission withdrawal,
-source rights, seeded draws, archive retrieval, full replay and the existing native/time bounds. No
-surrogate world, fabricated stock, automatic retry or implicit upgrade of lived saves. All external
-workers and task-owned qualification processes have finished. Production lifetime/latency, physical
-platform/device, multiplayer, art/audio and human acceptance remain separate requirements.
+The original post-cut personal-dose objective also remains open: the helper's gift is forbidden by
+OwnerOnly recipient custody, and this stress world's exact potion ingredient has no gathering source.
+Do not fabricate stock, relabel definitions or silently migrate that lived world. Current preparation
+is explicitly scripted Host movement; it omits autonomous policy until the native starting boundary.
+Normal startup remains the construction farm; ordinary care creates profile26; this fixture selects
+an existing profile27 save. Independent critic findings and the partial implementation timeout are
+retained in the packet. No paid worker remains active.
+
+Take a recoverable checkpoint before the next major change. Production lifetime/latency, physical
+platform/device, multiplayer, art/audio and human acceptance remain separate requirements. Broader
+P01/P02 gameplay work and the full P14 campaign are not reduced by this bounded proof.
 
 ## Latest increment
+
+[Exact-origin save selection and native withdrawal qualification](p02/coordinated-native/README.md)
+adds an explicit existing-save Host selector with canonical fresh-genesis validation, full recovery
+and exact original-byte matching. The fixture client selects its companion from actual care permission
+rather than ambiguous reciprocal quest givers. Default routes retain their behavior. Independent review
+found no actionable defect in these runtime bindings; provenance/reporting findings were addressed.
+
+Clean build; **129 distinct substantive managed passes**, plus five intentional absent-input skips.
+All five legacy native routes/ten processes and their actual-ledger authentication pass on the final
+build. The large coordinated native withdrawal passes, but its final separate-process reopen misses
+30s. That gate remains open; the milestone does not claim native timing completion. Its earlier passing
+native run, final failure, full source-pinning proof and all three preserved archives remain recorded.
+Source preparation retains 520 prior uses and 80 doses through one accepted movement step; no medicine
+or permission is fabricated. Scripted preparation is not native/player-led preparation acceptance.
+
+Milestone: `codex/milestone-coordinated-save-selection` (resolve for exact commit). All prior milestone
+refs, frozen specs and the unrelated predecessor index remain preserved. Architecture updates are
+current; 831 links resolve. Ecosystem `4de7470` persists the substantive-input, independent-origin and
+scripted/live-proof distinctions and synchronizes three shared skill entrypoints. The independent
+critic was useful; the implementation delegate timed out after code/tests. Net credit savings remain
+unestablished. No core-language change or validation-gate relaxation.
+
+### Previous immutable care digest checkpoint
 
 [Immutable care definition digests](p02/care-definition-digests/README.md) retain canonical hashes on
 four exact immutable owners with safe lazy publication. A revoked permission owns separate grant and

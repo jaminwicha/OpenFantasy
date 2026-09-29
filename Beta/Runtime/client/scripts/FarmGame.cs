@@ -40,6 +40,8 @@ public partial class FarmGame : Node2D
     internal bool EncounterProfile { get; init; }
     internal bool CareProfile { get; init; }
     internal bool RestorativeProfile { get; init; }
+    /// <summary>Expected fresh genesis of a prepared coordinated fixture; requires its explicit existing save.</summary>
+    internal string? CoordinatedFixtureGenesisPath { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -97,6 +99,15 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (CoordinatedFixtureGenesisPath is { } expectedGenesis)
+        {
+            // A prepared fixture has no default location: it continues only its explicit existing save.
+            _opening = SavePathOverride is { } fixtureSave
+                ? FarmClientSession.OpenCoordinatedFixtureAsync(fixtureSave, expectedGenesis)
+                : Task.FromException<FarmClientSession>(
+                    new InvalidOperationException("The coordinated fixture requires its explicit existing save."));
+            return;
+        }
         if (RestorativeProfile)
         {
             string restorativeSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-restorative.sqlite");

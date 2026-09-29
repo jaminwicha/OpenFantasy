@@ -1,0 +1,19 @@
+{
+  "status": "timeout",
+  "process_exit_code": -9,
+  "elapsed_seconds": 1000.166,
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "context_status": "verified",
+  "total_cost_usd": null,
+  "model_usage": null,
+  "contextSha256": "c330b9c65bceef02fd20e6fd77d3e1a801c29d5fcd0f7988333d7a574f0ea3f4",
+  "rawEvidenceDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-withdrawal-tncfumm9/run",
+  "limits": {
+    "seconds": 1000,
+    "clientEstimateUsd": 10
+  },
+  "returnedModelVerified": false,
+  "creditSavingsEstablished": false,
+  "disposition": "Partial: clean build and 13 runner passes (12 substantive, one native-result case without input). Timed out before final report. Postflight verified. Lead reviews, strengthens historical comparisons and performs native checks; no implementation retry."
+}

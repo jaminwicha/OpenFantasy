@@ -1,0 +1,44 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:18.52]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output [FAIL]
+[xUnit.net 00:00:18.52]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis [FAIL]
+[xUnit.net 00:00:18.53]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- GiveItemIntent: NotAuthorized
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 157
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 116
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- GiveItemIntent: NotAuthorized
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 157
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 116
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- GiveItemIntent: NotAuthorized
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 157
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 116
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/worker-tests-01.trx
+
+Failed!  - Failed:     3, Passed:     8, Skipped:     0, Total:    11, Duration: 16 s - OpenFantasy.Hosting.Tests.dll (net8.0)

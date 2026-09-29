@@ -25,6 +25,13 @@ revocation preserves its command, world sequence and ordinal. Historical uses re
 and revision, and must precede revocation. Self-use has no external permission tuple. Runtime grant
 creation and broader medical consent require their own admitted operations.
 
+Care permission and inventory deposit permission have different scopes. Assistance may consume a
+helper-owned dose without transferring it to the patient's backpack. A gift independently needs the
+source owner's control and the destination's custody deposit policy; an OwnerOnly recipient does not
+accept another actor's gift merely because treatment was authorized. Revoking treatment neither grants
+nor revokes an inventory transfer right. Item acquisition, treatment and patient withdrawal retain
+separate typed operations and validation.
+
 Each immutable use definition and permission retains its canonical digest lazily on that exact
 object. The first successful read uses the canonical encoder; concurrent readers publish one complete
 immutable hash. Encoding failures leave nothing retained, so a later read retries. Constructor-owned

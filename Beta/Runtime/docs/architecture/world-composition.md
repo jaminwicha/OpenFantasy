@@ -55,6 +55,19 @@ agreements retain the relevant participants and terms. A patient's permission do
 spending a helper's property. Subject matter belongs to the relevant owner, even when relation
 indexing, revision checks or expiration use shared infrastructure.
 
+Definition identity and pinned version govern interchangeability. Two admitted items can share a
+source label or payload while retaining distinct definitions and physical calibrations. A recipe's
+exact input binding does not accept another definition merely because both are called berries. Any
+substitution rule or conversion needs its own explicit admitted semantics and provenance.
+
+A claimed acquisition or progression path composes these same contracts across operations: access,
+rights to obtain the exact input, transformation, output custody, target capability and applicable time.
+The existence of a recipe and stock somewhere in the world does not prove that a named actor can
+complete that path. Generated mandatory paths require constructive witnesses under the
+[design validation contract](../../../spec-v1_1/GENERATION_VALIDATION.md); optional or deliberately gated
+content can remain inaccessible under its declared conditions. This is a generation/design obligation,
+not an assertion that runtime preflight implements a general progression solver.
+
 ## Active interactions
 
 ```mermaid

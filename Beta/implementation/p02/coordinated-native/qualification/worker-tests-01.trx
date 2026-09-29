@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="2f373797-f22b-4da1-92d0-61ab43a7ee51" name="@mac 2026-09-28 19:45:23" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T19:45:23.1630970-05:00" queuing="2026-09-28T19:45:23.1630970-05:00" start="2026-09-28T19:45:19.5051500-05:00" finish="2026-09-28T19:45:38.6922350-05:00" />
+  <TestSettings name="default" id="6d2f3c77-8f00-45c3-902f-ed6589899cfc">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_19_45_23" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="65028daf-03a4-4556-9ce7-284d19abef3f" testId="7cb7bafa-222d-06d7-28ec-060597db571c" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.Another_exact_genesis_is_refused_and_releases_the_save(seed: &quot;coordinated-native-selection&quot;, playerName: &quot;Another traveler&quot;)" computerName="mac" duration="00:00:00.6182948" startTime="2026-09-28T19:45:24.8304100-05:00" endTime="2026-09-28T19:45:25.4487840-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="65028daf-03a4-4556-9ce7-284d19abef3f" />
+    <UnitTestResult executionId="6ea8c2a3-5f01-4751-bd2f-bfd3f3d679d9" testId="b54cd62f-ab52-0a2c-cc83-4544924a6200" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T19:45:38.5994280-05:00" endTime="2026-09-28T19:45:38.5994280-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ea8c2a3-5f01-4751-bd2f-bfd3f3d679d9">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- GiveItemIntent: NotAuthorized</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 157
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 116
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a623f17a-caab-42df-9a53-af606f878e17" testId="f993e628-788f-fb1a-e7b9-7046fdb44d22" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.A_missing_save_is_refused_without_creating_one" computerName="mac" duration="00:00:00.2877534" startTime="2026-09-28T19:45:23.6977580-05:00" endTime="2026-09-28T19:45:23.9856280-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a623f17a-caab-42df-9a53-af606f878e17" />
+    <UnitTestResult executionId="ba3854df-fa6c-4ffd-b485-25af31313a39" testId="dd3b901a-8e9e-ec49-5259-f11b6cae493f" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.A_lived_expected_root_is_refused" computerName="mac" duration="00:00:00.2899616" startTime="2026-09-28T19:45:24.5357360-05:00" endTime="2026-09-28T19:45:24.8257670-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba3854df-fa6c-4ffd-b485-25af31313a39" />
+    <UnitTestResult executionId="d2294183-0eb8-408e-849a-21d36bcb6a09" testId="550948a7-8d95-6061-e224-b53aad635850" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.Another_exact_genesis_is_refused_and_releases_the_save(seed: &quot;another-coordinated-seed&quot;, playerName: &quot;Traveler&quot;)" computerName="mac" duration="00:00:00.5839345" startTime="2026-09-28T19:45:25.4499660-05:00" endTime="2026-09-28T19:45:26.0339930-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2294183-0eb8-408e-849a-21d36bcb6a09" />
+    <UnitTestResult executionId="c7fd15ab-81e2-4793-b6cc-e0499ee6c552" testId="1aef3166-410d-c5a2-3ac6-e54b7e542f1d" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T19:45:38.5964740-05:00" endTime="2026-09-28T19:45:38.5964740-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7fd15ab-81e2-4793-b6cc-e0499ee6c552">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- GiveItemIntent: NotAuthorized</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 157
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 116
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c3d5e2db-1472-49fe-b346-15c34302d794" testId="e3622237-ede8-7a91-9e4a-67073f49d50e" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.The_expected_genesis_opens_only_the_existing_save_it_began" computerName="mac" duration="00:00:00.5473688" startTime="2026-09-28T19:45:23.9870720-05:00" endTime="2026-09-28T19:45:24.5345050-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c3d5e2db-1472-49fe-b346-15c34302d794" />
+    <UnitTestResult executionId="f6552926-6484-4e6f-8262-b05561dddf5d" testId="85083228-d611-520b-6e3d-5932d3bb797f" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeResultTests.Opt_in_coordinated_native_results_authenticate_the_complete_continued_ledger" computerName="mac" duration="00:00:00.0145067" startTime="2026-09-28T19:45:21.6156340-05:00" endTime="2026-09-28T19:45:21.6396320-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f6552926-6484-4e6f-8262-b05561dddf5d" />
+    <UnitTestResult executionId="6105d981-108c-4fb4-a82a-291159c35270" testId="a1b5a26c-2b2d-6d8c-aa17-401b4f15af59" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.The_client_fixture_route_requires_the_coordinated_profile" computerName="mac" duration="00:00:00.6089336" startTime="2026-09-28T19:45:26.0367440-05:00" endTime="2026-09-28T19:45:26.6457780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6105d981-108c-4fb4-a82a-291159c35270" />
+    <UnitTestResult executionId="9330fddd-32e4-44aa-bc3d-e671443f32e6" testId="e1f8d4a9-0f7e-36e1-df95-8823ed165616" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.Normal_ordinary_care_opening_is_unchanged_and_never_selects_a_coordinated_save" computerName="mac" duration="00:00:02.0668302" startTime="2026-09-28T19:45:21.6156340-05:00" endTime="2026-09-28T19:45:23.6908620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9330fddd-32e4-44aa-bc3d-e671443f32e6" />
+    <UnitTestResult executionId="02e71123-3e47-401f-bbc5-989b823442c7" testId="5538aabe-d095-6552-f41c-49d98320f11f" testName="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-28T19:45:38.5976220-05:00" endTime="2026-09-28T19:45:38.5976220-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02e71123-3e47-401f-bbc5-989b823442c7">
+      <Output>
+        <ErrorInfo>
+          <Message>Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- GiveItemIntent: NotAuthorized</Message>
+          <StackTrace>
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 157
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 116
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.Another_exact_genesis_is_refused_and_releases_the_save(seed: &quot;coordinated-native-selection&quot;, playerName: &quot;Another traveler&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7cb7bafa-222d-06d7-28ec-060597db571c">
+      <Execution id="65028daf-03a4-4556-9ce7-284d19abef3f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests" name="Another_exact_genesis_is_refused_and_releases_the_save" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5538aabe-d095-6552-f41c-49d98320f11f">
+      <Execution id="02e71123-3e47-401f-bbc5-989b823442c7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests" name="The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b54cd62f-ab52-0a2c-cc83-4544924a6200">
+      <Execution id="6ea8c2a3-5f01-4751-bd2f-bfd3f3d679d9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests" name="The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.A_missing_save_is_refused_without_creating_one" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f993e628-788f-fb1a-e7b9-7046fdb44d22">
+      <Execution id="a623f17a-caab-42df-9a53-af606f878e17" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests" name="A_missing_save_is_refused_without_creating_one" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.Normal_ordinary_care_opening_is_unchanged_and_never_selects_a_coordinated_save" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e1f8d4a9-0f7e-36e1-df95-8823ed165616">
+      <Execution id="9330fddd-32e4-44aa-bc3d-e671443f32e6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests" name="Normal_ordinary_care_opening_is_unchanged_and_never_selects_a_coordinated_save" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.The_client_fixture_route_requires_the_coordinated_profile" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a1b5a26c-2b2d-6d8c-aa17-401b4f15af59">
+      <Execution id="6105d981-108c-4fb4-a82a-291159c35270" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests" name="The_client_fixture_route_requires_the_coordinated_profile" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.The_expected_genesis_opens_only_the_existing_save_it_began" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e3622237-ede8-7a91-9e4a-67073f49d50e">
+      <Execution id="c3d5e2db-1472-49fe-b346-15c34302d794" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests" name="The_expected_genesis_opens_only_the_existing_save_it_began" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeResultTests.Opt_in_coordinated_native_results_authenticate_the_complete_continued_ledger" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="85083228-d611-520b-6e3d-5932d3bb797f">
+      <Execution id="f6552926-6484-4e6f-8262-b05561dddf5d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeResultTests" name="Opt_in_coordinated_native_results_authenticate_the_complete_continued_ledger" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1aef3166-410d-c5a2-3ac6-e54b7e542f1d">
+      <Execution id="c7fd15ab-81e2-4793-b6cc-e0499ee6c552" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests" name="A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.Another_exact_genesis_is_refused_and_releases_the_save(seed: &quot;another-coordinated-seed&quot;, playerName: &quot;Traveler&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="550948a7-8d95-6061-e224-b53aad635850">
+      <Execution id="d2294183-0eb8-408e-849a-21d36bcb6a09" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests" name="Another_exact_genesis_is_refused_and_releases_the_save" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.A_lived_expected_root_is_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="dd3b901a-8e9e-ec49-5259-f11b6cae493f">
+      <Execution id="ba3854df-fa6c-4ffd-b485-25af31313a39" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests" name="A_lived_expected_root_is_refused" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7cb7bafa-222d-06d7-28ec-060597db571c" executionId="65028daf-03a4-4556-9ce7-284d19abef3f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b54cd62f-ab52-0a2c-cc83-4544924a6200" executionId="6ea8c2a3-5f01-4751-bd2f-bfd3f3d679d9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f993e628-788f-fb1a-e7b9-7046fdb44d22" executionId="a623f17a-caab-42df-9a53-af606f878e17" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dd3b901a-8e9e-ec49-5259-f11b6cae493f" executionId="ba3854df-fa6c-4ffd-b485-25af31313a39" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="550948a7-8d95-6061-e224-b53aad635850" executionId="d2294183-0eb8-408e-849a-21d36bcb6a09" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1aef3166-410d-c5a2-3ac6-e54b7e542f1d" executionId="c7fd15ab-81e2-4793-b6cc-e0499ee6c552" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e3622237-ede8-7a91-9e4a-67073f49d50e" executionId="c3d5e2db-1472-49fe-b346-15c34302d794" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85083228-d611-520b-6e3d-5932d3bb797f" executionId="f6552926-6484-4e6f-8262-b05561dddf5d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a1b5a26c-2b2d-6d8c-aa17-401b4f15af59" executionId="6105d981-108c-4fb4-a82a-291159c35270" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e1f8d4a9-0f7e-36e1-df95-8823ed165616" executionId="9330fddd-32e4-44aa-bc3d-e671443f32e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5538aabe-d095-6552-f41c-49d98320f11f" executionId="02e71123-3e47-401f-bbc5-989b823442c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="11" executed="11" passed="8" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.50]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.23]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.44]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:18.52]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+[xUnit.net 00:00:18.52]       ---- GiveItemIntent: NotAuthorized
+[xUnit.net 00:00:18.52]       Stack Trace:
+[xUnit.net 00:00:18.52]         
+[xUnit.net 00:00:18.52]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:18.52]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(157,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command)
+[xUnit.net 00:00:18.52]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(116,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority)
+[xUnit.net 00:00:18.52]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(48,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor()
+[xUnit.net 00:00:18.52]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:18.52]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:18.52]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+[xUnit.net 00:00:18.52]       ---- GiveItemIntent: NotAuthorized
+[xUnit.net 00:00:18.52]       Stack Trace:
+[xUnit.net 00:00:18.52]         
+[xUnit.net 00:00:18.53]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:18.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(157,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command)
+[xUnit.net 00:00:18.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(116,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority)
+[xUnit.net 00:00:18.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(48,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor()
+[xUnit.net 00:00:18.53]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:18.53]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:18.53]       Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+[xUnit.net 00:00:18.53]       ---- GiveItemIntent: NotAuthorized
+[xUnit.net 00:00:18.53]       Stack Trace:
+[xUnit.net 00:00:18.53]         
+[xUnit.net 00:00:18.53]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:18.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(157,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Accept(SqliteWorldAuthority authority, WorldSnapshot state, WorldActionCommand command)
+[xUnit.net 00:00:18.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(116,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority)
+[xUnit.net 00:00:18.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs(48,0): at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor()
+[xUnit.net 00:00:18.53]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:18.53]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:18.53]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T19:45:38.6180230-05:00">
+        <Text>[xUnit.net 00:00:18.52]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T19:45:38.6265860-05:00">
+        <Text>[xUnit.net 00:00:18.52]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T19:45:38.6283010-05:00">
+        <Text>[xUnit.net 00:00:18.53]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

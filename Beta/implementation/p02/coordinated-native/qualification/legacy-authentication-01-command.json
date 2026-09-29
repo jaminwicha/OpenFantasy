@@ -1,0 +1,23 @@
+{
+  "kind": "legacy-native",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Care.RestorativeNativeResultTests",
+    "--logger",
+    "trx;LogFileName=legacy-authentication-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification"
+  ],
+  "startedUtc": "2026-09-29T01:34:40.800459+00:00",
+  "environment": {
+    "OPENFANTASY_RESTORATIVE_NATIVE_RESULTS": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-27wwmb_v/native-manifest.json"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 15.067809499800205,
+  "finishedUtc": "2026-09-29T01:34:55.870748+00:00"
+}

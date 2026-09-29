@@ -1,0 +1,37 @@
+{
+  "status": "managed_increment_verified_native_reopen_gate_open",
+  "finalManagedRuns": {
+    "affected-integration-01": 124,
+    "integration-fixture-02": 4,
+    "native-legacy-02-authentication": 1
+  },
+  "distinctSubstantiveManagedPasses": 129,
+  "intentionalAbsentInputSkips": 5,
+  "coordinatedNative": {
+    "status": "failed",
+    "activeProcessSeconds": 24.22761229192838,
+    "reopenProcessSeconds": 34.37300487514585,
+    "failedStage": "opening",
+    "probeDurationMilliseconds": 30179,
+    "openingLimitSeconds": 30,
+    "latestActualNativeLedgerAuthentication": "not run after the required reopen failed"
+  },
+  "legacyNative": {
+    "status": "passed",
+    "routes": 5,
+    "processes": 10,
+    "authoritativeAuthentication": "passed"
+  },
+  "coreChanged": false,
+  "earlierNative": "native-coordinated-01 and native-authentication-01 passed before critic refinements; retained, not substituted for latest gate",
+  "ecosystemCommit": "4de7470035fe359956d43b055b29c7a72f6163f4",
+  "remaining": "Resolve/profile native continued-world opening latency without reducing history, validation or deadlines; exact-ledger personal medicine acquisition/use and full production gates remain open.",
+  "failedSaveHostDiagnostic": {
+    "exitCode": 0,
+    "seconds": 20.994364792015404,
+    "sequence": 1581,
+    "headMatches": true,
+    "sourceUnchanged": true,
+    "diagnosticCopyUnchanged": true
+  }
+}

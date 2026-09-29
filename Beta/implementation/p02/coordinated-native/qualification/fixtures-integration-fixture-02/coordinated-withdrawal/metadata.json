@@ -1,0 +1,97 @@
+{
+  "fixture": "coordinated-withdrawal",
+  "sourceStat": false,
+  "setupContract": "Scripted Host preparation on the copied 520-dose ledger uses accepted player movement and readiness; it does not schedule autonomous helper policy. No action command, permission change, stock change or restoration occurs.",
+  "preparationController": "Explicit Host batches, not the live LocalWorldSession scheduler",
+  "inReachAutomaticProposalCount": 1,
+  "reachEvidence": "Diagnostic Evaluate and Assess on the actual prepared state, not a rejected command receipt",
+  "fixtureBoundary": "Both actors are ready and the care permission is active; the helper keeps all 80 raw Potions but its aid fails for reach. Native continuation begins here and commits the patient\u0027s withdrawal.",
+  "statistics": "Explicit fresh stress statistics from the retained ledger; all injury, restoration and stock changes are accepted actions.",
+  "sourceDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final",
+  "sourceSha256": {
+    "final.sqlite3": "814f0afc093031d1c9308d3e1c89683b2afbdda0076b2c636b084d2e4fb23773",
+    "final.ofc": "bf989710d34c27cc1a9a3d78ea5475214a5423e44fa68d81c823a3c5135fcee0",
+    "before.sqlite3": "b76ba268d17bc1e1dae95d1a575fab69c2ca447317ee3997fbc2b32df15b07a7",
+    "before.ofc": "28d066904ad79b36790f9e3a1592990c808710a3333506680a8302b54a4a4a79",
+    "after.sqlite3": "be4d6b16136cc44861ea5204e2ae0d3cf74f4390fd7bf3e546d9d59a83898351",
+    "after.ofc": "13ec310e34dfa86a2da8a5cf09a1ebbc0712f0d9139aed61aa4c0b9c78f33adb",
+    "batch.ofc": "d9bc134c28945811db8dbafdc48c23b4755985e944d621f1fb66c5a161895abd",
+    "metadata.json": "73bdd4c25cf72ce5a31249b5a2600e05f8443b5a386d297485cd68c3ac307f2a"
+  },
+  "sourceLedgerSha256": "71a72ca2895992ab95070c5fe185d4c50477939c37fa8ff7f9b89848ac4f70df",
+  "worldId": "6dcb0a2342385d9f20c2ceb785f56d32",
+  "branchId": "4bc2210fe97d62fb5b6558d9e263e0d0",
+  "admissionHash": "53ef49f421cf398df0418b952f313a133873c6c3ae5692d203aa4c0bdbf23142",
+  "profileVersion": 27,
+  "genesisHash": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222",
+  "playerActorId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+  "helperActorId": "5d652f48a612a324027911ffd13cf5f9",
+  "retainedRevision": 1579,
+  "retainedHash": "bf989710d34c27cc1a9a3d78ea5475214a5423e44fa68d81c823a3c5135fcee0",
+  "retainedArchives": 3,
+  "retainedHp": 95463,
+  "inReachRevision": 1579,
+  "inReachHash": "bf989710d34c27cc1a9a3d78ea5475214a5423e44fa68d81c823a3c5135fcee0",
+  "beforeRevision": 1580,
+  "beforeHash": "570e1c01340ab87260143519bea11712a53a36d921314deb874acf1e4d2f0fab",
+  "beforeLedgerSha256": "7e60c4b4e36b476e44430e59862a53de64a318daf35ce719ec0cd0dc37014e58",
+  "beforeCalendar": {
+    "days": 0,
+    "millisecondsWithinDay": 33411700
+  },
+  "beforeAdvancingSteps": 809,
+  "beforeArchives": 3,
+  "readinessSteps": 0,
+  "walkingSteps": 1,
+  "walkingStepLimit": 64,
+  "walk": [
+    {
+      "sequence": 1580,
+      "deltaX": 0,
+      "deltaY": 32,
+      "from": {
+        "x": 25984,
+        "y": 83328,
+        "z": 256
+      },
+      "to": {
+        "x": 25984,
+        "y": 83360,
+        "z": 256
+      }
+    }
+  ],
+  "playerFeet": {
+    "x": 25984,
+    "y": 83360,
+    "z": 256
+  },
+  "helperFeet": {
+    "x": 25984,
+    "y": 83072,
+    "z": 256
+  },
+  "remedyRangeSubunits": 256,
+  "helperInteraction": "OutOfRange",
+  "helperAidRejection": "OutOfReach",
+  "helperWanderRadiusCells": 2,
+  "beforeHp": 95463,
+  "beforeMp": 4096,
+  "maximumHp": 100000,
+  "beforeProgressionRevision": 774,
+  "beforeTotalOrdinaryUses": 520,
+  "helperStockLotId": "ca250000000000000000000000000003",
+  "helperStockQuantity": 80,
+  "permissionId": "cafe2600000000000000000000000003",
+  "permissionActive": true,
+  "permissionRevision": 0,
+  "permissionVersion": "c0595b409156547e92870ad857ac249a250db35f67f989c6076ad8847d4b847b",
+  "permissionGrantVersion": "2e4f4849bea412753e52a4b1329ff87f70934d89ea61a0f2e86f0cef7a797a96",
+  "expectedAction": "PatientRevokeCarePermission",
+  "expectedActorId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+  "expectedHp": 95463,
+  "expectedMp": 4096,
+  "expectedTotalOrdinaryUses": 520,
+  "expectedPermissionActive": false,
+  "expectedImmediateSealsArchive": false
+}

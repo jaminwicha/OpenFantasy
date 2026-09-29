@@ -1,0 +1,29 @@
+{
+  "status": "completed_pending_review",
+  "process_exit_code": 0,
+  "elapsed_seconds": 343.034,
+  "total_cost_usd": 3.7526354999999993,
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "context_status": "verified",
+  "returnedModels": {
+    "claude-fable-5-1": {
+      "inputTokens": 20,
+      "outputTokens": 27908,
+      "cacheReadInputTokens": 567662,
+      "cacheCreationInputTokens": 110756,
+      "webSearchRequests": 0,
+      "costUSD": 3.7526354999999993,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 20256,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "contextSha256": "d40d3d20f068006a9ddc3b27d6074bd3a053c26bb3d3e8cbde54f68d61935d56",
+  "rawEvidenceDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-withdrawal-critic-brksezag/run",
+  "creditSavingsEstablished": false
+}

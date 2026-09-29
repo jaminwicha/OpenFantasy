@@ -1,0 +1,102 @@
+{
+  "status": "failed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9",
+  "rendered": true,
+  "runs": [
+    {
+      "label": "coordinated-revoke-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/background-client",
+        "--",
+        "--coordinated-restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc",
+        "revoke",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke-active.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 24.22761229192838
+    },
+    {
+      "label": "coordinated-revoke-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/background-client",
+        "--",
+        "--coordinated-restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/metadata.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02/coordinated-withdrawal/genesis.ofc",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke-reopen.stderr.log",
+      "exitCode": 1,
+      "seconds": 34.37300487514585
+    }
+  ],
+  "journeys": [],
+  "limits": {
+    "nativeProcessSeconds": 180,
+    "nativeProbeSeconds": 150,
+    "maximumNativeProcesses": 2
+  },
+  "startedUtc": "2026-09-29T01:46:46.792981+00:00",
+  "scope": "Scripted Host separation on the retained stress-stat 520-dose world; native patient permission withdrawal and paused reopening. Personal medicine use remains unqualified.",
+  "limitations": [
+    "Managed recorded-boundary authentication is required separately; UI observations alone do not prove authoritative item/time effects.",
+    "Injected input and background focus do not establish physical-device, OS-focus, art, performance or full-phase acceptance."
+  ],
+  "executionInputs": {
+    "godot": "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "godotSha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+    "dotnet": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "dotnetSha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+    "projectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+    "rendered": true,
+    "probeArgument": "--coordinated-restorative-probe"
+  },
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py": "801a595f7fdcd73fac2d5fd85936e240a0d2fa49db6d7a3b5caf0df8d75b9fab",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "97ade4d7fe5f73b9201fbfc31bf8891a3e7ff26036d39edf30e8c31606b9443b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Bootstrap.cs": "384cc225cf95aa4a9ef78e12990c9bc33bd03cc56357f34581f0ca0b485a1463",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.cs": "7d0d55f81fbd783742be5e722f599b251b4543cab0c56ccda7e6adb97555e58b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmClientSession.cs": "4a7467325ae02ac3733ea5e775ccb5abb6dd694be4a21c552d76129b9cb41d4a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmSaveOpener.cs": "9b2ef35e0cf61c9e5e7260dfa0d547c796e62d39ae8639df35c78cb69d6985fd",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs": "ac9ac6e097b85e604273e4453fd81ec856ba6f754679ae64300f3f08af59625f"
+  },
+  "failure": "Native process failed at coordinated-revoke-reopen",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 127, in main\n    run(label + '-' + phase, command)\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 77, in run\n    require(item['seconds'] < 180 and result.returncode == 0 and 'ERROR:' not in stdout.read_text() + stderr.read_text(),\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n            'Native process failed at ' + label)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py\", line 22, in require\n    raise AssertionError(message)\nAssertionError: Native process failed at coordinated-revoke-reopen\n",
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "native-restorative-wwx4qw_9/coordinated-revoke-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-wwx4qw_9/coordinated-revoke-active.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-wwx4qw_9/coordinated-revoke-reopen.stderr.log": "c659a1c85d2dd7ddecd2cfde405eafe35dbf14ac29898ee4d7178ae73ba9f892",
+    "native-restorative-wwx4qw_9/coordinated-revoke-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-wwx4qw_9/coordinated-revoke.active.json": "9170791fe0446ef11a18b5e9cdbb7b689fc34c20ed4936e1c9854203334e2436",
+    "native-restorative-wwx4qw_9/coordinated-revoke.final.png": "f10e06c666eeab85be830f7f9644fea672873fb7a55f332b06201a3bcfe9c56a",
+    "native-restorative-wwx4qw_9/coordinated-revoke.inspection.png": "c4fd6008b6f884e4e9c3a1891b9bd2ad3753dd180d07f99f4eff9833baa2242a",
+    "native-restorative-wwx4qw_9/coordinated-revoke.reopen.failed.json": "59985f1a6131365952fb60dd6edaad169bbbca1a50ff34cd141f22b7e4ca078d",
+    "native-restorative-wwx4qw_9/coordinated-revoke.sqlite3": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+    "native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "native-restorative-wwx4qw_9/coordinated-revoke.sqlite3-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finishedUtc": "2026-09-29T01:47:46.107425+00:00"
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "fixture",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Care.CoordinatedNativeFixtureTests",
+    "--logger",
+    "trx;LogFileName=integration-fixture-02.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification"
+  ],
+  "startedUtc": "2026-09-29T01:42:23.857358+00:00",
+  "environment": {
+    "OPENFANTASY_COORDINATED_NATIVE_SOURCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final",
+    "OPENFANTASY_COORDINATED_NATIVE_EVIDENCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-integration-fixture-02"
+  },
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/final.sqlite3": "814f0afc093031d1c9308d3e1c89683b2afbdda0076b2c636b084d2e4fb23773",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/final.ofc": "bf989710d34c27cc1a9a3d78ea5475214a5423e44fa68d81c823a3c5135fcee0",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/before.sqlite3": "b76ba268d17bc1e1dae95d1a575fab69c2ca447317ee3997fbc2b32df15b07a7",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/before.ofc": "28d066904ad79b36790f9e3a1592990c808710a3333506680a8302b54a4a4a79",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/after.sqlite3": "be4d6b16136cc44861ea5204e2ae0d3cf74f4390fd7bf3e546d9d59a83898351",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/after.ofc": "13ec310e34dfa86a2da8a5cf09a1ebbc0712f0d9139aed61aa4c0b9c78f33adb",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/batch.ofc": "d9bc134c28945811db8dbafdc48c23b4755985e944d621f1fb66c5a161895abd",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/metadata.json": "73bdd4c25cf72ce5a31249b5a2600e05f8443b5a386d297485cd68c3ac307f2a"
+  },
+  "expectedPasses": 4,
+  "expectedSkips": 0,
+  "exitCode": 0,
+  "elapsedSeconds": 226.5293536670506,
+  "finishedUtc": "2026-09-29T01:46:10.392036+00:00",
+  "testCounters": {
+    "total": "4",
+    "executed": "4",
+    "passed": "4",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "caseOutcomes": {
+    "Passed": 4
+  },
+  "qualificationFailures": []
+}

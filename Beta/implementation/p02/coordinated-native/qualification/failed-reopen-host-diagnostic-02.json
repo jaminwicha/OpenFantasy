@@ -1,0 +1,20 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "Beta/implementation/p02/coordinated-native/qualification/failed-reopen-host-diagnostic.sqlite3",
+    "1581"
+  ],
+  "startedUtc": "2026-09-29T01:55:32.284582+00:00",
+  "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-wwx4qw_9/coordinated-revoke.sqlite3",
+  "sourceSha256": "8598a2da449339e08ef2a5c4370bbf4ea07cd34fdc645bc9ef418f974c87806d",
+  "sequence": 1581,
+  "expectedHash": "63c0f4517e92fbc0c0da8e9c5fe4651b0203b87e427c6f602f0469b886e037da",
+  "timeoutSeconds": 30,
+  "scope": "Read-only .NET 10 Host diagnosis of actual native timeout save; not native timing acceptance.",
+  "exitCode": 1,
+  "seconds": 1.561131666880101,
+  "sourceUnchanged": true,
+  "diagnosticCopyUnchanged": true
+}

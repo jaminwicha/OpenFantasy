@@ -1,0 +1,118 @@
+{
+  "status": "passed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn",
+  "rendered": true,
+  "runs": [
+    {
+      "label": "coordinated-revoke-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/background-client",
+        "--",
+        "--coordinated-restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/metadata.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/genesis.ofc",
+        "revoke",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke-active.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 28.332829459104687
+    },
+    {
+      "label": "coordinated-revoke-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/background-client",
+        "--",
+        "--coordinated-restorative-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/metadata.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/genesis.ofc",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 25.551970375236124
+    }
+  ],
+  "journeys": [
+    {
+      "name": "coordinated-withdrawal",
+      "label": "coordinated-revoke",
+      "fixtureDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal",
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke.sqlite3",
+      "activeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/coordinated-revoke.reopen.json",
+      "fixtureSha256": {
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/before.sqlite3": "1dd7707f1860f720e6949cb2722a00b8b6dd6a4e58b82813549eb4eed7c53ca2",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/before.ofc": "570e1c01340ab87260143519bea11712a53a36d921314deb874acf1e4d2f0fab",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/metadata.json": "d6d0067537c98efb28cc21939ebe1a3fe2dc5abc0e4b41565fb95a89fba76ef3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/genesis.ofc": "6df3dc619528cd7cb5845a2d825d0a694ac34ff8b633b84566e3398956b08222"
+      },
+      "finalDatabaseSha256": "da78db2afe955666606082b012080ff9e8d308e7d99cd51fe5f04f2ecf126879",
+      "expectedGenesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/fixtures-withdrawal-fixture-01/coordinated-withdrawal/genesis.ofc"
+    }
+  ],
+  "limits": {
+    "nativeProcessSeconds": 180,
+    "nativeProbeSeconds": 150,
+    "maximumNativeProcesses": 2
+  },
+  "startedUtc": "2026-09-29T01:27:25.524460+00:00",
+  "scope": "Managed-earned source-stat injury and finite stock; native personal use, helper action, permission withdrawal and paused separate-process recovery.",
+  "limitations": [
+    "Managed recorded-boundary authentication is required separately; UI observations alone do not prove authoritative item/time effects.",
+    "Injected input and background focus do not establish physical-device, OS-focus, art, performance or full-phase acceptance."
+  ],
+  "executionInputs": {
+    "godot": "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "godotSha256": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+    "dotnet": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "dotnetSha256": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+    "projectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+    "rendered": true,
+    "probeArgument": "--coordinated-restorative-probe"
+  },
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_restorative.py": "a2ec5e4e563fba18452d972c2d6fcd6361761687a84325a14d20aad07a78c29c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": "0d0cd73194440cb7a9fdd2d557b74fa9a53e59d8eac04ce33bba68454f48fe4f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "656c9ead11d3aa25b476b46ff5da0e5250e6e00f8e6132a86120df9c1ba8ade6",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "e6b38164a45cd5049d680033c9f810d3074e792140566752b2ce8d69cb9a0090",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "58c6fe805632028f6f40ffb27bb62fc3e46d374d3347a324c9cd954295de026d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "44d985d54a3eb3a33ac561b81e9ac135e170ad79d1f83996798a189f78425c72",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Bootstrap.cs": "50c8a26d54aa8709a18dec9c0b42823d57ddfb9e185abaf0d9cdb73b990ad13a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.cs": "7d0d55f81fbd783742be5e722f599b251b4543cab0c56ccda7e6adb97555e58b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmClientSession.cs": "4a7467325ae02ac3733ea5e775ccb5abb6dd694be4a21c552d76129b9cb41d4a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmSaveOpener.cs": "9b2ef35e0cf61c9e5e7260dfa0d547c796e62d39ae8639df35c78cb69d6985fd",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs": "ac9ac6e097b85e604273e4453fd81ec856ba6f754679ae64300f3f08af59625f"
+  },
+  "managedAuthenticationManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/native-manifest.json",
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "native-restorative-6zmf7nbn/coordinated-revoke-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-6zmf7nbn/coordinated-revoke-active.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-6zmf7nbn/coordinated-revoke-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-restorative-6zmf7nbn/coordinated-revoke-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-restorative-6zmf7nbn/coordinated-revoke.active.json": "99d87476c7c342657db54370da3b13e809faf93680c53f09c01aca37d3a97b7b",
+    "native-restorative-6zmf7nbn/coordinated-revoke.final.png": "f10e06c666eeab85be830f7f9644fea672873fb7a55f332b06201a3bcfe9c56a",
+    "native-restorative-6zmf7nbn/coordinated-revoke.inspection.png": "c4fd6008b6f884e4e9c3a1891b9bd2ad3753dd180d07f99f4eff9833baa2242a",
+    "native-restorative-6zmf7nbn/coordinated-revoke.reopen.json": "3eddb7cc0b3acc4049e95f4f98cca29ee3e5b93547cc1f1ea583be4a757b229c",
+    "native-restorative-6zmf7nbn/coordinated-revoke.reopen.png": "12bad963c3d585e9ba87c68b4e80a261cab893cc701482a492878f4ccd1919b4",
+    "native-restorative-6zmf7nbn/coordinated-revoke.sqlite3": "da78db2afe955666606082b012080ff9e8d308e7d99cd51fe5f04f2ecf126879",
+    "native-restorative-6zmf7nbn/native-manifest.json": "b0253588dd211e5c9f8c637b250b08814b9535fc2ab25116bb27dafcd4b223d8"
+  },
+  "finishedUtc": "2026-09-29T01:28:20.283022+00:00"
+}

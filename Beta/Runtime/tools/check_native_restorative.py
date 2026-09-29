@@ -31,8 +31,12 @@ def main():
     for option in ('dotnet', 'godot', 'fixtures', 'output'):
         parser.add_argument('--' + option, type=Path, required=True)
     parser.add_argument('--rendered', action='store_true')
-    parser.add_argument('--journey', choices=('all', 'raw-pointer', 'raw-keyboard', 'crafted-controller', 'helper', 'revoke'), default='all')
+    parser.add_argument('--journey', choices=('all', 'raw-pointer', 'raw-keyboard', 'crafted-controller', 'helper', 'revoke',
+                                              'coordinated-revoke'), default='all')
     args = parser.parse_args()
+    # The coordinated fixture continues one retained long ledger through its own explicit startup
+    # route. It is selected by name only; 'all' remains the five ordinary-care routes.
+    coordinated = args.journey == 'coordinated-revoke'
     runtime = Path(__file__).resolve().parents[1]
     output = args.output.resolve()
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -43,12 +47,15 @@ def main():
     env = dict(os.environ, DOTNET_ROOT=str(sdk), PATH=str(sdk) + os.pathsep + os.environ.get('PATH', ''))
     routes = [('raw-pointer', 'raw-self', 'pointer'), ('raw-keyboard', 'raw-self', 'keyboard'),
               ('crafted-controller', 'crafted-self', 'controller'), ('helper', 'helper', 'helper'), ('revoke', 'revoke', 'revoke')]
-    if args.journey != 'all':
+    if coordinated:
+        routes = [('coordinated-revoke', 'coordinated-withdrawal', 'revoke')]
+    elif args.journey != 'all':
         routes = [route for route in routes if route[0] == args.journey]
     report = dict(status='running', workDirectory=str(work), rendered=args.rendered, runs=[], journeys=[],
                   limits=dict(nativeProcessSeconds=180, nativeProbeSeconds=150, maximumNativeProcesses=2 * len(routes)),
                   startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                  scope='Managed-earned source-stat injury and finite stock; native personal use, helper action, permission withdrawal and paused separate-process recovery.',
+                  scope=('Scripted Host separation on the retained stress-stat 520-dose world; native patient permission withdrawal and paused reopening. Personal medicine use remains unqualified.'
+                         if coordinated else 'Managed-earned source-stat injury and finite stock; selected native personal-use, helper or withdrawal routes and paused reopening.'),
                   limitations=['Managed recorded-boundary authentication is required separately; UI observations alone do not prove authoritative item/time effects.',
                                'Injected input and background focus do not establish physical-device, OS-focus, art, performance or full-phase acceptance.'])
 
@@ -76,6 +83,13 @@ def main():
                   for directory, assemblies in [('src/OpenFantasy.Host/bin/Debug/net10.0', ('Host', 'Core', 'Hosting')),
                                                 ('client/.godot/mono/temp/bin/Debug', ('Client', 'Core', 'Hosting'))]
                   for assembly in assemblies]
+        if coordinated:
+            paths += [runtime / 'client/scripts' / name for name in ('Bootstrap.cs', 'FarmGame.cs', 'FarmClientSession.cs', 'FarmSaveOpener.cs')]
+            paths.append(runtime / 'src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs')
+            report['executionInputs'] = dict(godot=str(args.godot.resolve()), godotSha256=digest(args.godot.resolve()),
+                                             dotnet=str(args.dotnet.resolve()), dotnetSha256=digest(args.dotnet.resolve()),
+                                             projectSha256=hashlib.sha256(project).hexdigest(), rendered=args.rendered,
+                                             probeArgument='--coordinated-restorative-probe')
         report['sourceSha256'] = {str(path): digest(path) for path in paths}
         launch = client
         if args.rendered:
@@ -90,6 +104,10 @@ def main():
         for label, fixture, control in routes:
             source = args.fixtures.resolve() / fixture
             input_files = [source / name for name in ('before.sqlite3', 'before.ofc', 'metadata.json')]
+            if coordinated:
+                input_files.append(source / 'genesis.ofc')
+                require(json.loads((source / 'metadata.json').read_text())['fixture'] == fixture,
+                        'Coordinated metadata names another fixture')
             pinned = {str(path): digest(path) for path in input_files}
             require(not any(Path(str(input_files[0]) + suffix).exists() for suffix in ('-wal', '-shm')), 'Fixture must be a closed backup')
             world, prefix = work / (label + '.sqlite3'), work / (label + '.json')
@@ -100,8 +118,12 @@ def main():
                 command = [args.godot.resolve()]
                 if not args.rendered:
                     command.append('--headless')
-                command += ['--path', launch, '--', '--restorative-probe', world, prefix, source / 'metadata.json',
-                            control if phase == 'active' else 'reopen', '--background-render']
+                command += ['--path', launch, '--']
+                if coordinated:
+                    command += ['--coordinated-restorative-probe', world, prefix, source / 'metadata.json', source / 'genesis.ofc']
+                else:
+                    command += ['--restorative-probe', world, prefix, source / 'metadata.json']
+                command += [control if phase == 'active' else 'reopen', '--background-render']
                 run(label + '-' + phase, command)
                 observed = json.loads((work / (label + '.' + phase + '.json')).read_text())
                 observations[phase] = observed
@@ -127,9 +149,12 @@ def main():
                 require({path.name for path in work.glob(label + '.*.png')} == {label + '.' + stage + '.png' for stage in stages},
                         'Missing or unexpected rendered evidence')
             require(pinned == {str(path): digest(path) for path in input_files}, 'Earned input fixture changed')
-            report['journeys'].append(dict(name=fixture, label=label, fixtureDirectory=str(source), database=str(world),
-                                           activeReport=str(work / (label + '.active.json')), reopenReport=str(work / (label + '.reopen.json')),
-                                           fixtureSha256=pinned, finalDatabaseSha256=digest(world)))
+            journey = dict(name=fixture, label=label, fixtureDirectory=str(source), database=str(world),
+                           activeReport=str(work / (label + '.active.json')), reopenReport=str(work / (label + '.reopen.json')),
+                           fixtureSha256=pinned, finalDatabaseSha256=digest(world))
+            if coordinated:
+                journey['expectedGenesis'] = str(source / 'genesis.ofc')
+            report['journeys'].append(journey)
         require(report['sourceSha256'] == {str(path): digest(path) for path in paths}, 'Native source or binary changed during validation')
         report['status'] = 'passed'
         manifest = work / 'native-manifest.json'

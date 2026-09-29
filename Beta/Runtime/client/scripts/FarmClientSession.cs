@@ -13,6 +13,7 @@ namespace OpenFantasy.Client;
 /// <summary>Local authentication and content selection at startup; gameplay UI receives projections only.</summary>
 internal sealed class FarmClientSession : IAsyncDisposable
 {
+    private const ushort CoordinatedProfileVersion = 27;
     private readonly TrustedCommandDelivery _delivery;
     private readonly FarmActionOffers _offers;
     private readonly ConditionalWeakTable<FarmActionOffer, OfferedAction> _issuedOffers = new();
@@ -93,6 +94,35 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal static Task<FarmClientSession> OpenRestorativeAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
         OpenSelection(savePath, RestorativeJourneyAdmission.CreateEmbedded(seedText, playerName)));
 
+    /// <summary>
+    /// Continues a prepared coordinated fixture from its existing save. The expected fresh genesis
+    /// selects that save after complete recovery; this entry never creates, upgrades or rewinds a world.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCoordinatedFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath))
+        {
+            throw new FileNotFoundException("The coordinated fixture requires its existing save.", savePath);
+        }
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != CoordinatedProfileVersion || genesis.Revision != 0 || genesis.AdvancingSteps != 0)
+        {
+            throw new InvalidDataException("The coordinated fixture requires a fresh coordinated genesis at commit and step zero.");
+        }
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try
+        {
+            FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis);
+        }
+        catch
+        {
+            authority.Dispose();
+            throw;
+        }
+        return Attach(authority, CareCompanion);
+    });
+
     private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
@@ -110,16 +140,31 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return Attach(authority);
     }
 
-    private static FarmClientSession Attach(SqliteWorldAuthority authority)
+    private static FarmClientSession Attach(SqliteWorldAuthority authority) => Attach(authority, QuestCompanion);
+
+    private static WorldResident QuestCompanion(WorldSnapshot current, WorldResident player)
+    {
+        EntityId? questGiver = current.Quests?.Definitions.Select(quest => (EntityId?)quest.GiverActorId).Distinct().SingleOrDefault();
+        return questGiver is { } giver
+            ? current.GetResident(giver)
+            : current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Host);
+    }
+
+    /// <summary>
+    /// The coordinated fixture has reciprocal quests, so its givers do not name one companion.
+    /// The player's own assistance permission names the helper, whether or not it remains active.
+    /// </summary>
+    private static WorldResident CareCompanion(WorldSnapshot current, WorldResident player) => current.GetResident(
+        current.Care!.Ordinary!.Permissions.Single(permission => permission.PatientActorId == player.ActorId).HelperActorId);
+
+    private static FarmClientSession Attach(SqliteWorldAuthority authority,
+        Func<WorldSnapshot, WorldResident, WorldResident> selectCompanion)
     {
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;
             WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
-            EntityId? questGiver = current.Quests?.Definitions.Select(quest => (EntityId?)quest.GiverActorId).Distinct().SingleOrDefault();
-            WorldResident wren = questGiver is { } giver
-                ? current.GetResident(giver)
-                : current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Host);
+            WorldResident wren = selectCompanion(current, player);
             ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
             var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
             EntityId wood = current.Gathering?.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Oak)

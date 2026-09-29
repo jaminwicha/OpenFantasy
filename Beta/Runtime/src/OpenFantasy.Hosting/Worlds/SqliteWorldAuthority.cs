@@ -76,6 +76,42 @@ public sealed class SqliteWorldAuthority : IDisposable
     }
 
     /// <summary>
+    /// Opens an existing save only when it began from the exact expected fresh genesis. The complete
+    /// journal and its archives are recovered once, exactly as ordinary opening does; the expectation
+    /// selects a save and never creates one, replaces its history or stands in for that recovery.
+    /// </summary>
+    public static SqliteWorldAuthority OpenExisting(string path, ReadOnlySpan<byte> expectedGenesis)
+    {
+        byte[] expected = expectedGenesis.ToArray();
+        WorldSnapshot fresh = WorldSnapshotCodec.Decode(expected);
+        WorldGenesisAdmission.Validate(fresh);
+        if (!WorldSnapshotCodec.Encode(fresh).AsSpan().SequenceEqual(expected))
+        {
+            throw new ArgumentException("The expected genesis must be its exact canonical encoding.", nameof(expectedGenesis));
+        }
+        if (!File.Exists(path))
+        {
+            throw new FileNotFoundException("An expected genesis selects an existing world; it cannot create one.", path);
+        }
+        WorldDatabase database = WorldDatabase.Open(path, create: false);
+        try
+        {
+            RecoveredWorld recovered = new WorldJournalRecovery().Recover(database);
+            if (recovered.Genesis.ContentHash != ContentHash.Compute(expected)
+                || !database.ReadGenesis().AsSpan().SequenceEqual(expected))
+            {
+                throw new InvalidDataException("This save did not begin from the expected genesis.");
+            }
+            return new SqliteWorldAuthority(database, recovered);
+        }
+        catch
+        {
+            database.Dispose();
+            throw;
+        }
+    }
+
+    /// <summary>
     /// Copies and upgrades an exact gathering save into a fresh destination. The original remains
     /// a recovery copy; ordinary opening never migrates, overwrites, or silently selects that old copy.
     /// </summary>

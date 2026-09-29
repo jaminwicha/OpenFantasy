@@ -1,0 +1,23 @@
+{
+  "kind": "native",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Care.CoordinatedNativeResultTests",
+    "--logger",
+    "trx;LogFileName=native-authentication-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification"
+  ],
+  "startedUtc": "2026-09-29T01:28:39.828211+00:00",
+  "environment": {
+    "OPENFANTASY_COORDINATED_NATIVE_RESULTS": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/native-restorative-6zmf7nbn/native-manifest.json"
+  },
+  "exitCode": 0,
+  "elapsedSeconds": 128.54886391572654,
+  "finishedUtc": "2026-09-29T01:30:48.379309+00:00"
+}

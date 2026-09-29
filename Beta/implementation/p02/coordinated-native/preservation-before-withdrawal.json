@@ -1,0 +1,13 @@
+{
+  "checkpoint": "codex/checkpoint-coordinated-native-no-ingredient-source-20260929T010554Z",
+  "snapshot": "4c2bd7f00b462901017e8ce23abab014a4b7c826",
+  "parent": "4009ee409fc861c638c850e55768ed2eddf0ca5b",
+  "paths": [
+    "Beta/Runtime",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/README.md",
+    "Beta/implementation/p02/coordinated-native"
+  ],
+  "verification": "WIP: build clean, eight selection cases pass; three real fixture cases fail because recipe input has no matching gathering node. One env-absent result case proves nothing. Native unrun. Not acceptance.",
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

@@ -1,0 +1,44 @@
+{
+  "status": "permission_denied",
+  "process_exit_code": 0,
+  "elapsed_seconds": 1190.892,
+  "total_cost_usd": 11.670334000000006,
+  "requested_model": "fable[1m]",
+  "requested_effort": "max",
+  "context_status": "verified",
+  "returnedModels": {
+    "claude-fable-5-1": {
+      "inputTokens": 56,
+      "outputTokens": 96597,
+      "cacheReadInputTokens": 5268576,
+      "cacheCreationInputTokens": 276139,
+      "webSearchRequests": 0,
+      "costUSD": 11.670334000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 48602,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01WwKk6pgxzCD72yrBVmmKd4",
+      "tool_input": {
+        "command": "rg -n \"public static .*Decode|internal static .*Decode|public static .*Encode\" src/OpenFantasy.Core/Worlds/WorldSnapshotCodec*.cs | head -30 && rg -n \"Decode\\(\" tests/OpenFantasy.Hosting.Tests/Care/CoordinatedWorldContinuationTests.cs tests/OpenFantasy.Hosting.Tests/Care/CoordinatedLiveWriterTests.cs tests/OpenFantasy.Hosting.Tests/Care/CoordinatedIntegrationRegressionTests.cs | head -30 && cat tests/OpenFantasy.Hosting.Tests/Care/OrdinaryCareWorldFixture.cs && cat src/OpenFantasy.Hosting/Simulation/LocalRestorativeController.cs",
+        "description": "Find snapshot decode overloads, continued-frame decode usage, supply fixture, and helper controller"
+      }
+    }
+  ],
+  "postflightStatus": "verified",
+  "contextSha256": "1d9f2a1d7978c8ab1968e3179488daa985aa070a94971fb10bc3d1e778e3e4a0",
+  "rawEvidenceDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-coordinated-native-3jcs04mv/run",
+  "limits": {
+    "seconds": 1500,
+    "clientEstimateUsd": 15
+  },
+  "creditSavingsEstablished": false,
+  "disposition": "Partial implementation; expected helper gift is correctly refused by retained owner-only player storage. No automatic paid implementation retry."
+}

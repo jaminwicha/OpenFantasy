@@ -1,0 +1,41 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:32.75]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output [FAIL]
+[xUnit.net 00:00:32.77]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis [FAIL]
+[xUnit.net 00:00:32.77]     OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.A_managed_rehearsal_through_the_public_offer_authenticates_like_native_output [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- The helper-controlled transfer is refused: NotAuthorized. Source CustodianAccessPolicy { CustodianId = a9f613d7e36b4ef75631a52d9e8b1f31, OwnerActorId = 5d652f48a612a324027911ffd13cf5f9, DepositRule = AnyControlledActor }; destination CustodianAccessPolicy { CustodianId = ed6f16f8612fd36972515f4f8987a268, OwnerActorId = 7b1fdc87ec3ab11ccc89697c36f5179e, DepositRule = OwnerOnly }.
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 118
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_exported_backup_is_closed_and_begins_from_the_exact_stored_genesis [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- The helper-controlled transfer is refused: NotAuthorized. Source CustodianAccessPolicy { CustodianId = a9f613d7e36b4ef75631a52d9e8b1f31, OwnerActorId = 5d652f48a612a324027911ffd13cf5f9, DepositRule = AnyControlledActor }; destination CustodianAccessPolicy { CustodianId = ed6f16f8612fd36972515f4f8987a268, OwnerActorId = 7b1fdc87ec3ab11ccc89697c36f5179e, DepositRule = OwnerOnly }.
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 118
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.CoordinatedNativeFixtureTests.The_retained_ledger_is_prepared_by_accepted_commands_without_changing_its_source [1 ms]
+  Error Message:
+   Class fixture type 'OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney' threw in its constructor
+---- The helper-controlled transfer is refused: NotAuthorized. Source CustodianAccessPolicy { CustodianId = a9f613d7e36b4ef75631a52d9e8b1f31, OwnerActorId = 5d652f48a612a324027911ffd13cf5f9, DepositRule = AnyControlledActor }; destination CustodianAccessPolicy { CustodianId = ed6f16f8612fd36972515f4f8987a268, OwnerActorId = 7b1fdc87ec3ab11ccc89697c36f5179e, DepositRule = OwnerOnly }.
+  Stack Trace:
+  
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney.Prepare(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 118
+   at OpenFantasy.Hosting.Tests.Care.CoordinatedNativeJourney..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/coordinated-native/qualification/worker-tests-02.trx
+
+Failed!  - Failed:     3, Passed:     8, Skipped:     0, Total:    11, Duration: 28 s - OpenFantasy.Hosting.Tests.dll (net8.0)

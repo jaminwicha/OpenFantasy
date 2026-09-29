@@ -328,6 +328,22 @@ it cannot discard history, relax the bound or turn the failure into a rejected p
 Resource archives and joint material/care archives each have a separate 1,024-row/256 MiB envelope
 under their exclusive schema/profile family. They cannot be combined to expand one world's budget.
 
+### Exact starting-state selection
+
+`SqliteWorldAuthority.OpenExisting(path, expectedGenesis)` copies and decodes the expected bytes,
+requires admitted fresh genesis and canonical re-encoding, then opens an existing database and performs
+complete journal/archive recovery once. Both the recovered genesis hash and stored genesis bytes must
+match. A missing save or mismatch fails; a failure after opening disposes the database. The expectation
+selects a world, not a checkpoint, migration, permission grant or substitute for historical admission.
+World/branch/profile/admission equality alone does not prove the same original resident and world facts.
+
+The explicit coordinated fixture route in
+[FarmClientSession](../../client/scripts/FarmClientSession.cs) additionally requires profile27 at commit
+and advancing step zero. It attaches only after exact-origin and ordinary selection checks. Its helper
+identity comes from the player's unique ordinary-care permission, including a revoked permission;
+reciprocal quest givers do not implicitly select one companion. This fixture binding is distinct from
+the normal farm and ordinary-care startup routes and has no default save destination.
+
 ## Migration and publication
 
 [WorldProductionUpgrade](../../src/OpenFantasy.Hosting/Worlds/WorldProductionUpgrade.cs),

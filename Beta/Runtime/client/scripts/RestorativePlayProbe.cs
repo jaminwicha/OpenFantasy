@@ -150,8 +150,12 @@ internal sealed partial class RestorativePlayProbe(FarmGame game, string reportP
         }
         Require(View.Progression!.Mp == expectedMp && View.Care is null && !View.IsInEncounter,
             "Ordinary care altered magic or entered aftermath/encounter control.");
-        _checks.Add(mode == "helper" ? "Readiness permits a helper-owned policy action without a patient item command."
-            : "Actual native control commits one exact personal use or patient-owned withdrawal.");
+        _checks.Add(mode switch
+        {
+            "helper" => "Readiness permits a helper-owned policy action without a patient item command.",
+            "revoke" => "Actual native control commits patient-owned withdrawal without medicine expenditure or restoration.",
+            _ => "Actual native control commits one exact personal restorative use."
+        });
     }
 
     private async Task OpenSelection(bool controller)
@@ -255,7 +259,7 @@ internal sealed partial class RestorativePlayProbe(FarmGame game, string reportP
             Unfocusable = GetWindow().Unfocusable, NativeFocused = GetWindow().HasFocus(), ObservedNativeFocus = _observedNativeFocus,
             StartupNoFocus = ProjectSettings.GetSetting("display/window/size/no_focus").AsBool(),
             game.IsLocallyPaused, game.IsWindowFocused, DurationMilliseconds = _elapsed.ElapsedMilliseconds,
-            Limit = "Managed-earned injury and crafting; injected native use/aid/withdrawal and paused recovery. Physical devices, OS focus, art and production gates remain open."
+            Limit = "Scripted managed preparation precedes the selected injected native action and paused recovery. This report does not prove its other supported action modes. Physical devices, OS focus, art and production gates remain open."
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
     private static void Require(bool condition, string message)
     {

@@ -1,0 +1,15 @@
+{
+  "paths": [
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+    "Beta/Runtime/client/scripts/FarmClientSession.cs",
+    "Beta/Runtime/client/scripts/FarmGame.cs",
+    "Beta/Runtime/client/scripts/Bootstrap.cs",
+    "Beta/Runtime/client/scripts/RestorativePlayProbe.cs",
+    "Beta/Runtime/tools/check_native_restorative.py",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeSelectionTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeFixtureTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeResultTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedNativeJourney.cs",
+    "Beta/implementation/p02/coordinated-native/RESULT.md"
+  ]
+}

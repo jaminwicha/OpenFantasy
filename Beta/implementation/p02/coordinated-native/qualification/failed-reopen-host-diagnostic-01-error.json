@@ -1,0 +1,4 @@
+{
+  "status": "driver_failed",
+  "reason": "Driver passed SQLite unsigned-sequence bytes to the CLI instead of decoding big-endian UInt64; command rejected before recovery. Report serialization then rejected the same bytes. Original stdout/stderr retained; this run is not recovery evidence."
+}
