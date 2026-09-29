@@ -38,6 +38,13 @@ smuggle a history cut into an ordinary action. Crafting and consumption use thei
 and permanent historical identity lookup; the capacity wrapper adds source-hold and aggregate
 headroom checks before publication.
 
+The [consented world](consented-world.md) has a separate internal custody-reconciliation path.
+Its world binding requires the transfer evidence's before/after hashes to equal the actual inventory
+and production owners. This path keeps the craft/use revision, exact operation history, recipes and
+continuation capability unchanged while accepting a custody-only production change. Receiving
+obligations, single-material geometry, volume and complete root admission still decide physical
+acceptance. The public ordinary reconciliation path retains its advancing-production requirement.
+
 The [runoff domain](../../src/OpenFantasy.Core/Geography/WatershedRunoffDomain.cs) validates continued
 Production against the actual inventory. Imported rights and direct raw retirement are validated by
 the material basis and replay contracts. Historical source ranges are not fabricated into complete

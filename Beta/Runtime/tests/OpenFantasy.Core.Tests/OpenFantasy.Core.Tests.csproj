@@ -37,6 +37,7 @@
     <None Update="Fixtures/observations-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/language-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/authority-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Fixtures/consented-material-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/terrain-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/watershed-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Fixtures/watershed-network-v1.json" CopyToOutputDirectory="PreserveNewest" />

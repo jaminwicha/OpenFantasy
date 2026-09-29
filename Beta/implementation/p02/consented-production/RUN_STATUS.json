@@ -1,0 +1,28 @@
+{
+  "status": "wip_revision_required",
+  "startedUtc": "2026-09-29T05:07:25.258941+00:00",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 1800,
+  "clientBudgetUsd": 18,
+  "privateTask": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-consented-production-x5h1vi9b",
+  "acceptance": "Not accepted as the assignment integration unit. Worker 317 and full Core 1642 cases pass, but critic B1/B2 identify a disconnected world capability and globally stale offer semantics. No V10/approval format freeze.",
+  "adapterExitCode": 0,
+  "elapsedSeconds": 1359.420047875028,
+  "finishedUtc": "2026-09-29T05:30:04.677754+00:00",
+  "liveExecSession": null,
+  "returnedModel": "claude-fable-5-1",
+  "contextWindow": 1000000,
+  "permissionDenials": 0,
+  "contextPostflight": "verified",
+  "nextAction": "New complete-world integration scope, following DESIGN_REVISION.md. Preserve a checkpoint before edits. Do not freeze current V10/approval bytes or rerun the old assignment automatically.",
+  "independentCritic": "completed; CRITIC_REVIEW.md and CRITIC_DELEGATION.json preserved",
+  "activeRegressionSession": null,
+  "activeExternalJobs": 0,
+  "regression": {
+    "fullCorePassed": 1642,
+    "hostingPassed": 195,
+    "hostingOptInSkipped": 5,
+    "hostingWrapperExit": "failure: selected unrun opt-in cases"
+  }
+}

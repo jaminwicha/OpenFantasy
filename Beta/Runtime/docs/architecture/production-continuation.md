@@ -155,6 +155,8 @@ authenticates archived history nor selects a complete-world storage profile.
 | V7 | Ordered material history including reserved transport, with retained optional construction capability | The exact transport-capable context and matching opaque transport, gathering and construction evidence as selected |
 | V8 | Ordered partial/final mining and joined gathering with exact site, terrain, shared effort and action frontiers | The exact excavation-capable context and matching opaque work evidence; the complete component codec also requires actual-owner dependencies |
 | V9 | Complete-world crafting and consumption with exact admitted raw issuance and retained construction | The material context from the actual coordinated world boundary; world journal replay authenticates other material writers |
+| V10 | Standalone ordered bilateral raw/produced custody operations | The explicit consented ordered context; independent delivery claims and exact operation replay |
+| V11 | Complete-world crafting/use with world-owned bilateral custody evidence | The consented coordinated boundary (context profile 9); complete world admission supplies mandatory produced-custody replay |
 
 V4 decoding validates canonical component structure and joins the supplied actual source proofs.
 The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
@@ -216,3 +218,10 @@ The coordinated identity index retains imported producer roles and original inst
 Nested planners receive complete historical identity lookup, excluding only the current command
 whose uniqueness the world has already checked and reserved. That exclusion does not clear any other
 selected, derived or historical identity. V3–V8 keep their separate capability and decoder restrictions.
+
+
+The explicit [consented-world interpretation](consented-world.md) extends that coordinated ownership
+with bilateral raw/produced movement. It selects V11/context profile 9, retains the craft/use revision
+meaning, and supplies exact definition and output-prefix evidence to produced partition replay. The
+world owns that evidence and imports actual surviving custodians at each cut; it does not source raw
+history from the separate V10 ordered adapter. Older contexts refuse the new capability.

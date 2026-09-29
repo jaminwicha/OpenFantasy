@@ -162,6 +162,8 @@ public sealed class WorldStepProcessor
         ProgressionSnapshot? progression = state.Progression;
         var resourceHistory = state.ResourceHistory;
         var care = state.Care;
+        var coordination = state.Coordination;
+        var materialPairs = coordination?.ConsentedMaterial is null ? null : new WorldMaterialPairing(batch);
         QuestSnapshot? quests = state.Quests;
         ConstructionSnapshot? construction = state.Construction;
         ConstructionPhysicalSnapshot? physical = state.ConstructionPhysical;
@@ -216,7 +218,7 @@ public sealed class WorldStepProcessor
                     ? proposedLiquidCells.AdvanceBoundary(state.EncounterLifecycle is null ? validationCalendar : validationPacing!.ProcessBoundary) : proposedLiquidCells;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, care: care, resourceHistory: resourceHistory);
+                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, care: care, resourceHistory: resourceHistory, coordination: coordination);
                 // The envelope check stays inside this admission: a root that cannot be encoded is
                 // refused here. Its bytes belong to this admitted root alone.
                 WorldCanonicalFrame? captured = state.ConsequencePolicy is not null || state.ReservoirSeals is not null
@@ -234,6 +236,12 @@ public sealed class WorldStepProcessor
         for (int actionIndex = 0; actionIndex < batch.Actions.Count; actionIndex++)
         {
             WorldActionCommand action = batch.Actions[actionIndex];
+            if (materialPairs?.DefersAcceptance(action) == true)
+            {
+                // The offer's ordinal selects the atomic pair. Its actual recipient submission
+                // receives its own outcome there, even when it occurs earlier in the action list.
+                continue;
+            }
             // Material validation covers the entire action, including its non-inventory side effects.
             var previousExcavation = excavation;
             var previousGathering = gathering;
@@ -241,6 +249,7 @@ public sealed class WorldStepProcessor
             var previousProgression = progression;
             var previousResourceHistory = resourceHistory;
             var previousCare = care;
+            var previousCoordination = coordination;
             var previousQuests = quests;
             var previousConstruction = construction;
             var previousPhysical = physical;
@@ -251,7 +260,44 @@ public sealed class WorldStepProcessor
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
-            if (state.EncounterLifecycle is not null && !WorldActorAvailability.PermitsAction(state, action))
+            WorldMaterialPair? materialPair = null;
+            WorldConsentedTransferEvidence? materialTransfer = null;
+            WorldActionRejection recipientRejection = WorldActionRejection.Unavailable;
+            if (action.Intent is OfferMaterialIntent or AcceptMaterialIntent)
+            {
+                if (coordination?.ConsentedMaterial is not { } history || production is null || materialPairs is null)
+                {
+                    throw new InvalidOperationException("This world does not interpret paired material transactions.");
+                }
+                materialPair = materialPairs.FindOffer(action);
+                if (materialPair is null)
+                {
+                    resolution = new(inventory, dialogues, WorldMaterialPairing.UnmatchedRejection(state, action), null);
+                }
+                else
+                {
+                    bool MaterialOccupied(EntityId identity) => identity != materialPair.Offer.CommandId
+                        && identity != materialPair.Acceptance.CommandId && Occupied(identity);
+                    var plan = WorldConsentedMaterialPlanner.Decide(state, inventory, space, production,
+                        dialogues.Count != 0, batch.Kind, materialPair.Offer, materialPair.OfferIndex,
+                        materialPair.SenderDelivery, materialPair.Acceptance, materialPair.AcceptanceIndex,
+                        materialPair.RecipientDelivery, sequence, MaterialOccupied);
+                    resolution = new(plan.CandidateInventory, dialogues, plan.OfferRejection, null);
+                    recipientRejection = plan.AcceptanceRejection;
+                    if (plan.Evidence is { } evidence)
+                    {
+                        materialTransfer = evidence;
+                        production = plan.CandidateProduction;
+                        coordination = coordination.WithConsentedMaterial(history.Append(evidence));
+                        if (evidence.MovedLotId != evidence.Approval.Command.Terms.LotId)
+                        {
+                            createdIds = [evidence.MovedLotId];
+                        }
+                        performedWork = true;
+                    }
+                }
+            }
+            else if (state.EncounterLifecycle is not null && !WorldActorAvailability.PermitsAction(state, action))
             {
                 resolution = new(inventory, dialogues, WorldActionRejection.Unavailable, null);
             }
@@ -408,7 +454,7 @@ public sealed class WorldStepProcessor
                 }
             }
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
-                || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled)
+                || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled, materialTransfer)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
                 || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells, space, state.ReservoirSeals)
                 || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
@@ -420,6 +466,7 @@ public sealed class WorldStepProcessor
                 progression = previousProgression;
                 resourceHistory = previousResourceHistory;
                 care = previousCare;
+                coordination = previousCoordination;
                 quests = previousQuests;
                 construction = previousConstruction;
                 physical = previousPhysical;
@@ -428,6 +475,7 @@ public sealed class WorldStepProcessor
                 transport = previousTransport;
                 liquidCells = previousLiquidCells;
                 performedWork = false;
+                recipientRejection = WorldActionRejection.Unavailable;
                 createdIds = [];
                 resolution = new WorldActionResolution(inventory, dialogues, WorldActionRejection.Unavailable, null);
             }
@@ -452,6 +500,10 @@ public sealed class WorldStepProcessor
             if (performedWork)
             {
                 worked.Add(action.ActorId);
+                if (materialPair is not null)
+                {
+                    worked.Add(materialPair.Acceptance.ActorId);
+                }
                 foreach (ActorPresence actor in space.Actors)
                 {
                     if (actor.Feet != previousSpace.GetActor(actor.ActorId).Feet)
@@ -463,6 +515,12 @@ public sealed class WorldStepProcessor
             }
             var receipt = WorldActionReceipt.Create(action, sequence, resolution.Rejection);
             Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
+            if (materialPair is not null)
+            {
+                var acceptedReceipt = WorldActionReceipt.Create(materialPair.Acceptance, sequence, recipientRejection);
+                Reserve(acceptedReceipt.ResultId, WorldCommittedIdentityKind.Result);
+                receipts.Add(acceptedReceipt);
+            }
             if (resolution.SpawnedId is { } spawned)
             {
                 Reserve(spawned, WorldCommittedIdentityKind.SpawnedEntity);
@@ -536,7 +594,7 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: resourceHistory);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: resourceHistory, coordination: coordination);
         // Only the frame captured for the exact reused movement root accompanies it. A candidate
         // that was never encoded here carries none and is encoded by its durable owner.
         WorldCanonicalFrame? candidateFrame = admittedMovement is null ? null : admittedMovementFrame;

@@ -23,7 +23,8 @@ internal static class ProductionMaterialCodec
             || version == 6 && (!context.SupportsTerrainRepresentation || context.SupportsReservedTransport || context.SupportsExcavation)
             || version == 7 && (!context.SupportsReservedTransport || context.SupportsTerrainRepresentation || context.SupportsExcavation)
             || version == 8 && (!context.SupportsExcavation || context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
-            || version is not 4 and not 5 and not 6 and not 7 and not 8)
+            || context.SupportsConsentedTransfer != (version == ProductionCodecV10.Version)
+            || version is not 4 and not 5 and not 6 and not 7 and not 8 and not ProductionCodecV10.Version)
             throw new ArgumentException("Production requires its exact explicitly continued capability.", nameof(state));
         return EncodeFields(context, version, state.Revision, state.Batches, state.Lots,
             state.ConsumedItems, state.MaterialHistory.Operations);
@@ -46,7 +47,7 @@ internal static class ProductionMaterialCodec
         var claims = ProductionCollections.Copy(operations.OfType<MaterialConsumptionOperation>().Select(value => value.Claim),
             ProductionSnapshot.MaximumConsumedItems, value => value.ConsumptionId);
         var lots = ProductionCollections.Copy(liveLots, ProductionSnapshot.MaximumLots, value => value.LotId);
-        ulong version = context.SupportsExcavation ? 8UL : context.SupportsReservedTransport ? 7UL : context.SupportsTerrainRepresentation ? 6UL : context.SupportsConstruction ? 5UL : 4UL;
+        ulong version = context.SupportsConsentedTransfer ? ProductionCodecV10.Version : context.SupportsExcavation ? 8UL : context.SupportsReservedTransport ? 7UL : context.SupportsTerrainRepresentation ? 6UL : context.SupportsConstruction ? 5UL : 4UL;
         return ContentHash.Compute(EncodeFields(context, version,
             checked(context.BaseProductionRevision + (ulong)operations.Count), batches, lots, claims, operations));
     }
@@ -94,7 +95,8 @@ internal static class ProductionMaterialCodec
                 || version == 6 && (!context.SupportsTerrainRepresentation || context.SupportsReservedTransport || context.SupportsExcavation)
                 || version == 7 && (!context.SupportsReservedTransport || context.SupportsTerrainRepresentation || context.SupportsExcavation)
                 || version == 8 && (!context.SupportsExcavation || context.SupportsTerrainRepresentation || context.SupportsReservedTransport)
-            || version is not 4 and not 5 and not 6 and not 7 and not 8
+                || context.SupportsConsentedTransfer != (version == ProductionCodecV10.Version)
+                || version is not 4 and not 5 and not 6 and not 7 and not 8 and not ProductionCodecV10.Version
                 || gatherEvidence.Count > MaterialOperationHistory.MaximumOperations
                 || constructionEvidence.Count > Construction.ConstructionSnapshot.MaximumProjects
                 || terrainEvidence.Count > MaterialOperationHistory.MaximumOperations

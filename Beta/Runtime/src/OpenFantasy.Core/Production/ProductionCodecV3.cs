@@ -85,7 +85,13 @@ public static class ProductionCodecV3
             if (!context.SupportsConsumption && claims.Count != 0
                 || result.TotalBatchCount != totalBatches || result.TotalConsumedItemCount != totalConsumed)
                 throw new ArgumentException("Continued production counters and consumption profile must match their exact context.");
-            if (!bytes.SequenceEqual(version == ProductionCodecV9.Version ? ProductionCodecV9.Encode(result) : Encode(result)))
+            byte[] canonical = version switch
+            {
+                ProductionCodecV11.Version => ProductionCodecV11.Encode(result),
+                ProductionCodecV9.Version => ProductionCodecV9.Encode(result),
+                _ => Encode(result)
+            };
+            if (!bytes.SequenceEqual(canonical))
                 throw CanonicalProductionReader.Failure(ProductionFormatFailure.NonCanonical,
                     "Continued production fields must be canonically ordered.");
             return result;

@@ -10,7 +10,7 @@ internal static class WorldStepFrameCodec
     internal static byte[] Encode(WorldStepBatch batch, ushort profileVersion)
     {
         ArgumentNullException.ThrowIfNull(batch);
-        if (batch.ProfileVersion != profileVersion || profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27)
+        if (batch.ProfileVersion != profileVersion || profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28)
         {
             throw new ArgumentException("A newer rules profile requires its own step codec.", nameof(batch));
         }
@@ -32,7 +32,7 @@ internal static class WorldStepFrameCodec
     {
         var reader = new WorldFrameReader(bytes, MaximumBatchByteLength, 10);
         reader.Tag("world.step-batch"u8);
-        if (profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 || reader.Number() != profileVersion)
+        if (profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 || reader.Number() != profileVersion)
         {
             throw new FormatException("Unsupported world step version.");
         }
@@ -44,9 +44,9 @@ internal static class WorldStepFrameCodec
         ulong rawKind = reader.Number();
         if (rawKind is not 1 and not 2
             && (rawKind != 4 || profileVersion is not 16 and not 17 and not 18)
-            && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 || rawKind is not 5 and not 6 and not 7)
-            && (profileVersion is not 24 and not 25 and not 26 and not 27 || rawKind != 8)
-            && (profileVersion is not 25 and not 26 and not 27 || rawKind != 9))
+            && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 || rawKind is not 5 and not 6 and not 7)
+            && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 || rawKind != 8)
+            && (profileVersion is not 25 and not 26 and not 27 and not 28 || rawKind != 9))
         {
             throw new FormatException("Unsupported world batch kind.");
         }

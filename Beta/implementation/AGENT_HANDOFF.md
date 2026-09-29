@@ -46,13 +46,52 @@ Fable 5.1 remains acceptable; Opus 5.5 is optional when useful. Both approved ro
 context and Max effort. Delegate substantial bounded work with synchronized context and finite
 limits; Astra integrates. No automatic paid retry, silent model substitution or relay agent.
 
-The [consented-custody increment](p02/consented-custody/README.md) is integrated and verified:
-standalone raw counted-source transfer requiring exact bilateral approvals, independent current
-control and complete-history identity checks. Fable implemented the component and an independent
-Fable critic challenged it; Astra reproduced and fixed receipt gaps. Clean solution build and 147
-affected cases pass, with architecture and remaining binding obligations current. No external worker
-remains active. See the [integration plan](p02/consented-custody/INTEGRATION_PLAN.md) for the next
-full-stack work. This component has no world, Host, native or asynchronous-offer binding yet.
+The last accepted predecessor to this work is [consented raw custody](p02/consented-custody/README.md)
+at `640e37f` / `codex/milestone-consented-custody`. The produced/world work now has an explicit
+Core profile-28 transaction, production V11/context 9 and coordinated archive binding. Its
+[original qualification](p02/world-consented-material/INTEGRATION_QUALIFICATION.md),
+[boundary proof integration](p02/world-consented-material/BOUNDARY_PROOF_INTEGRATION.md) and
+[serialization review disposition](p02/world-consented-material/CODEC_CRITIC_DISPOSITION.md)
+record what is qualified and what remains open.
+
+Twenty-four complete-world cases pass: craft/split gift/recraft/healing before and after decoded
+reload, onward gift/two cuts, actual 256-transfer rollover, permanent identity refusal, real
+200-action construction/reservation, complete material/physical rollback, full 4,096 combined and
+fresh raw live-lot bounds, every actual encounter lifecycle phase, independent actor interleaving,
+two simultaneously successful pairs, wrong-recipient refusal and balanced live-lot tampering.
+The two-pair proof authors two additional people before full fresh admission; it does not grant
+hands to wolves or patch a lived root. Historical raw-source and actor-order mutations reproduced
+three structural admission gaps; the corrected regressions pass with exact failure reasons.
+
+Two bounded Fable runs returned actual 5.1/1M context, requested Max effort, zero denials and verified
+context postflight. The proof worker delivered eight cases and honestly reported subcase gaps;
+Astra completed those directly. The narrow second critic covered the previously omitted codecs and
+archives, found no blocker in that reading, and supplied the reproduced structural findings. It did
+not independently review the changing tests or every transitive helper; exact exclusions remain
+recorded. No automatic paid retry or model substitution occurred. The client estimates were
+$8.743362 for proofs and $7.31606425 for review; these are not billing totals or proven net savings.
+The prior definition-binding critic correction and original failed experiments remain preserved.
+
+No external model job is active. Build `integration-build-20260929T083012Z.json` and the 24-case
+world selection pass. Full Core passes 1,664 cases and managed Hosting passes 196, including every required prior case;
+together with the focused world tests this is 1,883 distinct passes. Current
+[run status](p02/world-consented-material/RUN_STATUS.json) and final evidence control the claim;
+five opt-in native cases remain unrun, not waived. All 23 frozen specs, 51 old fixtures and the
+unrelated predecessor index are preserved. No complete phase or production gate is closed.
+
+The four proof groups are complete; **do not redispatch NEXT_PROOF_UNIT.md**. Next use the
+[remaining qualification boundary](p02/world-consented-material/NEXT_QUALIFICATION.md): independent
+new-format byte vectors, reconciliation of remaining codec negatives and explicit review coverage,
+then actual durable Host/application integration. The in-memory Hosting.Tests fixtures execute Core;
+their assembly name is not SQLite, transport, native or retained-save qualification. Formats remain
+unfrozen and the original full Core assignment is not declared complete by this progress checkpoint.
+
+Pre-change recoveries: `codex/checkpoint-before-consent-boundary-proof-20260929T080633Z` (`35f8a41`)
+and `codex/checkpoint-consent-proofs-before-hardening-20260929T082152Z` (`048bdf1`). Earlier WIP refs,
+worker partial results and failed qualification logs are retained. These refs exclude unrelated
+predecessor staging and are not acceptance claims. The verified increment is preserved by `codex/milestone-consented-world-boundaries-20260929`
+on `codex/runtime-foundation`. Its scope is Core integration progress and boundary hardening;
+remaining format and application gates above stay open.
 
 The original post-cut personal-dose objective remains open. This retained world's helper gift is
 forbidden by OwnerOnly recipient custody, and its exact potion ingredient has no gathering source.
@@ -68,6 +107,10 @@ cargo/escort circuit. This list is a navigation aid, not a replacement scope or 
 Keep all original performance, recovery, source-preservation and human gates.
 
 ## Latest verified runtime checkpoint
+
+`codex/milestone-consented-world-boundaries-20260929` preserves the produced/world transaction,
+reviewed structural corrections, 1,883 distinct passing cases and current architecture references.
+This is a progress marker with remaining format/application qualification, not full assignment closure.
 
 `codex/milestone-consented-custody` preserves the bilateral counted-source authority, 147 passing
 cases, independent critique and corrections, eight retained pre-fix counterexamples and current

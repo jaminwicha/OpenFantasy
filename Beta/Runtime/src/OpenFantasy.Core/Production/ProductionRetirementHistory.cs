@@ -28,6 +28,20 @@ internal static class ProductionRetirementHistory
     }
 
     internal static void ValidateSuccessor(ProductionSnapshot prior, ProductionSnapshot next)
+        => ValidateSuccessor(prior, next, custodyOnly: false);
+
+    /// <summary>World-approved custody changes retain every craft/use fact and its revision.</summary>
+    internal static void ValidateCustodySuccessor(ProductionSnapshot prior, ProductionSnapshot next)
+    {
+        if (prior.MaterialHistory is not null || next.MaterialHistory is not null
+            || prior.Batches.Count != next.Batches.Count || prior.ConsumedItems.Count != next.ConsumedItems.Count)
+        {
+            throw new ArgumentException("Custody reconciliation cannot add or erase production operations.");
+        }
+        ValidateSuccessor(prior, next, custodyOnly: true);
+    }
+
+    private static void ValidateSuccessor(ProductionSnapshot prior, ProductionSnapshot next, bool custodyOnly)
     {
         if (prior.ContentHash == next.ContentHash)
         {
@@ -36,7 +50,8 @@ internal static class ProductionRetirementHistory
         // The consumption profile selects the archive format and hash of every composed owner. Ordinary
         // reconciliation can neither drop it (erasing retained claims) nor acquire it (silently
         // re-versioning a legacy archive); a profile change is an explicit composition, not a successor.
-        if (next.Revision <= prior.Revision || next.WorldId != prior.WorldId || next.BranchId != prior.BranchId
+        if ((custodyOnly ? next.Revision != prior.Revision : next.Revision <= prior.Revision)
+            || next.WorldId != prior.WorldId || next.BranchId != prior.BranchId
             || prior.Continuation?.ContentHash != next.Continuation?.ContentHash
             || prior.SupportsConsumption != next.SupportsConsumption
             || next.Recipes.Count != prior.Recipes.Count

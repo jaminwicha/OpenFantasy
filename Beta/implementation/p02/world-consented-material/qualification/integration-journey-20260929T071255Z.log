@@ -1,0 +1,16 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.46]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts [186 ms]
+  Error Message:
+   System.ArgumentException : Counted contents exceed custodian capacity. (Parameter 'lots')
+  Stack Trace:
+     at OpenFantasy.Core.Custody.CustodySnapshot..ctor(EntityId worldId, EntityId branchId, UInt64 revision, IEnumerable`1 storages, IEnumerable`1 lots) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Custody/CustodySnapshot.cs:line 48
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture..ctor(Boolean craftedDose, Nullable`1 rewardExperience, Nullable`1 strikeMana, Boolean invalidNormalizedSpeedOnReward, Boolean enduranceProfile, Boolean pairedRewardBoundary, Boolean invalidSecondRewardSpeed, Boolean archiveCareBoundary, Boolean materialCareStress, Nullable`1 freshBerryUnits, IReadOnlyCollection`1 extraFreshRecipes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 76
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.ConsentedPotionFixture..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs:line 137
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs:line 16
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-consented-material/qualification/integration-journey-20260929T071255Z.trx
+
+Failed!  - Failed:     1, Passed:     2, Skipped:     0, Total:     3, Duration: 1 s - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -1,0 +1,16 @@
+{
+  "head": "640e37f89208703b7cc2f15591ae793920f4e508",
+  "checkpoint": "codex/checkpoint-before-world-consented-material-20260929T055115Z",
+  "snapshot": "2096b9f6b6b96e5ecdda5e8ed7de528a17272c8a",
+  "includedScope": [
+    "Beta/Runtime/src/OpenFantasy.Core/Production",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedMaterial",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedMaterial",
+    "Beta/Runtime/docs/architecture/consented-production.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/p02/consented-production"
+  ],
+  "verification": "Preceding WIP: full Core 1642 pass; Hosting 195 pass/5 opt-in skips, strict wrapper failed. Critic B1/B2/B3 require world integration; unpublished V10 and material approval bytes are not frozen.",
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

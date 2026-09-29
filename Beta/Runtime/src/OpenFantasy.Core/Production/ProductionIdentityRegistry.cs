@@ -69,6 +69,25 @@ internal sealed class ProductionIdentityRegistry
                     foreach (EntityId id in representation.Evidence.CreatedIds) Add(id, "raw-lot");
                 if (operation is MaterialConstructionOperation construction)
                     Add(construction.Evidence.StructureId, "structure");
+                if (operation is MaterialConsentedTransferOperation consented)
+                {
+                    var approval = consented.Approval;
+                    var terms = approval.Command.Terms;
+                    string lotRole = terms.LotKind == OpenFantasy.Core.Authority.ConsentedMaterial.ConsentedMaterialLotKind.Produced
+                        ? "derived-lot" : "raw-lot";
+                    Add(consented.AcceptanceId, "acceptance");
+                    Add(approval.SenderDelivery.PrincipalId, "principal");
+                    Add(approval.SenderDelivery.SessionId, "session");
+                    Add(approval.RecipientDelivery.PrincipalId, "principal");
+                    Add(approval.RecipientDelivery.SessionId, "session");
+                    Add(terms.SenderActorId, "actor");
+                    Add(terms.RecipientActorId, "actor");
+                    Add(terms.SourceCustodianId, "custodian");
+                    Add(terms.DestinationCustodianId, "custodian");
+                    Add(terms.LotId, lotRole);
+                    Add(consented.MovedLotId, lotRole);
+                    AddPin(terms.Definition.DefinitionId, "item", terms.Definition.Version);
+                }
                 if (operation is MaterialGatherOperation gather)
                 {
                     Add(gather.Evidence.IssuedLot.LotId, "raw-lot");

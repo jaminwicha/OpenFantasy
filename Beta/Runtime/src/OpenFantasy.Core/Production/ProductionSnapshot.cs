@@ -65,7 +65,9 @@ public sealed class ProductionSnapshot
         : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsCompleteWorld == true ? ProductionCodecV9.Encode(this)
+    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsConsentedTransfer == true ? ProductionCodecV10.Encode(this)
+        : Continuation?.SupportsConsentedWorld == true ? ProductionCodecV11.Encode(this)
+        : Continuation?.SupportsCompleteWorld == true ? ProductionCodecV9.Encode(this)
         : Continuation?.SupportsExcavation == true ? ProductionCodecV8.Encode(this)
         : Continuation?.SupportsReservedTransport == true ? ProductionCodecV7.Encode(this)
         : Continuation?.SupportsTerrainRepresentation == true ? ProductionCodecV6.Encode(this)
@@ -104,6 +106,29 @@ public sealed class ProductionSnapshot
             if (gathering is null) return Continue(inventory);
         }
         var context = ProductionContinuationContext.CaptureMaterial(inventory, this, gathering);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
+    /// <summary>
+    /// Explicitly selects ordered history that may retain bilateral approved transfers of raw and
+    /// produced stock. It migrates no world, authenticates no participant and admits nothing durable;
+    /// construction, geographic and coordinated complete-world owners cannot select it.
+    /// </summary>
+    public ProductionSnapshot ContinueConsentedMaterial(CountedAuthorityState inventory, GatheringSnapshot? gathering = null)
+    {
+        RequireOrdinaryCut();
+        if (MaterialHistory is { } retained)
+        {
+            if (gathering is not null && (retained.Gathering is null
+                || gathering.ContentHash != retained.Gathering.AdvanceTo(gathering.AdvancingStep).ContentHash))
+                throw new ArgumentException("A consented material cut cannot replace its retained source owner.", nameof(gathering));
+            gathering ??= retained.Gathering;
+        }
+        var context = ProductionContinuationContext.CaptureConsentedMaterial(inventory, this, gathering);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
         result.ValidateForAuthority(inventory);
@@ -205,13 +230,14 @@ public sealed class ProductionSnapshot
     /// Coordinated complete-world cut. Crafting and consumption keep their revision meaning; raw custody,
     /// gathering and work remain with the world's actual owners, so no material operation history exists.
     /// </summary>
-    internal ProductionSnapshot ContinueWorld(CountedAuthorityState inventory, ConstructionSnapshot construction)
+    internal ProductionSnapshot ContinueWorld(CountedAuthorityState inventory, ConstructionSnapshot construction,
+        bool consentedWorld = false)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(construction);
         if (Continuation is { SupportsCompleteWorld: false })
             throw new ArgumentException("A standalone continued owner cannot join the coordinated complete world.");
-        var context = ProductionContinuationContext.CaptureWorld(inventory, this, construction);
+        var context = ProductionContinuationContext.CaptureWorld(inventory, this, construction, consentedWorld);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context);
         result.ValidateForAuthority(inventory);
@@ -237,6 +263,15 @@ public sealed class ProductionSnapshot
 
     public ulong GetCombinedStoredQuantity(CountedAuthorityState inventory, EntityId custodianId) =>
         checked(inventory.Custody.GetStoredQuantity(custodianId) + GetStoredQuantity(custodianId));
+
+    /// <summary>
+    /// Complete-world custody validation. Replays every produced lot through its retirements and
+    /// the supplied ordered custody movements and requires the live lots to equal that partition.
+    /// The movements are the projection of evidence owned by the world; production neither stores
+    /// nor hashes them. Ordered material history validates custody through its own operation replay.
+    /// </summary>
+    public void ValidateCustodyEvidence(IEnumerable<ProducedCustodyMovement> movements) =>
+        ProducedCustodyPartition.Validate(this, movements);
 
     public void ValidateForAuthority(CountedAuthorityState inventory)
     {

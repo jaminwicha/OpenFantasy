@@ -29,6 +29,12 @@ internal static class ProductionContinuationValidation
             throw new ArgumentException("A segment cannot reuse an imported producer or its command identity.");
 
         bool completeWorld = context.SupportsCompleteWorld;
+        if (context.SupportsConsentedWorld)
+        {
+            // The complete world must replay its custody evidence with these retirements. Ordinary
+            // continuation's fixed-custodian remainder check cannot interpret transferred children.
+            return;
+        }
         Dictionary<EntityId, LotBoundary> boundaries = Boundaries(state);
         // Coordinated raw custody belongs to the world inventory and its exact issuance partition is
         // admitted by the complete world, so only transformed rights are frozen in this segment.

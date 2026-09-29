@@ -17,14 +17,17 @@ internal sealed class CoordinatedLiveWriterJourney
     private readonly ConstructionUpgradeFixture _commands = new();
     private readonly SubunitPosition _home;
     private CareWorldSession _session;
+    private readonly ushort _profileVersion;
 
-    internal CoordinatedLiveWriterJourney()
+    internal CoordinatedLiveWriterJourney(bool consentedMaterial = false)
     {
         var ordinary = RestorativeJourneyAdmission.CreateEmbedded("live-material-evidence", "Traveler");
         Assert.Equal((ushort)26, ordinary.ProfileVersion);
-        _session = new(WorldCoordinatedAdmission.CreateFresh(ordinary));
+        _session = new(consentedMaterial ? WorldConsentedMaterialAdmission.CreateFresh(ordinary)
+            : WorldCoordinatedAdmission.CreateFresh(ordinary));
+        _profileVersion = consentedMaterial ? (ushort)28 : (ushort)27;
         _home = World.Space.GetActor(Player).Feet;
-        AssertOwnersAgree(World);
+        AssertOwnersAgree(World, _profileVersion);
     }
 
     internal WorldSnapshot World => _session.ReadStateForHost();
@@ -57,7 +60,7 @@ internal sealed class CoordinatedLiveWriterJourney
                 Assert.Equal(WorldActionRejection.None, receipt.Rejection);
             }
         }
-        AssertOwnersAgree(World);
+        AssertOwnersAgree(World, _profileVersion);
         return decision;
     }
 
@@ -105,7 +108,7 @@ internal sealed class CoordinatedLiveWriterJourney
         Assert.Equal(bytes, WorldSnapshotCodec.Encode(reopened));
         _session = new(reopened, identities);
         Assert.Equal(identities.Order(), _session.OccupiedIdentities.Order());
-        AssertOwnersAgree(World);
+        AssertOwnersAgree(World, _profileVersion);
         return retrieved;
     }
 
@@ -212,9 +215,9 @@ internal sealed class CoordinatedLiveWriterJourney
         return Step(controller.SelectActions(World, _commands.NextIdentity), controller.SelectMovement(World));
     }
 
-    internal static void AssertOwnersAgree(WorldSnapshot world)
+    internal static void AssertOwnersAgree(WorldSnapshot world, ushort profileVersion = 27)
     {
-        Assert.Equal((ushort)27, world.ProfileVersion);
+        Assert.Equal(profileVersion, world.ProfileVersion);
         Assert.NotNull(world.Coordination);
         Assert.NotNull(world.Care!.Ordinary);
         Assert.NotNull(world.ResourceHistory);

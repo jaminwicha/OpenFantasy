@@ -1,0 +1,38 @@
+{
+  "status": "integrated_with_lead_completions",
+  "taskPath": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-consent-boundary-proof-pb3u5gmc",
+  "modelRequested": "fable[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 1200,
+  "clientEstimateLimitUsd": 15,
+  "ownership": "Proof-only consented-world test partials and explicitly listed fresh fixture helpers",
+  "startedUtc": "2026-09-29T08:06:51.411155+00:00",
+  "checkpoint": {
+    "checkpoint": "codex/checkpoint-before-consent-boundary-proof-20260929T080633Z",
+    "snapshot": "35f8a41136941ac323ab6368de3df9a5be6001a9",
+    "sourceHead": "640e37f89208703b7cc2f15591ae793920f4e508",
+    "scope": "All current successor WIP; predecessor excluded; real index and HEAD unchanged",
+    "verification": "Prior 1869 distinct managed passes; boundary proofs/review still open"
+  },
+  "elapsedSeconds": 840.778,
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 40,
+      "outputTokens": 69153,
+      "cacheReadInputTokens": 3054688,
+      "cacheCreationInputTokens": 226082,
+      "webSearchRequests": 0,
+      "costUSD": 8.743362000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 38803,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "clientEstimateUsd": 8.743362000000001,
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "result": "BOUNDARY_PROOF_RESULT.md"
+}

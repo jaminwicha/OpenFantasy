@@ -1,0 +1,29 @@
+{
+  "status": "completed_findings_retained_not_accepted",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 900,
+  "clientBudgetUsd": 10,
+  "clientCostEstimateUsd": 6.996383000000001,
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 26,
+      "outputTokens": 46127,
+      "cacheReadInputTokens": 1278532,
+      "cacheCreationInputTokens": 218507,
+      "webSearchRequests": 0,
+      "costUSD": 6.996383000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 34772,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "activeJobs": 0,
+  "scope": "Read-only review, partial coverage explicitly reported; no independent runtime execution",
+  "contextPostflightFile": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-world-consent-critic-a4y3xj_u/run/context-postflight.json",
+  "contextPostflightStatus": "verified"
+}

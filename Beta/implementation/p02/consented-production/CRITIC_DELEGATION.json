@@ -1,0 +1,28 @@
+{
+  "status": "completed_pending_disposition",
+  "elapsedSeconds": 415.959,
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "limitSeconds": 600,
+  "clientBudgetUsd": 7,
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 12,
+      "outputTokens": 34019,
+      "cacheReadInputTokens": 266118,
+      "cacheCreationInputTokens": 132772,
+      "webSearchRequests": 0,
+      "costUSD": 4.4230395,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 26946,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "clientCostEstimateUsd": 4.4230395,
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "scope": "Read-only source critique. Lead reviews findings; not an execution or full-game acceptance claim."
+}

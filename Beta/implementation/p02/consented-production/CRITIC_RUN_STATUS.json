@@ -1,0 +1,13 @@
+{
+  "status": "returned_pending_review",
+  "startedUtc": "2026-09-29T05:33:07.441871+00:00",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 600,
+  "clientBudgetUsd": 7,
+  "privateTask": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-consented-production-critic-lyne6bqu",
+  "scope": "Read-only independent critique; no acceptance inferred until findings and actual result are reviewed.",
+  "adapterExitCode": 0,
+  "elapsedSeconds": 418.78404704201967,
+  "finishedUtc": "2026-09-29T05:40:06.247461+00:00"
+}

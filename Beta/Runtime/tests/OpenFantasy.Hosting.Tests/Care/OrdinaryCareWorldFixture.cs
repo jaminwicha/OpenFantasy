@@ -12,8 +12,13 @@ namespace OpenFantasy.Hosting.Tests.Care;
 internal sealed class OrdinaryCareWorldFixture
 {
     internal OrdinaryCareWorldFixture(string seedText = EncounterJourneyWorldFixture.SeedText)
+        : this(RestorativeJourneyAdmission.CreateEmbedded(seedText, EncounterJourneyWorldFixture.PlayerName))
     {
-        Genesis = RestorativeJourneyAdmission.CreateEmbedded(seedText, EncounterJourneyWorldFixture.PlayerName);
+    }
+
+    internal OrdinaryCareWorldFixture(WorldSnapshot genesis)
+    {
+        Genesis = genesis;
         Journey = new(false, Genesis);
     }
     internal WorldSnapshot Genesis { get; }

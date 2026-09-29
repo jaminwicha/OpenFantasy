@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=integration-hosting.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/consented-production/qualification",
+    "--filter",
+    "FullyQualifiedName~Production|FullyQualifiedName~Coordinated|FullyQualifiedName~MaterialCare|FullyQualifiedName~WorldCanonicalFrame|FullyQualifiedName~Construction"
+  ],
+  "limitSeconds": 600,
+  "sourcePins": "integration-source-pins.json",
+  "sourcePinsSha256": "c59a383e04e776b709a1c0fa6b3f410bac005bf1401dc736a73dd1765165ff2f",
+  "exitCode": 0,
+  "outcomes": {
+    "NotExecuted": 5,
+    "Passed": 195
+  },
+  "distinctTestIds": 200,
+  "error": "AssertionError('No tests or nonpassing outcomes')",
+  "elapsedSeconds": 502.89907824993134,
+  "sourceUnchanged": true
+}

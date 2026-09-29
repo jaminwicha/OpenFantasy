@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
             3 => WorldSnapshotCodecV3.Encode(state),
+            28 => WorldSnapshotCodecV28.Encode(state),
             27 => WorldSnapshotCodecV27.Encode(state),
             26 => WorldSnapshotCodecV26.Encode(state),
             25 => WorldSnapshotCodecV25.Encode(state),
@@ -47,6 +48,8 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
+            28 => archiveAnchor is null ? WorldSnapshotCodecV28.Decode(bytes)
+                : throw new FormatException("The consented world requires its complete archive context."),
             27 => archiveAnchor is null ? WorldSnapshotCodecV27.Decode(bytes)
                 : throw new FormatException("The coordinated world does not accept a resource-only archive anchor."),
             26 => WorldSnapshotCodecV26.Decode(bytes, archiveAnchor),
@@ -80,7 +83,10 @@ public static class WorldSnapshotCodec
     /// has not yet cut; every other profile keeps its own unchanged entrypoint.
     /// </summary>
     public static WorldSnapshot DecodeCoordinated(ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor? coordinatedAnchor) =>
-        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 24) == 27
-            ? WorldSnapshotCodecV27.Decode(bytes, coordinatedAnchor)
-            : throw new FormatException("Only the coordinated world profile accepts a joint decode context.");
+        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 24) switch
+        {
+            27 => WorldSnapshotCodecV27.Decode(bytes, coordinatedAnchor),
+            28 => WorldSnapshotCodecV28.Decode(bytes, coordinatedAnchor),
+            _ => throw new FormatException("Only coordinated world profiles accept a joint decode context.")
+        };
 }

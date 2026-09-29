@@ -1,0 +1,28 @@
+{
+  "status": "completed_pending_integration",
+  "elapsedSeconds": 1356.57,
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "limitSeconds": 1800,
+  "clientBudgetUsd": 18,
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 46,
+      "outputTokens": 128805,
+      "cacheReadInputTokens": 4282675,
+      "cacheCreationInputTokens": 291961,
+      "webSearchRequests": 0,
+      "costUSD": 13.35059875,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 59491,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "clientCostEstimateUsd": 13.35059875,
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "scope": "Production-aware standalone material dependency. Complete-world integration is unproven; no net credit-savings claim."
+}

@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Authority.ConsentedMaterial;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
@@ -25,6 +26,12 @@ internal static class MaterialOperationCodec
                 CommandCodecV1.Encode(transfer.Command), transfer.Delivery.PrincipalId.ToByteArray(), transfer.Delivery.SessionId.ToByteArray()),
             MaterialDeliveryOperation delivery => CanonicalEncodingV1.Frame("material.delivery",
                 delivery.ActorId.ToByteArray(), delivery.Delivery.PrincipalId.ToByteArray(), delivery.Delivery.SessionId.ToByteArray(), EncodeRequest(delivery.Request)),
+            MaterialConsentedTransferOperation consented => CanonicalEncodingV1.Frame("material.consented-transfer",
+                ConsentedMaterialCodecV1.Encode(consented.Approval.Command),
+                consented.Approval.SenderDelivery.PrincipalId.ToByteArray(), consented.Approval.SenderDelivery.SessionId.ToByteArray(),
+                ConsentedMaterialCodecV1.Encode(consented.Approval.Acceptance),
+                consented.Approval.RecipientDelivery.PrincipalId.ToByteArray(), consented.Approval.RecipientDelivery.SessionId.ToByteArray(),
+                consented.MovedLotId.ToByteArray()),
             _ => throw new ArgumentException("Unsupported material operation.")
         };
         byte[] bytes = CanonicalEncodingV1.Frame("production.material-operation", Number(1), Number((ulong)operation.Kind),
@@ -104,6 +111,22 @@ internal static class MaterialOperationCodec
                 SourceDeliveryRequest request = DecodeRequest(delivery.ReadField(MaximumByteLength));
                 delivery.Complete();
                 result = new MaterialDeliveryOperation(sequence, commandId, actorId, deliveredBy, request);
+                break;
+            case MaterialOperationKind.ConsentedTransfer:
+                var consented = new CanonicalProductionReader(reader.ReadField(MaximumByteLength), MaximumByteLength, 8);
+                consented.ExpectTag("material.consented-transfer"u8);
+                // Stored deliveries are the recorded historical claims of a past submission. They
+                // are evidence for ordered replay and never current authenticated ingress.
+                ConsentedMaterialCommand approved = ConsentedMaterialCodecV1.DecodeCommand(
+                    consented.ReadField(ConsentedMaterialCodecV1.MaximumCommandByteLength));
+                var senderDelivery = new TrustedCommandDelivery(consented.ReadIdentity(), consented.ReadIdentity());
+                ConsentedMaterialAcceptance acceptance = ConsentedMaterialCodecV1.DecodeAcceptance(
+                    consented.ReadField(ConsentedMaterialCodecV1.MaximumAcceptanceByteLength));
+                var recipientDelivery = new TrustedCommandDelivery(consented.ReadIdentity(), consented.ReadIdentity());
+                EntityId movedLotId = consented.ReadIdentity();
+                consented.Complete();
+                result = new MaterialConsentedTransferOperation(sequence,
+                    new(approved, senderDelivery, acceptance, recipientDelivery), movedLotId);
                 break;
             default: throw new ArgumentException("Unknown material operation kind.");
         }

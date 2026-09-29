@@ -1,0 +1,30 @@
+{
+  "status": "checks_pass_remaining_integration_gates_open",
+  "build": "qualification/integration-build-20260929T074747Z.json",
+  "checks": [
+    {
+      "path": "qualification/integration-core-20260929T074841Z.json",
+      "passed": 1664,
+      "sourceAndAssembliesUnchanged": true,
+      "elapsedSeconds": 244.932
+    },
+    {
+      "path": "qualification/integration-hosting-20260929T075247Z.json",
+      "passed": 196,
+      "sourceAndAssembliesUnchanged": true,
+      "elapsedSeconds": 363.599
+    },
+    {
+      "path": "qualification/integration-journey-20260929T074809Z.json",
+      "passed": 10,
+      "sourceAndAssembliesUnchanged": true,
+      "elapsedSeconds": 8.043
+    }
+  ],
+  "distinctPassingTestIds": 1869,
+  "frozenSpecsVerified": 23,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "referenceLinksVerified": 67,
+  "nativeOptInCasesUnrun": 5,
+  "acceptance": "WIP: additional full-world boundary proofs and missing independent codec/archive review remain mandatory. No Host/native/migration or phase acceptance."
+}

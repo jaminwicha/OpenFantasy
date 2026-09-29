@@ -32,7 +32,9 @@ internal sealed class CareWorldFixture
     internal CareWorldFixture(bool craftedDose = false, ulong? rewardExperience = null, uint? strikeMana = null,
         bool invalidNormalizedSpeedOnReward = false, bool enduranceProfile = false,
         bool pairedRewardBoundary = false, bool invalidSecondRewardSpeed = false, bool archiveCareBoundary = false,
-        bool materialCareStress = false)
+        bool materialCareStress = false, ulong? freshBerryUnits = null,
+        IReadOnlyCollection<CraftRecipeDefinition>? extraFreshRecipes = null, bool freshReservoirHeadroom = false,
+        int? freshRawLotTarget = null)
     {
         if (materialCareStress && (!pairedRewardBoundary || craftedDose || enduranceProfile || archiveCareBoundary))
             throw new ArgumentException("Material/care stress calibration requires the fresh paired-reward basis alone.");
@@ -44,7 +46,7 @@ internal sealed class CareWorldFixture
         HelperStorage = source.GetResident(Helper).InventoryCustodianId;
         Assert.DoesNotContain(source.Inventory.Custody.Lots, lot => lot.CustodianId == HelperStorage
             && (lot.Definition == _supply.Potion || lot.Definition == _supply.Berries));
-        ulong berryUnits = materialCareStress ? 60UL : 6UL;
+        ulong berryUnits = freshBerryUnits ?? (materialCareStress ? 60UL : 6UL);
         ulong potionUnits = materialCareStress ? 600UL : 2UL;
         var added = new List<CountedSourceLot>
         {
@@ -56,13 +58,44 @@ internal sealed class CareWorldFixture
             added.Add(new(PotionLot, HelperStorage, _supply.Potion, new(PotionSource, 0, potionUnits), 0));
             sources = sources.Append(new(PotionSource, _supply.Potion, potionUnits));
         }
+        ulong fillerUnits = 0;
+        if (freshRawLotTarget is { } target)
+        {
+            // Explicit fresh single-unit lots of one separately admitted finite source fill the
+            // genesis to the requested live raw lot count. Each lot owns its own unit of that source.
+            fillerUnits = checked((ulong)(target - source.Inventory.Custody.Lots.Count - added.Count));
+            for (ulong unit = 0; unit < fillerUnits; unit++)
+            {
+                added.Add(new(Id(FirstFillerLot + unit), HelperStorage, _supply.Berries, new(FillerSource, unit, unit + 1), 0));
+            }
+            sources = sources.Append(new(FillerSource, _supply.Berries, fillerUnits));
+        }
         var storages = source.Inventory.Custody.Storages.AsEnumerable();
+        if (fillerUnits != 0)
+        {
+            storages = storages.Select(storage => storage.CustodianId == HelperStorage
+                ? new CustodianStorage(storage.CustodianId, checked(storage.UnitCapacity + fillerUnits), 0) : storage);
+        }
         if (materialCareStress)
         {
             // Finite fresh supply occupies real capacity; no earned stock or lived state is edited.
             storages = storages.Select(storage => storage.CustodianId == HelperStorage
                 ? new CustodianStorage(storage.CustodianId, checked(storage.UnitCapacity + berryUnits + potionUnits), 0)
                 : storage);
+        }
+        else if (freshBerryUnits is > 6)
+        {
+            // A separately authored fresh inventory budgets the additional finite input units.
+            storages = storages.Select(storage => storage.CustodianId == HelperStorage
+                ? new CustodianStorage(storage.CustodianId, checked(storage.UnitCapacity + berryUnits - 6), 0)
+                : storage);
+        }
+        if (freshReservoirHeadroom)
+        {
+            // Counted storage may have space that its single-material physical owner cannot use.
+            EntityId receiver = source.Reservoirs!.Geometries.Single().CustodianId;
+            storages = storages.Select(storage => storage.CustodianId == receiver
+                ? new CustodianStorage(storage.CustodianId, checked(storage.UnitCapacity + 1), 0) : storage);
         }
         var policies = source.Inventory.Policies.AsEnumerable();
         var reservations = source.Inventory.ReservationIds.AsEnumerable();
@@ -74,11 +107,18 @@ internal sealed class CareWorldFixture
         }
         var inventory = new CountedAuthorityState(new(source.WorldId, source.BranchId, 0,
             storages, source.Inventory.Custody.Lots.Concat(added)),
-            checked(source.Inventory.AdmittedUnitCapacity + berryUnits + (craftedDose ? 0UL : potionUnits)), source.Inventory.Actors,
+            checked(source.Inventory.AdmittedUnitCapacity + berryUnits + fillerUnits + (craftedDose ? 0UL : potionUnits)), source.Inventory.Actors,
             source.Inventory.Controls, policies, sources, reservations);
         var production = new ProductionSnapshot(source.WorldId, source.BranchId, 0,
-            source.Production!.Recipes.Append(_supply.Recipe), [], []);
+            source.Production!.Recipes.Append(_supply.Recipe).Concat(extraFreshRecipes ?? []), [], []);
         var admission = ContentHash.Compute(source.ContentHash.ToByteArray().Concat(_supply.Recipe.Version.ToByteArray()).ToArray());
+        if (freshBerryUnits is not null || extraFreshRecipes is not null || freshReservoirHeadroom
+            || freshRawLotTarget is not null)
+        {
+            // Explicit fixture authoring happens before fresh world admission, with no earned stock.
+            admission = ContentHash.Compute(admission.ToByteArray().Concat(inventory.ContentHash.ToByteArray())
+                .Concat(production.ContentHash.ToByteArray()).ToArray());
+        }
         var progression = source.Progression!;
         if (archiveCareBoundary)
         {
@@ -241,6 +281,8 @@ internal sealed class CareWorldFixture
     internal EntityId PotionSource => Id(4);
     internal EntityId BerryLot => Id(5);
     internal EntityId BerrySource => Id(6);
+    internal EntityId FillerSource => Id(7);
+    private const ulong FirstFillerLot = 1_000_000;
     internal CountedItemDefinition Potion => _supply.Potion;
     internal WorldSnapshot? BeforeDefeat { get; private set; }
 

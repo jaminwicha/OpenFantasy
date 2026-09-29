@@ -6,7 +6,7 @@ using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
-public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7, ReservedTransport = 8, ExcavationWork = 9 }
+public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7, ReservedTransport = 8, ExcavationWork = 9, ConsentedTransfer = 10 }
 
 /// <summary>One ordered material transition; only its specific owner can create an accepted record.</summary>
 public abstract class MaterialOperation
@@ -80,6 +80,22 @@ public sealed class MaterialReservedTransportOperation : MaterialOperation
     internal MaterialReservedTransportOperation(ulong sequence, OpenFantasy.Core.Geography.ReservoirTransportEvidence evidence)
         : base(sequence, evidence.CauseId, MaterialOperationKind.ReservedTransport) => Evidence = evidence;
     public OpenFantasy.Core.Geography.ReservoirTransportEvidence Evidence { get; }
+}
+
+/// <summary>
+/// One bilateral approved custody change of actual raw or produced stock with its exact result.
+/// The command and the acceptance are separate permanent identities of this one operation.
+/// </summary>
+public sealed class MaterialConsentedTransferOperation : MaterialOperation
+{
+    internal MaterialConsentedTransferOperation(ulong sequence,
+        OpenFantasy.Core.Authority.ConsentedMaterial.ConsentedMaterialApproval approval, EntityId movedLotId)
+        : base(sequence, approval.Command.CommandId, MaterialOperationKind.ConsentedTransfer)
+    { Approval = approval; MovedLotId = movedLotId; }
+    public OpenFantasy.Core.Authority.ConsentedMaterial.ConsentedMaterialApproval Approval { get; }
+    public EntityId AcceptanceId => Approval.Acceptance.AcceptanceId;
+    /// <summary>The whole original lot, or the child spawned for a partial amount.</summary>
+    public EntityId MovedLotId { get; }
 }
 
 /// <summary>One actual mining or gathering action qualified by the shared excavation owner.</summary>

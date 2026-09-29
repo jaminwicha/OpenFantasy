@@ -20,9 +20,14 @@ public sealed class ProductionContinuationContext
         ProductionSnapshot production, bool supportsMaterialOperations = false, GatheringSnapshot? gathering = null,
         ConstructionSnapshot? construction = null, bool supportsConstruction = false, TerrainRepresentationBoundary? terrainRepresentation = null,
         TransportMaterialBoundary? reservedTransport = null, ExcavationMaterialBoundary? excavation = null,
-        bool completeWorld = false)
+        bool completeWorld = false, bool consentedTransfer = false, bool consentedWorld = false)
     {
         Basis = basis;
+        SupportsConsentedTransfer = consentedTransfer;
+        if (consentedTransfer && (!supportsMaterialOperations || supportsConstruction || terrainRepresentation is not null
+                || reservedTransport is not null || excavation is not null || completeWorld)
+            || !consentedTransfer && production.Continuation?.SupportsConsentedTransfer == true)
+            throw new ArgumentException("Consented transfer history is an explicit ordered capability that no other interpretation gains or drops.");
         Ordinal = checked((production.Continuation?.Ordinal ?? 0) + 1);
         BaseProductionRevision = production.Revision;
         BaseBatchCount = production.TotalBatchCount;
@@ -37,6 +42,12 @@ public sealed class ProductionContinuationContext
         if ((terrainRepresentation is not null ? 1 : 0) + (reservedTransport is not null ? 1 : 0) + (excavation is not null ? 1 : 0) > 1)
             throw new ArgumentException("Terrain and reserved transport require distinct explicitly qualified profiles.");
         SupportsCompleteWorld = completeWorld;
+        SupportsConsentedWorld = consentedWorld;
+        if (consentedWorld && !completeWorld
+            || production.Continuation is { } previousWorld && previousWorld.SupportsConsentedWorld != consentedWorld)
+        {
+            throw new ArgumentException("Consented world custody retains its explicit interpretation across every cut.");
+        }
         if (completeWorld && (supportsMaterialOperations || supportsConstruction || terrainRepresentation is not null
                 || reservedTransport is not null || excavation is not null || construction is null)
             || !completeWorld && production.Continuation?.SupportsCompleteWorld == true)
@@ -65,7 +76,7 @@ public sealed class ProductionContinuationContext
         if (recipes.Length > 5 * 1024 * 1024)
             throw new ArgumentException("The continuation recipe admission exceeds its bounded frame.");
         List<ReadOnlyMemory<byte>> fields = [
-            Number(completeWorld ? 7UL : excavation is not null ? 6UL : reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
+            Number(consentedWorld ? 9UL : consentedTransfer ? 8UL : completeWorld ? 7UL : excavation is not null ? 6UL : reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
             Number(BaseBatchCount), Number(BaseConsumedItemCount), Number(SupportsConsumption ? 1UL : 0UL), recipes,
             AuthorityAdmissionHash.ToByteArray(), CanonicalEncodingV1.Frame("continuation.storages.v1",
                 Storages.Select(value => (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("continuation.storage.v1",
@@ -126,6 +137,13 @@ public sealed class ProductionContinuationContext
     /// meaning while raw custody, gathering and work stay with the world's actual owners.
     /// </summary>
     public bool SupportsCompleteWorld { get; }
+    /// <summary>Produced custody is validated by the complete world's mandatory ordered transfer evidence.</summary>
+    public bool SupportsConsentedWorld { get; }
+    /// <summary>
+    /// Selected only by an explicit consented material cut. Ordered history may then retain bilateral
+    /// approved transfers of raw and produced stock; every other interpretation rejects them.
+    /// </summary>
+    public bool SupportsConsentedTransfer { get; }
     public bool SupportsExcavation => Excavation is not null;
     public ExcavationMaterialBoundary? Excavation { get; }
     public bool SupportsReservedTransport => ReservedTransport is not null;
@@ -145,13 +163,21 @@ public sealed class ProductionContinuationContext
         new(CaptureOrdinaryBasis(inventory, production), inventory, production,
             production.MaterialHistory is not null, production.MaterialHistory?.Gathering,
             supportsConstruction: production.Continuation?.SupportsConstruction == true,
-            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation);
+            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation,
+            consentedTransfer: production.Continuation?.SupportsConsentedTransfer == true);
 
     internal static ProductionContinuationContext CaptureMaterial(CountedAuthorityState inventory,
         ProductionSnapshot production, GatheringSnapshot? gathering) =>
         new(CaptureOrdinaryBasis(inventory, production), inventory, production, true, gathering,
             supportsConstruction: production.Continuation?.SupportsConstruction == true,
-            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation);
+            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation,
+            consentedTransfer: production.Continuation?.SupportsConsentedTransfer == true);
+
+    internal static ProductionContinuationContext CaptureConsentedMaterial(CountedAuthorityState inventory,
+        ProductionSnapshot production, GatheringSnapshot? gathering) =>
+        new(CaptureOrdinaryBasis(inventory, production), inventory, production, true, gathering,
+            supportsConstruction: production.Continuation?.SupportsConstruction == true,
+            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation, consentedTransfer: true);
 
     internal static ProductionContinuationContext CaptureConstruction(CountedAuthorityState inventory,
         ProductionSnapshot production, ConstructionSnapshot construction, GatheringSnapshot? gathering) =>
@@ -176,9 +202,9 @@ public sealed class ProductionContinuationContext
             true, excavation: excavation);
 
     internal static ProductionContinuationContext CaptureWorld(CountedAuthorityState inventory,
-        ProductionSnapshot production, ConstructionSnapshot construction) =>
+        ProductionSnapshot production, ConstructionSnapshot construction, bool consentedWorld = false) =>
         new(ProductionContinuationBasis.Capture(inventory, production), inventory, production,
-            construction: construction, completeWorld: true);
+            construction: construction, completeWorld: true, consentedWorld: consentedWorld);
 
     private static ProductionContinuationBasis CaptureOrdinaryBasis(CountedAuthorityState inventory, ProductionSnapshot production)
     {

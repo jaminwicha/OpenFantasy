@@ -110,6 +110,14 @@ public sealed class WatershedRunoffCapacityState
 
     public WatershedRunoffCapacityPlan PlanReconcile(CountedAuthorityState inventory, ProductionSnapshot? production,
         CancellationToken cancellationToken = default)
+        => PlanReconcile(inventory, production, custodyOnly: false, cancellationToken);
+
+    /// <summary>The world binding supplies exact approved before/after owners for this interpretation.</summary>
+    internal WatershedRunoffCapacityPlan PlanReconcileCustody(CountedAuthorityState inventory,
+        ProductionSnapshot production) => PlanReconcile(inventory, production, custodyOnly: true, CancellationToken.None);
+
+    private WatershedRunoffCapacityPlan PlanReconcile(CountedAuthorityState inventory, ProductionSnapshot? production,
+        bool custodyOnly, CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         cancellationToken.ThrowIfCancellationRequested();
@@ -122,7 +130,14 @@ public sealed class WatershedRunoffCapacityState
         {
             throw new ArgumentException("Reconciliation requires advancing custody with unchanged scope and admission.");
         }
-        ValidateProductionSuccessor(production);
+        if (custodyOnly)
+        {
+            ProductionRetirementHistory.ValidateCustodySuccessor(RequireProduction(), production!);
+        }
+        else
+        {
+            ValidateProductionSuccessor(production);
+        }
         var refreshed = Reprepare(inventory, production, ContinuationQualification, cancellationToken);
         cancellationToken.ThrowIfCancellationRequested();
         return new(this, new(Domain, inventory, production, checked(Revision + 1), refreshed, Closed, ContinuationQualification));

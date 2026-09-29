@@ -1,0 +1,15 @@
+{
+  "head": "640e37f89208703b7cc2f15591ae793920f4e508",
+  "ref": "codex/checkpoint-consented-production-worker-20260929T053136Z",
+  "snapshot": "2e0d312fcb8d568beae4f381a92f1758b3907949",
+  "scope": [
+    "Beta/Runtime/src/OpenFantasy.Core/Production",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedMaterial",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Production",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedMaterial",
+    "Beta/Runtime/docs/architecture/consented-production.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/p02/consented-production"
+  ],
+  "verification": "Worker solution build and 317 affected tests pass. WIP: independent review/full-world integration and broader regression pending."
+}

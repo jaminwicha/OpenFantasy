@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="9880e7d0-6fa2-4826-91c8-8114dec1c2d3" name="@mac 2026-09-29 02:46:49" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T02:46:49.8135220-05:00" queuing="2026-09-29T02:46:49.8135220-05:00" start="2026-09-29T02:46:45.6832930-05:00" finish="2026-09-29T02:46:59.4542790-05:00" />
+  <TestSettings name="default" id="84aed86d-401a-4d66-a49f-b52d815987df">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_02_46_49" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="dc8820ad-abcc-4d94-af8f-629c2ccdfcf3" testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" computerName="mac" duration="00:00:00.6246668" startTime="2026-09-29T02:46:49.7376200-05:00" endTime="2026-09-29T02:46:50.3908090-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dc8820ad-abcc-4d94-af8f-629c2ccdfcf3">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(System.FormatException)
+Actual:   typeof(OpenFantasy.Core.Production.ProductionFormatException)
+---- OpenFantasy.Core.Production.ProductionFormatException : The contract version is unsupported.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldPublicationTests.cs:line 31
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at OpenFantasy.Core.Production.CanonicalProductionReader.ExpectVersion(UInt64 expectedVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CanonicalProductionReader.cs:line 113
+   at OpenFantasy.Core.Production.ProductionCodecV3.DecodeFrame(ReadOnlySpan`1 bytes, ProductionContinuationContext context, UInt64 version) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV3.cs:line 53
+   at OpenFantasy.Core.Production.ProductionCodecV9.Decode(ReadOnlySpan`1 bytes, ProductionContinuationContext context) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV9.cs:line 26
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.&lt;&gt;c__DisplayClass10_0.&lt;Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners&gt;b__4() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldPublicationTests.cs:line 31</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5d708dfa-7b4c-48fe-8301-36906ae1d2d1" testId="f4e182b1-dc07-930a-cecb-1d23285d3ad8" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 2)" computerName="mac" duration="00:00:00.1891496" startTime="2026-09-29T02:46:55.4037520-05:00" endTime="2026-09-29T02:46:55.5930940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d708dfa-7b4c-48fe-8301-36906ae1d2d1" />
+    <UnitTestResult executionId="12223144-5100-47e2-a4d6-58fd248dc6f1" testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" computerName="mac" duration="00:00:01.3018341" startTime="2026-09-29T02:46:56.1480230-05:00" endTime="2026-09-29T02:46:57.4499460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="12223144-5100-47e2-a4d6-58fd248dc6f1" />
+    <UnitTestResult executionId="cdac1cde-f77f-4465-abc1-b74c9f2a76b4" testId="fba15492-552d-4983-9ef2-04fcdf4b9c95" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Full_transfer_window_cuts_before_the_next_pair_and_retains_closed_identities" computerName="mac" duration="00:00:04.0616053" startTime="2026-09-29T02:46:51.3360910-05:00" endTime="2026-09-29T02:46:55.3979740-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cdac1cde-f77f-4465-abc1-b74c9f2a76b4" />
+    <UnitTestResult executionId="f13e745b-d40e-4c34-b032-7727e38378a8" testId="e6492830-47af-8d23-9a14-1b705e2affb5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities" computerName="mac" duration="00:00:00.9209328" startTime="2026-09-29T02:46:50.3939180-05:00" endTime="2026-09-29T02:46:51.3279520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f13e745b-d40e-4c34-b032-7727e38378a8">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.All() Failure: 2 out of 2 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 426fbb454651295e11742fb4af3c6232ee4530ebf78462c18c3266947e8b0db0, CommandId = ca25feed000000000000000000000024, CommitSequence = 34, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected
+[1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = aa05cf4502b3648ef12f029cec1d31af1f12da80f488880d046f86ef28d58a32, CommandId = ca25feed000000000000000000000025, CommitSequence = 34, PrincipalId = 0fb0432e3ffc60a90fc7474085e65e0e, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: Applied
+            Actual:   Rejected</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Commit(CareWorldSession session, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs:line 159
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldRollbackTests.cs:line 62
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8814acfd-9acd-4080-a5a9-645d7a72cab7" testId="d4e10249-a262-3875-37fe-3f71c9d8cc04" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Actual_completed_construction_stays_reserved_before_and_after_a_decoded_cut" computerName="mac" duration="00:00:01.9199156" startTime="2026-09-29T02:46:57.4510300-05:00" endTime="2026-09-29T02:46:59.3710660-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8814acfd-9acd-4080-a5a9-645d7a72cab7" />
+    <UnitTestResult executionId="46d63b83-048c-4176-906c-081370a9a2f9" testId="70722524-f345-861b-bfc3-8104ad74275a" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 1)" computerName="mac" duration="00:00:00.1805091" startTime="2026-09-29T02:46:55.5948040-05:00" endTime="2026-09-29T02:46:55.7754110-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46d63b83-048c-4176-906c-081370a9a2f9" />
+    <UnitTestResult executionId="91fde9e5-47a7-49db-a08d-ff36bd4b4af8" testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" computerName="mac" duration="00:00:01.4671022" startTime="2026-09-29T02:46:48.2477660-05:00" endTime="2026-09-29T02:46:49.7285830-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="91fde9e5-47a7-49db-a08d-ff36bd4b4af8" />
+    <UnitTestResult executionId="67d3120d-447e-4f61-92ad-6213fe0a98f3" testId="80788019-c05d-c5dd-e633-ce2ab6756086" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Both_participants_spend_movement_and_each_get_their_own_canonical_receipt" computerName="mac" duration="00:00:00.1489431" startTime="2026-09-29T02:46:55.9981160-05:00" endTime="2026-09-29T02:46:56.1471120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67d3120d-447e-4f61-92ad-6213fe0a98f3" />
+    <UnitTestResult executionId="f3c8e0ee-8160-4a07-8109-8d415219de9e" testId="a69e1050-33cf-e0ae-2740-4aef7f3c197e" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 0)" computerName="mac" duration="00:00:00.2189624" startTime="2026-09-29T02:46:55.7777900-05:00" endTime="2026-09-29T02:46:55.9968350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f3c8e0ee-8160-4a07-8109-8d415219de9e" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7731cb59-fe76-48e5-b52a-5c3f9ea227fe">
+      <Execution id="12223144-5100-47e2-a4d6-58fd248dc6f1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="70722524-f345-861b-bfc3-8104ad74275a">
+      <Execution id="46d63b83-048c-4176-906c-081370a9a2f9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Invalid_pair_keeps_all_material_owners_and_evidence_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5927f562-32c5-57d4-b6bf-a82ef44076f5">
+      <Execution id="91fde9e5-47a7-49db-a08d-ff36bd4b4af8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Actual_completed_construction_stays_reserved_before_and_after_a_decoded_cut" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d4e10249-a262-3875-37fe-3f71c9d8cc04">
+      <Execution id="8814acfd-9acd-4080-a5a9-645d7a72cab7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Actual_completed_construction_stays_reserved_before_and_after_a_decoded_cut" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Full_transfer_window_cuts_before_the_next_pair_and_retains_closed_identities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fba15492-552d-4983-9ef2-04fcdf4b9c95">
+      <Execution id="cdac1cde-f77f-4465-abc1-b74c9f2a76b4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Full_transfer_window_cuts_before_the_next_pair_and_retains_closed_identities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e6492830-47af-8d23-9a14-1b705e2affb5">
+      <Execution id="f13e745b-d40e-4c34-b032-7727e38378a8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Both_participants_spend_movement_and_each_get_their_own_canonical_receipt" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="80788019-c05d-c5dd-e633-ce2ab6756086">
+      <Execution id="67d3120d-447e-4f61-92ad-6213fe0a98f3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Both_participants_spend_movement_and_each_get_their_own_canonical_receipt" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f4e182b1-dc07-930a-cecb-1d23285d3ad8">
+      <Execution id="5d708dfa-7b4c-48fe-8301-36906ae1d2d1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Invalid_pair_keeps_all_material_owners_and_evidence_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a69e1050-33cf-e0ae-2740-4aef7f3c197e">
+      <Execution id="f3c8e0ee-8160-4a07-8109-8d415219de9e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Invalid_pair_keeps_all_material_owners_and_evidence_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5">
+      <Execution id="dc8820ad-abcc-4d94-af8f-629c2ccdfcf3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" executionId="dc8820ad-abcc-4d94-af8f-629c2ccdfcf3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f4e182b1-dc07-930a-cecb-1d23285d3ad8" executionId="5d708dfa-7b4c-48fe-8301-36906ae1d2d1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" executionId="12223144-5100-47e2-a4d6-58fd248dc6f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fba15492-552d-4983-9ef2-04fcdf4b9c95" executionId="cdac1cde-f77f-4465-abc1-b74c9f2a76b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6492830-47af-8d23-9a14-1b705e2affb5" executionId="f13e745b-d40e-4c34-b032-7727e38378a8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d4e10249-a262-3875-37fe-3f71c9d8cc04" executionId="8814acfd-9acd-4080-a5a9-645d7a72cab7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="70722524-f345-861b-bfc3-8104ad74275a" executionId="46d63b83-048c-4176-906c-081370a9a2f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" executionId="91fde9e5-47a7-49db-a08d-ff36bd4b4af8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="80788019-c05d-c5dd-e633-ce2ab6756086" executionId="67d3120d-447e-4f61-92ad-6213fe0a98f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a69e1050-33cf-e0ae-2740-4aef7f3c197e" executionId="f3c8e0ee-8160-4a07-8109-8d415219de9e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="10" executed="10" passed="8" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.60]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.46]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.80]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.01]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:04.01]       Expected: typeof(System.FormatException)
+[xUnit.net 00:00:04.01]       Actual:   typeof(OpenFantasy.Core.Production.ProductionFormatException)
+[xUnit.net 00:00:04.01]       ---- OpenFantasy.Core.Production.ProductionFormatException : The contract version is unsupported.
+[xUnit.net 00:00:04.01]       Stack Trace:
+[xUnit.net 00:00:04.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldPublicationTests.cs(31,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners()
+[xUnit.net 00:00:04.01]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:04.01]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.01]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:04.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CanonicalProductionReader.cs(113,0): at OpenFantasy.Core.Production.CanonicalProductionReader.ExpectVersion(UInt64 expectedVersion)
+[xUnit.net 00:00:04.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV3.cs(53,0): at OpenFantasy.Core.Production.ProductionCodecV3.DecodeFrame(ReadOnlySpan`1 bytes, ProductionContinuationContext context, UInt64 version)
+[xUnit.net 00:00:04.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/ProductionCodecV9.cs(26,0): at OpenFantasy.Core.Production.ProductionCodecV9.Decode(ReadOnlySpan`1 bytes, ProductionContinuationContext context)
+[xUnit.net 00:00:04.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldPublicationTests.cs(31,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.&lt;&gt;c__DisplayClass10_0.&lt;Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners&gt;b__4()
+[xUnit.net 00:00:04.93]       Assert.All() Failure: 2 out of 2 items in the collection did not pass.
+[xUnit.net 00:00:04.93]       [0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = 426fbb454651295e11742fb4af3c6232ee4530ebf78462c18c3266947e8b0db0, CommandId = ca25feed000000000000000000000024, CommitSequence = 34, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+[xUnit.net 00:00:04.93]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:04.93]                   Expected: Applied
+[xUnit.net 00:00:04.93]                   Actual:   Rejected
+[xUnit.net 00:00:04.93]       [1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = aa05cf4502b3648ef12f029cec1d31af1f12da80f488880d046f86ef28d58a32, CommandId = ca25feed000000000000000000000025, CommitSequence = 34, PrincipalId = 0fb0432e3ffc60a90fc7474085e65e0e, ··· }
+[xUnit.net 00:00:04.93]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:04.93]                   Expected: Applied
+[xUnit.net 00:00:04.94]                   Actual:   Rejected
+[xUnit.net 00:00:04.94]       Stack Trace:
+[xUnit.net 00:00:04.94]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs(159,0): at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Commit(CareWorldSession session, WorldStepBatch batch)
+[xUnit.net 00:00:04.94]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldRollbackTests.cs(62,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities()
+[xUnit.net 00:00:04.94]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:04.94]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:12.99]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T02:46:50.4040120-05:00">
+        <Text>[xUnit.net 00:00:04.00]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T02:46:51.3370280-05:00">
+        <Text>[xUnit.net 00:00:04.93]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

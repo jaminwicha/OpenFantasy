@@ -117,3 +117,17 @@ qualify unlimited storage and production throughput. Extending that graph requir
 matching nested codecs and evidence that every live writer preserves closure. The detached
 [live material observations](live-material-evidence.md) are a separate diagnostic contract and do not
 mint material rights or replace archive verification.
+
+
+## Consented material interpretation
+
+[World profile 28](consented-world.md) explicitly selects a coordinated owner with bilateral transfer
+evidence at fresh admission. It uses the same closing-root and derived-anchor mechanism, retains
+transfer evidence in the closing archive, and starts an empty segment list over actual imported
+custodians. Transfer headroom joins the existing material/care/resource budget. Production selects
+V11/context profile 9 and complete admission replays its produced-custody evidence; receipts and
+permanent identities remain separate facts. Snapshot/step decoding explicitly selects this profile.
+
+The profile-27 SQLite schema and replay bindings described above do not automatically support profile
+28. Authenticated dual-party ingress, durable publication and recovery require their own Host binding.
+The portable complete-world transaction and archive contracts cannot establish those guarantees.

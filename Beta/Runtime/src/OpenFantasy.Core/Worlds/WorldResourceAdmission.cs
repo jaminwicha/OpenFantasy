@@ -21,7 +21,7 @@ internal static class WorldResourceAdmission
         var lifecycle = world.EncounterLifecycle!;
         var anchor = retained.ArchiveAnchor;
         var joint = retained.CoordinatedAnchor;
-        if (world.ProfileVersion is not (25 or 26 or 27) || retained.AnchorAdmission != world.AdmissionVersion
+        if (world.ProfileVersion is not (25 or 26 or 27 or 28) || retained.AnchorAdmission != world.AdmissionVersion
             || anchor is null && joint is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
                 || history.Basis.Actors.Any(actor => actor.Revision != 0))
             || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count)
@@ -232,7 +232,7 @@ internal static class WorldResourceAdmission
     private static IReadOnlyList<ActorResourceChange> ValidateRestorativeUse(WorldSnapshot world, ResourceChangeBatch batch,
         WorldRestorativeUseResourceEvidence evidence, Dictionary<EntityId, ActorProgressionState> heads)
     {
-        if (world.ProfileVersion is not (26 or 27) || world.Care?.Ordinary is not { } ordinary)
+        if (world.ProfileVersion is not (26 or 27 or 28) || world.Care?.Ordinary is not { } ordinary)
             throw new ArgumentException("Ordinary restoration evidence requires its explicit ordinary-care world profile.");
         var use = ordinary.Uses.SingleOrDefault(value => value.UseId == evidence.UseId)
             ?? throw new ArgumentException("Ordinary restoration requires its actual retained completed use.");

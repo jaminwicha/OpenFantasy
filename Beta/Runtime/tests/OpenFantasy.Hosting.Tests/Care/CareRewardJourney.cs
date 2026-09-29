@@ -45,7 +45,10 @@ internal sealed class CareRewardJourney
     internal EntityId Bite { get; }
     internal WorldSnapshot? BeforeDefeat { get; private set; }
 
-    internal WorldSnapshot PrepareDefeat(CareWorldSession session)
+    internal WorldSnapshot PrepareDefeat(CareWorldSession session) => PrepareDefeat(session, null);
+
+    /// <summary>The same defeat, observing the actual live encounter once before its first combat boundary.</summary>
+    internal WorldSnapshot PrepareDefeat(CareWorldSession session, Action<WorldSnapshot>? duringCombat)
     {
         Approach(session);
         var state = session.ReadStateForHost();
@@ -63,6 +66,7 @@ internal sealed class CareRewardJourney
             Assert.Equal(1UL, Assert.Single(state.Production!.Lots).Quantity);
         }
         state = Enter(session, First);
+        duringCombat?.Invoke(state);
         // Win some ground through real strikes before the deliberate Wait choices. The wolf
         // survives the defeat, allowing one source 40-HP dose to finish this same live encounter.
         for (int boundary = 0; state.Progression!.GetActor(First.TargetActorId).CurrentHp > 24; boundary++)
@@ -186,7 +190,7 @@ internal sealed class CareRewardJourney
         return Commit(session, Batch(state, kind, commands)).Candidate;
     }
 
-    private void Approach(CareWorldSession session)
+    internal void Approach(CareWorldSession session)
     {
         var state = session.ReadStateForHost();
         var goal = state.Space.GetActor(Player).Feet.Offset(0, -256, 0);

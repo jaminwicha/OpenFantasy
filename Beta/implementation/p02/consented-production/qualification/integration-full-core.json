@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=integration-full-core.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/consented-production/qualification"
+  ],
+  "limitSeconds": 600,
+  "sourcePins": "integration-source-pins.json",
+  "sourcePinsSha256": "c59a383e04e776b709a1c0fa6b3f410bac005bf1401dc736a73dd1765165ff2f",
+  "exitCode": 0,
+  "outcomes": {
+    "Passed": 1642
+  },
+  "distinctTestIds": 1642,
+  "elapsedSeconds": 236.87214204110205,
+  "sourceUnchanged": true
+}

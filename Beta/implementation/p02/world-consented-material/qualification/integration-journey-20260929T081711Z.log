@@ -1,0 +1,29 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:12.12]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: True) [FAIL]
+[xUnit.net 00:00:12.32]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: True) [186 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Live produced lots must equal the partition replay"···
+Actual:   "Reconciliation requires advancing custody with unc"···
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Boolean movedSuffix) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldLiveLotMutationTests.cs:line 56
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: False) [201 ms]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Live produced lots must equal the partition replay"···
+Actual:   "Reconciliation requires advancing custody with unc"···
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Boolean movedSuffix) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldLiveLotMutationTests.cs:line 56
+   at InvokeStub_ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-consented-material/qualification/integration-journey-20260929T081711Z.trx
+
+Failed!  - Failed:     2, Passed:    16, Skipped:     0, Total:    18, Duration: 12 s - OpenFantasy.Hosting.Tests.dll (net8.0)

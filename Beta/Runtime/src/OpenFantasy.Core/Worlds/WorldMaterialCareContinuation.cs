@@ -37,7 +37,8 @@ internal static class WorldMaterialCareContinuation
         {
             throw new ArgumentException("A coordinated cut requires the complete material, care and liquid world.", nameof(closing));
         }
-        ProductionSnapshot production = closingProduction.ContinueWorld(closing.Inventory, construction);
+        ProductionSnapshot production = closingProduction.ContinueWorld(closing.Inventory, construction,
+            coordination.ConsentedMaterial is not null);
         var capacity = closingReservoirs.Capacity.PlanContinuation(production, CancellationToken.None);
         LiquidReservoirState reservoirs = closingReservoirs.PlanApply(capacity).ApplyTo(closingReservoirs);
         LiquidCellState liquids = closingLiquids.Rebind(reservoirs);
@@ -67,11 +68,14 @@ internal static class WorldMaterialCareContinuation
         int crafts = batch.Actions.Count(command => command.Intent is CraftIntent or WorkConstructionIntent);
         (int batches, int effects) = WorldResourceContinuation.RequiredCapacity(batch);
         int retainedUses = care.Ordinary?.Uses.Count ?? 0;
+        int retainedTransfers = world.Coordination!.ConsentedMaterial?.Transfers.Count ?? 0;
+        int transfers = batch.Actions.Count(command => command.Intent is OfferMaterialIntent);
         int completedAcknowledgments = care.Acknowledgments.Count - (care.Pending is null ? 0 : 1);
         bool progressed = production.Batches.Count + production.ConsumedItems.Count + history.Batches.Count
-            + care.Treatments.Count + completedAcknowledgments + retainedUses != 0;
+            + care.Treatments.Count + completedAcknowledgments + retainedUses + retainedTransfers != 0;
         return progressed && (
-            history.Batches.Count + batches + ReservedOperations > ActorResourceHistory.MaximumBatches
+            retainedTransfers + transfers + ReservedOperations > WorldConsentedMaterialHistory.MaximumTransfers
+            || history.Batches.Count + batches + ReservedOperations > ActorResourceHistory.MaximumBatches
             || history.ChangeCount + effects + ReservedResourceEffects > ActorResourceHistory.MaximumChanges
             || production.Batches.Count + crafts + ReservedOperations > ProductionSnapshot.MaximumBatches
             || production.ConsumedItems.Count + uses + treatments + ReservedOperations > ProductionSnapshot.MaximumConsumedItems

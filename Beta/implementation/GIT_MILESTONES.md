@@ -302,3 +302,18 @@ acceptance. All 51 prior milestones, 23 tracked frozen specs and unrelated stage
 remain intact. The before-integration WIP is preserved at
 `codex/checkpoint-before-material-consumption-integration-20260926T013444Z` (`cc184f7`). No complete-world
 consumption, durable treatment, native recovery or production-scale gate closes with this milestone.
+
+
+The `codex/milestone-consented-world-boundaries-20260929` progress marker preserves produced and
+raw bilateral World transactions, explicit profile 28 / Production V11 continuation, custody
+partition validation, scoped independent critique, structural corrections and current architecture.
+Clean build and 1,883 distinct managed cases pass: Core 1,664, managed Hosting 196 and 24 complete
+world cases with one overlap. Actual 4,096-lot, construction, recraft/care/reload, two-pair, lifecycle
+and rollback proofs retain their bounds. Pre-change recoveries are
+`codex/checkpoint-before-consent-boundary-proof-20260929T080633Z` (`35f8a41`) and
+`codex/checkpoint-consent-proofs-before-hardening-20260929T082152Z` (`048bdf1`).
+Original failing checks, partial delegation results and review exclusions remain in the packet.
+Formats remain unfrozen; byte-vector/remaining codec, durable Host/native/retained-save and full
+assignment/phase/production gates stay open. The marker is a backup pointer; work stays on
+`codex/runtime-foundation`. All 23 frozen specs, 51 old fixtures, prior refs and the unrelated
+19-file predecessor index remain intact. No branch switch, forced update, push or merge occurs.

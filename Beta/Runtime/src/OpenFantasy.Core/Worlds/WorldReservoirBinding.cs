@@ -16,7 +16,8 @@ internal static class WorldReservoirBinding
     }
 
     internal static bool TryReconcile(LiquidReservoirState? current, CountedAuthorityState inventory,
-        ProductionSnapshot? production, out LiquidReservoirState? candidate)
+        ProductionSnapshot? production, out LiquidReservoirState? candidate,
+        WorldConsentedTransferEvidence? transfer = null)
     {
         candidate = current;
         if (current is null || Matches(current, inventory, production))
@@ -25,7 +26,18 @@ internal static class WorldReservoirBinding
         }
         try
         {
-            var capacity = current.Capacity.PlanReconcile(inventory, production);
+            bool producedTransfer = transfer?.Approval.Command.Terms.LotKind
+                == Authority.ConsentedMaterial.ConsentedMaterialLotKind.Produced;
+            if (producedTransfer && (transfer!.OriginalInventoryHash != current.Capacity.Inventory.ContentHash
+                || transfer.OriginalProductionHash != current.Capacity.Production?.ContentHash
+                || transfer.CandidateInventoryHash != inventory.ContentHash
+                || transfer.CandidateProductionHash != production?.ContentHash))
+            {
+                return false;
+            }
+            var capacity = producedTransfer
+                ? current.Capacity.PlanReconcileCustody(inventory, production!)
+                : current.Capacity.PlanReconcile(inventory, production);
             candidate = current.PlanApply(capacity).ApplyTo(current);
             return true;
         }

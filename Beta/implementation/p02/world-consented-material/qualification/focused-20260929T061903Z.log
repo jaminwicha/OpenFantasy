@@ -1,0 +1,71 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:03.94]     OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.A_host_controlled_resident_gives_onward_under_the_same_rules [FAIL]
+  Failed OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.A_host_controlled_resident_gives_onward_under_the_same_rules [433 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Crafted(TransformedLot& lot) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 259
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.A_host_controlled_resident_gives_onward_under_the_same_rules() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 77
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.02]     OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Control_is_decided_per_participant_before_any_availability_is_disclosed [FAIL]
+  Failed OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Control_is_decided_per_participant_before_any_availability_is_disclosed [64 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Crafted(TransformedLot& lot) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 259
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Control_is_decided_per_participant_before_any_availability_is_disclosed() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 116
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.06]     OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Every_admitted_step_profile_and_older_action_codec_refuses_the_paired_intents [FAIL]
+  Failed OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Every_admitted_step_profile_and_older_action_codec_refuses_the_paired_intents [16 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Crafted(TransformedLot& lot) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 259
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Every_admitted_step_profile_and_older_action_codec_refuses_the_paired_intents() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 204
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.07]     OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Existing_world_admission_refuses_a_consented_production_context [FAIL]
+[xUnit.net 00:00:04.07]     OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Time_presence_body_and_stock_refusals_leave_the_valid_pair_applicable [FAIL]
+  Failed OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Existing_world_admission_refuses_a_consented_production_context [3 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Crafted(TransformedLot& lot) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 259
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Existing_world_admission_refuses_a_consented_production_context() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 238
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Time_presence_body_and_stock_refusals_leave_the_valid_pair_applicable [11 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Crafted(TransformedLot& lot) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 259
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Time_presence_body_and_stock_refusals_leave_the_valid_pair_applicable() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 160
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.08]     OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.A_split_gift_of_crafted_stock_needs_both_controls_bodies_reach_and_records_exact_evidence [FAIL]
+  Failed OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.A_split_gift_of_crafted_stock_needs_both_controls_bodies_reach_and_records_exact_evidence [8 ms]
+  Error Message:
+   System.ArgumentException : Every input's mass must be allocated exactly once across the output units.
+  Stack Trace:
+     at OpenFantasy.Core.Production.CraftRecipeDefinition.ValidateAllocations(IEnumerable`1 values) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 77
+   at OpenFantasy.Core.Production.CraftRecipeDefinition..ctor(EntityId definitionId, MaterialRecipeDefinition physicalRecipe, IEnumerable`1 bindings, IEnumerable`1 allocations) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Production/CraftRecipeDefinition.cs:line 40
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.Crafted(TransformedLot& lot) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 259
+   at OpenFantasy.Core.Tests.Worlds.ConsentedWorldMaterialTests.A_split_gift_of_crafted_stock_needs_both_controls_bodies_reach_and_records_exact_evidence() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/ConsentedWorldMaterialTests.cs:line 32
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/world-consented-material/qualification/focused-20260929T061903Z.trx
+
+Failed!  - Failed:     6, Passed:    68, Skipped:     0, Total:    74, Duration: 21 s - OpenFantasy.Core.Tests.dll (net8.0)

@@ -1,0 +1,31 @@
+{
+  "status": "checks_pass_format_and_application_gates_open",
+  "build": "qualification/integration-build-20260929T083012Z.json",
+  "checks": [
+    {
+      "path": "qualification/integration-core-20260929T083106Z.json",
+      "passed": 1664,
+      "sourceAndAssembliesUnchanged": true,
+      "elapsedSeconds": 182.262
+    },
+    {
+      "path": "qualification/integration-hosting-20260929T083426Z.json",
+      "passed": 196,
+      "sourceAndAssembliesUnchanged": true,
+      "elapsedSeconds": 380.792
+    },
+    {
+      "path": "qualification/integration-journey-20260929T083037Z.json",
+      "passed": 24,
+      "sourceAndAssembliesUnchanged": true,
+      "elapsedSeconds": 14.661
+    }
+  ],
+  "distinctPassingTestIds": 1883,
+  "frozenSpecsVerified": 23,
+  "legacyFixturesVerified": 51,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "referenceLinksVerified": 100,
+  "nativeOptInCasesUnrun": 5,
+  "acceptance": "Verified Core implementation progress; independent new-format byte vectors, remaining codec matrix/review coverage, durable Host/native/migration/retained-save and all phase gates remain open. Formats are unfrozen."
+}

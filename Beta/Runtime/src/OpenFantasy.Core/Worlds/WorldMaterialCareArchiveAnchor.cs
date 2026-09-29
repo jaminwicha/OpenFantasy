@@ -74,6 +74,7 @@ public sealed class WorldMaterialCareArchiveAnchor
     {
         if (world.WorldId != Reference.WorldId || world.BranchId != Reference.BranchId
             || world.AdmissionVersion != AdmissionVersion || world.Revision < Reference.BoundarySequence
+            || Production.SupportsConsentedWorld != (world.Coordination?.ConsentedMaterial is not null)
             || world.Quests is not { } quests || world.EncounterLifecycle is not { } lifecycle)
         {
             throw new ArgumentException("A coordinated successor must retain its sealed world's scope and admission.");

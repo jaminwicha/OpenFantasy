@@ -48,6 +48,7 @@ public static class WorldAdmissionValidator
         admission.ReadEncounterLifecycle();
         admission.ReadCare();
         admission.ReadResourceHistory();
+        admission.ReadConsentedMaterial();
         return admission.Complete();
     }
 
@@ -124,6 +125,29 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed, world.EncounterLifecycle);
+
+        internal void ReadConsentedMaterial()
+        {
+            if (world.Coordination?.ConsentedMaterial is not { } history)
+            {
+                return;
+            }
+            foreach (WorldConsentedTransferEvidence transfer in history.Transfers)
+            {
+                var terms = transfer.Approval.Command.Terms;
+                Add(transfer.CommandId, WorldIdentityRole.CauseReference, unique: true);
+                Add(transfer.AcceptanceId, WorldIdentityRole.CauseReference, unique: true);
+                Require(terms.SenderActorId, WorldIdentityRole.Actor);
+                Require(terms.RecipientActorId, WorldIdentityRole.Actor);
+                Require(terms.SourceCustodianId, WorldIdentityRole.Custodian);
+                Require(terms.DestinationCustodianId, WorldIdentityRole.Custodian);
+                bool produced = terms.LotKind == Authority.ConsentedMaterial.ConsentedMaterialLotKind.Produced;
+                WorldIdentityRole lotRole = produced ? WorldIdentityRole.TransformedLot : WorldIdentityRole.Lot;
+                Add(terms.LotId, lotRole);
+                Add(transfer.MovedLotId, lotRole);
+                Require(transfer.RightsOwnerId, produced ? WorldIdentityRole.ProductionBatch : WorldIdentityRole.CountedSource);
+            }
+        }
 
         internal void ReadResourceHistory()
         {

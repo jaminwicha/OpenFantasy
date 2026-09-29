@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e5be8643-da99-41c3-a26a-6acc73383ea8" name="@mac 2026-09-29 02:20:12" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T02:20:12.7053800-05:00" queuing="2026-09-29T02:20:12.7053800-05:00" start="2026-09-29T02:20:08.4427800-05:00" finish="2026-09-29T02:20:15.6839250-05:00" />
+  <TestSettings name="default" id="cdb8299c-39b2-4f4c-99f8-0d5b2350cd87">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_02_20_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="7e6bcc06-589f-40a1-b97e-ade41a06d154" testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" computerName="mac" duration="00:00:02.2855779" startTime="2026-09-29T02:20:13.3119060-05:00" endTime="2026-09-29T02:20:15.5976970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e6bcc06-589f-40a1-b97e-ade41a06d154" />
+    <UnitTestResult executionId="27144804-d160-4d43-ab7a-cedb73af79e8" testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" computerName="mac" duration="00:00:00.6870942" startTime="2026-09-29T02:20:12.6235440-05:00" endTime="2026-09-29T02:20:13.3107750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27144804-d160-4d43-ab7a-cedb73af79e8" />
+    <UnitTestResult executionId="d3b064d5-2ac5-4e7c-b829-a2c9a1b5cd27" testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" computerName="mac" duration="00:00:01.4392395" startTime="2026-09-29T02:20:11.1492610-05:00" endTime="2026-09-29T02:20:12.6148880-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3b064d5-2ac5-4e7c-b829-a2c9a1b5cd27" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7731cb59-fe76-48e5-b52a-5c3f9ea227fe">
+      <Execution id="7e6bcc06-589f-40a1-b97e-ade41a06d154" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5927f562-32c5-57d4-b6bf-a82ef44076f5">
+      <Execution id="d3b064d5-2ac5-4e7c-b829-a2c9a1b5cd27" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5">
+      <Execution id="27144804-d160-4d43-ab7a-cedb73af79e8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" executionId="7e6bcc06-589f-40a1-b97e-ade41a06d154" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" executionId="27144804-d160-4d43-ab7a-cedb73af79e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" executionId="d3b064d5-2ac5-4e7c-b829-a2c9a1b5cd27" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.69]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.56]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.88]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:06.42]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

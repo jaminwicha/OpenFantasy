@@ -1,0 +1,33 @@
+{
+  "status": "review_disposition_recorded",
+  "taskPath": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-consent-codec-critic-ff78kmxw",
+  "modelRequested": "fable[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 900,
+  "clientEstimateLimitUsd": 10,
+  "ownership": "Read-only prior unreviewed codecs and archive continuity; mutable test worker files excluded",
+  "startedUtc": "2026-09-29T08:08:07.415438+00:00",
+  "actualModelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 28,
+      "outputTokens": 58775,
+      "cacheReadInputTokens": 1263897,
+      "cacheCreationInputTokens": 203053,
+      "webSearchRequests": 0,
+      "costUSD": 7.31606425,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 45849,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "clientEstimateUsd": 7.31606425,
+  "permissionDenials": [],
+  "isError": false,
+  "elapsedSeconds": 692.932,
+  "contextPostflight": "verified",
+  "result": "CODEC_CRITIC_REVIEW.md",
+  "adapterElapsedSeconds": 694.332
+}

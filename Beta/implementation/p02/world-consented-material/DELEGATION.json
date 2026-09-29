@@ -1,0 +1,30 @@
+{
+  "status": "completed_partial_not_accepted",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "returnedModelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 190,
+      "outputTokens": 176299,
+      "cacheReadInputTokens": 33435721,
+      "cacheCreationInputTokens": 473453,
+      "webSearchRequests": 0,
+      "costUSD": 26.64484025,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 75048,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "elapsedSeconds": 2334.287,
+  "clientCostEstimateUsd": 26.64484025,
+  "limitSeconds": 3600,
+  "clientBudgetUsd": 30,
+  "processExitCode": 0,
+  "isError": false,
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "result": "Corrected consent semantics and new custody/paired-decision components; complete-world publication, continuation and journey not delivered. No retry or substitute model."
+}

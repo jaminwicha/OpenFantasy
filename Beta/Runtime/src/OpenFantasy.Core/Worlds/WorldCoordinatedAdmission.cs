@@ -63,5 +63,6 @@ public static class WorldCoordinatedAdmission
             anchor.ValidateSuccessor(world);
         }
         coordination.Sources.ValidatePartition(world);
+        WorldConsentedMaterialAdmission.Validate(world);
     }
 }

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f4f6848d-f370-4645-b3c3-fdfefdc50e90" name="@mac 2026-09-29 02:16:50" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T02:16:50.2131480-05:00" queuing="2026-09-29T02:16:50.2131480-05:00" start="2026-09-29T02:16:44.9735810-05:00" finish="2026-09-29T02:16:53.4917190-05:00" />
+  <TestSettings name="default" id="e62a4127-d10b-40b7-a491-24362442f2da">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_02_16_50" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="40a8181a-e797-4fcf-927a-2cfff0b6f36c" testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" computerName="mac" duration="00:00:01.0087856" startTime="2026-09-29T02:16:50.1850120-05:00" endTime="2026-09-29T02:16:51.1940320-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="40a8181a-e797-4fcf-927a-2cfff0b6f36c" />
+    <UnitTestResult executionId="dfacc4ee-8e83-46a4-95e7-252f7e69db6b" testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" computerName="mac" duration="00:00:02.5723156" startTime="2026-09-29T02:16:47.5896940-05:00" endTime="2026-09-29T02:16:50.1735910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dfacc4ee-8e83-46a4-95e7-252f7e69db6b" />
+    <UnitTestResult executionId="107ede81-7147-4b55-b1fd-9f0155dd439c" testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" computerName="mac" duration="00:00:02.1591809" startTime="2026-09-29T02:16:51.1966370-05:00" endTime="2026-09-29T02:16:53.3857200-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="107ede81-7147-4b55-b1fd-9f0155dd439c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.All() Failure: 2 out of 2 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = b596469ca0d174306d241656c7d2315185ff9dd9a68e5ae5d12ad4bc87632e4d, CommandId = ca25feed00000000000000000000014a, CommitSequence = 306, PrincipalId = 0fb0432e3ffc60a90fc7474085e65e0e, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: None
+            Actual:   Unavailable
+[1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = b2e152ff7f022d9f1869046e4ebdb3025fa95f6f2aac3949c5150067bd2dda8f, CommandId = ca25feed00000000000000000000014b, CommitSequence = 306, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: None
+            Actual:   Unavailable</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs:line 62
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7731cb59-fe76-48e5-b52a-5c3f9ea227fe">
+      <Execution id="107ede81-7147-4b55-b1fd-9f0155dd439c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5927f562-32c5-57d4-b6bf-a82ef44076f5">
+      <Execution id="dfacc4ee-8e83-46a4-95e7-252f7e69db6b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5">
+      <Execution id="40a8181a-e797-4fcf-927a-2cfff0b6f36c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" executionId="40a8181a-e797-4fcf-927a-2cfff0b6f36c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" executionId="dfacc4ee-8e83-46a4-95e7-252f7e69db6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" executionId="107ede81-7147-4b55-b1fd-9f0155dd439c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.50]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.59]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.86]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:07.78]       Assert.All() Failure: 2 out of 2 items in the collection did not pass.
+[xUnit.net 00:00:07.78]       [0]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = b596469ca0d174306d241656c7d2315185ff9dd9a68e5ae5d12ad4bc87632e4d, CommandId = ca25feed00000000000000000000014a, CommitSequence = 306, PrincipalId = 0fb0432e3ffc60a90fc7474085e65e0e, ··· }
+[xUnit.net 00:00:07.78]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:07.78]                   Expected: None
+[xUnit.net 00:00:07.78]                   Actual:   Unavailable
+[xUnit.net 00:00:07.78]       [1]: Item:  WorldActionReceipt { BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandHash = b2e152ff7f022d9f1869046e4ebdb3025fa95f6f2aac3949c5150067bd2dda8f, CommandId = ca25feed00000000000000000000014b, CommitSequence = 306, PrincipalId = 4e00919408a2dc50de4c11103649b6db, ··· }
+[xUnit.net 00:00:07.78]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:07.78]                   Expected: None
+[xUnit.net 00:00:07.78]                   Actual:   Unavailable
+[xUnit.net 00:00:07.78]       Stack Trace:
+[xUnit.net 00:00:07.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs(62,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts()
+[xUnit.net 00:00:07.78]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:07.78]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:07.79]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T02:16:53.4167590-05:00">
+        <Text>[xUnit.net 00:00:07.78]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

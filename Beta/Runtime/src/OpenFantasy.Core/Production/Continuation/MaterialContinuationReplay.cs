@@ -38,7 +38,9 @@ internal sealed class MaterialContinuationReplay
             context.Recipes, [], context.Basis.TransformedLots, state.SupportsConsumption ? [] : null,
             context, new MaterialOperationHistory(context, []));
         _derived = context.Basis.TransformedLots.ToDictionary(value => value.LotId);
-        _commands = state.MaterialHistory!.Operations.Select(value => value.CommandId).ToHashSet();
+        _commands = state.MaterialHistory!.Operations.Select(value => value.CommandId)
+            .Concat(state.MaterialHistory.Operations.OfType<MaterialConsentedTransferOperation>()
+                .Select(value => value.AcceptanceId)).ToHashSet();
     }
 
     internal void Validate()
@@ -57,6 +59,7 @@ internal sealed class MaterialContinuationReplay
                 case MaterialGatherOperation gather: Gather(gather.Evidence); break;
                 case MaterialTransferOperation transfer: Transfer(transfer); break;
                 case MaterialDeliveryOperation delivery: Deliver(delivery); break;
+                case MaterialConsentedTransferOperation consented: Consent(consented); break;
                 default: throw new ArgumentException("Unsupported ordered material operation.");
             }
             _replayed.Add(operation);
@@ -287,6 +290,24 @@ internal sealed class MaterialContinuationReplay
             throw new ArgumentException("The recorded raw transfer must pass its real permission and revision rules.");
         if (moved != operation.Command.Payload.LotId) Created(moved);
         _inventory = decision.Candidate;
+    }
+
+    private void Consent(MaterialConsentedTransferOperation operation)
+    {
+        if (_state.Continuation?.SupportsConsentedTransfer != true)
+            throw new ArgumentException("Consented transfers require their explicit continued capability.");
+        // Recorded deliveries are historical claims, never current authenticated ingress. They are
+        // decided again against the replayed owners at this operation's exact ordered position.
+        ConsentedMaterialTransferOutcome outcome = ConsentedMaterialTransferStep.Apply(_inventory,
+            _derived.Values.ToArray(), operation.Approval, Occupied,
+            id => Occupied(id) || _commands.Contains(id));
+        if (outcome.Rejection != WorldActionRejection.None || outcome.MovedLotId != operation.MovedLotId)
+            throw new ArgumentException("The recorded consented transfer must reproduce its bilateral approval, lot revision, capacity rules and exact result at its ordered position.");
+        if (operation.MovedLotId != operation.Approval.Command.Terms.LotId) Created(operation.MovedLotId);
+        _occupied.Add(operation.AcceptanceId);
+        _inventory = outcome.Inventory;
+        _derived.Clear();
+        foreach (TransformedLot lot in outcome.ProducedLots) _derived.Add(lot.LotId, lot);
     }
 
     private void Deliver(MaterialDeliveryOperation operation)

@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="66df0499-bf5b-4e63-80b6-09214cd1182c" name="@mac 2026-09-29 02:12:59" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T02:12:59.2101100-05:00" queuing="2026-09-29T02:12:59.2101100-05:00" start="2026-09-29T02:12:56.1786550-05:00" finish="2026-09-29T02:12:59.2134850-05:00" />
+  <TestSettings name="default" id="ac0fe030-072d-4fd7-8c15-500ee1dbdeaa">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_02_12_59" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2655edfd-8ed9-4b4b-ae7c-a577ca973670" testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" computerName="mac" duration="00:00:00.1862170" startTime="2026-09-29T02:12:58.9564630-05:00" endTime="2026-09-29T02:12:59.1525390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2655edfd-8ed9-4b4b-ae7c-a577ca973670">
+      <Output>
+        <ErrorInfo>
+          <Message>System.ArgumentException : Counted contents exceed custodian capacity. (Parameter 'lots')</Message>
+          <StackTrace>   at OpenFantasy.Core.Custody.CustodySnapshot..ctor(EntityId worldId, EntityId branchId, UInt64 revision, IEnumerable`1 storages, IEnumerable`1 lots) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Custody/CustodySnapshot.cs:line 48
+   at OpenFantasy.Hosting.Tests.Care.CareWorldFixture..ctor(Boolean craftedDose, Nullable`1 rewardExperience, Nullable`1 strikeMana, Boolean invalidNormalizedSpeedOnReward, Boolean enduranceProfile, Boolean pairedRewardBoundary, Boolean invalidSecondRewardSpeed, Boolean archiveCareBoundary, Boolean materialCareStress, Nullable`1 freshBerryUnits, IReadOnlyCollection`1 extraFreshRecipes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs:line 76
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.ConsentedPotionFixture..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs:line 137
+   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs:line 16
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="527895b9-5e73-4904-aa65-c8c51e60628c" testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" computerName="mac" duration="00:00:00.2815504" startTime="2026-09-29T02:12:58.6694530-05:00" endTime="2026-09-29T02:12:58.9511370-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="527895b9-5e73-4904-aa65-c8c51e60628c" />
+    <UnitTestResult executionId="a46b4d02-75da-4359-9b1d-126b26d67721" testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" computerName="mac" duration="00:00:00.8395209" startTime="2026-09-29T02:12:57.8193120-05:00" endTime="2026-09-29T02:12:58.6648640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a46b4d02-75da-4359-9b1d-126b26d67721" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7731cb59-fe76-48e5-b52a-5c3f9ea227fe">
+      <Execution id="2655edfd-8ed9-4b4b-ae7c-a577ca973670" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5927f562-32c5-57d4-b6bf-a82ef44076f5">
+      <Execution id="a46b4d02-75da-4359-9b1d-126b26d67721" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5">
+      <Execution id="527895b9-5e73-4904-aa65-c8c51e60628c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" executionId="2655edfd-8ed9-4b4b-ae7c-a577ca973670" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" executionId="527895b9-5e73-4904-aa65-c8c51e60628c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" executionId="a46b4d02-75da-4359-9b1d-126b26d67721" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="2" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.38]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.87]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.08]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.46]       System.ArgumentException : Counted contents exceed custodian capacity. (Parameter 'lots')
+[xUnit.net 00:00:02.46]       Stack Trace:
+[xUnit.net 00:00:02.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Custody/CustodySnapshot.cs(48,0): at OpenFantasy.Core.Custody.CustodySnapshot..ctor(EntityId worldId, EntityId branchId, UInt64 revision, IEnumerable`1 storages, IEnumerable`1 lots)
+[xUnit.net 00:00:02.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareWorldFixture.cs(76,0): at OpenFantasy.Hosting.Tests.Care.CareWorldFixture..ctor(Boolean craftedDose, Nullable`1 rewardExperience, Nullable`1 strikeMana, Boolean invalidNormalizedSpeedOnReward, Boolean enduranceProfile, Boolean pairedRewardBoundary, Boolean invalidSecondRewardSpeed, Boolean archiveCareBoundary, Boolean materialCareStress, Nullable`1 freshBerryUnits, IReadOnlyCollection`1 extraFreshRecipes)
+[xUnit.net 00:00:02.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs(137,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.ConsentedPotionFixture..ctor()
+[xUnit.net 00:00:02.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldCraftedJourneyTests.cs(16,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts()
+[xUnit.net 00:00:02.46]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.46]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.47]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T02:12:59.1561320-05:00">
+        <Text>[xUnit.net 00:00:02.46]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -82,7 +82,8 @@ public sealed class GeographyProductionDependencies
 
     internal ProductionSnapshot Decode(ReadOnlySpan<byte> bytes)
     {
-        return Context.SupportsCompleteWorld ? ProductionCodecV9.Decode(bytes, Context)
+        return Context.SupportsConsentedWorld ? ProductionCodecV11.Decode(bytes, Context)
+            : Context.SupportsCompleteWorld ? ProductionCodecV9.Decode(bytes, Context)
             : Context.SupportsReservedTransport ?ProductionCodecV7.Decode(bytes, Context, GatherEvidence, ConstructionEvidence, TransportEvidence)
             : Context.SupportsConstruction ? ProductionCodecV5.Decode(bytes, Context, GatherEvidence, ConstructionEvidence)
             : Context.SupportsMaterialOperations ? ProductionCodecV4.Decode(bytes, Context, GatherEvidence)

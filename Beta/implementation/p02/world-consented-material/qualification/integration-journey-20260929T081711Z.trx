@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e8841962-47bd-4e62-82e5-44bffafde717" name="@mac 2026-09-29 03:17:17" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T03:17:17.8065690-05:00" queuing="2026-09-29T03:17:17.8065690-05:00" start="2026-09-29T03:17:13.5168150-05:00" finish="2026-09-29T03:17:28.7382450-05:00" />
+  <TestSettings name="default" id="596a8096-5a24-4c22-ac7f-46d504322a48">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_03_17_17" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="71f8268c-a9c2-4ba6-aa0a-722e95c1264d" testId="b9effa11-72f1-6e99-fe67-2cc79ba8cd17" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: True)" computerName="mac" duration="00:00:00.1866987" startTime="2026-09-29T03:17:26.2350550-05:00" endTime="2026-09-29T03:17:26.4642000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="71f8268c-a9c2-4ba6-aa0a-722e95c1264d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Live produced lots must equal the partition replay"···
+Actual:   "Reconciliation requires advancing custody with unc"···
+           ↑ (pos 0)</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Boolean movedSuffix) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldLiveLotMutationTests.cs:line 56
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="75c1bb86-1672-42da-94ce-4c9fb56dc1a3" testId="d4e10249-a262-3875-37fe-3f71c9d8cc04" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Actual_completed_construction_stays_reserved_before_and_after_a_decoded_cut" computerName="mac" duration="00:00:01.1908697" startTime="2026-09-29T03:17:27.4689130-05:00" endTime="2026-09-29T03:17:28.6598750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="75c1bb86-1672-42da-94ce-4c9fb56dc1a3" />
+    <UnitTestResult executionId="3f70ffde-b114-41e5-ab30-f321650544b7" testId="04ce108d-3c1b-dc2a-fb2c-5bf02d2e78aa" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Combined_live_lot_bound_admits_a_split_one_below_then_refuses_splits_and_still_moves_whole_lots" computerName="mac" duration="00:00:02.1672044" startTime="2026-09-29T03:17:24.0660450-05:00" endTime="2026-09-29T03:17:26.2334380-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f70ffde-b114-41e5-ab30-f321650544b7" />
+    <UnitTestResult executionId="7c0cc125-8eee-4bb2-b78c-e1cf25d5f95f" testId="8df639a1-649c-cf33-d8d9-c5ce4218ca9b" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_third_actor_ordered_between_acceptance_and_offer_keeps_its_own_outcome_beside_the_applied_pair" computerName="mac" duration="00:00:00.1292951" startTime="2026-09-29T03:17:23.0991460-05:00" endTime="2026-09-29T03:17:23.2285510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7c0cc125-8eee-4bb2-b78c-e1cf25d5f95f" />
+    <UnitTestResult executionId="5c23be83-86c5-4b1a-89c0-1b9635a8971a" testId="4a684af0-c0dd-5e4c-405b-24a7de2c31e7" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing(offerNamesThirdActor: True)" computerName="mac" duration="00:00:00.1102021" startTime="2026-09-29T03:17:23.6040720-05:00" endTime="2026-09-29T03:17:23.7143310-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c23be83-86c5-4b1a-89c0-1b9635a8971a" />
+    <UnitTestResult executionId="0b0f9708-c7fb-48dc-b643-8901b6bcd9c7" testId="f4e182b1-dc07-930a-cecb-1d23285d3ad8" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 2)" computerName="mac" duration="00:00:00.1014411" startTime="2026-09-29T03:17:23.2306730-05:00" endTime="2026-09-29T03:17:23.3321920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b0f9708-c7fb-48dc-b643-8901b6bcd9c7" />
+    <UnitTestResult executionId="7cd1a40f-502c-43b5-a521-f28c39a29c6b" testId="07d4b301-a907-0dce-e392-7a6fb0783901" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Two_pairs_in_one_batch_are_decided_independently_with_four_receipts" computerName="mac" duration="00:00:00.1382401" startTime="2026-09-29T03:17:23.8256960-05:00" endTime="2026-09-29T03:17:23.9640300-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7cd1a40f-502c-43b5-a521-f28c39a29c6b" />
+    <UnitTestResult executionId="98e0801a-1b0e-4944-b753-43ecfb251b9b" testId="a69e1050-33cf-e0ae-2740-4aef7f3c197e" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 0)" computerName="mac" duration="00:00:00.1096538" startTime="2026-09-29T03:17:23.4926290-05:00" endTime="2026-09-29T03:17:23.6023670-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98e0801a-1b0e-4944-b753-43ecfb251b9b" />
+    <UnitTestResult executionId="2afe765d-f619-4542-ac73-b29f4eb017d6" testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" computerName="mac" duration="00:00:00.5784589" startTime="2026-09-29T03:17:19.6693520-05:00" endTime="2026-09-29T03:17:20.2479280-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2afe765d-f619-4542-ac73-b29f4eb017d6" />
+    <UnitTestResult executionId="5951b799-e4c7-4f9b-8b00-9c64c28384fd" testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" computerName="mac" duration="00:00:01.6344879" startTime="2026-09-29T03:17:16.0814850-05:00" endTime="2026-09-29T03:17:17.7266240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5951b799-e4c7-4f9b-8b00-9c64c28384fd" />
+    <UnitTestResult executionId="fdd17f5b-4ab6-418a-a74e-cf3b66329f7d" testId="a07ffa3f-1064-dae2-2111-7a0e2d4f2a46" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing(offerNamesThirdActor: False)" computerName="mac" duration="00:00:00.1095250" startTime="2026-09-29T03:17:23.7150790-05:00" endTime="2026-09-29T03:17:23.8246630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fdd17f5b-4ab6-418a-a74e-cf3b66329f7d" />
+    <UnitTestResult executionId="a63f8891-2f93-49d8-af5d-7803ceebd09f" testId="80788019-c05d-c5dd-e633-ce2ab6756086" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Both_participants_spend_movement_and_each_get_their_own_canonical_receipt" computerName="mac" duration="00:00:00.0998055" startTime="2026-09-29T03:17:23.9650120-05:00" endTime="2026-09-29T03:17:24.0648660-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a63f8891-2f93-49d8-af5d-7803ceebd09f" />
+    <UnitTestResult executionId="a89855f1-6bfa-4e64-ba65-c15f118678ad" testId="fba15492-552d-4983-9ef2-04fcdf4b9c95" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Full_transfer_window_cuts_before_the_next_pair_and_retains_closed_identities" computerName="mac" duration="00:00:02.4447931" startTime="2026-09-29T03:17:20.6523950-05:00" endTime="2026-09-29T03:17:23.0974460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a89855f1-6bfa-4e64-ba65-c15f118678ad" />
+    <UnitTestResult executionId="111a5f93-b858-4fd6-ba86-ccde3b96d691" testId="e6492830-47af-8d23-9a14-1b705e2affb5" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities" computerName="mac" duration="00:00:00.4000985" startTime="2026-09-29T03:17:20.2491240-05:00" endTime="2026-09-29T03:17:20.6493810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="111a5f93-b858-4fd6-ba86-ccde3b96d691" />
+    <UnitTestResult executionId="fed2b326-87e0-4c3e-a471-0cfdac488a3b" testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" computerName="mac" duration="00:00:00.7983734" startTime="2026-09-29T03:17:26.6692770-05:00" endTime="2026-09-29T03:17:27.4677520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fed2b326-87e0-4c3e-a471-0cfdac488a3b" />
+    <UnitTestResult executionId="c0340498-5014-4722-9833-1558f7981833" testId="2f2aa19b-b9cd-74b6-6c45-3c7175d268da" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Paired_intents_follow_the_actual_encounter_care_and_recovery_owners" computerName="mac" duration="00:00:01.9330927" startTime="2026-09-29T03:17:17.7334260-05:00" endTime="2026-09-29T03:17:19.6668040-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0340498-5014-4722-9833-1558f7981833" />
+    <UnitTestResult executionId="6c5e2f03-c9fa-4ee6-b2f3-60faffcdc98b" testId="0b893900-5003-932f-4367-ef1bc20d0fec" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: False)" computerName="mac" duration="00:00:00.2018988" startTime="2026-09-29T03:17:26.4656430-05:00" endTime="2026-09-29T03:17:26.6681730-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c5e2f03-c9fa-4ee6-b2f3-60faffcdc98b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "Live produced lots must equal the partition replay"···
+Actual:   "Reconciliation requires advancing custody with unc"···
+           ↑ (pos 0)</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Boolean movedSuffix) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldLiveLotMutationTests.cs:line 56
+   at InvokeStub_ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="99b21882-6a44-47fe-ab3c-d410f5625525" testId="70722524-f345-861b-bfc3-8104ad74275a" testName="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 1)" computerName="mac" duration="00:00:00.1575805" startTime="2026-09-29T03:17:23.3340860-05:00" endTime="2026-09-29T03:17:23.4917550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="99b21882-6a44-47fe-ab3c-d410f5625525" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7731cb59-fe76-48e5-b52a-5c3f9ea227fe">
+      <Execution id="fed2b326-87e0-4c3e-a471-0cfdac488a3b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing(offerNamesThirdActor: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4a684af0-c0dd-5e4c-405b-24a7de2c31e7">
+      <Execution id="5c23be83-86c5-4b1a-89c0-1b9635a8971a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0b893900-5003-932f-4367-ef1bc20d0fec">
+      <Execution id="6c5e2f03-c9fa-4ee6-b2f3-60faffcdc98b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Balanced_live_lot_mutation_is_refused_by_the_custody_partition" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_third_actor_ordered_between_acceptance_and_offer_keeps_its_own_outcome_beside_the_applied_pair" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8df639a1-649c-cf33-d8d9-c5ce4218ca9b">
+      <Execution id="7c0cc125-8eee-4bb2-b78c-e1cf25d5f95f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_third_actor_ordered_between_acceptance_and_offer_keeps_its_own_outcome_beside_the_applied_pair" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="70722524-f345-861b-bfc3-8104ad74275a">
+      <Execution id="99b21882-6a44-47fe-ab3c-d410f5625525" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Invalid_pair_keeps_all_material_owners_and_evidence_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b9effa11-72f1-6e99-fe67-2cc79ba8cd17">
+      <Execution id="71f8268c-a9c2-4ba6-aa0a-722e95c1264d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Balanced_live_lot_mutation_is_refused_by_the_custody_partition" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5927f562-32c5-57d4-b6bf-a82ef44076f5">
+      <Execution id="5951b799-e4c7-4f9b-8b00-9c64c28384fd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Combined_live_lot_bound_admits_a_split_one_below_then_refuses_splits_and_still_moves_whole_lots" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="04ce108d-3c1b-dc2a-fb2c-5bf02d2e78aa">
+      <Execution id="3f70ffde-b114-41e5-ab30-f321650544b7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Combined_live_lot_bound_admits_a_split_one_below_then_refuses_splits_and_still_moves_whole_lots" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5">
+      <Execution id="2afe765d-f619-4542-ac73-b29f4eb017d6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f4e182b1-dc07-930a-cecb-1d23285d3ad8">
+      <Execution id="0b0f9708-c7fb-48dc-b643-8901b6bcd9c7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Invalid_pair_keeps_all_material_owners_and_evidence_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing(offerNamesThirdActor: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a07ffa3f-1064-dae2-2111-7a0e2d4f2a46">
+      <Execution id="fdd17f5b-4ab6-418a-a74e-cf3b66329f7d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Actual_completed_construction_stays_reserved_before_and_after_a_decoded_cut" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d4e10249-a262-3875-37fe-3f71c9d8cc04">
+      <Execution id="75c1bb86-1672-42da-94ce-4c9fb56dc1a3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Actual_completed_construction_stays_reserved_before_and_after_a_decoded_cut" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a69e1050-33cf-e0ae-2740-4aef7f3c197e">
+      <Execution id="98e0801a-1b0e-4944-b753-43ecfb251b9b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Invalid_pair_keeps_all_material_owners_and_evidence_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Two_pairs_in_one_batch_are_decided_independently_with_four_receipts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="07d4b301-a907-0dce-e392-7a6fb0783901">
+      <Execution id="7cd1a40f-502c-43b5-a521-f28c39a29c6b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Two_pairs_in_one_batch_are_decided_independently_with_four_receipts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Full_transfer_window_cuts_before_the_next_pair_and_retains_closed_identities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fba15492-552d-4983-9ef2-04fcdf4b9c95">
+      <Execution id="a89855f1-6bfa-4e64-ba65-c15f118678ad" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Full_transfer_window_cuts_before_the_next_pair_and_retains_closed_identities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e6492830-47af-8d23-9a14-1b705e2affb5">
+      <Execution id="111a5f93-b858-4fd6-ba86-ccde3b96d691" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Both_participants_spend_movement_and_each_get_their_own_canonical_receipt" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="80788019-c05d-c5dd-e633-ce2ab6756086">
+      <Execution id="a63f8891-2f93-49d8-af5d-7803ceebd09f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Both_participants_spend_movement_and_each_get_their_own_canonical_receipt" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Paired_intents_follow_the_actual_encounter_care_and_recovery_owners" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2f2aa19b-b9cd-74b6-6c45-3c7175d268da">
+      <Execution id="c0340498-5014-4722-9833-1558f7981833" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests" name="Paired_intents_follow_the_actual_encounter_care_and_recovery_owners" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b9effa11-72f1-6e99-fe67-2cc79ba8cd17" executionId="71f8268c-a9c2-4ba6-aa0a-722e95c1264d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d4e10249-a262-3875-37fe-3f71c9d8cc04" executionId="75c1bb86-1672-42da-94ce-4c9fb56dc1a3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="04ce108d-3c1b-dc2a-fb2c-5bf02d2e78aa" executionId="3f70ffde-b114-41e5-ab30-f321650544b7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8df639a1-649c-cf33-d8d9-c5ce4218ca9b" executionId="7c0cc125-8eee-4bb2-b78c-e1cf25d5f95f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4a684af0-c0dd-5e4c-405b-24a7de2c31e7" executionId="5c23be83-86c5-4b1a-89c0-1b9635a8971a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f4e182b1-dc07-930a-cecb-1d23285d3ad8" executionId="0b0f9708-c7fb-48dc-b643-8901b6bcd9c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="07d4b301-a907-0dce-e392-7a6fb0783901" executionId="7cd1a40f-502c-43b5-a521-f28c39a29c6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a69e1050-33cf-e0ae-2740-4aef7f3c197e" executionId="98e0801a-1b0e-4944-b753-43ecfb251b9b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9a20a3e5-bbbf-4d1c-b441-61d89eff3bc5" executionId="2afe765d-f619-4542-ac73-b29f4eb017d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5927f562-32c5-57d4-b6bf-a82ef44076f5" executionId="5951b799-e4c7-4f9b-8b00-9c64c28384fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a07ffa3f-1064-dae2-2111-7a0e2d4f2a46" executionId="fdd17f5b-4ab6-418a-a74e-cf3b66329f7d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="80788019-c05d-c5dd-e633-ce2ab6756086" executionId="a63f8891-2f93-49d8-af5d-7803ceebd09f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fba15492-552d-4983-9ef2-04fcdf4b9c95" executionId="a89855f1-6bfa-4e64-ba65-c15f118678ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6492830-47af-8d23-9a14-1b705e2affb5" executionId="111a5f93-b858-4fd6-ba86-ccde3b96d691" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7731cb59-fe76-48e5-b52a-5c3f9ea227fe" executionId="fed2b326-87e0-4c3e-a471-0cfdac488a3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2f2aa19b-b9cd-74b6-6c45-3c7175d268da" executionId="c0340498-5014-4722-9833-1558f7981833" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b893900-5003-932f-4367-ef1bc20d0fec" executionId="6c5e2f03-c9fa-4ee6-b2f3-60faffcdc98b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="70722524-f345-861b-bfc3-8104ad74275a" executionId="99b21882-6a44-47fe-ab3c-d410f5625525" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="18" executed="18" passed="16" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.68]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.35]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.66]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:12.12]       Assert.Equal() Failure: Strings differ
+[xUnit.net 00:00:12.13]                  ↓ (pos 0)
+[xUnit.net 00:00:12.13]       Expected: "Live produced lots must equal the partition replay"···
+[xUnit.net 00:00:12.13]       Actual:   "Reconciliation requires advancing custody with unc"···
+[xUnit.net 00:00:12.13]                  ↑ (pos 0)
+[xUnit.net 00:00:12.13]       Stack Trace:
+[xUnit.net 00:00:12.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldLiveLotMutationTests.cs(56,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Boolean movedSuffix)
+[xUnit.net 00:00:12.13]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:12.13]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:12.32]       Assert.Equal() Failure: Strings differ
+[xUnit.net 00:00:12.32]                  ↓ (pos 0)
+[xUnit.net 00:00:12.32]       Expected: "Live produced lots must equal the partition replay"···
+[xUnit.net 00:00:12.32]       Actual:   "Reconciliation requires advancing custody with unc"···
+[xUnit.net 00:00:12.32]                  ↑ (pos 0)
+[xUnit.net 00:00:12.32]       Stack Trace:
+[xUnit.net 00:00:12.32]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/ConsentedWorldLiveLotMutationTests.cs(56,0): at OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Boolean movedSuffix)
+[xUnit.net 00:00:12.32]            at InvokeStub_ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(Object, Span`1)
+[xUnit.net 00:00:12.32]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:14.32]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T03:17:26.4741160-05:00">
+        <Text>[xUnit.net 00:00:12.12]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T03:17:26.6694190-05:00">
+        <Text>[xUnit.net 00:00:12.32]     OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: False) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

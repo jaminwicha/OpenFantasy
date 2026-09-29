@@ -1,0 +1,11 @@
+{
+  "checkpoint": "codex/checkpoint-consented-world-reviewed-wip-20260929T080027Z",
+  "snapshot": "a3d222c80e6405a9466d66e04a0dfd35375d0f2c",
+  "sourceHead": "640e37f89208703b7cc2f15591ae793920f4e508",
+  "workingBranch": "codex/runtime-foundation",
+  "includedScope": "Complete successor WIP and qualification/critique/reference records; predecessor index excluded and unchanged",
+  "verification": "Clean build; 1869 distinct cases pass. WIP recovery only; all remaining critic gates preserved.",
+  "finalEvidence": "qualification/FINAL_CHECKS.json",
+  "finalEvidenceSha256": "3d55969b756f96dae6aea1baa93bc3aafd60d665ba25276f5a7224bca2175542",
+  "headAndIndexUnchanged": true
+}

@@ -25,6 +25,9 @@ public sealed class MaterialOperationHistory
             if (values.Count == MaximumOperations || operation.Sequence != checked(context.BaseProductionRevision + (ulong)values.Count + 1)
                 || !commands.Add(operation.CommandId))
                 throw new ArgumentException("Material operations require bounded exact order and distinct permanent commands.");
+            if (operation is MaterialConsentedTransferOperation consented
+                && (!context.SupportsConsentedTransfer || !commands.Add(consented.AcceptanceId)))
+                throw new ArgumentException("Consented transfers require their explicit capability and distinct permanent approval identities.");
             if (context.SupportsExcavation && operation is MaterialGatherOperation or MaterialConstructionOperation)
                 throw new ArgumentException("Excavation work must use the shared terrain, effort and actor opportunity owner.");
             if (operation is MaterialExcavationWorkOperation work)
