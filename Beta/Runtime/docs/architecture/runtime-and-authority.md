@@ -92,6 +92,10 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    eligible. The final batch still rechecks both participants and publishes the only outcome; no
    independently advancing service is called from the tick. Participant views read the bounded live
    proposal owner, while archived lookup stays outside frame and simulation callbacks.
+   Explicit [NPC gift preferences](material-proposals.md#explicit-npc-gift-preferences) advise offers
+   and replies under each configured Host actor's own control. Their copied immutable configuration
+   is separate from world consent; saved commands and permanent identity occupancy prevent unchanged
+   decisions from becoming new requests after refusal, archive rotation or reopening.
 3. [WorldStepProcessor](../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) evaluates the
    host-selected [WorldStepBatch](../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs) against the
    committed profile, scope, revision and hold state. Domain planners recheck rights, resources,

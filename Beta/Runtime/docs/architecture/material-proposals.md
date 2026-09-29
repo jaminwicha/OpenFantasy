@@ -233,9 +233,63 @@ An accepted dose enters the recipient's actual owned inventory; spending it requ
 selected self-use command and a later cutoff. Acceptance itself restores no HP and grants no care
 permission. Ordinary helper aid retains its own explicit permission and selection policy.
 
+## Explicit NPC gift preferences
+
+[`LocalMaterialGiftPolicy`](../../src/OpenFantasy.Hosting/Simulation/LocalMaterialGiftPolicy.cs)
+configures one Host actor, one named partner and an exact self-use definition/version. The session
+copies policies into a bounded immutable actor-ordered collection and rejects duplicate actors,
+missing participants, player-controlled givers and mismatched definitions. Constructors without a
+policy collection retain their behavior. Configuration is Host advice, not saved world state: the
+host supplies it again when opening a session. Submitted decisions and outcomes live in ordinary
+world history; there is no private persistent decision ledger or inferred policy from friendship.
+
+[`LocalMaterialGiftController`](../../src/OpenFantasy.Hosting/Simulation/LocalMaterialGiftController.cs)
+uses the configured NPC's current control binding. Its preference order is:
+
+1. When answering is enabled, choose the first non-due incoming offer from that partner in proposal
+   identity order. Accept only the exact remedy item for a supported body and within the configured
+   desired stock count; otherwise decline. Acceptance still undergoes complete authority validation.
+2. When giving is enabled and no outgoing offer to that partner remains open, consider one owned
+   dose for a living partner whose missing HP can absorb the whole remedy. Both bodies must support
+   the interaction, actual reach must hold in both directions, and available stock must exceed the
+   configured reserve. The defaults retain one dose, seek at most three when receiving, and give
+   offers 64 advancing steps of life. Raw stock precedes produced stock, then lot identity; both
+   queries exclude reserved and protected lots. The offer pins exactly one unit of the chosen lot.
+
+An offers-only policy does not answer or wait on an incoming offer. An answering policy prioritizes
+its preferred incoming decision, including an occupied/refused decision; it does not skip to another
+offer, lot or partner as a hidden retry. An open gift reserves no stock. The configured giver defers
+automatic ordinary assistance while awaiting that partner's answer, so an unselected gift does not
+immediately become direct treatment. This is a scheduling preference, not revoked care permission;
+construction, movement and other authorized uses of the item remain independent. Ordinary assistance
+can be selected again after closure or expiry under its unchanged permission and eligibility checks.
+Deferral is checked only against the supplying helper. It does not prevent the giver from receiving
+someone else's permitted aid, and is separate from whole-actor action-opportunity exclusions.
+
+Gift decisions are considered before optional construction and ordinary aid, after the player's
+selection and any valid bilateral reservation. A proposal or decline consumes only its own actor's
+action; another actor's queued request cannot suppress that declaration. Acceptance also requires
+the sender's opportunity. Only a successful complete preview reserves that sender from later work
+or gift choices. The final selected batch remains the sole authority for all effects.
+
+[`LocalMaterialGiftIdentity`](../../src/OpenFantasy.Hosting/Simulation/LocalMaterialGiftIdentity.cs)
+derives two stable semantic keys. An outgoing decision includes world/branch, both actors, the pinned
+self-use definition, preferred lot identity/kind and the partner's current/maximum HP. An answer
+includes world/branch, both actors and the proposal identity. Neither key includes elapsed time,
+movement, global resource/storage revision, absolute expiry, or a refreshed lot/presence revision.
+The command still captures the exact current revisions required by authority.
+
+Permanent identity occupancy suppresses an unchanged accepted, declined, expired or refused choice
+after segment rotation and reopening. It also suppresses an answer whose current preference would
+switch between acceptance and decline. A changed HP pair, pinned use definition or preferred item
+identity can select a distinct outgoing decision. Returning to an identical earlier key does not
+authorize a retry; repeated help for a new episode requires its own explicit policy contract.
+Updating an observation or reopening the same save cannot manufacture a new decision identity.
+
 ## Boundaries
 
 An independently supplied local delivery is not a network handshake. The world admits no change of
 an actor's control binding, so a saved grant is qualified across disposal and reopening with
-unchanged control. Non-player decisions, native presentation, reserved offers, reciprocal exchange
-and migration of older worlds require their own bindings. Production scale is a separate gate.
+unchanged control. The explicit local medicine policy is not a general NPC motivation or knowledge
+system. Native presentation, reserved offers, reciprocal exchange and migration of older worlds
+require their own bindings. Production scale is a separate gate.

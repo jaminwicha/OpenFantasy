@@ -15,7 +15,7 @@ internal sealed class LocalRestorativeController
     private static readonly byte[] SelectionDomain = Encoding.ASCII.GetBytes(PolicyVersion);
 
     internal IReadOnlyList<WorldActionCommand> SelectActions(WorldSnapshot state, Func<EntityId, bool> isOccupied,
-        IReadOnlySet<EntityId> excludedActorIds)
+        IReadOnlySet<EntityId> excludedActorIds, IReadOnlySet<EntityId>? deferredHelperIds = null)
     {
         ArgumentNullException.ThrowIfNull(state);
         ArgumentNullException.ThrowIfNull(isOccupied);
@@ -35,6 +35,7 @@ internal sealed class LocalRestorativeController
         {
             EntityId helper = permission.HelperActorId, patient = permission.PatientActorId;
             if (!permission.IsActive || participating.Contains(helper) || participating.Contains(patient)
+                || deferredHelperIds?.Contains(helper) == true
                 || LocalCareController.HostControl(state, helper) is not { } control
                 || !WorldActorAvailability.CanAct(state, helper))
             {

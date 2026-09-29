@@ -1,0 +1,37 @@
+{
+  "acceptedScope": "Explicit local NPC gift decisions; full campaign and remaining scheduled joins stay open",
+  "sourceHead": "d2c136c0d12a6bcb87e8bd2b98aba650de673ad9",
+  "evidenceSha256": {
+    "session-build-20260929T131700Z.json": "2cc8a043fee0aacc2627847f7ae9209efdc920a9d172d1f9d6dec479a817d199",
+    "session-focused-20260929T131733Z.json": "f8be2726fa25505b600eb9e25cc1359adb5b2957605674846db53d1434b73f03",
+    "session-regression-20260929T131805Z.json": "f598e1f09f6da9799b202559494add8e7a856f061eaa91f1b57b4507bd9a0645"
+  },
+  "distinctManagedPasses": 154,
+  "focusedPassesIncluded": 23,
+  "newNpcCasesIncluded": 12,
+  "managedAutomaticCuts": 1,
+  "coreAndClientUnchangedFromSourceHead": true,
+  "preservation": {
+    "existingTestFilesUnchanged": 486,
+    "frozenSpecsUnchanged": 23,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "checkpoint": "codex/checkpoint-before-npc-material-decisions-20260929T130212Z",
+    "checkpointVerified": true
+  },
+  "documentSha256": {
+    "Beta/Runtime/docs/architecture/material-proposals.md": "8d2c59037cc97e84a8ec7190d26b2f96313cdc433d5643ce32c903fba3426450",
+    "Beta/Runtime/docs/architecture/ordinary-care.md": "a5a2541b7828ce1c6e762bdf9f962229196f0fbc8e149280c4935b15002239c4",
+    "Beta/Runtime/docs/architecture/runtime-and-authority.md": "cf4019be3255f9fb4f83e31be3d9208eda304ea550e55999577ba3814f5ab6e6",
+    "Beta/implementation/p02/npc-material-decisions/INTEGRATION_REVIEW.md": "162a8963366ba264d2334fecdb4a99b9a3f2f82e32e39e3efbbab430665349ec",
+    "Beta/implementation/AGENT_HANDOFF.md": "2be0443231860fc5eb490c4dc188465bd07f3a0323a5d4eab4c7f4b7781484f9",
+    "Beta/implementation/GIT_MILESTONES.md": "c971f490bb5bde018aab6ee287e4006bb3e2f41a465d90e3de56ef4902508691"
+  },
+  "relativeLinksResolved": 198,
+  "review": "Independent native Astra source review; lead executed checks",
+  "milestone": "codex/milestone-npc-material-decisions-20260929",
+  "limits": [
+    "No full-suite, native, device, human or performance acceptance",
+    "General NPC policy, recurring need episodes and remaining scheduled joins incomplete",
+    "Pending excavation, control rollover, networking and retained-save transition unqualified"
+  ]
+}

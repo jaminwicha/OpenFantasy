@@ -33,6 +33,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private readonly LocalCareController _care = new();
     private readonly LocalRestorativeController _restorative = new();
     private readonly LocalMaterialProposalSelection _materialProposals = new();
+    private readonly LocalMaterialGiftController _materialGifts;
     private readonly Task _loop;
     private LocalWorldView _view;
     private PendingLocalAction? _pending;
@@ -47,8 +48,12 @@ public sealed class LocalWorldSession : IAsyncDisposable
     public LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId, TrustedCommandDelivery delivery)
         : this(authority, playerActorId, delivery, TimeProvider.System) { }
 
+    public LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId, TrustedCommandDelivery delivery,
+        IEnumerable<LocalMaterialGiftPolicy> giftPolicies)
+        : this(authority, playerActorId, delivery, TimeProvider.System, giftPolicies) { }
+
     internal LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId,
-        TrustedCommandDelivery delivery, TimeProvider timeProvider)
+        TrustedCommandDelivery delivery, TimeProvider timeProvider, IEnumerable<LocalMaterialGiftPolicy>? giftPolicies = null)
     {
         ArgumentNullException.ThrowIfNull(authority);
         ArgumentNullException.ThrowIfNull(delivery);
@@ -63,6 +68,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
         _playerActorId = playerActorId;
         _delivery = delivery;
         _time = timeProvider;
+        _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
         _view = ProjectView(state);
         _loop = Task.Run(RunAsync);
     }
@@ -569,10 +575,17 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 excluded.Add(sender);
             }
+            LocalMaterialGiftSelection gifts = _materialGifts.SelectActions(state,
+                identity => selected.Contains(identity) || _authority.IsIdentityOccupiedForHost(identity), excluded,
+                command => _materialProposals.FindReservedSender(_authority, state, cause, command));
+            actions.AddRange(gifts.Actions);
+            selected.UnionWith(gifts.Actions.Select(action => action.CommandId));
+            excluded.UnionWith(gifts.ParticipatingActors);
             actions.AddRange(_npcs.SelectActions(state, () => AllocateSelectedIdentity(selected), excluded));
             excluded.UnionWith(actions.Select(action => action.ActorId));
             actions.AddRange(_restorative.SelectActions(state,
-                identity => selected.Contains(identity) || _authority.IsIdentityOccupiedForHost(identity), excluded));
+                identity => selected.Contains(identity) || _authority.IsIdentityOccupiedForHost(identity), excluded,
+                _materialGifts.DeferredAssistanceActors(state).ToHashSet()));
         }
         return new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision, state.AdvancingSteps,
             state.HasReadingHold ? WorldBatchKind.HeldInteraction : WorldBatchKind.AdvancingStep,

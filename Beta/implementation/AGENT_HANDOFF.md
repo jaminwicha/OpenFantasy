@@ -47,10 +47,16 @@ retain 1M context and Max effort. Delegate substantial bounded work with synchro
 finite limits; Astra integrates. No automatic paid retry, silent substitution or relay agent.
 No external model job is active.
 
-The latest accepted increment is the [scheduled player-session binding](p02/scheduled-material-proposals/INTEGRATION_REVIEW.md),
-preserved by `codex/milestone-scheduled-player-proposals-20260929`: clean build, 142 distinct affected
-managed passes, independent native Astra source critique and current architecture. Its complete scope
-and unfinished NPC integration are recorded below under "Scheduled proposal session assignment".
+The latest accepted increment is [explicit NPC gift decisions](p02/npc-material-decisions/INTEGRATION_REVIEW.md),
+preserved by `codex/milestone-npc-material-decisions-20260929`: clean build, 154 distinct affected
+managed passes (23 focused included), independent native Astra source critique/corrections and current
+architecture. Actual NPC-selected crafted medicine, later player acceptance/use, wanted/unwanted replies
+and no-repeat decisions through real archive/reopen are proved. Configuration is explicit, immutable
+Host advice supplied on session opening; it grants no inventory consent or treatment permission.
+The broader scheduled assignment still has remaining joins recorded below.
+
+The preceding [player-session binding](p02/scheduled-material-proposals/INTEGRATION_REVIEW.md) is
+preserved by `codex/milestone-scheduled-player-proposals-20260929` with its 142-case qualification.
 
 It builds on [saved material proposals](p02/material-proposals/INTEGRATION_REVIEW.md),
 preserved by `codex/milestone-saved-material-proposals-20260929`. Fresh profile30/action16 worlds
@@ -77,7 +83,7 @@ advancing step; the player-session binding below instead uses the existing sched
 Admitted control/session transition and pair/proposal composition remain required before
 multiplayer integration. Historical participant lookup performs a full replay off
 frame callbacks; production indexing, response equalization and live hardware/I/O fault injection
-remain unqualified. NPC decisions, native UI/controls and network authentication remain open.
+remain unqualified. General NPC knowledge/motivation, native UI/controls and network authentication remain open.
 
 Earlier accepted layers remain linked rather than redispatched:
 - [Durable paired Host](p02/durable-consented-world/INTEGRATION_REVIEW.md), milestone
@@ -104,6 +110,14 @@ wet construction/occupancy/custody joins, NPC society, content reachability and 
 cargo/escort circuit. This navigation list neither replaces the scope nor waives a gate.
 
 ## Latest verified runtime checkpoint
+
+`codex/milestone-npc-material-decisions-20260929` preserves copied opt-in NPC preferences, own-control
+offers/acceptances/declines, stable semantic decisions and supplier-only aid deferral while waiting
+for a gift answer. Build and 154 affected managed cases pass, including 12 new NPC cases and eleven
+preserved player cases. One real automatic cut and actual reopening prove stable occupied decisions.
+The independent critic found four useful defects; fixes, test/fixture failures and precise proof limits
+are retained in the [packet](p02/npc-material-decisions/INTEGRATION_REVIEW.md). No new external model
+request, native/device, process-kill or production acceptance is claimed.
 
 `codex/milestone-scheduled-player-proposals-20260929` preserves all four player proposal selections
 through actual session cutoffs, bounded participant views, sender-work arbitration and later accepted
@@ -199,15 +213,17 @@ The [final checks](p02/scheduled-material-proposals/qualification/FINAL_CHECKS.j
 produced stronger work/context contrasts and a corrected test expectation. Architecture is updated.
 No Core/schema, client/asset, old test or frozen-spec change is made; predecessor staging stays exact.
 
-The larger [assignment](p02/scheduled-material-proposals/ASSIGNMENT.md) is **not complete**. Next work
-is the explicit immutable NPC giving/accepting/declining policy and stable semantic decisions through
-refusal/expiry/cut/reopen, followed by the complete policy-chosen gift/use journey. The current medicine
-test creates the helper offer through the service before session ownership; it does not prove an NPC
-chose it. Session archived inspection, pending-excavation/profile joins and native controls also remain.
-Preserve the full custody integration path and original 520-dose objective above.
+The subsequent [NPC increment](p02/npc-material-decisions/INTEGRATION_REVIEW.md) implements explicit
+giving/accepting/declining preferences and stable decisions through refusal/expiry, a real cut and
+reopen. Its new crafted-dose test uses a policy-chosen offer, later player acceptance and later own use;
+the preceding player-only test retains its narrower service-created setup. The larger
+[assignment](p02/scheduled-material-proposals/ASSIGNMENT.md) is **not complete**: session archived
+inspection and pending-excavation/profile joins remain. Native controls, production policy authoring,
+general NPC psychology/knowledge and recurring need episodes are also open. Preserve the full custody
+integration path and original 520-dose objective above; no fresh world is a retained-save migration.
 
 Fable's one run is terminal: monthly spend limit after 113.221 seconds, verified input synchronization,
 notes only, and two recorded tool permission denials. [Failure evidence](p02/scheduled-material-proposals/DELEGATION_FAILURE.md)
 includes actual Fable5.1/1M metadata and the client cost estimate; no savings are claimed. No approval
-is waiting and no retry or model switch occurred. Astra completed this bounded player slice directly.
+is waiting and no retry or model switch occurred. Astra completed the player and NPC slices directly.
 Do not poll/restart handle12326. Fable5.1 remains approved with Max effort; more Opus use is optional.

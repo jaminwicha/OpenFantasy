@@ -152,6 +152,12 @@ helper selection. Permissions are ordered by helper, patient and permission iden
 reserves both participants against another aid proposal in that batch. The complete world still
 authenticates, evaluates and publishes the command atomically.
 
+An explicitly configured [NPC giver](material-proposals.md#explicit-npc-gift-preferences) considers
+its gift decision before volunteering ordinary assistance. While its outgoing offer to the configured
+partner remains open and non-due, the local policy defers that giver's automatic aid. The offer
+reserves no dose and changes no permission. Once the offer closes or expires, ordinary assistance
+again uses its own eligibility checks; declining a gift is not revoking treatment permission.
+
 A helper selection identity binds world/branch, participants, definition/version, permission grant and
 revision, patient resource revision, and exact dose kind/lot/revision/quantity. It excludes clocks,
 movement and unrelated storage/production revisions, although the actual request captures and

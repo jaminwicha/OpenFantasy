@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="26397ded-6b86-4be1-ae78-78b378fe4d55" name="@mac 2026-09-29 08:13:39" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T08:13:39.9302450-05:00" queuing="2026-09-29T08:13:39.9302450-05:00" start="2026-09-29T08:13:33.1188150-05:00" finish="2026-09-29T08:13:49.6303250-05:00" />
+  <TestSettings name="default" id="b340fbea-9147-4d1c-b22f-8b712f287781">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_08_13_39" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a635defa-c822-495a-bff8-7a84d21ff433" testId="9bb82ca7-8189-ecd2-1762-3ff048118c66" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Active, acknowledgeCare: False)" computerName="mac" duration="00:00:00.9411517" startTime="2026-09-29T08:13:43.9404860-05:00" endTime="2026-09-29T08:13:44.8816220-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a635defa-c822-495a-bff8-7a84d21ff433" />
+    <UnitTestResult executionId="e6e2e1c3-6fd5-46dc-970b-7a23eceda18a" testId="23332fed-5792-b404-274b-ef36f2b63373" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Outcome, acknowledgeCare: True)" computerName="mac" duration="00:00:02.9095659" startTime="2026-09-29T08:13:39.8935180-05:00" endTime="2026-09-29T08:13:42.8094240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e6e2e1c3-6fd5-46dc-970b-7a23eceda18a" />
+    <UnitTestResult executionId="1e239aa7-e838-4922-bb58-bbeb571d49a0" testId="9219dc07-5b44-24a3-75ce-0a19104cdac0" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests.Only_a_valid_acceptance_reserves_the_builders_work(expected: RevisionConflict)" computerName="mac" duration="00:00:03.5021086" startTime="2026-09-29T08:13:41.1525600-05:00" endTime="2026-09-29T08:13:44.6544410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e239aa7-e838-4922-bb58-bbeb571d49a0" />
+    <UnitTestResult executionId="c82e276d-4ffc-47cf-adac-d1bbcd6c8c65" testId="f7684c73-d95d-e28b-6c6a-9f57adddffcb" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Invalid_or_ambiguous_configuration_does_not_start_a_session_or_grant_control" computerName="mac" duration="00:00:00.9765672" startTime="2026-09-29T08:13:46.8741380-05:00" endTime="2026-09-29T08:13:47.8507270-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c82e276d-4ffc-47cf-adac-d1bbcd6c8c65" />
+    <UnitTestResult executionId="62503286-e34c-415d-9099-40922424ca8a" testId="c8941612-a223-c05a-4bed-4a935790a572" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers(medicine: True, configured: True)" computerName="mac" duration="00:00:01.6063194" startTime="2026-09-29T08:13:41.1035550-05:00" endTime="2026-09-29T08:13:42.7098000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62503286-e34c-415d-9099-40922424ca8a" />
+    <UnitTestResult executionId="784f95e9-d765-408f-8ea0-649cc29da518" testId="9fc8cc95-9d4a-7627-9d74-0fabd10d9a3a" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.A_refused_wanted_acceptance_keeps_its_one_decision_identity_when_stock_is_already_spent" computerName="mac" duration="00:00:03.7375710" startTime="2026-09-29T08:13:41.1067750-05:00" endTime="2026-09-29T08:13:44.8978570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="784f95e9-d765-408f-8ea0-649cc29da518">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains no elements</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.RevokeOrdinaryAid(LiveWorld live) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs:line 145
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.A_refused_wanted_acceptance_keeps_its_one_decision_identity_when_stock_is_already_spent() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs:line 92
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="8ab4782d-d775-4c2c-8b49-da854be36210" testId="3b3f6904-7f0f-3cd0-34a2-47e245a4ece3" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_invalid_partner_request_cannot_suppress_the_npcs_enabled_offer_or_decline(answers: False)" computerName="mac" duration="00:00:00.7073185" startTime="2026-09-29T08:13:47.8516960-05:00" endTime="2026-09-29T08:13:48.5590210-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8ab4782d-d775-4c2c-8b49-da854be36210" />
+    <UnitTestResult executionId="31556329-2c21-4f1b-aec6-bf414f04c7d0" testId="ff539b74-fd8d-8d8d-39b9-8eb98f6cd137" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment" computerName="mac" duration="00:00:00.4818672" startTime="2026-09-29T08:13:49.1017460-05:00" endTime="2026-09-29T08:13:49.5840520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="31556329-2c21-4f1b-aec6-bf414f04c7d0">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains no elements</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs:line 156
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs:line 162
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6a4c3838-260f-433e-a6c8-e90ed4c8864b" testId="0d7c6e30-72aa-da54-aa88-748138d32121" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests.Only_a_valid_acceptance_reserves_the_builders_work(expected: OutOfReach)" computerName="mac" duration="00:00:02.1810492" startTime="2026-09-29T08:13:44.6555370-05:00" endTime="2026-09-29T08:13:46.8365150-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6a4c3838-260f-433e-a6c8-e90ed4c8864b" />
+    <UnitTestResult executionId="f0200f2b-5988-4151-8306-7d81501fcfa7" testId="6114b6aa-8d81-555a-a0b7-ebbf12077cca" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.An_older_profile_refuses_proposals_before_queueing_and_its_session_keeps_running" computerName="mac" duration="00:00:00.1929230" startTime="2026-09-29T08:13:47.9928710-05:00" endTime="2026-09-29T08:13:48.1859240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f0200f2b-5988-4151-8306-7d81501fcfa7" />
+    <UnitTestResult executionId="47663a34-7ac9-4668-a0fb-36af748dfea2" testId="3aa546be-ac2d-f736-d9af-82c58c1e19ef" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.Accepted_owned_medicine_is_used_on_a_later_cutoff_and_reopens_with_exact_receipts" computerName="mac" duration="00:00:05.9799717" startTime="2026-09-29T08:13:41.0947340-05:00" endTime="2026-09-29T08:13:47.0742920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="47663a34-7ac9-4668-a0fb-36af748dfea2" />
+    <UnitTestResult executionId="741db9a4-46a9-4dc2-aff8-66b8fa6a1e97" testId="fb0c501c-1287-2687-c857-4ff4829eb1b0" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(expire: True)" computerName="mac" duration="00:00:01.7188095" startTime="2026-09-29T08:13:44.9001430-05:00" endTime="2026-09-29T08:13:46.6202460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="741db9a4-46a9-4dc2-aff8-66b8fa6a1e97">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains no elements</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.RevokeOrdinaryAid(LiveWorld live) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs:line 145
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(Boolean expire) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs:line 19
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="7e11022f-da4a-46bf-a584-ba3e5a0e6e37" testId="01a0ed8b-5e4a-a616-6755-87237cf5e872" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.The_player_creates_withdraws_and_declines_through_cutoffs_without_seeing_another_pairs_offer" computerName="mac" duration="00:00:00.2942048" startTime="2026-09-29T08:13:48.1878520-05:00" endTime="2026-09-29T08:13:48.4821110-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7e11022f-da4a-46bf-a584-ba3e5a0e6e37" />
+    <UnitTestResult executionId="a5a507fc-c511-4415-bbab-c14d880d346e" testId="2235b8ae-e31e-e0aa-a5a1-9127d707c0fe" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Confrontation, acknowledgeCare: False)" computerName="mac" duration="00:00:01.1256551" startTime="2026-09-29T08:13:42.8113720-05:00" endTime="2026-09-29T08:13:43.9370050-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5a507fc-c511-4415-bbab-c14d880d346e" />
+    <UnitTestResult executionId="2a7f527f-5c1f-4859-b173-0685876ada30" testId="54b2b680-af67-4d8e-8bfd-685b1bb3103e" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(expire: False)" computerName="mac" duration="00:00:00.9863786" startTime="2026-09-29T08:13:46.6217390-05:00" endTime="2026-09-29T08:13:47.6084770-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a7f527f-5c1f-4859-b173-0685876ada30">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains no elements</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowNoElementsException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.RevokeOrdinaryAid(LiveWorld live) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs:line 145
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(Boolean expire) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs:line 19
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="95ecda22-0e27-4120-91b6-95d2885896a7" testId="da30828c-8eec-d934-eb7d-4381dc8264b4" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Outcome, acknowledgeCare: False)" computerName="mac" duration="00:00:03.8218372" startTime="2026-09-29T08:13:36.0394590-05:00" endTime="2026-09-29T08:13:39.8759940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="95ecda22-0e27-4120-91b6-95d2885896a7" />
+    <UnitTestResult executionId="fbfef8da-6bc4-4a2c-b13e-fb4b3134e0c6" testId="94050912-cc49-bb77-ea92-668c9cfa17a6" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_invalid_partner_request_cannot_suppress_the_npcs_enabled_offer_or_decline(answers: True)" computerName="mac" duration="00:00:00.5403817" startTime="2026-09-29T08:13:48.5598720-05:00" endTime="2026-09-29T08:13:49.1002790-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fbfef8da-6bc4-4a2c-b13e-fb4b3134e0c6" />
+    <UnitTestResult executionId="37d42955-c5bb-4650-ac1b-3458feff91f5" testId="e57072ee-4186-bc07-e677-8f6519139980" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers(medicine: False, configured: True)" computerName="mac" duration="00:00:01.4820776" startTime="2026-09-29T08:13:42.7110760-05:00" endTime="2026-09-29T08:13:44.1931040-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="37d42955-c5bb-4650-ac1b-3458feff91f5" />
+    <UnitTestResult executionId="93e93db1-5bfe-4d9a-82f2-89507d1ec898" testId="227370dc-0682-53b0-4fd9-5da09685bd4d" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.A_reading_hold_refuses_offer_selection_without_faulting_and_closes_without_elapsed_time" computerName="mac" duration="00:00:00.9152270" startTime="2026-09-29T08:13:47.0762670-05:00" endTime="2026-09-29T08:13:47.9915100-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93e93db1-5bfe-4d9a-82f2-89507d1ec898" />
+    <UnitTestResult executionId="f2372530-3dc7-4f8d-863d-bbf2b412ff7f" testId="b667ea53-c663-dff5-492e-1fd30775e126" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers(medicine: True, configured: False)" computerName="mac" duration="00:00:01.3714125" startTime="2026-09-29T08:13:44.1941000-05:00" endTime="2026-09-29T08:13:45.5655010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2372530-3dc7-4f8d-863d-bbf2b412ff7f" />
+    <UnitTestResult executionId="7685c77f-2d71-4842-bae0-1b454b11907a" testId="07f3a268-2050-36f7-7b53-0afc2bae73ad" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use" computerName="mac" duration="00:00:01.3023102" startTime="2026-09-29T08:13:45.5666950-05:00" endTime="2026-09-29T08:13:46.8709920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7685c77f-2d71-4842-bae0-1b454b11907a">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: Tuple (5d652f48a612a324027911ffd13cf5f9, 7b1fdc87ec3ab11ccc89697c36f5179e, c2a8563991641acafeda7bb4686d521d, 1)
+Actual:   Tuple (5d652f48a612a324027911ffd13cf5f9, 7b1fdc87ec3ab11ccc89697c36f5179e, ca250000000000000000000000000003, 1)</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs:line 30
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs:line 71
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cb036f23-2f41-40e1-82e5-38da9a509eac" testId="decbe8e8-5b2a-768d-c5b2-fe8720ac49a2" testName="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests.Only_a_valid_acceptance_reserves_the_builders_work(expected: None)" computerName="mac" duration="00:00:05.0954664" startTime="2026-09-29T08:13:36.0395000-05:00" endTime="2026-09-29T08:13:41.1444160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cb036f23-2f41-40e1-82e5-38da9a509eac" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers(medicine: True, configured: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c8941612-a223-c05a-4bed-4a935790a572">
+      <Execution id="62503286-e34c-415d-9099-40922424ca8a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests.Only_a_valid_acceptance_reserves_the_builders_work(expected: None)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="decbe8e8-5b2a-768d-c5b2-fe8720ac49a2">
+      <Execution id="cb036f23-2f41-40e1-82e5-38da9a509eac" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests" name="Only_a_valid_acceptance_reserves_the_builders_work" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_invalid_partner_request_cannot_suppress_the_npcs_enabled_offer_or_decline(answers: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3b3f6904-7f0f-3cd0-34a2-47e245a4ece3">
+      <Execution id="8ab4782d-d775-4c2c-8b49-da854be36210" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="An_invalid_partner_request_cannot_suppress_the_npcs_enabled_offer_or_decline" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(expire: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fb0c501c-1287-2687-c857-4ff4829eb1b0">
+      <Execution id="741db9a4-46a9-4dc2-aff8-66b8fa6a1e97" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests" name="Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.The_player_creates_withdraws_and_declines_through_cutoffs_without_seeing_another_pairs_offer" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="01a0ed8b-5e4a-a616-6755-87237cf5e872">
+      <Execution id="7e11022f-da4a-46bf-a584-ba3e5a0e6e37" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests" name="The_player_creates_withdraws_and_declines_through_cutoffs_without_seeing_another_pairs_offer" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Confrontation, acknowledgeCare: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2235b8ae-e31e-e0aa-a5a1-9127d707c0fe">
+      <Execution id="a5a507fc-c511-4415-bbab-c14d880d346e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests" name="Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.Accepted_owned_medicine_is_used_on_a_later_cutoff_and_reopens_with_exact_receipts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3aa546be-ac2d-f736-d9af-82c58c1e19ef">
+      <Execution id="47663a34-7ac9-4668-a0fb-36af748dfea2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests" name="Accepted_owned_medicine_is_used_on_a_later_cutoff_and_reopens_with_exact_receipts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers(medicine: False, configured: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e57072ee-4186-bc07-e677-8f6519139980">
+      <Execution id="37d42955-c5bb-4650-ac1b-3458feff91f5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Outcome, acknowledgeCare: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="23332fed-5792-b404-274b-ef36f2b63373">
+      <Execution id="e6e2e1c3-6fd5-46dc-970b-7a23eceda18a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests" name="Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_invalid_partner_request_cannot_suppress_the_npcs_enabled_offer_or_decline(answers: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="94050912-cc49-bb77-ea92-668c9cfa17a6">
+      <Execution id="fbfef8da-6bc4-4a2c-b13e-fb4b3134e0c6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="An_invalid_partner_request_cannot_suppress_the_npcs_enabled_offer_or_decline" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ff539b74-fd8d-8d8d-39b9-8eb98f6cd137">
+      <Execution id="31556329-2c21-4f1b-aec6-bf414f04c7d0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.An_older_profile_refuses_proposals_before_queueing_and_its_session_keeps_running" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6114b6aa-8d81-555a-a0b7-ebbf12077cca">
+      <Execution id="f0200f2b-5988-4151-8306-7d81501fcfa7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests" name="An_older_profile_refuses_proposals_before_queueing_and_its_session_keeps_running" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers(medicine: True, configured: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b667ea53-c663-dff5-492e-1fd30775e126">
+      <Execution id="f2372530-3dc7-4f8d-863d-bbf2b412ff7f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="Only_an_explicit_recipient_policy_accepts_wanted_or_declines_unwanted_player_offers" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(expire: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="54b2b680-af67-4d8e-8bfd-685b1bb3103e">
+      <Execution id="2a7f527f-5c1f-4859-b173-0685876ada30" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests" name="Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests.Only_a_valid_acceptance_reserves_the_builders_work(expected: OutOfReach)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0d7c6e30-72aa-da54-aa88-748138d32121">
+      <Execution id="6a4c3838-260f-433e-a6c8-e90ed4c8864b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests" name="Only_a_valid_acceptance_reserves_the_builders_work" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="07f3a268-2050-36f7-7b53-0afc2bae73ad">
+      <Execution id="7685c77f-2d71-4842-bae0-1b454b11907a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.Invalid_or_ambiguous_configuration_does_not_start_a_session_or_grant_control" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f7684c73-d95d-e28b-6c6a-9f57adddffcb">
+      <Execution id="c82e276d-4ffc-47cf-adac-d1bbcd6c8c65" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests" name="Invalid_or_ambiguous_configuration_does_not_start_a_session_or_grant_control" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests.Only_a_valid_acceptance_reserves_the_builders_work(expected: RevisionConflict)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9219dc07-5b44-24a3-75ce-0a19104cdac0">
+      <Execution id="1e239aa7-e838-4922-bb58-bbeb571d49a0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalWorkTests" name="Only_a_valid_acceptance_reserves_the_builders_work" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests.A_reading_hold_refuses_offer_selection_without_faulting_and_closes_without_elapsed_time" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="227370dc-0682-53b0-4fd9-5da09685bd4d">
+      <Execution id="93e93db1-5bfe-4d9a-82f2-89507d1ec898" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalSessionTests" name="A_reading_hold_refuses_offer_selection_without_faulting_and_closes_without_elapsed_time" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Outcome, acknowledgeCare: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="da30828c-8eec-d934-eb7d-4381dc8264b4">
+      <Execution id="95ecda22-0e27-4120-91b6-95d2885896a7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests" name="Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.A_refused_wanted_acceptance_keeps_its_one_decision_identity_when_stock_is_already_spent" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9fc8cc95-9d4a-7627-9d74-0fabd10d9a3a">
+      <Execution id="784f95e9-d765-408f-8ea0-649cc29da518" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests" name="A_refused_wanted_acceptance_keeps_its_one_decision_identity_when_stock_is_already_spent" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests.Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure(phase: Active, acknowledgeCare: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9bb82ca7-8189-ecd2-1762-3ff048118c66">
+      <Execution id="a635defa-c822-495a-bff8-7a84d21ff433" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialProposalContextTests" name="Encounter_and_pending_care_refuse_proposals_before_selection_without_mutation_or_loop_failure" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9bb82ca7-8189-ecd2-1762-3ff048118c66" executionId="a635defa-c822-495a-bff8-7a84d21ff433" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="23332fed-5792-b404-274b-ef36f2b63373" executionId="e6e2e1c3-6fd5-46dc-970b-7a23eceda18a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9219dc07-5b44-24a3-75ce-0a19104cdac0" executionId="1e239aa7-e838-4922-bb58-bbeb571d49a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f7684c73-d95d-e28b-6c6a-9f57adddffcb" executionId="c82e276d-4ffc-47cf-adac-d1bbcd6c8c65" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8941612-a223-c05a-4bed-4a935790a572" executionId="62503286-e34c-415d-9099-40922424ca8a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9fc8cc95-9d4a-7627-9d74-0fabd10d9a3a" executionId="784f95e9-d765-408f-8ea0-649cc29da518" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3b3f6904-7f0f-3cd0-34a2-47e245a4ece3" executionId="8ab4782d-d775-4c2c-8b49-da854be36210" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff539b74-fd8d-8d8d-39b9-8eb98f6cd137" executionId="31556329-2c21-4f1b-aec6-bf414f04c7d0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0d7c6e30-72aa-da54-aa88-748138d32121" executionId="6a4c3838-260f-433e-a6c8-e90ed4c8864b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6114b6aa-8d81-555a-a0b7-ebbf12077cca" executionId="f0200f2b-5988-4151-8306-7d81501fcfa7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3aa546be-ac2d-f736-d9af-82c58c1e19ef" executionId="47663a34-7ac9-4668-a0fb-36af748dfea2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb0c501c-1287-2687-c857-4ff4829eb1b0" executionId="741db9a4-46a9-4dc2-aff8-66b8fa6a1e97" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="01a0ed8b-5e4a-a616-6755-87237cf5e872" executionId="7e11022f-da4a-46bf-a584-ba3e5a0e6e37" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2235b8ae-e31e-e0aa-a5a1-9127d707c0fe" executionId="a5a507fc-c511-4415-bbab-c14d880d346e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54b2b680-af67-4d8e-8bfd-685b1bb3103e" executionId="2a7f527f-5c1f-4859-b173-0685876ada30" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da30828c-8eec-d934-eb7d-4381dc8264b4" executionId="95ecda22-0e27-4120-91b6-95d2885896a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="94050912-cc49-bb77-ea92-668c9cfa17a6" executionId="fbfef8da-6bc4-4a2c-b13e-fb4b3134e0c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e57072ee-4186-bc07-e677-8f6519139980" executionId="37d42955-c5bb-4650-ac1b-3458feff91f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="227370dc-0682-53b0-4fd9-5da09685bd4d" executionId="93e93db1-5bfe-4d9a-82f2-89507d1ec898" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b667ea53-c663-dff5-492e-1fd30775e126" executionId="f2372530-3dc7-4f8d-863d-bbf2b412ff7f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="07f3a268-2050-36f7-7b53-0afc2bae73ad" executionId="7685c77f-2d71-4842-bae0-1b454b11907a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="decbe8e8-5b2a-768d-c5b2-fe8720ac49a2" executionId="cb036f23-2f41-40e1-82e5-38da9a509eac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="22" executed="22" passed="17" failed="5" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.43]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.90]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.17]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:11.14]       System.InvalidOperationException : Sequence contains no elements
+[xUnit.net 00:00:11.14]       Stack Trace:
+[xUnit.net 00:00:11.14]            at System.Linq.ThrowHelper.ThrowNoElementsException()
+[xUnit.net 00:00:11.14]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:11.14]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs(145,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.RevokeOrdinaryAid(LiveWorld live)
+[xUnit.net 00:00:11.14]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs(92,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.A_refused_wanted_acceptance_keeps_its_one_decision_identity_when_stock_is_already_spent()
+[xUnit.net 00:00:11.14]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:12.86]       System.InvalidOperationException : Sequence contains no elements
+[xUnit.net 00:00:12.86]       Stack Trace:
+[xUnit.net 00:00:12.86]            at System.Linq.ThrowHelper.ThrowNoElementsException()
+[xUnit.net 00:00:12.86]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:12.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs(145,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.RevokeOrdinaryAid(LiveWorld live)
+[xUnit.net 00:00:12.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs(19,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(Boolean expire)
+[xUnit.net 00:00:12.86]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:13.11]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:13.11]       Expected: Tuple (5d652f48a612a324027911ffd13cf5f9, 7b1fdc87ec3ab11ccc89697c36f5179e, c2a8563991641acafeda7bb4686d521d, 1)
+[xUnit.net 00:00:13.11]       Actual:   Tuple (5d652f48a612a324027911ffd13cf5f9, 7b1fdc87ec3ab11ccc89697c36f5179e, ca250000000000000000000000000003, 1)
+[xUnit.net 00:00:13.11]       Stack Trace:
+[xUnit.net 00:00:13.11]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs(30,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use()
+[xUnit.net 00:00:13.11]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs(71,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use()
+[xUnit.net 00:00:13.11]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:13.85]       System.InvalidOperationException : Sequence contains no elements
+[xUnit.net 00:00:13.85]       Stack Trace:
+[xUnit.net 00:00:13.85]            at System.Linq.ThrowHelper.ThrowNoElementsException()
+[xUnit.net 00:00:13.85]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:13.85]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs(145,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.RevokeOrdinaryAid(LiveWorld live)
+[xUnit.net 00:00:13.85]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcPersistenceTests.cs(19,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(Boolean expire)
+[xUnit.net 00:00:13.85]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:15.82]       System.InvalidOperationException : Sequence contains no elements
+[xUnit.net 00:00:15.82]       Stack Trace:
+[xUnit.net 00:00:15.82]            at System.Linq.ThrowHelper.ThrowNoElementsException()
+[xUnit.net 00:00:15.82]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:15.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs(156,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment()
+[xUnit.net 00:00:15.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialNpcTests.cs(162,0): at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment()
+[xUnit.net 00:00:15.82]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:15.83]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T08:13:44.9037510-05:00">
+        <Text>[xUnit.net 00:00:11.14]     OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.A_refused_wanted_acceptance_keeps_its_one_decision_identity_when_stock_is_already_spent [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T08:13:46.6215960-05:00">
+        <Text>[xUnit.net 00:00:12.86]     OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(expire: True) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T08:13:46.8720860-05:00">
+        <Text>[xUnit.net 00:00:13.11]     OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_explicit_helper_policy_offers_actual_medicine_for_later_player_acceptance_and_use [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T08:13:47.6104460-05:00">
+        <Text>[xUnit.net 00:00:13.85]     OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcPersistenceTests.Declined_or_expired_gifts_do_not_repeat_after_ticks_movement_archive_or_reopen(expire: False) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T08:13:49.5847790-05:00">
+        <Text>[xUnit.net 00:00:15.82]     OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialNpcTests.An_outstanding_gift_waits_for_the_player_instead_of_becoming_automatic_treatment [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
