@@ -1,0 +1,49 @@
+{
+  "verifiedAtUtc": "2026-09-29T05:03:05.262574+00:00",
+  "baseCommit": "cd261b6a4317144a0d8081ccfb33f721937ab7d3",
+  "targetMilestone": "codex/milestone-consented-custody",
+  "qualification": {
+    "solutionBuild": "qualification/critic-final-build.json",
+    "affectedRegression": "qualification/critic-final-core.json",
+    "distinctPassed": 147,
+    "failed": 0,
+    "skipped": 0,
+    "sourcePins": "qualification/critic-final-source-pins.json",
+    "sourcePinsSha256": "428a10bbe564c6a5ee104b6242f7cdee6ef44c1d7e69ac277ad8347cbe9497f3",
+    "sourceUnchanged": true,
+    "runtimeAssembliesSha256": {
+      "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "258134bb52a3ff714dc929544944ad51f493fbd2bd0ab83f014fcf5a005b9dd3",
+      "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "258134bb52a3ff714dc929544944ad51f493fbd2bd0ab83f014fcf5a005b9dd3",
+      "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "da57d5e450f31832724bb63f7af8f90a35150b1a5b95e0c688a86d94040f50d3",
+      "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "f72fd0a735bada6a7d5bbfa004b263d8068226b1a19920293b0b5ae474c17ad7",
+      "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "258134bb52a3ff714dc929544944ad51f493fbd2bd0ab83f014fcf5a005b9dd3",
+      "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "da57d5e450f31832724bb63f7af8f90a35150b1a5b95e0c688a86d94040f50d3",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "7d6dcc6c7ccacc40f263c3924532a79a99d86a59c9129e1a66241786e92c1175",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "258134bb52a3ff714dc929544944ad51f493fbd2bd0ab83f014fcf5a005b9dd3",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "da57d5e450f31832724bb63f7af8f90a35150b1a5b95e0c688a86d94040f50d3",
+      "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "258134bb52a3ff714dc929544944ad51f493fbd2bd0ab83f014fcf5a005b9dd3",
+      "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "99f21f9a5920027d61442de26d0ac7d5862d62ce7c5940d2896afc3145cfd4a8"
+    }
+  },
+  "preservation": {
+    "priorMilestoneRefsUnchanged": 78,
+    "frozenSpecHashesUnchanged": 23,
+    "predecessorStagedFiles": 19,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "archiveBodySha256": "6f59a287cc370d0fb60cdecc4bee2ea2dd29dbae51d194cb1987ea3c4cc9c33e",
+    "archiveBodyPreservedVerbatim": true,
+    "compactHandoffBytes": 10216
+  },
+  "documents": {
+    "localLinkTargetsResolved": 244,
+    "diffCheckPassed": true,
+    "applicationNamingChecked": true
+  },
+  "upstream": {
+    "commit": "8201a6d970c0223a1ceb682f5e0b68f5d1dc068a",
+    "milestone": "codex/milestone-handoff-receipt-discipline",
+    "installedTargetsVerified": 6,
+    "formatValidator": "Unavailable: PyYAML missing. Unchanged frontmatter, exact installed bytes and links checked separately."
+  },
+  "scope": "Standalone Core raw counted-source bilateral transfer only. No world/Host/native/asynchronous-offer binding; production and full-phase gates remain open."
+}

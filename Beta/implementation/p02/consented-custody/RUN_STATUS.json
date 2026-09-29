@@ -1,0 +1,16 @@
+{
+  "status": "integrated_verified",
+  "lastObservationUtc": "2026-09-29T05:02:04.676710+00:00",
+  "activeExternalJobs": 0,
+  "requestedModel": "fable[1m]",
+  "returnedModel": "claude-fable-5-1",
+  "contextWindow": 1000000,
+  "effortRequested": "max",
+  "sourceFiles": 9,
+  "newDistinctCases": 42,
+  "affectedDistinctCasesPassed": 147,
+  "independentReview": "completed; findings and limitations recorded in CRITIC_DISPOSITION.md",
+  "acceptance": "Standalone Core authority only; clean solution build and affected regression. No world/Host/native binding or full gate closure.",
+  "milestone": "codex/milestone-consented-custody",
+  "nextAction": "Follow INTEGRATION_PLAN.md: complete production/history/world admission and durable delivery/offer bindings before claiming gameplay gifting."
+}

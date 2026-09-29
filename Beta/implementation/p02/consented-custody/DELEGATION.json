@@ -1,0 +1,27 @@
+{
+  "status": "completed_pending_review",
+  "elapsedSeconds": 1188.563,
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 32,
+      "outputTokens": 103887,
+      "cacheReadInputTokens": 1594225,
+      "cacheCreationInputTokens": 230074,
+      "webSearchRequests": 0,
+      "costUSD": 10.194706249999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 53366,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "clientCostEstimateUsd": 10.194706249999998,
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "privateEvidence": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-consented-custody-sv3swczb/run",
+  "scope": "Completed standalone implementation; lead integration and independent critique required. No native/durable-world acceptance or net credit-savings claim."
+}

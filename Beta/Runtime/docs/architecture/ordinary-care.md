@@ -26,11 +26,15 @@ and revision, and must precede revocation. Self-use has no external permission t
 creation and broader medical consent require their own admitted operations.
 
 Care permission and inventory deposit permission have different scopes. Assistance may consume a
-helper-owned dose without transferring it to the patient's backpack. A gift independently needs the
+helper-owned dose without transferring it to the patient's backpack. A unilateral gift independently needs the
 source owner's control and the destination's custody deposit policy; an OwnerOnly recipient does not
 accept another actor's gift merely because treatment was authorized. Revoking treatment neither grants
 nor revokes an inventory transfer right. Item acquisition, treatment and patient withdrawal retain
 separate typed operations and validation.
+
+The standalone [consented custody authority](consented-custody.md) separately admits a counted-source
+transfer when both current owners approve that exact transaction. Its recipient acceptance grants
+no treatment permission, and it has no binding to the care-enabled world or native interface.
 
 Each immutable use definition and permission retains its canonical digest lazily on that exact
 object. The first successful read uses the canonical encoder; concurrent readers publish one complete

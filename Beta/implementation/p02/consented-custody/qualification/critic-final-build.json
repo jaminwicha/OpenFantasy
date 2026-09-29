@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "Beta/Runtime/OpenFantasy.sln",
+    "--no-restore",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--verbosity",
+    "quiet"
+  ],
+  "limitSeconds": 180,
+  "sourcePinsFile": "critic-final-source-pins.json",
+  "sourcePinsSha256": "428a10bbe564c6a5ee104b6242f7cdee6ef44c1d7e69ac277ad8347cbe9497f3",
+  "exitCode": 0,
+  "elapsedSeconds": 8.318488874938339,
+  "sourceUnchanged": true
+}

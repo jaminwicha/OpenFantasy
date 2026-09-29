@@ -1,0 +1,36 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-restore",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--filter",
+    "FullyQualifiedName~Receipt_matching_rejects_substituted_scope_or_participant",
+    "--logger",
+    "trx;LogFileName=receipt-binding-red.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/consented-custody/qualification"
+  ],
+  "sourceSha256": {
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/ConsentedTransferAcceptance.cs": "2e68f44fa92927d95829acd36b4a463c92791138daf24919ca32625d20006e5e",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/ConsentedTransferTerms.cs": "2e373c78be31597088bc56c7841756b6a214a9cf8e7f2859e33bb3d127571ad1",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/DeliveredTransferAcceptance.cs": "c7fdd204793696a87695b2df7ba1aa8385015ff7325ea851e09929828e53dd1b",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/ConsentedTransferCommand.cs": "92127782b645e799dcd21fb5a162341a896266f299236f51b82fa215be28b1f8",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/ConsentedTransferDecision.cs": "aadb36c6651bc8d95d733665f25741f865049da0cf641156f821bd62fb680aaa",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/DeliveredTransferCommand.cs": "bcf892466554414467a4e8fcc87d20ce3d0ac812bc320c72b12c3654b8de16fe",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/ConsentedTransferCodecV1.cs": "38b8cc41d0fe8bd88d425d6292429710e5ba4a9d191b9f8d211e8b4cec32c74e",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/ConsentedTransferAuthority.cs": "bb77e6902761b23c0585b9ea729327d6a6d3c1fab899117e4dab0eb59a59923e",
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody/ConsentedTransferReceipt.cs": "084669d424933dc2a2701bf6be01cd9fb42a97359a78acbb66dd0b5d589de015",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferFixture.cs": "b02a0fc1e8fda85bd6581fdab93604120a8bcbdc001c5490d293ceafd2a9257d",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs": "e659f28af204292c83d97aeb066ca5221dd17018e61c88728c7bca333ef6230f",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferAuthorityTests.cs": "9ddb70264ccad766d7a786aa16cba01726e9e4d7439aa7cdb130564235ca5884"
+  },
+  "expected": "Four failing cases reproduce receipt metadata substitution before the fix.",
+  "exitCode": 1,
+  "elapsedSeconds": 58.38963533286005,
+  "outcomes": {
+    "Failed": 4
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "head": "cd261b6a4317144a0d8081ccfb33f721937ab7d3",
+  "ref": "codex/checkpoint-before-consented-critic-fixes-20260929T045253Z",
+  "snapshot": "f1d98b75f93b7ebc212e101ba005dd3c1e5cd5a5",
+  "scope": [
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody",
+    "Beta/Runtime/docs/architecture/consented-custody.md",
+    "Beta/Runtime/docs/architecture/README.md",
+    "Beta/Runtime/docs/architecture/materials-and-activities.md",
+    "Beta/Runtime/docs/architecture/ordinary-care.md",
+    "Beta/implementation/p02/consented-custody",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/AGENT_HANDOFF_2026-09-29_ARCHIVE.md"
+  ],
+  "verification": "138 focused cases pass; independent review complete, findings pending disposition. No world/Host/native binding."
+}

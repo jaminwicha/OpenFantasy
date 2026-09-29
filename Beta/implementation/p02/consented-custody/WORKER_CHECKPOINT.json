@@ -1,0 +1,13 @@
+{
+  "head": "cd261b6a4317144a0d8081ccfb33f721937ab7d3",
+  "ref": "codex/checkpoint-consented-custody-worker-20260929T043915Z",
+  "snapshot": "430fc6bf2826fb2a410056bf63437c892d00c6b4",
+  "scope": [
+    "Beta/Runtime/src/OpenFantasy.Core/Authority/ConsentedCustody",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody",
+    "Beta/Runtime/docs/architecture/consented-custody.md",
+    "Beta/implementation/p02/consented-custody",
+    "Beta/implementation/AGENT_HANDOFF.md"
+  ],
+  "verification": "WIP:134 affected cases pass; lead receipt-binding review and independent critique pending; no runtime-world binding."
+}

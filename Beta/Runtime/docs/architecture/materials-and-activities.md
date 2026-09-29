@@ -15,6 +15,12 @@ spendable, and byproducts cannot create additional ancestral rights. Physical bi
 item definition to material measures; counted units, milligrams and volume are not substituted by
 unchecked integer arithmetic.
 
+The standalone [consented custody authority](consented-custody.md) composes the existing counted
+movement planner with both owners' exact, independently authenticated approvals. Its candidate
+preserves source intervals and access policies. Produced goods, complete-world capacity, material
+history and durable publication require their own joined binding; this authority does not provide
+an asynchronous gift or a market by itself.
+
 The standalone [item-consumption owner](item-consumption.md) adds explicit retained dispositions for
 actual raw or produced goods. Its planner validates owned stock and prepares coupled inventory and
 production candidates; complete output partitions prevent reintroducing consumed material. Raw source

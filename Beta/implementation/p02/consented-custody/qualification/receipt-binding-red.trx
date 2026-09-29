@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d7e1bce4-cab5-446b-af03-7c60e8b04238" name="@mac 2026-09-28 23:40:43" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T23:40:43.4790190-05:00" queuing="2026-09-28T23:40:43.4790190-05:00" start="2026-09-28T23:40:19.8272010-05:00" finish="2026-09-28T23:40:43.4933810-05:00" />
+  <TestSettings name="default" id="c1bd2b14-2eac-4456-be01-720639e6c3ea">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_23_40_43" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="9b05355d-985e-4680-8e37-9f3dd778cefc" testId="1abb36b5-2e12-de9f-14a5-aedb0c88bde9" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 2)" computerName="mac" duration="00:00:00.0013584" startTime="2026-09-28T23:40:43.2456720-05:00" endTime="2026-09-28T23:40:43.2473800-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9b05355d-985e-4680-8e37-9f3dd778cefc">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure
+Expected: False
+Actual:   True</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 248
+   at InvokeStub_ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="592578d4-1e91-4b77-9b3f-ea353c656c5b" testId="67119fe2-d192-6148-9c17-3902dbe5b0ff" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 1)" computerName="mac" duration="00:00:00.0015296" startTime="2026-09-28T23:40:43.2476730-05:00" endTime="2026-09-28T23:40:43.2493730-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="592578d4-1e91-4b77-9b3f-ea353c656c5b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure
+Expected: False
+Actual:   True</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 248
+   at InvokeStub_ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a5aa0f58-2bed-4d99-ada3-b42215913db8" testId="93cfa03e-ffbb-bff3-d7e2-b34ecc987bec" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 7)" computerName="mac" duration="00:00:00.0003441" startTime="2026-09-28T23:40:43.2496370-05:00" endTime="2026-09-28T23:40:43.2501930-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5aa0f58-2bed-4d99-ada3-b42215913db8">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure
+Expected: False
+Actual:   True</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 248
+   at InvokeStub_ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="36be7dec-eb6c-4b85-a2d4-174fc01c47d4" testId="2c67d925-5922-bcbc-24f4-6693de1f0f7d" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 10)" computerName="mac" duration="00:00:00.1463949" startTime="2026-09-28T23:40:42.9678190-05:00" endTime="2026-09-28T23:40:43.2341630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36be7dec-eb6c-4b85-a2d4-174fc01c47d4">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure
+Expected: False
+Actual:   True</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 248
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 7)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="93cfa03e-ffbb-bff3-d7e2-b34ecc987bec">
+      <Execution id="a5aa0f58-2bed-4d99-ada3-b42215913db8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 10)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2c67d925-5922-bcbc-24f4-6693de1f0f7d">
+      <Execution id="36be7dec-eb6c-4b85-a2d4-174fc01c47d4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="67119fe2-d192-6148-9c17-3902dbe5b0ff">
+      <Execution id="592578d4-1e91-4b77-9b3f-ea353c656c5b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="1abb36b5-2e12-de9f-14a5-aedb0c88bde9">
+      <Execution id="9b05355d-985e-4680-8e37-9f3dd778cefc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="1abb36b5-2e12-de9f-14a5-aedb0c88bde9" executionId="9b05355d-985e-4680-8e37-9f3dd778cefc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="67119fe2-d192-6148-9c17-3902dbe5b0ff" executionId="592578d4-1e91-4b77-9b3f-ea353c656c5b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93cfa03e-ffbb-bff3-d7e2-b34ecc987bec" executionId="a5aa0f58-2bed-4d99-ada3-b42215913db8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2c67d925-5922-bcbc-24f4-6693de1f0f7d" executionId="36be7dec-eb6c-4b85-a2d4-174fc01c47d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="0" failed="4" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:15.61]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:18.72]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:19.30]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:19.70]       Assert.False() Failure
+[xUnit.net 00:00:19.70]       Expected: False
+[xUnit.net 00:00:19.70]       Actual:   True
+[xUnit.net 00:00:19.70]       Stack Trace:
+[xUnit.net 00:00:19.70]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(248,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field)
+[xUnit.net 00:00:19.70]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:19.70]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:19.71]       Assert.False() Failure
+[xUnit.net 00:00:19.71]       Expected: False
+[xUnit.net 00:00:19.71]       Actual:   True
+[xUnit.net 00:00:19.71]       Stack Trace:
+[xUnit.net 00:00:19.71]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(248,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field)
+[xUnit.net 00:00:19.71]            at InvokeStub_ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Object, Span`1)
+[xUnit.net 00:00:19.71]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:19.72]       Assert.False() Failure
+[xUnit.net 00:00:19.72]       Expected: False
+[xUnit.net 00:00:19.72]       Actual:   True
+[xUnit.net 00:00:19.72]       Stack Trace:
+[xUnit.net 00:00:19.72]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(248,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field)
+[xUnit.net 00:00:19.72]            at InvokeStub_ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Object, Span`1)
+[xUnit.net 00:00:19.72]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:19.72]       Assert.False() Failure
+[xUnit.net 00:00:19.72]       Expected: False
+[xUnit.net 00:00:19.72]       Actual:   True
+[xUnit.net 00:00:19.72]       Stack Trace:
+[xUnit.net 00:00:19.72]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(248,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Int32 field)
+[xUnit.net 00:00:19.72]            at InvokeStub_ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(Object, Span`1)
+[xUnit.net 00:00:19.72]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:19.72]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:40:43.2557830-05:00">
+        <Text>[xUnit.net 00:00:19.69]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 10) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:40:43.2703520-05:00">
+        <Text>[xUnit.net 00:00:19.71]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 2) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:40:43.2708310-05:00">
+        <Text>[xUnit.net 00:00:19.72]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 1) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:40:43.2711450-05:00">
+        <Text>[xUnit.net 00:00:19.72]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_substituted_scope_or_participant_even_with_original_hashes(field: 7) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

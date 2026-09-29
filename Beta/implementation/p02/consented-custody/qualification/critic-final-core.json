@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Authority|FullyQualifiedName~Custody",
+    "--logger",
+    "trx;LogFileName=critic-final-core.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/consented-custody/qualification"
+  ],
+  "limitSeconds": 300,
+  "sourcePinsFile": "critic-final-source-pins.json",
+  "sourcePinsSha256": "428a10bbe564c6a5ee104b6242f7cdee6ef44c1d7e69ac277ad8347cbe9497f3",
+  "exitCode": 0,
+  "outcomes": {
+    "Passed": 147
+  },
+  "distinctTestIds": 147,
+  "elapsedSeconds": 53.21969758300111,
+  "sourceUnchanged": true
+}

@@ -1,0 +1,45 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.47]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 4) [FAIL]
+[xUnit.net 00:00:02.48]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 1) [FAIL]
+[xUnit.net 00:00:02.52]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals [FAIL]
+[xUnit.net 00:00:02.52]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot [FAIL]
+  Failed OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 4) [34 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(OpenFantasy.Core.Authority.AuthorityFormatException)
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(UInt64 reason) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 282
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 1) [< 1 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(OpenFantasy.Core.Authority.AuthorityFormatException)
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(UInt64 reason) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 282
+   at InvokeStub_ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Failed OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals [46 ms]
+  Error Message:
+   Assert.False() Failure
+Expected: False
+Actual:   True
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 273
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot [1 ms]
+  Error Message:
+   Assert.False() Failure
+Expected: False
+Actual:   True
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 257
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/consented-custody/qualification/critic-receipt-red.trx
+
+Failed!  - Failed:     4, Passed:     0, Skipped:     0, Total:     4, Duration: 134 ms - OpenFantasy.Core.Tests.dll (net8.0)

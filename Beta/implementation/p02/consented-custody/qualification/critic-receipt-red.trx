@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8da37e70-cb1c-4be7-a2a6-6f5469d1161c" name="@mac 2026-09-28 23:53:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-28T23:53:47.6402660-05:00" queuing="2026-09-28T23:53:47.6402660-05:00" start="2026-09-28T23:53:44.3460810-05:00" finish="2026-09-28T23:53:47.6477960-05:00" />
+  <TestSettings name="default" id="eb7645e9-50a0-4b6c-a2d1-5f6f15110166">
+    <Deployment runDeploymentRoot="_mac_2026-09-28_23_53_47" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="5e05987f-9cc9-4aeb-b435-33549ae4c307" testId="4ee1abe5-f700-bf41-1cf8-e02c17a87faa" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot" computerName="mac" duration="00:00:00.0010931" startTime="2026-09-28T23:53:47.5568840-05:00" endTime="2026-09-28T23:53:47.5581280-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5e05987f-9cc9-4aeb-b435-33549ae4c307">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure
+Expected: False
+Actual:   True</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 257
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="67ac4a12-54db-4bb5-8e2a-dedd83deb443" testId="6802ea41-f5d8-a3c7-baee-ab52aedee2ff" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals" computerName="mac" duration="00:00:00.0469642" startTime="2026-09-28T23:53:47.5088210-05:00" endTime="2026-09-28T23:53:47.5561130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67ac4a12-54db-4bb5-8e2a-dedd83deb443">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.False() Failure
+Expected: False
+Actual:   True</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 273
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d62362bb-c714-44f2-90d3-7dce6e6a335c" testId="27e31a18-b46e-704d-cb03-e1721614c0c7" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 4)" computerName="mac" duration="00:00:00.0349266" startTime="2026-09-28T23:53:47.4234850-05:00" endTime="2026-09-28T23:53:47.5005050-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d62362bb-c714-44f2-90d3-7dce6e6a335c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown
+Expected: typeof(OpenFantasy.Core.Authority.AuthorityFormatException)</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(UInt64 reason) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 282
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="317b372c-ec67-45e9-8f2b-efe41c6ea314" testId="1852ab27-fc0e-fe78-df36-4ad594b07233" testName="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 1)" computerName="mac" duration="00:00:00.0005789" startTime="2026-09-28T23:53:47.5055680-05:00" endTime="2026-09-28T23:53:47.5063870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="317b372c-ec67-45e9-8f2b-efe41c6ea314">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown
+Expected: typeof(OpenFantasy.Core.Authority.AuthorityFormatException)</Message>
+          <StackTrace>   at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(UInt64 reason) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs:line 282
+   at InvokeStub_ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="1852ab27-fc0e-fe78-df36-4ad594b07233">
+      <Execution id="317b372c-ec67-45e9-8f2b-efe41c6ea314" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Unemitted_rejection_reasons_fail_closed" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 4)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="27e31a18-b46e-704d-cb03-e1721614c0c7">
+      <Execution id="d62362bb-c714-44f2-90d3-7dce6e6a335c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Unemitted_rejection_reasons_fail_closed" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="6802ea41-f5d8-a3c7-baee-ab52aedee2ff">
+      <Execution id="67ac4a12-54db-4bb5-8e2a-dedd83deb443" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="4ee1abe5-f700-bf41-1cf8-e02c17a87faa">
+      <Execution id="5e05987f-9cc9-4aeb-b435-33549ae4c307" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests" name="Receipt_matching_rejects_an_unrelated_moved_lot" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="4ee1abe5-f700-bf41-1cf8-e02c17a87faa" executionId="5e05987f-9cc9-4aeb-b435-33549ae4c307" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6802ea41-f5d8-a3c7-baee-ab52aedee2ff" executionId="67ac4a12-54db-4bb5-8e2a-dedd83deb443" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="27e31a18-b46e-704d-cb03-e1721614c0c7" executionId="d62362bb-c714-44f2-90d3-7dce6e6a335c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1852ab27-fc0e-fe78-df36-4ad594b07233" executionId="317b372c-ec67-45e9-8f2b-efe41c6ea314" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="0" failed="4" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.51]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.07]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.30]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.47]       Assert.Throws() Failure: No exception was thrown
+[xUnit.net 00:00:02.47]       Expected: typeof(OpenFantasy.Core.Authority.AuthorityFormatException)
+[xUnit.net 00:00:02.47]       Stack Trace:
+[xUnit.net 00:00:02.47]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(282,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(UInt64 reason)
+[xUnit.net 00:00:02.47]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.47]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.48]       Assert.Throws() Failure: No exception was thrown
+[xUnit.net 00:00:02.48]       Expected: typeof(OpenFantasy.Core.Authority.AuthorityFormatException)
+[xUnit.net 00:00:02.48]       Stack Trace:
+[xUnit.net 00:00:02.48]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(282,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(UInt64 reason)
+[xUnit.net 00:00:02.48]            at InvokeStub_ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(Object, Span`1)
+[xUnit.net 00:00:02.48]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:02.52]       Assert.False() Failure
+[xUnit.net 00:00:02.52]       Expected: False
+[xUnit.net 00:00:02.52]       Actual:   True
+[xUnit.net 00:00:02.52]       Stack Trace:
+[xUnit.net 00:00:02.52]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(273,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals()
+[xUnit.net 00:00:02.52]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.52]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.52]       Assert.False() Failure
+[xUnit.net 00:00:02.52]       Expected: False
+[xUnit.net 00:00:02.52]       Actual:   True
+[xUnit.net 00:00:02.52]       Stack Trace:
+[xUnit.net 00:00:02.52]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Authority/ConsentedCustody/ConsentedTransferCodecTests.cs(257,0): at OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot()
+[xUnit.net 00:00:02.52]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.52]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.53]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:53:47.5082200-05:00">
+        <Text>[xUnit.net 00:00:02.47]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 4) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:53:47.5187440-05:00">
+        <Text>[xUnit.net 00:00:02.48]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Unemitted_rejection_reasons_fail_closed(reason: 1) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:53:47.5582040-05:00">
+        <Text>[xUnit.net 00:00:02.52]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_applied_outcomes_for_nonbinding_approvals [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-28T23:53:47.5594850-05:00">
+        <Text>[xUnit.net 00:00:02.52]     OpenFantasy.Core.Tests.Authority.ConsentedCustody.ConsentedTransferCodecTests.Receipt_matching_rejects_an_unrelated_moved_lot [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
