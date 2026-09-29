@@ -71,6 +71,11 @@ old all-side site archives and interpreter meanings remain unchanged.
 
 ## Conservation and continued use
 
+The local session admits ordinary excavation in the
+[saved-proposal composition](material-proposals.md#excavation-composition) through the same advancing
+cutoff. Its fixed reservoir seals and terrain-bound liquids exclude deferred structural consequences;
+neither an open offer nor a larger profile number selects that separate consequence interpreter.
+
 World admission and decoding validate the same relation as execution:
 
 - An incomplete site retains its solid cell and has no live or directly retired source claims.

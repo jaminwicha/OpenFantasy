@@ -63,8 +63,12 @@ public sealed class MaterialProposalService
     /// </summary>
     public MaterialProposalView? FindRecorded(EntityId proposalId, EntityId actorId, TrustedCommandDelivery delivery) =>
         _authority.ReadRecordedProposalForController(proposalId, actorId, delivery, (state, archived) =>
-            Project(state, actorId).FirstOrDefault(view => view.ProposalId == proposalId)
-            ?? (archived is null ? null : Closed(state, archived, actorId)));
+            ProjectRecorded(state, archived, proposalId, actorId));
+
+    internal static MaterialProposalView? ProjectRecorded(WorldSnapshot state,
+        WorldMaterialProposalOutcome? archived, EntityId proposalId, EntityId actorId) =>
+        Project(state, actorId).FirstOrDefault(view => view.ProposalId == proposalId)
+        ?? (archived is null ? null : Closed(state, archived, actorId));
 
     internal static IEnumerable<MaterialProposalView> Project(WorldSnapshot state, EntityId actorId)
     {

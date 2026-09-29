@@ -1,0 +1,31 @@
+{
+  "acceptedScope": "Host captured proposal preparation, participant background session history, ordinary profile30 excavation and explicit deferred-context exclusion",
+  "build": "Beta/implementation/p02/proposal-interaction-boundaries/qualification/session-build-20260929T134059Z.json",
+  "focused": "Beta/implementation/p02/proposal-interaction-boundaries/qualification/session-focused-20260929T134211Z.json",
+  "regression": "Beta/implementation/p02/proposal-interaction-boundaries/qualification/session-regression-20260929T134306Z.json",
+  "reportSha256": {
+    "Beta/implementation/p02/proposal-interaction-boundaries/qualification/session-build-20260929T134059Z.json": "0c8fdb41b354ab5fcc0d0ab74d78b7d360661a43e0b49ed6d3b94c58e34ffd8c",
+    "Beta/implementation/p02/proposal-interaction-boundaries/qualification/session-focused-20260929T134211Z.json": "d412eba4f0f7c067245f27f429f5966810d091fee6903a7d9a7df4ac4ba177c9",
+    "Beta/implementation/p02/proposal-interaction-boundaries/qualification/session-regression-20260929T134306Z.json": "4d58139feee50fa26169d9627795121ce70e9d84a64698af75ba1c03b7a8bcf9"
+  },
+  "distinctAffectedManagedPasses": 165,
+  "focusedCasesIncluded": 34,
+  "newCases": 11,
+  "preservation": {
+    "existingTestFilesUnchanged": 488,
+    "frozenSpecsUnchanged": 23,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "checkpoint": "codex/checkpoint-before-proposal-interaction-boundaries-20260929T133010Z",
+    "checkpointVerified": true
+  },
+  "review": "../CRITIC_REVIEW.md",
+  "excludedAcceptance": [
+    "native UI/controls/rendering",
+    "process-kill or hardware/I/O fault injection",
+    "control rollover/network authentication",
+    "combined deferred/proposal interpretation",
+    "retained-save migration or personal-dose journey",
+    "production latency/indexing",
+    "full phase or campaign closure"
+  ]
+}

@@ -18,7 +18,7 @@ public enum LocalWorldRunState { Unavailable, Paused, Waiting, Running, Resolvin
 /// Owns one durable local authority and its fixed-rate input cutoff. Authentication is the admitted
 /// local-host profile; network authentication and global visibility require separate host adapters.
 /// </summary>
-public sealed class LocalWorldSession : IAsyncDisposable
+public sealed partial class LocalWorldSession : IAsyncDisposable
 {
     public static readonly TimeSpan StepInterval = TimeSpan.FromMilliseconds(50);
     public static readonly TimeSpan MovementLease = TimeSpan.FromMilliseconds(150);
@@ -169,7 +169,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
             if (command.Intent is ExcavateIntent
-                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27)
+                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 30)
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }
@@ -656,9 +656,13 @@ public sealed class LocalWorldSession : IAsyncDisposable
         try { await _loop.ConfigureAwait(false); }
         finally
         {
-            await _serialization.WaitAsync().ConfigureAwait(false);
-            try { _authority.Dispose(); }
-            finally { _serialization.Release(); }
+            try { await FinishProposalInspectionAsync().ConfigureAwait(false); }
+            finally
+            {
+                await _serialization.WaitAsync().ConfigureAwait(false);
+                try { _authority.Dispose(); }
+                finally { _serialization.Release(); }
+            }
         }
     }
 }

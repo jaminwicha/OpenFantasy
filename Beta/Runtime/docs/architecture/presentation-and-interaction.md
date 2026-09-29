@@ -8,6 +8,12 @@ owned stock, addressed dialogue and applicable progression, quest and constructi
 It omits other inventories, finite source claims, private project funding and storage diagnostics.
 Sight-complete local visibility is not a general fog-of-war or global NPC knowledge system.
 
+For saved material proposals, the Host view includes participant offers and a bounded
+[creation snapshot](material-proposals.md#captured-creation-choices) of exact own lots and named
+recipients. Preparation requires an explicit lot, amount and recipient and captures expiry once.
+This boundary supplies terms to a client without granting access to the private world. Archived
+inspection is a separate background session task; it never belongs in a frame's view refresh.
+
 [FarmGame](../../client/scripts/FarmGame.cs) coordinates session, input and presentation through
 named collaborators. [FarmCanvas](../../client/scripts/FarmCanvas.cs) and its
 [presentation components](../../client/scripts/Presentation) map projected state to terrain,

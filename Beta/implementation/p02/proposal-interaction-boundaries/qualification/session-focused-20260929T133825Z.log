@@ -1,0 +1,22 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:21.83]     OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialExcavationTests.Actual_deferred_excavation_excludes_proposals_without_fabricating_a_combined_profile [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialExcavationTests.Actual_deferred_excavation_excludes_proposals_without_fabricating_a_combined_profile [15 s]
+  Error Message:
+   System.ArgumentException : A command needs a distinct cause identity.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldActionCommand..ctor(EntityId commandId, EntityId principalId, EntityId originSessionId, EntityId actorId, EntityId worldId, EntityId branchId, UInt64 expectedActorRevision, WorldActionIntent intent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCommand.cs:line 15
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialExcavationTests.Actual_deferred_excavation_excludes_proposals_without_fabricating_a_combined_profile() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialExcavationTests.cs:line 96
+   at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialExcavationTests.Actual_deferred_excavation_excludes_proposals_without_fabricating_a_combined_profile() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialExcavationTests.cs:line 105
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:54.21]     OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Archived_participant_inspection_reopens_exactly_and_damaged_replay_faults_the_session(damage: True) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Archived_participant_inspection_reopens_exactly_and_damaged_replay_faults_the_session(damage: True) [42 s]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.IO.InvalidDataException)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Archived_participant_inspection_reopens_exactly_and_damaged_replay_faults_the_session(Boolean damage) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ScheduledMaterialInspectionTests.cs:line 150
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/proposal-interaction-boundaries/qualification/session-focused-20260929T133825Z.trx
+
+Failed!  - Failed:     2, Passed:    31, Skipped:     0, Total:    33, Duration: 1 m 4 s - OpenFantasy.Hosting.Tests.dll (net8.0)

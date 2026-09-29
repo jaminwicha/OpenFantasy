@@ -47,14 +47,22 @@ retain 1M context and Max effort. Delegate substantial bounded work with synchro
 finite limits; Astra integrates. No automatic paid retry, silent substitution or relay agent.
 No external model job is active.
 
-The latest accepted increment is [explicit NPC gift decisions](p02/npc-material-decisions/INTEGRATION_REVIEW.md),
-preserved by `codex/milestone-npc-material-decisions-20260929`: clean build, 154 distinct affected
-managed passes (23 focused included), independent native Astra source critique/corrections and current
-architecture. Actual NPC-selected crafted medicine, later player acceptance/use, wanted/unwanted replies
-and no-repeat decisions through real archive/reopen are proved. Configuration is explicit, immutable
-Host advice supplied on session opening; it grants no inventory consent or treatment permission.
-The broader scheduled assignment still has remaining joins recorded below.
+The latest accepted increment is [proposal interaction boundaries](p02/proposal-interaction-boundaries/INTEGRATION_REVIEW.md),
+preserved by `codex/milestone-proposal-interaction-boundaries-20260929`: clean build, 165 distinct affected
+managed passes (34 focused included), independent native Astra source critique and current architecture.
+The Host exposes exact selected own-lot/recipient/quantity creation terms and one explicit background
+participant-history lookup. Paused inspection, real archive/reopen, bounded concurrency, in-flight stop,
+backend failure and ordinary profile30 excavation are proved. Deferred structural excavation remains a
+separate admitted profile; no fake combined pending state was introduced. See the concrete
+[next native slice](p02/proposal-interaction-boundaries/NEXT_NATIVE_SLICE.md) for profile30 opening,
+physical-lot selection, Gifts wheel, captured expiry, controls and native validation. No native UI is
+claimed by this Host increment.
 
+The preceding [explicit NPC gift decisions](p02/npc-material-decisions/INTEGRATION_REVIEW.md),
+preserved by `codex/milestone-npc-material-decisions-20260929`, retain their 154-case qualification.
+Actual NPC-selected crafted medicine, later player acceptance/use, wanted/unwanted replies and no-repeat
+decisions through real archive/reopen are proved. Configuration is explicit immutable Host advice,
+supplied on reopening; it grants no inventory consent or treatment permission.
 The preceding [player-session binding](p02/scheduled-material-proposals/INTEGRATION_REVIEW.md) is
 preserved by `codex/milestone-scheduled-player-proposals-20260929` with its 142-case qualification.
 
@@ -216,10 +224,13 @@ No Core/schema, client/asset, old test or frozen-spec change is made; predecesso
 The subsequent [NPC increment](p02/npc-material-decisions/INTEGRATION_REVIEW.md) implements explicit
 giving/accepting/declining preferences and stable decisions through refusal/expiry, a real cut and
 reopen. Its new crafted-dose test uses a policy-chosen offer, later player acceptance and later own use;
-the preceding player-only test retains its narrower service-created setup. The larger
-[assignment](p02/scheduled-material-proposals/ASSIGNMENT.md) is **not complete**: session archived
-inspection and pending-excavation/profile joins remain. Native controls, production policy authoring,
-general NPC psychology/knowledge and recurring need episodes are also open. Preserve the full custody
+the preceding player-only test retains its narrower service-created setup. The remaining session history and profile-join portions of that
+[assignment](p02/scheduled-material-proposals/ASSIGNMENT.md) are covered by the
+[interaction-boundary increment](p02/proposal-interaction-boundaries/INTEGRATION_REVIEW.md): actual archived
+inspection, profile30 ordinary excavation and genuine pending16 refusal. Complete admission excludes
+combining deferred structural consequences with profile30; such a new interpretation is not fabricated.
+Native controls, production policy authoring, general NPC psychology/knowledge and recurring need
+episodes remain open. Preserve the full custody
 integration path and original 520-dose objective above; no fresh world is a retained-save migration.
 
 Fable's one run is terminal: monthly spend limit after 113.221 seconds, verified input synchronization,

@@ -91,7 +91,11 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    optional work only when settlement is currently valid. An invalid acceptance leaves NPC work
    eligible. The final batch still rechecks both participants and publishes the only outcome; no
    independently advancing service is called from the tick. Participant views read the bounded live
-   proposal owner, while archived lookup stays outside frame and simulation callbacks.
+   proposal owner. The explicit session history query runs in one bounded background slot under the
+   same serialization boundary, authenticates the fixed player, and never selects a step. It shares
+   duplicate pending lookups and refuses a second identity; stopping finishes selected inspection
+   before disposing storage. A full archived replay can delay the simulation without synthesizing
+   catch-up time. It is never part of a frame or tick projection.
    Explicit [NPC gift preferences](material-proposals.md#explicit-npc-gift-preferences) advise offers
    and replies under each configured Host actor's own control. Their copied immutable configuration
    is separate from world consent; saved commands and permanent identity occupancy prevent unchanged

@@ -226,12 +226,69 @@ exposed as `LocalWorldView.MaterialProposals`, reuses the service's participant 
 live owner. It carries the controlled player's open and current-segment terminal proposals, including
 captured grant, exact terms and observed sender revision. Projection performs no submission or
 historical replay. A captured acceptance is never refreshed or retargeted while waiting in the queue.
-Archived inspection uses the explicit authenticated service outside frame and simulation callbacks.
+Archived inspection uses the explicit background session query described below, or the independently
+delivered service outside frame and simulation callbacks.
 
 Profile30 also exposes [ordinary restorative controls](ordinary-care.md) through the same session.
 An accepted dose enters the recipient's actual owned inventory; spending it requires a separate
 selected self-use command and a later cutoff. Acceptance itself restores no HP and grants no care
 permission. Ordinary helper aid retains its own explicit permission and selection policy.
+
+## Captured creation choices
+
+`LocalMaterialProposalView.Preparation` carries a
+[`LocalMaterialProposalPreparation`](../../src/OpenFantasy.Hosting/Simulation/LocalMaterialProposalPreparation.cs)
+only at an admitted unheld exploration boundary with room for another offer. It lists exact available
+raw and produced lots from the player's own primary storage, excluding protected and reserved stock,
+and named resident recipients with owned primary storages. It retains immutable item definition pins
+and the addressing needed to form terms, but no world root, other inventory or controller credentials.
+Separate lot and recipient lists avoid materializing their cross-product.
+
+`Prepare` requires one explicit lot kind/identity, recipient and positive quantity no greater than
+that captured lot. A missing or incompatible selection yields nothing; no first-row, nearest-actor or
+same-item substitute is selected. The result pins scope, both parties and storages, full item version,
+lot revision and quantity. Its expiry is the captured advancing count plus the creation step plus
+64 steps. Refreshing the public view does not change an earlier preparation or intent. A client retains
+that captured intent through confirmation; a new selection is required to change terms or expiry.
+
+Preparation neither reserves stock nor checks every eventual settlement condition. It is readable
+while the session is paused, but submitting a fresh action still requires readiness and normal queue
+admission. Actual Core creation rechecks the current pin and expiry; a later settlement also rechecks
+both bodies, opportunities, reach and capacity. Acceptance remains separate from use or treatment.
+
+## Explicit session history inspection
+
+[`InspectMaterialProposalAsync`](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.ProposalInspection.cs)
+accepts one exact identity and uses only the session's fixed player and trusted delivery. It always
+acquires the session serialization boundary asynchronously, then runs the durable query on the
+background task scheduler, even when slot acquisition completed synchronously. The query uses the
+same current-control and participant filter as the service. It is available
+during paused inspection and reading holds, creates no receipt or advancing step, and never runs from
+`TickAsync`, `ProjectView` or a render callback.
+
+One inspection may be outstanding. A request for that same identity shares the pending task; a
+different identity is refused until it finishes. Completed results are not cached and failures are not
+automatically retried. Missing and foreign proposals both return nothing. A storage or replay failure
+faults the inspection and session, clears input and requires reopening; a control refusal affects only
+the query. Stopping cancels queued work, waits for a selected read, and then disposes the durable owner.
+
+Background execution protects the caller's frame, not simulation throughput: a verified archive replay
+holds the serialized authority and delays subsequent ticks or submissions. Missed cutoffs are discarded
+under the ordinary session clock policy; no catch-up steps are synthesized. Inspection is an explicit
+user operation, never an automatic per-frame refresh. A responsive production history index requires
+its own authority, invalidation and latency contract.
+
+## Excavation composition
+
+The session admits profile30's ordinary `ExcavateIntent` through its existing cutoff and complete
+terrain/liquid/material publication. Offers and proposal occupancy stay in the same root. This is
+synchronous terrain-bound excavation, not a deferred structural-consequence interpretation.
+
+The rooted coordinated graph requires base profile21 with fixed reservoir seals. Complete admission
+excludes structural consequence policy and pending excavation from that graph. Actual deferred
+excavation belongs to profiles16–18, whose pending cursor also checks that exact family; those sessions
+refuse saved-proposal input without disturbing the retained cursor. Neither capability is inferred
+from a numerically greater profile. Combining them requires an explicit complete-world composition.
 
 ## Explicit NPC gift preferences
 
