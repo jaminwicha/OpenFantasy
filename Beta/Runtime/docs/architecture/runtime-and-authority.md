@@ -86,6 +86,12 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    from that cutoff's aid selection. A stable semantic proposal identity prevents an unchanged refused
    helper choice from becoming an automatic new command on each clock tick; clocks and unrelated
    storage activity do not select a replacement identity.
+   [Saved material proposals](material-proposals.md#local-session-selection) use that same queue and
+   cutoff. A complete, read-only preview of a captured acceptance excludes the consenting sender's
+   optional work only when settlement is currently valid. An invalid acceptance leaves NPC work
+   eligible. The final batch still rechecks both participants and publishes the only outcome; no
+   independently advancing service is called from the tick. Participant views read the bounded live
+   proposal owner, while archived lookup stays outside frame and simulation callbacks.
 3. [WorldStepProcessor](../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) evaluates the
    host-selected [WorldStepBatch](../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs) against the
    committed profile, scope, revision and hold state. Domain planners recheck rights, resources,

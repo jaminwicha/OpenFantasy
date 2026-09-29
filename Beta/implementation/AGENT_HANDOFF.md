@@ -47,7 +47,12 @@ retain 1M context and Max effort. Delegate substantial bounded work with synchro
 finite limits; Astra integrates. No automatic paid retry, silent substitution or relay agent.
 No external model job is active.
 
-The latest accepted increment is [saved material proposals](p02/material-proposals/INTEGRATION_REVIEW.md),
+The latest accepted increment is the [scheduled player-session binding](p02/scheduled-material-proposals/INTEGRATION_REVIEW.md),
+preserved by `codex/milestone-scheduled-player-proposals-20260929`: clean build, 142 distinct affected
+managed passes, independent native Astra source critique and current architecture. Its complete scope
+and unfinished NPC integration are recorded below under "Scheduled proposal session assignment".
+
+It builds on [saved material proposals](p02/material-proposals/INTEGRATION_REVIEW.md),
 preserved by `codex/milestone-saved-material-proposals-20260929`. Fresh profile30/action16 worlds
 have independently authenticated local creation, acceptance, decline and withdrawal, deterministic
 expiry and immutable command receipts. Offers reserve nothing; settlement rechecks actual control,
@@ -67,9 +72,10 @@ the packet. Three verified Fable5.1/1M/requested-Max jobs produced the implement
 client estimates and friction are recorded there, without claiming billing or net credit savings.
 
 Profile30 is a named sibling of paired profile28, not a combined route or lived migration. The
-nominal29 gap preserves old assertions. Each local submission selects one advancing step; actual
-multi-actor scheduling, admitted control/session transition and pair/proposal composition remain
-required before multiplayer integration. Historical participant lookup performs a full replay off
+nominal29 gap preserves old assertions. Independently delivered service submissions select one
+advancing step; the player-session binding below instead uses the existing scheduled cutoff.
+Admitted control/session transition and pair/proposal composition remain required before
+multiplayer integration. Historical participant lookup performs a full replay off
 frame callbacks; production indexing, response equalization and live hardware/I/O fault injection
 remain unqualified. NPC decisions, native UI/controls and network authentication remain open.
 
@@ -83,7 +89,7 @@ Earlier accepted layers remain linked rather than redispatched:
 
 Continue the [full custody integration path](p02/consented-custody/INTEGRATION_PLAN.md): bind actual
 Host scheduling/control, player/NPC decisions and native presentation using the same authority.
-`LocalWorldSession` and restorative controller/view guards do not expose profile28/30 gameplay.
+The player-session and ordinary restorative bindings now expose profile30; profile28 remains separate.
 Care permission or friendship never implies inventory consent.
 
 The original post-cut 520-dose personal-medicine objective remains open. That lived world's helper
@@ -98,6 +104,12 @@ wet construction/occupancy/custody joins, NPC society, content reachability and 
 cargo/escort circuit. This navigation list neither replaces the scope nor waives a gate.
 
 ## Latest verified runtime checkpoint
+
+`codex/milestone-scheduled-player-proposals-20260929` preserves all four player proposal selections
+through actual session cutoffs, bounded participant views, sender-work arbitration and later accepted
+dose self-use. The build and 142 affected managed cases pass, including 11 new cases; source critique
+and exact preservation checks are retained. This is a player-session checkpoint, not completion of
+the larger NPC assignment, pending-excavation join, native UI, control transition or any full phase.
 
 `codex/milestone-saved-material-proposals-20260929` preserves the fresh profile30 saved-offer
 lifecycle, bounded carry, participant history, 1,941 distinct managed passes, four real process
@@ -174,3 +186,28 @@ checkpoint relevant dirty/new work before every major change. Keep architecture 
 with code. Put detailed test history in its packet, then link it here rather than growing this index
 into another progress archive. Shared-desktop and risk-based verification rules remain in
 [implementation instructions](../AGENTS.md); no timing or acceptance threshold is waived.
+
+
+## Scheduled proposal session assignment
+
+The [player-session increment](p02/scheduled-material-proposals/INTEGRATION_REVIEW.md) binds all four
+proposal intents to actual authenticated cutoffs, participant-only live views and later use of an
+accepted owned medicine. A valid acceptance reserves the sender's work opportunity; a stale or
+out-of-reach request leaves funded NPC work eligible. There is no extra service transaction per tick.
+The [final checks](p02/scheduled-material-proposals/qualification/FINAL_CHECKS.json) pin the build and
+142 distinct affected managed passes, including eleven focused cases. [Native Astra source critique](p02/scheduled-material-proposals/CRITIC_REVIEW.md)
+produced stronger work/context contrasts and a corrected test expectation. Architecture is updated.
+No Core/schema, client/asset, old test or frozen-spec change is made; predecessor staging stays exact.
+
+The larger [assignment](p02/scheduled-material-proposals/ASSIGNMENT.md) is **not complete**. Next work
+is the explicit immutable NPC giving/accepting/declining policy and stable semantic decisions through
+refusal/expiry/cut/reopen, followed by the complete policy-chosen gift/use journey. The current medicine
+test creates the helper offer through the service before session ownership; it does not prove an NPC
+chose it. Session archived inspection, pending-excavation/profile joins and native controls also remain.
+Preserve the full custody integration path and original 520-dose objective above.
+
+Fable's one run is terminal: monthly spend limit after 113.221 seconds, verified input synchronization,
+notes only, and two recorded tool permission denials. [Failure evidence](p02/scheduled-material-proposals/DELEGATION_FAILURE.md)
+includes actual Fable5.1/1M metadata and the client cost estimate; no savings are claimed. No approval
+is waiting and no retry or model switch occurred. Astra completed this bounded player slice directly.
+Do not poll/restart handle12326. Fable5.1 remains approved with Max effort; more Opus use is optional.

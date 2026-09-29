@@ -79,7 +79,8 @@ public sealed class LocalNpcController
         return inputs.AsReadOnly();
     }
 
-    internal IReadOnlyList<WorldActionCommand> SelectActions(WorldSnapshot state, Func<EntityId> newIdentity)
+    internal IReadOnlyList<WorldActionCommand> SelectActions(WorldSnapshot state, Func<EntityId> newIdentity,
+        IReadOnlySet<EntityId>? excludedActorIds = null)
     {
         List<WorldActionCommand> actions = [];
         if (state.HasReadingHold || state.Pacing?.Encounter is not null || state.Construction is null)
@@ -88,7 +89,8 @@ public sealed class LocalNpcController
         }
         foreach (WorldResident resident in state.Residents)
         {
-            if (resident.ControllerKind != ResidentControllerKind.Host || !WorldActorAvailability.CanAct(state, resident.ActorId)
+            if (resident.ControllerKind != ResidentControllerKind.Host || excludedActorIds?.Contains(resident.ActorId) == true
+                || !WorldActorAvailability.CanAct(state, resident.ActorId)
                 || _construction.FindCommitment(state, resident.ActorId) is not { } project)
             {
                 continue;

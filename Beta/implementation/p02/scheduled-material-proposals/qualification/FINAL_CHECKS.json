@@ -1,0 +1,36 @@
+{
+  "acceptedScope": "Scheduled player material proposals only; full NPC assignment remains open",
+  "sourceHead": "d987bbdb6aff9cb1e43f01a5d79eaafd539eea7b",
+  "evidenceSha256": {
+    "session-build-20260929T125400Z.json": "a2b4c6175ed32c02f2f6581bbe1b90421952a9876d13609d52e224b7177e7755",
+    "session-focused-20260929T125423Z.json": "a2470e47d1279ecfd1904b6f41fe69a0a5251ccd84b338e9f35474183976d45b",
+    "session-regression-20260929T125444Z.json": "2cd69b7e0c17567fb7f4e1ef243e1663975ac749d4625543f786a647937217be"
+  },
+  "distinctManagedPasses": 142,
+  "focusedPassesIncluded": 11,
+  "coreAndClientUnchangedFromSourceHead": true,
+  "preservation": {
+    "existingTestFilesUnchanged": 483,
+    "frozenSpecsUnchanged": 23,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "checkpoint": "codex/checkpoint-before-scheduled-material-proposals-20260929T122944Z",
+    "checkpointVerified": true
+  },
+  "documentSha256": {
+    "Beta/Runtime/docs/architecture/material-proposals.md": "e9f4380d31ebc6023ca2813bede4dd0180999d84589f0b6fbe809f0303d7a4c7",
+    "Beta/Runtime/docs/architecture/ordinary-care.md": "9c9b66c6ca3eef93b6743312b3ef50a0ac8e1a9d937b3d50e41e778e4ec89478",
+    "Beta/Runtime/docs/architecture/runtime-and-authority.md": "fd65198371c14bb185cdad0a2253c77adcf5b4016fa033dd3c6a29ef718021a7",
+    "Beta/implementation/p02/scheduled-material-proposals/INTEGRATION_REVIEW.md": "83cbbe6bdf81ac936589bf48b85681180c783ffc3407aefa14054ec7589fae0d",
+    "Beta/implementation/p02/scheduled-material-proposals/CRITIC_REVIEW.md": "d433fc5da3e8ee5f8cec9f66c7d0a718e2b2376070a1743ba89aa3e68c87c929",
+    "Beta/implementation/AGENT_HANDOFF.md": "8ea4c7a502eb50395166681c7a547a1238df9048d36251e93afe39e59ed01f8e",
+    "Beta/implementation/GIT_MILESTONES.md": "e9362f4affa03935677e8fdf2a9e47491a640c97f550ad50c14dcb7374ca4d48"
+  },
+  "relativeLinksResolved": 192,
+  "review": "Independent native Astra source review; lead executed checks",
+  "milestone": "codex/milestone-scheduled-player-proposals-20260929",
+  "limits": [
+    "No full-suite, native, device, human or performance acceptance",
+    "NPC policy/semantic decisions and full scheduled assignment incomplete",
+    "Pending excavation, control rollover, networking and retained-save transition unqualified"
+  ]
+}

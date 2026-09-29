@@ -32,9 +32,11 @@ accept another actor's gift merely because treatment was authorized. Revoking tr
 nor revokes an inventory transfer right. Item acquisition, treatment and patient withdrawal retain
 separate typed operations and validation.
 
-The standalone [consented custody authority](consented-custody.md) separately admits a counted-source
-transfer when both current owners approve that exact transaction. Its recipient acceptance grants
-no treatment permission, and it has no binding to the care-enabled world or native interface.
+The standalone [consented custody authority](consented-custody.md) admits a counted-source transfer
+when both current owners approve that exact transaction. The [consented world](consented-world.md)
+and [saved material proposals](material-proposals.md) bind exact inventory consent into explicit
+care-enabled world interpretations. Receipt of an item grants no treatment permission. Saved offers
+can settle through the local session; native gift controls require their own presentation binding.
 
 Each immutable use definition and permission retains its canonical digest lazily on that exact
 object. The first successful read uses the canonical encoder; concurrent readers publish one complete
@@ -104,8 +106,8 @@ ordinary advancing command or a zero-time Care batch to bypass encounter timing.
 ## Public controls and patient-owned permission
 
 [LocalRestorativeView](../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeView.cs), exposed as
-`LocalWorldView.Restorative`, projects the profile26/27 player's known self-use policies and permissions
-owned by that patient. Earlier profiles have no ordinary-care projection. Known blocked self-use
+`LocalWorldView.Restorative`, projects the profile26/27/30 player's known self-use policies and permissions
+owned by that patient. Other profiles have no ordinary-care projection. Known blocked self-use
 choices remain inspectable with their typed reason and no executable intent. Each use offer identifies
 the item, pinned restoration amount, capped HP gain at the observed health and exploration duration.
 The item label derives from its admitted physical item key, with a generic fallback; this is not a

@@ -32,6 +32,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private readonly LocalNpcController _npcs = new();
     private readonly LocalCareController _care = new();
     private readonly LocalRestorativeController _restorative = new();
+    private readonly LocalMaterialProposalSelection _materialProposals = new();
     private readonly Task _loop;
     private LocalWorldView _view;
     private PendingLocalAction? _pending;
@@ -139,6 +140,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
                 return prior;
             }
             WorldSnapshot state = _authority.ReadStateForHost();
+            _materialProposals.Validate(state, command);
             ValidateEncounterSelection(state, command);
             bool durablePending = state.PendingExcavation is not null;
             if (state.PendingExcavation is { } accepted
@@ -219,7 +221,7 @@ public sealed class LocalWorldSession : IAsyncDisposable
     private static void ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
     {
         if (command.Intent is UseRestorativeItemIntent or RevokeCarePermissionIntent
-            && (state.ProfileVersion is not (26 or 27) || state.HasReadingHold || state.PendingExcavation is not null
+            && (state.ProfileVersion is not (26 or 27 or 30) || state.HasReadingHold || state.PendingExcavation is not null
                 || state.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration || state.Care?.Pending is not null))
         {
             throw new AuthorityDispatchException("Ordinary care requires its admitted unheld exploration boundary.");
@@ -562,8 +564,13 @@ public sealed class LocalWorldSession : IAsyncDisposable
             {
                 selected.Add(pending.Command.CommandId);
             }
-            actions.AddRange(_npcs.SelectActions(state, () => AllocateSelectedIdentity(selected)));
             var excluded = actions.Select(action => action.ActorId).ToHashSet();
+            if (_materialProposals.FindReservedSender(_authority, state, cause, pending?.Command) is { } sender)
+            {
+                excluded.Add(sender);
+            }
+            actions.AddRange(_npcs.SelectActions(state, () => AllocateSelectedIdentity(selected), excluded));
+            excluded.UnionWith(actions.Select(action => action.ActorId));
             actions.AddRange(_restorative.SelectActions(state,
                 identity => selected.Contains(identity) || _authority.IsIdentityOccupiedForHost(identity), excluded));
         }

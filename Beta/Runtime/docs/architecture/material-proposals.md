@@ -175,7 +175,7 @@ content under a used identity is refused.
 ## Query boundary
 
 [`MaterialProposalService`](../../src/OpenFantasy.Hosting/Simulation/MaterialProposalService.cs) is the
-local application boundary. Every submission and query brings its own `TrustedCommandDelivery`.
+independently delivered local application boundary. Every submission and query brings its own `TrustedCommandDelivery`.
 A query first requires current control of the named actor, with the same refusal whether or not
 anything exists. It then returns only proposals in which that actor takes part: identity, terms,
 grant hash, expiry, state and the sender's observed presence revision. It returns no world root, no
@@ -197,6 +197,41 @@ The recorded lookup is synchronous non-frame work. It must not run on a client f
 latency-sensitive simulation callback. Its duration is not equalized between a live, an archived
 and a missing identity. Archive retrieval by ordinal stays privileged operator work and is not a
 participant query.
+
+## Local session selection
+
+[`LocalWorldSession`](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) accepts the four
+proposal intents through its existing controlled-player queue. Current delivery authorization and
+exact completed-receipt lookup precede new selection. A fresh command requires profile30, ready
+unheld exploration, no pending excavation and no pending care obligation. Context refusal occurs
+before queueing; stale admissible commands still receive their ordinary durable gameplay outcome.
+Identical pending bytes share one result, and stopping cancels input that has not been selected.
+
+The session selects the command at its normal cutoff, alongside movement and optional NPC work,
+then publishes one complete batch. It does not call the independently advancing proposal service
+inside its tick. Paused receipt lookup, inspection and cancelled input create no advancing step.
+An admitted advancing batch has its ordinary elapsed interval even when an action is refused.
+
+[`LocalMaterialProposalSelection`](../../src/OpenFantasy.Hosting/Simulation/LocalMaterialProposalSelection.cs)
+protects a valid bilateral acceptance from the sender's optional construction or ordinary aid. It
+evaluates that captured acceptance through the authority's pure complete-world preview before
+asking for competing NPC work. Only a successful preview excludes the sender from those choices.
+This excludes a work opportunity, not stock: offers still reserve nothing. A stale, foreign,
+unreachable or otherwise invalid acceptance cannot suppress the sender's independent work. The
+complete selected batch revalidates the request; the preview grants no authority or durable outcome.
+Successful settlement itself spends both participants' movement and action opportunities in Core.
+
+[`LocalMaterialProposalView`](../../src/OpenFantasy.Hosting/Simulation/LocalMaterialProposalView.cs),
+exposed as `LocalWorldView.MaterialProposals`, reuses the service's participant filter against the
+live owner. It carries the controlled player's open and current-segment terminal proposals, including
+captured grant, exact terms and observed sender revision. Projection performs no submission or
+historical replay. A captured acceptance is never refreshed or retargeted while waiting in the queue.
+Archived inspection uses the explicit authenticated service outside frame and simulation callbacks.
+
+Profile30 also exposes [ordinary restorative controls](ordinary-care.md) through the same session.
+An accepted dose enters the recipient's actual owned inventory; spending it requires a separate
+selected self-use command and a later cutoff. Acceptance itself restores no HP and grants no care
+permission. Ordinary helper aid retains its own explicit permission and selection policy.
 
 ## Boundaries
 

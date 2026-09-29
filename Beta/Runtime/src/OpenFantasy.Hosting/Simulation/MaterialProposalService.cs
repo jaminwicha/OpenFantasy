@@ -66,7 +66,7 @@ public sealed class MaterialProposalService
             Project(state, actorId).FirstOrDefault(view => view.ProposalId == proposalId)
             ?? (archived is null ? null : Closed(state, archived, actorId)));
 
-    private static IEnumerable<MaterialProposalView> Project(WorldSnapshot state, EntityId actorId)
+    internal static IEnumerable<MaterialProposalView> Project(WorldSnapshot state, EntityId actorId)
     {
         if (state.Coordination?.Proposals is not { } book)
         {
