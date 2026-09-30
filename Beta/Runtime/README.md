@@ -596,6 +596,34 @@ transition to a verified copy and publishes that copy only after successful repl
 the original genesis and historical rows. Opening an existing save never performs this transition.
 See the [transition contract](docs/architecture/coordinated-world-continuation.md#explicit-proposal-transition).
 The native `--gifts` selector expects a fresh proposal genesis; it does not select these transitioned
-worlds. Native selection and the joined retained-world input journey require a separate binding.
+worlds. Copying/transitioning and opening stay separate operations.
+
+### Retained gift worlds
+
+Run `python3 tools/play.py --retained-gifts SAVE GENESIS` to continue an existing, already
+transitioned retained world. `GENESIS` is the exact original fresh profile27 genesis file of that
+world. The route has no default save and never creates, migrates, resets or relabels one: opening
+recovers the complete history, requires that original genesis, the same world, branch and inherited
+content admission, and a profile30 head reached through exactly one authenticated transition. A
+missing save, another genesis, a lived or malformed genesis file, an untransitioned profile27 save, a
+fresh profile30 world and any other interpretation are refused and the save is released unchanged.
+The world opens paused under normal focus rules. The companion named by the player's own care
+permission receives the same explicit medicine preference as `--gifts`. Controls are those of the
+Gifts section above; ordinary Care self-use spends a received dose.
+
+`RetainedGiftFixtureTests` prepares native input from the pinned original through the accepted
+transition. Its managed, labeled preparation uses only ordinary commands: the patient withdraws the
+active care permission, the helper's own offers and withdrawals fill the proposal outcome window to
+62, and empty steps start the helper's idle amble interval. It then proves the journey in a managed
+scheduled session. With `OPENFANTASY_RETAINED_GIFT_FIXTURES` naming a fresh directory it exports
+`save.sqlite`, `genesis.ofc`, `transition.ofc`, `before.ofc`, `metadata.json` and `manifest.json`.
+`tools/check_retained_gifts.py --dotnet <path> --godot <path> --fixtures <directory> --output <json>
+--rendered` copies that fixture, runs `--retained-gift-probe` once in keyboard mode and once as a
+separate paused reopen within 30s opening/150s probe/180s process bounds, and never edits shared
+project settings. In the journey the helper's policy offers a dose, the player's native pack/Gifts
+offer is the step whose automatic cut carries that open gift, the helper declines the player's offer,
+the player accepts the gift and then uses it through Care. Its manifest feeds `RetainedGiftResultTests`
+via `OPENFANTASY_RETAINED_GIFT_RESULTS` (with `OPENFANTASY_RETAINED_PROPOSAL_SOURCE`), which binds
+the saved database to the original row by row and authenticates the carried cut, custody and use.
 Fixtures keep their source saves intact. Injected native controls and background images do not
-establish physical-device, OS-focus, production art, complete gift UX or retained-save migration acceptance.
+establish physical-device, OS-focus, production art, complete gift UX or process-interruption acceptance.

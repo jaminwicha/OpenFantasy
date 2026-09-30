@@ -1,0 +1,9 @@
+{
+  "timeUtc": "2026-09-30T02:52:34.084385+00:00",
+  "finding": "The actual Host test application and the isolated measured replay run concurrently; no merely idle wrapper inference.",
+  "processRows": [
+    "53006 52982  81.6        06:51 /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests @@ /var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/tmpSaLIxD.tmp",
+    "55375 54587 105.6        00:15 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet /var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T024941Z/before-bin/OpenFantasy.Host.dll --inspect-recorded-world /var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T024941Z/before-2/world.sqlite 1739"
+  ],
+  "consequence": "Do not claim causal wall-latency improvement; preserve timing failures. Complete identical-source/state allocation comparison may remain valid. Root native runs must be serial. Fix shared verification orchestration after this job is terminal, not by changing pinned active inputs."
+}

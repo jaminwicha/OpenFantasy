@@ -14,6 +14,8 @@ namespace OpenFantasy.Client;
 internal sealed class FarmClientSession : IAsyncDisposable
 {
     private const ushort CoordinatedProfileVersion = 27;
+    /// <summary>The one interpretation a retained coordinated world may continue under after its explicit transition.</summary>
+    internal const ushort RetainedGiftTargetProfileVersion = 30;
     private readonly TrustedCommandDelivery _delivery;
     private readonly FarmActionOffers _offers;
     private readonly ConditionalWeakTable<FarmActionOffer, OfferedAction> _issuedOffers = new();
@@ -141,6 +143,60 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return Attach(authority, CareCompanion);
     });
 
+    /// <summary>
+    /// Continues a lived coordinated world that an explicit, separately published transition already
+    /// moved to the saved-gift interpretation. The supplied original genesis selects the existing save;
+    /// complete recovery authenticates that one transition. Opening never transitions, creates or resets.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenRetainedGiftsAsync(string savePath, string originalGenesisPath,
+        ushort targetProfileVersion) => Task.Run(() =>
+    {
+        if (targetProfileVersion != RetainedGiftTargetProfileVersion)
+        {
+            throw new ArgumentOutOfRangeException(nameof(targetProfileVersion),
+                "A retained coordinated world continues only under the saved-gift interpretation.");
+        }
+        if (!File.Exists(savePath))
+        {
+            throw new FileNotFoundException("The retained gift world requires its existing transitioned save.", savePath);
+        }
+        byte[] expected = File.ReadAllBytes(originalGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != CoordinatedProfileVersion || genesis.Revision != 0 || genesis.AdvancingSteps != 0)
+        {
+            throw new InvalidDataException("The retained gift world requires its original fresh coordinated genesis.");
+        }
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try
+        {
+            ValidateRetainedTransition(authority.InspectForHost().State, genesis);
+        }
+        catch
+        {
+            authority.Dispose();
+            throw;
+        }
+        return Attach(authority, CareCompanion, gifts: true);
+    });
+
+    /// <summary>
+    /// Recovery has already authenticated the genesis and every commit; a coordinated genesis with a
+    /// saved-gift head therefore passed exactly one replayed transition. The original world, branch and
+    /// inherited content admission must still be the selected ones.
+    /// </summary>
+    private static void ValidateRetainedTransition(WorldSnapshot current, WorldSnapshot genesis)
+    {
+        if (current.WorldId != genesis.WorldId || current.BranchId != genesis.BranchId
+            || current.AdmissionVersion != genesis.AdmissionVersion)
+        {
+            throw new InvalidDataException("This save is not the selected retained world.");
+        }
+        if (current.ProfileVersion != RetainedGiftTargetProfileVersion || current.Coordination?.Proposals is null)
+        {
+            throw new InvalidDataException("This retained world has not been explicitly transitioned to saved gifts.");
+        }
+    }
+
     private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis, bool gifts = false)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
@@ -175,6 +231,18 @@ internal sealed class FarmClientSession : IAsyncDisposable
     private static WorldResident CareCompanion(WorldSnapshot current, WorldResident player) => current.GetResident(
         current.Care!.Ordinary!.Permissions.Single(permission => permission.PatientActorId == player.ActorId).HelperActorId);
 
+    /// <summary>
+    /// The companion's explicit native medicine preference toward the controlled player. It is Host
+    /// advice supplied again on every opening, never saved state, consent or treatment permission.
+    /// </summary>
+    internal static LocalMaterialGiftPolicy GiftPolicy(WorldSnapshot current, EntityId giverActorId, EntityId partnerActorId)
+    {
+        var self = current.Care!.Ordinary!.Definitions.Single(value =>
+            value.DeliveryMode == OpenFantasy.Core.Care.RestorativeDeliveryMode.SelfUse);
+        return new(giverActorId, partnerActorId, self.DefinitionId, self.Version,
+            offerLifetimeSteps: LocalMaterialProposalPreparation.OfferLifetimeSteps);
+    }
+
     private static FarmClientSession Attach(SqliteWorldAuthority authority,
         Func<WorldSnapshot, WorldResident, WorldResident> selectCompanion, bool gifts = false)
     {
@@ -189,14 +257,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
                 .Definition.YieldDefinition.DefinitionId ?? current.Inventory.Sources.Single().Definition.DefinitionId;
             EntityId? berries = current.Gathering?.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
                 .Definition.YieldDefinition.DefinitionId;
-            LocalMaterialGiftPolicy[] policies = [];
-            if (gifts)
-            {
-                var self = current.Care!.Ordinary!.Definitions.Single(value =>
-                    value.DeliveryMode == OpenFantasy.Core.Care.RestorativeDeliveryMode.SelfUse);
-                policies = [new(wren.ActorId, player.ActorId, self.DefinitionId, self.Version,
-                    offerLifetimeSteps: LocalMaterialProposalPreparation.OfferLifetimeSteps)];
-            }
+            LocalMaterialGiftPolicy[] policies = gifts ? [GiftPolicy(current, wren.ActorId, player.ActorId)] : [];
             var world = new LocalWorldSession(authority, player.ActorId, delivery, policies);
             return new FarmClientSession(world, delivery, wren.ActorId, wood, berries);
         }

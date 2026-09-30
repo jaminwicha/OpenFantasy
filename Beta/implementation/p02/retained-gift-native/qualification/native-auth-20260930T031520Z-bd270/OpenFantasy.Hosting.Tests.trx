@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="eb3f0891-5c95-4b95-bee0-61d52577519c" name="@mac 2026-09-29 22:16:53" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T22:16:53.9667640-05:00" queuing="2026-09-29T22:16:53.9667640-05:00" start="2026-09-29T22:15:22.2900130-05:00" finish="2026-09-29T22:16:53.9786330-05:00" />
+  <TestSettings name="default" id="b6c2a5c4-2906-4aff-aba7-1134f06fd89e">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_22_16_53" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="80d47811-6411-4240-811d-b589e75f1cc3" testId="fbdca2fc-559a-3fa3-7adc-1ed0772475cc" testName="OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use" computerName="mac" duration="00:01:28.6771766" startTime="2026-09-29T22:15:25.0914600-05:00" endTime="2026-09-29T22:16:53.8018110-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="80d47811-6411-4240-811d-b589e75f1cc3">
+      <Output>
+        <ErrorInfo>
+          <Message>System.IO.IOException : The process cannot access the file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retained-gift-results-31663b323db44f4585d3b72f50e14b51/native.sqlite3' because it is being used by another process.</Message>
+          <StackTrace>   at Microsoft.Win32.SafeHandles.SafeFileHandle.Init(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Int64&amp; fileLength, UnixFileMode&amp; filePermissions)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+   at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+   at System.IO.File.ReadAllBytes(String path)
+   at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Verify(JsonElement result, String original) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs:line 174
+   at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs:line 36
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fbdca2fc-559a-3fa3-7adc-1ed0772475cc">
+      <Execution id="80d47811-6411-4240-811d-b589e75f1cc3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests" name="Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="fbdca2fc-559a-3fa3-7adc-1ed0772475cc" executionId="80d47811-6411-4240-811d-b589e75f1cc3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.90]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.76]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.06]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:01:30.88]       System.IO.IOException : The process cannot access the file '/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retained-gift-results-31663b323db44f4585d3b72f50e14b51/native.sqlite3' because it is being used by another process.
+[xUnit.net 00:01:30.88]       Stack Trace:
+[xUnit.net 00:01:30.88]            at Microsoft.Win32.SafeHandles.SafeFileHandle.Init(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Int64&amp; fileLength, UnixFileMode&amp; filePermissions)
+[xUnit.net 00:01:30.88]            at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, UnixFileMode openPermissions, Int64&amp; fileLength, UnixFileMode&amp; filePermissions, Boolean failForSymlink, Boolean&amp; wasSymlink, Func`4 createOpenException)
+[xUnit.net 00:01:30.88]            at System.IO.File.OpenHandle(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize)
+[xUnit.net 00:01:30.88]            at System.IO.File.ReadAllBytes(String path)
+[xUnit.net 00:01:30.88]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs(174,0): at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Verify(JsonElement result, String original)
+[xUnit.net 00:01:30.88]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs(36,0): at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use()
+[xUnit.net 00:01:30.88]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:01:30.88]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:01:30.90]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-29T22:16:53.8573150-05:00">
+        <Text>[xUnit.net 00:01:30.87]     OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

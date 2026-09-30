@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/host-opening-diagnostic-01/world.sqlite",
+    "1739"
+  ],
+  "sourceSha256": "5d1eb8dd867fd85b0ba7cf95b7a4a84e07516c2f9857d3f7b5e3be898cac718f",
+  "limitSeconds": 90,
+  "kind": "Host diagnostic; not native acceptance",
+  "loadBefore": [
+    28.068359375,
+    17.65966796875,
+    14.49853515625
+  ],
+  "error": "TimeoutExpired(['/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll', '--inspect-recorded-world', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/host-opening-diagnostic-01/world.sqlite', '1739'], 89.99991379212588)",
+  "seconds": 90.03898012498394,
+  "loadAfter": [
+    34.1875,
+    21.9833984375,
+    16.45556640625
+  ],
+  "databaseUnchanged": true
+}

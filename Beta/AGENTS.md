@@ -141,6 +141,12 @@ resource-intensive probes. Continue lightweight independent work. Preserve timin
 a diagnostic with the same command/threshold after removing this self-imposed overlap; a later pass
 alone neither establishes contention as the cause nor closes a production latency/scale gate.
 
+For delegated timing-sensitive verification, provide the permitted heavy-check wrappers with a shared
+execution lock or scheduler slot where practical. A yielded tool handle can still own a running child;
+starting a benchmark then is overlap, not independent verification. Pin measured source contents and
+build settings before/after, not merely the names of changed files. The portable delegation reference
+records this discipline; a busy slot or partial replay is not a pass.
+
 For xUnit process diagnostics, identify the actual test application descendant before attributing a
 stall. An idle dotnet/VSTest wrapper can be waiting normally while its child executes tests. Preserve
 original samples and record corrections; observed contention alone does not establish a timing cause.

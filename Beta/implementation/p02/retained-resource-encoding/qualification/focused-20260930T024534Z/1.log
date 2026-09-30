@@ -1,0 +1,63 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.67]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.81]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.35]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Care.ResourceArchivePolicyTests.Archive_capacity_is_charged_separately_and_refuses_before_exceeding_either_bound [31 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.Standalone_production_contracts_refuse_the_coordinated_owner [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_second_cut_keeps_one_bounded_anchor_and_decodes_with_its_predecessor [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_lived_ordinary_world_is_never_upgraded [739 ms]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.A_foreign_original_genesis_is_refused_and_releases_the_save(seed: "another-retained-seed", playerName: "Traveler") [4 s]
+  Passed OpenFantasy.Hosting.Tests.ResourceEncoding.AnchoredResourceHistoryEncodingTests.Archive_anchor_frames_the_unchanged_structure_and_keeps_its_exact_refusals [4 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_cut_changes_representation_only_and_requires_its_exact_joint_context [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.WorldResourceContinuationTests.Pending_care_and_later_treatment_preserve_original_defeat_across_retrieved_boundaries(crafted: True) [5 s]
+  Passed OpenFantasy.Hosting.Tests.ResourceEncoding.AnchoredResourceHistoryEncodingTests.Joint_anchor_frames_the_unchanged_structure_and_keeps_exact_context_refusals [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.Fresh_opt_in_selects_the_coordinated_profile_without_changing_the_ordinary_genesis [1 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.A_foreign_original_genesis_is_refused_and_releases_the_save(seed: "retained-gift-selection", playerName: "Another traveler") [4 s]
+  Passed OpenFantasy.Hosting.Tests.Care.WorldResourceContinuationTests.Pending_care_and_later_treatment_preserve_original_defeat_across_retrieved_boundaries(crafted: False) [3 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Damaged_later_history_refuses_selection_and_earlier_reads [2 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.A_missing_save_or_another_target_is_refused_without_creating_anything [725 ms]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Fresh_saved_gift_and_ordinary_interpretations_are_not_retained_worlds [1 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.An_untransitioned_coordinated_save_is_never_migrated_by_opening [1 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Existing_fresh_gift_and_coordinated_selectors_still_refuse_a_transitioned_save [2 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Malformed_or_lived_expected_genesis_bytes_are_refused_before_selection [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.DurableResourceArchiveTests.Actual_care_reopens_at_defeat_acknowledgment_treatment_and_resumed_attack(crafted: True) [19 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.The_original_genesis_opens_only_its_explicitly_transitioned_save_paused_with_the_gift_policy [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.An_automatic_joint_archive_keeps_the_frame_of_its_continued_candidate [20 s]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_reused_movement_root_carries_its_own_frame_and_never_an_earlier_preflight [344 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_legacy_candidate_without_a_frame_uses_the_original_durable_encoding_path [39 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.DurableResourceArchiveTests.Actual_care_reopens_at_defeat_acknowledgment_treatment_and_resumed_attack(crafted: False) [9 s]
+  Passed OpenFantasy.Hosting.Tests.Care.DurableResourceArchiveTests.Fresh_care_database_cannot_import_an_actual_pending_obligation_or_treatment [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.DurableResourceArchiveTests.Care_profile_and_schema_require_their_exact_pair(profile: 24, schema: 7) [402 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.DurableResourceArchiveTests.Care_profile_and_schema_require_their_exact_pair(profile: 25, schema: 6) [521 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.WorldResourceContinuationTests.Actual_combat_crosses_two_segments_with_exact_retrieval_and_deterministic_replay [23 s]
+  Passed OpenFantasy.Hosting.Tests.Care.WorldResourceContinuationTests.Archive_references_reject_wrong_scope_ordinal_sequence_hash_and_altered_bytes [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.An_automatic_resource_archive_keeps_the_candidate_frame_through_publication_and_replay [27 s]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.Commit_preparation_stores_the_captured_bytes_and_owns_a_copy_independent_of_the_frame [517 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.Movement_lifecycle_encounter_and_care_decisions_carry_the_frame_of_their_final_candidate [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_captured_frame_reproduces_the_unchanged_encoder_and_survives_mutated_exports [477 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorldCanonicalFrameTests.A_frame_binds_only_its_exact_root_and_a_decision_refuses_the_frame_of_an_equal_twin [383 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.DurableResourceArchiveTests.Actual_520_resource_changes_publish_two_archives_and_refuse_closed_save_corruption [1 m 7 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionRecoveryTests.Damaged_transition_context_archives_or_checkpoints_refuse_recovery(mutation: "unscheduled-checkpoint") [29 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionRecoveryTests.Damaged_transition_context_archives_or_checkpoints_refuse_recovery(mutation: "forged-request") [33 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionRecoveryTests.Damaged_transition_context_archives_or_checkpoints_refuse_recovery(mutation: "damaged-lived-archive") [12 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionRecoveryTests.Damaged_transition_context_archives_or_checkpoints_refuse_recovery(mutation: "missing-transition-archive") [55 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionRecoveryTests.Faults_before_and_after_the_transition_commit_leave_either_no_rows_or_the_complete_transition [19 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionRecoveryTests.A_fault_after_the_consistent_backup_publishes_nothing_and_keeps_the_source [25 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionTests.A_lived_world_before_its_first_cut_transitions_without_inventing_a_previous_anchor [1 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionTests.Transition_archive_decodes_only_with_its_authenticated_request [1 s]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionTests.Published_transition_advances_only_the_commit_revision_and_selects_saved_proposals [148 ms]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionTests.Lived_source_is_the_pinned_profile27_world_and_opening_never_transitions_it [457 ms]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionTests.Used_or_identical_destination_is_refused_before_any_copy [20 ms]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionTests.Published_destination_keeps_genesis_and_every_prior_row_exactly [818 ms]
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedTransitionTests.Forged_stale_mismatched_reused_and_occupied_requests_fail_closed [40 ms]
+[xUnit.net 00:08:23.59]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.ProposalMigration.RetainedProposalJourneyTests.Helper_potion_offer_crosses_a_real_cut_is_accepted_and_later_used_by_the_player [2 m 58 s]
+
+Test Run Successful.
+Total tests: 49
+     Passed: 49
+ Total time: 8.4083 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/focused-20260930T024534Z/OpenFantasy.Hosting.Tests.trx

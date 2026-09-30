@@ -1,0 +1,69 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.47]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.39]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.74]   Starting:    OpenFantasy.Core.Tests
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 29) [38 ms]
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 26, target: 30) [2 ms]
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 28, target: 30) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 28) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 31) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Tag_version_digest_length_trailing_and_noncanonical_forgeries_fail [6 ms]
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Constructor_refuses_scope_aliases_time_inversion_and_ordinal_mismatch [2 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 100) [87 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 110) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 2) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 300) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 200) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 1) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 10) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Request_round_trips_its_exact_canonical_bytes_and_digest [14 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Command_or_causal_evidence_cannot_alias_scope_actor_account_or_rule(identity: 120) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "root-world") [5 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ActorResourceHistoryTests.Multiple_actors_and_commands_can_share_one_world_boundary [105 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "root-version") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceBatchEncodingTests.Equal_command_id_does_not_share_encoding_between_distinct_batches [105 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "operation-overflow") [8 ms]
+  Passed OpenFantasy.Core.Tests.ResourceEncoding.WorldResourceHistoryEncodingTests.Caller_lists_changed_before_the_first_encode_cannot_alter_a_cold_history [114 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "root-branch") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "before-revision") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "basis-hash") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceBatchEncodingTests.Concurrent_first_encoding_and_mutated_exports_preserve_exact_bytes [14 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "after-curve-pin") [3 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "operation-unknown") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "after-hp") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "command-ordinal-overflow") [6 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "amount-overflow") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceBatchEncodingTests.Shared_batch_preserves_earlier_history_when_successor_and_input_list_change [11 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceBatchEncodingTests.Public_encoded_buffers_cannot_change_retained_history_or_later_exports [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "missing-change") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "after-profile-pin") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "effect-ordinal-overflow") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ActorResourceHistoryTests.Complete_chain_retains_no_level_reward_and_one_revision_for_level_refill [30 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Tampered_archive_is_refused(mutation: "basis-sequence") [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Direct_callers_receive_insufficient_magic_and_numeric_overflow_refusals [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ActorResourceHistoryTests.Missing_actor_change_or_unexplained_current_actor_is_refused [2 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Evidence_cannot_alias_another_changes_rule_in_either_order [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ActorResourceHistoryTests.Claimed_arithmetic_no_op_unknown_actor_and_wrong_rule_pins_refuse [1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Level_reward_refuses_a_forged_refill_or_level_even_with_the_right_revision [4 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Current_revision_and_definition_admission_cannot_go_backwards [2 ms]
+  Passed OpenFantasy.Core.Tests.ResourceEncoding.WorldResourceHistoryEncodingTests.Equal_identities_with_different_content_never_share_bytes [32 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Empty_history_is_canonical_and_requires_unchanged_complete_actors [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Zero_experience_reward_retains_its_actor_revision_in_the_archive [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Cause_references_prove_consistency_but_do_not_authenticate_an_external_action [< 1 ms]
+  Passed OpenFantasy.Core.Tests.ResourceEncoding.WorldResourceHistoryEncodingTests.A_successor_sharing_batches_and_evidence_leaves_the_earlier_frame_exact [3 ms]
+  Passed OpenFantasy.Core.Tests.ResourceEncoding.WorldResourceHistoryEncodingTests.Changing_public_outputs_cannot_change_the_owned_frame_or_later_exports [1 ms]
+  Passed OpenFantasy.Core.Tests.ResourceEncoding.WorldResourceHistoryEncodingTests.Every_encode_reproduces_the_independent_v1_layout_for_each_simple_cause_kind [3 ms]
+  Passed OpenFantasy.Core.Tests.ResourceEncoding.WorldResourceHistoryEncodingTests.Concurrent_cold_callers_observe_one_complete_frame [4 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Exact_envelopes_roundtrip_and_overflow_refuses_without_mutation [63 ms]
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Every_truncation_trailing_bytes_and_oversized_headers_are_refused [78 ms]
+[xUnit.net 00:00:02.14]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+  Passed OpenFantasy.Core.Tests.Progression.ResourceHistory.ResourceHistoryBoundaryTests.Segments_cannot_begin_mid_step_at_their_basis_boundary [1 ms]
+
+Test Run Successful.
+Total tests: 55
+     Passed: 55
+ Total time: 2.8396 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/focused-20260930T024534Z/OpenFantasy.Core.Tests.trx

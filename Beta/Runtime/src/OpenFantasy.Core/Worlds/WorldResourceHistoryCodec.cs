@@ -13,20 +13,19 @@ public static class WorldResourceHistoryCodec
         if (value.CoordinatedAnchor is { } joint)
         {
             // The inner V1 frame stays structural; the outer V3 frame binds the exact joint boundary.
-            var active = new WorldResourceHistory(value.AnchorAdmission, value.History, value.Evidence);
             return CanonicalEncodingV1.Frame("world.resource-history", CanonicalEncodingV1.Unsigned64(3),
-                joint.EncodeBinding(), WorldResourceHistoryCodecV1.Encode(active));
+                joint.EncodeBinding(), value.StructuralEncodingV1);
         }
         if (value.ArchiveAnchor is not { } anchor) return WorldResourceHistoryCodecV1.Encode(value);
-        var reference = anchor.Reference;
         // The inner V1 frame remains a structural archive; the outer V2 frame binds its actual basis.
-        var body = new WorldResourceHistory(value.AnchorAdmission, value.History, value.Evidence);
         return CanonicalEncodingV1.Frame("world.resource-history", CanonicalEncodingV1.Unsigned64(2),
-            CanonicalEncodingV1.Frame("world.resource-archive-reference.v1", reference.WorldId.ToByteArray(),
-                reference.BranchId.ToByteArray(), CanonicalEncodingV1.Unsigned64(reference.Ordinal),
-                CanonicalEncodingV1.Unsigned64(reference.BoundarySequence), reference.BoundaryHash.ToByteArray()),
-            WorldResourceHistoryCodecV1.Encode(body));
+            EncodeArchiveReference(anchor.Reference), value.StructuralEncodingV1);
     }
+
+    private static byte[] EncodeArchiveReference(WorldResourceArchiveReference reference) =>
+        CanonicalEncodingV1.Frame("world.resource-archive-reference.v1", reference.WorldId.ToByteArray(),
+            reference.BranchId.ToByteArray(), CanonicalEncodingV1.Unsigned64(reference.Ordinal),
+            CanonicalEncodingV1.Unsigned64(reference.BoundarySequence), reference.BoundaryHash.ToByteArray());
 
     /// <summary>Restores the causal segment that follows one exact supplied coordinated boundary.</summary>
     public static WorldResourceHistory DecodeCoordinated(ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor coordinatedAnchor)

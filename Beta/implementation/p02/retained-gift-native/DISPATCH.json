@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "sourceHead": "a4bb4bcc85f4b955ca5142c04a5c602f23874e97",
+  "modelSelector": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "timeoutSeconds": 2700,
+  "clientEstimateCapUsd": 28,
+  "contextSha256": "a630dea1cbbb632e018f2e5b6971404826e0de75da150f89579136db1fdb9b46",
+  "assignment": "ASSIGNMENT.md",
+  "privateOutput": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-retained-native-amos7e18/run",
+  "benefit": "Cohesive client implementation, retained fixture, native probe/driver and authentication offloaded; Astra independently integrates. No net credit savings claim.",
+  "requestedAt": "2026-09-30T01:47:33.919450+00:00",
+  "contextPreflight": "verified",
+  "ownedEditObserved": true,
+  "adapterExitCode": 0,
+  "providerSubtype": "success",
+  "durationSeconds": 1943.293,
+  "clientCostEstimateUsd": 10.847633199999999,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 154,
+      "outputTokens": 156930,
+      "cacheReadInputTokens": 21199846,
+      "cacheCreationInputTokens": 433556,
+      "webSearchRequests": 0,
+      "costUSD": 10.847633199999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 86907,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "acceptance": "Worker managed checks complete; root native integration pending"
+}

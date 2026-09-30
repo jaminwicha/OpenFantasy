@@ -47,6 +47,7 @@ public partial class Bootstrap : Control
             or ["--restorative-probe", _, _, _, "keyboard" or "controller" or "pointer" or "helper" or "revoke" or "reopen", "--background-render"]
             or ["--coordinated-restorative-probe", _, _, _, _, "revoke" or "reopen", "--background-render"]
             or ["--gift-probe", _, _, _, "keyboard" or "controller" or "pointer" or "reopen", "--background-render"]
+            or ["--retained-gift-probe", _, _, _, _, "keyboard" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -62,7 +63,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--gift-probe", var giftSave, var giftReport, var giftGenesis, var giftMode]
+        if (arguments is ["--retained-gift-probe", var retainedSave, var retainedReport, var retainedGenesis,
+            var retainedMetadata, var retainedMode] && retainedMode is "keyboard" or "reopen")
+        {
+            if (!File.Exists(retainedSave) || !File.Exists(retainedGenesis) || !File.Exists(retainedMetadata))
+            {
+                GD.PushError("The retained gift probe requires its existing transitioned save, original genesis and metadata.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { RetainedGiftGenesisPath = retainedGenesis, SavePathOverride = retainedSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new RetainedGiftPlayProbe(game, retainedReport, retainedMetadata, retainedMode));
+        }
+        else if (arguments is ["--gift-probe", var giftSave, var giftReport, var giftGenesis, var giftMode]
             && giftMode is "keyboard" or "controller" or "pointer" or "reopen")
         {
             if (!File.Exists(giftSave) || !File.Exists(giftGenesis))
@@ -322,6 +337,17 @@ public partial class Bootstrap : Control
         else if (arguments is ["--gifts"])
         {
             AddChild(new FarmGame { GiftsProfile = true });
+        }
+        else if (arguments is ["--retained-gifts", var retainedGiftSave, var retainedGiftGenesis])
+        {
+            // Normal play of an explicitly transitioned world: its own save, no default, normal focus rules.
+            if (!File.Exists(retainedGiftSave) || !File.Exists(retainedGiftGenesis))
+            {
+                GD.PushError("The retained gift world requires its existing transitioned save and original genesis.");
+                GetTree().Quit(1);
+                return;
+            }
+            AddChild(new FarmGame { RetainedGiftGenesisPath = retainedGiftGenesis, SavePathOverride = retainedGiftSave });
         }
         else if (arguments is ["--restorative"])
         {

@@ -8,6 +8,8 @@ namespace OpenFantasy.Core.Worlds;
 /// <summary>World-owned causal continuity beside the sole current progression owner.</summary>
 public sealed class WorldResourceHistory
 {
+    private byte[]? _structuralEncodingV1;
+
     public WorldResourceHistory(ContentHash anchorAdmission, ActorResourceHistory history,
         IEnumerable<WorldResourceEvidence> evidence, WorldResourceArchiveAnchor? archiveAnchor = null,
         WorldMaterialCareArchiveAnchor? coordinatedAnchor = null)
@@ -53,6 +55,12 @@ public sealed class WorldResourceHistory
     public WorldResourceArchiveAnchor? ArchiveAnchor { get; }
     public ContentHash ContentHash => ContentHash.Compute(WorldResourceHistoryCodec.Encode(this));
 
+    // The inline V1 frame without either anchor, which the V2/V3 frames wrap. It is owned by this exact
+    // immutable history and never exposed or shared by identity. Capture reads only the deeply immutable
+    // admission pin, actor history and evidence; anchors are framed around it at each public encode.
+    internal ReadOnlyMemory<byte> StructuralEncodingV1 =>
+        Volatile.Read(ref _structuralEncodingV1) ?? CaptureStructuralEncodingV1();
+
     internal static WorldResourceHistory CreateFresh(ContentHash admission, ProgressionSnapshot basis) =>
         new(admission, new ActorResourceHistory(basis, 0, []), []);
 
@@ -62,6 +70,13 @@ public sealed class WorldResourceHistory
             || History.ChangeCount + batch.Changes.Count > ActorResourceHistory.MaximumChanges)
             throw new WorldResourceContinuationRequiredException();
         return new(AnchorAdmission, History.Append(batch), Evidence.Append(evidence), ArchiveAnchor, CoordinatedAnchor);
+    }
+
+    private byte[] CaptureStructuralEncodingV1()
+    {
+        byte[] encoded = WorldResourceHistoryCodecV1.EncodeStructure(this);
+        // Concurrent first callers may encode independently; one complete array is published.
+        return Interlocked.CompareExchange(ref _structuralEncodingV1, encoded, null) ?? encoded;
     }
 }
 

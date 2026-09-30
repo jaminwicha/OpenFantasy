@@ -31,6 +31,8 @@ def main():
     selection.add_argument("--care", action="store_true", help="Open the separate encounter journey with finite companion care")
     selection.add_argument("--restorative", action="store_true", help="Open the separate ordinary-care journey with a personal Potion and permitted companion aid")
     selection.add_argument("--gifts", action="store_true", help="Open a separate saved-gift journey with explicit companion gift preferences")
+    selection.add_argument("--retained-gifts", nargs=2, metavar=("SAVE", "GENESIS"), type=Path,
+                           help="Continue an existing, explicitly transitioned retained world; GENESIS is its original fresh coordinated genesis. Never migrates or creates a save")
     selection.add_argument("--encounters", action="store_true", help="Open the separate in-place encounter journey save")
     selection.add_argument("--breach", action="store_true", help="Open the separate earned terrain-breach save")
     selection.add_argument("--watercourse", action="store_true", help="Open the separate finite-water farm save")
@@ -39,6 +41,10 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[1]
     pins = json.loads((root / "toolchain.json").read_text())
+    retained = [path.expanduser().resolve() for path in args.retained_gifts] if args.retained_gifts else None
+    if retained and not all(path.is_file() for path in retained):
+        print("The retained gift world requires its existing transitioned save and original genesis file.", file=sys.stderr)
+        return 1
     installed = Path.home() / ".local/share/openfantasy/toolchains"
     try:
         dotnet = executable(args.dotnet, "OPENFANTASY_DOTNET",
@@ -65,10 +71,12 @@ def main():
         if args.prepare_only:
             print("Pinned native client prepared. No gameplay save was opened.", flush=True)
             return 0
-        place = "gift journey" if args.gifts else "restorative journey" if args.restorative else "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
+        place = "retained gift world" if retained else "gift journey" if args.gifts else "restorative journey" if args.restorative else "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
         print(f"Opening Wren’s {place}. WASD/arrows: walk; E: talk; G: quest; F: gather; Q: target; V: actions; Esc: pause.", flush=True)
         command = [str(godot), "--path", str(root / "client")]
-        if args.gifts:
+        if retained:
+            command += ["--", "--retained-gifts", str(retained[0]), str(retained[1])]
+        elif args.gifts:
             command += ["--", "--gifts"]
         elif args.restorative:
             command += ["--", "--restorative"]

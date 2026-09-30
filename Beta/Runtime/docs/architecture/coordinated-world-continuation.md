@@ -223,3 +223,11 @@ The durable commit is kind 3 in the existing schema-eight layout: one transactio
 the archive closing the stored prior head, the cause identity, the new head and any scheduled
 checkpoint. No table, index or physical schema changes. Journal accounting counts the archive under
 the source profile; later commits use profile 30.
+
+Copying and opening stay separate. The privileged upgrade writes only its unused destination; the
+[retained native selection](material-proposals.md#retained-world-native-selection) later opens that
+destination with the original profile-27 genesis bytes and the named profile-30 target, relying on
+the recovery rule above. Neither the client nor ordinary opening ever performs, repeats or infers a
+transition, and the original genesis and every lived row remain the history of the continued world.
+After the transition, ordinary cuts close segments exactly as before, including an offer still open
+at the closing boundary.

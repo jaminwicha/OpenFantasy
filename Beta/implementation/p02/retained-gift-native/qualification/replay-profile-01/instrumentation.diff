@@ -1,0 +1,166 @@
+--- a/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs
++++ b/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs
+@@ -71,2 +71,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("full-replay", true, 0);
+         byte[] genesisBytes = database.ReadGenesis();
+@@ -241,2 +242,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("replay-prepare-entry", false, 0);
+         if (stored.Kind == WorldCommitKind.ProfileMigration)
+@@ -285,2 +287,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("verify-command-table", false, 0);
+         int count = 0;
+@@ -304,2 +307,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("verify-identity-table", false, 0);
+         int count = 0;
+--- a/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs
++++ b/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs
+@@ -16,2 +16,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("commit-preparation", false, 4096);
+         ValidateDispatch(state, batch);
+--- a/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs
++++ b/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs
+@@ -86,2 +86,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("authority-open-existing", true, 0);
+         byte[] expected = expectedGenesis.ToArray();
+@@ -206,2 +207,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("read-state-for-host", false, 0);
+         lock (_gate)
+@@ -325,2 +327,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("inspect-for-host", false, 0);
+         lock (_gate)
+--- a/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs
++++ b/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs
+@@ -23,2 +23,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("database-open", false, 0);
+         if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version
+--- a/src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs
++++ b/src/OpenFantasy.Hosting/Worlds/WorldGenesisAdmission.cs
+@@ -11,2 +11,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("genesis-admission", false, 0);
+         if (genesis.Care is { } care && (care.Revision != 0 || care.Acknowledgments.Count != 0
+--- a/src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs
++++ b/src/OpenFantasy.Hosting/Worlds/WorldResourceArchiveReplay.cs
+@@ -24,2 +24,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("resource-archive-verify", false, 0);
+         if (expected is not null)
+--- a/src/OpenFantasy.Hosting/Worlds/WorldMaterialCareArchiveReplay.cs
++++ b/src/OpenFantasy.Hosting/Worlds/WorldMaterialCareArchiveReplay.cs
+@@ -33,2 +33,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("material-care-archive-verify", false, 0);
+         if (expected is not null)
+--- a/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs
++++ b/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs
+@@ -57,2 +57,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("local-world-session-constructor", true, 0);
+         ArgumentNullException.ThrowIfNull(authority);
+@@ -71,3 +72,6 @@
+         _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
+-        _view = ProjectView(state);
++        using (global::OpenFantasy.Core.NativeStartupProbe.Begin("initial-view-projection", true))
++        {
++            _view = ProjectView(state);
++        }
+         _loop = Task.Run(RunAsync);
+--- a/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs
+@@ -9,2 +9,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("world-encode", false, 0);
+         ArgumentNullException.ThrowIfNull(state);
+--- a/src/OpenFantasy.Core/Worlds/WorldCanonicalFrame.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldCanonicalFrame.cs
+@@ -27,2 +27,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("canonical-frame-capture", false, 0);
+         ArgumentNullException.ThrowIfNull(world);
+--- a/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs
+@@ -57,2 +57,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("step-decide", false, 0);
+         ArgumentNullException.ThrowIfNull(state);
+--- a/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs
+@@ -59,2 +59,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("world-root", false, 0);
+         ArgumentNullException.ThrowIfNull(inventory);
+--- a/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs
+@@ -20,2 +20,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("world-identities", false, 0);
+         ArgumentNullException.ThrowIfNull(world);
+--- a/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs
+@@ -17,2 +17,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("resource-causes", false, 0);
+         if (world.ResourceHistory is not { } retained) return;
+--- a/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs
+@@ -46,2 +46,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("care-admission", false, 0);
+         if (world.Care is not { } care) return;
+--- a/src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs
+@@ -32,2 +32,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("ordinary-care", false, 0);
+         if (world.Care?.Ordinary is not { } ordinary) return;
+--- a/src/OpenFantasy.Core/Worlds/WorldCoordinatedAdmission.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldCoordinatedAdmission.cs
+@@ -36,2 +36,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("coordinated-admission", false, 0);
+         if (world.Coordination is not { } coordination)
+--- a/src/OpenFantasy.Core/Worlds/WorldSourceIssuanceBaseline.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldSourceIssuanceBaseline.cs
+@@ -109,2 +109,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("source-partition", false, 0);
+         ProductionSnapshot production = world.Production!;
+--- a/src/OpenFantasy.Core/Production/Continuation/ProductionContinuationValidation.cs
++++ b/src/OpenFantasy.Core/Production/Continuation/ProductionContinuationValidation.cs
+@@ -10,2 +10,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("production-continuation", false, 0);
+         if (state.MaterialHistory is not null) { MaterialContinuationValidation.Validate(state); return; }
+--- a/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs
+@@ -11,2 +11,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("codec-world-resource", false, 0);
+         ArgumentNullException.ThrowIfNull(value);
+--- a/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs
+@@ -20,2 +20,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("codec-world-resource-body", false, 0);
+         ArgumentNullException.ThrowIfNull(value);
+--- a/src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistoryCodecV1.cs
++++ b/src/OpenFantasy.Core/Progression/ResourceHistory/ActorResourceHistoryCodecV1.cs
+@@ -12,2 +12,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("codec-actor-resource-history", false, 0);
+         ArgumentNullException.ThrowIfNull(history);
+--- a/src/OpenFantasy.Core/Worlds/WorldMaterialProposalCodec.cs
++++ b/src/OpenFantasy.Core/Worlds/WorldMaterialProposalCodec.cs
+@@ -17,2 +17,3 @@
+     {
++        using var nativeStartupCost = global::OpenFantasy.Core.NativeStartupProbe.Begin("codec-proposals", false, 0);
+         ArgumentNullException.ThrowIfNull(book);

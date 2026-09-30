@@ -1,0 +1,1567 @@
+{
+ "kind": "retained-resource-encoding-replay-v1",
+ "status": "diagnostic-complete",
+ "startedUtc": "2026-09-30T02:54:14.430268+00:00",
+ "limits": {
+  "buildSeconds": 240,
+  "replaySeconds": 120,
+  "aggregateSeconds": 600
+ },
+ "work": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z",
+ "commands": [
+  {
+   "label": "build-after",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "src/OpenFantasy.Host/OpenFantasy.Host.csproj",
+    "-p:RestoreLockedMode=true",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--disable-build-servers",
+    "--verbosity",
+    "quiet"
+   ],
+   "cwd": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime",
+   "boundSeconds": 240,
+   "loadBefore": [
+    11.015625,
+    15.08837890625,
+    14.59130859375
+   ],
+   "startedUtc": "2026-09-30T02:54:15.275778+00:00",
+   "exitCode": 0,
+   "wallSeconds": 12.166,
+   "childUserCpuSeconds": 23.319,
+   "childSystemCpuSeconds": 2.39,
+   "loadAfter": [
+    10.3916015625,
+    14.8212890625,
+    14.501953125
+   ],
+   "finishedUtc": "2026-09-30T02:54:27.441514+00:00"
+  },
+  {
+   "label": "before-1",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-1/world.sqlite",
+    "1739"
+   ],
+   "cwd": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-1",
+   "boundSeconds": 120,
+   "loadBefore": [
+    9.87939453125,
+    14.6416015625,
+    14.43994140625
+   ],
+   "startedUtc": "2026-09-30T02:54:27.670599+00:00",
+   "exitCode": 0,
+   "wallSeconds": 27.525,
+   "childUserCpuSeconds": 14.189,
+   "childSystemCpuSeconds": 1.117,
+   "loadAfter": [
+    8.4404296875,
+    13.916015625,
+    14.18310546875
+   ],
+   "finishedUtc": "2026-09-30T02:54:55.197159+00:00"
+  },
+  {
+   "label": "after-1",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-1/world.sqlite",
+    "1739"
+   ],
+   "cwd": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-1",
+   "boundSeconds": 120,
+   "loadBefore": [
+    8.4404296875,
+    13.916015625,
+    14.18310546875
+   ],
+   "startedUtc": "2026-09-30T02:54:55.229058+00:00",
+   "exitCode": 0,
+   "wallSeconds": 24.182,
+   "childUserCpuSeconds": 13.649,
+   "childSystemCpuSeconds": 1.121,
+   "loadAfter": [
+    7.57080078125,
+    13.27734375,
+    13.9443359375
+   ],
+   "finishedUtc": "2026-09-30T02:55:19.411217+00:00"
+  },
+  {
+   "label": "after-2",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-2/world.sqlite",
+    "1739"
+   ],
+   "cwd": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-2",
+   "boundSeconds": 120,
+   "loadBefore": [
+    7.57080078125,
+    13.27734375,
+    13.9443359375
+   ],
+   "startedUtc": "2026-09-30T02:55:19.440101+00:00",
+   "exitCode": 0,
+   "wallSeconds": 14.675,
+   "childUserCpuSeconds": 13.653,
+   "childSystemCpuSeconds": 1.145,
+   "loadAfter": [
+    7.4990234375,
+    12.984375,
+    13.828125
+   ],
+   "finishedUtc": "2026-09-30T02:55:34.115618+00:00"
+  },
+  {
+   "label": "before-2",
+   "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Host.dll",
+    "--inspect-recorded-world",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-2/world.sqlite",
+    "1739"
+   ],
+   "cwd": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-2",
+   "boundSeconds": 120,
+   "loadBefore": [
+    7.4990234375,
+    12.984375,
+    13.828125
+   ],
+   "startedUtc": "2026-09-30T02:55:34.145202+00:00",
+   "exitCode": 0,
+   "wallSeconds": 12.494,
+   "childUserCpuSeconds": 12.539,
+   "childSystemCpuSeconds": 0.747,
+   "loadAfter": [
+    8.0751953125,
+    12.92041015625,
+    13.794921875
+   ],
+   "finishedUtc": "2026-09-30T02:55:46.639259+00:00"
+  }
+ ],
+ "replays": [
+  {
+   "label": "before-1",
+   "binary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin",
+   "exitCode": 0,
+   "timedOut": false,
+   "wallSeconds": 27.525,
+   "childCpuSeconds": 15.306,
+   "assemblies": {
+    "OpenFantasy.Core.dll": "081923c622b44916ebc2fde8a7f43ef891c82cb20c30b5959ff64136c53f86c3",
+    "OpenFantasy.Hosting.dll": "c1d0b102ba50f6f5e605f330384ac4756be21e6efafb60103f3ee78e72d1a4a6",
+    "OpenFantasy.Host.dll": "33bfef5acbbe00dd876b55014734e6a4cabc002a26e2fa5007b0ca48ab357412"
+   },
+   "copiedWorldUnchanged": true,
+   "recorded": {
+    "SourceHeadRevision": 1739,
+    "SourceHeadHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "RecordedRevision": 1739,
+    "StateHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "ProfileVersion": 30
+   },
+   "probe": {
+    "reason": "process-exit",
+    "open": [],
+    "stages": {
+     "full-replay": {
+      "calls": 1,
+      "wallMs": 14717.5,
+      "threadCpuMs": 11884.9,
+      "threadAllocatedBytes": 10058239472
+     },
+     "replay-prepare-entry": {
+      "calls": 1739,
+      "wallMs": 13944.0,
+      "threadCpuMs": 11292.8,
+      "threadAllocatedBytes": 9870320344
+     },
+     "commit-preparation": {
+      "calls": 1738,
+      "wallMs": 13871.1,
+      "threadCpuMs": 11231.3,
+      "threadAllocatedBytes": 9861023720
+     },
+     "step-decide": {
+      "calls": 1738,
+      "wallMs": 13446.5,
+      "threadCpuMs": 10877.8,
+      "threadAllocatedBytes": 9371513800
+     },
+     "database-open": {
+      "calls": 1,
+      "wallMs": 12660.6,
+      "threadCpuMs": 52.4,
+      "threadAllocatedBytes": 89424
+     },
+     "world-root": {
+      "calls": 2403,
+      "wallMs": 5421.8,
+      "threadCpuMs": 4597.8,
+      "threadAllocatedBytes": 1326734912
+     },
+     "world-encode": {
+      "calls": 2401,
+      "wallMs": 3497.1,
+      "threadCpuMs": 2725.8,
+      "threadAllocatedBytes": 5178222992
+     },
+     "canonical-frame-capture": {
+      "calls": 2389,
+      "wallMs": 3465.9,
+      "threadCpuMs": 2709.8,
+      "threadAllocatedBytes": 5145909856
+     },
+     "resource-causes": {
+      "calls": 2403,
+      "wallMs": 2596.6,
+      "threadCpuMs": 2163.7,
+      "threadAllocatedBytes": 565162960
+     },
+     "codec-world-resource": {
+      "calls": 2409,
+      "wallMs": 1199.7,
+      "threadCpuMs": 966.8,
+      "threadAllocatedBytes": 2329008432
+     },
+     "codec-world-resource-body": {
+      "calls": 2414,
+      "wallMs": 1157.4,
+      "threadCpuMs": 931.3,
+      "threadAllocatedBytes": 2122903896
+     },
+     "world-identities": {
+      "calls": 2403,
+      "wallMs": 1048.4,
+      "threadCpuMs": 905.1,
+      "threadAllocatedBytes": 358742856
+     },
+     "care-admission": {
+      "calls": 2403,
+      "wallMs": 643.8,
+      "threadCpuMs": 569.0,
+      "threadAllocatedBytes": 62611672
+     },
+     "ordinary-care": {
+      "calls": 2403,
+      "wallMs": 621.1,
+      "threadCpuMs": 554.6,
+      "threadAllocatedBytes": 61534640
+     },
+     "codec-actor-resource-history": {
+      "calls": 2419,
+      "wallMs": 188.2,
+      "threadCpuMs": 147.6,
+      "threadAllocatedBytes": 550148576
+     },
+     "material-care-archive-verify": {
+      "calls": 1739,
+      "wallMs": 185.0,
+      "threadCpuMs": 143.9,
+      "threadAllocatedBytes": 119508944
+     },
+     "coordinated-admission": {
+      "calls": 2403,
+      "wallMs": 148.8,
+      "threadCpuMs": 135.7,
+      "threadAllocatedBytes": 41070904
+     },
+     "source-partition": {
+      "calls": 2403,
+      "wallMs": 95.6,
+      "threadCpuMs": 87.6,
+      "threadAllocatedBytes": 20743928
+     },
+     "production-continuation": {
+      "calls": 534,
+      "wallMs": 76.7,
+      "threadCpuMs": 47.3,
+      "threadAllocatedBytes": 44535696
+     },
+     "verify-command-table": {
+      "calls": 1,
+      "wallMs": 35.5,
+      "threadCpuMs": 21.5,
+      "threadAllocatedBytes": 11148168
+     },
+     "verify-identity-table": {
+      "calls": 1,
+      "wallMs": 26.0,
+      "threadCpuMs": 21.8,
+      "threadAllocatedBytes": 10426288
+     },
+     "codec-proposals": {
+      "calls": 287,
+      "wallMs": 24.1,
+      "threadCpuMs": 23.1,
+      "threadAllocatedBytes": 50652480
+     },
+     "genesis-admission": {
+      "calls": 1,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.2,
+      "threadAllocatedBytes": 61320
+     },
+     "resource-archive-verify": {
+      "calls": 1739,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.6,
+      "threadAllocatedBytes": 0
+     }
+    },
+    "process": {
+     "allocatedBytes": 10065459040,
+     "processCpuMs": 15300.176,
+     "gen0": 1473,
+     "gen1": 660,
+     "gen2": 577,
+     "gcPauseMs": 945.816,
+     "jitMs": 2260.8908
+    },
+    "runtime": {
+     "framework": ".NET 10.0.12",
+     "serverGc": false,
+     "assemblies": [
+      [
+       "OpenFantasy.Host",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Host.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Hosting",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Hosting.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Core",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Core.dll",
+       true
+      ]
+     ]
+    }
+   },
+   "complete": true
+  },
+  {
+   "label": "after-1",
+   "binary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0",
+   "exitCode": 0,
+   "timedOut": false,
+   "wallSeconds": 24.182,
+   "childCpuSeconds": 14.77,
+   "assemblies": {
+    "OpenFantasy.Core.dll": "4b4ea2649a07e6a395707c6693e5ba45c21bc4f90e82b2f1dd1f8b97fbfc1578",
+    "OpenFantasy.Hosting.dll": "8b61b010c701d3d6a97fc1ce83cb89a1100b9bcc8e5a04bef8f1fbc5c63d29e2",
+    "OpenFantasy.Host.dll": "7d4ab9609ae48c71ce0878d8f15002deaf3b9abb5c3639202e10b236dfd4fcfd"
+   },
+   "copiedWorldUnchanged": true,
+   "recorded": {
+    "SourceHeadRevision": 1739,
+    "SourceHeadHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "RecordedRevision": 1739,
+    "StateHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "ProfileVersion": 30
+   },
+   "probe": {
+    "reason": "process-exit",
+    "open": [],
+    "stages": {
+     "full-replay": {
+      "calls": 1,
+      "wallMs": 14840.3,
+      "threadCpuMs": 11566.1,
+      "threadAllocatedBytes": 8928447872
+     },
+     "replay-prepare-entry": {
+      "calls": 1739,
+      "wallMs": 13999.6,
+      "threadCpuMs": 10910.8,
+      "threadAllocatedBytes": 8751892216
+     },
+     "commit-preparation": {
+      "calls": 1738,
+      "wallMs": 13919.9,
+      "threadCpuMs": 10842.4,
+      "threadAllocatedBytes": 8742973464
+     },
+     "step-decide": {
+      "calls": 1738,
+      "wallMs": 13490.7,
+      "threadCpuMs": 10484.1,
+      "threadAllocatedBytes": 8253490920
+     },
+     "database-open": {
+      "calls": 1,
+      "wallMs": 9040.7,
+      "threadCpuMs": 59.4,
+      "threadAllocatedBytes": 83232
+     },
+     "world-root": {
+      "calls": 2403,
+      "wallMs": 6021.0,
+      "threadCpuMs": 4643.6,
+      "threadAllocatedBytes": 1326717520
+     },
+     "world-encode": {
+      "calls": 2401,
+      "wallMs": 2843.7,
+      "threadCpuMs": 2238.5,
+      "threadAllocatedBytes": 4054243560
+     },
+     "canonical-frame-capture": {
+      "calls": 2389,
+      "wallMs": 2843.0,
+      "threadCpuMs": 2228.2,
+      "threadAllocatedBytes": 4033505832
+     },
+     "resource-causes": {
+      "calls": 2403,
+      "wallMs": 2693.8,
+      "threadCpuMs": 2145.0,
+      "threadAllocatedBytes": 565147880
+     },
+     "world-identities": {
+      "calls": 2403,
+      "wallMs": 1139.3,
+      "threadCpuMs": 957.9,
+      "threadAllocatedBytes": 358743728
+     },
+     "care-admission": {
+      "calls": 2403,
+      "wallMs": 645.9,
+      "threadCpuMs": 547.2,
+      "threadAllocatedBytes": 62602896
+     },
+     "ordinary-care": {
+      "calls": 2403,
+      "wallMs": 625.0,
+      "threadCpuMs": 533.1,
+      "threadAllocatedBytes": 61521608
+     },
+     "codec-world-resource": {
+      "calls": 2409,
+      "wallMs": 505.7,
+      "threadCpuMs": 403.9,
+      "threadAllocatedBytes": 1199355928
+     },
+     "codec-world-resource-structure": {
+      "calls": 784,
+      "wallMs": 427.5,
+      "threadCpuMs": 355.9,
+      "threadAllocatedBytes": 793725608
+     },
+     "coordinated-admission": {
+      "calls": 2403,
+      "wallMs": 294.8,
+      "threadCpuMs": 147.5,
+      "threadAllocatedBytes": 41073560
+     },
+     "material-care-archive-verify": {
+      "calls": 1739,
+      "wallMs": 222.5,
+      "threadCpuMs": 162.7,
+      "threadAllocatedBytes": 108221816
+     },
+     "source-partition": {
+      "calls": 2403,
+      "wallMs": 207.5,
+      "threadCpuMs": 91.8,
+      "threadAllocatedBytes": 20745464
+     },
+     "codec-world-resource-body": {
+      "calls": 1069,
+      "wallMs": 184.8,
+      "threadCpuMs": 140.3,
+      "threadAllocatedBytes": 450965088
+     },
+     "codec-actor-resource-history": {
+      "calls": 789,
+      "wallMs": 77.6,
+      "threadCpuMs": 64.8,
+      "threadAllocatedBytes": 207368944
+     },
+     "production-continuation": {
+      "calls": 534,
+      "wallMs": 68.6,
+      "threadCpuMs": 45.9,
+      "threadAllocatedBytes": 44526824
+     },
+     "verify-command-table": {
+      "calls": 1,
+      "wallMs": 36.1,
+      "threadCpuMs": 19.5,
+      "threadAllocatedBytes": 11148168
+     },
+     "codec-proposals": {
+      "calls": 287,
+      "wallMs": 32.6,
+      "threadCpuMs": 28.6,
+      "threadAllocatedBytes": 50652480
+     },
+     "verify-identity-table": {
+      "calls": 1,
+      "wallMs": 29.8,
+      "threadCpuMs": 21.6,
+      "threadAllocatedBytes": 10426288
+     },
+     "genesis-admission": {
+      "calls": 1,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.2,
+      "threadAllocatedBytes": 61320
+     },
+     "resource-archive-verify": {
+      "calls": 1739,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.6,
+      "threadAllocatedBytes": 0
+     }
+    },
+    "process": {
+     "allocatedBytes": 8935353136,
+     "processCpuMs": 14767.493,
+     "gen0": 1263,
+     "gen1": 492,
+     "gen2": 457,
+     "gcPauseMs": 939.112,
+     "jitMs": 2511.7694
+    },
+    "runtime": {
+     "framework": ".NET 10.0.12",
+     "serverGc": false,
+     "assemblies": [
+      [
+       "OpenFantasy.Host",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Hosting",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Core",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll",
+       true
+      ]
+     ]
+    }
+   },
+   "complete": true
+  },
+  {
+   "label": "after-2",
+   "binary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0",
+   "exitCode": 0,
+   "timedOut": false,
+   "wallSeconds": 14.675,
+   "childCpuSeconds": 14.798,
+   "assemblies": {
+    "OpenFantasy.Core.dll": "4b4ea2649a07e6a395707c6693e5ba45c21bc4f90e82b2f1dd1f8b97fbfc1578",
+    "OpenFantasy.Hosting.dll": "8b61b010c701d3d6a97fc1ce83cb89a1100b9bcc8e5a04bef8f1fbc5c63d29e2",
+    "OpenFantasy.Host.dll": "7d4ab9609ae48c71ce0878d8f15002deaf3b9abb5c3639202e10b236dfd4fcfd"
+   },
+   "copiedWorldUnchanged": true,
+   "recorded": {
+    "SourceHeadRevision": 1739,
+    "SourceHeadHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "RecordedRevision": 1739,
+    "StateHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "ProfileVersion": 30
+   },
+   "probe": {
+    "reason": "process-exit",
+    "open": [],
+    "stages": {
+     "full-replay": {
+      "calls": 1,
+      "wallMs": 14213.6,
+      "threadCpuMs": 11511.8,
+      "threadAllocatedBytes": 8928567528
+     },
+     "replay-prepare-entry": {
+      "calls": 1739,
+      "wallMs": 13378.7,
+      "threadCpuMs": 10841.9,
+      "threadAllocatedBytes": 8752029008
+     },
+     "commit-preparation": {
+      "calls": 1738,
+      "wallMs": 13310.9,
+      "threadCpuMs": 10780.7,
+      "threadAllocatedBytes": 8743106104
+     },
+     "step-decide": {
+      "calls": 1738,
+      "wallMs": 12872.3,
+      "threadCpuMs": 10424.8,
+      "threadAllocatedBytes": 8253622128
+     },
+     "world-root": {
+      "calls": 2403,
+      "wallMs": 5669.3,
+      "threadCpuMs": 4718.1,
+      "threadAllocatedBytes": 1326721992
+     },
+     "world-encode": {
+      "calls": 2401,
+      "wallMs": 2787.3,
+      "threadCpuMs": 2236.6,
+      "threadAllocatedBytes": 4054250864
+     },
+     "canonical-frame-capture": {
+      "calls": 2389,
+      "wallMs": 2775.4,
+      "threadCpuMs": 2228.2,
+      "threadAllocatedBytes": 4033513552
+     },
+     "resource-causes": {
+      "calls": 2403,
+      "wallMs": 2627.7,
+      "threadCpuMs": 2163.1,
+      "threadAllocatedBytes": 565182912
+     },
+     "world-identities": {
+      "calls": 2403,
+      "wallMs": 1137.8,
+      "threadCpuMs": 972.3,
+      "threadAllocatedBytes": 358761344
+     },
+     "care-admission": {
+      "calls": 2403,
+      "wallMs": 609.3,
+      "threadCpuMs": 530.7,
+      "threadAllocatedBytes": 62619136
+     },
+     "ordinary-care": {
+      "calls": 2403,
+      "wallMs": 590.8,
+      "threadCpuMs": 516.0,
+      "threadAllocatedBytes": 61535224
+     },
+     "codec-world-resource": {
+      "calls": 2409,
+      "wallMs": 487.7,
+      "threadCpuMs": 402.0,
+      "threadAllocatedBytes": 1199357288
+     },
+     "codec-world-resource-structure": {
+      "calls": 784,
+      "wallMs": 417.6,
+      "threadCpuMs": 352.7,
+      "threadAllocatedBytes": 793726968
+     },
+     "codec-world-resource-body": {
+      "calls": 1069,
+      "wallMs": 206.5,
+      "threadCpuMs": 156.3,
+      "threadAllocatedBytes": 450971176
+     },
+     "material-care-archive-verify": {
+      "calls": 1739,
+      "wallMs": 190.4,
+      "threadCpuMs": 149.0,
+      "threadAllocatedBytes": 108206936
+     },
+     "coordinated-admission": {
+      "calls": 2403,
+      "wallMs": 171.2,
+      "threadCpuMs": 144.7,
+      "threadAllocatedBytes": 41071096
+     },
+     "source-partition": {
+      "calls": 2403,
+      "wallMs": 110.9,
+      "threadCpuMs": 92.2,
+      "threadAllocatedBytes": 20744120
+     },
+     "database-open": {
+      "calls": 1,
+      "wallMs": 80.8,
+      "threadCpuMs": 54.8,
+      "threadAllocatedBytes": 83232
+     },
+     "codec-actor-resource-history": {
+      "calls": 789,
+      "wallMs": 74.7,
+      "threadCpuMs": 63.2,
+      "threadAllocatedBytes": 207366976
+     },
+     "production-continuation": {
+      "calls": 534,
+      "wallMs": 59.7,
+      "threadCpuMs": 47.0,
+      "threadAllocatedBytes": 44507976
+     },
+     "codec-proposals": {
+      "calls": 287,
+      "wallMs": 30.8,
+      "threadCpuMs": 25.3,
+      "threadAllocatedBytes": 50652528
+     },
+     "verify-command-table": {
+      "calls": 1,
+      "wallMs": 30.0,
+      "threadCpuMs": 16.7,
+      "threadAllocatedBytes": 11148168
+     },
+     "verify-identity-table": {
+      "calls": 1,
+      "wallMs": 23.4,
+      "threadCpuMs": 18.7,
+      "threadAllocatedBytes": 10426544
+     },
+     "genesis-admission": {
+      "calls": 1,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.2,
+      "threadAllocatedBytes": 61320
+     },
+     "resource-archive-verify": {
+      "calls": 1739,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.6,
+      "threadAllocatedBytes": 0
+     }
+    },
+    "process": {
+     "allocatedBytes": 8935358520,
+     "processCpuMs": 14795.853,
+     "gen0": 1269,
+     "gen1": 507,
+     "gen2": 463,
+     "gcPauseMs": 887.187,
+     "jitMs": 2624.5024
+    },
+    "runtime": {
+     "framework": ".NET 10.0.12",
+     "serverGc": false,
+     "assemblies": [
+      [
+       "OpenFantasy.Host",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Hosting",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Core",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll",
+       true
+      ]
+     ]
+    }
+   },
+   "complete": true
+  },
+  {
+   "label": "before-2",
+   "binary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin",
+   "exitCode": 0,
+   "timedOut": false,
+   "wallSeconds": 12.494,
+   "childCpuSeconds": 13.286,
+   "assemblies": {
+    "OpenFantasy.Core.dll": "081923c622b44916ebc2fde8a7f43ef891c82cb20c30b5959ff64136c53f86c3",
+    "OpenFantasy.Hosting.dll": "c1d0b102ba50f6f5e605f330384ac4756be21e6efafb60103f3ee78e72d1a4a6",
+    "OpenFantasy.Host.dll": "33bfef5acbbe00dd876b55014734e6a4cabc002a26e2fa5007b0ca48ab357412"
+   },
+   "copiedWorldUnchanged": true,
+   "recorded": {
+    "SourceHeadRevision": 1739,
+    "SourceHeadHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "RecordedRevision": 1739,
+    "StateHash": "d4e869e3e9ce1a35625e8ce269596cf07c8ecfa5c9191213f00276704e3d99e4",
+    "ProfileVersion": 30
+   },
+   "probe": {
+    "reason": "process-exit",
+    "open": [],
+    "stages": {
+     "full-replay": {
+      "calls": 1,
+      "wallMs": 12092.7,
+      "threadCpuMs": 10206.4,
+      "threadAllocatedBytes": 10058338648
+     },
+     "replay-prepare-entry": {
+      "calls": 1739,
+      "wallMs": 11433.5,
+      "threadCpuMs": 9629.5,
+      "threadAllocatedBytes": 9870401232
+     },
+     "commit-preparation": {
+      "calls": 1738,
+      "wallMs": 11372.4,
+      "threadCpuMs": 9576.0,
+      "threadAllocatedBytes": 9861088368
+     },
+     "step-decide": {
+      "calls": 1738,
+      "wallMs": 10995.8,
+      "threadCpuMs": 9244.3,
+      "threadAllocatedBytes": 9371624816
+     },
+     "world-root": {
+      "calls": 2403,
+      "wallMs": 4382.4,
+      "threadCpuMs": 3888.5,
+      "threadAllocatedBytes": 1326800832
+     },
+     "world-encode": {
+      "calls": 2401,
+      "wallMs": 2880.4,
+      "threadCpuMs": 2330.4,
+      "threadAllocatedBytes": 5178187552
+     },
+     "canonical-frame-capture": {
+      "calls": 2389,
+      "wallMs": 2855.8,
+      "threadCpuMs": 2314.7,
+      "threadAllocatedBytes": 5145874472
+     },
+     "resource-causes": {
+      "calls": 2403,
+      "wallMs": 2072.8,
+      "threadCpuMs": 1821.6,
+      "threadAllocatedBytes": 565140632
+     },
+     "codec-world-resource": {
+      "calls": 2409,
+      "wallMs": 1021.4,
+      "threadCpuMs": 836.9,
+      "threadAllocatedBytes": 2329006480
+     },
+     "codec-world-resource-body": {
+      "calls": 2414,
+      "wallMs": 993.3,
+      "threadCpuMs": 808.0,
+      "threadAllocatedBytes": 2122905032
+     },
+     "world-identities": {
+      "calls": 2403,
+      "wallMs": 874.4,
+      "threadCpuMs": 786.2,
+      "threadAllocatedBytes": 358785224
+     },
+     "care-admission": {
+      "calls": 2403,
+      "wallMs": 497.6,
+      "threadCpuMs": 466.2,
+      "threadAllocatedBytes": 62610584
+     },
+     "ordinary-care": {
+      "calls": 2403,
+      "wallMs": 482.6,
+      "threadCpuMs": 454.8,
+      "threadAllocatedBytes": 61529280
+     },
+     "material-care-archive-verify": {
+      "calls": 1739,
+      "wallMs": 152.8,
+      "threadCpuMs": 129.1,
+      "threadAllocatedBytes": 119525232
+     },
+     "codec-actor-resource-history": {
+      "calls": 2419,
+      "wallMs": 141.9,
+      "threadCpuMs": 127.0,
+      "threadAllocatedBytes": 550140752
+     },
+     "coordinated-admission": {
+      "calls": 2403,
+      "wallMs": 125.0,
+      "threadCpuMs": 118.5,
+      "threadAllocatedBytes": 41086176
+     },
+     "database-open": {
+      "calls": 1,
+      "wallMs": 82.5,
+      "threadCpuMs": 52.8,
+      "threadAllocatedBytes": 83232
+     },
+     "source-partition": {
+      "calls": 2403,
+      "wallMs": 78.9,
+      "threadCpuMs": 76.3,
+      "threadAllocatedBytes": 20759200
+     },
+     "production-continuation": {
+      "calls": 534,
+      "wallMs": 57.7,
+      "threadCpuMs": 38.7,
+      "threadAllocatedBytes": 44515688
+     },
+     "codec-proposals": {
+      "calls": 287,
+      "wallMs": 22.3,
+      "threadCpuMs": 21.8,
+      "threadAllocatedBytes": 50652480
+     },
+     "verify-identity-table": {
+      "calls": 1,
+      "wallMs": 19.5,
+      "threadCpuMs": 19.3,
+      "threadAllocatedBytes": 10426288
+     },
+     "verify-command-table": {
+      "calls": 1,
+      "wallMs": 15.5,
+      "threadCpuMs": 15.4,
+      "threadAllocatedBytes": 11148168
+     },
+     "genesis-admission": {
+      "calls": 1,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.2,
+      "threadAllocatedBytes": 61320
+     },
+     "resource-archive-verify": {
+      "calls": 1739,
+      "wallMs": 0.2,
+      "threadCpuMs": 0.6,
+      "threadAllocatedBytes": 5440
+     }
+    },
+    "process": {
+     "allocatedBytes": 10065037736,
+     "processCpuMs": 13284.104,
+     "gen0": 1474,
+     "gen1": 638,
+     "gen2": 579,
+     "gcPauseMs": 778.198,
+     "jitMs": 1933.8982
+    },
+    "runtime": {
+     "framework": ".NET 10.0.12",
+     "serverGc": false,
+     "assemblies": [
+      [
+       "OpenFantasy.Host",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Host.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Hosting",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Hosting.dll",
+       true
+      ],
+      [
+       "OpenFantasy.Core",
+       "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/before-bin/OpenFantasy.Core.dll",
+       true
+      ]
+     ]
+    }
+   },
+   "complete": true
+  }
+ ],
+ "comparisons": [
+  {
+   "before": "before-1",
+   "after": "after-1",
+   "stages": {
+    "full-replay": {
+     "before": {
+      "calls": 1,
+      "wallMs": 14717.5,
+      "threadCpuMs": 11884.9,
+      "threadAllocatedBytes": 10058239472
+     },
+     "after": {
+      "calls": 1,
+      "wallMs": 14840.3,
+      "threadCpuMs": 11566.1,
+      "threadAllocatedBytes": 8928447872
+     },
+     "threadAllocatedBytesDelta": -1129791600,
+     "threadAllocatedBytesRatio": 0.8877,
+     "threadCpuMsDelta": -318.8,
+     "threadCpuMsRatio": 0.9732,
+     "wallMsDelta": 122.8,
+     "wallMsRatio": 1.0083
+    },
+    "replay-prepare-entry": {
+     "before": {
+      "calls": 1739,
+      "wallMs": 13944.0,
+      "threadCpuMs": 11292.8,
+      "threadAllocatedBytes": 9870320344
+     },
+     "after": {
+      "calls": 1739,
+      "wallMs": 13999.6,
+      "threadCpuMs": 10910.8,
+      "threadAllocatedBytes": 8751892216
+     },
+     "threadAllocatedBytesDelta": -1118428128,
+     "threadAllocatedBytesRatio": 0.8867,
+     "threadCpuMsDelta": -382.0,
+     "threadCpuMsRatio": 0.9662,
+     "wallMsDelta": 55.6,
+     "wallMsRatio": 1.004
+    },
+    "commit-preparation": {
+     "before": {
+      "calls": 1738,
+      "wallMs": 13871.1,
+      "threadCpuMs": 11231.3,
+      "threadAllocatedBytes": 9861023720
+     },
+     "after": {
+      "calls": 1738,
+      "wallMs": 13919.9,
+      "threadCpuMs": 10842.4,
+      "threadAllocatedBytes": 8742973464
+     },
+     "threadAllocatedBytesDelta": -1118050256,
+     "threadAllocatedBytesRatio": 0.8866,
+     "threadCpuMsDelta": -388.9,
+     "threadCpuMsRatio": 0.9654,
+     "wallMsDelta": 48.8,
+     "wallMsRatio": 1.0035
+    },
+    "step-decide": {
+     "before": {
+      "calls": 1738,
+      "wallMs": 13446.5,
+      "threadCpuMs": 10877.8,
+      "threadAllocatedBytes": 9371513800
+     },
+     "after": {
+      "calls": 1738,
+      "wallMs": 13490.7,
+      "threadCpuMs": 10484.1,
+      "threadAllocatedBytes": 8253490920
+     },
+     "threadAllocatedBytesDelta": -1118022880,
+     "threadAllocatedBytesRatio": 0.8807,
+     "threadCpuMsDelta": -393.7,
+     "threadCpuMsRatio": 0.9638,
+     "wallMsDelta": 44.2,
+     "wallMsRatio": 1.0033
+    },
+    "world-root": {
+     "before": {
+      "calls": 2403,
+      "wallMs": 5421.8,
+      "threadCpuMs": 4597.8,
+      "threadAllocatedBytes": 1326734912
+     },
+     "after": {
+      "calls": 2403,
+      "wallMs": 6021.0,
+      "threadCpuMs": 4643.6,
+      "threadAllocatedBytes": 1326717520
+     },
+     "threadAllocatedBytesDelta": -17392,
+     "threadAllocatedBytesRatio": 1.0,
+     "threadCpuMsDelta": 45.8,
+     "threadCpuMsRatio": 1.01,
+     "wallMsDelta": 599.2,
+     "wallMsRatio": 1.1105
+    },
+    "world-encode": {
+     "before": {
+      "calls": 2401,
+      "wallMs": 3497.1,
+      "threadCpuMs": 2725.8,
+      "threadAllocatedBytes": 5178222992
+     },
+     "after": {
+      "calls": 2401,
+      "wallMs": 2843.7,
+      "threadCpuMs": 2238.5,
+      "threadAllocatedBytes": 4054243560
+     },
+     "threadAllocatedBytesDelta": -1123979432,
+     "threadAllocatedBytesRatio": 0.7829,
+     "threadCpuMsDelta": -487.3,
+     "threadCpuMsRatio": 0.8212,
+     "wallMsDelta": -653.4,
+     "wallMsRatio": 0.8132
+    },
+    "canonical-frame-capture": {
+     "before": {
+      "calls": 2389,
+      "wallMs": 3465.9,
+      "threadCpuMs": 2709.8,
+      "threadAllocatedBytes": 5145909856
+     },
+     "after": {
+      "calls": 2389,
+      "wallMs": 2843.0,
+      "threadCpuMs": 2228.2,
+      "threadAllocatedBytes": 4033505832
+     },
+     "threadAllocatedBytesDelta": -1112404024,
+     "threadAllocatedBytesRatio": 0.7838,
+     "threadCpuMsDelta": -481.6,
+     "threadCpuMsRatio": 0.8223,
+     "wallMsDelta": -622.9,
+     "wallMsRatio": 0.8203
+    },
+    "codec-world-resource": {
+     "before": {
+      "calls": 2409,
+      "wallMs": 1199.7,
+      "threadCpuMs": 966.8,
+      "threadAllocatedBytes": 2329008432
+     },
+     "after": {
+      "calls": 2409,
+      "wallMs": 505.7,
+      "threadCpuMs": 403.9,
+      "threadAllocatedBytes": 1199355928
+     },
+     "threadAllocatedBytesDelta": -1129652504,
+     "threadAllocatedBytesRatio": 0.515,
+     "threadCpuMsDelta": -562.9,
+     "threadCpuMsRatio": 0.4178,
+     "wallMsDelta": -694.0,
+     "wallMsRatio": 0.4215
+    },
+    "codec-world-resource-body": {
+     "before": {
+      "calls": 2414,
+      "wallMs": 1157.4,
+      "threadCpuMs": 931.3,
+      "threadAllocatedBytes": 2122903896
+     },
+     "after": {
+      "calls": 1069,
+      "wallMs": 184.8,
+      "threadCpuMs": 140.3,
+      "threadAllocatedBytes": 450965088
+     },
+     "threadAllocatedBytesDelta": -1671938808,
+     "threadAllocatedBytesRatio": 0.2124,
+     "threadCpuMsDelta": -791.0,
+     "threadCpuMsRatio": 0.1506,
+     "wallMsDelta": -972.6,
+     "wallMsRatio": 0.1597
+    },
+    "codec-world-resource-structure": {
+     "before": null,
+     "after": {
+      "calls": 784,
+      "wallMs": 427.5,
+      "threadCpuMs": 355.9,
+      "threadAllocatedBytes": 793725608
+     }
+    },
+    "codec-actor-resource-history": {
+     "before": {
+      "calls": 2419,
+      "wallMs": 188.2,
+      "threadCpuMs": 147.6,
+      "threadAllocatedBytes": 550148576
+     },
+     "after": {
+      "calls": 789,
+      "wallMs": 77.6,
+      "threadCpuMs": 64.8,
+      "threadAllocatedBytes": 207368944
+     },
+     "threadAllocatedBytesDelta": -342779632,
+     "threadAllocatedBytesRatio": 0.3769,
+     "threadCpuMsDelta": -82.8,
+     "threadCpuMsRatio": 0.439,
+     "wallMsDelta": -110.6,
+     "wallMsRatio": 0.4123
+    },
+    "resource-causes": {
+     "before": {
+      "calls": 2403,
+      "wallMs": 2596.6,
+      "threadCpuMs": 2163.7,
+      "threadAllocatedBytes": 565162960
+     },
+     "after": {
+      "calls": 2403,
+      "wallMs": 2693.8,
+      "threadCpuMs": 2145.0,
+      "threadAllocatedBytes": 565147880
+     },
+     "threadAllocatedBytesDelta": -15080,
+     "threadAllocatedBytesRatio": 1.0,
+     "threadCpuMsDelta": -18.7,
+     "threadCpuMsRatio": 0.9914,
+     "wallMsDelta": 97.2,
+     "wallMsRatio": 1.0374
+    },
+    "process": {
+     "before": {
+      "allocatedBytes": 10065459040,
+      "processCpuMs": 15300.176,
+      "gen0": 1473,
+      "gen1": 660,
+      "gen2": 577,
+      "gcPauseMs": 945.816,
+      "jitMs": 2260.8908
+     },
+     "after": {
+      "allocatedBytes": 8935353136,
+      "processCpuMs": 14767.493,
+      "gen0": 1263,
+      "gen1": 492,
+      "gen2": 457,
+      "gcPauseMs": 939.112,
+      "jitMs": 2511.7694
+     }
+    }
+   }
+  },
+  {
+   "before": "before-2",
+   "after": "after-2",
+   "stages": {
+    "full-replay": {
+     "before": {
+      "calls": 1,
+      "wallMs": 12092.7,
+      "threadCpuMs": 10206.4,
+      "threadAllocatedBytes": 10058338648
+     },
+     "after": {
+      "calls": 1,
+      "wallMs": 14213.6,
+      "threadCpuMs": 11511.8,
+      "threadAllocatedBytes": 8928567528
+     },
+     "threadAllocatedBytesDelta": -1129771120,
+     "threadAllocatedBytesRatio": 0.8877,
+     "threadCpuMsDelta": 1305.4,
+     "threadCpuMsRatio": 1.1279,
+     "wallMsDelta": 2120.9,
+     "wallMsRatio": 1.1754
+    },
+    "replay-prepare-entry": {
+     "before": {
+      "calls": 1739,
+      "wallMs": 11433.5,
+      "threadCpuMs": 9629.5,
+      "threadAllocatedBytes": 9870401232
+     },
+     "after": {
+      "calls": 1739,
+      "wallMs": 13378.7,
+      "threadCpuMs": 10841.9,
+      "threadAllocatedBytes": 8752029008
+     },
+     "threadAllocatedBytesDelta": -1118372224,
+     "threadAllocatedBytesRatio": 0.8867,
+     "threadCpuMsDelta": 1212.4,
+     "threadCpuMsRatio": 1.1259,
+     "wallMsDelta": 1945.2,
+     "wallMsRatio": 1.1701
+    },
+    "commit-preparation": {
+     "before": {
+      "calls": 1738,
+      "wallMs": 11372.4,
+      "threadCpuMs": 9576.0,
+      "threadAllocatedBytes": 9861088368
+     },
+     "after": {
+      "calls": 1738,
+      "wallMs": 13310.9,
+      "threadCpuMs": 10780.7,
+      "threadAllocatedBytes": 8743106104
+     },
+     "threadAllocatedBytesDelta": -1117982264,
+     "threadAllocatedBytesRatio": 0.8866,
+     "threadCpuMsDelta": 1204.7,
+     "threadCpuMsRatio": 1.1258,
+     "wallMsDelta": 1938.5,
+     "wallMsRatio": 1.1705
+    },
+    "step-decide": {
+     "before": {
+      "calls": 1738,
+      "wallMs": 10995.8,
+      "threadCpuMs": 9244.3,
+      "threadAllocatedBytes": 9371624816
+     },
+     "after": {
+      "calls": 1738,
+      "wallMs": 12872.3,
+      "threadCpuMs": 10424.8,
+      "threadAllocatedBytes": 8253622128
+     },
+     "threadAllocatedBytesDelta": -1118002688,
+     "threadAllocatedBytesRatio": 0.8807,
+     "threadCpuMsDelta": 1180.5,
+     "threadCpuMsRatio": 1.1277,
+     "wallMsDelta": 1876.5,
+     "wallMsRatio": 1.1707
+    },
+    "world-root": {
+     "before": {
+      "calls": 2403,
+      "wallMs": 4382.4,
+      "threadCpuMs": 3888.5,
+      "threadAllocatedBytes": 1326800832
+     },
+     "after": {
+      "calls": 2403,
+      "wallMs": 5669.3,
+      "threadCpuMs": 4718.1,
+      "threadAllocatedBytes": 1326721992
+     },
+     "threadAllocatedBytesDelta": -78840,
+     "threadAllocatedBytesRatio": 0.9999,
+     "threadCpuMsDelta": 829.6,
+     "threadCpuMsRatio": 1.2133,
+     "wallMsDelta": 1286.9,
+     "wallMsRatio": 1.2937
+    },
+    "world-encode": {
+     "before": {
+      "calls": 2401,
+      "wallMs": 2880.4,
+      "threadCpuMs": 2330.4,
+      "threadAllocatedBytes": 5178187552
+     },
+     "after": {
+      "calls": 2401,
+      "wallMs": 2787.3,
+      "threadCpuMs": 2236.6,
+      "threadAllocatedBytes": 4054250864
+     },
+     "threadAllocatedBytesDelta": -1123936688,
+     "threadAllocatedBytesRatio": 0.7829,
+     "threadCpuMsDelta": -93.8,
+     "threadCpuMsRatio": 0.9597,
+     "wallMsDelta": -93.1,
+     "wallMsRatio": 0.9677
+    },
+    "canonical-frame-capture": {
+     "before": {
+      "calls": 2389,
+      "wallMs": 2855.8,
+      "threadCpuMs": 2314.7,
+      "threadAllocatedBytes": 5145874472
+     },
+     "after": {
+      "calls": 2389,
+      "wallMs": 2775.4,
+      "threadCpuMs": 2228.2,
+      "threadAllocatedBytes": 4033513552
+     },
+     "threadAllocatedBytesDelta": -1112360920,
+     "threadAllocatedBytesRatio": 0.7838,
+     "threadCpuMsDelta": -86.5,
+     "threadCpuMsRatio": 0.9626,
+     "wallMsDelta": -80.4,
+     "wallMsRatio": 0.9718
+    },
+    "codec-world-resource": {
+     "before": {
+      "calls": 2409,
+      "wallMs": 1021.4,
+      "threadCpuMs": 836.9,
+      "threadAllocatedBytes": 2329006480
+     },
+     "after": {
+      "calls": 2409,
+      "wallMs": 487.7,
+      "threadCpuMs": 402.0,
+      "threadAllocatedBytes": 1199357288
+     },
+     "threadAllocatedBytesDelta": -1129649192,
+     "threadAllocatedBytesRatio": 0.515,
+     "threadCpuMsDelta": -434.9,
+     "threadCpuMsRatio": 0.4803,
+     "wallMsDelta": -533.7,
+     "wallMsRatio": 0.4775
+    },
+    "codec-world-resource-body": {
+     "before": {
+      "calls": 2414,
+      "wallMs": 993.3,
+      "threadCpuMs": 808.0,
+      "threadAllocatedBytes": 2122905032
+     },
+     "after": {
+      "calls": 1069,
+      "wallMs": 206.5,
+      "threadCpuMs": 156.3,
+      "threadAllocatedBytes": 450971176
+     },
+     "threadAllocatedBytesDelta": -1671933856,
+     "threadAllocatedBytesRatio": 0.2124,
+     "threadCpuMsDelta": -651.7,
+     "threadCpuMsRatio": 0.1934,
+     "wallMsDelta": -786.8,
+     "wallMsRatio": 0.2079
+    },
+    "codec-world-resource-structure": {
+     "before": null,
+     "after": {
+      "calls": 784,
+      "wallMs": 417.6,
+      "threadCpuMs": 352.7,
+      "threadAllocatedBytes": 793726968
+     }
+    },
+    "codec-actor-resource-history": {
+     "before": {
+      "calls": 2419,
+      "wallMs": 141.9,
+      "threadCpuMs": 127.0,
+      "threadAllocatedBytes": 550140752
+     },
+     "after": {
+      "calls": 789,
+      "wallMs": 74.7,
+      "threadCpuMs": 63.2,
+      "threadAllocatedBytes": 207366976
+     },
+     "threadAllocatedBytesDelta": -342773776,
+     "threadAllocatedBytesRatio": 0.3769,
+     "threadCpuMsDelta": -63.8,
+     "threadCpuMsRatio": 0.4976,
+     "wallMsDelta": -67.2,
+     "wallMsRatio": 0.5264
+    },
+    "resource-causes": {
+     "before": {
+      "calls": 2403,
+      "wallMs": 2072.8,
+      "threadCpuMs": 1821.6,
+      "threadAllocatedBytes": 565140632
+     },
+     "after": {
+      "calls": 2403,
+      "wallMs": 2627.7,
+      "threadCpuMs": 2163.1,
+      "threadAllocatedBytes": 565182912
+     },
+     "threadAllocatedBytesDelta": 42280,
+     "threadAllocatedBytesRatio": 1.0001,
+     "threadCpuMsDelta": 341.5,
+     "threadCpuMsRatio": 1.1875,
+     "wallMsDelta": 554.9,
+     "wallMsRatio": 1.2677
+    },
+    "process": {
+     "before": {
+      "allocatedBytes": 10065037736,
+      "processCpuMs": 13284.104,
+      "gen0": 1474,
+      "gen1": 638,
+      "gen2": 579,
+      "gcPauseMs": 778.198,
+      "jitMs": 1933.8982
+     },
+     "after": {
+      "allocatedBytes": 8935358520,
+      "processCpuMs": 14795.853,
+      "gen0": 1269,
+      "gen1": 507,
+      "gen2": 463,
+      "gcPauseMs": 887.187,
+      "jitMs": 2624.5024
+     }
+    }
+   }
+  }
+ ],
+ "environment": {
+  "DOTNET_ROOT": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401",
+  "MSBUILDDISABLENODEREUSE": "1",
+  "DOTNET_CLI_USE_MSBUILD_SERVER": "0"
+ },
+ "limitation": "Isolated instrumented diagnostic; not native, deadline or production acceptance. Inclusive stages overlap; thread CPU/allocation belong to the replay thread. Cumulative allocation is not peak memory.",
+ "pinsBefore": {
+  "world": {
+   "sha256": "5d1eb8dd867fd85b0ba7cf95b7a4a84e07516c2f9857d3f7b5e3be898cac718f",
+   "walBytes": null
+  },
+  "baselineReportSha256": "4311340775be92cd6b3d884d71d6955086e4a181af77bb4d4758507384ebbc1f",
+  "baselineAssemblies": {
+   "OpenFantasy.Core.dll": "081923c622b44916ebc2fde8a7f43ef891c82cb20c30b5959ff64136c53f86c3",
+   "OpenFantasy.Hosting.dll": "c1d0b102ba50f6f5e605f330384ac4756be21e6efafb60103f3ee78e72d1a4a6",
+   "OpenFantasy.Host.dll": "33bfef5acbbe00dd876b55014734e6a4cabc002a26e2fa5007b0ca48ab357412"
+  }
+ },
+ "productionSinceBaselinePins": {
+  "changed": [
+   "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs",
+   "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs",
+   "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs"
+  ],
+  "added": [
+   "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/CONTRACTS.md",
+   "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/README.md"
+  ],
+  "removed": []
+ },
+ "afterTree": {
+  "path": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i/measure/20260930T025414Z/after-runtime",
+  "replacedOwnedFiles": [
+   {
+    "source": "src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs",
+    "productionSha256": "79c77404f9d4fa726cd86a39f768bd2f403ea72ee1adb21473ecdeedbfa4aad1",
+    "stages": []
+   },
+   {
+    "source": "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs",
+    "productionSha256": "19a845042c3b2292db2b6286222742df445f1e71a36a04ee59ae56e5889b8199",
+    "stages": [
+     "codec-world-resource"
+    ]
+   },
+   {
+    "source": "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs",
+    "productionSha256": "3acc7f22d6dafc469797c410903b1b33ad6766a8ffb91d0e44dc612c076b1e5f",
+    "stages": [
+     "codec-world-resource-body",
+     "codec-world-resource-structure"
+    ]
+   }
+  ],
+  "differingFromBaselineTree": [
+   "src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs",
+   "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs",
+   "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs"
+  ]
+ },
+ "pinsAfter": {
+  "world": {
+   "sha256": "5d1eb8dd867fd85b0ba7cf95b7a4a84e07516c2f9857d3f7b5e3be898cac718f",
+   "walBytes": null
+  },
+  "baselineReportSha256": "4311340775be92cd6b3d884d71d6955086e4a181af77bb4d4758507384ebbc1f",
+  "baselineAssemblies": {
+   "OpenFantasy.Core.dll": "081923c622b44916ebc2fde8a7f43ef891c82cb20c30b5959ff64136c53f86c3",
+   "OpenFantasy.Hosting.dll": "c1d0b102ba50f6f5e605f330384ac4756be21e6efafb60103f3ee78e72d1a4a6",
+   "OpenFantasy.Host.dll": "33bfef5acbbe00dd876b55014734e6a4cabc002a26e2fa5007b0ca48ab357412"
+  }
+ },
+ "pinsUnchanged": true,
+ "productionUnchangedDuringMeasurement": true,
+ "elapsedSeconds": 92.5,
+ "finishedUtc": "2026-09-30T02:55:46.913003+00:00"
+}

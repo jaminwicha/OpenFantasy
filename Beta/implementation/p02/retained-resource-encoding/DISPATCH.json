@@ -1,0 +1,35 @@
+{
+  "status": "completed",
+  "private": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-resource-encoding-k37_0m8i",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "limitSeconds": 1800,
+  "clientEstimateLimitUsd": 15,
+  "checkpoint": "codex/checkpoint-before-retained-resource-encoding-20260930T023158Z",
+  "contextHash": "c8c312ca99503c1dd26490da2509841eb9eb3bc3b1675272c8009eb4e5ac66d3",
+  "contextPreflight": "verified",
+  "ownedEditObserved": true,
+  "adapterExitCode": 0,
+  "providerSubtype": "success",
+  "durationSeconds": 1419.851,
+  "clientCostEstimateUsd": 10.961999799999996,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 210,
+      "outputTokens": 116612,
+      "cacheReadInputTokens": 28118999,
+      "cacheCreationInputTokens": 375640,
+      "webSearchRequests": 0,
+      "costUSD": 10.961999799999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 68033,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "acceptance": "104 focused passes and measured allocation reduction; Astra integration/native pending"
+}

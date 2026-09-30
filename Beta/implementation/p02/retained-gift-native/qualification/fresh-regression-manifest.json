@@ -1,0 +1,39 @@
+{
+  "results": [
+    {
+      "mode": "keyboard",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/native-gifts-7glg9orf/keyboard.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/fixtures-1/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/fixtures-1/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/fixtures-1/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/native-gifts-7glg9orf/keyboard.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/native-gifts-7glg9orf/keyboard.reopen.json",
+      "finalDatabaseSha256": "54e8dc85c5da6904b1426d013cbe2a3985225f91816b09b572ab0aead9533595"
+    },
+    {
+      "mode": "controller",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/controller/controller.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/controller/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/controller/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/controller/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/controller/controller.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/controller/controller.reopen.json",
+      "finalDatabaseSha256": "f13a41e73b7707567be7bf4245c8776879c3928647b0f498d2031bc7f5f7fa3a"
+    },
+    {
+      "mode": "pointer",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/pointer/pointer.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/pointer/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/pointer/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/pointer/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/pointer/pointer.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/pointer/pointer.reopen.json",
+      "finalDatabaseSha256": "127cf9cd471ac3c76e1afe78f5b0c1a78bac7c8b186639c091b2267c6da9eb79"
+    }
+  ],
+  "qualificationScope": "New keyboard native/reopen; preserved controller/pointer journals reauthenticated against current implementation. Not new physical-device execution.",
+  "inputManifests": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/legacy-native-ledgers/manifest.json",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/native-gifts-7glg9orf/native-manifest.json"
+  ]
+}

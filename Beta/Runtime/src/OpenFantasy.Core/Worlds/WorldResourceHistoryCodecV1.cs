@@ -21,6 +21,16 @@ public static class WorldResourceHistoryCodecV1
         ArgumentNullException.ThrowIfNull(value);
         if (value.ArchiveAnchor is not null || value.CoordinatedAnchor is not null)
             throw new ArgumentException("A continued resource history requires the explicit archive-reference codec.", nameof(value));
+        // An independent copy of the history's own frame; changing it cannot affect a later encode.
+        return value.StructuralEncodingV1.ToArray();
+    }
+
+    /// <summary>
+    /// The structural frame of the admission pin, actor history and evidence. Only the owning history
+    /// captures it; the anchors never participate, so the same bytes serve V1, V2 and V3.
+    /// </summary>
+    internal static byte[] EncodeStructure(WorldResourceHistory value)
+    {
         return CanonicalEncodingV1.Frame("world.resource-history", Number(1), value.AnchorAdmission.ToByteArray(),
             Number(value.History.BasisWorldSequence), ProgressionCodecV1.Encode(value.History.Basis),
             ActorResourceHistoryCodecV1.Encode(value.History), CanonicalEncodingV1.Frame("world.resource-evidence",
@@ -46,7 +56,7 @@ public static class WorldResourceHistoryCodecV1
             evidence.Complete();
             reader.Complete();
             var result = new WorldResourceHistory(admission, history, items);
-            if (!Encode(result).AsSpan().SequenceEqual(bytes)) throw new FormatException("Resource history is not canonical.");
+            if (!result.StructuralEncodingV1.Span.SequenceEqual(bytes)) throw new FormatException("Resource history is not canonical.");
             return result;
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException or ProgressionFormatException)

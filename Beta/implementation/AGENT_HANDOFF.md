@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-29. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-09-30. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -42,12 +42,37 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
+Two bounded Opus 5.5 / 1M / requested Max assignments completed successfully: the
+[retained native gift route](p02/retained-gift-native/INTEGRATION_REVIEW.md) and
+[resource encoding optimization](p02/retained-resource-encoding/INTEGRATION_REVIEW.md).
+Both returned verified model/context, verified pre/post synchronization and no denials. No external
+job is active. Their client estimates total about $21.81; no billing or net credit-saving claim is made.
+Astra reviewed and integrated both at `codex/milestone-retained-native-gifts-20260930`. Normal
+background-rendered active/reopen input, saved-journal authentication and 237 session regressions pass.
+An independent SQL audit preserves every original historical row. Three unchanged-deadline startup
+failures remain recorded; the later native pass does not establish reliable production latency.
+Full retained replay allocates about 11.2% less while reproducing the exact head, without a consistent
+total-speed result. Pure C#, canonical formats, full recovery and all gates remain unchanged.
+
+The accepted new-test integration repair scopes authenticated archive recovery and independent SQL
+inspection over byte-identical copies. It changes no runtime source and preserves all 501 files that
+predate these assignments, 23 frozen specs, the original source and unrelated predecessor staging.
+The 505-file resource-delivery pin remains historical: only this newly delivered result test differs.
+Relevant WIP checkpoints and failures remain in the two packets. Build and 1,985 distinct managed cases
+pass with no skips; [final evidence](p02/retained-gift-native/qualification/FINAL_CHECKS.json) deduplicates
+the 1,698 Core, 104 resource/selector, 1 native-result and 237 session cases. The original 520-use world
+now completes native offer/cut/accept/own-use 521 and separate paused reopen with exact history and 5
+archives. The fresh keyboard route/reopen also passes; older controller/pointer journals are
+reauthenticated, not newly rendered. Its history button reads a still-live terminal outcome; an
+archived-only native lookup, transition-boundary interruption, physical input/OS focus, reliable
+startup latency, peak memory and all full phase/campaign gates remain separate.
+
 The owner-requested Opus5.5/1M/requested-Max implementation of the
 [retained proposal transition](p02/retained-proposal-transition/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-retained-proposal-transition-20260930`. It adds an explicit
 profile27-to-profile30 copy-and-publish operation and a managed continuation of the original 520-use
 world through a helper offer, actual ordinary archive cut, player acceptance and later own use 521.
-The native selector/journey remains a distinct next binding; keep the original source unchanged.
+The following native increment binds that transitioned world; keep the original source unchanged.
 
 Clean build and 2,051 distinct managed cases pass (Core 1,692; Host 359), including 22 focused cases,
 authenticated recorded reads and reauthentication of retained native gift journals. An independent
@@ -57,7 +82,8 @@ original database and unrelated predecessor staging remain exact. [Final checks]
 retain source/build pins; the packet preserves the incomplete/failed attempts and diagnostic correction.
 The earlier Host run was interrupted with a missing native manifest; its idle wrapper sample did not
 establish a worker hang. The corrected-input same-selection run passed within its unchanged 600s bound.
-Native transitioned-save selection/use and actual transition-boundary process interruption remain open.
+That earlier milestone did not qualify native transitioned-save selection/use; see the new packet.
+Actual transition-boundary process interruption remains open.
 
 [Actual dispatch](p02/retained-proposal-transition/DISPATCH.json) verifies `claude-opus-5-5`/1M metadata,
 requested Max, synchronized context and finite limits. The run took 1,576.339s with a $21.3186486 client
@@ -69,7 +95,9 @@ native-controller repair and Fable spending-limit failure remain historical, ter
 [compatibility evidence](CLAUDE_MODEL_COMPATIBILITY.md).
 
 Reusable completion/artifact-scope discipline is upstream in ecosystem commit `59813730` with all 71
-skill-alignment entries verified, and in project instructions. Required checks must finish before a
+skill-alignment entries verified, and in project instructions. Ecosystem`ad0c2e2` adds heavy-check
+serialization and content/build pinning, synchronized to all three installed reference copies.
+Required checks must finish before a
 worker returns; concrete task-scoped output paths replace parent temporary-directory discovery.
 
 The preceding [native gift interface](p02/native-material-gifts/INTEGRATION_REVIEW.md) is
@@ -147,8 +175,9 @@ The original post-cut 520-dose objective now has an explicit legal transition an
 acquisition/use path in the new packet. Its unchanged OwnerOnly custody still forbids unilateral gifts;
 the saved bilateral proposal supplies consent. The exact potion ingredient still has no gathering source.
 Do not fabricate stock, relabel definitions, replace genesis or silently migrate history. The
-[full joined native/reopen/history journey](p02/retained-proposal-transition/NEXT_NATIVE_SLICE.md)
-and actual transition-boundary process interruption remain unproved.
+[joined native slice](p02/retained-proposal-transition/NEXT_NATIVE_SLICE.md) has its bounded
+qualification in the retained-native packet above. Actual transition-boundary process interruption
+and archived-only native history lookup remain unproved.
 
 Recoverable starting and WIP references are recorded in the proposal packet's preservation/checkpoint
 JSON files. They exclude unrelated predecessor staging; WIP snapshots are not acceptance claims.

@@ -121,6 +121,22 @@ Capture must remain a pure function of deeply immutable batch fields, independen
 adding mutable or context-dependent fields requires revisiting this ownership before reusing bytes.
 Decode still constructs and validates every change and requires exact canonical re-encoding.
 
+The world binding applies the same ownership one level up. Each immutable
+[WorldResourceHistory](../../src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs) lazily owns its
+structural V1 frame: admission pin, basis sequence and progression, actor history and evidence,
+without either continuation anchor. The inline V1 encode returns a copy of that frame; the V2
+archive-reference and V3 joint-binding frames wrap the same bytes with the anchor the history
+carries, so no structural twin is constructed per encode. Capture reads only those deeply immutable
+fields, never an anchor, predecessor or other history; an appended history is a new owner that
+captures its own frame on first encode. Equal command or evidence identities never share bytes.
+Decode still validates every component, checks each anchor and compares complete canonical bytes.
+The frame lives as long as its history and duplicates the batch bytes inside it: one bounded array
+per encoded live history replaces rebuilding the basis, every batch envelope and every evidence
+item whenever an unchanged history is carried into another world root. Validation, replay and
+admission results are never cached. The actor history retains no frame of its own: each append
+creates a new actor history, so its copy would serve one capture. Evidence items are shared by
+successive histories but own no bytes, so a new history's first capture re-encodes its evidence.
+
 Complete-world resource history requires an explicit contract: command/cause,
 definition pins, world ordering, actor revisions and actual deltas must join the durable journal.
 Every writer, including unchanged-resource XP rewards, must participate. A previous damage record

@@ -380,8 +380,8 @@ interpretations, including profile 28, keep their own. Production scale is a sep
 world with `--gifts`, using a fresh admitted ordinary-care genesis when that dedicated save is absent.
 Opening an existing selected save authenticates its own genesis; no earlier profile is silently
 converted. This native selector requires its own profile-30 genesis; an explicitly transitioned
-profile-27 save requires a distinct client selection contract that pins its original genesis and
-authenticated transition. The binding explicitly configures Wren's medicine preference for the controlled player,
+profile-27 save uses the separate [retained selection](#retained-world-native-selection). The binding
+explicitly configures Wren's medicine preference for the controlled player,
 including 1,200 advancing steps of offer life, while the generic policy default remains 64.
 
 [`FarmGiftSelection`](../../client/scripts/FarmGiftSelection.cs) owns only transient explicit choices:
@@ -403,3 +403,29 @@ reselection of the same offer refreshes its observed terms. Only separate wheel 
 submit through the ordinary authenticated session cutoff. Pause, dialogue, pending action and focus
 ownership retain their usual rules. The pack's explicit history button starts the bounded background
 query; frames only observe completion, and results apply only to the still-selected identity.
+
+## Retained-world native selection
+
+`FarmClientSession.OpenRetainedGiftsAsync` continues a lived world whose genesis is coordinated
+profile 27 and whose head reached profile 30 through the
+[explicit transition](coordinated-world-continuation.md#explicit-proposal-transition). It takes an
+existing save, the exact original fresh genesis bytes and the explicitly named target profile 30;
+there is no default location. `SqliteWorldAuthority.OpenExisting(path, expectedGenesis)` recovers
+the complete journal, archives and transition before the client checks the same world, branch and
+inherited content admission and a saved-proposal head. Recovery admits that interpretation
+difference only after exactly one replayed transition, so the client neither re-derives nor trusts
+it separately. A refusal disposes the authority; the save bytes stay unchanged.
+
+Opening is never the transition. A missing save, another original genesis, a lived or malformed
+genesis file, an untransitioned profile-27 head, a fresh profile-30 world and other interpretations
+are refused. `FarmSaveOpener.ValidateSelection` and the fresh `--gifts` and coordinated profile-27
+selectors keep their exact-origin refusals, so neither accepts a transitioned save.
+
+The session opens paused. The companion is named by the player's own care permission, active or
+withdrawn, because reciprocal quests name no single giver. `FarmClientSession.GiftPolicy` supplies the
+same explicit medicine preference as the fresh binding on every opening. It grants neither custody
+consent nor treatment permission, and the helper's normal autonomous scheduling stays enabled.
+
+A carried offer is ordinary participant state: the Gifts page selects and answers it, and ordinary
+Care self-use spends a received dose, both through the usual session cutoff. The recorded journal and
+archives, not a presented frame, establish where a cut closed and which offers it carried.

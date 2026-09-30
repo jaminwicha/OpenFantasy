@@ -1,0 +1,61 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:01.04]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.51]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.88]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.A_foreign_original_genesis_is_refused_and_releases_the_save(seed: "another-retained-seed", playerName: "Traveler") [3 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.A_foreign_original_genesis_is_refused_and_releases_the_save(seed: "retained-gift-selection", playerName: "Another traveler") [2 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Damaged_later_history_refuses_selection_and_earlier_reads [1 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.A_missing_save_or_another_target_is_refused_without_creating_anything [335 ms]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Fresh_saved_gift_and_ordinary_interpretations_are_not_retained_worlds [1 s]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.An_untransitioned_coordinated_save_is_never_migrated_by_opening [792 ms]
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Existing_fresh_gift_and_coordinated_selectors_still_refuse_a_transitioned_save [1 s]
+[xUnit.net 00:00:16.65]     OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Malformed_or_lived_expected_genesis_bytes_are_refused_before_selection [FAIL]
+[xUnit.net 00:00:16.65]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:16.65]       Expected: typeof(System.IO.InvalidDataException)
+[xUnit.net 00:00:16.65]       Actual:   typeof(System.FormatException)
+[xUnit.net 00:00:16.65]       ---- System.FormatException : The saved-proposal world requires its exact joint decode context.
+[xUnit.net 00:00:16.65]       Stack Trace:
+[xUnit.net 00:00:16.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftSelectionTests.cs(103,0): at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Malformed_or_lived_expected_genesis_bytes_are_refused_before_selection()
+[xUnit.net 00:00:16.65]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:16.65]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:16.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV30.cs(113,0): at OpenFantasy.Core.Worlds.WorldSnapshotCodecV30.Decode(ReadOnlySpan`1 bytes, WorldMaterialCareArchiveAnchor anchor)
+[xUnit.net 00:00:16.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs(52,0): at OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(ReadOnlySpan`1 bytes, WorldResourceArchiveAnchor archiveAnchor)
+[xUnit.net 00:00:16.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmClientSession.cs(164,0): at OpenFantasy.Client.FarmClientSession.<>c__DisplayClass29_0.<OpenRetainedGiftsAsync>b__0()
+[xUnit.net 00:00:16.65]            at System.Threading.Tasks.Task`1.InnerInvoke()
+[xUnit.net 00:00:16.65]            at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+[xUnit.net 00:00:16.65]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:16.65]            at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+[xUnit.net 00:00:16.65]            at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+[xUnit.net 00:00:16.65]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Malformed_or_lived_expected_genesis_bytes_are_refused_before_selection [1 s]
+  Error Message:
+   Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(System.IO.InvalidDataException)
+Actual:   typeof(System.FormatException)
+---- System.FormatException : The saved-proposal world requires its exact joint decode context.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.Malformed_or_lived_expected_genesis_bytes_are_refused_before_selection() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftSelectionTests.cs:line 103
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+   at OpenFantasy.Core.Worlds.WorldSnapshotCodecV30.Decode(ReadOnlySpan`1 bytes, WorldMaterialCareArchiveAnchor anchor) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV30.cs:line 113
+   at OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(ReadOnlySpan`1 bytes, WorldResourceArchiveAnchor archiveAnchor) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs:line 52
+   at OpenFantasy.Client.FarmClientSession.<>c__DisplayClass29_0.<OpenRetainedGiftsAsync>b__0() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmClientSession.cs:line 164
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftSelectionTests.The_original_genesis_opens_only_its_explicitly_transitioned_save_paused_with_the_gift_policy [1 s]
+[xUnit.net 00:03:07.10]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftFixtureTests.Prepared_original_world_carries_a_helper_gift_across_a_real_cut_before_acceptance_and_own_use [31 s]
+
+Test Run Failed.
+Total tests: 10
+     Passed: 9
+     Failed: 1
+ Total time: 3.1361 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/focused-20260930T020943Z-2271e/OpenFantasy.Hosting.Tests.trx

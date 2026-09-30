@@ -48,6 +48,8 @@ public partial class FarmGame : Node2D
     internal string? GiftFixtureGenesisPath { get; init; }
     /// <summary>Expected fresh genesis of a prepared coordinated fixture; requires its explicit existing save.</summary>
     internal string? CoordinatedFixtureGenesisPath { get; init; }
+    /// <summary>Original coordinated genesis of an explicitly transitioned retained world; requires its existing save.</summary>
+    internal string? RetainedGiftGenesisPath { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
@@ -107,6 +109,16 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (RetainedGiftGenesisPath is { } retainedGenesis)
+        {
+            // A retained world has no default location or fallback: only its explicit transitioned save opens.
+            _opening = SavePathOverride is { } retainedSave
+                ? FarmClientSession.OpenRetainedGiftsAsync(retainedSave, retainedGenesis,
+                    FarmClientSession.RetainedGiftTargetProfileVersion)
+                : Task.FromException<FarmClientSession>(
+                    new InvalidOperationException("The retained gift world requires its explicit existing save."));
+            return;
+        }
         if (GiftFixtureGenesisPath is { } giftGenesis)
         {
             _opening = SavePathOverride is { } giftSave
@@ -210,6 +222,7 @@ public partial class FarmGame : Node2D
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : RetainedGiftGenesisPath is not null ? "I opens your pack and its gift offers; V opens actions; Q changes wheel pages."
                     : RestorativeProfile ? "V opens actions; Q changes wheel pages. Inspect Care for your medicine and Wren's permission."
                     : CareProfile ? "Wren is nearby to help. Q selects a wolf; V inspects actions and their costs."
                     : EncounterProfile ? "Q selects a wolf. E engages; V inspects its actions. Encounters wait for your choice."

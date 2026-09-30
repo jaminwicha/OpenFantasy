@@ -49,6 +49,22 @@ explicit maintenance action when no delegated process uses the shared client.
   substantial code delivery, not proof of net credit savings. Keep task-directory discovery narrow and
   do not finish an assignment while a required asynchronous check remains unresolved.
 
+- The [retained native gift assignment](p02/retained-gift-native/DISPATCH.json) returned verified
+  Opus5.5/1M with requested Max, successful adapter/provider status, no permission denials and verified
+  context checks. It delivered the selector, input probe, tests and docs; all ten focused cases and the
+  exported fixture completed successfully. Duration1,943.293s; client estimate$10.8476332. Astra's three
+  rendered starts missed the unchanged30s opening gate; a later normal active/reopen passed. Integration
+  repaired the new saved-result test's archive-context and connection-lifetime handling; runtime rules
+  and gates stayed intact. The integration packet owns final acceptance, not the worker's delivery.
+
+- The [resource encoding assignment](p02/retained-resource-encoding/DISPATCH.json) also completed with
+  verified Opus5.5/1M, requested Max, verified pre/post context and no denials. Duration1,419.851s;
+  client estimate$10.9619998. It delivered three production-file changes, eight new tests,104 focused
+  passes and a complete-replay allocation comparison. Its initial measurement overlapped its own
+  tests; it retained that result and measured again after their completion. Astra reviewed source,
+  ran broader integration and strengthened future measurement locking/source pins. These are useful
+  substantial deliverables, not proof of billing or net credit savings. No model request was retried.
+
 The initial review preflight used an overly broad skill manifest outside its declared roots.
 A narrow selected-skill manifest corrected this local configuration before the sole paid request.
 Neither client installation nor a successful preflight proves that the model returned useful work.

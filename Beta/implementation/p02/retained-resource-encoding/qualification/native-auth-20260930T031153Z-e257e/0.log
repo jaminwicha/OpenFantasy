@@ -1,0 +1,33 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.33]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.07]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.36]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.82]     OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use [FAIL]
+[xUnit.net 00:00:01.82]       System.FormatException : The saved-proposal world requires its exact joint decode context.
+[xUnit.net 00:00:01.82]       Stack Trace:
+[xUnit.net 00:00:01.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV30.cs(113,0): at OpenFantasy.Core.Worlds.WorldSnapshotCodecV30.Decode(ReadOnlySpan`1 bytes, WorldMaterialCareArchiveAnchor anchor)
+[xUnit.net 00:00:01.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs(52,0): at OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(ReadOnlySpan`1 bytes, WorldResourceArchiveAnchor archiveAnchor)
+[xUnit.net 00:00:01.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs(51,0): at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Verify(JsonElement result, String original)
+[xUnit.net 00:00:01.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs(36,0): at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use()
+[xUnit.net 00:00:01.83]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.83]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.84]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use [342 ms]
+  Error Message:
+   System.FormatException : The saved-proposal world requires its exact joint decode context.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldSnapshotCodecV30.Decode(ReadOnlySpan`1 bytes, WorldMaterialCareArchiveAnchor anchor) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV30.cs:line 113
+   at OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(ReadOnlySpan`1 bytes, WorldResourceArchiveAnchor archiveAnchor) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs:line 52
+   at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Verify(JsonElement result, String original) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs:line 51
+   at OpenFantasy.Hosting.Tests.RetainedGifts.RetainedGiftResultTests.Native_retained_gift_results_extend_the_original_through_a_carried_cut_acceptance_and_own_use() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs:line 36
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 2.4853 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-resource-encoding/qualification/native-auth-20260930T031153Z-e257e/OpenFantasy.Hosting.Tests.trx

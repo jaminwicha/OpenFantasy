@@ -1,0 +1,21 @@
+{
+  "accepted": true,
+  "sourceChanges": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/RetainedGifts/RetainedGiftResultTests.cs"
+  ],
+  "repair": "New result test authenticates recorded fixture with complete archive context; original501 tests immutable",
+  "productionAssembliesUnchanged": true,
+  "measuredFilesMatchCurrent": {
+    "src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs": "79c77404f9d4fa726cd86a39f768bd2f403ea72ee1adb21473ecdeedbfa4aad1",
+    "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodec.cs": "19a845042c3b2292db2b6286222742df445f1e71a36a04ee59ae56e5889b8199",
+    "src/OpenFantasy.Core/Worlds/WorldResourceHistoryCodecV1.cs": "3acc7f22d6dafc469797c410903b1b33ad6766a8ffb91d0e44dc612c076b1e5f"
+  },
+  "buildConfigurationMatchesBaselineAndMeasured": {
+    "Directory.Build.props": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680",
+    "global.json": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e",
+    "NuGet.Config": "cb93c65e28718aa9075fce221e9f9cea9e72d3fe1b30462383448a591f5b3aa1"
+  },
+  "originalMeasurementCaveat": "Old script compared changed-path sets rather than all source hashes; exact three measured files and independent build compatibility now verified. Hardened script records complete maps for future runs.",
+  "finalBuildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/build-20260930T031736Z-6c104/report.json",
+  "finalBuildReportSha256": "4ca52a3b8c4b845fe5938e0c6d21750e8bf34c2132daacc82070cbf9ba23574a"
+}

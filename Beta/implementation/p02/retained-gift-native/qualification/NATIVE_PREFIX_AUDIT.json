@@ -1,0 +1,53 @@
+{
+  "sourceSha256": "814f0afc093031d1c9308d3e1c89683b2afbdda0076b2c636b084d2e4fb23773",
+  "targetSha256": "e950ffa642ef76dccc02d89e11bc3a7fe2234a674a87f417bd535bdfee2db53f",
+  "exactPrefix": {
+    "world_checkpoints": {
+      "sourceRows": 1,
+      "targetRows": 1,
+      "retainedRowsSha256": "8a26f22b8f74401eddcbefdc23372298bc849ee41d3690a230d912f9fab3a6ea"
+    },
+    "world_command_outcomes": {
+      "sourceRows": 1038,
+      "targetRows": 1168,
+      "retainedRowsSha256": "688def253e611a29a49d3f13cca334c66fc17ec76da148993d43eb39e7a2b843"
+    },
+    "world_commits": {
+      "sourceRows": 1579,
+      "targetRows": 1746,
+      "retainedRowsSha256": "3171c68f31ee5822a8c6f072bf5e14a1b1d8dcab6aba9c30af5c3bb0b733f04c"
+    },
+    "world_genesis": {
+      "sourceRows": 1,
+      "targetRows": 1,
+      "retainedRowsSha256": "f7522527ce18f2178f693e8b25285df5bdbd3d39914b31d6a037eda253ffdd12"
+    },
+    "world_material_care_segments": {
+      "sourceRows": 3,
+      "targetRows": 5,
+      "retainedRowsSha256": "a27169db03171783b09b688be65d60247036b762321351a226d61619cbb3e9b3"
+    },
+    "world_occupied_identity": {
+      "sourceRows": 4698,
+      "targetRows": 5193,
+      "retainedRowsSha256": "dfa6a1e289592fde355c8ba2cea1b99a8e97ac50294f68198613b4d006ad6c27"
+    },
+    "archivesPublishedAfterMigration": 1,
+    "transition": {
+      "sequence": 1580,
+      "advancingSteps": 808,
+      "causeId": "0ba8280f2be8197fb2f0b25483675312",
+      "afterHash": "c602b1f2a837785c79f1be035a0be433dbd025d0422b9a7280186d0a10b1ca3a"
+    },
+    "targetHead": {
+      "sequence": 1746,
+      "advancingSteps": 974,
+      "hash": "6a730df3ef7528b15a5c90eea3a1d6085657474ed273b08aec25f0adf024b86d"
+    }
+  },
+  "semanticReplay": "Requires the separate Core/Host qualification; SQL equality alone is insufficient.",
+  "accepted": true,
+  "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/final.sqlite3",
+  "target": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-gift-native/qualification/native-retained-gifts-1o9wxyur/journey.sqlite",
+  "method": "Byte copies of closed originals; immutable SQL reader. Separate managed replay is required."
+}

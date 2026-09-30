@@ -22,6 +22,7 @@ branches to record major progress. This is shared project discipline for all aut
 
 | Branch | Commit | Qualified scope and limits |
 |---|---|---|
+| `codex/milestone-retained-native-gifts-20260930` | resolved by preserved branch | Native continuation of the original520-use world through a carried gift, acceptance, own-use521 and separate reopen; exact historical prefix. Immutable resource encoding reduces complete-replay cumulative allocation about11.2%. Build and1,985 distinct managed cases, retained/fresh native keyboard journeys pass. [Evidence](p02/retained-gift-native/INTEGRATION_REVIEW.md). Startup consistency, physical devices, archived-only native lookup, new process-kill and full production/phase gates remain open. |
 | `codex/milestone-retained-proposal-transition-20260930` | resolved by preserved branch | Explicit profile27-to30 copy-and-publish transition, exact prior history and managed original520-to521 gift/accept/own-use journey through a real automatic archive. Clean build and 2,051 distinct managed passes (Core 1,692; Host 359), independent SQL prefix audit and current architecture. [Evidence](p02/retained-proposal-transition/INTEGRATION_REVIEW.md) retains Opus delivery, lead critique, failures, diagnostic correction and all preservation pins. Native transitioned-save selection/journey, actual transition-boundary process kills and full phase/production gates remain open. |
 | `codex/milestone-proposal-interaction-boundaries-20260929` | resolved by preserved branch | Exact explicit own-lot gift preparation, bounded background participant/archive inspection and ordinary profile30 excavation; genuine pending16 refusal preserves the separate interpretation. Clean build, 165 distinct affected managed passes including 34 focused, source critic/shutdown correction and current architecture. [Evidence](p02/proposal-interaction-boundaries/INTEGRATION_REVIEW.md) retains failures and exact 488 old files/23 frozen specs/unrelated staging. Native gift UI, control/network binding, production latency/indexing, retained520-dose and full phase gates remain open. |
 | `codex/milestone-npc-material-decisions-20260929` | resolved by preserved branch | Opt-in immutable NPC medicine preferences issue actual own-control offers/replies at existing cutoffs; later player acceptance/use, supplier-only aid deferral and stable decisions survive refusal/expiry/real cut/reopen. Clean build, 154 distinct affected managed passes including 23 focused cases, native Astra source criticism/corrections and current architecture. [Evidence](p02/npc-material-decisions/INTEGRATION_REVIEW.md) preserves failures, 486 old files, 23 frozen specs and unrelated staging. Archived session inspection, pending-excavation joins, general NPC/policy authoring, recurring need episodes, native/control/network binding, retained520-dose and all full phase/production gates remain open. |
@@ -398,3 +399,19 @@ the interrupted first attempt and its corrected diagnostic interpretation stay r
 source and every old authoritative row stay exact. Ecosystem commit 59813730 records the portable delegated
 command-completion/artifact-scope lesson. Work remains on `codex/runtime-foundation`; no full phase,
 native/device, new process-kill, production or human acceptance gate closes.
+
+
+The `codex/milestone-retained-native-gifts-20260930` marker preserves two completed verified
+Opus5.5/1M/requested-Max deliveries and Astra’s integration: explicit original-genesis selection,
+native carried proposal acceptance and own-use521, plus object-owned structural resource bytes.
+All1,985 distinct managed cases pass with no skips; native active/reopen and fresh keyboard/reopen
+pass on exact final runtime binaries. The original1,579 commits and every non-head historical row
+remain exact. Three native startup failures and three new-result-test failures remain recorded;
+only the new test’s archive-context/connection lifetime handling was repaired, with no rule or
+threshold weakening. The source,501 old tests/fixtures,23 frozen specs and unrelated19-file
+predecessor staging remain intact. Pre-change and delivery checkpoints resolve via both packets;
+`codex/checkpoint-before-retained-journal-test-repair-20260930T031248Z` preserves WIP`d01b218`.
+The11.2% cumulative-allocation improvement is not a production latency/peak-memory claim.
+Ecosystem`ad0c2e2` preserves shared verification serialization and measured-source pinning.
+Work stays on`codex/runtime-foundation`; this backup pointer closes no full phase, campaign,
+physical-device, art or human acceptance gate and entails no branch switch, push or merge.
