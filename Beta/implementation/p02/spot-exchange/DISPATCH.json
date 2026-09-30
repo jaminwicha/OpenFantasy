@@ -1,0 +1,44 @@
+{
+  "status": "permission_denied",
+  "private": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-spot-exchange-fjdd0jj0",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "limitSeconds": 2400,
+  "clientEstimateLimitUsd": 25,
+  "checkpoint": "codex/checkpoint-before-spot-exchange-20260930T033258Z",
+  "contextHash": "b024b452e5d4c7fb4d5c2725596f01b6352d6de73e43a56f13be4665a2cf1922",
+  "acceptance": "Incomplete: continued material history and required contrasts omitted;373 focused pass. Astra review/integration pending. No model retry.",
+  "contextPreflight": "verified",
+  "ownedEditObserved": true,
+  "adapterExitCode": 1,
+  "providerSubtype": "success",
+  "durationSeconds": 766.361,
+  "clientCostEstimateUsd": 3.5727244000000007,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 74,
+      "outputTokens": 69588,
+      "cacheReadInputTokens": 3813702,
+      "cacheCreationInputTokens": 177241,
+      "webSearchRequests": 0,
+      "costUSD": 3.5727244000000007,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 20645,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01KDjRyPCEMUCUvHhRFLov1A",
+      "tool_input": {
+        "command": "R=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core; cat $R/Authority/ConsentedMaterial/*.cs | grep -v '^using' ; cat $R/Authority/ConsentedCustody/ConsentedTransferAuthority.cs",
+        "description": "Read consented material gift code"
+      }
+    }
+  ],
+  "contextPostflight": "verified"
+}

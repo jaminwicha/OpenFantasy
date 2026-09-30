@@ -28,6 +28,9 @@ public sealed class MaterialOperationHistory
             if (operation is MaterialConsentedTransferOperation consented
                 && (!context.SupportsConsentedTransfer || !commands.Add(consented.AcceptanceId)))
                 throw new ArgumentException("Consented transfers require their explicit capability and distinct permanent approval identities.");
+            if (operation is MaterialSpotExchangeOperation exchange
+                && (!context.SupportsSpotExchange || !commands.Add(exchange.Evidence.Quote.QuoteId)))
+                throw new ArgumentException("Paid material history requires its explicit capability and unique settlement/quote identities.");
             if (context.SupportsExcavation && operation is MaterialGatherOperation or MaterialConstructionOperation)
                 throw new ArgumentException("Excavation work must use the shared terrain, effort and actor opportunity owner.");
             if (operation is MaterialExcavationWorkOperation work)

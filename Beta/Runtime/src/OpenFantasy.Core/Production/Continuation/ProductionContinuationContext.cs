@@ -21,9 +21,16 @@ public sealed class ProductionContinuationContext
         ConstructionSnapshot? construction = null, bool supportsConstruction = false, TerrainRepresentationBoundary? terrainRepresentation = null,
         TransportMaterialBoundary? reservedTransport = null, ExcavationMaterialBoundary? excavation = null,
         bool completeWorld = false, bool consentedTransfer = false, bool consentedWorld = false,
-        ContentHash? adoptsConsentFrom = null)
+        ContentHash? adoptsConsentFrom = null, bool spotExchange = false)
     {
         Basis = basis;
+        SupportsSpotExchange = spotExchange;
+        if (spotExchange && (!supportsMaterialOperations || supportsConstruction || terrainRepresentation is not null
+                || reservedTransport is not null || excavation is not null || completeWorld)
+            || !spotExchange && production.Continuation?.SupportsSpotExchange == true)
+        {
+            throw new ArgumentException("Spot exchange retains its explicit standalone ordered capability across every cut.");
+        }
         SupportsConsentedTransfer = consentedTransfer;
         if (consentedTransfer && (!supportsMaterialOperations || supportsConstruction || terrainRepresentation is not null
                 || reservedTransport is not null || excavation is not null || completeWorld)
@@ -84,11 +91,15 @@ public sealed class ProductionContinuationContext
         if (recipes.Length > 5 * 1024 * 1024)
             throw new ArgumentException("The continuation recipe admission exceeds its bounded frame.");
         List<ReadOnlyMemory<byte>> fields = [
-            Number(consentedWorld ? 9UL : consentedTransfer ? 8UL : completeWorld ? 7UL : excavation is not null ? 6UL : reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
+            Number(spotExchange ? 10UL : consentedWorld ? 9UL : consentedTransfer ? 8UL : completeWorld ? 7UL : excavation is not null ? 6UL : reservedTransport is not null ? 5UL : terrainRepresentation is not null ? 4UL : supportsConstruction ? 3UL : supportsMaterialOperations ? 2UL : 1UL), basis.ContentHash.ToByteArray(), Number(Ordinal), Number(BaseProductionRevision),
             Number(BaseBatchCount), Number(BaseConsumedItemCount), Number(SupportsConsumption ? 1UL : 0UL), recipes,
             AuthorityAdmissionHash.ToByteArray(), CanonicalEncodingV1.Frame("continuation.storages.v1",
                 Storages.Select(value => (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("continuation.storage.v1",
                     value.CustodianId.ToByteArray(), Number(value.UnitCapacity), Number(value.Revision))).ToArray())];
+        if (spotExchange)
+        {
+            fields.Add(Number(consentedTransfer ? 1UL : 0UL));
+        }
         if (supportsMaterialOperations)
         {
             ValidateGathering(inventory, basis, gathering);
@@ -152,6 +163,8 @@ public sealed class ProductionContinuationContext
     /// approved transfers of raw and produced stock; every other interpretation rejects them.
     /// </summary>
     public bool SupportsConsentedTransfer { get; }
+    /// <summary>Paid material operations require genuine four-owner settlement evidence.</summary>
+    public bool SupportsSpotExchange { get; }
     public bool SupportsExcavation => Excavation is not null;
     public ExcavationMaterialBoundary? Excavation { get; }
     public bool SupportsReservedTransport => ReservedTransport is not null;
@@ -172,20 +185,30 @@ public sealed class ProductionContinuationContext
             production.MaterialHistory is not null, production.MaterialHistory?.Gathering,
             supportsConstruction: production.Continuation?.SupportsConstruction == true,
             terrainRepresentation: production.MaterialHistory?.TerrainRepresentation,
-            consentedTransfer: production.Continuation?.SupportsConsentedTransfer == true);
+            consentedTransfer: production.Continuation?.SupportsConsentedTransfer == true,
+            spotExchange: production.Continuation?.SupportsSpotExchange == true);
 
     internal static ProductionContinuationContext CaptureMaterial(CountedAuthorityState inventory,
         ProductionSnapshot production, GatheringSnapshot? gathering) =>
         new(CaptureOrdinaryBasis(inventory, production), inventory, production, true, gathering,
             supportsConstruction: production.Continuation?.SupportsConstruction == true,
             terrainRepresentation: production.MaterialHistory?.TerrainRepresentation,
-            consentedTransfer: production.Continuation?.SupportsConsentedTransfer == true);
+            consentedTransfer: production.Continuation?.SupportsConsentedTransfer == true,
+            spotExchange: production.Continuation?.SupportsSpotExchange == true);
 
     internal static ProductionContinuationContext CaptureConsentedMaterial(CountedAuthorityState inventory,
         ProductionSnapshot production, GatheringSnapshot? gathering) =>
         new(CaptureOrdinaryBasis(inventory, production), inventory, production, true, gathering,
             supportsConstruction: production.Continuation?.SupportsConstruction == true,
-            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation, consentedTransfer: true);
+            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation, consentedTransfer: true,
+            spotExchange: production.Continuation?.SupportsSpotExchange == true);
+
+    internal static ProductionContinuationContext CaptureSpotExchange(CountedAuthorityState inventory,
+        ProductionSnapshot production, GatheringSnapshot? gathering) =>
+        new(CaptureOrdinaryBasis(inventory, production), inventory, production, true, gathering,
+            supportsConstruction: production.Continuation?.SupportsConstruction == true,
+            terrainRepresentation: production.MaterialHistory?.TerrainRepresentation,
+            consentedTransfer: production.Continuation?.SupportsConsentedTransfer == true, spotExchange: true);
 
     internal static ProductionContinuationContext CaptureConstruction(CountedAuthorityState inventory,
         ProductionSnapshot production, ConstructionSnapshot construction, GatheringSnapshot? gathering) =>

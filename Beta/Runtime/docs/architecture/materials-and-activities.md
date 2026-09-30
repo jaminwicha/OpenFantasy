@@ -214,3 +214,12 @@ every interval. It saturates effort and applies eligible regrowth without resett
 This is an idle transition, not a substitute for recorded harvesting, climbing or excavation effort.
 The material continuation bridge compares this reconstruction with the actual supplied gathering
 owner and refuses unrepresented changes. Advancing to a time cannot overwrite actual spending.
+
+## Quoted goods and payment
+
+[Atomic spot exchange](spot-exchange.md) is a standalone domain joining the existing inventory,
+production and progression owners with a quote book. Both participants approve exact goods,
+price and fees; settlement preserves finite money and material provenance as one candidate.
+Explicit V12 ordered material history records genuine paid movement evidence. The domain neither
+establishes a market price model nor admits a durable trade into a world profile. Those bindings
+must retain complete payment causes, spatial/time rules, historical identities and atomic publication.

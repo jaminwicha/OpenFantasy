@@ -1,0 +1,21 @@
+{
+  "status": "timeout",
+  "private": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-exchange-critic-ecykpjzd",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "contextHash": "5b484d1932e038125500b233243e93bbef1fc77fcd6945142b6fb87d74a5bc06",
+  "timeLimitSeconds": 900,
+  "clientEstimateLimitUsd": 8,
+  "tools": "Read,Glob,Grep",
+  "scope": "Independent critique of integrated source, not retry of incomplete implementation",
+  "elapsedSeconds": 900.182,
+  "adapterExitCode": 124,
+  "processExitCode": -9,
+  "contextPreflight": "verified",
+  "contextPostflight": "verified",
+  "returnedModelUsage": null,
+  "clientCostEstimateUsd": null,
+  "reportReturned": false,
+  "retried": false,
+  "followup": "One independent native critic explicitly announced; no further Claude request"
+}

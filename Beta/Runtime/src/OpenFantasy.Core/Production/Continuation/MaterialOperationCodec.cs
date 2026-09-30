@@ -26,6 +26,7 @@ internal static class MaterialOperationCodec
                 CommandCodecV1.Encode(transfer.Command), transfer.Delivery.PrincipalId.ToByteArray(), transfer.Delivery.SessionId.ToByteArray()),
             MaterialDeliveryOperation delivery => CanonicalEncodingV1.Frame("material.delivery",
                 delivery.ActorId.ToByteArray(), delivery.Delivery.PrincipalId.ToByteArray(), delivery.Delivery.SessionId.ToByteArray(), EncodeRequest(delivery.Request)),
+            MaterialSpotExchangeOperation exchange => exchange.Evidence.ContentHash.ToByteArray(),
             MaterialConsentedTransferOperation consented => CanonicalEncodingV1.Frame("material.consented-transfer",
                 ConsentedMaterialCodecV1.Encode(consented.Approval.Command),
                 consented.Approval.SenderDelivery.PrincipalId.ToByteArray(), consented.Approval.SenderDelivery.SessionId.ToByteArray(),
@@ -46,7 +47,9 @@ internal static class MaterialOperationCodec
         IReadOnlyDictionary<ContentHash, ConstructionCompletionEvidence>? constructionEvidence = null,
         IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.TerrainRepresentationEvidence>? terrainEvidence = null,
         IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Geography.ReservoirTransportEvidence>? transportEvidence = null,
-        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Terrain.ExcavationWorkEvidence>? excavationEvidence = null)
+        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Terrain.ExcavationWorkEvidence>? excavationEvidence = null,
+        IReadOnlyDictionary<ContentHash, OpenFantasy.Core.Markets.SpotSettlementEvidence>? settlementEvidence = null,
+        bool supportsSpotExchange = false)
     {
         var reader = new CanonicalProductionReader(bytes, MaximumByteLength, 6);
         reader.ExpectTag("production.material-operation"u8);
@@ -57,6 +60,13 @@ internal static class MaterialOperationCodec
         MaterialOperation result;
         switch (kind)
         {
+            case MaterialOperationKind.SpotExchange:
+                if (!supportsSpotExchange) throw new ArgumentException("Unknown material operation kind.");
+                ContentHash settlementHash = ReadHash(ref reader);
+                if (settlementEvidence is null || !settlementEvidence.TryGetValue(settlementHash, out var settlement))
+                    throw new ArgumentException("Paid material decoding requires the actual four-owner settlement evidence.");
+                result = new MaterialSpotExchangeOperation(sequence, settlement);
+                break;
             case MaterialOperationKind.ExcavationWork:
                 ContentHash excavationHash = ReadHash(ref reader);
                 if (excavationEvidence is null || !excavationEvidence.TryGetValue(excavationHash, out var excavation))

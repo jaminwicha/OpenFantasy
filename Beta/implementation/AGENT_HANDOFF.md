@@ -42,6 +42,28 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
+The [atomic spot exchange component](p02/spot-exchange/INTEGRATION_REVIEW.md) is accepted at
+`codex/milestone-atomic-spot-exchange-20260930`. It joins existing goods, provenance and finite
+currency under exact quoted terms. Astra completed the initial Opus delivery's missing continued
+history through explicit Production V12, corrected issuance freshness/stale-plan and seller-fee
+handling, and added adversarial tests. Full solution build, 1,727 Core cases and one actual hosted
+admission contrast pass: 1,728 distinct passes, zero skips, 30 new cases. All 507 original tests,
+23 frozen specs, source database and unrelated predecessor staging remain exact. Architecture is
+updated; [evidence](p02/spot-exchange/qualification/INTEGRATION_CHECKS.json) pins the accepted source.
+
+Opus returned verified 5.5/1M metadata with requested Max on implementation, but the adapter reported
+an optional shell-read denial and the scope was incomplete. Its separate read-only critic timed out
+at 900s without a report or usage metadata; no paid retry occurred. The explicitly announced native
+[independent critic](p02/spot-exchange/INDEPENDENT_REVIEW.md) found no actionable correctness defects.
+No external job is active. WIP delivery and tested snapshots are retained in the packet. This outcome
+does not establish net credit savings.
+
+Next is the [complete paid world binding](p02/spot-exchange/INTEGRATION_PLAN.md): own quotes and
+payment causes in the actual world, couple both participants' spatial/time/work rules, journal all
+four owners, and qualify archives/replay/crash/retry before native market interaction. The existing
+world must continue rejecting unsupported paid candidates. Local price knowledge, source-backed
+merchant stock/funds, two-market cargo/escort and all remaining P02/P00–P14 gates remain open.
+
 Two bounded Opus 5.5 / 1M / requested Max assignments completed successfully: the
 [retained native gift route](p02/retained-gift-native/INTEGRATION_REVIEW.md) and
 [resource encoding optimization](p02/retained-resource-encoding/INTEGRATION_REVIEW.md).

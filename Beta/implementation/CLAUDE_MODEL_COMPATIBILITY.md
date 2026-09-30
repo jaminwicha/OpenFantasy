@@ -76,3 +76,21 @@ terminated, the guarded synchronization applied eight reviewed copies; all 71 ma
 verified. `aced220` adds the observed permission-denial lesson: an authorized coding assignment
 should prove one owned create/edit early, stop on required-operation denial and retain the failure.
 No silent permission broadening, automatic retry or second model conversation is warranted.
+
+## Atomic exchange observations (2026-09-30)
+
+The [implementation request](p02/spot-exchange/DISPATCH.json) returned verified Opus 5.5 / 1M,
+requested Max, verified pre/post synchronization and 373 focused passes. The provider completed
+in 766.361s (client estimate $3.5727244); the adapter reported `permission_denied` for one optional
+Bash read outside the granted wrapper. No approval was pending. The delivery omitted continued
+paid material history and required adversarial contrasts. Astra completed those integration gaps;
+this is useful partial work, not evidence of net credit savings. No paid retry occurred.
+
+The distinct [independent critic request](p02/spot-exchange/CRITIC_DISPATCH.json) requested the same
+route/effort with 900s / $8 client-estimate limits and read-only tools. It timed out at 900.182s with
+no returned report or model/usage metadata. Pre/post synchronization verified. Requested routing
+is known; returned model/context and cost for this particular request are unavailable. The first
+implementation's verified route does not fill those missing observations. Its independent gate
+remained open until an explicitly announced native critic completed a static review without
+actionable correctness findings; no silent substitution or
+additional Claude request occurred. This timeout adds review latency without accepted review value.

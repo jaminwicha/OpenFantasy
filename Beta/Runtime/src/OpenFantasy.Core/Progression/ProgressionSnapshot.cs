@@ -105,6 +105,10 @@ public sealed class ProgressionSnapshot
         new(WorldId, BranchId, checked(Revision + 1), Profiles, Curves,
             Actors.Select(value => value.ActorId == actor.ActorId ? actor : value), currency);
 
+    /// <summary>Replaces only the finite currency ledger; actors, XP, HP/MP and definitions stay exact.</summary>
+    internal ProgressionSnapshot WithCurrency(CurrencyLedger currency) =>
+        new(WorldId, BranchId, checked(Revision + 1), Profiles, Curves, Actors, currency);
+
     internal ProgressionSnapshot WithResourceTransition(ActorResourceTransition transition)
     {
         if (!ReferenceEquals(GetActor(transition.Before.ActorId), transition.Before))

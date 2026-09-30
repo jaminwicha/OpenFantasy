@@ -1,0 +1,131 @@
+{
+  "status": "Source candidates inspected; not admitted runtime merchants, stock or funds",
+  "requirementIds": [
+    "RQ-049",
+    "RQ-137",
+    "RQ-146"
+  ],
+  "sources": {
+    "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/npcs.json": "a75e0f3e565e21cd751dc3697f948b773439935478053c29d5467e868d439746",
+    "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/items.json": "ac0944b98fbfc10474ae1d1309bd7ad6b74c511fb2da9c314ab41f6c8a655609",
+    "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/world.json": "9f46be269ea80ddeef908d9a8305b70bf26a8ca11a544bed32c640fbfee7668d"
+  },
+  "candidateMerchants": [
+    {
+      "id": "marla",
+      "name": "Marla",
+      "tileX": 96,
+      "tileY": 350,
+      "appearance": {
+        "race": 1,
+        "skin": 4,
+        "hairStyle": 0,
+        "hairColor": 3,
+        "outfit": 4,
+        "outfitA": 10,
+        "outfitB": 0,
+        "acc": 2
+      },
+      "dialog": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+      "shop": [
+        "potion",
+        "tonic",
+        "ether",
+        "rations",
+        "copper_axe",
+        "copper_pickaxe",
+        "sickle"
+      ],
+      "quests": [],
+      "wander": 1,
+      "sprite": "",
+      "sourceRegionIds": [
+        "brasshollow"
+      ]
+    },
+    {
+      "id": "kegga",
+      "name": "Kegga Toolwright",
+      "tileX": 347,
+      "tileY": 140,
+      "appearance": {
+        "race": 2,
+        "skin": 3,
+        "hairStyle": 8,
+        "hairColor": 12,
+        "outfit": 2,
+        "outfitA": 7,
+        "outfitB": 15,
+        "acc": 3
+      },
+      "dialog": "A dull tool is a slow funeral. Buy sharp.",
+      "shop": [
+        "iron_axe",
+        "iron_pickaxe",
+        "copper_axe",
+        "copper_pickaxe",
+        "sickle",
+        "rations"
+      ],
+      "quests": [
+        "kegga_timber"
+      ],
+      "wander": 1,
+      "sprite": "",
+      "sourceRegionIds": [
+        "gearford"
+      ]
+    }
+  ],
+  "selectedSharedGoods": [
+    {
+      "id": "rations",
+      "name": "Rations",
+      "kind": "Consumable",
+      "price": 25,
+      "healHp": 30,
+      "healMp": 5
+    },
+    {
+      "id": "copper_axe",
+      "name": "Copper Axe",
+      "kind": "Tool",
+      "price": 90,
+      "tool": "Axe",
+      "toolPower": 1
+    },
+    {
+      "id": "copper_pickaxe",
+      "name": "Copper Pickaxe",
+      "kind": "Tool",
+      "price": 90,
+      "tool": "Pickaxe",
+      "toolPower": 1
+    },
+    {
+      "id": "sickle",
+      "name": "Sickle",
+      "kind": "Tool",
+      "price": 60,
+      "tool": "Sickle",
+      "toolPower": 1
+    }
+  ],
+  "retainedCurrencyAdmission": {
+    "definitionKey": "currencies/gil",
+    "key": "gil",
+    "displayName": "Gil",
+    "unitName": "gil",
+    "admittedSupply": 200,
+    "reserveBalance": 200,
+    "reserveRole": "quest.reward-reserve",
+    "origin": "Authored finite quest reserve; source reward minted gil without a payer. Actor personal balances remain zero.",
+    "eligibilityScope": "One funded recipient in this two-actor local diagnostic profile; no implicit additional supply for future actors."
+  },
+  "constraints": [
+    "Source support contains these records but the existing runtime package does not automatically admit them.",
+    "Legacy item prices are preserved source data, not a proof of supply/demand pricing or a funded merchant.",
+    "The original finite quest reserve is not an unbounded market treasury; fund each merchant through explicit content admission or earned transactions.",
+    "Do not change source NPCs, shop lists, appearance or prices to manufacture arbitrage. Author new versioned market rules separately."
+  ]
+}

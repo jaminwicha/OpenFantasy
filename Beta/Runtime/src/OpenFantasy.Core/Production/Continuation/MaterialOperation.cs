@@ -6,7 +6,7 @@ using OpenFantasy.Core.Construction;
 
 namespace OpenFantasy.Core.Production;
 
-public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7, ReservedTransport = 8, ExcavationWork = 9, ConsentedTransfer = 10 }
+public enum MaterialOperationKind { Craft = 1, Consume = 2, Gather = 3, Transfer = 4, SourceDelivery = 5, Construction = 6, TerrainRepresentation = 7, ReservedTransport = 8, ExcavationWork = 9, ConsentedTransfer = 10, SpotExchange = 11 }
 
 /// <summary>One ordered material transition; only its specific owner can create an accepted record.</summary>
 public abstract class MaterialOperation
@@ -104,4 +104,12 @@ public sealed class MaterialExcavationWorkOperation : MaterialOperation
     internal MaterialExcavationWorkOperation(ulong sequence, OpenFantasy.Core.Terrain.ExcavationWorkEvidence evidence)
         : base(sequence, evidence.Command.CommandId, MaterialOperationKind.ExcavationWork) => Evidence = evidence;
     public OpenFantasy.Core.Terrain.ExcavationWorkEvidence Evidence { get; }
+}
+
+/// <summary>Goods side of an actual funded settlement, not gift approval or autonomous payment authority.</summary>
+public sealed class MaterialSpotExchangeOperation : MaterialOperation
+{
+    internal MaterialSpotExchangeOperation(ulong sequence, OpenFantasy.Core.Markets.SpotSettlementEvidence evidence)
+        : base(sequence, evidence.Acceptance.AcceptanceId, MaterialOperationKind.SpotExchange) => Evidence = evidence;
+    public OpenFantasy.Core.Markets.SpotSettlementEvidence Evidence { get; }
 }

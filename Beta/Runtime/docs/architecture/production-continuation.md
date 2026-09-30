@@ -157,6 +157,7 @@ authenticates archived history nor selects a complete-world storage profile.
 | V9 | Complete-world crafting and consumption with exact admitted raw issuance and retained construction | The material context from the actual coordinated world boundary; world journal replay authenticates other material writers |
 | V10 | Standalone ordered bilateral raw/produced custody operations | The explicit consented ordered context; independent delivery claims and exact operation replay |
 | V11 | Complete-world crafting/use with world-owned bilateral custody evidence | The consented coordinated boundary (context profile 9); complete world admission supplies mandatory produced-custody replay |
+| V12 | Standalone ordered raw/produced paid movements | Explicit paid context (profile 10), genuine four-owner settlement evidence, and exact material replay; optional pre-existing gift capability is retained |
 
 V4 decoding validates canonical component structure and joins the supplied actual source proofs.
 The caller must then invoke `ValidateForAuthority(actualInventory)` before using the pair. That
@@ -225,3 +226,15 @@ with bilateral raw/produced movement. It selects V11/context profile 9, retains 
 meaning, and supplies exact definition and output-prefix evidence to produced partition replay. The
 world owns that evidence and imports actual surviving custodians at each cut; it does not source raw
 history from the separate V10 ordered adapter. Older contexts refuse the new capability.
+
+## Paid material interpretation
+
+[Atomic spot exchange](spot-exchange.md) selects `SupportsSpotExchange` through an explicit
+`ContinueSpotExchange` cut. The context captures the actual material frontier and retains any
+existing gift capability. Its V12 operations bind genuine funded settlement evidence by hash;
+the decoder requires those opaque proofs, and authority replays the exact material prefix and
+result. Neither decoding nor a material cut authenticates payment history or publishes an archive.
+Currency and quotes stay with their own canonical owners. Current complete-world profiles refuse
+this standalone context; a paid world binding needs its own complete causal and archival contract.
+Earlier codecs reject paid-operation tags before interpreting their payloads, retaining their
+original refusal behavior and byte contracts.

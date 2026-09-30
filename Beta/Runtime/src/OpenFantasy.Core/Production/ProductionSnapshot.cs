@@ -65,7 +65,8 @@ public sealed class ProductionSnapshot
         : checked(TotalBatchCount + TotalConsumedItemCount);
     public ulong TotalBatchCount => checked((Continuation?.BaseBatchCount ?? 0) + (ulong)Batches.Count);
     public ulong TotalConsumedItemCount => checked((Continuation?.BaseConsumedItemCount ?? 0) + (ulong)ConsumedItems.Count);
-    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsConsentedTransfer == true ? ProductionCodecV10.Encode(this)
+    public ContentHash ContentHash => ContentHash.Compute(Continuation?.SupportsSpotExchange == true ? ProductionCodecV12.Encode(this)
+        : Continuation?.SupportsConsentedTransfer == true ? ProductionCodecV10.Encode(this)
         : Continuation?.SupportsConsentedWorld == true ? ProductionCodecV11.Encode(this)
         : Continuation?.SupportsCompleteWorld == true ? ProductionCodecV9.Encode(this)
         : Continuation?.SupportsExcavation == true ? ProductionCodecV8.Encode(this)
@@ -129,6 +130,30 @@ public sealed class ProductionSnapshot
             gathering ??= retained.Gathering;
         }
         var context = ProductionContinuationContext.CaptureConsentedMaterial(inventory, this, gathering);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
+    /// <summary>
+    /// Selects standalone ordered paid material history while retaining any existing gift capability.
+    /// Captures actual goods, not currency or market state. This is not a durable world migration.
+    /// </summary>
+    public ProductionSnapshot ContinueSpotExchange(CountedAuthorityState inventory, GatheringSnapshot? gathering = null)
+    {
+        RequireOrdinaryCut();
+        if (MaterialHistory is { } retained)
+        {
+            if (gathering is not null && (retained.Gathering is null
+                || gathering.ContentHash != retained.Gathering.AdvanceTo(gathering.AdvancingStep).ContentHash))
+            {
+                throw new ArgumentException("A paid material cut cannot replace its source owner.", nameof(gathering));
+            }
+            gathering ??= retained.Gathering;
+        }
+        var context = ProductionContinuationContext.CaptureSpotExchange(inventory, this, gathering);
         var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
             SupportsConsumption ? [] : null, context, new MaterialOperationHistory(context, []));
         result.ValidateForAuthority(inventory);

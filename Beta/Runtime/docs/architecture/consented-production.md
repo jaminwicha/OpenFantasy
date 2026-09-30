@@ -143,7 +143,8 @@ the movements; their owner is the evidence owner described in [consented world](
 the construction, terrain, reserved transport, excavation and complete-world interpretations. A
 later ordinary cut retains it; no cut gains or drops it silently. The capability has its own context
 profile number, so its context hash differs from every other interpretation, and its snapshot bytes
-are `ProductionCodecV10`.
+are `ProductionCodecV10` unless an explicit [paid material capability](spot-exchange.md) also
+selects V12. That capability retains existing gift rights; it never treats a gift as payment approval.
 
 Every earlier context profile and snapshot codec keeps its exact bytes and rules. They refuse
 consented history: their contexts reject the operation, their encoders reject the capability and

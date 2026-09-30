@@ -1,0 +1,42 @@
+{
+  "status": "accepted-standalone-component",
+  "sourceHead": "a658a5910f777b31bf4a66d621f89ff62a9446e9",
+  "reports": [
+    {
+      "path": "qualification/build-20260930T040917Z-17eb0/report.json",
+      "sha256": "d829838d473af5f541865c884e0a3d13a339924ac082c0bec8edf2301912f178",
+      "elapsedSeconds": 13.309,
+      "outcomes": null
+    },
+    {
+      "path": "qualification/full-core-20260930T041100Z-ea83a/report.json",
+      "sha256": "90cc1a63b9b2eeee9396ade23c9bb155ed83c106857f5746dcbde2b4bad10a72",
+      "elapsedSeconds": 186.33,
+      "outcomes": {
+        "Passed": 1727
+      }
+    },
+    {
+      "path": "qualification/world-admission-20260930T041417Z-dad02/report.json",
+      "sha256": "8b3ee1fc2892e4dde76b214ed18c592132027aafdf2adc4af5708499c59be36f",
+      "elapsedSeconds": 5.674,
+      "outcomes": {
+        "Passed": 1
+      }
+    }
+  ],
+  "distinctPassingTests": 1728,
+  "newCases": 30,
+  "skipped": 0,
+  "preservation": {
+    "existingTests": 507,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "architectureLocalLinksChecked": 131,
+  "brokenArchitectureLinks": 0,
+  "scope": "standalone atomic exchange and material replay; hosted test proves refusal without a paid world cause",
+  "nativeOrHumanAcceptance": false,
+  "independentReview": "../INDEPENDENT_REVIEW.md",
+  "milestone": "codex/milestone-atomic-spot-exchange-20260930"
+}

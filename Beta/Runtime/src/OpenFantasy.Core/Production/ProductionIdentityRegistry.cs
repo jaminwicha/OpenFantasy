@@ -88,6 +88,20 @@ internal sealed class ProductionIdentityRegistry
                     Add(consented.MovedLotId, lotRole);
                     AddPin(terms.Definition.DefinitionId, "item", terms.Definition.Version);
                 }
+                if (operation is MaterialSpotExchangeOperation exchange)
+                {
+                    var evidence = exchange.Evidence;
+                    var quote = evidence.Quote;
+                    string role = quote.LotKind == OpenFantasy.Core.Markets.SpotLotKind.Produced ? "derived-lot" : "raw-lot";
+                    Add(quote.QuoteId, "market-quote");
+                    Add(quote.LotId, role);
+                    Add(evidence.MovedLotId, role);
+                    Add(quote.IssuerActorId, "actor");
+                    Add(quote.CounterpartyActorId, "actor");
+                    Add(quote.SellerCustodianId, "custodian");
+                    Add(quote.BuyerCustodianId, "custodian");
+                    AddPin(quote.Definition.DefinitionId, "item", quote.Definition.Version);
+                }
                 if (operation is MaterialGatherOperation gather)
                 {
                     Add(gather.Evidence.IssuedLot.LotId, "raw-lot");

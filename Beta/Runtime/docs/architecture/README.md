@@ -52,6 +52,7 @@ different kind of person.
 | [Coordinated world continuation](coordinated-world-continuation.md) | How do full-world material, care and resource windows close together while preserving exact issuance, live work and durable evidence? |
 | [Aftermath care](aftermath-care.md) | How are prior permission, recovery acknowledgment, helper commitment and finite treatment composed without equating them? |
 | [Materials and activities](materials-and-activities.md) | How do gathering, crafting, quests, construction, trade and travel conserve resources? |
+| [Atomic spot exchange](spot-exchange.md) | How do quoted goods, explicit payment, finite balances and continued provenance settle as one candidate? |
 | [Consented custody](consented-custody.md) | How do two independently authenticated participants approve one exact counted-source transfer without changing inventory access policy? |
 | [Consented production](consented-production.md) | How do exact material approvals and ordered custody evidence preserve raw and produced stock, independent of complete-world publication? |
 | [Consented world material](consented-world.md) | How are paired material decisions, physical eligibility and custody evidence composed, and what must complete-world publication enforce? |

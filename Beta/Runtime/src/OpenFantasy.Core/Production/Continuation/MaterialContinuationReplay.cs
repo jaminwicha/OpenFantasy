@@ -40,7 +40,9 @@ internal sealed class MaterialContinuationReplay
         _derived = context.Basis.TransformedLots.ToDictionary(value => value.LotId);
         _commands = state.MaterialHistory!.Operations.Select(value => value.CommandId)
             .Concat(state.MaterialHistory.Operations.OfType<MaterialConsentedTransferOperation>()
-                .Select(value => value.AcceptanceId)).ToHashSet();
+                .Select(value => value.AcceptanceId))
+            .Concat(state.MaterialHistory.Operations.OfType<MaterialSpotExchangeOperation>()
+                .Select(value => value.Evidence.Quote.QuoteId)).ToHashSet();
     }
 
     internal void Validate()
@@ -59,6 +61,7 @@ internal sealed class MaterialContinuationReplay
                 case MaterialGatherOperation gather: Gather(gather.Evidence); break;
                 case MaterialTransferOperation transfer: Transfer(transfer); break;
                 case MaterialDeliveryOperation delivery: Deliver(delivery); break;
+                case MaterialSpotExchangeOperation exchange: Exchange(exchange); break;
                 case MaterialConsentedTransferOperation consented: Consent(consented); break;
                 default: throw new ArgumentException("Unsupported ordered material operation.");
             }
@@ -308,6 +311,21 @@ internal sealed class MaterialContinuationReplay
         _inventory = outcome.Inventory;
         _derived.Clear();
         foreach (TransformedLot lot in outcome.ProducedLots) _derived.Add(lot.LotId, lot);
+    }
+
+    private void Exchange(MaterialSpotExchangeOperation operation)
+    {
+        var evidence = operation.Evidence;
+        if (_state.Continuation?.SupportsSpotExchange != true || Occupied(evidence.Quote.QuoteId))
+            throw new ArgumentException("Paid material replay requires its explicit capability and a fresh quote identity.");
+        var result = evidence.ReplayMaterial(_inventory,
+            ProductionMaterialCodec.HashReplayPrefix(_state.Continuation, _replayed, _derived.Values),
+            _derived.Values.ToArray(), id => Occupied(id) || _commands.Contains(id));
+        if (evidence.MovedLotId != evidence.Quote.LotId) Created(evidence.MovedLotId);
+        _occupied.Add(evidence.Quote.QuoteId);
+        _inventory = result.Inventory;
+        _derived.Clear();
+        foreach (TransformedLot lot in result.ProducedLots) _derived.Add(lot.LotId, lot);
     }
 
     private void Deliver(MaterialDeliveryOperation operation)

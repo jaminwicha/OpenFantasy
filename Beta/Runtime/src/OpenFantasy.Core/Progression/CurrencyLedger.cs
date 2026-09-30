@@ -70,6 +70,36 @@ public sealed class CurrencyLedger
         Accounts.FirstOrDefault(value => value.ActorId == actorId)
         ?? throw new ArgumentException("The actor currency account is not admitted.", nameof(actorId));
 
+    /// <summary>
+    /// Redistributes existing balances from one payer to payees in one step. Nothing is minted:
+    /// the constructor re-proves the exact admitted supply. Each touched account advances its revision.
+    /// </summary>
+    internal CurrencyLedger Transfer(EntityId payerAccountId, IReadOnlyList<(EntityId PayeeAccountId, ulong Amount)> payments)
+    {
+        ArgumentNullException.ThrowIfNull(payments);
+        CurrencyAccount payer = GetAccount(payerAccountId);
+        Dictionary<EntityId, ulong> credits = [];
+        ulong total = 0;
+        foreach ((EntityId payeeAccountId, ulong amount) in payments)
+        {
+            GetAccount(payeeAccountId);
+            if (payeeAccountId == payerAccountId || amount == 0)
+            {
+                throw new ArgumentException("Payments name positive payees other than the payer.", nameof(payments));
+            }
+            credits[payeeAccountId] = checked(credits.GetValueOrDefault(payeeAccountId) + amount);
+            total = checked(total + amount);
+        }
+        if (credits.Count == 0 || total > payer.Balance)
+        {
+            throw new ArgumentException("A transfer must be funded by the payer's existing balance.", nameof(payments));
+        }
+        return new CurrencyLedger(WorldId, BranchId, checked(Revision + 1), Currency, AdmittedSupply,
+            Accounts.Select(value => value.AccountId == payerAccountId ? value.WithBalance(value.Balance - total)
+                : credits.TryGetValue(value.AccountId, out ulong credit)
+                    ? value.WithBalance(checked(value.Balance + credit)) : value));
+    }
+
     internal CurrencyLedger PayReward(CurrencyAccount reserve, CurrencyAccount recipient, ulong amount)
     {
         CurrencyAccount debit = reserve.WithBalance(checked(reserve.Balance - amount));
