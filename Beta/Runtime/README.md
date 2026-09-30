@@ -71,6 +71,19 @@ dotnet restore tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj --lock
 dotnet test tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj --no-restore
 ```
 
+The retained-world proposal migration tests require the original qualification ledger. From this
+directory, supply its directory explicitly when running Hosting tests:
+
+```sh
+OPENFANTASY_RETAINED_PROPOSAL_SOURCE="$PWD/../implementation/p02/care-definition-digests/qualification/durable-hosting-final" \
+  dotnet test tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-restore
+```
+
+Those tests verify the pinned source bytes, copy them before opening SQLite and fail if the input
+is absent; they never replace it with a fresh world or skip the retained-history assertions. The
+[bounded verifier](../implementation/p02/retained-proposal-transition/qualification/run_checks.py)
+supplies that same source and records preservation, source/build pins and nonempty test results.
+
 On the qualified local macOS development host, double-click `Play OpenFantasy.command`, or run `python3 tools/play.py`. The launcher selects the pinned tools, performs a locked client build/import and opens the retained normal world; `--prepare-only` checks preparation without opening a gameplay save. On another machine, supply `--dotnet` and `--godot` (or `OPENFANTASY_DOTNET` / `OPENFANTASY_GODOT`) for the exact installed tools. It never resets an existing save. This development launch route is not a platform export.
 
 Alternatively, build Debug and open `client/project.godot` with the pinned .NET editor. Put the selected SDK directory on PATH and set DOTNET_ROOT to its runtime root before launching the editor; both matter for editor SDK discovery and native runtime selection. The current source-based visuals are a provisional original-asset baseline, not the approved production art target. Move with WASD/arrows or the left stick; E/controller A talks or closes your conversation, G/controller X accepts or completes Wren’s addressed quest (outside a conversation it asks you to speak first; older profiles retain ordinary gifts), F/controller Y gathers from a nearby plant with its required owned tool, C/controller B packs two berries and one wood into two rations plus one wood offcut, and Esc/Start pauses. Closing saves through the host; reopening retains the world. The default local save is `user://worlds/wrens-farm-construction.sqlite`. When absent, startup first continues an existing `user://worlds/wrens-farm-quests.sqlite` on a verified copy, admitting one finite owned joinery kit and an unstarted project without changing old work, stock or rewards. If no quest continuation exists, the same preserved chain works backward: When absent, startup upgrades a verified copy of an existing `user://worlds/wrens-farm-production.sqlite`; an existing gathered world at `user://worlds/wrens-farm-work.sqlite` first receives its preserved production continuation. Each earlier file and its complete history remain intact. Existing selected construction saves take precedence. A failed or unsupported upgrade, or orphaned source sidecar, stops opening; it never silently resets the world. A new game admits the construction profile directly. Delivering six eligible raw wood gives 420 XP and 200 gil once, reaching level 3 with 38 residual XP and HP78/MP14 from the admitted level-one Human Squire. The supplies remain reserved until Wren reaches the crop plot and completes the joinery. Close the conversation to let him work; keep the plot and his route clear. This is a small sapling guard, with no claimed orchard-wide wind protection. Its provisional atlas panel has physical collision, but a dedicated work animation and sound kit are still pending. The earlier exploration world remains at `user://worlds/wrens-farm.sqlite` and can still be opened with `--legacy-farm`.
@@ -574,5 +587,15 @@ permission when `OPENFANTASY_NATIVE_GIFT_FIXTURES` names a fresh directory.
 --rendered` continues separate copies with keyboard/controller acceptance, pointer decline and
 creation/withdrawal, then reopens each in another paused process. Its manifest feeds
 `NativeGiftResultTests` via `OPENFANTASY_NATIVE_GIFT_RESULTS` to authenticate journal effects.
+
+An existing coordinated profile27 world can be explicitly copied into the proposal interpretation
+through `SqliteWorldAuthority.UpgradeCoordinatedToProposals(source, unusedDestination, request)`.
+Create the `WorldProposalTransition` request from the actual recovered source head and a fresh cause
+identity. The operation holds the source lease, validates its complete history, appends the exact
+transition to a verified copy and publishes that copy only after successful replay. It preserves
+the original genesis and historical rows. Opening an existing save never performs this transition.
+See the [transition contract](docs/architecture/coordinated-world-continuation.md#explicit-proposal-transition).
+The native `--gifts` selector expects a fresh proposal genesis; it does not select these transitioned
+worlds. Native selection and the joined retained-world input journey require a separate binding.
 Fixtures keep their source saves intact. Injected native controls and background images do not
 establish physical-device, OS-focus, production art, complete gift UX or retained-save migration acceptance.

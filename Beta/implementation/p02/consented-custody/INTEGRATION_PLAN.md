@@ -54,5 +54,17 @@ and [saved local proposals](../material-proposals/INTEGRATION_REVIEW.md) provide
 The latter qualifies fresh profile30 offers, independent local deliveries, actual cut carry,
 participant outcomes, expiry and process recovery. It does not admit a lived profile28 transition,
 combine simultaneous and saved routes, or implement multiplayer time selection/control rollover.
-Player/NPC policy, native presentation, the original retained-world journey and exchange/economy
-remain open; keep those rows' full evidence requirements when building on these increments.
+The [player-session binding](../scheduled-material-proposals/INTEGRATION_REVIEW.md),
+[explicit NPC decisions](../npc-material-decisions/INTEGRATION_REVIEW.md) and
+[native gift controls](../native-material-gifts/INTEGRATION_REVIEW.md) now qualify bounded local
+portions of the player/NPC and presentation rows. They do not close general NPC knowledge,
+policy authoring, rich icon-led presentation, physical devices or network authentication.
+
+The [retained proposal transition](../retained-proposal-transition/INTEGRATION_REVIEW.md) supplies
+an explicit profile27-to-profile30 copy-and-publish operation. The managed journey preserves the
+original 520-use ledger, accepts a helper's existing dose after a real automatic archive cut, and
+spends it through ordinary self-use for use521. Complete replay, recorded history and exact SQL
+prefix comparison authenticate it. Care permission and OwnerOnly policies remain unchanged.
+Native selection of that transitioned world and the full joined native/reopen/history journey still
+require proof; the fresh native gift world does not substitute for it. Exchange/economy, multiplayer
+control/time, paired/proposal composition and every full row's remaining requirements stay open.

@@ -129,12 +129,13 @@ or child identities available again.
 [`SqliteWorldAuthority`](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs) admits a fresh
 profile-28 genesis by name and stores it in
 [schema eight](coordinated-world-continuation.md#durable-transaction-and-budget), whose layout it
-shares with profile 27. The stored genesis alone selects the interpretation. Recovery refuses a
-genesis of any other profile in that schema, a replayed step whose profile differs from the root it
-extends, and a recovered head that departs from its genesis profile. Opening with an expected genesis
-compares the exact canonical bytes after complete recovery.
-Nothing converts, relabels or falls back between interpretations, and no profile is admitted by
-being numerically greater than a supported one.
+shares with profiles 27 and 30. A profile-28 world keeps the interpretation of its stored genesis;
+it has no admitted migration. Recovery refuses an unnamed genesis profile, a replayed step whose
+profile differs from its root and any unauthenticated interpretation change. The separate
+[proposal transition](coordinated-world-continuation.md#explicit-proposal-transition) admits only
+27→30 through a typed journal commit. It neither adds nor combines profile 28's simultaneous pairs.
+Opening with an expected genesis compares exact canonical bytes after complete recovery. Opening
+never migrates or falls back between interpretations, and numeric ordering admits no profile.
 
 One SQL transaction publishes the complete candidate root, the journal row, both participants'
 command receipts, every permanent identity, the closing archive when the batch required a cut, the

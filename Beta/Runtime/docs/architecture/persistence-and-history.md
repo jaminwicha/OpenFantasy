@@ -22,7 +22,9 @@ The [world schema](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs) 
 
 [Schema three](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs) extends accepted
 commit/identity kinds for profile transitions. Schema version and snapshot profile version are
-different dimensions; adding a profile does not imply a new writer or database.
+different dimensions; adding a profile does not imply a new writer or database. Recovery dispatches a
+kind-3 commit by schema: schema three admits only its production, quest and construction migration
+tags, and schema eight admits only the proposal transition. Every other schema refuses the kind.
 
 The transaction writes the commit, the profile's optional archive, outcomes, occupied identities,
 head and any checkpoint together. Schema seven and eight use distinct archive families.
@@ -355,6 +357,26 @@ Old saves and their histories remain intact. Existing selected destinations take
 incompatible sources, orphaned sidecars or failed upgrades stop opening instead of creating an
 apparently fresh replacement. New components cannot reset pre-existing bodies, terrain, rewards
 or material custody.
+
+[WorldProposalTransitionUpgrade](../../src/OpenFantasy.Hosting/Worlds/WorldProposalTransitionUpgrade.cs)
+applies the same discipline to schema eight. It holds the exclusive source lease, recovers the source
+completely, prepares one typed transition against the exact recovered head, copies a consistent backup
+to a private staging directory beside an unused destination, and compares the copy's genesis, head,
+journal, receipts, identities, checkpoints and both archive families with the source. It then appends
+one kind-3 commit, the joint archive closing the stored prior head, the cause identity, the new head and
+any scheduled checkpoint in one transaction, replays the whole copy again, and publishes it by a
+non-overwriting move only when replay reproduces the prepared head bytes and journal usage. The source
+file is never written. A fault before publication leaves the destination absent; a failed private copy
+stays in its staging directory and is never selected. Opening any save, including this one, never
+transitions it.
+
+Recovery of the published save authenticates the stored genesis, every lived archive against replay,
+the transition commit from its canonical request, the transition archive through
+`DecodeTransition` with that request, and each later archive against its preceding anchor. A damaged
+or missing archive, a forged request, a changed outcome, an unscheduled checkpoint or a head that
+disagrees with replay refuses the whole save, including historical reads before the damage. The
+[coordinated reference](coordinated-world-continuation.md#explicit-proposal-transition) defines the
+request, interpretation boundary and rejection rules.
 
 ## Domain contracts and runtime binding: historical reads
 

@@ -1,0 +1,21 @@
+{
+  "checks": [
+    {
+      "table": "world_command_outcomes",
+      "expectedRejection": "Historical rows removed or changed: world_command_outcomes",
+      "passed": true
+    },
+    {
+      "table": "world_occupied_identity",
+      "expectedRejection": "Historical rows removed or changed: world_occupied_identity",
+      "passed": true
+    },
+    {
+      "table": "world_material_care_segments",
+      "expectedRejection": "Historical rows removed or changed: world_material_care_segments",
+      "passed": true
+    }
+  ],
+  "runtimeAcceptance": false,
+  "sourceUnchanged": true
+}

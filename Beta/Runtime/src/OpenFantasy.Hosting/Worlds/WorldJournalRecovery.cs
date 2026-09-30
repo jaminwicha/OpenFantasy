@@ -106,6 +106,8 @@ internal sealed class WorldJournalRecovery
         Dictionary<(EntityId Principal, EntityId Command), StoredWorldCommandOutcome> commands = [];
         var steps = new WorldCommitPreparation();
         var migrations = new WorldProfileMigrationReplay();
+        var transitions = new WorldProposalTransitionReplay();
+        ulong transitionCount = 0;
         using var archives = new WorldResourceArchiveReplay(database, selectedOrdinal);
         using var materialCareArchives = new WorldMaterialCareArchiveReplay(database, selectedMaterialCareOrdinal,
             selectedProposalId);
@@ -123,7 +125,12 @@ internal sealed class WorldJournalRecovery
                 throw new InvalidDataException("The local world journal is discontinuous.");
             }
             ExpectedJournalEntry expected = PrepareEntry(database.SchemaVersion, stored, state,
-                genesis.IdentityIndex, stateHash, identities.ContainsKey, steps, migrations, stored.Sequence == selectedMaterialSequence);
+                genesis.IdentityIndex, stateHash, identities.ContainsKey, steps, migrations, transitions,
+                stored.Sequence == selectedMaterialSequence);
+            if (stored.Kind == WorldCommitKind.ProfileMigration && database.SchemaVersion == WorldDatabaseSchemaEight.Version)
+            {
+                transitionCount = checked(transitionCount + 1);
+            }
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(usage, stored.Sequence, stored.AdvancingSteps,
                 (ulong)expected.Commands.Count, (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length,
                 state.PendingExcavation is null ? expected.Candidate.PendingExcavation : null,
@@ -203,9 +210,13 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
         }
-        // The shared layout never converts one interpretation into the other. Every accepted root
-        // keeps the exact interpretation its genesis selected.
-        if (database.SchemaVersion == WorldDatabaseSchemaEight.Version && state.ProfileVersion != genesis.ProfileVersion)
+        // The shared layout never converts one interpretation into another implicitly. A root keeps the
+        // interpretation its genesis selected, except a lived coordinated genesis continued by exactly
+        // one replayed explicit proposal transition; that commit's processor admits only 27 to 30.
+        bool transitioned = genesis.ProfileVersion == WorldProposalTransition.SourceProfileVersion
+            && state.ProfileVersion == WorldProposalTransition.TargetProfileVersion && transitionCount == 1;
+        if (database.SchemaVersion == WorldDatabaseSchemaEight.Version
+            && (state.ProfileVersion != genesis.ProfileVersion || transitionCount != 0) && !transitioned)
         {
             throw new InvalidDataException("The coordinated world departed from its genesis-selected interpretation.");
         }
@@ -225,12 +236,17 @@ internal sealed class WorldJournalRecovery
 
     private static ExpectedJournalEntry PrepareEntry(int schemaVersion, StoredWorldCommit stored,
         WorldSnapshot state, WorldIdentityIndex genesisIdentities, ContentHash stateHash,
-        Func<EntityId, bool> historicallyOccupied, WorldCommitPreparation steps, WorldProfileMigrationReplay migrations, bool captureMaterialEvidence)
+        Func<EntityId, bool> historicallyOccupied, WorldCommitPreparation steps, WorldProfileMigrationReplay migrations,
+        WorldProposalTransitionReplay transitions, bool captureMaterialEvidence)
     {
         if (stored.Kind == WorldCommitKind.ProfileMigration)
         {
             if (captureMaterialEvidence)
                 throw new InvalidDataException("Profile migrations have no live material observation interpretation.");
+            if (schemaVersion == WorldDatabaseSchemaEight.Version)
+            {
+                return transitions.Prepare(stored, state, genesisIdentities, stateHash, historicallyOccupied);
+            }
             if (schemaVersion != WorldDatabaseSchemaThree.Version)
             {
                 throw new InvalidDataException("This schema cannot contain a profile migration.");

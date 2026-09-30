@@ -1,0 +1,5 @@
+{
+  "correction": "The sampled PID29752 was VSTest testhost, not the xUnit application child running test bodies. Low wrapper CPU/wait stacks do not establish a worker stall. The missing native-results input and deliberate early interruption remain facts; no runtime deadlock is established.",
+  "repeatObservation": "The later run has an active OpenFantasy.Hosting.Tests application child below dotnet/testhost. Its detailed log reports completed archive cases.",
+  "acceptance": "The interrupted attempt contributes no accepted cases."
+}

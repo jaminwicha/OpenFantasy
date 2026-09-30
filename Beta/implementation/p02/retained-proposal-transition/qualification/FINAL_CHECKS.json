@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "scope": "Explicit retained27-to-proposal30 transition and managed original520-to521 journey; full Core and affected Host regression.",
+  "evidence": {
+    "build": {
+      "path": "Beta/implementation/p02/retained-proposal-transition/qualification/build-20260930T011017Z-b922a/report.json",
+      "sha256": "94671c1856c08a4f84a7770ba65103f12b8bf47d58296e6aad5b97ad016c1a4d"
+    },
+    "focused": {
+      "path": "Beta/implementation/p02/retained-proposal-transition/qualification/focused-20260930T011055Z-198cf/report.json",
+      "sha256": "4c2b7d2053ff2602eadde9ef8eb31d9238604360f54f176594e81fac4e21e750"
+    },
+    "core": {
+      "path": "Beta/implementation/p02/retained-proposal-transition/qualification/core-20260930T011623Z-f8082/report.json",
+      "sha256": "fb41d4456c5b0749a0cbfcbedef1ac68c8480d8ea964151c3bcdb28a195b46db"
+    },
+    "hosting": {
+      "path": "Beta/implementation/p02/retained-proposal-transition/qualification/hosting-20260930T012833Z-94334/report.json",
+      "sha256": "1ec1b65acc727e88ad6984d45994ca51982720a0e0263dcdb619a2ac6dcae202"
+    }
+  },
+  "distinctManagedPasses": 2051,
+  "byProject": {
+    "OpenFantasy.Hosting.Tests": 359,
+    "OpenFantasy.Core.Tests": 1692
+  },
+  "executionsInAcceptedRuns": 2059,
+  "duplicateExecutionsExcluded": 8,
+  "focusedPassesIncluded": 22,
+  "liveSourceAndAssembliesMatchAcceptedBuild": true,
+  "preservation": {
+    "existingTests": 496,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "retainedPrefixAudit": {
+    "path": "Beta/implementation/p02/retained-proposal-transition/qualification/retained-prefix-final.json",
+    "sha256": "442fe4b71d1449169f3cc5daa7443d0504ffe075e5c6e6ff1648e308af904d66"
+  },
+  "actualJourney": {
+    "path": "Beta/implementation/p02/retained-proposal-transition/qualification/actual-journey-01/metadata.json",
+    "sha256": "d4d50f65d2b6bb8cf3a9f139c4f7c66a6d566564c61eb41ceff6ec0c851d8716"
+  },
+  "retainedNativeInputPins": {
+    "path": "Beta/implementation/p02/retained-proposal-transition/qualification/retained-native-inputs-01/input-pins.json",
+    "sha256": "b76c3e7fbb13b442450aea2ae75bc33911903e559c9263cdccd3c08901ed8aef"
+  },
+  "retainedNativeAuthentication": "Reauthenticated existing native outputs under current assemblies; no new rendered processes.",
+  "failureDisposition": "The interrupted first Host run and unfinished worker regression contribute no passing cases. The corrected-input Host repeat keeps the same selection and600s limit; initial wait cause is not established.",
+  "remaining": [
+    "native transitioned-save selection and joined native journey",
+    "actual transition-boundary process interruption",
+    "physical devices and OS focus",
+    "production latency and scale",
+    "full phase, campaign and human acceptance"
+  ]
+}

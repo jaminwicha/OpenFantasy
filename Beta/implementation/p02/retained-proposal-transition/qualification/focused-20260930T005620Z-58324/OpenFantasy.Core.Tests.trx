@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="93dd89ae-9994-4722-8429-bba547c3bb3c" name="@mac 2026-09-29 19:56:23" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T19:56:23.4005700-05:00" queuing="2026-09-29T19:56:23.4005700-05:00" start="2026-09-29T19:56:21.6404230-05:00" finish="2026-09-29T19:56:23.4037070-05:00" />
+  <TestSettings name="default" id="f94e3fb1-3ca5-4b6f-932e-0ad3a531566c">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_19_56_23" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2df3ecb2-29e5-4836-b711-ce7d3eaf0cc7" testId="a40c0123-753d-ed37-03a9-8102cdfe8f44" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Tag_version_digest_length_trailing_and_noncanonical_forgeries_fail" computerName="mac" duration="00:00:00.0040931" startTime="2026-09-29T19:56:23.2884830-05:00" endTime="2026-09-29T19:56:23.2926270-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2df3ecb2-29e5-4836-b711-ce7d3eaf0cc7" />
+    <UnitTestResult executionId="0d8f2882-dd7c-4cbd-b9ff-931eacae32d8" testId="cc00c265-d35f-e7ff-b545-0d9941cc8f55" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 28, target: 30)" computerName="mac" duration="00:00:00.0001036" startTime="2026-09-29T19:56:23.2854990-05:00" endTime="2026-09-29T19:56:23.2856310-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0d8f2882-dd7c-4cbd-b9ff-931eacae32d8" />
+    <UnitTestResult executionId="71fbc5b1-32b8-46fc-9dc6-529103a164c9" testId="cfe44d33-ee1e-7625-e265-0dcfd0c6abf3" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 31)" computerName="mac" duration="00:00:00.0000515" startTime="2026-09-29T19:56:23.2867570-05:00" endTime="2026-09-29T19:56:23.2868240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="71fbc5b1-32b8-46fc-9dc6-529103a164c9" />
+    <UnitTestResult executionId="ab8f7ba5-7525-4c37-905b-f06f1a4a8e12" testId="b7938387-d046-4dea-ba48-93804b966072" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Constructor_refuses_scope_aliases_time_inversion_and_ordinal_mismatch" computerName="mac" duration="00:00:00.0010429" startTime="2026-09-29T19:56:23.2932170-05:00" endTime="2026-09-29T19:56:23.2943100-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ab8f7ba5-7525-4c37-905b-f06f1a4a8e12" />
+    <UnitTestResult executionId="3d377e4e-91d0-4f50-9ce8-346e420c7537" testId="df05fd6e-35a5-610c-6583-5a94795ca028" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 26, target: 30)" computerName="mac" duration="00:00:00.0005571" startTime="2026-09-29T19:56:23.2841430-05:00" endTime="2026-09-29T19:56:23.2847860-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3d377e4e-91d0-4f50-9ce8-346e420c7537" />
+    <UnitTestResult executionId="e0bcae14-c09c-4418-9153-6656b3fea62b" testId="4783cfc5-93ad-349a-a378-f730bc84d12c" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 28)" computerName="mac" duration="00:00:00.0000919" startTime="2026-09-29T19:56:23.2864240-05:00" endTime="2026-09-29T19:56:23.2865490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e0bcae14-c09c-4418-9153-6656b3fea62b" />
+    <UnitTestResult executionId="1ecb7004-b8d4-437c-9ef6-1e3c33480051" testId="309e78d0-4ea6-dea8-abb5-9b4109e3f8a6" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 29)" computerName="mac" duration="00:00:00.0160929" startTime="2026-09-29T19:56:23.2544940-05:00" endTime="2026-09-29T19:56:23.2781040-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ecb7004-b8d4-437c-9ef6-1e3c33480051" />
+    <UnitTestResult executionId="3e25fd77-07b0-45c0-9f44-c4387939b74e" testId="6e2bb432-a8a0-7a0e-ec21-6471c2509fb0" testName="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Request_round_trips_its_exact_canonical_bytes_and_digest" computerName="mac" duration="00:00:00.0105942" startTime="2026-09-29T19:56:23.2947750-05:00" endTime="2026-09-29T19:56:23.3054140-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3e25fd77-07b0-45c0-9f44-c4387939b74e" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 29)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="309e78d0-4ea6-dea8-abb5-9b4109e3f8a6">
+      <Execution id="1ecb7004-b8d4-437c-9ef6-1e3c33480051" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Only_the_named_27_to_30_interpretation_pair_decodes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 28, target: 30)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="cc00c265-d35f-e7ff-b545-0d9941cc8f55">
+      <Execution id="0d8f2882-dd7c-4cbd-b9ff-931eacae32d8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Only_the_named_27_to_30_interpretation_pair_decodes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 28)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="4783cfc5-93ad-349a-a378-f730bc84d12c">
+      <Execution id="e0bcae14-c09c-4418-9153-6656b3fea62b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Only_the_named_27_to_30_interpretation_pair_decodes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Constructor_refuses_scope_aliases_time_inversion_and_ordinal_mismatch" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="b7938387-d046-4dea-ba48-93804b966072">
+      <Execution id="ab8f7ba5-7525-4c37-905b-f06f1a4a8e12" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Constructor_refuses_scope_aliases_time_inversion_and_ordinal_mismatch" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 26, target: 30)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="df05fd6e-35a5-610c-6583-5a94795ca028">
+      <Execution id="3d377e4e-91d0-4f50-9ce8-346e420c7537" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Only_the_named_27_to_30_interpretation_pair_decodes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Tag_version_digest_length_trailing_and_noncanonical_forgeries_fail" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="a40c0123-753d-ed37-03a9-8102cdfe8f44">
+      <Execution id="2df3ecb2-29e5-4836-b711-ce7d3eaf0cc7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Tag_version_digest_length_trailing_and_noncanonical_forgeries_fail" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Request_round_trips_its_exact_canonical_bytes_and_digest" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="6e2bb432-a8a0-7a0e-ec21-6471c2509fb0">
+      <Execution id="3e25fd77-07b0-45c0-9f44-c4387939b74e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Request_round_trips_its_exact_canonical_bytes_and_digest" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests.Only_the_named_27_to_30_interpretation_pair_decodes(source: 27, target: 31)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="cfe44d33-ee1e-7625-e265-0dcfd0c6abf3">
+      <Execution id="71fbc5b1-32b8-46fc-9dc6-529103a164c9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.ProposalMigration.ProposalTransitionCodecTests" name="Only_the_named_27_to_30_interpretation_pair_decodes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="a40c0123-753d-ed37-03a9-8102cdfe8f44" executionId="2df3ecb2-29e5-4836-b711-ce7d3eaf0cc7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cc00c265-d35f-e7ff-b545-0d9941cc8f55" executionId="0d8f2882-dd7c-4cbd-b9ff-931eacae32d8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cfe44d33-ee1e-7625-e265-0dcfd0c6abf3" executionId="71fbc5b1-32b8-46fc-9dc6-529103a164c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b7938387-d046-4dea-ba48-93804b966072" executionId="ab8f7ba5-7525-4c37-905b-f06f1a4a8e12" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="df05fd6e-35a5-610c-6583-5a94795ca028" executionId="3d377e4e-91d0-4f50-9ce8-346e420c7537" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4783cfc5-93ad-349a-a378-f730bc84d12c" executionId="e0bcae14-c09c-4418-9153-6656b3fea62b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="309e78d0-4ea6-dea8-abb5-9b4109e3f8a6" executionId="1ecb7004-b8d4-437c-9ef6-1e3c33480051" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6e2bb432-a8a0-7a0e-ec21-6471c2509fb0" executionId="3e25fd77-07b0-45c0-9f44-c4387939b74e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.21]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.88]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.08]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.22]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

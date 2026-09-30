@@ -47,8 +47,14 @@ internal sealed class WorldMaterialCareArchiveReplay : IDisposable
                 throw new InvalidDataException("A stored material and care archive differs from its exact replay boundary.");
             }
             // Decode the retrieved bytes. A regenerated seal or a matching hash column is not retrieval.
-            WorldMaterialCareArchiveSegment retrieved = WorldMaterialCareArchiveSegment.Decode(
-                stored.Reference, stored.State, _previousAnchor);
+            // The transition comes from the replayed journal request, never from the archive row itself.
+            WorldMaterialCareArchiveSegment retrieved = expected.Transition is { } transition
+                ? WorldMaterialCareArchiveSegment.DecodeTransition(stored.Reference, stored.State, _previousAnchor, transition)
+                : WorldMaterialCareArchiveSegment.Decode(stored.Reference, stored.State, _previousAnchor);
+            if (retrieved.Anchor.ContentHash != expected.Anchor.ContentHash)
+            {
+                throw new InvalidDataException("A retrieved material and care archive derives a different continuation anchor.");
+            }
             _previousAnchor = retrieved.Anchor;
             if (stored.Reference.Ordinal == _selectedOrdinal)
             {

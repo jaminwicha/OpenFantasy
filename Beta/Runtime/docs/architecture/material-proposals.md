@@ -14,7 +14,10 @@ selects the interpretation from an ordinary-care genesis through the complete co
 It attaches an empty [`WorldMaterialProposalBook`](../../src/OpenFantasy.Core/Worlds/WorldMaterialProposalBook.cs)
 and an empty consent evidence owner to
 [`WorldCoordinatedContinuation`](../../src/OpenFantasy.Core/Worlds/WorldCoordinatedContinuation.cs).
-Fresh admission never upgrades a lived world and no root is relabeled.
+Fresh admission never upgrades a lived world and no root is relabeled. A lived profile-27 world reaches
+this interpretation only through the explicit, privileged
+[proposal transition](coordinated-world-continuation.md#explicit-proposal-transition) into a new save;
+see [lived-world transition](#lived-world-transition).
 
 The interpretation selects world snapshot and step profile 30 and action codec 16. Earlier profiles
 refuse the four intents and the profile bytes; their own bytes and rules are unchanged. Profile 30
@@ -346,20 +349,39 @@ identity can select a distinct outgoing decision. Returning to an identical earl
 authorize a retry; repeated help for a new episode requires its own explicit policy contract.
 Updating an observation or reopening the same save cannot manufacture a new decision identity.
 
+## Lived-world transition
+
+[`SqliteWorldAuthority.UpgradeCoordinatedToProposals`](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs)
+continues an exact lived profile-27 head as profile 30 in a new destination. The transition starts an
+empty proposal book and empty consent evidence under a transition anchor whose carried roster is empty,
+because the lived owner had no offers. It creates no offer, grant, stock, consent, healing, permission
+or control change. Every offer afterwards is an ordinary creation by the owner of the source storage,
+with its own receipt, and follows every rule on this page.
+
+The lived world's owner-only custody is unchanged: its bags still refuse a unilateral move. The
+bilateral offer and the recipient's separate acceptance supply consent; care permission, friendship
+or reciprocal quests do not. Proposal identities, commands and results occupy the same durable
+identity table as the lived history before the transition. Cuts after the transition follow
+[carry across a cut](#carry-across-a-cut): the first ordinary cut derives an ordinary profile-30
+anchor that holds the offers open at that boundary and no transition field.
+
 ## Boundaries
 
 An independently supplied local delivery is not a network handshake. The world admits no change of
 an actor's control binding, so a saved grant is qualified across disposal and reopening with
 unchanged control. The explicit local medicine policy is not a general NPC motivation or knowledge
-system. The native binding below exposes this bounded profile; reserved offers, reciprocal exchange
-and migration of older worlds require their own bindings. Production scale is a separate gate.
+system. The native binding below exposes this bounded profile; reserved offers and reciprocal
+exchange require their own bindings. Only a lived profile-27 world has an explicit transition; other
+interpretations, including profile 28, keep their own. Production scale is a separate gate.
 
 ## Native selection and commitment
 
 [`FarmClientSession`](../../client/scripts/FarmClientSession.cs) selects a separate saved proposal
 world with `--gifts`, using a fresh admitted ordinary-care genesis when that dedicated save is absent.
 Opening an existing selected save authenticates its own genesis; no earlier profile is silently
-converted. The binding explicitly configures Wren's medicine preference for the controlled player,
+converted. This native selector requires its own profile-30 genesis; an explicitly transitioned
+profile-27 save requires a distinct client selection contract that pins its original genesis and
+authenticated transition. The binding explicitly configures Wren's medicine preference for the controlled player,
 including 1,200 advancing steps of offer life, while the generic policy default remains 64.
 
 [`FarmGiftSelection`](../../client/scripts/FarmGiftSelection.cs) owns only transient explicit choices:

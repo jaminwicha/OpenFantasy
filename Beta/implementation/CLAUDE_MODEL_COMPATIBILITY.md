@@ -38,6 +38,17 @@ explicit maintenance action when no delegated process uses the shared client.
   a narrow task. They do not establish subscription billing or net credit savings. This verifies
   this actual route/run, without promising later availability or permitting automatic paid retries.
 
+- The [retained proposal transition assignment](p02/retained-proposal-transition/DISPATCH.json)
+  returned verified Opus5.5/1M metadata with requested Max and verified context checks. It delivered
+  Core/Host code, new tests and architecture references; 21 focused cases passed before integration.
+  The adapter's final status is `permission_denied`: an optional Glob requested the parent temporary
+  directory outside the granted task directory. Its broad regression returned only the Core half;
+  the Host process was absent after worker termination and left no final report. No paid retry followed.
+  Astra preserves the failed/incomplete records and owns completion. Elapsed1,576.339s and a
+  $21.3186486 client estimate include 73,278,983 cached-read and164,333 output tokens. This is useful
+  substantial code delivery, not proof of net credit savings. Keep task-directory discovery narrow and
+  do not finish an assignment while a required asynchronous check remains unresolved.
+
 The initial review preflight used an overly broad skill manifest outside its declared roots.
 A narrow selected-skill manifest corrected this local configuration before the sole paid request.
 Neither client installation nor a successful preflight proves that the model returned useful work.

@@ -22,6 +22,7 @@ branches to record major progress. This is shared project discipline for all aut
 
 | Branch | Commit | Qualified scope and limits |
 |---|---|---|
+| `codex/milestone-retained-proposal-transition-20260930` | resolved by preserved branch | Explicit profile27-to30 copy-and-publish transition, exact prior history and managed original520-to521 gift/accept/own-use journey through a real automatic archive. Clean build and 2,051 distinct managed passes (Core 1,692; Host 359), independent SQL prefix audit and current architecture. [Evidence](p02/retained-proposal-transition/INTEGRATION_REVIEW.md) retains Opus delivery, lead critique, failures, diagnostic correction and all preservation pins. Native transitioned-save selection/journey, actual transition-boundary process kills and full phase/production gates remain open. |
 | `codex/milestone-proposal-interaction-boundaries-20260929` | resolved by preserved branch | Exact explicit own-lot gift preparation, bounded background participant/archive inspection and ordinary profile30 excavation; genuine pending16 refusal preserves the separate interpretation. Clean build, 165 distinct affected managed passes including 34 focused, source critic/shutdown correction and current architecture. [Evidence](p02/proposal-interaction-boundaries/INTEGRATION_REVIEW.md) retains failures and exact 488 old files/23 frozen specs/unrelated staging. Native gift UI, control/network binding, production latency/indexing, retained520-dose and full phase gates remain open. |
 | `codex/milestone-npc-material-decisions-20260929` | resolved by preserved branch | Opt-in immutable NPC medicine preferences issue actual own-control offers/replies at existing cutoffs; later player acceptance/use, supplier-only aid deferral and stable decisions survive refusal/expiry/real cut/reopen. Clean build, 154 distinct affected managed passes including 23 focused cases, native Astra source criticism/corrections and current architecture. [Evidence](p02/npc-material-decisions/INTEGRATION_REVIEW.md) preserves failures, 486 old files, 23 frozen specs and unrelated staging. Archived session inspection, pending-excavation joins, general NPC/policy authoring, recurring need episodes, native/control/network binding, retained520-dose and all full phase/production gates remain open. |
 | `codex/milestone-scheduled-player-proposals-20260929` | resolved by preserved branch | All four player proposal intents use actual session cutoffs, participant views and valid-only sender work arbitration; an accepted owned medicine is used at a later cutoff. Clean build, 142 distinct affected managed passes including 11 focused cases, independent native Astra source critique and current architecture. [Evidence](p02/scheduled-material-proposals/INTEGRATION_REVIEW.md) retains the failed Fable run, original analyzer failure, test corrections and exact preservation. Explicit NPC gift/decision policy, pending-excavation/profile joins, archived session inspection, native/control/network binding, retained520-dose journey and full phase/production gates remain open. |
@@ -385,3 +386,15 @@ retains actual scope, failures and remaining gates. Pre-change HEAD 710c210 is p
 the exact earlier test project apart from two additive links, all 23 frozen specs and unrelated 19-file
 predecessor staging remain intact. Work stays on `codex/runtime-foundation`; this backup pointer
 closes no full game, phase, migration, device, art or human acceptance gate.
+
+The retained-proposal-transition marker preserves one explicit exact-head rules transition of the
+original 520-use ledger, its managed gift/accept/use521 continuation and bounded authenticated history.
+The pre-change b3e2294 and WIP delivery 9bf0e83 remain under their unique checkpoint refs in the packet.
+Opus5.5/1M/requested-Max delivered the implementation; Astra strengthened tests, independently reviewed
+all changed authority/continuation paths and completed qualification. Build and 2,051 distinct cases
+pass, including all new 22 and full Core; all 496 old tests/fixtures, 23 frozen specs and exact 19-file
+predecessor staging remain unchanged. The same-selection Host repeat passes in 503.644s under 600s;
+the interrupted first attempt and its corrected diagnostic interpretation stay retained. The original
+source and every old authoritative row stay exact. Ecosystem commit 59813730 records the portable delegated
+command-completion/artifact-scope lesson. Work remains on `codex/runtime-foundation`; no full phase,
+native/device, new process-kill, production or human acceptance gate closes.

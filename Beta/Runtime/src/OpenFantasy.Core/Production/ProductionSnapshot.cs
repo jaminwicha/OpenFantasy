@@ -245,6 +245,24 @@ public sealed class ProductionSnapshot
         return result;
     }
 
+    /// <summary>
+    /// The one cut of an explicit proposal transition. The segment that follows validates produced custody
+    /// with the complete world's consent evidence; lots, batches, claims and revisions stay exact.
+    /// </summary>
+    internal ProductionSnapshot AdoptConsentedWorld(CountedAuthorityState inventory, ConstructionSnapshot construction)
+    {
+        ArgumentNullException.ThrowIfNull(inventory);
+        ArgumentNullException.ThrowIfNull(construction);
+        if (Continuation is { SupportsCompleteWorld: false } or { SupportsConsentedWorld: true })
+            throw new ArgumentException("Only a coordinated owner without consent evidence adopts it at a transition.");
+        var context = ProductionContinuationContext.CaptureWorldAdoptingConsent(inventory, this, construction);
+        var result = new ProductionSnapshot(WorldId, BranchId, Revision, Recipes, [], Lots,
+            SupportsConsumption ? [] : null, context);
+        result.ValidateForAuthority(inventory);
+        _ = result.ContentHash;
+        return result;
+    }
+
     internal bool ContainsIdentityMatching(Func<EntityId, bool> predicate) => _identities.ContainsMatching(predicate);
     internal void ValidateMaterialBinding(ItemPhysicalBinding binding) => _identities.ValidateMaterialBinding(binding);
 

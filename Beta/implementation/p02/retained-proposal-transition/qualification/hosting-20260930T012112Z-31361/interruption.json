@@ -1,0 +1,18 @@
+{
+  "reason": "Known missing required native-results input and observed prolonged low-CPU wait; stopped early for corrected-input diagnostic run. No causal attribution or acceptance.",
+  "utc": "2026-09-30T01:28:13Z",
+  "processes": [
+    {
+      "pid": 29752,
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet exec --runtimeconfig /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.runtimeconfig.json --depsfile /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.deps.json /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/testhost.dll --port 57230 --endpoint 127.0.0.1:057230 --role client --parentprocessid 29690 --telemetryoptedin false"
+    },
+    {
+      "pid": 29690,
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet exec /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk/10.0.401/vstest.console.dll --framework:.NETCoreApp,Version=v8.0 --testCaseFilter:(FullyQualifiedName~Migration|FullyQualifiedName~Upgrade|FullyQualifiedName~MaterialProposal|FullyQualifiedName~CoordinatedWorldContinuation|FullyQualifiedName~CareContinuationAdmission|FullyQualifiedName~DurableMaterialCare|FullyQualifiedName~OpenFantasy.Hosting.Tests.Simulation|FullyQualifiedName~OpenFantasy.Hosting.Tests.Client)&FullyQualifiedName!~ProposalMigration --logger:trx;LogFileName=OpenFantasy.Hosting.Tests.trx --resultsDirectory:/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-proposal-transition/qualification/hosting-20260930T012112Z-31361 /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll --logger:Console;Verbosity=minimal --nologo --artifactsProcessingMode-collect --testSessionCorrelationId:29684_1d139d25-80ed-4419-8869-51389cce9dda"
+    },
+    {
+      "pid": 29684,
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-build --no-restore --filter (FullyQualifiedName~Migration|FullyQualifiedName~Upgrade|FullyQualifiedName~MaterialProposal|FullyQualifiedName~CoordinatedWorldContinuation|FullyQualifiedName~CareContinuationAdmission|FullyQualifiedName~DurableMaterialCare|FullyQualifiedName~OpenFantasy.Hosting.Tests.Simulation|FullyQualifiedName~OpenFantasy.Hosting.Tests.Client)&FullyQualifiedName!~ProposalMigration --logger trx;LogFileName=OpenFantasy.Hosting.Tests.trx --results-directory /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retained-proposal-transition/qualification/hosting-20260930T012112Z-31361"
+    }
+  ]
+}

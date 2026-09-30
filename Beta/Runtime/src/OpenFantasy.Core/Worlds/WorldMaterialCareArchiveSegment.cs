@@ -12,11 +12,13 @@ public sealed class WorldMaterialCareArchiveSegment
     private readonly byte[] _bytes;
 
     private WorldMaterialCareArchiveSegment(WorldMaterialCareArchiveReference reference,
-        WorldMaterialCareArchiveAnchor anchor, WorldSnapshot continued, byte[] bytes)
+        WorldMaterialCareArchiveAnchor anchor, WorldSnapshot continued, byte[] bytes,
+        WorldProposalTransition? transition = null)
     {
         Reference = reference;
         Anchor = anchor;
         Continued = continued;
+        Transition = transition;
         _bytes = bytes;
     }
 
@@ -26,7 +28,22 @@ public sealed class WorldMaterialCareArchiveSegment
     /// <summary>The rebased successor of the closing root at the same revision, time, work and material.</summary>
     public WorldSnapshot Continued { get; }
 
-    public static WorldMaterialCareArchiveSegment Seal(WorldSnapshot boundary)
+    /// <summary>Non-null only for the one archive that closes a lived world under an explicit proposal transition.</summary>
+    public WorldProposalTransition? Transition { get; }
+
+    public static WorldMaterialCareArchiveSegment Seal(WorldSnapshot boundary) => Seal(boundary, null);
+
+    /// <summary>
+    /// Closes the exact lived coordinated head named by <paramref name="transition"/> and continues it
+    /// under the saved-proposal interpretation. The closing bytes stay the ordinary profile-27 root.
+    /// </summary>
+    internal static WorldMaterialCareArchiveSegment SealTransition(WorldSnapshot boundary, WorldProposalTransition transition)
+    {
+        ArgumentNullException.ThrowIfNull(transition);
+        return Seal(boundary, transition);
+    }
+
+    private static WorldMaterialCareArchiveSegment Seal(WorldSnapshot boundary, WorldProposalTransition? transition)
     {
         ArgumentNullException.ThrowIfNull(boundary);
         if (boundary.Coordination is not { } coordination || boundary.PendingExcavation is not null)
@@ -41,14 +58,35 @@ public sealed class WorldMaterialCareArchiveSegment
         ulong ordinal = coordination.Anchor is { } previous ? checked(previous.Reference.Ordinal + 1) : 0;
         var reference = new WorldMaterialCareArchiveReference(boundary.WorldId, boundary.BranchId, ordinal,
             boundary.Revision, ContentHash.Compute(bytes));
-        var (continued, anchor) = WorldMaterialCareContinuation.Rebase(boundary, reference);
-        return new(reference, anchor, continued, bytes);
+        if (transition is not null && (transition.ExpectedHeadHash != reference.BoundaryHash
+            || transition.ExpectedRevision != reference.BoundarySequence || transition.TransitionOrdinal != ordinal
+            || transition.WorldId != reference.WorldId || transition.BranchId != reference.BranchId))
+        {
+            throw new ArgumentException("A proposal transition closes only its exact named source head.", nameof(transition));
+        }
+        var (continued, anchor) = WorldMaterialCareContinuation.Rebase(boundary, reference, transition);
+        return new(reference, anchor, continued, bytes, transition);
     }
 
     public byte[] Encode() => (byte[])_bytes.Clone();
 
     public static WorldMaterialCareArchiveSegment Decode(WorldMaterialCareArchiveReference expected,
-        ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor? previousAnchor = null)
+        ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor? previousAnchor = null) =>
+        Decode(expected, bytes, previousAnchor, null);
+
+    /// <summary>
+    /// Decodes the one archive closed by an explicit proposal transition. The caller supplies the
+    /// transition from its authenticated journal; the archive row alone cannot select it.
+    /// </summary>
+    public static WorldMaterialCareArchiveSegment DecodeTransition(WorldMaterialCareArchiveReference expected,
+        ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor? previousAnchor, WorldProposalTransition transition)
+    {
+        ArgumentNullException.ThrowIfNull(transition);
+        return Decode(expected, bytes, previousAnchor, transition);
+    }
+
+    private static WorldMaterialCareArchiveSegment Decode(WorldMaterialCareArchiveReference expected,
+        ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor? previousAnchor, WorldProposalTransition? transition)
     {
         ArgumentNullException.ThrowIfNull(expected);
         if (bytes.IsEmpty || bytes.Length > WorldSnapshotCodec.MaximumStateByteLength)
@@ -62,7 +100,14 @@ public sealed class WorldMaterialCareArchiveSegment
         try
         {
             var restored = WorldSnapshotCodec.DecodeCoordinated(bytes, previousAnchor);
-            var segment = Seal(restored);
+            if (transition is not null && (restored.ProfileVersion != WorldProposalTransition.SourceProfileVersion
+                || restored.AdmissionVersion != transition.SourceAdmissionVersion
+                || restored.AdvancingSteps != transition.ExpectedAdvancingSteps
+                || restored.Coordination!.Anchor?.ContentHash != transition.ExpectedAnchorHash))
+            {
+                throw new FormatException("The transition archive does not close its exact named source head.");
+            }
+            var segment = Seal(restored, transition);
             if (segment.Reference != expected || !segment._bytes.AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The coordinated archive does not match its exact reference and canonical closing boundary.");

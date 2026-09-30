@@ -1,0 +1,45 @@
+{
+  "status": "permission_denied",
+  "modelSelector": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "limitSeconds": 2700,
+  "clientEstimateCapUsd": 28,
+  "sourceHead": "b3e2294409ba65eedbb1d17f637d63d2760e9b35",
+  "contextSha256": "352b6515cdfcd88b45f267acbf31833d2a0d3d1f353623aa8cdc7e33e0784073",
+  "privateOutput": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-retained-transition-__vijhvu/run",
+  "assignment": "ASSIGNMENT.md",
+  "expectedBenefit": "Substantial actual migration, archive/recovery implementation and additive tests offloaded; Astra independently integrates. No measured net credit savings claim.",
+  "startedAt": "2026-09-30T00:37:23.372251+00:00",
+  "processExitCode": 0,
+  "elapsedSeconds": 1576.339,
+  "actualModels": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 438,
+      "outputTokens": 164333,
+      "cacheReadInputTokens": 73278983,
+      "cacheCreationInputTokens": 421805,
+      "webSearchRequests": 0,
+      "costUSD": 21.318648600000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 70949,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "clientEstimateUsd": 21.318648600000003,
+  "contextStatus": "verified",
+  "permissionDenials": [
+    {
+      "tool": "Glob",
+      "input": {
+        "pattern": "openfantasy-proposal-transition-*/*",
+        "path": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T"
+      }
+    }
+  ],
+  "disposition": "Terminal; no model retry. Useful implementation and21 focused passes retained for independent integration; broader regression incomplete at worker return. Denied Glob was outside task directory.",
+  "providerReportedError": false,
+  "providerSubtype": "success"
+}

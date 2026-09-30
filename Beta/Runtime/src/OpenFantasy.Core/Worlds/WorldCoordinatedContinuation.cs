@@ -49,6 +49,20 @@ public sealed class WorldCoordinatedContinuation
         new(Sources, anchor, ConsentedMaterial is null ? null : new WorldConsentedMaterialHistory([]),
             Proposals?.ContinueAcrossCut());
 
+    /// <summary>
+    /// The successor of an explicit proposal transition: the lived owner had neither consent evidence nor
+    /// offers, so it starts both empty under the transition anchor. No other path adds either capability.
+    /// </summary>
+    internal WorldCoordinatedContinuation WithTransitionAnchor(WorldMaterialCareArchiveAnchor anchor)
+    {
+        ArgumentNullException.ThrowIfNull(anchor);
+        if (ConsentedMaterial is not null || Proposals is not null || anchor.TransitionHash is null)
+        {
+            throw new InvalidOperationException("Only an explicit transition of a lived coordinated owner adopts saved proposals.");
+        }
+        return new(Sources, anchor, new WorldConsentedMaterialHistory([]), new WorldMaterialProposalBook([], []));
+    }
+
     internal WorldCoordinatedContinuation WithConsentedMaterial(WorldConsentedMaterialHistory history)
     {
         if (ConsentedMaterial is null)

@@ -28,8 +28,12 @@ internal static class WorldMaterialCareContinuation
     }
 
     /// <summary>Changes representation only: no time, work, material, custody or resource effect.</summary>
+    /// <param name="transition">
+    /// Non-null only when an explicit proposal transition closes a lived coordinated head. The successor
+    /// then adopts the consented saved-proposal interpretation; every other cut keeps its own.
+    /// </param>
     internal static (WorldSnapshot Continued, WorldMaterialCareArchiveAnchor Anchor) Rebase(WorldSnapshot closing,
-        WorldMaterialCareArchiveReference reference)
+        WorldMaterialCareArchiveReference reference, WorldProposalTransition? transition = null)
     {
         if (closing.Coordination is not { } coordination || closing.Production is not { } closingProduction
             || closing.Care is not { } closingCare || closing.Reservoirs is not { } closingReservoirs
@@ -37,8 +41,9 @@ internal static class WorldMaterialCareContinuation
         {
             throw new ArgumentException("A coordinated cut requires the complete material, care and liquid world.", nameof(closing));
         }
-        ProductionSnapshot production = closingProduction.ContinueWorld(closing.Inventory, construction,
-            coordination.ConsentedMaterial is not null);
+        ProductionSnapshot production = transition is null
+            ? closingProduction.ContinueWorld(closing.Inventory, construction, coordination.ConsentedMaterial is not null)
+            : closingProduction.AdoptConsentedWorld(closing.Inventory, construction);
         var capacity = closingReservoirs.Capacity.PlanContinuation(production, CancellationToken.None);
         LiquidReservoirState reservoirs = closingReservoirs.PlanApply(capacity).ApplyTo(closingReservoirs);
         LiquidCellState liquids = closingLiquids.Rebind(reservoirs);
@@ -50,11 +55,11 @@ internal static class WorldMaterialCareContinuation
             context.ValidateClosure(closingCare, care);
         }
         var anchor = new WorldMaterialCareArchiveAnchor(reference, closing, production.Continuation!,
-            care.Continuation!, GeographyProductionDependencies.ForCompleteWorld(reservoirs));
+            care.Continuation!, GeographyProductionDependencies.ForCompleteWorld(reservoirs), transition);
         var resources = new WorldResourceHistory(closing.AdmissionVersion,
             new ActorResourceHistory(closing.Progression!, closing.Revision, []), [], coordinatedAnchor: anchor);
         return (closing.WithCoordinatedCut(production, reservoirs, liquids, care, resources,
-            coordination.WithAnchor(anchor)), anchor);
+            transition is null ? coordination.WithAnchor(anchor) : coordination.WithTransitionAnchor(anchor)), anchor);
     }
 
     private static bool RequiresCut(WorldSnapshot world, WorldStepBatch batch)

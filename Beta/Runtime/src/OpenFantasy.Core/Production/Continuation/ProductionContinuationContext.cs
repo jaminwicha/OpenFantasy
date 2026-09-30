@@ -20,7 +20,8 @@ public sealed class ProductionContinuationContext
         ProductionSnapshot production, bool supportsMaterialOperations = false, GatheringSnapshot? gathering = null,
         ConstructionSnapshot? construction = null, bool supportsConstruction = false, TerrainRepresentationBoundary? terrainRepresentation = null,
         TransportMaterialBoundary? reservedTransport = null, ExcavationMaterialBoundary? excavation = null,
-        bool completeWorld = false, bool consentedTransfer = false, bool consentedWorld = false)
+        bool completeWorld = false, bool consentedTransfer = false, bool consentedWorld = false,
+        ContentHash? adoptsConsentFrom = null)
     {
         Basis = basis;
         SupportsConsentedTransfer = consentedTransfer;
@@ -43,8 +44,15 @@ public sealed class ProductionContinuationContext
             throw new ArgumentException("Terrain and reserved transport require distinct explicitly qualified profiles.");
         SupportsCompleteWorld = completeWorld;
         SupportsConsentedWorld = consentedWorld;
-        if (consentedWorld && !completeWorld
-            || production.Continuation is { } previousWorld && previousWorld.SupportsConsentedWorld != consentedWorld)
+        // The one exception is an explicit transition cut: it names the exact prior non-consented
+        // complete-world context it adopts consent from. Nothing drops consent or adopts it twice.
+        bool adoptsConsent = adoptsConsentFrom is not null && consentedWorld && completeWorld
+            && production.Continuation is { SupportsCompleteWorld: true, SupportsConsentedWorld: false } adopted
+            && adopted.ContentHash == adoptsConsentFrom;
+        if (adoptsConsentFrom is not null && !adoptsConsent
+            || consentedWorld && !completeWorld
+            || production.Continuation is { } previousWorld && previousWorld.SupportsConsentedWorld != consentedWorld
+                && !adoptsConsent)
         {
             throw new ArgumentException("Consented world custody retains its explicit interpretation across every cut.");
         }
@@ -205,6 +213,16 @@ public sealed class ProductionContinuationContext
         ProductionSnapshot production, ConstructionSnapshot construction, bool consentedWorld = false) =>
         new(ProductionContinuationBasis.Capture(inventory, production), inventory, production,
             construction: construction, completeWorld: true, consentedWorld: consentedWorld);
+
+    /// <summary>
+    /// Transition cut of a lived coordinated owner into consented custody. A never-cut owner has no prior
+    /// context and captures consent as fresh; a continued owner adopts it from its exact prior context.
+    /// </summary>
+    internal static ProductionContinuationContext CaptureWorldAdoptingConsent(CountedAuthorityState inventory,
+        ProductionSnapshot production, ConstructionSnapshot construction) =>
+        new(ProductionContinuationBasis.Capture(inventory, production), inventory, production,
+            construction: construction, completeWorld: true, consentedWorld: true,
+            adoptsConsentFrom: production.Continuation?.ContentHash);
 
     private static ProductionContinuationBasis CaptureOrdinaryBasis(CountedAuthorityState inventory, ProductionSnapshot production)
     {

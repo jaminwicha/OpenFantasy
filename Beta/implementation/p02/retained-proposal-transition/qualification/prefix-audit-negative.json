@@ -1,0 +1,6 @@
+{
+  "check": "Unchanged exact copy cannot qualify as a transition",
+  "expectedRejection": "No actual continued ledger.",
+  "passed": true,
+  "runtimeAcceptance": false
+}

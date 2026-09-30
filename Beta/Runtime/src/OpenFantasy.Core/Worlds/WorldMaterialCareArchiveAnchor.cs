@@ -14,8 +14,13 @@ namespace OpenFantasy.Core.Worlds;
 /// </summary>
 public sealed class WorldMaterialCareArchiveAnchor
 {
+    /// <param name="transition">
+    /// Non-null only for the anchor of an explicit proposal transition. The closing root is then the
+    /// exact lived coordinated head, and the anchor selects consent and an empty saved-proposal roster.
+    /// </param>
     internal WorldMaterialCareArchiveAnchor(WorldMaterialCareArchiveReference reference, WorldSnapshot closing,
-        ProductionContinuationContext production, CareContinuationContext care, GeographyProductionDependencies geography)
+        ProductionContinuationContext production, CareContinuationContext care, GeographyProductionDependencies geography,
+        WorldProposalTransition? transition = null)
     {
         ArgumentNullException.ThrowIfNull(reference);
         ArgumentNullException.ThrowIfNull(closing);
@@ -31,6 +36,12 @@ public sealed class WorldMaterialCareArchiveAnchor
         {
             throw new ArgumentException("A coordinated anchor requires its complete scoped closing boundary.");
         }
+        if (transition is not null && (coordination.ConsentedMaterial is not null || coordination.Proposals is not null
+            || !production.SupportsConsentedWorld || transition.ExpectedRevision != closing.Revision
+            || transition.WorldId != closing.WorldId || transition.BranchId != closing.BranchId))
+        {
+            throw new ArgumentException("A transition anchor closes one exact lived coordinated head into consent.");
+        }
         Reference = reference;
         AdmissionVersion = closing.AdmissionVersion;
         Production = production;
@@ -40,7 +51,10 @@ public sealed class WorldMaterialCareArchiveAnchor
         Lifecycle = lifecycle;
         Geography = geography;
         SourceBaselineHash = coordination.Sources.ContentHash;
-        Proposals = coordination.Proposals is { } book ? WorldMaterialProposalContinuationContext.Capture(book) : null;
+        // A transition adopts the saved-proposal capability with nothing to carry: the lived head had no offers.
+        Proposals = coordination.Proposals is { } book ? WorldMaterialProposalContinuationContext.Capture(book)
+            : transition is null ? null : WorldMaterialProposalContinuationContext.Capture(new WorldMaterialProposalBook([], []));
+        TransitionHash = transition?.ContentHash;
         List<ReadOnlyMemory<byte>> fields =
         [
             reference.Encode(), AdmissionVersion.ToByteArray(), CanonicalEncodingV1.Unsigned64(LatestCareSequence),
@@ -53,8 +67,20 @@ public sealed class WorldMaterialCareArchiveAnchor
             // Appended only with the capability, so every anchor without it keeps its exact bytes.
             fields.Add(Proposals.ContentHash.ToByteArray());
         }
+        if (TransitionHash is not null)
+        {
+            // Appended only by the transition anchor, so every other anchor keeps its exact bytes and
+            // each successor's binding names the exact authenticated transition request.
+            fields.Add(TransitionHash.ToByteArray());
+        }
         ContentHash = ContentHash.Compute(CanonicalEncodingV1.Frame("world.material-care-anchor.v1", fields.ToArray()));
     }
+
+    /// <summary>
+    /// Digest of the explicit proposal transition that produced this anchor, or null for every ordinary
+    /// cut. It is the bounded transition context: no source root or earlier anchor is retained.
+    /// </summary>
+    public ContentHash? TransitionHash { get; }
 
     public WorldMaterialCareArchiveReference Reference { get; }
     public ContentHash AdmissionVersion { get; }

@@ -76,6 +76,13 @@ native and human acceptance gates remain in force. Request a distinct independen
 world-composition refinement, including challenges and extrapolation beyond the proposed design.
 Retain partial work and report friction; no recursive fleet, relay agent or automatic paid retry.
 
+Delegated workers must observe the terminal result of each required verification command before
+returning. A tool's background task handle or a log containing only a start banner is unfinished
+evidence. Keep artifact discovery inside the granted task/output directories; return concrete paths
+instead of scanning the parent temporary directory. The lead may complete unfinished verification
+under the same limits without rerunning the model assignment. These rules are shared upstream in
+the maintained cross-agent-delegation skill; neither permits a longer deadline or broader permissions.
+
 ## Runtime application style
 
 Apply the [world composition contract](Runtime/docs/architecture/world-composition.md): preserve
@@ -133,3 +140,7 @@ For deadline-sensitive validation, avoid overlapping this task's heavy builds, f
 resource-intensive probes. Continue lightweight independent work. Preserve timing failures and repeat
 a diagnostic with the same command/threshold after removing this self-imposed overlap; a later pass
 alone neither establishes contention as the cause nor closes a production latency/scale gate.
+
+For xUnit process diagnostics, identify the actual test application descendant before attributing a
+stall. An idle dotnet/VSTest wrapper can be waiting normally while its child executes tests. Preserve
+original samples and record corrections; observed contention alone does not establish a timing cause.

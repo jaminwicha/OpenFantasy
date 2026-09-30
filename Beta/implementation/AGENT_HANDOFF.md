@@ -42,16 +42,37 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
-The owner's latest direction requests Opus5.5 delegation. A bounded native-controller repair
-completed using verified `claude-opus-5-5`/1M metadata and requested Max effort, with no permission
-denials and verified context synchronization. Astra reviewed and tightened a focus-return boundary.
-[Dispatch/economics](p02/native-material-gifts/OPUS_DISPATCH.json) records 868.279s and a $4.4244242
-client estimate, not billing or proven net credit savings. Prefer cohesive assignments; this was
-substantial overhead for a narrow repair. Both approved models remain available as choices, with
-finite limits, no silent substitution or automatic paid retry. No external job is active. Fable's
-earlier monthly-limit run is terminal. [Compatibility](CLAUDE_MODEL_COMPATIBILITY.md) is current.
+The owner-requested Opus5.5/1M/requested-Max implementation of the
+[retained proposal transition](p02/retained-proposal-transition/INTEGRATION_REVIEW.md) is accepted at
+`codex/milestone-retained-proposal-transition-20260930`. It adds an explicit
+profile27-to-profile30 copy-and-publish operation and a managed continuation of the original 520-use
+world through a helper offer, actual ordinary archive cut, player acceptance and later own use 521.
+The native selector/journey remains a distinct next binding; keep the original source unchanged.
 
-The latest accepted increment is the [native gift interface](p02/native-material-gifts/INTEGRATION_REVIEW.md),
+Clean build and 2,051 distinct managed cases pass (Core 1,692; Host 359), including 22 focused cases,
+authenticated recorded reads and reauthentication of retained native gift journals. An independent
+SQL audit preserves every original non-head row, all 1,579 prior commits and three original archives.
+The final journey has 521 uses/five archives. All 496 existing tests/fixtures, 23 frozen specs, the
+original database and unrelated predecessor staging remain exact. [Final checks](p02/retained-proposal-transition/qualification/FINAL_CHECKS.json)
+retain source/build pins; the packet preserves the incomplete/failed attempts and diagnostic correction.
+The earlier Host run was interrupted with a missing native manifest; its idle wrapper sample did not
+establish a worker hang. The corrected-input same-selection run passed within its unchanged 600s bound.
+Native transitioned-save selection/use and actual transition-boundary process interruption remain open.
+
+[Actual dispatch](p02/retained-proposal-transition/DISPATCH.json) verifies `claude-opus-5-5`/1M metadata,
+requested Max, synchronized context and finite limits. The run took 1,576.339s with a $21.3186486 client
+estimate, not billing or demonstrated net savings. It delivered useful code/tests/docs, but a Glob
+outside its task directory produced a terminal permission-denied adapter result and the worker returned
+with broad verification unfinished. No external job is active; no model retry or permission expansion
+occurred. Astra reviewed the implementation and added meaningful missing contrasts. The earlier Opus
+native-controller repair and Fable spending-limit failure remain historical, terminal runs in
+[compatibility evidence](CLAUDE_MODEL_COMPATIBILITY.md).
+
+Reusable completion/artifact-scope discipline is upstream in ecosystem commit `59813730` with all 71
+skill-alignment entries verified, and in project instructions. Required checks must finish before a
+worker returns; concrete task-scoped output paths replace parent temporary-directory discovery.
+
+The preceding [native gift interface](p02/native-material-gifts/INTEGRATION_REVIEW.md) is
 preserved by `codex/milestone-native-material-gifts-20260930`. A separate `--gifts` save exposes an
 explicit stack/recipient/quantity form, participant offer/history inspection and a four-action Gifts
 wheel. Captured choices never silently change or renew; the native advisory lifetime is 1,200 advancing
@@ -101,10 +122,10 @@ repair and Astra's contrasting tests address them. Original failures and precise
 the packet. Three verified Fable5.1/1M/requested-Max jobs produced the implementation, critic and repair;
 client estimates and friction are recorded there, without claiming billing or net credit savings.
 
-Profile30 is a named sibling of paired profile28, not a combined route or lived migration. The
-nominal29 gap preserves old assertions. Independently delivered service submissions select one
+Profile30 is a named sibling of paired profile28; those routes are not combined. The explicit
+retained27-to30 transition above does not admit profile28 migration. The nominal29 gap preserves old assertions. Independently delivered service submissions select one
 advancing step; the player-session binding below instead uses the existing scheduled cutoff.
-Admitted control/session transition and pair/proposal composition remain required before
+Admitted multiplayer control/session transition and pair/proposal composition remain required before
 multiplayer integration. Historical participant lookup performs a full replay off
 frame callbacks; production indexing, response equalization and live hardware/I/O fault injection
 remain unqualified. General NPC knowledge/motivation, full native UI/device acceptance and network authentication remain open.
@@ -122,10 +143,12 @@ Host scheduling/control, player/NPC decisions and native presentation using the 
 The player-session and ordinary restorative bindings now expose profile30; profile28 remains separate.
 Care permission or friendship never implies inventory consent.
 
-The original post-cut 520-dose personal-medicine objective remains open. That lived world's helper
-gift is forbidden by OwnerOnly custody, and the exact potion ingredient has no gathering source.
-Do not fabricate stock, relabel definitions, replace its save or silently migrate its history.
-A legal supported transition and the full joined native/reopen/history journey remain required.
+The original post-cut 520-dose objective now has an explicit legal transition and a managed earned
+acquisition/use path in the new packet. Its unchanged OwnerOnly custody still forbids unilateral gifts;
+the saved bilateral proposal supplies consent. The exact potion ingredient still has no gathering source.
+Do not fabricate stock, relabel definitions, replace genesis or silently migrate history. The
+[full joined native/reopen/history journey](p02/retained-proposal-transition/NEXT_NATIVE_SLICE.md)
+and actual transition-boundary process interruption remain unproved.
 
 Recoverable starting and WIP references are recorded in the proposal packet's preservation/checkpoint
 JSON files. They exclude unrelated predecessor staging; WIP snapshots are not acceptance claims.
@@ -133,7 +156,7 @@ Continue remaining P01/P02 dependencies against the full plan, including geograp
 wet construction/occupancy/custody joins, NPC society, content reachability and the two-market
 cargo/escort circuit. This navigation list neither replaces the scope nor waives a gate.
 
-## Latest verified runtime checkpoint
+## Earlier verified runtime checkpoints
 
 `codex/milestone-npc-material-decisions-20260929` preserves copied opt-in NPC preferences, own-control
 offers/acceptances/declines, stable semantic decisions and supplier-only aid deferral while waiting

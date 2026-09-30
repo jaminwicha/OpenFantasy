@@ -133,12 +133,12 @@ Schema eight stores both interpretations in the same physical layout: its joint 
 bounded opaque closing roots with scope, ordinal, boundary and publication, none of which is specific
 to one profile. The layout never selects an interpretation. Fresh creation names profiles 27 and 28
 explicitly, and recovery requires a profile-27 or profile-28 genesis for this schema. Every replayed
-step must carry the profile of the root it extends, this schema admits no profile migration, and the
-recovered head must keep the interpretation of its stored genesis. Archive publication checks the accepted
-genesis scope under either named profile, and journal accounting admits joint archives, and refuses
-the separate resource archive family, for those two profiles only. No other or greater profile is
-admitted, and opening never converts one interpretation into the other. A profile-27 save remains a
-profile-27 save; a step encoded under the other profile fails dispatch during replay.
+step must carry the profile of the root it extends. A profile-28 world retains its genesis-selected
+interpretation; the closed [proposal transition](#explicit-proposal-transition) is the only admitted
+change, from profile 27 to profile 30. Archive publication checks the admitted genesis scope, and
+journal accounting admits joint archives and refuses the separate resource archive family under the
+three explicitly named profiles. No greater or intermediate profile is admitted by numeric range.
+Opening never converts interpretations, and a step encoded under another profile fails replay.
 
 The durable binding is the privileged host-selected batch. It publishes both participants' receipts,
 every permanent identity, the archive, head and scheduled checkpoint in the one transaction described
@@ -166,4 +166,60 @@ material, care, resource and transfer headroom. It changes no earlier window, bu
 
 Schema eight stores this interpretation in the same physical layout. Fresh creation, archive
 publication, journal accounting and recovery name profiles 27, 28 and 30; every other number,
-including 29, is refused. A world keeps the interpretation of its stored genesis.
+including 29, is refused. A world keeps the interpretation of its stored genesis, except through the
+one explicit transition below.
+
+## Explicit proposal transition
+
+A lived profile-27 world can continue under profile 30 only through an explicit, privileged upgrade
+into a new save. Opening, reading, fresh admission and ordinary cuts never select it.
+
+| Part | Owner |
+|---|---|
+| Exact request and closed wire contract | [WorldProposalTransition](../../src/OpenFantasy.Core/Worlds/WorldProposalTransition.cs), [WorldProposalTransitionCodecV1](../../src/OpenFantasy.Core/Worlds/WorldProposalTransitionCodecV1.cs) |
+| Interpretation of the source head | [WorldProposalTransitionProcessor](../../src/OpenFantasy.Core/Worlds/WorldProposalTransitionProcessor.cs) |
+| Transition cut and bounded context | `WorldMaterialCareArchiveSegment.SealTransition` / `DecodeTransition` and the anchor's `TransitionHash` |
+| Copy, append, replay and publication | [WorldProposalTransitionUpgrade](../../src/OpenFantasy.Hosting/Worlds/WorldProposalTransitionUpgrade.cs) |
+| Recovery dispatch | [WorldProposalTransitionReplay](../../src/OpenFantasy.Hosting/Worlds/WorldProposalTransitionReplay.cs) |
+
+The request frame is tagged `world.proposal-transition`, version 1, with thirteen fields: tag,
+version, source profile `27`, target profile `30`, cause, world, branch, source revision, source
+advancing steps, source head hash, source admission version, the head's latest joint anchor hash
+(empty when the world never cut) and the ordinal of the closing archive. Any other profile pair,
+version, field count, digest length or non-canonical byte fails. The profile fields are exact names,
+not lower bounds; no other profile number is reserved or admitted by this frame.
+
+The processor admits only a profile-27 head with no consent or proposal owner and no pending interval,
+and only when revision, steps, head hash, admission version, anchor hash, ordinal and scope all equal
+the request. A cause that the root, the genesis or the durable identity table already holds is
+refused. It then seals the exact source head as an ordinary joint archive and rebases it once:
+
+- Production adopts the consented complete-world context from its exact prior context. This is the
+  sole path across the consent guard of `ProductionContinuationContext`; ordinary cuts still refuse to
+  gain or drop consent.
+- The anchor selects consent and an empty saved-proposal roster, and appends the request digest to its
+  hash fields. Anchors without a transition keep their exact bytes and rules.
+- The successor owns empty consent evidence and an empty proposal book, so no grant, offer or stock is
+  created. Inventory, controls, bodies, resources, care, permissions, quests, calendar, readiness and
+  advancing steps stay exact. The world commit revision advances once; the encounter lifecycle's
+  mirror revision advances through `RetainBoundary()` without advancing its phase, clocks or debts.
+
+The source admission version remains the pin for unchanged admitted content and dependent owners.
+The exact target profile and canonical transition request select the new rule interpretation; a
+replaced admission hash is neither necessary nor an alternative migration credential.
+
+The transition context is the request digest in the anchor. It retains no source root, ancestor anchor
+or completed-use list. Every later root binds that anchor by hash, so a successor cannot be decoded
+against an ordinary anchor or a forged request. The next ordinary cut derives an ordinary profile-30
+anchor with no transition field.
+
+Archive retrieval supplies the request from the replayed journal commit, never from the archive row.
+`DecodeTransition` requires the archived root to be the named profile-27 head under its preceding
+anchor, with matching admission, steps, anchor and ordinal, and must reproduce the replayed anchor.
+Recovery admits a head whose interpretation differs from its genesis only when the genesis is profile
+27, the head is profile 30 and exactly one transition commit was replayed.
+
+The durable commit is kind 3 in the existing schema-eight layout: one transaction appends the commit,
+the archive closing the stored prior head, the cause identity, the new head and any scheduled
+checkpoint. No table, index or physical schema changes. Journal accounting counts the archive under
+the source profile; later commits use profile 30.

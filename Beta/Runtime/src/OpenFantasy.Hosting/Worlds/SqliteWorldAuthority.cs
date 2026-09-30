@@ -155,6 +155,20 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         return OpenExisting(destinationPath);
     }
 
+    /// <summary>
+    /// Copies an exact lived coordinated save and continues it under the saved-proposal interpretation
+    /// in a new destination. The source and its complete history stay unchanged; opening never transitions.
+    /// </summary>
+    public static SqliteWorldAuthority UpgradeCoordinatedToProposals(string sourcePath, string destinationPath,
+        WorldProposalTransition request) => UpgradeCoordinatedToProposals(sourcePath, destinationPath, request, null);
+
+    internal static SqliteWorldAuthority UpgradeCoordinatedToProposals(string sourcePath, string destinationPath,
+        WorldProposalTransition request, Action<WorldProposalTransitionBoundary>? fault)
+    {
+        new WorldProposalTransitionUpgrade().Publish(sourcePath, destinationPath, request, fault);
+        return OpenExisting(destinationPath);
+    }
+
     /// <summary>Commits one host-selected batch. A stale or reused batch is a dispatch failure, never a second execution.</summary>
     public WorldStepDecision Commit(WorldStepBatch batch) => Commit(batch, null);
 
