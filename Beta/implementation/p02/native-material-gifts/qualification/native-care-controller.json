@@ -1,0 +1,191 @@
+{
+  "status": "passed",
+  "rendered": true,
+  "controls": [
+    "controller"
+  ],
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz",
+  "runs": [
+    {
+      "label": "controller-fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/background-client",
+        "--",
+        "--care-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.json",
+        "controller",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-fresh.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-fresh.stderr.log",
+      "exitCode": 0,
+      "seconds": 16.88680962473154
+    },
+    {
+      "label": "controller-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/background-client",
+        "--",
+        "--care-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 3.9002000000327826
+    },
+    {
+      "label": "controller-recorded-194",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.sqlite3",
+        "194"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-194.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-194.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.9433765839785337
+    },
+    {
+      "label": "controller-recorded-195",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.sqlite3",
+        "195"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-195.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-195.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.7785900002345443
+    },
+    {
+      "label": "controller-recorded-196",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.sqlite3",
+        "196"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-196.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-196.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.8003192078322172
+    },
+    {
+      "label": "controller-recorded-211",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller.sqlite3",
+        "211"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-211.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-material-gifts/qualification/native-care-z29ltyqz/controller-recorded-211.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.78560945764184
+    }
+  ],
+  "journeys": {
+    "controller": {
+      "source": {
+        "sourceRecordsSha256": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b",
+        "potionPayloadSha256": "3b7a5fdd562795e58d68a11007763b88cd25d40841c739c4fef9495161c097aa",
+        "recipePayloadSha256": "dd98e32ef5f0442f9d1c37d10d431aab74226a77f73bc6858a5075e4dad41dc2",
+        "playerSourceHp": 60,
+        "wolfSourceHp": 62
+      },
+      "playerId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+      "helperId": "5d652f48a612a324027911ffd13cf5f9",
+      "wolfId": "6e639095512c3b072f23995b90271601",
+      "acknowledgmentRevision": 195,
+      "treatmentRevision": 196,
+      "resumedAttackRevision": 211,
+      "finalRevision": 211,
+      "finalHash": "2c63d51bd6106065ead7f38ad992bad3dba3d0a9d25b00d0ccf9d481ab40c41d",
+      "acknowledgmentCommand": "5e6dd7fb77810a4def69d478bde22b75",
+      "helperCommand": "18ce0eca599a2cf84c3708383eefd034",
+      "consumptionId": "10a64599edc57e21418302a364d6fafa",
+      "restoredHp": 40,
+      "helperDelay": 1000,
+      "earlierPlayerAttacks": 0,
+      "retainedCommandReceipts": 18,
+      "recordedBoundariesVerified": [
+        194,
+        195,
+        196,
+        211
+      ]
+    }
+  },
+  "originalProjectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "startedUtc": "2026-09-30T00:22:59.689141+00:00",
+  "scope": "Injected native controls, actual schema7/profile25 care publication and paused second-process recovery.",
+  "limits": {
+    "nativeProcessSeconds": 180,
+    "nativeProbeSeconds": 150,
+    "recordedProcessSeconds": 30,
+    "maximumNativeProcesses": 2,
+    "maximumRecordedProcesses": 5
+  },
+  "limitations": [
+    "Historical roots and gameplay legality use real Host replay; this is not independent full-root or damage-law reconstruction.",
+    "Controlled background rendering/injected input does not establish physical-device, OS-focus, art, performance or full-phase acceptance."
+  ],
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_care.py": "486112afa7f1930d372620df3790e8f4d7c12aa9a1fd7e6f0542f9cd1cdb8e53",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CarePlayProbe.cs": "9b427b4ad998678047740f9380f321b3f090b740c3d34b23469b2405ef5e5075",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_construction_physical.py": "a4678e83edf503734b061be62c497ad8b3155e3281af7e14a8d1fc2ef02a462e",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_encounter_actions.py": "717d156123e7887a299ec8289f289d715f57150bc3786d40920a58927a15eae3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_excavation.py": "75b426bd186c7217db108fbe0e760b195b3e575dda84d932fda9eec91c019576",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "360910eb10826dee16aa08fde6874ea60bd5aec2db346ea563389aab53a3d5b5",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "e90a6e400b5cec9de1089947aab85f4c711d0a98d2fe01b1d8fa7cbe518cbe7b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "995c0b80f62db7700042e66a65395b25a08f851337d5438a37d10fb1ca599ece",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "00852fd255a45eb1b76e4a97dceb6e098a1f2dd8d88dd78d068fafe7a6306774",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "e90a6e400b5cec9de1089947aab85f4c711d0a98d2fe01b1d8fa7cbe518cbe7b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "995c0b80f62db7700042e66a65395b25a08f851337d5438a37d10fb1ca599ece"
+  },
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "native-care-z29ltyqz/controller-fresh.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-z29ltyqz/controller-fresh.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-care-z29ltyqz/controller-recorded-194.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-z29ltyqz/controller-recorded-194.stdout.log": "25f5285734d6a261390fb7f2e161a3153e2889ebec33c1200f33919a80dd1c97",
+    "native-care-z29ltyqz/controller-recorded-195.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-z29ltyqz/controller-recorded-195.stdout.log": "3bc54db6cb9707b8573df91c35142563dde7aca1053fdd191f4b8350ce5efebc",
+    "native-care-z29ltyqz/controller-recorded-196.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-z29ltyqz/controller-recorded-196.stdout.log": "5ff8dc489d0574ef78cb9d1b3a8b5be470036284c96638a2d617d92a71b52419",
+    "native-care-z29ltyqz/controller-recorded-211.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-z29ltyqz/controller-recorded-211.stdout.log": "da3c4fa996c73a0c7581dde9ebe7304debb134e61e22c1a0034e090dc07b97e1",
+    "native-care-z29ltyqz/controller-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-z29ltyqz/controller-reopen.stdout.log": "f2242798cc15367e79498cc8df9659c08cfb5d9c51d50ea273a5d33ba658ccb9",
+    "native-care-z29ltyqz/controller.care-inspection.png": "1178d9ec6b32cfae84663d3557de95d21d909db1c2918ca418cbccb5d01f58a3",
+    "native-care-z29ltyqz/controller.defeat.png": "6d17f38de84daafa4589745707414cbacfa94723d28535378234781dad968500",
+    "native-care-z29ltyqz/controller.fresh.json": "c485bbb86c155860207ceddfba2faabde8e956f1bc76d5899388eef69e44489c",
+    "native-care-z29ltyqz/controller.reopen.json": "35efa3a14be1f53718e26874d6934bf231abadbab6a707b71372d9442ad71c40",
+    "native-care-z29ltyqz/controller.reopen.png": "6430db5054283e4f13388c4f12d7c6b9dfd8366cb30b5c003704d789406f601b",
+    "native-care-z29ltyqz/controller.restoration.png": "24a755e71ac5e4f0798b848b246ee613f4a09a65dc8c9c2d2867b9112f6f3ea2",
+    "native-care-z29ltyqz/controller.sqlite3": "f9b61fffac2ebb81d6ee54f79b1a9fbb8ff1da11570af3df6c7c2266aead8d2d",
+    "native-care-z29ltyqz/controller.treated.png": "441068e6c37765561b48c9ac0ac115edef1788fcef4a26e25fd7e87202b39c3f"
+  },
+  "finishedUtc": "2026-09-30T00:23:23.979025+00:00"
+}

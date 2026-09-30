@@ -248,8 +248,11 @@ Separate lot and recipient lists avoid materializing their cross-product.
 that captured lot. A missing or incompatible selection yields nothing; no first-row, nearest-actor or
 same-item substitute is selected. The result pins scope, both parties and storages, full item version,
 lot revision and quantity. Its expiry is the captured advancing count plus the creation step plus
-64 steps. Refreshing the public view does not change an earlier preparation or intent. A client retains
-that captured intent through confirmation; a new selection is required to change terms or expiry.
+1,200 steps, approximately one nominal minute at the native 20 cutoffs per second. Holds spend no
+advancing lifetime. Refreshing the public view does not change an earlier preparation or intent. A client retains
+that captured intent through confirmation; explicit preparation is required to change terms or expiry.
+`CanStillPropose` compares complete current terms and the original expiry without renewing it.
+It is bounded presentation advice; it neither publishes nor bypasses Core admission.
 
 Preparation neither reserves stock nor checks every eventual settlement condition. It is readable
 while the session is paused, but submitting a fresh action still requires readiness and normal queue
@@ -348,5 +351,33 @@ Updating an observation or reopening the same save cannot manufacture a new deci
 An independently supplied local delivery is not a network handshake. The world admits no change of
 an actor's control binding, so a saved grant is qualified across disposal and reopening with
 unchanged control. The explicit local medicine policy is not a general NPC motivation or knowledge
-system. Native presentation, reserved offers, reciprocal exchange and migration of older worlds
-require their own bindings. Production scale is a separate gate.
+system. The native binding below exposes this bounded profile; reserved offers, reciprocal exchange
+and migration of older worlds require their own bindings. Production scale is a separate gate.
+
+## Native selection and commitment
+
+[`FarmClientSession`](../../client/scripts/FarmClientSession.cs) selects a separate saved proposal
+world with `--gifts`, using a fresh admitted ordinary-care genesis when that dedicated save is absent.
+Opening an existing selected save authenticates its own genesis; no earlier profile is silently
+converted. The binding explicitly configures Wren's medicine preference for the controlled player,
+including 1,200 advancing steps of offer life, while the generic policy default remains 64.
+
+[`FarmGiftSelection`](../../client/scripts/FarmGiftSelection.cs) owns only transient explicit choices:
+physical stack kind/identity, recipient, positive integer quantity, prepared intent and selected
+participant offer. The pack uses public projections; it neither enumerates private inventories nor
+submits commands. Missing or spent choices remain missing, without same-item fallback. A draft
+remains fixed across frame updates until the player deliberately prepares again.
+
+[`MaterialProposalActionOffers`](../../client/scripts/MaterialProposalActionOffers.cs) maps those
+choices into four independent semantic actions. The Gifts wheel follows Actions and any available
+Care page, keeping create/accept/decline/withdraw in stable cardinal positions. Opening or paging
+selects nothing. A selected wheel pins the complete intent and acting actor revision; acceptance
+also pins the sender observation. Sender movement alone does not invalidate decline or withdrawal.
+A changed or terminal offer is inspectable with a blocker, never automatically recaptured.
+
+[`FarmGiftPanel`](../../client/scripts/FarmGiftPanel.cs) keeps dropdown row identities stable while
+a popup is visible, then validates the selected identity against the latest public view. Explicit
+reselection of the same offer refreshes its observed terms. Only separate wheel confirmation can
+submit through the ordinary authenticated session cutoff. Pause, dialogue, pending action and focus
+ownership retain their usual rules. The pack's explicit history button starts the bounded background
+query; frames only observe completion, and results apply only to the still-selected identity.

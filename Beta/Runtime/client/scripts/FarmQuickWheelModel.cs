@@ -8,11 +8,13 @@ internal sealed class FarmQuickWheelModel
     private static readonly FarmSemanticAction[] Order =
         [FarmSemanticAction.Speak, FarmSemanticAction.Gather, FarmSemanticAction.Craft, FarmSemanticAction.Give];
     private readonly List<IReadOnlyList<FarmWheelSlot?>> _pages = [];
+    private readonly List<string> _pageNames = [];
     private int _pageIndex;
 
     internal IReadOnlyList<FarmWheelSlot?> Slots => _pages[_pageIndex];
     internal int PageCount => _pages.Count;
-    internal string PageName => _pageIndex == 0 ? "Actions" : "Care";
+    internal string PageName => _pageNames[_pageIndex];
+    internal string NextPageName => _pageNames[(_pageIndex + 1) % PageCount];
     internal int? SelectedIndex { get; private set; }
     internal FarmWheelSlot? Selected => SelectedIndex is { } index ? Slots[index] : null;
 
@@ -24,15 +26,20 @@ internal sealed class FarmQuickWheelModel
             : offers.ContainsKey(FarmSemanticAction.Excavate)
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
             : Order;
-        AddPage(order, offers);
+        AddPage("Actions", order, offers);
         if (offers.ContainsKey(FarmSemanticAction.UseRestorative) || offers.ContainsKey(FarmSemanticAction.RevokeCarePermission))
         {
-            AddPage([FarmSemanticAction.UseRestorative, FarmSemanticAction.RevokeCarePermission,
+            AddPage("Care", [FarmSemanticAction.UseRestorative, FarmSemanticAction.RevokeCarePermission,
                 FarmSemanticAction.None, FarmSemanticAction.None], offers);
+        }
+        if (offers.Keys.Any(MaterialProposalActionOffers.IsGiftAction))
+        {
+            AddPage("Gifts", [FarmSemanticAction.ProposeMaterial, FarmSemanticAction.AcceptMaterial,
+                FarmSemanticAction.DeclineMaterial, FarmSemanticAction.WithdrawMaterial], offers);
         }
     }
 
-    private void AddPage(FarmSemanticAction[] order, IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
+    private void AddPage(string name, FarmSemanticAction[] order, IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
         FarmWheelSlot?[] slots = new FarmWheelSlot?[4];
         for (int index = 0; index < order.Length; index++)
@@ -40,6 +47,7 @@ internal sealed class FarmQuickWheelModel
             if (offers.TryGetValue(order[index], out var offer)) slots[index] = new FarmWheelSlot(offer);
         }
         _pages.Add(Array.AsReadOnly(slots));
+        _pageNames.Add(name);
     }
 
     internal void NextPage()
@@ -110,11 +118,14 @@ internal sealed class FarmWheelSlot
         if (Action is FarmSemanticAction.UseRestorative or FarmSemanticAction.RevokeCarePermission
             && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision || candidate?.Intent != _original.Intent))
             same = false;
+        if (MaterialProposalActionOffers.IsGiftAction(Action)
+            && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision || candidate?.Intent != _original.Intent))
+            same = false;
         if (_original.Intent is DeliveryQuestIntent quest
             && (candidate?.Intent is not DeliveryQuestIntent currentQuest || currentQuest.QuestId != quest.QuestId
                 || currentQuest.QuestVersion != quest.QuestVersion)) same = false;
         Offer = same ? candidate! : new FarmActionOffer(Action, scope, _original.Label, _original.TargetName,
             _original.TargetId, _original.CostText, "", null,
-            "This choice changed or is no longer visible. Close the wheel and choose again.");
+            "This choice changed or is no longer visible. Close the wheel and choose again.", detailText: _original.DetailText);
     }
 }

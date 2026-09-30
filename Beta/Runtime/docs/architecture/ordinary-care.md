@@ -36,7 +36,8 @@ The standalone [consented custody authority](consented-custody.md) admits a coun
 when both current owners approve that exact transaction. The [consented world](consented-world.md)
 and [saved material proposals](material-proposals.md) bind exact inventory consent into explicit
 care-enabled world interpretations. Receipt of an item grants no treatment permission. Saved offers
-can settle through the local session; native gift controls require their own presentation binding.
+can settle through the local session. The [native gift controls](material-proposals.md#native-selection-and-commitment)
+select explicit stock and confirm through the gift wheel; they grant no care permission.
 
 Each immutable use definition and permission retains its canonical digest lazily on that exact
 object. The first successful read uses the canonical encoder; concurrent readers publish one complete

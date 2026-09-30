@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c6b3b2b4-41a5-4244-8594-781c738c89c8" name="@mac 2026-09-29 09:12:29" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-29T09:12:29.9560660-05:00" queuing="2026-09-29T09:12:29.9560660-05:00" start="2026-09-29T09:12:27.9772940-05:00" finish="2026-09-29T09:12:35.5739710-05:00" />
+  <TestSettings name="default" id="5f8daccc-d0f4-4f63-9d88-3021f47a5cad">
+    <Deployment runDeploymentRoot="_mac_2026-09-29_09_12_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="458e54cb-033e-4646-b8af-332fb5514392" testId="70d042ba-e9e6-5ae4-c714-ec35650972e0" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Gift_page_has_stable_sectors_and_refresh_keeps_captured_creation_expiry" computerName="mac" duration="00:00:00.5912053" startTime="2026-09-29T09:12:34.1848580-05:00" endTime="2026-09-29T09:12:34.7761260-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="458e54cb-033e-4646-b8af-332fb5514392" />
+    <UnitTestResult executionId="29ae0883-ba52-4076-9927-4e4b4f2fe935" testId="87c39ca1-823c-1210-ec76-b2e94d890e33" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Explicit_incoming_and_outgoing_rows_keep_terminal_results_inspectable(outgoing: True)" computerName="mac" duration="00:00:00.6601819" startTime="2026-09-29T09:12:33.3459020-05:00" endTime="2026-09-29T09:12:34.0062130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29ae0883-ba52-4076-9927-4e4b4f2fe935" />
+    <UnitTestResult executionId="0fbb6133-4f07-4b5a-8baf-4396e1816fd5" testId="a471a776-e31e-7efd-fcd4-cf1cf0995c0d" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Actor_revision_or_explicit_different_offer_cannot_rebind_an_open_gift_slot" computerName="mac" duration="00:00:00.6372821" startTime="2026-09-29T09:12:33.5465080-05:00" endTime="2026-09-29T09:12:34.1838890-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0fbb6133-4f07-4b5a-8baf-4396e1816fd5" />
+    <UnitTestResult executionId="c5316e3b-c4da-41f0-aa1e-4c0399907e2b" testId="f5871f1e-9f4c-14af-2237-0f3259ed21bb" testName="OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody" computerName="mac" duration="00:00:00.0010000" startTime="2026-09-29T09:12:29.6390310-05:00" endTime="2026-09-29T09:12:29.6560470-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c5316e3b-c4da-41f0-aa1e-4c0399907e2b">
+      <Output>
+        <ErrorInfo>
+          <Message>The actual native gift results manifest is required.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b7dc598e-1640-44ad-8387-2dc020166d4f" testId="b558190f-e8ce-634a-823d-2735d2f60abf" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Produced_selection_is_exact_and_spent_stock_stays_selected_without_fallback" computerName="mac" duration="00:00:00.7524345" startTime="2026-09-29T09:12:32.5920180-05:00" endTime="2026-09-29T09:12:33.3445620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b7dc598e-1640-44ad-8387-2dc020166d4f" />
+    <UnitTestResult executionId="107378f7-0520-406a-bbd6-d92bf0ae1bd4" testId="b73f526e-dfae-37f5-513a-d544ac02999e" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Reading_hold_blocks_known_gifts_and_inventory_inspection_cannot_dispatch_them" computerName="mac" duration="00:00:01.0621108" startTime="2026-09-29T09:12:31.5877980-05:00" endTime="2026-09-29T09:12:32.6500430-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="107378f7-0520-406a-bbd6-d92bf0ae1bd4" />
+    <UnitTestResult executionId="071258c9-3dfa-4587-a101-26640cd2cf8b" testId="3b95bc31-05fb-28f8-0321-9a022ad844da" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Selection_has_no_default_and_preparation_captures_only_explicit_positive_raw_terms" computerName="mac" duration="00:00:00.4856038" startTime="2026-09-29T09:12:34.6214530-05:00" endTime="2026-09-29T09:12:35.1071240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="071258c9-3dfa-4587-a101-26640cd2cf8b" />
+    <UnitTestResult executionId="7a751e29-f2be-484f-8640-524a2df76803" testId="44c09c12-b8d2-2cd4-b899-6ef3926d399c" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Older_restorative_profile_omits_gift_actions_and_page" computerName="mac" duration="00:00:00.1905330" startTime="2026-09-29T09:12:33.3549960-05:00" endTime="2026-09-29T09:12:33.5455970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a751e29-f2be-484f-8640-524a2df76803" />
+    <UnitTestResult executionId="eb92760c-41ee-40d9-9edd-e65f2a72ff0a" testId="6985ff65-aa7d-1cd5-487a-2141fdebb86d" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Current_validity_requires_the_complete_exact_public_stock_and_scope_pin" computerName="mac" duration="00:00:00.4174016" startTime="2026-09-29T09:12:35.1081110-05:00" endTime="2026-09-29T09:12:35.5255720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb92760c-41ee-40d9-9edd-e65f2a72ff0a" />
+    <UnitTestResult executionId="a0fae971-b198-426a-a809-c5012a0d05e9" testId="f8c6f565-0572-e246-0bc6-435bddd9d401" testName="OpenFantasy.Hosting.Tests.Client.NativeGiftFixtureTests.Actual_injury_and_two_crafted_doses_support_one_native_gift_and_an_owned_raw_withdrawal" computerName="mac" duration="00:00:03.0672124" startTime="2026-09-29T09:12:29.6390290-05:00" endTime="2026-09-29T09:12:32.7119030-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0fae971-b198-426a-a809-c5012a0d05e9" />
+    <UnitTestResult executionId="8809f754-a754-40af-97da-643e99678f6d" testId="477e1886-ea9c-d1de-24e0-6e2b334deda5" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Explicit_incoming_and_outgoing_rows_keep_terminal_results_inspectable(outgoing: False)" computerName="mac" duration="00:00:00.6084490" startTime="2026-09-29T09:12:34.0075980-05:00" endTime="2026-09-29T09:12:34.6161180-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8809f754-a754-40af-97da-643e99678f6d" />
+    <UnitTestResult executionId="ae31476f-28a8-4eb1-b7b1-096da9cc641a" testId="0b5a788f-cf91-c44e-4e02-82324153ecc6" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Captured_expiry_survives_real_steps_and_current_validity_does_not_renew_it" computerName="mac" duration="00:00:01.0325456" startTime="2026-09-29T09:12:31.5543970-05:00" endTime="2026-09-29T09:12:32.5877100-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae31476f-28a8-4eb1-b7b1-096da9cc641a" />
+    <UnitTestResult executionId="2792678c-7cba-4eb7-975c-bcf22c08fda7" testId="54d162a3-e4be-0be5-ad85-98de45d137e6" testName="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Incoming_acceptance_keeps_sender_observation_but_decline_remains_valid_after_sender_moves" computerName="mac" duration="00:00:00.7004496" startTime="2026-09-29T09:12:32.6515070-05:00" endTime="2026-09-29T09:12:33.3520220-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2792678c-7cba-4eb7-975c-bcf22c08fda7" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Incoming_acceptance_keeps_sender_observation_but_decline_remains_valid_after_sender_moves" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="54d162a3-e4be-0be5-ad85-98de45d137e6">
+      <Execution id="2792678c-7cba-4eb7-975c-bcf22c08fda7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests" name="Incoming_acceptance_keeps_sender_observation_but_decline_remains_valid_after_sender_moves" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Selection_has_no_default_and_preparation_captures_only_explicit_positive_raw_terms" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3b95bc31-05fb-28f8-0321-9a022ad844da">
+      <Execution id="071258c9-3dfa-4587-a101-26640cd2cf8b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests" name="Selection_has_no_default_and_preparation_captures_only_explicit_positive_raw_terms" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Gift_page_has_stable_sectors_and_refresh_keeps_captured_creation_expiry" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="70d042ba-e9e6-5ae4-c714-ec35650972e0">
+      <Execution id="458e54cb-033e-4646-b8af-332fb5514392" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests" name="Gift_page_has_stable_sectors_and_refresh_keeps_captured_creation_expiry" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Actor_revision_or_explicit_different_offer_cannot_rebind_an_open_gift_slot" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a471a776-e31e-7efd-fcd4-cf1cf0995c0d">
+      <Execution id="0fbb6133-4f07-4b5a-8baf-4396e1816fd5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests" name="Actor_revision_or_explicit_different_offer_cannot_rebind_an_open_gift_slot" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f5871f1e-9f4c-14af-2237-0f3259ed21bb">
+      <Execution id="c5316e3b-c4da-41f0-aa1e-4c0399907e2b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests" name="Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Produced_selection_is_exact_and_spent_stock_stays_selected_without_fallback" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b558190f-e8ce-634a-823d-2735d2f60abf">
+      <Execution id="b7dc598e-1640-44ad-8387-2dc020166d4f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests" name="Produced_selection_is_exact_and_spent_stock_stays_selected_without_fallback" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Captured_expiry_survives_real_steps_and_current_validity_does_not_renew_it" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0b5a788f-cf91-c44e-4e02-82324153ecc6">
+      <Execution id="ae31476f-28a8-4eb1-b7b1-096da9cc641a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests" name="Captured_expiry_survives_real_steps_and_current_validity_does_not_renew_it" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Explicit_incoming_and_outgoing_rows_keep_terminal_results_inspectable(outgoing: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="477e1886-ea9c-d1de-24e0-6e2b334deda5">
+      <Execution id="8809f754-a754-40af-97da-643e99678f6d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests" name="Explicit_incoming_and_outgoing_rows_keep_terminal_results_inspectable" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Older_restorative_profile_omits_gift_actions_and_page" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="44c09c12-b8d2-2cd4-b899-6ef3926d399c">
+      <Execution id="7a751e29-f2be-484f-8640-524a2df76803" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests" name="Older_restorative_profile_omits_gift_actions_and_page" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Current_validity_requires_the_complete_exact_public_stock_and_scope_pin" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6985ff65-aa7d-1cd5-487a-2141fdebb86d">
+      <Execution id="eb92760c-41ee-40d9-9edd-e65f2a72ff0a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests" name="Current_validity_requires_the_complete_exact_public_stock_and_scope_pin" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests.Explicit_incoming_and_outgoing_rows_keep_terminal_results_inspectable(outgoing: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="87c39ca1-823c-1210-ec76-b2e94d890e33">
+      <Execution id="29ae0883-ba52-4076-9927-4e4b4f2fe935" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftSelectionTests" name="Explicit_incoming_and_outgoing_rows_keep_terminal_results_inspectable" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.NativeGiftFixtureTests.Actual_injury_and_two_crafted_doses_support_one_native_gift_and_an_owned_raw_withdrawal" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f8c6f565-0572-e246-0bc6-435bddd9d401">
+      <Execution id="a0fae971-b198-426a-a809-c5012a0d05e9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.NativeGiftFixtureTests" name="Actual_injury_and_two_crafted_doses_support_one_native_gift_and_an_owned_raw_withdrawal" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests.Reading_hold_blocks_known_gifts_and_inventory_inspection_cannot_dispatch_them" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b73f526e-dfae-37f5-513a-d544ac02999e">
+      <Execution id="107378f7-0520-406a-bbd6-d92bf0ae1bd4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.MaterialGiftWheelTests" name="Reading_hold_blocks_known_gifts_and_inventory_inspection_cannot_dispatch_them" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="70d042ba-e9e6-5ae4-c714-ec35650972e0" executionId="458e54cb-033e-4646-b8af-332fb5514392" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="87c39ca1-823c-1210-ec76-b2e94d890e33" executionId="29ae0883-ba52-4076-9927-4e4b4f2fe935" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a471a776-e31e-7efd-fcd4-cf1cf0995c0d" executionId="0fbb6133-4f07-4b5a-8baf-4396e1816fd5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f5871f1e-9f4c-14af-2237-0f3259ed21bb" executionId="c5316e3b-c4da-41f0-aa1e-4c0399907e2b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b558190f-e8ce-634a-823d-2735d2f60abf" executionId="b7dc598e-1640-44ad-8387-2dc020166d4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b73f526e-dfae-37f5-513a-d544ac02999e" executionId="107378f7-0520-406a-bbd6-d92bf0ae1bd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3b95bc31-05fb-28f8-0321-9a022ad844da" executionId="071258c9-3dfa-4587-a101-26640cd2cf8b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="44c09c12-b8d2-2cd4-b899-6ef3926d399c" executionId="7a751e29-f2be-484f-8640-524a2df76803" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6985ff65-aa7d-1cd5-487a-2141fdebb86d" executionId="eb92760c-41ee-40d9-9edd-e65f2a72ff0a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f8c6f565-0572-e246-0bc6-435bddd9d401" executionId="a0fae971-b198-426a-a809-c5012a0d05e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="477e1886-ea9c-d1de-24e0-6e2b334deda5" executionId="8809f754-a754-40af-97da-643e99678f6d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0b5a788f-cf91-c44e-4e02-82324153ecc6" executionId="ae31476f-28a8-4eb1-b7b1-096da9cc641a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54d162a3-e4be-0be5-ad85-98de45d137e6" executionId="2792678c-7cba-4eb7-975c-bcf22c08fda7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="13" executed="12" passed="12" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.43]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.99]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.15]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.21]       The actual native gift results manifest is required.
+Test 'OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody' was skipped in the test run.
+[xUnit.net 00:00:07.08]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Warning" timestamp="2026-09-29T09:12:29.6601610-05:00">
+        <Text>[xUnit.net 00:00:01.21]     OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody [SKIP]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

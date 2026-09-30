@@ -28,6 +28,8 @@
     <Compile Include="../../client/scripts/EncounterActionOffers.cs" Link="Client/EncounterActionOffers.cs" />
     <Compile Include="../../client/scripts/RestorativeActionOffers.cs" Link="Client/RestorativeActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmActionOffers.cs" Link="Client/FarmActionOffers.cs" />
+    <Compile Include="../../client/scripts/FarmGiftSelection.cs" Link="Client/FarmGiftSelection.cs" />
+    <Compile Include="../../client/scripts/MaterialProposalActionOffers.cs" Link="Client/MaterialProposalActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmClientSession.cs" Link="Client/FarmClientSession.cs" />
     <Compile Include="../../client/scripts/Presentation/FarmHealthFeedback.cs" Link="Client/FarmHealthFeedback.cs" />
     <None Include="../OpenFantasy.Core.Tests/Fixtures/consented-world-formats-v1.json" Link="Fixtures/consented-world-formats-v1.json" CopyToOutputDirectory="PreserveNewest" />

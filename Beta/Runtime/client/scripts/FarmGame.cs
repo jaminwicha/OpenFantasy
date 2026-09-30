@@ -1,4 +1,5 @@
 using Godot;
+using OpenFantasy.Core;
 using OpenFantasy.Client.Presentation;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Worlds;
@@ -25,6 +26,9 @@ public partial class FarmGame : Node2D
     private FarmInventoryModel? _inventoryModel;
     private FarmInventoryScreen _inventory = null!;
     private FarmQuickWheel _wheel = null!;
+    private readonly FarmGiftSelection _gifts = new();
+    private Task<MaterialProposalView?>? _giftInspection;
+    private EntityId? _inspectingGiftId;
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
@@ -40,6 +44,8 @@ public partial class FarmGame : Node2D
     internal bool EncounterProfile { get; init; }
     internal bool CareProfile { get; init; }
     internal bool RestorativeProfile { get; init; }
+    internal bool GiftsProfile { get; init; }
+    internal string? GiftFixtureGenesisPath { get; init; }
     /// <summary>Expected fresh genesis of a prepared coordinated fixture; requires its explicit existing save.</summary>
     internal string? CoordinatedFixtureGenesisPath { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
@@ -87,6 +93,8 @@ public partial class FarmGame : Node2D
         _inventory = GD.Load<PackedScene>("res://scenes/FarmInventoryScreen.tscn").Instantiate<FarmInventoryScreen>();
         AddChild(_inventory);
         _inventory.CloseRequested += () => Perform(FarmSemanticAction.CloseInventory);
+        _inventory.GiftsReviewRequested += ReviewGifts;
+        _inventory.GiftHistoryRequested += InspectGiftHistory;
         _wheel = GD.Load<PackedScene>("res://scenes/FarmQuickWheel.tscn").Instantiate<FarmQuickWheel>();
         AddChild(_wheel);
         _wheel.ActionRequested += Perform;
@@ -99,6 +107,19 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (GiftFixtureGenesisPath is { } giftGenesis)
+        {
+            _opening = SavePathOverride is { } giftSave
+                ? FarmClientSession.OpenGiftFixtureAsync(giftSave, giftGenesis)
+                : Task.FromException<FarmClientSession>(new InvalidOperationException("The gift fixture requires its existing save."));
+            return;
+        }
+        if (GiftsProfile)
+        {
+            string giftSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-gifts.sqlite");
+            _opening = FarmClientSession.OpenGiftsAsync(giftSave, "encounter-lifecycle-world", "Traveler");
+            return;
+        }
         if (CoordinatedFixtureGenesisPath is { } expectedGenesis)
         {
             // A prepared fixture has no default location: it continues only its explicit existing save.
@@ -217,6 +238,13 @@ public partial class FarmGame : Node2D
             _hud.Message(action.IsCompletedSuccessfully ? Describe(action.Result)
                 : "That action was not completed. " + action.Exception?.GetBaseException().Message);
         }
+        if (_giftInspection is { IsCompleted: true } inspection)
+        {
+            _giftInspection = null;
+            _inventory.ShowGiftHistory(_inspectingGiftId!.Value,
+                inspection.IsCompletedSuccessfully ? inspection.Result : null,
+                inspection.IsCompletedSuccessfully ? null : "History inspection failed; the save was retained.");
+        }
         Present(_session.World.ReadView());
     }
 
@@ -248,7 +276,7 @@ public partial class FarmGame : Node2D
         }
         _camera.Position = focus + new Vector2(0, BreachProfile ? 96 : WatercourseProfile ? 72 : -26);
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
-        _presented = _session.CreateOffers(view, _targets.Selected);
+        _presented = _session.CreateOffers(view, _targets.Selected, _gifts);
         _canvas.PresentTarget(_targets.Selected);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view),
             _action is not null || view.IsResolvingConsequences,
@@ -256,7 +284,7 @@ public partial class FarmGame : Node2D
         _inventory.Present(view, _session.World.ReadRunState());
         if (_wheel.Model is { } wheel)
         {
-            wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target)));
+            wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target), _gifts));
             _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel));
         }
     }
@@ -280,7 +308,9 @@ public partial class FarmGame : Node2D
 
     public override void _Input(InputEvent input)
     {
-        // Release bookkeeping must run before a focused Control can consume the release.
+        // Release bookkeeping must run before a focused Control can consume the release. A release
+        // goes to its press's owner: the router swallows its own, and a pack or wheel Control that
+        // took an accept press receives the release that completes native activation.
         // New gameplay presses still respect the normal GUI-first unhandled-input path.
         if (input.IsPressed() || input.IsEcho()) return;
         FarmInputDecision decision = _input.Route(Situation(), Translate(input));
@@ -320,7 +350,7 @@ public partial class FarmGame : Node2D
         };
     }
 
-    private static FarmInputSignal Translate(InputEvent input)
+    private FarmInputSignal Translate(InputEvent input)
     {
         List<string> matched = [];
         foreach (string action in FarmInputActions.Routed)
@@ -328,7 +358,10 @@ public partial class FarmGame : Node2D
             if (!input.IsAction(action)) continue;
             matched.Add(action);
         }
-        return new FarmInputSignal(matched, input.IsPressed(), input.IsEcho());
+        // Godot delivers device actions to the visible focus owner before unhandled input.
+        bool focusedAccept = matched.Count > 0 && input.IsAction("ui_accept")
+            && GetViewport().GuiGetFocusOwner() is { } focus && focus.IsVisibleInTree();
+        return new FarmInputSignal(matched, input.IsPressed(), input.IsEcho()) { FocusedControlAccept = focusedAccept };
     }
 
     /// <summary>Single entry for HUD, device and contextual requests; the router owns the context check.</summary>
@@ -427,7 +460,7 @@ public partial class FarmGame : Node2D
         _input.SetInventoryOpen(open);
         if (open)
         {
-            _inventory.Open(_inventoryModel);
+            _inventory.Open(_inventoryModel, _gifts);
             _hud.SetCovered(true);
             try { _session.World.SetMovement(0, 0); }
             catch (InvalidOperationException error)

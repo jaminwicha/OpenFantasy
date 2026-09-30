@@ -17,7 +17,7 @@ public sealed record LocalMaterialProposalLot(ConsentedMaterialLotKind Kind, Ent
 /// </summary>
 public sealed class LocalMaterialProposalPreparation
 {
-    public const ulong OfferLifetimeSteps = 64;
+    public const ulong OfferLifetimeSteps = 1200;
     private readonly EntityId _worldId;
     private readonly EntityId _branchId;
     private readonly EntityId _senderActorId;
@@ -30,7 +30,8 @@ public sealed class LocalMaterialProposalPreparation
         _branchId = state.BranchId;
         _senderActorId = senderActorId;
         _sourceCustodianId = state.GetResident(senderActorId).InventoryCustodianId;
-        // Creation publishes the next advancing step; expiry is 64 further steps after that.
+        // One nominal minute at the native 20 cutoffs/second leaves time for deliberate inspection.
+        // This is advancing time, not wall time: holds do not spend the captured lifetime.
         ExpiresAtAdvancingStep = checked(state.AdvancingSteps + 1 + OfferLifetimeSteps);
         _destinations = state.Residents.Where(actor => actor.ActorId != senderActorId
                 && actor.InventoryCustodianId != _sourceCustodianId
@@ -71,6 +72,21 @@ public sealed class LocalMaterialProposalPreparation
         return new ProposeMaterialIntent(new ConsentedMaterialTerms(_worldId, _branchId, _senderActorId,
             recipientActorId, kind, lot.LotId, lot.Definition, _sourceCustodianId, destination, quantity,
             lot.Revision), ExpiresAtAdvancingStep);
+    }
+
+    /// <summary>
+    /// Checks a previously captured creation against this current public preparation without renewing
+    /// its expiry. The published expiry minus the fixed lifetime identifies the next creation step;
+    /// an offer must survive that step. This is presentation advice, not authority admission.
+    /// </summary>
+    public bool CanStillPropose(ProposeMaterialIntent intent)
+    {
+        ArgumentNullException.ThrowIfNull(intent);
+        ConsentedMaterialTerms terms = intent.Terms;
+        ProposeMaterialIntent? current = Prepare(terms.LotKind, terms.LotId, terms.RecipientActorId, terms.Quantity);
+        return current is not null && current.Terms == terms
+            && intent.ExpiresAtAdvancingStep > ExpiresAtAdvancingStep - OfferLifetimeSteps
+            && intent.ExpiresAtAdvancingStep <= ExpiresAtAdvancingStep;
     }
 
     internal static LocalMaterialProposalPreparation? Project(WorldSnapshot state, EntityId playerActorId)

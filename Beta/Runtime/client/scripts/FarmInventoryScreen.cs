@@ -1,4 +1,5 @@
 using Godot;
+using OpenFantasy.Core;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
@@ -14,12 +15,17 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
     private Label _summary = null!;
     private Label _time = null!;
     private Button _close = null!;
+    private Button _giftToggle = null!;
+    private Control _body = null!;
+    private FarmGiftPanel _gifts = null!;
     private Control? _returnFocus;
     private FarmInventoryModel? _model;
     private IReadOnlyList<FarmInventoryEntry> _shown = Array.Empty<FarmInventoryEntry>();
     private readonly Dictionary<FarmInventoryKey, Button> _buttons = [];
 
     internal event Action? CloseRequested;
+    internal event Action? GiftsReviewRequested;
+    internal event Action<EntityId>? GiftHistoryRequested;
     internal bool IsOpen => _root.Visible;
 
     public override void _Ready()
@@ -32,13 +38,23 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
         _summary = GetNode<Label>("%PackSummary");
         _time = GetNode<Label>("%PackTime");
         _close = GetNode<Button>("%ClosePack");
+        _giftToggle = GetNode<Button>("%GiftToggle");
+        _body = GetNode<Control>("InventoryRoot/Panel/Column/Body");
+        _gifts = GetNode<FarmGiftPanel>("%Gifts");
+        _giftToggle.Pressed += ToggleGifts;
+        _gifts.ReviewRequested += () => GiftsReviewRequested?.Invoke();
+        _gifts.HistoryRequested += identity => GiftHistoryRequested?.Invoke(identity);
         _close.Pressed += () => CloseRequested?.Invoke();
     }
 
-    internal void Open(FarmInventoryModel model)
+    internal void Open(FarmInventoryModel model, FarmGiftSelection? gifts = null)
     {
         _returnFocus = GetViewport().GuiGetFocusOwner();
         _model = model;
+        _gifts.Selection = gifts;
+        _gifts.Hide();
+        _body.Show();
+        _giftToggle.Text = "Gifts";
         _root.Show();
     }
 
@@ -69,6 +85,14 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
     {
         if (!IsOpen || _model is null) return;
         _model.Refresh(view);
+        bool hasGifts = view.MaterialProposals is not null;
+        if (_giftToggle.Visible != hasGifts)
+        {
+            _giftToggle.Visible = hasGifts;
+            WireFocus();
+        }
+        if (!hasGifts && _gifts.Visible) ToggleGifts();
+        _gifts.Present(view, _model);
         _time.Text = runState switch
         {
             LocalWorldRunState.Running => "World continuing",
@@ -120,7 +144,12 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
 
     private void WireFocus()
     {
-        Button[] chain = [.. _buttons.Values, _close];
+        if (_gifts.Visible)
+        {
+            _gifts.WireFocus();
+            return;
+        }
+        Button[] chain = _giftToggle.Visible ? [.. _buttons.Values, _giftToggle, _close] : [.. _buttons.Values, _close];
         for (int index = 0; index < chain.Length; index++)
         {
             NodePath previous = chain[index].GetPathTo(chain[(index + chain.Length - 1) % chain.Length]);
@@ -132,6 +161,19 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
             chain[index].FocusNeighborBottom = next;
             chain[index].FocusNeighborRight = next;
         }
+    }
+
+    internal void ShowGiftHistory(EntityId identity, MaterialProposalView? result, string? message) =>
+        _gifts.ShowHistory(identity, result, message);
+
+    private void ToggleGifts()
+    {
+        bool show = !_gifts.Visible;
+        _gifts.Visible = show;
+        _body.Visible = !show;
+        _giftToggle.Text = show ? "Items" : "Gifts";
+        if (show) _gifts.FocusFirst();
+        else { WireFocus(); FocusSelection(); }
     }
 
     private void Inspect(FarmInventoryKey key)

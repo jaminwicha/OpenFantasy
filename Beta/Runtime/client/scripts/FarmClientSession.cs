@@ -94,6 +94,24 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal static Task<FarmClientSession> OpenRestorativeAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
         OpenSelection(savePath, RestorativeJourneyAdmission.CreateEmbedded(seedText, playerName)));
 
+    /// <summary>Explicit saved-gift world selection; no older save is upgraded or relabeled.</summary>
+    internal static Task<FarmClientSession> OpenGiftsAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+        OpenSelection(savePath, WorldMaterialProposalAdmission.CreateFresh(
+            RestorativeJourneyAdmission.CreateEmbedded(seedText, playerName)), gifts: true));
+
+    internal static Task<FarmClientSession> OpenGiftFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath)) throw new FileNotFoundException("Gift inspection requires its existing save.", savePath);
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != 30 || genesis.Revision != 0 || genesis.AdvancingSteps != 0)
+            throw new InvalidDataException("The gift fixture requires its fresh saved-proposal genesis.");
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return Attach(authority, QuestCompanion, gifts: true);
+    });
+
     /// <summary>
     /// Continues a prepared coordinated fixture from its existing save. The expected fresh genesis
     /// selects that save after complete recovery; this entry never creates, upgrades or rewinds a world.
@@ -123,7 +141,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return Attach(authority, CareCompanion);
     });
 
-    private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis)
+    private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis, bool gifts = false)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
         SqliteWorldAuthority authority = File.Exists(savePath)
@@ -137,7 +155,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
             authority.Dispose();
             throw;
         }
-        return Attach(authority);
+        return Attach(authority, QuestCompanion, gifts);
     }
 
     private static FarmClientSession Attach(SqliteWorldAuthority authority) => Attach(authority, QuestCompanion);
@@ -158,7 +176,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
         current.Care!.Ordinary!.Permissions.Single(permission => permission.PatientActorId == player.ActorId).HelperActorId);
 
     private static FarmClientSession Attach(SqliteWorldAuthority authority,
-        Func<WorldSnapshot, WorldResident, WorldResident> selectCompanion)
+        Func<WorldSnapshot, WorldResident, WorldResident> selectCompanion, bool gifts = false)
     {
         try
         {
@@ -171,7 +189,15 @@ internal sealed class FarmClientSession : IAsyncDisposable
                 .Definition.YieldDefinition.DefinitionId ?? current.Inventory.Sources.Single().Definition.DefinitionId;
             EntityId? berries = current.Gathering?.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
                 .Definition.YieldDefinition.DefinitionId;
-            var world = new LocalWorldSession(authority, player.ActorId, delivery);
+            LocalMaterialGiftPolicy[] policies = [];
+            if (gifts)
+            {
+                var self = current.Care!.Ordinary!.Definitions.Single(value =>
+                    value.DeliveryMode == OpenFantasy.Core.Care.RestorativeDeliveryMode.SelfUse);
+                policies = [new(wren.ActorId, player.ActorId, self.DefinitionId, self.Version,
+                    offerLifetimeSteps: LocalMaterialProposalPreparation.OfferLifetimeSteps)];
+            }
+            var world = new LocalWorldSession(authority, player.ActorId, delivery, policies);
             return new FarmClientSession(world, delivery, wren.ActorId, wood, berries);
         }
         catch
@@ -182,9 +208,10 @@ internal sealed class FarmClientSession : IAsyncDisposable
     }
 
     /// <summary>Read-only: selecting targets, lots and quest operations from a snapshot changes nothing.</summary>
-    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view, FarmTarget? selectedTarget = null)
+    internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view, FarmTarget? selectedTarget = null,
+        FarmGiftSelection? giftSelection = null)
     {
-        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget);
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget, giftSelection);
         foreach (FarmActionOffer offer in offers.Values)
         {
             _issuedOffers.Add(offer, new OfferedAction());

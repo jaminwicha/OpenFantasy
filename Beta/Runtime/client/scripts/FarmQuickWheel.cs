@@ -101,7 +101,7 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
 
     private void RefreshDetails()
     {
-        _nextPage.Text = Model?.PageName == "Care" ? "Actions [Q]" : "Care [Q]";
+        _nextPage.Text = (Model?.NextPageName ?? "Actions") + " [Q]";
         FarmActionOffer? offer = Model?.Selected?.Offer;
         _name.Text = offer?.Label ?? "Choose an action";
         _details.Text = offer is null ? "Point to a symbol, press a direction, or use the left stick.\n\nSelecting only shows details."

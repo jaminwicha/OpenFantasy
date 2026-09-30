@@ -369,3 +369,19 @@ Actual session scheduling/control transition, native/NPC/network binding, produc
 retained520-dose journey stay open, as do full phase/campaign gates. Work remains on
 `codex/runtime-foundation`; the milestone is a backup pointer, with no checkout switch, force update,
 push or merge.
+
+
+The `codex/milestone-native-material-gifts-20260930` marker preserves the explicit native gift
+profile, physical stack/recipient/quantity preparation, four-action Gifts wheel, background participant
+history and captured input terms. Build and 259 distinct affected managed cases pass (19 focused
+included), plus six rendered gift processes and two unchanged care-controller processes with four
+recorded-state inspections. All four gift actions have authenticated native journal effects and
+separate-process paused reopening. Independent source critique and an owner-requested verified
+Opus5.5/1M/requested-Max repair improved reselection and controller release ownership; Astra
+reviewed, tightened the focus guard, fixed clipping and ran the checks. [Integration review](p02/native-material-gifts/INTEGRATION_REVIEW.md)
+retains actual scope, failures and remaining gates. Pre-change HEAD 710c210 is preserved by
+`codex/checkpoint-before-native-gifts-20260929T134834Z`; WIP 3c63e7f is preserved by
+`codex/checkpoint-native-gifts-before-opus-20260930T000043Z`. All 490 old pinned tests/fixtures,
+the exact earlier test project apart from two additive links, all 23 frozen specs and unrelated 19-file
+predecessor staging remain intact. Work stays on `codex/runtime-foundation`; this backup pointer
+closes no full game, phase, migration, device, art or human acceptance gate.

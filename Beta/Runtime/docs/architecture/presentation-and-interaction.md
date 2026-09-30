@@ -26,7 +26,11 @@ Godot physics do not own authoritative movement, inventory, production or time.
 [FarmInputRouter](../../client/scripts/FarmInputRouter.cs) manages ownership across world controls,
 dialogue, pause, pack and wheel. Cancel unwinds the active layer. Focus loss and controller disconnect
 clear or cancel applicable input; held directions require neutral release before movement resumes.
-A rendering fixture that injects focus does not redefine ordinary gameplay focus policy.
+Held routed presses remember whether the router or a focused pack/wheel Control owns their release.
+Bookkeeping runs before GUI delivery, but a Control-owned accept release propagates so native buttons
+can complete activation. Layer commands retain router ownership; a press held across focus recovery
+cannot be reclaimed by a panel until released. Missing panel releases cannot turn the next world
+press into an action. A rendering fixture that injects focus does not redefine ordinary gameplay focus policy.
 
 [FarmTargetSelection](../../client/scripts/FarmTargetSelection.cs) holds an explicit transient target.
 A selected plant remains selected when another becomes nearer. Its unavailable Talk/Give action
@@ -71,6 +75,22 @@ historical cue. This presentation neither changes health nor exposes private NPC
 tools and recipe information. Display groups distinguish raw/derived and protected/reserved stock
 without merging canonical lots. Known restorative items expose their admitted physical label and
 strength and direct use to the Care page. The pack does not execute equipment, use or transfer operations.
+
+## Runtime binding: gift preparation
+
+The proposal-capable pack adds a scrollable Gifts form beneath a fixed header and above a fixed
+review control. Focused form controls scroll into view. It has explicit physical stack, named recipient and
+integer quantity selectors, plus incoming/outgoing offer inspection. No field selects a first row
+automatically. Preparing captures terms without transferring or reserving items. A separate icon-led
+Gifts wheel confirms creation, acceptance, decline or withdrawal through the same action router.
+Quest delivery remains a distinct action. Other profiles omit this view and wheel page.
+
+Open dropdowns retain their displayed row identities while the world continues; selecting validates
+that identity against the current public projection. Reselecting an offer explicitly captures a new
+observation. Input or frame refresh never swaps an unavailable lot for another stack. Exact wheel
+intent and actor pins survive inspection; a changed choice explains its blocker. Explicit history
+inspection is asynchronous and displays a result only for the matching selected offer. See
+[material proposals](material-proposals.md#native-selection-and-commitment) for authority and time rules.
 
 ## Design contract: a small immediate interface
 

@@ -1,6 +1,9 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="Script" path="res://scripts/FarmInventoryScreen.cs" id="1"]
+
+[ext_resource type="PackedScene" path="res://scenes/FarmGiftPanel.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/ui/give.svg" id="3"]
 
 [sub_resource type="StyleBoxFlat" id="PanelStyle"]
 bg_color = Color(0.07, 0.12, 0.14, 0.99)
@@ -68,6 +71,16 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 28
 text = "Your pack"
 
+[node name="GiftToggle" type="Button" parent="InventoryRoot/Panel/Column/Header"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Gifts"
+icon = ExtResource("3")
+expand_icon = true
+theme_override_constants/icon_max_width = 24
+tooltip_text = "Inspect gifts and prepare an exact stack for a named recipient."
+
 [node name="ClosePack" type="Button" parent="InventoryRoot/Panel/Column/Header"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -132,3 +145,7 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Inspect: hover, arrows / D-pad, or Tab · Open / close: I or View"
 autowrap_mode = 3
+
+[node name="Gifts" parent="InventoryRoot/Panel/Column" instance=ExtResource("2")]
+unique_name_in_owner = true
+layout_mode = 2

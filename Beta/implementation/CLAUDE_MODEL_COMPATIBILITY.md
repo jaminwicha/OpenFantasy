@@ -1,6 +1,6 @@
 # Claude delegation compatibility
 
-Verified 2026-09-27. Owner-approved routes are `fable[1m]` and Opus 5.5 with one-million-token
+Updated 2026-09-29. Owner-approved routes are `fable[1m]` and Opus 5.5 with one-million-token
 context, both at explicit Max effort. Astra integrates and reviews bounded assignments.
 
 ## Client and model selection
@@ -27,7 +27,16 @@ explicit maintenance action when no delegated process uses the shared client.
 - The [first exact-selector Opus review](p02/world-resource-integration/opus-review/README.md)
   timed out after 900 seconds with no response, error text or usage metadata. Context checks
   passed and the frozen checkout stayed unchanged. Actual account model access, context and
-  cost remain unconfirmed. No automatic paid retry or model substitution followed.
+  cost remained unconfirmed for that run. No automatic paid retry or model substitution followed.
+
+- The owner subsequently explicitly requested Opus for the native gift controller repair. That
+  [bounded assignment](p02/native-material-gifts/OPUS_DISPATCH.json) returned canonical
+  `claude-opus-5-5`, a 1,000,000-token window and successful provider status; Max was explicitly
+  requested. Pre/post context checks passed and the denial list was empty. It produced scoped
+  input-owner code and a causal diagnosis; Astra reviewed it, tightened a focus-return boundary,
+  and owns testing. Elapsed 868.279s and a $4.4244242 client estimate show substantial overhead for
+  a narrow task. They do not establish subscription billing or net credit savings. This verifies
+  this actual route/run, without promising later availability or permitting automatic paid retries.
 
 The initial review preflight used an overly broad skill manifest outside its declared roots.
 A narrow selected-skill manifest corrected this local configuration before the sole paid request.

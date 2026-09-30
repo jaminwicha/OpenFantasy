@@ -46,6 +46,7 @@ public partial class Bootstrap : Control
             or ["--care-probe", _, _, "wheel" or "keyboard" or "controller" or "pointer" or "pending" or "resume" or "reopen", "--background-render"]
             or ["--restorative-probe", _, _, _, "keyboard" or "controller" or "pointer" or "helper" or "revoke" or "reopen", "--background-render"]
             or ["--coordinated-restorative-probe", _, _, _, _, "revoke" or "reopen", "--background-render"]
+            or ["--gift-probe", _, _, _, "keyboard" or "controller" or "pointer" or "reopen", "--background-render"]
             or ["--watercourse-probe", _, _, "fresh" or "reopen", "--background-render"]
             or ["--breach-probe", _, _, "fresh" or "breach" or "reopen", "--background-render"]
             or ["--worksite-probe", _, _, "fresh" or "build" or "mine" or "reopen", "--background-render"];
@@ -61,7 +62,21 @@ public partial class Bootstrap : Control
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
-        if (arguments is ["--coordinated-restorative-probe", var coordinatedSave, var coordinatedReport,
+        if (arguments is ["--gift-probe", var giftSave, var giftReport, var giftGenesis, var giftMode]
+            && giftMode is "keyboard" or "controller" or "pointer" or "reopen")
+        {
+            if (!File.Exists(giftSave) || !File.Exists(giftGenesis))
+            {
+                GD.PushError("The gift probe requires its earned existing save and expected fresh genesis.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { GiftsProfile = true, GiftFixtureGenesisPath = giftGenesis,
+                SavePathOverride = giftSave, StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(game);
+            AddChild(new MaterialGiftPlayProbe(game, giftReport, giftGenesis, giftMode));
+        }
+        else if (arguments is ["--coordinated-restorative-probe", var coordinatedSave, var coordinatedReport,
             var coordinatedMetadata, var coordinatedGenesis, var coordinatedMode]
             && coordinatedMode is "revoke" or "reopen")
         {
@@ -303,6 +318,10 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = save, StartPaused = stage == "reopen", GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmWalkthroughProbe(game, reportPath, stage == "reopen"));
+        }
+        else if (arguments is ["--gifts"])
+        {
+            AddChild(new FarmGame { GiftsProfile = true });
         }
         else if (arguments is ["--restorative"])
         {

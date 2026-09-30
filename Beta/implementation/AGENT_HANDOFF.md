@@ -42,21 +42,37 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
-Fable 5.1 remains selected and acceptable; Opus 5.5 is optional when useful. Both approved routes
-retain 1M context and Max effort. Delegate substantial bounded work with synchronized context and
-finite limits; Astra integrates. No automatic paid retry, silent substitution or relay agent.
-No external model job is active.
+The owner's latest direction requests Opus5.5 delegation. A bounded native-controller repair
+completed using verified `claude-opus-5-5`/1M metadata and requested Max effort, with no permission
+denials and verified context synchronization. Astra reviewed and tightened a focus-return boundary.
+[Dispatch/economics](p02/native-material-gifts/OPUS_DISPATCH.json) records 868.279s and a $4.4244242
+client estimate, not billing or proven net credit savings. Prefer cohesive assignments; this was
+substantial overhead for a narrow repair. Both approved models remain available as choices, with
+finite limits, no silent substitution or automatic paid retry. No external job is active. Fable's
+earlier monthly-limit run is terminal. [Compatibility](CLAUDE_MODEL_COMPATIBILITY.md) is current.
 
-The latest accepted increment is [proposal interaction boundaries](p02/proposal-interaction-boundaries/INTEGRATION_REVIEW.md),
-preserved by `codex/milestone-proposal-interaction-boundaries-20260929`: clean build, 165 distinct affected
-managed passes (34 focused included), independent native Astra source critique and current architecture.
-The Host exposes exact selected own-lot/recipient/quantity creation terms and one explicit background
-participant-history lookup. Paused inspection, real archive/reopen, bounded concurrency, in-flight stop,
-backend failure and ordinary profile30 excavation are proved. Deferred structural excavation remains a
-separate admitted profile; no fake combined pending state was introduced. See the concrete
-[next native slice](p02/proposal-interaction-boundaries/NEXT_NATIVE_SLICE.md) for profile30 opening,
-physical-lot selection, Gifts wheel, captured expiry, controls and native validation. No native UI is
-claimed by this Host increment.
+The latest accepted increment is the [native gift interface](p02/native-material-gifts/INTEGRATION_REVIEW.md),
+preserved by `codex/milestone-native-material-gifts-20260930`. A separate `--gifts` save exposes an
+explicit stack/recipient/quantity form, participant offer/history inspection and a four-action Gifts
+wheel. Captured choices never silently change or renew; the native advisory lifetime is 1,200 advancing
+steps. Accepting items is separate from healing and treatment permission. An explicit NPC policy is
+resupplied on reopening. Timeless architecture and runtime launch/control docs describe the binding.
+
+Build and 259 distinct affected managed cases pass, including 19 focused cases and authenticated native
+save effects. Three rendered journeys cover all four gift actions and three separate paused reopens;
+the unchanged native care controller route/reopen also passes. Review fixed same-row reselection,
+clipped layout and controller-release delivery. Real fixture injury/crafting/revocation precede the
+native run; this does not claim native accepted-dose use, archive traversal, retained-world migration,
+physical devices, OS focus, human art acceptance or full phase completion. All 490 old pinned test/fixture
+files remain byte-exact; the test project differs only by two proved additive source links. All 23
+frozen specs and the unrelated 19-file staged predecessor work remain exact. Failures stay in the packet.
+
+The prior [proposal interaction boundary](p02/proposal-interaction-boundaries/INTEGRATION_REVIEW.md)
+retains its 165-case qualification and `codex/milestone-proposal-interaction-boundaries-20260929`.
+It proves explicit archived participant lookup, bounded concurrency/stop/failure behavior and ordinary
+profile30 excavation. Deferred structural excavation remains a separate admitted profile. The
+[next native slice](p02/proposal-interaction-boundaries/NEXT_NATIVE_SLICE.md) is now implemented by
+the gift interface packet above; its Host-only report remains historical evidence.
 
 The preceding [explicit NPC gift decisions](p02/npc-material-decisions/INTEGRATION_REVIEW.md),
 preserved by `codex/milestone-npc-material-decisions-20260929`, retain their 154-case qualification.
@@ -91,7 +107,7 @@ advancing step; the player-session binding below instead uses the existing sched
 Admitted control/session transition and pair/proposal composition remain required before
 multiplayer integration. Historical participant lookup performs a full replay off
 frame callbacks; production indexing, response equalization and live hardware/I/O fault injection
-remain unqualified. General NPC knowledge/motivation, native UI/controls and network authentication remain open.
+remain unqualified. General NPC knowledge/motivation, full native UI/device acceptance and network authentication remain open.
 
 Earlier accepted layers remain linked rather than redispatched:
 - [Durable paired Host](p02/durable-consented-world/INTEGRATION_REVIEW.md), milestone
@@ -167,7 +183,7 @@ constitute the full inhabited-world game. Default startup and fixture entrypoint
 [Runtime README](../Runtime/README.md) and the relevant qualification packet before launching.
 
 Input submits captured targets/costs/revisions and never silently retargets or retries. The pack,
-four-action wheel, Care page, daylight and encounter presentation remain bounded implementations;
+four-action wheel, Care/Gifts pages, daylight and encounter presentation remain bounded implementations;
 icons, capability-relevant screens, rich tooltips, full maps/calendar and accepted expressive pixel
 art retain their complete design obligations. Background injected input does not prove physical
 controls, OS focus, art quality or human enjoyment.
@@ -229,8 +245,8 @@ the preceding player-only test retains its narrower service-created setup. The r
 [interaction-boundary increment](p02/proposal-interaction-boundaries/INTEGRATION_REVIEW.md): actual archived
 inspection, profile30 ordinary excavation and genuine pending16 refusal. Complete admission excludes
 combining deferred structural consequences with profile30; such a new interpretation is not fabricated.
-Native controls, production policy authoring, general NPC psychology/knowledge and recurring need
-episodes remain open. Preserve the full custody
+The native gift controls are qualified in the current packet; production policy authoring, general
+NPC psychology/knowledge and recurring need episodes remain open. Preserve the full custody
 integration path and original 520-dose objective above; no fresh world is a retained-save migration.
 
 Fable's one run is terminal: monthly spend limit after 113.221 seconds, verified input synchronization,

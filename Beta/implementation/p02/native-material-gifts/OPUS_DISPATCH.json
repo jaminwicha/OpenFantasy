@@ -1,0 +1,29 @@
+{
+  "status": "integrated_with_lead_focus_guard_and_verified",
+  "privateDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-native-controls-_buka2lw",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "timeoutSeconds": 900,
+  "clientLimitUsd": 8,
+  "contextManifestSha256": "018d17987ff945b6a9fe2788c941c739612b63cbc17e8a47264b684be38bfe5f",
+  "ownedFiles": [
+    "Beta/Runtime/client/scripts/FarmGame.cs",
+    "Beta/Runtime/client/scripts/FarmInputRouter.cs",
+    "Beta/implementation/p02/native-material-gifts/OPUS_RESULT.md"
+  ],
+  "cliVersion": "2.1.280",
+  "authLoggedIn": true,
+  "modelConfigurationReference": "https://code.claude.com/docs/en/model-config",
+  "startedUtc": "2026-09-30T00:02:08.617990+00:00",
+  "exitCode": 0,
+  "finishedUtc": "2026-09-30T00:16:37.927987+00:00",
+  "actualModel": "claude-opus-5-5",
+  "contextWindow": 1000000,
+  "elapsedSeconds": 868.279,
+  "clientEstimateUsd": 4.4244242,
+  "contextStatus": "verified",
+  "permissionDenials": [],
+  "outputTokens": 95850,
+  "thinkingTokens": 81065,
+  "acceptanceEvidence": "qualification/FINAL_CHECKS.json"
+}

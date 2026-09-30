@@ -1,5 +1,12 @@
 # Implementation instructions
 
+Owner steering, 2026-09-29: delegate useful bounded work to Opus 5.5. The exact
+`claude-opus-5-5[1m]` route with requested Max has now returned verified Opus5.5/1M metadata;
+see [compatibility evidence](implementation/CLAUDE_MODEL_COMPATIBILITY.md). Retain finite limits,
+skill/context synchronization and Astra integration. Prefer cohesive deliverables: the first successful
+narrow repair took about 14.5 minutes. Fable remains approved, but its recorded spending-limit failure
+is terminal and is not authorization for a retry. Never substitute a model silently.
+
 Owner steering, 2026-09-28: Fable 5.1 remains acceptable; more Opus 5.5 use is optional when
 beneficial, not a required switch. Both approved routes retain one-million context and Max effort.
 Use exact `fable[1m]` or `claude-opus-5-5[1m]` with verified returned model/context, finite limits,

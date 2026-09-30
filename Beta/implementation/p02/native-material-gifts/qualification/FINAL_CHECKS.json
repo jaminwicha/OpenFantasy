@@ -1,0 +1,47 @@
+{
+  "status": "passed",
+  "evidence": {
+    "build": {
+      "path": "Beta/implementation/p02/native-material-gifts/qualification/gifts-build-20260930T001905Z.json",
+      "sha256": "f07933759e374d610fe88c667ca784fcfb617c9291ba2edf80b77ac1ad661d39"
+    },
+    "focused": {
+      "path": "Beta/implementation/p02/native-material-gifts/qualification/gifts-focused-20260930T002023Z.json",
+      "sha256": "031552471ef2aae7b185612de47ee7010d470cad052962332fa88845c93e0afb"
+    },
+    "regression": {
+      "path": "Beta/implementation/p02/native-material-gifts/qualification/gifts-regression-20260930T002057Z.json",
+      "sha256": "f5e518a8ab3790077a67441929fc8fdd710a1748e07fde5debdc4dd355692663"
+    },
+    "native": {
+      "path": "Beta/implementation/p02/native-material-gifts/qualification/native-5.json",
+      "sha256": "d71eca362c1ec0dbccf0b45aab554ee6bcdf3ee753696fd1757a4dafb5104a33"
+    },
+    "care": {
+      "path": "Beta/implementation/p02/native-material-gifts/qualification/native-care-controller.json",
+      "sha256": "4313c97e118a704cd0f64d989dac503290fa4a7298c6e323aa6376e1165924df"
+    }
+  },
+  "distinctManagedPasses": 259,
+  "focusedPassesIncluded": 19,
+  "nativeGiftProcesses": 6,
+  "nativeCareProcesses": 2,
+  "nativeGiftRoutes": [
+    "keyboard accept",
+    "controller accept",
+    "pointer decline",
+    "all three create and withdraw",
+    "three separate paused reopens"
+  ],
+  "preservation": {
+    "existingTestFilesUnchanged": 490,
+    "testProjectExactExceptTwoAdditiveSourceLinks": true,
+    "frozenSpecsUnchanged": 23,
+    "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "checkpoint": "codex/checkpoint-before-native-gifts-20260929T134834Z",
+    "checkpointVerified": true
+  },
+  "architectureLinksChecked": 118,
+  "limits": "Injected native events and background rendering only; no OS/device/human art acceptance, migration, native archive cut or full phase exit.",
+  "recordedCareInspections": 4
+}

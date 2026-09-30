@@ -549,3 +549,30 @@ to authenticate exact journal command, dose, resource and time effects. Native c
 the preparatory injury/crafting happened natively. See the
 [implementation packet](../implementation/p02/restorative-interface/README.md) for measured qualification
 and remaining lifetime-history, combat, platform and acceptance obligations.
+
+
+## Gifts
+
+Run `python3 tools/play.py --gifts` for the dedicated proposal-capable world at
+`user://worlds/wrens-gifts.sqlite`. It is a fresh profile selection, not an upgrade of earlier saves.
+Open the pack with **I / View**, then choose **Gifts**. Select an exact inventory stack, recipient and
+quantity, then prepare it. Choose an incoming/outgoing offer to inspect or answer it. Browsing and
+preparing send nothing. **Review in Gifts wheel** opens the confirmation surface; **V** also opens
+the wheel and **Q / right shoulder** cycles Actions, Care and Gifts. Gift sectors are Up: create,
+Right: accept, Down: decline, Left: withdraw. **Enter / A / Confirm** commits the selected action.
+
+Offers reserve no stock and expire as world time advances. Acceptance transfers the selected item;
+it does not heal or authorize treatment. Use the Care page separately for your own medicine. Wren
+has an explicit medicine-giving/answering preference; giving requires enough own stock to retain one
+dose and a nearby player who can benefit from a full dose. Reopening supplies the same policy.
+The pack's history control explicitly reads the selected offer's recorded outcome. Full pause allows
+inspection only; a running world's ordinary clock continues while menus are open.
+
+`NativeGiftFixtureTests` exports an earned injury, helper crafting and withdrawn ordinary-care
+permission when `OPENFANTASY_NATIVE_GIFT_FIXTURES` names a fresh directory.
+`tools/check_native_gifts.py --dotnet <path> --godot <path> --fixtures <directory> --output <json>
+--rendered` continues separate copies with keyboard/controller acceptance, pointer decline and
+creation/withdrawal, then reopens each in another paused process. Its manifest feeds
+`NativeGiftResultTests` via `OPENFANTASY_NATIVE_GIFT_RESULTS` to authenticate journal effects.
+Fixtures keep their source saves intact. Injected native controls and background images do not
+establish physical-device, OS-focus, production art, complete gift UX or retained-save migration acceptance.

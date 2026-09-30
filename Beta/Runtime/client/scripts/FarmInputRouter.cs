@@ -59,6 +59,10 @@ internal enum FarmSemanticAction
     UseRestorative,
     RevokeCarePermission,
     NextWheelPage,
+    ProposeMaterial,
+    AcceptMaterial,
+    DeclineMaterial,
+    WithdrawMaterial,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -97,6 +101,12 @@ internal readonly record struct FarmInputSituation(bool SessionOpen, bool Readin
 /// <summary>One discrete device event translated to the routed action names it matches.</summary>
 internal readonly record struct FarmInputSignal(IReadOnlyList<string> Actions, bool Pressed, bool Echo)
 {
+    /// <summary>
+    /// The event is also the native accept action for a visible focused Control, which received the
+    /// press first. Native buttons complete activation only when the matching release reaches them.
+    /// </summary>
+    internal bool FocusedControlAccept { get; init; }
+
     internal static FarmInputSignal Press(params string[] actions) => new(actions, Pressed: true, Echo: false);
     internal static FarmInputSignal Repeat(params string[] actions) => new(actions, Pressed: true, Echo: true);
     internal static FarmInputSignal Release(params string[] actions) => new(actions, Pressed: false, Echo: false);
@@ -160,10 +170,21 @@ internal readonly record struct FarmMovementIntent(long DeltaX, long DeltaY)
 /// Single owner of client input context. Tracks local pause, window focus and availability, decides
 /// the owning layer from those plus the observed world, and enforces that a consumed press, its
 /// release, key auto-repeat and directions held through a context change never reach the world.
+/// Each held press has one owner until its release: the router swallows the release of a press it
+/// took, while a focused pack or wheel Control that took an accept press receives its release.
 /// </summary>
 internal sealed class FarmInputRouter
 {
-    private readonly HashSet<string> _heldActions = new(StringComparer.Ordinal);
+    /// <summary>Who receives the release of a held routed press.</summary>
+    private enum PressOwner
+    {
+        /// <summary>The router took the press; its release is swallowed before the GUI.</summary>
+        Router,
+        /// <summary>A focused panel Control took the press; its release must reach that Control.</summary>
+        Control,
+    }
+
+    private readonly Dictionary<string, PressOwner> _heldActions = new(StringComparer.Ordinal);
     private FarmDirections _heldWhileBlocked;
     private bool _unavailable;
 
@@ -241,7 +262,10 @@ internal sealed class FarmInputRouter
         };
     }
 
-    /// <summary>Routes one device event. Every routed press is consumed, as is the release of a tracked press.</summary>
+    /// <summary>
+    /// Routes one device event. Every routed press is consumed after the GUI has seen it. A release is
+    /// consumed only when the router owned its press; Control-owned and untracked releases propagate.
+    /// </summary>
     internal FarmInputDecision Route(FarmInputSituation situation, FarmInputSignal signal)
     {
         if (signal.Actions.Count == 0)
@@ -257,16 +281,33 @@ internal sealed class FarmInputRouter
         {
             return new FarmInputDecision(ReleaseTracked(signal.Actions), FarmSemanticAction.None);
         }
-        if (signal.Actions.Any(_heldActions.Contains))
+        FarmInputLayer layer = Layer(situation);
+        if (signal.FocusedControlAccept && LeavesAcceptToControl(layer, signal.Actions)
+            && !signal.Actions.Any(action => _heldActions.TryGetValue(action, out PressOwner owner)
+                && owner == PressOwner.Router))
         {
-            // A press without an intervening release duplicates the tracked one.
+            // The focused Control already has this press; it completes activation on the release.
+            foreach (string action in signal.Actions)
+            {
+                _heldActions[action] = PressOwner.Control;
+            }
+            return new FarmInputDecision(Consumed: true, FarmSemanticAction.None);
+        }
+        if (signal.Actions.Any(_heldActions.ContainsKey))
+        {
+            // A press without an intervening release duplicates the tracked one. The router keeps its
+            // release, so a Control release that went missing cannot activate the next focus owner.
+            foreach (string action in signal.Actions.Where(_heldActions.ContainsKey))
+            {
+                _heldActions[action] = PressOwner.Router;
+            }
             return new FarmInputDecision(Consumed: true, FarmSemanticAction.None);
         }
         foreach (string action in signal.Actions)
         {
-            _heldActions.Add(action);
+            _heldActions[action] = PressOwner.Router;
         }
-        FarmSemanticAction requested = Resolve(Layer(situation), signal.Actions);
+        FarmSemanticAction requested = Resolve(layer, signal.Actions);
         if (requested == FarmSemanticAction.Speak && situation.HasEncounterEntry)
             requested = FarmSemanticAction.EnterEncounter;
         if (requested == FarmSemanticAction.Strike && situation.HasCareAcknowledgment)
@@ -301,22 +342,36 @@ internal sealed class FarmInputRouter
         if (Layer(situation) != FarmInputLayer.World) _heldWhileBlocked = input.Held;
     }
 
-    /// <summary>Recover from releases delivered outside the window; held actions still require a fresh press.</summary>
+    /// <summary>
+    /// Recover from releases delivered outside the window; held actions still require a fresh press.
+    /// The router owns every press held across the boundary, so its release activates no Control.
+    /// </summary>
     internal void ReconcileHeldActions(IEnumerable<string> currentlyPressed)
     {
         _heldActions.Clear();
-        _heldActions.UnionWith(currentlyPressed);
+        foreach (string action in currentlyPressed)
+        {
+            _heldActions[action] = PressOwner.Router;
+        }
     }
 
+    /// <summary>Clears every released name; only the release of a router-owned press is swallowed.</summary>
     private bool ReleaseTracked(IReadOnlyList<string> actions)
     {
-        bool tracked = false;
+        bool routerOwned = false;
         foreach (string action in actions)
         {
-            tracked |= _heldActions.Remove(action);
+            if (_heldActions.Remove(action, out PressOwner owner) && owner == PressOwner.Router) routerOwned = true;
         }
-        return tracked;
+        return routerOwned;
     }
+
+    /// <summary>
+    /// Pack and wheel Controls own a native accept press their layer binds to no command, such as
+    /// controller A, which is Talk in ordinary play. A layer command always keeps its press.
+    /// </summary>
+    private static bool LeavesAcceptToControl(FarmInputLayer layer, IReadOnlyList<string> actions) =>
+        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel) && Resolve(layer, actions) == FarmSemanticAction.None;
 
     private static FarmSemanticAction Resolve(FarmInputLayer layer, IReadOnlyList<string> actions)
     {
@@ -365,6 +420,8 @@ internal sealed class FarmInputRouter
             or FarmSemanticAction.Gather or FarmSemanticAction.Craft
             or FarmSemanticAction.Excavate or FarmSemanticAction.Traverse or FarmSemanticAction.EnterEncounter
             or FarmSemanticAction.UseRestorative or FarmSemanticAction.RevokeCarePermission
+            or FarmSemanticAction.ProposeMaterial or FarmSemanticAction.AcceptMaterial
+            or FarmSemanticAction.DeclineMaterial or FarmSemanticAction.WithdrawMaterial
             or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,
         FarmInputLayer.Encounter => action is FarmSemanticAction.Strike or FarmSemanticAction.Wait
             or FarmSemanticAction.ReleaseEncounter or FarmSemanticAction.NextTarget or FarmSemanticAction.ClearTarget,

@@ -1,0 +1,155 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/FarmGiftPanel.cs" id="1"]
+
+[node name="Gifts" type="VBoxContainer"]
+visible = false
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+script = ExtResource("1")
+
+[node name="GiftScroll" type="ScrollContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Content" type="VBoxContainer" parent="GiftScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="Explanation" type="Label" parent="GiftScroll/Content"]
+layout_mode = 2
+text = "Offers reserve no items. Acceptance moves items; healing and treatment permission are separate."
+autowrap_mode = 3
+
+
+[node name="Columns" type="HBoxContainer" parent="GiftScroll/Content"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+
+[node name="Creation" type="VBoxContainer" parent="GiftScroll/Content/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+theme_override_constants/separation = 8
+
+
+[node name="Replies" type="VBoxContainer" parent="GiftScroll/Content/Columns"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.0
+theme_override_constants/separation = 8
+
+
+[node name="NewGift" type="Label" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+text = "Prepare a gift"
+autowrap_mode = 3
+
+
+[node name="StackLabel" type="Label" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+text = "Exact inventory stack"
+autowrap_mode = 3
+
+
+[node name="GiftLot" type="OptionButton" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+unique_name_in_owner = true
+fit_to_longest_item = false
+text = "Choose an exact stack…"
+
+
+[node name="RecipientLabel" type="Label" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+text = "Recipient"
+autowrap_mode = 3
+
+
+[node name="GiftRecipient" type="OptionButton" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+unique_name_in_owner = true
+fit_to_longest_item = false
+text = "Choose a recipient…"
+
+
+[node name="Amount" type="HBoxContainer" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+
+[node name="GiftLess" type="Button" parent="GiftScroll/Content/Columns/Creation/Amount"]
+layout_mode = 2
+unique_name_in_owner = true
+text = "−"
+tooltip_text = "Select one fewer unit. No item is moved."
+
+
+[node name="GiftQuantity" type="Label" parent="GiftScroll/Content/Columns/Creation/Amount"]
+layout_mode = 2
+unique_name_in_owner = true
+size_flags_horizontal = 3
+horizontal_alignment = 1
+text = "1"
+
+
+[node name="GiftMore" type="Button" parent="GiftScroll/Content/Columns/Creation/Amount"]
+layout_mode = 2
+unique_name_in_owner = true
+text = "+"
+tooltip_text = "Select one more unit from this exact stack. No item is moved."
+
+
+[node name="PrepareGift" type="Button" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+unique_name_in_owner = true
+text = "Prepare selected gift"
+tooltip_text = "Capture this stack, recipient, quantity and expiry. Preparation sends nothing."
+
+
+[node name="GiftDraftDetails" type="Label" parent="GiftScroll/Content/Columns/Creation"]
+layout_mode = 2
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "Nothing selected."
+autowrap_mode = 3
+
+
+[node name="SavedOffers" type="Label" parent="GiftScroll/Content/Columns/Replies"]
+layout_mode = 2
+text = "Incoming and outgoing offers"
+autowrap_mode = 3
+
+
+[node name="GiftOffer" type="OptionButton" parent="GiftScroll/Content/Columns/Replies"]
+layout_mode = 2
+unique_name_in_owner = true
+allow_reselect = true
+fit_to_longest_item = false
+text = "Choose an offer…"
+
+
+[node name="GiftOfferDetails" type="Label" parent="GiftScroll/Content/Columns/Replies"]
+layout_mode = 2
+unique_name_in_owner = true
+size_flags_horizontal = 3
+text = "Choose an offer to inspect."
+autowrap_mode = 3
+
+
+[node name="GiftHistory" type="Button" parent="GiftScroll/Content/Columns/Replies"]
+layout_mode = 2
+unique_name_in_owner = true
+text = "Inspect recorded outcome"
+tooltip_text = "Read this exact offer from saved history, including archived outcomes. This may briefly delay the world."
+
+
+[node name="ReviewGifts" type="Button" parent="."]
+layout_mode = 2
+unique_name_in_owner = true
+text = "Review in Gifts wheel"
+tooltip_text = "Close this pack and open the Gifts wheel. Choose a sector and confirm there to commit; opening it sends nothing."
