@@ -1,0 +1,49 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.01] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.70]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.78]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.26]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_fresh_threatened_cargo_world_admits_one_chief_at_the_camp_crossing_with_its_source_attack [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_bandit_chief_record_camp_and_spawner_bind_with_exact_pointers_and_retained_fields [38 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.Composition_is_byte_deterministic_and_never_relabels_another_world [4 s]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.An_edited_monster_record_is_refused_rather_than_reinterpreted [43 ms]
+[xUnit.net 00:01:07.88]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates [FAIL]
+[xUnit.net 00:01:07.89]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:01:07.89]       Expected: WorldActionReceipt { BranchId = 1a5e56b588ecd93dae78357be3197f1a, CommandHash = 07f338e69a86e13d6f687510d255c0a5b7cb9b8e45b51a6ec20b7510b6ecfc76, CommandId = a5d43b9a3be1ea520194f65dc018080d, CommitSequence = 2530, PrincipalId = 2e1777e7e8618bcdbeb58a35c758de6d, ··· }
+[xUnit.net 00:01:07.89]       Actual:   WorldActionReceipt { BranchId = 1a5e56b588ecd93dae78357be3197f1a, CommandHash = 07f338e69a86e13d6f687510d255c0a5b7cb9b8e45b51a6ec20b7510b6ecfc76, CommandId = a5d43b9a3be1ea520194f65dc018080d, CommitSequence = 2530, PrincipalId = 2e1777e7e8618bcdbeb58a35c758de6d, ··· }
+[xUnit.net 00:01:07.89]       Stack Trace:
+[xUnit.net 00:01:07.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatInitiationTests.cs(95,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates()
+[xUnit.net 00:01:07.89]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates [1 m 5 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: WorldActionReceipt { BranchId = 1a5e56b588ecd93dae78357be3197f1a, CommandHash = 07f338e69a86e13d6f687510d255c0a5b7cb9b8e45b51a6ec20b7510b6ecfc76, CommandId = a5d43b9a3be1ea520194f65dc018080d, CommitSequence = 2530, PrincipalId = 2e1777e7e8618bcdbeb58a35c758de6d, ··· }
+Actual:   WorldActionReceipt { BranchId = 1a5e56b588ecd93dae78357be3197f1a, CommandHash = 07f338e69a86e13d6f687510d255c0a5b7cb9b8e45b51a6ec20b7510b6ecfc76, CommandId = a5d43b9a3be1ea520194f65dc018080d, CommitSequence = 2530, PrincipalId = 2e1777e7e8618bcdbeb58a35c758de6d, ··· }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatInitiationTests.cs:line 95
+--- End of stack trace from previous location ---
+[xUnit.net 00:01:18.60]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens [FAIL]
+[xUnit.net 00:01:18.60]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:01:18.60]       Expected: 60
+[xUnit.net 00:01:18.60]       Actual:   78
+[xUnit.net 00:01:18.60]       Stack Trace:
+[xUnit.net 00:01:18.60]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourneyTests.cs(53,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens()
+[xUnit.net 00:01:18.60]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:18.63]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens [1 m 16 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 60
+Actual:   78
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourneyTests.cs:line 53
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 6
+     Passed: 4
+     Failed: 2
+ Total time: 1.3246 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/unit-20261001T182420Z-45ac7/unit.trx

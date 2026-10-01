@@ -1,0 +1,53 @@
+{
+  "status": "completed_integrated_bounded_scope",
+  "taskDirectory": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/corrections",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 5400,
+  "maxBudgetUsd": 30,
+  "foregroundCommandSeconds": 960,
+  "contextSha256": "e1225987c2347727d453508f2ff48cebc3bfe056c55badf186982b1e70d238ef",
+  "sourceHead": "223160eac4fcceae6fe6e6b1a6baa84455c1fb07",
+  "checkpoint": "codex/checkpoint-before-road-threat-corrections-20261001T201043Z",
+  "expectedBenefit": "One coherent repair of reproduced behavior defects, independent journal-authentication finding and missing full native join; lead integrates. No claim of net credit savings.",
+  "providerRetry": false,
+  "startedUtc": "2026-10-01T20:12:39.979925+00:00",
+  "preparedCheckpoint": "codex/checkpoint-road-threat-corrections-prepared-20261001T201238Z",
+  "preparedRevision": "f36d6c0da50add477feb43dc753e31253c6b1b12",
+  "leadProcessSession": 95188,
+  "contextPreflight": "verified",
+  "processExitCode": 0,
+  "elapsedSeconds": 4903.644,
+  "clientCostEstimateUsd": 14.122736199999999,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 214,
+      "outputTokens": 172723,
+      "cacheReadInputTokens": 34377421,
+      "cacheCreationInputTokens": 473992,
+      "webSearchRequests": 0,
+      "costUSD": 14.122736199999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 91418,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextStatus": "verified",
+  "permissionDenials": [],
+  "terminalEvidence": {
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/corrections/run/summary.json": "f00d92d4c9b778a2c864f4b19aa74ee43c81a947d61d1050ae33648bbe4f9d79",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/corrections/run/response.json": "9c4c320d9418c7fd92a57401aa58a9878ba5334acb1d87e6f863e3a24514d024",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/corrections/run/context-postflight.json": "8efc375b51552e6718004166a2a76ab1747d07f2be9bdbb4f2864113034e892c"
+  },
+  "integrationGaps": [
+    "D3 visible chief before contact",
+    "R1 both Outcome continuation proofs",
+    "R5 reading/care/control contrasts",
+    "R6 conflicting host-entry command identity"
+  ],
+  "integrationReview": "lead-integration/INTEGRATION_REVIEW.md",
+  "integrationDisposition": "D1/D2/D3 corrected; R1/R5/R6 boundary proofs added by lead. Existing release-law and other production limitations remain explicit. No model request is active."
+}

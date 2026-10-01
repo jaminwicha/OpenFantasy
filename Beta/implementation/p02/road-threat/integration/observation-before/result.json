@@ -1,0 +1,18 @@
+{
+  "exitCode": 1,
+  "elapsedSeconds": 22.636385042002075,
+  "args": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~RoadThreatObservationRegressionTests",
+    "--logger",
+    "trx;LogFileName=observation.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/integration/observation-before",
+    "-v",
+    "minimal"
+  ]
+}

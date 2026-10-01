@@ -1,0 +1,38 @@
+{
+  "status": "completed_pending_integration",
+  "taskDirectory": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 7200,
+  "maxBudgetUsd": 40,
+  "foregroundCommandSeconds": 960,
+  "contextSha256": "77237af5926e726d66a305e9623d728e4ae41e315bfd11297cd1567070066626",
+  "assignment": "ASSIGNMENT.md",
+  "sourceHead": "223160eac4fcceae6fe6e6b1a6baa84455c1fb07",
+  "ownership": "Scoped application/code/new tests and reference docs; lead owns index, handoff and integration.",
+  "expectedBenefit": "Offload one coherent source-backed road encounter and native/durable cargo integration; no claimed net savings.",
+  "startedUtc": "2026-10-01T18:03:14.438839+00:00",
+  "returnedModelVerification": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 348,
+      "outputTokens": 218610,
+      "cacheReadInputTokens": 56778113,
+      "cacheCreationInputTokens": 513207,
+      "webSearchRequests": 0,
+      "costUSD": 19.834870599999988,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 90130,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextPreflight": "verified",
+  "elapsedSeconds": 5873.884,
+  "clientEstimatedCostUsd": 19.834870599999988,
+  "contextPostflight": "verified",
+  "permissionDenials": [],
+  "providerError": false,
+  "friction": "Worker reports initial ungranted shell listing/read; no permission denial. Acceptance gaps remain under review. No paid retry or substitution."
+}

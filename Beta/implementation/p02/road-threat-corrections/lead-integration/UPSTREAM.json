@@ -1,0 +1,17 @@
+{
+  "status": "committed_synced_verified",
+  "ref": "codex/checkpoint-before-evidence-dependencies-20261001T215445Z",
+  "revision": "92e90400634befe9deec6aceb0893add4a4b0dc7",
+  "files": [
+    "skills/game-verification-loop/SKILL.md",
+    "manifests/delegation-skill-alignment.json"
+  ],
+  "scope": "Relevant source and alignment files were clean; unrelated ecosystem work preserved.",
+  "commit": "ea166ea2ccac682fe1289d59065e6b584d0fab6e",
+  "milestone": "codex/milestone-evidence-dependencies-20261001",
+  "sourceSha256": "0714050f57f450761a86bf3206cab611dc943fa5041cf4c2acf733688d85c744",
+  "installedTargets": 3,
+  "verifiedAlignmentTargets": 71,
+  "backup": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/evidence-dependencies-skill-backup",
+  "validation": "Ten prose lines reviewed; existing frontmatter byte-exact; diff whitespace and all 71 alignment entries pass. The earlier format-validator PyYAML limitation remains; no new executable tooling."
+}

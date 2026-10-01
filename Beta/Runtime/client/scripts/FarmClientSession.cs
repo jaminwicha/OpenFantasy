@@ -5,8 +5,10 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content;
+using OpenFantasy.Hosting.Content.Cargo;
 using OpenFantasy.Hosting.Content.NativeCargo;
 using OpenFantasy.Hosting.Content.Retreat;
+using OpenFantasy.Hosting.Content.RoadThreat;
 using OpenFantasy.Hosting.Simulation;
 using OpenFantasy.Hosting.Simulation.CargoPresentation;
 using OpenFantasy.Hosting.Simulation.Retreat;
@@ -199,6 +201,39 @@ internal sealed class FarmClientSession : IAsyncDisposable
         if (genesis.ProfileVersion != WorldEncounterRetreatAdmission.ProfileVersion || genesis.Revision != 0
             || genesis.AdvancingSteps != 0 || !NativeCargoWorld.IsCargoWorld(genesis))
             throw new InvalidDataException("The retreat fixture requires its fresh retreat-capable cargo genesis.");
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority, retreat: true);
+    });
+
+    /// <summary>
+    /// Explicit fresh selection of the threatened cargo world: the retreat-capable cargo world with the retained camp's
+    /// Bandit Chief. An existing save opens only when it is this same selected world; the plain cargo or retreat world's
+    /// save is never upgraded or read as this one, and this save is never read as theirs.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCargoThreatAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+    {
+        WorldSnapshot genesis = RoadThreatWorldAdmission.CreateEmbedded(seedText, playerName);
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        SqliteWorldAuthority authority = File.Exists(savePath)
+            ? SqliteWorldAuthority.OpenExisting(savePath, WorldSnapshotCodec.Encode(genesis))
+            : SqliteWorldAuthority.CreateNew(savePath, genesis);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority, retreat: true);
+    });
+
+    /// <summary>Continues an exported threatened cargo fixture; the genesis must be its fresh admission with the chief.</summary>
+    internal static Task<FarmClientSession> OpenCargoThreatFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath)) throw new FileNotFoundException("The road-threat fixture requires its existing save.", savePath);
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != WorldEncounterRetreatAdmission.ProfileVersion || genesis.Revision != 0
+            || genesis.AdvancingSteps != 0 || RoadThreatWorldAdmission.Find(genesis, CargoCircuitSources.LoadEmbedded(),
+                RoadThreatSources.LoadEmbedded()) is null)
+            throw new InvalidDataException("The road-threat fixture requires its fresh threatened cargo genesis.");
         SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
         try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
         catch { authority.Dispose(); throw; }

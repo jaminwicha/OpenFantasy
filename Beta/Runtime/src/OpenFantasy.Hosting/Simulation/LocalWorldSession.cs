@@ -37,6 +37,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly LocalMaterialGiftController _materialGifts;
     private readonly LocalTradingController _trading;
     private readonly Retreat.LocalRetreatConfiguration _retreat;
+    private readonly RoadThreat.LocalRoadThreatController _threats;
     private readonly CargoPresentation.LocalRegionObserver? _regions;
     private readonly Task _loop;
     private LocalWorldView _view;
@@ -105,6 +106,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         }
         _authority = authority;
         _playerActorId = playerActorId;
+        _threats = new RoadThreat.LocalRoadThreatController(playerActorId);
         _delivery = delivery;
         _time = timeProvider;
         _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
@@ -408,6 +410,12 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 TickEncounter(state, pending);
                 return;
             }
+            // An eligible hostile entry owns this exploration cutoff even when an ordinary request is waiting, so
+            // submissions cannot keep movement carrying the player through the initiator's reach.
+            if (TickHostileEntry(state, pending))
+            {
+                return;
+            }
             RefuseUnrepresentable(state, state.HasReadingHold ? WorldBatchKind.HeldInteraction : WorldBatchKind.AdvancingStep,
                 ref pending);
             if (state.HasReadingHold && pending is null) { return; }
@@ -471,6 +479,42 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             return;
         }
         CommitSelectedBatch(batch, pending);
+    }
+
+    /// <summary>
+    /// A host resident's admitted hostile opportunity begins at its own lifecycle cutoff, before any exploration step,
+    /// as an ordinary authenticated entry under that resident's control. A proposal the authority would refuse is not
+    /// committed, so a near miss or stale view publishes nothing; the decision is re-derived at the next cutoff.
+    /// The holds that precede this call (pause, retained consequence, care, the player's own lifecycle choice and an
+    /// active encounter) keep their priority, and a reading hold is not an unheld exploration boundary. A waiting
+    /// ordinary request was selected for an exploration step that the committed entry replaced: it receives the
+    /// ordinary boundary refusal at this same cutoff, so nothing of it executes against the encounter and its waiter
+    /// never hangs.
+    /// </summary>
+    private bool TickHostileEntry(WorldSnapshot state, PendingLocalAction? pending)
+    {
+        WorldActionCommand? entry = _threats.SelectEntry(state, () => NewCause(null));
+        if (entry is null)
+        {
+            return false;
+        }
+        var batch = new WorldStepBatch(NewCause(entry.CommandId), state.WorldId, state.BranchId, state.Revision,
+            state.AdvancingSteps, WorldBatchKind.EncounterLifecycle, [], [entry], state.ProfileVersion);
+        WorldStepDecision preview;
+        try { preview = _authority.Preview(batch); }
+        catch (AuthorityDispatchException) { return false; }
+        if (preview.Receipts.Any(receipt => receipt.Rejection != WorldActionRejection.None))
+        {
+            return false;
+        }
+        ClearMovement();
+        CommitSelectedBatch(batch, null);
+        if (pending is not null)
+        {
+            CompletePending(pending, null,
+                new AuthorityDispatchException("A hostile encounter began at this boundary; the exploration action was not selected."));
+        }
+        return true;
     }
 
     private void TickEncounter(WorldSnapshot state, PendingLocalAction? pending)

@@ -46,6 +46,14 @@ public partial class FarmCanvas : Node2D
     /// <summary>The actor node's actual interpolated transform this frame, or null when it is not presented.</summary>
     internal Vector2? ActorTransform(EntityId actorId) => _actors.TryGetValue(actorId, out FarmActorView? view) ? view.Position : null;
 
+    /// <summary>The sprite extent at an observed actor's projected target; absent actors cannot influence framing.</summary>
+    internal Rect2? ProjectedActorSpriteBounds(EntityId actorId) =>
+        _actors.TryGetValue(actorId, out FarmActorView? view) ? view.ProjectedSpriteBounds : null;
+
+    /// <summary>The rendered actor's sprite quad, for post-draw visibility checks against the actual HUD.</summary>
+    internal Rect2? ActorSpriteViewportBounds(EntityId actorId) =>
+        _actors.TryGetValue(actorId, out FarmActorView? view) ? view.SpriteViewportBounds : null;
+
     /// <summary>The terrain the regional layer actually drew last, with its shape, revisions and column choices.</summary>
     internal Cargo.CargoDrawnTerrain? DrawnTerrain => _cargoTerrain.LastDrawn;
 

@@ -52,6 +52,14 @@ internal sealed partial class FarmHud : CanvasLayer
         }
     }
 
+    /// <summary>Whether a whole field sprite clears both the main panels and the overlaid target controls.</summary>
+    internal bool ShowsFieldSprite(Rect2 sprite)
+    {
+        Control targetBar = GetNode<Control>("Root/TargetBar");
+        return FieldViewportBounds.Encloses(sprite)
+            && (!targetBar.IsVisibleInTree() || !targetBar.GetGlobalRect().Intersects(sprite));
+    }
+
     public override void _Ready()
     {
         _identity = GetNode<Label>("%Identity");

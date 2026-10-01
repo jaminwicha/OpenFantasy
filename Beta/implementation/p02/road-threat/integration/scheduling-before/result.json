@@ -1,0 +1,18 @@
+{
+  "exitCode": 1,
+  "elapsedSeconds": 28.289621000003535,
+  "args": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~RoadThreatSchedulingRegressionTests",
+    "--logger",
+    "trx;LogFileName=scheduling.trx",
+    "--results-directory",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/lead-scheduling-before",
+    "-v",
+    "minimal"
+  ]
+}

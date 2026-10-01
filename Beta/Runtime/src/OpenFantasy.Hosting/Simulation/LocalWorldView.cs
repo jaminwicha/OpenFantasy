@@ -62,6 +62,7 @@ public sealed class LocalWorldView
         EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
         EncounterActions = LocalEncounterActionView.Project(state, playerActorId);
         Retreat = Simulation.Retreat.LocalRetreatView.Project(state, playerActorId);
+        RoadThreats = Simulation.RoadThreat.LocalRoadThreatView.Project(state, playerActorId);
         Care = LocalCareView.Project(state, playerActorId, careHelperSelectionOccupied);
         Restorative = LocalRestorativeView.Project(state, playerActorId);
         MaterialProposals = LocalMaterialProposalView.Project(state, playerActorId);
@@ -175,6 +176,14 @@ public sealed class LocalWorldView
     /// </summary>
     [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
     public Simulation.Retreat.LocalRetreatView? Retreat { get; }
+
+    /// <summary>
+    /// Hostile opportunities against the player that the player currently observes (same floor, clear sightline,
+    /// within the three-cell interaction bound), or null when the world admits none; like Retreat it is omitted from
+    /// the public encoding when null, so worlds without a threat keep their exact public view.
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    public IReadOnlyList<Simulation.RoadThreat.LocalRoadThreatView>? RoadThreats { get; }
     public LocalCareView? Care { get; }
     public LocalRestorativeView? Restorative { get; }
     public LocalMaterialProposalView? MaterialProposals { get; }

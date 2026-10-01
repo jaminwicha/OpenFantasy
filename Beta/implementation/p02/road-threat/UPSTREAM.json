@@ -1,0 +1,22 @@
+{
+  "beforeRef": "codex/checkpoint-before-projection-compatibility-20261001T200741Z",
+  "beforeRevision": "80e0d736c2858533b2931ebfa3d138a34abe7c58",
+  "files": [
+    "skills/game-verification-loop/SKILL.md",
+    "manifests/delegation-skill-alignment.json"
+  ],
+  "sourceBeforeSha256": "3b9449d68d5c5e3843be76881c28a2c515cb3dcb18479fee6a864bd3c3e71a75",
+  "sourceAfterSha256": "0198491c3b4637aca8573986efdfef0e86f6d460419a09ee4e6844f7faf8ba6d",
+  "plan": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/upstream-apply-plan.json",
+  "status": "committed_synced_verified",
+  "commit": "92e90400634befe9deec6aceb0893add4a4b0dc7",
+  "milestone": "codex/milestone-public-projection-compatibility-20261001",
+  "installedTargets": 3,
+  "verifiedAlignmentTargets": 71,
+  "validator": {
+    "exitCode": 1,
+    "output": "Traceback (most recent call last):\n  File \"/Users/alucinor/.codex/skills/.system/skill-creator/scripts/quick_validate.py\", line 10, in <module>\n    import yaml\nModuleNotFoundError: No module named 'yaml'\n",
+    "manual": "Existing YAML frontmatter is byte-identical; narrow five-line prose addition checked. No new scripts."
+  },
+  "backup": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/upstream-applied-backup"
+}

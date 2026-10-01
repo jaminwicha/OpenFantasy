@@ -124,5 +124,10 @@ One coordinated complete-resident episode with exactly two positive sides. The r
 combatant of its side, living or downed; a party retreat or rescue is refused rather than leaving allies behind.
 Because an episode's combatants are its authority-derived scenario's, an ally or third side can only come from an
 authored scenario. Bystanders keep side zero, bodies and identities. Opponents have no pursuit movement in this interpretation. Terrain ground only; stepped or
-construction-supported ground, independent pockets, joining/merging, outside hazards admitted during a retreat,
-multiplayer and a corridor threat are not part of this binding.
+construction-supported ground, independent pockets, joining/merging, outside hazards admitted during a retreat and
+multiplayer are not part of this binding.
+
+The [road threat](road-threat.md) composes this law unchanged with a host-initiated scenario. Its entry range equals
+the opponent's attack reach, which is always less than the clear-of-contact distance (reach + 256), so a completed
+retreat cannot be followed by an automatic re-entry from the same stance; only walking back within reach starts a new
+episode. That relation is a property of the authored scenario, not a cooldown or a hidden host memory.

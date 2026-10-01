@@ -62,7 +62,10 @@ action does not make that person disappear or silently select an opponent.
 ## Presentation and persistence
 
 [FarmEncounterStatus](../../client/scripts/FarmEncounterStatus.cs) explains whether the world awaits a
-choice, is resolving/recovering, has reached outcome or is explicitly paused. A successful queue receipt
+choice, is resolving/recovering, has reached outcome or is explicitly paused. In exploration it also leads with the most
+urgent observed [road threat](road-threat.md) warning (`RoadThreatWarning`), with level, HP, reach and distance in the
+tooltip; the warning reads only the published threat view, which carries only a threat the player observes (three
+cells, same floor, clear sightline), and grants no command. A successful queue receipt
 means a choice was accepted, not that damage happened. [FarmActorView](../../client/scripts/Presentation/FarmActorView.cs)
 reacts to a decrease in observed HP using sprite-local tint/motion and a damage label. It never changes
 world position, anatomy or timing. A newly created view establishes its current HP baseline without

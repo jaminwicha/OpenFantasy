@@ -1,0 +1,17 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:03.70]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition [1 s]
+  Error Message:
+   Assert.Empty() Failure: Collection was not empty
+Collection: [LocalRoadThreatView { ActorId = a96ff9ede228931c9d464e59c612b210, Name = Bandit Chief, Level = 7, CurrentHp = 800, MaximumHp = 800, ScenarioId = 4ed53f91fcd770cca298ad8e730277a0, ScenarioName = Bandit Chief at the camp crossing, ReachSubunits = 400, DistanceSubunits = 63077, State = Watching, ReachCells = 1.5625, DistanceCells = 246.39453125 }]
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatObservationRegressionTests.cs:line 17
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/integration/observation-before/observation.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 1 s - OpenFantasy.Hosting.Tests.dll (net8.0)

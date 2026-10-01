@@ -1,0 +1,27 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T215358Z-a0863
+{
+  "kind": "road-native",
+  "limitSeconds": 900,
+  "preservationBefore": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/build-20261001T215240Z-c5ba8/report.json",
+  "buildReportSha256": "61525dcd97bf3b2ed7a6ca339df9f38a2869fd84cb7478f7115f61cd3e357138",
+  "fixtureReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/report.json",
+  "fixtureReportSha256": "19f20263c0d6466a6fd011ddcc676f824a5f516a781fd59331295fdd7e638749",
+  "roadReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T215358Z-a0863/road.json",
+  "roadReportSha256": "18bc474446cef58ab47bf4c1bc9b98486ad284095625e15473f2c8f379098a6b",
+  "roadAuthenticationManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/native-manifest.json",
+  "preservationAfter": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "elapsedSeconds": 386.961,
+  "sourceUnchanged": true,
+  "accepted": true
+}

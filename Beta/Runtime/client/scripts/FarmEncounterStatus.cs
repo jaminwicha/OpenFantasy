@@ -7,6 +7,8 @@ namespace OpenFantasy.Client;
 /// <summary>Explains authoritative encounter time and visible condition without owning either.</summary>
 internal sealed class FarmEncounterStatus(Label label)
 {
+    private sealed record LocalRoadThreatViewLine(string Line, string Detail);
+
     internal void Present(LocalWorldView view, bool paused)
     {
         label.Visible = view.EncounterLifecycle is not null;
@@ -35,8 +37,12 @@ internal sealed class FarmEncounterStatus(Label label)
         string opponents = string.Join(" · ", view.EncounterActors.Where(actor => actor.Side != 0 && actor.Side != own?.Side)
             .Select(actor => view.Actors.Single(person => person.ActorId == actor.ActorId).DisplayName
                 + (actor.IsIncapacitated ? " · incapacitated" : $" · HP {actor.CurrentHp}/{actor.MaximumHp}")));
-        label.Text = status + (opponents.Length == 0 ? "" : "\n" + opponents);
-        label.TooltipText = $"Remaining recovery: {lifecycle.PlayerRecoveryDelay / 100.0:0.##} seconds of advancing world time. "
+        // An observed hostile opportunity is announced before contact; reading it grants and sends nothing.
+        LocalRoadThreatViewLine? danger = lifecycle.Phase == EncounterLifecyclePhase.Exploration
+            && RoadThreatWarning.Urgent(view) is { } threat ? new(RoadThreatWarning.Line(threat), RoadThreatWarning.Detail(threat)) : null;
+        label.Text = (danger is null ? "" : danger.Line + "\n") + status + (opponents.Length == 0 ? "" : "\n" + opponents);
+        label.TooltipText = (danger is null ? "" : danger.Detail + "\n")
+            + $"Remaining recovery: {lifecycle.PlayerRecoveryDelay / 100.0:0.##} seconds of advancing world time. "
             + "Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.";
     }
 

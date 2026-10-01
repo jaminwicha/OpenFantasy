@@ -38,11 +38,23 @@ public static class CargoWorldAdmission
         Compose(RestorativeJourneyAdmission.CreateEmbedded(seedText, playerName), CargoCircuitSources.LoadEmbedded());
 
     /// <summary>Admits the circuit into an unplayed ordinary-care root; a played or other interpretation is refused.</summary>
-    public static WorldSnapshot Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources)
+    public static WorldSnapshot Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources) =>
+        Compose(ordinaryCareGenesis, sources, null);
+
+    /// <summary>
+    /// The same composition with an optional further fresh genesis extension (for example the road threat's camp
+    /// resident) applied to the unplayed extended root before paid exchange and the counters are admitted.
+    /// </summary>
+    internal static WorldSnapshot Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources,
+        Func<WorldSnapshot, WorldSnapshot>? extendGenesis)
     {
         ArgumentNullException.ThrowIfNull(ordinaryCareGenesis);
         ArgumentNullException.ThrowIfNull(sources);
         WorldSnapshot extended = new CargoGenesisExtension(ordinaryCareGenesis, sources).Build();
+        if (extendGenesis is not null)
+        {
+            extended = extendGenesis(extended);
+        }
         WorldSnapshot paid = WorldPaidExchangeAdmission.CreateFresh(extended);
         CountedItemDefinition rations = CargoGenesisExtension.RationDefinition(paid);
         MarketBinding origin = Bind(paid, sources.Origin, rations, CargoCircuitPolicy.BrasshollowRations());

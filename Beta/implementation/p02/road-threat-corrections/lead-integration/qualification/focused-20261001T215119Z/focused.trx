@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="43203403-ed4c-48b2-ba2d-8017a2013aaf" name="@mac 2026-10-01 16:51:37" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T16:51:37.5967730-05:00" queuing="2026-10-01T16:51:37.5967730-05:00" start="2026-10-01T16:51:33.2577150-05:00" finish="2026-10-01T16:51:43.5966040-05:00" />
+  <TestSettings name="default" id="e149351a-ad21-442b-9f63-bbd83272e01b">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_16_51_37" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a667ccb6-1a7f-4e3d-9e64-69b99a498aa0" testId="33b2eda8-9147-8b30-4fba-48f4501a693c" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.An_actual_reading_hold_defers_a_ready_in_reach_chief_until_the_cutoff_after_closing" computerName="mac" duration="00:00:01.2130060" startTime="2026-10-01T16:51:42.3170430-05:00" endTime="2026-10-01T16:51:43.5301560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a667ccb6-1a7f-4e3d-9e64-69b99a498aa0" />
+    <UnitTestResult executionId="cd670a41-348d-464e-8650-d0e4b41856cd" testId="0f13985e-c173-85d2-0a87-cf1ae0890605" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_saved_host_entry_retries_exactly_but_conflicting_content_and_player_control_are_refused" computerName="mac" duration="00:00:01.1827753" startTime="2026-10-01T16:51:41.1332200-05:00" endTime="2026-10-01T16:51:42.3160730-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd670a41-348d-464e-8650-d0e4b41856cd" />
+    <UnitTestResult executionId="98d33d29-b0ce-4ee1-820a-d7b9e0e7f1c4" testId="eef4087f-a30a-2971-a3b6-90b5340ae6ba" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_and_its_resumed_encounter_hold_back_a_nearby_chief" computerName="mac" duration="00:00:03.5636432" startTime="2026-10-01T16:51:37.5681840-05:00" endTime="2026-10-01T16:51:41.1319410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98d33d29-b0ce-4ee1-820a-d7b9e0e7f1c4" />
+    <UnitTestResult executionId="6d8ac66d-62f0-4496-a74f-f5482eb19c60" testId="bc48e8c7-336d-0378-379d-ff7f2fdabb52" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_wounded_host_initiator_can_lose_but_neither_survivor_nor_incapacitated_initiator_can_release" computerName="mac" duration="00:00:02.6195266" startTime="2026-10-01T16:51:34.9332380-05:00" endTime="2026-10-01T16:51:37.5601080-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6d8ac66d-62f0-4496-a74f-f5482eb19c60" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_and_its_resumed_encounter_hold_back_a_nearby_chief" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="eef4087f-a30a-2971-a3b6-90b5340ae6ba">
+      <Execution id="98d33d29-b0ce-4ee1-820a-d7b9e0e7f1c4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="Genuine_aftermath_care_and_its_resumed_encounter_hold_back_a_nearby_chief" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_saved_host_entry_retries_exactly_but_conflicting_content_and_player_control_are_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0f13985e-c173-85d2-0a87-cf1ae0890605">
+      <Execution id="cd670a41-348d-464e-8650-d0e4b41856cd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="A_saved_host_entry_retries_exactly_but_conflicting_content_and_player_control_are_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.An_actual_reading_hold_defers_a_ready_in_reach_chief_until_the_cutoff_after_closing" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="33b2eda8-9147-8b30-4fba-48f4501a693c">
+      <Execution id="a667ccb6-1a7f-4e3d-9e64-69b99a498aa0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="An_actual_reading_hold_defers_a_ready_in_reach_chief_until_the_cutoff_after_closing" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_wounded_host_initiator_can_lose_but_neither_survivor_nor_incapacitated_initiator_can_release" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bc48e8c7-336d-0378-379d-ff7f2fdabb52">
+      <Execution id="6d8ac66d-62f0-4496-a74f-f5482eb19c60" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="A_wounded_host_initiator_can_lose_but_neither_survivor_nor_incapacitated_initiator_can_release" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="33b2eda8-9147-8b30-4fba-48f4501a693c" executionId="a667ccb6-1a7f-4e3d-9e64-69b99a498aa0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0f13985e-c173-85d2-0a87-cf1ae0890605" executionId="cd670a41-348d-464e-8650-d0e4b41856cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eef4087f-a30a-2971-a3b6-90b5340ae6ba" executionId="98d33d29-b0ce-4ee1-820a-d7b9e0e7f1c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc48e8c7-336d-0378-379d-ff7f2fdabb52" executionId="6d8ac66d-62f0-4496-a74f-f5482eb19c60" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.43]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.98]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.16]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:09.82]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

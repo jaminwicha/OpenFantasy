@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="714c410c-204b-4e17-8aec-c6ae22e0a155" name="@mac 2026-10-01 14:53:59" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T14:53:59.2104560-05:00" queuing="2026-10-01T14:53:59.2104560-05:00" start="2026-10-01T14:53:54.7570630-05:00" finish="2026-10-01T14:53:59.2150860-05:00" />
+  <TestSettings name="default" id="78ae6624-c6dd-4915-a325-8304e1faed8d">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_14_53_59" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="9ebec57d-467f-4cfe-9641-80874d30d34e" testId="9caafc58-f6e3-125c-9c29-82aac3539ae5" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition" computerName="mac" duration="00:00:01.3775154" startTime="2026-10-01T14:53:57.6435750-05:00" endTime="2026-10-01T14:53:59.0593250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ebec57d-467f-4cfe-9641-80874d30d34e">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Empty() Failure: Collection was not empty
+Collection: [LocalRoadThreatView { ActorId = a96ff9ede228931c9d464e59c612b210, Name = Bandit Chief, Level = 7, CurrentHp = 800, MaximumHp = 800, ScenarioId = 4ed53f91fcd770cca298ad8e730277a0, ScenarioName = Bandit Chief at the camp crossing, ReachSubunits = 400, DistanceSubunits = 63077, State = Watching, ReachCells = 1.5625, DistanceCells = 246.39453125 }]</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatObservationRegressionTests.cs:line 17
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9caafc58-f6e3-125c-9c29-82aac3539ae5">
+      <Execution id="9ebec57d-467f-4cfe-9641-80874d30d34e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests" name="The_distant_farm_does_not_disclose_the_camp_chiefs_condition" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9caafc58-f6e3-125c-9c29-82aac3539ae5" executionId="9ebec57d-467f-4cfe-9641-80874d30d34e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.70]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.97]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.22]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.70]       Assert.Empty() Failure: Collection was not empty
+[xUnit.net 00:00:03.70]       Collection: [LocalRoadThreatView { ActorId = a96ff9ede228931c9d464e59c612b210, Name = Bandit Chief, Level = 7, CurrentHp = 800, MaximumHp = 800, ScenarioId = 4ed53f91fcd770cca298ad8e730277a0, ScenarioName = Bandit Chief at the camp crossing, ReachSubunits = 400, DistanceSubunits = 63077, State = Watching, ReachCells = 1.5625, DistanceCells = 246.39453125 }]
+[xUnit.net 00:00:03.70]       Stack Trace:
+[xUnit.net 00:00:03.70]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatObservationRegressionTests.cs(17,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition()
+[xUnit.net 00:00:03.71]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.71]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.72]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T14:53:59.1001040-05:00">
+        <Text>[xUnit.net 00:00:03.70]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

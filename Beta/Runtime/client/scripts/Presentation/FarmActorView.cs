@@ -26,6 +26,19 @@ internal partial class FarmActorView : Node2D
     /// <summary>The canvas position this view was last told to show; interpolation only eases towards it.</summary>
     internal Vector2 ProjectedTarget => _target;
 
+    /// <summary>The sprite's stable bounds at its observed target, excluding transient damage motion.</summary>
+    internal Rect2 ProjectedSpriteBounds
+    {
+        get
+        {
+            Rect2 sprite = _sprite.GetRect();
+            return new Rect2(_target + sprite.Position * _sprite.Scale, sprite.Size * _sprite.Scale);
+        }
+    }
+
+    /// <summary>The actual sprite quad in viewport coordinates, including interpolation and camera framing.</summary>
+    internal Rect2 SpriteViewportBounds => _sprite.GetGlobalTransformWithCanvas() * _sprite.GetRect();
+
     internal void Setup(FarmActorFrame actor, FarmVisualAssets assets)
     {
         TextureFilter = TextureFilterEnum.Nearest;

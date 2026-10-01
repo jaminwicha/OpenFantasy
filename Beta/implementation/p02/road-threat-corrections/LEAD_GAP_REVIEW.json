@@ -1,0 +1,33 @@
+{
+  "status": "lead_review_of_in_progress_delivery",
+  "utc": "2026-10-01T21:10:27.693593+00:00",
+  "workerStillOwnsRuntime": true,
+  "sourceSha256": {
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/RoadThreat/NativeRoadThreatResultTests.cs": "de5d9476fec6dae37ed4a18f9dc4f14b4b1f98888922097d083bb2f1db4efae9",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatBoundaryTests.cs": "ce92948b656fa707b805b305ff497ef16e9ddf80c7246050f9b602651ba213e4",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatInitiationTests.cs": "5c2c6d1bff566793654f957e3131ae299a24da17385c6c41b4a1581ee5ba3ce5"
+  },
+  "findings": [
+    {
+      "id": "D1",
+      "finding": "The inspected native authentication now replays the complete journal, checks the exact player command shape through cancellation and retreat, counts active-retreat EncounterResolution movement with due-actor/tactical-advance checks, binds the final sample to the recorded sequence, and verifies exact final feet and cargo interval/parties. Final source/evidence review remains required."
+    },
+    {
+      "id": "D3",
+      "finding": "The green native warning still reports ChiefInField=false. LEAD_VISUAL_FINDING.json contains reviewed screenshots and hashes. Correct actual sprite framing and require visible post-draw bounds before acceptance."
+    },
+    {
+      "id": "R1",
+      "finding": "The inspected new boundary test proves player incapacitation and Outcome reopening/refusal. It does not prove the opposite Outcome with the NPC initiator incapacitated. The disposition requires both; a declared admitted fresh calibration may exercise the law without claiming ordinary victory balance or fabricating lived history."
+    },
+    {
+      "id": "R5",
+      "finding": "The inspected correction tests establish production selection/refusal and readiness/reentry. Genuine reading/care holds at the hostile-entry boundary still need the required evidence."
+    },
+    {
+      "id": "R6",
+      "finding": "The inspected initiation test retains player-forged-entry refusal and exact strike retry. A conflicting-identity contrast for the new host-entry boundary is not yet evidenced here."
+    }
+  ],
+  "nextAction": "Wait for terminal external result and context postflight before modifying Runtime; then preserve delivery and close concrete integration gaps. Do not weaken source stats, release law, old assertions or deadlines."
+}

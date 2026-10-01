@@ -1,0 +1,106 @@
+{
+  "status": "passed",
+  "requestedModes": [
+    "build",
+    "fixtures",
+    "road-native",
+    "road-auth",
+    "unit",
+    "native",
+    "native-auth"
+  ],
+  "results": [
+    {
+      "mode": "build",
+      "command": [
+        "python3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/run_checks.py",
+        "build"
+      ],
+      "exitCode": 0,
+      "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/chain-20261001T215240Z/build.log",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/build-20261001T215240Z-c5ba8/report.json",
+      "reportSha256": "61525dcd97bf3b2ed7a6ca339df9f38a2869fd84cb7478f7115f61cd3e357138",
+      "elapsedSeconds": 11.123
+    },
+    {
+      "mode": "fixtures",
+      "command": [
+        "python3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/run_checks.py",
+        "fixtures"
+      ],
+      "exitCode": 0,
+      "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/chain-20261001T215240Z/fixtures.log",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/report.json",
+      "reportSha256": "19f20263c0d6466a6fd011ddcc676f824a5f516a781fd59331295fdd7e638749",
+      "elapsedSeconds": 66.768
+    },
+    {
+      "mode": "road-native",
+      "command": [
+        "python3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/run_checks.py",
+        "road-native"
+      ],
+      "exitCode": 0,
+      "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/chain-20261001T215240Z/road-native.log",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T215358Z-a0863/report.json",
+      "reportSha256": "d627d6c5c25a8f6f0d6e8d88b823e0c5f52c14c1ef6525a1460761dd12a87451",
+      "elapsedSeconds": 386.961
+    },
+    {
+      "mode": "road-auth",
+      "command": [
+        "python3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/run_checks.py",
+        "road-auth"
+      ],
+      "exitCode": 0,
+      "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/chain-20261001T215240Z/road-auth.log",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-auth-20261001T220026Z-d24a9/report.json",
+      "reportSha256": "00c5de5fb683e0d4e6b3152f3f0616f0973765b817e6faf439125a2289011fb3",
+      "elapsedSeconds": 42.808
+    },
+    {
+      "mode": "unit",
+      "command": [
+        "python3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/run_checks.py",
+        "unit"
+      ],
+      "exitCode": 0,
+      "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/chain-20261001T215240Z/unit.log",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/unit-20261001T220110Z-a51c9/report.json",
+      "reportSha256": "5691ef792a49258f4fd0c8606ff48b28e8ed9cfa85872954e3ffa0141334ebfb",
+      "elapsedSeconds": 179.751
+    },
+    {
+      "mode": "native",
+      "command": [
+        "python3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/run_checks.py",
+        "native"
+      ],
+      "exitCode": 0,
+      "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/chain-20261001T215240Z/native.log",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-20261001T220410Z-3ac08/report.json",
+      "reportSha256": "a0e65688789dbae5da739cf4e477609932d27f59b8f4391478eb6588843dd5e9",
+      "elapsedSeconds": 63.851
+    },
+    {
+      "mode": "native-auth",
+      "command": [
+        "python3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/run_checks.py",
+        "native-auth"
+      ],
+      "exitCode": 0,
+      "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/chain-20261001T215240Z/native-auth.log",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-auth-20261001T220514Z-a96e0/report.json",
+      "reportSha256": "69fd00ad4dfb327abcc74ee7166a123dc204d83c00dfc827ce750239afd26621",
+      "elapsedSeconds": 13.96
+    }
+  ],
+  "elapsedSeconds": 768.7242791249882
+}

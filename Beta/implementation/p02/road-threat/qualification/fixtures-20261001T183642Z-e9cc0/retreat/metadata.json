@@ -1,0 +1,23 @@
+{
+  "Kind": "native-retreat-fixture-v1",
+  "ProfileVersion": 34,
+  "SeedText": "native-retreat-fixture",
+  "PlayerName": "Traveler",
+  "Setup": "Fresh retreat-capable cargo world; Wren\u0027s quest reward earned, one ration bought from Marla in person, the lot carried back beside the first wolf at ordinary session cutoffs. Native begins paused in exploration.",
+  "WorldId": "bc38954d0723ff64dfa7953c1daaf5e5",
+  "BranchId": "49dd3b24c252731a38f902c668449fdf",
+  "GenesisHash": "9727ddc97f66bf5fd24b8f450ea9d897eedb456276514e1e34daf89758b3ce75",
+  "BeforeHash": "9699b5bcabcbed89442212ac4b86993ea7f7b287d40c827bdd0db2d63cd423a9",
+  "BeforeRevision": 454,
+  "BeforeAdvancingSteps": 451,
+  "PlayerActorId": "71f5fa372b63c9229a886168930ccf64",
+  "WolfActorId": "d9e4fa77c9fa0d23080091e728c52cc2",
+  "ScenarioId": "f8e449fb8e29070bca8cc4bf04b04eb4",
+  "MarlaActorId": "3bcbdb847257169359ad8e0a41d09640",
+  "MarlaMarketId": "c1877141e25552f409874f99e73d87f7",
+  "CarriedLotId": "1d53830058a74eff2867a4c16df6900b",
+  "RewardCurrency": 200,
+  "PaidCurrency": 20,
+  "PlayerBalance": 180,
+  "Limits": "Fresh retreat-capable cargo world only: no retained-save migration, bandit-camp threat, party retreat, pursuit, physical device or human acceptance claim."
+}

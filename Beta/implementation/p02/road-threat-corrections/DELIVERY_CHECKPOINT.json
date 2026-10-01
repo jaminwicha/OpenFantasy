@@ -1,0 +1,9 @@
+{
+  "ref": "codex/checkpoint-road-threat-corrections-delivered-20261001T213538Z",
+  "revision": "e5facac98951dbc3d280d12c4de35204bf19013a",
+  "sourceHead": "223160eac4fcceae6fe6e6b1a6baa84455c1fb07",
+  "status": "work_in_progress_not_accepted",
+  "scope": "All relevant tracked and non-ignored new Beta work, delivered corrections, source-pinned reviews, qualification evidence and future outcome investigation; excludes unrelated staged predecessor changes.",
+  "verification": "All 15 worker modes pass. D3 visible actor and R1/R5/R6 integration proofs remain open. Native/background evidence is not human/device/production acceptance.",
+  "restore": "Inspect this immutable ref or recover selected Beta paths from it; do not reset the shared checkout or unrelated index."
+}

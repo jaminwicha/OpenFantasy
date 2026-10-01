@@ -1,0 +1,145 @@
+{
+  "checkpoint": "48fb19e176255e5a3c20fd9d92900814df7e5be4",
+  "files": [
+    {
+      "path": "Beta/Runtime/README.md",
+      "sha256": "4a36177a32478b3fc3b7b17af9925e4ade9034030bd15b3d7a57db9b2b01b9af"
+    },
+    {
+      "path": "Beta/Runtime/client/scenes/NativeRoadThreat.tscn",
+      "sha256": "0121a97763bd24c4c85bc8fa6924adafef566f65d9ae5cf794af57b93ea44fa1"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmClientSession.cs",
+      "sha256": "38ef94a3aae4e4dc5bc6f07c79723430fc31c089321ae3e072b0686d84bd1d50"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmEncounterStatus.cs",
+      "sha256": "dab225baf0fea4c4f2b9f0d46e5281984c9ebf14a729722f72f58b0728971fd8"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/FarmGame.Cargo.cs",
+      "sha256": "b64244558b3730dd3dafb60ceddcd2fc202a5ba5d48218d9960f6b0ceac5beb5"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/RoadThreat/NativeRoadThreatEntry.cs",
+      "sha256": "95068f6df5e1e059d7ac710cb1c787fb0b8aaf7de8573152f5c10dfd59312e28"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/RoadThreat/NativeRoadThreatEntry.cs.uid",
+      "sha256": "772e050bc380519aff3a820f29dbd48dfd3f680d69519a166f2e2fc009cdf90f"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs",
+      "sha256": "bbbce4b19d420b4c32d88bb3872d33a9eaa0dcdad38935deed52d8b296cce204"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs.uid",
+      "sha256": "ce09766fd4c54b4e8e5c13a71efd7080b3f0cc22019ff99caebadde69c630f71"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/RoadThreat/RoadThreatWarning.cs",
+      "sha256": "cef0445016232e615ca7fce7c8a552d482c11281f92a53bb811b152aa1f35cdb"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/RoadThreat/RoadThreatWarning.cs.uid",
+      "sha256": "849cd6699ff3f731508d2b371983e50b72dd0332def83e7f488251651597c923"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/README.md",
+      "sha256": "bfe4afda464830fcb5abebb3ec15ab7846d97aa1bd12704c4ffb6cd5d12108d3"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/cargo-circuit.md",
+      "sha256": "7f226df8ad77b58fdb90ff1dc7bdae3ab5992643099c4660f45555335146da8e"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/cargo-presentation.md",
+      "sha256": "61bd8aa0570ebc8365ad054de7ea97271e5b1436c47dceb2802cc660a0061f8e"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/encounter-lifecycle.md",
+      "sha256": "b0c7bd1e5425145b9f6e34076d56aced231833d948701a1712e4b9146798a114"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/encounter-retreat.md",
+      "sha256": "612a6ad473f03315276098ba91de479c9613e9a8a61a0e7aedbd95622a151f9e"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/native-encounters.md",
+      "sha256": "fe24be9ef1b1ae36ff970eebb83528d0f6a9cd6b4f1827d83ef8dd8531b1f508"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/road-threat.md",
+      "sha256": "e61587b83af9a5955f39fea07a559a506f5d611011a7bac33dd788ad70ef90d5"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoGenesisExtension.cs",
+      "sha256": "bb40175f526100480d1b2f20bb30cf7d17c46fedb41ebf5c10b45bac5a175b69"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWaterRebinding.cs",
+      "sha256": "c0c1a58e01a30e9d834a4bc9f5d78a4fd250e8e86d60e6e7bfe9acf52435e8df"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs",
+      "sha256": "c79c0a3b86eefd4de81850981c1debeb953096fa77156b42ad3e8c1a58924ecc"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatGenesisExtension.cs",
+      "sha256": "6bb76f5f5811d75a9d8a81e38f20c15ca48ceb0dacf66698d1fc3c524ec80fd3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatSources.cs",
+      "sha256": "acc7541a5d09afd15e652bd13928b87ad3b4ac17bb350be29f49dc708cc081d7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs",
+      "sha256": "3c5b5a753eff4a5e6a2fbb8ae5d7c9584d9400ce9fbaddbffff2c3ef06b0524c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+      "sha256": "a4a2f65dfe53060155a5db1cc1aaa1b090b002bc5d706dbc2c73a6169f4263b7"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs",
+      "sha256": "8899b45abe94aa4027d06f4859ecf51398e2c3a7aa12d4976442d657b99eb77f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/RoadThreat/LocalRoadThreatController.cs",
+      "sha256": "5ace95528907cb65d8adffe99ae2a3708fcc44539dc7616dc143336799ae859f"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/RoadThreat/LocalRoadThreatView.cs",
+      "sha256": "546fd7351b3b8466ebffc80293b94a9115017815d1a3174a2f3d1883cce90fdf"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/RoadThreat/NativeRoadThreatFixtureTests.cs",
+      "sha256": "7824aa893e8706a083c31ae57acb905827045d96bf845e3bbe71115c1f2011ea"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/RoadThreat/NativeRoadThreatResultTests.cs",
+      "sha256": "3b9c675841df9d432575bb04b96f8caa863ebdb050f081ca2a4414a7a70c86d4"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/RoadThreat/RoadThreatAdmissionTests.cs",
+      "sha256": "60bc5943c3ecb4568827ac93878c429a6abf8b554965782780cd058f61f4034d"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatInitiationTests.cs",
+      "sha256": "25340470a0477913a756ca85e3bb569a42d52393cf40b4029ccf68ed624ccd99"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs",
+      "sha256": "2e548e597924237aceab3372bcb19ac16b287d0a5c92f931cec7c7bbac6eb647"
+    },
+    {
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourneyTests.cs",
+      "sha256": "e7ebaff7c72d2c21476419202c78582e70a207b789b955aafcb58c981fa2c2f1"
+    },
+    {
+      "path": "Beta/Runtime/tools/check_native_road_threat.py",
+      "sha256": "48d37660ab24f2f0ed46c8841516617011f01db02a1baae488db8a130fc2959a"
+    }
+  ]
+}

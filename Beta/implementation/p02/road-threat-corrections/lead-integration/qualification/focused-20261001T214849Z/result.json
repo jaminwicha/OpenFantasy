@@ -1,0 +1,22 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "-m:1",
+    "-p:UseSharedCompilation=false",
+    "--filter",
+    "FullyQualifiedName~RoadThreatIntegrationContractTests",
+    "--logger",
+    "console;verbosity=detailed",
+    "--logger",
+    "trx;LogFileName=focused.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/focused-20261001T214849Z"
+  ],
+  "exitCode": 1,
+  "elapsedSeconds": 76.56995204200211,
+  "testSha256": "b1cc4e7660057f6220bf25b363a97832e7184a7b69db097208e7a17818620b5c",
+  "testUnchanged": true
+}

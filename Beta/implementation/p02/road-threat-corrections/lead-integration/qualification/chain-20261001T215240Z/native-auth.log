@@ -1,0 +1,27 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-auth-20261001T220514Z-a96e0
+{
+  "kind": "native-auth",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/build-20261001T215240Z-c5ba8/report.json",
+  "buildReportSha256": "61525dcd97bf3b2ed7a6ca339df9f38a2869fd84cb7478f7115f61cd3e357138",
+  "nativeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-20261001T220410Z-3ac08/report.json",
+  "nativeReportSha256": "a0e65688789dbae5da739cf4e477609932d27f59b8f4391478eb6588843dd5e9",
+  "outcomes": {
+    "Passed": 1
+  },
+  "preservationAfter": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "elapsedSeconds": 13.96,
+  "sourceUnchanged": true,
+  "accepted": true
+}

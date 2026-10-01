@@ -1,0 +1,60 @@
+{
+  "Kind": "native-road-threat-v1",
+  "Mode": "reopen",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-threat-probe",
+  "OpeningSeconds": 6.193,
+  "ProbeMilliseconds": 6255,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Start": "farm",
+  "Reward": null,
+  "Purchase": null,
+  "Unobserved": null,
+  "WarningObservation": null,
+  "Inputs": [],
+  "WalkInputs": [],
+  "Warning": null,
+  "WarningDetail": null,
+  "Approach": [],
+  "Engagement": null,
+  "Hit": null,
+  "Inspected": null,
+  "Openings": [],
+  "Positions": [],
+  "HoldOff": null,
+  "Checks": [
+    "The saved world reopens paused in exploration with its retained encounter and retreat records."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/reopen.reopen.png"
+  ],
+  "Notice": null,
+  "Trade": null,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 10,
+    "RouteSamples": 10,
+    "ReadinessCharged": 130,
+    "WorldSequence": 2610,
+    "Final": {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256
+    },
+    "ActorId": "2bfa5e10a9524c31b8d79a1aa254770e",
+    "CommandId": "e55b521f8b070a5a1102a08b0dc76521"
+  },
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 36224,
+    "Z": 256
+  },
+  "FinalHp": 42,
+  "FinalBalance": 218,
+  "CarriedRations": 0
+}

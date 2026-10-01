@@ -1,0 +1,163 @@
+{
+  "scope": "Delivered source before integration regressions/corrections; all existing accepted report references are retained.",
+  "distinctManagedPasses": 2302,
+  "corePasses": 1764,
+  "hostPasses": 538,
+  "reports": [
+    {
+      "mode": "build",
+      "report": "Beta/implementation/p02/road-threat/qualification/build-20261001T190858Z-945f2/report.json",
+      "reportSha256": "7af7d79e26bf0aac69de1ecc1f4dc446bdfd02bd03258503d5d2d869980907f1",
+      "caseExecutions": 0,
+      "outcomes": {},
+      "sourceFiles": 1786,
+      "elapsedSeconds": 22.991
+    },
+    {
+      "mode": "unit",
+      "report": "Beta/implementation/p02/road-threat/qualification/unit-20261001T191210Z-c9f3e/report.json",
+      "reportSha256": "aa9d795eb445182458ff6f3d40ff020180cbce8f61b915c15ab42c23f5224dde",
+      "caseExecutions": 6,
+      "outcomes": {
+        "Passed": 6
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 88.093
+    },
+    {
+      "mode": "core",
+      "report": "Beta/implementation/p02/road-threat/qualification/core-20261001T193847Z-bac79/report.json",
+      "reportSha256": "8d4565cbee89f83c64c0a7ea51b5d01011c35140c3a1833bedadc5d7e7fb1495",
+      "caseExecutions": 1764,
+      "outcomes": {
+        "Passed": 1764
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 101.707
+    },
+    {
+      "mode": "regression",
+      "report": "Beta/implementation/p02/road-threat/qualification/regression-20261001T191832Z-3e32f/report.json",
+      "reportSha256": "14c8dd095f8c38cb962f63033a9c70502dbd4818e435e0edd4c9375c97227162",
+      "caseExecutions": 531,
+      "outcomes": {
+        "Passed": 531
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 339.158
+    },
+    {
+      "mode": "fixtures",
+      "report": "Beta/implementation/p02/road-threat/qualification/fixtures-20261001T191342Z-cf257/report.json",
+      "reportSha256": "0d179e529082836afd732bf29448d98dcd9a67804e775a0600741d9576749481",
+      "caseExecutions": 5,
+      "outcomes": {
+        "Passed": 5
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 75.766
+    },
+    {
+      "mode": "road-native",
+      "report": "Beta/implementation/p02/road-threat/qualification/road-native-20261001T191501Z-3648e/report.json",
+      "reportSha256": "0c40ad8935988245e0ff6a08a60ab0e98cb841d2be27170f11db22ee7cf7ac36",
+      "caseExecutions": 0,
+      "outcomes": {},
+      "sourceFiles": 1786,
+      "elapsedSeconds": 149.345
+    },
+    {
+      "mode": "road-auth",
+      "report": "Beta/implementation/p02/road-threat/qualification/road-auth-20261001T191733Z-3741e/report.json",
+      "reportSha256": "4ffafaa7747098945b4498a49e7ca6353efed36aebb46c802fcd8a513a412c7f",
+      "caseExecutions": 1,
+      "outcomes": {
+        "Passed": 1
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 32.797
+    },
+    {
+      "mode": "native",
+      "report": "Beta/implementation/p02/road-threat/qualification/native-20261001T192415Z-5e194/report.json",
+      "reportSha256": "43d2a262fcf6050fd6322070ca566aa6ab89d0291beb66139fa04fe5dcfc5ba2",
+      "caseExecutions": 0,
+      "outcomes": {},
+      "sourceFiles": 1786,
+      "elapsedSeconds": 61.736
+    },
+    {
+      "mode": "native-auth",
+      "report": "Beta/implementation/p02/road-threat/qualification/native-auth-20261001T192520Z-dee4b/report.json",
+      "reportSha256": "9eeae7376f8ea2743a3d8d4d025ea7f89172720e5a32148ba2ed920d63550824",
+      "caseExecutions": 1,
+      "outcomes": {
+        "Passed": 1
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 13.616
+    },
+    {
+      "mode": "cargo-native",
+      "report": "Beta/implementation/p02/road-threat/qualification/cargo-native-20261001T193034Z-8b5c5/report.json",
+      "reportSha256": "e31e7d25d5e714d4afff8cf1401bab22bb72c371760fb2aa077de30c320c0fad",
+      "caseExecutions": 0,
+      "outcomes": {},
+      "sourceFiles": 1786,
+      "elapsedSeconds": 446.066
+    },
+    {
+      "mode": "cargo-auth",
+      "report": "Beta/implementation/p02/road-threat/qualification/cargo-auth-20261001T193803Z-5368f/report.json",
+      "reportSha256": "8b9a365a763badf8560aad29a98a2242332f3bc5c4849a9524d8119cf6210a9a",
+      "caseExecutions": 1,
+      "outcomes": {
+        "Passed": 1
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 38.516
+    },
+    {
+      "mode": "legacy-native",
+      "report": "Beta/implementation/p02/road-threat/qualification/legacy-native-20261001T192613Z-2cf3b/report.json",
+      "reportSha256": "d3b4e586955dd9d6e5f0ba762d51c723f865a41b02be181685b12b23ed746b72",
+      "caseExecutions": 0,
+      "outcomes": {},
+      "sourceFiles": 1786,
+      "elapsedSeconds": 97.396
+    },
+    {
+      "mode": "legacy-auth",
+      "report": "Beta/implementation/p02/road-threat/qualification/legacy-auth-20261001T192754Z-7b090/report.json",
+      "reportSha256": "8746cb551d32bbdd9abbb2020f28e65fba764dd4fcf9f1948afbf8b3eece0155",
+      "caseExecutions": 2,
+      "outcomes": {
+        "Passed": 2
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 121.075
+    },
+    {
+      "mode": "durability",
+      "report": "Beta/implementation/p02/road-threat/qualification/durability-20261001T192539Z-d370e/report.json",
+      "reportSha256": "0eced638bc5e9d10c29177875168376fe969817c2d35b5b50dbc2c3f4cb07ecc",
+      "caseExecutions": 2,
+      "outcomes": {
+        "Passed": 2
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 30.794
+    },
+    {
+      "mode": "retained-auth",
+      "report": "Beta/implementation/p02/road-threat/qualification/retained-auth-20261001T190925Z-c9c9d/report.json",
+      "reportSha256": "20bb5d711450a33ac0856259dc3d73584d60008d69b20e02a4728651ad964276",
+      "caseExecutions": 5,
+      "outcomes": {
+        "Passed": 5
+      },
+      "sourceFiles": 1786,
+      "elapsedSeconds": 160.107
+    }
+  ]
+}

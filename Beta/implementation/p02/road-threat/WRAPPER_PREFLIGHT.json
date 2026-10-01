@@ -1,0 +1,29 @@
+{
+  "moduleImport": "passed",
+  "outputRootCreated": true,
+  "preservation": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "graphicalImportsVerified": 40,
+  "modes": [
+    "build",
+    "unit",
+    "regression",
+    "fixtures",
+    "native",
+    "native-auth",
+    "legacy-native",
+    "legacy-auth",
+    "core",
+    "cargo-native",
+    "cargo-auth",
+    "durability",
+    "retained-auth",
+    "road-native",
+    "road-auth"
+  ],
+  "scope": "Local preparation only; no model request and no road-threat implementation acceptance."
+}

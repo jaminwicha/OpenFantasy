@@ -1,0 +1,353 @@
+{
+  "Kind": "native-road-threat-v1",
+  "Mode": "keyboard",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Strike does not address the chief: Preparing this turn\u0027s choices\u2026\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.RoadThreatPlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs:line 527\n   at OpenFantasy.Client.RoadThreatPlayProbe.Exercise(EntityId chief) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs:line 182\n   at OpenFantasy.Client.RoadThreatPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs:line 108",
+  "Entry": "--cargo-threat-probe",
+  "OpeningSeconds": 5.265,
+  "ProbeMilliseconds": 7917,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    }
+  ],
+  "Warning": "Danger ahead \u00B7 Bandit Chief guards the road \u00B7 attacks within 1.6 cells\nPaused \u00B7 Exploration held",
+  "WarningDetail": "Bandit Chief \u00B7 level 7 \u00B7 HP 800/800. It attacks anyone within 1.56 cells it can see, and is 7.1 cells away now. It does not chase: walk around it outside that reach, or retreat if it engages you. An early traveller cannot expect to win.\nRemaining recovery: 0 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+  "Approach": [
+    {
+      "X": 88704,
+      "Y": 81536,
+      "Z": 256,
+      "Seconds": 5.3521115
+    },
+    {
+      "X": 88704,
+      "Y": 81504,
+      "Z": 256,
+      "Seconds": 5.4048455
+    },
+    {
+      "X": 88704,
+      "Y": 81472,
+      "Z": 256,
+      "Seconds": 5.4381973
+    },
+    {
+      "X": 88704,
+      "Y": 81440,
+      "Z": 256,
+      "Seconds": 5.491573
+    },
+    {
+      "X": 88704,
+      "Y": 81408,
+      "Z": 256,
+      "Seconds": 5.5382376
+    },
+    {
+      "X": 88704,
+      "Y": 81376,
+      "Z": 256,
+      "Seconds": 5.5884537
+    },
+    {
+      "X": 88704,
+      "Y": 81344,
+      "Z": 256,
+      "Seconds": 5.6381492
+    },
+    {
+      "X": 88704,
+      "Y": 81312,
+      "Z": 256,
+      "Seconds": 5.6882344
+    },
+    {
+      "X": 88704,
+      "Y": 81280,
+      "Z": 256,
+      "Seconds": 5.7380794
+    },
+    {
+      "X": 88704,
+      "Y": 81248,
+      "Z": 256,
+      "Seconds": 5.7880442
+    },
+    {
+      "X": 88704,
+      "Y": 81216,
+      "Z": 256,
+      "Seconds": 5.8380705
+    },
+    {
+      "X": 88704,
+      "Y": 81184,
+      "Z": 256,
+      "Seconds": 5.888047
+    },
+    {
+      "X": 88704,
+      "Y": 81152,
+      "Z": 256,
+      "Seconds": 5.9380392
+    },
+    {
+      "X": 88704,
+      "Y": 81120,
+      "Z": 256,
+      "Seconds": 5.988044
+    },
+    {
+      "X": 88704,
+      "Y": 81088,
+      "Z": 256,
+      "Seconds": 6.0380443
+    },
+    {
+      "X": 88704,
+      "Y": 81056,
+      "Z": 256,
+      "Seconds": 6.088182
+    },
+    {
+      "X": 88704,
+      "Y": 81024,
+      "Z": 256,
+      "Seconds": 6.1381826
+    },
+    {
+      "X": 88704,
+      "Y": 80992,
+      "Z": 256,
+      "Seconds": 6.1775988
+    },
+    {
+      "X": 88704,
+      "Y": 80960,
+      "Z": 256,
+      "Seconds": 6.238086
+    },
+    {
+      "X": 88704,
+      "Y": 80928,
+      "Z": 256,
+      "Seconds": 6.2779435
+    },
+    {
+      "X": 88704,
+      "Y": 80896,
+      "Z": 256,
+      "Seconds": 6.3384889
+    },
+    {
+      "X": 88704,
+      "Y": 80864,
+      "Z": 256,
+      "Seconds": 6.3881039
+    },
+    {
+      "X": 88704,
+      "Y": 80832,
+      "Z": 256,
+      "Seconds": 6.4380287
+    },
+    {
+      "X": 88704,
+      "Y": 80800,
+      "Z": 256,
+      "Seconds": 6.4881674
+    },
+    {
+      "X": 88704,
+      "Y": 80768,
+      "Z": 256,
+      "Seconds": 6.5387411
+    },
+    {
+      "X": 88704,
+      "Y": 80736,
+      "Z": 256,
+      "Seconds": 6.5880557
+    },
+    {
+      "X": 88704,
+      "Y": 80704,
+      "Z": 256,
+      "Seconds": 6.654849
+    },
+    {
+      "X": 88704,
+      "Y": 80672,
+      "Z": 256,
+      "Seconds": 6.6881613
+    },
+    {
+      "X": 88704,
+      "Y": 80640,
+      "Z": 256,
+      "Seconds": 6.7381921
+    },
+    {
+      "X": 88704,
+      "Y": 80608,
+      "Z": 256,
+      "Seconds": 6.7876814
+    },
+    {
+      "X": 88704,
+      "Y": 80576,
+      "Z": 256,
+      "Seconds": 6.8380767
+    },
+    {
+      "X": 88704,
+      "Y": 80544,
+      "Z": 256,
+      "Seconds": 6.8880972
+    },
+    {
+      "X": 88704,
+      "Y": 80512,
+      "Z": 256,
+      "Seconds": 6.9380465
+    },
+    {
+      "X": 88704,
+      "Y": 80480,
+      "Z": 256,
+      "Seconds": 6.9778956
+    },
+    {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256,
+      "Seconds": 7.0380306
+    },
+    {
+      "X": 88704,
+      "Y": 80416,
+      "Z": 256,
+      "Seconds": 7.0774105
+    },
+    {
+      "X": 88704,
+      "Y": 80384,
+      "Z": 256,
+      "Seconds": 7.1267015
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 7.1880309
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 7.237982
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 7.2780183
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 7.3270205
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 7.378174
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 7.4380891
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 7.4878375
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 7.538028
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 7.5880132
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 7.6274651
+    },
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 7.6781579
+    }
+  ],
+  "Engagement": {
+    "EncounterCount": 1,
+    "Distance": 385,
+    "Reach": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 7.7446877
+  },
+  "Hit": null,
+  "Inspected": null,
+  "Openings": [],
+  "Positions": [],
+  "HoldOff": null,
+  "Checks": [
+    "Before contact the HUD warns that the Bandit Chief guards the road, with level, HP, reach and distance on inspection.",
+    "Walking the lane north, the chief began the encounter itself once the player was within its reach."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T183739Z-77684/native-road-threat-lv_b0fh1/keyboard.warning.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T183739Z-77684/native-road-threat-lv_b0fh1/keyboard.engaged.png"
+  ],
+  "Notice": null,
+  "Trade": null,
+  "Record": null,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 80032,
+    "Z": 256
+  },
+  "FinalHp": 78,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

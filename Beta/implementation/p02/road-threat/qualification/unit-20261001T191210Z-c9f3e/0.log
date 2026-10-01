@@ -1,0 +1,20 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.28]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.89]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_fresh_threatened_cargo_world_admits_one_chief_at_the_camp_crossing_with_its_source_attack [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_bandit_chief_record_camp_and_spawner_bind_with_exact_pointers_and_retained_fields [65 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.Composition_is_byte_deterministic_and_never_relabels_another_world [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.An_edited_monster_record_is_refused_rather_than_reinterpreted [64 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates [43 s]
+[xUnit.net 00:01:25.60]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens [1 m 24 s]
+
+Test Run Successful.
+Total tests: 6
+     Passed: 6
+ Total time: 1.4369 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/unit-20261001T191210Z-c9f3e/unit.trx

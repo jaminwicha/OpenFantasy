@@ -1,0 +1,18 @@
+{
+  "status": "reviewed_dependency_comparison",
+  "workerBuild": "qualification/build-20261001T205659Z-6c6e2/report.json",
+  "leadBuild": "qualification/build-20261001T215240Z-c5ba8/report.json",
+  "changedInputs": [
+    "Beta/Runtime/client/scripts/FarmCanvas.cs",
+    "Beta/Runtime/client/scripts/FarmGame.Cargo.cs",
+    "Beta/Runtime/client/scripts/FarmGame.cs",
+    "Beta/Runtime/client/scripts/FarmHud.cs",
+    "Beta/Runtime/client/scripts/Presentation/FarmActorView.cs",
+    "Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs",
+    "Beta/Runtime/tools/check_native_road_threat.py"
+  ],
+  "unchangedAuthoritySources": true,
+  "unchangedAuthorityBinaries": true,
+  "reuse": "Worker Core, Host regression and retained-journal proofs retain exact authority sources/binaries and unchanged old test/checker inputs. Four new managed contracts and changed native rendering/checker require fresh evidence; road and ordinary-retreat native routes are running. This does not turn prior renderer runs into current rendering proof or waive phase gates."
+}

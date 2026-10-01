@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f8a7ae21-5041-4a16-92e6-93fe6cb15686" name="@mac 2026-10-01 16:47:34" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T16:47:34.4459470-05:00" queuing="2026-10-01T16:47:34.4459470-05:00" start="2026-10-01T16:47:23.9319080-05:00" finish="2026-10-01T16:47:46.9273290-05:00" />
+  <TestSettings name="default" id="071d013c-7d72-471f-8432-ab0879b120ba">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_16_47_34" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f6b58165-fc69-4619-9862-567998dd045a" testId="0f13985e-c173-85d2-0a87-cf1ae0890605" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_saved_host_entry_retries_exactly_but_conflicting_content_and_player_control_are_refused" computerName="mac" duration="00:00:04.4600795" startTime="2026-10-01T16:47:38.7617960-05:00" endTime="2026-10-01T16:47:43.2225150-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f6b58165-fc69-4619-9862-567998dd045a" />
+    <UnitTestResult executionId="d59bb427-2f2b-43f8-a9ad-85df67e8adba" testId="33b2eda8-9147-8b30-4fba-48f4501a693c" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.An_actual_reading_hold_defers_a_ready_in_reach_chief_until_the_cutoff_after_closing" computerName="mac" duration="00:00:03.5388655" startTime="2026-10-01T16:47:43.2260450-05:00" endTime="2026-10-01T16:47:46.7650850-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d59bb427-2f2b-43f8-a9ad-85df67e8adba" />
+    <UnitTestResult executionId="89afc64b-f17b-4745-9124-7e175dbc758b" testId="bc48e8c7-336d-0378-379d-ff7f2fdabb52" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_wounded_host_initiator_can_lose_but_neither_survivor_nor_incapacitated_initiator_can_release" computerName="mac" duration="00:00:04.4055740" startTime="2026-10-01T16:47:34.3520280-05:00" endTime="2026-10-01T16:47:38.7594710-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="89afc64b-f17b-4745-9124-7e175dbc758b" />
+    <UnitTestResult executionId="83615649-d9b2-4980-a91c-0d53c0f5fb6f" testId="107feeb1-93bd-5910-a311-45e5861ada91" testName="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate" computerName="mac" duration="00:00:08.2464783" startTime="2026-10-01T16:47:26.0663750-05:00" endTime="2026-10-01T16:47:34.3431900-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="83615649-d9b2-4980-a91c-0d53c0f5fb6f">
+      <Output>
+        <ErrorInfo>
+          <Message>post-care hostile entry exceeded 600 cutoffs.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 104
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs:line 156
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs:line 159
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="107feeb1-93bd-5910-a311-45e5861ada91">
+      <Execution id="83615649-d9b2-4980-a91c-0d53c0f5fb6f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_saved_host_entry_retries_exactly_but_conflicting_content_and_player_control_are_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0f13985e-c173-85d2-0a87-cf1ae0890605">
+      <Execution id="f6b58165-fc69-4619-9862-567998dd045a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="A_saved_host_entry_retries_exactly_but_conflicting_content_and_player_control_are_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.An_actual_reading_hold_defers_a_ready_in_reach_chief_until_the_cutoff_after_closing" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="33b2eda8-9147-8b30-4fba-48f4501a693c">
+      <Execution id="d59bb427-2f2b-43f8-a9ad-85df67e8adba" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="An_actual_reading_hold_defers_a_ready_in_reach_chief_until_the_cutoff_after_closing" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_wounded_host_initiator_can_lose_but_neither_survivor_nor_incapacitated_initiator_can_release" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bc48e8c7-336d-0378-379d-ff7f2fdabb52">
+      <Execution id="89afc64b-f17b-4745-9124-7e175dbc758b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests" name="A_wounded_host_initiator_can_lose_but_neither_survivor_nor_incapacitated_initiator_can_release" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0f13985e-c173-85d2-0a87-cf1ae0890605" executionId="f6b58165-fc69-4619-9862-567998dd045a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33b2eda8-9147-8b30-4fba-48f4501a693c" executionId="d59bb427-2f2b-43f8-a9ad-85df67e8adba" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bc48e8c7-336d-0378-379d-ff7f2fdabb52" executionId="89afc64b-f17b-4745-9124-7e175dbc758b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="107feeb1-93bd-5910-a311-45e5861ada91" executionId="83615649-d9b2-4980-a91c-0d53c0f5fb6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="3" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.67]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.29]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.52]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:09.88]       post-care hostile entry exceeded 600 cutoffs.
+[xUnit.net 00:00:09.88]       Stack Trace:
+[xUnit.net 00:00:09.88]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(104,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label)
+[xUnit.net 00:00:09.88]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs(156,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate()
+[xUnit.net 00:00:09.88]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs(159,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate()
+[xUnit.net 00:00:09.88]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:22.29]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T16:47:34.3968460-05:00">
+        <Text>[xUnit.net 00:00:09.87]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

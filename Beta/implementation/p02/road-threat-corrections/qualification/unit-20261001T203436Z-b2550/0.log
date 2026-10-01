@@ -1,0 +1,51 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.61]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.00]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.15]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_fresh_threatened_cargo_world_admits_one_chief_at_the_camp_crossing_with_its_source_attack [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_bandit_chief_record_camp_and_spawner_bind_with_exact_pointers_and_retained_fields [52 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatObservationRegressionTests.The_distant_farm_does_not_disclose_the_camp_chiefs_condition [1 s]
+[xUnit.net 00:00:05.56]     OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.Composition_is_byte_deterministic_and_never_relabels_another_world [FAIL]
+[xUnit.net 00:00:05.56]       Assert.Single() Failure: The collection was empty
+[xUnit.net 00:00:05.56]       Stack Trace:
+[xUnit.net 00:00:05.56]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/RoadThreat/RoadThreatAdmissionTests.cs(121,0): at OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.Composition_is_byte_deterministic_and_never_relabels_another_world()
+[xUnit.net 00:00:05.56]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:05.56]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.Composition_is_byte_deterministic_and_never_relabels_another_world [2 s]
+  Error Message:
+   Assert.Single() Failure: The collection was empty
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.Composition_is_byte_deterministic_and_never_relabels_another_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/RoadThreat/RoadThreatAdmissionTests.cs:line 121
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.An_edited_monster_record_is_refused_rather_than_reinterpreted [24 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatSchedulingRegressionTests.Repeated_unreachable_gather_requests_cannot_suppress_hostile_entry_while_walking [59 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates [1 m]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.Readiness_and_recorded_state_decide_entry_through_reopens_mid_encounter_mid_retreat_and_at_outcome [1 m 11 s]
+[xUnit.net 00:01:35.45]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.A_waiting_request_never_holds_back_entry_and_is_refused_at_that_cutoff_while_outside_reach_it_is_answered [FAIL]
+[xUnit.net 00:01:35.46]       The waiting request must be resolved at the entry cutoff.
+[xUnit.net 00:01:35.46]       Stack Trace:
+[xUnit.net 00:01:35.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatBoundaryTests.cs(135,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.A_waiting_request_never_holds_back_entry_and_is_refused_at_that_cutoff_while_outside_reach_it_is_answered()
+[xUnit.net 00:01:35.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatBoundaryTests.cs(148,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.A_waiting_request_never_holds_back_entry_and_is_refused_at_that_cutoff_while_outside_reach_it_is_answered()
+[xUnit.net 00:01:35.46]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.A_waiting_request_never_holds_back_entry_and_is_refused_at_that_cutoff_while_outside_reach_it_is_answered [23 s]
+  Error Message:
+   The waiting request must be resolved at the entry cutoff.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.A_waiting_request_never_holds_back_entry_and_is_refused_at_that_cutoff_while_outside_reach_it_is_answered() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatBoundaryTests.cs:line 135
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.A_waiting_request_never_holds_back_entry_and_is_refused_at_that_cutoff_while_outside_reach_it_is_answered() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatBoundaryTests.cs:line 148
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.The_production_threat_selection_creates_reopens_and_refuses_other_worlds_saves [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens [1 m 42 s]
+[xUnit.net 00:01:57.97]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.The_warning_row_follows_actual_observation_and_a_declared_calibration_hides_it_by_floor_or_wall [18 s]
+
+Test Run Failed.
+Total tests: 12
+     Passed: 10
+     Failed: 2
+ Total time: 1.9816 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/unit-20261001T203436Z-b2550/unit.trx

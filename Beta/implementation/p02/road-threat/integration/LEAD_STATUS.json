@@ -1,0 +1,21 @@
+{
+  "status": "critic_terminal_correction_execution_started",
+  "updatedUtc": "2026-10-01T20:13:43.680272+00:00",
+  "criticSession": null,
+  "criticDirectory": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/critic",
+  "criticDeadlineSeconds": 1800,
+  "elapsedSeconds": 915.0,
+  "deliveryCheckpoint": "48fb19e176255e5a3c20fd9d92900814df7e5be4",
+  "leadRegressionFiles": {
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatObservationRegressionTests.cs": "0b7c048c006176cc0a489acafd21383ea29a77a12e8edc1824bbacedabd0087a",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatSchedulingRegressionTests.cs": "904cf824a60b85493cba9e238225a15aa9131fb5606744e082ac503c88505b17"
+  },
+  "newHeavyChecksRunning": false,
+  "correctionPacket": "../road-threat-corrections",
+  "correctionScopeDraft": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-road-threat-u3iufoos/correction-assignment-draft.md",
+  "correctionDispatched": true,
+  "acceptance": "withheld pending correction and integration; two demonstrated defects, journal-authentication gap and missing native join are in correction scope",
+  "upstream": "committed 92e90400634befe9deec6aceb0893add4a4b0dc7; three targets synchronized,71 alignment entries verified",
+  "correctionSession": 95188,
+  "correctionDispatch": "../../road-threat-corrections/DISPATCH.json"
+}

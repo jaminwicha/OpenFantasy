@@ -83,10 +83,10 @@ public partial class FarmGame : Node2D
         _input = new FarmInputRouter(StartPaused);
         AddChild(_canvas);
         Rect2 bounds = _canvas.LocalBounds;
-        if (WatercourseProfile || BreachProfile)
+        if (WatercourseProfile || BreachProfile || FramesCargoThreat)
         {
-            // Keep the open channel and lower pool visible between the ordinary HUD panels.
-            // Integer zoom preserves the surface pixels and does not change interaction distances.
+            // Leave room for the channel or a nearby road threat between the ordinary HUD panels.
+            // A stable integer zoom preserves pixels without changing interaction distances.
             _camera.Zoom = Vector2.One;
         }
         _camera.LimitLeft = (int)bounds.Position.X;
@@ -314,7 +314,7 @@ public partial class FarmGame : Node2D
                 node.RequiredTool, node.Visibility)),
             view.Worksite?.HasPhysicalConstruction != true ? view.Construction.Where(project => project.IsCompleted).Select(project =>
                 new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [], view.Worksite, view.Liquids));
-        Vector2 focus = _canvas.FocusPosition;
+        Vector2 focus = FrameCargoThreats(view, _canvas.FocusPosition);
         if (view.Dialogue is { } conversation)
         {
             LocalActorView speaker = view.Actors.Single(value => value.ActorId == conversation.SpeakerActorId);

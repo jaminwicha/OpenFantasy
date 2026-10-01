@@ -744,3 +744,32 @@ and `metadata.json`. `tools/check_native_retreat.py --dotnet <path> --godot <pat
 observed steps, disengagement and held-key travel), then a separate paused reopen; its manifest feeds
 `NativeRetreatResultTests` through `OPENFANTASY_NATIVE_RETREAT_RESULTS`. See
 [encounter retreat](docs/architecture/encounter-retreat.md).
+
+### Threatened cargo road (Bandit Chief)
+
+`RoadThreatWorldAdmission.CreateEmbedded` composes the retreat-capable cargo world with the retained bandit camp's
+Bandit Chief standing beside the lane crossing. Open it through its own entry scene:
+`godot --path client res://scenes/NativeRoadThreat.tscn -- --cargo-threat [SAVE]` (default save
+`user://worlds/openfantasy-cargo-threat.sqlite`). A new save is created fresh; an existing save opens only when it is
+this same world, and neither the `--cargo` nor the `--cargo-retreat` save is ever upgraded or read as this one.
+
+Walking the lane north from the farm road toward Gearford, the status area warns **Danger nearby · Bandit Chief guards
+the road** once the chief is actually in view — within three cells on the same floor with a clear line of sight —
+which is about 2.8 cells before it can reach you; hover it for its level, HP, reach and distance. Nothing about the
+chief is shown while it is out of view. Within about one and a half cells of the chief, in its sight, it attacks: the
+encounter starts by itself (an action you are still submitting does not hold it back; that action is refused) and the
+world waits for your choice. **E** strikes (it barely marks an 800-HP chief and invites its counterattack); **V**, then
+**Up** and **Enter** (or the controller/pointer equivalents) retreats. The chief does not chase or return home; after an
+escape it may still be catching its breath, which is ordinary readiness, not safety. Without pursuit, stepping a cell
+off the lane already passes outside its reach; the longer detour three cells west is one valid route. Carried rations
+still sell at Kegga afterwards. Being incapacitated ends that world's journey: nothing releases or rescues you.
+
+`NativeRoadThreatFixtureTests` exports, with `OPENFANTASY_NATIVE_ROAD_THREAT_FIXTURES` naming a fresh directory, a
+fresh farm fixture in `farm/` (the unplayed save at commit zero) and a near-road fixture (Wren's reward earned, one
+ration bought from Marla and walked to road cell (346,318)), each as `save.sqlite`, `genesis.ofc`, `before.ofc` and
+`metadata.json`. `tools/check_native_road_threat.py --dotnet <path> --godot <path> --fixtures <directory> --output <json>
+[--rendered]` runs the keyboard journey from the farm (Wren's dialogue reward, Marla's stall purchase, the outbound
+lane, the observed warning, the chief's entry, a strike and its real hit, Retreat inspection/cancel/commit, no reentry,
+detour, Kegga sale) and shorter controller and pointer Retreat routes from the road, then a separate paused reopen; its
+manifest feeds `NativeRoadThreatResultTests` through `OPENFANTASY_NATIVE_ROAD_THREAT_RESULTS`. See
+[road threat](docs/architecture/road-threat.md).

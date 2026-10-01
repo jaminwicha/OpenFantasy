@@ -1,0 +1,9 @@
+{
+  "status": "missing_wrapper_input_supplied",
+  "utc": "2026-10-01T21:08:32.354584+00:00",
+  "source": "Beta/implementation/p02/road-threat/RETAINED_NATIVE.json",
+  "copy": "Beta/implementation/p02/road-threat-corrections/RETAINED_NATIVE.json",
+  "sha256": "d30b843418335a26d524d6a6b0f4be5586041f290253084a11a4bf6bbdc732b4",
+  "failedReport": "Beta/implementation/p02/road-threat-corrections/qualification/retained-auth-20261001T210642Z-c239d/report.json",
+  "explanation": "The copied correction wrapper resolves this unchanged input relative to its own packet. Its pinned original existed, but the correction packet lacked the byte-identical copy. No wrapper, threshold, fixture or runtime source changed. Failed report remains unchanged; retained-auth still requires a completed run."
+}

@@ -122,6 +122,12 @@ synchronize live state with presented offers and settled input, enforce deadline
 and prove the intended rejection and complete entity identities. Strengthening a probe never authorizes
 automatic command retries, relaxed deadlines or changes to game rules merely to make it pass.
 
+Reuse evidence only after comparing its actual source, binary, checker and fixture dependencies.
+Record unchanged dependencies and the precise inherited claim; rerun affected or uncertain checks.
+A test-only edit need not invalidate an unrelated rendered journey, but required full acceptance gates
+remain required. Preserve the original reports. For visibility, inspect the captured image and actual
+post-draw sprite/control bounds against occluding UI; a projected point or draw call is insufficient.
+
 The owner's 2026-09-10 direction makes incremental commits and milestone branches project
 doctrine. Follow [GIT_MILESTONES.md](implementation/GIT_MILESTONES.md): commit verified coherent
 increments, preserve major checkpoints with named branches, and never include unrelated

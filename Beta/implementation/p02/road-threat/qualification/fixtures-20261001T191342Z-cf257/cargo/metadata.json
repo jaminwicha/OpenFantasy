@@ -1,0 +1,23 @@
+{
+  "Kind": "native-cargo-fixture-v1",
+  "ProfileVersion": 33,
+  "SeedText": "native-cargo-fixture",
+  "PlayerName": "Traveler",
+  "Setup": "Fresh production cargo world; talk, accept and deliver Wren\u0027s quest for its earned reward at ordinary session cutoffs. Native begins paused at the farm before any travel, observation or market action.",
+  "WorldId": "107a66244babc12b07dc209b544f32bc",
+  "BranchId": "7ae5d16a4b193b268f0667238b06ddcc",
+  "GenesisHash": "8781c5c13791189210c5dde74f9a898832b673e605623ebef45b4fae31018f3e",
+  "BeforeHash": "393c83512fdf3262fc48e5ea9675cca19aedc2b9109d5395268cb34ac0001028",
+  "BeforeRevision": 4,
+  "BeforeAdvancingSteps": 1,
+  "PlayerActorId": "3cd9435ed6f2a39179746086cf87166e",
+  "WrenActorId": "ee3de2fd54621802ddc8344eac77802c",
+  "MarlaActorId": "220ee5f839bd02ffd44b784fa107cd1b",
+  "MarlaMarketId": "1746504cd2ec900cd93cd155dbe96385",
+  "KeggaActorId": "d8c0e019e4c3d996740ee650b5c063d8",
+  "KeggaMarketId": "c36c23f7d9e54a44b5612b60f6e71228",
+  "RewardCurrency": 200,
+  "PlayerBalance": 200,
+  "TradeUnits": 2,
+  "Limits": "Fresh production cargo world only: no retained-save migration, threat, escort, streaming, physical device or human acceptance claim. Requests are session memory and leave no journal record."
+}

@@ -1,0 +1,51 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.49]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.94]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.09]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_fresh_threatened_cargo_world_admits_one_chief_at_the_camp_crossing_with_its_source_attack [968 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.The_bandit_chief_record_camp_and_spawner_bind_with_exact_pointers_and_retained_fields [68 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.Composition_is_byte_deterministic_and_never_relabels_another_world [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.RoadThreat.RoadThreatAdmissionTests.An_edited_monster_record_is_refused_rather_than_reinterpreted [20 ms]
+[xUnit.net 00:00:27.02]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates [FAIL]
+[xUnit.net 00:00:27.02]       OpenFantasy.Hosting.AuthorityDispatchException : This lifecycle boundary accepts only entry or release requests.
+[xUnit.net 00:00:27.02]       Stack Trace:
+[xUnit.net 00:00:27.02]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(305,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
+[xUnit.net 00:00:27.02]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(194,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(WorldActionCommand command)
+[xUnit.net 00:00:27.02]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(65,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command)
+[xUnit.net 00:00:27.02]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatInitiationTests.cs(91,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates()
+[xUnit.net 00:00:27.02]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates [25 s]
+  Error Message:
+   OpenFantasy.Hosting.AuthorityDispatchException : This lifecycle boundary accepts only entry or release requests.
+  Stack Trace:
+     at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 305
+   at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 194
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 65
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatInitiationTests.The_chief_enters_only_at_actual_reach_when_ready_and_staying_to_fight_incapacitates() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatInitiationTests.cs:line 91
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:31.16]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens [FAIL]
+[xUnit.net 00:00:31.16]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:31.16]       Expected: 60
+[xUnit.net 00:00:31.16]       Actual:   78
+[xUnit.net 00:00:31.16]       Stack Trace:
+[xUnit.net 00:00:31.16]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourneyTests.cs(52,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens()
+[xUnit.net 00:00:31.16]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:31.17]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens [30 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 60
+Actual:   78
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourneyTests.cs:line 52
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 6
+     Passed: 4
+     Failed: 2
+ Total time: 32.3158 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/unit-20261001T182239Z-828f2/unit.trx

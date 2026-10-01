@@ -1,0 +1,27 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-auth-20261001T220026Z-d24a9
+{
+  "kind": "road-auth",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/build-20261001T215240Z-c5ba8/report.json",
+  "buildReportSha256": "61525dcd97bf3b2ed7a6ca339df9f38a2869fd84cb7478f7115f61cd3e357138",
+  "nativeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T215358Z-a0863/report.json",
+  "nativeReportSha256": "d627d6c5c25a8f6f0d6e8d88b823e0c5f52c14c1ef6525a1460761dd12a87451",
+  "outcomes": {
+    "Passed": 1
+  },
+  "preservationAfter": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "elapsedSeconds": 42.808,
+  "sourceUnchanged": true,
+  "accepted": true
+}

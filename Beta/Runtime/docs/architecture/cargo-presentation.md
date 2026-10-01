@@ -68,6 +68,9 @@ from that field, the viewport, zoom and observed terrain extent. Empty padding b
 actors near an edge stay clear of the HUD; this padding does not admit or draw unobserved geography.
 Resizing or expanding the footer changes camera framing without moving authoritative feet. Fixed farm,
 worksite and watercourse frames keep their own embeddings and guards unchanged.
+The [threatened-world selection](road-threat.md) uses a stable 1× zoom and frames the complete sprite bounds of
+the player and observed threats inside this same field. Ordinary cargo selections retain their existing zoom and
+player focus. The visibility probe additionally excludes the target-controls overlay from visible sprite bounds.
 [`CargoTerrainView`](../../client/scripts/Cargo/CargoTerrainView.cs) draws exactly the observed columns:
 intact surface ground uses the farm's own retained source floor only inside the farm's own region and the
 grass tile elsewhere, exposed soil and stone use their atlas tiles, raised blockers are drawn as banks above
@@ -138,5 +141,7 @@ sample as one cardinal 32-subunit step, and the onboarding quest, mining and wat
   its ground cell through the cell above it. This binding serves the exposed breach channels; general
   occlusion, hidden aquifers, overhead solids and construction-supported cutaways require explicit geometry
   and visibility rules before using it for those worlds.
-- Keyboard qualification only; controller and pointer cargo routes, physical devices, OS focus, human art
-  acceptance, threat/escort, NPC travel and multiplayer remain open.
+- Keyboard qualification of the plain cargo route; the separate `--cargo-threat` selection
+  ([road threat](road-threat.md)) uses this same presentation with keyboard, controller and pointer threat/retreat
+  routes from a road fixture. Physical devices, OS focus, human art acceptance, escort, NPC travel and multiplayer
+  remain open; the chief reuses the Squire prototype sprite.

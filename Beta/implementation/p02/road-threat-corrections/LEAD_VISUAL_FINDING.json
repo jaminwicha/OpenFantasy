@@ -1,0 +1,43 @@
+{
+  "status": "unresolved_in_active_delivery",
+  "observedReport": "Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T203846Z-c74c4/native-road-threat-c8ormmuu/keyboard.json",
+  "reportSha256": "8a73577445a6ed2a9e1830876317c90274b23fef2a99fb8f74d7ab6911f1cedf",
+  "image": "Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T203846Z-c74c4/native-road-threat-c8ormmuu/keyboard.warning.png",
+  "imageSha256": "c3a459fcfd6b921d8f2468668feeaf7c73ad4b707b3a3981fabd189edc9b4be3",
+  "facts": {
+    "distanceSubunits": 749,
+    "attackReachSubunits": 400,
+    "chiefViewport": {
+      "x": 544,
+      "y": 28
+    },
+    "chiefInField": false
+  },
+  "manualObservation": "No chief visible in the pre-contact warning image; the HUD covers its viewport position.",
+  "requiredCorrection": "Actual camera/HUD/sprite composition must make the threat visible before contact, with a post-draw predicate over the visible sprite bounds and a reviewed capture. No acceptance from ChiefDrawn alone.",
+  "ownership": "Lead integration finding; active worker inputs remain unchanged.",
+  "confirmedInLaterRun": {
+    "report": "Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T204730Z-f0422/native-road-threat-f00wgcqv/keyboard.json",
+    "reportSha256": "338e367588c6c0668c8f1748b50f1ddfb2e01ba73d685c2a60f97e8f088d203c",
+    "image": "Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T204730Z-f0422/native-road-threat-f00wgcqv/keyboard.warning.png",
+    "imageSha256": "c3a459fcfd6b921d8f2468668feeaf7c73ad4b707b3a3981fabd189edc9b4be3",
+    "nativeStatus": "passed",
+    "warningObservation": {
+      "DistanceSubunits": 749,
+      "ReachSubunits": 400,
+      "Feet": {
+        "X": 88704,
+        "Y": 80448,
+        "Z": 256
+      },
+      "ChiefDrawn": true,
+      "ChiefViewport": {
+        "X": 544,
+        "Y": 28
+      },
+      "ChiefInField": false,
+      "Seconds": 132.9930157
+    },
+    "leadVisualReview": "Chief remains completely behind the top HUD. A passed tool report is insufficient for D3."
+  }
+}

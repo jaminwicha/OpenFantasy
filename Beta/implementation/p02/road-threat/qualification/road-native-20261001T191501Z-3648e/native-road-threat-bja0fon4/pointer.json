@@ -1,0 +1,546 @@
+{
+  "Kind": "native-road-threat-v1",
+  "Mode": "pointer",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-threat-probe",
+  "OpeningSeconds": 6.708,
+  "ProbeMilliseconds": 16967,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "pointer",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "PointerSector": 2,
+      "X": 240,
+      "Y": -296
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "PointerSector": 0,
+      "X": 260,
+      "Y": 194.5
+    },
+    {
+      "Stage": "cancel",
+      "Route": "pointer",
+      "PointerHover": "CloseWheel",
+      "X": 720.5,
+      "Y": 75.5
+    },
+    {
+      "Stage": "cancel",
+      "Route": "pointer",
+      "PointerControl": "CloseWheel",
+      "X": 720.5,
+      "Y": 75.5
+    },
+    {
+      "Stage": "commit",
+      "Route": "pointer",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "pointer",
+      "PointerSector": 2,
+      "X": 260,
+      "Y": 426.5
+    },
+    {
+      "Stage": "commit",
+      "Route": "pointer",
+      "PointerSector": 0,
+      "X": 260,
+      "Y": 194.5
+    },
+    {
+      "Stage": "commit",
+      "Route": "pointer",
+      "PointerHover": "ConfirmChoice",
+      "X": 660,
+      "Y": 404
+    },
+    {
+      "Stage": "commit",
+      "Route": "pointer",
+      "PointerControl": "ConfirmChoice",
+      "X": 660,
+      "Y": 404
+    },
+    {
+      "Stage": "pause",
+      "Route": "pointer",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Down"
+    }
+  ],
+  "Warning": "Danger ahead \u00B7 Bandit Chief guards the road \u00B7 attacks within 1.6 cells\nPaused \u00B7 Exploration held",
+  "WarningDetail": "Bandit Chief \u00B7 level 7 \u00B7 HP 800/800. It attacks anyone within 1.56 cells it can see, and is 7.1 cells away now. It does not chase: walk around it outside that reach, or retreat if it engages you. An early traveller cannot expect to win.\nRemaining recovery: 0 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+  "Approach": [
+    {
+      "X": 88704,
+      "Y": 81536,
+      "Z": 256,
+      "Seconds": 6.7957549
+    },
+    {
+      "X": 88704,
+      "Y": 81504,
+      "Z": 256,
+      "Seconds": 6.8835811
+    },
+    {
+      "X": 88704,
+      "Y": 81472,
+      "Z": 256,
+      "Seconds": 6.9183724
+    },
+    {
+      "X": 88704,
+      "Y": 81440,
+      "Z": 256,
+      "Seconds": 6.9669912
+    },
+    {
+      "X": 88704,
+      "Y": 81408,
+      "Z": 256,
+      "Seconds": 7.0061874
+    },
+    {
+      "X": 88704,
+      "Y": 81376,
+      "Z": 256,
+      "Seconds": 7.0668418
+    },
+    {
+      "X": 88704,
+      "Y": 81344,
+      "Z": 256,
+      "Seconds": 7.1168933
+    },
+    {
+      "X": 88704,
+      "Y": 81312,
+      "Z": 256,
+      "Seconds": 7.1668964
+    },
+    {
+      "X": 88704,
+      "Y": 81280,
+      "Z": 256,
+      "Seconds": 7.206241
+    },
+    {
+      "X": 88704,
+      "Y": 81248,
+      "Z": 256,
+      "Seconds": 7.2552583
+    },
+    {
+      "X": 88704,
+      "Y": 81216,
+      "Z": 256,
+      "Seconds": 7.3168775
+    },
+    {
+      "X": 88704,
+      "Y": 81184,
+      "Z": 256,
+      "Seconds": 7.3669915
+    },
+    {
+      "X": 88704,
+      "Y": 81152,
+      "Z": 256,
+      "Seconds": 7.4170778
+    },
+    {
+      "X": 88704,
+      "Y": 81120,
+      "Z": 256,
+      "Seconds": 7.4669445
+    },
+    {
+      "X": 88704,
+      "Y": 81088,
+      "Z": 256,
+      "Seconds": 7.5336075
+    },
+    {
+      "X": 88704,
+      "Y": 81056,
+      "Z": 256,
+      "Seconds": 7.5669457
+    },
+    {
+      "X": 88704,
+      "Y": 81024,
+      "Z": 256,
+      "Seconds": 7.6064476
+    },
+    {
+      "X": 88704,
+      "Y": 80992,
+      "Z": 256,
+      "Seconds": 7.6668502
+    },
+    {
+      "X": 88704,
+      "Y": 80960,
+      "Z": 256,
+      "Seconds": 7.7169154
+    },
+    {
+      "X": 88704,
+      "Y": 80928,
+      "Z": 256,
+      "Seconds": 7.7668519
+    },
+    {
+      "X": 88704,
+      "Y": 80896,
+      "Z": 256,
+      "Seconds": 7.816851
+    },
+    {
+      "X": 88704,
+      "Y": 80864,
+      "Z": 256,
+      "Seconds": 7.8668175
+    },
+    {
+      "X": 88704,
+      "Y": 80832,
+      "Z": 256,
+      "Seconds": 7.905953
+    },
+    {
+      "X": 88704,
+      "Y": 80800,
+      "Z": 256,
+      "Seconds": 7.9729536
+    },
+    {
+      "X": 88704,
+      "Y": 80768,
+      "Z": 256,
+      "Seconds": 8.0169449
+    },
+    {
+      "X": 88704,
+      "Y": 80736,
+      "Z": 256,
+      "Seconds": 8.0556865
+    },
+    {
+      "X": 88704,
+      "Y": 80704,
+      "Z": 256,
+      "Seconds": 8.1066555
+    },
+    {
+      "X": 88704,
+      "Y": 80672,
+      "Z": 256,
+      "Seconds": 8.1553335
+    },
+    {
+      "X": 88704,
+      "Y": 80640,
+      "Z": 256,
+      "Seconds": 8.2217819
+    },
+    {
+      "X": 88704,
+      "Y": 80608,
+      "Z": 256,
+      "Seconds": 8.255314
+    },
+    {
+      "X": 88704,
+      "Y": 80576,
+      "Z": 256,
+      "Seconds": 8.30688
+    },
+    {
+      "X": 88704,
+      "Y": 80544,
+      "Z": 256,
+      "Seconds": 8.3736644
+    },
+    {
+      "X": 88704,
+      "Y": 80512,
+      "Z": 256,
+      "Seconds": 8.4060434
+    },
+    {
+      "X": 88704,
+      "Y": 80480,
+      "Z": 256,
+      "Seconds": 8.4528114
+    },
+    {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256,
+      "Seconds": 8.5001696
+    },
+    {
+      "X": 88704,
+      "Y": 80416,
+      "Z": 256,
+      "Seconds": 8.5552237
+    },
+    {
+      "X": 88704,
+      "Y": 80384,
+      "Z": 256,
+      "Seconds": 8.6062648
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 8.6558878
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 8.7060749
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 8.7549832
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 8.8001532
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 8.8502041
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 8.907506
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 8.9668157
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 9.0062556
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 9.0549772
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 9.1058081
+    },
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 9.1552331
+    }
+  ],
+  "Engagement": {
+    "EncounterCount": 1,
+    "Distance": 385,
+    "Reach": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 9.2222157
+  },
+  "Hit": null,
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total.",
+    "Tooltip": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 1,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    },
+    {
+      "Stage": "commit",
+      "Timing": 1,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 11.4755735
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 11.5834989
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 11.8168215
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 12.0168536
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 12.2169481
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 12.4168792
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 12.6222432
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 12.8167827
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 13.0334994
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 13.2223437
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 13.4335953
+    }
+  ],
+  "HoldOff": {
+    "FromStep": 2542,
+    "ToStep": 2562,
+    "EncounterCount": 1
+  },
+  "Checks": [
+    "Before contact the HUD warns that the Bandit Chief guards the road, with level, HP, reach and distance on inspection.",
+    "Walking the lane north, the chief began the encounter itself once the player was within its reach.",
+    "The chief\u0027s encounter offers a 10-step retreat: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery.",
+    "Cancelling the inspected Retreat sends nothing: the player\u0027s own boundary still waits, unanswered.",
+    "The committed route was walked as 10 presented 32-subunit steps and ended the chief\u0027s encounter.",
+    "Twenty exploration steps after disengaging, the chief has not re-entered: the retreat ended contact beyond its reach.",
+    "Held-key travel back down the lane continues after the retained readiness is paid, without another encounter."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T191501Z-3648e/native-road-threat-bja0fon4/pointer.warning.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T191501Z-3648e/native-road-threat-bja0fon4/pointer.engaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T191501Z-3648e/native-road-threat-bja0fon4/pointer.retreat-inspected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T191501Z-3648e/native-road-threat-bja0fon4/pointer.retreating.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T191501Z-3648e/native-road-threat-bja0fon4/pointer.disengaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat/qualification/road-native-20261001T191501Z-3648e/native-road-threat-bja0fon4/pointer.final.png"
+  ],
+  "Notice": "You broke away after 10 steps. The encounter is over; recovery continues while you explore.",
+  "Trade": null,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 10,
+    "RouteSamples": 10,
+    "ReadinessCharged": 130,
+    "WorldSequence": 2560,
+    "Final": {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256
+    },
+    "ActorId": "2bfa5e10a9524c31b8d79a1aa254770e",
+    "CommandId": "11571795dfc0b1a5a6bcbdf8ead77b1c"
+  },
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 81536,
+    "Z": 256
+  },
+  "FinalHp": 78,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

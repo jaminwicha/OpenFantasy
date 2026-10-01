@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "roots": {
+    "project": "/Users/alucinor/Workspace/Projects/OpenFantasy",
+    "ecosystem": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem",
+    "codex_skills": "/Users/alucinor/.codex/skills",
+    "shared_skills": "/Users/alucinor/.agents/skills",
+    "claude": "/Users/alucinor/.claude",
+    "codex": "/Users/alucinor/.codex",
+    "owner_home": "/Users/alucinor"
+  },
+  "inputs": [
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "AGENTS.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "CLAUDE.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "Beta/AGENTS.md"
+    },
+    {
+      "role": "handoff",
+      "root": "project",
+      "path": "Beta/implementation/README.md"
+    },
+    {
+      "role": "steering",
+      "root": "project",
+      "path": "Beta/implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/ui-management/COVERAGE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/COVERAGE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/CRITIC_REVIEW.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/CROSS_SYSTEM_SYNERGIES.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/DECISIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/ECOLOGY_AND_FLUIDS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/GDD.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/GENERATION_VALIDATION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/IMPLEMENTATION_HANDOFF.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/INTEGRATION_CRITIC.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/LANGUAGE_AND_AFTERLIFE.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/LOCAL_REUSE_DECISIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PRESENTATION_CONTRACTS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/README.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/REQUIREMENTS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/SPEC_VALIDATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/VALIDATION.md"
+    },
+    {
+      "role": "instructions",
+      "root": "owner_home",
+      "path": "AGENTS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/ASSIGNMENT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/run_checks.py"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/PRESERVATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/PROTECTED_APPLICATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/Hosting.Tests.csproj.original"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/CLIENT_BASELINE_PATHS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/RETAINED_NATIVE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/CHECKPOINT.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/INPUT_SNAPSHOTS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/WRAPPER_PREFLIGHT.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/ASSIGNMENT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/CHECKPOINT.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/run_checks.py"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/WRAPPER_PREFLIGHT.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/PROTECTED_REGRESSIONS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/INPUT_SNAPSHOTS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/RESULT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/LEAD_REVIEW.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/CRITIC_REVIEW.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/CRITIC_DISPOSITION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/DELIVERY_FILES.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/DELIVERY_CHECKS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat/UPSTREAM.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/Runtime-README.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/README.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/cargo-circuit.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/cargo-presentation.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/encounter-lifecycle.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/encounter-retreat.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/native-encounters.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/inputs/road-threat.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatObservationRegressionTests.cs"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatSchedulingRegressionTests.cs"
+    }
+  ],
+  "skill_sync": {
+    "tool": {
+      "root": "ecosystem",
+      "path": "tools/sync_portable_skills.py"
+    },
+    "manifests": [
+      {
+        "root": "ecosystem",
+        "path": "manifests/portable-skill-bundles.json"
+      },
+      {
+        "root": "ecosystem",
+        "path": "manifests/delegation-skill-alignment.json"
+      }
+    ]
+  }
+}

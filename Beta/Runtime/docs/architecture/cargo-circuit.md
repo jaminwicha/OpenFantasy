@@ -164,8 +164,11 @@ player's bounded observation of actual regions through one projection, composes 
 own source appearances, and lets the player choose either stall by its market identity; the `--cargo` entry
 opens the world natively. A separate fresh selection, the retreat-capable cargo world, adds the
 [encounter retreat](encounter-retreat.md) law (profile 34) to this same composition; it is the legal exit a strong
-road threat depends on. The corridor threat join must admit an encounter whose entry geometry and aftermath lie on the
-`bandit_camp` crossing cells (x=346, y∈[305,317)); escort and guard wages, traveling NPC traders, lived
-migration and multiplayer are separate joins, and no narration stands in for them. The sixteen-region local
-bound is fixed and fifteen are used, so a corridor encounter footprint, escort staging or town layout needs
-reshaped geometry or streamed regions (the infinite-frontier gate), not another added region.
+road threat depends on. A third fresh selection, the threatened cargo world ([road threat](road-threat.md)), adds the
+retained camp's Bandit Chief to the unplayed extended genesis through the internal `Compose` genesis hook, before paid
+exchange and the counters; its entry geometry and aftermath lie on the `bandit_camp` crossing cells (x=346,
+y∈[305,317)) inside the existing corridor. Escort and guard wages, traveling NPC traders, lived migration and
+multiplayer are separate joins, and no narration stands in for them. The sixteen-region local bound is fixed and
+fifteen are used, so escort staging or a town layout needs reshaped geometry or streamed regions (the
+infinite-frontier gate), not another added region. Every fresh extension that adds residents re-prepares the water
+owners through the shared `CargoWaterRebinding`, with the same losslessness check.

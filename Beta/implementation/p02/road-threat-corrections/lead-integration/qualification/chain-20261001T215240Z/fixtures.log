@@ -1,0 +1,30 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90
+{
+  "kind": "fixtures",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/build-20261001T215240Z-c5ba8/report.json",
+  "buildReportSha256": "61525dcd97bf3b2ed7a6ca339df9f38a2869fd84cb7478f7115f61cd3e357138",
+  "roadFixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/road",
+  "retreatFixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/retreat",
+  "cargoFixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/cargo",
+  "tradingFixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/trading",
+  "giftsFixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/gifts",
+  "outcomes": {
+    "Passed": 5
+  },
+  "preservationAfter": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "elapsedSeconds": 66.768,
+  "sourceUnchanged": true,
+  "accepted": true
+}

@@ -1,0 +1,16 @@
+{
+  "status": "prepared_not_executed",
+  "preservation": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "sourceWrapperSha256": "7acce12cd0d4d313a9270e0f76c67fca128a0cea2b1dbbc19c0fd17fc4d99304",
+  "wrapperSha256": "0d3c4fcf2ee47209112d89c7db17b413dcd6deaf9a35673238789a00a3ef490d",
+  "onlyWrapperChange": "Separate output directory retains original preservation pins; additionally enforces byte preservation of the two lead counterexamples. No existing mode, threshold, assertion or required set changes.",
+  "wrapperDiff": [
+    "BASE=P -> BASE=P.parent/'road-threat'",
+    "preservation() checks two pinned lead regression files"
+  ]
+}

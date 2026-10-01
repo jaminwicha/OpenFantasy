@@ -1,0 +1,115 @@
+{
+  "status": "worker_checks_verified_not_acceptance",
+  "sourceCheckpoint": "e5facac98951dbc3d280d12c4de35204bf19013a",
+  "reports": [
+    {
+      "mode": "build",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/build-20261001T205659Z-6c6e2/report.json",
+      "sha256": "498816bb96f6f505f4ca52c7f6db27e675ee116a348e0048e061aaa3a25d8e4d",
+      "distinctManagedCases": 0,
+      "elapsedSeconds": 24.275
+    },
+    {
+      "mode": "unit",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/unit-20261001T210401Z-954fe/report.json",
+      "sha256": "f1cb7cbd183cb7825712f9ff9e686193a36a13a088bb84b46385e7b258168dbc",
+      "distinctManagedCases": 12,
+      "elapsedSeconds": 156.26
+    },
+    {
+      "mode": "regression",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/regression-20261001T210649Z-45cdd/report.json",
+      "sha256": "f2a129c31f0a2c08dcf4d5f9dc4a5cb1c7f855308da55bafe2fc78129ccf1bf6",
+      "distinctManagedCases": 537,
+      "elapsedSeconds": 471.998
+    },
+    {
+      "mode": "fixtures",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T205728Z-b25dd/report.json",
+      "sha256": "4df7a0b888e50195c5602f81b21b67bee08f398b5f6b2d8e9ac4129c0cab665d",
+      "distinctManagedCases": 5,
+      "elapsedSeconds": 73.748
+    },
+    {
+      "mode": "native",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-20261001T211447Z-048c5/report.json",
+      "sha256": "a56095547a049bb088420c7b223cf663c1708e2da70f30b29146e168c5215f03",
+      "distinctManagedCases": 0,
+      "elapsedSeconds": 65.175
+    },
+    {
+      "mode": "native-auth",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-auth-20261001T211555Z-51089/report.json",
+      "sha256": "61062cc3c128d7f87efc9798f1e921e7000228e1c476a1297bb153b1eb5a6d3b",
+      "distinctManagedCases": 1,
+      "elapsedSeconds": 14.683
+    },
+    {
+      "mode": "legacy-native",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/legacy-native-20261001T212530Z-18892/report.json",
+      "sha256": "8ea09c1d875d87d9e96c6942caa9788b3d12fe28a4d2765bd37cd2ef9ad90460",
+      "distinctManagedCases": 0,
+      "elapsedSeconds": 82.6
+    },
+    {
+      "mode": "legacy-auth",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/legacy-auth-20261001T212656Z-54816/report.json",
+      "sha256": "c5dbe29c104152f0193b5f5c53525c3119aeb4a5668e239031a03cbe32868b62",
+      "distinctManagedCases": 2,
+      "elapsedSeconds": 55.061
+    },
+    {
+      "mode": "core",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/core-20261001T212754Z-3af0b/report.json",
+      "sha256": "579c0e2927c408f22ff48372c5e5423b8d86124f35cdcc2e2a7cec17848f62e8",
+      "distinctManagedCases": 1764,
+      "elapsedSeconds": 153.79
+    },
+    {
+      "mode": "cargo-native",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/cargo-native-20261001T211701Z-21f79/report.json",
+      "sha256": "0e8b83a03d4434ac498a717dbec8dd5213fdf0449a719a7860deb2dc03255026",
+      "distinctManagedCases": 0,
+      "elapsedSeconds": 453.045
+    },
+    {
+      "mode": "cargo-auth",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/cargo-auth-20261001T212438Z-d4265/report.json",
+      "sha256": "63f218054a1c44c6103c582156b74df2e3de23e4381ac0ed86d0d2d29cd3aec9",
+      "distinctManagedCases": 1,
+      "elapsedSeconds": 48.157
+    },
+    {
+      "mode": "durability",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/report.json",
+      "sha256": "e17f223725da1d42f9b44b9b51fc68a562f34acae371948a6b90d314d50ee611",
+      "distinctManagedCases": 2,
+      "elapsedSeconds": 43.988
+    },
+    {
+      "mode": "retained-auth",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/retained-auth-20261001T213040Z-c17ee/report.json",
+      "sha256": "89c1eb4d688e658241f9879972a7a1475cc1d6d750f955821b5ace4a55581198",
+      "distinctManagedCases": 4,
+      "elapsedSeconds": 162.505
+    },
+    {
+      "mode": "road-native",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/report.json",
+      "sha256": "85c3b43f43e646d906bdaf112f53584f828abed91f1e587c8f8a414f754d5b83",
+      "distinctManagedCases": 0,
+      "elapsedSeconds": 266.439
+    },
+    {
+      "mode": "road-auth",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-auth-20261001T210316Z-35b4f/report.json",
+      "sha256": "1f339a7f1114b2e79a4e3be1898a65be8a028b3a80b8f9a0e30b2e4022dfe2d4",
+      "distinctManagedCases": 1,
+      "elapsedSeconds": 33.782
+    }
+  ],
+  "distinctManagedPasses": 2308,
+  "corePasses": 1764,
+  "hostPasses": 544,
+  "note": "Worker final coherent source and build. Later lead edits require affected checks; unchanged component evidence can be inherited explicitly. Visual and review gaps remain open."
+}

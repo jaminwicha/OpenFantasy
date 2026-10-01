@@ -53,9 +53,31 @@ public partial class FarmGame
     /// <summary>Expected fresh genesis of an exported retreat-capable cargo fixture; requires its explicit existing save.</summary>
     internal string? CargoRetreatFixtureGenesisPath { get; init; }
 
+    /// <summary>Explicit fresh threatened cargo-world selection (the camp's Bandit Chief) with its own save.</summary>
+    internal bool CargoThreatProfile { get; init; }
+
+    /// <summary>Expected fresh genesis of an exported threatened cargo fixture; requires its explicit existing save.</summary>
+    internal string? CargoThreatFixtureGenesisPath { get; init; }
+
+    private bool FramesCargoThreat => CargoThreatProfile || CargoThreatFixtureGenesisPath is not null;
+
     /// <summary>Starts opening the cargo world when this game selects it; false for every other selection.</summary>
     private bool OpenCargo()
     {
+        if (CargoThreatFixtureGenesisPath is { } threatGenesis)
+        {
+            _opening = SavePathOverride is { } threatSave
+                ? FarmClientSession.OpenCargoThreatFixtureAsync(threatSave, threatGenesis)
+                : Task.FromException<FarmClientSession>(new InvalidOperationException("The road-threat fixture requires its existing save."));
+            return true;
+        }
+        if (CargoThreatProfile)
+        {
+            string threatPath = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/openfantasy-cargo-threat.sqlite");
+            _opening = FarmClientSession.OpenCargoThreatAsync(threatPath,
+                OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.SeedText, "Traveler");
+            return true;
+        }
         if (CargoRetreatFixtureGenesisPath is { } retreatGenesis)
         {
             _opening = SavePathOverride is { } retreatSave
@@ -164,6 +186,23 @@ public partial class FarmGame
         _camera.LimitRight = checked((int)Math.Ceiling(limits.Right));
         _camera.LimitBottom = checked((int)Math.Ceiling(limits.Bottom));
         return true;
+    }
+
+    /// <summary>Frames complete sprites for the player and observed road threats, without moving authority feet.</summary>
+    private Vector2 FrameCargoThreats(LocalWorldView view, Vector2 ordinaryFocus)
+    {
+        if (!FramesCargoThreat || _canvas.ProjectedActorSpriteBounds(view.PlayerActorId) is not { } bounds)
+        {
+            return ordinaryFocus;
+        }
+        foreach (var threat in view.RoadThreats ?? [])
+        {
+            if (_canvas.ProjectedActorSpriteBounds(threat.ActorId) is { } sprite)
+            {
+                bounds = bounds.Merge(sprite);
+            }
+        }
+        return bounds.GetCenter();
     }
 
     /// <summary>

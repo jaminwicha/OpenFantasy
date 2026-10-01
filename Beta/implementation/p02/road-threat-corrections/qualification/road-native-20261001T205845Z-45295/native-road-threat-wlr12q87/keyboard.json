@@ -1,0 +1,1280 @@
+{
+  "Kind": "native-road-threat-v1",
+  "Mode": "keyboard",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-threat-probe",
+  "OpeningSeconds": 1.53,
+  "ProbeMilliseconds": 209083,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Start": "farm",
+  "Reward": 200,
+  "Purchase": {
+    "QuoteId": "5bbb40d722de7f253a9abc683d2dfaac",
+    "LotId": "453ae9d6c9b799c063c42eafc091f76f",
+    "Units": 1,
+    "Total": 20,
+    "BalanceBefore": 200,
+    "BalanceAfter": 180
+  },
+  "Unobserved": {
+    "X": 88704,
+    "Y": 81536,
+    "Z": 256,
+    "Rows": 0,
+    "Status": "Explore freely \u00B7 Select a wolf to inspect an encounter."
+  },
+  "WarningObservation": {
+    "DistanceSubunits": 749,
+    "ReachSubunits": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256
+    },
+    "ChiefDrawn": true,
+    "ChiefViewport": {
+      "X": 544,
+      "Y": 28
+    },
+    "ChiefInField": false,
+    "Seconds": 129.9952326
+  },
+  "Inputs": [
+    {
+      "Stage": "farm",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "wren",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "wren",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wren",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wren",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "cancel",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "travel",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "MarketStall"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "RowReached": 1,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "Selected": 1,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketStall",
+      "To": "BuyMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "RowReached": 1,
+      "Text": "Lot 1: 1 ration",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "Selected": 1,
+      "Text": "Lot 1: 1 ration"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLot",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "ShowLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "ShowLot",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "walk-to-marla",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "outbound",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "outbound",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "warning",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "to-gearford",
+      "Hold": "Up"
+    }
+  ],
+  "Warning": "Danger nearby \u00B7 Bandit Chief guards the road \u00B7 attacks within 1.6 cells\nExplore freely \u00B7 Select a wolf to inspect an encounter.",
+  "WarningDetail": "Bandit Chief \u00B7 level 7 \u00B7 HP 800/800. It attacks you when you come within 1.56 cells in its sight, and is 2.9 cells away now. It does not chase: walk around it outside that reach, or retreat if it engages you. An early traveller cannot expect to win.\nRemaining recovery: 0 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+  "Approach": [
+    {
+      "X": 88704,
+      "Y": 81536,
+      "Z": 256,
+      "Seconds": 127.8528012
+    },
+    {
+      "X": 88704,
+      "Y": 81504,
+      "Z": 256,
+      "Seconds": 127.9033934
+    },
+    {
+      "X": 88704,
+      "Y": 81472,
+      "Z": 256,
+      "Seconds": 127.9599397
+    },
+    {
+      "X": 88704,
+      "Y": 81440,
+      "Z": 256,
+      "Seconds": 128.0033641
+    },
+    {
+      "X": 88704,
+      "Y": 81408,
+      "Z": 256,
+      "Seconds": 128.0533957
+    },
+    {
+      "X": 88704,
+      "Y": 81376,
+      "Z": 256,
+      "Seconds": 128.1034136
+    },
+    {
+      "X": 88704,
+      "Y": 81344,
+      "Z": 256,
+      "Seconds": 128.1533607
+    },
+    {
+      "X": 88704,
+      "Y": 81312,
+      "Z": 256,
+      "Seconds": 128.2033792
+    },
+    {
+      "X": 88704,
+      "Y": 81280,
+      "Z": 256,
+      "Seconds": 128.2533852
+    },
+    {
+      "X": 88704,
+      "Y": 81248,
+      "Z": 256,
+      "Seconds": 128.3033462
+    },
+    {
+      "X": 88704,
+      "Y": 81216,
+      "Z": 256,
+      "Seconds": 128.3533915
+    },
+    {
+      "X": 88704,
+      "Y": 81184,
+      "Z": 256,
+      "Seconds": 128.403364
+    },
+    {
+      "X": 88704,
+      "Y": 81152,
+      "Z": 256,
+      "Seconds": 128.4534168
+    },
+    {
+      "X": 88704,
+      "Y": 81120,
+      "Z": 256,
+      "Seconds": 128.5033589
+    },
+    {
+      "X": 88704,
+      "Y": 81088,
+      "Z": 256,
+      "Seconds": 128.5533682
+    },
+    {
+      "X": 88704,
+      "Y": 81056,
+      "Z": 256,
+      "Seconds": 128.6033447
+    },
+    {
+      "X": 88704,
+      "Y": 81024,
+      "Z": 256,
+      "Seconds": 128.6533695
+    },
+    {
+      "X": 88704,
+      "Y": 80992,
+      "Z": 256,
+      "Seconds": 128.7033517
+    },
+    {
+      "X": 88704,
+      "Y": 80960,
+      "Z": 256,
+      "Seconds": 128.7534392
+    },
+    {
+      "X": 88704,
+      "Y": 80928,
+      "Z": 256,
+      "Seconds": 128.8034843
+    },
+    {
+      "X": 88704,
+      "Y": 80896,
+      "Z": 256,
+      "Seconds": 128.858671
+    },
+    {
+      "X": 88704,
+      "Y": 80864,
+      "Z": 256,
+      "Seconds": 128.9034717
+    },
+    {
+      "X": 88704,
+      "Y": 80832,
+      "Z": 256,
+      "Seconds": 128.9602694
+    },
+    {
+      "X": 88704,
+      "Y": 80800,
+      "Z": 256,
+      "Seconds": 129.0034398
+    },
+    {
+      "X": 88704,
+      "Y": 80768,
+      "Z": 256,
+      "Seconds": 129.0534322
+    },
+    {
+      "X": 88704,
+      "Y": 80736,
+      "Z": 256,
+      "Seconds": 129.1033878
+    },
+    {
+      "X": 88704,
+      "Y": 80704,
+      "Z": 256,
+      "Seconds": 129.153275
+    },
+    {
+      "X": 88704,
+      "Y": 80672,
+      "Z": 256,
+      "Seconds": 129.2034365
+    },
+    {
+      "X": 88704,
+      "Y": 80640,
+      "Z": 256,
+      "Seconds": 129.2532718
+    },
+    {
+      "X": 88704,
+      "Y": 80608,
+      "Z": 256,
+      "Seconds": 129.32013
+    },
+    {
+      "X": 88704,
+      "Y": 80576,
+      "Z": 256,
+      "Seconds": 129.3533619
+    },
+    {
+      "X": 88704,
+      "Y": 80544,
+      "Z": 256,
+      "Seconds": 129.4033326
+    },
+    {
+      "X": 88704,
+      "Y": 80512,
+      "Z": 256,
+      "Seconds": 129.4533745
+    },
+    {
+      "X": 88704,
+      "Y": 80480,
+      "Z": 256,
+      "Seconds": 129.5033594
+    },
+    {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256,
+      "Seconds": 129.5533506
+    },
+    {
+      "X": 88704,
+      "Y": 80416,
+      "Z": 256,
+      "Seconds": 130.0593093
+    },
+    {
+      "X": 88704,
+      "Y": 80384,
+      "Z": 256,
+      "Seconds": 130.1033657
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 130.1534147
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 130.2033769
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 130.2534742
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 130.3367604
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 130.3535769
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 130.4033893
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 130.4534163
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 130.5033756
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 130.5533787
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 130.6035441
+    },
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 130.6534847
+    }
+  ],
+  "Engagement": {
+    "EncounterCount": 1,
+    "Distance": 385,
+    "Reach": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 130.7372658
+  },
+  "Hit": {
+    "Before": 78,
+    "After": 42,
+    "ChiefHp": 800,
+    "ChiefHpAfter": 788
+  },
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total.",
+    "Tooltip": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 24,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    },
+    {
+      "Stage": "commit",
+      "Timing": 24,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 133.6385006
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 133.7594447
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 133.9534296
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 134.1535294
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 134.3533837
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 134.6033466
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 134.8534767
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 135.053432
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 135.2533774
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 135.4533692
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 135.6533381
+    }
+  ],
+  "HoldOff": {
+    "FromStep": 2587,
+    "ToStep": 2607,
+    "EncounterCount": 1
+  },
+  "Checks": [
+    "E, G, G, E talked to Wren, accepted and delivered her quest and closed: the earned reward is 200.",
+    "At Marla\u0027s stall one ration was asked, reviewed and bought through the panel at the exact quoted total.",
+    "Held arrow keys carried the bought ration along the outbound lane to the road cell seven cells south of the camp.",
+    "Seven cells south of the camp the chief is unobserved: no warning or detail is published.",
+    "Walking north, the chief came into view three cells away: the HUD warned before contact, with level, HP, reach and distance on inspection, and the chief was drawn.",
+    "Walking the lane north, the chief began the encounter itself once the player was within its reach.",
+    "Striking the level-7 chief cost the Squire 36 HP from its real attack.",
+    "The chief\u0027s encounter offers a 10-step retreat: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery.",
+    "Cancelling the inspected Retreat sends nothing: the player\u0027s own boundary still waits, unanswered.",
+    "The committed route was walked as 10 presented 32-subunit steps and ended the chief\u0027s encounter.",
+    "Twenty exploration steps after disengaging, the chief has not re-entered: the retreat ended contact beyond its reach.",
+    "A detour three cells west of the camp passed the chief outside its reach and rejoined the lane north of it.",
+    "At Kegga\u0027s stall the carried lot was shown, asked, reviewed and sold at the exact bid total."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.farm-start.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.wren-reward.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.brasshollow.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.buy-review.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.marla-bought.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.road.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.warning.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.engaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.hit.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.retreat-inspected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.retreating.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.disengaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.detoured.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.gearford.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.sell-review.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.sold.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T205845Z-45295/native-road-threat-wlr12q87/keyboard.final.png"
+  ],
+  "Notice": "You broke away after 10 steps. The encounter is over; recovery continues while you explore.",
+  "Trade": {
+    "QuoteId": "8b0281c8ec83faa319f15b7b8ee130d3",
+    "LotId": "453ae9d6c9b799c063c42eafc091f76f",
+    "Total": 38,
+    "BalanceBefore": 180,
+    "BalanceAfter": 218,
+    "RationsBefore": 1,
+    "RationsAfter": 0
+  },
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 10,
+    "RouteSamples": 10,
+    "ReadinessCharged": 130,
+    "WorldSequence": 2610,
+    "Final": {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256
+    },
+    "ActorId": "2bfa5e10a9524c31b8d79a1aa254770e",
+    "CommandId": "e55b521f8b070a5a1102a08b0dc76521"
+  },
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 36224,
+    "Z": 256
+  },
+  "FinalHp": 42,
+  "FinalBalance": 218,
+  "CarriedRations": 0
+}

@@ -73,6 +73,15 @@ archive and its living initiating actor, followed by complete current world admi
 disengagement, healing, reward issuance, corpse creation or respawn. An incapacitated initiator has no
 automatic release or rescue transition in this interpretation.
 
+An initiator need not be a player. A scenario may name a host resident as initiator; its entry is then that
+resident's own authenticated command under its control binding, with the same reach, sightline, availability and
+episode rules. The [road threat](road-threat.md) binding proposes such entries from host advice at unheld exploration
+cutoffs, only in the retreat-capable profile; the authority judges them exactly like a player's entry. An eligible
+host entry takes its cutoff even while an ordinary player request is waiting (that request is refused at the same
+boundary); pause, reading hold, retained consequence, care, the player's own lifecycle choice and an active encounter
+still come first. An outcome of a host-initiated scenario can only be released by that living initiator; no host
+release, rescue or reward is automatic, so either side's incapacity is terminal in this interpretation.
+
 The explicit retreat interpretation (profile 34) adds a separate exit: a committed
 [retreat](encounter-retreat.md) whose last walked sample breaks contact moves Active directly to Exploration in that
 same transaction, copying every actual debt to the permanent ledger. It never passes through Outcome, so release

@@ -1,0 +1,27 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-20261001T220410Z-3ac08
+{
+  "kind": "native",
+  "limitSeconds": 900,
+  "preservationBefore": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/build-20261001T215240Z-c5ba8/report.json",
+  "buildReportSha256": "61525dcd97bf3b2ed7a6ca339df9f38a2869fd84cb7478f7115f61cd3e357138",
+  "fixtureReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/fixtures-20261001T215251Z-6fe90/report.json",
+  "fixtureReportSha256": "19f20263c0d6466a6fd011ddcc676f824a5f516a781fd59331295fdd7e638749",
+  "retreatReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-20261001T220410Z-3ac08/retreat.json",
+  "retreatReportSha256": "ac1fbb4e4a0fe6d609ffdb1e8f6ca76ec03a260b07b33a0a7b83190f2fe8c242",
+  "retreatAuthenticationManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/native-20261001T220410Z-3ac08/native-retreat-4paxyk48/native-manifest.json",
+  "preservationAfter": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "elapsedSeconds": 63.851,
+  "sourceUnchanged": true,
+  "accepted": true
+}

@@ -21,6 +21,7 @@ different kind of person.
 | [Encounter lifecycle](encounter-lifecycle.md) | How do exploration, authenticated entry, outcomes and release preserve permanent recovery debt and fractional process carry? |
 | [Native encounters](native-encounters.md) | How do public combat choices, contextual controls, hit feedback and exact reopening connect to the lifecycle? |
 | [Encounter retreat](encounter-retreat.md) | How does a committed retreat walk real ground sample by sample, charge readiness, break contact and end an episode without a forged outcome, and how are players, NPCs and the native wheel bound to it? |
+| [Road threat](road-threat.md) | How does the retained camp's Bandit Chief threaten carried cargo on the lane: source mapping, fresh admission, host-initiated entry under its own control, warning, escape, detour and onward trade? |
 | [World and geography](world-and-geography.md) | How do terrain, watersheds, streaming, planes, geological history and ecology fit together? |
 | [Local worksite](local-worksite.md) | How do funded building, multilevel public geometry, contextual mining and a separate save entry connect? |
 | [Local watercourse](local-watercourse.md) | How do finite flowing water, an earned divider breach, public cell geometry and the inhabited farm connect? |

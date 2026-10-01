@@ -45,6 +45,39 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 Owner steering, 2026-10-01: **delegate to Opus 5.5**. Use exact `claude-opus-5-5[1m]`, requested
 Max, finite limits and the maintained direct synchronization adapter; Astra retains integration.
 
+The [integrated road threat](p02/road-threat-corrections/lead-integration/INTEGRATION_REVIEW.md)
+is accepted as a bounded milestone, `codex/milestone-road-threat-20261001`: a source-bound camp chief
+initiates combat on the cargo road; the player gets a visible pre-contact warning, can inspect/cancel/
+commit a paid retreat, detour, sell the bought lot and reopen. Pending ordinary input cannot suppress
+entry, unobserved condition is not disclosed, and complete saved journals authenticate the journey.
+
+[Final checks](p02/road-threat-corrections/lead-integration/FINAL_CHECKS.json) account for **2,312 distinct
+managed passes** (1,764 Core; 548 Host), seven fresh lead modes and explicitly inherited unchanged
+Core/Host/regression/storage evidence. All three road warning routes show complete player/chief sprites
+clear of the HUD. Four added contracts prove both Outcome refusals, genuine reading/care holds and
+host-entry identity/control boundaries. Care restores and resumes the same encounter; it does not
+implicitly release it. Source stats, Core rules, old assertions and all deadlines remain unchanged.
+
+Implementation, independent critic and corrections returned verified Opus5.5/1M, requested Max and
+verified pre/post context. Their client estimates are $19.8348706, $5.666059 and $14.1227362 respectively;
+actual elapsed times and friction are in the integration review. All are terminal; no external request
+is active, no paid retry is scheduled and no net credit-saving claim is made. Do not poll session95188.
+Delivery checkpoint `e5facac` preserves the pre-integration worker result and remaining findings.
+
+The next combat dependency is [terminal encounter continuation](p02/encounter-outcome-continuation/INVESTIGATION.md).
+The existing initiator-only release law blocks both terminal results; tests now demonstrate the opposite
+winner with an explicitly admitted wounded-chief calibration, not a production-balance claim. Before
+shipping combat, separate completion, reading/acknowledgment and genuinely available rescue/care.
+That rule change is not implemented or accepted by this milestone. Pursuit, cheap geometric bypass,
+rewards/respawn, escorts, migration, physical controls, human UI/art, multiplayer and full P02/production
+remain open. The world-composition and campaign requirements are unchanged.
+
+[Upstream](p02/road-threat-corrections/lead-integration/UPSTREAM.json) records ecosystem `ea166ea2`:
+dependency-specific evidence reuse and actual visible-bounds review, three synchronized installed skills
+and all71 alignment entries verified. Earlier `92e9040` captures retained-public-frame compatibility.
+The project instructions carry the same evidence/visibility discipline. All587 protected tests,23 specs,
+source save/assets,40 graphical imports and unrelated19-file predecessor staging remain protected.
+
 The [lawful retreat foundation](p02/retreat-integration/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-lawful-retreat-20261001`. The explicit `--cargo-retreat` world supports one committed
 solo withdrawal from a two-side encounter: real ground samples, complete-root admission, opponent

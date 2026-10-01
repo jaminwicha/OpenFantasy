@@ -1,0 +1,38 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:01.23]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.02]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.44]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:23.08]     OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate [FAIL]
+[xUnit.net 00:00:23.08]       Assert.True() Failure
+[xUnit.net 00:00:23.08]       Expected: True
+[xUnit.net 00:00:23.08]       Actual:   False
+[xUnit.net 00:00:23.08]       Stack Trace:
+[xUnit.net 00:00:23.09]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs(159,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate()
+[xUnit.net 00:00:23.09]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs(169,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate()
+[xUnit.net 00:00:23.09]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate [19 s]
+  Error Message:
+   Assert.True() Failure
+Expected: True
+Actual:   False
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs:line 159
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.Genuine_aftermath_care_completes_before_a_nearby_chief_can_initiate() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatIntegrationContractTests.cs:line 169
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_wounded_host_initiator_can_lose_but_neither_survivor_nor_incapacitated_initiator_can_release [5 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.A_saved_host_entry_retries_exactly_but_conflicting_content_and_player_control_are_refused [5 s]
+[xUnit.net 00:00:38.82]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatIntegrationContractTests.An_actual_reading_hold_defers_a_ready_in_reach_chief_until_the_cutoff_after_closing [4 s]
+
+Test Run Failed.
+Total tests: 4
+     Passed: 3
+     Failed: 1
+ Total time: 39.9148 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/lead-integration/qualification/focused-20261001T214849Z/focused.trx

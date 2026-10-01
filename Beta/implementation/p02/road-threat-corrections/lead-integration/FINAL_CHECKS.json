@@ -1,0 +1,396 @@
+{
+  "status": "accepted_bounded_road_threat_increment",
+  "sourceHead": "223160eac4fcceae6fe6e6b1a6baa84455c1fb07",
+  "workerDeliveryCheckpoint": "e5facac98951dbc3d280d12c4de35204bf19013a",
+  "reports": [
+    {
+      "generation": "worker",
+      "mode": "build",
+      "report": "qualification/build-20261001T205659Z-6c6e2/report.json",
+      "sha256": "498816bb96f6f505f4ca52c7f6db27e675ee116a348e0048e061aaa3a25d8e4d",
+      "passedExecutions": 0,
+      "elapsedSeconds": 24.275
+    },
+    {
+      "generation": "worker",
+      "mode": "unit",
+      "report": "qualification/unit-20261001T210401Z-954fe/report.json",
+      "sha256": "f1cb7cbd183cb7825712f9ff9e686193a36a13a088bb84b46385e7b258168dbc",
+      "passedExecutions": 12,
+      "elapsedSeconds": 156.26
+    },
+    {
+      "generation": "worker",
+      "mode": "regression",
+      "report": "qualification/regression-20261001T210649Z-45cdd/report.json",
+      "sha256": "f2a129c31f0a2c08dcf4d5f9dc4a5cb1c7f855308da55bafe2fc78129ccf1bf6",
+      "passedExecutions": 537,
+      "elapsedSeconds": 471.998
+    },
+    {
+      "generation": "worker",
+      "mode": "fixtures",
+      "report": "qualification/fixtures-20261001T205728Z-b25dd/report.json",
+      "sha256": "4df7a0b888e50195c5602f81b21b67bee08f398b5f6b2d8e9ac4129c0cab665d",
+      "passedExecutions": 5,
+      "elapsedSeconds": 73.748
+    },
+    {
+      "generation": "worker",
+      "mode": "native",
+      "report": "qualification/native-20261001T211447Z-048c5/report.json",
+      "sha256": "a56095547a049bb088420c7b223cf663c1708e2da70f30b29146e168c5215f03",
+      "passedExecutions": 0,
+      "elapsedSeconds": 65.175
+    },
+    {
+      "generation": "worker",
+      "mode": "native-auth",
+      "report": "qualification/native-auth-20261001T211555Z-51089/report.json",
+      "sha256": "61062cc3c128d7f87efc9798f1e921e7000228e1c476a1297bb153b1eb5a6d3b",
+      "passedExecutions": 1,
+      "elapsedSeconds": 14.683
+    },
+    {
+      "generation": "worker",
+      "mode": "legacy-native",
+      "report": "qualification/legacy-native-20261001T212530Z-18892/report.json",
+      "sha256": "8ea09c1d875d87d9e96c6942caa9788b3d12fe28a4d2765bd37cd2ef9ad90460",
+      "passedExecutions": 0,
+      "elapsedSeconds": 82.6
+    },
+    {
+      "generation": "worker",
+      "mode": "legacy-auth",
+      "report": "qualification/legacy-auth-20261001T212656Z-54816/report.json",
+      "sha256": "c5dbe29c104152f0193b5f5c53525c3119aeb4a5668e239031a03cbe32868b62",
+      "passedExecutions": 2,
+      "elapsedSeconds": 55.061
+    },
+    {
+      "generation": "worker",
+      "mode": "core",
+      "report": "qualification/core-20261001T212754Z-3af0b/report.json",
+      "sha256": "579c0e2927c408f22ff48372c5e5423b8d86124f35cdcc2e2a7cec17848f62e8",
+      "passedExecutions": 1764,
+      "elapsedSeconds": 153.79
+    },
+    {
+      "generation": "worker",
+      "mode": "cargo-native",
+      "report": "qualification/cargo-native-20261001T211701Z-21f79/report.json",
+      "sha256": "0e8b83a03d4434ac498a717dbec8dd5213fdf0449a719a7860deb2dc03255026",
+      "passedExecutions": 0,
+      "elapsedSeconds": 453.045
+    },
+    {
+      "generation": "worker",
+      "mode": "cargo-auth",
+      "report": "qualification/cargo-auth-20261001T212438Z-d4265/report.json",
+      "sha256": "63f218054a1c44c6103c582156b74df2e3de23e4381ac0ed86d0d2d29cd3aec9",
+      "passedExecutions": 1,
+      "elapsedSeconds": 48.157
+    },
+    {
+      "generation": "worker",
+      "mode": "durability",
+      "report": "qualification/durability-20261001T211613Z-6ce52/report.json",
+      "sha256": "e17f223725da1d42f9b44b9b51fc68a562f34acae371948a6b90d314d50ee611",
+      "passedExecutions": 2,
+      "elapsedSeconds": 43.988
+    },
+    {
+      "generation": "worker",
+      "mode": "retained-auth",
+      "report": "qualification/retained-auth-20261001T213040Z-c17ee/report.json",
+      "sha256": "89c1eb4d688e658241f9879972a7a1475cc1d6d750f955821b5ace4a55581198",
+      "passedExecutions": 5,
+      "elapsedSeconds": 162.505
+    },
+    {
+      "generation": "worker",
+      "mode": "road-native",
+      "report": "qualification/road-native-20261001T205845Z-45295/report.json",
+      "sha256": "85c3b43f43e646d906bdaf112f53584f828abed91f1e587c8f8a414f754d5b83",
+      "passedExecutions": 0,
+      "elapsedSeconds": 266.439
+    },
+    {
+      "generation": "worker",
+      "mode": "road-auth",
+      "report": "qualification/road-auth-20261001T210316Z-35b4f/report.json",
+      "sha256": "1f339a7f1114b2e79a4e3be1898a65be8a028b3a80b8f9a0e30b2e4022dfe2d4",
+      "passedExecutions": 1,
+      "elapsedSeconds": 33.782
+    },
+    {
+      "generation": "lead",
+      "mode": "build",
+      "report": "qualification/build-20261001T215240Z-c5ba8/report.json",
+      "sha256": "61525dcd97bf3b2ed7a6ca339df9f38a2869fd84cb7478f7115f61cd3e357138",
+      "passedExecutions": 0,
+      "elapsedSeconds": 11.123
+    },
+    {
+      "generation": "lead",
+      "mode": "fixtures",
+      "report": "qualification/fixtures-20261001T215251Z-6fe90/report.json",
+      "sha256": "19f20263c0d6466a6fd011ddcc676f824a5f516a781fd59331295fdd7e638749",
+      "passedExecutions": 5,
+      "elapsedSeconds": 66.768
+    },
+    {
+      "generation": "lead",
+      "mode": "road-native",
+      "report": "qualification/road-native-20261001T215358Z-a0863/report.json",
+      "sha256": "d627d6c5c25a8f6f0d6e8d88b823e0c5f52c14c1ef6525a1460761dd12a87451",
+      "passedExecutions": 0,
+      "elapsedSeconds": 386.961
+    },
+    {
+      "generation": "lead",
+      "mode": "road-auth",
+      "report": "qualification/road-auth-20261001T220026Z-d24a9/report.json",
+      "sha256": "00c5de5fb683e0d4e6b3152f3f0616f0973765b817e6faf439125a2289011fb3",
+      "passedExecutions": 1,
+      "elapsedSeconds": 42.808
+    },
+    {
+      "generation": "lead",
+      "mode": "unit",
+      "report": "qualification/unit-20261001T220110Z-a51c9/report.json",
+      "sha256": "5691ef792a49258f4fd0c8606ff48b28e8ed9cfa85872954e3ffa0141334ebfb",
+      "passedExecutions": 16,
+      "elapsedSeconds": 179.751
+    },
+    {
+      "generation": "lead",
+      "mode": "native",
+      "report": "qualification/native-20261001T220410Z-3ac08/report.json",
+      "sha256": "a0e65688789dbae5da739cf4e477609932d27f59b8f4391478eb6588843dd5e9",
+      "passedExecutions": 0,
+      "elapsedSeconds": 63.851
+    },
+    {
+      "generation": "lead",
+      "mode": "native-auth",
+      "report": "qualification/native-auth-20261001T220514Z-a96e0/report.json",
+      "sha256": "69fd00ad4dfb327abcc74ee7166a123dc204d83c00dfc827ce750239afd26621",
+      "passedExecutions": 1,
+      "elapsedSeconds": 13.96
+    }
+  ],
+  "distinctManagedPasses": 2312,
+  "corePasses": 1764,
+  "hostPasses": 548,
+  "trxSha256": {
+    "qualification/unit-20261001T210401Z-954fe/unit.trx": "1657d473d8eeff4abc9637ab65c61830c821c9d1566bce8a591c6dd4fa6d0908",
+    "qualification/regression-20261001T210649Z-45cdd/regression.trx": "2a33b6254d2f5be2f2f419dff7cb54690278e1158c315ceba58aefe73b925b7d",
+    "qualification/fixtures-20261001T205728Z-b25dd/retreat.trx": "85b5a6e4064093c0b8fe7d2b875e0ce83b489c19e51ea2cb86698385360174d3",
+    "qualification/fixtures-20261001T205728Z-b25dd/cargo.trx": "6d5b98c5f86cff035a7edfb9a16fca0d659103f4209c69d73da0f6a5dc22ff06",
+    "qualification/fixtures-20261001T205728Z-b25dd/road.trx": "81ce119d9ef439cefd496bfbc86514d977b2c16a5225f9b47d3f12245956e70d",
+    "qualification/fixtures-20261001T205728Z-b25dd/trading.trx": "4ce720935b11a66c56e034ad33a71ab76302a81e2f7d4d26576186d37e14a273",
+    "qualification/fixtures-20261001T205728Z-b25dd/gifts.trx": "9ce6a8ebc838abdff76557658d144aea3545e5301e699ca73e7d60a3bf9b5716",
+    "qualification/native-auth-20261001T211555Z-51089/retreat.trx": "05e81cfe8c4da858ee04bb0ff8d8c2b787565cd0cbb038ebb8cd189231dd77bd",
+    "qualification/legacy-auth-20261001T212656Z-54816/trading.trx": "c9813b20def5f2f3a555cf34fbc59d3e15efbd2be3d792252dc7e16de6a0b836",
+    "qualification/legacy-auth-20261001T212656Z-54816/gifts.trx": "486a60ec00a6014cfc36e5ecc7d7195760a247af172d0349b7f0f2c6466e3829",
+    "qualification/core-20261001T212754Z-3af0b/core.trx": "b66cc18b3b051ae66e08182ff42b46d6bb556a5c8dca29f22bd70d6596c14060",
+    "qualification/cargo-auth-20261001T212438Z-d4265/cargo.trx": "0c8bc3d5795f40b15a15ad319293cc69929c9d1773869c6dc48e2cc00252053a",
+    "qualification/durability-20261001T211613Z-6ce52/durability-fixtures.trx": "93ef392895c748679af0985c251374e70868d989f914ed3a69ead0d7a98c8f9f",
+    "qualification/durability-20261001T211613Z-6ce52/durability-auth.trx": "bba1efdb083ecadf58512f4bfbe53844c2875e4134379669caa83730cdd9c3df",
+    "qualification/retained-auth-20261001T213040Z-c17ee/retained-trading-failed.trx": "8b525a5a9ff77c4bf1e8c304e50406a96ae69a7f952001388cc4a39868fd5491",
+    "qualification/retained-auth-20261001T213040Z-c17ee/retained-cargo.trx": "01f9ee2e3d1b7d0c625ca758caf8cc007bf33d2b57866d6957b12945e96434ec",
+    "qualification/retained-auth-20261001T213040Z-c17ee/retained-trading.trx": "3cf795a0565836c16611d1098a3e6a2f37e8ecce2753f32bc2b30995a9e0ba3f",
+    "qualification/retained-auth-20261001T213040Z-c17ee/retained-gifts.trx": "c678fb5207902157c7ab1847f828c6110ebfde9dec435cb5e5f564d4a553fc07",
+    "qualification/retained-auth-20261001T213040Z-c17ee/retained-retreat.trx": "79b832649c44a52bca223ca10fd3f24c16d3383c4d1fa733b258ba6e0d67ff81",
+    "qualification/road-auth-20261001T210316Z-35b4f/road.trx": "a77b20335222ca15719863ec2f5c596460361712e9d1c37fd76c451fccfc425f",
+    "qualification/fixtures-20261001T215251Z-6fe90/retreat.trx": "91d1057a4336412577f684e0148d214ac47d9e4e4aaf921fee1cee22403deccd",
+    "qualification/fixtures-20261001T215251Z-6fe90/cargo.trx": "b105bddcbcbfc0dfcf9498490c1c793b14794548db1ba5ae11c4cbf4a71e18ac",
+    "qualification/fixtures-20261001T215251Z-6fe90/road.trx": "463ed46cbf0c3a92e18773f44aed4cadd88a308848d9c8a868aaa9a7a5cb3f00",
+    "qualification/fixtures-20261001T215251Z-6fe90/trading.trx": "3fdfcfe2c39ea56e460137bfbd47101b9a2429e944741553abd032621dfc1b34",
+    "qualification/fixtures-20261001T215251Z-6fe90/gifts.trx": "de140b3437f134a51297eafe330bde3342fdde56ac545ffdb3f4f7ed64feb226",
+    "qualification/road-auth-20261001T220026Z-d24a9/road.trx": "243c0304b82c92db523429414c1dde6ad20473a4ea79178a7dc5d3183b939a0b",
+    "qualification/unit-20261001T220110Z-a51c9/unit.trx": "063555684af73851bc53105635503e9b7aa3a06d35d7e4ce26574505dcea6b16",
+    "qualification/native-auth-20261001T220514Z-a96e0/retreat.trx": "7cd9617e50bf1845fa6ed01bf4afee0b9e99ebe5baf271204d4d45072a227ba2"
+  },
+  "preservation": {
+    "existingTests": 587,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "currentSourceFiles": 1790,
+  "currentAssemblies": 14,
+  "currentImportedAssets": 40,
+  "buildReport": "qualification/build-20261001T215240Z-c5ba8/report.json",
+  "dependencyReview": "DEPENDENCY_REVIEW.json",
+  "native": {
+    "keyboard": {
+      "report": "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/keyboard.json",
+      "sha256": "41322bca174169c25db976cce8852afd6abf98cc272b53a60878dccea100f812",
+      "warningObservation": {
+        "DistanceSubunits": 719,
+        "ReachSubunits": 400,
+        "Feet": {
+          "X": 88704,
+          "Y": 80416,
+          "Z": 256
+        },
+        "ChiefDrawn": true,
+        "ChiefViewport": {
+          "X": 496,
+          "Y": 182
+        },
+        "ChiefInField": true,
+        "ChiefSprite": {
+          "X": 480,
+          "Y": 138,
+          "Width": 32,
+          "Height": 48
+        },
+        "PlayerSprite": {
+          "X": 448,
+          "Y": 222,
+          "Width": 32,
+          "Height": 48
+        },
+        "Field": {
+          "X": 0,
+          "Y": 76,
+          "Width": 960,
+          "Height": 256
+        },
+        "ChiefSpriteVisible": true,
+        "PlayerSpriteVisible": true,
+        "Seconds": 190.3655656
+      },
+      "finalHp": 42,
+      "finalBalance": 218,
+      "carriedRations": 0,
+      "physicalFocusObserved": false
+    },
+    "controller": {
+      "report": "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/controller.json",
+      "sha256": "f7dd938c48ea8eb07063acff24ab19c9d5b395a08d4756cb5b8266523dc62a91",
+      "warningObservation": {
+        "DistanceSubunits": 749,
+        "ReachSubunits": 400,
+        "Feet": {
+          "X": 88704,
+          "Y": 80448,
+          "Z": 256
+        },
+        "ChiefDrawn": true,
+        "ChiefViewport": {
+          "X": 496,
+          "Y": 180
+        },
+        "ChiefInField": true,
+        "ChiefSprite": {
+          "X": 480,
+          "Y": 136,
+          "Width": 32,
+          "Height": 48
+        },
+        "PlayerSprite": {
+          "X": 448,
+          "Y": 224,
+          "Width": 32,
+          "Height": 48
+        },
+        "Field": {
+          "X": 0,
+          "Y": 76,
+          "Width": 960,
+          "Height": 256
+        },
+        "ChiefSpriteVisible": true,
+        "PlayerSpriteVisible": true,
+        "Seconds": 23.0493873
+      },
+      "finalHp": 78,
+      "finalBalance": 180,
+      "carriedRations": 1,
+      "physicalFocusObserved": false
+    },
+    "pointer": {
+      "report": "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/pointer.json",
+      "sha256": "413559039477d712c5184107eee4832f98d3278149c9192a43ab1ac817cedc1c",
+      "warningObservation": {
+        "DistanceSubunits": 749,
+        "ReachSubunits": 400,
+        "Feet": {
+          "X": 88704,
+          "Y": 80448,
+          "Z": 256
+        },
+        "ChiefDrawn": true,
+        "ChiefViewport": {
+          "X": 496,
+          "Y": 180
+        },
+        "ChiefInField": true,
+        "ChiefSprite": {
+          "X": 480,
+          "Y": 136,
+          "Width": 32,
+          "Height": 48
+        },
+        "PlayerSprite": {
+          "X": 448,
+          "Y": 224,
+          "Width": 32,
+          "Height": 48
+        },
+        "Field": {
+          "X": 0,
+          "Y": 76,
+          "Width": 960,
+          "Height": 256
+        },
+        "ChiefSpriteVisible": true,
+        "PlayerSpriteVisible": true,
+        "Seconds": 8.25196
+      },
+      "finalHp": 78,
+      "finalBalance": 180,
+      "carriedRations": 1,
+      "physicalFocusObserved": false
+    },
+    "reopen": {
+      "report": "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/reopen.json",
+      "sha256": "fb5976d1fa9532b6392ab265ccd1c094e539588885c625ec0d9e1442903463f4",
+      "warningObservation": null,
+      "finalHp": 42,
+      "finalBalance": 218,
+      "carriedRations": 0,
+      "physicalFocusObserved": false
+    }
+  },
+  "visualReview": {
+    "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/keyboard.warning.png": {
+      "sha256": "7d94bf69cb7a7d010ea2f14951933d9b8b07ac82ebea1e22991b5d37d4073e84",
+      "review": "Inspected actual image; readable expected subject and UI. Prototype art, bounded corridor and injected-input scope only."
+    },
+    "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/controller.warning.png": {
+      "sha256": "9b8425a1ae2a58869f8f0a0a0a1ec9ade82774d1e659ff0869a902c9ee125c9c",
+      "review": "Inspected actual image; readable expected subject and UI. Prototype art, bounded corridor and injected-input scope only."
+    },
+    "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/keyboard.hit.png": {
+      "sha256": "16b8a95a0aab4d800fb38c7dc6f37cc955473329aec6e810715a0e23e5649515",
+      "review": "Inspected actual image; readable expected subject and UI. Prototype art, bounded corridor and injected-input scope only."
+    },
+    "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/keyboard.retreat-inspected.png": {
+      "sha256": "a1c27551a6101df4429c04973728758b3e6ace4a6832fef8faebd9cf05e0fdaa",
+      "review": "Inspected actual image; readable expected subject and UI. Prototype art, bounded corridor and injected-input scope only."
+    },
+    "qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/keyboard.sold.png": {
+      "sha256": "f74a2321294c938c2d387bc5195d7e14efddb8fb9da585032ce433fc426c2b2b",
+      "review": "Inspected actual image; readable expected subject and UI. Prototype art, bounded corridor and injected-input scope only."
+    }
+  },
+  "inheritedEvidence": "Worker authority, unchanged old tests/checkers and retained journals remain source/binary-equivalent; four new cases and changed rendering/checker have fresh proofs. Prior cargo/legacy rendering is historical, not current-renderer evidence. No mandatory full gate waived.",
+  "actualProcessKills": 6,
+  "killScope": "Inherited unchanged generic retreat storage proof; not a kill of hostile entry.",
+  "limits": "No full terminal-outcome continuation, pursuit, escort, balance, migration, multiplayer, frontier, physical device, human art/UI, phase or production acceptance."
+}

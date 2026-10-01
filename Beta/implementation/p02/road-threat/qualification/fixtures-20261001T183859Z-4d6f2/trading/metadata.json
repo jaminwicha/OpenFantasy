@@ -1,0 +1,31 @@
+{
+  "kind": "native-trading-fixture-v1",
+  "profileVersion": 33,
+  "setup": "Fresh production native market world; talk, accept and deliver Wren\u0027s quest for its earned reward, then ordinary session cutoffs let Wren build her funded project and walk home beside the player. Native begins before any market action.",
+  "worldId": "6dcb0a2342385d9f20c2ceb785f56d32",
+  "branchId": "4bc2210fe97d62fb5b6558d9e263e0d0",
+  "genesisHash": "a15abef55e9ea4e51b0a2682ac4e6f41ba00a339832aed885a2e1843e10787cd",
+  "beforeHash": "94706ae639f708abc7d33f1a4372d5a8e59657aadca78d8a1222b427953c8276",
+  "beforeRevision": 300,
+  "beforeAdvancingSteps": 297,
+  "seedText": "encounter-lifecycle-world",
+  "playerName": "Traveler",
+  "playerId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+  "wrenId": "5d652f48a612a324027911ffd13cf5f9",
+  "marketId": "b128abd5c7210f01c2af8a76ab72d850",
+  "rewardCurrency": 200,
+  "playerBalance": 200,
+  "wrenBalance": 0,
+  "wrenBerries": 6,
+  "offerWindowSteps": 1200,
+  "showingWindowSteps": 2400,
+  "inquiryLifetimeSteps": 600,
+  "expected": {
+    "buyUnits": 4,
+    "buyUnitPrice": 11,
+    "declinedBuyUnits": 4,
+    "sellUnits": 1,
+    "sellUnitPrice": 7
+  },
+  "limits": "Fresh production world only: no lived-save migration, legacy merchant import, archive cut, physical device, multiplayer Wait or human acceptance claim. Requests are session memory and leave no journal record."
+}

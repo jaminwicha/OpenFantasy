@@ -1,0 +1,451 @@
+{
+  "status": "passed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081",
+  "fixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures",
+  "limits": {
+    "runSeconds": 60,
+    "signalSeconds": 60,
+    "killSeconds": 10,
+    "aggregateSeconds": 420
+  },
+  "runs": [
+    {
+      "label": "queue-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/queue.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/00-queue-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/00-queue-normal.stderr.log",
+      "seconds": 0.743,
+      "exitCode": 0
+    },
+    {
+      "label": "queue-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/queue.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/01-queue-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/01-queue-normal-duplicate.stderr.log",
+      "seconds": 0.654,
+      "exitCode": 1
+    },
+    {
+      "label": "queue-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-before.sqlite",
+        "4"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/02-queue-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/02-queue-recover-before.stderr.log",
+      "seconds": 0.704,
+      "exitCode": 0
+    },
+    {
+      "label": "queue-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/queue.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/03-queue-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/03-queue-retry.stderr.log",
+      "seconds": 0.885,
+      "exitCode": 0
+    },
+    {
+      "label": "queue-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/queue.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/04-queue-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/04-queue-before-duplicate.stderr.log",
+      "seconds": 0.791,
+      "exitCode": 1
+    },
+    {
+      "label": "queue-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-after.sqlite",
+        "5"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/05-queue-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/05-queue-recover-after.stderr.log",
+      "seconds": 1.438,
+      "exitCode": 0
+    },
+    {
+      "label": "queue-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/queue.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/06-queue-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/06-queue-after-duplicate.stderr.log",
+      "seconds": 2.784,
+      "exitCode": 1
+    },
+    {
+      "label": "sample-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/sample.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/07-sample-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/07-sample-normal.stderr.log",
+      "seconds": 3.138,
+      "exitCode": 0
+    },
+    {
+      "label": "sample-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/sample.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/08-sample-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/08-sample-normal-duplicate.stderr.log",
+      "seconds": 0.749,
+      "exitCode": 1
+    },
+    {
+      "label": "sample-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-before.sqlite",
+        "11"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/09-sample-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/09-sample-recover-before.stderr.log",
+      "seconds": 1.039,
+      "exitCode": 0
+    },
+    {
+      "label": "sample-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/sample.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/10-sample-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/10-sample-retry.stderr.log",
+      "seconds": 1.381,
+      "exitCode": 0
+    },
+    {
+      "label": "sample-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/sample.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/11-sample-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/11-sample-before-duplicate.stderr.log",
+      "seconds": 1.18,
+      "exitCode": 1
+    },
+    {
+      "label": "sample-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-after.sqlite",
+        "12"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/12-sample-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/12-sample-recover-after.stderr.log",
+      "seconds": 1.294,
+      "exitCode": 0
+    },
+    {
+      "label": "sample-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/sample.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/13-sample-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/13-sample-after-duplicate.stderr.log",
+      "seconds": 1.137,
+      "exitCode": 1
+    },
+    {
+      "label": "disengage-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/disengage.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/14-disengage-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/14-disengage-normal.stderr.log",
+      "seconds": 1.269,
+      "exitCode": 0
+    },
+    {
+      "label": "disengage-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/disengage.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/15-disengage-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/15-disengage-normal-duplicate.stderr.log",
+      "seconds": 1.171,
+      "exitCode": 1
+    },
+    {
+      "label": "disengage-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-before.sqlite",
+        "85"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/16-disengage-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/16-disengage-recover-before.stderr.log",
+      "seconds": 1.11,
+      "exitCode": 0
+    },
+    {
+      "label": "disengage-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/disengage.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/17-disengage-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/17-disengage-retry.stderr.log",
+      "seconds": 1.176,
+      "exitCode": 0
+    },
+    {
+      "label": "disengage-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/disengage.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/18-disengage-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/18-disengage-before-duplicate.stderr.log",
+      "seconds": 1.05,
+      "exitCode": 1
+    },
+    {
+      "label": "disengage-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-after.sqlite",
+        "86"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/19-disengage-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/19-disengage-recover-after.stderr.log",
+      "seconds": 1.206,
+      "exitCode": 0
+    },
+    {
+      "label": "disengage-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/disengage.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/20-disengage-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/20-disengage-after-duplicate.stderr.log",
+      "seconds": 0.997,
+      "exitCode": 1
+    }
+  ],
+  "processKills": [
+    {
+      "case": "queue-before",
+      "boundary": "before",
+      "pid": 17473,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/02-queue-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/02-queue-before.stderr.log",
+      "signalSeconds": 0.657,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.004
+    },
+    {
+      "case": "queue-after",
+      "boundary": "after",
+      "pid": 17496,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/05-queue-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/05-queue-after.stderr.log",
+      "signalSeconds": 0.769,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005
+    },
+    {
+      "case": "sample-before",
+      "boundary": "before",
+      "pid": 17537,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/09-sample-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/09-sample-before.stderr.log",
+      "signalSeconds": 0.884,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005
+    },
+    {
+      "case": "sample-after",
+      "boundary": "after",
+      "pid": 17567,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/12-sample-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/12-sample-after.stderr.log",
+      "signalSeconds": 1.187,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.007
+    },
+    {
+      "case": "disengage-before",
+      "boundary": "before",
+      "pid": 17618,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/16-disengage-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/16-disengage-before.stderr.log",
+      "signalSeconds": 1.08,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005
+    },
+    {
+      "case": "disengage-after",
+      "boundary": "after",
+      "pid": 17651,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/19-disengage-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/19-disengage-after.stderr.log",
+      "signalSeconds": 0.966,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005
+    }
+  ],
+  "cases": [
+    {
+      "label": "queue",
+      "sequence": 5,
+      "kind": "EncounterDecision",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/queue.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/queue.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/queue-after.sqlite"
+    },
+    {
+      "label": "sample",
+      "sequence": 12,
+      "kind": "EncounterResolution",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/sample.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/sample.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/sample-after.sqlite"
+    },
+    {
+      "label": "disengage",
+      "sequence": 86,
+      "kind": "EncounterResolution",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/disengage.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/disengage.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/retreat-durability-211618734081/disengage-after.sqlite"
+    }
+  ],
+  "startedUtc": "2026-10-01T21:16:18.734597+00:00",
+  "aggregateSeconds": 31.526,
+  "manifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/durability-20261001T211613Z-6ce52/fixtures/manifest.json",
+  "limitations": [
+    "Kills the Host child at the authority transaction boundaries it reports; it does not interrupt SQLite inside a page write or model power loss.",
+    "One fresh profile-34 world; no lived-save migration, multiplayer or party retreat."
+  ],
+  "sourceFixturesUnchanged": true,
+  "artifactSha256": {
+    "01-queue-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "12-sample-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "disengage-before.sqlite": "a98351ade63876cb21f95cbff4fd7cc1ae03b57cb1568d470c69d80828597249",
+    "disengage-before-recovered.sqlite": "9fdd7275942465bed40b85255181ff7704f11e726809121a5b40397c94198ad2",
+    "16-disengage-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-before-recovered.sqlite": "6d95db2ff3143caaeb345e60213aeb04fa6fd05c6449165117d75253097cfe59",
+    "18-disengage-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "13-sample-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "05-queue-recover-after.stdout.log": "df2fe70defd1ee83810d3fdbe9d8be1840f260f3ae595f73f238d76d707bba02",
+    "08-sample-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "05-queue-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "19-disengage-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "06-queue-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "09-sample-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "15-disengage-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "12-sample-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "17-disengage-retry.stdout.log": "806772d26d97de18cb99739e670c74810a8729cd9be3bbc7418cec6d72afb94d",
+    "02-queue-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "20-disengage-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "07-sample-normal.stdout.log": "0f507321de306365c9c64cadf58c9ab72abf75947430dded3578d6e6eb2a8ed0",
+    "sample-after.sqlite": "033f3e63a6f4671ef216e36783d6a9420cf3757c6ea4b3ac04f4f419cfa81534",
+    "14-disengage-normal.stdout.log": "806772d26d97de18cb99739e670c74810a8729cd9be3bbc7418cec6d72afb94d",
+    "04-queue-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "19-disengage-recover-after.stdout.log": "87a35e777bc32441a56f94799e1769792a7f655935c6483926c02acc72c90e60",
+    "queue-before.sqlite": "d3d23fc6c4b7485426c197f69a1e64e5258e4b75f0929a7f74791fd71f78b99a",
+    "02-queue-recover-before.stdout.log": "91749c4abc9b9f5d492a2a5eb4468587895cd6db64c9a7b16118b6903081f4e7",
+    "sample-normal.sqlite": "033f3e63a6f4671ef216e36783d6a9420cf3757c6ea4b3ac04f4f419cfa81534",
+    "09-sample-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "10-sample-retry.stdout.log": "0f507321de306365c9c64cadf58c9ab72abf75947430dded3578d6e6eb2a8ed0",
+    "00-queue-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "11-sample-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "16-disengage-recover-before.stdout.log": "adf70da2d1b5dedfc0f3d99fbaf340e13acfa5762ed118867b328d778e98e0a0",
+    "03-queue-retry.stdout.log": "20c93b49093a0ecbf55d7672858fec8f624f7604d0a9e326bcf2469e6e578c92",
+    "sample-before.sqlite": "033f3e63a6f4671ef216e36783d6a9420cf3757c6ea4b3ac04f4f419cfa81534",
+    "13-sample-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "queue-normal.sqlite": "d3d23fc6c4b7485426c197f69a1e64e5258e4b75f0929a7f74791fd71f78b99a",
+    "16-disengage-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "18-disengage-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "12-sample-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "01-queue-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "08-sample-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "queue-before-recovered.sqlite": "b0541adb998cfd76c31790e5973ff1785e427e351486ccd6b30851ab4ed081e9",
+    "06-queue-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "09-sample-recover-before.stdout.log": "b19aafdecfdba1319b52cedf6ce77d5f0c44319e5482e4fc68b42fe94583a645",
+    "05-queue-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "19-disengage-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "05-queue-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "02-queue-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "20-disengage-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "07-sample-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "queue-after.sqlite": "d3d23fc6c4b7485426c197f69a1e64e5258e4b75f0929a7f74791fd71f78b99a",
+    "19-disengage-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "04-queue-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "14-disengage-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "15-disengage-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "12-sample-recover-after.stdout.log": "5e132fea1fba67b3c9113228ec34623cfd2c297f1a738b535a5c9b5b997fba13",
+    "17-disengage-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "disengage-normal.sqlite": "a98351ade63876cb21f95cbff4fd7cc1ae03b57cb1568d470c69d80828597249",
+    "10-sample-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "09-sample-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "16-disengage-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "03-queue-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "11-sample-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "00-queue-normal.stdout.log": "20c93b49093a0ecbf55d7672858fec8f624f7604d0a9e326bcf2469e6e578c92",
+    "02-queue-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "disengage-after.sqlite": "a98351ade63876cb21f95cbff4fd7cc1ae03b57cb1568d470c69d80828597249"
+  },
+  "finishedUtc": "2026-10-01T21:16:50.273137+00:00"
+}
