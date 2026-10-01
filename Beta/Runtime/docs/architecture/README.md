@@ -56,7 +56,7 @@ different kind of person.
 | [Paid world exchange](world-paid-exchange.md) | How do actual people settle quoted goods and money through world time, spatial eligibility, causal history and durable cuts? |
 | [World markets and learned prices](world-markets.md) | How do stock-based rules, local price memories and explicit selected-lot disclosure compose with paid exchange? |
 | [Scheduled trading](scheduled-trading.md) | How do transient shopper inquiries, host merchants' own answers, participant-safe quote views, bounded host reconsideration and session arbitration with gifts and care bind markets to actual cutoffs? |
-| [Native trading](native-trading.md) | How do the fresh market world, the stall panel and wheel, authored offer windows and separate inquiry, reading, review and confirmation reach the session? |
+| [Native trading](native-trading.md) | How do the fresh market world, the stall panel and wheel, authored offer windows and separate inquiry, reading, review and confirmation reach the session; which quotes belong to a stall; and how do native probes drive real focus, dropdown and refusal journeys? |
 | [Consented custody](consented-custody.md) | How do two independently authenticated participants approve one exact counted-source transfer without changing inventory access policy? |
 | [Consented production](consented-production.md) | How do exact material approvals and ordered custody evidence preserve raw and produced stock, independent of complete-world publication? |
 | [Consented world material](consented-world.md) | How are paired material decisions, physical eligibility and custody evidence composed, and what must complete-world publication enforce? |

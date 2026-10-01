@@ -1,0 +1,32 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.19]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.56]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.70]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.MarketInputTests.A_paused_wheel_opens_an_inspection_panel_but_still_refuses_world_actions [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.MarketInputTests.Stall_commitments_need_running_time_while_inspection_and_the_reading_pause_do_not [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.MarketInputTests.A_focused_stall_control_owns_controller_accept_and_world_verbs_do_not_leak [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.MarketInputTests.The_open_stall_suppresses_walking_without_changing_readiness_and_closes_on_cancel [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketWorldTests.Native_windows_are_new_authored_configuration_and_earlier_defaults_stay_unchanged [463 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.MarketDraftTests.Any_changed_choice_discards_the_review_and_capture_refuses_mismatched_offers [694 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.Refinement.MarketWordingAndMatchingTests.A_quote_from_the_same_merchant_for_other_goods_is_never_the_stalls_offer_or_review [694 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.Refinement.MarketWordingAndMatchingTests.Offer_cards_state_price_total_time_and_shortfall_without_implementation_terms [68 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.Refinement.MarketWordingAndMatchingTests.Goods_agree_with_their_count_and_mass_or_singular_names_stay_unchanged [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketWorldTests.Composition_refuses_lived_or_other_roots_and_recognizes_only_its_own_stall [333 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketSessionTests.Wrens_berries_are_one_finite_supply_for_trade_and_medicine [848 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.MarketDraftTests.Worlds_without_markets_keep_their_earlier_offers_and_wheel_pages [187 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.MarketDraftTests.The_market_wheel_page_opens_the_panel_without_intents_and_commitments_need_explicit_choices [34 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketWorldTests.Market_selection_creates_and_reopens_only_its_own_save_and_never_migrates_another_world [860 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketWorldTests.Composition_binds_wrens_own_admitted_berries_without_minting_stock_money_or_people [152 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketSessionTests.A_stale_offer_closes_by_its_world_window_and_nothing_requotes_or_confirms_it [2 s]
+[xUnit.net 00:00:04.62]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketSessionTests.A_paused_session_neither_answers_nor_ages_a_request_and_resuming_answers_without_deadlock [26 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Trading.NativeMarketSessionTests.Only_the_earned_reward_funds_a_purchase_and_an_unfunded_confirmation_is_refused [127 ms]
+
+Test Run Successful.
+Total tests: 18
+     Passed: 18
+ Total time: 5.0838 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/unit-20261001T074243Z-09873/unit.trx

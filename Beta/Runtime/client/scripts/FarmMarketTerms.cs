@@ -4,8 +4,9 @@ using OpenFantasy.Hosting.Simulation;
 namespace OpenFantasy.Client;
 
 /// <summary>
-/// Readable stall terms from participant-safe views only: price, units, dues, totals, age and remaining window in
-/// fixed-world steps with their nominal local duration. It never states a merchant's stock, funds or rule.
+/// Readable stall terms from participant-safe views only: price, units, dues, totals, affordability and the time an
+/// offer stays open while the world runs. It never states a merchant's stock, funds or rule. Windows count
+/// fixed-world advancing steps; the player reads them as running time, and the step basis stays a diagnostic.
 /// </summary>
 internal static class FarmMarketTerms
 {
@@ -15,71 +16,87 @@ internal static class FarmMarketTerms
     /// <summary>The stall's public goods name, such as "berries".</summary>
     internal static string Goods(LocalWorldView view, LocalMarketStallView stall) => stall.CommodityName.Replace('_', ' ');
 
-    /// <summary>The nominal duration of advancing steps at the local session's fixed cutoff, while time runs.</summary>
+    /// <summary>A count with goods that agree with it: "1 berry", "4 berries".</summary>
+    internal static string Count(ulong units, string goods) => $"{units} {(units == 1 ? Singular(goods) : goods)}";
+
+    /// <summary>
+    /// The English singular of a plural source name ("berries" → "berry", "apples" → "apple"); a name without a
+    /// recognised plural ending is already a mass or singular noun and stays unchanged.
+    /// </summary>
+    internal static string Singular(string goods)
+    {
+        if (goods.Length > 3 && goods.EndsWith("ies", StringComparison.Ordinal)) return goods[..^3] + "y";
+        if (goods.Length > 1 && goods.EndsWith('s') && !goods.EndsWith("ss", StringComparison.Ordinal)) return goods[..^1];
+        return goods;
+    }
+
+    /// <summary>The running world time that advancing steps take at the local session's fixed cutoff.</summary>
     internal static string Seconds(ulong steps)
     {
         double seconds = steps * LocalWorldSession.StepInterval.TotalSeconds;
-        return seconds >= 120 ? $"about {seconds / 60:0.#} min" : $"about {seconds:0} s";
+        return seconds >= 90 ? $"about {seconds / 60:0.#} min" : $"about {Math.Max(1, Math.Round(seconds)):0} s";
     }
 
     /// <summary>Steps left before the offer stops being acceptable, or zero once it is due.</summary>
     internal static ulong RemainingSteps(PaidQuoteView quote, ulong advancingStep) =>
         quote.ExpiresAtStep > advancingStep ? quote.ExpiresAtStep - advancingStep : 0;
 
-    /// <summary>Short card text: icon-side summary of what changes hands and the total.</summary>
+    /// <summary>How long the offer stays open in player terms, including what pausing does to that clock.</summary>
+    internal static string Window(PaidQuoteView quote, ulong advancingStep)
+    {
+        ulong remaining = RemainingSteps(quote, advancingStep);
+        return remaining == 0 ? "This offer's time is up."
+            : $"Open for {Seconds(remaining)} more while time runs; pausing stops this clock.";
+    }
+
+    /// <summary>Short card text: what changes hands and the total, with a shortfall when the purse cannot pay.</summary>
     internal static string Summary(LocalWorldView view, PaidQuoteView quote, ulong units, string goods)
     {
         string unit = view.Progression?.CurrencyUnit ?? "coins";
-        return quote.Side == SpotQuoteSide.IssuerSells
-            ? $"Buy {units} {goods} · pay {quote.TotalFor(units)} {unit}"
-            : $"Sell {units} {goods} · receive {checked(quote.UnitPrice * units)} {unit}";
+        if (quote.Side != SpotQuoteSide.IssuerSells)
+            return $"Sell {Count(units, goods)} · receive {checked(quote.UnitPrice * units)} {unit}";
+        ulong total = quote.TotalFor(units);
+        ulong purse = view.Progression?.CurrencyBalance ?? 0;
+        return $"Buy {Count(units, goods)} · pay {total} {unit}" + (purse < total ? $" · you have {purse}" : "");
     }
 
-    /// <summary>The precise inspection shared by hover, focus and the explicit review card.</summary>
+    /// <summary>The precise inspection shared by hover, focus and the always-visible inspector.</summary>
     internal static string Describe(LocalWorldView view, PaidQuoteView quote, ulong units, string merchant, string goods)
     {
         string unit = view.Progression?.CurrencyUnit ?? "coins";
         ulong step = view.Markets?.AdvancingStep ?? quote.IssuedAtStep;
-        ulong age = step > quote.IssuedAtStep ? step - quote.IssuedAtStep : 0;
-        ulong remaining = RemainingSteps(quote, step);
         bool buying = quote.Side == SpotQuoteSide.IssuerSells;
         string fee = quote.UnitFees == 0 ? "no market due"
             : buying ? $"market due {quote.UnitFees} {unit} each, paid by you"
             : $"market due {quote.UnitFees} {unit} each, paid by {merchant}";
         string trade = buying
-            ? $"Buy {units} {goods} from {merchant} at {quote.UnitPrice} {unit} each, {fee}: total {quote.TotalFor(units)} {unit}."
-            : $"Sell {units} {goods} to {merchant} at {quote.UnitPrice} {unit} each, {fee}: you receive {checked(quote.UnitPrice * units)} {unit}.";
-        string window = remaining == 0 ? "This offer's window has closed."
-            : $"Offered {Steps(age)} ago; acceptable for {remaining:N0} more world steps ({Seconds(remaining)} while time advances).";
-        string balance = view.Progression is { } progression ? $" Your purse: {progression.CurrencyBalance} {unit}." : "";
-        return $"{trade} Offer limit {quote.QuantityAllowance} {goods}. {window}{balance} {merchant} keeps one standing offer for you; "
-            + "ignoring it lets it close on its own. Status: " + quote.Status + ".";
+            ? $"Buy {Count(units, goods)} from {merchant} at {quote.UnitPrice} {unit} each, {fee}: total {quote.TotalFor(units)} {unit}."
+            : $"Sell {Count(units, goods)} to {merchant} at {quote.UnitPrice} {unit} each, {fee}: you receive {checked(quote.UnitPrice * units)} {unit}.";
+        string state = quote.Status == PaidQuoteStatus.Open ? Window(quote, step) : $"This offer is {StatusWord(quote.Status)}.";
+        return $"{trade} {merchant} offers up to {Count(quote.QuantityAllowance, goods)}. {state}{Affordability(view, quote, units)} "
+            + $"{merchant} keeps one standing offer for you; if you leave it, it closes on its own.";
     }
 
     /// <summary>
-    /// The confirmation card: exactly what changes hands for the reviewed units, the window still left and the
-    /// purse afterwards, with the offer's current status rather than the status it had when reviewed.
+    /// The confirmation card: exactly what changes hands for the reviewed units, the time still left and the purse
+    /// afterwards, with the offer's current state rather than the state it had when reviewed.
     /// </summary>
     internal static string Restate(LocalWorldView view, PaidQuoteView current, ulong units, string merchant, string goods)
     {
         string unit = view.Progression?.CurrencyUnit ?? "coins";
         ulong purse = view.Progression?.CurrencyBalance ?? 0;
-        ulong remaining = RemainingSteps(current, view.Markets?.AdvancingStep ?? current.IssuedAtStep);
         bool buying = current.Side == SpotQuoteSide.IssuerSells;
         ulong total = buying ? current.TotalFor(units) : checked(current.UnitPrice * units);
         string fee = current.UnitFees == 0 ? "no market due" : buying ? $"{current.UnitFees} {unit} due each" : $"{merchant} pays the due";
         string trade = buying
-            ? $"Buy {units} {goods} from {merchant} for {total} {unit} ({current.UnitPrice} each, {fee})."
-            : $"Sell {units} {goods} to {merchant} for {total} {unit} ({current.UnitPrice} each, {fee}).";
-        string window = remaining == 0 ? " The window has closed."
-            : $" Acceptable for {remaining:N0} more world steps ({Seconds(remaining)} while time advances).";
-        string after = current.Status != PaidQuoteStatus.Open ? ""
-            : buying ? purse >= total ? $" Purse after: {purse - total} {unit}." : ""
+            ? $"Buy {Count(units, goods)} from {merchant} for {total} {unit} ({current.UnitPrice} each, {fee})."
+            : $"Sell {Count(units, goods)} to {merchant} for {total} {unit} ({current.UnitPrice} each, {fee}).";
+        if (current.Status != PaidQuoteStatus.Open) return $"{trade} This offer is {StatusWord(current.Status)}.";
+        string after = buying
+            ? purse >= total ? $" Purse after: {purse - total} {unit}." : $" Your purse holds {purse} {unit}."
             : $" Purse after: {checked(purse + total)} {unit}.";
-        return trade + window + after + " Status: " + current.Status + ".";
+        return trade + " " + Window(current, view.Markets?.AdvancingStep ?? current.IssuedAtStep) + after;
     }
-
-    private static string Steps(ulong steps) => steps == 1 ? "1 step" : $"{steps:N0} steps";
 
     /// <summary>A recorded outcome line for the history list and its explicit saved-record inspection.</summary>
     internal static string Outcome(LocalWorldView view, PaidQuoteView quote, string merchant, string goods)
@@ -88,28 +105,52 @@ internal static class FarmMarketTerms
         string direction = quote.Side == SpotQuoteSide.IssuerSells ? "Buy from" : "Sell to";
         string result = quote.Status == PaidQuoteStatus.Filled && quote.FilledQuantity is { } filled
             ? quote.Side == SpotQuoteSide.IssuerSells
-                ? $"bought {filled} {goods} for {quote.FilledPayment + quote.FilledFees} {unit}"
-                : $"sold {filled} {goods} for {quote.FilledPayment} {unit}"
-            : quote.Status.ToString().ToLowerInvariant();
-        return $"{direction} {merchant} · {quote.QuantityAllowance} {goods} at {quote.UnitPrice} {unit} · {result}";
+                ? $"bought {Count(filled, goods)} for {quote.FilledPayment + quote.FilledFees} {unit}"
+                : $"sold {Count(filled, goods)} for {quote.FilledPayment} {unit}"
+            : StatusWord(quote.Status);
+        return $"{direction} {merchant} · {Count(quote.QuantityAllowance, goods)} at {quote.UnitPrice} {unit} · {result}";
     }
 
     /// <summary>Where a request stands, and what the player can do next, without implying stock or funds.</summary>
-    internal static string Request(LocalTradeInquiryView? inquiry, ulong advancingStep, bool timeRunning, string merchant)
+    internal static string Request(LocalTradeInquiryView? inquiry, ulong advancingStep, bool timeRunning, string merchant, string goods)
     {
         if (inquiry is null) return $"Choose units and ask {merchant}. Asking binds nothing and reserves nothing.";
-        string asked = $"{(inquiry.Inquiry.Direction == LocalTradeDirection.Buy ? "Buy" : "Sell")} {inquiry.Inquiry.Quantity}";
+        string asked = $"{(inquiry.Inquiry.Direction == LocalTradeDirection.Buy ? "buy" : "sell")} {Count(inquiry.Inquiry.Quantity, goods)}";
         return inquiry.State switch
         {
             LocalTradeInquiryState.Waiting => timeRunning
-                ? $"Asked: {asked}. {merchant} answers at the next world step while time advances; the request lapses in "
-                    + $"{(inquiry.ExpiresAtStep > advancingStep ? inquiry.ExpiresAtStep - advancingStep : 0):N0} steps."
-                : $"Asked: {asked}. World time is paused: {merchant} answers only while time advances. Resume to hear her answer, or cancel.",
-            LocalTradeInquiryState.Offered => $"Asked: {asked}. {merchant} offered terms. Review them before confirming.",
-            LocalTradeInquiryState.Declined => $"Asked: {asked}. {merchant} offered no terms for that request.",
-            LocalTradeInquiryState.Unavailable => $"Asked: {asked}. {merchant} could not answer where you stand.",
-            LocalTradeInquiryState.Expired => $"Asked: {asked}. The request lapsed before an answer.",
-            _ => $"Asked: {asked}. You cancelled the request."
+                ? $"Asked to {asked}. {merchant} answers shortly while time runs; the request lapses in "
+                    + $"{Seconds(inquiry.ExpiresAtStep > advancingStep ? inquiry.ExpiresAtStep - advancingStep : 0)}."
+                : $"Asked to {asked}. World time is paused: {merchant} answers only while time runs. Resume to hear her answer, or cancel.",
+            LocalTradeInquiryState.Offered => $"Asked to {asked}. {merchant} offered terms. Review them before confirming.",
+            LocalTradeInquiryState.Declined => $"Asked to {asked}. {merchant} offered no terms for that request.",
+            LocalTradeInquiryState.Unavailable => $"Asked to {asked}. {merchant} could not answer where you stand.",
+            LocalTradeInquiryState.Expired => $"Asked to {asked}. The request lapsed before an answer.",
+            _ => $"Asked to {asked}. You cancelled the request."
         };
+    }
+
+    /// <summary>Optional diagnostics for hover: the fixed-world step basis that docs describe.</summary>
+    internal static string Diagnostics(ulong advancingStep) =>
+        $"Diagnostics: advancing step {advancingStep:N0}. Windows count advancing steps of about "
+        + $"{LocalWorldSession.StepInterval.TotalMilliseconds:0} ms each while time runs.";
+
+    /// <summary>A plain word for a closed offer's state.</summary>
+    internal static string StatusWord(PaidQuoteStatus status) => status switch
+    {
+        PaidQuoteStatus.Open => "open",
+        PaidQuoteStatus.Filled => "already filled",
+        PaidQuoteStatus.Superseded => "replaced by a newer offer",
+        PaidQuoteStatus.Withdrawn => "withdrawn",
+        _ => "expired"
+    };
+
+    /// <summary>The player's purse beside a purchase total, naming a shortfall plainly.</summary>
+    private static string Affordability(LocalWorldView view, PaidQuoteView quote, ulong units)
+    {
+        if (view.Progression is not { } progression) return "";
+        string purse = $" Your purse: {progression.CurrencyBalance} {progression.CurrencyUnit}.";
+        if (quote.Side != SpotQuoteSide.IssuerSells || progression.CurrencyBalance >= quote.TotalFor(units)) return purse;
+        return purse + $" That is {quote.TotalFor(units) - progression.CurrencyBalance} {progression.CurrencyUnit} short of this total.";
     }
 }

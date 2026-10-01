@@ -90,8 +90,8 @@ internal sealed class FarmMarketDraft
 
     /// <summary>
     /// The only act that captures terms to confirm. The quote must be an open offer from this stall's merchant to
-    /// the player, on the chosen side, for the chosen lot when selling, covering the chosen units, and its issuer
-    /// must be observable where the player stands. Anything else captures nothing.
+    /// the player for this stall's commodity, on the chosen side, for the chosen lot when selling, covering the
+    /// chosen units, and its issuer must be observable where the player stands. Anything else captures nothing.
     /// </summary>
     internal bool CaptureReview(LocalWorldView view, LocalMarketStallView stall, PaidQuoteView quote)
     {
@@ -101,7 +101,7 @@ internal sealed class FarmMarketDraft
         Review = null;
         SpotQuoteSide side = Direction == LocalTradeDirection.Buy ? SpotQuoteSide.IssuerSells : SpotQuoteSide.IssuerBuys;
         if (_scope != (view.WorldId, view.BranchId, view.PlayerActorId) || stall.MarketId != MarketId
-            || quote.ViewerIsIssuer || quote.IssuerActorId != stall.MerchantActorId || quote.Status != PaidQuoteStatus.Open
+            || !MarketActionOffers.BelongsTo(stall, quote) || quote.Status != PaidQuoteStatus.Open
             || quote.ObservedIssuerRevision is null || quote.Side != side || Quantity > quote.QuantityAllowance
             || Direction == LocalTradeDirection.Sell && quote.LotId != LotId)
         {

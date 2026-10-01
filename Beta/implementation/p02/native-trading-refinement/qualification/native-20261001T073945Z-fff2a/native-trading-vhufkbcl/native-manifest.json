@@ -1,0 +1,73 @@
+{
+  "results": [
+    {
+      "mode": "keyboard",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.reopen.json",
+      "finalDatabaseSha256": "9f40648d04286705b61096e22d36de883a4eb0fc7ab38039b255af09b2c468ab",
+      "buyQuoteId": "cbbfe73ab85760f0edd554a244131a55",
+      "sellQuoteId": "1f04f96e25596b8785dbf5d0a45d710c",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.buy-offer.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.buy-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.buy-review.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.history.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.reopen-final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.reopen.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.sell-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/keyboard.sell-review.png"
+      ]
+    },
+    {
+      "mode": "controller",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.reopen.json",
+      "finalDatabaseSha256": "66a4bade456af0b311c32ba65d16490ccf40e6e2d9ecb59fb0fd50778626b699",
+      "buyQuoteId": "a905a1a2b844bab939ff11533d3231e3",
+      "sellQuoteId": "a5b5df30cb5ef6c23e0e8d21b0bf6483",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.buy-offer.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.buy-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.buy-review.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.history.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.reopen-final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.reopen.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.sell-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/controller.sell-review.png"
+      ]
+    },
+    {
+      "mode": "pointer",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073926Z-139dc/trading/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.reopen.json",
+      "finalDatabaseSha256": "8d579270f5cd033371a80abfa5b984e81e96c0194998aa1513328f921bc8b60d",
+      "buyQuoteId": "0229806ff3b1d3c2e589b021662386ae",
+      "sellQuoteId": "04cc3b265b9032d7392fe38a13752934",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.buy-offer.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.buy-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.buy-review.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.history.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.reopen-final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.reopen.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.sell-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T073945Z-fff2a/native-trading-vhufkbcl/pointer.sell-review.png"
+      ]
+    }
+  ]
+}

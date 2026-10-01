@@ -1,0 +1,1283 @@
+{
+  "Kind": "native-trading-boundary-v1",
+  "Scenario": "unfunded",
+  "Route": "keyboard",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "recover",
+  "InitialHash": "99B0BC1DE074EC757EE130D73D96954570C0B695EFBA5737E773E6C45A18FC07",
+  "FinalHash": "F528B35DE5246288510AC65367C15F0FADC2AD8EA4702BFEF7B2D7C87310739A",
+  "QuoteId": "16b1f1d87a59c725314f023267700afd",
+  "RecoveredQuoteId": "16b1f1d87a59c725314f023267700afd",
+  "ReviewedIssuerRevision": 0,
+  "RecoveredIssuerRevision": 96,
+  "AttemptStep": 1,
+  "Refusal": "You are about to: Buy 2 berries from Wren for 16 gil (8 each, no market due). Open for about 60 s more while time runs; pausing stops this clock. Your purse holds 0 gil.\nCannot confirm: You need 16 gil; you have 0.",
+  "Checks": [
+    "The paused wheel opens the stall and the route reviews Wren\u0027s exact prepared offer without a command.",
+    "Confirm is refused (You need) with time running; the route\u0027s activation on it sends nothing and keeps goods and money.",
+    "The player earns the ordinary quest reward natively: talk, accept, deliver and continue.",
+    "With earned money the same still-open offer is reviewed again and confirmed; nothing was requoted."
+  ],
+  "Inputs": [
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Received": "MarketMore",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Received": "MarketMore",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Received": "MarketMore",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BackFromReview",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Received": "PauseToRead",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Received": "PauseToRead",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Received": "PauseToRead",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "MarketHistory",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "refuse",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Received": "BackFromReview",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "ConfirmTrade",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Received": "BackFromReview",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Received": "BackFromReview",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "earn",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BuyMode",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "CloseMarket",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "MarketHistory",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "ConfirmTrade",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BackFromReview",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "PauseToRead",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "PauseToRead",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Received": "PauseToRead",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "recover",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "opened",
+      "Hash": "99B0BC1DE074EC757EE130D73D96954570C0B695EFBA5737E773E6C45A18FC07",
+      "Step": 1,
+      "Purse": 0,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 0,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "before-attempt",
+      "Hash": "99B0BC1DE074EC757EE130D73D96954570C0B695EFBA5737E773E6C45A18FC07",
+      "Step": 1,
+      "Purse": 0,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 0,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": {
+        "Quote": "16b1f1d87a59c725314f023267700afd",
+        "Units": 2,
+        "ObservedIssuerRevision": 0
+      },
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": true,
+      "IsWheelOpen": false,
+      "Focus": "PauseToRead"
+    },
+    {
+      "Label": "after-attempt",
+      "Hash": "6F5C41D1EF381D559D440D9C14EA4703F95F3335892639708673ACB3FDDBCFC8",
+      "Step": 9,
+      "Purse": 0,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 0,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": {
+        "Quote": "16b1f1d87a59c725314f023267700afd",
+        "Units": 2,
+        "ObservedIssuerRevision": 0
+      },
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": true,
+      "IsWheelOpen": false,
+      "Focus": "ConfirmTrade"
+    },
+    {
+      "Label": "world-E",
+      "Hash": "BBAFD96EA076677230650000D81E1B74E724CF82D60C458AD74FB1AA5C735070",
+      "Step": 10,
+      "Purse": 0,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 0,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": "Close"
+    },
+    {
+      "Label": "world-G",
+      "Hash": "5D3740638D39ED422C64C42E2A2117EFA53C6062EEC4D21565407C931D15B7D1",
+      "Step": 10,
+      "Purse": 0,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 0,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": "Close"
+    },
+    {
+      "Label": "world-G",
+      "Hash": "AE548B6B9681027CD244491CEC057C831127EF32A28EE9DF696675DD07C94936",
+      "Step": 10,
+      "Purse": 200,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 0,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": "Close"
+    },
+    {
+      "Label": "world-E",
+      "Hash": "7FCE7B6B97AEF4E8C150710CB0BC1F0F88EECFE50125BF9FD9C5B5AEF5BA5C7F",
+      "Step": 10,
+      "Purse": 200,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 0,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "returned",
+      "Hash": "0564B1E5FE8C13DB45A82175851AF9087FA8B432733630968B2F34E3BF8C3CC2",
+      "Step": 311,
+      "Purse": 200,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Open",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": 96,
+          "FilledQuantity": null
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "recovered",
+      "Hash": "AD713169F4EBF503A3FE935FDF1B1CA4BA0C08D5DFBE2059F87015A162302A05",
+      "Step": 314,
+      "Purse": 184,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 2
+        }
+      ],
+      "Lots": [
+        {
+          "Id": "dc3ebbae87d33108f1427cad8d13c2ba",
+          "Revision": 0,
+          "Quantity": 2
+        }
+      ],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": {
+        "Quote": "16b1f1d87a59c725314f023267700afd",
+        "Units": 2,
+        "ObservedIssuerRevision": 96
+      },
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": true,
+      "IsWheelOpen": false,
+      "Focus": "ConfirmTrade"
+    },
+    {
+      "Label": "final",
+      "Hash": "F528B35DE5246288510AC65367C15F0FADC2AD8EA4702BFEF7B2D7C87310739A",
+      "Step": 315,
+      "Purse": 184,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "16b1f1d87a59c725314f023267700afd",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 8,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 1,
+          "ExpiresAtStep": 1201,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 2
+        }
+      ],
+      "Lots": [
+        {
+          "Id": "dc3ebbae87d33108f1427cad8d13c2ba",
+          "Revision": 0,
+          "Quantity": 2
+        }
+      ],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "Unfocusable": true,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "StartupNoFocus": true,
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 16753,
+  "Limit": "Preparation is a closed real-authority fixture; review, refusal, attempted confirmation and recovery are native on one injected route. No physical device, OS focus or multiplayer Wait is exercised."
+}

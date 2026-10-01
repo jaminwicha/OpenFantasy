@@ -1,0 +1,909 @@
+{
+  "Kind": "native-trading-v1",
+  "Mode": "pointer",
+  "Route": "pointer",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: Pointer hover did not reach the dropdown row.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 171\n   at OpenFantasy.Client.MarketProbeDriver.ReachRow(OptionButton control, PopupMenu popup, Int32 row) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 218\n   at OpenFantasy.Client.MarketProbeDriver.CancelChoice(OptionButton control, Int32 row, Control outside) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 84\n   at OpenFantasy.Client.MarketTradingPlayProbe.Exercise() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:line 198\n   at OpenFantasy.Client.MarketTradingPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:line 74",
+  "Stage": "show-pointer",
+  "Genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/trading/genesis.ofc",
+  "InitialHash": "F8C67CA689CFA8A488720E84A27CF996BAED4EC778C1724E194F168914CE10D7",
+  "FinalHash": "D024BD53285B1A04EB41B7BEB00B1DF5669368E2B6008B63C858B6C156EFCA1D",
+  "BuyQuoteId": "ffabe1f45e3b76a61370d6ff634da579",
+  "SellQuoteId": null,
+  "SoldLotId": null,
+  "BuyUnits": 4,
+  "SellUnits": 1,
+  "Checks": [
+    "A paused wheel choice opens the stall for inspection without a command or preselected terms.",
+    "The panel left time running so Wren answered; an explicit reading pause then held the exact offer and its window.",
+    "A changed quantity and controlled focus loss each discard the review; nothing is confirmed, retargeted or requested again.",
+    "Moving focus across an enabled Confirm and away again submits nothing and keeps the review.",
+    "One exact confirmation bought four of Wren\u0027s admitted berries with earned reward money; a repeat on the filled offer sent nothing.",
+    "Back discards a review; a request asked while paused waits for running time and its cancellation sends nothing.",
+    "Asking again for four after her stock fell to two receives Wren\u0027s genuine decline; no stock count is shown."
+  ],
+  "Inputs": [
+    {
+      "Stage": "open-pointer",
+      "Route": "pointer",
+      "PointerControl": "OpenWheel",
+      "X": 276,
+      "Y": 482
+    },
+    {
+      "Stage": "open-pointer",
+      "Route": "pointer",
+      "PointerControl": "NextWheelPage",
+      "X": 111.5,
+      "Y": -563
+    },
+    {
+      "Stage": "open-pointer",
+      "Route": "pointer",
+      "PointerControl": "NextWheelPage",
+      "X": 828.5,
+      "Y": 75.5
+    },
+    {
+      "Stage": "open-pointer",
+      "Route": "pointer",
+      "PointerControl": "NextWheelPage",
+      "X": 828,
+      "Y": 75.5
+    },
+    {
+      "Stage": "open-pointer",
+      "Route": "pointer",
+      "PointerControl": "NextWheelPage",
+      "X": 817,
+      "Y": 75.5
+    },
+    {
+      "Stage": "open-pointer",
+      "Route": "pointer",
+      "PointerSector": 0,
+      "X": 260,
+      "Y": 194.5
+    },
+    {
+      "Stage": "open-pointer",
+      "Route": "pointer",
+      "PointerControl": "ConfirmChoice",
+      "X": 660,
+      "Y": 409
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "PauseToRead",
+      "X": 770.5,
+      "Y": 41.5
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Mouse motion at position ((51.5, 15.5)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "MarketMore",
+      "X": 395,
+      "Y": 142
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Mouse motion at position ((20.0, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "MarketMore",
+      "X": 395,
+      "Y": 142
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Mouse motion at position ((20.0, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "MarketMore",
+      "X": 395,
+      "Y": 142
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Mouse motion at position ((20.0, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "AskMerchant",
+      "X": 229.5,
+      "Y": 178
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Mouse motion at position ((185.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "PauseToRead",
+      "X": 768,
+      "Y": 41.5
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Mouse motion at position ((54.0, 15.5)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "ReviewOffer",
+      "X": 674.5,
+      "Y": 241
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Mouse motion at position ((241.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "BackFromReview",
+      "X": 797,
+      "Y": 277
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "BackFromReview",
+      "Event": "Mouse motion at position ((119.0, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "BackFromReview",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "BackFromReview",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "ReviewOffer",
+      "X": 674.5,
+      "Y": 241
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Mouse motion at position ((241.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "MarketLess",
+      "X": 64,
+      "Y": 142
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketLess",
+      "Event": "Mouse motion at position ((20.0, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketLess",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketLess",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "MarketMore",
+      "X": 395,
+      "Y": 142
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Mouse motion at position ((20.0, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "MarketMore",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "ReviewOffer",
+      "X": 674.5,
+      "Y": 241
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Mouse motion at position ((241.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "PauseToRead",
+      "X": 770.5,
+      "Y": 41.5
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Mouse motion at position ((51.5, 15.5)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "ReviewOffer",
+      "X": 674.5,
+      "Y": 241
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Mouse motion at position ((241.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ReviewOffer",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "PointerHover": "ConfirmTrade",
+      "X": 551.5,
+      "Y": 252
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "PointerHover": "BackFromReview",
+      "X": 797,
+      "Y": 252
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "ConfirmTrade",
+      "X": 551.5,
+      "Y": 252
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ConfirmTrade",
+      "Event": "Mouse motion at position ((118.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ConfirmTrade",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ConfirmTrade",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "ConfirmTrade",
+      "X": 551.5,
+      "Y": 277
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ConfirmTrade",
+      "Event": "Mouse motion at position ((118.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ConfirmTrade",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "ConfirmTrade",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "PointerControl": "PauseToRead",
+      "X": 768,
+      "Y": 41.5
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Mouse motion at position ((54.0, 15.5)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "PointerControl": "AskMerchant",
+      "X": 229.5,
+      "Y": 178
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Mouse motion at position ((185.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "PointerControl": "CancelRequest",
+      "X": 229.5,
+      "Y": 214
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "Received": "CancelRequest",
+      "Event": "Mouse motion at position ((185.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "Received": "CancelRequest",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-pointer",
+      "Route": "pointer",
+      "Received": "CancelRequest",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "PointerControl": "PauseToRead",
+      "X": 770.5,
+      "Y": 41.5
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Mouse motion at position ((51.5, 15.5)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "Received": "PauseToRead",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "PointerControl": "AskMerchant",
+      "X": 229.5,
+      "Y": 178
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Mouse motion at position ((185.5, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-pointer",
+      "Route": "pointer",
+      "Received": "AskMerchant",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "show-pointer",
+      "Route": "pointer",
+      "PointerControl": "SellMode",
+      "X": 324,
+      "Y": 106
+    },
+    {
+      "Stage": "show-pointer",
+      "Route": "pointer",
+      "Received": "SellMode",
+      "Event": "Mouse motion at position ((91.0, 15.0)) with velocity ((0.0, 0.0))",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": false
+    },
+    {
+      "Stage": "show-pointer",
+      "Route": "pointer",
+      "Received": "SellMode",
+      "Event": "Left Mouse Button",
+      "Pressed": true,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "show-pointer",
+      "Route": "pointer",
+      "Received": "SellMode",
+      "Event": "Left Mouse Button",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "show-pointer",
+      "Route": "pointer",
+      "PointerControl": "MarketLot",
+      "X": 229.5,
+      "Y": 168
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "opened",
+      "Hash": "F8C67CA689CFA8A488720E84A27CF996BAED4EC778C1724E194F168914CE10D7",
+      "Step": 297,
+      "Purse": 200,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "repeat-attempt",
+      "Before": "B546FE39E9263886F63E5660CC675C2CDDC0938FE4153A898AE5B6A3F363CBB2",
+      "After": "BB9C4D7F2B8540333E722E4E5548595D51895B679748B4E323D0ABB803832A17"
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "Unfocusable": true,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "StartupNoFocus": true,
+  "IsLocallyPaused": false,
+  "IsWindowFocused": true,
+  "DurationMilliseconds": 5091,
+  "Limit": "Every wheel, stall button and dropdown row uses the named injected route: keyboard arrows/Enter/Escape, controller D-pad/A/B or pointer motion/wheel/clicks. Focus starts where the game puts it and moves only by those events. Focus loss is injected through the fixture hook. Physical devices, OS focus, art, multiplayer Wait and production gates remain open."
+}

@@ -643,18 +643,35 @@ panel choose Buy or Sell, units and (to sell) one exact own lot; **Show this lot
 buy it, **Ask Wren** sends a nonbinding request, **Review offer** captures her exact terms and
 **Confirm** accepts them. Changing a choice, **Back**, focus loss or a controller disconnect discards
 the review; nothing is ever re-asked or confirmed for you. **Esc / B / V** close the panel.
+Arrows / D-pad / Tab move focus along the panel; Enter / A open a list and choose its row, and Esc or
+controller B close an open list without choosing (the stall stays open). The mouse clicks, hovers and
+scrolls the same controls.
 
-The panel suppresses walking but not world time: Wren answers at the next advancing step while the
-world runs. **Pause to read** stops this single-player world, including every offer window; she
-cannot answer and you cannot confirm until **Resume time**. It is not a shared multiplayer Wait.
+The panel suppresses walking but not world time: Wren answers shortly while the world runs. **Pause to
+read** stops this world, including every offer window; she cannot answer and you cannot confirm until
+**Resume time**. The card shows price, dues, total, your purse (and any shortfall) and the remaining
+time in seconds or minutes of running time; hovering the status line shows the advancing-step basis.
 Offers last 1,200 advancing steps (about a minute of running time), showings 2,400 and requests 600.
 Wren keeps one standing offer for you; ignoring it lets it close on its own. **Check saved record**
-reads the chosen outcome of the current save segment; archived-only outcomes are not listed.
+reads the chosen outcome from the save; outcomes that exist only in archived history are not listed.
+In this local single-player session the pause is not a shared multiplayer Wait.
 
 `NativeTradingFixtureTests` earns the reward and lets Wren finish her funded build through ordinary
 cutoffs; with `OPENFANTASY_NATIVE_TRADING_FIXTURES` naming a fresh directory it exports `save.sqlite`,
 `genesis.ofc`, `before.ofc` and `metadata.json`. `tools/check_native_trading.py --dotnet <path>
 --godot <path> --fixtures <directory> --output <json> [--mode all|keyboard|controller|pointer] [--rendered]`
 drives each route through the wheel and stall (buy, a genuine decline, show and sell, saved record),
-then reopens each copy in a separate paused process. Its manifest feeds `NativeTradingResultTests` via
-`OPENFANTASY_NATIVE_TRADING_RESULTS` to authenticate the journal commands and goods/money deltas.
+then reopens each copy in a separate paused process. Keyboard and controller runs move focus only with
+arrows or the D-pad from where the game puts it; every route reaches, cancels and chooses dropdown rows
+itself. Its manifest feeds `NativeTradingResultTests` via `OPENFANTASY_NATIVE_TRADING_RESULTS` to
+authenticate the journal commands and goods/money deltas.
+
+`NativeTradingBoundaryFixtureTests` prepares three closed saves through ordinary cutoffs under
+`OPENFANTASY_NATIVE_TRADING_BOUNDARY_FIXTURES` (`manifest.json` plus `expired/`, `unfunded/`, `moved/`):
+an earned offer with 40 of its 1,200 steps left, an offer to a player with the source-zero purse, and an
+offer reviewed just before Wren walks to her funded work. `tools/check_native_trading_boundaries.py
+--dotnet <path> --godot <path> --fixtures <directory> --output <json> [--rendered]` runs each on the
+keyboard route: review, the refused confirmation attempted anyway, then lawful recovery (ask again; earn
+the quest reward and re-review; re-review after Wren returns). `NativeTradingBoundaryResultTests` reads
+`OPENFANTASY_NATIVE_TRADING_BOUNDARY_RESULTS` and authenticates the refusal reason from the recorded
+state at the attempt, the single later acceptance and its exact deltas.

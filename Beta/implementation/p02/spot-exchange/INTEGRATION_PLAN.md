@@ -51,7 +51,11 @@ readable offer windows and actual funds. It does not replace retained-save migra
 Do not substitute repeated reviews of unchanged settlement code for these missing gameplay bindings.
 The [native foundation](../native-trading/INTEGRATION_REVIEW.md) now binds fresh production entry,
 explicit buy/show/sell, local reading pause and authenticated native results/reopening. Its remaining
-native input and rejection contrasts are retained explicitly; no full native UI or cargo gate is closed.
+native input and rejection contrasts are addressed by the
+[independent refinement](../native-trading-refinement/INTEGRATION_REVIEW.md): actual focus navigation,
+per-route dropdown selection/cancellation and authenticated native expiry, funding and moved-issuer
+refusals followed by lawful recovery. Physical/human input acceptance, multi-stall identity/selection
+and other documented limits remain; no full native UI or cargo gate is closed.
 The [source-grounded cargo dependency notes](CARGO_DEPENDENCIES.md) identify fixed farm presentation,
 bounded local routing and fresh resident/stock admission that the two-place route must address together.
 These are acceptance dependencies, not a promise to deliver each row in a single assignment.

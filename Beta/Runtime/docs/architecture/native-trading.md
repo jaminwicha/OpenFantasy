@@ -53,12 +53,20 @@ Engine-free models hold the player's choices and are linked into the managed tes
 | --- | --- |
 | [`FarmMarketDraft`](../../client/scripts/FarmMarketDraft.cs) | Stall, buy or sell, units and the exact own lot; one reviewed offer (`FarmMarketReview`) captured only by an explicit review |
 | [`MarketActionOffers`](../../client/scripts/MarketActionOffers.cs) | Wheel stall choices, the show and confirm offers, request preparation and their blockers |
-| [`FarmMarketTerms`](../../client/scripts/FarmMarketTerms.cs) | Readable price, units, dues, totals, age, remaining window and outcome text from participant views |
+| [`FarmMarketTerms`](../../client/scripts/FarmMarketTerms.cs) | Readable price, units with agreeing goods names, dues, totals, purse and shortfall, remaining running time and outcome text from participant views; the step basis only as an optional diagnostic |
+
+`MarketActionOffers.BelongsTo` defines which quotes are this stall's: issued to the player by the stall's
+merchant **for the stall's commodity**. The open offer, the outcome list, saved-record text, review capture
+and confirmation all use it, so a merchant's quote for other goods is never listed, labelled or reviewed as
+this stall's. Participant quote views carry no market identity; two stalls of one merchant selling the same
+commodity remain indistinguishable, and `ContextStall` addresses the first stall available in person. Both
+are one-stall bindings that a multi-stall world must replace with an explicit stall identity on the quote
+view and an explicit stall choice.
 
 Any change of direction, units or lot discards a review, and so do Back, focus loss and controller
-disconnection. A review requires an open offer from the stall's merchant on the chosen side, covering the
+disconnection. A review requires an open offer belonging to the stall on the chosen side, covering the
 chosen units, for the chosen lot when selling, with an observable issuer. Confirmation restates that
-review: it is blocked when the live quote is absent or closed, its hash or merchant differs, the issuer is
+review: it is blocked when the live quote is absent or closed, its hash or stall differs, the issuer is
 no longer observable or its observed revision changed, the purse cannot pay, or the shown lot changed. The
 confirm offer carries the acceptance's own command identity, because a paid acceptance restates it;
 [`FarmActionOffer`](../../client/scripts/FarmActionOffer.cs) refuses any other identity for it.
@@ -67,7 +75,15 @@ The wheel's Market page offers Buy, Sell and Offers. These are panel choices: th
 session refuses to submit them, and confirming one only opens the stall, also while the world is paused.
 The scene-owned [stall panel](../../client/scripts/FarmMarketPanel.cs) records choices in the draft and
 requests separate commands: ask, cancel, show, confirm, inspect a saved record, pause and close. Its
-inspector shows the exact terms without hover; tooltips and focus repeat them.
+inspector shows the exact terms without hover; tooltips and focus repeat them. Player text names price,
+dues, total, purse, any shortfall and the time left while the world runs; steps, revisions, save segments
+and implementation caveats stay out of the ordinary card (hovering the status line shows the step basis).
+
+The visible controls form one cyclic focus chain rebuilt whenever the visible set changes, so arrows,
+D-pad and Tab never leave the panel. The lot and outcome dropdowns open with Enter / A or a click; their
+list owns input until a row is chosen (Enter / A / click) or cancelled. The engine's list cancel is
+Escape only, so the panel also closes an open list on the router's controller Cancel (B) through the
+popup's own window input; cancelling chooses nothing and keeps the stall open.
 
 ## Input, readiness and consent
 
@@ -89,10 +105,26 @@ Inquiry, readiness, movement suppression, reading and consent are separate:
 Saved-record inspection uses the session's background `InspectPaidQuoteAsync` and never reads history in
 a frame. The panel lists outcomes of the current save segment; archived-only discovery is not surfaced.
 
+## Native qualification binding
+
+Disposable probes drive the stall only through ordinary engine input on a named injected route.
+[`MarketProbeDriver`](../../client/scripts/MarketProbeDriver.cs) moves focus with arrows or the D-pad
+along the panel's own neighbours, activates with Enter or A, or hovers, scrolls and clicks with the
+pointer; dropdown rows are reached and chosen inside the open list by the same route. It never grabs a
+destination's focus, selects a row, emits a signal or calls a semantic handler, and it traces every event,
+focus move and row. [`MarketProbeEvidence`](../../client/scripts/MarketProbeEvidence.cs) records compact
+observations: the participant-view hash the managed verifiers recompute, plus step, purse, actor
+positions and presence revisions, quotes, lots, showing, request, review and input ownership.
+[`MarketBoundaryPlayProbe`](../../client/scripts/MarketBoundaryPlayProbe.cs) runs refusal journeys over
+closed real-authority saves: a refused Confirm is attempted with time running and every other condition
+met, then recovered lawfully by a new request or an explicit re-review. A refused confirmation is never
+submitted, so its reason is established from the recorded state at the attempt rather than a receipt.
+
 ## Boundaries
 
 - One stall and one commodity in a fresh world. Lived-save migration, the legacy merchant import, the
   two-market cargo circuit, demand simulation and merchant routes remain separate obligations.
+  Multi-stall worlds need quote views that name their stall and an explicit stall choice (see above).
 - The windows are authored values for human reading in a single-player local session. Multiplayer timing,
   shared Wait and network delivery need their own admitted contracts.
 - Injected native routes and background rendering do not qualify physical devices, OS focus, art, audio or

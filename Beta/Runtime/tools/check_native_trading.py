@@ -32,13 +32,35 @@ def digest(path):
 
 
 def route_coverage(mode, inputs):
-    """Stages whose wheel or stall input used the requested device route, excluding shared keyboard dropdowns."""
+    """Stages whose wheel, stall or dropdown input used the requested device route."""
     key = ROUTE_KEYS[mode]
     stages = {}
     for row in inputs:
-        if key in row or (mode == 'pointer' and 'PointerSector' in row):
+        if key in row or (mode == 'pointer' and ('PointerSector' in row or 'PointerHover' in row or 'Wheel' in row)):
             stages.setdefault(row['Stage'], set()).add(row.get('Control') or row.get(key) or 'sector')
     return {stage: sorted(values) for stage, values in stages.items()}
+
+
+def route_purity(mode, inputs):
+    """Every injected event belongs to the named route: no keyboard rows in controller or pointer runs, and so on."""
+    foreign = [row for row in inputs for other, key in ROUTE_KEYS.items() if other != mode and key in row]
+    require(not foreign, 'Another device route was substituted: ' + json.dumps(foreign[:3]))
+    require(all(row.get('Route', mode) == mode for row in inputs), 'An input row names another route.')
+
+
+def selections(inputs, stage):
+    """Dropdown rows reached, cancelled and chosen in one stage, with the exact row text."""
+    rows = [row for row in inputs if row['Stage'] == stage and 'Dropdown' in row]
+    return dict(reached=[(row['Dropdown'], row['RowReached'], row['Text']) for row in rows if 'RowReached' in row],
+                cancelled=[(row['Dropdown'], row['Cancelled']) for row in rows if 'Cancelled' in row],
+                chosen=[(row['Dropdown'], row['Selected'], row['Text']) for row in rows if 'Text' in row and 'RowReached' not in row])
+
+
+def navigation(inputs):
+    """Focus moves caused by the route's own navigation events, each from one control to another."""
+    moves = [row for row in inputs if 'Navigate' in row]
+    require(all(row['To'] and row['To'] != row['From'] for row in moves), 'A navigation event did not move focus.')
+    return [(row['Stage'], row['From'], row['To']) for row in moves]
 
 
 def main():
@@ -63,9 +85,10 @@ def main():
                   startedUtc=datetime.datetime.now(datetime.timezone.utc).isoformat(),
                   limits=dict(processSeconds=180, probeSeconds=150, openingSeconds=30, maximumNativeProcesses=len(modes)*2),
                   coverage={},
-                  limitations=['Wheel opening, paging, sector selection and confirmation use the named route; stall buttons receive '
-                               'explicit Control focus before the named activation event (Enter, controller A or a pointer click).',
-                               'Every mode chooses dropdown rows (lot and history) with injected keyboard input.',
+                  limitations=['Wheel opening, paging, sector selection and confirmation use the named route. Keyboard and '
+                               'controller runs move focus only with arrows or the D-pad along the panel focus chain from the '
+                               'focus the game itself sets, then activate with Enter or A; pointer runs click, hover and scroll.',
+                               'Dropdown rows (lot and history) are reached, cancelled and chosen with the same named route.',
                                'Focus loss is injected through the fixture hook; no OS focus or physical device is exercised.',
                                'Requests are session memory: their decline is attested by the probe and managed session tests, '
                                'not by journal records.',
@@ -132,16 +155,34 @@ def main():
                 if phase == 'reopen':
                     require(digest(save) == frozen and observed['InitialHash'] == observed['FinalHash']
                             == observations['active']['FinalHash'], 'Paused reopen changed save/public state.')
-            coverage = route_coverage(mode, observations['active']['Inputs'])
-            reopen_coverage = route_coverage(mode, observations['reopen']['Inputs'])
+            active_inputs, reopen_inputs = observations['active']['Inputs'], observations['reopen']['Inputs']
+            coverage = route_coverage(mode, active_inputs)
+            reopen_coverage = route_coverage(mode, reopen_inputs)
             for stage in ('open-', 'ask-buy-', 'review-buy-', 'confirm-buy-', 'cancel-', 'decline-', 'show-', 'sell-', 'history-'):
                 require(stage + mode in coverage, 'Requested route input missing at ' + stage + mode)
             require('reopen' in reopen_coverage, 'Requested route input missing in paused reopen.')
-            require(set(observations['active']['Checks']) and len(observations['active']['Checks']) >= 7, 'Journey checks incomplete.')
+            route_purity(mode, active_inputs)
+            route_purity(mode, reopen_inputs)
+            lot_rows = selections(active_inputs, 'show-' + mode)
+            history_rows = selections(active_inputs, 'history-' + mode)
+            reopen_rows = selections(reopen_inputs, 'reopen')
+            require([row[0] for row in lot_rows['cancelled']] == ['MarketLot']
+                    and [row[0] for row in lot_rows['chosen']] == ['MarketLot']
+                    and [row[1] for row in lot_rows['cancelled']] == [row[1] for row in lot_rows['chosen']],
+                    'The lot row was not reached, cancelled and then chosen by the route.')
+            require([row[0] for row in history_rows['chosen']] == ['MarketHistory'] and 'bought 4' in history_rows['chosen'][0][2],
+                    'The buy outcome row was not chosen by the route.')
+            require([row[0] for row in reopen_rows['chosen']] == ['MarketHistory'] and 'sold 1 berry' in reopen_rows['chosen'][0][2],
+                    'The reopened sale outcome row was not chosen by the route.')
+            moves = navigation(active_inputs) + navigation(reopen_inputs)
+            if mode != 'pointer':
+                require(len({stage for stage, _, _ in moves}) >= 6, 'Focus navigation was not exercised across the journey.')
+            require(set(observations['active']['Checks']) and len(observations['active']['Checks']) >= 8, 'Journey checks incomplete.')
             report['coverage'][mode] = dict(active=coverage, reopen=reopen_coverage,
                                             wheel='open/page/sector/confirm via ' + ROUTE_KEYS[mode],
-                                            form='stall buttons via ' + ROUTE_KEYS[mode] + '; dropdown rows via keyboard',
-                                            physicalDevice=False)
+                                            form='stall buttons and dropdown rows via ' + ROUTE_KEYS[mode],
+                                            navigationMoves=len(moves), lotRows=lot_rows, historyRows=history_rows,
+                                            reopenRows=reopen_rows, physicalDevice=False)
             if args.rendered:
                 require({path.name for path in work.glob(mode+'.*.png')} ==
                         {mode+'.'+stage+'.png' for stage in ACTIVE_IMAGES + REOPEN_IMAGES},

@@ -71,8 +71,16 @@ internal static class MarketActionOffers
 
     /// <summary>The one open offer from this stall's merchant to the player, which the player may review.</summary>
     internal static PaidQuoteView? OpenOffer(LocalWorldView view, LocalMarketStallView stall) => view.PaidQuotes
-        .Where(quote => !quote.ViewerIsIssuer && quote.IssuerActorId == stall.MerchantActorId && quote.Status == PaidQuoteStatus.Open)
+        .Where(quote => BelongsTo(stall, quote) && quote.Status == PaidQuoteStatus.Open)
         .OrderByDescending(quote => quote.IssuedAtStep).ThenBy(quote => quote.QuoteId).FirstOrDefault();
+
+    /// <summary>
+    /// A quote the player received from this stall: issued by its merchant for its exact commodity. The merchant
+    /// alone is not enough, because one merchant may trade other goods elsewhere. Participant quote views carry no
+    /// market identity, so two stalls of one merchant selling the same commodity remain indistinguishable here.
+    /// </summary>
+    internal static bool BelongsTo(LocalMarketStallView stall, PaidQuoteView quote) =>
+        !quote.ViewerIsIssuer && quote.IssuerActorId == stall.MerchantActorId && quote.Definition.Equals(stall.Commodity);
 
     private static string? SellBlocker(LocalMarketStallView stall, FarmMarketDraft draft, string merchant, string goods) =>
         draft.LotId is null ? $"Choose one exact lot of your own {goods}."
@@ -90,15 +98,15 @@ internal static class MarketActionOffers
             ?? (draft.Direction != LocalTradeDirection.Sell ? "Showing a lot belongs to selling."
             : draft.LotId is null ? $"Choose one exact lot of your own {goods}."
             : lot is null ? "That lot is no longer usable in your pack. Choose a lot again."
-            : draft.Quantity > lot.Quantity ? $"That lot holds only {lot.Quantity} {goods}." : null);
+            : draft.Quantity > lot.Quantity ? $"That lot holds only {FarmMarketTerms.Count(lot.Quantity, goods)}." : null);
         DiscloseMarketLotIntent? intent = blocker is null ? stall.PrepareShowing(lot!.LotId, draft.Quantity, window) : null;
         if (blocker is null && intent is null) blocker = $"{merchant} cannot be shown goods here right now.";
-        string detail = $"Shows {draft.Quantity} {goods} from that exact lot to {merchant} for {window:N0} world steps "
-            + $"({FarmMarketTerms.Seconds(window)} while time advances). Showing sells, reserves and moves nothing and agrees to "
-            + $"no price; it only lets {merchant} answer a request to buy those units.";
+        string detail = $"Shows {FarmMarketTerms.Count(draft.Quantity, goods)} from that exact lot to {merchant} for "
+            + $"{FarmMarketTerms.Seconds(window)} while time runs. Showing sells, reserves and moves nothing and agrees to "
+            + $"no price; it only lets {merchant} answer a request to buy what you showed.";
         return new FarmActionOffer(FarmSemanticAction.ShowTradeLot, scope, $"Show to {merchant}", merchant, stall.MerchantActorId,
-            FarmActionOffers.NoCost, $"You showed {draft.Quantity} {goods} to {merchant}. Nothing was sold.", intent, blocker,
-            detailText: detail);
+            FarmActionOffers.NoCost, $"You showed {FarmMarketTerms.Count(draft.Quantity, goods)} to {merchant}. Nothing was sold.",
+            intent, blocker, detailText: detail);
     }
 
     private static FarmActionOffer Confirm(LocalWorldView view, FarmActionScope scope, LocalMarketStallView stall,
@@ -116,10 +124,10 @@ internal static class MarketActionOffers
         string unit = view.Progression?.CurrencyUnit ?? "coins";
         string label = buying ? "Confirm purchase" : "Confirm sale";
         string cost = review is null ? "Review one offer first"
-            : buying ? $"{checked(review.Payment + review.Fees)} {unit}" : $"{review.Units} {goods}";
+            : buying ? $"{checked(review.Payment + review.Fees)} {unit}" : FarmMarketTerms.Count(review.Units, goods);
         string completion = review is null ? ""
-            : buying ? $"You bought {review.Units} {goods} from {merchant} for {checked(review.Payment + review.Fees)} {unit}."
-            : $"You sold {review.Units} {goods} to {merchant} for {review.Payment} {unit}.";
+            : buying ? $"You bought {FarmMarketTerms.Count(review.Units, goods)} from {merchant} for {checked(review.Payment + review.Fees)} {unit}."
+            : $"You sold {FarmMarketTerms.Count(review.Units, goods)} to {merchant} for {review.Payment} {unit}.";
         string detail = review is null ? "Confirmation restates one reviewed offer exactly; it never asks again or picks newer terms."
             : FarmMarketTerms.Describe(view, review.Quote, review.Units, merchant, goods);
         return new FarmActionOffer(FarmSemanticAction.ConfirmTrade, scope, label, merchant, stall.MerchantActorId, cost,
@@ -130,10 +138,10 @@ internal static class MarketActionOffers
         PaidQuoteView? current, string merchant, string goods)
     {
         if (review is null) return "Review one offer first; confirming restates its exact terms.";
-        if (current is null) return "This offer is no longer in your live list. Check its saved record.";
+        if (current is null) return "This offer is no longer listed. Check its saved record.";
         if (current.Status != PaidQuoteStatus.Open)
-            return $"This offer is {current.Status.ToString().ToLowerInvariant()}. Ask {merchant} again for new terms.";
-        if (current.QuoteHash != review.Quote.QuoteHash || current.IssuerActorId != stall.MerchantActorId)
+            return $"This offer is {FarmMarketTerms.StatusWord(current.Status)}. Ask {merchant} again for new terms.";
+        if (current.QuoteHash != review.Quote.QuoteHash || !BelongsTo(stall, current))
             return "These terms are not the ones you reviewed. Review the offer again.";
         if (current.ObservedIssuerRevision is null) return $"{merchant} is not within reach to complete the trade.";
         if (current.ObservedIssuerRevision != review.Quote.ObservedIssuerRevision)
@@ -146,7 +154,7 @@ internal static class MarketActionOffers
         }
         return stall.OwnLots.FirstOrDefault(lot => lot.LotId == current.LotId) is { } own
             && own.Revision == current.ExpectedLotRevision && own.Quantity >= review.Units
-            ? null : $"The {goods} you showed changed. Show them and ask again.";
+            ? null : $"The {goods} you showed changed. Show them again and ask again.";
     }
 
     /// <summary>

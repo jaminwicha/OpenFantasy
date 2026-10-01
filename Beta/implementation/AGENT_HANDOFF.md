@@ -54,15 +54,30 @@ Opus 5.5 / 1M with requested Max delivered the implementation in 3,335.008s / $2
 Its context checks passed and no permission denial occurred. Astra reviewed the source/UI/journals and
 fixed the lead wrapper's one-mode versus three-mode verification mismatch without changing assertions.
 Two worker read-only shell listings exceeded the exact command examples. Raw sessions remain private;
-[dispatch](p02/native-trading/DISPATCH.json) is terminal, and no external job is active.
+[foundation dispatch](p02/native-trading/DISPATCH.json) is terminal.
 The [WIP checkpoint](p02/native-trading/DELIVERY_CHECKPOINT.json) preserves the delivery before integration.
 
-Next: a focused independent **Opus 5.5 / 1M / Max** review/refinement should finish controller/pointer
-row navigation, native stale/expired/unfunded/moved-issuer contrasts and player-facing copy/clarity.
-The present native fixture uses keyboard dropdown rows in all modes; managed cases/source guards do not
-close missing native cases. Keep all physical-device, human art/comprehension, multiplayer, migration,
-cargo and production gates open. [Cargo dependency notes](p02/spot-exchange/CARGO_DEPENDENCIES.md) ground
-the later multi-region route/presentation work without claiming it was executed.
+The [independent native review/refinement](p02/native-trading-refinement/INTEGRATION_REVIEW.md) is accepted
+at `codex/milestone-native-trading-refinement-20261001`. It fixes controller B dropdown cancellation,
+proves real focus navigation and per-route dropdown selection, adds authenticated native expiry,
+unfunded and moved-issuer refusals/recoveries, guards commodity identity and improves player copy.
+[Final checks](p02/native-trading-refinement/FINAL_CHECKS.json) match 1,608 current source files and 14
+binaries: build, **459 distinct managed cases**, three-mode native trading/gift and three keyboard
+boundary journeys pass. Core, Host, 546 old tests, frozen specs, original save and predecessor index
+remain exact. Injected background input does not qualify physical devices or human comprehension.
+
+The [dispatch](p02/native-trading-refinement/DISPATCH.json) is terminal: verified Opus 5.5 / 1M,
+requested Max, synchronized context, 2,511.901s / $14.2986962 client estimate within the assigned
+3,600s/$25 limits. No permission denial, substitution or model retry occurred. No external job is
+active. The packet retains failures, remaining UI limits and before/dispatch/delivery checkpoints.
+[Upstream guidance](p02/native-trading-refinement/UPSTREAM.json) records ecosystem commit `a557436`
+and verified three-entrypoint synchronization for aggregate-verifier input contracts.
+
+Next: join actual source merchants/stock/funds, bounded legal travel and reusable region presentation
+toward the two-town cargo circuit. [Cargo dependency notes](p02/spot-exchange/CARGO_DEPENDENCIES.md)
+ground that work without claiming an executed route. Multi-stall quote identity/selection is also
+required. Keep physical-device, human art/comprehension, multiplayer, lived migration, cargo and
+production gates open; the native refinement is not full UI or P02 completion.
 
 The [scheduled-trading integration](p02/scheduled-trading/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-scheduled-trading-20261001`. It binds participant-safe quote/history views,

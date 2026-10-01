@@ -1,0 +1,118 @@
+{
+  "checkedUtc": "2026-10-01T08:02:36.196649+00:00",
+  "scope": "Lead integration audit of completed checks and retained artifacts; no fresh runtime execution",
+  "preservation": {
+    "existingTests": 546,
+    "frozenSpecs": 23,
+    "newCompileLinks": 0,
+    "protectedBytesPreserved": true
+  },
+  "sourceFiles": 1608,
+  "assemblies": 14,
+  "reports": {
+    "build": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/build-20261001T074610Z-5eb21/report.json",
+      "sha256": "136963e2ee9de4f671c3014d064e972002718840872c823c65cb7e798486dcbf",
+      "elapsedSeconds": 6.339,
+      "outcomes": {},
+      "accepted": true
+    },
+    "unit": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/unit-20261001T074941Z-65030/report.json",
+      "sha256": "f82770534a9c2d03043e3582a363cce6c0f772c1fe3015c35a82500934bcd9f2",
+      "elapsedSeconds": 6.457,
+      "outcomes": {
+        "Passed": 18
+      },
+      "accepted": true
+    },
+    "regression": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/regression-20261001T074951Z-64e5e/report.json",
+      "sha256": "895982a8144c727c227b7c6d41dbe393792dc8917c22bbb6572175632e87bad9",
+      "elapsedSeconds": 212.987,
+      "outcomes": {
+        "Passed": 456
+      },
+      "accepted": true
+    },
+    "fixtures": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/report.json",
+      "sha256": "83ed8917449b0935cc9063e1af6bb236c7ec653106090c6867c77dcc180a7179",
+      "elapsedSeconds": 21.036,
+      "outcomes": {
+        "Passed": 3
+      },
+      "accepted": true
+    },
+    "native": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/native-20261001T074642Z-32cbe/report.json",
+      "sha256": "c0fbb1af7814b8f80751f1fafa16d19d1fda10ed16bcaca1af9396f9446119dd",
+      "elapsedSeconds": 47.089,
+      "outcomes": {},
+      "accepted": true
+    },
+    "native-auth": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/native-auth-20261001T074824Z-4fd87/report.json",
+      "sha256": "ef790be635677fd3261930d5efcd2137ff53484430fe364dbbd7eef4d94c0809",
+      "elapsedSeconds": 36.405,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "legacy-native": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/legacy-native-20261001T075327Z-5aef1/report.json",
+      "sha256": "c1d4c7011b3e35974c53415d59d80ef911acdc907c086dad2d14667f39b5e96d",
+      "elapsedSeconds": 63.663,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "boundary-native": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/report.json",
+      "sha256": "aa77c96f6ef9a86ed4dd6ceccaf1716aa8055c033c5304777570b09db400baa1",
+      "elapsedSeconds": 49.384,
+      "outcomes": {},
+      "accepted": true
+    },
+    "boundary-auth": {
+      "path": "Beta/implementation/p02/native-trading-refinement/qualification/boundary-auth-20261001T074902Z-91322/report.json",
+      "sha256": "399e3f8dfc1b16a2ffe6c0fb1ca77733f04a3ccd4d36b3dcbbfdba7e3015881c",
+      "elapsedSeconds": 35.518,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    }
+  },
+  "nativeArtifacts": {
+    "native": {
+      "executionPins": 110,
+      "fixturePins": 4,
+      "artifactPins": 49,
+      "processes": 6,
+      "databaseHashesExact": true,
+      "originalProjectUnchanged": true
+    },
+    "legacy-native": {
+      "executionPins": 110,
+      "fixturePins": 4,
+      "artifactPins": 37,
+      "processes": 6,
+      "databaseHashesExact": true,
+      "originalProjectUnchanged": true
+    },
+    "boundary-native": {
+      "executionPins": 110,
+      "fixturePins": 13,
+      "artifactPins": 22,
+      "processes": 3,
+      "databaseHashesExact": true,
+      "originalProjectUnchanged": true
+    }
+  },
+  "distinctManagedPasses": 459,
+  "coreRerun": false,
+  "fullPhaseOrProductionAcceptance": false
+}

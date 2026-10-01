@@ -1,0 +1,43 @@
+ERROR: Native market probe failed: System.InvalidOperationException: Pointer hover did not reach the dropdown row.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 171
+   at OpenFantasy.Client.MarketProbeDriver.ReachRow(OptionButton control, PopupMenu popup, Int32 row) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 218
+   at OpenFantasy.Client.MarketProbeDriver.CancelChoice(OptionButton control, Int32 row, Control outside) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 84
+   at OpenFantasy.Client.MarketTradingPlayProbe.Exercise() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:line 198
+   at OpenFantasy.Client.MarketTradingPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:line 74
+   at: void OpenFantasy.Client.MarketTradingPlayProbe+<_Ready>d__29.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:74)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void OpenFantasy.Client.MarketTradingPlayProbe+<_Ready>d__29.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:74)
+       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [4] void System.Threading.Tasks.Task.RunContinuations(object)
+       [5] void System.Threading.Tasks.Task.FinishSlow(bool)
+       [6] bool System.Threading.Tasks.Task.TrySetException(object)
+       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)
+       [8] void OpenFantasy.Client.MarketTradingPlayProbe+<Exercise>d__30.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:198)
+       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [11] void System.Threading.Tasks.Task.RunContinuations(object)
+       [12] void System.Threading.Tasks.Task.FinishSlow(bool)
+       [13] bool System.Threading.Tasks.Task.TrySetException(object)
+       [14] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)
+       [15] void OpenFantasy.Client.MarketProbeDriver+<CancelChoice>d__21.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:84)
+       [16] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [17] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [18] void System.Threading.Tasks.Task.RunContinuations(object)
+       [19] void System.Threading.Tasks.Task.FinishSlow(bool)
+       [20] bool System.Threading.Tasks.Task.TrySetException(object)
+       [21] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)
+       [22] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception)
+       [23] void OpenFantasy.Client.MarketProbeDriver+<ReachRow>d__34.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:218)
+       [24] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.ExecutionContextCallback(object)
+       [25] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [26] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [27] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [28] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [29] void System.Threading.Tasks.Task.RunContinuations(object)
+       [30] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()
+       [31] void OpenFantasy.Client.MarketProbeDriver+<Frame>d__29.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:164)
+       [32] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [33] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [34] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)

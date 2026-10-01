@@ -288,13 +288,13 @@ layout_mode = 2
 allow_reselect = true
 fit_to_longest_item = false
 text = "Choose an offer or outcome…"
-tooltip_text = "Your offers from this stall in the current save segment. Choosing one only inspects it."
+tooltip_text = "Your recent offers at this stall and their outcomes. Choosing one only inspects it."
 
 [node name="CheckRecord" type="Button" parent="MarketRoot/Panel/Column/Body/ReplyScroll/Reply"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Check saved record"
-tooltip_text = "Read this exact offer from saved history. This may briefly delay the world; it changes nothing."
+tooltip_text = "Read this exact offer from your saved game. Reading changes nothing."
 
 [node name="HistoryDetails" type="Label" parent="MarketRoot/Panel/Column/Body/ReplyScroll/Reply"]
 unique_name_in_owner = true
@@ -313,4 +313,4 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 autowrap_mode = 3
-text = "Arrows / D-pad / Tab move · Enter / A choose · Esc / B close. Hover or focus explains. Pause stops only this single-player world, not a shared multiplayer Wait."
+text = "Arrows / D-pad / Tab move · Enter / A choose · Esc / B close. Hover or focus explains. Pause to read stops the world until you resume."

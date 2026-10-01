@@ -1,0 +1,29 @@
+{
+  "kind": "native-trading-boundary-fixtures-v1",
+  "units": 2,
+  "nearExpirySteps": 40,
+  "offerWindowSteps": 1200,
+  "scenarios": {
+    "expired": {
+      "directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/expired",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/expired/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/expired/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/expired/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/expired/metadata.json"
+    },
+    "unfunded": {
+      "directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/unfunded",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/unfunded/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/unfunded/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/unfunded/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/unfunded/metadata.json"
+    },
+    "moved": {
+      "directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/moved",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/moved/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/moved/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/moved/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073558Z-e6c03/boundaries/moved/metadata.json"
+    }
+  }
+}

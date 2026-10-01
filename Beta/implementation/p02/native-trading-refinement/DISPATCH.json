@@ -1,0 +1,40 @@
+{
+  "status": "accepted_bounded_refinement",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 3600,
+  "maxBudgetUsdClientEstimate": 25,
+  "sourceHead": "35b0797fa78ac73557ad4ed704af72f12c8bfd49",
+  "checkpoint": "codex/checkpoint-before-native-trading-refinement-20261001T071027Z",
+  "privateTaskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-refinement-eyvr5w4g",
+  "benefit": "Independent critique plus completion of native selection/rejection evidence and readable UI in one cohesive unit, avoiding another broad model re-audit.",
+  "contextManifestSha256": "a2a79c196a64625a2c3a679e5b56e09e44832bda168bb055c1de34c08aa2abc6",
+  "dispatchCheckpoint": "codex/checkpoint-native-refinement-dispatch-20261001T071324Z",
+  "dispatchSnapshot": "a832835e4d3cd2f6cba7a808481368cdcc41cc20",
+  "execSession": 6013,
+  "startedUtc": "2026-10-01T07:13:41.806286+00:00",
+  "elapsedSeconds": 2511.901,
+  "totalCostUsdClientEstimate": 14.298696200000004,
+  "returnedModelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 236,
+      "outputTokens": 181977,
+      "cacheReadInputTokens": 36548461,
+      "cacheCreationInputTokens": 418565,
+      "webSearchRequests": 0,
+      "costUSD": 14.298696200000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 87599,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextStatus": "verified",
+  "processExitCode": 0,
+  "permissionDenials": [],
+  "adapterStatus": "completed_pending_review",
+  "integrationReview": "INTEGRATION_REVIEW.md",
+  "milestone": "codex/milestone-native-trading-refinement-20261001"
+}

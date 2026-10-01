@@ -1,0 +1,29 @@
+ERROR: Native market probe failed: System.InvalidOperationException: Cancelling the lot list chose a lot, closed the stall or sent a command.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.MarketTradingPlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:line 369
+   at OpenFantasy.Client.MarketTradingPlayProbe.Exercise() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:line 199
+   at OpenFantasy.Client.MarketTradingPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:line 74
+   at: void OpenFantasy.Client.MarketTradingPlayProbe+<_Ready>d__29.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:74)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void OpenFantasy.Client.MarketTradingPlayProbe+<_Ready>d__29.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:74)
+       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [3] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [4] void System.Threading.Tasks.Task.RunContinuations(object)
+       [5] void System.Threading.Tasks.Task.FinishSlow(bool)
+       [6] bool System.Threading.Tasks.Task.TrySetException(object)
+       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)
+       [8] void OpenFantasy.Client.MarketTradingPlayProbe+<Exercise>d__30.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs:199)
+       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [10] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [11] void System.Threading.Tasks.Task.RunContinuations(object)
+       [12] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()
+       [13] void OpenFantasy.Client.MarketProbeDriver+<CancelChoice>d__22.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:93)
+       [14] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [15] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [16] void System.Threading.Tasks.Task.RunContinuations(object)
+       [17] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder.SetResult()
+       [18] void OpenFantasy.Client.MarketProbeDriver+<Frame>d__30.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:165)
+       [19] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [20] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [21] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)

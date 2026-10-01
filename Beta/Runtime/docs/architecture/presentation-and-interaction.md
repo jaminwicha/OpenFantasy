@@ -38,7 +38,11 @@ The wheel's Market page (Buy, Sell, Offers) opens a scene-owned panel and submit
 paused. The panel's own `Market` input layer suppresses walking without pausing the host, so a merchant
 answers while it is open; an explicit local reading pause stops this single-player world. A review captures
 one exact participant offer; any changed choice, Back, focus loss or disconnection discards it, and
-nothing auto-accepts, renews or requotes.
+nothing auto-accepts, renews or requotes. The trade card speaks in player terms: price, dues, total,
+purse and shortfall, and the time an offer stays open while the world runs; the fixed-world step basis
+appears only as an optional hover diagnostic. Its controls form one explicit cyclic focus chain, and an
+open dropdown list owns input until a row is chosen or the list is cancelled (Escape or controller B),
+without closing the stall.
 
 [FarmGame](../../client/scripts/FarmGame.cs) coordinates session, input and presentation through
 named collaborators. [FarmCanvas](../../client/scripts/FarmCanvas.cs) and its

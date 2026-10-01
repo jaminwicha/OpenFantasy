@@ -1,0 +1,5 @@
+# Disposable interpreter cache and links into the local rendered client.
+# Preserve the actual launch configuration and all reports/images/fixture evidence.
+__pycache__/
+qualification/*/*/background-client/*
+!qualification/*/*/background-client/project.godot

@@ -1,0 +1,2271 @@
+{
+  "Kind": "native-trading-v1",
+  "Mode": "controller",
+  "Route": "controller",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "history-controller",
+  "Genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T073757Z-cab87/trading/genesis.ofc",
+  "InitialHash": "F8C67CA689CFA8A488720E84A27CF996BAED4EC778C1724E194F168914CE10D7",
+  "FinalHash": "5DB4B76C0D618BBAF7945BB234E77A484A219C9888895E7D6AEB9F85CEC49E30",
+  "BuyQuoteId": "691bc0898b9cc146c0cc24aa7c78365a",
+  "SellQuoteId": "817d8cfaaef5726f0850752dd6966abe",
+  "SoldLotId": "3f47302731883d818e42f5fb07ecce4f",
+  "BuyUnits": 4,
+  "SellUnits": 1,
+  "Checks": [
+    "A paused wheel choice opens the stall for inspection without a command or preselected terms.",
+    "The panel left time running so Wren answered; an explicit reading pause then held the exact offer and its window.",
+    "A changed quantity and controlled focus loss each discard the review; nothing is confirmed, retargeted or requested again.",
+    "Moving focus across an enabled Confirm and away again submits nothing and keeps the review.",
+    "One exact confirmation bought four of Wren\u0027s admitted berries with earned reward money; a repeat on the filled offer sent nothing.",
+    "Back discards a review; a request asked while paused waits for running time and its cancellation sends nothing.",
+    "Asking again for four after her stock fell to two receives Wren\u0027s genuine decline; no stock count is shown.",
+    "The lot list opens, reaches a row and cancels through the route without choosing; the same route then chooses that exact lot.",
+    "Wren\u0027s own proceeds paid for one shown berry through a separately reviewed and confirmed sale.",
+    "The saved buy outcome is chosen from the outcome list and read through the explicit background record inspection, then the stall closes without a command."
+  ],
+  "Inputs": [
+    {
+      "Stage": "open-controller",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "open-controller",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "open-controller",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "open-controller",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "open-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "open-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "BuyMode",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CloseMarket",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "BuyMode"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ReviewOffer",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "ask-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "MarketHistory",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "BackFromReview",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "BackFromReview",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "ConfirmTrade",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "ReviewOffer",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CancelRequest",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "AskMerchant",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "MarketLess",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "MarketMore",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "MarketLess",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "MarketLess",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "MarketMore",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "review-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "BuyMode",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CloseMarket",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "MarketHistory",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ConfirmTrade",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ConfirmTrade",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "BackFromReview",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "confirm-buy-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "BuyMode"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Received": "CancelRequest",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Received": "CancelRequest",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "cancel-controller",
+      "Route": "controller",
+      "Received": "CancelRequest",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ReviewOffer",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ConfirmTrade",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "BackFromReview",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "BuyMode"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "decline-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "AskMerchant",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "MarketMore",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Received": "SellMode",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "MarketLess",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Received": "SellMode",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Received": "SellMode",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLot"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Dropdown": "MarketLot",
+      "RowReached": 1,
+      "Text": "Lot 1: 4 berries",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "B"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Dropdown": "MarketLot",
+      "Cancelled": 1,
+      "Selected": 0
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Dropdown": "MarketLot",
+      "RowReached": 1,
+      "Text": "Lot 1: 4 berries",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Dropdown": "MarketLot",
+      "Selected": 1,
+      "Text": "Lot 1: 4 berries"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketLot",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Received": "ShowLot",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "ShowLot"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Received": "ShowLot",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "show-controller",
+      "Route": "controller",
+      "Received": "ShowLot",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ShowLot",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "AskMerchant",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ReviewOffer",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "MarketHistory",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "ReviewOffer",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "BackFromReview",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "MarketHistory",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 11 (D-pad Up)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "ConfirmTrade",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "ConfirmTrade",
+      "To": "BackFromReview"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "BackFromReview",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell-controller",
+      "Route": "controller",
+      "Received": "PauseToRead",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Dropdown": "MarketHistory",
+      "RowReached": 2,
+      "Text": "Buy from Wren \u00B7 4 berries at 11 gil \u00B7 bought 4 berries for 44 gil",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Dropdown": "MarketHistory",
+      "Selected": 2,
+      "Text": "Buy from Wren \u00B7 4 berries at 11 gil \u00B7 bought 4 berries for 44 gil"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Received": "CheckRecord",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Received": "CheckRecord",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Received": "CheckRecord",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "history-controller",
+      "Route": "controller",
+      "Controller": "B"
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "opened",
+      "Hash": "F8C67CA689CFA8A488720E84A27CF996BAED4EC778C1724E194F168914CE10D7",
+      "Step": 297,
+      "Purse": 200,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "repeat-attempt",
+      "Before": "77DA1EBB7679991CBDC3A32BCFF33D19523906E103D1B3EF726A9A3D1C1E1CAB",
+      "After": "6640FFAEC6D50CCD77A565182FE69FE8742A653213106B8EA0FE0C99385C2C65"
+    },
+    {
+      "Label": "final",
+      "Hash": "5DB4B76C0D618BBAF7945BB234E77A484A219C9888895E7D6AEB9F85CEC49E30",
+      "Step": 324,
+      "Purse": 163,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "691bc0898b9cc146c0cc24aa7c78365a",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 11,
+          "QuantityAllowance": 4,
+          "IssuedAtStep": 301,
+          "ExpiresAtStep": 1501,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 4
+        },
+        {
+          "Id": "817d8cfaaef5726f0850752dd6966abe",
+          "Side": "IssuerBuys",
+          "Status": "Filled",
+          "UnitPrice": 7,
+          "QuantityAllowance": 1,
+          "IssuedAtStep": 320,
+          "ExpiresAtStep": 1520,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 1
+        }
+      ],
+      "Lots": [
+        {
+          "Id": "3f47302731883d818e42f5fb07ecce4f",
+          "Revision": 1,
+          "Quantity": 3
+        }
+      ],
+      "Showing": {
+        "Lot": "3f47302731883d818e42f5fb07ecce4f",
+        "Units": 1,
+        "ExpiresAtStep": 2719,
+        "IsLive": true
+      },
+      "InPerson": true,
+      "Request": {
+        "State": "Offered",
+        "Quantity": 1,
+        "Quote": "817d8cfaaef5726f0850752dd6966abe"
+      },
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "Unfocusable": true,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "StartupNoFocus": true,
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "DurationMilliseconds": 6761,
+  "Limit": "Every wheel, stall button and dropdown row uses the named injected route: keyboard arrows/Enter/Escape, controller D-pad/A/B or pointer motion/wheel/clicks. Focus starts where the game puts it and moves only by those events. Focus loss is injected through the fixture hook. Physical devices, OS focus, art, multiplayer Wait and production gates remain open."
+}

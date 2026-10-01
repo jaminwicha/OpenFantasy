@@ -79,7 +79,7 @@ public partial class FarmGame
         {
             _marketRequest = _session.AskAsync(inquiry);
             _market.Notice(_input.Paused ? "Asked. World time is paused, so the answer waits until you resume."
-                : "Asked. Nothing is reserved; the answer arrives at a coming world step.");
+                : "Asked. Nothing is reserved; the answer comes shortly while time runs.");
         }
         catch (Exception error)
         {
