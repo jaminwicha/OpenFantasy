@@ -1,0 +1,299 @@
+{
+  "Kind": "native-retreat-v1",
+  "Mode": "controller",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 2.034,
+  "ProbeMilliseconds": 10653,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "controller",
+      "Controller": "Start"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "engage",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "B"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "cancel",
+      "Route": "controller",
+      "Controller": "B"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "pause",
+      "Route": "controller",
+      "Controller": "Start"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Down"
+    }
+  ],
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.08 s recovery\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now.",
+    "Tooltip": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.08 s recovery\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now."
+  },
+  "Attempts": [
+    {
+      "Stage": "inspect",
+      "Opened": true,
+      "View": "None",
+      "Timing": 0,
+      "Slot": "No safe ground",
+      "SlotBlocker": "This choice changed or is no longer visible. Close the wheel and choose again."
+    },
+    {
+      "Stage": "inspect",
+      "Attempt": 0,
+      "Message": "The Retreat inspection does not explain destination and cost: \u0027Retreat\u0027 / \u0027Target: No safe ground\nCost: 0.13 s recovery per step\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now.\nUnavailable: This choice changed or is no longer visible. Close the wheel and choose again.\u0027.",
+      "View": "None",
+      "Timing": 1
+    },
+    {
+      "Stage": "inspect",
+      "Opened": true,
+      "View": "None",
+      "Timing": 1,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null
+    },
+    {
+      "Stage": "commit",
+      "Opened": true,
+      "View": "None",
+      "Timing": 1,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null
+    }
+  ],
+  "Positions": [
+    {
+      "X": 25984,
+      "Y": 83328,
+      "Z": 256,
+      "Seconds": 6.2320867
+    },
+    {
+      "X": 25984,
+      "Y": 83296,
+      "Z": 256,
+      "Seconds": 6.3300601
+    },
+    {
+      "X": 25984,
+      "Y": 83264,
+      "Z": 256,
+      "Seconds": 6.5801036
+    },
+    {
+      "X": 25984,
+      "Y": 83232,
+      "Z": 256,
+      "Seconds": 6.78003
+    },
+    {
+      "X": 25984,
+      "Y": 83200,
+      "Z": 256,
+      "Seconds": 6.9968888
+    },
+    {
+      "X": 25984,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.180166
+    },
+    {
+      "X": 25952,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.380011
+    },
+    {
+      "X": 25920,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.5799724
+    },
+    {
+      "X": 25888,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.7800326
+    },
+    {
+      "X": 25856,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.9799593
+    },
+    {
+      "X": 25824,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.2299739
+    },
+    {
+      "X": 25792,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.4800313
+    },
+    {
+      "X": 25760,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.6800687
+    },
+    {
+      "X": 25728,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.8800151
+    },
+    {
+      "X": 25696,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 9.080024
+    },
+    {
+      "X": 25664,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 9.280012
+    },
+    {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 9.4801009
+    }
+  ],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat costing 208 readiness units.",
+    "Cancelling the inspected Retreat commits nothing; the encounter still holds for the player\u0027s choice.",
+    "The committed route was walked as 16 presented 32-subunit steps and ended the encounter.",
+    "Ordinary held-key travel continues after the retained readiness is paid by exploration."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/controller.retreat-inspected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/controller.retreating.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/controller.disengaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/controller.final.png"
+  ],
+  "AcceptedCount": 1,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 16,
+    "RouteSamples": 16,
+    "ReadinessCharged": 208,
+    "WorldSequence": 536,
+    "Final": {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256
+    },
+    "ActorId": "71f5fa372b63c9229a886168930ccf64",
+    "CommandId": "f87007e01b5cf1ca27343cfd970ba659"
+  },
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalBalance": 180
+}

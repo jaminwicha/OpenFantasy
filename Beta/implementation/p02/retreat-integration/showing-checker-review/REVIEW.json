@@ -1,0 +1,8 @@
+{
+  "status": "Applied by Astra after worker terminal; final checks pending",
+  "path": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/NativeTradingResultTests.cs",
+  "originalSha256": "5a042f2c1503eb9b8685896079f6cd7c0c5e2c3db6a67f75b862f67f1e7e0844",
+  "proposedSha256": "ea8b2e7d34250ebbea68835316b9838a78f334fd2e87888f1f8ea7e8902ce58d",
+  "reason": "Preserve exact captured expiry and reconstruct all terms from an actual earlier public observation; publication must preserve expiry and remain within the allowed lifetime.",
+  "independentEvidence": "RetreatTradingCaptureTests passes 0, 1 and 5 elapsed cutoffs with exact reopening; prior native failure reports retained; all other native assertions untouched"
+}

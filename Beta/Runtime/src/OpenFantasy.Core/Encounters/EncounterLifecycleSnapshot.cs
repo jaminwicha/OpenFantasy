@@ -177,6 +177,26 @@ public sealed class EncounterLifecycleSnapshot
             EncounterLifecyclePhase.Exploration, Debts, ScenarioId, Actions);
     }
 
+    /// <summary>
+    /// Ends an active episode at a completed retreat's zero-duration boundary. Every actor's actual debt, including the
+    /// retreating actor's last charged sample, becomes permanent; no executable choice, time or effect is retained.
+    /// </summary>
+    internal EncounterLifecycleSnapshot Disengage(EncounterTimingSnapshot timing, EncounterActionSnapshot actions)
+    {
+        RequirePhase(EncounterLifecyclePhase.Active);
+        ArgumentNullException.ThrowIfNull(timing);
+        ArgumentNullException.ThrowIfNull(actions);
+        ulong units = checked((TacticalTicks - EntryTacticalTicks) * EncounterTimingSnapshot.UnitsPerTick);
+        if (timing.Scope != Actions!.Scope || actions.Scope != timing.Scope || timing.ElapsedTacticalUnits != units
+            || timing.Decisions.Count != 0 || actions.Pending.Count != 0
+            || !timing.Actors.Select(actor => actor.ActorId).SequenceEqual(Debts.Select(debt => debt.ActorId)))
+        {
+            throw new ArgumentException("Disengagement retains the exact episode, elapsed units and complete actors without executable choices.");
+        }
+        return Next(ExplorationSteps, TacticalTicks, EntryTacticalTicks, EncounterCount, EncounterLifecyclePhase.Exploration,
+            timing.Actors.Select(actor => new EncounterReadinessDebt(actor.ActorId, actor.RemainingDelay)), ScenarioId, actions);
+    }
+
     internal EncounterLifecycleSnapshot ResumeAfterCare(EncounterTimingSnapshot timing)
     {
         RequirePhase(EncounterLifecyclePhase.Outcome);

@@ -1,0 +1,11 @@
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/Retreat/RetreatProfileBoundaryTests.cs(17,25): error CS0136: A local or parameter named 'older' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(129,13): error xUnit2002: Do not use Assert.NotNull() on value type 'EntityId'. Remove this assert. (https://xunit.net/xunit.analyzers/rules/xUnit2002) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/Retreat/RetreatProfileBoundaryTests.cs(17,25): error CS0136: A local or parameter named 'older' cannot be declared in this scope because that name is used in an enclosing local scope to define a local or parameter [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(129,13): error xUnit2002: Do not use Assert.NotNull() on value type 'EntityId'. Remove this assert. (https://xunit.net/xunit.analyzers/rules/xUnit2002) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:15.30

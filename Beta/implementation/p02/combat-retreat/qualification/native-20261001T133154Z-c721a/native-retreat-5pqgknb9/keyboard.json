@@ -1,0 +1,84 @@
+{
+  "Kind": "native-retreat-v1",
+  "Mode": "keyboard",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: The Retreat inspection does not explain destination and cost: \u0027Retreat\u0027 / \u0027Target: No safe ground\nCost: 0.13 s recovery per step\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now.\nUnavailable: This choice changed or is no longer visible. Close the wheel and choose again.\u0027.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.RetreatPlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 278\n   at OpenFantasy.Client.RetreatPlayProbe.OpenWheelAndSelectRetreat() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 194\n   at OpenFantasy.Client.RetreatPlayProbe.Exercise(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 118\n   at OpenFantasy.Client.RetreatPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 81",
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 2.197,
+  "ProbeMilliseconds": 6035,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "engage",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "Up"
+    }
+  ],
+  "WalkInputs": [],
+  "Inspected": {
+    "Stage": "inspect",
+    "Name": "Retreat",
+    "Details": "Target: No safe ground\nCost: 0.13 s recovery per step\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now.\nUnavailable: This choice changed or is no longer visible. Close the wheel and choose again.",
+    "Tooltip": "Target: No safe ground\nCost: 0.13 s recovery per step\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now.\nUnavailable: This choice changed or is no longer visible. Close the wheel and choose again."
+  },
+  "Positions": [],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat costing 208 readiness units."
+  ],
+  "Images": [],
+  "AcceptedCount": 0,
+  "Record": null,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalBalance": 180
+}

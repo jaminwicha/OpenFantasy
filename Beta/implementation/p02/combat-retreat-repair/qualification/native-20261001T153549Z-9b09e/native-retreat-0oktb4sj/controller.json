@@ -1,0 +1,271 @@
+{
+  "Kind": "native-retreat-v2",
+  "Mode": "controller",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 4.781,
+  "ProbeMilliseconds": 10681,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "controller",
+      "Controller": "Start"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "engage",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "cancel",
+      "Route": "controller",
+      "Controller": "B"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "pause",
+      "Route": "controller",
+      "Controller": "Start"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Down"
+    }
+  ],
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (100, 324), north-west\nCost: 16 steps over 2.25 s \u00B7 then 0.13 s recovery\n\nGive ground step by step until no opponent can reach you. Opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked or contact remains. Each step charges 0.13 s of readiness (2.08 s in all). 1 opponent(s) can reach you now.",
+    "Tooltip": "Target: To cell (100, 324), north-west\nCost: 16 steps over 2.25 s \u00B7 then 0.13 s recovery\n\nGive ground step by step until no opponent can reach you. Opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked or contact remains. Each step charges 0.13 s of readiness (2.08 s in all). 1 opponent(s) can reach you now."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 0,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null,
+      "CanExecute": true
+    },
+    {
+      "Stage": "commit",
+      "Timing": 1,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [
+    {
+      "X": 25984,
+      "Y": 83328,
+      "Z": 256,
+      "Seconds": 6.2590056
+    },
+    {
+      "X": 25984,
+      "Y": 83296,
+      "Z": 256,
+      "Seconds": 6.3338466
+    },
+    {
+      "X": 25984,
+      "Y": 83264,
+      "Z": 256,
+      "Seconds": 6.5896642
+    },
+    {
+      "X": 25984,
+      "Y": 83232,
+      "Z": 256,
+      "Seconds": 6.7839089
+    },
+    {
+      "X": 25984,
+      "Y": 83200,
+      "Z": 256,
+      "Seconds": 6.9838937
+    },
+    {
+      "X": 25984,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.1837605
+    },
+    {
+      "X": 25952,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.3838786
+    },
+    {
+      "X": 25920,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.5837965
+    },
+    {
+      "X": 25888,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.7837025
+    },
+    {
+      "X": 25856,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.9837185
+    },
+    {
+      "X": 25824,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.2337642
+    },
+    {
+      "X": 25792,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.4837935
+    },
+    {
+      "X": 25760,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.6838577
+    },
+    {
+      "X": 25728,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 8.8837212
+    },
+    {
+      "X": 25696,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 9.0837227
+    },
+    {
+      "X": 25664,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 9.2837947
+    },
+    {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 9.4887639
+    }
+  ],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat: 16 steps over 2.25 s \u00B7 then 0.13 s recovery.",
+    "The first wheel opening at the ready boundary showed the current Retreat offer; nothing read as changed.",
+    "Cancelling the inspected Retreat sends nothing: the player\u0027s own boundary still waits, unanswered.",
+    "While the route is walked the player is shown as retreating and is offered no Wait or Strike.",
+    "The committed route was walked as 16 presented 32-subunit steps and ended the encounter.",
+    "Ordinary held-key travel continues after the retained readiness is paid by exploration."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/native-20261001T153549Z-9b09e/native-retreat-0oktb4sj/controller.retreat-inspected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/native-20261001T153549Z-9b09e/native-retreat-0oktb4sj/controller.retreating.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/native-20261001T153549Z-9b09e/native-retreat-0oktb4sj/controller.disengaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/native-20261001T153549Z-9b09e/native-retreat-0oktb4sj/controller.final.png"
+  ],
+  "Notice": "You broke away after 16 steps. The encounter is over; recovery continues while you explore.",
+  "Trade": null,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 16,
+    "RouteSamples": 16,
+    "ReadinessCharged": 208,
+    "WorldSequence": 535,
+    "Final": {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256
+    },
+    "ActorId": "71f5fa372b63c9229a886168930ccf64",
+    "CommandId": "7c479a4a2172923fae05a32899b36da1"
+  },
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

@@ -1,0 +1,28 @@
+--- Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/NativeTradingResultTests.cs
++++ Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/NativeTradingResultTests.cs
+@@ -117,7 +117,24 @@
+             Assert.Equal((showBefore.GetResident(player).InventoryCustodianId, shownLot.Revision, sellUnits, buyUnits),
+                 (shownLot.CustodianId, showing.ExpectedLotRevision, showing.Quantity, shownLot.Quantity));
+             Assert.Equal(showBefore.Progression!.Currency.GetActorAccount(player).AccountId, showing.SellerAccountId);
+-            Assert.Equal(showBefore.AdvancingSteps + 1 + NativeTradingPolicy.ShowingWindowSteps, showing.ExpiresAtStep);
++            // The UI captures an absolute expiry. Scheduled cutoffs between capture and submission shorten the
++            // remaining window; neither the client nor authority may silently renew the captured terms.
++            ulong window = NativeTradingPolicy.ShowingWindowSteps;
++            ulong publishedStep = showBefore.AdvancingSteps + 1;
++            Assert.InRange(showing.ExpiresAtStep, fixture.AdvancingSteps + 1 + window, publishedStep + window);
++            Assert.True(showing.ExpiresAtStep > publishedStep, "The submitted showing must still be live.");
++            ulong captureStep = showing.ExpiresAtStep - 1 - window;
++            StoredWorldCommit? capturedCommit = commits.LastOrDefault(value => value.Sequence < commands[2].Row.Sequence
++                && value.AdvancingSteps == captureStep);
++            WorldSnapshot capturedState = capturedCommit is null ? fixture : State(capturedCommit.Sequence);
++            Assert.Equal(captureStep, capturedState.AdvancingSteps);
++            LocalMarketStallView capturedStall = new LocalWorldView(capturedState, player).Markets!.Stalls
++                .Single(value => value.MarketId == showing.MarketId);
++            Assert.Equal(showing, capturedStall.PrepareShowing(showing.LotId, showing.Quantity, window));
++            MarketLotDisclosure publishedShowing = State(commands[2].Row.Sequence).Coordination!.Markets!
++                .FindDisclosure(player, showing.MarketId)!;
++            Assert.Equal((publishedStep, showing.ExpiresAtStep),
++                (publishedShowing.DisclosedAtStep, publishedShowing.ExpiresAtStep));
+             Assert.Equal(showBefore.Inventory.ContentHash, State(commands[2].Row.Sequence).Inventory.ContentHash);
+             Assert.Equal(showBefore.Progression.ContentHash, State(commands[2].Row.Sequence).Progression!.ContentHash);
+ 

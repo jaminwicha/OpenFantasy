@@ -41,7 +41,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         // layout; its genesis, never the schema number, selects how the stored roots are read.
         int schemaVersion = accepted.ProfileVersion switch
         {
-            27 or 28 or 30 or 32 or 33 => WorldDatabaseSchemaEight.Version,
+            27 or 28 or 30 or 32 or 33 or 34 => WorldDatabaseSchemaEight.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,

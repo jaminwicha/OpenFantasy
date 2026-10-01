@@ -20,6 +20,7 @@ public partial class FarmGame : Node2D
     private Task? _closing;
     private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _presented =
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
+    private readonly RetreatOutcomeNotice _retreatNotice = new();
     private string _actionDescription = "";
     private bool _failed;
     private FarmTargetSelection? _targets;
@@ -325,6 +326,7 @@ public partial class FarmGame : Node2D
             : new Vector2(0, BreachProfile ? 96 : WatercourseProfile ? 72 : -26));
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
         _presented = _session.CreateOffers(view, _targets.Selected, _gifts, _marketDraft);
+        if (_retreatNotice.Observe(view.Retreat) is { } notice) _hud.Message(notice);
         _canvas.PresentTarget(_targets.Selected);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view),
             _action is not null || view.IsResolvingConsequences,
@@ -564,11 +566,15 @@ public partial class FarmGame : Node2D
         _input.SetWheelOpen(open);
         if (open)
         {
-            _wheel.Open(_presented);
             _hud.SetCovered(true);
-            try { _session.World.SetMovement(0, 0); }
+            LocalWorldView view;
+            try { view = _session.CaptureWheelView(); }
             catch (InvalidOperationException error) { Fail(error.GetBaseException().Message); return; }
-            Present(_session.World.ReadView());
+            // The wheel opens on the offers of the world as it is now, never on an earlier frame's presentation;
+            // presenting the same view again then refreshes the open wheel without anything reading as changed.
+            Present(view);
+            _wheel.Open(_presented);
+            Present(view);
         }
         else
         {

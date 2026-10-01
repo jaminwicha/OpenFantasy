@@ -1,0 +1,18 @@
+{
+  "command": [
+    "python3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_retreat.py",
+    "--dotnet",
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "--godot",
+    "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "--fixtures",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat",
+    "--output",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native.json",
+    "--rendered"
+  ],
+  "exitCode": 0,
+  "elapsedSeconds": 55.51388916699216,
+  "purpose": "Diagnostic rendered boundary on compiled source; prior closed fixture; final integrated qualification still required"
+}

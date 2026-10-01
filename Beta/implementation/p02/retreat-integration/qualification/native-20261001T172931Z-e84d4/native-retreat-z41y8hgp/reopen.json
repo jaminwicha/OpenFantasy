@@ -1,0 +1,47 @@
+{
+  "Kind": "native-retreat-v2",
+  "Mode": "reopen",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 4.093,
+  "ProbeMilliseconds": 4154,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [],
+  "WalkInputs": [],
+  "Inspected": null,
+  "Openings": [],
+  "Positions": [],
+  "Checks": [
+    "The saved world reopens paused in exploration with its retained retreat record and carried rations."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/native-20261001T172931Z-e84d4/native-retreat-z41y8hgp/reopen.reopen.png"
+  ],
+  "Notice": null,
+  "Trade": null,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 16,
+    "RouteSamples": 16,
+    "ReadinessCharged": 208,
+    "WorldSequence": 536,
+    "Final": {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256
+    },
+    "ActorId": "71f5fa372b63c9229a886168930ccf64",
+    "CommandId": "db11f51ca90d3f25a04cfaa38115c5a5"
+  },
+  "FinalFeet": {
+    "X": 24960,
+    "Y": 89472,
+    "Z": 256
+  },
+  "FinalBalance": 158,
+  "CarriedRations": 2
+}

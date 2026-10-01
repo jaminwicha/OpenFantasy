@@ -1,0 +1,110 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.47]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.90]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.04]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.An_undecided_player_holds_the_world_while_an_opponent_walks_its_committed_retreat [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs [5 s]
+[xUnit.net 00:00:07.32]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners [FAIL]
+[xUnit.net 00:00:07.32]       System.ArgumentException : Decisions must uniquely name due actors and distinct pending identities. (Parameter 'decisions')
+[xUnit.net 00:00:07.32]       Stack Trace:
+[xUnit.net 00:00:07.32]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterTimingSnapshot.cs(72,0): at OpenFantasy.Core.Encounters.EncounterTimingSnapshot..ctor(EncounterTimingScope scope, UInt64 revision, UInt64 elapsedTacticalUnits, IEnumerable`1 actors, IEnumerable`1 decisions)
+[xUnit.net 00:00:07.32]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatRootCodecTests.cs(84,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners()
+[xUnit.net 00:00:07.32]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:07.57]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact [FAIL]
+[xUnit.net 00:00:07.57]       System.ArgumentException : The selected action archive must retain this lifecycle's exact scope, seed, definitions and scenario.
+[xUnit.net 00:00:07.57]       Stack Trace:
+[xUnit.net 00:00:07.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs(75,0): at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot..ctor(EntityId worldId, EntityId branchId, EntityId seed, UInt64 revision, UInt64 explorationSteps, UInt64 tacticalTicks, UInt64 entryTacticalTicks, UInt64 encounterCount, EncounterLifecyclePhase phase, IEnumerable`1 abilities, IEnumerable`1 scenarios, IEnumerable`1 debts, Nullable`1 scenarioId, EncounterActionSnapshot actions)
+[xUnit.net 00:00:07.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs(61,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.WithSide(WorldSnapshot state, EntityId actor, UInt16 side)
+[xUnit.net 00:00:07.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs(163,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact()
+[xUnit.net 00:00:07.57]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:08.45]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice [FAIL]
+[xUnit.net 00:00:08.45]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:08.45]       Expected: Recovering
+[xUnit.net 00:00:08.45]       Actual:   NoGroundLocomotion
+[xUnit.net 00:00:08.45]       Stack Trace:
+[xUnit.net 00:00:08.45]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs(248,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.<Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice>g__Interrupted|17_4(WorldSnapshot changed, EncounterRetreatReason reason, <>c__DisplayClass17_0&)
+[xUnit.net 00:00:08.45]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs(251,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice()
+[xUnit.net 00:00:08.45]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners [6 s]
+  Error Message:
+   System.ArgumentException : Decisions must uniquely name due actors and distinct pending identities. (Parameter 'decisions')
+  Stack Trace:
+     at OpenFantasy.Core.Encounters.EncounterTimingSnapshot..ctor(EncounterTimingScope scope, UInt64 revision, UInt64 elapsedTacticalUnits, IEnumerable`1 actors, IEnumerable`1 decisions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterTimingSnapshot.cs:line 72
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatRootCodecTests.cs:line 84
+--- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact [1 s]
+  Error Message:
+   System.ArgumentException : The selected action archive must retain this lifecycle's exact scope, seed, definitions and scenario.
+  Stack Trace:
+     at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot..ctor(EntityId worldId, EntityId branchId, EntityId seed, UInt64 revision, UInt64 explorationSteps, UInt64 tacticalTicks, UInt64 entryTacticalTicks, UInt64 encounterCount, EncounterLifecyclePhase phase, IEnumerable`1 abilities, IEnumerable`1 scenarios, IEnumerable`1 debts, Nullable`1 scenarioId, EncounterActionSnapshot actions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs:line 75
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.WithSide(WorldSnapshot state, EntityId actor, UInt16 side) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs:line 61
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs:line 163
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Client.Retreat.RetreatWheelCaptureTests.The_first_wheel_opening_at_a_ready_boundary_captures_current_offers_not_the_previous_frame [6 s]
+  Failed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice [872 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Recovering
+Actual:   NoGroundLocomotion
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.<Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice>g__Interrupted|17_4(WorldSnapshot changed, EncounterRetreatReason reason, <>c__DisplayClass17_0&) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs:line 248
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs:line 251
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:09.72]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities [FAIL]
+[xUnit.net 00:00:09.72]       System.ArgumentException : Decisions must uniquely name due actors and distinct pending identities. (Parameter 'decisions')
+[xUnit.net 00:00:09.72]       Stack Trace:
+[xUnit.net 00:00:09.72]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterTimingSnapshot.cs(72,0): at OpenFantasy.Core.Encounters.EncounterTimingSnapshot..ctor(EncounterTimingScope scope, UInt64 revision, UInt64 elapsedTacticalUnits, IEnumerable`1 actors, IEnumerable`1 decisions)
+[xUnit.net 00:00:09.72]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs(290,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities()
+[xUnit.net 00:00:09.72]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.A_conflicting_reuse_of_a_committed_retreat_identity_is_refused_and_the_exact_retry_is_not [581 ms]
+  Failed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities [688 ms]
+  Error Message:
+   System.ArgumentException : Decisions must uniquely name due actors and distinct pending identities. (Parameter 'decisions')
+  Stack Trace:
+     at OpenFantasy.Core.Encounters.EncounterTimingSnapshot..ctor(EncounterTimingScope scope, UInt64 revision, UInt64 elapsedTacticalUnits, IEnumerable`1 actors, IEnumerable`1 decisions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterTimingSnapshot.cs:line 72
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatContrastTests.cs:line 290
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths [5 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly [15 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request [450 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect [606 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly [2 s]
+[xUnit.net 00:00:54.80]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly [FAIL]
+[xUnit.net 00:00:54.81]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:00:54.81]       Stack Trace:
+[xUnit.net 00:00:54.81]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:00:54.81]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:00:54.81]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:00:54.81]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteScalar()
+[xUnit.net 00:00:54.81]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs(68,0): at OpenFantasy.Hosting.SqliteConnectionLease.Open(String path, Boolean create, Int32 applicationId, Int32 schemaVersion, IReadOnlyList`1 supportedVersions)
+[xUnit.net 00:00:54.81]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs(32,0): at OpenFantasy.Hosting.SqliteConnectionLease.OpenSupportedWorld(String path)
+[xUnit.net 00:00:54.81]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs(31,0): at OpenFantasy.Hosting.Worlds.WorldDatabase.Open(String path, Boolean create, Int32 schemaVersion)
+[xUnit.net 00:00:54.81]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/RecordedWorldReader.cs(17,0): at OpenFantasy.Hosting.Worlds.RecordedWorldReader.ReadForHost(String path, UInt64 revision)
+[xUnit.net 00:00:54.81]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatCheckpointTests.cs(87,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly()
+[xUnit.net 00:00:54.81]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:54.81]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly [53 s]
+  Error Message:
+   Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+  Stack Trace:
+     at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteScalar()
+   at OpenFantasy.Hosting.SqliteConnectionLease.Open(String path, Boolean create, Int32 applicationId, Int32 schemaVersion, IReadOnlyList`1 supportedVersions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 68
+   at OpenFantasy.Hosting.SqliteConnectionLease.OpenSupportedWorld(String path) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 32
+   at OpenFantasy.Hosting.Worlds.WorldDatabase.Open(String path, Boolean create, Int32 schemaVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs:line 31
+   at OpenFantasy.Hosting.Worlds.RecordedWorldReader.ReadForHost(String path, UInt64 revision) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/RecordedWorldReader.cs:line 17
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatCheckpointTests.cs:line 87
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 15
+     Passed: 10
+     Failed: 5
+ Total time: 55.7087 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/unit-20261001T151513Z-c50f9/unit.trx

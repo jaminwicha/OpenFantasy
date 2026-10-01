@@ -28,6 +28,10 @@ internal static class EncounterActionOffers
             {
                 offers[FarmSemanticAction.Strike] = Strike(view, scope, selected);
                 offers[FarmSemanticAction.Wait] = Wait(view, scope);
+                if (view.Retreat is { } retreat)
+                {
+                    offers[FarmSemanticAction.Retreat] = RetreatOffers.Create(retreat, scope);
+                }
             }
         }
         else if (view.EncounterLifecycle is { } lifecycle && selected is not null
@@ -134,6 +138,8 @@ internal static class EncounterActionOffers
         LocalEncounterActionBlockedReason.Bystander => "You are not participating in this confrontation.",
         LocalEncounterActionBlockedReason.Recovering => "You are recovering; wait until you are ready.",
         LocalEncounterActionBlockedReason.DecisionQueued => "Your choice is already queued.",
+        LocalEncounterActionBlockedReason.Retreating => "You are already retreating.",
+        LocalEncounterActionBlockedReason.PreparingChoices => "Preparing this turn's choices…",
         LocalEncounterActionBlockedReason.Held => "The world is held; finish the current interaction first.",
         LocalEncounterActionBlockedReason.OutOfReach => "That target is out of reach.",
         _ => "This attack is unavailable against the selected target."

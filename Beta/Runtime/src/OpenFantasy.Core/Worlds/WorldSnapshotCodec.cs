@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
             3 => WorldSnapshotCodecV3.Encode(state),
+            34 => WorldSnapshotCodecV34.Encode(state),
             33 => WorldSnapshotCodecV33.Encode(state),
             32 => WorldSnapshotCodecV32.Encode(state),
             30 => WorldSnapshotCodecV30.Encode(state),
@@ -45,12 +46,17 @@ public static class WorldSnapshotCodec
         };
     }
 
+    // The pre-screen admits the widest retained root (profile 34's 25 fields); each codec enforces its own exact bound.
+    private const int MaximumRootFields = 25;
+
     public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null) =>
-        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 24) switch
+        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, MaximumRootFields) switch
         {
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
+            34 => archiveAnchor is null ? WorldSnapshotCodecV34.Decode(bytes)
+                : throw new FormatException("The retreat-capable world requires its complete archive context."),
             33 => archiveAnchor is null ? WorldSnapshotCodecV33.Decode(bytes)
                 : throw new FormatException("The local-market world requires its complete archive context."),
             32 => archiveAnchor is null ? WorldSnapshotCodecV32.Decode(bytes)
@@ -92,13 +98,14 @@ public static class WorldSnapshotCodec
     /// has not yet cut; every other profile keeps its own unchanged entrypoint.
     /// </summary>
     public static WorldSnapshot DecodeCoordinated(ReadOnlySpan<byte> bytes, WorldMaterialCareArchiveAnchor? coordinatedAnchor) =>
-        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, 24) switch
+        WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, MaximumRootFields) switch
         {
             27 => WorldSnapshotCodecV27.Decode(bytes, coordinatedAnchor),
             28 => WorldSnapshotCodecV28.Decode(bytes, coordinatedAnchor),
             30 => WorldSnapshotCodecV30.Decode(bytes, coordinatedAnchor),
             32 => WorldSnapshotCodecV32.Decode(bytes, coordinatedAnchor),
             33 => WorldSnapshotCodecV33.Decode(bytes, coordinatedAnchor),
+            34 => WorldSnapshotCodecV34.Decode(bytes, coordinatedAnchor),
             _ => throw new FormatException("Only coordinated world profiles accept a joint decode context.")
         };
 }

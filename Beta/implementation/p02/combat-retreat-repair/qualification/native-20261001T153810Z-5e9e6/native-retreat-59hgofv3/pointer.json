@@ -1,0 +1,121 @@
+{
+  "Kind": "native-retreat-v2",
+  "Mode": "pointer",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Cancelling did not close the wheel.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.RetreatPlayProbe.Exercise(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 146\n   at OpenFantasy.Client.RetreatPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 98",
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 3.336,
+  "ProbeMilliseconds": 14441,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "pointer",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "engage",
+      "Route": "pointer",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "PointerSector": 2,
+      "X": 240,
+      "Y": -296
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "PointerSector": 0,
+      "X": 260,
+      "Y": 194.5
+    },
+    {
+      "Stage": "cancel",
+      "Route": "pointer",
+      "PointerHover": "CloseWheel",
+      "X": 720.5,
+      "Y": -2
+    },
+    {
+      "Stage": "cancel",
+      "Route": "pointer",
+      "PointerControl": "CloseWheel",
+      "X": 720.5,
+      "Y": -2
+    }
+  ],
+  "WalkInputs": [],
+  "Inspected": {
+    "Stage": "inspect",
+    "Name": "Retreat",
+    "Details": "Target: To cell (100, 324), north-west\nCost: 16 steps over 2.25 s \u00B7 then 0.13 s recovery\n\nGive ground step by step until no opponent can reach you. Opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked or contact remains. Each step charges 0.13 s of readiness (2.08 s in all). 1 opponent(s) can reach you now.",
+    "Tooltip": "Target: To cell (100, 324), north-west\nCost: 16 steps over 2.25 s \u00B7 then 0.13 s recovery\n\nGive ground step by step until no opponent can reach you. Opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked or contact remains. Each step charges 0.13 s of readiness (2.08 s in all). 1 opponent(s) can reach you now."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 0,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat: 16 steps over 2.25 s \u00B7 then 0.13 s recovery.",
+    "The first wheel opening at the ready boundary showed the current Retreat offer; nothing read as changed."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/native-20261001T153810Z-5e9e6/native-retreat-59hgofv3/pointer.retreat-inspected.png"
+  ],
+  "Notice": null,
+  "Trade": null,
+  "Record": null,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

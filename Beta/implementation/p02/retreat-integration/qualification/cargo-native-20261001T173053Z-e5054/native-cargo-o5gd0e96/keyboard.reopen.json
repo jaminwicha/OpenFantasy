@@ -1,0 +1,619 @@
+{
+  "Kind": "native-cargo-v1",
+  "Mode": "reopen",
+  "Route": "keyboard",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "reopen",
+  "Genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/fixtures-20261001T172849Z-27621/cargo/genesis.ofc",
+  "InitialHash": "193909A2821990DB2A778CC1D0A331AD97327DF103258AF70DD7949A068CD78A",
+  "FinalHash": "193909A2821990DB2A778CC1D0A331AD97327DF103258AF70DD7949A068CD78A",
+  "PlayerActorId": "3cd9435ed6f2a39179746086cf87166e",
+  "MarlaMarketId": "1746504cd2ec900cd93cd155dbe96385",
+  "KeggaMarketId": "c36c23f7d9e54a44b5612b60f6e71228",
+  "BuyQuoteId": "b7a51ccd230693ae854e49e27eda04ac",
+  "SellQuoteId": "0248916f5829f18738e9bdae7009a51b",
+  "CargoLotId": null,
+  "TradeUnits": 2,
+  "Purses": {},
+  "FinalFeet": {
+    "X": 24960,
+    "Y": 89472,
+    "Z": 256
+  },
+  "Walks": [],
+  "Agreement": [
+    {
+      "Label": "reopened",
+      "Step": 7571,
+      "Feet": {
+        "X": 24960,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 48,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 48,
+        "Y": 977.75
+      },
+      "PlayerViewport": {
+        "X": 480,
+        "Y": 202.5
+      },
+      "FieldViewport": {
+        "Position": {},
+        "Size": {}
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    }
+  ],
+  "Checks": [
+    "A separate paused process restores the exact position and both stalls\u0027 saved outcomes without advancing the world."
+  ],
+  "Inputs": [
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Dropdown": "MarketHistory",
+      "RowReached": 1,
+      "Text": "Buy from Marla \u00B7 2 rations at 22 gil \u00B7 bought 2 rations for 44 gil",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Dropdown": "MarketHistory",
+      "Selected": 1,
+      "Text": "Buy from Marla \u00B7 2 rations at 22 gil \u00B7 bought 2 rations for 44 gil"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Received": "CheckRecord",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Received": "CheckRecord",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Received": "CheckRecord",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "MarketStall"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "RowReached": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 not within reach",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "Selected": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 not within reach"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "MarketStall",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "CloseMarket",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "PauseToRead",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "CheckRecord",
+      "To": "MarketHistory"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Dropdown": "MarketHistory",
+      "RowReached": 1,
+      "Text": "Sell to Kegga Toolwright \u00B7 2 rations at 31 gil \u00B7 sold 2 rations for 62 gil",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Dropdown": "MarketHistory",
+      "Selected": 1,
+      "Text": "Sell to Kegga Toolwright \u00B7 2 rations at 31 gil \u00B7 sold 2 rations for 62 gil"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Received": "CheckRecord",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Received": "CheckRecord",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Received": "CheckRecord",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [],
+  "Observations": [
+    {
+      "Label": "opened",
+      "Hash": "193909A2821990DB2A778CC1D0A331AD97327DF103258AF70DD7949A068CD78A",
+      "Step": 7571,
+      "Purse": 218,
+      "Actors": [
+        {
+          "Id": "13a79e792e0941781e69c9d0a09e6014",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "220ee5f839bd02ffd44b784fa107cd1b",
+          "DisplayName": "Marla",
+          "X": 24704,
+          "Y": 89728,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "374589d471ee5f8a45d5096f4e55753c",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "3cd9435ed6f2a39179746086cf87166e",
+          "DisplayName": "Traveler",
+          "X": 24960,
+          "Y": 89472,
+          "PresenceRevision": 7536
+        },
+        {
+          "Id": "d8c0e019e4c3d996740ee650b5c063d8",
+          "DisplayName": "Kegga Toolwright",
+          "X": 88960,
+          "Y": 35968,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "ee3de2fd54621802ddc8344eac77802c",
+          "DisplayName": "Wren",
+          "X": 27264,
+          "Y": 83328,
+          "PresenceRevision": 48
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "b7a51ccd230693ae854e49e27eda04ac",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 22,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 232,
+          "ExpiresAtStep": 1432,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 2
+        },
+        {
+          "Id": "0248916f5829f18738e9bdae7009a51b",
+          "Side": "IssuerBuys",
+          "Status": "Filled",
+          "UnitPrice": 31,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 3903,
+          "ExpiresAtStep": 5103,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 2
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "record-marla",
+      "Quote": "b7a51ccd230693ae854e49e27eda04ac",
+      "Text": "Buy from Marla \u00B7 2 rations at 22 gil \u00B7 bought 2 rations for 44 gil\nSaved record: Buy from Marla \u00B7 2 rations at 22 gil \u00B7 bought 2 rations for 44 gil"
+    },
+    {
+      "Label": "record-kegga",
+      "Quote": "0248916f5829f18738e9bdae7009a51b",
+      "Text": "Sell to Kegga Toolwright \u00B7 2 rations at 31 gil \u00B7 sold 2 rations for 62 gil\nSaved record: Sell to Kegga Toolwright \u00B7 2 rations at 31 gil \u00B7 sold 2 rations for 62 gil"
+    },
+    {
+      "Label": "final",
+      "Hash": "193909A2821990DB2A778CC1D0A331AD97327DF103258AF70DD7949A068CD78A",
+      "Step": 7571,
+      "Purse": 218,
+      "Actors": [
+        {
+          "Id": "13a79e792e0941781e69c9d0a09e6014",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "220ee5f839bd02ffd44b784fa107cd1b",
+          "DisplayName": "Marla",
+          "X": 24704,
+          "Y": 89728,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "374589d471ee5f8a45d5096f4e55753c",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "3cd9435ed6f2a39179746086cf87166e",
+          "DisplayName": "Traveler",
+          "X": 24960,
+          "Y": 89472,
+          "PresenceRevision": 7536
+        },
+        {
+          "Id": "d8c0e019e4c3d996740ee650b5c063d8",
+          "DisplayName": "Kegga Toolwright",
+          "X": 88960,
+          "Y": 35968,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "ee3de2fd54621802ddc8344eac77802c",
+          "DisplayName": "Wren",
+          "X": 27264,
+          "Y": 83328,
+          "PresenceRevision": 48
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "b7a51ccd230693ae854e49e27eda04ac",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 22,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 232,
+          "ExpiresAtStep": 1432,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 2
+        },
+        {
+          "Id": "0248916f5829f18738e9bdae7009a51b",
+          "Side": "IssuerBuys",
+          "Status": "Filled",
+          "UnitPrice": 31,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 3903,
+          "ExpiresAtStep": 5103,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 2
+        }
+      ],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    }
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/cargo-native-20261001T173053Z-e5054/native-cargo-o5gd0e96/keyboard.reopened-sample.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/cargo-native-20261001T173053Z-e5054/native-cargo-o5gd0e96/keyboard.reopen.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/cargo-native-20261001T173053Z-e5054/native-cargo-o5gd0e96/keyboard.reopen-final.png"
+  ],
+  "Display": "macOS",
+  "Focus": {
+    "Unfocusable": true,
+    "NativeFocused": false,
+    "ObservedNativeFocus": false,
+    "ObservedFocusTransitions": 0,
+    "FramesObserved": 888,
+    "StartupNoFocus": true
+  },
+  "Rendered": [
+    {
+      "Label": "reopened",
+      "Feet": {
+        "X": 24960,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 48,
+        "Y": 944
+      },
+      "Projected": {
+        "X": 48,
+        "Y": 944
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1
+        ],
+        "Columns": 1024,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "106ED3B24567BE2CB9D8BE76DBF5D9AB2963D5662F6221C1546CE56FEE15E619",
+        "Frame": 807
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": null,
+        "Padding": {
+          "X": -24,
+          "Y": 944
+        }
+      }
+    }
+  ],
+  "HistoryRead": null,
+  "StallChoice": null,
+  "Unfocusable": true,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "StartupNoFocus": true,
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "DurationMilliseconds": 8049,
+  "Limit": "Walking holds injected arrow keys through the ordinary input map; read-only route advice only chooses which key. Stall choice, trades and history use the production wheel and panel with injected keyboard events. Focus is injected through the fixture hook. Physical devices, OS focus, controller/pointer cargo routes, art acceptance, streaming, threat/escort and production gates remain open."
+}

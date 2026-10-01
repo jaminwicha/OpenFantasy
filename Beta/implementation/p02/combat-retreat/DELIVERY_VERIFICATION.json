@@ -1,0 +1,101 @@
+{
+  "status": "delivery checks verified; required obligations incomplete; not acceptance",
+  "sourceFileCount": 1757,
+  "assemblyCount": 14,
+  "preservation": {
+    "existingTests": 571,
+    "frozenSpecs": 23,
+    "newCompileLinks": 1,
+    "protectedBytesPreserved": true
+  },
+  "reports": {
+    "build": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/build-20261001T135327Z-9061f/report.json",
+      "sha256": "f2947246654145d09852925ecc6f3b5f779eb9db95adea16f511c7fdc69e4682",
+      "elapsedSeconds": 6.504,
+      "outcomes": null
+    },
+    "unit": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/unit-20261001T135339Z-1945b/report.json",
+      "sha256": "dce000aa013ad14da0acfe8eb97002121807a84ae9b0fe2b7e12df858fca1a94",
+      "elapsedSeconds": 21.788,
+      "outcomes": {
+        "Passed": 7
+      }
+    },
+    "regression": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/regression-20261001T135545Z-ec7f8/report.json",
+      "sha256": "b89dc4e6d9cb0aabfcac3d147c8c35a9b7f7fafde3dfe746c53cbef4c80220fc",
+      "elapsedSeconds": 268.837,
+      "outcomes": {
+        "Passed": 510
+      }
+    },
+    "fixtures": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/report.json",
+      "sha256": "d628ba32ebf2c1f984fd5d4c288601b9e9fce5312f9dc5ccded448f89b0085a3",
+      "elapsedSeconds": 48.075,
+      "outcomes": {
+        "Passed": 4
+      }
+    },
+    "native": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/report.json",
+      "sha256": "26f8e56623dbdc967e2a3c510a89fdd00bc7a792d94261edaa9c7a4f5af45d71",
+      "elapsedSeconds": 88.667,
+      "outcomes": null
+    },
+    "native-auth": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-auth-20261001T140243Z-d6958/report.json",
+      "sha256": "1d25598f440abf0ab0819e1af67748d7186cdb35c045bdba25a43aa78be7712c",
+      "elapsedSeconds": 22.028,
+      "outcomes": {
+        "Passed": 1
+      }
+    },
+    "legacy-native": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/report.json",
+      "sha256": "5333bd74c8e141700a1f827a5d8bf372217eec5f45aaf8f206de9476a0545a28",
+      "elapsedSeconds": 86.563,
+      "outcomes": null
+    },
+    "legacy-auth": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-auth-20261001T141235Z-334cf/report.json",
+      "sha256": "e6e92159167d5c59e3594a4428bf778de0bc67db7487de417fbba603f0b3a995",
+      "elapsedSeconds": 46.514,
+      "outcomes": {
+        "Passed": 2
+      }
+    },
+    "core": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/core-20261001T135404Z-f9a54/report.json",
+      "sha256": "853f8a6190d541b4ed5e9fe082ef4d19c371a5752d1d6b5a13abf605dee7e998",
+      "elapsedSeconds": 97.404,
+      "outcomes": {
+        "Passed": 1763
+      }
+    },
+    "cargo-native": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/cargo-native-20261001T140309Z-1aa28/report.json",
+      "sha256": "a30aa1dd3499afc9f6cf51703b831e76e04aed05f5cb401cfa9de3e7ba08675c",
+      "elapsedSeconds": 430.241,
+      "outcomes": null
+    },
+    "cargo-auth": {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/cargo-auth-20261001T141023Z-4856b/report.json",
+      "sha256": "e79c827e5007b26a14899eb0f86a3060355835b6d703ed786070531d541f0b06",
+      "elapsedSeconds": 39.118,
+      "outcomes": {
+        "Passed": 1
+      }
+    }
+  },
+  "distinctManagedTestNames": 2277,
+  "requiredMissingProofs": [
+    "actual process interruption",
+    "checkpoint/archive interaction",
+    "native post-retreat trade",
+    "remaining refusal contrasts"
+  ],
+  "knownUnfixedDefect": "first-open wheel can capture stale unavailable offer"
+}

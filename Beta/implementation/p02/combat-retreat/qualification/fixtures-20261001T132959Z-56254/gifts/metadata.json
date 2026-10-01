@@ -1,0 +1,78 @@
+{
+  "kind": "native-material-gift-fixture-v1",
+  "profileVersion": 30,
+  "setup": "Fresh profile30; actual source-stat combat injury, aftermath recovery, victory, two helper crafts and patient revocation. Native begins before gift creation.",
+  "worldId": "6dcb0a2342385d9f20c2ceb785f56d32",
+  "branchId": "4bc2210fe97d62fb5b6558d9e263e0d0",
+  "genesisHash": "d420a0e7a03499e43936d4cbe560c6b70b6522933885d674024cb335f8676eb4",
+  "beforeHash": "ef0001b41d4175e0f71cba4706d6e3a470e912496266f2f80fbc16535eea0261",
+  "beforeRevision": 304,
+  "beforeAdvancingSteps": 257,
+  "playerId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+  "helperId": "5d652f48a612a324027911ffd13cf5f9",
+  "recipientId": "09a2d8528436377a0ba729d339e26b39",
+  "recipientName": "Bramble Wolf",
+  "recipientScenario": "bramble_wolf_second",
+  "rawLotId": "c482176b4185a1139051541ba4346d43",
+  "rawQuantity": 8,
+  "rawRevision": 0,
+  "rawSourceId": "3c23f789b8f69a51a8cff78fc361e635",
+  "rawStart": 0,
+  "rawEnd": 8,
+  "rawCustodianId": "ed6f16f8612fd36972515f4f8987a268",
+  "incomingCommandId": "a62bce201c64e2787c7646fd9952e98a",
+  "incomingProposalId": "c260bd020d2e0dfb699786e0ec4c9d75",
+  "incomingLotId": "38c78305c961ad3c9e5c4bf719e6fce5",
+  "helperDoses": [
+    {
+      "lotId": "38c78305c961ad3c9e5c4bf719e6fce5",
+      "custodianId": "a9f613d7e36b4ef75631a52d9e8b1f31",
+      "Quantity": 1,
+      "Revision": 0,
+      "batchId": "73e139bc922fc4ac09be48eaa6c6ad23",
+      "OutputIndex": 0,
+      "Start": 0,
+      "End": 1,
+      "craftCommandId": "ca25feed000000000000000000000149"
+    },
+    {
+      "lotId": "3a3ab186801fdb5b56f95bcd52a2dd0e",
+      "custodianId": "a9f613d7e36b4ef75631a52d9e8b1f31",
+      "Quantity": 1,
+      "Revision": 0,
+      "batchId": "13f92f74506d2a00dfd1ccc8a7fa470f",
+      "OutputIndex": 0,
+      "Start": 0,
+      "End": 1,
+      "craftCommandId": "ca25feed000000000000000000000147"
+    }
+  ],
+  "permissionId": "5e7cd68125fd1d31af9d3c1a0becad88",
+  "revocationCommandId": "ca25feed00000000000000000000014b",
+  "beforeHp": 11,
+  "beforeOrdinaryUses": 0,
+  "beforeConsumedItems": 1,
+  "retainedDoses": 1,
+  "offerLifetimeSteps": 1200,
+  "expected": [
+    {
+      "mode": "keyboard",
+      "incoming": "Accepted",
+      "outgoing": "Withdrawn",
+      "movedDoses": 1
+    },
+    {
+      "mode": "controller",
+      "incoming": "Accepted",
+      "outgoing": "Withdrawn",
+      "movedDoses": 1
+    },
+    {
+      "mode": "pointer",
+      "incoming": "Declined",
+      "outgoing": "Withdrawn",
+      "movedDoses": 0
+    }
+  ],
+  "limits": "No accepted-dose healing, retained-save migration, archive-cut, physical-device or human acceptance claim. The player\u0027s original raw dose remains present."
+}

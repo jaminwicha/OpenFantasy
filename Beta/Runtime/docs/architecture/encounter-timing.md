@@ -17,7 +17,7 @@ archive or changing an external controller cannot implicitly reset that debt.
 | --- | --- | --- |
 | `QueueDecision` | Exact expected revision; uniquely named due actor and pending decision identity; pins an external action definition/payload | Zero |
 | `TryAdvance` | No due actor; increments revision and elapsed units, subtracts five from delays with zero saturation | Five tactical units, 50 ms |
-| `TryConfirmNext` | Every due required-human actor has a retained choice; first due actor in identity order also has a choice | Zero |
+| `TryConfirmNext` | Every due required-human actor has a retained choice; first due actor in identity order also has a choice. In the explicit retreat world (profile 34) a committed retreat is its actor's standing choice: that actor needs no timing row after its first sample, never counts as an undecided human, and its sample resolves at its own boundary ([encounter-retreat](encounter-retreat.md)) | Zero |
 | Blocked request | Returns the identical snapshot and explicit missing-choice/action-boundary status | Zero |
 
 Confirmation removes that actor's pending choice and charges `ceil(10000 / normalizedSpeed)` units.

@@ -1,0 +1,14 @@
+{
+  "ref": "codex/checkpoint-retreat-proofs-delivery-20261001T170747Z",
+  "snapshot": "20988287d5eff021442253a1da9ff35d91a304f6",
+  "parent": "2cf2c3c27f7f943e7f840e6ee7fbf25a9af606c0",
+  "scope": [
+    "Beta/Runtime",
+    "Beta/implementation/p02/combat-retreat",
+    "Beta/implementation/p02/combat-retreat-repair",
+    "Beta/implementation/p02/retreat-completion-proofs",
+    "Beta/implementation/p02/retreat-integration",
+    "Beta/implementation/AGENT_HANDOFF.md"
+  ],
+  "verification": "WIP; build and20 focused cases; rendered diagnostic passed, archive incomplete; predecessor staging excluded"
+}

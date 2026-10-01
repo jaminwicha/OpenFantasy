@@ -1,0 +1,21 @@
+{
+  "status": "completed_pending_review",
+  "startedUtc": "2026-10-01T14:21:10.694723+00:00",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 1800,
+  "maxBudgetUsd": 18,
+  "contextSha256": "9af8f30a3c6425fcc29c40f5ae39561ba8e7141975e81d88ac2bcf9afe975013",
+  "scope": "Read-only independent source critic of combat-retreat delivery; REVIEW.md only",
+  "returnedModelVerification": {
+    "canonicalModel": "claude-opus-5-5",
+    "contextWindow": 1000000
+  },
+  "processExitCode": 0,
+  "elapsedSeconds": 1034.767,
+  "clientCostEstimateUsd": 8.4397116,
+  "contextPostflight": "verified",
+  "permissionDenials": [],
+  "result": "Eight source findings plus required missing proofs; correction required."
+}

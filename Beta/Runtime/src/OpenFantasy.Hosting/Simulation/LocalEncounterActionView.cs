@@ -2,6 +2,7 @@ using System.Collections.ObjectModel;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Simulation.Retreat;
 
 namespace OpenFantasy.Hosting.Simulation;
 
@@ -16,7 +17,10 @@ public enum LocalEncounterActionBlockedReason
     DecisionQueued,
     Held,
     Unavailable,
-    OutOfReach
+    OutOfReach,
+    /// <summary>A committed retreat is this actor's standing choice until it ends.</summary>
+    Retreating,
+    PreparingChoices
 }
 
 public sealed record LocalEncounterAbilityOffer(EntityId AbilityDefinitionId, string DisplayName,
@@ -93,8 +97,10 @@ public sealed class LocalEncounterActionView
         if (world.EncounterActions is not null && world.Progression!.GetActor(observerId).CurrentHp == 0)
             return LocalEncounterActionBlockedReason.Incapacitated;
         if (!WorldEncounterActions.CanParticipate(world, observerId)) return LocalEncounterActionBlockedReason.Bystander;
+        if (WorldEncounterRetreats.HoldsActor(world, observerId)) return LocalEncounterActionBlockedReason.Retreating;
         if (!actor.IsDue) return LocalEncounterActionBlockedReason.Recovering;
         if (timing.Decisions.Any(decision => decision.ActorId == observerId)) return LocalEncounterActionBlockedReason.DecisionQueued;
+        if (LocalEncounterChoiceBoundary.IsPreparing(world)) return LocalEncounterActionBlockedReason.PreparingChoices;
         return LocalEncounterActionBlockedReason.None;
     }
 }

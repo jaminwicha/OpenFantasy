@@ -1,0 +1,59 @@
+{
+  "results": [
+    {
+      "mode": "keyboard",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.json",
+      "finalDatabaseSha256": "13670087bd1ea43f3d926bec2ecd55655425d003bfcc64a57aedb90f2077998f",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.bought.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.buy-review.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.disengaged.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.marla.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.retreat-inspected.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.retreating.png"
+      ]
+    },
+    {
+      "mode": "controller",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/controller.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/controller.json",
+      "finalDatabaseSha256": "680d17ec4a51eb78b50044eb3360f8020edf5a7ab4b753d67466256ea6d68ea5",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/controller.disengaged.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/controller.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/controller.retreat-inspected.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/controller.retreating.png"
+      ]
+    },
+    {
+      "mode": "pointer",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/pointer.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/retreat/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/pointer.json",
+      "finalDatabaseSha256": "7b8386aad2b1278b9c10bfdc3a87c5aeef22c2a72f9eb55eea8639b2ce6e4351",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/pointer.disengaged.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/pointer.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/pointer.retreat-inspected.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/pointer.retreating.png"
+      ]
+    }
+  ],
+  "reopen": {
+    "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/keyboard.sqlite",
+    "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/reopen.json",
+    "images": [
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/native-boundary-diagnostic/native-retreat-92e8faws/reopen.reopen.png"
+    ]
+  }
+}

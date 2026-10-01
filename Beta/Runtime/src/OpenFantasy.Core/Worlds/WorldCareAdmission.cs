@@ -45,7 +45,7 @@ public static class WorldCareAdmission
     internal static void Validate(WorldSnapshot world)
     {
         if (world.Care is not { } care) return;
-        if (world.ProfileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
+        if (world.ProfileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
             || world.Production is not { SupportsConsumption: true } production || care.WorldId != world.WorldId
             || care.BranchId != world.BranchId || !care.SupportsOrdinary && care.Revision > world.Revision
             || care.Treatments.Count + (care.Ordinary?.Uses.Count ?? 0) != production.ConsumedItems.Count)

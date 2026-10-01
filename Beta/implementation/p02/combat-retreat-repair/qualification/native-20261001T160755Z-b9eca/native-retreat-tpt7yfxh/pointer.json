@@ -1,0 +1,104 @@
+{
+  "Kind": "native-retreat-v2",
+  "Mode": "pointer",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: The inspected Retreat changed under inspection.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.RetreatPlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 407\n   at OpenFantasy.Client.RetreatPlayProbe.InspectRetreat() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 292\n   at OpenFantasy.Client.RetreatPlayProbe.Exercise(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 138\n   at OpenFantasy.Client.RetreatPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 98",
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 3.364,
+  "ProbeMilliseconds": 4269,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "pointer",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "pointer",
+      "Key": "Q"
+    },
+    {
+      "Stage": "engage",
+      "Route": "pointer",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "PointerSector": 2,
+      "X": 240,
+      "Y": -296
+    },
+    {
+      "Stage": "inspect",
+      "Route": "pointer",
+      "PointerSector": 0,
+      "X": 260,
+      "Y": 194.5
+    }
+  ],
+  "WalkInputs": [],
+  "Inspected": {
+    "Stage": "inspect",
+    "Name": "Retreat",
+    "Details": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.25 s walk \u00B7 0.13 s recovery\n\nGive ground step by step until no opponent can reach you; opponents still act between your steps. Once committed the whole route is walked unless blocked or still in reach. Each step charges 0.13 s of readiness, 2.08 s in all.\nUnavailable: This choice changed or is no longer visible. Close the wheel and choose again.",
+    "Tooltip": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.25 s walk \u00B7 0.13 s recovery\n\nGive ground step by step until no opponent can reach you; opponents still act between your steps. Once committed the whole route is walked unless blocked or still in reach. Each step charges 0.13 s of readiness, 2.08 s in all.\nUnavailable: This choice changed or is no longer visible. Close the wheel and choose again."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 0,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat: 16 steps \u00B7 2.25 s walk \u00B7 0.13 s recovery."
+  ],
+  "Images": [],
+  "Notice": null,
+  "Trade": null,
+  "Record": null,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

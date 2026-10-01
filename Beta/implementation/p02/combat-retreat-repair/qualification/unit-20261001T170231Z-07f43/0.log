@@ -1,0 +1,34 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.60]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.32]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.An_undecided_player_holds_the_world_while_an_opponent_walks_its_committed_retreat [6 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RetreatCompletion.RetreatCompleteAdmissionTests.A_sample_movement_supports_but_the_dry_envelope_refuses_is_never_queued_offered_or_walked [7 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RetreatCompletion.RetreatQueuedChoiceBytesTests.Root_bytes_keeping_the_queued_choice_after_the_first_sample_are_refused_by_decode [8 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact [3 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs [12 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice [3 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners [13 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Retreat.RetreatWheelCaptureTests.The_first_wheel_opening_at_a_ready_boundary_captures_current_offers_not_the_previous_frame [13 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.A_conflicting_reuse_of_a_committed_retreat_identity_is_refused_and_the_exact_retry_is_not [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities [2 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Retreat.RetreatTradingCaptureTests.A_showing_keeps_its_captured_expiry_when_publication_follows_later(elapsedCutoffs: 1) [17 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Retreat.RetreatTradingCaptureTests.A_showing_keeps_its_captured_expiry_when_publication_follows_later(elapsedCutoffs: 5) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths [11 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Retreat.RetreatTradingCaptureTests.A_showing_keeps_its_captured_expiry_when_publication_follows_later(elapsedCutoffs: 0) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly [18 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request [651 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect [756 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly [2 s]
+[xUnit.net 00:01:25.91]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly [1 m 24 s]
+
+Test Run Successful.
+Total tests: 20
+     Passed: 20
+ Total time: 1.4442 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/unit-20261001T170231Z-07f43/unit.trx

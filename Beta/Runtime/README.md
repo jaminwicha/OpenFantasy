@@ -719,3 +719,28 @@ showing and sale, walk back) and, when `OPENFANTASY_CARGO_CIRCUIT_EVIDENCE` name
 exports snapshots, saves and `results.json` (including the declared corridor overlays and journal checkpoint
 and archive counts) there. Bounded refinement cases live under `tests/.../Content/Cargo/Refinement/`. See
 [cargo circuit](docs/architecture/cargo-circuit.md).
+
+### Retreat-capable cargo world
+
+`CargoRetreatWorldAdmission.CreateEmbedded` composes the same cargo world and then admits the explicit retreat
+interpretation (profile 34). Open it through its own entry scene:
+`godot --path client res://scenes/NativeRetreat.tscn -- --cargo-retreat [SAVE]` (default save
+`user://worlds/openfantasy-cargo-retreat.sqlite`). A new save is created fresh; an existing save opens only when it
+is this same world. A `--cargo` save is never upgraded or read as this one; moving a lived save into retreat rules
+would need its own explicit, replayed transition. `tools/play.py` does not select this route.
+
+In a fight (Q selects the wolf, E engages it), **V** opens the wheel; **Up**, the D-pad up or pointing at the upper
+sector selects **Retreat**. Its details name the destination cell and direction, the number of steps, the total
+recovery and any reason it is unavailable. **Enter**, controller **A** or **Confirm** commits that route; **V**,
+**B** or **Close** cancels without sending anything. Each step is walked at your own turns and costs readiness while
+the wolf still acts; when the last step leaves its reach the encounter ends with your wounds and remaining recovery
+kept. A blocked step stops the retreat without moving you. Wolves keep fighting unless a host retreat preference is
+configured, which this launch does not do.
+
+`NativeRetreatFixtureTests` earns Wren's reward, buys one ration from Marla and walks back beside the wolf; with
+`OPENFANTASY_NATIVE_RETREAT_FIXTURES` naming a fresh directory it exports `save.sqlite`, `genesis.ofc`, `before.ofc`
+and `metadata.json`. `tools/check_native_retreat.py --dotnet <path> --godot <path> --fixtures <directory> --output
+<json> [--rendered]` runs keyboard, controller and pointer Retreat selection (one cancelled inspection, one commit,
+observed steps, disengagement and held-key travel), then a separate paused reopen; its manifest feeds
+`NativeRetreatResultTests` through `OPENFANTASY_NATIVE_RETREAT_RESULTS`. See
+[encounter retreat](docs/architecture/encounter-retreat.md).

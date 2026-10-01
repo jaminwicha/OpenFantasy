@@ -1,0 +1,56 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.46]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.86]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.01]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths [4 s]
+[xUnit.net 00:00:14.04]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly [FAIL]
+[xUnit.net 00:00:14.04]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:14.04]       Expected: None
+[xUnit.net 00:00:14.04]       Actual:   OutOfReach
+[xUnit.net 00:00:14.04]       Stack Trace:
+[xUnit.net 00:00:14.04]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(68,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly()
+[xUnit.net 00:00:14.04]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly [6 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   OutOfReach
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 68
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample [1 s]
+[xUnit.net 00:00:16.86]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect [FAIL]
+[xUnit.net 00:00:16.86]       OpenFantasy.Hosting.AuthorityDispatchException : A fresh actor command requires its current origin and controller.
+[xUnit.net 00:00:16.86]       Stack Trace:
+[xUnit.net 00:00:16.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs(89,0): at OpenFantasy.Hosting.Worlds.WorldCommitPreparation.ValidateDispatch(WorldSnapshot state, WorldStepBatch batch)
+[xUnit.net 00:00:16.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs(17,0): at OpenFantasy.Hosting.Worlds.WorldCommitPreparation.Prepare(WorldSnapshot state, WorldIdentityIndex genesisIdentities, ContentHash beforeHash, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean captureMaterialEvidence)
+[xUnit.net 00:00:16.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs(182,0): at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.Preview(WorldStepBatch batch)
+[xUnit.net 00:00:16.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(188,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.<>c__DisplayClass5_0.<Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect>g__Preview|0(WorldActionCommand command)
+[xUnit.net 00:00:16.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(214,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect()
+[xUnit.net 00:00:16.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(232,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect()
+[xUnit.net 00:00:16.86]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request [800 ms]
+  Failed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect [710 ms]
+  Error Message:
+   OpenFantasy.Hosting.AuthorityDispatchException : A fresh actor command requires its current origin and controller.
+  Stack Trace:
+     at OpenFantasy.Hosting.Worlds.WorldCommitPreparation.ValidateDispatch(WorldSnapshot state, WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs:line 89
+   at OpenFantasy.Hosting.Worlds.WorldCommitPreparation.Prepare(WorldSnapshot state, WorldIdentityIndex genesisIdentities, ContentHash beforeHash, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean captureMaterialEvidence) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs:line 17
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.Preview(WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs:line 182
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.<>c__DisplayClass5_0.<Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect>g__Preview|0(WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 188
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 214
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 232
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:19.44]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly [2 s]
+
+Test Run Failed.
+Total tests: 7
+     Passed: 5
+     Failed: 2
+ Total time: 20.5758 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/unit-20261001T132049Z-821b0/unit.trx

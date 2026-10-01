@@ -39,7 +39,10 @@ earlier selections keep their behavior.
 and for each stall: identity, merchant, commodity and its public source name, the per-offer unit limit,
 the longest window, whether the merchant is available in person where the player stands, the player's own
 usable lots of the commodity and the player's own recorded showing. `PrepareShowing` captures one exact
-own lot, units and the player's own account once; preparing submits nothing.
+own lot, units, the player's own account and an absolute expiry once; preparing submits nothing. The expiry is the
+observed advancing step plus one scheduled publication step plus the chosen window. Cutoffs that elapse before
+submission shorten the remaining window. Publication preserves the captured expiry; it does not renew consent or
+silently retime the request. A showing whose remaining window has expired is refused by authority.
 
 The projection never carries the merchant's stock count, funds, rule parameters, other actors' showings,
 quotes or memories, or any control credential. Offers themselves remain participant-safe

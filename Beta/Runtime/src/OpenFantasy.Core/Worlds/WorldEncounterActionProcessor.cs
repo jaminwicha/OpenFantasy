@@ -1,9 +1,11 @@
+using OpenFantasy.Core.Actors;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Geography;
 using OpenFantasy.Core.Progression;
 using OpenFantasy.Core.Progression.ResourceHistory;
+using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
 
@@ -23,6 +25,7 @@ internal static class WorldEncounterActionProcessor
         var actions = world.EncounterActions!;
         var progression = world.Progression!;
         var resourceHistory = world.ResourceHistory;
+        var retreat = world.Retreat;
         ulong revision = checked(world.Revision + 1);
         HashSet<EntityId> reserved = [];
         List<WorldCommittedIdentity> identities = [];
@@ -42,12 +45,14 @@ internal static class WorldEncounterActionProcessor
             foreach (var command in batch.Actions)
             {
                 Reserve(command.CommandId, WorldCommittedIdentityKind.Command);
-                WorldActionRejection rejection = ValidateChoice(world, basis, command);
+                WorldActionRejection rejection = ValidateChoice(world, basis, command, retreat);
                 if (rejection == WorldActionRejection.None)
                 {
-                    var kind = command.Intent is QueueEncounterAbilityIntent ? EncounterDecisionKind.Action : EncounterDecisionKind.Wait;
+                    var kind = command.Intent is QueueEncounterWaitIntent ? EncounterDecisionKind.Wait : EncounterDecisionKind.Action;
                     timing = timing.QueueDecision(timing.Revision, new(command.ActorId, command.CommandId, kind, command.ContentHash));
-                    if (kind == EncounterDecisionKind.Action) pending.Add(command);
+                    if (command.Intent is QueueEncounterAbilityIntent) pending.Add(command);
+                    // The committed route is retained by the retreat owner; its origin is pinned by the actor revision.
+                    if (command.Intent is QueueEncounterRetreatIntent) retreat = retreat!.Commit(command, world.Space.GetActor(command.ActorId).Feet);
                 }
                 var receipt = WorldActionReceipt.Create(command, revision, rejection);
                 Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
@@ -57,7 +62,13 @@ internal static class WorldEncounterActionProcessor
         }
         else if (batch.Kind == WorldBatchKind.EncounterResolution)
         {
+            if (retreat?.Active is { } committed && WorldEncounterActions.DueActors(world) is { Count: > 0 } due
+                && due[0].ActorId == committed.ActorId)
+            {
+                return WorldEncounterRetreatResolver.Resolve(world, revision, receipts, identities);
+            }
             (timing, actions, progression, resourceHistory) = Resolve(world, revision);
+            retreat = CancelInterruptedRetreat(world, retreat, actions, progression, revision);
         }
         else
         {
@@ -91,29 +102,55 @@ internal static class WorldEncounterActionProcessor
             world.Residents.Select(actor => actor.Experience(duration)), nextPacing.Calendar, revision,
             tick ? checked(world.AdvancingSteps + 1) : world.AdvancingSteps,
             world.Dialogues, gathering, world.Production, progression, world.Quests, world.Construction,
-            world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing, lifecycle is null ? actions : null, lifecycle, resourceHistory: resourceHistory);
+            world.Reservoirs, world.Transport, world.Excavation, world.ConstructionPhysical, liquids, nextPacing, lifecycle is null ? actions : null, lifecycle,
+            resourceHistory: resourceHistory, retreat: retreat);
         WorldCanonicalFrame candidateFrame = WorldCanonicalFrame.Capture(candidate);
         return new WorldStepDecision(candidate, receipts, identities, candidateFrame: candidateFrame);
     }
 
-    private static WorldActionRejection ValidateChoice(WorldSnapshot world, EncounterTimingSnapshot basis, WorldActionCommand command)
+    /// <summary>Incapacity of the retreating actor or the encounter's outcome ends a committed route, recorded once.</summary>
+    private static EncounterRetreatState? CancelInterruptedRetreat(WorldSnapshot world, EncounterRetreatState? retreat,
+        EncounterActionSnapshot actions, ProgressionSnapshot progression, ulong sequence)
+    {
+        if (retreat?.Active is not { } active) return retreat;
+        bool incapacitated = progression.GetActor(active.ActorId).CurrentHp == 0;
+        bool outcome = actions.Combatants.Where(actor => actor.Side != 0 && progression.GetActor(actor.ActorId).CurrentHp > 0)
+            .Select(actor => actor.Side).Distinct().Count() <= 1;
+        if (!incapacitated && !outcome) return retreat;
+        return retreat.Finish(new EncounterRetreatOutcome(active.ActorId, active.Command.CommandId, active.EncounterId,
+            active.Origin, world.Space.GetActor(active.ActorId).Feet, active.SamplesTaken, active.Intent.Route.Count,
+            active.ReadinessCharged, EncounterRetreatStatus.Cancelled,
+            incapacitated ? EncounterRetreatReason.Incapacitated : EncounterRetreatReason.EncounterOutcome, sequence));
+    }
+
+    private static WorldActionRejection ValidateChoice(WorldSnapshot world, EncounterTimingSnapshot basis, WorldActionCommand command,
+        EncounterRetreatState? running)
     {
         if (!world.Inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
             return WorldActionRejection.NotAuthorized;
         if (world.Space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision)
             return WorldActionRejection.RevisionConflict;
+        // A committed retreat is the actor's standing decision; nothing else can be queued while it holds.
         if (!WorldEncounterActions.CanParticipate(world, command.ActorId) || !basis.GetActor(command.ActorId).IsDue
-            || basis.Decisions.Any(decision => decision.ActorId == command.ActorId)) return WorldActionRejection.Unavailable;
+            || basis.Decisions.Any(decision => decision.ActorId == command.ActorId) || running?.Holds(command.ActorId) == true)
+            return WorldActionRejection.Unavailable;
         (EntityId encounter, ulong revision) = command.Intent switch
         {
             QueueEncounterWaitIntent wait => (wait.EncounterId, wait.ExpectedTimingRevision),
             QueueEncounterAbilityIntent ability => (ability.EncounterId, ability.ExpectedTimingRevision),
+            QueueEncounterRetreatIntent retreat => (retreat.EncounterId, retreat.ExpectedTimingRevision),
             _ => throw new InvalidOperationException("Unknown encounter choice.")
         };
         if (encounter != basis.EncounterId) return WorldActionRejection.Unavailable;
         if (revision != basis.Revision) return WorldActionRejection.RevisionConflict;
-        return command.Intent is QueueEncounterAbilityIntent intent
-            ? WorldEncounterActions.EvaluateAbility(world, command.ActorId, intent) : WorldActionRejection.None;
+        return command.Intent switch
+        {
+            QueueEncounterAbilityIntent intent => WorldEncounterActions.EvaluateAbility(world, command.ActorId, intent),
+            // Selected together, a second retreat sees the first one already committed in this batch.
+            QueueEncounterRetreatIntent intent => running?.Active is not null ? WorldActionRejection.Unavailable
+                : WorldEncounterRetreats.EvaluateQueue(world, command.ActorId, intent),
+            _ => WorldActionRejection.None
+        };
     }
 
     private static (EncounterTimingSnapshot Timing, EncounterActionSnapshot Actions, ProgressionSnapshot Progression, WorldResourceHistory? Resources)

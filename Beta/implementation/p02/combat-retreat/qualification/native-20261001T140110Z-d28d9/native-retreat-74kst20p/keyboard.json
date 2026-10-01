@@ -1,0 +1,299 @@
+{
+  "Kind": "native-retreat-v1",
+  "Mode": "keyboard",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 5.465,
+  "ProbeMilliseconds": 14819,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "engage",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "cancel",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Down"
+    }
+  ],
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.08 s recovery\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now.",
+    "Tooltip": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.08 s recovery\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now."
+  },
+  "Attempts": [
+    {
+      "Stage": "inspect",
+      "Opened": true,
+      "View": "None",
+      "Timing": 0,
+      "Slot": "No safe ground",
+      "SlotBlocker": "This choice changed or is no longer visible. Close the wheel and choose again."
+    },
+    {
+      "Stage": "inspect",
+      "Attempt": 0,
+      "Message": "The Retreat inspection does not explain destination and cost: \u0027Retreat\u0027 / \u0027Target: No safe ground\nCost: 0.13 s recovery per step\n\nGive ground step by step until no opponent can reach you. Each step costs readiness; opponents still act between your steps. Once committed the whole route is walked unless the ground is blocked. 1 opponent(s) can reach you now.\nUnavailable: This choice changed or is no longer visible. Close the wheel and choose again.\u0027.",
+      "View": "None",
+      "Timing": 1
+    },
+    {
+      "Stage": "inspect",
+      "Opened": true,
+      "View": "None",
+      "Timing": 1,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null
+    },
+    {
+      "Stage": "commit",
+      "Opened": true,
+      "View": "None",
+      "Timing": 1,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null
+    }
+  ],
+  "Positions": [
+    {
+      "X": 25984,
+      "Y": 83328,
+      "Z": 256,
+      "Seconds": 9.7711995
+    },
+    {
+      "X": 25984,
+      "Y": 83296,
+      "Z": 256,
+      "Seconds": 9.9669546
+    },
+    {
+      "X": 25984,
+      "Y": 83264,
+      "Z": 256,
+      "Seconds": 10.2055415
+    },
+    {
+      "X": 25984,
+      "Y": 83232,
+      "Z": 256,
+      "Seconds": 10.4170582
+    },
+    {
+      "X": 25984,
+      "Y": 83200,
+      "Z": 256,
+      "Seconds": 10.7345985
+    },
+    {
+      "X": 25984,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 10.9573406
+    },
+    {
+      "X": 25952,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 11.247841
+    },
+    {
+      "X": 25920,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 11.5051372
+    },
+    {
+      "X": 25888,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 11.7050799
+    },
+    {
+      "X": 25856,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 11.9053814
+    },
+    {
+      "X": 25824,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 12.1565531
+    },
+    {
+      "X": 25792,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 12.4168242
+    },
+    {
+      "X": 25760,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 12.6169085
+    },
+    {
+      "X": 25728,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 12.8167869
+    },
+    {
+      "X": 25696,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 13.0168962
+    },
+    {
+      "X": 25664,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 13.2501822
+    },
+    {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 13.5052969
+    }
+  ],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat costing 208 readiness units.",
+    "Cancelling the inspected Retreat commits nothing; the encounter still holds for the player\u0027s choice.",
+    "The committed route was walked as 16 presented 32-subunit steps and ended the encounter.",
+    "Ordinary held-key travel continues after the retained readiness is paid by exploration."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/keyboard.retreat-inspected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/keyboard.retreating.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/keyboard.disengaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/keyboard.final.png"
+  ],
+  "AcceptedCount": 1,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 16,
+    "RouteSamples": 16,
+    "ReadinessCharged": 208,
+    "WorldSequence": 533,
+    "Final": {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256
+    },
+    "ActorId": "71f5fa372b63c9229a886168930ccf64",
+    "CommandId": "aefbb03c6fb23fe0a4af9df6044cf157"
+  },
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalBalance": 180
+}

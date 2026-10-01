@@ -36,6 +36,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly LocalMaterialProposalSelection _materialProposals = new();
     private readonly LocalMaterialGiftController _materialGifts;
     private readonly LocalTradingController _trading;
+    private readonly Retreat.LocalRetreatConfiguration _retreat;
     private readonly CargoPresentation.LocalRegionObserver? _regions;
     private readonly Task _loop;
     private LocalWorldView _view;
@@ -76,14 +77,26 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         : this(authority, playerActorId, delivery, TimeProvider.System, giftPolicies, trading,
             regions ?? throw new ArgumentNullException(nameof(regions))) { }
 
+    /// <summary>
+    /// A regional trading session of the explicit retreat world. Opt-in NPC retreat preferences are host advice,
+    /// resupplied on every opening and never saved; players and NPCs share the same retreat admission and costs.
+    /// </summary>
+    public LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId, TrustedCommandDelivery delivery,
+        IEnumerable<LocalMaterialGiftPolicy> giftPolicies, LocalTradingConfiguration trading,
+        CargoPresentation.LocalRegionObserver? regions, Retreat.LocalRetreatConfiguration retreat)
+        : this(authority, playerActorId, delivery, TimeProvider.System, giftPolicies, trading, regions,
+            retreat ?? throw new ArgumentNullException(nameof(retreat))) { }
+
     internal LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId,
         TrustedCommandDelivery delivery, TimeProvider timeProvider, IEnumerable<LocalMaterialGiftPolicy>? giftPolicies = null,
-        LocalTradingConfiguration? trading = null, CargoPresentation.LocalRegionObserver? regions = null)
+        LocalTradingConfiguration? trading = null, CargoPresentation.LocalRegionObserver? regions = null,
+        Retreat.LocalRetreatConfiguration? retreat = null)
     {
         ArgumentNullException.ThrowIfNull(authority);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(timeProvider);
         _regions = regions;
+        _retreat = retreat ?? Retreat.LocalRetreatConfiguration.None;
         WorldSnapshot state = authority.ReadStateForHost();
         if (!state.Inventory.CanControl(delivery, playerActorId)
             || state.GetResident(playerActorId).ControllerKind != ResidentControllerKind.Player)
@@ -288,11 +301,16 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         if (state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
             or EncounterLifecyclePhase.Outcome)
             throw new AuthorityDispatchException("This lifecycle boundary accepts only entry or release requests.");
-        if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent and not QueueEncounterAbilityIntent)
+        if (command.Intent is QueueEncounterRetreatIntent && !LocalProfileBindings.AdmitsRetreat(state))
+            throw new AuthorityDispatchException("This saved profile does not admit a committed retreat.");
+        if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent and not QueueEncounterAbilityIntent
+            and not QueueEncounterRetreatIntent)
             throw new AuthorityDispatchException("An active encounter accepts only its retained encounter choices.");
-        if (command.Intent is QueueEncounterWaitIntent or QueueEncounterAbilityIntent && state.Pacing?.Encounter is null)
+        if (command.Intent is QueueEncounterWaitIntent or QueueEncounterAbilityIntent or QueueEncounterRetreatIntent
+            && state.Pacing?.Encounter is null)
             throw new AuthorityDispatchException("An encounter choice requires an active admitted encounter.");
-        if (command.Intent is QueueEncounterAbilityIntent && state.EncounterActions is null || WorldEncounterActions.IsOutcome(state))
+        if (command.Intent is QueueEncounterAbilityIntent or QueueEncounterRetreatIntent && state.EncounterActions is null
+            || WorldEncounterActions.IsOutcome(state))
             throw new AuthorityDispatchException("This encounter does not admit another ability or timing action.");
     }
 
@@ -469,7 +487,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             selected.Add(pending.Command.CommandId);
             actions.Add(pending.Command);
         }
-        actions.AddRange(_npcs.SelectEncounterChoices(state, () => AllocateSelectedIdentity(selected)));
+        actions.AddRange(_npcs.SelectEncounterChoices(state, () => AllocateSelectedIdentity(selected), _retreat));
         WorldBatchKind kind;
         if (actions.Count != 0)
         {

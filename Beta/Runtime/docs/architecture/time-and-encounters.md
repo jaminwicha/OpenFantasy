@@ -85,7 +85,9 @@ diagnostic pause; truncating a crowd or ignoring a hazard is not a valid fallbac
 
 Release revalidates terrain, support, ongoing hazards and outside conditions. It preserves outstanding
 costs and ends suspension once. It cannot teleport participants to safety, replay stale queued actions
-or apply a backlog of invisible attacks.
+or apply a backlog of invisible attacks. The [encounter retreat](encounter-retreat.md) binding implements one
+legal disengagement for the coordinated two-side interpretation: walked samples, charged readiness, a contact test
+at the destination and a single atomic end of suspension.
 
 ## Design contract: deadlines, rest and hosted readiness
 

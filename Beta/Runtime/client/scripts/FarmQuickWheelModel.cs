@@ -20,8 +20,10 @@ internal sealed class FarmQuickWheelModel
 
     internal FarmQuickWheelModel(IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
+        // Entry exists only before an encounter and Retreat only during one, so they share the upper slot.
         FarmSemanticAction[] order = offers.Keys.Any(IsEncounterAction)
-            ? [FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike, FarmSemanticAction.Wait,
+            ? [offers.ContainsKey(FarmSemanticAction.Retreat) ? FarmSemanticAction.Retreat : FarmSemanticAction.EnterEncounter,
+                FarmSemanticAction.Strike, FarmSemanticAction.Wait,
                 offers.ContainsKey(FarmSemanticAction.AcknowledgeCare) ? FarmSemanticAction.AcknowledgeCare : FarmSemanticAction.ReleaseEncounter]
             : offers.ContainsKey(FarmSemanticAction.Excavate)
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
@@ -65,7 +67,7 @@ internal sealed class FarmQuickWheelModel
 
     internal static bool IsEncounterAction(FarmSemanticAction action) => action is FarmSemanticAction.EnterEncounter
         or FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter
-        or FarmSemanticAction.AcknowledgeCare;
+        or FarmSemanticAction.AcknowledgeCare or FarmSemanticAction.Retreat;
 
     internal void Select(int index)
     {

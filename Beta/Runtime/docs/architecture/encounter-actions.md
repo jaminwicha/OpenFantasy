@@ -45,7 +45,11 @@ geometry contract, not projectile travel or arbitrary-height attack simulation.
 also authenticates control, actor revision, timing revision and due readiness. A batch has at most one
 choice per actor and compares commands against its starting timing revision. Every submitted choice
 receives its ordinary terminal queue receipt. Applied means accepted into the queue; it does not mean
-that damage has happened. The complete request and command hash survive save and recovery.
+that damage has happened. The complete request and command hash survive save and recovery. One exception
+exists only in the explicit retreat world: a queued retreat is an Action decision pinned to its command hash whose
+pending request is retained by the retreat owner rather than the action queue, and after its first sample the
+committed retreat holds the actor without any decision; while it holds, Wait and abilities are refused and offered
+as blocked (`Retreating`) ([encounter-retreat](encounter-retreat.md)).
 
 Resolution is a separate system boundary. All required human choices must be present before the first
 eligible due actor resolves in canonical order. Legality is checked again against the actual world.

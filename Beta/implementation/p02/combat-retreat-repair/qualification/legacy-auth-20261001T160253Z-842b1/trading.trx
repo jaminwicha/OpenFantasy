@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="96c37dca-ab6f-4608-9aed-8251ede11b53" name="@mac 2026-10-01 11:03:44" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T11:03:44.4751990-05:00" queuing="2026-10-01T11:03:44.4751990-05:00" start="2026-10-01T11:02:55.5100740-05:00" finish="2026-10-01T11:03:44.4836870-05:00" />
+  <TestSettings name="default" id="045d8e90-041a-4701-9d92-d22d0eba9347">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_11_03_44" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f2975386-20fc-48e7-b7b2-71041b31bc6d" testId="39d4adba-2746-e29e-3631-a5c751171eed" testName="OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales" computerName="mac" duration="00:00:45.5532099" startTime="2026-10-01T11:02:58.4084270-05:00" endTime="2026-10-01T11:03:44.3387090-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2975386-20fc-48e7-b7b2-71041b31bc6d">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 2723
+Actual:   2722</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Verify(JsonElement result) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/NativeTradingResultTests.cs:line 120
+   at OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/NativeTradingResultTests.cs:line 30
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="39d4adba-2746-e29e-3631-a5c751171eed">
+      <Execution id="f2975386-20fc-48e7-b7b2-71041b31bc6d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests" name="Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="39d4adba-2746-e29e-3631-a5c751171eed" executionId="f2975386-20fc-48e7-b7b2-71041b31bc6d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.42]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.62]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.98]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:48.01]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:48.01]       Expected: 2723
+[xUnit.net 00:00:48.01]       Actual:   2722
+[xUnit.net 00:00:48.01]       Stack Trace:
+[xUnit.net 00:00:48.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/NativeTradingResultTests.cs(120,0): at OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Verify(JsonElement result)
+[xUnit.net 00:00:48.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/NativeTradingResultTests.cs(30,0): at OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales()
+[xUnit.net 00:00:48.01]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:48.01]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:48.03]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T11:03:44.3702140-05:00">
+        <Text>[xUnit.net 00:00:48.00]     OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

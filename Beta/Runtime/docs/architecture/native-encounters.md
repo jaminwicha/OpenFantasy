@@ -27,7 +27,8 @@ Target cycling identifies actual observed opponents. Clearing a selection allows
 actor to be selected contextually, without reinterpreting an explicitly selected different target.
 
 [FarmQuickWheelModel](../../client/scripts/FarmQuickWheelModel.cs) pins its encounter choice to the
-captured intent and actor revision. Readiness/timing changes invalidate that draft rather than replacing
+captured intent and actor revision. In the explicit retreat world the upper sector, used by entry only before an
+encounter, carries the [Retreat](encounter-retreat.md#native-binding) choice during one. Readiness/timing changes invalidate that draft rather than replacing
 it. Closing a wheel commits nothing. [FarmGame](../../client/scripts/FarmGame.cs) shares one frame's
 offers between HUD and hotkeys, while the host independently validates submitted commands.
 

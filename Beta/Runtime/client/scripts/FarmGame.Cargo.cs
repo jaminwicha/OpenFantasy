@@ -47,9 +47,28 @@ public partial class FarmGame
     internal (Vector2 Center, Rect2 Limits) CameraFrame => (_camera.GetScreenCenterPosition(),
         new Rect2(_camera.LimitLeft, _camera.LimitTop, _camera.LimitRight - _camera.LimitLeft, _camera.LimitBottom - _camera.LimitTop));
 
+    /// <summary>Explicit fresh retreat-capable cargo-world selection with its own save; never an upgrade of another world.</summary>
+    internal bool CargoRetreatProfile { get; init; }
+
+    /// <summary>Expected fresh genesis of an exported retreat-capable cargo fixture; requires its explicit existing save.</summary>
+    internal string? CargoRetreatFixtureGenesisPath { get; init; }
+
     /// <summary>Starts opening the cargo world when this game selects it; false for every other selection.</summary>
     private bool OpenCargo()
     {
+        if (CargoRetreatFixtureGenesisPath is { } retreatGenesis)
+        {
+            _opening = SavePathOverride is { } retreatSave
+                ? FarmClientSession.OpenCargoRetreatFixtureAsync(retreatSave, retreatGenesis)
+                : Task.FromException<FarmClientSession>(new InvalidOperationException("The retreat fixture requires its existing save."));
+            return true;
+        }
+        if (CargoRetreatProfile)
+        {
+            string retreatPath = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/openfantasy-cargo-retreat.sqlite");
+            _opening = FarmClientSession.OpenCargoRetreatAsync(retreatPath, OpenFantasy.Hosting.Content.Retreat.CargoRetreatWorldAdmission.SeedText, "Traveler");
+            return true;
+        }
         if (CargoFixtureGenesisPath is { } genesis)
         {
             _opening = SavePathOverride is { } fixtureSave

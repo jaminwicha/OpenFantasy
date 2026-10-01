@@ -1,0 +1,29 @@
+{
+  "status": "completed_partial_integrated",
+  "startedUtc": "2026-10-01T16:39:46.317316+00:00",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-proofs-xhofx3fg",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 2700,
+  "maxBudgetUsd": 18,
+  "foregroundCommandSeconds": 960,
+  "contextSha256": "87a519982ba56aa59137defcf5e0b8520d9c87f4dc6e5f55b5549bd8e21a700c",
+  "scope": "Only new managed complete-admission and active-retreat archive proofs.",
+  "returnedModelVerification": "pending terminal response",
+  "elapsedSeconds": 1495.851,
+  "processExitCode": 0,
+  "returnedModel": "claude-opus-5-5",
+  "contextWindow": 1000000,
+  "requestedEffort": "max",
+  "clientEstimateUsd": 7.076025799999998,
+  "permissionDenials": [],
+  "contextPreflight": "verified",
+  "contextPostflight": "verified",
+  "acceptance": "Partial: two proof tests pass; actual archive cut absent; Astra integration remains",
+  "leadIntegration": {
+    "record": "../retreat-integration/INTEGRATION_REVIEW.md",
+    "deliveredProofsAccepted": 2,
+    "omittedArchiveProof": "Completed and reviewed by the integration lead in RetreatArchiveCutTests; not attributed to the delegated delivery.",
+    "newPaidRequest": false
+  }
+}

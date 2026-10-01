@@ -74,6 +74,8 @@ internal enum FarmSemanticAction
     /// <summary>Accepts the one reviewed offer at its exact restated terms.</summary>
     ConfirmTrade,
     CloseMarket,
+    /// <summary>Commits the inspected retreat route; each step is still walked and charged by the world.</summary>
+    Retreat,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>

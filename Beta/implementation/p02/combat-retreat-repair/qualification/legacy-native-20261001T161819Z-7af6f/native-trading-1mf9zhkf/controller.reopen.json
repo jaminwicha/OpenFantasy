@@ -1,0 +1,305 @@
+{
+  "Kind": "native-trading-v1",
+  "Mode": "reopen",
+  "Route": "controller",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "reopen",
+  "Genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/fixtures-20261001T160724Z-15cee/trading/genesis.ofc",
+  "InitialHash": "1BABDE8D3315DC6BBC86AA99E2DC0B74F0EBC0FD80268319F629DA1A1C9ECA16",
+  "FinalHash": "1BABDE8D3315DC6BBC86AA99E2DC0B74F0EBC0FD80268319F629DA1A1C9ECA16",
+  "BuyQuoteId": "a7396288877f1f145fd536530ef582d3",
+  "SellQuoteId": "34c29bfe356c8d82ed2c20ec6c27d04d",
+  "SoldLotId": null,
+  "BuyUnits": 4,
+  "SellUnits": 1,
+  "Checks": [
+    "A separate paused process shows both saved outcomes and reads a saved record without advancing the world."
+  ],
+  "Inputs": [
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "RightShoulder"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Dropdown": "MarketHistory",
+      "RowReached": 1,
+      "Text": "Sell to Wren \u00B7 1 berry at 7 gil \u00B7 sold 1 berry for 7 gil",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Dropdown": "MarketHistory",
+      "Selected": 1,
+      "Text": "Sell to Wren \u00B7 1 berry at 7 gil \u00B7 sold 1 berry for 7 gil"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Received": "CheckRecord",
+      "Event": "Joypad Button 12 (D-pad Down)",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Received": "CheckRecord",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Received": "CheckRecord",
+      "Event": "Joypad Button 0 (Bottom Action, Sony Cross, Xbox A, Nintendo B)",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "reopen",
+      "Route": "controller",
+      "Controller": "B"
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "opened",
+      "Hash": "1BABDE8D3315DC6BBC86AA99E2DC0B74F0EBC0FD80268319F629DA1A1C9ECA16",
+      "Step": 322,
+      "Purse": 163,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "a7396288877f1f145fd536530ef582d3",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 11,
+          "QuantityAllowance": 4,
+          "IssuedAtStep": 299,
+          "ExpiresAtStep": 1499,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 4
+        },
+        {
+          "Id": "34c29bfe356c8d82ed2c20ec6c27d04d",
+          "Side": "IssuerBuys",
+          "Status": "Filled",
+          "UnitPrice": 7,
+          "QuantityAllowance": 1,
+          "IssuedAtStep": 318,
+          "ExpiresAtStep": 1518,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 1
+        }
+      ],
+      "Lots": [
+        {
+          "Id": "ce6015db20f462b8514f58499fdee112",
+          "Revision": 1,
+          "Quantity": 3
+        }
+      ],
+      "Showing": {
+        "Lot": "ce6015db20f462b8514f58499fdee112",
+        "Units": 1,
+        "ExpiresAtStep": 2716,
+        "IsLive": true
+      },
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "final",
+      "Hash": "1BABDE8D3315DC6BBC86AA99E2DC0B74F0EBC0FD80268319F629DA1A1C9ECA16",
+      "Step": 322,
+      "Purse": 163,
+      "Actors": [
+        {
+          "Id": "09a2d8528436377a0ba729d339e26b39",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "5d652f48a612a324027911ffd13cf5f9",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 96
+        },
+        {
+          "Id": "6e639095512c3b072f23995b90271601",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "7b1fdc87ec3ab11ccc89697c36f5179e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "a7396288877f1f145fd536530ef582d3",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 11,
+          "QuantityAllowance": 4,
+          "IssuedAtStep": 299,
+          "ExpiresAtStep": 1499,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 4
+        },
+        {
+          "Id": "34c29bfe356c8d82ed2c20ec6c27d04d",
+          "Side": "IssuerBuys",
+          "Status": "Filled",
+          "UnitPrice": 7,
+          "QuantityAllowance": 1,
+          "IssuedAtStep": 318,
+          "ExpiresAtStep": 1518,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 1
+        }
+      ],
+      "Lots": [
+        {
+          "Id": "ce6015db20f462b8514f58499fdee112",
+          "Revision": 1,
+          "Quantity": 3
+        }
+      ],
+      "Showing": {
+        "Lot": "ce6015db20f462b8514f58499fdee112",
+        "Units": 1,
+        "ExpiresAtStep": 2716,
+        "IsLive": true
+      },
+      "InPerson": true,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    }
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "Unfocusable": true,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "StartupNoFocus": true,
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "DurationMilliseconds": 8672,
+  "Limit": "Every wheel, stall button and dropdown row uses the named injected route: keyboard arrows/Enter/Escape, controller D-pad/A/B or pointer motion/wheel/clicks. Focus starts where the game puts it and moves only by those events. Focus loss is injected through the fixture hook. Physical devices, OS focus, art, multiplayer Wait and production gates remain open."
+}

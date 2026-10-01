@@ -1,0 +1,79 @@
+{
+  "Kind": "native-retreat-v1",
+  "Mode": "keyboard",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: The Retreat inspection does not explain destination and cost.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.RetreatPlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 275\n   at OpenFantasy.Client.RetreatPlayProbe.OpenWheelAndSelectRetreat() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 189\n   at OpenFantasy.Client.RetreatPlayProbe.Exercise(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 118\n   at OpenFantasy.Client.RetreatPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs:line 81",
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 2.816,
+  "ProbeMilliseconds": 3659,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "engage",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "Up"
+    }
+  ],
+  "WalkInputs": [],
+  "Inspected": null,
+  "Positions": [],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat costing 208 readiness units."
+  ],
+  "Images": [],
+  "AcceptedCount": 0,
+  "Record": null,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalBalance": 180
+}

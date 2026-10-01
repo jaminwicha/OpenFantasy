@@ -48,7 +48,9 @@ public static class WorldEncounterActionAdmission
                 throw new ArgumentException("Incapacitated actors and coupled bystanders cannot retain choices.");
             }
         }
-        var selected = timing.Decisions.Where(decision => decision.Kind == EncounterDecisionKind.Action).ToArray();
+        // A queued committed retreat is an Action choice retained by the retreat owner, not an ability request.
+        var selected = timing.Decisions.Where(decision => decision.Kind == EncounterDecisionKind.Action
+            && !WorldEncounterRetreatAdmission.IsQueuedRetreatChoice(world, decision)).ToArray();
         if (selected.Length != actions.Pending.Count)
         {
             throw new ArgumentException("Each pending action requires exactly one complete retained request.");

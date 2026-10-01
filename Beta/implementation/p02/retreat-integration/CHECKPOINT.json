@@ -1,0 +1,13 @@
+{
+  "ref": "codex/checkpoint-before-retreat-ui-integration-20261001T164632Z",
+  "snapshot": "61201d36d968fa7850d22f3fae78703017a5f340",
+  "parent": "2cf2c3c27f7f943e7f840e6ee7fbf25a9af606c0",
+  "baseSnapshot": "3dd5b3c9ec3507cd9ff2c4dc30092c076b3baf79",
+  "scope": [
+    "Beta/Runtime/client",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation",
+    "Beta/Runtime/docs/architecture",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Retreat"
+  ],
+  "verification": "WIP, no retreat acceptance; unrelated predecessor index excluded; worker new tests excluded"
+}

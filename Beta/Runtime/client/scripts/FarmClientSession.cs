@@ -6,8 +6,10 @@ using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content;
 using OpenFantasy.Hosting.Content.NativeCargo;
+using OpenFantasy.Hosting.Content.Retreat;
 using OpenFantasy.Hosting.Simulation;
 using OpenFantasy.Hosting.Simulation.CargoPresentation;
+using OpenFantasy.Hosting.Simulation.Retreat;
 using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Client;
@@ -172,14 +174,46 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return AttachCargo(authority);
     });
 
+    /// <summary>
+    /// Explicit fresh selection of the retreat-capable cargo world (profile 34). An existing save opens only when it is
+    /// this same selected world; a cargo save of the earlier interpretation is never upgraded or read as this one.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCargoRetreatAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+    {
+        WorldSnapshot genesis = CargoRetreatWorldAdmission.CreateEmbedded(seedText, playerName);
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        SqliteWorldAuthority authority = File.Exists(savePath)
+            ? SqliteWorldAuthority.OpenExisting(savePath, WorldSnapshotCodec.Encode(genesis))
+            : SqliteWorldAuthority.CreateNew(savePath, genesis);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority, retreat: true);
+    });
+
+    /// <summary>Continues an exported retreat-capable cargo fixture; the genesis must be its fresh profile-34 admission.</summary>
+    internal static Task<FarmClientSession> OpenCargoRetreatFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath)) throw new FileNotFoundException("The retreat fixture requires its existing save.", savePath);
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != WorldEncounterRetreatAdmission.ProfileVersion || genesis.Revision != 0
+            || genesis.AdvancingSteps != 0 || !NativeCargoWorld.IsCargoWorld(genesis))
+            throw new InvalidDataException("The retreat fixture requires its fresh retreat-capable cargo genesis.");
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority, retreat: true);
+    });
+
     /// <summary>The cargo session: the quest companion, the cargo trading advice and the bounded region observer.</summary>
-    private static FarmClientSession AttachCargo(SqliteWorldAuthority authority)
+    private static FarmClientSession AttachCargo(SqliteWorldAuthority authority, bool retreat = false)
     {
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;
-            if (!NativeCargoWorld.IsCargoWorld(current))
-                throw new InvalidDataException("This save is not the cargo world.");
+            if (!NativeCargoWorld.IsCargoWorld(current)
+                || (current.ProfileVersion == WorldEncounterRetreatAdmission.ProfileVersion) != retreat)
+                throw new InvalidDataException("This save is not the selected cargo world.");
             WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
             WorldResident wren = QuestCompanion(current, player);
             ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
@@ -189,8 +223,12 @@ internal sealed class FarmClientSession : IAsyncDisposable
             EntityId? berries = current.Gathering.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
                 .Definition.YieldDefinition.DefinitionId;
             // The session publishes the regional observation with each view; frames never read the authority.
-            var world = new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
-                NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId));
+            // The retreat world configures no NPC retreat: its wolves keep fighting exactly as in the cargo world.
+            var world = retreat
+                ? new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+                    NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId), LocalRetreatConfiguration.None)
+                : new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+                    NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId));
             return new FarmClientSession(world, delivery, wren.ActorId, wood, berries)
             {
                 IsRegional = true,
@@ -373,6 +411,16 @@ internal sealed class FarmClientSession : IAsyncDisposable
             authority.Dispose();
             throw;
         }
+    }
+
+    /// <summary>
+    /// The view a wheel opening captures: walking stops, then the world is read as it is now. Its offers, not an
+    /// earlier frame's, become the wheel's slots, so a boundary reached since the last frame never reads as changed.
+    /// </summary>
+    internal LocalWorldView CaptureWheelView()
+    {
+        World.SetMovement(0, 0);
+        return World.ReadView();
     }
 
     /// <summary>Read-only: selecting targets, lots and quest operations from a snapshot changes nothing.</summary>

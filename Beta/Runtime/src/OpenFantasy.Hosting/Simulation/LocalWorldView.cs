@@ -61,6 +61,7 @@ public sealed class LocalWorldView
         HasReadingHold = state.HasReadingHold;
         EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
         EncounterActions = LocalEncounterActionView.Project(state, playerActorId);
+        Retreat = Simulation.Retreat.LocalRetreatView.Project(state, playerActorId);
         Care = LocalCareView.Project(state, playerActorId, careHelperSelectionOccupied);
         Restorative = LocalRestorativeView.Project(state, playerActorId);
         MaterialProposals = LocalMaterialProposalView.Project(state, playerActorId);
@@ -72,7 +73,9 @@ public sealed class LocalWorldView
         {
             Encounter = new LocalEncounterView(timing.EncounterId, timing.Revision, timing.ElapsedTacticalUnits,
                 WorldEncounterActions.DueActors(state).Any(actor => actor.ActorId == playerActorId),
-                timing.Decisions.Any(decision => decision.ActorId == playerActorId), WorldEncounterActions.HasRequiredDecisions(state), WorldEncounterActions.IsOutcome(state));
+                // A committed retreat is the player's standing choice, so it never reads as an awaited decision.
+                timing.Decisions.Any(decision => decision.ActorId == playerActorId) || WorldEncounterRetreats.HoldsActor(state, playerActorId),
+                WorldEncounterActions.HasRequiredDecisions(state), WorldEncounterActions.IsOutcome(state));
         }
         EncounterActors = Array.AsReadOnly(state.EncounterActions is { } actions
             ? actions.Combatants.Select(actor =>
@@ -166,6 +169,12 @@ public sealed class LocalWorldView
     public LocalEncounterView? Encounter { get; }
     public LocalEncounterLifecycleView? EncounterLifecycle { get; }
     public LocalEncounterActionView? EncounterActions { get; }
+    /// <summary>
+    /// The explicit retreat interpretation's offer and the observer's own route and record; null, and omitted from the
+    /// public encoding, in every other world so earlier interpretations keep their exact public bytes.
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    public Simulation.Retreat.LocalRetreatView? Retreat { get; }
     public LocalCareView? Care { get; }
     public LocalRestorativeView? Restorative { get; }
     public LocalMaterialProposalView? MaterialProposals { get; }

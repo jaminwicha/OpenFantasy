@@ -42,6 +42,55 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
+Owner steering, 2026-10-01: **delegate to Opus 5.5**. Use exact `claude-opus-5-5[1m]`, requested
+Max, finite limits and the maintained direct synchronization adapter; Astra retains integration.
+
+The [lawful retreat foundation](p02/retreat-integration/INTEGRATION_REVIEW.md) is accepted at
+`codex/milestone-lawful-retreat-20261001`. The explicit `--cargo-retreat` world supports one committed
+solo withdrawal from a two-side encounter: real ground samples, complete-root admission, opponent
+turns between steps, actual contact distance and preserved HP/custody/readiness/identities. Full Wait
+holds a stable human choice; native inspection/cancellation/confirmation and saved recovery are proven.
+
+[Final checks](p02/retreat-integration/FINAL_CHECKS.json) account for all thirteen modes and **2,294
+distinct managed passes** (1,764 Core; 530 Host), with 1,769 source, 14 assembly, 40 graphical-import
+and 331 evidence-file pins. Six actual process kills authenticate. Separate tests prove an ordinary
+6,000-step checkpoint and a real coordinated archive cut during a walking retreat; the latter uses
+a declared fresh endurance genesis, not production balance. Fresh native retreat, cargo, trading and
+gifts authenticate, as do retained earlier recordings and the exact previously failing trading save.
+
+The [independent critic](p02/combat-retreat/CRITIC_REVIEW.md), [lead disposition](p02/combat-retreat/CRITIC_DISPOSITION.md),
+[correction delivery](p02/combat-retreat-repair/RESULT.md) and [integration findings](p02/retreat-integration/ANALYSIS.md)
+retain findings, failures and remedies. One old native showing checker was explicitly corrected:
+captured absolute expiry is authenticated against actual recorded observation and remains live/bounded
+at publication. Original bytes/failures are preserved; all other old test assertions stay. No production
+rule or deadline was relaxed. Complete headless editor initialization plus forty import hashes replaces
+the failing rapid-exit import invocation, with every error still rejected.
+
+A native return probe initially observed arrival before released movement settled. Its exact saved-
+position assertion caught the extra sample. The probe now observes release through actual scheduled
+cutoffs; rendering and authentication both pass. [Managed reuse](p02/retreat-integration/MANAGED_REUSE.json)
+proves byte-identical Core/Host/test inputs for the earlier managed runs: only the disposable native
+probe/client binary changed, so those unchanged suites were not ceremonially rerun.
+
+The [Opus proof unit](p02/retreat-completion-proofs/RESULT.md) returned verified Opus5.5/1M, requested Max,
+verified pre/post inputs and no denials in 1,495.851s (client estimate $7.0760258). It delivered the
+complete-admission and malformed-byte contrasts; Astra completed its omitted archive-cut proof.
+Earlier implementation/correction/critic results and estimates remain in their packets. No external
+worker remains live, no paid retry is scheduled, and no net credit-saving claim is made.
+
+[Input-repair checkpoint](p02/retreat-integration/INPUT_CHECKPOINT.json) and earlier packet checkpoints
+preserve WIP before each major integration. All571 old test files except the reviewed checker and
+additive compile link,23 frozen specs, source save/assets and unrelated19-file predecessor staging
+remain protected. Older accepted profiles retain their bytes; profile34's v1 artifacts were unaccepted
+WIP and are not silently reinterpreted. [Upstream](p02/retreat-integration/UPSTREAM.json) records ecosystem
+`80e0d73`, three synchronized verification entrypoints and the active71-file alignment check.
+
+Next work must follow the full plan's dependencies. The source level7/800HP Bandit Chief remains the
+road-threat dependency; this wolf proof does not qualify it. Party withdrawal/rescue, pursuit, four
+clients, lived migration, general construction-supported retreat, physical controls, human art/UI,
+frontier/production and full cargo/combat/P02 gates remain open. The timeless architecture reference
+is current and distinguishes the implemented binding from these broader obligations.
+
 The [native cargo foundation](p02/native-cargo-repair/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-native-cargo-foundation-20261001`. Production `--cargo` opening, original merchant
 appearances, explicit Marla/Kegga selection, native buying/carrying/selling/returning, paused reopening,
@@ -129,8 +178,8 @@ water proof and failing collider test before repair. The timeless reference is u
 world-wide tactical timing and supplied provision metadata versus save-authenticated facts.
 The old runtime/tests, frozen specs, original save and unrelated predecessor index remain exact.
 
-The reusable region presentation, explicit multi-stall identity/choice, threat and guard wages,
-traveling NPCs, lived migration and multiplayer complete later joins in the same full cargo plan.
+Regional presentation and explicit multi-stall identity/choice are bound by the native foundation above.
+Threat and guard wages, traveling NPCs, lived migration and multiplayer remain joins in the same full cargo plan.
 [Cargo dependency notes](p02/spot-exchange/CARGO_DEPENDENCIES.md) ground that work without claiming an
 executed route. Keep physical-device, human art/comprehension, infinite-frontier and production gates
 open; a managed circuit is not native cargo, full UI or P02 completion.

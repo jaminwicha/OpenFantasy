@@ -1,0 +1,11 @@
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Retreat/NativeRetreatResultTests.cs(119,79): error CS1503: Argument 2: cannot convert from 'OpenFantasy.Core.Custody.CountedItemDefinition' to 'OpenFantasy.Core.EntityId' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Retreat/NativeRetreatResultTests.cs(127,52): error CS0019: Operator '==' cannot be applied to operands of type 'EntityId' and 'CountedItemDefinition' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Retreat/NativeRetreatResultTests.cs(119,79): error CS1503: Argument 2: cannot convert from 'OpenFantasy.Core.Custody.CountedItemDefinition' to 'OpenFantasy.Core.EntityId' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Retreat/NativeRetreatResultTests.cs(127,52): error CS0019: Operator '==' cannot be applied to operands of type 'EntityId' and 'CountedItemDefinition' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:15.29

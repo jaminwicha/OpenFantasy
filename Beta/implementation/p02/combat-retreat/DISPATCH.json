@@ -1,0 +1,23 @@
+{
+  "status": "completed_pending_review",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-combat-retreat-13asr_2z",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 7200,
+  "maxBudgetUsd": 50,
+  "foregroundCommandSeconds": 960,
+  "contextSha256": "c7ccb4250d4ef7d1ae06a43352e4cb6b1d1f4dc67ecedc25c4b2005ac2c2be4f",
+  "startedUtc": "2026-10-01T12:51:12.499701+00:00",
+  "returnedModelVerification": {
+    "canonicalModel": "claude-opus-5-5",
+    "contextWindow": 1000000
+  },
+  "assignment": "Lawful encounter retreat: typed movement, Wait/cost/lifecycle integration, durable recovery, native action and trade continuation.",
+  "contextPreflight": "verified",
+  "processExitCode": 0,
+  "elapsedSeconds": 5001.218,
+  "clientCostEstimateUsd": 30.30075019999998,
+  "contextPostflight": "verified",
+  "permissionDenials": [],
+  "acceptance": "Incomplete delivery; independent critique and required proofs pending."
+}

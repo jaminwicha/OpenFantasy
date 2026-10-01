@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="9e368ec1-1ff8-451e-ab34-7aafe826e641" name="@mac 2026-10-01 09:59:59" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T09:59:59.5129900-05:00" queuing="2026-10-01T09:59:59.5129900-05:00" start="2026-10-01T09:59:54.2233450-05:00" finish="2026-10-01T10:00:09.4983400-05:00" />
+  <TestSettings name="default" id="dbb4398a-e0da-4108-8740-11c5f912d1e9">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_09_59_59" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="5383b247-7151-40e7-802b-b57fc65a13ad" testId="25081524-53db-9822-dd2f-ca9bcb78f243" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs" computerName="mac" duration="00:00:03.1864457" startTime="2026-10-01T09:59:56.1500040-05:00" endTime="2026-10-01T09:59:59.4407440-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5383b247-7151-40e7-802b-b57fc65a13ad">
+      <Output>
+        <ErrorInfo>
+          <Message>wolf retreat exceeded 3000 cutoffs.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 104
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 148
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 168
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ce90eefb-035d-4c3c-ba56-172f9b5984e5" testId="8c05d1e2-6867-77bf-a9a2-215e1fc1940c" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly" computerName="mac" duration="00:00:04.7582658" startTime="2026-10-01T10:00:02.8983110-05:00" endTime="2026-10-01T10:00:07.6588130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce90eefb-035d-4c3c-ba56-172f9b5984e5">
+      <Output>
+        <ErrorInfo>
+          <Message>retreat offer exceeded 400 cutoffs.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 104
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 113
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 70
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="39263a5b-2617-4f7b-ae72-80570980acd2" testId="ff970a00-c030-ceda-76f8-10790cc9b08b" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly" computerName="mac" duration="00:00:00.4325469" startTime="2026-10-01T10:00:09.0056020-05:00" endTime="2026-10-01T10:00:09.4386140-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="39263a5b-2617-4f7b-ae72-80570980acd2">
+      <Output>
+        <ErrorInfo>
+          <Message>retreat offer exceeded 400 cutoffs.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 104
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 113
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 253
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 265
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="afe9a592-2dbf-4885-a8fc-072b5970385a" testId="1da37632-596c-04f6-ca6c-58d617e10fad" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request" computerName="mac" duration="00:00:00.3962444" startTime="2026-10-01T10:00:08.1498890-05:00" endTime="2026-10-01T10:00:08.5461940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="afe9a592-2dbf-4885-a8fc-072b5970385a" />
+    <UnitTestResult executionId="ce29e64d-1f93-4f36-ae79-ff57a5a40901" testId="72f7ca56-57a3-0e95-cc9a-1d387f8b2b48" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample" computerName="mac" duration="00:00:00.4881386" startTime="2026-10-01T10:00:07.6601130-05:00" endTime="2026-10-01T10:00:08.1490570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce29e64d-1f93-4f36-ae79-ff57a5a40901">
+      <Output>
+        <ErrorInfo>
+          <Message>retreat offer exceeded 400 cutoffs.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 104
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 113
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 299
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 367
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="27d5656a-9f7f-4ed9-8d88-e8b7c4fe9cb7" testId="e639ea2a-c84f-3384-e87a-b0b66dd99824" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths" computerName="mac" duration="00:00:03.4485187" startTime="2026-10-01T09:59:59.4476140-05:00" endTime="2026-10-01T10:00:02.8968290-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27d5656a-9f7f-4ed9-8d88-e8b7c4fe9cb7" />
+    <UnitTestResult executionId="be8ca78d-90d4-4424-ba45-a76d7993156d" testId="72f97a2b-4ca9-667a-8e5e-bd5cc04947d1" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect" computerName="mac" duration="00:00:00.4574096" startTime="2026-10-01T10:00:08.5469900-05:00" endTime="2026-10-01T10:00:09.0048470-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be8ca78d-90d4-4424-ba45-a76d7993156d">
+      <Output>
+        <ErrorInfo>
+          <Message>retreat offer exceeded 400 cutoffs.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 104
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 113
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 185
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs:line 232
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ff970a00-c030-ceda-76f8-10790cc9b08b">
+      <Execution id="39263a5b-2617-4f7b-ae72-80570980acd2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8c05d1e2-6867-77bf-a9a2-215e1fc1940c">
+      <Execution id="ce90eefb-035d-4c3c-ba56-172f9b5984e5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e639ea2a-c84f-3384-e87a-b0b66dd99824">
+      <Execution id="27d5656a-9f7f-4ed9-8d88-e8b7c4fe9cb7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="72f7ca56-57a3-0e95-cc9a-1d387f8b2b48">
+      <Execution id="ce29e64d-1f93-4f36-ae79-ff57a5a40901" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1da37632-596c-04f6-ca6c-58d617e10fad">
+      <Execution id="afe9a592-2dbf-4885-a8fc-072b5970385a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="25081524-53db-9822-dd2f-ca9bcb78f243">
+      <Execution id="5383b247-7151-40e7-802b-b57fc65a13ad" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="72f97a2b-4ca9-667a-8e5e-bd5cc04947d1">
+      <Execution id="be8ca78d-90d4-4424-ba45-a76d7993156d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="25081524-53db-9822-dd2f-ca9bcb78f243" executionId="5383b247-7151-40e7-802b-b57fc65a13ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8c05d1e2-6867-77bf-a9a2-215e1fc1940c" executionId="ce90eefb-035d-4c3c-ba56-172f9b5984e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff970a00-c030-ceda-76f8-10790cc9b08b" executionId="39263a5b-2617-4f7b-ae72-80570980acd2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1da37632-596c-04f6-ca6c-58d617e10fad" executionId="afe9a592-2dbf-4885-a8fc-072b5970385a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72f7ca56-57a3-0e95-cc9a-1d387f8b2b48" executionId="ce29e64d-1f93-4f36-ae79-ff57a5a40901" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e639ea2a-c84f-3384-e87a-b0b66dd99824" executionId="27d5656a-9f7f-4ed9-8d88-e8b7c4fe9cb7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72f97a2b-4ca9-667a-8e5e-bd5cc04947d1" executionId="be8ca78d-90d4-4424-ba45-a76d7993156d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="2" failed="5" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.40]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.81]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.96]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.29]       wolf retreat exceeded 3000 cutoffs.
+[xUnit.net 00:00:04.29]       Stack Trace:
+[xUnit.net 00:00:04.29]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(104,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label)
+[xUnit.net 00:00:04.29]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(148,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs()
+[xUnit.net 00:00:04.29]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(168,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs()
+[xUnit.net 00:00:04.29]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:12.50]       retreat offer exceeded 400 cutoffs.
+[xUnit.net 00:00:12.50]       Stack Trace:
+[xUnit.net 00:00:12.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(104,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label)
+[xUnit.net 00:00:12.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(113,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs)
+[xUnit.net 00:00:12.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(70,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly()
+[xUnit.net 00:00:12.50]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:12.99]       retreat offer exceeded 400 cutoffs.
+[xUnit.net 00:00:12.99]       Stack Trace:
+[xUnit.net 00:00:12.99]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(104,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label)
+[xUnit.net 00:00:12.99]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(113,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs)
+[xUnit.net 00:00:12.99]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(299,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample()
+[xUnit.net 00:00:12.99]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(367,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample()
+[xUnit.net 00:00:12.99]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:13.84]       retreat offer exceeded 400 cutoffs.
+[xUnit.net 00:00:13.84]       Stack Trace:
+[xUnit.net 00:00:13.84]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(104,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label)
+[xUnit.net 00:00:13.84]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(113,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs)
+[xUnit.net 00:00:13.84]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(185,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect()
+[xUnit.net 00:00:13.84]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(232,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect()
+[xUnit.net 00:00:13.84]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:14.28]       retreat offer exceeded 400 cutoffs.
+[xUnit.net 00:00:14.28]       Stack Trace:
+[xUnit.net 00:00:14.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(104,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.TickUntil(Func`1 predicate, Int32 maximumCutoffs, String label)
+[xUnit.net 00:00:14.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(113,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.PlayerRetreatOffer(Int32 maximumCutoffs)
+[xUnit.net 00:00:14.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(253,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly()
+[xUnit.net 00:00:14.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatSessionTests.cs(265,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly()
+[xUnit.net 00:00:14.28]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:14.28]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T09:59:59.4654450-05:00">
+        <Text>[xUnit.net 00:00:04.29]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T10:00:07.6642730-05:00">
+        <Text>[xUnit.net 00:00:12.50]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T10:00:08.1498080-05:00">
+        <Text>[xUnit.net 00:00:12.99]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T10:00:09.0056370-05:00">
+        <Text>[xUnit.net 00:00:13.84]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T10:00:09.4392770-05:00">
+        <Text>[xUnit.net 00:00:14.28]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,8 @@
+{
+  "ref": "codex/checkpoint-before-retreat-input-settling-20261001T172726Z",
+  "snapshot": "fe7917080cfb396e58db3bc64d9f45f4ec23f4f2",
+  "sourceHead": "2cf2c3c27f7f943e7f840e6ee7fbf25a9af606c0",
+  "priorSnapshot": "20988287d5eff021442253a1da9ff35d91a304f6",
+  "scope": "Runtime, integration packet and handoff; unrelated predecessor index excluded. Preserves passing build/core/unit/regression/fixtures/native and failed native-auth before probe repair.",
+  "verification": "WIP; saved controller return is one sample beyond observed target. Saved-position assertion remains unchanged."
+}

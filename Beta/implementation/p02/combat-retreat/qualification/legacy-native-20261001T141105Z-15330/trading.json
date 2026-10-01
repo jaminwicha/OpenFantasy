@@ -1,0 +1,790 @@
+{
+  "status": "passed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9",
+  "rendered": true,
+  "entryScene": "res://scenes/NativeTrading.tscn",
+  "runs": [
+    {
+      "label": "keyboard-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/background-client",
+        "res://scenes/NativeTrading.tscn",
+        "--",
+        "--trading-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+        "keyboard",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard-active.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 9.676
+    },
+    {
+      "label": "keyboard-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/background-client",
+        "res://scenes/NativeTrading.tscn",
+        "--",
+        "--trading-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+        "reopen-keyboard",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard-reopen.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 9.076
+    },
+    {
+      "label": "controller-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/background-client",
+        "res://scenes/NativeTrading.tscn",
+        "--",
+        "--trading-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+        "controller",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller-active.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 10.846
+    },
+    {
+      "label": "controller-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/background-client",
+        "res://scenes/NativeTrading.tscn",
+        "--",
+        "--trading-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+        "reopen-controller",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller-reopen.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 4.476
+    },
+    {
+      "label": "pointer-active",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/background-client",
+        "res://scenes/NativeTrading.tscn",
+        "--",
+        "--trading-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+        "pointer",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer-active.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer-active.stderr.log",
+      "exitCode": 0,
+      "seconds": 9.291
+    },
+    {
+      "label": "pointer-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/background-client",
+        "res://scenes/NativeTrading.tscn",
+        "--",
+        "--trading-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.json",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+        "reopen-pointer",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer-reopen.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 4.562
+    }
+  ],
+  "results": [
+    {
+      "mode": "keyboard",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.reopen.json",
+      "finalDatabaseSha256": "29d79486af564769fdf6adfefd6850f236f861755171297d379142432b50f2f0",
+      "buyQuoteId": "310d049aa576310925f2d6b695a46f26",
+      "sellQuoteId": "1d28d5439a84090b9d7553b269d7fdbc",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.buy-offer.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.buy-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.buy-review.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.history.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.reopen-final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.reopen.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.sell-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.sell-review.png"
+      ]
+    },
+    {
+      "mode": "controller",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.reopen.json",
+      "finalDatabaseSha256": "f8b8683bfb8660b071bc9966578a25af383d0ffb0298b861fca36ed762376ace",
+      "buyQuoteId": "e6671bdaa4272f580295051a58c52634",
+      "sellQuoteId": "753b049379c3b9203bfd3ce15037f927",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.buy-offer.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.buy-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.buy-review.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.history.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.reopen-final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.reopen.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.sell-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.sell-review.png"
+      ]
+    },
+    {
+      "mode": "pointer",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.active.json",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.reopen.json",
+      "finalDatabaseSha256": "6c973279813d5a64f5be20fc23d8c7992cf7af4ccf142b4171f2b75ca8074b4c",
+      "buyQuoteId": "52cb35ef31daaa1aace2a0c42d2fa607",
+      "sellQuoteId": "9afeb62f1cbd6fb3ce93376fcec11036",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.buy-offer.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.buy-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.buy-review.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.history.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.reopen-final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.reopen.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.sell-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.sell-review.png"
+      ]
+    }
+  ],
+  "startedUtc": "2026-10-01T14:11:06.191947+00:00",
+  "limits": {
+    "processSeconds": 180,
+    "probeSeconds": 150,
+    "openingSeconds": 30,
+    "maximumNativeProcesses": 6
+  },
+  "coverage": {
+    "keyboard": {
+      "active": {
+        "open-keyboard": [
+          "Enter",
+          "Q",
+          "Up",
+          "V"
+        ],
+        "ask-buy-keyboard": [
+          "Down",
+          "Enter",
+          "Up"
+        ],
+        "review-buy-keyboard": [
+          "Down",
+          "Enter",
+          "Up"
+        ],
+        "confirm-buy-keyboard": [
+          "Down",
+          "Enter",
+          "Up"
+        ],
+        "cancel-keyboard": [
+          "Down",
+          "Enter"
+        ],
+        "decline-keyboard": [
+          "Down",
+          "Enter"
+        ],
+        "show-keyboard": [
+          "Down",
+          "Enter",
+          "Escape",
+          "Up"
+        ],
+        "sell-keyboard": [
+          "Down",
+          "Enter",
+          "Up"
+        ],
+        "history-keyboard": [
+          "Down",
+          "Enter",
+          "Escape",
+          "Up"
+        ]
+      },
+      "reopen": {
+        "reopen": [
+          "Down",
+          "Enter",
+          "Escape",
+          "Q",
+          "V"
+        ]
+      },
+      "wheel": "open/page/sector/confirm via Key",
+      "form": "stall buttons and dropdown rows via Key",
+      "navigationMoves": 88,
+      "lotRows": {
+        "reached": [
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ],
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ]
+        ],
+        "cancelled": [
+          [
+            "MarketLot",
+            1
+          ]
+        ],
+        "chosen": [
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ]
+        ]
+      },
+      "historyRows": {
+        "reached": [
+          [
+            "MarketHistory",
+            2,
+            "Buy from Wren \u00b7 4 berries at 11 gil \u00b7 bought 4 berries for 44 gil"
+          ]
+        ],
+        "cancelled": [],
+        "chosen": [
+          [
+            "MarketHistory",
+            2,
+            "Buy from Wren \u00b7 4 berries at 11 gil \u00b7 bought 4 berries for 44 gil"
+          ]
+        ]
+      },
+      "reopenRows": {
+        "reached": [
+          [
+            "MarketHistory",
+            1,
+            "Sell to Wren \u00b7 1 berry at 7 gil \u00b7 sold 1 berry for 7 gil"
+          ]
+        ],
+        "cancelled": [],
+        "chosen": [
+          [
+            "MarketHistory",
+            1,
+            "Sell to Wren \u00b7 1 berry at 7 gil \u00b7 sold 1 berry for 7 gil"
+          ]
+        ]
+      },
+      "physicalDevice": false
+    },
+    "controller": {
+      "active": {
+        "open-controller": [
+          "A",
+          "DpadUp",
+          "RightShoulder",
+          "RightStick"
+        ],
+        "ask-buy-controller": [
+          "A",
+          "DpadDown",
+          "DpadUp"
+        ],
+        "review-buy-controller": [
+          "A",
+          "DpadDown",
+          "DpadUp"
+        ],
+        "confirm-buy-controller": [
+          "A",
+          "DpadDown",
+          "DpadUp"
+        ],
+        "cancel-controller": [
+          "A",
+          "DpadDown"
+        ],
+        "decline-controller": [
+          "A",
+          "DpadDown"
+        ],
+        "show-controller": [
+          "A",
+          "B",
+          "DpadDown",
+          "DpadUp"
+        ],
+        "sell-controller": [
+          "A",
+          "DpadDown",
+          "DpadUp"
+        ],
+        "history-controller": [
+          "A",
+          "B",
+          "DpadDown",
+          "DpadUp"
+        ]
+      },
+      "reopen": {
+        "reopen": [
+          "A",
+          "B",
+          "DpadDown",
+          "RightShoulder",
+          "RightStick"
+        ]
+      },
+      "wheel": "open/page/sector/confirm via Controller",
+      "form": "stall buttons and dropdown rows via Controller",
+      "navigationMoves": 88,
+      "lotRows": {
+        "reached": [
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ],
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ]
+        ],
+        "cancelled": [
+          [
+            "MarketLot",
+            1
+          ]
+        ],
+        "chosen": [
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ]
+        ]
+      },
+      "historyRows": {
+        "reached": [
+          [
+            "MarketHistory",
+            2,
+            "Buy from Wren \u00b7 4 berries at 11 gil \u00b7 bought 4 berries for 44 gil"
+          ]
+        ],
+        "cancelled": [],
+        "chosen": [
+          [
+            "MarketHistory",
+            2,
+            "Buy from Wren \u00b7 4 berries at 11 gil \u00b7 bought 4 berries for 44 gil"
+          ]
+        ]
+      },
+      "reopenRows": {
+        "reached": [
+          [
+            "MarketHistory",
+            1,
+            "Sell to Wren \u00b7 1 berry at 7 gil \u00b7 sold 1 berry for 7 gil"
+          ]
+        ],
+        "cancelled": [],
+        "chosen": [
+          [
+            "MarketHistory",
+            1,
+            "Sell to Wren \u00b7 1 berry at 7 gil \u00b7 sold 1 berry for 7 gil"
+          ]
+        ]
+      },
+      "physicalDevice": false
+    },
+    "pointer": {
+      "active": {
+        "open-pointer": [
+          "ConfirmChoice",
+          "NextWheelPage",
+          "OpenWheel",
+          "sector"
+        ],
+        "ask-buy-pointer": [
+          "AskMerchant",
+          "MarketMore",
+          "PauseToRead"
+        ],
+        "review-buy-pointer": [
+          "BackFromReview",
+          "MarketLess",
+          "MarketMore",
+          "ReviewOffer"
+        ],
+        "confirm-buy-pointer": [
+          "ConfirmTrade",
+          "PauseToRead",
+          "ReviewOffer",
+          "sector"
+        ],
+        "cancel-pointer": [
+          "AskMerchant",
+          "CancelRequest"
+        ],
+        "decline-pointer": [
+          "AskMerchant",
+          "PauseToRead"
+        ],
+        "show-pointer": [
+          "MarketLot",
+          "MarketLot-row",
+          "MarketTitle-outside",
+          "SellMode",
+          "ShowLot"
+        ],
+        "sell-pointer": [
+          "AskMerchant",
+          "ConfirmTrade",
+          "PauseToRead",
+          "ReviewOffer"
+        ],
+        "history-pointer": [
+          "CheckRecord",
+          "CloseMarket",
+          "MarketHistory",
+          "MarketHistory-row"
+        ]
+      },
+      "reopen": {
+        "reopen": [
+          "CheckRecord",
+          "CloseMarket",
+          "ConfirmChoice",
+          "MarketHistory",
+          "MarketHistory-row",
+          "NextWheelPage",
+          "OpenWheel",
+          "sector"
+        ]
+      },
+      "wheel": "open/page/sector/confirm via PointerControl",
+      "form": "stall buttons and dropdown rows via PointerControl",
+      "navigationMoves": 0,
+      "lotRows": {
+        "reached": [
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ],
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ]
+        ],
+        "cancelled": [
+          [
+            "MarketLot",
+            1
+          ]
+        ],
+        "chosen": [
+          [
+            "MarketLot",
+            1,
+            "Lot 1: 4 berries"
+          ]
+        ]
+      },
+      "historyRows": {
+        "reached": [
+          [
+            "MarketHistory",
+            2,
+            "Buy from Wren \u00b7 4 berries at 11 gil \u00b7 bought 4 berries for 44 gil"
+          ]
+        ],
+        "cancelled": [],
+        "chosen": [
+          [
+            "MarketHistory",
+            2,
+            "Buy from Wren \u00b7 4 berries at 11 gil \u00b7 bought 4 berries for 44 gil"
+          ]
+        ]
+      },
+      "reopenRows": {
+        "reached": [
+          [
+            "MarketHistory",
+            1,
+            "Sell to Wren \u00b7 1 berry at 7 gil \u00b7 sold 1 berry for 7 gil"
+          ]
+        ],
+        "cancelled": [],
+        "chosen": [
+          [
+            "MarketHistory",
+            1,
+            "Sell to Wren \u00b7 1 berry at 7 gil \u00b7 sold 1 berry for 7 gil"
+          ]
+        ]
+      },
+      "physicalDevice": false
+    }
+  },
+  "limitations": [
+    "Wheel opening, paging, sector selection and confirmation use the named route. Keyboard and controller runs move focus only with arrows or the D-pad along the panel focus chain from the focus the game itself sets, then activate with Enter or A; pointer runs click, hover and scroll.",
+    "Dropdown rows (lot and history) are reached, cancelled and chosen with the same named route.",
+    "Focus loss is injected through the fixture hook; no OS focus or physical device is exercised.",
+    "Requests are session memory: their decline is attested by the probe and managed session tests, not by journal records.",
+    "Archive-only quote discovery is not surfaced by this UI; saved-record checks read live-segment outcomes.",
+    "Independent recorded-boundary authentication remains required.",
+    "No physical-device, OS-focus, multiplayer Wait, art, retained-save migration or production acceptance."
+  ],
+  "executionPins": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_trading.py": "c2b02e36acb3ad6f1bae021b92b9e8c69988032690b02bb113e4563a512a4ec2",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/project.godot": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet": "00c673767ee2538369f307d3c8a0ce06f16bc9e0ecf8ce767b64dd02b2230e98",
+    "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot": "be1daafcc08937e4693ca310b5a1199b123b5c5ab127c13142c53c0017f4e951",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmEncounterStatus.cs": "e6cef57141368f43f5e406f37c66474810ff40a50256286e41bba0f115d1e412",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/NativeTradingEntry.cs": "c47f66d19acfb357d56abf9a1aff068ee550eadcc6e7bc17bd8ef72ed69a59bc",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmMarketDraft.cs": "b2fc32da741a87e67d0aa268f8b1906f3656b1fb1bd3e4962185889328679365",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmDaylightProbe.cs": "781d9f36823ce37712642eb52d04f447bb54a73918c4922079aed64d06dfa79d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmConstructionSaveOpener.cs": "c8176d6555be2b2eb6f7f9b116e1212a124a2eb93cc03e2fdc3f396c0ca73627",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelDisc.cs": "782d67394bc4b2e6e50c30231204bf777ac60a4b5e6f508664899547fc58c387",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputMap.cs": "9ca18e259bd85aa167fc081fead8a9e0e6deca14ce244995b6a44ffe81ded5a1",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmQuestSaveOpener.cs": "79dd93f7b3c8f141017bcc32f0d099e7ed99c0db4ff48f4aeec7904ffce5649b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmConstructionProbe.cs": "88a46d4c1865f4f7574c30c37f8f994743663ed250d3c72a63a3fd4d5a8b8fff",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGiftSelection.cs": "13176cc007305b963fef179ef2ee15b3029cf505c451e44c320b90cd56d70fad",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOffers.cs": "ed863eb561a60e4175f55b8b718c2483d90f5e6e325452b65ae7ee718275fef7",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWheelProbe.cs": "9685505be5e2b0607eb7c71ed9c0b632e8cefa8ea66e287a98fe1296e01e7aef",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmMarketPanel.cs": "fbd2b2aafba5cf05dc6866fe34726d52c64fd11ba13469ff957908617927a02f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Bootstrap.cs": "49613af85f05c437858cc10f48aa21b3e3cf5daffbad0f6545f7f2afa63fd030",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/DurableAuthoritySmoke.cs": "03c1d3d701f25f4e841d422c1fde0612325fb16a3caaef47cb65e44cf97477c5",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmQuickWheelModel.cs": "64f1508694c5957ef9839fb90068b67ff0f41deeaec5de15dcc5945fdee83a44",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketActionOffers.cs": "cc27947d05c946e0addc37cbdbc2cc3e88dab717644cdd3ad8aba588ae57bffc",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmCanvas.cs": "c48f86fbd19626a4dce8ee834f7035bde4e4347eae47725bedb63cd96c0dd050",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksiteActionOffers.cs": "8312b3305b4b301b9264f81cd14b61b23f3b9297779fed80ec6d891b3b986f4a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MaterialProposalActionOffers.cs": "7e81060285efa5b87b59cd00e36f9bb63c964a59765cf7ec3d8110054f6aa2f7",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmQuickWheel.cs": "b307f3110a68c884e384113f54ff0d244184fe25127c3154679c8aaa28dc23d0",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketTradingPlayProbe.cs": "d96254b6c1cd010bdbf2d07278cf12162f1cd42a6ecabc4c63b0ce29fad350d1",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOfferProbe.cs": "e73d58cf1291c3bbb0292d5241c1931def3f783d6d732691c871708a16e22427",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/NativeCargoEntry.cs": "375d4dfdfce54659d490a1bae82a5b7c6a7ed1790d60842f1b4e0ccef1dc1625",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.Cargo.cs": "0787a4f3a3bc245cd974c3d749e625cd240bb7ef7d425ac3c2239e511d216eb1",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeEvidence.cs": "0e5ccfcf5c3670a577fdd46d3d5af57d201e6f54bc0aeaaf95b8a6588dc030da",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmLifecycleProbe.cs": "241274a8ccb8b5e57a5be12ed68b169978d69e0fe7bf003145161bd87348afe9",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputProbe.cs": "3dba45707c5409a46974a00aee4071d05206c3ac3d0ec61c4e5abd81b213275b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.Market.cs": "d6904f683119edea0d08d1e8b545f12b449b323a4964b7ad1cc477b9871c8173",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterActionOffers.cs": "b22a70662bbb9f0ee74dacfe6d827a5e9dde77308698d86f682978f3dcd3c931",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativePlayProbe.cs": "cb46cd6028d49881b5038b22d1d7e2c5a3e0f5c0b8806c45c4b0e064724ef884",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmProductionProbe.cs": "7b48a67f2a77b469726a2cd191867deb73e4c416ed307d21f08bce79d372c8ff",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGatheringProbe.cs": "4a211f12f96e9e18f5ec7099fda4f3e2c8d1001c2fd4be160f1c00ac88aa438e",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WatercoursePlayProbe.cs": "c285070456546d5a1e95896489981bc71b5310b8f9ba60a7f269ae36cd279757",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CarePlayProbe.cs": "9b427b4ad998678047740f9380f321b3f090b740c3d34b23469b2405ef5e5075",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MaterialGiftPlayProbe.cs": "3d8c0bf2958e24c3b22d8b63e131aa47ba4f4756f4cb219f2dc9098c1f469cfe",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RetainedGiftPlayProbe.cs": "459abdaf3728cd4cdc34c8985a5ac9ebb151887e228a35808f29d19475cc4b06",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RestorativeActionOffers.cs": "20f155817421e7f50febde34570e9f0f14b6629f1e3fbd70d0543029c6f707e3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmQuestActions.cs": "ca401c695eaf53c4362c5af45c398ccdb38714971e80db1c91ae3c6a6cf8946b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.cs": "ac9f81fd5db70f698711ff67391e330b8d807aa9372047f7e49e19a7f014bbf2",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInventoryProbe.cs": "1db2b11681f0ee3486cd755f7ead981ccb1ea13e1c0504ae9ab9b14433ca05d6",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmClientSession.cs": "34190d5ca77d04c80b9e8463a272cd7220e054bb335e7298586051c744b3542f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmWalkthroughProbe.cs": "65e672030a9ff7e62f68563f8ef375b5f5853a6b28a03229d4506161ee287a21",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketBoundaryPlayProbe.cs": "67ab911a952f7378ee4dc54b3fbae93b224dbab5ec7b2a6178d138f62184dfb2",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmActionOffer.cs": "739ee6d7a2eee7f78cfdfeb4d3f0584f8253a1646aa677e246551d3cab6654db",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInventoryModel.cs": "116720b265fdd5e02da2551ac3dafcaf0dd9f16ac032deb9d687007b22f9bd9c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmHud.cs": "055032cfde111796d2e0f767aaa617e56ba7a898f2e0946a86483351fdaef13c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RetainedGiftNativeDriver.cs": "9495015d3cadda501ca185111fc41378422f8d83a3c6f9cd72ea3e28a5736fbf",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterPlayProbe.cs": "13b34d2d7bffd8aa627533bee6d42b0c40ee79f21ab40b1f057f738a1a321a1a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/BreachPlayProbe.cs": "a1790dd7d083208926ecbc0e1280589bccb06113bc51118f57f40352ad9854c5",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/WorksitePlayProbe.cs": "2d41b98117e014c021d293103dcc010cd0ed10dee940fd90d3882c41ab757597",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmSaveOpener.cs": "9b2ef35e0cf61c9e5e7260dfa0d547c796e62d39ae8639df35c78cb69d6985fd",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmCrafting.cs": "02041650fd49a1e1103f887daede0ec362b0dc671f144f13a1f119ecec901226",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGame.Gifts.cs": "80418bb0834b265274615959618e680c199d7b4459334cf0e8fb6dc7ba77f6ed",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmQuestProbe.cs": "8ad1e5205b9c9ad568c1db7b8e2638a6c7db68bf5a3afe3ee07631ea602fb41d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInputRouter.cs": "19e6624266148cb7d9030cd7762ecf002555ba0306258e14e485df88fcf8952e",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs": "078b5e7630622b11c70be49f7fd825f717f925273c79e1b0da1c42ebde5b4162",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmMarketTerms.cs": "6a841a9b106e3ccbfed042412cc211e5dbb4711bc03b3ec9b7e1e4ef52420cae",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmGiftPanel.cs": "8bc9a3a5285f31fb3e7486324a5bae2e7b08c799b325ca61733ae53a76f9422a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmTargetSelection.cs": "45ceadbea2feb1ced3d8711c6fd143c4671003ef01ecccb744a7f48b155172c8",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterDefeatPlayProbe.cs": "ff32cef7176c19a44ee3221280761501ea90096f3d14560ac588a9738fe538cb",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/FarmInventoryScreen.cs": "4bfd2bec274f8f9b9f7a9e0a41b104c2181b04841c6542742179edeb42f5ca79",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs": "5e6c5ec13c95e1be5723b3aa089049876822bacf59af6d141718c44fe347880d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/NativeRetreatEntry.cs": "e3d68d85a5dc39a90cf6c92ab5859fa73890b4dbcc00624a9daa3e7fc169c856",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Retreat/RetreatOffers.cs": "4fee46164d1825516d3cd66101152d6b1e83c39fc0839c4acee290672fc9fdd8",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRenderedEvidence.cs": "56c8023cdae57635867d00e941c108919229a57ef0fb31856f55d9e44cf36e1c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoTerrainView.cs": "09762e505d4e79c7db7b1a0f6d289b58548787dc0f760b6fddb523759c2d0d89",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoOnboardingPlayProbe.cs": "7f01ff99649a18158d2acdcb7630b536b9815ecd6d508b4b911cd6a4823b36e1",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoStallPick.cs": "8ae5e33d528261ace4ca4e330ce636e473b08374d4b37cd4c60de6395e5692f3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs": "bbe2c3ba8c485695a29a8981d5b471040b532806d2c6958f8918347cc812ebde",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoCameraFraming.cs": "970ab22f60670319e4127f25b016bff6d726e3e4416a1078269140282a293a31",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoMerchantAppearances.cs": "e3e07df04037f25102f2ed74b7bbfb2b8030bb2949b3a2bee8d3cce14d222a54",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoPaperdollPlan.cs": "93e95f7e42c6c6313f621f51ee66d4cda9c029e0d3b110f2f44e11be022fa7fc",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoViewProjection.cs": "707e216b2c7ade83e67d145af6059d557a6e24c0164fd83c5a32f9b45afabe07",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmCanvasFrame.cs": "d43a002b1fc0cfb212cf21e1c0f1eb21a814557341d1642da434cb7c972b791f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmGroundView.cs": "d8f5749631029b5d3585c516e21fd83e44d04f3208b301fb2a19016751b0db18",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmTargetMarker.cs": "f11b27a32d9738fbc9203fb89b4e563e962f7cd34ce3685b12c39c34a25510d0",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmGatherNodeView.cs": "00d7b8aeee6e8b683dc840e012d44a080c7e43607dc3e3e9242da47053a95dd1",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/WatercourseView.cs": "b83072cae8adaea2d05b3c6c3b635e1b187a8d2d0981b5e03bc43dd1343ec2ae",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmStructureView.cs": "3e439ece54825283d9b9fae24da84c16410f065fb0f232e96cd3873f596b50cc",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/WorksiteView.cs": "af64702b12dfa9a02d2376da4f67f79e6d657f843d734f237190772a34fa9e06",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmPaperdollComposer.cs": "ac07fe844ab661d85dc9226b7f70bccf6826259f2f6201053e4ec352ce2b6ba1",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/WorksiteTerrainView.cs": "499af413f8903d3436d05af28deafc2b555b38ba46dfd53733cff7d859338729",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmVisualAssets.cs": "c7e3a387b8ea318900cf405efe737f2837bb732c9161a2570e3c8d27399830b1",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmCanvasCoordinates.cs": "f71c0702c8fcc6298484247162eb29a97952649cc4921ad36fce9bf0fe084c58",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmHealthFeedback.cs": "1af861ef384c91707176eb75448b48fed8ec9a41e7327cd908f734e1c1d08db5",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/WorksiteMemberView.cs": "57527b17c6d0706ebefea3a3138120d7cc6d804989129417d6148c44019cf3db",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmDaylight.cs": "2ddf6db11e66b3880e1525ff01c8c33dc56e4028ac9c2c3fa973319c49ebba38",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/WorksiteCoordinates.cs": "bce062c6d915178571aa874b46ce4f80b2a63cf0648329105cf4a0b61d54075a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Presentation/FarmActorView.cs": "b48084bdd9c0de9ea908152281244952cd75ab115fd158878ee937bb74edce9b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmStructureView.tscn": "3903a983d771e31d1663a7ddee7bd242d17bb051ebc0ddd097ff42ba94e6f66e",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/NativeCargo.tscn": "5e416258c02186dc3cc91852487c891b77a6a6062657ce3030a43a62572fa9af",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/NativeTrading.tscn": "339842ee20682da9c05a76201e24caae628f836de00545ce768a76f404dc7066",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmMarketPanel.tscn": "0f49897edfc82d9fccb13d57bd1fef80ea44ac53bf8e05be3b0961f68c4c45d0",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmInventoryScreen.tscn": "2aad677a3d81590838dfc1982613d25942dace6746bcbdc11a675cf4801b49f7",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmDaylight.tscn": "da1109a1d9a030728f9a96dbeb7fcd63516ba45df48ea442d6497c071a94617d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/Bootstrap.tscn": "409fd4ee8e9ee068f7b61568ff77d3a9bcbd1df1402fd723cb4f4c3665471c02",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmQuickWheel.tscn": "c5d05757866e2db7489f42465f2c0618486030d19d797d66f48f662e76996e4a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/NativeRetreat.tscn": "8fe5f7e0638c40fe432b6787f86ef6e81134ee4cd216974f03cbf8f5b70a1861",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmGiftPanel.tscn": "bf9358a2a4895ad9961c6e2156023d72458eb0ff817ebd449deb0d11966aeecc",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scenes/FarmHud.tscn": "7db7e4d8a0a83a4afe4641e7539a5383622099ffeb3b893d7bbfddeec16fb10c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/market-offers.svg": "d4582d8fa5c6cd2812300695bd97d9ca380412776351a143d4611c14e96e3447",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/engage.svg": "c54157ffea29e14d4f1c8139554b81644c6b88e0655c9cc997309798df82aa26",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/craft.svg": "d573cd6c2e757312a4c0079ff4118727baa1754bafe1624d514bd52b4db18e54",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/withdraw-gift.svg": "d892b536708593cc72b919164e6bf5bde7343740ccdf88bf7b3c87e5b59fd2e5",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/excavate.svg": "d3095c1eabb2b8ce00a099068671f88fea8467b7c8bea7bf33943502b6fe8311",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/give.svg": "0eb77c22ceceff417741cf617a894ef67babcb4664d54371b4cef94e86ab42f4",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/talk.svg": "42caca26a7dbe2398f3d790415c7d885b68bbeeb0e96b39d86bc7b6b01ae1046",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/market-buy.svg": "8c96b630102790e8ae9ab4450c1cf91931f3ec81026bff84032d0d2b4c3345f9",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/strike.svg": "c4c31efdd633ccb03e3fa0a5febfc6e9563f7d4401c9878bdfa42b8746d80beb",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/care.svg": "f8d2b7e3b614da499b7adb455f163bd079fb44a51763cc3065ca6157bb0b5907",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/leave.svg": "44a861422f8e374e315ae86c0a0c30ed1075227127b20d05d1029aceefd9e964",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/wait.svg": "2fd8ab656f9e0bc16ef8394aa23ebd79f2df3f87a8db0f0fb17e1cb573536d30",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/gather.svg": "f210fd4477c64403a6908ff0172ebb1553134b0bd19a540c616fa7040db5a6fc",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/traverse.svg": "d093bf95b55f2b59615cf9ff2d22a773323d64e3712e7ea6d1013704570bceec",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/market-sell.svg": "ef1d6feeaf6c17081ff50bb0c2fdac55c99e626a79163cfbde341ca8b87ff78a",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/accept-gift.svg": "dcdf6a7f3beef640297d07f380d9f7287e47fbc872691c3e8eb3b9d64a791977",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/market-confirm.svg": "b196f8f16ca0285a88354a6153834a719e8adb1f2c1fa3e14dcac4a8e1b497c9",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/assets/ui/decline-gift.svg": "081c10dc64deb3e2fb3ff6a0776927d315fe797e02a1667084e5ee28ce9af215",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "51dff7b4920e309f07e9904b1ba7e88cc20b6c57a2f6a296357d0ec3bc496e1b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "e51ac05ce850ef9489275b047239e9e8e961ab0a74815bb438211981c0b1f2a6",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "d913e8af8818d3a2867e70509ed3f0e2ef71693e9fae4c9a1b2cdaa96e732862"
+  },
+  "fixturePins": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/save.sqlite": "1b336971ed701cd9a4bebf90f029fd2078dbf3b4fdd56d888740b1af5c88d289",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/genesis.ofc": "a15abef55e9ea4e51b0a2682ac4e6f41ba00a339832aed885a2e1843e10787cd",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/before.ofc": "79c04c9af72c9d9f286db2f888751d7c1cbb85f0bca70f2b5cf3bb484a27a9f0",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/metadata.json": "a3de5de182a4d4df7edbd9768f892f35dc342443809287f4ab5799b9b07d7bf2"
+  },
+  "managedAuthenticationManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/native-manifest.json",
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "keyboard.sell-outcome.png": "763c9f18e7b76270020a56c4f38b05cdb766cc47533807364aaf16995510882b",
+    "pointer.buy-outcome.png": "2ef943d66685ae53ecc524e7eb62368a063690d64276801a9ca97a0fbe820f97",
+    "controller.history.png": "5a6fa25f9fdd04a2417198d91eaecd23e32d14ad8567dddde81c67aa3886fdd1",
+    "pointer.final.png": "f4efabac4a03bce099e3b1f44036e33420244e3b641651c7a0fb3d4a573898bd",
+    "controller-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pointer.sqlite": "6c973279813d5a64f5be20fc23d8c7992cf7af4ccf142b4171f2b75ca8074b4c",
+    "keyboard.buy-review.png": "7dc6761f2182079fb767da038ddb457dcdf19aa7d9ddb36b465090ff977f5e93",
+    "pointer.sell-outcome.png": "bfb094ea156a0a8b2eeeae77845e594a4c5fe50c24c7686de519ad59f1132072",
+    "controller.reopen.json": "7a2f1cf08b708c113c4b334e6e8da36cc93d71bd9326927c08ad67719280d61f",
+    "controller.buy-outcome.png": "98e5b035fb6ca6041d2089c1fe914a52a8fe635148df028ce7a24f8474766fd1",
+    "controller.sell-outcome.png": "763c9f18e7b76270020a56c4f38b05cdb766cc47533807364aaf16995510882b",
+    "keyboard.reopen.png": "29b48eb5310a7f457adfa8479f8b39e14450b302fbc4d195836cc14adcd65b77",
+    "keyboard-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pointer.buy-offer.png": "dea29bbbadf72eaaa8485e5356ca55f878974c141a6c0b518a3f62a10a20304a",
+    "pointer-reopen.stdout.log": "e2b33130ba0985921f28df346b36816068af783af03f7d06430283136256fd1c",
+    "controller-active.stdout.log": "e2b33130ba0985921f28df346b36816068af783af03f7d06430283136256fd1c",
+    "pointer.reopen.json": "a252ee35465b27dee9334e936be16810202ff07ba81878fe89b813fb7afe413d",
+    "keyboard.active.json": "bc851b752aec1c89f4c046c68c35a98b6cd9a1255c3bd4a430531b27c0155633",
+    "keyboard.buy-outcome.png": "98e5b035fb6ca6041d2089c1fe914a52a8fe635148df028ce7a24f8474766fd1",
+    "pointer-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "keyboard-active.stdout.log": "e2b33130ba0985921f28df346b36816068af783af03f7d06430283136256fd1c",
+    "controller.sqlite": "f8b8683bfb8660b071bc9966578a25af383d0ffb0298b861fca36ed762376ace",
+    "pointer.history.png": "c90cc3d2514721241630cb0d593c3c788768be65f0447debef9fa7b0c2625c64",
+    "controller.buy-review.png": "7dc6761f2182079fb767da038ddb457dcdf19aa7d9ddb36b465090ff977f5e93",
+    "keyboard.history.png": "5a6fa25f9fdd04a2417198d91eaecd23e32d14ad8567dddde81c67aa3886fdd1",
+    "keyboard.sqlite": "29d79486af564769fdf6adfefd6850f236f861755171297d379142432b50f2f0",
+    "controller-reopen.stdout.log": "e2b33130ba0985921f28df346b36816068af783af03f7d06430283136256fd1c",
+    "keyboard.sell-review.png": "59b8c6929f62ca11f9223bd0e16893b1db87bd65de145ff5f232a88d0365f2e1",
+    "controller.buy-offer.png": "5226cb39e2e78c929aaec908b2d3cd4abb79fe8a40fe03b90afa93321fbed513",
+    "pointer-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "keyboard-reopen.stdout.log": "e2b33130ba0985921f28df346b36816068af783af03f7d06430283136256fd1c",
+    "pointer.active.json": "f3956f68144ee7561b2e8e7b028c201ae541fb43bb3ca4a9864c3f30d323299b",
+    "keyboard.buy-offer.png": "5226cb39e2e78c929aaec908b2d3cd4abb79fe8a40fe03b90afa93321fbed513",
+    "keyboard.reopen.json": "90c7054ae29fbbdec8fb921aca7cb64bd78a11232a8b7d3a54eb8b46c8d7cef4",
+    "native-manifest.json": "7f05d10a530813fcdf84118742c288fd732240b1fb70baeba6def9f7d87bf63b",
+    "pointer.buy-review.png": "7dc6761f2182079fb767da038ddb457dcdf19aa7d9ddb36b465090ff977f5e93",
+    "pointer.sell-review.png": "59b8c6929f62ca11f9223bd0e16893b1db87bd65de145ff5f232a88d0365f2e1",
+    "controller.active.json": "0756fd2da22edca156234e5413c2c089a8d9edcbc6917628624e50e85a043017",
+    "controller.reopen.png": "29b48eb5310a7f457adfa8479f8b39e14450b302fbc4d195836cc14adcd65b77",
+    "controller-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "keyboard.reopen-final.png": "48aee6e2a2fbd5233071b019c59ed626c5be48da5f8cf1c86225be0166e8a10e",
+    "pointer.reopen.png": "0e6cf6432fe967f923aebc260d1c15e8730f2e746bc35a057cfb0f62b104baf7",
+    "controller.reopen-final.png": "48aee6e2a2fbd5233071b019c59ed626c5be48da5f8cf1c86225be0166e8a10e",
+    "controller.sell-review.png": "59b8c6929f62ca11f9223bd0e16893b1db87bd65de145ff5f232a88d0365f2e1",
+    "keyboard-active.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controller.final.png": "f4efabac4a03bce099e3b1f44036e33420244e3b641651c7a0fb3d4a573898bd",
+    "pointer-active.stdout.log": "e2b33130ba0985921f28df346b36816068af783af03f7d06430283136256fd1c",
+    "keyboard.final.png": "f4efabac4a03bce099e3b1f44036e33420244e3b641651c7a0fb3d4a573898bd",
+    "pointer.reopen-final.png": "260ef7c95a9c820d3d465e576ba83c34192c9ccb2b57930a844184b0cc89925f"
+  },
+  "finishedUtc": "2026-10-01T14:11:55.682182+00:00"
+}

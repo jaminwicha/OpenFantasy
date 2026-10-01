@@ -73,6 +73,11 @@ archive and its living initiating actor, followed by complete current world admi
 disengagement, healing, reward issuance, corpse creation or respawn. An incapacitated initiator has no
 automatic release or rescue transition in this interpretation.
 
+The explicit retreat interpretation (profile 34) adds a separate exit: a committed
+[retreat](encounter-retreat.md) whose last walked sample breaks contact moves Active directly to Exploration in that
+same transaction, copying every actual debt to the permanent ledger. It never passes through Outcome, so release
+keeps exactly its completed-combat meaning.
+
 ## Debt, exposure and process boundaries
 
 The permanent ledger retains readiness debt for every resident, including bystanders and incapacitated

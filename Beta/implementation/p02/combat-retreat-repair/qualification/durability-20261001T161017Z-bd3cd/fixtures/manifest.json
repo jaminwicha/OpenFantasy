@@ -1,0 +1,53 @@
+{
+  "Kind": "retreat-durability-fixtures-v1",
+  "SeedText": "retreat-durability",
+  "ProfileVersion": 34,
+  "Genesis": "genesis.ofc",
+  "Command": "command.bin",
+  "CommandId": "c85a0162ce4e6a2dcff71dc807401b3e",
+  "PlayerActorId": "4435dcfcc4dc9ead4faa1f90ad5cd530",
+  "Unbroken": "unbroken.sqlite",
+  "UnbrokenHead": 85,
+  "Cases": [
+    {
+      "Label": "queue",
+      "Sequence": 4,
+      "Kind": "EncounterDecision",
+      "Before": "queue.before.sqlite",
+      "Step": "queue.step.bin",
+      "After": "queue.after.sqlite",
+      "BeforeHash": "d67ce5fd23c730f8ffea5d4ed1e7fa74123ea2427f5c5f2e6c842cfc29558010",
+      "AfterHash": "ddcff9eec6de922ddcf8819b332e5059cb9091c35edc39524a7e23847a5e93ff",
+      "BeforeSamples": null,
+      "AfterSamples": 0,
+      "AfterStatus": null
+    },
+    {
+      "Label": "sample",
+      "Sequence": 11,
+      "Kind": "EncounterResolution",
+      "Before": "sample.before.sqlite",
+      "Step": "sample.step.bin",
+      "After": "sample.after.sqlite",
+      "BeforeHash": "67e43cb4dfbda70684cb439a66fcc69ae882882985ea3d93702976766563dc02",
+      "AfterHash": "d49f85d8c8d285de58d8d21445964972e31a3d5db68069e1b1e539eb495f4658",
+      "BeforeSamples": 1,
+      "AfterSamples": 2,
+      "AfterStatus": null
+    },
+    {
+      "Label": "disengage",
+      "Sequence": 85,
+      "Kind": "EncounterResolution",
+      "Before": "disengage.before.sqlite",
+      "Step": "disengage.step.bin",
+      "After": "disengage.after.sqlite",
+      "BeforeHash": "f70e287a90740d09a631aa9cbef785bf300fbfc8cc3711f12915914ea1adbdcf",
+      "AfterHash": "acd2d6f94842e5343ad046c6a1e5e909f444bd6534f36a4a9c4ec3beb7107fd4",
+      "BeforeSamples": 15,
+      "AfterSamples": null,
+      "AfterStatus": "Disengaged"
+    }
+  ],
+  "Setup": "Ordinary session journey (enter the real wolf, commit the advised retreat, walk to disengagement); its journal replayed through a fresh normal authority with closed saves exported before each selected publication."
+}

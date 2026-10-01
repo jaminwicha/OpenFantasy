@@ -1,0 +1,32 @@
+{
+  "core": {
+    "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/core-20261001T171731Z-764f6/report.json",
+    "reason": "Only disposable native probe changed; all managed test/Core/Host sources and every assembly used by this check remain byte-identical. Original report retained as executed.",
+    "sourceDifferences": [
+      "Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs"
+    ],
+    "assemblyDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ]
+  },
+  "unit": {
+    "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/unit-20261001T171123Z-6db6c/report.json",
+    "reason": "Only disposable native probe changed; all managed test/Core/Host sources and every assembly used by this check remain byte-identical. Original report retained as executed.",
+    "sourceDifferences": [
+      "Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs"
+    ],
+    "assemblyDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ]
+  },
+  "regression": {
+    "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/regression-20261001T171904Z-0b035/report.json",
+    "reason": "Only disposable native probe changed; all managed test/Core/Host sources and every assembly used by this check remain byte-identical. Original report retained as executed.",
+    "sourceDifferences": [
+      "Beta/Runtime/client/scripts/Retreat/RetreatPlayProbe.cs"
+    ],
+    "assemblyDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ]
+  }
+}

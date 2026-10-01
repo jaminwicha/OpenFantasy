@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="065bb999-5b7a-430e-9260-ba104be6d0d7" name="@mac 2026-10-01 10:22:47" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T10:22:47.3263380-05:00" queuing="2026-10-01T10:22:47.3263380-05:00" start="2026-10-01T10:22:41.2799900-05:00" finish="2026-10-01T10:23:52.8348740-05:00" />
+  <TestSettings name="default" id="f2131a4e-538b-47e3-b1be-6b73920d2843">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_10_22_47" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d25c4386-f073-4662-b23b-df2092477b9d" testId="1da37632-596c-04f6-ca6c-58d617e10fad" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request" computerName="mac" duration="00:00:00.7247164" startTime="2026-10-01T10:23:06.3722030-05:00" endTime="2026-10-01T10:23:07.0970870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d25c4386-f073-4662-b23b-df2092477b9d" />
+    <UnitTestResult executionId="f58ef962-6490-47b1-8d41-4ea157fa6f2b" testId="799c8e9a-143d-7a04-8175-5fd10ed17d9a" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly" computerName="mac" duration="00:01:10.0145340" startTime="2026-10-01T10:22:42.7175700-05:00" endTime="2026-10-01T10:23:52.7358870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f58ef962-6490-47b1-8d41-4ea157fa6f2b" />
+    <UnitTestResult executionId="054e14f7-f7c1-4273-9553-b8537f6ceead" testId="72f97a2b-4ca9-667a-8e5e-bd5cc04947d1" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect" computerName="mac" duration="00:00:01.1649353" startTime="2026-10-01T10:23:07.0990240-05:00" endTime="2026-10-01T10:23:08.2641080-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="054e14f7-f7c1-4273-9553-b8537f6ceead" />
+    <UnitTestResult executionId="5b1f7570-cbe4-41f6-b894-efa22966296c" testId="00a39c7e-7eda-bf75-1efb-2aff05bcf898" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.A_conflicting_reuse_of_a_committed_retreat_identity_is_refused_and_the_exact_retry_is_not" computerName="mac" duration="00:00:00.6469686" startTime="2026-10-01T10:22:49.8760240-05:00" endTime="2026-10-01T10:22:50.5230790-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5b1f7570-cbe4-41f6-b894-efa22966296c" />
+    <UnitTestResult executionId="09433338-6fc3-41af-9cf2-64c99752f366" testId="72f7ca56-57a3-0e95-cc9a-1d387f8b2b48" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample" computerName="mac" duration="00:00:01.2657424" startTime="2026-10-01T10:23:05.1048300-05:00" endTime="2026-10-01T10:23:06.3708530-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="09433338-6fc3-41af-9cf2-64c99752f366" />
+    <UnitTestResult executionId="04b05bab-a366-494f-9532-a6403161a69d" testId="8c05d1e2-6867-77bf-a9a2-215e1fc1940c" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly" computerName="mac" duration="00:00:11.4600680" startTime="2026-10-01T10:22:53.6404000-05:00" endTime="2026-10-01T10:23:05.1006610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04b05bab-a366-494f-9532-a6403161a69d" />
+    <UnitTestResult executionId="668ac407-eb65-42be-80ff-07e8d96f4b50" testId="2e45153c-bc8b-5547-f3ab-a80d6f83a6b8" testName="OpenFantasy.Hosting.Tests.Client.Retreat.RetreatWheelCaptureTests.The_first_wheel_opening_at_a_ready_boundary_captures_current_offers_not_the_previous_frame" computerName="mac" duration="00:00:06.4306850" startTime="2026-10-01T10:22:42.7175630-05:00" endTime="2026-10-01T10:22:49.1516610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="668ac407-eb65-42be-80ff-07e8d96f4b50" />
+    <UnitTestResult executionId="92d5cdcb-c05f-4890-9653-4804dff77b66" testId="ff970a00-c030-ceda-76f8-10790cc9b08b" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly" computerName="mac" duration="00:00:06.5005055" startTime="2026-10-01T10:23:08.2656470-05:00" endTime="2026-10-01T10:23:14.7663630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="92d5cdcb-c05f-4890-9653-4804dff77b66" />
+    <UnitTestResult executionId="97e4f157-4a54-40fe-96db-194581caca23" testId="71f9152b-114d-038c-f914-f281116fbde1" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice" computerName="mac" duration="00:00:00.8386464" startTime="2026-10-01T10:22:49.0362320-05:00" endTime="2026-10-01T10:22:49.8749560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="97e4f157-4a54-40fe-96db-194581caca23" />
+    <UnitTestResult executionId="10c8d6df-322f-4c4b-8996-e29e560f506f" testId="9029b1dd-8eeb-19cc-44ca-7546b58ed6f4" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities" computerName="mac" duration="00:00:01.1087030" startTime="2026-10-01T10:22:50.5240580-05:00" endTime="2026-10-01T10:22:51.6328230-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10c8d6df-322f-4c4b-8996-e29e560f506f" />
+    <UnitTestResult executionId="d50e0376-9b26-443e-9449-7b08e21d4b9e" testId="1ac289b1-e8f0-25f5-d0a2-261e025103c2" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.An_undecided_player_holds_the_world_while_an_opponent_walks_its_committed_retreat" computerName="mac" duration="00:00:04.5394563" startTime="2026-10-01T10:22:42.7175720-05:00" endTime="2026-10-01T10:22:47.2679470-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d50e0376-9b26-443e-9449-7b08e21d4b9e" />
+    <UnitTestResult executionId="e1547515-9e54-488a-a2a1-6b12a1becbd3" testId="e639ea2a-c84f-3384-e87a-b0b66dd99824" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths" computerName="mac" duration="00:00:05.6616255" startTime="2026-10-01T10:22:47.9772760-05:00" endTime="2026-10-01T10:22:53.6390680-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e1547515-9e54-488a-a2a1-6b12a1becbd3" />
+    <UnitTestResult executionId="17035887-c7a2-4c4d-afe3-da2f5d35031b" testId="4e0ab05b-b2e0-d3d1-a994-7747638b0ec6" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners" computerName="mac" duration="00:00:05.9202652" startTime="2026-10-01T10:22:42.7175640-05:00" endTime="2026-10-01T10:22:48.6731390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="17035887-c7a2-4c4d-afe3-da2f5d35031b">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Contains() Failure: Sub-string not found
+String:    "Each pending action requires exactly one complete "···
+Not found: "standing continuation"</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatRootCodecTests.cs:line 94
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f5be8ea3-cf24-45ce-b081-4b5627dbaba3" testId="25081524-53db-9822-dd2f-ca9bcb78f243" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs" computerName="mac" duration="00:00:05.2547849" startTime="2026-10-01T10:22:42.7175670-05:00" endTime="2026-10-01T10:22:47.9758810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f5be8ea3-cf24-45ce-b081-4b5627dbaba3" />
+    <UnitTestResult executionId="18d2f8c7-24f8-4180-901c-c63e62de4861" testId="d25a4663-6199-b03f-f0d5-1933ed15c0dd" testName="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact" computerName="mac" duration="00:00:01.7590306" startTime="2026-10-01T10:22:47.2761030-05:00" endTime="2026-10-01T10:22:49.0352540-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="18d2f8c7-24f8-4180-901c-c63e62de4861" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ff970a00-c030-ceda-76f8-10790cc9b08b">
+      <Execution id="92d5cdcb-c05f-4890-9653-4804dff77b66" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8c05d1e2-6867-77bf-a9a2-215e1fc1940c">
+      <Execution id="04b05bab-a366-494f-9532-a6403161a69d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e639ea2a-c84f-3384-e87a-b0b66dd99824">
+      <Execution id="e1547515-9e54-488a-a2a1-6b12a1becbd3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="Ordinary_victory_and_defeat_still_end_retreat_capable_encounters_through_their_own_paths" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d25a4663-6199-b03f-f0d5-1933ed15c0dd">
+      <Execution id="18d2f8c7-24f8-4180-901c-c63e62de4861" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests" name="Queue_admission_refuses_unsupported_scope_lost_locomotion_and_respects_centre_contact" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.A_conflicting_reuse_of_a_committed_retreat_identity_is_refused_and_the_exact_retry_is_not" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="00a39c7e-7eda-bf75-1efb-2aff05bcf898">
+      <Execution id="5b1f7570-cbe4-41f6-b894-efa22966296c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests" name="A_conflicting_reuse_of_a_committed_retreat_identity_is_refused_and_the_exact_retry_is_not" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="72f7ca56-57a3-0e95-cc9a-1d387f8b2b48">
+      <Execution id="09433338-6fc3-41af-9cf2-64c99752f366" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.Retreat.RetreatWheelCaptureTests.The_first_wheel_opening_at_a_ready_boundary_captures_current_offers_not_the_previous_frame" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2e45153c-bc8b-5547-f3ab-a80d6f83a6b8">
+      <Execution id="668ac407-eb65-42be-80ff-07e8d96f4b50" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.Retreat.RetreatWheelCaptureTests" name="The_first_wheel_opening_at_a_ready_boundary_captures_current_offers_not_the_previous_frame" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1da37632-596c-04f6-ca6c-58d617e10fad">
+      <Execution id="d25c4386-f073-4662-b23b-df2092477b9d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9029b1dd-8eeb-19cc-44ca-7546b58ed6f4">
+      <Execution id="10c8d6df-322f-4c4b-8996-e29e560f506f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests" name="The_final_sample_keeps_contact_or_disengages_and_retains_cancelled_choice_identities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="71f9152b-114d-038c-f914-f281116fbde1">
+      <Execution id="97e4f157-4a54-40fe-96db-194581caca23" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests" name="Changed_conditions_mid_route_interrupt_without_movement_and_a_held_actor_gets_no_other_choice" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="25081524-53db-9822-dd2f-ca9bcb78f243">
+      <Execution id="f5be8ea3-cf24-45ce-b081-4b5627dbaba3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="An_opted_in_wolf_retreats_through_the_same_intent_admission_body_and_costs" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="72f97a2b-4ca9-667a-8e5e-bd5cc04947d1">
+      <Execution id="054e14f7-f7c1-4273-9553-b8537f6ceead" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests" name="Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4e0ab05b-b2e0-d3d1-a994-7747638b0ec6">
+      <Execution id="17035887-c7a2-4c4d-afe3-da2f5d35031b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests" name="Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="799c8e9a-143d-7a04-8175-5fd10ed17d9a">
+      <Execution id="f58ef962-6490-47b1-8d41-4ea157fa6f2b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests" name="A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests.An_undecided_player_holds_the_world_while_an_opponent_walks_its_committed_retreat" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1ac289b1-e8f0-25f5-d0a2-261e025103c2">
+      <Execution id="d50e0376-9b26-443e-9449-7b08e21d4b9e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatContrastTests" name="An_undecided_player_holds_the_world_while_an_opponent_walks_its_committed_retreat" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="1da37632-596c-04f6-ca6c-58d617e10fad" executionId="d25c4386-f073-4662-b23b-df2092477b9d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="799c8e9a-143d-7a04-8175-5fd10ed17d9a" executionId="f58ef962-6490-47b1-8d41-4ea157fa6f2b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72f97a2b-4ca9-667a-8e5e-bd5cc04947d1" executionId="054e14f7-f7c1-4273-9553-b8537f6ceead" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="00a39c7e-7eda-bf75-1efb-2aff05bcf898" executionId="5b1f7570-cbe4-41f6-b894-efa22966296c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72f7ca56-57a3-0e95-cc9a-1d387f8b2b48" executionId="09433338-6fc3-41af-9cf2-64c99752f366" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8c05d1e2-6867-77bf-a9a2-215e1fc1940c" executionId="04b05bab-a366-494f-9532-a6403161a69d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2e45153c-bc8b-5547-f3ab-a80d6f83a6b8" executionId="668ac407-eb65-42be-80ff-07e8d96f4b50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ff970a00-c030-ceda-76f8-10790cc9b08b" executionId="92d5cdcb-c05f-4890-9653-4804dff77b66" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="71f9152b-114d-038c-f914-f281116fbde1" executionId="97e4f157-4a54-40fe-96db-194581caca23" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9029b1dd-8eeb-19cc-44ca-7546b58ed6f4" executionId="10c8d6df-322f-4c4b-8996-e29e560f506f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ac289b1-e8f0-25f5-d0a2-261e025103c2" executionId="d50e0376-9b26-443e-9449-7b08e21d4b9e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e639ea2a-c84f-3384-e87a-b0b66dd99824" executionId="e1547515-9e54-488a-a2a1-6b12a1becbd3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e0ab05b-b2e0-d3d1-a994-7747638b0ec6" executionId="17035887-c7a2-4c4d-afe3-da2f5d35031b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="25081524-53db-9822-dd2f-ca9bcb78f243" executionId="f5be8ea3-cf24-45ce-b081-4b5627dbaba3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d25a4663-6199-b03f-f0d5-1933ed15c0dd" executionId="18d2f8c7-24f8-4180-901c-c63e62de4861" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="15" executed="15" passed="14" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.39]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.78]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.94]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:06.94]       Assert.Contains() Failure: Sub-string not found
+[xUnit.net 00:00:06.94]       String:    "Each pending action requires exactly one complete "···
+[xUnit.net 00:00:06.94]       Not found: "standing continuation"
+[xUnit.net 00:00:06.94]       Stack Trace:
+[xUnit.net 00:00:06.94]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatRootCodecTests.cs(94,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners()
+[xUnit.net 00:00:06.94]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:11.01]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T10:22:48.6804110-05:00">
+        <Text>[xUnit.net 00:00:06.94]     OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatRootCodecTests.Retreat_roots_round_trip_and_refuse_other_versions_malformed_fields_and_inconsistent_owners [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

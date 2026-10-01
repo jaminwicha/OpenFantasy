@@ -104,8 +104,9 @@ public sealed class LocalNpcController
         return actions.AsReadOnly();
     }
 
-    internal IReadOnlyList<WorldActionCommand> SelectEncounterChoices(WorldSnapshot state, Func<EntityId> newIdentity) =>
-        new LocalEncounterController().SelectChoices(state, newIdentity);
+    internal IReadOnlyList<WorldActionCommand> SelectEncounterChoices(WorldSnapshot state, Func<EntityId> newIdentity,
+        Retreat.LocalRetreatConfiguration? retreat = null) =>
+        new LocalEncounterController(retreat).SelectChoices(state, newIdentity);
 
     private static int Direction(EntityId worldId, EntityId actorId, ulong cycle)
     {

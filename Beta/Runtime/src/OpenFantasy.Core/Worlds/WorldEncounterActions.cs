@@ -13,11 +13,16 @@ public static class WorldEncounterActions
         return timing.DueActors.Where(actor => CanParticipate(world, actor.ActorId)).ToArray();
     }
 
+    /// <summary>
+    /// Full Wait: a due required human without a choice holds the encounter. A committed retreat is that actor's
+    /// standing choice at each of its boundaries, so it never holds; it is never a timeout or automatic choice.
+    /// </summary>
     public static bool HasRequiredDecisions(WorldSnapshot world)
     {
         var timing = world.Pacing!.Encounter!;
         return DueActors(world).Any(actor => actor.Control == EncounterActorControl.RequiredHuman
-            && !timing.Decisions.Any(decision => decision.ActorId == actor.ActorId));
+            && !timing.Decisions.Any(decision => decision.ActorId == actor.ActorId)
+            && !WorldEncounterRetreats.HoldsActor(world, actor.ActorId));
     }
 
     public static bool IsOutcome(WorldSnapshot world) => world.EncounterActions is { } actions

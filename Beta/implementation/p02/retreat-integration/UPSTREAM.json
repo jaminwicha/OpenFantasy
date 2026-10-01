@@ -1,0 +1,19 @@
+{
+  "checkpoint": "codex/checkpoint-before-live-evidence-skill-20261001T171847Z",
+  "sourceHead": "cf5c1ece712af77754bdc079e4290514e6b44f67",
+  "sourceBefore": "85139bd4edb124a22012f436ee66d629a409cd1132473dfa4ab329d5eb48409a",
+  "sourceAfter": "3b9449d68d5c5e3843be76881c28a2c515cb3dcb18479fee6a864bd3c3e71a75",
+  "frontmatterUnchanged": true,
+  "scope": [
+    "rendered reading interval",
+    "captured expiry versus publication",
+    "actual archive cut"
+  ],
+  "backupDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/live-evidence-skill-k6rhbrgm/backup",
+  "synchronizedEntrypoints": 3,
+  "validation": "Maintained sync verified three changed targets and the active alignment manifest. Frontmatter unchanged; narrow instructions reviewed against real rendered, delayed-submission and archive-cut failures/proofs. quick_validate.py could not run: system Python lacks PyYAML. No dependency installed and no executable-game or behavioral-skill acceptance claimed.",
+  "restore": "Guarded sync rollback using backupDirectory/receipt.json while available; checkpoint preserves the prior source. Restore mapped targets only after checking their current sourceAfter hash. Unrelated working files are excluded.",
+  "ecosystemCommit": "80e0d736c2858533b2931ebfa3d138a34abe7c58",
+  "source": "GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+  "activeAlignmentVerifiedFiles": 71
+}

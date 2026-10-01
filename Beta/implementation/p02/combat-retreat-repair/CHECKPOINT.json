@@ -1,0 +1,14 @@
+{
+  "status": "WIP before correction; not accepted",
+  "ref": "codex/checkpoint-before-retreat-correction-20261001T144353Z",
+  "snapshot": "db040c0d3fa7a16d3781fa6e04d8f325e610e3d0",
+  "parent": "2cf2c3c27f7f943e7f840e6ee7fbf25a9af606c0",
+  "scope": [
+    "Beta/Runtime",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/p02/combat-retreat",
+    "Beta/implementation/p02/combat-retreat-repair"
+  ],
+  "verification": "Delivery matrix/source matched; independent critique and mandatory proof gaps remain.",
+  "databaseBackups": "../combat-retreat/DELIVERY_CHECKPOINT.json"
+}

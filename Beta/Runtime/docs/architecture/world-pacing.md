@@ -23,6 +23,7 @@ one exploration interval.
 | Resolve Wait choice | Zero | Positive readiness debt; no passive work |
 | Tactical advance | 50 ms, five tactical units | Only a newly completed 1,800 ms interval earns passive effects |
 | Profile-twenty-four entry, staging or outcome release | Zero | Retains debt, carry and actual positions |
+| Profile-thirty-four retreat sample or disengagement | Zero | One walked sample and its positive readiness debt; [retreat](encounter-retreat.md) keeps carry |
 
 Thirty-five tactical ticks retain 1,750 ms of carry. The next tick earns one interval; restart preserves
 that carry and boundary. Choices, resolution, focus loss, waiting for a human and host stalls never

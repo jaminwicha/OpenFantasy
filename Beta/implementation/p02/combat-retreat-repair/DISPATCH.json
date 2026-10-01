@@ -1,0 +1,22 @@
+{
+  "status": "completed_pending_review",
+  "startedUtc": "2026-10-01T14:44:34.308253+00:00",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-repair-z1a6zaph",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 7200,
+  "maxBudgetUsd": 50,
+  "foregroundCommandSeconds": 960,
+  "contextSha256": "6f572d1b852440e9fab9955a8a1cd20609311162d7be329a3bf6d7aee5274c75",
+  "assignment": "Correct critic P1-P8 and complete lawful-retreat crash/archive/native-trade and additional identity/codec/refusal proofs.",
+  "returnedModelVerification": {
+    "canonicalModel": "claude-opus-5-5",
+    "contextWindow": 1000000
+  },
+  "processExitCode": 0,
+  "elapsedSeconds": 6498.154,
+  "clientCostEstimateUsd": 24.821563199999996,
+  "contextPostflight": "verified",
+  "permissionDenials": [],
+  "acceptance": "Incomplete; twelve modes match final source/binaries, fresh legacy authentication fails and required proof/UI gaps remain."
+}

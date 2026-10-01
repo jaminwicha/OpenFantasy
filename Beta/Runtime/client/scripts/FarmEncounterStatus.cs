@@ -22,7 +22,9 @@ internal sealed class FarmEncounterStatus(Label label)
                 : lifecycle.ReleaseActionHash is not null
                 ? "Encounter over · Continue exploring when ready."
                 : "Incapacitated · No aid is available in this encounter.",
-            _ => view.Encounter?.PlayerDecisionQueued == true ? "Choice queued · Waiting for resolution"
+            _ => view.Retreat?.Progress is { } retreat
+                ? FormattableString.Invariant($"Retreating · step {retreat.SamplesTaken} of {retreat.RouteSamples}")
+                : view.Encounter?.PlayerDecisionQueued == true ? "Choice queued · Waiting for resolution"
                 : view.Encounter?.PlayerIsDue == true ? "Choose your action · World waiting"
                 : "Recovering · World time continues until a choice is needed"
         };

@@ -162,7 +162,9 @@ buyer and seller accounts.
 The fixed farm grid does not present this world. [Cargo presentation](cargo-presentation.md) draws the
 player's bounded observation of actual regions through one projection, composes Marla and Kegga from their
 own source appearances, and lets the player choose either stall by its market identity; the `--cargo` entry
-opens the world natively. The corridor threat join must admit an encounter whose entry geometry and aftermath lie on the
+opens the world natively. A separate fresh selection, the retreat-capable cargo world, adds the
+[encounter retreat](encounter-retreat.md) law (profile 34) to this same composition; it is the legal exit a strong
+road threat depends on. The corridor threat join must admit an encounter whose entry geometry and aftermath lie on the
 `bandit_camp` crossing cells (x=346, y∈[305,317)); escort and guard wages, traveling NPC traders, lived
 migration and multiplayer are separate joins, and no narration stands in for them. The sixteen-region local
 bound is fixed and fifteen are used, so a corridor encounter footprint, escort staging or town layout needs

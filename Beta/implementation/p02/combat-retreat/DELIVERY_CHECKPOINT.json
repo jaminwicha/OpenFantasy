@@ -1,0 +1,256 @@
+{
+  "status": "WIP, not accepted",
+  "ref": "codex/checkpoint-combat-retreat-delivery-20261001T141946Z",
+  "snapshot": "b7f5d9a6d9464db163195dbe47c43e930592287c",
+  "parent": "2cf2c3c27f7f943e7f840e6ee7fbf25a9af606c0",
+  "scope": [
+    "Beta/Runtime",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/p02/combat-retreat"
+  ],
+  "verification": "Eleven final reports match sources and assemblies; required proofs missing, critic pending.",
+  "databaseByteBackups": [
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/cargo-native-20261001T134014Z-6ca82/native-cargo-aujxdkv_/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/cargo-native-20261001T134014Z-6ca82/native-cargo-aujxdkv_/keyboard.sqlite",
+      "sha256": "272c355d955d9974982f47e221850bc80c46c501bea8cdfce9473f2117252808",
+      "bytes": 5140480
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/cargo-native-20261001T134014Z-6ca82/native-cargo-aujxdkv_/onboarding.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/cargo-native-20261001T134014Z-6ca82/native-cargo-aujxdkv_/onboarding.sqlite",
+      "sha256": "4517ded8e709ed3a04a8c4a1b184a5056a18e6a775408d49a02d9c375ec96764",
+      "bytes": 1024000
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/cargo-native-20261001T140309Z-1aa28/native-cargo-eo64z_9g/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/cargo-native-20261001T140309Z-1aa28/native-cargo-eo64z_9g/keyboard.sqlite",
+      "sha256": "e4a19e01f241637ff98e8218d1dea19ddfdd2e97d809e5b36d7ea667998a5e76",
+      "bytes": 5136384
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/cargo-native-20261001T140309Z-1aa28/native-cargo-eo64z_9g/onboarding.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/cargo-native-20261001T140309Z-1aa28/native-cargo-eo64z_9g/onboarding.sqlite",
+      "sha256": "ab585d1efd9642232f4a1ec185c995280158aeb47d3437297d75269c0176de7a",
+      "bytes": 1019904
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T132959Z-56254/cargo/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T132959Z-56254/cargo/save.sqlite",
+      "sha256": "224d9ce425d1fe26c41bd67f1bab12565bdf29a44258a9298002f3c7fd62640c",
+      "bytes": 356352
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T132959Z-56254/gifts/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T132959Z-56254/gifts/save.sqlite",
+      "sha256": "db45ea8708096241b45838222a73f371e6f9c879b8a19642691a7966b4b86427",
+      "bytes": 552960
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T132959Z-56254/retreat/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T132959Z-56254/retreat/save.sqlite",
+      "sha256": "b4f2f3a96f86fa26eafd5abe29fc9e15c2a7b076dd0b719d82836a0b7bd30771",
+      "bytes": 761856
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T132959Z-56254/trading/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T132959Z-56254/trading/save.sqlite",
+      "sha256": "c13aade078879ace68160fff9e8867e4d708b842deb4e6685ea3202e4db50392",
+      "bytes": 724992
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133130Z-2407b/cargo/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133130Z-2407b/cargo/save.sqlite",
+      "sha256": "b76a1dcaac9dda0a465637dad7cd6f2d2b782acf4f99f5383a8d18e57fbfea96",
+      "bytes": 356352
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133130Z-2407b/gifts/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133130Z-2407b/gifts/save.sqlite",
+      "sha256": "db45ea8708096241b45838222a73f371e6f9c879b8a19642691a7966b4b86427",
+      "bytes": 552960
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133130Z-2407b/retreat/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133130Z-2407b/retreat/save.sqlite",
+      "sha256": "63310f68071dd237318ac6b69eab34b8a8e61df93ebb55cde29988ef0992581c",
+      "bytes": 761856
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133130Z-2407b/trading/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133130Z-2407b/trading/save.sqlite",
+      "sha256": "673fefeb7e72b00122796844f575b936e8578d01a07900fa6f802c2dc998aeb2",
+      "bytes": 720896
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133336Z-801d3/cargo/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133336Z-801d3/cargo/save.sqlite",
+      "sha256": "8a62db2a65332ac762caed8d93ce8ad55e9d064213dc00d53f41438f76bc4350",
+      "bytes": 356352
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133336Z-801d3/gifts/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133336Z-801d3/gifts/save.sqlite",
+      "sha256": "db45ea8708096241b45838222a73f371e6f9c879b8a19642691a7966b4b86427",
+      "bytes": 552960
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133336Z-801d3/retreat/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133336Z-801d3/retreat/save.sqlite",
+      "sha256": "9528053f20256270f30d70561239a12cf3e3844292cd76598d43cbb5dc3e3f64",
+      "bytes": 761856
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T133336Z-801d3/trading/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T133336Z-801d3/trading/save.sqlite",
+      "sha256": "4097a0246bd3006505c6e59055b4cc3d115e999de12d3b0046ba86c0d55dc1e9",
+      "bytes": 724992
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/cargo/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T140019Z-e16e6/cargo/save.sqlite",
+      "sha256": "3025d69d09ef7e2637614cfac2b06d3eb3d1ef743ff47dc172aa0079b8b87a75",
+      "bytes": 356352
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/gifts/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T140019Z-e16e6/gifts/save.sqlite",
+      "sha256": "db45ea8708096241b45838222a73f371e6f9c879b8a19642691a7966b4b86427",
+      "bytes": 552960
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/retreat/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T140019Z-e16e6/retreat/save.sqlite",
+      "sha256": "502acec29b9104ae0bf8b2819ebb295fc14cf4d607bff95d505f6e74c9da7fdd",
+      "bytes": 765952
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/fixtures-20261001T140019Z-e16e6/trading/save.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/fixtures-20261001T140019Z-e16e6/trading/save.sqlite",
+      "sha256": "1b336971ed701cd9a4bebf90f029fd2078dbf3b4fdd56d888740b1af5c88d289",
+      "bytes": 720896
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T134831Z-ac739/native-gifts-2r4nqe1u/controller.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T134831Z-ac739/native-gifts-2r4nqe1u/controller.sqlite",
+      "sha256": "49804f2bddb7ad0a2efa372054a61f2f9755a47e8718308a14528dbb392afd21",
+      "bytes": 573440
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T134831Z-ac739/native-gifts-2r4nqe1u/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T134831Z-ac739/native-gifts-2r4nqe1u/keyboard.sqlite",
+      "sha256": "b695229c1d52002467fd04385fcad10b90e1f2a64264f030d78e39d74f1b40bc",
+      "bytes": 573440
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T134831Z-ac739/native-gifts-2r4nqe1u/pointer.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T134831Z-ac739/native-gifts-2r4nqe1u/pointer.sqlite",
+      "sha256": "06b43ea605561dac8979acf9db19cb5cefcdcdb8d51a0168d68ae33478194bd0",
+      "bytes": 573440
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T134831Z-ac739/native-trading-rgl0z00o/controller.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T134831Z-ac739/native-trading-rgl0z00o/controller.sqlite",
+      "sha256": "7c0bbdaabd3e7d4f027d627a3fe2bf49330c918f59843a2eabf1f3187dab0952",
+      "bytes": 786432
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T134831Z-ac739/native-trading-rgl0z00o/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T134831Z-ac739/native-trading-rgl0z00o/keyboard.sqlite",
+      "sha256": "2873c4e331f47a1352a7701d2ef78569be434f675d7a455a143ce6d487a8f79c",
+      "bytes": 790528
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T134831Z-ac739/native-trading-rgl0z00o/pointer.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T134831Z-ac739/native-trading-rgl0z00o/pointer.sqlite",
+      "sha256": "c05a01d04b08d583d809b7a932f6746c7a8bf71a97dd5d890e3601da9d14e228",
+      "bytes": 790528
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-gifts-aen1kzdc/controller.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T141105Z-15330/native-gifts-aen1kzdc/controller.sqlite",
+      "sha256": "08f89ebac17adeba9612a0989c6d864a3448889baa984b33005aadd40f625dbb",
+      "bytes": 573440
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-gifts-aen1kzdc/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T141105Z-15330/native-gifts-aen1kzdc/keyboard.sqlite",
+      "sha256": "0e9a564a533aea0876c386598a18e4510c6c296dc2c284a228c1e967d974be05",
+      "bytes": 573440
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-gifts-aen1kzdc/pointer.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T141105Z-15330/native-gifts-aen1kzdc/pointer.sqlite",
+      "sha256": "54f07359677ff974986cb0a40de425927327649e1f4593013c46af000d6ba98b",
+      "bytes": 573440
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/controller.sqlite",
+      "sha256": "f8b8683bfb8660b071bc9966578a25af383d0ffb0298b861fca36ed762376ace",
+      "bytes": 786432
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/keyboard.sqlite",
+      "sha256": "29d79486af564769fdf6adfefd6850f236f861755171297d379142432b50f2f0",
+      "bytes": 786432
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/legacy-native-20261001T141105Z-15330/native-trading-u7fswyq9/pointer.sqlite",
+      "sha256": "6c973279813d5a64f5be20fc23d8c7992cf7af4ccf142b4171f2b75ca8074b4c",
+      "bytes": 786432
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133032Z-4a481/native-retreat-tco5y0ow/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T133032Z-4a481/native-retreat-tco5y0ow/keyboard.sqlite",
+      "sha256": "f6b56c1fc07d000cbc4b1045520f36240f2ec863ae49d9dddfbaf2d07f1233fb",
+      "bytes": 868352
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133154Z-c721a/native-retreat-5pqgknb9/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T133154Z-c721a/native-retreat-5pqgknb9/keyboard.sqlite",
+      "sha256": "8dcdb1f11e4f73172eb45442df7783479887db04d7efd7fbb42de5e7586af73b",
+      "bytes": 868352
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/controller.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/controller.sqlite",
+      "sha256": "ac6199c89777a5bab1a402e45ba13cc56a28c78c3085b3e05c396788f7a8eebc",
+      "bytes": 909312
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/keyboard.sqlite",
+      "sha256": "447484fa3b254c770c9a715c092e2e15e27d2d23463cbcdf25bd384c8358f333",
+      "bytes": 909312
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/pointer.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T133401Z-ad1e8/native-retreat-mm_9xprh/pointer.sqlite",
+      "sha256": "511e6b83c2059d421e1569230999e3686f0273ca214ff9e2d04f15ed1b509341",
+      "bytes": 909312
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/controller.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/controller.sqlite",
+      "sha256": "6da683ede6c24de4a94365d5c8253168726bb823d150e06d82ecb09afced45c8",
+      "bytes": 905216
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/keyboard.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/keyboard.sqlite",
+      "sha256": "7b43e95ba36d3bf6036fb89ce1a4a07bf769102e2150812442221a8d8a787456",
+      "bytes": 905216
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/pointer.sqlite",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9/evidence-backup/qualification/native-20261001T140110Z-d28d9/native-retreat-74kst20p/pointer.sqlite",
+      "sha256": "123d4c1df0b357be6ef9b2caa3fdd57e42fbb39655d21d0bbe4ff2d6250cc8df",
+      "bytes": 905216
+    }
+  ],
+  "restore": "Restore selected owned files from snapshot into a separate checkout; byte-copy each database and any matching sidecars together from backup before opening. Original save untouched.",
+  "privateReviewTask": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-retreat-critic-fha5ptf9"
+}
