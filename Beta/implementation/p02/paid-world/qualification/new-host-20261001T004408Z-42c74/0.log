@@ -1,0 +1,102 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.54]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.38]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.60]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Battle_defeat_and_pending_care_refuse_whole_steps_then_the_treated_issuer_settles_its_terms [3 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_held_quest_reward_cannot_share_a_batch_with_a_fill_but_funds_it_in_causal_order [380 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_real_cut_and_reopening_keep_superseded_withdrawn_and_carried_quotes_exact [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote [466 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_handless_then_slain_wolf_and_a_recovering_issuer_cannot_settle_until_a_ready_human_does [694 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities [3 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.An_issuer_withdraws_a_stale_stock_quote_freeing_a_slot_with_exact_retry [416 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen [374 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Filling_one_of_sixteen_quotes_supersedes_the_rest_and_frees_the_shared_book [286 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner [174 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True) [195 ms]
+[xUnit.net 00:00:15.00]     OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(paidFirst: False) [FAIL]
+[xUnit.net 00:00:15.01]       System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+[xUnit.net 00:00:15.01]       Stack Trace:
+[xUnit.net 00:00:15.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs(143,0): at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion)
+[xUnit.net 00:00:15.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs(149,0): at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions)
+[xUnit.net 00:00:15.01]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs(120,0): at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(Boolean paidFirst)
+[xUnit.net 00:00:15.01]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:15.01]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:15.17]     OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(paidFirst: True) [FAIL]
+[xUnit.net 00:00:15.17]       System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+[xUnit.net 00:00:15.17]       Stack Trace:
+[xUnit.net 00:00:15.17]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs(143,0): at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion)
+[xUnit.net 00:00:15.17]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs(149,0): at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions)
+[xUnit.net 00:00:15.17]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs(120,0): at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(Boolean paidFirst)
+[xUnit.net 00:00:15.17]            at InvokeStub_PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(Object, Span`1)
+[xUnit.net 00:00:15.17]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False) [210 ms]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(paidFirst: False) [254 ms]
+  Error Message:
+   System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs:line 143
+   at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs:line 149
+   at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(Boolean paidFirst) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs:line 120
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(paidFirst: True) [167 ms]
+  Error Message:
+   System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs:line 143
+   at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs:line 149
+   at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(Boolean paidFirst) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs:line 120
+   at InvokeStub_PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_competing_for_one_lot_settle_only_the_first_in_batch_order(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Complete_admission_refuses_missing_payment_causes_and_repriced_historical_fills [236 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Independent_delivery_is_required_before_issuance_acceptance_and_retry_disclosure [410 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_seller_collecting_its_own_fee_is_credited_once_through_hosted_replay [606 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles [303 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [3 s]
+[xUnit.net 00:00:20.40]     OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(reversed: True) [FAIL]
+[xUnit.net 00:00:20.40]       System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+[xUnit.net 00:00:20.40]       Stack Trace:
+[xUnit.net 00:00:20.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs(143,0): at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion)
+[xUnit.net 00:00:20.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs(149,0): at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions)
+[xUnit.net 00:00:20.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs(45,0): at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(Boolean reversed)
+[xUnit.net 00:00:20.40]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:20.40]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:20.66]     OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(reversed: False) [FAIL]
+[xUnit.net 00:00:20.66]       System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+[xUnit.net 00:00:20.66]       Stack Trace:
+[xUnit.net 00:00:20.66]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs(143,0): at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion)
+[xUnit.net 00:00:20.66]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs(149,0): at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions)
+[xUnit.net 00:00:20.66]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs(45,0): at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(Boolean reversed)
+[xUnit.net 00:00:20.66]            at InvokeStub_PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(Object, Span`1)
+[xUnit.net 00:00:20.66]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:20.86]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(reversed: True) [223 ms]
+  Error Message:
+   System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs:line 143
+   at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs:line 149
+   at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(Boolean reversed) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs:line 45
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(reversed: False) [264 ms]
+  Error Message:
+   System.ArgumentException : A batch needs unique commands, one action per actor, in its own world/branch.
+  Stack Trace:
+     at OpenFantasy.Core.Worlds.WorldStepBatch..ctor(EntityId causeId, EntityId worldId, EntityId branchId, UInt64 expectedRevision, UInt64 expectedAdvancingSteps, WorldBatchKind kind, IEnumerable`1 movement, IEnumerable`1 actions, UInt16 profileVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs:line 143
+   at OpenFantasy.Hosting.Tests.Care.CareRewardJourney.Batch(WorldSnapshot state, WorldBatchKind kind, IEnumerable`1 actions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CareRewardJourney.cs:line 149
+   at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(Boolean reversed) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs:line 45
+   at InvokeStub_PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_once_in_batch_order(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_can_spend_quoted_stock_but_cannot_authorize_a_stale_paid_transfer [188 ms]
+
+Test Run Failed.
+Total tests: 23
+     Passed: 19
+     Failed: 4
+ Total time: 21.6886 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/new-host-20261001T004408Z-42c74/OpenFantasy.Hosting.Tests.trx

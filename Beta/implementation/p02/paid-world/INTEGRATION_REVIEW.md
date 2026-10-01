@@ -77,9 +77,11 @@ supersessions, authenticated withdrawal after genuine gift-spent stock, a real c
 exact reopen and permanently occupied identities. Canonical permutations and forged causes refuse.
 These results accept this coherent lifecycle/runtime increment, not every original assignment proof.
 
-The [boundary-test assignment](BOUNDARY_PROOF_ASSIGNMENT.md) remains required for direct hosted
-availability, multi-command and late-reconciliation contrasts. Protected/reserved stock cases must
-use valid admitted state; their applicability and proof limits must be stated rather than inferred
-from shared arithmetic. No source-only review substitutes for a required behavior test. The original
-assignment, full market integration, production and P00–P14 gates remain open.
+The [boundary follow-up](BOUNDARY_INTEGRATION_REVIEW.md) adds actual availability, multi-command
+and fee contrasts, with24 paid Host passes and1,877 distinct managed cases across the unchanged
+runtime baseline and final follow-up. Four process kills and six SQL corruption refusals also pass
+on the rebuilt Host. Two eligible counterparties, capacity/protected/reserved stock and late rollback
+remain unproved; see the precise [open checklist](INTEGRATION_CHECKLIST.md#required-boundaries-still-open-after-the-opus-follow-up).
+No source-only review substitutes for those tests. Original assignment, full market integration,
+production and P00–P14 gates remain open.
 

@@ -18,3 +18,30 @@ This is a review plan, not acceptance evidence. Implementation belongs to the bo
 | Scope honesty | Fresh new-profile persistence does not prove migration of the retained profile27 save, native UI, process-kill safety, production latency or multiplayer authentication. Keep each remaining proof explicit. |
 
 Read the most consequential changed methods and representative adversarial tests rather than replaying the external conversation. Use a single independent critic at the coherent checkpoint, targeting remaining uncertainty. Preserve the source database, all513 prior test/fixture files,23 frozen specs and the predecessor index against `PRESERVATION.json`. Check affected timeless architecture links and source claims in the same increment.
+
+
+## Required boundaries still open after the Opus follow-up
+
+The lifecycle milestone and new hosted tests do not close these original requirements:
+
+1. Two independently eligible, funded and manipulating counterparties accepting one issuer's quotes
+   in one batch. The existing two-human/two-wolf fixture only proves the invalid-wolf contrast.
+   Create a legitimate fresh three-person genesis or use a subsequently admitted third merchant;
+   a convenience fixture's roster is not the complete profile's actor-admission limit. Pin both
+   acceptances succeeding alone before testing both combined orders, exact single payment, sibling
+   closure, identities and reopen.
+2. Insufficient combined recipient capacity, protected stock and reserved stock through actual
+   profile32 admission. Establish a valid genesis or lawful in-world transition for each condition.
+   A wolf's small pack cannot prove capacity because manipulation fails first. Shared component
+   tests remain valuable but do not replace these world-boundary tests.
+3. A paid plan that succeeds locally and is rejected by later complete-world reconciliation.
+   Investigate a legitimate receiving-capacity obligation or physical load/containment constraint;
+   show local success, the specific late rejection and rollback of every transaction owner and
+   spawned identity, while preserving ordinary time. If a specific proposed state is impossible,
+   prove the actual admission constraint and choose another reachable failure; do not equate missing
+   helper APIs or fixture content with impossibility. No runtime test hook or injected lived state.
+
+The dead issuer's eventual expiry remains an additional targeted lifecycle contrast. Ordinary expiry
+already has hosted evidence; a dead-specific run is not silently claimed from it. Participant history,
+knowledge/privacy, control/roster transitions and native pacing remain explicit later integration
+contracts in the full plan. Original assignment acceptance and all production/phase gates stay open.

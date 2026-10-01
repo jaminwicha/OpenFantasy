@@ -106,3 +106,19 @@ a transaction context but did not close its connection before starting the Host.
 explicitly closes that owned connection; source/Host rules and all deadlines are unchanged. The
 original final-run and probe reports remain failed. Only the affected process/storage proofs are
 rerun against the same pinned binaries; the managed suite does not need a ceremonial repeat.
+
+
+## Boundary-proof integration
+
+The Opus follow-up delivered eight passing new Host cases after retaining four invalid same-actor
+batch fixture failures. Runtime and old tests stayed exact. Its report's "complete for priorities1/2"
+is narrower than full required evidence: two eligible human counterparties were not exercised, and
+capacity/protection/late rollback remain unproved. A fixture's two-human roster is not proof that a
+larger legitimate fresh genesis is forbidden; that work was expressly permitted in the assignment.
+The new cases are useful, but those original requirements remain open.
+
+Astra pinned the gift conflict's exact Unavailable reason. Its first additional recovering-caller
+check then attempted an issuer-readiness check one step later; that step had legitimately retired
+the final recovery delay. The retained new-host-20261001T005145Z-c6dfb failure exposes a test
+sequencing assumption, not a runtime defect. Two separate real journeys now test the caller and
+issuer at the same pre-step boundary, preserving both requirements and ordinary time advancement.

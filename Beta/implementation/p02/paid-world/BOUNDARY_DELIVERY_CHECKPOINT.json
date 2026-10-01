@@ -1,0 +1,24 @@
+{
+  "checkpoint": "codex/checkpoint-paid-boundary-delivery-20261001T005123Z",
+  "snapshotCommit": "dc4c8ebecb508a75f86b17a5e573fb4e5fd7386d",
+  "sourceHead": "ebd235408ac14cfc82b0ab2812d5d9ec7d65fe41",
+  "sourcePaths": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Availability.cs",
+    "Beta/implementation/p02/paid-world/BOUNDARY_PROOF_DISPATCH.json",
+    "Beta/implementation/p02/paid-world/BOUNDARY_PROOF_RESULT.md",
+    "Beta/implementation/p02/paid-world/qualification/build-20261001T004343Z-dbc61/0.log",
+    "Beta/implementation/p02/paid-world/qualification/build-20261001T004343Z-dbc61/report.json",
+    "Beta/implementation/p02/paid-world/qualification/build-20261001T004657Z-c6910/0.log",
+    "Beta/implementation/p02/paid-world/qualification/build-20261001T004657Z-c6910/report.json",
+    "Beta/implementation/p02/paid-world/qualification/new-host-20261001T004408Z-42c74/0.log",
+    "Beta/implementation/p02/paid-world/qualification/new-host-20261001T004408Z-42c74/OpenFantasy.Hosting.Tests.trx",
+    "Beta/implementation/p02/paid-world/qualification/new-host-20261001T004408Z-42c74/report.json",
+    "Beta/implementation/p02/paid-world/qualification/new-host-20261001T004709Z-150ab/0.log",
+    "Beta/implementation/p02/paid-world/qualification/new-host-20261001T004709Z-150ab/OpenFantasy.Hosting.Tests.trx",
+    "Beta/implementation/p02/paid-world/qualification/new-host-20261001T004709Z-150ab/report.json"
+  ],
+  "scope": "Opus test-only delivery, reports and failed original fixtures; no predecessor staging",
+  "verification": "Build and23 WorldExchange Host cases pass, including8 new; original broader required proofs remain open",
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

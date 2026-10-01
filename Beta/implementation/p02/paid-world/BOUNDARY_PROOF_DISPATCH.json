@@ -1,0 +1,41 @@
+{
+  "status": "integrated_partial_scope",
+  "private": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-paid-boundary-proof-j_qi7yop",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "timeoutSeconds": 1500,
+  "clientEstimateLimitUsd": 18,
+  "sourceHead": "ebd235408ac14cfc82b0ab2812d5d9ec7d65fe41",
+  "ownedPaths": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Availability.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Atomicity.cs",
+    "Beta/implementation/p02/paid-world/BOUNDARY_PROOF_RESULT.md"
+  ],
+  "contextHash": "96eb0156b3c87789b4caef5ce718d8d276b814da32a4c3d5485b7688ae340840",
+  "scope": "Complete original hosted rejection/ordering/rollback evidence with new tests; no runtime edits or new critic round.",
+  "startedUtc": "2026-10-01T00:29:11.870672+00:00",
+  "adapterExitCode": 0,
+  "durationSeconds": 1169.482,
+  "clientCostEstimateUsd": 6.894989800000002,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 112,
+      "outputTokens": 125481,
+      "cacheReadInputTokens": 9295889,
+      "cacheCreationInputTokens": 315718,
+      "webSearchRequests": 0,
+      "costUSD": 6.894989800000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 84482,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextStatus": "verified",
+  "permissionDenials": [],
+  "acceptance": "Eight worker cases integrated and strengthened to nine added cases; final24 paid Host cases pass. Lead review and final rebuild process/storage proof pass. Original capacity/protection/late rollback and eligible-counterparty race requirements remain open.",
+  "contextPreflight": "verified",
+  "contextPostflight": "verified"
+}

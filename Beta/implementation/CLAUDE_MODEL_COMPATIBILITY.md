@@ -114,3 +114,14 @@ failed requests. The critic's initial outside-Git preparation error occurred bef
 The incomplete first implementation still imposed lead integration work. Estimates are neither
 billing nor demonstrated net credit savings. The [integration record](p02/paid-world/INTEGRATION_REVIEW.md)
 owns acceptance and residual coverage; model availability alone does not prove completion.
+
+
+The distinct [boundary-test follow-up](p02/paid-world/BOUNDARY_PROOF_DISPATCH.json) returned verified
+Opus5.5/1M metadata with requested Max, verified pre/post context and no denials. Duration1,169.482s;
+client estimate$6.8949898 under the1,500s/$18 limits. It delivered two new test files and eight passing
+cases after retaining four invalid batch-fixture failures. Astra reviewed the tests and strengthened
+caller readiness and exact refusal evidence. Runtime remained unchanged. The result is useful partial
+completion: capacity/protection/late-reconciliation proofs and a race between eligible counterparties
+remain open. Its initial claim that the larger fixture was outside assignment scope is incorrect;
+a legitimate fresh genesis was explicitly permitted. This required lead correction, not a routing or
+permission repair. No automatic paid retry occurred; no billing or net credit-saving claim is made.

@@ -70,17 +70,31 @@ these are neither billing nor demonstrated savings. The initial implementation w
 Astra integrated it. Its claimed timeout was incorrect: it finished inside its3,000s bound.
 The repair is terminal. No external model request is currently running.
 
-A [bounded Opus boundary-test assignment](p02/paid-world/BOUNDARY_PROOF_ASSIGNMENT.md) is prepared
-but not dispatched. It addresses the original required evidence for unavailable actors, conflicting
-same-step transactions, capacity/protection and late rollback. It owns only two new test files and
-its result; runtime remains lead-owned. Do not close those gaps with source inspection alone.
-The earlier qualification is terminal and the WIP snapshot below preserves this source; the
-lifecycle checkpoint supplies a clean committed integration base.
-Use exact `claude-opus-5-5[1m]`, Max,1,500s/$18 limit and synchronized context; no automatic retry.
+The [Opus boundary-test follow-up](p02/paid-world/BOUNDARY_INTEGRATION_REVIEW.md) is terminal and
+integrated at `codex/milestone-paid-world-boundaries-20261001`. It produced eight useful passing
+cases; Astra strengthened them to nine additions, with24 paid Host cases passing. VerifiedOpus5.5/1M,
+requestedMax, verified pre/post context, no denials; duration1,169.482s, client estimate$6.8949898.
+Its four invalid batch-fixture failures and the lead's recovery-delay sequencing failure are retained.
+There is no external job or approval waiting. Runtime and all pre-existing source/tests stay exact.
+
+The [final evidence](p02/paid-world/qualification/boundary-final-20261001T005350Z/FINAL_CHECKS.json)
+combines1,737 Core +140 selected Host =1,877 distinct managed passes, with24 paid cases on the final
+build. It retains broad regression on identical runtime source rather than repeating it for test-only
+additions. Four real process kills and six SQL corruption refusals pass on the exact rebuilt Host.
+This is composite qualification, not one uninterrupted full-suite run. All preservation pins hold.
+
+Next close the [remaining required boundaries](p02/paid-world/INTEGRATION_CHECKLIST.md#required-boundaries-still-open-after-the-opus-follow-up):
+two eligible human counterparties in one step; valid capacity/protected/reserved-stock refusals; and
+an actual late complete-candidate failure with all-owner rollback. A two-human convenience fixture
+does not establish that a larger admitted fresh genesis is impossible; that was within assignment
+scope. The Opus report is useful partial evidence, not full priority/assignment closure. Determine
+valid fixtures and exact admission constraints before another bounded implementation unit; do not
+automatically retry the broad external packet or relax any gate. Dead-issuer expiry is an additional
+unrun contrast. Pricing, scheduled/native markets and full campaign requirements remain unchanged.
 
 [Lead notes](p02/paid-world/LEAD_REVIEW_NOTES.md) retain failures and review dispositions.
 Recoverable refs: clean start9867ecb; delivery WIP760ee87; integration WIP3cab884; pre-repair
-WIP3c7a45e; boundary-proof WIPdeeaac1. Exact refs/source/verification are recorded in the packet's preservation and checkpoint
+WIP3c7a45e; boundary-proof WIPdeeaac1; worker delivery WIPdc4c8eb. Exact refs/source/verification are recorded in the packet's preservation and checkpoint
 JSON files. None of these WIP references represents assignment or phase acceptance.
 
 The [atomic spot exchange component](p02/spot-exchange/INTEGRATION_REVIEW.md) is accepted at
