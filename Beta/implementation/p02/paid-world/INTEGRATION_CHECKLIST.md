@@ -34,12 +34,12 @@ The lifecycle milestone and new hosted tests do not close these original require
    profile32 admission. Establish a valid genesis or lawful in-world transition for each condition.
    A wolf's small pack cannot prove capacity because manipulation fails first. Shared component
    tests remain valuable but do not replace these world-boundary tests.
-3. A paid plan that succeeds locally and is rejected by later complete-world reconciliation.
-   Investigate a legitimate receiving-capacity obligation or physical load/containment constraint;
-   show local success, the specific late rejection and rollback of every transaction owner and
-   spawned identity, while preserving ordinary time. If a specific proposed state is impossible,
-   prove the actual admission constraint and choose another reachable failure; do not equate missing
-   helper APIs or fixture content with impossibility. No runtime test hook or injected lived state.
+3. **Qualified:** the [placed-liquid proof](LIQUID_ROLLBACK_PROOF.md) now demonstrates local paid
+   success, accepted reservoir capacity, the specific later liquid-placement rejection, all-owner
+   rollback and unoccupied split identity through real Host publication/reopen/retry. The stock is
+   actual admitted water in the helper's secondary owned reservoir. Normal passive time/liquid
+   progression is checked separately against an empty advancing step. No new runtime hook or
+   fabricated lived state is used.
 
 The dead issuer's eventual expiry remains an additional targeted lifecycle contrast. Ordinary expiry
 already has hosted evidence; a dead-specific run is not silently claimed from it. Participant history,

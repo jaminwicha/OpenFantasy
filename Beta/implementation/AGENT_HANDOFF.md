@@ -84,13 +84,23 @@ additions. Four real process kills and six SQL corruption refusals pass on the e
 This is composite qualification, not one uninterrupted full-suite run. All preservation pins hold.
 
 Next close the [remaining required boundaries](p02/paid-world/INTEGRATION_CHECKLIST.md#required-boundaries-still-open-after-the-opus-follow-up):
-two eligible human counterparties in one step; valid capacity/protected/reserved-stock refusals; and
-an actual late complete-candidate failure with all-owner rollback. A two-human convenience fixture
+two eligible human counterparties in one step and valid capacity/protected/reserved-stock refusals.
+The [placed-liquid proof](p02/paid-world/LIQUID_ROLLBACK_PROOF.md) now closes late all-owner rollback:
+local goods/payment and reservoir capacity succeed, detailed liquid placement rejects, and the real
+Host preserves owners/identities through reopen/retry while normal passive time advances. Build and
+all25 paid Host cases pass; runtime is unchanged. Its initial new-test compile failure is retained. A two-human convenience fixture
 does not establish that a larger admitted fresh genesis is impossible; that was within assignment
 scope. The Opus report is useful partial evidence, not full priority/assignment closure. Determine
 valid fixtures and exact admission constraints before another bounded implementation unit; do not
 automatically retry the broad external packet or relax any gate. Dead-issuer expiry is an additional
 unrun contrast. Pricing, scheduled/native markets and full campaign requirements remain unchanged.
+
+The next [Opus assignment](p02/paid-world/STOCK_GENESIS_ASSIGNMENT.md) is prepared, not executed.
+It owns three new test/fixture files and its result. The existing internal fresh-farm composition
+callback and Hosting friend assembly provide actual authoring seams before geography/care bind.
+A legitimate third human and explicit genesis constraints are allowed; lived-state injection and
+runtime hooks are not. Route exactlyOpus5.5/1M/requestedMax with1,800s/$20 limits and synchronized
+context after the lead proof is committed. No other external job is active.
 
 [Lead notes](p02/paid-world/LEAD_REVIEW_NOTES.md) retain failures and review dispositions.
 Recoverable refs: clean start9867ecb; delivery WIP760ee87; integration WIP3cab884; pre-repair

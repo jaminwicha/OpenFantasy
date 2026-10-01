@@ -1,0 +1,39 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.44]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.92]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile [730 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Battle_defeat_and_pending_care_refuse_whole_steps_then_the_treated_issuer_settles_its_terms [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_held_quest_reward_cannot_share_a_batch_with_a_fill_but_funds_it_in_causal_order [273 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_real_cut_and_reopening_keep_superseded_withdrawn_and_carried_quotes_exact [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote [176 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.An_issuer_withdraws_a_stale_stock_quote_freeing_a_slot_with_exact_retry [194 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen [173 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Filling_one_of_sixteen_quotes_supersedes_the_rest_and_frees_the_shared_book [180 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_handless_then_slain_wolf_and_recovering_people_cannot_settle_until_ready(recoveringCaller: False) [422 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_handless_then_slain_wolf_and_recovering_people_cannot_settle_until_ready(recoveringCaller: True) [389 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner [90 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True) [112 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False) [120 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_on_one_lot_in_one_batch_block_each_other_without_effect(paidFirst: True) [199 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_on_one_lot_in_one_batch_block_each_other_without_effect(paidFirst: False) [194 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_at_most_once(wolfFirst: False) [219 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_at_most_once(wolfFirst: True) [205 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Complete_admission_refuses_missing_payment_causes_and_repriced_historical_fills [168 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Independent_delivery_is_required_before_issuance_acceptance_and_retry_disclosure [133 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_seller_collecting_its_own_fee_is_credited_once_through_hosted_replay [180 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_locally_valid_paid_water_transfer_rolls_back_when_it_would_detach_live_liquid_placement [216 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles [143 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [2 s]
+[xUnit.net 00:00:13.65]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_can_spend_quoted_stock_but_cannot_authorize_a_stale_paid_transfer [259 ms]
+
+Test Run Successful.
+Total tests: 25
+     Passed: 25
+ Total time: 14.2479 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/new-host-20261001T010530Z-d527f/OpenFantasy.Hosting.Tests.trx

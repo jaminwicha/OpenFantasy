@@ -67,6 +67,13 @@ through `CurrencyLedger.Transfer` with `SpotQuote.PaymentsFor`. The production r
 because a custody movement is neither a craft nor a use. The standalone `SupportsSpotExchange`/V12
 capability is never selected. Settlement uses both participants' work opportunity.
 
+A quoted storage must belong to its actor under the admitted custody policy; it need not be that
+resident's primary pack. Ownership alone does not establish that a transfer fits every world owner.
+For example, an ordinary counted transfer cannot detach placed water from the source intervals
+still owned by liquid cells. Reservoir and liquid-placement reconciliation qualify the complete
+candidate after local goods and payment arithmetic. Drawing or moving that liquid requires an
+operation that changes its placement together with custody.
+
 **Withdrawal** is the issuer's own command for one of its open quotes, for example when the pinned stock
 became stale or protected or the offer is no longer wanted. After the shared command checks it requires
 an open, not yet due quote whose issuer is the submitting actor. A missing, closed, due or foreign quote
