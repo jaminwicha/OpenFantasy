@@ -1,0 +1,53 @@
+{
+  "reason": "Read-only SQL prefix inspection of closed exported WAL-mode databases created unpinned empty WAL/shared-memory caches. Only zero-WAL pairs were copied to private backup and removed; all canonical database bytes remain exact. Future closed-export SQL reads should use immutable=1 after asserting there is no WAL.",
+  "removed": [
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T084317Z-da5e9/journey/mid-trip.sqlite-wal",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T084317Z-da5e9-mid-trip.sqlite-wal",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T084317Z-da5e9/journey/mid-trip.sqlite-shm",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T084317Z-da5e9-mid-trip.sqlite-shm",
+      "size": 32768,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T084317Z-da5e9/journey/final.sqlite-wal",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T084317Z-da5e9-final.sqlite-wal",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T084317Z-da5e9/journey/final.sqlite-shm",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T084317Z-da5e9-final.sqlite-shm",
+      "size": 32768,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T095005Z-72b9c/journey/mid-trip.sqlite-wal",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T095005Z-72b9c-mid-trip.sqlite-wal",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T095005Z-72b9c/journey/mid-trip.sqlite-shm",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T095005Z-72b9c-mid-trip.sqlite-shm",
+      "size": 32768,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T095005Z-72b9c/journey/final.sqlite-wal",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T095005Z-72b9c-final.sqlite-wal",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T095005Z-72b9c/journey/final.sqlite-shm",
+      "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-empty-sql-sidecars-5k25r1xe/journey-20261001T095005Z-72b9c-final.sqlite-shm",
+      "size": 32768,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    }
+  ]
+}

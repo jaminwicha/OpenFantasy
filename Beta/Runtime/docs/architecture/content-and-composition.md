@@ -19,6 +19,17 @@ range/ATB transforms and newly authored anatomy are explicit. The extra resident
 custody and reservoir binding, has no invented stock or language grant, and leaves Wren's quest intact.
 This source binding is distinct from full ability, monster and death-reward migration.
 
+[Cargo admission](cargo-circuit.md) binds the retained Marla, Kegga, Brasshollow, Gearford and rations
+records by exact file digest and source identity, then extends an unplayed ordinary-care genesis with
+authored corridor regions and both merchants. Every transform (shared anatomy and stat profile, wander
+radius not admitted, declared opening shelf and purse) is explicit; the farm admission is unchanged.
+Retained `world.json` places the corridor overlays are enumerated and checked against a declared,
+versioned overlay set; overlaid places contribute no meaning. Inherited wolf scenarios gain the merchants
+as side-zero bystanders, which changes their scenario versions. Owners that pin the counted admission,
+such as the water capacity domain, are re-prepared from their own retained definitions rather than
+re-authored, and only after the retained state is proven to be the fresh dry genesis. Dialogue, Kegga's quest and the other shop goods remain
+retained facts until a later binding gives them runtime meaning.
+
 ## Design contract: preservation and packages
 
 Predecessor code, content and assets are preservation sources. Full import covers entities, species,

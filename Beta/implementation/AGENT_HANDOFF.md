@@ -73,11 +73,35 @@ active. The packet retains failures, remaining UI limits and before/dispatch/del
 [Upstream guidance](p02/native-trading-refinement/UPSTREAM.json) records ecosystem commit `a557436`
 and verified three-entrypoint synchronization for aggregate-verifier input contracts.
 
-Next: join actual source merchants/stock/funds, bounded legal travel and reusable region presentation
-toward the two-town cargo circuit. [Cargo dependency notes](p02/spot-exchange/CARGO_DEPENDENCIES.md)
-ground that work without claiming an executed route. Multi-stall quote identity/selection is also
-required. Keep physical-device, human art/comprehension, multiplayer, lived migration, cargo and
-production gates open; the native refinement is not full UI or P02 completion.
+The [cargo-world integration](p02/cargo-world/INTEGRATION_REVIEW.md) is accepted at
+`codex/milestone-cargo-world-20261001`.
+Actual source-backed Marla/Kegga counters, finite ration stock and purses, a declared fifteen-region
+route, ordinary travel, a mid-trip save/reopen, exact buy/sell parties and source intervals, inherited
+wolf combat and live mining/water behavior are implemented. The final build, 23 focused cases, full
+journey and 479 affected regression cases pass; the independent saved audit also passes in 265.969s
+under 600s. [Final checks](p02/cargo-world/FINAL_CHECKS.json) establish 481 distinct managed passes on
+1,650 source files and 11 assemblies. No heavy job remains live. The SQL audit confirms the 2,404-commit
+prefix and every non-head historical row remain exact in the 7,730-commit final save; no archive cut occurs.
+
+Implementation, [independent critique](p02/cargo-world/CRITIC_REVIEW.md) and
+[corrections](p02/cargo-world/REPAIR_RESULT.md) returned verified Opus 5.5 / 1M with requested Max and
+synchronized context. Requests are terminal; no external job remains live. The correction took
+1,874.095s / $14.6561638 client estimate within 4,200s/$35. Astra completed its missing live water proof,
+added played-root refusal and reproduced/fixed same-identity collider changes failing to release a stop.
+The original request's shell-shape deviations, correction lock collision and all failed checks remain
+recorded; no permission denial, model substitution or model retry occurred. No net savings are claimed.
+
+[Checkpoint records](p02/cargo-world/REPAIR_DELIVERY_CHECKPOINT.json) preserve the dirty/new delivery;
+[the lead's counterexample checkpoint](p02/cargo-world/LEAD_REPAIR_CHECKPOINT.json) preserves the
+water proof and failing collider test before repair. The timeless reference is updated, including
+world-wide tactical timing and supplied provision metadata versus save-authenticated facts.
+The old runtime/tests, frozen specs, original save and unrelated predecessor index remain exact.
+
+The reusable region presentation, explicit multi-stall identity/choice, threat and guard wages,
+traveling NPCs, lived migration and multiplayer complete later joins in the same full cargo plan.
+[Cargo dependency notes](p02/spot-exchange/CARGO_DEPENDENCIES.md) ground that work without claiming an
+executed route. Keep physical-device, human art/comprehension, infinite-frontier and production gates
+open; a managed circuit is not native cargo, full UI or P02 completion.
 
 The [scheduled-trading integration](p02/scheduled-trading/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-scheduled-trading-20261001`. It binds participant-safe quote/history views,

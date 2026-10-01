@@ -1,0 +1,39 @@
+{
+  "status": "integrated_with_corrections",
+  "sourceHead": "bf0e5a3967b3c270be37b989c98a093ca73c8165",
+  "checkpoint": "codex/checkpoint-before-cargo-world-20261001T080803Z",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 4200,
+  "maxBudgetUsdClientEstimate": 40,
+  "privateTaskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-world-w62qusnx",
+  "contextManifestSha256": "70d01f79699b10476d85bfe9ccafc71e68bc0c81e542b6e35bd889c8aaa19897",
+  "benefit": "Source-backed merchant admission and full authoritative cargo route/recovery in one cohesive implementation unit, followed by Astra integration and independent review.",
+  "dispatchCheckpoint": "codex/checkpoint-cargo-world-dispatch-20261001T081307Z",
+  "dispatchSnapshot": "87d20a8bca2d6d34bf04a5d83c075d7abd777276",
+  "execSession": 72157,
+  "startedUtc": "2026-10-01T08:13:54.577064+00:00",
+  "elapsedSeconds": 2196.306,
+  "totalCostUsdClientEstimate": 19.71218520000001,
+  "returnedModelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 344,
+      "outputTokens": 202973,
+      "cacheReadInputTokens": 59293266,
+      "cacheCreationInputTokens": 474087,
+      "webSearchRequests": 0,
+      "costUSD": 19.71218520000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 98643,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextStatus": "verified",
+  "permissionDenials": [],
+  "processExitCode": 0,
+  "integrationReview": "INTEGRATION_REVIEW.md",
+  "milestone": "codex/milestone-cargo-world-20261001"
+}

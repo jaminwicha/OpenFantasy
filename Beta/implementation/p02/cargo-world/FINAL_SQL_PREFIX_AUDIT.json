@@ -1,0 +1,44 @@
+{
+  "accepted": true,
+  "journeyReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T095005Z-72b9c/report.json",
+  "journeyReportSha256": "74b6c33ec38f09a83f8ffd37d22ebfb0de21c97140bd33d301ea60a70630d924",
+  "tables": {
+    "world_checkpoints": {
+      "prefixRows": 1,
+      "finalRows": 2,
+      "preserved": true
+    },
+    "world_command_outcomes": {
+      "prefixRows": 69,
+      "finalRows": 75,
+      "preserved": true
+    },
+    "world_commits": {
+      "prefixRows": 2404,
+      "finalRows": 7730,
+      "preserved": true
+    },
+    "world_genesis": {
+      "prefixRows": 1,
+      "finalRows": 1,
+      "preserved": true
+    },
+    "world_head": {
+      "prefixRows": 1,
+      "finalRows": 1,
+      "preserved": false
+    },
+    "world_material_care_segments": {
+      "prefixRows": 0,
+      "finalRows": 0,
+      "preserved": true
+    },
+    "world_occupied_identity": {
+      "prefixRows": 2550,
+      "finalRows": 7889,
+      "preserved": true
+    }
+  },
+  "mutableHeadExcluded": true,
+  "originalArtifactsUnchanged": true
+}

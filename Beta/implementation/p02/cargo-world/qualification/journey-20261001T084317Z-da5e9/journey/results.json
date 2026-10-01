@@ -1,0 +1,506 @@
+{
+  "snapshot.genesis": {
+    "Revision": 0,
+    "AdvancingSteps": 0,
+    "StateHash": "662989056a7c12ecfc5061fe65011bee726b3768978798e21638f156338a415d"
+  },
+  "sources": {
+    "origin": {
+      "SourceId": "marla",
+      "Name": "Marla",
+      "TileX": 96,
+      "TileY": 350,
+      "place": "brasshollow",
+      "placePointer": "/regions/0",
+      "Pointer": "/npcs/12",
+      "payload": "27ed7de55f28c34caa3525690301dce8035a026d0a2cf194d177edea988ef65d",
+      "appearance": "a570495443501867d74ac6cca47ec01f9065033aa652cdf5616530cd628836cf",
+      "Dialogue": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+      "Shop": [
+        "potion",
+        "tonic",
+        "ether",
+        "rations",
+        "copper_axe",
+        "copper_pickaxe",
+        "sickle"
+      ],
+      "Quests": []
+    },
+    "destination": {
+      "SourceId": "kegga",
+      "Name": "Kegga Toolwright",
+      "TileX": 347,
+      "TileY": 140,
+      "place": "gearford",
+      "placePointer": "/regions/2",
+      "Pointer": "/npcs/31",
+      "payload": "a304d2dd66b930e4b2dfc5d307f5a547d63be128cbd3d9915125657caf20044a",
+      "appearance": "bd46a233a1133e34b8d5fb0878c753373d9cd3692120892ebec783305b9c93eb",
+      "Dialogue": "A dull tool is a slow funeral. Buy sharp.",
+      "Shop": [
+        "iron_axe",
+        "iron_pickaxe",
+        "copper_axe",
+        "copper_pickaxe",
+        "sickle",
+        "rations"
+      ],
+      "Quests": [
+        "kegga_timber"
+      ]
+    },
+    "good": {
+      "SourceId": "rations",
+      "SourcePrice": 25,
+      "Pointer": "/items/16",
+      "payload": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030"
+    }
+  },
+  "admission": {
+    "ProfileVersion": 33,
+    "admission": "6f023021876e6f3303999f0503f782681686c8285919634996cd9727d7b98b06",
+    "residents": [
+      "Bramble Wolf",
+      "Marla",
+      "Bramble Wolf",
+      "Kegga Toolwright",
+      "Traveler",
+      "Wren"
+    ],
+    "regions": 15,
+    "brasshollow": {
+      "MerchantSourceId": "marla",
+      "OpeningUnits": 8,
+      "StorageCapacity": 12,
+      "PurseGil": 0,
+      "version": "839a7c15b5d8b1fe08ae8c29faf17ff30dd553345f9f270cf61bbc931fce7d5f"
+    },
+    "gearford": {
+      "MerchantSourceId": "kegga",
+      "OpeningUnits": 0,
+      "StorageCapacity": 8,
+      "PurseGil": 80,
+      "version": "a111c2c0c75e155a754e202f2a5e9cd4cadd818f814c11618f8b2a07fbbf35b1"
+    },
+    "supply": 280
+  },
+  "snapshot.before-departure": {
+    "Revision": 231,
+    "AdvancingSteps": 228,
+    "StateHash": "657d7bcd9f4be4e3cbada1a925267e2d8a365da6d48722504e2f639fbe5fc822"
+  },
+  "snapshot.mid-trip-before-save": {
+    "Revision": 2224,
+    "AdvancingSteps": 2221,
+    "StateHash": "8e499ac918647bb2bb26c10de0a7c5a337ec71ede4692f2ada7b1caf3e885264"
+  },
+  "recovery": {
+    "boundary": "corridor corner",
+    "Revision": 2224,
+    "AdvancingSteps": 2221,
+    "stateHash": "8e499ac918647bb2bb26c10de0a7c5a337ec71ede4692f2ada7b1caf3e885264",
+    "reopenedHash": "8e499ac918647bb2bb26c10de0a7c5a337ec71ede4692f2ada7b1caf3e885264",
+    "cargoLot": "8ac141e51a69fee20383faf9f02cd00e",
+    "corner": "(346,349,0)"
+  },
+  "snapshot.final": {
+    "Revision": 7550,
+    "AdvancingSteps": 7547,
+    "StateHash": "b4d62217ac60273d936493c63f3be1ebbd94ba61a853f0e67916a5f0b59c4735"
+  },
+  "route": {
+    "corridorRegions": 14,
+    "totalRegions": 15,
+    "originApproach": "(97,349,0)",
+    "destinationApproach": "(346,141,0)",
+    "walks": [
+      {
+        "Label": "farm-to-brasshollow",
+        "StartCell": "(101,325,1)",
+        "EndCell": "(97,349,1)",
+        "Waypoints": 4,
+        "Cutoffs": 224,
+        "AppliedSamples": 224,
+        "RegionTransitions": 0,
+        "RegionSequence": [
+          0
+        ],
+        "PlannedLegs": 4,
+        "Replans": 0,
+        "AdvancingSteps": 224,
+        "ElapsedSeconds": 6.577
+      },
+      {
+        "Label": "brasshollow-to-corner",
+        "StartCell": "(97,349,1)",
+        "EndCell": "(346,349,1)",
+        "Waypoints": 32,
+        "Cutoffs": 1992,
+        "AppliedSamples": 1992,
+        "RegionTransitions": 7,
+        "RegionSequence": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "PlannedLegs": 32,
+        "Replans": 0,
+        "AdvancingSteps": 1992,
+        "ElapsedSeconds": 44.72
+      },
+      {
+        "Label": "corner-to-gearford",
+        "StartCell": "(346,349,1)",
+        "EndCell": "(346,141,1)",
+        "Waypoints": 26,
+        "Cutoffs": 1664,
+        "AppliedSamples": 1664,
+        "RegionTransitions": 6,
+        "RegionSequence": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "PlannedLegs": 26,
+        "Replans": 0,
+        "AdvancingSteps": 1664,
+        "ElapsedSeconds": 29.245
+      },
+      {
+        "Label": "gearford-to-brasshollow",
+        "StartCell": "(346,141,1)",
+        "EndCell": "(97,349,1)",
+        "Waypoints": 58,
+        "Cutoffs": 3656,
+        "AppliedSamples": 3656,
+        "RegionTransitions": 13,
+        "RegionSequence": [
+          13,
+          12,
+          11,
+          10,
+          9,
+          8,
+          7,
+          6,
+          5,
+          4,
+          3,
+          2,
+          1,
+          0
+        ],
+        "PlannedLegs": 58,
+        "Replans": 0,
+        "AdvancingSteps": 3656,
+        "ElapsedSeconds": 61.863
+      }
+    ]
+  },
+  "prices": {
+    "marlaOutbound": {
+      "ask": 20,
+      "bid": 13,
+      "fee": 0,
+      "observedStep": 226,
+      "ageInSteps": 0
+    },
+    "marlaReturn": {
+      "ask": 24,
+      "bid": 16,
+      "fee": 0,
+      "observedStep": 7547,
+      "ageInSteps": 0
+    },
+    "keggaArrival": {
+      "ask": null,
+      "bid": 38,
+      "fee": 0,
+      "observedStep": 3887,
+      "ageInSteps": 0
+    },
+    "buyUnit": 22,
+    "buyTotal": 44,
+    "sellUnit": 31,
+    "sellTotal": 62,
+    "reward": 200,
+    "staleRejection": "Unavailable"
+  },
+  "lineage": {
+    "shelf": "e4752b3b80ededf42c91bd1fce1123fc[0,8)",
+    "carried": "e4752b3b80ededf42c91bd1fce1123fc[0,2)",
+    "delivered": "e4752b3b80ededf42c91bd1fce1123fc[0,2)",
+    "carriedLot": "8ac141e51a69fee20383faf9f02cd00e"
+  },
+  "commands": [
+    {
+      "label": "quest.Speak",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.Give",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.Give",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.CloseDialogue",
+      "rejection": "None"
+    },
+    {
+      "label": "observe.marla.outbound",
+      "commandId": "9cd864b5cd8c09813e3b254d04c978c2",
+      "rejection": "None"
+    },
+    {
+      "label": "buy.marla",
+      "commandId": "c7e27ed989245d7f4d3b56dbd83ee347",
+      "rejection": "None"
+    },
+    {
+      "label": "accept.stale-marla-offer",
+      "commandId": "2889df4d83a7697f8bdf3346d9bff0e3",
+      "rejection": "Unavailable"
+    },
+    {
+      "label": "observe.kegga",
+      "commandId": "817a37a9eec13a9d8a45d30751c25a7a",
+      "rejection": "None"
+    },
+    {
+      "label": "show.cargo.kegga",
+      "commandId": "a60795b60f53c85ee28970faa9bafc6b",
+      "rejection": "None"
+    },
+    {
+      "label": "sell.kegga",
+      "commandId": "5bf674b80ff08f2a120dcf79253b9268",
+      "rejection": "None"
+    },
+    {
+      "label": "observe.marla.return",
+      "commandId": "e665f7e209f4dab13b96e0d4817bee94",
+      "rejection": "None"
+    }
+  ],
+  "funds": [
+    {
+      "label": "genesis",
+      "Revision": 0,
+      "AdvancingSteps": 0,
+      "player": 0,
+      "marla": 0,
+      "kegga": 80,
+      "total": 280,
+      "AdmittedSupply": 280,
+      "marlaStock": 8,
+      "keggaStock": 0
+    },
+    {
+      "label": "reward-earned",
+      "Revision": 4,
+      "AdvancingSteps": 1,
+      "player": 200,
+      "marla": 0,
+      "kegga": 80,
+      "total": 280,
+      "AdmittedSupply": 280,
+      "marlaStock": 8,
+      "keggaStock": 0
+    },
+    {
+      "label": "bought-at-marla",
+      "Revision": 231,
+      "AdvancingSteps": 228,
+      "player": 156,
+      "marla": 44,
+      "kegga": 80,
+      "total": 280,
+      "AdmittedSupply": 280,
+      "marlaStock": 6,
+      "keggaStock": 0
+    },
+    {
+      "label": "sold-at-kegga",
+      "Revision": 3893,
+      "AdvancingSteps": 3890,
+      "player": 218,
+      "marla": 44,
+      "kegga": 18,
+      "total": 280,
+      "AdmittedSupply": 280,
+      "marlaStock": 6,
+      "keggaStock": 2
+    },
+    {
+      "label": "returned",
+      "Revision": 7550,
+      "AdvancingSteps": 7547,
+      "player": 218,
+      "marla": 44,
+      "kegga": 18,
+      "total": 280,
+      "AdmittedSupply": 280,
+      "marlaStock": 6,
+      "keggaStock": 2
+    }
+  ],
+  "result": "passed",
+  "commandsSoFar": [
+    {
+      "label": "quest.Speak",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.Give",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.Give",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.CloseDialogue",
+      "rejection": "None"
+    },
+    {
+      "label": "observe.marla.outbound",
+      "commandId": "9cd864b5cd8c09813e3b254d04c978c2",
+      "rejection": "None"
+    },
+    {
+      "label": "buy.marla",
+      "commandId": "c7e27ed989245d7f4d3b56dbd83ee347",
+      "rejection": "None"
+    },
+    {
+      "label": "accept.stale-marla-offer",
+      "commandId": "2889df4d83a7697f8bdf3346d9bff0e3",
+      "rejection": "Unavailable"
+    },
+    {
+      "label": "observe.kegga",
+      "commandId": "817a37a9eec13a9d8a45d30751c25a7a",
+      "rejection": "None"
+    },
+    {
+      "label": "show.cargo.kegga",
+      "commandId": "a60795b60f53c85ee28970faa9bafc6b",
+      "rejection": "None"
+    },
+    {
+      "label": "sell.kegga",
+      "commandId": "5bf674b80ff08f2a120dcf79253b9268",
+      "rejection": "None"
+    },
+    {
+      "label": "observe.marla.return",
+      "commandId": "e665f7e209f4dab13b96e0d4817bee94",
+      "rejection": "None"
+    }
+  ],
+  "walksSoFar": [
+    {
+      "Label": "farm-to-brasshollow",
+      "StartCell": "(101,325,1)",
+      "EndCell": "(97,349,1)",
+      "Waypoints": 4,
+      "Cutoffs": 224,
+      "AppliedSamples": 224,
+      "RegionTransitions": 0,
+      "RegionSequence": [
+        0
+      ],
+      "PlannedLegs": 4,
+      "Replans": 0,
+      "AdvancingSteps": 224,
+      "ElapsedSeconds": 6.577
+    },
+    {
+      "Label": "brasshollow-to-corner",
+      "StartCell": "(97,349,1)",
+      "EndCell": "(346,349,1)",
+      "Waypoints": 32,
+      "Cutoffs": 1992,
+      "AppliedSamples": 1992,
+      "RegionTransitions": 7,
+      "RegionSequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "PlannedLegs": 32,
+      "Replans": 0,
+      "AdvancingSteps": 1992,
+      "ElapsedSeconds": 44.72
+    },
+    {
+      "Label": "corner-to-gearford",
+      "StartCell": "(346,349,1)",
+      "EndCell": "(346,141,1)",
+      "Waypoints": 26,
+      "Cutoffs": 1664,
+      "AppliedSamples": 1664,
+      "RegionTransitions": 6,
+      "RegionSequence": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "PlannedLegs": 26,
+      "Replans": 0,
+      "AdvancingSteps": 1664,
+      "ElapsedSeconds": 29.245
+    },
+    {
+      "Label": "gearford-to-brasshollow",
+      "StartCell": "(346,141,1)",
+      "EndCell": "(97,349,1)",
+      "Waypoints": 58,
+      "Cutoffs": 3656,
+      "AppliedSamples": 3656,
+      "RegionTransitions": 13,
+      "RegionSequence": [
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "PlannedLegs": 58,
+      "Replans": 0,
+      "AdvancingSteps": 3656,
+      "ElapsedSeconds": 61.863
+    }
+  ]
+}

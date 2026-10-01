@@ -1,0 +1,27 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.39]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.80]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.96]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:01:32.42]     OpenFantasy.Hosting.Tests.Content.Cargo.CargoCircuitJourneyTests.The_player_earns_buys_carries_sells_and_returns_on_the_full_route_through_a_saved_reopening [FAIL]
+[xUnit.net 00:01:32.42]       System.InvalidOperationException : Only the counterparty of an open quote whose issuer it can observe may accept it.
+[xUnit.net 00:01:32.42]       Stack Trace:
+[xUnit.net 00:01:32.42]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/PaidQuoteView.cs(114,0): at OpenFantasy.Hosting.Simulation.PaidQuoteView.PrepareAcceptance(EntityId acceptanceCommandId, TrustedCommandDelivery counterpartyDelivery, UInt64 quantity)
+[xUnit.net 00:01:32.42]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCircuitJourneyTests.cs(136,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCircuitJourneyTests.The_player_earns_buys_carries_sells_and_returns_on_the_full_route_through_a_saved_reopening()
+[xUnit.net 00:01:32.42]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:32.43]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCircuitJourneyTests.The_player_earns_buys_carries_sells_and_returns_on_the_full_route_through_a_saved_reopening [1 m 31 s]
+  Error Message:
+   System.InvalidOperationException : Only the counterparty of an open quote whose issuer it can observe may accept it.
+  Stack Trace:
+     at OpenFantasy.Hosting.Simulation.PaidQuoteView.PrepareAcceptance(EntityId acceptanceCommandId, TrustedCommandDelivery counterpartyDelivery, UInt64 quantity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/PaidQuoteView.cs:line 114
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCircuitJourneyTests.The_player_earns_buys_carries_sells_and_returns_on_the_full_route_through_a_saved_reopening() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCircuitJourneyTests.cs:line 136
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 1.5489 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T084101Z-ea90e/journey.trx

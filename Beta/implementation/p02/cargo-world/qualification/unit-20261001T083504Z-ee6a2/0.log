@@ -1,0 +1,57 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.63]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.94]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.19]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted [40 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest [10 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts [32 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused [20 ms]
+[xUnit.net 00:00:04.07]     OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.The_fresh_world_admits_both_merchants_at_their_tiles_with_declared_stock_and_purse_only [FAIL]
+[xUnit.net 00:00:04.07]       System.ArgumentException : Reconciliation requires advancing custody with unchanged scope and admission.
+[xUnit.net 00:00:04.07]       Stack Trace:
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs(131,0): at OpenFantasy.Core.Geography.WatershedRunoffCapacityState.PlanReconcile(CountedAuthorityState inventory, ProductionSnapshot production, Boolean custodyOnly, CancellationToken cancellationToken)
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs(113,0): at OpenFantasy.Core.Geography.WatershedRunoffCapacityState.PlanReconcile(CountedAuthorityState inventory, ProductionSnapshot production, CancellationToken cancellationToken)
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoGenesisExtension.cs(91,0): at OpenFantasy.Hosting.Content.Cargo.CargoGenesisExtension.RebindWater(CountedAuthorityState inventory, LocalSpatialSnapshot space)
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoGenesisExtension.cs(76,0): at OpenFantasy.Hosting.Content.Cargo.CargoGenesisExtension.Build()
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(30,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources)
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(23,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.CreateEmbedded(String seedText, String playerName)
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoWorldAdmissionTests.cs(13,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.<>c.<.cctor>b__4_0()
+[xUnit.net 00:00:04.07]            at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+[xUnit.net 00:00:04.07]            at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+[xUnit.net 00:00:04.07]            at System.Lazy`1.CreateValue()
+[xUnit.net 00:00:04.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoWorldAdmissionTests.cs(18,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.The_fresh_world_admits_both_merchants_at_their_tiles_with_declared_stock_and_purse_only()
+[xUnit.net 00:00:04.07]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:04.07]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.The_fresh_world_admits_both_merchants_at_their_tiles_with_declared_stock_and_purse_only [1 s]
+  Error Message:
+   System.ArgumentException : Reconciliation requires advancing custody with unchanged scope and admission.
+  Stack Trace:
+     at OpenFantasy.Core.Geography.WatershedRunoffCapacityState.PlanReconcile(CountedAuthorityState inventory, ProductionSnapshot production, Boolean custodyOnly, CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs:line 131
+   at OpenFantasy.Core.Geography.WatershedRunoffCapacityState.PlanReconcile(CountedAuthorityState inventory, ProductionSnapshot production, CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Geography/WatershedRunoffCapacityState.cs:line 113
+   at OpenFantasy.Hosting.Content.Cargo.CargoGenesisExtension.RebindWater(CountedAuthorityState inventory, LocalSpatialSnapshot space) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoGenesisExtension.cs:line 91
+   at OpenFantasy.Hosting.Content.Cargo.CargoGenesisExtension.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoGenesisExtension.cs:line 76
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 30
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.CreateEmbedded(String seedText, String playerName) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 23
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.<>c.<.cctor>b__4_0() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoWorldAdmissionTests.cs:line 13
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.The_fresh_world_admits_both_merchants_at_their_tiles_with_declared_stock_and_purse_only() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoWorldAdmissionTests.cs:line 18
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates [1 s]
+[xUnit.net 00:00:06.10]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status [313 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles [288 ms]
+
+Test Run Failed.
+Total tests: 10
+     Passed: 9
+     Failed: 1
+ Total time: 6.8012 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/unit-20261001T083504Z-ee6a2/unit.trx

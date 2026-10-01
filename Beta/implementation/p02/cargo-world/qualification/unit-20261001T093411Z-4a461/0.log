@@ -1,0 +1,55 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.74]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.80]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.09]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted [62 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest [23 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts [71 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused [23 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoOverlayRefinementTests.The_computed_overlays_equal_the_declared_set_and_name_the_bandit_camp_crossing [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoOverlayRefinementTests.An_undeclared_intersection_a_changed_declaration_or_a_vanished_place_is_refused [28 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.A_provision_for_another_merchant_another_profile_root_or_an_oversized_corridor_is_refused [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_opening_shelf_is_the_named_raw_source_role_bound_to_the_farm_rations_output [19 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_admission_version_is_framed_canonically_with_explicit_signed_coordinates [10 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.The_fresh_world_admits_both_merchants_at_their_tiles_with_declared_stock_and_purse_only [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.A_duplicated_identity_or_a_shop_without_the_shared_good_is_refused [77 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_the_stop_is_latched_until_a_relevant_change [477 ms]
+[xUnit.net 00:00:06.27]     OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_retained_water_owners_are_equivalent_except_for_their_inventory_pins [FAIL]
+[xUnit.net 00:00:06.27]       Assert.Equal() Failure: Collections differ
+[xUnit.net 00:00:06.27]                  ↓ (pos 0)
+[xUnit.net 00:00:06.27]       Expected: [ReservoirStorageProjection { Geometry = OpenFantasy.Core.Geography.ReservoirGeometry, ExistingUnits = 6000, ReservedIncomingUnits = 0, ActualFill = OpenFantasy.Core.Geography.ReservoirFill, ProjectedFill = OpenFantasy.Core.Geography.ReservoirFill }]
+[xUnit.net 00:00:06.27]       Actual:   [ReservoirStorageProjection { Geometry = OpenFantasy.Core.Geography.ReservoirGeometry, ExistingUnits = 6000, ReservedIncomingUnits = 0, ActualFill = OpenFantasy.Core.Geography.ReservoirFill, ProjectedFill = OpenFantasy.Core.Geography.ReservoirFill }]
+[xUnit.net 00:00:06.27]                  ↑ (pos 0)
+[xUnit.net 00:00:06.27]       Stack Trace:
+[xUnit.net 00:00:06.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/Refinement/CargoAdmissionRefinementTests.cs(140,0): at OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_retained_water_owners_are_equivalent_except_for_their_inventory_pins()
+[xUnit.net 00:00:06.27]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:06.27]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_retained_water_owners_are_equivalent_except_for_their_inventory_pins [1 s]
+  Error Message:
+   Assert.Equal() Failure: Collections differ
+           ↓ (pos 0)
+Expected: [ReservoirStorageProjection { Geometry = OpenFantasy.Core.Geography.ReservoirGeometry, ExistingUnits = 6000, ReservedIncomingUnits = 0, ActualFill = OpenFantasy.Core.Geography.ReservoirFill, ProjectedFill = OpenFantasy.Core.Geography.ReservoirFill }]
+Actual:   [ReservoirStorageProjection { Geometry = OpenFantasy.Core.Geography.ReservoirGeometry, ExistingUnits = 6000, ReservedIncomingUnits = 0, ActualFill = OpenFantasy.Core.Geography.ReservoirFill, ProjectedFill = OpenFantasy.Core.Geography.ReservoirFill }]
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_retained_water_owners_are_equivalent_except_for_their_inventory_pins() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/Refinement/CargoAdmissionRefinementTests.cs:line 140
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status [637 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles [361 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.Fresh_genesis_is_byte_deterministic_for_one_seed_and_differs_for_another [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoSessionRefinementTests.The_inherited_wolf_fight_latches_refused_movement_and_resumes_after_release_and_debt [17 s]
+[xUnit.net 00:00:30.42]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoSessionRefinementTests.An_open_quote_out_of_reach_and_distant_or_foreign_commands_are_refused_without_effects [10 s]
+
+Test Run Failed.
+Total tests: 20
+     Passed: 19
+     Failed: 1
+ Total time: 31.1429 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/unit-20261001T093411Z-4a461/unit.trx

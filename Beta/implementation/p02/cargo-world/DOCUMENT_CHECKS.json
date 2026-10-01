@@ -1,0 +1,20 @@
+{
+  "accepted": true,
+  "checkedDocuments": {
+    "Beta/Runtime/README.md": "b382320a9f9f3a9c31b75a18b8f499310ef1b5b01cfd2d6804bd2c8d617f8b57",
+    "Beta/Runtime/docs/architecture/README.md": "7966effb0ead52ce8b717753d28d913e4d49427822654699a6d2739700b9f2f8",
+    "Beta/Runtime/docs/architecture/cargo-circuit.md": "bd29abe0bd8b7528cacf04f7d997a81f0ebbaacbd55c2df73762165984b707d4",
+    "Beta/Runtime/docs/architecture/content-and-composition.md": "60f12c53554e308551eb030ae7aa9b6b588ee9f442c0f8c980bb8ad933ab91a7",
+    "Beta/Runtime/docs/architecture/runtime-and-authority.md": "8cf2625696a7ceeceb616808b70d839b89e3b4a5dbe8bd51394c91748b2ad735",
+    "Beta/Runtime/docs/architecture/world-markets.md": "0a766fbe3ec98a6fdace2fc1f6c6c8ec9dd237736529beb33778dd5fa626a744",
+    "Beta/implementation/p02/cargo-world/INTEGRATION_REVIEW.md": "d49683948441f64439ed301641f98bdc4da7702d3e8decfb11eb9f1d7435ec54",
+    "Beta/implementation/p02/cargo-world/REPAIR_RESULT.md": "db2ae14b64a7e520c244453482389346ee869dc206d065b102ac76b16506255c",
+    "Beta/implementation/p02/cargo-world/NATIVE_BINDING_NOTES.md": "4ee9a9e8d9b34bcd308d0fe4395e58aadc19228468fd47fe8639ba7242e67030",
+    "Beta/implementation/AGENT_HANDOFF.md": "6a14fcd53e1cbc29b863812755dd9335467c1f911d5f0b8e58a823614d6912e2",
+    "Beta/implementation/GIT_MILESTONES.md": "2ac53901e096e106a8f4493acfbdacb0ac35ca7b1e93e2ce68ecd73c7f66074a",
+    "Beta/implementation/p02/spot-exchange/INTEGRATION_PLAN.md": "5ad90c439e29df800085fc4ab715e53d716b21feab8a1844ba360d566d62e011"
+  },
+  "localLinksChecked": 376,
+  "missing": [],
+  "sourceReview": "Lead reviewed source ownership, fresh-only composition, raw provenance distinction, exact overlays, water reconstruction, global tactical scope, movement latching and remaining joins. No frozen spec changes."
+}

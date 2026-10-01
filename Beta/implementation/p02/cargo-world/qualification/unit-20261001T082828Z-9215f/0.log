@@ -1,0 +1,23 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.38]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.82]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.99]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted [22 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts [16 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused [8 ms]
+[xUnit.net 00:00:02.30]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates [563 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs [477 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status [110 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles [107 ms]
+
+Test Run Successful.
+Total tests: 9
+     Passed: 9
+ Total time: 2.7486 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/unit-20261001T082828Z-9215f/unit.trx

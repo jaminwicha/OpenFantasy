@@ -1,0 +1,36 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.37]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.79]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.93]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted [24 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts [34 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoOverlayRefinementTests.The_computed_overlays_equal_the_declared_set_and_name_the_bandit_camp_crossing [631 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoWaterIntegrationTests.A_played_ordinary_care_world_cannot_be_relabelled_as_fresh_cargo [667 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoOverlayRefinementTests.An_undeclared_intersection_a_changed_declaration_or_a_vanished_place_is_refused [35 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.A_provision_for_another_merchant_another_profile_root_or_an_oversized_corridor_is_refused [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_opening_shelf_is_the_named_raw_source_role_bound_to_the_farm_rations_output [12 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_admission_version_is_framed_canonically_with_explicit_signed_coordinates [18 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.A_duplicated_identity_or_a_shop_without_the_shared_good_is_refused [77 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoWorldAdmissionTests.The_fresh_world_admits_both_merchants_at_their_tiles_with_declared_stock_and_purse_only [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_the_stop_is_latched_until_a_relevant_change [230 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.The_retained_water_owners_are_equivalent_except_for_their_inventory_pins [885 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status [200 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles [207 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoAdmissionRefinementTests.Fresh_genesis_is_byte_deterministic_for_one_seed_and_differs_for_another [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoWaterIntegrationTests.Ordinary_cargo_excavation_opens_the_bank_and_conserves_water_and_merchants_after_reopening [7 s]
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoSessionRefinementTests.The_inherited_wolf_fight_latches_refused_movement_and_resumes_after_release_and_debt [10 s]
+[xUnit.net 00:00:17.43]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Content.Cargo.Refinement.CargoSessionRefinementTests.An_open_quote_out_of_reach_and_distant_or_foreign_commands_are_refused_without_effects [5 s]
+
+Test Run Successful.
+Total tests: 22
+     Passed: 22
+ Total time: 17.9268 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/unit-20261001T094621Z-67e43/unit.trx

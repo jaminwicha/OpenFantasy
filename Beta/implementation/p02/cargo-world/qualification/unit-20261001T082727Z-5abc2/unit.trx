@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="45f3c3dc-3582-46c2-936b-599e3336b6e7" name="@mac 2026-10-01 03:27:29" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T03:27:29.9745220-05:00" queuing="2026-10-01T03:27:29.9745220-05:00" start="2026-10-01T03:27:27.9850030-05:00" finish="2026-10-01T03:27:29.9884350-05:00" />
+  <TestSettings name="default" id="fe12634b-089a-4b28-99ba-931cfb916035">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_03_27_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="33d4e0a1-de9f-4cae-8fd1-f1cc17866aa8" testId="265e04c6-4a82-dc33-03fe-8f60ef2da6c9" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest" computerName="mac" duration="00:00:00.0078568" startTime="2026-10-01T03:27:29.4422340-05:00" endTime="2026-10-01T03:27:29.4501410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="33d4e0a1-de9f-4cae-8fd1-f1cc17866aa8" />
+    <UnitTestResult executionId="278e62c0-7c3b-4db6-9edf-8bf861866c50" testId="54646874-ecb3-db2b-fcc7-136d8da4720c" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs" computerName="mac" duration="00:00:00.0045297" startTime="2026-10-01T03:27:29.9074680-05:00" endTime="2026-10-01T03:27:29.9121660-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="278e62c0-7c3b-4db6-9edf-8bf861866c50">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains more than one element</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 127
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 48
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f65384a5-3278-4b44-bc9d-03c222c712ac" testId="bd7e1746-e2fd-e16c-d005-015d9c364dd6" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted" computerName="mac" duration="00:00:00.0204068" startTime="2026-10-01T03:27:29.4140750-05:00" endTime="2026-10-01T03:27:29.4388570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f65384a5-3278-4b44-bc9d-03c222c712ac" />
+    <UnitTestResult executionId="70e99ce6-f7b0-49f2-b6c9-cc88e6cbb595" testId="cd07de98-a0e5-109c-487a-1ebf66057ddd" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts" computerName="mac" duration="00:00:00.0158129" startTime="2026-10-01T03:27:29.4506070-05:00" endTime="2026-10-01T03:27:29.4664560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="70e99ce6-f7b0-49f2-b6c9-cc88e6cbb595" />
+    <UnitTestResult executionId="7d8ac8a1-571d-4746-bd12-9b7aa817ecd3" testId="8a9a79c6-8724-84e7-ce74-5c09d8d1fb8d" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles" computerName="mac" duration="00:00:00.0054488" startTime="2026-10-01T03:27:29.9212380-05:00" endTime="2026-10-01T03:27:29.9269760-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d8ac8a1-571d-4746-bd12-9b7aa817ecd3">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains more than one element</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 127
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 24
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="63d13dae-8369-4017-8163-8235a2500c4f" testId="afdcb696-d79b-bb00-9afc-6b25d6e2448c" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused" computerName="mac" duration="00:00:00.0079194" startTime="2026-10-01T03:27:29.4696940-05:00" endTime="2026-10-01T03:27:29.4776300-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63d13dae-8369-4017-8163-8235a2500c4f" />
+    <UnitTestResult executionId="448c9677-0ca6-46e9-a2ab-c9db3f10e786" testId="630818a6-f78f-d468-6ae3-cbd797115f69" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price" computerName="mac" duration="00:00:00.0027357" startTime="2026-10-01T03:27:29.4667180-05:00" endTime="2026-10-01T03:27:29.4694760-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="448c9677-0ca6-46e9-a2ab-c9db3f10e786" />
+    <UnitTestResult executionId="0600b84a-2e9c-4b35-b87c-d42c63ce11de" testId="cac49ba2-c7c1-44a5-8197-9081d5641828" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates" computerName="mac" duration="00:00:00.4787976" startTime="2026-10-01T03:27:29.4140750-05:00" endTime="2026-10-01T03:27:29.9058190-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0600b84a-2e9c-4b35-b87c-d42c63ce11de">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains more than one element</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 127
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 101
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="22303d75-238b-4ff9-aca7-87a34e3dad2d" testId="134c1f31-393a-a109-ea64-a3a99dcc12a3" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status" computerName="mac" duration="00:00:00.0074165" startTime="2026-10-01T03:27:29.9125020-05:00" endTime="2026-10-01T03:27:29.9201600-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22303d75-238b-4ff9-aca7-87a34e3dad2d">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Sequence contains more than one element</Message>
+          <StackTrace>   at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 127
+   at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs:line 83
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cd07de98-a0e5-109c-487a-1ebf66057ddd">
+      <Execution id="70e99ce6-f7b0-49f2-b6c9-cc88e6cbb595" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="The_retained_merchants_places_and_shared_good_bind_with_their_original_facts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="630818a6-f78f-d468-6ae3-cbd797115f69">
+      <Execution id="448c9677-0ca6-46e9-a2ab-c9db3f10e786" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="The_authored_counters_report_their_actual_terms_without_editing_the_source_price" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cac49ba2-c7c1-44a5-8197-9081d5641828">
+      <Execution id="0600b84a-2e9c-4b35-b87c-d42c63ce11de" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8a9a79c6-8724-84e7-ce74-5c09d8d1fb8d">
+      <Execution id="7d8ac8a1-571d-4746-bd12-9b7aa817ecd3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bd7e1746-e2fd-e16c-d005-015d9c364dd6">
+      <Execution id="f65384a5-3278-4b44-bc9d-03c222c712ac" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="afdcb696-d79b-bb00-9afc-6b25d6e2448c">
+      <Execution id="63d13dae-8369-4017-8163-8235a2500c4f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="A_rule_citing_another_good_price_or_source_file_is_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="54646874-ecb3-db2b-fcc7-136d8da4720c">
+      <Execution id="278e62c0-7c3b-4db6-9edf-8bf861866c50" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="265e04c6-4a82-dc33-03fe-8f60ef2da6c9">
+      <Execution id="33d4e0a1-de9f-4cae-8fd1-f1cc17866aa8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="Changed_source_bytes_are_refused_by_their_exact_file_digest" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="134c1f31-393a-a109-ea64-a3a99dcc12a3">
+      <Execution id="22303d75-238b-4ff9-aca7-87a34e3dad2d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="265e04c6-4a82-dc33-03fe-8f60ef2da6c9" executionId="33d4e0a1-de9f-4cae-8fd1-f1cc17866aa8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54646874-ecb3-db2b-fcc7-136d8da4720c" executionId="278e62c0-7c3b-4db6-9edf-8bf861866c50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd7e1746-e2fd-e16c-d005-015d9c364dd6" executionId="f65384a5-3278-4b44-bc9d-03c222c712ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd07de98-a0e5-109c-487a-1ebf66057ddd" executionId="70e99ce6-f7b0-49f2-b6c9-cc88e6cbb595" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8a9a79c6-8724-84e7-ce74-5c09d8d1fb8d" executionId="7d8ac8a1-571d-4746-bd12-9b7aa817ecd3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="afdcb696-d79b-bb00-9afc-6b25d6e2448c" executionId="63d13dae-8369-4017-8163-8235a2500c4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="630818a6-f78f-d468-6ae3-cbd797115f69" executionId="448c9677-0ca6-46e9-a2ab-c9db3f10e786" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cac49ba2-c7c1-44a5-8197-9081d5641828" executionId="0600b84a-2e9c-4b35-b87c-d42c63ce11de" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="134c1f31-393a-a109-ea64-a3a99dcc12a3" executionId="22303d75-238b-4ff9-aca7-87a34e3dad2d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="5" failed="4" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.39]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.76]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.91]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.44]       System.InvalidOperationException : Sequence contains more than one element
+[xUnit.net 00:00:01.44]       Stack Trace:
+[xUnit.net 00:00:01.44]            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+[xUnit.net 00:00:01.44]            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+[xUnit.net 00:00:01.44]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:01.44]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(127,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose()
+[xUnit.net 00:00:01.44]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(101,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates()
+[xUnit.net 00:00:01.44]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.44]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.44]       System.InvalidOperationException : Sequence contains more than one element
+[xUnit.net 00:00:01.44]       Stack Trace:
+[xUnit.net 00:00:01.44]            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+[xUnit.net 00:00:01.44]            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+[xUnit.net 00:00:01.44]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:01.44]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(127,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose()
+[xUnit.net 00:00:01.44]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(48,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs()
+[xUnit.net 00:00:01.44]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.44]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.45]       System.InvalidOperationException : Sequence contains more than one element
+[xUnit.net 00:00:01.45]       Stack Trace:
+[xUnit.net 00:00:01.45]            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+[xUnit.net 00:00:01.45]            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+[xUnit.net 00:00:01.45]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:01.45]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(127,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose()
+[xUnit.net 00:00:01.45]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(83,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status()
+[xUnit.net 00:00:01.45]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.45]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.49]       System.InvalidOperationException : Sequence contains more than one element
+[xUnit.net 00:00:01.49]       Stack Trace:
+[xUnit.net 00:00:01.49]            at System.Linq.ThrowHelper.ThrowMoreThanOneElementException()
+[xUnit.net 00:00:01.49]            at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean&amp; found)
+[xUnit.net 00:00:01.49]            at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+[xUnit.net 00:00:01.49]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(127,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.Circuit.Compose()
+[xUnit.net 00:00:01.49]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/Cargo/CargoCorridorRouteTests.cs(24,0): at OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles()
+[xUnit.net 00:00:01.49]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.49]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.49]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T03:27:29.9105130-05:00">
+        <Text>[xUnit.net 00:00:01.44]     OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T03:27:29.9128700-05:00">
+        <Text>[xUnit.net 00:00:01.44]     OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T03:27:29.9227490-05:00">
+        <Text>[xUnit.net 00:00:01.45]     OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T03:27:29.9765980-05:00">
+        <Text>[xUnit.net 00:00:01.49]     OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

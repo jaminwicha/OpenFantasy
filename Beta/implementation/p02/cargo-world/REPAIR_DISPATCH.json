@@ -1,0 +1,36 @@
+{
+  "status": "integrated_with_lead_completion",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 4200,
+  "maxBudgetUsdClientEstimate": 35,
+  "sourceHead": "bf0e5a3967b3c270be37b989c98a093ca73c8165",
+  "reviewSnapshot": "b0fe54a4eaabd3483794cc3fb6527e2698ce8450",
+  "privateTaskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-repair-378ple8s",
+  "contextManifestSha256": "86a87b787a07571b8c694d965e637fdd41cb926abf1e7e1ca96bd3ee2f157d65",
+  "startedUtc": "2026-10-01T09:12:03.058800+00:00",
+  "execSession": 99305,
+  "elapsedSeconds": 1874.095,
+  "totalCostUsdClientEstimate": 14.656163800000005,
+  "returnedModelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 286,
+      "outputTokens": 187616,
+      "cacheReadInputTokens": 39541979,
+      "cacheCreationInputTokens": 374288,
+      "webSearchRequests": 0,
+      "costUSD": 14.656163800000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 88730,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextStatus": "verified",
+  "permissionDenials": [],
+  "processExitCode": 0,
+  "integrationReview": "INTEGRATION_REVIEW.md",
+  "milestone": "codex/milestone-cargo-world-20261001"
+}

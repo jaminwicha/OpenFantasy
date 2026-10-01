@@ -1,0 +1,50 @@
+{
+  "checkedUtc": "2026-10-01T08:57:48.255951+00:00",
+  "journeyReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/cargo-world/qualification/journey-20261001T084317Z-da5e9/report.json",
+  "tables": {
+    "world_checkpoints": {
+      "midRows": 1,
+      "finalRows": 2,
+      "prefixPreserved": true,
+      "midRowsSha256": "e7253d91c43a8f59e37abe4ea4f6bcdce773602bfb9259080b39f04f3e97a36a"
+    },
+    "world_command_outcomes": {
+      "midRows": 53,
+      "finalRows": 59,
+      "prefixPreserved": true,
+      "midRowsSha256": "aae2c6c41058c95a40b0d4a8828ec234e85b88157a432c7eb845b2c59295f723"
+    },
+    "world_commits": {
+      "midRows": 2224,
+      "finalRows": 7550,
+      "prefixPreserved": true,
+      "midRowsSha256": "6b45f5af56d52743a7f4538ac846d0a9d1001389bb20eb46b9abda71951a0feb"
+    },
+    "world_genesis": {
+      "midRows": 1,
+      "finalRows": 1,
+      "prefixPreserved": true,
+      "midRowsSha256": "277313bf695dd970af495c773a25452b920494f0f01ae8a17b27061608a6c9f3"
+    },
+    "world_head": {
+      "midRows": 1,
+      "finalRows": 1,
+      "prefixPreserved": false,
+      "midRowsSha256": "f9a50425278193e3997027fb84c5c51c887a881e21217547b5e6a63988c8af86"
+    },
+    "world_material_care_segments": {
+      "midRows": 0,
+      "finalRows": 0,
+      "prefixPreserved": true,
+      "midRowsSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "world_occupied_identity": {
+      "midRows": 2335,
+      "finalRows": 7674,
+      "prefixPreserved": true,
+      "midRowsSha256": "19d13fa616987e73dd670545afcf6f4328dea3fa7ea70af66dcdea2243b6ee02"
+    }
+  },
+  "excludedMutableTable": "world_head",
+  "allNonHeadRowsPreserved": true
+}

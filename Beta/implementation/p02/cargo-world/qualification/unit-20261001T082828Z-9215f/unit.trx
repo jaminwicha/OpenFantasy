@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e5895d3d-a474-475d-bb57-c1c8477624c2" name="@mac 2026-10-01 03:28:30" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T03:28:30.9943150-05:00" queuing="2026-10-01T03:28:30.9943150-05:00" start="2026-10-01T03:28:29.0863730-05:00" finish="2026-10-01T03:28:31.8405770-05:00" />
+  <TestSettings name="default" id="e41e8690-fb9b-4c14-821d-f5d2c119b540">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_03_28_30" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="35d8d058-ebdf-40b7-a885-65e49b58ded1" testId="265e04c6-4a82-dc33-03fe-8f60ef2da6c9" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest" computerName="mac" duration="00:00:00.0086975" startTime="2026-10-01T03:28:30.5675890-05:00" endTime="2026-10-01T03:28:30.5763430-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35d8d058-ebdf-40b7-a885-65e49b58ded1" />
+    <UnitTestResult executionId="b3c234a7-ffac-42b8-9e5e-b613a3964ef2" testId="8a9a79c6-8724-84e7-ce74-5c09d8d1fb8d" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles" computerName="mac" duration="00:00:00.1071070" startTime="2026-10-01T03:28:31.6940080-05:00" endTime="2026-10-01T03:28:31.8011690-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3c234a7-ffac-42b8-9e5e-b613a3964ef2" />
+    <UnitTestResult executionId="e53d7d76-23ae-42a4-a2f0-9c18f9dfcf48" testId="afdcb696-d79b-bb00-9afc-6b25d6e2448c" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused" computerName="mac" duration="00:00:00.0086973" startTime="2026-10-01T03:28:30.5975110-05:00" endTime="2026-10-01T03:28:30.6063180-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e53d7d76-23ae-42a4-a2f0-9c18f9dfcf48" />
+    <UnitTestResult executionId="6ead9720-5227-428f-9040-2b79e389ef42" testId="cd07de98-a0e5-109c-487a-1ebf66057ddd" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts" computerName="mac" duration="00:00:00.0169238" startTime="2026-10-01T03:28:30.5767780-05:00" endTime="2026-10-01T03:28:30.5937510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6ead9720-5227-428f-9040-2b79e389ef42" />
+    <UnitTestResult executionId="9ce077c1-7cdb-474c-b54d-86ca78760c97" testId="630818a6-f78f-d468-6ae3-cbd797115f69" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price" computerName="mac" duration="00:00:00.0030152" startTime="2026-10-01T03:28:30.5941970-05:00" endTime="2026-10-01T03:28:30.5972650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9ce077c1-7cdb-474c-b54d-86ca78760c97" />
+    <UnitTestResult executionId="ea93dffb-e261-49c9-ab77-25ecc015d306" testId="bd7e1746-e2fd-e16c-d005-015d9c364dd6" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted" computerName="mac" duration="00:00:00.0223663" startTime="2026-10-01T03:28:30.5365950-05:00" endTime="2026-10-01T03:28:30.5635290-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea93dffb-e261-49c9-ab77-25ecc015d306" />
+    <UnitTestResult executionId="bcded582-5441-428f-a629-8f4e6807d969" testId="54646874-ecb3-db2b-fcc7-136d8da4720c" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs" computerName="mac" duration="00:00:00.4772904" startTime="2026-10-01T03:28:31.1041810-05:00" endTime="2026-10-01T03:28:31.5815370-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bcded582-5441-428f-a629-8f4e6807d969" />
+    <UnitTestResult executionId="90d78abf-f1cd-443a-92be-9543c168f3a7" testId="134c1f31-393a-a109-ea64-a3a99dcc12a3" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status" computerName="mac" duration="00:00:00.1105664" startTime="2026-10-01T03:28:31.5824240-05:00" endTime="2026-10-01T03:28:31.6930500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90d78abf-f1cd-443a-92be-9543c168f3a7" />
+    <UnitTestResult executionId="2035ebb1-1aa0-4b6e-a389-6c839cfbb048" testId="cac49ba2-c7c1-44a5-8197-9081d5641828" testName="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates" computerName="mac" duration="00:00:00.5634024" startTime="2026-10-01T03:28:30.5365950-05:00" endTime="2026-10-01T03:28:31.1033750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2035ebb1-1aa0-4b6e-a389-6c839cfbb048" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_retained_merchants_places_and_shared_good_bind_with_their_original_facts" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cd07de98-a0e5-109c-487a-1ebf66057ddd">
+      <Execution id="6ead9720-5227-428f-9040-2b79e389ef42" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="The_retained_merchants_places_and_shared_good_bind_with_their_original_facts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.The_authored_counters_report_their_actual_terms_without_editing_the_source_price" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="630818a6-f78f-d468-6ae3-cbd797115f69">
+      <Execution id="9ce077c1-7cdb-474c-b54d-86ca78760c97" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="The_authored_counters_report_their_actual_terms_without_editing_the_source_price" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cac49ba2-c7c1-44a5-8197-9081d5641828">
+      <Execution id="2035ebb1-1aa0-4b6e-a389-6c839cfbb048" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="A_refused_sample_is_replanned_once_then_stops_and_a_later_call_revalidates" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8a9a79c6-8724-84e7-ce74-5c09d8d1fb8d">
+      <Execution id="b3c234a7-ffac-42b8-9e5e-b613a3964ef2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="The_corridor_is_fourteen_bounded_regions_covering_both_retained_tiles" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bd7e1746-e2fd-e16c-d005-015d9c364dd6">
+      <Execution id="ea93dffb-e261-49c9-ab77-25ecc015d306" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="A_missing_merchant_or_a_moved_place_is_refused_rather_than_substituted" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.A_rule_citing_another_good_price_or_source_file_is_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="afdcb696-d79b-bb00-9afc-6b25d6e2448c">
+      <Execution id="e53d7d76-23ae-42a4-a2f0-9c18f9dfcf48" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="A_rule_citing_another_good_price_or_source_file_is_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="54646874-ecb3-db2b-fcc7-136d8da4720c">
+      <Execution id="bcded582-5441-428f-a629-8f4e6807d969" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="The_players_real_body_walks_the_whole_route_and_back_in_bounded_ordinary_legs" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests.Changed_source_bytes_are_refused_by_their_exact_file_digest" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="265e04c6-4a82-dc33-03fe-8f60ef2da6c9">
+      <Execution id="35d8d058-ebdf-40b7-a885-65e49b58ded1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoSourceBindingTests" name="Changed_source_bytes_are_refused_by_their_exact_file_digest" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests.An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="134c1f31-393a-a109-ea64-a3a99dcc12a3">
+      <Execution id="90d78abf-f1cd-443a-92be-9543c168f3a7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.Cargo.CargoCorridorRouteTests" name="An_occupied_uncovered_or_overlong_leg_stops_without_movement_and_reports_its_status" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="265e04c6-4a82-dc33-03fe-8f60ef2da6c9" executionId="35d8d058-ebdf-40b7-a885-65e49b58ded1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8a9a79c6-8724-84e7-ce74-5c09d8d1fb8d" executionId="b3c234a7-ffac-42b8-9e5e-b613a3964ef2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="afdcb696-d79b-bb00-9afc-6b25d6e2448c" executionId="e53d7d76-23ae-42a4-a2f0-9c18f9dfcf48" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd07de98-a0e5-109c-487a-1ebf66057ddd" executionId="6ead9720-5227-428f-9040-2b79e389ef42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="630818a6-f78f-d468-6ae3-cbd797115f69" executionId="9ce077c1-7cdb-474c-b54d-86ca78760c97" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd7e1746-e2fd-e16c-d005-015d9c364dd6" executionId="ea93dffb-e261-49c9-ab77-25ecc015d306" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54646874-ecb3-db2b-fcc7-136d8da4720c" executionId="bcded582-5441-428f-a629-8f4e6807d969" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="134c1f31-393a-a109-ea64-a3a99dcc12a3" executionId="90d78abf-f1cd-443a-92be-9543c168f3a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cac49ba2-c7c1-44a5-8197-9081d5641828" executionId="2035ebb1-1aa0-4b6e-a389-6c839cfbb048" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.38]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.82]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.99]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.30]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -675,3 +675,15 @@ keyboard route: review, the refused confirmation attempted anyway, then lawful r
 the quest reward and re-review; re-review after Wren returns). `NativeTradingBoundaryResultTests` reads
 `OPENFANTASY_NATIVE_TRADING_BOUNDARY_RESULTS` and authenticates the refusal reason from the recorded
 state at the attempt, the single later acceptance and its exact deltas.
+
+## Cargo circuit (managed only)
+
+`CargoWorldAdmission.CreateEmbedded` composes a separate fresh cargo world: the same farm plus Marla in
+Brasshollow (eight rations, no purse) and Kegga Toolwright in Gearford (no rations, an 80-gil purse) at their
+retained tiles, joined by an authored fourteen-region corridor. It has no play entry or native scene yet; the
+fixed farm renderer cannot show it. `CargoCircuitJourneyTests` drives the whole loop through session cutoffs
+(an inherited wolf fight to release, quest reward, purchase, 457-cell walk with a save/reopen at the corner,
+showing and sale, walk back) and, when `OPENFANTASY_CARGO_CIRCUIT_EVIDENCE` names a fresh absolute directory,
+exports snapshots, saves and `results.json` (including the declared corridor overlays and journal checkpoint
+and archive counts) there. Bounded refinement cases live under `tests/.../Content/Cargo/Refinement/`. See
+[cargo circuit](docs/architecture/cargo-circuit.md).

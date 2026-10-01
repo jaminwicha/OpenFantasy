@@ -59,6 +59,15 @@ and other documented limits remain; no full native UI or cargo gate is closed.
 The [source-grounded cargo dependency notes](CARGO_DEPENDENCIES.md) identify fixed farm presentation,
 bounded local routing and fresh resident/stock admission that the two-place route must address together.
 These are acceptance dependencies, not a promise to deliver each row in a single assignment.
+The [managed cargo circuit](../cargo-world/INTEGRATION_REVIEW.md) now admits the source Marla/Kegga
+counters, finite opening stock/purses and a declared multi-region corridor. Its actual wolf encounter,
+earned purchase, ordinary travel, mid-trip reopening, exact sale and return pass with 481 distinct managed
+cases, including a separate live mining/water interaction and authenticated final/prefix history. The
+corridor overlays retained places explicitly, including `bandit_camp`; it does not import their buildings,
+residents or threat terrain. The inherited farm fight does not satisfy the route-threat obligation.
+Next, [native geographic presentation and stall identity](../cargo-world/NATIVE_BINDING_NOTES.md)
+join this accepted world to the player interface, followed by the full threat/escort/NPC/migration/network
+joins above. No full cargo or phase gate is closed by the managed circuit.
 Keep growth/scale, full character cognition, missing-cargo investigation, field puzzles, audio,
 onboarding and the other P02 obligations in the full plan. A generic shop panel does not satisfy them.
 
@@ -66,7 +75,8 @@ onboarding and the other P02 obligations in the full plan. A generic shop panel 
 
 [Source candidates](LEGACY_MARKET_INPUTS.json) preserve exact original payloads and file hashes for
 Marla in Brasshollow and Kegga Toolwright in Gearford. Their shop lists share rations and basic tools.
-They are useful candidates for the retained two-place route, not newly admitted runtime merchants.
+The managed cargo binding admits their source identities, tiles and shared rations; other dialogue,
+quests, shop goods, wandering and full appearance still require their explicit runtime imports.
 Use the established content import/compiler path and retain original identities, appearance, shop
 lists and item prices as source facts. Author supply/demand rules and lawful stock/funding separately;
 do not edit source prices or invent infinite inventories to create a profitable demonstration.

@@ -1,0 +1,198 @@
+{
+  "snapshot.genesis": {
+    "Revision": 0,
+    "AdvancingSteps": 0,
+    "StateHash": "662989056a7c12ecfc5061fe65011bee726b3768978798e21638f156338a415d"
+  },
+  "sources": {
+    "origin": {
+      "SourceId": "marla",
+      "Name": "Marla",
+      "TileX": 96,
+      "TileY": 350,
+      "place": "brasshollow",
+      "placePointer": "/regions/0",
+      "Pointer": "/npcs/12",
+      "payload": "27ed7de55f28c34caa3525690301dce8035a026d0a2cf194d177edea988ef65d",
+      "appearance": "a570495443501867d74ac6cca47ec01f9065033aa652cdf5616530cd628836cf",
+      "Dialogue": "Welcome to Brasshollow General. Steam-fresh stock, fair prices.",
+      "Shop": [
+        "potion",
+        "tonic",
+        "ether",
+        "rations",
+        "copper_axe",
+        "copper_pickaxe",
+        "sickle"
+      ],
+      "Quests": []
+    },
+    "destination": {
+      "SourceId": "kegga",
+      "Name": "Kegga Toolwright",
+      "TileX": 347,
+      "TileY": 140,
+      "place": "gearford",
+      "placePointer": "/regions/2",
+      "Pointer": "/npcs/31",
+      "payload": "a304d2dd66b930e4b2dfc5d307f5a547d63be128cbd3d9915125657caf20044a",
+      "appearance": "bd46a233a1133e34b8d5fb0878c753373d9cd3692120892ebec783305b9c93eb",
+      "Dialogue": "A dull tool is a slow funeral. Buy sharp.",
+      "Shop": [
+        "iron_axe",
+        "iron_pickaxe",
+        "copper_axe",
+        "copper_pickaxe",
+        "sickle",
+        "rations"
+      ],
+      "Quests": [
+        "kegga_timber"
+      ]
+    },
+    "good": {
+      "SourceId": "rations",
+      "SourcePrice": 25,
+      "Pointer": "/items/16",
+      "payload": "c40722d6d24262136de44bf2eaa2c27d67510ca1455ab3fccc4b9fa2c2e05030"
+    }
+  },
+  "admission": {
+    "ProfileVersion": 33,
+    "admission": "6f023021876e6f3303999f0503f782681686c8285919634996cd9727d7b98b06",
+    "residents": [
+      "Bramble Wolf",
+      "Marla",
+      "Bramble Wolf",
+      "Kegga Toolwright",
+      "Traveler",
+      "Wren"
+    ],
+    "regions": 15,
+    "brasshollow": {
+      "MerchantSourceId": "marla",
+      "OpeningUnits": 8,
+      "StorageCapacity": 12,
+      "PurseGil": 0,
+      "version": "839a7c15b5d8b1fe08ae8c29faf17ff30dd553345f9f270cf61bbc931fce7d5f"
+    },
+    "gearford": {
+      "MerchantSourceId": "kegga",
+      "OpeningUnits": 0,
+      "StorageCapacity": 8,
+      "PurseGil": 80,
+      "version": "a111c2c0c75e155a754e202f2a5e9cd4cadd818f814c11618f8b2a07fbbf35b1"
+    },
+    "supply": 280
+  },
+  "snapshot.before-departure": {
+    "Revision": 231,
+    "AdvancingSteps": 228,
+    "StateHash": "eda5861a35ca7f28bbcc3576027790bdb6f8e57c4833dbe9a273dcd0bec1d758"
+  },
+  "snapshot.mid-trip-before-save": {
+    "Revision": 2224,
+    "AdvancingSteps": 2221,
+    "StateHash": "eea91b0dcf594a4afd9073b38c1a28d1c51070c2e895af6c22bd82876fe7bf59"
+  },
+  "recovery": {
+    "boundary": "corridor corner",
+    "Revision": 2224,
+    "AdvancingSteps": 2221,
+    "stateHash": "eea91b0dcf594a4afd9073b38c1a28d1c51070c2e895af6c22bd82876fe7bf59",
+    "reopenedHash": "eea91b0dcf594a4afd9073b38c1a28d1c51070c2e895af6c22bd82876fe7bf59",
+    "cargoLot": "cee7be34378ec3ebd3daa0c14d298c40",
+    "corner": "(346,349,0)"
+  },
+  "commandsSoFar": [
+    {
+      "label": "quest.Speak",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.Give",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.Give",
+      "rejection": "None"
+    },
+    {
+      "label": "quest.CloseDialogue",
+      "rejection": "None"
+    },
+    {
+      "label": "observe.marla.outbound",
+      "commandId": "22fd12ac04a63fd83ccd79a9769e0b2e",
+      "rejection": "None"
+    },
+    {
+      "label": "buy.marla",
+      "commandId": "72ac2902d96aad2f1cc007feb597d585",
+      "rejection": "None"
+    }
+  ],
+  "walksSoFar": [
+    {
+      "Label": "farm-to-brasshollow",
+      "StartCell": "(101,325,1)",
+      "EndCell": "(97,349,1)",
+      "Waypoints": 4,
+      "Cutoffs": 224,
+      "AppliedSamples": 224,
+      "RegionTransitions": 0,
+      "RegionSequence": [
+        0
+      ],
+      "PlannedLegs": 4,
+      "Replans": 0,
+      "AdvancingSteps": 224,
+      "ElapsedSeconds": 5.305
+    },
+    {
+      "Label": "brasshollow-to-corner",
+      "StartCell": "(97,349,1)",
+      "EndCell": "(346,349,1)",
+      "Waypoints": 32,
+      "Cutoffs": 1992,
+      "AppliedSamples": 1992,
+      "RegionTransitions": 7,
+      "RegionSequence": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "PlannedLegs": 32,
+      "Replans": 0,
+      "AdvancingSteps": 1992,
+      "ElapsedSeconds": 33.242
+    },
+    {
+      "Label": "corner-to-gearford",
+      "StartCell": "(346,349,1)",
+      "EndCell": "(346,141,1)",
+      "Waypoints": 26,
+      "Cutoffs": 1664,
+      "AppliedSamples": 1664,
+      "RegionTransitions": 6,
+      "RegionSequence": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "PlannedLegs": 26,
+      "Replans": 0,
+      "AdvancingSteps": 1664,
+      "ElapsedSeconds": 31.925
+    }
+  ]
+}

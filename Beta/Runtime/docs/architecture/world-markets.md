@@ -287,8 +287,11 @@ use that same path at a session cutoff, so pricing, lot pins and showing limits 
 [`MarketCircuitPolicies`](../../src/OpenFantasy.Hosting/Content/MarketCircuitPolicies.cs) cites the
 retained legacy item prices (berries 5, rations 25) by key and file digest and authors two rules.
 `BindResident` binds a rule to an admitted resident's own storage, account and home-place identity.
-Binding admits no stock or money. The Marla and Kegga source records remain candidates for the later
-content binding. Their identities, shop lists and prices are unchanged.
+Binding admits no stock or money. The [cargo circuit](cargo-circuit.md) binds the retained Marla and Kegga
+records with their identities, shop lists and prices unchanged, admits them freshly with declared finite
+stock and purse, and binds one separately authored rations rule to each of their stores. Its opening shelf
+is a raw counted source checked through a named Host binding, not a produced lot; reach is enforced by the
+authority for open quotes and hand-built observations and showings alike.
 
 [`NativeTradingWorld`](../../src/OpenFantasy.Hosting/Content/NativeTradingWorld.cs) is the production
 composition of one such world: Wren's admitted berries in a fresh ordinary-care paid world, under the
@@ -302,8 +305,9 @@ separately authored rule and windows of
   host shoppers with authored stock targets to session cutoffs. A host shopper consults only the in-person
   gate above, never merchant stock or funds, and reconsiders an unchanged desire at a bounded interval.
   Saved gifts and ordinary care bind in the same profile-33 session. The [native stall](native-trading.md)
-  serves one fresh world; no demand simulation, caravan route, two-town circuit, fixed-venue geometry or
-  migration exists.
+  serves one fresh world. The [cargo circuit](cargo-circuit.md) is a second fresh profile-33 world with two
+  counters joined by a walked local corridor; no demand simulation, traveling trader, fixed-venue geometry
+  or migration exists.
 - Participants look up their own live and archived quote outcomes through participant views; the market
   record's stock basis is never part of such a view.
 - A sell quote's posted price reveals what the merchant chooses to post and can permit stock inference.
