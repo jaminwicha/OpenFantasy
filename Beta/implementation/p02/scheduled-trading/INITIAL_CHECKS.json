@@ -1,0 +1,29 @@
+{
+  "status": "worker_checks_passed_integration_findings_and_missing_contrasts_pending",
+  "checks": [
+    {
+      "path": "Beta/implementation/p02/scheduled-trading/qualification/build-20261001T042054Z-b8b06/report.json",
+      "sha256": "035b74742d25ae30d8b38e002361a3a1bff3e8d918941286e0ef43054ac38688",
+      "kind": "build",
+      "outcomes": null
+    },
+    {
+      "path": "Beta/implementation/p02/scheduled-trading/qualification/new-host-20261001T042105Z-3eed0/report.json",
+      "sha256": "7a9a7ca5d214392bd36bee6bf9a08a17d9c222db7e59cc1f03c4fb8cfeaa177c",
+      "kind": "new-host",
+      "outcomes": {
+        "Passed": 50
+      }
+    },
+    {
+      "path": "Beta/implementation/p02/scheduled-trading/qualification/session-host-20261001T042124Z-43834/report.json",
+      "sha256": "4e321dbe9095b2078262058139c66e7554387bcb42fba2556d0a5e8d11b8b5fb",
+      "kind": "session-host",
+      "outcomes": {
+        "Passed": 127
+      }
+    }
+  ],
+  "distinctPassed": 173,
+  "note": "The four new trading cases appear in both selections; counts are deduplicated. Complete Core was not rerun for a host-only change; its source is pinned unchanged. All gates remain unchanged."
+}

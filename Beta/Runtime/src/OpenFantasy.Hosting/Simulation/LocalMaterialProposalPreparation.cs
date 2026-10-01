@@ -91,7 +91,7 @@ public sealed class LocalMaterialProposalPreparation
 
     internal static LocalMaterialProposalPreparation? Project(WorldSnapshot state, EntityId playerActorId)
     {
-        if (state.ProfileVersion != 30 || state.HasReadingHold || state.PendingExcavation is not null
+        if (!LocalProfileBindings.AdmitsSavedProposals(state) || state.HasReadingHold || state.PendingExcavation is not null
             || state.Care?.Pending is not null || state.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration
             || state.Coordination!.Proposals!.CanCreate != true
             || state.AdvancingSteps > ulong.MaxValue - 1 - OfferLifetimeSteps

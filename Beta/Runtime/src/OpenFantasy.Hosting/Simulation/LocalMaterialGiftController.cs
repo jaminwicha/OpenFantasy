@@ -28,7 +28,7 @@ internal sealed class LocalMaterialGiftController
         {
             ArgumentNullException.ThrowIfNull(policy);
             if (ordered.Count == WorldStepBatch.MaximumActorsPerBatch || !ordered.TryAdd(policy.ActorId, policy)
-                || state.ProfileVersion != 30 || state.Care?.Ordinary is not { } ordinary
+                || !LocalProfileBindings.AdmitsSavedProposals(state) || state.Care?.Ordinary is not { } ordinary
                 || !state.Residents.Any(value => value.ActorId == policy.ActorId && value.ControllerKind == ResidentControllerKind.Host)
                 || !state.Residents.Any(value => value.ActorId == policy.PartnerActorId)
                 || LocalCareController.HostControl(state, policy.ActorId) is null
@@ -64,7 +64,7 @@ internal sealed class LocalMaterialGiftController
         List<WorldActionCommand> selected = [];
         HashSet<EntityId> participating = new(excludedActors);
         HashSet<EntityId> identities = [];
-        if (state.ProfileVersion != 30 || state.HasReadingHold || state.PendingExcavation is not null
+        if (!LocalProfileBindings.AdmitsSavedProposals(state) || state.HasReadingHold || state.PendingExcavation is not null
             || state.Care?.Pending is not null || state.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration)
         {
             return new(selected.AsReadOnly(), participating.ToFrozenSet());

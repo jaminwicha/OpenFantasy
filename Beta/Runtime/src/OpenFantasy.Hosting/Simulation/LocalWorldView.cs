@@ -56,6 +56,8 @@ public sealed class LocalWorldView
         Care = LocalCareView.Project(state, playerActorId, careHelperSelectionOccupied);
         Restorative = LocalRestorativeView.Project(state, playerActorId);
         MaterialProposals = LocalMaterialProposalView.Project(state, playerActorId);
+        // Bounded live participant quotes only; archived outcomes need the explicit background inspection.
+        PaidQuotes = Array.AsReadOnly(PaidQuoteProjection.Project(state, playerActorId).ToArray());
         IsResolvingConsequences = state.PendingExcavation is not null;
         if (state.Pacing?.Encounter is { } timing)
         {
@@ -146,6 +148,9 @@ public sealed class LocalWorldView
     public LocalCareView? Care { get; }
     public LocalRestorativeView? Restorative { get; }
     public LocalMaterialProposalView? MaterialProposals { get; }
+
+    /// <summary>The player's open paid quotes and current-segment outcomes, as participant views; empty without paid exchange.</summary>
+    public ReadOnlyCollection<PaidQuoteView> PaidQuotes { get; }
     public ReadOnlyCollection<LocalEncounterActorView> EncounterActors { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }

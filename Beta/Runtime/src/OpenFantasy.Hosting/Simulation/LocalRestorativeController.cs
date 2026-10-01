@@ -21,7 +21,7 @@ internal sealed class LocalRestorativeController
         ArgumentNullException.ThrowIfNull(isOccupied);
         ArgumentNullException.ThrowIfNull(excludedActorIds);
         List<WorldActionCommand> selected = [];
-        if (state.ProfileVersion is not (26 or 27 or 30) || state.Care?.Ordinary is not { } ordinary
+        if (!LocalProfileBindings.AdmitsOrdinaryCare(state) || state.Care?.Ordinary is not { } ordinary
             || state.Care.Pending is not null || state.HasReadingHold || state.PendingExcavation is not null
             || state.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration)
         {

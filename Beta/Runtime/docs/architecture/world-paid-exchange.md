@@ -215,13 +215,19 @@ at face value, as it does for proposals, and is not a player-facing authorizatio
 
 ## Boundaries
 
-- Profile 32 has no local or native session binding: `LocalWorldSession` and its controllers select
-  profile 30, not 32. There is no native quote interface.
+- `LocalWorldSession` admits paid commands only in profiles 32 and 33, and only at an advancing, unheld
+  exploration boundary; a reading hold, retained consequence, care obligation or encounter refuses them
+  before queueing. A valid paid acceptance reserves its issuer at the cutoff, so neither participant
+  receives other work or movement in the settling step; an invalid one reserves nobody. Scheduled answers
+  and host shoppers exist only for profile 33 ([scheduled trading](scheduled-trading.md)). Saved proposals
+  and ordinary care bind in the profile-32 session as in profile 30. There is no native quote interface.
 - No lived-world migration into profile 32 exists, and it does not combine with profile 28 pairs.
-- Participants cannot yet look up an archived quote outcome by identity, as they can for proposals;
-  after a cut, receipts and the archive are the only history.
+- `PaidQuoteView` is the participant projection: exact terms and lifecycle for the issuer or counterparty
+  only, without either delivery, a superseding fill, a stock basis or a distant presence revision.
+  `SqliteWorldAuthority.ReadRecordedPaidQuoteForController` finds an archived outcome by identity through
+  one authenticated replay of the existing material-and-care archives, after authorizing current control.
 - In profile32 an issuer-buys quote pins a lot in the counterparty's storage, and its issuance receipt
   reveals whether that lot still matches. This limited interpretation is not a general private-inventory
   interface. Profile33's disclosure contract supplies the stricter boundary described above.
-- Local pricing and discovery belong to the market interpretation. NPC trading policy and live control
-  transitions require their own application contracts.
+- Local pricing and discovery belong to the market interpretation. The bounded host trading policy is the
+  scheduled-trading binding; live control transitions require their own application contracts.

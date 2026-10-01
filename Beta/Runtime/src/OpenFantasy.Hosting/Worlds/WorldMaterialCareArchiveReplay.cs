@@ -9,15 +9,17 @@ internal sealed class WorldMaterialCareArchiveReplay : IDisposable
     private readonly IEnumerator<StoredWorldMaterialCareArchive> _rows;
     private readonly ulong? _selectedOrdinal;
     private readonly EntityId? _selectedProposalId;
+    private readonly EntityId? _selectedQuoteId;
     private WorldMaterialCareArchiveAnchor? _previousAnchor;
     private bool _hasRow;
 
     internal WorldMaterialCareArchiveReplay(WorldDatabase database, ulong? selectedOrdinal,
-        EntityId? selectedProposalId = null)
+        EntityId? selectedProposalId = null, EntityId? selectedQuoteId = null)
     {
         _rows = database.ReadMaterialCareArchives().GetEnumerator();
         _selectedOrdinal = selectedOrdinal;
         _selectedProposalId = selectedProposalId;
+        _selectedQuoteId = selectedQuoteId;
         _hasRow = _rows.MoveNext();
     }
 
@@ -26,6 +28,9 @@ internal sealed class WorldMaterialCareArchiveReplay : IDisposable
 
     /// <summary>The selected proposal's terminal outcome, found in the one retrieved root that closed it.</summary>
     internal WorldMaterialProposalOutcome? SelectedProposalOutcome { get; private set; }
+
+    /// <summary>The selected paid quote's terminal outcome, found in the one retrieved root that closed it.</summary>
+    internal WorldPaidQuoteOutcome? SelectedQuoteOutcome { get; private set; }
 
     /// <param name="closing">The replayed closing root whose canonical bytes are <paramref name="closingBytes"/>.</param>
     internal void Verify(WorldMaterialCareArchiveSegment? expected, StoredWorldCommit publication, byte[] closingBytes,
@@ -62,6 +67,7 @@ internal sealed class WorldMaterialCareArchiveReplay : IDisposable
                 SelectedPublicationSequence = stored.PublicationSequence;
             }
             SelectProposalOutcome(closing);
+            SelectQuoteOutcome(closing);
             _hasRow = _rows.MoveNext();
         }
         if (_hasRow && _rows.Current.PublicationSequence <= publication.Sequence)
@@ -84,6 +90,21 @@ internal sealed class WorldMaterialCareArchiveReplay : IDisposable
             throw new InvalidDataException("A proposal has more than one archived terminal outcome.");
         }
         SelectedProposalOutcome = outcome;
+    }
+
+    // The same proven closing root owns the paid outcomes of its segment; a closed quote leaves exactly once.
+    private void SelectQuoteOutcome(WorldSnapshot closing)
+    {
+        if (_selectedQuoteId is not { } quoteId
+            || closing.Coordination?.PaidExchange?.FindOutcome(quoteId) is not { } outcome)
+        {
+            return;
+        }
+        if (SelectedQuoteOutcome is not null)
+        {
+            throw new InvalidDataException("A paid quote has more than one archived terminal outcome.");
+        }
+        SelectedQuoteOutcome = outcome;
     }
 
     internal void Complete()

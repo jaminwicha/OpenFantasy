@@ -1,0 +1,15 @@
+{
+  "ref": "codex/checkpoint-scheduled-trading-dispatch-20261001T035007Z",
+  "snapshot": "829fe2c23cdf620edb12e3cd9a2d7952cc720f5e",
+  "sourceHead": "257f460033c500f520888f9505b5cb1f6395a5b0",
+  "includedPaths": [
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/p02/scheduled-trading/ASSIGNMENT.md",
+    "Beta/implementation/p02/scheduled-trading/CHECKPOINT.json",
+    "Beta/implementation/p02/scheduled-trading/CORE_PRESERVATION.json",
+    "Beta/implementation/p02/scheduled-trading/DISPATCH.json",
+    "Beta/implementation/p02/scheduled-trading/PRESERVATION.json",
+    "Beta/implementation/p02/scheduled-trading/run_integration_checks.py"
+  ],
+  "verification": "Prepared and previewed; output-root and preservation preflight passed locally. No model request executed at snapshot."
+}

@@ -1,0 +1,18 @@
+{
+  "checkpoint": "codex/checkpoint-before-composed-action-guidance-20261001T053033Z",
+  "sourceHead": "19e8200a809333b632caacf79bb2c3eb0e493dda",
+  "scope": [
+    "skills/game-technical-design/SKILL.md",
+    "manifests/delegation-skill-alignment.json"
+  ],
+  "checkpointState": "Owned source and manifest clean before edit; other ecosystem changes excluded.",
+  "status": "committed_and_synced",
+  "syncDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-composed-action-skill-jfazytou",
+  "sourceSha256": "733a85e9991185d0bc693d028a1378484c407207989ffb7f004acba30d509f9b",
+  "commit": "e876ab4db178f44fb2d6ec5eef6c5787e9efb6da",
+  "milestone": "codex/milestone-composed-action-guidance-20261001",
+  "verifiedManifestEntries": 71,
+  "changedInstalledFiles": 2,
+  "unrelatedIndexPreserved": true,
+  "frontmatter": "Unchanged; prose, diff and alignment hashes checked. Optional validator remains unavailable in the selected Python (missing PyYAML)."
+}

@@ -4,6 +4,7 @@ using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Care;
 using OpenFantasy.Core.Construction;
+using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Terrain;
 using OpenFantasy.Core.Worlds;
@@ -34,8 +35,10 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly LocalRestorativeController _restorative = new();
     private readonly LocalMaterialProposalSelection _materialProposals = new();
     private readonly LocalMaterialGiftController _materialGifts;
+    private readonly LocalTradingController _trading;
     private readonly Task _loop;
     private LocalWorldView _view;
+    private ContentHash _projectedStateHash;
     private PendingLocalAction? _pending;
     private Exception? _failure;
     private Task? _stopping;
@@ -52,8 +55,19 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         IEnumerable<LocalMaterialGiftPolicy> giftPolicies)
         : this(authority, playerActorId, delivery, TimeProvider.System, giftPolicies) { }
 
+    /// <summary>A local-market session with explicit opt-in host merchants and shoppers, resupplied on every reopening.</summary>
+    public LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId, TrustedCommandDelivery delivery,
+        LocalTradingConfiguration trading)
+        : this(authority, playerActorId, delivery, TimeProvider.System, null, trading) { }
+
+    /// <summary>A session with explicit NPC gift preferences and opt-in trading together, both resupplied on every reopening.</summary>
+    public LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId, TrustedCommandDelivery delivery,
+        IEnumerable<LocalMaterialGiftPolicy> giftPolicies, LocalTradingConfiguration trading)
+        : this(authority, playerActorId, delivery, TimeProvider.System, giftPolicies, trading) { }
+
     internal LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId,
-        TrustedCommandDelivery delivery, TimeProvider timeProvider, IEnumerable<LocalMaterialGiftPolicy>? giftPolicies = null)
+        TrustedCommandDelivery delivery, TimeProvider timeProvider, IEnumerable<LocalMaterialGiftPolicy>? giftPolicies = null,
+        LocalTradingConfiguration? trading = null)
     {
         ArgumentNullException.ThrowIfNull(authority);
         ArgumentNullException.ThrowIfNull(delivery);
@@ -69,7 +83,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         _delivery = delivery;
         _time = timeProvider;
         _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
+        _trading = new LocalTradingController(state, playerActorId, trading ?? LocalTradingConfiguration.None);
         _view = ProjectView(state);
+        _projectedStateHash = state.ContentHash;
         _loop = Task.Run(RunAsync);
     }
 
@@ -147,6 +163,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             }
             WorldSnapshot state = _authority.ReadStateForHost();
             _materialProposals.Validate(state, command);
+            ValidateTradeSelection(state, command);
             ValidateEncounterSelection(state, command);
             bool durablePending = state.PendingExcavation is not null;
             if (state.PendingExcavation is { } accepted
@@ -168,8 +185,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This saved profile does not support assisted climbing.");
             }
-            if (command.Intent is ExcavateIntent
-                && state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 30)
+            if (command.Intent is ExcavateIntent && !LocalProfileBindings.AdmitsExcavation(state))
             {
                 throw new AuthorityDispatchException("This saved profile does not support excavation.");
             }
@@ -227,7 +243,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private static void ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
     {
         if (command.Intent is UseRestorativeItemIntent or RevokeCarePermissionIntent
-            && (state.ProfileVersion is not (26 or 27 or 30) || state.HasReadingHold || state.PendingExcavation is not null
+            && (!LocalProfileBindings.AdmitsOrdinaryCare(state) || state.HasReadingHold || state.PendingExcavation is not null
                 || state.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration || state.Care?.Pending is not null))
         {
             throw new AuthorityDispatchException("Ordinary care requires its admitted unheld exploration boundary.");
@@ -329,6 +345,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 if (_stopRequested) { return; }
             }
             WorldSnapshot state = _authority.ReadStateForHost();
+            PublishViewIfChanged(state);
             if (state.PendingExcavation is not null)
             {
                 ContinueConsequences(state);
@@ -361,6 +378,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 TickEncounter(state, pending);
                 return;
             }
+            RefuseUnrepresentable(state, state.HasReadingHold ? WorldBatchKind.HeldInteraction : WorldBatchKind.AdvancingStep,
+                ref pending);
             if (state.HasReadingHold && pending is null) { return; }
             List<WorldMovementInput> movement = [];
             if (SelectsConsequenceTrigger(state, pending))
@@ -385,6 +404,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private void TickCare(WorldSnapshot state, PendingLocalAction? pending)
     {
         ClearMovement();
+        RefuseUnrepresentable(state, WorldBatchKind.Care, ref pending);
         WorldActionCommand? command = pending?.Command
             ?? _care.SelectTreatment(state, _authority.IsIdentityOccupiedForHost);
         if (command is null)
@@ -406,6 +426,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private void TickLifecycle(WorldSnapshot state, PendingLocalAction? pending)
     {
         ClearMovement();
+        if (RefuseUnrepresentable(state, WorldBatchKind.EncounterLifecycle, ref pending)
+            && state.EncounterLifecycle?.Phase is not (EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging))
+        {
+            return;
+        }
         var batch = new WorldStepBatch(NewCause(pending?.Command.CommandId), state.WorldId, state.BranchId,
             state.Revision, state.AdvancingSteps, WorldBatchKind.EncounterLifecycle, [],
             pending is null ? [] : [pending.Command], state.ProfileVersion);
@@ -422,6 +447,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     {
         ClearMovement();
         if (WorldEncounterActions.IsOutcome(state)) return;
+        RefuseUnrepresentable(state, WorldBatchKind.EncounterDecision, ref pending);
         var timing = state.Pacing!.Encounter!;
         EntityId cause = NewCause(pending?.Command.CommandId);
         HashSet<EntityId> selected = [cause];
@@ -484,7 +510,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private void CommitSelectedBatch(WorldStepBatch batch, PendingLocalAction? awaiting)
     {
         WorldStepDecision decision = _authority.Commit(batch);
-        Volatile.Write(ref _view, ProjectView(decision.Candidate));
+        // Only a committed receipt turns a merchant's selected answer into an offer.
+        _trading.Observe(decision);
+        PublishViewIfChanged(decision.Candidate);
         if (decision.Candidate.PendingExcavation is { } pending)
         {
             ClearMovement();
@@ -563,6 +591,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 WorldBatchKind.AdvancingStep, [], [pending!.Command], state.ProfileVersion);
         }
         List<WorldActionCommand> actions = pending is null ? [] : [pending.Command];
+        // A valid paid acceptance spends both participants' opportunity: neither works nor walks in its step.
+        HashSet<EntityId> settling = SettlingParticipants(state, cause, pending?.Command);
         if (includeNpcActions && !state.HasReadingHold)
         {
             HashSet<EntityId> selected = [cause];
@@ -575,12 +605,21 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 excluded.Add(sender);
             }
+            excluded.UnionWith(settling);
             LocalMaterialGiftSelection gifts = _materialGifts.SelectActions(state,
                 identity => selected.Contains(identity) || _authority.IsIdentityOccupiedForHost(identity), excluded,
                 command => _materialProposals.FindReservedSender(_authority, state, cause, command));
             actions.AddRange(gifts.Actions);
             selected.UnionWith(gifts.Actions.Select(action => action.CommandId));
             excluded.UnionWith(gifts.ParticipatingActors);
+            // Trading precedes ordinary work, so an answering or settling merchant works again at a later cutoff.
+            LocalTradingSelection trading = _trading.Select(state,
+                identity => selected.Contains(identity) || _authority.IsIdentityOccupiedForHost(identity), excluded,
+                command => Settles(state, cause, command));
+            actions.AddRange(trading.Actions);
+            selected.UnionWith(trading.Actions.Select(action => action.CommandId));
+            excluded.UnionWith(trading.ParticipatingActors);
+            settling.UnionWith(trading.SettlingActors);
             actions.AddRange(_npcs.SelectActions(state, () => AllocateSelectedIdentity(selected), excluded));
             excluded.UnionWith(actions.Select(action => action.ActorId));
             actions.AddRange(_restorative.SelectActions(state,
@@ -589,7 +628,33 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         }
         return new WorldStepBatch(cause, state.WorldId, state.BranchId, state.Revision, state.AdvancingSteps,
             state.HasReadingHold ? WorldBatchKind.HeldInteraction : WorldBatchKind.AdvancingStep,
-            movement, actions, state.ProfileVersion);
+            settling.Count == 0 ? movement : movement.Where(input => !settling.Contains(input.ActorId)).ToArray(),
+            actions, state.ProfileVersion);
+    }
+
+    /// <summary>
+    /// Refuses a queued request that the current boundary kind cannot carry, before any batch is built. Submission
+    /// checked the boundary it saw, but another writer of the same authority may have changed it since. The request
+    /// receives an ordinary refusal, nothing is published for it and the session keeps running.
+    /// </summary>
+    private bool RefuseUnrepresentable(WorldSnapshot state, WorldBatchKind kind, ref PendingLocalAction? pending)
+    {
+        if (pending is null)
+        {
+            return false;
+        }
+        try
+        {
+            _ = new WorldStepBatch(NewCause(pending.Command.CommandId), state.WorldId, state.BranchId, state.Revision,
+                state.AdvancingSteps, kind, [], [pending.Command], state.ProfileVersion);
+            return false;
+        }
+        catch (ArgumentException)
+        {
+            CompletePending(pending, null, new AuthorityDispatchException("The current world boundary cannot select this action."));
+            pending = null;
+            return true;
+        }
     }
 
     private EntityId AllocateSelectedIdentity(HashSet<EntityId> selected)
@@ -615,6 +680,20 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             if (id != commandId && !_authority.IsIdentityOccupiedForHost(id)) { return id; }
         }
         throw new InvalidOperationException("The host could not allocate an unoccupied commit cause.");
+    }
+
+    /// <summary>
+    /// Presents the observed root even when another authority caller published it and this cutoff commits nothing.
+    /// The hash stays private; unchanged paused cutoffs reuse the existing immutable projection.
+    /// </summary>
+    private void PublishViewIfChanged(WorldSnapshot state)
+    {
+        if (_projectedStateHash == state.ContentHash)
+        {
+            return;
+        }
+        Volatile.Write(ref _view, ProjectView(state));
+        _projectedStateHash = state.ContentHash;
     }
 
     private void CompletePending(PendingLocalAction pending, WorldActionReceipt? receipt, Exception? error)
@@ -656,7 +735,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         try { await _loop.ConfigureAwait(false); }
         finally
         {
-            try { await FinishProposalInspectionAsync().ConfigureAwait(false); }
+            try { await FinishInspectionsAsync().ConfigureAwait(false); }
             finally
             {
                 await _serialization.WaitAsync().ConfigureAwait(false);

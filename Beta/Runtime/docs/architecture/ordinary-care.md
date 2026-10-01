@@ -107,8 +107,10 @@ ordinary advancing command or a zero-time Care batch to bypass encounter timing.
 ## Public controls and patient-owned permission
 
 [LocalRestorativeView](../../src/OpenFantasy.Hosting/Simulation/LocalRestorativeView.cs), exposed as
-`LocalWorldView.Restorative`, projects the profile26/27/30 player's known self-use policies and permissions
-owned by that patient. Other profiles have no ordinary-care projection. Known blocked self-use
+`LocalWorldView.Restorative`, projects the profile 26/27/30/32/33 player's known self-use policies and
+permissions owned by that patient. Profiles 32 and 33 are fresh continuations of the saved-proposal world
+that keep its ordinary-care owner, so session submission, this projection and permitted helper aid bind there
+through the same `LocalProfileBindings` gate. Paired profile 28 and other profiles have no ordinary-care projection. Known blocked self-use
 choices remain inspectable with their typed reason and no executable intent. Each use offer identifies
 the item, pinned restoration amount, capped HP gain at the observed health and exploration duration.
 The item label derives from its admitted physical item key, with a generic fallback; this is not a

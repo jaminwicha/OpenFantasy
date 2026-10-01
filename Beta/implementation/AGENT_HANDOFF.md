@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-09-30. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-10-01. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -42,50 +42,49 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
-The [local-market binding](p02/local-markets/INTEGRATION_REVIEW.md) is accepted as a bounded
-backend increment at `codex/milestone-local-markets-20261001`. Fresh profile 33 adds mobile merchant
-rules over actual stock, dated local price memories and seller-authored selected-lot disclosure,
-using the existing atomic paid transaction and durable history. No native trading interface,
-scheduled merchant loop, full demand simulation, two-town circuit or lived migration is claimed.
+The [scheduled-trading integration](p02/scheduled-trading/INTEGRATION_REVIEW.md) is accepted at
+`codex/milestone-scheduled-trading-20261001`. It binds participant-safe quote/history views,
+authenticated transient inquiries, own-control merchant answers and opt-in NPC buying/selling to actual
+session cutoffs. Exact player confirmation, bounded NPC reconsideration, work/movement and gift arbitration,
+ordinary market-world excavation, archive/reopen and changed-root presentation use the existing authority.
+Core, profile, codec and schema remain unchanged. There is no native trading interface in this milestone.
 
-Build and **1,915 distinct managed cases** pass on the exact final source and binaries: all 1,753
-Core cases and 162 selected Host cases, including 46 exchange Host cases. Thirty market cases are
-new. [Final checks](p02/local-markets/FINAL_CHECKS.json) pin the reports, 1,451 source files and 11
-assemblies. All 526 prior tests, 23 frozen specs, the source database and unrelated predecessor
-staging remain unchanged. No test or acceptance gate was weakened. Profile-32 process-kill evidence
-remains historical; there is no new profile-33 process-kill or native acceptance claim.
+[Final checks](p02/scheduled-trading/FINAL_CHECKS.json) pin one final build, 1,466 source files and 11
+binaries: **291 distinct managed cases pass**, including 17 scheduled cases. All 707 Core files, 532 prior
+test files, 23 frozen specs, original source-save bytes and the unrelated 19-file staged predecessor patch
+remain exact. Core's prior evidence is retained; Core was not rerun for this Host-only change. The packet
+preserves initial failures, independent findings, lead counterexamples and honest remaining proof gaps.
+No gate was weakened. All native, scale, multiplayer, production and P00–P14 exits remain open.
 
-The [independent Opus critique](p02/local-markets/INDEPENDENT_REVIEW.md) found two useful defects:
-stale showings leaked remaining quantity through refusal reasons, and a fee-recipient counterparty
-could crash quote preparation or prepare an unusable quote. Both are fixed with observed failing
-then passing regressions; [dispositions](p02/local-markets/CRITIC_DISPOSITION.md) and the original
-failures are retained. Earlier lead repairs close fee-coalition profit, private/remote disclosure,
-exact fee admission, contradictory rules over one stock pool and the fixture's blocked walking route.
-Timeless architecture and the living integration plan are current; frozen specifications are preserved.
+Both completed requests returned verified Opus 5.5 / 1M with requested Max and synchronized context. The
+initial implementation took 1,965.071s / $13.1508518 client estimate; the independent input critique plus
+repairs took 2,549.543s / $13.931321. Astra reviewed that repair and added four meaningful cases, fixing the
+attempt-wide showing bound, external-hold projection and excavation binding. These estimates are not
+billing or evidence of net credit savings. The first worker reports two read-only shell listings outside
+its task examples; no out-of-scope mutation or permission denial is evidenced. No external job is active,
+no approval is pending, and no automatic retry or model substitution occurred.
 
-The implementation, separate bounded repair and independent review returned verified Opus 5.5 / 1M
-metadata, requested Max effort and verified pre/post context. Their client estimates total about
-$31.91; net credit savings are not established. The first run ended in an adapter permission denial
-because the lead's wrapper omitted its output parent. The permitted wrapper was repaired; no approval
-wait, automatic paid retry or silent substitution occurred. All external jobs are terminal.
-[Delegation outcome](p02/local-markets/DELEGATION_OUTCOME.json) retains the scope and friction.
+[Recoverable checkpoints](p02/scheduled-trading/LEAD_REPAIR_CHECKPOINT.json) preserve dirty/new delivery
+and lead regressions before changes: `d375253` and `bf946bf` are explicitly WIP snapshots; the milestone
+contains the later accepted source. [Upstream](p02/scheduled-trading/UPSTREAM.json) records ecosystem commit
+`e876ab4`, bounded-goal/composed-action/view-refresh guidance, guarded installed-copy backups and all 71
+verified alignment entries. Codex and Claude skill copies match. Continue bounded substantive work through
+exact `claude-opus-5-5[1m]` with requested Max, finite limits, synchronized context and Astra integration.
 
-Recoverable checkpoints preserve actual dirty/new deliveries and evidence, including
-`codex/checkpoint-before-market-critic-fixes-20261001T033202Z` at
-`8129628883b05165cca3ef279e75cf8127693438` (1,909 passes but two critic fixes pending), with full scope
-in [the checkpoint record](p02/local-markets/CRITIC_FIX_CHECKPOINT.json). The accepted milestone above
-contains the later fixes and final checks. Earlier checkpoints remain in the packet.
+Next, implement the [native market entry and interaction](p02/scheduled-trading/NATIVE_FOLLOWUP.md):
+production content composition from existing admitted stock, an explicit save selection, contextual
+icon-led controls and rich inspection, deliberate quote windows and separate confirmation. Prove actual
+native buying/selling and reopening. Do not silently upgrade lived saves or use a test fixture in production.
+Keep the [full cargo integration path](p02/spot-exchange/INTEGRATION_PLAN.md), legacy migration and complete
+campaign intact. Market-world injured self-use/aid, some scheduler exclusions and other residual proofs
+remain explicitly recorded; binding types or a passing revocation test do not prove all of those behaviors.
 
-Ecosystem commits `cc2900d` and `19e8200` capture output-root setup, actor-private projection/refusal
-boundaries and economy cycle validation. Installed portable copies match and all 71 manifest entries
-verify. The optional skill frontmatter validator remains unavailable under the selected Python due
-to missing PyYAML; unchanged frontmatter, prose, diff and synchronization hashes were checked.
-
-Next, implement the [scheduled-trading application dependency](p02/local-markets/INTEGRATION_REVIEW.md#next-application-dependency):
-a participant-safe quote view and authenticated shopper inquiry, with merchants issuing through their
-own controllers. Prove actual scheduled buying/selling and opportunity arbitration before native menus.
-Do not turn another actor's private memory into merchant knowledge or give shoppers merchant credentials.
-The larger cargo/escort and all campaign, art, multiplayer, device and human gates stay open.
+The preceding [local-market binding](p02/local-markets/INTEGRATION_REVIEW.md), preserved at
+`codex/milestone-local-markets-20261001`, provides actual-stock integer prices, private dated knowledge,
+explicit lot disclosure and durable history. Its 1,915-pass evidence includes the unchanged 1,753 Core cases.
+That packet retains its independent price/privacy critique, failures, source preservation and delegation
+friction; the scheduled packet supplies the later application binding. Full demand, native trading,
+two-town cargo, lived migration and production remain separate obligations.
 
 The owner-requested [paid-world binding](p02/paid-world/INTEGRATION_REVIEW.md) implements explicit
 fresh profile32, atomic goods/payment, exact actor/currency causality and durable quote lifecycle.

@@ -14,7 +14,7 @@ internal sealed class LocalMaterialProposalSelection
         {
             return;
         }
-        if (state.ProfileVersion != 30 || state.HasReadingHold || state.PendingExcavation is not null
+        if (!LocalProfileBindings.AdmitsSavedProposals(state) || state.HasReadingHold || state.PendingExcavation is not null
             || state.Care?.Pending is not null || state.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration)
         {
             throw new AuthorityDispatchException("Saved material proposals require their admitted unheld exploration boundary.");

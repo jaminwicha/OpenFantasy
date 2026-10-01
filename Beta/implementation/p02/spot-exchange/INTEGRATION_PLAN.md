@@ -39,6 +39,15 @@ authored target and holding limit; event-driven consumption, rule changes and ge
 remain further evidence. Its fresh-world history crosses ordinary cuts and recovery; it supplies no
 lived migration or profile-33 process-interruption result. Advance scheduled-people and participant
 interfaces toward the actual cargo circuit without treating that bounded rule as a full economy.
+
+The [scheduled-trading packet](../scheduled-trading/INTEGRATION_REVIEW.md) binds participant-safe quote
+inspection, transient authenticated inquiries, merchant responses and opt-in NPC buy/sell decisions to
+actual session cutoffs. It retains explicit confirmation, bounded reconsideration, work/movement and
+gift arbitration, ordinary market-world excavation, and real archive/reopen evidence. Its 291 managed
+passes qualify that host scope; route/wage obligations, richer needs and several composition contrasts
+remain open as recorded there. The next application dependency is the
+[native market entry and interaction](../scheduled-trading/NATIVE_FOLLOWUP.md), using admitted content,
+readable offer windows and actual funds. It does not replace retained-save migration or the cargo circuit.
 Do not substitute repeated reviews of unchanged settlement code for these missing gameplay bindings.
 These are acceptance dependencies, not a promise to deliver each row in a single assignment.
 Keep growth/scale, full character cognition, missing-cargo investigation, field puzzles, audio,

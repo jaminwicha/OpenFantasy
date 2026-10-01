@@ -8,11 +8,29 @@ owned stock, addressed dialogue and applicable progression, quest and constructi
 It omits other inventories, finite source claims, private project funding and storage diagnostics.
 Sight-complete local visibility is not a general fog-of-war or global NPC knowledge system.
 
+The session refreshes this view at its cutoff when the observed authority root changes, including changes
+published by another caller. A refusal or reading hold can publish no new world step while still requiring a
+new view, such as the dialogue needed to close that hold. Unchanged roots reuse their cached projection;
+render callbacks never query storage to compensate for stale presentation.
+
 For saved material proposals, the Host view includes participant offers and a bounded
 [creation snapshot](material-proposals.md#captured-creation-choices) of exact own lots and named
 recipients. Preparation requires an explicit lot, amount and recipient and captures expiry once.
 This boundary supplies terms to a client without granting access to the private world. Archived
 inspection is a separate background session task; it never belongs in a frame's view refresh.
+
+In paid worlds the view lists the player's live quotes as participant-safe
+[`PaidQuoteView`](scheduled-trading.md#participant-quote-view) values: exact terms and lifecycle without
+another actor's delivery, a market's stock basis or a distant issuer's presence revision. The player's
+transient trade inquiry is read separately from the session as a pure in-memory value. An answered
+inquiry only names the offered quote; accepting it is a separate, explicitly confirmed command prepared
+from the inspected view, and ignoring it lets the quote close by its own window. A superseded offer reads
+as superseded with no fill amounts and nothing about the other party. Paid and market confirmations made
+during a reading hold or other non-exploration boundary are refused before queueing, while a waiting
+inquiry may stay queued over the hold. The saved-proposal creation form and ordinary-care controls are
+projected in paid and market worlds exactly as in the proposal world. Archived quote outcomes
+use the same background inspection boundary as proposals. No native trading menu exists yet; a future one
+must keep inquiry, inspection and confirmation as distinct acts and must never auto-accept or requote.
 
 [FarmGame](../../client/scripts/FarmGame.cs) coordinates session, input and presentation through
 named collaborators. [FarmCanvas](../../client/scripts/FarmCanvas.cs) and its

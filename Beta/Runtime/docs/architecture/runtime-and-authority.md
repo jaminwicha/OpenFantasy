@@ -100,6 +100,18 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    and replies under each configured Host actor's own control. Their copied immutable configuration
    is separate from world consent; saved commands and permanent identity occupancy prevent unchanged
    decisions from becoming new requests after refusal, archive rotation or reopening.
+   [Scheduled trading](scheduled-trading.md) joins the same cutoff after gifts and before ordinary work.
+   A player's trade inquiry is transient session input, never a world fact; configured host merchants
+   answer it in admission order with their own quotes, and configured host shoppers show, ask and accept
+   under their own control, in person only and with bounded reconsideration attempts. A valid paid
+   acceptance reserves its issuer, so neither participant works or walks in the settling step. Participant
+   quote history uses the same bounded background slot as proposal inspection. Saved proposals, NPC gift
+   preferences and ordinary care bind in profiles 30, 32 and 33 through one `LocalProfileBindings` gate.
+   Paid and market commands are refused at submission outside an unheld exploration boundary. Ordinary,
+   care, lifecycle and encounter selection refuse a queued command their batch kind cannot carry before
+   building the batch. A boundary change after admission therefore yields an ordinary refusal. Retained
+   consequence continuation still requires its waiter to match the durable command; a mismatch is an
+   integrity failure.
 3. [WorldStepProcessor](../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) evaluates the
    host-selected [WorldStepBatch](../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs) against the
    committed profile, scope, revision and hold state. Domain planners recheck rights, resources,
@@ -127,6 +139,11 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    transaction. Only after commit does it publish the new immutable state and acknowledge results.
 6. The session rebuilds permitted projections. Rendering and NPC planning consume the appropriate
    observations; they cannot award a second reward in response to a completion animation.
+
+At each cutoff the session also presents a changed root published by another authority caller, including
+when a reading hold or refusal prevents this session from committing anything. A private cached content hash
+detects changes; an unchanged root reuses its immutable view. Displaying the observed state neither advances
+time nor authorizes a pending action. The renderer performs no authority or historical reads.
 
 An exact authorized retry retrieves its durable result. Reusing an identity with changed content
 rejects. A stale or rejected intent never silently retargets, selects replacement ingredients or

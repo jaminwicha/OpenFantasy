@@ -276,9 +276,13 @@ Observation and showing additionally require the in-person gate:
   usable lots, paid into its own actor account, and its withdrawal.
 - `ReadKnowledge`: the holder's own aged memories.
 - `ReadDisclosures`: the live showings addressed to a merchant the caller controls.
+- `ReadQuotes` and `FindRecordedQuote`: the caller's own quotes as participant-safe views, including an
+  archived outcome through authenticated replay (see [scheduled trading](scheduled-trading.md#participant-quote-view)).
 
 The world recomputes and authorizes everything the service prepares. The service never selects
-another actor's lot or delivery and never lists another actor's inventory.
+another actor's lot or delivery and never lists another actor's inventory. Offer and showing preparation
+also accept an already selected root; the [scheduled merchant and shopper controllers](scheduled-trading.md)
+use that same path at a session cutoff, so pricing, lot pins and showing limits have one implementation.
 
 [`MarketCircuitPolicies`](../../src/OpenFantasy.Hosting/Content/MarketCircuitPolicies.cs) cites the
 retained legacy item prices (berries 5, rations 25) by key and file digest and authors two rules.
@@ -288,9 +292,13 @@ content binding. Their identities, shop lists and prices are unchanged.
 
 ## Boundaries
 
-- No native market interface, NPC trading loop, caravan route, two-town circuit, fixed-venue geometry or
-  migration exists.
-- Participants cannot look up archived market quote outcomes beyond receipts.
+- [Scheduled trading](scheduled-trading.md) binds transient inquiries, configured host merchants and
+  host shoppers with authored stock targets to session cutoffs. A host shopper consults only the in-person
+  gate above, never merchant stock or funds, and reconsiders an unchanged desire at a bounded interval.
+  Saved gifts and ordinary care bind in the same profile-33 session. No native market interface, demand
+  simulation, caravan route, two-town circuit, fixed-venue geometry or migration exists.
+- Participants look up their own live and archived quote outcomes through participant views; the market
+  record's stock basis is never part of such a view.
 - A sell quote's posted price reveals what the merchant chooses to post and can permit stock inference.
   Actor projections expose no stock-count field, balances, other actors' memories or unshown inventory.
   A showing reveals its own pins; a failed issuance under those pins gives no distinct quantity or

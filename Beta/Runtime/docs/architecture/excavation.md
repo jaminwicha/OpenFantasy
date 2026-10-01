@@ -72,8 +72,9 @@ old all-side site archives and interpreter meanings remain unchanged.
 ## Conservation and continued use
 
 The local session admits ordinary excavation in the
-[saved-proposal composition](material-proposals.md#excavation-composition) through the same advancing
-cutoff. Its fixed reservoir seals and terrain-bound liquids exclude deferred structural consequences;
+[saved-proposal composition](material-proposals.md#excavation-composition),
+[paid exchange](world-paid-exchange.md) and [local markets](world-markets.md) through the same advancing
+cutoff. Their fixed reservoir seals and terrain-bound liquids exclude deferred structural consequences;
 neither an open offer nor a larger profile number selects that separate consequence interpreter.
 
 World admission and decoding validate the same relation as execution:
@@ -107,7 +108,8 @@ ID, owner ID, item pin, physical material archive, tool pin, required work, comp
 XYZ. Coordinates are signed big-endian 64-bit values, work is unsigned 64-bit, identities are 16 bytes and
 item pins are 48 bytes. Site revision equals completed work. Decode validates values and exact re-encoding.
 Action version eight contains the six intent fields above under `world.action.excavate`, version one;
-its command bound is 512 bytes. Step profiles ten through eighteen and twenty-one admit it. Older encodings keep their meanings.
+its command bound is 512 bytes. Step profiles 10–18, 21–28, 30, 32 and 33 admit it. The local adapter
+keeps privileged paired profile 28 separate. Older encodings keep their meanings.
 
 The [constructed-footing composition](constructed-footing.md) retains excavation with explicit
 installed-floor support and assisted traversal. Excavation preserves that support interpretation when

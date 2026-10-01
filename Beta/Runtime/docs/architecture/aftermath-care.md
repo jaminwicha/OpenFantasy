@@ -64,6 +64,10 @@ ordinary NPC work, tactical tick or exploration time. Exact receipt retrieval pr
 new-action restrictions, so retrying an acknowledged request neither repeats consent nor treats the patient.
 While care is pending, other local actions are refused; another acknowledgment can receive its ordinary
 durable rejection. Stale acknowledgments are evaluated against the actual boundary, never refreshed silently.
+If a care obligation appears after another command was queued (for example through another writer of the
+same authority), the Care cutoff refuses that queued command before building its batch and proceeds with
+the helper's own selection; the session does not fault. This boundary is profile-agnostic across the
+care-bearing profiles, including the paid (32) and local-market (33) worlds.
 
 [LocalCareController](../../src/OpenFantasy.Hosting/Simulation/LocalCareController.cs) selects the actual
 remedy only for a Host resident with an admitted control binding. It constructs the treatment command

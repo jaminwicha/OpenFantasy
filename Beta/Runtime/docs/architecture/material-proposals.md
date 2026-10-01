@@ -212,9 +212,13 @@ participant query.
 
 [`LocalWorldSession`](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) accepts the four
 proposal intents through its existing controlled-player queue. Current delivery authorization and
-exact completed-receipt lookup precede new selection. A fresh command requires profile30, ready
-unheld exploration, no pending excavation and no pending care obligation. Context refusal occurs
-before queueing; stale admissible commands still receive their ordinary durable gameplay outcome.
+exact completed-receipt lookup precede new selection. A fresh command requires profile30 or one of
+its fresh continuations that keep this owner, the [paid world](world-paid-exchange.md) (32) and the
+[local-market world](world-markets.md) (33), plus ready unheld exploration, no pending excavation and
+no pending care obligation (`LocalProfileBindings`). Paired profile 28 and older profiles keep refusing.
+Context refusal occurs before queueing; stale admissible commands still receive their ordinary durable
+gameplay outcome. A queued command that a later boundary change makes unrepresentable for the cutoff's
+batch kind is refused at that cutoff before any batch is built; the session keeps running.
 Identical pending bytes share one result, and stopping cancels input that has not been selected.
 
 The session selects the command at its normal cutoff, alongside movement and optional NPC work,
@@ -239,7 +243,12 @@ historical replay. A captured acceptance is never refreshed or retargeted while 
 Archived inspection uses the explicit background session query described below, or the independently
 delivered service outside frame and simulation callbacks.
 
-Profile30 also exposes [ordinary restorative controls](ordinary-care.md) through the same session.
+The creation form (`Preparation`), explicit NPC gift preferences and the sender reservation above bind
+the same way in profiles 30, 32 and 33. In the market world a valid gift acceptance also spends the
+sending merchant's [trading opportunity](scheduled-trading.md#cutoff-selection-and-arbitration), and an
+NPC's own gift choice defers its answer to a waiting trade inquiry without changing that inquiry's place.
+
+Profiles 30, 32 and 33 also expose [ordinary restorative controls](ordinary-care.md) through the same session.
 An accepted dose enters the recipient's actual owned inventory; spending it requires a separate
 selected self-use command and a later cutoff. Acceptance itself restores no HP and grants no care
 permission. Ordinary helper aid retains its own explicit permission and selection policy.

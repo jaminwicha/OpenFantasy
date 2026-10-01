@@ -50,10 +50,16 @@ public sealed class MarketTradingService
     /// </summary>
     public WorldActionCommand? PrepareOffer(TrustedCommandDelivery merchantDelivery, EntityId marketId,
         EntityId counterpartyActorId, SpotQuoteSide side, EntityId lotId, ulong allowance, ulong lifetimeSteps,
-        EntityId commandId)
+        EntityId commandId) => PrepareOffer(_authority.ReadStateForHost(), merchantDelivery, marketId, counterpartyActorId,
+        side, lotId, allowance, lifetimeSteps, commandId);
+
+    /// <summary>The same preparation against one already selected root, as a scheduled merchant answers at a cutoff.</summary>
+    internal static WorldActionCommand? PrepareOffer(WorldSnapshot state, TrustedCommandDelivery merchantDelivery,
+        EntityId marketId, EntityId counterpartyActorId, SpotQuoteSide side, EntityId lotId, ulong allowance,
+        ulong lifetimeSteps, EntityId commandId)
     {
+        ArgumentNullException.ThrowIfNull(state);
         ArgumentNullException.ThrowIfNull(merchantDelivery);
-        WorldSnapshot state = _authority.ReadStateForHost();
         if (state.Coordination?.Markets is not { } book || book.FindMarket(marketId) is not { } market
             || !state.Inventory.CanControl(merchantDelivery, market.MerchantActorId)
             || counterpartyActorId == market.MerchantActorId || state.Residents.All(value => value.ActorId != counterpartyActorId)
@@ -127,10 +133,16 @@ public sealed class MarketTradingService
     /// market. Showing consents to no sale; the seller still accepts or ignores any later buy quote.
     /// </summary>
     public WorldActionCommand? PrepareDisclosure(TrustedCommandDelivery sellerDelivery, EntityId sellerActorId,
-        EntityId marketId, EntityId lotId, ulong quantity, ulong lifetimeSteps, EntityId commandId)
+        EntityId marketId, EntityId lotId, ulong quantity, ulong lifetimeSteps, EntityId commandId) =>
+        PrepareDisclosure(_authority.ReadStateForHost(), sellerDelivery, sellerActorId, marketId, lotId, quantity,
+            lifetimeSteps, commandId);
+
+    /// <summary>The same showing prepared against one already selected root, as a scheduled shopper decides at a cutoff.</summary>
+    internal static WorldActionCommand? PrepareDisclosure(WorldSnapshot state, TrustedCommandDelivery sellerDelivery,
+        EntityId sellerActorId, EntityId marketId, EntityId lotId, ulong quantity, ulong lifetimeSteps, EntityId commandId)
     {
+        ArgumentNullException.ThrowIfNull(state);
         ArgumentNullException.ThrowIfNull(sellerDelivery);
-        WorldSnapshot state = _authority.ReadStateForHost();
         if (!state.Inventory.CanControl(sellerDelivery, sellerActorId)
             || WorldMarketLocality.FindAvailable(state, sellerActorId, marketId) is not { } market
             || quantity == 0 || lifetimeSteps == 0 || lifetimeSteps > market.Policy.QuoteLifetimeSteps
@@ -164,6 +176,23 @@ public sealed class MarketTradingService
 
     public WorldActionReceipt Submit(WorldActionCommand command, TrustedCommandDelivery delivery, EntityId causeId) =>
         _authority.SubmitMarketCommand(command, delivery, causeId);
+
+    /// <summary>
+    /// Every open quote and current-segment outcome the controlled actor takes part in, as participant views.
+    /// A foreign delivery is refused before anything is read.
+    /// </summary>
+    public IReadOnlyList<PaidQuoteView> ReadQuotes(EntityId actorId, TrustedCommandDelivery delivery) =>
+        _authority.ReadPaidQuotesForController(actorId, delivery,
+            state => (IReadOnlyList<PaidQuoteView>)PaidQuoteProjection.Project(state, actorId).ToList().AsReadOnly());
+
+    /// <summary>
+    /// One quote by exact identity, including its terminal outcome after a coordinated cut archived it. A missing
+    /// identity and another pair's quote both give nothing. An archived lookup costs one complete verified journal
+    /// replay: synchronous non-frame work, which a session runs off its frame and tick callbacks.
+    /// </summary>
+    public PaidQuoteView? FindRecordedQuote(EntityId quoteId, EntityId actorId, TrustedCommandDelivery delivery) =>
+        _authority.ReadRecordedPaidQuoteForController(quoteId, actorId, delivery,
+            (state, archived) => PaidQuoteProjection.ProjectRecorded(state, archived, quoteId, actorId));
 
     /// <summary>
     /// The holder's own remembered prices, aged against the current fixed-world step. Only the holder's
@@ -215,7 +244,7 @@ public sealed class MarketTradingService
             && lot.Definition.Equals(market.Commodity) ? (lot.Kind, lot.Revision) : null;
 
     /// <summary>A lot in a storage the actor owns, or null; another actor's lot is never read.</summary>
-    private static (SpotLotKind Kind, CountedItemDefinition Definition, ulong Revision, ulong Quantity, EntityId Custodian, bool Usable)?
+    internal static (SpotLotKind Kind, CountedItemDefinition Definition, ulong Revision, ulong Quantity, EntityId Custodian, bool Usable)?
         OwnLot(WorldSnapshot state, EntityId actorId, EntityId lotId)
     {
         bool Owns(EntityId custodian) =>

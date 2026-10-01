@@ -1,0 +1,107 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.40]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.79]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.95]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketStockPoolTests.Fresh_admission_refuses_competing_rules_for_the_same_stock_pool_but_keeps_distinct_markets [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(side: IssuerBuys) [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.A_real_arrival_makes_an_issued_market_quote_stale_until_it_is_withdrawn_and_requoted [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Protected_or_reserved_stock_cannot_settle_keeps_its_metadata_and_is_withdrawn_while_equal_stock_sells(reserved: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketDisclosureTests.Buy_quotes_need_the_sellers_own_lot_showing_and_a_due_cannot_fund_a_cooperating_resale [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Market_submissions_refuse_unauthorized_forged_and_mispriced_terms_with_exact_scope [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingBoundaryTests.Paid_and_market_commands_during_a_reading_hold_are_refused_and_an_inquiry_waits_over_it [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingSessionTests.An_in_person_stall_answers_only_what_it_can_see_and_fund_and_never_requotes_a_stale_offer [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(side: IssuerSells) [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.A_paid_action_queued_before_an_external_reading_hold_is_refused_without_faulting_the_session [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Protected_or_reserved_stock_cannot_settle_keeps_its_metadata_and_is_withdrawn_while_equal_stock_sells(reserved: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile [516 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: False, bilateral: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Learned_prices_are_local_dated_private_and_never_refresh_from_a_distance [1 s]
+[xUnit.net 00:00:06.67]     OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.Changing_the_owned_lot_without_changing_total_stock_does_not_publish_two_showings_in_one_attempt [FAIL]
+[xUnit.net 00:00:06.67]       Assert.Single() Failure: The collection contained 2 items
+[xUnit.net 00:00:06.67]       Collection: [WorldActionCommand { ActorId = ffffffffffffffff7a1d57c000000000, BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandId = 71df09dcc7fe8798403322c0bef8d976, ContentHash = b7b168c645beb2e83ffd26517e50f9c1e1534a2a00c855683c53cbba392c09cc, ExpectedActorRevision = 40, ··· }, WorldActionCommand { ActorId = ffffffffffffffff7a1d57c000000000, BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandId = a61bd9ebef297ef7d3cefa7de06904a5, ContentHash = 45afa31f4a2a7a6be6a0df3f03925bd44e026c70c21c39bdd65765e4b43413ee, ExpectedActorRevision = 40, ··· }]
+[xUnit.net 00:00:06.67]       Stack Trace:
+[xUnit.net 00:00:06.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Scheduled/ScheduledTradingIntegrationTests.cs(45,0): at OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.Changing_the_owned_lot_without_changing_total_stock_does_not_publish_two_showings_in_one_attempt()
+[xUnit.net 00:00:06.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Scheduled/ScheduledTradingIntegrationTests.cs(57,0): at OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.Changing_the_owned_lot_without_changing_total_stock_does_not_publish_two_showings_in_one_attempt()
+[xUnit.net 00:00:06.67]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingReconsiderationTests.A_remote_host_buyer_asks_nothing_until_its_merchant_actually_arrives_then_buys [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: False, bilateral: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingBoundaryTests.An_inquiry_expires_in_world_time_while_its_merchant_is_reserved_and_stop_discards_a_waiting_one [2 s]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.Changing_the_owned_lot_without_changing_total_stock_does_not_publish_two_showings_in_one_attempt [2 s]
+  Error Message:
+   Assert.Single() Failure: The collection contained 2 items
+Collection: [WorldActionCommand { ActorId = ffffffffffffffff7a1d57c000000000, BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandId = 71df09dcc7fe8798403322c0bef8d976, ContentHash = b7b168c645beb2e83ffd26517e50f9c1e1534a2a00c855683c53cbba392c09cc, ExpectedActorRevision = 40, ··· }, WorldActionCommand { ActorId = ffffffffffffffff7a1d57c000000000, BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandId = a61bd9ebef297ef7d3cefa7de06904a5, ContentHash = 45afa31f4a2a7a6be6a0df3f03925bd44e026c70c21c39bdd65765e4b43413ee, ExpectedActorRevision = 40, ··· }]
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.Changing_the_owned_lot_without_changing_total_stock_does_not_publish_two_showings_in_one_attempt() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Scheduled/ScheduledTradingIntegrationTests.cs:line 45
+   at OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.Changing_the_owned_lot_without_changing_total_stock_does_not_publish_two_showings_in_one_attempt() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Scheduled/ScheduledTradingIntegrationTests.cs:line 57
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:07.78]     OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.The_market_session_preserves_ordinary_excavation_as_well_as_trading [FAIL]
+[xUnit.net 00:00:07.78]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:07.78]       Expected: Reachable
+[xUnit.net 00:00:07.78]       Actual:   ExpansionLimit
+[xUnit.net 00:00:07.78]       Stack Trace:
+[xUnit.net 00:00:07.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/LocalMarketWorldFixture.cs(160,0): at OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldFixture.Walk(SqliteWorldAuthority authority, EntityId actor, SubunitPosition goal, Func`2 done)
+[xUnit.net 00:00:07.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Scheduled/ScheduledTradingIntegrationTests.cs(108,0): at OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.The_market_session_preserves_ordinary_excavation_as_well_as_trading()
+[xUnit.net 00:00:07.78]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingSessionTests.A_working_merchant_answers_player_inquiries_in_each_direction_and_only_confirmation_settles [3 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: True, bilateral: True) [1 s]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.The_market_session_preserves_ordinary_excavation_as_well_as_trading [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Reachable
+Actual:   ExpansionLimit
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldFixture.Walk(SqliteWorldAuthority authority, EntityId actor, SubunitPosition goal, Func`2 done) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/LocalMarketWorldFixture.cs:line 160
+   at OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingIntegrationTests.The_market_session_preserves_ordinary_excavation_as_well_as_trading() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Scheduled/ScheduledTradingIntegrationTests.cs:line 108
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingBoundaryTests.A_world_refused_merchant_issuance_declines_the_inquiry_and_a_later_inquiry_settles [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingReconsiderationTests.A_declined_host_seller_reconsiders_after_its_interval_and_sells_once_the_merchant_is_funded [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: True, bilateral: False) [974 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingCompositionTests.A_valid_gift_acceptance_reserves_the_sending_merchant_and_her_answer_follows [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingBoundaryTests.An_offer_superseded_by_another_shoppers_fill_reads_superseded_and_its_confirmation_is_refused [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Battle_defeat_and_pending_care_refuse_whole_steps_then_the_treated_issuer_settles_its_terms [4 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingCompositionTests.A_gift_policy_and_trading_compose_in_the_market_world_and_ordinary_care_is_bound [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_held_quest_reward_cannot_share_a_batch_with_a_fill_but_funds_it_in_causal_order [312 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingReconsiderationTests.A_refused_host_acceptance_is_never_retried_and_a_new_decision_trades_after_a_restart [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Market_quotes_and_knowledge_cross_an_automatic_cut_then_settle_reopen_retry_and_refuse_tampering [5 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Rule_priced_purchase_and_resale_move_real_goods_and_funds_and_survive_retry_and_reopen [421 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_real_cut_and_reopening_keep_superseded_withdrawn_and_carried_quotes_exact [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.An_open_market_quote_settles_again_when_gifts_restore_its_stock_basis_but_a_filled_one_never_revives [341 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote [158 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: False, merchantSubmitsFirst: False) [278 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: True, merchantSubmitsFirst: True) [276 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledNpcTradingTests.A_host_shopper_sells_its_own_shown_goods_to_a_working_merchant_and_history_survives_a_cut [11 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: True, merchantSubmitsFirst: False) [278 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: False, merchantSubmitsFirst: True) [283 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledNpcTradingTests.Inquiries_to_one_merchant_are_answered_in_admission_order_and_a_busy_merchant_keeps_their_place [526 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.An_issuer_withdraws_a_stale_stock_quote_freeing_a_slot_with_exact_retry [143 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen [139 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Filling_one_of_sixteen_quotes_supersedes_the_rest_and_frees_the_shared_book [129 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_handless_then_slain_wolf_and_recovering_people_cannot_settle_until_ready(recoveringCaller: False) [311 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_handless_then_slain_wolf_and_recovering_people_cannot_settle_until_ready(recoveringCaller: True) [294 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner [71 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True) [93 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False) [95 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_on_one_lot_in_one_batch_block_each_other_without_effect(paidFirst: True) [157 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_on_one_lot_in_one_batch_block_each_other_without_effect(paidFirst: False) [168 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_at_most_once(wolfFirst: False) [145 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_at_most_once(wolfFirst: True) [139 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Complete_admission_refuses_missing_payment_causes_and_repriced_historical_fills [101 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_small_human_pack_filled_by_raw_and_crafted_purchases_refuses_one_more_unit_until_a_sale_frees_space [266 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Independent_delivery_is_required_before_issuance_acceptance_and_retry_disclosure [92 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_seller_collecting_its_own_fee_is_credited_once_through_hosted_replay [124 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_locally_valid_paid_water_transfer_rolls_back_when_it_would_detach_live_liquid_placement [129 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles [87 ms]
+[xUnit.net 00:00:17.75]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_can_spend_quoted_stock_but_cannot_authorize_a_stale_paid_transfer [75 ms]
+
+Test Run Failed.
+Total tests: 62
+     Passed: 60
+     Failed: 2
+ Total time: 18.2484 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/scheduled-trading/qualification/new-host-20261001T051936Z-b867b/OpenFantasy.Hosting.Tests.trx
