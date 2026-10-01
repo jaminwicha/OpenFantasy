@@ -37,7 +37,7 @@ internal sealed class FarmActionOffers
 
     /// <summary>Omits domains the save does not admit; blocked known actions stay present with a reason.</summary>
     internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> Create(LocalWorldView view, FarmTarget? selectedTarget = null,
-        FarmGiftSelection? giftSelection = null)
+        FarmGiftSelection? giftSelection = null, FarmMarketDraft? marketDraft = null)
     {
         ArgumentNullException.ThrowIfNull(view);
         FarmActionScope scope = FarmActionScope.From(_delivery, view);
@@ -63,6 +63,7 @@ internal sealed class FarmActionOffers
         }
         RestorativeActionOffers.Add(view, scope, selectedTarget, offers);
         MaterialProposalActionOffers.Add(view, scope, giftSelection, offers, _woodDefinitionId, _berryDefinitionId);
+        MarketActionOffers.Add(view, scope, marketDraft, offers);
         if (selectedTarget is { } target && (target.Id != _wrenActorId
             || view.Actors.All(actor => actor.ActorId != target.Id)))
         {

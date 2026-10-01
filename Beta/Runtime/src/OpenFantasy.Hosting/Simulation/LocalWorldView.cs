@@ -58,6 +58,7 @@ public sealed class LocalWorldView
         MaterialProposals = LocalMaterialProposalView.Project(state, playerActorId);
         // Bounded live participant quotes only; archived outcomes need the explicit background inspection.
         PaidQuotes = Array.AsReadOnly(PaidQuoteProjection.Project(state, playerActorId).ToArray());
+        Markets = LocalMarketView.Project(state, playerActorId);
         IsResolvingConsequences = state.PendingExcavation is not null;
         if (state.Pacing?.Encounter is { } timing)
         {
@@ -151,6 +152,9 @@ public sealed class LocalWorldView
 
     /// <summary>The player's open paid quotes and current-segment outcomes, as participant views; empty without paid exchange.</summary>
     public ReadOnlyCollection<PaidQuoteView> PaidQuotes { get; }
+
+    /// <summary>The player's own stall context in a market world, including the advancing step; null without markets.</summary>
+    public LocalMarketView? Markets { get; }
     public ReadOnlyCollection<LocalEncounterActorView> EncounterActors { get; }
     public ReadOnlyCollection<LocalActorView> Actors { get; }
     public LocalInventoryView PlayerInventory { get; }

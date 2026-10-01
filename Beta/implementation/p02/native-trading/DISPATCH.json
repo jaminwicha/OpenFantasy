@@ -1,0 +1,39 @@
+{
+  "status": "completed_pending_review",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 5400,
+  "maxBudgetUsdClientEstimate": 40,
+  "sourceHead": "214da29bebfbc30e6dbc4ad92d394186d16aa2c6",
+  "checkpoint": "codex/checkpoint-before-native-trading-20261001T055337Z",
+  "privateTaskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-trading-0ugxevwa",
+  "benefit": "Deliver a substantial playable client binding with production content, all three native input routes, exact saved outcomes and fresh/continued opening; lead reviews one coherent unit.",
+  "contextManifestSha256": "e02031d3d92f0538a2fca6a4bdb8af531a6d03a652c55cc7e942c886a0bbc75f",
+  "skillAlignmentEntriesVerified": 208,
+  "dispatchCheckpoint": "codex/checkpoint-native-trading-dispatch-20261001T060227Z",
+  "dispatchSnapshot": "dfeec35f5a4be92609782ab5b7dfc6b74818014a",
+  "execSession": 56501,
+  "startedUtc": "2026-10-01T06:02:41.760603+00:00",
+  "elapsedSeconds": 3335.008,
+  "totalCostUsdClientEstimate": 25.070368600000005,
+  "returnedModelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 322,
+      "outputTokens": 272021,
+      "cacheReadInputTokens": 70921783,
+      "cacheCreationInputTokens": 680538,
+      "webSearchRequests": 0,
+      "costUSD": 25.070368600000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 131510,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextStatus": "verified",
+  "processExitCode": 0,
+  "permissionDenials": [],
+  "workerReportedFriction": "Two out-of-scope read-only ls calls; no denial or out-of-scope mutation evidenced. Legacy wrapper supplied one mode to an existing three-mode verifier."
+}

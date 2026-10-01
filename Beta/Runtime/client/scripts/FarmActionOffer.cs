@@ -33,16 +33,34 @@ internal sealed class FarmActionOffer
 
     internal FarmActionOffer(FarmSemanticAction action, FarmActionScope scope, string label, string targetName,
         EntityId? targetId, string costText, string completionText, WorldActionIntent? intent,
-        string? blockingReason, EntityId? dialogueId = null, string? detailText = null)
+        string? blockingReason, EntityId? dialogueId = null, string? detailText = null, EntityId? commandId = null)
+        : this(action, scope, label, targetName, targetId, costText, completionText, intent, blockingReason, dialogueId,
+            detailText, commandId, opensPanel: false)
+    {
+    }
+
+    private FarmActionOffer(FarmSemanticAction action, FarmActionScope scope, string label, string targetName,
+        EntityId? targetId, string costText, string completionText, WorldActionIntent? intent,
+        string? blockingReason, EntityId? dialogueId, string? detailText, EntityId? commandId, bool opensPanel)
     {
         ArgumentNullException.ThrowIfNull(scope);
         ArgumentException.ThrowIfNullOrWhiteSpace(label);
         ArgumentException.ThrowIfNullOrWhiteSpace(targetName);
         ArgumentException.ThrowIfNullOrWhiteSpace(costText);
-        if (blockingReason is null && intent is null)
+        if (blockingReason is null && intent is null && !opensPanel)
         {
             throw new ArgumentException("An available offer requires the exact intent it will submit.");
         }
+        if (opensPanel && (intent is not null || commandId is not null))
+        {
+            throw new ArgumentException("A panel choice carries no world intent or command identity.");
+        }
+        if (commandId is not null && intent is null)
+        {
+            throw new ArgumentException("A fixed command identity belongs to the intent that names it.");
+        }
+        OpensPanel = opensPanel;
+        CommandId = commandId;
         Action = action;
         Scope = scope;
         Label = label;
@@ -79,10 +97,32 @@ internal sealed class FarmActionOffer
     internal bool CanExecute => BlockingReason is null;
     internal bool SpendsSomething => CostText != FarmActionOffers.NoCost;
 
+    /// <summary>
+    /// Choosing it opens a client panel, such as the market stall; it carries no intent and the session refuses
+    /// to submit it. Any commitment inside the panel is a separate offer with its own exact intent.
+    /// </summary>
+    internal bool OpensPanel { get; }
+
+    /// <summary>
+    /// The command identity the captured intent already names, such as a paid acceptance that restates its own
+    /// command; null lets submission allocate a new identity.
+    /// </summary>
+    internal EntityId? CommandId { get; }
+
+    /// <summary>A navigable choice that opens a panel and never becomes a world command by itself.</summary>
+    internal static FarmActionOffer Panel(FarmSemanticAction action, FarmActionScope scope, string label, string targetName,
+        EntityId? targetId, string detailText, string? blockingReason) =>
+        new(action, scope, label, targetName, targetId, FarmActionOffers.NoCost, "", null, blockingReason, null, detailText,
+            null, opensPanel: true);
+
     /// <summary>Builds the command from the captured scope and intent; the identity is the only new value.</summary>
     internal WorldActionCommand ToCommand(EntityId commandId)
     {
         WorldActionIntent intent = Intent ?? throw new InvalidOperationException(BlockedIntentMessage);
+        if (CommandId is { } named && named != commandId)
+        {
+            throw new InvalidOperationException("This intent names its own command identity.");
+        }
         return new WorldActionCommand(commandId, Scope.PrincipalId, Scope.SessionId, Scope.ActorId,
             Scope.WorldId, Scope.BranchId, Scope.ExpectedActorRevision, intent);
     }

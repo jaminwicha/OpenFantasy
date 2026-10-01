@@ -101,6 +101,28 @@ internal sealed class FarmClientSession : IAsyncDisposable
         OpenSelection(savePath, WorldMaterialProposalAdmission.CreateFresh(
             RestorativeJourneyAdmission.CreateEmbedded(seedText, playerName)), gifts: true));
 
+    /// <summary>
+    /// Explicit fresh market-world selection with Wren's opt-in stall answers and her existing gift preference.
+    /// An existing save opens only when it is this same selected world; nothing is upgraded, reset or relabeled.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenMarketsAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+        OpenSelection(savePath, NativeTradingWorld.CreateEmbedded(seedText, playerName), gifts: true, trading: true));
+
+    /// <summary>Continues an earned market fixture from its existing save; it never creates or rewinds a world.</summary>
+    internal static Task<FarmClientSession> OpenMarketFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath)) throw new FileNotFoundException("The market fixture requires its existing save.", savePath);
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != WorldMarketAdmission.ProfileVersion || genesis.Revision != 0 || genesis.AdvancingSteps != 0
+            || NativeTradingWorld.FindStall(genesis) is null)
+            throw new InvalidDataException("The market fixture requires its fresh native market genesis.");
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return Attach(authority, QuestCompanion, gifts: true, trading: true);
+    });
+
     internal static Task<FarmClientSession> OpenGiftFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
     {
         if (!File.Exists(savePath)) throw new FileNotFoundException("Gift inspection requires its existing save.", savePath);
@@ -197,7 +219,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
         }
     }
 
-    private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis, bool gifts = false)
+    private static FarmClientSession OpenSelection(string savePath, WorldSnapshot genesis, bool gifts = false, bool trading = false)
     {
         Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
         SqliteWorldAuthority authority = File.Exists(savePath)
@@ -211,7 +233,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
             authority.Dispose();
             throw;
         }
-        return Attach(authority, QuestCompanion, gifts);
+        return Attach(authority, QuestCompanion, gifts, trading);
     }
 
     private static FarmClientSession Attach(SqliteWorldAuthority authority) => Attach(authority, QuestCompanion);
@@ -244,7 +266,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
     }
 
     private static FarmClientSession Attach(SqliteWorldAuthority authority,
-        Func<WorldSnapshot, WorldResident, WorldResident> selectCompanion, bool gifts = false)
+        Func<WorldSnapshot, WorldResident, WorldResident> selectCompanion, bool gifts = false, bool trading = false)
     {
         try
         {
@@ -258,7 +280,10 @@ internal sealed class FarmClientSession : IAsyncDisposable
             EntityId? berries = current.Gathering?.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
                 .Definition.YieldDefinition.DefinitionId;
             LocalMaterialGiftPolicy[] policies = gifts ? [GiftPolicy(current, wren.ActorId, player.ActorId)] : [];
-            var world = new LocalWorldSession(authority, player.ActorId, delivery, policies);
+            // Opt-in stall answers are Host advice resupplied on every opening, like the gift preference.
+            var world = trading
+                ? new LocalWorldSession(authority, player.ActorId, delivery, policies, NativeTradingPolicy.Configuration(current))
+                : new LocalWorldSession(authority, player.ActorId, delivery, policies);
             return new FarmClientSession(world, delivery, wren.ActorId, wood, berries);
         }
         catch
@@ -270,9 +295,9 @@ internal sealed class FarmClientSession : IAsyncDisposable
 
     /// <summary>Read-only: selecting targets, lots and quest operations from a snapshot changes nothing.</summary>
     internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view, FarmTarget? selectedTarget = null,
-        FarmGiftSelection? giftSelection = null)
+        FarmGiftSelection? giftSelection = null, FarmMarketDraft? marketDraft = null)
     {
-        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget, giftSelection);
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget, giftSelection, marketDraft);
         foreach (FarmActionOffer offer in offers.Values)
         {
             _issuedOffers.Add(offer, new OfferedAction());
@@ -290,6 +315,10 @@ internal sealed class FarmClientSession : IAsyncDisposable
         if (!offer.CanExecute)
         {
             throw new InvalidOperationException(offer.BlockingReason);
+        }
+        if (offer.OpensPanel)
+        {
+            throw new InvalidOperationException("That choice opens a panel; it submits no world action.");
         }
         // Control identities persist in saves; this weak registration binds the presentation to
         // this particular client lifetime without retaining every discarded per-frame preview.
@@ -311,10 +340,19 @@ internal sealed class FarmClientSession : IAsyncDisposable
             {
                 throw new InvalidOperationException("That conversation has ended; the action no longer applies.");
             }
-            issued.Submission = World.SubmitAction(offer.ToCommand(NewCommandId()));
+            issued.Submission = World.SubmitAction(offer.ToCommand(offer.CommandId ?? NewCommandId()));
             return issued.Submission;
         }
     }
+
+    /// <summary>
+    /// Asks a stall's merchant for terms. The request is nonbinding session input: it reserves and promises nothing,
+    /// and the merchant answers, if at all, at a later advancing cutoff while world time runs.
+    /// </summary>
+    internal Task<LocalTradeInquiryView> AskAsync(LocalTradeInquiry inquiry) => World.SubmitTradeInquiryAsync(inquiry);
+
+    /// <summary>Cancels a waiting request; an offer already issued keeps its own world window.</summary>
+    internal Task<LocalTradeInquiryView?> CancelRequestAsync() => World.CancelTradeInquiryAsync();
 
     internal Task<WorldActionReceipt> Speak(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.Speak);
     internal Task<WorldActionReceipt> GiveWood(LocalWorldView view) => SubmitOffer(view, FarmSemanticAction.Give);

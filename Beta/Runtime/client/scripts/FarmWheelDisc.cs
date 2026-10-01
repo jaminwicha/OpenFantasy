@@ -27,7 +27,9 @@ internal sealed partial class FarmWheelDisc : Control
             (FarmSemanticAction.AcknowledgeCare, "care"), (FarmSemanticAction.UseRestorative, "care"),
             (FarmSemanticAction.RevokeCarePermission, "leave"),
             (FarmSemanticAction.ProposeMaterial, "give"), (FarmSemanticAction.AcceptMaterial, "accept-gift"),
-            (FarmSemanticAction.DeclineMaterial, "decline-gift"), (FarmSemanticAction.WithdrawMaterial, "withdraw-gift")
+            (FarmSemanticAction.DeclineMaterial, "decline-gift"), (FarmSemanticAction.WithdrawMaterial, "withdraw-gift"),
+            (FarmSemanticAction.TradeBuy, "market-buy"), (FarmSemanticAction.TradeSell, "market-sell"),
+            (FarmSemanticAction.TradeOffers, "market-offers")
         }) _icons[action] = GD.Load<Texture2D>($"res://assets/ui/{name}.svg");
     }
 
@@ -136,6 +138,8 @@ internal sealed partial class FarmWheelDisc : Control
                 FarmSemanticAction.RevokeCarePermission => "Withdraw",
                 FarmSemanticAction.ProposeMaterial => "Offer", FarmSemanticAction.AcceptMaterial => "Accept",
                 FarmSemanticAction.DeclineMaterial => "Decline", FarmSemanticAction.WithdrawMaterial => "Withdraw",
+                FarmSemanticAction.TradeBuy => "Buy", FarmSemanticAction.TradeSell => "Sell",
+                FarmSemanticAction.TradeOffers => "Offers",
                 _ => "Action"
             };
             float width = font.GetStringSize(label, fontSize: 16).X;

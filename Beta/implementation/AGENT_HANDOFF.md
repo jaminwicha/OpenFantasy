@@ -42,6 +42,28 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
+The [native trading foundation](p02/native-trading/INTEGRATION_REVIEW.md) is accepted at
+`codex/milestone-native-trading-foundation-20261001`, with its full native UI gate still open.
+Production `--markets` entry, source-backed stock/earned money, explicit inquiry/show/review/confirm,
+pause-to-read, native buy/sell and saved outcome/reopen use the existing authority.
+[Final foundation evidence](p02/native-trading/FOUNDATION_CHECKS.json) pins 1,601 source files and 14
+binaries, with **454 distinct managed passes** and three-mode native trading/gift runs authenticated
+against real journals. All old source/test/save/index pins remain exact; Core was not rerun.
+
+Opus 5.5 / 1M with requested Max delivered the implementation in 3,335.008s / $25.0703686 client estimate.
+Its context checks passed and no permission denial occurred. Astra reviewed the source/UI/journals and
+fixed the lead wrapper's one-mode versus three-mode verification mismatch without changing assertions.
+Two worker read-only shell listings exceeded the exact command examples. Raw sessions remain private;
+[dispatch](p02/native-trading/DISPATCH.json) is terminal, and no external job is active.
+The [WIP checkpoint](p02/native-trading/DELIVERY_CHECKPOINT.json) preserves the delivery before integration.
+
+Next: a focused independent **Opus 5.5 / 1M / Max** review/refinement should finish controller/pointer
+row navigation, native stale/expired/unfunded/moved-issuer contrasts and player-facing copy/clarity.
+The present native fixture uses keyboard dropdown rows in all modes; managed cases/source guards do not
+close missing native cases. Keep all physical-device, human art/comprehension, multiplayer, migration,
+cargo and production gates open. [Cargo dependency notes](p02/spot-exchange/CARGO_DEPENDENCIES.md) ground
+the later multi-region route/presentation work without claiming it was executed.
+
 The [scheduled-trading integration](p02/scheduled-trading/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-scheduled-trading-20261001`. It binds participant-safe quote/history views,
 authenticated transient inquiries, own-control merchant answers and opt-in NPC buying/selling to actual
@@ -61,8 +83,8 @@ initial implementation took 1,965.071s / $13.1508518 client estimate; the indepe
 repairs took 2,549.543s / $13.931321. Astra reviewed that repair and added four meaningful cases, fixing the
 attempt-wide showing bound, external-hold projection and excavation binding. These estimates are not
 billing or evidence of net credit savings. The first worker reports two read-only shell listings outside
-its task examples; no out-of-scope mutation or permission denial is evidenced. No external job is active,
-no approval is pending, and no automatic retry or model substitution occurred.
+its task examples; no out-of-scope mutation or permission denial is evidenced. Those two requests are terminal;
+no automatic retry or model substitution occurred. The native assignment has its own dispatch status.
 
 [Recoverable checkpoints](p02/scheduled-trading/LEAD_REPAIR_CHECKPOINT.json) preserve dirty/new delivery
 and lead regressions before changes: `d375253` and `bf946bf` are explicitly WIP snapshots; the milestone
@@ -71,13 +93,11 @@ contains the later accepted source. [Upstream](p02/scheduled-trading/UPSTREAM.js
 verified alignment entries. Codex and Claude skill copies match. Continue bounded substantive work through
 exact `claude-opus-5-5[1m]` with requested Max, finite limits, synchronized context and Astra integration.
 
-Next, implement the [native market entry and interaction](p02/scheduled-trading/NATIVE_FOLLOWUP.md):
-production content composition from existing admitted stock, an explicit save selection, contextual
-icon-led controls and rich inspection, deliberate quote windows and separate confirmation. Prove actual
-native buying/selling and reopening. Do not silently upgrade lived saves or use a test fixture in production.
-Keep the [full cargo integration path](p02/spot-exchange/INTEGRATION_PLAN.md), legacy migration and complete
-campaign intact. Market-world injured self-use/aid, some scheduler exclusions and other residual proofs
-remain explicitly recorded; binding types or a passing revocation test do not prove all of those behaviors.
+The native foundation above implements the initial [market entry and interaction dependency](p02/scheduled-trading/NATIVE_FOLLOWUP.md)
+with the recorded native follow-through still required. Keep the [full cargo integration path](p02/spot-exchange/INTEGRATION_PLAN.md),
+legacy migration and complete campaign intact. Market-world injured self-use/aid, some scheduler exclusions
+and other residual proofs remain explicitly recorded; binding types or a passing revocation test do not
+prove all of those behaviors.
 
 The preceding [local-market binding](p02/local-markets/INTEGRATION_REVIEW.md), preserved at
 `codex/milestone-local-markets-20261001`, provides actual-stock integer prices, private dated knowledge,

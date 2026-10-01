@@ -63,6 +63,17 @@ internal enum FarmSemanticAction
     AcceptMaterial,
     DeclineMaterial,
     WithdrawMaterial,
+    /// <summary>Opens the stall panel to choose units to buy; it asks, buys and spends nothing.</summary>
+    TradeBuy,
+    /// <summary>Opens the stall panel to choose an own lot and units to sell; it shows and sells nothing.</summary>
+    TradeSell,
+    /// <summary>Opens the stall panel at the merchant's answers and saved outcomes.</summary>
+    TradeOffers,
+    /// <summary>Shows one exact own lot to the stall: a world command that sells, reserves and consents to nothing.</summary>
+    ShowTradeLot,
+    /// <summary>Accepts the one reviewed offer at its exact restated terms.</summary>
+    ConfirmTrade,
+    CloseMarket,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -86,6 +97,8 @@ internal enum FarmInputLayer
     Wheel,
     /// <summary>Encounter choices own input; walking and ordinary farm actions are suppressed.</summary>
     Encounter,
+    /// <summary>The stall panel owns navigation and its explicit commitments; opening it changes no host timing.</summary>
+    Market,
 }
 
 /// <summary>World facts the router does not own, read from the current projection at each decision.</summary>
@@ -96,6 +109,8 @@ internal readonly record struct FarmInputSituation(bool SessionOpen, bool Readin
     internal bool IsEncounterOutcome { get; init; }
     internal bool HasCareAcknowledgment { get; init; }
     internal bool HasWheelPages { get; init; }
+    /// <summary>The wheel's selected choice only opens an inspection panel; it submits nothing.</summary>
+    internal bool WheelChoiceOpensPanel { get; init; }
 }
 
 /// <summary>One discrete device event translated to the routed action names it matches.</summary>
@@ -197,8 +212,12 @@ internal sealed class FarmInputRouter
     internal bool Focused { get; private set; } = true;
     internal bool InventoryOpen { get; private set; }
     internal bool WheelOpen { get; private set; }
+    internal bool MarketOpen { get; private set; }
 
-    /// <summary>Local readiness request; inspection panels do not change the host's clock policy.</summary>
+    /// <summary>
+    /// Local readiness request; inspection panels, including the stall, do not change the host's clock policy.
+    /// A stall request is therefore answered while the panel stays open unless the player pauses explicitly.
+    /// </summary>
     internal bool WorldShouldRun => !_unavailable && Focused && !Paused;
 
     internal FarmInputLayer Layer(FarmInputSituation situation)
@@ -207,6 +226,7 @@ internal sealed class FarmInputRouter
         if (!Focused) return FarmInputLayer.Unfocused;
         if (InventoryOpen) return FarmInputLayer.Inventory;
         if (WheelOpen) return FarmInputLayer.Wheel;
+        if (MarketOpen) return FarmInputLayer.Market;
         if (Paused) return FarmInputLayer.Paused;
         if (!situation.SessionOpen) return FarmInputLayer.Opening;
         if (situation.ReadingHold) return FarmInputLayer.Dialogue;
@@ -237,6 +257,8 @@ internal sealed class FarmInputRouter
 
     internal void SetWheelOpen(bool open) => WheelOpen = open;
 
+    internal void SetMarketOpen(bool open) => MarketOpen = open;
+
     /// <summary>Whether the owning layer accepts this semantic action right now, from any source.</summary>
     internal bool Permits(FarmInputSituation situation, FarmSemanticAction action)
     {
@@ -252,8 +274,14 @@ internal sealed class FarmInputRouter
                 && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
             FarmSemanticAction.CloseWheel => layer == FarmInputLayer.Wheel,
             FarmSemanticAction.NextWheelPage => layer == FarmInputLayer.Wheel && situation.HasWheelPages,
-            FarmSemanticAction.ConfirmWheel => layer == FarmInputLayer.Wheel && !Paused
-                && !situation.ActionPending && !situation.ReadingHold,
+            // Opening an inspection panel is allowed while paused; a world action needs running local time.
+            FarmSemanticAction.ConfirmWheel => layer == FarmInputLayer.Wheel && !situation.ReadingHold
+                && (situation.WheelChoiceOpensPanel || !Paused && !situation.ActionPending),
+            FarmSemanticAction.CloseMarket => layer == FarmInputLayer.Market,
+            // Stall commitments are world commands: they need running local time, as the session requires.
+            FarmSemanticAction.ShowTradeLot or FarmSemanticAction.ConfirmTrade => layer == FarmInputLayer.Market
+                && !Paused && !situation.ActionPending && !situation.ReadingHold,
+            FarmSemanticAction.TradeBuy or FarmSemanticAction.TradeSell or FarmSemanticAction.TradeOffers => false,
             FarmSemanticAction.AcknowledgeCare => layer == FarmInputLayer.Encounter
                 && situation.HasCareAcknowledgment && !situation.ActionPending,
             FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter
@@ -371,7 +399,8 @@ internal sealed class FarmInputRouter
     /// controller A, which is Talk in ordinary play. A layer command always keeps its press.
     /// </summary>
     private static bool LeavesAcceptToControl(FarmInputLayer layer, IReadOnlyList<string> actions) =>
-        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel) && Resolve(layer, actions) == FarmSemanticAction.None;
+        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Market)
+        && Resolve(layer, actions) == FarmSemanticAction.None;
 
     private static FarmSemanticAction Resolve(FarmInputLayer layer, IReadOnlyList<string> actions)
     {
@@ -392,6 +421,7 @@ internal sealed class FarmInputRouter
     {
         (FarmInputLayer.Wheel, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseWheel,
         (FarmInputLayer.Wheel, FarmInputActions.NextTarget) => FarmSemanticAction.NextWheelPage,
+        (FarmInputLayer.Market, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseMarket,
         (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused, FarmInputActions.QuickWheel) => FarmSemanticAction.OpenWheel,
         (FarmInputLayer.Inventory, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.Inventory) => FarmSemanticAction.CloseInventory,
         (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused, FarmInputActions.Inventory) => FarmSemanticAction.OpenInventory,

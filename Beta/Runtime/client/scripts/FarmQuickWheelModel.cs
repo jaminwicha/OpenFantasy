@@ -37,6 +37,12 @@ internal sealed class FarmQuickWheelModel
             AddPage("Gifts", [FarmSemanticAction.ProposeMaterial, FarmSemanticAction.AcceptMaterial,
                 FarmSemanticAction.DeclineMaterial, FarmSemanticAction.WithdrawMaterial], offers);
         }
+        if (offers.Keys.Any(MarketActionOffers.IsStallChoice))
+        {
+            // Each sector opens the stall panel; commitments there remain separate, explicitly reviewed offers.
+            AddPage("Market", [FarmSemanticAction.TradeBuy, FarmSemanticAction.TradeSell,
+                FarmSemanticAction.TradeOffers, FarmSemanticAction.None], offers);
+        }
     }
 
     private void AddPage(string name, FarmSemanticAction[] order, IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)

@@ -29,8 +29,16 @@ as superseded with no fill amounts and nothing about the other party. Paid and m
 during a reading hold or other non-exploration boundary are refused before queueing, while a waiting
 inquiry may stay queued over the hold. The saved-proposal creation form and ordinary-care controls are
 projected in paid and market worlds exactly as in the proposal world. Archived quote outcomes
-use the same background inspection boundary as proposals. No native trading menu exists yet; a future one
-must keep inquiry, inspection and confirmation as distinct acts and must never auto-accept or requote.
+use the same background inspection boundary as proposals. In market worlds the view also carries the
+player's own [`LocalMarketView`](native-trading.md#runtime-binding-participant-projection): the advancing
+step and each perceivable stall, without merchant stock, funds or rule parameters.
+
+The [native stall](native-trading.md) keeps inquiry, reading, review and confirmation as distinct acts.
+The wheel's Market page (Buy, Sell, Offers) opens a scene-owned panel and submits nothing, also while
+paused. The panel's own `Market` input layer suppresses walking without pausing the host, so a merchant
+answers while it is open; an explicit local reading pause stops this single-player world. A review captures
+one exact participant offer; any changed choice, Back, focus loss or disconnection discards it, and
+nothing auto-accepts, renews or requotes.
 
 [FarmGame](../../client/scripts/FarmGame.cs) coordinates session, input and presentation through
 named collaborators. [FarmCanvas](../../client/scripts/FarmCanvas.cs) and its

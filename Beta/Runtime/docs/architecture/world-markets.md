@@ -290,13 +290,20 @@ retained legacy item prices (berries 5, rations 25) by key and file digest and a
 Binding admits no stock or money. The Marla and Kegga source records remain candidates for the later
 content binding. Their identities, shop lists and prices are unchanged.
 
+[`NativeTradingWorld`](../../src/OpenFantasy.Hosting/Content/NativeTradingWorld.cs) is the production
+composition of one such world: Wren's admitted berries in a fresh ordinary-care paid world, under the
+separately authored rule and windows of
+[`NativeTradingPolicy`](../../src/OpenFantasy.Hosting/Content/NativeTradingPolicy.cs). See
+[native trading](native-trading.md).
+
 ## Boundaries
 
 - [Scheduled trading](scheduled-trading.md) binds transient inquiries, configured host merchants and
   host shoppers with authored stock targets to session cutoffs. A host shopper consults only the in-person
   gate above, never merchant stock or funds, and reconsiders an unchanged desire at a bounded interval.
-  Saved gifts and ordinary care bind in the same profile-33 session. No native market interface, demand
-  simulation, caravan route, two-town circuit, fixed-venue geometry or migration exists.
+  Saved gifts and ordinary care bind in the same profile-33 session. The [native stall](native-trading.md)
+  serves one fresh world; no demand simulation, caravan route, two-town circuit, fixed-venue geometry or
+  migration exists.
 - Participants look up their own live and archived quote outcomes through participant views; the market
   record's stock basis is never part of such a view.
 - A sell quote's posted price reveals what the merchant chooses to post and can permit stock inference.

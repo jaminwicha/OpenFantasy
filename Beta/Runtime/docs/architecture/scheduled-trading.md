@@ -213,7 +213,8 @@ projection. Damaged storage refuses and requires reopening.
 
 ## Extension boundaries
 
-- No native trading menu exists; the views and session calls are its intended boundary.
+- The [native stall](native-trading.md) uses exactly these views and session calls; it adds a
+  participant market projection but no authority, durable request or second price path.
 - Demand is the authored stock target; there is no consumption simulation, cognition, route, wage or escort
   contract, and no offscreen commerce. Host shoppers do not walk to markets.
 - Fairness beyond this local first-in, first-out policy, multiplayer delivery and network authentication

@@ -31,6 +31,8 @@ def main():
     selection.add_argument("--care", action="store_true", help="Open the separate encounter journey with finite companion care")
     selection.add_argument("--restorative", action="store_true", help="Open the separate ordinary-care journey with a personal Potion and permitted companion aid")
     selection.add_argument("--gifts", action="store_true", help="Open a separate saved-gift journey with explicit companion gift preferences")
+    selection.add_argument("--markets", action="store_true",
+                           help="Open the separate fresh market world where Wren trades her berries in person; never migrates another save")
     selection.add_argument("--retained-gifts", nargs=2, metavar=("SAVE", "GENESIS"), type=Path,
                            help="Continue an existing, explicitly transitioned retained world; GENESIS is its original fresh coordinated genesis. Never migrates or creates a save")
     selection.add_argument("--encounters", action="store_true", help="Open the separate in-place encounter journey save")
@@ -71,11 +73,15 @@ def main():
         if args.prepare_only:
             print("Pinned native client prepared. No gameplay save was opened.", flush=True)
             return 0
-        place = "retained gift world" if retained else "gift journey" if args.gifts else "restorative journey" if args.restorative else "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
+        place = "retained gift world" if retained else "market" if args.markets else "gift journey" if args.gifts else "restorative journey" if args.restorative else "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
         print(f"Opening Wren’s {place}. WASD/arrows: walk; E: talk; G: quest; F: gather; Q: target; V: actions; Esc: pause.", flush=True)
         command = [str(godot), "--path", str(root / "client")]
         if retained:
             command += ["--", "--retained-gifts", str(retained[0]), str(retained[1])]
+        elif args.markets:
+            # The market world has its own entry scene and save; the default bootstrap never selects it.
+            print("Market: V opens actions, Q turns to the Market page; the stall panel asks, reviews and confirms.", flush=True)
+            command += ["res://scenes/NativeTrading.tscn", "--", "--markets"]
         elif args.gifts:
             command += ["--", "--gifts"]
         elif args.restorative:

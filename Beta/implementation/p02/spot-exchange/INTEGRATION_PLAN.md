@@ -49,6 +49,11 @@ remain open as recorded there. The next application dependency is the
 [native market entry and interaction](../scheduled-trading/NATIVE_FOLLOWUP.md), using admitted content,
 readable offer windows and actual funds. It does not replace retained-save migration or the cargo circuit.
 Do not substitute repeated reviews of unchanged settlement code for these missing gameplay bindings.
+The [native foundation](../native-trading/INTEGRATION_REVIEW.md) now binds fresh production entry,
+explicit buy/show/sell, local reading pause and authenticated native results/reopening. Its remaining
+native input and rejection contrasts are retained explicitly; no full native UI or cargo gate is closed.
+The [source-grounded cargo dependency notes](CARGO_DEPENDENCIES.md) identify fixed farm presentation,
+bounded local routing and fresh resident/stock admission that the two-place route must address together.
 These are acceptance dependencies, not a promise to deliver each row in a single assignment.
 Keep growth/scale, full character cognition, missing-cargo investigation, field puzzles, audio,
 onboarding and the other P02 obligations in the full plan. A generic shop panel does not satisfy them.

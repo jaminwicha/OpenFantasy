@@ -46,6 +46,10 @@ public partial class FarmGame : Node2D
     internal bool RestorativeProfile { get; init; }
     internal bool GiftsProfile { get; init; }
     internal string? GiftFixtureGenesisPath { get; init; }
+    /// <summary>Explicit fresh market-world selection with its own save; never an upgrade of another world.</summary>
+    internal bool MarketsProfile { get; init; }
+    /// <summary>Expected fresh genesis of an earned market fixture; requires its explicit existing save.</summary>
+    internal string? MarketFixtureGenesisPath { get; init; }
     /// <summary>Expected fresh genesis of a prepared coordinated fixture; requires its explicit existing save.</summary>
     internal string? CoordinatedFixtureGenesisPath { get; init; }
     /// <summary>Original coordinated genesis of an explicitly transitioned retained world; requires its existing save.</summary>
@@ -100,6 +104,7 @@ public partial class FarmGame : Node2D
         _wheel = GD.Load<PackedScene>("res://scenes/FarmQuickWheel.tscn").Instantiate<FarmQuickWheel>();
         AddChild(_wheel);
         _wheel.ActionRequested += Perform;
+        ReadyMarket();
         Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
         GetWindow().CloseRequested += BeginClose;
@@ -117,6 +122,19 @@ public partial class FarmGame : Node2D
                     FarmClientSession.RetainedGiftTargetProfileVersion)
                 : Task.FromException<FarmClientSession>(
                     new InvalidOperationException("The retained gift world requires its explicit existing save."));
+            return;
+        }
+        if (MarketFixtureGenesisPath is { } marketGenesis)
+        {
+            _opening = SavePathOverride is { } marketFixtureSave
+                ? FarmClientSession.OpenMarketFixtureAsync(marketFixtureSave, marketGenesis)
+                : Task.FromException<FarmClientSession>(new InvalidOperationException("The market fixture requires its existing save."));
+            return;
+        }
+        if (MarketsProfile)
+        {
+            string marketSave = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/wrens-markets.sqlite");
+            _opening = FarmClientSession.OpenMarketsAsync(marketSave, "encounter-lifecycle-world", "Traveler");
             return;
         }
         if (GiftFixtureGenesisPath is { } giftGenesis)
@@ -223,6 +241,8 @@ public partial class FarmGame : Node2D
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
                     : RetainedGiftGenesisPath is not null ? "I opens your pack and its gift offers; V opens actions; Q changes wheel pages."
+                    : MarketsProfile || MarketFixtureGenesisPath is not null
+                        ? "Wren trades berries in person. V opens actions; Q turns to the Market page. Her quest pays in gil."
                     : RestorativeProfile ? "V opens actions; Q changes wheel pages. Inspect Care for your medicine and Wren's permission."
                     : CareProfile ? "Wren is nearby to help. Q selects a wolf; V inspects actions and their costs."
                     : EncounterProfile ? "Q selects a wolf. E engages; V inspects its actions. Encounters wait for your choice."
@@ -248,9 +268,12 @@ public partial class FarmGame : Node2D
         {
             Task<WorldActionReceipt> action = _action;
             _action = null;
-            _hud.Message(action.IsCompletedSuccessfully ? Describe(action.Result)
-                : "That action was not completed. " + action.Exception?.GetBaseException().Message);
+            string outcome = action.IsCompletedSuccessfully ? Describe(action.Result)
+                : "That action was not completed. " + action.Exception?.GetBaseException().Message;
+            _hud.Message(outcome);
+            if (_input.MarketOpen) _market.Notice(outcome);
         }
+        CompleteMarketTasks();
         if (_giftInspection is { IsCompleted: true } inspection)
         {
             _giftInspection = null;
@@ -289,7 +312,7 @@ public partial class FarmGame : Node2D
         }
         _camera.Position = focus + new Vector2(0, BreachProfile ? 96 : WatercourseProfile ? 72 : -26);
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
-        _presented = _session.CreateOffers(view, _targets.Selected, _gifts);
+        _presented = _session.CreateOffers(view, _targets.Selected, _gifts, _marketDraft);
         _canvas.PresentTarget(_targets.Selected);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view),
             _action is not null || view.IsResolvingConsequences,
@@ -300,6 +323,7 @@ public partial class FarmGame : Node2D
             wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target), _gifts));
             _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel));
         }
+        PresentMarket(view);
     }
 
     public override void _PhysicsProcess(double delta)
@@ -346,6 +370,7 @@ public partial class FarmGame : Node2D
         IsEncounterOutcome = _session?.World.ReadView().Encounter?.IsOutcome ?? false,
         HasCareAcknowledgment = _presented.ContainsKey(FarmSemanticAction.AcknowledgeCare),
         HasWheelPages = _wheel.Model?.PageCount > 1,
+        WheelChoiceOpensPanel = _wheel.Model?.Selected?.Offer.OpensPanel == true,
         HasEncounterEntry = _presented.ContainsKey(FarmSemanticAction.EnterEncounter) };
 
     private static FarmDirectionalInput ReadWalkingInput()
@@ -397,7 +422,13 @@ public partial class FarmGame : Node2D
             FarmActionOffer? chosen = _wheel.Model?.Selected?.Offer;
             if (chosen?.CanExecute != true) return;
             ChangeWheel(false);
-            Submit(chosen);
+            if (chosen.OpensPanel) OpenMarket(chosen.Action);
+            else Submit(chosen);
+            return;
+        }
+        if (action == FarmSemanticAction.CloseMarket)
+        {
+            CloseMarket();
             return;
         }
         if (action is FarmSemanticAction.OpenInventory or FarmSemanticAction.CloseInventory)
@@ -504,6 +535,7 @@ public partial class FarmGame : Node2D
         {
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
             if (_input.WheelOpen) ChangeWheel(false);
+            InterruptMarketReview("Focus left the game, so the reviewed offer was set aside. Review it again to confirm.");
             ChangeReadiness(_input.WorldShouldRun);
         }
     }
@@ -534,6 +566,7 @@ public partial class FarmGame : Node2D
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
             ChangeWheel(false);
         }
+        if (!connected) InterruptMarketReview("A controller disconnected, so the reviewed offer was set aside.");
     }
 
     private static FarmTarget? LocatePinnedTarget(LocalWorldView view, FarmTarget? target)
@@ -559,6 +592,7 @@ public partial class FarmGame : Node2D
         _input.MarkUnavailable();
         if (_input.InventoryOpen) ChangeInventory(false);
         if (_input.WheelOpen) ChangeWheel(false);
+        if (_input.MarketOpen) CloseMarket();
         try { _session?.World.SetReady(false); }
         catch (InvalidOperationException) { /* A failed host already stopped accepting input. */ }
         _hud.Message(message);

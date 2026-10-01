@@ -627,3 +627,34 @@ via `OPENFANTASY_RETAINED_GIFT_RESULTS` (with `OPENFANTASY_RETAINED_PROPOSAL_SOU
 the saved database to the original row by row and authenticates the carried cut, custody and use.
 Fixtures keep their source saves intact. Injected native controls and background images do not
 establish physical-device, OS-focus, production art, complete gift UX or process-interruption acceptance.
+
+## Markets
+
+Run `python3 tools/play.py --markets` for the separate fresh market world at
+`user://worlds/wrens-markets.sqlite`. It opens through its own entry scene
+(`godot --path client res://scenes/NativeTrading.tscn -- --markets [SAVE]`); the default farm and every
+other selection are unchanged, and an existing save opens only when it is this same world. Wren trades
+her six admitted berries in person; your money comes only from her ordinary six-wood quest reward, and
+her purchases are paid from her own proceeds. Her gift preference and Care work as in `--gifts`.
+
+**V** opens the wheel and **Q / right shoulder** turns to **Market**: Up buys, Right sells, Down shows
+offers and saved outcomes. Confirming a sector only opens the stall panel, also while paused. In the
+panel choose Buy or Sell, units and (to sell) one exact own lot; **Show this lot** lets Wren offer to
+buy it, **Ask Wren** sends a nonbinding request, **Review offer** captures her exact terms and
+**Confirm** accepts them. Changing a choice, **Back**, focus loss or a controller disconnect discards
+the review; nothing is ever re-asked or confirmed for you. **Esc / B / V** close the panel.
+
+The panel suppresses walking but not world time: Wren answers at the next advancing step while the
+world runs. **Pause to read** stops this single-player world, including every offer window; she
+cannot answer and you cannot confirm until **Resume time**. It is not a shared multiplayer Wait.
+Offers last 1,200 advancing steps (about a minute of running time), showings 2,400 and requests 600.
+Wren keeps one standing offer for you; ignoring it lets it close on its own. **Check saved record**
+reads the chosen outcome of the current save segment; archived-only outcomes are not listed.
+
+`NativeTradingFixtureTests` earns the reward and lets Wren finish her funded build through ordinary
+cutoffs; with `OPENFANTASY_NATIVE_TRADING_FIXTURES` naming a fresh directory it exports `save.sqlite`,
+`genesis.ofc`, `before.ofc` and `metadata.json`. `tools/check_native_trading.py --dotnet <path>
+--godot <path> --fixtures <directory> --output <json> [--mode all|keyboard|controller|pointer] [--rendered]`
+drives each route through the wheel and stall (buy, a genuine decline, show and sell, saved record),
+then reopens each copy in a separate paused process. Its manifest feeds `NativeTradingResultTests` via
+`OPENFANTASY_NATIVE_TRADING_RESULTS` to authenticate the journal commands and goods/money deltas.

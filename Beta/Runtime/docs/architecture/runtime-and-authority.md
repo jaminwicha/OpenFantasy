@@ -105,7 +105,8 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    answer it in admission order with their own quotes, and configured host shoppers show, ask and accept
    under their own control, in person only and with bounded reconsideration attempts. A valid paid
    acceptance reserves its issuer, so neither participant works or walks in the settling step. Participant
-   quote history uses the same bounded background slot as proposal inspection. Saved proposals, NPC gift
+   quote history uses the same bounded background slot as proposal inspection. The
+   [native stall](native-trading.md) submits through these same calls. Saved proposals, NPC gift
    preferences and ordinary care bind in profiles 30, 32 and 33 through one `LocalProfileBindings` gate.
    Paid and market commands are refused at submission outside an unheld exploration boundary. Ordinary,
    care, lifecycle and encounter selection refuse a queued command their batch kind cannot carry before
