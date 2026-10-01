@@ -37,6 +37,14 @@ serialized field nor an admission shortcut: encoded inputs are fixed before vali
 the digest, and persistence still encodes and verifies full canonical bytes. Mutable encoding buffers
 are not retained or shared by this cache.
 
+[TerrainRegionCodecV1](../../src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs) memoizes a region's
+canonical encoding by the exact immutable `TerrainRegionSnapshot` object, using weak keys. Repeated
+world encodings reuse unchanged region bytes without rescanning their cells. Separate snapshots with
+equal bounds and revisions still have separate encodings; excavation creates a new snapshot. Each
+public export returns its own byte array, and concurrent requests cannot mutate the retained bytes.
+This cache changes no encoded field, version, admission rule or decoder refusal. Recovery still
+replays and authenticates every journal entry and compares complete canonical states.
+
 ## Numeric domains
 
 Authoritative geometry uses signed 64-bit coordinates at 1/256 cell. The physical profile binds

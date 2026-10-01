@@ -1,4 +1,5 @@
 using System.Buffers.Binary;
+using System.Runtime.CompilerServices;
 using OpenFantasy.Core.Custody;
 
 namespace OpenFantasy.Core.Terrain;
@@ -9,6 +10,10 @@ namespace OpenFantasy.Core.Terrain;
 /// </summary>
 public static class TerrainRegionCodecV1
 {
+    // A region is immutable. Cache by its object identity, never bounds/revision, and retain it only while
+    // the snapshot is alive. Every public export copies so a caller cannot corrupt later encodings.
+    private static readonly ConditionalWeakTable<TerrainRegionSnapshot, CanonicalRegion> CanonicalRegions = new();
+
     public const int MaximumEncodedByteLength = 70_000;
     private const int MaximumRulesByteLength = 512;
     private const int MaximumScopeByteLength = 128;
@@ -18,6 +23,11 @@ public static class TerrainRegionCodecV1
     public static byte[] Encode(TerrainRegionSnapshot snapshot)
     {
         ArgumentNullException.ThrowIfNull(snapshot);
+        return CanonicalRegions.GetValue(snapshot, static region => new CanonicalRegion(region)).Copy();
+    }
+
+    private static byte[] EncodeUncached(TerrainRegionSnapshot snapshot)
+    {
         int[] indices = snapshot.Cells.Where(cell => cell.IsExcavated)
             .Select(cell => snapshot.Bounds.IndexOf(cell.Coordinate)).ToArray();
         byte[] edits = new byte[checked(indices.Length * sizeof(uint))];
@@ -28,6 +38,15 @@ public static class TerrainRegionCodecV1
         return CanonicalEncodingV1.Frame("terrain.region.v1", EncodeScope(snapshot.Scope), snapshot.Seed.ToByteArray(),
             EncodeRules(snapshot.Rules), EncodeBounds(snapshot.Bounds),
             CanonicalEncodingV1.Unsigned64(snapshot.Revision), edits);
+    }
+
+    private sealed class CanonicalRegion
+    {
+        private readonly byte[] _bytes;
+
+        internal CanonicalRegion(TerrainRegionSnapshot snapshot) => _bytes = EncodeUncached(snapshot);
+
+        internal byte[] Copy() => (byte[])_bytes.Clone();
     }
 
     public static TerrainRegionSnapshot Decode(ReadOnlySpan<byte> bytes)

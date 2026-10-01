@@ -1,0 +1,28 @@
+{
+  "coreSuite": {
+    "Passed": 1756
+  },
+  "coreElapsedSeconds": 147.428,
+  "baselineOpenSeconds": 36.0548802,
+  "cachedOpenSeconds": 18.766909,
+  "sourceSave": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/native-20261001T105332Z-c7b5e/native-cargo-svrncdxn/keyboard.sqlite",
+  "sourceSaveSha256": "2828848a9475f73231a1cb1e651792bcb2c8871c202b94999e2db545224f6f57",
+  "sourceGenesisSha256": "8781c5c13791189210c5dde74f9a898832b673e605623ebef45b4fae31018f3e",
+  "sourceDeliverySnapshot": "6061a440b1e4d242781e1caa9fb446aaa617da1e",
+  "coreSourceChanges": {
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs": {
+      "before": "23482c3e66c867b99df3ef3e360c1e2195152b7b74cd3454a889347ff5e9debd",
+      "after": "f775696b62c730daa6c3023e8d16c3fc90b6d91ffa0bc3305557e39c9686263d"
+    }
+  },
+  "coreAssemblyBefore": "7949c45ba3586fd7ec1b22a37771098e48dcc8f9a1d8ac70c42425e21a01d792",
+  "coreAssemblyAfter": "4042e3de826ced918ba1615fa2063e195c985665ef3aa8397093d1d251a1f97f",
+  "artifacts": {
+    "measurement.cs": "d90ece5455b175df89f1d00ec18f045153aff748a1a7d3796726dd286c36a0c5",
+    "core.trx": "f3f3de0b18f341ef45256eb0a74e7b2a14e1ffc99a409adc68bf26c09acbee45",
+    "cached.log": "2fb4b2008fa974d3a0a1e90661739cb27f3104f64b01e222ff8bc347c6c57aad",
+    "baseline.log": "285b8fe67caa46c2fcf4e299583cb73f13f24f760300a39cccd6555ca0ebbd5d",
+    "core-report.json": "03ddae840ce89f5cf197d758cb6abad4a07813dadcd0965164c322fd67a51a5c"
+  },
+  "limits": "One local Debug full-recovery comparison; no skipped journal entries, checkpoint trust shortcut, changed bytes or relaxed deadline. Native cargo still unaccepted."
+}
